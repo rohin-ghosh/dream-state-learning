@@ -1,0 +1,60 @@
+model:
+  model_name: "Qwen/Qwen2.5-7B-Instruct"
+  device: "cuda"
+  dtype: "bfloat16"
+  max_new_tokens: 256
+  temperature: 0.0
+
+memory:
+  episodic_capacity: 2000
+  episodic_embed_dim: 768
+  episodic_embed_model: "sentence-transformers/all-mpnet-base-v2"
+  semantic_db_path: "outputs/semantic_memory.db"
+  retrieval_k: 3
+  recency_decay: 0.99
+
+lora:
+  rank: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "v_proj"
+    - "k_proj"
+    - "o_proj"
+  learning_rate: 0.0001
+  num_epochs: 3
+  batch_size: 4
+  orthogonal_lambda_start: 0.1
+  orthogonal_lambda_end: 1.0
+  max_grad_norm: 1.0
+  warmup_steps: 10
+  revert_threshold_bwt: -0.03
+
+routing:
+  hidden_dims:
+    - 128
+    - 64
+    - 32
+  n_classes: 4
+  meta_lr: 0.0003
+  meta_batch_size: 8
+  inner_steps: 5
+  entropy_coeff: 0.01
+  interference_proj_dim: 64
+
+sleep:
+  trigger_every_k_tasks: 4
+  synthetic_augmentation_ratio: 0.3
+  min_trajectories_for_lora: 8
+  holdout_per_type: 5
+
+eval:
+  n_per_type: 8
+  ordering: "blocked"
+  seed: 42
+  max_steps_per_task: 50
+
+output_dir: "outputs"
+wandb_project: "dream-state"
+wandb_run_name: ""

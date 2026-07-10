@@ -1,0 +1,16 @@
+env:
+  type: AlfredTWEnv
+  regen_game_files: false
+  domain_randomization: false
+  task_types: [1, 2, 3, 4, 5, 6]
+  expert_timeout_steps: 150
+  expert_type: handcoded
+
+general:
+  random_seed: 42
+  training_method: dagger
+  use_cuda: true
+
+rl:
+  training_games: 40
+  max_nb_steps_per_episode: 50

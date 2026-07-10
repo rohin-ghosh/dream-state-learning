@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "dream-state"
+version = "0.1.0"
+description = "Wake-sleep continual learning agent on ALFWorld with O-LoRA parametric consolidation, FAISS episodic memory, SQLite semantic memory, and a meta-learned routing policy."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.3",
+    "transformers>=4.45",
+    "peft>=0.12",
+    "vllm>=0.5",
+    "faiss-gpu",
+    "sentence-transformers>=3.0",
+    "ray[default]>=2.30",
+    "alfworld",
+    "ai2thor",
+    "wandb",
+    "numpy",
+    "scipy",
+    "tqdm",
+    "rich",
+    "typer",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+    "mypy",
+]
+cluster = [
+    "ray[default]>=2.30",
+]
+
+[project.scripts]
+dream-state-train = "dream_state.cli:train"
+dream-state-eval = "dream_state.cli:eval"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dream_state*"]
