@@ -273,6 +273,20 @@ class ReActAgent:
     # Private helpers
     # ------------------------------------------------------------------
 
+    def _generate(self, prompt: str) -> str:
+        """Generate a raw text completion for an arbitrary prompt."""
+        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+        input_length = inputs["input_ids"].shape[1]
+        generate_kwargs: dict = {
+            "max_new_tokens": self.config.max_new_tokens,
+            "pad_token_id": self.tokenizer.eos_token_id,
+            "do_sample": False,
+        }
+        with torch.inference_mode():
+            output_ids = self.model.generate(**inputs, **generate_kwargs)
+        new_ids = output_ids[0, input_length:]
+        return self.tokenizer.decode(new_ids, skip_special_tokens=True).strip()
+
     @staticmethod
     def _parse_output(raw: str) -> tuple[str, str]:
         """

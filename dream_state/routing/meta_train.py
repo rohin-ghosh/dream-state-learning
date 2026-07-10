@@ -600,13 +600,13 @@ def collect_baseline_rollouts(
     output_path:
         Destination JSON file path.
     """
-    from dream_state.environments.alfworld_env import AlfWorldEnv
+    from dream_state.environments.alfworld_env import ALFWorldEnv
     from dream_state.memory.features import (
         TrajectoryFeatureExtractor,
         utility_score,
     )
 
-    env = AlfWorldEnv(env_config)
+    env = ALFWorldEnv(env_config)
     extractor = TrajectoryFeatureExtractor(
         embed_model_name="sentence-transformers/all-mpnet-base-v2",
         device="cpu",
@@ -623,8 +623,10 @@ def collect_baseline_rollouts(
 
         # First pass: run tasks and collect features.
         episode_results = []
+        all_tasks = env.get_all_tasks()
         for _ in range(seq_len):
-            result = env.run_episode(agent=agent, memory=memory)
+            task_path = rng.choice(all_tasks)
+            result = agent.run_episode(env, task_path)
             features = extractor.extract(result=result, memory=memory)
             # Assign a random routing decision (Phase 0 baseline).
             decision = rng.randint(0, _N_CLASSES - 1)

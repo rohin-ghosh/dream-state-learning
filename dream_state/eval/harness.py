@@ -11,6 +11,8 @@ import logging
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
+from dream_state.environments.alfworld_env import EpisodeResult  # noqa: F401 (re-exported)
+
 logger = logging.getLogger(__name__)
 
 
@@ -29,22 +31,6 @@ class EvalConfig:
     seed: int = 42
     max_steps_per_task: int = 50
     holdout_per_type: int = 5  # tasks reserved for cross-task safety evaluation
-
-
-# ---------------------------------------------------------------------------
-# Result containers
-# ---------------------------------------------------------------------------
-
-
-@dataclass
-class EpisodeResult:
-    """Result returned by an agent after completing one episode."""
-
-    success: bool
-    steps: int
-    task_type: str
-    task_id: str
-    info: Dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -181,6 +167,8 @@ class SequentialEvalHarness:
         self.sleep_controller = sleep_controller
         self.config = eval_config
         self.wandb_run = wandb_run
+        # Populated by caller: maps task_type -> list of holdout task_paths
+        self.holdout_tasks_by_type: Dict[str, List[str]] = {}
 
     # ------------------------------------------------------------------
     # Public API
@@ -228,9 +216,11 @@ class SequentialEvalHarness:
             # ----------------------------------------------------------------
             # a. Run training episode
             # ----------------------------------------------------------------
-            episode: EpisodeResult = self.agent.run_episode(
-                task_desc, max_steps=self.config.max_steps_per_task
+            episode = self.agent.run_episode(
+                self.agent.env, task_desc["task_id"]
             )
+            # post_episode handles routing, sleep trigger, and memory updates
+            self.agent.post_episode(episode)
 
             # ----------------------------------------------------------------
             # b. Record per-task success
@@ -245,13 +235,6 @@ class SequentialEvalHarness:
             # c-d. Cross-task holdout evaluation over all seen types
             # ----------------------------------------------------------------
             J_cross[t_idx] = self._evaluate_cross_task(seen_types)
-
-            # ----------------------------------------------------------------
-            # e. Sleep phase
-            # ----------------------------------------------------------------
-            if self.sleep_controller.should_sleep(t_idx):
-                logger.info("Sleep phase triggered after task %d", t_idx)
-                self.sleep_controller.run_sleep_phase()
 
             # ----------------------------------------------------------------
             # f. W&B logging
@@ -303,17 +286,12 @@ class SequentialEvalHarness:
         """
         n = self.config.holdout_per_type
         successes = 0
-        for i in range(n):
-            task_desc = {
-                "task_type": task_type,
-                "task_id": f"{task_type}_holdout_{i:03d}",
-            }
-            result: EpisodeResult = self.agent.run_episode(
-                task_desc,
-                max_steps=self.config.max_steps_per_task,
-            )
+        holdout_tasks = self.holdout_tasks_by_type.get(task_type, [])
+        for i in range(min(n, len(holdout_tasks))):
+            result = self.agent.run_episode(self.agent.env, holdout_tasks[i])
             successes += int(result.success)
-        return successes / n if n > 0 else 0.0
+        denom = min(n, len(holdout_tasks))
+        return successes / denom if denom > 0 else 0.0
 
     def _log_to_wandb(
         self,

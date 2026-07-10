@@ -21,7 +21,7 @@ from dream_state.memory.episodic import EpisodicMemory
 from dream_state.memory.features import TrajectoryFeatures
 from dream_state.memory.semantic import SemanticMemory
 from dream_state.agent.react_agent import ReActAgent
-from dream_state.eval.harness import EpisodeResult
+from dream_state.environments.alfworld_env import EpisodeResult
 
 logger = logging.getLogger(__name__)
 
@@ -185,7 +185,7 @@ class SleepPhase:
         # a. Episodic consolidation
         # ------------------------------------------------------------------
         for episode, features in episodic_entries:
-            trajectory_text = getattr(features, "trajectory_text", episode.task_id)
+            trajectory_text = episode.trajectory_text
             episodic_memory.add(
                 trajectory_text=trajectory_text,
                 task_type=episode.task_type,
@@ -237,7 +237,7 @@ class SleepPhase:
                 self.sleep_config.min_trajectories_for_lora,
             )
             for episode, features in parametric_entries:
-                trajectory_text = getattr(features, "trajectory_text", episode.task_id)
+                trajectory_text = episode.trajectory_text
                 episodic_memory.add(
                     trajectory_text=trajectory_text,
                     task_type=episode.task_type,
@@ -253,8 +253,8 @@ class SleepPhase:
             from dream_state.training.lora_trainer import OLoRATrainer
 
             trainer = OLoRATrainer(
-                lora_config=self.lora_config,
-                model_name=self.model_name,
+                base_model_name=self.model_name,
+                lora_config_=self.lora_config,
                 output_dir=self.output_dir,
                 device=self.device,
             )

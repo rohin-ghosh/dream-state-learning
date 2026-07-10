@@ -109,23 +109,33 @@ def run_harness(agent_cfg: dict, ordering: Ordering, seed: int) -> dict:
     """
     Import and invoke SequentialEvalHarness.  Returns an EvalResults-like dict.
     """
+    import dataclasses
     try:
-        from dream_state.eval.harness import SequentialEvalHarness  # type: ignore
-        from dream_state.eval.results import EvalResults              # type: ignore
+        from dream_state.eval.harness import SequentialEvalHarness, EvalConfig, EvalResults
+        from dream_state.config import DreamStateConfig
+        from dream_state.system import DreamStateAgent
     except ImportError as exc:
         raise SystemExit(
             f"[run_ablations] Cannot import dream_state package: {exc}\n"
             "Make sure the project root is on PYTHONPATH or install via `pip install -e .`"
         ) from exc
 
+    ds_config = DreamStateConfig()
+    ds_config.eval.ordering = ordering.value
+    ds_config.eval.seed = seed
+
+    agent = DreamStateAgent(ds_config)
+    eval_cfg = EvalConfig(ordering=ordering.value, seed=seed)
+
     harness = SequentialEvalHarness(
-        config=agent_cfg,
-        ordering=ordering.value,
-        seed=seed,
-        num_tasks=48,
+        env_config_path=agent_cfg.get("alfworld_config", "configs/alfworld_base.yaml"),
+        agent=agent,
+        memory_system=agent.episodic_memory,
+        sleep_controller=agent.sleep_controller,
+        eval_config=eval_cfg,
     )
     results: EvalResults = harness.run()
-    return results.to_dict()
+    return dataclasses.asdict(results)
 
 
 # ---------------------------------------------------------------------------
