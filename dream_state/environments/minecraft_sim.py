@@ -252,8 +252,12 @@ class MinecraftSim:
         elif action.startswith("craft"):
             return self._handle_craft(action)
 
+        # explore — move to an unknown location
+        elif action.startswith("explore"):
+            return self._handle_explore()
+
         # inspect or look
-        elif action.startswith(("inspect", "look", "explore")):
+        elif action.startswith(("inspect", "look")):
             return self._handle_inspect()
 
         # place <item>
@@ -267,6 +271,24 @@ class MinecraftSim:
 
         else:
             return f"Unknown action: '{action}'. Try: move, gather, craft, inspect.", False
+
+    def _handle_explore(self) -> tuple[str, bool]:
+        agent = self._agent
+        world = self.world
+        unvisited = [n for n, l in world.locations.items() if not l.visited]
+        if not unvisited:
+            return "You have explored all locations in this area.", False
+        loc_name = unvisited[0]
+        loc = world.locations[loc_name]
+        loc.visited = True
+        agent.current_location = loc_name
+        agent.known_locations[loc_name] = loc.coords
+        res_list = ", ".join(f"{r} x{q}" for r, q in loc.resources.items() if q > 0) or "nothing useful"
+        return (
+            f"You explore and discover {loc_name} at {loc.coords}. Biome: {loc.biome}. "
+            f"You see: {res_list}. "
+            f"Known locations: {list(agent.known_locations.keys())}."
+        ), True
 
     def _handle_move(self, action: str) -> tuple[str, bool]:
         agent = self._agent
