@@ -52,43 +52,63 @@ MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """You are an agent in a Minecraft-like world. Your goal is to craft a target item.
-You interact by outputting one action at a time. Valid actions:
-  - move <location_name>      (move to a known or new location)
-  - explore                   (move to an unknown location)
-  - gather <resource>         (pick up resource at current location)
-  - craft <item>              (craft item if you have ingredients)
-  - inspect                   (look around current location)
+You interact by outputting one action at a time.
 
-Think step by step about what you need to craft the goal item, then output exactly one action.
-Format: THOUGHT: <reasoning> ACTION: <single action>"""
+RULES:
+1. Read the observation CAREFULLY before reasoning. Only state facts that appear in the observation.
+2. Do NOT assume you have resources unless the observation says so.
+3. Do NOT assume a location exists unless you have visited it or the observation lists it under "Known locations".
+4. To move to a known location use its EXACT name from "Known locations". To find new locations use: explore
+5. You must gather raw resources BEFORE crafting. You must have ALL ingredients before crafting.
+
+Valid actions (output exactly one):
+  - explore                        (discover a new unknown location)
+  - move <exact_location_name>     (go to a location from your Known locations list)
+  - gather <resource>              (collect resource at your current location)
+  - craft <item_name>              (craft if you have all ingredients)
+  - inspect                        (see what resources are here and your inventory)
+
+Crafting requires: oak_log -> oak_planks -> stick, crafting_table. Then tools.
+For iron: need wooden_pickaxe to mine cobblestone, stone_pickaxe to mine iron_ore, furnace + coal to smelt iron.
+
+Format your response EXACTLY as:
+OBSERVATION SUMMARY: <quote the key facts from the observation — inventory, location, resources seen>
+THOUGHT: <what do I need next based only on what I actually have>
+ACTION: <single action>"""
 
 
 def build_zero_memory_prompt(obs: str, history: list[tuple[str, str, str]]) -> str:
-    lines = [SYSTEM_PROMPT, "", f"Observation: {obs}", ""]
-    for thought, action, next_obs in history[-6:]:
-        lines.append(f"THOUGHT: {thought}")
-        lines.append(f"ACTION: {action}")
-        lines.append(f"Observation: {next_obs}")
-        lines.append("")
-    lines.append("THOUGHT:")
+    lines = [SYSTEM_PROMPT, ""]
+    lines.append(f"Current Observation: {obs}")
+    lines.append("")
+    if history:
+        lines.append("Recent steps:")
+        for thought, action, next_obs in history[-4:]:
+            lines.append(f"  ACTION taken: {action}")
+            lines.append(f"  Result: {next_obs[:120]}")
+            lines.append("")
+    lines.append("OBSERVATION SUMMARY:")
     return "\n".join(lines)
 
 
 def build_rag_prompt(obs: str, history: list[tuple[str, str, str]], episode_memory: list[dict]) -> str:
     mem_text = ""
     if episode_memory:
-        mem_text = "MEMORY FROM PAST EPISODES:\n"
+        mem_text = "MEMORY FROM PAST EPISODES (use exact location names):\n"
         for m in episode_memory[-4:]:
             mem_text += f"  - {m['summary']}\n"
         mem_text += "\n"
 
-    lines = [SYSTEM_PROMPT, "", mem_text, f"Observation: {obs}", ""]
-    for thought, action, next_obs in history[-6:]:
-        lines.append(f"THOUGHT: {thought}")
-        lines.append(f"ACTION: {action}")
-        lines.append(f"Observation: {next_obs}")
-        lines.append("")
-    lines.append("THOUGHT:")
+    lines = [SYSTEM_PROMPT, "", mem_text]
+    lines.append(f"Current Observation: {obs}")
+    lines.append("")
+    if history:
+        lines.append("Recent steps:")
+        for thought, action, next_obs in history[-4:]:
+            lines.append(f"  ACTION taken: {action}")
+            lines.append(f"  Result: {next_obs[:120]}")
+            lines.append("")
+    lines.append("OBSERVATION SUMMARY:")
     return "\n".join(lines)
 
 
@@ -97,12 +117,15 @@ def build_rag_prompt(obs: str, history: list[tuple[str, str, str]], episode_memo
 # ---------------------------------------------------------------------------
 
 def parse_thought_action(response: str) -> tuple[str, str]:
-    response = response.strip()
-    thought_match = re.search(r"THOUGHT:\s*(.*?)(?:ACTION:|$)", response, re.DOTALL | re.IGNORECASE)
-    action_match = re.search(r"ACTION:\s*(.+?)(?:\n|$)", response, re.IGNORECASE)
+    # Prepend the prompt's "OBSERVATION SUMMARY:" so response continues from there
+    full = "OBSERVATION SUMMARY:" + response
+    thought_match = re.search(r"THOUGHT:\s*(.*?)(?:ACTION:|$)", full, re.DOTALL | re.IGNORECASE)
+    action_match = re.search(r"ACTION:\s*(.+?)(?:\n|$)", full, re.IGNORECASE)
 
-    thought = thought_match.group(1).strip() if thought_match else response[:100]
+    thought = thought_match.group(1).strip() if thought_match else full[:100]
     action = action_match.group(1).strip() if action_match else "inspect"
+    # Clean up action — remove any trailing punctuation or extra words after newline
+    action = action.split("\n")[0].strip().rstrip(".")
     return thought, action
 
 
