@@ -200,4 +200,73 @@ sketch:
 Maps to hippocampus(writer)/cortex-attention(reader). Two learned
 components, one architecture.
 
+## 2026-07-11 — Vocabulary settled: currency / policy / two attentions
+
+### Rohin's PFC-dopamine correction
+
+Earlier framing conflated them. Corrected: **PFC is the policy** (evaluates
+how good actions are, goal-directed control). **Dopamine is the currency**
+(the reward signal that trains the policy). Policy shapes thinking AND
+context; context is what an intelligent agent has most control over.
+→ ML mapping: currency = reward function, policy = learned value/policy
+network, dopamine signal = the training gradient. This is actor-critic.
+
+### Freeze currency (Rohin)
+
+Sleep consolidates all systems — wipe short-term, write long-term, update
+policy, update thinking — but **currency stays frozen** as the dependent
+variable. (Correct experimental design: reward function is
+experimenter-defined; everything else learns against it.)
+
+### Two attention systems (Rohin)
+
+- **Thinking attention**: how thoughts in the head become the next
+  productive thoughts — the transformer's internal attention.
+- **Context attention**: how the agent decides what thoughts to bring INTO
+  the head — retrieval/composition over memories + policy.
+Both should become fluid/trainable over time, trained by currency. True
+long-term intelligence requires fluidity in attention, not just weight
+retraining — agents use policy/memory/currency to influence how they
+think, including reasoning-directed self-training (choosing what data to
+train yourself on = the writer choosing replay content).
+
+### The substrate/harness reframe (Rohin)
+
+The real contribution may be the **trainable harness**: wiring tweaked
+memory forms + LLMs + policy functions together, with a system that trains
+each module through time and sleep while also training the harness itself —
+all against currency. Connects to the OpenClaw observation: current agent
+harnesses (md files, skills, static context) are hand-coded and don't
+scale; a trained harness is the delta.
+
+### Data cost + evolution-pretraining (Rohin)
+
+Training a harness on top of a transformer needs an order of magnitude
+more data. Long-term fix: evolution-like pretraining that sets base harness
+weights so it doesn't start from zero, without hand-designing. (Practical
+v1 version: imitation-initialize the policies from heuristics, then RL.)
+
+### Existential riff (parked, but logged because it's good)
+
+Currency = the existential pull. Universe as bitter lesson: rocks are
+molecular structures that withstood planetary formation; organisms are
+systems that withstand time by exploiting patterns in data; sentience is
+using mental simulation (sandboxed brains) to grow withstanding faster
+than brute-force physics. An agent becomes sentient-ish when its currency
+is no longer externally defined — humans revise their own currency; our
+agent won't (yet). For now: define the currency, freeze it.
+→ Adjacent formal literature: Friston's free-energy principle,
+Schrödinger's "What is Life" (organisms resist entropy via modeling).
+
+### Emerging freeze schedule (Claude, from the debate)
+
+| Module | v1 (paper 1) | v2 | v3+ |
+|---|---|---|---|
+| Currency (reward fn) | FROZEN (forever, until sentience paper) | frozen | frozen |
+| Thinking (LLM + internal attention) | FROZEN | frozen | sleep-time LoRA updates |
+| Context attention (reader) | **TRAINED** | trained | trained |
+| Consolidation (writer) | **TRAINED** | trained | trained |
+| Policy (PFC/value) | LLM prior, static | **TRAINED** | trained |
+| Sleep schedule | fixed K | adaptive | learned |
+
 ---
