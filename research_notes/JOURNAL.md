@@ -135,4 +135,69 @@ Scope to memory, not action learning. Dopamine-for-memory only, not
 dopamine-for-choice. Fixed goal-conditioned episodes in persistent worlds;
 survival pressure at most as a step budget, not open-ended reward design.
 
+## 2026-07-11 — The architecture debate (Rohin's big-picture pass)
+
+### Rohin's pushback on frozen-actor scoping
+
+Confounding isn't a bug — it may be a necessity: human skills (muscle
+memory, energy, emotion) don't optimize individually, they optimize *as a
+group* under massive data, precisely because they're confounded. The
+end-state vision requires memory and action growing together.
+
+### Rohin's compute concern
+
+A good memory architecture may show nothing until the agent has run
+immense trials — memories only pay off once they're a good representation
+of the task space. (Note: this cuts in favor of frozen-actor v1 — the LLM
+prior does the acting for free; only the small memory system needs data.)
+
+### Rohin's bitter-lesson refinement
+
+"Someone had to invent the perceptron/transformer" — the job is to set up
+the learning so that scaling data actually scales the learning. Hardwire
+the *shape*, learn the *content*.
+
+### The architecture sketch (Rohin, verbatim essence)
+
+Not inventing thinking (transformer does that) or perception (CV/audio
+models do that). Architecting the continual-learning wrapper:
+- Two inputs: **data** (what's happening) and **reinforcement** (how it's
+  being rewarded)
+- Components: long-term memory, short-term memory, sleep, and a context
+  composed from reasoning + action + memory + policy streams
+- Key synthesis: "this is literally a transformer-like attention memory —
+  attention over long memory, short memory, and policy/desire composes the
+  context; the transformer transforms that context into next-token
+  generation. Context length is the immediate thoughts in your mind."
+- During sleep: long-term memory, policy, AND the thinking model train.
+- The balance between attention-for-context (retrieval) and
+  how-much-to-learn-from-new-events (weight updates) must be honed by
+  data — that balance is what produces "dynamic plastic intelligence."
+- Agents like OpenClaw use rudimentary md files/skills/context because
+  hardcoded memory doesn't scale — you can't scale a knowledge graph to
+  the internet. The missing piece is architectural.
+
+### Sandbox/currency vision (parked as future work, papers 2-3)
+
+Agent in a sandbox (e.g. CUDA kernel design), currency-backed reward
+(throughput per energy). Trains policy + short/long memory in sandbox 1,
+transfers to sandbox 2, learns faster — meta-learning across sandboxes.
+Currency as the cleanest agency driver for machines (safer than
+survival/lust drives; it's literally training for value production). Elo
+as currency for chess. Multi-agent selection dynamics acknowledged as fun
+fantasy, explicitly deferred.
+
+### Claude's proposed decomposition: reader/writer split
+
+The consolidation-policy-output question resolves cleanly inside Rohin's
+sketch:
+- **Read side = attention** (dense, cheap, every step): learned retrieval
+  over short-term store, long-term store, and policy state to compose
+  context. Trainable end-to-end.
+- **Write side = consolidation policy** (sparse, sleep-time): decides what
+  enters long-term memory and what gets baked into weights. Trained by
+  policy gradient on downstream return (the dopaminergic signal).
+Maps to hippocampus(writer)/cortex-attention(reader). Two learned
+components, one architecture.
+
 ---
