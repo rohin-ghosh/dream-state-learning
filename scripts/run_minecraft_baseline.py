@@ -124,8 +124,13 @@ def parse_thought_action(response: str) -> tuple[str, str]:
 
     thought = thought_match.group(1).strip() if thought_match else full[:100]
     action = action_match.group(1).strip() if action_match else "inspect"
-    # Clean up action — remove any trailing punctuation or extra words after newline
-    action = action.split("\n")[0].strip().rstrip(".")
+    # Clean up action — model often hallucinates a fake next observation on the
+    # same line; cut at any continuation marker
+    action = action.split("\n")[0]
+    for marker in ("OBSERVATION", "observation", "THOUGHT", "Result:"):
+        if marker in action:
+            action = action.split(marker)[0]
+    action = action.strip().rstrip(".").strip()
     return thought, action
 
 

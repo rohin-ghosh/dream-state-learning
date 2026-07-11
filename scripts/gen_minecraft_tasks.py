@@ -38,10 +38,17 @@ def generate_episode_sequence(
     Generate a sequence of episodes for a world.
     Later episodes require resources found in earlier episodes.
     """
+    from dream_state.environments.minecraft_sim import is_goal_achievable
+
     by_depth = get_goals_by_depth()
     available_goals = []
     for d in range(min_depth, max_depth + 1):
         available_goals.extend(by_depth.get(d, []))
+
+    # Only keep goals whose full raw-resource closure exists in this world
+    available_goals = [g for g in available_goals if is_goal_achievable(g, world)]
+    if not available_goals:
+        raise ValueError(f"No achievable goals in world {world.world_id} — regenerate world")
 
     episodes = []
     # Track what resources have been "seen" in prior episodes

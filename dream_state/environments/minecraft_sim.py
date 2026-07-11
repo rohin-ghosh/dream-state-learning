@@ -58,18 +58,19 @@ RAW_RESOURCES = [
     "redstone", "string", "gravel", "sand", "clay",
 ]
 
-# Which tool is needed to mine each resource efficiently
+# Which tool is needed to mine each resource (None = bare hands work,
+# matching real Minecraft where you punch trees to bootstrap)
 MINING_REQUIREMENTS: dict[str, Optional[str]] = {
-    "oak_log":      "wooden_axe",
-    "spruce_log":   "wooden_axe",
+    "oak_log":      None,   # punchable bare-handed — bootstraps the tech tree
+    "spruce_log":   None,
     "cobblestone":  "wooden_pickaxe",
     "coal":         "wooden_pickaxe",
     "iron_ore":     "stone_pickaxe",
     "redstone":     "iron_pickaxe",
     "string":       None,   # from spiders, no tool needed
-    "gravel":       "wooden_shovel",
-    "sand":         "wooden_shovel",
-    "clay":         "wooden_shovel",
+    "gravel":       None,   # diggable by hand, just slower
+    "sand":         None,
+    "clay":         None,
 }
 
 # Biome types and what resources spawn there
@@ -129,6 +130,20 @@ class WorldState:
                 name=f"{loc_biome}_{i}",
             )
             locations[loc.name] = loc
+
+        # Guarantee core progression resources exist somewhere in the world
+        # (oak_log for planks/table, cobblestone+coal for stone tier,
+        #  iron_ore for iron tier) — scattered across locations so the agent
+        # still has to find and remember where they are.
+        essential = ["oak_log", "cobblestone", "coal", "iron_ore", "string"]
+        loc_list = list(locations.values())
+        present: set[str] = set()
+        for loc in loc_list:
+            present.update(r for r, q in loc.resources.items() if q > 0)
+        for res in essential:
+            if res not in present:
+                target_loc = rng.choice(loc_list)
+                target_loc.resources[res] = rng.randint(3, 8)
 
         return cls(world_id=world_id, biome=biome, locations=locations, seed=seed)
 
@@ -463,6 +478,44 @@ def get_goals_by_depth() -> dict[int, list[str]]:
         d = get_chain_depth(item)
         by_depth.setdefault(d, []).append(item)
     return by_depth
+
+
+def get_full_raw_requirements(goal: str, visited: Optional[set] = None) -> set[str]:
+    """
+    Return ALL raw resources needed to craft goal, including the tool chains
+    required to mine those resources (e.g. cobblestone needs wooden_pickaxe,
+    which needs oak_log).
+    """
+    if visited is None:
+        visited = set()
+    if goal in visited:
+        return set()
+    visited.add(goal)
+
+    raw: set[str] = set()
+    if goal in RAW_RESOURCES:
+        raw.add(goal)
+        tool = MINING_REQUIREMENTS.get(goal)
+        if tool:
+            raw |= get_full_raw_requirements(tool, visited)
+        return raw
+
+    if goal not in RECIPES:
+        return raw
+
+    inputs, _ = RECIPES[goal]
+    for ingredient in inputs:
+        raw |= get_full_raw_requirements(ingredient, visited)
+    return raw
+
+
+def is_goal_achievable(goal: str, world: WorldState) -> bool:
+    """Check that every raw resource needed (incl. tool chains) exists in the world."""
+    needed = get_full_raw_requirements(goal)
+    world_resources: set[str] = set()
+    for loc in world.locations.values():
+        world_resources.update(r for r, q in loc.resources.items() if q > 0)
+    return needed.issubset(world_resources)
 
 
 def compute_optimal_steps(goal: str, known_locations: dict, world: WorldState) -> int:
