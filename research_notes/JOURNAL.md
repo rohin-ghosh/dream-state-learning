@@ -1,0 +1,138 @@
+# Research Journal — Dream-State Learning
+
+Running log of ideas, debates, and decisions between Rohin and Claude.
+Newest entries at the bottom. This is the thinking record — the design doc
+will crystallize from here.
+
+---
+
+## 2026-07-09 — Project origin
+
+Started from resume concept: "Dream-State Learning — Adaptive Memory
+Consolidation for Continual Agents." Original framing: wake-sleep agent on
+ALFWorld with a meta-learned routing policy sending trajectories to
+episodic (FAISS) / semantic (SQLite) / parametric (LoRA) memory. Built full
+codebase skeleton. Targets: NeurIPS 2026 workshop → ICLR 2027.
+
+## 2026-07-10/11 — First cluster session (28h lease, ipp1-1619, A100 80GB)
+
+Setup consumed most of the session (driver install, conda, deps). Ran first
+baselines. Process lesson learned: **freeze the experiment plan before
+booking compute.** Next lease starts with tested scripts.
+
+### The pivot (mid-session, Rohin)
+
+ALFWorld's 6 task types are too independent — memory reduces to per-type
+procedure lookup. Real question: **relational structure.** Cup-on-coaster:
+you can't grab the coaster without moving the cup. Forgetting the
+dependency breaks the task; forgetting the cup's color doesn't.
+
+Key reframe: **selective forgetting is the mechanism, not the bug.**
+Original framing treated forgetting as failure. New framing: compression.
+Forget detail (color, exact position), keep structure (dependency edges,
+co-occurrence). Maps to systems consolidation (McClelland 1995): replay
+extracts schema, cortex absorbs it.
+
+### Salience bottleneck (Rohin)
+
+Human brains retain few macro-structures per experience; a quant HFT model
+absorbs innumerable micro-patterns from massive data. We want the human
+end: **fewer structural nodes absorbed per episode → each memory more
+impactful → useful overfitting to own experience.** "Make the model less
+generally intelligent so it latches onto its experiences well." The
+bottleneck size is a core hyperparameter.
+
+### Environment iterations
+
+1. Dependency-graph household tasks (cup/coaster) — built generator, but
+   episodes were independent → no cross-episode memory pressure. Rejected.
+2. Minecraft (real) — right dependency depth (crafting DAG), too heavy.
+3. **Text-based crafting simulator** (built, verified) — persistent worlds,
+   fixed resource locations discovered across episodes, real crafting DAG
+   subset. Scripted agent completes stone_pickaxe chain in 11 steps.
+   Qwen2.5-7B zero-shot: 0% success (after fixing hallucination-prompt,
+   explore-routing, and circular-tool-dependency bugs). Hard task confirmed.
+
+### Memory architecture brainstorm (Rohin)
+
+- Not just external stores: what about a **masked region of the model as
+  memory** — "ligamented parts of the brain"? Fixed-capacity subspace
+  written during sleep, read during wake. Capacity constraint does the
+  forgetting automatically.
+- Or a **small model as the memory** — tiny model can't memorize
+  everything, so it's forced to learn structure. Learned compression.
+- Hopfield networks connection to explore (attention = associative memory).
+
+## 2026-07-11 — Literature surveys (3 agents, ~80 papers)
+
+Notes: 01_wake_sleep_consolidation.md, 02_parametric_memory.md,
+03_agent_memory_benchmarks.md, synthesis in 00_synthesis.md.
+
+Headline: the intersection **learned consolidation policy × embodied agent
+× structural-retention benchmark** is unoccupied as of July 2026.
+- No benchmark separates structural retention from detail forgetting.
+- All existing consolidation selectors are heuristics (SuRe's surprise,
+  PEAM's worthiness score). Learned policy = clean novelty claim.
+- "Consolidation collapse" is a named, unsolved failure mode (2605.12978:
+  utility rises then falls below no-memory baseline) — we position as the fix.
+- Masked-region memory exists for facts (MEMOIR) and tasks (MoSEs), NOT for
+  agent experience. Small-model-memory exists (Larimar, M+) but not as
+  trained compressed store of agent experience.
+- Threat: TMEM (Alibaba, 6/2026) — online LoRA agent memory. No sleep, no
+  learned policy, no embodied eval. Window narrowing; move fast.
+- Hopfield-for-agent-memory: theory mature, system unbuilt (ICLR 2026
+  MemAgents workshop lists it as open direction).
+
+### Paper shape decision
+
+Analysis+benchmark chassis (A) with novel method as engine (B):
+1. Benchmark with ground-truth structure metrics
+2. Run existing memory families faithfully (no tweaks — credibility)
+3. Novel consolidation method competes against that field
+If B works it's the headline; if B stalls, A ships alone. B standalone has
+no floor.
+
+## 2026-07-11 — Design debates (pre-design-doc)
+
+### The supervision problem (Claude)
+
+What makes direction B hard: **there is no label for "what should have been
+remembered."** A memory's value is only revealed episodes later. Sparse,
+delayed reward; brutal credit assignment. Every heuristic selector in the
+literature exists because this signal is hard to learn.
+
+### Reward-modulated consolidation (Rohin's insight, convergent)
+
+Rohin independently proposed "external reinforcement system that fuels its
+attention" → this IS the missing training signal. Neuroscience:
+dopaminergic modulation of hippocampal replay (reward-tagged experiences
+replay preferentially). ML: task outcome trains the consolidation policy
+via policy-gradient outer loop — did consolidating memory M improve
+later-episode return? Learned selector vs PEAM's heuristic = the delta.
+Rohin's MCTS/AlphaGo-Zero background applies directly: reward shaping lets
+short-term consolidation choices be credited against long-term outcomes.
+
+### Rohin's hunches logged (to develop)
+
+- "Everything in ML done long enough goes back to data and training, not
+  hardwiring" — bet on learned consolidation over hand-designed rules.
+- "Attentioned memory and attentioned actions are driven on similar
+  mechanisms" — memory retrieval and action selection as the same kind of
+  query-key gating.
+- Board-game-with-changing-rules environment: agent masters rules, rules
+  shift, measure adaptation. Static chess = just post-training; continual
+  learning needs a moving task.
+- Survival Minecraft as "unsupervised self-post-training" — agent deployed
+  with survive-goal, sleeps and retrains on own graded memories.
+- Open questions raised: what's the right sleep rate (adaptive? "if he dies
+  every game, sleep faster")? Cold start — policy only, or initial context?
+- Parked deliberately: ever-changing/vague reward policies (humans have
+  them; separate research topic; stay scoped to memory).
+
+### Scoping direction (emerging consensus)
+
+Scope to memory, not action learning. Dopamine-for-memory only, not
+dopamine-for-choice. Fixed goal-conditioned episodes in persistent worlds;
+survival pressure at most as a step budget, not open-ended reward design.
+
+---
