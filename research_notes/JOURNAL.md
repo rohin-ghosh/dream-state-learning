@@ -338,4 +338,64 @@ the emptier-but-brutal harness/substrate vision.
 | Policy (PFC/value) | LLM prior, static | **TRAINED** | trained |
 | Sleep schedule | fixed K | adaptive | learned |
 
+## 2026-07-11 — DECISION: build the harness. The communication-layer reframe.
+
+### Direction decided (Rohin)
+
+Chose the harness over the referee-the-field benchmark paper. Reasoning:
+existing memory mechanisms aren't compelling enough to be worth
+benchmarking for their own sake; the higher-level *orchestration* is the
+real object of study. "Wide open would be bad — it means the problem isn't
+ready. The mechanisms exist now (2026 papers), so the orchestration is
+ready to pursue." Follow curiosity; we have a better idea than the safe one.
+
+### The reframe: this is a COMMUNICATION/CONTROL layer, not an agent
+
+Rohin's NVLink insight (his day job is NVLink MSE): what we're building is
+a communication fabric between cognitive modules.
+- **Attention (wake) = communication** that gathers from the modules
+  (LTM, STM, policy, currency-state) to compose context for the "conscious"
+  transformer.
+- **Dreaming (sleep) = communication** that stops routing to short-term,
+  reconciles long-term memory + policy, renormalizes.
+The contribution is the *trained* communication layer + packaging the
+mechanisms into one form. Existing agent harnesses (md files, skills,
+static context) are hand-coded routing; ours is learned.
+
+### Key distinction: "exists in time," not an agent loop
+
+An agent = a loop above reasoning: fixed context → reason → self-judge
+execution. This thing is different: it **exists continuously in time**, with
+an *ongoing* context and *ongoing* execution, learning as it runs. This is
+the streaming/lifelong distinction, not episodic agent behavior. Design
+must not treat episodes as independent resets — the substrate persists.
+
+### The floor problem, and its resolution (Claude's discipline injection)
+
+Rohin's own principle: "you need good mechanisms to prove the
+orchestration." → RESOLUTION: the 2026 papers become the MODULES, not
+competitors. Use an existing learned-retrieval store, an existing
+consolidation method, an existing memory op — off the shelf, faithful — and
+make the LEARNED COMMUNICATION LAYER BETWEEN THEM the contribution. This
+gives the harness a floor (modules are known-good) and isolates the novel
+variable (the orchestration). Without this, the harness has no floor and is
+undebuggable.
+
+### Control layer jobs (emerging)
+
+1. Dreaming (sleep-time reconciliation: write LTM, renormalize/downscale,
+   retroactive consolidation)
+2. Attention (wake-time context composition from typed streams)
+3. (candidate) Traversal / information routing between modules
+Currency frozen throughout.
+
+### Meta (Rohin, on his own currency)
+
+Two currencies for the project: (1) get into elite research environments,
+(2) do something he's proud of / help the field. (2) is overarching, (1)
+may be instrumental to (2). Explicitly wants curiosity as the attention
+mechanism, with just enough outcome-pressure to ship. Self-initiated, no
+lab, no formal research background — arrived at the frontier problem shape
+through reasoning + lit search. Wants to keep it fun, publishable, real.
+
 ---
