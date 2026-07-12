@@ -389,6 +389,102 @@ undebuggable.
 3. (candidate) Traversal / information routing between modules
 Currency frozen throughout.
 
+### DECISION IS DETERMINISTIC (Rohin, 2026-07-11)
+
+Two candidate contributions surfaced:
+- **A** = learned communication fabric (the harness/orchestration layer)
+- **B** = structural-renormalizing long-term memory (keep relational
+  structure, drop episodic detail, via sleep-time downscaling)
+
+Decision rule (not a preference — a test): **search whether B exists in
+usable off-the-shelf form.**
+- If B EXISTS → build the harness (A) using B + other off-the-shelf modules
+  as components; A is paper 1, uses B as a module, B-as-novel becomes a
+  later ablation/paper.
+- If B DOES NOT EXIST → build B fully as paper 1, shelf A for after. Use a
+  DUMB fixed communication layer for B's harness (static retrieval, fixed
+  sleep schedule) to keep B's contribution isolated and legible.
+
+Either way: exactly one novel piece per paper. The other modules are
+off-the-shelf, faithful, unmodified. One mechanism / two directions
+(wake-read + sleep-write) stays unified as a single fabric.
+
+Bonus insight (Rohin): designing the harness top-down *reveals the needed
+modules* — a goldmine of downstream research topics (each missing module is
+a potential paper). The harness is both the destination and the map.
+
+### RESOLVED: B is paper one (2026-07-11)
+
+Verdict from 06_structural_memory_decision.md: **(b) PARTIAL** — every
+ingredient exists separately, but no released system consolidates toward
+structure and away from detail (schema-up / detail-down) over time. Per the
+pre-committed deterministic rule → **B does not exist usable → build B as
+paper 1, shelf A (harness).**
+
+Gift: a 2026 position paper — **Experience Compression Spectrum**
+(arXiv:2604.15877) — names this exact axis the **"Missing Diagonal"** and
+proves no system moves along it. We cite them for the gap; we build the
+mechanism. We don't have to argue the gap exists.
+
+Closest partial ingredients (cite, don't compete):
+- **SCM** (2604.20943): has SHY-style renormalization (0.8× downscale) +
+  typed semantic graph, but forgetting is node-importance-based, not
+  detail-vs-structure; toy factual recall only, no agent tasks.
+- **Auto-Dreamer** (2605.20616): learned offline sleep consolidator on
+  ALFWorld etc., but abstraction is generic blob-compression — no
+  structure-preserving/detail-discarding objective.
+- **Experience Compression Spectrum** (2604.15877): states the target
+  property exactly, proves the gap, implements nothing.
+
+Verify-before-cite: SleepGate/"Learning to Forget" ID 2603.14517.
+
+→ Paper 1 = a memory that consolidates by keeping relational structure
+(dependency graphs, schemas) and shedding episodic detail, measured on the
+crafting-sim benchmark (which already has ground-truth dependency graphs).
+Dumb fixed communication layer around it (static retrieval, fixed sleep
+schedule) to isolate B's contribution. Harness (A) is the sequel.
+
+### Paper 1 (B) substrate crystallizes: small overtrained net + attention-weighted imprinting (2026-07-11)
+
+Scope reaffirmed: B is a **POC paper**, not the scalable bitter-lesson
+mechanism. Live-learning attention fabric = paper A (next). B builds the
+memory module + a policy-driven consolidation, hand-scheduled.
+
+**Substrate (Rohin's concrete proposal):** LTM = a *small* trainable net —
+"a small version of the thinking model / basic low-compute world model" —
+that gets **overtrained/overfitted to the memories written into it.**
+Attention weights how strongly each memory imprints ("100 attention points
+→ shows up stronger in the model"). Structure = the *connections the net
+forms in its weights* (structurally biased "the way a model is," not a
+hand-built graph). This is the LoRA-as-memory / small-model-as-memory line.
+
+**Dream mechanism (simple):** freeze the thinking model; during sleep,
+attention-weighted fine-tune the small memory net on STM contents; purge STM.
+
+**The crux (Rohin named it):** "what sort of model can hold these
+vectorized relations while keeping proper retrieval." Retrieval from an
+overtrained small net is the known hard part — this is where the research is.
+
+**Attention source:** policy → currency. Delayed reward is tractable
+*because* of the policy/value function (PFC): you judge value at the current
+state, so you don't need the final outcome to assign credit. POC currencies
+are simple (chess: closeness to winning; crafting sim: progress to goal).
+
+**Measurement (corrected):** beat a *filled short context* on a
+short-context model (NOT 700k long context) at a fixed memory budget.
+Headline = task currency at fixed budget. Explanation = structural- vs
+detail-retention via ground-truth graphs (emergent, not imposed).
+
+**Claude's synthesis to confirm:** small net + attention-weighted imprint +
+capacity-limited interference = a modern ASSOCIATIVE MEMORY where the
+interference that normally degrades recall becomes the *forgetting
+mechanism* — strongly-imprinted structure survives, weakly-imprinted detail
+gets overwritten. The bug (interference) becomes the feature (selective
+forgetting). Ties Hopfield (associative memory) + synaptic homeostasis
+(renormalization) + Missing Diagonal (structure-up/detail-down) into one
+mechanism. Open step-2 question: substrate concretely = LoRA on frozen
+model vs separate small LM vs associative net.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
