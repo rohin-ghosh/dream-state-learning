@@ -485,6 +485,46 @@ forgetting). Ties Hopfield (associative memory) + synaptic homeostasis
 mechanism. Open step-2 question: substrate concretely = LoRA on frozen
 model vs separate small LM vs associative net.
 
+### SETTLED — Paper 1 (B) scope, ready for design doc (2026-07-11)
+
+The eight-point skeleton, confirmed:
+1. B = a consolidation **procedure** (attention-weighted sleep post-training),
+   NOT a new model architecture. Standard small net + standard fine-tune;
+   novelty is how writes are weighted and scheduled.
+2. Mechanism = attention-weighted imprinting + capacity-limited interference
+   → structure survives, detail washes out. Emergent, not imposed.
+3. Attention source = policy → currency. Delayed reward tractable via value
+   function (PFC). POC currencies simple (chess: closeness to win; crafting:
+   progress to goal).
+4. Substrate = **separate small parametric net** (NOT masked-in-model) —
+   chosen for MEASURABILITY (can probe contents against ground-truth graph).
+   Masked-region-in-thinking-model is more biological but opaque → deferred
+   to paper A+. "Consolidate into the model later as it grows; not now."
+5. Measurement (refined): **attentioned-memory + small context** beats
+   **slightly-less-small filled context** at a FIXED memory budget. Also
+   compare vs RAG, LoRA-memory. Headline = task currency at fixed budget;
+   explanation = structural- vs detail-retention via ground-truth graphs.
+6. De-risk = **Experiment 0**: test the memory module's write/read cycle in
+   isolation from the agent loop (write known structured memories → probe
+   retrieval → find capacity break point → see how attention-weighting
+   shifts it). This is a scoped test of the renormalizing-attention
+   mechanism in a confined problem.
+7. Environment = crafting sim (ground-truth dependency graphs).
+8. Deferred to paper A: live/learned attention, masked-in-model memory,
+   full multi-module orchestration, memory+policy+context unified.
+
+Last open sub-fork (to be resolved empirically by Experiment 0, not debate):
+small memory net = tiny LM (queried in text) vs key-value/associative net
+(queried by embedding).
+
+Overarching one-line framing (Rohin): "Can we build an attention mechanism
+that works for memory (and later policy and other forms) OUTSIDE just the
+model, while also composing context — i.e. expand attention beyond the
+transformer's own inputs to external memory." B = the confined POC of that;
+A = the live/learned/unified version.
+
+NEXT ACTION when Rohin returns: draft the design doc from these 8 points.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
