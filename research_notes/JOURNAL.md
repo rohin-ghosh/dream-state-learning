@@ -258,6 +258,75 @@ agent won't (yet). For now: define the currency, freeze it.
 → Adjacent formal literature: Friston's free-energy principle,
 Schrödinger's "What is Life" (organisms resist entropy via modeling).
 
+## 2026-07-11 — Two more surveys (prior-art on "second attention" + neuroscience)
+
+Notes: 05_learned_retrieval_prior_art.md, 04_neuroscience.md.
+
+### Prior-art verdict: PARTIALLY PUBLISHED — the broad lane closed in 2026
+
+"Learned retrieval for LLM agents trained by task reward" is now a crowded
+subfield (Memory-R1, Mem-α, MemRL, AgeMem, Mem-π, ContextCurator,
+Auto-Dreamer — several on ALFWorld). Direct overlaps with our scoped v1:
+- **ContextCurator (2604.11462)**: separate lightweight "subconscious"
+  policy composing a frozen executor's context, RL-trained on task reward.
+  ≈ our reader/subconscious split. (But: prunes transcript only; no LTM
+  retrieval, no goal-state stream.)
+- **MemRL (2601.03192)**: utility/Q-value memory selection replacing cosine,
+  on ALFWorld, +82% vs memory-free. ≈ our "learned retrieval beats fixed."
+- **Auto-Dreamer (2605.20616)**: offline wake/sleep consolidation, GRPO on
+  agent reward, ALFWorld transfer. ≈ the writer half of dream-state.
+
+**Still genuinely open (the narrow wedge):** a *dense, differentiable
+second-attention layer* that jointly attends over typed LTM + STM +
+**policy/goal state** to softly compose context, coupled with sleep-phase
+consolidation, jointly trained. Everyone else uses DISCRETE memory ops
+(tool calls, prune/keep, value tags) — nobody has one dense attention
+composer over typed streams incl. policy. Policy-as-attention-stream is the
+least-claimed piece.
+
+**Strategic shift:** edge is no longer "first to the idea" (funded labs
+converged on it in 2026) but "referee the crowded field on an axis nobody
+built a ruler for" (structural-retention vs detail-forgetting benchmark
+still does not exist) + stake the narrow dense-attention mechanism. Open
+strategic fork for Rohin: referee-the-field analysis paper vs jump out to
+the emptier-but-brutal harness/substrate vision.
+
+### Neuroscience findings that change the design
+
+1. **CLS is literally our architecture.** Kumaran/Hassabis/McClelland 2016
+   (TiCS, written for AI) is the load-bearing citation: consolidation replay
+   should be *weighted and selective* — prioritize rewarding/surprising/
+   goal-relevant. Direct motivation for a learned writer.
+2. **Reward-gated consolidation is mechanistic + gives us a design nuance:**
+   synaptic tagging & capture (Frey/Morris 1997) = a biological *eligibility
+   trace* for what to store — recent weak experiences get retroactively
+   consolidated if a high-value event occurs soon after. → the writer should
+   be able to reach back and consolidate earlier episodes when later reward
+   arrives (retroactive credit, not just current-episode).
+3. **"Two attentions" is real as a THREE-way gate:** input-gate (write) /
+   maintenance / output-gate (read), learned by an RL signal — PBWM
+   (O'Reilly & Frank 2006), basal ganglia dopamine-trained gating over PFC.
+   Our reader = output gate; writer = input gate. Both RL-trained. Confirmed
+   blueprint.
+4. **Global Workspace Theory legitimizes the subconscious-gate → conscious-
+   workspace module** (Dehaene: bottom-up salience × top-down amplification →
+   broadcast). Use as FUNCTIONAL inspiration only — "subconscious" is folk
+   terminology, not a consciousness claim. Composed context = the workspace.
+5. **Biggest gap in our module list: no neuromodulatory/homeostatic control
+   layer.** We have where info lives, not when/how-fast/whether to write.
+   Highest-value missing pieces:
+   - **Metaplasticity** = biological EWC (Kirkpatrick 2017): per-weight write
+     protection — the mechanism most directly preventing catastrophic
+     overwrite. Relevant if/when we do parametric consolidation.
+   - **Homeostatic downscaling during sleep** (SHY, Tononi/Cirelli 2014):
+     sleep should PRUNE/renormalize, not only strengthen. → the writer needs
+     a forget/downscale operation, not just write. (Matches Rohin's
+     selective-forgetting thesis exactly.)
+   - **ACh encode-vs-consolidate mode switch**, **NE adaptive gain** (learning
+     rate/exploration), Doya 2002 map (DA=TD-error, 5HT=discount, NE=explore,
+     ACh=learning-rate). Our "reward" module currently = dopamine only.
+   - Cerebellar/motor learning correctly LOW relevance for a text agent.
+
 ### Emerging freeze schedule (Claude, from the debate)
 
 | Module | v1 (paper 1) | v2 | v3+ |
