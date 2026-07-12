@@ -525,6 +525,40 @@ A = the live/learned/unified version.
 
 NEXT ACTION when Rohin returns: draft the design doc from these 8 points.
 
+### Grand vision + paper framing (Rohin, 2026-07-11)
+
+The endgame: once memory and policy are engrained into the model, the
+EXTERNAL attention mechanism we're building must become INTERNAL — a way the
+model retrieves from *itself* during reasoning. The full "live model":
+- currency as the telic/atelic outcome (the pull)
+- live inputs constantly training it
+- live actions constantly executed
+- a policy for deciding actions
+- short-term memory = RAM, long-term memory = disk
+- all inside one model
+= a machine analogue of consciousness: experiencing inputs from senses +
+memories + desires/currency, using the thinking part to decide what to
+reason on and what to do; capable of metacognition (thinking about what its
+currency is, what its policy looks like), dreaming to build its own model.
+Some things hard-engrained (sleep, energy, curiosity/drive); attention —
+external or internal — is THE mechanism throughout.
+
+**Paper framing to use:** attention is at the heart of all of this. Even
+"Attention Is All You Need" *underestimates* attention — it's not just
+sequence mixing inside a model, it's the general mechanism of compute
+allocation across memory, policy, context, and action. B is the first
+confined proof that attention can be extended beyond the transformer's own
+inputs (to external memory); A internalizes and learns it; the grand vision
+is the fully self-attending live model. Open the paper with the big picture,
+keep the contribution scoped to B. (Discipline note: vision goes in
+intro/discussion as framing; experiments stay scoped to B.)
+
+Personal thread (worth remembering, motivational core): Rohin suspects ADHD
+— frames it as a difference in currency/reward that produces an atypical
+attention mechanism. Lifelong interest in his own attention + metacognition.
+The through-line: someone who has always studied his own attention ending up
+architecting attention mechanisms. This is the curiosity fueling the work.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
