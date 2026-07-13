@@ -559,6 +559,70 @@ attention mechanism. Lifelong interest in his own attention + metacognition.
 The through-line: someone who has always studied his own attention ending up
 architecting attention mechanisms. This is the curiosity fueling the work.
 
+### Deep literature round — 5 clusters (2026-07-13)
+
+Notes 07-11 + INDEX + RANKED_READING_LIST. Crystallized decisions:
+
+**Substrate RESOLVED:** small **ATLAS/Titans-style neural fast-weight module**
+(deep-MLP memory, salience-gated gradient write, adaptive decay). Use ATLAS
+window/batch (Omega-rule) variant — built to memorize a window at once =
+matches a sleep batch. Its write literally IS attention-weighted
+post-training; forgetting is native (capacity superposition + decay gate);
+standalone = measurable in isolation (Experiment 0). LoRA-on-backbone
+REJECTED as substrate (entangled, unmeasurable) → becomes a baseline.
+Backup substrate = **Larimar** Kanerva matrix (one-shot write) → the
+"gradient-imprint vs one-shot-imprint" ablation arm.
+
+**Write-attention signal RESOLVED:** consolidation weight `w ≈ f(V(s),
+|TD-error|)` — value magnitude (salience) + TD-error (surprise) =
+generalized Prioritized Experience Replay. V(s) = "policy judging value at
+current state" → gives per-memory weight BEFORE reward lands (the
+delayed-reward answer). Estimate via Dreamer λ-returns, cheap in a sleep
+pass.
+
+**Non-stationarity CAUTION:** learned value only valid near data-policy
+("What Model Does MuZero Learn?"). Stale value mis-ranks which memories to
+imprint. Fix: refresh value targets each sleep cycle; KL/trust-region-bound
+per-cycle policy move (Policy Consolidation).
+
+**MCTS → deferred to Paper A** (B needs only a scalar value; MCTS confounds
+the core ablation; its home is the subconscious-simulation story).
+
+**Formal foil:** "Transformers are Stateless DNCs" (2026) proves transformer
+memory is write-once/stateless — frame the contribution against THAT
+boundary (stateful, re-writable, offline-consolidated), not "adding memory
+to transformers."
+
+**Competitive landscape TIGHTENED — important:** four 2026 concurrent works
+now in close orbit — **PEAM (2605.27762)** closest system (parametric
+embodied memory + consolidation governance), **Auto-Dreamer (2605.20616)**
+near-identical (learned offline dreaming consolidation, same envs) =
+baseline-to-beat, **EVAF/Memory Depth (2606.26806)** keep-parametric-vs-
+discard split (goal-vs-fact, not structure-vs-detail; declares forgetting
+unsolved = ammo), **SCM (2604.20943)** richest component donor (NREM
+downscaling). The lane is a RACE now, not empty. Wedge that survives:
+structure-up/detail-down + value/attention-weighted imprint + **ground-truth
+dependency-graph measurement (the moat — nobody else can measure the axis).**
+
+**Baseline set (matched memory budget):** no-mem floor → filled short-context
+→ RAG (+Mem0) → LoRA/Remembering-Transformer → CLIN (reflective) → A-GEM
+(classical CL) → Auto-Dreamer (bar to beat) → graph-oracle ceiling.
+
+**Eval-fragility rules:** (1) score via ground-truth graph programmatically,
+not LLM-judge; (2) run table on ≥2 backbones, claim only persistent gains;
+(3) average ≥3 curriculum orderings, tune replay fairly (naive replay fails
+for LLM agents = false floor). Complement crafting-sim with ScienceWorld/
+ALFWorld slice for comparability + LifelongAgentBench to defuse
+"bespoke-benchmark" objection.
+
+**Borrowable components:** MoE-LoRA isolated adapters (PEAM), NREM downscaling
+(SCM), 4-D importance/surprise+valence tag (SCM/EVAF), self-triggered
+when-to-sleep + forgetting-gate (PEAM/SleepGate), RL dreaming curriculum +
+REM recombination (2606.03979/SCM), wake→NREM→REM + param-freeze template
+(WSCL). **Must build new:** attention-weighted structure-up/detail-down loss;
+the structure-vs-detail metric+benchmark; learned routing vs heuristic gates;
+embodied instantiation with the split.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
