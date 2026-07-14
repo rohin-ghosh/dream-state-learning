@@ -671,6 +671,65 @@ Scoping (reaffirmed): FIRST get the right LTM system.
 - "Variable amount of attention controlling LTM" (live/conscious allocation)
   = Paper A. Paper B = fixed-schedule sleep consolidation into the right LTM.
 
+### The reframe that gives the paper its spine: it's a LEARNING problem (2026-07-13)
+
+Rohin: "this isn't just a memory problem, it's a learning problem — you're
+using attention to TEACH memory. LTM is smart, dynamic, purposefully not
+fully accurate; you remember memories by how you PARSED them." Attention =
+efficient capital: learning what groupings, and HOW MUCH of them, yield the
+most efficient results (MoE routing = the existing instance; must be trained
+on where AND how much).
+
+**THE crux question (Rohin):** episodic sleep consolidation is basically
+training — so how does this architect DIFFERENTLY from just fine-tuning the
+LLM? → This is the project's justification. Answer = Complementary Learning
+Systems:
+- Fine-tuning the one big net on each experience = ONE system, ONE timescale
+  → catastrophic interference. (This is literally our naive-FT baseline, not
+  our method.)
+- CLS = TWO systems, TWO timescales: a fast, plastic, pattern-separated
+  episodic store encodes specifics WITHOUT disrupting the slow stable
+  world-model; offline replay during sleep gradually + SELECTIVELY teaches
+  the slow system. Separation both prevents forgetting AND enables schema
+  extraction.
+- Our small net = hippocampus (fast, high-plasticity, lossy, RECONSTRUCTIVE
+  — stores "by how parsed," structure-preserving/detail-shedding = a feature
+  of small-capacity + value-weighted imprint, NOT a bug). Frozen LLM =
+  neocortex (in v1, frozen entirely; the slow cortical update is later).
+- So Paper B = the hippocampal encoder + its consolidation dynamics.
+
+**Biology of task differentiation (why the brain doesn't use one learner):**
+parallel anatomically-separate systems with different plasticity rules,
+gated by neuromodulators + sleep stage:
+- hippocampal/declarative (fast, sparse, one-shot) vs neocortical/semantic
+  (slow, overlapping, extracts regularities) vs striatal/procedural
+  (dopamine-trained habit) vs cerebellar (error-correction) vs PFC working
+  memory (transient, no lasting change).
+- ACh high in waking = encoding mode (favors input, suppresses retrieval
+  interference); ACh low in SWS = consolidation mode (hippocampal→cortical
+  replay via sharp-wave ripples). Schema-fit (Tse 2007, mPFC-gated) speeds
+  cortical consolidation when new info fits existing structure. SHY
+  (Tononi/Cirelli): sleep net-downscales synapses = renormalization.
+- Differentiation is not a decision — it's parallel systems + neuromodulatory
+  gating + salience/reward tags (DA/NE) prioritizing what consolidates.
+
+**Scoping decision (Rohin):** test the memory as an INDIVIDUAL SYSTEM, NOT
+wired into LLM context. Context integration = Paper A ("capital allocation
+training"). Implication: Paper B becomes a MECHANISM/ANALYSIS paper — measure
+structure-vs-detail retention via reconstruction/retrieval probe against
+ground-truth graphs, no LLM in the loop. Bonus: this DODGES the
+eval-fragility warnings entirely (no backbone-dependence, no LLM-judge) and
+the standalone structure-vs-detail measurement IS the moat. Tradeoff: needs a
+readout/probe to show "usefulness"; the "beat filled-context at fixed budget"
+comparison becomes secondary/optional.
+
+**ATLAS/Titans deltas (our differentiation):** ATLAS/Titans update memory
+ONLINE at test time via per-token/window SURPRISE. We update OFFLINE during
+sleep, weighted by VALUE (not just surprise), with structure-vs-detail
+selectivity, tested STANDALONE. "Between a transformer and ATLAS attentioned
+memory" — ATLAS-style fast-weights + a sleep-consolidation training loop +
+value-weighting.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
