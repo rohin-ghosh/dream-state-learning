@@ -623,6 +623,54 @@ REM recombination (2606.03979/SCM), wake→NREM→REM + param-freeze template
 the structure-vs-detail metric+benchmark; learned routing vs heuristic gates;
 embodied instantiation with the split.
 
+### Thesis framing: attention as capital / the cognitive stack (2026-07-13)
+
+Rohin's grand framing: transformer attention must EXPAND beyond token-mixing
+to memory, policy, and other functions. Each function has its own internal
+attention; a general attention substrate allocates between them. Precise
+reframe: this cross-module allocation is not softmax "attention" — it's
+**capital / resource-economics** — a signal that TRAINS within each function
+(internal) and BETWEEN functions (external). "Attention" is fine as LLM-era
+language; "capital allocation" is the more accurate mechanism for the
+heterogeneous multi-module case. (Distinct from dopamine=currency; capital =
+the allocation of compute/representation across modules.)
+
+Cognitive stack (Rohin's table → build-now vs defer):
+| Function | Bio | Status for us |
+|---|---|---|
+| Sensors | eyes/ears/skin | given (text input) |
+| Input router | brainstem/thalamus | trivial v1 |
+| Perceptual encoder/world model | sensory+assoc cortex | frozen LLM |
+| Active scratchpad | frontoparietal WM | context window (STM) |
+| Episodic memory index | hippocampus | **BUILD (Paper B)** |
+| Learned concepts/knowledge | neocortex | frozen LLM + consolidated LTM |
+| Value & significance | OFC/vmPFC/amygdala/striatum | value fn (write-weight) |
+| Policy & action gating | PFC–basal-ganglia | LLM prior (v1), learned (A) |
+| Prediction/error | cerebellum | defer |
+| Global gain/exploration | neuromodulators | defer (v3) |
+| Homeostatic objective mgr | hypothalamus/endocrine | currency (frozen scalar) |
+| Actuators | motor cortex | action interface |
+
+→ The table IS the program map (each cell = a potential paper — the
+"goldmine" insight). v1 builds ONE cell (episodic/LTM) + its update
+mechanism. Do NOT build the stack.
+
+Precise novelty correction (from cluster-1 findings): "we don't have
+attentioned memory" is imprecise — NTM/DNC/Titans/ATLAS DO have
+attention-addressed read/write memory. What's missing = **stateful,
+offline-consolidated, structure-selective** memory. Frame against the
+stateless/write-once boundary (2026 stateless-DNC proof), not "no attentioned
+memory exists."
+
+Scoping (reaffirmed): FIRST get the right LTM system.
+- LTM = parametric, attention-consolidated (matches ATLAS/Titans substrate
+  decision), updated by sleep (+ later: conscious/manual attention).
+- STM = retrieval or set-aside context.
+- Context PARTITIONED into {inputs} vs {retrieved memories} — a real v1
+  design choice to keep.
+- "Variable amount of attention controlling LTM" (live/conscious allocation)
+  = Paper A. Paper B = fixed-schedule sleep consolidation into the right LTM.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
