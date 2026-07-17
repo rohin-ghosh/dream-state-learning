@@ -730,6 +730,43 @@ selectivity, tested STANDALONE. "Between a transformer and ATLAS attentioned
 memory" — ATLAS-style fast-weights + a sleep-consolidation training loop +
 value-weighting.
 
+### Devil's-advocate pass — the strongest attacks (2026-07-17)
+
+Steelmanned reviewer objections, ranked by how hard they land (for the paper's
+own limitations/rebuttal section):
+
+1. **Bitter-lesson-against-us (existential).** Long context + scale keeps eating
+   specialized memory architectures (NTM/DNC → forgotten once transformers +
+   context got big). Why won't "just scale context / just fine-tune with replay"
+   win again? → Rebuttal: unbounded context has cost/persistence/lost-in-middle
+   limits AND our claim is specifically the fixed-budget regime; but the honest
+   risk is real — must SHOW the advantage grows with scale (RQ2), else this kills
+   it. This is the attack to answer first.
+2. **Novelty crowding + subtle delta.** PEAM/Auto-Dreamer/EVAF/SCM all 2026;
+   "structure-vs-detail" may be too subtle to carry a paper, and may be an
+   ARTIFACT of a synthetic sim with a clean graph. → Rebuttal: the measurement
+   is the contribution, not just the mechanism; but must show it generalizes
+   beyond the toy (ScienceWorld/ALFWorld slice) or it reads as sim-gaming.
+3. **Structure may not emerge (R3).** Interference + value-weight might NOT yield
+   clean structure-up/detail-down without hard-coding relational bias. → If so,
+   RQ1 negative — still publishable as a negative result, but a smaller paper.
+4. **Retrieval crux (R1).** Overtrained small net retrieves unreliably; this is
+   why parametric memory lost to RAG historically. → Exp 0 first; Larimar backup.
+5. **Reinventing test-time training / associative memory with extra steps.** →
+   Delta is offline value-weighted consolidation + structure-selectivity +
+   standalone structural measurement; must state crisply or it reads as
+   ATLAS-with-a-sleep-loop.
+6. **"So what" of standalone (no LLM).** Showing a small net keeps some facts may
+   read as uninteresting without a task payoff. → Need the usefulness readout to
+   be convincing, or the structural-retention finding must be striking on its own.
+7. **Value-weighting may not matter.** Ablation could show uniform ≈ value-weighted
+   → then the "attention/capital" story collapses to "small net forgets." Must
+   pre-register this ablation as make-or-break for the core claim.
+
+Hardest two to answer BEFORE building: #1 (show scale-advantage) and #7 (show
+value-weighting matters). If either fails, the framing collapses. Both are cheap
+to test early (Exp 2 + Exp 4).
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
