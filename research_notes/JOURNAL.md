@@ -803,6 +803,32 @@ policy-conditioned head = Q augmented with policy/value embedding (goal-
 conditioned retrieval) alongside the content head. Two heads: content-address
 + value-address. This is the concrete A mechanism.
 
+### Scope tightened: Paper 1 = "just KV memory" (2026-08-09)
+
+Rohin's structural realization: value-conditioned RETRIEVAL requires
+value-conditioned WRITES — read/write coupled through what's stored. So the
+policy-conditioned retrieval head is UNTESTABLE in isolation → definitively
+Paper A, not a scoping choice but a structural necessity.
+
+**Paper 1 = the KV memory only:** write + consolidation + structure-vs-detail
+retention measurement. Standalone. NO retrieval fabric, NO LTM↔reasoning
+coupling, NO policy-conditioned retrieval. Dopaminergic/value machinery can be
+done separately (Paper 2).
+
+**One remaining knob — value-weighting in the WRITE:**
+- Option 1a: fully uniform/recurrence-only (strict "just KV memory"); value =
+  Paper 2.
+- Option 1b (RECOMMENDED): keep value-weighting as ONE ablation arm, but paper
+  does NOT depend on it. Nearly free (one weighting term); it's the clean
+  differentiator vs Auto-Dreamer's uniform compression. Run uniform + value,
+  let data pick the headline. De-risks Attack #6 (value-weighting may be inert)
+  — either outcome publishable.
+
+**Novelty floor (must hold or it reads incremental):** "small net forgets rare
+things" is old. What keeps Paper 1 non-incremental = (1) structure-vs-detail
+measurement vs ground truth (the moat) + (2) scaling/bitter-lesson result
+(RQ2). Keep BOTH as co-headlines regardless of what value-weighting shows.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
