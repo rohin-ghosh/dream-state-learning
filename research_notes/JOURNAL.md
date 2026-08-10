@@ -1069,6 +1069,21 @@ concrete spec for the ATLAS-integration stage.
 Next (still CPU): could test learned relational keys (small attention/MLP) OR move
 to ATLAS integration. All prior-art axes confirmed open (note 12).
 
+### Refinement: ATLAS and "long-term memory" (Rohin, 2026-08-10)
+
+Rohin's push-back on the "long-context ≠ LTM" framing (accepted as a refinement):
+it's partly bitter lesson — ATLAS DOES prove the fast-weight MLP substrate *works*
+(can compress + recall a lot). What it lacks isn't a different architecture, it's
+**another layer of representation — a VALUE layer smarter than surprise** — so it
+stores more intelligently, plus recompilation/reconsolidation (ideally driven by
+CHANGED value functions, later). So the honest statement is NOT "ATLAS is
+irrelevant to LTM" but: **ATLAS proves the substrate; it is not yet LTM-READY; the
+value-representation layer is what closes the gap.**
+Claude's one caveat to keep: the value layer is necessary but maybe not sufficient
+— cross-episode consolidation (sleep, forgetting, reconsolidation across separate
+episodes) is a training-REGIME ATLAS never ran, not only a representation gap. So:
+substrate = proven; value layer + cross-episode regime = the two things to add.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
