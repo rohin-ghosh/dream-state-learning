@@ -1084,6 +1084,32 @@ Claude's one caveat to keep: the value layer is necessary but maybe not sufficie
 episodes) is a training-REGIME ATLAS never ran, not only a representation gap. So:
 substrate = proven; value layer + cross-episode regime = the two things to add.
 
+### Architecture: value head SHAPES K/V (not surprise post-weighting) (2026-08-10)
+
+Rohin's cleaner proposal: don't bolt value onto write-STRENGTH (surprise-style
+post-KV weighting). Instead add a NEW ATTENTION HEAD trained on a policy/value
+loss; that head produces a value-aware K/V representation, and then a NORMAL KV-MLP
+write naturally prioritizes by value. Remove surprise entirely. The same head
+weighs both memory (write) and attention (read) — the shared policy head. Also:
+benchmark vs RAG + other memory systems (the gap ATLAS left).
+
+Claude's key connection: **attention is inherently RELATIONAL** (QKᵀ is pairwise),
+so an attention head is the RIGHT tool for the relational value exp3 showed is
+required. "Add an attention head" (Rohin) + "value must be relational" (exp3) fit
+together — the head can learn relational value without enumerating pairs (fixes
+exp3's non-scaling caveat).
+
+Two honest tensions to design around (not blockers):
+1. K/V must serve BOTH content-retrieval AND value-prioritization. Shaping K/V for
+   value could hurt content-addressing. Likely fix: value as an added
+   channel/dimension alongside content, not replacing it.
+2. Removing surprise also removes ATLAS's FORGETTING mechanism (surprise gates
+   write strength = capacity control). Need a replacement: decay, or value-driven
+   forgetting.
+
+This is testable cheaply next: can a small attention head LEARN relational value
+from outcomes (frozen backbone)? = the scalable version of exp3.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
