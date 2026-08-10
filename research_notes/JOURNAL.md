@@ -767,6 +767,42 @@ Hardest two to answer BEFORE building: #1 (show scale-advantage) and #7 (show
 value-weighting matters). If either fails, the framing collapses. Both are cheap
 to test early (Exp 2 + Exp 4).
 
+### Dopamine-as-binding + policy-conditioned retrieval (2026-08-09)
+
+Rohin's insight: humans have episodic memory *because* dopaminergic attention
+is complex — a dopamine spike doesn't just save the event, it binds the
+SEQUENCE leading up to it + co-occurring strong signals into one trace. Also
+proposes: attention heads should include POLICY in their K/V search — build
+context by retrieving from learned memory AND given context, PLUS a separate
+head trained on the dopaminergic/policy system. Wants a deeper LTM↔reasoning
+connection.
+
+**Mechanism he re-derived (already in 04_neuroscience):** synaptic tagging &
+capture / behavioral tagging (Frey&Morris 1997; Moncada&Viola 2007) — a
+salience/dopamine event retroactively stabilizes recent weak traces within a
+time window. Episodic memory = salience-gated BINDING of temporal+sensory
+context around a valued event. Reframe: episodic memory is the AUTOMATIC
+BYPRODUCT of salience-gated binding, NOT a deliberate "decide-what-to-write."
+
+**Split (scope discipline):**
+- **B (write-side, KEEP):** value/salience doesn't only weight imprint
+  STRENGTH — it defines episode BOUNDARIES / what binds together (the run-up
+  sequence + salient co-signals around a value spike). Refines B's writer:
+  an "episode" is a value-tagged temporal binding, not a fixed window. Affects
+  how we segment episodes in the sim (need salient value events to bind
+  around) + connects to retroactive consolidation (reach back when reward
+  lands).
+- **A (read-side, DEFER):** policy-conditioned retrieval head — queries
+  augmented/gated by policy+value embedding so retrieval is GOAL-conditioned,
+  not just content-similar; building context from memory+context streams; the
+  deeper LTM↔reasoning connection. This is the capital-allocation read fabric
+  = Paper A. Pulling it into B breaks the standalone/measurable scope.
+
+**A design note (logged for later):** in transformer terms, the
+policy-conditioned head = Q augmented with policy/value embedding (goal-
+conditioned retrieval) alongside the content head. Two heads: content-address
++ value-address. This is the concrete A mechanism.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
