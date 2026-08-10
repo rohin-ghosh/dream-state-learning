@@ -1134,6 +1134,39 @@ becomes the benchmark's headline result, not a standalone claim vs D-MEM/TMEM/CO
 Decision pending Rohin. Alternatives: pure benchmark paper; pivot to a less-crowded
 cognitive-stack cell; or race the narrow relational lane.
 
+### Post-verdict reflection + the "AI research being" vision (2026-08-10)
+
+Rohin processed the competitive verdict maturely (not discouraged — "learned a lot,
+feel happy, cool this exists"). Floated a big pivot: an "AI research AI being" /
+self-iterating research harness that composes all the continual-learning systems,
+produces research, gets judged, learns, and rebuilds parts of itself → "AI research
+exponential." Bet: position ~6 months ahead of the field.
+
+Claude's honest counterweight (recorded so we don't relitigate):
+- **"Continual learning is ~solved" = FALSE.** Many papers = active OPEN problem,
+  not solved. Each = narrow slice, favorable conditions, known limits, NO shared
+  benchmark, no consensus, no winning method. Catastrophic forgetting, robust
+  cross-episode consolidation, consolidation-collapse-over-time all still open.
+- **"Compose them into a live assistant" is a RESEARCH problem, not a compute one.**
+  Composition breaks (conflicting assumptions, uncharacterized failure modes);
+  long-horizon robustness/drift unsolved; general reward signal unsolved; stable
+  self-improvement (rebuild-without-degrading) is the least-solved of all.
+- **The self-iterating AI-research-being = recursive-self-improvement/AGI frontier**
+  — a north star, NOT a tractable independent project. Gap from "LoRA that helps QA"
+  to "self-rebuilding researcher" ≈ most of AGI. Resource-bound, not foresight-bound.
+- **Tractable slice that IS real:** the human-in-the-loop research-assist harness we
+  ran THIS session (agents search + experiment + adversarially critique + correct).
+  Improving research-automation TOOLING is a genuine independent contribution now.
+
+Decision framing (Rohin's two currencies): (1) elite research env → finished real
+artifact (benchmark) beats unfinished moonshot; (2) help the field → benchmark helps
+now, AGI-being helps nobody until it works & labs get there first. Both point to:
+SHIP the tractable thing (benchmark or research-tooling), keep AGI vision as the
+taste-generating north star.
+
+Open decision for Rohin: benchmark paper vs research-tooling contribution vs a
+less-crowded cognitive-stack cell. Awaiting his call on what OUTCOME he's optimizing.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
