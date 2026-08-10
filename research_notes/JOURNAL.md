@@ -829,6 +829,45 @@ things" is old. What keeps Paper 1 non-incremental = (1) structure-vs-detail
 measurement vs ground truth (the moat) + (2) scaling/bitter-lesson result
 (RQ2). Keep BOTH as co-headlines regardless of what value-weighting shows.
 
+### The capacity-constraint answer to "why not long context" (2026-08-09)
+
+Q (Rohin): how is attentioned parametric memory different from sheer context
+length? (With enough heads, some head encodes episodes+details anyway.)
+
+**Answer — the difference exists ONLY under a capacity constraint.**
+- Context/KV cache: verbatim, unbounded, lossless, O(n) retrieval, blunt/no
+  forgetting.
+- ATLAS-style parametric memory: compressed into FIXED weights, bounded,
+  lossy, O(1) retrieval, graceful capacity-driven forgetting.
+- Unbounded-capacity parametric memory = context (it can memorize verbatim,
+  no compression, no point). Compression — and everything interesting
+  (structure-up/detail-down) — happens ONLY because a fixed net can't keep
+  everything and must choose.
+
+**Consequence for the experiment:** the paper's claim is NOT "parametric
+memory vs context" in the abstract. It's: at a FIXED memory budget, does
+compression-via-consolidation retain more USEFUL (structural) info than
+context, which must truncate? The advantage is invisible while everything
+fits in context; it appears only when #experiences > budget → **the scaling
+curve IS the "different from context" proof.** Differentiation-from-context =
+the scaling behavior; they are the same thing.
+
+**Redirect on multi-head intuition:** abstraction is NOT the differentiator
+(attention heads over context also abstract). COMPRESSION-under-capacity is.
+Don't chase "more heads = richer memory."
+
+**How ATLAS/Titans works (substrate ref):** memory = small MLP whose WEIGHTS
+are the memory. Write = gradient step making M(key)≈value, scaled by surprise,
+with momentum + weight-decay forgetting. Titans = online (per-token); ATLAS
+"Omega rule" = optimize over a WINDOW at once → maps to a batched sleep pass.
+Read = forward pass M(query). Forget = decay + finite capacity.
+
+**Recommendation refined:** use ATLAS as substrate (don't reinvent). The
+"tweak" that makes it a paper (not a scaling study of ATLAS): (1) run its
+window update as an OFFLINE sleep pass; (2) add structure-vs-detail
+measurement vs ground-truth graph (the novel apparatus); (3) compare vs
+context at matched budget; (4) scaling curves.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
