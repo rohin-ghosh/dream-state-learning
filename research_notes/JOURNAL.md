@@ -1019,6 +1019,56 @@ just "use a bigger model."
 per-relation? exp2.5 suggests per-relation. This is cheap to test in the abstract
 (make value a function of pairs, attribute to pairs) before any GPU.
 
+### Prior-art check: the intersection is OPEN (2026-08-10)
+
+`research_notes/12_atlas_baselines_learned_write.md`. Three verdicts:
+1. **ATLAS baselines = sequence-model architectures ONLY, no RAG/memory systems.**
+   Defends "parametric test-time memory > attention/linear-recurrent at long
+   context" (BABILong +80% @10M tokens). RAG only in Titans as a beaten strawman.
+2. **Learned-value WRITE into parametric memory = OPEN.** Nearest: GradMem (learns
+   parametric write, NO value head, self-supervised) + Auto-Dreamer (outcome-
+   trained consolidation but into EXTERNAL TEXT BANK, not parametric weights). We
+   sit in their unoccupied intersection. **Auto-Dreamer = the differentiate-from
+   paper**; our delta = outcome-trained value writing into PARAMETRIC fast-weights.
+   Caveat: fast-moving, moderate confidence, final sweep before submission.
+3. **Cross-episode? NO** — Titans/ATLAS only long-context within a single sequence,
+   memory resets per sequence. Cross-episode consolidation = clean separate
+   novelty axis (confirms the long-context ≠ LTM nuance).
+
+Positioning crystallized: novelty = [outcome-trained value head] weighting
+[parametric fast-weight] writes in a [cross-episode consolidation] regime. All
+three axes needed; each alone is taken.
+
+### Exp 3 — relational value recovers what per-item lost (2026-08-10)
+
+`exp3_relational_value.py`. Same conjunctive generator as exp2.5. Value learned on
+PAIRS vs per-item value lifted to pairs.
+Result: relational dP=7.08, AP=1.000 (perfect); item_lifted dP=2.84, AP=0.442.
+→ Confirms: when structure is relational, the value head must predict PER-RELATION,
+not per-item. exp2.5's collapse fixed by matching representation to structure.
+
+**Caveat (pre-empting overclaim):** AP=1.0 is partly matched-representation — I
+handed the model the pair features matched to the generative structure. Real
+consequence: (1) conceptually right but the perfect number is an artifact;
+(2) enumerating relations DOESN'T SCALE (40 facts→780 pairs, worse for triples).
+→ The scalable version can't enumerate — it must LEARN relational keys. That's
+exactly what an ATLAS-style MLP memory does (distributed relational reps, not
+explicit pair tables). So exp3 motivates WHY a learned parametric memory beats an
+explicit relational store: learned keys discover relations you can't enumerate.
+
+Design decision settled: the value head predicts relational value; the memory must
+form learned relational keys (not per-item, not enumerated pairs). This is a
+concrete spec for the ATLAS-integration stage.
+
+### CPU-experiment arc summary (exp0–exp3)
+0: killed a trivial task (noise-floor gate).
+1: retracted a false "value is core" positive under adversarial code review.
+2: trained value clears the bar (qualified) — but matched model class.
+2.5: mismatch → per-item value collapses; value is RELATIONAL.
+3: relational value recovers structure — but must be LEARNED, not enumerated.
+Next (still CPU): could test learned relational keys (small attention/MLP) OR move
+to ATLAS integration. All prior-art axes confirmed open (note 12).
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
