@@ -918,6 +918,39 @@ for a real (lossy) parametric memory. Next: port to ATLAS-style fast-weight MLP
 (value-scaled gradient imprint + forward-pass probe), same discipline, check the
 +0.28 gain survives interference.
 
+### Exp 1 CORRECTED — earlier headline RETRACTED (2026-08-10)
+
+External adversarial CODE review (not prose) refuted Exp 1. Confirmed defects:
+binary HIGH/LOW made the sweep closed-form (degenerate oracle at p_hit=1.0);
+canary couldn't fail; dr_kept was budget-fill; significance test invalid.
+`exp1_corrected.py` + `REPORT_exp1_corrected.md` fix all five.
+
+Corrected findings (continuous overlapping value ~N(d',1), budget-free AP,
+paired tests, 30 seeds):
+- **"value-weighting is CORE (+0.282)" is RETRACTED** — it was a binary-magnitude
+  artifact.
+- **Canary (d'=0) now does real work:** value_mean → 0.024 (exact chance,
+  frequency-neutral ✓) but value_max=0.204 & value_sum=0.137 sit ABOVE chance
+  with ZERO type signal → **frequency-contaminated** = the "value is frequency in
+  disguise" attack, now MEASURED. My "max is load-bearing" claim was partly that.
+- **No aggregation robustly beats frequency under moderate overlap (d'=1.5):**
+  value_max +0.220 AP but flips with budget & is contaminated; value_mean (only
+  clean aggregation) is WORSE than frequency (0.176 vs 0.438) — rare facts have
+  noisy means. Clean win only at d'≈3 (ceiling).
+- Net: a value signal helps ONLY if high-discriminability (d'≈3) AND
+  frequency-decorrelated. Hand-set signals don't clear it. NEGATIVE-leaning
+  necessary-condition result — quantifies the bar.
+
+**→ This MOTIVATES Rohin's trained-value-function proposal.** Path: (1) synthetic
+data with known outcomes; (2) TRAIN value model on outcomes, MEASURE its d' +
+frequency-correlation — does it clear the bar? (3) only then: weight consolidation
+into real ATLAS memory, compare vs ATLAS/frequency/RAG/LoRA baselines.
+
+**Method lesson enforced:** critic = separate adversarial pass over CODE +
+per-seed numbers, prompted to refute. Narrative self-review grades the prose (the
+strongest part) and misses the sharpest attack. This is the failure mode a long
+autonomous loop mass-produces.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,

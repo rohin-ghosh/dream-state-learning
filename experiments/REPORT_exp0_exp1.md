@@ -1,3 +1,10 @@
+> ⚠️ **SUPERSEDED (§3–6).** An adversarial code review refuted Exp 1's claims:
+> binary value magnitudes made the sweep closed-form (a degenerate oracle), the
+> canary could not fail, `dr_kept` was budget-fill, and the significance test was
+> invalid. See `REPORT_exp1_corrected.md` — the corrected experiment REVERSES the
+> "value-weighting is core" headline. Exp 0 (§2) stands. This file is kept as the
+> flawed record for the honesty trail.
+
 # Report — Exp 0 & Exp 1: Does value-weighted consolidation beat frequency where frequency must fail?
 
 **Date:** 2026-08-10 · **Compute:** local, numpy-only, seconds · **Code:**
