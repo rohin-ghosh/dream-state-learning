@@ -868,6 +868,32 @@ window update as an OFFLINE sleep pass; (2) add structure-vs-detail
 measurement vs ground-truth graph (the novel apparatus); (3) compare vs
 context at matched budget; (4) scaling curves.
 
+### Exp 0 ran — noise-floor gate worked, task too easy (2026-08-10)
+
+Built + ran `experiments/exp0_noise_floor.py` (numpy only, local, seconds).
+Adopted the pasted verification-loop discipline: oracle-by-construction, noise
+floor, null canary, seeds.
+
+Result: harness VALID (null/canary diagonal ≈0.00±0.04 — eval not biased),
+noise floor small (~0.04–0.09). BUT task trivially baked in: structural facts
+recur by construction, so even TRUNCATION (dumb context baseline) scores 0.80
+diagonal; frequency 0.98 with ZERO variance. "A diagonal exists" is NOT a
+result — the cheap baseline gets it.
+
+→ The gate did its job: caught a too-easy task in 10s before building ATLAS.
+Real bar = a regime where truncation/frequency FAIL and only value/structure-
+aware memory wins. Task v2 (in exp0_results.md): (1) recurring-but-useless
+details (frequency wrongly keeps), (2) rare-but-critical structure (frequency
+wrongly drops), (3) downstream structural-query readout not set-membership.
+This ALSO resolves the value-weighting oscillation empirically: if value beats
+frequency in v2 it's core; if not, the capital thesis is in trouble — learned
+cheaply either way.
+
+Verification-loop components still to add (from pasted advice): two-tier eval
+(cheap proxy inner loop + expensive survivors), diversity archive (niche-best
+not single champion), reasoning-at-proposal-stage. Defer until task v2
+discriminates.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
