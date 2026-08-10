@@ -1195,6 +1195,32 @@ Status: M1+M2 done + hardened (CPU, 17/17 tests, pushed). M3 (LLM tier) needs GP
 Artifact is lab-outreach-ready. NEXT (Rohin's call): M3 on GPU + workshop write-up;
 outreach to paper authors with the benchmark as the hook.
 
+### External audit + fixes (2026-08-11)
+
+An external auditor (ran the code, turned objections into probes) confirmed the
+rigor layer is real and found 6 things. All implemented + regression-tested:
+- **value_z = vsum/√count** (the sufficient statistic) DOES beat frequency
+  (+0.46, t=41) and passes the d'=0 canary → exp1-corrected's "no aggregation
+  beats frequency / negative-leaning" was itself an OVERCORRECTION (tested only
+  max/mean/sum). Third flip: exp1(yes)→corrected(no)→audit(yes-with-z). Weakens
+  the "value must be trained" motivation. Relational-pair finding unaffected.
+- linear-outcome base rate was degenerate (2.1%, analytic offset assumed rare SR
+  shared marginal p) → empirical centering, base ~0.5. Now tested.
+- DR-partner invariant could silently break "frequency uninformative" when
+  n_detail_recurring > n_struct_frequent → config assert + partner DR with SF only
+  + sweep test.
+- item_lifted was a signed product (anti-predictive pair scored high) → relu-
+  product; relational wins by MORE against the corrected baseline.
+- the relational sweep confounded episodes×recipes; the "grows as concentrate"
+  claim was wrong → fixed-episode sweep shows an INVERTED-U peaking at 3-4 recipes.
+- exp2 green light RETRACTED (trained_value ties frequency n.s. on the benchmark).
+- Hygiene: archived orphaned dream_state/scripts/configs; dead knob removed;
+  README 14→23 tests; .gitignore. 23/23 tests pass.
+
+Meta-lesson reinforced: the MACHINERY was sound every time; the CLAIMS overshot,
+and a separate adversarial pass (auditor writing assertions, not opinions) is what
+catches it. Same pattern as exp1. The benchmark is now genuinely hardened.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
