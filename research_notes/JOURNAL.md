@@ -980,6 +980,45 @@ Conclusion reached with Rohin: **ATLAS's fast-weight KV memory alone is NOT
 enough — it needs a trained value-weighting layer on top to decide what to
 consolidate.** That trained layer is the paper's core mechanism.
 
+**CORRECTION (2026-08-10, Rohin caught this):** the above is an OVERCLAIM. exp0/1/2
+never ran ATLAS or any parametric KV-MLP memory — they are abstract set-retention
++ logistic-regression simulations. They establish only a NECESSARY-CONDITION
+argument about the value SIGNAL (frequency/co-occurrence insufficient;
+trained-on-outcomes signal can recover causal structure). They do NOT prove
+ATLAS-alone fails — that requires actually running ATLAS. Restated honestly:
+*"IF we weight consolidation, THEN the weight must be a trained value signal, not
+frequency/surprise."* Whether ATLAS+value beats ATLAS-alone is an UNTESTED
+hypothesis, to be settled by running both. Note ATLAS weights writes by SURPRISE
+(gradient magnitude), not frequency or outcome-value — so the differentiation
+(surprise vs learned value) is real but must be shown empirically on ATLAS.
+
+### Exp 2.5 — mismatch test exposes a DEEPER issue: value may need to be RELATIONAL (2026-08-10)
+
+`exp2_5_mismatch.py`. Nonlinear (conjunctive) outcome: success = ANY structural
+PAIR both present. Fit with mismatched linear logreg AND a nonlinear MLP; per-fact
+value via occlusion attribution.
+
+Result: under nonlinear structure the trained per-fact value signal DROPS HARD —
+dP(vs confounded) ≈ 1.8 (both learners) vs 7.84 in matched Exp 2. AP still 0.88
+(usable, not collapsed). The MLP did NOT beat logreg (1.72 vs 1.80) — so it's not
+just "use a bigger model."
+
+**Two honest findings:**
+1. Exp 2's strong numbers were substantially INFLATED by matched model class +
+   additive-per-item outcome. Realistic (nonlinear) structure weakens per-item
+   trained value a lot. Green light downgraded from "qualified" to "conditional."
+2. DEEPER: when value lives in RELATIONSHIPS (pairs/dependencies), a SCALAR
+   PER-ITEM value is fundamentally lossy — no single fact is valuable alone, so
+   per-item attribution is weak. This is the whole project's thesis biting back:
+   structure IS relational (cup→coaster), so the consolidation weighting may need
+   to be RELATIONAL (value of a relation/key-pair), not per-item. Hypothesis
+   raised by exp2.5, not proven — but it redirects the design: the value signal
+   and the memory keys may need to encode relations, not items.
+
+→ Next design question BEFORE ATLAS: should consolidation value be per-item or
+per-relation? exp2.5 suggests per-relation. This is cheap to test in the abstract
+(make value a function of pairs, attribute to pairs) before any GPU.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
