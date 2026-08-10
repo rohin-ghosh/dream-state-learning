@@ -894,6 +894,30 @@ Verification-loop components still to add (from pasted advice): two-tier eval
 not single champion), reasoning-at-proposal-stage. Defer until task v2
 discriminates.
 
+### Exp 1 ran — value-weighting is CORE (2026-08-10)
+
+Built discriminating task (rare-critical structure SR + recurring-useless
+distractors DR + noisy runtime value signal; label used only for scoring).
+`experiments/exp1_value_vs_frequency.py`, report in
+`experiments/REPORT_exp0_exp1.md`.
+
+Result: frequency & truncation both provably fail (freq keeps 100% distractors,
+drops 57% of rare structure; trunc drops 99% of rare structure). value(MAX
+one-shot imprint), using only the noisy signal, gets 1.000 structural retention
+incl. rare, drops distractors (dr_kept 0.415), +0.282 readout over frequency
+(~6× noise floor). Degrades gracefully; breaking point ~p_hit 0.4.
+
+**value_sum ablation is the key defense:** accumulative value underperforms
+MAX (struct_rare 0.675 vs 1.000; dr_kept 0.825 vs 0.415) → the ONE-SHOT MAX
+imprint is load-bearing, refuting "value = frequency in disguise." Canary clean,
+noise floor ~0.048.
+
+→ **Resolves the value-weighting oscillation: CORE, not cosmetic** — but only as
+a NECESSARY-condition test on an idealized set-retention model. NOT yet proven
+for a real (lossy) parametric memory. Next: port to ATLAS-style fast-weight MLP
+(value-scaled gradient imprint + forward-pass probe), same discipline, check the
++0.28 gain survives interference.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
