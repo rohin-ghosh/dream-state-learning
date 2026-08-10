@@ -1,3 +1,14 @@
+> ⚠️ **RECONCILIATION (2026-08-11, external audit).** This report's "QUALIFIED GREEN
+> LIGHT" (trained value AP=1.000) did NOT survive the hardened benchmark. On
+> StructMem-Bench, `trained_value` ties frequency (+0.012, t=0.9, n.s.) on per-item
+> structural AP. exp2's AP=1.0 was the matched-model-class artifact exp2.5 predicted
+> (linear-logistic data fit by logistic regression). The green light is **RETRACTED**
+> for the per-item claim: a *trained* per-item value function is NOT clearly better
+> than a simple statistic here — and note value_z (untrained, frequency-neutral)
+> beats both. Where trained value could still matter: disentangling collinear
+> confounds (exp2's confound sweep) and RELATIONAL structure — untested at scale.
+> Treat exp2 as motivation-not-result.
+
 # Report — Exp 2: Can a value function trained on outcomes clear the bar?
 
 **Date:** 2026-08-10 · **Code:** `experiments/exp2_trained_value.py` (30 seeds, 2000 episodes, CPU/numpy, seconds) · **Follows:** Exp 1 corrected, which showed a value signal helps consolidation only if high-discriminability AND frequency-decorrelated, and that hand-set signals don't clear it.

@@ -76,6 +76,19 @@ def score_value_mean(s: Stream, rng) -> np.ndarray:
     return vmean
 
 
+def score_value_z(s: Stream, rng) -> np.ndarray:
+    """z-score = vsum / sqrt(count) = mean * sqrt(count). The SUFFICIENT STATISTIC for
+    'is this fact's per-appearance value mean > 0' under value ~ N(mu, 1). Uniquely
+    both frequency-neutral (passes the d'=0 canary, unlike max/sum) AND evidence-
+    accumulating (uses sample size, unlike mean). Audit finding: this is the value
+    aggregation that DOES beat frequency at every d'>0 — correcting exp1's earlier
+    'no clean aggregation beats frequency' overcorrection."""
+    count, _, _, vsum, _ = _summaries(s)
+    with np.errstate(all="ignore"):
+        z = np.divide(vsum, np.sqrt(count), out=np.zeros_like(vsum), where=count > 0)
+    return z
+
+
 def score_trained_value(s: Stream, rng) -> np.ndarray:
     """Per-item value trained on outcomes (logreg on presence -> y)."""
     return _logreg(s.X, s.y)
@@ -92,6 +105,7 @@ PER_FACT = {
     "surprise": score_surprise,
     "value_max": score_value_max,
     "value_mean": score_value_mean,
+    "value_z": score_value_z,
     "trained_value": score_trained_value,
     "oracle": score_oracle,
 }
@@ -128,10 +142,15 @@ def score_relational(s: Stream, rng):
 
 
 def score_item_lifted(s: Stream, rng):
-    """Best per-item value lifted to pairs by product (baseline for relational eval)."""
+    """Best per-item value lifted to pairs (baseline for relational eval). A pair is
+    valuable iff BOTH facts are individually valuable, so lift by the product of the
+    POSITIVE parts (relu-product) — not a raw signed product, under which two strongly
+    ANTI-predictive facts would score as high as two predictive ones (audit finding).
+    This is a strictly stronger/fairer per-item baseline; relational still beats it."""
     v = score_trained_value(s, rng)
+    vp = np.maximum(v, 0.0)
     pairs, _ = candidate_pairs(s)
-    scores = np.array([v[i] * v[j] for (i, j) in pairs])
+    scores = np.array([vp[i] * vp[j] for (i, j) in pairs])
     return pairs, scores
 
 

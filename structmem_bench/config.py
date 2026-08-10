@@ -29,7 +29,6 @@ class BenchConfig:
     # --- value signal (what a mechanism may observe; NEVER the label) ---
     value_dprime: float = 1.5        # discriminability of per-appearance value:
     #                                  structural ~ N(dprime,1), detail ~ N(0,1)
-    value_freq_decorrelated: bool = True  # if False, value leaks frequency (ablation)
 
     # --- outcome model ---
     outcome: str = "relational"      # "relational" (conjunctive recipe pairs) | "linear"
@@ -44,6 +43,14 @@ class BenchConfig:
         assert 0.0 < self.p_present < 1.0
         assert self.p_present <= self.confound_a <= 1.0, (
             "confound_a must be in [p_present, 1]; a=p means no confound"
+        )
+        # DR facts must partner with FREQUENT structural facts, else they inherit a
+        # low marginal and 'frequency is uninformative on matched facts' silently
+        # breaks (audit finding). Recurring-detail count must not exceed frequent
+        # structural count.
+        assert self.n_detail_recurring <= self.n_struct_frequent, (
+            "n_detail_recurring must be <= n_struct_frequent so DR shares SF's "
+            "marginal (keeps frequency uninformative on matched facts)"
         )
         # recipes are drawn from FREQUENT structural facts (learnable relations)
         if self.outcome == "relational":

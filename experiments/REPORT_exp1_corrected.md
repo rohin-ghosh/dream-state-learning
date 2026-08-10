@@ -1,3 +1,18 @@
+> ⚠️ **PARTIAL RE-CORRECTION (2026-08-11, external audit).** This report's headline
+> — "no aggregation robustly beats frequency," called "negative-leaning" — was
+> itself an OVERCORRECTION. It tested only {max, mean, sum} and missed the sufficient
+> statistic: **value_z = vsum/√count** (= mean·√count), the unique aggregation that is
+> BOTH frequency-neutral (passes the d'=0 canary, unlike max/sum) AND evidence-
+> accumulating (uses sample size, unlike mean). On StructMem-Bench, value_z beats
+> frequency by **+0.46 (t=41)** at d'=1.5 and passes the d'=0 canary. So the correct
+> claim is: **a per-item value signal DOES beat frequency with the right aggregation.**
+> The retraction of "max is core" still stands (max was frequency-contaminated). But
+> the "value must be trained" motivation is WEAKER than this report concluded — a
+> one-line z-score already works per-item. (Relational value is still needed for
+> dependency PAIRS; that finding is unaffected.) Third flip of this question:
+> exp1(yes)→exp1-corrected(no)→audit(yes-with-z-score). Meta-lesson: derive the
+> sufficient statistic, don't guess aggregations.
+
 # Report — Exp 1 CORRECTED (supersedes REPORT_exp0_exp1.md §3–6)
 
 **Date:** 2026-08-10 · **Code:** `experiments/exp1_corrected.py` (30 seeds, budget-free AP + budget sweep, paired tests) · The original `exp1_value_vs_frequency.py` and its report are **kept in-repo as the flawed record**; an external adversarial code review (not prose review) refuted them. This corrects all five defects.

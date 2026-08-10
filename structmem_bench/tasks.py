@@ -91,9 +91,11 @@ def generate(cfg: BenchConfig, seed: int) -> Stream:
         for e in eps:
             X[e, idx] = 1.0
 
-    # recurring-detail (DR_k) collinear with structural partner struct[k]
+    # recurring-detail (DR_k) collinear with a FREQUENT structural partner (SF only,
+    # so DR inherits SF's marginal p_present; partnering with rare SR would give DR a
+    # low marginal and break the frequency-uninformative invariant — audit finding).
     for k, idx in enumerate(dr):
-        partner = struct[k % len(struct)]
+        partner = sf[k % len(sf)]
         sp = X[:, partner] == 1
         prob = np.where(sp, a, b)
         X[:, idx] = (rng.random(n_ep) < prob).astype(float)
@@ -110,8 +112,13 @@ def generate(cfg: BenchConfig, seed: int) -> Stream:
     relations = []
     if cfg.outcome == "linear":
         true_w[struct] = rng.uniform(0.8, 1.2, size=len(struct))
-        offset = true_w[struct].sum() * p
-        logit = cfg.outcome_temp * (X @ true_w - offset)
+        # center on the EMPIRICAL mean utility (not an analytic guess that assumed all
+        # structural facts share marginal p — the rare SR facts don't, which collapsed
+        # the base rate to ~2% — audit finding). Empirical centering -> base rate ~0.5.
+        with np.errstate(all="ignore"):
+            util = X @ true_w
+        offset = float(util.mean())
+        logit = cfg.outcome_temp * (util - offset)
     else:  # relational: success if ANY recipe pair both present
         # recipes are among FREQUENT structural facts so the relation is observed
         # often enough to be learnable by ANY method (a relation seen once is not a
@@ -127,6 +134,7 @@ def generate(cfg: BenchConfig, seed: int) -> Stream:
             sat += X[:, i] * X[:, j]
         logit = cfg.outcome_temp * (sat - 1.0)
     logit = np.clip(logit, -30, 30)
+    assert np.all(np.isfinite(logit)), "outcome logit non-finite"
     y = (rng.random(n_ep) < 1 / (1 + np.exp(-logit))).astype(float)
 
     # --- value signal (per appearance; 0 where absent) ---

@@ -40,14 +40,16 @@ parametric-memory field on an axis none of the methods report.
 ```bash
 cd /path/to/dream-state
 PYTHONPATH=. python3 run_benchmark.py          # headline table + rigor checks
-PYTHONPATH=. python3 tests/test_structmem.py   # 14 invariant tests
+PYTHONPATH=. python3 tests/test_structmem.py   # 23 invariant tests
 ```
 
 ## Methods included
 `random` (null) · `truncation` (recency) · `frequency` · `surprise` (ATLAS-style
-proxy) · `value_max` / `value_mean` (per-item) · `trained_value` (outcome-trained
-per-item) · `relational` (learned per-pair, ours) · `item_lifted` (per-item→pair
-baseline) · `oracle` (ceiling).
+proxy) · `value_max` / `value_mean` (per-item aggregations) · `value_z`
+(= vsum/√count, the frequency-neutral sufficient statistic — the strongest per-item
+value method) · `trained_value` (outcome-trained per-item) · `relational` (learned
+per-pair, ours) · `item_lifted` (per-item→pair relu-product baseline) · `oracle`
+(ceiling).
 
 ## Status & honesty
 v0.1, abstract tier. Adversarially red-teamed (see `research_notes/redteam_*.md`).

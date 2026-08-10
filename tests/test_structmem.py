@@ -154,6 +154,64 @@ def test_constant_scorer_canary():
     assert c["constant_ok"], f"constant-scorer canary above chance: {c}"
 
 
+# ---------- value_z: the sufficient statistic (audit fix) ----------
+def test_value_z_passes_canary_at_dprime_zero():
+    # frequency-neutral: with NO value signal (d'=0), value_z must sit at chance.
+    c = _cfg(value_dprime=0.0)
+    aps = []
+    for s in range(15):
+        stream = tasks.generate(c, seed=s)
+        aps.append(metrics.average_precision(memory.score_value_z(stream, None),
+                                             stream.is_structural))
+    chance = 20 / c.n_facts
+    assert np.nanmean(aps) < chance + 0.05, f"value_z leaks at d'=0: {np.nanmean(aps)}"
+
+
+def test_value_z_beats_frequency_when_signal_present():
+    # the corrected claim: a frequency-NEUTRAL, evidence-accumulating aggregation
+    # beats frequency at d'>0 (contra exp1-corrected's overcorrection).
+    agg = harness.run_per_fact(_cfg(value_dprime=1.5),
+                               methods=["value_z", "frequency"], seeds=20)
+    d = stats.paired_diff(np.array(agg["value_z"]["ap_structural"][2]),
+                          np.array(agg["frequency"]["ap_structural"][2]))
+    assert d["mean"] > 0.2 and d["sig"], f"value_z should beat frequency: {d}"
+
+
+def test_value_z_not_frequency_contaminated():
+    # unlike value_max/value_sum, value_z must NOT beat chance at d'=0 (frequency
+    # contamination test).
+    agg = harness.run_per_fact(_cfg(value_dprime=0.0),
+                               methods=["value_z", "value_max"], seeds=15)
+    chance = 20 / _cfg().n_facts
+    assert agg["value_z"]["ap_structural"][0] < chance + 0.05
+    assert agg["value_max"]["ap_structural"][0] > agg["value_z"]["ap_structural"][0]
+
+
+# ---------- linear outcome base rate (audit fix #1) ----------
+def test_linear_outcome_base_rate_sane():
+    c = _cfg(outcome="linear")
+    rates = [tasks.generate(c, seed=s).y.mean() for s in range(15)]
+    mr = float(np.mean(rates))
+    assert 0.2 < mr < 0.8, f"linear base rate degenerate: {mr}"
+
+
+# ---------- DR-partner invariant across distractor count (audit fix #2) ----------
+def test_frequency_uninformative_across_dr_count():
+    for ndr in (5, 8, 10):
+        dp = harness.sanity_frequency_matched(_cfg(n_detail_recurring=ndr), seeds=15)
+        assert abs(dp) < 0.5, f"frequency leaked at n_detail_recurring={ndr}: dP={dp}"
+
+
+def test_dr_count_over_sf_rejected():
+    # config must REJECT a setting that would silently break the frequency invariant
+    raised = False
+    try:
+        _cfg(n_detail_recurring=15, n_struct_frequent=10)
+    except AssertionError:
+        raised = True
+    assert raised, "config should reject n_detail_recurring > n_struct_frequent"
+
+
 # ---------- paired stats ----------
 def test_paired_diff_zero_when_identical():
     a = np.array([0.5, 0.6, 0.7])
