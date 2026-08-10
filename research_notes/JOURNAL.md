@@ -1110,6 +1110,30 @@ Two honest tensions to design around (not blockers):
 This is testable cheaply next: can a small attention head LEARN relational value
 from outcomes (frozen backbone)? = the scalable version of exp3.
 
+### COMPETITIVE VERDICT after 6 deep-reads (2026-08-10) — see note 18
+
+Parametric memory is red-hot (6+ papers May–Aug 2026). EVERY axis of the original
+idea is occupied: parametric fast-weights (Titans/ATLAS/TMEM/EVAF), value-gated
+writes (D-MEM/TMEM), offline cross-episode consolidation (COVE), what-to-internalize
++ anti-recitation forgetting (COVE), CLS framing (User-as-Engram), embodied
+parametric skills (PEAM). Nearest: D-MEM (dopamine-gated writes, ~90% of value-gate
+axis), COVE (offline cross-episode what-to-internalize — HIGH but per-item &
+surface-form), TMEM (RL LoRA writes but online within-episode — cousin).
+
+**Surviving novelty collapsed to ~one axis: RELATIONAL value + relational-vs-episodic
+forgetting** (exp3's angle — unseen anywhere; everyone else is per-item + surface-form).
+
+**Honest position:** independent researcher as 7th method paper at this exact
+intersection, racing funded labs, is structurally weak. RECOMMENDATION: PIVOT to
+BENCHMARK-LED — build the structure-vs-detail ground-truth benchmark (half-built:
+the crafting sim), evaluate the CROWD on relational-structure retention, show they
+miss it, relational-value consolidation fills it. A benchmark gains value as the
+field grows (scoop-immune) and is the natural home for our one real novelty. Method
+becomes the benchmark's headline result, not a standalone claim vs D-MEM/TMEM/COVE.
+
+Decision pending Rohin. Alternatives: pure benchmark paper; pivot to a less-crowded
+cognitive-stack cell; or race the narrow relational lane.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
