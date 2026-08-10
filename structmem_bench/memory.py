@@ -98,16 +98,20 @@ PER_FACT = {
 
 
 # ============================ relational methods ============================
-def candidate_pairs(s: Stream, restrict_to_present=True):
-    """Enumerate candidate relation pairs. To keep this tractable we restrict to
-    pairs that co-occur at least once (present-together), which is all a method
-    could plausibly consider. Returns (pairs, matrix) where matrix[:,k]=AND."""
+def candidate_pairs(s: Stream, min_cooc: int = 3):
+    """Enumerate candidate relation pairs, restricted to pairs that CO-OCCUR at least
+    `min_cooc` times. This is what any relation-learner would plausibly consider — and
+    it excludes the spurious single-co-occurrence pairs created by one-shot details
+    (which otherwise explode and dilute the candidate set; red-team / exp3 caveat).
+    A true recipe pair co-occurs many times, so it survives; a one-shot coincidence
+    does not. Returns (pairs, matrix) where matrix[:,k] = fact_i AND fact_j."""
     X = s.X
     F = s.cfg.n_facts
     with np.errstate(all="ignore"):
         cooc = (X.T @ X)  # (F,F) co-occurrence counts
-    pairs = [(i, j) for i, j in combinations(range(F), 2) if cooc[i, j] > 0] \
-        if restrict_to_present else list(combinations(range(F), 2))
+    pairs = [(i, j) for i, j in combinations(range(F), 2) if cooc[i, j] >= min_cooc]
+    if not pairs:  # fall back so the metric is defined on degenerate configs
+        pairs = [(i, j) for i, j in combinations(range(F), 2) if cooc[i, j] > 0]
     M = np.empty((X.shape[0], len(pairs)))
     for k, (i, j) in enumerate(pairs):
         M[:, k] = X[:, i] * X[:, j]

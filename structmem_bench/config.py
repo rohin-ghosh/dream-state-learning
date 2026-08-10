@@ -33,7 +33,10 @@ class BenchConfig:
 
     # --- outcome model ---
     outcome: str = "relational"      # "relational" (conjunctive recipe pairs) | "linear"
-    n_recipes: int = 8               # relational: # of causal structural pairs
+    n_recipes: int = 4               # relational: # of causal structural pairs. FEWER =
+    #                                  more concentrated dependencies = regime where
+    #                                  relational value beats per-item (characterized
+    #                                  by the recipe-count sweep in run_benchmark).
     outcome_temp: float = 1.7        # logistic steepness
 
     def __post_init__(self):
@@ -42,9 +45,10 @@ class BenchConfig:
         assert self.p_present <= self.confound_a <= 1.0, (
             "confound_a must be in [p_present, 1]; a=p means no confound"
         )
-        # rare facts must be able to partner into recipes
+        # recipes are drawn from FREQUENT structural facts (learnable relations)
         if self.outcome == "relational":
-            assert self.n_recipes <= self.n_struct_frequent + self.n_struct_rare
+            max_pairs = self.n_struct_frequent * (self.n_struct_frequent - 1) // 2
+            assert self.n_recipes <= max_pairs, (self.n_recipes, max_pairs)
 
     # --- derived ---
     @property

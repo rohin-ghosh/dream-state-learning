@@ -113,7 +113,10 @@ def generate(cfg: BenchConfig, seed: int) -> Stream:
         offset = true_w[struct].sum() * p
         logit = cfg.outcome_temp * (X @ true_w - offset)
     else:  # relational: success if ANY recipe pair both present
-        pool = struct.tolist()
+        # recipes are among FREQUENT structural facts so the relation is observed
+        # often enough to be learnable by ANY method (a relation seen once is not a
+        # fair test). Rare structural facts remain the per-item hard case.
+        pool = sf.tolist()
         recs = set()
         while len(recs) < cfg.n_recipes:
             i, j = sorted(rng.choice(pool, size=2, replace=False).tolist())
@@ -128,10 +131,17 @@ def generate(cfg: BenchConfig, seed: int) -> Stream:
 
     # --- value signal (per appearance; 0 where absent) ---
     mu = np.where(np.isin(np.arange(F), struct), cfg.value_dprime, 0.0)
-    if not cfg.value_freq_decorrelated:
-        # ablation: value leaks frequency -> detail that recurs gets boosted mean
-        mu = mu  # (kept simple; decorrelated is the default/correct setting)
     samples = rng.normal(mu[None, :], 1.0, size=(n_ep, F))
     value = np.where(X > 0, samples, 0.0)
+
+    # --- DECORRELATE fact index from type (defense against position leaks) ---
+    # Everything above is built in a contiguous type layout; permute the fact axis
+    # with a seeded permutation so no method/metric can recover the label from index.
+    perm = rng.permutation(F)                 # new column k <- old column perm[k]
+    inv = np.empty(F, dtype=int); inv[perm] = np.arange(F)  # old fact f -> new index
+    X = X[:, perm]
+    value = value[:, perm]
+    ft = ft[perm]
+    relations = [tuple(sorted((int(inv[i]), int(inv[j])))) for (i, j) in relations]
 
     return Stream(X=X, value=value, y=y, fact_type=ft, relations=relations, cfg=cfg)

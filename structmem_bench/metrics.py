@@ -10,14 +10,29 @@ from __future__ import annotations
 
 import numpy as np
 
+# Fixed tie-break seed. Ranking metrics MUST break score ties with an order that is
+# uncorrelated with fact index/type — otherwise contiguous type layouts leak the
+# label through stable-sort tie-breaking (red-team CRITICAL). A fixed random tie
+# order is deterministic (reproducible) AND unbiased w.r.t. type.
+_TIE_SEED = 20240817
+
+
+def _order_desc(scores: np.ndarray) -> np.ndarray:
+    """Indices sorting `scores` descending, ties broken by a fixed RANDOM order
+    (not by index). Deterministic given _TIE_SEED."""
+    scores = np.asarray(scores, float)
+    tie = np.random.default_rng(_TIE_SEED).random(len(scores))
+    # lexsort: last key is primary -> sort by -scores (desc), break ties by `tie`.
+    return np.lexsort((tie, -scores))
+
 
 def average_precision(scores: np.ndarray, positive: np.ndarray) -> float:
-    """AP treating `positive` (bool mask) as the relevant class."""
+    """AP treating `positive` (bool mask) as the relevant class. Tie-safe."""
     assert scores.shape == positive.shape
     n_pos = int(positive.sum())
     if n_pos == 0 or len(scores) == 0:
         return float("nan")
-    order = np.argsort(-scores, kind="stable")
+    order = _order_desc(scores)
     lab = positive[order]
     hits = np.cumsum(lab)
     prec = hits / (np.arange(len(scores)) + 1)
@@ -33,13 +48,13 @@ def dprime(scores: np.ndarray, positive: np.ndarray) -> float:
 
 
 def retention_at_budget(scores: np.ndarray, target: np.ndarray, budget: int) -> float:
-    """Fraction of the target class that lands in the top-`budget` by score."""
+    """Fraction of the target class that lands in the top-`budget` by score. Tie-safe."""
     n_target = int(target.sum())
     if n_target == 0:
         return float("nan")
     if budget >= len(scores):
         return 1.0
-    keep = set(np.argsort(-scores, kind="stable")[:budget].tolist())
+    keep = set(_order_desc(scores)[:budget].tolist())
     got = sum(1 for i in np.where(target)[0] if i in keep)
     return got / n_target
 

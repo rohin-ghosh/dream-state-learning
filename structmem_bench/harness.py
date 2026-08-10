@@ -49,28 +49,46 @@ def run_relational(cfg: BenchConfig, seeds=20) -> dict:
 
 
 def check_canaries(cfg: BenchConfig, seeds=20) -> dict:
-    """random-sampler AND label-permutation canaries must both sit at chance."""
-    struct_ap_random, perm_ap = [], []
+    """Rigor gate. THREE controls, each of which MUST sit at chance:
+      * random-sampler   — catches a broken RNG / metric offset
+      * constant-scorer  — catches POSITION LEAKS through tie-breaking (the critical
+                           bug): a zero-information all-equal score must NOT beat chance
+      * label-permutation on the LEAKIEST real method — catches metric inflation
+    If any is materially above chance, the eval is leaking and results are void."""
     chance = None
+    rand_ap, const_ap, perm_ap = [], [], []
     for s in range(seeds):
         rng = np.random.default_rng(30_000 + s)
         stream = generate(cfg, seed=s)
         chance = float(stream.is_structural.mean())
-        r = mem.score_random(stream, rng)
-        struct_ap_random.append(met.average_precision(r, stream.is_structural))
-        # permutation canary on a REAL method's scores (frequency): permuting labels
-        # must destroy any signal
-        fr = mem.score_frequency(stream, rng)
-        perm_ap.append(st.permutation_canary_ap(fr, stream.is_structural, rng, n_perm=30))
-    rand = float(np.nanmean(struct_ap_random))
-    perm = float(np.nanmean(perm_ap))
+        F = stream.cfg.n_facts
+        rand_ap.append(met.average_precision(mem.score_random(stream, rng),
+                                             stream.is_structural))
+        const_ap.append(met.average_precision(np.zeros(F), stream.is_structural))
+        # run the permutation canary on the method most prone to ties (surprise)
+        surp = mem.score_surprise(stream, rng)
+        perm_ap.append(st.permutation_canary_ap(surp, stream.is_structural, rng, 30))
+    rand, const, perm = map(lambda v: float(np.nanmean(v)), (rand_ap, const_ap, perm_ap))
     return {
         "chance_base_rate": chance,
         "random_sampler_ap": rand,
+        "constant_scorer_ap": const,
         "permutation_ap": perm,
         "random_ok": st.canary_ok(rand, chance),
+        "constant_ok": st.canary_ok(const, chance),
         "permutation_ok": st.canary_ok(perm, chance),
     }
+
+
+def worst_positional_ap(cfg: BenchConfig, seeds=20) -> float:
+    """Directly probe the position leak: the AP a ZERO-INFORMATION index-ranking method
+    achieves. MUST be ~chance after the layout-permutation fix (was 1.0 when broken)."""
+    aps = []
+    for s in range(seeds):
+        stream = generate(cfg, seed=s)
+        idx_score = -np.arange(stream.cfg.n_facts, dtype=float)  # prefer low indices
+        aps.append(met.average_precision(idx_score, stream.is_structural))
+    return float(np.nanmean(aps))
 
 
 def paired_vs(agg: dict, metric: str, a: str, b: str) -> dict:
