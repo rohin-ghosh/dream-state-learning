@@ -1221,6 +1221,37 @@ Meta-lesson reinforced: the MACHINERY was sound every time; the CLAIMS overshot,
 and a separate adversarial pass (auditor writing assertions, not opinions) is what
 catches it. Same pattern as exp1. The benchmark is now genuinely hardened.
 
+### Benchmark prior-art RE-CHECK (2026-08-11, note 19) — Rohin's probe was right
+
+Rohin probed: scale-beyond-context, robust LTM-recall definition (forgetting
+curves, LTM-vs-STM, graded importance), and "if trivial it'd exist — go check."
+Re-check verdict: **benchmark space also filled in during July 2026.**
+
+Corrections to our claims:
+- 2604.15877 "Missing Diagonal" is a SYSTEMS gap, not a benchmark gap — stop
+  citing it for our gap claim.
+- **ForgetBench** (2607.26455, Jul 2026): forgetting curves + disentangles factual
+  vs relational retention — but PARAMETRIC-ONLY (knowledge editing).
+- **RECON** (2607.16716): provenance DAG w/ typed edges — has the graph, scores
+  holistically (no structural/detail split).
+- **MemTrace** (2606.17328): retention-vs-age across 4 EXTERNAL paradigms.
+- **Name collision:** StructMemEval (2602.11243, Yandex) exists → RENAME ours.
+
+Six-axis verdict: forgetting-curves LARGELY COVERED; LTM/STM PARTIAL (EvoMemBench);
+**graded-importance OPEN**; relational/KG LARGELY COVERED (RECON); **cross-memory-
+type single-probe interface OPEN (strongest — every harness excludes parametric/
+LoRA; parametric benchmarks are parametric-only; NOBODY bridges)**; enforced
+budget+horizon PARTIAL (BEAM reports, doesn't enforce).
+
+**Repositioning:** virgin-gap framing is unsafe. New pitch = **"first memory-type-
+agnostic retention benchmark"** — one probe interface spanning RAG + parametric/
+LoRA + text banks (axis 5), importance-stratified retention (axis 3), and the
+CONJUNCTION: structural/detail split from one dependency graph + enforced budget +
+age curves across all memory types (each fragment exists somewhere; the unification
+doesn't). Cite ForgetBench/RECON/MemTrace/GroundTruthFirst as fragments to unify.
+Adopt: Ground-Truth-First's script-before-text generation; MemTrace's knowledge-
+point probes. RENAME pending Rohin.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
