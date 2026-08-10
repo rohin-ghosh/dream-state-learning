@@ -1167,6 +1167,34 @@ taste-generating north star.
 Open decision for Rohin: benchmark paper vs research-tooling contribution vs a
 less-crowded cognitive-stack cell. Awaiting his call on what OUTCOME he's optimizing.
 
+### Benchmark built + adversarially hardened overnight (2026-08-10/11)
+
+Decision: benchmark-led (StructMem-Bench) to get into a lab; vision = north star.
+Built M1 (spec), M2 (full CPU package: config/tasks/memory/metrics/stats/harness +
+17 tests + runner), M3 scaffold (llm_tier.py, GPU-ready, CPU-testable plumbing).
+
+Red-teamed with 3 adversarial subagents (2 died on API errors; rest + self-review
+sufficient). CRITICAL bug found 3× independently: contiguous type layout +
+stable-sort tie-break → zero-info index-ranker scored AP=1.0, faked "surprise
+recovers rare structure" (0.53→0.02 after fix). Canaries couldn't catch it. Fixed:
+seeded column-permutation (index⊥type) + tie-safe ranking + constant-scorer canary
++ regression tests. See research_notes/redteam_response.md + redteam_1/redteam_3.
+
+**Honest corrected finding:** relational value beats per-item SIGNIFICANTLY only in
+the concentrated-dependency + adequate-data regime (+0.18–0.21, t≈3.6–3.9), NOT
+data-starved/diffuse or single-pair. exp3's "AP=1.0" was a favorable-setup artifact
+(same species as exp2 matched-model-class). Hardening deflated it to a real but
+regime-specific effect.
+
+**Posture shift:** the BENCHMARK (rigorous, honest, adversarially-hardened
+instrument) is the solid contribution; the relational METHOD claim is real but
+narrow. This is exactly what a good benchmark does to its own method. Ship = the
+benchmark; the method is its headline result where it honestly holds.
+
+Status: M1+M2 done + hardened (CPU, 17/17 tests, pushed). M3 (LLM tier) needs GPU.
+Artifact is lab-outreach-ready. NEXT (Rohin's call): M3 on GPU + workshop write-up;
+outreach to paper authors with the benchmark as the hook.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
