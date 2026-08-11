@@ -63,10 +63,38 @@ def test_probe_condition_policies_run():
     recs = _dataset()
     head = train_head_on_dataset(recs, epochs=10, seed=0)
     w = World.generate("t", seed=77)
-    for pol in ("uniform", "surprise_only", "dmem_style", "felt_b12",
-                "no_memory", "context_fifo", "rag_unbounded"):
+    for pol in ("uniform", "surprise_only", "dmem_style", "keyword_gate",
+                "felt_b12", "oracle_weight", "no_memory", "context_fifo",
+                "rag_unbounded"):
         m = run_probe_condition(w, head, pol, n_episodes=8, d_h=64, seed=0)
         assert "dissociation" in m and np.isfinite(m["dissociation"])
+
+
+def test_oracle_weight_ceiling_expresses():
+    # the corrected metric must have a usable ceiling at the default capacity
+    recs = _dataset()
+    head = train_head_on_dataset(recs, epochs=10, seed=0)
+    w = World.generate("ceil", seed=88)
+    mo = run_probe_condition(w, head, "oracle_weight", n_episodes=15, d_h=64, seed=0)
+    mu = run_probe_condition(w, head, "uniform", n_episodes=15, d_h=64, seed=0)
+    assert mo["dissociation"] > mu["dissociation"] + 0.03, (mo, mu)
+
+
+def test_determinism_same_process():
+    recs = _dataset()
+    head = train_head_on_dataset(recs, epochs=5, seed=0)
+    w = World.generate("det", seed=99)
+    m1 = run_probe_condition(w, head, "felt_b12", n_episodes=6, d_h=64, seed=0)
+    m2 = run_probe_condition(w, head, "felt_b12", n_episodes=6, d_h=64, seed=0)
+    assert m1["dissociation"] == m2["dissociation"]
+
+
+def test_gates_with_mock_player():
+    from felt import MockTextPlayer, gate_calibration
+    r = gate_calibration(lambda w, mode, e: MockTextPlayer(),
+                         n_worlds=2, eps_per_world=6)
+    assert r["gate_reasoning_ok"], r        # mock + manual must win
+    assert r["gate_knowledge_wall_ok"], r   # mock without context must fail
 
 
 def test_harness_end_to_end_and_resume():
@@ -81,14 +109,19 @@ def test_harness_end_to_end_and_resume():
     assert m2["probe_eval"]["felt_b12"] == m1["probe_eval"]["felt_b12"]
 
 
-def test_felt_beats_surprise_in_harness():
+def test_no_policy_fakes_the_metric():
+    # POST-AUDIT honest invariant: on the corrected metric, realistic policies
+    # (incl. the keyword-gate canary and felt with MOCK embeddings) must NOT show
+    # large differentiation — the artifact classes are dead. (Whether felt with
+    # REAL hidden states can approach the oracle ceiling is the GPU question.)
     shutil.rmtree("/tmp/felt_h2", ignore_errors=True)
-    cfg = RunConfig(workdir="/tmp/felt_h2", train_worlds=3,
-                    train_episodes_per_world=15, eval_worlds=4,
-                    eval_episodes_per_world=20,
-                    policies=("surprise_only", "felt_b12"))
+    cfg = RunConfig(workdir="/tmp/felt_h2", train_worlds=2,
+                    train_episodes_per_world=12, eval_worlds=3,
+                    eval_episodes_per_world=15,
+                    policies=("keyword_gate", "felt_b12"))
     m = Harness(cfg).run()["probe_eval"]
-    assert m["felt_b12"]["dissociation"] > m["surprise_only"]["dissociation"] + 0.1
+    for pol in ("keyword_gate", "felt_b12"):
+        assert abs(m[pol]["dissociation"]) < 0.15, (pol, m[pol])
 
 
 if __name__ == "__main__":

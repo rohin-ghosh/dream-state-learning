@@ -1,3 +1,8 @@
+"""DEPRECATED (redteam_4): this script contains the pre-audit probe method
+whose result was RETRACTED. Kept for provenance. Use felt.Harness (corrected
+floor-adjusted probes, online surprise, keyword-gate canary) instead.
+"""
+# flake8: noqa
 """
 Experiment 6 — STAGE-1 MINIATURE: the full Felt-Attention pipeline on CPU.
 

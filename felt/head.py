@@ -13,6 +13,8 @@ ALL-BUDGETS ranking objective (sum of retention regret over every cutoff).
 
 from __future__ import annotations
 
+import hashlib
+
 import numpy as np
 
 np.seterr(all="ignore")  # numpy-2/Accelerate spurious matmul warnings; finiteness asserted in tests
@@ -25,7 +27,8 @@ def hash_embed(text: str, d: int = 64) -> np.ndarray:
     'gather') carry consistent signal across episodes/worlds."""
     v = np.zeros(d)
     for w in text.lower().split():
-        rng = np.random.default_rng(abs(hash(w)) % (2**32))
+        seed = int.from_bytes(hashlib.md5(w.encode()).digest()[:4], "little")
+        rng = np.random.default_rng(seed)
         v += rng.normal(0, 1, d)
     n = np.linalg.norm(v)
     return v / n if n > 0 else v

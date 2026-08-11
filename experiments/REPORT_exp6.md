@@ -1,3 +1,18 @@
+> ⚠️ **RETRACTED (2026-08-12, red-team redteam_4).** The result below was an
+> artifact stack: (1) the "felt effect" was carried by a HARDCODED fallback
+> constant (decor facts bypassed the head; corr(felt, has-step gate)=0.999);
+> (2) in the original game, fact type ≡ action type, so a zero-training keyword
+> gate BEAT the trained head and was byte-identical to a label leak; (3) the
+> probe metric had a cosine-floor confound (never-written fakes scored 0.595);
+> (4) salted hash() made runs irreproducible. ALL FIXED (deterministic hashlib,
+> decor-on-visit steps, detour rollouts breaking type≡salience, floor-corrected
+> random probes, online surprise, keyword-gate canary). POST-FIX honest state:
+> all realistic policies ≈ 0 differentiation on the corrected metric; the
+> oracle-weight CEILING expresses only at hidden≥128 (+0.11 soft / +0.22 hard
+> filter). Whether a trained head can approach that ceiling with REAL LLM hidden
+> states is the GPU tier's open question. The CPU tier's validated role:
+> plumbing, canaries, gates, and the measured ceiling — NOT a head-works claim.
+
 # Report — Exp 6: Stage-1 miniature (full Felt-Attention pipeline, CPU)
 
 **Date:** 2026-08-12 · **Code:** `experiments/exp6_stage1_miniature.py` (8 seeds,

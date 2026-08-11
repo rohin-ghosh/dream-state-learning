@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from game import World, FeltCraft, scripted_optimal_play
+from game import World, FeltCraft, scripted_optimal_play, scripted_noisy_play
 from structmem_bench.metrics import average_precision
 from .head import embed_events, hash_embed
 from .fastweight import FastWeightMemory, value_modulated_weights
@@ -25,48 +25,91 @@ def _fact_key(t): return hash_embed("KEY::" + t, 32)
 def _fact_val(t): return hash_embed("VAL::" + t, 32)
 
 
-def collect_stream(world: World, head, n_episodes: int, d_h: int, seed: int):
+def collect_stream(world: World, head, n_episodes: int, d_h: int, seed: int,
+                   detour_rate: float = 0.25):
+    """Noisy rollouts (detours) so salience varies WITHIN action type — without
+    this, action-type ≡ structural label and any type detector fakes the result
+    (redteam_4). NO fallback salience: every fact must carry a real step."""
     known = set()
-    K, V, S, lab = [], [], [], []
+    K, V, S, lab, acts, kinds, texts = [], [], [], [], [], [], []
     goals = list(world.dag.recipes)
     for e in range(n_episodes):
         env = FeltCraft(world, max_steps=120)
-        scripted_optimal_play(env, goals[e % len(goals)],
-                              episode_seed=seed * 1000 + e,
-                              known_locations=known)
+        scripted_noisy_play(env, goals[e % len(goals)],
+                            episode_seed=seed * 1000 + e,
+                            known_locations=known,
+                            detour_rate=detour_rate, seed=seed)
         known |= env.known_locations
         sal = head.salience(embed_events(env.trajectory, d_h)) \
             if env.trajectory else np.zeros(0)
         for f in env.episode_facts:
-            s = float(sal[f.step - 1]) if 0 <= f.step - 1 < len(sal) else 0.05
+            assert f.step >= 1, "fact without a real step — fallback path is banned"
             K.append(_fact_key(f.text)); V.append(_fact_val(f.text))
-            S.append(s); lab.append(f.structural)
-    return np.stack(K), np.stack(V), np.array(S), np.array(lab, bool)
+            S.append(float(sal[f.step - 1])); lab.append(f.structural)
+            acts.append(env.trajectory[f.step - 1]["action"].split(" ")[0])
+            kinds.append(f.kind); texts.append(f.text)
+    return {"K": np.stack(K), "V": np.stack(V), "S": np.array(S),
+            "structural": np.array(lab, bool), "acts": np.array(acts),
+            "kinds": np.array(kinds), "texts": texts}
 
 
-def _weights(policy: str, mem: FastWeightMemory, K, V, S):
+def _weights(policy: str, sur: np.ndarray, S: np.ndarray, acts: np.ndarray,
+             structural=None):
+    """sur = ONLINE surprise (computed per chunk against current memory —
+    redteam_4 fix: pre-write surprise on a fresh net was init noise)."""
+    n = len(sur)
     if policy == "uniform":
-        return np.ones(len(K))
-    sur = mem.surprise(K, V)
+        return np.ones(n)
     if policy == "surprise_only":
         return sur
     if policy == "dmem_style":                    # heuristic gate: top-surprise only
         z = (sur - sur.mean()) / (sur.std() + 1e-9)
         return sur * (z > 0.5)
+    if policy == "keyword_gate":                  # PERMANENT CANARY (redteam_4):
+        g = np.isin(acts, ("craft", "explore", "move")).astype(float)
+        return sur * (1.0 + 12.0 * g)             # felt must BEAT this to mean anything
+    if policy == "oracle_weight":                 # CEILING (uses labels, declared)
+        assert structural is not None
+        return sur * (1.0 + 12.0 * structural.astype(float))
     if policy.startswith("felt_b"):
         beta = float(policy.split("felt_b")[1])
         return value_modulated_weights(sur, S, beta)
     raise ValueError(policy)
 
 
+_FAKE_TPL = {
+    "recipe":   "crafting zz{i}x requires zz{i}y and zz{i}z",
+    "location": "zz{i}r is found at zz{i}site",
+    "decor":    "zz{i}site looked zz{i}w during episode 9{i}9",
+    "count":    "gathered zz{i}r at step 9{i} of episode 9{i}9",
+}
+
+
+def _floor_corrected_probe(mem, texts, kinds, tag: int):
+    """Retention ABOVE the class floor (redteam_4 fix for the cosine-floor
+    confound): score(fact) = cos(M(k),v) − cos on a NEVER-WRITTEN fake with the
+    same template shape. Removes generic-similarity credit."""
+    Kr = np.stack([_fact_key(t) for t in texts])
+    Vr = np.stack([_fact_val(t) for t in texts])
+    real = mem.probe(Kr, Vr)
+    fakes = [_FAKE_TPL[k].format(i=tag * 1000 + j) for j, k in enumerate(kinds)]
+    Kf = np.stack([_fact_key(t) for t in fakes])
+    Vf = np.stack([_fact_val(t) for t in fakes])
+    floor = mem.probe(Kf, Vf)
+    return real - floor, real, floor
+
+
 def run_probe_condition(world: World, head, policy: str, n_episodes: int,
                         d_h: int, seed: int) -> dict:
-    K, V, S, structural = collect_stream(world, head, n_episodes, d_h, seed)
+    st = collect_stream(world, head, n_episodes, d_h, seed)
+    K, V, S = st["K"], st["V"], st["S"]
+    structural, acts = st["structural"], st["acts"]
 
     # retrieval-family references (no parametric memory)
     if policy in ("no_memory", "context_fifo", "rag_unbounded"):
         gist = world.structural_facts()
         n_g = len(gist)
+        K, structural = st["K"], st["structural"]
         if policy == "no_memory":
             return {"gist_retrieval": 0.0, "detail_retrieval": 0.0,
                     "dissociation": 0.0, "ap_gist": float("nan"),
@@ -88,28 +131,38 @@ def run_probe_condition(world: World, head, policy: str, n_episodes: int,
                 "dissociation": 0.0, "ap_gist": float("nan"),
                 "store_size": len(K)}
 
-    # parametric memory policies (matched budget)
-    mem = FastWeightMemory(d_key=32, d_val=32, hidden=48, seed=seed)
-    w = _weights(policy, mem, K, V, S)
+    # parametric memory policies (matched budget); ONLINE surprise per chunk
+    mem = FastWeightMemory(d_key=32, d_val=32, hidden=128, seed=seed)  # h128: capacity where allocation can express (oracle diagnostic)
     chunk = max(1, len(K) // 8)
     for i in range(0, len(K), chunk):
         sl = slice(i, i + chunk)
-        mem.write_batch(K[sl], V[sl], w[sl], steps=15)
+        sur = mem.surprise(K[sl], V[sl])          # against CURRENT memory state
+        w = _weights(policy, sur, S[sl], acts[sl], structural[sl])
+        mem.write_batch(K[sl], V[sl], w, steps=15)
 
+    # gist probes: the world's canonical structural facts (recipe+location)
     gist = world.structural_facts()
-    gk = np.stack([_fact_key(f.text) for f in gist])
-    gv = np.stack([_fact_val(f.text) for f in gist])
-    g = mem.probe(gk, gv)
-    det_idx = np.where(~structural)[0][:len(gist)]
-    d = mem.probe(K[det_idx], V[det_idx])
-    scores = np.concatenate([g, d])
-    labels = np.array([True] * len(g) + [False] * len(d))
-    return {"gist_retrieval": float(g.mean()),
-            "detail_retrieval": float(d.mean()),
-            "dissociation": float(g.mean() - d.mean()),
+    g_corr, g_raw, g_floor = _floor_corrected_probe(
+        mem, [f.text for f in gist], [f.kind for f in gist], tag=1)
+    # detail probes: RANDOM sample of experienced detail instances (not first-N)
+    rng = np.random.default_rng(seed * 61 + 17)
+    det_pool = np.where(~structural)[0]
+    det_idx = rng.choice(det_pool, size=min(len(gist), len(det_pool)),
+                         replace=False)
+    d_corr, d_raw, d_floor = _floor_corrected_probe(
+        mem, [st["texts"][i] for i in det_idx],
+        [st["kinds"][i] for i in det_idx], tag=2)
+    scores = np.concatenate([g_corr, d_corr])
+    labels = np.array([True] * len(g_corr) + [False] * len(d_corr))
+    return {"gist_retrieval": float(g_corr.mean()),
+            "detail_retrieval": float(d_corr.mean()),
+            "dissociation": float(g_corr.mean() - d_corr.mean()),
             "ap_gist": average_precision(scores, labels),
+            "gist_floor": float(g_floor.mean()),
+            "detail_floor": float(d_floor.mean()),
             "store_size": int(mem.W1.size + mem.W2.size)}
 
 
-PROBE_POLICIES = ("uniform", "surprise_only", "dmem_style", "felt_b4", "felt_b12",
-                  "no_memory", "context_fifo", "rag_unbounded")
+PROBE_POLICIES = ("uniform", "surprise_only", "dmem_style", "keyword_gate",
+                  "felt_b4", "felt_b12", "oracle_weight", "no_memory",
+                  "context_fifo", "rag_unbounded")

@@ -88,14 +88,13 @@ class FeltCraft:
         self.success = False
         self.episode_facts: list = []
         self.trajectory: list = []
-        # per-episode DETAIL facts (script-before-text): decor per location + a
-        # one-shot incidental observation
+        # per-episode DETAIL decor (script-before-text). Emitted as facts only when
+        # a site is VISITED (so every fact has a real step and real head salience —
+        # redteam_4 fix: the 0.05 fallback constant was carrying the whole result).
+        self._episode_seed = episode_seed
         self.decor = {l: DECOR_WORDS[int(self._rng.integers(len(DECOR_WORDS)))]
                       for l in self.w.locations}
-        for l, dword in self.decor.items():
-            self.episode_facts.append(
-                Fact("decor", f"{l} looked {dword} during episode {episode_seed}",
-                     False))
+        self._decor_emitted = set()
         self._V = self._value()
         obs = self._render_obs("You arrive. " + self._goal_text())
         return {"obs": obs, "oracle_V": self._V}
@@ -134,16 +133,28 @@ class FeltCraft:
             for r in here:   # discovering a binding = experiencing a structural fact
                 self.episode_facts.append(
                     Fact("location", f"{r} is found at {loc}", True, self.steps))
+            self._emit_decor(loc)
             return (f"You explore and find {loc} ({self.decor[loc]}). "
                     f"Resources here: {', '.join(here) or 'none'}.")
         if act.startswith("move"):
+            # Sites are visible landmarks: move works on any VALID site name.
+            # (Knowledge must be ACTIONABLE — a remembered/manual-known binding lets
+            # you go straight there; what visiting teaches you is the CONTENTS.)
             target = act.split(None, 1)[1].strip() if " " in act else ""
-            if target not in self.known_locations:
-                return f"You don't know where {target or '<nothing>'} is. Try explore."
+            if target not in w.locations:
+                return f"There is no site called {target or '<nothing>'}."
             self.current_loc = target
+            first_visit = target not in self.known_locations
+            self.known_locations.add(target)
             here = [r for r, l in w.raw_locations.items() if l == target]
+            if first_visit:
+                for r in here:   # seeing contents = experiencing the binding
+                    self.episode_facts.append(
+                        Fact("location", f"{r} is found at {target}", True,
+                             self.steps))
+                self._emit_decor(target)
             return (f"You move to {target} ({self.decor[target]}). "
-                    f"Resources: {', '.join(here) or 'none'}.")
+                    f"Resources here: {', '.join(here) or 'none'}.")
         if act.startswith("gather"):
             res = act.split(None, 1)[1].strip() if " " in act else ""
             if res not in w.dag.raws:
@@ -152,7 +163,7 @@ class FeltCraft:
                 return f"No {res} here."
             self.inventory[res] = self.inventory.get(res, 0) + 1
             self.episode_facts.append(
-                Fact("count", f"gathered {res} at step {self.steps} of this episode",
+                Fact("count", f"gathered {res} at step {self.steps} of episode {self._episode_seed}",
                      False, self.steps))
             return f"You gather 1 {res}. Inventory: {self._inv_text()}."
         if act.startswith("craft"):
@@ -175,6 +186,14 @@ class FeltCraft:
                     f"Inventory: {self._inv_text()}.")
         return "Unknown action. Use: explore | move <loc> | gather <raw> | craft <item> | inspect."
 
+    def _emit_decor(self, loc: str) -> None:
+        if loc in self._decor_emitted:
+            return
+        self._decor_emitted.add(loc)
+        self.episode_facts.append(
+            Fact("decor", f"{loc} looked {self.decor[loc]} during episode "
+                 f"{self._episode_seed}", False, self.steps))
+
     def _value(self) -> float:
         return oracle_value(self.w.dag, self.goal, self.inventory,
                             self.w.raw_locations, self.known_locations,
@@ -191,13 +210,47 @@ class FeltCraft:
         return f"[step {self.steps}] {msg}"
 
 
+def scripted_noisy_play(env: FeltCraft, goal: str, episode_seed: int = 0,
+                        known_locations: Optional[set] = None,
+                        detour_rate: float = 0.25, seed: int = 0):
+    """Solver + DETOURS: with prob detour_rate per episode, first executes a
+    sub-plan crafting a random depth-1 item NOT on the goal path (gather its raws,
+    craft it). Detour events are real craft/gather/move events with ~ZERO oracle
+    salience (no goal progress) — the within-action-type variance that makes
+    salience ≠ action-type (redteam_4 fix: breaks the type≡label degeneracy)."""
+    rng = np.random.default_rng(seed * 7919 + episode_seed)
+    env.reset(goal, episode_seed, known_locations)
+    w = env.w
+    if rng.random() < detour_rate:
+        on_path = set(requirements(w.dag, goal, {})["crafts"]) | {goal}
+        d1 = [i for i in w.dag.recipes if w.dag.depth_of[i] == 1
+              and i not in on_path]
+        if d1:
+            item = d1[int(rng.integers(len(d1)))]
+            a, b = w.dag.recipes[item]
+            for raw in (a, b):
+                loc = w.raw_locations[raw]
+                if env.current_loc != loc and not env.done:
+                    env.step(f"move {loc}")
+                if not env.done:
+                    env.step(f"gather {raw}")
+            if not env.done:
+                env.step(f"craft {item}")
+    _solve(env, goal)
+    return env
+
+
 def scripted_optimal_play(env: FeltCraft, goal: str, episode_seed: int = 0,
                           known_locations: Optional[set] = None):
     """Deterministic solver: explore until needed raws known, gather, craft in
     dependency order. Used for tests + optimal-trajectory generation."""
     env.reset(goal, episode_seed, known_locations)
+    _solve(env, goal)
+    return env
+
+
+def _solve(env: FeltCraft, goal: str):
     w = env.w
-    plan = requirements(w.dag, goal, {})
     while not env.done:
         need = requirements(w.dag, goal, env.inventory)
         missing_raws = [r for r, n in need["raw_needs"].items()
@@ -219,4 +272,3 @@ def scripted_optimal_play(env: FeltCraft, goal: str, episode_seed: int = 0,
         else:
             env.step("inspect")   # should not happen; avoids infinite loop
             break
-    return env
