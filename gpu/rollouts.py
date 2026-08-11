@@ -100,15 +100,20 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
                 env.reset(goal, episode_seed=ep)
                 ctx = render_manual(world) if context_mode == "manual" \
                     else "CONTEXT: (none)"
+                # goal in the PERSISTENT ctx, not the transient obs (S0 field
+                # bug: goal rode only the first obs → goal-blind from step 2)
+                ctx = f"Your goal: craft {goal}.\n{ctx}"
                 batch.append({"uid": uid, "env": env, "world": world,
                               "goal": goal, "ctx": ctx, "hist": [],
-                              "obs": f"[step 0] You arrive. Your goal: craft {goal}."})
+                              "obs": "[step 0] You arrive."})
             ep += 1
         if not batch:
             continue
         active = list(batch)
         while active:
-            prompts = [chatify(build_prompt(b["obs"], b["ctx"], b["hist"]))
+            prompts = [chatify(build_prompt(
+                           f'{b["obs"]} {b["env"].status_text()}',
+                           b["ctx"], b["hist"]))
                        for b in active]
             outs = llm.generate(prompts, sp)
             nxt = []

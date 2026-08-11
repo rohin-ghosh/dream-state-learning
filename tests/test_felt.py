@@ -97,6 +97,33 @@ def test_gates_with_mock_player():
     assert r["gate_knowledge_wall_ok"], r   # mock without context must fail
 
 
+def test_goal_in_every_prompt_and_stateless_playable():
+    # S0 FIELD BUG regression: the goal rode only the first obs, so any
+    # stateless backend (i.e., every real LLM) played blind from step 2 —
+    # win@manual == win@none == chance, manual worth zero. MockTextPlayer
+    # masked it by caching self.goal across calls. This test forces a fresh
+    # player per generate() call, exactly as memoryless as an HF model.
+    from felt import MockTextPlayer
+    from felt.llm_player import play_episode
+
+    class StatelessRecorder:
+        def __init__(self):
+            self.prompts = []
+
+        def generate(self, prompt):
+            self.prompts.append(prompt)
+            return MockTextPlayer().generate(prompt)
+
+    w = World.generate("goalbug", seed=7, depth=4)
+    goal = list(w.dag.recipes)[0]
+    b = StatelessRecorder()
+    r = play_episode(w, b, goal, episode_seed=0, context_mode="manual",
+                     max_steps=120)
+    assert all(f"Your goal: craft {goal}." in p for p in b.prompts), \
+        "goal missing from some prompt — stateless backends play blind"
+    assert r["success"], "stateless player WITH manual must win"
+
+
 def test_harness_end_to_end_and_resume():
     shutil.rmtree("/tmp/felt_h", ignore_errors=True)
     cfg = RunConfig(workdir="/tmp/felt_h", train_worlds=2,

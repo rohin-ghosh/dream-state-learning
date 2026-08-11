@@ -205,6 +205,12 @@ class FeltCraft:
                             self.w.raw_locations, self.known_locations,
                             self.current_loc)
 
+    def status_text(self) -> str:
+        """Within-episode state, safe to show every step: a competent stateless
+        player could re-derive it from history; memory competes on CROSS-episode
+        knowledge (recipes/bindings), which this never reveals."""
+        return f"[At: {self.current_loc or 'nowhere'}. Inventory: {self._inv_text()}.]"
+
     def _goal_text(self) -> str:
         return f"Your goal: craft {self.goal}."
 

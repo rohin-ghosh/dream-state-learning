@@ -102,7 +102,7 @@ class MockTextPlayer:
                 m = re.match(r"(\S+)x(\d+)", tok)
                 if m:
                     self.inventory[m.group(1)] = int(m.group(2))
-        at = re.findall(r"(?:move to|find) (site_\d+)", prompt)
+        at = re.findall(r"(?:move to|find|At:) (site_\d+)", prompt)
         if at:
             self.at = at[-1]
 
@@ -222,10 +222,15 @@ def play_episode(world: World, backend: Backend, goal: str, episode_seed: int,
             retained_fact_texts(memory, fact_log or []))
     else:
         ctx = "CONTEXT: (none)"
+    # The goal must be in EVERY prompt: stateless backends forget it otherwise
+    # (S0 field bug: it only rode the first obs, so from step 2 the model played
+    # blind — win@manual == win@none == chance, manual worthless without a target).
+    ctx = f"Your goal: craft {goal}.\n{ctx}"
     history: list = []
-    obs = r0["obs"] + f" Your goal: craft {goal}."
+    obs = r0["obs"]
     while not env.done:
-        action = parse_action(backend.generate(build_prompt(obs, ctx, history)))
+        now = f"{obs} {env.status_text()}"
+        action = parse_action(backend.generate(build_prompt(now, ctx, history)))
         rec = env.step(action)
         history.append((action, rec["obs"]))
         obs = rec["obs"]
