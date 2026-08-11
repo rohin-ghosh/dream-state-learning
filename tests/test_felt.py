@@ -124,6 +124,19 @@ def test_goal_in_every_prompt_and_stateless_playable():
     assert r["success"], "stateless player WITH manual must win"
 
 
+def test_parse_action_canonicalizes_natural_language():
+    # S0 FIELD BUG 2 regression: raw strings verbatim from the node trace —
+    # the model played correctly but 'gather raw_2 from site_3' passed the
+    # whole tail as the item name and failed every gather.
+    from felt.llm_player import parse_action
+    assert parse_action("gather raw_2 from site_3") == "gather raw_2"
+    assert parse_action("move to site_3") == "move site_3"
+    assert parse_action("ACTION: craft the c1_0.") == "craft c1_0"
+    assert parse_action("explore the area") == "explore"
+    assert parse_action("Let me think about this.") == "inspect"  # fallback
+    assert parse_action("move site_3") == "move site_3"           # already clean
+
+
 def test_harness_end_to_end_and_resume():
     shutil.rmtree("/tmp/felt_h", ignore_errors=True)
     cfg = RunConfig(workdir="/tmp/felt_h", train_worlds=2,
