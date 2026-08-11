@@ -1402,6 +1402,23 @@ head vs D-MEM-style heuristic gate vs surprise vs uniform, on the benchmark.
 Hard parts (Rohin, correct): value-net quality for the env (exp2 d' bar) + legible
 per-consumer attribution (= the benchmark's job).
 
+### DECISION: ICLR 2027 (2026-08-11)
+
+Target: ICLR 2027 benchmark paper — abstract Sep 18, full Sep 25. Solo + agents.
+Skip waiting for ICML (field too fast). arXiv preprint ASAP after submission =
+the lab-entry signal, dated BEFORE NeurIPS 2026 (Dec) in case overlapping work
+drops there. PALM (Aug 24) optional 4-pager if time allows; non-archival so it
+doesn't burn ICLR.
+
+Critical path (6.5 weeks):
+- Wk1 (Aug 11-17): benchmark v2 CPU — paradigm ports (gist/verbatim paired probes,
+  age-stratified forgetting curves, importance strata). ← STARTED
+- Wk2 (Aug 18-24): LLM tier — real backends (RAG/text-bank/parametric), first GPU
+  session. BLOCKER: Rohin's compute confirmation needed THIS WEEK.
+- Wk3-4 (Aug 25-Sep 7): full runs (≥2 backbones, ≥3 orderings, budget sweeps).
+- Wk5 (Sep 8-18): write; abstract in.
+- Wk6 (→Sep 25): polish; full in. Then arXiv + outreach to mapped authors.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,

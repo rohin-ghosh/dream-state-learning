@@ -76,6 +76,83 @@ def per_fact_metrics(scores: np.ndarray, stream, budget: int) -> dict:
     }
 
 
+# ---------------- paradigm-ported metrics (benchmark v2) ----------------
+
+def retention_by_age(scores: np.ndarray, target: np.ndarray, last_seen: np.ndarray,
+                     n_episodes: int, budget: int, n_buckets: int = 4) -> dict:
+    """FORGETTING CURVE (Ebbinghaus port): retention@budget of `target` facts,
+    stratified by memory AGE = episodes since last appearance. Returns
+    {bucket_label: retention}, oldest first. Buckets are age quantiles over the
+    target class so each has mass."""
+    tgt = np.where(target)[0]
+    if len(tgt) == 0:
+        return {}
+    age = n_episodes - 1 - last_seen[tgt]
+    keep = set(_order_desc(scores)[:budget].tolist()) if budget < len(scores) \
+        else set(range(len(scores)))
+    # FIXED buckets as fractions of the horizon, so results aggregate across seeds
+    fracs = np.linspace(0, 1, n_buckets + 1)
+    edges = (fracs * n_episodes).astype(int)
+    out = {}
+    for b in range(n_buckets):
+        lo, hi = edges[b], edges[b + 1]
+        mask = (age >= lo) & (age <= hi if b == n_buckets - 1 else age < hi)
+        facts = tgt[mask]
+        if len(facts) == 0:
+            continue
+        got = sum(1 for f in facts if f in keep)
+        out[f"age {int(fracs[b]*100)}-{int(fracs[b+1]*100)}%"] = got / len(facts)
+    return out
+
+
+def retention_by_importance(scores: np.ndarray, importance: np.ndarray,
+                            budget: int) -> dict:
+    """IMPORTANCE-STRATIFIED retention (open axis): retention@budget grouped by
+    ground-truth importance level (e.g. recipe-degree). importance: int per fact,
+    -1 = not applicable (detail). Returns {level: retention}."""
+    keep = set(_order_desc(scores)[:budget].tolist()) if budget < len(scores) \
+        else set(range(len(scores)))
+    out = {}
+    for lvl in sorted(set(importance[importance >= 0].tolist())):
+        facts = np.where(importance == lvl)[0]
+        got = sum(1 for f in facts if f in keep)
+        out[f"importance={lvl}"] = got / len(facts)
+    return out
+
+
+def gist_verbatim_paired(scores: np.ndarray, stream, budget: int,
+                         rng=None, n_probes: int = 200) -> dict:
+    """GIST/VERBATIM PAIRED PROBE (fuzzy-trace port — the unported paradigm).
+    For each probe: sample an EPISODE, then within that same episode sample one
+    GIST fact (structural, present) and one VERBATIM fact (detail, present).
+    Score whether each is retained at budget. Pairing within-episode controls for
+    exposure: both facts were experienced together; only their TYPE differs.
+    Returns P(gist retained), P(verbatim retained), and the DISSOCIATION
+    (gist − verbatim) — the FTT signature."""
+    rng = rng or np.random.default_rng(0)
+    keep = set(_order_desc(scores)[:budget].tolist()) if budget < len(scores) \
+        else set(range(len(scores)))
+    X = stream.X
+    struct = stream.is_structural
+    g_hits, v_hits, n = 0, 0, 0
+    episodes = rng.choice(X.shape[0], size=min(n_probes, X.shape[0]), replace=False)
+    for e in episodes:
+        present = np.where(X[e] > 0)[0]
+        g_c = present[struct[present]]
+        v_c = present[~struct[present]]
+        if len(g_c) == 0 or len(v_c) == 0:
+            continue
+        g = int(rng.choice(g_c)); v = int(rng.choice(v_c))
+        g_hits += g in keep
+        v_hits += v in keep
+        n += 1
+    if n == 0:
+        return {"gist": float("nan"), "verbatim": float("nan"),
+                "dissociation": float("nan"), "n_probes": 0}
+    return {"gist": g_hits / n, "verbatim": v_hits / n,
+            "dissociation": g_hits / n - v_hits / n, "n_probes": n}
+
+
 def relational_metrics(pairs, scores: np.ndarray, relations) -> dict:
     """Score how well a per-pair method ranks the TRUE relation pairs."""
     if len(pairs) == 0:

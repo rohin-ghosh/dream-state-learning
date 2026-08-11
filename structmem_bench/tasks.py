@@ -47,6 +47,23 @@ class Stream:
         return (self.fact_type == SF) | (self.fact_type == SR)
 
     @property
+    def last_seen(self) -> np.ndarray:
+        """Episode index of each fact's last appearance (-1 if never)."""
+        return np.where(self.X > 0, np.arange(self.X.shape[0])[:, None], -1).max(0)
+
+    @property
+    def importance(self) -> np.ndarray:
+        """Ground-truth graded importance = recipe-degree per structural fact
+        (# causal relations it participates in); -1 for detail facts. Gives the
+        importance-stratified axis for free from the relational outcome."""
+        imp = np.full(self.cfg.n_facts, -1, dtype=int)
+        imp[self.is_structural] = 0
+        for (i, j) in self.relations:
+            imp[i] += 1
+            imp[j] += 1
+        return imp
+
+    @property
     def is_rare(self) -> np.ndarray:
         return self.fact_type == SR
 

@@ -80,6 +80,45 @@ def check_canaries(cfg: BenchConfig, seeds=20) -> dict:
     }
 
 
+def run_paradigms(cfg: BenchConfig, methods=None, seeds=20, budget=25) -> dict:
+    """Benchmark v2: paradigm-ported probes per method —
+    gist/verbatim paired (fuzzy-trace), forgetting curve (retention-by-age of
+    structural facts), importance-stratified retention (recipe-degree)."""
+    methods = methods or ["frequency", "value_z", "trained_value", "oracle", "random"]
+    out = {m: {"gist": [], "verbatim": [], "dissociation": [],
+               "by_age": {}, "by_importance": {}} for m in methods}
+    for s in range(seeds):
+        rng = np.random.default_rng(70_000 + s)
+        stream = generate(cfg, seed=s)
+        for m in methods:
+            scores = mem.PER_FACT[m](stream, rng)
+            gv = met.gist_verbatim_paired(scores, stream, budget,
+                                          rng=np.random.default_rng(80_000 + s))
+            out[m]["gist"].append(gv["gist"])
+            out[m]["verbatim"].append(gv["verbatim"])
+            out[m]["dissociation"].append(gv["dissociation"])
+            for k, v in met.retention_by_age(scores, stream.is_structural,
+                                             stream.last_seen, cfg.n_episodes,
+                                             budget).items():
+                out[m]["by_age"].setdefault(k, []).append(v)
+            for k, v in met.retention_by_importance(scores, stream.importance,
+                                                    budget).items():
+                out[m]["by_importance"].setdefault(k, []).append(v)
+    # aggregate
+    agg = {}
+    for m in methods:
+        agg[m] = {
+            "gist": float(np.nanmean(out[m]["gist"])),
+            "verbatim": float(np.nanmean(out[m]["verbatim"])),
+            "dissociation": float(np.nanmean(out[m]["dissociation"])),
+            "dissociation_vals": out[m]["dissociation"],
+            "by_age": {k: float(np.nanmean(v)) for k, v in out[m]["by_age"].items()},
+            "by_importance": {k: float(np.nanmean(v))
+                              for k, v in out[m]["by_importance"].items()},
+        }
+    return agg
+
+
 def worst_positional_ap(cfg: BenchConfig, seeds=20) -> float:
     """Directly probe the position leak: the AP a ZERO-INFORMATION index-ranking method
     achieves. MUST be ~chance after the layout-permutation fix (was 1.0 when broken)."""

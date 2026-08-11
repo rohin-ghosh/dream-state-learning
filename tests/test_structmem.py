@@ -219,6 +219,35 @@ def test_paired_diff_zero_when_identical():
     assert abs(d["mean"]) < 1e-9 and not d["sig"]
 
 
+# ---------- benchmark v2: paradigm-ported probes ----------
+def test_gist_verbatim_dissociation_orders_correctly():
+    # FTT port: oracle must show max dissociation; random ~0; value_z high.
+    c = _cfg(outcome="relational", n_recipes=4, n_episodes=300)
+    agg = harness.run_paradigms(c, methods=["oracle", "random", "value_z"],
+                                seeds=10, budget=25)
+    assert agg["oracle"]["dissociation"] > 0.9
+    assert abs(agg["random"]["dissociation"]) < 0.15
+    assert agg["value_z"]["dissociation"] > agg["random"]["dissociation"] + 0.3
+
+
+def test_forgetting_curve_buckets_aggregate():
+    # fixed buckets must produce the same keys across seeds (aggregatable)
+    c = _cfg(outcome="relational", n_episodes=300)
+    agg = harness.run_paradigms(c, methods=["frequency"], seeds=5, budget=25)
+    keys = list(agg["frequency"]["by_age"].keys())
+    assert len(keys) <= 4 and all(k.startswith("age ") for k in keys), keys
+
+
+def test_importance_strata_present():
+    c = _cfg(outcome="relational", n_recipes=4)
+    s = tasks.generate(c, seed=0)
+    imp = s.importance
+    assert (imp[s.is_structural] >= 0).all()
+    assert (imp[~s.is_structural] == -1).all()
+    # recipe-degree sums to 2 * n_recipes
+    assert imp[imp > 0].sum() == 2 * c.n_recipes
+
+
 if __name__ == "__main__":
     import traceback
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
