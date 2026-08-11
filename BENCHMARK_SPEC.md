@@ -1,19 +1,38 @@
-# StructMem-Bench — a benchmark for structure-vs-detail retention in consolidated memory
+# Retention Benchmark — spec (working name; rename pending)
 
-**Status:** spec v0.1 (M1). The artifact to ship for lab entry. Builds on exp0–exp3.
+> ⚠️ **Spec v0.2 banner (2026-08-11) — supersedes v0.1 framing below where they
+> conflict.** Three updates: (1) **RENAME pending** — "StructMem-Bench" collides
+> with StructMemEval (arXiv:2602.11243). (2) The 2604.15877 "Missing Diagonal"
+> citation is **retracted as a benchmark-gap claim** (it names a *systems* gap);
+> the current gap analysis is research_notes/19 — the virgin-gap framing is unsafe
+> post-July-2026 (ForgetBench 2607.26455, RECON 2607.16716, MemTrace 2606.17328
+> each cover a fragment). (3) **Positioning upgraded** (notes 19–20): *the first
+> psychology-grounded, memory-type-agnostic retention benchmark* — probes as ports
+> of validated human-memory paradigms (**gist/verbatim from fuzzy-trace theory =
+> the unported headline**; forgetting curves / interference / serial position as
+> cited anchors), **one probe interface across RAG + parametric/LoRA + text-bank
+> memories** (verified open — the two literatures never compare), importance-
+> stratified retention (open), **enforced** budget (BEAM only reports), adopting
+> script-before-text generation (2607.21962). Differentiate vs eMEM-Bench
+> (2606.03374): general text-agent vs embodied-only; backend-agnostic vs
+> system-coupled.
 
-## One-line pitch
-Existing agent-memory methods are measured on *recall/QA accuracy* — none measure
-whether **relational structure survives consolidation** while episodic detail is
-shed. StructMem-Bench provides a persistent world with a **ground-truth dependency
-graph**, so structural-retention and detail-retention can be scored *separately and
-programmatically* — the "Missing Diagonal" (Experience Compression Spectrum,
-2604.15877) made measurable. It lets you referee the crowded parametric-memory field
-(COVE, TMEM, PEAM, D-MEM, EVAF) on an axis none of them report.
+**Status:** spec v0.1 body below (built: abstract tier, 23 tests, red-teamed +
+audited). Builds on exp0–exp4.
 
-## Why it's defensible in a crowded field
-- **Unowned:** no benchmark separates relational-structure retention from
-  episodic-detail retention (confirmed across notes 03/06/09/17/18).
+## One-line pitch (v0.2)
+Memory methods are measured on recall accuracy — none report **what kind of
+knowledge survives**: relational structure ("gist") vs episodic detail
+("verbatim"). We provide ground-truth dependency graphs and paradigm-ported
+probes so gist and verbatim retention are scored separately, programmatically,
+at an enforced budget — through one interface that works for RAG, parametric,
+and text-bank memories alike.
+
+## Why it's defensible in a crowded field (v0.2 per note 19)
+- **Open axes:** cross-memory-type single probe interface; importance-stratified
+  retention; gist/verbatim + spacing as unported paradigms; enforced budget.
+- **The conjunction** (graph-grounded split + budget + age curves, across all
+  memory types) exists nowhere; fragments cited generously.
 - **Scoop-immune:** a benchmark *gains* value as the method-paper field grows.
 - **Home for our one real novelty:** relational value (exp3) is the natural headline
   result on it.

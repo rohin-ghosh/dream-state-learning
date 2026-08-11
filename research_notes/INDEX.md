@@ -14,7 +14,18 @@
 | `09_sleep_consolidation_deep.md` | Newest sleep methods; closest prior art = PEAM/EVAF/SCM |
 | `10_world_models_value_mcts.md` | Value=consolidation-weight; non-stationarity warning; MCTS→Paper A |
 | `11_baselines_benchmarks.md` | Baseline set + eval-fragility warnings; Auto-Dreamer = bar to beat |
-| `RANKED_READING_LIST.md` | **The skimmable ranked list — start here** |
-| `JOURNAL.md` | Running idea/decision log |
+| `12_atlas_baselines_learned_write.md` | ATLAS baselines; learned-value write = open; cross-episode = open |
+| `13_atlas_disambiguation.md` | Two ATLAS papers disambiguated; parametric-memory state |
+| `14_attention_trained_on_reward.md` | Attention trained on external reward — partial (NOTE: its D-MEM "trained" claim corrected by direct read, see JOURNAL 2026-08-11) |
+| `16_tmem_deepread.md` | TMEM: online within-episode RL LoRA writes — cousin, baseline |
+| `17_cove_and_new_parametric.md` | COVE (closest consolidation collision) + new parametric papers |
+| `18_competitive_verdict.md` | Every method axis occupied → benchmark-led pivot |
+| `19_benchmark_prior_art_recheck.md` | Benchmark space filled Jul 2026; 6-axis verdict; reposition |
+| `20_human_memory_paradigms.md` | Psychology paradigms: gist/verbatim UNPORTED; combination open |
+| `21_compute_precedents.md` | Compute costs of comparable projects; 3-tier budget |
+| `22_deadlines.md` | Verified venue deadlines from 2026-08-11 |
+| `redteam_1_gameability.md`, `redteam_3_code_stats.md`, `redteam_response.md` | Adversarial reviews of the benchmark + fixes |
+| `RANKED_READING_LIST.md` | Skimmable ranked list (pre-pivot; see 18/19 for current posture) |
+| `JOURNAL.md` | **Running idea/decision log — the full history, start here** |
 
 Caveat carried across all files: 2026 arXiv IDs verified where noted; re-verify at write-up.

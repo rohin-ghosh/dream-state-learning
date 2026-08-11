@@ -1,3 +1,13 @@
+> ⚠️ **HISTORICAL — SUPERSEDED (2026-08-11).** This design doc predates three
+> pivots: (1) the competitive verdict (research_notes/18) that redirected the
+> project to benchmark-led; (2) the psychology-grounded reframing (notes 19–20);
+> (3) the Felt Attention architecture of record (JOURNAL, 2026-08-11): value net →
+> one value-loss attention head on a frozen LLM → three consumers. Current state
+> of record: `PAPER_SHEET.md` + `BENCHMARK_SPEC.md` + JOURNAL. Kept for provenance.
+> Known-stale within: the 2604.15877 "Missing Diagonal" citation (retracted as a
+> benchmark-gap claim — it names a systems gap), the ATLAS-substrate-first plan,
+> and the FGT/BWT target numbers.
+
 # Dream-State Learning — Paper 1 (B) Design Doc v0.1
 
 **Status:** first concrete draft, meant to be torn apart. Open questions flagged `[OPEN]`.
