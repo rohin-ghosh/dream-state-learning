@@ -1345,6 +1345,31 @@ gate" is THE ablation).
 Recommendation adopted: do NOT reproduce a full-model GRPO baseline (200-600 H100-h
 line item) — cite instead.
 
+### D-MEM discrepancy RESOLVED by direct read (2026-08-11) + project name
+
+**D-MEM (2603.14597) is TRAINING-FREE. Note 21 was right; note 14's "trained via
+RPE" was WRONG — correct it wherever cited.** Direct read of the method section:
+- Surprise = embedding-cosine z-score through a sigmoid (no training).
+- Utility = a constrained zero-shot LLM call (JSON schema, lifecycle classes).
+- "RPE" = heuristic formula: RPE(x) = min(1, 1[Utility≥τ]·[Utility×(Surprise+β)]).
+  NOT a learned value function. No gradients anywhere. GPT-4o-mini API backbone.
+- Routes into EXTERNAL buffers + knowledge graph (not weights).
+
+**Consequences:**
+1. The "TRAINED dopamine gate" axis is MORE OPEN than believed — D-MEM took the
+   dopaminergic FRAMING but shipped a heuristic. Nearest trained neighbors remain
+   TMEM (RL extraction, no head, text→LoRA), Mem-α (RL tool-call ops, fine-tuned
+   backbone), Auto-Dreamer (GRPO, text bank). A trained attention/value head gating
+   PARAMETRIC writes still has no direct competitor.
+2. D-MEM = the perfect $0-training heuristic baseline. THE ablation of Paper 2:
+   "does a learned gate beat the heuristic dopamine gate."
+3. Lesson: agent summaries of papers can disagree — resolve novelty-critical facts
+   by direct read. (Note 14's error survived two syntheses before being caught.)
+
+**PROJECT NAME (tentative, Rohin): "Felt Attention"** — attention that carries
+valence/feeling; the value-weighted allocation thesis in two words. Benchmark name
+TBD (must not collide with StructMemEval; check "FeltMem"/similar before use).
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
