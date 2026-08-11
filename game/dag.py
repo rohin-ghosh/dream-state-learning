@@ -47,7 +47,9 @@ def gen_dag(seed: int, depth: int = 4, branching: int = 3, n_raw: int = 6) -> Cr
         for b in range(branching):
             name = f"c{d}_{b}"
             a = prev[int(rng.integers(len(prev)))]          # forces chain depth
-            other = below[int(rng.integers(len(below)))]
+            other = a
+            while other == a:                               # no dup-ingredient recipes
+                other = below[int(rng.integers(len(below)))]
             recipes[name] = (a, other)
             depth_of[name] = d
             levels[d].append(name)
@@ -78,25 +80,22 @@ def requirements(dag: CraftDAG, item: str, have: Optional[dict] = None) -> dict:
 def oracle_value(dag: CraftDAG, goal: str, inventory: dict,
                  raw_locations: dict, known_locations: set,
                  current_loc: Optional[str]) -> float:
-    """Exact remaining action-cost to craft `goal` (lower = closer; V=0 at done).
-    Cost model mirrors the engine: craft=1, gather=1 per unit, move=1 per distinct
-    NEEDED location not currently occupied, explore=2 per needed-but-UNKNOWN
-    resource location. Deterministic; monotone non-increasing under optimal play."""
+    """NEAR-EXACT heuristic remaining cost to craft `goal` (V=0 iff done; never
+    negative). Cost model: craft=1, gather=1/unit, move=1 per distinct needed
+    location != current, discovery=2 per distinct needed location NOT YET KNOWN
+    (a heuristic constant — true discovery cost is search-order dependent).
+    NOT strictly monotone under play: explore randomness and detours can raise V
+    transiently; consumers should use the SIGNED TD (logged by the engine) when
+    setbacks matter, and the clipped salience only as a progress signal."""
     if inventory.get(goal, 0) > 0:
         return 0.0
     req = requirements(dag, goal, inventory)
     cost = len(req["crafts"])                       # craft steps
     cost += sum(req["raw_needs"].values())          # gather steps
-    locs_needed = set()
-    for raw in req["raw_needs"]:
-        loc = raw_locations.get(raw)
-        if loc is None:
-            continue
-        if loc in known_locations:
-            locs_needed.add(loc)
-        else:
-            cost += 2.0                             # explore penalty
-            locs_needed.add(loc)
+    locs_needed = {raw_locations[r] for r in req["raw_needs"]
+                   if raw_locations.get(r) is not None}
+    cost += 2.0 * sum(1 for l in locs_needed
+                      if l not in known_locations)  # discovery per DISTINCT loc
     cost += sum(1 for l in locs_needed if l != current_loc)   # moves
     return float(cost)
 

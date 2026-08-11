@@ -69,7 +69,7 @@ to the GPU tier where it always truly belonged.*
 - `dmem_style` lacks its prompted-utility half until the LLM tier.
 - Closed-loop winnability (S4) code = the LLM-player loop exists, but the
   memory-condition wiring into S4 is first-lease work (S0-S3 are fully coded).
-- Agent-2 code-validity report pending at write time; fold in if it lands.
+- (Resolved) Agent-2's deep code audit landed post-wrap and is fully processed — see `redteam_5_felt_code.md` + journal: dup-recipe engine/oracle bug (would have poisoned GPU distillation), oracle honesty, atomic checkpointing, config guard.
 
 ## THE LEASE SPEC (when you've done the deep-dive and are satisfied)
 

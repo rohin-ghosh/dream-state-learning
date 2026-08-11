@@ -14,6 +14,7 @@ lives in <workdir>/state.json + artifacts.
 from __future__ import annotations
 
 import json
+import os
 import time
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
@@ -42,8 +43,8 @@ class RunConfig:
     # probe eval
     eval_worlds: int = 8
     eval_episodes_per_world: int = 30
-    policies: tuple = ("uniform", "surprise_only", "dmem_style",
-                       "felt_b4", "felt_b12")
+    policies: tuple = ("uniform", "surprise_only", "dmem_style", "keyword_gate",
+                       "felt_b4", "felt_b12", "oracle_weight")
     seed: int = 0
 
 
@@ -57,12 +58,23 @@ class Harness:
 
     def _load_state(self) -> dict:
         if self.state_path.exists():
-            return json.loads(self.state_path.read_text())
-        return {"config": asdict(self.cfg), "completed": {}, "metrics": {},
-                "started": time.time()}
+            st = json.loads(self.state_path.read_text())
+            # config-drift guard (redteam_5): resuming a workdir with a DIFFERENT
+            # config must fail loudly, not silently report stale results
+            cur = json.loads(json.dumps(asdict(self.cfg)))  # normalize tuples->lists
+            if st.get("config") != cur:
+                raise ValueError(
+                    f"workdir {self.dir} was created with a different config; "
+                    "use a fresh workdir or delete state.json")
+            return st
+        return {"config": json.loads(json.dumps(asdict(self.cfg))),
+                "completed": {}, "metrics": {}, "started": time.time()}
 
     def _save(self):
-        self.state_path.write_text(json.dumps(self.state, indent=1))
+        # ATOMIC (redteam_5): a kill mid-write must never truncate state.json
+        tmp = self.state_path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(self.state, indent=1))
+        os.replace(tmp, self.state_path)
 
     def _done(self, stage: str) -> bool:
         return self.state["completed"].get(stage, False)
@@ -105,6 +117,8 @@ class Harness:
 
     def stage_probe_eval(self):
         """Chunked per (world, policy); resumable mid-stage."""
+        if self._done("probe_eval"):
+            return
         c = self.cfg
         head = self._load_head()
         done: dict = self.state.setdefault("probe_units", {})

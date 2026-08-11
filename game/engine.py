@@ -15,6 +15,7 @@ gather <raw> / craft <item> / inspect.
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -107,6 +108,7 @@ class FeltCraft:
         msg = self._exec(act)
         self._V = self._value()
         sal = td_salience(v_before, self._V)
+        td_signed = v_before - self._V           # UNclipped (redteam_5: setbacks visible)
         if self.inventory.get(self.goal, 0) > 0:
             self.done, self.success = True, True
             msg += f" GOAL COMPLETE: you crafted {self.goal}!"
@@ -115,7 +117,8 @@ class FeltCraft:
             msg += " (out of time)"
         obs = self._render_obs(msg)
         rec = {"obs": obs, "action": act, "oracle_V": self._V,
-               "salience": sal, "done": self.done, "success": self.success}
+               "salience": sal, "td_signed": td_signed,
+               "done": self.done, "success": self.success}
         self.trajectory.append(rec)
         return rec
 
@@ -171,11 +174,14 @@ class FeltCraft:
             if item not in w.dag.recipes:
                 return f"{item or '<nothing>'} has no recipe."
             a, b = w.dag.recipes[item]
-            if self.inventory.get(a, 0) < 1 or self.inventory.get(b, 0) < 1:
+            need = Counter((a, b))               # multiset: handles a==b correctly
+            lacking = [f"{c}x {ing}" for ing, c in need.items()
+                       if self.inventory.get(ing, 0) < c]
+            if lacking:
                 return (f"Crafting {item} requires {a} and {b} — you lack "
-                        f"{'both' if not self.inventory.get(a) and not self.inventory.get(b) else (a if not self.inventory.get(a) else b)}.")
-            self.inventory[a] -= 1
-            self.inventory[b] -= 1
+                        f"{', '.join(lacking)}.")
+            for ing, c in need.items():
+                self.inventory[ing] -= c
             self.inventory[item] = self.inventory.get(item, 0) + 1
             self.episode_facts.append(   # using a recipe = experiencing the edge
                 Fact("recipe", f"crafting {item} requires {a} and {b}", True, self.steps))
@@ -225,10 +231,13 @@ def scripted_noisy_play(env: FeltCraft, goal: str, episode_seed: int = 0,
         on_path = set(requirements(w.dag, goal, {})["crafts"]) | {goal}
         d1 = [i for i in w.dag.recipes if w.dag.depth_of[i] == 1
               and i not in on_path]
-        if d1:
-            item = d1[int(rng.integers(len(d1)))]
-            a, b = w.dag.recipes[item]
-            for raw in (a, b):
+        # only detour to items whose ingredient sites are ALREADY KNOWN — no
+        # psychic moves to unseen sites (redteam_5 fix)
+        d1_known = [i for i in d1 if all(
+            w.raw_locations[r] in env.known_locations for r in w.dag.recipes[i])]
+        if d1_known:
+            item = d1_known[int(rng.integers(len(d1_known)))]
+            for raw in w.dag.recipes[item]:
                 loc = w.raw_locations[raw]
                 if env.current_loc != loc and not env.done:
                     env.step(f"move {loc}")
@@ -265,8 +274,11 @@ def _solve(env: FeltCraft, goal: str):
             else:
                 env.step(f"gather {r}")
             continue
-        craftable = [c for c in need["crafts"]
-                     if all(env.inventory.get(i, 0) >= 1 for i in w.dag.recipes[c])]
+        craftable = []
+        for c in need["crafts"]:
+            req_c = Counter(w.dag.recipes[c])
+            if all(env.inventory.get(i, 0) >= n for i, n in req_c.items()):
+                craftable.append(c)
         if craftable:
             env.step(f"craft {craftable[0]}")
         else:

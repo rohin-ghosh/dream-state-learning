@@ -1501,6 +1501,33 @@ Meta: this is the 4th time adversarial code-review reversed a headline (exp1,
 exp2 green light, gist/verbatim confound, exp6). The pattern is now structural:
 NO result is real until a code-level adversary fails to kill it.
 
+### redteam_5 landed late + processed (2026-08-12, post-wrap)
+
+The third red-teamer (code/stats) finished after the wrap — deepest pass (50 tool
+calls), re-verified against HEAD. Remaining bugs found + ALL FIXED:
+- HIGH: duplicate-ingredient recipes (a==b, ~1.4/world) broke engine/oracle
+  agreement — inventory −1, V collapse 15→0, phantom salience spike; latent on
+  CPU, LIVE for the LLM tier (would poison distillation). Fixed: no-dup DAG
+  generation + Counter-based multiset craft/solve. Regression test.
+- HIGH: oracle_value neither exact nor monotone (per-raw explore charge → now
+  per-distinct-location; docstring now honest "NEAR-EXACT heuristic"; engine now
+  logs UNclipped td_signed so setbacks are visible).
+- HIGH: harness durability — _save now ATOMIC (tmp+os.replace; kill mid-write
+  previously lost ALL progress), config-drift guard fails loudly (test),
+  probe_eval done-guard.
+- MED: np.seterr global → scoped errstate + finiteness asserts (global numpy
+  state verified untouched); keyword_gate+oracle_weight now in DEFAULT policy
+  set; labels reach _weights ONLY for oracle_weight; psychic detours fixed
+  (detour only to already-known sites).
+- LOW: context_fifo dedup/denominators, det_pool empty guard.
+- Verified clean by the agent: requirements() recursion, kill-resume
+  byte-identical, fast-weight numerics under stress, exact head gradients,
+  harness pairing.
+Honest-test reframe: with mock embeddings felt must show NO advantage beyond
+keyword_gate (any felt-only mock win = returning artifact); keyword_gate's own
+modest signal (~0.16) is legitimate env structure (counts are gather-only).
+50/50 tests across suites. All three red-team reports now processed.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,

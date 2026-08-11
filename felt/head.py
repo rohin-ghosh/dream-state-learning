@@ -17,7 +17,6 @@ import hashlib
 
 import numpy as np
 
-np.seterr(all="ignore")  # numpy-2/Accelerate spurious matmul warnings; finiteness asserted in tests
 
 
 # ---------------------------------------------------------------- embeddings
@@ -53,21 +52,25 @@ class FeltHead:
         self.d_k = d_k
 
     def salience(self, H: np.ndarray) -> np.ndarray:
-        z = (H @ self.Wk) @ self.q / np.sqrt(self.d_k) + self.b
+        with np.errstate(all="ignore"):   # numpy-2/Accelerate false positives
+            z = (H @ self.Wk) @ self.q / np.sqrt(self.d_k) + self.b
+        assert np.all(np.isfinite(z)), "head produced non-finite scores"
         return 1.0 / (1.0 + np.exp(-np.clip(z, -30, 30)))
 
     def train_batch(self, H: np.ndarray, target: np.ndarray) -> float:
         """One gradient step of MSE distillation on one episode. target ∈ [0,1]
         = normalized oracle TD-salience per event. Returns loss."""
         T = H.shape[0]
-        K = H @ self.Wk                                  # (T, dk)
+        with np.errstate(all="ignore"):
+            K = H @ self.Wk                              # (T, dk)
         z = K @ self.q / np.sqrt(self.d_k) + self.b
         a = 1.0 / (1.0 + np.exp(-np.clip(z, -30, 30)))
         err = a - target                                  # (T,)
         loss = float((err ** 2).mean())
         dz = 2 * err * a * (1 - a) / T                    # (T,)
-        dq = K.T @ dz / np.sqrt(self.d_k)
-        dWk = np.outer(H.T @ dz, self.q) / np.sqrt(self.d_k)
+        with np.errstate(all="ignore"):
+            dq = K.T @ dz / np.sqrt(self.d_k)
+            dWk = np.outer(H.T @ dz, self.q) / np.sqrt(self.d_k)
         db = dz.sum()
         self.q -= self.lr * dq
         self.Wk -= self.lr * dWk.reshape(self.Wk.shape)

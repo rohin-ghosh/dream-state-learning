@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import numpy as np
 
-np.seterr(all="ignore")  # spurious Accelerate warnings; finiteness asserted in tests
 
 
 class FastWeightMemory:
@@ -32,8 +31,10 @@ class FastWeightMemory:
     # ------------------------------------------------------------- forward
     def read(self, K: np.ndarray) -> np.ndarray:
         """(N, d_key) -> (N, d_val)."""
-        Z = np.maximum(0, K @ self.W1 + self.b1)
-        return Z @ self.W2 + self.b2
+        with np.errstate(all="ignore"):   # numpy-2/Accelerate false positives
+            Z = np.maximum(0, K @ self.W1 + self.b1)
+            out = Z @ self.W2 + self.b2
+        return out
 
     def surprise(self, K: np.ndarray, V: np.ndarray) -> np.ndarray:
         """Per-item pre-write loss (gradient-magnitude proxy): how unexpected is
@@ -52,7 +53,8 @@ class FastWeightMemory:
             return
         w = w / w.mean()                       # scale-free: only allocation matters
         n = len(K)
-        for _ in range(steps):
+        with np.errstate(all="ignore"):
+          for _ in range(steps):
             Z1 = K @ self.W1 + self.b1
             A1 = np.maximum(0, Z1)
             pred = A1 @ self.W2 + self.b2
@@ -67,6 +69,8 @@ class FastWeightMemory:
             self.b1 -= self.lr * gb1
             self.W2 -= self.lr * gW2
             self.b2 -= self.lr * gb2
+        assert np.all(np.isfinite(self.W1)) and np.all(np.isfinite(self.W2)), \
+            "fast-weight memory diverged to non-finite weights"
 
     # ------------------------------------------------------------- probes
     def probe(self, K: np.ndarray, V: np.ndarray) -> np.ndarray:

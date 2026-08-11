@@ -116,14 +116,16 @@ def run_probe_condition(world: World, head, policy: str, n_episodes: int,
                     "store_size": 0}
         if policy == "context_fifo":              # last B fact-instances verbatim
             B = n_g                                # budget matched to |gist|
-            kept = set(range(max(0, len(K) - B), len(K)))
-            g_hit = np.mean([1.0 if any(i in kept and structural[i]
-                                        for i in range(len(K))) else 0.0])
-            # verbatim FIFO: retention = fraction of gist facts among last B
-            gist_kept = structural[-B:].sum() / max(1, n_g)
-            det_kept = (~structural[-B:]).sum() / max(1, B)
+            tail_texts = st["texts"][-B:]
+            tail_struct = structural[-B:]
+            # DISTINCT gist facts represented in the window (dedup — redteam_5)
+            gist_texts = {f.text for f in gist}
+            kept_gist = {t for t, is_s in zip(tail_texts, tail_struct)
+                         if is_s and t in gist_texts}
+            gist_kept = len(kept_gist) / max(1, n_g)
+            det_kept = float((~tail_struct).sum()) / max(1, B)
             return {"gist_retrieval": float(gist_kept),
-                    "detail_retrieval": float(det_kept),
+                    "detail_retrieval": det_kept,
                     "dissociation": float(gist_kept - det_kept),
                     "ap_gist": float("nan"), "store_size": B}
         # rag_unbounded: stores everything raw — perfect recall, unbounded cost
@@ -137,7 +139,8 @@ def run_probe_condition(world: World, head, policy: str, n_episodes: int,
     for i in range(0, len(K), chunk):
         sl = slice(i, i + chunk)
         sur = mem.surprise(K[sl], V[sl])          # against CURRENT memory state
-        w = _weights(policy, sur, S[sl], acts[sl], structural[sl])
+        labels = structural[sl] if policy == "oracle_weight" else None
+        w = _weights(policy, sur, S[sl], acts[sl], labels)
         mem.write_batch(K[sl], V[sl], w, steps=15)
 
     # gist probes: the world's canonical structural facts (recipe+location)
@@ -147,6 +150,12 @@ def run_probe_condition(world: World, head, policy: str, n_episodes: int,
     # detail probes: RANDOM sample of experienced detail instances (not first-N)
     rng = np.random.default_rng(seed * 61 + 17)
     det_pool = np.where(~structural)[0]
+    if len(det_pool) == 0:
+        return {"gist_retrieval": float(g_corr.mean()), "detail_retrieval":
+                float("nan"), "dissociation": float("nan"),
+                "ap_gist": float("nan"), "gist_floor": float(g_floor.mean()),
+                "detail_floor": float("nan"),
+                "store_size": int(mem.W1.size + mem.W2.size)}
     det_idx = rng.choice(det_pool, size=min(len(gist), len(det_pool)),
                          replace=False)
     d_corr, d_raw, d_floor = _floor_corrected_probe(
