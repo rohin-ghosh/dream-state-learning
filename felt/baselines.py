@@ -59,7 +59,13 @@ def _weights(policy: str, sur: np.ndarray, S: np.ndarray, acts: np.ndarray,
     redteam_4 fix: pre-write surprise on a fresh net was init noise)."""
     n = len(sur)
     if policy == "uniform":
+        # per-instance uniform mass ≈ distribution-matching storage (Isele&Cosgun's
+        # winning heuristic, translated to per-write gain) — note 24
         return np.ones(n)
+    if policy == "random_write":
+        # d'Autume 2019: random selection matched surprisal at 50-90% budget cuts
+        # in replay settings — OBLIGATORY null for any selective-write claim (note 24)
+        return np.random.default_rng(int(sur.sum() * 1e6) % (2**31)).random(n)
     if policy == "surprise_only":
         return sur
     if policy == "dmem_style":                    # heuristic gate: top-surprise only
@@ -172,6 +178,6 @@ def run_probe_condition(world: World, head, policy: str, n_episodes: int,
             "store_size": int(mem.W1.size + mem.W2.size)}
 
 
-PROBE_POLICIES = ("uniform", "surprise_only", "dmem_style", "keyword_gate",
-                  "felt_b4", "felt_b12", "oracle_weight", "no_memory",
-                  "context_fifo", "rag_unbounded")
+PROBE_POLICIES = ("uniform", "random_write", "surprise_only", "dmem_style",
+                  "keyword_gate", "felt_b4", "felt_b12", "oracle_weight",
+                  "no_memory", "context_fifo", "rag_unbounded")

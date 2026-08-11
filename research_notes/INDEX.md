@@ -24,6 +24,7 @@
 | `20_human_memory_paradigms.md` | Psychology paradigms: gist/verbatim UNPORTED; combination open |
 | `21_compute_precedents.md` | Compute costs of comparable projects; 3-tier budget |
 | `22_deadlines.md` | Verified venue deadlines from 2026-08-11 |
+| `24_rl_memory_classics.md` | Classic deep-RL memory line (MERLIN, NEC, HCAM, PER…) — verdict: no value-gated writes; MERLIN supports; baseline obligations from Isele&Cosgun / d'Autume |
 | `redteam_1_gameability.md`, `redteam_3_code_stats.md`, `redteam_response.md` | Adversarial reviews of the benchmark + fixes |
 | `RANKED_READING_LIST.md` | Skimmable ranked list (pre-pivot; see 18/19 for current posture) |
 | `JOURNAL.md` | **Running idea/decision log — the full history, start here** |

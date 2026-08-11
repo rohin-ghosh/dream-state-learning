@@ -86,6 +86,21 @@ contribution (four reversals caught by adversarial code review, all preserved).
   Unclaimed compound: gist/verbatim (fuzzy-trace) as paired probes × memory-type-
   agnostic interface × enforced budget. [Re-sweep scheduled ~Sep 20 — NeurIPS
   notification dump lands on the deadline.]
+- **Classic memory-augmented RL (note 24):** the line learned *where to read,
+  never what to write* — MERLIN (1803.10760), NEC ("we elect to write all
+  experiences"), HCAM, NGU/Agent57, TVT all write everything or on schedule;
+  learned gating lives on the read side. PER (1511.05952) prioritized replay
+  *sampling* over an intact buffer and explicitly left "which memories to store
+  and when to erase them" as future work — the question our write-gate executes.
+  MERLIN's insufficiency result targets end-to-end reward gradients through long
+  encode-use delays; our frozen pretrained LLM instantiates its unsupervised-
+  representation remedy by construction, and our salience is a dense immediate
+  per-write scalar (PHRASING RULE: value *modulates* write strength over
+  predictive surprise; never "reward decides memory content"). Empirical
+  obligations inherited: Isele&Cosgun'18 (reward/TD-selected *storage* caused
+  forgetting; distribution-matching won) and d'Autume'19 (random writes matched
+  surprisal selection) ⇒ random-write and coverage-matched baselines at equal
+  budget are mandatory, and β=0 vs β>0 is load-bearing.
 - **Cognitive grounding:** CLS (McClelland '95; Kumaran '16), synaptic tagging
   (Frey&Morris '97), behavioral tagging, SHY renormalization (Tononi&Cirelli),
   fuzzy-trace gist/verbatim — cited as *functional* motivation, no consciousness

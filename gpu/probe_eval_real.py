@@ -29,8 +29,8 @@ from structmem_bench.metrics import average_precision
 from structmem_bench.stats import paired_diff
 from gpu.rollouts import text_key
 
-POLICIES = ("uniform", "surprise_only", "dmem_style", "keyword_gate",
-            "felt_b4", "felt_b12", "oracle_weight")
+POLICIES = ("uniform", "random_write", "surprise_only", "dmem_style",
+            "keyword_gate", "felt_b4", "felt_b12", "oracle_weight")
 
 
 def load_head(path):

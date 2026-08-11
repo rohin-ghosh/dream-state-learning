@@ -43,8 +43,8 @@ class RunConfig:
     # probe eval
     eval_worlds: int = 8
     eval_episodes_per_world: int = 30
-    policies: tuple = ("uniform", "surprise_only", "dmem_style", "keyword_gate",
-                       "felt_b4", "felt_b12", "oracle_weight")
+    policies: tuple = ("uniform", "random_write", "surprise_only", "dmem_style",
+                       "keyword_gate", "felt_b4", "felt_b12", "oracle_weight")
     seed: int = 0
 
 
