@@ -63,9 +63,9 @@ def build_prompt(obs: str, context_block: str, history: list, n_hist: int = 6) -
         "First think briefly (1-3 sentences: what does the goal need, what is "
         "missing, where is it?), then give ONE action on the LAST line, "
         "exactly in the form 'ACTION: move site_2'.\n"
-        "Strategy: if a resource is NOT at your current site, look up which site "
-        "has it in your context and move there first. Craft sub-items in "
-        "dependency order.\n\n"
+        "Strategy: if a resource you need IS at your current site, gather it NOW "
+        "before moving anywhere. If it is NOT here, look up which site has it in "
+        "your context and move there. Craft sub-items in dependency order.\n\n"
         f"{_FEWSHOT}\n{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\n")
 
 
