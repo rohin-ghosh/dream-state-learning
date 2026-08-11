@@ -225,5 +225,6 @@ def play_episode(world: World, backend: Backend, goal: str, episode_seed: int,
         obs = rec["obs"]
     return {"success": env.success, "steps": env.steps, "goal": goal,
             "trajectory": env.trajectory,
-            "facts": [(f.text, f.structural, f.step) for f in env.episode_facts],
+            "facts": [{"text": f.text, "kind": f.kind, "structural": f.structural,
+                       "step": f.step} for f in env.episode_facts],
             "known_locations": env.known_locations}
