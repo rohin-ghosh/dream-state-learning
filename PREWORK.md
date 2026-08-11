@@ -34,7 +34,9 @@ window grows with data ⇒ the game generator must make rollouts CHEAP (it does)
 - Text-game engine EXISTS but is ARCHIVED: `archive/dream_state/environments/
   minecraft_sim.py` (persistent worlds, crafting DAG, verified scripted-agent run)
 
-### 🔨 To build (CPU, ~1–2 weeks, the actual prework)
+### ✅ ALL BUILT (2026-08-12) — ledger GREEN, ready for audit → lease
+
+Original list with outcomes:
 1. **Game v2** (resurrect + upgrade the archived sim): deep crafting HIERARCHIES
    (chains, not just pairs — per regime verdict), script-before-text fact labelling
    (every episode emits ground-truth structural/detail facts), long-horizon
@@ -57,7 +59,18 @@ window grows with data ⇒ the game generator must make rollouts CHEAP (it does)
 8. **Baselines wiring**: no-memory, full-context@budget, RAG, surprise-only (β=0 =
    stock ATLAS), D-MEM-style heuristic gate, uniform. [1 day]
 
-### [DECIDE] Base model
+#### Session-2 outcomes
+- items 1-3: `game/` (9/9 tests) — procedural DAGs, oracle, rollout infra
+- items 4-5: `felt/head.py` + `felt/fastweight.py` — head learns+transfers
+  (regret 0.025), memory expresses allocation under capacity
+- item 6 (numpy tier): `mem.probe()` = the parametric probe; LLM logprob variant = GPU week
+- items 7-8: `felt/harness.py` (checkpoint/resume, tested) + `felt/baselines.py`
+  (8 policies incl. dmem_style heuristic gate)
+- INTEGRATION (exp6): full pipeline SIG on held-out worlds — surprise-only retains
+  detail>gist (-0.125); felt head flips it (+0.121, AP 0.707, t=5.9)
+- SIZING.md: calibration invariant, budget arithmetic (35-65 GPU-h), sanity gates
+
+## [DECIDE] Base model
 - **Primary: Qwen2.5-1.5B-Instruct** (fast rollouts on 1×A100, competent at text
   games). **Second backbone: Llama-3.2-3B-Instruct** (different family — satisfies
   the ≥2-backbones eval rule). **CPU plumbing: Qwen2.5-0.5B.** 7B only if the 1.5B
