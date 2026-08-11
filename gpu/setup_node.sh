@@ -36,6 +36,7 @@ fi
 eval "$("$HOME/miniconda3/bin/conda" shell.bash hook)"
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main 2>/dev/null || true
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r 2>/dev/null || true
+conda init bash >/dev/null 2>&1 || true   # so future shells can 'conda activate'
 if ! conda env list | grep -q "^felt "; then
     conda create -n felt python=3.11 -y
 fi
@@ -52,17 +53,22 @@ if [ ! -d "$HOME/dream-state-learning" ]; then
 fi
 cd "$HOME/dream-state-learning" && git pull
 
-echo "[phase 2] running CPU test suites (must be 50/50 before any GPU spend)"
-PYTHONPATH=. python tests/test_structmem.py 2>/dev/null | tail -1
-PYTHONPATH=. python tests/test_game.py 2>/dev/null | tail -1
-PYTHONPATH=. python tests/test_felt.py 2>/dev/null | tail -1
+echo "[phase 2] running CPU test suites (HARD GATE: any FAIL aborts setup)"
+for suite in tests/test_structmem.py tests/test_game.py tests/test_felt.py; do
+    out=$(PYTHONPATH=. python "$suite" 2>&1 | tail -1)
+    echo "  $suite: $out"
+    if echo "$out" | grep -vq "passed" ||        ! echo "$out" | awk -F'[ /]' '{exit !($1==$2)}'; then
+        echo "TEST FAILURE in $suite — fix before spending GPU time."; exit 1
+    fi
+done
 
 echo "[phase 2] downloading models (needs HF_TOKEN in env)"
 python - <<'PY'
 import os
 from huggingface_hub import snapshot_download
-tok = os.environ.get("HF_TOKEN")
-assert tok, "export HF_TOKEN=... first"
+tok = os.environ.get("HF_TOKEN")   # all 3 models are ungated; token just speeds up
+if not tok:
+    print("note: HF_TOKEN not set — fine, these models are public")
 for m in ["Qwen/Qwen2.5-1.5B-Instruct",
           "Qwen/Qwen2.5-3B-Instruct",          # escalation path (SIZING: likely)
           "microsoft/Phi-3.5-mini-instruct"]:  # 2nd family, UNGATED (Llama is gated)

@@ -35,6 +35,27 @@ def text_key(t: str) -> str:
     return hashlib.md5(t.encode()).hexdigest()
 
 
+def read_jsonl_tolerant(path) -> list:
+    """Read rollouts JSONL, skipping a truncated tail line (P0-3: a kill mid-write
+    must not brick resume/S2/S3) and deduping by episode_uid (resume re-appends)."""
+    recs, seen = [], set()
+    try:
+        with open(path) as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                except json.JSONDecodeError:
+                    continue                     # truncated tail — skip
+                uid = rec.get("episode_uid")
+                if uid in seen:
+                    continue
+                seen.add(uid)
+                recs.append(rec)
+    except FileNotFoundError:
+        pass
+    return recs
+
+
 # ---------------------------------------------------------------- PASS A
 def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
                  n_worlds: int = 4, depth: int = 4, max_steps: int = 60,
@@ -43,14 +64,23 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
     we want competent play whose salience varies (right/wrong turns), and the
     manual removes the pure-ignorance failure mode. (Memory conditions are S3/S4.)"""
     from vllm import LLM, SamplingParams
+    from transformers import AutoTokenizer
     llm = LLM(model=model, dtype="bfloat16", gpu_memory_utilization=0.85)
     sp = SamplingParams(max_tokens=24, temperature=0.0)
+    _tok = AutoTokenizer.from_pretrained(model)
+
+    def chatify(p):
+        """P1-6: Instruct models need the chat template, else format failures can
+        fake a gate/quality failure."""
+        try:
+            return _tok.apply_chat_template([{"role": "user", "content": p}],
+                                            tokenize=False,
+                                            add_generation_prompt=True)
+        except Exception:
+            return p
 
     log_path = out_dir / "rollouts.jsonl"
-    done_eps = set()
-    if log_path.exists():
-        for line in open(log_path):
-            done_eps.add(json.loads(line)["episode_uid"])
+    done_eps = {r["episode_uid"] for r in read_jsonl_tolerant(log_path)}
 
     world_seeds = {f"s1_{i}": seed * 7 + i for i in range(n_worlds)}
     worlds = [World.generate(w, seed=sd, depth=depth)
@@ -78,7 +108,8 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
             continue
         active = list(batch)
         while active:
-            prompts = [build_prompt(b["obs"], b["ctx"], b["hist"]) for b in active]
+            prompts = [chatify(build_prompt(b["obs"], b["ctx"], b["hist"]))
+                       for b in active]
             outs = llm.generate(prompts, sp)
             nxt = []
             for b, o in zip(active, outs):
@@ -122,8 +153,7 @@ def cache_states(model: str, out_dir: pathlib.Path, batch_size: int = 64):
         cached = {k: z[k] for k in z.files}
 
     texts = {}
-    for line in open(out_dir / "rollouts.jsonl"):
-        rec = json.loads(line)
+    for rec in read_jsonl_tolerant(out_dir / "rollouts.jsonl"):
         for s in rec["trajectory"]:
             t = f"{s['action']} {s['obs']}"
             texts[text_key(t)] = t
@@ -147,11 +177,20 @@ def cache_states(model: str, out_dir: pathlib.Path, batch_size: int = 64):
             for l in LAYERS:
                 v = out.hidden_states[l][j, lens[j]].float().cpu().numpy()
                 cached[f"{k}_l{l}"] = v
-        if (i // batch_size) % 20 == 0:
-            np.savez(cache_path, **cached)          # periodic checkpoint
+        if (i // batch_size) % 200 == 0 and i > 0:   # P0-2: throttled
+            _atomic_savez(cache_path, cached)
             print(f"[S1-B] {i + len(chunk)}/{len(todo)}")
-    np.savez(cache_path, **cached)
+    _atomic_savez(cache_path, cached)
     print(f"[S1-B] cache complete: {cache_path}")
+
+
+def _atomic_savez(path, cached):
+    """P0-2: never overwrite the live cache in place — a kill mid-save must not
+    corrupt PASS B progress."""
+    import os
+    tmp = str(path) + ".tmp.npz"
+    np.savez(tmp, **cached)
+    os.replace(tmp, path)
 
 
 def main():

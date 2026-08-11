@@ -170,6 +170,12 @@ class HFBackend:
 
     def generate(self, prompt: str) -> str:
         t = self.torch
+        try:   # Instruct models need their chat template (P1-6)
+            prompt = self.tok.apply_chat_template(
+                [{"role": "user", "content": prompt}], tokenize=False,
+                add_generation_prompt=True)
+        except Exception:
+            pass
         ids = self.tok(prompt, return_tensors="pt").to(self.model.device)
         with t.inference_mode():
             out = self.model.generate(**ids, max_new_tokens=self.max_new_tokens,

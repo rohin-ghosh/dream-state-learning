@@ -71,6 +71,19 @@ to the GPU tier where it always truly belonged.*
   memory-condition wiring into S4 is first-lease work (S0-S3 are fully coded).
 - (Resolved) Agent-2's deep code audit landed post-wrap and is fully processed — see `redteam_5_felt_code.md` + journal: dup-recipe engine/oracle bug (would have poisoned GPU distillation), oracle honesty, atomic checkpointing, config guard.
 
+## Overnight session 2 additions (read after the above)
+- `gpu/` — the complete lease toolkit: setup_node.sh (two-phase, HARD test gate),
+  RUNBOOK.md (hour-by-hour), run_gates.py (S0), rollouts.py (S1: vLLM lockstep +
+  atomic multi-layer state cache), train_head_real.py (S2 + hour-12 kill-switch),
+  probe_eval_real.py (S3). Red-teamed (redteam_7): the P0 catch was that RAW
+  hidden states saturate the head → a FALSE STOP at hour 12; fixed by persisted
+  normalization, and the fix is guarded by tests/test_gpu_dryrun.py — a full
+  CPU dry run of S1→S2→S3 on fake artifacts with a planted signal the head must
+  recover. Also: tolerant JSONL reader (torn-tail safe), atomic cache saves,
+  chat templates for Instruct models, conda-init, honest S0 timing (~1-3h).
+- `paper/draft.md` — ICLR draft v0.1: all CPU results + verified attributions in;
+  GPU outcomes as [SLOT]s; the negative-control ledger as §6; checklist embedded.
+
 ## THE LEASE SPEC (when you've done the deep-dive and are satisfied)
 
 - **Pool:** `general` (self-service). Node: **1× A100-80GB** (July's Pauli-80GB

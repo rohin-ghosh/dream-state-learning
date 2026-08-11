@@ -29,9 +29,9 @@ MOCK_BASELINE = 0.03      # comparator constant: CPU-tier held-out regret with
 
 def load_episodes(in_dir: pathlib.Path, layer: int):
     z = np.load(in_dir / "states.npz", allow_pickle=True)
+    from gpu.rollouts import read_jsonl_tolerant
     eps = []
-    for line in open(in_dir / "rollouts.jsonl"):
-        rec = json.loads(line)
+    for rec in read_jsonl_tolerant(in_dir / "rollouts.jsonl"):
         traj = rec["trajectory"]
         if len(traj) < 3:
             continue
@@ -60,7 +60,14 @@ def main():
     split = int(0.85 * len(eps))
     train, test = [eps[i] for i in idx[:split]], [eps[i] for i in idx[split:]]
     d_h = train[0]["H"].shape[1]
-    print(f"[S2] layer={a.layer} d_h={d_h} train={len(train)} test={len(test)}")
+    # P0-1: raw hidden-state norms (~1e3) saturate the sigmoid head and STALL
+    # training — a stalled head reads as regret >0.15 and fires a FALSE STOP.
+    # Normalize by the mean train row-norm; persist the scalar for S3.
+    h_scale = float(np.mean([np.linalg.norm(e["H"], axis=1).mean() for e in train]))
+    for e in train + test:
+        e["H"] = e["H"] / h_scale
+    print(f"[S2] layer={a.layer} d_h={d_h} train={len(train)} test={len(test)} "
+          f"h_scale={h_scale:.1f}")
 
     head = FeltHead(d_h=d_h, d_k=64, seed=0, lr=0.02)
     for ep_i in range(a.epochs):
@@ -81,7 +88,7 @@ def main():
     corr = float(np.mean(corrs)) if corrs else float("nan")
 
     np.savez(a.out, Wk=head.Wk, q=head.q, b=head.b,
-             layer=a.layer, regret=regret, corr=corr, d_h=d_h)
+             layer=a.layer, regret=regret, corr=corr, d_h=d_h, h_scale=h_scale)
     print(f"\n[S2] held-out: all-budgets regret = {regret:.4f} | corr = {corr:.3f}")
     print(f"     mock baseline = {MOCK_BASELINE}")
     print("\n[HOUR-12 KILL-SWITCH — spec §5b]")

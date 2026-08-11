@@ -13,11 +13,12 @@ bash gpu/setup_node.sh       # phase 1: installs driver → tells you to reboot
 sudo reboot
 # reconnect:
 ssh <user>@<node>; tmux new -s felt; cd dream-state-learning
-export HF_TOKEN=<your token>
-bash gpu/setup_node.sh       # phase 2: env + deps + tests + models → "READY"
+export HF_TOKEN=<your token>          # optional (models are public)
+bash gpu/setup_node.sh                # phase 2 → "READY" (aborts on test failure)
+source ~/.bashrc                      # picks up conda init for 'conda activate felt' 
 ```
 
-## Hour 1–2: S0 gates (the calibration verdict)
+## Hours 1–4: S0 gates (the calibration verdict; sequential HF generation — ~1-3h at defaults, not 30 min)
 ```bash
 conda activate felt
 PYTHONPATH=. python gpu/run_gates.py --model Qwen/Qwen2.5-1.5B-Instruct

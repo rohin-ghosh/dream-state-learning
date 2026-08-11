@@ -37,10 +37,11 @@ def load_head(path):
     z = np.load(path)
     h = FeltHead(d_h=int(z["d_h"]), d_k=z["Wk"].shape[1])
     h.Wk, h.q, h.b = z["Wk"], z["q"], float(z["b"])
-    return h, int(z["layer"])
+    h_scale = float(z["h_scale"]) if "h_scale" in z.files else 1.0
+    return h, int(z["layer"]), h_scale
 
 
-def build_world_stream(recs, states, head, layer):
+def build_world_stream(recs, states, head, layer, h_scale=1.0):
     """K/V/S/labels/acts/kinds/texts for one world's episode stream, salience
     from the REAL-state head."""
     K, V, S, lab, acts, kinds, texts = [], [], [], [], [], [], []
@@ -48,7 +49,7 @@ def build_world_stream(recs, states, head, layer):
         traj = rec["trajectory"]
         try:
             H = np.stack([states[f"{text_key(st['action'] + ' ' + st['obs'])}_l{layer}"]
-                          for st in traj])
+                          for st in traj]) / h_scale     # P0-1: same scale as S2
         except KeyError:
             continue
         sal = head.salience(H)
@@ -101,20 +102,19 @@ def main():
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
-    head, layer = load_head(a.head)
+    head, layer, h_scale = load_head(a.head)
     states = np.load(in_dir / "states.npz", allow_pickle=True)
 
+    from gpu.rollouts import read_jsonl_tolerant
     by_world = defaultdict(list)
-    world_seeds = {}
-    for line in open(in_dir / "rollouts.jsonl"):
-        rec = json.loads(line)
+    for rec in read_jsonl_tolerant(in_dir / "rollouts.jsonl"):
         by_world[rec["world"]].append(rec)
     results = defaultdict(list)
     for w_i, (wid, recs) in enumerate(sorted(by_world.items())):
         # regenerate the SAME world from the LOGGED seed/depth (never guess)
         world = World.generate(wid, seed=recs[0]["world_seed"],
                                depth=recs[0].get("depth", 4))
-        st = build_world_stream(recs, states, head, layer)
+        st = build_world_stream(recs, states, head, layer, h_scale)
         if st is None:
             continue
         for pol in POLICIES:
