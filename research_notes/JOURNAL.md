@@ -1252,6 +1252,44 @@ doesn't). Cite ForgetBench/RECON/MemTrace/GroundTruthFirst as fragments to unify
 Adopt: Ground-Truth-First's script-before-text generation; MemTrace's knowledge-
 point probes. RENAME pending Rohin.
 
+### Human-memory paradigms check (2026-08-11, note 20) — Rohin's framing upgrade VALIDATED
+
+Rohin proposed running the benchmark parallel to real human memory evals. Verdict:
+**the combination is OPEN, narrowly, and closing.**
+
+Already ported (cite as anchors, not novel): serial position (saturated — lost-in-
+the-middle = primacy/recency, 2406.15981); interference (well ported; KEY FINDING:
+LLMs show proactive-interference dominance — the OPPOSITE of humans, 2603.00270 —
+great motivator); forgetting curves (piecemeal: 2410.04727 long-context, ForgetBench
+parametric); recall-vs-recognition (SORT 2410.08133 = cleanest port template); DRM
+false memory (one-off battery: 2509.17138).
+
+**UNPORTED as evaluation: gist-vs-verbatim / fuzzy-trace theory** — OUR structure-
+vs-detail axis, with 30 yrs of human data, used only as architecture inspiration
+(ReadAgent), never measured as paired probes. Also unported: spacing/testing
+effects. Both align naturally with wake-sleep consolidation.
+
+No general-purpose psychology-grounded agent-memory benchmark exists. Near-misses:
+**eMEM-Bench v1** (2606.03374, Jun 2026 — 8 cog-psych paradigms but EMBODIED-ONLY +
+coupled to their system) and EvolMem (taxonomy, not paradigms). CogBench (ICML'24)
+proves the "psychology lab for LLMs" pitch lands at top venues — zero memory
+paradigms in it.
+
+**ASSEMBLED FINAL FRAMING (three confirmed-open legs):**
+"The first psychology-grounded, memory-type-agnostic benchmark for agent memory"
+1. Gist/verbatim probes (= our structure/detail, FTT pedigree, UNPORTED)
+2. Cross-memory-type single probe interface (RAG+parametric+banks — nobody bridges)
+3. Importance-stratified retention (open) + enforced budget (BEAM reports, doesn't
+   enforce)
+Anchor probes from ported paradigms (serial position, interference, curves) cited
+generously. Differentiate vs eMEM-Bench: general text-agent vs embodied-only,
+backend-agnostic vs system-coupled. Motivators: PI-dominance-opposite-of-humans,
+MemDelta (evals confounded), tenure-crossover (rankings invert with time).
+
+URGENCY: eMEM-Bench (June) proves the framing is in the air — someone will
+generalize it. Move fast. Name decision pending (Rohin: "decide once we learn the
+project").
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
