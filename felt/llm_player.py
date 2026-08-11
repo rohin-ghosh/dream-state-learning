@@ -204,7 +204,7 @@ class HFBackend:
     get_event_states caches per-event hidden states for head training."""
 
     def __init__(self, model_name: str, device: str = "cuda",
-                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 128):
+                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 256):
         import torch  # noqa — GPU tier only
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.torch = torch

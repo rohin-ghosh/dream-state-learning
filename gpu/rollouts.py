@@ -66,7 +66,8 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
     from vllm import LLM, SamplingParams
     from transformers import AutoTokenizer
     llm = LLM(model=model, dtype="bfloat16", gpu_memory_utilization=0.85)
-    sp = SamplingParams(max_tokens=128, temperature=0.0)  # ReAct: room to think
+    sp = SamplingParams(max_tokens=256, temperature=0.0)  # ReAct: room to think
+    # (7B deep-goal trace: 12/45 steps lost to thought truncation at 128)
     _tok = AutoTokenizer.from_pretrained(model)
 
     def chatify(p):
