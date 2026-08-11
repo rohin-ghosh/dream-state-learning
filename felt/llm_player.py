@@ -212,7 +212,8 @@ def retained_fact_texts(memory, fact_log: list, k: int = 12) -> list:
 
 def play_episode(world: World, backend: Backend, goal: str, episode_seed: int,
                  context_mode: str = "none", memory=None, fact_log=None,
-                 known_locations: Optional[set] = None, max_steps: int = 60) -> dict:
+                 known_locations: Optional[set] = None, max_steps: int = 60,
+                 trace=None) -> dict:
     env = FeltCraft(world, max_steps=max_steps)
     r0 = env.reset(goal, episode_seed, known_locations)
     if context_mode == "manual":
@@ -230,8 +231,12 @@ def play_episode(world: World, backend: Backend, goal: str, episode_seed: int,
     obs = r0["obs"]
     while not env.done:
         now = f"{obs} {env.status_text()}"
-        action = parse_action(backend.generate(build_prompt(now, ctx, history)))
+        prompt = build_prompt(now, ctx, history)
+        raw = backend.generate(prompt)
+        action = parse_action(raw)
         rec = env.step(action)
+        if trace is not None:
+            trace(prompt, raw, action, rec["obs"])
         history.append((action, rec["obs"]))
         obs = rec["obs"]
     return {"success": env.success, "steps": env.steps, "goal": goal,
