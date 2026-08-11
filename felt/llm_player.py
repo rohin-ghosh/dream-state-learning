@@ -41,13 +41,29 @@ def render_memory_context(retained_facts: list, k: int = 12) -> str:
         "\n".join(f"- {t}" for t in retained_facts[:k])
 
 
+_FEWSHOT = (
+    "EXAMPLE (goal: craft plank; context says: crafting plank requires wood "
+    "and wood; wood is found at site_9):\n"
+    "NOW: [step 3] No wood here. [At: site_2. Inventory: empty.]\n"
+    "ACTION: move site_9\n"
+    "NOW: [step 4] You move to site_9. Resources here: wood. [At: site_9. Inventory: empty.]\n"
+    "ACTION: gather wood\n"
+    "NOW: [step 5] You gather 1 wood. [At: site_9. Inventory: woodx1.]\n"
+    "ACTION: gather wood\n"
+    "NOW: [step 6] You gather 1 wood. [At: site_9. Inventory: woodx2.]\n"
+    "ACTION: craft plank\n")
+
+
 def build_prompt(obs: str, context_block: str, history: list, n_hist: int = 6) -> str:
     hist = "\n".join(f"> {a}\n{o}" for a, o in history[-n_hist:])
     return (
         "You play a crafting game. Actions: explore | move <site> | "
         "gather <raw> | craft <item> | inspect. Reply with exactly ONE action, "
-        "like 'move site_2' or 'gather raw_1' or 'craft c1_0' — no extra words.\n\n"
-        f"{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\nACTION:")
+        "like 'move site_2' or 'gather raw_1' or 'craft c1_0' — no extra words.\n"
+        "Strategy: if a resource is NOT at your current site, look up which site "
+        "has it in your context and move there first. Craft sub-items in "
+        "dependency order.\n\n"
+        f"{_FEWSHOT}\n{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\nACTION:")
 
 
 VERBS = ("explore", "move", "gather", "craft", "inspect")
