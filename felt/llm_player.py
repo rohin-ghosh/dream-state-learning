@@ -45,6 +45,7 @@ _FEWSHOT = (
     "EXAMPLE (goal: craft plank; context says: crafting plank requires wood "
     "and wood; wood is found at site_9):\n"
     "NOW: [step 3] No wood here. [At: site_2. Inventory: empty.]\n"
+    "THOUGHT: plank needs wood x2. I have none. wood is at site_9; I am at site_2.\n"
     "ACTION: move site_9\n"
     "NOW: [step 4] You move to site_9. Resources here: wood. [At: site_9. Inventory: empty.]\n"
     "ACTION: gather wood\n"
@@ -58,12 +59,14 @@ def build_prompt(obs: str, context_block: str, history: list, n_hist: int = 6) -
     hist = "\n".join(f"> {a}\n{o}" for a, o in history[-n_hist:])
     return (
         "You play a crafting game. Actions: explore | move <site> | "
-        "gather <raw> | craft <item> | inspect. Reply with exactly ONE action, "
-        "like 'move site_2' or 'gather raw_1' or 'craft c1_0' — no extra words.\n"
+        "gather <raw> | craft <item> | inspect.\n"
+        "First think briefly (1-3 sentences: what does the goal need, what is "
+        "missing, where is it?), then give ONE action on the LAST line, "
+        "exactly in the form 'ACTION: move site_2'.\n"
         "Strategy: if a resource is NOT at your current site, look up which site "
         "has it in your context and move there first. Craft sub-items in "
         "dependency order.\n\n"
-        f"{_FEWSHOT}\n{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\nACTION:")
+        f"{_FEWSHOT}\n{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\n")
 
 
 VERBS = ("explore", "move", "gather", "craft", "inspect")
@@ -74,18 +77,33 @@ def parse_action(text: str) -> str:
     """Canonicalize to 'verb' or 'verb <arg>' (single arg token). S0 field bug 2:
     models answer in natural language — 'gather raw_2 from site_3' — and passing
     the raw tail to the engine made the item lookup fail every time. The harness
-    is lenient; the ENGINE stays strict."""
-    for line in text.strip().splitlines():
-        l = line.strip().lower().lstrip("> ").removeprefix("action:").strip()
+    is lenient; the ENGINE stays strict.
+    ReAct decoding: models reason before acting, so scan for an explicit
+    'ACTION:' line from the END; fall back to the last verb-initial line."""
+    def canon(l: str):
+        l = l.removeprefix("action:").strip()
         toks = [t.strip(".,!?:;\"'`*()") for t in l.split()]
         toks = [t for t in toks if t]
         if not toks or toks[0] not in VERBS:
-            continue
+            return None
         verb = toks[0]
         if verb in ("explore", "inspect"):
             return verb
         arg = next((t for t in toks[1:] if t not in _FILLER), "")
         return f"{verb} {arg}".strip()
+
+    lines = [l.strip().lower().lstrip("> ").strip()
+             for l in text.strip().splitlines()]
+    lines = [l for l in lines if l]
+    for l in reversed(lines):
+        if l.startswith("action:"):
+            a = canon(l)
+            if a:
+                return a
+    for l in reversed(lines):
+        a = canon(l)
+        if a:
+            return a
     return "inspect"
 
 
@@ -183,7 +201,7 @@ class HFBackend:
     get_event_states caches per-event hidden states for head training."""
 
     def __init__(self, model_name: str, device: str = "cuda",
-                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 24):
+                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 128):
         import torch  # noqa — GPU tier only
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.torch = torch

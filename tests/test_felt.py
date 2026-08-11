@@ -135,6 +135,14 @@ def test_parse_action_canonicalizes_natural_language():
     assert parse_action("explore the area") == "explore"
     assert parse_action("Let me think about this.") == "inspect"  # fallback
     assert parse_action("move site_3") == "move site_3"           # already clean
+    # ReAct: reasoning lines before the action; explicit ACTION: line wins,
+    # even when a reasoning line starts with a verb
+    assert parse_action("I need raw_3, which is at site_2.\n"
+                        "ACTION: move site_2") == "move site_2"
+    assert parse_action("Move to site_2 would help, but I lack wood first.\n"
+                        "ACTION: gather raw_1") == "gather raw_1"
+    assert parse_action("THOUGHT: plank needs wood.\n"
+                        "gather wood") == "gather wood"  # no prefix: last verb line
 
 
 def test_harness_end_to_end_and_resume():
