@@ -25,6 +25,9 @@ def main():
     ap.add_argument("--episodes", type=int, default=2)
     ap.add_argument("--max-steps", type=int, default=25)
     ap.add_argument("--depth", type=int, default=4)
+    ap.add_argument("--deep", action="store_true",
+                    help="trace the DEEPEST goals (the ones that decide the "
+                         "gate) instead of the shallow head of the recipe list")
     a = ap.parse_args()
 
     if a.model == "mock":
@@ -38,6 +41,8 @@ def main():
     # same world/goal scheme as gate_calibration world 0
     world = World.generate("gate_0", seed=5000, depth=a.depth)
     goals = list(world.dag.recipes)
+    if a.deep:
+        goals = sorted(goals, key=lambda i: world.dag.depth_of[i], reverse=True)
 
     for e in range(a.episodes):
         goal = goals[e % len(goals)]
@@ -47,7 +52,8 @@ def main():
             state["step"] += 1
             if not state["printed_prompt"]:
                 print("=" * 72)
-                print(f"EPISODE {e} | goal={goal} | mode={a.mode}")
+                print(f"EPISODE {e} | goal={goal} "
+                      f"(depth {world.dag.depth_of[goal]}) | mode={a.mode}")
                 print("=" * 72)
                 print("FULL FIRST PROMPT:\n" + prompt)
                 print("-" * 72)

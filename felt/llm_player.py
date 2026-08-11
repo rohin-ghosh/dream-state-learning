@@ -65,7 +65,10 @@ def build_prompt(obs: str, context_block: str, history: list, n_hist: int = 6) -
         "exactly in the form 'ACTION: move site_2'.\n"
         "Strategy: if a resource you need IS at your current site, gather it NOW "
         "before moving anywhere. If it is NOT here, look up which site has it in "
-        "your context and move there. Craft sub-items in dependency order.\n\n"
+        "your context and move there. Craft sub-items in dependency order.\n"
+        "Careful: 'Resources here' lists what you CAN gather at your current "
+        "site — it is NOT your inventory. Only 'Inventory:' shows what you own. "
+        "Gathering only works at the site that has the resource.\n\n"
         f"{_FEWSHOT}\n{context_block}\n\nRECENT:\n{hist}\n\nNOW: {obs}\n")
 
 
