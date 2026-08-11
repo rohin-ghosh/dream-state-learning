@@ -31,6 +31,7 @@ class Fact:
     kind: str        # 'recipe' | 'location' | 'decor' | 'count'
     text: str        # canonical fact string (probe target)
     structural: bool
+    step: int = -1   # step index the fact was experienced at (-1 = episode setup)
 
 
 @dataclass
@@ -132,7 +133,7 @@ class FeltCraft:
             here = [r for r, l in w.raw_locations.items() if l == loc]
             for r in here:   # discovering a binding = experiencing a structural fact
                 self.episode_facts.append(
-                    Fact("location", f"{r} is found at {loc}", True))
+                    Fact("location", f"{r} is found at {loc}", True, self.steps))
             return (f"You explore and find {loc} ({self.decor[loc]}). "
                     f"Resources here: {', '.join(here) or 'none'}.")
         if act.startswith("move"):
@@ -152,7 +153,7 @@ class FeltCraft:
             self.inventory[res] = self.inventory.get(res, 0) + 1
             self.episode_facts.append(
                 Fact("count", f"gathered {res} at step {self.steps} of this episode",
-                     False))
+                     False, self.steps))
             return f"You gather 1 {res}. Inventory: {self._inv_text()}."
         if act.startswith("craft"):
             item = act.split(None, 1)[1].strip() if " " in act else ""
@@ -166,7 +167,7 @@ class FeltCraft:
             self.inventory[b] -= 1
             self.inventory[item] = self.inventory.get(item, 0) + 1
             self.episode_facts.append(   # using a recipe = experiencing the edge
-                Fact("recipe", f"crafting {item} requires {a} and {b}", True))
+                Fact("recipe", f"crafting {item} requires {a} and {b}", True, self.steps))
             return f"You craft {item}. Inventory: {self._inv_text()}."
         if act.startswith("inspect"):
             return (f"Goal: craft {self.goal}. At: {self.current_loc or 'nowhere'}. "
