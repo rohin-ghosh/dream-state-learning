@@ -1528,6 +1528,24 @@ keyword_gate (any felt-only mock win = returning artifact); keyword_gate's own
 modest signal (~0.16) is legitimate env structure (counts are gather-only).
 50/50 tests across suites. All three red-team reports now processed.
 
+### Overnight session 2 (2026-08-12→13): GPU tier + paper prewrite complete
+
+Built for the 8 AM lease: gpu/setup_node.sh (two-phase driver→env→models→tests),
+run_gates.py (S0 calibration w/ real model), rollouts.py (vLLM lockstep PASS A +
+multi-layer state cache PASS B; padding-side + world-seed-logging defensive fixes),
+train_head_real.py (S2 + hour-12 kill-switch, mock comparator 0.03 w/ provenance),
+probe_eval_real.py (S3 policy zoo on real-state salience, felt-vs-keyword_gate as
+THE decisive line), RUNBOOK.md (hour-by-hour). All CPU-importable, resumable.
+paper/draft.md v0.1: full ICLR skeleton, all CPU results + verified attributions in,
+GPU results as [SLOT]s, negative-control ledger as §6 (methodological contribution),
+tone rules + submission checklist embedded.
+Verification: agents flaky tonight (1 stall, 1 launch-block); paper fact-check done
+by self-audit (all numbers traced to sources ✓); GPU-script red-team relaunched.
+Absorbed from Rohin's external-AI paste (selectively): contrastive K-V loss idea
+(GPU-tier memory-training option), confirmation our sigmoid head avoids softmax
+saturation, residual-alpha = our existing v2 Flamingo plan; discarded garbled
+attributions (ATLAS≠Meta).
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
