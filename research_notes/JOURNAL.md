@@ -1444,6 +1444,39 @@ framing stays out of reviewer-facing text (roadmap language only).
 Rohin's staged plan CONFIRMED against the map: frozen policy → prove STM/LTM/thinking
 can be conditioned on it → unfreeze later. The unification is the claim.
 
+### Compute CONFIRMED + regime-design scoping (2026-08-11/12)
+
+**Quota facts (Rohin, from Colossus docs):** rolling 30-day quota = 1440 lease-hours
+(1 unit = 1 hr), i.e. ~60 lease-days/month, self-service; over-quota blocks new
+leases/extensions. Default lease 48h (--duration overridable, min guaranteed 1h).
+Only `general` pool is open to all colossus-users; 8×A100/H100/H200 nodes EXIST but
+in private pools (nim-factory-dev, vrdc-dev, swdl-fw-infra...) — authorization
+required. Numeric concurrent-lease cap + max-duration are policy-driven per
+pool/role, not published.
+
+**Translation:** our jobs (small-model rollouts + ~1M-param head) don't need
+multi-GPU interconnect → single-A100 general-pool nodes are the right shape.
+Min-credible tier (50-150 GPU-h) ≈ 1-2 weeks of quota; workshop-grade (500-1000
+GPU-h) fits in 1-2 months rolling, fully self-service. Multi-GPU pools = optional
+accelerator via mentor. **Compute is NOT a blocker.** Remaining human blocker:
+publication/IP question to manager (CoI KB0025363 + NXP arXiv page).
+
+**Regime-design scoping (Rohin):** the paper's target regime = the WINDOW where
+baseline context has aged out, surprise-memory kept novel-but-useless over
+boring-but-vital sequence info, and policy-attention kept just enough outcome-
+relevant sequence to win. Mechanism (ii) [modest: right info survives] is the
+target; mechanism (i) [emergent episodic replay at absurd scale] = try-and-report,
+paper doesn't bank on it. The regime is SEARCHABLE ON CPU first: sweep chain depth
+(craft hierarchies), distractor rate, horizon-vs-budget ratio in the abstract tier;
+set the LLM-tier game at the widest differentiation window. exp4 shape: advantage
+grows with horizon at fixed capacity → deep hierarchies + long horizons + tight
+budgets is where to hunt.
+
+**Oracle clarified for Rohin:** (1) oracle baseline = ceiling marker + metric sanity
+(nothing may beat it); (2) oracle VALUE = exact BFS graph-distance on our DAG —
+zero-cost perfect value signal for Stage 1, giving clean fault isolation
+(mechanism-vs-signal) before training any value net.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
