@@ -81,9 +81,14 @@ def per_fact_metrics(scores: np.ndarray, stream, budget: int) -> dict:
 def retention_by_age(scores: np.ndarray, target: np.ndarray, last_seen: np.ndarray,
                      n_episodes: int, budget: int, n_buckets: int = 4) -> dict:
     """FORGETTING CURVE (Ebbinghaus port): retention@budget of `target` facts,
-    stratified by memory AGE = episodes since last appearance. Returns
-    {bucket_label: retention}, oldest first. Buckets are age quantiles over the
-    target class so each has mass."""
+    stratified by memory AGE = episodes since last appearance.
+
+    CONFOUND CAVEAT (audit): over the full structural class, age correlates with
+    TYPE — frequent facts (SF) are always recently-seen, rare facts (SR) always old
+    — so a full-class curve partly measures type, not decay. Pass a single-type
+    `target` mask (e.g. SF only) for a clean within-type curve, or interpret the
+    full-class curve as type-mixed. The harness reports SF-only by default and
+    labels the SR class as a separate point."""
     tgt = np.where(target)[0]
     if len(tgt) == 0:
         return {}
@@ -123,23 +128,31 @@ def retention_by_importance(scores: np.ndarray, importance: np.ndarray,
 def gist_verbatim_paired(scores: np.ndarray, stream, budget: int,
                          rng=None, n_probes: int = 200) -> dict:
     """GIST/VERBATIM PAIRED PROBE (fuzzy-trace port — the unported paradigm).
-    For each probe: sample an EPISODE, then within that same episode sample one
-    GIST fact (structural, present) and one VERBATIM fact (detail, present).
-    Score whether each is retained at budget. Pairing within-episode controls for
-    exposure: both facts were experienced together; only their TYPE differs.
-    Returns P(gist retained), P(verbatim retained), and the DISSOCIATION
-    (gist − verbatim) — the FTT signature."""
+    For each probe: sample an EPISODE, then within it one GIST fact (structural-
+    frequent, SF) and one VERBATIM fact (recurring-detail, DR) — both present.
+
+    EXPOSURE MATCHING (audit fix): the verbatim slot draws from DR ONLY. SF and DR
+    share the same appearance marginal by construction, so gist and verbatim probes
+    are frequency-matched — a type-blind method (e.g. frequency) MUST show
+    dissociation ≈ 0. (The earlier version drew verbatim from all detail incl.
+    one-shot facts, letting frequency fake a 0.21 dissociation from exposure alone.)
+    frequency-dissociation≈0 is enforced as a permanent canary test.
+
+    Returns P(gist retained), P(verbatim retained), DISSOCIATION (gist − verbatim)
+    — the FTT signature."""
+    from .tasks import SF, DR
     rng = rng or np.random.default_rng(0)
     keep = set(_order_desc(scores)[:budget].tolist()) if budget < len(scores) \
         else set(range(len(scores)))
     X = stream.X
-    struct = stream.is_structural
+    is_sf = stream.fact_type == SF
+    is_dr = stream.fact_type == DR
     g_hits, v_hits, n = 0, 0, 0
     episodes = rng.choice(X.shape[0], size=min(n_probes, X.shape[0]), replace=False)
     for e in episodes:
         present = np.where(X[e] > 0)[0]
-        g_c = present[struct[present]]
-        v_c = present[~struct[present]]
+        g_c = present[is_sf[present]]
+        v_c = present[is_dr[present]]
         if len(g_c) == 0 or len(v_c) == 0:
             continue
         g = int(rng.choice(g_c)); v = int(rng.choice(v_c))

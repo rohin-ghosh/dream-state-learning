@@ -40,7 +40,7 @@ parametric-memory field on an axis none of the methods report.
 ```bash
 cd /path/to/dream-state
 PYTHONPATH=. python3 run_benchmark.py          # headline table + rigor checks
-PYTHONPATH=. python3 tests/test_structmem.py   # 23 invariant tests
+PYTHONPATH=. python3 tests/test_structmem.py   # 27 invariant tests
 ```
 
 ## Methods included

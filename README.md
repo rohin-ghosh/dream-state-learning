@@ -20,7 +20,7 @@ memory-type-agnostic retention benchmark** (working name pending; formerly
    relational structure ("gist") and sheds episodic detail ("verbatim") as
    experience outgrows a fixed budget — scored programmatically against
    ground-truth dependency graphs, through one probe interface that works for RAG,
-   parametric/LoRA, and text-bank memories. Abstract (CPU) tier: built, 23 tests,
+   parametric/LoRA, and text-bank memories. Abstract (CPU) tier: built, 26+ tests (see tests/),
    adversarially red-teamed and externally audited. LLM tier: scaffolded, needs GPU.
 
 2. **Felt Attention (Paper 2, designed).** Value net trained on task outcomes →
@@ -32,7 +32,7 @@ memory-type-agnostic retention benchmark** (working name pending; formerly
 
 ```bash
 PYTHONPATH=. python3 run_benchmark.py            # benchmark + rigor checks
-PYTHONPATH=. python3 tests/test_structmem.py     # 23 invariant tests
+PYTHONPATH=. python3 tests/test_structmem.py     # 27 invariant tests
 PYTHONPATH=. python3 experiments/exp4_end_to_end.py  # end-to-end miniature
 ```
 
@@ -42,7 +42,7 @@ PYTHONPATH=. python3 experiments/exp4_end_to_end.py  # end-to-end miniature
 structmem_bench/    the benchmark package (see its README)
 experiments/        exp0–exp4 + reports (reversals preserved with banners)
 research_notes/     literature surveys, red-team reports, JOURNAL, INDEX
-tests/              23 invariant tests
+tests/              27 invariant tests
 PAPER_SHEET.md      claim-by-claim evidence state (for reviewers)
 BENCHMARK_SPEC.md   benchmark design spec
 DESIGN_DOC.md       historical design doc (superseded; banner inside)

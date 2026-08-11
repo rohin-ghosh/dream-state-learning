@@ -97,10 +97,17 @@ def run_paradigms(cfg: BenchConfig, methods=None, seeds=20, budget=25) -> dict:
             out[m]["gist"].append(gv["gist"])
             out[m]["verbatim"].append(gv["verbatim"])
             out[m]["dissociation"].append(gv["dissociation"])
-            for k, v in met.retention_by_age(scores, stream.is_structural,
+            # within-type curve (SF only) to avoid the age↔type confound; SR
+            # reported as its own labelled point (audit fix)
+            from .tasks import SF, SR
+            sf_mask = stream.fact_type == SF
+            for k, v in met.retention_by_age(scores, sf_mask,
                                              stream.last_seen, cfg.n_episodes,
                                              budget).items():
-                out[m]["by_age"].setdefault(k, []).append(v)
+                out[m]["by_age"].setdefault(f"SF {k}", []).append(v)
+            sr_mask = stream.fact_type == SR
+            out[m]["by_age"].setdefault("SR (rare, old)", []).append(
+                met.retention_at_budget(scores, sr_mask, budget))
             for k, v in met.retention_by_importance(scores, stream.importance,
                                                     budget).items():
                 out[m]["by_importance"].setdefault(k, []).append(v)

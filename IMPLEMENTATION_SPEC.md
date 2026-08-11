@@ -48,6 +48,12 @@ FROZEN LLM (actor, ReAct)                   VALUE NET V(s)   [Stage 1]
 2.1 Form: ONE attention-shaped head reading frozen hidden states h_t: queries from
     a learned goal/value embedding; keys/values from h_t. Output: per-event salience
     a_t ∈ [0,1] over tokens/events. ~1-10M params.
+    **[DECIDED, audit-forced] v1 = HEAD-AS-SCORER:** the head's output drives
+    EXTERNAL ops only (memory writes, LoRA weighting, context ranking); it does NOT
+    feed back into the frozen model's forward pass. Zero interference (RLHF-value-
+    head pattern). HEAD-AS-MODULATOR (output gates the model's own computation —
+    "next token interested in outcome") = v2, via Flamingo zero-init gating; its
+    central risk (frozen-model degradation) is out of v1's scope by design.
 2.2 Loss (v1): DISTILLATION — a_t regresses the value net's per-event signal
     (TD-error magnitude |δ_t| and/or advantage). Supervised, stable. This is
     Pattern A: an RLHF-style value/probe head — different loss, frozen backbone,
@@ -83,6 +89,12 @@ FROZEN LLM (actor, ReAct)                   VALUE NET V(s)   [Stage 1]
 4.3 Ablation spine (the paper's table): stock-ATLAS (surprise-only) | value-only |
     surprise×value | surprise+value | D-MEM-style heuristic gate ($0-training,
     verified heuristic by direct read) | uniform | no-memory | oracle.
+4.3b **KVP-ablation (novelty-isolating, audit-adopted):** a KVP-style retention
+    policy (arXiv:2602.10238, ICML 2026 — RL head, frozen LLM, budget) with reward
+    swapped from decoding-utility to task-outcome, all else held fixed. If
+    outcome-trained beats decoding-trained on the agentic task, that single result
+    IS the objective claim against a published baseline. Read 2605.08234 (regime
+    diagnostic for value-aware eviction) BEFORE designing this.
 4.4 Rules: ≥2 backbones for any LLM claim; ≥3 orderings; programmatic scoring;
     budget = active memory at inference; final lit re-sweep before submission.
 

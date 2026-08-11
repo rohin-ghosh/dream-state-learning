@@ -9,7 +9,7 @@ NOT-DONE is explicitly unproven and we say so.
 
 Repo: github.com/rohin-ghosh/dream-state-learning · Reproduce:
 `PYTHONPATH=. python3 run_benchmark.py` and `PYTHONPATH=. python3 experiments/exp4_end_to_end.py`
-(CPU, minutes) · Tests: `PYTHONPATH=. python3 tests/test_structmem.py` (23/23).
+(CPU, minutes) · Tests: `PYTHONPATH=. python3 tests/test_structmem.py` (27/27).
 
 ---
 
@@ -27,7 +27,12 @@ benchmark is a held-out exam it never sees.
 
 ## 2. Claims and their evidence
 
-### C1. Outcome-trained allocation beats untrained allocation in a real interference-limited memory, and the advantage grows with data horizon. [PROVEN-CPU]
+### C1. Outcome-trained allocation beats UNIFORM allocation in a real interference-limited memory, and the advantage grows with data horizon; where a per-event value signal exists, it beats both. [PROVEN-CPU]
+*(Wording corrected per external audit: the untrained per-event z-score (value_z)
+beats the outcome-trained per-item head at every capacity — 0.63 vs 0.25 AP at
+d=128 — because per-item post-hoc credit is weak under relational outcomes (exp2.5).
+The measured statistic is trained−uniform; value_z's superiority is itself a
+finding: per-event tags ≫ post-hoc credit, see C2.)*
 `experiments/exp4_end_to_end.py` (20 seeds, paired tests). Memory = linear associative
 store in R^d (real superposition crosstalk); all policies get identical total write
 budget (pure allocation comparison); value heads see ONLY (presence, outcome).
@@ -63,7 +68,7 @@ Three-flip history, fully documented (exp1 → exp1-corrected → external audit
   wins by MORE vs the corrected baseline).
 
 ### C4. The benchmark itself is adversarially hardened. [PROVEN-CPU]
-`structmem_bench/` (23 tests). Rigor layer: random-sampler, constant-scorer, and
+`structmem_bench/` (27 tests). Rigor layer: random-sampler, constant-scorer, and
 label-permutation canaries all at chance (~0.03 vs base 0.024); frequency provably
 uninformative on marginal-matched facts (dP −0.06) and provably failing the designed
 hard cases (rare-critical kept 0.000; recurring-useless kept 0.703). Survived: 3-agent
@@ -96,7 +101,27 @@ verifications:
   generation + tenure-crossover. **No benchmark bridges parametric + external memory
   through one probe interface; gist-vs-verbatim (fuzzy-trace) and spacing effects are
   UNPORTED as eval paradigms; importance-stratified retention is unclaimed.**
-- KNOWN RISK: field moves monthly; a final re-sweep is mandatory before submission.
+- **C5 amendments (2026-08-11 external audit + follow-up):**
+  - **KVP, "Learning to Evict from Key-Value Cache" (2602.10238, Apple, ICML 2026):**
+    per-head RL policies on a FROZEN LLM allocate KV retention under budget, reward =
+    future *decoding utility*. ⇒ the CONTEXT consumer of our tri-consumer claim is
+    OCCUPIED. Surviving differentiators: (a) our reward = distance-to-task-OUTCOME
+    (KVP learns what the model will want; we learn what the TASK will need); (b) the
+    tri-consumer unification (context + LTM writes + weight consolidation from ONE
+    head/one value signal) — nothing found crosses it. KVP = mandatory citation AND
+    the cheapest novelty-isolating experiment: swap KVP's reward for task-outcome,
+    hold all else fixed.
+  - **TRIM-KV (2512.03324):** learned per-token importance gate, frozen LLM, enforced
+    budget (KV-scope, distillation-trained, no outcomes/cross-episode). "Importance-
+    stratified retention is unclaimed" is WEAKENED → cite TRIM-KV, claim the
+    outcome-trained + cross-episode + consolidation deltas.
+  - **PM-Bench (2607.12385):** ports the Virtual-Week paradigm to agent-memory eval
+    ⇒ "paradigm-porting" has precedent (with eMEM-Bench); our compound (paradigm
+    probes × memory-type-agnostic × enforced budget) still unclaimed.
+  - AgeMem revised (Jul 2026): now unifies LTM+STM under one GRPO policy — re-read
+    before submission; occupies more of the LTM-writes consumer than note 05 said.
+- KNOWN RISK: field moves monthly; **final re-sweep scheduled ~Sep 20** (NeurIPS
+  notifications ~Sep 29 will dump currently-invisible accepted work onto arXiv).
   Naming: "StructMemEval" (2602.11243) exists — our benchmark will be renamed.
 
 ### C6. Compute feasibility. [VERIFIED-LIT]

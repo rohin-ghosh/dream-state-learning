@@ -1419,6 +1419,31 @@ Critical path (6.5 weeks):
 - Wk5 (Sep 8-18): write; abstract in.
 - Wk6 (→Sep 25): polish; full in. Then arXiv + outreach to mapped authors.
 
+### Second external audit processed (2026-08-11, note 23) — all fixes in, 27/27
+
+Audit part 1 (code): gist/verbatim probe was EXPOSURE-CONFOUNDED (verbatim drew from
+all detail incl. one-shots; frequency faked 0.21 dissociation) → verbatim now DR-only
+(marginal-matched) + permanent frequency-dissociation≈0 canary. C1 wording corrected
+(beats UNIFORM, not "untrained" — value_z beats trained_item everywhere).
+Forgetting-curve age↔type confound → SF-only curve + SR labelled point. Counts fixed.
+
+Audit part 2 (prior art): our lit notes verified NOT hallucinated (6 IDs spot-checked,
+all real+accurate). **KVP (2602.10238, Apple, ICML 2026)** = policy-trained per-head
+RL eviction on frozen LLM under budget → the CONTEXT consumer is OCCUPIED. Surviving:
+(1) objective distinction — decoding-utility vs distance-to-OUTCOME ("KVP learns what
+the model will want; we learn what the task will need"); (2) tri-consumer unification
+(one head/value → context+LTM+consolidation) — NOBODY crosses it. TRIM-KV weakens
+"importance-stratified unclaimed" (cite it); PM-Bench = paradigm-porting precedent
+(compound survives). AgeMem revised Jul 2026 (one GRPO policy over LTM+STM — re-read).
+
+Decisions: v1 = HEAD-AS-SCORER (modulator = v2, Flamingo gating) — spec updated;
+KVP-ablation adopted as the novelty-isolating experiment (swap reward, hold harness);
+final re-sweep scheduled ~Sep 20 (NeurIPS ~Sep 29 arXiv dump); "self-determinance"
+framing stays out of reviewer-facing text (roadmap language only).
+
+Rohin's staged plan CONFIRMED against the map: frozen policy → prove STM/LTM/thinking
+can be conditioned on it → unfreeze later. The unification is the claim.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,

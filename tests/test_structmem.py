@@ -231,11 +231,25 @@ def test_gist_verbatim_dissociation_orders_correctly():
 
 
 def test_forgetting_curve_buckets_aggregate():
-    # fixed buckets must produce the same keys across seeds (aggregatable)
+    # fixed buckets, same keys across seeds; SF-only curve + SR labelled point
+    # (age↔type confound fix)
     c = _cfg(outcome="relational", n_episodes=300)
     agg = harness.run_paradigms(c, methods=["frequency"], seeds=5, budget=25)
     keys = list(agg["frequency"]["by_age"].keys())
-    assert len(keys) <= 4 and all(k.startswith("age ") for k in keys), keys
+    assert any(k.startswith("SF age") for k in keys), keys
+    assert "SR (rare, old)" in keys, keys
+    assert len(keys) <= 5, keys
+
+
+def test_gist_verbatim_frequency_canary():
+    # PERMANENT CANARY (audit finding): gist and verbatim slots are exposure-matched
+    # (SF vs DR share marginals), so a type-blind method — frequency — MUST show
+    # dissociation ≈ 0. The pre-fix probe let frequency fake 0.21 from exposure.
+    c = _cfg(outcome="relational", n_recipes=4, n_episodes=300)
+    agg = harness.run_paradigms(c, methods=["frequency"], seeds=25, budget=25)
+    d = agg["frequency"]["dissociation"]
+    # per-seed probe std ~0.17 -> SE at 25 seeds ~0.034; |mean|<0.1 is ~3 SE
+    assert abs(d) < 0.1, f"frequency dissociation {d} — exposure confound is back"
 
 
 def test_importance_strata_present():
