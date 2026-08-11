@@ -18,10 +18,13 @@ context. If the first inequality fails → the game's ACTION side is too hard fo
 the model (simplify verbs/parsing, add few-shot examples), NOT a memory problem.
 If the second fails high → deepen the DAG / widen worlds (more knowledge to miss).
 
-**Model: Qwen2.5-1.5B-Instruct.** Rationale: instruction-following is sufficient
-for 5-verb text games with examples; rollouts are ~4-5× cheaper than 7B; the head
-reads hidden states (d=1536) which are rich at 1.5B. Escalate to 3B only if the
-manual-win-rate gate fails after prompt iteration.
+**Model: Qwen2.5-1.5B-Instruct, with the 3B path budgeted as LIKELY (audit).**
+External evidence (redteam_6): 1-2B models score ~4% on ALFWorld-class tasks
+zero-shot; FeltCraft is far easier (5 verbs, manual-in-context, move-anywhere)
+and the MockTextPlayer proves the game is solvable from prompt text alone — but
+25-40 steps of format adherence is exactly where 1.5B breaks. Plan: try 1.5B
+first (cheap), expect 3B (+15-25 GPU-h to the budget, still fits), 7B is the
+tail. The S0 gates decide in the first hour.
 
 ## 2. Knowledge load vs context budget (the "data ≫ capacity" regime, in tokens)
 
@@ -31,13 +34,15 @@ Context budget for the memory-constrained condition: **512 tok window** → hold
 ~35% of one world's manual after obs/goal overhead. Cross-world (agent serves N
 worlds interleaved): knowledge load scales ×N while budget stays fixed —
 **interleave 3 worlds → load ≈ 5-6× budget** (the exp4/5 regime). Knob order if
-differentiation is weak: interleaved worlds ↑, depth ↑ (4→6 ⇒ 18→28 facts), decor
+differentiation is weak: interleaved worlds ↑, depth ↑ (4→6 ⇒ 18→24 facts), decor
 noise ↑.
 
 ## 3. Rollout + token arithmetic (per episode, 1.5B, A100, vLLM)
 
   steps/episode ≈ 25-45 (solver: ~25 at depth 4; LLM: assume 1.5× worse ≈ 40)
-  tokens: obs ~80, action ~10, window ≤1k → prefill ~40×1k=40k, decode ~400
+  tokens: obs ~80, action ~10, window ≤1k → prefill ~40×1k=40k; decode ~400
+  action-only, but 2.5-4k/episode IF ReAct thoughts are on (audit correction —
+  decide thought-mode per condition; action-only for bulk rollout gen)
   A100 + vLLM, 1.5B, batch 32 envs: decode ~3-6k tok/s, prefill ≫ →
   **throughput ≈ 600-1200 episodes/hour** (conservative planning number: 600).
 
@@ -46,7 +51,7 @@ noise ↑.
 | stage | units | est. GPU-h |
 |---|---|---|
 | S0 sanity gates (§5): manual/no-memory win rates, 300 eps | 300 eps | 0.5-1 |
-| S1 bulk rollouts for head training: **10k eps** (KVP-scale traces; exp6 needed 75 w/ mocks — 10k gives real-state headroom), hidden states cached to disk (~10k×40 events×1536×2B ≈ 1.2 GB) | 10k eps | 10-17 |
+| S1 bulk rollouts for head training: **10k eps**, hidden states cached to disk — MULTI-LAYER (3 layers ≈ 3.7 GB; plan ~34 GB if all layers, audit rec) so gate-3's try-later-layers fallback needs no regeneration | 10k eps | 10-17 |
 | S2 head training on cached states (1-10M params, distillation) | — | 1-2 |
 | S3 probe-tier eval: FIXED-TRAJECTORY replay — one rollout set, all 8 policies scored on retention probes (embedding passes only) | 3k eps replayed | 2-4 |
 | S4 closed-loop winnability: memory feeds context, behavior changes — TOP-4 conditions only × 3 seeds × 200 eps | 2.4k eps | 4-8 |

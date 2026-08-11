@@ -1477,6 +1477,30 @@ budgets is where to hunt.
 zero-cost perfect value signal for Stage 1, giving clean fault isolation
 (mechanism-vs-signal) before training any value net.
 
+### Overnight hardening pass (2026-08-12) — exp6 RETRACTED, LLM half built, ledger honestly green
+
+Red-team round 2 (redteam_4/5/6; agent 5 pending at write time). redteam_4 killed
+the exp6 headline: the felt effect was a hardcoded fallback constant + type≡action
+label-leak equivalence + cosine-floor confound + salted-hash irreproducibility.
+ALL fixed with canaries (keyword_gate policy, floor-corrected probes, determinism
+test, detour rollouts creating within-type salience variance). redteam_6 caught
+the dishonest GREEN ledger (LLM half had zero code, 0/5 gates runnable) → built
+felt/llm_player.py (MockTextPlayer text-driven planner, HFBackend w/ multi-layer
+state extraction, manual/memory injection) + felt/gates.py; engine move-anywhere
+fix (knowledge must be actionable). Gates: mock 1.0/0.0. SIZING corrected (3B
+likely, decode volume, multi-layer cache); spec §5b amendments (run-1 gate =
+head-regret-on-real-states ≤3× mock; goal-agnostic head recorded; LoRA = run-2).
+
+HONEST STATE: realistic policies ≈ 0 on corrected metric; oracle ceiling
++0.11/+0.22 @ h≥128; head-works question = GPU tier with an hour-12 kill-switch.
+Better pre-lease position than the fake positive: we know the signal, the test,
+and the cost. 47 tests green. DEEPDIVE_GUIDE finalized w/ lease spec (general
+pool, 1× A100-80GB, 48h, one lease).
+
+Meta: this is the 4th time adversarial code-review reversed a headline (exp1,
+exp2 green light, gist/verbatim confound, exp6). The pattern is now structural:
+NO result is real until a code-level adversary fails to kill it.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,

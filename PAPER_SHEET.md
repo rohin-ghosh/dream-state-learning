@@ -183,6 +183,19 @@ Positioning: **first psychology-grounded, memory-type-agnostic retention benchma
   human-comparison claims.
 - Single-author project; no second implementation of any result.
 
+## 5b. Addendum (2026-08-12, post-redteam_4/6)
+
+- **exp6's CPU pipeline result is RETRACTED** (artifact stack: fallback constant,
+  type≡action label-leak equivalence, cosine-floor confound, salted-hash
+  irreproducibility — all fixed, each with a permanent canary/test). C1–C4
+  (exp0–exp5 + benchmark) are UNAFFECTED (different code paths, already-hardened
+  metrics). Honest CPU-tier state: realistic policies ≈ 0 on the corrected
+  metric; oracle-weight ceiling +0.11/+0.22 at hidden≥128; the head-works
+  question belongs to real LLM hidden states (GPU tier), gated at hour 12.
+- LLM-facing half now exists and is gate-tested (llm_player, gates,
+  MockTextPlayer: win@manual 1.0 / win@none 0.0 — difficulty is purely
+  knowledge). Test count: 47 across three suites.
+
 ## 6. Provenance / method note
 
 Every headline number in §2 has a runnable script and per-seed data in-repo; every

@@ -106,6 +106,26 @@ FROZEN LLM (actor, ReAct)                   VALUE NET V(s)   [Stage 1]
 5.4 The Stage-1 gate sign-off (1.4) before any Stage-2 spend.
 5.5 External review round (ICLR-author friend) on this spec + PAPER_SHEET.
 
+## 5b. Spec amendments (2026-08-12, post-redteam_6 — recorded changes)
+
+- **§1.4 d′ gate REPLACED for run 1:** with V = oracle the gate is vacuous by
+  construction. Run-1 gate = **head regret on REAL hidden states** vs the mock
+  baseline (0.03): proceed if ≤ ~3× mock; STOP and rethink if ≥0.15 (the
+  KVP-vulnerability made measurable). The original d′ gate applies from run 2
+  (learned value net).
+- **§2.1 amendment:** v1 head is GOAL-AGNOSTIC (single learned query) — a
+  recorded deviation; goal-conditioned queries (goal-text embedding → q) are a
+  GPU-tier upgrade once real states are in. Rationale: CPU tier showed the
+  binding constraint is elsewhere (probe expressiveness), and goal-conditioning
+  adds a moving part before the real-state signal is verified.
+- **§2.2 amendment:** distillation target is sign-clipped progress max(0,ΔV) in
+  v1; |δ| (setback-inclusive) is a GPU-tier ablation — LLM play has setbacks that
+  scripted play lacks, so the choice only matters there.
+- **§3.2 correction:** LoRA consolidation has NO code — it is run-2 scope, not
+  "wired but off" (honesty fix).
+- **§4.3 addition:** value_only and surprise+value(additive) arms; keyword_gate
+  and oracle_weight are PERMANENT canaries/ceiling in every table.
+
 ## 6. Known risks carried forward
 
 R1 value-net quality below the d′ bar (gate 1.4 exists for this). R2 field moves
