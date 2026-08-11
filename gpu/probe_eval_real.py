@@ -111,8 +111,9 @@ def main():
         by_world[rec["world"]].append(rec)
     results = defaultdict(list)
     for w_i, (wid, recs) in enumerate(sorted(by_world.items())):
-        # regenerate the SAME world (seed formula must match gpu/rollouts.py)
-        world = World.generate(wid, seed=0 * 7 + int(wid.split("_")[1]), depth=4)
+        # regenerate the SAME world from the LOGGED seed/depth (never guess)
+        world = World.generate(wid, seed=recs[0]["world_seed"],
+                               depth=recs[0].get("depth", 4))
         st = build_world_stream(recs, states, head, layer)
         if st is None:
             continue

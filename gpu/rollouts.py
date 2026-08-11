@@ -52,8 +52,9 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
         for line in open(log_path):
             done_eps.add(json.loads(line)["episode_uid"])
 
-    worlds = [World.generate(f"s1_{i}", seed=seed * 7 + i, depth=depth)
-              for i in range(n_worlds)]
+    world_seeds = {f"s1_{i}": seed * 7 + i for i in range(n_worlds)}
+    worlds = [World.generate(w, seed=sd, depth=depth)
+              for w, sd in world_seeds.items()]
     f = open(log_path, "a")
     ep = 0
     while ep < n_episodes:
@@ -92,6 +93,7 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
             env = b["env"]
             f.write(json.dumps({
                 "episode_uid": b["uid"], "world": b["world"].world_id,
+                "world_seed": b["world"].seed, "depth": depth,
                 "goal": b["goal"], "success": env.success, "steps": env.steps,
                 "trajectory": env.trajectory,
                 "facts": [{"text": fa.text, "kind": fa.kind,
@@ -131,6 +133,8 @@ def cache_states(model: str, out_dir: pathlib.Path, batch_size: int = 64):
 
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
+    tok.padding_side = "right"   # REQUIRED: last-non-pad indexing below assumes
+    #                              right padding; some chat tokenizers default left
     for i in range(0, len(todo), batch_size):
         chunk = todo[i:i + batch_size]
         enc = tok([t for _, t in chunk], return_tensors="pt", padding=True,

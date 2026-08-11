@@ -23,7 +23,8 @@ import numpy as np
 from felt.head import FeltHead, all_budgets_regret, normalize_salience
 from gpu.rollouts import text_key, LAYERS
 
-MOCK_BASELINE = 0.03      # held-out regret with mock embeds (CPU tier)
+MOCK_BASELINE = 0.03      # comparator constant: CPU-tier held-out regret with
+#                           mock embeds ranged 0.00-0.04 across configs (exp6/harness)
 
 
 def load_episodes(in_dir: pathlib.Path, layer: int):

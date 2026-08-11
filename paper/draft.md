@@ -27,7 +27,7 @@ ported measures (gist/verbatim dissociation, forgetting curves, importance-
 stratified retention); and (ii) *Felt Attention*: a single scorer head on a frozen
 LLM, distilled from an oracle value signal, whose per-event salience modulates
 memory writes (w = surprise × (1+β·salience)). On real hidden states of a frozen
-[MODEL], the head [SLOT: attains held-out ranking regret R vs mock baseline 0.03],
+[MODEL], the head [SLOT: attains held-out ranking regret R vs the mock-embedding baseline (0.00-0.04 across CPU configs; comparator constant 0.03)],
 and value-modulated writes [SLOT: improve gist retention +X over surprise-only and
 +Y over an action-keyword canary at matched budget; winnability +Z at fixed
 context]. We report the full negative-control ledger: with mock embeddings, no
