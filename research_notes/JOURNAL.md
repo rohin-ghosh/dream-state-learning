@@ -1370,6 +1370,38 @@ RPE" was WRONG — correct it wherever cited.** Direct read of the method sectio
 valence/feeling; the value-weighted allocation thesis in two words. Benchmark name
 TBD (must not collide with StructMemEval; check "FeltMem"/similar before use).
 
+### FELT ATTENTION — architecture of record (2026-08-11, Rohin's scoping)
+
+Scoping principle (Rohin): the part that doesn't exist must be as simple/legible/
+architectural as possible; leverage everything that does.
+
+Rohin's "progress-toward-outcome RL" = the VALUE FUNCTION (TD/λ-returns/AlphaGo),
+potential-based reward shaping (Ng 1999: r' = γV(s')−V(s)), and in LLM-land Process
+Reward Models. All mature — adopt, don't invent. For text envs the LLM IS the
+action model (ReAct).
+
+**Three-stage architecture:**
+1. Value net V(s) trained SEPARATELY on task outcomes (mature recipes).
+2. ONE attention head grafted on the FROZEN LLM, trained on VALUE loss (other
+   heads: token loss; this head: policy loss). ← the only new trainable object,
+   THE paper.
+3. Head's weights feed three consumers: (a) context/KV selection, (b) LTM
+   fast-weight writes, (c) LoRA consolidation weighting. All exist; wiring only.
+
+Head's training loss (v1 decision): DISTILLATION — head predicts the value net's
+per-event salience (TD-error/advantage). Supervised, stable; RL difficulty stays
+quarantined in stage 1. Matches exp4 finding (per-event tags ≫ post-hoc credit;
+TD-error IS the per-event tag). End-to-end REINFORCE = v2/ablation.
+Staging: write-side consumers first (LTM+LoRA, offline, benchmark-measurable),
+read-side second (read/write coupling, keep results attributable).
+
+Novelty posture: value functions solved for games; UNCLAIMED = one value-trained
+head allocating context+memory+training simultaneously on a frozen LLM (note 14:
+closest = attention-as-RL-policy; D-MEM verified heuristic). Ablation spine: learned
+head vs D-MEM-style heuristic gate vs surprise vs uniform, on the benchmark.
+Hard parts (Rohin, correct): value-net quality for the env (exp2 d' bar) + legible
+per-consumer attribution (= the benchmark's job).
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
