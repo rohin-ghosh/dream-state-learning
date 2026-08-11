@@ -1321,6 +1321,30 @@ allocation comparison). Train/eval firewall enforced.
 5. Canary clean at d'=0.
 CPU-tier green light for the GPU tier.
 
+### Compute precedents (note 21, 2026-08-11) + a novelty-relevant discrepancy
+
+Three-tier estimate (precedent-grounded): (a) CPU tier done, $0; (b) minimum
+credible LLM tier (1.5-4B frozen, one env, 5-20k eps, 3 seeds) ≈ **50-150 GPU-h ≈
+$100-400**; (c) workshop-grade (frozen 7B, ~5 conditions, 3 seeds + baselines +
+benchmark sweep) ≈ **500-1,000 H100-h ≈ one 8×H100 node 3-5 days ≈ $1.3-2.6k spot.**
+NVIDIA-summer feasible. Field's trained-memory runs are TINY (152-3,604 training
+items, 100-205 GRPO steps; Mem-α's 2,300 H100-h is the ceiling). Folklore anchor:
+~5-20 H100-h per 1k rollouts (7B). Biggest cost risk = episode/context length —
+and the parametric memory keeping wake-context short is ITSELF the cost control.
+
+**DISCREPANCY TO RESOLVE (novelty-relevant):** note 14 said D-MEM's critic router is
+"trained via RPE"; note 21's deep-read says D-MEM is **training-free** (heuristic
+surprise z-score × prompted utility, $0 training). Same for MemRL (runtime Q-EMA, no
+gradients). If note 21 is right, the "TRAINED dopamine gate" axis is MORE open than
+we believed — the closest 'trained gate' works are actually heuristics, and our
+learned head has no direct trained competitor on the gate axis. MUST verify by
+reading D-MEM's paper directly before any claim. Also: D-MEM + MemRL become
+mandatory $0-training baselines for our head ("does learning beat the heuristic
+gate" is THE ablation).
+
+Recommendation adopted: do NOT reproduce a full-model GRPO baseline (200-600 H100-h
+line item) — cite instead.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
