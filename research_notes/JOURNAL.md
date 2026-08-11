@@ -1578,3 +1578,18 @@ lab, no formal research background — arrived at the frontier problem shape
 through reasoning + lit search. Wants to keep it fun, publishable, real.
 
 ---
+
+## 2026-08-11 (lease, evening) — S0 verdict was a harness bug, not a model verdict
+First real-model gate run (Qwen2.5-1.5B): win@manual = win@none = 0.067, room 0.0,
+7.8 min. Two impossible symptoms (manual adding ZERO; ~8s/episode) → code check
+before escalation. Found: `play_episode` appended "Your goal: craft X" only to the
+FIRST obs; after step 1 the goal left the prompt entirely — every stateless backend
+played blind from step 2. Same bug independently in gpu/rollouts.py S1 (would have
+poisoned head-training data with goal-blind trajectories). MockTextPlayer masked it
+in all CPU tests by caching self.goal in instance state across generate() calls.
+Fix (b65b5e4): goal in persistent ctx block in both paths; + persistent
+[At/Inventory] status line (within-episode state only — knowledge wall untouched);
++ regression test forcing a fresh mock per generate() call. Lesson appended to the
+pattern: the mock must be as STATELESS as the real backend, or it tests a
+different game. S0 rerun on 1.5B before any escalation — the 0.067 measured
+nothing about the model.
