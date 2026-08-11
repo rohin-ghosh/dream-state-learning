@@ -1546,6 +1546,28 @@ Absorbed from Rohin's external-AI paste (selectively): contrastive K-V loss idea
 saturation, residual-alpha = our existing v2 Flamingo plan; discarded garbled
 attributions (ATLAS≠Meta).
 
+### RL positioning crystallized (Rohin, 2026-08-11, during S0 run)
+
+- Frozen policy = vital for ATTRIBUTION: the memory result is the objective;
+  suspected niche+novel enough to be uncovered (general RL systems doing similar
+  exist; the memory-focused, retention-evaluated version doesn't).
+- Graduation path: trained head + parametric memory → open RL policy + open
+  environment + full benchmarking (paper A+).
+- Paper-intro line (Rohin, keep): memory is an UNDERRATED aspect of RL — "in
+  environments where the need for memory is orders of magnitude higher, this
+  makes all the difference." The contribution targets memory-pressure regimes.
+- Signal distinction (Rohin): raw reward ≠ value/policy — "policy gives you
+  intermediary reinforcement, unlike reward." Terminology: what he describes
+  (sequential, Monte-Carlo-like credit along trajectories) = MC returns / TD(λ)
+  — dense per-step value, which is exactly our oracle-V TD salience now and
+  λ-returns later. MERLIN reacted against RAW-reward-driven memory; we use
+  dense VALUE — different objection target.
+- **MERLIN (2018) adopted as the related-work anchor**: "not out of nowhere,
+  but different" — it showed task reward is a poor memory-formation signal and
+  chose unsupervised prediction; we keep the unsupervised term (surprise) AND
+  add dense value as a modulator. Pending: note 24 sweep confirms with the
+  paper in hand.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
