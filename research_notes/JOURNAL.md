@@ -1290,6 +1290,37 @@ URGENCY: eMEM-Bench (June) proves the framing is in the air — someone will
 generalize it. Move fast. Name decision pending (Rohin: "decide once we learn the
 project").
 
+### DIRECTION SET: the head IS the project; benchmark = its structure (2026-08-11)
+
+Rohin's call: build the RL/policy/dopamine-trained attention head as the project he
+cares about, with the benchmark as its evaluation structure. Believes it's the best
+novel package + perfect timing ("front lines = right timing if done right"). NVIDIA
+summer compute possibly available.
+
+**Rohin's methodological correction (important, adopted):** the benchmark does NOT
+generate the training signal — that would be teaching-to-the-test/leakage AND
+circular (the claim is that OUTCOME-trained value DISCOVERS structure; training on
+structure probes hardcodes it). Outcome reward trains the head; benchmark = the
+held-out exam. Design the benchmark WITH the head in mind, keep the firewall.
+
+### Exp 4 — end-to-end miniature PASSES (2026-08-11)
+
+`experiments/exp4_end_to_end.py` + REPORT_exp4.md. First PHYSICAL memory (linear
+associative, real superposition interference, normalized write budgets = pure
+allocation comparison). Train/eval firewall enforced.
+1. **Bitter-lesson curve real on the data axis:** trained−uniform advantage grows
+   monotonically with horizon at fixed capacity (+0.099, t=7.8 at 800 eps). THE curve.
+2. **My capacity hypothesis FALSIFIED:** advantage does NOT grow as d→0 (interference
+   swamps everyone; even oracle 0.44 at d=16). Allocation needs d big enough to
+   express selection; helpful scarcity = data≫capacity.
+3. **Relational standout:** outcome-trained pair-weights in a binding memory: +0.468
+   (t=9.3) over co-occurrence; oracle 1.0. Relational thesis survives physics.
+4. **Architectural finding:** per-EVENT salience tags (value_z) ≫ post-hoc per-item
+   credit (0.63 vs 0.25) → the head should emit TD-like per-event tags + trained
+   relational credit; not per-item regression.
+5. Canary clean at d'=0.
+CPU-tier green light for the GPU tier.
+
 ### Meta (Rohin, on his own currency)
 
 Two currencies for the project: (1) get into elite research environments,
