@@ -1640,3 +1640,19 @@ layer is busy with next-token — consistent w/ interp literature, feeds v2.
 Per GRAY protocol next: (a) end-to-end reduced S3 with the ctx-head driving
 felt (needs S3 plumbing adapted to ctx states); (b) MLP capacity probe on the
 same states — can anything go BELOW the text floor (licenses a bigger head).
+
+## 2026-08-12 (day 2, afternoon) — CAPACITY PROBE: the signal is RICH
+2-layer MLP (hidden 256) on ctx l-8 states, same split/protocol:
+**held-out regret 0.0551, corr 0.830** — UNDER the 0.122 text floor, inside
+the original PROCEED zone. Chain closed: representation was guilty (fixed);
+then capacity was guilty (proven); premise TRUE — task-salience is readable
+from frozen 7B mid-stack states, nonlinearly encoded. Linear-ish FeltHead
+(0.125/0.636) was the aperture bottleneck — exactly the "scorer too small"
+branch anticipated by the GRAY protocol. S3 with linear-head salience:
+felt ≈ surprise (n.s.) — consistent. NOW RUNNING: S3 with MLP salience
+(corr 0.83) — does rich signal separate felt from surprise/keyword at the
+retention level? Head-form question (attention-shaped vs MLP scorer) is a
+PAPER-FRAMING decision for Rohin: "one attention head" story vs "small MLP
+probe" story; diagnostic evidence favors nonlinear readout regardless.
+Lease EXTENDED (new end time TBD from Rohin) — 10k-episode S1 scale-up now
+affordable if MLP-S3 separates.

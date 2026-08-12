@@ -78,3 +78,27 @@ vs cross-episode; F1/recall vs gist-verbatim-typed probes.
 retention-typed eval); axis 1 is now shared with EMBER and differentiation is
 methodological, not cosmetic.** Positioning line: both competitors select TEXT to
 keep; Felt Attention learns HOW STRONGLY to write into WEIGHTS.
+
+## 6. Aug-12 intake (agent deep-reads)
+
+**Memory Decoder (2508.09874, NeurIPS'25, SJTU/Shanghai AI Lab)** — small
+decoder pretrained to imitate a kNN-LM retriever over a domain corpus;
+plugs into frozen LLMs by output-distribution interpolation. NO write policy,
+no selection, no budget, no incremental writes — pretrain-once domain
+adaptation. Verdict: not a competitor, not a substrate. STEALABLE: (a) the
+output-interpolation READ path (merge memory predictions without touching
+internals); (b) KL-distillation as a slow consolidated tier under fast
+weights — salience-weighted distillation = a literal sleep phase.
+
+**"Memory in the Age of AI Agents" survey (2512.13564, 48 authors, Dec'25)**
+— Forms/Functions/Dynamics taxonomy; our slot: parametric form ×
+factual+experiential function × importance-driven formation/retention.
+No standalone write-policy chapter (concept smeared across Formation /
+importance-driven forgetting / RL-assisted). Their benchmark table has NO
+typed gist-vs-verbatim retention benchmark → supports our eval claim; §7
+open problems match ours ("manually engineered rules", no long-term
+consolidation, agents lack gist-like constructive memory). Coverage gap in
+the survey itself: ATLAS/TTT/fast-weights/KVP/EMBER absent — our corner is
+essentially unmapped there. THREAT FLAG to verify by direct read: Mem-α
+(RL-trained memory-construction policy) + MEM1/MemAgent RL-write family
+(believed token-level external stores, not value-gated parametric — confirm).
