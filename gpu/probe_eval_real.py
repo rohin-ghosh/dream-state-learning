@@ -42,12 +42,26 @@ def load_head(path):
 
 
 def build_world_stream(recs, states, head, layer, h_scale=1.0,
-                       states_mode="text", salience_npz=None):
+                       states_mode="text", salience_npz=None,
+                       fact_salience_npz=None):
     """K/V/S/labels/acts/kinds/texts for one world's episode stream, salience
     from the REAL-state head (or a precomputed per-episode salience file)."""
     K, V, S, lab, acts, kinds, texts = [], [], [], [], [], [], []
     for rec in recs:
         traj = rec["trajectory"]
+        if fact_salience_npz is not None:
+            for j, fa in enumerate(rec["facts"]):
+                k = f"{rec['episode_uid']}_f{j}"
+                if k not in fact_salience_npz.files:
+                    continue
+                if fa["step"] < 1 or fa["step"] - 1 >= len(traj):
+                    continue
+                K.append(_fact_key(fa["text"])); V.append(_fact_val(fa["text"]))
+                S.append(float(fact_salience_npz[k]))
+                lab.append(fa["structural"])
+                acts.append(traj[fa["step"] - 1]["action"].split(" ")[0])
+                kinds.append(fa["kind"]); texts.append(fa["text"])
+            continue
         if salience_npz is not None:
             if rec["episode_uid"] not in salience_npz.files:
                 continue
@@ -116,11 +130,14 @@ def main():
                     help="MUST match the cache the head was trained on")
     ap.add_argument("--salience-npz", default="",
                     help="precomputed per-episode salience (skips head+states)")
+    ap.add_argument("--fact-salience-npz", default="",
+                    help="per-FACT salience keyed '{uid}_f{j}' (note 26)")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
+    fact_npz = np.load(a.fact_salience_npz) if a.fact_salience_npz else None
     sal_npz = np.load(a.salience_npz) if a.salience_npz else None
-    if sal_npz is not None:
+    if sal_npz is not None or fact_npz is not None:
         head, layer, h_scale, states = None, 0, 1.0, None
     else:
         head, layer, h_scale = load_head(a.head)
@@ -137,7 +154,8 @@ def main():
         world = World.generate(wid, seed=recs[0]["world_seed"],
                                depth=recs[0].get("depth", 4))
         st = build_world_stream(recs, states, head, layer, h_scale,
-                                states_mode=a.states, salience_npz=sal_npz)
+                                states_mode=a.states, salience_npz=sal_npz,
+                                fact_salience_npz=fact_npz)
         if st is None:
             continue
         for pol in POLICIES:

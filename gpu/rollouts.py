@@ -258,6 +258,58 @@ def cache_states_ctx(model: str, out_dir: pathlib.Path, batch_size: int = 32):
     print(f"[S1-Bctx] cache complete: {cache_path}")
 
 
+# ---------------------------------------------------- PASS B-fact (note 26)
+def cache_states_fact(model: str, out_dir: pathlib.Path, batch_size: int = 32):
+    """Fact-in-context states: for each emitted fact, embed the emission
+    moment's context + the PROPOSITION itself. Keyed (episode_uid, fact_idx).
+    The head input for fact-level salience ('will this be load-bearing?')."""
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(model)
+    net = AutoModelForCausalLM.from_pretrained(
+        model, torch_dtype=torch.bfloat16, device_map="cuda",
+        output_hidden_states=True)
+    net.eval()
+
+    cache_path = out_dir / "states_fact.npz"
+    cached = {}
+    if cache_path.exists():
+        z = np.load(cache_path, allow_pickle=True)
+        cached = {k: z[k] for k in z.files}
+
+    todo = []
+    for rec in read_jsonl_tolerant(out_dir / "rollouts.jsonl"):
+        for j, fa in enumerate(rec["facts"]):
+            if fa["step"] < 1 or fa["step"] - 1 >= len(rec["trajectory"]):
+                continue
+            key = f"{rec['episode_uid']}_f{j}"
+            if f"{key}_l{LAYERS[0]}" not in cached:
+                text = (ctx_text(rec, fa["step"] - 1)
+                        + f"\nFACT: {fa['text']}")
+                todo.append((key, text))
+    print(f"[S1-Bfact] {len(todo)} fact instances to embed")
+
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    tok.padding_side = "right"
+    for i in range(0, len(todo), batch_size):
+        chunk = todo[i:i + batch_size]
+        enc = tok([t for _, t in chunk], return_tensors="pt", padding=True,
+                  truncation=True, max_length=512).to(net.device)
+        with torch.inference_mode():
+            out = net(**enc)
+        lens = enc["attention_mask"].sum(dim=1) - 1
+        for j, (k, _) in enumerate(chunk):
+            for l in LAYERS:
+                cached[f"{k}_l{l}"] = (out.hidden_states[l][j, lens[j]]
+                                       .float().cpu().numpy().astype(np.float16))
+        if (i // batch_size) % 400 == 0 and i > 0:
+            _atomic_savez(cache_path, cached)
+            print(f"[S1-Bfact] {i + len(chunk)}/{len(todo)}")
+    _atomic_savez(cache_path, cached)
+    print(f"[S1-Bfact] cache complete: {cache_path}")
+
+
 def _atomic_savez(path, cached):
     """P0-2: never overwrite the live cache in place — a kill mid-save must not
     corrupt PASS B progress."""
@@ -279,11 +331,16 @@ def main():
     ap.add_argument("--skip-states", action="store_true")
     ap.add_argument("--cache-ctx", action="store_true",
                     help="ONLY run PASS B-ctx (context-conditioned states)")
+    ap.add_argument("--cache-fact", action="store_true",
+                    help="ONLY run PASS B-fact (fact-in-context states)")
     a = ap.parse_args()
     out = pathlib.Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     if a.cache_ctx:
         cache_states_ctx(a.model, out)
+        return
+    if a.cache_fact:
+        cache_states_fact(a.model, out)
         return
     if not a.skip_rollouts:
         run_rollouts(a.model, a.episodes, a.par, out, max_steps=a.max_steps)

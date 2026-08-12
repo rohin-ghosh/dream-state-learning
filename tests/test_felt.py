@@ -145,6 +145,35 @@ def test_parse_action_canonicalizes_natural_language():
                         "gather wood") == "gather wood"  # no prefix: last verb line
 
 
+def test_dependency_credit_zeroes_decor_by_structure():
+    # note 26: decor/count credit must be 0 BY THE DAG, not by labels;
+    # used recipes/bindings must earn credit.
+    from felt.depcredit import world_fact_credit
+    from game import FeltCraft
+    from game.engine import scripted_noisy_play
+    w = World.generate("dc", seed=3, depth=3)
+    recs, known = [], set()
+    goals = list(w.dag.recipes)
+    for e in range(6):
+        env = FeltCraft(w, max_steps=120)
+        scripted_noisy_play(env, goals[e % len(goals)], episode_seed=e,
+                            known_locations=known)
+        known |= env.known_locations
+        recs.append({"episode_uid": f"ep{e}", "trajectory": env.trajectory,
+                     "facts": [{"text": f.text, "kind": f.kind,
+                                "structural": f.structural, "step": f.step}
+                               for f in env.episode_facts]})
+    credit = world_fact_credit(recs, binary=True)
+    by_kind = {}
+    for (uid, j), c in credit.items():
+        rec = next(r for r in recs if r["episode_uid"] == uid)
+        by_kind.setdefault(rec["facts"][j]["kind"], []).append(c)
+    assert all(c == 0.0 for c in by_kind.get("decor", [])), "decor must be 0"
+    assert all(c == 0.0 for c in by_kind.get("count", [])), "count must be 0"
+    assert any(c > 0 for c in by_kind.get("recipe", [])), "used recipes earn"
+    assert any(c > 0 for c in by_kind.get("location", [])), "used bindings earn"
+
+
 def test_harness_end_to_end_and_resume():
     shutil.rmtree("/tmp/felt_h", ignore_errors=True)
     cfg = RunConfig(workdir="/tmp/felt_h", train_worlds=2,
