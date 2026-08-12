@@ -166,10 +166,22 @@ readability chain preserved in §6: step-TD text-keyed 0.216 → ctx-keyed
 0.125 (linear) → 0.055 (MLP) → binary fact-credit ~solved. Interpretability
 check: within structural facts, used-vs-unused AUC 0.943 (score means 0.952
 vs 0.691; detail 0.001) — the head learned dependency credit, not fact type.
-5.4 S3 main table (2000 eps, matched budget): felt_b12 +0.391/0.944 =
-oracle-label ceiling +0.386/0.944; keyword canary +0.326 (felt−canary +0.065,
-t=34.4 SIG); uniform +0.306; random +0.300; surprise +0.279 (felt−surprise
-+0.112, t=8.0 SIG); dmem +0.214. [SLOT: cross-world-head robustness rerun.]
+5.4 S3 main table (2000 eps, matched budget): felt_b12 +0.391/0.944 vs
+label_ref +0.386/0.944 (RENAMED from "oracle_weight": binary type-label
+weighting is a label-informed REFERENCE, not a supremum — graded credit can
+legitimately allocate a finite write budget better than a 0/1 label, and felt
+edges past it twice with consistent sign/magnitude; state this in one
+sentence or a reviewer will assume leakage). Keyword canary +0.326
+(felt−canary +0.065, t=34.4 SIG); uniform +0.306; random +0.300; surprise
++0.279 (felt−surprise +0.112, t=8.0 SIG); dmem +0.214.
+Held-out-SEED robustness (same generator config, worlds 2-3 never seen in
+head training): felt +0.436 vs label_ref +0.431, felt−canary +0.066 (t=29.5),
+felt−surprise +0.119 (t=6.3). NOTE: absolute dissociation levels shift with
+world subset (easier worlds lift every policy); PAIRED within-world gaps are
+the primary statistics and are stable across subsets (0.065 vs 0.066).
+[SLOT: cross-CONFIG generalization — frozen head evaluated on depth-3 and
+depth-5/branching-4 worlds; the "property of value-trained salience vs
+property of the generator" defense.]
 5.5 [SLOT: S4 winnability at fixed context for top conditions.]
 5.6 [SLOT: second backbone replication.]
 5.7 Ablations: β sweep, layer sweep, value-only vs surprise×value vs additive.

@@ -1704,3 +1704,19 @@ top-12 read slots = 3/12 structural (surprise memory) vs 9/12 (felt = oracle).
 Pre-registered: no_memory < surprise < felt ≈ oracle < manual; felt−surprise
 gap at k=18 vs k=12 measures the scarcity-advantage (bitter-lesson
 calibration, vision doc).
+
+## 2026-08-13 — external review adopted (3 points)
+(1) CORRECTION to the record: the reviewer's "canary margin collapsed 5x"
+inverts two numbers — paired felt−canary gaps are +0.065 (main) and +0.066
+(held-out seeds): STABLE. What shifts is absolute level per world subset
+(easier worlds lift all policies) → paper reports PAIRED gaps as primary,
+absolute levels per subset explicitly. (2) "oracle_weight" RENAMED label_ref
+in the paper: binary type-label weighting is a label-informed reference, not
+a supremum; graded credit legitimately beats binary labels under a finite
+write budget (felt > label_ref twice, consistent sign+magnitude — a small
+finding, not leakage; must be stated or reviewers assume leakage).
+(3) "cross-world" demoted to "held-out seeds, same generator config" —
+cross-CONFIG generalization run scheduled (frozen head on depth-3 and
+depth-5/branching-4 worlds): the real transfer test and the #1 remaining
+scientific risk. Also: test_felt runs 8.6s here (reviewer's 9-min hang was
+environmental); README to document exact invocation.
