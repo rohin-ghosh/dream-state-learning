@@ -104,3 +104,20 @@ access patterns → post-training on memory USE (read-policy sequel).
 Scaling frame: Rubin-Ultra/Feynman-class compute → longer-lived agents →
 retention becomes the binding constraint; this project tests the slice
 without requiring the scale.
+
+## Positioning language locked (Rohin, 2026-08-12 night)
+- **Past-relevance vs future-relevance:** trained attention = "what from the
+  past explains what comes next" (relevance := predictive, shaped by language
+  loss). Felt attention = "what from the present will the task need later"
+  (relevance := outcome-shaped). KVP refines the contrast: they predict future
+  ATTENTION (endogenous); we score content against future TASK USE (exogenous).
+- **The hierarchy axis (Figure-1 candidate):** file system / RAG → context
+  window → felt parametric memory → LoRA/post-training — monotone UP in
+  representational integration, DOWN in retrieval fidelity/addressability.
+  Pitch: the intermediary tier was missing an organ; each neighbor fails its
+  own way (RAG retrieves sentences not understanding; post-training can't
+  same-day recall; context is finite+unselective). NOT "we beat everything."
+- **Two products, ordered:** (1) vision — trained future-relevance scorer as
+  a universal allocation signal (writes, STM reads, LoRA weighting);
+  (2) evidence — one consumer proven rigorously (parametric writes), second
+  consumer (salience-weighted LoRA) = cheapest generality demo, run 2.
