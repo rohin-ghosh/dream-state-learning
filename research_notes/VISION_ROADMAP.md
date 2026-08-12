@@ -121,3 +121,13 @@ without requiring the scale.
   a universal allocation signal (writes, STM reads, LoRA weighting);
   (2) evidence — one consumer proven rigorously (parametric writes), second
   consumer (salience-weighted LoRA) = cheapest generality demo, run 2.
+
+## Bitter-lesson calibration (Rohin, 2026-08-13): scalar-gate + top-k is a
+structured-prior design — strongest exactly where data/complexity are scarce
+(anti-bitter-lesson regime). Full-KV end-to-end memory (v2+) is the
+bitter-lesson-side bet. Crossover governed by HORIZON, not novelty: longer
+games multiply pathways past what a max-k deque read carries; novel-but-short
+games are covered by frozen-LLM generalization the head inherits. Prediction:
+v2 > v1 appears as game length grows; test with horizon as the knob. S4's
+k-sweep (12 vs 18) measures the first data point: does the felt−surprise gap
+shrink as read budget loosens?
