@@ -32,6 +32,8 @@ def main():
     ap.add_argument("--hidden", type=int, default=256)
     ap.add_argument("--epochs", type=int, default=15)
     ap.add_argument("--states", choices=("text", "ctx"), default="ctx")
+    ap.add_argument("--dump-salience", default="",
+                    help="npz path: per-episode salience arrays (for S3)")
     a = ap.parse_args()
 
     eps = load_episodes(pathlib.Path(a.in_dir), a.layer, states=a.states)
@@ -82,6 +84,18 @@ def main():
     print(f"\n[CAPACITY PROBE] held-out regret = {float(np.mean(regrets)):.4f} "
           f"| corr = {float(np.mean(corrs)):.3f}")
     print("  reference: FeltHead ctx l-8 = 0.125 / 0.636 | text floor = 0.122")
+
+    if a.dump_salience:
+        out = {}
+        with torch.no_grad():
+            for e in train + test:
+                h = torch.tensor(e["H"] / h_scale, dtype=torch.float32,
+                                 device=dev)
+                out[e["rec"]["episode_uid"]] = torch.sigmoid(
+                    net(h).squeeze(-1)).cpu().numpy().astype(np.float32)
+        np.savez(a.dump_salience, **out)
+        print(f"  dumped per-episode salience for {len(out)} episodes -> "
+              f"{a.dump_salience}")
 
 
 if __name__ == "__main__":
