@@ -49,7 +49,7 @@ def load_fact_dataset(in_dir: pathlib.Path, layer: int):
             y.append(credit[(rec["episode_uid"], j)])
         if len(H) >= 3:
             eps.append({"keys": keys, "H": np.stack(H),
-                        "y": np.array(y, np.float32)})
+                        "y": np.array(y, np.float32), "world": rec["world"]})
     return eps
 
 
@@ -112,10 +112,18 @@ def main():
     ap.add_argument("--layer", type=int, default=-8)
     ap.add_argument("--epochs", type=int, default=15)
     ap.add_argument("--dump-salience", default="")
+    ap.add_argument("--exclude-worlds", default="",
+                    help="comma-sep worlds EXCLUDED from training (cross-world "
+                         "robustness); salience still dumped for ALL episodes")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
-    eps = load_fact_dataset(in_dir, a.layer)
+    all_eps = load_fact_dataset(in_dir, a.layer)
+    excl = set(w for w in a.exclude_worlds.split(",") if w)
+    eps = [e for e in all_eps if e["world"] not in excl]
+    if excl:
+        print(f"[S2-fact] CROSS-WORLD: training without {sorted(excl)} "
+              f"({len(all_eps) - len(eps)} episodes held out)")
     n_facts = sum(len(e["y"]) for e in eps)
     pos = sum(float(e["y"].sum()) for e in eps)
     print(f"[S2-fact] layer={a.layer} episodes={len(eps)} facts={n_facts} "
@@ -134,7 +142,7 @@ def main():
         net, h_scale, dev = best[1]["net"], best[1]["h_scale"], best[1]["dev"]
         out = {}
         with torch.no_grad():
-            for e in eps:
+            for e in all_eps:
                 h = torch.tensor(e["H"] / h_scale, dtype=torch.float32,
                                  device=dev)
                 s = torch.sigmoid(net(h).squeeze(-1)).cpu().numpy()

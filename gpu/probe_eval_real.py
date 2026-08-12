@@ -132,6 +132,8 @@ def main():
                     help="precomputed per-episode salience (skips head+states)")
     ap.add_argument("--fact-salience-npz", default="",
                     help="per-FACT salience keyed '{uid}_f{j}' (note 26)")
+    ap.add_argument("--only-worlds", default="",
+                    help="comma-sep: evaluate ONLY these worlds (cross-world)")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
@@ -148,8 +150,11 @@ def main():
     by_world = defaultdict(list)
     for rec in read_jsonl_tolerant(in_dir / "rollouts.jsonl"):
         by_world[rec["world"]].append(rec)
+    only = set(w for w in a.only_worlds.split(",") if w)
     results = defaultdict(list)
     for w_i, (wid, recs) in enumerate(sorted(by_world.items())):
+        if only and wid not in only:
+            continue
         # regenerate the SAME world from the LOGGED seed/depth (never guess)
         world = World.generate(wid, seed=recs[0]["world_seed"],
                                depth=recs[0].get("depth", 4))
