@@ -43,7 +43,17 @@ def main():
     pathlib.Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     pathlib.Path(a.out).write_text(json.dumps(r, indent=1))
 
-    print(json.dumps(r, indent=1))
+    print(json.dumps({k: v for k, v in r.items() if k != "episodes"}, indent=1))
+    by_depth = {}
+    for ep in r["episodes"]:
+        if ep["mode"] == "manual":
+            by_depth.setdefault(ep["depth"], []).append(ep)
+    print("\n[manual wins by goal depth]  (timeout = lost AT the step cap)")
+    for d in sorted(by_depth):
+        eps = by_depth[d]
+        w = sum(e["success"] for e in eps)
+        t = sum(e["timeout"] for e in eps)
+        print(f"  depth {d}: {w}/{len(eps)} wins | {t} timeouts")
     print("\n[VERDICT per SIZING §5]")
     if not r["gate_reasoning_ok"]:
         print("  win@manual < 0.85 → game too hard to PLAY for this model:")

@@ -21,6 +21,7 @@ def gate_calibration(backend_factory, n_worlds: int = 3, eps_per_world: int = 10
     """backend_factory: (world, mode, episode) -> Backend. Fresh per episode so
     per-episode scratch state (MockTextPlayer) can't leak across episodes."""
     wins = {"manual": [], "none": []}
+    episodes = []          # per-episode ledger: failures must be attributable
     for w_i in range(n_worlds):
         world = World.generate(f"gate_{w_i}", seed=5000 + seed * 13 + w_i,
                                depth=depth, **world_kw)
@@ -33,6 +34,12 @@ def gate_calibration(backend_factory, n_worlds: int = 3, eps_per_world: int = 10
                 r = play_episode(world, b, goal, episode_seed=e,
                                  context_mode=mode, max_steps=max_steps)
                 wins[mode].append(r["success"])
+                episodes.append({"world": world.world_id, "goal": goal,
+                                 "depth": int(world.dag.depth_of[goal]),
+                                 "mode": mode, "success": bool(r["success"]),
+                                 "steps": int(r["steps"]),
+                                 "timeout": bool(not r["success"]
+                                                 and r["steps"] >= max_steps)})
     win_manual = float(np.mean(wins["manual"]))
     win_none = float(np.mean(wins["none"]))
     return {
@@ -42,4 +49,5 @@ def gate_calibration(backend_factory, n_worlds: int = 3, eps_per_world: int = 10
         "gate_knowledge_wall_ok": win_none <= thresh_nomem,
         "room": win_manual - win_none,
         "n_episodes_per_mode": len(wins["manual"]),
+        "episodes": episodes,
     }
