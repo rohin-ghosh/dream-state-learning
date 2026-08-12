@@ -63,6 +63,10 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
     """LLM plays with the MANUAL in context by default for S1 head-training data:
     we want competent play whose salience varies (right/wrong turns), and the
     manual removes the pure-ignorance failure mode. (Memory conditions are S3/S4.)"""
+    import os
+    # flashinfer is broken on py3.11 (array.array[int] TypeError at import) and
+    # this vllm hard-imports it in the sampler check — turn that path off.
+    os.environ.setdefault("VLLM_USE_FLASHINFER_SAMPLER", "0")
     from vllm import LLM, SamplingParams
     from transformers import AutoTokenizer
     llm = LLM(model=model, dtype="bfloat16", gpu_memory_utilization=0.85)
