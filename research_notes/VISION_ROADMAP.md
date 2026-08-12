@@ -92,3 +92,15 @@ what". v1's scalar result — either sign — sets v2's baseline: an effect at
 the gate motivates asking whether geometry beats the gate; a null at the
 gate with a live oracle gap is direct evidence the aperture (not the signal)
 is the bottleneck, making geometric integration the motivated next step.
+
+## Memory-hierarchy sketch (Rohin, 2026-08-12): files = external notes;
+context = STM (task-switch cost = push-to-LTM + refill — the human analogy);
+parametric = internal LTM. Rewrite loop = reconsolidation: retrieval cue
+("let me think about this") → memory labile in context → re-reason with the
+cueing signal steering → re-write, with Ks stable so updates land in the same
+representational neighborhood (in-place reconsolidation; v2-geometry
+requirement). Executive = reasoning, memory-aware (metamemory), learning
+access patterns → post-training on memory USE (read-policy sequel).
+Scaling frame: Rubin-Ultra/Feynman-class compute → longer-lived agents →
+retention becomes the binding constraint; this project tests the slice
+without requiring the scale.

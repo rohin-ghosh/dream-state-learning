@@ -1627,3 +1627,16 @@ PRE-REGISTERED reading for the rerun, recorded before results: ctx-head
 < 0.122 → hidden states carry salience beyond surface text (PROCEED-equiv);
 ≈0.21 → STOP stands on a sound scale. Ledger lesson generalizes: adversarial
 audit applies to NEGATIVE results too — a false STOP kills a true paper.
+
+## 2026-08-12 (day 2, midday) — ctx-states REVERSE the STOP: the head reads salience
+S2 rerun on de-aliased context-conditioned states (goal + last-3 history,
+keyed per instance): regret -1: 0.186 / -4: 0.152 / **-8: 0.125, corr 0.636**
+(vs text-states 0.216-0.236, and vs the 0.122 text-information floor — a
+GENERALIZING head matched the memorizing lookup to within noise).
+Findings: (1) yesterday's STOP was the representation, not the premise — the
+head genuinely reads task-salience from frozen 7B hidden states; (2) monotone
+layer trend (deeper=better, both metrics): task-state lives mid-stack, last
+layer is busy with next-token — consistent w/ interp literature, feeds v2.
+Per GRAY protocol next: (a) end-to-end reduced S3 with the ctx-head driving
+felt (needs S3 plumbing adapted to ctx states); (b) MLP capacity probe on the
+same states — can anything go BELOW the text floor (licenses a bigger head).

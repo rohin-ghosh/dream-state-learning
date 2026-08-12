@@ -259,3 +259,20 @@ paired felt_b12 − surprise_only: -0.002 (t=-1.7, n.s.)
 [08-12 11:01:05] ctx-cache: done=0 alive=2 last='�████████| 339/339 [00:01<00:00, 217.95it/s]'
 [08-12 11:04:06] ctx-cache: done=0 alive=2 last='�████████| 339/339 [00:01<00:00, 217.95it/s]'
 [08-12 11:07:06] ctx-cache: done=0 alive=2 last='�████████| 339/339 [00:01<00:00, 217.95it/s]'
+[08-12 11:10:07] ctx-cache: done=0 alive=2 last='�████████| 339/339 [00:01<00:00, 217.95it/s]'
+[08-12 11:13:08] ctx-cache: done=1 alive=0 last='[S1-Bctx] cache complete: gpu_artifacts/s1/states_ctx.npz'
+[08-12 11:13:08] ctx cache COMPLETE — running S2 on layers -1 -4 -8
+[S2] layer=-1 d_h=3584 train=1700 test=300 h_scale=304.5
+  epoch 0: loss 0.0818
+  epoch 5: loss 0.0663
+  epoch 10: loss 0.0656
+  epoch 15: loss 0.0647
+  epoch 20: loss 0.0636
+  epoch 25: loss 0.0622
+
+[S2] held-out: all-budgets regret = 0.1858 | corr = 0.490
+     mock baseline = 0.03
+
+[HOUR-12 KILL-SWITCH — spec §5b]
+  STOP: real hidden states do not carry the salience signal at this layer. Try --layer -4 / -8 (cached). If ALL layers ≥0.15, the architecture premise fails on this backbone — do NOT spend S3/S4; escalate model size once, then rethink.
+[08-12 11:15:55] S2-ctx layer -1 regret = 0.18575669502525027
