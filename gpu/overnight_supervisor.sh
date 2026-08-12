@@ -25,7 +25,7 @@ S1_TARGET=2000
 CONSEC_SSH_FAIL=0
 while true; do
     EPS=$(run "wc -l < ~/dream-state-learning/gpu_artifacts/s1/rollouts.jsonl 2>/dev/null" | tr -d ' ')
-    ALIVE=$(run "pgrep -fc 'gpu/rollouts.py' || true" | tr -d ' ')
+    ALIVE=$(run "pgrep -fc '[g]pu/rollouts.py' || true" | tr -d ' ')
     if [ -z "$EPS" ] && [ -z "$ALIVE" ]; then
         CONSEC_SSH_FAIL=$((CONSEC_SSH_FAIL+1))
         say "ssh unreachable ($CONSEC_SSH_FAIL) — retrying in 5 min"
