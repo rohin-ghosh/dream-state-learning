@@ -1691,3 +1691,16 @@ decor 0.001) — it learned dependency CREDIT, not surface fact type.
 Scheduled robustness: cross-world head (train 2 worlds / eval 2), second
 backbone, then S4 closed loop. Train-set salience reuse in S3 noted as a
 caveat (held-out AUC 0.997 bounds the concern; cross-world run resolves it).
+
+## 2026-08-13 — CROSS-WORLD ROBUSTNESS PASSES + S4 launched
+Head trained ONLY on worlds s1_0/s1_1, S3 scored ONLY on held-out s1_2/s1_3:
+**felt_b12 +0.436 = oracle ceiling +0.431**; canary +0.370 (felt−canary
++0.066, t=29.5 SIG); surprise +0.317 (felt−surprise +0.119, t=6.3 SIG).
+The learned salience function TRANSFERS across worlds — memorization and
+train-set-salience objections both dead. Main table is robust.
+S4 launched (32 arms: no_memory/manual rails + {surprise, felt_fact, oracle}
+× k∈{12,18} × 4 worlds × 25 eps, vLLM lockstep). Smoke test of the mechanism:
+top-12 read slots = 3/12 structural (surprise memory) vs 9/12 (felt = oracle).
+Pre-registered: no_memory < surprise < felt ≈ oracle < manual; felt−surprise
+gap at k=18 vs k=12 measures the scarcity-advantage (bitter-lesson
+calibration, vision doc).
