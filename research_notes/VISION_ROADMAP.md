@@ -64,3 +64,20 @@ online: "online learning that genuinely grows alongside interaction."
 Train the scalar that says "this matters"; then let everything an agent
 allocates — memory, context, compute, its own weights — be spent proportional
 to it; v1 proves the scalar is trainable and its effect measurable.
+
+## v6 / endgame sketch (2026-08-12, later that night)
+Single-scalar-outcome autonomous loop: pick a domain where the reward function
+already exists and is instant/dense/exactly denominated — trading (synthetic
+book first, graduated real access). Policy online-learned on P&L; world
+representation maintained IN TENSION with goal pressure at the attention level
+(in this domain that tension is survival, not aesthetics — naive P&L-RL learns
+tail-risk-loading degenerates); memory reads/writes agent-decided; FIXED sleep
+cycle for heavy consolidation (the project's founding metaphor, closing the
+loop); eventually self-reconfiguration on own outcomes ("super loop").
+Named requirements discovered en route: reward channel outside agent
+write-access (wireheading/containment — an architecture problem, not ML);
+sandbox graduation gated by adversarial eval, since sim-profitable ≈
+sim-exploiting (the FeltCraft lesson at scale); reward-vs-reality tension as
+first-class design objective. Rejected on the way: "efficient research market"
+(requires building the reward function; pricing research fast is itself
+unsolved).
