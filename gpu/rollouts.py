@@ -205,13 +205,15 @@ def main():
     ap.add_argument("--episodes", type=int, default=2000)
     ap.add_argument("--par", type=int, default=32)
     ap.add_argument("--out", default="gpu_artifacts/s1")
+    ap.add_argument("--max-steps", type=int, default=60,
+                    help="MUST match the step cap the S0 gate was passed at")
     ap.add_argument("--skip-rollouts", action="store_true")
     ap.add_argument("--skip-states", action="store_true")
     a = ap.parse_args()
     out = pathlib.Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     if not a.skip_rollouts:
-        run_rollouts(a.model, a.episodes, a.par, out)
+        run_rollouts(a.model, a.episodes, a.par, out, max_steps=a.max_steps)
     if not a.skip_states:
         cache_states(a.model, out)
 
