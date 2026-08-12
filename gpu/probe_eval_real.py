@@ -41,15 +41,21 @@ def load_head(path):
     return h, int(z["layer"]), h_scale
 
 
-def build_world_stream(recs, states, head, layer, h_scale=1.0):
+def build_world_stream(recs, states, head, layer, h_scale=1.0,
+                       states_mode="text"):
     """K/V/S/labels/acts/kinds/texts for one world's episode stream, salience
     from the REAL-state head."""
     K, V, S, lab, acts, kinds, texts = [], [], [], [], [], [], []
     for rec in recs:
         traj = rec["trajectory"]
         try:
-            H = np.stack([states[f"{text_key(st['action'] + ' ' + st['obs'])}_l{layer}"]
-                          for st in traj]) / h_scale     # P0-1: same scale as S2
+            if states_mode == "ctx":
+                H = np.stack([states[f"{rec['episode_uid']}_s{i}_l{layer}"]
+                              for i in range(len(traj))]
+                             ).astype(np.float32) / h_scale
+            else:
+                H = np.stack([states[f"{text_key(st['action'] + ' ' + st['obs'])}_l{layer}"]
+                              for st in traj]) / h_scale  # P0-1: same scale as S2
         except KeyError:
             continue
         sal = head.salience(H)
@@ -99,11 +105,14 @@ def main():
     ap.add_argument("--in", dest="in_dir", default="gpu_artifacts/s1")
     ap.add_argument("--head", default="gpu_artifacts/s2_head.npz")
     ap.add_argument("--out", default="gpu_artifacts/s3_probe.json")
+    ap.add_argument("--states", choices=("text", "ctx"), default="text",
+                    help="MUST match the cache the head was trained on")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
     head, layer, h_scale = load_head(a.head)
-    states = np.load(in_dir / "states.npz", allow_pickle=True)
+    fname = "states_ctx.npz" if a.states == "ctx" else "states.npz"
+    states = np.load(in_dir / fname, allow_pickle=True)
 
     from gpu.rollouts import read_jsonl_tolerant
     by_world = defaultdict(list)
@@ -114,7 +123,8 @@ def main():
         # regenerate the SAME world from the LOGGED seed/depth (never guess)
         world = World.generate(wid, seed=recs[0]["world_seed"],
                                depth=recs[0].get("depth", 4))
-        st = build_world_stream(recs, states, head, layer, h_scale)
+        st = build_world_stream(recs, states, head, layer, h_scale,
+                                states_mode=a.states)
         if st is None:
             continue
         for pol in POLICIES:

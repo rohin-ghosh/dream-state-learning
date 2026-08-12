@@ -30,6 +30,7 @@ def make_fake_s1(n_worlds=3, eps_per_world=20):
     OUT.mkdir(parents=True)
     rng = np.random.default_rng(0)
     states = {}
+    states_ctx = {}
     with open(OUT / "rollouts.jsonl", "w") as f:
         ep_uid = 0
         for i in range(n_worlds):
@@ -46,7 +47,7 @@ def make_fake_s1(n_worlds=3, eps_per_world=20):
                 # fake "hidden states": salience-correlated direction + noise,
                 # scaled to realistic norms — lets the head LEARN if (and only if)
                 # normalization works
-                for st in env.trajectory:
+                for s_i, st in enumerate(env.trajectory):
                     t = f"{st['action']} {st['obs']}"
                     k = text_key(t)
                     if f"{k}_l-1" not in states:
@@ -55,6 +56,13 @@ def make_fake_s1(n_worlds=3, eps_per_world=20):
                         v = base / np.linalg.norm(base) * NORM  # realistic scale
                         for l in (-1, -4, -8):
                             states[f"{k}_l{l}"] = v.astype(np.float32)
+                    # ctx cache: per-instance keys, same planted signal
+                    base = rng.normal(0, 1, D_H)
+                    base[0] = 8.0 * st["salience"]
+                    v = base / np.linalg.norm(base) * NORM
+                    for l in (-1, -4, -8):
+                        states_ctx[f"ep{ep_uid:06d}_s{s_i}_l{l}"] = \
+                            v.astype(np.float16)
                 f.write(json.dumps({
                     "episode_uid": f"ep{ep_uid:06d}", "world": world.world_id,
                     "world_seed": seed, "depth": 4, "goal": goals[e % len(goals)],
@@ -66,6 +74,7 @@ def make_fake_s1(n_worlds=3, eps_per_world=20):
                 ep_uid += 1
         f.write('{"episode_uid": "ep999999", "truncat')   # deliberate torn tail
     np.savez(OUT / "states.npz", **states)
+    np.savez(OUT / "states_ctx.npz", **states_ctx)
 
 
 def test_tolerant_reader_skips_torn_tail():
@@ -98,6 +107,30 @@ def test_s2_then_s3_compose():
     s3 = json.loads(pathlib.Path("/tmp/gpu_dryrun/s3.json").read_text())
     for pol in ("uniform", "keyword_gate", "felt_b12", "oracle_weight"):
         assert pol in s3 and np.isfinite(s3[pol]["dissociation"])
+
+
+def test_ctx_path_composes():
+    # audit-fix path: per-instance ctx states through S2 and S3
+    make_fake_s1()
+    import os
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(ROOT)
+    r2 = subprocess.run(
+        [sys.executable, "gpu/train_head_real.py", "--in", str(OUT),
+         "--states", "ctx", "--epochs", "20",
+         "--out", "/tmp/gpu_dryrun/s2_head_ctx.npz"],
+        capture_output=True, text=True, cwd=ROOT, env=env)
+    assert r2.returncode == 0, r2.stderr[-800:]
+    z = np.load("/tmp/gpu_dryrun/s2_head_ctx.npz")
+    assert float(z["regret"]) < 0.09, f"ctx regret {float(z['regret'])}"
+    r3 = subprocess.run(
+        [sys.executable, "gpu/probe_eval_real.py", "--in", str(OUT),
+         "--head", "/tmp/gpu_dryrun/s2_head_ctx.npz", "--states", "ctx",
+         "--out", "/tmp/gpu_dryrun/s3_ctx.json"],
+        capture_output=True, text=True, cwd=ROOT, env=env)
+    assert r3.returncode == 0, r3.stderr[-800:]
+    s3 = json.loads(pathlib.Path("/tmp/gpu_dryrun/s3_ctx.json").read_text())
+    assert np.isfinite(s3["felt_b12"]["dissociation"])
 
 
 if __name__ == "__main__":
