@@ -1676,3 +1676,18 @@ edge ← its craft steps; binding ← gathers/moves it enabled). Outcome-derived
 computable from game machinery, probe-label firewall intact.
 Scale-up (10k eps) OFF the table until resolved — data cannot fix granularity.
 Lease extended to Aug 14 08:00.
+
+## 2026-08-12 (day 2, night) — MAIN RESULT: fact-level felt matches the ceiling
+Chain (fact cache 33,343 instances → S2-fact → S3-fact) on Qwen2.5-7B states:
+S2-fact: attention-form head AUC 0.9803 (regret 0.0148); +hidden-layer control
+AUC 0.9967 (0.0022) — binary "load-bearing?" is ~linearly readable where
+continuous step-TD was not; the one-attention-head story is EARNED back.
+S3-fact: **felt_b12 +0.391 / AP 0.944 = label ceiling (+0.386)**;
+beats keyword canary +0.065 (t=34.4 SIG) and surprise +0.112 (t=8.0 SIG);
+first separation of the entire project, on real play data.
+ADVERSARIAL CHECK (type-classifier hypothesis): within structural facts only,
+head separates USED vs UNUSED structure at AUC 0.943 (means 0.952 vs 0.691;
+decor 0.001) — it learned dependency CREDIT, not surface fact type.
+Scheduled robustness: cross-world head (train 2 worlds / eval 2), second
+backbone, then S4 closed loop. Train-set salience reuse in S3 noted as a
+caveat (held-out AUC 0.997 bounds the concern; cross-world run resolves it).
