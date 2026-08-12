@@ -10,7 +10,9 @@
 # Exits 0 with SUMMARY on completion; exits 1 on unrecoverable error.
 set -u
 NODE="local-rohing@10.117.3.227"
-R="cd ~/dream-state-learning && PYTHONPATH=. "
+# non-interactive ssh never activates conda -> use the env's python explicitly
+PY="/localhome/local-rohing/miniconda3/envs/felt/bin/python"
+R="cd ~/dream-state-learning && PYTHONPATH=. $PY "
 LOG_DIR="$HOME/dream-state/gpu_artifacts_local"
 LOG="$LOG_DIR/overnight.log"
 mkdir -p "$LOG_DIR"
@@ -44,7 +46,7 @@ while true; do
     fi
     if [ "$ALIVE" -eq 0 ] && [ "$EPS" -lt "$S1_TARGET" ]; then
         say "S1 crashed at $EPS episodes — restarting (resumes from checkpoint)"
-        run "${R}nohup python gpu/rollouts.py --model Qwen/Qwen2.5-7B-Instruct --episodes 2000 --par 32 --max-steps 120 --out gpu_artifacts/s1 >> ~/s1_restart.log 2>&1 & disown"
+        run "cd ~/dream-state-learning && PYTHONPATH=. nohup $PY gpu/rollouts.py --model Qwen/Qwen2.5-7B-Instruct --episodes 2000 --par 32 --max-steps 120 --out gpu_artifacts/s1 >> ~/s1_restart.log 2>&1 & disown"
         sleep 120
     fi
     sleep 300
@@ -54,8 +56,8 @@ done
 BEST_LAYER=""; BEST_REGRET="9"
 for L in -1 -4 -8; do
     say "S2: training head on layer $L"
-    run "${R}python gpu/train_head_real.py --in gpu_artifacts/s1 --layer $L --out gpu_artifacts/s2_head_l${L}.npz" >> "$LOG" 2>&1
-    REG=$(run "python -c \"import numpy as np; print(float(np.load('/localhome/local-rohing/dream-state-learning/gpu_artifacts/s2_head_l${L}.npz')['regret']))\" 2>/dev/null")
+    run "${R}gpu/train_head_real.py --in gpu_artifacts/s1 --layer $L --out gpu_artifacts/s2_head_l${L}.npz" >> "$LOG" 2>&1
+    REG=$(run "$PY -c \"import numpy as np; print(float(np.load('/localhome/local-rohing/dream-state-learning/gpu_artifacts/s2_head_l${L}.npz')['regret']))\" 2>/dev/null")
     say "S2: layer $L regret = ${REG:-FAILED}"
     if [ -n "${REG:-}" ] && python3 -c "exit(0 if float('$REG') < float('$BEST_REGRET') else 1)" 2>/dev/null; then
         BEST_REGRET="$REG"; BEST_LAYER="$L"
@@ -69,7 +71,7 @@ run "cp ~/dream-state-learning/gpu_artifacts/s2_head_l${BEST_LAYER}.npz ~/dream-
 
 # ---------------- Phase 3: S3 probe eval ----------------
 say "S3: probe eval with best head"
-run "${R}python gpu/probe_eval_real.py --in gpu_artifacts/s1 --head gpu_artifacts/s2_head.npz --out gpu_artifacts/s3.json" >> "$LOG" 2>&1
+run "${R}gpu/probe_eval_real.py --in gpu_artifacts/s1 --head gpu_artifacts/s2_head.npz --out gpu_artifacts/s3.json" >> "$LOG" 2>&1
 say "S3 result: $(run 'cat ~/dream-state-learning/gpu_artifacts/s3.json 2>/dev/null' | head -c 2000)"
 
 # ---------------- Phase 4: artifact backup ----------------
