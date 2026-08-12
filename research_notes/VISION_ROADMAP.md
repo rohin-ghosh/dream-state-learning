@@ -148,3 +148,24 @@ table) is this phenomenon measured — motivates the exploration-aware read.
 ## Cross-config principle: vary statistics, hold semantics — depth/branching
 shift, fact schema fixed. Domain shift (crafting→chemistry) tests the LLM,
 not the head → external-anchor slot, post-paper.
+
+## Surprise, resolved (Rohin, 2026-08-13 night)
+Taxonomy: (1) retrospective surprise = prediction error — needs NO head, it
+IS a loss value (memory's native reconstruction error); dumb because
+unexpectedness ≠ importance. (2) Prospective exploration value = UCB bonus —
+belongs to the ACTION policy/planner, not memory. (3) Information gain
+(Bayesian surprise) = "did this restructure my model" — the only respectable
+write-side form. SYNTHESIS: novelty is the value function of goals you don't
+know yet — value degenerates into surprise as the goal distribution blurs.
+v1 measured the sharp-goal limit (value dominates, surprise < uniform);
+v3's ambiguous goals re-weight novelty as a prior on future value; a broad
+enough goal-trained value absorbs novelty entirely (bitter-lesson limit).
+Write rule endgame: goal-certainty-weighted blend. One discussion line in
+paper 1, machinery later.
+
+## Analogical-transfer benchmark idea (v2+): worlds sharing relational
+MOTIFS so memory supports role-mapping across worlds ("this world's raw_2
+plays raw_7's old role") — structural transfer, the thing RAG
+constitutionally cannot do; the strongest eventual answer to "why
+representational memory." (Memory contents never transfer across unrelated
+worlds — the HEAD transfers; cross-config tests exactly that.)
