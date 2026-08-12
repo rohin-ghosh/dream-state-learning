@@ -1593,3 +1593,17 @@ Fix (b65b5e4): goal in persistent ctx block in both paths; + persistent
 pattern: the mock must be as STATELESS as the real backend, or it tests a
 different game. S0 rerun on 1.5B before any escalation — the 0.067 measured
 nothing about the model.
+
+## 2026-08-12 (lease day 2, early) — S0 PASSED: the instrument is calibrated
+Qwen2.5-7B-Instruct + ReAct (think-then-act, 320 tok) + 120-step cap:
+**win@manual 0.90 / win@none 0.233 / room 0.667** (30 eps/mode, 158 min).
+Both gates green; wall held even with 2x step slack. The S0 arc in full:
+three field bugs (goal dropped from prompt after step 1; natural-language
+action arguments mangled; thought truncation at 24-then-128 tokens), each
+found by a minutes-scale trace BEFORE an hours-scale run, each now a
+regression test; capability ladder 1.5B 0.03 → 3B 0.17 → 7B 0.90 (few-shot +
+ReAct + status line were necessary, not sufficient, below 7B). Gate ledger
+(per-episode goal/depth/steps/timeout) now saved in s0_gates.json.
+S1 launch hit a flashinfer/py3.11 env bug (array.array subscript TypeError in
+vLLM's optional import chain) — fix: uninstall flashinfer; eager-mode fallback
+ready if needed. S1 relaunching at 120 steps to match the certified cap.

@@ -123,7 +123,11 @@ before-text: every episode emits labelled facts — gist = recipe edges + resour
 bindings; verbatim = per-episode decor + incidental counts — before text is
 rendered, so labels are exact.
 3.2 Calibration invariant: win(model+manual) ≥ 0.85; win(no-context) ≤ 0.35;
-the gap is the room memory competes in. [SLOT: measured gates for MODEL.]
+the gap is the room memory competes in. Measured (Qwen2.5-7B-Instruct, ReAct,
+120-step cap, 30 eps/mode): win@manual = 0.90, win@none = 0.233, room = 0.667.
+Smaller backbones fail the reasoning gate honestly (1.5B: 0.03; 3B: 0.17 at
+60 steps) — the gate table doubles as a capability ladder. [SLOT: per-depth
+breakdown from s0_gates.json ledger; 2nd backbone.]
 3.3 Probes: floor-corrected retention (score minus matched never-written fake —
 removes generic-similarity credit), random detail sampling, gist/verbatim paired
 dissociation, forgetting curves (within-type), importance strata (recipe-degree).
