@@ -169,3 +169,16 @@ plays raw_7's old role") — structural transfer, the thing RAG
 constitutionally cannot do; the strongest eventual answer to "why
 representational memory." (Memory contents never transfer across unrelated
 worlds — the HEAD transfers; cross-config tests exactly that.)
+
+## v3 actor = value-guided search (Rohin, 2026-08-13 night)
+The AlphaZero shape, transplanted: frozen LLM = policy prior; felt head =
+leaf evaluator; UCB = explore/exploit arbitration; MCTS = the decision layer
+— "the decision ends up not on the attention policy but on the tree search
+which is a CONSEQUENCE of the attention policy." Exploration becomes the
+procedure, not a signal; novelty stays passive (write-side prediction
+error). Deep loop: search visit-counts are high-quality salience labels
+(heavily-visited branches ARE load-bearing) → search amplifies the head,
+amplified play trains the better head — AlphaZero self-improvement for
+memory. NOT paper-1: needs world-model rollouts (large new component),
+actor isn't the bottleneck (S0 0.90), and it confounds the retention
+attribution. It is v3's actor, consuming everything v1/v2 validate.
