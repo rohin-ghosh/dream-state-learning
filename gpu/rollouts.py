@@ -195,6 +195,69 @@ def cache_states(model: str, out_dir: pathlib.Path, batch_size: int = 64):
     print(f"[S1-B] cache complete: {cache_path}")
 
 
+# ------------------------------------------------------- PASS B-ctx (audit fix)
+def ctx_text(rec: dict, i: int, k_hist: int = 3) -> str:
+    """Context-conditioned event text: goal + recent history + the event.
+    Fixes the S2 aliasing artifact (field bug 4): the same event text recurs
+    with different true salience (first discovery vs revisit) — embedded in
+    isolation it carries conflicting labels, flooring ANY scorer at 0.122
+    regret on the 0812 data. With context, the state is the model's situation
+    DURING play — the thing the head was always meant to read."""
+    traj = rec["trajectory"]
+    parts = [f"Your goal: craft {rec['goal']}."]
+    for t in traj[max(0, i - k_hist):i]:
+        parts.append(f"> {t['action']}\n{t['obs']}")
+    st = traj[i]
+    parts.append(f"NOW: > {st['action']}\n{st['obs']}")
+    return "\n".join(parts)
+
+
+def cache_states_ctx(model: str, out_dir: pathlib.Path, batch_size: int = 32):
+    """Per-INSTANCE hidden states, keyed (episode_uid, step) — no dedup, no
+    aliasing. float16 (~2GB for 98k events x 3 layers)."""
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(model)
+    net = AutoModelForCausalLM.from_pretrained(
+        model, torch_dtype=torch.bfloat16, device_map="cuda",
+        output_hidden_states=True)
+    net.eval()
+
+    cache_path = out_dir / "states_ctx.npz"
+    cached = {}
+    if cache_path.exists():
+        z = np.load(cache_path, allow_pickle=True)
+        cached = {k: z[k] for k in z.files}
+
+    todo = []
+    for rec in read_jsonl_tolerant(out_dir / "rollouts.jsonl"):
+        for i in range(len(rec["trajectory"])):
+            key = f"{rec['episode_uid']}_s{i}"
+            if f"{key}_l{LAYERS[0]}" not in cached:
+                todo.append((key, ctx_text(rec, i)))
+    print(f"[S1-Bctx] {len(todo)} event instances to embed")
+
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    tok.padding_side = "right"
+    for i in range(0, len(todo), batch_size):
+        chunk = todo[i:i + batch_size]
+        enc = tok([t for _, t in chunk], return_tensors="pt", padding=True,
+                  truncation=True, max_length=512).to(net.device)
+        with torch.inference_mode():
+            out = net(**enc)
+        lens = enc["attention_mask"].sum(dim=1) - 1
+        for j, (k, _) in enumerate(chunk):
+            for l in LAYERS:
+                cached[f"{k}_l{l}"] = (out.hidden_states[l][j, lens[j]]
+                                       .float().cpu().numpy().astype(np.float16))
+        if (i // batch_size) % 400 == 0 and i > 0:
+            _atomic_savez(cache_path, cached)
+            print(f"[S1-Bctx] {i + len(chunk)}/{len(todo)}")
+    _atomic_savez(cache_path, cached)
+    print(f"[S1-Bctx] cache complete: {cache_path}")
+
+
 def _atomic_savez(path, cached):
     """P0-2: never overwrite the live cache in place — a kill mid-save must not
     corrupt PASS B progress."""
@@ -214,9 +277,14 @@ def main():
                     help="MUST match the step cap the S0 gate was passed at")
     ap.add_argument("--skip-rollouts", action="store_true")
     ap.add_argument("--skip-states", action="store_true")
+    ap.add_argument("--cache-ctx", action="store_true",
+                    help="ONLY run PASS B-ctx (context-conditioned states)")
     a = ap.parse_args()
     out = pathlib.Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
+    if a.cache_ctx:
+        cache_states_ctx(a.model, out)
+        return
     if not a.skip_rollouts:
         run_rollouts(a.model, a.episodes, a.par, out, max_steps=a.max_steps)
     if not a.skip_states:

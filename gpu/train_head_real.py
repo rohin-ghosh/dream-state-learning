@@ -27,8 +27,11 @@ MOCK_BASELINE = 0.03      # comparator constant: CPU-tier held-out regret with
 #                           mock embeds ranged 0.00-0.04 across configs (exp6/harness)
 
 
-def load_episodes(in_dir: pathlib.Path, layer: int):
-    z = np.load(in_dir / "states.npz", allow_pickle=True)
+def load_episodes(in_dir: pathlib.Path, layer: int, states: str = "text"):
+    """states='text': original dedup cache (ALIASED — floor 0.122 on 0812 data).
+    states='ctx': per-instance context-conditioned cache (audit fix)."""
+    fname = "states_ctx.npz" if states == "ctx" else "states.npz"
+    z = np.load(in_dir / fname, allow_pickle=True)
     from gpu.rollouts import read_jsonl_tolerant
     eps = []
     for rec in read_jsonl_tolerant(in_dir / "rollouts.jsonl"):
@@ -36,8 +39,12 @@ def load_episodes(in_dir: pathlib.Path, layer: int):
         if len(traj) < 3:
             continue
         try:
-            H = np.stack([z[f"{text_key(st['action'] + ' ' + st['obs'])}_l{layer}"]
-                          for st in traj])
+            if states == "ctx":
+                H = np.stack([z[f"{rec['episode_uid']}_s{i}_l{layer}"]
+                              for i in range(len(traj))]).astype(np.float32)
+            else:
+                H = np.stack([z[f"{text_key(st['action'] + ' ' + st['obs'])}_l{layer}"]
+                              for st in traj])
         except KeyError:
             continue                       # state cache incomplete for this episode
         eps.append({"H": H, "traj": traj, "rec": rec})
@@ -50,10 +57,12 @@ def main():
     ap.add_argument("--layer", type=int, default=-1, choices=list(LAYERS))
     ap.add_argument("--epochs", type=int, default=30)
     ap.add_argument("--out", default="gpu_artifacts/s2_head.npz")
+    ap.add_argument("--states", choices=("text", "ctx"), default="text",
+                    help="ctx = per-instance context-conditioned cache (audit fix)")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
-    eps = load_episodes(in_dir, a.layer)
+    eps = load_episodes(in_dir, a.layer, states=a.states)
     assert len(eps) >= 50, f"too few complete episodes ({len(eps)}) — rerun S1 PASS B"
     rng = np.random.default_rng(0)
     idx = rng.permutation(len(eps))
