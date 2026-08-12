@@ -131,3 +131,20 @@ games are covered by frozen-LLM generalization the head inherits. Prediction:
 v2 > v1 appears as game length grows; test with horizon as the knob. S4's
 k-sweep (12 vs 18) measures the first data point: does the felt−surprise gap
 shrink as read budget loosens?
+
+## Read-side explore/exploit (Rohin + external researcher, 2026-08-13)
+The agency risk of good memory: enough refined retention and the agent
+optimizes over its own past ("when you think you know things, you don't try
+to get to know things") — plasticity-stability, behaviorally. Formalism: UCB
+at the memory interface — read policy surfaces value-retained facts PLUS an
+uncertainty/exploration term; "you have NO binding for raw_4" (a known gap)
+is maximally decision-relevant retrieval. Symmetry: surprise, demoted from
+the write gate (lost to value), belongs on the READ side as the exploration
+term. v1 structurally immune (frozen actor can't overfit to memory); risk
+activates at v3 (learning policy) — on the register with the UCB sketch.
+S4's no-memory-explores vs memory-trusts anomaly (if it survives the full
+table) is this phenomenon measured — motivates the exploration-aware read.
+
+## Cross-config principle: vary statistics, hold semantics — depth/branching
+shift, fact schema fixed. Domain shift (crafting→chemistry) tests the LLM,
+not the head → external-anchor slot, post-paper.
