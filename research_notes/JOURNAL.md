@@ -1656,3 +1656,23 @@ PAPER-FRAMING decision for Rohin: "one attention head" story vs "small MLP
 probe" story; diagnostic evidence favors nonlinear readout regardless.
 Lease EXTENDED (new end time TBD from Rohin) — 10k-episode S1 scale-up now
 affordable if MLP-S3 separates.
+
+## 2026-08-12 (day 2, evening) — GRANULARITY: the write rule, not the head, is the constraint
+MLP salience (corr 0.83) through the same write rule: felt +0.280 ≈ surprise
++0.279. Then the decisive control: TRUE oracle step-salience (perfect head by
+construction) → felt +0.281 ≈ surprise. Meanwhile fact-LABEL weighting
+(oracle_weight) = +0.386. Mechanism: fact types CO-OCCUR in time — decor and
+binding both emit on first site visit — so any per-STEP scalar weights them
+identically; measured: true step-salience averages 0.59 at structural facts
+vs 0.41 at detail facts (overlapping — cannot re-rank writes). Full closed
+chain: aliasing (fixed) → head capacity (MLP 0.055/0.83 under text floor) →
+estimator quality irrelevant beyond that (perfect-salience control) →
+**write-rule granularity binds**. v1's w = surprise×(1+β·step_salience) is
+structurally unable to express fact-selective retention on this instrument.
+Fix direction (fork for Rohin): FACT-level salience — head scores the
+PROPOSITION in context ("will remembering this matter?"), trained on
+DEPENDENCY CREDIT: a fact earns the TD of future steps that USE it (recipe
+edge ← its craft steps; binding ← gathers/moves it enabled). Outcome-derived,
+computable from game machinery, probe-label firewall intact.
+Scale-up (10k eps) OFF the table until resolved — data cannot fix granularity.
+Lease extended to Aug 14 08:00.
