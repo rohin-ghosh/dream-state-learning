@@ -50,3 +50,31 @@ Sources verified by a web-research agent against primary pages; arXiv IDs listed
   retention)** — deep-read dispatched 2026-08-11 (night); verdict to be appended.
 - Memory-R1 (2508.19828) confirmed ACL 2026 — already in our landscape (RL memory
   ops on external store; tool-call line, not a collision).
+
+## 5. Deep-read verdicts (appended same night; direct arXiv reads by agent)
+
+**OSL-MR (2606.10616)** — "Learning What to Remember: Observability-Safe Memory
+Retention via Constrained Optimization for Long-Horizon Language Agents" (HKUST +
+Huawei Noah's Ark). Supervised (BCE on realized-evidence labels), external text
+store, within-conversation, hard token budget, no typed eval, frozen backbone.
+They EXPLICITLY reject outcome supervision: "reward is a sequence-level scalar
+that cannot be decomposed into per-memory credit" — quotable motivation for our
+dense TD-value distillation, which is precisely the decomposition they say is
+missing. **Threat: baseline** (budgeted-retention foil).
+
+**EMBER (2606.05894)** — "Efficient Memory via Budgeted Evidence Retention for
+Long-Horizon Agents" (UW-Madison + NVIDIA Research — Tong Che; internal-colleague
+flag: worth a conversation pre-publication). GRPO RL fine-tunes the WRITER LLM
+itself (Qwen2.5-7B/14B) with delayed answer-gated outcome reward; external
+verbatim text capsules; within-episode protocol; soft token budget via reward
+penalty; no typed eval; writer NOT frozen. **Threat: cousin — collides on axis 1
+(outcome-trained write signal), must cite + differentiate.** Differentiators:
+sparse terminal GRPO reward vs dense oracle TD distillation; RL-tuned writer vs
+frozen backbone + tiny head; binary retain decisions vs graded write strength
+w = surprise×(1+β·salience); text capsules vs parametric fast weights; per-episode
+vs cross-episode; F1/recall vs gist-verbatim-typed probes.
+
+**Net: 3 of 4 novelty axes survive both (parametric writes, cross-episode,
+retention-typed eval); axis 1 is now shared with EMBER and differentiation is
+methodological, not cosmetic.** Positioning line: both competitors select TEXT to
+keep; Felt Attention learns HOW STRONGLY to write into WEIGHTS.

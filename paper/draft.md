@@ -72,8 +72,17 @@ contribution (four reversals caught by adversarial code review, all preserved).
 - **Learned retention under budget:** KVP (2602.10238): per-head RL eviction,
   frozen LLM, *future-attention* reward — the context consumer, endogenous
   objective. TRIM-KV (2512.03324): learned per-token retention gate, distillation.
-  Value-aware eviction diagnostics (2605.08234). Our delta: exogenous
-  (task-outcome) objective; write-side (memory), not only KV.
+  Value-aware eviction diagnostics (2605.08234). **EMBER (2606.05894)**: closest
+  on the objective axis — GRPO fine-tunes the writer LLM with delayed answer-gated
+  outcome reward over budgeted *text capsules*; differentiation: sparse terminal
+  reward vs our dense TD-value distillation, RL-tuned writer vs frozen backbone +
+  tiny head, binary retain vs graded write strength, text vs parametric weights,
+  per-episode vs cross-episode. **OSL-MR (2606.10616)**: supervised evidence-label
+  scorer under hard token budget; its own motivation — "reward is a sequence-level
+  scalar that cannot be decomposed into per-memory credit" [verify quote at
+  write-up] — names exactly the gap dense TD salience fills. Our delta: exogenous
+  (task-outcome) objective; write-side (memory), not only KV; both 2026 competitors
+  select *text to keep*, we learn *how strongly to write into weights*.
 - **Gated/heuristic memory routing:** D-MEM (2603.14597) — verified by direct
   read to be TRAINING-FREE (surprise z-score × prompted utility); our $0-training
   heuristic baseline. Mem-α/AgeMem/Memory-R1: RL tool-call memory ops on external
