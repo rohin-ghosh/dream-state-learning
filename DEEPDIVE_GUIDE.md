@@ -104,3 +104,29 @@ to the GPU tier where it always truly belonged.*
 - β form (multiplicative on surprise) and the swept range.
 - Gate thresholds (0.85/0.35; the ≤3×-mock-regret run-1 gate).
 - 1.5B-first vs 3B-first given the audit's ALFWorld evidence.
+
+---
+# STATE AS OF AUG 12 (lease day 2) — read this first, older sections predate the lease
+
+**S0 PASSED** (Qwen2.5-7B + ReAct, 120-step cap): win@manual 0.90 / win@none
+0.233 / room 0.667. Three harness field bugs found by cheap traces, all with
+regression tests (goal visibility; action-arg parsing; thought truncation).
+**S1 COMPLETE**: 2000 episodes, 98k events, states cached.
+**S2 fired STOP (regret 0.216)** — then the audit VOIDED it: the text-keyed
+state cache aliases 81% of events; best-possible text-keyed regret = 0.122,
+i.e. the thresholds sat below the dataset's information floor. Field bug 4.
+**Fix in flight**: PASS B-ctx (per-instance states, embedded with goal +
+recent history). Pre-registered reading: ctx-head <0.122 → real signal beyond
+text; ≈0.21 → STOP stands on a sound scale.
+**S3 on real states**: oracle +0.386 / keyword canary +0.326 / uniform +0.306 /
+random +0.300 / surprise +0.279 / felt +0.277 / dmem +0.214.
+Certified: instrument has range; memory substrate converts write-signal
+quality into retention (uniform→oracle); surprise < uniform (novelty is a BAD
+write signal here — d'Autume echoed). Open: can a head READ salience from
+(de-aliased) hidden states; head capacity (vs 0.122 floor) if ctx isn't enough.
+
+**Audit focus suggestions:** gpu/train_head_real.py (S2 protocol + thresholds),
+scratchpad audit (aliasing floor method) — reproduced in JOURNAL 2026-08-12,
+felt/head.py (FeltHead capacity: linear scorer, d_k=64), gpu/rollouts.py
+ctx_text() (is goal+3-step history the RIGHT conditioning?), felt/baselines.py
+(S3 policy zoo + floor-corrected probes).
