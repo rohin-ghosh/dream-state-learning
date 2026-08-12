@@ -81,3 +81,14 @@ sim-exploiting (the FeltCraft lesson at scale); reward-vs-reality tension as
 first-class design objective. Rejected on the way: "efficient research market"
 (requires building the reward function; pricing research fast is itself
 unsolved).
+
+## v2 design brief, sharpened (Rohin, 2026-08-12)
+The scalar write-weight is v1's measurable shadow of the real idea. The real
+idea: salience integrated into the memory's full KQV geometry — value-shaped
+Q/K projections so that effective weighting EMERGES (where a memory is
+written, what it binds to, what it may overwrite), not just how hard the
+gradient presses. Amplitude says "how much"; geometry says "where and with
+what". v1's scalar result — either sign — sets v2's baseline: an effect at
+the gate motivates asking whether geometry beats the gate; a null at the
+gate with a live oracle gap is direct evidence the aperture (not the signal)
+is the bottleneck, making geometric integration the motivated next step.
