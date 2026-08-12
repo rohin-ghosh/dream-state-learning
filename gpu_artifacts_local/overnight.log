@@ -134,3 +134,117 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'numpy'
 [08-12 09:12:51] S2: layer -8 regret = FAILED
 [08-12 09:12:51] FATAL: all S2 runs failed
+[08-12 09:14:09] === overnight supervisor start ===
+[08-12 09:14:11] S1: episodes=2000/2000 rollouts_proc=0 states_bytes=1680159698
+[08-12 09:15:16] === overnight supervisor start ===
+[08-12 09:15:18] S1: episodes=2000/2000 rollouts_proc=0 states_bytes=1680159698
+[08-12 09:16:19] S1 COMPLETE
+[08-12 09:16:19] S2: training head on layer -1
+[S2] layer=-1 d_h=3584 train=1700 test=300 h_scale=304.1
+  epoch 0: loss 0.0826
+  epoch 5: loss 0.0669
+  epoch 10: loss 0.0665
+  epoch 15: loss 0.0660
+  epoch 20: loss 0.0655
+  epoch 25: loss 0.0649
+
+[S2] held-out: all-budgets regret = 0.2361 | corr = 0.357
+     mock baseline = 0.03
+
+[HOUR-12 KILL-SWITCH — spec §5b]
+  STOP: real hidden states do not carry the salience signal at this layer. Try --layer -4 / -8 (cached). If ALL layers ≥0.15, the architecture premise fails on this backbone — do NOT spend S3/S4; escalate model size once, then rethink.
+[08-12 09:19:07] S2: layer -1 regret = 0.2360506270156108
+[08-12 09:19:07] S2: training head on layer -4
+[S2] layer=-4 d_h=3584 train=1700 test=300 h_scale=250.7
+  epoch 0: loss 0.0822
+  epoch 5: loss 0.0667
+  epoch 10: loss 0.0662
+  epoch 15: loss 0.0657
+  epoch 20: loss 0.0652
+  epoch 25: loss 0.0647
+
+[S2] held-out: all-budgets regret = 0.2193 | corr = 0.346
+     mock baseline = 0.03
+
+[HOUR-12 KILL-SWITCH — spec §5b]
+  STOP: real hidden states do not carry the salience signal at this layer. Try --layer -4 / -8 (cached). If ALL layers ≥0.15, the architecture premise fails on this backbone — do NOT spend S3/S4; escalate model size once, then rethink.
+[08-12 09:21:53] S2: layer -4 regret = 0.21930249650853498
+[08-12 09:21:53] S2: training head on layer -8
+[S2] layer=-8 d_h=3584 train=1700 test=300 h_scale=102.6
+  epoch 0: loss 0.0824
+  epoch 5: loss 0.0663
+  epoch 10: loss 0.0655
+  epoch 15: loss 0.0648
+  epoch 20: loss 0.0640
+  epoch 25: loss 0.0631
+
+[S2] held-out: all-budgets regret = 0.2159 | corr = 0.354
+     mock baseline = 0.03
+
+[HOUR-12 KILL-SWITCH — spec §5b]
+  STOP: real hidden states do not carry the salience signal at this layer. Try --layer -4 / -8 (cached). If ALL layers ≥0.15, the architecture premise fails on this backbone — do NOT spend S3/S4; escalate model size once, then rethink.
+[08-12 09:24:40] S2: layer -8 regret = 0.2159052198162675
+[08-12 09:24:40] S2 BEST: layer -8 regret 0.2159052198162675
+[08-12 09:24:40] KILL-SWITCH VERDICT: STOP (regret 0.2159052198162675; PROCEED<=0.09, STOP>=0.15)
+[08-12 09:24:41] S3: probe eval with best head
+
+policy           dissociation  AP(gist)
+uniform                +0.306     0.899
+random_write           +0.300     0.889
+surprise_only          +0.279     0.893
+dmem_style             +0.214     0.858
+keyword_gate           +0.326     0.915
+felt_b4                +0.277     0.896
+felt_b12               +0.277     0.895
+oracle_weight          +0.386     0.944
+
+paired felt_b12 − keyword_gate: -0.049 (t=-3.6, SIG)
+
+paired felt_b12 − surprise_only: -0.002 (t=-1.7, n.s.)
+
+[READ] felt must beat keyword_gate for the head to mean anything beyond action-type; oracle_weight is the ceiling. Saved: gpu_artifacts/s3.json
+[08-12 09:25:15] S3 result: {
+ "uniform": {
+  "dissociation": 0.3058165922980117,
+  "ap_gist": 0.8990345325858586,
+  "n_worlds": 4
+ },
+ "random_write": {
+  "dissociation": 0.29989450623113356,
+  "ap_gist": 0.8892764242504321,
+  "n_worlds": 4
+ },
+ "surprise_only": {
+  "dissociation": 0.27885743663156976,
+  "ap_gist": 0.89342834434054,
+  "n_worlds": 4
+ },
+ "dmem_style": {
+  "dissociation": 0.2138322907910339,
+  "ap_gist": 0.8582196153155807,
+  "n_worlds": 4
+ },
+ "keyword_gate": {
+  "dissociation": 0.3257539700871064,
+  "ap_gist": 0.914588149342224,
+  "n_worlds": 4
+ },
+ "felt_b4": {
+  "dissociation": 0.2774554394995645,
+  "ap_gist": 0.8959334772791149,
+  "n_worlds": 4
+ },
+ "felt_b12": {
+  "dissociation": 0.27717127249130025,
+  "ap_gist": 0.8945180408636785,
+  "n_worlds": 4
+ },
+ "oracle_weight": {
+  "dissociation": 0.38604655696571044,
+  "ap_gist": 0.9442364546223156,
+  "n_worlds": 4
+ }
+}
+[08-12 09:25:15] backing up gpu_artifacts to Mac
+[08-12 09:29:09] backup complete
+[08-12 09:29:09] === SUMMARY: S1 complete | S2 best layer -8 regret 0.2159052198162675 -> STOP | S3 written | artifacts backed up ===

@@ -1607,3 +1607,23 @@ ReAct + status line were necessary, not sufficient, below 7B). Gate ledger
 S1 launch hit a flashinfer/py3.11 env bug (array.array subscript TypeError in
 vLLM's optional import chain) — fix: uninstall flashinfer; eager-mode fallback
 ready if needed. S1 relaunching at 120 steps to match the certified cap.
+
+## 2026-08-12 (day 2, morning) — kill-switch fired STOP; audit VOIDED it (reversal #5)
+Pipeline ran clean overnight: S1 2000 eps + 38,255 dedup states; S2 regrets
+0.236/-1, 0.219/-4, 0.216/-8 → STOP as pre-registered; S3 coherent with a
+dead head (felt +0.277 ≈ surprise +0.279; keyword canary +0.326 above all
+realistic policies; oracle ceiling +0.386, AP-gist 0.944 — instrument has
+range on real states).
+AUDIT (before accepting): text-keyed cache aliases events — 81% of events
+share text; 33% of repeated texts carry conflicting labels (std>0.05); best
+possible TEXT-KEYED predictor regret = 0.122 (vs random 0.42, constant 0.34).
+The thresholds (PROCEED 0.09 / STOP 0.15, calibrated on alias-free mocks) sit
+AT/BELOW the information floor of the dataset → verdict void. Two honest
+sub-findings: (a) kill-switch scale invalid for this data; (b) head at 0.216
+also left real headroom vs the 0.122 floor.
+FIX (field bug 4): PASS B-ctx — per-instance states keyed (episode_uid, step),
+embedded WITH goal + last-3 history (the state during play, as designed).
+PRE-REGISTERED reading for the rerun, recorded before results: ctx-head
+< 0.122 → hidden states carry salience beyond surface text (PROCEED-equiv);
+≈0.21 → STOP stands on a sound scale. Ledger lesson generalizes: adversarial
+audit applies to NEGATIVE results too — a false STOP kills a true paper.
