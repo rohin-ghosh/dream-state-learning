@@ -158,10 +158,20 @@ the follow-up); no LoRA consolidation surface (run 2).
 uniform, surprise-only (β=0), D-MEM-style heuristic gate, keyword_gate (canary),
 felt at β∈{4,12}, oracle_weight (ceiling), context-FIFO, RAG-unbounded,
 no-memory.
-5.2 [SLOT: S0 gate table.] 5.3 [SLOT: S2 head quality — regret vs 0.03 mock
-baseline, per layer.] 5.4 [SLOT: S3 main table — dissociation + AP(gist) per
-policy; paired felt−keyword_gate and felt−surprise.] 5.5 [SLOT: S4 winnability
-at fixed context for top conditions.] 5.6 [SLOT: second backbone replication.]
+5.2 S0 gates (Qwen2.5-7B, ReAct, 120 steps): 0.90 / 0.233, room 0.667;
+capability ladder 1.5B 0.03 → 3B 0.17 → 7B 0.90.
+5.3 Head quality (fact-level, layer −8, held-out episodes): attention-form
+AUC 0.9803 / regret 0.0148; +hidden-layer control 0.9967 / 0.0022. Signal
+readability chain preserved in §6: step-TD text-keyed 0.216 → ctx-keyed
+0.125 (linear) → 0.055 (MLP) → binary fact-credit ~solved. Interpretability
+check: within structural facts, used-vs-unused AUC 0.943 (score means 0.952
+vs 0.691; detail 0.001) — the head learned dependency credit, not fact type.
+5.4 S3 main table (2000 eps, matched budget): felt_b12 +0.391/0.944 =
+oracle-label ceiling +0.386/0.944; keyword canary +0.326 (felt−canary +0.065,
+t=34.4 SIG); uniform +0.306; random +0.300; surprise +0.279 (felt−surprise
++0.112, t=8.0 SIG); dmem +0.214. [SLOT: cross-world-head robustness rerun.]
+5.5 [SLOT: S4 winnability at fixed context for top conditions.]
+5.6 [SLOT: second backbone replication.]
 5.7 Ablations: β sweep, layer sweep, value-only vs surprise×value vs additive.
 
 ## 6. The Negative-Control Ledger (methodological contribution)
