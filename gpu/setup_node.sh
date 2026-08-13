@@ -51,7 +51,7 @@ echo "[phase 2] cloning repo"
 if [ ! -d "$HOME/dream-state-learning" ]; then
     git clone https://github.com/rohin-ghosh/dream-state-learning.git "$HOME/dream-state-learning"
 fi
-cd "$HOME/dream-state-learning" && git pull
+cd "$HOME/dream-state-learning" && (git pull 2>/dev/null || echo "  (rsync deploy, no git — skipping pull)")
 
 echo "[phase 2] running CPU test suites (HARD GATE: any FAIL aborts setup)"
 for suite in tests/test_structmem.py tests/test_game.py tests/test_felt.py; do
