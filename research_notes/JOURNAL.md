@@ -1733,3 +1733,16 @@ felt ≈ label-ref behaviorally (interleaved across k); felt−no_memory +0.09
 (k12) / +0.17 (k18); felt−surprise ~+0.40. k-sweep: junk dilutes (surprise
 0.03→0.15), good memories already right at k12 (felt/oracle ~flat).
 Every experimental slot in the paper now holds a real number.
+
+## 2026-08-13 (night 2) — CROSS-CONFIG PASSED: config-invariant head + the scarcity curve
+Frozen head (trained depth-4 only) on unseen configs: d3 AUC 0.9944/regret
+0.0028; d5b4 AUC 0.9983/0.0007 — NO degradation, harder config scored
+better. "Learned the generator" objection dead. S3 across configs is a
+monotone scarcity curve: d3 (everything fits) → all policies within ±0.02,
+selection irrelevant; d4 (home) → wide spread, felt = label_ref at top;
+d5b4 (capacity binds hardest) → cleanest ordering: felt_b12 +0.193 TOP,
+ABOVE label_ref +0.186 (graded>binary REPLICATED on unseen config), canary
++0.158, uniform +0.155, surprise +0.115, dmem +0.077. Selection value grows
+with capacity pressure — the scaling claim, measured at three points.
+Also: node 2 (ipp1-1735, 2nd A100) leased + set up; 12-world 6000-episode
+S1 launching tonight for variance-crushed final tables.
