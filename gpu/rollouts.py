@@ -59,7 +59,7 @@ def read_jsonl_tolerant(path) -> list:
 # ---------------------------------------------------------------- PASS A
 def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
                  n_worlds: int = 4, depth: int = 4, max_steps: int = 60,
-                 context_mode: str = "manual", seed: int = 0):
+                 context_mode: str = "manual", seed: int = 0, branching: int = 3):
     """LLM plays with the MANUAL in context by default for S1 head-training data:
     we want competent play whose salience varies (right/wrong turns), and the
     manual removes the pure-ignorance failure mode. (Memory conditions are S3/S4.)"""
@@ -89,7 +89,7 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
     done_eps = {r["episode_uid"] for r in read_jsonl_tolerant(log_path)}
 
     world_seeds = {f"s1_{i}": seed * 7 + i for i in range(n_worlds)}
-    worlds = [World.generate(w, seed=sd, depth=depth)
+    worlds = [World.generate(w, seed=sd, depth=depth, branching=branching)
               for w, sd in world_seeds.items()]
     f = open(log_path, "a")
     ep = 0
@@ -327,6 +327,11 @@ def main():
     ap.add_argument("--out", default="gpu_artifacts/s1")
     ap.add_argument("--max-steps", type=int, default=60,
                     help="MUST match the step cap the S0 gate was passed at")
+    ap.add_argument("--depth", type=int, default=4)
+    ap.add_argument("--branching", type=int, default=3)
+    ap.add_argument("--seed", type=int, default=0,
+                    help="world-generation seed base (fresh worlds = new seed)")
+    ap.add_argument("--n-worlds", type=int, default=4)
     ap.add_argument("--skip-rollouts", action="store_true")
     ap.add_argument("--skip-states", action="store_true")
     ap.add_argument("--cache-ctx", action="store_true",
@@ -343,7 +348,9 @@ def main():
         cache_states_fact(a.model, out)
         return
     if not a.skip_rollouts:
-        run_rollouts(a.model, a.episodes, a.par, out, max_steps=a.max_steps)
+        run_rollouts(a.model, a.episodes, a.par, out, max_steps=a.max_steps,
+                     depth=a.depth, branching=a.branching, seed=a.seed,
+                     n_worlds=a.n_worlds)
     if not a.skip_states:
         cache_states(a.model, out)
 

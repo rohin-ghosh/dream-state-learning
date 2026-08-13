@@ -115,6 +115,10 @@ def main():
     ap.add_argument("--exclude-worlds", default="",
                     help="comma-sep worlds EXCLUDED from training (cross-world "
                          "robustness); salience still dumped for ALL episodes")
+    ap.add_argument("--eval-in", default="",
+                    help="CROSS-CONFIG: after training on --in, evaluate on "
+                         "this dir's fact states (frozen head, unseen config); "
+                         "--dump-salience then dumps for the EVAL dir")
     a = ap.parse_args()
     in_dir = pathlib.Path(a.in_dir)
 
@@ -137,6 +141,30 @@ def main():
         if best is None or r["auc"] > best[1]["auc"]:
             best = (name, r)
     print(f"[S2-fact] best: {best[0]}")
+
+    if a.eval_in:
+        # frozen-head evaluation on an UNSEEN generator config
+        ev = load_fact_dataset(pathlib.Path(a.eval_in), a.layer)
+        net, h_scale, dev = best[1]["net"], best[1]["h_scale"], best[1]["dev"]
+        scores, targets, regrets = [], [], []
+        with torch.no_grad():
+            for e in ev:
+                h = torch.tensor(e["H"] / h_scale, dtype=torch.float32,
+                                 device=dev)
+                s = torch.sigmoid(net(h).squeeze(-1)).cpu().numpy()
+                scores.append(s); targets.append(e["y"])
+                if e["y"].std() > 0:
+                    regrets.append(all_budgets_regret(s, e["y"]))
+        s = np.concatenate(scores); t = np.concatenate(targets)
+        order = np.argsort(s)
+        ranks = np.empty(len(s)); ranks[order] = np.arange(len(s))
+        n_pos, n_neg = int(t.sum()), int((1 - t).sum())
+        auc = ((ranks[t > 0.5].sum() - n_pos * (n_pos - 1) / 2)
+               / max(1, n_pos * n_neg))
+        print(f"[CROSS-CONFIG] frozen head on {a.eval_in}: "
+              f"AUC = {auc:.4f} | regret = {float(np.mean(regrets)):.4f} "
+              f"(episodes={len(ev)}, facts={len(s)})")
+        all_eps = ev              # salience dump targets the eval config
 
     if a.dump_salience:
         net, h_scale, dev = best[1]["net"], best[1]["h_scale"], best[1]["dev"]
