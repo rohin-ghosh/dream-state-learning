@@ -179,9 +179,16 @@ head training): felt +0.436 vs label_ref +0.431, felt−canary +0.066 (t=29.5),
 felt−surprise +0.119 (t=6.3). NOTE: absolute dissociation levels shift with
 world subset (easier worlds lift every policy); PAIRED within-world gaps are
 the primary statistics and are stable across subsets (0.065 vs 0.066).
-[SLOT: cross-CONFIG generalization — frozen head evaluated on depth-3 and
-depth-5/branching-4 worlds; the "property of value-trained salience vs
-property of the generator" defense.]
+Cross-CONFIG generalization (frozen depth-4 head on unseen generator
+configs): depth-3 AUC 0.9944 / regret 0.0028; depth-5/branching-4 AUC
+0.9983 / 0.0007 — config-invariant. S3 across configs = a monotone
+SCARCITY CURVE: d3 (capacity ample) all policies within ±0.02 — selection
+cannot matter; d4 wide spread, felt = label_ref; d5b4 (capacity binds
+hardest) cleanest ordering — felt_b12 +0.193 top, ABOVE label_ref +0.186
+(graded>binary replicated on unseen config), canary +0.158, uniform +0.155,
+surprise +0.115. Framing: selection value grows with capacity pressure —
+the benchmark discriminates write policies exactly when capacity binds,
+which is the deployment regime the paper targets.
 5.5 S4 closed loop (100 fresh eps/arm, fixed top-k read): manual 0.790;
 oracle(label_ref)_k12 0.550; felt_k18 0.510; oracle_k18 0.460; felt_k12
 0.430; no_memory 0.340; surprise_k18 0.150; **surprise_k12 0.030** — the
