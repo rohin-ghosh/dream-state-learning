@@ -1720,3 +1720,16 @@ cross-CONFIG generalization run scheduled (frozen head on depth-3 and
 depth-5/branching-4 worlds): the real transfer test and the #1 remaining
 scientific risk. Also: test_felt runs 8.6s here (reviewer's 9-min hang was
 environmental); README to document exact invocation.
+
+## 2026-08-13 (night) — S4 COMPLETE: the closed loop closes
+Final (100 eps/arm, fresh episodes, fixed dumb read): manual 0.790 |
+oracle_k12 0.550 | felt_k18 0.510 | oracle_k18 0.460 | felt_k12 0.430 |
+no_memory 0.340 | surprise_k18 0.150 | surprise_k12 0.030.
+Pre-registered ordering holds with one STRONGER-than-predicted amendment:
+surprise's memory is behaviorally TOXIC — 0.030 at k12 vs amnesia's 0.340.
+Junk retained-as-knowledge suppresses exploration and poisons planning
+(the researcher-friend concern + d'Autume, measured as a 31-point cliff).
+felt ≈ label-ref behaviorally (interleaved across k); felt−no_memory +0.09
+(k12) / +0.17 (k18); felt−surprise ~+0.40. k-sweep: junk dilutes (surprise
+0.03→0.15), good memories already right at k12 (felt/oracle ~flat).
+Every experimental slot in the paper now holds a real number.
