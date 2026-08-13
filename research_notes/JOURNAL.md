@@ -1746,3 +1746,18 @@ ABOVE label_ref +0.186 (graded>binary REPLICATED on unseen config), canary
 with capacity pressure — the scaling claim, measured at three points.
 Also: node 2 (ipp1-1735, 2nd A100) leased + set up; 12-world 6000-episode
 S1 launching tonight for variance-crushed final tables.
+
+## 2026-08-13 (evening) — 14B breaks the knowledge wall: calibration finding
+Qwen2.5-14B at depth-4: win@manual 1.00 (perfect play) but win@none 0.50 —
+WALL BROKEN (>0.35). Mechanism: error-message mining (failed crafts reveal
+recipes) + efficient exploration make in-episode discovery too cheap for a
+strong actor at this depth. Finding: THE KNOWLEDGE WALL IS CAPABILITY-
+RELATIVE — each backbone has a valid difficulty window (≤4B fails ceiling;
+7B in-window at d4: 0.90/0.23; 14B needs deeper worlds). The calibration
+invariant did its job: refused to certify, third gate-save this week.
+Wall gates only BEHAVIORAL claims; mechanism replication (S2/S3 on 14B
+states) is licensed regardless. Per pre-registered RUNBOOK rule
+(win@none>0.35 → raise depth): 14B re-gate at depth-5 launched — if wall
+restores, full replication incl. S4 runs at d5 AND adds a 4th scarcity
+point. Phi-3.5 row (0.40/0.20, fails ceiling) completes ladder: 0.03 /
+0.17 / 0.40 / 0.90 monotone across families.
