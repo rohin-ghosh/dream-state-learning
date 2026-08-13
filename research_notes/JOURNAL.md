@@ -1761,3 +1761,12 @@ states) is licensed regardless. Per pre-registered RUNBOOK rule
 restores, full replication incl. S4 runs at d5 AND adds a 4th scarcity
 point. Phi-3.5 row (0.40/0.20, fails ceiling) completes ladder: 0.03 /
 0.17 / 0.40 / 0.90 monotone across families.
+
+## 2026-08-13 (late night) — FINAL TABLES: 12-world replication, everything holds
+Head (9-world train, 89,632 facts): attn-form AUC 0.9923 / MLP 0.9983.
+HOLDOUT S3 (3 never-seen worlds): felt_b12 +0.383 = label_ref +0.383 (exact
+tie at reference); canary +0.299 (felt−canary +0.084, t=3.4 SIG); surprise
++0.230 (felt−surprise +0.153, t=6.5 SIG).
+ALL-12 S3 (main table): felt +0.349 ≈ label_ref +0.348; felt−canary +0.052
+(t=5.6); felt−surprise +0.108 (t=9.5). Every prior claim replicated at 3x
+data with proper world-holdout; ordering stable; paired stats decisive.
