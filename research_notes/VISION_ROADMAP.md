@@ -193,3 +193,18 @@ time, value function first." Rollout legality: imagination-rollouts legal
 planning quality = thesis act two); extra REAL env queries = cheating.
 MCTS pilot: appendix-if-time (one world, felt vs surprise memory, fixed
 imagined-rollout budget); else paper 2's opening experiment.
+
+## Prompt-free policy streams (Rohin, 2026-08-13)
+Graduation path from "prompt as policy" (v1 harness: hand-written English =
+π component, empirically proven this week) to LEARNED conditioning: policy
+as its own input stream (vector/tokens the model is trained to consume),
+observations as another, actions out; reasoning + memory + tool-use as
+internally coordinated sequences. Precedent shape: reasoning-RL (o1/R1)
+internalized "how to think" — nobody prompts step-by-step anymore; do the
+same for the policy-memory-action loop. Voyager note: its skill library =
+outcome-gated write policy in code space (store iff verified working) —
+cite-worthy ancestor of dependency credit. Self-prompting/autotelic goals
+(Voyager curriculum, "life prompt") deferred to v3 for attribution reasons:
+self-proposed goals = moving value target = nothing attributable.
+Post-bulk reading session: reasoning-RL line (o1/R1/long-CoT) — v3's actor
+is probably reasoning-trained, not prompted.
