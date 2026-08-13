@@ -208,3 +208,24 @@ cite-worthy ancestor of dependency credit. Self-prompting/autotelic goals
 self-proposed goals = moving value target = nothing attributable.
 Post-bulk reading session: reasoning-RL line (o1/R1/long-CoT) — v3's actor
 is probably reasoning-trained, not prompted.
+
+## Externalism vs integration, resolved as an evidence policy (2026-08-13)
+Externalist architecture (emerged from v0's own structure): central model =
+pure, unconfounded next-token intelligence; ALL "desire" in external organs
+(value-gated LTM writes; reasoning loop populating context; policy streams).
+"Unconfounded intelligence within a system of desire" (Rohin). Virtues:
+attribution, modularity, immunity to representation-collapse (v4 danger).
+Cost (Rohin's counter): every inter-organ interface is architect-chosen and
+NARROW (scalar w, top-k, text prompts) — no learnable inter-system
+representation; scaling can't propagate value-seeking through designed
+straws. RESOLUTION — not a side but a policy: (1) widen straws before
+merging organs (scalar→vector salience; top-k text→learned soft-token
+injection; hand prompts→learned policy streams), keeping attribution;
+(2) amortize-then-integrate (ToT→reasoning-RL precedent; search-trains-head
+v3 sketch): external scaffolding discovers what's worth integrating;
+(3) integrate an interface only when instruments MEASURE it binding (the
+k-sweep already detects one). Bitter lesson with receipts, not faith.
+Head mechanics for the record: supervised BCE on (frozen perception of
+fact-in-context, binary future-dependency) pairs; head learns directions in
+perception-space correlated with future use — distills the environment's
+dependency structure into a reader of the model's mind.
