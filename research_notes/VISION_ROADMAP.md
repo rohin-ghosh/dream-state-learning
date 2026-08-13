@@ -182,3 +182,14 @@ amplified play trains the better head — AlphaZero self-improvement for
 memory. NOT paper-1: needs world-model rollouts (large new component),
 actor isn't the bottleneck (S0 0.90), and it confounds the retention
 attribution. It is v3's actor, consuming everything v1/v2 validate.
+
+## The architecture, stated whole (Rohin, 2026-08-13, verbatim-adjacent)
+"The LLM harness becomes a cohesive continual-learning decision system:
+memory systems and the action system all arbitrated by the attention core
+against the value function — search as a CONSEQUENCE of the attention
+policy, not a separate module. The program is unfreezing it one organ at a
+time, value function first." Rollout legality: imagination-rollouts legal
+(equal search budget per condition; memory quality → imagination fidelity →
+planning quality = thesis act two); extra REAL env queries = cheating.
+MCTS pilot: appendix-if-time (one world, felt vs surprise memory, fixed
+imagined-rollout budget); else paper 2's opening experiment.
