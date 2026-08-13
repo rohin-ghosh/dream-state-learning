@@ -102,3 +102,19 @@ the survey itself: ATLAS/TTT/fast-weights/KVP/EMBER absent — our corner is
 essentially unmapped there. THREAT FLAG to verify by direct read: Mem-α
 (RL-trained memory-construction policy) + MEM1/MemAgent RL-write family
 (believed token-level external stores, not value-gated parametric — confirm).
+
+## 7. Aug-13 landscape sweep (online-learning SOTA verification)
+Baseline HOLDS: no lab updates deployed weights from traffic; shipped memory
+= text retrieval; continual FT still costs frontier models 15-32%
+(2601.18699); METR declines to claim measured RSI acceleration (Jul 2026).
+NEW + relevant: **OpenAI "Dreaming"** (Jun 2026) — sleep-time consolidation
+building weighted memory chains, TOKEN-SPACE ONLY, heuristic curation → the
+industry productized our founding metaphor and stopped at exactly the
+boundary we cross (learned salience, parametric store, outcome-derived
+importance). Intro-signal + related-work cite. **TTT-Discover** (2601.16175,
+Stanford/NVIDIA/Together) — verifier-gated weight updates at inference, real
+SOTAs, single-problem scope: outcome-gated TTT, adjacent axis (solve-one vs
+retain-lifetime); cite + NVIDIA-internal conversation thread. **Memory
+amplifies sycophancy 25x** (Jun 2026 study) — ecological echo of our S4
+toxic-memory result (bad retention < no retention). Predictions ≠ results:
+Amodei/Douglas forecast continual learning falls 2026 — statements only.
