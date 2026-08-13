@@ -229,3 +229,19 @@ Head mechanics for the record: supervised BCE on (frozen perception of
 fact-in-context, binary future-dependency) pairs; head learns directions in
 perception-space correlated with future use — distills the environment's
 dependency structure into a reader of the model's mind.
+
+## OPEN THREAD (for Rohin's return — parked 2026-08-13, his request)
+Q: Is the layer LTM lives on (self-conducted policy / reasoning abstraction)
+meaningfully different LONG-TERM from the model's own in-context attention
+policy — or are we harness-building against something scale will absorb?
+ANCHOR: in-context attention cannot reach across the window boundary at any
+scale; longer contexts MOVE the boundary (and degrade before the limit),
+never remove it. LTM's write policy isn't competing with attention's
+weighing — it decides what CROSSES into attention's kingdom. Topological
+claim, not capability claim → durable vs bitter lesson.
+STANDING TEST against harness-building: every scaffold piece must be
+(i) a measurement instrument, or (ii) an amortization target with a
+scheduled integration rung. Neither → barnacle → cut.
+Sub-thread also parked: oracle+V as "indirect policy construction"; whether
+dependency credit is oracle-dependent in a way that matters (v1.5 test:
+attention-based credit from S1 logs, one day, data in hand).
