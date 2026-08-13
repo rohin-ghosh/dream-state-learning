@@ -166,14 +166,18 @@ readability chain preserved in §6: step-TD text-keyed 0.216 → ctx-keyed
 0.125 (linear) → 0.055 (MLP) → binary fact-credit ~solved. Interpretability
 check: within structural facts, used-vs-unused AUC 0.943 (score means 0.952
 vs 0.691; detail 0.001) — the head learned dependency credit, not fact type.
-5.4 S3 main table (2000 eps, matched budget): felt_b12 +0.391/0.944 vs
-label_ref +0.386/0.944 (RENAMED from "oracle_weight": binary type-label
-weighting is a label-informed REFERENCE, not a supremum — graded credit can
-legitimately allocate a finite write budget better than a 0/1 label, and felt
-edges past it twice with consistent sign/magnitude; state this in one
-sentence or a reviewer will assume leakage). Keyword canary +0.326
-(felt−canary +0.065, t=34.4 SIG); uniform +0.306; random +0.300; surprise
-+0.279 (felt−surprise +0.112, t=8.0 SIG); dmem +0.214.
+5.4 S3 MAIN TABLE (FINAL: 12 worlds, 6000 eps, 99,824 fact instances, head
+trained on 9 worlds / 89,632 facts, attn-form AUC 0.9923): all-12 —
+felt_b12 +0.349 ≈ label_ref +0.348; canary +0.297; uniform +0.271; random
++0.268; surprise +0.240; dmem +0.171; paired felt−canary +0.052 (t=5.6 SIG),
+felt−surprise +0.108 (t=9.5 SIG). HOLDOUT (3 never-seen worlds): felt +0.383
+= label_ref +0.383 (exact tie); felt−canary +0.084 (t=3.4 SIG),
+felt−surprise +0.153 (t=6.5 SIG). (label_ref RENAMED from "oracle_weight":
+binary type-label weighting is a label-informed REFERENCE, not a supremum —
+graded credit legitimately allocates a finite budget as well or better;
+state in one sentence or reviewers assume leakage.) Earlier 4-world run
+(felt +0.391 vs ref +0.386, felt−surprise t=8.0) retained as the S4-paired
+dataset.
 Held-out-SEED robustness (same generator config, worlds 2-3 never seen in
 head training): felt +0.436 vs label_ref +0.431, felt−canary +0.066 (t=29.5),
 felt−surprise +0.119 (t=6.3). NOTE: absolute dissociation levels shift with
