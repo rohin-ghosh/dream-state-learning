@@ -1770,3 +1770,14 @@ tie at reference); canary +0.299 (felt−canary +0.084, t=3.4 SIG); surprise
 ALL-12 S3 (main table): felt +0.349 ≈ label_ref +0.348; felt−canary +0.052
 (t=5.6); felt−surprise +0.108 (t=9.5). Every prior claim replicated at 3x
 data with proper world-holdout; ordering stable; paired stats decisive.
+
+## 2026-08-14 (early) — 14B wall leak diagnosed: error verbosity, not depth
+14B at depth-5: manual 1.00, none 0.467 (vs 0.50 at d4) — wall unrestored.
+Leak mechanism identified: informative craft errors ("requires A and B")
+let a strong actor mine the recipe tree top-down; cost scales ~linearly with
+depth, 120 steps absorbs it. Wall = f(capability × error-verbosity × depth).
+Principled fix = TERSE-ERRORS engine knob (kills mining structurally) — v1
+design decision for Rohin (comparability cost: terse-error runs are a
+labeled variant). Meanwhile: 14B MECHANISM replication needs no play —
+launched re-embedding of s1 events with 14B (its own perception of the same
+facts) → head training → S3. If AUC comparable, §5.6 banked cleanly.
