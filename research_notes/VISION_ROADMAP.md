@@ -245,3 +245,14 @@ scheduled integration rung. Neither → barnacle → cut.
 Sub-thread also parked: oracle+V as "indirect policy construction"; whether
 dependency credit is oracle-dependent in a way that matters (v1.5 test:
 attention-based credit from S1 logs, one day, data in hand).
+
+## Head-transplant warm start (Rohin's attention-math session, 2026-08-14)
+v1.5 ablation: initialize the external scorer from one of the frozen model's
+OWN attention heads (copy Wq/Wk; pick a goal-content-tracking head via
+interp), fine-tune externally. Model untouched, attribution intact, likely
+sample-efficiency gain; makes "felt attention" literal — one of the model's
+heads, transplanted and retrained to serve memory instead of next-token.
+Data-cost clarity from the same session: external heads learn READOUTS of
+pretraining-amortized features (30k facts suffice); in-model heads learn
+features (Qwen-scale data) — amortize-then-integrate, in sample-efficiency
+terms. Inside-the-model LoRA of a real head = v2 modulator, scheduled.
