@@ -32,7 +32,8 @@ from felt.llm_player import build_prompt, parse_action, render_manual
 from game import World, FeltCraft
 from gpu.rollouts import read_jsonl_tolerant
 
-WRITE_POLICIES = ("surprise_only", "random_write", "felt_fact", "oracle_weight")
+WRITE_POLICIES = ("surprise_only", "random_write", "fact_type_regex",
+                  "felt_fact", "oracle_weight")
 
 
 def build_topk_texts(recs, policy, fact_npz, k, seed=0):
@@ -61,7 +62,8 @@ def build_topk_texts(recs, policy, fact_npz, k, seed=0):
         sl = slice(i, i + chunk)
         sur = mem.surprise(K[sl], V[sl])
         labels = structural[sl] if policy == "oracle_weight" else None
-        w = _weights(pol, sur, S[sl], acts[sl], labels)
+        w = _weights(pol, sur, S[sl], acts[sl], labels,
+                     texts=texts[sl.start:sl.stop if sl.stop else len(texts)])
         mem.write_batch(K[sl], V[sl], w, steps=15)
     # rank UNIQUE texts by probe score
     uniq = sorted(set(texts))

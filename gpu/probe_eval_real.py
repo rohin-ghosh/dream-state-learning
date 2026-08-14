@@ -44,10 +44,11 @@ def load_head(path):
 
 def build_world_stream(recs, states, head, layer, h_scale=1.0,
                        states_mode="text", salience_npz=None,
-                       fact_salience_npz=None):
+                       fact_salience_npz=None, credit=None):
     """K/V/S/labels/acts/kinds/texts for one world's episode stream, salience
     from the REAL-state head (or a precomputed per-episode salience file)."""
     K, V, S, lab, acts, kinds, texts = [], [], [], [], [], [], []
+    cred = []
     for rec in recs:
         traj = rec["trajectory"]
         if fact_salience_npz is not None:
@@ -62,6 +63,8 @@ def build_world_stream(recs, states, head, layer, h_scale=1.0,
                 lab.append(fa["structural"])
                 acts.append(traj[fa["step"] - 1]["action"].split(" ")[0])
                 kinds.append(fa["kind"]); texts.append(fa["text"])
+                if credit is not None:
+                    cred.append(credit.get((rec["episode_uid"], j), 0.0))
             continue
         if salience_npz is not None:
             if rec["episode_uid"] not in salience_npz.files:
@@ -90,9 +93,12 @@ def build_world_stream(recs, states, head, layer, h_scale=1.0,
             kinds.append(fa["kind"]); texts.append(fa["text"])
     if not K:
         return None
-    return {"K": np.stack(K), "V": np.stack(V), "S": np.array(S),
-            "structural": np.array(lab, bool), "acts": np.array(acts),
-            "kinds": np.array(kinds), "texts": texts}
+    st = {"K": np.stack(K), "V": np.stack(V), "S": np.array(S),
+          "structural": np.array(lab, bool), "acts": np.array(acts),
+          "kinds": np.array(kinds), "texts": texts, "recs": recs}
+    if credit is not None and len(cred) == len(texts):
+        st["credit"] = np.array(cred)
+    return st
 
 
 def eval_policy(world, st, policy, seed=0):
@@ -121,10 +127,26 @@ def eval_policy(world, st, policy, seed=0):
     di = rng.choice(det_pool, size=min(len(gist), len(det_pool)), replace=False)
     d, _, df = _floor_corrected_probe(mem, [st["texts"][i] for i in di],
                                       [st["kinds"][i] for i in di], 2)
-    return {"dissociation": float(g.mean() - d.mean()),
-            "ap_gist": average_precision(
-                np.concatenate([g, d]),
-                np.array([True] * len(g) + [False] * len(d)))}
+    out = {"dissociation": float(g.mean() - d.mean()),
+           "ap_gist": average_precision(
+               np.concatenate([g, d]),
+               np.array([True] * len(g) + [False] * len(d)))}
+    # v1.1 PRIMARY metric (note 27): use-weighted retention — does the store
+    # hold what the task DEPENDED on (held-out credit), regardless of type?
+    if "credit" in st:
+        cr = st["credit"]
+        pos = np.where(cr > 0.5)[0]
+        neg = np.where(cr <= 0.5)[0]
+        if len(pos) >= 5 and len(neg) >= 5:
+            pi = rng.choice(pos, size=min(80, len(pos)), replace=False)
+            ni = rng.choice(neg, size=min(80, len(neg)), replace=False)
+            idx = np.concatenate([pi, ni])
+            p, _, _ = _floor_corrected_probe(
+                mem, [st["texts"][i] for i in idx],
+                [st["kinds"][i] for i in idx], 3)
+            out["ap_use"] = average_precision(
+                p, np.array([True] * len(pi) + [False] * len(ni)))
+    return out
 
 
 def main():
@@ -164,9 +186,11 @@ def main():
         # regenerate the SAME world from the LOGGED seed/depth (never guess)
         world = World.generate(wid, seed=recs[0]["world_seed"],
                                depth=recs[0].get("depth", 4))
+        from felt.depcredit import world_fact_credit
+        credit = world_fact_credit(recs, world, binary=True)
         st = build_world_stream(recs, states, head, layer, h_scale,
                                 states_mode=a.states, salience_npz=sal_npz,
-                                fact_salience_npz=fact_npz)
+                                fact_salience_npz=fact_npz, credit=credit)
         if st is None:
             continue
         for pol in POLICIES:
@@ -174,14 +198,17 @@ def main():
             if m:
                 results[pol].append(m)
 
-    print(f"\n{'policy':<15}{'dissociation':>14}{'AP(gist)':>10}")
+    print(f"\n{'policy':<17}{'dissociation':>13}{'AP(gist)':>10}{'AP(use)':>10}")
     summary = {}
     for pol in POLICIES:
         rs = results[pol]
         dd = float(np.mean([r["dissociation"] for r in rs]))
         aa = float(np.mean([r["ap_gist"] for r in rs]))
-        summary[pol] = {"dissociation": dd, "ap_gist": aa, "n_worlds": len(rs)}
-        print(f"{pol:<15}{dd:>+14.3f}{aa:>10.3f}")
+        uses = [r["ap_use"] for r in rs if "ap_use" in r]
+        uu = float(np.mean(uses)) if uses else float("nan")
+        summary[pol] = {"dissociation": dd, "ap_gist": aa, "ap_use": uu,
+                        "n_worlds": len(rs)}
+        print(f"{pol:<17}{dd:>+13.3f}{aa:>10.3f}{uu:>10.3f}")
     # the two decisive comparisons
     for a_, b_ in (("felt_b12", "keyword_gate"), ("felt_b12", "surprise_only")):
         va = np.array([r["dissociation"] for r in results[a_]])
