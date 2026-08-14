@@ -256,3 +256,19 @@ Data-cost clarity from the same session: external heads learn READOUTS of
 pretraining-amortized features (30k facts suffice); in-model heads learn
 features (Qwen-scale data) — amortize-then-integrate, in sample-efficiency
 terms. Inside-the-model LoRA of a real head = v2 modulator, scheduled.
+
+## From Rohin's attention-math session (2026-08-14) — three deltas + a v2 gift
+Felt head vs standard attention, precisely: (1) SIGMOID per-event gate, not
+softmax — absolute salience (co-important facts allowed) vs relative;
+ablation queued: softmax-normalized within-episode salience (natively
+expresses budget competition). (2) Single learned query q, trained by
+outcome-BCE — q converges to "the question whose answer predicts future
+dependency"; the objective's question, literally. (3) φ nonlinearity before
+Wᵏ — external heads tap raw layers, need their own transform (capacity probe).
+V2 GIFT: the head's discarded value-output o = Σα·v is the goal-conditioned
+event summary — the natural PAYLOAD for latent memory ("store thoughts"):
+transplanted head emits α = write strength AND o = write content, already
+value-filtered. Cleanest v2 spec to date.
+v1/v2 safety asymmetry, canonical: v1 reads α off a stream computed anyway
+(structurally cannot degrade the model); v2 writes back (can improve or
+damage → scheduled behind instruments that can tell which).
