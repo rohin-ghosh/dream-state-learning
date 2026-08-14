@@ -272,3 +272,33 @@ value-filtered. Cleanest v2 spec to date.
 v1/v2 safety asymmetry, canonical: v1 reads α off a stream computed anyway
 (structurally cannot degrade the model); v2 writes back (can improve or
 damage → scheduled behind instruments that can tell which).
+
+## Session-1 close synthesis (Rohin, 2026-08-14) — the five pins
+1. TRANSFORMER = STM, not intelligence: deterministic thought-store; the
+   architecture is a CADENCE HIERARCHY — fast attention (within-window,
+   frozen) / FEELING HEADS (cross-window LTM selection, online-learned,
+   slow) / memory representation space (drifts slowest). Reverse-bitter-
+   lesson as architecture: amortize each layer small, prove, freeze, build.
+2. POLICY = THE LOSS FUNCTION, backward-passes only. No reward in forward.
+   Feeling heads are the only online learners. Deploy a "slightly dumber
+   baby model" whose memory is weak until it lives — by design.
+3. STAGED-WORLD BENCHMARK (session 2's environment, FeltCraft v2):
+   materials→building→trading value drift; measure memory ADAPTATION under
+   slow policy change + return-to-origin forgetting/plasticity curves.
+   Reuses current machinery. This is where "KQVs change with the head,
+   slowly, some-but-not-all" becomes a measured curve.
+4. LONG-SEQUENCE SLOW-PATHWAY TRAINING (session 3+ endgame): streams far
+   longer than any context (e.g., a problem's full literature), loss on
+   post-cutoff outcomes (solved conjectures not in training data), backprop
+   through slow pathway ONLY; critic-as-loss; cache-most/refresh-selective
+   makes the backprop feasible. Meta-learning the memory system over
+   horizons no context holds.
+5. OPEN v2 DECISION: LTM injection — same context space as STM (facts as
+   tokens; current straw) vs separate stream at its own layer (first-hidden-
+   state instinct; o-as-payload lives here). Amortize the smallest provable
+   version first.
+Substrate verdict: fast-weight MLP proven as a STORE, unproven as the right
+store under policy drift — exactly what benchmark #3 tests.
+Session cadence: leases expire tonight; next lease when the session-2 design
+doc is ready. Claude's standing work: paper prose (honest results), session-2
+design doc, research-statement draft.
