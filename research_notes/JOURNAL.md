@@ -1802,3 +1802,20 @@ subsets), strict-inequality credit, fact_type_regex + frequency + S4
 random_write baselines, AP(credit→structural) as permanent leakage canary.
 Rerun on regenerated worlds inside remaining lease. Better tonight than in
 review — reversal #6 joins the ledger.
+
+## 2026-08-14 (Fri) — v1.1 verdicts: leakage down, use-metric SATURATES at d4
+Gate (T=0.5): best ever — 0.967/0.20/room 0.77, ping-pong extinct.
+Leakage canary: 0.910 vs base 0.633 (v1.0: 0.975) — reduced, residual
+correlation partly legitimate (structure IS more often load-bearing).
+Head: attn 0.974 / MLP 0.986 on honest target.
+Type-metric table: regex tops its own scoreboard (+0.346), as note 27
+predicted — cannot adjudicate. PRIMARY use-metric (AP retention→held-out
+credit): SATURATED — regex 0.890 … uniform 0.883, felt 0.884 = random 0.884;
+only surprise/keyword/dmem sag. Mechanism: credited facts are redundant in
+the stream at d4/500-eps-per-world; every non-pathological policy retains
+them at this budget. Consistent with the scarcity curve (d3 collapse, d5b4
+widest spread): THE THESIS IS TESTABLE ONLY UNDER CAPACITY PRESSURE.
+Next-lease design: v1.1 worlds @ depth-5/branching-4, tighter k, longer
+streams. S4-v1.1 (behavioral, with regex arm) pending today — behavior did
+not saturate in v1.0. Honest state: headline unproven, instrument validated,
+requirement for proving it now MEASURED rather than assumed.
