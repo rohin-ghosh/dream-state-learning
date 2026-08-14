@@ -30,7 +30,8 @@ from structmem_bench.stats import paired_diff
 from gpu.rollouts import text_key
 
 POLICIES = ("uniform", "random_write", "surprise_only", "dmem_style",
-            "keyword_gate", "felt_b4", "felt_b12", "oracle_weight")
+            "keyword_gate", "fact_type_regex", "frequency_weight",
+            "felt_b4", "felt_b12", "oracle_weight")
 
 
 def load_head(path):
@@ -97,13 +98,18 @@ def build_world_stream(recs, states, head, layer, h_scale=1.0,
 def eval_policy(world, st, policy, seed=0):
     K, V, S = st["K"], st["V"], st["S"]
     structural, acts = st["structural"], st["acts"]
+    texts = st["texts"]
+    from collections import Counter as _C
+    cnt = _C(texts)
+    freqs = np.array([cnt[t] for t in texts], float)
     mem = FastWeightMemory(d_key=32, d_val=32, hidden=128, seed=seed)
     chunk = max(1, len(K) // 8)
     for i in range(0, len(K), chunk):
         sl = slice(i, i + chunk)
         sur = mem.surprise(K[sl], V[sl])
         labels = structural[sl] if policy == "oracle_weight" else None
-        w = _weights(policy, sur, S[sl], acts[sl], labels)
+        w = _weights(policy, sur, S[sl], acts[sl], labels,
+                     texts=texts[sl.start:sl.stop], freqs=freqs[sl])
         mem.write_batch(K[sl], V[sl], w, steps=15)
     gist = world.structural_facts()
     g, _, gf = _floor_corrected_probe(mem, [f.text for f in gist],

@@ -21,20 +21,29 @@ from collections import defaultdict
 
 import numpy as np
 
-from felt.depcredit import world_fact_credit
+from felt.depcredit import world_fact_credit, ap_leakage
 from felt.head import all_budgets_regret
 from gpu.rollouts import read_jsonl_tolerant
 
 
 def load_fact_dataset(in_dir: pathlib.Path, layer: int):
+    from game import World
     z = np.load(in_dir / "states_fact.npz", allow_pickle=True)
     by_world = defaultdict(list)
     recs_all = read_jsonl_tolerant(in_dir / "rollouts.jsonl")
     for rec in recs_all:
         by_world[rec["world"]].append(rec)
     credit = {}
-    for recs in by_world.values():
-        credit.update(world_fact_credit(recs, binary=True))
+    for wid, recs in by_world.items():
+        world = World.generate(wid, seed=recs[0]["world_seed"],
+                               depth=recs[0].get("depth", 4))
+        credit.update(world_fact_credit(recs, world, binary=True))
+    leak = ap_leakage(credit, recs_all)
+    base = np.mean([bool(r["facts"][j]["structural"])
+                    for r in recs_all for j in range(len(r["facts"]))
+                    if (r["episode_uid"], j) in credit])
+    print(f"[LEAKAGE CANARY] AP(credit->structural) = {leak:.4f} "
+          f"(base rate {base:.4f}; v1.0 bug was 0.975)")
     eps = []
     for rec in recs_all:
         keys, H, y = [], [], []

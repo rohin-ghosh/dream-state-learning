@@ -54,7 +54,7 @@ def collect_stream(world: World, head, n_episodes: int, d_h: int, seed: int,
 
 
 def _weights(policy: str, sur: np.ndarray, S: np.ndarray, acts: np.ndarray,
-             structural=None):
+             structural=None, texts=None, freqs=None):
     """sur = ONLINE surprise (computed per chunk against current memory —
     redteam_4 fix: pre-write surprise on a fresh net was init noise)."""
     n = len(sur)
@@ -74,9 +74,18 @@ def _weights(policy: str, sur: np.ndarray, S: np.ndarray, acts: np.ndarray,
     if policy == "keyword_gate":                  # PERMANENT CANARY (redteam_4):
         g = np.isin(acts, ("craft", "explore", "move")).astype(float)
         return sur * (1.0 + 12.0 * g)             # felt must BEAT this to mean anything
-    if policy == "oracle_weight":                 # CEILING (uses labels, declared)
+    if policy == "oracle_weight":                 # label REFERENCE (uses labels, declared)
         assert structural is not None
         return sur * (1.0 + 12.0 * structural.astype(float))
+    if policy == "fact_type_regex":               # the cheap competitor a reviewer
+        assert texts is not None                  # builds (reversal-6 audit): three
+        g = np.array([("requires" in t) or ("is found at" in t)  # string matches
+                      or ("always hold" in t) for t in texts], float)
+        return sur * (1.0 + 12.0 * g)
+    if policy == "frequency_weight":              # popularity control (reversal-6):
+        assert freqs is not None                  # credit must beat raw frequency
+        f = np.asarray(freqs, float)
+        return sur * (1.0 + 12.0 * f / (f.max() or 1.0))
     if policy.startswith("felt_b"):
         beta = float(policy.split("felt_b")[1])
         return value_modulated_weights(sur, S, beta)
@@ -88,6 +97,7 @@ _FAKE_TPL = {
     "location": "zz{i}r is found at zz{i}site",
     "decor":    "zz{i}site looked zz{i}w during episode 9{i}9",
     "count":    "gathered zz{i}r at step 9{i} of episode 9{i}9",
+    "hint":     "sites that look zz{i}w always hold zz{i}r",
 }
 
 

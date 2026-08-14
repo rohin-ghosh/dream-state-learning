@@ -145,16 +145,19 @@ def test_parse_action_canonicalizes_natural_language():
                         "gather wood") == "gather wood"  # no prefix: last verb line
 
 
-def test_dependency_credit_zeroes_decor_by_structure():
-    # note 26: decor/count credit must be 0 BY THE DAG, not by labels;
-    # used recipes/bindings must earn credit.
+def test_dependency_credit_v2_type_and_use_dissociate():
+    # note 27 (reversal 6): credit must NOT be a synonym of the structural
+    # label — some verbatim-class facts (hint decor) earn credit; some
+    # structural instances earn none (strict future-use); count stays junk.
     from felt.depcredit import world_fact_credit
     from game import FeltCraft
     from game.engine import scripted_noisy_play
+    import numpy as np
     w = World.generate("dc", seed=3, depth=3)
+    assert w.hint_map, "v1.1 worlds carry hint bindings"
     recs, known = [], set()
-    goals = list(w.dag.recipes)
-    for e in range(6):
+    goals = w.goal_pool()
+    for e in range(10):
         env = FeltCraft(w, max_steps=120)
         scripted_noisy_play(env, goals[e % len(goals)], episode_seed=e,
                             known_locations=known)
@@ -163,15 +166,19 @@ def test_dependency_credit_zeroes_decor_by_structure():
                      "facts": [{"text": f.text, "kind": f.kind,
                                 "structural": f.structural, "step": f.step}
                                for f in env.episode_facts]})
-    credit = world_fact_credit(recs, binary=True)
+    credit = world_fact_credit(recs, w, binary=True)
     by_kind = {}
     for (uid, j), c in credit.items():
         rec = next(r for r in recs if r["episode_uid"] == uid)
         by_kind.setdefault(rec["facts"][j]["kind"], []).append(c)
-    assert all(c == 0.0 for c in by_kind.get("decor", [])), "decor must be 0"
-    assert all(c == 0.0 for c in by_kind.get("count", [])), "count must be 0"
-    assert any(c > 0 for c in by_kind.get("recipe", [])), "used recipes earn"
+    assert all(c == 0.0 for c in by_kind.get("count", [])), "count stays junk"
     assert any(c > 0 for c in by_kind.get("location", [])), "used bindings earn"
+    rc = by_kind.get("recipe", [])
+    assert rc and np.mean(rc) < 1.0, \
+        "strict future-use: not every recipe instance may earn (v1.0 bug)"
+    dc = by_kind.get("decor", [])
+    if any(c > 0 for c in dc):        # hinted-site gathers occurred
+        assert any(c == 0 for c in dc), "junk decor must coexist with hint decor"
 
 
 def test_harness_end_to_end_and_resume():

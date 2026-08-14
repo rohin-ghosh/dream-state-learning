@@ -63,11 +63,11 @@ def test_fact_labels_structural_vs_detail():
     scripted_optimal_play(env, goal, 0)
     kinds = {(f.kind, f.structural) for f in env.episode_facts}
     for kind, structural in kinds:
-        assert (kind in ("recipe", "location")) == structural, kinds
+        assert (kind in ("recipe", "location", "hint")) == structural, kinds
     # world-level gist enumerable
     wf = w.structural_facts()
     assert all(f.structural for f in wf)
-    assert len(wf) == len(w.dag.recipes) + len(w.dag.raws)
+    assert len(wf) == len(w.dag.recipes) + len(w.dag.raws) + len(w.hint_map)
 
 
 def test_episode_determinism():
@@ -84,7 +84,7 @@ def test_episode_determinism():
 def test_cross_episode_memory_helps():
     # carrying known locations across episodes must reduce steps (the game's
     # core property: memory pays)
-    w = World.generate("w", seed=6, depth=4)
+    w = World.generate("w", seed=8, depth=4)  # seed 6: raws colocated, warm==cold (v1.1 rng shift)
     goal = [i for i in w.dag.recipes if w.dag.depth_of[i] == 4][0]
     cold = FeltCraft(w, max_steps=120)
     scripted_optimal_play(cold, goal, 0)

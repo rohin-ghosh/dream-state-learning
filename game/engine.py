@@ -37,30 +37,55 @@ class Fact:
 
 @dataclass
 class World:
-    """Persistent across episodes: DAG + fixed resource locations."""
+    """Persistent across episodes: DAG + fixed resource locations.
+    v1.1 (note 27): hint_map binds some decor words to raw types (a stable,
+    usable surface attribute — verbatim-class knowledge with causal value);
+    goal_pool restricts episode goals so some structure is never used."""
     world_id: str
     dag: CraftDAG
     raw_locations: dict          # raw -> location name
     locations: list              # all location names
     seed: int
+    hint_map: dict = field(default_factory=dict)   # decor word -> raw
 
     @classmethod
     def generate(cls, world_id: str, seed: int, depth=4, branching=3, n_raw=6,
-                 n_locations=8):
+                 n_locations=8, n_hints=2):
         rng = np.random.default_rng(seed)
         dag = gen_dag(seed, depth=depth, branching=branching, n_raw=n_raw)
         locations = [f"site_{i}" for i in range(n_locations)]
         raw_locations = {r: locations[int(rng.integers(n_locations))]
                          for r in dag.raws}
+        # v1.1: bind n_hints decor words to raws (stable site attribute)
+        raws = list(dag.raws)
+        hinted = [raws[int(i)] for i in
+                  rng.choice(len(raws), size=min(n_hints, len(raws)),
+                             replace=False)]
+        words = list(rng.permutation(DECOR_WORDS))
+        hint_map = {words[i]: r for i, r in enumerate(hinted)}
         return cls(world_id=world_id, dag=dag, raw_locations=raw_locations,
-                   locations=locations, seed=seed)
+                   locations=locations, seed=seed, hint_map=hint_map)
+
+    def goal_pool(self, frac: float = 0.5) -> list:
+        """Deterministic subset of recipes used as episode goals (v1.1):
+        structure OFF the pool's requirement closure is experienced (failed
+        crafts teach edges) but never used — the credit≠type contrast."""
+        rng = np.random.default_rng(self.seed * 977 + 13)
+        rs = sorted(self.dag.recipes)
+        k = max(2, int(len(rs) * frac))
+        idx = rng.choice(len(rs), size=k, replace=False)
+        return [rs[int(i)] for i in sorted(idx)]
 
     def structural_facts(self) -> list:
-        """The world's ground-truth gist: recipe edges + location bindings."""
+        """The world's ground-truth gist: recipe edges + location bindings
+        + hint relations (the MAP is a relation; observations of decor are
+        verbatim-class)."""
         fs = [Fact("recipe", f"crafting {it} requires {a} and {b}", True)
               for it, (a, b) in self.dag.recipes.items()]
         fs += [Fact("location", f"{r} is found at {l}", True)
                for r, l in self.raw_locations.items()]
+        fs += [Fact("hint", f"sites that look {w} always hold {r}", True)
+               for w, r in self.hint_map.items()]
         return fs
 
 
@@ -93,8 +118,16 @@ class FeltCraft:
         # a site is VISITED (so every fact has a real step and real head salience —
         # redteam_4 fix: the 0.05 fallback constant was carrying the whole result).
         self._episode_seed = episode_seed
-        self.decor = {l: DECOR_WORDS[int(self._rng.integers(len(DECOR_WORDS)))]
-                      for l in self.w.locations}
+        # v1.1: sites holding a hinted raw ALWAYS show their bound word
+        # (stable, usable attribute); other sites draw random non-hint words.
+        hint_by_raw = {r: w for w, r in self.w.hint_map.items()}
+        plain = [w for w in DECOR_WORDS if w not in self.w.hint_map]
+        self.decor = {}
+        for l in self.w.locations:
+            here = [r for r, loc in self.w.raw_locations.items() if loc == l]
+            hinted = [hint_by_raw[r] for r in here if r in hint_by_raw]
+            self.decor[l] = (hinted[0] if hinted else
+                             plain[int(self._rng.integers(len(plain)))])
         self._decor_emitted = set()
         self._V = self._value()
         obs = self._render_obs("You arrive. " + self._goal_text())
@@ -168,6 +201,13 @@ class FeltCraft:
             self.episode_facts.append(
                 Fact("count", f"gathered {res} at step {self.steps} of episode {self._episode_seed}",
                      False, self.steps))
+            # v1.1: gathering a hinted raw at its marked site = noticing the
+            # pattern — the hint RELATION becomes experienced knowledge
+            for w_, r_ in self.w.hint_map.items():
+                if r_ == res and self.decor.get(self.current_loc) == w_:
+                    self.episode_facts.append(
+                        Fact("hint", f"sites that look {w_} always hold {r_}",
+                             True, self.steps))
             return f"You gather 1 {res}. Inventory: {self._inv_text()}."
         if act.startswith("craft"):
             item = act.split(None, 1)[1].strip() if " " in act else ""
@@ -178,6 +218,12 @@ class FeltCraft:
             lacking = [f"{c}x {ing}" for ing, c in need.items()
                        if self.inventory.get(ing, 0) < c]
             if lacking:
+                # v1.1: an informative failure TEACHES the edge — emit the
+                # recipe fact (experienced-without-use becomes possible;
+                # error-mining is now labeled epistemics, not a leak)
+                self.episode_facts.append(
+                    Fact("recipe", f"crafting {item} requires {a} and {b}",
+                         True, self.steps))
                 return (f"Crafting {item} requires {a} and {b} — you lack "
                         f"{', '.join(lacking)}.")
             for ing, c in need.items():

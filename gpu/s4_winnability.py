@@ -32,7 +32,7 @@ from felt.llm_player import build_prompt, parse_action, render_manual
 from game import World, FeltCraft
 from gpu.rollouts import read_jsonl_tolerant
 
-WRITE_POLICIES = ("surprise_only", "felt_fact", "oracle_weight")
+WRITE_POLICIES = ("surprise_only", "random_write", "felt_fact", "oracle_weight")
 
 
 def build_topk_texts(recs, policy, fact_npz, k, seed=0):
@@ -125,7 +125,7 @@ def main():
 
     episodes = []
     for world, arm, ctx in arms:
-        goals = list(world.dag.recipes)
+        goals = world.goal_pool()
         rng = np.random.default_rng(hash(arm) % 2**31)
         for e in range(a.eps):
             goal = goals[int(rng.integers(len(goals)))]

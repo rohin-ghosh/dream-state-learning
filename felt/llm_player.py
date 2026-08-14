@@ -31,6 +31,8 @@ def render_manual(world: World) -> str:
     lines += [f"- crafting {it} requires {a} and {b}"
               for it, (a, b) in world.dag.recipes.items()]
     lines += [f"- {r} is found at {l}" for r, l in world.raw_locations.items()]
+    lines += [f"- sites that look {w} always hold {r}"
+              for w, r in getattr(world, "hint_map", {}).items()]
     return "\n".join(lines)
 
 

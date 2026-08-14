@@ -25,7 +25,7 @@ def gate_calibration(backend_factory, n_worlds: int = 3, eps_per_world: int = 10
     for w_i in range(n_worlds):
         world = World.generate(f"gate_{w_i}", seed=5000 + seed * 13 + w_i,
                                depth=depth, **world_kw)
-        goals = list(world.dag.recipes)
+        goals = world.goal_pool()              # v1.1: gate on the pool it will play
         rng = np.random.default_rng(seed + w_i)
         for e in range(eps_per_world):
             goal = goals[int(rng.integers(len(goals)))]

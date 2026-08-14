@@ -99,7 +99,7 @@ def run_rollouts(model: str, n_episodes: int, par: int, out_dir: pathlib.Path,
         while len(batch) < par and ep < n_episodes:
             uid = f"ep{ep:06d}"
             world = worlds[ep % n_worlds]
-            goals = list(world.dag.recipes)
+            goals = world.goal_pool()          # v1.1: off-pool structure stays unused
             goal = goals[(ep // n_worlds) % len(goals)]
             if uid not in done_eps:
                 env = FeltCraft(world, max_steps=max_steps)
