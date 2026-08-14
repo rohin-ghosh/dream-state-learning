@@ -1781,3 +1781,24 @@ design decision for Rohin (comparability cost: terse-error runs are a
 labeled variant). Meanwhile: 14B MECHANISM replication needs no play —
 launched re-embedding of s1 events with 14B (its own perception of the same
 facts) → head training → S3. If AUC comparable, §5.6 banked cleanly.
+
+## 2026-08-14 — REVERSAL #6 (deep audit): credit ≡ type in this generator
+Audit finding (verified against our own numbers): world_fact_credit branches
+on fa["kind"], and kind ≡ structural by engine construction → the training
+target IS the probe label through a synonym (AP(credit→structural)=0.975;
+recipe mean credit 1.000 incl. self-credit at emission; non-structural
+credit ≡ 0 BY CONSTRUCTION — decor/count cannot be consumed by any action).
+The firewall claim was semantically vacuous; felt ≈ label_ref because
+target ≈ label; the missing baseline (fact-type regex) was sitting in the
+table mislabeled as the ceiling. USED/UNUSED check (AUC 0.943) operated on
+3% of data — overclaimed in this journal on 08-12 (corrected here).
+ROOT CAUSE: world-design — "structural" and "causally usable" are
+coextensive in this generator; the thesis contrast does not exist in-world.
+SURVIVES: apparatus, gate ladder, diagnostic chain, S4 ordering under the
+honest reinterpretation (structural-writing >> surprise-writing,
+behaviorally). FIX (engine v1.1, per audit): load-bearing details
+(quantity-gated recipes; hint-bearing decor), unused structure (goal
+subsets), strict-inequality credit, fact_type_regex + frequency + S4
+random_write baselines, AP(credit→structural) as permanent leakage canary.
+Rerun on regenerated worlds inside remaining lease. Better tonight than in
+review — reversal #6 joins the ledger.
