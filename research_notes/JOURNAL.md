@@ -1819,3 +1819,22 @@ Next-lease design: v1.1 worlds @ depth-5/branching-4, tighter k, longer
 streams. S4-v1.1 (behavioral, with regex arm) pending today — behavior did
 not saturate in v1.0. Honest state: headline unproven, instrument validated,
 requirement for proving it now MEASURED rather than assumed.
+
+## 2026-08-14 (Fri, lease close) — S4-v1.1: partial knowledge < no knowledge
+Final table (k=12, 100 eps/arm, v1.1 worlds): manual 0.730 | label_ref 0.280
+| no_memory 0.260 | random 0.210 | regex 0.200 | felt 0.170 | surprise 0.050.
+NO write policy converts retention into wins on v1.1: the gist set grew
+(failed-craft recipes + hints → 20+) while k stayed 12 — every arm injects
+confidently INCOMPLETE knowledge, suppressing exploration below the blind
+agent (the memory-makes-you-lazy effect at full strength, all arms). felt <
+random stated plainly. v1.0's behavioral spread did not reproduce under the
+v1.1 regime. CONVERGENT DIAGNOSIS with the probe tier: write-side selection
+saturates at this capacity ratio; READ side (fixed dumb top-k, no
+explore-when-unknown) is the behavioral binding constraint — the organ v1
+deliberately froze. NEXT-LEASE DESIGN (both levers): capacity pressure
+(depth-5/branching-4, tighter budgets, longer streams) × exploration-aware
+read (known-gaps retrieval / UCB line from the vision doc). All artifacts
+backed up (190MB local: every gate/S3/S4 json + all 4 rollout logs).
+Lease yield, honest: a validated instrument, six documented reversals, a
+capability ladder, a measured map of WHERE the thesis is testable — and no
+unearned claims left standing.
