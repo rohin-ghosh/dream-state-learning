@@ -51,3 +51,16 @@ are different behaviors, measurable apart.
 Engine+dag changes + tests (tonight) → CPU validation incl. new canaries →
 regenerate S1 v1.1 (7B, ~7 h, Thu) → fact cache + credit v2 labels →
 S2-fact → S3 (full zoo) → S4-reduced with random_write → backup.
+
+## Metric implication (added pre-implementation)
+With hint-decor, type and utility DISSOCIATE inside the verbatim class — so
+the gist/verbatim dissociation score would penalize a policy for correctly
+retaining usable decor. v1.1 metrics: PRIMARY = use-weighted retention
+(AP of retention vs held-out dependency credit on eval streams) + S4 win
+rate; gist/verbatim dissociation becomes the descriptive memory-profile
+(the psychology port), no longer the policy scoreboard. Same credit
+definition train vs eval, different data — standard held-out evaluation;
+the firewall concern (benchmark labels training the head) remains satisfied:
+nothing trains on structural/gist labels.
+Also banked: 14B replication on v1.0 target (attn AUC 0.978, felt−surprise
++0.111 t=7.9) — meaning deferred to v1.1 relabel.
