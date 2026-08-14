@@ -31,6 +31,8 @@ def main():
     a = ap.parse_args()
 
     print(f"[S0] loading {a.model} ...")
+    import torch
+    torch.manual_seed(0)                         # reproducible sampling (T>0)
     backend = HFBackend(a.model)                 # one instance; stateless per episode
     t0 = time.time()
     r = gate_calibration(lambda w, mode, e: backend,

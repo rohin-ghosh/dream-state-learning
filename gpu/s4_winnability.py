@@ -112,7 +112,7 @@ def main():
     from vllm import LLM, SamplingParams
     from transformers import AutoTokenizer
     llm = LLM(model=a.model, dtype="bfloat16", gpu_memory_utilization=0.85)
-    sp = SamplingParams(max_tokens=320, temperature=0.0)
+    sp = SamplingParams(max_tokens=320, temperature=0.5, top_p=0.9, seed=0)
     _tok = AutoTokenizer.from_pretrained(a.model)
 
     def chatify(p):

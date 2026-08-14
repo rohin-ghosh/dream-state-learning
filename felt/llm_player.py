@@ -206,7 +206,12 @@ class HFBackend:
     get_event_states caches per-event hidden states for head training."""
 
     def __init__(self, model_name: str, device: str = "cuda",
-                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 320):
+                 layers: tuple = (-1, -4, -8), max_new_tokens: int = 320,
+                 temperature: float = 0.5):
+        # T>0 (v1.1): greedy + symmetric two-site problems = deterministic
+        # ping-pong loops with no escape; sampling breaks the loop class.
+        # Seeded upstream for reproducibility; condition-neutral.
+        self.temperature = temperature
         import torch  # noqa — GPU tier only
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.torch = torch
@@ -230,9 +235,15 @@ class HFBackend:
             pass
         ids = self.tok(prompt, return_tensors="pt").to(self.model.device)
         with t.inference_mode():
-            out = self.model.generate(**ids, max_new_tokens=self.max_new_tokens,
-                                      do_sample=False,
-                                      pad_token_id=self.tok.eos_token_id)
+            if self.temperature > 0:
+                out = self.model.generate(
+                    **ids, max_new_tokens=self.max_new_tokens, do_sample=True,
+                    temperature=self.temperature, top_p=0.9,
+                    pad_token_id=self.tok.eos_token_id)
+            else:
+                out = self.model.generate(
+                    **ids, max_new_tokens=self.max_new_tokens, do_sample=False,
+                    pad_token_id=self.tok.eos_token_id)
         return self.tok.decode(out[0, ids["input_ids"].shape[1]:],
                                skip_special_tokens=True)
 
