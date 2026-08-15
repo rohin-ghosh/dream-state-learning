@@ -1855,3 +1855,14 @@ gated recipes, much more unused structure); the leakage canary is the
 acceptance test. Session-1 empirical close: instrument validated at every
 tier; thesis untested-not-false, with the test's preconditions now
 quantified. S4-poverty (behavioral coda) pending; then final sweep.
+
+## 2026-08-15 — SESSION 1 CLOSES: three requirements, measured
+S4-poverty (k=6): ALL memories poison — manual 0.760, no_memory 0.230,
+label_ref 0.080, random 0.070, regex 0.050, felt 0.040, surprise 0.030.
+Behavioral law mapped across all S4s: win-rate = f(completeness × naive
+trust), blind to write-policy quality at ANY budget under the fixed dumb
+read. S3 dose-response: hidden 32→64→128 = discriminating→mid→saturated,
+monotone. SESSION-2 REQUIREMENTS (all measured): (1) environment leakage
+≤~0.7; (2) probe tier at hidden≈32; (3) exploration-aware read policy is a
+PRECONDITION for behavioral adjudication (UCB/known-gaps read promoted from
+sequel to prerequisite). All artifacts local (final_0814). Machines done.
