@@ -343,3 +343,18 @@ STANDING CPU EXPERIMENT (no lease needed): dream-replay-selection ablation
 on backed-up v1.1 streams — consolidation cycles re-pressing a fraction of
 memory, selector ∈ {felt, surprise, uniform, recency}; retention of load-
 bearing facts after N cycles. The replay-curator claim, measured locally.
+
+## Closing lines, session 1 (2026-08-14, night)
+"The difference between a cache and a memory is a policy." Transformers have
+a perfect cache (KV: every entry kept, none chosen, none learned); the
+policy is the missing organ; training it is the project. — abstract-grade.
+Biology adopted by FUNCTION not wiring: two coupled stores at different
+timescales; distributed storage, reconstruction-not-lookup; interference as
+the enemy; dream = prioritized migration + global renormalization.
+Recursive motivation (Rohin's closing joke, taken seriously): a true
+long-horizon continual learner could DO this research — hold the literature,
+run the relational synthesis. The project's product is its own missing
+prerequisite; research is the longest-horizon task there is.
+Working mode ratified: Rohin supplies surplus GPU + propositions; Claude
+designs falsifications, runs batches, reports survivors. Standing work:
+prose, session-2 design doc, replay ablation, neuro+ML reading list.
