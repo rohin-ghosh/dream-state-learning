@@ -372,3 +372,24 @@ IS unrecoverable accumulated capital, so preservation stakes grow with life
 lived. Externalist architecture doubles as the safety-legible design:
 desire in inspectable external organs (reward channel outside write access,
 v6) keeps emergent preservation behavior visible rather than latent.
+
+## Dopamine unification (Rohin, 2026-08-15) — the write rule generalized
+Three-factor learning rules: plasticity = pre-activity × post-activity ×
+global neuromodulatory scalar (eligibility traces + dopamine burst). OUR
+WRITE RULE ALREADY IS THIS IN MINIATURE: fact key/value activity (local
+factors) × w = surprise·(1+β·salience) (broadcast scalar) → local press.
+Felt head = VTA; w = dopamine; fast-weight MLP = eligible tissue. v3+ =
+generalize from the memory module to arbitrary local plasticity (lit:
+Miconi neuromodulated plasticity; e-prop [Maass] = eligibility+learning-
+signals replacing BPTT; learned neuromodulation in meta-learning).
+Brain-map keepers: basal ganglia/habits = AMORTIZATION as biology (habit =
+cached policy); PFC goal-maintenance = feeling-heads' job; hypothalamic
+interoception = compute-cost as policy input (v4+ stream).
+CADENCE: event-driven, never per-token — episode boundaries, surprise
+triggers, sleep. ⇒ continual learning with ~zero marginal inference cost
+(plasticity off the serving path; Dreaming precedent). Selling point.
+CANON (stable across 3 sessions): pretrain intelligence (evolution) →
+long-sequence agentic training (learning-to-learn, feeling heads, unique
+loss) → deploy warm with continual plasticity. Reading list += three-factor
+rules, e-prop, neuromodulated meta-learning, basal ganglia habit lit, CLS,
+Spaun.
