@@ -1838,3 +1838,20 @@ backed up (190MB local: every gate/S3/S4 json + all 4 rollout logs).
 Lease yield, honest: a validated instrument, six documented reversals, a
 capability ladder, a measured map of WHERE the thesis is testable — and no
 unearned claims left standing.
+
+## 2026-08-15 — memory-poverty verdict: instrument restored, thesis needs a
+## better world (the quantified session-2 spec)
+d5b4 route CLOSED: empty operating window for 7B (cap 120 starves ceiling
+0.70; cap 200 breaks wall 0.40 via error-mining; 14B worse) — terse-errors
+knob required before world-complexity scarcity is usable.
+Memory-poverty route (hidden 32, existing v1.1 data): dynamic range RESTORED
+(AP-use spread 0.70–0.82). Verdict: felt 0.802 beats uniform/random/
+surprise/keyword; LOSES to fact_type_regex 0.820 = label_ref, frequency
+0.816. Mechanism: v1.1 leakage still 0.91 → optimal play ≈ type detection →
+learned head = noisy regex < clean regex; type-independent signal (9%) too
+thin to exploit. SESSION-2 SPEC, MEASURED: engineer environments until
+AP(credit→structural) ≤ ~0.7 BEFORE training (more hint channels, quantity-
+gated recipes, much more unused structure); the leakage canary is the
+acceptance test. Session-1 empirical close: instrument validated at every
+tier; thesis untested-not-false, with the test's preconditions now
+quantified. S4-poverty (behavioral coda) pending; then final sweep.
