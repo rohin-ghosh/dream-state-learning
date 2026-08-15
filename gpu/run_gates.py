@@ -27,6 +27,7 @@ def main():
     ap.add_argument("--eps", type=int, default=10)
     ap.add_argument("--max-steps", type=int, default=60)
     ap.add_argument("--depth", type=int, default=4)
+    ap.add_argument("--branching", type=int, default=3)
     ap.add_argument("--out", default="gpu_artifacts/s0_gates.json")
     a = ap.parse_args()
 
@@ -37,7 +38,7 @@ def main():
     t0 = time.time()
     r = gate_calibration(lambda w, mode, e: backend,
                          n_worlds=a.worlds, eps_per_world=a.eps,
-                         max_steps=a.max_steps, depth=a.depth)
+                         max_steps=a.max_steps, depth=a.depth, branching=a.branching)
     r["model"] = a.model
     r["minutes"] = round((time.time() - t0) / 60, 1)
 
