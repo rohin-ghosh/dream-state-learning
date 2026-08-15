@@ -36,7 +36,7 @@ WRITE_POLICIES = ("surprise_only", "random_write", "fact_type_regex",
                   "felt_fact", "oracle_weight")
 
 
-def build_topk_texts(recs, policy, fact_npz, k, seed=0):
+def build_topk_texts(recs, policy, fact_npz, k, seed=0, mem_hidden=128):
     """Build the policy's memory from the world stream, then rank all unique
     experienced fact texts by the memory's probe score; return top-k texts."""
     K, V, S, structural, acts, texts = [], [], [], [], [], []
@@ -55,7 +55,7 @@ def build_topk_texts(recs, policy, fact_npz, k, seed=0):
     K, V = np.stack(K), np.stack(V)
     S, structural = np.array(S), np.array(structural, bool)
     acts = np.array(acts)
-    mem = FastWeightMemory(d_key=32, d_val=32, hidden=128, seed=seed)
+    mem = FastWeightMemory(d_key=32, d_val=32, hidden=mem_hidden, seed=seed)
     chunk = max(1, len(K) // 8)
     pol = "felt_b12" if policy == "felt_fact" else policy
     for i in range(0, len(K), chunk):
@@ -81,6 +81,7 @@ def main():
     ap.add_argument("--model", default="Qwen/Qwen2.5-7B-Instruct")
     ap.add_argument("--eps", type=int, default=25, help="episodes per arm per world")
     ap.add_argument("--ks", default="12,18")
+    ap.add_argument("--mem-hidden", type=int, default=128)
     ap.add_argument("--par", type=int, default=32)
     ap.add_argument("--max-steps", type=int, default=120)
     ap.add_argument("--out", default="gpu_artifacts/s4.json")
@@ -102,7 +103,7 @@ def main():
         arms.append((world, "manual", render_manual(world)))
         for pol in WRITE_POLICIES:
             for k in ks:
-                texts = build_topk_texts(recs, pol, fact_npz, k)
+                texts = build_topk_texts(recs, pol, fact_npz, k, mem_hidden=a.mem_hidden)
                 blk = "MEMORY (from past episodes):\n" + \
                     "\n".join(f"- {t}" for t in texts)
                 arms.append((world, f"{pol}_k{k}", blk))

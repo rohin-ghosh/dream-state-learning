@@ -101,14 +101,14 @@ def build_world_stream(recs, states, head, layer, h_scale=1.0,
     return st
 
 
-def eval_policy(world, st, policy, seed=0):
+def eval_policy(world, st, policy, seed=0, mem_hidden=128):
     K, V, S = st["K"], st["V"], st["S"]
     structural, acts = st["structural"], st["acts"]
     texts = st["texts"]
     from collections import Counter as _C
     cnt = _C(texts)
     freqs = np.array([cnt[t] for t in texts], float)
-    mem = FastWeightMemory(d_key=32, d_val=32, hidden=128, seed=seed)
+    mem = FastWeightMemory(d_key=32, d_val=32, hidden=mem_hidden, seed=seed)
     chunk = max(1, len(K) // 8)
     for i in range(0, len(K), chunk):
         sl = slice(i, i + chunk)
@@ -160,6 +160,8 @@ def main():
                     help="precomputed per-episode salience (skips head+states)")
     ap.add_argument("--fact-salience-npz", default="",
                     help="per-FACT salience keyed '{uid}_f{j}' (note 26)")
+    ap.add_argument("--mem-hidden", type=int, default=128,
+                help="fast-weight capacity (interference pressure)")
     ap.add_argument("--only-worlds", default="",
                     help="comma-sep: evaluate ONLY these worlds (cross-world)")
     a = ap.parse_args()
@@ -194,7 +196,7 @@ def main():
         if st is None:
             continue
         for pol in POLICIES:
-            m = eval_policy(world, st, pol, seed=w_i)
+            m = eval_policy(world, st, pol, seed=w_i, mem_hidden=a.mem_hidden)
             if m:
                 results[pol].append(m)
 
