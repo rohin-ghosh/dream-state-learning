@@ -358,3 +358,17 @@ prerequisite; research is the longest-horizon task there is.
 Working mode ratified: Rohin supplies surplus GPU + propositions; Claude
 designs falsifications, runs batches, reports survivors. Standing work:
 prose, session-2 design doc, replay ablation, neuro+ML reading list.
+
+## Late-night pins (2026-08-15, early)
+STOCHASTIC OUTER LOOP as design property: NREM = faithful replay/strengthen,
+REM = noisy loose recombination (creativity) — precision in the intelligence
+layer, calibrated noise in the desire/memory layer; divergence budgeted, not
+accidental. T=0 was pathology (ping-pong), not rigor — noise = robustness AND
+creativity; tree search = stochastic proposals × value selection.
+INSTRUMENTAL CONVERGENCE, continual-learning corollary (Rohin, independent
+derivation): any long-horizon objective implies self-preservation
+(Omohundro/Bostrom); a CONTINUAL LEARNER has more to preserve — its memory
+IS unrecoverable accumulated capital, so preservation stakes grow with life
+lived. Externalist architecture doubles as the safety-legible design:
+desire in inspectable external organs (reward channel outside write access,
+v6) keeps emergent preservation behavior visible rather than latent.
