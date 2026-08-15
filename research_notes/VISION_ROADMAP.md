@@ -302,3 +302,22 @@ store under policy drift — exactly what benchmark #3 tests.
 Session cadence: leases expire tonight; next lease when the session-2 design
 doc is ready. Claude's standing work: paper prose (honest results), session-2
 design doc, research-statement draft.
+
+## The bitter-lesson bull case, faced (Rohin, 2026-08-14 night)
+Challenge: "couldn't a long-context transformer trained on long-horizon loss
++ live dreaming just LEARN salience?" Adjudication: YES within any trainable
+horizon (emergent salience beats bolted heads there — concede it); NO beyond
+it: KV storage grows linearly with life (sparse attention cuts compute, not
+storage), so at lifetime scale something MUST be discarded → a write policy
+EXISTS whether designed or not; and backprop horizons are finite, so
+gradient-emergent salience stops forming where the write decision still
+must be made. SYNTHESIS: write-policy-over-memory and eviction-policy-over-
+enormous-window CONVERGE into the same organ as contexts stretch — the
+architecture question dissolves; the OBJECTIVE question remains (endogenous
+future-attention [KVP] vs exogenous task-need [felt]) and survives either
+architecture. The scalar we train is the part nobody builds, in both futures.
+Also pinned: memory-as-a-model (trained fast-weight model with its own
+attention I/O; MemDec-shape + o-payload) on the v2 substrate shortlist;
+pretrain-feeling-heads-then-online-learn as the deployment doctrine; sleep
+scheduling (wake: live reads/writes; dream: renormalization + head training)
+= parametric Dreaming, direction validated by OpenAI, mechanism open.
