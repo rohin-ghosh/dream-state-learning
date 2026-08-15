@@ -321,3 +321,25 @@ attention I/O; MemDec-shape + o-payload) on the v2 substrate shortlist;
 pretrain-feeling-heads-then-online-learn as the deployment doctrine; sleep
 scheduling (wake: live reads/writes; dream: renormalization + head training)
 = parametric Dreaming, direction validated by OpenAI, mechanism open.
+
+## Dream-replay rejoinder + continuous salience space (Rohin, 2026-08-14, late)
+Concession: inference-time training/dreaming DOES chain small trainable
+horizons into lived-life training — emergent salience extends beyond
+pretraining. REJOINDER: each dream cycle must SELECT what it rehearses
+(training on everything since last sleep = the linear blowup, relocated) —
+replay selection IS the write policy in the dreaming paradigm; recency/
+surprise rehearsal = the losing heuristics again; rehearse-what-task-
+depends-on = felt attention as the DREAM'S CURATOR. Third future where the
+objective-trained scalar is the missing organ (external memory / learned
+eviction / dream replay).
+V3 attention-redesign sketch (keep, not retire): ONE memory space, position
+encodes salience-at-last-consolidation; context = dense right edge; dreaming
+= DEFRAG (re-sort by current salience, compact sparse left, promote/demote).
+Near/far heads with near-bias ≈ local+global sparse attention (components
+exist; the semantic salience-sorted layout + renormalization cycle are new).
+Training paradigm: much longer sequences, sequence SHIFTS, related→novel
+curricula — the slow pathway's diet.
+STANDING CPU EXPERIMENT (no lease needed): dream-replay-selection ablation
+on backed-up v1.1 streams — consolidation cycles re-pressing a fraction of
+memory, selector ∈ {felt, surprise, uniform, recency}; retention of load-
+bearing facts after N cycles. The replay-curator claim, measured locally.
