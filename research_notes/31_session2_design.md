@@ -113,3 +113,22 @@ SESSION-2 EXPERIMENT RESHAPED (for Rohin's red pen, not decided): not
 "our store vs RAG" — episodic is commodity RAG for all arms; the comparison
 is "dream-trained gist + felt curation vs tool-RAG-only agent", behavioral
 lanes (transfer, second-encounter speedup, mid-task guidance).
+
+## The person-hierarchy + memory-as-generation (Rohin, 2026-08-16)
+THIRD person = pretrained weights (world as described) / SECOND person =
+gist-LoRA (world as it responded to YOU — lived subspace of the base
+model's reality) / FIRST person = context (now). Cascade: context 1M →
+gist-LoRA ~100M-token life (sleep-written, felt-curated) → base weights
+(deep hibernation = fold LoRA into base; third clock).
+MECHANISM for xyz→xzy (analogical sequence completion): gist = small LM
+fine-tuned on lived episodes; READS ARE GENERATIVE COMPLETIONS ("did abc,
+failed—" → continues with nearest lived repair pattern). Sequence matching
++ vicinity + query-dependent geometries fall out of LM behavior on an
+autobiographical corpus. Training: LM loss on felt-curated replay +
+REPAIR-PAIR emphasis (dependency-credit machinery auto-mines failed-seq →
+later-fix pairs from logs — v1 infrastructure reused as data labeler).
+FLAGS: generative memory confabulates → episodic tool = verification layer
+(two-tier split is the hallucination control, not redundancy); LoRA
+capacity-vs-life-length = empirical (core run-2 measurement); the xyz test
+is directly benchmarkable (novel structurally-similar failures → repair-
+finding speed vs tool-RAG-only) — candidate HEADLINE experiment.
