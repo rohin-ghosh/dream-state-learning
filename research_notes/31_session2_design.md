@@ -132,3 +132,16 @@ FLAGS: generative memory confabulates → episodic tool = verification layer
 capacity-vs-life-length = empirical (core run-2 measurement); the xyz test
 is directly benchmarkable (novel structurally-similar failures → repair-
 finding speed vs tool-RAG-only) — candidate HEADLINE experiment.
+
+## Late pins (2026-08-16)
+TOOL USE across the person-hierarchy: competence = base (3rd person);
+habits/which-tool-when-for-me = gist (2nd person); API details = episodic
+tool. Memory remembers your RELATIONSHIP with tools, never the tools.
+READS RE-PRESS (from Rohin's introspection = testing effect /
+reconsolidation): every read applies a reduced-strength write → vividness
+tracks recency-of-USE, not recency-of-writing. One line of design.
+GENERATIVE REPLAY (re-derived; known CL technique, pseudo-rehearsal): deep
+hibernation trains the base on the MEMORY'S OWN GENERATIONS (gist-
+compressed, felt-shaped retellings), not raw logs. Forgetting becomes
+graceful at every tier: important old memory is either regenerable from
+gist or already folded into base by its own retellings.
