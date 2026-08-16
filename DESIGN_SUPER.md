@@ -93,8 +93,10 @@ how to run a mind around a thinker.**
 **The cascade:** context → (dream, felt-curated) → gist → (hibernation,
 generative replay) → base. Forgetting is graceful at every tier: anything
 important is either re-generable from gist or already folded into base by its
-own retellings. **Reads re-press** (retrieval strengthens — the testing
-effect): vividness tracks recency-of-use, not recency-of-writing.
+own retellings. **Reads re-press, gated by verification** (retrieval strengthens ONLY when
+the read is subsequently supported by tools, outcomes, or the episodic log —
+otherwise vivid confabulations would compound by being recalled): vividness
+tracks recency-of-VERIFIED-use.
 
 ---
 
@@ -191,8 +193,9 @@ are off-the-shelf pretrained models. We never train them from scratch.
 - **Dream (nightly):** felt-curated replay updates the gist LoRA;
   renormalization (global downscale — SHY); repair-pair emphasis; optional
   synthetic rehearsals for weak areas.
-- **Hibernation (rare):** generative replay distills stable old gist into base
-  weights; LoRA budget freed.
+- **Hibernation (rare):** generative replay distills stable old gist into the
+  GIST MODEL'S base — never the frozen reasoner (desire/deduction law holds
+  at every tier); LoRA budget freed.
 - **What is NOT online-trained initially:** the reasoner (competence-CL is a
   separate loop, later), the policy (frozen critic first), the composer
   (frozen after Phase B; light online updates are an A4+ experiment).
@@ -306,3 +309,49 @@ preserve").
 specified with numbers; architecture converged from four independent
 directions; next artifact = session-2 design doc for co-editing, then worlds,
 then the organ's fair fight.*
+
+---
+
+## 11. The fourth escalation: population (added 2026-08-16)
+
+Dreaming is the inheritance operator at three scales: individual (nightly
+gist), cultural (reconciliation across parallel lives), evolutionary
+(hibernation into shared bases). Enabled ONLY by separable transmissible
+state: frozen reasoner (intellectual inheritance) / shared composer+felt
+(cognitive-cultural inheritance) / personal LoRA + episodic log (individual
+life). Inheritance moves VERIFIED EXPERIENCE (replayed, distilled, tested),
+never averaged weights.
+
+**P-escalation:** P0 one agent, one life → P1 parallel lives, shared
+consolidation (the serial-lifetime escape) → P2 reconciliation stages with
+the TRANSFER-MATRIX decision rule (merge iff cross-agent transfer broadly
+positive; preserve lineages if specialist/interfering; share only routing
+meta-knowledge as the third option — reconciliation itself outcome-trained)
+→ P3 age-structured fleets (maturation funnel: explorers → lineages →
+experts → frozen elders; functional age = improvement-per-dream-FLOP, not
+elapsed time; novelty archives + canary populations against monoculture).
+
+New scaling axes unavailable to static models: performance vs agent age;
+generation-over-generation start quality and learning rate; reconciliation
+frequency; branch-vs-merge value; marginal agent vs extended life; dream
+compute vs retained experience.
+
+**Added risks (measured curves, not demonstrations):** surface imitation vs
+structural transfer (xyz held-out sets must break vocabulary/domain/action
+identity, preserve only structure); reconstruction vs confabulation (score
+memory by MARGINAL DOWNSTREAM SUCCESS PER READ, never text similarity);
+replay collapse (verification-gated re-pressing, above); long-horizon
+credit; composer-gist nonstationarity (the composer's environment changes
+nightly); gist capacity vs lifetime; open-ended value (satisfying its own
+critic vs the world); hibernation stability (rare-but-important experience).
+
+**Decisive evaluation:** at equal base model and inference compute, learned
+harness + lived gist progressively outperforms fixed harness + long context
++ episodic RAG, while retaining old competence. Plots: performance vs
+accumulated lifetime; structural transfer; retention after stage shifts;
+benefit per memory query; gist capacity vs rank; improvement vs sleep
+compute; return-to-origin; tool-verified success only.
+
+Scope anchor: P-escalation is position-paper material and v5+ engineering.
+It changes nothing about session 2. The organ first; the population is
+where the organ goes.
