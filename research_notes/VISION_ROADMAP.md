@@ -449,3 +449,23 @@ shipped; and no VLA has episodic LTM (robotics shares our gap).
 MODULES-AS-MODALITIES (Rohin's reframe): LTM/feelings/context/reasoning as
 modality streams into one workspace → VanRullen latent-translation machinery
 applies to INTERNAL systems, not just senses.
+
+## Design maxim + the serial-lifetime tension + the startup terminus (2026-08-15)
+TRANSFORMER LESSON as a component test: parallelizable in training / simple
+enough for one sentence / composable without special cases. Applied to us:
+continual learning is INHERENTLY SERIAL (a life happens in order) — the
+program's deepest scaling risk. Escape routes: PARALLEL LIVES (many agents,
+shared consolidation — population-level learning) and BATCHED SLEEP (serial
+experience, parallel consolidation; the cache-refresh idea). Rohin studying
+inference/GPU engineering = reverse-bitter-lesson prerequisite (know what's
+cheap at scale before architecting).
+STARTUP TERMINUS — "agentic field adventurer": continual-learning research
+agent deployed at a domain frontier (biology). Landscape (FutureHouse,
+Sakana AI Scientist, Google Co-Scientist, Devin) = all STATELESS between
+sessions; the moat is exactly our organ: "an agent whose second month on
+your problem is better than its first." Pressure test = verifier speed:
+start where verification is fast (simulations, preregistered predictions
+against incoming literature = post-cutoff-conjecture trick applied to bio);
+human briefings = slow ground-truth channel. Sequencing: paper proves the
+organ → sessions 2-3 scale it → startup deploys it. Commercial terminus as
+design pressure: "would a lab pay for this memory?"
