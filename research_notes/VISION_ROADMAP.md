@@ -427,3 +427,10 @@ TWO CONTINUAL-LEARNING LOOPS: knowledge-CL (memory; current scope, testable
 with frozen engine) vs competence-CL (weight plasticity in the engine;
 three-factor/e-prop; robotics requirement). One doorman for both: salience
 decides which experiences deserve plasticity, in either loop.
+
+## Admission = encoding (2026-08-15, closing pin)
+Memory writes come FROM the workspace: what ignites is what gets encoded
+(biology: episodic encoding is gated by conscious access/attention). Felt
+attention is one doorman serving both directions — into awareness, and from
+awareness into permanence. No separate write pathway; workspace contents,
+post-ignition, salience-weighted, are the write stream.
