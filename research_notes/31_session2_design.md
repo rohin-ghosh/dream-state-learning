@@ -79,3 +79,20 @@ substrate into a memory. Scaling reality: ANN graphs retrieve ~log-time at
 billions (production-proven); Hopfield is linear-per-step (sparse variants
 = fixes). Hopfield's edge = reconstruction/blending, not speed → graph v2,
 Hopfield dynamics v3.
+
+## Two-tier resolution (Rohin, 2026-08-16) — the oscillation was CLS
+EPISODIC tier (fast): explicit graph — one-shot, exact, auditable ("post-it
+note"). GIST tier (slow): PARAMETRIC — LoRA/side-model trained during dream
+by salience-weighted replay ("crystallized learned intelligence", geometric
+search, good-paths representation) = the ORIGINAL run-2 consolidation plan,
+now justified. Migration episodic→gist at scale = Rohin's continuous-
+pretraining idea = hippocampus→cortex. Gist lives BESIDE the reasoner,
+never in the composer (memory-in-composer-weights = follow-memories-instead-
+of-fill confound — Rohin's catch); composer weights hold habits only.
+Amygdala = felt writes (significance tagging at encoding — biology receipt);
+press-depth ok, stored dials still jank. Hopfield reassigned to attention/
+retrieval dynamics, not LTM. Composer forward pass = iterative build→query
+LTM→rebuild loop; stop = ignition (satisfied) or saturation (prompt full of
+memory). EVAL: episodic tier → retrieval profile; gist tier → behavioral
+only (transfer, analogy, second-encounter speedup) — two lanes in the
+benchmark doc.
