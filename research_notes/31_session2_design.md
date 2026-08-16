@@ -96,3 +96,20 @@ LTM→rebuild loop; stop = ignition (satisfied) or saturation (prompt full of
 memory). EVAL: episodic tier → retrieval profile; gist tier → behavioral
 only (transfer, analogy, second-encounter speedup) — two lanes in the
 benchmark doc.
+
+## Episodic-as-tool (Rohin, 2026-08-16) — architecture leaned out
+Episodic tier = append-only log + search TOOL, outside the cognitive
+architecture (storage cheap; models good at tool search+verification).
+Consequence: NO write policy on episodic (write everything); felt's
+selectivity migrates to where scarcity lives: (1) DREAM REPLAY CURATION —
+which experiences train the gist LoRA; (2) PROMPT ADMISSION — reads.
+Gist ≠ episodic: deep sequence-trained gist can regenerate TYPICAL episodes
+(prototypes/blends) but never that-specific-Tuesday (reconstruction loses
+one-time details = human false memories). So: gist in-loop as intuition;
+episodic tool consulted for specifics/verification — Rohin's own
+introspection ("geometric search great, fact recall poor, facts are easy to
+store anyway"), formalized.
+SESSION-2 EXPERIMENT RESHAPED (for Rohin's red pen, not decided): not
+"our store vs RAG" — episodic is commodity RAG for all arms; the comparison
+is "dream-trained gist + felt curation vs tool-RAG-only agent", behavioral
+lanes (transfer, second-encounter speedup, mid-task guidance).
