@@ -495,3 +495,10 @@ self-prompting must exist first); (3) breadth (cross-domain felt training →
 domain-general "will this matter" — microscopic evidence already held:
 cross-config AUC 0.99). The engine thinks; the felt system learns how to
 run a mind around a thinker.
+
+## LTM v2 in one line (2026-08-15): the memory read is ONE ATTENTION HEAD
+over everything you've ever kept — situation = query, semantic fingerprints
+= keys, payloads = values, felt dials = the bias. Convergence at READ time
+(neighboring fingerprints pulled together, blend in the prompt) while
+storage stays separate + auditable. v3 option: melt into shared weights
+(convergence at STORAGE, prototypes) once instruments can probe blends.
