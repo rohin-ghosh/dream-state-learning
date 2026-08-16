@@ -469,3 +469,15 @@ against incoming literature = post-cutoff-conjecture trick applied to bio);
 human briefings = slow ground-truth channel. Sequencing: paper proves the
 organ → sessions 2-3 scale it → startup deploys it. Commercial terminus as
 design pressure: "would a lab pay for this memory?"
+
+## Horizon curriculum (Rohin, 2026-08-15) — the training paradigm pin
+Slow-pathway training = scheduled horizon growth: short sequences first,
+lengthen progressively; long-horizon competence composes from short-horizon
+building blocks (greedy composition). Precedent: curriculum learning
+(Bengio '09), growing-horizon RL; biology: developmental horizon growth,
+PFC matures last. Economics: partially dissolves the serial-lifetime
+tension — most steps short-horizon (cheap, parallel), full-lifetime passes
+= rare annealing events. TESTABLE in session-2 staged worlds: curriculum-
+transfer curve (short-horizon-trained head vs long-horizon credit).
+Meta-discipline (standing): no "sexy total redesigns" — architecture
+emerges by convergence across pretenses + grounded iterative falsification.
