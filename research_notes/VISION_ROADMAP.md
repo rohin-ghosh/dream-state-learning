@@ -393,3 +393,20 @@ long-sequence agentic training (learning-to-learn, feeling heads, unique
 loss) → deploy warm with continual plasticity. Reading list += three-factor
 rules, e-prop, neuromodulated meta-learning, basal ganglia habit lit, CLS,
 Spaun.
+
+## The workspace resolution (Rohin, 2026-08-15, night) — architecture at rest
+LTM + goals + feelings live in PROMPT SPACE = the Global Workspace realized
+in tokens; the frozen transformer is a pure analytical engine INVOKED BY the
+loop (desire/deduction separation as architectural law — "why would an agent
+be prompted? it isn't; the loop prompts itself"). v1's top-k read path was
+the primitive of exactly this; session-2's gap-aware read = first TRAINED
+workspace policy. Delta vs prior art (MemGPT, generative agents, Voyager):
+they have workspaces with heuristic admission; ours has LEARNED admission —
+felt heads as the doorman, trained on outcomes. SUPERPOWER: model-agnostic
+identity — swap the engine, keep the life (memory + heads survive model
+upgrades; continual learning not welded to a model generation). COSTS kept
+adversarial: token bandwidth (hybrid path: text + soft-token/o-payload when
+text measurably binds), serialization, and the J-space counterpoint (the
+workspace exists internally; externalizing trades richness for
+inspectability/trainability/safety-legibility — the trade we keep choosing,
+eyes open).
