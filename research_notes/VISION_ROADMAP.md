@@ -410,3 +410,20 @@ text measurably binds), serialization, and the J-space counterpoint (the
 workspace exists internally; externalizing trades richness for
 inspectability/trainability/safety-legibility — the trade we keep choosing,
 eyes open).
+
+## Workspace v2 pins (Rohin, 2026-08-15, late)
+Signal-based workspace = Goyal-Bengio latent shared workspace (text was v0's
+inspectable rendering; o-as-payload = the upgrade; text stays as audit
+projection). "Exit/attention-exit token" = Dehaene IGNITION: threshold-
+crossing all-or-none broadcast terminates competition — exit is a workspace-
+enforced threshold, not a model-emitted token. "Space model converging
+flows" = LIDA's cognitive cycle (attention codelets = felt attention as a
+population; coalition → broadcast → action; multiple learning mechanisms
+per cycle) — session-3 homework: map LIDA's cycle onto the LLM-agent loop.
+HARNESS LAW (settles the anxiety): the brain's gross wiring IS a harness;
+legitimacy = learned components at every junction. Harness-as-wiring-
+between-learners: fine. Harness-as-logic-instead-of-learner: barnacle.
+TWO CONTINUAL-LEARNING LOOPS: knowledge-CL (memory; current scope, testable
+with frozen engine) vs competence-CL (weight plasticity in the engine;
+three-factor/e-prop; robotics requirement). One doorman for both: salience
+decides which experiences deserve plasticity, in either loop.
