@@ -27,3 +27,22 @@
 - Poverty regime: mem-hidden ≈ 32-tier pressure or slot-budget analog;
   calibration curves for the head alongside AUC; horizon-curriculum
   transfer curve; never-block read cadence; hysteresis in any arbitration.
+
+## v2 store REVISED (Rohin's correction, 2026-08-15): net-first
+Card-box was instrument-first design (v1's sin, milder). REVISED: the memory
+is an ATTRACTOR NET — modern-Hopfield-style pattern pool; similar patterns
+converge into shared basins; retrieval = PATTERN COMPLETION ("recreate the
+vibe"): project prompt-space state into memory space, dynamics converge,
+completed pattern returns as the felt-attentioned vector to the prompt
+engine. Sequences via hetero-associative CHAINING (each completion points to
+the next pattern; long memories = chained short attractors). Importance =
+PRESS DEPTH (felt scalar = write strength = basin depth; no stored dials);
+dream = basin-landscape maintenance (re-press what mattered, let junk
+flatten). Theory on our side: modern Hopfield ≡ transformer attention
+(Ramsauer et al.) — the net read and attention-read are the same operation;
+capacity exponential in dimension (the 100M-1B-token scale argument).
+CARD-BOX DEMOTED TO INSTRUMENTATION: an external logging shadow used only to
+build probes (cue-in, completion-quality-out). Design order corrected:
+memory for the system; instruments around the memory.
+Honest costs (work items): vector→prompt-engine translation training;
+probe machinery for BLENDED memories (prototypes).
