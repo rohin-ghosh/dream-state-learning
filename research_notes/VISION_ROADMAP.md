@@ -434,3 +434,18 @@ Memory writes come FROM the workspace: what ignites is what gets encoded
 attention is one doorman serving both directions — into awareness, and from
 awareness into permanence. No separate write pathway; workspace contents,
 post-ignition, salience-weighted, are the write stream.
+
+## Currency, three precedents (Rohin, 2026-08-15) + modules-as-modalities
+Basal ganglia action-selection (Gurney-Prescott-Redgrave, robot-deployed):
+central selector arbitrating parallel SALIENCE-signal bids via disinhibition
+— currency = bid, felt head = bidder, workspace competition = market.
+Market-based robotics (contract-net 1980, TraderBots): literal currencies
+between robots; the intra-agent market (between one agent's systems) is the
+unexplored move. Metareasoning (Russell-Wefald value-of-computation, 1991):
+compute-currency formalized — decide what to compute by expected utility;
+learned pricer = felt head again. Helix (Figure): System2 VLM ~7-9Hz →
+latent vector → System1 200Hz — the cadence hierarchy + signal bridge,
+shipped; and no VLA has episodic LTM (robotics shares our gap).
+MODULES-AS-MODALITIES (Rohin's reframe): LTM/feelings/context/reasoning as
+modality streams into one workspace → VanRullen latent-translation machinery
+applies to INTERNAL systems, not just senses.
