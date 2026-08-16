@@ -64,3 +64,18 @@ salience) meets our write-side salience there. Weights-as-memory rejected
 instrument-first — probeable by luck, not by design. Hopfield community's
 own open problems list ends at "deciding what to preserve" = our thesis,
 arrived at from the substrate direction (convergence validation #4).
+
+## Hopfield Q&A (2026-08-15, for the record)
+Post-trained memory (facts→LLM weights) ≠ fast-weight MLP (runtime SGD into
+a side-net; a poor man's Hopfield: no iterative cleanup, imperfect one-shot
+writes, no convergence guarantee) ≠ modern Hopfield (EXPLICIT pattern
+storage — one-shot append — + reconstructive iterative retrieval,
+exponential capacity; a hybrid: card-box storage, net retrieval).
+Not out-of-the-box because it lacks the four organs: task-shaped
+projections (felt read-side), write policy (press depth — their own open
+problem "deciding what to preserve"), memory management (our dream), and
+payload translation. Substrate physics without policy; felt turns a
+substrate into a memory. Scaling reality: ANN graphs retrieve ~log-time at
+billions (production-proven); Hopfield is linear-per-step (sparse variants
+= fixes). Hopfield's edge = reconstruction/blending, not speed → graph v2,
+Hopfield dynamics v3.
