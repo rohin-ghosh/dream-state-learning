@@ -46,3 +46,21 @@ build probes (cue-in, completion-quality-out). Design order corrected:
 memory for the system; instruments around the memory.
 Honest costs (work items): vector→prompt-engine translation training;
 probe machinery for BLENDED memories (prototypes).
+
+## v2 store, FINAL FORM (Rohin's derivation, 2026-08-15): the explicit memory graph
+Discrete embedded items + thread-links (sequence pointers) + felt-weighted
+writes; read = project current state into memory space, neighborhood grab,
+thread walk, project sequences back to prompt space. Untrained retrieval
+mechanics (stable/scalable, vector-DB family) + LEARNED projections
+(critical: frozen embedders cluster by SEMANTIC similarity, not TASK
+similarity — template-twins embed together while task-linked pairs sit far;
+the learned projection is read-side felt-shaping). Relation to Hopfield:
+one Hopfield step = soft-kNN (his neighborhood grab); his thread loops =
+the iteration made explicit; the ONE deep difference = verbatim return vs
+RECONSTRUCTION (denoise/blend into prototypes) → Hopfield reconstruction =
+v3 upgrade when blending measurably matters; sparse-Hopfield (read-side
+salience) meets our write-side salience there. Weights-as-memory rejected
+(interference, no audit). Passes yesterday's rule: no dials, not
+instrument-first — probeable by luck, not by design. Hopfield community's
+own open problems list ends at "deciding what to preserve" = our thesis,
+arrived at from the substrate direction (convergence validation #4).
