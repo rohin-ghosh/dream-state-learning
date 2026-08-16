@@ -145,3 +145,21 @@ hibernation trains the base on the MEMORY'S OWN GENERATIONS (gist-
 compressed, felt-shaped retellings), not raw logs. Forgetting becomes
 graceful at every tier: important old memory is either regenerable from
 gist or already folded into base by its own retellings.
+
+## Culmination pins (Rohin, 2026-08-16, late)
+SALIENCE IS EMERGENT — the resolution of the felt head's fate: the explicit
+head = the amortized, attributable, PROVABLE form (needed for the science);
+end-to-end emergence into a policy-trained composer = the destination
+(novelty/importance-seeking absorbs into broad outcome training — the
+dopamine is what policy-loss looks like from inside). Amortize-then-
+integrate applies to felt itself; the head is scaffolding for a claim.
+COMPOSER FORWARD PASS FINAL: state+I/O in context → GENERATE memory queries
+(queries are tokens → self-instrumenting/auditable) → gist returns
+geometries → loop until ignition/saturation → attention over accumulated
+window reconstructs the injection prompt. Adjacent art: iterative RAG
+(Self-Ask/FLARE) = heuristic token-space cousins; trained composer over
+generative lived-subspace = the delta.
+Event-level slow loss after full events (super-EOS) closes the
+token→context→sequence→event hierarchy. Training: millions of parallel
+short subprompts (parallel lives × horizon curriculum) → longer sequences →
+deploy baby (empty LTM, generalized meta-decisions) into the field.
