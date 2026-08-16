@@ -33,3 +33,26 @@ horizon and memory-dependence together.
 ## Open
 Exact prompt-composition parameterization (select-and-fill vs free-gen);
 where tool-use actions live in the output space; critic form at super-EOS.
+
+## Addendum (same day) — modularity + role assignments
+MODULARITY: new senses = new felt heads (+ translation training); engine
+swappable (LLM ↔ action model); prompt engine = consolidation layer ≈
+robotics arbitration — CONVERGENCE VALIDATION #3 (derived from memory-first
+principles, meets motor-control's derivation; after biology + GWT).
+INTERFACE CHOICE: language (readable reasoning, translation loss) vs vectors
+— π0.5 ships the language interface (self-emitted subtask), Helix ships the
+latent one; hybrid pinned. Two transformers in the loop: small composer +
+big frozen reasoner.
+GOAL CASCADE: policy holds/switches goals (slow, LIVE online-trained) →
+prompt engine: goal+state → sequence-level goals (medium) → frozen
+transformer: token-level execution (fast). Stop = threshold per tier
+(inner EOS / outer super-EOS / goal-switch ignition).
+DREAM SIMPLIFIED: context window IS the ignited content → dream = single
+write function window→(felt-weighted)→LTM; no raw input/output access
+(biology: sleep replays the hippocampal buffer, not the sensory stream).
+Trained as a consequence of felt training, not a separate post-train phase.
+MEMORY TAXONOMY: facts → declarative LTM; tool-use → procedural/skill LTM
+(Voyager precedent); habits → prompt-engine WEIGHTS (amortized policies).
+Tool bench in the loop from day one.
+Scale answer (already in note 30): next-prompt pretraining + horizon
+curriculum + policy loss at super-EOS.
