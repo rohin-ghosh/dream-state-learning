@@ -355,3 +355,12 @@ compute; return-to-origin; tool-verified success only.
 Scope anchor: P-escalation is position-paper material and v5+ engineering.
 It changes nothing about session 2. The organ first; the population is
 where the organ goes.
+
+**Law 8 (added 2026-08-16, amortization leakage):** any hand-built ceiling
+component must be CONSTRUCTIBLE AT DECISION TIME — no hindsight labels, no
+eval knowledge. An optimistic ceiling built on runtime-unavailable
+information licenses rungs on numbers that aren't real. (The environment
+leakage gate, one level up.) Corollary: the amortized head is never
+discarded — it is the MEASURING STICK for emergence: if the phase-B trained
+composer reproduces the head's behavior unprompted, that is direct evidence
+for the emergence hypothesis (a standalone result).

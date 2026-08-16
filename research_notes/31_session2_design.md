@@ -163,3 +163,15 @@ Event-level slow loss after full events (super-EOS) closes the
 token→context→sequence→event hierarchy. Training: millions of parallel
 short subprompts (parallel lives × horizon curriculum) → longer sequences →
 deploy baby (empty LTM, generalized meta-decisions) into the field.
+
+## Gates & thresholds (adopted from external review, 2026-08-16)
+- Session-2 hand-tuned organ experiment = a CEILING TEST (upper bound: fail
+  cheap / license the learning work). Frame it as such in the paper.
+- CONSTRUCTIBLE-AT-DECISION-TIME GATE on every amortized component (Law 8).
+- PRE-REGISTERED PASS THRESHOLD — to be filled at co-design, BEFORE any run:
+  margin ≥ [TBD] over tool-RAG baseline on [TBD behavioral lane], p<[TBD].
+- SESSION-2 SALIENCE FORM (Rohin's decision, recommendation = explicit head
+  for attribution; emergence measured in phase B via the measuring-stick
+  corollary).
+- September switch date (exploration → abstract mode): Rohin to fix this
+  week; recommendation Sep 1.
