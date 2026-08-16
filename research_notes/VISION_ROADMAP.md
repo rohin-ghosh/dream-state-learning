@@ -481,3 +481,17 @@ tension — most steps short-horizon (cheap, parallel), full-lifetime passes
 transfer curve (short-horizon-trained head vs long-horizon credit).
 Meta-discipline (standing): no "sexy total redesigns" — architecture
 emerges by convergence across pretenses + grounded iterative falsification.
+
+## The felt bet, maximum-strength form (2026-08-15)
+R1 analogy, stated precisely: outcome-RL at the TOKEN level → emergent
+thinking strategies (unprogrammed search/backtracking). The felt hypothesis:
+outcome-training at the LIFE level → emergent remembering-and-attending
+strategies (deliberate retrieval, load-bearing hoarding, anticipatory
+rehearsal) — emergent METACOGNITION, not reasoning; deduction stays frozen.
+Transfer requirements (where it could fail): (1) reward density (life-level
+feedback is sparse per FLOP → horizon curriculum + fast-verifier domains);
+(2) expressive room (emergence needs limbs: gap-aware reads, workspace
+self-prompting must exist first); (3) breadth (cross-domain felt training →
+domain-general "will this matter" — microscopic evidence already held:
+cross-config AUC 0.99). The engine thinks; the felt system learns how to
+run a mind around a thinker.
