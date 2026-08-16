@@ -190,3 +190,15 @@ admit) → emergent in the composer (has live in-context signal); WRITE-side
 (dream curation) → EXPLICIT felt head required (the dreamer runs without
 the composer's context). Session 2 builds the write-side head; read-side
 emergence measured in phase B against the head (Law 8 measuring stick).
+
+## One organ, two doors (Rohin's convergence, 2026-08-17)
+The memory has two interfaces, not two systems: DREAM WRITES (explicit,
+dopamine-like generalized importance; non-uniform density; press depth =
+the record of what a life cared about; slow + general) and CONSCIOUSNESS
+READS (emergent, goal-aware, multifaceted interrogation; fast + situated).
+Write- and read-salience need not agree — disagreement is a feature: the
+dream preserves what TENDS to matter; the composer extracts what matters
+NOW. Session-2 drafting surface = two specs for co-design: the DREAM-WRITE
+spec (decision-time inputs, credit source, press-depth mapping, curation
+budget) and the READ PROTOCOL (query patterns, gap-awareness, hand-wired
+ceiling per Law 8), both against leakage-gated worlds.
