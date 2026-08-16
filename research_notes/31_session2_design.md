@@ -175,3 +175,18 @@ deploy baby (empty LTM, generalized meta-decisions) into the field.
   corollary).
 - September switch date (exploration → abstract mode): Rohin to fix this
   week; recommendation Sep 1.
+
+## Engine resolutions (2026-08-17)
+ONE COMPOSER, TYPED OUTPUTS: single sequence model whose action vocabulary =
+{query memory (angle), spawn subprompt, update state, commit prompt} — no
+query-engine/prompt-engine split (fails three-check); pi0.5 precedent.
+STATE = THE COMPOSER'S OWN GROWING CONTEXT (today's agent-loop mechanics:
+model emits text-or-tool-call → harness executes → append → repeat;
+subagents = fresh contexts returning compressed summaries; memory query =
+a tool call whose tool is the gist model). The bet = train the loop's
+decisions; the loop itself is commodity.
+TWO SALIENCE CONSUMERS (resolves emergent-vs-explicit): READ-side (query/
+admit) → emergent in the composer (has live in-context signal); WRITE-side
+(dream curation) → EXPLICIT felt head required (the dreamer runs without
+the composer's context). Session 2 builds the write-side head; read-side
+emergence measured in phase B against the head (Law 8 measuring stick).
