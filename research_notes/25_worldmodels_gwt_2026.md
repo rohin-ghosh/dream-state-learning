@@ -140,3 +140,28 @@ NET: claim (a) crowded (state narrowly); claim (b) — generative gist LTM,
 felt-curated dreamed consolidation, analogical-completion reads — NOVEL
 across all nine; (a)+(b) combination untouched. Paper-1 flagship = (b),
 independently ratifying the locked scoping.
+
+## 8b. AgeMem full evidence audit (2601.01885, Alibaba+Wuhan, Jan 2026)
+Method: 6 memory tools (Add/Update/Delete on vector store; Retrieve/
+Summary/Filter on context) as RL actions; Qwen2.5-7B + Qwen3-4B; GRPO
+trained on HotpotQA ONLY, zero-shot to ALFWorld/SciWorld/PDDL/BabyAI.
+Numbers: avg 41.96 vs Mem0 37.14 vs no-mem 28.05 (7B); RL alone +8.5.
+CREDIT: "step-wise GRPO" = trajectory-level advantage broadcast uniformly
+to all steps; zero intermediate reward; NO usage tracing / per-write
+credit / counterfactual ablation. Reward partly gameable (maintenance=1
+if any update/delete fired; tool counts inflate under RL).
+CONFOUNDS (their gaps = our contributions): (1) backbone fine-tuned
+(full vs PEFT unstated), baselines run untrained model — generic-
+capability confound uncontrolled; frozen backbone is exactly the missing
+control. (2) Qwen-Max is BOTH training judge and eval judge; trained and
+evaluated on HotpotQA; no contamination/leakage analysis. (3) never
+swaps trained vs heuristic WRITE SIGNALS inside own system. (4) no
+capacity-pressure ablation, no seeds/error bars, no code.
+REINFORCEMENT FOR US: (i) outcome-trained memory ops > all heuristic
+systems, independently confirmed at 7B — premise de-risked. (ii) Their
+tables REPLICATE our S4: untrained tools < no-memory on PDDL+BabyAI;
+Mem0/LangMem < no-memory on Qwen3. "Naive memory hurts" is now a
+cross-paper regularity. (iii) Positioning: "AgeMem shows it works; we
+show why/when with the confounds removed" — head-to-head framing.
+Untouched by them: per-write credit, frozen-backbone isolation, leakage
+gates, capacity regimes, anything parametric/generative (claim b).
