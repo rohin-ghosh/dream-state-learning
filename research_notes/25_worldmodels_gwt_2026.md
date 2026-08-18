@@ -118,3 +118,25 @@ retain-lifetime); cite + NVIDIA-internal conversation thread. **Memory
 amplifies sycophancy 25x** (Jun 2026 study) — ecological echo of our S4
 toxic-memory result (bad retention < no retention). Predictions ≠ results:
 Amodei/Douglas forecast continual learning falls 2026 — statements only.
+
+## 8. Aug-17 batch (verified deep-reads; advisor lit-dump triaged)
+AgeMem (2601.01885): COUSIN, closest to claim-(a) — memory ops as policy
+actions, 3-stage RL + step-wise GRPO on task reward, whole backbone tuned,
+external store. Must-cite + head-to-head. Our (a) survives narrowly:
+frozen backbone + explicit head + dependency credit.
+D-MEM (2603.14597) CONFLICT RESOLVED: v1 only, never revised — "Dopamine-
+Gated via RPE Routing" is branding; mechanism = training-free (z-score
+embedding surprise + prompted 3-tier utility; zero learned params; KG
+consolidation pipeline). Our May direct read stands. Must-cite (they own
+the surprise+utility-gating vocabulary); baseline by mechanism.
+ALMA (2602.07755): baseline — meta-agent PROGRAM SEARCH over executable
+memory designs; nothing gradient-trained. The "search vs learn" alternative.
+U-Mem (2602.22406): baseline — cost-aware acquisition cascade + Thompson
+sampling; explicitly avoids training. Strong non-parametric comparator.
+Self-Guide (2604.03098): conceptual cousin — co-evolved internal reward
+gates ACTIONS, no memory module. Cite for learned-internal-signal lineage.
+INSPO/MetaSkill-Evolve/AutoSci/Sophia: none (optional cites).
+NET: claim (a) crowded (state narrowly); claim (b) — generative gist LTM,
+felt-curated dreamed consolidation, analogical-completion reads — NOVEL
+across all nine; (a)+(b) combination untouched. Paper-1 flagship = (b),
+independently ratifying the locked scoping.
