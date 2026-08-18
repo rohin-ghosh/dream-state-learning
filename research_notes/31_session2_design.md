@@ -202,3 +202,42 @@ NOW. Session-2 drafting surface = two specs for co-design: the DREAM-WRITE
 spec (decision-time inputs, credit source, press-depth mapping, curation
 budget) and the READ PROTOCOL (query patterns, gap-awareness, hand-wired
 ceiling per Law 8), both against leakage-gated worlds.
+
+## Adopted from 08-17 advisor exchange (pre-verification of its lit claims)
+1. INFORMATION-SET SPLIT (cleaner than ours): write-time HAS hindsight
+   (episode outcome known at dream) → mechanized policy legitimate;
+   read-time has only the query → salience must be learned/conditional.
+   Different information sets justify different mechanisms — say it this way.
+2. DREAMER GATE (Law 8 refined for the dreamer): may use anything knowable
+   at END OF EPISODE; nothing knowable only from the TEST SET. Episode
+   hindsight is what dreaming IS; eval hindsight is the leak.
+3. CONFABULATION PRICED EXPLICITLY: generative recall's failure mode vs
+   retrieval = confident wrong answers, which retrieval baselines don't
+   have. Marginal-success-per-read alone hands unearned wins → eval must
+   penalize verified-false reads separately.
+4. SAME-SIGNAL-HIGHER-THRESHOLD hypothesis (write policy = explore policy
+   demanding more confidence; asymmetric cost: explore mistake = one step,
+   write mistake = permanent substrate pollution — surprise-toxicity is
+   this asymmetry, measured). TEST: same scorer, sweep threshold, is write
+   PRECISION or RECALL binding? Cheap, fits the amortized dreamer.
+5. PAPER-1 SCOPE LOCKED: "dreamed context that can be open-queried" —
+   parametric gist vs retrieval; engine out of scope. NEXT ARTIFACT =
+   THE QUERY TAXONOMY (eval-first): which query classes RAG should win
+   (exact recall, decisively, zero confabulation) vs parametric should win
+   (statistics-of-experience: what usually happens / what tends to fail /
+   am I better at A or B — patterns living across 200 episodes that top-k
+   retrieval structurally misses). Pre-register where we LOSE.
+6. FREEZE RULE: big picture committed provisionally; no revision until the
+   experiment runs. Reversal 7 happens after data.
+7. NORTH-STAR METRIC (far-field, filed not scheduled): history-conditioned
+   endogenous agency — identical agents, divergent histories, same state →
+   stably different goal distributions; causal interventions on memory/
+   salience state change behavior predictably.
+8. PUBLICATION-PLAN RISK flagged: paper-2 trains engine against simple
+   memory, paper-3 composes with real memory = curriculum-transfer risk
+   relocated into the roadmap.
+9. CONFLICT FLAG: pasted lit describes 2603.14597 as "Dopamine-Gated
+   Agentic Memory via RPE (trained?)" — our DIRECT READ verified
+   training-free D-MEM. Re-verification dispatched; trust our read until
+   overturned. New-paper batch (ALMA/AgeMem/Self-Guide/INSPO/U-Mem etc.)
+   dispatched for verified deep-reads before any related-work claims.
