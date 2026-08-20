@@ -147,3 +147,28 @@ BFS over true crafting graph (no learned VF at this scale); game
 generation = first-class amortization problem, parameter-searched via the
 sizing MC with target-zone acceptance; split methodology from SCAN/COGS/
 gSCAN compositional-generalization literature.
+
+## Advisor audit round (2026-08-20) — all seven edits executed
+1. Part I/II config contradiction fixed (Part II §3 table now shows full
+   sweep history; single lock = N=1024/K=96; points unified).
+2. Measurement points unified: 60/320/960/1920/3840/7680/15360 (early two
+   recomputed after real tokenizer measurement).
+3. Eval play 40→200 episodes/arm-point (n=40 binary = ±15pt CI, blind to
+   small gaps; 200×5 seeds = ±3-4pt). Headlines never rest on task success.
+4. Tokens/episode MEASURED with real Qwen tokenizer: 332 (chars/4 was 66%
+   low). Context table rebuilt: accrual ≈1.27M tok = 10x of 128k, 40x of
+   native 32k; even 1M ctx breaks inside accrual.
+5. Falsifier tightened, no escape hatch: at 3840-ep point, tier-3-
+   normalized held-out composition, LoRA-dreamed > best RAG by >=0.05 abs
+   AND paired-t p<0.05 across 5 seeds, while G1 passes. Fail = dead.
+6. Scripted-explorer factorization stated as limitation + feature (identical
+   life stream per arm isolates substrate; exploration = paper 3).
+7. Stratum G PROMOTED to required — carries the induced-regularities claim
+   (i.i.d.-only world reduces the claim to class-membership compression).
+   Generalized per Rohin to PATTERN-SPECTRUM MIXTURE: rho_iid (incompressible,
+   retrieval's home turf — printing that loss makes wins credible) /
+   rho_fn (hidden function over essence properties — predicts never-observed
+   rules) / rho_analog (structurally similar pairs share outcomes).
+   Sweep mixture => performance vs WORLD COMPRESSIBILITY curve (the map).
+   Advisor caution adopted: parameterize+sweep, don't estimate reality's
+   pattern distribution (discussion claim, not design dependency).
