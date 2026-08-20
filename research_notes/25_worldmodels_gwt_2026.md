@@ -165,3 +165,33 @@ cross-paper regularity. (iii) Positioning: "AgeMem shows it works; we
 show why/when with the confounds removed" — head-to-head framing.
 Untouched by them: per-write credit, frozen-backbone isolation, leakage
 gates, capacity regimes, anything parametric/generative (claim b).
+
+## 9. Doc-to-LoRA lineage audit (2026-08-20, verified deep-read)
+Line: T2L (Sakana, ICML'25, task-desc->adapter, task style only) ->
+Generative Adapter (MSR/UW, ICLR'25, 7B, StreamingQA F1 31.5 vs weak-SFT
+19.5) -> Doc-to-LoRA (Sakana 2602.15902, Gemma-2-2B, Perceiver hypernet
+309M, per-chunk rank-8 LoRAs concat along rank; amortized context
+distillation) -> SHINE (2602.06358) -> Doc-to-Atom (2606.12400, typed
+micro-LoRA atoms + query router; unverified claims).
+KEY NUMBERS: D2L = 82-86% of the in-context ceiling on factual QA; ~4-5pt
+below ORACLE gradient context-distillation on same data; <1s vs 40-100s.
+QUERY-SWAP RED FLAG: unrelated queries collapse precision 0.720->0.044 —
+a resident generated adapter corrupts unrelated behavior (fatal for an
+always-mounted memory LoRA). No continual/multi-doc accumulation study
+anywhere in the line. All evals 2B-8B, single-doc, short-horizon.
+VERDICT for us: (b) citable amortized ALTERNATIVE, not a replacement —
+their value prop is write LATENCY, which our sleep cycle gets for free;
+gradient consolidation recovers the 15-18% quality gap. NOT (c): these DO
+inject facts — the "task-adaptation only" objection died Feb 2026.
+Position: "quality-first consolidation where write latency is free."
+STEAL: (1) the context-distillation objective as our consolidation loss —
+teacher = base model WITH the dream chunk in context, student = adapted
+model WITHOUT it; better-grounded than plain next-token SFT on corpus
+lines (candidate v2.1 ablation). (2) rank-concat composition trick.
+PAPER-2 NOTE: hypernetwork trained on outcome credit emitting the adapter
+= the amortized learned write policy (von Oswald Hnet-CL lineage; HyLoVQA).
+ENGRAM (startup): $98M @ $600M post (Jun'26; GC/KP/Sequoia, Karpathy
+angel; Biderman/Eyuboglu/Lin/Morris/Re) — productized docs->weights
+"learned memory layer" for orgs; partners Notion/Microsoft/Harvey.
+Commercial validation of weights-as-memory; watch Cartridges/self-study
+lineage (Eyuboglu) for their mechanism.
