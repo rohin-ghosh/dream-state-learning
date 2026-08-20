@@ -15,8 +15,8 @@ because it acquires **induced regularities** (cross-episode structure present in
 no single episode). We measure the crossover; we report where retrieval wins.
 
 ## 2. Environment — AlchemyWorld
-- **256 ingredients** (32 inert), nonce names (contamination-proof), each with a
-  hidden **essence** ∈ **32 classes** (528 rules) + hidden **grade** ∈ {1,2}.
+- **1024 ingredients** (128 inert), nonce names (contamination-proof), each with
+  a hidden **essence** ∈ **96 classes** (4,656 rules) + hidden **grade** ∈ {1,2}.
   Essences NEVER appear in any text (leakage is grep-able = property in the
   physics). Sized by Monte Carlo (Part II §3): small latents saturate in
   tens of episodes; the accrual phase must also OUTRUN the context window
@@ -46,15 +46,16 @@ no single episode). We measure the crossover; we report where retrieval wins.
 - **Episode:** goal "craft ⟨target⟩", inventory = random subset of 6 ingredients
   (forces pair coverage to accrue only in aggregate), ≤12 combine steps,
   game value = depth-distance-to-target, logged per step (this is "state").
-- 32,640 base pairs; **held-out split enforced by construction**: 30% of pairs
+- 523,776 base pairs; **held-out split enforced by construction**: 30% of pairs
   are never co-present in any episode inventory (physics, not luck — a coverage-
   maximizing explorer would otherwise see everything; smoke-test find).
-- **Pre-registered oracle ceiling** (sizing MC, conservative ideal learner):
-  deducible held-out fraction = 0.00 @60 eps → 0.20 @240 → 0.46 @960 → flat
-  @3840. Two named regimes: **accrual** (≤~800 eps, information arriving) and
-  **repetition** (beyond, information constant, exposure growing) — repetition
+- **Pre-registered oracle ceilings** (sizing MC; two learners, Part II §1):
+  perfect-reasoner ceiling = 0.43 @1920 eps → 0.75 @3840 → 0.77 @7680 → flat
+  (conservative: 0.27→0.45→0.46). Two named regimes: **accrual** (≤~6k eps ≈
+  1.2M log-tokens ≈ 8–11× a 128k window — Rohin's 5–10× requirement met) and
+  **repetition** (beyond; information constant, exposure growing) — repetition
   is where consolidation should shine and retrieval should drown. All arm
-  scores reported alongside (and normalized by) this ceiling.
+  scores reported alongside (and normalized by) the perfect-reasoner ceiling.
 
 ## 3. Complexity types (each scored separately → the map, not one number)
 | type | what it tests | expected winner |
@@ -70,8 +71,9 @@ IS a result) · RAG-raw · RAG-dreamed · LoRA-raw · LoRA-dreamed.
 A-Mem added later as the strong published baseline. 🔴 approve arm list.
 
 ## 5. Scaling axes
-x-axis is always **episodes**: measure at 60 / 240 / 960 / 3840 — all four are
-prefixes of ONE frozen life stream (same experience, growing exposure).
+x-axis is always **episodes**: measure at 960 / 1920 / 3840 / 7680 / 15360 —
+all five are prefixes of ONE frozen life stream (same experience, growing
+exposure): four points in accrual, the last deep in repetition.
 Life generation is LLM-free (scripted explorer) → episodes are free; the cost
 driver is eval play (~1 A100-hr/seed total; Part II §6). Secondary: LoRA rank {8, 32} — if the parametric
 ceiling moves with rank, saturation is capacity, not mechanism. LoRA retrained
@@ -177,21 +179,23 @@ Beating context by ~40% is not the regime — at +100% the LTM barely holds
 representation the STM couldn't, and long-context+RAG hybrids plausibly tie.
 Requirement: the ACCRUAL PHASE ALONE (info still arriving) must span
 **5–10× the reasoner's context window**. Levers, in order of honesty:
-(1) latent size — N and K set total information (N=512/K=64: accrual to
-~1920 eps ≈ 377k tok; N=1024/K=96: sweep pending, projected ~4k eps ≈
-~750k tok); (2) honest window choice — Qwen2.5-7B native = 32k (184k-token
-life = 5.7× WITHOUT rope tricks; 128k variants reported too); (3) Stratum-G
-depth multiplies information without token cost. Target config chosen when
-the N=1024 sweep lands; requirement: accrual ≥5× the 128k window.
+(1) latent size — RESOLVED: N=1024/K=96 gives accrual to ~6k eps ≈ 1.2M
+tokens ≈ 8–11× of 128k (N=2048/K=128 reaches 12× but wastes its first 2k
+episodes at ceiling≈0.01; rejected); (2) honest window choice — Qwen2.5-7B
+native = 32k (30×+ without rope tricks; 128k variants reported too);
+(3) Stratum-G depth multiplies information without token cost (🔴 pending).
 
 ## 4. Context-budget table (the honest long-context arm)
 Log ≈ 200 tokens/episode (measured from generated logs, chars/4).
 | episodes | log tokens | 8k ctx | 32k | 128k | 1M |
 |---|---|---|---|---|---|
-| 60 | ~11k | BROKEN | ok | ok | ok |
-| 240 | ~45k | broken | BROKEN | ok | ok |
-| 960 | ~184k | broken | broken | **BREAKS HERE** | ok |
-| 3840 | ~785k | broken | broken | broken | strained |
+| 960 | ~190k | broken | BROKEN | ok | ok |
+| 1920 | ~380k | broken | broken | **BREAKS HERE** | ok |
+| 3840 | ~770k | broken | broken | broken | ok |
+| 7680 | ~1.5M | broken | broken | broken | **BREAKS HERE** |
+| 15360 | ~3.1M | broken | broken | broken | broken |
+Even a 1M-token window breaks INSIDE the accrual phase — no context length
+that exists holds this life. That is the regime definition.
 The long-context arm uses the reasoner's real window; each break row is a
 reported result ("N/A beyond E episodes"), not a handicap. Info is still
 ARRIVING at the 128k break point (ceiling .20→.46) — the regime is genuinely

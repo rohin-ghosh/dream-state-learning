@@ -26,12 +26,15 @@ _SYL_M = ("", "", "ta", "ne", "go", "shi", "va", "pol")
 
 
 def _nonce(rng: np.random.Generator, used: set) -> str:
-    # 16*8*16 = 2048 possible names — supports large worlds + product families
-    while True:
+    # 2048 syllabic names; numeric-suffix fallback makes it exhaustion-proof
+    for _ in range(40):
         n = rng.choice(_SYL_A) + rng.choice(_SYL_M) + rng.choice(_SYL_B)
         if n not in used:
             used.add(n)
             return n
+    n = rng.choice(_SYL_A) + rng.choice(_SYL_B) + str(len(used))
+    used.add(n)
+    return n
 
 
 @dataclasses.dataclass

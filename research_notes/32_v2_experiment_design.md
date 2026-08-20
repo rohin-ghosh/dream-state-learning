@@ -122,3 +122,11 @@ both ceilings; normalize by perfect-reasoner one.
 (3) Sizing requirement raised (Rohin): accrual phase alone must span
 5–10× context. N=512/K=64: accrual ~1920 eps ≈ 377k tok (3× of 128k,
 12× of Qwen native 32k). N=1024/K=96 sweep pending → target ≥5× of 128k.
+
+## Final size lock (2026-08-19): N=1024, K=96
+Sweep (both ceilings): accrual to ~6k eps ≈ 1.2M log-tokens = 8-11x of a
+128k window, 30x+ of Qwen native 32k — Rohin's 5-10x requirement MET.
+Even 1M-token context breaks inside accrual. N=2048/K=128 rejected (12x
+but first 2k episodes at ceiling 0.01 = dead points). Points:
+960/1920/3840/7680/15360. Perfect-reasoner ceiling 0.43/0.75/0.77/flat.
+Nonce generator made exhaustion-proof (numeric fallback) after N=1024 hang.
