@@ -89,3 +89,17 @@ product-only) can deduce from the life log. No memory system can beat it.
   30–45 min; measurement points are prefixes (no extra lives); fresh-task
   eval ≈ 20 min/arm/point; dreams negligible; LoRA trains minutes.
   Full 2×2 + rails × 3 points × 5 seeds ≲ 3 A100-days — inside quota.
+
+## Sizing v2 REVISION (2026-08-19, after Rohin's context-capacity catch)
+Rohin: "learnable" must mean learnable BEYOND context, not from-the-log —
+the accrual phase itself has to outrun the context window, and 60 eps is
+nothing. Confirmed by MC: old config's accrual ended at ~120 eps ≈ 42k
+tokens (fits in 128k — regime not hard). RE-LOCKED: N=256 (32 inert),
+K=32 essences (528 rules), inv 6, points 60/240/960/3840. Ceiling
+0.00→0.20→0.46→flat; 128k context breaks between 240 (45k tok) and 960
+(184k tok) WHILE info is still arriving. Full evidence, context-budget
+table, throughput plan, pre-registered predictions: SIZING_V2.md (spec
+stays one sheet and points there). Perf fixes en route: recipe-map cache
+(960-ep life: minutes → 0.1s), nonce space 256→2048 names (N=256 worlds
+exhausted it and hung). Doc structure per Rohin: spec = high-level top +
+constants below; all depth in SIZING_V2.

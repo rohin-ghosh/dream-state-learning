@@ -1,6 +1,8 @@
 # SPEC v2 — Dreamed Parametric Memory vs Retrieval (one page)
 *(2026-08-19. Co-design draft for Rohin's red pen. 🔴 = open decision for you;
-everything else is a granular default I'll build unless overruled.)*
+everything else is a granular default I'll build unless overruled.
+This sheet = overview + locked constants. ALL sizing evidence, sweep tables,
+context-budget math, throughput plan, pre-registered predictions → SIZING_V2.md.)*
 
 ## 1. Claim
 An agent whose experience is consolidated into weights (dream → LoRA) has a
@@ -10,11 +12,12 @@ because it acquires **induced regularities** (cross-episode structure present in
 no single episode). We measure the crossover; we report where retrieval wins.
 
 ## 2. Environment — AlchemyWorld
-- **64 ingredients** (8 inert), nonce names (contamination-proof), each with a
-  hidden **essence** ∈ **12 classes** + hidden **grade** ∈ {1,2}. Essences NEVER
-  appear in any text (leakage is grep-able = property in the physics). Sized by
-  Monte Carlo (alchemy/sizing_mc.py): 4 classes saturates by 30 episodes — the
-  latent must carry enough information to accrue across the whole x-axis.
+- **256 ingredients** (32 inert), nonce names (contamination-proof), each with a
+  hidden **essence** ∈ **32 classes** (528 rules) + hidden **grade** ∈ {1,2}.
+  Essences NEVER appear in any text (leakage is grep-able = property in the
+  physics). Sized by Monte Carlo (SIZING_V2 §3): small latents saturate in
+  tens of episodes; the accrual phase must also OUTRUN the context window
+  (info still arriving when 128k breaks — see SIZING_V2 §4).
 - **Rule table (per-run randomized):** unordered essence-pair → outcome family
   {product, nothing, ruin}. Product identity = f(essence pair, max grade) —
   compositional: knowing essences predicts **never-tried pairs**.
@@ -25,13 +28,13 @@ no single episode). We measure the crossover; we report where retrieval wins.
 - **Episode:** goal "craft ⟨target⟩", inventory = random subset of 6 ingredients
   (forces pair coverage to accrue only in aggregate), ≤12 combine steps,
   game value = depth-distance-to-target, logged per step (this is "state").
-- 2016 base pairs; **held-out split enforced by construction**: 30% of pairs are
-  never co-present in any episode inventory (physics, not luck — a coverage-
+- 32,640 base pairs; **held-out split enforced by construction**: 30% of pairs
+  are never co-present in any episode inventory (physics, not luck — a coverage-
   maximizing explorer would otherwise see everything; smoke-test find).
 - **Pre-registered oracle ceiling** (sizing MC, conservative ideal learner):
-  deducible fraction of held-out pairs = 0.13 @30 eps → 0.39 @60 → 0.47 @120 →
-  flat. Two named regimes: **accrual** (≤~120 eps, information arriving) and
-  **repetition** (>120 eps, information constant, exposure growing) — repetition
+  deducible held-out fraction = 0.00 @60 eps → 0.20 @240 → 0.46 @960 → flat
+  @3840. Two named regimes: **accrual** (≤~800 eps, information arriving) and
+  **repetition** (beyond, information constant, exposure growing) — repetition
   is where consolidation should shine and retrieval should drown. All arm
   scores reported alongside (and normalized by) this ceiling.
 
@@ -49,8 +52,10 @@ IS a result) · RAG-raw · RAG-dreamed · LoRA-raw · LoRA-dreamed.
 A-Mem added later as the strong published baseline. 🔴 approve arm list.
 
 ## 5. Scaling axes
-x-axis is always **episodes**: measure at 60 / 240 / 960 — all three are
-prefixes of ONE frozen life stream (same experience, growing exposure). Secondary: LoRA rank {8, 32} — if the parametric
+x-axis is always **episodes**: measure at 60 / 240 / 960 / 3840 — all four are
+prefixes of ONE frozen life stream (same experience, growing exposure).
+Life generation is LLM-free (scripted explorer) → episodes are free; the cost
+driver is eval play (~1 A100-hr/seed total; SIZING_V2 §6). Secondary: LoRA rank {8, 32} — if the parametric
 ceiling moves with rank, saturation is capacity, not mechanism. LoRA retrained
 from full curated corpus at each measurement point; checkpoint frozen per point
 (drift allowed by design, never inside a measurement).

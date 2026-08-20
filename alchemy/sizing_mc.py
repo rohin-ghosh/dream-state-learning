@@ -89,17 +89,17 @@ def ceiling(world, episodes, holdout):
 
 def main():
     results = {}
-    for E in (30, 60, 120, 240, 480, 960):
+    for E in (60, 240, 480, 960, 1920, 3840):
         rows = []
         for seed in range(5):
-            w = AlchemyWorld(n_ingredients=64, n_inert=8, seed=seed, n_essences=12)
+            w = AlchemyWorld(n_ingredients=256, n_inert=32, seed=seed, n_essences=32)
             hold = w.sample_holdout(0.3, seed=seed)
             eps = generate_life(w, ScriptedExplorer(seed=seed), E,
                                 inv_size=6, seed=seed, holdout=hold)
             c = ceiling(w, eps, hold)
             c["seen_pairs"] = len(seen_pairs(eps))
             c["obs_per_ingredient"] = round(
-                sum(len(e["log"]) * 2 for e in eps) / 64, 1)
+                sum(len(e["log"]) * 2 for e in eps) / 256, 1)
             rows.append(c)
         agg = {k: round(float(np.mean([r[k] for r in rows])), 3)
                for k in rows[0]}

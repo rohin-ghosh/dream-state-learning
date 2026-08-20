@@ -11,7 +11,7 @@ import dataclasses
 import itertools
 import numpy as np
 
-REACTIVE = tuple(f"E{i}" for i in range(1, 13))  # internal only — never in text
+REACTIVE = tuple(f"E{i}" for i in range(1, 33))  # internal only — never in text
 INERT = "E0"
 COLORS = ("amber", "violet", "ashen", "cerulean", "russet", "pale")
 SMELLS = ("acrid", "sweet", "loamy", "metallic", "briny", "musky")
@@ -22,9 +22,13 @@ _SYL_B = ("il", "run", "sic", "eth", "ock", "ane", "ura", "esk",
           "ov", "ith", "ard", "une", "yl", "ost", "ira", "em")
 
 
+_SYL_M = ("", "", "ta", "ne", "go", "shi", "va", "pol")
+
+
 def _nonce(rng: np.random.Generator, used: set) -> str:
+    # 16*8*16 = 2048 possible names — supports large worlds + product families
     while True:
-        n = rng.choice(_SYL_A) + rng.choice(_SYL_B)
+        n = rng.choice(_SYL_A) + rng.choice(_SYL_M) + rng.choice(_SYL_B)
         if n not in used:
             used.add(n)
             return n

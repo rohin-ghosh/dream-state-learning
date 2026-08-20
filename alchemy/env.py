@@ -43,14 +43,19 @@ def generate_life(world: AlchemyWorld, player, n_episodes: int,
     pair (held-out split enforced by the physics, not by luck)."""
     rng = np.random.default_rng(seed)
     names = sorted(world.ingredients)
-    targets = [t for t in world.craftable_targets()
-               if any(tuple(sorted(p)) not in holdout
-                      for p in world.recipe_pairs_for(t))]
+    # precompute target -> allowed recipe pairs ONCE (throughput: O(N^2) total)
+    recipe_map = {}
+    for p in world.base_pairs():
+        if tuple(sorted(p)) in holdout:
+            continue
+        kind, prod = world.predict(*p)
+        if kind == "product":
+            recipe_map.setdefault(prod, []).append(p)
+    targets = sorted(recipe_map)
     episodes = []
     for e in range(n_episodes):
         target = targets[int(rng.integers(len(targets)))]
-        recipes = [p for p in world.recipe_pairs_for(target)
-                   if tuple(sorted(p)) not in holdout]
+        recipes = recipe_map[target]
         a, b = recipes[int(rng.integers(len(recipes)))]
         inv = [a, b]
         rest = [n for n in names if n not in inv]
