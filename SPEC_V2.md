@@ -72,8 +72,11 @@ A-Mem added later as the strong published baseline. 🔴 approve arm list.
 
 ## 5. Scaling axes
 x-axis is always **episodes**: measure at 960 / 1920 / 3840 / 7680 / 15360 —
-all five are prefixes of ONE frozen life stream (same experience, growing
-exposure): four points in accrual, the last deep in repetition.
+all prefixes of ONE frozen life stream (same experience, growing exposure):
+four points in accrual, the last deep in repetition. Plus two EARLY
+calibration points, 120 (~24k tok, fits 32k ctx) and 480 (~95k tok, fits
+128k ctx), where long-context is still alive — its early win must be
+MEASURED and printed, not assumed (the crossover needs both ends).
 Life generation is LLM-free (scripted explorer) → episodes are free; the cost
 driver is eval play (~1 A100-hr/seed total; Part II §6). Secondary: LoRA rank {8, 32} — if the parametric
 ceiling moves with rank, saturation is capacity, not mechanism. LoRA retrained
