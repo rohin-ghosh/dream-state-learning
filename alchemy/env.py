@@ -36,20 +36,31 @@ def run_episode(world: AlchemyWorld, player, target: str,
 
 
 def generate_life(world: AlchemyWorld, player, n_episodes: int,
-                  inv_size: int = 8, seed: int = 0) -> list:
-    """Batched data collection: inventory is a random subset that always
-    contains at least one recipe for the target (winnable by construction)."""
+                  inv_size: int = 8, seed: int = 0,
+                  holdout: set = frozenset()) -> list:
+    """Batched data collection: inventory always contains a recipe for the
+    target (winnable by construction) and NEVER both members of a holdout
+    pair (held-out split enforced by the physics, not by luck)."""
     rng = np.random.default_rng(seed)
-    targets = world.craftable_targets()
     names = sorted(world.ingredients)
+    targets = [t for t in world.craftable_targets()
+               if any(tuple(sorted(p)) not in holdout
+                      for p in world.recipe_pairs_for(t))]
     episodes = []
     for e in range(n_episodes):
         target = targets[int(rng.integers(len(targets)))]
-        a, b = world.recipe_pairs_for(target)[0]
-        rest = [n for n in names if n not in (a, b)]
+        recipes = [p for p in world.recipe_pairs_for(target)
+                   if tuple(sorted(p)) not in holdout]
+        a, b = recipes[int(rng.integers(len(recipes)))]
+        inv = [a, b]
+        rest = [n for n in names if n not in inv]
         rng.shuffle(rest)
-        inv = sorted([a, b] + rest[:inv_size - 2])
-        episodes.append(run_episode(world, player, target, inv))
+        for n in rest:
+            if len(inv) >= inv_size:
+                break
+            if all(tuple(sorted((n, m))) not in holdout for m in inv):
+                inv.append(n)
+        episodes.append(run_episode(world, player, target, sorted(inv)))
     return episodes
 
 

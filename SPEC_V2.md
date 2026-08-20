@@ -23,7 +23,9 @@ no single episode). We measure the crossover; we report where retrieval wins.
 - **Episode:** goal "craft ⟨target⟩", inventory = random subset of 8 ingredients
   (forces pair coverage to accrue only in aggregate), ≤12 combine steps,
   game value = depth-distance-to-target, logged per step (this is "state").
-- 276 possible base pairs; a lifetime exposes ~35% — the rest is the held-out set.
+- 276 possible base pairs; **held-out split enforced by construction**: ~30% of
+  pairs are never co-present in any episode inventory (physics, not luck — a
+  coverage-maximizing explorer would otherwise see everything; smoke-test find).
 
 ## 3. Complexity types (each scored separately → the map, not one number)
 | type | what it tests | expected winner |

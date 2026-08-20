@@ -30,7 +30,9 @@ def main():
     t = {}; t0 = time.time()
 
     world = AlchemyWorld(n_ingredients=8, n_inert=1, seed=7)
-    eps = generate_life(world, ScriptedExplorer(seed=1), a.eps, inv_size=5)
+    holdout = world.sample_holdout(frac=0.3, seed=7)
+    eps = generate_life(world, ScriptedExplorer(seed=1), a.eps, inv_size=5,
+                        holdout=holdout)
     t["episodes_s"] = round(time.time() - t0, 1)
     print(f"[smoke] {len(eps)} eps, success rate "
           f"{sum(e['success'] for e in eps) / len(eps):.2f}, "
@@ -57,10 +59,11 @@ def main():
 
     t0 = time.time()
     seen = seen_pairs(eps)
-    seen_l, held = evals.split_pairs(world, seen)
+    assert not (seen & holdout), "G-split violated: holdout pair was seen"
+    seen_l, _ = evals.split_pairs(world, seen)
     ask = lambda q: lora_mem.read(adapted, tok, q)
     res = {"seen": evals.eval_pairs(ask, world, seen_l[:10]),
-           "held_out": evals.eval_pairs(ask, world, held[:10])}
+           "held_out": evals.eval_pairs(ask, world, sorted(holdout)[:10])}
     t["eval_s"] = round(time.time() - t0, 1)
 
     res["timings"] = t

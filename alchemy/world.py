@@ -127,6 +127,14 @@ class AlchemyWorld:
         return [(a, b) for a, b in self.base_pairs()
                 if self.predict(a, b) == ("product", target)]
 
+    def sample_holdout(self, frac: float = 0.3, seed: int = 0) -> set:
+        """Held-out-by-construction: these pairs are never co-present in any
+        episode inventory (env enforces), so the split is physics, not luck."""
+        rng = np.random.default_rng(seed + 101)
+        pairs = self.base_pairs()
+        idx = rng.permutation(len(pairs))[:int(frac * len(pairs))]
+        return {tuple(sorted(pairs[i])) for i in idx}
+
     def leakage_scan(self, text: str) -> list:
         """G2: any internal essence token in emitted text = leak."""
         toks = set(REACTIVE) | {INERT}
