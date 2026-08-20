@@ -42,22 +42,24 @@ def dumb_dream(episodes: list) -> list:
 
 def llm_dream(episodes: list, model, tokenizer, world,
               chunk: int = 10, max_lines: int = 40) -> list:
-    import torch
-    out = []
+    """Legacy HF path (smoke test)."""
+    from alchemy.backend import HFBackend
+    be = HFBackend.__new__(HFBackend)
+    be.model, be.tok, be._adapters = model, tokenizer, {}
+    return backend_dream(episodes, be, world, chunk, max_lines)
+
+
+def backend_dream(episodes: list, backend, world,
+                  chunk: int = 96, max_lines: int = 60) -> list:
+    """Sleep-cadence dreaming: one prompted call per ~context of episodes
+    (SPEC_V2 sleep cadence: ~96 eps @ 332 tok/ep ~= 32k). Batched."""
+    prompts = []
     for i in range(0, len(episodes), chunk):
         block = episodes_to_text(episodes[i:i + chunk])
-        msgs = [{"role": "system",
-                 "content": DREAM_SYS.format(n=max_lines)},
-                {"role": "user", "content": block}]
-        prompt = tokenizer.apply_chat_template(
-            msgs, tokenize=False, add_generation_prompt=True)
-        ids = tokenizer(prompt, return_tensors="pt").to(model.device)
-        with torch.no_grad():
-            gen = model.generate(**ids, max_new_tokens=600, do_sample=False,
-                                 pad_token_id=tokenizer.eos_token_id)
-        text = tokenizer.decode(gen[0][ids["input_ids"].shape[1]:],
-                                skip_special_tokens=True)
-        for line in text.splitlines():
+        prompts.append(DREAM_SYS.format(n=max_lines) + "\n\n" + block)
+    out = []
+    for txt in backend.generate(prompts, max_tokens=1200):
+        for line in txt.splitlines():
             line = line.strip(" -*")
             if len(line) > 12 and not world.leakage_scan(line):
                 out.append(line)

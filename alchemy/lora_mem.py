@@ -19,7 +19,7 @@ def load_base(model_name: str, device: str = "auto"):
 
 def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
                epochs: int = 4, lr: float = 2e-4, bsz: int = 4,
-               max_len: int = 96, log=print):
+               max_len: int = 96, log=print, save_dir: str = ""):
     """Causal-LM fine-tune on memory lines. Returns the adapted model."""
     import torch
     from peft import LoraConfig, get_peft_model
@@ -45,6 +45,8 @@ def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
             tot += float(out.loss); nb += 1
         log(f"  [lora] epoch {ep + 1}/{epochs} loss {tot / max(nb, 1):.3f}")
     model.eval()
+    if save_dir:
+        model.save_pretrained(save_dir)
     return model
 
 
