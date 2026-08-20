@@ -42,7 +42,7 @@ def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
                 batch["attention_mask"] == 0, -100))
             out.loss.backward()
             opt.step(); opt.zero_grad()
-            tot += float(out.loss); nb += 1
+            tot += float(out.loss.detach()); nb += 1
         log(f"  [lora] epoch {ep + 1}/{epochs} loss {tot / max(nb, 1):.3f}")
     model.eval()
     if save_dir:

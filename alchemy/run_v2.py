@@ -93,6 +93,10 @@ def phase2(C, out, model_name):
             m = train_lora(base, tok, corpus, rank=C["rank"],
                            epochs=C["epochs"], save_dir=str(d), log=log)
             base = m.unload()          # strip adapter, recover clean base
+            # unload() leaves peft_config behind -> next get_peft_model
+            # STACKS adapters (caught by tiny shakeout). Scrub it.
+            if hasattr(base, "peft_config"):
+                del base.peft_config
 
 
 # ---------------------------------------------------------------- phase 3
