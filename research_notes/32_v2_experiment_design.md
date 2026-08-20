@@ -130,3 +130,20 @@ Even 1M-token context breaks inside accrual. N=2048/K=128 rejected (12x
 but first 2k episodes at ceiling 0.01 = dead points). Points:
 960/1920/3840/7680/15360. Perfect-reasoner ceiling 0.43/0.75/0.77/flat.
 Nonce generator made exhaustion-proof (numeric fallback) after N=1024 hang.
+
+## Ceiling tier 3 + generation-as-research-problem (2026-08-19)
+Rohin challenged 0.46 then 0.77 ("perfect reasoner should reach >=90%") —
+CONFIRMED RIGHT: adding statistical inert elimination (never product/ruin
++ nothing vs >=8 distinct proven classes) takes the ceiling to 0.99@3840,
+1.00@7680 (127-128/128 inerts found). World is fully compositional; no
+fact islands. Three-tier ceiling now reported: retrieval 0.46 / transfer
+0.77 / elimination 1.00 — itself a nice figure (what each REASONING tier
+is worth on the same evidence). Accrual under strongest learner: ~3.8k
+eps ~= 770k tok ~= 6x of 128k (still >=5x requirement). Target zone named
+(advisor): HIGH CEILING / LOW ACHIEVED / WIDE GAP.
+Also adopted: sleep cadence = dream every ~context-window of experience
+(~160 eps @32k), checkpoints at dream boundaries; value function = exact
+BFS over true crafting graph (no learned VF at this scale); game
+generation = first-class amortization problem, parameter-searched via the
+sizing MC with target-zone acceptance; split methodology from SCAN/COGS/
+gSCAN compositional-generalization literature.

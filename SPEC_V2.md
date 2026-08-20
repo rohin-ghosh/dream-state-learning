@@ -49,13 +49,17 @@ no single episode). We measure the crossover; we report where retrieval wins.
 - 523,776 base pairs; **held-out split enforced by construction**: 30% of pairs
   are never co-present in any episode inventory (physics, not luck — a coverage-
   maximizing explorer would otherwise see everything; smoke-test find).
-- **Pre-registered oracle ceilings** (sizing MC; two learners, Part II §1):
-  perfect-reasoner ceiling = 0.43 @1920 eps → 0.75 @3840 → 0.77 @7680 → flat
-  (conservative: 0.27→0.45→0.46). Two named regimes: **accrual** (≤~6k eps ≈
-  1.2M log-tokens ≈ 8–11× a 128k window — Rohin's 5–10× requirement met) and
-  **repetition** (beyond; information constant, exposure growing) — repetition
-  is where consolidation should shine and retrieval should drown. All arm
-  scores reported alongside (and normalized by) the perfect-reasoner ceiling.
+- **Pre-registered oracle ceilings — THREE tiers of reasoner** (Part II §1):
+  · retrieval-evidence only: →0.46 (lookup bound)
+  · + class-transfer inference: →0.77
+  · + statistical inert elimination (T=8 distinct classes, P(err)<0.4^8):
+    0.05 @960 eps → 0.61 @1920 → 0.99 @3840 → **1.00** @7680.
+  The world is FULLY compositional — a perfect reasoner eventually deduces
+  everything (Rohin's ≥90% requirement: met at 100%). Regimes: **accrual**
+  (≤~3.8k eps ≈ 770k log-tokens ≈ 6× a 128k window, 24× native 32k) and
+  **repetition** (beyond). Headline normalizer = tier-3 ceiling. The
+  measurement zone is HIGH CEILING / LOW ACHIEVED / WIDE GAP — both failure
+  modes (ceiling too low; everything fits in context) collapse the gap.
 
 ## 3. Complexity types (each scored separately → the map, not one number)
 | type | what it tests | expected winner |
@@ -85,6 +89,13 @@ from full curated corpus at each measurement point; checkpoint frozen per point
 
 ## 6. Mechanism (all amortized; per-box info-set gate)
 - **State** (trivial v2): goal, inventory, last outcome, game value. Logged.
+- **Sleep cadence (Rohin):** a dream cycle fires every time ~one context
+  window of experience has accumulated (~32k tok ≈ 160 eps): dump STM → dream
+  → retrain LoRA from full corpus → resume. Measurement checkpoints align
+  with dream boundaries. (~96 cycles over a 15,360-ep life; minutes each.)
+- **Value function:** exact, from ground truth — BFS distance over the true
+  crafting graph from holdings to target. No learned VF needed at this scale;
+  logged per step into state (the dream's hindsight signal).
 - **Dreamer = one prompted LLM call** per log chunk: sees episodes + outcomes +
   value logs (episode hindsight OK, eval set never). Emits **cross-episode
   pattern memories as text** (2nd person), not per-episode summaries.
@@ -229,6 +240,19 @@ capacity limit; if not, a mechanism limit. Either is a finding.
 - **Total ≈ 10M LLM tokens/seed ≈ 1 A100-hour/seed → 5 seeds ≈ half a day
   on one A100.** Doubling everything still fits inside the 30-day quota
   many times over. Episode count is NOT the cost driver; eval play is.
+
+## 6b. Game generation is a first-class research problem (Rohin)
+The real world ties ideas/outcomes together naturally; we must AMORTIZE that
+structure in a generator — enough nondeterminism that answers are not
+literally retrievable, enough connectedness that composition pays. This is a
+parameter-search problem run through the sizing MC (episodes, ingredients,
+essence count, chain depth 10–20 at 10k-episode scale, rule-structure mix,
+repetition rate), accepted only inside the target zone: tier-3 ceiling ≥0.9,
+accrual ≥5× context, early points alive, achieved-vs-ceiling gap wide.
+Prior art to mine for split methodology: compositional-generalization
+literature — SCAN, COGS, gSCAN — which constructs train/test splits where
+answers are derivable ONLY by composing, never by recall. Their split
+discipline transfers directly; procedural-content-generation lit less so.
 
 ## 7. Pre-registered predictions (falsifiable, written before the run)
 - long_context ≥ everything at 60 eps (all info in-window); N/A by 960.

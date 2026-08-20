@@ -82,9 +82,29 @@ def ceiling(world, episodes, holdout, transfer=True):
         for (a, b), k in kinds.items():     # if both endpoints are classed
             if a in classed and b in classed:
                 known[frozenset((uf.find(a), uf.find(b)))].add(k)
+    # inert elimination (statistical, pre-registered threshold T=8):
+    # never product/ruin, AND observed 'nothing' against >=T distinct
+    # proven classes => inert (P(reactive) < 0.4^T, negligible)
+    T = 8
+    reactive_ev = set()
+    for (a, b), k in kinds.items():
+        if k in ("product", "ruin"):
+            reactive_ev.add(a); reactive_ev.add(b)
+    nothing_cls = defaultdict(set)
+    for (a, b), k in kinds.items():
+        if k == "nothing":
+            if b in classed:
+                nothing_cls[a].add(uf.find(b))
+            if a in classed:
+                nothing_cls[b].add(uf.find(a))
+    inert = {x for x, cs in nothing_cls.items()
+             if x not in reactive_ev and len(cs) >= T}
     ded = 0
     for a, b in holdout:
         if a not in world.ingredients or b not in world.ingredients:
+            continue
+        if a in inert or b in inert:
+            ded += 1
             continue
         key = frozenset((uf.find(a), uf.find(b)))
         if known.get(key):
@@ -98,6 +118,7 @@ def ceiling(world, episodes, holdout, transfer=True):
                 links += 1
                 correct += int(world.essence_of(a) == world.essence_of(b))
     return {"deducible_frac": ded / max(len(holdout), 1),
+            "n_inert_found": len(inert),
             "class_links": links,
             "class_purity": correct / max(links, 1)}
 
