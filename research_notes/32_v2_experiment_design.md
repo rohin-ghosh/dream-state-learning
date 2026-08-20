@@ -210,3 +210,12 @@ gSCAN compositional-generalization literature.
   (paper-2 candidate: outcome-credit hypernetwork emits the adapter),
   Engram (startup; memory-layer arch), Harvey (market existence proof),
   Sutton podcast (plasticity/experience framing — thesis-adjacent).
+
+## 2026-08-20 postscript (Rohin)
+- Cross-chunk induction, scalable form: rung-4 dreamer = dream WITH the
+  memory (run dreamer on the ADAPTED model), not dream OVER the store in
+  context. O(1) context cost; the complex pull-everything version is
+  correctly rejected as non-scaling.
+- Forgetting is fine (graceful, by design); EXCESS forgetting = capacity
+  diagnosis. Instrument already exists: G1 seen-recall curve per rank
+  across checkpoints (rank 8 degrades where 32 holds -> ceiling located).

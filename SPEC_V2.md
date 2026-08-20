@@ -158,8 +158,10 @@ from full curated corpus at each measurement point; checkpoint frozen per point
   isolates the substrate, not the dreamer.
 - **Dreamer ladder (ablation axis; variants are just prompts):** raw
   transcription → per-episode summary → cross-episode patterns (current) →
-  + prior-memory-state access (renormalizing; where cross-chunk induction
-  first becomes possible) → action-conditioned emission. The curve measures
+  + prior-memory access (renormalizing; where cross-chunk induction first
+  becomes possible — the SCALABLE form: the dreamer runs on the ADAPTED
+  model, dreaming WITH everything consolidated so far at O(1) context cost,
+  rather than pulling the store into context) → action-conditioned emission. The curve measures
   how much local processing the memory needs — v2 runs rungs 1 and 3; the
   full ladder is the first follow-up ablation.
 
@@ -350,6 +352,10 @@ discipline transfers directly; procedural-content-generation lit less so.
 - LoRA-raw vs LoRA-dreamed gap = the curation claim; if ~0, substrate-only
   paper (still a paper — and redirects paper 2).
 - RAG wins exact-recall (seen pairs) at every scale. Printed, not hidden.
+- **Forgetting-as-capacity-gauge (pre-registered):** forgetting is allowed
+  (graceful, by design); EXCESS forgetting is a capacity diagnosis. The G1
+  seen-pair-recall curve across checkpoints, per rank: degrading at rank 8
+  while holding at rank 32 locates the capacity ceiling directly.
 - **Rank×mixture interaction (free second result, pre-registered):** if
   memorization favors parameters and representation-finding favors data,
   optimal LoRA rank shifts with the mixture — high ρ_iid worlds want rank
