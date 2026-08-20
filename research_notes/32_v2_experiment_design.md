@@ -98,8 +98,8 @@ tokens (fits in 128k — regime not hard). RE-LOCKED: N=256 (32 inert),
 K=32 essences (528 rules), inv 6, points 60/240/960/3840. Ceiling
 0.00→0.20→0.46→flat; 128k context breaks between 240 (45k tok) and 960
 (184k tok) WHILE info is still arriving. Full evidence, context-budget
-table, throughput plan, pre-registered predictions: SIZING_V2.md (spec
-stays one sheet and points there). Perf fixes en route: recipe-map cache
+table, throughput plan, pre-registered predictions: SPEC_V2.md Part II (single doc
+per Rohin: overview on top, depth below). Perf fixes en route: recipe-map cache
 (960-ep life: minutes → 0.1s), nonce space 256→2048 names (N=256 worlds
 exhausted it and hung). Doc structure per Rohin: spec = high-level top +
-constants below; all depth in SIZING_V2.
+constants below; all depth in the same doc's Part II.

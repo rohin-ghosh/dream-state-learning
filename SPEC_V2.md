@@ -1,8 +1,11 @@
-# SPEC v2 — Dreamed Parametric Memory vs Retrieval (one page)
+# SPEC v2 — Dreamed Parametric Memory vs Retrieval
 *(2026-08-19. Co-design draft for Rohin's red pen. 🔴 = open decision for you;
 everything else is a granular default I'll build unless overruled.
-This sheet = overview + locked constants. ALL sizing evidence, sweep tables,
-context-budget math, throughput plan, pre-registered predictions → SIZING_V2.md.)*
+PART I = the one-page overview + locked constants. PART II = the in-depth
+sizing pre-registration: sweep evidence, context-budget math, throughput,
+predictions. One document, two altitudes.)*
+
+# PART I — Overview (one page)
 
 ## 1. Claim
 An agent whose experience is consolidated into weights (dream → LoRA) has a
@@ -15,9 +18,9 @@ no single episode). We measure the crossover; we report where retrieval wins.
 - **256 ingredients** (32 inert), nonce names (contamination-proof), each with a
   hidden **essence** ∈ **32 classes** (528 rules) + hidden **grade** ∈ {1,2}.
   Essences NEVER appear in any text (leakage is grep-able = property in the
-  physics). Sized by Monte Carlo (SIZING_V2 §3): small latents saturate in
+  physics). Sized by Monte Carlo (Part II §3): small latents saturate in
   tens of episodes; the accrual phase must also OUTRUN the context window
-  (info still arriving when 128k breaks — see SIZING_V2 §4).
+  (info still arriving when 128k breaks — see Part II §4).
 - **Rule table (per-run randomized):** unordered essence-pair → outcome family
   {product, nothing, ruin}. Product identity = f(essence pair, max grade) —
   compositional: knowing essences predicts **never-tried pairs**.
@@ -55,7 +58,7 @@ A-Mem added later as the strong published baseline. 🔴 approve arm list.
 x-axis is always **episodes**: measure at 60 / 240 / 960 / 3840 — all four are
 prefixes of ONE frozen life stream (same experience, growing exposure).
 Life generation is LLM-free (scripted explorer) → episodes are free; the cost
-driver is eval play (~1 A100-hr/seed total; SIZING_V2 §6). Secondary: LoRA rank {8, 32} — if the parametric
+driver is eval play (~1 A100-hr/seed total; Part II §6). Secondary: LoRA rank {8, 32} — if the parametric
 ceiling moves with rank, saturation is capacity, not mechanism. LoRA retrained
 from full curated corpus at each measurement point; checkpoint frozen per point
 (drift allowed by design, never inside a measurement).
@@ -87,3 +90,109 @@ from full curated corpus at each measurement point; checkpoint frozen per point
 
 **Sequence:** smoke test (6 ingredients, 20 eps, one arm, no measurement — plumbing
 only, on Qwen2.5-0.5B local) → time one episode → real run on leased GPU (7B).
+
+---
+
+# PART II — In-depth sizing pre-registration
+*(Everything below is reproducible:
+`PYTHONPATH=. .venv/bin/python alchemy/sizing_mc.py` → alchemy/sizing_mc.json.)*
+
+## 0. Why this document exists
+Session-1 postmortem: we did not scope experiment size before running, and
+paid for it in reversals. This time every scale number is either (a) computed
+by Monte Carlo against the actual environment code, or (b) an explicit
+literature-anchored estimate, BEFORE any GPU hour is spent.
+
+## 1. The instrument: information-availability ceiling
+For a life of E episodes, an IDEAL learner (union-find constraint propagation
+over product-family evidence; provably-correct class links, purity 1.00 in all
+runs) deduces some fraction of held-out pairs from the log alone. **No memory
+system can beat this ceiling** — it is what the log contains, independent of
+any substrate. It gives us:
+- the episode scale where the experiment is winnable (ceiling must still be
+  RISING across the x-axis, else there is nothing to accumulate);
+- an oracle line for the paper's main figure;
+- a normalizer (report arm score / ceiling).
+Conservative bias: evidence from product observations only (nothing/ruin kinds
+carry information a smarter learner could use), and the ScriptedExplorer is
+coverage-maximal — a real LLM player accrues slower. Both biases stretch the
+true accrual phase RIGHT of what we report. Safe direction.
+
+## 2. The two failures the MC caught before they cost GPU time
+1. **Latent too small.** 24 ingredients / 4 essences = 10 rules: ceiling
+   saturates by 30 episodes. There is no scaling curve to measure. (Sweep:
+   4→8→12 essences at N=48–96 all saturate by ~240 eps.)
+2. **"Learnable" must mean "learnable BEYOND context", not "learnable from
+   the log."** (Rohin's catch.) With N=64/K=12 the accrual phase ends at
+   ~120 eps ≈ 42k log-tokens — a 128k-context baseline holds ALL informative
+   experience in-window and the regime is not hard. The accrual phase itself
+   must outrun the context window.
+
+## 3. Sweep evidence (3 seeds; ceiling = deducible fraction of held-out pairs)
+| config | 60 eps | 240 | 960 | 1920 | 3840 | verdict |
+|---|---|---|---|---|---|---|
+| N=24 K=4 (v0) | .36* | .39 | .39 | — | — | dead by 30 eps |
+| N=64 K=12 | .39 | .47 | .47 | — | — | dead by 120 eps |
+| N=128 K=16 | .10 | .43 | .43 | .43 | .43 | dead by ~240 |
+| N=192 K=20 | .02 | .40 | .46 | .46 | .46 | dead by ~500 |
+| N=256 K=24 | .00 | .33 | .47 | .47 | .47 | accrual → ~700 |
+| **N=256 K=32 (LOCKED)** | **.00** | **.20** | **.46** | **.46** | **.46** | **accrual → ~800** |
+(*at 30 eps. Asymptote ≈0.46-0.47 everywhere = product-rule share × reactive-
+pair share — a property of the rule mix, not of scale.)
+
+**Locked config:** 256 ingredients (32 inert), 32 essence classes (528 rules),
+inventory 6, ≤12 steps, 30% structural holdout (never co-present in an
+inventory). Measurement points **60 / 240 / 960 / 3840** episodes:
+three points inside accrual, one deep in repetition.
+
+## 4. Context-budget table (the honest long-context arm)
+Log ≈ 200 tokens/episode (measured from generated logs, chars/4).
+| episodes | log tokens | 8k ctx | 32k | 128k | 1M |
+|---|---|---|---|---|---|
+| 60 | ~11k | BROKEN | ok | ok | ok |
+| 240 | ~45k | broken | BROKEN | ok | ok |
+| 960 | ~184k | broken | broken | **BREAKS HERE** | ok |
+| 3840 | ~785k | broken | broken | broken | strained |
+The long-context arm uses the reasoner's real window; each break row is a
+reported result ("N/A beyond E episodes"), not a handicap. Info is still
+ARRIVING at the 128k break point (ceiling .20→.46) — the regime is genuinely
+beyond-context, which answers "isn't this just in-context learning": past
+240 episodes it physically cannot be.
+
+## 5. Memory-capacity estimate (why LoRA size is NOT the binding constraint)
+To master the world: 256 class memberships (~8 bits each) + 528 rules +
+~317 product families ≈ 10–20 kB of structure; dreamed corpus at 3840 eps
+≈ 5–15k unique text lines ≈ 0.3M tokens. LoRA r=16 on a 7B (q,k,v,o) ≈ 30M
+params; knowledge-capacity literature (~2 bits/param, Allen-Zhu & Li
+"Physics of LMs 3.3") puts usable capacity orders of magnitude above need.
+The binding constraint is **exposure** (facts stick with repetition +
+paraphrase diversity — which is what the dreamer manufactures), not space.
+Rank sweep {8, 32} stays: if the plateau moves with rank we've shown a
+capacity limit; if not, a mechanism limit. Either is a finding.
+
+## 6. Throughput plan (Rohin: "efficiency is paramount")
+- **Life generation is FREE.** The experience stream is generated by the
+  ScriptedExplorer — zero LLM tokens, 0.1s per 960-episode life (after the
+  recipe-map caching fix; was minutes). 3840-episode lives are trivial.
+  All arms share ONE life stream per seed; points are prefixes of it.
+- **LLM costs, per seed:** dreams: ~3840 eps in ~384 chunks × ~1.5k tok ≈
+  0.6M tok (minutes on vLLM). LoRA trains: 2 substrate arms × 4 points ×
+  minutes. Task-success eval play: 6 arms × 4 points × 40 eps × 12 steps
+  × ~700 tok ≈ 8M tok ≈ 45 min A100. Held-out prediction eval: 6 arms × 4
+  points × 200 questions × ~200 tok ≈ 1M tok.
+- **Total ≈ 10M LLM tokens/seed ≈ 1 A100-hour/seed → 5 seeds ≈ half a day
+  on one A100.** Doubling everything still fits inside the 30-day quota
+  many times over. Episode count is NOT the cost driver; eval play is.
+
+## 7. Pre-registered predictions (falsifiable, written before the run)
+- long_context ≥ everything at 60 eps (all info in-window); N/A by 960.
+- RAG arms: rise through accrual, then FLAT-TO-FALLING 960→3840 (index
+  grows, k fixed, redundancy floods similarity).
+- LoRA-dreamed: below RAG at 60 (few exposures — injection needs
+  repetition), crosses during accrual, keeps rising 960→3840 (repetition
+  is consolidation fuel), tracks nearest to ceiling at 3840.
+- LoRA-raw vs LoRA-dreamed gap = the curation claim; if ~0, substrate-only
+  paper (still a paper — and redirects paper 2).
+- RAG wins exact-recall (seen pairs) at every scale. Printed, not hidden.
+- KILL: if LoRA-dreamed never beats both RAG arms on held-out composition
+  at any point while G1 (seen-pair recall ≥0.9) passes.
