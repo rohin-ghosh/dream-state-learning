@@ -103,3 +103,22 @@ per Rohin: overview on top, depth below). Perf fixes en route: recipe-map cache
 (960-ep life: minutes → 0.1s), nonce space 256→2048 names (N=256 worlds
 exhausted it and hung). Doc structure per Rohin: spec = high-level top +
 constants below; all depth in the same doc's Part II.
+
+## Connected-data principle + two ceilings (2026-08-19, Rohin)
+DOCUMENTED PER ROHIN: (1) The experiment's data must be CONNECTED/
+STRUCTURAL — memory must learn high-dim patterns that extrapolate; the
+game latent is intelligently generated as a structure spectrum: Stratum R
+(i.i.d. random core, incompressible, tests retention-at-scale), Stratum G
+(hidden geometric meta-pattern over essence classes → predicts rules never
+observed in any form; retrieval structurally cannot; 🔴 v2 inclusion),
+Stratum D (distractors/false correlates, tests not-learning). Not a
+"couple games into LoRA" problem — a scale+throughput problem.
+(2) Ceiling metric upgraded after Rohin's perfect-reasoner challenge: the
+i.i.d. core IS underivable (incompressibility is the design point — data
+is the only winning resource), but the learner's evidence model was too
+weak; ceiling v2 transfers any observed outcome across proven same-class
+pairs: asymptote 0.46→0.77 (residual = inert pairs, 1−(7/8)²). Report
+both ceilings; normalize by perfect-reasoner one.
+(3) Sizing requirement raised (Rohin): accrual phase alone must span
+5–10× context. N=512/K=64: accrual ~1920 eps ≈ 377k tok (3× of 128k,
+12× of Qwen native 32k). N=1024/K=96 sweep pending → target ≥5× of 128k.

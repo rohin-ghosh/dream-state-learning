@@ -11,7 +11,7 @@ import dataclasses
 import itertools
 import numpy as np
 
-REACTIVE = tuple(f"E{i}" for i in range(1, 33))  # internal only — never in text
+REACTIVE = tuple(f"E{i}" for i in range(1, 129))  # internal only — never in text
 INERT = "E0"
 COLORS = ("amber", "violet", "ashen", "cerulean", "russet", "pale")
 SMELLS = ("acrid", "sweet", "loamy", "metallic", "briny", "musky")

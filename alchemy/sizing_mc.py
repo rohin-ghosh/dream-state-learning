@@ -41,15 +41,25 @@ class UF:
         self.p[self.find(a)] = self.find(b)
 
 
-def ceiling(world, episodes, holdout):
-    # gather product observations: (i,j) -> family
-    fam = {}
+def ceiling(world, episodes, holdout, transfer=True):
+    """transfer=True upgrades the ideal learner: once two ingredients are
+    provably same-class (product evidence), ANY observed outcome (including
+    nothing/ruin) transfers across the class pair. Still conservative: no
+    elimination logic, inert ingredients never get classed."""
+    # gather ALL observations: (i,j) -> kind; product ones also give family
+    fam, kinds = {}, {}
     for ep in episodes:
         for st in ep["log"]:
             _, a, b = st["action"].split(" ")
+            key = tuple(sorted((a, b)))
             if "fuse into" in st["obs"]:
                 prod = st["obs"].split("fuse into ")[1].rstrip(".")
-                fam[tuple(sorted((a, b)))] = prod.rsplit("-", 1)[0]
+                fam[key] = prod.rsplit("-", 1)[0]
+                kinds[key] = "product"
+            elif "ruined" in st["obs"]:
+                kinds[key] = "ruin"
+            else:
+                kinds[key] = "nothing"
     # same-class evidence: common partner, same family
     uf = UF()
     by_partner = defaultdict(list)          # partner -> [(other, family)]
@@ -64,9 +74,14 @@ def ceiling(world, episodes, holdout):
             for o in others[1:]:
                 uf.union(others[0], o)
     # deducibility of holdout pairs
-    known = defaultdict(set)                # (class_a, class_b) observed
+    classed = set(uf.p)                     # classed via product evidence
+    known = defaultdict(set)                # class-pair -> evidence
     for (a, b), f in fam.items():
         known[frozenset((uf.find(a), uf.find(b)))].add(f)
+    if transfer:                            # kind-outcomes transfer too,
+        for (a, b), k in kinds.items():     # if both endpoints are classed
+            if a in classed and b in classed:
+                known[frozenset((uf.find(a), uf.find(b)))].add(k)
     ded = 0
     for a, b in holdout:
         if a not in world.ingredients or b not in world.ingredients:

@@ -28,6 +28,21 @@ no single episode). We measure the crossover; we report where retrieval wins.
   targets). **Distractors:** (a) inert-essence ingredients that never react;
   (b) visible surface features (color/smell) randomized independently of essence
   — a tempting false correlate.
+- **CONNECTED-DATA PRINCIPLE (Rohin, core design law for this experiment):**
+  the data must be structural — the memory's job is to learn high-dimensional
+  patterns that extrapolate to unseen positions, so the latent must be
+  INTELLIGENTLY GENERATED as a spectrum of structure, and eval reports per
+  stratum:
+  · **Stratum R (random core)** — i.i.d. rules; incompressible; must be
+    experienced; tests raw retention at scale. (Implemented.)
+  · **Stratum G (geometric)** — rules generated from a hidden meta-pattern
+    (essence classes on a hidden cycle/lattice; outcome = function of
+    distance; grade arithmetic). A learner that finds the representation can
+    predict rules NEVER OBSERVED IN ANY FORM — extrapolation beyond the
+    observational ceiling. Retrieval cannot in principle. 🔴 include in v2?
+    (my rec: yes — it is the induced-regularities claim at its purest)
+  · **Stratum D (distractor)** — inert ingredients + false-correlate surface
+    features; tests not-learning noise.
 - **Episode:** goal "craft ⟨target⟩", inventory = random subset of 6 ingredients
   (forces pair coverage to accrue only in aggregate), ≤12 combine steps,
   game value = depth-distance-to-target, logged per step (this is "state").
@@ -113,10 +128,22 @@ any substrate. It gives us:
   RISING across the x-axis, else there is nothing to accumulate);
 - an oracle line for the paper's main figure;
 - a normalizer (report arm score / ceiling).
-Conservative bias: evidence from product observations only (nothing/ruin kinds
-carry information a smarter learner could use), and the ScriptedExplorer is
-coverage-maximal — a real LLM player accrues slower. Both biases stretch the
-true accrual phase RIGHT of what we report. Safe direction.
+**What the ceiling number means (and Rohin's perfect-reasoner challenge):**
+the rules are i.i.d. random BY DESIGN, so unobserved rules are independent
+coin flips — no reasoner can derive the unseen from the seen. That
+incompressibility is the point: it makes experienced data the only winning
+resource (the thesis). But the learner's evidence model matters, so we report
+TWO ceilings:
+- **conservative** (product-evidence only): asymptote ≈0.46;
+- **perfect-reasoner** (v2: any observed outcome transfers across proven
+  same-class pairs): asymptote ≈0.77. The residual ~23% = pairs involving
+  inert ingredients (1−(7/8)² — unclassable without elimination logic).
+Headline normalizer = the perfect-reasoner ceiling. Remaining conservative
+bias: no elimination logic, and the ScriptedExplorer is coverage-maximal (a
+real LLM player accrues slower) — both stretch true accrual RIGHT. Safe
+direction. NOTE: a Stratum-G latent (Part I §2) has NO observational ceiling
+— a perfect representation-learner can exceed it; that is measured as
+extrapolation-beyond-ceiling, the strongest possible win condition.
 
 ## 2. The two failures the MC caught before they cost GPU time
 1. **Latent too small.** 24 ingredients / 4 essences = 10 rules: ceiling
@@ -144,6 +171,18 @@ pair share — a property of the rule mix, not of scale.)
 inventory 6, ≤12 steps, 30% structural holdout (never co-present in an
 inventory). Measurement points **60 / 240 / 960 / 3840** episodes:
 three points inside accrual, one deep in repetition.
+
+## 4a. The 5–10× requirement (Rohin)
+Beating context by ~40% is not the regime — at +100% the LTM barely holds
+representation the STM couldn't, and long-context+RAG hybrids plausibly tie.
+Requirement: the ACCRUAL PHASE ALONE (info still arriving) must span
+**5–10× the reasoner's context window**. Levers, in order of honesty:
+(1) latent size — N and K set total information (N=512/K=64: accrual to
+~1920 eps ≈ 377k tok; N=1024/K=96: sweep pending, projected ~4k eps ≈
+~750k tok); (2) honest window choice — Qwen2.5-7B native = 32k (184k-token
+life = 5.7× WITHOUT rope tricks; 128k variants reported too); (3) Stratum-G
+depth multiplies information without token cost. Target config chosen when
+the N=1024 sweep lands; requirement: accrual ≥5× the 128k window.
 
 ## 4. Context-budget table (the honest long-context arm)
 Log ≈ 200 tokens/episode (measured from generated logs, chars/4).
