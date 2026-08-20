@@ -266,3 +266,23 @@ discipline transfers directly; procedural-content-generation lit less so.
 - RAG wins exact-recall (seen pairs) at every scale. Printed, not hidden.
 - KILL: if LoRA-dreamed never beats both RAG arms on held-out composition
   at any point while G1 (seen-pair recall ≥0.9) passes.
+
+## 8. Parameter ledger — tested vs derived vs guessed (kept honest, updated per change)
+**TESTED (MC against real env code):** N=1024/K=96/128-inert lock (+ all
+rejected configs 24→2048); three ceiling tiers + full accrual curves
+(5 seeds at lock); accrual ≈770k log-tokens under tier-3; context-break
+points; structural holdout (assert-verified, 0 contamination); inert
+elimination 127–128/128; life-gen throughput (0.1s/960 eps); smoke
+pipeline end-to-end on 0.5B (timed).
+**DERIVED (arithmetic on tested numbers):** ~200 tok/episode (chars/4 —
+NOT real tokenizer counts yet; re-measure); sleep cadence ~160 eps;
+elimination threshold T=8 (0.4^8).
+**GUESSED (defaults / literature-anchored; sensitivity untested):** rule
+mix 60/25/15 (directly sets ceiling asymptotes — sensitivity sweep TODO);
+inventory 6; ≤12 steps; holdout 30%; grades {1,2}; seeds 5; LoRA rank
+{8,32}; ALL GPU costs at scale (never benchmarked); whether a LoRA learns
+this at all (= the experiment, not a parameter).
+**SPEC-AHEAD-OF-CODE (flagged):** chain targets depth 1–3 are claimed in
+§2 but generate_life only issues depth-1 targets today; chains exist in
+the physics, no episode pursues one, MC doesn't measure chain
+deducibility. Next generator milestone (10–20-ingredient chains, Rohin).
