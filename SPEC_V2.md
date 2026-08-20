@@ -147,6 +147,21 @@ from full curated corpus at each measurement point; checkpoint frozen per point
   stratum (e) and the task-success eval are this read made measurable.
 - **Salience:** encoding-time = state (no hindsight); consolidation-time = dream
   (episode outcomes). Both hand-built; the pair is what paper 2 learns.
+- **Division of labor (structural argument, goes in the paper):** the dreamer
+  is context-bounded too — it fires per ~window and can only induce patterns
+  visible within one chunk; regularities whose evidence spans hundreds of
+  episodes are invisible to any single dream call. The dreamer does LOCAL
+  work (dedup, salience filtering, orderings, paraphrases, goal-conditioning);
+  the LoRA is the only component that spans all chunks — complementary by
+  construction, not competing. RAG-dreamed is the built-in control: both
+  dreamed arms share the identical corpus, so LoRA-dreamed minus RAG-dreamed
+  isolates the substrate, not the dreamer.
+- **Dreamer ladder (ablation axis; variants are just prompts):** raw
+  transcription → per-episode summary → cross-episode patterns (current) →
+  + prior-memory-state access (renormalizing; where cross-chunk induction
+  first becomes possible) → action-conditioned emission. The curve measures
+  how much local processing the memory needs — v2 runs rungs 1 and 3; the
+  full ladder is the first follow-up ablation.
 
 ## 7. Metrics, gates, falsifier
 - **Primary:** held-out pair prediction accuracy (ground truth known — we set the

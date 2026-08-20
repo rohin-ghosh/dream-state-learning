@@ -194,3 +194,19 @@ gSCAN compositional-generalization literature.
   verify) over frozen base; prompt engine as SOFT PROMPTS (prefix tuning)
   not a decoder; verifier as sole backprop source = learned reward model
   (reward-hacking surface — its quality bounds the system).
+
+## 2026-08-20 close-out (dreamer division of labor + Jeremy reading list)
+- Dreamer is CONTEXT-BOUNDED: per-window local work only; cross-chunk
+  induction structurally impossible for it -> accumulation belongs to the
+  memory. Converts "dreamer does everything" from vulnerability to
+  architecture argument. Rohin's phrasing: "the dreamer does enough to
+  give power to the memory." Spec'd.
+- Dreamer ladder ablation (prompts-only variants): transcription /
+  per-episode summary / cross-episode patterns (v2) / +prior-memory access
+  (renormalizing) / action-conditioned. v2 runs rungs 1+3.
+- Forgetting stays corpus-level (not a dreamer concern) — confirmed.
+- Jeremy reading list: doc-to-LoRA (hypernetwork text->adapter, no grad
+  descent — could REPLACE retrain loop; read first), hypernetworks
+  (paper-2 candidate: outcome-credit hypernetwork emits the adapter),
+  Engram (startup; memory-layer arch), Harvey (market existence proof),
+  Sutton podcast (plasticity/experience framing — thesis-adjacent).
