@@ -172,3 +172,25 @@ gSCAN compositional-generalization literature.
    Sweep mixture => performance vs WORLD COMPRESSIBILITY curve (the map).
    Advisor caution adopted: parameterize+sweep, don't estimate reality's
    pattern distribution (discussion claim, not design dependency).
+
+## 2026-08-20 late adds (debug-agent evidence, Nemotron mtg, memory mechanics)
+- MEMORY = POLICY PRIOR (Rohin's formalization): read = "state + target
+  state in -> action prompt out"; captures pattern->action pathways. Spec'd
+  into read interface + format stratum (e) goal-conditioned lines.
+- REVERSAL CURSE fix spec'd + implemented: dreamer emits both orderings;
+  eval randomizes pair order. PARAPHRASE DIVERSITY spec'd as requirement
+  (Physics of LMs: single-phrasing knowledge is near-invisible).
+- Anti-forgetting = corpus-level: incremental dreams + cumulative corpus +
+  full-retrain-per-cycle (already the design; now stated). True generative
+  replay (re-dream old memories, reconcile) deferred v2.1+ with own gate.
+- FT-vs-RAG headwind literature named in predictions (our claim = induced
+  regularities, not fact injection).
+- Rank x rho interaction pre-registered (hold-vs-think split): rho_iid
+  should want rank; rho_fn shouldn't. Free second result.
+- Debug-agent evidence framing (advisor): proves LLM distillation works
+  HUMAN-GUIDED and INSIDE context (5k tok) — motivates the question,
+  doesn't answer it; it's the regime before our claim applies.
+- Deferred (paper 3): shared-trunk + small learned heads (dream/prompt/
+  verify) over frozen base; prompt engine as SOFT PROMPTS (prefix tuning)
+  not a decoder; verifier as sole backprop source = learned reward model
+  (reward-hacking surface — its quality bounds the system).

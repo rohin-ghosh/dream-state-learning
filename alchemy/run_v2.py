@@ -169,7 +169,8 @@ def phase3(world, holdout, life, C, out, backend, seed):
     hold_pairs = sorted(holdout)
     rng = np.random.default_rng(seed)
     rng.shuffle(hold_pairs)
-    hold_eval = hold_pairs[:C["eval_q"]]
+    hold_eval = [(b, a) if rng.random() < 0.5 else (a, b)
+                 for a, b in hold_pairs[:C["eval_q"]]]
     for E in C["points"]:
         key = str(E)
         if key in results:

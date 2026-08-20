@@ -22,3 +22,4 @@
   inference-cost story (does consolidate-to-LoRA beat long-context+KV-
   compression at the systems level?) + ONE intro to an agents/GEAR person.
   Feedback-first; no referral/collab ask.
+| 2026-08-20 | Jeremy (Nemotron) | internal mtg | DONE — went well | offered to REVIEW the project when ready (send it); pointed to agentic-memory Slack channel + papers; Nemotron building TASK-BASED AGENT-MEMORY BENCHMARK (opportunity: our env + ceiling instrument is exactly that — ask what stage, offer the environment); interns are grad students (consistent signal w/ Yaosheng: publication is the entry, not org chart) |

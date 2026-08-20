@@ -120,9 +120,31 @@ from full curated corpus at each measurement point; checkpoint frozen per point
   Dumb-dreamer arm = raw log transcription. **Memory text format (signed off):
   a MIX** — (a) declarative recipe facts, (b) cross-episode pattern/analogy
   lines, (c) a QA-format slice (matches the eval's register), (d) negative
-  knowledge (nothing/ruin pairs). All strata leakage-scanned.
+  knowledge (nothing/ruin pairs), (e) **goal-conditioned action lines**
+  ("To craft Z, combine X and Y") — the memory-as-policy-prior read (below).
+  All strata leakage-scanned. **Two format REQUIREMENTS (not options):**
+  (i) REVERSAL CURSE: rules are unordered pairs but "A+B→C" trained one way
+  often fails queried as "B+A" — every pair fact is emitted in BOTH
+  orderings (and eval questions randomize order to measure it honestly);
+  (ii) PARAPHRASE DIVERSITY: knowledge is only extractable if seen in
+  multiple phrasings (Physics of LMs 3.1) — the dreamer manufactures
+  varied paraphrases of the same regularity; corpus mixing is a
+  requirement, not an optimization.
+- **Anti-forgetting is corpus-level, not gradient-level:** dreams are
+  incremental (new episodes only), the corpus is cumulative (all raw + all
+  dreamed lines ever), and each cycle retrains the LoRA from scratch on the
+  full shuffled corpus — every retrain sees everything, so forgetting is
+  structurally impossible. (Dreamer re-reading OLD memories and reconciling
+  them — true generative replay / renormalization of the past — is deferred
+  to v2.1+ with its own gate: it trains on synthesized reinterpretation.)
 - **Read:** LoRA arms = just generate from the adapted model (no tool call);
   RAG arms = top-k (k tuned honestly for the baseline) into the same prompt slot.
+  **What the memory IS (Rohin's formalization, post-Nemotron):** a POLICY
+  PRIOR, not a knowledge store — the read interface is "given current state
+  + target state, what has worked", i.e. input + goal in, action prompt out.
+  The memory captures pattern→action pathways; the environment tests exactly
+  this (extrapolating action patterns across structured latents). Format
+  stratum (e) and the task-success eval are this read made measurable.
 - **Salience:** encoding-time = state (no hindsight); consolidation-time = dream
   (episode outcomes). Both hand-built; the pair is what paper 2 learns.
 
@@ -313,6 +335,16 @@ discipline transfers directly; procedural-content-generation lit less so.
 - LoRA-raw vs LoRA-dreamed gap = the curation claim; if ~0, substrate-only
   paper (still a paper — and redirects paper 2).
 - RAG wins exact-recall (seen pairs) at every scale. Printed, not hidden.
+- **Rank×mixture interaction (free second result, pre-registered):** if
+  memorization favors parameters and representation-finding favors data,
+  optimal LoRA rank shifts with the mixture — high ρ_iid worlds want rank
+  32 over 8; high ρ_fn worlds shouldn't care. Both sweeps already run.
+- **Named headwind (goes in related work, not discovered in review):** the
+  literature consistently finds fine-tuning UNDERPERFORMS RAG for injecting
+  atomic new facts and can raise hallucination elsewhere. Our claim is not
+  fact injection — it is induced regularities, the thing retrieval
+  structurally cannot produce; the ρ_iid stratum is where that literature
+  applies and where we pre-register our loss.
 - KILL: if LoRA-dreamed never beats both RAG arms on held-out composition
   at any point while G1 (seen-pair recall ≥0.9) passes.
 

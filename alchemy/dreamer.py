@@ -17,6 +17,9 @@ DREAM_SYS = (
     "you combine X with Y-like items, ...', 'X seems to react the same "
     "way as Z') over single-episode summaries. Include which combinations "
     "produce nothing or ruin the mixture — negative knowledge counts. "
+    "State every pair fact in BOTH orders (X with Y, and Y with X) and vary "
+    "your phrasing across lines — do not repeat one template. Also include "
+    "goal-form lines ('To craft Z, combine X and Y.'). "
     "Output one memory per line, no numbering, max {n} lines.")
 
 
