@@ -10,9 +10,11 @@ because it acquires **induced regularities** (cross-episode structure present in
 no single episode). We measure the crossover; we report where retrieval wins.
 
 ## 2. Environment — AlchemyWorld
-- **24 ingredients**, nonce names (contamination-proof), each with a hidden
-  **essence** ∈ 4 classes + hidden **grade** ∈ {1,2}. Essences NEVER appear in any
-  text (leakage is grep-able = property in the physics, no bookkeeping).
+- **64 ingredients** (8 inert), nonce names (contamination-proof), each with a
+  hidden **essence** ∈ **12 classes** + hidden **grade** ∈ {1,2}. Essences NEVER
+  appear in any text (leakage is grep-able = property in the physics). Sized by
+  Monte Carlo (alchemy/sizing_mc.py): 4 classes saturates by 30 episodes — the
+  latent must carry enough information to accrue across the whole x-axis.
 - **Rule table (per-run randomized):** unordered essence-pair → outcome family
   {product, nothing, ruin}. Product identity = f(essence pair, max grade) —
   compositional: knowing essences predicts **never-tried pairs**.
@@ -20,12 +22,18 @@ no single episode). We measure the crossover; we report where retrieval wins.
   targets). **Distractors:** (a) inert-essence ingredients that never react;
   (b) visible surface features (color/smell) randomized independently of essence
   — a tempting false correlate.
-- **Episode:** goal "craft ⟨target⟩", inventory = random subset of 8 ingredients
+- **Episode:** goal "craft ⟨target⟩", inventory = random subset of 6 ingredients
   (forces pair coverage to accrue only in aggregate), ≤12 combine steps,
   game value = depth-distance-to-target, logged per step (this is "state").
-- 276 possible base pairs; **held-out split enforced by construction**: ~30% of
-  pairs are never co-present in any episode inventory (physics, not luck — a
-  coverage-maximizing explorer would otherwise see everything; smoke-test find).
+- 2016 base pairs; **held-out split enforced by construction**: 30% of pairs are
+  never co-present in any episode inventory (physics, not luck — a coverage-
+  maximizing explorer would otherwise see everything; smoke-test find).
+- **Pre-registered oracle ceiling** (sizing MC, conservative ideal learner):
+  deducible fraction of held-out pairs = 0.13 @30 eps → 0.39 @60 → 0.47 @120 →
+  flat. Two named regimes: **accrual** (≤~120 eps, information arriving) and
+  **repetition** (>120 eps, information constant, exposure growing) — repetition
+  is where consolidation should shine and retrieval should drown. All arm
+  scores reported alongside (and normalized by) this ceiling.
 
 ## 3. Complexity types (each scored separately → the map, not one number)
 | type | what it tests | expected winner |
@@ -41,8 +49,8 @@ IS a result) · RAG-raw · RAG-dreamed · LoRA-raw · LoRA-dreamed.
 A-Mem added later as the strong published baseline. 🔴 approve arm list.
 
 ## 5. Scaling axes
-x-axis is always **episodes**: measure at 60 / 240 / 960 (batched generation for
-throughput; no design change). Secondary: LoRA rank {8, 32} — if the parametric
+x-axis is always **episodes**: measure at 60 / 240 / 960 — all three are
+prefixes of ONE frozen life stream (same experience, growing exposure). Secondary: LoRA rank {8, 32} — if the parametric
 ceiling moves with rank, saturation is capacity, not mechanism. LoRA retrained
 from full curated corpus at each measurement point; checkpoint frozen per point
 (drift allowed by design, never inside a measurement).
@@ -52,8 +60,10 @@ from full curated corpus at each measurement point; checkpoint frozen per point
 - **Dreamer = one prompted LLM call** per log chunk: sees episodes + outcomes +
   value logs (episode hindsight OK, eval set never). Emits **cross-episode
   pattern memories as text** (2nd person), not per-episode summaries.
-  Dumb-dreamer arm = raw log transcription. 🔴 memory text format sign-off —
-  highest-leverage choice in v2 (it's what the LoRA trains on).
+  Dumb-dreamer arm = raw log transcription. **Memory text format (signed off):
+  a MIX** — (a) declarative recipe facts, (b) cross-episode pattern/analogy
+  lines, (c) a QA-format slice (matches the eval's register), (d) negative
+  knowledge (nothing/ruin pairs). All strata leakage-scanned.
 - **Read:** LoRA arms = just generate from the adapted model (no tool call);
   RAG arms = top-k (k tuned honestly for the baseline) into the same prompt slot.
 - **Salience:** encoding-time = state (no hindsight); consolidation-time = dream

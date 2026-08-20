@@ -11,7 +11,7 @@ import dataclasses
 import itertools
 import numpy as np
 
-REACTIVE = ("E1", "E2", "E3", "E4")   # internal only — never in text
+REACTIVE = tuple(f"E{i}" for i in range(1, 13))  # internal only — never in text
 INERT = "E0"
 COLORS = ("amber", "violet", "ashen", "cerulean", "russet", "pale")
 SMELLS = ("acrid", "sweet", "loamy", "metallic", "briny", "musky")
@@ -43,13 +43,14 @@ class AlchemyWorld:
     """One life's physics. predict() is ground truth for held-out eval."""
 
     def __init__(self, n_ingredients: int = 24, n_inert: int = 4,
-                 seed: int = 0):
+                 seed: int = 0, n_essences: int = 4):
         rng = np.random.default_rng(seed)
         self.seed = seed
+        self.reactive = REACTIVE[:n_essences]
         used: set = set()
         self.ingredients: dict[str, Ingredient] = {}
         essences = ([INERT] * n_inert +
-                    [REACTIVE[i % len(REACTIVE)]
+                    [self.reactive[i % len(self.reactive)]
                      for i in range(n_ingredients - n_inert)])
         rng.shuffle(essences)
         for e in essences:
@@ -61,7 +62,7 @@ class AlchemyWorld:
         self.rules: dict[frozenset, tuple] = {}       # pair -> (kind, ...)
         self.products: dict[tuple, str] = {}          # (pairkey, grade) -> name
         self.product_essence: dict[str, str] = {}     # chains: derived essence
-        for pair in itertools.combinations_with_replacement(REACTIVE, 2):
+        for pair in itertools.combinations_with_replacement(self.reactive, 2):
             key = frozenset(pair) if pair[0] != pair[1] else frozenset([pair[0]])
             r = rng.random()
             if r < 0.6:
@@ -70,7 +71,7 @@ class AlchemyWorld:
                 for g in (1, 2):
                     pname = f"{fam}-{'I' * g}"
                     self.products[(key, g)] = pname
-                    self.product_essence[pname] = str(rng.choice(REACTIVE))
+                    self.product_essence[pname] = str(rng.choice(self.reactive))
             elif r < 0.85:
                 self.rules[key] = ("nothing",)
             else:

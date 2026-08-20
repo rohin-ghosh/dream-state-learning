@@ -67,3 +67,25 @@ SPEC_V2.md written (red-pen items: arm list, memory text format, episode
 counts). alchemy/ package built: world/env/player/dreamer/lora_mem/evals/
 run_smoke. Smoke = 8 ingredients, 20 eps, ScriptedExplorer for coverage,
 Qwen2.5-0.5B local (MPS) for dream+LoRA+read.
+
+## Sizing pre-registration (2026-08-19, alchemy/sizing_mc.py + sizing_mc.json)
+Method: information-availability ceiling — fraction of held-out pairs an
+IDEAL learner (union-find over product-family evidence; conservative,
+product-only) can deduce from the life log. No memory system can beat it.
+- 4 essences saturates by 30 eps (latent too small — no scaling regime).
+- LOCKED: N=64 ingredients (8 inert), K=12 essences, inventory 6, 30%
+  structural holdout. Ceiling: 0.13@30 → 0.39@60 → 0.47@120 → flat@960.
+- Two regimes named for the paper: ACCRUAL (≤~120 eps) vs REPETITION
+  (>120): info constant, exposure grows — consolidation's home turf,
+  retrieval's failure mode. MC uses the fastest-coverage explorer, so real
+  LLM play shifts accrual right = conservative.
+- Memory format LOCKED (Rohin): mix — declarative facts + cross-episode
+  patterns + QA slice + negative knowledge.
+- Capacity estimate: ≤~2k pair facts + 64 class memberships; LoRA r=16 on
+  7B ≈ 30M params — capacity not binding at this scale (lit: ~2 bits/param,
+  Physics-of-LMs 3.3); exposure/repetition is the binding constraint,
+  which is the thesis. Rank sweep {8,32} still runs (ceiling-moves test).
+- Compute estimate (A100, vLLM, 7B player): one 960-ep life ≈ 8M tok ≈
+  30–45 min; measurement points are prefixes (no extra lives); fresh-task
+  eval ≈ 20 min/arm/point; dreams negligible; LoRA trains minutes.
+  Full 2×2 + rails × 3 points × 5 seeds ≲ 3 A100-days — inside quota.
