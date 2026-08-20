@@ -219,3 +219,22 @@ gSCAN compositional-generalization literature.
 - Forgetting is fine (graceful, by design); EXCESS forgetting = capacity
   diagnosis. Instrument already exists: G1 seen-recall curve per rank
   across checkpoints (rank 8 degrades where 32 holds -> ceiling located).
+
+## 2026-08-20 postscript 2: loss menu + Engram path (Rohin Qs)
+LOSS DESIGN — next-token is SUBSTRATE not objective (reads are generations
+so any loss must shape the generative distribution; target/data/weighting
+are open): (1) context distillation [teacher-with-chunk vs student-with-
+weights KL] = "loss on intention," v2.1 ablation vs SFT; (2) self-study
+QA-probe loss (Cartridges/Eyuboglu — likely Engram's mechanism);
+(3) salience-weighted loss = PAPER 2 (felt head output becomes the sample
+weight: "paper 1 fixes the loss, paper 2 learns the loss weights");
+(4) policy loss on (state,goal)->action, success-weighted = paper 3 /
+action-conditioned dreamer rung. v2 ships SFT.
+ENGRAM PATH (down the line): v2 curve (proof) -> open env+benchmark
+(Nemotron play) -> DOGFOOD: dream Rohin's debug-agent logs into a LoRA,
+match the hand-distilled 5k prompt at fraction of context cost (their own
+100-tok-vs-100K metric, on a real NVIDIA workload) -> raise with three
+artifacts. Wedge vs Engram: they do static org docs; the experiential
+outcome-credited on-the-job loop is the empty quadrant. Moat includes the
+trust instrumentation (gates/ceilings/forgetting gauge). Fleet-scale
+later: hypernetwork write amortization + population tier.
