@@ -109,7 +109,8 @@ def _ask_ctx(backend, questions, ctx_block, batch=64):
     return outs
 
 
-def eval_pairs_arm(backend, world, pairs, arm, ctx_fn, lora=None):
+def eval_pairs_arm(backend, world, pairs, arm, ctx_fn, lora=None,
+                   sample_file=None):
     from alchemy.evals import Q, parse_answer, score_pair
     questions = [Q.format(a=a, b=b) for a, b in pairs]
     if lora:
@@ -119,6 +120,11 @@ def eval_pairs_arm(backend, world, pairs, arm, ctx_fn, lora=None):
                                      lora_path=lora)
     else:
         outs = _ask_ctx(backend, questions, ctx_fn)
+    if sample_file:
+        import json as _j
+        smp = [{"q": q, "out": o, "truth": list(world.predict(*p))}
+               for q, o, p in list(zip(questions, outs, pairs))[:15]]
+        sample_file.write_text(_j.dumps(smp, indent=1))
     scores, confab, abstain = [], 0, 0
     for (a, b), o in zip(pairs, outs):
         pred = parse_answer(o)
@@ -226,7 +232,8 @@ def phase3(world, holdout, life, C, out, backend, seed):
                 else:
                     ctx = lambda q: "(in weights)"
             t0 = time.time()
-            held = eval_pairs_arm(backend, world, hold_eval, arm, ctx, lora)
+            held = eval_pairs_arm(backend, world, hold_eval, arm, ctx, lora,
+                                  sample_file=out / f"samples_{E}_{arm}.json")
             # per-stratum breakdown (iid = retention, fn = extrapolation)
             for st_name in ("iid", "fn"):
                 sub = [p for p in hold_eval
