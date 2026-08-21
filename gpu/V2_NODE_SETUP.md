@@ -20,3 +20,14 @@
 
 Budget note (SPEC_V2 Part II §6): ~73M LLM tok/seed; 8 workers = full
 5-seed v2.0 in hours on H100-class; reruns are cheap by design.
+
+## GH200 (aarch64) setup recipe (learned 2026-08-21, lego-cg1-qct-034)
+1. CLEAN image has no driver. Install: nvidia-headless-580-server-open
+   + nvidia-utils-580-server (open module REQUIRED on Hopper/Grace).
+2. CRITICAL: nvidia-smi shows "No devices found" / dmesg shows
+   kmemsysNumaAddMemory failure until the kernel cmdline has
+   `memhp_default_state=online_movable` (GH200 coherent-memory NUMA
+   onlining). Add to GRUB_CMDLINE_LINUX_DEFAULT, update-grub, reboot.
+3. CUDA keyring repo for ARM = ubuntu2404/sbsa (not x86_64).
+4. torch: pip install torch --index-url .../whl/cu126 (aarch64 CUDA
+   wheels exist). vLLM: try pip wheel first; fallback = HF backend.
