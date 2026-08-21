@@ -26,7 +26,7 @@ from alchemy import dreamer, evals
 from alchemy.rag import TfidfIndex, memory_block
 
 ARMS = ("no_memory", "long_context", "rag_raw", "rag_dreamed",
-        "lora_raw", "lora_dreamed")
+        "lora_raw", "lora_dreamed", "lora_dreamed_multiread")
 
 
 def cfg_from_args(a):
@@ -208,7 +208,22 @@ def phase3(world, holdout, life, C, out, backend, seed):
                 if not (d / "adapter_config.json").exists():
                     row[arm] = {"na": True, "reason": "no adapter"}
                     continue
-                lora, ctx = str(d), (lambda q: "(in weights)")
+                lora = str(d)
+                if arm.endswith("multiread"):
+                    # explicit read protocol: interrogate the memory with
+                    # goal-conditioned queries, feed answers as context
+                    def ctx(q, _l=lora):
+                        reads = backend.generate(
+                            [f"To craft {q}, what should you combine? "
+                             "Answer from memory.",
+                             f"What do you remember about {q} and how it is "
+                             "made? Answer briefly.",
+                             "List combinations you remember that produce "
+                             "something, one per line, max 8."],
+                            max_tokens=96, lora_path=_l)
+                        return "\n".join(reads)
+                else:
+                    ctx = lambda q: "(in weights)"
             t0 = time.time()
             held = eval_pairs_arm(backend, world, hold_eval, arm, ctx, lora)
             recall = eval_pairs_arm(backend, world, seen_eval, arm, ctx, lora)

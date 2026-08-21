@@ -238,3 +238,17 @@ artifacts. Wedge vs Engram: they do static org docs; the experiential
 outcome-credited on-the-job loop is the empty quadrant. Moat includes the
 trust instrumentation (gates/ceilings/forgetting gauge). Fleet-scale
 later: hypernetwork write amortization + population tier.
+
+## 2026-08-20 pre-run intuition pass (Rohin Q&A adoptions)
+- ARM 7 ADDED: lora_dreamed_multiread — explicit read protocol before task
+  play: interrogate the adapted model with several goal/inventory queries,
+  assemble answers into working context, then act. Directly operationalizes
+  memory-as-policy-prior ("multiple queries for the overall vibe before
+  pushing intuition"). Implemented pre-run.
+- Clarified for run 1: extrapolation = class-membership inference + rule
+  transfer (rule-level extrapolation = rho_fn stratum, run 2); targets
+  depth-1 only; dreamer input = state/action/obs/VALUE logs, no thoughts
+  (scripted life; thought-inclusive dreams arrive with self-played lives).
+- Eval power restated: 200q free-form (not MC; ~2,900 possible product
+  names) x 7 points x 5 seeds = 7,000/arm/metric; prediction isolates
+  knowledge, task success measures usable-in-action.
