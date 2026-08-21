@@ -295,3 +295,20 @@ instead of pass/fail. Discuss before fleet run; canary unaffected.
   fn scores (target mid-range performance), then MC + sweep. Frontier-
   practice-then-sweep also applies to LoRA config: rank sweep exists;
   ADD target-module ablation (attention vs MLP — D2L used MLP down-proj).
+
+## 2026-08-21 canary diagnosis: the exposure failure (pre-registered, now measured)
+E=960 lora_dreamed held=0.42 DECOMPOSED = majority-class prior (answers
+NOTHING; P(nothing over holdout)=0.42 exactly; iid/fn sub-scores match
+per-stratum nothing-rates). E=1920 collapse to 0.02 = style tips to
+confident wrong product names. Dreamed corpus content VERIFIED healthy
+(goal-form/pattern lines, correct names) -> root cause = EXPOSURE ~1 per
+fact (1.6k lines / 1k+ facts, x4 identical epochs). Matches Physics-of-
+LMs single-exposure invisibility + our own pre-registered prediction.
+Own-goal found: dumb_dream deduped raw lines (destroyed natural
+frequency). FIXES (implementation debt on locked format, not new
+design): (1) no dedup; (2) augment_corpus — every observed fact x 6
+templates x both orderings, frequency-preserving, incl. QA slice;
+(3) abstention slice (unseen pairs -> UNKNOWN; 15%) so calibrated
+abstention exists in-weights. Canary + seed 1 finish as the NAIVE
+baseline (citable); fleet relaunches all seeds on fixed recipe.
+Also: per-truth-class accuracy added (acc_product = unguessable metric).
