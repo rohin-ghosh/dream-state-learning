@@ -21,10 +21,13 @@ def load_base(model_name: str, device: str = "auto"):
 
 
 def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
-               epochs: int = 4, lr: float = 2e-4, bsz: int = 4,
+               epochs: int = 4, lr: float = 2e-4, bsz: int = 32,
                max_len: int = 96, log=print, save_dir: str = ""):
-    """Causal-LM fine-tune on memory lines. Returns the adapted model."""
+    """Causal-LM fine-tune on memory lines. Returns the adapted model.
+    Throughput: length-sorted batching (minimal padding) + shuffled batch
+    ORDER per epoch (mixing preserved at batch granularity), bsz 32."""
     import torch
+    import numpy as np
     from peft import LoraConfig, get_peft_model
     cfg = LoraConfig(r=rank, lora_alpha=2 * rank, lora_dropout=0.05,
                      target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
@@ -35,9 +38,13 @@ def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
     opt = torch.optim.AdamW((p for p in model.parameters()
                              if p.requires_grad), lr=lr)
     tokenizer.pad_token = tokenizer.pad_token or tokenizer.eos_token
+    corpus = sorted(corpus, key=len)          # length-sorted -> tight pads
+    starts = list(range(0, len(corpus), bsz))
+    rng = np.random.default_rng(0)
     for ep in range(epochs):
         tot, nb = 0.0, 0
-        for i in range(0, len(corpus), bsz):
+        rng.shuffle(starts)                    # shuffle batch order
+        for i in starts:
             batch = tokenizer(corpus[i:i + bsz], return_tensors="pt",
                               padding=True, truncation=True,
                               max_length=max_len).to(dev)
