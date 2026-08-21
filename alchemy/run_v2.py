@@ -95,9 +95,14 @@ def phase2(C, out, model_name):
             if not corpus:
                 log(f"lora {kind}@{E}: EMPTY corpus, skipped")
                 continue
-            log(f"lora {kind}@{E}: training on {len(corpus)} lines")
+            # epoch budget scales inversely with corpus size: augmented
+            # corpora carry ~12 phrasings/fact internally, so huge corpora
+            # need fewer passes (53min/94k-lines/4ep measured => cap hours)
+            ep = C["epochs"] if len(corpus) < 50_000 else \
+                2 if len(corpus) < 300_000 else 1
+            log(f"lora {kind}@{E}: training on {len(corpus)} lines, {ep} epochs")
             m = train_lora(base, tok, corpus, rank=C["rank"],
-                           epochs=C["epochs"], save_dir=str(d), log=log)
+                           epochs=ep, save_dir=str(d), log=log)
             base = m.unload()          # strip adapter, recover clean base
             # unload() leaves peft_config behind -> next get_peft_model
             # STACKS adapters (caught by tiny shakeout). Scrub it.
