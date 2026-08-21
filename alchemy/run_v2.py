@@ -126,15 +126,25 @@ def eval_pairs_arm(backend, world, pairs, arm, ctx_fn, lora=None,
                for q, o, p in list(zip(questions, outs, pairs))[:15]]
         sample_file.write_text(_j.dumps(smp, indent=1))
     scores, confab, abstain = [], 0, 0
+    by_kind = {"product": [], "nothing": [], "ruin": []}
     for (a, b), o in zip(pairs, outs):
         pred = parse_answer(o)
-        s, c = score_pair(pred, world.predict(a, b))
+        truth = world.predict(a, b)
+        s, c = score_pair(pred, truth)
         scores.append(s); confab += int(c)
         abstain += int(pred[0] == "unknown")
+        by_kind[truth[0]].append(s == 1.0)
     n = max(len(pairs), 1)
-    return {"score": float(np.mean(scores)) if scores else 0.0,
-            "exact_acc": float(np.mean([s == 1.0 for s in scores])),
-            "confab_rate": confab / n, "abstain_rate": abstain / n, "n": n}
+    out = {"score": float(np.mean(scores)) if scores else 0.0,
+           "exact_acc": float(np.mean([s == 1.0 for s in scores])),
+           "confab_rate": confab / n, "abstain_rate": abstain / n, "n": n}
+    # per-truth-class accuracy: product-truth acc is the UNGUESSABLE
+    # knowledge metric (majority-class priors can't fake it)
+    for k, xs in by_kind.items():
+        if xs:
+            out[f"acc_{k}"] = float(np.mean(xs))
+            out[f"n_{k}"] = len(xs)
+    return out
 
 
 class BackendPlayer:
