@@ -344,3 +344,23 @@ only on task play — moot until adapters work.
   sentence. Candidate intro illustration for the paper.
 - Cosmos link (advisor): our LTM = world model FROM EXPERIENCE rather
   than observation — fast one-liner for non-memory audiences.
+
+## 2026-08-21 north-star riff (filed, none touches paper 1)
+- SLEEP PRESSURE = CONTENTION, not clock: replay and acting compete for
+  the same reasoning hardware; consolidate when marginal value of
+  consolidating > marginal value of acting. When-to-learn is learnable
+  and has the same shape as every other allocation decision. (Circadian
+  rhythm is Earth's forcing function; ours is compute contention.)
+- Central shared reasoner, modules (prompter/actor/verifier/dreamer)
+  COMPETE for it; currency = next-token generation; state is central
+  because policy is about state. Maven (Rohin's day job) = the
+  hand-designed version of this allocation problem one layer down —
+  credibility bridge worth using.
+- Hot-swap consolidation = async RL practice (train while actors run a
+  stale copy; off-policy staleness; Michael Loh's rollout work = internal
+  precedent). Parallelism converts the serial experience bottleneck into
+  a staleness problem, never eliminates it.
+- MOTIVATION SENTENCE (paper intro candidate): "Nobody optimizes for
+  agent-lifetime throughput because no agent has a lifetime."
+- Extended-pretraining (not fine-tuning) for base-weight updates needs
+  general-corpus replay mixed in (anti-degradation).
