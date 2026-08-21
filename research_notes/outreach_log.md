@@ -3,7 +3,9 @@
 |---|---|---|---|---|
 | 2026-08 | Jeremy Jordan | internal | meeting scheduled | SAE-probe compaction; hook = internal-repr vs task-outcome salience |
 | 2026-08-18 | Yaosheng Fu | internal | MEETING (Aug 18) | systems/arch, RocketKV/SparDA; hook = eviction≈write policy; ask = inference-cost feedback + one agents-team intro |
-| earlier | Yu Sun | cold email (ext) | no reply | bump due via INTERNAL channel |
+| earlier | Yu Sun | cold email (ext) | BUMPED 08-21 | awaiting reply |
+| 2026-08-21 | manager | 1:1 set up | scheduled | team-fit + intern-path conversation |
+| 2026-08-21 | Arjun Gupta | msg (no reply) | plan: in person | catch at office rather than re-ghost + ambush combo |
 
 ## Fu brief (2026-08-18 meeting)
 - Who: NVIDIA Research architecture/systems (since 2017; Princeton PhD,

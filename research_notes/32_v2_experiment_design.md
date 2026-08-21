@@ -312,3 +312,35 @@ templates x both orderings, frequency-preserving, incl. QA slice;
 abstention exists in-weights. Canary + seed 1 finish as the NAIVE
 baseline (citable); fleet relaunches all seeds on fixed recipe.
 Also: per-truth-class accuracy added (acc_product = unguessable metric).
+
+## 2026-08-21 SEED-0 (NAIVE BASELINE) COMPLETE — verdicts
+Full 7-point x 7-arm table in alchemy/v2_out/seed0_naive_results.json
+(report.py renders it). (1) G1 FAILS for naive LoRA everywhere (recall
+~0) => no substrate claims from this run, per pre-registered gates; it
+is the measured naive-consolidation baseline. (2) RAG: recall grows
+0.24->0.38 but held-out pinned ~0.25-0.30 vs ceiling ->1.0 — REMEMBERS
+BUT CANNOT COMPOSE (the predicted structural gap; format-caveat pending
+seed-1 samples). (3) SURPRISE: lora_raw@15360 (the ONE bf16-retrained
+adapter) scores held 0.38 / fn 0.31 vs zeros for all fp16 siblings =>
+fp16 numerical damage implicated ALONGSIDE exposure; fixed recipe fixes
+both; optional attribution ablation = bf16-without-augmentation seed.
+(4) multiread == lora_dreamed on predictions (same adapter), differs
+only on task play — moot until adapters work.
+
+## 2026-08-21 evening (Rohin, driving riff + decisions pending)
+- THREE-TIMESCALE UPDATES formalized: event->state, sequence->experience
+  (gist adapter), accumulated->world (base). Recency-skew risk named:
+  over-updating long-term memory from recent experience skews the world
+  model toward the recent; the weighing is genuinely hard and is what a
+  learned dreamer would be FOR.
+- DREAMER CO-LEARNING: reverses earlier "dreamer needs no training,
+  verifier carries it." Proposed reconciliation for Rohin's call:
+  dreamer = FROZEN GENERATOR (LLM emits candidate memories, amortized)
+  + LEARNED CURATOR (selection/weighting parameters co-learn with the
+  system, trained through verifier signal). Preserves both intuitions;
+  paper 2 = the curator. Decide before paper-2 framing is written.
+- Driving-triage example (one-hand drink vs oncoming truck): learned
+  arbitration between two learned behaviors = salience in one everyday
+  sentence. Candidate intro illustration for the paper.
+- Cosmos link (advisor): our LTM = world model FROM EXPERIENCE rather
+  than observation — fast one-liner for non-memory audiences.
