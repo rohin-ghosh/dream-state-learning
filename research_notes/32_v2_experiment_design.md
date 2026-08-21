@@ -273,3 +273,11 @@ fn geometry govern every tier — regularities transfer across depth.
 Node policy: nothing older than Ampere, nothing under 24GB (V100 s1114
 rejected); aarch64 g242 box = batch-2, vLLM-from-source risk flagged,
 HF-backend fallback plan. Keeping 3/4-dead H100 box (1 unit = 1 hr/node).
+
+## 2026-08-21 night (Rohin, co-design item — not blocking)
+fn-stratum DIFFICULTY LADDER: current cycle-distance geometry may be
+above the system's "IQ" at 7B+LoRA scale — if fn column reads ~0 we
+can't tell substrate-failure from question-too-hard. Proposal: graded fn
+sub-strata (easy one-hop regularities -> full geometry) => a
+difficulty-response curve ("how much structure can the memory induce")
+instead of pass/fail. Discuss before fleet run; canary unaffected.
