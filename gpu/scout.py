@@ -1,15 +1,17 @@
 """Colossus node scout — stop hand-browsing inventory.
 
-Searches for leasable GPU nodes matching our policy (SPEC/V2_NODE_SETUP):
-health Pass, AVAILABLE (or freeing soon), >=Ampere, no TS/engineering
-samples, ranked by (gpu gen, gpu count, cpu cores).
+POST api.colossus.nvidia.com/v5/resources/search (authorizedToReserve),
+pages through everything you can lease, filters to our policy
+(>= Ampere, no TS/engineering samples, AVAILABLE), ranks by gpu gen /
+count / cores. Health isn't in this payload — verify with nvidia-smi -L
+at grab time (V2_NODE_SETUP policy).
 
-Auth: export COLOSSUS_TOKEN=<bearer token>  (from the CLI, or browser
-devtools -> any colossus request -> Authorization header). Token is read
-from env only — never written to disk.
+Auth: COLOSSUS_TOKEN env var = the idToken JWT from the web UI
+(devtools console: sessionStorage 'access-id-tokens' -> idToken.token).
+~1h TTL; env-only, never written to disk.
 
-  python3 gpu/scout.py                 # default: the good stuff
-  python3 gpu/scout.py --any           # looser (include 1-GPU, ARM)
+  COLOSSUS_TOKEN=... python3 gpu/scout.py            # policy picks
+  COLOSSUS_TOKEN=... python3 gpu/scout.py --any      # everything leasable
 """
 
 from __future__ import annotations
@@ -20,69 +22,78 @@ import os
 import sys
 import urllib.request
 
-BASE = "https://colossus.nvidia.com/api/v5"
+API = "https://api.colossus.nvidia.com/v5/resources/search"
+GOOD = ("B200", "GB200", "GH200", "H200", "H100", "A100")
+BAD = ("TS1", "TS2", "SIFX", "SV0FX", "V100", "T4", "P100")
+GEN_RANK = {g: i for i, g in enumerate(GOOD)}
 
-GOOD_GPU = ("H100", "H200", "GH200", "A100", "B200")
-BAD_TAGS = ("TS1", "TS2", "SIFX", "SV0FX")   # engineering samples
 
-
-def api(path: str, payload: dict) -> dict:
+def post(payload: dict) -> dict:
     tok = os.environ.get("COLOSSUS_TOKEN", "")
     if not tok:
         sys.exit("COLOSSUS_TOKEN not set (see docstring)")
     req = urllib.request.Request(
-        BASE + path, data=json.dumps(payload).encode(),
+        API, data=json.dumps(payload).encode(),
         headers={"Content-Type": "application/json",
-                 "Authorization": tok if tok.startswith("Bearer ")
-                 else f"Bearer {tok}"})
+                 "Authorization": f"Bearer {tok.removeprefix('Bearer ')}"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.loads(r.read())
 
 
-def score(r: dict) -> tuple:
-    tag = (r.get("gpuTag") or "").upper()
-    gen = next((i for i, g in enumerate(
-        ("B200", "GH200", "H200", "H100", "A100")) if g in tag), 9)
-    return (-999 if gen == 9 else -gen, r.get("gpuCount", 0),
-            r.get("cpuCores", 0))
+def gpu_tag(r: dict) -> str:
+    for g in r.get("gpus") or []:
+        for k in ("tag", "gpuTag", "productName", "name", "marketingName"):
+            v = g.get(k) if isinstance(g, dict) else None
+            if v:
+                return str(v).upper()
+    return " ".join(map(str, r.get("tags") or [])).upper()
+
+
+def cores(r: dict) -> int:
+    tot = 0
+    for c in r.get("cpus") or []:
+        for s in c.get("sockets") or []:
+            tot += s.get("cores") or 0
+    return tot
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--any", action="store_true")
-    ap.add_argument("--limit", type=int, default=25)
+    ap.add_argument("--limit", type=int, default=30)
     a = ap.parse_args()
-    res = api("/resources/search", {
-        "filters": {"status": "AVAILABLE"}, "limit": 500})
-    rows = res.get("resources") or res.get("items") or res.get("data") or []
-    out = []
-    for r in rows:
-        tag = (r.get("gpuTag") or r.get("gpu_tag") or "").upper()
-        cnt = r.get("gpuCount") or r.get("gpu_count") or 0
-        health = (r.get("gpuHealthIndicator")
-                  or r.get("gpu_health") or "").lower()
-        if any(b in tag for b in BAD_TAGS):
-            continue
-        if not any(g in tag for g in GOOD_GPU):
-            continue
-        if health and health != "pass":
-            continue
-        if not a.any and cnt < 2 and "GH200" not in tag:
-            continue
-        out.append({"name": r.get("name") or r.get("resourceName"),
-                    "tag": tag, "gpus": cnt,
-                    "cores": r.get("cpuCores") or r.get("cpu_cores"),
-                    "pool": r.get("poolName") or r.get("pool_name"),
-                    "health": health or "?"})
-    out.sort(key=lambda r: score(r), reverse=True)
+    out, seen = [], set()
+    fams = GOOD if not a.any else GOOD + ("L40", "A6000", "6000",)
+    for fam in fams:
+        res = post({"pageSize": 200, "authorizedToReserve": True,
+                    "partialMatchFilters": True,
+                    "filters": {"gpuTag": [fam],
+                                "status": ["AVAILABLE"]}})
+        for r in res.get("resources", []):
+            if r.get("id") in seen:
+                continue
+            seen.add(r.get("id"))
+            # exact tag lives in the search filter echo; recover from tags
+            # field or query the UI-visible gpuTag via the row
+            tag = (r.get("gpuTag") or gpu_tag(r) or fam).upper()
+            cnt = r.get("gpuCount") or 0
+            if cnt < 1 or any(b in tag for b in BAD):
+                continue
+            gen = next((g for g in GOOD if g in tag or g == fam), fam)
+            out.append({
+                "name": r.get("name"), "tag": tag[:34], "gpus": cnt,
+                "cores": cores(r), "pool": r.get("poolName"),
+                "type": r.get("machineType"),
+                "rank": (GEN_RANK.get(gen, 99), -cnt, -cores(r))})
+    print(f"[scout] {len(out)} AVAILABLE policy candidates")
+    out.sort(key=lambda x: x["rank"])
     if not out:
-        print("no matches — dump one raw row to adapt field names:")
-        print(json.dumps(rows[:1], indent=1)[:800])
+        print("no policy matches; rerun with --any")
         return
-    print(f"{'name':<22}{'tag':<28}{'gpus':>5}{'cores':>6}  pool")
+    print(f"{'name':<24}{'gpu tag':<36}{'n':>3}{'cores':>6}  pool / type")
     for r in out[:a.limit]:
-        print(f"{r['name']:<22}{r['tag']:<28}{r['gpus']:>5}"
-              f"{str(r['cores']):>6}  {r['pool']}")
+        print(f"{r['name']:<24}{r['tag']:<36}{r['gpus']:>3}"
+              f"{r['cores']:>6}  {r['pool']} / {r['type']}")
 
 
 if __name__ == "__main__":
