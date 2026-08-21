@@ -37,7 +37,7 @@ def cfg_from_args(a):
     return dict(n_ingredients=1024, n_inert=128, n_essences=96, inv=6,
                 points=[60, 320, 960, 1920, 3840, 7680, 15360],
                 eval_q=200, eval_eps=200, dream_chunk=96, rank=16, epochs=4,
-                max_tier=3, rho_fn=0.4)
+                max_tier=4, rho_fn=0.4)
 
 
 def log(msg):

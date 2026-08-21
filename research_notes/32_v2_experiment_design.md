@@ -265,3 +265,11 @@ targets depth ~1-4 mixed + basic rho mixture iid/fn) + chain-aware
 sizing-MC rerun; real run on upgraded world. Node evidence for complaint:
 4u4g-gen-0310 3/4 GPUs RmInitAdapter 0x22:0x38 (897->776), PCIe Gen5 x16
 healthy, persists across proprietary/open drivers + BMC power cycle.
+
+## 2026-08-21 (Rohin): chains longer (max_tier 4, mix .3/.3/.25/.15);
+episode-count increase pending canary timings (candidate +30720 point).
+Patterns-between-chains confirmed already present: same essence rules +
+fn geometry govern every tier — regularities transfer across depth.
+Node policy: nothing older than Ampere, nothing under 24GB (V100 s1114
+rejected); aarch64 g242 box = batch-2, vLLM-from-source risk flagged,
+HF-backend fallback plan. Keeping 3/4-dead H100 box (1 unit = 1 hr/node).

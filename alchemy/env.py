@@ -47,7 +47,7 @@ def run_episode(world: AlchemyWorld, player, target: str,
             "target_depth": target_depth}
 
 
-DEPTH_MIX = {1: 0.4, 2: 0.35, 3: 0.25}   # chain-depth target mixture
+DEPTH_MIX = {1: 0.3, 2: 0.3, 3: 0.25, 4: 0.15}   # chain-depth target mixture
 
 
 def generate_life(world: AlchemyWorld, player, n_episodes: int,
