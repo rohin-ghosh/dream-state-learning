@@ -281,3 +281,17 @@ can't tell substrate-failure from question-too-hard. Proposal: graded fn
 sub-strata (easy one-hop regularities -> full geometry) => a
 difficulty-response curve ("how much structure can the memory induce")
 instead of pass/fail. Discuss before fleet run; canary unaffected.
+
+## 2026-08-21 eval-integrity items (from Rohin's verification standards)
+- REPRODUCIBILITY RULE (standing): no reported number without a repo
+  script computing it (report.py; extend as metrics land).
+- fn-INFLATION CONTROL (before quoting any fn/held-out win): fn answers
+  are far more guessable than iid (shared families per distance => small
+  answer space). Add MAJORITY-FAMILY GUESSING BASELINE computed from
+  ground truth; fn extrapolation claims must beat it, not the floor.
+  Triggered by lora_dreamed@960 held=0.42 > implied class-transfer bound
+  (~0.32) — verify before celebrating.
+- Memory-IQ calibration: anchor difficulty ladder empirically to canary
+  fn scores (target mid-range performance), then MC + sweep. Frontier-
+  practice-then-sweep also applies to LoRA config: rank sweep exists;
+  ADD target-module ablation (attention vs MLP — D2L used MLP down-proj).
