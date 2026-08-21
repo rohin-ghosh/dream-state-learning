@@ -33,10 +33,11 @@ def cfg_from_args(a):
     if a.tiny:
         return dict(n_ingredients=24, n_inert=3, n_essences=6, inv=5,
                     points=[20, 60], eval_q=12, eval_eps=6, dream_chunk=10,
-                    rank=8, epochs=3)
+                    rank=8, epochs=3, max_tier=2, rho_fn=0.3)
     return dict(n_ingredients=1024, n_inert=128, n_essences=96, inv=6,
                 points=[60, 320, 960, 1920, 3840, 7680, 15360],
-                eval_q=200, eval_eps=200, dream_chunk=96, rank=16, epochs=4)
+                eval_q=200, eval_eps=200, dream_chunk=96, rank=16, epochs=4,
+                max_tier=3, rho_fn=0.4)
 
 
 def log(msg):
@@ -226,6 +227,13 @@ def phase3(world, holdout, life, C, out, backend, seed):
                     ctx = lambda q: "(in weights)"
             t0 = time.time()
             held = eval_pairs_arm(backend, world, hold_eval, arm, ctx, lora)
+            # per-stratum breakdown (iid = retention, fn = extrapolation)
+            for st_name in ("iid", "fn"):
+                sub = [p for p in hold_eval
+                       if world.stratum_of(*p) == st_name]
+                if len(sub) >= 5:
+                    held[f"{st_name}"] = eval_pairs_arm(
+                        backend, world, sub, arm, ctx, lora)["score"]
             recall = eval_pairs_arm(backend, world, seen_eval, arm, ctx, lora)
             ts = task_success(backend, world, holdout, arm, ctx, lora,
                               C["eval_eps"], C["inv"], seed)
@@ -253,7 +261,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     world = AlchemyWorld(n_ingredients=C["n_ingredients"],
                          n_inert=C["n_inert"], seed=a.seed,
-                         n_essences=C["n_essences"])
+                         n_essences=C["n_essences"],
+                         max_tier=C["max_tier"], rho_fn=C["rho_fn"])
     holdout = world.sample_holdout(0.3, seed=a.seed)
     from alchemy.backend import make_backend
     if a.phase in ("all", "1"):

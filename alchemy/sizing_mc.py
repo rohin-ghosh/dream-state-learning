@@ -60,7 +60,22 @@ def ceiling(world, episodes, holdout, transfer=True):
                 kinds[key] = "ruin"
             else:
                 kinds[key] = "nothing"
-    # same-class evidence: common partner, same family
+    # same-class evidence: common partner, same family.
+    # MIXTURE FIX: fn-stratum families are shared across essence-pairs at
+    # equal distance, so they are AMBIGUOUS class evidence — link classes
+    # via iid-unique families only (oracle stratum labels; makes this a
+    # conservative bound: a geometry-aware learner can deduce strictly more
+    # on the fn stratum, up to 1.0 once positions are pinned).
+    iid_fams = set()
+    for key, st in getattr(world, "pair_stratum", {}).items():
+        if st == "iid" and world.rules[key][0] == "product":
+            for tier in range(1, getattr(world, "max_tier", 1) + 1):
+                p = world.products.get((key, 1, tier)) or \
+                    world.products.get((key, 1))
+                if p:
+                    iid_fams.add(p.rsplit("-", 1)[0])
+    if iid_fams:
+        fam = {k: f for k, f in fam.items() if f in iid_fams}
     uf = UF()
     by_partner = defaultdict(list)          # partner -> [(other, family)]
     for (a, b), f in fam.items():
