@@ -90,7 +90,11 @@ def augment_corpus(episodes: list, world, abstain_frac: float = 0.15,
     # specifically — sampled from ALL unseen, holdout is a subset; the
     # model learns 'unseen => unknown', not holdout answers)
     names = sorted(world.ingredients)
-    n_abs = int(len(out) * abstain_frac)
+    # CAP the abstention slice: it must teach 'unseen => unknown' as a
+    # BEHAVIOR without materially covering the unseen space (an uncapped
+    # slice would UNKNOWN-train much of the holdout and suppress the
+    # extrapolation measurement)
+    n_abs = min(int(len(out) * abstain_frac), 2500)
     tries = 0
     while n_abs > 0 and tries < n_abs * 20:
         tries += 1
