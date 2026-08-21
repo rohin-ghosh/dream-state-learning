@@ -9,8 +9,11 @@ def load_base(model_name: str, device: str = "auto"):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(model_name)
-    dev = ("mps" if torch.backends.mps.is_available() else "cpu") \
-        if device == "auto" else device
+    if device == "auto":
+        dev = ("cuda" if torch.cuda.is_available()
+               else "mps" if torch.backends.mps.is_available() else "cpu")
+    else:
+        dev = device
     model = AutoModelForCausalLM.from_pretrained(
         model_name, torch_dtype=torch.float32 if dev == "cpu"
         else torch.float16).to(dev)
