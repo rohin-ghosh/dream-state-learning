@@ -265,13 +265,24 @@ def main():
                          max_tier=C["max_tier"], rho_fn=C["rho_fn"])
     holdout = world.sample_holdout(0.3, seed=a.seed)
     from alchemy.backend import make_backend
+    if a.phase == "all" and a.backend == "vllm":
+        # PROCESS ISOLATION per phase: in-process teardown does not reliably
+        # free CUDA memory (canary: phase-3 vLLM refused with phase-2's HF
+        # model resident). Each phase gets a fresh interpreter.
+        import subprocess, sys as _sys
+        for ph in ("1", "2", "3"):
+            log(f"=== phase {ph} (subprocess) ===")
+            r = subprocess.run([_sys.executable, __file__, "--seed",
+                                str(a.seed), "--model", a.model,
+                                "--backend", a.backend, "--phase", ph,
+                                "--out", str(out)]
+                               + (["--tiny"] if a.tiny else []))
+            if r.returncode != 0:
+                raise SystemExit(f"phase {ph} failed rc={r.returncode}")
+        return
     if a.phase in ("all", "1"):
         be = make_backend(a.backend, a.model)
         life = phase1(world, holdout, C, out, be, a.seed)
-        if a.backend == "vllm" and a.phase == "all":
-            del be  # free GPU before peft
-            import gc, torch
-            gc.collect(); torch.cuda.empty_cache()
     if a.phase in ("all", "2"):
         phase2(C, out, a.model)
     if a.phase in ("all", "3"):

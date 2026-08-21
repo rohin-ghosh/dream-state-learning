@@ -14,9 +14,10 @@ def load_base(model_name: str, device: str = "auto"):
                else "mps" if torch.backends.mps.is_available() else "cpu")
     else:
         dev = device
+    dt = (torch.float32 if dev == "cpu"
+          else torch.bfloat16 if dev == "cuda" else torch.float16)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name, torch_dtype=torch.float32 if dev == "cpu"
-        else torch.float16).to(dev)
+        model_name, torch_dtype=dt).to(dev)
     return model, tok
 
 
@@ -51,6 +52,8 @@ def train_lora(base_model, tokenizer, corpus: list, rank: int = 16,
             out = model(**batch, labels=batch["input_ids"].masked_fill(
                 batch["attention_mask"] == 0, -100))
             out.loss.backward()
+            torch.nn.utils.clip_grad_norm_(
+                (p for p in model.parameters() if p.requires_grad), 1.0)
             opt.step(); opt.zero_grad()
             tot += float(out.loss.detach()); nb += 1
         log(f"  [lora] epoch {ep + 1}/{epochs} loss {tot / max(nb, 1):.3f}")
