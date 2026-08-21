@@ -66,6 +66,16 @@ class VLLMBackend:
     def generate(self, prompts, max_tokens=64, lora_path=None):
         from vllm import SamplingParams
         sp = SamplingParams(max_tokens=max_tokens, temperature=0.0)
+        # hard guard: truncate any prompt that would exceed the window
+        # (front-truncate: keep the most recent content + instructions tail)
+        limit = self.max_len - max_tokens - 64
+        safe = []
+        for p in prompts:
+            ids = self.tok(p)["input_ids"]
+            if len(ids) > limit:
+                p = self.tok.decode(ids[-limit:], skip_special_tokens=True)
+            safe.append(p)
+        prompts = safe
         req = None
         if lora_path:
             from vllm.lora.request import LoRARequest

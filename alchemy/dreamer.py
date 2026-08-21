@@ -53,13 +53,25 @@ def llm_dream(episodes: list, model, tokenizer, world,
 
 
 def backend_dream(episodes: list, backend, world,
-                  chunk: int = 96, max_lines: int = 60) -> list:
-    """Sleep-cadence dreaming: one prompted call per ~context of episodes
-    (SPEC_V2 sleep cadence: ~96 eps @ 332 tok/ep ~= 32k). Batched."""
-    prompts = []
-    for i in range(0, len(episodes), chunk):
-        block = episodes_to_text(episodes[i:i + chunk])
-        prompts.append(DREAM_SYS.format(n=max_lines) + "\n\n" + block)
+                  chunk: int = 96, max_lines: int = 60,
+                  token_budget: int = 22000) -> list:
+    """Sleep-cadence dreaming, TOKEN-BUDGETED: accumulate episodes until
+    ~token_budget input tokens, then dream that chunk (chain episodes vary
+    in length, so fixed episode counts can overflow the window — canary
+    bug 2026-08-21)."""
+    count = (backend.n_tokens if hasattr(backend, "n_tokens")
+             else lambda t: len(t) // 4)
+    prompts, cur, cur_tok = [], [], 0
+    for ep in episodes:
+        t = count(episodes_to_text([ep]))
+        if cur and cur_tok + t > token_budget:
+            prompts.append(DREAM_SYS.format(n=max_lines) + "\n\n"
+                           + episodes_to_text(cur))
+            cur, cur_tok = [], 0
+        cur.append(ep); cur_tok += t
+    if cur:
+        prompts.append(DREAM_SYS.format(n=max_lines) + "\n\n"
+                       + episodes_to_text(cur))
     out = []
     for txt in backend.generate(prompts, max_tokens=1200):
         for line in txt.splitlines():
