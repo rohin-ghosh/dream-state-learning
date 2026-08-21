@@ -252,3 +252,16 @@ later: hypernetwork write amortization + population tier.
 - Eval power restated: 200q free-form (not MC; ~2,900 possible product
   names) x 7 points x 5 seeds = 7,000/arm/metric; prediction isolates
   knowledge, task success measures usable-in-action.
+
+## 2026-08-20 SCOPE CHANGE (Rohin): chains + mixture promoted INTO run 1
+Rationale (Rohin, adopted): depth-1 pairs are the neural-learner worst
+case — one weak isolated constraint per observation, evidence thin over
+~500k pairs; chains are conjunctions that PROPAGATE (one failed step
+falsifies many hypotheses; valid chains rare = sharply identifying;
+sequences compress into procedures = policy-prior-shaped). Literature
+(comp-gen) supports structured strata. Plan: tonight's 1-GPU canary on
+depth-1/rho_iid world = PLUMBING-TRUTH ONLY; generator upgrade (chain
+targets depth ~1-4 mixed + basic rho mixture iid/fn) + chain-aware
+sizing-MC rerun; real run on upgraded world. Node evidence for complaint:
+4u4g-gen-0310 3/4 GPUs RmInitAdapter 0x22:0x38 (897->776), PCIe Gen5 x16
+healthy, persists across proprietary/open drivers + BMC power cycle.
