@@ -31,3 +31,7 @@ Budget note (SPEC_V2 Part II §6): ~73M LLM tok/seed; 8 workers = full
 3. CUDA keyring repo for ARM = ubuntu2404/sbsa (not x86_64).
 4. torch: pip install torch --index-url .../whl/cu126 (aarch64 CUDA
    wheels exist). vLLM: try pip wheel first; fallback = HF backend.
+5. vLLM aarch64 wheel is built for cu130: align with
+   pip install --force-reinstall torch torchvision --index-url .../whl/cu130
+   (+ nvidia-cuda-runtime-cu13; add its lib dir to LD_LIBRARY_PATH in the
+   venv activate). VALIDATED end-to-end 2026-08-21 on lego-cg1-qct-034.
