@@ -35,12 +35,73 @@ def episodes_to_text(episodes: list) -> str:
 
 
 def dumb_dream(episodes: list) -> list:
-    """Raw log -> flat factual lines. No curation, no generalization."""
+    """Raw log -> flat factual lines. No curation, no generalization.
+    NO dedup: natural frequency is signal (facts experienced often should
+    be trained often — free exposure weighting)."""
     out = []
     for ep in episodes:
         for st in ep["log"]:
             out.append(st["obs"])
-    return sorted(set(out))
+    return out
+
+
+PARA_PRODUCT = (
+    "You combine {a} and {b}. They fuse into {p}.",
+    "Combining {a} with {b} yields {p}.",
+    "{a} and {b} together make {p}.",
+    "To craft {p}, combine {a} and {b}.",
+    "Q: What happens when you combine {a} and {b}? A: PRODUCT {p}",
+    "Mixing {b} with {a} produces {p}.",
+)
+PARA_NOTHING = (
+    "You combine {a} and {b}. Nothing happens.",
+    "{a} and {b} do not react.",
+    "Q: What happens when you combine {a} and {b}? A: NOTHING",
+)
+PARA_RUIN = (
+    "You combine {a} and {b}. The mixture curdles and is ruined.",
+    "{a} and {b} ruin the mixture.",
+    "Q: What happens when you combine {a} and {b}? A: RUIN",
+)
+
+
+def augment_corpus(episodes: list, world, abstain_frac: float = 0.15,
+                   seed: int = 0) -> list:
+    """Exposure manufacturing (spec REQUIREMENT, was unimplemented):
+    every observed fact -> both orderings x varied templates (incl. a
+    QA-format slice), plus an UNKNOWN slice for never-observed pairs so
+    calibrated abstention exists in-weights. Frequency preserved: a fact
+    seen k times is augmented k times."""
+    import numpy as np
+    rng = np.random.default_rng(seed)
+    out = []
+    seen = set()
+    for ep in episodes:
+        for st in ep["log"]:
+            _, a, b = st["action"].split(" ")
+            seen.add(tuple(sorted((a, b))))
+            kind, prod = world.predict(a, b)
+            tpl = (PARA_PRODUCT if kind == "product"
+                   else PARA_RUIN if kind == "ruin" else PARA_NOTHING)
+            for t in tpl:
+                for x, y in ((a, b), (b, a)):
+                    out.append(t.format(a=x, b=y, p=prod))
+    # abstention slice: unseen base pairs -> UNKNOWN (never eval holdout
+    # specifically — sampled from ALL unseen, holdout is a subset; the
+    # model learns 'unseen => unknown', not holdout answers)
+    names = sorted(world.ingredients)
+    n_abs = int(len(out) * abstain_frac)
+    tries = 0
+    while n_abs > 0 and tries < n_abs * 20:
+        tries += 1
+        a, b = rng.choice(names, 2, replace=False)
+        if tuple(sorted((a, b))) in seen:
+            continue
+        out.append(f"Q: What happens when you combine {a} and {b}? "
+                   "A: UNKNOWN")
+        n_abs -= 1
+    rng.shuffle(out)
+    return out
 
 
 def llm_dream(episodes: list, model, tokenizer, world,

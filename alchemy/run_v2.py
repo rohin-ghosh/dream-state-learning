@@ -46,6 +46,7 @@ def log(msg):
 
 # ---------------------------------------------------------------- phase 1
 def phase1(world, holdout, C, out, backend, seed):
+    a_seed = seed
     life_f = out / "life.json"
     if life_f.exists():
         life = json.loads(life_f.read_text())
@@ -65,8 +66,12 @@ def phase1(world, holdout, C, out, backend, seed):
             if kind == "raw":
                 corp = dreamer.dumb_dream(prefix)
             else:
+                # dreamed = LLM pattern lines + exposure-manufactured
+                # fact corpus (paraphrases x orderings + abstention slice)
                 corp = dreamer.backend_dream(prefix, backend, world,
                                              chunk=C["dream_chunk"])
+                corp = corp + dreamer.augment_corpus(prefix, world,
+                                                     seed=a_seed)
             leaks = [l for l in corp if world.leakage_scan(l)]
             assert not leaks, f"G2 leak: {leaks[:3]}"
             f.write_text(json.dumps(corp))
