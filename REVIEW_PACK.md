@@ -79,6 +79,12 @@ pairs — the G1 gate ≥0.9), **task success** (200 fresh games).
   kind-accuracy as noise.
 
 ## 4. Results
+**FORMAL VERDICT (2026-08-22, 2 seeds):** the v2.1 recipe **fails the
+pre-registered falsifier** — at E=3840, lora_dreamed − best-RAG = −0.021
+(needed ≥ +0.05). Per pre-registration: the substrate claim is dead *in
+this form* (rank-16, one-pass dreaming). This is the honest, expected
+outcome that forces the enrichment × capacity experiment; the first
+capacity cell (rank 64, reusing seed-1's corpora) is ALREADY RUNNING.
 ### Seed 0 — naive recipe (COMPLETE; alchemy/v2_out/seed0_naive_results.json)
 - Naive LoRA arms: recall ≈ 0 everywhere (G1 fail ⇒ no claims); by
   mid-life they answer confidently and wrongly (confab ~0.6–1.0). The one
@@ -203,7 +209,8 @@ phrasings/fact × both orderings + QA lines + capped UNKNOWN slice);
 size-scaled epochs; per-truth-class accuracy (acc_product); answer-sample
 logging; 7th arm (multiread); per-phase process isolation.
 
-**Recipe v2.2 — NEXT RUN (planned, not yet running):**
+**Recipe v2.2 — IN PROGRESS (first cell running):**
+- rank-64 capacity cell: RUNNING on the GH200 (seed1_r64)
 - enrichment × capacity 2×2: LoRA rank {16, 64, 128} × enrichment depth
   (the attribution experiment for "too little dreaming vs too small memory")
 - salience-as-replay-count (needed memories get more variants)
