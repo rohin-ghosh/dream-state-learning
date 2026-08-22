@@ -79,12 +79,18 @@ pairs — the G1 gate ≥0.9), **task success** (200 fresh games).
   kind-accuracy as noise.
 
 ## 4. Results
-**FORMAL VERDICT (2026-08-22, 2 seeds):** the v2.1 recipe **fails the
-pre-registered falsifier** — at E=3840, lora_dreamed − best-RAG = −0.021
-(needed ≥ +0.05). Per pre-registration: the substrate claim is dead *in
-this form* (rank-16, one-pass dreaming). This is the honest, expected
-outcome that forces the enrichment × capacity experiment; the first
-capacity cell (rank 64, reusing seed-1's corpora) is ALREADY RUNNING.
+**FORMAL VERDICT (2026-08-22, now 3 seeds):** the v2.1 recipe **fails
+the pre-registered falsifier** — at E=3840, lora_dreamed − best-RAG =
+−0.026, t=−3.25, n=3 (needed ≥ +0.05). Statistically solid negative; per
+pre-registration the substrate claim is dead *in this form* (rank-16,
+one-pass dreaming). All three seeds show the same shape: retrieval
+recall 0.94–1.00, in-weights recall bouncing at noise, held-out at floor
+for everyone while the ceiling reaches 1.00, and every apparent
+late-life LoRA "win" decomposing into the answer-NOTHING prior.
+This forces the enrichment × capacity attribution; the first capacity
+cell (rank 64, same corpora as seed 1) finishes its evals ~today —
+its result decides whether the next lever is BIGGER MEMORY or RICHER
+DREAMING (the sleep+daydreaming ladder).
 ### Seed 0 — naive recipe (COMPLETE; alchemy/v2_out/seed0_naive_results.json)
 - Naive LoRA arms: recall ≈ 0 everywhere (G1 fail ⇒ no claims); by
   mid-life they answer confidently and wrongly (confab ~0.6–1.0). The one
@@ -97,7 +103,7 @@ capacity cell (rank 64, reusing seed-1's corpora) is ALREADY RUNNING.
   prior — caught by the reference numbers above; that catch created the
   acc_product metric.
 
-### Seed 2 — fixed recipe (COMPLETE; alchemy/v2_out/seed2_fixed_results.json)
+### Seeds 1–3 — fixed recipe (ALL COMPLETE; alchemy/v2_out/seed{1,2,3}_fixed_results.json — run report.py on all three for the aggregate)
 Fixed recipe = bf16 + gradient clipping, undeduplicated raw corpus,
 paraphrase×ordering augmentation (~12 phrasings/fact + QA lines +
 capped UNKNOWN slice), size-scaled epochs.
@@ -202,7 +208,7 @@ world with chains (depth≤4) + 40% geometric rules; one-pass dreamer;
 deduplicated raw corpus; fp16 training (mostly); 4 epochs flat; scalar
 metrics only. Its results are the "why naive fails" record.
 
-**Recipe v2.1 — "fixed" (RUNNING NOW: seeds 1 and 2):**
+**Recipe v2.1 — "fixed" (COMPLETE: seeds 1, 2, 3):**
 everything in v2.0 plus — bf16 + gradient clipping; UNdeduplicated raw
 corpus (natural frequency preserved); exposure augmentation (~12
 phrasings/fact × both orderings + QA lines + capped UNKNOWN slice);
@@ -210,7 +216,7 @@ size-scaled epochs; per-truth-class accuracy (acc_product); answer-sample
 logging; 7th arm (multiread); per-phase process isolation.
 
 **Recipe v2.2 — IN PROGRESS (first cell running):**
-- rank-64 capacity cell: RUNNING on the GH200 (seed1_r64)
+- rank-64 capacity cell: final train done, evals running (seed1_r64) — first 2x2 datapoint
 - enrichment × capacity 2×2: LoRA rank {16, 64, 128} × enrichment depth
   (the attribution experiment for "too little dreaming vs too small memory")
 - salience-as-replay-count (needed memories get more variants)
