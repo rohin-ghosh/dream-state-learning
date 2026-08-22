@@ -195,3 +195,24 @@ angel; Biderman/Eyuboglu/Lin/Morris/Re) — productized docs->weights
 "learned memory layer" for orgs; partners Notion/Microsoft/Harvey.
 Commercial validation of weights-as-memory; watch Cartridges/self-study
 lineage (Eyuboglu) for their mechanism.
+
+## 10. Meta-Harness (2603.28052, Stanford IRIS — Lee/Finn/Khattab, Mar'26)
+Searches over HARNESS CODE (what gets stored/retrieved/shown to a frozen
+model); agentic proposer with filesystem access to prior candidates'
+source, scores, and full traces. Same diagnosis as us (harness matters
+as much as the model, still hand-designed); their fix = search over
+code, ours = consolidate into weights. MUST-CITE. Three carries:
+(1) CHALLENGE: their ablation — raw traces beat scores+summary; summaries
+can HURT by compressing away diagnostic detail. Our dreamer is
+summarization; counter = their proposer can grep raw traces on demand,
+weights have no grep — compression is our substrate's constraint, not a
+choice. Address head-on in the paper.
+(2) GIFT: they name co-evolving harness and model weights as the open
+next step — our architecture, flagged open by Stanford.
+(3) GAP -> ARM BACKLOG: filesystem+grep agentic retrieval is a strong
+beyond-context baseline missing from our six arms. Queue as arm 8
+("agentic-grep": model gets search tools over the raw life log) —
+probably the strongest honest retrieval baseline available.
+Related: Rohin's CURE debug agent (field_evidence/) = the real-world
+manual/amortized version of harness self-improvement; its self-report is
+ground truth for dreamer design.
