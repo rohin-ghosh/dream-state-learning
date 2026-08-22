@@ -384,3 +384,27 @@ Observed so far (fixed recipe, seed 2): retrieval arms near-ceiling on
 recall; in-weights recall FALLS as corpus grows (0.10@60 -> 0.02@320) —
 interference/dilution signature, the pre-registered failure arriving
 where predicted.
+
+## 2026-08-22 FORMALIZED (Rohin): THE DAYDREAMER
+A second amortized enrichment channel, running DURING waking runs, not
+only at sleep boundaries. Type signature:
+  input:  recent episodes + current memory state + what recent tasks
+          needed-and-missed (value-function misses)
+  output: enrichment lines appended to the cumulative corpus (same
+          corpus the next sleep retrains on)
+  cadence: between episodes / on idle compute; small and targeted where
+          sleep is global and heavy. Same mechanism-or-not as sleep is
+          left open (doesn't matter while both are amortized).
+STICKING vs VALUABLE (Rohin): making memories stick (exposure) is
+separate from making enrichment VALUABLE — the field-evidence self-report
+(CURE debug agent) is the ground truth for what valuable enrichment looks
+like on a real workload.
+RICH DREAMS AS WORLD-BUILDING (vision, near-verbatim): dreams are not
+just memories — they are experiences replayed THROUGH other experiences,
+building the experiential world model; as the built world grows, raw
+reality fades — "a puzzle off of a light-projected real world." The
+gist/verbatim separation emerges from the constructive side. Literal
+mechanisms to derive this weekend (Rohin's pass): dreams that cite other
+memories; replaying an episode against the current world model and
+recording the DIFF; enrichment that connects facts to the loose
+generalized world rather than restating them.
