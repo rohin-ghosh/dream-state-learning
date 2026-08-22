@@ -91,7 +91,7 @@ pairs — the G1 gate ≥0.9), **task success** (200 fresh games).
   prior — caught by the reference numbers above; that catch created the
   acc_product metric.
 
-### Seed 2 — fixed recipe (E=60–960 done; rest pending)
+### Seed 2 — fixed recipe (COMPLETE; alchemy/v2_out/seed2_fixed_results.json)
 Fixed recipe = bf16 + gradient clipping, undeduplicated raw corpus,
 paraphrase×ordering augmentation (~12 phrasings/fact + QA lines +
 capped UNKNOWN slice), size-scaled epochs.
@@ -109,6 +109,15 @@ capped UNKNOWN slice), size-scaled epochs.
   extrapolation becomes measurable at all.
 - Task play: LoRA arms still at/below floor — adapters still erode the
   actor; instruction-preservation mix is a pending fix.
+- **Full-run verdict (all 7 checkpoints):** in-weights recall never
+  climbs — it bounces at noise (0.10/0.02/0.18/0.04/0.01/0.00/0.11)
+  while retrieval sits at 0.94–1.00. Held-out stays at floor for every
+  arm even as the ceiling reaches 1.00 — NOBODY composes yet. Every
+  apparent late-life win decomposes into the answer-NOTHING prior
+  (e.g., lora_raw@15360 "0.44" = acc_nothing 0.94, acc_product 0.00 —
+  same trap as seed 0's 0.42, caught the same way). G1 fails for
+  consolidation at rank 16 + one-pass dreaming: the fixed recipe made
+  facts representable but not retainable at scale.
 
 ### What this adds up to
 The world, evals, gates, and retrieval baselines all work. Consolidation
