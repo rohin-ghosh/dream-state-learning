@@ -364,3 +364,23 @@ only on task play — moot until adapters work.
   agent-lifetime throughput because no agent has a lifetime."
 - Extended-pretraining (not fine-tuning) for base-weight updates needs
   general-corpus replay mixed in (anti-degradation).
+
+## 2026-08-22 NAMED (Rohin): "SLEEP + DAYDREAMING"
+World validated (RAG recall 0.99 = questions answerable, corpus complete);
+bottleneck is now the MEMORY side — we scaled the world, not the dreaming/
+storage. Diagnosis hypothesis: mixture of too-small LoRA and not-nearly-
+enough dreaming. The brain makes memories RICH by revisiting the needed
+ones (offline=sleep, online=daydreaming), enriching them into more
+learnable forms. Mechanism ladder to test (ascending cost):
+(1) enrichment depth, UNEQUAL by need — salience as replay/variant count;
+(2) re-dreaming: dream on the dreamed corpus (memories referencing
+memories — where richness lives);
+(3) daydreaming: cheap targeted enrichment between sleeps aimed at what
+recent episodes needed and missed (rung-4 in natural habitat);
+(4) capacity: rank sweep 16->64->128 + steps-per-fact.
+NEXT EXPERIMENT after seed-2 verdict: enrichment x capacity 2x2 to
+attribute "too little dreaming" vs "too small memory."
+Observed so far (fixed recipe, seed 2): retrieval arms near-ceiling on
+recall; in-weights recall FALLS as corpus grows (0.10@60 -> 0.02@320) —
+interference/dilution signature, the pre-registered failure arriving
+where predicted.
