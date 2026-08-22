@@ -181,7 +181,42 @@ distinct product names: 13568
 Try the five questions before looking. You will feel: "nothing" is
 guessable, product NAMES are not — that is acc_product's whole point.
 
-## 8. Open decisions with your name on them
+## 8. VERSIONING — what's running vs what's planned
+**Recipe v2.0 — "naive" (seed 0, COMPLETE, kept as baseline):**
+world with chains (depth≤4) + 40% geometric rules; one-pass dreamer;
+deduplicated raw corpus; fp16 training (mostly); 4 epochs flat; scalar
+metrics only. Its results are the "why naive fails" record.
+
+**Recipe v2.1 — "fixed" (RUNNING NOW: seeds 1 and 2):**
+everything in v2.0 plus — bf16 + gradient clipping; UNdeduplicated raw
+corpus (natural frequency preserved); exposure augmentation (~12
+phrasings/fact × both orderings + QA lines + capped UNKNOWN slice);
+size-scaled epochs; per-truth-class accuracy (acc_product); answer-sample
+logging; 7th arm (multiread); per-phase process isolation.
+
+**Recipe v2.2 — NEXT RUN (planned, not yet running):**
+- enrichment × capacity 2×2: LoRA rank {16, 64, 128} × enrichment depth
+  (the attribution experiment for "too little dreaming vs too small memory")
+- salience-as-replay-count (needed memories get more variants)
+- re-dreaming (dreams that cite/connect other memories)
+- the DAYDREAMER (targeted between-episode enrichment; formalized note 32)
+- instruction-preservation mix (fix adapters eroding task play)
+- arm 8: "agentic-grep" (search tools over raw log — strongest honest
+  retrieval baseline; from Meta-Harness)
+- 128k extended-window long_context variant
+Exact v2.2 contents get locked (and this section updated) before launch —
+some items may slip to v2.3 after the 2×2 reads out.
+
+**Backlog (designed, deliberately NOT next):** fn difficulty ladder
+(calibrates after v2.1's 3840 numbers); A-Mem external baseline;
+context-distillation training loss; dreamer ladder rungs 2/4/5; ρ-mixture
+sweep (compressibility curve); learned curator (paper 2); hypernetwork
+writes, population tier (paper 3).
+
+**Rule:** anything you propose live gets filed to a version above within
+the same day; "running now" never changes mid-run.
+
+## 9. Open decisions with your name on them
 1. Dreamer co-learning: frozen-generator + learned-curator split (my
    proposal) vs fully-learned dreamer — sets paper-2 scope.
 2. fn difficulty ladder calibration (IQ-matched questions) — after
