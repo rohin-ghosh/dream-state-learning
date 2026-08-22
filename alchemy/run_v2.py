@@ -281,9 +281,13 @@ def main():
     ap.add_argument("--backend", choices=("hf", "vllm"), default="vllm")
     ap.add_argument("--tiny", action="store_true")
     ap.add_argument("--phase", default="all", choices=("all", "1", "2", "3"))
+    ap.add_argument("--rank", type=int, default=0,
+                    help="override LoRA rank (2x2 capacity axis)")
     ap.add_argument("--out", default="")
     a = ap.parse_args()
     C = cfg_from_args(a)
+    if a.rank:
+        C["rank"] = a.rank
     out = pathlib.Path(a.out or f"alchemy/v2_out/seed{a.seed}")
     out.mkdir(parents=True, exist_ok=True)
     world = AlchemyWorld(n_ingredients=C["n_ingredients"],
@@ -303,7 +307,8 @@ def main():
                                 str(a.seed), "--model", a.model,
                                 "--backend", a.backend, "--phase", ph,
                                 "--out", str(out)]
-                               + (["--tiny"] if a.tiny else []))
+                               + (["--tiny"] if a.tiny else [])
+                               + (["--rank", str(a.rank)] if a.rank else []))
             if r.returncode != 0:
                 raise SystemExit(f"phase {ph} failed rc={r.returncode}")
         return
@@ -313,7 +318,8 @@ def main():
     if a.phase in ("all", "2"):
         phase2(C, out, a.model)
     if a.phase in ("all", "3"):
-        kw = {"enable_lora": True} if a.backend == "vllm" else {}
+        kw = ({"enable_lora": True, "max_lora_rank": max(32, C["rank"])}
+              if a.backend == "vllm" else {})
         be = make_backend(a.backend, a.model, **kw)
         life = json.loads((out / "life.json").read_text())
         phase3(world, holdout, life, C, out, be, a.seed)
