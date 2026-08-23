@@ -137,6 +137,29 @@ into weights is real but ~5× too weak, in exactly the way the literature
 and our pre-registration predicted. This is the intended scientific
 position: a measured gap with named causes, not a mystery.
 
+## 4b. The rank-64 cell and the STYLE-OSCILLATION finding (2026-08-22 night)
+The first capacity cell (rank 64, seed-1's corpora) completed, and its
+decomposition (alchemy/v2_out/seed1_r64_results.json) closed the case:
+- **acc_product = 0.00 in EVERY lora cell at BOTH ranks.** No pair
+  knowledge exists in weights anywhere, in any of the four runs.
+- Every apparently-good recall number correlates perfectly with
+  acc_nothing ≈ 0.9 (and every bad one with ≈ 0): the adapters
+  OSCILLATE BETWEEN ANSWER STYLES ("say NOTHING" vs "name products"),
+  and "recall" merely measured which style the training landed in.
+  The rising-then-falling "retention curves" were style artifacts.
+- Conclusion: neither 2×2 axis was the binding constraint. The
+  MECHANISM is under-driven: each fact received ~12–50 gradient touches
+  (12 phrasings × 1–4 epochs) where the injection literature uses
+  hundreds — and the epoch-scaling that kept big trains cheap cut
+  exactly this. Fact injection was never actually attempted at the
+  intensity it requires.
+**Pivot: the injection micro-benchmark** (alchemy/micro_inject.py,
+RUNNING): 50 real facts, grid over learning-rate × touches-per-fact ×
+rank, scored on exact recall + a confabulation control. Twenty minutes
+per cell; establishes the consolidation recipe empirically before any
+further full run. This is the experiment that should have preceded v2.0
+— recorded as such.
+
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
@@ -216,7 +239,8 @@ size-scaled epochs; per-truth-class accuracy (acc_product); answer-sample
 logging; 7th arm (multiread); per-phase process isolation.
 
 **Recipe v2.2 — IN PROGRESS (first cell running):**
-- rank-64 capacity cell: final train done, evals running (seed1_r64) — first 2x2 datapoint
+- rank-64 capacity cell: COMPLETE (see §4b — style oscillation, acc_product 0)
+- injection micro-benchmark: RUNNING (sets the consolidation recipe)
 - enrichment × capacity 2×2: LoRA rank {16, 64, 128} × enrichment depth
   (the attribution experiment for "too little dreaming vs too small memory")
 - salience-as-replay-count (needed memories get more variants)
