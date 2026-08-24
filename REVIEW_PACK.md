@@ -153,6 +153,19 @@ decomposition (alchemy/v2_out/seed1_r64_results.json) closed the case:
   hundreds — and the epoch-scaling that kept big trains cheap cut
   exactly this. Fact injection was never actually attempted at the
   intensity it requires.
+**THE INJECTION CAPACITY CURVE (weekend result — the first scaling law):**
+at the measured sweet spot (lr 5e-4, 200 touches/fact): 50 facts → 0.72
+recall (r64); 200 → 0.41 (r64); 1,000 → 0.23 (r64) / 0.44 (r128).
+Recall decays with fact count; rank buys it back ~linearly. Holding a
+lifetime (~10k+ facts) at G1 levels by brute SFT would need rank in the
+thousands ⇒ **store-everything consolidation is measurably impossible ⇒
+selection (salience/curation) is FORCED by the substrate** — the capacity
+wall is paper 1's measured motivation for paper 2's learned curation.
+v2.2 full-run consequence: measured recipe (5e-4 / 200 touches / rank
+≥128) + the dreamer consolidates a CURATED SUBSET sized by this curve,
+not everything. Overtraining note: touches beyond ~200 DEGRADE recall at
+high LR (0.72→0.44 at 600) — the sweet spot is finite.
+
 **Pivot: the injection micro-benchmark** (alchemy/micro_inject.py,
 RUNNING): 50 real facts, grid over learning-rate × touches-per-fact ×
 rank, scored on exact recall + a confabulation control. Twenty minutes
