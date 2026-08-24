@@ -173,6 +173,22 @@ per cell; establishes the consolidation recipe empirically before any
 further full run. This is the experiment that should have preceded v2.0
 — recorded as such.
 
+## 4c. THE ORACLE RESULT — the reasoner is not the wall (2026-08-24)
+Handing the model the latent structure directly (its two ingredients'
+class labels + the relevant class rule + grades) yields **0.945 score /
+0.91 acc_product** on held-out pairs; with classes but no rule: 0.33/0.00.
+(alchemy/v2_out/oracle_diag.json). Combined with the capacity curve this
+closes the diagnosis:
+- pair-facts are unstorable (~500k of them; measured capacity wall);
+- STRUCTURE is small (~1,024 memberships + 4,656 rules — fits measured
+  LoRA capacity) and converts to answers at ~90%;
+⇒ the dreamer's real job is INDUCING AND CONSOLIDATING CLASS STRUCTURE,
+not enriching pair facts. Selection was forced by capacity; abstraction
+is forced by the oracle. This redefines v2.2's dreamer target: emit
+class-equivalence lines ("X behaves like Y") + class-rules mined from
+cross-episode evidence, and measure fn−iid separation (the geometry-
+induction number) as the primary composition metric.
+
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
