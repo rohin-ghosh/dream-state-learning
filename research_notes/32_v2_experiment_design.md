@@ -408,3 +408,35 @@ mechanisms to derive this weekend (Rohin's pass): dreams that cite other
 memories; replaying an episode against the current world model and
 recording the DIFF; enrichment that connects facts to the loose
 generalized world rather than restating them.
+
+## 2026-08-24 architecture session (Rohin + advisor) — filed
+- POST-TRAINING REFRAME (the honest claim): post-training already IS
+  experiential learning; our claim = moving it OFFLINE->ONLINE and
+  POPULATION->INDIVIDUAL. Ready answer for "why don't labs do this":
+  online individual updates = catastrophic forgetting, no held-out eval,
+  unbounded drift, no rollback — our paper is one measurement in that
+  space, not a novelty claim.
+- COMPOUNDING-LOOP CAVEAT (own it in the paper): v2's life is scripted
+  and frozen across arms, so data CANNOT improve with memory — v2
+  measures one LINK of the loop, not the loop. "Loop is the program,
+  link is the paper."
+- "ISN'T THIS RL" answer: SFT on curated text; the verifier supplies
+  HINDSIGHT FOR CURATION, not reward for the gradient.
+- ACTOR-CRITIC FACTORIZATION (named): evaluator = critic, the ONLY RL'd
+  component (minimal RL surface = design win); dreamer/thinker distill
+  from its judgments. Watch: single evaluator at read+write = correlated
+  failure (consider two heads on shared trunk: score-what-to-keep vs
+  generate-what-to-look-for — the latter may BE the prompt engine);
+  dreamer-vs-learned-evaluator = Goodhart/reward-hacking in the write
+  path. Both are arguments for v2's frozen evaluator.
+- FAST/SLOW SPLIT (keeper sentence): "the dreamer is a fixed function
+  with a changing argument" — how-to-dream = slow capability
+  (pretrained); what-to-dream-about = fast (its input, the evaluator,
+  moves). Paper 1 = the fast-learning half (LTM + simple evaluator).
+- v2 LIMITATIONS TO STATE PLAINLY: evaluator is exact BFS (static);
+  dreamer static; everything upstream of LTM frozen; value function
+  necessarily domain-specific (exact graph distance because this
+  environment permits it).
+- Consciousness stream mechanism = PREFIX TUNING (soft prompts).
+  Karpathy system-prompt-learning as reference — CONFIRM SOURCE before
+  citing.
