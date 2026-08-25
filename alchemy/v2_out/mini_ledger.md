@@ -142,3 +142,21 @@ normalizer inverted it. (Negation blindness in keyword matching.)
   No skin separation detectable at saturation; conflict marginally slower
   (0.917@24). The discriminating regime is higher load: G5b (96 facts,
   conflict = color-word contradicts family) queued on GH200.
+
+## G5b (96 facts/skin): storage is CHEAP and PRIOR-INDIFFERENT
+- nonce    8/24/64/200 -> 0.500 / 1.00 / 1.00 / 1.00
+- vivid                -> 0.312 / 1.00 / 1.00 / 1.00
+- conflict             -> 0.333 / 1.00 / 1.00 / 1.00
+- Even PRIOR-CONFLICTING bindings ("the crimson fox belongs to the
+  azure-family") store perfectly at 24 touches under 96-fact load.
+  Priors neither help nor hurt PURE STORAGE of atomic QA facts.
+- IMPLICATION 1: the ~200-touch requirement measured in the G-series
+  came from corpus HETEROGENEITY (mixed line forms, rules-vs-membership
+  interference), not raw fact count. Exposure cost is format-mixture-
+  driven. (Queued: mixed-format storage grid to locate the wall.)
+- IMPLICATION 2 (sharpens the vividness thesis): if prior scaffolding
+  matters, it is NOT at the storage layer — it must show up at the
+  DREAMING/INDUCTION layer (priors helping the dreamer propose the right
+  connections, Rohin's original "hallucinate properly within the
+  container" intuition). Vividness experiments should target dream
+  quality, not adapter storage. This is a cleaner claim for the paper.
