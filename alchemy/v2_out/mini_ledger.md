@@ -241,3 +241,25 @@ evidence has gaps.
 - Milestone: the five-rule stack + recognition reads carries a
   6-land/3-role/2-palette/meta-land world through a LoRA at the
   context-oracle ceiling. C3 (real dreamer claims) is now the frontier.
+
+## Chained-D3 (per-parent sub-compose then union): NO LIFT
+- c2rc D3: aligned 0.167, conflicting 0.083, neutral 0.333 (D1/D2
+  unchanged at 0.75-1.0). Free-form sub-generation loses the thread;
+  D3 remains the open composition problem. Next candidate: fully
+  mechanical thinker (recognition reads + thinker-computed arithmetic,
+  clean base answers) — defensible: the thinker is an agent by design.
+
+## C3 (real dreamer, raw prompts): informative failure -> C3b
+- 303 proposed -> 9 verified, ALL trivial witnessed cells; zero verified
+  equiv/relation/meta. Root cause (from verifier source): entailment
+  runs a FactorSolver over ONLY the cited observations — a claim
+  verifies only if the citations form a CONNECTED evidence subgraph.
+  The dreamer cited 1-2 lines; everything died "unsupported".
+- C3b: THE DREAMER USES THE THINKER (Rohin's morning point, verbatim):
+  dreamer proposes claims off a mechanically tabulated experience view;
+  a mechanical CITATION ASSEMBLER (BFS over the animal-land evidence
+  graph) attaches the connecting evidence path; the verifier still
+  solely gates truth; NO verifier reasons fed back into content
+  (anti rejection-sampling). CPU test: ground-truth equiv claims verify
+  through assembled paths. The honest question is now isolated:
+  does the LLM propose the right abstractions?
