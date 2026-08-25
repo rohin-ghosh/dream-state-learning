@@ -160,3 +160,8 @@ normalizer inverted it. (Negation blindness in keyword matching.)
   connections, Rohin's original "hallucinate properly within the
   container" intuition). Vividness experiments should target dream
   quality, not adapter storage. This is a cleaner claim for the paper.
+
+## G4j seed0 (harvested late): 0.718, coverage 0.875 — the no-experiment
+arm on seed 0 (vs 0.949 with G4h's full-coverage dreams). Confirms the
+experiment-resolution stage is what protects coverage when dream
+evidence has gaps.

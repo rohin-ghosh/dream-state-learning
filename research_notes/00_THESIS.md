@@ -83,12 +83,27 @@ capability. Rules compact (≤ a context window), evidence diffuse
 one-hop and SET-SCOPED (learn once, applies to a whole class), never
 IMO-puzzle ciphers. Given the memories, the model must be able to
 in-context induce at 70–90%, else the game is bad. Chess/checkers dial:
-inducible rules, non-trivial strategy, nothing in pretraining.
+inducible rules, non-trivial strategy — and only the hidden LAWS must be
+absent from pretraining; the ONTOLOGY should ride priors (2026-08-25
+ruling: prior-anchored worlds are the main vehicle, docker-image
+principle — base image = priors, container = salient diffs; nonce worlds
+are the zero-prior control).
 
 ## Trajectory
 v1 (felt head): thesis untested-not-false; instruments validated.
 v2 (dreamed LoRA vs retrieval): falsifier failed honestly; produced the
 capacity wall, the oracle result, the induction-refusal finding, and the
-eval discipline. v3 (in design): mini-game ladder (L0: 4 patterns) —
-prove the write→verify→consolidate→think→read machinery at the smallest
-scale, then climb complexity until context breaks and memory carries.
+eval discipline. v3, phase 1 (COMPLETE 2026-08-25): L0 mini-game CLOSED end-to-end at
+the oracle ceiling — real dreamer, 0.949/0.882/0.923 across three worlds
+(per-seed rep means 0.949/0.849±.06/0.872±.09; prior 0.33). Proved the
+five-rule stack: (1) dreams coin NAMES for abstractions, (2) memories
+are 1-hop atomic QA facts, (3) measured exposure (~200 touches in mixed
+corpora; ~24 for uniform atomic facts — G5b), (4) thinker does atomic
+RESOLVED reads, (5) the clean base composes (read-only adapter
+protocol). Plus: daydreaming (coverage-driven re-dreaming) and
+experiment-resolution (act in the world to create missing evidence) are
+the working consolidation loop. v3 phase 2 (CURRENT): Semantic World —
+prior-anchored Candyland/Blendyland instrument (lands/, D0–D3 proof-
+graded goals, three isomorphic skins), C0–C5 GPU ladder per
+lands/HANDOFF_FABLE.md; paper frame = two-front comparison (vs RAG
+downward, vs batch post-training upward), notes/32 2026-08-25.

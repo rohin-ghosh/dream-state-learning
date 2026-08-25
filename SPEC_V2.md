@@ -5,6 +5,15 @@ PART I = the one-page overview + locked constants. PART II = the in-depth
 sizing pre-registration: sweep evidence, context-budget math, throughput,
 predictions. One document, two altitudes.)*
 
+> **OUTCOME BANNER (2026-08-25).** Parts I–II are the CLOSED v2 record:
+> the v2.1 recipe FAILED its pre-registered falsifier (2026-08-22;
+> −0.026 vs +0.05 needed, n=3 of 5 planned seeds — strong directional
+> negative) and v2 is closed for learning. The diagnosis and fix live in
+> REVIEW_PACK §4d (G-series: L0 closed at the oracle ceiling). Part III
+> (V3 game doctrine) and Part IV (LANDS draft) remain live; Part IV's
+> open choices are resolved for v0 by research_notes/34_semantic_world_
+> v0_spec.md (Codex) pending PI ratification.
+
 # PART I — Overview (one page)
 
 ## 1. Claim

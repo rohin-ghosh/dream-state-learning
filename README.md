@@ -33,6 +33,12 @@ retrieval and long context flatten. Target: ICLR 2027.
   graphs, evidence-budgeted verifier, priced reachout, oracle/full-lifetime/
   context baselines, and checksummed artifact export.  It is the next-world
   interface for the proven G-series dream + read-only adapter stack.
+- [`lands/`](lands/) — the Semantic World v0 instrument (Candyland/
+  Blendyland; three isomorphic skins, D0–D3 proof-graded goals, claim
+  grammar + verification entitlement, priced reachout). Start at
+  `lands/HANDOFF_FABLE.md` (C0–C5 GPU ladder);
+  spec: `research_notes/34_semantic_world_v0_spec.md`; measured GPU
+  constraints: `research_notes/33_semantic_world_gpu_constraints.md`.
 - [`gpu/`](gpu/) — node operations: `scout.py` (Colossus inventory search),
   `v2_bootstrap.sh` + `V2_NODE_SETUP.md` (worker setup incl. the GH200/ARM
   recipe), `v2node_*.sh` / `gh200_ssh.sh` (active-node wrappers).
