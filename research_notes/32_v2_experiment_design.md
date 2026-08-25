@@ -528,3 +528,24 @@ V3, in build order:
   forces selection; retrieval-augmented agents improve with lifetime
   while parametric degrade) — coherent honest measurement paper. Decide
   deliberately: V3 this cycle or next.
+
+## 2026-08-24 V3 STAGE-1 RULINGS (Rohin)
+- GEOMETRY IS DEAD: circle-distance fn stratum = IMO-puzzle/encryption-
+  grade induction, unrealistic and unfeasible. V3 inducible stratum =
+  ONE-HOP regularities only: same-class => same behavior ("x behaves
+  like x'" — the debug-agent-shaped leap).
+- DESIGN LOCUS = THINKER, not memory-as-structure-store: model must
+  IN-CONTEXT induce given strong context; thinker builds that context
+  from memories + present state; if it can't induce with strong context,
+  the game is bad. Dreamer = multi-perspective memory construction so
+  the LoRA learns each memory better; dream/read CO-DESIGNED (writes
+  resemble reads). Dreamer designed empirically: test memory retention
+  under different dreaming sizes/prompts ("take this memory + these
+  past ones, make different memories").
+- INDUCTION TEST protocol verified with Rohin: current = one-shot pure
+  induction (5 curated raw lines: two same-class proofs + one transfer
+  obs; answer never in context). EXTENSION TO BUILD: k tries with
+  outcome feedback (the thinker-loop shape: attempt -> outcome appended
+  -> retry). Game design targets the k-try number.
+- Sequence per Rohin: in-context results -> game lock -> trial-and-error
+  amortized dreamer/thinker -> numbers -> V3 run (possibly <3 days).
