@@ -224,3 +224,20 @@ evidence has gaps.
   generating. Reads become recognition, not generation. C2r running
   (reuses C2 adapters; candidate sets incl. distractors for constant
   leaves so the adapter must still discriminate).
+
+## C2r: TRANSPORT PROVEN AT SEMANTIC-WORLD SCALE (the lands G2f moment)
+- Recognition reads: fidelity 228/228 (100%) on ALL skins — argmax
+  candidate scoring under the adapter fully repairs the read channel
+  (incl. the composite procedure line and 20-candidate meta-parents).
+- End-to-end through weights (rank-64 adapter, clean-base pairwise
+  compose): aligned D1 0.833 D2 0.917 | neutral D1 0.75 D2 0.917 |
+  conflicting D1 0.917 D2 1.0. Matches/exceeds the context ceiling
+  (c1a_cot D2 ~0.72). D0 0.75-1.0 (slight pairwise-protocol overthink
+  on lookups — protocol should be depth-adaptive).
+- D3 still 0.167-0.25 in BOTH context and weights => cleanly a THINKER
+  problem, not transport: parent colors are themselves D1/D2-grade
+  inferences; one-shot compose can't recurse. Next: chained thinker
+  (compute each parent via the D2 pipeline, then union).
+- Milestone: the five-rule stack + recognition reads carries a
+  6-land/3-role/2-palette/meta-land world through a LoRA at the
+  context-oracle ceiling. C3 (real dreamer claims) is now the frontier.
