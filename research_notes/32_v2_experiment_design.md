@@ -474,3 +474,26 @@ non-lookup) is PROCEDURAL. New eval hierarchy:
 Measuring induced-experience generalization is ITSELF the invention —
 the field's benchmarks all measure playback; this hierarchy is the
 contribution's instrument.
+
+## 2026-08-24 V3 SKELETON (Rohin — locked sequencing)
+v2 status: closed for learning; current work = diagnostics/sweeps wrap-up.
+V3, in build order:
+1. GAME REDESIGN (follows the induction-ceiling result): more inducible
+   structure — shallow induction (recoverable from a handful of
+   examples), fn-forward (Rohin: iid barely matters; induction subsumes
+   the retrieval that matters), fewer classes / more evidence density
+   per sizing_mc target: lookup-coverage ~0, deducible high, induction
+   shallow.
+2. DREAM + THINK made RICH but PRE-SHAPED (not learned; "we learn how to
+   shape it" = designer iteration). Micro-test first: does a fact held
+   in 10 DIFFERENT PERSPECTIVES (semantic contexts, not rephrasings)
+   retain better than 10 paraphrases? (contexts-per-fact experiment —
+   feeds dream design.) Plus: pulling PAST memories in to enrich current
+   ones (dream-with-memory).
+3. READ path: prompt + memory block stays (fine for now); define the
+   dream->corpus and read->prompt interfaces precisely.
+4. EXPERIMENT: learned memory + model plays FULL GAMES with k tries per
+   goal; HEADLINE METRIC = TRIES-TO-SUCCESS falling with lifetime
+   experience (pass@k curve) + shape-practiced/material-new split.
+   One-shot success too noisy; k tries separates can't-do from variance.
+5. Then scale (dream budget axis, population later).

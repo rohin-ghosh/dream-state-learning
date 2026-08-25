@@ -282,6 +282,12 @@ logging; 7th arm (multiread); per-phase process isolation.
 Exact v2.2 contents get locked (and this section updated) before launch —
 some items may slip to v2.3 after the 2×2 reads out.
 
+**V3 (being designed now — supersedes the v2.2 label for the next full
+run):** game redesigned for shallow induction (post induction-ceiling
+result); dream+think rich but pre-shaped; tries-to-success (pass@k) as
+headline with shape-practiced/material-new split; contexts-per-fact
+micro-test feeds dream design. v2 is closed for learning.
+
 **Backlog (designed, deliberately NOT next):** fn difficulty ladder
 (calibrates after v2.1's 3840 numbers); A-Mem external baseline;
 context-distillation training loss; dreamer ladder rungs 2/4/5; ρ-mixture
