@@ -25,9 +25,10 @@ for a, b in pairs:
                           f"Q: Which family does {b} belong to? A:"],
                          max_tokens=16, lora_path=L)
     fa, fb = clean_fam(fa), clean_fam(fb)
+    fa, fb = sorted((fa, fb))
     raw = be.generate([f"Q: What happens when {fa} meets {fb}? A:"],
                       max_tokens=24, lora_path=L)[0].lower()
-    r_ = ("they make a product" if "nothing" in raw else
+    r_ = ("they make a product" if "product" in raw else
           "the mixture is ruined" if ("ruin" in raw or "destr" in raw or "worthless" in raw) else
           "nothing happens" if "nothing" in raw else raw.strip().split(".")[0])
     mem = (f"What you remember:\n- {a} belongs to {fa}.\n- {b} belongs to {fb}.\n"
@@ -36,4 +37,4 @@ for a, b in pairs:
     k = parse_answer(out)[0]
     ok = "OK" if k == "nothing" else "XX"
     ta, tb = w.type_of[a], w.type_of[b]
-    print(f"[{ok}] {a}({ta})+{b}({tb}) fa={fa} fb={fb} rule={r_!r} -> parse={k} out={out[:110]!r}")
+    print(f"[{ok}] {a}({ta})+{b}({tb}) fa={fa} fb={fb} rule={r_!r} -> parse={k} raw={raw[:60]!r} out={out[:80]!r}")
