@@ -67,11 +67,14 @@ def main():
     prompts = [("Observations from your experience:\n" +
                 "\n".join(f"- {l}" for l in ev) +
                 "\nThese observations may reveal which ingredients behave "
-                "alike.\n\n" + Q.format(a=x, b=y))
+                "alike. Reason briefly if needed, then give your final "
+                "answer on its own line.\n\n" + Q.format(a=x, b=y))
                for (x, y), ev in cases]
     outs = []
     for i in range(0, len(prompts), 64):
-        outs += be.generate(prompts[i:i+64], max_tokens=24)
+        outs += be.generate(prompts[i:i+64], max_tokens=200)
+    for o in outs[:5]:
+        print("[ind-sample]", o[:160].replace("\n", " | "))
     ex = fa = kd = 0
     for ((x, y), _), o in zip(cases, outs):
         e, f, k = score_levels(parse_answer(o), w.predict(x, y))
