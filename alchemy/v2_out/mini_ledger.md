@@ -165,3 +165,26 @@ normalizer inverted it. (Negation blindness in keyword matching.)
 arm on seed 0 (vs 0.949 with G4h's full-coverage dreams). Confirms the
 experiment-resolution stage is what protects coverage when dream
 evidence has gaps.
+
+## SEMANTIC WORLD first LM contact: C0/C1a/C1b x 3 skins x 3 seeds + C2@s0
+(floors: D0-D2 0.167, D3 0.333; one-word answer protocol, no CoT)
+- C0 (full 69-obs lifetime in context): D0 0.67-1.0, D1 0.0-0.42 (often
+  BELOW floor), D2 0.08-0.33, D3 0.0-0.5. The LM cannot induce the
+  structure in-context even with the whole lifetime visible — the
+  instrument's context-break holds against the strongest context arm.
+- C1a (unresolved oracle leaves): D1/D2 0.33-0.42, D3 0.0-0.42. THE L0
+  RULEBOOK WALL RECURS: the clean base cannot execute
+  ADD_POSITION_AND_ROTATION_MOD_3_THEN_INDEX as an in-context program.
+  (Pre-registered D2 trigger technically tripped — but see protocol
+  confound below before redesign.)
+- C1b (resolved D3): D3 jumps to 0.417-0.833. FIRST PRIOR-SCAFFOLDING
+  EFFECT: resolved-D3 aligned mean ~0.69 (0.833/0.833/0.417) vs neutral
+  ~0.50 vs conflicting ~0.53 — pigment union is prior knowledge in the
+  aligned skin. Vividness matters exactly where G5b predicted: at the
+  reasoning/dream layer, not storage.
+- C2 (oracle corpus -> rank64 LoRA -> atomic reads -> clean base), s0:
+  D0 0.92-1.0 (witnessed transport works), D1/D2/D3 ~= C1a levels.
+  PARAMETRIC TRANSPORT IS NOT THE BOTTLENECK; composition is.
+- PROTOCOL CONFOUND: goal questions demand "answer with exactly one
+  color word" — suppresses reasoning (our burned-once eval trap).
+  Think-then-FINAL rerun launched before any redesign conclusion.
