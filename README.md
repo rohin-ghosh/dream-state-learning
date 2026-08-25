@@ -6,6 +6,9 @@ and we measure whether that memory keeps improving with experience where
 retrieval and long context flatten. Target: ICLR 2027.
 
 ## Start here (live documents, in reading order)
+- [`research_notes/00_THESIS.md`](research_notes/00_THESIS.md) — **the
+  consolidated theory**: thesis, scaling ideology, architecture organs,
+  measurement inventions, game doctrine. Read this before anything.
 - [`SPEC_V2.md`](SPEC_V2.md) — the experiment: one-page overview (Part I) +
   full sizing pre-registration, sweeps, falsifier, parameter ledger (Part II).
 - [`REVIEW_PACK.md`](REVIEW_PACK.md) — the system as built, written for
