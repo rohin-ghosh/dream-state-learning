@@ -64,25 +64,39 @@ def main():
     print(f"[ind] {len(cases)} evidence-complete held-out cases")
     from alchemy.backend import make_backend
     be = make_backend("vllm", a.model)
-    prompts = [("Observations from your experience:\n" +
-                "\n".join(f"- {l}" for l in ev) +
-                "\nThese observations may reveal which ingredients behave "
-                "alike. Reason briefly if needed, then give your final "
-                "answer on its own line.\n\n" + Q.format(a=x, b=y))
-               for (x, y), ev in cases]
-    outs = []
-    for i in range(0, len(prompts), 64):
-        outs += be.generate(prompts[i:i+64], max_tokens=200)
-    for o in outs[:5]:
-        print("[ind-sample]", o[:160].replace("\n", " | "))
-    ex = fa = kd = 0
-    for ((x, y), _), o in zip(cases, outs):
-        e, f, k = score_levels(parse_answer(o), w.predict(x, y))
-        ex += e; fa += f; kd += k
-    n = max(len(cases), 1)
-    res = {"exact": ex/n, "family": fa/n, "kind": kd/n, "n": n}
-    print(f"[ind] induction ceiling: {res}")
-    json.dump(res, open(a.out, "w"), indent=1)
+    HINT = ("Hint: two ingredients that produce the same product family "
+            "with the same partner behave identically in all combinations.")
+    FORCE = ("UNKNOWN is not allowed here — commit to your best answer.")
+    variants = {
+        "plain": "",
+        "forced": FORCE,
+        "hint": HINT,
+        "hint_forced": HINT + " " + FORCE,
+    }
+    all_res = {}
+    for vname, extra in variants.items():
+        prompts = [("Observations from your experience:\n" +
+                    "\n".join(f"- {l}" for l in ev) +
+                    "\nThese observations may reveal which ingredients "
+                    "behave alike. " + extra + " Reason briefly, then give "
+                    "your final answer on its own line.\n\n"
+                    + Q.format(a=x, b=y))
+                   for (x, y), ev in cases]
+        outs = []
+        for i in range(0, len(prompts), 64):
+            outs += be.generate(prompts[i:i+64], max_tokens=300)
+        for o in outs[:2]:
+            print(f"[ind-sample {vname}]", o[:140].replace("\n", " | "))
+        ex = fa = kd = ab = 0
+        for ((x, y), _), o in zip(cases, outs):
+            pred = parse_answer(o)
+            e, f, k = score_levels(pred, w.predict(x, y))
+            ex += e; fa += f; kd += k; ab += pred[0] == "unknown"
+        n = max(len(cases), 1)
+        all_res[vname] = {"exact": ex/n, "family": fa/n, "kind": kd/n,
+                          "abstain": ab/n, "n": n}
+        print(f"[ind] {vname}: {all_res[vname]}")
+    json.dump(all_res, open(a.out, "w"), indent=1)
 
 if __name__ == "__main__":
     main()
