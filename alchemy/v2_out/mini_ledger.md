@@ -48,3 +48,14 @@ organ works.
   family = >=3 verified-nothing partners and no ruin edge.
 - Dreamer proposes, environment disposes, graph clustering is mechanical
   post-processing, names coined per component. Purity + coverage printed.
+
+## G4e (daydreaming loop): DREAMER SOLVED, reads 90%, composition leak
+- Re-dreaming on ungrouped ingredients: coverage 0.542 -> 0.917 in ONE
+  round; 4 families, purity 1.0 each; 10/10 pair-rules verified (32 lines).
+- Read diagnostic: memberships 21/24, rules 7/10. End-to-end 0.308 was a
+  NARROW failure: the two PRODUCT rules are exactly the corrupted reads
+  ("not a good idea", "bitter and worthless"), and acc_product keys on
+  those two family pairs -> 0.0. Also raw adapter prose was passed into
+  the composition prompt, misleading the clean base.
+- G4f (running): rule lines upweighted x3 in corpus; thinker NORMALIZES
+  rule reads to canonical phrases before composing memory.

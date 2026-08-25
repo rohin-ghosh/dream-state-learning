@@ -694,3 +694,11 @@ ground truth. G4 covers strata 1/2/4; strata 3/5 + cascade = L1 ladder.
 - Game ruling: do not change the game; add vividness/observational
   setting as the skin variable (G5) over the same hidden structure —
   the model should be absorbing its surroundings.
+
+## 2026-08-25 "the image right now is just a red film on top" (Rohin)
+Experiments should match the world: research experience builds off
+pretraining the way candyland builds off the base image — expectations +
+knowledge of what's similar, with the world's laws as a thin diff. A
+memory system should be measured on how well it LAYERS onto priors, not
+only on cold-start symbol binding (nonce worlds = everything-is-a-diff,
+the hard case; vivid worlds = thin-film, the deployment-like case).
