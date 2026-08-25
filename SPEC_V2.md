@@ -458,7 +458,12 @@ task success secondary; fact quiz demoted to probe (family credit).
 
 ---
 
-# Part IV — LANDS (draft for Rohin's edits, 2026-08-25; not yet implemented)
+# Part IV — LANDS (v0 CPU instrument implemented on `semantic-world-v0`)
+
+Canonical frozen v0 contract:
+[`research_notes/33_semantic_world_v0_spec.md`](research_notes/33_semantic_world_v0_spec.md).
+Implementation and CPU gates: [`lands/`](lands/).  The material below is
+the originating draft; where it differs, note 33 and executable tests win.
 
 The prior-anchored main experiment (nonce L0 kept as zero-prior control).
 
@@ -502,9 +507,14 @@ names e.g. "the sunset-shifted lands"), then end-to-end vs context/RAG
 arms. Identifier-vividness A/B: same latent structure, nonce skin vs
 lands skin — the paper's prior-scaffolding section.
 
-## Open design choices for Rohin
-- law shape: rotation (above) vs arbitrary permutation per land (harder);
-- how much of the color wheel is prior-real (red/green/blue) vs invented;
-- exception density for the surprise stratum;
-- whether animals also have BEHAVIORS bound to color (richer pathways,
-  closer to alchemy patterns) or color-only first.
+## V0 locks
+- two three-color palettes (primary and secondary), with a randomized
+  rotation per land and randomized invariant role per animal;
+- one uniquely identifiable three-parent meta-land using associative paint-
+  pigment union (Blendyland in the aligned skin);
+- aligned, neutral, and prior-conflicting skins over identical latent data;
+- no exceptions or behaviors until factor transport passes;
+- D0 situated lookup / D1 local projection / D2 cross-palette composition /
+  D3 meta-rule composition, each backed by a canonical dependency DAG.
+- a priced post-dream reachout stage for structural evidence gaps, with exact
+  evaluation-target visits blocked and every action counted as experience.
