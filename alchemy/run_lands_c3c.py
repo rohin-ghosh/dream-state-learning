@@ -71,8 +71,9 @@ You have NOT yet connected: {gaps}
 Here is every observation in the lands where it appears:
 {log}
 
-Scan for animals whose color MATCHES {gaps} in the same land, and emit
-ANIMAL_EQUIV claims (and a META_RULE claim if the special blend-land's
+Go land by land: state {gaps}'s color in that land, then name EVERY
+other animal with exactly that color in that land, and emit one
+ANIMAL_EQUIV claim per such animal. Also emit (and a META_RULE claim if the special blend-land's
 parents become clear). Use EXACTLY these forms, each followed by CITES:
 {grammar}
 CITES: <obs_id>, <obs_id>, ...
@@ -250,7 +251,7 @@ def dream_and_verify(world, skin, be, log_fn=print):
 
     # daydream rounds on gaps
     skin_obj = codec.skin
-    for rnd in range(3):
+    for rnd in range(6):
         cov_animals = {p["left"] for c, _, _ in verified
                        if c.kind == "animal_equiv"
                        for p in [c.payload]} | \
