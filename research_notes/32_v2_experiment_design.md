@@ -629,3 +629,23 @@ ADOPTED (science):
     Fails" as the honest fallback).
 Position: keep "dream" as mechanism name; paper = lifetime learning +
 experiential parametric memory; title candidate "Beyond Playback".
+
+## 2026-08-26 THE DREAM LANGUAGE (Rohin, candyland spec) — five strata
+1. WITNESSED FACTS with PROVENANCE ("the monkey in candyland was red")
+   — situatedness so worlds don't blur; enables "where did I see that?"
+2. GENERALIZATIONS with confidence ~ evidence count ("animals in
+   candyland are red" — only after ~10x supporting facts; below that,
+   "the ones I've seen were red"). Confidence spoken in language.
+3. PRIOR-CONTRAST / SURPRISE ("monkeys aren't usually red; this one
+   was") — store the world's DELTAS from pretrained priors; that's what
+   makes a new world learnable compactly.
+4. NAMED ABSTRACTIONS (G2e) — coin names so downstream reads are atomic.
+5. CONNECTIONS — dreams reference other memories; 50 observations
+   expand into hundreds of linked lines.
+THINKER = the READ CASCADE mirroring the strata: query at descending
+abstraction until something answers ("what color are apes here?" ->
+"are animals differently colored here?" -> "have I seen a monkey? what
+color?"). Writes resemble reads, per-level.
+MEMORY TESTS implied: PROJECTION queries (did observations become a
+world?) + SITUATED RETRIEVAL (provenance binding) — both gradeable vs
+ground truth. G4 covers strata 1/2/4; strata 3/5 + cascade = L1 ladder.
