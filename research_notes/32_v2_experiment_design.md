@@ -458,3 +458,19 @@ Also adopted from audit: 1000 stratified questions (fn/iid x kind);
 LoRA-destroys-actor = standalone replicated negative; dream-budget-per-
 episode as 4th scaling axis; dream-retrieval-hits as free dreamer
 utility signal; eval unit shifts fact->PATHWAY (procedure-shaped split).
+
+## 2026-08-24 EVAL REFRAME (Rohin): induction unit = PROCEDURE, not fact
+"You did this-this-that before in a few ways; learn about this-and-that;
+see that our situation's this is that; do this-this-that." The quiz
+measured declarative induction because ground truth was free; the thesis
+(and the only metric with signal — task success 0.08->0.175, 86%
+non-lookup) is PROCEDURAL. New eval hierarchy:
+1. HEADLINE: task success with a SHAPE-PRACTICED / MATERIAL-NEW split
+   (solution shape seen before, specific ingredients never co-available)
+   — procedure induction made countable.
+2. Supporting probe: the fact quiz (declarative half, family credit).
+3. Calibration: oracle (apply-structure, 0.91) + induction ceiling
+   (leap-from-perfect-evidence, queued) + retrieval (leap-from-mess, ~0).
+Measuring induced-experience generalization is ITSELF the invention —
+the field's benchmarks all measure playback; this hierarchy is the
+contribution's instrument.
