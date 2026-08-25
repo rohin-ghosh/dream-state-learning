@@ -191,6 +191,63 @@ class-equivalence lines ("X behaves like Y") + class-rules mined from
 cross-episode evidence, and measure fn−iid separation (the geometry-
 induction number) as the primary composition metric.
 
+## 4d. THE G-SERIES — the machinery works, then reassembling it honestly (2026-08-24/25)
+The L0 isolation campaign (alchemy/mini_g2*.py, mini_g4*.py; every cycle
+in alchemy/v2_out/mini_ledger.md) first PROVED transport through weights,
+then hunted the real dreamer's gap to that proof.
+
+**G2f — the breakthrough (oracle statements, real weights): kind_bal
+0.949, family-reads 1.00.** The five-rule stack it proved:
+1. dreams COIN NAMES for abstractions ("the belyl-family") — concept
+   formation, so everything downstream is one hop;
+2. memories stored as 1-hop atomic QA facts (2-hop reads collapse inside
+   adapters — G2d showed rule_acc 0.25 when reads had to hop);
+3. exposure ~200 touches/fact (32 touches → 0.58 storage; 200 → 1.00);
+4. thinker performs atomic RESOLVED reads (the model applies resolved
+   knowledge at 0.77–0.91 but cannot select from an in-context rulebook,
+   0.28);
+5. the CLEAN base composes — adapter is mounted only to produce the
+   memory block, then unmounted (read-only adapter protocol).
+
+**G4 series — replacing oracle statements with the real dreamer:**
+- G4 (thin one-shot "group and emit" prompt): 0.282. Dreamer coined
+  families from PRODUCT NAMES, not behavior. Lesson: grouping and
+  emission are different cognitive steps.
+- G4b (fresh grouping dream, 2 passes + LLM merge): 0.333. My
+  reimplementation regressed the proven run_mini dreamer. Lesson: don't
+  reimplement a proven organ.
+- G4c (consume proven artifact, naive union-find): 0.41. A 17-name blob
+  line chained everything. But focused-evidence pair dreams verified 3/3.
+- G4d (VERIFIED-CLAIM GRAPH): dreamer proposes executable pair-claims,
+  engine verifies each (Voyager rule), verified ruin-pairs are
+  same-family edges, components = families. 3 families, purity 1.0,
+  coverage 0.542 — end-to-end 0.256 because uncovered ingredients
+  hallucinate family reads.
+- G4e (+ DAYDREAMING: re-dream focused on still-ungrouped ingredients):
+  coverage 0.542 → 0.917 in ONE round, 4 families all purity 1.0, 10/10
+  pair-rules verified. **The dreamer side of L0 is solved.** End-to-end
+  0.308 → read diagnostic showed memberships 21/24, rules 7/10, with
+  the two PRODUCT rules exactly the corrupted reads.
+- G4f (rule upweighting ×3 + thinker-normalized rule reads): 0.513;
+  diagnostic now memberships 22/24, rules 10/10 — reads solved; the leak
+  moved to composition: (a) rule reads are ORDER-SENSITIVE (reversed
+  family order misses), (b) the 2 uncovered ingredients are both type B
+  (product-critical) — B members lack ruin evidence by nature, (c) the
+  base answers bare "PRODUCT" (no name in memory) which the parser
+  scored unparseable.
+- G4g (symmetrized rules + membership inference through verified product
+  edges + kind-level parse): running as of this writing.
+
+The through-line: every point lost between G2f (0.949) and the real
+dreamer has been attributed to a named, fixed defect — nothing is
+mysterious. Alongside: the DREAM LANGUAGE spec (five strata: witnessed
+facts w/ provenance, evidence-scaled generalizations, prior-contrast/
+surprise, named abstractions, connections), the docker-image principle
+(dream = commit layer; write diffs + reinforce repeats), dreamer==thinker
+as one question-engine with two ports, and the IDENTIFIER-VIVIDNESS
+variable (nonce vs "red monkey in candyland" skins, same hidden laws) —
+all in research_notes/32.
+
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
