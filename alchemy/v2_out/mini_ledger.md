@@ -121,3 +121,24 @@ normalizer inverted it. (Negation blindness in keyword matching.)
 - With seed0's 0.949 (G4h): mean 0.918 across 3 worlds, prior 0.33.
 - This is the full loop Rohin described: daydream -> notice a gap ->
   act to fill it -> verify -> consolidate. Curiosity as a memory organ.
+
+## G4k variance (n=3 full-pipeline reps per seed, fresh dreams each rep)
+- seed1: 0.882 / 0.784 / 0.882  (mean 0.849, sd ~0.057)
+- seed2: 0.923 / 0.923 / 0.769  (mean 0.872, sd ~0.089)
+- STRUCTURE IS STABLE, TRANSPORT IS NOISY: every rep found the same
+  families, fired the same experiment->merge, coverage 0.958, 10/10
+  rules — all variance lives in LoRA training/reads, concentrated in
+  acc_product (0.529-0.923). Next lever if we need tighter numbers:
+  fixed training shuffle seed, or 2x rule exposure.
+- 3-world headline with error bars: 0.949 (s0) / 0.849±0.06 (s1) /
+  0.872±0.09 (s2); grand mean ~0.88 vs 0.33 prior.
+
+## G5 (vividness x exposure, 24-fact load): COMPLETE — saturation regime
+- nonce    8/24/64/200 touches -> 0.417 / 1.00 / 1.00 / 1.00
+- vivid                        -> 0.250 / 1.00 / 1.00 / 1.00
+- conflict                     -> 0.458 / 0.917 / 1.00 / 1.00
+- At 24-fact load, EVERY skin saturates by ~24 touches — storage cost is
+  LOAD-DEPENDENT (the 200-touch recipe was measured on ~450-line corpora).
+  No skin separation detectable at saturation; conflict marginally slower
+  (0.917@24). The discriminating regime is higher load: G5b (96 facts,
+  conflict = color-word contradicts family) queued on GH200.
