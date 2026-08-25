@@ -28,6 +28,12 @@ COT_SUFFIX = ("\nWork out the needed steps briefly first. Then end your "
               "reply with exactly this format on the last line:\n"
               "FINAL: <one word>")
 
+PAIRWISE_SUFFIX = ("\nUse ONLY the memory reads above as facts. If the answer "
+                   "requires blending colors, blend exactly TWO at a time, "
+                   "applying the given blend equations verbatim; write each "
+                   "intermediate result. Do not use any outside knowledge "
+                   "about color mixing. End with:\nFINAL: <one word>")
+
 
 def score_output(skin_obj, text, want_internal):
     m = re.search(r"FINAL:\s*([\w-]+)", text)
@@ -135,15 +141,17 @@ print('[gate]', read(m, tok, {gate_q!r}, 40)[:100])
             f"- Q: {m.question} A: {r.strip().splitlines()[0] if r.strip() else '?'}"
             for m, r in zip(mems, reads))
         prompts.append("Verified atomic memory reads:\n" + block
-                       + f"\n\n{qmap[g.id]}")
+                       + f"\n\n{qmap[g.id]}"
+                       + (COT_SUFFIX if COT else ""))
     outs = []
     for i in range(0, len(prompts), 24):
-        outs += be.generate(prompts[i:i + 24], max_tokens=400)
+        outs += be.generate(prompts[i:i + 24],
+                            max_tokens=1200 if COT else 400)
     oks = [score_output(skin_obj, o, g.answer_color_id)[0]
            for g, o in zip(goals, outs)]
     rep = depth_report(world, goals, oks)
     rep["sample"] = prompts[0][:400] + " ||| " + outs[0][:160]
-    path = out_dir / f"lands_c2_{skin}_s{seed}.json"
+    path = out_dir / f"lands_c2{'_cot' if COT else ''}_{skin}_s{seed}.json"
     json.dump(rep, open(path, "w"), indent=1)
     print(f"[lands] c2 {skin} s{seed}: "
           + " ".join(f"{d}={v['acc']}" for d, v in rep.items()
@@ -152,7 +160,8 @@ print('[gate]', read(m, tok, {gate_q!r}, 40)[:100])
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stage", required=True, choices=["context", "c2"])
+    ap.add_argument("--stage", required=True,
+                    choices=["context", "c2", "c1c"])
     ap.add_argument("--skin", default="aligned")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--cot", action="store_true")
@@ -165,6 +174,29 @@ def main():
         from alchemy.backend import make_backend
         be = make_backend("vllm", MODEL, enable_lora=True, max_lora_rank=64)
         run_context(be, out_dir)
+    elif a.stage == "c1c":
+        from alchemy.backend import make_backend
+        be = make_backend("vllm", MODEL, enable_lora=True, max_lora_rank=64)
+        for seed in (0, 1, 2):
+            world = SemanticWorld(WorldConfig(seed=seed))
+            goals = world.eval_goals()
+            for skin in SKINS:
+                skin_obj = make_skin(skin, world.animal_ids,
+                                     world.source_land_ids)
+                prompts = [world.context_oracle(g.id, skin, resolved=True)
+                           + PAIRWISE_SUFFIX for g in goals]
+                outs = []
+                for i in range(0, len(prompts), 24):
+                    outs += be.generate(prompts[i:i + 24], max_tokens=1200)
+                oks = [score_output(skin_obj, o, g.answer_color_id)[0]
+                       for g, o in zip(goals, outs)]
+                rep = depth_report(world, goals, oks)
+                rep["sample"] = outs[12][:300]
+                json.dump(rep, open(out_dir / f"lands_c1c_{skin}_s{seed}.json",
+                                    "w"), indent=1)
+                print(f"[lands] c1c {skin} s{seed}: "
+                      + " ".join(f"{d}={v['acc']}" for d, v in rep.items()
+                                 if isinstance(v, dict)), flush=True)
     else:
         run_c2(a.skin, a.seed, out_dir)
     print("[lands] STAGE DONE", flush=True)
