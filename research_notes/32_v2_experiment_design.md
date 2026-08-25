@@ -440,3 +440,21 @@ generalized world rather than restating them.
 - Consciousness stream mechanism = PREFIX TUNING (soft prompts).
   Karpathy system-prompt-learning as reference — CONFIRM SOURCE before
   citing.
+
+## 2026-08-24 THE WALL, TRIANGULATED (three independent measurements)
+1. ORACLE: reasoner composes at 0.91 given explicit structure.
+2. RETRIEVAL DIAG: top-12 surfaces both ingredients 0.88 / shared-partner
+   class evidence 0.63 — evidence reaches context, model doesn't use it.
+3. All arms fn~iid~floor on held-out.
+=> The wall is the INDUCTION STEP (raw observations -> class equivalence),
+which the model will not perform in-context. Dreamer's job = do induction
+OFFLINE, hand the model structure (which it converts at 0.91).
+TASK SPLIT: only 14% of eval goals are pure lookup at E=3840; RAG's
+climbing task curve (0.08->0.175, monotone, 3 seeds) contains genuine
+transfer — PROMOTE task success to headline metric w/ seen/unseen split.
+PRIORITY-ZERO: family-level credit implemented (evals.score_levels);
+re-eval running (was our acc_product=0 hiding family-level induction?).
+Also adopted from audit: 1000 stratified questions (fn/iid x kind);
+LoRA-destroys-actor = standalone replicated negative; dream-budget-per-
+episode as 4th scaling axis; dream-retrieval-hits as free dreamer
+utility signal; eval unit shifts fact->PATHWAY (procedure-shaped split).
