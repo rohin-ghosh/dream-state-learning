@@ -702,3 +702,29 @@ knowledge of what's similar, with the world's laws as a thin diff. A
 memory system should be measured on how well it LAYERS onto priors, not
 only on cold-start symbol binding (nonce worlds = everything-is-a-diff,
 the hard case; vivid worlds = thin-film, the deployment-like case).
+
+## 2026-08-25 RULING: prior-anchored world is the main vehicle (Rohin)
+- "The symbolic game has no prior — nothing to extrapolate, low salience
+  for a pretrained model." Docker image = prior; container = salient
+  changes on top; proper "hallucination" = extrapolation WITHIN the
+  container ("if it knows it's in candyland it can try to extrapolate").
+- Nonce L0 is retained as the CONTROL (memory with zero prior support —
+  the floor); the vivid lands world becomes the main experiment.
+- LANDS GAME SPEC (cow-across-lands): entities are real concepts
+  (animals, colors, lands) so the ontology is scaffolded by priors;
+  hidden laws are random so priors can't shortcut outcomes. Cross-land
+  regularities must span beyond the context window (cow blue in
+  candyland, red in mandyland, green in dandyland -> predict randyland).
+  Complexity requirement: context player must NOT be able to learn it in
+  one window.
+- ONE MEMORY DREAMED INTO MANY: witnessed fact w/ provenance + prior
+  contrast ("cows aren't usually red") + connections ("odd-colored cows
+  in two lands now").
+- SECOND-ORDER DREAMS: connections made over ACCUMULATED MEMORIES, not
+  over raw experience ("red/green/blue are primary here" -> test
+  secondary-color inference). The model can do it but doesn't always
+  know to — that knowing-when is the learned part to amortize.
+- SCOPE (paper): prove the CEILING with oracled read/write policy —
+  how well does a LoRA carry it, with how much memory, how many dreams,
+  what must the data look like. Learning the policy itself is future
+  work; the vague-signal-through-logic training problem is out of scope.
