@@ -147,8 +147,21 @@ def main():
     results["rag"]["group_f1"] = grouping_probe(be, w, rag)
     print("[mini] rag:", results["rag"], flush=True)
     # ---- 3) dreamer -> verified corpus
-    dreams_raw = be.generate([DREAM_PROMPT.format(log=log)], max_tokens=2000)[0]
-    dreams = [l.strip("-* ") for l in dreams_raw.splitlines() if len(l.strip()) > 10]
+    chunks = [life[i:i+25] for i in range(0, len(life), 25)]
+    prompts_d = [DREAM_PROMPT.format(log=life_text(c)) for c in chunks]
+    outs_d = []
+    for i in range(0, len(prompts_d), 8):
+        outs_d += be.generate(prompts_d[i:i+8], max_tokens=2000)
+    merged = "\n".join(outs_d)
+    # merge pass: consolidate chunk-dreams into one coherent set
+    merge_prompt = ("Below are pattern notes from several dreaming sessions "
+                    "over different periods of the same life. Merge them: "
+                    "combine groups that overlap, drop duplicates, keep every "
+                    "distinct pattern. Keep looking until nothing new. One "
+                    "statement per line.\n\n" + merged)
+    dreams_raw = be.generate([merge_prompt], max_tokens=2500)[0]
+    dreams = [l.strip("-* ") for l in (merged + "\n" + dreams_raw).splitlines()
+              if len(l.strip()) > 10]
     # engine verification: keep pair-claims only if correct; keep general
     # statements (they get spot-verified via the pairs they imply later)
     import re
@@ -195,7 +208,18 @@ def main():
             verified.append(line)
         else:
             dropped += 1
-    print(f"[mini] dreams: {len(dreams)} lines, {dropped} dropped by verifier", flush=True)
+    # dream coverage: fraction of same-type pairs whose alikeness is
+    # stated anywhere in the verified dreams (CPU, ground truth)
+    def coverage():
+        import itertools
+        text = " ".join(verified).lower()
+        pairs_t = [(x, y) for x, y in itertools.combinations(w.ingredients, 2)
+                   if w.type_of[x] == w.type_of[y]]
+        cov = sum(1 for x, y in pairs_t
+                  if any(x in l and y in l for l in verified))
+        return round(cov / len(pairs_t), 3)
+    print(f"[mini] dreams: {len(dreams)} lines, {dropped} dropped, "
+          f"type-coverage {coverage()}", flush=True)
     pathlib.Path("alchemy/v2_out/mini_dreams.txt").write_text("\n".join(verified))
     # ---- 3b) DREAMS-AS-CONTEXT: dreamer abstractions in context, no LoRA
     dr_text = "\n".join(verified)
