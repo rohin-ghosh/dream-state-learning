@@ -277,8 +277,21 @@ def dream_and_verify(world, skin, be, log_fn=print):
         for a_, l_, c_, oid in rows:
             row_land[l_].append(f"{l_}: {a_}={c_} [{oid}]")
         for gname in gaps[:14]:
-            glands = {l_ for a_, l_, c_, oid in rows if a_ == gname}
-            ev = [ln for l_ in glands for ln in row_land[l_]]
+            if gname == meta_surf:
+                # meta gap: the blend inference needs the meta-observed
+                # animals' rows across ALL lands
+                meta_animals = {a_ for a_, l_, c_, oid in rows
+                                if l_ == meta_surf}
+                ev = [f"{l_}: {a_}={c_} [{oid}]"
+                      for a_, l_, c_, oid in rows if a_ in meta_animals]
+                ev.append(f"(Reminder: paint mixing — red+yellow=orange, "
+                          f"yellow+blue=green, red+blue=purple, "
+                          f"all three=brown. {meta_surf}'s color for an "
+                          f"animal is the BLEND of that animal's colors "
+                          f"in {meta_surf}'s parent lands.)")
+            else:
+                glands = {l_ for a_, l_, c_, oid in rows if a_ == gname}
+                ev = [ln for l_ in glands for ln in row_land[l_]]
             if not ev:
                 ev = [f"{l_}: {a_}={c_} [{oid}]" for a_, l_, c_, oid in rows][:30]
             gap_prompts.append(DAYDREAM.format(
