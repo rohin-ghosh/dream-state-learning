@@ -649,3 +649,27 @@ color?"). Writes resemble reads, per-level.
 MEMORY TESTS implied: PROJECTION queries (did observations become a
 world?) + SITUATED RETRIEVAL (provenance binding) — both gradeable vs
 ground truth. G4 covers strata 1/2/4; strata 3/5 + cascade = L1 ladder.
+
+## 2026-08-25 IDENTIFIER VIVIDNESS + controlled hallucination (Rohin)
+- Candyland was NOT a game redesign — it exposed a variable: identifier
+  VIVIDNESS. Hypothesis (human-memory analogy): "red monkey in candyland"
+  binds better in LoRA than nonce syllables, because rich pretrained
+  embeddings give gradients an intuition scaffold to attach deltas to.
+  You'd remember red monkeys better than greek symbols.
+- Design: SAME hidden L0 structure, two skins — nonce names vs vivid
+  fantasy entities, with RANDOM type assignment so priors can't predict
+  outcomes (any gain = binding/retention, not knowledge leakage; any loss
+  = prior interference). Either result is a paper section. Ruling: test
+  modules on BOTH skins; the abstract game stays as the clean test-bed.
+- Deployment argument: real agent memories are numerical-with-context
+  (the model has strong priors about what the numbers mean); nonce worlds
+  have no intuition scale, so vivid worlds may match deployment better
+  than abstract symbols.
+- DREAMING = CONTROLLED HALLUCINATION (via Rohin's friend): we are
+  deliberately eliciting extrapolation of the entire scene from fragmentary
+  memories; the engine-verifier is what separates dream from confabulation.
+  The dreamer is amortized learned instruction: find sequences, connect
+  facts, extrapolate from limited information.
+- Two-lands worlds (candy/dandy: same entities, different laws) =
+  provenance stratum made testable; forces chain-of-thought in dreaming
+  AND prompting; L1 ladder item.
