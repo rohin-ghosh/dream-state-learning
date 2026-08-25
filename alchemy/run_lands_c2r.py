@@ -16,6 +16,7 @@ from alchemy.lora_mem import load_base
 from alchemy.run_lands_c012 import score_output, depth_report, PAIRWISE_SUFFIX
 
 MODEL = "Qwen/Qwen2.5-7B-Instruct"
+CHAIN = False
 
 
 def candidates_for(kind, skin_obj, land_names, meta_land):
@@ -59,7 +60,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--skin", default="aligned")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--chain", action="store_true")
     a = ap.parse_args()
+    global CHAIN
+    CHAIN = a.chain
     world = SemanticWorld(WorldConfig(seed=a.seed))
     goals = world.eval_goals()
     skin_obj = make_skin(a.skin, world.animal_ids, world.source_land_ids)
@@ -105,21 +109,52 @@ def main():
     print(f"[c2r] {a.skin} s{a.seed}: read fidelity {n_read_ok}/{n_reads}",
           flush=True)
     # compose with the CLEAN base (adapter disabled)
+    def gen(prompt, n=900):
+        ids = tok(prompt, return_tensors="pt").input_ids.to(model.device)
+        out = model.generate(ids, max_new_tokens=n, do_sample=False,
+                             pad_token_id=tok.eos_token_id)
+        return tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True)
+
+    from lands.model import GoalDepth
     outs = []
     with model.disable_adapter():
         for g, block in zip(goals, blocks):
-            prompt = ("Verified atomic memory reads:\n" + block
-                      + f"\n\n{qmap[g.id]}" + PAIRWISE_SUFFIX)
-            ids = tok(prompt, return_tensors="pt").input_ids.to(model.device)
-            gen = model.generate(ids, max_new_tokens=900, do_sample=False,
-                                 pad_token_id=tok.eos_token_id)
-            outs.append(tok.decode(gen[0, ids.shape[1]:],
-                                   skip_special_tokens=True))
+            if CHAIN and g.depth == GoalDepth.D3:
+                # stage 1: one D2-style sub-compose per parent land
+                animal = skin_obj.animal(g.animal_id)
+                parents = [l for l in block.splitlines()
+                           if "feed" in l.lower()]
+                pnames = []
+                if parents:
+                    m2 = re.search(r"A: (.+)\.", parents[0])
+                    if m2:
+                        pnames = [p.strip() for p in m2.group(1).split("|")]
+                colors = []
+                for p in pnames:
+                    sub = (f"Verified atomic memory reads:\n{block}\n\n"
+                           f"Using the position of {animal}, the "
+                           f"transformation of {p}, and the rule, what color "
+                           f"is {animal} in {p}? Work it out step by step."
+                           "\nEnd with:\nFINAL: <one word>")
+                    r = gen(sub, 700)
+                    mF = re.search(r"FINAL:\s*([\w-]+)", r)
+                    colors.append(mF.group(1) if mF else "?")
+                sub2 = (f"Verified atomic memory reads:\n{block}\n\n"
+                        f"The colors of {animal} in the three parent lands "
+                        f"are: {', '.join(colors)}. Blend them two at a time "
+                        "using the pigment equations verbatim; write each "
+                        "intermediate. What color results?"
+                        "\nEnd with:\nFINAL: <one word>")
+                outs.append(gen(sub2, 500))
+            else:
+                prompt = ("Verified atomic memory reads:\n" + block
+                          + f"\n\n{qmap[g.id]}" + PAIRWISE_SUFFIX)
+                outs.append(gen(prompt))
     oks = [score_output(skin_obj, o, g.answer_color_id)[0]
            for g, o in zip(goals, outs)]
     rep = depth_report(world, goals, oks)
     rep["read_fidelity"] = round(n_read_ok / n_reads, 3)
-    json.dump(rep, open(f"alchemy/v2_out/lands_c2r_{a.skin}_s{a.seed}.json",
+    json.dump(rep, open(f"alchemy/v2_out/lands_c2r{'c' if CHAIN else ''}_{a.skin}_s{a.seed}.json",
                         "w"), indent=1)
     print(f"[c2r] {a.skin} s{a.seed}: "
           + " ".join(f"{d}={v['acc']}" for d, v in rep.items()
