@@ -18,7 +18,8 @@ retrieval and long context flatten. Target: ICLR 2027.
   experiment is the first slice of (engine, felt attention, dream,
   person-hierarchy, escalation ladders).
 - [`research_notes/`](research_notes/) — decision history; `32_*` is the
-  running v2 design log, `25_*` the competitive-landscape audits.
+  running v2 design log, `33_*` the frozen Semantic World v0 contract,
+  `25_*` the competitive-landscape audits.
 
 ## Live code
 - [`alchemy/`](alchemy/) — the v2 pipeline: `world.py` (latent compositional
@@ -27,6 +28,11 @@ retrieval and long context flatten. Target: ICLR 2027.
   `run_v2.py` (the 7-arm × 7-checkpoint experiment), `report.py`
   (results → tables; the only source of reported numbers), `sizing_mc.py`
   (ceiling instrument), `run_smoke.py` (plumbing test).
+- [`lands/`](lands/) — CPU-only prior-anchored LANDS instrument: deterministic
+  hierarchical generator, aligned/neutral/conflicting skins, D0-D3 proof
+  graphs, evidence-budgeted verifier, priced reachout, oracle/full-lifetime/
+  context baselines, and checksummed artifact export.  It is the next-world
+  interface for the proven G-series dream + read-only adapter stack.
 - [`gpu/`](gpu/) — node operations: `scout.py` (Colossus inventory search),
   `v2_bootstrap.sh` + `V2_NODE_SETUP.md` (worker setup incl. the GH200/ARM
   recipe), `v2node_*.sh` / `gh200_ssh.sh` (active-node wrappers).
