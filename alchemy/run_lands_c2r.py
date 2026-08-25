@@ -29,9 +29,17 @@ def candidates_for(kind, skin_obj, land_names, meta_land):
         return [f"{p}_ROTATION_{i}." for p in ("PRIMARY", "SECONDARY")
                 for i in range(3)]
     if kind == "palette_definition":
-        prim = " | ".join(c.upper() for c in list(skin_obj.colors.values())[:3])
-        sec = " | ".join(c.upper() for c in list(skin_obj.colors.values())[3:6])
-        return [f"{prim}.", f"{sec}."]
+        # all 6 arrangements per family: the corpus may store any gauge order
+        def arr(t):
+            r = t[::-1]
+            return [t[i:] + t[:i] for i in range(3)] + \
+                   [r[i:] + r[:i] for i in range(3)]
+        cands = []
+        for triad in (list(skin_obj.colors.values())[:3],
+                      list(skin_obj.colors.values())[3:6]):
+            for o in arr([c.upper() for c in triad]):
+                cands.append(" | ".join(o) + ".")
+        return cands
     if kind == "meta_parents":
         return [" | ".join(combo) + "."
                 for combo in itertools.combinations(land_names, 3)]
