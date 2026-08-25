@@ -416,11 +416,16 @@ stage. Updated as patterns are discovered.)*
 - iid stratum stays at ~30% AS CONTROL (equal improvement on inducible
   and lookup-only content = general improvement, not induction — the
   gap is the evidence).
-- Induction difficulty LADDER measured empirically before final lock:
-  (1) one-hop equivalence [rerunning], (2) chain transfer, (3)
-  compositional, (4) set-level pattern. Game inherits the rungs the
-  model demonstrably climbs; k-try-with-feedback (ambiguity-calibrated,
-  2-4 candidates) is the operating measurement.
+- Induction difficulty LADDER — rung 1 MEASURED (one-hop, curated
+  evidence, n=300): with abstention available the model refuses (98%
+  abstain); FORCED commitment unlocks kind 0.58 / family 0.20; a schema
+  hint adds NOTHING (the leap is known, unvolunteered). Oracle with
+  explicit structure = 0.91. ⇒ two priced routes: thinker-elicited
+  in-context induction ~0.20 one-shot; dreamer-precomputed structure
+  ~0.91. PLAY-LOOP RULE: no abstention in games — retries are the
+  safety valve; k-try-with-feedback climb from 0.20 is the last number
+  gating the game lock. Rungs 2-4 (chain/compositional/set-level) after.
+  (alchemy/v2_out/induction_variants.json)
 
 ## Metric (headline)
 Paired per-goal TRIES-TO-GOAL, k attempts with outcome feedback, capped
