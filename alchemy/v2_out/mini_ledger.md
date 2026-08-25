@@ -205,3 +205,22 @@ evidence has gaps.
   one-hop prior lookup (pigment union; the additive-vs-pigment
   ambiguity Codex flagged). Next: c1c pairwise-blend-as-lookup protocol
   (running) + C2 under CoT compose (running).
+
+## SEMANTIC WORLD c1c (pairwise-blend protocol) + C2-CoT + read diagnosis
+- c1c (resolved + blend-two-at-a-time-as-lookup): D1 0.67-1.0, D2
+  0.58-1.0 (aligned/conflicting ~0.9+, neutral ~0.65). D3 mean ~0.42
+  (above 0.33 floor, not solved). The context read/composition protocol
+  is essentially SOLVED for D0-D2; D3 needs chained-union reads.
+- C2 under CoT COLLAPSED to floor (D1/D2 0.08-0.42) — worse than
+  C2 one-word. Read diagnosis (lands_c2_diag): per-goal facts (position,
+  rotation, palette) read back PERFECTLY from the adapter; the ONE
+  corrupted read is the constant composite-procedure line
+  (ADD_POSITION_AND_ROTATION_MOD_3... regenerates as prose at 600
+  touches — answer FORM, not exposure; matches G5c relation-lag).
+  Under CoT the poisoned procedure read derails the whole compose.
+- FIX (architectural, thinker-side): RECOGNITION READS — the claim
+  grammar defines a finite legal answer space per leaf kind; the thinker
+  scores candidates under the adapter (argmax logprob) instead of
+  generating. Reads become recognition, not generation. C2r running
+  (reuses C2 adapters; candidate sets incl. distractors for constant
+  leaves so the adapter must still discriminate).
