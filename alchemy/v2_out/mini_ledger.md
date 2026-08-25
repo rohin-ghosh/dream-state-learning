@@ -280,3 +280,20 @@ evidence has gaps.
   LLM dreamer propose the right ANIMAL_EQUIV pairs + META parents?
   (Same-color-in-same-land heuristic now taught in the prompt.)
   Live C3c running.
+
+## C3 CLOSED FOR THE NIGHT: real dreamer through weights, fully attributed
+- Live dreamer: 6 verified equivs + 69 episodic cells + 1 land relation
+  -> gauge fit 1.000 -> 63-line corpus -> rank-64 LoRA -> recognition
+  reads (palette candidates must span all 6 gauge arrangements — eval
+  bug found+fixed) -> clean-base compose:
+  D0 0.75 | D1 0.500 | D2 0.500 | D3 0.0  (floors 0.167/0.333)
+- 0.50 == the positioned-coverage ceiling exactly (dreamer connected
+  9/15 animals => 6/12 eval animals positioned). The C2->C3 gap
+  (0.92 -> 0.50) is now a PURE dreamer-coverage number; D3=0 is the
+  missing meta-rule claim. Nothing unattributed remains in the ladder:
+  C0 0.08 (in-context induction, by design) -> C1a 0.72 (protocol)
+  -> C2 0.92 (transport proven) -> C3 0.50 (dreamer coverage).
+- Dreamer capability is the measured frontier. Levers, in order:
+  (1) deeper daydream rounds w/ explicit per-land color-match scans,
+  (2) C5 reachout for genuinely missing evidence, (3) dreamer model
+  scale (7B misses instructed scans), (4) meta-rule targeted dreaming.
