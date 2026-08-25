@@ -236,7 +236,15 @@ then hunted the real dreamer's gap to that proof.
   base answers bare "PRODUCT" (no name in memory) which the parser
   scored unparseable.
 - G4g (symmetrized rules + membership inference through verified product
-  edges + kind-level parse): running as of this writing.
+  edges + kind-level parse): coverage 1.000, purity 1.0 ×4, product 1.0,
+  ruin 1.0 — nothing 0.0 from ONE bug: the normalizer checked "product"
+  before "nothing", inverting the adapter's correct "nothing happens.
+  they do not form a product."
+- **G4h — L0 CLOSED: kind_bal 0.949 (product 1.0, nothing 0.846, ruin
+  1.0), coverage 1.000 — real dreamer, no oracle in the write path,
+  EQUAL to the G2f oracle-statement ceiling.** The five-rule stack holds
+  end-to-end; every point between 0.282 and 0.949 is attributed to a
+  named, fixed defect (see mini_ledger.md).
 
 The through-line: every point lost between G2f (0.949) and the real
 dreamer has been attributed to a named, fixed defect — nothing is

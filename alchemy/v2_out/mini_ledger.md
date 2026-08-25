@@ -59,3 +59,28 @@ organ works.
   the composition prompt, misleading the clean base.
 - G4f (running): rule lines upweighted x3 in corpus; thinker NORMALIZES
   rule reads to canonical phrases before composing memory.
+
+## G4g: symmetrized rules + product-edge inference -> coverage 1.000,
+purity 1.0 x4, product 1.0, ruin 1.0 — but nothing 0.0: the thinker's
+normalizer checked the keyword "product" BEFORE "nothing", so the
+adapter's correct read "nothing happens. they do not form a product."
+was normalized to "they make a product". The memory was perfect; my
+normalizer inverted it. (Negation blindness in keyword matching.)
+
+## G4h: L0 CLOSED — real dreamer reaches the oracle ceiling
+- Fix: normalize on FIRST CLAUSE, priority nothing > ruin > product.
+- END-TO-END: kind_bal 0.949 (product 1.0, nothing 0.846, ruin 1.0),
+  coverage 1.000, 10/10 rules — EQUAL to G2f's oracle-statement ceiling
+  (0.949). Experience -> real dreamer -> weights -> reads -> behavior,
+  no oracle anywhere in the write path.
+- The verified pipeline: chunked behave-alike dreams -> executable
+  pair-claims -> engine verification (Voyager rule) -> ruin-edge
+  components -> DAYDREAMING rounds on uncovered items -> product-edge
+  membership inference -> coined family names -> atomic QA emission
+  (memberships x8, rules x24 exposure) -> rank-64 lr 2e-4 25-epoch LoRA
+  -> atomic resolved reads (canonical order, first-clause normalized)
+  -> clean base composes.
+- Ceiling attribution ledger, G4->G4h: wrong abstraction (0.282), organ
+  reimplementation (0.333), lossy parsing (0.41), coverage gap (0.256),
+  rule under-exposure (0.513), read order + bare-PRODUCT parse (0.667),
+  normalizer negation bug (-> 0.949). Every point named and fixed.
