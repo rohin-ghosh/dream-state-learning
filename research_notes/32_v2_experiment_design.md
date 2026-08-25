@@ -497,3 +497,34 @@ V3, in build order:
    experience (pass@k curve) + shape-practiced/material-new split.
    One-shot success too noisy; k tries separates can't-do from variance.
 5. Then scale (dream budget axis, population later).
+
+## 2026-08-24 V3 SPEC REFINEMENTS (advisor, all adopted)
+- METRIC: paired per-goal TRIES-TO-GOAL (graded — every game informative
+  vs binary's wasted bits), capped at N with censoring rate reported;
+  identical goal set across arms; median tries headline.
+- iid STAYS AS CONTROL: equal improvement on inducible and lookup-only
+  goals = general improvement, not induction; THE GAP IS THE EVIDENCE.
+  New unit: inducible-goals vs lookup-only-goals.
+- PATHWAY INDUCTION TEST (CPU, gates world design): classify every goal
+  as LOOKUP (recipe observed) / ANALOGY (structurally identical solution
+  practiced on different materials) / NOVEL. Design target: analogy
+  plentiful and SHALLOW (few examples suffice).
+- READ REDESIGN: query = goal+inventory (state, not quiz); retrieve PLAN
+  FRAGMENTS not log lines; two channels reported separately: exact-
+  material vs analogous-shape (the induction channel).
+- DREAM TYPES (cheapest first): symmetry/substitution; generalization;
+  PROCEDURAL ABSTRACTION ("to make tier-3, get two same-family tier-2s
+  first" — the thesis one); counterfactual. VOYAGER RULE, non-negotiable:
+  every dream ENGINE-VERIFIED before entering the corpus (free verifier;
+  control_confab=1.00 is what unverified dreaming produces).
+- PERSPECTIVES TEST spec: hold gradient steps CONSTANT, vary distinct
+  framings (1x200 / 10x20 / 40x5), 3 seeds — diversity-vs-repetition at
+  matched compute; if diversity wins it's the dreamer's existence proof.
+- SEQUENCE: metric -> induction test -> world -> dream/read spec ->
+  prompt assembly -> experiment -> play.
+- TIMING (ROHIN'S CALL, urgent): Sep 18 abstract = 25 days; V3 done
+  properly exceeds it. Paper-now option = the replicated negatives
+  (parametric consolidation destroys the actor, 3 seeds; capacity wall
+  forces selection; retrieval-augmented agents improve with lifetime
+  while parametric degrade) — coherent honest measurement paper. Decide
+  deliberately: V3 this cycle or next.
