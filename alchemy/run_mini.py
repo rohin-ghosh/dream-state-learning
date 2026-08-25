@@ -18,7 +18,8 @@ DREAM_PROMPT = """You are the dreamer of an agent that played crafting games.
 Below is its full experience log. Your job: find the GENERAL PATTERNS.
 Instructions: look for which ingredients behave similarly; group them;
 keep looking until you stop finding new patterns; state each pattern as a
-general rule with the ingredients it covers; also state which ingredient
+general rule with the ingredients it covers; explicitly list groups of
+ingredients that BEHAVE ALIKE ('these behave the same: a, b, c'); also state which ingredient
 groups react to make products, which ruin, which do nothing. Make many
 guesses, then keep the ones the evidence supports. Output one statement
 per line, plain declarative sentences.
@@ -129,8 +130,36 @@ def main():
     # engine verification: keep pair-claims only if correct; keep general
     # statements (they get spot-verified via the pairs they imply later)
     import re
+    NAME_RE = r"\b([a-z]+(?:il|run|sic|eth|ock|ane|ura|esk|ov|ith|ard|une|yl|ost|ira|em|ash|orn|ude|eft|ion|arl|ows|ekt))\b"
+    def verify_group(line):
+        """'... with X: a, b, c' — check every implied pair; rewrite line
+        keeping only verified members."""
+        mm = re.search(r"with " + NAME_RE + r"\s*:\s*(.+)$", line.lower())
+        if not mm:
+            return None
+        anchor = mm.group(1)
+        members = re.findall(NAME_RE, mm.group(2))
+        if anchor not in w.type_of or not members:
+            return None
+        said_ruin = "ruin" in line.lower() or "curdle" in line.lower()
+        said_prod = "fuse" in line.lower() or "brew" in line.lower() or "product" in line.lower()
+        want = "ruin" if said_ruin else "product" if said_prod else "nothing"
+        good = [m_ for m_ in members if m_ in w.type_of
+                and w.predict(anchor, m_)[0] == want]
+        if not good:
+            return ""
+        verb = {"ruin": "ruin the mixture", "product": "fuse into a product",
+                "nothing": "do nothing"}[want]
+        return f"Combined with {anchor}, these {verb}: " + ", ".join(good) + "."
     verified, dropped = [], 0
     for line in dreams:
+        g = verify_group(line)
+        if g is not None:
+            if g:
+                verified.append(g)
+            else:
+                dropped += 1
+            continue
         m = re.findall(r"\b([a-z]+(?:il|run|sic|eth|ock|ane|ura|esk|ov|ith|ard|une|yl|ost|ira|em|ash|orn|ude|eft|ion|arl|ows|ekt))\b", line.lower())
         pair_ok = True
         if len(m) == 2 and all(x in w.type_of for x in m):
@@ -158,11 +187,19 @@ def main():
     import subprocess, sys as _sys
     code = (
         "import json\n"
-        "from alchemy.lora_mem import load_base, train_lora\n"
+        "from alchemy.lora_mem import load_base, train_lora, read\n"
         "corpus = json.load(open('alchemy/v2_out/mini_corpus.json'))\n"
         f"base, tok = load_base({a.model!r})\n"
-        "train_lora(base, tok, corpus, rank=64, epochs=3, lr=5e-4,\n"
-        "           save_dir='alchemy/v2_out/mini_lora', log=print)\n")
+        "for lr in (1e-4, 5e-5, 2e-5):\n"
+        "    m = train_lora(base, tok, corpus, rank=64, epochs=2, lr=lr,\n"
+        "                   save_dir='alchemy/v2_out/mini_lora', log=print)\n"
+        "    probe = read(m, tok, 'Describe one thing you remember.', 60)\n"
+        "    words = probe.split()\n"
+        "    ok = len(set(words)) > max(3, len(words)//3)\n"
+        "    print('[sanity]', lr, 'ok' if ok else 'GIBBERISH', probe[:80])\n"
+        "    base = m.unload()\n"
+        "    if hasattr(base, 'peft_config'): del base.peft_config\n"
+        "    if ok: break\n")
     rc = subprocess.run([_sys.executable, "-c", code]).returncode
     assert rc == 0, "lora train subprocess failed"
     be = make_backend(a.backend, a.model, enable_lora=(a.backend == "vllm"),
