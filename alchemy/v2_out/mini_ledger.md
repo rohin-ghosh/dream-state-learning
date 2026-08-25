@@ -263,3 +263,20 @@ evidence has gaps.
   (anti rejection-sampling). CPU test: ground-truth equiv claims verify
   through assembled paths. The honest question is now isolated:
   does the LLM propose the right abstractions?
+
+## C3c emitter PROVEN by component oracle: gauge fit 1.000
+- Oracle-dreamer test (correct equiv+cell+meta claims through the real
+  assembler/verifier): the mechanical emitter recovers the ENTIRE
+  coordinate system — 3 position classes, 6/6 land rotations, both
+  palette orders — at fit 1.000 and emits the full C2-form corpus (71
+  lines). Two bugs found on the way: (a) my gauge searched only palette
+  ROTATIONS; the canonical secondary order is a REFLECTION of the
+  alphabetical sort — arrangements must include both cyclic orders;
+  (b) position-label permutations must be searched jointly (S3).
+- Ground-truth check: color == palette[(role + rotation) mod 3] fits
+  66/66 witnessed source cells — the law and canonical orders are as
+  spec'd; every earlier failure was in MY model of the gauge.
+- With the emitter proven, C3 reduces to exactly one question: does the
+  LLM dreamer propose the right ANIMAL_EQUIV pairs + META parents?
+  (Same-color-in-same-land heuristic now taught in the prompt.)
+  Live C3c running.
