@@ -16,10 +16,13 @@ makes the model confidently wrong. We diagnosed why (single-exposure
 facts + numerically unstable training), fixed the corpus construction
 ("fixed recipe"), and the second run shows facts now partially stick
 (recall 0 → ~0.2) while retrieval baselines saturate (recall 1.0). The
-world and instruments are validated; the bottleneck is now squarely the
-memory side — how richly experience is "dreamed" and how much capacity
-the adapter has. That is exactly where the research was always headed,
-and the next experiment (enrichment × capacity) is designed.
+world and instruments are validated; the memory-side bottleneck was then
+fully diagnosed and FIXED at L0 scale — the G-series (§4d) closed the
+nonce mini-world end-to-end at the oracle ceiling (0.949/0.882/0.923
+across three worlds, real dreamer, no oracle in the write path). The
+project has pivoted to the prior-anchored Semantic World (lands/,
+built by Codex on Fable's measured constraints) with nonce worlds kept
+as the zero-prior control; the C0–C5 GPU ladder is the current program.
 
 ---
 ## 1. The game, mechanically
@@ -89,10 +92,10 @@ one-pass dreaming). All three seeds show the same shape: retrieval
 recall 0.94–1.00, in-weights recall bouncing at noise, held-out at floor
 for everyone while the ceiling reaches 1.00, and every apparent
 late-life LoRA "win" decomposing into the answer-NOTHING prior.
-This forces the enrichment × capacity attribution; the first capacity
-cell (rank 64, same corpora as seed 1) finishes its evals ~today —
-its result decides whether the next lever is BIGGER MEMORY or RICHER
-DREAMING (the sleep+daydreaming ladder).
+The attribution question this raised ("bigger memory or richer
+dreaming?") was answered by the G-series (§4d): neither — the write
+FORMAT was broken. With the five-rule stack, the same substrate carries
+the whole L0 structure at the oracle ceiling.
 ### Seed 0 — naive recipe (COMPLETE; alchemy/v2_out/seed0_naive_results.json)
 - Naive LoRA arms: recall ≈ 0 everywhere (G1 fail ⇒ no claims); by
   mid-life they answer confidently and wrongly (confab ~0.6–1.0). The one
@@ -250,7 +253,11 @@ then hunted the real dreamer's gap to that proof.
   both). Residual gap: a true type sometimes arrives as two disconnected
   components with NO witnessed evidence between the halves.
 - **G4k — experiment-resolution + family-merge: 3-world line
-  0.949 / 0.882 / 0.923 (mean 0.918; prior 0.33).** When daydreaming
+  0.949 / 0.849±0.06 / 0.872±0.09 (per-seed means over n=3 full-pipeline
+  reps; grand mean ~0.89; prior 0.33; best-rep line 0.949/0.882/0.923).**
+  Structure is deterministic across reps (same families, same merges,
+  coverage 0.958, 10/10 rules every time); ALL variance is in LoRA
+  training/reads, concentrated in acc_product. When daydreaming
   finds a family pair with no witnessed evidence, the agent ACTS — runs
   one combine in the world — and the verified outcome (ruin => same
   family) triggers the merge. Notice a gap -> act to fill it -> verify ->
@@ -273,17 +280,15 @@ all in research_notes/32.
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
 and online between tasks (daydreaming), enriching them into more
-learnable, more connected forms. Our dreamer is still one-pass.
-Mechanism ladder (ascending cost): (1) enrichment depth, unequal by
-need — salience as replay count; (2) re-dreaming — dreams that cite and
-connect other memories; (3) the DAYDREAMER — targeted enrichment between
-episodes aimed at what recent tasks needed-and-missed (formalized, note
-32); (4) capacity — rank 16→64→128 and steps-per-fact.
-**Next experiment: enrichment × capacity 2×2** to attribute "too little
-dreaming" vs "too small memory." Also queued: arm 8 "agentic-grep"
-(model with search tools over the raw log — the strongest honest
-retrieval baseline, prompted by Stanford's Meta-Harness), and a
-128k-window long-context variant.
+learnable, more connected forms. [SUPERSEDED 2026-08-25 — this ladder was BUILT AND VALIDATED at L0:
+rung (2) re-dreaming and rung (3) the daydreamer are the workhorses of
+the G-series closure (§4d), plus a rung the ladder didn't anticipate —
+EXPERIMENT-RESOLUTION (G4k): when dreaming finds a structural gap with
+no lived evidence, the agent acts in the world to create the missing
+evidence. The enrichment × capacity 2×2 is retired; capacity was never
+the wall (G5/G5b: atomic facts store at ~24 touches even at 96-fact
+load) — corpus FORMAT was (G5c grid running). Next program: the C0–C5
+Semantic World ladder in lands/HANDOFF_FABLE.md.]
 Vision anchor (yours, near-verbatim): dreams are experiences replayed
 through other experiences, building the experiential world model; as the
 built world grows, raw reality fades — a puzzle off a light-projected
@@ -367,6 +372,25 @@ run):** game redesigned for shallow induction (post induction-ceiling
 result); dream+think rich but pre-shaped; tries-to-success (pass@k) as
 headline with shape-practiced/material-new split; contexts-per-fact
 micro-test feeds dream design. v2 is closed for learning.
+
+**G-series / L0 (2026-08-24/25, COMPLETE):** the isolation-and-closure
+campaign of §4d. Nonce L0 closed end-to-end at the oracle ceiling with
+the real dreamer; five-rule stack proven; daydreaming + experiment-
+resolution validated; n=3 variance measured. Ledger: alchemy/v2_out/
+mini_ledger.md.
+
+**G5/G5b/G5c storage pilots (2026-08-25, G5+G5b COMPLETE):** exposure
+cost is format-mixture-driven, not fact-count-driven; storage is
+prior-indifferent (even conflicting bindings store at 24 touches);
+vividness therefore matters at the DREAM layer, not the storage layer.
+
+**Semantic World v0 (2026-08-25, CURRENT):** lands/ package merged from
+Codex's semantic-world-v0 branch (commit 04c81a1) — Candyland/Blendyland
+instrument, three isomorphic skins, D0–D3 proof-graded goals, claim
+grammar + verification entitlement, priced reachout. GPU program =
+C0–C5 ladder (lands/HANDOFF_FABLE.md); C0/C1/C2 launched on the H100.
+Paper frame: two-front comparison (vs RAG downward, vs batch
+post-training upward) per notes/32 2026-08-25.
 
 **Backlog (designed, deliberately NOT next):** fn difficulty ladder
 (calibrates after v2.1's 3840 numbers); A-Mem external baseline;

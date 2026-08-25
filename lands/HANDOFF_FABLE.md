@@ -12,7 +12,7 @@ The implementation follows the measured constraints in
 nameable abstractions, one-hop atomic read leaves, positive canonical answers,
 provenance on every experience line, balanced depth/kind splits, and an
 explicit context-oracle hook. The full design rationale and falsifiers are in
-`research_notes/33_semantic_world_v0_spec.md`.
+`research_notes/34_semantic_world_v0_spec.md`.
 
 ## Accept this branch
 

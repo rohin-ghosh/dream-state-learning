@@ -461,7 +461,7 @@ task success secondary; fact quiz demoted to probe (family credit).
 # Part IV — LANDS (v0 CPU instrument implemented on `semantic-world-v0`)
 
 Canonical frozen v0 contract:
-[`research_notes/33_semantic_world_v0_spec.md`](research_notes/33_semantic_world_v0_spec.md).
+[`research_notes/34_semantic_world_v0_spec.md`](research_notes/34_semantic_world_v0_spec.md).
 Implementation and CPU gates: [`lands/`](lands/).  The material below is
 the originating draft; where it differs, note 33 and executable tests win.
 

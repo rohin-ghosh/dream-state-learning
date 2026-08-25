@@ -2,7 +2,7 @@
 
 CPU-only instrument for the prior-anchored LANDS experiment.  The canonical
 scientific contract is
-[`research_notes/33_semantic_world_v0_spec.md`](../research_notes/33_semantic_world_v0_spec.md).
+[`research_notes/34_semantic_world_v0_spec.md`](../research_notes/34_semantic_world_v0_spec.md).
 
 ## What is implemented
 
