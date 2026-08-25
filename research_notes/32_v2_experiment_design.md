@@ -589,3 +589,43 @@ V3, in build order:
 - Dreaming + prompting parallelize/distribute like any transformer work
   — dreaming need not slow the system.
 - Population dreamer: later, after single-agent success, for scale.
+
+## 2026-08-26 EXTERNAL AUDIT (Codex/GPT-5.6) — adoptions
+SECURITY (P0, Rohin action): repo is PUBLIC with internal hosts/IPs/
+procedures/colleague refs in history -> make private NOW; separate
+sanitized anonymous artifact for ICLR; AI-use disclosure required.
+ADOPTED (science):
+1. READ-ONLY ADAPTER PROTOCOL: mount adapter only to produce a bounded
+   memory block; unmount; unchanged base reasoner answers. Separates
+   storage/retrieval/policy-modification/degradation. Next cycle.
+2. ORACLE-IN-WEIGHTS (their G2, decisive): train adapter directly on the
+   TRUE compact rules; if read-only read can't transmit them, the
+   substrate is broken regardless of dream quality. Run before more
+   dreamer work.
+3. Verifier-as-oracle risk: unlimited engine checks = rejection-sampling
+   exploration. Dream language needs: claim schema, supporting episode
+   IDs, witnessed-vs-counterfactual distinction, counterfactual budget,
+   reject unparsed. (Cycle-2 group verifier = partial.)
+4. STATS: unit of replication = world/lifetime; v2 falsifier = p~.08
+   directional (softened in REVIEW_PACK); success@k + restricted-mean
+   attempts with censoring; analogy-minus-lookup pre-registered primary.
+5. Factorial core: representation {raw, verified-abstractions} x storage
+   {context/RAG, parametric} + oracle + agentic-search ceilings, same
+   goal-conditioned thinker everywhere.
+6. Pathway taxonomy too coarse (shape=sorted tier pairs) — do NOT lock
+   N=192/K=12; define pathway identity on canonical dependency graphs;
+   verify taxonomy on small worlds manually. (L0 line supersedes.)
+7. Target-module ablation (attention vs MLP down-proj; TMEM) before any
+   capacity claim; capacity claims softened to recipe-specific.
+8. Claims-not-yet-safe list adopted (RAG-can't-induce, abstraction-must-
+   be-parametric, forgetting-impossible, etc. — all softened to tested-
+   configuration statements).
+9. New must-reads/cites: TMEM 2606.04536, PEAM 2605.27762, COVE
+   2608.01234, Auto-Dreamer 2605.20616, procedure-memory 2604.27003,
+   Ground-Truth-First 2607.21962, MemTrace 2606.17328, RECON 2607.16716.
+10. Gate calendar (Aug30 L0 factorial ×3 worlds / Sep3 oracle-in-weights
+    / Sep7 first replicated analogy / Sep10 claim freeze / Sep13 pivot
+    decision -> negative paper "Why Naive Parametric Consolidation
+    Fails" as the honest fallback).
+Position: keep "dream" as mechanism name; paper = lifetime learning +
+experiential parametric memory; title candidate "Beyond Playback".

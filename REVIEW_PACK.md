@@ -81,7 +81,9 @@ pairs — the G1 gate ≥0.9), **task success** (200 fresh games).
 ## 4. Results
 **FORMAL VERDICT (2026-08-22, now 3 seeds):** the v2.1 recipe **fails
 the pre-registered falsifier** — at E=3840, lora_dreamed − best-RAG =
-−0.026, t=−3.25, n=3 (needed ≥ +0.05). Statistically solid negative; per
+−0.026, t=−3.25, n=3 (needed ≥ +0.05; with df=2 this is p≈.08 two-sided —
+a strong DIRECTIONAL negative, not conclusive; the pre-registered five
+seeds were not completed). Per
 pre-registration the substrate claim is dead *in this form* (rank-16,
 one-pass dreaming). All three seeds show the same shape: retrieval
 recall 0.94–1.00, in-weights recall bouncing at noise, held-out at floor
