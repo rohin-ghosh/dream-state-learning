@@ -395,3 +395,58 @@ but not yet implemented in world.py — today's rule table is 100% ρ_iid;
 implementing the mixture + its ceiling semantics is generator milestone 2.
 (c) eval sizes (200/200) and the tightened falsifier are spec'd, harness
 not yet built.
+
+
+---
+# PART III — V3 GAME SPECIFICATION (accumulating; near-complete)
+*(Every ruling from the v2 diagnosis era, consolidated. Rohin gates each
+stage. Updated as patterns are discovered.)*
+
+## World structure
+- INDUCIBLE STRATUM = one-hop, SET-SCOPED regularities only: same-class
+  ingredients behave identically; learning one class-pair rule covers all
+  member pairs (pattern propagates across the set, never one-off x~x').
+  The circle geometry is DEAD (IMO-puzzle-grade; unrealistic).
+- Candidate config (pathway-sweep-locked, pending induction ladder):
+  N=192 ingredients / K=12 classes / tiers 4 / rho_fn 0.7 —
+  analogy goals 42%, lookup 38%, novel 21% (ceiling check), 149 goals,
+  median solution-shape practiced 15x, ~6.3k observations per class.
+- Structure size must fit MEASURED memory capacity: 78 rules + 192
+  memberships ~= 270 items (capacity curve: fine at rank>=64).
+- iid stratum stays at ~30% AS CONTROL (equal improvement on inducible
+  and lookup-only content = general improvement, not induction — the
+  gap is the evidence).
+- Induction difficulty LADDER measured empirically before final lock:
+  (1) one-hop equivalence [rerunning], (2) chain transfer, (3)
+  compositional, (4) set-level pattern. Game inherits the rungs the
+  model demonstrably climbs; k-try-with-feedback (ambiguity-calibrated,
+  2-4 candidates) is the operating measurement.
+
+## Metric (headline)
+Paired per-goal TRIES-TO-GOAL, k attempts with outcome feedback, capped
+with censoring reported; identical goal set across arms; split =
+analogy-goals vs lookup-goals (procedure induction vs recall); one-shot
+task success secondary; fact quiz demoted to probe (family credit).
+
+## Dream / Think (amortized as agent calls, co-designed)
+- DREAMER-AGENT: consumes context-window batches of memories (+ prior
+  cycles), instructed to hunt known pattern types ("what behaves
+  similarly; keep looking until dry; guess; test guesses"), emits
+  multi-perspective memories. VOYAGER RULE: every dream engine-verified
+  before entering the corpus. Dream types: symmetry/substitution,
+  generalization, procedural abstraction, counterfactual.
+- THINKER-AGENT: query = goal + inventory (state, not quiz); retrieves
+  plan fragments in two reported channels (exact-material / analogous-
+  shape); builds prompter context; drives the retry loop.
+- Perspectives micro-test feeds dream sizing: constant gradient steps,
+  vary distinct framings (1x200 / 10x20 / 40x5), 3 seeds.
+
+## Eval-engineering rules (learned the hard way)
+- NO tiny generation caps on eval calls (24-token cap = corrupted
+  measurement; batched inference is cheap).
+- Family-level credit primary where hidden state (grades) makes exact
+  names underdetermined.
+- Per-kind-within-stratum decomposition on any stratified metric
+  (kind-mix differences manufacture fake gaps).
+- Every reported number from a repo script; controls must be able to
+  fail; n>=3 seeds on anything called a recipe.

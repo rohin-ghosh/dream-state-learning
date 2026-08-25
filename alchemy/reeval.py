@@ -50,11 +50,11 @@ def main():
                 prompts = [f"MEMORY:\n{memory_block(obj, q, 12)}\n\n{q}" for q in qs]
                 outs = []
                 for i in range(0, len(prompts), 64):
-                    outs += be.generate(prompts[i:i+64], max_tokens=24)
+                    outs += be.generate(prompts[i:i+64], max_tokens=128)
             else:
                 outs = []
                 for i in range(0, len(qs), 64):
-                    outs += be.generate(qs[i:i+64], max_tokens=24, lora_path=obj)
+                    outs += be.generate(qs[i:i+64], max_tokens=128, lora_path=obj)
             res = {}
             for st_name, subset in (("fn", range(len(fn))),
                                     ("iid", range(len(fn), len(pairs)))):
