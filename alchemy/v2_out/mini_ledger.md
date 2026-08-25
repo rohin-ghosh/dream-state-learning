@@ -27,3 +27,24 @@ principle drives the change. Bar: memory_think matches context player.
   states each family-pair outcome FROM THE LOG (engine-verified, Voyager
   rule); mechanical atomic-QA emission (formatting isn't intelligence);
   read hygiene (regex family extraction, first-sentence truncation).
+
+## G4b (staged dreamer, fresh grouping): 0.333 — my re-implemented dream
+loop regressed (2 passes + lossy LLM merge -> 2 groups, coverage 0.29).
+The proven run_mini dreamer accumulated raw chunk-dreams PLUS merge
+output and asked for many guesses. Lesson: don't reimplement a proven
+organ; call it.
+
+## G4c (consume proven artifact, naive group parse): 0.41 — extraction
+lost the structure. Union-find over noisy behave-alike lines chained a
+17-name blob; majority-type filter then killed almost everything
+(coverage 0.25). But focused-evidence pair dreams verified 3/3 — that
+organ works.
+
+## G4d design: VERIFIED-CLAIM GRAPH (running)
+- The artifact's real payload is hundreds of PAIRWISE executable claims
+  ("These ruin the mixture: quinune and druane, ..."). Engine-verify each
+  (Voyager rule); verified RUIN pairs are same-family edges (same-type ->
+  ruin is a world law); connected components = families exactly; inert
+  family = >=3 verified-nothing partners and no ruin edge.
+- Dreamer proposes, environment disposes, graph clustering is mechanical
+  post-processing, names coined per component. Purity + coverage printed.
