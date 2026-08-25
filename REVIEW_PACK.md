@@ -245,6 +245,12 @@ then hunted the real dreamer's gap to that proof.
   EQUAL to the G2f oracle-statement ceiling.** The five-rule stack holds
   end-to-end; every point between 0.282 and 0.949 is attributed to a
   named, fixed defect (see mini_ledger.md).
+- **G4i — replicated on fresh worlds** (self-contained pipeline, new
+  dreams): seed 1 = 0.804, seed 2 = 0.872 (mean 0.875 across 3 worlds;
+  balanced prior 0.33; coverage 0.958 and purity 1.0 on both). Residual
+  gap identified: a true type sometimes arrives as two disconnected
+  components; the verified RUIN rule between the halves logically implies
+  they are one family — the family-merge inference is queued.
 
 The through-line: every point lost between G2f (0.949) and the real
 dreamer has been attributed to a named, fixed defect — nothing is

@@ -84,3 +84,16 @@ normalizer inverted it. (Negation blindness in keyword matching.)
   reimplementation (0.333), lossy parsing (0.41), coverage gap (0.256),
   rule under-exposure (0.513), read order + bare-PRODUCT parse (0.667),
   normalizer negation bug (-> 0.949). Every point named and fixed.
+
+## G4i: REPLICATION across worlds (self-contained pipeline, fresh dreams)
+- seed 1: kind_bal 0.804 (product 0.882, nothing 0.882, ruin 0.647)
+- seed 2: kind_bal 0.872 (product 0.923, nothing 0.923, ruin 0.769)
+- seed 0 (G4h): 0.949. Mean 0.875 across 3 worlds vs 0.33 balanced prior.
+- Both replication seeds: coverage 0.958 (23/24), purity 1.0 across ALL
+  families, daydreaming again the workhorse (0.50->0.96 in one round).
+- Known residual, explains the ruin dips: one true type arrives as TWO
+  disconnected components (e.g. fenov(3)+morrun(2)), so its same-type
+  pairs read as cross-family. The engine-verified rule between the split
+  halves is RUIN — which by the world's law implies they are ONE family.
+  QUEUED: family-merge inference (ruin-rule between families => merge),
+  a second-order dream. Expected to recover most of the remaining gap.
