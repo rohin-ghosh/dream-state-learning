@@ -455,3 +455,56 @@ task success secondary; fact quiz demoted to probe (family credit).
   (kind-mix differences manufacture fake gaps).
 - Every reported number from a repo script; controls must be able to
   fail; n>=3 seeds on anything called a recipe.
+
+---
+
+# Part IV — LANDS (draft for Rohin's edits, 2026-08-25; not yet implemented)
+
+The prior-anchored main experiment (nonce L0 kept as zero-prior control).
+
+## World
+- K lands: candyland, mandyland, dandyland, randyland, ... (known words —
+  the ontology rides the base image).
+- N animals (cow, monkey, fox, ...) and C colors on a color wheel.
+- HIDDEN LAW (random per seed, priors can't shortcut): each animal has a
+  latent base index b(a); each land a latent shift s(l);
+  color(a, l) = wheel[(b(a) + s(l)) mod C].
+  Cross-land regularity: knowing cow's color in 2 lands + another
+  animal's colors pins down both latents -> predict cow in randyland.
+- SALIENT-DIFF layer (surprise stratum): a few per-land exceptions
+  ("in dandyland, exactly one animal is colorless") to test
+  prior-contrast dreaming.
+- Episodes = land visits with small goals (find/feed the <color> <animal>);
+  observations carry provenance implicitly ("In mandyland you see the cow.
+  It is red."). One visit fits a context window; the LAW spans visits.
+
+## Why context can't just learn it
+Per-visit evidence underdetermines the law; the induction needs
+observations from >=3 lands that never co-occur in one window at target
+scale (dial: K x N x C, plus visit sparsity).
+
+## Evals (each stratum measurable)
+1. Situated recall: "what color was the cow in mandyland?" (provenance)
+2. Cross-land composition: unseen (animal, land) cells — the headline
+   (analogy split), with iid holdout as control ("the gap is the evidence")
+3. Prior-contrast probes: "are cows usually red?" (must keep the base
+   image intact — oracle-in-weights gate)
+4. Second-order: "which colors recur across lands?" / secondary-color
+   inference — connections dreamed over accumulated memories
+5. Grouping/projection: "which animals share the cow's base color?" (F1)
+6. Tries-to-goal with feedback across visits (pass@k capability curve)
+
+## Method (unchanged G-series ladder, now proven on nonce L0)
+Component oracles first (context oracle; storage oracle with ideal dream
+statements at 200 touches; resolved atomic reads; clean-base compose),
+then real dreamer (verified-claim graph + daydreaming rounds + coined
+names e.g. "the sunset-shifted lands"), then end-to-end vs context/RAG
+arms. Identifier-vividness A/B: same latent structure, nonce skin vs
+lands skin — the paper's prior-scaffolding section.
+
+## Open design choices for Rohin
+- law shape: rotation (above) vs arbitrary permutation per land (harder);
+- how much of the color wheel is prior-real (red/green/blue) vs invented;
+- exception density for the surprise stratum;
+- whether animals also have BEHAVIORS bound to color (richer pathways,
+  closer to alchemy patterns) or color-only first.
