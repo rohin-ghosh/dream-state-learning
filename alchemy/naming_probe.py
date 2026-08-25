@@ -11,10 +11,20 @@ from alchemy.evals import parse_answer
 SYL_A = ["vex","mor","tes","gal","rin","dru","kel","sab","fen","lur"]
 SYL_B = ["il","run","sic","eth","ock","ane","ura","esk","ov","ith"]
 
+BLENDS = {
+    "char": lambda a, b: a[0] + b,                      # tokenizer-hostile
+    "syllable": lambda a, b: a[:3] + b[-3:],            # first syl + last syl
+    "join": lambda a, b: a + "-" + b,                   # trivial concatenation
+}
 def blend(a, b):
-    return a[0] + b   # first letter of A + full name of B
+    return BLENDS[MODE](a, b)
+MODE = "char"
 
 def main():
+    global MODE
+    import sys
+    MODE = sys.argv[1] if len(sys.argv) > 1 else "syllable"
+    print(f"[probe] mode={MODE}")
     rng = np.random.default_rng(4)
     names = [x + y for x in SYL_A for y in SYL_B]
     rng.shuffle(names)
@@ -38,15 +48,17 @@ def main():
     outs = []
     for i in range(0, len(prompts), 64):
         outs += be.generate(prompts[i:i+64], max_tokens=300)
-    for o in outs[:3]:
-        print("[probe-sample]", o[:140].replace("\n", " | "))
-    ok = 0
+    for o in outs[:6]:
+        print("[probe-tail]", o[-120:].replace("\n", " | "))
+    json.dump(outs, open("alchemy/v2_out/naming_probe_outputs.json", "w"))
+    ok = loose = 0
     for (pair, ev, truth), o in zip(cases, outs):
         pred = parse_answer(o)
         ok += int(pred[0] == "product" and (pred[1] or "") == truth)
-    print(f"[probe] compositional-naming induction: {ok/len(cases):.3f} (n={len(cases)})")
+        loose += int(truth in o.lower())   # name appears anywhere in output
+    print(f"[probe] strict: {ok/len(cases):.3f}  loose(name-in-output): {loose/len(cases):.3f} (n={len(cases)})")
     json.dump({"acc": ok/len(cases), "n": len(cases)},
-              open("alchemy/v2_out/naming_probe.json", "w"))
+              open(f"alchemy/v2_out/naming_probe_{MODE}.json", "w"))
 
 if __name__ == "__main__":
     main()
