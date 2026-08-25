@@ -673,3 +673,24 @@ ground truth. G4 covers strata 1/2/4; strata 3/5 + cascade = L1 ladder.
 - Two-lands worlds (candy/dandy: same entities, different laws) =
   provenance stratum made testable; forces chain-of-thought in dreaming
   AND prompting; L1 ladder item.
+
+## 2026-08-25 DOCKER-IMAGE MEMORY + one question-engine, two ports (Rohin)
+- DREAMER == THINKER, opposite directions: both run the same cognitive op
+  ("what state am I in? what happens at this state? what was unusual?").
+  Thinker compiles the questions into memory READS; dreamer compiles the
+  answers into memory WRITES. One question-engine, two ports.
+- ATTENTION LIVES IN THE THINKER: it processes inputs + model outputs +
+  memory outputs + state and builds the next state for the executor. Its
+  transformer attention is already strong at noticing important patterns
+  — lean on it instead of a separate salience module. (Emergent
+  attention: "what matters and how much of it can I chain together.")
+- DOCKER-IMAGE PRINCIPLE: pretrained model = base image; a dream = a
+  commit layer; write ONLY the diff ("car on the roof; room hot rather
+  than cold; time is different") plus confirmations of repeated patterns
+  ("back wall was green and still is") which strengthen existing layers
+  — i.e., exposure/repetition is layer reinforcement. A world is
+  learnable in proportion to the size of its diff vs the base image;
+  nonce worlds are the hard case because EVERYTHING is a diff.
+- Game ruling: do not change the game; add vividness/observational
+  setting as the skin variable (G5) over the same hidden structure —
+  the model should be absorbing its surroundings.
