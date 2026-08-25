@@ -21,9 +21,20 @@ from lands.skins import make_skin
 
 MODEL = "Qwen/Qwen2.5-7B-Instruct"
 SKINS = ("aligned", "neutral", "conflicting")
+COT = False
+
+
+COT_SUFFIX = ("\nWork out the needed steps briefly first. Then end your "
+              "reply with exactly this format on the last line:\n"
+              "FINAL: <one word>")
 
 
 def score_output(skin_obj, text, want_internal):
+    m = re.search(r"FINAL:\s*([\w-]+)", text)
+    if m:
+        got = skin_obj.decode_color(m.group(1))
+        if got is not None:
+            return got == want_internal, got
     # last color-surface token mentioned wins; decode to internal id
     hits = []
     for internal, surface in skin_obj.colors.items():
@@ -68,10 +79,14 @@ def run_context(be, out_dir):
                 "c1b": [world.context_oracle(g.id, skin, resolved=True)
                         for g in goals],
             }
+            if COT:
+                variants = {k + "_cot": [p + COT_SUFFIX for p in v]
+                            for k, v in variants.items()}
             for stage, prompts in variants.items():
                 outs = []
                 for i in range(0, len(prompts), 24):
-                    outs += be.generate(prompts[i:i + 24], max_tokens=400)
+                    outs += be.generate(prompts[i:i + 24],
+                                        max_tokens=1200 if COT else 400)
                 oks = [score_output(skin_obj, o, g.answer_color_id)[0]
                        for g, o in zip(goals, outs)]
                 rep = depth_report(world, goals, oks)
@@ -140,7 +155,10 @@ def main():
     ap.add_argument("--stage", required=True, choices=["context", "c2"])
     ap.add_argument("--skin", default="aligned")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--cot", action="store_true")
     a = ap.parse_args()
+    global COT
+    COT = a.cot
     out_dir = pathlib.Path("alchemy/v2_out")
     out_dir.mkdir(exist_ok=True)
     if a.stage == "context":
