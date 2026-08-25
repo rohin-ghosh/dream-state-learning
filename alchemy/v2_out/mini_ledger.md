@@ -188,3 +188,20 @@ evidence has gaps.
 - PROTOCOL CONFOUND: goal questions demand "answer with exactly one
   color word" — suppresses reasoning (our burned-once eval trap).
   Think-then-FINAL rerun launched before any redesign conclusion.
+
+## SEMANTIC WORLD, CoT protocol (think-then-FINAL), 3 skins x 3 seeds
+- C1a_cot (UNRESOLVED leaves + CoT): D1 mean ~0.75, D2 mean ~0.72
+  (vs ~0.35 one-word protocol) — THE D2 REDESIGN TRIGGER IS CLEARED;
+  the composition wall was answer-suppression, the L0 eval trap again.
+  D2 now sits in the L0 apply-resolved band (0.77-0.91).
+- PRIOR SCAFFOLDING ACTS ON REASONING, NOT STORAGE: neutral (nonce)
+  skin lags aligned/conflicting by ~20 pts on D1/D2 CoT (~0.55 vs
+  ~0.80) with identical latent structure — real words track through a
+  reasoning chain better than nonce tokens, EVEN when color words are
+  deranged (conflicting ~= aligned). Complements G5b (storage is
+  prior-indifferent). The vividness thesis is now precise.
+- D3 IS THE TRUE WALL, and free-form CoT makes it WORSE: resolved-D3
+  no-CoT hit 0.833 aligned; with CoT drops to ~0.35 — overthinking a
+  one-hop prior lookup (pigment union; the additive-vs-pigment
+  ambiguity Codex flagged). Next: c1c pairwise-blend-as-lookup protocol
+  (running) + C2 under CoT compose (running).
