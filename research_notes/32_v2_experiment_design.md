@@ -549,3 +549,20 @@ V3, in build order:
   -> retry). Game design targets the k-try number.
 - Sequence per Rohin: in-context results -> game lock -> trial-and-error
   amortized dreamer/thinker -> numbers -> V3 run (possibly <3 days).
+
+## 2026-08-24 Stage-2 seed (Rohin, verbatim-ish) + test scoring fix
+- INDUCTION TEST SCORING: exact-name is over-strict (product suffix
+  depends on hidden grades the evidence only partially reveals) —
+  FAMILY-LEVEL is the fair primary for the ceiling test.
+- k-TRY VARIANT = AMBIGUITY-CALIBRATED: include evidence sets that pin
+  the answer to 2-4 candidates; k attempts with outcome feedback;
+  measure how fast the candidate space collapses (induction-under-play).
+- V3 DREAM/THINK = AGENT CALLS WITH INSTRUCTIONS (amortized):
+  dreamer-agent gets context-window batches of memories (+ pulls from
+  prior cycles), instructed: "look for what behaves similarly; keep
+  looking until you stop finding; make guesses; test which hold" —
+  every emitted memory ENGINE-VERIFIED before entering corpus. Learned
+  version later = general pattern recognizer; now = prompted specialist.
+  thinker-agent reads memories as instructions, builds prompter context,
+  drives the retry loop. Dream sifts patterns; the context-window
+  intuition lives here (dream consumes windowfuls).
