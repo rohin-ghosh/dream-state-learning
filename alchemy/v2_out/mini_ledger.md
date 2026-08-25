@@ -297,3 +297,20 @@ evidence has gaps.
   (1) deeper daydream rounds w/ explicit per-land color-match scans,
   (2) C5 reachout for genuinely missing evidence, (3) dreamer model
   scale (7B misses instructed scans), (4) meta-rule targeted dreaming.
+
+## C3 ROUND 2 — REAL DREAMER REACHES THE ORACLE TRANSPORT CEILING (D2)
+- Deeper daydreaming (6 rounds, explicit per-land color-match scan):
+  verified equivs 6 -> 15; classes [5,4,5,1] = 14/15 animals positioned;
+  gauge fit 1.000; 68-line corpus; read-plan coverage 201/228.
+- END-TO-END THROUGH WEIGHTS: D0 0.75 | D1 0.667 | **D2 0.917** | D3 0.083
+  — D2 EQUALS the oracle-corpus C2 ceiling (0.917). Experience -> real
+  dreamer -> verified claims -> gauge-pinned corpus -> LoRA ->
+  recognition reads -> clean-base composition, at the transport ceiling,
+  on the prior-anchored world.
+- The coverage->accuracy law, measured: equiv coverage 9/15 -> D2 0.50;
+  14/15 -> D2 0.917. Dreamer coverage prices downstream capability
+  almost linearly.
+- Remaining, attributed: D3 0.083 (dreamer never proposes META_RULE —
+  needs meta-targeted dreaming; then the union-composition protocol),
+  D1 0.667 (residual coverage + protocol), D0 0.75 (pairwise-protocol
+  overthink on lookups — make the thinker depth-adaptive).

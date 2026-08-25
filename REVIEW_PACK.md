@@ -276,6 +276,29 @@ as one question-engine with two ports, and the IDENTIFIER-VIVIDNESS
 variable (nonce vs "red monkey in candyland" skins, same hidden laws) —
 all in research_notes/32.
 
+## 4e. SEMANTIC WORLD — the C-ladder, first 24 hours (2026-08-25/26)
+Instrument by Codex (lands/), machinery by the G-series stack. Floors:
+D0-D2 0.167, D3 0.333. Aligned skin, seed 0 (skins/seeds fan-out queued):
+- C0 (full lifetime in context): D2 0.08 — in-context induction fails
+  even with every observation visible (the designed context-break).
+- C1a (oracle atomic leaves + reasoning room): D2 0.72. The one-word
+  answer protocol had suppressed reasoning (our own eval trap); D3
+  showed an OVERTHINKING effect (resolved-D3 0.83 no-CoT -> 0.35 CoT).
+- C2 (oracle corpus in rank-64 LoRA, RECOGNITION READS, clean-base
+  compose): D1 0.83-0.92, D2 0.92-1.0, read fidelity 228/228 across all
+  three skins — parametric transport proven at lands scale. Recognition
+  reads (argmax candidate scoring under the adapter over the claim
+  grammar's finite answer space) are the read-channel fix.
+- C3 (REAL DREAMER: grammar claims + thinker-assembled citation paths +
+  verifier gating + daydream rounds + gauge-pinned emission):
+  **D2 0.917 — equal to the oracle transport ceiling.** Coverage->
+  accuracy measured: 9/15 animals connected -> D2 0.50; 14/15 -> 0.917.
+- Science: prior scaffolding acts on REASONING (nonce skin -20 pts in
+  multi-step composition; storage is prior-indifferent, G5b); exposure
+  cost is fact-SHAPE-driven (relations > entities; G5c); D3 (meta-rule)
+  is the open tier — dreamer doesn't propose META_RULE yet and the
+  union composition overthinks.
+
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
