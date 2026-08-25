@@ -107,18 +107,23 @@ def main():
     pathlib.Path("alchemy/v2_out/mini_dreams.txt").write_text("\n".join(verified))
     # corpus: verified dreams + raw obs, augmented at measured recipe
     corpus = verified * 6 + obs_lines * 2
-    # ---- LoRA at measured recipe
+    # ---- LoRA in a SUBPROCESS (canary bug 4: in-process vLLM<->peft
+    # handoff never frees CUDA memory)
+    json.dump(corpus, open("alchemy/v2_out/mini_corpus.json", "w"))
     if a.backend == "vllm":
         del be
         import gc, torch
         gc.collect(); torch.cuda.empty_cache()
-    from alchemy.lora_mem import load_base, train_lora
-    base, tok = load_base(a.model)
-    m = train_lora(base, tok, corpus, rank=64, epochs=3, lr=5e-4,
-                   save_dir="alchemy/v2_out/mini_lora", log=print)
-    del m, base
-    import gc, torch
-    gc.collect(); torch.cuda.empty_cache()
+    import subprocess, sys as _sys
+    code = (
+        "import json\n"
+        "from alchemy.lora_mem import load_base, train_lora\n"
+        "corpus = json.load(open('alchemy/v2_out/mini_corpus.json'))\n"
+        f"base, tok = load_base({a.model!r})\n"
+        "train_lora(base, tok, corpus, rank=64, epochs=3, lr=5e-4,\n"
+        "           save_dir='alchemy/v2_out/mini_lora', log=print)\n")
+    rc = subprocess.run([_sys.executable, "-c", code]).returncode
+    assert rc == 0, "lora train subprocess failed"
     be = make_backend(a.backend, a.model, enable_lora=(a.backend == "vllm"),
                       max_lora_rank=64) if a.backend == "vllm" else \
         make_backend(a.backend, a.model)
