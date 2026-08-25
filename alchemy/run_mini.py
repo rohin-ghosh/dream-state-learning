@@ -115,6 +115,28 @@ def main():
     results["context"] = eval_pairs(be, w, eval_pairs_list, ctx)
     results["context"]["group_f1"] = grouping_probe(be, w, ctx)
     print("[mini] context:", results["context"], flush=True)
+    # ---- 1b) ORGANIZED context: same info, per-ingredient structure
+    from collections import defaultdict
+    org = defaultdict(lambda: {"product": set(), "nothing": set(), "ruin": set()})
+    for ep in life:
+        for st in ep["log"]:
+            parts = st["obs"].split()
+            x, y = parts[2], parts[4].rstrip(".")
+            k, _ = w.predict(x, y)
+            org[x][k].add(y); org[y][k].add(x)
+    org_lines = []
+    for ing in sorted(org):
+        d = org[ing]
+        org_lines.append(
+            f"{ing}: makes products with [{', '.join(sorted(d['product'])) or '-'}]; "
+            f"ruins with [{', '.join(sorted(d['ruin'])) or '-'}]; "
+            f"nothing with [{', '.join(sorted(d['nothing'])) or '-'}]")
+    org_text = "\n".join(org_lines)
+    ctx_org = lambda x, y: (f"Your experience, organized by ingredient:\n{org_text}\n\n"
+                            + QF.format(a=x, b=y))
+    results["context_organized"] = eval_pairs(be, w, eval_pairs_list, ctx_org)
+    results["context_organized"]["group_f1"] = grouping_probe(be, w, ctx_org)
+    print("[mini] context_organized:", results["context_organized"], flush=True)
     # ---- 2) rag player
     obs_lines = [st["obs"] for ep in life for st in ep["log"]]
     idx = TfidfIndex(obs_lines)
@@ -175,6 +197,13 @@ def main():
             dropped += 1
     print(f"[mini] dreams: {len(dreams)} lines, {dropped} dropped by verifier", flush=True)
     pathlib.Path("alchemy/v2_out/mini_dreams.txt").write_text("\n".join(verified))
+    # ---- 3b) DREAMS-AS-CONTEXT: dreamer abstractions in context, no LoRA
+    dr_text = "\n".join(verified)
+    ctx_dr = lambda x, y: (f"General patterns you have learned:\n{dr_text}\n\n"
+                           + QF.format(a=x, b=y))
+    results["dreams_as_context"] = eval_pairs(be, w, eval_pairs_list, ctx_dr)
+    results["dreams_as_context"]["group_f1"] = grouping_probe(be, w, ctx_dr)
+    print("[mini] dreams_as_context:", results["dreams_as_context"], flush=True)
     # corpus: verified dreams + raw obs, augmented at measured recipe
     corpus = verified * 6 + obs_lines * 2
     # ---- LoRA in a SUBPROCESS (canary bug 4: in-process vLLM<->peft
