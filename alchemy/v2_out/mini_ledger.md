@@ -12,3 +12,18 @@ principle drives the change. Bar: memory_think matches context player.
 | L0-c3 (50ep) | +organized-ctx +dreams-as-ctx | raw .0 prod | — | — | — | ORDERING: raw .00 < organized .15 < DREAMED .31 on product induction — dreaming adds value beyond organization (first positive!). Weights path still all-RUIN style. Gaps: dream coverage thin (22 lines); consolidation. NEXT: chunked multi-pass dreams + coverage metric |
 | G2/G2b/G2c | oracle-in-weights + resolved reads + write-as-reads | oracle_resolved .77 (prod/ruin 1.0) | — | mounted dead | adapter_resolved .31 (prod .62) | CHAIN MAPPED: apply .77-.91 OK / rulebook-select .28 FAIL => thinker resolves; write-as-reads fixes storage (gate returns real members; prod 0->.62); remaining gap = read-answer accuracy. Dreamer inspect: degeneration line x300 amplified into corpus + behave-alike lines unverified => filters needed |
 | G2d/e/f | read decomposition -> named abstractions -> full exposure | — | — | — | **G2f: 0.949 end-to-end, family-reads 1.00** | THE STACK PROVEN: coined names + atomic 1-hop facts + 200 touches + resolved reads + clean base = 0.95 through WEIGHTS (beats context oracle 0.77). Prior failures: 2-hop reads (rule collapse), exposure 32 (0.58 storage), rulebook-dump (selection fail). NEXT: real dreamer with name-coining + atomic emission = end-to-end L0 |
+
+## G4 (real dreamer, thin prompt): FAILED 0.282 — grouping regression
+- Dreamer coined families from PRODUCT NAMES ("mirtesine-family" = things
+  that fused into mirtesine), not behavior: 2 families, 6 memberships,
+  1 rule = 7 verified lines (G2f oracle had ~68). Wrong abstraction, so
+  the adapter had almost nothing to say; reads hallucinated continuations
+  ("...However, it's more commonly known as belo").
+- LESSON: the thin one-shot "group and emit QA" prompt regressed from the
+  proven run_mini behave-alike dreamer (0.967 coverage). Grouping and
+  emission are different cognitive steps — don't fuse them.
+- NEXT (G4b): stage-1 = proven behave-alike grouping dreamer (chunk+merge,
+  union-find overlaps, majority-type verification); stage-2 = dreamer
+  states each family-pair outcome FROM THE LOG (engine-verified, Voyager
+  rule); mechanical atomic-QA emission (formatting isn't intelligence);
+  read hygiene (regex family extraction, first-sentence truncation).
