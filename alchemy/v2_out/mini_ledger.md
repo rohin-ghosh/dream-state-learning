@@ -314,3 +314,19 @@ evidence has gaps.
   needs meta-targeted dreaming; then the union-composition protocol),
   D1 0.667 (residual coverage + protocol), D0 0.75 (pairwise-protocol
   overthink on lookups — make the thinker depth-adaptive).
+
+## C3 SKIN FAN-OUT — the vividness thesis measured at the dream layer
+Identical latent world (seed 0), identical machinery, only words differ:
+- aligned:     equivs 15 -> 14/15 positioned | D1 0.75  D2 0.917 D3 0.0
+- conflicting: equivs 11 -> 11/15 positioned | D1 0.75  D2 0.75  D3 0.167
+- neutral:     equivs 13 -> 13/15 positioned | D1 0.583 D2 0.667 D3 0.083
+(gauge fit 1.000 on all three; verification strictness identical)
+- THE DISSOCIATION, complete: priors scaffold the DREAMER's connection-
+  proposing (aligned finds most, nonce/deranged find less) and the
+  composer's reasoning (earlier: -20pts nonce in CoT), while STORAGE is
+  prior-indifferent (G5b: conflicting bindings store at 24 touches).
+  Priors matter where intelligence happens, not where memory sits.
+- D3 still open everywhere: no META_RULE claim has verified yet even
+  with meta-targeted daydreams (7B doesn't land the parent-set blend
+  hypothesis). Levers: dreamer model scale, reachout (C5), or richer
+  meta evidence framing. This is tomorrow's first target.

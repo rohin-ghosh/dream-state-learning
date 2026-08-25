@@ -293,6 +293,12 @@ D0-D2 0.167, D3 0.333. Aligned skin, seed 0 (skins/seeds fan-out queued):
   verifier gating + daydream rounds + gauge-pinned emission):
   **D2 0.917 — equal to the oracle transport ceiling.** Coverage->
   accuracy measured: 9/15 animals connected -> D2 0.50; 14/15 -> 0.917.
+- C3 skin fan-out (the vividness thesis, measured): dreamer coverage
+  aligned 14/15 / neutral 13/15 / conflicting 11/15; end-to-end D2
+  0.917 / 0.667 / 0.75. Priors scaffold the dreamer's connection-
+  proposing and the composer's reasoning; storage is prior-indifferent
+  (G5b). D3 open on all skins (no META_RULE verified yet — the 7B
+  dreamer doesn't land the parent-set blend hypothesis).
 - Science: prior scaffolding acts on REASONING (nonce skin -20 pts in
   multi-step composition; storage is prior-indifferent, G5b); exposure
   cost is fact-SHAPE-driven (relations > entities; G5c); D3 (meta-rule)
