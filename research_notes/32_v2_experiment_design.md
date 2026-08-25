@@ -566,3 +566,26 @@ V3, in build order:
   thinker-agent reads memories as instructions, builds prompter context,
   drives the retry loop. Dream sifts patterns; the context-window
   intuition lives here (dream consumes windowfuls).
+
+## 2026-08-25 Stage-1 convergence (Rohin)
+- BAR: given the induction steps in evidence, the model must hit 70-90%
+  or the game leaves no headroom for memory to show its work. Current
+  world misses the bar (forced family 0.20) BECAUSE product names are
+  arbitrary ciphers — even perfect induction can only COPY, not derive.
+- REDESIGN (pending probe + Rohin sign-off): COMPOSITIONAL NAMING
+  (boy+toy=btoy): product name = visible morphological blend of inputs;
+  hidden classes govern only react/nothing/ruin. Division of labor:
+  MEMORY = broad induction (who reacts with whom, pieced across a
+  lifetime, larger than context, written/read specially); CONTEXT =
+  last-mile derivation via the visible grammar. "Memory hands context
+  intermediary intelligence, not answers" — thesis enforced by
+  construction. naming_probe.py testing the 90% claim now.
+- INVALIDATION BY RE-DREAMING (filed): when daydreaming reaches opposite
+  conclusions on new/contradicting info, sufficient consideration of the
+  CHANGED disposition trains more on it and backprop reverses the old
+  weights; deeply-ingrained old facts need repetition/investigation to
+  reverse — which is the robust behavior, not a bug. Contradiction
+  handling is emergent from re-dreaming + full-corpus retraining.
+- Dreaming + prompting parallelize/distribute like any transformer work
+  — dreaming need not slow the system.
+- Population dreamer: later, after single-agent success, for scale.
