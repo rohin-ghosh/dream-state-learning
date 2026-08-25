@@ -39,16 +39,50 @@ def eval_pairs(be, w, pairs, ctx_fn, lora=None, batch=64):
     outs = []
     for i in range(0, len(prompts), batch):
         outs += be.generate(prompts[i:i+batch], max_tokens=250, lora_path=lora)
-    kind = name = 0
+    by = {"product": [], "nothing": [], "ruin": []}
     for (a, b), o in zip(pairs, outs):
         pred = parse_answer(o)
         t = w.predict(a, b)
-        kind += pred[0] == t[0]
-        if t[0] == "product":
-            name += (t[1] or "") in o.lower()
-    n = len(pairs)
-    nprod = sum(w.predict(a, b)[0] == "product" for a, b in pairs) or 1
-    return {"kind": kind / n, "name_mention": name / nprod, "n": n}
+        by[t[0]].append(pred[0] == t[0])
+    accs = {f"acc_{k}": (sum(v) / len(v) if v else None)
+            for k, v in by.items()}
+    vals = [x for v in by.values() for x in v]
+    return {"kind_bal": round(float(np.mean(
+        [sum(v)/len(v) for v in by.values() if v])), 3),
+        "kind_raw": round(sum(vals)/len(vals), 3),
+        **{k: (round(x, 3) if x is not None else None)
+           for k, x in accs.items()}, "n": len(pairs)}
+
+
+def grouping_probe(be, w, ctx_fn, lora=None):
+    """Direct induction measure: 'which ingredients behave like X?'
+    scored as F1 vs ground-truth type members. Prior-immune."""
+    import re
+    rng = np.random.default_rng(6)
+    probes = list(rng.choice(w.ingredients, 8, replace=False))
+    qs = [ctx_fn_group(ctx_fn, x) for x in probes]
+    outs = []
+    for i in range(0, len(qs), 8):
+        outs += be.generate(qs[i:i+8], max_tokens=250, lora_path=lora)
+    f1s = []
+    for x, o in zip(probes, outs):
+        truth = {n for n in w.ingredients
+                 if n != x and w.type_of[n] == w.type_of[x]}
+        said = {n for n in w.ingredients if n != x and n in o.lower()}
+        if not said:
+            f1s.append(0.0); continue
+        tp = len(said & truth)
+        p = tp / len(said); r = tp / len(truth)
+        f1s.append(2*p*r/(p+r) if (p+r) else 0.0)
+    return round(float(np.mean(f1s)), 3)
+
+
+def ctx_fn_group(ctx_fn, x):
+    base = ctx_fn(x, x)
+    q_start = base.rfind("What happens")
+    return (base[:q_start] +
+            f"Which other ingredients behave the same way as {x}? "
+            "List their names only.")
 
 def main():
     ap = argparse.ArgumentParser()
@@ -64,7 +98,12 @@ def main():
     log = life_text(life)
     rng = np.random.default_rng(3)
     hp = sorted(hold); rng.shuffle(hp)
-    eval_pairs_list = hp[:100]
+    byk = {"product": [], "nothing": [], "ruin": []}
+    for p in hp:
+        byk[w.predict(*p)[0]].append(p)
+    per = min(34, *(len(v) for v in byk.values()))
+    eval_pairs_list = sum((v[:per] for v in byk.values()), [])
+    print(f"[mini] balanced eval: {per} per kind", flush=True)
     from alchemy.backend import make_backend
     be = make_backend(a.backend, a.model, enable_lora=(a.backend == "vllm"),
                       max_lora_rank=64) if a.backend == "vllm" else \
@@ -73,6 +112,7 @@ def main():
     # ---- 1) context player
     ctx = lambda x, y: f"Your full game experience:\n{log}\n\n" + QF.format(a=x, b=y)
     results["context"] = eval_pairs(be, w, eval_pairs_list, ctx)
+    results["context"]["group_f1"] = grouping_probe(be, w, ctx)
     print("[mini] context:", results["context"], flush=True)
     # ---- 2) rag player
     obs_lines = [st["obs"] for ep in life for st in ep["log"]]
@@ -81,6 +121,7 @@ def main():
                         "\n".join(f"- {l}" for l in idx.topk(f"{x} {y}", 12)) +
                         "\n\n" + QF.format(a=x, b=y))
     results["rag"] = eval_pairs(be, w, eval_pairs_list, rag)
+    results["rag"]["group_f1"] = grouping_probe(be, w, rag)
     print("[mini] rag:", results["rag"], flush=True)
     # ---- 3) dreamer -> verified corpus
     dreams_raw = be.generate([DREAM_PROMPT.format(log=log)], max_tokens=2000)[0]
@@ -136,6 +177,8 @@ def main():
             max_tokens=150, lora_path=lora_path)
         return THINK_PROMPT.format(mem="\n".join(reads), q=QF.format(a=x, b=y))
     results["memory_think"] = eval_pairs(be, w, eval_pairs_list, memq, lora=lora_path)
+    results["memory_think"]["group_f1"] = grouping_probe(
+        be, w, lambda x, y: QF.format(a=x, b=y), lora=lora_path)
     print("[mini] memory_think:", results["memory_think"], flush=True)
     # plain adapter, no think
     results["memory_plain"] = eval_pairs(be, w, eval_pairs_list,

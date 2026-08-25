@@ -33,7 +33,9 @@ class MiniWorld:
         pair = frozenset((ta, tb))
         if pair in (frozenset("AB"), frozenset("BD")):
             x, y = sorted((a, b))
-            return ("product", f"{x}-{y} brew")
+            # arbitrary (non-derivable) name: stable hash-pick of syllables
+            i = (sum(ord(c) for c in x) * 31 + sum(ord(c) for c in y)) % 97
+            return ("product", f"{_SYL_A[i % len(_SYL_A)]}{_SYL_A[(i//7) % len(_SYL_A)]}ine")
         return ("nothing", None)
 
     def combine_text(self, a, b):
