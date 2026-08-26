@@ -884,3 +884,16 @@ so it can supply dense value labels the same way the evaluator would).
   (k-tries; priced reachout is the legal mechanism).
 - Also fixes D0 overthink: depth-adaptive protocol = easy questions get
   the cheap path.
+
+## 2026-08-26 TWO-TRACK ISOLATION GATE before end-to-end (Rohin)
+- Not ready for the full prompter yet. Parallel tracks, both must pass
+  before end-to-end: (A) THINKER ISOLATION — given memory known to
+  contain the right connections, does the thinker ASK THE RIGHT
+  QUESTIONS on its own (recreate the chains)? Test: self-generated read
+  plans vs proof-required leaves + accuracy when answering its own
+  questions. (B) MEMORY CHARACTER — train dream+LoRA, then manually/
+  exploratorily probe retrieval: the store may not hold literal
+  comprehensive chains but brain-like SIMILARITY PATTERNS ("waves") —
+  you retrieve similarities and reassemble. Probe battery: exact form /
+  paraphrase / reversed / partial cue / analogy / free association,
+  with a human-readable transcript.
