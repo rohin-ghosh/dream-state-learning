@@ -17,6 +17,9 @@ ap.add_argument("--skin", default="aligned")
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--corpus", required=True)
 ap.add_argument("--tag", default="ctx")
+ap.add_argument("--resolve", action="store_true",
+                help="context + resolved reads: answer each atomic read "
+                     "question FROM the memory block, then compose")
 ap.add_argument("--retrieve", action="store_true",
                 help="entity-keyed per-goal retrieval instead of dumping "
                      "all memory lines (the fair RAG comparator)")
@@ -46,8 +49,22 @@ def block_for(g):
              and any(f in l for f in fams)]
     return "\n".join(f"- {l}" for l in keep[:28])
 
-prompts = [f"Your consolidated memories:\n{block_for(g)}\n\n{qmap[g.id]}"
-           + PAIRWISE_SUFFIX for g in goals]
+if a.resolve:
+    prompts = []
+    for g in goals:
+        mems = world.atomic_memories_for(g, a.skin, resolved=False)
+        block = block_for(g)
+        reads = []
+        for m in mems:
+            r = be.generate([f"Memories:\n{block}\n\nAnswer from the "
+                             f"memories in one short line.\nQ: {m.question} A:"],
+                            max_tokens=32)[0].strip().splitlines()[0]
+            reads.append(f"- Q: {m.question} A: {r}")
+        prompts.append("Verified atomic memory reads:\n" + "\n".join(reads)
+                       + f"\n\n{qmap[g.id]}" + PAIRWISE_SUFFIX)
+else:
+    prompts = [f"Your consolidated memories:\n{block_for(g)}\n\n{qmap[g.id]}"
+               + PAIRWISE_SUFFIX for g in goals]
 outs = []
 for i in range(0, len(prompts), 24):
     outs += be.generate(prompts[i:i + 24], max_tokens=1200)
