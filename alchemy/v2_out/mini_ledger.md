@@ -673,3 +673,16 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   inside the dream loop.
 - NOTE: all exhaustive-controller run artifacts (branch_records etc.)
   are TRAINING CURRICULUM for the loop adapter — never delete.
+
+## TWO-TRACK GATE, FIRST PASS COMPLETE
+- TRACK A (thinker question generation): plan coverage 0.44; own-plan
+  accuracy D0 1.0 / D1-D3 0.25. The asking-the-right-questions organ is
+  weak, quantified. Transcript at v2_out/probe_transcript_aligned_s0.txt
+  for Rohin's manual pass.
+- TRACK B (memory character, C3e adapter): exact 1.0 | paraphrase 1.0 |
+  analogy 1.0 | reversed 0.33 | partial-cue 0.0. The store is an
+  ASSOCIATIVE PATTERN, not a database: meaning-robust (paraphrase),
+  relationally accessible (analogy), but DIRECTIONAL (reversal curse on
+  our own memories) and FORMAT-ANCHORED (free-continuation cues fail).
+  Validates recognition reads as the reader (in-format, in-direction by
+  construction) and answers Rohin's similarity-waves question with data.

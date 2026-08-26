@@ -30,7 +30,11 @@ running at writing; those cells are marked "pending" and will be patched.)*
    model; that model supports better future reasoning and action,
    which generates better experience — a continual intelligence
    flywheel."
-5. Deadline math: abstract Sep 18, paper Sep 25. The four-arm ladder +
+5. TWO-TRACK GATE first pass (in ledger): thinker question-generation
+   0.44 coverage (weak, quantified); memory character = associative
+   pattern, not database (paraphrase 1.0, analogy 1.0, reversed 0.33,
+   partial-cue 0.0) — probe transcript saved for the manual pass.
+6. Deadline math: abstract Sep 18, paper Sep 25. The four-arm ladder +
    autonomy spectrum + substrate 2x2 + prior-localization are already
    paper-grade results with error bars where it matters.
 
