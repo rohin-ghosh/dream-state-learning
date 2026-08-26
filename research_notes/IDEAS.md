@@ -42,9 +42,13 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   claims; revision actions (revise/split/retract) still unbuilt. [C3e]
 - **Incremental associative dreaming** (the monkey chain): one modest hop
   per new experience; depth accumulates across the lifetime; hops are
-  per-memory (MCTS-like tree growth); static experience still grows the
-  tree. **Production rate = the "caring" dial** — too shy collapses to
-  episodic-only (stream v1: 1 thought/23 episodes). [C3stream]
+  per-memory (MCTS-like tree growth). MEASURED (2026-08-26): at toy
+  lifetimes (23 eps) batch dreaming dominates streaming (D2 0.50 vs
+  0.25); streaming's value condition is lifetime >> context — test it on
+  a long-lifetime world. Caring dial measured: shy = 1 thought @1.0
+  precision; assertive = 29 @0.57. Depth>1 chains didn't form (prompt
+  must teach thought-parent citation; retrieval must be entity-keyed,
+  not recency-cut). [C3stream, ledger]
 - **Reinforcement rule**: similar memory ≠ new node — +support, only via
   the independent-parents rule (re-derivation from new evidence counts;
   repetition doesn't). [c3stream --reinforce]

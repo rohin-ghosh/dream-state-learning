@@ -430,3 +430,25 @@ cells+equivs and ignores relation claims).
   first-class parameter (Rohin's "caring" dial) — too low reduces the
   system to pure episodic memory. Assertive-prompt + --reinforce +
   --sleep-grow arm queued (v2).
+
+## STREAMING ARMS COMPLETE (aligned s0) — batch wins at toy lifetimes
+| arm                        | thoughts | supported(prec) | D1   | D2    | D3    |
+| batch epistemic (C3e)      | 104 prop | 42 (0.833)      | 0.50 | 0.500 | 0.167 |
+| stream shy (v1)            | 1        | 1 (1.0)         | 0.25 | 0.333 | 0.333 |
+| stream assertive+reinforce | 29       | 7 (0.571)       | 0.25 | 0.250 | 0.083 |
+- Assertive streaming produced 29x more thoughts than shy but LOWER
+  precision (0.571 vs batch 0.833) and NO depth>1 nodes — PARENTS never
+  cited prior thoughts, so chains didn't form; per-episode views (one
+  episode + 12 recency-cut retrieved memories) rarely contain the
+  cross-land pairs equivalences need. Sleep-growth added nodes but not
+  depth.
+- HONEST FRAME: at 23 episodes / 69 observations the full lifetime fits
+  one batch dream trivially — streaming CANNOT beat batch here and
+  shouldn't be expected to. Streaming is the SCALING form of dreaming:
+  its value condition is lifetime >> context window. Next streaming test
+  belongs on a LONG-lifetime world (the "lifetime length" scaling axis),
+  with entity-keyed (not recency-cut) retrieval and explicit
+  thought-parent citation training in the prompt.
+- Keep: the epistemic-state machinery, reinforcement rule, and sleep
+  phases are validated mechanics; the micro-dream production/precision
+  trade (shy 1.0@1 vs assertive 0.571@29) is the caring-dial measured.
