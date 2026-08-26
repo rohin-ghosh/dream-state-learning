@@ -7,6 +7,34 @@ results.json files named inline. Tail checkpoints of seeds 1–2 were still
 running at writing; those cells are marked "pending" and will be patched.)*
 
 ---
+## FRESH-MIND PICKUP (left 2026-08-27, for the rested read)
+1. WHERE WE ARE: the whole stack is measured. Ceiling 23/24 (exhaustive
+   32B). Autonomy 0.25 flat (top-k; audited — generation is the loss,
+   ranking/verification are clean, 0 false accepts). Free dreaming:
+   depth now COMPOUNDS (1->5 over 32 cycles) with a generic citation
+   interface, but chains don't converge — the missing organ everywhere
+   is SELF-SCHEDULED VERIFICATION inside the dream loop.
+2. THE ARCHITECTURE IS SETTLED (notes/35): three nested loops; memory
+   adapter vs loop adapter; outcome critic (V/Q, never a thought-
+   verifier); loop trained by outcome-filtered SFT on trajectories we
+   are already saving; learning rates fall out of data volume.
+3. MONDAY'S HIGHEST-VALUE MOVES, in order: (a) add the verify-own-
+   proposal step to the 32B dream loop (C3s self-check already does
+   this for simple claims — extend to parent-set predictions); (b) the
+   same-world verification control (24 leaves, queued); (c) Track A/B
+   gates: thinker question-generation is at 0.44 coverage (weak organ,
+   quantified), memory-character probe results pending; (d) then the
+   two-track connect: dreamed corpus -> LoRA -> adaptive thinker.
+4. THE THESIS SENTENCE (canonical): "An agent converts the consequences
+   of its actions into an increasingly connected experiential world
+   model; that model supports better future reasoning and action,
+   which generates better experience — a continual intelligence
+   flywheel."
+5. Deadline math: abstract Sep 18, paper Sep 25. The four-arm ladder +
+   autonomy spectrum + substrate 2x2 + prior-localization are already
+   paper-grade results with error bars where it matters.
+
+---
 ## 0. The story so far, in five sentences
 We built a crafting world whose rules can only be learned from lived
 experience, and a pipeline that turns one agent-lifetime (15,360 games)

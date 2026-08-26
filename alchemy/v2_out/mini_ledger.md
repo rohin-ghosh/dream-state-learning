@@ -661,3 +661,15 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   leaves, seed 3): QUEUED next GPU slot.
 - Temporal next: 32B recurrent + MANDATORY memory-parent citation
   interface (generic; makes recurrence usable) — launched.
+
+## 32B + CITATION INTERFACE: DEPTH EMERGES (temporal row 5)
+- max_depth over cycles: 1@1, 2@8, 3@16, 5@32 — the mandatory
+  memory-parent citation interface activates recurrence; dreams now
+  compound on prior dreams (vs flat depth 1 in all earlier arms).
+  Targets still 0/12 (1 false set): depth grows but chains don't yet
+  converge on true parents — the self-scheduled VERIFY step remains the
+  missing organ. Mechanistic claim for the paper: recurrent depth is
+  unlockable with a generic interface; correctness needs verification
+  inside the dream loop.
+- NOTE: all exhaustive-controller run artifacts (branch_records etc.)
+  are TRAINING CURRICULUM for the loop adapter — never delete.

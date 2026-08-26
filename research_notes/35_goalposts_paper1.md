@@ -195,3 +195,35 @@ consequences of its actions into an increasingly connected experiential
 world model; that model supports better future reasoning and action,
 which generates better experience, creating a continual intelligence
 flywheel."
+
+## The learning architecture (Rohin's day-off consolidation, 2026-08-27)
+THE HARNESS RESOLUTION: the harness is not supposed to get smarter
+within one lifetime — it GENERATES the operational trajectories that
+train the reusable loop policy across lifetimes. Two adapters, kept
+conceptually distinct: MEMORY ADAPTER ("what happened / what structure
+this lifetime") — resets per world; LOOP ADAPTER ("how to retrieve,
+connect, test, plan, act, stop") — improves globally across worlds.
+PARAMETER HIERARCHY (rates fall out of DATA VOLUME, not preference):
+working state (no gradients) < lifetime LoRA (one life) < loop policy
+(many session trajectories) < base model (very many) ; outcome critic
+trained on trajectories paired with delayed outcomes.
+LOOP TRAINING LADDER: (1) behavior cloning from scripted/exhaustive
+expert trajectories, (2) rejection-sampling SFT on successful
+self-generated trajectories (STaR-style; evaluator filters, SFT learns;
+mask environment/tool/user tokens, train only cognitive+action tokens),
+(3) preference training (success/efficient > failed/wasteful),
+(4) GRPO/actor-critic only if on-policy exploration is needed.
+RL is optional initially, not necessarily forever.
+LOSS DIVISION: memory = next-token/recognition over dreamed abstractions
++ read-fidelity probes; loop = outcome-weighted next-token over
+cognitive/action sequences; critic = predict eventual outcome from
+intermediate states; base = broad pretraining. No end-to-end backprop
+through dreams/retrieval/environment required.
+THE CONCRETE LOOP-LEARNING EXPERIMENT (paper 2 or stretch): distill the
+exhaustive 57-branch search (expert trajectories — PRESERVE ALL RUN
+ARTIFACTS AS CURRICULUM) into a proposal policy; target: untrained loop
+0.25 success@12 -> trajectory-SFT loop improves on HELD-OUT worlds.
+CANONICAL SENTENCE: "The lifetime LoRA is fast experiential state; the
+dream/think policy is a slower reusable skill trained from successful
+multi-episode operational trajectories; the base model is the
+still-slower general substrate."
