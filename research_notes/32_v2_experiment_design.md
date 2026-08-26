@@ -897,3 +897,22 @@ so it can supply dense value labels the same way the evaluator would).
   you retrieve similarities and reassemble. Probe battery: exact form /
   paraphrase / reversed / partial cue / analogy / free association,
   with a human-readable transcript.
+
+## 2026-08-26 T2 SPEC: release-gated recurrent thinker (Rohin)
+- The thinker is a STATEFUL CONTROLLER loop, not a one-shot protocol:
+  (goal, state) -> remember relevant things -> feed the LLM -> the LLM's
+  output is EITHER a request ("I need X") OR simply the NEXT STATE (not
+  an answer) -> the thinker verifies and plans again -> iterate ->
+  answer is RELEASED only on an explicit think-OUTPUT token. Internal
+  monologue vs speech: drafts stay internal until release.
+- Interest-driven accumulation ("this is interesting, get more, get
+  more") and active pruning ("ignore this now") are controller moves —
+  the caring dial operating per-step rather than per-question.
+- This AMORTIZES the full think/plan + execute/LLM-output loop — the
+  C3loop machine with an explicit release gate.
+- Fixes T1's measured defect: one-shot KNOW/UNSURE was overconfident
+  (46/48 KNOW @ 0.478); in T2, verification is a per-iteration
+  controller step and calibration becomes the STOPPING POLICY (release
+  vs iterate vs defer), not a single self-grade.
+- Build order: after current runs (32B top-k on H100, two-track probes
+  on GH200) — probe results inform T2's retrieval cues.

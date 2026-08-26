@@ -85,6 +85,12 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   LoRA = .083/.167; context+recognition / LoRA+recognition = .50/.50.
   Memory's observed value at this size is targeted RESOLUTION; LoRA is the
   persistence/beyond-window substrate hypothesis. [ledger 2026-08-26]
+- **T2 release-gated recurrent thinker**: stateful controller —
+  retrieve, feed LLM, LLM emits request-or-next-state (never the answer),
+  verify+replan each step, answer RELEASED only on an explicit output
+  token; per-step caring dial (get-more / ignore-this); calibration =
+  stopping policy. Fixes T1's overconfident one-shot self-assessment.
+  [notes/32 2026-08-26]
 - **Four-arm honesty ladder** as the paper spine: perfect-gate 0.917 /
   no-gate / self-check / self-check+drift, with the confusion matrix and
   false-memory accounting. [notes/35, 36]
