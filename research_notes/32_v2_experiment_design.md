@@ -810,3 +810,31 @@ so it can supply dense value labels the same way the evaluator would).
   receding-horizon think loop (imagine several, execute one, compare,
   replan). Baselines must include direct trajectory-to-QA LoRA (the
   TMEM-style arm) vs dreamed causal-memory LoRA.
+
+## 2026-08-26 INCREMENTAL ASSOCIATIVE DREAMING (Rohin's monkey chain)
+- The graph is the AUDIT SHADOW, not the cognitive object: internally it
+  is associative activation ("I'm at this point in memory, think about
+  where it goes; if I care deeply, I go more"). Parent IDs are recorded
+  externally so emergence/depth can be MEASURED, not to be inspected by
+  the model.
+- TWO DEPTH DIMENSIONS: depth-per-dream-cycle (one modest hop per new
+  experience is enough) vs depth-accumulated-across-lifetime (red monkey
+  -> unusual -> cross-world weirdness -> primary-palette node -> world-
+  level transformation: five levels built one hop at a time). The model
+  need not solve the hierarchy in one call.
+- CARING = SEARCH DEPTH: continuation gated by salience — surprise x
+  goal relevance x uncertainty x expected future usefulness. Hand-set
+  first; learnable later from which chains improved outcomes. Chain
+  length itself is a dial to measure ("that's like a measure to alter").
+- REVISION RULE: new evidence that breaks a pattern (green after
+  red/blue/yellow) reactivates and REVISES the node (split scope, new
+  branch, exception, retract) — needs provisional status + provenance.
+- NEXT EXPERIMENT (C3stream): sequential episodes + micro-dream per
+  episode (retrieve associated memories, at most ONE new thought, PASS
+  allowed, parents recorded) + salience-triggered extra hops + periodic
+  SLEEP consolidation (batch self-check + connector re-check + drift)
+  every K episodes -> LoRA. Arms: batch-table one-shot / sequential
+  no-dream / sequential one-hop / sequential salience-variable.
+  Emergence metrics: episode index of first correct abstraction,
+  support growth, second-order emergence time, revision frequency,
+  final precision/coverage, D2/D3 after consolidation.
