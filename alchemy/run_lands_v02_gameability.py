@@ -93,13 +93,16 @@ def oracle_memories(world: SemanticWorldV02, skin_name: str, goal) -> str:
             f"SOURCE VALUE: {skin.animal(goal.animal_id)} in {skin.land(parent)} "
             f"has recipe {ratio}."
         )
-    vocabulary = sorted(
-        {
-            world.ratio_surface(candidate.answer_ratio, skin_name)
-            for candidate in world.goals
-        }
+    answer_ratios = sorted({candidate.answer_ratio for candidate in world.goals})
+    for ratio in answer_ratios:
+        rows.append(
+            f"RECIPE LABEL: primitive recipe {ratio} is called "
+            f"{world.ratio_surface(ratio, skin_name)}."
+        )
+    rows.append(
+        "ANSWER VOCABULARY: "
+        + " | ".join(world.ratio_surface(ratio, skin_name) for ratio in answer_ratios)
     )
-    rows.append("ANSWER VOCABULARY: " + " | ".join(vocabulary))
     return "\n".join(f"- {row}" for row in rows)
 
 

@@ -87,6 +87,15 @@ Do not immediately train LoRAs. First establish that:
 2. an oracle atomic read plan reaches a high composition ceiling; and
 3. graph-free recurrent dreaming proposes the operator and exact parent sets.
 
+These gates have now been run. Direct and generic one-pass conditions score
+0/12, the oracle-resolved clean composer scores 9/12, and the verifier-free
+atomic branch/revisit ceiling with Qwen2.5-32B discovers 23/24 exact parents
+and answers 23/24 on untouched aligned seeds 1-2. The controller exhaustively
+checks 57 public source subsets with two atomic LLM proof leaves each; this is
+an expensive prompt/controller ceiling, not yet learned dreaming or a LoRA
+result. Full protocol, scale ablation, defects, and caveats are in
+`research_notes/39_v02_branch_depth_results.md`.
+
 Once those pass, compare context+recognition against LoRA+recognition using the
 same corpus and query plan. The just-completed v0 result says these should be
 equal at 65 lines; v0.2 becomes useful for weights only when the memory horizon

@@ -1,8 +1,10 @@
 # 37 — Semantic World v0.2: identifiable depth-growth diagnostic
 
-Status: CPU prototype implemented on branch `semantic-world-v02`; no GPU model
-result is claimed here. Semantic World v0 remains frozen for D0-D2 and for
-reproducing the completed C-ladder.
+Status: CPU prototype and first GPU depth ladder complete on branch
+`semantic-world-v02`. The verifier-free 32B atomic branch controller reaches
+23/24 exact parents and final answers on untouched aligned seeds 1-2. See
+`research_notes/39_v02_branch_depth_results.md`. Semantic World v0 remains
+frozen for D0-D2 and for reproducing the completed C-ladder.
 
 ## Why v0 D3 is retired
 
@@ -142,9 +144,9 @@ could interpolate the observations.
 Do not resume unconstrained D3 prompt or model-scale searches on v0. The v0.2
 ladder is:
 
-1. **Gameability gate:** clean model, complete v0.2 public lifetime, generous
-   reasoning prompt. Require materially above-floor hidden-role accuracy. If a
-   strong model cannot solve it with all evidence visible, repair the game.
+1. **Gameability gate:** complete. Direct and one-pass scaffolded 7B are 0/12;
+   oracle-resolved composition is 9/12. This localized the problem to depth and
+   clean composition rather than game identifiability.
 2. **Oracle-memory ceiling:** provide correct atomic operator, parent, role,
    and source-factor reads. Compare direct context composition with
    recognition-read composition.
@@ -155,9 +157,10 @@ ladder is:
 4. **Oracle-free four-arm ladder:** no-gate / model self-check /
    self-check+dream-drift / perfect-gate ceiling. The exact solver remains
    offline and never changes proposals or stored memories.
-5. **Depth-growth ablation:** one dream pass versus recurrent dreams over
-   accepted/provisional memories. Report whether operator and target-parent
-   memories appear, their provenance, depth, precision, and success@k.
+5. **Depth-growth ablation:** first ceiling complete. Monolithic recurrence
+   fails, while atomic branch-and-revisit reaches 23/24 exact parents on two
+   untouched seeds at 32B. The current exhaustive 57x2 branch controller must
+   now be compressed into proposal-first success@k under a query budget.
 6. Only after the mechanism works: seeds, skins, dreamer scale, lifetime
    length, batch-vs-stream crossover, and Action World.
 

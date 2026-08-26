@@ -531,3 +531,41 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   precision/recall + contamination blast radius. Also, C3e's first check
   currently passes `structure=(none yet)`; the intended evidence+accepted-
   LTM self-check is not implemented until claims are checked in waves.
+
+## SEMANTIC WORLD V0.2 DEPTH CEILING — verifier-free branch/revisit works
+- Repaired D3 remains jointly identifiable at 1000/1000 seeds; 1000 unique
+  public fingerprints, 12 independent withheld-role target cases, floor .083.
+- Clean aligned-s0 gates: full lifetime direct 0/12; one generic scaffold
+  0/12; oracle-resolved leaves 9/12. The residual oracle errors are arithmetic
+  or final label reads, not missing memory.
+- Monolithic recurrence fails even with scale: 7B answer/parents 0/0; 32B
+  .083/0. Long traces collapse roles, confuse role-identification lands with
+  target parents, and then reinforce the malformed state.
+- Successful controller (no exact verifier in loop): dream operator from public
+  demonstrations; enumerate all 57 public source subsets (sizes 2-6); ask one
+  atomic LLM proof leaf for each of the target's two observed roles; mechanically
+  AND the two self-verdicts; revisit matching branch thoughts into a PARENTS
+  memory; recognize query role atomically; retrieve only that role row at the
+  dreamed parents; model writes an arithmetic component ledger; exact public
+  workshop lookup converts the recipe to a label. FactorSolver/hidden truth is
+  used only after commitment for scoring. Every prompt and branch is saved.
+- SCALE under identical atomic controller, aligned s0:
+  * 7B: true-branch recall .500, exact parents .500, 32 false MATCH branches,
+    raw final .417.
+  * 32B: true-branch recall 1.000, exact parents 1.000, 5 false MATCH branches,
+    raw final .750.
+  Scale helps only after proof state/read structure is legible.
+- 32B development s0: exact parents 12/12; frozen ledger artifact 10/12
+  (.833); post-hoc parser diagnostic 12/12 (NOT pooled).
+- UNTOUCHED 32B replications under the frozen protocol:
+  * s1: parents 12/12, roles 12/12, final 12/12; zero false matches.
+  * s2: parents 11/12, roles 12/12, final 11/12; the one rejected true branch
+    produces the one downstream miss. Thirty false matches concentrate in
+    three targets, but revisit recovers the true parent set in two.
+  * aggregate: parents/final 23/24 = .958, roles 24/24 = 1.000.
+- CLAIM BOUNDARY: this is a frozen prompt/controller ceiling, not learned or
+  efficient dreaming and not yet a LoRA result. Exhaustive 114 proof calls per
+  target expose what computation works and generate trajectories for later
+  amortization. Next: proposal-first top-k success@k/query-budget compression,
+  stage ablations, more seeds/skins, then matched context-vs-LoRA transport.
+- Full protocol and caveats: `research_notes/39_v02_branch_depth_results.md`.
