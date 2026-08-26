@@ -114,7 +114,7 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   narrow; dreamer = surprise-driven broad); persistent state + agenda-as-
   while-loop; inspectable scheduler; recursive dependency-resolution
   reads; full trajectory logging as future amortization data. [notes/35]
-- **Evaluator ladder**: ProofGate (now) → TrajectoryValueModel (learned
+- **Evaluator ladder**: ProofGate (now) → TrajectoryValueModel [SUPERSEDED NAMING: the outer component is an OUTCOME CRITIC + SCHEDULER (V/Q over states and operations, progress = dV - compute cost), never a thought-verifier — three-nested-loops architecture in notes/35] (learned
   sequence critic; 1999-research-snapshot pretraining; reality evaluates
   the evaluator via citations/stars/downloads) → OutcomeEvaluator.
   Slow-learning: sequence-level relative outcomes (GRPO-style) over

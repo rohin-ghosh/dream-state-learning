@@ -159,3 +159,39 @@ thinker solves Blendyland from known-good memories within a bounded
 budget; (4) neither corpus nor any checker contains the withheld answer.
 LoRA is necessary only for the parametric-consolidation half of the
 claims; dreaming is testable in text.
+
+## The three nested loops + outcome critic (convergence, 2026-08-26)
+1. COGNITIVE LOOP (seconds/tokens): state -> retrieve -> think -> plan
+   -> act/observe -> update -> repeat, until outcome / supported answer
+   / low expected value / budget / defer-to-next-session.
+2. EXPERIENCE/DREAM LOOP (episodes): ~10 episodes -> dream connections
+   (shared causes, action-conditions, latent-structure identities,
+   exception splits, revisit-worthy patterns) -> consolidate stable to
+   LoRA/LTM; provisional stays inspectable.
+3. OUTER LEARNING LOOP (sessions/lifetime): session outcomes -> train
+   critic/controller -> improve what future loops attend to.
+THE OUTER CRITIC is NOT a thought-verifier: it asks "are we making
+progress; spend more compute, change strategy, act, stop, or preserve
+for another session?" — V(state), Q(state, operation);
+progress = V(new) - V(old) - compute cost. Prompt-amortized rules first
+(continue when uncertainty reducible; replan on contradiction; retrieve
+on missing dependency; stop when transitions stop progressing; preserve
+promising unresolved states); trained from session trajectories later.
+TIMESCALES: fast = working state/plan; medium = dream connections +
+LoRA; slow = controller attention/scheduling; very slow = base model +
+broad critic. TWO LEARNING KINDS: world learning (what is true/
+connected/causal — via dreamed experience) vs controller learning (what
+to attend to, which operation is worth it — via trajectory outcomes).
+SHOWN: LoRA stores formatted experiential memory; structured frozen
+loop constructs+uses multi-hop Blendy connection; computation ceiling
+high. NOT SHOWN: generic dreams build that depth autonomously; the
+connection survives LoRA and is reconstructed by an adaptive thinker;
+controller learns attention; outcome-trained beats prompted scheduling.
+PAPER-1 TARGET (frozen): experience -> prompted recurrent dreaming ->
+connected memories -> LoRA -> prompted adaptive thinker -> better
+unseen inference/action. Critic + project-horizon = paper 2.
+CORE THESIS (canonical flywheel sentence): "An agent converts the
+consequences of its actions into an increasingly connected experiential
+world model; that model supports better future reasoning and action,
+which generates better experience, creating a continual intelligence
+flywheel."
