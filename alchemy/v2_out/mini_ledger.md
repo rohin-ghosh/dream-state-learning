@@ -569,3 +569,19 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   amortization. Next: proposal-first top-k success@k/query-budget compression,
   stage ablations, more seeds/skins, then matched context-vs-LoRA transport.
 - Full protocol and caveats: `research_notes/39_v02_branch_depth_results.md`.
+
+## V0.2 ACCEPTED + MERGED (Fable); 32B top-k compression QUEUED
+- Acceptance green: 1000-seed joint-identifiability sweep, v0 suite
+  intact, compile clean. Merged to main.
+- Standing results from the branch (Codex-run, 32B on the node):
+  one-pass 0/12; oracle-resolved composer 9/12; EXHAUSTIVE verifier-free
+  branch/revisit controller 23/24 exact parents + 23/24 answers on
+  untouched aligned seeds 1-2 — the necessary computation EXISTS,
+  labeled as a prompt/controller ceiling (57 subsets x 2 leaves each).
+- NOW RUNNING (queued behind T1 thinker): proposal-first top-k
+  compression on untouched seed 3, k=12, Qwen2.5-32B — success@1/2/4/8/12,
+  revisit accuracy, exact token accounting. No prompt tuning on seed 3
+  (dev = seed 0 only). Then: finish + recipe-recheck stages.
+- Skin fan-out BLOCKED intentionally until model-generated RECIPE_GAUGE
+  memory exists (the aligned-only source-cell reader would leak the
+  gauge on neutral/conflicting).
