@@ -617,3 +617,13 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   consistent with the top-k result one level down. Independent + long
   arms running; probe requeued (PYTHONPATH launch bug, not a science
   result).
+
+## TEMPORAL CADENCE TABLE COMPLETE (7B, aligned s0): uniform null, characterized
+- recurrent 21 nodes / independent 32 / long 60 — ALL 0/12 parents,
+  ALL depth 1. Node inspection: every dream correctly tags the OPERATOR
+  FAMILY ("confluence/blending effect") for every target, but NEVER
+  proposes candidate parent sets; the agenda mechanism goes unused (no
+  open questions self-left). Same shape as the 32B top-k result one
+  level up: pattern-class recognition is cheap, structural hypothesis
+  GENERATION is the scarce operation. Scale row (32B recurrent, matched
+  budget) launched on H100.
