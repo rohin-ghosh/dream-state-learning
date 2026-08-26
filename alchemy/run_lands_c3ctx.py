@@ -17,6 +17,9 @@ ap.add_argument("--skin", default="aligned")
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--corpus", required=True)
 ap.add_argument("--tag", default="ctx")
+ap.add_argument("--retrieve", action="store_true",
+                help="entity-keyed per-goal retrieval instead of dumping "
+                     "all memory lines (the fair RAG comparator)")
 a = ap.parse_args()
 world = SemanticWorld(WorldConfig(seed=a.seed))
 goals = world.eval_goals()
@@ -26,7 +29,24 @@ qmap = {g.goal_id: g.question for g in public.goals}
 qa = json.load(open(a.corpus))["qa"]
 mem_block = "\n".join(f"- {l}" for l in qa)
 be = make_backend("vllm", MODEL, enable_lora=True, max_lora_rank=64)
-prompts = [f"Your consolidated memories:\n{mem_block}\n\n{qmap[g.id]}"
+
+def block_for(g):
+    if not a.retrieve:
+        return mem_block
+    animal = skin_obj.animal(g.animal_id)
+    land = skin_obj.land(g.land_id)
+    keep = [l for l in qa
+            if animal.lower() in l.lower() or land.lower() in l.lower()
+            or "palette" in l.lower() or "position and an" in l.lower()
+            or "feed" in l.lower() or "combine" in l.lower()
+            or "pigment" in l.lower()]
+    # plus family lines of any land/family mentioned in kept lines
+    fams = {w for l in keep for w in l.split() if w.endswith("-family")}
+    keep += [l for l in qa if l not in keep
+             and any(f in l for f in fams)]
+    return "\n".join(f"- {l}" for l in keep[:28])
+
+prompts = [f"Your consolidated memories:\n{block_for(g)}\n\n{qmap[g.id]}"
            + PAIRWISE_SUFFIX for g in goals]
 outs = []
 for i in range(0, len(prompts), 24):
