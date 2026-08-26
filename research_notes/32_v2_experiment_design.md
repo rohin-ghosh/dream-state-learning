@@ -868,3 +868,19 @@ so it can supply dense value labels the same way the evaluator would).
   no-leakage audits, CPU controls behave (context-law oracle 1.0,
   cautious-procedure 1.0 on A1 only, lookup A0 only). NOT GPU-integrated
   yet by design: finish verifier-free depth growth on Blendyland first.
+
+## 2026-08-26 ADAPTIVE THINKER spec (Rohin) — escalate only when the question deems it
+- Prompting need not be as extensive as dreaming UNLESS the question
+  demands it: cheap read -> if unsatisfying, a couple of chains ->
+  suspend and come back if still stuck (don't force it).
+- SELF-VERIFYING THINKING: the "verifier" here is just reasoning over
+  (state, candidate answer, memory): verdicts "I know" / "I don't know" /
+  "I have another connection" — and a found connection may be WRITTEN as
+  a new memory node (thinking feeds dreaming).
+- Answers carry a RANGE (candidate set) when unsure — the guestimate
+  output; calibration (does "I know" predict correctness) and
+  range-hit-rate become first-class metrics.
+- Hardest tier (Blendy-grade): multiple tries with REAL-WORLD FEEDBACK
+  (k-tries; priced reachout is the legal mechanism).
+- Also fixes D0 overthink: depth-adaptive protocol = easy questions get
+  the cheap path.
