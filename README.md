@@ -23,7 +23,8 @@ retrieval and long context flatten. Target: ICLR 2027.
   work. Check any new experiment against this.
 - [`research_notes/`](research_notes/) — decision history; `32_*` is the
   running v2 design log, `33_*` the frozen Semantic World v0 contract,
-  `25_*` the competitive-landscape audits.
+  `36_*` the action-conditioned bridge, and `25_*` the competitive-landscape
+  audits.
 
 ## Live code
 - [`alchemy/`](alchemy/) — the v2 pipeline: `world.py` (latent compositional
@@ -43,6 +44,12 @@ retrieval and long context flatten. Target: ICLR 2027.
   `lands/HANDOFF_FABLE.md` (C0–C5 GPU ladder);
   spec: `research_notes/34_semantic_world_v0_spec.md`; measured GPU
   constraints: `research_notes/33_semantic_world_gpu_constraints.md`.
+- [`action_world/`](action_world/) — CPU-only causal-action bridge: lived
+  safe/failed threshold crossings, A0–A3 goals separating witnessed action
+  recall, procedural transfer, unseen-state world-law inference, and chained
+  action composition. Start at `action_world/README.md`; Fable handoff:
+  `action_world/HANDOFF_FABLE.md`; contract:
+  `research_notes/36_action_world_v0_spec.md`.
 - [`gpu/`](gpu/) — node operations: `scout.py` (Colossus inventory search),
   `v2_bootstrap.sh` + `V2_NODE_SETUP.md` (worker setup incl. the GH200/ARM
   recipe), `v2node_*.sh` / `gh200_ssh.sh` (active-node wrappers).
