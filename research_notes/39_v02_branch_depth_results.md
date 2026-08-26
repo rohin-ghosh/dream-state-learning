@@ -20,7 +20,9 @@ the loop. Hidden state is used only after outputs commit for scoring.
 ## Game and control gates
 
 V0.2 passes 1,000/1,000 CPU identifiability audits with 1,000 unique world
-fingerprints. On aligned seed 0:
+fingerprints. The true generator uses 2-5 parents, while the audit and model
+controller conservatively search sizes 2-6 so the maximum is not leaked. On
+aligned seed 0:
 
 | clean-model condition | accuracy | floor |
 |---|---:|---:|
@@ -152,7 +154,10 @@ releasing the GPU lease.
 - It does not yet place the operator/parent memories in LoRA weights. The
   v0.2 context-vs-LoRA comparison remains to be run at a matched read plan.
 - It uses an aligned semantic skin only. Neutral/conflicting skins and more
-  world seeds remain required.
+  world seeds remain required. The current canonical source-cell read assigns
+  conventional recipes to aligned color words; applying it unchanged to other
+  skins would leak the latent recipe gauge. Those skins require a separately
+  scored model-dreamed gauge from public demos and calibration mixtures.
 - Canonical cell formatting, lexical retrieval, branch enumeration, logical
   AND, and public dictionary lookup are disclosed controller/tool operations.
 - It does not validate Action World. Action remains parked until this memory
@@ -160,19 +165,22 @@ releasing the GPU lease.
 
 ## Next experiments, in order
 
-1. Integrate the frozen successful stages into one runner and add exact model-
-   call/token accounting.
-2. Proposal-first compression: dream top-k parent candidates, atomically check
-   only that frontier, and report success@k versus query budget. Compare against
+1. Run the prepared `alchemy/run_lands_v02_topk.py` on untouched aligned seed 3.
+   It dreams one ranked frontier, atomically checks only those candidates, and
+   reports success@1/2/4/8/12 with exact model-call/token accounting against the
    exhaustive 57-candidate ceiling.
+2. If the proposal frontier fails, diagnose on development seed 0 and refreeze;
+   do not prompt-tune on seed 3.
 3. Ablate canonical reads, atomic-role factoring, revisit, and ledger decoding
    one at a time. Keep the degradation curve as a result.
-4. Run aligned seeds 3-5, then neutral/conflicting seeds under the frozen
-   protocol. Report false-match concentration, not only accuracy.
+4. Run aligned seeds 3-5. Before neutral/conflicting fan-out, add and score a
+   model-dreamed ordinary-token recipe gauge; never derive it from `Skin.colors`.
+   Report false-match concentration, not only accuracy.
 5. Emit the accepted operator/parent/role memories into the canonical QA
    grammar. Compare context+recognition and LoRA+recognition with the same read
    plan. Only then sweep memory horizon beyond context.
-6. Replace exhaustive enumeration with model-written next questions / branch
-   proposals, preserving provisional states and recovery from false memories.
+6. Extend the top-k baseline into model-written next questions / adaptive
+   branch expansion, preserving provisional states and recovery from false
+   memories.
 7. Move to Action World only after the v0.2 memory transport and compression
    gates pass.

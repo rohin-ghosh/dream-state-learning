@@ -205,6 +205,11 @@ def main() -> None:
     parser.add_argument("--goal-index", type=int)
     parser.add_argument("--world-memory-from")
     args = parser.parse_args()
+    if args.skin != "aligned":
+        raise ValueError(
+            "this scaffold states conventional color recipes and is aligned-only; "
+            "neutral/conflicting require a model-dreamed recipe gauge"
+        )
 
     world = SemanticWorldV02(WorldConfig(seed=args.seed))
     skin = make_skin(args.skin, world.animal_ids, world.source_land_ids)

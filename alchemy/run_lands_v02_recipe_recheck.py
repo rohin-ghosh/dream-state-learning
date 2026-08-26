@@ -55,6 +55,11 @@ def main() -> None:
     args = parser.parse_args()
 
     prior = json.loads(pathlib.Path(args.input_artifact).read_text())
+    if prior["skin"] != "aligned":
+        raise ValueError(
+            "the current canonical recipe controller is aligned-only; "
+            "neutral/conflicting require a model-dreamed recipe gauge"
+        )
     world = SemanticWorldV02(WorldConfig(seed=prior["seed"]))
     workshop_rows = [
         row
@@ -111,10 +116,8 @@ def main() -> None:
     }
     output_dir = pathlib.Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    model_slug = re.sub(r"[^a-z0-9]+", "-", args.model.lower()).strip("-")
-    path = output_dir / (
-        f"lands_v02_recipe_recheck_{prior['skin']}_s{prior['seed']}_{model_slug}.json"
-    )
+    source_stem = pathlib.Path(args.input_artifact).stem
+    path = output_dir / f"{source_stem}_recheck.json"
     path.write_text(json.dumps(report, indent=2) + "\n")
     print(
         f"[v02 recipe recheck] {prior['skin']} s{prior['seed']}: "

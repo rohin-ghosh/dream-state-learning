@@ -333,7 +333,11 @@ branches into parent memory; recognize the queried role; retrieve only the
 needed public row; compose a recipe; and perform an exact lookup in the public
 workshop dictionary. No FactorSolver result or hidden state reaches a prompt.
 The controller routes and enumerates, so this is an over-scaffolded ceiling—not
-yet learned, efficient, or parametric dreaming.
+yet learned, efficient, or parametric dreaming. It is currently aligned-only:
+the canonical source reader uses conventional color recipes. Neutral and
+conflicting skins require a separately scored model-dreamed recipe gauge from
+their public calibration/demo evidence; deriving it from the hidden skin map
+would be leakage.
 
 Under this identical controller, 7B versus 32B on development seed 0 moves
 true-branch recall .50→1.00, exact-parent recovery .50→1.00, and false MATCH

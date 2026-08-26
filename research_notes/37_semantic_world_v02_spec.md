@@ -89,8 +89,10 @@ There are twelve target blend lands. Each has:
 Four targets withhold each of roles 0, 1, and 2. Every evaluation animal is
 used exactly once, producing 12 distinct `(target, hidden-role)` cases and 12
 distinct answer ratios (majority floor 1/12). Parent counts are balanced 3/3/3/3
-across sizes 2-5. Each parent set is selected so its two visible roles identify
-it uniquely even when the search ranges over *all* source subsets of sizes 2-5.
+across true sizes 2-5. Each parent set is selected so its two visible roles
+identify it uniquely even when the learner searches over *all* 57 source
+subsets of sizes 2-6; the audit does not leak the generator's five-parent
+maximum.
 No target signature matches an ordinary land or either demonstration land, and
 no queried role has a same-role target exemplar. The twelve latent target cases
 are randomly reassigned to surface target names per seed; a complete 180-cell

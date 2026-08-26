@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import itertools
 import json
 import pathlib
 import re
@@ -31,7 +30,7 @@ from alchemy.run_lands_v02_branchsearch import (
 )
 from lands.model import WorldConfig
 from lands.skins import make_skin
-from lands.v02 import SemanticWorldV02
+from lands.v02 import SemanticWorldV02, source_parent_hypotheses
 
 
 def main() -> None:
@@ -42,6 +41,11 @@ def main() -> None:
     parser.add_argument("--model", default=MODEL)
     parser.add_argument("--output-dir", default="alchemy/v2_out")
     args = parser.parse_args()
+    if args.skin != "aligned":
+        raise ValueError(
+            "the current canonical recipe controller is aligned-only; "
+            "neutral/conflicting require a model-dreamed recipe gauge"
+        )
 
     world = SemanticWorldV02(WorldConfig(seed=args.seed))
     skin = make_skin(args.skin, world.animal_ids, world.source_land_ids)
@@ -142,11 +146,7 @@ def main() -> None:
         )
 
     role_memories = backend.generate(role_prompts, max_tokens=1200)
-    candidates = [
-        tuple(candidate)
-        for size in range(2, len(source_lands) + 1)
-        for candidate in itertools.combinations(source_lands, size)
-    ]
+    candidates = source_parent_hypotheses(source_lands)
     for state, role_memory in zip(states, role_memories):
         state["role_memory"] = role_memory
         branch_prompts = []

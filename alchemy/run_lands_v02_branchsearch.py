@@ -14,7 +14,6 @@ same inspectable state transitions.
 from __future__ import annotations
 
 import argparse
-import itertools
 import json
 import pathlib
 import re
@@ -22,7 +21,7 @@ import re
 from alchemy.backend import make_backend
 from lands.model import WorldConfig
 from lands.skins import make_skin
-from lands.v02 import SemanticWorldV02
+from lands.v02 import SemanticWorldV02, source_parent_hypotheses
 
 
 MODEL = "Qwen/Qwen2.5-7B-Instruct"
@@ -361,6 +360,11 @@ def main() -> None:
     parser.add_argument("--model", default=MODEL)
     parser.add_argument("--output-dir", default="alchemy/v2_out")
     args = parser.parse_args()
+    if args.skin != "aligned":
+        raise ValueError(
+            "the current canonical recipe controller is aligned-only; "
+            "neutral/conflicting require a model-dreamed recipe gauge"
+        )
 
     world = SemanticWorldV02(WorldConfig(seed=args.seed))
     skin = make_skin(args.skin, world.animal_ids, world.source_land_ids)
@@ -444,11 +448,7 @@ def main() -> None:
         ]
     )
 
-    candidates = [
-        tuple(candidate)
-        for size in range(2, len(source_lands) + 1)
-        for candidate in itertools.combinations(source_lands, size)
-    ]
+    candidates = source_parent_hypotheses(source_lands)
     branch_prompts = []
     for candidate in candidates:
         source_rows = dedupe_surface(

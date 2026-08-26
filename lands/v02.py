@@ -137,6 +137,17 @@ def pigment_union(ratios: Iterable[PigmentRatio]) -> PigmentRatio:
     )  # type: ignore[return-value]
 
 
+def source_parent_hypotheses(
+    source_land_ids: Sequence[str],
+) -> tuple[tuple[str, ...], ...]:
+    """Declare the learner-visible parent search space, including all sources."""
+    return tuple(
+        parents
+        for parent_count in range(2, len(source_land_ids) + 1)
+        for parents in itertools.combinations(source_land_ids, parent_count)
+    )
+
+
 @dataclass(frozen=True)
 class BlendObservation:
     id: str
@@ -231,7 +242,8 @@ class SemanticWorldV02:
         }
         # Twelve independently queried targets span 2/3/4/5-parent mixtures.
         # Every set is uniquely recoverable from either two of its three role
-        # outcomes even when the solver searches all subset sizes 2..5.
+        # outcomes even when the solver conservatively searches all subset
+        # sizes 2..6. The generator itself uses sizes 2..5.
         ordered_lands = (
             land_for[("primary", 0)],
             land_for[("primary", 1)],
@@ -425,16 +437,15 @@ class SemanticWorldV02:
         }
         assert hidden_role not in observed_by_role
         matches = []
-        for parent_count in range(2, len(self.source_land_ids)):
-            for parents in itertools.combinations(self.source_land_ids, parent_count):
-                if all(
-                    pigment_sum(
-                        self.source_ratio_for_role(role, parent) for parent in parents
-                    )
-                    == ratio
-                    for role, ratio in observed_by_role.items()
-                ):
-                    matches.append(tuple(parents))
+        for parents in source_parent_hypotheses(self.source_land_ids):
+            if all(
+                pigment_sum(
+                    self.source_ratio_for_role(role, parent) for parent in parents
+                )
+                == ratio
+                for role, ratio in observed_by_role.items()
+            ):
+                matches.append(tuple(parents))
         return tuple(matches)
 
     def source_copy_candidates(self, land_id: str) -> tuple[str, ...]:

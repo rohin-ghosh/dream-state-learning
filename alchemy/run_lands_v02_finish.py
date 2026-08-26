@@ -134,6 +134,11 @@ def main() -> None:
     prior = json.loads(pathlib.Path(args.input_artifact).read_text())
     skin_name = prior["skin"]
     seed = prior["seed"]
+    if skin_name != "aligned":
+        raise ValueError(
+            "the current canonical recipe controller is aligned-only; "
+            "neutral/conflicting require a model-dreamed recipe gauge"
+        )
     world = SemanticWorldV02(WorldConfig(seed=seed))
     skin = make_skin(skin_name, world.animal_ids, world.source_land_ids)
     lifetime = world.render_lifetime(skin_name)
@@ -300,8 +305,8 @@ def main() -> None:
     }
     output_dir = pathlib.Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    model_slug = re.sub(r"[^a-z0-9]+", "-", args.model.lower()).strip("-")
-    path = output_dir / f"lands_v02_finish_{skin_name}_s{seed}_{model_slug}.json"
+    source_stem = pathlib.Path(args.input_artifact).stem
+    path = output_dir / f"{source_stem}_finish.json"
     path.write_text(json.dumps(report, indent=2) + "\n")
     print(
         f"[v02 finish] {skin_name} s{seed}: acc={report['accuracy']} "

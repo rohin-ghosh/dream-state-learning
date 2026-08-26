@@ -7,7 +7,12 @@ import re
 
 from lands.model import WorldConfig
 from lands.skins import make_skin
-from lands.v02 import SemanticWorldV02, TARGET_LAND_IDS, audit_seeds
+from lands.v02 import (
+    SemanticWorldV02,
+    TARGET_LAND_IDS,
+    audit_seeds,
+    source_parent_hypotheses,
+)
 
 
 def test_v02_joint_identifiability_across_1000_seeds():
@@ -28,6 +33,18 @@ def test_v02_operator_and_parent_sets_are_jointly_identifiable():
                 world.target_parents[land_id],
             )
             assert report.source_copy_candidates[land_id] == ()
+
+
+def test_v02_parent_audit_includes_the_all_source_hypothesis():
+    """Do not leak the generator's five-parent maximum to the learner."""
+    for seed in range(20):
+        world = SemanticWorldV02(WorldConfig(seed=seed))
+        all_sources = tuple(world.source_land_ids)
+        hypotheses = source_parent_hypotheses(world.source_land_ids)
+        assert len(hypotheses) == 57
+        assert all_sources in hypotheses
+        for land_id in TARGET_LAND_IDS:
+            assert all_sources not in world.parent_candidates(land_id)
 
 
 def test_v02_withholds_the_queried_role_in_every_target():
@@ -112,6 +129,7 @@ def test_v02_surface_names_do_not_determine_answers_across_seeds():
 if __name__ == "__main__":
     test_v02_joint_identifiability_across_1000_seeds()
     test_v02_operator_and_parent_sets_are_jointly_identifiable()
+    test_v02_parent_audit_includes_the_all_source_hypothesis()
     test_v02_withholds_the_queried_role_in_every_target()
     test_v02_skins_are_isomorphic_and_public_text_has_no_latent_ids()
     test_v02_is_byte_deterministic_per_seed_and_varies_across_seeds()

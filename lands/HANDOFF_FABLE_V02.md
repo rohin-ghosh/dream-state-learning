@@ -71,10 +71,10 @@ BLEND_OPERATOR | operator=PIGMENT_SUM
 BLEND_PARENTS | land=<target> | parents=<land>[,<land>...]
 ```
 
-`BLEND_PARENTS` must accept 2-5 unique source lands, sort them canonically,
+`BLEND_PARENTS` must accept 2-6 unique source lands, sort them canonically,
 and reject demo/target lands as parents. The recognition candidate space is
-the declared 56 source subsets of sizes 2-5; it must not use evaluator answers
-to prune that set.
+the declared 57 source subsets of sizes 2-6; it must not use the generator's
+true five-parent maximum or evaluator answers to prune that set.
 
 The model self-check may retrieve source observations, public feed relations,
 and its own provisional memories. The exact CPU audit is an offline scorer
@@ -85,7 +85,7 @@ Do not immediately train LoRAs. First establish that:
 
 1. the clean model can solve the game with all evidence in context;
 2. an oracle atomic read plan reaches a high composition ceiling; and
-3. graph-free recurrent dreaming proposes the operator and exact parent sets.
+3. verifier-free recurrent dreaming proposes the operator and exact parent sets.
 
 These gates have now been run. Direct and generic one-pass conditions score
 0/12, the oracle-resolved clean composer scores 9/12, and the verifier-free
@@ -100,3 +100,37 @@ Once those pass, compare context+recognition against LoRA+recognition using the
 same corpus and query plan. The just-completed v0 result says these should be
 equal at 65 lines; v0.2 becomes useful for weights only when the memory horizon
 is swept past the available prompt budget.
+
+## Next GPU run: compress the exhaustive ceiling
+
+The proposal-first runner is ready. It asks for one ranked 12-candidate
+frontier per target, applies the same atomic checks only to that frontier, and
+reports proposal success@1/2/4/8/12, unique self-selection@k, revisit accuracy,
+and exact model-query/token accounting. Start with an untouched aligned seed:
+
+```bash
+PYTHONPATH=. python3 alchemy/run_lands_v02_topk.py \
+  --skin aligned --seed 3 --k 12 \
+  --model Qwen/Qwen2.5-32B-Instruct
+
+PYTHONPATH=. python3 alchemy/run_lands_v02_finish.py \
+  --input-artifact alchemy/v2_out/lands_v02_topk_aligned_s3_qwen-qwen2-5-32b-instruct_k12.json \
+  --model Qwen/Qwen2.5-32B-Instruct
+
+PYTHONPATH=. python3 alchemy/run_lands_v02_recipe_recheck.py \
+  --input-artifact alchemy/v2_out/lands_v02_topk_aligned_s3_qwen-qwen2-5-32b-instruct_k12_finish.json \
+  --model Qwen/Qwen2.5-32B-Instruct
+```
+
+Do not tune the proposal prompt on seed 3. If proposal success@12 is weak,
+inspect only aggregate failure modes, revise on development seed 0, then freeze
+again before a new seed. The primary compression curve is proposal success@k;
+final-answer accuracy is downstream and should not hide proposal misses.
+
+The checked-in atomic controller is deliberately **aligned-only**. Its
+canonical source-cell reader currently assigns conventional recipes to color
+words. Reusing that helper on neutral or conflicting skins would inject the
+latent recipe gauge. Before skin fan-out, add a model-generated `RECIPE_GAUGE`
+memory: infer the six ordinary state-token recipes jointly from the two public
+known-parent demonstrations and calibration mixtures, then freeze and score
+that memory before parent search. Do not derive it from `Skin.colors`.
