@@ -627,3 +627,21 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   level up: pattern-class recognition is cheap, structural hypothesis
   GENERATION is the scarce operation. Scale row (32B recurrent, matched
   budget) launched on H100.
+
+## 32B SCALE ROW (temporal recurrent): the near-miss regime
+- 24 nodes, 0/12 exact, depth 1 — but 32B PROPOSES parent sets where 7B
+  proposed none (3 attempts, all near-misses with real pigment
+  reasoning: Fusionland proposed {Candy,Dandy,Randy} vs truth
+  {Candy,Dandy} — one extra land from conflating per-animal
+  attributions into supersets).
+- THE AUTONOMY SPECTRUM, complete for v0.2 (aligned s0/untouched seeds):
+  exhaustive verify (32B):        23/24
+  top-k propose+verify (32B):      3/12 (flat in k)
+  free recurrent dreams (32B):     0/12 (3 near-miss proposals)
+  free recurrent dreams (7B):      0/12 (0 proposals)
+- Reading: scale moves the failure from NO hypotheses to WRONG-BY-ONE
+  hypotheses; what free dreaming lacks is the self-scheduled VERIFY step
+  (predict both observed outcomes per candidate, prune) that the
+  structured controller enforces. The next rung is not more scale — it
+  is teaching/prompting the dream loop to verify its own proposals
+  (which C3s self-check already does for simple claims).

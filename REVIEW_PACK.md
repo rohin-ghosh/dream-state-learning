@@ -355,6 +355,27 @@ skins; then write the exact same accepted memories into context versus LoRA
 under a matched read plan. Full protocol and claim boundaries:
 `research_notes/39_v02_branch_depth_results.md`.
 
+## 4f. THE AUTONOMY SPECTRUM (v0.2 repaired D3, 2026-08-26)
+D3 was relabeled underspecified, repaired by Codex (v0.2: 12 targets,
+parent sets 2-5, joint operator+parent identifiability, 1000-seed
+checks), and the guided-to-autonomous spectrum measured:
+| exhaustive verify (32B, all 57 subsets) | 23/24 |
+| top-k propose+verify (32B, k=1..12)     | 3/12, FLAT in k |
+| free recurrent dreams (32B)             | 0/12, 3 near-miss proposals |
+| free recurrent dreams (7B)              | 0/12, 0 proposals |
+Verification-shaped cognition is cheap; hypothesis GENERATION is the
+scarce operation the dream architecture must amortize. Scale moves the
+failure from no-hypotheses to wrong-by-one hypotheses (real pigment
+reasoning, superset parent sets). Temporal cadence at 7B (long /
+independent / recurrent, equal budget): uniform null — operator family
+recognized every time, parents never proposed, agenda unused.
+Also today: T1 adaptive thinker (D0 1.0, measured compute curve
+1.8->8.5 reads by depth, self-assessment overconfident 46/48@0.478);
+substrate x protocol 2x2 (context+recognition == LoRA+recognition at
+1086 memory tokens — the RESOLUTION PROTOCOL is the intelligence, the
+substrate carries it beyond the window); verifier-free D2 replicated
+5/5 world-skins (0.25-0.58 vs 0.167 floor, 0.917 ceiling).
+
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
 once in a nightly batch — it revisits the needed ones, offline (sleep)
