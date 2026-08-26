@@ -76,6 +76,9 @@ is available equally to every memory baseline.
 
 There are twelve target blend lands. Each has:
 
+- a provenance-bearing survey observation identifying it as the same
+  jointly-fed/confluence class as the demonstrations, without revealing its
+  sources;
 - a hidden parent set containing two, three, four, or five source lands;
 - observations for only two of the three animal roles;
 - the third role completely absent from that target's lifetime; and
@@ -91,6 +94,11 @@ no queried role has a same-role target exemplar. The twelve latent target cases
 are randomly reassigned to surface target names per seed; a complete 180-cell
 surface audit verifies that no target-name/animal-name pair has a fixed answer
 across seeds in any skin.
+
+The class observation is necessary in the neutral skin. Without it, a model
+has no evidence that nonce target zones should share the demonstration-zone
+operator; English names would silently provide that cue only to the aligned
+arm.
 
 The required computation is now:
 
@@ -117,6 +125,7 @@ memory, then used by the thinker for a held-out consequence.
 - zero ordinary-source copy candidates for every target;
 - zero observations of each target's held-out role;
 - no exact goal cell in the lifetime;
+- one public confluence-class observation per target, with no parent IDs;
 - 12 goals, balanced four per hidden role, one per target and evaluation
   animal, with 12 distinct answers; and
 - every legal answer token grounded in workshop/lived evidence, including in

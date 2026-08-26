@@ -158,6 +158,13 @@ class FeedRelation:
 
 
 @dataclass(frozen=True)
+class BlendClassObservation:
+    id: str
+    episode_id: str
+    blend_land_id: str
+
+
+@dataclass(frozen=True)
 class BlendGoal:
     id: str
     animal_id: str
@@ -267,6 +274,14 @@ class SemanticWorldV02:
             sorted(ratio for ratio in RATIO_SURFACES if ratio not in COLOR_FOR_RATIO)
         )
         self.feed_relations = self._build_feed_relations()
+        self.target_class_observations = tuple(
+            BlendClassObservation(
+                id=f"v02_class_{index:03d}",
+                episode_id=f"v02_target_{index:03d}",
+                blend_land_id=land_id,
+            )
+            for index, land_id in enumerate(TARGET_LAND_IDS)
+        )
         self.blend_observations = self._build_blend_observations()
         self.goals = self._build_goals()
         report = self.identifiability_report()
@@ -487,6 +502,11 @@ class SemanticWorldV02:
             and not any(goal.cell() in observed_cells for goal in self.goals)
             and all(goal.answer_ratio in observed_ratios for goal in self.goals)
             and all(goal.answer_ratio in self.lab_ratios for goal in self.goals)
+            and {
+                observation.blend_land_id
+                for observation in self.target_class_observations
+            }
+            == set(TARGET_LAND_IDS)
             and len(self.goals) == 12
             and len(answer_counts) == 12
             and set(answer_counts.values()) == {1}
@@ -574,6 +594,25 @@ class SemanticWorldV02:
                 )
             relation_lines.append(text)
 
+        target_class_lines = []
+        for observation in self.target_class_observations:
+            land = self.blend_land_surface(observation.blend_land_id, skin_name)
+            if skin_name == "neutral":
+                text = (
+                    f"[{observation.id} | {observation.episode_id}] A structural "
+                    f"survey classifies zone {land} in the same confluence class "
+                    "as the demonstrated jointly-fed zones; its source zones are "
+                    "not directly observed."
+                )
+            else:
+                text = (
+                    f"[{observation.id} | {observation.episode_id}] A structural "
+                    f"survey classifies {land} in the same confluence class as "
+                    "the demonstrated jointly-fed lands; its source lands are "
+                    "not directly observed."
+                )
+            target_class_lines.append(text)
+
         demo_observation_lines = []
         target_observation_lines = []
         for observation in self.blend_observations:
@@ -603,6 +642,7 @@ class SemanticWorldV02:
             + tuple(demo_observation_lines)
             + tuple(source_by_phase.get("dispersion_buffer", ()))
             + tuple(source_by_phase.get("sparse_lifetime", ()))
+            + tuple(target_class_lines)
             + tuple(target_observation_lines)
         )
 

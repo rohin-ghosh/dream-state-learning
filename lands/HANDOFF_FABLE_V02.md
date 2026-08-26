@@ -36,6 +36,11 @@ before the dispersion gap. This is necessary for neutral-skin identifiability;
 without it, the evaluator would know what a nonce mixture token means while the
 model never had evidence from which to learn that mapping.
 
+Each target also has a public survey record saying it belongs to the same
+jointly-fed/confluence class as the known-parent demonstrations. The record
+never exposes parent identity or count. Do not remove it from neutral runs;
+otherwise only English target names supply the operator-transfer cue.
+
 Canonical details and the experiment ladder are in
 `research_notes/37_semantic_world_v02_spec.md`.
 
