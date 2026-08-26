@@ -916,3 +916,42 @@ so it can supply dense value labels the same way the evaluator would).
   vs iterate vs defer), not a single self-grade.
 - Build order: after current runs (32B top-k on H100, two-track probes
   on GH200) — probe results inform T2's retrieval cues.
+
+## 2026-08-26 UNIFIED LOOP RULINGS (Rohin, post-autonomy-spectrum)
+- VERIFIER IS NOT AN EXTERNAL MODULE — drop that framing. Thought
+  verification is more thinking (possibly latent later); an RL-trained
+  model may exist someday but won't be "verifying thoughts." The
+  spectrum table stands but its reading changes: the dreamer was never
+  supposed to solve Blendy ALONE — the answer emerges from the WHOLE
+  loop's graph, not one organ.
+- DIVISION OF COGNITIVE LABOR: dreamer = CONNECTIVE memory building in
+  experiential space (multi-hop connections, cohesive representation;
+  its thoughts get checked by CONNECTING IDEAS — is this sensible?);
+  thinker = INTERPOLATION/deduction in outcome space (is this thought
+  sensible AND USEFUL for the episode outcome?). Same substrate, same
+  loop; different objective. "Memory space expands to LoRA space with
+  connected dreamings; then maps to outcome space with connective
+  induction/deduction/planning."
+- THE UNIFIED EPISODE LOOP: state ("what do I need? what's in my
+  inventory?") -> ask memory for similar things -> plan -> think the
+  plan -> state change -> more memory / plan change / more think ->
+  loop until state stops improving -> episode ends -> distill the loop
+  into memories. Every ~10 episodes: dream (experience-action-outcome
+  memories connected into relations, grabbing memory while dreaming) ->
+  write. Recurrence does the induction ("red blue green pops in again
+  and again -> at some point it KNOWS they're primary") — the
+  conclusion can arrive during dream OR think.
+- THESIS (restated, canonical): take the model's actions and the
+  experiences they produce and turn them into a rich experiential model
+  that builds richer connections with more actions and makes BETTER
+  actions — and with better actions the model itself gets better:
+  first it understands the failure space, then the success space.
+- STATUS: multi-hop composition proven at the amortized/structured
+  ceiling. REMAINING: show it flows through the LoRA substrate and is
+  pieced together by the thinker (the two-track gates).
+- GROWTH SIGNAL (medium-rate learning): the "is this outcome
+  sufficient" model — e.g. backtested on whether the research paper
+  being written is useful; each iteration gives signal, likely injected
+  into STATE. Dreamer/thinker are MEDIUM-TERM executors (agentic-
+  problem horizon). LONG-horizon learning is NOT solved by this
+  architecture yet — open question, "maybe it has to do with state."
