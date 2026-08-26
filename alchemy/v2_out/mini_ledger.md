@@ -686,3 +686,30 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   our own memories) and FORMAT-ANCHORED (free-continuation cues fail).
   Validates recognition reads as the reader (in-format, in-direction by
   construction) and answers Rohin's similarity-waves question with data.
+
+## ORGANISM RUN 1 (v0.2 aligned s0): END-TO-END EXECUTES; LOSS LOCALIZED
+Pipeline ran whole: 48 dream cycles (32B, 35 nodes, depth 5) -> final
+consolidation (39 statements) -> 4 corpora -> 3 LoRAs (7B) -> sequential
+thinker x4 arms. All arms 0/12 — and the traces + artifacts show WHY:
+- THE CONSOLIDATED MEMORY CONTAINS NO STRUCTURE. The 39 statements are
+  almost entirely episodic restatements ("The frog in Blendyland has a
+  coat of yellow-brown"); zero parent-set connections, zero role
+  abstractions, zero mixture recipes. The depth-5 dream chains were
+  built from vague target-to-target associations ("Blendyland,
+  Prismaland, and Weaveland share a possible influence") — wrong KIND of
+  connection (targets to targets, not targets to source parents) — and
+  consolidation kept facts, dropped/never-had structure.
+- The thinker v2 decomposes properly (asks about contributing places,
+  per-place colors, combination rules) — the questions are RIGHT; the
+  memory just has no pieces to give. Downstream behaved exactly per its
+  inputs. Also minor: thinker emits multiple ops per generation
+  (parse should take first line only) and the adapter confabulates
+  fluent direct answers where text-memory correctly reports absence.
+- VERDICT: the organism's weak link is DREAM-CONTENT STRUCTURALITY —
+  the same scarce operation the autonomy spectrum measured, now
+  demonstrated inside the full loop with every transfer logged.
+  Candidate levers (for design discussion): k-hypothesis budget inside
+  dream cycles; the verify-own-proposal step in-loop; using the two
+  known-parent DEMO lands as in-dream worked examples (public info);
+  consolidation prompt explicitly requesting structural/relational
+  statements over episodic restatements.
