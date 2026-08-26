@@ -461,3 +461,18 @@ cells+equivs and ignores relation claims).
   dreamed memories: the model cannot select the right 4 lines from 65.
   Weights win via targeted resolution (recognition reads), not capacity.
   Claim shape: "memory's value is resolution, not storage."
+
+## SUBSTRATE TRIO COMPLETE + protocol-isolation arm launched
+- retrieved-context (entity-keyed RAG, ~28 lines): D0 1.0, D1 0.083,
+  D2 0.083, D3 0.333 — AT FLOOR on composition, same as dump-all.
+  Retrieval does not fix the selection wall.
+- Rohin's framing, now empirical: "this isn't retrieval memory but a
+  COMPLEX memory that includes retrieval among other systems" — naive
+  retrieval memory is at floor; memory-as-SYSTEM (targeted resolution +
+  epistemic curation + composition protocol, with retrieval inside)
+  is what works (weights+recognition 0.50, perfect-gate 0.917).
+- Final isolation arm running (--resolve): context + resolved reads
+  (answer each atomic question FROM retrieved lines, then compose).
+  If it recovers ~0.5 => the RESOLUTION PROTOCOL is the effect and
+  substrate is secondary at this scale; if not => weights do real work.
+  Either way the claim sharpens.
