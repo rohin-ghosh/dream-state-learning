@@ -596,3 +596,24 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   Rohin's "prompter not ready"). D1/D2 dip vs fixed protocol = stage-B
   prompt drift (protocol sensitivity again) — reconcile stage-B with the
   proven pairwise prompt verbatim next iteration.
+
+## 32B TOP-K COMPRESSION (v0.2, untouched seed 3): THE AUTONOMY GAP, MEASURED
+- proposal success@k FLAT at 0.25 for k=1,2,4,8,12 (3/12 targets);
+  self-select 0.25; revisit 0.25; 180 proof leaves vs the exhaustive
+  controller's 1368 (7.6x cheaper).
+- Read: the exhaustive controller (all 57 subsets) hits 23/24; asked to
+  PROPOSE a 12-candidate frontier, 32B reaches only 25% — and extra
+  candidates beyond k=1 add NOTHING (frontier lacks diversity; correct
+  sets aren't in its generative hypothesis space without enumeration).
+  The gap between guided and autonomous hypothesis generation is now THE
+  measured frontier ("can the model decide where to compute").
+- No prompt tuning done on seed 3 (rule held). Failure-mode inspection
+  on dev seed 0 is the permitted next step.
+
+## TEMPORAL DREAMING, first pass (7B, aligned s0, recurrent arm)
+- 32 micro-cycles -> 21 nodes, 0/12 targets, max depth 1 (no node ever
+  cited another node), ~1.7k generated words total (outputs very short).
+- 7B free-form micro-dreams neither chain nor discover v0.2 parents —
+  consistent with the top-k result one level down. Independent + long
+  arms running; probe requeued (PYTHONPATH launch bug, not a science
+  result).
