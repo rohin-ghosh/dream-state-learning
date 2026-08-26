@@ -251,7 +251,8 @@ def main():
     drift_new = proposals[n_before:]
     if drift_new:
         checks = be.generate([SELF_CHECK.format(claim=p["line"],
-                                                evidence=evidence_for(p))
+                                                evidence=evidence_for(p),
+                                                structure=structure_view())
                               for p in drift_new], max_tokens=800)
         for p, out in zip(drift_new, checks):
             m = re.search(r"VERDICT:\s*(SUPPORTED|CONTRADICTED|PROVISIONAL|UNRESOLVED)",
