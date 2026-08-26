@@ -71,11 +71,20 @@ no references to note ids). Keep only what you actually support; merge
 duplicates; drop speculation you could not check. Also keep useful
 partial knowledge ("X is built from a combination that includes Y")."""
 
-THINK_SYS = """You are answering from long-term memory. You may take up
-to {budget} operations. Each turn, output exactly ONE of:
+THINK_SYS = """You are answering from long-term memory. Your memory
+will usually NOT contain the final answer directly — it contains pieces.
+Decompose: ask about the PIECES you need (which places contribute to the
+place in the question; what this animal's outcomes were in those other
+places; how outcomes combine in this world), one short question at a
+time, and build the answer yourself from the returned pieces. Never ask
+the goal question itself. If a memory answer looks like a direct final
+answer, treat it as unreliable unless pieces support it.
+
+You may take up to {budget} operations, then you MUST answer with your
+best construction (a color word, possibly hyphenated). Each turn output
+exactly ONE of:
 MEMORY: <one short question to your memory>
-ANSWER: <one color word>
-DEFER
+ANSWER: <color word>
 Your working state so far:
 {state}
 
@@ -264,20 +273,29 @@ def phase_think(a):
             state, trace = [], []
             final = None
             for step in range(a.budget):
-                out = gen(THINK_SYS.format(budget=a.budget,
-                                           state="\n".join(state) or "(empty)",
-                                           q=qmap[gp["goal_id"]]), 150)
+                last = step == a.budget - 1
+                prompt = THINK_SYS.format(budget=a.budget,
+                                          state="\n".join(state) or "(empty)",
+                                          q=qmap[gp["goal_id"]])
+                if last:
+                    prompt += "\nBudget exhausted: you MUST output ANSWER now."
+                out = gen(prompt, 150)
                 m = re.search(r"(MEMORY|ANSWER|DEFER)[:]?(.*)", out)
                 if not m:
                     break
-                op, body = m.group(1), m.group(2).strip()
-                if op == "MEMORY":
+                op, body = m.group(1), m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
+                if op == "MEMORY" and not last:
                     ans = memory_answer(body)
-                    state.append(f"asked: {body} -> {ans[:120]}")
-                    trace.append(("MEMORY", body, ans[:120]))
+                    state.append(f"asked: {body} -> {ans[:140]}")
+                    trace.append(("MEMORY", body, ans[:140]))
                 elif op == "ANSWER":
                     final = body
                     trace.append(("ANSWER", body, ""))
+                    break
+                elif last:
+                    m2 = re.search(r"([a-z]+(?:-[a-z]+)?)", body.lower())
+                    final = m2.group(1) if m2 else body
+                    trace.append(("FORCED", body, ""))
                     break
                 else:
                     trace.append(("DEFER", "", ""))
