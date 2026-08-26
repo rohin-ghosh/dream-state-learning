@@ -61,6 +61,21 @@ precision is lower still. Reverse surface form is required later for LoRA
 exposure because of the reversal curse, but it is one assertion—not independent
 support—at dream/claim level.
 
+The completed seed-0 skin cells reinforce the same point:
+
+| skin | supported precision (all kinds) | unique accepted equivs true/false | gauge | D2 |
+|---|---:|---:|---:|---:|
+| aligned | .833 | 4 / 2 | .867 | .500 |
+| neutral | .667 | 1 / 0 | .875 | .333 |
+| conflicting | .854 | 8 / 0 | 1.000 | .583 |
+
+This verifier-free run does **not** reproduce a clean aligned > conflicting
+ordering; conflicting is best on seed 0 because it happened to accept eight
+unique true equivalences and zero false ones. The earlier prior-localization
+finding remains a separate perfect-gate/proposal-coverage result, not something
+to claim from C3e yet. A skin effect here requires matched multi-seed runs and
+per-kind structural metrics.
+
 ## 3. The implemented self-check is not yet Rohin's intended self-check
 
 The current C3e initial check sends every proposal with:
@@ -118,4 +133,3 @@ only after the batch commits.
 5. Only then run v0.2 higher-order dreaming, skins, and scale.
 6. Keep Action World parked until the memory/depth mechanism survives this
    ladder.
-
