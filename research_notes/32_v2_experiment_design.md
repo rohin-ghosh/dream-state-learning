@@ -852,3 +852,19 @@ so it can supply dense value labels the same way the evaluator would).
 - Implemented as c3stream --reinforce --sleep-grow (sleep phase also
   EXPANDS: one hop over the top-support/depth thoughts — dreams over
   dreams at consolidation time, not only verification).
+
+## 2026-08-26 batch/stream MIXING ruling + Action World received
+- RULING (Rohin): batch vs streaming dreaming is an EXPERIMENT-SIZE
+  decision, mixed in one system — batch ("sleep on the whole lifetime")
+  while the lifetime fits a dream context; streaming micro-dreams once
+  it doesn't; sleep phases do batch consolidation over the stream's
+  provisional accumulation. Matches the measured result (batch dominates
+  at 23 episodes; streaming is the scaling form).
+- ACTION WORLD v0 received (Codex, branch action-world-v0, 9a94733;
+  pushed to origin by Fable): threshold world with real state/action/
+  consequence transitions (open/inspect/guard/enter), hidden danger-side
+  law, A0-A3 ladder (A3 = compose two inferred crossings = action
+  Blendyland). 9/9 integrity tests, depth separation over 100 seeds,
+  no-leakage audits, CPU controls behave (context-law oracle 1.0,
+  cautious-procedure 1.0 on A1 only, lookup A0 only). NOT GPU-integrated
+  yet by design: finish verifier-free depth growth on Blendyland first.
