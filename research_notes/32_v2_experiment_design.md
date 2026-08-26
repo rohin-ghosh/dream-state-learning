@@ -773,3 +773,40 @@ evaluates the evaluator.
 Paper-1 scope: the evaluator is pointed to as future work; our engine
 oracles play its role in-world (the world generator knows ground truth,
 so it can supply dense value labels the same way the evaluator would).
+
+## 2026-08-26 Rohin PLAYED the game (3/3 on D1/D2-grade predictions) — rulings
+- HIS EXPERIENCE = the C0 result: the TABLE did the cognitive work
+  ("the visualization is playing as a memory I'm looking at... basically
+  tool use"). Sequential one-by-one experience would be near-impossible.
+  HONEST LABEL adopted (Codex): what we test today is "autonomous
+  abstraction over a reliable, ORGANIZED episodic memory — not
+  autonomous structure discovery from a raw stream." Tabulated evidence
+  is a named training wheel on the peeling ladder (after verifier,
+  before generic prompts... order per goalposts).
+- THREE-CASE RULE: raw stream (too hard) / generic episodic memory with
+  entity retrieval (LEGITIMATE architecture — brains index too) /
+  task-specific solution graph (cheating if presented as cognition).
+- HABITAT WORLD (queued design, "world-constructive memory"): animals
+  with overlapping REAL features (night vision, swimming, fur...),
+  habitats with coherent transformations (dark, hot, flooded...), exact
+  hidden fitness function = sum of compatibility terms. Semantic
+  intuition + deterministic evaluator; graded guesses from partial
+  knowledge ("nocturnal animals stayed vivid here, so vivid is likely").
+  Global priors across worlds + per-world deltas = the docker metaphor
+  operationalized. This is closer to a VALUE function than a world map.
+- THE ORIGINAL THESIS RE-CENTERED (Rohin: "I didn't forget for no
+  reason — I factorized it"): phase 1 world-building (Candyland, nearly
+  done) -> phase 2 experiential combination (Blendyland/D3, current
+  frontier) -> phase 3 ACTION construction (the Alchemy question:
+  dream over own action-transitions, consolidate causal schemas, act
+  better on novel states). "ACTION NEEDS BLENDY": action intelligence =
+  the same compositional machinery unrolled through time — state-related
+  retrieval, chain-hopping value guesses, past actions looped back as
+  experience. D3 is the minimal precursor to novel-plan composition.
+- A0-A4 action ladder adopted for phase 3 (recall outcome / choose
+  learned action / transfer to new object / compose plan / revise on
+  exception); memory language extends with CAUSAL_RULE and ACTION_SCHEMA
+  (context, action, effects, evidence trajectories, scope, exceptions);
+  receding-horizon think loop (imagine several, execute one, compare,
+  replan). Baselines must include direct trajectory-to-QA LoRA (the
+  TMEM-style arm) vs dreamed causal-memory LoRA.
