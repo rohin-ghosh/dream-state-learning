@@ -27,6 +27,19 @@ No model or GPU is used here.  This package is the environment/evaluator
 boundary that the proven G-series dream and read-only LoRA pipeline should
 consume.
 
+## Experimental v0.2 D3 replacement
+
+The original v0 D3 mechanic is retained for reproducibility but is now known
+to be observationally underspecified. `lands/v02.py` contains the CPU-only,
+versioned replacement with additive pigment ratios, operator demonstrations,
+hidden-role target lands, and a 1,000-seed adversarial identifiability audit.
+See `research_notes/37_semantic_world_v02_spec.md` before using D3 results.
+
+```bash
+PYTHONPATH=. python3 -m lands.v02 audit --seeds 1000
+PYTHONPATH=. python3 lands/test_v02.py
+```
+
 ## Commands
 
 ```bash
