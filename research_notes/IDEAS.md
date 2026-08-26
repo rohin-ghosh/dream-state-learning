@@ -94,6 +94,12 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   amortized controller. [notes/35]
 - **Prompt-ablation ladder**: minimal / generic loop / pattern repertoire
   / game-informed ceiling. [notes/35]
+- **Controller parameterization ladder**: prompts (Paper 1, learnable-
+  by-construction) -> discrete prompt optimization (DSPy/OPRO) -> mode
+  adapters -> prefix/P-tuning (static mode bias) -> conditional prefix
+  generator (the real "consciousness stream" — state-conditioned) ->
+  learned operation policy. Vectors buy learnability, cost
+  inspectability. [notes/35 2026-08-26]
 - **Self-prompt legitimacy ruling**: process guidance is allowed because
   "the LLM could come up with these self-prompts anyway" — later, let the
   model WRITE its own next dream question (self-directed drift). [notes/32]

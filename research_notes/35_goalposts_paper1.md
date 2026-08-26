@@ -107,3 +107,28 @@ ICLR 2027: abstract Sep 18, paper Sep 25 2026. ~20 days at time of
 writing. Gate: if the self-check arm holds across seeds/skins by ~Sep 8,
 Paper 1 is the systems paper above; fallback remains the honest-negative
 framing of SPEC_V2 Parts I–II plus the measured G-series mechanics.
+
+## Reframed ideal claim + controller parameterization (ruling 2026-08-26)
+THE HEADLINE ARCHITECTURE is the depth-growth loop:
+wake experience -> one-hop micro-dream -> provisional memory ->
+reactivation by later experience -> higher-order memory -> parametric
+consolidation -> chained thinking (later: action). Dreaming is continual
+graph-like growth, not a batch operation. The paper's centerpiece figure
+is this loop, with measured emergence timelines and depth histograms.
+CONTROLLER RULING: text prompts STAY for Paper 1 — prompted controllers
+are canonical (Voyager, ReAct, Reflexion, ToT); rigor comes from frozen
+published prompts, the process-vs-solution guidance line, prompt-ablation
+ladders, and per-transition measurement — not from vectors. Formalism:
+o_t ~ pi_phi(o | z_t, goal); z_{t+1} = F_theta(z_t, retrieve(M_t), o_t);
+M_{t+1} = update(M_t, z_{t+1}). Paper 1 instantiates pi_phi as fixed
+prompts + deterministic scheduler and states it is LEARNABLE BY
+CONSTRUCTION from logged trajectories.
+PARAMETERIZATION LADDER (future work, in order of interpretability
+cost): (1) discrete prompt optimization (DSPy/OPRO — still readable);
+(2) mode adapters / mode-LoRAs per cognitive function; (3) prompt/prefix
+tuning (P-Tuning v2) — static mode bias only; (4) conditional prefix
+generator / recurrent latent controller (a static prefix is NOT a
+consciousness stream — state-dependence requires a generator); (5)
+learned operation policy + trajectory-value model. The trade named in
+one line: vectors buy learnability and cost inspectability — the same
+trade as parametric memory vs retrieval, one layer up.
