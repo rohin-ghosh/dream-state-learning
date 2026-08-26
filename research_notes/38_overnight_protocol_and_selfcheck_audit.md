@@ -14,12 +14,17 @@ tokens) on aligned seed 0.
 | entity-keyed retrieval (~28 lines), direct generation | 1.000 | .083 | .083 |
 | context, model resolves atomic reads, then composes | 1.000 | .417 | .333 |
 | **context + candidate-recognition reads + clean compose** | .750 | **.500** | **.500** |
+| LoRA mounted, direct goal generation | .500 | .083 | .167 |
 | **LoRA + candidate-recognition reads + clean compose** | .750 | **.500** | **.500** |
 
-The matched final two rows are decisive at this scale: the weights themselves
-do not create the gain. The atomic query plan + finite candidate recognition +
-clean composer do. Naive context and naive RAG fail because the model does not
-reliably select and resolve the necessary leaves from even 65 organized lines.
+The substrate×protocol 2×2 is now complete. Direct generation is at/below floor
+on D2 for both context (.083) and mounted LoRA (.167); recognition+clean-compose
+is .500 for both. The weights themselves do not create the gain at this scale.
+The atomic query plan + finite candidate recognition + clean composer do. Naive
+context and naive RAG fail because the model does not reliably select and
+resolve the necessary leaves from even 65 organized lines. The mounted adapter
+also lowers simple D0 versus the recognition/unmount path (.50 vs .75),
+supporting read-only adapter hygiene.
 
 The honest current statement is:
 

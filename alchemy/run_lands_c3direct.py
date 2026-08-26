@@ -12,9 +12,7 @@ import argparse
 import json
 import pathlib
 
-from peft import PeftModel
-
-from alchemy.lora_mem import load_base
+from alchemy.backend import make_backend
 from alchemy.run_lands_c012 import PAIRWISE_SUFFIX, depth_report, score_output
 from lands import SemanticWorld, WorldConfig
 from lands.skins import make_skin
@@ -33,6 +31,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--tag", default="_e")
     parser.add_argument("--lora", help="existing adapter directory")
+    parser.add_argument("--model", default=MODEL)
     args = parser.parse_args()
 
     world = SemanticWorld(WorldConfig(seed=args.seed))
@@ -47,27 +46,21 @@ def main() -> None:
     if not lora_path.is_dir():
         raise SystemExit(f"adapter does not exist: {lora_path}")
 
-    base, tokenizer = load_base(MODEL)
-    model = PeftModel.from_pretrained(base, str(lora_path)).eval()
-    outputs = []
+    prompts = []
     for goal in goals:
-        prompt = (
+        prompts.append(
             "Your past consolidated memories are stored in the currently "
             "mounted memory adapter. Retrieve whatever facts are needed from "
             "those weights.\n\n"
             + questions[goal.id]
             + ADAPTER_DIRECT_SUFFIX
         )
-        inputs = tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
-        generated = model.generate(
-            inputs,
-            max_new_tokens=900,
-            do_sample=False,
-            pad_token_id=tokenizer.eos_token_id,
-        )
-        outputs.append(
-            tokenizer.decode(generated[0, inputs.shape[1] :], skip_special_tokens=True)
-        )
+    backend = make_backend(
+        "vllm", args.model, enable_lora=True, max_lora_rank=64
+    )
+    outputs = backend.generate(
+        prompts, max_tokens=900, lora_path=str(lora_path.resolve())
+    )
 
     outcomes = [
         score_output(skin, output, goal.answer_color_id)[0]
