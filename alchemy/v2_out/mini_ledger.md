@@ -496,3 +496,27 @@ cells+equivs and ignores relation claims).
   (prompt->direct; prompt->recognition->composer; LoRA->recognition->
   composer) + prompt-memory token count (65 lines is a small-memory
   ceiling; LoRA's claim is memory >> window).
+
+## SUBSTRATE x PROTOCOL 2x2 COMPLETE — the protocol IS the memory intelligence
+Same self-checked dream corpus (1086 memory tokens), aligned s0, D2:
+|                     | direct answer | recognition reads -> compose |
+| context             | 0.083         | 0.500                        |
+| LoRA (weights)      |  —            | 0.500                        |
+(context + generative resolved reads: 0.333 — recognition > generation)
+- CONTEXT+RECOGNITION EQUALS LORA+RECOGNITION at small memory. The read
+  protocol (targeted recognition resolution -> clean compose) is the
+  entire effect; the substrate is interchangeable while memory fits the
+  window. Paper claim, sharpened: "the resolution protocol is the memory
+  system's intelligence; parametric consolidation is the substrate that
+  carries it beyond the context window" — LoRA's value condition is the
+  same as streaming's: memory >> window (and persistence after the
+  window is gone). Report mem-token counts everywhere.
+- Also ctxrec D3 0.417 (best D3 yet; underspecified caveat applies).
+
+## D2 LOCK-AND-REPLICATE (verifier-free self-check arm, through weights)
+aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
+- Above the 0.167 floor in 5/5 world-skin combos; mean ~0.43 vs ceiling
+  0.917. Variance tracks per-seed dreamer coverage (aligned s2 weak).
+  The verifier-free pipeline REPLICATES; coverage-targeted daydreaming
+  (per-entity gap steering, still verifier-free) is the known lever for
+  the remaining gap.

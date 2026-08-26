@@ -22,6 +22,11 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
 - **Exposure economics**: write cost is fact-SHAPE-driven — relations
   ~3× entities; long composite answers unstorable; ~24 touches for
   uniform atomic facts. [ledger G5c]
+- **The resolution protocol is the memory intelligence** (2x2, 2026-08-26):
+  context+recognition == LoRA+recognition (D2 0.50) at 1086 memory
+  tokens; direct-from-context floors (0.083). Substrate is
+  interchangeable while memory fits the window; LoRA's value condition
+  is memory >> window + persistence. Always report memory token counts.
 - **Coverage prices capability ~linearly** (equiv coverage 9/15→D2 0.50;
   14/15→0.917) and must be tracked PER ENTITY, not per claim. [ledger C3]
 - **Attribution discipline**: peel one scaffold at a time; keep ceiling +
