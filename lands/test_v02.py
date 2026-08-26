@@ -6,6 +6,7 @@ from collections import Counter
 import re
 
 from lands.model import WorldConfig
+from lands.skins import make_skin
 from lands.v02 import SemanticWorldV02, TARGET_LAND_IDS, audit_seeds
 
 
@@ -87,10 +88,32 @@ def test_v02_is_byte_deterministic_per_seed_and_varies_across_seeds():
     assert left.world_fingerprint() != other.world_fingerprint()
 
 
+def test_v02_surface_names_do_not_determine_answers_across_seeds():
+    for skin_name in ("aligned", "neutral", "conflicting"):
+        answers_by_cell = {}
+        for seed in range(24):
+            world = SemanticWorldV02(WorldConfig(seed=seed))
+            skin = make_skin(skin_name, world.animal_ids, world.source_land_ids)
+            for animal_id in world.animal_ids:
+                for land_id in TARGET_LAND_IDS:
+                    cell = (
+                        skin.animal(animal_id),
+                        world.blend_land_surface(land_id, skin_name),
+                    )
+                    role = world.base.animal_roles[animal_id]
+                    answer = world.ratio_surface(
+                        world.blend_ratio_for_role(role, land_id), skin_name
+                    )
+                    answers_by_cell.setdefault(cell, set()).add(answer)
+        assert len(answers_by_cell) == 180
+        assert all(len(answers) >= 2 for answers in answers_by_cell.values())
+
+
 if __name__ == "__main__":
     test_v02_joint_identifiability_across_1000_seeds()
     test_v02_operator_and_parent_sets_are_jointly_identifiable()
     test_v02_withholds_the_queried_role_in_every_target()
     test_v02_skins_are_isomorphic_and_public_text_has_no_latent_ids()
     test_v02_is_byte_deterministic_per_seed_and_varies_across_seeds()
+    test_v02_surface_names_do_not_determine_answers_across_seeds()
     print("Semantic World v0.2 tests passed")

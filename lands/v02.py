@@ -21,6 +21,7 @@ import hashlib
 import itertools
 import json
 from math import gcd
+import random
 from typing import Callable, Iterable, Sequence
 
 from .model import WorldConfig
@@ -236,7 +237,7 @@ class SemanticWorldV02:
         def parent_set(*indices: int) -> tuple[str, ...]:
             return tuple(sorted(ordered_lands[index] for index in indices))
 
-        target_specs = (
+        target_specs = [
             # Pair targets use the cross-rotation orbit, distinct from both
             # same-rotation demonstration pairs.
             (parent_set(0, 5), 0),
@@ -251,7 +252,9 @@ class SemanticWorldV02:
             (parent_set(0, 1, 3, 4, 5), 0),
             (parent_set(1, 2, 3, 4, 5), 1),
             (parent_set(0, 2, 3, 4, 5), 2),
-        )
+        ]
+        target_rng = random.Random(self.config.seed ^ 0x5EED_02D3)
+        target_rng.shuffle(target_specs)
         self.target_parents: dict[str, tuple[str, ...]] = {
             land: parents
             for land, (parents, hidden_role) in zip(TARGET_LAND_IDS, target_specs)

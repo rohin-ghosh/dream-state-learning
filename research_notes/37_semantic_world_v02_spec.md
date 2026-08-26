@@ -87,7 +87,10 @@ distinct answer ratios (majority floor 1/12). Parent counts are balanced 3/3/3/3
 across sizes 2-5. Each parent set is selected so its two visible roles identify
 it uniquely even when the search ranges over *all* source subsets of sizes 2-5.
 No target signature matches an ordinary land or either demonstration land, and
-no queried role has a same-role target exemplar.
+no queried role has a same-role target exemplar. The twelve latent target cases
+are randomly reassigned to surface target names per seed; a complete 180-cell
+surface audit verifies that no target-name/animal-name pair has a fixed answer
+across seeds in any skin.
 
 The required computation is now:
 
@@ -118,6 +121,7 @@ memory, then used by the thinker for a held-out consequence.
   animal, with 12 distinct answers; and
 - every legal answer token grounded in workshop/lived evidence, including in
   the neutral skin, without exposing which target takes which answer; and
+- no fixed surface target/animal cell determines an answer across seeds; and
 - 1,000/1,000 valid, byte-deterministic worlds with unique fingerprints.
 
 The current implementation passes all of these checks. This is identifiability
