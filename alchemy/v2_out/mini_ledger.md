@@ -354,3 +354,29 @@ Identical latent world (seed 0), identical machinery, only words differ:
   memory rate in weights, D0-D3 per arm vs the 0.917 ceiling.
 - Epistemic-state memory (provisional/supported/contradicted with
   reconsolidation) is the architecture target; v1 stores SUPPORTED only.
+
+## C3s DECOMPOSITION (aligned s0) — self-check works; Blendyland died at the PARSER
+Pipeline: 21 raw dream texts -> 100 grammar-parsed claims -> self-check
+-> 41 accepted. Confusion matrix (verdict x offline truth):
+  SUPPORTED  34T/7F  (precision 0.829)   | raw precision 0.61
+  CONTRADICTED 11T/22F (mostly-right rejections)
+  UNRESOLVED 13T/7F; recall of true claims 0.557 (conservative filter)
+Per kind: cells 0.938 raw -> 1.00 accepted; equivs 0.40 raw -> 0.50
+accepted (evidence view made cross-referencing hard — fixed with
+side-by-side per-land alignment); land_relations 0.00 (dreamer cannot do
+rotation-delta arithmetic; harmless — emitter v2 derives rotations from
+cells+equivs and ignores relation claims).
+- BLENDYLAND LOCATION: the dreamer DID propose
+  "META_RULE | land=Blendyland | operator=PIGMENT_UNION |
+   parents=Candyland, Mandyland, Dandyland" IN THE MAIN DREAM PASS —
+  rejected by the grammar for SPACES AFTER COMMAS. Hypothesis formation
+  is NOT the failure; emission formatting was. (Proposed parents also
+  imperfect — true set is Candy/Dandy/Randy — so success@k measurement
+  matters.) Fixes: tolerant syntactic normalization, top-3 ranked drift
+  hypotheses (success@k), aligned equiv evidence. C3s v2 queued.
+- Downstream: selfcheck arm D2 0.50 through weights (gauge 0.82) vs
+  nogate gauge 0.35 (false memories wreck the coordinate system);
+  perfect-gate ceiling 0.917. Labels per Codex: arms are perfect-gate /
+  no-gate / self-check / self-check+targeted-drift; the mechanical
+  episodic cell layer is DISCLOSED (this tests autonomous abstraction
+  over a reliable episodic base, not autonomous extraction).
