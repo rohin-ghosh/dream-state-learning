@@ -838,3 +838,17 @@ so it can supply dense value labels the same way the evaluator would).
   Emergence metrics: episode index of first correct abstraction,
   support growth, second-order emergence time, revision frequency,
   final precision/coverage, D2/D3 after consolidation.
+
+## 2026-08-26 STREAMING REFINEMENTS (Rohin) — per-memory hops, reinforcement
+- Hops are PER MEMORY, not just per new experience: a dream batch holds
+  many chains, and like MCTS the tree grows depth per dream. Even with
+  STATIC experience the system keeps learning — more dreams = more
+  nodes ("even if your experiences don't change you can learn more").
+- SIMILAR MEMORY IS NOT A NEW NODE: a re-derived claim REINFORCES the
+  existing node (+support, +depth step), implemented with the
+  independent-parents rule — support only accrues when the duplicate
+  arrives via a DIFFERENT parent set (repetition of the same derivation
+  is not evidence; re-derivation from new evidence is).
+- Implemented as c3stream --reinforce --sleep-grow (sleep phase also
+  EXPANDS: one hop over the top-support/depth thoughts — dreams over
+  dreams at consolidation time, not only verification).

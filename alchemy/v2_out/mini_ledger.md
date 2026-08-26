@@ -416,3 +416,17 @@ cells+equivs and ignores relation claims).
   evidence, not a trash can; two-axis check (evidence x existing
   structure) with revision actions; consolidation weight from
   independent support, never repetition.
+
+## C3e through weights + stream v1 — two lessons
+- C3e (epistemic check): corpus improved (42 claims @0.833, gauge 0.867,
+  8 connector promotions, drift parser fixed -> 12 proposals) but
+  downstream UNCHANGED: D1 0.5 / D2 0.5 / D3 0.167. Lesson: WHICH
+  animals get covered matters, not how many edges — the promotions
+  didn't reach the uncovered eval animals. Coverage must be tracked
+  per-entity, not per-claim.
+- C3stream v1 (one-hop micro-dreams): nearly MUTE — 1 thought in 23
+  episodes; the cautious "only if worth remembering" instruction made
+  the 7B PASS everything. Finding: MICRO-DREAM PRODUCTION RATE is a
+  first-class parameter (Rohin's "caring" dial) — too low reduces the
+  system to pure episodic memory. Assertive-prompt + --reinforce +
+  --sleep-grow arm queued (v2).
