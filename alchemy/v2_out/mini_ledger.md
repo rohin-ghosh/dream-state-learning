@@ -483,15 +483,21 @@ cells+equivs and ignores relation claims).
   equally. Parent identifiability held only CONDITIONAL on knowing the
   operator (the solver assumes PIGMENT_UNION). Joint operator+parents
   discovery was never evidence-decidable.
+- SECOND SHORTCUT (Codex follow-up): v0 observes one Blendyland anchor
+  for EACH of the three animal roles. Once role equivalence is learned,
+  every held-out D3 cell can copy the same-role target anchor without
+  learning an operator or parents. Fixing signature collision alone
+  would not have repaired D3.
 - CONSEQUENCES: (a) all D3 numbers to date are relabeled "underspecified
   meta-induction diagnostic" — NOT model failure; the 7B proposing
   different parents was rational; (b) D3 scale/prompt searches PAUSED;
   (c) D0-D2 results unaffected (0.917 transport stands); (d) Rohin's
   instinct ("need more blend outcomes / better semantics") preceded the
-  audit — v0.2 goes to Codex: identifiability tests (meta signature
-  outside the ordinary family, competing operators rejected, 1000-seed
-  auto-check), pair-blend demonstration lands teaching the operation,
-  richer color basis so blends produce genuinely novel observations.
+  audit — v0.2 is now implemented on `semantic-world-v02`: 12
+  independent target cases, queried role withheld, weighted-pigment
+  outcomes outside source/demo families, variable parent sets (2-5),
+  neutral-vocabulary grounding, target cases shuffled across names, and
+  joint operator+parent identifiability passing 1000/1000 seeds.
 - Substrate-arm caveat adopted: report all three read interfaces
   (prompt->direct; prompt->recognition->composer; LoRA->recognition->
   composer) + prompt-memory token count (65 lines is a small-memory
@@ -501,22 +507,27 @@ cells+equivs and ignores relation claims).
 Same self-checked dream corpus (1086 memory tokens), aligned s0, D2:
 |                     | direct answer | recognition reads -> compose |
 | context             | 0.083         | 0.500                        |
-| LoRA (weights)      |  —            | 0.500                        |
+| LoRA (weights)      | 0.167         | 0.500                        |
 (context + generative resolved reads: 0.333 — recognition > generation)
 - CONTEXT+RECOGNITION EQUALS LORA+RECOGNITION at small memory. The read
   protocol (targeted recognition resolution -> clean compose) is the
-  entire effect; the substrate is interchangeable while memory fits the
-  window. Paper claim, sharpened: "the resolution protocol is the memory
+  dominant observed effect in this cell; the substrate is interchangeable
+  while memory fits the window. Paper claim, sharpened: "the resolution protocol is the memory
   system's intelligence; parametric consolidation is the substrate that
   carries it beyond the context window" — LoRA's value condition is the
   same as streaming's: memory >> window (and persistence after the
   window is gone). Report mem-token counts everywhere.
+- Mounted-LoRA direct D0 is 0.50 versus 0.75 after recognition reads and
+  adapter unmount: the read-only adapter hygiene ablation is now complete.
 - Also ctxrec D3 0.417 (best D3 yet; underspecified caveat applies).
 
 ## D2 LOCK-AND-REPLICATE (verifier-free self-check arm, through weights)
 aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
 - Above the 0.167 floor in 5/5 world-skin combos; mean ~0.43 vs ceiling
-  0.917. Variance tracks per-seed dreamer coverage (aligned s2 weak).
-  The verifier-free pipeline REPLICATES; coverage-targeted daydreaming
-  (per-entity gap steering, still verifier-free) is the known lever for
-  the remaining gap.
+  0.917. The verifier-free signal replicates above floor, but is not yet
+  robust enough to lock: accepted structural-equivalence precision varies
+  sharply, and a few false edges contaminate whole latent classes. Overall
+  self-check precision is cell-dominated and must be replaced by per-kind
+  precision/recall + contamination blast radius. Also, C3e's first check
+  currently passes `structure=(none yet)`; the intended evidence+accepted-
+  LTM self-check is not implemented until claims are checked in waves.

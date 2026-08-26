@@ -24,7 +24,8 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   uniform atomic facts. [ledger G5c]
 - **The resolution protocol is the memory intelligence** (2x2, 2026-08-26):
   context+recognition == LoRA+recognition (D2 0.50) at 1086 memory
-  tokens; direct-from-context floors (0.083). Substrate is
+  tokens; direct context/LoRA floor (0.083/0.167). Mounted-LoRA D0 is
+  0.50 vs 0.75 with recognize+unmount. Substrate is
   interchangeable while memory fits the window; LoRA's value condition
   is memory >> window + persistence. Always report memory token counts.
 - **Coverage prices capability ~linearly** (equiv coverage 9/15→D2 0.50;
@@ -59,13 +60,13 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   repetition doesn't). [c3stream --reinforce]
 - **Sleep-growth**: sleep both verifies AND expands (dreams over dreams
   on top-support thoughts). [c3stream --sleep-grow]
-- **D3 PAUSED — underspecified** (500/500 seeds: meta signature equals
-  an ordinary land; copy vs blend evidence-equivalent). All D3 numbers =
-  "underspecified meta-induction diagnostic," not model failure. Awaits
-  Semantic World v0.2 (Codex): joint operator+parent identifiability,
-  pair-blend demonstration lands, blend outputs outside the ordinary
-  family, 1000-seed auto-checks. THEN the k-sweep -> dreamer-scale
-  protocol resumes. [ledger 2026-08-26]
+- **D3 PAUSED — v0 underspecified twice**: (1) 500/500 signatures copy
+  an ordinary land; (2) one target anchor per role makes same-role lookup
+  sufficient. V0.2 CPU instrument is DONE on `semantic-world-v02`: 12
+  independent hidden-role targets, 2-5 parents, weighted outcomes, grounded
+  neutral vocabulary, shuffled target/name assignment, 1000/1000 joint-
+  identifiability audit. Next gate is clean-model gameability, not more v0
+  prompt/scale search. [notes/37, ledger 2026-08-26]
 - **Prompter isolation** (Rohin: "easiest part but not obvious; fully
   handed-off; testable isolated"): the C1 protocol ladder IS the isolated
   prompter test — same oracle leaves, prompt-only swings D2 0.35 -> 0.72
