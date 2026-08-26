@@ -52,8 +52,8 @@ there, across all situations:
 Look for a HIGHER-ORDER connection: is this situation's outcome built
 from the outcomes of other situations combined in some way? What do the
 cases have in common? Derive what your best explanation predicts and
-check it against the memories above. If you find a rule, emit it in
-grammar form, followed by CITES:
+check it against the memories above. Propose your TOP 3 candidate rules, best first, each in grammar form
+followed by CITES (no spaces after commas in parents=):
 {grammar}
 CITES: <obs_id>, <obs_id>, ...
 Start the claims section with a line saying CLAIMS:"""
@@ -85,10 +85,14 @@ def main():
         for line in lines:
             if line.upper().startswith("CITES:") or line in seen:
                 continue
+            norm = re.sub(r",\s+", ",", line)
+            if norm.startswith("META_RULE"):
+                norm = re.sub(r"(parents=[^|]+?)\s*\|.*$", r"\1", norm).strip()
             try:
-                claim = codec.parse(line, claim_id=f"p{len(proposals)}")
+                claim = codec.parse(norm, claim_id=f"p{len(proposals)}")
             except Exception:
                 continue
+            line = norm
             seen.add(line)
             proposals.append({"line": line, "kind": claim.kind,
                               "claim": claim, "stage": stage})
@@ -136,6 +140,16 @@ def main():
             metas = {an for an, ln, _, _ in rows if ln == meta_surf}
             return "\n".join(f"{an}: " + ", ".join(by_animal[an])
                              for an in sorted(metas))
+        if c.kind == "animal_equiv" and len(names) == 2:
+            l2c = {n: {} for n in names}
+            for an, ln, col, oid in rows:
+                if an in l2c:
+                    l2c[an][ln] = f"{col} [{oid}]"
+            shared = sorted(set(l2c[names[0]]) | set(l2c[names[1]]))
+            return "\n".join(
+                f"{ln}: {names[0]}={l2c[names[0]].get(ln, '(not seen)')}, "
+                f"{names[1]}={l2c[names[1]].get(ln, '(not seen)')}"
+                for ln in shared)
         return "\n".join(f"{n}: " + ", ".join(by_animal[n]) for n in names)
 
     checks = be.generate([SELF_CHECK.format(claim=p["line"],
