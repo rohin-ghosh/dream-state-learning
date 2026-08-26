@@ -36,11 +36,14 @@ land's colors may be built from other lands' colors for the same animal
 (paint mixing: red+yellow=orange, yellow+blue=green, red+blue=purple,
 all three=brown).
 
-If (and only if) something worth remembering follows from connecting the
-new experience with these memories, output EXACTLY one claim line:
+Actively look for a connection — in particular: does any remembered
+animal share a COLOR IN THE SAME LAND with an animal in the new
+experience? Does the special land's color for some animal now look like
+a blend of that animal's other colors? A useful connection usually
+exists. Output EXACTLY one claim line:
 {grammar}
 then one line: PARENTS: <memory ids used>
-Otherwise output exactly: PASS"""
+Only if genuinely nothing connects, output exactly: PASS"""
 
 SELF_CHECK = """You are checking one of your own dreamed conclusions
 against your actual memories.
