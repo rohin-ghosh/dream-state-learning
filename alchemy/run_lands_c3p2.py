@@ -19,6 +19,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--skin", default="aligned")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--corpus", default=None,
+                    help="path to a corpus json (default: c3c corpus)")
+    ap.add_argument("--tag", default="")
     a = ap.parse_args()
     world = SemanticWorld(WorldConfig(seed=a.seed))
     goals = world.eval_goals()
@@ -26,16 +29,17 @@ def main():
     land_names = [skin_obj.land(l) for l in world.source_land_ids]
     public = world.render(a.skin)
     qmap = {g.goal_id: g.question for g in public.goals}
-    bundle = json.load(open(f"alchemy/v2_out/lands_c3c_corpus_{a.skin}_s{a.seed}.json"))
+    cpath_in = a.corpus or f"alchemy/v2_out/lands_c3c_corpus_{a.skin}_s{a.seed}.json"
+    bundle = json.load(open(cpath_in))
     qa = bundle["qa"]
     memb = [l for l in qa if "What color was" in l or "position abstraction" in l]
     rules = [l for l in qa if l not in memb]
     lines = memb * 8 + rules * 24
     print(f"[c3p2] corpus: {len(qa)} unique ({len(memb)} memb, {len(rules)} "
           f"rules) -> {len(lines)} lines", flush=True)
-    cpath = pathlib.Path(f"alchemy/v2_out/lands_c3p2_train_{a.skin}_s{a.seed}.json")
+    cpath = pathlib.Path(f"alchemy/v2_out/lands_c3p2{a.tag}_train_{a.skin}_s{a.seed}.json")
     json.dump(lines, open(cpath, "w"))
-    lora_dir = pathlib.Path(f"alchemy/v2_out/lands_c3p2_lora_{a.skin}_s{a.seed}")
+    lora_dir = pathlib.Path(f"alchemy/v2_out/lands_c3p2{a.tag}_lora_{a.skin}_s{a.seed}")
     if not lora_dir.exists():
         code = f"""
 import json
@@ -96,9 +100,9 @@ print('[gate]', read(m, tok, {qa[0].split(" A: ")[0] + " A:"!r}, 40)[:100])
     rep = depth_report(world, goals, oks)
     rep["read_plan_coverage"] = round(n_known / n_reads, 3)
     rep["gauge_fit"] = bundle.get("gauge_fit")
-    json.dump(rep, open(f"alchemy/v2_out/lands_c3p2_{a.skin}_s{a.seed}.json",
+    json.dump(rep, open(f"alchemy/v2_out/lands_c3p2{a.tag}_{a.skin}_s{a.seed}.json",
                         "w"), indent=1)
-    print(f"[c3p2] {a.skin} s{a.seed}: "
+    print(f"[c3p2{a.tag}] {a.skin} s{a.seed}: "
           + " ".join(f"{d}={v['acc']}" for d, v in rep.items()
                      if isinstance(v, dict)), flush=True)
     print("[c3p2] DONE", flush=True)
