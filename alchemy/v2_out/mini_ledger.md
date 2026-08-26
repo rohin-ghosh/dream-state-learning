@@ -380,3 +380,18 @@ cells+equivs and ignores relation claims).
   no-gate / self-check / self-check+targeted-drift; the mechanical
   episodic cell layer is DISCLOSED (this tests autonomous abstraction
   over a reliable episodic base, not autonomous extraction).
+
+## FOUR-ARM LADDER v1 (aligned s0) — complete
+| arm            | gauge | D0   | D1   | D2    | D3    |
+| perfect-gate   | 1.000 | 0.75 | 0.75 | 0.917 | 0.0   |
+| self-check     | 0.818 | 0.75 | 0.50 | 0.500 | 0.167 |
+| no-gate        | 0.349 | 0.75 | 0.25 | 0.417 | 0.25  |
+(floors D0-D2 0.167, D3 0.333; ceiling row = C3 round 2)
+- Self-check beats no-gate most clearly on D1 (2x) and corpus integrity
+  (gauge 0.82 vs 0.35); D2 gap modest at this coverage level — the
+  recognition-read + compose path has some robustness to junk.
+- The ceiling->self-check D2 gap (0.917 -> 0.50) decomposes into
+  self-check's conservative recall (0.557) on true equivalences, i.e.
+  COVERAGE again — same law as C3 rounds 1-2.
+- C3s v2 (tolerant parser, aligned equiv evidence, top-3 drift) queued —
+  expected to lift both coverage and the META_RULE survival.

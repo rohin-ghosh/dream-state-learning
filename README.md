@@ -17,6 +17,10 @@ retrieval and long context flatten. Target: ICLR 2027.
 - [`DESIGN_SUPER.md`](DESIGN_SUPER.md) — the full architecture vision the
   experiment is the first slice of (engine, felt attention, dream,
   person-hierarchy, escalation ladders).
+- [`research_notes/35_goalposts_paper1.md`](research_notes/35_goalposts_paper1.md)
+  — **THE GOALPOSTS**: Paper 1 claim, the four-arm honesty ladder, the
+  allowed/forbidden (cheating) line, C3loop, success criteria, deferred
+  work. Check any new experiment against this.
 - [`research_notes/`](research_notes/) — decision history; `32_*` is the
   running v2 design log, `33_*` the frozen Semantic World v0 contract,
   `25_*` the competitive-landscape audits.
