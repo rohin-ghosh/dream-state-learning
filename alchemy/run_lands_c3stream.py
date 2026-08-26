@@ -61,6 +61,12 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--sleep-every", type=int, default=8)
     ap.add_argument("--max-hops", type=int, default=3)
+    ap.add_argument("--reinforce", action="store_true",
+                    help="duplicate claims reinforce the existing node "
+                         "(independent support only if parents differ)")
+    ap.add_argument("--sleep-grow", action="store_true",
+                    help="sleep also expands: one hop over top-salient "
+                         "existing thoughts (dreams over dreams)")
     a = ap.parse_args()
     world = SemanticWorld(WorldConfig(seed=a.seed))
     public = world.render(a.skin)
@@ -101,7 +107,19 @@ def main():
     def try_parse(text, ep_idx, parents_pool):
         for line in text.splitlines():
             norm = normalize(line)
-            if not norm or norm == "PASS" or norm in seen_lines:
+            if not norm or norm == "PASS":
+                continue
+            if norm in seen_lines:
+                if a.reinforce:
+                    m0 = re.search(r"PARENTS:\s*(.+)", text)
+                    pset = frozenset(re.findall(r"[a-z]+_\d+|t\d+",
+                                                m0.group(1)) if m0 else [])
+                    for t in thoughts:
+                        if t["line"] == norm:
+                            if pset and pset not in t["parent_sets"]:
+                                t["support"] += 1
+                                t["parent_sets"].append(pset)
+                            break
                 continue
             try:
                 claim = codec.parse(norm, claim_id=f"t{len(thoughts)}")
@@ -115,7 +133,8 @@ def main():
             seen_lines.add(norm)
             th = {"id": f"t{len(thoughts)}", "line": norm,
                   "kind": claim.kind, "claim": claim, "parents": parents,
-                  "depth": depth, "ep_idx": ep_idx, "status": "PROVISIONAL"}
+                  "depth": depth, "ep_idx": ep_idx, "status": "PROVISIONAL",
+                  "support": 1, "parent_sets": [frozenset(parents)]}
             thoughts.append(th)
             return th
         return None
@@ -172,6 +191,25 @@ def main():
         if (i + 1) % a.sleep_every == 0:
             pend = [t for t in thoughts if t["status"] == "PROVISIONAL"]
             sleep_check(pend)
+            if a.sleep_grow:
+                roots = sorted(
+                    [t for t in thoughts if t["status"] != "CONTRADICTED"],
+                    key=lambda t: (t["support"], t["depth"], t["ep_idx"]),
+                    reverse=True)[:6]
+                grew = 0
+                for r in roots:
+                    rel = retrieve(r["line"])
+                    if not rel:
+                        continue
+                    prompt = MICRO.format(new=r["line"], grammar=grammar,
+                                          related="\n".join(
+                                              f"[{mid}] {t}" for mid, t in rel))
+                    out = be.generate([prompt], max_tokens=700)[0]
+                    th = try_parse(out, i,
+                                   known_ids | {t["id"] for t in thoughts})
+                    grew += th is not None
+                if grew:
+                    print(f"[c3st] sleep-growth: +{grew} thoughts", flush=True)
             n_by = defaultdict(int)
             for t in thoughts:
                 n_by[t["status"]] += 1
@@ -220,10 +258,13 @@ def main():
            "firsts": firsts,
            "depth_hist": {d: sum(1 for t in thoughts if t["depth"] == d)
                           for d in range(1, 6)}}
-    json.dump(out, open(f"alchemy/v2_out/lands_c3st_corpus_{a.skin}_s{a.seed}.json",
+    mode = ("rg" if a.reinforce and a.sleep_grow else
+            "r" if a.reinforce else "g" if a.sleep_grow else "")
+    json.dump(out, open(f"alchemy/v2_out/lands_c3st{mode}_corpus_{a.skin}_s{a.seed}.json",
                         "w"), indent=1)
-    audit = [{k: v for k, v in t.items() if k != "claim"} for t in thoughts]
-    json.dump(audit, open(f"alchemy/v2_out/lands_c3st_audit_{a.skin}_s{a.seed}.json",
+    audit = [{k: (v if k != "parent_sets" else [sorted(x) for x in v])
+              for k, v in t.items() if k != "claim"} for t in thoughts]
+    json.dump(audit, open(f"alchemy/v2_out/lands_c3st{mode}_audit_{a.skin}_s{a.seed}.json",
                           "w"), indent=1)
     print(f"[c3st] corpus {len(qa or [])} lines gauge {fit}", flush=True)
     print("[c3st] DONE", flush=True)
