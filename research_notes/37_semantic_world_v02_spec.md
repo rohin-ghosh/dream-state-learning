@@ -42,6 +42,16 @@ This distinguishes, for example, red+orange = `(2,1,0)` (red-orange) from
 Boolean union's plain orange. Three-parent outputs such as `(3,1,1)` become
 red-brown and lie outside the ordinary-land family.
 
+Before the temporal gap, a provenance-bearing color-workshop phase grounds
+the complete answer vocabulary through labeled mixture samples. In the neutral
+skin, for example, a record can state that one unit of one primitive token plus
+two units of another is labeled `vexa00`. This is lived calibration evidence,
+not an evaluator lookup: it appears for every baseline, contains no target
+parents or target-to-answer assignments, and makes the arbitrary neutral vocabulary learnable
+rather than relying on English color priors. Workshop and known-parent demo
+evidence occur before the dispersion buffer; sparse animals and target-land
+observations occur after it.
+
 ### Operator demonstrations
 
 Two demonstration lands expose their source topology as lived world facts:
@@ -64,18 +74,20 @@ is available equally to every memory baseline.
 
 ### Held-out target lands
 
-There are three target blend lands. Each has:
+There are twelve target blend lands. Each has:
 
-- a hidden three-source parent set;
+- a hidden parent set containing two, three, four, or five source lands;
 - observations for only two of the three animal roles;
 - the third role completely absent from that target's lifetime; and
-- four held-out goals, one for every non-anchor animal of the missing role.
+- one held-out goal using a distinct non-anchor animal of the missing role.
 
-Different targets withhold roles 0, 1, and 2. This yields 12 D3 goals with four
-red-brown, four yellow-brown, and four blue-brown answers. The three target
-parent sets are selected so the two visible roles already identify the parent
-set uniquely under the learned operator. No target signature matches an
-ordinary land, and no queried role has a same-role target exemplar.
+Four targets withhold each of roles 0, 1, and 2. Every evaluation animal is
+used exactly once, producing 12 distinct `(target, hidden-role)` cases and 12
+distinct answer ratios (majority floor 1/12). Parent counts are balanced 3/3/3/3
+across sizes 2-5. Each parent set is selected so its two visible roles identify
+it uniquely even when the search ranges over *all* source subsets of sizes 2-5.
+No target signature matches an ordinary land or either demonstration land, and
+no queried role has a same-role target exemplar.
 
 The required computation is now:
 
@@ -102,7 +114,10 @@ memory, then used by the thinker for a held-out consequence.
 - zero ordinary-source copy candidates for every target;
 - zero observations of each target's held-out role;
 - no exact goal cell in the lifetime;
-- 12 goals, balanced 4/4/4 by role and answer; and
+- 12 goals, balanced four per hidden role, one per target and evaluation
+  animal, with 12 distinct answers; and
+- every legal answer token grounded in workshop/lived evidence, including in
+  the neutral skin, without exposing which target takes which answer; and
 - 1,000/1,000 valid, byte-deterministic worlds with unique fingerprints.
 
 The current implementation passes all of these checks. This is identifiability
@@ -154,4 +169,3 @@ ladder is:
   later amortization mechanism, not needed to establish the memory result.
 - Weighted pigment names are a controlled semantic scaffold. Neutral and
   conflicting skins preserve the same latent ratios for the prior ablation.
-

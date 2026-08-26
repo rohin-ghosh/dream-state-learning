@@ -4,7 +4,7 @@ V0's D0-D2 instrument remains unchanged.  This module replaces only the
 underspecified D3 mechanic with an additive-pigment curriculum in which:
 
 * two known-parent demonstration lands identify the shared blend operator;
-* three target lands hide their parent sets and one role outcome each;
+* twelve target lands hide their parent sets and one role outcome each;
 * no target outcome signature can be copied from an ordinary land; and
 * the operator and every target parent set are jointly identifiable within a
   declared family of simpler competing operators.
@@ -52,31 +52,57 @@ RATIO_SURFACES: dict[PigmentRatio, str] = {
     (3, 1, 1): "red-brown",
     (1, 3, 1): "yellow-brown",
     (1, 1, 3): "blue-brown",
+    (2, 3, 1): "ochre",
+    (1, 2, 3): "slate",
+    (3, 1, 2): "russet",
+    (3, 3, 2): "amber-brown",
+    (2, 3, 3): "teal-brown",
+    (3, 2, 3): "plum-brown",
 }
 
 DEMO_LAND_IDS = ("blend_demo_00", "blend_demo_01")
-TARGET_LAND_IDS = ("blend_target_00", "blend_target_01", "blend_target_02")
+TARGET_LAND_IDS = tuple(f"blend_target_{index:02d}" for index in range(12))
 
 _ALIGNED_BLEND_LANDS = {
     DEMO_LAND_IDS[0]: "Mixingland",
     DEMO_LAND_IDS[1]: "Swirlland",
-    TARGET_LAND_IDS[0]: "Blendyland",
-    TARGET_LAND_IDS[1]: "Meldyland",
-    TARGET_LAND_IDS[2]: "Fusionland",
+    **dict(
+        zip(
+            TARGET_LAND_IDS,
+            (
+                "Blendyland", "Meldyland", "Fusionland", "Braidedland",
+                "Confluxland", "Mosaicland", "Alloyland", "Weaveland",
+                "Prismaland", "Grandblend", "Tapestryland", "Synthesisland",
+            ),
+        )
+    ),
 }
 _NEUTRAL_BLEND_LANDS = {
     DEMO_LAND_IDS[0]: "Arvane",
     DEMO_LAND_IDS[1]: "Corthel",
-    TARGET_LAND_IDS[0]: "Ulvane",
-    TARGET_LAND_IDS[1]: "Nestri",
-    TARGET_LAND_IDS[2]: "Pavrix",
+    **dict(
+        zip(
+            TARGET_LAND_IDS,
+            (
+                "Ulvane", "Nestri", "Pavrix", "Doreth", "Kalune", "Vossin",
+                "Embral", "Jorvik", "Quorin", "Selnar", "Tavrek", "Wexora",
+            ),
+        )
+    ),
 }
 _CONFLICTING_BLEND_LANDS = {
     DEMO_LAND_IDS[0]: "Stillland",
     DEMO_LAND_IDS[1]: "Plainland",
-    TARGET_LAND_IDS[0]: "Separateland",
-    TARGET_LAND_IDS[1]: "Sololand",
-    TARGET_LAND_IDS[2]: "Dividerland",
+    **dict(
+        zip(
+            TARGET_LAND_IDS,
+            (
+                "Separateland", "Sololand", "Dividerland", "Partland",
+                "Apartland", "Singleland", "Isleland", "Splitland",
+                "Lonefield", "Unmixland", "Breakland", "SiloLand",
+            ),
+        )
+    ),
 }
 
 
@@ -195,40 +221,48 @@ class SemanticWorldV02:
                 land_for[("secondary", 1)],
             ),
         }
-        # These are the three and only three parent triples whose additive
-        # signatures are both unique and outside the ordinary-land family.
-        self.target_parents: dict[str, tuple[str, str, str]] = {
-            TARGET_LAND_IDS[0]: tuple(
-                sorted(
-                    (
-                        land_for[("primary", 0)],
-                        land_for[("secondary", 0)],
-                        land_for[("secondary", 2)],
-                    )
-                )
-            ),
-            TARGET_LAND_IDS[1]: tuple(
-                sorted(
-                    (
-                        land_for[("primary", 1)],
-                        land_for[("secondary", 0)],
-                        land_for[("secondary", 1)],
-                    )
-                )
-            ),
-            TARGET_LAND_IDS[2]: tuple(
-                sorted(
-                    (
-                        land_for[("primary", 2)],
-                        land_for[("secondary", 1)],
-                        land_for[("secondary", 2)],
-                    )
-                )
-            ),
+        # Twelve independently queried targets span 2/3/4/5-parent mixtures.
+        # Every set is uniquely recoverable from either two of its three role
+        # outcomes even when the solver searches all subset sizes 2..5.
+        ordered_lands = (
+            land_for[("primary", 0)],
+            land_for[("primary", 1)],
+            land_for[("primary", 2)],
+            land_for[("secondary", 0)],
+            land_for[("secondary", 1)],
+            land_for[("secondary", 2)],
+        )
+
+        def parent_set(*indices: int) -> tuple[str, ...]:
+            return tuple(sorted(ordered_lands[index] for index in indices))
+
+        target_specs = (
+            # Pair targets use the cross-rotation orbit, distinct from both
+            # same-rotation demonstration pairs.
+            (parent_set(0, 5), 0),
+            (parent_set(1, 3), 1),
+            (parent_set(2, 4), 2),
+            (parent_set(0, 3, 5), 0),
+            (parent_set(1, 3, 4), 1),
+            (parent_set(2, 4, 5), 2),
+            (parent_set(0, 1, 3, 4), 0),
+            (parent_set(1, 2, 4, 5), 1),
+            (parent_set(0, 2, 3, 5), 2),
+            (parent_set(0, 1, 3, 4, 5), 0),
+            (parent_set(1, 2, 3, 4, 5), 1),
+            (parent_set(0, 2, 3, 4, 5), 2),
+        )
+        self.target_parents: dict[str, tuple[str, ...]] = {
+            land: parents
+            for land, (parents, hidden_role) in zip(TARGET_LAND_IDS, target_specs)
         }
-        # Withholding a different role in every target produces 12 D3 goals
-        # (four animals per role) and one of each rich-brown answer kind.
-        self.target_hidden_roles = dict(zip(TARGET_LAND_IDS, (0, 1, 2)))
+        self.target_hidden_roles = {
+            land: hidden_role
+            for land, (parents, hidden_role) in zip(TARGET_LAND_IDS, target_specs)
+        }
+        self.lab_ratios = tuple(
+            sorted(ratio for ratio in RATIO_SURFACES if ratio not in COLOR_FOR_RATIO)
+        )
         self.feed_relations = self._build_feed_relations()
         self.blend_observations = self._build_blend_observations()
         self.goals = self._build_goals()
@@ -298,20 +332,28 @@ class SemanticWorldV02:
 
     def _build_goals(self) -> tuple[BlendGoal, ...]:
         goals = []
+        available = {
+            role: [
+                animal
+                for animal in self.eval_animals
+                if self.base.animal_roles[animal] == role
+            ]
+            for role in range(3)
+        }
         for land_id in TARGET_LAND_IDS:
             hidden_role = self.target_hidden_roles[land_id]
-            for animal_id in self.eval_animals:
-                if self.base.animal_roles[animal_id] != hidden_role:
-                    continue
-                goals.append(
-                    BlendGoal(
-                        id=f"v02_goal_{len(goals):04d}",
-                        animal_id=animal_id,
-                        land_id=land_id,
-                        answer_ratio=self.answer_ratio(animal_id, land_id),
-                        hidden_role=hidden_role,
-                    )
+            animal_id = available[hidden_role].pop(0)
+            goals.append(
+                BlendGoal(
+                    id=f"v02_goal_{len(goals):04d}",
+                    animal_id=animal_id,
+                    land_id=land_id,
+                    answer_ratio=self.answer_ratio(animal_id, land_id),
+                    hidden_role=hidden_role,
                 )
+            )
+        if any(available.values()):
+            raise RuntimeError("v0.2 target assignment did not consume every eval animal")
         return tuple(goals)
 
     def _operator_predictions(
@@ -365,15 +407,16 @@ class SemanticWorldV02:
         }
         assert hidden_role not in observed_by_role
         matches = []
-        for parents in itertools.combinations(self.source_land_ids, 3):
-            if all(
-                pigment_sum(
-                    self.source_ratio_for_role(role, parent) for parent in parents
-                )
-                == ratio
-                for role, ratio in observed_by_role.items()
-            ):
-                matches.append(tuple(parents))
+        for parent_count in range(2, len(self.source_land_ids)):
+            for parents in itertools.combinations(self.source_land_ids, parent_count):
+                if all(
+                    pigment_sum(
+                        self.source_ratio_for_role(role, parent) for parent in parents
+                    )
+                    == ratio
+                    for role, ratio in observed_by_role.items()
+                ):
+                    matches.append(tuple(parents))
         return tuple(matches)
 
     def source_copy_candidates(self, land_id: str) -> tuple[str, ...]:
@@ -421,6 +464,11 @@ class SemanticWorldV02:
             land: tuple(self.blend_ratio_for_role(role, land) for role in range(3))
             for land in TARGET_LAND_IDS
         }
+        demo_signatures = {
+            tuple(self.blend_ratio_for_role(role, land) for role in range(3))
+            for land in DEMO_LAND_IDS
+        }
+        observed_ratios = {observation.ratio for observation in self.blend_observations}
         observed_cells = {observation.cell() for observation in self.blend_observations}
         valid = (
             operators == ("pigment_sum",)
@@ -430,10 +478,15 @@ class SemanticWorldV02:
             )
             and not any(source_copies.values())
             and all(signature not in ordinary_signatures for signature in target_signatures.values())
+            and all(signature not in demo_signatures for signature in target_signatures.values())
+            and len(set(target_signatures.values())) == len(TARGET_LAND_IDS)
             and all(count == 0 for count in hidden_examples.values())
             and not any(goal.cell() in observed_cells for goal in self.goals)
+            and all(goal.answer_ratio in observed_ratios for goal in self.goals)
+            and all(goal.answer_ratio in self.lab_ratios for goal in self.goals)
             and len(self.goals) == 12
-            and sorted(answer_counts.values()) == [4, 4, 4]
+            and len(answer_counts) == 12
+            and set(answer_counts.values()) == {1}
         )
         return IdentifiabilityReport(
             seed=self.config.seed,
@@ -474,14 +527,34 @@ class SemanticWorldV02:
 
     def render_lifetime(self, skin_name: str = "aligned") -> tuple[str, ...]:
         skin = make_skin(skin_name, self.animal_ids, self.source_land_ids)
-        source_lines = tuple(
-            rendered.text
-            for observation, rendered in zip(
-                self.base.sample_lifetime().observations,
-                self.base.render(skin_name).observations,
+        source_by_phase: dict[str, list[str]] = {}
+        for observation, rendered in zip(
+            self.base.sample_lifetime().observations,
+            self.base.render(skin_name).observations,
+        ):
+            if observation.land_id in self.source_land_ids:
+                source_by_phase.setdefault(observation.phase, []).append(rendered.text)
+
+        lab_lines = []
+        pigment_surfaces = tuple(skin.color(color) for color in ("red", "yellow", "blue"))
+        for index, ratio in enumerate(self.lab_ratios):
+            ingredients = ", ".join(
+                f"{count} part{'s' if count != 1 else ''} {pigment}"
+                for count, pigment in zip(ratio, pigment_surfaces)
+                if count
             )
-            if observation.land_id in self.source_land_ids
-        )
+            label = self.ratio_surface(ratio, skin_name)
+            if skin_name == "neutral":
+                text = (
+                    f"[v02_lab_{index:03d} | v02_lab] A calibration mixture "
+                    f"containing {ingredients} is assigned state-token {label}."
+                )
+            else:
+                text = (
+                    f"[v02_lab_{index:03d} | v02_lab] In the color workshop, "
+                    f"a mixture containing {ingredients} is labeled {label}."
+                )
+            lab_lines.append(text)
         relation_lines = []
         for relation in self.feed_relations:
             left, right = (skin.land(parent) for parent in relation.parent_land_ids)
@@ -498,7 +571,8 @@ class SemanticWorldV02:
                 )
             relation_lines.append(text)
 
-        observation_lines = []
+        demo_observation_lines = []
+        target_observation_lines = []
         for observation in self.blend_observations:
             animal = skin.animal(observation.animal_id)
             land = self.blend_land_surface(observation.land_id, skin_name)
@@ -513,8 +587,21 @@ class SemanticWorldV02:
                     f"[{observation.id} | {observation.episode_id}] During the visit "
                     f"to {land}, you see the {animal}. Its coat is {color}."
                 )
-            observation_lines.append(text)
-        return source_lines + tuple(relation_lines) + tuple(observation_lines)
+            destination = (
+                demo_observation_lines
+                if observation.land_id in DEMO_LAND_IDS
+                else target_observation_lines
+            )
+            destination.append(text)
+        return (
+            tuple(source_by_phase.get("calibration", ()))
+            + tuple(lab_lines)
+            + tuple(relation_lines)
+            + tuple(demo_observation_lines)
+            + tuple(source_by_phase.get("dispersion_buffer", ()))
+            + tuple(source_by_phase.get("sparse_lifetime", ()))
+            + tuple(target_observation_lines)
+        )
 
     def render_goals(
         self,

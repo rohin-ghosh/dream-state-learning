@@ -26,9 +26,15 @@ PYTHONPATH=. python3 -m lands.v02 render --seed 0 --skin aligned
 V0 D3 had two shortcuts: its meta signature copied an ordinary land in every
 seed, and its three target anchors exposed one answer for every animal role.
 The new diagnostic uses ratio-preserving pigment mixtures, known-parent demo
-lands, and three target lands that each withhold the queried role. The target
-operator and parents are jointly identifiable, while ordinary copying and
-same-role lookup are impossible.
+lands, and twelve independently queried target lands that each withhold the
+queried role. Parent-set sizes sweep 2-5. The target operator and parents are
+jointly identifiable, while ordinary copying and same-role lookup are
+impossible.
+
+A provenance-bearing workshop phase grounds every weighted-color/state token
+before the dispersion gap. This is necessary for neutral-skin identifiability;
+without it, the evaluator would know what a nonce mixture token means while the
+model never had evidence from which to learn that mapping.
 
 Canonical details and the experiment ladder are in
 `research_notes/37_semantic_world_v02_spec.md`.
@@ -75,4 +81,3 @@ Once those pass, compare context+recognition against LoRA+recognition using the
 same corpus and query plan. The just-completed v0 result says these should be
 equal at 65 lines; v0.2 becomes useful for weights only when the memory horizon
 is swept past the available prompt budget.
-

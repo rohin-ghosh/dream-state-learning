@@ -61,7 +61,7 @@ ORACLE_RESOLVED = """Use only these resolved structural memory reads:
 {memories}
 
 The three-number recipe means amounts of red, yellow, and blue pigment. Add
-the three recipes componentwise and reduce by their greatest common divisor.
+every listed source recipe componentwise and reduce by their greatest common divisor.
 Map the resulting primitive recipe to the declared answer vocabulary.
 
 QUESTION:

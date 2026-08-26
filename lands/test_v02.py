@@ -47,7 +47,10 @@ def test_v02_withholds_the_queried_role_in_every_target():
     assert len(world.goals) == 12
     assert not any(goal.cell() in observed for goal in world.goals)
     assert Counter(goal.hidden_role for goal in world.goals) == {0: 4, 1: 4, 2: 4}
-    assert sorted(Counter(goal.answer_ratio for goal in world.goals).values()) == [4, 4, 4]
+    assert set(Counter(goal.answer_ratio for goal in world.goals).values()) == {1}
+    assert len({goal.answer_ratio for goal in world.goals}) == 12
+    assert len({goal.land_id for goal in world.goals}) == 12
+    assert len({goal.animal_id for goal in world.goals}) == 12
 
 
 def test_v02_skins_are_isomorphic_and_public_text_has_no_latent_ids():
@@ -66,6 +69,7 @@ def test_v02_skins_are_isomorphic_and_public_text_has_no_latent_ids():
             assert hidden not in lifetime
             assert all(hidden not in goal["question"] for goal in goals)
         for goal in goals:
+            assert goal["answer"] in lifetime
             answer_tokens = set(re.findall(r"[a-z]+", goal["answer"].lower()))
             question_tokens = set(re.findall(r"[a-z]+", goal["question"].lower()))
             assert not answer_tokens & question_tokens
