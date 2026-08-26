@@ -955,3 +955,38 @@ so it can supply dense value labels the same way the evaluator would).
   into STATE. Dreamer/thinker are MEDIUM-TERM executors (agentic-
   problem horizon). LONG-horizon learning is NOT solved by this
   architecture yet — open question, "maybe it has to do with state."
+
+## 2026-08-27 ORGANISM RULINGS (Rohin + Codex)
+1. STOP OVER-ISOLATING: isolation tests are DIAGNOSTICS/ABLATIONS, not
+   gates. Run the full organism now: episodes -> recurring dreams (over
+   episodes + earlier dreams) -> accumulated connected memory -> final
+   self-consolidation -> LoRA write -> ERASE CONTEXT -> iterative
+   thinker with memory calls -> answer. The dreamer need not solve
+   Blendy alone; partial connections + goal-conditioned thinker
+   completing the chain = success belongs to the WHOLE trajectory.
+   ("This is one issue with splitting things up too much" — we were a
+   tad too isolated; keep going further.)
+2. SEQUENTIAL THINKER, not one-shot question lists: state -> ONE memory
+   call -> response -> updated state -> next operation, 8-16 ops,
+   answer/defer. (My probe's list-six-questions design is superseded;
+   also its Track A/B labels are reversed vs the paper notes — noted.)
+3. STANDARD-LOOP BASELINE REFRAME (Rohin): existing agent loops are
+   already strong — that's a FEATURE. Freeze one standard competent
+   agent loop as the execution engine for EVERY arm; only memory
+   changes: stateless / transcript-context / episodic RAG / raw-LoRA /
+   dream-connected-LoRA / oracle ceiling. The paper question: "given the
+   same capable agent, can dreamed parametric memory turn accumulated
+   action-outcome experience into better future behavior?" The novel
+   object is the CONTINUAL EXPERIENTIAL FLYWHEEL around the agent, not
+   a hand-built planner. Metrics beyond recall: success@k, improvement
+   after failures, actions/tokens to succeed, transfer needing 2+
+   remembered connections, retention after context clearing, gains
+   growing with experience volume and dream cycles, shuffle-destruction.
+4. ORGANISM ARMS: (1) dreamed TEXT memory -> iterative thinker;
+   (2) dreamed memory -> LoRA -> thinker after context erase — THE
+   PRINCIPAL PAPER ARM; (3) raw episodic memory -> same thinker;
+   (4) shuffled/dreamless LoRA -> same thinker. Ceiling correction
+   (Codex): an unrestricted dreamer producing all answers proves the
+   MODEL can compute, not that the architecture works — the milestone is
+   partial dreams SURVIVING the LoRA boundary and letting the thinker
+   beat raw experience and shuffled memories.
