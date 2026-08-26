@@ -145,9 +145,13 @@ def main():
 
     # ================= TRACK B =================
     T.write("\n" + "=" * 70 + "\nTRACK B — memory character probes\n" + "=" * 70 + "\n")
-    memb = [(q, ans) for q, ans in trained_qs if "Which family does" in q]
+    memb = [(q, ans) for q, ans in trained_qs
+            if "position abstraction describes" in q]
     scores = {}
     def probe(name, make_prompt, expected_fn, items, n=40, use_adapter=True):
+        if not items:
+            scores[name] = None
+            return
         ok = 0
         T.write(f"\n### probe: {name}\n")
         for it in items:
@@ -159,22 +163,28 @@ def main():
             T.write(f"[{'OK' if hit else 'XX'}] {p!r} -> {out[:80]!r} "
                     f"(want {exp})\n")
         scores[name] = round(ok / len(items), 2)
-    animal_of = {q.split("does ")[1].split(" belong")[0]: ans.rstrip(".")
+    animal_of = {q.split("describes ")[1].rstrip("?"): ans.rstrip(".")
                  for q, ans in memb}
     items = list(animal_of.items())[:12]
-    probe("exact_form", lambda it: f"Q: Which family does {it[0]} belong to? A:",
+    if not items:
+        print("[trackB] no position lines in corpus; skipping", flush=True)
+    probe("exact_form", lambda it:
+          f"Q: Which position abstraction describes {it[0]}? A:",
           lambda it: it[1], items)
-    probe("paraphrase", lambda it: f"Q: What family is {it[0]} in? A:",
+    probe("paraphrase", lambda it:
+          f"Q: What is {it[0]}'s position abstraction? A:",
           lambda it: it[1], items)
-    probe("partial_cue", lambda it: f"{it[0]} belongs to",
+    probe("partial_cue", lambda it: f"{it[0]}'s position abstraction is",
           lambda it: it[1], items)
     fams = sorted({v for v in animal_of.values()})
-    probe("reversed", lambda f: f"Q: Name one animal that belongs to {f}. A:",
+    probe("reversed", lambda f:
+          f"Q: Name one animal described by {f} A:",
           lambda f: next(a_ for a_, v in animal_of.items() if v == f),
           fams, use_adapter=True)
     pairs = [(a1, a2) for a1, v1 in items for a2, v2 in items
              if v1 == v2 and a1 < a2][:6]
-    probe("analogy", lambda p: f"Q: {p[0]} and {p[1]} are in the same family: "
+    probe("analogy", lambda p:
+          f"Q: {p[0]} and {p[1]} share the same position abstraction: "
           f"true or false? A:", lambda p: "true", pairs)
     T.write("\n### probe: free_association (manual read)\n")
     for an, fam in items[:5]:
