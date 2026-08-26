@@ -645,3 +645,19 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
   structured controller enforces. The next rung is not more scale — it
   is teaching/prompting the dream loop to verify its own proposals
   (which C3s self-check already does for simple claims).
+
+## TOP-K AUDITS (Codex's four): headline SURVIVES, sharpened
+- Cardinality: solved targets have parent sizes {2,3,5} (1/3 each at
+  2/3/5, 0/3 at 4) — NOT a two-parent-demo extrapolation artifact.
+- Frontier: valid proposals/target 0-12 (mean 7.5; one target got ZERO
+  parseable candidates). When truth IS proposed: rank #1, verdict MATCH,
+  3/3 — and false_match_count = 0 on all 12 targets. RANKING AND
+  VERIFICATION ARE CLEAN; generation is the entire loss. Corrected
+  claim: "recognizes a valid connection when localized; cannot reliably
+  GENERATE it from global state."
+- Cost: 205 queries, 275k in / 78k out tokens (exhaustive ref: 1368
+  leaves) — full-token comparison to be added from notes/39.
+- Same-world verification control (oracle-labeled true branch, 24
+  leaves, seed 3): QUEUED next GPU slot.
+- Temporal next: 32B recurrent + MANDATORY memory-parent citation
+  interface (generic; makes recurrence usable) — launched.
