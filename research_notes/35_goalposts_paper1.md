@@ -132,3 +132,30 @@ consciousness stream — state-dependence requires a generator); (5)
 learned operation policy + trajectory-value model. The trade named in
 one line: vectors buy learnability and cost inspectability — the same
 trade as parametric memory vs retrieval, one layer up.
+
+## Systems-level claim + two-track gates (convergence, 2026-08-26)
+THE CLAIM (final form): "We are not proposing a better fact store. We
+test whether an agent can progressively transform experience into a
+CONNECTED PARAMETRIC WORLD APPROXIMATION that supports new inferences
+and actions." Intelligence is a property of the full temporal system —
+episodic traces preserve, dreams connect, LoRA/LTM carries across time
+and beyond the window, the thinker reconstructs goal-relevant paths,
+self-checking compares predictions to remembered evidence, real
+feedback corrects the approximation. LoRA is not "the intelligence";
+it is the substrate of learned associations. Blendyland is the
+cooperative proof: learned operation + inferred parent connection +
+role abstraction + role-specific memories + goal-conditioned
+reconstruction = an unseen answer no single stored fact contains.
+TWO-TRACK PROTOCOL (isolate, then connect):
+- Track A bottom-up: experience -> repeated dreams -> operator/parent/
+  connection memories -> LoRA write -> MANUAL recognition/reconstruction
+  probes (no adaptive thinker in the loop).
+- Track B top-down: question -> thinker identifies needs -> KNOWN-GOOD
+  text memories (prevents dream/LoRA failures contaminating the thinker
+  test) -> chain -> self-check -> answer/defer.
+GATES before end-to-end: (1) dream corpus contains the right operator/
+parent connections; (2) LoRA recognizes them from VARIED cues; (3)
+thinker solves Blendyland from known-good memories within a bounded
+budget; (4) neither corpus nor any checker contains the withheld answer.
+LoRA is necessary only for the parametric-consolidation half of the
+claims; dreaming is testable in text.
