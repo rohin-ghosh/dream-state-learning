@@ -50,3 +50,14 @@ Analysis + benchmark hybrid:
 - [ ] Check TMEM for any embodied follow-up
 - [ ] Check whether "Language Models Need Sleep" ID is 2605.26099 or 2606.03979 (agents disagreed)
 - [ ] Read PEAM in full — closest methodological neighbor
+
+
+## CORRECTION (2026-08-27, verified by Codex against the TMEM paper)
+The claims above that TMEM has "no learned write policy" are WRONG:
+TMEM explicitly treats extraction as an action and outcome-trains the
+base policy with RL so it produces better LoRA supervision. FORBIDDEN
+CLAIMS (do not write in any paper draft): first LoRA memory for agents;
+first parametric memory changing future actions; first embodied
+parametric memory; first outcome-trained consolidation/extraction
+policy; first sleep-inspired embodied consolidation (PEAM uses exactly
+that framing). Remaining defensible firsts are in notes/36 + goalposts.

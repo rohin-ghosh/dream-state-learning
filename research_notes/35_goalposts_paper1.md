@@ -227,3 +227,42 @@ CANONICAL SENTENCE: "The lifetime LoRA is fast experiential state; the
 dream/think policy is a slower reusable skill trained from successful
 multi-episode operational trajectories; the base model is the
 still-slower general substrate."
+
+## PAPER FORM, FINAL (repositioning session 2026-08-27)
+FORM: benchmark suite + reference system + characterization study of
+CONSTRUCTIVE EXPERIENTIAL MEMORY (the academic term; not "brain-like"):
+register memory ("what color was the fox") < experiential ("these
+failures share a condition") < CONSTRUCTIVE ("several episodes imply a
+latent rule no episode stated") < agentic use ("that rule changes the
+next action in a novel situation").
+BENCHMARK SUITE: L0 (atomic structure) / Semantic World (cross-episode
+abstraction) / Blendyland (higher-order construction) / Action World
+(memories improve multi-step behavior). REFERENCE SYSTEM: standard
+frozen agent loop + recurrent dream consolidation + LoRA lifetime
+memory + context reset + goal-conditioned memory use.
+BEHAVIORAL HEADLINE (the missing piece that de-bares the paper):
+dream-connected LoRA beats raw-history LoRA, TMEM-style QA LoRA,
+trajectory imitation, RAG/reflection, skill-library (Voyager-style) and
+DECKARD-style explicit graph on held-out multi-step ACTION tasks after
+context clearing, at matched reflection/write compute.
+PROOF OF SCALE (the strongest outcome): capability-GROWTH curves —
+depth tiers unlocking with accumulated experience+dreams (1-hop ->
+2-hop -> abstractions -> novel multi-step plans) while baselines
+plateau/degrade; three growth axes: lifetime length, world complexity,
+required depth. Baselines are NOT assumed to stop learning — find their
+actual boundaries (retrieval noise, schema-bound graphs, skill-rule
+gaps, QA-fact limits, raw-LoRA interference; dream-LoRA may saturate
+too — report it).
+LINEAGE POSITIONING: DECKARD (LLM dream/wake -> explicit subgoal DAG,
+mostly reconstructing pretrained Minecraft knowledge) and DreamerV3
+(latent dynamics + imagined rollouts) are the conceptual ancestors;
+ours discovers world-specific structure from own experience, keeps it
+in PARAMETERS, schema-free, used by a deliberative language planner.
+DECKARD-style graph baseline must be implemented fairly in Action World.
+LORA NECESSITY: at current scale context==weights (2x2); the weights
+claim requires lifetimes swept PAST the prompt budget — scale is not
+optional for the paper, it is where the substrate claim lives.
+TMEM CORRECTION: it DOES outcome-train its extraction policy (notes/00_
+synthesis corrected; forbidden-claims list expanded there).
+TITLE DIRECTION: "From Experience to Weights: Evaluating Constructive
+Parametric Memory in Language Agents."
