@@ -258,7 +258,7 @@ def main():
             m = re.search(r"VERDICT:\s*(SUPPORTED|CONTRADICTED|PROVISIONAL|UNRESOLVED)",
                           out.upper())
             v = m.group(1) if m else "UNPARSED"
-        p["selfcheck"] = "PROVISIONAL" if v == "UNRESOLVED" else v
+            p["selfcheck"] = "PROVISIONAL" if v == "UNRESOLVED" else v
     print(f"[c3e] drift round: {len(drift_new)} new proposals "
           f"({sum(1 for p in drift_new if p['kind'] == 'meta_rule')} meta)",
           flush=True)
