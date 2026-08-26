@@ -58,6 +58,14 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   k=1/4/16 sweep, THEN a bigger frozen dreamer at matched budgets. The 7B
   has the meta-rule FAMILY (pigment union of 3 lands), not the exact
   parents (success@4=0). [notes/35, ledger C3s]
+- **Prompter isolation** (Rohin: "easiest part but not obvious; fully
+  handed-off; testable isolated"): the C1 protocol ladder IS the isolated
+  prompter test — same oracle leaves, prompt-only swings D2 0.35 -> 0.72
+  -> 0.92 (one-word / CoT / pairwise) and inverts D3 (0.83 no-CoT ->
+  0.35 CoT, overthinking). Ordering ruling: FINISH MEMORY before action.
+  Current substrate trio (same dreamed corpus): dump-context D2 0.083 /
+  weights+recognition 0.50 / retrieved-context arm running — memory's
+  value is targeted RESOLUTION, not storage. [ledger 2026-08-26]
 - **Four-arm honesty ladder** as the paper spine: perfect-gate 0.917 /
   no-gate / self-check / self-check+drift, with the confusion matrix and
   false-memory accounting. [notes/35, 36]

@@ -452,3 +452,12 @@ cells+equivs and ignores relation claims).
 - Keep: the epistemic-state machinery, reinforcement rule, and sleep
   phases are validated mechanics; the micro-dream production/precision
   trade (shy 1.0@1 vs assertive 0.571@29) is the caring-dial measured.
+
+## SUBSTRATE TRIO (same self-checked dream corpus, aligned s0)
+- dump-all-in-context:      D0 0.833 D1 0.167 D2 0.083 D3 0.25  (floor!)
+- LoRA + recognition reads: D0 0.75  D1 0.50  D2 0.50  D3 0.167
+- retrieved-context (RAG):  running
+- The in-context collapse is the L0 RULEBOOK-SELECTION WALL on our own
+  dreamed memories: the model cannot select the right 4 lines from 65.
+  Weights win via targeted resolution (recognition reads), not capacity.
+  Claim shape: "memory's value is resolution, not storage."
