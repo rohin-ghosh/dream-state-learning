@@ -476,3 +476,23 @@ cells+equivs and ignores relation claims).
   If it recovers ~0.5 => the RESOLUTION PROTOCOL is the effect and
   substrate is secondary at this scale; if not => weights do real work.
   Either way the claim sharpens.
+
+## D3 RELABELED: UNDERSPECIFIED (Codex audit, 500/500 seeds)
+- Blendyland's role->color signature EQUALS some ordinary land in every
+  seed: "copy land_X" and "pigment-union of X,Y,Z" fit all observations
+  equally. Parent identifiability held only CONDITIONAL on knowing the
+  operator (the solver assumes PIGMENT_UNION). Joint operator+parents
+  discovery was never evidence-decidable.
+- CONSEQUENCES: (a) all D3 numbers to date are relabeled "underspecified
+  meta-induction diagnostic" — NOT model failure; the 7B proposing
+  different parents was rational; (b) D3 scale/prompt searches PAUSED;
+  (c) D0-D2 results unaffected (0.917 transport stands); (d) Rohin's
+  instinct ("need more blend outcomes / better semantics") preceded the
+  audit — v0.2 goes to Codex: identifiability tests (meta signature
+  outside the ordinary family, competing operators rejected, 1000-seed
+  auto-check), pair-blend demonstration lands teaching the operation,
+  richer color basis so blends produce genuinely novel observations.
+- Substrate-arm caveat adopted: report all three read interfaces
+  (prompt->direct; prompt->recognition->composer; LoRA->recognition->
+  composer) + prompt-memory token count (65 lines is a small-memory
+  ceiling; LoRA's claim is memory >> window).

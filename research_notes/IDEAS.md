@@ -54,10 +54,13 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   repetition doesn't). [c3stream --reinforce]
 - **Sleep-growth**: sleep both verifies AND expands (dreams over dreams
   on top-support thoughts). [c3stream --sleep-grow]
-- **D3 protocol**: search-vs-capability before scale — hypothesis budget
-  k=1/4/16 sweep, THEN a bigger frozen dreamer at matched budgets. The 7B
-  has the meta-rule FAMILY (pigment union of 3 lands), not the exact
-  parents (success@4=0). [notes/35, ledger C3s]
+- **D3 PAUSED — underspecified** (500/500 seeds: meta signature equals
+  an ordinary land; copy vs blend evidence-equivalent). All D3 numbers =
+  "underspecified meta-induction diagnostic," not model failure. Awaits
+  Semantic World v0.2 (Codex): joint operator+parent identifiability,
+  pair-blend demonstration lands, blend outputs outside the ordinary
+  family, 1000-seed auto-checks. THEN the k-sweep -> dreamer-scale
+  protocol resumes. [ledger 2026-08-26]
 - **Prompter isolation** (Rohin: "easiest part but not obvious; fully
   handed-off; testable isolated"): the C1 protocol ladder IS the isolated
   prompter test — same oracle leaves, prompt-only swings D2 0.35 -> 0.72
