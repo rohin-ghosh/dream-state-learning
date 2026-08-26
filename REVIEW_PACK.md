@@ -1,5 +1,6 @@
 # REVIEW PACK — the v2 system and results, written for Rohin's weekend deep-read
-*(Refactored 2026-08-22, after the first fixed-recipe results. This is the
+*(Refactored 2026-08-22; current through the 2026-08-26 Semantic World v0.2
+depth result. This is the
 one document to read instead of the repo. Plain language throughout; every
 number here is reproducible via `alchemy/report.py` or quoted from
 results.json files named inline. Tail checkpoints of seeds 1–2 were still
@@ -22,7 +23,9 @@ nonce mini-world end-to-end at the oracle ceiling (0.949/0.882/0.923
 across three worlds, real dreamer, no oracle in the write path). The
 project has pivoted to the prior-anchored Semantic World (lands/,
 built by Codex on Fable's measured constraints) with nonce worlds kept
-as the zero-prior control; the C0–C5 GPU ladder is the current program.
+as the zero-prior control; its corrected v0.2 depth diagnostic now has a
+verifier-free prompt/controller ceiling (§4f), and compression plus matched
+LoRA transport are the current program.
 
 ---
 ## 1. The game, mechanically
@@ -291,19 +294,66 @@ D0-D2 0.167, D3 0.333. Aligned skin, seed 0 (skins/seeds fan-out queued):
   grammar's finite answer space) are the read-channel fix.
 - C3 (REAL DREAMER: grammar claims + thinker-assembled citation paths +
   verifier gating + daydream rounds + gauge-pinned emission):
-  **D2 0.917 — equal to the oracle transport ceiling.** Coverage->
+  **D2 0.917 — equal to the oracle transport ceiling.** This is retained and
+  relabeled the **perfect-checker ceiling**, because the exact FactorSolver
+  must not sit inside the headline cognitive loop. Coverage->
   accuracy measured: 9/15 animals connected -> D2 0.50; 14/15 -> 0.917.
 - C3 skin fan-out (the vividness thesis, measured): dreamer coverage
   aligned 14/15 / neutral 13/15 / conflicting 11/15; end-to-end D2
   0.917 / 0.667 / 0.75. Priors scaffold the dreamer's connection-
   proposing and the composer's reasoning; storage is prior-indifferent
-  (G5b). D3 open on all skins (no META_RULE verified yet — the 7B
-  dreamer doesn't land the parent-set blend hypothesis).
+  (G5b). The original D3 is now retired as an inference claim: its public
+  signature collides with an ordinary copy rule in every audited seed, and it
+  exposes one same-role target anchor, making the queried cell directly
+  recoverable after role induction. See corrected v0.2 in §4f.
 - Science: prior scaffolding acts on REASONING (nonce skin -20 pts in
   multi-step composition; storage is prior-indifferent, G5b); exposure
-  cost is fact-SHAPE-driven (relations > entities; G5c); D3 (meta-rule)
-  is the open tier — dreamer doesn't propose META_RULE yet and the
-  union composition overthinks.
+  cost is fact-SHAPE-driven (relations > entities; G5c). D0-D2 findings are
+  unaffected by the retired D3 diagnostic.
+
+## 4f. SEMANTIC WORLD v0.2 — honest higher-order depth ceiling (2026-08-26)
+
+V0.2 repairs both D3 shortcuts: 12 independent target lands, queried-role
+withholding, ratio-preserving pigment sums with 2–5 latent parents, unique
+target recipes, and joint operator+parent identifiability. It passes 1,000 /
+1,000 CPU audits with 1,000 distinct public fingerprints; the 12-way answer
+floor is .083.
+
+The clean-model gates localized the problem. Full lifetime in context and one
+generic scaffold both score 0/12; giving correct atomic operator, parents, and
+source leaves yields 9/12. Monolithic recurrent dreaming still fails (7B:
+answer/parents 0/0; 32B: .083/0) because its long state collapses roles and
+confuses role-evidence lands with target parents.
+
+The working verifier-free condition decomposes thought into an explicit search
+tree: dream the operator from public demonstrations; enumerate 57 public
+source subsets; ask one atomic LLM proof leaf for each of the two observed
+target roles; mechanically AND the model's own verdicts; revisit surviving
+branches into parent memory; recognize the queried role; retrieve only the
+needed public row; compose a recipe; and perform an exact lookup in the public
+workshop dictionary. No FactorSolver result or hidden state reaches a prompt.
+The controller routes and enumerates, so this is an over-scaffolded ceiling—not
+yet learned, efficient, or parametric dreaming. It is currently aligned-only:
+the canonical source reader uses conventional color recipes. Neutral and
+conflicting skins require a separately scored model-dreamed recipe gauge from
+their public calibration/demo evidence; deriving it from the hidden skin map
+would be leakage.
+
+Under this identical controller, 7B versus 32B on development seed 0 moves
+true-branch recall .50→1.00, exact-parent recovery .50→1.00, and false MATCH
+branches 32→5. With the finishing protocol frozen after seed 0, untouched 32B
+seeds 1–2 achieve exact parents 23/24 (.958), atomic roles 24/24 (1.000), and
+final answers 23/24 (.958). The only seed-2 answer miss is the same target whose
+true parent branch was rejected. This is direct evidence for the user's
+tree-growth idea: revisit precise memory states and extend them one proof leaf
+at a time; simply lengthening a monolithic chain does not create useful depth.
+
+Next: replace exhaustive enumeration with model-proposed top-k branches and
+report success@k against model-call/token budget; ablate canonical reads,
+atomic factoring, revisit, and the component ledger; replicate more seeds and
+skins; then write the exact same accepted memories into context versus LoRA
+under a matched read plan. Full protocol and claim boundaries:
+`research_notes/39_v02_branch_depth_results.md`.
 
 ## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
 (Rohin's framing.) The brain doesn't consolidate a memory by seeing it
@@ -413,13 +463,16 @@ cost is format-mixture-driven, not fact-count-driven; storage is
 prior-indifferent (even conflicting bindings store at 24 touches);
 vividness therefore matters at the DREAM layer, not the storage layer.
 
-**Semantic World v0 (2026-08-25, CURRENT):** lands/ package merged from
+**Semantic World v0 (2026-08-25, D0–D2 FROZEN; D3 RETIRED):** lands/ package merged from
 Codex's semantic-world-v0 branch (commit 04c81a1) — Candyland/Blendyland
 instrument, three isomorphic skins, D0–D3 proof-graded goals, claim
 grammar + verification entitlement, priced reachout. GPU program =
 C0–C5 ladder (lands/HANDOFF_FABLE.md); C0/C1/C2 launched on the H100.
 Paper frame: two-front comparison (vs RAG downward, vs batch
-post-training upward) per notes/32 2026-08-25.
+post-training upward) per notes/32 2026-08-25. **Semantic World v0.2 is the
+current D3 replacement** on `semantic-world-v02`: 1,000-seed identifiability
+audit and the 23/24 untouched verifier-free depth ceiling are complete; see
+notes/37 and notes/39.
 
 **Backlog (designed, deliberately NOT next):** fn difficulty ladder
 (calibrates after v2.1's 3840 numbers); A-Mem external baseline;

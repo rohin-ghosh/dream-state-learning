@@ -24,7 +24,8 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   uniform atomic facts. [ledger G5c]
 - **The resolution protocol is the memory intelligence** (2x2, 2026-08-26):
   context+recognition == LoRA+recognition (D2 0.50) at 1086 memory
-  tokens; direct-from-context floors (0.083). Substrate is
+  tokens; direct context/LoRA floor (0.083/0.167). Mounted-LoRA D0 is
+  0.50 vs 0.75 with recognize+unmount. Substrate is
   interchangeable while memory fits the window; LoRA's value condition
   is memory >> window + persistence. Always report memory token counts.
 - **Coverage prices capability ~linearly** (equiv coverage 9/15→D2 0.50;
@@ -39,6 +40,14 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
 - **Docker principle**: pretrained model = base image; a world/lifetime =
   thin diff of salient deviations; dreams = commit layers; repeats
   reinforce existing layers. [notes/32 2026-08-25]
+- **Atomic proof leaves unlock useful recurrence** (v0.2, 2026-08-26):
+  monolithic recurrent dreaming fails at both 7B and 32B, but canonical
+  reads + one-role proof leaves + branch revisit recover higher-order parent
+  structure. Under the same exhaustive controller, 7B exact-parent recall is
+  .50 and 32B is 1.00 on development s0; frozen 32B replication is 23/24 on
+  untouched s1-2. Recurrence should revisit a precise memory state and extend
+  it one check at a time; a longer transcript is not automatically more depth.
+  [notes/39]
 
 ## ACTIVE (current frontier — world-building phase, target = Blendyland/D3)
 - **Epistemic memory states**: SUPPORTED / PROVISIONAL (re-dream queue,
@@ -59,21 +68,23 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   repetition doesn't). [c3stream --reinforce]
 - **Sleep-growth**: sleep both verifies AND expands (dreams over dreams
   on top-support thoughts). [c3stream --sleep-grow]
-- **D3 PAUSED — underspecified** (500/500 seeds: meta signature equals
-  an ordinary land; copy vs blend evidence-equivalent). All D3 numbers =
-  "underspecified meta-induction diagnostic," not model failure. Awaits
-  Semantic World v0.2 (Codex): joint operator+parent identifiability,
-  pair-blend demonstration lands, blend outputs outside the ordinary
-  family, 1000-seed auto-checks. THEN the k-sweep -> dreamer-scale
-  protocol resumes. [ledger 2026-08-26]
+- **D3 repaired; compression + transport are ACTIVE**: v0 is retired because
+  it was underspecified twice. V0.2 passes 1000/1000 identifiability audits.
+  A verifier-free but exhaustive atomic branch/revisit controller at 32B now
+  discovers exact parents and final answers on 23/24 untouched aligned cases
+  (s1-2, floor .083). This is the ceiling, not the endpoint: replace 57-subset
+  enumeration with model-proposed top-k branches, report success@k and engine
+  query budget, ablate scaffolds, replicate skins/seeds, then write the same
+  accepted memories to context and LoRA under matched reads. [notes/37, 39]
 - **Prompter isolation** (Rohin: "easiest part but not obvious; fully
   handed-off; testable isolated"): the C1 protocol ladder IS the isolated
   prompter test — same oracle leaves, prompt-only swings D2 0.35 -> 0.72
   -> 0.92 (one-word / CoT / pairwise) and inverts D3 (0.83 no-CoT ->
   0.35 CoT, overthinking). Ordering ruling: FINISH MEMORY before action.
-  Current substrate trio (same dreamed corpus): dump-context D2 0.083 /
-  weights+recognition 0.50 / retrieved-context arm running — memory's
-  value is targeted RESOLUTION, not storage. [ledger 2026-08-26]
+  Completed substrate 2x2 (same 1086-token dreamed corpus): direct context /
+  LoRA = .083/.167; context+recognition / LoRA+recognition = .50/.50.
+  Memory's observed value at this size is targeted RESOLUTION; LoRA is the
+  persistence/beyond-window substrate hypothesis. [ledger 2026-08-26]
 - **Four-arm honesty ladder** as the paper spine: perfect-gate 0.917 /
   no-gate / self-check / self-check+drift, with the confusion matrix and
   false-memory accounting. [notes/35, 36]

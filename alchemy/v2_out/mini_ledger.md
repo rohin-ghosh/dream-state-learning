@@ -483,15 +483,21 @@ cells+equivs and ignores relation claims).
   equally. Parent identifiability held only CONDITIONAL on knowing the
   operator (the solver assumes PIGMENT_UNION). Joint operator+parents
   discovery was never evidence-decidable.
+- SECOND SHORTCUT (Codex follow-up): v0 observes one Blendyland anchor
+  for EACH of the three animal roles. Once role equivalence is learned,
+  every held-out D3 cell can copy the same-role target anchor without
+  learning an operator or parents. Fixing signature collision alone
+  would not have repaired D3.
 - CONSEQUENCES: (a) all D3 numbers to date are relabeled "underspecified
   meta-induction diagnostic" — NOT model failure; the 7B proposing
   different parents was rational; (b) D3 scale/prompt searches PAUSED;
   (c) D0-D2 results unaffected (0.917 transport stands); (d) Rohin's
   instinct ("need more blend outcomes / better semantics") preceded the
-  audit — v0.2 goes to Codex: identifiability tests (meta signature
-  outside the ordinary family, competing operators rejected, 1000-seed
-  auto-check), pair-blend demonstration lands teaching the operation,
-  richer color basis so blends produce genuinely novel observations.
+  audit — v0.2 is now implemented on `semantic-world-v02`: 12
+  independent target cases, queried role withheld, weighted-pigment
+  outcomes outside source/demo families, variable parent sets (2-5),
+  neutral-vocabulary grounding, target cases shuffled across names, and
+  joint operator+parent identifiability passing 1000/1000 seeds.
 - Substrate-arm caveat adopted: report all three read interfaces
   (prompt->direct; prompt->recognition->composer; LoRA->recognition->
   composer) + prompt-memory token count (65 lines is a small-memory
@@ -501,22 +507,65 @@ cells+equivs and ignores relation claims).
 Same self-checked dream corpus (1086 memory tokens), aligned s0, D2:
 |                     | direct answer | recognition reads -> compose |
 | context             | 0.083         | 0.500                        |
-| LoRA (weights)      |  —            | 0.500                        |
+| LoRA (weights)      | 0.167         | 0.500                        |
 (context + generative resolved reads: 0.333 — recognition > generation)
 - CONTEXT+RECOGNITION EQUALS LORA+RECOGNITION at small memory. The read
   protocol (targeted recognition resolution -> clean compose) is the
-  entire effect; the substrate is interchangeable while memory fits the
-  window. Paper claim, sharpened: "the resolution protocol is the memory
+  dominant observed effect in this cell; the substrate is interchangeable
+  while memory fits the window. Paper claim, sharpened: "the resolution protocol is the memory
   system's intelligence; parametric consolidation is the substrate that
   carries it beyond the context window" — LoRA's value condition is the
   same as streaming's: memory >> window (and persistence after the
   window is gone). Report mem-token counts everywhere.
+- Mounted-LoRA direct D0 is 0.50 versus 0.75 after recognition reads and
+  adapter unmount: the read-only adapter hygiene ablation is now complete.
 - Also ctxrec D3 0.417 (best D3 yet; underspecified caveat applies).
 
 ## D2 LOCK-AND-REPLICATE (verifier-free self-check arm, through weights)
 aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
 - Above the 0.167 floor in 5/5 world-skin combos; mean ~0.43 vs ceiling
-  0.917. Variance tracks per-seed dreamer coverage (aligned s2 weak).
-  The verifier-free pipeline REPLICATES; coverage-targeted daydreaming
-  (per-entity gap steering, still verifier-free) is the known lever for
-  the remaining gap.
+  0.917. The verifier-free signal replicates above floor, but is not yet
+  robust enough to lock: accepted structural-equivalence precision varies
+  sharply, and a few false edges contaminate whole latent classes. Overall
+  self-check precision is cell-dominated and must be replaced by per-kind
+  precision/recall + contamination blast radius. Also, C3e's first check
+  currently passes `structure=(none yet)`; the intended evidence+accepted-
+  LTM self-check is not implemented until claims are checked in waves.
+
+## SEMANTIC WORLD V0.2 DEPTH CEILING — verifier-free branch/revisit works
+- Repaired D3 remains jointly identifiable at 1000/1000 seeds; 1000 unique
+  public fingerprints, 12 independent withheld-role target cases, floor .083.
+- Clean aligned-s0 gates: full lifetime direct 0/12; one generic scaffold
+  0/12; oracle-resolved leaves 9/12. The residual oracle errors are arithmetic
+  or final label reads, not missing memory.
+- Monolithic recurrence fails even with scale: 7B answer/parents 0/0; 32B
+  .083/0. Long traces collapse roles, confuse role-identification lands with
+  target parents, and then reinforce the malformed state.
+- Successful controller (no exact verifier in loop): dream operator from public
+  demonstrations; enumerate all 57 public source subsets (sizes 2-6); ask one
+  atomic LLM proof leaf for each of the target's two observed roles; mechanically
+  AND the two self-verdicts; revisit matching branch thoughts into a PARENTS
+  memory; recognize query role atomically; retrieve only that role row at the
+  dreamed parents; model writes an arithmetic component ledger; exact public
+  workshop lookup converts the recipe to a label. FactorSolver/hidden truth is
+  used only after commitment for scoring. Every prompt and branch is saved.
+- SCALE under identical atomic controller, aligned s0:
+  * 7B: true-branch recall .500, exact parents .500, 32 false MATCH branches,
+    raw final .417.
+  * 32B: true-branch recall 1.000, exact parents 1.000, 5 false MATCH branches,
+    raw final .750.
+  Scale helps only after proof state/read structure is legible.
+- 32B development s0: exact parents 12/12; frozen ledger artifact 10/12
+  (.833); post-hoc parser diagnostic 12/12 (NOT pooled).
+- UNTOUCHED 32B replications under the frozen protocol:
+  * s1: parents 12/12, roles 12/12, final 12/12; zero false matches.
+  * s2: parents 11/12, roles 12/12, final 11/12; the one rejected true branch
+    produces the one downstream miss. Thirty false matches concentrate in
+    three targets, but revisit recovers the true parent set in two.
+  * aggregate: parents/final 23/24 = .958, roles 24/24 = 1.000.
+- CLAIM BOUNDARY: this is a frozen prompt/controller ceiling, not learned or
+  efficient dreaming and not yet a LoRA result. Exhaustive 114 proof calls per
+  target expose what computation works and generate trajectories for later
+  amortization. Next: proposal-first top-k success@k/query-budget compression,
+  stage ablations, more seeds/skins, then matched context-vs-LoRA transport.
+- Full protocol and caveats: `research_notes/39_v02_branch_depth_results.md`.
