@@ -46,7 +46,10 @@ OPEN QUESTIONS YOU LEFT YOURSELF:
 
 Take ONE step. Prefer a connection that would EXPLAIN something
 unexplained; derive what it implies and check it against the memories
-above before writing it. Then emit exactly ONE of:
+above before writing it. If your thought EXTENDS one of your earlier
+dream notes, you MUST cite that note's id in CITES (that is how your
+memory grows deeper); if it extends nothing, it is a depth-1 thought.
+Then emit exactly ONE of:
 NEW CONNECTION: <one precise sentence> | CITES: <obs/node ids>
 REVISED: <node id> -> <corrected sentence> | CITES: <ids>
 REINFORCED: <node id> | NEW EVIDENCE: <obs ids not already cited>
