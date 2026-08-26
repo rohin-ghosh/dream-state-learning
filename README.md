@@ -17,6 +17,10 @@ retrieval and long context flatten. Target: ICLR 2027.
 - [`DESIGN_SUPER.md`](DESIGN_SUPER.md) — the full architecture vision the
   experiment is the first slice of (engine, felt attention, dream,
   person-hierarchy, escalation ladders).
+- [`research_notes/IDEAS.md`](research_notes/IDEAS.md) — **the repo's own
+  consolidated memory**: every big idea with epistemic status (LAW /
+  ACTIVE / ALIVE / DONE / DEAD) and provenance. Maintenance rule: any
+  session that adds a ruling to notes/32 must touch this file.
 - [`research_notes/35_goalposts_paper1.md`](research_notes/35_goalposts_paper1.md)
   — **THE GOALPOSTS**: Paper 1 claim, the four-arm honesty ladder, the
   allowed/forbidden (cheating) line, C3loop, success criteria, deferred
