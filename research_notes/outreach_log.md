@@ -25,3 +25,18 @@
   compression at the systems level?) + ONE intro to an agents/GEAR person.
   Feedback-first; no referral/collab ask.
 | 2026-08-20 | Jeremy (Nemotron) | internal mtg | DONE — went well | offered to REVIEW the project when ready (send it); pointed to agentic-memory Slack channel + papers; Nemotron building TASK-BASED AGENT-MEMORY BENCHMARK (opportunity: our env + ceiling instrument is exactly that — ask what stage, offer the environment); interns are grad students (consistent signal w/ Yaosheng: publication is the entry, not org chart) |
+
+## 2026-08-26 advice-outreach candidates (tiered; see session digest)
+T1 NVIDIA-internal: Jim Fan (GEAR, Voyager), Yuke Zhu (GEAR/UT Austin),
+Guanzhi Wang (Voyager 1st author).
+T2 neighbor-paper authors: van de Ven + Lomonaco + Hayes + Kanan
+(Modular Memory position — "you argued it, we built it"), C.F. Park /
+Tanaka (New News), Tao Ren / Yongbin Li grp (TMEM — closest concurrent),
+Ali Behrouz (Google, LMs Need Sleep), Qisheng Hu / Wenya Wang (NTU,
+When CL Moves to Memory).
+T3 mechanism: David Bau + Kevin Meng (ROME/MEMIT), Zeyuan Allen-Zhu
+(Physics of LLMs), Yu Sun (TTT), Akari Asai (retrieval-vs-parametric).
+T4 cognitive: James McClelland (CLS), Maxim Bazhenov (sleep replay),
+Joon Sung Park (Generative Agents).
+Plan: T1 now; T2 after four-arm replication (lead with the ladder
+figure); 2-sentence system + 1 figure + 1 question in their language.
