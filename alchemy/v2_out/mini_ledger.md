@@ -395,3 +395,24 @@ cells+equivs and ignores relation claims).
   COVERAGE again — same law as C3 rounds 1-2.
 - C3s v2 (tolerant parser, aligned equiv evidence, top-3 drift) queued —
   expected to lift both coverage and the META_RULE survival.
+
+## C3s v2 (tolerant parser + aligned equiv evidence): mixed — one fix, one regression
+- META_RULE now survives: 4 emitted. success@4 = 0 for the exact parent
+  set (all proposed Candy/Mandy/Dandy or a reorder; truth is
+  Candy/Dandy/Randy). One FALSE meta (SUPPORTED by self-check) entered
+  the corpus -> selfcheck2 D3 0.417: partially form-transfer/luck from a
+  2/3-correct parent set. Hypothesis FAMILY is present at 7B; exact
+  parent selection is not (matches Codex's correction: "the meta-rule
+  operator form emerged in scratch, but the exact meta-rule did not").
+- REGRESSION: the side-by-side equiv evidence view collapsed self-check
+  recall — 40 equivs proposed, 1 accepted (false). Cause: most true
+  pairs involve eval animals with NO shared land; the pairwise view
+  shows "(not seen)" everywhere and the model rejects. Chain-entailed
+  equivalences are invisible to a binary pairwise check. v1's full-row
+  view accepted 6 (recall 0.557 overall).
+- CONCLUSION: binary self-check has hit its ceiling. Next build is the
+  epistemic-state loop (Codex design): SUPPORTED / PROVISIONAL /
+  CONTRADICTED persist; UNRESOLVED becomes a re-dream queue with richer
+  evidence, not a trash can; two-axis check (evidence x existing
+  structure) with revision actions; consolidation weight from
+  independent support, never repetition.
