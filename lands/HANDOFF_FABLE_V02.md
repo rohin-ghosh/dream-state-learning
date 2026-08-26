@@ -68,8 +68,13 @@ kinds:
 
 ```text
 BLEND_OPERATOR | operator=PIGMENT_SUM
-BLEND_PARENTS | land=<target> | parents=<land>,<land>,<land>
+BLEND_PARENTS | land=<target> | parents=<land>[,<land>...]
 ```
+
+`BLEND_PARENTS` must accept 2-5 unique source lands, sort them canonically,
+and reject demo/target lands as parents. The recognition candidate space is
+the declared 56 source subsets of sizes 2-5; it must not use evaluator answers
+to prune that set.
 
 The model self-check may retrieve source observations, public feed relations,
 and its own provisional memories. The exact CPU audit is an offline scorer

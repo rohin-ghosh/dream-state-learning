@@ -677,7 +677,13 @@ class SemanticWorldV02:
         material = {
             "schema_version": self.schema_version,
             "config": self.config.to_dict(),
-            "base_fingerprint": self.base.world_fingerprint(),
+            # Deliberately exclude v0's retired meta-land from the v0.2
+            # fingerprint. Only the shared source world and new meta layer are
+            # part of this instrument.
+            "animal_roles": self.base.animal_roles,
+            "land_specs": {
+                land: spec.to_dict() for land, spec in self.base.land_specs.items()
+            },
             "demo_parents": self.demo_parents,
             "target_parents": self.target_parents,
             "target_hidden_roles": self.target_hidden_roles,
