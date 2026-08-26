@@ -330,3 +330,27 @@ Identical latent world (seed 0), identical machinery, only words differ:
   with meta-targeted daydreams (7B doesn't land the parent-set blend
   hypothesis). Levers: dreamer model scale, reachout (C5), or richer
   meta evidence framing. This is tomorrow's first target.
+
+## C3s DESIGN — the verifier leaves the loop (Rohin ruling, 2026-08-26)
+- RULING: in-loop exact verification is "verifier cheating" — the
+  FactorSolver is a hand-coded solution to this game's algebra, neither
+  scalable nor learnable. The 0.917 C3 result is hereby relabeled the
+  PERFECT-CHECKER CEILING (kept as a condition). Prompt scaffolding is
+  allowed ("cheat a bit on the prompts, not on the verifier").
+- C3s (running): one dream batch, verifier-free ->
+  * NOGATE arm: every grammar-parsed claim becomes memory;
+  * SELFCHECK arm: per-claim reflection pass (retrieve own evidence
+    rows, model verdicts SUPPORTED/CONTRADICTED/UNRESOLVED); only
+    SUPPORTED claims stored; false self-approved memories STAY and
+    their downstream cost is measured;
+  * DREAM DRIFT round: re-dream over the agent's OWN accepted claims
+    aimed at higher-order connections (the meta rule), generically
+    framed ("is this situation's outcome built from other situations'
+    outcomes combined?");
+  * FactorSolver scores every proposal OFFLINE (raw precision,
+    self-check precision/recall) — feedback never reaches the dreamer;
+  * both corpora -> LoRA -> recognition reads -> clean-base compose.
+- Report: raw proposal precision, self-check verdict quality, false-
+  memory rate in weights, D0-D3 per arm vs the 0.917 ceiling.
+- Epistemic-state memory (provisional/supported/contradicted with
+  reconsolidation) is the architecture target; v1 stores SUPPORTED only.
