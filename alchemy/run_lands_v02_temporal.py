@@ -74,6 +74,7 @@ def main():
                     choices=["long", "independent", "recurrent"])
     ap.add_argument("--cycles", type=int, default=32)
     ap.add_argument("--cycle-tokens", type=int, default=900)
+    ap.add_argument("--model", default=MODEL)
     a = ap.parse_args()
     world = SemanticWorldV02(WorldConfig(seed=a.seed))
     skin_obj = make_skin(a.skin, world.animal_ids, world.source_land_ids)
@@ -107,7 +108,7 @@ def main():
                                              for p in world.target_parents[tid]}
         except Exception:
             pass
-    be = make_backend("vllm", MODEL, enable_lora=True, max_lora_rank=64)
+    be = make_backend("vllm", a.model, enable_lora=True, max_lora_rank=64)
 
     nodes, agenda, log = [], [], []
     tokens_spent = 0
@@ -235,7 +236,7 @@ def main():
             if cyc + 1 in (1, 2, 4, 8, 16, 32):
                 score_checkpoint(cyc + 1)
     out_path = (f"alchemy/v2_out/lands_v02_temporal_{a.arm}_{a.skin}"
-                f"_s{a.seed}.json")
+                f"_s{a.seed}_{a.model.split(chr(47))[-1][:12]}.json")
     json.dump({"checkpoints": log,
                "nodes": [{k: v for k, v in n.items()} for n in nodes],
                "agenda": agenda, "truth": {k: sorted(v)
