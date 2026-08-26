@@ -585,3 +585,14 @@ aligned s0 0.50 | s1 0.50 | s2 0.25 | neutral s0 0.333 | conflicting s0 0.583
 - Skin fan-out BLOCKED intentionally until model-generated RECIPE_GAUGE
   memory exists (the aligned-only source-cell reader would leak the
   gauge on neutral/conflicting).
+
+## T1 ADAPTIVE THINKER (aligned s0, C3e memory): routing works, self-assessment doesn't
+- D0 1.0 (vs 0.75 fixed-protocol) | D1 0.333 D2 0.333 D3 0.167
+- ADAPTIVE COMPUTE CURVE measured: reads/goal 1.8 (D0) -> 4.7 (D1) ->
+  4.3 (D2) -> 8.5 (D3); stages A7/B39/C2; 4 thought-nodes written.
+- 7B SELF-ASSESSMENT OVERCONFIDENT: KNOW on 46/48 at 0.478 accuracy —
+  the caring trigger under-fires; escalation rarely reaches the chain
+  stage; ranges unused. Calibration is the thinker's weak organ (matches
+  Rohin's "prompter not ready"). D1/D2 dip vs fixed protocol = stage-B
+  prompt drift (protocol sensitivity again) — reconcile stage-B with the
+  proven pairwise prompt verbatim next iteration.
