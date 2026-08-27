@@ -713,3 +713,22 @@ thinker x4 arms. All arms 0/12 — and the traces + artifacts show WHY:
   known-parent DEMO lands as in-dream worked examples (public info);
   consolidation prompt explicitly requesting structural/relational
   statements over episodic restatements.
+
+## CORRECTION (Codex, accepted): organism run-1 conclusions were overstated
+- "The thinker is fine" — NOT proven: it asks sensible questions but has
+  never solved from correct memories. "The memory is fine" — NOT proven:
+  fluent LoRA answers absent from the corpus are CONFABULATION, a
+  fidelity failure, not health.
+- POSITIVE CONTROL launched (the decisive missing experiment): the exact
+  v2 sequential thinker fed KNOWN-GOOD structural statements (labeled
+  oracle-memory control: 12 target-parent statements + the combination
+  principle + episodic cells) through BOTH goldtext and goldlora arms.
+  If it succeeds: transport+composition validated, structural dream
+  generation proven the SOLE bottleneck. If it fails: the thinker/read
+  path has its own defect and the run-1 attribution was incomplete.
+- Next after control: the minimal dream ladder (relational-only
+  memories; k candidate connections per unresolved target; predict
+  observed outcomes under each; revise from public experience only;
+  consolidate preserving uncertainty; demo lands as analogical
+  examples). Metrics: proposal recall/precision, structural write/read
+  fidelity, thinker path coverage, final action — not just accuracy.
