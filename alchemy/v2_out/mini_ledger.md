@@ -732,3 +732,16 @@ thinker x4 arms. All arms 0/12 — and the traces + artifacts show WHY:
   consolidate preserving uncertainty; demo lands as analogical
   examples). Metrics: proposal recall/precision, structural write/read
   fidelity, thinker path coverage, final action — not just accuracy.
+
+## GOLD CONTROL RESULT: composition is the failing organ at 7B
+- With COMPLETE memory (correct parents + episodic colors + combination
+  principle) and clean parsing: 0/12 both arms. Traces: parent retrieval
+  perfect, per-land color retrieval perfect — then the thinker ANSWERS
+  WITH A PIECE (one source color, or a neighboring animal's target
+  color) instead of mixing. The final pigment-ratio construction never
+  executes. Matches v0.2 gates (resolved-leaf composition needed 32B
+  for 9/12; one-pass 7B 0/12).
+- Decision tree queued in one chain: (1) THINK-op thinker (workspace for
+  the mixing derivation) on the D0->D3 ladder — does structure-building
+  rescue 7B? (2) if not: executor-scale row (goldtext @ 32B) — is it
+  raw capability? D0-D2 rows meanwhile locate what 7B CAN compose.

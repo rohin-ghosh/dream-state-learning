@@ -249,7 +249,7 @@ def phase_think(a):
             depths[bg.id] = bg.depth.value
     corpus = json.load(open(f"alchemy/v2_out/organism_corpus_{tag(a)}.json"))
     qmap = {g["goal_id"]: g["question"] for g in goals_pub}
-    base, tok = load_base(EXECUTOR)
+    base, tok = load_base(a.executor)
     for arm in a.arms.split(","):
         if arm.endswith("text"):
             model = base
@@ -357,6 +357,7 @@ def main():
     ap.add_argument("--budget", type=int, default=12)
     ap.add_argument("--arms", default="text,lora,raw,shuf")
     ap.add_argument("--goalset", default="blend", choices=["blend", "ladder"])
+    ap.add_argument("--executor", default=EXECUTOR)
     a = ap.parse_args()
     {"dream": phase_dream, "corpus": phase_corpus,
      "train": phase_train, "think": phase_think}[a.phase](a)
