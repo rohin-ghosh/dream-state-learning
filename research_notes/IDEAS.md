@@ -6,6 +6,12 @@ file — promote, demote, or add. Statuses: ACTIVE = current frontier;
 LAW = proven/standing principle; ALIVE = deferred but must not be lost;
 DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
 
+## THE HYPOTHESIS (canonical, 2026-08-27)
+> Dream–LoRA–Think enables self-learning agents to convert experience
+> into persistent, connected world models, continuing to improve as
+> agent lifetimes and task depth grow where existing memory systems
+> saturate. (Better, not faster. Still to be proven.)
+
 ## LAWS (proven principles — design against these)
 - **Five-rule stack** (G2f→G4h): dreams coin NAMES; memories are 1-hop
   atomic QA; measured exposure; thinker does resolved reads; CLEAN base

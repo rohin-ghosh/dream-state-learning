@@ -266,3 +266,14 @@ TMEM CORRECTION: it DOES outcome-train its extraction policy (notes/00_
 synthesis corrected; forbidden-claims list expanded there).
 TITLE DIRECTION: "From Experience to Weights: Evaluating Constructive
 Parametric Memory in Language Agents."
+
+## THE ONE-SENTENCE HYPOTHESIS (Rohin, 2026-08-27 — canonical)
+> Dream–LoRA–Think enables self-learning agents to convert experience
+> into persistent, connected world models, CONTINUING TO IMPROVE as
+> agent lifetimes and task depth grow where existing memory systems
+> SATURATE.
+Not "faster" — BETTER past the saturation point of other systems. This
+is the central hypothesis the experiments must prove, not yet a
+demonstrated claim. The saturation framing sets the experiment shape:
+run every system far enough that baselines flatten, and show the
+dream-connected curve still rising.
