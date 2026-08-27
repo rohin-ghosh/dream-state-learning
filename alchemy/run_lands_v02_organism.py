@@ -277,17 +277,23 @@ def phase_think(a):
                 return tok.decode(out[0, ids.shape[1]:],
                                   skip_special_tokens=True)
 
+        all_entities = ([skin_obj.animal(x) for x in world.animal_ids]
+                        + [skin_obj.land(l) for l in world.source_land_ids]
+                        + [g["question"].split(",")[0][3:]
+                           for g in goals_pub if g["question"].startswith("In ")])
+
         def memory_answer(q):
             if arm.endswith("text"):
-                # VERBATIM lexical retrieval — memory never generates.
+                # VERBATIM entity-keyed retrieval — memory never generates.
                 lines = corpus[arm]
-                qt = set(re.findall(r"\w+", q.lower())) - {
-                    "what", "is", "the", "in", "of", "a", "an", "which",
-                    "color", "does", "do", "are", "there", "to", "and"}
-                scored = sorted(lines, key=lambda l: -len(
-                    qt & set(re.findall(r"\w+", l.lower()))))
-                hits = [l for l in scored[:3] if
-                        len(qt & set(re.findall(r"\w+", l.lower()))) >= 2]
+                ents = [e for e in set(all_entities)
+                        if e.lower() in q.lower()]
+                if not ents:
+                    return "(no matching memory — name a specific animal or place)"
+                scored = sorted(lines, key=lambda l: -sum(
+                    1 for e in ents if e.lower() in l.lower()))
+                hits = [l for l in scored[:4]
+                        if any(e.lower() in l.lower() for e in ents)]
                 return (" | ".join(hits) if hits
                         else "(no matching memory)")
             return gen(f"Q: What did you conclude about {q}? A:"
