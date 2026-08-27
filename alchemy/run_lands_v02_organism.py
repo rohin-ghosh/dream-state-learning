@@ -280,7 +280,9 @@ def phase_think(a):
         all_entities = ([skin_obj.animal(x) for x in world.animal_ids]
                         + [skin_obj.land(l) for l in world.source_land_ids]
                         + [g["question"].split(",")[0][3:]
-                           for g in goals_pub if g["question"].startswith("In ")])
+                           for g in goals_pub if g["question"].startswith("In ")]
+                        + list(skin_obj.colors.values())
+                        + ["mixture", "labeled", "part", "pigment"])
 
         def memory_answer(q):
             if arm.endswith("text"):
