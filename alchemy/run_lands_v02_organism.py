@@ -88,6 +88,11 @@ THINK: <a connection, hypothesis, or intermediate conclusion to keep>
 ANSWER: <color word>
 Use THINK to build structure: compare retrieved pieces, propose which
 places might combine, derive what that would predict, note revisions.
+When you must COMBINE colors: first ask memory for the labeled pigment
+mixtures; convert each color word into its pigment parts using those
+labels; ADD all the parts together; then find which remembered label has
+that total composition. Do this as explicit THINK steps, one at a time —
+never guess a combined color in one leap.
 Your working state so far:
 {state}
 
