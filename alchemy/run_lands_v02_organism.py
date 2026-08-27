@@ -234,9 +234,9 @@ def phase_think(a):
     qmap = {g["goal_id"]: g["question"] for g in goals_pub}
     base, tok = load_base(EXECUTOR)
     for arm in a.arms.split(","):
-        if arm == "text":
+        if arm.endswith("text"):
             model = base
-            mem_block = "\n".join(corpus["text"])
+            mem_block = "\n".join(corpus[arm])
         else:
             model = PeftModel.from_pretrained(
                 base, f"alchemy/v2_out/organism_lora_{arm}_{tag(a)}")
@@ -247,7 +247,7 @@ def phase_think(a):
             with torch.no_grad():
                 ids = tok(prompt, return_tensors="pt").input_ids.to(base.device)
                 mdl = model
-                if arm != "text" and not adapter:
+                if not arm.endswith("text") and not adapter:
                     ctx = model.disable_adapter()
                     ctx.__enter__()
                     out = model.generate(ids, max_new_tokens=n,
@@ -261,7 +261,7 @@ def phase_think(a):
                                   skip_special_tokens=True)
 
         def memory_answer(q):
-            if arm == "text":
+            if arm.endswith("text"):
                 return gen(f"Memories:\n{mem_block}\n\nAnswer from the "
                            f"memories in one short line.\nQ: {q} A:", 60)
             return gen(f"Q: What did you conclude about {q}? A:"
@@ -314,7 +314,7 @@ def phase_think(a):
         acc = round(sum(results) / len(results), 3)
         print(f"[organism:think] arm {arm}: acc {acc} "
               f"({sum(results)}/{len(results)})", flush=True)
-        if arm != "text":
+        if not arm.endswith("text"):
             del model
             torch.cuda.empty_cache()
     print("[organism:think] DONE", flush=True)
