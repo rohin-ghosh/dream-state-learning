@@ -35,6 +35,22 @@ statements.append(
     "In this world, an animal's color in a combined land is the "
     "paint-pigment mixture of that animal's colors in the lands that "
     "feed that combined land (mixing pigments like paint; amounts add).")
+# ROLE statements (the third gold piece): every goal animal matches the
+# anchor with its hidden role, in EVERY land — this is how withheld
+# source cells become derivable.
+anchors = getattr(world, "anchor_animals", None) or world.base.anchor_animals
+roles = world.base.animal_roles
+anchor_of_role = {roles[a]: a for a in anchors}
+seen_pairs = set()
+for g in world.goals:
+    anc = anchor_of_role.get(g.hidden_role)
+    if anc and anc != g.animal_id:
+        pair = (g.animal_id, anc)
+        if pair not in seen_pairs:
+            seen_pairs.add(pair)
+            statements.append(
+                f"In every land, the {skin_obj.animal(g.animal_id)} has "
+                f"the same color as the {skin_obj.animal(anc)}.")
 episodic = [r.split("] ", 1)[1] if "] " in r else r for r in rows]
 animals = [skin_obj.animal(x) for x in world.animal_ids]
 lands = [skin_obj.land(l) for l in world.source_land_ids]
