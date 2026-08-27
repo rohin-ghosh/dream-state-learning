@@ -49,10 +49,22 @@ def qa_forms(stmts):
         out.append(s)
     return out
 
+pieces = [
+    "In this world, an animal's color in a combined land is the "
+    "paint-pigment mixture of that animal's colors in the lands that "
+    "feed that combined land (mixing pigments like paint; amounts add).",
+]
+for surf in surface_by_id.values():
+    pieces.append(f"{surf} is a combined land: its outcomes are built "
+                  "from some combination of the six ordinary lands, but "
+                  "which ones is not yet known.")
+
 path = "alchemy/v2_out/organism_corpus_aligned_s0.json"
 corpus = json.load(open(path))
 corpus["goldlora"] = qa_forms(statements) + episodic
 corpus["goldtext"] = statements + episodic
+corpus["piecestext"] = pieces + episodic
+corpus["pieceslora"] = qa_forms(pieces) + episodic
 json.dump(corpus, open(path, "w"), indent=1)
 print(f"[gold] {len(statements)} structural statements added "
       f"(goldlora={len(corpus['goldlora'])} lines)")

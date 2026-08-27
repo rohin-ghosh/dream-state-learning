@@ -84,7 +84,10 @@ You may take up to {budget} operations, then you MUST answer with your
 best construction (a color word, possibly hyphenated). Each turn output
 exactly ONE of:
 MEMORY: <one short question to your memory>
+THINK: <a connection, hypothesis, or intermediate conclusion to keep>
 ANSWER: <color word>
+Use THINK to build structure: compare retrieved pieces, propose which
+places might combine, derive what that would predict, note revisions.
 Your working state so far:
 {state}
 
@@ -230,6 +233,20 @@ def phase_think(a):
     world, skin_obj, rows, goals_pub = load_world(a)
     answered = world.render_goals(a.skin, include_answers=True)
     answers = {g["goal_id"]: g["answer"].lower() for g in answered}
+    depths = {g["goal_id"]: "D3blend" for g in goals_pub}
+    if a.goalset == "ladder":
+        base_pub = world.base.render(a.skin, include_answers=True).goals
+        base_goals = world.base.eval_goals()
+        picks = []
+        for d in ("D0", "D1", "D2"):
+            picks += [bg for bg in base_goals if bg.depth.value == d][:6]
+        base_q = {g.goal_id: g for g in base_pub}
+        for bg in picks:
+            rg = base_q[bg.id]
+            goals_pub = goals_pub + ({"goal_id": bg.id,
+                                      "question": rg.question},)
+            answers[bg.id] = rg.answer.lower()
+            depths[bg.id] = bg.depth.value
     corpus = json.load(open(f"alchemy/v2_out/organism_corpus_{tag(a)}.json"))
     qmap = {g["goal_id"]: g["question"] for g in goals_pub}
     base, tok = load_base(EXECUTOR)
@@ -280,16 +297,19 @@ def phase_think(a):
                 if last:
                     prompt += "\nBudget exhausted: you MUST output ANSWER now."
                 out = gen(prompt, 150)
-                m = re.search(r"(MEMORY|ANSWER|DEFER)[:]?(.*)", out)
+                m = re.search(r"(MEMORY|THINK|ANSWER|DEFER)[:]?(.*)", out)
                 if not m:
                     break
                 op = m.group(1)
                 body = m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
-                body = re.split(r"\b(?:MEMORY|ANSWER|DEFER)\s*:", body)[0].strip(" ->")
+                body = re.split(r"\b(?:MEMORY|THINK|ANSWER|DEFER)\s*:", body)[0].strip(" ->")
                 if op == "MEMORY" and not last:
                     ans = memory_answer(body)
                     state.append(f"asked: {body} -> {ans[:140]}")
                     trace.append(("MEMORY", body, ans[:140]))
+                elif op == "THINK" and not last:
+                    state.append(f"thought: {body[:160]}")
+                    trace.append(("THINK", body[:160], ""))
                 elif op == "ANSWER":
                     final = body
                     trace.append(("ANSWER", body, ""))
@@ -306,10 +326,15 @@ def phase_think(a):
             got = (final or "").lower().strip().rstrip(".")
             ok = want == got or want in got.split()
             results.append(bool(ok))
-            traces.append({"goal": gp["goal_id"], "trace": trace,
-                           "final": final, "ok": bool(ok)})
+            traces.append({"goal": gp["goal_id"],
+                           "depth": depths.get(gp["goal_id"], "?"),
+                           "trace": trace, "final": final, "ok": bool(ok)})
         rep = {"acc": round(sum(results) / len(results), 3),
                "n": len(results)}
+        byd = {}
+        for tr in traces:
+            byd.setdefault(tr["depth"], []).append(tr["ok"])
+        rep["by_depth"] = {d: f"{sum(v)}/{len(v)}" for d, v in sorted(byd.items())}
         json.dump({"rep": rep, "traces": traces},
                   open(f"alchemy/v2_out/organism_think_{arm}_{tag(a)}.json",
                        "w"), indent=1)
@@ -331,6 +356,7 @@ def main():
     ap.add_argument("--cycles", type=int, default=48)
     ap.add_argument("--budget", type=int, default=12)
     ap.add_argument("--arms", default="text,lora,raw,shuf")
+    ap.add_argument("--goalset", default="blend", choices=["blend", "ladder"])
     a = ap.parse_args()
     {"dream": phase_dream, "corpus": phase_corpus,
      "train": phase_train, "think": phase_think}[a.phase](a)
