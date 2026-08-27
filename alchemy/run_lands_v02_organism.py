@@ -279,8 +279,17 @@ def phase_think(a):
 
         def memory_answer(q):
             if arm.endswith("text"):
-                return gen(f"Memories:\n{mem_block}\n\nAnswer from the "
-                           f"memories in one short line.\nQ: {q} A:", 60)
+                # VERBATIM lexical retrieval — memory never generates.
+                lines = corpus[arm]
+                qt = set(re.findall(r"\w+", q.lower())) - {
+                    "what", "is", "the", "in", "of", "a", "an", "which",
+                    "color", "does", "do", "are", "there", "to", "and"}
+                scored = sorted(lines, key=lambda l: -len(
+                    qt & set(re.findall(r"\w+", l.lower()))))
+                hits = [l for l in scored[:3] if
+                        len(qt & set(re.findall(r"\w+", l.lower()))) >= 2]
+                return (" | ".join(hits) if hits
+                        else "(no matching memory)")
             return gen(f"Q: What did you conclude about {q}? A:"
                        if not q.endswith("?") else f"Q: {q} A:",
                        60, adapter=True).strip().split("\n")[0]
@@ -304,6 +313,12 @@ def phase_think(a):
                 body = m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
                 body = re.split(r"\b(?:MEMORY|THINK|ANSWER|DEFER)\s*:", body)[0].strip(" ->")
                 if op == "MEMORY" and not last:
+                    if any(t[0] == "MEMORY" and t[1] == body for t in trace):
+                        state.append(f"(you already asked: {body} — do not "
+                                     "repeat; use what you have or ask "
+                                     "something NEW)")
+                        trace.append(("REPEAT", body, ""))
+                        continue
                     ans = memory_answer(body)
                     state.append(f"asked: {body} -> {ans[:140]}")
                     trace.append(("MEMORY", body, ans[:140]))
