@@ -52,7 +52,7 @@ def qa_forms(stmts):
 path = "alchemy/v2_out/organism_corpus_aligned_s0.json"
 corpus = json.load(open(path))
 corpus["goldlora"] = qa_forms(statements) + episodic
-corpus["goldtext"] = statements
+corpus["goldtext"] = statements + episodic
 json.dump(corpus, open(path, "w"), indent=1)
 print(f"[gold] {len(statements)} structural statements added "
       f"(goldlora={len(corpus['goldlora'])} lines)")

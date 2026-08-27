@@ -283,7 +283,9 @@ def phase_think(a):
                 m = re.search(r"(MEMORY|ANSWER|DEFER)[:]?(.*)", out)
                 if not m:
                     break
-                op, body = m.group(1), m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
+                op = m.group(1)
+                body = m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
+                body = re.split(r"\b(?:MEMORY|ANSWER|DEFER)\s*:", body)[0].strip(" ->")
                 if op == "MEMORY" and not last:
                     ans = memory_answer(body)
                     state.append(f"asked: {body} -> {ans[:140]}")
