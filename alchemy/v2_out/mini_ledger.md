@@ -745,3 +745,22 @@ thinker x4 arms. All arms 0/12 — and the traces + artifacts show WHY:
   the mixing derivation) on the D0->D3 ladder — does structure-building
   rescue 7B? (2) if not: executor-scale row (goldtext @ 32B) — is it
   raw capability? D0-D2 rows meanwhile locate what 7B CAN compose.
+
+## LADDER DECOMPOSITION (7B sequential thinker, THINK op): the harness
+## itself degrades below known capability — do not read memory-arm
+## conclusions from these rows
+- goldtext D0 2/6, D1 0/6, D2 2/6, blend 0/12 (other arms similar/worse).
+  But the SAME memories under one-shot protocols scored D0 1.0 earlier
+  (T1) and 0.75+ (organism one-shot reads). The sequential op-protocol
+  at 7B asks vague meta-questions ("What is Randyland known for?")
+  instead of direct lookups, repeats the same query 3-4x, gets
+  inconsistent/confabulated memory replies across identical calls, and
+  once emitted a land name as the final color.
+- READING: 7B cannot drive a multi-turn op protocol coherently — the
+  sequential thinker is currently WORSE than the simple protocols it
+  replaced. THINK-op did not rescue blend (0/12 everywhere).
+- The queued 32B goldtext ladder row is now the decisive datapoint:
+  32B drives it well => sequential thinking is scale-gated (executor
+  scale becomes an architecture parameter); 32B also flails => the op
+  protocol design is at fault and reverts to staged one-shot protocols
+  with THINK workspaces.
