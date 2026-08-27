@@ -18,6 +18,12 @@ running at writing; those cells are marked "pending" and will be patched.)*
    adapter vs loop adapter; outcome critic (V/Q, never a thought-
    verifier); loop trained by outcome-filtered SFT on trajectories we
    are already saving; learning rates fall out of data volume.
+2b. GOLD-CONTROL RESULT (overnight): the organism's downstream path is
+   CERTIFIED — first D3 blend solved end-to-end from faithful memory
+   (parents -> role transfer -> per-parent lookups -> recipe -> mix) at
+   32B with a generic sequential protocol. The empirically-derived
+   memory+protocol contract is in the ledger; the open half is purely
+   dream-side production of parents/roles/recipes.
 3. MONDAY'S HIGHEST-VALUE MOVES, in order: (a) add the verify-own-
    proposal step to the 32B dream loop (C3s self-check already does
    this for simple claims — extend to parent-set predictions); (b) the

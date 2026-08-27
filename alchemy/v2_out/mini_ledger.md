@@ -764,3 +764,30 @@ thinker x4 arms. All arms 0/12 — and the traces + artifacts show WHY:
   scale becomes an architecture parameter); 32B also flails => the op
   protocol design is at fault and reverts to staged one-shot protocols
   with THINK workspaces.
+
+## GOLD-CONTROL EXCAVATION COMPLETE: first D3 blend through the organism
+V6 (32B, complete gold memory, generic protocol): D0 6/6, D1 3/6,
+D2 2/6, blend 1/12 — FIRST blend success, full chain in one trace:
+parents -> role transfer (tiger=cow) -> per-parent lookups (green,
+blue) -> workshop recipe (1Y+2B = blue-green) -> correct answer.
+THE EMPIRICALLY-DERIVED MEMORY+PROTOCOL CONTRACT (each item found by a
+failed run, v1->v6):
+- MEMORY must contain: parent connections; ROLE equivalences (withheld
+  cells are underivable without them); recipe/calibration knowledge;
+  episodic cells. (= the dream ladder's production targets.)
+- ACCESS must be faithful and structured: verbatim entity-keyed
+  retrieval (free generation over memory confabulates — invented
+  parents, invented withheld cells; raw token-overlap starves); color/
+  calibration terms must be retrieval keys too.
+- PROTOCOL must be: sequential ops with THINK workspace; scale-adequate
+  executor (7B cannot drive the op loop — D0 2/6 vs 32B 6/6);
+  structured arithmetic (parts -> add -> nearest label; free-form
+  mixing concatenates instead of mixing); repeat-guard (loops still
+  burn most of the budget — the main remaining inefficiency).
+- Residual gap to ceiling: protocol efficiency (repeat loops) and
+  arithmetic reliability — NOT memory, NOT retrieval, NOT scale.
+STATUS: downstream path (memory -> reads -> think -> compose) is
+CERTIFIED at nonzero D3. The organism's open half is now purely the
+DREAM side: produce parents/roles/recipes autonomously (the minimal
+dream ladder, notes/32). This is the two-track gate closing from the
+top down.
