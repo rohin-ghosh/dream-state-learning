@@ -797,3 +797,18 @@ full certification. The successful arm was GOLDTEXT (text memory +
 verbatim retrieval); gold-through-LoRA at 32B is NOT yet tested, D1/D2
 remain weak. "Purely dream-side" softened accordingly. Raw v6 trace +
 config preserved in alchemy/v2_out/gold_control/ (committed).
+
+## DREAM LADDER v1 -> v2: the BACK-FITTING discovery
+- v1 (observed outcomes visible during hypothesis evaluation): the 32B
+  marked EVERY candidate SUPPORTED, with "predictions" identical to the
+  observed answers regardless of parent set — motivated reasoning games
+  self-verification when the answer is in view. (Also: CANDIDATE lines
+  were markdown-wrapped; parser needed the usual normalization.)
+- v2 (running): BLIND prediction — candidates + pigment arithmetic are
+  generated WITHOUT seeing the observed target cells; the HARNESS
+  string-compares blind predictions to the public observations and
+  assigns SUPPORTED/PROVISIONAL. Mechanical comparison of public data —
+  no solver. The model cannot rationalize toward an answer it never saw.
+- LAW (generalizes to all self-check designs): SELF-VERIFICATION MUST BE
+  BLIND — prediction and evidence must be separated at generation time,
+  with the comparison done mechanically or by a fresh context.

@@ -43,6 +43,11 @@ DONE = proven and absorbed; DEAD = superseded (kept to prevent re-litigating).)*
   one-word protocol). [notes/33]
 - **Experiment-resolution**: when dreaming finds an evidence gap, ACT in
   the world to create the missing evidence (G4k; priced reachout in lands).
+- **Self-verification must be BLIND** (dream ladder v1, 2026-08-28):
+  with observed outcomes visible, the dreamer marked every hypothesis
+  SUPPORTED — "predictions" back-fit to the shown answer. Separate
+  prediction from evidence at generation time; compare mechanically or
+  in a fresh context. [ledger]
 - **Docker principle**: pretrained model = base image; a world/lifetime =
   thin diff of salient deviations; dreams = commit layers; repeats
   reinforce existing layers. [notes/32 2026-08-25]
