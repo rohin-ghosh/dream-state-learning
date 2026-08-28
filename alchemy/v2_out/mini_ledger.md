@@ -791,3 +791,9 @@ CERTIFIED at nonzero D3. The organism's open half is now purely the
 DREAM side: produce parents/roles/recipes autonomously (the minimal
 dream ladder, notes/32). This is the two-track gate closing from the
 top down.
+
+## CALIBRATION (Codex, accepted): 1/12 = downstream EXISTENCE PROOF, not
+full certification. The successful arm was GOLDTEXT (text memory +
+verbatim retrieval); gold-through-LoRA at 32B is NOT yet tested, D1/D2
+remain weak. "Purely dream-side" softened accordingly. Raw v6 trace +
+config preserved in alchemy/v2_out/gold_control/ (committed).
