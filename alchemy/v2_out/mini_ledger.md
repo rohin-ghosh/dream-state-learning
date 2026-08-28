@@ -812,3 +812,18 @@ config preserved in alchemy/v2_out/gold_control/ (committed).
 - LAW (generalizes to all self-check designs): SELF-VERIFICATION MUST BE
   BLIND — prediction and evidence must be separated at generation time,
   with the comparison done mechanically or by a fresh context.
+
+## DREAM LADDER v3 (roles wired, blind): verification channel PERFECT,
+## role quality is the live bottleneck
+- Blind-supported precision 2/2 (Meldyland + Grandblend parent sets both
+  offline-TRUE — first honest dreamed parent memories). Candidate recall
+  2/12. dreamtext think 7/30.
+- Role audit: dreamer emitted 4 role pairs, only 1/4 TRUE (30 true pairs
+  exist) — it asserts without checking (v1's disease at a new stage),
+  and false roles poison blind arithmetic (true candidates get rejected
+  via wrong inferred cells). Role P/R metric also had a markdown parse
+  bug (fixed).
+- v4: role claims now HARNESS-CHECKED against public cells (agree in all
+  shared lands — mechanical public-data comparison, no oracle), roles
+  prompt asks for exhaustive pairs, k=6. The emerging pattern at every
+  stage: MODEL PROPOSES, MECHANICAL PUBLIC-DATA CHECK FILTERS.

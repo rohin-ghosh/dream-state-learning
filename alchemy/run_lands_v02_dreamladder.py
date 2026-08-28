@@ -47,8 +47,9 @@ and entities of one kind agree everywhere.
 TABLE:
 {table}
 
-For every pair the table supports (they agree in at least one shared
-place and never disagree in any shared place), output exactly:
+List EVERY pair the table supports (they agree in at least one shared
+place and never disagree in any shared place) — be exhaustive, there are
+usually many. Output exactly:
 ROLE: In every land, the <entity A> has the same color as the <entity B>.
 Check each pair against ALL shared places before writing it."""
 
@@ -89,7 +90,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--skin", default="aligned")
     ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--k", type=int, default=4)
+    ap.add_argument("--k", type=int, default=6)
     a = ap.parse_args()
     world = SemanticWorldV02(WorldConfig(seed=a.seed))
     skin_obj = make_skin(a.skin, world.animal_ids, world.source_land_ids)
@@ -153,14 +154,28 @@ def main():
     table = "\n".join(f"{an}: " + ", ".join(f"{l}={c}"
                                             for l, c in sorted(m.items()))
                       for an, m in sorted(by_animal.items()))
-    out = be.generate([ROLES.format(table=table)], max_tokens=1500)[0]
+    out = be.generate([ROLES.format(table=table)], max_tokens=2500)[0]
     audit["raw"].append({"stage": "roles", "text": out})
-    roles = []
+    roles, n_prop, n_rej = [], 0, 0
     for l in out.splitlines():
-        l = l.strip()
-        if l.startswith("ROLE:"):
-            roles.append(l[5:].strip())
-    print(f"[dl] roles: {len(roles)}", flush=True)
+        l = re.sub(r"^[\-\*\d\.\)\s]+", "", l.strip()).replace("**", "")
+        if not l.startswith("ROLE:"):
+            continue
+        n_prop += 1
+        m2 = re.search(r"the ([\w-]+) has the same color as the ([\w-]+)", l)
+        if not m2:
+            continue
+        x, y = m2.group(1), m2.group(2)
+        # HARNESS check vs PUBLIC cells: agree in every shared land
+        shared = [ld for ld in lands
+                  if (x, ld) in cell and (y, ld) in cell]
+        if shared and all(cell[(x, ld)] == cell[(y, ld)] for ld in shared):
+            roles.append(f"In every land, the {x} has the same color as "
+                         f"the {y}.")
+        else:
+            n_rej += 1
+    print(f"[dl] roles: {n_prop} proposed, {n_rej} rejected by public "
+          f"agreement check, {len(roles)} kept", flush=True)
 
     # ---- 3. PARENTS per target, demo as worked example ----
     ex_id = demo_ids[0]
