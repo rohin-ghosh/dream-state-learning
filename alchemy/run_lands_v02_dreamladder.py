@@ -50,9 +50,10 @@ place and never disagree in any shared place), output exactly:
 ROLE: In every land, the <entity A> has the same color as the <entity B>.
 Check each pair against ALL shared places before writing it."""
 
-PARENTS = """You are dreaming about an unexplained combined place. In
-this world, some places' outcomes are built from other places' outcomes
-by pigment addition (a public survey classifies them together).
+PARENTS = """You are dreaming about a combined place whose sources are
+unknown. In this world, some places' outcomes are built from other
+places' outcomes by pigment addition (a public survey classifies them
+together).
 
 WORKED EXAMPLE (public knowledge — this combined place's sources are
 known):
@@ -62,23 +63,21 @@ Study how each entity's outcome in the example place equals the pigment
 sum of its outcomes in the source places.
 
 NOW THE UNEXPLAINED PLACE: {target}
-Its observed outcomes:
-{observed}
+You know these entities were observed there: {entities}
+(You do NOT get to see their outcomes there — you must PREDICT them.)
 
-Those entities' outcomes in the six ordinary places (using your role
+Those entities' outcomes in the six ordinary places (use your role
 knowledge where an entity was not directly seen):
 {sources}
 
 Your recipe knowledge:
 {recipes}
 
-Propose up to {k} candidate source sets (2-5 ordinary places each). For
-EACH candidate: compute the predicted pigment sum for BOTH observed
-entities, then compare with the observed outcomes above. Show the
-arithmetic. Then output one line per candidate, exactly:
-CANDIDATE: {target} <- <place>, <place>[, <place>...] | predicted: <e1>=<color>, <e2>=<color> | STATUS: SUPPORTED|REJECTED|PROVISIONAL
-(SUPPORTED only if BOTH predictions match observation; PROVISIONAL if
-uncertain or only one matches.)"""
+Propose up to {k} DIFFERENT candidate source sets (2-5 ordinary places
+each; make them genuinely different). For EACH candidate, compute the
+predicted pigment sum for BOTH entities and name the resulting labels.
+Show the arithmetic. End each candidate with one line, exactly:
+CANDIDATE: {target} <- <place>, <place>[, <place>...] | predicted: {e1}=<label>, {e2}=<label>"""
 
 
 def main():
@@ -172,35 +171,51 @@ def main():
     for tid, tsurf in tgt_by_id.items():
         observed = [(an, col) for (an, land), col in cell.items()
                     if land == tsurf]
-        obs_txt = "\n".join(f"{an} in {tsurf}: {col}" for an, col in observed)
+        ents = [an for an, _ in observed]
         src_txt = "\n".join(
             f"{an}: " + ", ".join(f"{l}={by_animal[an].get(l, '(not seen; use roles)')}"
                                   for l in lands)
-            for an, _ in observed)
+            for an in ents)
         out = be.generate([PARENTS.format(example=example, target=tsurf,
-                                          observed=obs_txt, sources=src_txt,
+                                          entities=", ".join(ents),
+                                          sources=src_txt,
                                           recipes="\n".join(recipes),
-                                          k=a.k)], max_tokens=2500)[0]
+                                          k=a.k, e1=ents[0],
+                                          e2=ents[1] if len(ents) > 1 else ents[0])],
+                          max_tokens=2800)[0]
         audit["raw"].append({"stage": f"parents:{tsurf}", "text": out})
-        cands = [l.strip() for l in out.splitlines()
-                 if l.strip().startswith("CANDIDATE:")]
-        hyp_audit.append({"target": tsurf, "candidates": cands})
-        sup = [c for c in cands if "STATUS: SUPPORTED" in c]
-        prov = [c for c in cands if "STATUS: PROVISIONAL" in c]
+        cands = []
+        for l in out.splitlines():
+            norm = re.sub(r"^[\-\*\d\.\)\s]+", "", l.strip())
+            norm = norm.replace("**", "").strip()
+            if norm.startswith("CANDIDATE:"):
+                cands.append(norm)
+        # HARNESS comparison of BLIND predictions vs PUBLIC observations
+        # (mechanical string compare of public data; no solver)
+        obs_map = {an: col.lower() for an, col in observed}
+        scored = []
+        for c in cands:
+            m = re.search(r"CANDIDATE:\s*[\w-]+\s*<-\s*([^|]+)\|\s*predicted:\s*(.+)$", c)
+            if not m:
+                continue
+            ps = [p.strip() for p in m.group(1).split(",") if p.strip() in lands]
+            preds = dict(re.findall(r"([\w-]+)\s*=\s*([\w-]+)", m.group(2)))
+            hits = sum(1 for an, col in obs_map.items()
+                       if preds.get(an, "").lower().rstrip(".") == col)
+            scored.append({"cand": c, "parents": ps, "hits": hits,
+                           "n_obs": len(obs_map)})
+        sup = [x for x in scored if x["hits"] == x["n_obs"] and len(x["parents"]) >= 2]
+        prov = [x for x in scored if x["hits"] == x["n_obs"] - 1 and len(x["parents"]) >= 2]
+        hyp_audit.append({"target": tsurf, "scored": scored})
         keep = sup or prov[:1]
-        for c in keep:
-            m = re.search(r"CANDIDATE:\s*[\w-]+\s*<-\s*([^|]+)\|", c)
-            if m:
-                ps = [p.strip() for p in m.group(1).split(",") if p.strip()]
-                ps = [p for p in ps if p in lands]
-                if len(ps) >= 2:
-                    tag = ("" if "SUPPORTED" in c else
-                           " (provisional — one prediction unverified)")
-                    parent_lines.append(
-                        f"{tsurf}'s outcomes are built from "
-                        f"{', '.join(ps[:-1])} and {ps[-1]} combined.{tag}")
+        for x in keep:
+            ps = x["parents"]
+            tag = "" if x in sup else " (provisional — one prediction unverified)"
+            parent_lines.append(
+                f"{tsurf}'s outcomes are built from "
+                f"{', '.join(ps[:-1])} and {ps[-1]} combined.{tag}")
         print(f"[dl] {tsurf}: {len(cands)} candidates, "
-              f"{len(sup)} supported, kept {len(keep)}", flush=True)
+              f"{len(sup)} blind-supported, kept {len(keep)}", flush=True)
 
     # ---- consolidate corpus (organism format) ----
     principle = ("In this world, an animal's color in a combined land is "
