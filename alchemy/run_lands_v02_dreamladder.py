@@ -1,4 +1,6 @@
-"""THE MINIMAL DREAM LADDER (Codex+Rohin spec, 2026-08-28). 32B dreamer.
+"""TASK-FAMILY-SCAFFOLDED DREAM LADDER (not fully generic autonomous
+dreaming — it teaches hypothesis->prediction->comparison and the memory
+categories; the current ceiling/reference arm). 32B dreamer.
 
 Generic hypothesis->prediction->revision dreaming, producing exactly the
 memory kinds the gold-control contract requires:
@@ -66,8 +68,11 @@ NOW THE UNEXPLAINED PLACE: {target}
 You know these entities were observed there: {entities}
 (You do NOT get to see their outcomes there — you must PREDICT them.)
 
-Those entities' outcomes in the six ordinary places (use your role
-knowledge where an entity was not directly seen):
+ROLE HYPOTHESES FROM YOUR EARLIER DREAMS (use these to fill in cells
+where an entity was not directly seen):
+{roles_block}
+
+Those entities' outcomes in the six ordinary places:
 {sources}
 
 Your recipe knowledge:
@@ -179,6 +184,7 @@ def main():
         out = be.generate([PARENTS.format(example=example, target=tsurf,
                                           entities=", ".join(ents),
                                           sources=src_txt,
+                                          roles_block="\n".join(roles) or "(none)",
                                           recipes="\n".join(recipes),
                                           k=a.k, e1=ents[0],
                                           e2=ents[1] if len(ents) > 1 else ents[0])],
@@ -247,15 +253,41 @@ def main():
     truth = {tgt_by_id[t]: sorted(skin_obj.land(p)
                                   for p in world.target_parents[t])
              for t in tgt_by_id}
-    correct = 0
+    correct, cand_recall, sup_n, sup_true = 0, 0, 0, 0
+    for rec in hyp_audit:
+        tp = set(truth.get(rec["target"], []))
+        proposed_sets = [set(x["parents"]) for x in rec.get("scored", [])]
+        cand_recall += tp in proposed_sets
+        for x in rec.get("scored", []):
+            if x["hits"] == x["n_obs"] and len(x["parents"]) >= 2:
+                sup_n += 1
+                sup_true += set(x["parents"]) == tp
+    roles_truth = set()
+    ar = world.base.animal_roles
+    for x in world.animal_ids:
+        for y in world.animal_ids:
+            if x < y and ar[x] == ar[y]:
+                roles_truth.add((skin_obj.animal(x), skin_obj.animal(y)))
+    role_pairs = set()
+    for rl in roles:
+        m2 = re.findall(r"the (\w+) has the same color as the (\w+)", rl)
+        for p1, p2 in m2:
+            role_pairs.add(tuple(sorted((p1, p2))))
+    role_prec = (sum(1 for p in role_pairs if p in roles_truth)
+                 / len(role_pairs)) if role_pairs else None
+    role_rec = (sum(1 for p in roles_truth if p in role_pairs)
+                / len(roles_truth)) if roles_truth else None
     for tsurf, tp in truth.items():
         got = [pl for pl in parent_lines if pl.startswith(tsurf)]
         hit = any(set(re.findall("|".join(lands), pl)) == set(tp)
                   for pl in got)
         correct += hit
+    print(f"[dl] METRICS candidate-recall {cand_recall}/{len(truth)} | "
+          f"supported-precision {sup_true}/{sup_n} | role P/R "
+          f"{role_prec}/{role_rec}", flush=True)
     json.dump({"statements": statements, "hypotheses": hyp_audit,
                "audit": audit,
-               "offline_parent_exact": f"{correct}/{len(truth)}"},
+               "offline_parent_exact": f"{correct}/{len(truth)}", "candidate_recall": cand_recall, "supported_precision": f"{sup_true}/{sup_n}", "role_precision": role_prec, "role_recall": role_rec},
               open(f"alchemy/v2_out/dreamladder_{a.skin}_s{a.seed}.json",
                    "w"), indent=1)
     print(f"[dl] statements={len(statements)} "
