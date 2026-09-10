@@ -1,0 +1,408 @@
+{
+  "architecture_change_sha256": "45647223d6a3763f0dcde90b68ad3c953460cb0175960ba92e6a21a615fc9321",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v2",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "M0-MANIFEST-INDEPENDENCE-01",
+        "M0-CPU-CONFORMANCE-02",
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-PROVENANCE-INTERVENTION-04",
+        "M0-ROOT-REDUCER-05",
+        "M0-V7-REUSE-FIREWALL-06",
+        "M0-MTEXT-HANDOFF-07",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-M0-001-EXACT-BYTES-ABSENT",
+      "evidence": "The human boundary asks Rohin to ratify exact M0 bytes, the complete finite universe, V7 mapping, materializer/checker boundary, and handoff fields, but change.json contains only prospective descriptions and future evidence artifacts. The minimal-semantics source explicitly says its materialized manifest is absent and therefore cannot be ratified or implemented. The benchmark interpretation reaches the same disagreement in BENCH-DIS-001.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposal is not exact enough for the human decision or scoped implementation it requests."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-CPU-CONFORMANCE-02",
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-PROVENANCE-INTERVENTION-04",
+        "M0-ROOT-REDUCER-05",
+        "M0-V7-REUSE-FIREWALL-06",
+        "MTEXT-SUPPLIED-CAUSAL-08"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-M0-002-IMPOSSIBLE-GATE-ORDER",
+      "evidence": "Tests 02 through 06 require implementation-generated execution receipts while declaring required_before=implementation. MTEXT-SUPPLIED-CAUSAL-08 declares required_before=model_execution even though its evidence is produced by model execution. BENCH-DIS-002 identifies the same contradiction.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The acceptance-stage ordering is impossible and therefore cannot enforce a deterministic fail-closed workflow."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-MANIFEST-INDEPENDENCE-01",
+        "M0-V7-REUSE-FIREWALL-06",
+        "M0-MTEXT-HANDOFF-07",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-M0-003-V7-REUSE-NOT-AUTHORIZED",
+      "evidence": "E-V7-TO-M0-REUSE promises a later primitive mapping but supplies no primitive-by-primitive function, input, output, compatibility-witness, or five-file dependency table. V7's human ratification authorizes only the terminal symbolic kernel and forbids successor/model-stage promotion; its external scope audit has passed=false. Byte identity authenticates source, not PCFL successor authority or isomorphism.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "V7 must remain design reference only until a new exact human authorization binds every consumed primitive and its oracle firewall."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-MANIFEST-INDEPENDENCE-01",
+        "M0-CPU-CONFORMANCE-02",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-M0-004-CHECKER-CIRCULARITY",
+      "evidence": "M0-MANIFEST-INDEPENDENCE-01 requires two checkers to reproduce one manifest root, but does not require independent semantic constants, an independently derived oracle, or disjoint implementation lineage. Two parsers or implementations derived from the same materializer assumptions can agree on the same wrong universe. Both supplied interpretations raise this issue.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Digest agreement establishes reproducibility, not semantic correctness or genuine checker independence."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-M0-005-MODEL-VISIBLE-BOUNDARY-OPEN",
+      "evidence": "M0-MTEXT-HANDOFF-07 allows renderer/tokenizer/cut inputs or a separately ratified preparation boundary, while no exact rendered prompts, chat template, tokenizer outputs, parser behavior, tool-return envelopes, query echoes, chat/KV/cache/session state, errors, response lengths, filenames, timing, or provider isolation are bound. Passing semantic-byte noninterference at M0 cannot prove equality of the bytes and state actually visible to the model.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The M-TEXT boundary can still introduce answer, oracle, future-state, or treatment leakage after M0 passes."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-M0-006-QUERY-AGENDA-LAUNDERING",
+      "evidence": "The proposal broadly forbids goal-conditioned carrier/query laundering but supplies no exact query grammar, public-anchor law, catalog, cursor, ranking/order, padding, or returned-ID capability table. A goal, hidden answer, arm, or scorer can therefore influence query text or agenda and indirectly select an answer-bearing return while the carrier bytes themselves remain unchanged.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Query-to-agenda answer laundering is named but not operationally falsified."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-CPU-CONFORMANCE-02",
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-M0-007-ABANDONED-BRANCH-RELEASE",
+      "evidence": "The visibility matrix forbids abandoned and sibling branch ephemera, but change.json does not bind the canonical GOALS_COMPLETE bytes or a complete allowlist of joined fields. The systems interpretation assumes an exact projection that is absent from the proposal. Retrieval transcripts, dependency traces, correctness, failure reasons, execution order, or padding differences could therefore cross the join.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Release from an abandoned thinker branch remains possible until the join projection and rejection mutations are exact."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-CPU-CONFORMANCE-02",
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-M0-008-REPEAT-STATE-NOT-BOUND",
+      "evidence": "The proposal mentions replay/reset behavior but supplies no actor-visible repeat schema, fingerprint law, count, block status, reset reason, or prompt-projection requirement. The detailed repeat semantics appear only in an advisory that explicitly is not adopted as exact bytes. An internal third-call block invisible to the policy changes available actions without appearing in policy state.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Repeat blocks can remain hidden controller state and invalidate recurrent-policy interpretation."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-CPU-CONFORMANCE-02",
+        "M0-VISIBILITY-NONINTERFERENCE-03",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-M0-009-RESET-SOLE-CHANNEL-UNPROVED",
+      "evidence": "The delayed endpoint is meant to require old plus newly observed information after reset, but the proposal does not enumerate what is destroyed or retained across raw chat context, tool transcripts, provider session/KV/cache state, environment state, query cache, and supplied-memory state. A positive result could be carried by residual context or answer recall rather than a registered memory write/read path.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The reset does not yet isolate a sole permitted channel for delayed old-plus-new use."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-CPU-CONFORMANCE-02",
+        "M0-PROVENANCE-INTERVENTION-04",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-M0-010-PROVENANCE-SEMANTICS-OPEN",
+      "evidence": "M0-PROVENANCE-INTERVENTION-04 names chronology, aliases, diamonds, cycles, root deduplication, contradiction, and revocation, but no exact node identity, edge direction, alias-collapse order, support-admission table, contradiction precedence, or revocation timing is bound. Shared-root diamonds can be falsely rejected as cycles, while synthetic re-expression can be counted as new evidence if primitive-root equivalence is implemented differently.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The provenance test vocabulary is correct, but its missing executable semantics permit both false cycle detection and synthetic evidence laundering."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-PROVENANCE-INTERVENTION-04",
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-M0-011-PARENT-PATH-ANSWER-LAUNDERING",
+      "evidence": "The supplied-row producer and scorer are not exact. A compiler could encode a goal-specific parent path, final answer, or oracle preference in link identities, ordering, lexical form, citations, or intervention-specific records. Conversely, a scorer could demand one predeclared parent path or decorative dependency IDs instead of accepting registered path-equivalence classes and behavior emerging across recurrent read-think-act-observe-revise steps.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The design does not yet prove that connected structure is supplied without supplying the solution, or that the final answer emerges from the thinker rather than the memory/scorer module."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-ROOT-REDUCER-05",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-M0-012-SHORTCUT-AND-SPLIT-PRIORS",
+      "evidence": "The candidate finite semantics reuse one fixed topology under alias/order and hidden-bit variations, so a model can learn or exploit topology, goal text, answer marginals, or pretrained priors. The proposed baselines omit an explicit target-only/answer-prior control and do not bind held-out topology/binding splits crossing goals, worlds, aliases, answers, path alternatives, and variants.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The game may be solvable without the intended memory path, and the current roots cannot establish generalization."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-MTEXT-HANDOFF-07",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-M0-013-RECURRENCE-NOT-IDENTIFIED",
+      "evidence": "L-MTEXT-SUPPLIED-USE describes a recurrent loop and the test setup names recurrence-disabled controls, but no exact recurrent state, iteration schedule, observation-feedback envelope, state-destruction intervention, or equal-budget one-shot comparator is defined. A single prompt containing the whole carrier or persistent raw transcript could satisfy the bundled endpoint.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The assay cannot yet distinguish recurrent memory-think use from one-shot lookup or residual-context continuation."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-M0-014-RESOURCE-FACTORS-CONFOUNDED",
+      "evidence": "MTEXT-BYPASS-TRACE-09 merely says baselines use declared resource factors. It does not separately charge or cross text bytes/tokens, explicit graph state and executor work, index construction, retrieval calls, reader returns, context tokens, generated thinker tokens, wall time, or later LoRA bytes/transport work. Deranged connectivity is not required to match degree, lexical form, token length, exposure, and answer priors.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Raw context, RAG, native graph, organized text, thinker computation, and later LoRA transport are not fairly separated or ablated."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-ROOT-REDUCER-05",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-M0-015-ENDPOINTS-BUNDLED",
+      "evidence": "MTEXT-SUPPLIED-CAUSAL-08 invokes unspecified noncompensatory endpoints but does not enumerate their scoring or pass rules. Changed-goal success is not itself generalization or composition; experiment choice is not realized information; acquisition is not later action improvement; final success is not planning, revision, or retention. Root reduction alone does not separate these mechanisms.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The acceptance suite cannot yet distinguish recall, composition, generalization, planning, information acquisition, action improvement, revision, and retention."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-M0-016-NO-ONLINE-LEARNING-EVIDENCE",
+      "evidence": "M-TEXT consumes externally supplied links, performs no grounded persistent write and no parameter update, and contains only one old-plus-new relay. The proposal correctly defers DREAM authorship, accumulation, lifetime scaling, and the flywheel, but therefore does not test whether memory changes an action, that action changes evidence, a grounded write changes later memory, and that memory improves a subsequent action.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The current benchmark tests bounded supplied-memory use, not online learning from action and outcome; this limitation must remain explicit and blocks the broader project claim."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-ROOT-REDUCER-05",
+        "MTEXT-SUPPLIED-CAUSAL-08",
+        "MTEXT-BYPASS-TRACE-09",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-M0-017-INFERENCE-AND-CONFIRMATION-OPEN",
+      "evidence": "No M-TEXT root universe, scientific N, DEV/reserve/confirmation split, estimator, margin, uncertainty method, multiplicity rule, missingness policy, stopping rule, partial-result mask, or post-result decision DAG is bound. The graph also omits explicit clean/session and sealed-confirmation prerequisites for claim-bearing M-TEXT. CLM-STAGED-NEGATIVE-DISPOSITION promises future failure values rather than specifying them now.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Sample size, split integrity, negative-result handling, and post-hoc goalpost control are insufficient for model execution or a scientific claim."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0-MANIFEST-INDEPENDENCE-01",
+        "M0-CPU-CONFORMANCE-02",
+        "M0-ROOT-REDUCER-05",
+        "M0-MTEXT-HANDOFF-07",
+        "M0-INDEPENDENT-REVIEW-10"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-M0-018-DURABILITY-CONTRACT-INCOMPLETE",
+      "evidence": "The proposal promises frozen manifests and fail-closed receipts but does not bind canonical artifact paths, atomic freeze/promotion mechanics, schema and runtime hashes, partial-write/crash recovery, duplicate-run identity, output-size limits, malformed receipt precedence, or immutable pre/post hashes. Green unit tests and schema validation would not establish durable artifact binding or human authorization.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Operational durability remains prose-level and cannot yet guarantee frozen inputs, deterministic receipts, failure states, or human decision boundaries."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/human_directive.txt",
+      "purpose": "binding human directive",
+      "sha256": "7d2f6b3228978260693031954619c97fb5c72c086cb0cad4ee3696f6e709c870"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "project operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "paper thesis and experiment separation",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/change.json",
+      "purpose": "V7 change authority and primitives",
+      "sha256": "f6f3181db906b915d4711fc701cac4aee464fdd9b21bd0dbb41c95dc976ca83b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/consensus.json",
+      "purpose": "V7 consensus and limits",
+      "sha256": "4250f8fa1678fbb91f79803a9b14336fbf84d2554fddc5409673db2502cc1567"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/human_ratification.json",
+      "purpose": "V7 narrow prior ratification",
+      "sha256": "d67f446f7b4cb11024033c49fd8b1dcb75424e1f8bf7efb1a64cadbdb02c1fb5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit.json",
+      "purpose": "V7 failed external-audit evidence",
+      "sha256": "1ed5411ee562f71bf0214f0e4763471d8b8ca748046aab377942a517823c84ec"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/cross_audit.md",
+      "purpose": "controlling D0 negative evidence",
+      "sha256": "8c4ce353f69b38cdb4931ff8916aade38654055fec66fcd82084b4b81900a4fa"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_core_clean_lineage_v1/consensus.json",
+      "purpose": "controlling PCFL v1 rework consensus",
+      "sha256": "cdeab24c923ea4e71bd271db6ed299e70a1482b757de7b81bbcffdbe8a265975"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_implementation_state_and_minimum_path_fresh_audit_v1.md",
+      "purpose": "implementation inventory and minimum path",
+      "sha256": "0e78fe49b65b2644d504b98bbeef91b84f9a5f10e305a43815ef964f35334676"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_staged_scope_fresh_v1.md",
+      "purpose": "staged scope candidate",
+      "sha256": "410ccae860ee7767f112c00a5791cac22b307205d140285ea3404fba1f841262"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_minimal_exact_semantics_fresh_v1.md",
+      "purpose": "candidate finite semantics",
+      "sha256": "6d6858d14cf45ae7252ac5f1ba29d9c17f4addf0356d596841d74db494314083"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_two_path_adversarial_cross_critique_v1.md",
+      "purpose": "adversarial staged-path critique",
+      "sha256": "b9b71873e82c8a32f3f633f3f26f472b62b6cd6d210561863ae8828af1943d55"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_fastest_paper_evidence_route_fresh_v1.md",
+      "purpose": "evidence-route strategy",
+      "sha256": "0e6cc69901801fa88e8bfa03905c7f3520ab6999f3188e9d274b20beb4cca3e2"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_existing_asset_reuse_fresh_audit_v1.md",
+      "purpose": "asset-reuse audit",
+      "sha256": "581f8a4c7caecdc0c18f9bde2558bc6f38cf3efc32dd7055a6e1c9bfc95a26bb"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_bound_v2_adjudication_candidate.md",
+      "purpose": "bound adjudication candidate",
+      "sha256": "83313da26579a32d2c5a8b3db638b95603e2f30408a39f86102b320a6a98173b"
+    }
+  ],
+  "critique_id": "chg_20260910_pcfl_m0_mtext_bound_v2.critique_fresh_iclr_v1",
+  "human_questions": [
+    "Will Rohin keep this change in rework until a successor artifact contains the complete canonical finite universe, transition/failure tables, expected-reject fixtures, V7 mapping, materializer/checker identities, handoff records, and manifest root?",
+    "Which exact root universe is being ratified, and which roots are engineering aliases versus independent M-TEXT scientific units?",
+    "Must every output-affecting renderer, tokenizer, chat template, prompt, parser, cut, tool schema, and session identity be hash-bound before M-TEXT execution, with any change forking the assay?",
+    "Does Rohin explicitly authorize each named V7 primitive as PCFL successor input despite V7's terminal scope and failed audit, or must V7 remain design reference only?",
+    "What exact clean/session boundary and sealed DEV/reserve/confirmation decision DAG are prerequisites for claim-bearing M-TEXT execution?",
+    "Is the maximum current claim explicitly limited to supplied connected-text causal use, with no DREAM authorship, grounded write, online learning, accumulation, LoRA, lifetime, scaling, compression, or flywheel implication?",
+    "What are the exact noncompensatory endpoint definitions, baseline resource factors, scientific sample-size rule, estimator, margins, uncertainty, multiplicity, missingness, stopping, and adverse dispositions?",
+    "After delayed reset, what exact state is destroyed, what state persists, when is the new record admitted, and what sole channel may convey old plus new information to the later policy?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v2.systems",
+      "sha256": "eaff44379eb6398f4dc879c606d512d7814472759c0370ea459a470cc1f7fcff"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v2.benchmark",
+      "sha256": "c87b1c94335f03a91bc2a3dcefc791e1aac9a2eef6bca227d4fa31518eed0ad2"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "M0-EXACT-BYTES-RATIFIABILITY-00",
+    "M0-INDEPENDENT-ORACLE-MUTATION-11",
+    "M0-V7-SUCCESSOR-AUTHORITY-12",
+    "M0-QUERY-AGENDA-LAUNDERING-13",
+    "M0-JOIN-ABANDONED-BRANCH-14",
+    "M0-PROVENANCE-DIAMOND-CYCLE-15",
+    "M0-REPEAT-POLICY-VISIBILITY-16",
+    "MTEXT-RENDERED-NONINTERFERENCE-17",
+    "MTEXT-PROMPT-SCHEMA-ROUNDTRIP-18",
+    "MTEXT-RESET-SOLE-CHANNEL-19",
+    "MTEXT-PARENT-PATH-ANSWER-LAUNDERING-20",
+    "MTEXT-RECURRENCE-NECESSITY-21",
+    "MTEXT-ENDPOINT-SEPARATION-22",
+    "MTEXT-TARGET-ONLY-PRIOR-SPLIT-23",
+    "MTEXT-RESOURCE-FACTORIAL-24",
+    "MTEXT-DEV-CONFIRMATION-DAG-25",
+    "MTEXT-NEGATIVE-DISPOSITION-26",
+    "MTEXT-ONLINE-LEARNING-CHAIN-FUTURE-27"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "M0-MANIFEST-INDEPENDENCE-01",
+    "M0-CPU-CONFORMANCE-02",
+    "M0-VISIBILITY-NONINTERFERENCE-03",
+    "M0-PROVENANCE-INTERVENTION-04",
+    "M0-ROOT-REDUCER-05",
+    "M0-V7-REUSE-FIREWALL-06",
+    "M0-MTEXT-HANDOFF-07",
+    "MTEXT-SUPPLIED-CAUSAL-08",
+    "MTEXT-BYPASS-TRACE-09",
+    "M0-INDEPENDENT-REVIEW-10"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is that the change makes an unusually disciplined decomposition: M0 is limited to deterministic software and visibility conformance, while the first empirical claim is narrowed to causal use of externally supplied grounded connected text by one fixed model. Paired-prefix noninterference, chronological provenance, transform-specific interventions, root-level reduction, a V7 oracle firewall, explicit bypass baselines, independent review, and prospective withdrawal of stronger claims are the right ingredients. If exact bytes, model-visible state, session isolation, endpoints, resource factors, splits, and inference rules were later frozen and independently validated, this staged design could provide a clean, inexpensive falsifier for whether connected supplied memory improves changed-goal traversal, informative action selection, and delayed old-plus-new behavior without miscrediting DREAM, LoRA, parenting, or lifetime learning.",
+  "visibility_failures": [
+    "M-TEXT receives a derived handoff/manifest identity without a rule proving that the identity is root-, arm-, answer-, and intervention-neutral.",
+    "Paired-prefix equality is tested only at the M0 semantic surface, not over fully rendered prompts, tokenizer outputs, tool returns, parser responses, or session state.",
+    "Goal-conditioned query text, query echoes, agendas, catalogs, ordering, padding, and cursor behavior lack an exact noninterference law.",
+    "The canonical join projection is absent, so abandoned or sibling branch traces may cross GOALS_COMPLETE indirectly.",
+    "Repeat fingerprints, counts, blocks, and reset reasons are not guaranteed to appear in the policy's rendered state.",
+    "Delayed reset does not enumerate or destroy raw chat history, KV/cache state, provider session state, tool transcripts, and environment caches.",
+    "Parser errors, filenames, response lengths, timing, provider logs, and retry behavior are not included in the covert-channel mutation surface.",
+    "Supplied-link identities, citation order, lexical form, and intervention rendering are not proven independent of the final answer, scorer, or preferred parent path."
+  ]
+}
