@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r6_systems_fresh_v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r6",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "3b286a4944f0e30c66c347e7caa1bde35db67fce9b835be48b97c3809d13bfc7",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/change.json",
+      "sha256": "3b286a4944f0e30c66c347e7caa1bde35db67fce9b835be48b97c3809d13bfc7",
+      "purpose": "Frozen exact PPC5r6 architecture proposal under interpretation."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound generic intake implementation and state transition authority."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Canonical IO dependency of the generic intake."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "740356111243a4e55d018243a29f0da89e5cdddd6c9410c5ca0cf766665802d6",
+      "purpose": "Architecture proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation artifact schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique artifact schema and later state boundary."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus artifact schema and disposition boundary."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema and nondelegable authority boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/human_directive.txt",
+      "sha256": "f85def55a24b40219b4cc8c34e91acfb48e25848b1ba4e89e3ab051c335dc4d2",
+      "purpose": "Verbatim direction and bounded r5-resolution provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/scope_proposal.json",
+      "sha256": "bf0342ca15d673104dfc88103e064487fd78334b90cbe5fb80eaaf729fab2151",
+      "purpose": "Exact proposal-only scope and forbidden-action boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/protocol.md",
+      "sha256": "86ba172e8fd6c9faf89d09ec920b08847ea62365f7669a84e6d21132a3bf0c33",
+      "purpose": "Normative system and scientific protocol."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/machine_contract.md",
+      "sha256": "843dae479ffa775818a59c34ad914255a46ada5d19706d91b54a13c6d5c65bf8",
+      "purpose": "Normative controller, queue, provider, path, DREAM, and SLEEP machine semantics."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/semantic_validators.md",
+      "sha256": "c0c39a86809b44ad9973860cd60f3166052479dc69cfc0563f44ae2de4b99703",
+      "purpose": "Normative pure cross-field and DAG validation requirements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/assay_contract.json",
+      "sha256": "ab6301bc98bccb18efa011b3deb36a4af29114a212df856f8bf32e1f11ff49be",
+      "purpose": "Normative assay population, controls, construction, and freeze contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/analysis_contract.json",
+      "sha256": "a13ff78fe1a871494711552496f00d18ade69b60da1782f00c29fba4cc1d013a",
+      "purpose": "Normative exact reduction, multiplicity, and power contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/status_contract.json",
+      "sha256": "faa195acc8f03d5611e5711451521e54d94b725485eb115b089281343e697b53",
+      "purpose": "Normative status, missingness, no-retry, and endpoint mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/visibility_contract.json",
+      "sha256": "32aacfb81d4c41f9855143da4b5e8bc26018f4bbb09d3e2f799c44986a391420",
+      "purpose": "Normative complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/authority_contract.json",
+      "sha256": "faa20056acc8173f8deec2905047feb35e42ebe35c5a681653cd2a27cdfa1ca1",
+      "purpose": "Normative stage-specific authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/claim_dependency_map.json",
+      "sha256": "791bb5259b46426501a09b7654992f931f488127d42b123b64611d6ebfee9dce",
+      "purpose": "Normative literal candidate-decision, dependency, T14, and release mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/object_inventory.json",
+      "sha256": "a80b8016700c954bc308dba14c39bfee89d16b1b2786387dec0e0fc11ce715a6",
+      "purpose": "Normative closed durable-artifact inventory and reference reachability."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/contracts.schema.json",
+      "sha256": "8f33faf1cfeba691ed79c44f877b2edc5e41c4cb0a63c3061007fac2ed556050",
+      "purpose": "Normative closed schemas and exact authority-bearing role lists."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/controller_registry.json",
+      "sha256": "af8ba3f7ad1ac4bad6538c89c8c40ed29060d0560b5af42077c27e2bda94c475",
+      "purpose": "Normative populated controller rows, results, transitions, and self hash."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/test_contract.json",
+      "sha256": "adb0b61ff74d846b67e81dd312d5db107977718ce3836f5939b51526b719a1e5",
+      "purpose": "Normative T01-T14 stage and evidence obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/drafts/build_r6_contract_schema.py",
+      "sha256": "a1af676d422825d8dd44bf981528288a4731f100d257c441cbebafa6471be853",
+      "purpose": "Bound nonnormative deterministic generator for repetitive contract bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/drafts/build_r6_change.py",
+      "sha256": "88fb2fc0de6d00aa5929a1bbf568b99827dcde3e565c0dd9bbe3aebe9115860a",
+      "purpose": "Bound nonnormative deterministic proposal generator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Binding r4 repair provenance only, with no inherited authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/consensus.json",
+      "sha256": "8505c2d1586a50eacd7496c48039e3ebf96f9998e4c040e0e3e7a131bec1da22",
+      "purpose": "Immediate binding r5 R01-R17 successor-byte requirements and R18 human boundary, with no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "Verdict: REWORK before architecture ratification. The proposal appropriately narrows PPC5 to four prerequisite assays, keeps current authority at NONE_PROPOSAL_ONLY, freezes THINK, DREAM, and ACT, confines learning to READ scoring, and separates claim-blind reduction from candidate-decision projection and human-gated release. Several core byte closures are materially improved: the 128-object inventory aligns with the schema union; the controller registry self hash recomputes under its declared domain-separated algorithm; state-body -> transition-event -> state-receipt and queue-body -> private-controller -> queue-receipt are acyclic. The frozen bytes nevertheless do not embody all binding r5 R01-R17 repairs. In particular, the populated controller omits registered terminal results, status effects contradict the status table, queue/transition references are not reachable under the closed role inventory, T01 is impossible under the run-lock fixture list, all five proposal claim literals differ from the registered literals, and the proposal reduction loop depends on T14 while purporting to produce T14 ancestors. Those are architectural disagreements, not implementation defects, and no implementation, fixture, model, tokenizer, training, behavioral, canary, GPU, or scientific action is authorized.",
+  "graph_delta_interpretation": "The intended graph has useful explicit nodes for the public ledger, frozen controller, provider, intervention router, DREAM/SLEEP boundaries, exact reducer, candidate decision, and the T14/authority/release chain. The durable state and queue hash ancestry is locally acyclic. The exact graph is not yet closed, however: transition_event.lineage admits generic artifact_ref entries, while QUEUE_SLOT_RECEIPT, QUEUE_EFFECT_RECEIPT, and TRANSITION_CAUSE_REGISTRY are consumable only at COLD_REPLAY or CONTROLLER, not TRANSITION_REDUCER/RUNTIME_REDUCER. A cause-specific transition therefore cannot bind the queue/provider/intervention evidence demanded by machine_contract.md and r5 R02 without violating the inventory's one-target role reachability. The populated run lock also leaves transition-cause and several normative-source bindings behind generic preflight sources/manifests rather than exact typed roles. Finally, the change-level reduction loop creates a T14 ancestry cycle: its trigger requires T14 agreement, yet its writes include reducer, candidate-decision, power, and release receipts that are declared ancestors of the final T14 result.",
+  "loop_delta_interpretation": "The proposed one-dispatch recurrence, one-shot shared DREAM, total evidence/SLEEP write, and exact recipient-life reduction are the right loop decomposition, and the status contract states physical no-retry semantics. The populated controller is not a total realization of that prose. ERROR_LIMIT, TERMINAL, and CONSTRUCTION_FAIL are declared result vocabulary but occur in no result transition; no row selects ERROR_LIMIT on the third consecutive error; and no implicit transition is allowed. Moreover D1B_AUTH_ACT ERROR, D1B_OPEN_COMMIT commitment absence/invalidity, D1C_ACT ERROR, and D1D_ACT ERROR emit MISSING_OBSERVATION even though status rule S08 classifies their clean terminal-no-action outcomes as observed zero with missing=false. D1D_ROOT_TO_PROVIDER TRAIN_FAILED likewise emits MISSING_OBSERVATION although S07 requires adapter-off downstream execution with an actual nonmissing endpoint. The machine therefore lacks a unique status-preserving next-state/endpoint result for reachable cases and cannot support a byte-exact replay or no-retry proof.",
+  "claim_delta_interpretation": "The five claims are properly qualified as non-mediational prerequisites rather than evidence for continual learning or private cognition, and candidate decision is correctly separated from reducer visibility in concept. Literal release is not byte closed in this proposal. For every one of the five claim IDs, change.json claim_delta.claims[].after is unequal to claim_dependency_map.json claims[].release_text and to the schema constants: the proposal uses stale 'from the locked PPC5 generator' or 'generator-population' language where the registered release literals use the accepted-constructible recipient-bundle law of the exact locked generator. A renderer cannot choose between those normative byte strings. The proposal's reduction loop also writes qualified release before the declared reducer -> candidate decision -> two cold replays -> final T14 result -> preclaim authority -> release order. No candidate decision, T14 result, preclaim authority, or release is presently authorized.",
+  "visibility_matrix_interpretation": "The actual proposal matrix is the correct 13 information items by 15 stages, including CANDIDATE_DECISION. Its central separation is sound: CLAIM_TEXT is forbidden at REDUCER, derived-only at CANDIDATE_DECISION, and visible only at CLAIM_RELEASE/AUDIT; runtime stages remain blind to outcomes and claims. But visibility_contract.json.required_test still demands an exact '13 x 14 product'. That stale cardinality conflicts with the 13 x 15 matrix and binding r5 R12, so T12 has two incompatible exact oracles and cannot certify complete candidate-decision visibility bytes.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R6_T01",
+    "PPC5R6_T02",
+    "PPC5R6_T03",
+    "PPC5R6_T04",
+    "PPC5R6_T05",
+    "PPC5R6_T06",
+    "PPC5R6_T07",
+    "PPC5R6_T08",
+    "PPC5R6_T09",
+    "PPC5R6_T10",
+    "PPC5R6_T11",
+    "PPC5R6_T12",
+    "PPC5R6_T13",
+    "PPC5R6_T14"
+  ],
+  "acceptance_test_interpretation": "All T01-T14 obligations were interpreted statically; none was executed. T01 is internally inconsistent: its TEST_RESULT branch requires fixture_manifest_ref=null and coverage_receipt_ref=null with exactly a generic intake command result and intake-state history, while change.json names ppc5r6_t01_coverage_receipt.json and populated_run_lock requires a T01 FIXTURE_UNIVERSE_MANIFEST even though fixture manifests cannot declare PRE_RATIFICATION_GENERIC_INTAKE. The generic interpret command also does not itself validate human evidence or the canonical scope proposal's ratification binding; those checks occur at generic ratify. T03/T08/T09/T10/T11 cannot establish total status behavior while controller terminal results and endpoint effects are missing or contradictory. T12 has incompatible 13x14 and 13x15 cardinalities. T13 cannot close the run lock and reference reachability under generic source/manifest escape hatches. T14 cannot cold-replay a unique graph while the reduction trigger depends on T14, transition cause/lineage roles are not reachable, and claim literals disagree. Because these are contract-byte failures, thematic test descriptions do not cure them; exact successor bytes and fresh deliberation are required.",
+  "assumptions": [
+    "Every hash-bound context file is normative to the extent stated by change.json; the two draft generators are provenance only and cannot override emitted normative bytes.",
+    "The r5 consensus R01-R17 are binding successor-byte requirements, while r5 R18 and AGENTS.md preserve the later human-only ratification boundary and convey no implementation or scientific authority.",
+    "Semantic validators may reject malformed artifacts but may not invent missing controller rows, transition roles, manifest members, stage cardinalities, or claim bytes that are absent from closed schemas and registries.",
+    "Exact claim equality means UTF-8 byte equality of the registered literal at every normative occurrence; semantic similarity is insufficient.",
+    "The current intake state remains proposal-only and collecting interpretations, so this interpretation records architectural evidence only and does not authorize or imply any test execution."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R6_SYS_A01_TRANSITION_CAUSE_RUNTIME_BINDING",
+      "question": "Which exact populated transition-cause registry is the runtime transition reducer required to consume, and through which closed run-lock role does it receive that registry?",
+      "impact": "The schema permits arbitrary symbolic ordered_roles, the inventory permits TRANSITION_CAUSE_REGISTRY only at COLD_REPLAY, and the run lock has no typed transition-cause-registry field. Without a single presealed registry and runtime role, transition lineage cardinality and queue/provider/intervention ancestry are implementation-selectable."
+    },
+    {
+      "ambiguity_id": "PPC5R6_SYS_A02_T01_LOCK_REPRESENTATION",
+      "question": "What exact non-fixture artifact, if any, should the later populated run lock bind for T01, given that T01 is a pre-ratification generic-intake result and its TEST_RESULT branch forbids fixture and coverage refs?",
+      "impact": "The current exact fourteen-fixture list requires a T01 fixture that the T01 schema and declared-stage enum cannot represent. A successor must remove T01 from that list or introduce a distinct, phase-correct typed generic-intake-history binding without weakening T01's no-PPC-fixture rule."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R6_SYS_D01_CONTROLLER_NOT_TOTAL",
+      "statement": "I disagree that controller_registry.json is a total populated state machine satisfying r5 R01.",
+      "rationale": "ERROR_LIMIT, TERMINAL, and CONSTRUCTION_FAIL are in result_vocabulary but appear in no result_transitions entry. No guard or counter-conditioned transition encodes the third consecutive error -> ERROR_LIMIT rule. Because machine_contract.md forbids implicit transitions and requires a unique row/result branch, reachable controller termination and construction cases do not have a declared total next-state computation.",
+      "proposed_resolution": "Populate exact rows or result branches for every registered reachable result, explicitly encode the consecutive-error counter update and third-error terminal choice, remove only results proven unreachable, and make T03 enumerate the complete assay x program x phase x guard x result x status product with zero/multiple-match rejection."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D02_STATUS_EFFECTS_CONTRADICT_TABLE",
+      "statement": "I disagree that the controller's endpoint effects implement the total status/no-retry table.",
+      "rationale": "D1B_AUTH_ACT ERROR, D1B_OPEN_COMMIT COMMITMENT_ABSENT/INVALID, D1C_ACT ERROR, and D1D_ACT ERROR assign MISSING_OBSERVATION although S08 makes clean terminal-no-action outcomes normalized zero and missing=false. D1D_ROOT_TO_PROVIDER TRAIN_FAILED assigns MISSING_OBSERVATION although S07 requires nonmissing adapter-off downstream execution. This changes endpoint missingness and potentially the paired estimand rather than merely renaming a terminal status.",
+      "proposed_resolution": "Give each result one status-consistent endpoint effect and continuation, reserve missingness for actual required missing model/provider/DREAM dependencies, preserve one physical attempt/no retry, and add exact mutations for every terminal, training-failure, missing-call, and downstream-observation branch to T03/T09/T10/T11/T14."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D03_QUEUE_LINEAGE_ROLES_UNREACHABLE",
+      "statement": "I disagree that the queue and transition ancestry is closed under the object inventory's permitted consumer roles.",
+      "rationale": "transition_event.lineage is an array of generic artifact_ref with no inline exact cause-specific branch. QUEUE_SLOT_RECEIPT is consumable only as COLD_REPLAY:QUEUE_SLOT_RECEIPT or CONTROLLER:QUEUE_SLOT_RECEIPT; QUEUE_EFFECT_RECEIPT and TRANSITION_CAUSE_REGISTRY are consumable only at COLD_REPLAY. Thus the runtime transition producer/reducer cannot bind the queue receipt/effect and cause registry demanded by r5 R02 without using an unregistered role, while arbitrary other lineage remains schema-valid.",
+      "proposed_resolution": "Add a populated hash-bound transition-cause registry to the run lock, replace generic transition lineage with exact per-cause prefixItems/cardinality or validator-bound roles, and add matching TRANSITION_REDUCER/RUNTIME_REDUCER inventory roles for queue, provider, intervention, and other cause evidence. Make T03/T05/T13/T14 reject missing, extra, reordered, wrong-type, wrong-role, and unreachable lineage."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D04_T01_AND_RUN_LOCK_PHASE_CONTRADICTION",
+      "statement": "I disagree that T01 and the populated run-lock schema jointly implement r5 R08 and r5 R11.",
+      "rationale": "The T01 TEST_RESULT branch requires null fixture_manifest_ref and null coverage_receipt_ref and exactly two evidence refs: ARCHITECTURE_INTAKE_COMMAND_RESULT and INTAKE_STATE_HISTORY. Nevertheless change.json names ppc5r6_t01_coverage_receipt.json, and populated_run_lock.test_fixture_refs requires T01 through T14 each as FIXTURE_UNIVERSE_MANIFEST. FIXTURE_UNIVERSE_MANIFEST.declared_stage excludes PRE_RATIFICATION_GENERIC_INTAKE, so a conforming T01 fixture cannot exist. The generic interpret operation also does not perform the scope/human-evidence ratification checks claimed by the T01 setup.",
+      "proposed_resolution": "Use the actual generic pre-ratification command result and awaiting-consensus state/history for T01, name no coverage receipt, exclude T01 from PPC fixture manifests, and bind any later T01 history through a dedicated phase-correct typed role. State precisely which checks interpret performs and reserve scope/human-evidence ratification validation for the generic ratify command."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D05_VISIBILITY_PRODUCT_STALE",
+      "statement": "I disagree that T12 has one exact visibility-matrix cardinality oracle.",
+      "rationale": "change.json and visibility_contract.json declare 13 information items and 15 stages, including CANDIDATE_DECISION, but visibility_contract.json.required_test literally requires the exact 13 x 14 product. Binding r5 R12 requires 13 x 15 = 195 cells. Both exact requirements cannot pass simultaneously.",
+      "proposed_resolution": "Replace every stale 13x14 occurrence with 13x15=195, require unique coverage of the full Cartesian product, retain CLAIM_TEXT forbidden at REDUCER and derived-only at CANDIDATE_DECISION, and make T12 reject one-cell omissions, duplicates, extras, and stage-field disagreement."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D06_CLAIM_LITERALS_STALE",
+      "statement": "I disagree that the proposal binds one exact release literal for each of the five claims.",
+      "rationale": "For all five claim IDs, change.json claim_delta.claims[].after differs byte-for-byte from claim_dependency_map.json claims[].release_text and the corresponding contracts.schema.json constant. The change-level strings retain stale locked-generator/generator-population wording instead of the accepted-constructible recipient-bundle law of the exact locked generator required by r5 R16. Candidate decision and release therefore have competing normative literals.",
+      "proposed_resolution": "Choose the accepted-constructible registered literal as the sole canonical UTF-8 string for each component and intersection claim, copy those exact bytes into change.json and every schema/contract occurrence, bind the qualification literal once, and make T12/T14 fail on any byte, punctuation, whitespace, qualifier, or intersection-source substitution."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D07_REDUCTION_T14_DAG_CYCLE",
+      "statement": "I disagree that the change-level reduction loop and the T14/authority/release graph define one acyclic release order.",
+      "rationale": "EXACT_GENERATOR_POPULATION_REDUCTION is triggered only when 'T14 cold replay agrees' but writes paired, safety, missingness, assay, Holm, power, claim-decision, and qualified release receipts. Those outputs are ancestors of candidate decision, both cold replays, the final T14 result, preclaim authority, and release elsewhere in the proposal. Requiring T14 before producing its own ancestors is a conceptual cycle and also collapses candidate decision, authority, and release into the reducer.",
+      "proposed_resolution": "Make reduction trigger solely on complete typed endpoints/blockers; have it emit claim-blind reduction receipts only; project candidate decisions next; run two predecessor-only cold replays; issue one final T14_TEST_RESULT; then permit preclaim authority and literal release. Update change.json loop writes/trigger and all release prerequisites to this exact DAG."
+    },
+    {
+      "disagreement_id": "PPC5R6_SYS_D08_CLOSED_RUN_LOCK_AND_AUTHORITY_ROLES",
+      "statement": "I disagree that the run lock and authority boundary eliminate generic semantic reference escape hatches as required by r5 R09-R11.",
+      "rationale": "Authority-bearing schemas still use generic artifact_ref arrays, including transition_event.lineage, test_result.evidence_refs, fixture prerequisites/inputs, preflight sources, resource/derivation refs, and implementation-independence refs. populated_run_lock has generic preflight_source_refs and an allowed-dispatch manifest but no exact typed fields for the transition-cause registry and several normative contract/inventory/status/visibility/authority/claim sources. HUMAN_RUN_RATIFICATION binds T01_T13_MANIFEST only as an opaque BYTE_ARTIFACT_MANIFEST rather than an exact ordered typed T01-T13 list. Hash stability alone cannot prove member type, role, cardinality, order, or one-target reachability.",
+      "proposed_resolution": "Replace authority-bearing generic arrays/manifests with closed prefixItems branches or bind each to one populated role registry that is itself explicitly present in the run lock and statically checked against object_inventory.json. Bind all normative preflight sources by exact role and require HUMAN_RUN_RATIFICATION to consume the ordered typed T01-T13 results. Extend T01/T13/T14 with omitted, duplicate, extra, reordered, wrong-type, wrong-role, stale-hash, unreachable-role, and opaque-manifest mutations."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin withhold ratification and route PPC5R6_SYS_D01 through PPC5R6_SYS_D08 and A01 through A02 into an exact-byte successor proposal followed by fresh systems/scientific interpretation, critique, and consensus?",
+      "After a clean successor consensus exists, will Rohin independently inspect the exact hashes, scope, test-stage ordering, authority chain, and remaining questions before any explicit human ratification, with all implementation and scientific action still separately forbidden until then?"
+    ]
+  }
+}

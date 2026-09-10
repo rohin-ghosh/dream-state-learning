@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.assays.v6",
+  "generator_sampling": {
+    "distribution": "the accepted constructible recipient-bundle law of the exact pure ordinal-blind function G(theta,E) bound by generator_manifest, source manifest, finite parameter law, acceptance predicate, and proposal limit",
+    "sample": "independent recipient-life/seed bundles using prospectively disjoint committed entropy slices under the registered entropy-source contract; each accepted bundle contains its own recipient-disjoint exactly matched donor sub-bundle; natural cross-draw semantic or entropy collisions are retained",
+    "construction": "all proposals and first-failure rejection receipts are sealed before run authority; proposal exhaustion blocks static seal and run authority and is neither redraw nor runtime missingness",
+    "power_scope": "conditional gate power is labeled conditional on already-passing sealed construction; a separate unconditional construction-plus-complete-release lower bound includes finite-proposal exhaustion and is required for PRE_MODEL authority",
+    "all_arms_observed": true,
+    "no_post_outcome_exclusion": true,
+    "no_replacement": true
+  },
+  "clone_rule": "All required arms for one sampled life are byte-identical pre-treatment clones and share the sealed common-random seed bundle at corresponding calls.",
+  "unlisted_difference": "RUN_INVALID",
+  "assays": [
+    {"assay_id": "D1A", "controller": "DIRECT_PROVIDER", "arms": ["READER_LORA", "ADAPTER_OFF", "DOSE_MATCHED_WRONG_LIFE_ADAPTER", "MATCHED_BINDING_SHUFFLED_READER"], "varies_only": ["opaque mounted artifact handle or null"], "fixed": ["complete semantic table", "mean-response-logprob algorithm", "scoring kernel", "request set", "candidate order", "tokenizer", "base", "no THINK", "no DREAM", "no ACT"]},
+    {"assay_id": "D1B", "controller": "D1B_AUTHENTIC, D1B_ONE_SHOT, or D1B_OPEN_LOOP as prospectively assigned", "arms": ["AUTHENTIC_PATH", "CUT_EDGE_e for every e", "TWIN_EDGE_e for every e", "SHAM_EDGE_e for every e", "ONE_SHOT_READ", "OPEN_LOOP"], "varies_only": ["condition-free resolved response bytes", "schedule mode"], "fixed": ["provider algorithm", "mounted artifact", "complete semantic table", "static context", "task set", "prospective budgets", "no DREAM", "no SLEEP"]},
+    {"assay_id": "D1C", "controller": "FIXED_BEHAVIOR", "arms": ["AUTHENTIC_DREAM_CONTEXT", "RECENCY_CONTEXT", "PERMUTED_CONTEXT"], "varies_only": ["installed reversible context bytes"], "fixed": ["one shared DREAM receipt", "prospective behavior_read_slots", "one-attempt READ slots then PREDICT then ACT", "no SLEEP", "task set", "budgets", "snapshot"]},
+    {"assay_id": "D1D", "controller": "D1D_TOTAL", "arms": ["DREAM_TO_SLEEP", "RECENCY_TO_SLEEP", "HASH_PERMUTED_TO_SLEEP"], "varies_only": ["root policy and every natural downstream consequence"], "fixed": ["one shared DREAM receipt", "RECENCY_CONTEXT", "sealed selection provider sequence", "prospective behavior_read_slots", "one-attempt READ slots then PREDICT then ACT", "clean base", "writer algorithm", "trainer algorithm family", "task set", "prospective budgets", "snapshot"], "forbidden_adjustment": ["realized row matching", "token padding", "update padding", "post-treatment stratification", "dose regression", "resource normalization"]}
+  ],
+  "d1a_corpus": {
+    "source": "all and only eligible direct closed public ACQUIRE outcomes before the sealed boundary",
+    "sterile": ["PROBE", "future", "target-derived", "cognitive", "DREAM", "scorer", "policy-target"],
+    "capacity": "apply the run-locked target-blind capacity order after eligibility and before arm construction",
+    "typed_origin": "corpus_origin_ref is a closed union: D1A_CORPUS_ORIGIN_RECEIPT for D1A or ROOT_SELECTION_RECEIPT for D1D; no D1A corpus pretends to have a D1D root policy"
+  },
+  "binding_shuffle": {
+    "algorithm": "lexicographically first perfect derangement under the locked candidate-ID order",
+    "preserves": ["request multiset", "donor object/record multiset", "row count", "update count", "ordered per-row token count", "ordered per-row byte class"],
+    "requires": ["every destination and donor row distinct", "every authentic binding destroyed", "authentic and shuffled corpus hashes differ"],
+    "failure": "CONSTRUCTION_FAIL"
+  },
+  "wrong_life": {
+    "recipient_disjoint": true,
+    "one_to_one": "within one independently generated recipient/donor bundle; donor artifacts never move or rematch across sampled lives, while coincident donor semantic identities from independent draws are retained",
+    "no_replacement": true,
+    "exact_matches": ["base hash", "tokenizer hash", "adapter shape hash", "recipe family hash", "mount interface hash", "rank", "row count", "ordered row token-count vector", "ordered row byte-class vector", "total training tokens", "update count", "candidate-table cardinality", "eligible equivalence-class count before capacity", "eligible equivalence-class count after capacity", "support-multiplicity histogram", "row token/byte-class histogram"],
+    "forbidden_matching_inputs": ["recipient identity", "target", "PROBE or future outcome", "provider score", "downstream action score"],
+    "artifact_check": "present and hash-valid before assignment; no runtime replacement",
+    "failure": "CONSTRUCTION_FAIL for that prospectively sampled bundle, retained as a construction blocker with no redraw"
+  },
+  "path_oracle": {
+    "lengths": [2, 3],
+    "sufficiency": "all hidden world variants consistent with exactly the observation set imply one identical unique correct action",
+    "full_path": "sufficient",
+    "proper_subsets": "all 2^L-2 nonempty proper subsets indexed by ascending bitmask and each insufficient",
+    "alternate_universe": "all simple directed paths within the locked READ budget over the canonical eligible multigraph, enumerated by length then edge-ID tuple; exactly the registered path is sufficient",
+    "source_disjointness": "ordered path edges bind distinct source_event_id values and distinct source_event preimage hashes; domain tags are not counted as disjoint sources",
+    "gate_key": "path_template_id, edge_position, edge_id fixed before sample entropy; membership is fixed sample ordinals and never content-selected",
+    "per_edge": "every stable gate key binds typed RAW_SOURCE_EVENT, CUT_CONSTRUCTION, TWIN_CONSTRUCTION, SHAM_CONSTRUCTION, PARITY_PROOF, ORACLE_EVALUATION, and SOURCE_DISJOINTNESS_PROOF objects",
+    "off_path": "a valid non-target READ with zero assigned-target matches emits OFF_PATH_AUTHENTIC_PASS_THROUGH using the common provider response; one target match applies the intervention; multiple matches or zero matches for the assigned target key is RUN_INVALID",
+    "failure": "CONSTRUCTION_FAIL"
+  },
+  "overlap": {
+    "dimensions": ["semantic_family", "alias_family", "item_family", "donor_overlap_group", "ACQUIRE_PROBE exact overlap"],
+    "use": "construction and descriptive reporting only; aggregate counts are pure derivatives of ordered typed per-unit OVERLAP_MEMBERSHIP_ENTRY objects and canonical comparison keys",
+    "release_binding": "overlap_manifest_hash and construction_scope_receipt_hash are mandatory in every release/export receipt"
+  }
+}

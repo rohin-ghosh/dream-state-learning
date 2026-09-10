@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-self-check-v1d",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "support_basis", "premise_ids", "support_row_ids", "prediction", "confidence", "reason"],
+      "properties": {
+        "verdict": {"const": "SUPPORTED"},
+        "support_basis": {"const": "SELF_REVIEW_SAME_EVIDENCE"},
+        "premise_ids": {"$ref": "#/$defs/premiseIds"},
+        "support_row_ids": {"$ref": "#/$defs/noSupportIds"},
+        "prediction": {"$ref": "#/$defs/prediction"},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "support_basis", "premise_ids", "support_row_ids", "prediction", "confidence", "reason"],
+      "properties": {
+        "verdict": {"const": "SUPPORTED"},
+        "support_basis": {"const": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT"},
+        "premise_ids": {"$ref": "#/$defs/premiseIds"},
+        "support_row_ids": {"$ref": "#/$defs/supportIds"},
+        "prediction": {"$ref": "#/$defs/prediction"},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "support_basis", "premise_ids", "support_row_ids", "prediction", "confidence", "reason"],
+      "properties": {
+        "verdict": {"enum": ["CONTRADICTED", "UNRESOLVED"]},
+        "support_basis": {"const": "NONE"},
+        "premise_ids": {"$ref": "#/$defs/premiseIds"},
+        "support_row_ids": {"$ref": "#/$defs/noSupportIds"},
+        "prediction": {"$ref": "#/$defs/prediction"},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    }
+  ],
+  "$defs": {
+    "premiseIds": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^M[0-9]{6}$"}
+    },
+    "supportIds": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^M[0-9]{6}$"}
+    },
+    "noSupportIds": {"type": "array", "maxItems": 0},
+    "prediction": {"type": "string", "minLength": 1, "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "reason": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"}
+  }
+}

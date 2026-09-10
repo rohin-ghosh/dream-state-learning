@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "v6simple_v6.cross_critic",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v6",
+  "state": "critiqued",
+  "architecture_change_sha256": "630b62cd4935aff781caf4a10c5c8f122bbf917d240e18fba8acbcf4a7a64cf9",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "v6simple-v6-scientific-independent",
+      "sha256": "b0049277330be596918980d5de39d9534fd6a80ce79e9dcf596853829771c30e"
+    },
+    {
+      "interpretation_id": "v6s6.systems.fresh",
+      "sha256": "f78118b6cfbb8cce4608fcc14d82d55fbdcec0cb451b47e1fcdd49caa132fac4"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling durable deliberation, human-ratification, independent-review, GPU, and scientific-claim gates."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Exact validation rules for proposal and interpretation bindings, independent perspectives, complete acceptance-test review, context hashes, and unique concern IDs."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict schema governing this critique artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/change.json",
+      "sha256": "630b62cd4935aff781caf4a10c5c8f122bbf917d240e18fba8acbcf4a7a64cf9",
+      "purpose": "Exact proposed graph, loops, claims, visibility matrix, six acceptance tests, and staged authority under critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/human_directive.txt",
+      "sha256": "f80607841520297e23f50b2f0736c0ea559c4629162e00070d1907cd21af530f",
+      "purpose": "Verbatim owner direction for a simple complementary two-system assay and broader context/sleeper exploration."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/protocol.md",
+      "sha256": "2cc93fd198322caff24b5c6361285c80fa1d8abb4ab43929f736b99be9546688",
+      "purpose": "Normative proposed packet, state, environment, writer, capability, lifecycle, reporting, and authority contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/interpretation_science.json",
+      "sha256": "b0049277330be596918980d5de39d9534fd6a80ce79e9dcf596853829771c30e",
+      "purpose": "Exact independent scientific interpretation cross-examined by this critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/interpretation_systems.json",
+      "sha256": "f78118b6cfbb8cce4608fcc14d82d55fbdcec0cb451b47e1fcdd49caa132fac4",
+      "purpose": "Exact independent systems interpretation cross-examined by this critique."
+    }
+  ],
+  "strongest_case": "The strongest case is that v6 repairs most of v5 without adding another scientific arm or pretending to answer the owner's final thinker/sleeper question. H and E have one strict six-slot public interface, own bounded memories, target-blind success-filtered E rows, and a final same-E-snapshot adapter-off diagnostic. The split is fixed before model access, tasks 1--4 are intended as a strong contamination check, build A is predesignated, target results are quarantined, failures do not invite tuning or reruns, and a fresh post-run review gates release. The claim boundary is unusually disciplined: one life and four hash-distinct targets can yield only an integrity disposition and descriptive fixed-panel curves, D_HE, and D_ONOFF; it cannot establish efficacy, outcome learning, causal credit, semantic generalization, functional correctness, lifelong learning, or a paper result. Under that boundary, missing random adapters, shuffled labels, multiple lives, semantic-family controls, free-flow context ablations, and paper-level inference are not defects of this lower bracket. The scientifically necessary closure is narrower: freeze the treatment and target panel, prevent target-result feedback, prove relevant H/E pre-sleep equivalence, preserve exact E_ON/E_OFF snapshot identity, bind training rows and mounted weights, account for every target cell, and prohibit result-contingent repair. If the remaining contradictions are corrected and the audit contract is reduced to those causal surfaces, this is a proportionate constructibility assay.",
+  "reviewed_acceptance_test_ids": [
+    "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS",
+    "V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS",
+    "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+    "V6S6_T04_CPU_DOUBLE_SEAL",
+    "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+    "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+  ],
+  "concerns": [
+    {
+      "concern_id": "CRIT_V6_C01_IDENTITY_BEARING_PARITY_IS_IMPOSSIBLE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The required exact H/E task-1-through-4 event and snapshot equality is unsatisfiable because the canonical artifacts deliberately carry different system identities.",
+      "evidence": "Protocol Sections 2 and 3 require canonical snapshots and acquisition events to contain system=H or system=E, then require H and E events and memory snapshots to match exactly. Complete event and snapshot bytes and their hashes must therefore differ in every otherwise conforming run. Both independent interpretations identify the same contradiction. A projection cannot be invented in T01 or the later manifest because selecting excluded fields determines what contamination the parity check can miss.",
+      "acceptance_test_ids": [
+        "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS",
+        "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C02_T06_ID_AND_RELEASE_GATE_CONTRADICT",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The post-run gate has two identifiers and two different authority points, so structured workflow metadata can bypass the protocol's required pre-release review.",
+      "evidence": "change.json registers V6S6_T06_ACTUAL_RUN_CONFORMANCE with required_before=scientific_claim. Protocol Section 9 instead names V6S_T06_ACTUAL_RUN_CONFORMANCE and requires it before any result release. Scientific claims are expressly forbidden, so an orchestrator following change.json could release RECIPE_COMPLETE, INDETERMINATE, INTEGRITY_FAILURE, F, or D values without ever reaching a scientific_claim gate. The near-matching unregistered identifier is not interchangeable under the intake's exact acceptance-test registry.",
+      "acceptance_test_ids": [
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C03_INCOMPLETE_PANEL_REPORTING_IS_UNREGISTERED",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The failure table permits an incomplete target panel but the report contract does not define whether or how F, D_HE, and D_ONOFF are released when a cell is missing.",
+      "evidence": "Section 8 says an isolated target reset/service/process/fork failure seals a failed cell and continues other cold cells, ending INDETERMINATE after the barrier. Section 6 nevertheless says to report raw curves, validity, F, D_HE, and D_ONOFF without a missing-cell rule. Suppressing aggregates, dropping the failed program, or averaging condition-specific survivors are different estimands and allow post-result discretion. The scientific interpretation correctly raises this. Its separate signed-64 subtraction worry is not the blocker: nonnegative signed-64 counts with best_count<=I0 keep both integer differences in range. The remaining exactness issue is division, reduction, and serialization; T06 cannot independently reproduce report bytes until F and D are represented by one predeclared exact rational or canonical rounding rule.",
+      "acceptance_test_ids": [
+        "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C04_CORE_STATE_AND_EVIDENCE_DAG_IS_NOT_CLOSED",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "Several scientifically necessary state transitions and core cross-boundary receipts still lack a unique semantic schema and provenance link, so T01--T06 cannot independently reconstruct the run they claim to accept.",
+      "evidence": "The systems interpretation correctly identifies a compact set of material gaps: target receipts are described by replacing three acquisition-event fields with two unspecified fields, with no ordered target/failure schema, fork_id construction, cell identity, or failed-cell bytes; memory.observation is not explicitly tied to the improving event's pre_observation; event transactions do not bind pre- and post-snapshot hashes; task success and the atomic order of slot-6 commit, tasks_completed, H boundary sleep_index, E publication, and E sleep_index are undefined; the two sealers have no comparison/promoter lifecycle or rule selecting the sole authentic environment manifest; and accepted mount, teardown, completion-barrier, conformance-verdict, and final-report artifacts lack the minimum fields needed to bind snapshot, adapter, processes, cells, and disposition. Parser whitespace bytes, output-token domain relative to vocabulary, task/fork index domains, and within-modality hash-collision stops also need ordinary boundary rules. These are core causal/provenance interfaces, not a demand that every log line or temporary file receive a canonical schema.",
+      "acceptance_test_ids": [
+        "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS",
+        "V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS",
+        "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+        "V6S6_T04_CPU_DOUBLE_SEAL",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C05_VISIBILITY_AND_ACTOR_RIGHTS_ARE_INTERNALLY_INCONSISTENT",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The stage matrix and actor allowlist disagree about target visibility and omit or combine privileges needed to create the very artifacts the gates require.",
+      "evidence": "The matrix marks target_and_quarantine forbidden during ACQUISITION_SLEEP, yet CONTROLLER may read the run manifest, which Section 4 says contains all acquisition and target URIs and baselines. SEALER is allowed to create a final run manifest despite having no model/tokenizer/trainer/hardware inputs, while the later closed run-manifest assembler is not an actor. PUBLISHER_LOADER combines mutation and mounting authority even though target loading should be read-only. AUDITOR_REPORTER is not allowed to create the report because every unlisted write is an integrity failure, and the fresh T05/T06 reviewers have no declared evidence-read or verdict-write boundary. These are not merely missing OS details: the stated allowlist cannot execute its own lifecycle, and the target-blindness claim needs to distinguish target identity known to a frozen orchestrator from target results or role labels capable of influencing a model, writer, or later choice.",
+      "acceptance_test_ids": [
+        "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+        "V6S6_T04_CPU_DOUBLE_SEAL",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C06_EXCESSIVE_CLOSURE_RISKS_ENGINEERING_THEATER",
+      "category": "scalability",
+      "severity": "blocking",
+      "statement": "The proposal overcorrects v5 by making exhaustive per-actor OS capability closure and peripheral byte accounting part of the scientific integrity condition for a deliberately minimal one-life assay.",
+      "evidence": "Section 7 declares every unlisted read/create/write/delete by eleven logical actors an INTEGRITY_FAILURE and asks the later manifest and reviews to close repository files, loaded shared libraries, every environment variable, driver/GPU identity, argv/cwd, all paths, network state, service processes, inherited state, caches, and teardown. T03 then fault-injects every actor capability and T06 recomputes every process surface. Yet the allowed conclusion is explicitly only that no forbidden access was found on enumerated surfaces, not a global noninterference proof. Many logical actors need not be OS principals, loaded-library inventories and environment metadata can vary without altering the registered treatment, and proving every negative channel can dominate the LoRA experiment. This risks making RECIPE_COMPLETE a measure of bespoke sandbox engineering and audit paperwork rather than whether the simple success-filtered recipe runs. The systems interpretation proposes even stronger exact schemas and sandbox receipts; those remedies should be accepted only for the small set of causal boundaries, not silently generalized to every artifact and OS fact.",
+      "acceptance_test_ids": [
+        "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C07_DETERMINISM_EXCEEDS_THE_EVIDENCE",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "The writer/build path is described as deterministic although the realized sleep-1 build is never repeated and final A/B builds are allowed to differ numerically and by hash.",
+      "evidence": "The systems interpretation correctly distinguishes a deterministic recipe from demonstrated exact execution determinism. Sleep 1 causally changes later E history and the sleep-2 corpus, but has only one build. Sleep-2 A and B pass under absolute and relative tolerances that explicitly admit byte-distinct adapters. Requiring a second sleep-1 build would add up to another 576 costly updates and move the assay further from the owner's simple lower bracket. The scientifically proportionate resolution is to call the algorithm manifest-pinned and the final check bounded numerical reproducibility, bind the realized sleep-1 and authentic A hashes, and avoid an exact-determinism claim rather than add another build solely to defend a word.",
+      "acceptance_test_ids": [
+        "V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C08_ONE_SHOT_RESOURCE_PREFLIGHT_IS_TOO_VAGUE",
+      "category": "scalability",
+      "severity": "material",
+      "statement": "The no-canary, no-rerun, single-GH200 authorization lacks a bounded resource-fit criterion even though the worst-case recipe contains 2,880 single-sample 32B LoRA updates.",
+      "evidence": "With 24 possible rows after task 4 and 48 after task 8, the fixed 24-copy recipe schedules at most 576 sleep-1 updates plus 1,152 each for build A and build B, potentially at 4,096 tokens, before cold inference and twelve target forks. T05 says only that a reviewer inspects the 32B stack and GH200 identity. The scientific interpretation is right that model-weight fit does not imply activation, optimizer, scratch-storage, or supported-kernel headroom. It overreaches if read as demanding a guaranteed worst-case wall-clock prediction without a GPU preflight: this one-life assay can legitimately end INDETERMINATE. A simple static peak-memory/storage calculation, supported-kernel check, free-space threshold, run timeout, and operator-reviewed time estimate are enough to avoid an obviously impossible authorization.",
+      "acceptance_test_ids": [
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C09_SPLIT_DISTINCTNESS_WORDING_IS_AMBIGUOUS",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "The structured T04 expected result does not say whether distinctness is across all twelve selected programs within each hash modality, even though that exact rule determines eligibility.",
+      "evidence": "Protocol Section 4's already-selected source-hash and bitcode-hash rejection rules imply twelve pairwise-distinct source hashes and, separately, twelve pairwise-distinct bitcode hashes across acquisition plus target. change.json instead says only that 8/4 source and bitcode hashes are distinct, which admits within-split or between-split readings. Cross-modality equality between a source hash and a bitcode hash is not scientifically meaningful and need not become another cryptographic requirement; the material requirement is exact nonreuse within each modality over the full selected panel. The final report must retain the protocol's explicit warning that this is only syntactic holdout and says nothing about semantic relatedness.",
+      "acceptance_test_ids": [
+        "V6S6_T04_CPU_DOUBLE_SEAL",
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_V6_C10_COMPLEMENTARY_SCOPE_NEEDS_EXPLICIT_OWNER_ACCEPTANCE",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The assay is a useful hand-specified action-cloning lower bracket, but it does not answer the directive's broader persistent-context, deciding-what-to-think, time-awareness, or intelligent memory-compilation design questions.",
+      "evidence": "Both interpretations agree on the narrowing. The proposal and protocol now state the limitation substantially correctly, so no new thinker phase, free-flow arm, ablation suite, or paper-scale control should be added here. The remaining risk is naming and promotion: Experience Model v6 or RECIPE_COMPLETE could be summarized later as validating the v6 conscious/subconscious architecture. Exact human ratification and every report must identify this as a separate complementary v6simple namespace and preserve the deferred questions. Success or failure is evidence about this frozen recipe only.",
+      "acceptance_test_ids": [
+        "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+        "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "ACQUISITION_SLEEP marks target material forbidden while CONTROLLER may read the complete run manifest containing target URIs and baselines; the contract must either give acquisition a target-free manifest projection or narrow the protected property to target-result and model/trainer influence.",
+    "The actor list has no closed-run-manifest assembler/comparator/promoter with the inputs and writes needed after double sealing, while SEALER is granted a final-run-manifest write it cannot populate from its allowed inputs.",
+    "PUBLISHER_LOADER unions write-capable publication and read-only mounting authority, so the target-time loader has more privilege than the claimed immutable-mount intervention requires.",
+    "AUDITOR_REPORTER and the fresh T05/T06 reviewers lack explicit report/verdict output rights under a rule that treats every unlisted write as an integrity failure.",
+    "The one-way target-result barrier is scientifically important, but the current default-deny claim ranges over many unstated execution, IPC, descriptor, network, metadata, and cache mechanisms; prose enumeration neither enforces them nor justifies making every peripheral access a scientific failure."
+  ],
+  "missing_acceptance_tests": [
+    "A quantitative no-model resource-fit preflight, which may be incorporated into V6S6_T05 rather than added as a new scientific arm: compute the exact stack's static peak model/LoRA/optimizer/activation and scratch-storage envelope, verify supported deterministic kernels and free space, bind a timeout and reviewed time estimate, and reject manifest authorization if the run is obviously infeasible.",
+    "If the revised proposal retains strong per-actor OS default-deny claims, a real-runtime sandbox-policy enforcement and escape/evasion test is missing; alternatively, narrow T03/T06 to a small set of enforceable trust boundaries and causal read/write invariants so such a broad security test is unnecessary."
+  ],
+  "human_questions": [
+    "Will Rohin require revised exact bytes that replace impossible H/E artifact equality with one identity-aware parity projection and use the single registered V6S6_T06_ACTUAL_RUN_CONFORMANCE ID as a hard gate before every result or disposition release?",
+    "What exact missing-cell rule and rational or canonical numeric encoding should govern F, D_HE, and D_ONOFF when the target panel is incomplete or complete?",
+    "Which minimal core receipts and state links will be canonical: target/failure cells, pre/post snapshots, task/sleep commits, authentic double-seal promotion, mounts, barrier, conformance verdict, and final report?",
+    "Do you prefer a small set of enforceable causal trust boundaries over exhaustive OS closure for eleven logical actors, so the lower-bracket assay does not become a secure-systems engineering project?",
+    "Do you accept manifest-pinned execution with a realized sleep-1 hash and bounded A/B numerical reproducibility, without adding a comparison-only sleep-1 rebuild merely to claim exact determinism?",
+    "What static memory, activation, storage, kernel-support, free-space, timeout, and reviewed time margins must T05 require before the one-shot 32B GH200 run can be presented for ratification?",
+    "Do you explicitly ratify this only as the separate v6simple success-filtered action-cloning lower bracket, with persistent context, what-to-think recursion, time awareness, intelligent sleep, replication, efficacy, and paper inference left to new changes?"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260904_rml_g1_control_ceiling_repair_v1",
+  "title": "RML-G1 selected-slice control-ceiling repair",
+  "summary": "Repair one constructibility error discovered before model dispatch: retain the empirical P ATOMS_REC 0/2 gate, but replace the impossible claim that a two-side P slice has structural success capacity 0/2 with an exact enumerated capacity and witness. Clarify that every supplied-gold store is built only from the sealed public source before target selection.",
+  "system_thesis": "A causal gate is useful only if its pre-dispatch structural claims are true. Observed model failure and information-theoretic impossibility are different estimands and must remain separate.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260904_rml_g1_control_ceiling_repair_v1/human_directive.txt",
+      "sha256": "4c13e88ba8981d2c46cb1cc673a858d07a71e15bf0feed63fdf7c76c653dbfc6",
+      "purpose": "Verbatim owner instruction to continue autonomous paper-directed work and reserve human intervention for genuine taste decisions."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding architecture-change, review, and GPU gate contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260903_rml_g1_gold_action_fast_v1/consensus.json",
+      "sha256": "1c27cbe6ac3adda14078f2cdbfe62785ce7161b4ae35c2fb96b899b40da53cb9",
+      "purpose": "The exact G1 consensus whose T03 selected-slice clause contains the inconsistency."
+    },
+    {
+      "path": "research_loop/changes/chg_20260903_rml_g1_gold_action_fast_v1/ratification.json",
+      "sha256": "fa6dd830a67ba03dd336945e74759ae58ce075de201573c4037798cba2e4ab53",
+      "purpose": "The human-approved G1 scope that remains binding except for the proposed narrow amendment."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_rml_g1_control_ceiling_repair_v1/constructibility_audit.md",
+      "sha256": "77dc21581b9bcd182008ddf1ea6fd4b8a85774b5b7b085e816ceffc367776d12",
+      "purpose": "Replayable constructibility finding and the narrow proposed repair."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "modify",
+        "node_id": "RML_G1_SELECTED_SLICE_CERTIFIER",
+        "before": "T03 is required to certify P ATOMS_REC exactly 0/2 as though that empirical gate were a structural capacity of the selected two-side P slice.",
+        "after": "T03 enumerates and records the exact best visible-policy capacity for NONE_REC and P ATOMS_REC, with replayable successful-policy witnesses; T05 separately applies the preregistered empirical model-outcome gates.",
+        "rationale": "Every two-side H/twin P slice admits a fixed nine-action solution for one side, so its structural capacity is at least 1/2 and cannot be 0/2."
+      },
+      {
+        "operation": "modify",
+        "node_id": "GOLD_SNAPSHOT_BUILDER",
+        "before": "R03 requires a source-only pretarget builder, but an implementation could appear target-blind while accepting hidden TargetSpec fields.",
+        "after": "The builder accepts only the sealed public source and registered semantic reference; passing target, side, useful-pair, transform, valve truth, score, or plan objects is forbidden and hidden-target mutations cannot change store/query/visible bytes.",
+        "rationale": "Target-independent supplied gold cannot be synthesized from the evaluation target's hidden answer."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "modify",
+        "edge_id": "RML_G1_SLICE_CERTIFICATE_TO_CAUSAL_GATE",
+        "from": "RML_G1_SELECTED_SLICE_CERTIFIER",
+        "to": "RML_G1_EXACT_18_TRAJECTORY_CAUSAL_GATE",
+        "before": "A structural capacity assertion of P ATOMS_REC 0/2 is treated as a prerequisite for the same observed 0/2 threshold.",
+        "after": "The frozen exact capacity and its witness contextualize the observed 0/2 threshold but do not predetermine it; any mismatch is reported, never repaired after dispatch.",
+        "rationale": "Separating construct capacity from model behavior preserves both the falsifier and honest interpretation."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "modify",
+        "loop_id": "RML_G1_PREMODEL_CERTIFICATION_AND_DISPATCH",
+        "before": "Preflight blocks unless it can prove the selected P ATOMS_REC arm has exact structural capacity 0/2.",
+        "after": "Preflight blocks unless it exactly enumerates each selected control's true visible-policy capacity and emits witnesses; dispatch then retains the original 18 trajectories, 234 opportunities, and empirical 0/2 P ATOMS_REC gate without retries or reselection.",
+        "trigger": "The narrow amendment is ratified, source-only construction and exact enumeration pass, and all original G1 prerequisites pass.",
+        "reads": [
+          "sealed public source and semantic reference",
+          "sealed selected-slice public views and action protocol",
+          "original ratified G1 roster and empirical gates"
+        ],
+        "writes": [
+          "exact capacity certificate with replayable policy witnesses",
+          "source-only snapshot noninterference evidence",
+          "unchanged immutable 18-trajectory opportunity ledger"
+        ],
+        "stop_condition": "Stop before any model call on source/target leakage, failed enumeration, missing witness, review rejection, or any original G1 stop condition.",
+        "rationale": "The repair removes a false mathematical prerequisite without widening the model run."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "modify",
+        "claim_id": "C_RML_G1_CONTROL_INTERPRETATION",
+        "before": "P ATOMS_REC 0/2 may be described as both a fixture-guaranteed ceiling and an observed model result.",
+        "after": "P ATOMS_REC 0/2 is only a preregistered observed result required for this gate; the separately reported exact two-side structural capacity and successful-policy witness are not paper evidence and cannot be called a zero ceiling.",
+        "evidence_needed": "A frozen exhaustive capacity certificate, independent review, and the unchanged no-retry empirical gate.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "SEALED_PUBLIC_SOURCE_AND_REFERENCE",
+      "HIDDEN_TARGET_TRUTH_AND_SCORE"
+    ],
+    "stages": [
+      "GOLD_SNAPSHOT_BUILDER",
+      "SELECTED_SLICE_CERTIFIER",
+      "MODEL_RESOLVER"
+    ],
+    "cells": [
+      {"information_id":"SEALED_PUBLIC_SOURCE_AND_REFERENCE","stage_id":"GOLD_SNAPSHOT_BUILDER","visibility":"visible","reason":"This is the only content authority for supplied-gold and atoms stores."},
+      {"information_id":"SEALED_PUBLIC_SOURCE_AND_REFERENCE","stage_id":"SELECTED_SLICE_CERTIFIER","visibility":"visible","reason":"The certifier models each arm's exact source-derived visible information."},
+      {"information_id":"SEALED_PUBLIC_SOURCE_AND_REFERENCE","stage_id":"MODEL_RESOLVER","visibility":"derived_only","reason":"The resolver sees only rows returned for its emitted keys, never the source corpus itself."},
+      {"information_id":"HIDDEN_TARGET_TRUTH_AND_SCORE","stage_id":"GOLD_SNAPSHOT_BUILDER","visibility":"forbidden","reason":"Hidden evaluation truth cannot construct supplied memory."},
+      {"information_id":"HIDDEN_TARGET_TRUTH_AND_SCORE","stage_id":"SELECTED_SLICE_CERTIFIER","visibility":"visible","reason":"Offline exhaustive capacity certification must compare policies against all hidden side transitions before model dispatch."},
+      {"information_id":"HIDDEN_TARGET_TRUTH_AND_SCORE","stage_id":"MODEL_RESOLVER","visibility":"forbidden","reason":"Neither the capacity witness nor hidden target or score may enter cognition."}
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS",
+      "kind": "invariant",
+      "setup": "Enumerate deterministic visible policies over the selected NONE and P ATOMS information classes under four reads and nine public actions; replay every claimed lower-bound witness and independently verify the upper bound.",
+      "expected": "The artifact reports the true exact capacities, including P ATOMS capacity at least 1/2, and never relabels empirical 0/2 as structural impossibility.",
+      "falsifies": "The repaired preflight still encodes a mathematically false control ceiling.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/selected_slice_capacity.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1A_T02_SOURCE_ONLY_GOLD_CONSTRUCTION",
+      "kind": "invariant",
+      "setup": "Build and seal stores before target selection from public source/reference inputs, then mutate and permute all hidden target fields while comparing snapshot, index, query-universe, handle, and all model-visible bytes.",
+      "expected": "All pretarget store and serving bytes are identical under hidden-target mutations; the builder API cannot accept a target or scorer object.",
+      "falsifies": "The supplied-gold control contains evaluation answers derived from its target rather than source-supported rows.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/source_only_snapshot_audit.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL",
+      "kind": "independent_review",
+      "setup": "Diff the repaired roster, prompts, resource/model limits, opportunity registry, interventions, empirical thresholds, and claim whitelist against the original ratified G1 consensus.",
+      "expected": "Only the impossible capacity assertion and target-builder ambiguity change; empirical P ATOMS_REC remains 0/2 and every other original G1 boundary is byte-equivalent or stricter.",
+      "falsifies": "The repair covertly widens or makes the gate easier after design inspection.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/amendment_scope_audit.json",
+      "required_before": "gpu_run"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "Ratify the narrow correction that preserves empirical P ATOMS_REC 0/2 but reports the selected two-side arm's actual exact structural capacity and forbids any target-derived GOLD construction, with no other G1 expansion?",
+    "forbidden_before_approval": [
+      "GPU canary or scientific model dispatch",
+      "claiming P ATOMS_REC has a zero structural ceiling",
+      "using target-derived evaluation truth to build GOLD or ATOMS rows",
+      "changing any other G1 roster, threshold, prompt, model, seed, resource, intervention, or claim"
+    ]
+  }
+}

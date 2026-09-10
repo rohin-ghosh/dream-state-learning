@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcfl:compose:experiment-call-ledger:v2",
+  "title": "PCFL-Compose v2 orthogonal call, process, resource, and endpoint ledger",
+  "$ref": "#/$defs/ledger",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "call_id": {"type": "string", "pattern": "^s[12]-call-[0-9]{4}$"},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"},
+    "limits": {
+      "oneOf": [
+        {"const": {"invocation_class":"RECURRENT_DREAM1","input_token_cap":16384,"phase_output_token_max":8192,"prospective_server_rule":"MIN_2048_PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"RECURRENT_DREAM2","input_token_cap":16384,"phase_output_token_max":4096,"prospective_server_rule":"MIN_2048_PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"ONE_SHOT_DREAM1","input_token_cap":32768,"phase_output_token_max":8192,"prospective_server_rule":"PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"ONE_SHOT_DREAM2","input_token_cap":32768,"phase_output_token_max":4096,"prospective_server_rule":"PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"RECURRENT_THINK_D1","input_token_cap":16384,"phase_output_token_max":5120,"prospective_server_rule":"MIN_512_PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"RECURRENT_THINK_D4","input_token_cap":16384,"phase_output_token_max":15872,"prospective_server_rule":"MIN_512_PHASE_REMAINDER"}},
+        {"const": {"invocation_class":"ONE_SHOT_THINK_D4","input_token_cap":32768,"phase_output_token_max":15872,"prospective_server_rule":"PHASE_REMAINDER"}}
+      ]
+    },
+    "returned_metrics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_input_tokens", "raw_output_tokens", "accepted_output_tokens", "input_jcs_bytes", "output_jcs_bytes", "operation_count", "read_count", "action_count", "live_tuple_bytes", "phase_tokens_remaining_before", "phase_tokens_remaining_after", "wall_milliseconds", "device_milliseconds", "artifact_bytes"],
+      "properties": {
+        "raw_input_tokens": {"type": "integer", "minimum": 1, "maximum": 32768},
+        "raw_output_tokens": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "accepted_output_tokens": {"oneOf": [{"type":"integer","minimum":0,"maximum":15872},{"type":"null"}]},
+        "input_jcs_bytes": {"type": "integer", "minimum": 1, "maximum": 81920},
+        "output_jcs_bytes": {"oneOf": [{"type":"integer","minimum":1,"maximum":65536},{"type":"null"}]},
+        "operation_count": {"const": 1},
+        "read_count": {"type": "integer", "minimum": 0, "maximum": 1},
+        "action_count": {"type": "integer", "minimum": 0, "maximum": 4},
+        "live_tuple_bytes": {"type": "integer", "minimum": 0, "maximum": 32768},
+        "phase_tokens_remaining_before": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "phase_tokens_remaining_after": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "wall_milliseconds": {"type": "integer", "minimum": 0},
+        "device_milliseconds": {"type": "integer", "minimum": 0},
+        "artifact_bytes": {"type": "integer", "minimum": 0}
+      }
+    },
+    "failed_attempt_metrics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_input_tokens", "raw_output_tokens", "accepted_output_tokens", "input_jcs_bytes", "output_jcs_bytes", "operation_count", "read_count", "action_count", "live_tuple_bytes", "phase_tokens_remaining_before", "phase_tokens_remaining_after", "wall_milliseconds", "device_milliseconds", "artifact_bytes"],
+      "properties": {
+        "raw_input_tokens": {"type": "integer", "minimum": 0, "maximum": 32768},
+        "raw_output_tokens": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "accepted_output_tokens": {"type": "null"},
+        "input_jcs_bytes": {"type": "integer", "minimum": 0, "maximum": 81920},
+        "output_jcs_bytes": {"type": "null"},
+        "operation_count": {"const": 1},
+        "read_count": {"const": 0},
+        "action_count": {"const": 0},
+        "live_tuple_bytes": {"type": "integer", "minimum": 0, "maximum": 32768},
+        "phase_tokens_remaining_before": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "phase_tokens_remaining_after": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "wall_milliseconds": {"type": "integer", "minimum": 0},
+        "device_milliseconds": {"type": "integer", "minimum": 0},
+        "artifact_bytes": {"type": "integer", "minimum": 0}
+      }
+    },
+    "not_invoked_metrics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_input_tokens", "raw_output_tokens", "accepted_output_tokens", "input_jcs_bytes", "output_jcs_bytes", "operation_count", "read_count", "action_count", "live_tuple_bytes", "phase_tokens_remaining_before", "phase_tokens_remaining_after", "wall_milliseconds", "device_milliseconds", "artifact_bytes"],
+      "properties": {
+        "raw_input_tokens": {"const": 0}, "raw_output_tokens": {"const": 0},
+        "accepted_output_tokens": {"type": "null"}, "input_jcs_bytes": {"const": 0},
+        "output_jcs_bytes": {"type": "null"}, "operation_count": {"const": 0},
+        "read_count": {"const": 0}, "action_count": {"const": 0},
+        "live_tuple_bytes": {"const": 0}, "phase_tokens_remaining_before": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "phase_tokens_remaining_after": {"type": "integer", "minimum": 0, "maximum": 15872}, "wall_milliseconds": {"const": 0},
+        "device_milliseconds": {"const": 0}, "artifact_bytes": {"const": 0}
+      }
+    },
+    "record_common": {
+      "type": "object",
+      "required": ["call_id", "call_index", "assignment_id", "session_id", "stage", "resolver_ordinal", "display_operation_number", "limits", "assignment_status", "stage_status", "invocation_status", "parse_reducer_status", "assignment_terminal", "scientific_endpoint", "terminal_reason", "metrics", "runtime_envelope_sha256", "sampler_config_id"],
+      "properties": {
+        "call_id": {"$ref": "#/$defs/call_id"},
+        "call_index": {"type": "integer", "minimum": 1, "maximum": 3414},
+        "assignment_id": {"$ref": "#/$defs/id"}, "session_id": {"$ref": "#/$defs/id"},
+        "stage": {"enum": [1, 2]}, "resolver_ordinal": {"type": "integer", "minimum": 0, "maximum": 31},
+        "display_operation_number": {"type": "integer", "minimum": 1, "maximum": 32},
+        "limits": {"$ref": "#/$defs/limits"}, "assignment_status": {"const": "ASSIGNED"},
+        "stage_status": {"enum": ["OPENED", "NOT_TRIGGERED", "NOT_RUN"]},
+        "invocation_status": {"enum": ["NOT_INVOKED", "RETURNED", "TIMEOUT", "ENGINE_ERROR", "PROCESS_CRASH"]},
+        "parse_reducer_status": {"enum": ["NOT_APPLICABLE", "ACCEPTED", "MALFORMED", "ILLEGAL_TRANSITION", "UNAVAILABLE_READ", "EARLY_LOCK", "ABSTAIN"]},
+        "assignment_terminal": {"type":"boolean"},
+        "scientific_endpoint": {"oneOf": [{"enum":[0,1]},{"type":"null"}]},
+        "terminal_reason": {"enum": ["CONTINUE", "CORRECT", "LEGAL_WRONG", "MALFORMED", "TIMEOUT", "ILLEGAL_ACTION", "EARLY_LOCK", "UNAVAILABLE_READ", "ABSTAIN", "INFRASTRUCTURE_FAILURE", "NOT_TRIGGERED", "NOT_RUN", "NOT_APPLICABLE_AFTER_TERMINAL"]},
+        "metrics": {"type": "object"}, "runtime_envelope_sha256": {"$ref": "#/$defs/sha256"},
+        "sampler_config_id": {"const": "pcfl-v2-sampler-r1"}
+      }
+    },
+    "returned_record": {
+      "allOf": [
+        {"$ref": "#/$defs/record_common"},
+        {"type":"object","unevaluatedProperties":false,"properties":{"stage_status":{"const":"OPENED"},"invocation_status":{"const":"RETURNED"},"parse_reducer_status":{"enum":["ACCEPTED","MALFORMED","ILLEGAL_TRANSITION","UNAVAILABLE_READ","EARLY_LOCK","ABSTAIN"]},"assignment_terminal":{"type":"boolean"},"scientific_endpoint":{"oneOf":[{"enum":[0,1]},{"type":"null"}]},"terminal_reason":{"enum":["CONTINUE","CORRECT","LEGAL_WRONG","MALFORMED","ILLEGAL_ACTION","EARLY_LOCK","UNAVAILABLE_READ","ABSTAIN"]},"metrics":{"$ref":"#/$defs/returned_metrics"}}}
+      ]
+    },
+    "failed_attempt_record": {
+      "allOf": [
+        {"$ref": "#/$defs/record_common"},
+        {"type":"object","unevaluatedProperties":false,"properties":{"stage_status":{"const":"OPENED"},"invocation_status":{"enum":["TIMEOUT","ENGINE_ERROR","PROCESS_CRASH"]},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"assignment_terminal":{"const":true},"scientific_endpoint":{"const":0},"terminal_reason":{"enum":["TIMEOUT","INFRASTRUCTURE_FAILURE"]},"metrics":{"$ref":"#/$defs/failed_attempt_metrics"}}}
+      ]
+    },
+    "not_triggered_record": {
+      "allOf": [
+        {"$ref": "#/$defs/record_common"},
+        {"type":"object","unevaluatedProperties":false,"properties":{"stage":{"const":2},"stage_status":{"const":"NOT_TRIGGERED"},"invocation_status":{"const":"NOT_INVOKED"},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"assignment_terminal":{"const":false},"scientific_endpoint":{"type":"null"},"terminal_reason":{"const":"NOT_TRIGGERED"},"metrics":{"$ref":"#/$defs/not_invoked_metrics"}}}
+      ]
+    },
+    "not_run_record": {
+      "allOf": [
+        {"$ref": "#/$defs/record_common"},
+        {"type":"object","unevaluatedProperties":false,"properties":{"stage_status":{"const":"NOT_RUN"},"invocation_status":{"const":"NOT_INVOKED"},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"assignment_terminal":{"const":true},"scientific_endpoint":{"const":0},"terminal_reason":{"const":"NOT_RUN"},"metrics":{"$ref":"#/$defs/not_invoked_metrics"}}}
+      ]
+    },
+    "after_terminal_record": {
+      "allOf": [
+        {"$ref": "#/$defs/record_common"},
+        {"type":"object","unevaluatedProperties":false,"properties":{"stage_status":{"const":"OPENED"},"invocation_status":{"const":"NOT_INVOKED"},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"assignment_terminal":{"const":false},"scientific_endpoint":{"type":"null"},"terminal_reason":{"const":"NOT_APPLICABLE_AFTER_TERMINAL"},"metrics":{"$ref":"#/$defs/not_invoked_metrics"}}}
+      ]
+    },
+    "call_record": {"oneOf": [{"$ref":"#/$defs/returned_record"},{"$ref":"#/$defs/failed_attempt_record"},{"$ref":"#/$defs/not_triggered_record"},{"$ref":"#/$defs/not_run_record"},{"$ref":"#/$defs/after_terminal_record"}]},
+    "replay_record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["slot_id", "source_call_id", "failure_class", "exact_input_match", "exact_seed_match", "exact_runtime_match", "fresh_process", "replacement_allowed", "endpoint_allowed", "raw_input_tokens", "raw_output_tokens"],
+      "properties": {
+        "slot_id": {"enum": ["replay-001", "replay-002"]}, "source_call_id": {"$ref": "#/$defs/call_id"},
+        "failure_class": {"enum": ["DEVICE_RUNTIME_FAULT_BEFORE_RESPONSE", "ENGINE_PROCESS_CRASH_BEFORE_RESPONSE", "ENGINE_START_FAILURE", "TRANSPORT_EOF_BEFORE_RESPONSE"]},
+        "exact_input_match": {"const": true}, "exact_seed_match": {"const": true}, "exact_runtime_match": {"const": true},
+        "fresh_process": {"const": true}, "replacement_allowed": {"const": false}, "endpoint_allowed": {"const": false},
+        "raw_input_tokens": {"type":"integer","minimum":0,"maximum":32768}, "raw_output_tokens": {"type":"integer","minimum":0,"maximum":15872}
+      }
+    },
+    "assignment_outcome": {
+      "oneOf": [
+        {
+          "type":"object","additionalProperties":false,
+          "required":["assignment_id","row_id","assignment_status","stage_status","invocation_status","parse_reducer_status","scientific_endpoint","terminal_reason"],
+          "properties":{"assignment_id":{"$ref":"#/$defs/id"},"row_id":{"$ref":"#/$defs/id"},"assignment_status":{"const":"ASSIGNED"},"stage_status":{"const":"OPENED"},"invocation_status":{"enum":["RETURNED","TIMEOUT","ENGINE_ERROR","PROCESS_CRASH"]},"parse_reducer_status":{"enum":["ACCEPTED","MALFORMED","ILLEGAL_TRANSITION","UNAVAILABLE_READ","EARLY_LOCK","ABSTAIN","NOT_APPLICABLE"]},"scientific_endpoint":{"enum":[0,1]},"terminal_reason":{"enum":["CORRECT","LEGAL_WRONG","MALFORMED","TIMEOUT","ILLEGAL_ACTION","EARLY_LOCK","UNAVAILABLE_READ","ABSTAIN","INFRASTRUCTURE_FAILURE"]}}
+        },
+        {
+          "type":"object","additionalProperties":false,
+          "required":["assignment_id","row_id","assignment_status","stage_status","invocation_status","parse_reducer_status","scientific_endpoint","terminal_reason"],
+          "properties":{"assignment_id":{"$ref":"#/$defs/id"},"row_id":{"$ref":"#/$defs/id"},"assignment_status":{"const":"ASSIGNED"},"stage_status":{"const":"NOT_TRIGGERED"},"invocation_status":{"const":"NOT_INVOKED"},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"scientific_endpoint":{"type":"null"},"terminal_reason":{"const":"NOT_TRIGGERED"}}
+        },
+        {
+          "type":"object","additionalProperties":false,
+          "required":["assignment_id","row_id","assignment_status","stage_status","invocation_status","parse_reducer_status","scientific_endpoint","terminal_reason"],
+          "properties":{"assignment_id":{"$ref":"#/$defs/id"},"row_id":{"$ref":"#/$defs/id"},"assignment_status":{"const":"ASSIGNED"},"stage_status":{"const":"NOT_RUN"},"invocation_status":{"const":"NOT_INVOKED"},"parse_reducer_status":{"const":"NOT_APPLICABLE"},"scientific_endpoint":{"const":0},"terminal_reason":{"const":"NOT_RUN"}}
+        }
+      ]
+    },
+    "aggregate": {
+      "type":"object","additionalProperties":false,
+      "required":["assigned_scientific_calls","stage1_calls","conditional_stage2_calls","maximum_process_calls","scientific_input_token_ceiling","scientific_output_token_ceiling","process_input_token_ceiling","process_output_token_ceiling","process_combined_token_ceiling"],
+      "properties":{"assigned_scientific_calls":{"const":3414},"stage1_calls":{"const":910},"conditional_stage2_calls":{"const":2504},"maximum_process_calls":{"const":3416},"scientific_input_token_ceiling":{"const":56066048},"scientific_output_token_ceiling":{"const":1709056},"process_input_token_ceiling":{"const":56131584},"process_output_token_ceiling":{"const":1740800},"process_combined_token_ceiling":{"const":57872384}}
+    },
+    "ledger": {
+      "type":"object","additionalProperties":false,
+      "required":["artifact","schema_version","assignment_manifest_sha256","gate_evaluation_sha256","records","assignment_outcomes","replays","aggregate"],
+      "properties":{"artifact":{"const":"PCFL_V2_EXPERIMENT_CALL_LEDGER"},"schema_version":{"const":1},"assignment_manifest_sha256":{"$ref":"#/$defs/sha256"},"gate_evaluation_sha256":{"oneOf":[{"$ref":"#/$defs/sha256"},{"type":"null"}]},"records":{"type":"array","minItems":3414,"maxItems":3414,"items":{"$ref":"#/$defs/call_record"}},"assignment_outcomes":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/assignment_outcome"}},"replays":{"type":"array","maxItems":2,"items":{"$ref":"#/$defs/replay_record"}},"aggregate":{"$ref":"#/$defs/aggregate"}}
+    }
+  },
+  "x-runtime-invariants": [
+    "call_index is exactly 1..3414 and call_id is exactly s1-call-0001..0910 followed by s2-call-0001..2504; every assignment-manifest call resolves once and no extra record exists.",
+    "display_operation_number equals resolver_ordinal+1. Stored resolver ordinals are zero-based and are the only ordinals used by reducers or causal comparisons.",
+    "The limits object is the exact class contract. phase_tokens_remaining_before/after never exceed phase_output_token_max: 8192 Dream1, 4096 Dream2, 5120 recurrent Think D1, and 15872 recurrent or one-shot Think D4.",
+    "For an attempted call, prospective cap is the named limits rule; raw_output_tokens is charged even when malformed or rejected; remaining_after equals remaining_before minus raw_output_tokens and cannot be negative. Accepted op caps are enforced after parse.",
+    "Phase remainder counters are non-null integers on every preallocated call row, including NOT_INVOKED rows, so session continuity remains total. Null is confined to accepted/canonical output fields when no such output exists. A NOT_INVOKED branch is legal only for unopened Stage 2, environment-wide NOT_RUN, or a preallocated later slot after an earlier terminal in the same session; it charges zero raw output and preserves before=after.",
+    "On a call record, scientific_endpoint is non-null exactly when assignment_terminal=true; a nonterminal accepted call uses terminal_reason=CONTINUE and null endpoint. Each assignment has exactly one assignment_outcome, and all call projections agree with it.",
+    "A legal wrong returned action is RETURNED/ACCEPTED/LEGAL_WRONG with endpoint zero. Infrastructure replays never replace the source record or enter an endpoint and there is no third replay."
+  ]
+}

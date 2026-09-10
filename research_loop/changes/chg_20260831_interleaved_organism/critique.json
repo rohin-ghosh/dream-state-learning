@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "interleaved_cross_critique",
+  "change_id": "chg_20260831_interleaved_organism",
+  "state": "critiqued",
+  "architecture_change_sha256": "d830b37f11124778ff678b0bf1df59ca1aa4ca812f3d139c0ba3260a5d5ca87d",
+  "interpretation_hashes": [
+    {"interpretation_id": "interleaved_systems", "sha256": "2cea149429c05ab4606e0ddb88f08587187303760afb328cf3a40f58a41c9fd9"},
+    {"interpretation_id": "interleaved_benchmark", "sha256": "4a4503d8a7878d2b0790fe1f6eb2f13baf9708d7ccb8b711c24eba6830fe6785"}
+  ],
+  "context_files": [
+    {"path": "research_loop/plans/interleaved_organism_v1.md", "sha256": "6e773538ccc43622fba6a343a8a2f5591de81b4485c83ba404fc9c7b570e8b25", "purpose": "Cross-check both readings against the controlling architecture."}
+  ],
+  "strongest_case": "The proposal isolates a real architecture question: whether repeated local abstraction, parametric consolidation, and goal-conditioned reconstruction can turn a life of actions into better subsequent decisions. Its staged interface and causal controls can attribute each loss without claiming that the current harness is already learned.",
+  "reviewed_acceptance_test_ids": ["t_intake_gate", "t_cyclic_contract", "t_realization_separation", "t_feedback_non_evidence", "t_v03r_shortcuts", "t_recurrent_end_to_end", "t_independent_review"],
+  "concerns": [
+    {"concern_id": "c_independent_support", "category": "architecture", "severity": "blocking", "statement": "One canonical semantic item must admit multiple independent provenance derivations without duplicating the node.", "evidence": "The systems interpretation identifies reinforcement as an allowed dream operation while the initial contract allowed one derivation per conclusion.", "acceptance_test_ids": ["t_cyclic_contract", "t_realization_separation"], "resolution_required": true},
+    {"concern_id": "c_feedback_laundering", "category": "visibility_leak", "severity": "blocking", "statement": "A thinker answer, operation, confidence, or rationale must not be serialized as dream evidence or LoRA supervision.", "evidence": "The return edge is useful only as selection; otherwise the system can write its own unverified answer into memory.", "acceptance_test_ids": ["t_feedback_non_evidence", "t_recurrent_end_to_end"], "resolution_required": true},
+    {"concern_id": "c_calibration_scope", "category": "scientific", "severity": "material", "statement": "A success on v0.3-R alone cannot support context-scale, continual-learning, or action-improvement claims.", "evidence": "The full lifetime remains small and the leaves are public; raw context and iterative retrieval are plausible competitors.", "acceptance_test_ids": ["t_v03r_shortcuts", "t_independent_review"], "resolution_required": true},
+    {"concern_id": "c_compute_matching", "category": "evaluation", "severity": "material", "statement": "Feedback arms can gain simply from extra thinker or dream calls unless every arm receives matched budgets and actual usage is reported.", "evidence": "A recurrent condition naturally performs more computation than a one-way control.", "acceptance_test_ids": ["t_recurrent_end_to_end"], "resolution_required": true}
+  ],
+  "visibility_failures": ["Do not expose hidden goal truth to dream, realization, memory write, or thinker.", "Do not let cognitive feedback count as evidence.", "Do not expose the scorer-side graph topology to the model."],
+  "missing_acceptance_tests": ["Long-life saturation and Action World are deliberately deferred and must be added before the corresponding headline claims."],
+  "human_questions": ["Authorize the bounded CPU contracts and benchmark repair while keeping every GPU science transition and headline claim blocked?"]
+}

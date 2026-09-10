@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260831_v03r_live_text_recurrence_dev_v1",
+  "title": "First live-model v0.3-R recurrent text development transition",
+  "summary": "Authorize deliberation over one bounded, text-only GPU development transition that tests whether a non-evidentiary thinker frontier guides later local dreaming and paired reconstruction; LoRA, heldout access, result-driven repair, follow-up runs, and claim promotion remain outside scope.",
+  "system_thesis": "The first live GPU test should isolate the recurrent thinker-to-dream information path before adding parametric transport: public experience becomes provisional local semantic memory, an answer-blind public-evidence rule may admit exact entailed local joins as supported, a narrow thinker emits selection-only confusion, later dreaming independently re-derives a missing causal join, and a fresh final thinker reconstructs a paired decision from supported paths in the frozen text checkpoint.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260831_v03r_live_text_recurrence_dev_v1/human_directive.txt",
+      "sha256": "49aca47f3d44f7b86ecf77962415928d57204964f689e7cd9d32fdfb7f349f27",
+      "purpose": "Verbatim human directive requesting a pretested persistent architecture and an overnight GPU result without another wasted night."
+    },
+    {
+      "path": "research_loop/changes/chg_20260831_v03r_live_text_recurrence_dev_v1/experiment_spec.md",
+      "sha256": "6677f5171cfc2070ffcfc3eed9f131178809b37c46978a2c86588d7d2fa0a77a",
+      "purpose": "Exact proposed population, arms, schedules, model boundary, metrics, gates, artifacts, and forbidden conclusions."
+    },
+    {
+      "path": "research_loop/changes/chg_20260831_v03r_live_text_recurrence_dev_v1/scope_proposal.json",
+      "sha256": "46297d61d0ed2e8c8e50d5ab394b808816f70426d50b82435847562a714df14b",
+      "purpose": "Unratified exact requested GPU and bound-analysis scope plus explicit forbidden scope."
+    },
+    {
+      "path": "research_loop/workflows/v03r_live_text_recurrence_dev_v1.json",
+      "sha256": "813dcd21d93e93a247e2a1963f6b5ebee1255d73f0b966d0a97fa6aa793c7ed9",
+      "purpose": "Fail-closed durable workflow proposed for the exact transition."
+    },
+    {
+      "path": "research_loop/model_provider_boundary.py",
+      "sha256": "3d570de28a6285c8e628c8b002ae452c65be27631cf6252c7ae722ba60436eaf",
+      "purpose": "Exact authoritative model-call boundary with reset, request, response, parser, and provider receipt binding."
+    },
+    {
+      "path": "research_loop/test_model_provider_boundary.py",
+      "sha256": "49efcf69d686de578a899ea8d1e107782de2138106fe12bb43d0163996379513",
+      "purpose": "P0 adversarial tests for request mismatch, state leakage, parser provenance, and fail-closed provider behavior."
+    },
+    {
+      "path": "research_loop/experiment_call_ledger.py",
+      "sha256": "d3137604191c532b051af2b2fdf5844eed72b7bf147f18ef6c0d1da84eff32a7",
+      "purpose": "Experiment-level scheduled/provider/parser/admission bijection and one-physical-shared-prefix accounting."
+    },
+    {
+      "path": "research_loop/test_experiment_call_ledger.py",
+      "sha256": "cd8c4b061cb99529e52857469b5631181761f4ca9531b48dc933022aadb6d070",
+      "purpose": "P0 tests for exact schedule reconciliation, arm attribution, shared-prefix identity, and admission linkage."
+    },
+    {
+      "path": "research_loop/plans/interleaved_organism_v1.md",
+      "sha256": "6e773538ccc43622fba6a343a8a2f5591de81b4485c83ba404fc9c7b570e8b25",
+      "purpose": "Controlling recurrent organism graph, loop, rung order, and claim boundary."
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "First-principles objective and experiment-to-claim map."
+    },
+    {
+      "path": "research_notes/33_semantic_world_gpu_constraints.md",
+      "sha256": "0a15b5069747a430ea715f2470ac7a8df4207b59dda2184b7f6cde735f5d6f46",
+      "purpose": "Measured atomic-read, exposure, recognition, and transport constraints."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 honesty and verifier boundaries."
+    },
+    {
+      "path": "alchemy/v2_out/mini_ledger.md",
+      "sha256": "a0a077c6276d461864de5a67bd5c360f595e90d374cb9e2963c0ed39328c9549",
+      "purpose": "Prior measured LoRA transport and failed v5 corpus evidence motivating text-first sequencing."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding graph-first deliberation, independent-review, human-ratification, and GPU gate."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "live_model_semantic_dreamer",
+        "before": "The v0.3-R causal recurrence is certified only with a scripted gold semantic dreamer.",
+        "after": "A pinned frozen 32B model emits at most one provisional, provenance-bound local semantic operation from one event and a bounded semantic neighborhood.",
+        "rationale": "This is the first honest model proposal path and must not inherit the gold solver's answer or derivation."
+      },
+      {
+        "operation": "add",
+        "node_id": "public_evidence_support_admission",
+        "before": "Live model proposals enter provisional status, but final ThinkerMachine RELEASE traverses only supported edges; no answer-blind live promotion rule is yet ratified.",
+        "after": "A non-generative mechanical rule may promote only an already-proposed exact typed local join whose cited immutable public route/effect records share its declared connector and deterministically reproduce its endpoints, direction, and relation; every other proposal remains provisional.",
+        "rationale": "This disposes the provisional-to-RELEASE contradiction without giving a model critic, hidden verifier, or solver proposal authority; the exact grammar remains an explicit deliberation and human-ratification gate."
+      },
+      {
+        "operation": "modify",
+        "node_id": "goal_conditioned_thinker",
+        "before": "The repaired CPU condition exercises a recurrence-probe ceiling and does not score the exact final paired goal.",
+        "after": "A model-driven replayed ThinkerMachine first emits a non-answer typed frontier and, after MEMORY_1 freezes, receives only the public final question and releases a cited answer or defers.",
+        "rationale": "The transition must measure both missing-edge selection and downstream paired reconstruction without a precompleted answer."
+      },
+      {
+        "operation": "add",
+        "node_id": "matched_text_baselines",
+        "before": "The proposed live recurrence has no frozen same-run transcript, RAG, or wake-only reference.",
+        "after": "Full public transcript, bounded iterative episodic RAG, wake-only text memory, and CPU gold ceilings are evaluated with explicit budgets.",
+        "rationale": "A small calibration world fits context, so retrieval/context competence must be measured rather than treated as failure."
+      },
+      {
+        "operation": "add",
+        "node_id": "durable_gpu_transition",
+        "before": "No current workflow binds this interleaved v0.3-R transition to P0/P1, immutable reviews, remote markers, and exact human scope.",
+        "after": "A material-intake-bound workflow fails closed through CPU gates, complete freeze closure, two binding reviews, persistent remote markers, artifact verification, postcommit analysis, and a human stop.",
+        "rationale": "Overnight execution must survive disconnection without expanding scientific authority."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "model_frontier_selects_return_sleep",
+        "from": "goal_conditioned_thinker",
+        "to": "live_model_semantic_dreamer",
+        "before": "Only the scripted ceiling closes the public operational probe.",
+        "after": "An allowlisted own or matched-distractor frontier selects bounded RETURN_SLEEP views but cannot be cited or written.",
+        "rationale": "This is the causal return edge under test and prevents answer laundering."
+      },
+      {
+        "operation": "add",
+        "edge_id": "provisional_semantics_to_text_checkpoint",
+        "from": "live_model_semantic_dreamer",
+        "to": "public_evidence_support_admission",
+        "before": "No live-model recipient-local semantic snapshot reaches the exact final-goal thinker.",
+        "after": "Every parsed model claim enters provisional status with exact bounded-view citations; a model support flag, repetition, self-check, frontier, or private truth cannot promote it.",
+        "rationale": "Proposal generation and epistemic admission must be separable and auditable."
+      },
+      {
+        "operation": "add",
+        "edge_id": "supported_semantics_to_text_checkpoint",
+        "from": "public_evidence_support_admission",
+        "to": "goal_conditioned_thinker",
+        "before": "The final ThinkerMachine cannot legally RELEASE over a corpus containing only provisional live-model edges.",
+        "after": "Canonical realizations preserve both statuses in MEMORY_1, but only joins mechanically admitted from exact public evidence may participate in a RELEASE support path; provisional items remain retrieval/scratch-only.",
+        "rationale": "The live transition can test honest proposal plus use without laundering the answer or silently making provisional claims evidentiary."
+      },
+      {
+        "operation": "add",
+        "edge_id": "verified_artifacts_to_postcommit_score",
+        "from": "durable_gpu_transition",
+        "to": "matched_text_baselines",
+        "before": "No exact postcommit-only scoring path is bound to this transition.",
+        "after": "Only complete hash-verified artifacts reach offline truth scoring and result analysis; every next decision routes to a human boundary.",
+        "rationale": "Scoring may interpret committed behavior but cannot steer generation or authorize another experiment."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "v03r_live_text_recurrence_dev_v1",
+        "before": "The current CPU loop is a scripted recurrence-probe ceiling, while v5 was a non-recurrent direct-parent batch.",
+        "after": "For complete pair-local public schedules, run shared WAKE/reactivation/target-blind dreaming with answer-blind public-evidence admission, freeze MEMORY_0, run THINK_0, branch into no-feedback/own-agenda/matched-distractor RETURN_SLEEP under the same admission rule, freeze MEMORY_1, reveal the public final question, and run a fresh cited final thinker.",
+        "trigger": "One exact human-ratified development transition after every P0/P1 and immutable review gate passes.",
+        "reads": [
+          "complete public precheckpoint life",
+          "bounded recipient-local semantic snapshot",
+          "typed selection-only public frontier",
+          "sealed public final question after MEMORY_1"
+        ],
+        "writes": [
+          "provisional semantic operations with eligible premises",
+          "append-only public-evidence admission decisions and supported status events",
+          "canonical text realization manifest",
+          "immutable memory checkpoints",
+          "replayed thinker traces and cited terminal",
+          "postcommit-only paired metrics"
+        ],
+        "stop_condition": "Complete every valid arm/life, invalidate on an integrity breach, and route every result or failure to a human boundary; never launch a follow-up.",
+        "rationale": "This is the smallest GPU loop that can discriminate whether honest cognitive feedback improves later local causal memory and paired use."
+      },
+      {
+        "operation": "add",
+        "loop_id": "persistent_remote_execution_v1",
+        "before": "A local session or watcher could disappear during a long model run.",
+        "after": "Hash-bound remote start/progress/done/failed markers are authoritative; a disposable local watchdog may resume polling and artifact transfer but cannot infer completion or duplicate the run.",
+        "trigger": "Both independent reviews and exact intake/lock preflight approve the same bytes.",
+        "reads": [
+          "human-approved intake state",
+          "full import-closure lock",
+          "binding Fable and Sol review receipts",
+          "run-specific remote markers"
+        ],
+        "writes": [
+          "append-only supervisor events",
+          "run-specific remote artifacts",
+          "complete SHA-256 manifest",
+          "bound postcommit result packet"
+        ],
+        "stop_condition": "Verified done/failed marker, 12-hour hard timeout, immutable-review rejection, infrastructure escalation, or mandatory post-result human gate.",
+        "rationale": "Persistence solves unattended execution without transferring scientific authority to the watchdog."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "v03r_live_text_feedback_closure",
+        "before": "Only a scripted gold recurrence demonstrates that a typed frontier could close one local causal join.",
+        "after": "On aligned development collision twins, an honest live model may independently close more requested recipient-local causal joins and support more cited paired releases under own feedback than under no feedback or a matched irrelevant frontier.",
+        "evidence_needed": "Three complete paired development seeds, exact pair-local schedules and matched arms, postcommit closure/path scoring, paired-both-correct final results, full-context/RAG/wake-only baselines, exact compute, and two immutable independent approvals.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "public_precheckpoint_event",
+      "semantic_memory",
+      "public_entailment_admission",
+      "thinker_frontier",
+      "public_final_question",
+      "hidden_answer_or_private_state",
+      "offline_score_or_oracle"
+    ],
+    "stages": [
+      "dream_prefix",
+      "think_0",
+      "return_sleep",
+      "realize_and_memory",
+      "final_think",
+      "offline_score"
+    ],
+    "cells": [
+      {"information_id": "public_precheckpoint_event", "stage_id": "dream_prefix", "visibility": "visible", "reason": "One lived event plus its equivalent structured public record triggers each bounded dream."},
+      {"information_id": "public_precheckpoint_event", "stage_id": "think_0", "visibility": "derived_only", "reason": "The thinker sees only the immutable semantic/text checkpoint."},
+      {"information_id": "public_precheckpoint_event", "stage_id": "return_sleep", "visibility": "visible", "reason": "One recipient-local event may be reactivated by a frozen selector."},
+      {"information_id": "public_precheckpoint_event", "stage_id": "realize_and_memory", "visibility": "derived_only", "reason": "Only frozen semantic conclusions source canonical realizations."},
+      {"information_id": "public_precheckpoint_event", "stage_id": "final_think", "visibility": "hidden", "reason": "The final thinker uses the declared checkpoint reader, not raw history."},
+      {"information_id": "public_precheckpoint_event", "stage_id": "offline_score", "visibility": "visible", "reason": "Postcommit attribution may audit public provenance."},
+
+      {"information_id": "semantic_memory", "stage_id": "dream_prefix", "visibility": "visible", "reason": "At most six recipient-local semantic neighbors are visible."},
+      {"information_id": "semantic_memory", "stage_id": "think_0", "visibility": "derived_only", "reason": "The thinker receives an immutable canonical checkpoint projection."},
+      {"information_id": "semantic_memory", "stage_id": "return_sleep", "visibility": "visible", "reason": "Bounded recipient-local semantic neighbors may be extended or revised."},
+      {"information_id": "semantic_memory", "stage_id": "realize_and_memory", "visibility": "visible", "reason": "Live semantic items are the only realization sources."},
+      {"information_id": "semantic_memory", "stage_id": "final_think", "visibility": "derived_only", "reason": "The exact checkpoint reader returns immutable atomic items or NOT_FOUND."},
+      {"information_id": "semantic_memory", "stage_id": "offline_score", "visibility": "visible", "reason": "Committed structure and status are audited only after completion."},
+
+      {"information_id": "public_entailment_admission", "stage_id": "dream_prefix", "visibility": "derived_only", "reason": "After a proposal commits, a non-generative checker recomputes one exact typed join from its cited public route/effect records; it receives no goal, answer, or oracle."},
+      {"information_id": "public_entailment_admission", "stage_id": "think_0", "visibility": "derived_only", "reason": "The checkpoint exposes the resulting supported/provisional status, not hidden truth or checker rationale."},
+      {"information_id": "public_entailment_admission", "stage_id": "return_sleep", "visibility": "derived_only", "reason": "The identical fixed admission rule applies after each arm's proposal; the frontier cannot become evidence."},
+      {"information_id": "public_entailment_admission", "stage_id": "realize_and_memory", "visibility": "visible", "reason": "Canonical realizations preserve the append-only admission status and cited public evidence handles."},
+      {"information_id": "public_entailment_admission", "stage_id": "final_think", "visibility": "derived_only", "reason": "RELEASE may traverse only status=supported edges; provisional items may be read but cannot license an answer."},
+      {"information_id": "public_entailment_admission", "stage_id": "offline_score", "visibility": "visible", "reason": "Postcommit audit compares admission decisions with truth but cannot rewrite status or route another run."},
+
+      {"information_id": "thinker_frontier", "stage_id": "dream_prefix", "visibility": "hidden", "reason": "No thinker exists before MEMORY_0."},
+      {"information_id": "thinker_frontier", "stage_id": "think_0", "visibility": "derived_only", "reason": "A system allowlist projects only one typed missing/conflict item from the replayed trace."},
+      {"information_id": "thinker_frontier", "stage_id": "return_sleep", "visibility": "visible", "reason": "Own or matched frontier selects a view but has no evidentiary force."},
+      {"information_id": "thinker_frontier", "stage_id": "realize_and_memory", "visibility": "forbidden", "reason": "A frontier cannot source a semantic item, realization, touch, or checkpoint fact."},
+      {"information_id": "thinker_frontier", "stage_id": "final_think", "visibility": "hidden", "reason": "The final thinker receives MEMORY_1 and the public question, not the prior agenda as evidence."},
+      {"information_id": "thinker_frontier", "stage_id": "offline_score", "visibility": "visible", "reason": "Postcommit analysis measures consumption and closure."},
+
+      {"information_id": "public_final_question", "stage_id": "dream_prefix", "visibility": "forbidden", "reason": "It remains separately sealed before MEMORY_1."},
+      {"information_id": "public_final_question", "stage_id": "think_0", "visibility": "forbidden", "reason": "The intermediate operational probe is not the final task."},
+      {"information_id": "public_final_question", "stage_id": "return_sleep", "visibility": "forbidden", "reason": "Return dreaming cannot target the final question."},
+      {"information_id": "public_final_question", "stage_id": "realize_and_memory", "visibility": "forbidden", "reason": "The final question cannot enter memory training/text."},
+      {"information_id": "public_final_question", "stage_id": "final_think", "visibility": "visible", "reason": "It is revealed only after MEMORY_1 freezes."},
+      {"information_id": "public_final_question", "stage_id": "offline_score", "visibility": "visible", "reason": "The public task may be reported after commitment."},
+
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "dream_prefix", "visibility": "forbidden", "reason": "Latent bit, answer, scorer path, and oracle proof are never model inputs."},
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "think_0", "visibility": "forbidden", "reason": "The public compiler and machine have no private world object."},
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "return_sleep", "visibility": "forbidden", "reason": "Feedback selection cannot contain answer-bearing state."},
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "realize_and_memory", "visibility": "forbidden", "reason": "Private truth can never be realized or memorized."},
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "final_think", "visibility": "forbidden", "reason": "The thinker sees only the question and declared memory interface."},
+      {"information_id": "hidden_answer_or_private_state", "stage_id": "offline_score", "visibility": "visible", "reason": "A separate scorer may compare final committed predictions."},
+
+      {"information_id": "offline_score_or_oracle", "stage_id": "dream_prefix", "visibility": "forbidden", "reason": "No exact or adaptive gate steers model proposals."},
+      {"information_id": "offline_score_or_oracle", "stage_id": "think_0", "visibility": "forbidden", "reason": "The thinker is replayed against public memory only."},
+      {"information_id": "offline_score_or_oracle", "stage_id": "return_sleep", "visibility": "forbidden", "reason": "Committed outcomes cannot be rejection-sampled in-loop."},
+      {"information_id": "offline_score_or_oracle", "stage_id": "realize_and_memory", "visibility": "forbidden", "reason": "Truth labels cannot filter the corpus."},
+      {"information_id": "offline_score_or_oracle", "stage_id": "final_think", "visibility": "forbidden", "reason": "No checker may supply a final path or answer."},
+      {"information_id": "offline_score_or_oracle", "stage_id": "offline_score", "visibility": "visible", "reason": "It is restricted to postcommit metrics and cannot route a follow-up."}
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "t_p0_trusted_replay_and_projection",
+      "kind": "invariant",
+      "setup": "Forge a self-consistent compiled checkpoint/goal, swap the own agenda projection for the registered distractor, alter retrieved/cited IDs, or rewrite a RELEASE claim while preserving self-hashes.",
+      "expected": "The scheduler independently rebuilds trusted checkpoint and goal, replays raw operations, mechanically reprojects the exact agenda/result/terminal support, and rejects every forgery.",
+      "falsifies": "A pluggable runner can launder an answer or frontier through a self-hashed machine trace.",
+      "evidence_artifact": "research_loop/test_scientific_thinker_adapter.py and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p0_exact_think_provider_boundary",
+      "kind": "invariant",
+      "setup": "Use a policy backend that sends different prompt/config/reset bytes than the materials the adapter proposes to ledger, misreports provider tokens, or retains conversational/KV state across resets.",
+      "expected": "Only one exact immutable call request reaches the provider; returned provider metadata reconciles to it; stateless reset is enforced; every mismatch fails closed.",
+      "falsifies": "The thinker ledger is descriptive rather than authoritative at the actual model boundary.",
+      "evidence_artifact": "research_loop/test_model_call_ledger.py, research_loop/test_model_provider_boundary.py, and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p0_dream_provider_and_parser_ledger",
+      "kind": "invariant",
+      "setup": "Drop, duplicate, reorder, rewrite, or leave unconsumed one DREAM call/output; alter its bounded prompt, reset, parser result, token use, or semantic decision.",
+      "expected": "Every live dream has a bijective exact provider-call record, raw output, strict parse, bounded-view binding, and scope-isolated decision; any discrepancy fails.",
+      "falsifies": "The dream half of the purported live organism is unaudited or can fabricate parsed memory.",
+      "evidence_artifact": "research_loop/test_model_provider_boundary.py, research_loop/test_experiment_call_ledger.py, and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p0_public_entailment_support_admission",
+      "kind": "invariant",
+      "setup": "Submit a model-proposed exact typed local join with valid cited public route/effect records, then substitute an unrelated record, a wrong or ambiguous connector, reversed direction, changed relation, invented endpoint, thinker frontier, model mark_supported flag, private/final-truth sentinel, or same-model self-check verdict.",
+      "expected": "Only the unchanged proposal whose immutable public citations share the declared connector and mechanically reproduce every typed endpoint/direction/relation receives an append-only supported event; all attacks remain provisional or reject. The checker never searches or proposes endpoints, never reads the final question/private world/oracle/truth, and is byte-invariant under private/final-truth mutation. A separately labeled same-model self-check ablation, if later ratified, cannot write support in this primary condition.",
+      "falsifies": "The live corpus either cannot license any final RELEASE or obtains support through hidden-answer verification, circular self-approval, or checker-generated structure.",
+      "evidence_artifact": "research_loop/test_experiment_call_ledger.py, research_loop/test_v03r_live_text_transition.py, and admission decision artifacts",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p0_experiment_level_matched_accounting",
+      "kind": "invariant",
+      "setup": "Compare arm call ledgers with a missing call, unequal prefix, changed decoding budget, cross-life reset, or unreported token use.",
+      "expected": "The experiment reconciles shared prefix identity, pair/arm schedule equality, exact maximum budgets, unique resets, and actual tokens/calls before scoring.",
+      "falsifies": "An apparent feedback gain may be extra compute or state contamination.",
+      "evidence_artifact": "research_loop/test_experiment_call_ledger.py and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p1_rendered_text_and_order_shortcuts",
+      "kind": "baseline",
+      "setup": "Train heldout shortcut predictors over raw rendered text, event positions/order, IDs, passive signatures, single and combined public feature families, and target-only features across 1000 collision pairs.",
+      "expected": "Declared ambiguity/majority gates pass and every surviving shortcut is reported before a model run.",
+      "falsifies": "The repaired calibration can be solved without the intended causal information path.",
+      "evidence_artifact": "lands/test_v03r.py and population_shortcut_gate stdout",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_p1_public_final_goal_paired_thinker",
+      "kind": "end_to_end",
+      "setup": "Bind the final ThinkerMachine to the separately sealed public final question for both collision twins; remove one required edge and attempt release, or inject one twin answer/operation into the goal compiler.",
+      "expected": "The exact public goal is unavailable before MEMORY_1; a complete cited path may release one schema-valid answer; missing support defers; paired scoring remains offline.",
+      "falsifies": "The transition still measures only an operational-probe ceiling or leaks the paired answer.",
+      "evidence_artifact": "research_loop/test_scientific_thinker_adapter.py and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_pair_local_schedule_manifest",
+      "kind": "invariant",
+      "setup": "Run seeds 0/1/2 collision twins and all arms, then truncate seed 1 to 46 WAKE/22 REACTIVATE, pad another life, or alter one arm count.",
+      "expected": "Actual counts equal each world's public schedule_manifest; seed 0/2 use 46+22 and seed 1 uses 49+24; both twins and all arms agree within each pair; total dream calls equal 802.",
+      "falsifies": "A global schedule silently discards lived experience or gives arms unequal compute.",
+      "evidence_artifact": "research_loop/test_experiment_call_ledger.py, research_loop/test_v03r_live_text_transition.py, and artifacts/run_manifest.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_visibility_private_and_final_sentinels",
+      "kind": "invariant",
+      "setup": "Mutate latent bit/private pair/answer/scorer fields and final-question sentinels while capturing complete model-facing DREAM and THINK bytes.",
+      "expected": "Pre-final model bytes are twin-invariant except for the one lived public intervention outcome; private/answer/scorer/final sentinels are absent; the final public question appears only after MEMORY_1.",
+      "falsifies": "The model can identify a twin or answer through metadata or early goal visibility.",
+      "evidence_artifact": "research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_bounded_views_and_feedback_non_evidence",
+      "kind": "invariant",
+      "setup": "Give a dream more than one trigger/six neighbors, cite an out-of-view item, cite a thinker frontier, copy its desired relation without public/semantic premises, or route it to realization.",
+      "expected": "Every attack fails; own and matched frontiers affect selection only, and a later edge is independently derived from eligible recipient-local premises.",
+      "falsifies": "The return edge is answer laundering or global graph tool use.",
+      "evidence_artifact": "research_loop/test_cyclic_organism_contract.py and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_required_text_baselines_and_compute",
+      "kind": "baseline",
+      "setup": "Run full-lifetime context, bounded episodic RAG, wake-only text memory, three recurrent arms, and labeled CPU ceilings with one pinned model and explicit operation/retrieval/token budgets.",
+      "expected": "All required outputs and compute records exist; context/RAG success is preserved; no LoRA/oracle agenda/perfect gate enters the live transition.",
+      "falsifies": "The causal result lacks its strongest small-context competitors or quietly attributes read/controller compute to memory.",
+      "evidence_artifact": "artifacts/baselines.json and artifacts/metrics.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "t_immutable_full_closure_dual_review",
+      "kind": "independent_review",
+      "setup": "Freeze the complete runtime import/transitive test closure from a quiescent snapshot; hash at each review start/end; submit the exact workflow/model/prompts/budgets to fresh Fable and fresh Sol reviewers.",
+      "expected": "Every byte remains identical and both binding verdicts approve with no required change; mutation, omission, malformed output, reject, or escalation blocks launch.",
+      "falsifies": "The launched program differs from reviewed evidence or one reviewer is treated as optional.",
+      "evidence_artifact": "research_loop/runtime/{run_id}.lock.json plus Fable/Sol review bindings",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_durable_remote_markers_and_recovery",
+      "kind": "invariant",
+      "setup": "Disconnect/kill the local watchdog during remote execution, retry launch/status, corrupt or omit a marker, and attempt a duplicate run with the same run ID.",
+      "expected": "Remote started/progress/done/failed markers and exact artifact hashes remain authoritative; status resumes without duplicate execution; corruption or ambiguity escalates without relaunch.",
+      "falsifies": "The overnight run depends on one chat/session or can duplicate/guess remote state.",
+      "evidence_artifact": "research_loop/test_v03r_live_text_transition.py and run-specific remote marker bundle",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_complete_artifact_manifest",
+      "kind": "invariant",
+      "setup": "Delete, reorder, rewrite, or orphan a public input, model call, semantic event, realization, checkpoint, thinker step, baseline trace, scorer packet, metric, or trajectory export.",
+      "expected": "Independent artifact verification and full SHA-256 reconciliation fail; complete untouched bundles pass.",
+      "falsifies": "The result cannot attribute where information or performance changed.",
+      "evidence_artifact": "research_loop/verify_artifacts.py, artifacts/sha256s.json, and research_loop/test_v03r_live_text_transition.py",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "t_exact_human_gpu_scope_gate",
+      "kind": "invariant",
+      "setup": "Initialize the workflow while intake is collecting/human_required, with stale evidence, or with requested LoRA/heldout/repair/follow-up/claim/external/spend scope.",
+      "expected": "Initialization fails until exactly one hash-bound Rohin ratification authorizes only the two requested scope atoms; every forbidden expansion fails.",
+      "falsifies": "Model consensus or a broad continue instruction can self-authorize GPU science.",
+      "evidence_artifact": "research_loop/test_supervisor_architecture_intake.py and intake.state.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "t_postcommit_result_human_boundary",
+      "kind": "invariant",
+      "setup": "Return every valid result-analyst decision including repair, run_frozen, replicate_frozen, stop, or escalate; attempt automatic prompt repair, transport, replication, or claim promotion.",
+      "expected": "Every route stops at science_escalation/human and no scientific mutation or launch follows.",
+      "falsifies": "One development result can expand into an unauthorized campaign.",
+      "evidence_artifact": "research_loop/workflows/v03r_live_text_recurrence_dev_v1.json and supervisor state/events",
+      "required_before": "gpu_run"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "After two fresh interpretations and cross-critique explicitly dispose the provisional-to-supported admission concern, and after exact consensus and P0/P1 evidence bind the answer-blind public entailment grammar, authorize only gpu:v03r_live_text_recurrence_dev_v1 plus bound postcommit analysis while retaining every listed forbidden scope?",
+    "forbidden_before_approval": [
+      "initialize or run the proposed workflow",
+      "provider or GPU science call",
+      "LoRA training or transport",
+      "same-model self-check or model-controlled support gate",
+      "heldout or replication access",
+      "prompt or code repair from results",
+      "follow-up run or autonomous campaign",
+      "claim promotion or external action",
+      "lease, spend, credential, or second-GPU change"
+    ]
+  }
+}

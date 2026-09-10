@@ -1,0 +1,877 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Retained as a necessary preliminary canonical-chain check; it does not close raw-key, blob, fsync, or crash-recovery cases.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT1_canonical_hash_chain"
+    },
+    {
+      "rationale": "Retained as a necessary schema check; it lacks positive shared-ancestry and auxiliary-artifact closure coverage.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT2_event_schema_closure"
+    },
+    {
+      "rationale": "Retained as a synthetic record-consistency check; it cannot establish actual future engine consumption or non-CHILD generation provenance.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT3_context_generation_roundtrip_fixture"
+    },
+    {
+      "rationale": "Retained as a structural typed-call join check; it does not execute dispatch or independently recompute scoring.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT4_typed_tool_atomic_join"
+    },
+    {
+      "rationale": "Retained as a filesystem-manifest check; it does not establish byte-level projections or runtime noninterference.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT5_role_visibility_noninterference"
+    },
+    {
+      "rationale": "Retained as a temporal-reference check; it does not prevent semantic answer laundering through feedback content.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT6_parent_temporal_blindness"
+    },
+    {
+      "rationale": "Retained as a reversible-pointer fixture; it lacks branch eligibility and per-field support/taint coverage.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT7_dream_reversible_successor"
+    },
+    {
+      "rationale": "Retained as a label-placement check; it does not establish admission support or prohibit unsupported dream content.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT8_sleep_label_projection"
+    },
+    {
+      "rationale": "Retained as receipt-schema closure; it cannot prove causal transport into a real adapter.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT9_adapter_provenance_fixture"
+    },
+    {
+      "rationale": "Retained as declarative reporting-edge coverage; it does not close runtime channels.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT10_no_feedback_edge"
+    },
+    {
+      "rationale": "Retained as cross-implementation agreement; agreement cannot cure an underspecified contract or missing fixtures.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "NT11_three_way_oracle_agreement"
+    }
+  ],
+  "agreements": [
+    "The change is infrastructure-only and cannot support learning, teachability, planning, transfer, parenting-benefit, or Experience Models claims.",
+    "THINK remains free-form generation; effectful environment action must traverse a typed call rather than prose-marker parsing.",
+    "Prospective immutable context, generation, action/outcome, sleep-label, and adapter-receipt records are necessary improvements over the legacy traces.",
+    "Evaluation and reporting must remain causally isolated from life, dream, parent, compiler, trainer, and future intake.",
+    "Human ratification is required before any authorized artifact authoring, and CPU agreement never authorizes a life, model, tokenizer, trainer, evaluator, adapter, GPU run, or scientific claim."
+  ],
+  "architecture_change_sha256": "edf9885e48afab64ac5d8b1c2973ce820c384e9ab516ddde29533e6c12fcc7f4",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260906_prospective_nursery_trace_contract_v1",
+  "concern_dispositions": [
+    {
+      "concern_id": "C01_cross_role_generation_provenance_gap",
+      "rationale": "Accepted. The common causal chain lacks an exact intended-input/consumed-input and producer/validator/publisher binding for parent feedback, restatement, and dream output.",
+      "required_change": "Add a registered cross-role provenance acceptance test covering exact role-specific context bytes/IDs, consumed bytes/IDs, human-or-engine provenance, and DREAM producer, validator, and publisher authority; NT3 covers only part of this requirement.",
+      "resolution_id": "DG01_cross_role_authority_and_provenance",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C02_mixed_public_and_secret_tool_result",
+      "rationale": "Accepted. A role-root permission cannot safely expose selected fields of one immutable mixed-sensitivity object without a separately hash-bound byte projection.",
+      "required_change": "Split target/reset/scorer-bearing environment-private material from an exact public TOOL_RESULT projection, bind the projection to its private source, and test forbidden-field absence in permitted roots; NT4, NT5, and NT10 cover only portions.",
+      "resolution_id": "DG02_public_private_tool_result",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C03_query_to_agenda_answer_laundering",
+      "rationale": "Accepted. Reference validation and self-declared answer_content cannot establish semantic noninterference for questions, exercises, ordering, aliases, encodings, or paraphrases.",
+      "required_change": "Add a paired hidden-answer-world laundering test with adversarial feedback encodings and an explicit permitted public process channel; NT6 is only a partial syntactic prerequisite.",
+      "resolution_id": "DG03_parent_semantic_noninterference",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C04_memory_path_bypass_and_missing_retrieval_trace",
+      "rationale": "Accepted. The graph permits direct admitted-evidence rendering and outcome-to-sleep compilation while neither requiring nor tracing retrieval and dream mediation.",
+      "required_change": "Decide whether feedback/restatement/dream are required or optional credit paths; if selected retrieval or dream support is credited, record query, candidates, index/ranker identities, selections, rejections, and eligibility; NT3, NT7, NT8, and NT9 do not cover this.",
+      "resolution_id": "DG04_retrieval_and_required_path",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C05_dream_reexpression_as_unearned_evidence",
+      "rationale": "Accepted. Reversibility and restoration of one fact do not establish field-level support, contradiction handling, novelty status, or answer-taint control.",
+      "required_change": "Bind every dream field and local connection to copied observation, supported inference, unresolved hypothesis, contradiction, or synthetic re-expression status, and prohibit unsupported/tainted content from becoming a supervised target; NT7 and NT8 are partial prerequisites.",
+      "resolution_id": "DG05_dream_evidence_status",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C06_abandoned_branch_release",
+      "rationale": "Accepted. Pointer rollback alone leaves failed, superseded, and abandoned candidate artifacts potentially selectable later.",
+      "required_change": "Define durable branch status, revocation, eligibility transitions, and fail-closed exclusion from rendering, compilation, training, evaluation, and release; test failed, superseded, and abandoned branches; NT2, NT7, NT8, and NT10 are only partial prerequisites.",
+      "resolution_id": "DG06_branch_eligibility",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C07_valid_diamond_false_cycle_risk",
+      "rationale": "Accepted. Backward parents prevent true cycles but do not ensure implementations accept valid shared ancestry.",
+      "required_change": "Add an explicit positive valid-diamond and repeated-shared-ancestor fixture, alongside true back-edge failures, to all independently authored specifications; NT2 and NT11 are the closest existing coverage.",
+      "resolution_id": "DG07_dag_diamond_semantics",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C08_event_and_artifact_vocabulary_not_closed",
+      "rationale": "Accepted. Rejections, sealed-task records, pointer publication/validation, and reporting are necessary objects but have no complete ledger-versus-auxiliary classification or lifecycle.",
+      "required_change": "Classify rejection attempts, sealed-task records, pointer publications, validation receipts, and evaluation reports as ledger events or hash-bound auxiliary artifacts, with authorities, hashes, lifecycle, and eligibility edges; NT2 is the closest existing coverage.",
+      "resolution_id": "DG08_closed_artifact_vocabulary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C09_call_cardinality_and_scorer_truth",
+      "rationale": "Accepted. Structural atomicity does not decide call multiplicity or prove dispatch/scoring correctness.",
+      "required_change": "Fix generation-to-call cardinality and ordering, specify an independent integer/rational score law, and later test dispatched calls against sealed synthetic states with independent recomputation; NT4 and NT11 are partial prerequisites.",
+      "resolution_id": "DG09_call_and_score_semantics",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C10_self_reported_engine_consumption",
+      "rationale": "Accepted. CPU fixture equality cannot prove a later tokenizer/template/engine/cache actually consumed the recorded input.",
+      "required_change": "Under later model/tokenizer authority, independently capture template and tokenizer output, engine-consumed IDs, adapter/cache identity, truncation, stop configuration, and loaded-code manifests; NT3 remains a preliminary record check.",
+      "resolution_id": "DG10_actual_consumer_provenance",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C11_filesystem_only_noninterference",
+      "rationale": "Accepted. Synthetic roots and graph reachability omit inherited descriptors, environment, IPC, network, caches, logs, timing, and operator-mediated paths.",
+      "required_change": "Define the required runtime isolation/audit surface and later test noninterference across descriptors, environment, IPC, network, caches, logs, timing/error channels, and operator-visible outputs; NT5 and NT10 are partial prerequisites.",
+      "resolution_id": "DG11_runtime_noninterference",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C12_three_way_agreement_is_not_independent_truth",
+      "rationale": "Accepted. Source-distinct validators and an oracle improve detection but cannot decide unresolved semantics or prove exhaustive truth.",
+      "required_change": "Freeze the missing semantic choices and adversarial/positive fixture space before treating three-way agreement as a promotion gate; NT1, NT2, and NT11 remain useful but insufficient.",
+      "resolution_id": "DG12_oracle_scope_and_independence",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C13_authority_and_gate_order_cycle",
+      "rationale": "Accepted. Tests cannot be required before the schemas, validators, fixtures, and oracle authorized to create them exist; NT11 is also absent from the requested authoring scope.",
+      "required_change": "Revise the authority DAG so exact ratification authorizes bounded schema/validator/oracle authoring, NT1--NT11 are promotion gates after authoring, NT11 is explicitly scope-bound, and no broader action is reachable before a new bound decision.",
+      "resolution_id": "DG13_authority_and_gate_order",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C14_repeat_and_budget_state_invisible",
+      "rationale": "Accepted. Episode IDs and prose budgets do not bind repeat ordinal, retry state, lifetime position, or remaining budget as policy-visible causal state.",
+      "required_change": "Bind episode lifecycle, block/repeat ordinal, retry state, lifetime position, and remaining budgets with lawful visibility rules that do not reveal sealed task identity; NT2, NT3, and NT7 are partial prerequisites.",
+      "resolution_id": "DG14_budget_and_retry_observability",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C15_canonicalization_blob_and_crash_ambiguity",
+      "rationale": "Accepted. The canonical recipe and atomic rename statement do not close raw-key, byte, numeric, blob publication, fsync, or crash recovery semantics.",
+      "required_change": "Specify and test duplicate raw keys, invalid UTF-8, BOM/CRLF, Unicode byte distinctions, numeric edge forms, blob-path closure, fsync/publication order, partial publication, concurrent writers, and deterministic recovery; NT1, NT3, and NT7 are partial prerequisites.",
+      "resolution_id": "DG15_canonical_blob_recovery",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C16_adapter_receipt_is_self_consistent_metadata",
+      "rationale": "Accepted. Placeholder metadata cannot establish that admitted examples caused a tensor or that no hidden corpus was consumed.",
+      "required_change": "Under later trainer authority, sandbox inputs, run a deterministic known update, bind canonical tensor serialization, test omitted/reordered/counterfeit data, and verify adapter-on/off serving canaries; NT8 and NT9 are only preliminary checks.",
+      "resolution_id": "DG16_adapter_causal_transport",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C17_no_behavioral_capability_test",
+      "rationale": "Accepted as a claim-boundary condition, not as a current contract defect: no behavioral capability is claimed by this proposal.",
+      "required_change": "Keep the explicit no-scientific-inference ceiling absolute; require a separately hash-bound and ratified behavioral protocol before any recall, composition, planning, action-improvement, or learning claim. NT7--NT10 do not measure these endpoints.",
+      "resolution_id": "DG17_behavioral_claim_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C18_unregistered_benchmark_inference",
+      "rationale": "Accepted. No benchmark identities, split rule, endpoint, unit, sampling, stopping, or negative-result language is frozen.",
+      "required_change": "Before task inspection, separately register opaque paired worlds, split/duplicate/semantic-family audits, statistical units, power, seeds, multiplicity, equivalence margins, stopping rules, replication, and permitted negative-result wording; no registered NT test genuinely covers this.",
+      "resolution_id": "DG18_benchmark_force_and_statistics",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C19_memory_substrate_and_compute_ablation_gap",
+      "rationale": "Accepted. No common accounting or mechanism-discriminating ablation set exists.",
+      "required_change": "In the later benchmark, budget-match raw text, RAG, explicit graph state, recurrent dream successor, adapter parameters, tool calls, thinker tokens, and compute; include adapter-off, parent-absent, no-dream, no-recurrence, bridge-removal, and shuffled-connectivity arms. NT7--NT9 are not ablation coverage.",
+      "resolution_id": "DG19_memory_compute_ablations",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C20_resource_and_failure_bounds_absent",
+      "rationale": "Accepted. Without deterministic ceilings, model-produced payloads and ancestry can create denial-of-service or ambiguous failure behavior.",
+      "required_change": "Freeze JSON-depth, parent-count, payload/blob, ledger, successor, sequence, corpus, validation-time, retry, and fail-closed error bounds; NT1, NT2, NT7, NT8, and NT9 are partial prerequisites.",
+      "resolution_id": "DG20_resource_and_failure_bounds",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "cons_20260906_prospective_nursery_trace_contract_v1_adjudication_v1",
+  "critique_sha256": "6e936147046a4b1fbce1269d6d6e715445353e055a3b3307f2649becdbad7e8c",
+  "disagreements": [
+    {
+      "disagreement_id": "DG01_cross_role_authority_and_provenance",
+      "issue": "Whether the CHILD-only context/generation join is sufficient for parent feedback, restatement, and DREAM_SUCCESSOR, including pointer publication.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "MODEL_GENERATION has an exact CONTEXT_RENDERED parent; parent provenance is explicit and dream validation precedes pointer publication."
+        },
+        {
+          "actor": "critique",
+          "position": "Other authored outputs lack a uniform actual-input/consumption receipt, and DREAM producer, executor, validator, and publisher authority are not reconstructable."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT3_context_generation_roundtrip_fixture",
+          "NT7_dream_reversible_successor"
+        ],
+        "rationale": "The critique identifies a material provenance and authority gap. A revised contract must bind each cross-role generated payload and pointer authority before promotion.",
+        "required_change": "Add the missing cross-role context/generation and DREAM authority test to a revised registered test inventory; NT3 and NT7 alone are insufficient.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C01_cross_role_generation_provenance_gap",
+        "D2_dream_producer_vs_publisher"
+      ]
+    },
+    {
+      "disagreement_id": "DG02_public_private_tool_result",
+      "issue": "Whether one TOOL_RESULT can both contain sealed identity and serve as public evidence.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "One atomic TOOL_RESULT binds the sealed reset, action, measurements, score, and state transition."
+        },
+        {
+          "actor": "critique",
+          "position": "A single immutable record cannot be field-selectively visible through a role-root capability without an exact public projection."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT4_typed_tool_atomic_join",
+          "NT5_role_visibility_noninterference",
+          "NT10_no_feedback_edge"
+        ],
+        "rationale": "Atomic joining is compatible with separate private and public immutable artifacts, but the proposal has not defined that split.",
+        "required_change": "Define private source and exact public projection with hash binding and forbidden-byte absence testing; the registered tests do not fully cover it.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C02_mixed_public_and_secret_tool_result",
+        "C08_event_and_artifact_vocabulary_not_closed"
+      ]
+    },
+    {
+      "disagreement_id": "DG03_parent_semantic_noninterference",
+      "issue": "Whether temporal blindness and declared process-only fields prevent parent answer transmission.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Parent feedback is limited to earlier public evidence and a closed answer-content declaration."
+        },
+        {
+          "actor": "critique",
+          "position": "Questions, exercises, ordering, omission, aliases, and encodings can carry answer-dependent information despite syntactic restrictions."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT5_role_visibility_noninterference",
+          "NT6_parent_temporal_blindness",
+          "NT8_sleep_label_projection"
+        ],
+        "rationale": "The proposal supplies reference restrictions but no semantic or paired-world noninterference evidence.",
+        "required_change": "Add paired hidden-answer-world adversarial laundering coverage in a revised inventory; NT6 is insufficient.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C03_query_to_agenda_answer_laundering",
+        "C11_filesystem_only_noninterference"
+      ]
+    },
+    {
+      "disagreement_id": "DG04_retrieval_and_required_path",
+      "issue": "Whether the declared causal path requires dream-mediated selective memory rather than permitting lawful bypasses.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "HARNESS may render explicitly admitted evidence and COMPILER may select closed training evidence; dream is a recurrent reconciliation branch."
+        },
+        {
+          "actor": "critique",
+          "position": "Direct rendering and outcome-to-sleep edges bypass dream, feedback, and restatement, while retrieval selection is not traced."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT3_context_generation_roundtrip_fixture",
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture"
+        ],
+        "rationale": "Optional branches are permissible only if claims narrow accordingly; any claim crediting a selected path needs complete retrieval and eligibility provenance.",
+        "required_change": "Choose required versus optional path semantics and register retrieval/provenance coverage before promotion.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C04_memory_path_bypass_and_missing_retrieval_trace",
+        "D1_benchmark_force_not_yet_established"
+      ]
+    },
+    {
+      "disagreement_id": "DG05_dream_evidence_status",
+      "issue": "Whether reversible DREAM_SUCCESSOR validation is enough to make dream content eligible evidence or targets.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Complete state, earlier readable references, declared omissions, restoration, and rollback constrain successor publication."
+        },
+        {
+          "actor": "critique",
+          "position": "Those checks permit unsupported inference, final-answer taint, contradiction, and synthetic re-expression to be treated as evidence."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture"
+        ],
+        "rationale": "Reversibility protects predecessor state, not epistemic support or supervised-target legality.",
+        "required_change": "Define field-level support/status and target eligibility; register adversarial dream-content provenance coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C05_dream_reexpression_as_unearned_evidence",
+        "C04_memory_path_bypass_and_missing_retrieval_trace"
+      ]
+    },
+    {
+      "disagreement_id": "DG06_branch_eligibility",
+      "issue": "Whether failed pointer publication prevents later use of abandoned content.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Failed candidates preserve predecessor bytes and pointer."
+        },
+        {
+          "actor": "critique",
+          "position": "No durable branch status excludes candidate bytes from later context, corpus, training, evaluation, or release."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT2_event_schema_closure",
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT10_no_feedback_edge"
+        ],
+        "rationale": "Pointer preservation does not imply content ineligibility.",
+        "required_change": "Add explicit branch lifecycle and abandoned-branch exclusion semantics plus fixtures.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C06_abandoned_branch_release",
+        "C08_event_and_artifact_vocabulary_not_closed"
+      ]
+    },
+    {
+      "disagreement_id": "DG07_dag_diamond_semantics",
+      "issue": "Whether the parent contract distinguishes valid shared ancestry from cycles.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "All parents point earlier, so illegal causal cycles are rejectable."
+        },
+        {
+          "actor": "critique",
+          "position": "A global visited-set implementation may reject valid diamonds absent an affirmative fixture."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT2_event_schema_closure",
+          "NT11_three_way_oracle_agreement"
+        ],
+        "rationale": "A positive diamond case is required to define the intended DAG semantics.",
+        "required_change": "Add shared-ancestry positive fixtures before promotion.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C07_valid_diamond_false_cycle_risk",
+        "C12_three_way_agreement_is_not_independent_truth"
+      ]
+    },
+    {
+      "disagreement_id": "DG08_closed_artifact_vocabulary",
+      "issue": "Whether the nine-event ledger is closed while required non-event artifacts remain unspecified.",
+      "positions": [
+        {
+          "actor": "systems",
+          "position": "Keep rejection and capability receipts outside the nine-event life ledger, with later-defined artifact relationships."
+        },
+        {
+          "actor": "critique",
+          "position": "Closure cannot be enforced until rejection, sealing, publication, validation, and reporting objects have hash-bound classification and lifecycle rules."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT2_event_schema_closure",
+          "NT7_dream_reversible_successor",
+          "NT10_no_feedback_edge"
+        ],
+        "rationale": "Auxiliary artifacts may remain outside the life ledger, but that choice must be fixed rather than deferred.",
+        "required_change": "Revise the contract to classify every required object and its authority, hash, lifecycle, and eligibility edges.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C08_event_and_artifact_vocabulary_not_closed",
+        "D1_nine_events_vs_rejection_events"
+      ]
+    },
+    {
+      "disagreement_id": "DG09_call_and_score_semantics",
+      "issue": "Whether atomic typed serialization establishes call cardinality, dispatch, and score truth.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A tool result joins one typed call to parsed indices, sealed reset identity, measurements, and a rational score."
+        },
+        {
+          "actor": "systems",
+          "position": "Call cardinality and ordering remain unspecified."
+        },
+        {
+          "actor": "critique",
+          "position": "No independent score law or execution/recomputation test establishes truthful dispatch or scoring."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT4_typed_tool_atomic_join",
+          "NT11_three_way_oracle_agreement"
+        ],
+        "rationale": "The structural receipt is necessary but not sufficient for semantic dispatch or scorer truth.",
+        "required_change": "Fix cardinality/order and score law, then register later execution/recomputation coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C09_call_cardinality_and_scorer_truth",
+        "A4_generation_cardinality"
+      ]
+    },
+    {
+      "disagreement_id": "DG10_actual_consumer_provenance",
+      "issue": "Whether synthetic intended/consumed ID equality establishes actual engine input truth.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Synthetic exact ID and byte/decode agreement is a CPU-only pre-implementation provenance check."
+        },
+        {
+          "actor": "critique",
+          "position": "Wrappers, templates, truncation, adapters, caches, and source drift can make self-reported consumption agree while differing from actual engine input."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT3_context_generation_roundtrip_fixture"
+        ],
+        "rationale": "The limited CPU claim is retained, but it cannot be promoted into actual runtime-consumption evidence.",
+        "required_change": "Maintain the claim ceiling and require later independent consumer-side capture before any runtime provenance claim.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C10_self_reported_engine_consumption",
+        "C01_cross_role_generation_provenance_gap"
+      ]
+    },
+    {
+      "disagreement_id": "DG11_runtime_noninterference",
+      "issue": "Whether synthetic filesystem and declarative graph checks establish role isolation.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Role-specific roots, traversal defenses, and declarative no-feedback paths enforce the proposed capability contract."
+        },
+        {
+          "actor": "benchmark",
+          "position": "Path isolation does not cover process, cache, network, timing, or human-mediated channels."
+        },
+        {
+          "actor": "critique",
+          "position": "The expected noninterference language exceeds the tested filesystem mechanism."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT5_role_visibility_noninterference",
+          "NT10_no_feedback_edge"
+        ],
+        "rationale": "The registered checks are valuable but cannot justify a runtime noninterference conclusion.",
+        "required_change": "Narrow current claims and require later runtime isolation coverage before live role authorization.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C11_filesystem_only_noninterference",
+        "C03_query_to_agenda_answer_laundering"
+      ]
+    },
+    {
+      "disagreement_id": "DG12_oracle_scope_and_independence",
+      "issue": "Whether three-way agreement establishes correctness of the prospective contract.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Two source-distinct validators and a declarative oracle agree on every registered fixture."
+        },
+        {
+          "actor": "critique",
+          "position": "Agreement can reproduce shared libraries, authorship, fixtures, taxonomy, and unresolved prose ambiguity."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT1_canonical_hash_chain",
+          "NT2_event_schema_closure",
+          "NT11_three_way_oracle_agreement"
+        ],
+        "rationale": "Agreement is a consistency gate, not an independent truth oracle; the unresolved semantic inventory must first be closed.",
+        "required_change": "Freeze semantics and expand fixtures before interpreting agreement as sufficient promotion evidence.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C12_three_way_agreement_is_not_independent_truth",
+        "C07_valid_diamond_false_cycle_risk"
+      ]
+    },
+    {
+      "disagreement_id": "DG13_authority_and_gate_order",
+      "issue": "Whether all tests can be required before implementation while implementation is required to create the tests.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "NT1--NT11 are required before implementation and exact human ratification authorizes limited schema/validator/oracle work."
+        },
+        {
+          "actor": "critique",
+          "position": "The gate is circular, scope names only NT1--NT10 authoring, and material choices are impermissibly deferred to implementation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT1_canonical_hash_chain",
+          "NT2_event_schema_closure",
+          "NT3_context_generation_roundtrip_fixture",
+          "NT4_typed_tool_atomic_join",
+          "NT5_role_visibility_noninterference",
+          "NT6_parent_temporal_blindness",
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture",
+          "NT10_no_feedback_edge",
+          "NT11_three_way_oracle_agreement"
+        ],
+        "rationale": "Artifact authoring must be separately authorized by exact human ratification; test success can then gate promotion, not initial authoring.",
+        "required_change": "Produce a repaired, hash-bound authority DAG and scope that explicitly includes NT11 and preserves a later bound promotion decision.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C13_authority_and_gate_order_cycle",
+        "C08_event_and_artifact_vocabulary_not_closed"
+      ]
+    },
+    {
+      "disagreement_id": "DG14_budget_and_retry_observability",
+      "issue": "Whether prose episode budgets adequately bind repeated experience and failure state.",
+      "positions": [
+        {
+          "actor": "systems",
+          "position": "Numeric limits and retry semantics are unresolved and may belong to a later ratified protocol."
+        },
+        {
+          "actor": "critique",
+          "position": "Repeat ordinal, retry state, lifetime position, and aggregate budget can materially affect policy and inference, so their visibility and bounds cannot remain invisible."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT2_event_schema_closure",
+          "NT3_context_generation_roundtrip_fixture",
+          "NT7_dream_reversible_successor"
+        ],
+        "rationale": "The contract must at least define which operational state is recorded and lawfully visible, even if benchmark-scale values are later protocol parameters.",
+        "required_change": "Specify trace fields, visibility, and deterministic retry/budget semantics; register fixtures and bounds.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C14_repeat_and_budget_state_invisible",
+        "C20_resource_and_failure_bounds_absent"
+      ]
+    },
+    {
+      "disagreement_id": "DG15_canonical_blob_recovery",
+      "issue": "Whether the stated canonical JSON and atomic-rename rules are byte-deterministic and crash-closed.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Canonical JSON, hash chaining, atomic rename, and resume from last valid LF-terminated record provide append-only recovery."
+        },
+        {
+          "actor": "critique",
+          "position": "Raw-key parsing, UTF-8/numeric edge cases, blobs, fsync ordering, and crash/swap scenarios remain undefined."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT1_canonical_hash_chain",
+          "NT3_context_generation_roundtrip_fixture",
+          "NT7_dream_reversible_successor"
+        ],
+        "rationale": "The accepted simple cases do not define all permitted bytes or durable multi-file publication.",
+        "required_change": "Specify byte parsing and blob durability semantics, then add adversarial recovery fixtures.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C15_canonicalization_blob_and_crash_ambiguity",
+        "C08_event_and_artifact_vocabulary_not_closed"
+      ]
+    },
+    {
+      "disagreement_id": "DG16_adapter_causal_transport",
+      "issue": "Whether an adapter receipt can establish causal transport rather than self-consistent metadata.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Receipt closure over ordered examples, manifests, masks, finite losses, and tensor hash bounds future transport provenance."
+        },
+        {
+          "actor": "critique",
+          "position": "Placeholder metadata cannot prove actual trainer inputs, deterministic tensor provenance, or adapter causation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture"
+        ],
+        "rationale": "The contract may claim only receipt-schema enforcement until a separately authorized sandboxed training check exists.",
+        "required_change": "Narrow the claim and require later deterministic trainer/input isolation and adapter-on/off canaries.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C16_adapter_receipt_is_self_consistent_metadata",
+        "C17_no_behavioral_capability_test"
+      ]
+    },
+    {
+      "disagreement_id": "DG17_behavioral_claim_boundary",
+      "issue": "Whether absent behavioral tests are acceptable for this change.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The proposal expressly denies that passing NT1--NT11 establishes behavioral or scientific results."
+        },
+        {
+          "actor": "benchmark",
+          "position": "The infrastructure does not measure usefulness, memory use, composition, planning, or action improvement."
+        },
+        {
+          "actor": "critique",
+          "position": "The absence is acceptable only while the claim ceiling remains absolute."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture",
+          "NT10_no_feedback_edge"
+        ],
+        "rationale": "The positions agree on the current claim ceiling. A later behavioral protocol is required, but no behavioral test is required to validate the limited current engineering claim.",
+        "required_change": "Retain the exact no-scientific-inference boundary in any repaired proposal and require a separate ratified benchmark for behavioral claims.",
+        "selected_position": "shared limited-claim position",
+        "status": "resolved"
+      },
+      "sources": [
+        "C17_no_behavioral_capability_test",
+        "D1_benchmark_force_not_yet_established"
+      ]
+    },
+    {
+      "disagreement_id": "DG18_benchmark_force_and_statistics",
+      "issue": "Whether lawful infrastructure alone makes the intended organismal mechanism scientifically testable.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A later evaluation protocol may measure the organism after the contract is implemented."
+        },
+        {
+          "actor": "benchmark",
+          "position": "No current game makes the recurrent path necessary or closes target/prior/raw-context shortcuts."
+        },
+        {
+          "actor": "critique",
+          "position": "No split, endpoint, statistical unit, sampling rule, stopping rule, or negative-result interpretation is registered."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [],
+        "rationale": "This change cannot register or infer a benchmark result; later benchmark design must be independently deliberated and ratified.",
+        "required_change": "Create a separate hash-bound benchmark proposal with opaque paired worlds, leakage controls, matched interfaces, endpoints, statistics, and falsifiers before task inspection or a live run.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C18_unregistered_benchmark_inference",
+        "D1_benchmark_force_not_yet_established"
+      ]
+    },
+    {
+      "disagreement_id": "DG19_memory_compute_ablations",
+      "issue": "Whether the trace contract tests the proposed recurrent memory mechanism or distinguishes it from alternative substrates and compute.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Dream successors, sleep examples, and adapter receipts localize prospective provenance."
+        },
+        {
+          "actor": "benchmark",
+          "position": "The mechanism requires budget-matched alternatives and controls to distinguish recurrent memory from raw context, RAG, graph, priors, or compute."
+        },
+        {
+          "actor": "critique",
+          "position": "No common accounting or registered adapter-off, no-dream, recurrence, bridge, connectivity, or parent controls exists."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture"
+        ],
+        "rationale": "Provenance records do not constitute mechanism-discriminating ablations.",
+        "required_change": "Register common accounting and the stated matched ablations in a separately ratified benchmark; existing tests are not substitutes.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C19_memory_substrate_and_compute_ablation_gap",
+        "D2_ablations_not_yet_registered"
+      ]
+    },
+    {
+      "disagreement_id": "DG20_resource_and_failure_bounds",
+      "issue": "Whether an unbounded append-only contract has deterministic safe failure semantics.",
+      "positions": [
+        {
+          "actor": "systems",
+          "position": "Numerical budgets and retry semantics are unspecified and may be deferred."
+        },
+        {
+          "actor": "critique",
+          "position": "Payload, ancestry, state, corpus, and validation ceilings are necessary to prevent denial-of-service and superlinear failure modes."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "NT1_canonical_hash_chain",
+          "NT2_event_schema_closure",
+          "NT7_dream_reversible_successor",
+          "NT8_sleep_label_projection",
+          "NT9_adapter_provenance_fixture"
+        ],
+        "rationale": "Some scale values may be protocol-specific, but fail-closed resource classes and their enforcement cannot be left undefined in an implementation contract.",
+        "required_change": "Specify deterministic ceilings and errors, and add stress fixtures to a revised registry.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C20_resource_and_failure_bounds_absent",
+        "A5_scale_and_budget"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Does Rohin ratify only a newly repaired, hash-bound proposal that closes every unresolved disagreement and registers the missing acceptance coverage?",
+      "Should the repaired authority DAG explicitly authorize bounded CPU artifact authoring first, followed by independent validation and a new bound promotion decision?",
+      "Does Rohin confirm that any benchmark, live life, model/tokenizer, trainer, adapter, evaluation, GPU, or scientific-claim work remains outside this change?"
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_prospective_nursery_trace_contract_v1.systems",
+      "sha256": "f82fa638994b6db2b6f4e144a098fadc9e435004156f98bed47a58afa84f73d4"
+    },
+    {
+      "interpretation_id": "chg_20260906_prospective_nursery_trace_contract_v1.benchmark",
+      "sha256": "66c7bf073837a0c541f4e3b810947ca20b16dae0695f115e28d23d6a80fe7a93"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "D1_nine_events_vs_rejection_events",
+      "rationale": "Accepted as an unresolved closure issue: auxiliary status is possible but must be explicitly bound with lifecycle and eligibility semantics.",
+      "resolution_id": "DG08_closed_artifact_vocabulary",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_dream_producer_vs_publisher",
+      "rationale": "Accepted as unresolved: the child candidate, DREAM executor, validator, and atomic pointer publisher require an explicit authority binding.",
+      "resolution_id": "DG01_cross_role_authority_and_provenance",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D1_benchmark_force_not_yet_established",
+      "rationale": "Accepted as unresolved: the present contract does not make the intended organismal path necessary or establish a scientific endpoint.",
+      "resolution_id": "DG18_benchmark_force_and_statistics",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_ablations_not_yet_registered",
+      "rationale": "Accepted as unresolved: later mechanism claims require common accounting and registered matched ablations.",
+      "resolution_id": "DG19_memory_compute_ablations",
+      "status": "accepted"
+    }
+  ]
+}

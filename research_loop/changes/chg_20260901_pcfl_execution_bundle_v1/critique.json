@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "crit_chg_20260901_pcfl_execution_bundle_v1_adversarial_v1",
+  "change_id": "chg_20260901_pcfl_execution_bundle_v1",
+  "state": "critiqued",
+  "architecture_change_sha256": "22af8508d3ccedd8ac0acda1a6aae53775e6843e8a37b6cad7ed7adea88ccaff",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_pcfl_execution_bundle_v1.systems",
+      "sha256": "25daf785b724ae2350366792f62e23f31c052829ca7bdc02e910e00f6f7ebb82"
+    },
+    {
+      "interpretation_id": "chg_20260901_pcfl_execution_bundle_v1.benchmark",
+      "sha256": "37ae78af50da591379dffbc0cdb20adb79fdb65a8bffcf3585399803246e5e25"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_execution_bundle_v1/human_directive.txt",
+      "sha256": "3dbca9b687b7494bd7ec4d3d242356926c493e9186d4f6d03716e26f1e445fcf",
+      "purpose": "Verbatim human scientific-priority directive and requested execution-bundle scope"
+    },
+    {
+      "path": "research_notes/47_pcfl_execution_bundle_v1.md",
+      "sha256": "1aa5d1206a58bc7b0b82da8830221dbe4d8704e485e3d1c2213f0721d0dc5959",
+      "purpose": "Exact PCFL execution design, D0 boundary, estimands, tests, and claim firewall"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_execution_bundle_v1/prompts/think_v1.txt",
+      "sha256": "f3d14f20a889320eb0c0e275017380522220ac7df6d27eb8ba7d249cfbba9029",
+      "purpose": "Hash-bound future THINK prompt; D0 may test its bytes and parser but may not call a model"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_execution_bundle_v1/prompts/dream_v1.txt",
+      "sha256": "e0643c1a88018bd8eaa7570fc22418b530b15bd4505ee5178d8eb65d73287335",
+      "purpose": "Hash-bound future DREAM prompt; D0 may test its bytes and parser but may not call a model"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_execution_bundle_v1/prompts/memory_recognizer_v1.txt",
+      "sha256": "169f7a1c9814b1d965863b56b03a07f48887f4f8620125eb8cba79364ef559da",
+      "purpose": "Hash-bound future memory-recognizer prompt marker; D0 may test its bytes but may not call a model"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1",
+      "purpose": "Prior PCFL assay architecture and intended complete-organism estimand"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_constructive_assay_v1/critique.json",
+      "sha256": "22b2c7e4e71a91c2636ed3f03c8ae083266ddace64a5aa3cf633d37eaf09b67a",
+      "purpose": "Prior adversarial PCFL concerns that this exact bundle must operationally dispose"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_constructive_assay_v1/consensus.json",
+      "sha256": "67552d4f7a397908b65ecf28e24340d7eb9cb545899aedb3242527695b7f314d",
+      "purpose": "Prior adjudicated PCFL requirements and unresolved authority boundary"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "Project thesis, organ attribution, baseline, and claim invariants"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091",
+      "purpose": "Developmental loop, state ownership, visibility, runtime, and reset lineage"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937",
+      "purpose": "Historical measurements, prior shortcuts, protocol-credit warnings, and failure evidence"
+    }
+  ],
+  "strongest_case": "The strongest scientifically defensible case is that this bundle turns the previous PCFL concept into a disciplined CPU-only instrument-design stage while preserving, but not pretending to execute, the complete organism. Counterfactual twins, a strong exact no-lifetime controller, an authentic-memory ceiling, target-blind source experience, append-only claim status, intervention-root deduplication, alias-aware provenance, immutable causal cuts, a one-atom cognitive channel, deterministic one-edge compilation, sequential actions, cited-read interventions, fixed pair-level estimands, failure-as-zero, resource ledgers, and explicit authority gates directly address the most serious prior shortcuts. The systems interpretation is right that D0 can usefully instantiate only the noncognitive reference subgraph while keeping THINK, DREAM, LoRA, the scientific assay, and the on-policy edge dormant. The benchmark interpretation is also right that PCFL-13 contains only 13 reusable mappings and can at most support a fixed-deck, post-working-window, ledger-qualified mechanism result, never scaling or online learning. If the remaining exact contracts are bound before implementation, the D0 suite could be a valuable falsifier: it could reject worlds whose present-item Bayes controller is too strong, whose authentic source-derived memory is not useful, whose targets leak through public bytes, whose provenance or snapshots are unsound, or whose future measurement code cannot distinguish direct recall from adaptive construction. A green D0 would still establish only conformance of the reference instrument and readiness to request a new scientific authorization; it would provide no evidence that a model DREAM discovers useful structure, that a model THINK composes it, that LoRA transports it, or that action changes later experience.",
+  "reviewed_acceptance_test_ids": [
+    "AT01_exact_bundle_and_scope_binding",
+    "AT02_D0_capability_firewall",
+    "AT03_world_twin_determinism_and_marginals",
+    "AT04_target_source_chronology_and_minimality",
+    "AT05_exact_Bayes_and_no_memory_controller",
+    "AT06_exact_memory_headroom_necessity_and_shortcuts",
+    "AT07_canonical_schema_parser_and_visibility",
+    "AT08_goal_query_candidate_reader_noninterference",
+    "AT09_semantic_support_identity_and_provenance",
+    "AT10_sleep_compiler_one_edge_and_direct_closure",
+    "AT11_snapshot_resume_repeat_and_isolation",
+    "AT12_constructive_trace_causal_faithfulness",
+    "AT13_binding_control_and_assignment_invariants",
+    "AT14_split_estimator_multiplicity_and_failures",
+    "AT15_resource_ledger_and_baseline_manifest",
+    "AT16_CPU_performance_budget",
+    "AT17_claim_linter_and_negative_decisions",
+    "AT18_fresh_review_and_new_authority_before_science"
+  ],
+  "concerns": [
+    {
+      "concern_id": "C001_d0_scope_and_resource_authority_not_byte_exact",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "D0 is not implementable under an exact-byte authority boundary because the allowed file, entry-point, command, and full CPU resource manifests are absent.",
+      "evidence": "E16 says ratification releases only the named D0 CPU files, but neither change.json nor any of its eleven context files names those files, commands, imports, or entry points. L01 stops at a separately declared CPU budget and AT16 requires the full exact suite to fit that budget, yet only the 1,000-step five-minute micro-bound is present; cores, memory, processes, energy, and full-suite wall time remain unbound. The systems interpretation flags both omissions, while the benchmark interpretation independently finds the full-suite gate undecidable. AT01 can compare context hashes and AT02 can inspect an implementation after it exists, but neither tells an implementer which new bytes and transitive dependencies human ratification authorized. Implementing the allowlist and budget after ratification would let implementation convenience define the scope that the authority artifact claims already to bind.",
+      "acceptance_test_ids": [
+        "AT01_exact_bundle_and_scope_binding",
+        "AT02_D0_capability_firewall",
+        "AT16_CPU_performance_budget",
+        "AT18_fresh_review_and_new_authority_before_science"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C002_material_schema_manifest_and_token_cut_choices_remain_open",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The proposal calls the public contract, generator deck, and checkpoint cuts exact while leaving their material bytes to D0 implementers.",
+      "evidence": "No bound file defines the JSON schemas, key names, enum values, operation payloads, handle encodings, normalization order, field-origin representation, or canonical serialized examples for goals, states, events, workspaces, queries, returns, proposals, statuses, manifests, or ledgers. No bound file supplies the 64 CPU twin pairs, protocol seed derivation bytes, target decks, rejection stream, split manifests, lifetime orders, or ordered reserves. C=8192 depends on a pinned tokenizer and exact event renderer, but no tokenizer hash or golden complete-event token-count corpus is bound and D0 authority is unclear about tokenizer execution. AT07 and AT14 can test whichever choices an implementer makes; they cannot retroactively make those choices part of the reviewed design. The benchmark interpretation identifies schemas and manifests as unresolved scientific choices, and the systems interpretation additionally identifies the tokenizer-cut fixture gap. Note 46 explicitly required these objects in the next exact bundle, so omitting them fails the predecessor requirement rather than merely deferring engineering detail.",
+      "acceptance_test_ids": [
+        "AT01_exact_bundle_and_scope_binding",
+        "AT03_world_twin_determinism_and_marginals",
+        "AT04_target_source_chronology_and_minimality",
+        "AT07_canonical_schema_parser_and_visibility",
+        "AT08_goal_query_candidate_reader_noninterference",
+        "AT11_snapshot_resume_repeat_and_isolation",
+        "AT14_split_estimator_multiplicity_and_failures",
+        "AT15_resource_ledger_and_baseline_manifest"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C003_compiler_and_binding_view_count_contradiction",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The supposedly exact SLEEP and S-bind envelope is internally inconsistent about whether every atom has four or six compiler views.",
+      "evidence": "Note 47 section 7, N04, E07, N04's rationale, and AT10 require exactly four views: forward completion, reverse completion, incident-edge recall, and one-memory statement. Note 47 section 10 defines S-bind as preserving six view counts, inheriting note 44's older six-view compiler. The change never declares the old clause superseded. AT13 requires S-bind to preserve all views but cannot choose which cardinality without making a scientific choice that changes corpus size, query exposure, token lengths, training examples, and the intervention envelope. Both interpretations independently flag this contradiction.",
+      "acceptance_test_ids": [
+        "AT10_sleep_compiler_one_edge_and_direct_closure",
+        "AT13_binding_control_and_assignment_invariants",
+        "AT15_resource_ledger_and_baseline_manifest"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C004_bayes_prior_and_target_conditioning_are_not_executable",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "Bayes-N is not yet a uniquely defined exact no-lifetime controller because the conditional prior induced by target generation and joint-twin acceptance is unspecified.",
+      "evidence": "Note 47 says the prior is uniform over generator-legal hidden worlds conditioned on the target passing the structural joint-twin acceptance rule. That is not enough to determine the posterior used at a visible item: target construction and rejection depend on hidden mappings, twin answer differences, source chronology, target uniqueness, and the finally exposed goal/state. The controller must define whether it conditions on only the accepted visible item, on target index and construction protocol, on joint-twin selection, or also on rejection-count information that cognition never sees. The actual target generator and manifests are absent. Full-family versus quotient agreement can prove two implementations of the same chosen prior agree while both implement the wrong conditioning. The empirical 90th-percentile convention for 64 pair values and exact rational handling of zero-mass/degenerate states are also absent. The benchmark interpretation correctly raises this; the systems interpretation treats AT05 as exact without resolving it.",
+      "acceptance_test_ids": [
+        "AT03_world_twin_determinism_and_marginals",
+        "AT04_target_source_chronology_and_minimality",
+        "AT05_exact_Bayes_and_no_memory_controller",
+        "AT06_exact_memory_headroom_necessity_and_shortcuts"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C005_exact_memory_ceiling_and_authentic_interface_are_conflated",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "AT06 cannot establish that lifetime causal memory is useful until it separates a hidden-graph information oracle from an authentic source-derived memory controller and binds the latter's access budget.",
+      "evidence": "The change names an exact authentic-memory controller but never states whether it receives hidden mappings, all causally eligible semantic atoms directly, or only the common one-atom reader under the future resolver's query, ordering, operation, workspace, and action budgets. These are different estimands. Unrestricted eligible-graph access is a useful information ceiling; hidden mappings prove only world solvability; bounded one-atom access tests whether the declared memory interface can expose the information in time. AT06's expected thresholds and falsification sentence collapse them into 'lifetime causal memory is necessary and useful.' The benchmark interpretation explicitly requests separate controllers; the systems interpretation assumes declarative exact memory without supplying an interface. Bad/twin assignment losses also have different meanings under direct graph access and under reader-limited access.",
+      "acceptance_test_ids": [
+        "AT05_exact_Bayes_and_no_memory_controller",
+        "AT06_exact_memory_headroom_necessity_and_shortcuts",
+        "AT08_goal_query_candidate_reader_noninterference",
+        "AT12_constructive_trace_causal_faithfulness"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C006_generic_reader_and_workspace_do_not_yet_show_a3_reachability",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The primary generic anchor-only reader may make legitimate A3 premises unreachable within the declared workspace and operation budgets, and the current scripted test can hide that failure.",
+      "evidence": "The primary QUERY_LOCAL supplies only one NodeRef; typed relation/direction is a ceiling. Repeated FOUND advances to the next unseen incident atom, but incident ordering, degree, deduplication, and behavior after slots are discarded are unbound. The catalog contains every legal true and false atom over reusable vocabulary and is frozen before target generation, while target handles are fresh; the proposal does not specify the bridge from a visible target site/specimen or surveyed route to reusable family atoms. The workspace holds at most four memory atoms and eight path edges. A3 can require two preparation relations, a route requirement, and a site predicate, in addition to survey and six sequential actions. Note 46 supplies four queries and eight resolver operations per decision, but the change does not unambiguously adopt those numeric caps; if UPDATE_PATH consumes its own operation, four query/update pairs exhaust eight operations before an action. AT12 uses hand-authored traces and exact returns, so authors can select a favorable ordering and trace rather than prove that every accepted A2/A3 target is constructively reachable under the actual generic reader. Historical evidence in REVIEW_PACK shows that canonical recognition and routing can carry the result, making this a core construct-validity question rather than an efficiency detail.",
+      "acceptance_test_ids": [
+        "AT04_target_source_chronology_and_minimality",
+        "AT07_canonical_schema_parser_and_visibility",
+        "AT08_goal_query_candidate_reader_noninterference",
+        "AT10_sleep_compiler_one_edge_and_direct_closure",
+        "AT12_constructive_trace_causal_faithfulness",
+        "AT15_resource_ledger_and_baseline_manifest"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C007_complete_target_twin_collision_is_not_required",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The tests do not explicitly require every paired A2/A3 item's complete pre-action model-visible goal and initial-state bytes to collide across twins.",
+      "evidence": "Note 47 guarantees names, skins, handles, public initial states, source schedules, action counts, and marginals, and says bytes are identical before an action touches a swapped mapping. AT03 explicitly checks initial/source collision; AT04 checks different twin answers; AT08 says to use collision twins. None directly requires a per-target certificate over the exact final goal, state, prompt inputs, budgets, workspace initialization, reader snapshot handle, and candidate behavior. Joint target acceptance itself depends on differing correct assignments, so target choice, mission handles, ordering, rejection path, or state rendering can correlate with the hidden twin unless the full item is constructed as a byte-collision pair. The benchmark interpretation identifies this gap. Without that certificate, Bayes-N may exploit target-side selection and a model may identify the twin before using authentic memory.",
+      "acceptance_test_ids": [
+        "AT03_world_twin_determinism_and_marginals",
+        "AT04_target_source_chronology_and_minimality",
+        "AT07_canonical_schema_parser_and_visibility",
+        "AT08_goal_query_candidate_reader_noninterference",
+        "AT12_constructive_trace_causal_faithfulness"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C008_causal_memory_interventions_need_valid_counterfactual_semantics",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "S-bind and cited-atom twin substitution are not yet defined as coherent interventions on a valid counterfactual state.",
+      "evidence": "S-bind permutes object bindings after the E corpus is frozen while preserving claim type, status, root/provenance bins, answer marginals, views, and envelope. The proposal does not specify whether one global permutation must rewrite canonical atom IDs, every co-referent forward/reverse/incident view, query membership, aliases, and answer slots consistently, or how intentionally false rebound atoms are marked so that they cannot masquerade as genuinely SUPPORTED lifecycle claims. Preserving only provenance-count bins does not preserve semantic compatibility between rebound atoms and their roots. AT12 likewise substitutes twin atoms into the exact original pre-decision input and expects a twin-valid action, but after earlier swapped actions the original public state may not equal the twin state; memory-only substitution can create an impossible hybrid. A causal test must either intervene at a proven byte-colliding decision state or fork the matched twin public state while changing a registered minimal set of bytes. AT13's invariants and AT12's expected action change do not specify these semantics, so a passing fixture could reward an artifact of incoherent corruption rather than dependence on authentic binding.",
+      "acceptance_test_ids": [
+        "AT09_semantic_support_identity_and_provenance",
+        "AT10_sleep_compiler_one_edge_and_direct_closure",
+        "AT12_constructive_trace_causal_faithfulness",
+        "AT13_binding_control_and_assignment_invariants"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C009_confirmation_does_not_guard_against_standard_baseline_reversal",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "The future confirmation rule can pass while the experiential LoRA is worse than no memory, honest context, raw retrieval, reflection memory, or the structured text arm in practically important ways.",
+      "evidence": "Confirmation co-primaries require E-LoRA superiority over D-LoRA and A-native plus only non-inferiority to E-text. Positive E-LoRA minus N and text advantage over R-rec, X-text, and A-common are calibration promotion gates, not locked confirmation requirements. A distribution shift can therefore produce d1 and d2 above 0.10 while E-LoRA is harmful relative to N or loses to the strongest context/retrieval comparator; d3 permits a loss of almost 0.10. The benchmark interpretation identifies this reversal risk, while the systems interpretation calls the roster complete without distinguishing calibration selection from confirmation evidence. C03's literal comparator-qualified sentence may remain technically true, but any broader 'memory improved action' or complete-pipeline interpretation would be unsupported. The history in REVIEW_PACK makes this especially important: recognition/context protocols previously carried performance while adapters erased action capability.",
+      "acceptance_test_ids": [
+        "AT14_split_estimator_multiplicity_and_failures",
+        "AT15_resource_ledger_and_baseline_manifest",
+        "AT17_claim_linter_and_negative_decisions"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C010_pcfl13_scale_firewall_is_strong_in_prose_but_incomplete_in_evidence_and_lint",
+      "category": "scalability",
+      "severity": "material",
+      "statement": "The bundle correctly forbids scaling claims, but its mechanical evidence does not yet fully secure the narrower 'post-working-window retention' label or semantic equivalents of forbidden scale language.",
+      "evidence": "Both interpretations correctly emphasize that all 13 reusable mappings, about 16.7 bits, can be supported by 2C and that PCFL-13 has no multi-sector novelty, three post-native checkpoints, or scaling estimand. C06 is unusually explicit and is a genuine strength. However, the 8192-token cut lacks a bound tokenizer/event-renderer fixture, and AT04 requires old and recent roots without explicitly proving that each decisive credited atom is causally derived from an event outside every legal non-memory/context surface at the evaluated decision. AT17 describes fixtures for forbidden claims and tags but supplies neither the linter vocabulary/semantic policy nor adversarial paraphrases such as 'keeps accumulating useful structure,' 'survives growing histories,' or 'developmental retention.' A string-level linter plus required words cannot make the scientific distinction durable. The eligible statement must remain exactly comparator-qualified and fixed-deck; no PCFL-13 checkpoint or repetition can be presented as a scale trend.",
+      "acceptance_test_ids": [
+        "AT04_target_source_chronology_and_minimality",
+        "AT07_canonical_schema_parser_and_visibility",
+        "AT14_split_estimator_multiplicity_and_failures",
+        "AT17_claim_linter_and_negative_decisions",
+        "AT18_fresh_review_and_new_authority_before_science"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C011_estimator_and_performance_gates_still_require_post_ratification_choices",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "AT14 and AT16 are not executable pass/fail gates until degenerate-statistic conventions, exact manifests, and the full CPU budget are bound.",
+      "evidence": "The design names exhaustive sign flips, a studentized statistic, Romano--Wolf max-T stepdown, 1e-4 inversion, Holm families, and failure-as-zero, but not the studentizer, zero-variance rule, treatment of all-zero paired differences, finite-grid endpoint convention, stepdown tie rule, bootstrap RNG algorithm, or exact golden vectors. These cases are likely when deterministic failures score zero. Split counts are fixed but seed and pair bytes are not, and the calibration power decision that can suppress a claim is not an executable formula. AT14 can encode one implementation after these choices are made, not prove that it implements already ratified choices. AT16 separately depends on the missing full-suite resource ceiling. Consequently the D0 estimator/reference implementation would settle scientific decision rules without a prior human-bound design.",
+      "acceptance_test_ids": [
+        "AT06_exact_memory_headroom_necessity_and_shortcuts",
+        "AT14_split_estimator_multiplicity_and_failures",
+        "AT16_CPU_performance_budget",
+        "AT17_claim_linter_and_negative_decisions"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C012_d0_fixture_success_cannot_falsify_future_backend_leakage_or_model_credit",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "Several acceptance tests use scientific falsification language broader than a CPU fixture can support, despite the authority graph correctly keeping future model stages dormant.",
+      "evidence": "AT08 says its D0 perturbations falsify that substrate channels can launder an answer, but D0 cannot load the future text, native A-MEM, generative, recognizer, provider, tokenizer, cache, or LoRA implementations whose hidden computation and process behavior create the actual side channels. AT12 and AT13 use scripted traces and synthetic corpora, so they validate intervention checkers rather than constructive use or binding dependence by a model. AT02 and AT11 simulate dispatch and placeholders rather than exercising provider recovery or model-process isolation. Both interpretations acknowledge these limitations, but the proposal's expected and falsifies fields remain unqualified. AT18 requires new authority but does not itself register the future black-box/process-level replay of these tests. A green D0 must therefore be described only as reference-checker conformance, with equivalent exact-backend tests mandatory in a later bound D2/G-TEXT/G-CAL artifact.",
+      "acceptance_test_ids": [
+        "AT02_D0_capability_firewall",
+        "AT08_goal_query_candidate_reader_noninterference",
+        "AT11_snapshot_resume_repeat_and_isolation",
+        "AT12_constructive_trace_causal_faithfulness",
+        "AT13_binding_control_and_assignment_invariants",
+        "AT18_fresh_review_and_new_authority_before_science"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C013_operational_support_is_not_external_causal_truth",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The strengthened support lifecycle justifies finite-world predictive invariance, not an unqualified claim that DREAM has discovered causal truth.",
+      "evidence": "AT09 is a substantial repair: relation-specific fits, negatives, later predictions, separating panels, distinct intervention-cluster roots, alias-first cycle checks, and immutable later status are far stronger than proposal multiplicity. Yet all roots are produced by one scripted policy in one finite generator and may share latent mechanisms. Root deduplication and temporal separation do not make episodes causally independent or establish transport beyond the generator family. The change's organ-credit firewall mostly recognizes this, but C03 and compiler language repeatedly call the resulting objects 'causal memory.' That is defensible only as operationally supported PCFL causal relations under registered interventions, not autonomous causal discovery or external truth. AT17 should enforce this qualifier alongside the already forbidden autonomous-discovery claim.",
+      "acceptance_test_ids": [
+        "AT09_semantic_support_identity_and_provenance",
+        "AT10_sleep_compiler_one_edge_and_direct_closure",
+        "AT17_claim_linter_and_negative_decisions"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C014_required_before_labels_do_not_protect_d0_from_design_drift",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "Most tests are labeled required before GPU rather than before D0 implementation, so ratification would authorize code that resolves the bundle's open scientific choices before those choices receive review.",
+      "evidence": "Only AT01 is required_before implementation. AT02 through AT16 are generally required_before gpu_run even though their implementations define the world, controller prior, authentic-memory interface, schemas, catalogs, lifecycle rules, interventions, estimator, split logic, and resource gates that D0 is supposed to freeze. AT18 reviews D0 only after those choices have been encoded. The human boundary asks whether exact bytes authorize D0, but these bytes are not exact on the blocking points above. This repeats the predecessor's authority problem in narrower form: the future scientific/GPU firewall is good, yet the design-to-reference-implementation boundary is still porous. A successful adversarial test after implementation does not substitute for prior ratification of material design choices.",
+      "acceptance_test_ids": [
+        "AT01_exact_bundle_and_scope_binding",
+        "AT02_D0_capability_firewall",
+        "AT05_exact_Bayes_and_no_memory_controller",
+        "AT06_exact_memory_headroom_necessity_and_shortcuts",
+        "AT07_canonical_schema_parser_and_visibility",
+        "AT13_binding_control_and_assignment_invariants",
+        "AT14_split_estimator_multiplicity_and_failures",
+        "AT16_CPU_performance_budget",
+        "AT18_fresh_review_and_new_authority_before_science"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "Unbound public goal/state/query/return schemas allow implementation-selected fields, aliases, normalization, or copy-origin encodings to carry target information.",
+    "The absence of a complete per-target twin goal/state/input collision certificate permits target selection or rendering to reveal twin identity before authentic memory is used.",
+    "Generic QUERY_LOCAL incident ordering, repeated-FOUND behavior, candidate freeze scope, and the bridge from fresh target handles to reusable family atoms are undefined and can act as a hidden agenda or answer-bearing scaffold.",
+    "An unrestricted exact-memory controller can bypass the one-atom reader and convert hidden graph access into apparent evidence that authentic lifetime memory is usable.",
+    "D0 reader and timing fixtures cannot prove noninterference for later A-MEM, model recognizer, generative, provider, cache, tokenizer, or LoRA backends.",
+    "S-bind may preserve status and provenance-count bins while severing semantic compatibility with actual roots unless rebound identities and all co-referent views are rewritten and explicitly tainted as an intervention.",
+    "Twin-atom substitution into a noncolliding later public state can create an impossible hybrid whose changed action is not evidence of causal memory use.",
+    "Missing tokenizer/event-renderer bytes make old-versus-recent eligibility and post-working-window labels implementation-dependent.",
+    "The D0 allowlist is not bound, so transitive imports or new helper entry points can broaden audit, scorer, split, or runtime visibility while remaining nominally inside a component category."
+  ],
+  "missing_acceptance_tests": [
+    "MAT01_exact_d0_allowlist_and_budget: bind every permitted D0 source/test path, command, entry point, transitive capability class, wall time, cores, memory, processes, energy, and failure disposition before implementation authority.",
+    "MAT02_schema_and_token_cut_golden_bundle: hash-bind every canonical schema and representative byte string plus tokenizer revision/hash, renderer bytes, complete-event token counts, NFC-before-JCS rule, and copy-origin encoding before parser implementation.",
+    "MAT03_frozen_cpu_and_split_instances: bind protocol-hash derivation, 64 CPU twin pairs, target decks, rejection stream, DEV/calibration/confirmation/reserve seeds, lifetime orderings, and no-replacement manifests before any controller or method output.",
+    "MAT04_bayes_conditioning_oracle: enumerate the exact accepted-item posterior induced by visible target bytes and joint-twin selection, prove rejected-proposal metadata is excluded, define quantiles and degenerate states, and compare full and quotient values to independent rational calculations.",
+    "MAT05_separate_memory_oracles: register a hidden-world solvability oracle, a complete eligible-atom information ceiling, and an authentic source-derived controller through the exact one-atom reader and resolver budgets; prohibit transferring claims among them.",
+    "MAT06_exhaustive_generic_reader_reachability: for every accepted A2/A3 target and atom ordering, prove that the required premises can be found, retained, cited, and converted into six legal sequential actions under exact generic query, repeat, workspace, operation, and action budgets; separately report typed-query scaffolding.",
+    "MAT07_complete_target_twin_input_collision: compare exact pre-action goal, state, prompt input, workspace, budget, snapshot handle, catalog behavior, return serialization, and timing class for every paired target while certifying different correct assignments.",
+    "MAT08_coherent_binding_and_twin_interventions: define one global fixed-point-free semantic rewrite over canonical atoms and all views, intervention taint/status behavior, query membership, root compatibility audits, and the exact public-state conditions under which twin-memory substitution is a valid counterfactual.",
+    "MAT09_confirmation_baseline_reversal_gate: require locked confirmation usefulness versus N and predeclare the allowed conclusion if E-LoRA loses to CTX-C, CTX-H, R-rec, X-text, A-common, A-native, or E-text despite passing current co-primaries.",
+    "MAT10_degenerate_estimator_vectors: bind exact studentization, zero-variance/all-zero rules, max-T ties, grid endpoints, bootstrap RNG, missing/failure patterns, and calibration power decision with independently calculated golden outputs.",
+    "MAT11_pcfl13_retention_and_language_firewall: prove every credited target depends on a causally eligible root outside legal working/context surfaces and adversarially reject synonymous scaling, developmental, recurrence, continual, online, and autonomous-discovery language, not only registered tags.",
+    "MAT12_future_backend_noninterference_reauthorization: require the exact later text/native/generative/recognizer/LoRA/provider implementations to rerun process-level collision, timing, error, cache, isolation, mask/twin, and binding tests before any model result or mechanism credit.",
+    "MAT13_single_view_count_consistency: require one ratified compiler-view cardinality across SLEEP, S-bind, corpus manifests, candidate generation, resource accounting, and all golden tests."
+  ],
+  "human_questions": [
+    "Should D0 implementation remain forbidden until exact schemas, tokenizer/render cuts, CPU/split manifests, file/entry-point allowlist, and the full CPU resource budget are added to a successor hash-bound artifact?",
+    "Does Rohin intend Bayes-N to condition on the exact visible accepted target only, and what target-generation or joint-twin selection information is part of that conditioning?",
+    "Should the hidden-world oracle, unrestricted eligible-atom ceiling, and authentic source-derived one-atom-reader controller be three separately named controls with different permissible conclusions?",
+    "What exact query and resolver-operation caps apply to THINK and DREAM, how are generic incident atoms ordered, and must every A2/A3 target be exhaustively reachable without QUERY_TYPED?",
+    "Must every paired target have byte-identical complete pre-action model-visible inputs, rather than only matching source histories and initial public states?",
+    "Should the compiler and S-bind use exactly four views or six, and how must a binding derangement rewrite canonical IDs, aliases, roots, returns, and all views without pretending the corrupted atoms remain genuinely supported?",
+    "At what decision cuts is counterfactual-twin atom substitution valid if earlier actions have already made the twins' public states diverge?",
+    "Must locked confirmation retain positive usefulness versus no memory and the strongest honest context/retrieval baseline, or is the eligible sentence intentionally limited to D-LoRA, A-native, and E-text comparisons?",
+    "Does Rohin ratify that PCFL-13 can support only a fixed-deck, comparator-qualified, post-working-window mechanism result and never any synonym of scaling, continued lifetime improvement, online learning, recurrence superiority, or autonomous causal discovery?",
+    "Should every D0 test that fixes a material scientific choice be moved to a pre-implementation design-binding stage, with D0 limited to implementing already ratified bytes?"
+  ]
+}

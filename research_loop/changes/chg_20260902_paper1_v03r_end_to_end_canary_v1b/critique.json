@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b.cross_critique.fresh.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b",
+  "state": "critiqued",
+  "architecture_change_sha256": "6181ceb5ad9b3289f441f3bee29cf611e4e652695d6903b0c1d858c72812f409",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b.systems.fresh.v1",
+      "sha256": "6719831ccae5a795dc42dfb905ec49408d545dfa58e1429dbb9a40f7df23b0b6"
+    },
+    {
+      "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b.benchmark.fresh.v1",
+      "sha256": "bf04018bbdfa5fed1f33b943a6e4a59762c5f026ab3630ade409f3a20c5b7d59"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact human ratification, independent review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 claim boundary, honesty ladder, and prohibition on an exact cognitive-loop verifier."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Frozen paired action-outcome world, public export, operational probe, scoring, and shortcut audit."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing construct, leakage, local-window, edge-removal, and population acceptance coverage."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/consensus.json",
+      "sha256": "e1871515f7c8e6a52312e2be2473172da6c4e695ab9dbcba387038c6adc3ad0d",
+      "purpose": "Binding M01-M11 successor requirements and exact P1CB replacement-test lineage."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/experiment_spec.md",
+      "sha256": "8ba4e0e46cec13b3b079da276a99d22dd3b75aa2ea0871b1f3e383e7bae8abc9",
+      "purpose": "Stage order, scientific gates, accounting, and bounded claim text."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/operation_contract.json",
+      "sha256": "2711babe954be041824d9848a4164956fe7ee030ea21148c7443cb2b96866be3",
+      "purpose": "Provider request construction, state profiles, scratch, aliases, recurrence selectors, and seed derivation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/execution_contract.json",
+      "sha256": "3fc074c24239ed3cd3602aa415c864986d3e47eac1a858a575dfd2e42a9b2d99",
+      "purpose": "Projection, reducer, provenance, reader, compiler, candidates, interventions, and isolation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/development_fixture_contract.json",
+      "sha256": "3551fb0d8d22f3e93f539faba5f7c7596adc708f8bac75f22b6eb705b91c8f04",
+      "purpose": "Immutable population vector, six development lives, gold paths, parser, scorer, and development gate."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/runtime_training_contract.json",
+      "sha256": "1c78d762178ae4914913e20c7a89500810cc13f2dc6797f57d7331a46f82ade9",
+      "purpose": "Resolved runtime requirements, generation receipts, two-fit recipe, and recognition scoring."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/stage_review_contract.json",
+      "sha256": "88a3ed9d02abc98bde81b8400b533acf356c195379d3e7f4b556be39fb30bfab",
+      "purpose": "Monotone authority, packet inventories, review separation, validity classes, and claim firewall."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/memory_row.schema.json",
+      "sha256": "d27d61e0818e9f384899705b1bb619a4c316c470872848260b5138dc2f06ff28",
+      "purpose": "Closed row syntax whose semantic compatibility and state evolution must be fixed by the protocol."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/scope_proposal.json",
+      "sha256": "e90c23b0042febca60ee8c08e4f3d1ed07a60b95e7c47baf14be6889544dea73",
+      "purpose": "Exact requested and forbidden authority and unconditional human boundary."
+    }
+  ],
+  "strongest_case": "The v1b package preserves the right minimum canary and genuinely repairs much of v1a: generated prediction, reason, and confidence text is capability-separated from cognition; M1_OWN is prospectively fixed; RAW_RAG and GOLD_OPEN_LOOP are removed; the paired development fixtures and shortcut vector are concrete; aggregate call ceilings reconcile; runtime receipts and the two-fit recipe are substantially stronger; per-life 44/48 gates and matched adapter swaps replace pooled fidelity; claims are explicitly one-pair and non-headline; and every route remains subject to human authority. The systems and benchmark interpretations independently agree on the central residual fact, and the frozen contracts confirm it: these exact bytes still permit or prescribe materially different recurrent states, interventions, training examples, validity outcomes, and authority artifacts. Worse, strict precedence makes Stage T unreachable because the goal must both remain hidden until path/sham manifests seal and be revealed to construct those manifests. The interpretations are also correct that absence of dreamed path roots is a scientific failure of the tested mechanism, not benchmark invalidity, and that cited row kinds are insufficient without prospectively defined, offline-correct relations. Fresh cross-examination adds two concrete omissions: the DEV gold row aliases violate the global proposal-row namespace, and the LoRA recognizer returns a candidate atom without a bound transformation into the full row/provenance result required by the shared THINK1 citation contract. The finite canary concept remains worth preserving, but the current artifact cannot support ratification, implementation, DEV dispatch, heldout exposure, either fit, or a positive or negative scientific conclusion.",
+  "reviewed_acceptance_test_ids": [
+    "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_REDUCER_PROVENANCE",
+    "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS",
+    "P1CB05_SHORTCUT_PROOF_AND_DEV",
+    "P1CB06_EXACT_RECURRENCE_BRANCHES",
+    "P1CB07_HELDOUT_TEXT_INTERVENTIONS",
+    "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS",
+    "P1CB09_STAGE_RUNTIME_ACCOUNTING",
+    "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+  ],
+  "concerns": [
+    {
+      "concern_id": "P1CB_CRIT_C01_OPERATION_STATE_AND_RECURRENCE_NOT_UNIQUE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "P1CB_SYS_D01, P1CB_SYS_D03, and P1CB_BENCH_D01 are accepted and consolidated: the proposal does not bind one model-visible operation state or one recurrent treatment.",
+      "evidence": "operation_contract describes rather than schemas the EVENT trigger, witnessed ROW trigger, probe, previous_read, allowed-state variants, and scratch nodes. DREAM requires separate trigger and rows fields while saying the trigger is included in rows, which is undefined for an EVENT. CREATE permits E citations, but SELF_CHECK premises are exact closed cited rows, so an E premise has no canonical object. UNDER_LINKED, RECENT, SUPPORTED, and UNRESOLVED have sort keys but no complete candidate predicates; UNRESOLVED is scheduled while unresolved rows are forbidden evidence; prior_selection_count and citation_graph_degree lack initialization, update, and branch scope; profile_ascii and slot numbering are not enumerated; state_tokens lack a source artifact and exact construction; and anchor atoms lack an explicit namespace mapping. Implementation-generated golden vectors cannot legitimately choose among these outcome-relevant alternatives after ratification. Bind closed schemas and canonical vectors for every envelope, exact E-to-M handling, mode pools and counter updates, branch state, seed slots, state-token derivation, and atom namespaces in the protocol itself.",
+      "acceptance_test_ids": [
+        "P1CB02_FINAL_REQUEST_TAINT_NONINTERFERENCE",
+        "P1CB03_CLOSED_REDUCER_PROVENANCE",
+        "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS",
+        "P1CB06_EXACT_RECURRENCE_BRANCHES",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C02_FINAL_GOAL_AND_INTERVENTION_ORDER_IS_CIRCULAR",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "P1CB_SYS_D02 and P1CB_BENCH_D03 are accepted: strict visibility precedence makes the registered heldout stage impossible.",
+      "evidence": "experiment_spec first requires the final animal, question, and answer to remain absent until both intervention exclusion manifests are sealed. The same file later says to reveal the goal and then preseal T-PATH/T-SHAM, while execution_contract says intervention seal_time is after the public final goal and defines roots and protected rows using the final animal, source, and target. The stricter rule therefore forbids the information needed to build the manifests and mandates INVALID_PRECONDITION before any T arm. Replace every contradictory sentence with one order: seal M0/M1, fidelity rows, and shared candidates; reveal the public final goal; deterministically seal path and sham manifests; execute and seal every T arm; then score offline.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+        "P1CB07_HELDOUT_TEXT_INTERVENTIONS",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C03_DIST_CONTROL_CONFLICTS_WITH_TAINT_FIREWALL",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "P1CB_SYS_D04 and both interpretations' DIST ambiguities are accepted: DIST has neither an authorized public derivation nor a coherent taint test.",
+      "evidence": "execution_contract classifies matched_distractor_source and matched_distractor_target as audit-only, while operation_contract requires a presealed DIST focus that changes selectors and provider-visible requests. No other exact public algorithm maps a life to that focus, including the DEFER case. Reading audit-only endpoints violates memory_state_separation; choosing different endpoints is implementation-selected. change.json P1CB02 simultaneously says mutate every focus and expect later request bytes to remain identical, although registered OWN/DIST focus is intentionally visible and treatment-effective. Add a separately typed prospective-control manifest, derived by one fixed authorized public rule before any branch result, specify DEFER behavior and all matched fields, and scope noninterference to unauthorized focus/audit mutations rather than the registered treatment field.",
+      "acceptance_test_ids": [
+        "P1CB02_FINAL_REQUEST_TAINT_NONINTERFERENCE",
+        "P1CB06_EXACT_RECURRENCE_BRANCHES",
+        "P1CB07_HELDOUT_TEXT_INTERVENTIONS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C04_REFLECTION_AND_ROW_STATE_REMAIN_NONOPERATIONAL",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "P1CB_BENCH_D02 is accepted and extended: M03 does not define a closed structural SELF_CHECK decision or an immutable row-state transition.",
+      "evidence": "INDEPENDENT_CORROBORATION is allowed when at least one supplied counterevidence row has disjoint lineage, but semantic_entailment_check is false and the reducer does not require the model to cite a particular supporting row or encode a structural support claim. The harness must either perform forbidden semantic judgment or accept any unrelated disjoint row as corroboration. Separately, CREATE owns a PROVISIONAL row before SELF_CHECK; the reducer then assigns a terminal status and support_basis, while record_hash covers those fields and the proposal is repeatedly called immutable. The contracts do not say whether this mutates a record, creates a new version, or projects append-only events. memory_row.schema also permits incompatible witnessed origin/status/basis/citation/depth combinations unless a complete compatibility table rejects them. Define model-claimed distinct-lineage support entirely through explicit model output and schema-visible IDs, require cited support rows, bind every origin/status/basis/citation/depth combination, and define canonical event-sourced projections and record hashes at proposal and terminal states without a truth checker.",
+      "acceptance_test_ids": [
+        "P1CB03_CLOSED_REDUCER_PROVENANCE",
+        "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS",
+        "P1CB06_EXACT_RECURRENCE_BRANCHES"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C05_OPERATION_BUDGET_ACCOUNTING_AND_VALIDITY_DIVERGE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "P1CB_BENCH_D06 and the interpretations' scratch, accounting, and validity concerns are accepted and consolidated.",
+      "evidence": "Every nonterminal THINK0/THINK1 response appends a node, the budget permits twelve nonterminal responses, and the scorer says the twelfth seals BUDGET_EXHAUSTED, but scratch maximum_nodes is eleven and overflow terminates INVALID_INFRASTRUCTURE. The identical trace therefore has two terminal classes. DEV contracts also say terminal COMMIT/DEFER ends the loop and call totals are maxima, yet no_memory says adaptive_stopping=false, the review packet asks for all 216 receipts or a partial manifest, and the prose sometimes treats 72 per arm literally. Finally there is no exhaustive mapping for malformed JSON, schema-valid illegal operations, CONFLICT, DEFER, budget exhaustion, missing roots, infeasible sham, input refusal, timeout, truncation, output-limit stop, runtime drift, and partial-fit failure. Bind one twelve-operation reducer, make call counts unambiguously ceilings with non-dispatch terminal accounting, and publish a total validity/dispatch table before execution.",
+      "acceptance_test_ids": [
+        "P1CB05_SHORTCUT_PROOF_AND_DEV",
+        "P1CB06_EXACT_RECURRENCE_BRANCHES",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C06_TEXT_INTERVENTION_CAN_ERASE_THE_NEGATIVE_AND_ACCEPT_DECORATIVE_ROWS",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "P1CB_BENCH_D04 and P1CB_BENCH_D07 are accepted: the current Stage-T rule can relabel failure of the tested constructor as benchmark invalidity and can pass incorrect or decorative abstractions.",
+      "evidence": "execution_contract makes a missing eligible ROLE_EQUIV or CAUSAL_JOIN root INVALID_PRECONDITION even though producing those rows is the mechanism under test. That removes the clearest valid negative from the scientific outcome space. Conversely, text success asks for registered role and causal rows, but no heldout rule prospectively registers exact rows or requires their ROLE_EQUIV anchor and CAUSAL_JOIN effect to be correct under sealed offline scoring. path_roots includes all matching kinds/endpoints, including false model-self-supported relations, and a COMMIT can cite previously returned rows decoratively without those rows carrying the correct relation. Treat missing dreamed root classes as VALID_STAGE_FAILURE when benchmark/runtime preconditions hold; reserve INVALID_PRECONDITION for independently infeasible controls. Before T scoring, designate the candidate path rows from the sealed manifest and require offline correctness plus an explicit returned-and-used trace criterion. Golden-test the complete sham assignment, including pool sufficiency and ties, before using path-loss/sham-retention language.",
+      "acceptance_test_ids": [
+        "P1CB07_HELDOUT_TEXT_INTERVENTIONS",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING",
+        "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C07_LORA_EXAMPLES_UPDATES_AND_READER_RESULT_ARE_UNBOUND",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "P1CB_SYS_D05 and P1CB_BENCH_D05 are accepted and extended: the current adapter stage does not identify one training run or one LoRA-backed THINK1 reader.",
+      "evidence": "The four compiler views are natural-language descriptions rather than exact UTF-8/JCS templates and token-ID vectors. BOS/EOS and special-token use, the collator, final incomplete batch policy, dataloader worker/order behavior, RNG initialization beyond NumPy PCG64, epoch permutation continuation, and exact optimizer-step count remain selectable. The asserted backend_invariant is also undefined because text THINK1 consumes full closed ROW results, not the four compiled cue/answer views. Fresh cross-examination finds a further missing edge: recognition scoring returns a winning candidate atom or CONFLICT, while previous_read and THINK1 citation rules require a full canonical row projection with row_id, status, citations, depth, and hashes. No rule maps an own or donor winner into that row without consulting stored text/provenance, especially when the donor value is absent from the recipient manifest. Bind exact view bytes/tokens and deterministic step execution, then define and isolate the candidate-winner-to-reader-result mapping, local alias/provenance semantics, NOT_FOUND/CONFLICT behavior, and the exact bytes exposed to the clean 32B thinker. Otherwise L-OWN/L-TWIN can be carried by host text or cannot satisfy the registered path criterion.",
+      "acceptance_test_ids": [
+        "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS",
+        "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C08_AUTHORITY_AND_REVIEW_GATE_IS_NOT_MACHINE_UNIQUE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "P1CB_SYS_D06 and P1CB_SYS_A08 are accepted: M04/M09 still rely on prose-level authority artifacts and place P1CB01 on both sides of implementation.",
+      "evidence": "change.json marks P1CB01 required_before implementation, but P1CB01 validates the resolved executable lock and operation registry produced during CPU implementation, and CPU_TO_DEV includes P1CB01 plus an implementation source manifest. Literal enforcement blocks implementation; permissive enforcement weakens the ratification boundary. stage_review_contract lists disposition fields and packet inventories but supplies no closed schemas, types, canonical packet construction, exact artifact paths, reason-code registry, actor-assignment creation, identity-attestation validation, predecessor-token representation, or human-ratification linkage. Two implementations can accept different evidence while producing nominal APPROVE tokens. Place P1CB01 entirely inside post-ratification CPU work and before DEV dispatch, and bind schemas plus JCS construction for assignments, packets, dispositions, terminal reviews, and authority tokens, including exact leaf manifests and changed-byte rereview behavior.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+        "P1CB09_STAGE_RUNTIME_ACCOUNTING",
+        "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C09_DEV_FIXTURE_IDENTITY_AND_TEST_LINEAGE_DRIFT",
+      "category": "architecture",
+      "severity": "material",
+      "statement": "Fresh cross-examination finds two auditability defects not explicitly disposed by either interpretation: DEV gold aliases contradict the global identity contract, and all ten replacement-test IDs drift from the binding v1a consensus.",
+      "evidence": "operation_contract reserves M000000-M000099 for witnessed rows with Ei mapped to Mi and M001000 plus proposal slot for proposed rows. development_fixture_contract assigns DREAMED registered gold rows M000046/M000047, M000049/M000050, directly using the witnessed namespace rather than the proposal namespace, while declaring the parser/scorer shared with heldout. This is exact but not contract-legal. Separately, v1a consensus mandates replacement IDs such as P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY through P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP, while v1b silently renames every ID to a shorter form. Intake validates only internal equality, so it will not catch broken predecessor-test lineage. Either use the mandated IDs and global alias rules exactly or add an explicit adjudicated mapping plus a distinct, closed OFFLINE_REGISTERED_GOLD namespace that cannot collide or leak into heldout semantics.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+        "P1CB03_CLOSED_REDUCER_PROVENANCE",
+        "P1CB05_SHORTCUT_PROOF_AND_DEV",
+        "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C10_SCAFFOLDING_AND_CAUSAL_LANGUAGE_NEED_EXPLICIT_CEILING_LABEL",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "P1CB_BENCH_D08 is accepted: the claim firewall is narrow but does not yet foreground the solution-structure scaffolding required by the frozen honesty ladder.",
+      "evidence": "dream_prompt names the three game-specific abstraction kinds, and think1_prompt gives the exact role, causal-effect, passive-baseline, source-contribution, and recipe-arithmetic dependency sequence. Under research_notes/35_goalposts_paper1.md this is permitted as a game-informed engineering ceiling, not the generic headline condition. The current text_pass wording says strongly source/target-frontier-scaffolded but can still be read as the frozen Paper-1 organism constructing connected memory autonomously. Require every positive and negative terminal to say engineering-ceiling-style, game-specific ontology and proof-sequence scaffolding, aligned seed-5 one-pair diagnostic; retain model-self-supported, realized-reader-intervention, and candidate-constrained immediate-access qualifiers; and forbid inference to generic constructive memory, reliability, scale, saturation, superiority, durability, or autonomous discovery.",
+      "acceptance_test_ids": [
+        "P1CB07_HELDOUT_TEXT_INTERVENTIONS",
+        "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS",
+        "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "P1CB_CRIT_C11_SUCCESSFUL_REPAIRS_AND_SCOPE_BOUNDARY",
+      "category": "scalability",
+      "severity": "note",
+      "statement": "M01, M05, M08, M10, and M11 are directionally successful, and no confirmatory expansion is needed to repair the blockers above.",
+      "evidence": "Audit prose is excluded structurally; M1_OWN remains fixed; the six DEV lives, 31-predictor vector, donor tokens, and proof fixtures are concrete; per-life fidelity and major runtime receipt fields are present; optional RAW_RAG/GOLD_OPEN_LOOP calls are removed; and scope_proposal forbids broader experiments and claims. Replication, more seeds/skins, longer contexts, new baselines, Action World, RML/PCFL, learned LOOP control, rank/model sweeps, durability, publication, external actions, credentials, leases, and spend would not resolve C01-C10. Preserve these exclusions and the unconditional human terminal in the narrow successor.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+        "P1CB05_SHORTCUT_PROOF_AND_DEV",
+        "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS",
+        "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+      ],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [
+    "The DIST focus appears to require matched-distractor endpoints explicitly classified audit-only; using them violates capability separation, while no authorized public derivation is bound.",
+    "P1CB02 requires focus mutation to be byte-inert even though the registered OWN/DIST focus is intentionally model-visible and selector-effective; the taint domain and treatment domain overlap.",
+    "EVENT triggers and E-cited premises lack closed model-visible schemas, so raw public-record payloads, duplicated event/row evidence, or implementation-specific projections can reach DREAM or SELF_CHECK.",
+    "state_tokens have no exact sealed source and construction rule, leaving a model-visible answer-vocabulary channel that can vary by life or implementation.",
+    "Selector counters affect future requests but their state/update path is not separated from requested/realized mode metadata labeled audit-only.",
+    "The final goal is simultaneously forbidden until path/sham manifests seal and required to construct those manifests, so strict visibility enforcement makes Stage T unreachable.",
+    "The LoRA winner-to-ROW mapping is absent; reconstructing a full cited row can expose host-stored own/donor text or provenance beyond the candidate-constrained adapter output.",
+    "Review actor IDs, assignments, packet membership, predecessor links, and authority tokens have no closed canonical schemas, leaving authority-relevant metadata open to incompatible validation."
+  ],
+  "missing_acceptance_tests": [
+    "P1CB01_SCOPE_RUNTIME_AUTHORITY disposition: modify. Place it post-ratification inside CPU implementation and before DEV; verify canonical authority/review schemas, exact predecessor links, human-ratification binding, all validity transitions, and terminal routing. Preserve the finite ceilings and forbidden scope.",
+    "P1CB02_FINAL_REQUEST_TAINT_NONINTERFERENCE disposition: modify. Add closed EVENT, ROW, probe, previous-read, state-token, and scratch envelopes; distinguish the authorized registered focus from forbidden/audit focus mutations; compare final rendered tokens, selectors, readers, views, candidates, training examples, and LoRA-backed row results.",
+    "P1CB03_CLOSED_REDUCER_PROVENANCE disposition: modify. Add exhaustive origin/status/basis/citation/depth compatibility, explicit E-premise handling, model-cited structural distinct-lineage support, append-only row-version/hash vectors, global alias rules including DEV gold, and all existing duplicate/conflict/cycle/diamond cases.",
+    "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS disposition: modify. Bind exact public-event and reader-result schemas, state-token provenance, all four view bytes and token IDs, candidate construction/ties, and the adapter-winner-to-full-local-row/provenance transformation; prove host text cannot carry L-OWN/L-TWIN.",
+    "P1CB05_SHORTCUT_PROOF_AND_DEV disposition: retain the frozen population vector and three-arm gate but modify accounting to stop on terminal operations, use ceilings plus explicit non-dispatch receipts, and repair the OFFLINE_REGISTERED_GOLD row namespace before DEV.",
+    "P1CB06_EXACT_RECURRENCE_BRANCHES disposition: modify. Add complete mode predicates, selector counter initialization/update/branching, exact trigger placement and E-to-M behavior, seed profile/slot registry, authorized DIST-focus derivation including DEFER, and a single twelve-operation scratch terminal rule.",
+    "P1CB07_HELDOUT_TEXT_INTERVENTIONS disposition: modify. Fix reveal order; classify missing dreamed root classes as VALID_STAGE_FAILURE; prospectively register offline-correct heldout role/causal relations; require nondecorative returned use; seal every T output before scoring; and golden-test sham assignment, ties, and infeasibility.",
+    "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS disposition: modify. Freeze exact view/template/token bytes, collator, incomplete-batch rule, every RNG, epoch permutations, optimizer-step count, recognition response envelope, local citation semantics, and same-byte own/donor adapter swap. Retain separate 44/48 gates and exactly two conditional fits when valid.",
+    "P1CB09_STAGE_RUNTIME_ACCOUNTING disposition: modify. Publish one exhaustive mapping from every dispatch, non-dispatch, model terminal, protocol error, control infeasibility, runtime failure, partial fit, and budget exhaustion to a validity class and ledger effect; reconcile early stops and no retries at each transition.",
+    "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS disposition: modify. Bind closed assignment/packet/disposition/token schemas and exact artifact paths; preserve reviewer separation and supremacy; restore or explicitly map the ten v1a-mandated replacement IDs; lint engineering-ceiling, game-specific scaffold, one-pair, model-self-supported, realized-reader, and candidate-constrained language at every terminal."
+  ],
+  "human_questions": [
+    "Will Rohin withhold ratification of these exact v1b bytes and direct a narrowly scoped successor resolving C01-C10 before implementation, any model/GPU dispatch, heldout exposure, or either adapter fit?",
+    "Will the successor use the single prospective order M0/M1 and candidates seal, public goal reveal, path/sham seal, all T executions seal, then offline scoring?",
+    "Will missing required dreamed ROLE_EQUIV or CAUSAL_JOIN roots be treated as VALID_STAGE_FAILURE rather than INVALID_PRECONDITION, with positive text credit requiring prospectively designated offline-correct relations and actual nondecorative use?",
+    "Will DIST receive a separately authorized, fixed public control manifest while audit-only distractor metadata remains incapable of influencing any other request?",
+    "Will P1CB01 move unambiguously into post-ratification CPU work, and will review packets, dispositions, authority tokens, DEV gold aliases, and the ten predecessor test IDs receive exact canonical schemas or explicit mappings?",
+    "Will any eventual result be labeled only as a game-specific, solution-sequence-scaffolded engineering-ceiling diagnostic on one aligned seed-5 pair, with all broader experiments, claims, external actions, credentials, leases, and spend remaining outside this successor?"
+  ]
+}

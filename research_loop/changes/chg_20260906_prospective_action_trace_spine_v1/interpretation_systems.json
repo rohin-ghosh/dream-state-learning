@@ -1,0 +1,172 @@
+{
+  "acceptance_test_ids_addressed": [
+    "ST1_canonical_chain_and_recovery",
+    "ST2_episode_budget_lifecycle",
+    "ST3_context_generation_local_roundtrip",
+    "ST4_typed_call_cardinality",
+    "ST5_private_dispatch_score_atomicity",
+    "ST6_public_projection_noninterference",
+    "ST7_role_capability_fixture",
+    "ST8_closed_graph_and_no_feedback",
+    "ST9_dual_validator_mutation"
+  ],
+  "acceptance_test_interpretation": "The ordered CPU suite measures only the bounded synthetic contract it advertises. The first test checks canonical bytes, hash chaining, append-only publication, recovery, quarantine, writer serialization, and resource limits. The second checks explicit OPEN/CLOSE lifecycle, retry and repeat identity, policy-visible budgets, and fail-closed over-budget transitions. The third checks local equality between opaque intended and consumed IDs plus recorded byte/hash receipts, explicitly not real tokenizer or engine consumption. The fourth checks separation of free THINK prose from a zero-or-one structured call and never invokes an environment. The fifth checks synthetic private dispatch ordering, state/hash transitions, transaction uniqueness, integer recomputation, rational score-law recomputation, and atomic invalid outcomes. The sixth checks that a public record is the byte-exact allowlist projection of one private record and excludes registered forbidden fields and bytes. The seventh checks only enumerated synthetic capability channels and therefore cannot establish live runtime noninterference. The eighth checks the six-type prospective DAG, accepts shared-ancestry diamonds, and rejects feedback or undeclared-stage edges. The ninth checks mutation sensitivity and agreement among the oracle and validators over the registered fixture universe; agreement does not establish semantic completeness or runtime truth.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A1_separate_ledger_chain_scope",
+      "impact": "The six artifact types span private and public roots, but the envelope describes one life ledger and each record has a previous-record hash. Without an explicit cross-ledger chain rule, validators may disagree about whether public records extend the private chain or form a separately chained projection ledger.",
+      "question": "Are private and public records independently hash-chained, and how are cross-ledger parent IDs and source hashes validated?"
+    },
+    {
+      "ambiguity_id": "A2_close_parenting",
+      "impact": "The graph permits CLOSE to parent completed public artifacts, while the lifecycle text specifies one OPEN and at most one CLOSE but does not fully define the CLOSE payload's parent set or whether all current-episode public outcomes must be included.",
+      "question": "Which artifacts must a CLOSE boundary parent, and is omission of an earlier completed public outcome lawful?"
+    },
+    {
+      "ambiguity_id": "A3_invalid_projection_lifecycle",
+      "impact": "Invalid private results are said to project validity and error without measurements or score, but the exact public record shape, public error taxonomy, and whether invalid projections consume tool-call or episode budget are not fully operationalized.",
+      "question": "What exact projection and budget transition is emitted for malformed, stale-state, over-budget, or failed private transactions?"
+    },
+    {
+      "ambiguity_id": "A4_budget_and_clock_values",
+      "impact": "The proposal binds totals, remaining budgets, and policy-visible clock fields but does not define protocol values or whether time is an enforced stop condition versus merely recorded metadata.",
+      "question": "Which counters are authoritative for stopping, and what happens when a clock field and generated-token or tool-call budget disagree?"
+    },
+    {
+      "ambiguity_id": "A5_public_text_semantics",
+      "impact": "A byte-level allowlist can remove registered private fields while an outcome-text field could still encode task identity, state, or scorer information indirectly. The current claim ceiling is syntactic, but the projection description can be read as stronger semantic noninterference.",
+      "question": "Is public outcome text restricted to a closed finite representation, or is its noninterference claim intentionally limited to registered forbidden bytes and fields?"
+    },
+    {
+      "ambiguity_id": "A6_future_context_boundary",
+      "impact": "Earlier same-life public outcomes may be admitted into a later context, but the exact episode-crossing rule, ordering rule, and treatment of a context after CLOSE are not stated beyond the parent-ID constraints.",
+      "question": "May a later episode render any earlier public outcome in the same life, or only the immediately prior outcome, and can any context follow a CLOSE?"
+    },
+    {
+      "ambiguity_id": "A7_cpu_generation_authority",
+      "impact": "MODEL_GENERATION is a registered artifact although model execution is forbidden. The fixtures therefore need a synthetic producer convention, but the exact distinction between authored fixture bytes and engine-reported fields is not specified.",
+      "question": "What synthetic authority is allowed to create generation receipts while preserving the prohibition on model, tokenizer, and inference execution?"
+    },
+    {
+      "ambiguity_id": "A8_task_handle_scope",
+      "impact": "The opaque task-handle hash is required in episode and private records, while real task selection and target sealing are forbidden. Future live integration could otherwise interpret the handle as stronger identity or sealing evidence than the current change supports.",
+      "question": "Is the task handle only a synthetic opaque join key in this change, with all target-sealing semantics deferred?"
+    }
+  ],
+  "architecture_change_sha256": "053a53ef855abae3a6a625979d35e41e77b1cac81933e44a7e879e8ec1c3eed4",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The supplied change.json hash is the architecture_change_sha256 required for this interpretation.",
+    "The six named artifact types are the only prospective causal nodes authorized by this change; auxiliary validator receipts and quarantine manifests are evidence artifacts, not organismal memory or learning nodes unless separately classified later.",
+    "The public ledger is the only information path from a completed private outcome into later same-life thinking.",
+    "Opaque IDs, hashes, manifests, and synthetic state are treated as byte-level fixtures, not evidence that an actual model, tokenizer, environment, scorer, or adapter consumed or produced them.",
+    "A retry creates a new episode identity and cannot mutate or reuse a closed episode or transaction identity.",
+    "Credit assignment here means local provenance and integrity attribution among records and roles, not behavioral, cognitive, or whole-organism credit."
+  ],
+  "change_id": "chg_20260906_prospective_action_trace_spine_v1",
+  "claim_delta_interpretation": "The claim boundary is narrowed from reconstructing legacy causal action/outcome or learning paths to enforcing a prospective, bounded six-artifact trace over registered synthetic cases. A passing suite can support only canonical serialization, local parentage, typed-call separation, private-to-public projection, synthetic capability rules, lifecycle accounting, and no-feedback graph closure. It cannot support actual prompt consumption, environment execution, learning, dreaming, retrieval, planning, consolidation, LoRA transport, task improvement, generalization, or Experience Models claims. Any apparent score or outcome in CPU fixtures remains a synthetic state-machine result. The project-level organismal thesis is preserved as future work: a later architecture may study dream-time local connection growth, memory re-expression, parametric transport, goal-conditioned construction, and outcome feedback, but this change neither instantiates nor credits those mechanisms.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/human_directive.txt",
+      "purpose": "Binding reduced directive and authority boundary.",
+      "sha256": "9183cb1daf9a9bd641179194cfd75e29d412bcdfb54b24db53a5a2fde86cdaa0"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Research deliberation, ratification, and GPU/claim gates.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden implementation scope.",
+      "sha256": "d5208d65159aa0688dcbc60dc120299e7d2c64eafd26e55eaefd7e36002584c6"
+    },
+    {
+      "path": "research_loop/plans/prospective_action_trace_spine_v0.md",
+      "purpose": "Bounded six-artifact prospective spine proposal.",
+      "sha256": "a77035b6687a097c37c196bbf761a968d4ecac13c1e1d373f96f95cdaa5328a7"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Superseded broader nursery-contract context and deferred stages.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/critique.json",
+      "purpose": "Adversarial findings motivating the reduced spine and claim ceiling.",
+      "sha256": "6e936147046a4b1fbce1269d6d6e715445353e055a3b3307f2649becdbad7e8c"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/consensus.json",
+      "purpose": "Adjudicated unresolved issues and scope limits for the broader proposal.",
+      "sha256": "03c62de0f6c638f0be1528cb08a5d0c9d5c258a00e6fd970b2c85e40990e6daf"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy stop decision and prospective evidence requirements.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Legacy provenance and action-routing failure analysis.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Current lived-loop marker-dispatch baseline.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Current append-only ledger and retrieval baseline.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Current serving/provenance limitation baseline.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "Current effectful CompilerGym interface baseline.",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_causal_spine_wording",
+      "proposed_resolution": "Interpret prospective causal spine as prospective structural provenance only; reserve causal truth for a later live canary with independently captured consumer and environment evidence.",
+      "rationale": "The proposal itself limits CPU fixtures to synthetic consistency, so calling the resulting records a causal action/outcome trace without this qualifier would exceed the evidence actually produced.",
+      "statement": "The phrase action/outcome spine can be read as stronger than the authorized evidence: the CPU artifact chain proves record relationships, not that an actual thinker consumed the context, dispatched the action, or caused the score."
+    },
+    {
+      "disagreement_id": "D2_public_projection_noninterference_scope",
+      "proposed_resolution": "Treat the current guarantee as registered byte-level projection noninterference only, and do not interpret it as semantic secrecy for arbitrary outcome text.",
+      "rationale": "Exact allowlisting and forbidden-byte scans establish a deterministic projection relation, but arbitrary public text may encode private facts without containing their literal bytes.",
+      "statement": "The proposal's public-projection language appears broader than its registered evidence if it is intended to guarantee semantic noninterference of public outcome text."
+    },
+    {
+      "disagreement_id": "D3_private_public_chain_model",
+      "proposed_resolution": "Bind the private/public ledger topology and cross-ledger hash rules before implementation; until then, treat the two roots as separate stores with a source-record hash anchor, not one undifferentiated chain.",
+      "rationale": "The proposal requires separate roots, locks, manifests, and writers while also describing one append-only life ledger and previous-record links. Those statements do not yet determine a unique validation topology.",
+      "statement": "The storage topology is not operationally singular enough for independent validators to infer identical chain semantics without an explicit private/public chaining rule."
+    }
+  ],
+  "graph_delta_interpretation": "Operationally, the graph changes from an unrecorded prompt-to-marker-scan-to-direct-gym path into a typed sequence: an OPEN episode boundary creates the parent for an exact rendered context; that context parents one model generation; free THINK bytes may optionally parent at most one structured tool-call proposal; the proposal parents one sealed private environment result; the private result parents one allowlist-derived public projection; and CLOSE may close the episode while recording lifecycle and remaining-budget state. The context renderer may also parent explicitly admitted earlier same-life public outcome IDs, but only after those outcomes have crossed the private-to-public projection boundary and only as public bytes/fields. The old keyword retrieval path is not preserved as an authorized cognitive retrieval node. Dream successor, sleep example, adapter, evaluator, report, parent, and future-intake nodes are removed rather than replaced. Shared ancestry is therefore a permitted DAG pattern in synthetic validation, while any edge from an output into a future life, dream, trainer, evaluator, report, or intake is outside the graph. A typed action list is a serialized effectful request, not evidence of a goal-directed planning path. No breadth-like dream connection growth or memory re-expression occurs; no goal-conditioned composition or revision node is present.",
+  "human_boundary": {
+    "open_questions": [
+      "Whether Rohin exactly ratifies the hash-bound scope before any schema, validator, oracle, fixture, or receipt authoring occurs.",
+      "Whether the later-integration proposal candidate is understood strictly as a future proposal artifact and not as authorization to inspect or run a model, tokenizer, environment, task, trainer, evaluator, GPU, or live life.",
+      "How the private/public ledger topology, auxiliary artifact classification, public-text restriction, and synthetic generation authority will be fixed in the exact ratified bytes.",
+      "Whether a later live change must independently ratify actual consumer-side prompt capture, runtime capability isolation, environment dispatch/scoring, and any scientific benchmark before those claims are considered."
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_prospective_action_trace_spine_v1.systems",
+  "loop_delta_interpretation": "The legacy loop repeatedly rendered a mutable context, generated a chunk, scanned prose markers, directly evaluated actions, appended mixed thought/action rows, injected outcomes into the next prompt, and performed keyword recall over the mutable ledger. The proposed loop makes each transition prospective and append-only. At OPEN, HARNESS records episode identity, repeat/retry ordinals, policy-visible lifecycle and budgets. It renders exact context/message bytes plus opaque intended IDs and only explicitly admitted earlier public outcomes. CHILD produces a free THINK generation with opaque engine/decode receipts; prose markers have no effect. A separate typed channel may produce zero or one canonical call. ENVIRONMENT_PRIVATE resets and applies the exact ordered actions once against sealed private state, records hashes, integer measurements, transaction identity, validity, and independently recomputable rational score, then fails closed on mismatch. ENVIRONMENT_PUBLIC emits only the allowlisted projection into a separate public root. The next context may admit that public projection, or the episode closes. Stops are CLOSE, exact generated-token or tool-call budget exhaustion, or stable schema/hash/capability/publication failure. Retries require new episode identity; invalid or partial publication does not become a successful transition; partial lines are quarantined and never resumed. Validation assumes bounded resources: 1 MiB decoded bytes per record, 32 parents, depth 12, 4096 input IDs, 4096 generated IDs, 256 action items, 100,000 records per life, and 30 seconds per complete validation. There is no dream/consolidation loop: no public result is written into a dream state, retrieval index, LoRA, trainer corpus, parent channel, evaluator, report, or later life. The only later evidence path is public outcome projection into an explicitly rendered same-life context, after private dispatch and allowlist projection; thinker attempts and free THINK bytes do not become later dream evidence.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The project-level thesis remains a whole-organism hypothesis about recurrent lived experience, dream-time local connection growth and memory re-expression, parametric consolidation/transport, goal-conditioned retrieval/composition/planning/revision, and later outcome feedback jointly affecting behavior. This change deliberately instantiates only the infrastructure substrate for one prospective lived action/outcome segment. It makes local provenance explicit without assigning cognition to the ledger, renderer, typed-call boundary, private environment, or projector. The six records can later support a separately ratified organismal study, but they do not themselves create a memory system, planner, dream, parent, trainer, or learning loop.",
+  "visibility_matrix_interpretation": "Information moves through strict role-local boundaries. HARNESS sees the OPEN boundary, policy-visible lifecycle/budget state, and task metadata needed for an opaque handle, and writes exact rendered context plus admitted public event IDs; it must not expose sealed task identity to the renderer as raw bytes. CONTEXT_RENDERED exposes declared policy fields, exact context/message bytes, and selected earlier public outcomes to CHILD, but not private environment receipts, free future generation bytes, sealed identity, or deferred artifacts. CHILD produces free THINK and may produce one typed action; it cannot dispatch from prose or read private state, and its generated bytes are not directly admitted into future context. ENVIRONMENT_PRIVATE sees the opaque task map, typed call, sealed target/reset/state material, and environment manifests, then writes a private atomic receipt. The PUBLIC_PROJECTOR alone reads that private receipt and writes a separate public record containing only the allowlisted provenance anchor, action hash, validity/error class, permitted measurements/score, and public outcome bytes; sealed identity, state/path/index/source bytes are hidden or omitted. FUTURE_CONTEXT may see only earlier same-life public projections and newly rendered context fields, never raw private bytes, free THINK, dream/sleep/adapter artifacts, evaluation outputs, or a later-life result. Dream, sleep, transport, evaluation, and reporting stages are forbidden or absent. The matrix therefore supports a one-way private-to-public boundary and a conditional public-history-to-context edge, not a general retrieval or feedback channel. Module-level accountability is local: each child record must name its exact context parent, each call its generation parent, each private result its call parent, and each public result its private source. Whole-organism accountability is intentionally absent because no later memory, parameter, evaluator, or behavioral endpoint is in scope."
+}

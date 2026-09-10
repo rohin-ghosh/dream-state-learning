@@ -1,0 +1,93 @@
+{
+  "schema": "pcfl_physical_carrier_intercept_receipt_v3_transcribed_summary",
+  "status": "partial_intercept_only_positive_e3_spend_blocked",
+  "execution": {
+    "model_free": true,
+    "tokenizer_free": true,
+    "gpu_used": false,
+    "operation": "read_only_external_header_validation_and_hashing",
+    "script_sha256": "2313990bf08996038b18d70ae01b447c939dc5463917f0be708f18168029c1a9",
+    "test_sha256": "6e63d73326e0de8eaad652ae70aa51d6a6b95fa4ea1019e89517d6278e91265f",
+    "expected_layout": {
+      "base_model_namespace": "base_model.model.model",
+      "layers": 28,
+      "hidden_size": 3584,
+      "kv_output_size": 512,
+      "intermediate_size": 18944,
+      "modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dtype": "F32"
+    },
+    "provenance_limitation": "This local JSON is a faithful transcription of read-only command output; the external artifacts and complete raw stdout are not copied into the local packet."
+  },
+  "artifacts": [
+    {
+      "rank": 8,
+      "path": "/localhome/local-rohing/v6_out/controls/adapter_r8/adapter_model.safetensors",
+      "sha256": "ccbb00754c0001524447ddfc0eb4cd8d3380cc0bafc1b69c4ff62856b0145a89",
+      "adapter_safetensors_file_bytes": 80792096,
+      "serialized_tensor_payload_bytes_from_header": 80740352,
+      "hypothetical_bf16_tensor_payload_floor_bytes": 40370176,
+      "total_numel": 20185088,
+      "tensor_count": 392,
+      "tensor_manifest_sha256": "44296f5937a40292ff712c46b16d59f6f02af243de768f7148475b3b9c893767",
+      "discovered_config_sidecar_bytes": 1259,
+      "discovered_config_sidecar_sha256": "1abbd8c8db41d4f58bedf3ad3e638f6f45b4f2128ea38aaa830391dc7635f838",
+      "known_serialized_file_subtotal_bytes": 80793355,
+      "expanded_bytes_min_for_adapter_file_ratio_lt_0_50": 161584193,
+      "raw_bytes_min_for_adapter_file_ratio_lt_0_35": 230834561,
+      "required_expanded_bytes_per_token_at_8x16k": 1232.7895584106445
+    },
+    {
+      "rank": 16,
+      "path": "/localhome/local-rohing/v6_out/L_B_seed0/sleep_0992/adapter/adapter_model.safetensors",
+      "sha256": "92b9855be72b8cc552c0cee840d5a2cdb8667104f243dcac3c946b97b3fa19e8",
+      "adapter_safetensors_file_bytes": 161533192,
+      "serialized_tensor_payload_bytes_from_header": 161480704,
+      "hypothetical_bf16_tensor_payload_floor_bytes": 80740352,
+      "total_numel": 40370176,
+      "tensor_count": 392,
+      "tensor_manifest_sha256": "b59cf115f049b160560678192a536070f0d96edb054c819d82d585e4c9b2c43e",
+      "discovered_config_sidecar_bytes": 1260,
+      "discovered_config_sidecar_sha256": "e047936bba34f1496377a89bd7bb247402cbcb70121bb8be60a9922d03866f79",
+      "known_serialized_file_subtotal_bytes": 161534452,
+      "expanded_bytes_min_for_adapter_file_ratio_lt_0_50": 323066385,
+      "raw_bytes_min_for_adapter_file_ratio_lt_0_35": 461523406,
+      "required_expanded_bytes_per_token_at_8x16k": 2464.800910949707
+    },
+    {
+      "rank": 64,
+      "path": "/localhome/local-rohing/v6_out/controls/adapter_r64/adapter_model.safetensors",
+      "sha256": "2384a6fae5fe249ad358e54feddafa6b4353f4ae2b9ff179f32062df60f1fea5",
+      "adapter_safetensors_file_bytes": 645975704,
+      "serialized_tensor_payload_bytes_from_header": 645922816,
+      "hypothetical_bf16_tensor_payload_floor_bytes": 322961408,
+      "total_numel": 161480704,
+      "tensor_count": 392,
+      "tensor_manifest_sha256": "efedb0c3dd8fe668ff8190f155cbdf2ffea5563cb9738f196f5c9e1fca34667e",
+      "discovered_config_sidecar_bytes": 1261,
+      "discovered_config_sidecar_sha256": "c47702f743141abea5a8d081cbed98398aba482d016b2df5b94407d6908ee435",
+      "known_serialized_file_subtotal_bytes": 645976965,
+      "expanded_bytes_min_for_adapter_file_ratio_lt_0_50": 1291951409,
+      "raw_bytes_min_for_adapter_file_ratio_lt_0_35": 1845644869,
+      "required_expanded_bytes_per_token_at_8x16k": 9856.807014465332
+    }
+  ],
+  "not_established": [
+    "complete_life_specific_state_census",
+    "runtime_resident_bytes",
+    "simultaneously_retained_bytes",
+    "raw_event_denominators",
+    "canonical_semantic_denominators",
+    "expanded_equivalent_denominators",
+    "actual_rates",
+    "positive_physical_compression"
+  ]
+}

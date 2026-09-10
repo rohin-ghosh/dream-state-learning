@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-human-terminal-stop-v1f.schema.json",
+  "title": "Paper-1 v03r canary v1f direct nonrecursive HUMAN_TERMINAL fail-stop receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "change_id",
+    "terminal_stage",
+    "predecessor_authority_or_ratification_sha256",
+    "failure_reason",
+    "packet_or_failed_construction_manifest",
+    "available_assignment_sha256s",
+    "available_disposition_sha256s",
+    "reconciled_partial_accounting_sha256",
+    "no_retry_no_further_dispatch_sha256",
+    "best_effort_receipt_status",
+    "granted_authority",
+    "next_review",
+    "human_terminal_entries",
+    "issued_at_utc",
+    "receipt_sha256_rule"
+  ],
+  "properties": {
+    "schema_version": { "const": "paper1-v03r-canary-human-terminal-stop-v1f.0" },
+    "receipt_id": { "pattern": "^P1F-HUMAN-TERMINAL-[0-9]{4}$" },
+    "change_id": { "const": "chg_20260903_paper1_v03r_end_to_end_canary_v1f" },
+    "terminal_stage": { "enum": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"] },
+    "predecessor_authority_or_ratification_sha256": { "$ref": "#/$defs/sha256" },
+    "failure_reason": {
+      "enum": [
+        "TERMINAL_REVIEWER_REJECT",
+        "TERMINAL_ADVOCATE_REJECT",
+        "TERMINAL_REVIEWER_INVALID",
+        "TERMINAL_ADVOCATE_INVALID",
+        "TERMINAL_DISPOSITION_MISSING_OR_MALFORMED",
+        "PROHIBITED_ROLE_OVERLAP",
+        "REVIEWED_BYTES_CHANGED",
+        "TERMINAL_PACKET_CONSTRUCTION_FAILED",
+        "TERMINAL_CLAIM_ARTIFACT_CONSTRUCTION_FAILED",
+        "TERMINAL_RECEIPT_WRITE_FAILED"
+      ]
+    },
+    "packet_or_failed_construction_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "sha256"],
+      "properties": {
+        "kind": { "enum": ["UNCHANGED_TERMINAL_PACKET", "FAILED_CONSTRUCTION_MANIFEST"] },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "available_assignment_sha256s": { "$ref": "#/$defs/hashes" },
+    "available_disposition_sha256s": { "$ref": "#/$defs/hashes" },
+    "reconciled_partial_accounting_sha256": { "$ref": "#/$defs/sha256" },
+    "no_retry_no_further_dispatch_sha256": { "$ref": "#/$defs/sha256" },
+    "best_effort_receipt_status": { "enum": ["WRITTEN", "WRITE_FAILED"] },
+    "granted_authority": { "const": "NONE" },
+    "next_review": { "const": "NONE" },
+    "human_terminal_entries": { "const": 1 },
+    "issued_at_utc": { "type": "string", "format": "date-time" },
+    "receipt_sha256_rule": { "const": "sha256(UTF-8 RFC8785_JCS(receipt excluding receipt_sha256)); the stored digest is external" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "failure_reason": { "const": "TERMINAL_RECEIPT_WRITE_FAILED" } }, "required": ["failure_reason"] },
+      "then": { "properties": { "best_effort_receipt_status": { "const": "WRITE_FAILED" } } }
+    },
+    {
+      "if": { "properties": { "failure_reason": { "enum": ["TERMINAL_PACKET_CONSTRUCTION_FAILED", "TERMINAL_CLAIM_ARTIFACT_CONSTRUCTION_FAILED"] } }, "required": ["failure_reason"] },
+      "then": { "properties": { "packet_or_failed_construction_manifest": { "properties": { "kind": { "const": "FAILED_CONSTRUCTION_MANIFEST" } } } } }
+    }
+  ],
+  "x-semantic-contract": {
+    "base_case": "This is the sole direct nonrecursive terminal-review failure route. It enters HUMAN_TERMINAL exactly once and is never input to an authority token, review packet, assignment, disposition, retry, or further dispatch.",
+    "authority": "The receipt grants no execution, claim, stage, or review authority and requires no APPROVE disposition.",
+    "availability": "All available assignment and disposition hashes are recorded; missing or malformed terminal dispositions are themselves closed failure reasons.",
+    "best_effort": "Receipt persistence is attempted once. A write failure still fail-stops immediately; no second receipt, review, dispatch, or authority issuance is permitted. The operator records the failed write by the same external HUMAN_TERMINAL procedure."
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "hashes": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/sha256" } }
+  }
+}

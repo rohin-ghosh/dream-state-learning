@@ -1,0 +1,941 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "sealed CPU generator/twin manifest, replay hashes, oracle receipts, no-memory-controller ledger",
+      "expected": "Across at least 50 generator seeds: deterministic prefix replay; hidden-graph oracle A2/A3 value >=0.85; registered Bayes-optimal and frozen 32B no-lifetime-memory controls <=0.35; injected authentic lifetime memory materially improves value; shuffled and twin memory each remove at least half that gain; shortcut probes <=0.35.",
+      "falsifies": "PCFL is a valid constructive experiential-memory instrument or lifetime memory is necessary under its six-action budget.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Implement only a hash-bound CPU reference generator, counterfactual twins, target manifest, and registered controls after approval.",
+      "test_id": "AT01_pcfl_environment_necessity_and_leakage"
+    },
+    {
+      "evidence_artifact": "immutable event/proposal/status/provenance fixtures and compiler-admission receipts",
+      "expected": "Accept direct witnessed atoms and valid provenance diamonds; reject cycles, descendant citations, canonical-equivalent mutual support, duplicate-root counting, tainted descendants, terminal-branch descendants, target handles, complete plans, decisive route-tool pairs, and more than one ontology edge per record.",
+      "falsifies": "The claimed memory is atomic, provenance-supported, chronologically valid experiential structure rather than answer-bearing or tainted storage.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Run fixtures for every semantic lifecycle transition and every positive-corpus admission path.",
+      "test_id": "AT02_atomic_provenance_and_positive_corpus_contract"
+    },
+    {
+      "evidence_artifact": "checkpoint prefix noninterference diff report and common-deck hashes",
+      "expected": "Changing any post-checkpoint source event, outcome, projection, semantic status, cache, or hidden state leaves all earlier checkpoint artifacts byte-identical. Every arm receives byte-identical source prefixes and cannot mutate them during evaluation.",
+      "falsifies": "Sleep is prefix-causal or fixed-deck contrasts identify memory representation/use.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "For 0.5C, 1C, and 2C, replay paired worlds that differ only after the tested checkpoint.",
+      "test_id": "AT03_prefix_and_common_deck_isolation"
+    },
+    {
+      "evidence_artifact": "locked text-only factorial report with fixed-query reads, candidate universe hashes, closure certificates, and per-stage scores",
+      "expected": "Leaked one-query copy arm >=0.95; oracle atoms plus recurrent resolver >=0.85 A2/A3; oracle atoms plus non-adaptive committed queries <=0.35; oracle recurrent valid-proof completion >=0.80; direct-record closure exactly zero. Fixed-query read fidelity, next-query correctness, adaptive dependency rate, proof depth, plan validity, action success, regret, and false-memory use are separately reported.",
+      "falsifies": "The environment measures recurrent constructive composition rather than direct copying, generic prompting, or an unmeasured reader/thinking ceiling.",
+      "kind": "end_to_end",
+      "required_before": "gpu_run",
+      "setup": "Use a frozen common reader and target-independent oracle atoms before any experience-derived corpus or LoRA training.",
+      "test_id": "AT04_oracle_closure_reader_thinker_factorial"
+    },
+    {
+      "evidence_artifact": "formal direct/non-adaptive/interactive closure checker and constructive trace DAG corpus",
+      "expected": "No individual record or one reader return is answer-bearing; non-adaptive query sets remain near floor; successful recurrent A2/A3 traces contain a mechanically valid dependency DAG in which each post-first query introduces a canonical value first read earlier or observed publicly.",
+      "falsifies": "A positive A2/A3 action result is constructive memory use rather than stored-solution retrieval.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Evaluate atomic memories over fresh-handle A2/A3 targets with the declared four-query/eight-operation limits.",
+      "test_id": "AT05_solution_boundary_and_constructive_proof"
+    },
+    {
+      "evidence_artifact": "evaluation timeline traces with public-state hashes, operation records, action receipts, and stage-specific metrics",
+      "expected": "A3 runs as sequential typed environment actions, not an opaque plan commit. Each action receives only current public state, bounded workspace, legal local reads, and prior current-item outcomes. Correct actions lacking a valid dependency trace count as action successes but composition failures; revision is separately scored only when an observed contradiction causes backtracking and later improvement.",
+      "falsifies": "Stage credit between reader, resolver, planning, revision, and executed action is auditable.",
+      "kind": "end_to_end",
+      "required_before": "gpu_run",
+      "setup": "Run A2/A3 sequential-execution fixtures and an A4-ready controlled contradiction fixture without allowing evaluation writes.",
+      "test_id": "AT06_sequential_execution_revision_and_stage_credit"
+    },
+    {
+      "evidence_artifact": "text-condition results, resource ledger, corpus hashes, and paired twin reports",
+      "expected": "E-text exceeds max(R-rec,A-text) by >=0.10; E-text minus S-text is reported with matched outcome shuffling; all named text arms use equal source life, reader protocol, model, context, query, operation, and action budgets.",
+      "falsifies": "The supported compiled experiential-text pipeline adds action-relevant structure beyond raw episodic access and the independently organized external-memory baseline at this calibration point.",
+      "kind": "baseline",
+      "required_before": "gpu_run",
+      "setup": "Run L, N, O-open, O-rec, R-rec, A-text, E-text, and S-text before adapter training; freeze the independent A-MEM-style builder before locked worlds.",
+      "test_id": "AT07_text_pipeline_and_causal_binding_suite"
+    },
+    {
+      "evidence_artifact": "same-corpus text/LoRA read report, training manifests, direct-QA corpus manifest, paired twin outcomes, and transport-loss report",
+      "expected": "E-LoRA >= E-text-0.10 with fixed-query read fidelity >=0.90; E-LoRA exceeds max(N,R-rec,A-text,D-LoRA) by >=0.10 in at least four of six locked twin-pairs; E-LoRA minus S-LoRA >=0.15 and each shuffle removes at least half intact gain over N. Failed cells remain failures at the action cap.",
+      "falsifies": "The complete compiled experiential-memory-plus-parametric-transport pipeline improves held-out action at the declared calibration ledger, or that transport retains the text corpus's action value.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Train only after AT01-AT07 pass; use one predeclared adapter seed only for descriptive locked calibration and retain all artifacts.",
+      "test_id": "AT08_matched_transport_pipeline_and_shuffle_controls"
+    },
+    {
+      "evidence_artifact": "counterfactual goal/query/candidate noninterference report; process capability audit; fresh-process cache/reset report",
+      "expected": "Changing held-out target handles, equivalent goal wording, answer assignment, candidate order, evaluation order, or backend label cannot change source artifacts or introduce target-specific candidate/query information outside the declared public current goal/state. Scorer, hidden truth, audit data, other evaluation items, and sealed outcomes are unreadable and unwritable by cognition.",
+      "falsifies": "Goal-query laundering, substrate identity leakage, scorer leakage, or cross-item/life contamination.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Exercise every model-visible surface: prompts, queries, candidate recognition, reader returns, workspace, repeat state, cache keys, and training inputs.",
+      "test_id": "AT09_visibility_taint_reset_and_goal_noninterference"
+    },
+    {
+      "evidence_artifact": "signed exact execution bundle: generator/world/target manifests, prompts, schemas, parser, reader, candidate policy, model/tokenizer revisions, generation settings, masks, builders, controls, LoRA recipe, estimator, seeds, failure rules, and resource ledger",
+      "expected": "Every material behavioral choice is content-addressed before implementation. The no-lifetime-memory controllers, independent builder, CPU reference oracle, checkpoint semantics, training seed policy, uncertainty rule, and negative-result language are executable without a post hoc scientific choice.",
+      "falsifies": "Exact scope is ratifiable or promotion thresholds are immune to unbound implementation choices.",
+      "kind": "independent_review",
+      "required_before": "implementation",
+      "setup": "Produce the bundle as a new proposed change, obtain two fresh interpretations, adversarial critique, adjudicated consensus, and a new human-bound approval.",
+      "test_id": "AT10_exact_execution_bundle_and_review_gate"
+    },
+    {
+      "evidence_artifact": "confirmation preregistration, locked 12-or-16-pair manifests, paired-bootstrap and sign-flip outputs, all-world plots",
+      "expected": "At the first checkpoint beyond native-long-context maximum, E-LoRA-D-LoRA and E-LoRA-A-text each have mean improvement >=0.10 with corrected paired 95% lower confidence bounds >0; same-corpus transport satisfies the preregistered -0.10 non-inferiority margin. Twin-pair is the clustering/randomization unit; adapter seeds are averaged within world, not treated as replicates.",
+      "falsifies": "A paper-eligible fixed-deck constructive-memory/transport claim at post-context scale.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Only after calibration promotion; use 12 new twin-pairs, expanding to 16 only under the preregistered calibration-variance rule.",
+      "test_id": "AT11_claim_eligible_confirmation"
+    },
+    {
+      "evidence_artifact": "independent reviewer verdict and author-side scientific-advocate response bound to the exact execution bundle and pre-GPU artifacts",
+      "expected": "Independent review verifies all pre-GPU tests, visibility contract, claim boundaries, and artifact integrity. Any repair receives a new review and new bound approval; advocate explanation cannot override rejection.",
+      "falsifies": "Authorization for GPU science or headline claims without an independent-review gate.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "Run after implementation and CPU gates, before any GPU model/adaptor science run.",
+      "test_id": "AT12_independent_review_before_gpu"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_pcfl_constructive_assay_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "A passed fixed-deck calibration may support only a bounded descriptive result: under the locked PCFL ledger, the complete supported experiential-memory pipeline, including compiler, common reader, recurrent resolver, and per-life LoRA transport, improved held-out A2/A3 action over named controls and depended on authentic action-outcome bindings.",
+        "before": "No current result establishes a PCFL fixed-deck constructive experiential-memory pipeline.",
+        "claim_id": "C1_fixed_deck_constructive_pipeline",
+        "evidence_needed": "AT01-AT10 plus locked calibration results; claim remains descriptive and headline-ineligible.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A passed confirmation may support a controlled systems claim that supported experiential structure transported into a per-life LoRA retains near-text action value and exceeds direct-QA LoRA and independent organized text memory at preregistered post-context checkpoints.",
+        "before": "No current claim of faithful action-value transport through a per-life LoRA is justified for PCFL.",
+        "claim_id": "C2_parametric_transport",
+        "evidence_needed": "AT01-AT12 and preregistered twin-pair confirmation with paired uncertainty bounds.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "A failure of oracle closure, text structure, transport, binding, leakage, reset, or review gates stops the corresponding promotion: oracle/text failure bars GPU transport; transport failure removes LoRA from any headline and leaves only a benchmark/compiler pivot.",
+        "before": "Failure disposition is not yet bound for the PCFL assay.",
+        "claim_id": "C3_negative_result_disposition",
+        "evidence_needed": "Locked gate reports preserving failed cells and artifacts.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "The assay does not establish autonomous discovery by DREAM, sufficiency of LoRA, learned THINK/DREAM policy, recurrent-sleep superiority, on-policy reconsolidation, action-selected evidence acquisition, a continual flywheel, beyond-context scaling, external validity, or general intelligence.",
+        "before": "Existing thesis reserves these claims for later stages.",
+        "claim_id": "C4_claim_firewall",
+        "evidence_needed": "Visibility audits and scope-compliant reports.",
+        "headline_eligible": false,
+        "operation": "modify"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_constructive_assay_v1/human_directive.txt",
+      "purpose": "Human scientific-priority directive",
+      "sha256": "c3a265f6727a61f2cb7629b7a9f474e7b3b0c4c911ad39d46387bbcc236e7b1e"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "purpose": "Proposed PCFL constructive assay",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis and attribution map",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "purpose": "Developmental protocol lineage and visibility contract",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Superseded pilot and prior critique target",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_kernel_pilot_v1/critique.json",
+      "purpose": "Prior adversarial concerns to dispose",
+      "sha256": "6a370093b77e91908b3b589b07b9dbd0ea2dde62e8618b1112ab951a02785785"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Historical evidence and known limitations",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "E_source -> witnessed atoms and dream proposals, with public-event citations only",
+        "before": "No PCFL source-life evidence path",
+        "edge_id": "E01_lived_to_semantic",
+        "from": "PCFLSourceLife",
+        "operation": "add",
+        "rationale": "Ordinary action/outcome episodes are the sole positive evidence roots.",
+        "to": "SemanticStatusStore"
+      },
+      {
+        "after": "SemanticStatusStore -> supported atomic corpus only after chronological confirmation",
+        "before": "No PCFL compiler admission path",
+        "edge_id": "E02_semantic_to_compiler",
+        "from": "SemanticStatusStore",
+        "operation": "add",
+        "rationale": "DREAM proposes but neither self-certifies nor writes positive training data.",
+        "to": "SleepCompiler"
+      },
+      {
+        "after": "Multi-view corpus -> cumulative per-life psi_l rebuilt from theta_0",
+        "before": "No PCFL parametric transport path",
+        "edge_id": "E03_compiler_to_memory",
+        "from": "SleepCompiler",
+        "operation": "add",
+        "rationale": "LoRA carries compiled associations; it is not credited with discovery.",
+        "to": "PerLifeMemoryLoRA"
+      },
+      {
+        "after": "Assigned text or LoRA backend -> one typed immutable local read",
+        "before": "No common PCFL retrieval interface",
+        "edge_id": "E04_backend_to_reader",
+        "from": "MemoryBackend",
+        "operation": "add",
+        "rationale": "Substrates share a bounded reader contract and cannot return plans.",
+        "to": "CommonReader"
+      },
+      {
+        "after": "Public current goal/state plus local reads -> bounded workspace, operations, sequential actions, and re-observation",
+        "before": "No PCFL recurrent resolution path",
+        "edge_id": "E05_reader_to_resolver",
+        "from": "CommonReader",
+        "operation": "add",
+        "rationale": "Goal-conditioned thinking reconstructs dependencies and revises from ordinary outcomes.",
+        "to": "WakeResolver"
+      },
+      {
+        "after": "WakeResolver typed action -> PCFL public outcome",
+        "before": "No sequential action interface",
+        "edge_id": "E06_resolver_to_environment",
+        "from": "WakeResolver",
+        "operation": "add",
+        "rationale": "Action is executed one at a time; A3 cannot be a hidden single-payload answer.",
+        "to": "PCFLEnvironment"
+      },
+      {
+        "after": "Current-item outcome -> resolver workspace/replan only",
+        "before": "No bounded within-item feedback edge",
+        "edge_id": "E07_outcome_to_resolver",
+        "from": "PCFLEnvironment",
+        "operation": "add",
+        "rationale": "Permits revision without allowing evaluation outcomes to mutate lifetime memory.",
+        "to": "WakeResolver"
+      },
+      {
+        "after": "Sealed evaluation outcomes -> offline metrics only",
+        "before": "No PCFL evaluation firewall",
+        "edge_id": "E08_evaluation_to_scorer",
+        "from": "EvaluationRuntime",
+        "operation": "add",
+        "rationale": "Evaluation feedback is reporting-only and cannot enter dream, corpus, adapter, or source life.",
+        "to": "ScorerAudit"
+      },
+      {
+        "after": "Later ordinary source outcomes -> status confirmation/contradiction of earlier committed proposals",
+        "before": "No PCFL chronological support edge",
+        "edge_id": "E09_later_outcome_to_status",
+        "from": "PCFLSourceLife",
+        "operation": "add",
+        "rationale": "Support requires later public evidence; terminal claims remain provisional.",
+        "to": "SemanticStatusStore"
+      },
+      {
+        "after": "Future on-policy ordinary outcomes -> later dream selection and subsequent memory only after a separately approved stage",
+        "before": "No authorized PCFL on-policy feedback edge",
+        "edge_id": "E10_future_flywheel",
+        "from": "FutureOnPolicyRuntime",
+        "operation": "add",
+        "rationale": "Preserves the full thesis while marking the flywheel out of scope for this fixed-deck assay.",
+        "to": "FutureDreamCycle"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Fixed scripted, byte-identical ordinary action/outcome stream per life, with counterfactual twins and fresh held-out handles.",
+        "before": "No PCFL source-life node",
+        "node_id": "PCFLSourceLife",
+        "operation": "add",
+        "rationale": "Identifies representation/use under common experience rather than on-policy learning."
+      },
+      {
+        "after": "Target-independent one-edge proposal/status/provenance store with append-only chronological support.",
+        "before": "No PCFL semantic lifecycle node",
+        "node_id": "SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Separates dream-time local connection growth from truth adjudication."
+      },
+      {
+        "after": "Deterministic compiler admitting supported atoms, preserving provisional/contradicted records outside positive data, emitting fixed views, and rebuilding cumulative state.",
+        "before": "No PCFL sleep compiler node",
+        "node_id": "SleepCompiler",
+        "operation": "add",
+        "rationale": "Compilation transports rather than invents evidence."
+      },
+      {
+        "after": "Arm-specific raw/text/oracle/shuffled/LoRA backend exposed only through one local typed reader.",
+        "before": "No PCFL backend abstraction",
+        "node_id": "MemoryBackend",
+        "operation": "add",
+        "rationale": "Makes substrate and reader credit measurable."
+      },
+      {
+        "after": "Frozen recurrent operation policy with bounded workspace and policy-visible repeat state.",
+        "before": "No PCFL sequential resolver",
+        "node_id": "WakeResolver",
+        "operation": "add",
+        "rationale": "Thinking composes and revises; it is frozen in this assay."
+      },
+      {
+        "after": "Finite action-outcome field-lab with stable per-life causal mappings, exceptions, and paired twins.",
+        "before": "No PCFL environment",
+        "node_id": "PCFLEnvironment",
+        "operation": "add",
+        "rationale": "Mechanism microscope for novel multi-step action."
+      },
+      {
+        "after": "Fresh-process, read-only checkpoint evaluation runtime.",
+        "before": "No PCFL sealed evaluation node",
+        "node_id": "EvaluationRuntime",
+        "operation": "add",
+        "rationale": "Prevents evaluation outcomes and caches from feeding the source life."
+      },
+      {
+        "after": "Offline-only hidden truth, scoring, provenance validation, and artifacts.",
+        "before": "No PCFL scorer/audit node",
+        "node_id": "ScorerAudit",
+        "operation": "add",
+        "rationale": "Audits cognition without becoming cognitive input."
+      },
+      {
+        "after": "Later separately approved action-selected evidence and reconsolidation runtime.",
+        "before": "No PCFL future flywheel node",
+        "node_id": "FutureOnPolicyRuntime",
+        "operation": "add",
+        "rationale": "Explicitly preserves, but does not prematurely claim, the complete organism loop."
+      },
+      {
+        "after": "Later separately approved dream/retrieval/consolidation phase over on-policy public outcomes.",
+        "before": "No PCFL future dream-cycle node",
+        "node_id": "FutureDreamCycle",
+        "operation": "add",
+        "rationale": "Completes the thesis architecture without treating fixed-deck sleep as the full flywheel."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Whether to ratify a newly hash-bound exact PCFL execution bundle, its scope, its scientific goalposts, and only then implementation and pre-GPU CPU work.",
+    "forbidden_before_approval": [
+      "Editing code, prompts, schemas, generators, readers, baselines, controls, model revisions, target manifests, estimators, or thresholds.",
+      "Launching CPU model experiments, LoRA training, GPU jobs, or releasing GPU leases.",
+      "Choosing unresolved model-visible goal bytes, adaptive no-memory controller, independent builder, checkpoint/cadence semantics, stochastic seed rule, endpoint aggregation, or uncertainty criterion.",
+      "Claiming a positive result, promoting to confirmation, changing labels, publishing, or treating consensus as human approval."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "At each checkpoint L in {0.5C,1C,2C}: select only source events/projections/statuses causally prior to L; DREAM proposes target-independent one-edge claims with committed predictions; later ordinary source outcomes support or contradict; compiler emits supported atoms/views; rebuild psi_l from theta_0; freeze checkpoint.",
+        "before": "No PCFL bounded dream/consolidation loop",
+        "loop_id": "L1_pcfl_sleep_consolidation",
+        "operation": "add",
+        "rationale": "Preserves recurrent local connection growth without making dreaming a one-shot solution generator.",
+        "reads": [
+          "prefix public action/outcome events",
+          "eligible prior supported semantic records",
+          "declassified replay selectors only",
+          "later ordinary source outcomes for chronological comparison"
+        ],
+        "stop_condition": "Checkpoint corpus is sealed after finite proposal/view/training budgets; terminal-boundary unsupported claims remain provisional.",
+        "trigger": "Crossing each fixed causal prefix boundary.",
+        "writes": [
+          "append-only proposals and status events",
+          "supported atomic corpus manifest",
+          "per-life psi_l checkpoint",
+          "audit receipts"
+        ]
+      },
+      {
+        "after": "For each held-out decision: receive public goal/state; perform at most four local queries and eight operations; update/backtrack from local reads and ordinary current-item outcomes; execute one typed world action; repeat until item termination.",
+        "before": "No PCFL goal-conditioned reconstruction loop",
+        "loop_id": "L2_pcfl_wake_resolution",
+        "operation": "add",
+        "rationale": "Attributes construction to the complete memory-reader-resolver organism, not to LoRA alone.",
+        "reads": [
+          "public current goal/state",
+          "bounded workspace",
+          "policy-visible repeat/budget state",
+          "one local memory read per query",
+          "ordinary current-item outcomes"
+        ],
+        "stop_condition": "Success, irreversible failure, DEFER, malformed operation, STOP, or six executed actions.",
+        "trigger": "A fresh held-out item or post-action public outcome.",
+        "writes": [
+          "bounded current-item workspace",
+          "typed next operation",
+          "environment action",
+          "sealed evaluation trace"
+        ]
+      },
+      {
+        "after": "After fixed-deck confirmation only: assigned memory changes policy-selected information-gathering actions; ordinary public outcomes later enter a new dream cycle and affect later action.",
+        "before": "No authorized on-policy flywheel implementation",
+        "loop_id": "L3_future_on_policy_flywheel",
+        "operation": "add",
+        "rationale": "Records the full-system causal aspiration while explicitly deferring it.",
+        "reads": [
+          "assigned-memory branch state",
+          "ordinary policy-selected public outcomes",
+          "future approved lifecycle state"
+        ],
+        "stop_condition": "Not active in this change; requires a separately ratified protocol.",
+        "trigger": "Separate post-confirmation human-approved stage.",
+        "writes": [
+          "future source-life events",
+          "future supported semantic state",
+          "future memory checkpoints"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "PCFL replaces the developmental-kernel pilot as the proposed first calibration: a fixed-deck, counterfactual-twin assay of whether chronologically supported local experiential structure can be recurrently retrieved and composed into novel A2/A3 action, and whether identical compiled text retains that action value after per-life LoRA transport. It preserves the broader action-to-dream-to-memory-to-action thesis while withholding on-policy flywheel, learned-policy, autonomous-discovery, cadence, external-validity, and broad-intelligence claims.",
+  "system_thesis": "The organism, not any one organ, is the proposed intelligence loop: lived action/outcome episodes supply public evidence; DREAM recurrently proposes local causal connections and preserves provenance; SLEEP compiles only chronologically supported structure; per-life psi_l transports a bounded memory approximation; frozen THINK retrieves local dependencies, composes a provisional plan, acts, observes, and revises; later policy-selected outcomes may only in a later approved stage improve future dream cycles. The LoRA is a lossy transport substrate, not a discoverer or literal graph; a successful action is credited to the complete memory-reader-resolver-environment organism after stage-specific audits.",
+  "title": "PCFL constructive experiential-memory assay v1",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Ordinary lived evidence is visible only through the causal prefix relevant to the stage.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Frozen current prefix is usable for source-side resolver operations only.",
+        "stage_id": "S2_source_wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Dream may replay eligible pre-checkpoint public roots.",
+        "stage_id": "S3_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Compiler may retain provenance but emits only supported atoms.",
+        "stage_id": "S4_compile",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Only compiled realizations, not raw evidence, train positive LoRA.",
+        "stage_id": "S5_train",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Held-out cognition reads it only through legal returned provenance handles.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Environment does not expose source-life history.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_source_prefix_public_events",
+        "reason": "Audit may inspect immutable roots.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Future source evidence exists only after its occurrence.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Must not affect an earlier resolver/sleep checkpoint.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Prefix causality forbids future events, projections, and consequences.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Earlier corpus/checkpoint must be byte-invariant to suffix changes.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Earlier adapter training cannot see future source content.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Evaluation cannot access future source history.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Not part of current evaluation state.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_post_checkpoint_source_suffix",
+        "reason": "Audit checks noninterference.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Status is written append-only from source evidence.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Wake source resolver cannot write durable semantics.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Dream may read eligible prior records and write proposals only.",
+        "stage_id": "S3_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Compiler reads status/provenance for admission only.",
+        "stage_id": "S4_compile",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Trainer sees only corpus manifest, not lifecycle metadata.",
+        "stage_id": "S5_train",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Headline evaluation cognition cannot inspect the authoritative store.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Environment has no semantic-store access.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_semantic_status_and_provenance",
+        "reason": "Audit validates lifecycle and provenance.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Does not yet exist.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Source wake cannot read its future compiled output.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Dream cannot inspect its own future training realization.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Compiler writes fixed views from supported atoms.",
+        "stage_id": "S4_compile",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Positive training surface for psi_l.",
+        "stage_id": "S5_train",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Text arms expose it only through the common reader.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Environment cannot read memory content.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_compiled_supported_corpus",
+        "reason": "Audit hashes corpus and training provenance.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "No checkpoint is mounted during source ingestion.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "No future checkpoint access during source wake.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Dream may read eligible prior semantics, not inspect adapter behavior as evidence.",
+        "stage_id": "S3_dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Compiler writes manifest but does not read future adapter.",
+        "stage_id": "S4_compile",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Trainer writes the per-life checkpoint from clean theta_0.",
+        "stage_id": "S5_train",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Resolver receives only typed local reader returns; backend identity is hidden.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Environment cannot inspect memory.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I5_memory_backend_and_psi_l",
+        "reason": "Audit sees manifests, hashes, resource receipts, and backend identity.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Held-out target is not present in source life.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Source resolver never sees held-out targets.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Dream cannot see evaluation goals or target handles.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Compiler cannot condition corpus on evaluation targets.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Trainer cannot see held-out goals.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Canonical declared public goal/state only; target-derived transformations beyond the bound schema are forbidden.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Environment uses current state and action, not hidden answer labels.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_current_eval_goal_and_public_state",
+        "reason": "Audit may verify schema/noninterference.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "No evaluation outcome exists.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Source wake does not see evaluation outcomes.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Dream cannot see evaluation outcomes.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Compiler cannot admit evaluation-derived content.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Evaluation outcomes cannot train psi_l.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Visible only after the resolver's own current-item action, enabling bounded revise/requery.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Environment emits ordinary public outcome.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_current_item_public_outcomes",
+        "reason": "Audit scores sealed trace only.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Generator truth is not cognitive input.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Source resolver never sees hidden graph.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Dream may not use truth or solver.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Compiler is not a truth oracle.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Trainer never sees hidden truth.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Resolver never sees target answer, proof graph, or scorer output.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Environment uses hidden truth internally but exposes only public outcomes.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_hidden_truth_minimal_paths_and_answers",
+        "reason": "Scorer/audit-only oracle input.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "No source workspace before source wake.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Policy-visible bounded workspace/repeat state; free-form workspace cannot write positive semantics.",
+        "stage_id": "S2_source_wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Only typed declassified replay selectors may be read; agendas are non-evidentiary.",
+        "stage_id": "S3_dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Compiler cannot treat workspace/agenda as evidence or corpus content.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Trainer never sees workspace/agenda.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Current-item bounded workspace and policy-visible repeat state are visible; unsupported content is not a memory write channel.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Environment sees only typed action.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_workspace_agenda_and_repeat_state",
+        "reason": "Audit receives raw workspace and declassification receipts.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Audit/evaluation stores are outside source cognition.",
+        "stage_id": "S1_source_ingest",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Source resolver cannot read audit, scorer, or other-item state.",
+        "stage_id": "S2_source_wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Dream cannot access audit/scorer/evaluation state.",
+        "stage_id": "S3_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Compiler cannot access audit/scorer/evaluation state.",
+        "stage_id": "S4_compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Trainer cannot access audit/scorer/evaluation state.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Fresh process denies all scorer, audit, prior item, cache, and source-life mutation channels.",
+        "stage_id": "S6_eval_resolver",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Environment writes sealed outcome only; cannot expose other items.",
+        "stage_id": "S7_eval_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_audit_scorer_and_cross_item_state",
+        "reason": "Authorized offline owner of scorer truth, metrics, receipts, and sealed outcomes.",
+        "stage_id": "S8_audit_scorer",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I1_source_prefix_public_events",
+      "I2_post_checkpoint_source_suffix",
+      "I3_semantic_status_and_provenance",
+      "I4_compiled_supported_corpus",
+      "I5_memory_backend_and_psi_l",
+      "I6_current_eval_goal_and_public_state",
+      "I7_current_item_public_outcomes",
+      "I8_hidden_truth_minimal_paths_and_answers",
+      "I9_workspace_agenda_and_repeat_state",
+      "I10_audit_scorer_and_cross_item_state"
+    ],
+    "stages": [
+      "S1_source_ingest",
+      "S2_source_wake",
+      "S3_dream",
+      "S4_compile",
+      "S5_train",
+      "S6_eval_resolver",
+      "S7_eval_environment",
+      "S8_audit_scorer"
+    ]
+  }
+}

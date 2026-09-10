@@ -1,0 +1,50 @@
+{
+  "schema_version": "paper1-v03r-canary-schema-resource-registry-v1f.0",
+  "registry_id": "P1F-SCHEMA-RESOURCE-REGISTRY-V1F",
+  "base_directory": "research_loop/changes/chg_20260903_paper1_v03r_end_to_end_canary_v1f",
+  "draft": "https://json-schema.org/draft/2020-12/schema",
+  "resolution_rule": "For every external $ref in a registered schema, split the reference at the first #. Resolve the nonempty resource component only by exact filename lookup in resources; load exactly that path below base_directory; require the loaded document's $id to byte-equal resources[filename].id; then resolve the fragment within that document. Network retrieval, current-working-directory fallback, basename guessing, duplicate IDs, unregistered schema files, and redirects are forbidden.",
+  "identity_rule": "Every *.schema.json file below base_directory appears exactly once. Filenames and $id values are byte-exact, unique, and immutable after ratification.",
+  "sha256_placeholder_policy": {
+    "proposal_value": null,
+    "meaning": "Null is a proposal-time placeholder, never a runtime wildcard.",
+    "seal": "The ratified protocol/change manifest seals the exact bytes of this registry and every registered schema. During post-ratification CPU implementation, P1CB01 computes each exact-file SHA-256, writes the resolved executable lock, and rejects any mismatch before DEV dispatch.",
+    "runtime_requirement": "A resource is resolvable only when its computed lowercase SHA-256 equals the value sealed in the resolved executable lock; null is forbidden after P1CB01."
+  },
+  "resources": {
+    "authority_token.schema.json": {"id": "paper1-v03r-canary-authority-token-v1f.schema.json", "sha256": null},
+    "candidate_registry.schema.json": {"id": "paper1-v03r-canary-candidate-registry-v1f", "sha256": null},
+    "dream_operation.schema.json": {"id": "paper1-v03r-canary-dream-operation-v1f", "sha256": null},
+    "dream_state.schema.json": {"id": "paper1-v03r-canary-dream-state-v1f", "sha256": null},
+    "human_terminal_stop.schema.json": {"id": "paper1-v03r-canary-human-terminal-stop-v1f.schema.json", "sha256": null},
+    "memory_row.schema.json": {"id": "paper1-v03r-canary-memory-row-v1f", "sha256": null},
+    "opportunity_ledger.schema.json": {"id": "paper1-v03r-canary-opportunity-ledger-v1f.schema.json", "sha256": null},
+    "proposal.schema.json": {"id": "paper1-v03r-canary-proposal-v1f", "sha256": null},
+    "public_event.schema.json": {"id": "paper1-v03r-canary-public-event-v1f", "sha256": null},
+    "read_result.schema.json": {"id": "paper1-v03r-canary-read-result-v1f", "sha256": null},
+    "review_assignment.schema.json": {"id": "paper1-v03r-canary-review-assignment-v1f.schema.json", "sha256": null},
+    "review_disposition.schema.json": {"id": "paper1-v03r-canary-review-disposition-v1f.schema.json", "sha256": null},
+    "review_packet.schema.json": {"id": "paper1-v03r-canary-review-packet-v1f.schema.json", "sha256": null},
+    "scratch.schema.json": {"id": "paper1-v03r-canary-scratch-v1f", "sha256": null},
+    "self_check.schema.json": {"id": "paper1-v03r-canary-self-check-v1f", "sha256": null},
+    "self_check_state.schema.json": {"id": "paper1-v03r-canary-self-check-state-v1f", "sha256": null},
+    "terminal_claim_state.schema.json": {"id": "paper1-v03r-canary-terminal-claim-state-v1f.schema.json", "sha256": null},
+    "think0_operation.schema.json": {"id": "paper1-v03r-canary-think0-operation-v1f", "sha256": null},
+    "think0_state.schema.json": {"id": "paper1-v03r-canary-think0-state-v1f", "sha256": null},
+    "think1_operation.schema.json": {"id": "paper1-v03r-canary-think1-operation-v1f", "sha256": null},
+    "think1_state.schema.json": {"id": "paper1-v03r-canary-think1-state-v1f", "sha256": null}
+  },
+  "p1cb01_required_negative_tests": [
+    "unregistered external reference",
+    "registered filename with mismatched $id",
+    "duplicate $id",
+    "missing registered schema file",
+    "extra *.schema.json file absent from resources",
+    "post-seal byte mutation",
+    "null runtime digest",
+    "path traversal or symlink escape",
+    "network URI or redirect attempt",
+    "human_terminal_stop.schema.json missing from resources",
+    "human_terminal_stop.schema.json $id mismatch"
+  ]
+}

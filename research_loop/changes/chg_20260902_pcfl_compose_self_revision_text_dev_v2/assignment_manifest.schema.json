@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dream-state.invalid/pcfl-compose-v2/assignment-manifest-r1.schema.json",
+  "title": "PCFL-Compose v2 sealed assignment manifest",
+  "$comment": "Only #/$defs/assignment_manifest is the root instance. Experiment outcomes and resource counters use experiment_call_ledger.schema.json.",
+  "$ref": "#/$defs/assignment_manifest",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"},
+    "nullable_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "seed_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "seed_derivation_version", "coupling_group", "root_id", "z_side", "sampling_lane", "phase_role", "target_id", "goal_twin", "draw_role", "resolver_ordinal"],
+      "properties": {
+        "domain": {"const": "pcfl-compose-v2/model-seed"},
+        "seed_derivation_version": {"const": "pcfl-v2-hmac-sha256-v2"},
+        "coupling_group": {"$ref": "#/$defs/id"},
+        "root_id": {"$ref": "#/$defs/id"},
+        "z_side": {"enum": ["SAMPLED", "ANTIPODE", "SELECTED_ONLY"]},
+        "sampling_lane": {"enum": ["OPAQUE_DREAM", "AST_DREAM", "OPAQUE_TARGET_THINK", "AST_TARGET_THINK", "ORACLE_TARGET_THINK", "STRUCTURED_ONESHOT_THINK"]},
+        "phase_role": {"enum": ["DREAM1", "DREAM2", "THINK_D1", "THINK_D4", "ONE_SHOT_DREAM1", "ONE_SHOT_DREAM2", "ONE_SHOT_THINK_D4"]},
+        "target_id": {"$ref": "#/$defs/nullable_id"},
+        "goal_twin": {"oneOf": [{"enum": [0, 1]}, {"type": "null"}]},
+        "draw_role": {"enum": ["sample_next_token"]},
+        "resolver_ordinal": {"type": "integer", "minimum": 0, "maximum": 31}
+      }
+    },
+    "call_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "call_id", "call_index", "assignment_id", "session_id", "root_id",
+        "family", "z_side", "h_or_q", "lane", "sampling_lane", "phase_role", "condition_id",
+        "memory_variant_or_cut", "target_id", "goal_twin", "selected_h_cut",
+        "operation_topology", "resolver_ordinal", "coupling_group",
+        "coupling_kind", "seed_key", "seed_key_jcs_utf8_sha256", "seed_digest",
+        "backend_seed_u32", "sampler_config_id", "stage",
+        "scientific_or_diagnostic", "replay_eligible"
+      ],
+      "properties": {
+        "call_id": {"type": "string", "pattern": "^s[12]-call-[0-9]{4}$"},
+        "call_index": {"type": "integer", "minimum": 1, "maximum": 3414},
+        "assignment_id": {"$ref": "#/$defs/id"},
+        "session_id": {"$ref": "#/$defs/id"},
+        "root_id": {"enum": ["pcfl-open-factor-0000", "pcfl-untouched-factor-0000", "pcfl-independent-0000"]},
+        "family": {"enum": ["FACTOR", "INDEPENDENT"]},
+        "z_side": {"enum": ["SAMPLED", "ANTIPODE", "SELECTED_ONLY"]},
+        "h_or_q": {"oneOf": [{"enum": [0, 1]}, {"type": "null"}]},
+        "lane": {"enum": ["OPAQUE_NOTE_SELF", "OPERATOR_AST_SELF", "ONE_SHOT_DREAM_OPAQUE", "ORACLE_SCHEMA_TEXT", "EMPTY_MEMORY", "OBSERVED", "CROSSED_ANTIPODE", "OPAQUE_SHAM"]},
+        "sampling_lane": {"enum": ["OPAQUE_DREAM", "AST_DREAM", "OPAQUE_TARGET_THINK", "AST_TARGET_THINK", "ORACLE_TARGET_THINK", "STRUCTURED_ONESHOT_THINK"]},
+        "phase_role": {"enum": ["DREAM1", "DREAM2", "THINK_D1", "THINK_D4", "ONE_SHOT_DREAM1", "ONE_SHOT_DREAM2", "ONE_SHOT_THINK_D4"]},
+        "condition_id": {"enum": ["SELF", "EMPTY", "OBSERVED", "CROSSED", "SHAM", "ORACLE", "AST", "ONE_SHOT_DREAM", "ONE_SHOT_THINK"]},
+        "memory_variant_or_cut": {"enum": ["AUTHENTIC", "EMPTY", "OBSERVED", "CROSSED_ANTIPODE", "OPAQUE_SHAM", "ORACLE_SCHEMA", "AST_AUTHENTIC", "ONE_SHOT_AUTHENTIC"]},
+        "target_id": {"$ref": "#/$defs/nullable_id"},
+        "goal_twin": {"oneOf": [{"enum": [0, 1]}, {"type": "null"}]},
+        "selected_h_cut": {"oneOf": [{"const": 0}, {"type": "null"}]},
+        "operation_topology": {"enum": ["DREAM1_32", "DREAM2_16", "THINK_D1_10", "THINK_D4_31", "ONE_SHOT_DREAM1_1", "ONE_SHOT_DREAM2_1", "ONE_SHOT_THINK_D4_1"]},
+        "resolver_ordinal": {"type": "integer", "minimum": 0, "maximum": 31},
+        "coupling_group": {"$ref": "#/$defs/id"},
+        "coupling_kind": {"enum": ["COMMON_SEED", "ANALYSIS_PAIR_ONLY", "INDEPENDENT"]},
+        "seed_key": {"$ref": "#/$defs/seed_key"},
+        "seed_key_jcs_utf8_sha256": {"$ref": "#/$defs/sha256"},
+        "seed_digest": {"$ref": "#/$defs/sha256"},
+        "backend_seed_u32": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+        "sampler_config_id": {"const": "pcfl-v2-sampler-r1"},
+        "stage": {"enum": [1, 2]},
+        "scientific_or_diagnostic": {"const": "SCIENTIFIC"},
+        "replay_eligible": {"type": "boolean"}
+      }
+    },
+    "assignment_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assignment_id", "row_id", "root_id", "family", "z_side", "h_or_q", "lane", "condition_id", "target_kind", "target_id", "goal_twin", "stage", "selected_h_cut", "call_ids", "denominator_weight", "gate_binding_ids"],
+      "properties": {
+        "assignment_id": {"$ref": "#/$defs/id"},
+        "row_id": {"$ref": "#/$defs/id"},
+        "root_id": {"enum": ["pcfl-open-factor-0000", "pcfl-untouched-factor-0000", "pcfl-independent-0000"]},
+        "family": {"enum": ["FACTOR", "INDEPENDENT"]},
+        "z_side": {"enum": ["SAMPLED", "ANTIPODE", "SELECTED_ONLY"]},
+        "h_or_q": {"oneOf": [{"enum": [0, 1]}, {"type": "null"}]},
+        "lane": {"type": "string", "maxLength": 64},
+        "condition_id": {"type": "string", "maxLength": 40},
+        "target_kind": {"enum": ["A_COMMITMENT", "B_COMMITMENT", "D1", "D4", "SESSION_ONLY"]},
+        "target_id": {"$ref": "#/$defs/nullable_id"},
+        "goal_twin": {"oneOf": [{"enum": [0, 1]}, {"type": "null"}]},
+        "stage": {"enum": [1, 2]},
+        "selected_h_cut": {"oneOf": [{"const": 0}, {"type": "null"}]},
+        "call_ids": {"type": "array", "minItems": 1, "maxItems": 82, "uniqueItems": true, "items": {"type": "string", "pattern": "^s[12]-call-[0-9]{4}$"}},
+        "denominator_weight": {"const": 1},
+        "gate_binding_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^G[0-9]{2}$"}}
+      }
+    },
+    "replay_slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slot_id", "canonical_order", "purpose", "source_call_id", "allowed_failure_classes", "replacement_allowed", "endpoint_allowed"],
+      "properties": {
+        "slot_id": {"enum": ["replay-001", "replay-002"]},
+        "canonical_order": {"enum": [1, 2]},
+        "purpose": {"const": "infrastructure-diagnosis"},
+        "source_call_id": {"oneOf": [{"type": "string", "pattern": "^s[12]-call-[0-9]{4}$"}, {"type": "null"}]},
+        "allowed_failure_classes": {"const": ["DEVICE_RUNTIME_FAULT_BEFORE_RESPONSE", "ENGINE_PROCESS_CRASH_BEFORE_RESPONSE", "ENGINE_START_FAILURE", "TRANSPORT_EOF_BEFORE_RESPONSE"]},
+        "replacement_allowed": {"const": false},
+        "endpoint_allowed": {"const": false}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage1", "stage2", "total", "process_opportunities"],
+      "properties": {
+        "stage1": {"const": {"dream": 128, "recurrent_think": 782, "one_shot_think": 0, "all": 910}},
+        "stage2": {"const": {"dream": 356, "recurrent_think": 2144, "one_shot_think": 4, "all": 2504}},
+        "total": {"const": {"dream": 484, "recurrent_think": 2926, "one_shot_think": 4, "scientific": 3414}},
+        "process_opportunities": {"const": 3416}
+      }
+    },
+    "assignment_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "schema_version", "generator_contract_sha256", "runtime_envelope_sha256", "rng_contract_sha256", "gate_receipt_schema_sha256", "call_ledger_schema_sha256", "source_randomness_commitment", "selected_h", "roots", "calls", "assignments", "stage1_gate_expression", "stage1_gate_bindings", "replay_slots", "summary"],
+      "properties": {
+        "artifact": {"const": "PCFL_V2_ASSIGNMENT_MANIFEST"},
+        "schema_version": {"const": 1},
+        "generator_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "runtime_envelope_sha256": {"$ref": "#/$defs/sha256"},
+        "rng_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "gate_receipt_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "call_ledger_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "source_randomness_commitment": {"$ref": "#/$defs/sha256"},
+        "selected_h": {"const": 0},
+        "roots": {"const": ["pcfl-open-factor-0000", "pcfl-untouched-factor-0000", "pcfl-independent-0000"]},
+        "calls": {"type": "array", "minItems": 3414, "maxItems": 3414, "items": {"$ref": "#/$defs/call_row"}},
+        "assignments": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/assignment_row"}},
+        "stage1_gate_expression": {
+          "const": {
+            "op": "AND",
+            "args": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+            "missing_duplicate_tie_or_failure": false,
+            "only_true_bit_vector": "11111111111",
+            "false_terminal": "HUMAN_REQUIRED_STAGE2_NOT_TRIGGERED",
+            "true_transition": "OPEN_EXACT_2504_CALL_STAGE2"
+          }
+        },
+        "stage1_gate_bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+          "properties": {
+            "G01": {"const": {"receipt_id":"s1-g01-construct","receipt_kind":"CONSTRUCT_SCHEMA_RUNTIME_REPORT_RECEIPT"}},
+            "G02": {"const": {"receipt_id":"s1-g02-manifest","receipt_kind":"ROSTER_MANIFEST_COUNT_RECEIPT"}},
+            "G03": {"const": {"receipt_id":"s1-g03-dream1-a","receipt_kind":"DREAM1_A_COMMITMENT_RECEIPT"}},
+            "G04": {"const": {"receipt_id":"s1-g04-revision","receipt_kind":"RAW_A_CAUSAL_REVISION_RECEIPT"}},
+            "G05": {"const": {"receipt_id":"s1-g05-dream2-b","receipt_kind":"DREAM2_B_COMMITMENT_RECEIPT"}},
+            "G06": {"const": {"receipt_id":"s1-g06-oracle","receipt_kind":"EXACT_AND_ORACLE_CEILING_RECEIPT"}},
+            "G07": {"const": {"receipt_id":"s1-g07-actor-self","receipt_kind":"SELECTED_H_SELF_ACTOR_ENDPOINT_RECEIPT"}},
+            "G08": {"const": {"receipt_id":"s1-g08-goal-twins","receipt_kind":"GOAL_TWIN_PAIR_COUPLING_RECEIPT"}},
+            "G09": {"const": {"receipt_id":"s1-g09-self-minus-empty","receipt_kind":"STRICT_PAIRED_ACTION_CONTRAST_RECEIPT"}},
+            "G10": {"const": {"receipt_id":"s1-g10-self-minus-crossed","receipt_kind":"STRICT_PAIRED_ACTION_CONTRAST_RECEIPT"}},
+            "G11": {"const": {"receipt_id":"s1-g11-sham","receipt_kind":"PRESEALED_SHAM_ENDPOINT_RECEIPT"}}
+          }
+        },
+        "replay_slots": {
+          "type": "array",
+          "prefixItems": [
+            {"allOf": [{"$ref": "#/$defs/replay_slot"}, {"properties": {"slot_id": {"const": "replay-001"}, "canonical_order": {"const": 1}}}]},
+            {"allOf": [{"$ref": "#/$defs/replay_slot"}, {"properties": {"slot_id": {"const": "replay-002"}, "canonical_order": {"const": 2}}}]}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "summary": {"$ref": "#/$defs/summary"}
+      }
+    }
+  },
+  "x-runtime-invariants": [
+    "call_index is exactly 1..3414 with no duplicate; call_id is s1-call-0001..0910 then s2-call-0001..2504 in generator order.",
+    "Every assignment_id and call_id is unique; every assignment call_id resolves once; no call is extra or omitted.",
+    "Every COMMON_SEED group has byte-identical seed_key JCS, seed digest, backend seed, topology, and sampler ID; ANALYSIS_PAIR_ONLY has distinct coupling groups.",
+    "Replay slots are exactly replay-001/replay-002 in order, can bind only distinct replay_eligible calls with one of the four allowed pre-response infrastructure failures, and never change source outcomes.",
+    "stage1_gate_bindings is the exact G01..G11 receipt-id/kind table; gate evidence is validated by gate_receipt.schema.json and cannot bind arbitrary IDs or kinds.",
+    "Outcome/resource validation is exclusively experiment_call_ledger.schema.json, whose invoked and not-invoked branches are disjoint and whose Think-D4 phase remainder reaches exactly 15872."
+  ]
+}

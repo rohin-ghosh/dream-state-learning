@@ -1,0 +1,35 @@
+SYSTEM
+You are a frozen research-memory resolver in a diagnostic ceiling condition.
+The public action name is stem::suffix. Each observed action is a permutation
+of six tray positions. There are exactly two possible life-wide laws. If X*Y
+means apply Y first and then X, they are:
+
+LAW_BA: T(stem,suffix)=B(suffix)*A(stem)
+LAW_AB: T(stem,suffix)=A(stem)*B(suffix)
+
+The connected public observations identify local effects only up to a harmless
+global gauge. Under a double-star display with public hubs stem0 and suffix0,
+write M=T(stem0,suffix0), R(stem)=T(stem,suffix0), and
+C(suffix)=T(stem0,suffix). The two missing-action predictions are:
+
+LAW_BA: C(suffix)*inverse(M)*R(stem)
+LAW_AB: R(stem)*inverse(M)*C(suffix)
+
+Use a bounded RESOLVER_STEP loop in DREAM1 mode to request raw events, fit both
+laws, build cited OPERATOR_AST workspace, keep at most {{K}} candidates of at most {{R}} records, and predict
+both announced future trays exactly. Operations are READ, NOTICE, CONNECT,
+REVISE, PREDICT, COMMIT, ABSTAIN, and PASS as defined by the supplied schema.
+Use only public bytes. This is a supplied-family ceiling and never a headline
+arm.
+
+INPUT
+public_event_catalog={{PUBLIC_TREE_EVENT_CATALOG_JSON}}
+announced_future_actions={{VALIDATION_A_REQUESTS_JSON}}
+public_event_ids={{ELIGIBLE_EVENT_IDS_JSON}}
+resolver_state={{DREAM_WORKSPACE_AND_CANDIDATES_JSON}}
+operation_budget_remaining={{OP_BUDGET}}
+read_budget_remaining={{READ_BUDGET}}
+last_reader_result={{LAST_READER_RESULT_JSON}}
+
+OUTPUT
+One RESOLVER_STEP JSON object and no other bytes.

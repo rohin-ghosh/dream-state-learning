@@ -1,0 +1,346 @@
+{
+  "schema_version": "pcfl.controller_cases.v2",
+  "artifact_type": "pcfl_d0_exact_controller_golden_cases",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "protocol_id": "PCFL-D0-EXACT-V2",
+  "arithmetic": "Every fraction is exact and compared by cross multiplication. Implementations must reduce on ingestion; deliberately unreduced input fixtures test that rule. Every expected fraction is reduced. Decimal conversion is forbidden.",
+  "cases": [
+    {
+      "case_id": "GC01_ACCEPTED_VISIBLE_POSTERIOR",
+      "case_type": "posterior",
+      "input": {
+        "prior_world_mass": {"H0": "1/3", "H1": "1/3", "H2": "1/3"},
+        "accepted_visible_item_likelihood": {"H0": "1/8", "H1": "1/16", "H2": "0/1"},
+        "visible_item_id": "V0"
+      },
+      "expected": {
+        "unnormalized_mass": {"H0": "1/24", "H1": "1/48", "H2": "0/1"},
+        "normalizer": "1/16",
+        "posterior": {"H0": "2/3", "H1": "1/3", "H2": "0/1"}
+      }
+    },
+    {
+      "case_id": "GC02_REJECTION_METADATA_EXCLUDED",
+      "case_type": "posterior_noninterference",
+      "input": {
+        "public_input": "exactly GC01 V0",
+        "hidden_audit_variant_a": {"rejected_pair_candidates": 0, "rejected_target_proposals": 1, "accepted_proposal_counter": 1},
+        "hidden_audit_variant_b": {"rejected_pair_candidates": 999, "rejected_target_proposals": 99999, "accepted_proposal_counter": 99999}
+      },
+      "expected": {
+        "posterior_variant_a": {"H0": "2/3", "H1": "1/3", "H2": "0/1"},
+        "posterior_variant_b": {"H0": "2/3", "H1": "1/3", "H2": "0/1"},
+        "exact_equal": true,
+        "forbidden_conditioning_fields": ["rejected_pair_candidates", "rejected_target_proposals", "accepted_proposal_counter"]
+      }
+    },
+    {
+      "case_id": "GC03_QUOTIENT_MASS_AGGREGATION",
+      "case_type": "quotient",
+      "input": {
+        "full_posterior": {"H0": "1/12", "H1": "1/6", "H2": "1/4", "H3": "1/2"},
+        "quotient_key": {"H0": "Q0", "H1": "Q0", "H2": "Q1", "H3": "Q1"}
+      },
+      "expected": {
+        "quotient_mass": {"Q0": "1/4", "Q1": "3/4"},
+        "mass_sum": "1/1"
+      }
+    },
+    {
+      "case_id": "GC04_ZERO_INITIAL_VISIBLE_MASS",
+      "case_type": "degenerate_posterior",
+      "input": {"accepted_visible_item_likelihood": {"H0": "0/1", "H1": "0/1"}},
+      "expected": {
+        "status": "GENERATOR_INVALID_ZERO_VISIBLE_MASS",
+        "item_value": "0/1",
+        "uniform_fallback": false,
+        "continue_dynamic_program": false
+      }
+    },
+    {
+      "case_id": "GC05_ZERO_UPDATE_MASS",
+      "case_type": "degenerate_posterior",
+      "input": {
+        "prior_posterior": {"H0": "2/3", "H1": "1/3"},
+        "observed_public_outcome": "O_IMPOSSIBLE",
+        "hypothesis_outcomes": {"H0": "O0", "H1": "O1"}
+      },
+      "expected": {
+        "status": "INCONSISTENT_PUBLIC_OBSERVATION",
+        "item_value": "0/1",
+        "prior_restore": false,
+        "continue_dynamic_program": false
+      }
+    },
+    {
+      "case_id": "GC06_EXACT_POSTERIOR_FILTER",
+      "case_type": "posterior_update",
+      "input": {
+        "prior_posterior": {"H0": "2/3", "H1": "1/3"},
+        "observed_public_outcome": "INTERVENTION_ACCEPTED",
+        "hypothesis_outcomes": {"H0": "INTERVENTION_ACCEPTED", "H1": "TERMINAL_FAILURE:SITE_REJECTED"}
+      },
+      "expected": {
+        "retained_unnormalized": {"H0": "2/3", "H1": "0/1"},
+        "posterior": {"H0": "1/1", "H1": "0/1"}
+      }
+    },
+    {
+      "case_id": "GC07_BELLMAN_LEXICOGRAPHIC_TIE",
+      "case_type": "bellman_tie",
+      "input": {
+        "legal_actions_in_unsorted_input_order": [
+          "{\"action\":\"SURVEY\",\"site_handle\":\"S9000000\"}\n",
+          "{\"action\":\"ASSAY\",\"specimen_handle\":\"X0000000\",\"trait\":\"T1\"}\n",
+          "{\"action\":\"ASSAY\",\"specimen_handle\":\"X0000000\",\"trait\":\"T0\"}\n"
+        ],
+        "exact_q_values": ["1/2", "1/2", "1/2"]
+      },
+      "expected": {
+        "selected_action": "{\"action\":\"ASSAY\",\"specimen_handle\":\"X0000000\",\"trait\":\"T0\"}\n",
+        "selected_value": "1/2",
+        "rule": "ASSAY precedes SURVEY; within ASSAY compare canonical UTF-8 bytes"
+      }
+    },
+    {
+      "case_id": "GC08_EMPIRICAL_P90_NEAREST_RANK",
+      "case_type": "quantile",
+      "input": {
+        "pair_values_in_pair_id_order": [
+          "63/100", "62/100", "61/100", "60/100", "59/100", "58/100", "57/100", "56/100",
+          "55/100", "54/100", "53/100", "52/100", "51/100", "50/100", "49/100", "48/100",
+          "47/100", "46/100", "45/100", "44/100", "43/100", "42/100", "41/100", "40/100",
+          "39/100", "38/100", "37/100", "36/100", "35/100", "34/100", "33/100", "32/100",
+          "31/100", "30/100", "29/100", "28/100", "27/100", "26/100", "25/100", "24/100",
+          "23/100", "22/100", "21/100", "20/100", "19/100", "18/100", "17/100", "16/100",
+          "15/100", "14/100", "13/100", "12/100", "11/100", "10/100", "9/100", "8/100",
+          "7/100", "6/100", "5/100", "4/100", "3/100", "2/100", "1/100", "0/100"
+        ]
+      },
+      "expected": {
+        "sorted_one_indexed_rank": 58,
+        "value": "57/100",
+        "passes_bayes_p90_gate": false
+      }
+    },
+    {
+      "case_id": "GC09_CPU_GATE_BOUNDARY_PASS",
+      "case_type": "cpu_gate",
+      "input": {
+        "pair_count": 64,
+        "BAYES_N_each_pair": "7/20",
+        "AUTH_GEN_each_pair": "17/20",
+        "HW_SOLVE_each_pair": "1/1",
+        "ATOM_CEILING_each_pair": "1/1",
+        "each_shortcut_pair": "7/20",
+        "bad_assignment_each_pair": "11/20"
+      },
+      "expected": {
+        "bayes_mean": "7/20",
+        "bayes_p90": "7/20",
+        "exact_gain": "1/2",
+        "bad_assignment_required_loss": "1/4",
+        "bad_assignment_observed_loss": "3/10",
+        "all_gates_pass": true
+      }
+    },
+    {
+      "case_id": "GC10_P90_FAILS_WITH_LOW_MEAN",
+      "case_type": "cpu_gate",
+      "input": {
+        "BAYES_N_pair_multiset": {"0/1": 57, "1/1": 7}
+      },
+      "expected": {
+        "bayes_mean": "7/64",
+        "bayes_mean_pass": true,
+        "bayes_p90": "1/1",
+        "bayes_p90_pass": false,
+        "overall_bayes_gate_pass": false,
+        "replacement": false
+      }
+    },
+    {
+      "case_id": "GC11_NONPOSITIVE_EXACT_GAIN",
+      "case_type": "cpu_gate",
+      "input": {"bayes_mean": "2/5", "auth_gen_mean": "2/5"},
+      "expected": {
+        "exact_gain": "0/1",
+        "gate_pass": false,
+        "half_gain_ratio_defined": false,
+        "replacement": false
+      }
+    },
+    {
+      "case_id": "GC12_A2_AUTH_GENERIC_LEFT",
+      "case_type": "generic_reachability",
+      "input": {
+        "side": "H",
+        "world_rank": 0,
+        "initial_traits_T0_T1_T2_T3": ["ZERO", "ZERO", "ZERO", "ZERO"],
+        "site_atom": ["S0000001", "SITE_PREDICATE", "F1"],
+        "inventory_family_handles_in_order": ["P0000001", "P0000003", "P0000004"],
+        "derived_transform_anchor": "SET_T0_1",
+        "reverse_preparation_atom": ["P0000001", "PREPARATION_TRANSFORM", "SET_T0_1"]
+      },
+      "expected": {
+        "operations_before_first_action": [
+          "QUERY_LOCAL(SITE_FAMILY:S0000001)", "UPDATE_PATH(slot0,FORWARD)",
+          "QUERY_LOCAL(MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T0_1))", "UPDATE_PATH(slot0,REVERSE)"
+        ],
+        "first_action_family": "P0000001",
+        "later_actions": ["INTERVENE", "COMMIT"],
+        "queries": 2,
+        "path_updates": 2,
+        "resolver_operations": 7,
+        "world_actions": 3,
+        "item_value": "1/1"
+      }
+    },
+    {
+      "case_id": "GC13_A2_AUTH_GENERIC_TWIN",
+      "case_type": "generic_reachability_and_collision",
+      "input": {
+        "side": "dagger(H)",
+        "world_rank": 41603,
+        "initial_public_bytes": "identical to GC12",
+        "site_atom": ["S0000001", "SITE_PREDICATE", "F1"],
+        "inventory_family_handles_in_order": ["P0000001", "P0000003", "P0000004"],
+        "derived_transform_anchor": "SET_T0_1",
+        "reverse_preparation_atom": ["P0000003", "PREPARATION_TRANSFORM", "SET_T0_1"]
+      },
+      "expected": {
+        "pre_read_bytes_equal_GC12": true,
+        "query_and_update_sequence_equal_GC12": true,
+        "first_action_family": "P0000003",
+        "correct_action_differs_from_GC12": true,
+        "resolver_operations": 7,
+        "world_actions": 3,
+        "item_value": "1/1"
+      }
+    },
+    {
+      "case_id": "GC14_A3_AUTH_GENERIC_LEFT",
+      "case_type": "generic_reachability",
+      "input": {
+        "side": "H",
+        "world_rank": 0,
+        "initial_traits_T0_T1_T2_T3": ["ZERO", "ONE", "ZERO", "ZERO"],
+        "site_atom": ["S0000001", "SITE_PREDICATE", "F1"],
+        "surveyed_route_atom": ["R0000001", "ROUTE_REQUIREMENT", "G1"],
+        "inventory_family_handles_in_order": ["P0000000", "P0000001", "P0000002", "P0000003"],
+        "derived_route_transform": "SET_T1_0",
+        "route_reverse_preparation_atom": ["P0000002", "PREPARATION_TRANSFORM", "SET_T1_0"],
+        "derived_site_transform": "SET_T0_1",
+        "site_reverse_preparation_atom": ["P0000001", "PREPARATION_TRANSFORM", "SET_T0_1"]
+      },
+      "expected": {
+        "first_action": "SURVEY",
+        "query_anchors_after_survey": ["SITE_FAMILY:S0000001", "ROUTE_FAMILY:R0000001", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T1_0)", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T0_1)"],
+        "preparation_actions_in_order": ["P0000002", "P0000001"],
+        "later_actions": ["TRAVERSE", "INTERVENE", "COMMIT"],
+        "correct_unordered_pair": ["P0000001", "P0000002"],
+        "queries": 4,
+        "path_updates": 4,
+        "active_path_edges": 4,
+        "resolver_operations": 14,
+        "world_actions": 6,
+        "item_value": "1/1"
+      }
+    },
+    {
+      "case_id": "GC15_A3_AUTH_GENERIC_TWIN",
+      "case_type": "generic_reachability_and_collision",
+      "input": {
+        "side": "dagger(H)",
+        "world_rank": 41603,
+        "initial_public_bytes": "identical to GC14",
+        "site_atom": ["S0000001", "SITE_PREDICATE", "F1"],
+        "surveyed_route_atom": ["R0000001", "ROUTE_REQUIREMENT", "G1"],
+        "inventory_family_handles_in_order": ["P0000000", "P0000001", "P0000002", "P0000003"],
+        "derived_route_transform": "SET_T1_0",
+        "route_reverse_preparation_atom": ["P0000000", "PREPARATION_TRANSFORM", "SET_T1_0"],
+        "derived_site_transform": "SET_T0_1",
+        "site_reverse_preparation_atom": ["P0000003", "PREPARATION_TRANSFORM", "SET_T0_1"]
+      },
+      "expected": {
+        "pre_read_bytes_equal_GC14": true,
+        "first_action": "SURVEY",
+        "query_anchors_after_survey": ["SITE_FAMILY:S0000001", "ROUTE_FAMILY:R0000001", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T1_0)", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T0_1)"],
+        "preparation_actions_in_order": ["P0000000", "P0000003"],
+        "later_actions": ["TRAVERSE", "INTERVENE", "COMMIT"],
+        "correct_unordered_pair": ["P0000000", "P0000003"],
+        "pair_disjoint_from_GC14": true,
+        "resolver_operations": 14,
+        "world_actions": 6,
+        "item_value": "1/1"
+      }
+    },
+    {
+      "case_id": "GC16_READER_REPEAT_AND_DISCARD",
+      "case_type": "reader_state_machine",
+      "input": {
+        "anchor": "PREPARATION_FAMILY:P0000001",
+        "eligible_incident_atoms_in_registered_order": ["ATOM_A"],
+        "operations": ["QUERY_LOCAL(P0000001)", "UPDATE_PATH(slot0,FORWARD)", "QUERY_LOCAL(P0000001)", "QUERY_LOCAL(P0000001)"]
+      },
+      "expected": {
+        "returns": ["FOUND(ATOM_A)", "PATH_UPDATED_AND_SLOT_CLEARED", "NOT_FOUND", "BLOCKED_REPEAT"],
+        "ATOM_A_return_count": 1,
+        "discard_does_not_reset_seen": true,
+        "second_blocked_output_would_fail_item": true
+      }
+    },
+    {
+      "case_id": "GC17_COMPLETE_COLLISION_MISMATCH",
+      "case_type": "collision_failure",
+      "input": {
+        "all_registered_surfaces_equal": true,
+        "right_workspace_bytes_differs_by_one_byte": true,
+        "correct_assignments_differ": true
+      },
+      "expected": {
+        "target_pair_accepted": false,
+        "status": "TARGET_PAIR_COLLISION_FAILURE",
+        "controller_dispatch": false,
+        "replacement": false
+      }
+    },
+    {
+      "case_id": "GC18_INFORMATION_CEILING_CREDIT_SEPARATION",
+      "case_type": "controller_credit",
+      "input": {
+        "HW_SOLVE_mean": "1/1",
+        "ATOM_CEILING_mean": "1/1",
+        "AUTH_GEN_mean": "3/4",
+        "BAYES_N_mean": "1/4"
+      },
+      "expected": {
+        "hidden_world_solvable": true,
+        "eligible_atoms_information_sufficient": true,
+        "authentic_generic_gate_pass": false,
+        "exact_gain": "1/2",
+        "lifetime_usability_claim_allowed": false,
+        "pair_replacement": false,
+        "generator_version_invalid": true
+      }
+    },
+    {
+      "case_id": "GC19_NONADAPTIVE_TRANSFORM_GUESS",
+      "case_type": "nonadaptive_control",
+      "input": {
+        "public_state": "same as GC14 after SURVEY",
+        "committed_before_any_read": true,
+        "committed_query_anchors": ["SITE_FAMILY:S0000001", "ROUTE_FAMILY:R0000001", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T2_1)", "MODEL_DERIVED_TRANSFORM(TRANSFORM_TEMPLATE:SET_T0_0)"],
+        "true_entailed_transform_anchors": ["SET_T1_0", "SET_T0_1"]
+      },
+      "expected": {
+        "later_query_repair_allowed": false,
+        "predicate_or_requirement_return_changes_committed_anchor": false,
+        "wrong_queries_consume_budget": true,
+        "registered_correct_preparation_atoms_returned": false,
+        "item_value": "0/1",
+        "interpretation": "precommitted recognition failure, not adaptive generic reachability failure"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think0-state-v1f",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["probe", "scratch", "previous_read"],
+  "properties": {
+    "probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["probe_id", "source", "target", "question"],
+      "properties": {
+        "probe_id": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9_.:-]+$"},
+        "source": {"$ref": "dream_state.schema.json#/$defs/source"},
+        "target": {"$ref": "dream_state.schema.json#/$defs/target"},
+        "question": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[ -!#-\\[\\]-~]+$"}
+      }
+    },
+    "scratch": {"$ref": "scratch.schema.json"},
+    "previous_read": {"$ref": "#/$defs/previousRead"}
+  },
+  "$defs": {
+    "previousRead": {"$ref": "read_result.schema.json"}
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {"name": "initial-no-read", "instance": {"probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."}, "scratch": {"nodes": []}, "previous_read": {"type": "NO_READ"}}},
+      {"name": "animal-value-row-read", "instance": {"probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."}, "scratch": {"nodes": []}, "previous_read": {"type": "ROW", "read_handle": "H000001", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"], "status": "WITNESSED", "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3"}}}
+    ],
+    "negative": [
+      {"name": "overlapping-legacy-row-read-shape-no-kind", "instance": {"probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."}, "scratch": {"nodes": []}, "previous_read": {"type": "ROW", "read_handle": "H000001", "fields": ["animal:otter", "source:dandyland", "label:red"], "status": "WITNESSED", "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3"}}},
+      {"name": "row-read-with-null", "instance": {"probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."}, "scratch": {"nodes": []}, "previous_read": {"type": "ROW", "read_handle": "H000001", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", null], "status": "WITNESSED", "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6"}}}
+    ]
+  }
+}

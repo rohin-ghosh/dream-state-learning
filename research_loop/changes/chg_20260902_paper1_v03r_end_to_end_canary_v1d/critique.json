@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1d.fresh_adversarial_cross_critique.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1d",
+  "state": "critiqued",
+  "architecture_change_sha256": "44424cce5e0ce6f95a19581bcc294e0c8aaf4dca6283a282436dfe878dc5f2cf",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "fresh-systems-v1d",
+      "sha256": "e95c72211ec3baa8efbfd07d6f65792ddfe5ee76371c46b4ef2e93fce67dfc94"
+    },
+    {
+      "interpretation_id": "fresh-benchmark-v1d",
+      "sha256": "a9f429f5bd5b6b8bdf55c7a2def7ec2eb2b4b24a86f3ab1dc11029c8b55d3b91"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact ratification, review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 scope and verifier boundary."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Frozen paired public action-outcome world."
+    },
+    {
+      "path": "lands/v03.py",
+      "sha256": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+      "purpose": "Inherited public episode and final-goal rendering implementation."
+    },
+    {
+      "path": "lands/skins.py",
+      "sha256": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+      "purpose": "Aligned surface-name dependency used by the public projection."
+    },
+    {
+      "path": "lands/model.py",
+      "sha256": "6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211",
+      "purpose": "Frozen world configuration and typed public object dependency."
+    },
+    {
+      "path": "lands/v02.py",
+      "sha256": "0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89",
+      "purpose": "Inherited surface and mixture dependency in the v03r renderer closure."
+    },
+    {
+      "path": "lands/world.py",
+      "sha256": "9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac",
+      "purpose": "World-generation dependency in the frozen v03r closure."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing construct, leakage, local-window, edge-removal, and population tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/consensus.json",
+      "sha256": "95a5e147594e7804e0ab4d5fef6854745432675dc08a619ba7e82052975b98e1",
+      "purpose": "Binding v1b rework consensus and complete residual concern inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/consensus.json",
+      "sha256": "9b8e4cdc2c51f91acec3870503208451a82d09d5810cda9c85479761f1f7ec2b",
+      "purpose": "Binding v1c rework consensus requiring this newly hash-bound successor and preserving P1CB01 through P1CB10 identities."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/resolution_brief.md",
+      "sha256": "fa9ad1ebe8729ec5d38016a78fe02adc21c1d38470fafd7022ce52ee46bcf26e",
+      "purpose": "Adjudicated minimum repair choices and scientific boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/experiment_spec.md",
+      "sha256": "0fe327b14f1ab5f0c9585f39376a680e08f1136303a9b17eac3db310cbda7a23",
+      "purpose": "Question, stages, gates, bounded claims, and terminal scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/canary_config.json",
+      "sha256": "83ccd2f33fd2a67708f1a34e07c7adbfe7eaa8874c844c47bca1f89d849ffe7e",
+      "purpose": "World, models, operations, fixed fit recipe, arms, and ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/operation_contract.json",
+      "sha256": "e87be5de045f525a3bf1120fd6ad67cbb61ee9a46dd925e8bc1fb2f3d98b9d56",
+      "purpose": "Closed model states, recurrence, selectors, seeds, parser, scratch, and accounting."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/public_projection_contract.json",
+      "sha256": "7000b82e4db1ce0cd26e9adbed1aab099522791a93b5b56559e2a9ed43c5111e",
+      "purpose": "Exact public API to typed-event, probe, goal, vocabulary, and pre-dispatch control projection."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/memory_transport_contract.json",
+      "sha256": "bae382eb8b46b88a3c66b852ed2dcf179f4cac3d385d3206d6a7739221d4995e",
+      "purpose": "Public projection, proposal admission, immutable rows, reader projection, and candidate mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/intervention_contract.json",
+      "sha256": "207120f8d1c9752e64566aa194a244c0de4216e9891429e4688591fa8d322d3a",
+      "purpose": "Prospective public DIST, path and sham construction, offline correctness, and structural use."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/development_fixture_contract.json",
+      "sha256": "213c0d43f5f0598c4624f23a3a39771c811f2f537b24fc5a6e88bf207a91fb65",
+      "purpose": "Immutable population, six DEV lives, G fixtures, proof rows, parser, and gates."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/compiler_views.json",
+      "sha256": "b8e7c5fe3773f3e9b834d394c3c85ba569c24b7ea347ff94815491c4e9c1a3da",
+      "purpose": "Exact four view families, all legal question indices, round-trip semantics, and presentation counts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/runtime_training_contract.json",
+      "sha256": "abac0db971fa1ee3ca43c412a276c97833d3adb40856702a65c85f144ff3f3a7",
+      "purpose": "Executable lock, generation receipts, deterministic two-fit recipe, fidelity, and atomic recognition."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/stage_review_contract.json",
+      "sha256": "143b93886cc58272a6476172104e63453322dad0abcac5d4dbae0b1418c260f3",
+      "purpose": "Transition authority, validity mapping, packet inventories, actor separation, and claim firewall."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/acceptance_registry.json",
+      "sha256": "468efae5ec85dd6f6d8f6049572e0fa1f51c77b7c97939596697773767d09779",
+      "purpose": "Exact ten v1a-mandated P1CB test identities and artifacts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/scope_proposal.json",
+      "sha256": "ddf2e4c1bbffcc3f736985ffc1e66323dd8ea1b6af0280e786a0e5fad33404b7",
+      "purpose": "Requested and forbidden authority with staged ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_prompt.md",
+      "sha256": "2ec6a76ff1a767e650cb5898d8d8a2e2a6f897bd0676e423265ef8211665f9d6",
+      "purpose": "Frozen local connection-proposal instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check_prompt.md",
+      "sha256": "3e0fcd3fe73c05e441b9c784c90e971abffe4abb9e7625ca1edf40de3299f2c2",
+      "purpose": "Frozen blind fallible model reflection instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_prompt.md",
+      "sha256": "b32a156fb25932bb28db0ade14660f81bce5e7639296e2c751d590e368114bff",
+      "purpose": "Frozen target-absent source-target return instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_prompt.md",
+      "sha256": "ce4f808463de0caa4a0075c5d6f94c568db37aa1a8fcd775e03b1667562d3df9",
+      "purpose": "Frozen proof-sequence-scaffolded final resolver instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/public_event.schema.json",
+      "sha256": "e58e058c94b9c3bb48ac69add606198be380a1a71c369cf74b442f21ddf31175",
+      "purpose": "Closed public event projection schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/proposal.schema.json",
+      "sha256": "e8dd5fbfc78c6641d270d32a1ceb7ecc06213231e2b3cbb8b6e519b89b280a96",
+      "purpose": "Immutable audit proposal schema separate from memory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/memory_row.schema.json",
+      "sha256": "4ccc9db0f5774616736be3a3570cddd20a1e3cc8f515c8538f912f910d62cbdf",
+      "purpose": "Closed immutable witnessed or model-supported row schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/read_result.schema.json",
+      "sha256": "e195ac6c755fc35982dff9d0bc66cb147184e5b3b867d2a430c88ec93d64fc38",
+      "purpose": "Shared provenance-free thinker-facing read result."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/candidate_registry.schema.json",
+      "sha256": "51799147edfb5def1f19145353afce3b3b78a7c8abe8aee459091986bb6527bd",
+      "purpose": "Sealed semantic-only two-backend candidate and completion registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_state.schema.json",
+      "sha256": "467781da3e3f12f13bb248f036dfa1c45918a90162e3db825027b21d9e2e5f0d",
+      "purpose": "Closed DREAM allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check_state.schema.json",
+      "sha256": "aa27f7a5484d5aae14abfa57afce4bcdf25ccd7ab353e1df72fd2e83a3bbe14d",
+      "purpose": "Closed SELF_CHECK allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_state.schema.json",
+      "sha256": "a8fae810067ea984aec741f75c2722706d5a86ee260891101db79fd031bc7304",
+      "purpose": "Closed THINK0 state and public probe."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_state.schema.json",
+      "sha256": "42e3b05918502d6d0699c624a48762cae5a0709c1ae795b19571b9c9b34618ce",
+      "purpose": "Closed THINK1 state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/scratch.schema.json",
+      "sha256": "1de07e281af3ead5a21321552e1275c12ce2fe55e6cd9dadc8d3d9151661d950",
+      "purpose": "Closed discriminated scratch nodes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_operation.schema.json",
+      "sha256": "07441f9504bf70357c67036cde92ecc15186e96bf5917ecc56f1bbc7c137a78b",
+      "purpose": "DREAM PASS/CREATE grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check.schema.json",
+      "sha256": "bacbec98d1373d4dbe42d1aca66bf39a8bbdd82428264cae58fbe24eb3c702a3",
+      "purpose": "Fallible model self-check grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_operation.schema.json",
+      "sha256": "8e7ab04d1d99d2def0516b684b0422e447ba52973ca1443cc55e9e3cfa7d7940",
+      "purpose": "THINK0 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_operation.schema.json",
+      "sha256": "5cfe719c7ca20d4866c561d98ff4b8451bfd69b56d35b48c1b824f9b96abf40f",
+      "purpose": "THINK1 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/schema_resource_registry.json",
+      "sha256": "4cfab2589e3a217f77bc1742f7a12eac73fa6f88ca187b82570ace6c65c9ac7b",
+      "purpose": "Closed filename-to-schema-ID resolution contract for all local schema references."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/opportunity_ledger.schema.json",
+      "sha256": "f948b55f50e7d8db7224ca1d98ca117de16714a56429aee2fc434ff572e48b1e",
+      "purpose": "Canonical closed opportunity-ledger row schema and condition/state/reason mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/semantic_consistency_matrix.json",
+      "sha256": "e500562f70c82bfe5564d9939ff3ebe2d1a789ec64353f73681edfcf7779c836",
+      "purpose": "Exhaustive producer/consumer/ordering/validity/ledger semantic lock across every normative contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_packet.schema.json",
+      "sha256": "d19a9b9eb185324b81053b60300a771352fc903262c9e71064456c9a807ab724",
+      "purpose": "Closed transition packet schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_assignment.schema.json",
+      "sha256": "2ad15116456bf52f2c6786ed60eade4647cb6c555e6010d8bb2fedff51a138fe",
+      "purpose": "Closed reviewer/advocate assignment schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_disposition.schema.json",
+      "sha256": "8a4fc8c6ee9ee29248be3772866d551d9489621fda67b039a0ea29922cd60865",
+      "purpose": "Closed immutable review disposition schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/authority_token.schema.json",
+      "sha256": "684fb634ebba3e8172a8c5e3adfa429cf828a41bc9336c3e52f5eddb0394946f",
+      "purpose": "Closed monotone successor authority schema."
+    }
+  ],
+  "strongest_case": "After a newly hash-bound repair, this remains a strong, unusually explicit engineering-ceiling canary. The exact package prospectively fixes the public projection, recurrence and return treatment, atomic text/LoRA read interface, same-model fallible proposal admission, sham/path/twin interventions, two conditional isolated fits, finite operation ceilings, monotone authority, claim firewall, and HUMAN_TERMINAL. R02/P1CB02's substantive taint vectors are present in change.json and memory_transport_contract.json: every host-only goal coordinate and rendered question is independently mutated, every concrete cue roster is substituted across every other cue, invalid substitutions are rejected before replacing the sealed registry, and pre-reveal bytes remain invariant. R04/P1CB04's concrete cue-bound roster and atomic-read constraints, R06/P1CB06's return-only credit ceiling, and R07/P1CB07's five-arm SHAM_NOT_IDENTIFIABLE route also reproduce as closed. A T pass could support realized dependence on registered life-local text content for exactly one aligned seed-5 pair under game-specific ontology and proof scaffolding; an L pass could support only immediate candidate-constrained recognition on selected training-derived cues. It could not support the Paper-1 headline, action improvement, generalization, open recall, whole-corpus preservation, durability, scale, superiority, text/LoRA equivalence, or proved reviewer independence. The exact v1d bytes cannot proceed: R01/R03/R05/R09/R10 remain unsatisfied by mutually incompatible normative vectors or missing executable bindings, so the package's own rule requires INVALID_PRECONDITION/PROTOCOL_CONTRADICTION before implementation or dispatch.",
+  "reviewed_acceptance_test_ids": [
+    "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+    "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+    "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+    "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+    "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+    "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+    "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+    "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+  ],
+  "concerns": [
+    {
+      "concern_id": "C01_CANONICAL_CITATION_VECTOR_IS_NOT_A_LEGAL_SELF_CHECK",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The self_check_state canonical golden vector cannot be produced by the normative SELF_CHECK grammar or reducer, and its M000xxx metadata violates the witnessed-row identity contract.",
+      "evidence": "Systems D01 is reproduced and is stronger than stated. operation_contract.json lines 145 and 152, memory_transport_contract.json lines 127-163, and semantic_consistency_matrix.json ordering CITATION_UNION_ORDER require additional_rows to exclude premises and support_row_ids to be a distinct order-preserving subsequence of supplied additional_rows. self_check_state.schema.json instead supplies additional rows [M000005,M000002,M000003] while M000003 is already a premise, emits support_row_ids [M000002,M000003,M000005], and then expects accepted citations in the different order [M000004,M000001,M000003,M000005,M000002]. The vector therefore demonstrates silent repair of an INVALID_SELF_CHECK, not the legal reducer. Independently, its M000004/M000003/M000005 rows have depths 1/2/4 and multi-event or mismatched lineage, but public_projection_contract.json and operation_contract.json reserve M000xxx for one-to-one WITNESSED Ei-to-Mi rows with citations=[] and depth=0. This directly fails v1c R03 and also R01's unique executable lock and R05's witnessed projection; P1CB03 cannot accept both the legal memory_transport_contract vector and this vector.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+        "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C02_WITNESSED_EVENT_AND_MEMORY_IDENTITY_DOMAINS_CONFLICT",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "There is no single legal E/M identity domain for the registered DEV population.",
+      "evidence": "Systems D02 and benchmark D01 are independently reproduced. public_projection_contract.json binds both seed-1 DEV lives to 49 contiguous identities E000000..E000048 and witnessed rows M000000..M000048, and public_event.schema.json permits indices through 48. operation_contract.json model_local_identity instead declares only E000000..E000045 and M000000..M000045. memory_transport_contract.json republishes an unqualified event_to_row_manifest containing only those 46 pairs. memory_row.schema.json then over-permits witnessed-looking IDs M000000..M000099 rather than binding the sole projector's 0..48 domain. Because development_fixture_contract.json forbids a fixture-local mapper and v1c R05 requires the actual seed-generic count through 48, P1CB05 and P1CB01 cannot both pass, and the too-wide row schema also prevents P1CB03 from proving the closed identity invariant.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+        "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C03_STATIC_OPPORTUNITY_REGISTRY_CONTRADICTS_DYNAMIC_SELF_CHECK_CREATION",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The ledger simultaneously requires a complete pre-stage opportunity registry and makes the existence of SELF_CHECK opportunities depend on earlier model output in that same runtime stage.",
+      "evidence": "Benchmark D03 is reproduced. operation_contract.json says the prospective registry is complete before stage dispatch, then says only a schema-valid DREAM CREATE registers a SELF_CHECK opportunity; PASS, malformed, and illegal outputs register no opportunity, while new-owner versus duplicate status further changes dispatch. opportunity_ledger.schema.json repeats completeness before the stage's dispatch. DEV_GOLD and HELDOUT_TEXT contain DREAM and dependent SELF_CHECK calls, so the registry cannot know its exact SELF_CHECK membership before stage dispatch without pre-registering potential SELF_CHECK slots that the current contract explicitly says do not exist for PASS/malformed/illegal DREAM outputs. Alternatively, dynamic post-DREAM registration violates pre-stage completeness. The static call ceilings do not resolve opportunity identity. This leaves v1c R09 and R01 non-unique and makes P1CB09's one-effect/exhaustiveness assertion unimplementable without a new normative lifecycle choice.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C04_SEMANTIC_MATRIX_IS_NOT_EXHAUSTIVE_AND_UNDERBINDS_P1CB02",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The artifact declared to be the exhaustive R01 semantic lock omits a direct producer/consumer edge and half of the acceptance bindings, including P1CB02.",
+      "evidence": "Systems A02 and benchmark D04 are reproduced as a matrix failure, but benchmark's broader claim that exact R02 vectors are absent is falsified: change.json and memory_transport_contract.json explicitly enumerate each goal coordinate/question mutation and exhaustive cross-cue roster substitutions, say invalid substitutions are rejected before registry replacement, and require byte invariance. The remaining defect is structural. semantic_consistency_matrix.json PUBLIC_EVENT_AND_E_TO_M_PLAN lists operation, development fixture, and intervention consumers but omits memory_transport_contract.json, even though that file directly republishes the conflicting 46-pair manifest; IMMUTABLE_MEMORY_ROW also omits public_projection_contract.json as a producer. Its acceptance_bindings names only P1CB01, P1CB06, P1CB07, P1CB09, and P1CB10, omitting P1CB02, P1CB03, P1CB04, P1CB05, and P1CB08. Thus P1CB01's claimed exhaustive equality check can pass while missing the exact edge that exposes C02, and it cannot show how R02's exact taint vectors are bound into the executable lock. This violates v1c R01; R02's substantive content is otherwise present.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+        "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+        "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+        "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C05_EARLY_TERMINAL_CLAIM_REQUIREMENTS_ARE_NOT_STAGE_CONDITIONAL",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The claim firewall requires every terminal to carry positive-stage qualifiers and facts that may be unrealized when CPU, DEV, T, or L terminates early.",
+      "evidence": "Systems A03 and benchmark D05 are reproduced. stage_review_contract.json required_every_terminal_qualifiers unconditionally includes an aligned seed-5 one-pair diagnostic, model-claimed support, and realized reader-content intervention; required_every_terminal_facts unconditionally includes SHAM_NOT_IDENTIFIABLE five-arm semantics. An early CPU or DEV protocol/failure terminal has not run the aligned pair, reader intervention, or sham construction. Merely requiring these phrases allows a linter either to assert events that did not occur or to accept negated boilerplate, but the exact positive/negative semantics are not specified. R10 requires truthful broad positive and negative fixtures at every terminal, while R09 requires exact early-terminal routing. P1CB10 and P1CB09 need stage-conditional realized/not-reached qualifier vectors so early termination cannot overclaim or rely on implementation-chosen negation semantics.",
+      "acceptance_test_ids": [
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C06_PLATFORM_REVIEW_SEPARATION_HAS_NO_EXECUTABLE_ATTESTATION_CONTRACT",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The bytes correctly limit review separation to platform-attested workflow facts, but they do not define how those facts are validated rather than self-asserted.",
+      "evidence": "Both interpretations accept the review-separation ceiling but omit its executable gap. stage_review_contract.json says actor identity, role, and fresh context are platform attestations and expressly disclaims cryptographic, human, or model independence; that narrow semantic ceiling is correct under v1c R10. Yet review_assignment.schema.json accepts arbitrary actor_id strings plus arbitrary 64-hex platform_identity_attestation_sha256 values, review_disposition.schema.json does the same for fresh-context hashes, and review_packet.schema.json binds opaque actor_identity_manifest and platform_review_separation_attestation artifact hashes without any normative schema, issuer/trust boundary, verification algorithm, canonical actor-ID equivalence rule, or receipt-to-role/fresh-context relation. Different strings can satisfy reviewer/advocate inequality without demonstrating platform identity separation. P1CB10 says it validates platform-attested identities, but the exact v1d files only validate hash shape and declared bindings. This fails v1c R10 and R01 unless a closed external-attestation interface is normatively bound; the repair must not inflate that operational evidence into proved independence.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C07_LORA_FIDELITY_IS_TRAINING_SET_RESUBSTITUTION",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The L claim ceiling should explicitly say that the 48 selected fidelity cases per life are training-derived resubstitution checks, not unseen preservation or generalization.",
+      "evidence": "Benchmark B05/D05 is supported. runtime_training_contract.json deterministically trains each adapter on the compiler views of the sealed selected M1_OWN rows, and the fidelity suite asks the four registered view families over those same selected row semantics. The 44/48 gate therefore measures immediate candidate-constrained recognition on training-derived cues, with host-pre-resolved unique values and an answer-bearing roster. P1CB08 already forbids open recall, whole-corpus preservation, durability, capacity, scale, superiority, and text equivalence, so v1c R08 is nearly closed; adding the word-level resubstitution disclosure removes the residual ambiguity and helps R10 reject an unseen/generalization gloss.",
+      "acceptance_test_ids": [
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C08_CROSS_CRITIQUE_RESOLVES_NONBLOCKING_INTERPRETATION_DIFFERENCES",
+      "category": "credit_assignment",
+      "severity": "note",
+      "statement": "Several interpretation ambiguities are resolved by the exact bytes and should not be promoted into new blockers.",
+      "evidence": "For R02/P1CB02, invalid cross-cue rosters are rejected before sealed-registry replacement and byte-inertness is evaluated on the unchanged valid state; this resolves benchmark B04's reject-versus-inertness question. R04/P1CB04 has concrete semantic_hash/view_id/missing_index/cue-byte and token-hash roster bindings plus named substitution negatives. R06/P1CB06 explicitly claims only the return intervention after a common recurrent prefix. R07/P1CB07 consistently treats SHAM_NOT_IDENTIFIABLE as VALID_STAGE_FAILURE, runs the other five arms, emits zero-attempt T-SHAM rows, and forbids both full and weakened causal-use claims. R08/P1CB08 is correctly candidate-constrained except for C07's resubstitution wording. R10 correctly says public actions are environment-generated and model support is model-claimed. These closures do not cure C01-C06, so they do not authorize the exact v1d bytes.",
+      "acceptance_test_ids": [
+        "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+        "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+        "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+        "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [
+    "No model-visible private truth or answer leak was reproduced: the exact R02 mutations exist and wrong cross-cue rosters are rejected before state replacement. The assurance failure is that semantic_consistency_matrix.json omits P1CB02 from acceptance_bindings and omits memory_transport_contract.json from the public E-to-M consumer edge, so the artifact advertised as exhaustive cannot mechanically bind those taint guarantees or expose the conflicting identity domain."
+  ],
+  "missing_acceptance_tests": [
+    "Under P1CB03, replace the illegal self_check_state ordered-reducer vector with one schema-valid support subsequence and add negatives for premise reuse in additional_rows, support-order permutation, and every M000xxx row having exactly its corresponding single-event witnessed lineage, citations=[], and depth=0.",
+    "Under P1CB01/P1CB05, require exact equality of the seed-generic projector identity domain across public_event, public_projection, operation, memory transport, row schema, DEV fixtures, and matrix, including E/M000048 positives and 000049 negatives.",
+    "Under P1CB09, choose and test one lifecycle: either statically pre-register every potential SELF_CHECK slot with exact non-dispatch rows for non-CREATE outcomes, or permit deterministic post-DREAM registration and replace pre-stage completeness with an exact sealed dynamic-closure invariant.",
+    "Under P1CB01, mechanically derive or verify an exhaustive producer/consumer graph and exact P1CB01-P1CB10 acceptance binding set; include the public projector to memory-transport edge and fail on either an omitted or extra edge.",
+    "Under P1CB09/P1CB10, add stage-specific early-terminal wording fixtures that distinguish realized, not-reached, infeasible, and failed stages and reject both unqualified positive assertions and ambiguous negated keyword boilerplate.",
+    "Under P1CB10, bind a closed platform-attestation receipt schema and verifier/trust-boundary interface covering canonical actor identity, role exclusions, fresh-context facts, packet identity, and failure behavior, while asserting only platform-attested workflow separation.",
+    "Under P1CB08/P1CB10, require every L terminal to call the 48-case fidelity gate training-derived resubstitution on selected cues and reject unseen, held-out, preservation, generalization, or open-recall paraphrases."
+  ],
+  "human_questions": [
+    "Will Rohin withhold ratification of exact change SHA 44424cce5e0ce6f95a19581bcc294e0c8aaf4dca6283a282436dfe878dc5f2cf and require a newly hash-bound successor that resolves C01-C06 before CPU implementation?",
+    "Should SELF_CHECK opportunities all be statically reserved before a runtime stage, including explicit non-dispatch rows when DREAM does not produce a valid new-owner CREATE, or should the protocol instead define deterministic dynamic registration after DREAM and abandon pre-stage registry completeness?",
+    "Will the successor make one seed-generic E/M domain exact across all producers, consumers, and schemas—0..48 for the registered population with 49 rejected—and replace the illegal citation golden vector with a legal ordered-support vector?",
+    "What platform-owned receipt format, issuer/trust boundary, verifier, and canonical actor-identity rule will make reviewer/advocate role and fresh-context separation mechanically attestable at the deliberately narrow workflow level?",
+    "Does Rohin require terminal wording to be stage-conditional and every L result to disclose selected-cue training-set resubstitution, while retaining the existing one-pair engineering-ceiling and no-independence-proof limits?"
+  ]
+}

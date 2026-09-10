@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "chg_20260901_feltcraft_symbolic_kernel_v5.scope",
+  "change_id": "chg_20260901_feltcraft_symbolic_kernel_v5",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Research operating contract requiring durable deliberation, separate exact human ratification, scoped implementation, independent review, and separate compute and claim gates."
+    },
+    {
+      "path": ".git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "purpose": "Byte evidence that repository HEAD resolves through refs/heads/main when this proposal is formed."
+    },
+    {
+      "path": ".git/refs/heads/main",
+      "sha256": "1e01a51f8018360076328287cce24b8f38b92133f1083be40c9607394b4e87dd",
+      "purpose": "Byte evidence that the bound main-branch HEAD and SK10 diff base are the full commit 742f8bfa4bf4e530fdf264150bff962506fe449f."
+    },
+    {
+      "path": "research_loop/architecture_deliberation.py",
+      "sha256": "4f5c3f3601a1e19fc687fa4ab04d3dd973a8ed035f063b15637f0631ed096d65",
+      "purpose": "Deliberation runner that binds exact source bytes and terminates model adjudication at human-required state."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Strict validator for schemas, context hashes, exact Cartesian visibility, unique identifiers, transitive ratification provenance, scope equality, and human-only release."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict schema governing this architecture-change artifact."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Strict schema for fresh independent interpretations in the permitted governance loop."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict schema for the permitted adversarial cross-critique artifact."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Strict schema for adjudicated consensus and its releasability dispositions."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Strict human-ratification schema whose actual fields define the transitive authority chain and forbid a nonexistent direct change_sha256 field."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/change.json",
+      "sha256": "3f349860ec02a906caff8c735f3c8068e525dfa2bb9a3fd32aa81bef707489dd",
+      "purpose": "Proposal-only V1 ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v2/change.json",
+      "sha256": "cdb10a61638454ce86e54de359d09c1cdd082029b2a433209b9553d917324361",
+      "purpose": "Reworked V2 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v3/change.json",
+      "sha256": "53fd4e0bce3360bfb649e06c3dccf85356eea45188bb1c9cea5e8afffc2b7db3",
+      "purpose": "Reworked V3 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v4/change.json",
+      "sha256": "fa5ef77c127b7fe614ef33875d55a4099a023bec8fc6a8a1dd98db5f0fbf2a8e",
+      "purpose": "Reworked V4 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v4/consensus.json",
+      "sha256": "682a6b53dce625283df32b82bad559ca03e5ec77e64f36279b1da8fd119ab12e",
+      "purpose": "Adjudicated V4 rework whose exact R01-R07 resolutions and acceptance-test dispositions this successor implements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/audit_contract.md",
+      "sha256": "529bb737778679f8d4f528c06552d2cd4566e6da9b173bd7996ceb8d4b0799ea",
+      "purpose": "Normative standalone lineage, complete source-manifest algorithm, deterministic capability closure, reviewer freshness and independence, external visibility, and real ratification binding."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/golden_report.json",
+      "sha256": "f94cbc8e0fe65d4144ea7cdf849e2a98983803914576d12f3557f34061556baf",
+      "purpose": "Preimplementation 2,102-byte all-pass runtime oracle with exact V5 protocol, aggregate fields, nine ordered SK01-SK09 receipts, and one terminal LF."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/golden_vectors.json",
+      "sha256": "9db56cbb6df4f4d481269ffc480a81b2634a0996d4d51c3612dcbd9056638dca",
+      "purpose": "Independent governance oracle for 72 exact vectors, pi-inverse direction sentinel, and the ordered 25-call negative registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/human_directive.txt",
+      "sha256": "806ea2eb17c8582ea0219e0ad9fbf1b0393745403beddf080c08230c005987aa",
+      "purpose": "Verbatim directive to preserve design depth, persist in research design, and optimize for a useful paper rather than irrelevant engineering."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/proposal.md",
+      "sha256": "ddffab7054319ad52c0bd53dcdc5897aaa8f4bf7a52a35bbbe8525aec8e03896",
+      "purpose": "Integrated V5 summary disposing V4 R01-R07 while withholding all implementation and scientific authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/science_repair.md",
+      "sha256": "d9599a5c7b501496f56008ab53a850f56f6e9f83bac1f0f141e7f58d77b68338",
+      "purpose": "Normative pi-inverse equations, independent-vector construction, canonical constructors, validation precedence, and closed negative boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_audit.schema.json",
+      "sha256": "115f1ce1efe996537adcfa57c452fbd7d2d5b349cbcdf4a210cc947ec840099a",
+      "purpose": "Strict external SK10 receipt schema for complete manifest, closure, request, reviewer, check, and pass/fail evidence."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_proposal.json",
+      "sha256": "f7f1798ccc3023a7c9044ac62e34e2cc0b296530d4dcd742a349cae888eb38d8",
+      "purpose": "Canonical exact sorted three-atom requested scope and exact sorted eight-atom forbidden scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/symbolic_contract.md",
+      "sha256": "f9e4954d14ecd0056e7215fbc3573cb2f9407b6f1b434ded0dce7ce91b0f2edb",
+      "purpose": "Normative complete V5 standalone registries, inverse algebra, finite domains, negative boundary, twin/cost/deletion, golden, SK10, visibility, ratification, and terminal authority contract."
+    }
+  ],
+  "system_thesis_interpretation": "V5 is a deliberately narrow, non-headline prerequisite rather than an experiment on the Dream-LoRA-Think thesis. It preserves the paper-level thesis only as inactive context: later-outcome-grounded local claims, deterministic compilation, identical text/graph/LoRA content, bounded goal-conditioned reconstruction, held-out actions, an explicit graph primary baseline, and LoRA credited only for transport or access. Its active object is a finite deterministic symbolic conformance kernel: LOCAL is target-local calibration rather than an atoms, graph, RAG, or fair benchmark baseline; MOTIF_SCHEMA is given the complete persistent graph rather than learning a schema; RANDOM is an exact product measure rather than stochastic execution; and the 1/4-versus-1 geometry, twin, costs, typed deletion necessity, golden bytes, or audit can support at most a future implementation-conformance statement. No renderer, life, target agent, model, provider, tokenizer, DREAM/SLEEP/reader/memory, retrieval, LoRA/weights, GPU/remote, promotion, benchmark, paper, or scientific-claim capability is authorized or may consume these artifacts.",
+  "graph_delta_interpretation": "Under the declared standalone replacement semantics, the implementation-state base is the named empty FELTCRAFT_UNIMPLEMENTED_PROPOSAL_BASE_V1 registry, V1-V4 are proposal ancestry only, and every V5 entry is an add. The intended final runtime graph is therefore exactly five nodes and nine edges: authority; domain enumerator; four visibility-isolated projection principals housed in SKN03; twin/cost/bridge-deletion checker; and terminal golden validator. Every edge endpoint is in the five-node registry, identifiers are unique, and the DAG order is authority; enumerator; projections/checker; validator. Authority releases only validated immutable constants; the enumerator supplies canonical domain members and fixed aggregates; projections/checker release only golden-declared aggregates; and the validator has no outgoing edge. SK10 and human governance are external stages, not runtime nodes or edges. No ancestor ID, renamed V3 node, V3 loop, or V4 operation record survives implicitly. This repairs V4's operation-collision and stale-registry problem in substance. Literal closure remains incomplete, however, because V4 R02 expressly required both a base identifier and a base SHA-256: V5 names and textually defines the empty base inside hash-bound artifacts but declares no canonical base-state serialization or SHA-256 of that state, as captured by disagreement D01.",
+  "loop_delta_interpretation": "The two loops are fail-closed and non-overlapping. SKL01 permits only read-only governance creation of at least two fresh exact interpretations, adversarial cross-critique, concern-by-concern adjudicated consensus, and a separate human-authored ratification. Model agreement ends at human_required, and consensus rework/reject blockers cannot be overridden by human preference. SKL02 is dormant until architecture_intake.py revalidates the full exact proposal-to-interpretations-to-critique-to-consensus chain, an actual releasable consensus, the exact paused-state hash, authorization-evidence bytes and excerpt, one approval transition, and exact equality between ratified and canonical scopes. If released, SKL02 is limited to exhaustive CPU SK01-SK09 conformance, exact report output only on all-pass, a five-file freeze, and a fresh external SK10 review. A failure emits no success report; an all-pass report remains terminal; SK10 consumes frozen source/audit inputs rather than runtime output; and neither runtime nor audit output can enter a successor scientific stage. No implementation, test, kernel run, audit run, evidence generation, CPU symbolic computation, GPU/remote action, promotion, or claim is currently authorized.",
+  "claim_delta_interpretation": "The final claim registry contains exactly six add entries against the empty base, all non-headline. C01 limits any future positive wording to exact implementation conformance. C02 limits the finite result to LOCAL and RANDOM_SOURCE value 1/4 versus MOTIF_SCHEMA and ORACLE value 1, while denying atoms-baseline and learned-schema readings. C03 limits the twin/cost/BRIDGE result to the declared involution, scalar algebra, namespace-tagged inventory, and two deletion interventions, with no substitution, learned composition, shortest-path, or developmental inference. C04-C06 are active negative claims: LOCAL is not a fair atoms/graph/RAG benchmark baseline; V5 is not a learned system or paper result; and neither golden nor external audit material is scientific evidence or a promotion token. The exact three requested scope atoms and eight forbidden atoms are disjoint, sorted, and controlling. None of these claims changes the paper thesis, and none gains evidence or authority from proposed golden bytes, schema validity, this interpretation, future consensus, or a future audit pass.",
+  "visibility_matrix_interpretation": "The matrix is structurally exact over 159 unique information items and ten unique stages: 1,590 unique cells with no duplicate, missing, or extra item-stage pair. Runtime stage expansion of SKN03 into LOCAL, MOTIF_SCHEMA, RANDOM_SOURCE, and ORACLE principals preserves the five-node graph while making field isolation explicit. All seventeen audit items are forbidden to all eight runtime principals represented in the matrix. The first sixteen audit subject/rule/request/reviewer items are visible only to SK10_EXTERNAL_SCOPE_AUDITOR and HUMAN_GOVERNANCE_REVIEW; audit.scope_audit_receipt is derived_only at SK10, visible to the human, and forbidden to runtime. Report fields are hidden from or forbidden to SK10, so frozen-source review cannot ingest a runtime report. The thirteen real authority-chain and scope items expose ratification.change_id and consensus_sha256, consensus.change_id and architecture_change_sha256, ratification.human_required_state_sha256, the paused state's change and consensus artifact hashes, the approval transition's source-state and ratification-artifact hashes, and ratified/canonical scope arrays. They are visible to authority, SK10, and human governance and forbidden to SKN02-SKN05 except for separately released immutable constants after a complete valid chain. Permanent prohibition of audit, report, review, governance, vector, and implementation bytes from successor renderer/life/agent/model/tokenizer/DREAM/SLEEP/memory/LoRA/GPU/remote/benchmark/promotion/scientific stages is stated outside the ten-stage product and is a binding terminal firewall, not a claim that such stages exist here. This repairs V4 R06 semantically for the declared SK10 inputs.",
+  "acceptance_test_ids_addressed": [
+    "SK01_DOMAIN_INVERSE_V5",
+    "SK02_CALIBRATION_VECTORS_V5",
+    "SK03_RANDOM_WITNESSES_V5",
+    "SK04_MOTIF_WITNESSES_V5",
+    "SK05_TWIN_WITNESSES_V5",
+    "SK06_COSTS",
+    "SK07_BRIDGE_DELETION",
+    "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5",
+    "SK09_REPORT",
+    "SK10_SCOPE_AUDIT_MANIFEST_V5"
+  ],
+  "acceptance_test_interpretation": "The registry contains exactly ten unique tests and preserves every V4 test disposition. SK01 fixes descriptor-to-role tuple direction, index 4*r+2*i+t, inverse recipe rendering, 96 alignments, 48 graphs, four edges, ten ALIGN and ten GRAPH vectors, and the non-self-inverse 12-versus-16 sentinel. SK02 fixes six first-occurrence CAL vectors and six classes of size 16. SK03 checks all 12 CAL-goal supports, four ordered pairs at count four, exact independent product factorization, 12 support tables and 12 chosen pairs, and reduced 1/4. SK04 checks 96 compatible MOTIF cases at value 1 and 20 TOP vectors. SK05 checks both fixed 12<->48 twins plus 96 involutions, all-edge change, and both-goal change. SK06 retains 192 intermediate cases at 5, 192 top cases at 8, CONJ 16, and BRIDGE 17. SK07 retains 36,864 namespace-tagged bridge cases and 73,728 single-product deletion checks, with exact inventory/consumption and less-than-eight recreation budget; it makes no substitution claim. SK08 exhausts positive domains 12, 96, 27,648, and 192; incorporates all 72 independently bound vectors; and attempts the exact ordered 25-call negative registry once, requiring exact DomainError type/code/args before computation or side effect, 25 exact rejections, the bound code histogram, and zero mismatch. SK09 binds the sole 2,102-byte JCS-compatible compact sorted object plus one LF at SHA-256 f94cbc8e0fe65d4144ea7cdf849e2a98983803914576d12f3557f34061556baf, nine ordered SK01-SK09 receipts, six mutations, and no-report nonzero failure. SK10 is external after ratification, freeze, and human-created request; it requires exact equality of discovered, changed, and manifested five-file paths, raw sizes/hashes and binary manifest root, the fixed diff base, CPython-3.9 AST import closure, no dependencies/vendoring/native extensions, one argument-free isolated CLI, F01-F05 capability/reachability closure, no runtime or successor-science reachability, exact request bindings, fresh-context chronology, and reviewer independence, with all thirteen checks true for passed=true. These are specifications and future falsifiers only; none was executed or passed here. The normative audit contract's stale unresolved wording in section 7 conflicts with the fixed bindings required by SK10, as captured by D02.",
+  "assumptions": [
+    "The exact V5 architecture-change hash is 9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a, and this interpretation binds exactly all twenty-four immutable context paths and hashes declared by the change while excluding mutable intake.state.json.",
+    "The current instruction authorizes creation and validation of interpretation_scope.json only; it is not critique, consensus, ratification, implementation authority, test authority, execution authority, evidence, compute authority, promotion, or claim authority.",
+    "The standalone empty base definition means exactly nodes=[], edges=[], loops=[], claims=[], implemented_change_ids=[] and no unrelated repository architecture; the absence of a separately declared base-state SHA-256 is not silently repaired by hashing a containing document.",
+    "SKN03's four visibility stages are isolated principals housed inside one runtime graph node, so the visibility-stage count of ten and runtime-node count of five are compatible.",
+    "RFC-8785/JCS report and request language means the canonical JSON value bytes followed by exactly one framing LF.",
+    "The golden_report.json and golden_vectors.json files are preimplementation governance oracles with runtime_result_claimed=false where declared, not evidence that a kernel or test ran.",
+    "The scope_audit schema constrains a future receipt, while the separately bound audit contract supplies hash recomputation, timestamp ordering, duplicate-field equality, AST/call closure, and real-world independence checks that JSON Schema cannot perform by itself.",
+    "SK10 and HUMAN_GOVERNANCE_REVIEW are external governance stages; visibility there does not add runtime edges or make audit material scientific input.",
+    "No current V5 consensus, paused human-required state, ratification, approval transition, frozen source manifest, review request, reviewer evidence, or audit receipt is assumed to exist or pass.",
+    "The eight forbidden scope atoms remain controlling even if all future symbolic and audit checks pass, and no adjacent capability is inferred from the three requested atom names."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "A01_empty_base_hash_and_serialization",
+      "question": "What exact canonical byte serialization and SHA-256 identify FELTCRAFT_UNIMPLEMENTED_PROPOSAL_BASE_V1 as the predecessor state required by V4 resolution R02?",
+      "impact": "The empty registries and standalone replacement rule are textually unambiguous and prevent ancestor carry-forward, but R02 explicitly required a base identifier and SHA-256. Without a declared base-state hash, an implementation intake cannot demonstrate literal equality to the separately identified base artifact; this remains a ratification blocker unless adjudication establishes that a containing-document hash was intentionally accepted as the base hash."
+    },
+    {
+      "ambiguity_id": "A02_normative_audit_binding_tense",
+      "question": "Does audit_contract.md section 7's statement that the V5 change hash, audit-contract hash, schema hash, and diff-base commit do not yet exist have any normative force after change.json, proposal.md, symbolic_contract.md, and SK10 bind exact values for all four?",
+      "impact": "A future request and receipt must use the fixed V5 values and cannot fill or mutate them after ratification. Leaving the normative audit contract's contrary future/unresolved instruction in the bound bytes creates two literal audit procedures and risks a stale or self-rebound SK10 request."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D01_v5_does_not_declare_the_r02_base_sha256",
+      "statement": "I disagree that V5 fully disposes V4 resolution R02 as exact written provenance because it declares the standalone base identifier and empty contents but no SHA-256 for a canonical base-state artifact.",
+      "rationale": "V4 consensus R02 required a base architecture identifier and SHA-256 in addition to operation semantics and complete final registries. V5 supplies FELTCRAFT_UNIMPLEMENTED_PROPOSAL_BASE_V1, its five empty arrays, standalone replacement semantics, and exact 5/9/2/6 final registries, so the predecessor-content ambiguity is substantively repaired. But neither change.json nor the contracts name a base_sha256, and hashes of change.json or audit_contract.md cover many other bytes and are not declared as the hash of a canonical base state. Exact-byte governance should not infer a missing required binding.",
+      "proposed_resolution": "Create a canonical immutable base-state artifact or define an exact canonical serialization for the five empty registries, bind its SHA-256 explicitly as the base hash, retain the same standalone replacement semantics and final registries, then issue newly hash-bound successor bytes and repeat fresh interpretation, critique, consensus, and separate human ratification."
+    },
+    {
+      "disagreement_id": "D02_audit_contract_marks_fixed_bindings_unresolved",
+      "statement": "I disagree that the bound audit contract is internally exact while its section 7 says the already-fixed V5 change hash, audit-contract hash, scope-audit-schema hash, and diff-base commit do not yet exist and must be filled only after ratification.",
+      "rationale": "The exact change hash is 9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a, the contract and schema hashes are bound context values, and the diff base is 742f8bfa4bf4e530fdf264150bff962506fe449f. Proposal.md, symbolic_contract.md, change.json, scope_audit.schema.json, and SK10 all require those fixed values. The future unresolved objects are instead the five-file frozen manifest and its root, human-created request bytes, reviewer identity/evidence/times, and receipt. A normative contract that groups fixed and future objects together permits a stale-reading conflict in request_binding.",
+      "proposed_resolution": "Revise audit_contract.md section 7 to distinguish immutable proposal-time bindings from post-ratification freeze/review evidence: state the exact fixed change, contract, schema, and diff-base values, leave only manifest/request/reviewer/times/receipt unresolved, rebind the contract and change hashes, and repeat the governance chain without executing SK10."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin Ghosh withhold V5 implementation ratification until the missing explicit R02 base-state SHA-256 and the stale normative audit-contract binding language are adjudicated or repaired in newly hash-bound bytes?",
+      "Does the human confirm that the current exact change hash 9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a has no releasable V5 consensus, exact paused-state ratification, or approval transition and therefore authorizes only the remaining governance artifacts?",
+      "If a future releasable consensus disposes every concern, will the human decide separately whether to authorize exactly [pure_cpu_symbolic_alignment_enumerator, symbolic_golden_report_and_scope_audit, symbolic_kernel_unit_and_property_tests] and preserve exactly [benchmark_or_scientific_claims, dream_sleep_reader_or_memory_implementation, gpu_or_remote_actions, lora_model_or_weight_operations, model_provider_or_tokenizer_calls, promotion_to_rendered_or_model_stage, random_or_rendered_world_generation, source_life_or_target_agent_execution], with no adjacent authority inferred?",
+      "Does the human confirm that any future golden report, five-file source manifest, review request, reviewer evidence, SK10 receipt, or governance artifact remains terminal conformance/governance material and may never become runtime, benchmark, model, promotion, or scientific input?"
+    ]
+  }
+}

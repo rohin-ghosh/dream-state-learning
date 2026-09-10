@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-dream-operation-v1",
+  "oneOf": [
+    {"type": "object", "additionalProperties": false, "required": ["op", "reason"], "properties": {"op": {"const": "PASS"}, "reason": {"$ref": "#/$defs/text"}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "row", "citations"], "properties": {"op": {"const": "CREATE"}, "row": {"$ref": "#/$defs/dreamRow"}, "citations": {"$ref": "#/$defs/createCitations"}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "memory_alias", "new_evidence", "reason"], "properties": {"op": {"const": "REINFORCE"}, "memory_alias": {"$ref": "#/$defs/memory"}, "new_evidence": {"type": "array", "minItems": 1, "maxItems": 7, "uniqueItems": true, "items": {"$ref": "#/$defs/citation"}}, "reason": {"$ref": "#/$defs/text"}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "memory_alias", "new_evidence", "replacement"], "properties": {"op": {"const": "SUPERSEDE"}, "memory_alias": {"$ref": "#/$defs/memory"}, "new_evidence": {"type": "array", "minItems": 1, "maxItems": 7, "uniqueItems": true, "items": {"$ref": "#/$defs/citation"}}, "replacement": {"oneOf": [{"$ref": "#/$defs/dreamRow"}, {"type": "null"}]}}}
+  ],
+  "$defs": {
+    "atom": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,127}$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "memory": {"type": "string", "pattern": "^M[0-9]+$"},
+    "citation": {"type": "string", "pattern": "^(?:E|M)[0-9]+$"},
+    "createCitations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/citation"}},
+    "dreamRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "subject", "relation", "object", "value"],
+      "properties": {
+        "kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "TRANSFERRED_VALUE"]},
+        "subject": {"$ref": "#/$defs/atom"},
+        "relation": {"$ref": "#/$defs/atom"},
+        "object": {"$ref": "#/$defs/atom"},
+        "value": {"type": "string", "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]*$"}
+      }
+    }
+  }
+}

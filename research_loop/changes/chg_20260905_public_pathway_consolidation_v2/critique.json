@@ -1,0 +1,418 @@
+{
+  "architecture_change_sha256": "52733a09e915a11bb8cf3bfe0bd7c58207849c3f284977ef591fa78c50e48211",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260905_public_pathway_consolidation_v2",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PPC2_T01_VISIBILITY_CAUSAL_PREFIX_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC2_C01_FORMAL_VISIBILITY_TAXONOMY_REMAINS_INCOMPLETE",
+      "evidence": "The change artifact's formal matrix has only six grouped information items. Protocol A1 separately names target goal/current state, target membership/order, writer support status, retrieval internals, oracle/proof state, caches, batching, errors, and generator metadata. These classes have materially different permissions but no individual matrix cells. Consequently T01's phrase 'every forbidden visibility class' has no exact formal domain, and T05/T09 cannot prove complete stage-by-information closure from the change bytes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The prose denylist is substantially improved, but the authoritative Cartesian visibility matrix still permits omitted answer, oracle, target-selection, writer, reader, and side-channel classes to fall between categories."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T01_VISIBILITY_CAUSAL_PREFIX_GOLDENS",
+        "PPC2_T02_THINK_DREAM_STATE_MACHINE_GOLDENS",
+        "PPC2_T03_CREDIT_PROVENANCE_GOLDENS",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC2_C02_AGENDA_IDENTIFIER_AND_SELECTION_LAUNDERING",
+      "evidence": "A2 removes free text from REQUEST_DREAM, which is a strong repair, but still accepts active_subgoal_id and ordered unresolved_record_ids without an opaque identifier grammar or an exact allowed record-type predicate. A3 permits model-created subgoal, hypothesis, and branch identifiers. The requested records, their ancestors, and recent outcomes then determine DREAM input and later selection-only candidates. Mechanical regeneration prevents copying DREAM prose into a factual target, but it does not by itself prevent answer- or condition-bearing identifiers, forbidden record types, or target-correlated row inclusion. The later target goal and manifest are also absent from the formal visibility matrix.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Query-to-agenda answer laundering is narrowed but not byte-closed until identifiers, selectable record types, and the complete row-manifest selection function are target- and condition-invariant."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T01_VISIBILITY_CAUSAL_PREFIX_GOLDENS",
+        "PPC2_T02_THINK_DREAM_STATE_MACHINE_GOLDENS",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC2_C03_STATE_MACHINE_TRIGGER_REPEAT_AND_CHARGE_AMBIGUITY",
+      "evidence": "The composite architecture inherits v1's deterministic context-pressure DREAM trigger unless superseded, while v2 emphasizes typed REQUEST_DREAM and does not bind the automatic threshold or transition. A3 refers to 'identical normalized operations' and 'declared budgets' without defining the canonical fingerprint or debit table for provider, parse, illegal-action, publication, and mandatory-closure failures. BACKTRACK activates the nearest open ancestor or sibling without a deterministic tie rule. T02 expects exactly one legal next state for every case, which cannot be authored independently from these bytes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Repeat blocks are policy-visible, but their identity, DREAM scheduling, failure charges, and some branch transitions remain underspecified, so prompt/schema-compatible implementations can execute different experiments."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T03_CREDIT_PROVENANCE_GOLDENS",
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC2_C04_COGNITIVE_NO_ACT_CONDITION_INVENTORY_MISMATCH",
+      "evidence": "Protocol A4 says outcome-associated cognitive operations receive scientific attribution through PATH_SHUFFLE, COGNITIVE_NO_ACT, recurrence removal, and downstream interventions. V2 A5's apparently exhaustive Stage-B condition list omits COGNITIVE_NO_ACT, as do the change artifact and T04 reconstruction list. V1 contains that arm, but v2 simultaneously replaces the Stage-B condition inventory, leaving inheritance ambiguous. T06 therefore need not execute the control on which A4 relies.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposal cites a cognitive-without-action control that is absent from its normative v2 treatment and acceptance-test inventories."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T03_CREDIT_PROVENANCE_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC2_C05_ROOT_EQUIVALENCE_IS_NOT_DOMAIN_CANONICAL",
+      "evidence": "A4 states that every raw public action/outcome defines a root-equivalence class and that independence requires disjoint roots from distinct source tasks. It does not define when repeated CompilerGym replays, multiple observations from one transition, PCFL chronological confirmations, paired twins, or regenerated events share a class. Treating each raw event as a fresh root can inflate support, whereas merging all same-task events can erase genuine independent evidence. T03 lists these cases but lacks the canonical mapping needed to determine expected outputs.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The root-set algebra handles diamonds and synthetic descendants, but the domain-specific construction of the roots themselves remains unspecified."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T03_CREDIT_PROVENANCE_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC2_C06_LOCAL_PATHWAY_SHORTCUT_AND_FINAL_ACTION_BYPASS",
+      "evidence": "Nonconflicting v1 clauses admit supported composite shortcuts, while v2 PATH trains complete READ, DECIDE, and ACT pathways. A7 requires direct-record closure and adaptive paths but never states that complete composite shortcuts or target-sufficient action mappings are excluded from the connected-memory PATH corpus. PATH can therefore internalize or retrieve a materialized parent structure or final action and still differ from ENDPOINT because its action set and supervision differ. Cuts help only if they are guaranteed to remove the actually decisive representation.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The PCFL game does not yet force local experiential atoms to be composed by the recurrent thinker instead of supplying a stored composite structure or final action from memory or policy weights."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC2_C07_PATH_ONE_SHOT_IS_NOT_RECURRENCE_REMOVAL",
+      "evidence": "A7's PATH_ONE_SHOT commits queries before returns and forbids FOLLOW and value-dependent querying, but it retains the recurrent thinker after returns, multiple public operations, actions, and same-item outcome replanning. PATH minus PATH_ONE_SHOT therefore identifies adaptive retrieval/FOLLOW, not recurrence as such. The proposal and claim delta repeatedly call this a recurrence-removal contrast.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A positive PATH versus PATH_ONE_SHOT result cannot support the advertised recurrent-computation claim without a treatment that actually removes recurrent THINK computation while preserving the relevant information."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC2_C08_ROW_FAMILIES_FORM_A_LADDER_NOT_A_FACTORIAL",
+      "evidence": "READ_LORA contains READ rows, DECIDE_LORA contains non-ACT DECIDE rows, and PATH jointly adds READ, non-ACT DECIDE, and ACT targets. PATH differs from either single-family arm along multiple axes. ENDPOINT is not an ACT-only counterpart because it uses only immediate-improvement actions rather than the same eligible PATH actions. Thus the registered arms cannot separately estimate DECIDE policy, ACT imitation, READ-by-DECIDE interaction, or their contribution to PATH.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The design may report its literal treatment contrasts, but it cannot call the current three-arm component ladder a READ/DECIDE/action factorial or assign the missing main effects and interactions."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC2_C09_READ_LORA_TRANSPORT_DOES_NOT_YET_FREEZE_THINKER_COMPUTATION",
+      "evidence": "A5 says the fixed-corpus assay freezes one thinker and that READ_LORA has a frozen base THINK policy, but the same q/v LoRA can change all logits if it remains mounted during THINK calls. The bytes do not specify a reader-only mount/unmount boundary, separate reader process, or an invariant that the thinker consumes identical returned bytes under identical weights after each read. T04's generic mount verification is insufficient to establish this isolation.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "TEXT_READ versus READ_LORA isolates parametric transport only if the adapter is prevented from altering thinker computation outside the READ operation."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC2_C10_BASELINE_SET_AND_INTERFACES_REMAIN_SELECTIVE",
+      "evidence": "V2 adds STANDARD, FULL_CONTEXT, TARGET_STATE_ONLY, RAW_RAG, EXPLICIT_GRAPH, and LINKED_TEXT, a major improvement over v1. The bound thesis note nevertheless requires reflection/lesson memory, direct trajectory-to-QA LoRA, and same-lifetime batch post-training for the broader comparison. In addition, A5 does not byte-specify the distinction between STANDARD's scratch/history and TARGET_STATE_ONLY's lack of model history, so a target-only ceiling could reflect an interface disadvantage rather than answer-prior failure.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The enumerated controls support narrow comparisons but not unrestricted superiority to strong agent-memory or post-training systems, and two central no-memory interfaces remain ambiguous."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC2_C11_RESOURCE_VIEW_IS_NOT_BYTE_EXACT",
+      "evidence": "A6 lists extensive costs but does not define active versus total bytes, LoRA serialization precision, optimizer/checkpoint inclusion, text/graph alignment and index overhead, cache accounting, or the deterministic method for matching retained-byte caps. A8 conditions LoRA promotion on the 'declared resource view,' while A6 says cross-substrate conclusions are reported under both equal-inference and full-cost views. Without a single prospective promotion rule, the favorable view can be selected after observing outcomes.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The resource ledger is conceptually sound but not exact enough to reproduce capacity matching or determine which resource view controls promotion."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T01_VISIBILITY_CAUSAL_PREFIX_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC2_C12_TWIN_AND_SPLIT_SEAL_RELATIONS_ARE_UNDERSPECIFIED",
+      "evidence": "T05 requires byte-identical manifests between two sealers, but that is not the same as defining which bytes must be identical across PCFL paired worlds. A10 says to compare twins and complete serialized model-visible bytes without binding the pre-memory twin equivalence relation, intentionally swapped treatment bytes, or candidate-domain equality. CompilerGym family/content disjointness likewise lacks a canonical near-duplicate criterion. A shared interpretation can therefore pass both sealers while leaving target-only or family-signature shortcuts.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Independent sealing cannot establish paired-world indistinguishability or split novelty until their exact comparison relations are frozen."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC2_C13_AUTHENTIC_SHUFFLE_AND_CUTS_LACK_CANONICAL_ALGORITHMS",
+      "evidence": "PATH_SHUFFLE permutes parent/order links within root/outcome strata, but no algorithm guarantees preservation of node degree, token length, candidate load, support, difficulty, and outcome marginals while destroying the decisive binding. It also does not specify rejection of cycles or accidental surviving valid paths. Similarly, A7 names path, twin, binding, and memory cuts without mechanically identifying the decisive bridge and the expected counterfactual action.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "PATH versus shuffle or cut can measure generic corruption rather than authentic connection causality unless the transformations and survival checks are exact."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC2_C14_STAGE_C_MEDIATION_AND_REPEAT_RULE_ARE_NOT_IDENTIFIED",
+      "evidence": "A9 provides the correct qualitative chain but leaves the episode/checkpoint cadence from new observation to DREAM, admission, training, publication, remount, and later evaluation unspecified. It permits 'same-state/wrong-memory or memory-cut' at the epistemic choice, although these are different estimands, and observation removal can change row count or training exposure unless paired with a sham removal. No number of independent mediation episodes or successive completed cycles is required before the full-flywheel claim becomes available.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Stage C tests online action/outcome learning in principle, but one favorable episode or an unmatched removal could be reported as a repeatedly closing mediated lifetime flywheel."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC2_C15_MANIFEST_COMPLETENESS_IS_NOT_POWER_OR_STATISTICAL_VALIDITY",
+      "evidence": "T07 can verify that estimators, multiplicity, missingness, effect thresholds, and sample-size sources are filled in prospectively. It cannot itself establish that development variance transfers, that the chosen independent-root count has adequate power, that model assumptions fit, or that the co-primary design controls the advertised error rate. The proposed test nevertheless says it falsifies statistical validity, and T08 lacks a quantitative minimum adequacy criterion beyond reviewer judgment.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "A complete prospective manifest prevents many goalpost changes but is not evidence that the proposed inference is adequately powered or statistically valid."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "scalability",
+      "concern_id": "CRIT_PPC2_C16_COMPRESSION_CLAIM_EXCEEDS_PCFL_STREAM_IDENTIFICATION",
+      "evidence": "A9 adds a useful rank/retained-byte response surface and genuine new roots. However, bound note 48 explicitly states that independent-cohort PCFL-Stream tests accumulating constructive knowledge and does not test whether consolidation discovered a higher-order lossy schema; that requires the prospective PCFL-Schema rung. Fixed bytes with preserved performance can demonstrate empirical capacity or storage efficiency, but not that the system learned what to compress. The claim boundary still allows 'compression' language from A4-A9 response surfaces.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The current Stage-C design must restrict itself to fixed-capacity retention/storage results or add a prospective schema intervention before making learned-compression claims."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC2_C17_INDEPENDENT_LIFE_RESET_IS_ASSUMED_NOT_NORMATIVE",
+      "evidence": "Both interpretations assume that each independent evaluation-life root resets its adapter, accepted-row manifest, workspace, reader cache, and external store. The proposal repeatedly says 'per-life' and uses lives as sampling units, but A5-A10 do not bind the complete reset boundary or forbid reuse across roots. Any cross-root accumulation would leak evaluation experience and make root-level uncertainty pseudoreplicated.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Independent-root inference requires an explicit cold reset invariant for every learned, declarative, temporary, and cached state component."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC2_C18_PRE_GPU_AUTHORITY_CHAIN_IS_CIRCULAR",
+      "evidence": "Protocol A12 says current ratification authorizes only contracts, CPU fixtures, and two no-model sealers, and that model calls or training remain forbidden. It also says the exact model/GPU manifest is ratified only after T01-T08. Yet T08 requires a canary, inherited v1 defines that canary as a model/train/reload exercise, and T06 says to execute every baseline and recurrence treatment. If either test requires a model call or actual adapter training, it cannot legally pass before the later manifest that itself cannot be presented until T08 passes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The workflow needs an explicit no-model interpretation of T04/T06/T08 or a separately ratified preflight-canary scope; otherwise no legal path reaches the run decision."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T02_THINK_DREAM_STATE_MACHINE_GOLDENS",
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC2_C19_LIFECYCLE_TABLE_IS_REQUIRED_BUT_NOT_SUPPLIED",
+      "evidence": "A10 correctly requires an exact transition table and broad fault injection, but defers the table to a future run manifest. The current proposal already expects T02 and T04 to decide provider dispatch, parse, DREAM publication, partial training, non-finite validation, atomic publication, mount, and resume outcomes. Without the actual table and charge/status rules, CPU fixtures can encode implementation choices that later become scientific behavior. Postrun suffix comparison cannot repair that delegation.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Failure durability is a strong stated requirement, but the exact legal transitions needed to implement and test it are absent from the ratified architecture bytes."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+        "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC2_C20_ACCEPTANCE_TEST_FALSIFIERS_OVERSTATE_PREFLIGHT_EVIDENCE",
+      "evidence": "T04 reconstructs rows, mounts, and resources but claims to falsify transport attribution and recurrence comparison; those require behavioral contrasts. T06 on development fixtures establishes executability and metric sensitivity, not a sealed treatment effect. T07 establishes prospective completeness rather than statistical validity. T08 can veto constructibility and authority but cannot establish scientific closure before execution. Both supplied interpretations independently identify these category errors.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Green pre-GPU fixtures are necessary but several test descriptions still conflate constructibility with behavioral or scientific validation."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+        "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC2_C21_NEGATIVE_RESULT_AND_REDESIGN_BOUNDARY_NEEDS_EXPLICIT_VERSIONING",
+      "evidence": "The proposal forbids target-based repair and target-cell retry, but it does not state that a failed sealed construct gate remains a registered negative result and that any writer, metric, threshold, target, or treatment redesign after opening results requires a new change identifier, new seals, and a new ratification chain. T09 suppresses unsupported claims but cannot prevent later reuse of revealed targets as development data.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The no-repair rule should explicitly bind negative-result interpretation and prohibit post-hoc goalpost movement through a nominally new diagnosis run on already opened targets."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/human_directive.txt",
+      "purpose": "Verbatim directive and binding rework choices.",
+      "sha256": "825fcb83a7ceb2b6f8f2332ea5e8b456cfc673a7cffaf6d5fc36911181013452"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Architecture, ratification, review, and GPU gates.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "purpose": "Strict proposal schema.",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash-bound intake and authority validation.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/protocol.md",
+      "purpose": "Normative v2 identification amendment.",
+      "sha256": "2a711e9d37783339bd1b0b87781446c946a81eb8d9219a5d0a53ea265038fb4e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/change.json",
+      "purpose": "Hash-bound v1 proposal reworked by v2.",
+      "sha256": "7f328a4a1aea31d77816853df40c4b7d5de464ee2c65ba6b941937658f4124de"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/protocol.md",
+      "purpose": "Inherited protocol where v2 does not conflict.",
+      "sha256": "fca9eac73b91c511682bc5f7dd6c010063ec85ae07f91b588782ea41f290aafc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/critique.json",
+      "purpose": "Adversarial v1 concern registry.",
+      "sha256": "d5f2c0756160a0fcb66b8402680b1de598057d4acde01f82393bc0c0866cc887"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/consensus.json",
+      "purpose": "Adjudicated v1 rework requirements.",
+      "sha256": "6d72e6177139a5373572ad8983f284168a83101139f3f82c3109eafc42722215"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Project thesis, factorization, baselines, and claim invariants.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "purpose": "Post-context growth, capacity, and schema boundaries.",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359"
+    }
+  ],
+  "critique_id": "chg_20260905_public_pathway_consolidation_v2.fresh_iclr_adversarial_v1",
+  "human_questions": [
+    "Will the exact ratified visibility contract enumerate target goals, manifests, writer status, retrieval internals, oracle artifacts, caches, timing, errors, and generator metadata as separate stage-by-information cells rather than relying on grouped prose?",
+    "Is automatic context-pressure DREAM retained from v1, and what exact threshold, normalized repeat fingerprint, deterministic BACKTRACK rule, and failure debit table control T02?",
+    "Must REQUEST_DREAM identifiers be opaque harness-generated values, and which exact record types may enter its ancestor-closed slice without carrying a candidate answer or condition identity?",
+    "Is COGNITIVE_NO_ACT inherited as a mandatory v2 condition, or will every claim relying on that control be removed?",
+    "Will complete composite shortcuts and target-sufficient ACT mappings be excluded or separately treated before claiming that local memory is recurrently composed?",
+    "Does Rohin want a true READ/DECIDE/ACT contrast matrix and reader-only LoRA mount boundary, or should component attribution be narrowed to the literal coupled treatment contrasts?",
+    "Will PATH_ONE_SHOT be described only as adaptive-retrieval removal, or will a genuine recurrent-computation ablation be added?",
+    "Will broader superiority claims add reflection/lesson memory, direct-QA LoRA, and batch post-training, or be explicitly restricted to the enumerated baselines?",
+    "What exact root-equivalence, independent-life reset, PCFL twin-byte relation, PATH_SHUFFLE algorithm, decisive-cut rule, and CompilerGym near-duplicate criterion will be frozen?",
+    "How many independently rooted mediation episodes and successive observation-to-sleep-to-later-value cycles must pass, and what exact cadence and sham interventions define a complete flywheel?",
+    "Will Stage C use only capacity/storage language for PCFL-Stream, or add the prospective PCFL-Schema rung before claiming learned compression?",
+    "Which quantitative power criterion and resource view control run approval and LoRA-specific promotion, rather than merely requiring a complete manifest?",
+    "How will the authority chain legally obtain the canary or execute T06 if current ratification forbids every model call and the later model manifest cannot be presented until T08 passes?",
+    "Will any redesign after a sealed negative result require a new change ID, fresh targets and seals, and a new human-ratified chain?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v2.systems",
+      "sha256": "d5060ca945963050b910d882f4f57ea23cccc0d73385a0027fae44f4bd6fcfcf"
+    },
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v2.benchmark",
+      "sha256": "c5177747bacba3c0489c72b026edc31855c5f0b37c0656ff7b8fa6cd85ac0336"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PPC2_M01_EXPANDED_VISIBILITY_CARTESIAN_AND_TARGET_AGENDA_SWAP",
+    "PPC2_M02_OPAQUE_IDENTIFIER_AND_ROW_MANIFEST_NONINTERFERENCE",
+    "PPC2_M03_DREAM_TRIGGER_REPEAT_FINGERPRINT_AND_FAILURE_CHARGE_GOLDENS",
+    "PPC2_M04_COGNITIVE_NO_ACT_CONDITION_INVENTORY_COMPATIBILITY",
+    "PPC2_M05_DOMAIN_CANONICAL_ROOT_EQUIVALENCE_AND_CROSS_LIFE_RESET",
+    "PPC2_M06_LOCAL_ATOM_SHORTCUT_EXCLUSION_AND_DIRECT_ACT_BYPASS",
+    "PPC2_M07_TRUE_RECURRENCE_REMOVAL_SEPARATE_FROM_ADAPTIVE_RETRIEVAL",
+    "PPC2_M08_COMPLETE_READ_DECIDE_ACT_CONTRAST_MATRIX",
+    "PPC2_M09_READER_ONLY_LORA_MOUNT_AND_IDENTICAL_THINKER_INTERFACE",
+    "PPC2_M10_REFLECTION_DIRECT_QA_AND_BATCH_POSTTRAINING_BASELINES",
+    "PPC2_M11_ACTIVE_TOTAL_BYTE_ACCOUNTING_AND_PROMOTION_RESOURCE_RULE",
+    "PPC2_M12_TWIN_BYTE_RELATION_NEAR_DUPLICATE_AND_SEALER_PROVENANCE_AUDIT",
+    "PPC2_M13_CANONICAL_SHUFFLE_SURVIVING_PATH_AND_DECISIVE_CUT_GOLDENS",
+    "PPC2_M14_REPEATED_STAGE_C_MEDIATION_CADENCE_AND_SHAM_REMOVAL",
+    "PPC2_M15_POWER_CALIBRATION_AND_NUMERIC_ADEQUACY_GATE",
+    "PPC2_M16_PCFL_STREAM_CAPACITY_VS_SCHEMA_COMPRESSION_CLAIM_GATE",
+    "PPC2_M17_NONMODEL_PREFLIGHT_AUTHORITY_AND_CANARY_TRANSITION",
+    "PPC2_M18_EXACT_LIFECYCLE_CHARGE_STATUS_AND_FORBIDDEN_SUFFIX_TABLE",
+    "PPC2_M19_NEGATIVE_RESULT_NEW_VERSION_AND_FRESH_TARGET_GATE"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PPC2_T01_VISIBILITY_CAUSAL_PREFIX_GOLDENS",
+    "PPC2_T02_THINK_DREAM_STATE_MACHINE_GOLDENS",
+    "PPC2_T03_CREDIT_PROVENANCE_GOLDENS",
+    "PPC2_T04_WRITER_FACTORIAL_RESOURCE_GOLDENS",
+    "PPC2_T05_INDEPENDENT_DUAL_SEAL_AND_SHORTCUT_AUDIT",
+    "PPC2_T06_CONSTRUCT_RECURRENCE_BASELINE_GATE",
+    "PPC2_T07_MEDIATION_CAPACITY_STATISTICS_MANIFEST",
+    "PPC2_T08_PRE_GPU_INDEPENDENT_REVIEW",
+    "PPC2_T09_POSTRUN_CAUSAL_LIFECYCLE_AUDIT"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that PPC v2 is a serious, unusually disciplined repair of the bundled-memory failure mode. It separates same-item public transitions from quarantined truth and scores; requires causal-prefix rows and typed DREAM requests; confines deletion credit to exact actions; introduces root-set provenance, diamond-safe DAG handling, fixed-corpus text-versus-LoRA transport, row-family treatments, recurrence and authentic-structure interventions, strong external-memory controls, construct-specific scorecards, and a mediated Stage-C action-to-observation-to-sleep-to-later-value chain. It also aligns promotion with the strongest registered treatment, binds independent seals and failure suffixes, removes parenting from current authority, and makes every model/GPU run contingent on later review and human ratification. If the remaining exactness and identification defects below are resolved prospectively, the design could yield a high-information paper that distinguishes recall transport, adaptive memory use, pathway structure, online evidence acquisition, and downstream action value without treating architectural metaphor or a green unit suite as scientific evidence.",
+  "visibility_failures": [
+    "The formal matrix omits separate cells for target goals/current state, target membership/order, writer eligibility/support status, reader scores and candidate enumeration, oracle ceilings, caches, batching, errors, and generator metadata.",
+    "REQUEST_DREAM identifiers and selectable record types are not constrained against semantic answer or condition encoding.",
+    "No exact invariant states that the entire selected-row manifest, not only individual serialized rows, is unchanged under future target, answer, score, and condition mutations.",
+    "READ_LORA can indirectly alter THINK computation unless an exact reader-only mount boundary is enforced.",
+    "Independent-life adapter, accepted-row, external-store, workspace, and cache reset is assumed rather than normatively frozen.",
+    "The exact pre-memory byte-equivalence relation for PCFL twins and the intentionally treatment-specific bytes are not specified.",
+    "Latency, NOT_FOUND behavior, cache state, process identity, and failure text are grouped as normalized side channels without canonical normalization functions."
+  ]
+}

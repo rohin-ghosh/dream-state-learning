@@ -1,0 +1,864 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "CPU fixture receipt and immutable pilot-decision record",
+      "expected": "A four-root excluded pilot advances only if all validity/resource gates pass, at least three roots jointly have D>0, W_P>0, and L_terminal>0, all three pilot means are positive, and no ratified adverse bound is crossed.",
+      "falsifies": "A D-only, less-harmful-write, or non-improving-parented-life pattern can fund confirmation.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "Construct synthetic four-root packets including D>0 with W_P<=0 and/or L_terminal<=0, plus each boundary case.",
+      "test_id": "pilot_directional_conjunction"
+    },
+    {
+      "evidence_artifact": "Frozen arm-by-cut writer-path receipt-table schema, golden fixtures, and hash",
+      "expected": "Each arm/cut reports eligible and accepted rows, target/admission mix, rehearsal fills, tokens, positions, rejection reasons, fit/quarantine/mount/rollback/adapter-off outcomes, and later strict behavior/probe value before pilot identities exist.",
+      "falsifies": "Writer-path reporting can be selectively omitted, altered after identities, or lacks a required pathway field.",
+      "kind": "unit",
+      "required_before": "implementation",
+      "setup": "Instantiate every admission, rejection, fill, fit, and rollback route in deterministic fixtures.",
+      "test_id": "writer_path_receipt_completeness"
+    },
+    {
+      "evidence_artifact": "Static provenance and analysis-DAG audit",
+      "expected": "Writer-path quantities reach reporting only; no receipt field can enter matching, adjustment, stratification, root exclusion, root replacement, or a yield-adjusted primary.",
+      "falsifies": "A post-treatment writer quantity changes the estimand, analysis cohort, or advancement rule beyond the registered directional guard.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Trace all receipt fields through reducer configuration and reject prohibited downstream consumers.",
+      "test_id": "writer_path_nonadjustment"
+    },
+    {
+      "evidence_artifact": "Synthetic root reducer receipt",
+      "expected": "D, W_P, and L_terminal are calculated from the fixed five-service packet; all four pilot roots remain reported and pilot values remain excluded from confirmation inference.",
+      "falsifies": "Tasks, fits, rows, or selected pilot roots increase n, or pilot values are pooled into N=32 confirmation.",
+      "kind": "baseline",
+      "required_before": "model_execution",
+      "setup": "Use fixed synthetic V(c,r,t) tables, including missingness and failure fixtures, and verify one row per root.",
+      "test_id": "root_level_reducer_and_pilot_exclusion"
+    },
+    {
+      "evidence_artifact": "Fresh independent implementation/scientific review plus author-side advocate response",
+      "expected": "The review verifies the ratified topology, no parent/nursery deployment edge, fixed writer receipts, receipt nonadjustment, resource manifest, and all CPU/static fixtures; any defect is disposed in a newly bound approval.",
+      "falsifies": "Implementation is treated as conformant solely from author evidence or consensus without independent review.",
+      "kind": "independent_review",
+      "required_before": "model_execution",
+      "setup": "Review exact implementation commit, frozen source hashes, test receipts, and analysis DAG after human ratification.",
+      "test_id": "postimplementation_independent_review"
+    },
+    {
+      "evidence_artifact": "Locked confirmation artifact set and fixed-sequence reducer output",
+      "expected": "A scientific claim is released only through the registered D -> W_P -> L_terminal -> C_public -> T_R0 sequence, with the plateau and diagnostic gates separately satisfied where applicable.",
+      "falsifies": "A pilot, writer-yield contrast, P1-R0 package contrast, or later rung substitutes for an earlier failed claim gate.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Run only after separately authorized scientific execution, complete root roster, validity gates, and immutable receipts.",
+      "test_id": "claim_ladder_release"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260907_one_parent_child_headline_v3",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "The pilot is only a directional spending guard: it may advance the fixed-N confirmation only when D, W_P, and L_terminal jointly satisfy the registered four-root conjunction; it supplies no inferential or SESOI claim.",
+        "before": "A pilot could advance on D positivity alone, which can occur while parented writes are harmful or P1 does not improve over entry.",
+        "claim_id": "pilot_advancement_interpretation",
+        "evidence_needed": "Frozen pilot rule, all-root pilot receipt, validity/resource receipts, and prebound adverse-bound receipt.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "A passing confirmation D followed by W_P and L_terminal supports only that this fixed reset parent policy increased this fixed child system's beneficial later personal-write effect over Q after parent/nursery deletion.",
+        "before": "The project motivation could be read as broad parenting, general learning-to-learn, writer superiority, or LoRA discovery.",
+        "claim_id": "bounded_parenting_claim",
+        "evidence_needed": "All fixed-sequence confirmation evidence, deletion/provenance gates, root-level uncertainty, and independent review.",
+        "headline_eligible": true,
+        "operation": "modify"
+      },
+      {
+        "after": "Writer-path quantities are transparent post-treatment mechanism decomposition, not causal adjustment variables.",
+        "before": "No v3-specific receipt requirement prevented later yield-conditioned reinterpretation.",
+        "claim_id": "writer_path_mechanism_boundary",
+        "evidence_needed": "Frozen receipt table, analysis DAG audit, and complete arm-by-cut reporting.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "P1 versus R0 remains a deployment-only-parity full-package comparison; it neither establishes parenting causality nor discovery, a graph in LoRA, compression, broad meta-intelligence, or named-method superiority.",
+        "before": "The public two-agent illustration risks being mistaken for the causal parenting result.",
+        "claim_id": "package_comparison_boundary",
+        "evidence_needed": "Registered factorial sequence and active-text certification evidence where the word strong is used.",
+        "headline_eligible": false,
+        "operation": "modify"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260907_one_parent_child_headline_v3/human_directive.txt",
+      "purpose": "Verbatim human directive",
+      "sha256": "c4212423934b76058f431519db1be579456dea8fdbaf62e7e6b423913bb766d6"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Research governance contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260907_one_parent_child_headline_v2/scope_proposal.json",
+      "purpose": "Inherited v2 scope",
+      "sha256": "db2bec823eda67f479726765adebd2bea063973405d822c8b1ceadc65c8e9716"
+    },
+    {
+      "path": "research_loop/changes/chg_20260907_one_parent_child_headline_v3/scope_proposal.json",
+      "purpose": "Requested v3 scope",
+      "sha256": "a74e3be6c41dedc0de788cb25862b8e13abf9f8d9a3476e807dad4a24fe6f7bf"
+    },
+    {
+      "path": "research_loop/plans/one_parent_child_headline_v1.md",
+      "purpose": "Base headline protocol",
+      "sha256": "e356bcecc0cdec3199cf8ecb23c2dc9790a59a11ee6dc8f81b1bfd399c7cf4d5"
+    },
+    {
+      "path": "research_loop/plans/one_parent_child_headline_v2_addendum.md",
+      "purpose": "Repaired v2 protocol",
+      "sha256": "3c13492bb1378e07d966597efb9eb72f3c8742631a1e7ef1cb7b8977a5039cff"
+    },
+    {
+      "path": "research_loop/plans/one_parent_child_headline_v3_spending_repair.md",
+      "purpose": "Narrow spending repair",
+      "sha256": "632008a3306da4e09e6cfb73563f398aab5f6abf81e31b32de249ee177a81cd3"
+    },
+    {
+      "path": "research_loop/plans/active_text_fixed_contract_v1.md",
+      "purpose": "Common active-text contract",
+      "sha256": "0fbb16b124f640c0adcecc46d2270a7ee11e6c63866885d56e3b0e3468ed09c7"
+    },
+    {
+      "path": "research_loop/plans/active_text_fixed_prompt_schema_v1.txt",
+      "purpose": "Active-text prompt schema",
+      "sha256": "854f9215ca74ce3f753bb57cf05c781e190915eab591d800ddf495fb2767e85a"
+    },
+    {
+      "path": "research_loop/advisory/20260907_manuscript_protocol_consistency_audit_v1.md",
+      "purpose": "Manuscript audit",
+      "sha256": "29c7a2db3a7fcac38f2166afd3c74efec40c7a0962aaaff136f8eb55e52778ad"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_statistics_attack_v1.md",
+      "purpose": "Statistics attack",
+      "sha256": "78baa757a374bd803744c2e31ace142ef3c6ca343a1b298f95cc16f94562820e"
+    },
+    {
+      "path": "research_loop/advisory/20260907_objective_coverage_audit_v1.md",
+      "purpose": "Objective audit",
+      "sha256": "0751e6fea2821137b7e892dc2bd30f979ae63e8ca79b599ea404fc1706653c71"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_repair_synthesis.md",
+      "purpose": "v2 repair synthesis",
+      "sha256": "f5c839b58b248fca69bf0928443c7fb0f039faddf2ad5ca693b323232b750f6d"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_manuscript_crosscritique_v1.md",
+      "purpose": "Manuscript cross-critique",
+      "sha256": "91b15acecb2dd1c0f561004a0367469828a886203c7ab066dc23c949db667964"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_stats_crosscritique_v1.md",
+      "purpose": "Statistics cross-critique",
+      "sha256": "3b95cccef5df4037bb01fd271cf0f37284ea9be526b6746150e97f9e6f29250e"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_objective_crosscritique_v1.md",
+      "purpose": "Objective cross-critique",
+      "sha256": "dae8e3156b6c22bbdcdd28f572203b544c6c1ecf35e25c600c077edf88962bd7"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_stats_reaudit_v2.md",
+      "purpose": "Superseded statistics reaudit",
+      "sha256": "4177df81a219dd5d207c2fc81d7dca5212b5862f8420e6c78971d1b9db83a238"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_objective_reaudit_v2.md",
+      "purpose": "Superseded objective reaudit",
+      "sha256": "a25a99958e36232cb5c9e6d4581e59fedba3297965fa9d687264aa8331e93ce5"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_stats_reaudit_v3.md",
+      "purpose": "Statistics proposal audit",
+      "sha256": "d97b509b959a6ad0718661e016c21202178c7d1ae419c5e49ef348cbd5cfa376"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_objective_reaudit_v3.md",
+      "purpose": "Objective proposal audit",
+      "sha256": "a897f4bd59edb5421a2414cf0560625097e2702ccb99a0597c1cb80cb304a7d5"
+    },
+    {
+      "path": "research_loop/advisory/one_parent_v2_power_sim.py",
+      "purpose": "CPU planning simulation",
+      "sha256": "dab12b1d278e18cb34f9964e5a10949afbf76eb765586d14e934fe6a1ce9c987"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_power_receipt_v2.md",
+      "purpose": "Power receipt",
+      "sha256": "3062c04861b9ad0de5e507d5a3132670549511ed635a1ad92027a5d86414476f"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_v2_local_consensus_v1.md",
+      "purpose": "Local consensus record",
+      "sha256": "5ac22ca65732934109563102b154dd0116038cd8964ff721de4a284a06c45b30"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_iclr_skeptical_review_v2.md",
+      "purpose": "Skeptical review",
+      "sha256": "2bdc75935d702fd4deca120b10b6c1df5b6ad6367a0702b0a8711c954da20534"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_closest_work_fresh_audit_v2.md",
+      "purpose": "Closest-work audit",
+      "sha256": "ee91080ceef268067fdb47b1c63e3416e7056a1c3931c03a141ace9441c4aea5"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_teachability_canary_fresh_attack_v2.md",
+      "purpose": "Teachability attack",
+      "sha256": "b07f61e310950912c60eb4d4d948b15b2159740a024ce859f1b6420aca4bab42"
+    },
+    {
+      "path": "research_loop/advisory/20260907_one_parent_fresh_attack_adjudication_v1.md",
+      "purpose": "Fresh-attack adjudication",
+      "sha256": "4479202b15a45340212015c26195e8add374bad16475df5c8863340db9d8ae4a"
+    },
+    {
+      "path": "research_notes/ICLR_2027_READINESS_20260906.md",
+      "purpose": "Readiness context",
+      "sha256": "6665141669151135365781352a5c4d237caee1c5233ffc0dd8a150dd67bf75ed"
+    },
+    {
+      "path": "research_notes/ICLR_2027_SUBMISSION_CRITICAL_PATH_20260907.md",
+      "purpose": "Critical-path context",
+      "sha256": "d3b1edb3120c674863f673afc4827da526b99e6a9db3e2e22071f1ff611692e9"
+    },
+    {
+      "path": "paper/iclr2027_experience_models/main.tex",
+      "purpose": "Current manuscript surface",
+      "sha256": "3ad83dc406cdf2331a7ce833e1566002942fd21ed6b447313fe7315f6f83dc59"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "Requires D>0 AND W_P>0 AND L_terminal>0 jointly in >=3/4 roots, positive means for all three, all validity/resource gates, and no ratified adverse-bound crossing.",
+        "before": "Advanced when D>0 in >=3/4 roots and mean(D)>0.",
+        "edge_id": "pilot_metrics_to_confirmation_spend",
+        "from": "excluded_spending_pilot",
+        "operation": "modify",
+        "rationale": "Prevents a relative write-harm interaction from funding an improved-learning confirmation.",
+        "to": "confirmation_spend_decision"
+      },
+      {
+        "after": "Immutable arm-by-cut post-treatment receipt table is reported; it has no edge into matching, adjustment, stratification, exclusion, or a replacement primary.",
+        "before": "No v3 receipt edge.",
+        "edge_id": "writer_path_to_reporting_only",
+        "from": "writer_path_receipts",
+        "operation": "add",
+        "rationale": "Makes the likely writer-alignment pathway inspectable without conditioning causal inference.",
+        "to": "locked_reporting_artifacts"
+      },
+      {
+        "after": "Forbidden analysis edge; receipt fields cannot alter D, W_P, L_terminal, the pilot cohort, or confirmation cohort.",
+        "before": "No explicit v3 prohibition edge.",
+        "edge_id": "writer_path_to_estimand",
+        "from": "writer_path_receipts",
+        "operation": "add",
+        "rationale": "Preserves the intention-to-treat factorial estimand.",
+        "to": "headline_reducer"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Directional-conjunction pilot spending gate with retained all-root reporting and separately ratified adverse bounds.",
+        "before": "D-only four-root pilot advancement gate.",
+        "node_id": "spending_pilot_gate",
+        "operation": "modify",
+        "rationale": "Narrow v3 scientific repair."
+      },
+      {
+        "after": "Pre-identity frozen arm-by-cut mechanism-decomposition receipt table.",
+        "before": "No required v3 writer-path receipt node.",
+        "node_id": "writer_path_receipts",
+        "operation": "add",
+        "rationale": "Expose treatment-mediated writer throughput and failures without changing the estimand."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Whether to ratify the exact source bytes and narrow v3 scope: retain the one-parent/one-child v1/v2 topology and adopt only the directional pilot conjunction and reporting-only writer-path receipts.",
+    "forbidden_before_approval": [
+      "Any code edit, task/target generation, model or tokenizer call, parent interaction, adapter fit or mount, CompilerGym execution, external scientific execution, GPU use, resource acquisition, or scientific claim.",
+      "Changing v1/v2 topology, roster, endpoint, fixed-N design, margin, plateau composite, diagnostic, or resource ceiling beyond this narrow v3 delta.",
+      "Selecting adverse pilot bounds, receipt fields, missingness rules, or claim goalposts during implementation.",
+      "Using pilot results, writer yields, or P1-R0 as confirmation evidence or as a substitute for the fixed sequence."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "For each prebound pilot root, compute D, W_P, L_terminal and validity/resource/adverse-bound status; after all four roots, issue only advance/no-advance and preserve all raw rows.",
+        "before": "Four-root D-only advancement rule.",
+        "loop_id": "excluded_pilot_spending_loop",
+        "operation": "modify",
+        "rationale": "Adds the minimal directional guard without altering the scientific root topology.",
+        "reads": [
+          "root-level D",
+          "root-level W_P",
+          "root-level L_terminal",
+          "validity/resource gates",
+          "ratified adverse bounds"
+        ],
+        "stop_condition": "All four assigned roots are complete or administrative missingness triggers the frozen no-advance disposition.",
+        "trigger": "Completion of the four excluded pilot roots.",
+        "writes": [
+          "immutable pilot decision",
+          "all-root pilot receipt",
+          "confirmation-spend eligibility"
+        ]
+      },
+      {
+        "after": "At every arm/cut, append the frozen writer-path receipt fields; after root lock, report them only as unadjusted decomposition.",
+        "before": "Writer-path receipt lifecycle was not required by v3.",
+        "loop_id": "writer_path_receipt_loop",
+        "operation": "add",
+        "rationale": "Shows how parent-conditioned childhood and later life affect admissible writing without granting receipts causal control.",
+        "reads": [
+          "eligible opportunities",
+          "admission decisions",
+          "slot fills",
+          "optimizer receipts",
+          "fit outcomes",
+          "strict behavior",
+          "probe values"
+        ],
+        "stop_condition": "Receipt schema complete for every prebound arm/cut; no post-identity mutation.",
+        "trigger": "Each admission, rehearsal fill, fit, mount, rollback, adapter-off check, and cut evaluation.",
+        "writes": [
+          "immutable arm-by-cut receipt table",
+          "reporting-only mechanism decomposition"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Faithful narrow v3 repair: preserve the reset target-blind one-parent/one-child Think--Dream--Sleep factorial and replace only the pilot\u2019s D-only spend rule with a D/W_P/L_terminal directional conjunction while freezing writer-path receipts as reporting-only post-treatment decomposition.",
+  "system_thesis": "A complete organism\u2014not its LoRA alone\u2014acts, thinks, retrieves, dreams, writes, and is evaluated. Lived action/outcome episodes create immutable public evidence; DREAM locally re-expresses and reconciles the child\u2019s live state; deterministic SLEEP selects supported child-native continuations and transports them through one personal LoRA; goal-conditioned retrieval, composition, planning, and revision occur during later THINK through the complete child-plus-active-text system. A reset, target-blind parent may teach process discipline only during childhood and then disappears. Later thinking and outcomes feed future DREAM/SLEEP cycles, but the headline credits the fixed parent protocol only through the root-level P/U-by-write interaction, never credits LoRA transport with discovery, and treats P1-R0 only as a full-package illustration.",
+  "title": "One-parent/one-child headline v3: directional pilot spending guard and writer-path receipts",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "parent_correction",
+        "reason": "Parent may emit only closed lesson codes with cited public evidence.",
+        "stage_id": "parent_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Rendered correction is childhood scaffold, not an answer.",
+        "stage_id": "child_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Firewall/audit may validate closure only.",
+        "stage_id": "public_admission",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Masked and forbidden as a positive target.",
+        "stage_id": "sleep_writer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Deleted before deployment.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Probes cannot receive parent material.",
+        "stage_id": "sealed_probe",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Audit-only provenance evidence.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "parent_correction",
+        "reason": "Only aggregate protocol reporting after lock.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Childhood-only parent/task/ledger state.",
+        "stage_id": "parent_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Own nursery context is available before deletion.",
+        "stage_id": "child_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Admission provenance audit only.",
+        "stage_id": "public_admission",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Only selected child suffix/provenance may be compiled; raw artifacts are masked.",
+        "stage_id": "sleep_writer",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Fresh-process deletion makes it unavailable.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Sealed probe isolation.",
+        "stage_id": "sealed_probe",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "Deletion/provenance audit only.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "nursery_artifacts",
+        "reason": "No raw childhood content in scientific reporting.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Parent is target-blind.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Child is target-blind.",
+        "stage_id": "child_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Offline structural/public-predicate reducer only after outputs seal.",
+        "stage_id": "public_admission",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Never conditions writer fitting.",
+        "stage_id": "sleep_writer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Unavailable to deployment life.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Evaluator-only sealed probe state.",
+        "stage_id": "sealed_probe",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Offline score computation only.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "hidden_task_truth",
+        "reason": "Only derived scores may be reported.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Earlier public events bound permitted parent citations.",
+        "stage_id": "parent_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Own public feedback guides thought and application.",
+        "stage_id": "child_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Source of frozen admission predicates.",
+        "stage_id": "public_admission",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Eligibility input only; outcomes are never positive target text.",
+        "stage_id": "sleep_writer",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Same-service public life evidence guides later THINK/DREAM.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Probe outputs cannot return to life.",
+        "stage_id": "sealed_probe",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Immutable scoring/provenance evidence.",
+        "stage_id": "offline_analysis",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_action_outcome",
+        "reason": "Derived tables and approved aggregate receipts only.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Child produces its own attempt/application continuation.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Child\u2019s native thought-to-action output.",
+        "stage_id": "child_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Immutable suffix can be assessed against predicates.",
+        "stage_id": "public_admission",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Only eligible exact child suffix plus EOS is trainable.",
+        "stage_id": "sleep_writer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Current service\u2019s own live continuation only.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Probe continuation is evaluator-sealed.",
+        "stage_id": "sealed_probe",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "Receipted for audit, not regenerated.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "child_native_suffix",
+        "reason": "No raw private traces required for headline reporting.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "No parent access to child DREAM state.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Child-local reversible context successor.",
+        "stage_id": "child_nursery",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Restoration/support status may be checked.",
+        "stage_id": "public_admission",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Validated exact DREAM_STATE suffix may be trainable.",
+        "stage_id": "sleep_writer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Current service-local context management only.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Probe state cannot mutate life.",
+        "stage_id": "sealed_probe",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Restoration receipts are audit evidence.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_successor_state",
+        "reason": "Only aggregate gate status is reported.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Parent cannot inspect or alter child parameters.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Child cannot read its own parameters as content.",
+        "stage_id": "child_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Admission is parameter-blind.",
+        "stage_id": "public_admission",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "SLEEP alone uses transactional fit state.",
+        "stage_id": "sleep_writer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Mounted adapter affects behavior but is not readable to THINK/DREAM.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Probe may evaluate mounted state but cannot write it.",
+        "stage_id": "sealed_probe",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Fit/mount receipts are audited.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "adapter_and_optimizer_state",
+        "reason": "Only aggregate fit outcomes/resources are reported.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "No deployment store exists in childhood parent channel.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "No cross-boundary childhood store access.",
+        "stage_id": "child_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Nursery admission does not use deployment store.",
+        "stage_id": "public_admission",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Writer does not consume store content as positive targets.",
+        "stage_id": "sleep_writer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Only same-service isolated typed retrieval/update surface is visible.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Probe reads a sealed service-local snapshot and cannot return output.",
+        "stage_id": "sealed_probe",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Lifecycle/link diagnostics inspect immutable receipts.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "active_text_store",
+        "reason": "Only approved aggregate diagnostics are reported.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "No probe exists in parent childhood.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "No probe exists in childhood.",
+        "stage_id": "child_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Probe data cannot affect admission.",
+        "stage_id": "public_admission",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Probe data cannot create training rows.",
+        "stage_id": "sleep_writer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Never returns to life, DREAM, SLEEP, or active text.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Evaluator may score the sealed attempt.",
+        "stage_id": "sealed_probe",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Root reducer consumes sealed values after lock.",
+        "stage_id": "offline_analysis",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "sealed_probe_outputs",
+        "reason": "Registered aggregate values only.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Not visible to parent policy.",
+        "stage_id": "parent_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Not visible to child thinking.",
+        "stage_id": "child_nursery",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Admission cannot condition on downstream receipt yield.",
+        "stage_id": "public_admission",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Writer emits immutable local receipt fields.",
+        "stage_id": "sleep_writer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Not returned to deployment actor, DREAM, or store.",
+        "stage_id": "deployment_think_dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Cannot affect probes.",
+        "stage_id": "sealed_probe",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Reporting-only decomposition; forbidden from adjustment/exclusion.",
+        "stage_id": "offline_analysis",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "writer_path_receipts",
+        "reason": "Published as unadjusted arm-by-cut mechanism decomposition.",
+        "stage_id": "reporting",
+        "visibility": "derived_only"
+      }
+    ],
+    "information_items": [
+      "parent_correction",
+      "nursery_artifacts",
+      "hidden_task_truth",
+      "public_action_outcome",
+      "child_native_suffix",
+      "dream_successor_state",
+      "adapter_and_optimizer_state",
+      "active_text_store",
+      "sealed_probe_outputs",
+      "writer_path_receipts"
+    ],
+    "stages": [
+      "parent_nursery",
+      "child_nursery",
+      "public_admission",
+      "sleep_writer",
+      "deployment_think_dream",
+      "sealed_probe",
+      "offline_analysis",
+      "reporting"
+    ]
+  }
+}

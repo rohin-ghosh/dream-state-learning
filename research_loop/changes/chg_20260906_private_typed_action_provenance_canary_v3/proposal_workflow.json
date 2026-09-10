@@ -1,0 +1,40 @@
+{
+  "artifact_type": "private_typed_action_v3_proposal_workflow",
+  "schema_version": 1,
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v3",
+  "current_state": "proposal_bundle_complete_stop_before_intake_init",
+  "bindings": {
+    "agents_sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+    "normative_bundle_manifest_sha256": "6531601d1024729bfccc1bb35d715b047def505c9f3ccddf5b9701e6d1bcf659",
+    "scope_proposal_sha256": "b6efb9d1a00b192515535de12d11570ca90a231c27aa0e3f401fdc25463e3e2e",
+    "v2_consensus_sha256": "f2cf7045a85747a3c80c4717a96cc2fee0e224013dfe7abe758d90a16c9f87ce",
+    "v2_critique_sha256": "071b75bab96bda1fed6db1e205702e3555e43e69ee56af81de3b98240b09a5db"
+  },
+  "completed_proposal_checks": [
+    "verify authoritative v2 consensus and critique hashes",
+    "author complete normative bundle before any ratification request",
+    "validate every JSON file parses; inspect both schema documents for Draft 2020-12 declaration, closed top-level objects, unique branches, and locally resolvable fragment references (the environment has no external jsonschema package, so proposal_validation.json records that limitation)",
+    "verify manifest paths are sorted, unique, present, and byte-equal to registered SHA-256 values",
+    "verify requested_scope and forbidden_scope are each sorted and disjoint",
+    "verify PC0-PC17 are present exactly once and repair_matrix covers DG01-DG10 exactly once",
+    "verify proposal text states structural-only ceiling and names FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE as separately gated"
+  ],
+  "future_ordered_steps_not_executed": [
+    "1. A fresh supervisor verifies change.json and all context hashes without mutating this namespace.",
+    "2. Only on a new explicit instruction, run architecture_intake init and architecture_deliberation with at least two fresh-context independent interpretations.",
+    "3. Cross-critique every proposed PC0-PC17 test and adjudicate every concern/disagreement/test disposition.",
+    "4. Require a releasable consensus bound to the unchanged change.json and bundle manifest.",
+    "5. Present ratification_request.txt to Rohin; accept only explicit human approval binding both exact hashes and exact scope arrays.",
+    "6. Revalidate all bytes and authority, then and only then author the scoped deterministic CPU implementation.",
+    "7. Freeze validator A and B source before deriving PC17 indices; execute PC1-PC17 only within the exact scope and platform.",
+    "8. Obtain fresh independent review plus author-side scientific advocate; never convert structural results into runtime or scientific claims.",
+    "9. Stop. FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE and any model/tool/GPU/science work require a new change."
+  ],
+  "forbidden_now": [
+    "architecture_intake init or any deliberation command",
+    "implementation source authoring",
+    "fixture materialization or acceptance-test execution",
+    "model, tokenizer, live tool/environment, network, subprocess environment, trainer, adapter, benchmark, or GPU use",
+    "human-ratification inference or claim publication"
+  ]
+}

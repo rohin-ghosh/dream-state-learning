@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "artifact_type": "feltcraft_external_scope_audit",
+  "change_id": "chg_20260901_feltcraft_symbolic_kernel_v7",
+  "evidence_class": "governance_evidence_only",
+  "bindings": {
+    "architecture_change_path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/change.json",
+    "architecture_change_sha256": "f6f3181db906b915d4711fc701cac4aee464fdd9b21bd0dbb41c95dc976ca83b",
+    "audit_contract_path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/audit_contract.md",
+    "audit_contract_sha256": "1405943f9d4bc3ad0a0d4eeec302a1d3faa1eb5540c310ead7c029e97d44140b",
+    "scope_audit_request_schema_path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit_request.schema.json",
+    "scope_audit_request_schema_sha256": "597f0f0dcb648a436f3ec75b8040e429173e823ede8dfb6f74c002fc16a64952",
+    "scope_audit_receipt_schema_path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit.schema.json",
+    "scope_audit_receipt_schema_sha256": "272d603553bc64c1029b53d95256f88ccb2805e1e9808e10c49803cb78405bfe"
+  },
+  "subject": {
+    "repository_root": ".",
+    "audit_root": "feltcraft_symbolic_kernel",
+    "diff_base_commit": "742f8bfa4bf4e530fdf264150bff962506fe449f",
+    "frozen_at": "2026-09-02T01:28:55Z",
+    "discovered_paths": [
+      "feltcraft_symbolic_kernel/__init__.py",
+      "feltcraft_symbolic_kernel/kernel.py",
+      "feltcraft_symbolic_kernel/report.py",
+      "feltcraft_symbolic_kernel/run.py",
+      "feltcraft_symbolic_kernel/test_kernel.py"
+    ],
+    "changed_paths": [
+      "feltcraft_symbolic_kernel/__init__.py",
+      "feltcraft_symbolic_kernel/kernel.py",
+      "feltcraft_symbolic_kernel/report.py",
+      "feltcraft_symbolic_kernel/run.py",
+      "feltcraft_symbolic_kernel/test_kernel.py"
+    ],
+    "manifest_encoding": "feltcraft-scope-manifest-v1",
+    "manifest": [
+      {"path": "feltcraft_symbolic_kernel/__init__.py", "size": 218, "sha256": "2274ed4d5ef1eaa63357f113a5a3f0f82a4321594c65596283e71601c68081e9"},
+      {"path": "feltcraft_symbolic_kernel/kernel.py", "size": 10342, "sha256": "c68771ec3d5f67193766cc56c16f152c5bc757a7e221c31a826b7649f2b69fdc"},
+      {"path": "feltcraft_symbolic_kernel/report.py", "size": 6164, "sha256": "41133956ad9f36842d439eea8df82f5f1407fb59e36b52a0510aa3dbd61921d3"},
+      {"path": "feltcraft_symbolic_kernel/run.py", "size": 339, "sha256": "56f7e8d703bb7f3737f725d5b09c7ad3c12ce2a373308356c9c77b62a2b5b046"},
+      {"path": "feltcraft_symbolic_kernel/test_kernel.py", "size": 12662, "sha256": "d4a8a995be71a08413bdd718eebd25d3047a4c5b5edd52e3d1f3c715d3517219"}
+    ],
+    "manifest_root_sha256": "99fd5b450dd8d235857d9474ef8af8a4ca07800146bfa81745e710c00d422a6c"
+  },
+  "request_binding": {
+    "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit.request.json",
+    "sha256": "1f5fcab3ae70427b82b15a2790026e108a176d31072272a42642f4852af4ab73",
+    "byte_length": 872,
+    "content": {
+      "architecture_change_sha256": "f6f3181db906b915d4711fc701cac4aee464fdd9b21bd0dbb41c95dc976ca83b",
+      "artifact_type": "feltcraft_scope_audit_request",
+      "audit_contract_sha256": "1405943f9d4bc3ad0a0d4eeec302a1d3faa1eb5540c310ead7c029e97d44140b",
+      "change_id": "chg_20260901_feltcraft_symbolic_kernel_v7",
+      "created_at": "2026-09-02T01:28:56Z",
+      "diff_base_commit": "742f8bfa4bf4e530fdf264150bff962506fe449f",
+      "frozen_at": "2026-09-02T01:28:55Z",
+      "implementation_author_identities": ["/root"],
+      "manifest_root_sha256": "99fd5b450dd8d235857d9474ef8af8a4ca07800146bfa81745e710c00d422a6c",
+      "request_id": "feltcraft-v7-scope-audit-20260902t012856z",
+      "requester_identity": "/root",
+      "schema_version": 1,
+      "scope_audit_receipt_schema_sha256": "272d603553bc64c1029b53d95256f88ccb2805e1e9808e10c49803cb78405bfe",
+      "scope_audit_request_schema_sha256": "597f0f0dcb648a436f3ec75b8040e429173e823ede8dfb6f74c002fc16a64952"
+    }
+  },
+  "deterministic_tier": {
+    "algorithm_id": "feltcraft_scope_mechanical_v7",
+    "checks": {
+      "binding_equality": true,
+      "recursive_path_equality": true,
+      "file_byte_hash_equality": true,
+      "manifest_equality": true,
+      "root_digest_equality": true,
+      "diff_path_equality": true,
+      "request_jcs_plus_one_lf": true,
+      "request_schema_validation": true,
+      "request_path_hash_binding": true,
+      "request_content_byte_equivalence": true,
+      "timestamp_order": false,
+      "ast_parse_success": true,
+      "literal_import_inventory": true
+    },
+    "parsed_paths": [
+      "feltcraft_symbolic_kernel/__init__.py",
+      "feltcraft_symbolic_kernel/kernel.py",
+      "feltcraft_symbolic_kernel/report.py",
+      "feltcraft_symbolic_kernel/run.py",
+      "feltcraft_symbolic_kernel/test_kernel.py"
+    ],
+    "python_ast_call": "ast.parse(source,filename=path,mode=exec,feature_version=(3,9))",
+    "allowed_nonlocal_modules": ["collections", "fractions", "itertools", "json", "pathlib", "sys"],
+    "literal_import_rows": [
+      {"source_path":"feltcraft_symbolic_kernel/__init__.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"DomainError","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/__init__.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"checker_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/__init__.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"enumerator_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/__init__.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"projection_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/kernel.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"fractions","name":"Fraction","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/kernel.py","lineno":4,"col_offset":0,"kind":"ImportFrom","module":"itertools","name":"permutations","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/report.py","lineno":3,"col_offset":0,"kind":"Import","module":null,"name":"json","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/run.py","lineno":3,"col_offset":0,"kind":"Import","module":null,"name":"sys","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/run.py","lineno":5,"col_offset":0,"kind":"ImportFrom","module":"test_kernel","name":"run_all","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/test_kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":3,"col_offset":0,"kind":"ImportFrom","module":"collections","name":"Counter","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":4,"col_offset":0,"kind":"ImportFrom","module":"itertools","name":"product","level":0,"classification":"allowed_nonlocal","resolved_local_path":null},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":6,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"DomainError","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":6,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"checker_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":6,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"enumerator_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":6,"col_offset":0,"kind":"ImportFrom","module":"kernel","name":"projection_call","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/kernel.py"},
+      {"source_path":"feltcraft_symbolic_kernel/test_kernel.py","lineno":7,"col_offset":0,"kind":"ImportFrom","module":"report","name":"validate_and_return","level":1,"classification":"local","resolved_local_path":"feltcraft_symbolic_kernel/report.py"}
+    ]
+  },
+  "independent_human_review": {
+    "reviewer_identity": "/root/feltcraft_v7_scope_audit (Codex model; not a human reviewer)",
+    "reviewer_identity_evidence": {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/audit_contract.md",
+      "sha256": "1405943f9d4bc3ad0a0d4eeec302a1d3faa1eb5540c310ead7c029e97d44140b",
+      "excerpt": "Fresh independent human source review"
+    },
+    "implementation_author_identities": ["/root"],
+    "fresh_context_id": "/root/feltcraft_v7_scope_audit",
+    "context_created_at": "2026-09-02T01:28:54Z",
+    "review_started_at": "2026-09-02T01:28:54Z",
+    "review_completed_at": "2026-09-02T01:29:52Z",
+    "pre_request_conversation_context": true,
+    "identity_distinct_from_implementers": true,
+    "authored_subject_paths": [],
+    "modified_subject_paths": [],
+    "reviewed_paths": [
+      "feltcraft_symbolic_kernel/__init__.py",
+      "feltcraft_symbolic_kernel/kernel.py",
+      "feltcraft_symbolic_kernel/report.py",
+      "feltcraft_symbolic_kernel/run.py",
+      "feltcraft_symbolic_kernel/test_kernel.py"
+    ],
+    "reviewed_manifest_root_sha256": "99fd5b450dd8d235857d9474ef8af8a4ca07800146bfa81745e710c00d422a6c",
+    "forbidden_scope_atoms_reviewed": [
+      "benchmark_or_scientific_claims",
+      "dream_sleep_reader_or_memory_implementation",
+      "gpu_or_remote_actions",
+      "lora_model_or_weight_operations",
+      "model_provider_or_tokenizer_calls",
+      "promotion_to_rendered_or_model_stage",
+      "random_or_rendered_world_generation",
+      "source_life_or_target_agent_execution"
+    ],
+    "freshness_attested": false,
+    "independence_attested": false,
+    "exact_frozen_bytes_reviewed_attested": true,
+    "all_forbidden_scope_atoms_reviewed_attested": false,
+    "semantic_attestations": {
+      "forbidden_ast_review_attested": false,
+      "cli_options_stdin_env_config_review_attested": false,
+      "write_equivalence_review_attested": false,
+      "dynamic_behavior_review_attested": false,
+      "capability_reachability_review_attested": false,
+      "semantic_python_scope_review_attested": false
+    },
+    "findings": [],
+    "unresolved_ambiguities": [
+      "The required fresh independent human semantic source review was not obtained; the available reviewer is a Codex model.",
+      "The review context included pre-request conversation and subject inspection, so freshness cannot be attested.",
+      "The exact pre-request context creation time was not independently timestamped; timestamp ordering therefore fails closed.",
+      "Separate post-review human governance adjudication was not obtained."
+    ],
+    "attestation": "The Codex reviewer performed mechanical and advisory source checks without modifying the subject, but does not claim to be the contract-required human reviewer and cannot attest the unavailable human semantic-review tier."
+  },
+  "human_governance_adjudication": {
+    "adjudicator_identity": "NOT_OBTAINED",
+    "evidence": {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/human_ratification.json",
+      "sha256": "d67f446f7b4cb11024033c49fd8b1dcb75424e1f8bf7efb1a64cadbdb02c1fb5",
+      "excerpt": "Authorize only the frozen FeltCraft V7 pure CPU symbolic alignment enumerator, golden report and narrow scope-audit subject, and symbolic kernel unit/property tests."
+    },
+    "adjudicated_at": "2026-09-02T01:29:53Z",
+    "deterministic_tier_accepted": false,
+    "request_binding_accepted": false,
+    "freshness_independence_accepted": false,
+    "semantic_source_review_accepted": false,
+    "allowed_write_disposition_accepted": false,
+    "governance_evidence_only": false,
+    "attestation": "No post-review human governance adjudication was obtained; this record does not assert human acceptance."
+  },
+  "passed": false
+}

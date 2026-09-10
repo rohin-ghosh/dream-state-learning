@@ -1,0 +1,44 @@
+<verbatim user handoff, 2026-09-02>
+Handoff note: LoRA's role has grown — policy, bootstrap, and the rank pyramid
+
+From: Rohin (ideas) + Fable (sharpening), 2026-09-02
+Status: design discussion, not a goalpost change. Paper 1's frozen goalposts and the v0.2 diagnostic scope are untouched. Full versions of everything below are in research_notes/IDEAS.md (ALIVE section, entries dated 08-31 → 09-02).
+
+1. Reframe: the adapter is not memory, it's agency (Rohin)
+
+The evolution analogy for pretraining is backwards. Humans start weak and learn their world; LLM agents are born omniscient-generalists and amnesiac-particulars. So the problem isn't giving the model memory — it's binding a particular life to knowledge it already has. Working vocabulary: base = intelligence, context = situation, memory adapter = experience, loop adapter = agency. The think/dream/sleep loop trains a reasoning policy (when to search deep vs broad, what to retrieve, when to write); stored facts are scaffolding for that training. This resolves the substrate-2×2 puzzle: LoRA-as-facts ties context until memory ≫ window, but LoRA-as-procedure has no context-window equivalent at any scale — you can't paste ten thousand episodes of learned search control into a prompt. Testable now: the loop-adapter BC ladder at small memory scale, where fact-LoRA showed nothing (EVAF and PEAM both independently support procedure-in-weights / facts-in-text).
+
+2. The bigger claim: LoRA is the bootstrap for self-training on actions (Rohin)
+
+Base models today can't train on their own action data — raw agent trajectories are too noisy to be worth anything. The LoRA-loop system is the short-term learner that fixes this: deployed on a frozen base in a sandbox, it learns from its own actions within one lifetime (including a learned exploration allowance, estimated from its own past). When a life shows sustained success, its trajectories — high-quality because the adapter made the agent competent — get promoted into the base model's training set. Many sandboxes in parallel → the first generalized high-quality dataset of acting, with the value of exploration measurable at scale. "Let baby learn here, then train on what we've learned": adapter = individual learning, base update = species learning.
+
+Key unification (Fable): the verified-write / sleeper-compile machinery is the quality gate that makes promotion possible. v5's result is this law at miniature scale — unverified writes → poisoned corpus (0/12 true) → downstream collapse (1/30). Every working self-training flywheel (AlphaZero, STaR) works because a filter guarantees the promoted data; every naive one dies of data poisoning. Paper 1's verification layer is the admission ticket to the whole pipeline — "experience is only as valuable as the filter that admits it."
+
+3. The rank pyramid ("triangle") (Rohin, mechanism sharpened by Fable)
+
+Extend the two-tier design into a cascade: small fast adapter at the bottom (little data, quick updates), geometrically larger ranks upward, terminating in base-weight incorporation. Design rule: rank is a function of accumulated verified data, not a hyperparameter — each level earns its parameters from the data volume below it; promotion triggers on data thresholds, not clocks. Keep levels as separate adapters (read-only clean-base composition, independently ablatable), never a fused monolith.
+
+Two propagation mechanisms to race:
+- Data-mediated: level k+1 trains on the filtered corpus/traces accumulated under level k; the verification gate re-applies at every promotion. Auditable, slower.
+- Weight-mediated: LoRA deltas add — periodically merge the fast adapter into the slow one (SVD re-truncate at higher rank), reset the fast adapter, lightly decay the slow adapter's singular values. Merge-and-reset is a sleep cycle in weight space (consolidation up, homeostatic downscaling, fresh fast learner each cycle).
+
+Anchors: Benna & Fusi 2016 (synaptic cascade: fast variables feed slow, exactly "quick stuff at low ranks propagates up"); ReLoRA (repeated low-rank merges ≈ full-rank training — the pyramid's top already has an existence proof; the gated pyramid below it does not exist in the literature).
+
+4. Near-term, hardware-sized ladder (post-Paper-1 runs, fits the A40 box)
+
+1. Rank sweep of the loop adapter under BC at 7B. Registered prediction: agency is low-rank (steering, not knowledge).
+2. Depth-2 cascade — fast r≈8 per-lifetime → slow r≈64 across lifetimes, both mechanisms head-to-head vs a single-adapter baseline; measure retention + transfer.
+3. Co-adaptation test (from the one-system discussion): freeze the policy while memory grows → prediction: retrieval precision decays with lifetime. If measured, that's a second saturation mechanism retrieval-only systems can't escape — headline-figure material.
+4. Promotion-to-base: deferred, paper-3 scale.
+
+Boundaries, unchanged: Paper 1 scope frozen; no verifier in the cognitive loop; PEAM owns sleep-framing (cite + differentiate — our claims are one-mechanism think/dream, connection-through-traversal, weight-space consolidation, beyond-saturation lifetimes); TMEM's outcome-trained write policy is adopted-and-extended, never claimed absent.
+
+---
+Copy away. One practical suggestion for the send: pair it with your two pending rulings (v5 ratification + freeze-from-commit order), since Codex can't act on any of this until those land.
+</verbatim user handoff>
+
+<verbatim prior owner directions still governing prioritization>
+optimize for hte paper, so that mgiht mean doing some qucik expieemnts while yod o ter diesng wor or wahtever
+
+okay let go of some of the gpus, be persisitent and extrememly rigous on an ingeltltingetn researcher's level, the negineering is a means to the end, but the main thing is the science
+</verbatim prior owner directions still governing prioritization>

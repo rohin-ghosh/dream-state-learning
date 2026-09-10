@@ -1,0 +1,187 @@
+{
+  "schema_version": "paper1-v03r-canary-public-projection-v1d.0",
+  "status": "architecture_proposal_only",
+  "purpose": "Bind the only legal conversion from the frozen v03r public API to typed public events, the target-absent probe, the withheld final-goal projection, and the fixed state-token vocabulary for the six registered DEV lives and the seed-5 heldout canary twins. These artifacts seal before any provider dispatch.",
+  "dependency_closure": {
+    "lands/v03r.py": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+    "lands/v03.py": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+    "lands/skins.py": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+    "lands/model.py": "6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211",
+    "lands/v02.py": "0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89",
+    "lands/world.py": "9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac"
+  },
+  "construction": {
+    "worlds": "For each registered life instantiate CounterfactualConfluenceV03R(WorldConfig(seed=seed),latent_bit=latent_bit) with no mutation. DEV permits exactly seed in [0,1,2] crossed with latent_bit in [0,1]; HELDOUT_CANARY permits exactly seed=5 crossed with latent_bit in [0,1]. No other seed, bit, or constructor parameters belong to this proposal.",
+    "domain_branches": {
+      "DEV": {"seeds": [0, 1, 2], "latent_bits": [0, 1], "registered_lives": 6, "fixture_binding": "development_fixture_contract.json development_lives exact seed+latent_bit keys"},
+      "HELDOUT_CANARY": {"seeds": [5], "latent_bits": [0, 1], "registered_lives": 2, "fixture_binding": "development_fixture_contract.json heldout_lives exact seed+latent_bit keys"}
+    },
+    "sole_projector_rule": "The branch selects only the registered constructor seed and expected count; every source read, atom conversion, event mapping, hash rule, probe mapping, goal mapping, and vocabulary mapping below is byte-identical in DEV and HELDOUT_CANARY. A fixture-local projector, fixture-local alias map, or alternate hash input is forbidden.",
+    "skin": "aligned",
+    "event_source": "For each world call public_episodes('aligned'); never read world.episodes, private attributes, precheckpoint_export().public_record, public_export answer fields, an oracle, or matched-distractor fields.",
+    "probe_source": "Call public_operational_probe(); do not call render_operational_probe(), whose returned object also contains audit-only matched-distractor coordinates.",
+    "goal_source": "Call public_goal() for public coordinates and reveal_final_goal('aligned') for the answer-free rendered question. Construct and seal this host projection before the first provider dispatch for the registered life, but do not expose any goal byte to DREAM, SELF_CHECK, THINK0, M0, OWN, or DIST.",
+    "allowed_source_object": "Serialize exactly {events:[episode.to_dict() for episode in public_episodes('aligned') in returned order],goal:{id,animal_id,target_id,blocked_source_id} from public_goal(),probe:{id,source_id,target_id} from public_operational_probe(),rendered_goal:reveal_final_goal('aligned')}. Tuple payload values serialize as JSON arrays. No other world field or rendered-probe field is read.",
+    "forbidden_key_check": "Recursively reject the allowed source object if any object key is parents, source_subset, source_subset_0, source_subset_1, latent_bit, answer, answer_ratio, role, answer_valve_id, next_operation, matched_distractor_source_entity_id, or matched_distractor_target_entity_id. rendered_goal must have exactly goal_id and question.",
+    "allowed_source_fingerprint": "sha256(JCS(the exact allowed_source_object))",
+    "canonicalization": "Every object is UTF-8 RFC8785 JCS. Hashes are lowercase SHA-256 over the stated exact JCS object with no terminal newline. Duplicate keys and nonfinite numbers are rejected."
+  },
+  "surface_atom_rule": {
+    "slug": "Take the frozen aligned surface string, require printable ASCII, strip leading/trailing ASCII spaces, lowercase ASCII A-Z, replace each maximal nonempty run of ASCII spaces with one hyphen, and reject if the result is empty or contains a byte outside [a-z0-9_.+-]. No other normalization is permitted.",
+    "valve": "'valve:' + slug(world.valve_surface(raw valve_id,'aligned'))",
+    "source": "'source:' + slug(make_skin('aligned',world.animal_ids,world.source_land_ids).land(raw source_id))",
+    "target": "'target:' + slug(world.target_surface(raw target_id,'aligned'))",
+    "animal": "'animal:' + slug(world.animal_surface(raw animal_id or anchor_id,'aligned'))",
+    "label": "'label:' + slug(public payload label)",
+    "mixture": "For the exact public payload ratio [r,y,b], require three nonnegative integers and at least one positive integer; emit 'mixture:' followed by each positive term as '<count>*<slug(aligned pigment surface)>' joined by '+', in the fixed raw channel order red,yellow,blue. Preserve counts; do not normalize the ratio.",
+    "effect": "The exact public payload string, which must be CHANGE or STABLE."
+  },
+  "event_projection": {
+    "common_validation": "The tuple length must equal the registered life episode count returned by len(public_episodes('aligned')) and must equal the exact frozen count for that seed+latent_bit in projection_golden_vectors: 46 for seeds 0 and 2 and seed 5, 49 for seed 1. At every zero-based index i from 0 through count-1 the raw public episode id must equal v03r_edge_ followed by i as four decimal digits and episode_id must equal v03r_episode_ followed by i as four decimal digits. Only kind and payload determine semantic fields; phase and rendered text are audit-only and cannot enter a row.",
+    "event_identity": "event_id is E followed by i as six decimal digits and event_index is i. Identities are contiguous without reuse or gaps from E000000 through E plus count-1, including E000046, E000047, and E000048 for both seed-1 DEV lives.",
+    "kind_map": {
+      "valve_route": {"kind": "ROUTE", "required_payload_keys_exactly": ["source_id", "valve_id"], "fields": ["valve(raw valve_id)", "source(raw source_id)"]},
+      "intervention_effect": {"kind": "EFFECT", "required_payload_keys_exactly": ["effect", "target_id", "valve_id"], "fields": ["valve(raw valve_id)", "target(raw target_id)", "effect(raw effect)"]},
+      "source_anchor_color": {"kind": "SOURCE_VALUE", "required_payload_keys_exactly": ["anchor_id", "label", "source_id"], "fields": ["animal(raw anchor_id)", "source(raw source_id)", "label(raw label)"]},
+      "animal_source_color": {"kind": "ANIMAL_VALUE", "required_payload_keys_exactly": ["animal_id", "label", "source_id"], "fields": ["animal(raw animal_id)", "source(raw source_id)", "label(raw label)"]},
+      "target_passive_baseline": {"kind": "TARGET_BASELINE", "required_payload_keys_exactly": ["anchor_id", "label", "ratio", "target_id"], "fields": ["animal(raw anchor_id)", "target(raw target_id)", "mixture(raw ratio)"]},
+      "workshop_recipe": {"kind": "RECIPE", "required_payload_keys_exactly": ["label", "ratio"], "fields": ["mixture(raw ratio)", "label(raw label)"]}
+    },
+    "event_hash": "sha256(JCS({event_id,event_index,fields,kind}))",
+    "closed_event": "Exactly {event_id,event_index,kind,fields,event_hash}, validated by public_event.schema.json.",
+    "witnessed_row": "Before the corresponding WAKE state, deterministically map Ei to Mi by replacing event_id with row_id M plus the same six digits, through M000048 when count=49; set origin=WITNESSED,status=WITNESSED,support_basis=WITNESS,citations=[],depth=0; semantic_hash=sha256(JCS({fields,kind})); record_hash=sha256(JCS(the closed memory_row object excluding record_hash)). The external host lineage sidecar is exactly [event_hash].",
+    "forbidden": ["raw internal ratio on source_anchor_color", "raw internal ratio on animal_source_color", "hidden parents", "source subsets", "latent bit", "answer ratio", "goal role", "oracle output", "matched distractor coordinates"]
+  },
+  "probe_projection": {
+    "closed_object": "Exactly {probe_id,source,target,question}. probe_id is raw PublicOperationalProbe.id; source and target use the surface-atom rule; question is 'Determine whether committed experience supports a causal join from ' + the aligned source surface + ' to ' + the aligned target surface + '. If it does not, request that missing typed join.'",
+    "seed5_expected": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+    "twin_rule": "The exact closed object must byte-equal across latent bits 0 and 1.",
+    "visibility": "This object is the only probe object visible to THINK0."
+  },
+  "withheld_final_goal_projection": {
+    "host_coordinates": "Exactly {goal_id,animal,source,target}, where goal_id is PublicCounterfactualGoal.id, animal maps animal_id, source maps blocked_source_id, and target maps target_id through the surface-atom rule.",
+    "think1_question": "Exactly {goal_id,question} from reveal_final_goal('aligned'); the returned object must have exactly those keys and must not contain answer.",
+    "seed5_expected_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+    "seed5_expected_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."},
+    "twin_rule": "Coordinates and question must each byte-equal across latent bits 0 and 1.",
+    "visibility": "Seal before the first heldout provider dispatch in a host-only artifact. Reveal only think1_question after both M1 branches and their manifests seal. Host coordinates may then drive prospective path registration but never enter THINK1."
+  },
+  "state_token_projection": {
+    "rule": "From the sealed typed public-event list, select every RECIPE label field, deduplicate by exact UTF-8 bytes, and sort by ascending unsigned ASCII bytes. This equals the vocabulary derivable from M0 witnessed RECIPE rows and is sealed before the first provider dispatch for the registered life.",
+    "seed5_expected": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-03", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+    "twin_rule": "The exact array must byte-equal across latent bits 0 and 1.",
+    "visibility": "Withheld from DREAM, SELF_CHECK, and THINK0; reused byte-identically in every recipient THINK1 text and LoRA arm after final-goal reveal."
+  },
+  "projection_hash_contract": {
+    "event_list_sha256": "sha256(JCS(the complete closed typed public-event array in event_index order))",
+    "state_token_vocabulary_sha256": "sha256(JCS(the complete state-token array in its required unsigned-ASCII byte order))",
+    "closed_projection_object": "Exactly {allowed_source_fingerprint,events,probe,state_tokens,withheld_final_goal:{host_coordinates,think1_question}}. The member names and nested shape are literal; events is the complete closed typed event list and every other member is the exact sealed object defined above.",
+    "public_projection_sha256": "sha256(JCS(the closed_projection_object))",
+    "legacy_seed5_vector_object": "Exactly {probe,host_coordinates,think1_question,state_tokens} using the four pre-existing v1c seed5_expected values byte-for-byte.",
+    "legacy_seed5_vector_sha256": "8e804ba006907bfa0417ec3a8728752f207c12756ba6575a82c6759df32a8838"
+  },
+  "projection_golden_vectors": [
+    {
+      "domain": "DEV", "seed": 0, "latent_bit": 0, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "a795958587a9ff1aefd7cdd7f611633fe3f0f7656ed71f77da2d8677e8543d86",
+      "event_list_sha256": "be30b4cca8a130c6e67c7cc1f91aa32d7581986096a21c60e3ce6b799bb68279",
+      "public_projection_sha256": "7f447e60008776c558c3f443f906cc6fdc07800403fab3f6a137db86b405ac58",
+      "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-04", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:candyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Candyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "DEV", "seed": 0, "latent_bit": 1, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "6c0ac825bdadad3b133b2717d05f8784d0176fc15cf5211b8f56e9e4daa6a4a6",
+      "event_list_sha256": "ca64982b85417e3dd0c79f3c0713ecb3d355a935afceb674597d038b31dca669",
+      "public_projection_sha256": "b1da04513a46c52bffc6f39f80ba06cd799aed710f9cd96db401a512e651d976",
+      "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-04", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:candyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Candyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:candyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Candyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "DEV", "seed": 1, "latent_bit": 0, "event_count": 49, "last_event_id": "E000048", "last_event_index": 48,
+      "allowed_source_fingerprint": "765de043776baf02830936b5867c8ad939c2027dda8939c68768c359b5906fd1",
+      "event_list_sha256": "bf39f89ad236e6be47bf8d98947dccc06c41f95e26a7d0947a444b4039872bee",
+      "public_projection_sha256": "a1b4055c38d7aba71a2fead950dc2083e1754949d06793835d430736dd1615ee",
+      "state_token_vocabulary_sha256": "a97a5ec170bafbab9b91a939c0be01496d2e82585bcb952159de847a4c94f1e9",
+      "state_tokens": ["label:blue", "label:blue-green", "label:brown", "label:green", "label:mixture-01", "label:mixture-03", "label:mixture-04", "label:mixture-06", "label:mixture-07", "label:mixture-08", "label:orange", "label:purple", "label:red", "label:red-purple", "label:yellow", "label:yellow-orange"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "DEV", "seed": 1, "latent_bit": 1, "event_count": 49, "last_event_id": "E000048", "last_event_index": 48,
+      "allowed_source_fingerprint": "5fcc57bdc858dd3d3fc1302579e97d18061548e643a01b8cf14ff8b7aa54f3f0",
+      "event_list_sha256": "c2cee315eefd44c5162f8e0ff57b6f67531d9ab64afbb075e01eb7a756e3d497",
+      "public_projection_sha256": "b5026cb361063fe9cdebd2231fd6411e4ba9f3f051ce33fcda2ad6fcb6558210",
+      "state_token_vocabulary_sha256": "a97a5ec170bafbab9b91a939c0be01496d2e82585bcb952159de847a4c94f1e9",
+      "state_tokens": ["label:blue", "label:blue-green", "label:brown", "label:green", "label:mixture-01", "label:mixture-03", "label:mixture-04", "label:mixture-06", "label:mixture-07", "label:mixture-08", "label:orange", "label:purple", "label:red", "label:red-purple", "label:yellow", "label:yellow-orange"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "DEV", "seed": 2, "latent_bit": 0, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "08ce1883930d146c23e7e63fc5ba0f69c6f6359b9747920ad8bc1f58c9843045",
+      "event_list_sha256": "5e0903741688dbb0d17870ca30696af48de80432286f1440b6b31da62f89e5cc",
+      "public_projection_sha256": "6c6cca36004ebd9ef9a66d83d90afc1b2d52d7ac5d5779457b26be4dc4bef3e7",
+      "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-04", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:mandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Mandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:mandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Mandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "DEV", "seed": 2, "latent_bit": 1, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "eab1aa73527ed2f04d6519c9dcf48e0bd9c7d20d73de1af88d9dfd9232d120ba",
+      "event_list_sha256": "ec6ee87f7833f711d016e9afb1b7e25e727cd45295bc739310b8d76972fb2dd7",
+      "public_projection_sha256": "20ce8d5ec964d76fd403a9edb1db6ef67258ae9b0ba4c7ea6b48e8a20a836903",
+      "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-04", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:mandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Mandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:mandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Mandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "HELDOUT_CANARY", "seed": 5, "latent_bit": 0, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "37c097f4691aa62eaa9c7b7d0a8080767167844f571a21b31edddc98d3b9fbe8",
+      "event_list_sha256": "4b262334c83e5c41d0a86f2b8f108e643c7d449eb129eec9b16dfa1f83c2a263",
+      "public_projection_sha256": "a6703e6caccd89f70802247a13da1a4378b1597866e839587b2ce700d1825448",
+      "state_token_vocabulary_sha256": "15b787919ccc1914b0a6e4f1bf1c36f623db0b49f4ae7c3340bc84bad7052b51",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-03", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    },
+    {
+      "domain": "HELDOUT_CANARY", "seed": 5, "latent_bit": 1, "event_count": 46, "last_event_id": "E000045", "last_event_index": 45,
+      "allowed_source_fingerprint": "54e7ba9e5eed4d1f661becf517cde45de08e33d85d7e73be5e482b0f53d22820",
+      "event_list_sha256": "513b6f82f892efacdc411703c21f681bbe64dc8bb164b190964ebb72ab7a903f",
+      "public_projection_sha256": "1b8b818d59d9ff8454f79f59bc72c6f2c5351db277a1242aa1a18ea148cced7f",
+      "state_token_vocabulary_sha256": "15b787919ccc1914b0a6e4f1bf1c36f623db0b49f4ae7c3340bc84bad7052b51",
+      "state_tokens": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-03", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+      "probe": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+      "host_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+      "think1_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}
+    }
+  ],
+  "golden_negative_vectors": [
+    {"name": "fixture-local-projector", "mutation": "derive any DEV event, atom, probe, question, alias, vocabulary, or hash outside this contract", "expected": "INVALID_PRECONDITION/PUBLIC_PROJECTION_MISMATCH"},
+    {"name": "seed1-count-truncation", "mutation": "project only indices 0..45 for seed=1", "expected": "reject before dispatch; expected count is 49 and last identity is E000048/M000048"},
+    {"name": "seed1-alias-gap", "mutation": "omit, duplicate, or reorder any of E000000..E000048 or M000000..M000048", "expected": "reject before dispatch"},
+    {"name": "wrong-life-projection", "mutation": "reuse any projection_golden_vectors entry for a different seed or latent_bit", "expected": "reject on the exact per-life allowed-source, event-list, and public-projection hashes"},
+    {"name": "seed5-heldout-drift", "mutation": "change any byte of the pre-existing seed5 probe, host coordinates, THINK1 question, or state-token array", "expected": "reject unless legacy_seed5_vector_sha256 remains 8e804ba006907bfa0417ec3a8728752f207c12756ba6575a82c6759df32a8838"},
+    {"name": "event-index-49", "mutation": "emit E000049/event_index=49", "expected": "reject under public_event.schema.json"}
+  ],
+  "pre_dispatch_seal": {
+    "artifacts_per_life": ["allowed public API source-object fingerprint over public_episodes, public_operational_probe, public_goal, and reveal_final_goal after exact forbidden-key checks", "closed typed public-event list", "event-to-witnessed-row projection plan", "closed probe object", "host-only withheld final-goal projection", "state-token vocabulary"],
+    "cross_twin_artifacts": ["public DIST-control manifest derived only from the two sealed event lists and the shared probe", "byte-equality receipts for probe, withheld goal, and state-token vocabulary"],
+    "ordering": "All listed artifacts, their hashes, the six DEV projection_golden_vectors checks, and the two seed-5 heldout plus legacy compatibility checks must seal before the first provider dispatch in that stage. Later stages may consume these sealed artifacts but may not reconstruct or replace them.",
+    "mismatch": "INVALID_PRECONDITION/PUBLIC_PROJECTION_MISMATCH with every affected DEV or heldout opportunity recorded as zero-attempt NON_DISPATCH_PRECONDITION."
+  }
+}

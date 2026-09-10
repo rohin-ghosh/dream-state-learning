@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think0-operation-v1c",
+  "oneOf": [
+    {"$ref": "#/$defs/queryOperation"},
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "text", "citations"],
+      "properties": {
+        "op": {"const": "THINK"},
+        "text": {"$ref": "#/$defs/text"},
+        "citations": {"$ref": "#/$defs/citations"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields"],
+      "properties": {
+        "op": {"const": "REQUEST_RETURN"},
+        "kind": {"const": "CAUSAL_JOIN"},
+        "fields": {
+          "type": "array",
+          "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"type": "null"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "reason"],
+      "properties": {
+        "op": {"const": "DEFER"},
+        "reason": {"$ref": "#/$defs/text"}
+      }
+    }
+  ],
+  "$defs": {
+    "queryOperation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields"],
+      "properties": {
+        "op": {"const": "QUERY"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"oneOf": [
+          {"$ref": "#/$defs/routeQuery"}, {"$ref": "#/$defs/effectQuery"}, {"$ref": "#/$defs/sourceValueQuery"},
+          {"$ref": "#/$defs/animalValueQuery"}, {"$ref": "#/$defs/targetBaselineQuery"}, {"$ref": "#/$defs/recipeQuery"},
+          {"$ref": "#/$defs/roleEquivQuery"}, {"$ref": "#/$defs/causalJoinQuery"}, {"$ref": "#/$defs/roleApplicationQuery"}
+        ]}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "ROUTE"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/routeQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "EFFECT"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/effectQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "SOURCE_VALUE"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/sourceValueQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "ANIMAL_VALUE"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/animalValueQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/targetBaselineQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "RECIPE"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/recipeQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/roleEquivQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/causalJoinQuery"}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}}, "then": {"properties": {"fields": {"$ref": "#/$defs/roleApplicationQuery"}}}}
+      ]
+    },
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "routeQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "effectQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"type": "null"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "sourceValueQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "animalValueQuery": {"$ref": "#/$defs/sourceValueQuery"},
+    "targetBaselineQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "recipeQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "roleEquivQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "causalJoinQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"type": "null"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "roleApplicationQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "citations": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^H[0-9]{6}$"}}
+  }
+}

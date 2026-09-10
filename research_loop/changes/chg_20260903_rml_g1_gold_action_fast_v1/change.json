@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260903_rml_g1_gold_action_fast_v1",
+  "title": "RML-G1 supplied-gold recurrent action fast falsifier",
+  "summary": "Add the smallest model-facing RML gate that isolates the downstream organism: a frozen 32B resolver receives target-independent supplied-gold local memory through at most four adaptive one-hop reads and must execute the existing nine-action J/P targets. The gate compares recurrent access with no-memory, fixed-open, atoms-only, complete-cut, and twin-binding controls. It is an engineering and construct-validity gate only; DREAM, SLEEP, LoRA, independent lifetime sampling, and paper claims remain forbidden.",
+  "system_thesis": "Before testing whether experience can be dreamed or compressed into weights, establish that correct connected experiential structure can causally change a frozen agent's later actions through the intended recurrent read-think-act interface. A failure localizes the problem downstream of writing; a pass licenses, but does not prove, the learned-text rung.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260903_rml_g1_gold_action_fast_v1/human_directive.txt",
+      "sha256": "6616096eb95449116710c36696f090ec4e62fb0bbfc4d7582f09aeb842af605e",
+      "purpose": "Verbatim owner instructions requiring rigorous paper-first design, useful quick tests, persistence, and eventual GPU execution without treating engineering as science."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding architecture deliberation, exact ratification, independent review, and pre-GPU authority contract."
+    },
+    {
+      "path": "research_notes/49_rml_paper_architecture_and_next_experiment.md",
+      "sha256": "cad5755c8ccae8c81ca1f0136b6c0a8056dfef8daa6755bec4b82f2d59c5d9e9",
+      "purpose": "Adjudicated synthesis of the paper architecture, evidence ladder, corrected call count, baselines, gates, and stop rules."
+    },
+    {
+      "path": "research_loop/plans/rml_pilot_v1.md",
+      "sha256": "62637b045cd34a0501c14b1651974df9700b35ba4900cbe6dbbeefee291dc2fd",
+      "purpose": "Paper-facing causal lifetime benchmark and baseline requirements retained beyond this diagnostic."
+    },
+    {
+      "path": "research_loop/plans/rml_g1g2_hybrid_consensus_v1.md",
+      "sha256": "de0fae3a5737950eeac52c0ae379a469f1179f4dd8b02945e932d6425ef78c8e",
+      "purpose": "Earlier G1/G2 hybrid contract used only where reconciled by the current synthesis."
+    },
+    {
+      "path": "rml_d0/stage_a_report.json",
+      "sha256": "346bd091e9d037b1e51c8ed735ba5ecfbee50a42d10988d02ebc28c87532855b",
+      "purpose": "Passing CPU fixture report establishing the deterministic source schedule and J/P diagnostic inventory, not model evidence."
+    },
+    {
+      "path": "research_loop/advisory/20260903_rml_d0_to_stage_b_audit.md",
+      "sha256": "dd3cafc31e2091e51c59211a5d8e39c01c7c157214ebed9e33a72fead9ac8a3f",
+      "purpose": "Independent audit recommending the supplied-gold recurrent action gate and exposing D0's single-fixture limits."
+    },
+    {
+      "path": "research_loop/advisory/20260903_rml_stage_b_reuse_map.md",
+      "sha256": "35721dffe8ae0efd46fd7c038212a576b4740eba003b085cee6ee487c8d9dacd",
+      "purpose": "Implementation reuse map and corrected per-trajectory model-call accounting."
+    },
+    {
+      "path": "research_loop/advisory/20260903_paper_design_crosscritique.md",
+      "sha256": "2b5f6deeadbc40da9603f5975cf33482a89027e20cb325c516203983e75bea4f",
+      "purpose": "Cross-critique selecting a text-first action gate before LoRA and bounding the pilot's scientific interpretation."
+    },
+    {
+      "path": "research_loop/advisory/20260903_paper_prior_baseline_audit.md",
+      "sha256": "cc39c01973d77afc59a297684534c2993f8a687694bf32df6d19a00ca78c4501",
+      "purpose": "Prior-art and minimum-baseline audit preventing broad novelty or memory-superiority claims from this gate."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "RML_G1_ACTION_CAPABLE_RESOLVER",
+        "before": "The tested generic thinker can query memory but does not execute the RML environment's action protocol.",
+        "after": "An isolated frozen resolver emits exactly one READ or legal environment action per model call, carries a bounded scratch state, and terminates after at most four reads and nine action calls.",
+        "rationale": "This is the missing downstream organ needed to test whether supplied connected memory can affect behavior."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_G1_CONDITIONED_MEMORY_SERVICE",
+        "before": "RML-D0 has symbolic certificates but no model-facing condition-matched memory interface.",
+        "after": "A target-independent read-only service exposes condition-specific rows under NONE, GOLD, ATOMS, CUT, and TWIN transforms while logging exact keys, returns, provenance, and masks.",
+        "rationale": "Matched access and causal transforms distinguish memory use from model priors, fixed dumping, lookup, or leakage."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "RML_G1_MEMORY_TO_ACTION",
+        "from": "RML_G1_CONDITIONED_MEMORY_SERVICE",
+        "to": "RML_G1_ACTION_CAPABLE_RESOLVER",
+        "before": "No tested RML edge carries a memory return into an action-capable recurrent controller.",
+        "after": "Each authorized one-hop return updates the next resolver state; the model may adapt the next key or emit the next legal action, and every credited action path must cite decisive returned rows.",
+        "rationale": "The paper architecture requires memory to change intermediate reasoning and later action, not merely answer a post-hoc query."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_G1_ACTION_TO_OFFLINE_SCORE",
+        "from": "RML_G1_ACTION_CAPABLE_RESOLVER",
+        "to": "RML_D0_OFFLINE_ORACLE",
+        "before": "The D0 oracle scores symbolic registered controllers only.",
+        "after": "After the trajectory freezes, the unchanged offline oracle scores executed actions, path validity, cited support, cut dependence, and twin redirection without feeding any result back to the model.",
+        "rationale": "Outcome scoring must be causally downstream and absent from the cognitive loop."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "RML_G1_READ_THINK_ACT_LOOP",
+        "before": "No model-facing RML loop adaptively alternates local memory reads and real environment actions.",
+        "after": "For one sealed target side and one blinded condition, start from identical clean model state; allow at most four sequential one-hop READ operations and exactly the bounded public action protocol, one operation per 32B call; record all prompts, outputs, state transitions, keys, returns, citations, actions, invalids, and token costs; freeze before offline scoring.",
+        "trigger": "The exact change is human-ratified, the implementation packet passes CPU tests and leak checks, and independent reviewer plus author-side advocate approve it.",
+        "reads": [
+          "sealed public target and current public environment state",
+          "condition-specific target-independent memory returns",
+          "bounded resolver scratch and prior public operation trace"
+        ],
+        "writes": [
+          "append-only model-call ledger",
+          "append-only READ and environment-action trace",
+          "frozen trajectory artifact for offline scoring"
+        ],
+        "stop_condition": "Stop the trajectory at success, illegal/malformed/multiple operation, truncation, defer, four reads, nine action calls, or terminal failure. Stop the whole gate on preflight/review failure or model-load failure; never retry or repair after seeing outcomes.",
+        "rationale": "A bounded sequential loop tests adaptive retrieval and action while making cost, invalidity, and causal use auditable."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "C_RML_G1_GOLD_MEMORY_ACTION_GATE",
+        "before": "The project has no valid model-facing evidence that the intended recurrent memory interface can drive RML actions.",
+        "after": "A pass may establish only that one pinned frozen 32B model can use supplied target-independent connected rows to solve nested J/P diagnostic targets through the registered recurrent interface, with behavior disrupted by registered cuts and redirected by twin memory.",
+        "evidence_needed": "All leak, call-budget, positive-control, negative-control, path-citation, cut, twin, independent-review, and frozen-artifact gates pass in the single no-retry 234-call run.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "modify",
+        "claim_id": "C_DREAM_LORA_THINK_PAPER_LADDER",
+        "before": "A large end-to-end organism run was treated as the next route to the paper claim.",
+        "after": "G1 supplied-gold action use must pass before G2 experience-derived text; G2 must pass before G3 LoRA; only independent multi-life G4/G5 can support paper claims about learning, compression, scaling, saturation, or a flywheel.",
+        "evidence_needed": "Separate prospective, ratified, reviewed evidence at every rung; this change supplies G1 only.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "PUBLIC_TARGET_AND_STATE",
+      "CONDITIONED_MEMORY_ROWS",
+      "HIDDEN_WORLD_AND_OFFLINE_SCORE",
+      "CONDITION_LABEL_AND_PRIOR_OUTCOMES"
+    ],
+    "stages": [
+      "FIXTURE_RENDERER",
+      "MEMORY_SERVICE",
+      "MODEL_RESOLVER",
+      "PUBLIC_ENVIRONMENT",
+      "OFFLINE_SCORER"
+    ],
+    "cells": [
+      {"information_id":"PUBLIC_TARGET_AND_STATE","stage_id":"FIXTURE_RENDERER","visibility":"visible","reason":"The renderer emits the sealed public target and ordinary public state only."},
+      {"information_id":"PUBLIC_TARGET_AND_STATE","stage_id":"MEMORY_SERVICE","visibility":"derived_only","reason":"The service keys rows by public entity identifiers but cannot use hidden answer fields."},
+      {"information_id":"PUBLIC_TARGET_AND_STATE","stage_id":"MODEL_RESOLVER","visibility":"visible","reason":"The agent must observe its target and current public state to act."},
+      {"information_id":"PUBLIC_TARGET_AND_STATE","stage_id":"PUBLIC_ENVIRONMENT","visibility":"visible","reason":"The environment advances from the same public target and submitted actions."},
+      {"information_id":"PUBLIC_TARGET_AND_STATE","stage_id":"OFFLINE_SCORER","visibility":"visible","reason":"The scorer replays and checks the frozen public trajectory."},
+      {"information_id":"CONDITIONED_MEMORY_ROWS","stage_id":"FIXTURE_RENDERER","visibility":"forbidden","reason":"Target rendering must be invariant to memory condition."},
+      {"information_id":"CONDITIONED_MEMORY_ROWS","stage_id":"MEMORY_SERVICE","visibility":"visible","reason":"The service applies the preassigned NONE/GOLD/ATOMS/CUT/TWIN projection and logs exact returns."},
+      {"information_id":"CONDITIONED_MEMORY_ROWS","stage_id":"MODEL_RESOLVER","visibility":"visible","reason":"Only rows returned to emitted keys are visible; unopened rows remain hidden."},
+      {"information_id":"CONDITIONED_MEMORY_ROWS","stage_id":"PUBLIC_ENVIRONMENT","visibility":"forbidden","reason":"Memory cannot change world dynamics or public feedback."},
+      {"information_id":"CONDITIONED_MEMORY_ROWS","stage_id":"OFFLINE_SCORER","visibility":"visible","reason":"The scorer needs the frozen condition projection to test citations and interventions."},
+      {"information_id":"HIDDEN_WORLD_AND_OFFLINE_SCORE","stage_id":"FIXTURE_RENDERER","visibility":"derived_only","reason":"The renderer derives public bytes from the sealed fixture but cannot expose hidden truth."},
+      {"information_id":"HIDDEN_WORLD_AND_OFFLINE_SCORE","stage_id":"MEMORY_SERVICE","visibility":"forbidden","reason":"Rows are frozen from the registered condition before scoring and cannot use model outcomes."},
+      {"information_id":"HIDDEN_WORLD_AND_OFFLINE_SCORE","stage_id":"MODEL_RESOLVER","visibility":"forbidden","reason":"No truth, solution, score, verifier verdict, or counterfactual answer may enter cognition."},
+      {"information_id":"HIDDEN_WORLD_AND_OFFLINE_SCORE","stage_id":"PUBLIC_ENVIRONMENT","visibility":"derived_only","reason":"The environment uses hidden dynamics only to produce ordinary public consequences."},
+      {"information_id":"HIDDEN_WORLD_AND_OFFLINE_SCORE","stage_id":"OFFLINE_SCORER","visibility":"visible","reason":"Hidden truth is released only after the model trajectory is immutable."},
+      {"information_id":"CONDITION_LABEL_AND_PRIOR_OUTCOMES","stage_id":"FIXTURE_RENDERER","visibility":"forbidden","reason":"Rendered target bytes are identical across conditions and cannot depend on earlier model results."},
+      {"information_id":"CONDITION_LABEL_AND_PRIOR_OUTCOMES","stage_id":"MEMORY_SERVICE","visibility":"derived_only","reason":"The service receives a sealed projection identifier but emits no label or contrast description."},
+      {"information_id":"CONDITION_LABEL_AND_PRIOR_OUTCOMES","stage_id":"MODEL_RESOLVER","visibility":"forbidden","reason":"The model receives neither arm name, contrast, threshold, nor any prior result."},
+      {"information_id":"CONDITION_LABEL_AND_PRIOR_OUTCOMES","stage_id":"PUBLIC_ENVIRONMENT","visibility":"forbidden","reason":"World transitions are condition-blind."},
+      {"information_id":"CONDITION_LABEL_AND_PRIOR_OUTCOMES","stage_id":"OFFLINE_SCORER","visibility":"visible","reason":"The offline analysis joins frozen outcomes to the preregistered assignments."}
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "RML_G1_T01_INTERFACE_AND_LEAK_FIREWALL",
+      "kind": "invariant",
+      "setup": "Exhaustively render every condition and operation-state combination, compare target bytes across arms/twins, inspect all model-visible fields, and adversarially mutate hidden truth, labels, scores, and unopened rows.",
+      "expected": "Target/state bytes are arm-invariant; only queried authorized rows differ; hidden truth, answers, labels, scores, thresholds, complete plans, and unopened rows never enter model-visible bytes; mutations are detected by tests.",
+      "falsifies": "The action result could be caused by leakage or condition-specific prompting rather than memory use.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/interface_audit.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1_T02_CALL_AND_STATE_MACHINE_ACCOUNTING",
+      "kind": "unit",
+      "setup": "Exercise the action-capable reducer with valid, malformed, multi-op, illegal, truncated, over-read, over-action, repeated-key, terminal, and simulated provider-failure outputs.",
+      "expected": "Exactly one operation is accepted per call; every trajectory has at most four READ plus nine action calls, no hidden planning/retry calls, invalids score zero, and the fast registry contains exactly 18 trajectories and 234 dispatchable opportunities.",
+      "falsifies": "The compute match or behavioral denominator can be changed by retries, parsing, or hidden orchestration.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/call_accounting.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1_T03_CPU_GOLD_AND_INTERVENTION_ORACLE",
+      "kind": "end_to_end",
+      "setup": "Run deterministic scripted good and bad policies through all 18 registered trajectories against the real RML-D0 transition engine and unchanged offline oracle.",
+      "expected": "The good policy solves all GOLD_REC sides with valid cited paths, fixed-open and P atoms-only controls remain below their exact fixture ceilings, full cited cuts break credited paths, twin memory redirects predicted decisions, and bad policies fail for the registered reason.",
+      "falsifies": "The harness does not faithfully instantiate the intended causal contrasts before any model call.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/cpu_end_to_end.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1_T04_PINNED_MODEL_CANARY",
+      "kind": "invariant",
+      "setup": "On the intended A40 runtime, load Qwen2.5-32B revision 5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd and dispatch one predeclared non-scientific grammar canary before exposing any registered target.",
+      "expected": "The pinned model loads, emits one schema-valid operation under the runtime token settings, records environment and revision hashes, and consumes zero scientific opportunities.",
+      "falsifies": "The frozen run is being launched against an unverified or incompatible model runtime.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/model_canary.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML_G1_T05_FAST_CAUSAL_GATE",
+      "kind": "ablation",
+      "setup": "Execute the frozen 18-trajectory assignment once with no retries: NONE_REC, GOLD_OPEN, and GOLD_REC on all four target sides; ATOMS_REC on both P sides; CUT_REC and TWIN_REC on canonical J and P H-sides. Score only after every trajectory freezes.",
+      "expected": "GOLD_REC action success is at least .85 with valid cited-path rate at least .80; NONE_REC is at most .35; GOLD_OPEN is at most .45; P ATOMS_REC is at most .35; at least .80 of credited GOLD_REC successes lose path validity under complete cited cuts and redirect in the predicted twin-memory direction; unsupported release and residue are zero.",
+      "falsifies": "Correct connected memory does not causally improve action through the intended recurrent interface or the fixture lacks headroom.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/fast_gate_report.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "RML_G1_T06_INDEPENDENT_REVIEW_AND_CLAIM_FIREWALL",
+      "kind": "independent_review",
+      "setup": "A fresh reviewer and separate author-side advocate inspect the frozen source, prompt, schemas, assignments, manifests, CPU artifacts, call ledger, and proposed interpretation before GPU; after the run, they review immutable outputs without repairing them.",
+      "expected": "Both pre-GPU roles approve exact bytes; no actor overlap is concealed; result labels state single deterministic fixture, nested targets, supplied-gold memory, and diagnostic-only status; no DREAM, LoRA, learning, scaling, saturation, benchmark, or paper claim is emitted.",
+      "falsifies": "The experiment can silently expand scope, self-certify, or be promoted beyond its evidential unit.",
+      "evidence_artifact": "artifacts/rml_g1_gold_action_fast_v1/review_and_claim_audit.json",
+      "required_before": "gpu_run"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "Authorize only the RML-G1 supplied-gold recurrent action fast falsifier and its single no-retry 234-call 32B GPU gate, with DREAM, LoRA, lifetime, scaling, and paper claims explicitly excluded?",
+    "forbidden_before_approval": [
+      "edit or execute the RML Stage-B model-facing implementation",
+      "create or dispatch any scientific model opportunity",
+      "launch the 32B model canary or GPU gate",
+      "state a learning, DREAM, LoRA, benchmark, scaling, saturation, flywheel, or paper result"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "contract": "ppc5.resource_registry.v9",
+  "schema_version": 9,
+  "artifact_type": "RESOURCE_REGISTRY",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "registry_kind": "RESOURCE_REGISTRY",
+  "ordered_row_keys": [
+    "MODEL_CALLS",
+    "PROVIDER_CALLS",
+    "INPUT_TOKENS",
+    "OUTPUT_TOKENS",
+    "TRAINING_TOKENS",
+    "TRAINING_UPDATES",
+    "CPU_SECONDS",
+    "GPU_SECONDS",
+    "WALL_SECONDS",
+    "PERSISTED_BYTES"
+  ],
+  "rows": [
+    {
+      "row_key": "MODEL_CALLS",
+      "ordinal": 0,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "e6d3fe0104fb22c88060eb5642297cc413fb2cc37e4285ccfe9204c9238561b1"
+    },
+    {
+      "row_key": "PROVIDER_CALLS",
+      "ordinal": 1,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "3f77a9397c68c60fc8d203beab9f0f84982dde65ebf278c949cf66ab1bc2d0f2"
+    },
+    {
+      "row_key": "INPUT_TOKENS",
+      "ordinal": 2,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "5ceb1b1c4441ca0ba9fd81d5f2e191e664cd030b16cf711430b38c182ba950af"
+    },
+    {
+      "row_key": "OUTPUT_TOKENS",
+      "ordinal": 3,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "c5561142df53cf5465c54f0738ef593b1ba7f6e4bbb9b7177a5c987fdaccffe9"
+    },
+    {
+      "row_key": "TRAINING_TOKENS",
+      "ordinal": 4,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "3fef51dd26c33ca97bb0064e814b4a364e98c9c53e5ccdd98bb41e619e4030f8"
+    },
+    {
+      "row_key": "TRAINING_UPDATES",
+      "ordinal": 5,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "e7a19895d05c56e29d8c38be10094eaae3ff6969d1bb7a8595fa3c966bff4756"
+    },
+    {
+      "row_key": "CPU_SECONDS",
+      "ordinal": 6,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "bc1afd560e223d0c981cded241bcc8574fc55e3aca55fcf97ff42fd27d64de9b"
+    },
+    {
+      "row_key": "GPU_SECONDS",
+      "ordinal": 7,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "cabe440041c2a3c96b116fde962514dbdad8d10b7c207c2454940a399414f15b"
+    },
+    {
+      "row_key": "WALL_SECONDS",
+      "ordinal": 8,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "295c68932fd473603a58d97c766124d66b441ea5080550b111019f619151f4c4"
+    },
+    {
+      "row_key": "PERSISTED_BYTES",
+      "ordinal": 9,
+      "role": "DESCRIPTIVE_COST_ONLY",
+      "cardinality": "ONE",
+      "producer_role": "RESOURCE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "RESOURCE_ACCOUNTING",
+        "ANALYSIS",
+        "CLAIM_RELEASE"
+      ],
+      "content_sha256": "27817659c04c85035bd36f5d2466c5825493f01964aec8f1845d39fc41fc9b2c"
+    }
+  ],
+  "row_key_set_equality": true,
+  "self_hash": "0396229bd968c675c648a1247f689e524cca661e3a5c45c8ef124a060ad24dae"
+}

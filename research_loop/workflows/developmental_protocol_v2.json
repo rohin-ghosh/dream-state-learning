@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "developmental-protocol-v2",
+  "workspace": "../..",
+  "change_id": "chg_20260901_developmental_protocol_v2",
+  "directive_file": "research_loop/changes/chg_20260901_developmental_protocol_v2/human_directive.txt",
+  "context_files": [
+    "research_notes/44_developmental_protocol_v2.md",
+    "research_loop/changes/chg_20260901_developmental_experiential_learning_v1/consensus.json",
+    "research_notes/43_developmental_experiential_learning_v1.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/00_THESIS.md",
+    "research_notes/35_goalposts_paper1.md",
+    "REVIEW_PACK.md",
+    "alchemy/v2_out/mini_ledger.md"
+  ],
+  "output_dir": "research_loop/changes/chg_20260901_developmental_protocol_v2",
+  "state_path": ".research_loop/intake/chg_20260901_developmental_protocol_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260901_developmental_protocol_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 2400
+        }
+      ]
+    },
+    "systems": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {
+          "provider": "claude",
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 2400,
+          "max_context_chars_per_file": 400000
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    },
+    "critique": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 3600,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1800
+        }
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 400000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 2400
+        }
+      ]
+    }
+  }
+}

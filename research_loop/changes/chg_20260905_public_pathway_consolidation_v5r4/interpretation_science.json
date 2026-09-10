@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r4_benchmark_identifiability",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r4",
+  "perspective": "benchmark",
+  "state": "interpreted",
+  "architecture_change_sha256": "f6e24583e9b38dc2cd28297ed5df00abcf82c53b269d012a05129a0905908c5a",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/human_directive.txt",
+      "sha256": "9ab57ddfb75e95aa827f72afe077dcd07e0311431530ff6af03f7dcfdeb03155",
+      "purpose": "Verbatim direction and bounded interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/scope_proposal.json",
+      "sha256": "f86be7a9626cb0711f6244296b147c7035e10f50f169ed99461a77799ee884d0",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/protocol.md",
+      "sha256": "7000aaefc294276e4921e55f2fb3593e2ec02a09ba3fe39baacddbfd2c68d427",
+      "purpose": "Standalone scientific question, estimand, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/machine_contract.md",
+      "sha256": "9b6229f545576ab83d0ba50385f90ffe55a9505858056e8da6ff6ea3ee911487",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/semantic_validators.md",
+      "sha256": "2b7cc2081d56dc48e4fda966861a48c0ef9bece771f104083174b36cfb7b5542",
+      "purpose": "Pure cross-field and DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/assay_contract.json",
+      "sha256": "6e340b7219c14203c794c74501b0af51f48721ae0447c0a61c3e46c0769f5104",
+      "purpose": "Assay populations, freeze matrix, controls, and construction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/analysis_contract.json",
+      "sha256": "1096a740584b931f4d311bcd6176535edf755dc25ebe8a284c8bf4705b88dc5a",
+      "purpose": "Exact paired/safety/missingness/Holm/power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/status_contract.json",
+      "sha256": "75412cda87c2b346694522ed220f45e408e598545cefebcb09d50c55d4905829",
+      "purpose": "Total status-to-endpoint mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/visibility_contract.json",
+      "sha256": "df566ee003981c0f65788e44a7c80de713da83d35c566aa07c14d85d6b4ef7e4",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/authority_contract.json",
+      "sha256": "1e50a4b109d9921e8ff695950b5fc22af7289bb1527825904497923026f98c99",
+      "purpose": "Stage-specific authority DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/claim_dependency_map.json",
+      "sha256": "b4d00292a98b77502e6aee656b96a80954854e958f26b30dc5a40b55737b97d5",
+      "purpose": "Literal release and blocker map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/object_inventory.json",
+      "sha256": "323413818d1083e9de29f7a4558f722d0954e196504e82b8a265b9c3a3308c65",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/contracts.schema.json",
+      "sha256": "5320dd9e003d90fecc8dc6b7c7712637abe40ec261d911498974808a63da3aea",
+      "purpose": "Closed schemas for every inventory type."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/test_contract.json",
+      "sha256": "3723506047c41e4da313079c1c01786b396a27c67ec8e2223d368bd9d0e22af6",
+      "purpose": "Executable T01-T14 coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/stats_assay_resolution.md",
+      "sha256": "0fc86ddbda27f725d9d3041a3583e7945094d45d08883e9e3d441896b06a8950",
+      "purpose": "Nonnormative independent statistical integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/systems_resolution.md",
+      "sha256": "cbce305fab1c81fbf4c33017b5710947823c06a433cf565a8a3e8daec0dca6da",
+      "purpose": "Nonnormative independent systems integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r3/consensus.json",
+      "sha256": "94564b5be5ddb15b5190f12946ce08480a1e665c2332aac581e925eee8b1cf3a",
+      "purpose": "Binding PPC5r3 rework consensus; provenance only, no inherited authority."
+    }
+  ],
+  "system_thesis_interpretation": "AGREEMENT: PPC5r4 is scientifically useful only as a narrow precursor. It freezes THINK, DREAM, and ACT; confines learning to candidate scoring inside a complete-table READ provider; and asks four distinct generator-population questions. None of those questions tests a long-lived improving organism, learned cognition, a mediated DREAM-to-SLEEP-to-THINK mechanism, novelty, naturalistic paths, or scaling. CONCERN/DISPOSITION: the conceptual boundary is correct, but the present normative schema bytes do not yet make the population, reductions, controls, or qualified exports independently executable. The current intake is collecting interpretations with human_required=true and implementation_authorized=false; that state is appropriate and must remain unchanged pending a repaired, newly deliberated proposal.",
+  "graph_delta_interpretation": "AGREEMENT: the proposed GENERATOR_LIFE_SAMPLER -> LIFE_LEVEL_REDUCER edge repairs the prior finite-roster/assignment mismatch if and only if each draw is one complete IID recipient-life/seed bundle and its wrong-life donor is constructed wholly within that draw. Directly executing every arm from a byte-identical pretreatment clone makes each paired contrast observed rather than counterfactual. Lower queries, items, clones, endpoints, and edges are correctly treated as repeated measures. AGREEMENT: the edge-indexed path constructor and reduction are the right identification structure for CUT/TWIN/SHAM. BLOCKING CONCERN/DISPOSITION: contracts.schema.json leaves generator_manifest, entropy_receipt, life_sample_receipt, and run_lock as generic payload_ref envelopes without a closed schema for generator code/version, parameter law, entropy independence, proposal/rejection trace, ordinal-independent invocation, gate membership, lower-unit registry, common seeds, or the within-draw donor bundle. A hash of unspecified payload does not identify G or prove IID sampling. BLOCKING CONCERN/DISPOSITION: its path_proof schema still contains unindexed Boolean/hash arrays, twin_intervention_ids, and one singular sham_intervention_id; it lacks the stable path-template/edge/source mapping, per-edge SHAM, subset masks, full-set proof, and complete alternate-path universe required by the protocol. Replace these envelopes/proofs with closed byte-bearing schemas and exact-cardinality role bindings before T01/T06/T07/T13 can pass. Also define donor no-reuse as no cross-life matching or reassignment, not a global identity-uniqueness filter: coincident donor identities from independent draws must be retained rather than excluded or rematched.",
+  "loop_delta_interpretation": "The intended reduction loop is statistically coherent in outline. For paired gate g, within-life aggregation precedes Z_i=1 only when the beneficial difference strictly exceeds the prospective margin and all required observations are present; then the inclusive upper Binomial(N_g,pi0_g) tail tests H0:pi_g<=pi0_g. D1A safety correctly uses one prospectively designated Bernoulli trial per life and the inclusive lower tail for H0:p_event>=ceiling. Missing no-retry outputs are conservatively failures in paired Z, adverse in the designated D1A safety trial, and separate arm/endpoint missingness events; integrity-clean no-action is observed zero, while construction/integrity failures block. The assay maximum p-value is a valid intersection-union p-value, Holm over the four assay p-values controls the component family, and requiring every individual gate at alpha/4 is a dependence-free sufficient event for all four Holm rejections. BLOCKING CONCERN/DISPOSITION: the schemas do not encode that loop. paired_gate_result lacks observation/generator/membership refs and cp_tail_alpha; one_sample_safety_result lacks endpoint, sample refs, direction and missingness bindings; missingness_result omits the required CP upper bracket; assay_result and holm_result use binary JSON numbers rather than exact rationals and retain unlabeled hash arrays/free decision booleans; and power_receipt has no defined per-gate power-result type or fields for the exact tail, critical count, N, null/ceiling, margin, missing rule, worst-case probability, or CP/direction conditions. Repair the schemas so the release-critical count is derived from the full observed gate conjunction (exact p threshold, strict effect/ceiling direction, strict outward CP bound, and missing rule), not merely p<=alpha/4. This is especially necessary when p equals its threshold or cp_tail_alpha differs from alpha/4. T11/T13/T14 must reject every divergent critical count or floating authority value.",
+  "claim_delta_interpretation": "AGREEMENT: each component claim is scoped to a probability of life-level margin exceedance under the locked generator, not a mean treatment effect. D1A is supported complete-table candidate-conditioned selection rather than closed-book memory. D1B can claim observable response dependence only for every prospectively registered edge key in the target-informed decisive-path construction; CUT and directional TWIN use AUTHENTIC minus control, while SHAM noninferiority must use SHAM minus AUTHENTIC and a prospectively justified normally nonpositive margin. D1C and D1D are total-policy effects, with D1D correctly forbidding adjustment for realized evidence dose, training, publication, failure, or resources. AGREEMENT: if all component IUTs and four-claim Holm pass, the intersection adds no fifth hypothesis. It can assert only that four separately identified assays passed; it cannot assert mediation, an end-to-end mechanism, joint success in the same life, learned THINK/DREAM, continual improvement, novelty, zero-overlap generalization, or naturalistic path structure. BLOCKING CONCERN/DISPOSITION: the current path schema cannot substantiate every-edge SHAM, and no closed gate/run-lock validator constrains superiority margins to scientifically nontrivial beneficial orientations or SHAM margins to the declared noninferiority orientation. Further, overlap_manifest and construction_scope_receipt are generic payload envelopes, claim_release permits null/free qualification text by schema, contains no bound forbidden-claim list, and the inventory defines no closed export object that prevents detaching the qualification. The four-assay intersection is supportable only after those repairs make the exact fixed qualification and overlap/scope payload inseparable from every release/export; numerical overlap remains descriptive and must neither rescue nor block the registered narrow hypotheses.",
+  "visibility_matrix_interpretation": "The 13-by-14 matrix is complete and its intended separations are scientifically appropriate: hidden truth and PROBE/future data cannot reach runtime cognition or training; semantic candidates are complete only inside the common provider; treatment resolution is privileged and the restricted stage receives already resolved response bytes; endpoint truth appears only after execution; and overlap/scope affects construction, audit, and qualified release rather than pass logic. BLOCKING CONCERN/DISPOSITION: contracts.schema.json contradicts the arm-neutral provider guarantee by retaining provider_receipt.provider_kind values READER_LORA, ADAPTER_OFF, WRONG_LIFE_ADAPTER, and MATCHED_BINDING_SHUFFLED_READER, even though the machine and prior binding resolution require a constant provider algorithm plus only an opaque mount handle. This creates a treatment-semantic branch surface on a causal boundary. The intervention/path schemas likewise do not encode the per-edge condition-free projection promised by the matrix. T05/T06/T08/T12 must require byte-identical causal ingress/algorithm schemas after privileged projection and prove that changing arm/kind labels while holding resolved bytes or mounted bytes fixed cannot change scores, status, debit, timing, or output.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R4_T01",
+    "PPC5R4_T02",
+    "PPC5R4_T03",
+    "PPC5R4_T04",
+    "PPC5R4_T05",
+    "PPC5R4_T06",
+    "PPC5R4_T07",
+    "PPC5R4_T08",
+    "PPC5R4_T09",
+    "PPC5R4_T10",
+    "PPC5R4_T11",
+    "PPC5R4_T12",
+    "PPC5R4_T13",
+    "PPC5R4_T14"
+  ],
+  "acceptance_test_interpretation": "DISPOSITION FOR EVERY TEST: retain; none may be removed, weakened, or treated as passed by the proposal. PPC5R4_T01=BLOCKED until two implementations reject every cross-file/schema contradiction and bind closed payload types. T02=RETAIN_WITH_REPAIR: enumerate generator rejection/exhaustion, no-redraw, fixed membership, overlap strata, and construction-first failures. T03=RETAIN_WITH_REPAIR: endpoint coverage must prove that within-life repeated measures never become independent trials. T04=RETAIN_WITH_REPAIR: fix all DREAM status consequences and the exact dependency/cardinality rule for controls before testing. T05=RETAIN_WITH_REPAIR: cover the two designated D1A safety indicators, provider missing setting both adverse, and arm-neutral provider boundaries. T06=BLOCKED until recipient-disjoint exact donors are emitted and matched within each draw, collisions across independent draws are retained, every matching field is exact, no replacement exists, and D1D remains unadjusted. T07=BLOCKED until each stable (path_template_id,edge_position,edge_id) has its own indexed CUT/TWIN/SHAM proof and complete subset/alternate-path/source-disjointness bytes. T08=BLOCKED until all edge interventions use condition-free resolved bytes and SHAM orientation is never reversed. T09=RETAIN_WITH_REPAIR for endpoint-local missing dominance and shared-DREAM consumer mapping. T10=RETAIN: its prohibition on D1D matching/padding/truncation/conditioning is essential to the total-policy estimand. T11=BLOCKED until two reducers agree on exact rational upper/lower tails, strict ties, CP brackets, per-edge IUT, arm/endpoint missingness, exact assay maxima, Holm, and release-critical power counts. T12=BLOCKED while provider_kind or any treatment-semantic field crosses a restricted boundary. T13=BLOCKED until the populated run lock closes G, margins, orientations, gate memberships, cp_tail_alpha, all exact critical counts, and a worst-case power scenario in schema-valid bytes. T14=BLOCKED until cold replay derives every component and the sole bounded intersection and rejects detached qualifications, average-ITT, mediation, novelty, learned-cognition, or other overbroad releases. Passing fixtures after a repaired architecture is necessary but cannot cure contradictory normative bytes in this proposal.",
+  "assumptions": [
+    "All probability statements are conditional on fixed generator, model, tokenizer, provider, trainer, construction algorithms, thresholds, and other run-lock bytes; the only population randomness is the complete recipient-life/seed bundle emitted independently by G.",
+    "A generator invocation is identical across sample ordinals and has no shared mutable state; disjoint entropy slices are evidence for the declared IID sampling law, not a substitute for a trustworthy entropy-source contract.",
+    "The wrong-life donor and its training opportunity are part of the same draw as the recipient, but no donor is selected, exchanged, deduplicated, or rematched across draws.",
+    "All gate memberships and all lower units used in within-life means are fixed before entropy and outcomes, and every life has equal weight within a gate.",
+    "Every paired margin, pi0, safety/missingness ceiling, cp_tail_alpha, decimal bracket scale, alpha, and worst-case power probability will be prospectively populated and scientifically justified in the separately ratified run lock.",
+    "For superiority/specificity gates, positive language is used only with a prospectively nonnegative beneficial margin; for D1B SHAM, d=SHAM-AUTHENTIC and the noninferiority margin is nonpositive and within the attainable [-1,1] endpoint-difference range.",
+    "Construction or integrity failure never induces outcome-dependent redraw or exclusion and prevents release rather than silently changing the target population.",
+    "Overlap strata and resource measurements are descriptive; they are bound to interpretation and export but cannot adjust, rescue, or block a statistical result except when their required receipts are absent or invalid."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "ppc5r4_bench_a01_generator_payload_and_failure_law",
+      "question": "What exact closed payload schema defines G, its ordinal-independent parameter law, entropy source, rejection/proposal limit, constructability failures, complete lower-unit support, and mapping of such failures to the probability estimand?",
+      "impact": "Without these bytes, pi_g is not an identified reproducible population quantity and exact Binomial IID inference cannot be audited."
+    },
+    {
+      "ambiguity_id": "ppc5r4_bench_a02_cross_draw_donor_collision",
+      "question": "Does no donor reuse mean only that a donor sub-bundle is used once within its recipient draw and is never moved across lives, or would coincident donor identities from two independent generator draws trigger global exclusion or rematching?",
+      "impact": "The latter interpretation couples lives and conflicts with the claimed IID sampling law; collisions must be retained under the former interpretation."
+    },
+    {
+      "ambiguity_id": "ppc5r4_bench_a03_margin_orientation_and_bounds",
+      "question": "Which closed run-lock rule constrains each superiority margin and the SHAM-minus-AUTHENTIC noninferiority margin to its intended sign and attainable range?",
+      "impact": "An unconstrained negative superiority margin or extreme SHAM margin can make the named scientific claim trivial or reverse its interpretation even while the generic d_i>margin reducer passes."
+    },
+    {
+      "ambiguity_id": "ppc5r4_bench_a04_cp_power_critical_event",
+      "question": "Is each powered critical count defined by the full release conjunction, including strict CP and observed-direction conditions, and what relation is required between cp_tail_alpha and alpha/4?",
+      "impact": "At exact p-value equality or with a different CP tail level, p<=alpha/4 need not imply the strict bound required for release, so the stated union-bound power can overstate release probability."
+    },
+    {
+      "ambiguity_id": "ppc5r4_bench_a05_dream_missing_control_dependency",
+      "question": "When the shared DREAM call is missing, what exact predeclared cardinality/focus rule lets RECENCY and PERMUTED controls remain nonmissing, and which D1C/D1D endpoints consume the missing dependency?",
+      "impact": "Different answers change paired missing indicators, control outcomes, and the total-policy estimands; T04/T09 cannot be an exact oracle until this is closed."
+    },
+    {
+      "ambiguity_id": "ppc5r4_bench_a06_export_inseparability",
+      "question": "What closed export artifact and validator require every released component or intersection outside claim_release itself to carry the exact qualification, overlap manifest, construction-scope receipt, and forbidden-claim list?",
+      "impact": "A hash-bound internal release can otherwise be exported as an unqualified headline, exceeding the only scientifically supportable claim."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "ppc5r4_bench_d01_population_not_schema_identified",
+      "statement": "The proposal says the generator-population estimand and IID life sampling are executable, but the normative generator, entropy, life-sample, and run-lock schemas are generic envelopes rather than a closed definition of G and its sampling law.",
+      "rationale": "Exact hashes authenticate supplied bytes but do not determine unspecified payload fields, role cardinalities, rejection behavior, gate membership, common-random seeds, or within-draw donor construction. Those choices determine both pi_g and whether Z_i are IID Bernoulli trials.",
+      "proposed_resolution": "Rework contracts.schema.json and semantic_validators.md with closed field-level payload schemas and exact roles for generator/source/sampler code, parameter law, N, pre-entropy gate membership, lower units, rejection traces and maximum, entropy receipts, bundle/seed hashes, and within-draw donor sub-bundles; make any cross-life rematching, exclusion, or global uniqueness filter fail T02/T06/T13."
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d02_exact_reduction_not_schema_executable",
+      "statement": "The proposal characterizes the paired, D1A safety, missingness, Holm, and power algorithms as one exact executable object, but their authority-bearing schemas omit required inputs/refs and use floating numbers or free summary decisions.",
+      "rationale": "Assay/Holm p-values and alpha are JSON numbers despite the exact-rational contract; missingness lacks its promised CP upper bracket; gate results cannot reconstruct membership/observations; and power has no per-gate object binding the release-critical count. Thus two conforming artifacts can encode different analyses while satisfying the outer schema.",
+      "proposed_resolution": "Use reduced rational fields throughout; bind cp_tail_alpha, bracket scale/certificates, ordered observation and membership refs, strict direction results, missingness-result refs, and exact expanded gate roles. Define one closed power-gate result per paired, safety, and missingness gate whose critical set is exactly the full release decision, then derive the union lower bound. Require T11 boundary fixtures for equality in p, effect, ceiling, and CP bounds."
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d03_every_edge_path_claim_not_closed",
+      "statement": "The proposal claims edge-indexed CUT/TWIN/SHAM construction and IUT, but the normative path_proof schema retains one sham_intervention_id and unindexed arrays.",
+      "rationale": "One SHAM cannot establish harmless matched perturbation at every edge, and count/position-free arrays cannot prove which source, subset, twin, sham, or gate belongs to a stable edge key. This is exactly the substitution the every-edge claim is meant to rule out.",
+      "proposed_resolution": "Replace path_proof with explicit ordered edge_proof records containing path_template_id, position, edge_id, source event ID/preimage, and separate CUT/TWIN/SHAM proofs; add indexed subset/full-set and complete alternate-path records plus cross-item source-disjointness. Expand and bind every gate before entropy, and make T07/T08/T11/T14 fail on any missing, duplicated, averaged, or reoriented edge."
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d04_condition_free_provider_not_enforced",
+      "statement": "The proposal says causal provider execution is arm-neutral and treatment-blind, but provider_receipt still exposes arm-semantic provider_kind values to controller/reducer consumers.",
+      "rationale": "Those labels permit condition-dependent status, logging, timing, or branching beyond the mounted bytes and undermine the claim that D1A varies only the artifact while D1B interventions are condition-free after privileged routing.",
+      "proposed_resolution": "Replace provider_kind with the constant algorithm identity and an opaque nullable mount handle in the causal receipt; keep arm mapping only in sealed assignment and post-runtime reduction. Require byte-taint/noninterference fixtures in T05/T06/T08/T12."
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d05_bounded_intersection_not_export_closed",
+      "statement": "The prose limits the headline to a qualified non-mediational four-assay intersection, but the overlap/scope and claim/export schemas do not make that boundary structurally inseparable from every release.",
+      "rationale": "Generic overlap/scope payloads need not contain the promised strata, claim_release can be schema-valid with null or altered qualification, the forbidden-claim list is not bound as a field, and no export object exists. The statistical conjunction alone cannot support novelty, naturalism, joint-life mediation, or an end-to-end learning mechanism.",
+      "proposed_resolution": "Define closed overlap and construction-scope payloads and a closed release/export schema whose RELEASED branch requires the exact component/intersection literal, exact fixed qualification, complete forbidden-claim list, overlap hash, scope hash, decisions, Holm, and authority. T14 must mutate each field and reject any detached or expanded claim."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require a revised hash-bound proposal that closes generator/IID payloads, exact statistical and power receipts, per-edge SHAM/path proofs, condition-free provider schemas, and qualified export bytes before any architecture ratification?",
+      "At later run ratification, will Rohin approve the exact generator population, within-draw donor construction, gate memberships, margin orientations, pi0/ceilings, cp_tail_alpha, alpha, full release-critical power event, overlap profile, and strictly non-mediational claim text?",
+      "Does Rohin confirm that the present collecting_interpretations state grants no implementation, static-sealer, model, tokenizer, embedding, training, behavioral, canary, GPU, or scientific-release authority?"
+    ]
+  }
+}

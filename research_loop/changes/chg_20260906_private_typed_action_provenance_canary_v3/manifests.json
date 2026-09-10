@@ -1,0 +1,25 @@
+{
+  "artifact_type": "private_typed_action_normative_manifest_catalog",
+  "schema_version": 1,
+  "manifest_hash_law": "SHA-256 of RFC8785 JCS bytes of the exact manifest object",
+  "manifests": [
+    {"component_id":"FIXTURE_RENDERER_V3","algorithm":"render each closed record as RFC8785 JCS UTF-8; join in event-index order with LF; require exactly one trailing LF","inputs":["semantic fixture records"],"outputs":["fixture JSONL bytes"],"version":1},
+    {"component_id":"RESPONSE_EXTRACTOR_V3","algorithm":"apply contract response_envelope extraction steps and first_error_precedence without constructing duplicate-key objects","inputs":["raw response envelope bytes"],"outputs":["assistant text bytes","raw tool channel bytes or empty","extraction error or null"],"version":1},
+    {"component_id":"STRUCTURAL_PARSER_V3","algorithm":"apply total precedence to extracted tool channel and emit ACCEPTED typed arguments or REJECTED first error","inputs":["extractor result","typed argument schema"],"outputs":["parse decision"],"version":1},
+    {"component_id":"TRANSITION_ORACLE_V3","algorithm":"for ACCEPTED only, compute after_state and reduced rational score exactly as contract structural_oracle; never receives assistant text","inputs":["before state","typed arguments","parse decision hash"],"outputs":["declared transition receipt"],"version":1},
+    {"component_id":"PUBLICATION_PLATFORM_V3","algorithm":"future publication follows the exact supported platform, threat model, no-replace sequence, directory-fsync boundaries, and mutation-detection semantics in contract publication_contract","inputs":["validated fixture bytes","validated receipt bytes"],"outputs":["content-addressed committed objects or no eligible output"],"version":1},
+    {"component_id":"EVIDENCE_LIFECYCLE_V3","algorithm":"apply contract recovery states and recompute eligibility after restart from reopened bytes; partial, stale, mismatched, collided, replaced, or directory-unsynced objects are ineligible","inputs":["publication directory state"],"outputs":["derived eligibility verdict"],"version":1},
+    {"component_id":"VALIDATOR_A_SPEC_V3","algorithm":"source-distinct streaming lexer and relational reducer; no fixture hash allowlist","inputs":["normative bundle","candidate bytes"],"outputs":["canonical validation verdict"],"version":1},
+    {"component_id":"VALIDATOR_B_SPEC_V3","algorithm":"source-distinct full-buffer parser and independent relation predicates; no fixture hash allowlist","inputs":["normative bundle","candidate bytes"],"outputs":["canonical validation verdict"],"version":1},
+    {"component_id":"COMPARATOR_SPEC_V3","algorithm":"after both validator outputs commit, compare canonical verdict, first_error, and all derived values byte-for-byte","inputs":["validator A output","validator B output"],"outputs":["agreement or ineligible"],"version":1}
+  ],
+  "cross_manifest_closure": [
+    "fixture renderer identity repeated in invocation records, implementation manifests, and evidence receipt must equal the JCS hash of FIXTURE_RENDERER_V3",
+    "response extractor identity repeated in response records, implementation manifests, and evidence receipt must equal the JCS hash of RESPONSE_EXTRACTOR_V3",
+    "parser identity in the parse record and corresponding implementation manifest/evidence closure must equal the JCS hash of STRUCTURAL_PARSER_V3; a non-dispatch record binds the parse-record hash rather than repeating a parser manifest",
+    "transition identity repeated in accepted transition records, implementation manifests, and evidence receipt must equal the JCS hash of TRANSITION_ORACLE_V3",
+    "platform identity repeated in implementation manifests and evidence receipt must equal the JCS hash of PUBLICATION_PLATFORM_V3",
+    "each source, dependency lock, and interpreter identity repeated by any implementation or validator output must be exactly byte-equal",
+    "every referenced schema, request, response, tool-channel, record, artifact, validator output, comparator output, and receipt hash must resolve to exactly one retrievable byte string"
+  ]
+}

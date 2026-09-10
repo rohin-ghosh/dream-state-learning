@@ -1,0 +1,991 @@
+{
+  "contract": "ppc5.controller_registry.v5",
+  "schema_version": 5,
+  "operation_vocabulary": [
+    "ACT",
+    "PREDICT",
+    "READ",
+    "STOP"
+  ],
+  "result_vocabulary": [
+    "ACT_SUCCESS",
+    "COMMITMENT_ABSENT",
+    "COMMITMENT_INVALID",
+    "COMMIT_ACK",
+    "DREAM_MISSING_NO_RETRY",
+    "ERROR",
+    "ERROR_LIMIT",
+    "FINALIZE",
+    "FLUSH_SKIPPED_REJECTED",
+    "FOUND",
+    "MODEL_MISSING_NO_RETRY",
+    "NO_ADAPTER",
+    "NOT_FOUND",
+    "PREDICT_SUCCESS",
+    "PROVIDER_MISSING_NO_RETRY",
+    "PUBLISHED",
+    "READ_SUCCESS",
+    "SLOT_ACK",
+    "TRAIN_FAILED"
+  ],
+  "terminal_vocabulary": [
+    "BUDGET_EXHAUSTED",
+    "ERROR_LIMIT",
+    "MODEL_STOP",
+    "NO_VALID_ACTION",
+    "PROVIDER_SEQUENCE_COMPLETE",
+    "RUN_INVALID",
+    "SCHEDULE_COMPLETE",
+    "SCHEDULE_COMPLETE_OR_INCOMPLETE",
+    "SCHEDULE_INCOMPLETE"
+  ],
+  "error_vocabulary": [
+    "ACTION_LIMIT",
+    "INVALID_ACTION",
+    "INVALID_DOMAIN",
+    "INVALID_REFERENCE",
+    "MODEL_MISSING_NO_RETRY",
+    "PARSE_ERROR",
+    "PREDICTION_MISMATCH",
+    "PREDICTION_REQUIRED",
+    "READ_LIMIT",
+    "RUN_INVALID",
+    "SCHEDULE_VIOLATION",
+    "TOKEN_LIMIT"
+  ],
+  "first_failure_order": [
+    "INTEGRITY",
+    "PREDISPATCH_BUDGET",
+    "MISSING_CALL",
+    "TOKEN_LIMIT",
+    "PARSE_ERROR",
+    "LOGICAL_ALLOWANCE",
+    "SCHEDULE",
+    "DOMAIN",
+    "REFERENCE",
+    "PREDICTION",
+    "PROVIDER_MISSING",
+    "ENVIRONMENT_INVALID",
+    "SUCCESS"
+  ],
+  "rows": [
+    {
+      "row_id": "D1A_PROVIDER",
+      "assay_id": "D1A",
+      "program": "DIRECT_PROVIDER",
+      "phase_pattern": "PROVIDER[i<Q]",
+      "dispatch_kind": "PROVIDER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "FOUND",
+        "NOT_FOUND",
+        "PROVIDER_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "PROVIDER[i+1]",
+      "error_next_phase": "PROVIDER[i+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "SELECTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1A_FINAL",
+      "assay_id": "D1A",
+      "program": "DIRECT_PROVIDER",
+      "phase_pattern": "PROVIDER[i=Q]",
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "FINALIZE"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "RUN_INVALID",
+      "terminal_reason": "PROVIDER_SEQUENCE_COMPLETE",
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_READ",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": "READ[k<L]",
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "accepted_result_classes": [
+        "READ_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "READ[k+1]",
+      "error_next_phase": "READ[k]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": "PREDICT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "accepted_result_classes": [
+        "PREDICT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "ACT",
+      "error_next_phase": "PREDICT",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": "ACT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "accepted_result_classes": [
+        "ACT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "ACT",
+      "terminal_reason": "SCHEDULE_COMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1B_ONE_PLAN",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": "PLAN_READ[k<L]",
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "accepted_result_classes": [
+        "SLOT_ACK",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE",
+      "success_next_phase": "PLAN_READ[k+1]",
+      "error_next_phase": "PLAN_READ[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_FLUSH",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": "FLUSH[k<L]",
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "READ_SUCCESS",
+        "FLUSH_SKIPPED_REJECTED",
+        "PROVIDER_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "FLUSH",
+      "success_next_phase": "FLUSH[k+1]",
+      "error_next_phase": "FLUSH[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": "PREDICT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "accepted_result_classes": [
+        "PREDICT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "ACT",
+      "error_next_phase": "FINALIZE_INCOMPLETE",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": "ACT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "accepted_result_classes": [
+        "ACT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "FINALIZE_INCOMPLETE",
+      "terminal_reason": "SCHEDULE_COMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1B_ONE_FINAL",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": "FINALIZE_INCOMPLETE",
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "FINALIZE"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "DISCARD",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "RUN_INVALID",
+      "terminal_reason": "SCHEDULE_INCOMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1B_OPEN_PLAN",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": "PLAN_READ[k<L]",
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "accepted_result_classes": [
+        "SLOT_ACK",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE",
+      "success_next_phase": "PLAN_READ[k+1]",
+      "error_next_phase": "PLAN_READ[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_BLIND_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": "BLIND_PREDICT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "accepted_result_classes": [
+        "COMMIT_ACK",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE",
+      "success_next_phase": "BLIND_ACT",
+      "error_next_phase": "BLIND_ACT",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_BLIND_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": "BLIND_ACT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "accepted_result_classes": [
+        "COMMIT_ACK",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE",
+      "success_next_phase": "FLUSH[0]",
+      "error_next_phase": "FLUSH[0]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_FLUSH",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": "FLUSH[k<L]",
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "READ_SUCCESS",
+        "FLUSH_SKIPPED_REJECTED",
+        "PROVIDER_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "FLUSH",
+      "success_next_phase": "FLUSH[k+1]",
+      "error_next_phase": "FLUSH[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_COMMIT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": "EXECUTE_COMMIT",
+      "dispatch_kind": "ENVIRONMENT",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "ACT_SUCCESS",
+        "COMMITMENT_ABSENT",
+        "COMMITMENT_INVALID"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "EXECUTE_COMMIT",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "TERMINAL",
+      "terminal_reason": "SCHEDULE_COMPLETE_OR_INCOMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1C_READ",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": "READ[k<R]",
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "accepted_result_classes": [
+        "READ_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "READ[k+1]",
+      "error_next_phase": "READ[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1C_PREDICT",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": "PREDICT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "accepted_result_classes": [
+        "PREDICT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "ACT",
+      "error_next_phase": "ACT",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1C_ACT",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": "ACT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "accepted_result_classes": [
+        "ACT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "TERMINAL",
+      "terminal_reason": "SCHEDULE_COMPLETE_OR_INCOMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1D_ROOT_TO_PROVIDER",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": "ROOT_SLEEP_PUBLICATION",
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "PUBLISHED",
+        "NO_ADAPTER",
+        "TRAIN_FAILED",
+        "DREAM_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "PROVIDER[0]",
+      "error_next_phase": "PROVIDER[0]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PROVIDER",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": "PROVIDER[i<Q]",
+      "dispatch_kind": "PROVIDER",
+      "required_operation": "NONE",
+      "accepted_result_classes": [
+        "FOUND",
+        "NOT_FOUND",
+        "PROVIDER_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "PROVIDER[i+1]",
+      "error_next_phase": "PROVIDER[i+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "SELECTION_OBSERVATION"
+    },
+    {
+      "row_id": "D1D_READ",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": "READ[k<R]",
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "accepted_result_classes": [
+        "READ_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "READ[k+1]",
+      "error_next_phase": "READ[k+1]",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PREDICT",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": "PREDICT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "accepted_result_classes": [
+        "PREDICT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "ACT",
+      "error_next_phase": "ACT",
+      "terminal_reason": null,
+      "endpoint_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_ACT",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": "ACT",
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "accepted_result_classes": [
+        "ACT_SUCCESS",
+        "ERROR",
+        "MODEL_MISSING_NO_RETRY"
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "SCHEDULE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE",
+      "success_next_phase": "TERMINAL",
+      "error_next_phase": "TERMINAL",
+      "terminal_reason": "SCHEDULE_COMPLETE_OR_INCOMPLETE",
+      "endpoint_effect": "ACTION_OBSERVATION"
+    }
+  ],
+  "registry_hash": "53baa8a2cca7312957f4f56725eeb79e0f216cb871666fc3819909bd3bfd53d7"
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "paper1-v03r-canary-intervention-v1f.0",
+  "canonicalization": "UTF-8 RFC8785_JCS; SHA-256 lowercase hex over exact JCS bytes; no terminal newline in hashed objects",
+  "semantic_lock": "semantic_consistency_matrix.json",
+  "opportunity_ledger_schema": "opportunity_ledger.schema.json",
+  "prospective_order": [
+    "under public_projection_contract.json, seal both typed public-event projections, both E-to-M plans, the shared probe, both host-only withheld final-goal projections, both state-token vocabularies, and the public DIST-control manifest before any heldout provider dispatch",
+    "execute both heldout final-goal-independent prefix schedules, FINAL_QUESTION_ANIMAL_ANSWER_WITHHELD_ENDPOINT_CUE (exact-endpoint-cued) THINK0 traces, and fixed OWN/DIST return branches without revealing the withheld final-goal-only fields",
+    "seal both M0, M1_OWN, and M1_DIST manifests",
+    "seal both fixed M1_OWN transport corpora, fidelity rows, and shared candidate registry",
+    "reveal the already-sealed public final-goal question but not answer or private truth",
+    "compile and seal both path manifests, every feasible sham manifest, and all six text-arm plans/readers or exact stage-failure non-dispatch plans",
+    "execute every runnable T arm without scoring, cancellation, or retry and seal every trace",
+    "allow the offline scorer to read private truth and score the sealed traces"
+  ],
+  "state_token_vocabulary": {
+    "source": "recipient life's sealed typed public-event projection RECIPE rows under public_projection_contract.json; byte equality against the later M0 witnessed RECIPE projection is mandatory",
+    "value_projection": "the label field value from each source row",
+    "deduplication": "exact UTF-8 byte equality",
+    "ordering": "ascending unsigned ASCII byte sequence",
+    "freeze_time": "before the first heldout provider dispatch and before public final-goal reveal",
+    "reuse": "the recipient vocabulary bytes are unchanged in every T and L arm, including twin/donor arms",
+    "forbidden_inputs": ["DREAMED rows", "G fixture rows", "other life", "final goal", "answer", "private truth", "audit fields", "result"]
+  },
+  "public_dist_control_manifest": {
+    "artifact_path": "artifacts/paper1_v03r_canary_v1f/heldout_text/manifests/public_dist_control.jcs.json",
+    "seal_time": "after both typed public-event projections and public probe projection seal, before the first heldout DREAM, SELF_CHECK, THINK0, or THINK1 provider dispatch",
+    "authorized_inputs": ["sealed public-event projection", "public operational probe source", "public operational probe target"],
+    "forbidden_inputs": ["matched_distractor_source", "matched_distractor_target", "answer_valve", "next_operation", "latent_bit", "private truth", "THINK0 output", "branch output", "score"],
+    "derivation": [
+    "hold the public probe target fixed and resolve the unique witnessed ROUTE/EFFECT pair for the public probe source at that target; primary_gap is their absolute public-event-index difference",
+    "enumerate every other source with exactly one witnessed ROUTE and exactly one witnessed EFFECT for its route valve at the probe target, retaining only candidates whose absolute event-index gap is strictly greater than the frozen context_observation_budget 12 and whose source/target/aliases are identical in both twins",
+    "select the candidate minimizing (absolute(candidate_gap-primary_gap), source atom) lexicographically",
+    "record selected source, probe target, route row semantic hash/local alias, effect row semantic hash/local alias, both gaps, and derivation input hashes",
+    "reject before dispatch unless every required resolution is unique and the selected seed-5 vector equals the frozen vector"
+    ],
+    "seed5_frozen_vector": {
+      "source": "source:candyland",
+      "target": "target:confluenceland",
+      "route_row_alias": "M000002",
+      "effect_row_alias": "M000026",
+      "required_in_latent_bits": [0, 1]
+    },
+    "mismatch": "INVALID_PRECONDITION/DIST_PUBLIC_DERIVATION_MISMATCH before every heldout provider dispatch",
+    "defer_behavior": "If THINK0 terminates DEFER, this is a trace-local nonfatal terminal: OWN uses NO_FOCUS and its registered no-focus selector; DIST still uses this sealed public source/target control for all sixteen return slots; neither branch is cancelled; feedback/return credit is impossible; Stage T classification waits for aggregate scoring",
+    "authorized_treatment_difference": "OWN and DIST may differ only in the focus object: OWN uses sealed THINK0 focus or NO_FOCUS; DIST uses this manifest's fixed source/target tuple"
+  },
+  "eligible_rows": {
+    "statuses": ["WITNESSED", "SUPPORTED"],
+    "canonical_owner_only": true,
+    "excluded": ["proposal objects", "audit receipts", "duplicate events", "CONTRADICTED", "UNRESOLVED", "malformed", "G fixture rows"]
+  },
+  "path_registration": {
+    "input": "each recipient's sealed M1_OWN eligible row manifest plus revealed public final animal/source/target",
+    "R_role": "all eligible ROLE_EQUIV rows whose animal field equals the final animal",
+    "R_causal": "all eligible CAUSAL_JOIN rows whose source and target fields equal the final source and final target",
+    "candidate_registry": "record both complete sets before offline scoring; do not truth-filter them",
+    "descendant_relation": "a row is a provenance descendant when its transitive proposal-citation closure contains a root row semantic hash; witnessed external-event lineage alone is not a proposal-citation edge",
+    "path_exclusion_set": "R_role union R_causal union all eligible provenance descendants of either set",
+    "sort": "ascending semantic_hash bytes",
+    "manifest_fields": ["life_manifest_sha256", "revealed_goal_sha256", "R_role", "R_causal", "descendants", "path_exclusions", "path_token_mass"],
+    "empty_required_set_effect": "If either R_role or R_causal is empty, seal a root-absence manifest, classify Stage T VALID_STAGE_FAILURE/MISSING_REQUIRED_ABSTRACTION, and dispatch no T arm because the prospectively registered text gate is impossible; account every T opportunity as NON_DISPATCH_STAGE_MISSING_ABSTRACTION/NON_DISPATCH_STAGE_FAILURE/MISSING_REQUIRED_ABSTRACTION with attempts=0 and tokens=0. Do not relabel this scientific negative INVALID_PRECONDITION.",
+    "no_result_dependence": true
+  },
+  "offline_correctness_and_use": {
+    "scorer_time": "only after every prospectively runnable T trace has sealed",
+    "private_truth_reader": "offline scorer only",
+    "correct_role": "ROLE_EQUIV row's anchor animal is the private-world-correct role-equivalent anchor for the row's final animal",
+    "correct_causal": "CAUSAL_JOIN row's effect equals frozen private-world truth for its final source and final target",
+    "returned": "the exact row semantic hash was returned by a legal reader QUERY in that trace before terminal COMMIT",
+    "reasoned_use": "the request-local H handle is cited by at least one strictly later retained THINK or BACKTRACK node; because scratch is append-only and passed byte-identically into each later request, that node must lie on the trace prefix causally ancestral to terminal COMMIT",
+    "terminal_binding": "terminal COMMIT also cites that same H handle",
+    "prospective_necessity": "the presealed T-PATH arm, which removes the complete R_role/R_causal sets and their proposal-citation descendants, loses paired success while T-OWN succeeds",
+    "qualifying_use": "in each successful T-OWN life, at least one offline-correct row in R_role and at least one offline-correct row in R_causal satisfy returned, reasoned_use, and terminal_binding; the set-level causal-use claim additionally requires prospective_necessity",
+    "nonqualifying": ["unreturned", "returned but absent from later THINK/BACKTRACK", "COMMIT-only decorative citation", "reasoning-node citation omitted from COMMIT", "cited handle from another trace", "decorative prose mention", "wrong private relation", "wrong kind or endpoints", "T-PATH retains paired success"],
+    "result_feedback": "none"
+  },
+  "reader_projection_token_mass": {
+    "projection": "the exact closed thinker-facing ROW read-result projection for the row, excluding request-local read_handle",
+    "tokenizer": "resolved 32B controller tokenizer from the executable lock",
+    "tokenization": "UTF-8 JCS projection, add_special_tokens=false, no chat template",
+    "mass": "number of resulting token IDs"
+  },
+  "sham_assignment": {
+    "left_vertices": "path_exclusion_set sorted by semantic_hash",
+    "protected_frontier": [
+      "all ANIMAL_VALUE rows for final animal",
+      "all ROLE_EQUIV rows for final animal",
+      "all ROLE_APPLICATION rows for final animal and final target",
+      "all ROUTE rows for any valve and final source",
+      "all CAUSAL_JOIN rows for final source and final target",
+      "all EFFECT rows for any valve and final target",
+      "all SOURCE_VALUE rows for any anchor and final source",
+      "all TARGET_BASELINE rows for any anchor and final target",
+      "all RECIPE rows",
+      "all proposal-citation ancestors and descendants of every row above"
+    ],
+    "right_vertices": "eligible M1_OWN canonical rows outside path_exclusion_set and outside protected_frontier, sorted by semantic_hash",
+    "edge_eligibility": "a left/right pair is eligible exactly when frontier filtering passed and left.status byte-equals right.status",
+    "assignment": "injective total mapping from every sorted left vertex to a distinct right vertex",
+    "total_order_objective": [
+      "minimize number of kind mismatches",
+      "then minimize D = sum over assigned pairs of abs(left reader-projection token mass - right reader-projection token mass)",
+      "then minimize lexicographically the assigned right semantic-hash vector in left-vertex order"
+    ],
+    "status_rule": "assignment edges must have equal status; a path vertex with no equal-status candidate makes the assignment infeasible",
+    "constraints": [
+      "right-vertex count must be at least left-vertex count",
+      "the objective value D must be <= max(2,ceil(0.05*path_token_mass))"
+    ],
+    "infeasible_effect": "Seal VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE. Dispatch T-M0, T-OWN, T-DIST, T-TWIN, and T-PATH normally; record all T-SHAM opportunities as NON_DISPATCH_STAGE_SHAM_INFEASIBLE/NON_DISPATCH_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE with zero attempts/tokens under opportunity_ledger.schema.json. The five executed arms may be reported descriptively, but neither the full causal-use claim nor a weakened replacement causal claim is permitted.",
+    "tie_rule": "the lexicographic assigned-vector term makes the optimum unique; exact duplicate semantic hashes cannot be separate canonical vertices",
+    "no_alternate_after_results": true
+  },
+  "text_arm_readers": {
+    "T-M0": "recipient sealed M0 eligible rows",
+    "T-OWN": "recipient sealed M1_OWN eligible rows",
+    "T-DIST": "recipient sealed M1_DIST eligible rows",
+    "T-TWIN": "other twin's complete sealed M1_OWN eligible rows with recipient goal and recipient state-token vocabulary",
+    "T-PATH": "recipient M1_OWN minus its sealed path_exclusion_set",
+    "T-SHAM": "recipient M1_OWN minus the range of its sealed sham assignment",
+    "fresh_trace_per_arm_life": true,
+    "request_invariance": "for a recipient, final goal, state-token vocabulary, prompt, schemas, seeds, scratch reducer, and operation ceiling are identical; only the registered reader manifest differs",
+    "execution": "dispatch each arm/operation at most once, never cancel from another arm's result, never retry, and score only after all runnable traces seal"
+  },
+  "stage_t_green_conjunction": {
+    "think0_feedback_request": "Both recipient THINK0 traces terminate REQUEST_RETURN for exactly the sealed public probe source and target. Any DEFER, malformed/illegal terminal, budget exhaustion, or other NO_FOCUS route makes green impossible but does not cancel OWN/DIST dreaming.",
+    "own_behavior": "T-OWN pair_success is true.",
+    "baseline_and_focus_controls": "T-M0 pair_success is false and T-DIST pair_success is false.",
+    "own_only_focus_row": "In each life, at least one admitted M1_OWN CAUSAL_JOIN has source/target exactly equal to the sealed THINK0 focus, is absent by semantic_hash from M0 and M1_DIST, is offline-correct, and satisfies returned+reasoned_use+terminal_binding in that life's successful T-OWN trace.",
+    "root_use": "In each T-OWN trace, at least one offline-correct R_role and at least one offline-correct R_causal row satisfy returned+reasoned_use+terminal_binding. Each T-TWIN trace produces the exact donor-valid token and analogously uses the donor's registered correct role and causal roots.",
+    "path_control": "T-PATH pair_success is false, establishing prospective set-level necessity.",
+    "sham_control": "A legal sham assignment exists and T-SHAM pair_success is true. Infeasibility is VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE, not invalidity.",
+    "other_gates": "All traces, locks, accounting, visibility, isolation, reviewer, and advocate gates pass. Every clause is conjunctive; no separate goal-return credit can rescue a failed clause."
+  },
+  "return_intervention_claim_boundary": {
+    "common_prefix": "M0, OWN, and DIST share the complete final-goal-independent 46-WAKE/22-REACTIVATE/16-SLEEP 84-slot recurrent prefix.",
+    "endpoint_cue_disclosure": "THINK0 is FINAL_QUESTION_ANIMAL_ANSWER_WITHHELD_ENDPOINT_CUE / exact-endpoint-cued: its probe source and target byte-equal the later final-goal endpoints, while final goal ID, animal, rendered question, answer, intervention truth, and private factorization remain withheld. It is coached relevance construction, not autonomous relevance discovery.",
+    "treatment": "Only the post-prefix return loop differs: M0 executes zero return slots, OWN executes sixteen exact-endpoint-cued THINK0-routed return slots, and DIST executes sixteen public-control return slots.",
+    "P1CB06_evidence": "schedule executability, final-goal-independent common-prefix equality, zero-return enforcement, and matched return-branch treatment after the common prefix",
+    "forbidden_credit": "P1CB06 cannot be cited for necessity of prefix recurrence, repeated dreaming as a whole, graph growth as a whole, generic construction, or action improvement."
+  },
+  "conditional_lora_non_dispatch": {
+    "rule": "Both 48-case fidelity sets seal before any L THINK1 dispatch. If either life is below 44/48, all 48 registered L thinker opportunities are NON_DISPATCH_STAGE_FIDELITY_FAILURE/NON_DISPATCH_STAGE_FAILURE/FIDELITY_GATE_FAILED with attempts=0 and tokens=0 and aggregate Stage L is VALID_STAGE_FAILURE/FIDELITY_GATE_FAILED.",
+    "retry": false
+  }
+}

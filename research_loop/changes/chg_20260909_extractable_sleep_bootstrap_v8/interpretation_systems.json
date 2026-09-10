@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "extractable_sleep_bootstrap_v8_fresh_systems_v1",
+  "change_id": "chg_20260909_extractable_sleep_bootstrap_v8",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "0e785591ae7c18b9d749f8514a6c8942354ece29594e48ace5450eb1d81a65ce",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v8/change.json",
+      "sha256": "0e785591ae7c18b9d749f8514a6c8942354ece29594e48ace5450eb1d81a65ce",
+      "purpose": "Exact V8 proposal bytes under fresh systems interpretation."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding research-agent operating contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v5/v6_scientific_core.json",
+      "sha256": "b45a62b02aa4be0f697a830e406d0c9ed48018e9a247324f261edb027e3f182c",
+      "purpose": "Hash-bound V6 scientific-core predecessor context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v5/v6_capability_registry.json",
+      "sha256": "83223ebd602278689e0803170f124045e019e6c5654d02df63ed7e9e04353f0c",
+      "purpose": "Hash-bound V6 capability-registry predecessor context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v5/v6_action_prerequisite_dag.json",
+      "sha256": "12d9120cb0ed537a600db72067dea9172febfd9c63aa5c2ece8a2e318b2ec49b",
+      "purpose": "Hash-bound V6 action-DAG predecessor context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_scientific_core.json",
+      "sha256": "f44f3512b1248d0a945b5e039459e068dbdc42ba97728026f572c3a572940710",
+      "purpose": "Hash-bound V7 scientific-core predecessor input."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_capability_registry.json",
+      "sha256": "9c44fe870c56f3009b08512d48175c50a1378beeeebc378a7cfff2e89548c94d",
+      "purpose": "Hash-bound defective V7 registry predecessor."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_action_prerequisite_dag.json",
+      "sha256": "d176787d89784b54ed0fa65e47d0f08521835d49d4486c9e317e08ce64e3e6ca",
+      "purpose": "Hash-bound defective V7 action-DAG predecessor."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/change.json",
+      "sha256": "d69ac7b3207b4eec18af552d968b7a396aa5b39a6bc6290072d14b3812e0cfc9",
+      "purpose": "Exact V7 proposal returned for rework."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/interpretation_science.json",
+      "sha256": "f428bceb89b8d1ed939b85b19c5488872de44618bb430ff9b6029132929b39a0",
+      "purpose": "Hash-bound V7 scientific interpretation context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/interpretation_systems.json",
+      "sha256": "98dba3149fd3e5e93888ce4f0db435b822b0ab22443a29f76c45c5b413b06d7b",
+      "purpose": "Hash-bound V7 systems interpretation inspected for artifact shape, not inherited conclusions."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/critique.json",
+      "sha256": "ee6f3f8f2d5abb19ba3e0f42ae32bdaee2a0e63c5a0c2c65d0415beca81e09ed",
+      "purpose": "Hash-bound V7 adversarial critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/consensus.json",
+      "sha256": "f4fbbf9544c8c74626226b7c5fc2fcfa93a7f843b99b68638562225110b94b51",
+      "purpose": "Hash-bound V7 adjudicated rework."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/v8_blocker_resolution.md",
+      "sha256": "ba986cf1b4df614c76e7a21b138f2dd5c1e3b24e023fe59b7e2749cae511bd33",
+      "purpose": "Binding V8 proposal-only blocker resolution."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/v8_integration_requirements.json",
+      "sha256": "2f8d55096784e33a7a880ac1cf6252f29e613e0ad729ceb5d06499d10a899f6c",
+      "purpose": "Canonical V8 machine-checkable integration requirements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/v8_scientific_core.json",
+      "sha256": "dc61df6c3947b3ef8a593d3b7ced928d8ceb5070454eb6c1271f0df9f258971d",
+      "purpose": "Independent V8 scientific core reconciled to the integration contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/v8_systems_core.json",
+      "sha256": "cabeb07a18690c10a843f7eacb527d16ed6f5757fba69e78b76f9bf2a0a47c5e",
+      "purpose": "Canonical V8 systems source, registry, DAG, and visibility contract under independent review."
+    }
+  ],
+  "system_thesis_interpretation": "The intended organism boundary is coherent and remains exactly three functions: THINK owns the continuing waking stream, DREAM is disposable waking-context management, and SLEEP noncreatively compiles only independently supported same-life child-authored commits into a fresh-from-immutable-birth personal LoRA. Bootstrap, parenting, repetition control, eligibility, construction, evaluation, registries, gates, audit, reporting, claims, and release remain laboratory infrastructure. The only permitted parenting path is through waking child context, thought, action, public outcome, complete commit, independent eligibility, and a later SLEEP event. This is a prospective architecture with no result, execution, or authority. The exact V8 bytes materially improve the predecessor, but their executable registry/DAG/visibility projections do not yet establish the closure claimed by the thesis and therefore require proposal-byte rework before adoption.",
+  "graph_delta_interpretation": "The graph adds explicit three-function membership, a narrow {D,T} by {absent,fixed} primary design with M0 diagnostic and separately randomized adaptive extension, a 21-by-6 acceptance lattice, a canonical registry source, sealed finite action instances, atomic candidate closure, atomic promotion, split executor/scorer/reporter, G0 echo closure, whole-system visibility, and an eight-action release chain. Those are the correct architectural objects. However several advertised edges exist only in prose: the fixed DAG does not consume G0 child authorizations; candidate sealing does not list the constructor candidate/trace, immutable birth, writer contract, or support contract as prerequisites; six declared pre-GPU receipts are absent from the GPU action; reporter edge identifiers do not resolve; and the declared release order is not a prerequisite chain because the lineage audit is independent of the preceding blindness audit. Accordingly the graph cannot yet be treated as producer-closed or substitution-resistant.",
+  "loop_delta_interpretation": "The intended runtime loop is fresh construction from immutable birth and complete cumulative eligible child evidence, followed by one atomic candidate-plus-trace seal, descriptor-only staging, preservation evaluation, and one full-head CAS promotion. Every noncommit is intended to preserve the prior active head and continuing life, while waking parenting/repetition reaches evidence only after new child authorship and independent grounding. The CAS state machine is substantially more exact than V7, including durable key-to-digest binding and byte-identical committed retry, but its transition target UNCHANGED is not in its declared state set and a NOT_COMMITTED result echoes request_digest/idempotency_key while simultaneously claiming every failure has identical public bytes. Candidate and G0 loops also lack exact action prerequisites for inputs/authorizations named by their prose contracts. Those contradictions prevent an exact implementation from satisfying both the state machine and constant-shape channel contract without a new design choice.",
+  "claim_delta_interpretation": "The claim ladder is appropriately narrow and prospective. The old writer-certification and cadence-as-estimand claims are retired; extractable/native use requires held-out no-retrieval and negative controls; Delta_R is only the complete T-versus-D immediate selective-advice-use interaction before personal SLEEP; and Delta_F/Delta_E are total-regime developmental interactions, not intrinsic learning-rate, mediation, parenting-only, or repetition-benefit mechanisms. No claim is supported by these proposal bytes. Claim eligibility still lacks an executable producer-closed evidence graph because component evidence and the powered manifest have registered principals but no complete lower-rank producer-action chain, and the claim/reporter identifiers disagree with the registry in several places.",
+  "visibility_matrix_interpretation": "The materialized matrix is cardinality-complete as a Cartesian product: 9,443 unique channelized information IDs by 45 unique stages yields exactly 424,935 unique cells. It covers seven named channels and many more object categories than V7. Cardinality is not semantic closure, however. Mechanical inspection shows every one of the 60,705 base-object-by-stage groups assigns the identical access state to value, count, order, timing, cache, retry, and error: 56,744 groups are all forbidden, 2,478 all visible, and 1,483 all derived_only. Thus any legitimate value reader automatically receives cache/retry/error/timing visibility, and any narrow timing observer would necessarily receive content visibility. This contradicts the object-and-channel-specific least-authority promise and leaves precisely the covert channels V8 says it closes. The base universe also duplicates category-qualified definitions, instance-class placeholders, receipts, action results, and deferred dynamic categories without an exact alias/equality or concrete-instance rule, so Cartesian completeness can count multiple names for one object while future concrete request/result/error/cache/retry objects remain placeholders. Visibility therefore blocks adoption until access is decided independently per object and per channel, aliases are canonicalized, and every fixed plus sealed-sub-DAG concrete object has one identity and explicit producer/consumer/observer semantics.",
+  "acceptance_test_ids_addressed": [
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__STATIC_SCHEMA",
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE__G4_CLAIM",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__STATIC_SCHEMA",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION__G4_CLAIM",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__STATIC_SCHEMA",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT__G4_CLAIM",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__STATIC_SCHEMA",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER__G4_CLAIM",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__STATIC_SCHEMA",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY__G4_CLAIM",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__STATIC_SCHEMA",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS__G4_CLAIM",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__STATIC_SCHEMA",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT__G4_CLAIM",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__STATIC_SCHEMA",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS__G4_CLAIM",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__STATIC_SCHEMA",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY__G4_CLAIM",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__STATIC_SCHEMA",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION__G4_CLAIM",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__STATIC_SCHEMA",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION__G4_CLAIM",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__STATIC_SCHEMA",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT__G4_CLAIM",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__STATIC_SCHEMA",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE__G4_CLAIM",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__STATIC_SCHEMA",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE__G4_CLAIM",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__STATIC_SCHEMA",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES15_RANK_BY_EXPOSURE_ONLY__G4_CLAIM",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__STATIC_SCHEMA",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE__G4_CLAIM",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__STATIC_SCHEMA",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS__G4_CLAIM",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__STATIC_SCHEMA",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES__G4_CLAIM",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__STATIC_SCHEMA",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE__G4_CLAIM",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__STATIC_SCHEMA",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION__G4_CLAIM",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__STATIC_SCHEMA",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__G0_FAKE_RUNTIME",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__G1_IMPLEMENTATION_REVIEW",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__G2_CPU_DOMAIN",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__G3_GPU_SCIENCE",
+    "V8_ROW__V8_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG__G4_CLAIM"
+  ],
+  "acceptance_test_interpretation": "All 21 inherited families occur in canonical order and each has exactly the six required phases, yielding 126 unique row IDs and 126 unique receipt IDs. Each of six manifests enumerates the correct 21-row phase slice, and the change acceptance-test IDs exactly equal the systems-core row set. These are specifications, not results. They still do not form a satisfiable evidence lattice as written: ES07 names BOOTSTRAP_SEMANTIC_CONTROL_RECEIPT and INCREMENTAL_TARGET_BLINDNESS_RECEIPT, neither of which exists in the 146 artifact definitions, while the registry instead defines BOOTSTRAP_SEMANTIC_CONTROL_AUDIT_RECEIPT and BOOTSTRAP_TARGET_BLINDNESS_AUDIT_RECEIPT. Every family copies its final typed-evidence types into all six phases, including STATIC_SCHEMA and G0_FAKE_RUNTIME, even when such runtime/scientific evidence cannot yet exist. Each acceptance object also retains the schema-level required_before field even though the integration contract says that global field is forbidden; G3 and G4 both map to scientific_claim although G3 is supposed to guard reporting/external science and G4 a named claim/release. Finally a receipt ID ending in __PASS is specified even when pass_fail is FAIL. These phase/type/name conflicts require exact repair and a phase-specific constructibility test, despite correct cardinality.",
+  "assumptions": [
+    "The exact systems core is normative because the proposal binds its hash and identifies it as the sole canonical systems source; prose cannot repair a contradictory identifier, producer, state, or prerequisite edge.",
+    "A registered sole producer principal does not constitute a produced DAG receipt unless a finite lower-rank source issuance or action instance equality-binds that exact receipt to its consumer.",
+    "Channel-specific visibility means value, count, order, timing, cache, retry, and error permissions may differ for the same base object and observer; copying one role decision across all seven is not a channel analysis.",
+    "Definitions, artifact-class placeholders, source-issuance declarations, and future dynamic categories are not concrete runtime instances unless an exact canonical identity and alias/equality rule says so.",
+    "An ordered release chain requires prerequisite reachability between successive ordered actions, not merely increasing numeric ranks or a later join.",
+    "One-shot idempotency means an identical retry recovers the one terminal response without mutation, while a conflicting digest cannot overwrite the durable key binding or reveal prior transaction state through any public channel.",
+    "Every acceptance row remains prospective and unevaluated; a test specification, manifest slot, self-audit assertion, or receipt name is not evidence that its property holds."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "V8SYS_A01_ROLE_VERSUS_CHANNEL_POLICY",
+      "question": "Was the identical visibility state across all seven channels intentional, and if so how can a value consumer be denied cache/retry/error/timing observations or a narrow observer be denied content?",
+      "impact": "Without independent per-channel policy, the whole-system matrix overgrants observables and cannot establish the claimed noninterference or attestation covert-channel closure."
+    },
+    {
+      "ambiguity_id": "V8SYS_A02_DEFINITION_INSTANCE_ALIASING",
+      "question": "Which category-qualified universe identities are aliases of one underlying object and which are distinct runtime objects, especially artifact_definition, artifact_instance_class, receipt, action_result, terminal_output, and deferred_dynamic_category entries?",
+      "impact": "A cardinality-complete Cartesian product can double-count aliases while omitting concrete instances, producing conflicting authority and misleading closure totals."
+    },
+    {
+      "ambiguity_id": "V8SYS_A03_PHASE_EVIDENCE_CONSTRUCTIBILITY",
+      "question": "Does required_typed_evidence_types mean a row input at every phase or only a family-wide eventual obligation, and what exact field records the phase-specific subset?",
+      "impact": "If it is an input, static/G0 rows circularly require later runtime/science evidence; if it is descriptive, the row schema lacks an exact phase-specific evidence edge."
+    },
+    {
+      "ambiguity_id": "V8SYS_A04_CONTROL_DAG_VERSUS_SEALED_SUBDAG",
+      "question": "Which missing receipt producers are required fixed control actions and which must be materialized only inside a later sealed invocation sub-DAG?",
+      "impact": "The current exact bytes cannot prove lower-rank production, first-consumer reachability, or acyclicity for several fixed GPU, reporter, claim, G0, and release prerequisites."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "V8SYS_D01_WHOLE_SYSTEM_VISIBILITY_IS_NOT_CHANNEL_SPECIFIC",
+      "statement": "The exact 424,935-cell matrix is Cartesian-complete but does not implement object-specific channel least authority.",
+      "rationale": "For all 60,705 base-object-by-stage groups, the access state is identical across value, count, order, timing, cache, retry, and error. The three observed patterns are all-forbidden (56,744), all-visible (2,478), and all-derived_only (1,483); there are zero mixed channel decisions. Consequently content permission automatically exposes behavioral channels and a supposed narrow behavioral observer would receive content. Category-qualified definitions, instance placeholders, receipts, action results, and deferred dynamic categories are also counted as separate universe objects without a complete canonical alias/concrete-instance relation.",
+      "proposed_resolution": "Regenerate policy from canonical concrete object identities and decide each of the seven channels independently for each observer. Define alias/equality rules across categories, instantiate every fixed object, and require each future sealed sub-DAG to expand concrete request/result/cache/retry/error/terminal identities before first effect. Add same-verdict hyperproperty tests that vary quarantined findings and verify equality only on explicitly visible channels."
+    },
+    {
+      "disagreement_id": "V8SYS_D02_REGISTRY_REFERENCE_PRODUCER_AND_SCHEMA_CLOSURE_FAILS",
+      "statement": "The canonical registry source is not referentially or producer closed despite its validation assertion.",
+      "rationale": "The lattice references BOOTSTRAP_SEMANTIC_CONTROL_RECEIPT and INCREMENTAL_TARGET_BLINDNESS_RECEIPT, but neither is an artifact definition; different AUDIT receipt IDs are registered. A fixed action uses X0_REGISTERED_RELEASE_ARTIFACT_STORE as principal although it is absent from registered_principals. PROMOTION_TRANSACTION_RECEIPT and PROMOTE_CAS_RESULT name X0_COMMITTED_LINEAGE_STORE as sole producer but the producing control action names E5_LINEAGE_PROMOTION_GATE. The registry promises generation of every operation schema but gives no exact request/result field contract for READ, WRITE, APPEND, ADVANCE, DEREFERENCE, BIND_EQUALITY, SEAL_MANIFEST_ATOMIC, or TRANSFER_OPAQUE; naming IDs is not an exact schema.",
+      "proposed_resolution": "Use one canonical identifier for each semantic-control/target-blindness receipt; register every action principal; distinguish caller from atomic store producer while retaining one artifact producer; and materialize exact closed schemas for every operation, artifact result, denial, and source issuance. Fail the proposal self-check on any missing schema body, principal, producer-action, or mismatched producer projection."
+    },
+    {
+      "disagreement_id": "V8SYS_D03_FIXED_AND_GENERATED_ACTION_DAG_IS_NOT_PRODUCER_CLOSED",
+      "statement": "The finite action design supplies a strong sealed-node schema but the exact fixed DAG leaves non-source prerequisites without producer actions and does not bind the generated sub-DAG into those edges.",
+      "rationale": "G0_ECHO_CLOSED_RESULTS, IMPLEMENTATION_MANIFEST, FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW, CPU_DOMAIN_RESULT_MANIFEST, all pre-GPU evidence, GPU_SCIENCE_RESULT_MANIFEST, GPU_SCORE_RECORDS, POWERED_CLAIM_EVIDENCE_MANIFEST, INDEPENDENT_EVIDENCE_REVIEW, WHOLE_SYSTEM_VISIBILITY_MANIFEST, and both taint receipts appear as fixed prerequisites without corresponding fixed lower-rank producer actions. Some may be future action instances, but the proposal provides no exact expansion that makes each fixed consumer depend on the sealed instance result. Numeric producer identities in artifact definitions are not DAG reachability.",
+      "proposed_resolution": "Classify every prerequisite as external/frozen source issuance, fixed action result, or concrete sealed-sub-DAG result. Add the missing producer actions or an exact manifest-result join action, equality-bind each generated result identity/root into its fixed consumer, and mechanically verify one producer, lower rank, reachability, and no cycle for every prerequisite."
+    },
+    {
+      "disagreement_id": "V8SYS_D04_CANDIDATE_CLOSURE_OPERATION_IS_NOT_AN_EXACT_DAG_EDGE",
+      "statement": "The candidate closure schema is strong, but the fixed sealing action can run without the exact constructor outputs and contracts the operation promises to atomically bind.",
+      "rationale": "A_V8_G2_SEAL_CANDIDATE_CLOSURE_ATOMIC lists ACTION_INSTANCE_MANIFEST, ELIGIBLE_CHILD_LIFE_EVIDENCE, ZERO_EFFECTIVE_DELTA_INITIALIZER, and FROZEN_CUMULATIVE_COVERAGE_DOSE_CONTRACT. It omits CANDIDATE_CLOSURE, CANDIDATE_CONSTRUCTION_TRACE, IMMUTABLE_BIRTH_ARTIFACT, FROZEN_SLEEP_WRITER_CONTRACT, and FROZEN_SUPPORT_RESOLVER_CONTRACT. It also names no constructor action that produces terminal candidate and trace. Those values occur in the request prose/schema but not as producer-closed action prerequisites.",
+      "proposed_resolution": "Add one enumerated writer-construction instance producing terminal candidate and complete trace under all frozen roots, then make the atomic seal action directly consume and equality-bind those exact roots. The store alone must issue manifest, descriptor, seal result, and narrow lineage receipt in one atomic success; every other path publishes none."
+    },
+    {
+      "disagreement_id": "V8SYS_D05_PROMOTION_CAS_STATE_AND_FAILURE_CONTRACT_CONFLICT",
+      "statement": "PROMOTE_CAS_ATOMIC does not yet define one internally consistent exact state/output machine.",
+      "rationale": "The transition table targets UNCHANGED for different-digest key reuse although UNCHANGED is not in the declared states [ABSENT, PREPARED, COMMITTED, NOT_COMMITTED]. The result schema exposes request_digest and idempotency_key, but public_failure says every failure has identical value/count/order/timing/cache/retry/error behavior; different malformed, stale, substituted, and conflicting requests cannot return byte-identical results while echoing their different request fields. The response_digest computation and which fields are fixed versus echoed are not specified.",
+      "proposed_resolution": "Close the state enum and give each transition an enumerated state. Define server recomputation of request digest, response-digest coverage, durable serialization, and an explicit failure-equivalence relation: either return one request-independent padded denial or state exactly which request-echo fields may vary while all secret-dependent fields/channels remain identical. Test concurrent, lost-response, conflicting-key, substitution, expiry, replay, and crash histories against that exact machine."
+    },
+    {
+      "disagreement_id": "V8SYS_D06_GPU_REPORTER_AND_CLAIM_EVIDENCE_EDGES_DIVERGE",
+      "statement": "The typed scientific evidence declarations are not the executable prerequisites of the GPU, reporter, and claim actions.",
+      "rationale": "scientific_edges.pre_gpu declares ten receipts, but A_V8_G3_DISPATCH_GPU_RESOURCE consumes only four of them and omits CUMULATIVE_COVERAGE_FEASIBILITY_RECEIPT, D_T_M0_CONTROL_STRENGTH_RECEIPT, TARGET_BLIND_HELDOUT_CONSTRUCTION_RECEIPT, CONTAMINATION_NEGATIVE_CONTROL_RECEIPT, NO_RETRIEVAL_RECEIPT, and NATIVE_ACTION_CONTROL_RECEIPT. The reporter contract names M_V8_G3_GPU_SCIENCE, REPORT_INPUT_EQUALITY_RECEIPT, and EXACT_REPORTER_AUTHORIZATION, none of which is a registered artifact identity, while the fixed reporter action uses different IDs. Component claim receipts and the powered manifest lack a complete earlier producer-action chain.",
+      "proposed_resolution": "Choose one registered ID for each phase manifest, reporter equality receipt, and reporter authority; directly require all applicable ten pre-GPU roots at dispatch; add separately ordered producers for every component evidence receipt and the powered manifest; and make reporter, claim, external-science, and release consumers reference those exact roots without prose aliases."
+    },
+    {
+      "disagreement_id": "V8SYS_D07_G0_ECHO_AUTHORITY_IS_PROSE_ONLY",
+      "statement": "G0 result fields enumerate the desired root echoes, but the fixed G0 actions do not consume the action-specific child authority required by the G0 contract.",
+      "rationale": "g0_echo_closure requires one unique child authorization per concrete action, yet A_V8_G0_PRODUCE_STATIC_SCHEMA_ROWS, A_V8_G0_PRODUCE_FAKE_RUNTIME_ROWS, and A_V8_G0_INSTALL_FAIL_CLOSED_GATE list no G0_ACTION_CHILD_AUTHORIZATION prerequisite. G0_ECHO_CLOSED_RESULTS is consumed by gate installation but has no explicit producing action, and the result fields do not explicitly bind the child-authorization root itself. Therefore harness-root echoes do not prove exact per-action external authorization or prevent a result ledger from accepting an unauthorized child result.",
+      "proposed_resolution": "Issue three exact action-bound child authorizations, add each to the corresponding action prerequisites, echo its authorization root and complete manifest roots in that action result, add the result-ledger producer action, and require the installed-gate receipt to equality-bind all three authorized result roots and both phase manifests."
+    },
+    {
+      "disagreement_id": "V8SYS_D08_REAL_RELEASE_CHAIN_IS_NOT_EXACTLY_ORDERED_OR_EVIDENCE_CLOSED",
+      "statement": "All eight release action IDs exist, but their prerequisite graph does not preserve the advertised order or one complete authority/evidence tuple.",
+      "rationale": "A_V8_G4_RUN_LINEAGE_AUDIT does not depend on the preceding blindness audit and may execute before it; increasing ranks alone is not prerequisite reachability. RELEASE_CHAIN_EVIDENCE_MANIFEST is required by ES01 rows but is neither produced nor consumed in the eight-action path. External authorization, exact release authority, and release tuple binding are separate source artifacts without one schema-level equality demonstrating the identical nine fields at verifier, tuple binder, transfer request, and receipt. TRANSFER_OPAQUE also lacks an exact request/result body despite being the terminal irreversible action.",
+      "proposed_resolution": "Add direct predecessor receipts or a cumulative release-chain manifest between every ordered step; assemble and consume RELEASE_CHAIN_EVIDENCE_MANIFEST; define one external authority payload and clearly separate action authorization while equality-binding the same nine-field tuple through verifier, wrapper, transfer request/result, and receipt; and specify exact one-shot transfer/idempotency/error schemas before any release can be authorized."
+    },
+    {
+      "disagreement_id": "V8SYS_D09_PHASE_LATTICE_IS_CARDINALITY_CORRECT_BUT_SEMANTICALLY_INCONSISTENT",
+      "statement": "The 21-by-6 lattice solves V7 alias cardinality but not phase-specific evidence constructibility and naming.",
+      "rationale": "All six rows of each family copy one required_typed_evidence_types list, including late runtime/scientific artifacts in STATIC_SCHEMA and G0_FAKE_RUNTIME. The proposal acceptance objects retain required_before despite the integration requirement explicitly forbidding the global field, and G3/G4 both say scientific_claim rather than naming their different first consumers. Receipt identities end in __PASS even though pass_fail permits FAIL. ES07's required evidence names are unregistered aliases. These inconsistencies make it unclear what a valid FAIL row is and what exact evidence each phase producer must possess.",
+      "proposed_resolution": "Define a phase-indexed evidence schema per family, use only constructible evidence for each phase, make first-consumer IDs the sole timing boundary or update the architecture schema to encode them directly, define separate PASS/FAIL result identity semantics, and eliminate all receipt aliases before regenerating all 126 rows and six manifests."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require new exact V8 proposal bytes that resolve all nine systems disagreements before any adopt recommendation or ratification request?",
+      "Will the next proposal preserve exactly THINK, DREAM, and SLEEP and keep all parent/repetition influence on the waking-child-to-independent-eligibility route?",
+      "Will visibility be independently specified per concrete object and per value/count/order/timing/cache/retry/error channel rather than copying one role decision across all seven?",
+      "Will every G0, candidate, CAS, GPU, reporter, claim, audit, authority, and release prerequisite be an exact lower-rank producer-closed action edge before first effect?",
+      "Will ratification, intake transition, implementation, model/tokenizer/data/benchmark/writer/adapter/checkpoint work, CPU/GPU/resource use, external science, result evaluation, claim, publication, push, release, and transfer remain forbidden under this rework interpretation?"
+    ]
+  }
+}

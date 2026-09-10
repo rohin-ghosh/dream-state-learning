@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "extractable_sleep_bootstrap_v4_cross_critique_v1",
+  "change_id": "chg_20260909_extractable_sleep_bootstrap_v4",
+  "state": "critiqued",
+  "architecture_change_sha256": "63d072108be7058b43a27cf90c78d51a1a70a689ab40a31bf8b97bafea998c4c",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "extractable_sleep_bootstrap_v4_scientific_v1",
+      "sha256": "27ec0d3b46fd19febdccd7ae714d9d62c3abb3ccd67f6aea77f1899c96091909"
+    },
+    {
+      "interpretation_id": "extractable_sleep_bootstrap_v4_systems_v1",
+      "sha256": "5407e0a0f991d0b95da0e1d114f70d903b6b31bfecb9e9819c9d5500ee64106e"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding architecture and execution governance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/human_directive.txt",
+      "sha256": "cee1703c552739c51bcef302b7e5e92fae1651109963458d3532f49b7add34cc",
+      "purpose": "Verbatim direction on extractability, dosage, bootstrap, parenting, and repetition."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/change.json",
+      "sha256": "aa864a0141540915c8a51557152da0400941729ef924865e8d47df0c69542dff",
+      "purpose": "Rejected predecessor proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/interpretation_bootstrap_scientific.json",
+      "sha256": "847c10c7c69d5612d06cfea90e7f90f12d292a24ef5b26726d47b86456bc0406",
+      "purpose": "Predecessor scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/interpretation_bootstrap_benchmark.json",
+      "sha256": "868c5e713f5c5f9444294a651721f07bd48a4f133fb4be0f0adb48fb60a1fb9c",
+      "purpose": "Predecessor benchmark interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/critique.json",
+      "sha256": "58a370db2fc487d3c172eb7d6e409de9fc6d89fb0a25e94e8a8e91924efba389",
+      "purpose": "Fourteen predecessor concerns and six missing tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/consensus.json",
+      "sha256": "cf0f0e126035d99e76f6f59cde833371a2f8a53ef8419668445eef7065c80d53",
+      "purpose": "Predecessor rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_resolution.md",
+      "sha256": "c3b8cf6edddea5e0b9140b004a3ad9e41b652dfeac4b841eccc4266ff80b8b02",
+      "purpose": "Exact successor design choices."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_science_attack.md",
+      "sha256": "c490689279abbe8d1fb727b0b04c13781adbe058ca95d851dfd3f5e7d1a443fc",
+      "purpose": "Independent attack on estimands, active control, repetition, and target blindness."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_systems_attack.md",
+      "sha256": "54836eb5450dc1db5e7dc7d2818c3e0e453b4555bc19aa710cabe6ebc7c172a6",
+      "purpose": "Independent attack on writer, merge, lineage, dose, and isolation constructibility."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/change.json",
+      "sha256": "481d7fe7a5999d1fb2237a767bc9710e714339db54a6c5126c848ba12c9b883d",
+      "purpose": "V2 predecessor proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/interpretation_science.json",
+      "sha256": "ed2e7b26927596d065fa5610367d8824acdeef27d2a8223553dc064e2987273e",
+      "purpose": "Fresh v2 scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/interpretation_systems.json",
+      "sha256": "76d6d8751db8fc8a324131b77f785b379d7629110118dafd7de0b9a51d5ab169",
+      "purpose": "Fresh v2 systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/critique.json",
+      "sha256": "99a20fb13bcd3321567f182fca1e09c295e2e64a63231a4e9ba92ec27df6ded1",
+      "purpose": "V2 cross-critique identifying five proposal blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/consensus.json",
+      "sha256": "aa4d9cd32247b62590510f68dd26a4ca4c24bdbdfac08619ed014d5cd5a52c57",
+      "purpose": "V2 adjudicated rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/v3_blocker_resolution.md",
+      "sha256": "6429e2643564ece014057dc624559ba6bb5e9ca6c46b789aaef0678239b41ef9",
+      "purpose": "Exact resolution of the five v2 proposal-byte blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/change.json",
+      "sha256": "549e55e143fac31a6179568a9c6e3b9ad9a1a982a77e68f173f3e704d6f0ab92",
+      "purpose": "Rejected v3 exact proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/interpretation_science.json",
+      "sha256": "ea70c65c127e43283dc0f5f0de95004894790728f49ca3f86073cd64dcd85d02",
+      "purpose": "Fresh v3 scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/interpretation_systems.json",
+      "sha256": "41168c164ebb945468600d9477d5fc619ad2af51cf4e377c1eae4397e03c827a",
+      "purpose": "Fresh v3 systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/critique.json",
+      "sha256": "72f88535d360c086cf605adb71d798e8b3d9b442d4b4a33b68f38690d481de78",
+      "purpose": "V3 cross-critique identifying six exact proposal blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/consensus.json",
+      "sha256": "d0a842cfb0dbda8bfbb2e517e0633f7863870585f64e724c615857999a81c973",
+      "purpose": "V3 adjudicated rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/v4_blocker_resolution.md",
+      "sha256": "8b69384c6b6318c536efc608183939481e7355df3ed027fa57e02cbce14c4d3e",
+      "purpose": "Exact successor resolution of the six v3 blockers."
+    },
+    {
+      "path": "research_loop/ARCHITECTURE_INTAKE.md",
+      "sha256": "e5999bf9861a47d3e3e13cdb7e3593c9b4731764a3b106d51605c38866588bdc",
+      "purpose": "Durable exact-byte deliberation and authority state machine."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v4/change.json",
+      "sha256": "63d072108be7058b43a27cf90c78d51a1a70a689ab40a31bf8b97bafea998c4c",
+      "purpose": "Exact v4 proposal under cross-critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v4/interpretation_science.json",
+      "sha256": "27ec0d3b46fd19febdccd7ae714d9d62c3abb3ccd67f6aea77f1899c96091909",
+      "purpose": "Bound v4 scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v4/interpretation_systems.json",
+      "sha256": "5407e0a0f991d0b95da0e1d114f70d903b6b31bfecb9e9819c9d5500ee64106e",
+      "purpose": "Bound v4 systems interpretation."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Schema used to validate the bound interpretations."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Schema used to validate this critique."
+    }
+  ],
+  "strongest_case": "V4 successfully closes the six v3 blockers and preserves the simple THINK/DREAM/SLEEP plus optional birth-bootstrap architecture. Its 180-cell matrix, typed candidate evaluation, control-plane repetition, classified retry, equal-opportunity fixed policy, and first-execution intent are material improvements. The fresh cross-attack nevertheless finds seven proposal-byte blockers: a composite-head bypass, unspecified derived projections, missing direction/lifecycle, conflated model execution and truth scoring, an omniscient auditor-to-release path, a mixed-state fixed controller, and machine gate labels narrower than their prose. These require successor bytes; downstream implementation and evidence contracts remain closed.",
+  "reviewed_acceptance_test_ids": [
+    "V2_ES01_EXACT_AUTHORITY",
+    "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+    "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+    "V2_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER",
+    "V2_ES05_BIRTH_MERGE_AND_CONTENT_IDENTITY",
+    "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+    "V2_ES07_DIRECT_CONTROL_PAIR_AND_SEMANTIC_AUDIT",
+    "V2_ES08_INCREMENTAL_TARGET_BLINDNESS",
+    "V2_ES09_STANDARDIZED_ADVICE_RECEPTIVITY",
+    "V4_ES10_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+    "V2_ES11_ADAPTIVE_PACKAGE_ACCELERATION",
+    "V4_ES12_REPETITION_CONTROL_AND_ENACTMENT",
+    "V2_ES13_STORAGE_EXTRACTION_USE_AND_CONTROLS",
+    "V2_ES14_PERSONAL_REPLAY_DEPENDENCE",
+    "V2_ES15_RANK_BY_EXPOSURE_ONLY",
+    "V2_ES16_CADENCE_TOTAL_AND_STANDARDIZED_LEDGER",
+    "V2_ES17_PRIMARY_STATISTICS_AND_SPEND_ORDER",
+    "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+    "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE",
+    "V2_ES18_FRESH_REVIEW_AND_GPU_GATE",
+    "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER"
+  ],
+  "concerns": [
+    {
+      "concern_id": "V4C01_COMPOSITE_HEAD_BYPASS",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: lineage.committed_head is fully visible to semantic stages even though it composites active weights, life data, parent audit, and repetition state.",
+      "evidence": "This contradicts the opaque-CAS loop and bypasses the separately forbidden parent/repetition cells. Active weights, eligible-life access, candidate handle, and equality-only CAS token need separate minimal capabilities.",
+      "acceptance_test_ids": [
+        "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+        "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+        "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C02_UNDECLARED_DERIVED_CHANNELS",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: generic derived_only cells leave counts, IDs, hashes, timing, caches, handles, errors, and dereference behavior unspecified.",
+      "evidence": "Each projection operation is architecture semantics. Replace generic projections with named minimal READ, WRITE, APPEND, DEREFERENCE, or equality-only BIND capabilities and taint them transitively.",
+      "acceptance_test_ids": [
+        "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+        "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+        "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+        "V4_ES12_REPETITION_CONTROL_AND_ENACTMENT",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C03_DIRECTION_AND_LIFECYCLE_CONFLATION",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: the visibility matrix does not distinguish reading, writing, deriving, binding, or lifecycle epoch.",
+      "evidence": "A stage marked visible can read its own prior outputs and create self-feedback paths. Directional capabilities and fresh epoch-scoped invocations must be explicit.",
+      "acceptance_test_ids": [
+        "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+        "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C04_EXAM_TRUTH_AND_MODEL_COLLISION",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: DEPLOYMENT_EVALUATOR can see hidden truth, public exam input, model weights, transcripts, and scientific products in one stage.",
+      "evidence": "This permits truth-conditioned generation and adaptation to prior results. Split model-facing exam execution, truth-bearing scoring, and reporting; only the scorer sees truth.",
+      "acceptance_test_ids": [
+        "V2_ES09_STANDARDIZED_ADVICE_RECEPTIVITY",
+        "V4_ES10_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+        "V2_ES11_ADAPTIVE_PACKAGE_ACCELERATION",
+        "V2_ES13_STORAGE_EXTRACTION_USE_AND_CONTROLS",
+        "V2_ES14_PERSONAL_REPLAY_DEPENDENCE",
+        "V2_ES16_CADENCE_TOTAL_AND_STANDARDIZED_LEDGER",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C05_OMNISCIENT_AUDITOR_RELEASE_PATH",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: ISOLATED_AUDITOR sees every information class and writes the release decision consumed by RELEASE_CONTROLLER.",
+      "evidence": "This creates transitive hidden-answer, score, candidate, parent, and repetition paths into release. Split blindness and lineage auditors from an authority verifier; human authorization must enter as an external artifact.",
+      "acceptance_test_ids": [
+        "V2_ES01_EXACT_AUTHORITY",
+        "V2_ES08_INCREMENTAL_TARGET_BLINDNESS",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V2_ES18_FRESH_REVIEW_AND_GPU_GATE",
+        "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C06_FIXED_CONTROLLER_MIXED_STATE",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: the fixed controller can see mixed repetition state, live-parent text, and parent-state projection.",
+      "evidence": "Those objects include adaptive/acquisition/relapse or self-history signals and allow covert adaptation. Fixed teaching must receive only immutable outbound bytes and a monotone external schedule cursor plus write-only audit append.",
+      "acceptance_test_ids": [
+        "V4_ES10_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+        "V4_ES12_REPETITION_CONTROL_AND_ENACTMENT",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C07_MACHINE_GATE_LABEL_TOO_NARROW",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "PROPOSAL BLOCKER: ES19, ES20, and ES21 claim to precede data/evaluation/write actions but required_before is only model_execution.",
+      "evidence": "The exact registry must enumerate every affected CPU/GPU model, tokenizer, data generation, evaluation, writer, adapter, candidate, promotion, and external dispatch action and fail closed before each.",
+      "acceptance_test_ids": [
+        "V2_ES01_EXACT_AUTHORITY",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE",
+        "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER",
+        "V2_ES18_FRESH_REVIEW_AND_GPU_GATE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C08_DOWNSTREAM_IMPLEMENTATION_CONTRACT",
+      "category": "architecture",
+      "severity": "material",
+      "statement": "DOWNSTREAM CONTRACT: after capability splitting, bind exact descriptor schemas, root encoding, CAS/fsync/recovery, quarantine, support resolver, DREAM cache, and audit sidecars.",
+      "evidence": "These constants do not authorize silent defaults and remain necessary before implementation.",
+      "acceptance_test_ids": [
+        "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+        "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+        "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C09_DOWNSTREAM_DATA_AND_ANALYSIS_CONTRACTS",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "DOWNSTREAM CONTRACT: freeze bootstrap generators, rubrics, overlap/difficulty rules, preservation verdicts, writer factorial, scoring, allocation, inference, replay closure/filler, and safety comparators.",
+      "evidence": "The architecture remains a design until those separately exact evidence contracts and independent roots exist.",
+      "acceptance_test_ids": [
+        "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+        "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+        "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+        "V2_ES07_DIRECT_CONTROL_PAIR_AND_SEMANTIC_AUDIT",
+        "V2_ES08_INCREMENTAL_TARGET_BLINDNESS",
+        "V2_ES09_STANDARDIZED_ADVICE_RECEPTIVITY",
+        "V4_ES10_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+        "V2_ES11_ADAPTIVE_PACKAGE_ACCELERATION",
+        "V4_ES12_REPETITION_CONTROL_AND_ENACTMENT",
+        "V2_ES13_STORAGE_EXTRACTION_USE_AND_CONTROLS",
+        "V2_ES14_PERSONAL_REPLAY_DEPENDENCE",
+        "V2_ES15_RANK_BY_EXPOSURE_ONLY",
+        "V2_ES16_CADENCE_TOTAL_AND_STANDARDIZED_LEDGER",
+        "V2_ES17_PRIMARY_STATISTICS_AND_SPEND_ORDER",
+        "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+        "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE",
+        "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V4C10_AUTHORITY_CLOSED",
+      "category": "operations",
+      "severity": "material",
+      "statement": "AUTHORITY: v4 critique permits rework adjudication only.",
+      "evidence": "No implementation, model/tokenizer, data/benchmark, adapter, GPU, external science, claim, publication, or push follows.",
+      "acceptance_test_ids": [
+        "V2_ES01_EXACT_AUTHORITY",
+        "V2_ES17_PRIMARY_STATISTICS_AND_SPEND_ORDER",
+        "V2_ES18_FRESH_REVIEW_AND_GPU_GATE",
+        "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "Fully visible lineage.committed_head bypasses forbidden parent/repetition cells and the opaque-CAS claim.",
+    "Generic derived_only values are undeclared covert channels through IDs, counts, hashes, timing, caches, handles, or errors.",
+    "Read/write/derive/bind authority and epoch lifetime are conflated, enabling self-feedback.",
+    "Model-facing evaluation shares a stage with hidden truth and prior products.",
+    "An omniscient auditor can relay protected evidence into release.",
+    "The fixed parent can inspect mixed adaptive or self-history state."
+  ],
+  "missing_acceptance_tests": [
+    "Directional capability-by-stage-by-epoch product with direct and transitive taint fixtures.",
+    "Active-weight, eligible-life, candidate-root, and equality-only CAS capability isolation.",
+    "Model-facing exam executor versus truth-scorer versus reporting isolation.",
+    "Blindness-auditor, lineage-auditor, external-human-authority, verifier, and release separation.",
+    "Immutable fixed-parent schedule cursor and write-only audit append.",
+    "Explicit first-affected-action registry spanning CPU, tokenizer, data, evaluation, write, adapter, model, GPU, and external dispatch."
+  ],
+  "human_questions": [
+    "Will v4 be reworked before ratification to replace broad visibility with minimal directional capabilities and lifecycle epochs?",
+    "Will model execution, truth scoring, reporting, audit, external human authority, and release be separate causal stages?",
+    "Will the fixed parent receive only immutable lesson bytes and an external monotone cursor?",
+    "Will all downstream implementation, evidence, execution, GPU, and claim scopes remain separately exact and human-gated?"
+  ]
+}
+

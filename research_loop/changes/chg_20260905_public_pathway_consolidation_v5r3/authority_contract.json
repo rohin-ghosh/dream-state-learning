@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.authority.v3",
+  "dispatch_classes": ["MODEL_INFERENCE", "TOKENIZER_EXECUTION", "EMBEDDING_EXECUTION", "TRAINING", "CANARY", "CPU_BEHAVIORAL", "GPU_BEHAVIORAL", "GPU_JOB"],
+  "stages": [
+    {
+      "stage": "PRE_RATIFICATION_SPECIFICATION",
+      "predecessor": null,
+      "requires": ["exact normative proposal hashes", "two new fresh interpretations", "adversarial critique", "consensus with recommendation proceed_to_implementation and no unresolved disposition", "exact human architecture and scope ratification bound to consensus and paused intake state"],
+      "scope": "proposal bytes only",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "POST_RATIFICATION_PRE_STATIC_SEAL_CONFORMANCE",
+      "predecessor": "PRE_RATIFICATION_SPECIFICATION",
+      "requires": ["passing predecessor hash", "only ratified contract implementation paths", "all CPU/no-model schema, semantic, golden-vector, replay, visibility, reducer, power, and run-lock-schema fixtures pass"],
+      "scope": "ratified CPU/no-model implementation and fixtures only",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "PRE_MODEL_EXECUTION",
+      "predecessor": "POST_RATIFICATION_PRE_STATIC_SEAL_CONFORMANCE",
+      "requires": ["passing predecessor hash", "populated exact run_lock hash", "T01 through T13 passing at their declared stage", "two independently implemented static seal receipts", "fresh independent reviewer pass", "author-side advocate receipt that cannot override review", "separate exact human run ratification bound to run_lock, seals, review, advocate, and predecessor"],
+      "scope": "exact run authorized by separate human decision",
+      "model_execution_reachable": true
+    },
+    {
+      "stage": "RUNTIME_VALIDITY",
+      "predecessor": "PRE_MODEL_EXECUTION",
+      "requires": ["passing predecessor hash", "allowlisted dispatch preflight for every dispatch", "canary pass", "registered runtime perturbation and integrity receipts"],
+      "scope": "runtime validity evidence only",
+      "model_execution_reachable": true
+    },
+    {
+      "stage": "PRE_SCIENTIFIC_CLAIM",
+      "predecessor": "RUNTIME_VALIDITY",
+      "requires": ["passing predecessor hash", "T14 pass", "all-assigned observations", "resource receipts", "recomputed contrasts, assay composites, Holm, missingness, blockers, and literal claim releases"],
+      "scope": "literal claims from claim_dependency_map.json only",
+      "model_execution_reachable": true
+    }
+  ],
+  "receipt_rule": "Every stage receipt contains artifact_type, stage, exact subject hashes, predecessor receipt hash, scope, decision owner, decision evidence path/hash/excerpt where human, passed, and model_execution_reachable. It validates against the stage-specific schema and recomputes all requires. No stage may be skipped or self-asserted.",
+  "preflight_rule": "Every dispatch class calls one allowlisted preflight with dispatch class, executable hash, run_lock hash, PRE_MODEL_EXECUTION receipt hash, and immediate predecessor state. The preflight permits only if the receipt recomputes as passing, reachable=true, dispatch is allowlisted by the exact run lock, and hashes match; otherwise no process is started and a denial receipt is written.",
+  "global_tests": ["PPC5R3_T01", "PPC5R3_T02", "PPC5R3_T03", "PPC5R3_T04", "PPC5R3_T05", "PPC5R3_T06", "PPC5R3_T07", "PPC5R3_T08", "PPC5R3_T09", "PPC5R3_T10", "PPC5R3_T11", "PPC5R3_T12", "PPC5R3_T13", "PPC5R3_T14"],
+  "current_authority": "NONE_PROPOSAL_ONLY"
+}

@@ -1,0 +1,11 @@
+# Organizing memories for generalization in complementary learning systems
+Source: Nature Neuroscience 26(8):1438-1448, 2023. DOI: 10.1038/s41593-023-01382-9 (bioRxiv 2021.10.13.463791; not on arXiv)  
+Authors: Weinan Sun, Madhu Advani, Nelson Spruston, Andrew Saxe, James E. Fitzgerald
+
+## Abstract
+Memorization and generalization are complementary cognitive processes that jointly promote adaptive behavior. For example, animals should memorize safe routes to specific water sources and generalize from these memories to discover environmental features that predict new ones. These functions depend on systems consolidation mechanisms that construct neocortical memory traces from hippocampal precursors, but why systems consolidation only applies to a subset of hippocampal memories is unclear. Here we introduce a new neural network formalization of systems consolidation that reveals an overlooked tension - unregulated neocortical memory transfer can cause overfitting and harm generalization in an unpredictable world. We resolve this tension by postulating that memories only consolidate when it aids generalization. This framework accounts for partial hippocampal-cortical memory transfer and provides a normative principle for reconceptualizing numerous observations in the field.
+
+## Our differentiation
+Claims: consolidation is *regulated*, not exhaustive — copying everything from the fast store to the slow store causes overfitting; only the predictable (high signal-to-noise, regularity-bearing) components of memories should consolidate, while unpredictable residuals stay episodic.
+Mechanism: teacher-student linear network theory of systems consolidation; derives a go/no-go consolidation rule as a function of a memory's predictability/SNR, matching partial hippocampal-cortical transfer data.
+Sleeper relevance: the strongest normative anchor for a consolidation *policy* — our sleeper should score candidate memories for regularity (cf. PEAM's parameterization-worthiness score) and compile only generalizable structure into abstractions/weights, deliberately leaving one-off episodic detail in the raw store. Dedup and abstraction are exactly "consolidate the predictable component"; the residual is what our verbatim log retains.

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1a.systems.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1a",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "8353d35558926c240b966824e089d073789142f1537ea41427f809f5f8763bcb",
+  "context_files": [
+    {"path": "AGENTS.md", "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e", "purpose": "Material-change deliberation, exact ratification, independent review, and GPU gate."},
+    {"path": "research_notes/35_goalposts_paper1.md", "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c", "purpose": "Frozen Paper-1 claim, self-check arm, prompted recurrence, and verifier boundary."},
+    {"path": "lands/v03r.py", "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999", "purpose": "Paired action-outcome world and current leaking precheckpoint export."},
+    {"path": "lands/test_v03r.py", "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1", "purpose": "Existing paired construct, local-window, edge-removal, and shortcut tests."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/consensus.json", "sha256": "085dc5075c3fbe1561d6b81e90448847c8fddf8fc44dbfbd07a413c7f23b2bdd", "purpose": "Hash-bound rework disposition that v1a must resolve without scope expansion."},
+    {"path": "research_loop/advisory/20260902_paper1_canary_v1a_science_repair.md", "sha256": "6f20b436c02fe4198ba0ffd77927fc34315af08a03a5ec4130b751e93e2ea1f5", "purpose": "Fresh pre-proposal science repair on fixed corpus, honest self-review, typed depth, matched controls, interventions, claims, and accounting."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/human_directive.txt", "sha256": "e4a6e0e5e89cc8486469eb7cd77d432a7ef0a8fc7a9c28cfa20b86097593e544", "purpose": "Verbatim owner constraints; not ratification."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/experiment_spec.md", "sha256": "6c59af5e63303dfdbbdaf033fa414a9f107a643a040925adbda69cf22cefca20", "purpose": "Exact scientific question, stages, arms, gates, accounting, and maximum claims."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/canary_config.json", "sha256": "5a55212c5e2211cc0e4b3ab6ca4bdcf3fae4c6145907a9d6f4e8dfb3c1081eef", "purpose": "Pinned worlds, models, decoding, schedules, adapter recipe, stages, and exact maxima."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/execution_contract.json", "sha256": "eabce6002497b8e3039679398878af96a205a65f9bf3ecc022740c0044da4166", "purpose": "Exact public projection, typed rows, reducer, self-check view, reader, corpus, isolation, interventions, authority, and accounting."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/dream_prompt.md", "sha256": "7126654b3f7068ff3a30e4e414ef2b761bfe61f498b1c62d65534ecd5515e6d7", "purpose": "Frozen local connection proposal prompt."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/self_check_prompt.md", "sha256": "fd53da39c511d93948796f81ccb4da208fc26aa5c0e7091c36d272b519490fd2", "purpose": "Frozen blind counterevidence-aware model-reflection prompt with no exact truth access."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think0_prompt.md", "sha256": "8ddab890636661a63a27d557c36c9c5d6ffed861f7a2f1dd9bcbf517bda07c8f", "purpose": "Frozen non-answer goal-return controller prompt."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think1_prompt.md", "sha256": "a4ab6ba7f112e842af870ed899fd56f83b0a34f697414b9e9f319c0a2d522bb1", "purpose": "Frozen fresh final traversal/composition prompt."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/memory_row.schema.json", "sha256": "27f99605a50d7035872d8ee3e2e29ea8508651dad0163d7b348bd9458bf5a335", "purpose": "Strict memory-row envelope; exact per-kind tuples are bound by execution_contract."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/dream_operation.schema.json", "sha256": "641c01d5434098bee4527061b2850ad53ba85df8067b08e9d5e9379bc688a672", "purpose": "DREAM phase PASS/CREATE grammar."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/self_check.schema.json", "sha256": "0ad01f520b9ba13a2882b95f0ce523b7e631d0947655192475614264a40a89fc", "purpose": "Blind reflection verdict, support basis, counterevidence, prediction, and confidence grammar."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think0_operation.schema.json", "sha256": "8c6202f4f408732f117bbba58cfe6a65d330656cb069625138bc1d15c8304d89", "purpose": "Phase-legal THINK0 query/reason/request/defer grammar."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think1_operation.schema.json", "sha256": "9b0915141b60f7242fb01c91f49547925ce0ad46dddf64e0e0572a7374e9faf1", "purpose": "Phase-legal THINK1 query/reason/commit/defer grammar."},
+    {"path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/scope_proposal.json", "sha256": "d13fb3ba240a5b3710f1c5e9979a85548b2ffa25bf7b6525eddadcb5095ac91a", "purpose": "Exact requested and forbidden authority."}
+  ],
+  "system_thesis_interpretation": "This is a narrow, text-first existence canary for the frozen prompted organism, not the Paper-1 headline. Each seed-5 twin must independently turn target-absent public episodes into immutable witnessed and model-reflected structural rows, compile the prospectively fixed own-return M1 corpus without truth or outcome selection, and have a new write-denied 32B thinker reconstruct a paired answer through bounded atomic reads. Only after that T-OWN gate may exactly two isolated 7B rank-64 MEMORY adapters be fitted to the same semantic/view/touch manifests and serve atomic recognition reads. The claimed cognitive mechanism remains model reflection over visible evidence, not an exact verifier, and the final computation (role resolution, causal routing, baseline/source arithmetic, recipe mapping, and commit) remains in THINK1.",
+  "graph_delta_interpretation": "The proposed graph repairs the rejected v1 in the right architectural places: allowlisted public projection and development headroom precede held-out exposure; target-blind M0 forks into literal zero, own-focus, and matched public-focus histories; OWN M1 is fixed before final-goal reveal and is the sole text/LoRA transport object; the compiler creates a content-addressed, backend-neutral semantic/view/touch manifest; and all twin/path/sham conditions are fresh model-facing runs rather than edited traces. The authority edge is monotone and terminal. The present v03r exporter is deliberately a repair target because it exposes dict(episode.payload), including ratios, and its probe has differently named endpoint/distractor fields; it cannot be reused as the model request surface. The principal remaining implementation boundary is that the generic row and operation schemas do not themselves encode the contract's kind arities, one-null query rule, status/verdict compatibility, canonical row IDs, provenance closure, or deterministic sham selection. Those must be tested as contract-level invariants rather than inferred from generic JSON-schema validity.",
+  "loop_delta_interpretation": "The recurrent loop has bounded, separately auditable state machines: 46 WAKE plus 22 balanced REACTIVATE plus 16 target-absent SLEEP opportunities per life; one CREATE becomes immutable PROVISIONAL and receives exactly one fresh blind self-check event; THINK0 reads only M0 through atomic queries and emits a non-evidentiary CAUSAL_JOIN focus or DEFER; M0 then receives no return call while OWN and DIST each receive 16. Each final arm starts afresh, is write-denied, and ends on COMMIT, DEFER, invalidity, or twelve operations. This preserves the target-absent/prompted-recurrence distinction and stops invalid outputs from becoming adaptive retries. The ledger arithmetic is coherent: 360 DEV calls, 632 held-out text calls (232 proposals + at most 232 reflections + 24 THINK0 + 96 core THINK1 + 48 path/sham), and 48 conditional 32B THINK1 calls total 1,040; adapter work is exactly two fits, 96 fixed cues, and at most 48 online reads. A correct implementation must record actual attempts including malformed and infrastructure-failed calls, not pad terminal thinker operations.",
+  "claim_delta_interpretation": "A passing text gate supports only one strongly scaffolded frozen prompted system having constructed and used life-bound connected semantic memory on the one seed-5 pair, conditional on both own answers, cited role/causal rows, donor-valid twin tokens, path loss, sham retention, and sealed visibility/accounting artifacts. Passing the optional L gate adds only immediate accessibility of those two fixed per-life corpora through registered atomic recognition reads; it is neither whole-corpus preservation nor durability. M0/DIST failure plus a newly supported focus-matching OWN row may add a narrowly disclosed return-routing result, but THINK0 was given the source/target frontier and is not autonomous dependency discovery. Any valid red identifies a stage-level failure surface with unresolved internal causes; invalid precondition or infrastructure outcomes are not scientific negatives. No result reaches reliability, scale, superiority, beyond-context value, learned LOOP policy, continual improvement, flywheel, replication, or headline status.",
+  "visibility_matrix_interpretation": "The matrix correctly makes final goal and private truth unavailable to DREAM, reflection, THINK0, RETURN_DREAM, compile/train, and THINK1; limits reflection to the row, its cited provenance, and truth-blind entity-matched counterevidence; makes focus retrieval-only and noncitable; hides raw life from final reasoning; and allows a donor backend only as a derived, donor-identity-hidden input in registered T-TWIN/L-TWIN runs. Actual enforcement must be over canonical provider-visible request bytes and reset state, not Python objects or prompts. The public projection test must therefore prove that ratios, latent bit, answer, proof/scorer/split/pair fields, raw IDs, aliases, sidecars, filenames, probe audit fields, arm/life/donor labels, caches, and query-echo metadata cannot reach a model or a durable artifact. The compiler/trainer must also exclude focus, provisional/contradicted/unresolved rows, final goals, traces, and results. Offline evaluation alone may consume truth and is write-denied, so it cannot select M1_OWN, alter requests, or schedule a retry.",
+  "acceptance_test_ids_addressed": [
+    "P1CA01_SCOPE_HASH_AND_AUTHORITY",
+    "P1CA02_PUBLIC_PROJECTION_MUTATION",
+    "P1CA03_ONTOLOGY_REFLECTION_AND_REDUCER",
+    "P1CA04_READER_CORPUS_AND_ISOLATION",
+    "P1CA05_WORLD_SHORTCUT_AND_DEV_GOLD",
+    "P1CA06_RECURRENT_BRANCH_AND_DISTRACTOR",
+    "P1CA07_HELDOUT_TEXT_AND_INTERVENTIONS",
+    "P1CA08_CONDITIONAL_FIXED_CORPUS_LORA",
+    "P1CA09_RUNTIME_AND_ACCOUNTING",
+    "P1CA10_FRESH_REVIEW_ADVOCATE_AND_CLAIMS"
+  ],
+  "acceptance_test_interpretation": "P1CA01 must bind every context hash, scope, revision, monotone token, maxima, partial seal, and human terminal. P1CA02 is the model-facing firewall: mutate all forbidden private and metadata channels across every kind/skin and require identical canonical requests except for permitted rendered-public changes. P1CA03 must implement the execution contract above the generic schemas: exact kind tuples/origins, CREATE-to-one-reflection lifecycle, immutable row/event append, citation and lineage checks, answer-shape rejection, and no-retry consumption. P1CA04 must exhaust legal single-null reads and forbidden scans, prove reproducible shared manifests/backend derivations, audit-exclusion invariance, and reset/cross-life denial except registered donor mounts. P1CA05 retains v03r's paired/local-window/edge-removal checks, adds every one of the 31 predictor thresholds, and establishes development-only frozen THINK1 headroom including exact GOLD_TWIN donor tokens. P1CA06 must prove literal M0 zero calls, equal OWN/DIST envelopes, public-only distractor selection, independent copy-on-write histories, and prospectively fixed M1_OWN. P1CA07 must execute, rather than offline-edit, all six fresh seed-5 text arms and score sealed donor/path/sham outputs. P1CA08 must reject Stage L unless T-OWN and review gates pass, bind both fits and the 96 presealed cue results to OWN M1, and audit atomic adapter mount/unmount. P1CA09 must reconcile tokenizer-exact inputs/outputs, no truncation, failed attempts, candidate scoring, fits, resets, and token authority to every stated maximum. P1CA10 must independently bind each transition and terminal artifact, preserve reviewer supremacy over the advocate, lint canary-only language, and stop at Rohin rather than create a successor authority.",
+  "assumptions": [
+    "All 20 context-file hashes and the frozen architecture-change hash were independently recomputed and matched the bound values.",
+    "The execution contract's per-kind row table, reader rule, reducer, and corpus rules are normative constraints in addition to the permissive envelope JSON schemas.",
+    "A fresh provider request means no reusable conversation, KV state, prefix cache, retrieval cache, adapter mount, workspace, or hidden model-visible metadata across operation boundaries, as the receipt contract says.",
+    "The model-facing projection is a successor implementation replacing the current v03r precheckpoint_export surface; the proposal does not authorize changing it yet.",
+    "The only legal semantic use of another life is the registered, donor-identity-hidden T-TWIN/L-TWIN backend substitution, and these are fresh final-thinker runs.",
+    "A valid T-OWN result can pass without return-credit conjuncts; return credit adds the M0/DIST/new supported focus-row conditions rather than changing corpus selection."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "SYS_A01_PROVENANCE_AND_DEPTH_ALGORITHM",
+      "question": "What exact canonical graph traversal defines a proposal's creation lineage, a distinct public lineage, parent depth, and the mapping from a SELF_CHECK verdict/support_basis to the reducer event, including cycles, duplicate semantic rows, and citations to dreamed parents?",
+      "impact": "The contract names lineage identity and independent corroboration, and the proposal claims typed depth and new supported focus rows, but no byte-level closure or event-mapping algorithm is bound. Different implementations could admit or label the same row differently without violating the generic schemas."
+    },
+    {
+      "ambiguity_id": "SYS_A02_CANONICAL_ROW_ID_AND_CONFLICT_RULE",
+      "question": "How are row IDs and status-event IDs canonically allocated per life/branch, and what exactly does corpus deduplication mean by 'conflicting keys remain separate' when semantic keys are hashes of full kind/field tuples?",
+      "impact": "Citation bytes, reproducible manifests, duplicate handling, and one-null CONFLICT outcomes can otherwise vary across conforming runs; raw M-number aliases are not a sufficient cross-life namespace contract."
+    },
+    {
+      "ambiguity_id": "SYS_A03_SHAM_SELECTION_TIEBREAK_AND_PROTECTION",
+      "question": "What deterministic candidate pool, ordering, tie-break, and protected-row rule selects the equal nonpath sham set after matching status, optional kind, and serialized token mass?",
+      "impact": "Without it, T-SHAM may remove a decisive alternate route or overlap a path descendant, producing implementation-selected retention/loss and weakening causal-use comparison."
+    },
+    {
+      "ambiguity_id": "SYS_A04_STAGE_GATE_EVIDENCE_ORDER",
+      "question": "Which artifacts of P1CA05 and P1CA09 are CPU-only preflight versus model-generated DEV evidence, and which exact pre-dispatch checker establishes the DEV_GOLD transition while all P1CA02--P1CA06/P1CA09 are labeled required_before gpu_run?",
+      "impact": "The intended authority state machine is clear, but a concrete evidence dependency table is needed to ensure no held-out or adapter request occurs while a prerequisite is only planned or cyclically defined."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "SYS_D01_RELEASABILITY_REQUIRES_CLOSURE_BYTES",
+      "statement": "The proposal should not be described as implementation-unique until provenance/depth closure, reflection-to-reducer mapping, canonical IDs/conflicts, and sham selection are frozen as executable contract bytes or exact fixture vectors.",
+      "rationale": "v1a resolves the v1's major architecture choices, but these remaining boundaries determine eligible corpus membership, the meaning of independent support/depth, reader returns, and intervention behavior. Generic JSON schemas deliberately permit alternatives and therefore cannot close them.",
+      "proposed_resolution": "Before ratification, add a hash-bound normative algorithm or canonical golden-vector registry for those four boundaries and make P1CA03/P1CA04/P1CA07 fail on every alternative; do not expand models, seeds, lifetime, or claims."
+    },
+    {
+      "disagreement_id": "SYS_D02_SELF_CHECK_SCHEMA_PERMITS_ILLEGAL_SEMANTIC_PAIRS",
+      "statement": "The SELF_CHECK schema alone permits unsupported combinations such as SUPPORTED with support_basis NONE or CONTRADICTED with INDEPENDENT_CORROBORATION, and does not require premise_ids to equal the CREATE citations.",
+      "rationale": "The prompt and prose imply stronger semantics, but schema-valid output could otherwise be reducer-admitted differently by different implementations, undermining the 'one blind reflection' invariant without introducing any truth checker.",
+      "proposed_resolution": "Bind a verdict/support-basis/citation compatibility table and test it in P1CA03: valid support must identify the exact creation premises plus permitted counterevidence, non-supported verdicts must use NONE, and invalid combinations consume the check without status repair."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin ratify no implementation or model scope until a cross-critique and releasable consensus dispose of SYS_A01--SYS_A04 and SYS_D01--SYS_D02 over exact successor bytes?",
+      "If the closure gaps are repaired, does Rohin ratify only the requested staged scope: CPU implementation first, then independently reviewed DEV_GOLD, HELDOUT_TEXT, and exactly two conditional rank-64 OWN-M1 fits, with every terminal returning to human review?",
+      "Does Rohin confirm that a result from this one-pair, explicitly frontier-scaffolded canary remains barred from Paper-1 headline, scale, reliability, learned-agency, flywheel, replication, promotion, spending, and external-action claims?"
+    ]
+  }
+}

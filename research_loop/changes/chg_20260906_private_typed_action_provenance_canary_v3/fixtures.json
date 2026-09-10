@@ -1,0 +1,49 @@
+{
+  "artifact_type": "private_typed_action_exact_fixture_catalog",
+  "schema_version": 1,
+  "fixture_encoding": "Every *_utf8 field denotes exactly its UTF-8 bytes; every *_hex field denotes exactly the decoded lowercase-base16 bytes. Later renderers compute relational SHA-256 fields from these exact inputs and the ratified manifests; no saved model prompt or runtime output exists.",
+  "golden": [
+    {
+      "fixture_id": "GOLDEN_ACCEPT_V3",
+      "branch": "ACCEPTED",
+      "child_request_utf8": "Apply exactly one private_step call if the structured channel contains one valid call.",
+      "raw_response_envelope_utf8": "{\"response\":{\"assistant_text\":\"I might say private_step({\\\"delta\\\":-4}) in prose; this is inert. 🧪\",\"tool_calls\":[{\"arguments_json\":\"{\\\"delta\\\":3}\",\"name\":\"private_step\"}]}}",
+      "expected_extraction": {"assistant_text_utf8":"I might say private_step({\"delta\":-4}) in prose; this is inert. 🧪","raw_tool_channel_utf8":"{\"delta\":3}"},
+      "expected_parse": {"first_error_or_null":null,"parse_decision":"ACCEPTED","typed_arguments":{"delta":3}},
+      "expected_sequence": ["FIXTURE_OPEN","INVOCATION_DECLARED","RESPONSE_DECLARED","PARSE_DECLARED","TRANSITION_DECLARED","FIXTURE_CLOSE"],
+      "expected_transition": {"after_state":5,"before_state":2,"score_denominator":8,"score_numerator":5}
+    },
+    {
+      "fixture_id": "GOLDEN_REJECT_V3",
+      "branch": "REJECTED",
+      "child_request_utf8": "Apply exactly one private_step call if the structured channel contains one valid call.",
+      "raw_response_envelope_utf8": "{\"response\":{\"assistant_text\":\"private_step({\\\"delta\\\":3}) is only prose.\",\"tool_calls\":[{\"arguments_json\":\"{\\\"delta\\\":\",\"name\":\"private_step\"}]}}",
+      "expected_extraction": {"assistant_text_utf8":"private_step({\"delta\":3}) is only prose.","raw_tool_channel_utf8":"{\"delta\":"},
+      "expected_parse": {"first_error_or_null":"E_ARGUMENT_JSON_SYNTAX","parse_decision":"REJECTED","typed_arguments":null},
+      "expected_sequence": ["FIXTURE_OPEN","INVOCATION_DECLARED","RESPONSE_DECLARED","PARSE_DECLARED","NONDISPATCH_DECLARED","FIXTURE_CLOSE"],
+      "expected_nondispatch": {"actor":"STRUCTURAL_PARSER","dispatch_permitted":false,"transition_present":false}
+    }
+  ],
+  "response_cases": [
+    {"case_id":"EMPTY","raw_response_envelope_utf8":"{\"response\":{\"assistant_text\":\"\",\"tool_calls\":[]}}","expected":"E_EMPTY_CHANNEL"},
+    {"case_id":"MALFORMED_OUTER","raw_response_envelope_utf8":"{\"response\":","expected":"E_RESPONSE_JSON_SYNTAX"},
+    {"case_id":"DUPLICATE_OUTER_KEY","raw_response_envelope_utf8":"{\"response\":{\"assistant_text\":\"a\",\"assistant_text\":\"b\",\"tool_calls\":[]}}","expected":"E_RESPONSE_JSON_DUPKEY"},
+    {"case_id":"DUPLICATE_CALL","raw_response_envelope_utf8":"{\"response\":{\"assistant_text\":\"\",\"tool_calls\":[{\"arguments_json\":\"{\\\"delta\\\":1}\",\"name\":\"private_step\"},{\"arguments_json\":\"{\\\"delta\\\":2}\",\"name\":\"private_step\"}]}}","expected":"E_DUPLICATE_CALL"},
+    {"case_id":"UNKNOWN_TOOL","raw_response_envelope_utf8":"{\"response\":{\"assistant_text\":\"\",\"tool_calls\":[{\"arguments_json\":\"{\\\"delta\\\":1}\",\"name\":\"other\"}]}}","expected":"E_UNKNOWN_TOOL"},
+    {"case_id":"POINTER_FAILURE","raw_response_envelope_utf8":"{\"not_response\":{}}","expected":"E_RESPONSE_POINTER"},
+    {"case_id":"INVALID_UTF8","raw_response_envelope_bytes_hex":"ff","expected":"E_RESPONSE_UTF8"},
+    {"case_id":"ARGUMENT_DUPLICATE_KEY","raw_response_envelope_utf8":"{\"response\":{\"assistant_text\":\"\",\"tool_calls\":[{\"arguments_json\":\"{\\\"delta\\\":1,\\\"delta\\\":2}\",\"name\":\"private_step\"}]}}","expected":"E_ARGUMENT_JSON_DUPKEY"}
+  ],
+  "mutation_recipes": [
+    {"mutation_id":"M01_PROSE_ONLY_ACTION","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"replace /response/assistant_text exactly with private_step({\"delta\":-4}) is still inert. while leaving /response/tool_calls byte-equivalent","expected":"same parse, authorization, transition, and score; only assistant-text and downstream record-chain hashes change"},
+    {"mutation_id":"M02_TOOL_CHANNEL_DELTA","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"replace the arguments_json content exactly from {\"delta\":3} to {\"delta\":2}; update only envelope and extraction bytes/hashes","expected":"E_RELATION unless parse, authorization, transition, score, chain, close, and receipt relations are all independently recomputed; a complete recomputation yields a novel valid generated case, never GOLDEN_ACCEPT_V3"},
+    {"mutation_id":"M03_WRONG_REJECTION_ACTOR","source_fixture_id":"GOLDEN_REJECT_V3","operation":"replace rejected event-4 /actor exactly from STRUCTURAL_PARSER to TRANSITION_ORACLE","expected":"E_RECORD_SCHEMA"},
+    {"mutation_id":"M04_REJECTED_TRANSITION_PRESENT","source_fixture_id":"GOLDEN_REJECT_V3","operation":"replace rejected event-4 /transition_present exactly from false to true","expected":"E_RECORD_SCHEMA"},
+    {"mutation_id":"M05_EXTRA_RECORD","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"insert an exact duplicate of event 3 immediately after event 3, assign it event_index=4, increment original events 4 and 5, and recompute all chain and close hashes","expected":"E_RECORD_RESOURCE"},
+    {"mutation_id":"M06_REORDER_RECORDS","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"swap the complete event-2 and event-3 objects while retaining their original event_index values and recompute chain and close hashes","expected":"E_RELATION"},
+    {"mutation_id":"M07_MANIFEST_SUBSTITUTION","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"replace event-2 /response_extractor_manifest_sha256 with 64 lowercase zero characters and recompute every downstream chain and close hash","expected":"E_RELATION"},
+    {"mutation_id":"M08_RECEIPT_STALE_CANARY","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"replace evidence-receipt /canary_bytes_sha256 with the SHA-256 of the fully rendered GOLDEN_REJECT_V3 bytes and change no other receipt field","expected":"ineligible"},
+    {"mutation_id":"M09_POST_COMMIT_MUTATION","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"after a valid evidence pair is hypothetically committed, replace the canary artifact's final LF byte 0a with bytes 0d0a","expected":"ineligible on mandatory reopen/rehash"},
+    {"mutation_id":"M10_SIMULTANEOUS_PRECEDENCE","source_fixture_id":"GOLDEN_ACCEPT_V3","operation":"apply each exact ordered conditions array in contract.json#/precedence_totality/simultaneous_cases to the source fixture, preserving every named invalidity","expected":"the exact registered expected error in that simultaneous-case object"}
+  ]
+}

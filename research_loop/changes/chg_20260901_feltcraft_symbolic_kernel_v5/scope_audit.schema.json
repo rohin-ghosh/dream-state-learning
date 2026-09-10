@@ -1,0 +1,469 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scope_audit.schema.json",
+  "$defs": {
+    "hash256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "git_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "utc_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]{1,6})?(?:Z|\\+00:00)$"
+    },
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*//)[^\\u0000]+$"
+    },
+    "location": {
+      "type": "string",
+      "pattern": "^(?!/)[^:\\u0000]+:[1-9][0-9]*:[0-9]+$"
+    },
+    "manifest_entry_base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind", "size_bytes", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/path"},
+        "kind": {"const": "regular_file"},
+        "size_bytes": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+        "sha256": {"$ref": "#/$defs/hash256"}
+      }
+    },
+    "exact_paths": {
+      "const": [
+        "feltcraft_symbolic_kernel/__init__.py",
+        "feltcraft_symbolic_kernel/kernel.py",
+        "feltcraft_symbolic_kernel/report.py",
+        "feltcraft_symbolic_kernel/run.py",
+        "feltcraft_symbolic_kernel/test_kernel.py"
+      ]
+    },
+    "exact_manifest": {
+      "type": "array",
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/manifest_entry_base"}, {"properties": {"path": {"const": "feltcraft_symbolic_kernel/__init__.py"}}}]},
+        {"allOf": [{"$ref": "#/$defs/manifest_entry_base"}, {"properties": {"path": {"const": "feltcraft_symbolic_kernel/kernel.py"}}}]},
+        {"allOf": [{"$ref": "#/$defs/manifest_entry_base"}, {"properties": {"path": {"const": "feltcraft_symbolic_kernel/report.py"}}}]},
+        {"allOf": [{"$ref": "#/$defs/manifest_entry_base"}, {"properties": {"path": {"const": "feltcraft_symbolic_kernel/run.py"}}}]},
+        {"allOf": [{"$ref": "#/$defs/manifest_entry_base"}, {"properties": {"path": {"const": "feltcraft_symbolic_kernel/test_kernel.py"}}}]}
+      ],
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "import_edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "location", "spelling", "kind", "resolved_target"],
+      "properties": {
+        "source_path": {"$ref": "#/$defs/path"},
+        "location": {"$ref": "#/$defs/location"},
+        "spelling": {"$ref": "#/$defs/nonempty"},
+        "kind": {"enum": ["local", "stdlib"]},
+        "resolved_target": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "location", "detail"],
+      "properties": {
+        "rule_id": {"enum": ["F01_IMPORT", "F02_DYNAMIC", "F03_INGRESS", "F04_CAPABILITY", "F05_REACHABILITY"]},
+        "location": {"$ref": "#/$defs/location"},
+        "detail": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "call_edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caller", "callee", "location"],
+      "properties": {
+        "caller": {"$ref": "#/$defs/nonempty"},
+        "callee": {"$ref": "#/$defs/nonempty"},
+        "location": {"$ref": "#/$defs/location"}
+      }
+    },
+    "filesystem_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "path_expression", "location"],
+      "properties": {
+        "operation": {"enum": ["read", "write", "metadata", "delete"]},
+        "path_expression": {"$ref": "#/$defs/nonempty"},
+        "location": {"$ref": "#/$defs/location"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding_equality",
+        "root_path_equality",
+        "manifest_digest_equality",
+        "diff_path_equality",
+        "import_closure",
+        "dependency_closure",
+        "cli_closure",
+        "capability_closure",
+        "audit_runtime_non_ingress",
+        "successor_scientific_non_ingress",
+        "request_binding",
+        "reviewer_freshness",
+        "reviewer_independence"
+      ],
+      "properties": {
+        "binding_equality": {"type": "boolean"},
+        "root_path_equality": {"type": "boolean"},
+        "manifest_digest_equality": {"type": "boolean"},
+        "diff_path_equality": {"type": "boolean"},
+        "import_closure": {"type": "boolean"},
+        "dependency_closure": {"type": "boolean"},
+        "cli_closure": {"type": "boolean"},
+        "capability_closure": {"type": "boolean"},
+        "audit_runtime_non_ingress": {"type": "boolean"},
+        "successor_scientific_non_ingress": {"type": "boolean"},
+        "request_binding": {"type": "boolean"},
+        "reviewer_freshness": {"type": "boolean"},
+        "reviewer_independence": {"type": "boolean"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "change_id",
+    "bindings",
+    "subject",
+    "closure",
+    "review",
+    "checks",
+    "passed"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "artifact_type": {"const": "feltcraft_external_scope_audit"},
+    "change_id": {"const": "chg_20260901_feltcraft_symbolic_kernel_v5"},
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "architecture_change_path",
+        "architecture_change_sha256",
+        "audit_contract_path",
+        "audit_contract_sha256",
+        "scope_audit_schema_path",
+        "scope_audit_schema_sha256"
+      ],
+      "properties": {
+        "architecture_change_path": {"const": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/change.json"},
+        "architecture_change_sha256": {"$ref": "#/$defs/hash256"},
+        "audit_contract_path": {"const": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/audit_contract.md"},
+        "audit_contract_sha256": {"$ref": "#/$defs/hash256"},
+        "scope_audit_schema_path": {"const": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_audit.schema.json"},
+        "scope_audit_schema_sha256": {"$ref": "#/$defs/hash256"}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository_root",
+        "audit_root",
+        "diff_base_commit",
+        "frozen_at",
+        "discovered_paths",
+        "changed_paths",
+        "manifest_encoding",
+        "manifest",
+        "manifest_root_sha256"
+      ],
+      "properties": {
+        "repository_root": {"const": "."},
+        "audit_root": {"const": "feltcraft_symbolic_kernel"},
+        "diff_base_commit": {"$ref": "#/$defs/git_commit"},
+        "frozen_at": {"$ref": "#/$defs/utc_timestamp"},
+        "discovered_paths": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/path"},
+          "uniqueItems": true
+        },
+        "changed_paths": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/path"},
+          "uniqueItems": true
+        },
+        "manifest_encoding": {"const": "feltcraft-scope-manifest-v1"},
+        "manifest": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/manifest_entry_base"},
+          "uniqueItems": true
+        },
+        "manifest_root_sha256": {"$ref": "#/$defs/hash256"}
+      }
+    },
+    "closure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm_id",
+        "python_ast_grammar",
+        "allowed_nonlocal_modules",
+        "import_edges",
+        "unresolved_imports",
+        "declared_dependencies",
+        "vendored_paths",
+        "native_extensions",
+        "cli_entrypoints",
+        "cli_arguments",
+        "cli_options",
+        "environment_inputs",
+        "configuration_inputs",
+        "plugin_hooks",
+        "stdin_read",
+        "filesystem_accesses",
+        "call_edges",
+        "unresolved_calls",
+        "forbidden_findings",
+        "audit_input_runtime_reachability",
+        "successor_scientific_reachability"
+      ],
+      "properties": {
+        "algorithm_id": {"const": "feltcraft_scope_rules_v1"},
+        "python_ast_grammar": {"const": "cpython-3.9-feature_version-3.9"},
+        "allowed_nonlocal_modules": {
+          "const": ["collections", "fractions", "itertools", "json", "pathlib", "sys"]
+        },
+        "import_edges": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/import_edge"},
+          "uniqueItems": true
+        },
+        "unresolved_imports": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "declared_dependencies": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "vendored_paths": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+        "native_extensions": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+        "cli_entrypoints": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "cli_arguments": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "cli_options": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "environment_inputs": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "configuration_inputs": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+        "plugin_hooks": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "stdin_read": {"type": "boolean"},
+        "filesystem_accesses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/filesystem_access"},
+          "uniqueItems": true
+        },
+        "call_edges": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/call_edge"},
+          "uniqueItems": true
+        },
+        "unresolved_calls": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "forbidden_findings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/finding"},
+          "uniqueItems": true
+        },
+        "audit_input_runtime_reachability": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true},
+        "successor_scientific_reachability": {"type": "array", "items": {"$ref": "#/$defs/nonempty"}, "uniqueItems": true}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "reviewer_identity", "reviewer_identity_evidence", "implementation_author_identities", "freshness", "independence"],
+      "properties": {
+        "request": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "request_id",
+            "change_id",
+            "architecture_change_sha256",
+            "audit_contract_sha256",
+            "scope_audit_schema_sha256",
+            "diff_base_commit",
+            "manifest_root_sha256",
+            "requester_identity",
+            "implementation_author_identities",
+            "frozen_at",
+            "created_at"
+          ],
+          "properties": {
+            "path": {"const": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_audit.request.json"},
+            "sha256": {"$ref": "#/$defs/hash256"},
+            "request_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+            "change_id": {"const": "chg_20260901_feltcraft_symbolic_kernel_v5"},
+            "architecture_change_sha256": {"$ref": "#/$defs/hash256"},
+            "audit_contract_sha256": {"$ref": "#/$defs/hash256"},
+            "scope_audit_schema_sha256": {"$ref": "#/$defs/hash256"},
+            "diff_base_commit": {"$ref": "#/$defs/git_commit"},
+            "manifest_root_sha256": {"$ref": "#/$defs/hash256"},
+            "requester_identity": {"$ref": "#/$defs/nonempty"},
+            "implementation_author_identities": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/nonempty"},
+              "uniqueItems": true
+            },
+            "frozen_at": {"$ref": "#/$defs/utc_timestamp"},
+            "created_at": {"$ref": "#/$defs/utc_timestamp"}
+          }
+        },
+        "reviewer_identity": {"$ref": "#/$defs/nonempty"},
+        "reviewer_identity_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "path", "sha256"],
+          "properties": {
+            "kind": {"enum": ["human_attestation", "process_session_record"]},
+            "path": {"$ref": "#/$defs/path"},
+            "sha256": {"$ref": "#/$defs/hash256"}
+          }
+        },
+        "implementation_author_identities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/nonempty"},
+          "uniqueItems": true
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fresh_context_id", "context_created_at", "review_started_at", "review_completed_at", "pre_request_conversation_context"],
+          "properties": {
+            "fresh_context_id": {"$ref": "#/$defs/nonempty"},
+            "context_created_at": {"$ref": "#/$defs/utc_timestamp"},
+            "review_started_at": {"$ref": "#/$defs/utc_timestamp"},
+            "review_completed_at": {"$ref": "#/$defs/utc_timestamp"},
+            "pre_request_conversation_context": {"type": "boolean"}
+          }
+        },
+        "independence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identity_distinct_from_implementers", "authored_subject_paths", "modified_subject_paths", "attestation"],
+          "properties": {
+            "identity_distinct_from_implementers": {"type": "boolean"},
+            "authored_subject_paths": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+            "modified_subject_paths": {"type": "array", "items": {"$ref": "#/$defs/path"}, "uniqueItems": true},
+            "attestation": {"$ref": "#/$defs/nonempty"}
+          }
+        }
+      }
+    },
+    "checks": {"$ref": "#/$defs/checks"},
+    "passed": {"type": "boolean"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"passed": {"const": true}}, "required": ["passed"]},
+      "then": {
+        "properties": {
+          "subject": {
+            "properties": {
+              "discovered_paths": {"$ref": "#/$defs/exact_paths"},
+              "changed_paths": {"$ref": "#/$defs/exact_paths"},
+              "manifest": {"$ref": "#/$defs/exact_manifest"}
+            }
+          },
+          "checks": {
+            "properties": {
+              "binding_equality": {"const": true},
+              "root_path_equality": {"const": true},
+              "manifest_digest_equality": {"const": true},
+              "diff_path_equality": {"const": true},
+              "import_closure": {"const": true},
+              "dependency_closure": {"const": true},
+              "cli_closure": {"const": true},
+              "capability_closure": {"const": true},
+              "audit_runtime_non_ingress": {"const": true},
+              "successor_scientific_non_ingress": {"const": true},
+              "request_binding": {"const": true},
+              "reviewer_freshness": {"const": true},
+              "reviewer_independence": {"const": true}
+            }
+          },
+          "closure": {
+            "properties": {
+              "unresolved_imports": {"maxItems": 0},
+              "declared_dependencies": {"maxItems": 0},
+              "vendored_paths": {"maxItems": 0},
+              "native_extensions": {"maxItems": 0},
+              "cli_entrypoints": {"const": ["python3 -I -m feltcraft_symbolic_kernel.run"]},
+              "cli_arguments": {"maxItems": 0},
+              "cli_options": {"maxItems": 0},
+              "environment_inputs": {"maxItems": 0},
+              "configuration_inputs": {"maxItems": 0},
+              "plugin_hooks": {"maxItems": 0},
+              "stdin_read": {"const": false},
+              "filesystem_accesses": {
+                "maxItems": 1,
+                "items": {
+                  "allOf": [
+                    {"$ref": "#/$defs/filesystem_access"},
+                    {"properties": {"operation": {"const": "write"}, "path_expression": {"const": "golden_report.json"}}}
+                  ]
+                }
+              },
+              "unresolved_calls": {"maxItems": 0},
+              "forbidden_findings": {"maxItems": 0},
+              "audit_input_runtime_reachability": {"maxItems": 0},
+              "successor_scientific_reachability": {"maxItems": 0}
+            }
+          },
+          "review": {
+            "properties": {
+              "freshness": {
+                "properties": {
+                  "pre_request_conversation_context": {"const": false}
+                }
+              },
+              "independence": {
+                "properties": {
+                  "identity_distinct_from_implementers": {"const": true},
+                  "authored_subject_paths": {"maxItems": 0},
+                  "modified_subject_paths": {"maxItems": 0}
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "checks": {
+            "anyOf": [
+              {"properties": {"binding_equality": {"const": false}}},
+              {"properties": {"root_path_equality": {"const": false}}},
+              {"properties": {"manifest_digest_equality": {"const": false}}},
+              {"properties": {"diff_path_equality": {"const": false}}},
+              {"properties": {"import_closure": {"const": false}}},
+              {"properties": {"dependency_closure": {"const": false}}},
+              {"properties": {"cli_closure": {"const": false}}},
+              {"properties": {"capability_closure": {"const": false}}},
+              {"properties": {"audit_runtime_non_ingress": {"const": false}}},
+              {"properties": {"successor_scientific_non_ingress": {"const": false}}},
+              {"properties": {"request_binding": {"const": false}}},
+              {"properties": {"reviewer_freshness": {"const": false}}},
+              {"properties": {"reviewer_independence": {"const": false}}}
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "paper1-v03r-canary-runtime-training-v1b.0",
+  "runtime_lock_layers": {
+    "ratified_protocol_lock": "these exact algorithms, repository revisions, permitted engines, ceilings, and failure semantics",
+    "resolved_executable_lock": "CPU-produced actual snapshot, tokenizer, chat-template, software, container, binary, numerical, and golden-token hashes reviewed and sealed before DEV",
+    "placeholder_at_dispatch": false,
+    "post_dev_change": "forbidden; changed byte requires a newly ratified protocol"
+  },
+  "required_executable_lock": {
+    "controller": {
+      "repository": "Qwen/Qwen2.5-32B-Instruct",
+      "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "required": ["sorted regular-file manifest", "file byte counts", "file sha256", "snapshot-root sha256", "tokenizer manifest", "chat-template sha256"]
+    },
+    "memory_base": {
+      "repository": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "required": ["sorted regular-file manifest", "file byte counts", "file sha256", "snapshot-root sha256", "tokenizer manifest", "chat-template sha256"]
+    },
+    "software": ["container digest or immutable environment manifest", "OS", "Python", "vLLM", "PyTorch", "Transformers", "Tokenizers", "PEFT", "Accelerate", "CUDA runtime", "CUDA driver", "GPU model"],
+    "engine": {
+      "inference_backend": "vLLM",
+      "training_backend": "HuggingFace Transformers plus PEFT",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "dtype": "bfloat16",
+      "quantization": null,
+      "prefix_caching": false,
+      "chunked_prefill": false,
+      "enforce_eager": true,
+      "request_truncation": false,
+      "fallback_backend": null
+    },
+    "file_resolution": "all regular snapshot files sorted by UTF-8 path bytes; reject symlinks, missing files, post-lock downloads, fallback snapshots, local revision suffixes, or hash drift"
+  },
+  "generation": {
+    "common": {"n": 1, "best_of": 1, "top_k": -1, "min_p": 0.0, "presence_penalty": 0.0, "frequency_penalty": 0.0, "repetition_penalty": 1.0, "use_beam_search": false, "logprobs": null, "prompt_logprobs": null, "custom_stop_strings": [], "include_stop_str_in_output": false, "skip_special_tokens": true, "spaces_between_special_tokens": true},
+    "DREAM": {"temperature": 0.2, "top_p": 0.95, "max_tokens": 256},
+    "SELF_CHECK": {"temperature": 0.0, "top_p": 1.0, "max_tokens": 128},
+    "THINK0": {"temperature": 0.0, "top_p": 1.0, "max_tokens": 128},
+    "THINK1": {"temperature": 0.0, "top_p": 1.0, "max_tokens": 192},
+    "seed": "operation_contract deterministic derivation",
+    "eos": "executable-lock tokenizer EOS only",
+    "input_overflow": "refuse before dispatch; never truncate",
+    "output_limit_reached": "INVALID_INFRASTRUCTURE; consumes dispatched operation; no retry"
+  },
+  "provider_receipt": {
+    "required": [
+      "protocol-lock reference", "executable-lock reference", "model snapshot root", "tokenizer snapshot root", "chat-template hash",
+      "JCS messages hash", "rendered request hash", "generation config hash", "input bytes hash", "output bytes hash",
+      "input token IDs hash", "output token IDs hash", "seed", "complete sampling parameters", "input token count", "output token count",
+      "fresh session ID", "turn zero", "no conversation state", "no KV state", "zero prefix-cache hits", "no active sequence before and after",
+      "reader manifest or none", "adapter hash or none", "stop reason", "parse result", "input_truncated=false", "output_truncated=false"
+    ],
+    "runtime_mismatch": "INVALID_INFRASTRUCTURE; no retry",
+    "pre_dispatch_lock_or_authority_mismatch": "non-dispatch receipt; no provider attempt"
+  },
+  "lora_training": {
+    "fits": "exactly one independent fit for each scored life",
+    "base_reload": "pristine memory-base snapshot in a fresh process for each fit",
+    "adapter_stacking": false,
+    "seed": 0,
+    "peft": {"task": "CAUSAL_LM", "rank": 64, "alpha": 128, "dropout": 0.05, "bias": "none", "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]},
+    "optimizer": {"name": "AdamW", "learning_rate": 0.0002, "betas": [0.9, 0.999], "epsilon": 1e-8, "weight_decay": 0.01, "fused": false, "foreach": false},
+    "schedule": {"name": "constant", "warmup_steps": 0},
+    "precision": "bfloat16",
+    "epochs": 4,
+    "batch_size": 32,
+    "gradient_accumulation": 1,
+    "max_gradient_norm": 1.0,
+    "packing": false,
+    "gradient_checkpointing": false,
+    "early_stopping": false,
+    "checkpoint_selection": "final state after epoch 4 only",
+    "padding": "right padding with EOS; pad labels -100",
+    "loss": "causal-LM loss on every nonpadding prompt and answer token",
+    "maximum_line_tokens": 96,
+    "truncation": false,
+    "training_order": "stable initial order by token length, semantic_hash, view_id, repetition_index; shuffle batch indices each epoch with NumPy PCG64 seed 0",
+    "per_view_repetitions_in_training_corpus": {"concept": 6, "relation": 24},
+    "per_view_exposures_over_four_epochs": {"concept": 24, "relation": 96},
+    "determinism": ["TF32 disabled", "deterministic-algorithm state recorded", "no fused or foreach Adam", "all library and accelerator versions sealed"],
+    "failure": "overflow, NaN, runtime drift, truncation, incomplete save, reused state, or stacked adapter is INVALID_INFRASTRUCTURE without retry",
+    "output": "safetensors plus adapter config and training manifest; adapter ID hashes all emitted files and manifest"
+  },
+  "recognition_scoring": {
+    "mechanism": "host-side teacher-forced candidate conditional log-likelihood; clean composer; adapter mounted only for scoring one atomic roster",
+    "cue_bytes": "ASCII('Q:') + RFC8785_JCS({fields:one-null-fields,kind:kind,view:view_id}) + ASCII('\\nA:')",
+    "completion_bytes": "ASCII(' ') + answer_atom UTF-8 + ASCII('\\n')",
+    "tokenization": "tokenize prompt once; candidate bytes with add_special_tokens=false; score candidate tokens autoregressively from the shared prompt token state",
+    "score": "float32 log_softmax per token, sum in float64, divide by candidate-token count",
+    "tie": "scores within 1e-7 of maximum return CONFLICT",
+    "record": ["prompt bytes and tokens", "candidate bytes and tokens", "per-token log probabilities", "mean score", "winner or conflict"],
+    "candidate_extraction_version": "paper1-v03r-canary-candidates-v1b.0",
+    "fidelity_gate": "each adapter independently at least 44 correct of its own 48 presealed cues; never pool",
+    "online_request_maximum": 48,
+    "mount_cycle": "mount exact fit-receipt adapter, score one roster, unmount and verify clean base before next 32B operation"
+  },
+  "artifact_identity": {
+    "no_self_digest": true,
+    "manifest_rule": "sorted leaf path,bytes,sha256 entries excluding manifest itself",
+    "adapter_receipt_rule": "mounted adapter hash must equal completed fit output hash",
+    "request_receipt_rule": "runtime configuration and runtime lock are hashed independently to avoid circularity"
+  }
+}

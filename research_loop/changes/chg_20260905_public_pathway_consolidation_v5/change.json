@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5",
+  "title": "Public Pathway Consolidation v5: standalone experience-pathway mechanism core",
+  "summary": "PPC5 replaces cumulative protocol inheritance with one hash-bound standalone causal core. It freezes THINK and ACT, trains only an isolated evidence-gated READ-LoRA, tests local absorption and every-edge recurrent path use, and separately intervenes on DREAM as immediate context reconciliation and as root selection for SLEEP. Learned DECIDE without final ACT targets is the immediate successor, followed by stream, schema, flywheel, and parenting stages.",
+  "system_thesis": "An Experience Model should turn its own public action-outcome history into a durable per-life parametric worldview that changes future cognition. PPC5 tests the first identifiable link: whether supported local experience can be written into an isolated LoRA, returned through a common recognition interface, adaptively traversed by a frozen recurrent thinker, and causally selected by same-model DREAM reconciliation. It does not yet claim learned thinking, continual improvement, compression, saturation, or parenting.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling deliberation, ratification, implementation, review, and execution contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict architecture-change schema."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash and authority validator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5/human_directive.txt",
+      "sha256": "20656937a16abc1f814b5cf04894baa76d0f542b35db20846f6d17a6316baf7c",
+      "purpose": "Exact user-direction excerpts and explicitly labeled agent interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5/protocol.md",
+      "sha256": "ed746dae23162d248c27c9576a2a2f64d359cba46b3021081654213763db74ae",
+      "purpose": "Complete standalone PPC5 normative protocol."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5/scope_proposal.json",
+      "sha256": "a6722bc29a09dea52d90ed0fffa9eb9104513baa422ea3b651e0477b3ac51927",
+      "purpose": "Exact proposal-only authority boundary, bound before deliberation."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "PUBLIC_LEDGER",
+        "before": "",
+        "after": "Append-only canonical predictions, operations, public observations, outcomes, hypothesis status events, and DREAM publications; dropping working context never deletes ledger events.",
+        "rationale": "The error lives in experience only if expectation and outcome remain durably paired."
+      },
+      {
+        "operation": "add",
+        "node_id": "FROZEN_THINK_ACT",
+        "before": "",
+        "after": "One byte-identical frozen base model recurrently emits one typed public operation and later action in every PPC5 mechanism condition.",
+        "rationale": "Freezing policy prevents direct action imitation from masquerading as experiential memory or connected path use."
+      },
+      {
+        "operation": "add",
+        "node_id": "DREAM_RECONCILIATION",
+        "before": "",
+        "after": "The same frozen model selects a reversible working set of public IDs and next focus; it creates no evidence, facts, answers, or loss-bearing prose.",
+        "rationale": "This makes learned-style context reconciliation observable without inventing a separate dreamer."
+      },
+      {
+        "operation": "add",
+        "node_id": "EVIDENCE_SLEEP_WRITER",
+        "before": "",
+        "after": "Only closed acquisition outcomes regenerate supported local READ rows; DREAM may nominate roots but never supplies targets.",
+        "rationale": "The write boundary must prevent imagination, probe results, and policy imitation from poisoning the adapter."
+      },
+      {
+        "operation": "add",
+        "node_id": "ISOLATED_READER_LORA",
+        "before": "",
+        "after": "One clean-base per-life LoRA forced-scores every candidate in an isolated provider process and returns one canonical FOUND or NOT_FOUND record.",
+        "rationale": "Isolation identifies parametric record transport without altering the thinker."
+      },
+      {
+        "operation": "add",
+        "node_id": "COMMON_READ_PROVIDER",
+        "before": "",
+        "after": "Text, graph, and reader-LoRA providers scan the same private presealed full candidate table and expose identical conditional response bytes.",
+        "rationale": "Substrate effects require a common interface and candidate workload."
+      },
+      {
+        "operation": "add",
+        "node_id": "PROSPECTIVE_PATH_WORLD",
+        "before": "",
+        "after": "Each held-out target has one presealed decisive two- or three-edge path with every-edge cuts, directional binding twins, and no budget-feasible alternative.",
+        "rationale": "Connected use must be caused by every local edge rather than ceremonial citations or endpoint recall."
+      },
+      {
+        "operation": "add",
+        "node_id": "TEACHABILITY_SUCCESSOR",
+        "before": "",
+        "after": "A separately ratified successor trains typed DECIDE rows while withholding final ACT targets and tests held-out action improvement.",
+        "rationale": "Learned thinking is central but becomes interpretable only after record transport and path use are identified."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "EXPERIENCE_TO_LEDGER",
+        "from": "FROZEN_THINK_ACT",
+        "to": "PUBLIC_LEDGER",
+        "before": "",
+        "after": "Every typed operation, prediction, action, and public outcome appends one canonical causal event.",
+        "rationale": "Self-sourced learning requires auditable public experience."
+      },
+      {
+        "operation": "add",
+        "edge_id": "LEDGER_TO_DREAM",
+        "from": "PUBLIC_LEDGER",
+        "to": "DREAM_RECONCILIATION",
+        "before": "",
+        "after": "A charged request supplies only causally prior visible records, ancestor closure, hypotheses, and surprises under a fixed allowance.",
+        "rationale": "Dreaming must reconcile the agent's actual past rather than hidden truth or future data."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DREAM_TO_CONSCIOUS_CONTEXT",
+        "from": "DREAM_RECONCILIATION",
+        "to": "FROZEN_THINK_ACT",
+        "before": "",
+        "after": "A public DREAM_STATE reversibly replaces only the active working-set view; withhold, mismatch, and retained-item cuts identify its immediate value.",
+        "rationale": "This directly tests DREAM as context management."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DREAM_TO_SLEEP_SELECTION",
+        "from": "DREAM_RECONCILIATION",
+        "to": "EVIDENCE_SLEEP_WRITER",
+        "before": "",
+        "after": "Authentic selected public root IDs, publish-cut matched roots, or cross-fitted mismatched roots determine the eligible set; writer support rules remain identical.",
+        "rationale": "This identifies whether dreaming chooses more useful experience to consolidate."
+      },
+      {
+        "operation": "add",
+        "edge_id": "LEDGER_TO_SLEEP_EVIDENCE",
+        "from": "PUBLIC_LEDGER",
+        "to": "EVIDENCE_SLEEP_WRITER",
+        "before": "",
+        "after": "The writer regenerates local relation targets only from closed public acquisition outcomes and opaque root-union equality.",
+        "rationale": "Evidence, not dream prose or confidence, admits training rows."
+      },
+      {
+        "operation": "add",
+        "edge_id": "SLEEP_TO_READER_LORA",
+        "from": "EVIDENCE_SLEEP_WRITER",
+        "to": "ISOLATED_READER_LORA",
+        "before": "",
+        "after": "A later hash-bound recipe trains one READ-only adapter from the clean base and atomically publishes it after validation.",
+        "rationale": "Sleep is the sole parametric writer."
+      },
+      {
+        "operation": "add",
+        "edge_id": "READER_TO_COMMON_RESPONSE",
+        "from": "ISOLATED_READER_LORA",
+        "to": "COMMON_READ_PROVIDER",
+        "before": "",
+        "after": "The isolated reader scans and scores the complete presealed candidate table, then emits only the canonical conditional record response.",
+        "rationale": "The thinker must receive records, not adapter-specific side channels."
+      },
+      {
+        "operation": "add",
+        "edge_id": "PROVIDER_TO_RECURRENT_THINK",
+        "from": "COMMON_READ_PROVIDER",
+        "to": "FROZEN_THINK_ACT",
+        "before": "",
+        "after": "Each typed return enters public state before the thinker selects its next query, hypothesis, prediction, or action.",
+        "rationale": "Hops occur explicitly in tokens through recurrent decompression."
+      },
+      {
+        "operation": "add",
+        "edge_id": "PATH_WORLD_TO_ACTION",
+        "from": "PROSPECTIVE_PATH_WORLD",
+        "to": "FROZEN_THINK_ACT",
+        "before": "",
+        "after": "Held-out action value depends on composing all presealed local edges; edge cuts and twins must remove or redirect the gain.",
+        "rationale": "Behavioral interventions, not claimed private reasoning, establish path use."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "PUBLIC_RECURRENT_THINK",
+        "before": "",
+        "after": "One frozen model call emits one canonical operation; the harness debits its logical budget, executes it, appends the public result, and reconstructs the next state.",
+        "trigger": "A WORK_ITEM is open and a logical call remains.",
+        "reads": [
+          "allowlisted public current-item state",
+          "canonical memory-provider returns",
+          "current active branch and public hypothesis statuses",
+          "fixed logical budgets and repeat table"
+        ],
+        "writes": [
+          "one canonical public operation event",
+          "one deterministic next-state event",
+          "optional same-item public action outcome"
+        ],
+        "stop_condition": "STOP, DEFER, exhausted budget, provider failure, integrity failure, or closed item.",
+        "rationale": "The public loop makes recurrence and adaptivity independently removable."
+      },
+      {
+        "operation": "add",
+        "loop_id": "REVERSIBLE_DREAM_CONTEXT",
+        "before": "",
+        "after": "One charged same-model call selects existing visible IDs and next focus, appends one DREAM_STATE, and reversibly replaces the active working set.",
+        "trigger": "A legal REQUEST_DREAM names visible active-branch records and dream budget remains.",
+        "reads": [
+          "requested visible records and ancestor closure",
+          "public hypotheses and unresolved surprises",
+          "most recent causally prior public events within allowance"
+        ],
+        "writes": [
+          "one append-only DREAM_STATE or ABSTAIN event",
+          "one reversible active-context selection"
+        ],
+        "stop_condition": "Publication, abstention, closure overflow, parse failure, provider failure, or dream-budget exhaustion.",
+        "rationale": "Dreaming is tested as a same-model context skill, not a separate intelligence."
+      },
+      {
+        "operation": "add",
+        "loop_id": "READ_ONLY_SLEEP_WRITE",
+        "before": "",
+        "after": "At one closed acquisition boundary, authentic or controlled root selection passes through the same evidence gate, canonical READ-row renderer, clean-base trainer, validator, and atomic publisher.",
+        "trigger": "The prospectively sealed acquisition boundary closes and exact eligible roots are available.",
+        "reads": [
+          "closed public acquisition events",
+          "opaque root-union partition",
+          "authentic or controlled selected root IDs",
+          "later hash-bound training recipe"
+        ],
+        "writes": [
+          "accepted and rejected root census",
+          "canonical READ-row manifest",
+          "validated isolated reader-LoRA artifact or FAILED_SLEEP"
+        ],
+        "stop_condition": "Atomic publication, no eligible rows, validation failure preserving the prior adapter, or integrity failure.",
+        "rationale": "The writer is simple enough to audit and cannot clone policy in PPC5."
+      },
+      {
+        "operation": "add",
+        "loop_id": "ADAPTIVE_PATH_DECOMPRESSION",
+        "before": "",
+        "after": "The frozen thinker queries one local relation, receives one record, chooses the next query from that return, cites the opened path, predicts, and acts.",
+        "trigger": "A held-out target requires a unique presealed local path and read budget remains.",
+        "reads": [
+          "public target state",
+          "one canonical local record at a time",
+          "opened path and active hypothesis"
+        ],
+        "writes": [
+          "ordered QUERY and FOLLOW events",
+          "one cited public hypothesis",
+          "one bound prediction and action"
+        ],
+        "stop_condition": "Valid action, STOP, DEFER, missing record, or exhausted budget.",
+        "rationale": "The adapter stores local associations while explicit recurrent inference composes them."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "PPC5_SUPPORTED_RECORD_TRANSPORT",
+        "before": "",
+        "after": "A per-life READ-LoRA transported supported local public experience through an isolated full-scan recognition interface.",
+        "evidence_needed": "Life-level fidelity, false-memory, and abstention under exact, reverse, paraphrase, and partial cues; adapter-off, wrong-life, shuffled-root, and candidate-only controls.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_CONNECTED_PATH_USE",
+        "before": "",
+        "after": "A frozen recurrent thinker adaptively used every registered local record in a presealed decisive path to improve held-out action.",
+        "evidence_needed": "Ordered public opens/citations, every-edge cuts, directional binding twins, no replacement paths, open-loop and one-shot-query removals, and all conjunctive bypass baselines.",
+        "headline_eligible": true
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_DREAM_CONTEXT_VALUE",
+        "before": "",
+        "after": "Authentic same-model DREAM publication preserved more decision-relevant conscious state and improved subsequent work than equal-compute withhold and mismatched contexts.",
+        "evidence_needed": "Prospectively randomized context-pressure points, equal budgets, exact retained-state outcomes, downstream action value, contradiction recovery, and retained-item leave-one-out cuts.",
+        "headline_eligible": true
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_DREAM_SLEEP_SELECTION_VALUE",
+        "before": "",
+        "after": "Authentic DREAM-selected roots produced more useful evidence-gated READ writes and later action than matched deterministic and cross-fitted root selections.",
+        "evidence_needed": "Same-lineage DREAM call/output in every branch, publish cut, matched mismatch, intention-to-treat root census, equal row/training budgets, absorption, and later path/action value.",
+        "headline_eligible": true
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_FINITE_MECHANISM_ONLY",
+        "before": "",
+        "after": "A fully positive PPC5 establishes one finite experience-to-DREAM-to-SLEEP-to-reader-to-action mechanism cycle, not learned THINK, continual improvement, compression, saturation, parenting, or population learning.",
+        "evidence_needed": "All registered PPC5 contrasts pass with exact status-specific audit and no claim exceeds the standalone protocol.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "candidate_table_and_order",
+      "closed_public_acquisition_history",
+      "condition_trainer_adapter_identity",
+      "dream_publication",
+      "hidden_truth_target_membership",
+      "operational_metadata",
+      "private_item_role",
+      "probe_or_future_outcomes",
+      "public_same_item_state_and_events",
+      "root_partition"
+    ],
+    "stages": [
+      "THINK",
+      "DREAM",
+      "SLEEP",
+      "READ_PROVIDER",
+      "AUDIT"
+    ],
+    "cells": [
+      {"information_id":"candidate_table_and_order","stage_id":"THINK","visibility":"hidden","reason":"THINK receives only canonical provider responses."},
+      {"information_id":"candidate_table_and_order","stage_id":"DREAM","visibility":"forbidden","reason":"Candidate alternatives cannot guide context selection."},
+      {"information_id":"candidate_table_and_order","stage_id":"SLEEP","visibility":"derived_only","reason":"The fixed table hash may enter READ rows; correctness annotations do not exist."},
+      {"information_id":"candidate_table_and_order","stage_id":"READ_PROVIDER","visibility":"visible","reason":"Every provider must scan the identical complete private table."},
+      {"information_id":"candidate_table_and_order","stage_id":"AUDIT","visibility":"visible","reason":"Audit checks bytes, order, scans, and candidate-only ceiling."},
+
+      {"information_id":"closed_public_acquisition_history","stage_id":"THINK","visibility":"derived_only","reason":"Only explicitly recalled canonical records become visible."},
+      {"information_id":"closed_public_acquisition_history","stage_id":"DREAM","visibility":"derived_only","reason":"Only eligible visible causal slices and ancestor closure enter DREAM."},
+      {"information_id":"closed_public_acquisition_history","stage_id":"SLEEP","visibility":"visible","reason":"The evidence gate regenerates READ rows from closed acquisition events."},
+      {"information_id":"closed_public_acquisition_history","stage_id":"READ_PROVIDER","visibility":"derived_only","reason":"Only trained parameters or external candidate records encode prior acquisition."},
+      {"information_id":"closed_public_acquisition_history","stage_id":"AUDIT","visibility":"visible","reason":"Audit follows complete source provenance."},
+
+      {"information_id":"condition_trainer_adapter_identity","stage_id":"THINK","visibility":"forbidden","reason":"Condition identity cannot enter prompts, IDs, errors, clocks, or filenames."},
+      {"information_id":"condition_trainer_adapter_identity","stage_id":"DREAM","visibility":"forbidden","reason":"DREAM receives no treatment identity."},
+      {"information_id":"condition_trainer_adapter_identity","stage_id":"SLEEP","visibility":"visible","reason":"Offline execution requires the frozen condition and artifact manifest."},
+      {"information_id":"condition_trainer_adapter_identity","stage_id":"READ_PROVIDER","visibility":"hidden","reason":"Provider internals know their artifact but emit no provider label."},
+      {"information_id":"condition_trainer_adapter_identity","stage_id":"AUDIT","visibility":"visible","reason":"Audit verifies assignments, training, publication, and mounts."},
+
+      {"information_id":"dream_publication","stage_id":"THINK","visibility":"visible","reason":"An installed DREAM_STATE is public working context."},
+      {"information_id":"dream_publication","stage_id":"DREAM","visibility":"visible","reason":"DREAM emits the canonical publication or abstention."},
+      {"information_id":"dream_publication","stage_id":"SLEEP","visibility":"derived_only","reason":"Only selected public root IDs may affect eligibility; prose never enters."},
+      {"information_id":"dream_publication","stage_id":"READ_PROVIDER","visibility":"hidden","reason":"Only admitted training effects may reach the provider."},
+      {"information_id":"dream_publication","stage_id":"AUDIT","visibility":"visible","reason":"Audit checks publication, cuts, mismatches, and downstream lineage."},
+
+      {"information_id":"hidden_truth_target_membership","stage_id":"THINK","visibility":"forbidden","reason":"Hidden truth and target membership would leak answers."},
+      {"information_id":"hidden_truth_target_membership","stage_id":"DREAM","visibility":"forbidden","reason":"DREAM must remain target-blind and non-evidentiary."},
+      {"information_id":"hidden_truth_target_membership","stage_id":"SLEEP","visibility":"forbidden","reason":"Writer admission uses only public evidence and opaque equality."},
+      {"information_id":"hidden_truth_target_membership","stage_id":"READ_PROVIDER","visibility":"forbidden","reason":"Candidate domains contain no correctness or target labels."},
+      {"information_id":"hidden_truth_target_membership","stage_id":"AUDIT","visibility":"visible","reason":"Audit needs sealed truth to score and test leakage."},
+
+      {"information_id":"operational_metadata","stage_id":"THINK","visibility":"hidden","reason":"Only registered logical budgets and normalized errors are visible."},
+      {"information_id":"operational_metadata","stage_id":"DREAM","visibility":"hidden","reason":"Wall time, cache, batch, process, and provider state remain absent."},
+      {"information_id":"operational_metadata","stage_id":"SLEEP","visibility":"hidden","reason":"Training schedule is manifest-bound and never a target feature."},
+      {"information_id":"operational_metadata","stage_id":"READ_PROVIDER","visibility":"hidden","reason":"Provider timing and cache state never enter response bytes."},
+      {"information_id":"operational_metadata","stage_id":"AUDIT","visibility":"visible","reason":"Audit measures all operational side channels and faults."},
+
+      {"information_id":"private_item_role","stage_id":"THINK","visibility":"forbidden","reason":"Every model-visible role is WORK_ITEM."},
+      {"information_id":"private_item_role","stage_id":"DREAM","visibility":"forbidden","reason":"DREAM cannot infer writer eligibility or probe status."},
+      {"information_id":"private_item_role","stage_id":"SLEEP","visibility":"visible","reason":"The writer must admit only closed ACQUIRE roots."},
+      {"information_id":"private_item_role","stage_id":"READ_PROVIDER","visibility":"forbidden","reason":"Provider requests and responses are role-neutral."},
+      {"information_id":"private_item_role","stage_id":"AUDIT","visibility":"visible","reason":"Audit verifies immutable roles and quarantine."},
+
+      {"information_id":"probe_or_future_outcomes","stage_id":"THINK","visibility":"forbidden","reason":"Only current same-item public outcomes may recur."},
+      {"information_id":"probe_or_future_outcomes","stage_id":"DREAM","visibility":"forbidden","reason":"No future suffix or probe result can shape a dream."},
+      {"information_id":"probe_or_future_outcomes","stage_id":"SLEEP","visibility":"forbidden","reason":"Probe and future events are permanently writer-ineligible."},
+      {"information_id":"probe_or_future_outcomes","stage_id":"READ_PROVIDER","visibility":"forbidden","reason":"No target-derived candidate or adapter byte is allowed."},
+      {"information_id":"probe_or_future_outcomes","stage_id":"AUDIT","visibility":"visible","reason":"Audit opens the quarantine only after execution."},
+
+      {"information_id":"public_same_item_state_and_events","stage_id":"THINK","visibility":"visible","reason":"Current world state and prior public transition drive cognition."},
+      {"information_id":"public_same_item_state_and_events","stage_id":"DREAM","visibility":"derived_only","reason":"Only the allowed causal slice and closure enter reconciliation."},
+      {"information_id":"public_same_item_state_and_events","stage_id":"SLEEP","visibility":"visible","reason":"Closed acquisition events form writer evidence."},
+      {"information_id":"public_same_item_state_and_events","stage_id":"READ_PROVIDER","visibility":"derived_only","reason":"The canonical query exposes only subject and relation IDs."},
+      {"information_id":"public_same_item_state_and_events","stage_id":"AUDIT","visibility":"visible","reason":"Audit reconstructs every state transition."},
+
+      {"information_id":"root_partition","stage_id":"THINK","visibility":"forbidden","reason":"Opaque provenance equality cannot steer cognition."},
+      {"information_id":"root_partition","stage_id":"DREAM","visibility":"forbidden","reason":"DREAM selects visible IDs without canonical-root knowledge."},
+      {"information_id":"root_partition","stage_id":"SLEEP","visibility":"visible","reason":"Writer uses only opaque equality and union for deduplication."},
+      {"information_id":"root_partition","stage_id":"READ_PROVIDER","visibility":"derived_only","reason":"Only an opaque union hash may appear in a canonical response."},
+      {"information_id":"root_partition","stage_id":"AUDIT","visibility":"visible","reason":"Audit verifies splits, support, and deduplication."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id":"PPC5_T01_STANDALONE_SCOPE_HASH_AUTHORITY","kind":"invariant","setup":"Recompute every PPC5 normative context hash including scope_proposal.json; add an optional file or mutate one bound byte.","expected":"Only the exact standalone bound set validates; PPC1-PPC4 cannot supply a default or permission and the scope proposal is exact authority input.","falsifies":"Standalone interpretation or exact ratification authority.","evidence_artifact":"ppc5_standalone_scope_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T02_PRIVATE_ROLE_AND_PROBE_QUARANTINE","kind":"invariant","setup":"Exercise ACQUIRE, PROBE, STATIC, illegal transitions, close events, later recall, writer admission, and prompt-byte comparisons.","expected":"Model-visible bytes are role-identical; only closed ACQUIRE roots write and PROBE events remain sterile forever.","falsifies":"Evaluation blindness or acquisition/probe separation.","evidence_artifact":"ppc5_role_quarantine_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T03_VISIBILITY_NONINTERFERENCE_PRODUCT","kind":"invariant","setup":"Independently mutate every forbidden or hidden information item at every stage while permitted public inputs stay fixed.","expected":"All affected prompts, selections, rows, provider responses, and next states remain byte-identical at their declared boundary.","falsifies":"The formal least-privilege visibility contract.","evidence_artifact":"ppc5_visibility_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T04_OPERATION_AND_STATE_MACHINE_ORACLES","kind":"unit","setup":"Cover every operation, field, enum, malformed object, budget debit, repeat, provider failure, branch transition, hypothesis transition, valid diamond, and directed cycle.","expected":"Exactly one specified parse/state result occurs; no invisible retry or unspecified transition exists.","falsifies":"Executable public recurrent cognition.","evidence_artifact":"ppc5_operation_state_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY","kind":"unit","setup":"Generate legal/illegal publications, abstention, overflow, stale IDs, closed branches, new semantic claims, later contradiction, recall, and working-set replacement.","expected":"DREAM only selects visible existing IDs/focus, appends history, never changes evidence, and every dropped item remains ledger-recallable.","falsifies":"Learned-style reversible context management without semantic laundering.","evidence_artifact":"ppc5_dream_transition_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T06_AGENDA_BRANCH_PROSE_LAUNDERING_CROSSPRODUCT","kind":"invariant","setup":"Cross free-form dream prose, agendas, imagined outcomes, abandoned/contradicted/superseded branches, descendants, probe roots, future suffixes, and scorer labels through every writer entry path.","expected":"Every forbidden combination receives zero loss and appears in the rejected intention-to-treat census; descendants never support ancestors.","falsifies":"The evidence-only writer boundary.","evidence_artifact":"ppc5_laundering_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T07_READ_ONLY_SLEEP_AND_ATOMIC_PUBLICATION","kind":"unit","setup":"Render eligible and ineligible roots; attempt DECIDE, ACT, DREAM, rationale, partial, non-finite, hash-mismatched, and failed publications.","expected":"Only exact READ output tokens train; valid artifacts publish atomically in the isolated reader process and every failure preserves the prior adapter.","falsifies":"PPC5 policy isolation or safe SLEEP lifecycle.","evidence_artifact":"ppc5_sleep_read_only_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T08_PROSPECTIVE_PATH_EVERY_EDGE_ORACLES","kind":"invariant","setup":"Construct unique length-2/3 paths, search all budget-feasible alternatives, and apply every-edge deletion, every-edge binding twin, non-path sham cut, target-byte mutation, and path shuffle.","expected":"Targets remain source-disjoint; authentic paths are unique; each decisive cut removes and each twin redirects the registered solution; shams preserve it.","falsifies":"Constructibility of whole-path causal attribution.","evidence_artifact":"ppc5_path_oracle_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT","kind":"unit","setup":"Pass identical tables through text, graph, reader-LoRA, adapter-off, and candidate-only providers; permute provider labels and perturb early-match position.","expected":"Every provider examines all N rows in fixed order; request, candidate, tokenizer, work, and conditional response bytes match; no early exit or support label exists.","falsifies":"Common recognition interface or candidate-only ceiling.","evidence_artifact":"ppc5_provider_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY","kind":"invariant","setup":"Inspect process mounts, prompt hashes, policy weights, decoding, and emitted public state across all D1A/B memory substrates and direct-policy comparator cells.","expected":"Reader-LoRA never mounts in THINK/DREAM/ACT; the core thinker is byte-identical and frozen; policy LoRAs remain separately labeled comparators.","falsifies":"Record-transport or connected-path identification.","evidence_artifact":"ppc5_reader_policy_isolation_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T11_ADAPTIVITY_AND_RECURRENCE_SCRIPTED_SENSITIVITY","kind":"ablation","setup":"Use fixtures solvable only by adaptive query, only by recurrent post-return thought, by both, or by neither under FULL, ONE_SHOT_QUERY, and OPEN_LOOP contracts.","expected":"Each ablation removes exactly its named mechanism and scripted outcomes move only where predicted.","falsifies":"Sensitivity and separability of adaptive retrieval and recurrent computation.","evidence_artifact":"ppc5_recurrence_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES","kind":"ablation","setup":"Clone eligible pressure states into PUBLISH, WITHHOLD, MISMATCH, and each-retained-item-cut branches with equal calls, tokens, records, IDs, and logical budgets.","expected":"Only authentic content identity and registered item removal differ; scripted retention, progress, contradiction recovery, and action metrics detect the intended effects.","falsifies":"Constructibility of the immediate DREAM-context estimand.","evidence_artifact":"ppc5_dream_context_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES","kind":"ablation","setup":"Clone one lineage into DREAM_TO_SLEEP, PUBLISH_CUT matched deterministic selection, and PUBLISH_MISMATCH cross-fitted selection; run the same gate and row renderer.","expected":"Dream calls and budgets match; only root identity differs; support remains evidence-derived; selection, rejection, row, adapter, read, path, and action lineage is immutable.","falsifies":"Constructibility of DREAM-guided write-selection causality.","evidence_artifact":"ppc5_dream_sleep_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT","kind":"baseline","setup":"Serialize every baseline interface, positive target-token exposure, active parameter bytes, optimizer updates, retained bytes, inference budgets, and full secondary cost ledger.","expected":"All trained comparators meet exact dose/parameter rules, all active substrates meet the primary resource view, and no favorable accounting view can be chosen after results.","falsifies":"Baseline strength, dose fairness, or LoRA-specific promotion.","evidence_artifact":"ppc5_baseline_resource_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T15_TWO_LIFE_COLD_RESET_NONINTERFERENCE","kind":"invariant","setup":"Run two scripted lives while mutating every life-1 base process, adapter, corpus, ledger, workspace, table, cache, RNG, ID, environment, filename, and output artifact.","expected":"No life-1 mutation changes any life-2 input byte or deterministic fixture result.","falsifies":"Independent-life sampling or reset integrity.","evidence_artifact":"ppc5_reset_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA","kind":"unit","setup":"Validate complete contrast-to-metric-direction-margin-threshold-family-unit-missingness-promotion mappings plus pilot hash/disjointness, power, life count, checkpoint, extension, recipe, runtime, and authority fields.","expected":"Every scientific contrast is exhaustive and exact before model execution; any missing or changed field requires a new reviewed run lock.","falsifies":"Future numeric adequacy or exact execution authority.","evidence_artifact":"ppc5_run_lock_schema_receipt.json","required_before":"implementation"},
+    {"test_id":"PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL","kind":"end_to_end","setup":"Two independently authored no-import sealers freeze exact roles, splits, IDs, paths, twins, cuts, shuffles, candidate tables, dream branches, rows, resource manifests, and scripted closures.","expected":"Both outputs agree exactly without invoking a model or behavioral ceiling.","falsifies":"Independent static instrument construction.","evidence_artifact":"ppc5_static_dual_seal_receipt.json","required_before":"gpu_run"},
+    {"test_id":"PPC5_T18_RUNTIME_PERTURBATION_FUTURE_EXECUTION","kind":"invariant","setup":"Under a later run lock perturb actual cache, batching, latency, provider faults, candidate work, timeout, process state, publication, and condition survival.","expected":"Model-visible bytes and logical budgets remain invariant; differential missingness is detected and invalidates affected comparisons.","falsifies":"Operational side-channel resistance in real execution.","evidence_artifact":"ppc5_runtime_perturbation_receipt.json","required_before":"scientific_claim"},
+    {"test_id":"PPC5_T19_FRESH_ARCHITECTURE_DELIBERATION","kind":"independent_review","setup":"Two fresh-context interpretations, adversarial cross-critique, adjudicated disposition of every concern/test, and an exact human decision bind the standalone PPC5 bytes and scope.","expected":"Implementation remains forbidden unless consensus recommends exact bytes and the human exactly ratifies the proposal-only scope.","falsifies":"Architecture consensus or current implementation authority.","evidence_artifact":"ppc5_architecture_deliberation_bundle.json","required_before":"implementation"},
+    {"test_id":"PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY","kind":"independent_review","setup":"After ratified implementation, fresh reviewer and advocate bind all static receipts, exact run lock, model/trainer/prompt hashes, canary, resources, stops, and claim map.","expected":"No PPC5 artifact self-authorizes model work; only a later exact human run ratification releases canary or scientific execution.","falsifies":"Constructibility, proportionality, or GPU execution authority.","evidence_artifact":"ppc5_pre_gpu_review_bundle.json","required_before":"gpu_run"},
+    {"test_id":"PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT","kind":"independent_review","setup":"Fresh review recomputes actual roles, bytes, roots, dream branches, rows, adapters, providers, paths, baselines, resources, statistics, resets, missingness, and statuses.","expected":"Only passing literal claims release; invalid execution never becomes a scientific null and valid null/adverse evidence remains durable.","falsifies":"Every released PPC5 scientific claim.","evidence_artifact":"ppc5_postrun_audit.json","required_before":"scientific_claim"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "After fresh PPC5 interpretation, cross-critique, and consensus, do you ratify the exact standalone PPC5 architecture and scope proposal, authorizing only isolated contracts, deterministic CPU/no-model fixtures, and exactly two independent static no-model sealers while keeping every model, LoRA, GPU, parenting, and scientific action behind a later exact run-lock decision?",
+    "forbidden_before_approval": [
+      "Any implementation or sealer execution before exact PPC5 architecture ratification",
+      "Any model call, canary, adapter training, behavioral treatment, or GPU use before a later exact run-lock ratification",
+      "Any learned-THINK, long-life, compression, saturation, parenting, population, or full-flywheel claim from PPC5",
+      "Any positive row derived from DREAM prose, unsupported cognition, hidden truth, PROBE outcomes, future suffixes, scorer output, or target-derived material"
+    ]
+  }
+}

@@ -1,0 +1,934 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "dual extractor receipts, byte-offset ledger inventory, fixture and mutation logs",
+      "expected": "Both isolated extractors produce identical closure, assignments, exclusions, and terminal boundary for every life.",
+      "falsifies": "Any claim that the corpus has closed-world provenance.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "AT1_source_join_closure: run forward-stream and offset-constraint extractors against the immutable snapshot and declarative fixtures.",
+      "test_id": "AT1_source_join_closure"
+    },
+    {
+      "evidence_artifact": "per-row target-aligned projection and full-mask hashes",
+      "expected": "C1/C2 target IDs, labels, EOS, row order, target-token totals, and update ordinals match exactly; prefixes are masked.",
+      "falsifies": "The registered target-token/update-matched package comparison.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT2_target_matching: execute only after A1 tokenizer ratification.",
+      "test_id": "AT2_target_matching"
+    },
+    {
+      "evidence_artifact": "two complete sealer manifests, contamination manifest, collision/alias receipt, published-panel hash",
+      "expected": "Independent sealers agree on complete enumeration, exclusions, content classes, and salted ordered 64-target panel before scores or model calls.",
+      "falsifies": "Content-disjoint sealed-panel status.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT3_content_disjoint_seal: execute only at its ordered A2 node.",
+      "test_id": "AT3_content_disjoint_seal"
+    },
+    {
+      "evidence_artifact": "duplicate trainer tensors/losses and C0 serving receipts",
+      "expected": "Required duplicate C1/C2 training and C0 serving are bit-identical; zero-delta mount equals base path.",
+      "falsifies": "Reproducible execution of the finite assay path.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "AT4_reproducibility_canaries: run only after seal publication and before A3 review.",
+      "test_id": "AT4_reproducibility_canaries"
+    },
+    {
+      "evidence_artifact": "per-life P/A/Q/M table and fixed contrast computation",
+      "expected": "Prefix-package state is true only under every R16 C2-minus-C1 threshold.",
+      "falsifies": "A claimed neutral-chat-prefix-package advantage.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "AT5_prefix_package_contrast: evaluate only A3-ratified cells on the sealed panel.",
+      "test_id": "AT5_prefix_package_contrast"
+    },
+    {
+      "evidence_artifact": "per-life C2-versus-C0 P/A/Q/M table and fixed contrast computation",
+      "expected": "Selected-package state is true only under every R16 C2-minus-C0 threshold.",
+      "falsifies": "A claimed useful selected-continuation package effect.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "AT6_selected_corpus_floor: use common deterministic C0 and separately trained source-life C2 adapters.",
+      "test_id": "AT6_selected_corpus_floor"
+    },
+    {
+      "evidence_artifact": "forbidden-prose scanner result and fixed report template hash",
+      "expected": "Only registered descriptive package statements can be emitted; all organism, mechanism, novelty, scale, and robustness language is rejected.",
+      "falsifies": "Any broader scientific attribution.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "AT7_claim_ceiling: scan reports, diagnostics, and templates.",
+      "test_id": "AT7_claim_ceiling"
+    },
+    {
+      "evidence_artifact": "bootstrap/renderer scan, historical-payload shares, generated copying histogram",
+      "expected": "No concrete source payload or action name reaches target bootstrap/renderer; copying diagnostics remain reporting-only.",
+      "falsifies": "Absence of direct source-action prompt leakage.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT8_bootstrap_visibility_and_copying: scan template before sealing and exact rendered policy inputs after sealing.",
+      "test_id": "AT8_bootstrap_visibility_and_copying"
+    },
+    {
+      "evidence_artifact": "machine-readable visibility-policy verdict and taint-flow receipt",
+      "expected": "Source selection oracles cannot enter target inputs/labels; target values cannot affect design, extraction, corpus, or training.",
+      "falsifies": "The source-oracle/target-evaluation causal partition.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT9_visibility_oracle_partition: validate every matrix cell and declared information flow.",
+      "test_id": "AT9_visibility_oracle_partition"
+    },
+    {
+      "evidence_artifact": "rendered/message/template/input-ID/engine-ID/decode/parser/adapter receipt per request",
+      "expected": "Engine-consumed IDs equal sealed IDs and decoded/parser bytes equal the frozen serving rule without fallback or retry.",
+      "falsifies": "That the intended prompt, adapter, and parser path was served.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "AT10_prompt_serving_roundtrip: exercise C0 and mounted-adapter canaries and all scored requests.",
+      "test_id": "AT10_prompt_serving_roundtrip"
+    },
+    {
+      "evidence_artifact": "authority-DAG validator verdict",
+      "expected": "Only A0\u2192A1\u2192A2\u2192A3\u2192REPORT is reachable; tokenizer, sealing/canaries, and remaining execution have their designated authority only.",
+      "falsifies": "Acyclic staged human authority.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT11_authority_stage_acyclicity: A0 may author the validator; validate it before downstream model-path work.",
+      "test_id": "AT11_authority_stage_acyclicity"
+    },
+    {
+      "evidence_artifact": "implementation/dependency manifests, fixture results, one-sided mutation disagreement logs",
+      "expected": "Both extractors and sealers satisfy all fixture oracles, while every injected unilateral fault produces disagreement/NO-GO.",
+      "falsifies": "Operationally independent corroboration.",
+      "kind": "ablation",
+      "required_before": "model_execution",
+      "setup": "AT12_independence_fault_injection: use separate processes, helpers, source files, and no intermediate sharing.",
+      "test_id": "AT12_independence_fault_injection"
+    },
+    {
+      "evidence_artifact": "synthetic-universe partial-publication, timeout, disagreement, and quarantine receipts",
+      "expected": "Each fault burns namespace/salt, records exposed classes, quarantines capsules, and prevents reuse.",
+      "falsifies": "Atomic sealing and durable exposure quarantine.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "AT13_seal_atomicity_and_quarantine: complete synthetic faults before real sealing.",
+      "test_id": "AT13_seal_atomicity_and_quarantine"
+    },
+    {
+      "evidence_artifact": "sandbox mount manifest, pre/post tree manifests, denied-write logs, glob scan, empty intake dry run",
+      "expected": "Only the ratified output directory changes and results cannot enter lives, dreams, adapters, or intake.",
+      "falsifies": "Reporting-only quarantine.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "AT14_no_writeback_no_autoingestion: test denied ingress writes and configured automatic ingestion paths.",
+      "test_id": "AT14_no_writeback_no_autoingestion"
+    },
+    {
+      "evidence_artifact": "state truth-table result and report-template verdict",
+      "expected": "Only registered valid states emit scientific prose; invalid infrastructure cannot become a negative.",
+      "falsifies": "Total deterministic claim-state handling.",
+      "kind": "unit",
+      "required_before": "scientific_claim",
+      "setup": "AT15_claim_state_machine: test all gate and contrast combinations.",
+      "test_id": "AT15_claim_state_machine"
+    },
+    {
+      "evidence_artifact": "complete command/receipt DAG validator and execution-order log",
+      "expected": "Static checks precede real sealing; publication precedes GPU canaries; canary closure and review precede A3.",
+      "falsifies": "Within-A2 fail-closed ordering.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT16_a2_receipt_dependency_order: validate all command dependencies, including the closed A3 gate.",
+      "test_id": "AT16_a2_receipt_dependency_order"
+    },
+    {
+      "evidence_artifact": "per-life feasibility receipt",
+      "expected": "Each B0/B1/B2 has \u226564 unique rows, \u22654096 supervised tokens, \u22654 payloads, payload share \u22640.80, valid EOS, no C2 length >1024, no truncation, and no invalid retained provenance.",
+      "falsifies": "Corpus feasibility; any failure maps to INVALID_INFRA.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "AT17_source_corpus_feasibility: run after extraction and A1 tokenization, without dropping or replacing a life.",
+      "test_id": "AT17_source_corpus_feasibility"
+    },
+    {
+      "evidence_artifact": "template and per-target engine-consumed-ID scan receipts",
+      "expected": "The complete policy-visible sequence contains no source continuation/action/outcome/score, selected payload, historical payload, or concrete valid action name.",
+      "falsifies": "The no-answer-in-policy-context contract.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "AT18_full_policy_visibility_scan: scan raw, special-preserving, special-skipping, and contextual action-name tokenizations.",
+      "test_id": "AT18_full_policy_visibility_scan"
+    },
+    {
+      "evidence_artifact": "sealed-module to fresh-reset to parser to exact-index to I0/I1 receipt",
+      "expected": "Reset module hash, strict payload, dispatched action names/indices, evaluator identity, counts, and recomputed score agree exactly.",
+      "falsifies": "Target-to-dispatch-to-score identity.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "AT19_target_dispatch_scoring_roundtrip: use the floor dispatcher only; no gym_backend normalization or retry.",
+      "test_id": "AT19_target_dispatch_scoring_roundtrip"
+    },
+    {
+      "evidence_artifact": "duplicate mounted nonzero-adapter serving/scoring receipts for all 64 targets",
+      "expected": "B0/C1 and B0/C2 duplicate adapters produce bit-identical IDs, text, parser outputs, indices, counts, and scores; mount identity is nonzero and changes when disabled.",
+      "falsifies": "Deterministic adapted serving.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "AT20_nonzero_adapter_serving_canary: serve each duplicate from fresh processes.",
+      "test_id": "AT20_nonzero_adapter_serving_canary"
+    },
+    {
+      "evidence_artifact": "exclusive outcome partition and P/A/Q/M calculations",
+      "expected": "Every request has exactly one R16 category and only positive utility plus all acceptance/interface floors can satisfy either effect rule.",
+      "falsifies": "A positive caused by abstention, invalidity, or rejection avoidance.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "AT21_action_validity_and_abstention_decomposition: test boundary cases and aggregate sealed-panel outputs.",
+      "test_id": "AT21_action_validity_and_abstention_decomposition"
+    },
+    {
+      "evidence_artifact": "signed beacon response, verification receipt, one-shot counter, salt derivation and non-reuse registry",
+      "expected": "One post-A1 pulse yields one verified committed salt before enumeration; failed retrieval abandons the epoch.",
+      "falsifies": "Nonadaptive one-shot salt provenance.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "AT22_salt_commitment_provenance: salt steward has no dataset dependency and no candidate-salt loop.",
+      "test_id": "AT22_salt_commitment_provenance"
+    },
+    {
+      "evidence_artifact": "real-seal write-ahead access logs, exposure registry, comparator and atomic-publication receipt",
+      "expected": "No unexpected read occurs and exactly one UNPUBLISHED\u2192PUBLISHED transition follows full agreement.",
+      "falsifies": "Real-seal access isolation and publication integrity.",
+      "kind": "end_to_end",
+      "required_before": "gpu_run",
+      "setup": "AT23_real_seal_access_and_publication: validate the actual A2 seal, not a synthetic substitute.",
+      "test_id": "AT23_real_seal_access_and_publication"
+    },
+    {
+      "evidence_artifact": "exhaustive overlapping-predicate precedence table",
+      "expected": "ABANDONED_SEAL precedes INVALID_INFRA, which precedes INCOMPLETE, which precedes valid contrast states.",
+      "falsifies": "Correct durable classification under overlapping failures.",
+      "kind": "unit",
+      "required_before": "scientific_claim",
+      "setup": "AT24_claim_state_precedence: enumerate seal, infrastructure, review, timeout, absence, and contrast overlaps.",
+      "test_id": "AT24_claim_state_precedence"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v3",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "Only if all gates pass, the exact offline source-oracle-selected continuation package changed positive strict first-action behavior and interface measures on the exact sealed panel.",
+        "before": "No registered claim for this quarantined floor.",
+        "claim_id": "CL1_selected_package",
+        "evidence_needed": "AT1\u2013AT24, A3 ratification, and a VALID_PACKAGE_ONLY or VALID_BOTH state.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "Only if all gates pass, C2-minus-C1 reports the effect of the complete neutral-chat-prefix package relative to BOS-only under matched target supervision and updates.",
+        "before": "No registered prefix-package claim.",
+        "claim_id": "CL2_prefix_package",
+        "evidence_needed": "AT2, AT5, AT10, AT20, AT21, and a valid state.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "No result credits lived discovery, dream-time connection growth, organism consolidation, retrieval, composition, planning, revision, online learning, recurrence, semantic generalization, replication, robustness, or population effects.",
+        "before": "Ambiguous legacy language could imply organism-level learning.",
+        "claim_id": "CL3_credit_ceiling",
+        "evidence_needed": "AT7, AT14, AT15, and AT24.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "d98b55bd298f27253d1e9d7402641fb261c78026a0ebc183522792ec9a54d2f8"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/scope_proposal.json",
+      "purpose": "requested scope",
+      "sha256": "ae9d63b0510313f4a30c32771df57f0d8ad8d6c68eea3cc76c22050c46192641"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base floor",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "first repair overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v2_repair.md",
+      "purpose": "second repair overlay",
+      "sha256": "53c1a332586b7e22b7e49716a259dc2ac7afd747b7084718cff7fad10ffe0ef5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "prior adjudication",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/critique.json",
+      "purpose": "adversarial blockers",
+      "sha256": "705a83392960eb47364e36ce96b891b9e192eb343b929a43248d039a3f61e3f3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/consensus.json",
+      "purpose": "adjudicated repair requirements",
+      "sha256": "1f0810d29d82e0f43d50a11f5c435f0761778abb2d0660fb8672280c438dfa4b"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "legacy bootstrap boundary",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "legacy serving boundary",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "legacy evaluator boundary",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "archived episodes \u2192 closed-world provenance extraction",
+        "before": "implicit legacy writer input",
+        "edge_id": "E1",
+        "from": "N_archived_lived_episodes",
+        "operation": "modify",
+        "rationale": "Existing lived action/outcome traces are extraction authority, not fresh experience.",
+        "to": "N_closed_world_provenance_extraction"
+      },
+      {
+        "after": "provenance extraction \u2192 offline source-oracle-selected corpus",
+        "before": "dream-like re-expression \u2192 corpus",
+        "edge_id": "E2",
+        "from": "N_closed_world_provenance_extraction",
+        "operation": "modify",
+        "rationale": "Selection uses disclosed historical action/outcome/score oracles.",
+        "to": "N_offline_oracle_selected_corpus"
+      },
+      {
+        "after": "offline corpus \u2192 assay-local supervised adapter",
+        "before": "dream consolidation \u2192 organism adapter",
+        "edge_id": "E3",
+        "from": "N_offline_oracle_selected_corpus",
+        "operation": "modify",
+        "rationale": "LoRA is quarantined parametric transport, not discovery or organism consolidation.",
+        "to": "N_assay_local_adapter"
+      },
+      {
+        "after": "A2 one-shot seal \u2192 stateless writer evaluation",
+        "before": "unsealed target evaluation",
+        "edge_id": "E4",
+        "from": "N_one_shot_target_seal",
+        "operation": "add",
+        "rationale": "Only atomically published score-blind targets may be rendered or served.",
+        "to": "N_stateless_writer_evaluation"
+      },
+      {
+        "after": "stateless writer evaluation \u2192 quarantined report",
+        "before": "evaluation \u2192 future learning",
+        "edge_id": "E5",
+        "from": "N_stateless_writer_evaluation",
+        "operation": "modify",
+        "rationale": "One-decision outcomes are scoring-only and terminate at reporting.",
+        "to": "N_quarantined_report"
+      },
+      {
+        "after": "quarantined report \u219b future dream/life intake",
+        "before": "implicit feedback possibility",
+        "edge_id": "E6",
+        "from": "N_quarantined_report",
+        "operation": "add",
+        "rationale": "A prohibited dormant edge, enforced by isolation and no-auto-ingestion tests.",
+        "to": "N_future_organism_cycle"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Immutable archived lived action/outcome episodes; no prompt reconstruction.",
+        "before": "legacy ledgers as writer material",
+        "node_id": "N_archived_lived_episodes",
+        "operation": "modify",
+        "rationale": "Preserves episode provenance without treating archive rows as new learning."
+      },
+      {
+        "after": "Dual closed-world provenance extraction and attachment validation.",
+        "before": "dream-time local connection growth/re-expression",
+        "node_id": "N_closed_world_provenance_extraction",
+        "operation": "modify",
+        "rationale": "Extraction creates neither memory nor organism state."
+      },
+      {
+        "after": "Frozen offline source-oracle-selected continuation corpus.",
+        "before": "selected dream corpus",
+        "node_id": "N_offline_oracle_selected_corpus",
+        "operation": "modify",
+        "rationale": "Historical outcomes select rows post hoc."
+      },
+      {
+        "after": "Per-life assay-local C1/C2 supervised LoRA plus common C0.",
+        "before": "parametric organism consolidation",
+        "node_id": "N_assay_local_adapter",
+        "operation": "modify",
+        "rationale": "Transport can preserve training information but receives no discovery credit."
+      },
+      {
+        "after": "Salt-committed, score-blind, atomic content-hash panel seal.",
+        "before": "target panel selection",
+        "node_id": "N_one_shot_target_seal",
+        "operation": "add",
+        "rationale": "Separates target identity from design and corpus decisions."
+      },
+      {
+        "after": "Fresh-reset, retrieval-empty, one-decision strict-ACT serving/dispatch/scoring.",
+        "before": "writer evaluation",
+        "node_id": "N_stateless_writer_evaluation",
+        "operation": "modify",
+        "rationale": "Excludes goal-conditioned retrieval, composition, planning, revision, and recurrence."
+      },
+      {
+        "after": "Bounded claim-state report with no writeback.",
+        "before": "reporting",
+        "node_id": "N_quarantined_report",
+        "operation": "modify",
+        "rationale": "Results cannot enter future dream cycles or lives."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin ratify these exact proposed bytes and only the A0 CPU/no-model/no-tokenizer preparation scope, with later A1, A2, and A3 decisions separately bound to their exact receipts and command sets?",
+    "forbidden_before_approval": [
+      "Any code edit or implementation.",
+      "Any tokenizer execution before exact A1 ratification.",
+      "Any candidate URI, module, hash, score, or action exposure before exact A2 ratification.",
+      "Any target seal, model forward pass, trainer, evaluator, GPU command, or target scoring before its ordered ratified node.",
+      "Any modification, feed-through, or automatic ingestion involving a Fable life, adapter, prompt, ledger, dream, waking brief, parent pack, or intake workflow.",
+      "Any change to thresholds, scope, report language, or scientific goalposts."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "One finite extraction pass over immutable source snapshots; no recurrence.",
+        "before": "implicit dream-time memory growth",
+        "loop_id": "L1_source_provenance",
+        "operation": "modify",
+        "rationale": "The floor only resolves existing provenance and selects rows.",
+        "reads": [
+          "N_archived_lived_episodes"
+        ],
+        "stop_condition": "Dual-extractor agreement and feasibility receipt, otherwise INVALID_INFRA.",
+        "trigger": "A0 ratification",
+        "writes": [
+          "N_closed_world_provenance_extraction",
+          "N_offline_oracle_selected_corpus"
+        ]
+      },
+      {
+        "after": "Finite three-pass, fixed-order supervised adapter training after A1/A2 gates.",
+        "before": "organism consolidation loop",
+        "loop_id": "L2_assay_transport",
+        "operation": "modify",
+        "rationale": "The adapter is assay-local transport with no organism writeback.",
+        "reads": [
+          "N_offline_oracle_selected_corpus"
+        ],
+        "stop_condition": "Exactly three passes and deterministic canary closure, otherwise INVALID_INFRA.",
+        "trigger": "A2 ordered canary node",
+        "writes": [
+          "N_assay_local_adapter"
+        ]
+      },
+      {
+        "after": "One fresh-reset action per sealed target with no recall, revision, or target-outcome feedback.",
+        "before": "recurrent think-act-learn loop",
+        "loop_id": "L3_stateless_evaluation",
+        "operation": "modify",
+        "rationale": "The floor does not exercise goal-conditioned retrieval/composition/planning/revision.",
+        "reads": [
+          "N_one_shot_target_seal",
+          "N_assay_local_adapter"
+        ],
+        "stop_condition": "One scored request per cell/target or fail-closed invalidity.",
+        "trigger": "A3 ratification",
+        "writes": [
+          "N_quarantined_report"
+        ]
+      },
+      {
+        "after": "No active feedback loop; report is terminal and future organism cycles remain unmodified.",
+        "before": "later thinking/outcomes feed future dreams",
+        "loop_id": "L4_future_feedback",
+        "operation": "modify",
+        "rationale": "The complete organism may require later feedback, but this assay forbids it.",
+        "reads": [
+          "N_quarantined_report"
+        ],
+        "stop_condition": "Terminal report and isolation receipt.",
+        "trigger": "Report creation",
+        "writes": []
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "A repaired, fail-closed proposal for a narrow offline continuation-writer/interface floor. It replaces dream-growth and organism-consolidation wording with closed-world provenance extraction and assay-local supervised transport; it adds ordered A2 receipts, feasibility, full policy scanning, scoring identity, nonzero-adapter canaries, positive-action endpoints, one-shot salt provenance, real-seal access attestation, and claim-state precedence.",
+  "system_thesis": "The complete organism thesis distinguishes lived action/outcome episodes; dream-time local connection growth and memory re-expression; parametric consolidation/transport; goal-conditioned retrieval, composition, planning, and revision; and later feedback from thought and outcomes into future dream cycles. This proposal exercises none of the complete recurrent route: it freezes historical lived episodes, performs closed-world provenance extraction, trains a quarantined assay-local adapter, evaluates a retrieval-empty one-decision writer, and terminates at reporting. Any behavior belongs only to this isolated package, never to a LoRA as discoverer or to the complete organism.",
+  "title": "Legacy continuation-writer floor v3: ordered quarantined offline package assay",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "Extraction authority only.",
+        "stage_id": "A0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "Only selected target bytes may persist.",
+        "stage_id": "A1",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "No source rows in seal or policy.",
+        "stage_id": "A2",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "Hidden from serving/scoring.",
+        "stage_id": "CANARY",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "Hidden from evaluation.",
+        "stage_id": "A3",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_raw_source_rows",
+        "reason": "Aggregate diagnostics only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "Causal historical row selection only.",
+        "stage_id": "A0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "No tokenizer use.",
+        "stage_id": "A1",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "Counts/hashes only.",
+        "stage_id": "A2",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "No serving/scoring access.",
+        "stage_id": "CANARY",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "No evaluation access.",
+        "stage_id": "A3",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_source_oracles",
+        "reason": "Aggregate provenance only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "Visible for historical-payload diagnostics.",
+        "stage_id": "A0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "Hash registry only.",
+        "stage_id": "A1",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "Validator-only deny-list; never policy input.",
+        "stage_id": "A2",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "No policy or scorer access.",
+        "stage_id": "CANARY",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "No policy or scorer access.",
+        "stage_id": "A3",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_source_payload_registry",
+        "reason": "Copying aggregates only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Extractor writes frozen selected rows.",
+        "stage_id": "A0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Tokenizer/label construction only.",
+        "stage_id": "A1",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Corpus unavailable after preparation.",
+        "stage_id": "A2",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Trainer reads only at authorized command; serving cannot read.",
+        "stage_id": "CANARY",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Hidden from evaluation.",
+        "stage_id": "A3",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_selected_corpus_and_target_ids",
+        "reason": "Counts and hashes only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "Candidate architecture/authority declaration.",
+        "stage_id": "A0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "Exact candidate binding.",
+        "stage_id": "A1",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "Ratified execution law.",
+        "stage_id": "A2",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "Command conformance.",
+        "stage_id": "CANARY",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "A3 command conformance.",
+        "stage_id": "A3",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_design_and_run_manifest",
+        "reason": "Report provenance.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "No salt exists or is inspectable.",
+        "stage_id": "A0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "Law only, not future value.",
+        "stage_id": "A1",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "One-shot sealing authority.",
+        "stage_id": "A2",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "Published seal identity only.",
+        "stage_id": "CANARY",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "No causal evaluation use.",
+        "stage_id": "A3",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_salt_and_exposure_registry",
+        "reason": "Audit status only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Target universe unavailable.",
+        "stage_id": "A0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Target universe unavailable.",
+        "stage_id": "A1",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Sealer-only causal selection.",
+        "stage_id": "A2",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Sealed targets needed for fixed canaries.",
+        "stage_id": "CANARY",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Sealed targets needed for rendering/reset only.",
+        "stage_id": "A3",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_target_identity_and_module",
+        "reason": "Sealed-panel provenance only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "No target rendering.",
+        "stage_id": "A0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "No target rendering.",
+        "stage_id": "A1",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "Render/scan after publication without calls or scores.",
+        "stage_id": "A2",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "Exact engine input.",
+        "stage_id": "CANARY",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "Exact engine input.",
+        "stage_id": "A3",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I8_rendered_policy_ids",
+        "reason": "Hashes only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "No model execution.",
+        "stage_id": "A0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "No model execution.",
+        "stage_id": "A1",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "No model execution.",
+        "stage_id": "A2",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "Canary receipt and dispatch only.",
+        "stage_id": "CANARY",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "A3 serving/dispatch only.",
+        "stage_id": "A3",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_generated_output_and_adapter",
+        "reason": "Histograms and hashes only.",
+        "stage_id": "REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "No target scoring.",
+        "stage_id": "A0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "No target scoring.",
+        "stage_id": "A1",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "Scores forbidden during sealing/rendering.",
+        "stage_id": "A2",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "Canary scoring receipt only.",
+        "stage_id": "CANARY",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "Scoring/aggregation only after A3.",
+        "stage_id": "A3",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_target_score_and_counts",
+        "reason": "Bounded report statistics.",
+        "stage_id": "REPORT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "No report exists.",
+        "stage_id": "A0",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "No report exists.",
+        "stage_id": "A1",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "No report exists.",
+        "stage_id": "A2",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "No report exists.",
+        "stage_id": "CANARY",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "Only report candidate may be written.",
+        "stage_id": "A3",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I11_report_and_future_intake",
+        "reason": "Report visible; every future intake path forbidden.",
+        "stage_id": "REPORT",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I1_raw_source_rows",
+      "I2_source_oracles",
+      "I3_source_payload_registry",
+      "I4_selected_corpus_and_target_ids",
+      "I5_design_and_run_manifest",
+      "I6_salt_and_exposure_registry",
+      "I7_target_identity_and_module",
+      "I8_rendered_policy_ids",
+      "I9_generated_output_and_adapter",
+      "I10_target_score_and_counts",
+      "I11_report_and_future_intake"
+    ],
+    "stages": [
+      "A0",
+      "A1",
+      "A2",
+      "CANARY",
+      "A3",
+      "REPORT"
+    ]
+  }
+}

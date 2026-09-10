@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think1-operation-v1d",
+  "oneOf": [
+    {"$ref": "#/$defs/queryOperation"},
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "text", "citations"],
+      "properties": {
+        "op": {"enum": ["THINK", "BACKTRACK"]},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+        "citations": {"$ref": "#/$defs/citations"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "state_token", "citations"],
+      "properties": {
+        "op": {"const": "COMMIT"},
+        "state_token": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+        "citations": {"type": "array", "minItems": 1, "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^H[0-9]{6}$"}}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "reason"],
+      "properties": {
+        "op": {"const": "DEFER"},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"}
+      }
+    }
+  ],
+  "$defs": {
+    "queryOperation": {"$ref": "think0_operation.schema.json#/$defs/queryOperation"},
+    "citations": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^H[0-9]{6}$"}}
+  },
+  "x-golden-vectors": {
+    "query_contract": "All 23 positive and 6 negative atomic-query vectors are inherited byte-for-byte through #/$defs/queryOperation from think0_operation.schema.json; THINK1 defines no alternate query grammar.",
+    "positive": [
+      {"name": "animal-value-missing-label", "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:candyland", null]}, "expected_kind_branch": "ANIMAL_VALUE", "missing_index": 2},
+      {"name": "terminal-commit", "instance": {"op": "COMMIT", "state_token": "label:red", "citations": ["H000001"]}}
+    ],
+    "negative": [
+      {"name": "multiple-null-query", "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": [null, "source:candyland", null]}},
+      {"name": "commit-without-citation", "instance": {"op": "COMMIT", "state_token": "label:red", "citations": []}}
+    ]
+  }
+}

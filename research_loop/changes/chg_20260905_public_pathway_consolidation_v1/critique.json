@@ -1,0 +1,428 @@
+{
+  "architecture_change_sha256": "7f328a4a1aea31d77816853df40c4b7d5de464ee2c65ba6b941937658f4124de",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260905_public_pathway_consolidation_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC_C01_TARGET_RESULT_VISIBILITY_CONTRADICTION",
+      "evidence": "The visibility matrix marks sealed_target_results/TARGET hidden because each result cannot enter a later target call or state. Protocol Sections 6 and 7 instead require one action at a time, an ordinary public outcome, and recurrent replanning within the item. The benchmark interpretation identifies this contradiction explicitly; the systems interpretation assumes target isolation without resolving the boundary.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The exact bytes do not distinguish a current-item public transition from an offline score or prior-item result, so literal enforcement either destroys recurrent action or violates the declared visibility contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC_C02_INCOMPLETE_LEAKAGE_TAXONOMY",
+      "evidence": "The matrix enumerates only public life state, public THINK/DREAM, sleep/adapter state, and sealed target results. It does not separately classify answer keys, offline truth, scorer state, oracle sufficient state, target manifests, support verdicts, condition labels, trainer telemetry, retrieval scores, caches, canary outputs, or generator metadata. Yet T04 and the DREAM ceiling require some of these in privileged processes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Answer, scorer, oracle, condition, and indirect side-channel visibility are not closed by the declared Cartesian matrix."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC_C03_CAUSAL_PREFIX_AND_FUTURE_STATE_LEAKAGE",
+      "evidence": "SLEEP constructs DECIDE rows after complete outcomes are known, but the proposal does not require each row input to be reconstructed byte-for-byte from the state immediately preceding its target operation. T03 checks formats, masks, and corpora, not exclusion of later outcomes, terminal scores, later DREAM links, admission verdicts, or future workspace mutations. trajectory_contract.py keeps delayed outcomes scorer-side, showing that this separation is necessary.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A runtime-shaped row can still launder future state or the answer unless causal-prefix construction has an explicit denylist and counterfactual byte-invariance test."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC_C04_QUERY_TO_AGENDA_ANSWER_LAUNDERING",
+      "evidence": "REQUEST_DREAM is invoked by the protocol but absent from the enumerated THINK operations. DREAM receives the current workspace plus an unspecified ledger slice, and its outputs can become SLEEP candidates. goal_conditioned_thinker.py avoids laundering by mechanically projecting only an unknown slot and dropping candidate objects, hypotheses, answers, rationales, citations, and evidence; the PPC proposal does not bind an equivalent allowlist or answer-swap invariant.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Goal-, query-, candidate-, or answer-bearing bytes can pass from THINK into a DREAM agenda and later into writer selection without being independently evidentiary."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC_C05_ABANDONED_BRANCH_RELEASE",
+      "evidence": "The proposal permits subgoals, parent hypotheses, BACKTRACK, ACT, DEFER, and STOP but does not normatively define branch ownership, promotion, abandonment, or which hypothesis may authorize a final action. The reference thinker permits release only from a live active branch and explicitly abandons stale hypotheses, but the PPC operation set and lifecycle are different and do not inherit that behavior automatically.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A hypothesis or final action may be released from an abandoned thinker branch instead of emerging from the current recurrent path."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC_C06_DIAMOND_AND_LINEAGE_VALIDATION",
+      "evidence": "Public hypotheses and semantic records have parent and citation structure, but no exact lineage algorithm is specified. note 46 requires valid provenance diamonds to pass while cycles, descendant citation, and duplicate-root support fail. goal_conditioned_thinker.py uses separate recursion-stack and completed sets specifically to avoid treating shared ancestry as a cycle. T01 and T02 do not name these adversarial cases.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The implementation could falsely reject a valid diamond, accept an actual cycle, or count a descendant as independent provenance."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC_C07_REPEAT_AND_PROMPT_SCHEMA_CLOSURE",
+      "evidence": "The conscious-state definition exposes budgets and recent operations but not a canonical operation fingerprint, policy-visible repeat count, or repeat-block notice. A policy can potentially rename disposable IDs and repeat the same query indefinitely. note 45 requires normalized repeat identity and prompt/schema/parser/attention-mask compatibility; T01 mentions lifecycle failure generically, while T03 checks training masks but not complete inference/training prompt directionality. REQUEST_DREAM's omission is already a concrete schema mismatch.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Repeat blocks may be invisible to the policy state, and prompt/parser/schema mismatches can alter the scientific interface while broad goldens remain green."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC_C08_DELETION_AND_COGNITIVE_ROW_CREDIT",
+      "evidence": "Deleting an early action can make later recorded actions illegal or semantically different, but the proposal does not choose open-loop replay, state rebinding, rejection, or frozen-policy reselection. Even a well-defined leave-one-action-out replay establishes necessity only for that exact sequence. Both interpretations correctly note that it cannot establish the truth or usefulness of preceding HYPOTHESIZE, QUERY, FOLLOW, REVISE, BACKTRACK, DEFER, or STOP operations, whose DECIDE-row eligibility remains unspecified.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Action-level sequence necessity is at risk of being promoted into generalized delayed causal credit and positive cognitive-operation supervision."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC_C09_PROVENANCE_EQUIVALENCE_AND_SYNTHETIC_REEXPRESSION",
+      "evidence": "Admission refers to provenance-distinct tasks or situations and repeated co-traversals, while candidate organization, canonicalization, deduplication, and runtime views can create many descendants of one root. The proposal says confidence and repeated wording do not create support but does not define evidence-equivalence classes, root independence, descendant closure, or how synthetic paraphrases and repeated exposure are prevented from increasing support counts.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Local variants and connections lack a complete root-provenance algebra, allowing synthetic re-expression to masquerade as new evidence."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+        "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC_C10_SHORTCUT_AND_RECURRENCE_BYPASS",
+      "evidence": "A positive shortcut may encode a complete supported path after two successes, PATH trains next-operation and ACT outputs, and LINKED_TEXT exposes an accepted pathway DAG. T04 proves that an oracle recurrent controller can solve PCFL and a non-adaptive oracle cannot, but it does not remove recurrence from the learned PATH treatment. Correct actions could therefore arise from one-shot policy bias, target-state priors, a materialized shortcut, or direct ACT imitation without adaptive retrieval.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The game does not yet force the learned treatment to traverse local memory recurrently; parent structure and final action may be supplied by memory or policy targets instead of emerging across THINK iterations."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC_C11_TEXT_LORA_THINKER_FACTORIZATION",
+      "evidence": "PATH jointly trains READ returns and DECIDE operations, whereas LINKED_TEXT changes external memory while leaving the controller unadapted. COGNITIVE_NO_ACT removes ACT targets but retains non-action policy training and does not isolate storage. Neither PATH-LINKED_TEXT nor on/off separates text context, explicit graph state, LoRA transport, reader behavior, and thinker computation. Both interpretations flag this confound.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed factorial cannot attribute a gain specifically to parametric memory transport, learned operation policy, recurrent thinker computation, or explicit pathway structure."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC_C12_CROSS_SUBSTRATE_RESOURCE_MATCHING",
+      "evidence": "T03 expects all arms to match all declared budgets and marginals, but RAW and LINKED_TEXT have no meaningful LoRA rank, trained-token count, or update count. Conversely, fixed adapter rank does not match retained information, serialized bytes, index bytes, metadata, cache, retrieval candidate work, latency, or construction cost. The systems interpretation correctly calls literal all-arm equality incoherent.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Budget matching must be defined by meaningful comparison classes and complete resource ledgers, not nominal equality across incommensurate substrates."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC_C13_BYPASS_BASELINES_INCOMPLETE",
+      "evidence": "The required baseline map in note 42 includes a stateless standard agent, honest full transcript followed by truncation, raw episodic RAG, organized memory, reflection/lesson memory, direct trajectory-to-QA LoRA, explicit graph or skill library, same-corpus text and LoRA, and batch post-training. PPC Stage B omits several of these; RAW is already a RAG system rather than a no-memory floor, LINKED_TEXT is not necessarily a direct explicit-graph control, and CompilerGym remains vulnerable to generic pass priors.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The current baseline set cannot support superiority to strong agent-memory systems or rule out target-only and standard-agent bypasses."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC_C14_ACCEPTANCE_TESTS_DO_NOT_DISAGGREGATE_CONSTRUCTS",
+      "evidence": "T01 establishes syntax and lifecycle, T02 admission behavior, T03 corpus/resource construction, T04 environment closure, T05 governance and feasibility, and T06 postrun recomputation. None is a registered treatment-level ablation or baseline test that independently accepts or rejects fixed-query recall, adaptive composition, fresh-handle generalization, ordered planning, and downstream action improvement. A review bundle cannot substitute for these measurements.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The acceptance suite can be green without distinguishing recall, composition, generalization, planning, and action improvement."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC_C15_ON_POLICY_FLYWHEEL_MEDIATION",
+      "evidence": "Stage B deliberately uses common sealed experience and therefore cannot test online learning. Stage C lets condition-local lives diverge, but only requires checkpoint action curves. It does not require memory-conditioned epistemic actions, changed evidence acquisition, admission of that new evidence into the next memory, and mediation of later action value. note 42 and the benchmark interpretation both distinguish this chain from passive lookup or generic on-policy drift.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Stage C can show condition-local updating but not the intended action-to-outcome-to-memory-to-better-information-seeking flywheel."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC_C16_LINKED_TEXT_FALSIFIER_AND_PROMOTION_MISMATCH",
+      "evidence": "Section 9 declares PATH less than or equal to LINKED_TEXT a hard falsifier of LoRA advantage, while the Stage-B promotion rule requires PATH-ENDPOINT, PATH-PATH_SHUFFLE, on/off, completion, cuts, and integrity but not PATH-LINKED_TEXT. Thus the LoRA treatment can be promoted even when the strongest organized external memory matches or wins. Both interpretations identify this inconsistency.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Promotion to a LoRA-centered lifetime study is not aligned with the proposal's own external-memory falsifier."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC_C17_SAMPLE_SIZE_ESTIMATOR_AND_GOALPOSTS",
+      "evidence": "The number of roots and checkpoints is deferred until a development variance/cost pilot; no minimum roots, target count, effect threshold, confidence procedure, multiplicity rule, seed aggregation, missing-cell policy, or futility boundary is bound now. Multiple instruments, metrics, checkpoints, and interventions create substantial selection freedom. Writer diagnosis after failure is allowed without an explicit rule requiring new locked targets and a newly ratified version.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The design permits underpowered inference, pseudoreplication, post-hoc metric selection, and negative-result goalpost movement unless the later manifest has a strict prospective statistical contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC_C18_SPLIT_AND_SEAL_INTEGRITY",
+      "evidence": "CompilerGym requires URI and bitcode disjointness but makes suite/family separation conditional on catalog availability, leaving near-duplicate and feature-family leakage possible. PCFL twin validity is described through shared marginals, not byte identity over every pre-memory model-visible field. Two byte-identical sealers can reproduce the same shared bug and are not necessarily independent implementations. T04 does not explicitly require target-only classifiers over the exact serialized view.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The sealed panels may remain decodable through family similarity, serialization artifacts, identifiers, ordering, or shared sealer logic."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scalability",
+      "concern_id": "CRIT_PPC_C19_CAPACITY_AND_SCALING_IDENTIFICATION",
+      "evidence": "Stage C names at least three post-native checkpoints and fixed adapter bytes but does not bind the exact native-capacity calculation, a pre-native point, unique-information predicate, minimal sufficient-statistic bytes, capacity/rank grid, matched external-memory capacities, reader candidate-work scaling, or enough checkpoints and roots to interpret first and second finite differences. note 48 treats all of these as necessary boundaries for compression and scaling claims.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A fixed-rank three-point curve cannot by itself distinguish continued knowledge growth from excess capacity, exposure, retrieval scaling, forgetting, or noise."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC_C20_FAILURE_AND_RESUME_DURABILITY",
+      "evidence": "The proposal mentions append-only records, atomic adapter publication, and fail-closed incomplete status, but does not define a complete state machine for provider dispatch before sealing, malformed output, process loss, partial training, non-finite weights, publication interruption, wrong mount, target-cell failure, retry, resume, and prohibited suffixes. note 45 requires INDETERMINATE status and byte-for-byte sealed-output reuse. Broad review language in T05 is not a deterministic lifecycle test.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Operational failures can silently alter scientific identity or permit regeneration, substitution, partial continuation, or inconsistent release."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+        "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC_C21_PARENTING_SCOPE_AND_TASK_CHANNEL",
+      "evidence": "PPC_PARENTING is part of the graph and PPC_PARENTING_TRANSFER is a claim, but Stage D is deferred and no present acceptance test constructs or audits the pack. Generic learning advice can still encode environment rules, task-family signatures, model-specific token artifacts, or a de facto controller. The proposed claim evidence mentions an audit and wrong-parent controls without binding them to a test or separate deliberation artifact.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Parenting must remain outside current implementation authority or receive its own task-information, portability, wrong-lineage, and outgrowability tests before use."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+        "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC_C22_UNRATIFIED_ENDPOINT_CONTROL_DEPENDENCY",
+      "evidence": "The cited v9 consensus is explicitly in human_required state, says implementation is forbidden, and grants no authority. PPC treats that design as the preserved ENDPOINT control. Conceptual reuse is possible, but no implementation, corpus builder, or exact runtime behavior can be inherited from an unratified workflow by implication.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "ENDPOINT must be fully re-specified and ratified inside PPC or separately authorized; the prior consensus cannot serve as implementation authority."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/human_directive.txt",
+      "purpose": "Verbatim objective and architecture boundary.",
+      "sha256": "c463b09a28ae405054b4f11992abcfba137e151ab4bbb16549234b3023781be2"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation, ratification, review, and GPU gates.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "purpose": "Strict proposal schema.",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash-bound intake and authority validation.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/protocol.md",
+      "purpose": "Normative staged PPC proposal.",
+      "sha256": "fca9eac73b91c511682bc5f7dd6c010063ec85ae07f91b588782ea41f290aafc"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Project thesis, baselines, visibility, and claim invariants.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Prior pilot and adversarial operational requirements.",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "purpose": "PCFL constructive-action and closure instrument.",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1"
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "purpose": "Developmental scale and capacity design.",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359"
+    },
+    {
+      "path": "research_loop/trajectory_contract.py",
+      "purpose": "Public causal trajectory and leakage contract.",
+      "sha256": "f150a416031a9a4bed035c1fb4face0424810e2a539ce00d5625d8e934fc7784"
+    },
+    {
+      "path": "research_loop/goal_conditioned_thinker.py",
+      "purpose": "Typed recurrent operation, agenda, and provenance reference.",
+      "sha256": "c35805b20f20337657f1ac6bf4a198922a2657c1a0f015306d502ee589623d46"
+    },
+    {
+      "path": "organism_v6/sleep_compile.py",
+      "purpose": "Exploratory writer failure surface.",
+      "sha256": "9e7cbd4316910af205ff25df7e2ec051447f0b1c1e1e7e993bbb6692991e8ca3"
+    },
+    {
+      "path": "organism_v6/batch_loop.py",
+      "purpose": "Exploratory multi-action and budget failure surface.",
+      "sha256": "604b1acf9605f4828fb78b12b176e7e1003ff451d58da4ae134107b3ae34f8a4"
+    },
+    {
+      "path": "organism_v6/run_life_v2.py",
+      "purpose": "Causally separate exploratory lifetime runner.",
+      "sha256": "9133cdd8c4d62cbe94e2c5f30ddb69193cb5f78ce9a840216092a4e6dc9a42e5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v9/consensus.json",
+      "purpose": "Unratified endpoint-control deliberation provenance.",
+      "sha256": "9f4f3c321ccfed63bcc69157297f09690750310ce8e1d0318169ffa6305cdd44"
+    }
+  ],
+  "critique_id": "chg_20260905_public_pathway_consolidation_v1.fresh_iclr_adversarial_v1",
+  "human_questions": [
+    "Will the ratified visibility contract make the ordinary public action result and next state visible only to the next call within the same target item while quarantining offline scores and all cross-item results?",
+    "What exact typed representation, charge, mechanical projection, and ledger-slice selection rule will define REQUEST_DREAM without carrying candidate answers or unsupported hypotheses?",
+    "Which counterfactual replay semantics and row-level rule will govern action deletion and the eligibility of each non-action DECIDE operation?",
+    "Must the design add a treatment-level recurrence-removal arm and forbid complete-path shortcut records before making a connected-memory claim?",
+    "Will Rohin require a fixed-corpus text versus READ-only-LoRA comparison and a READ/DECIDE factorial now, or explicitly waive any LoRA-transport attribution from Stage B?",
+    "May a pathway writer advance to Stage C when LINKED_TEXT matches or beats PATH, and if so, will Stage C avoid presenting LoRA as the unique treatment or moat?",
+    "What minimum independent-root count, effect threshold, uncertainty method, multiplicity correction, failure policy, and development-to-lock boundary must the later run manifest bind?",
+    "Is Stage C intended to test only bounded on-policy improvement, or must it test the full mediated chain from memory-conditioned epistemic action through new admitted evidence to later return?",
+    "What exact native-context calculation, capacity grid, retained-byte accounting, unique-information measure, and pre/post-native schedule are required for any scaling or compression claim?",
+    "Will the ENDPOINT control be re-specified and ratified within PPC rather than inheriting authority from the still-unratified v9 consensus?",
+    "Will the parenting pack be excluded from current authorized scope and handled by a separately ratified Stage-D artifact with task-information audits?",
+    "After these resolutions change the proposal bytes and tests, does Rohin ratify only the revised exact architecture and proposal-only scope, retaining the separate run-manifest decision?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v1.systems",
+      "sha256": "1f97193f471bc2c2a65ebf96665d1da66ee230aa5fc0ed27f2b7a691795a5d7c"
+    },
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v1.benchmark",
+      "sha256": "c906d6ef921492551a966a4785fd956364695888990601618fd8e910ff07393d"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PPC_M01_TARGET_WITHIN_ITEM_VS_QUARANTINED_RESULT_BOUNDARY",
+    "PPC_M02_CAUSAL_PREFIX_AND_FUTURE_STATE_DENYLIST",
+    "PPC_M03_AGENDA_ANSWER_SWAP_AND_LEDGER_SLICE_NONINTERFERENCE",
+    "PPC_M04_ABANDONED_BRANCH_DIAMOND_CYCLE_AND_DESCENDANT_ADVERSARIALS",
+    "PPC_M05_REPEAT_FINGERPRINT_AND_POLICY_VISIBLE_BLOCK_GOLDENS",
+    "PPC_M06_PROMPT_SCHEMA_PARSER_ATTENTION_MASK_COMPATIBILITY",
+    "PPC_M07_DELETION_COUNTERFACTUAL_SEMANTICS_AND_COGNITIVE_ROW_ELIGIBILITY",
+    "PPC_M08_ROOT_PROVENANCE_EQUIVALENCE_AND_SYNTHETIC_VIEW_GOLDENS",
+    "PPC_M09_TREATMENT_RECURRENCE_REMOVAL_AND_SHORTCUT_CLOSURE_ABLATION",
+    "PPC_M10_SAME_CORPUS_TEXT_READ_ONLY_LORA_AND_DECIDE_FACTORIAL",
+    "PPC_M11_STATELESS_LONG_CONTEXT_REFLECTION_QA_LORA_AND_EXPLICIT_GRAPH_BASELINES",
+    "PPC_M12_RECALL_COMPOSITION_GENERALIZATION_PLANNING_ACTION_SCORECARD",
+    "PPC_M13_ON_POLICY_EPISTEMIC_ACTION_TO_RECONSOLIDATION_MEDIATION",
+    "PPC_M14_SPLIT_NOVELTY_TARGET_SIGNATURE_AND_INDEPENDENT_SEALER_AUDIT",
+    "PPC_M15_CAPACITY_RANK_RETAINED_BYTE_AND_POST_NATIVE_SCALE_GRID",
+    "PPC_M16_FULL_CRASH_RESUME_PUBLICATION_MOUNT_AND_FAILURE_SUFFIX_TABLE",
+    "PPC_M17_PARENTING_TASK_INFORMATION_PORTABILITY_AND_WRONG_LINEAGE_AUDIT"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+    "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+    "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+    "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+    "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+    "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is that PPC replaces an especially weak endpoint-cloning experiment with a coherent, auditable systems hypothesis: one recurrent model acts through typed public operations; DREAM only reconciles bounded visible state; SLEEP alone writes a cumulative life-local LoRA from publicly grounded outcomes; and CompilerGym and PCFL receive explicitly separate external-action and semantic-mechanism claim boundaries. Common-source PATH, ENDPOINT, SHUFFLE, linked-memory, mount/off, twin, and cut interventions could identify pathway value more sharply than the exploratory v6 loop, while the staged CPU, independent-review, human-ratification, and postrun gates appropriately prevent a green unit suite from becoming a scientific claim. If the interface, visibility, factorization, statistical, and operational gaps below are repaired prospectively, this could become a high-information mechanism assay followed by a genuinely stronger lifetime study.",
+  "visibility_failures": [
+    "The same target outcome is simultaneously required as the next recurrent public state and forbidden from every later target call or state.",
+    "Offline truth, answer keys, scorer internals, oracle state, support verdicts, target manifests, and condition metadata are absent from the visibility matrix.",
+    "DECIDE-row construction is not proven invariant to future outcomes, terminal scores, later DREAM state, or support labels.",
+    "REQUEST_DREAM and DREAM ledger inputs lack an allowlist preventing query, candidate-answer, hypothesis, or rationale laundering.",
+    "Adapter, raw-memory, and linked-memory conditions may be indirectly revealed through latency, NOT_FOUND behavior, candidate access, metadata, cache state, or process differences.",
+    "The DREAM oracle-state ceiling is not explicitly confined to a scorer-tainted isolated process that cannot feed later cognition or SLEEP."
+  ]
+}

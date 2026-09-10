@@ -1,0 +1,171 @@
+{
+  "acceptance_test_ids_addressed": [
+    "AT1_source_join_closure",
+    "AT2_target_matching",
+    "AT3_content_disjoint_seal",
+    "AT4_reproducibility_canaries",
+    "AT5_prefix_package_contrast",
+    "AT6_selected_corpus_floor",
+    "AT7_claim_ceiling",
+    "AT8_bootstrap_visibility_and_copying",
+    "AT9_visibility_oracle_partition",
+    "AT10_prompt_serving_roundtrip",
+    "AT11_authority_stage_acyclicity",
+    "AT12_independence_fault_injection",
+    "AT13_seal_atomicity_and_quarantine",
+    "AT14_no_writeback_no_autoingestion",
+    "AT15_claim_state_machine",
+    "AT16_a2_receipt_dependency_order",
+    "AT17_source_corpus_feasibility",
+    "AT18_full_policy_visibility_scan",
+    "AT19_target_dispatch_scoring_roundtrip",
+    "AT20_nonzero_adapter_serving_canary",
+    "AT21_action_validity_and_abstention_decomposition",
+    "AT22_salt_commitment_provenance",
+    "AT23_real_seal_access_and_publication",
+    "AT24_claim_state_precedence"
+  ],
+  "acceptance_test_interpretation": "AT1 and AT12 make the archived-source corpus auditable rather than newly lived evidence. AT2 and AT17 establish matched supervised target tokens/updates and minimum per-life corpus feasibility, but not fixed-memory parity across text, retrieval, graph, and parametric substrates. AT3, AT13, AT22, and AT23 protect a content-disjoint, nonadaptive finite panel only against the declared contamination inputs; they neither hide target URIs from the policy nor establish semantic or pretraining disjointness. AT4, AT10, AT19, and AT20 make the finite adapted-serving and scoring path reproducible and identity-preserving. AT5 and AT6 test only the registered C2-minus-C1 prefix package and C2-minus-C0 selected-corpus package contrasts. AT21 prevents abstention, rejection, or invalid output from being mistaken for useful action improvement. AT7, AT14, AT15, and AT24 confine valid reporting and block writeback; AT11 and AT16 enforce staged authority and command order. AT8, AT9, and AT18 block source-payload and concrete-action leakage into the served context, but cannot remove target URI/family cues or pretrained/generic action-prior shortcuts. None of AT1-AT24 tests paired worlds, later goal-conditioned retrieval, local dream-edge accumulation, graph composition, raw-context/RAG/graph/LoRA fixed-budget comparisons, bridge or recurrence removal, shuffled connectivity, scale, lifetime length, online learning, or continued improvement.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "AMB1_target_shortcut_scope",
+      "impact": "The result remains compatible with target URI/family conditioning and base-model compiler knowledge; the exact degree to which these bypass the intended transport path is not measurable in this assay.",
+      "question": "Are canonical target URIs intended merely as unavoidable task identifiers, or should a future benchmark replace them with opaque identities and separately expose the program state needed for semantic task solving?"
+    },
+    {
+      "ambiguity_id": "AMB2_fixed_memory_definition",
+      "impact": "C1/C2 match supervised targets and optimizer updates but differ in prefix length, positions, attention context, and FLOPs; this cannot support a fixed-memory or substrate comparison.",
+      "question": "What memory budget, accounting rule, and matched-compute protocol would govern future raw-context, RAG, explicit-graph, and LoRA conditions?"
+    },
+    {
+      "ambiguity_id": "AMB3_organism_benchmark",
+      "impact": "The proposed assay intentionally severs the organism route, so no acceptance outcome can answer whether dream-derived local edges accumulate and are later composed for a goal.",
+      "question": "What separately ratified paired-world temporal protocol should require action, immutable outcome, eligible memory write, later dream transformation, later goal, retrieval/path construction, and a no-writeback control?"
+    }
+  ],
+  "architecture_change_sha256": "120541b88acd7f1a5642d6ad4d91b098dea34020c318c751ab9dcec613f94d6e",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The v2 repair overlay controls where it conflicts with v0 or v1.",
+    "The declared scanners operate on the actual engine-consumed token IDs and fail closed on every forbidden match.",
+    "The fixed report templates prohibit claims beyond the two registered exact-panel package contrasts.",
+    "A fresh reset per target and quarantined output prevent target outcomes from causally changing later assay decisions or organism state.",
+    "The three source lives and 64 sealed targets are a fixed formative assay, not independent samples or a population."
+  ],
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v3",
+  "claim_delta_interpretation": "CL1 may be reported only as a descriptive effect of the complete offline source-oracle-selected continuation-training package on positive strict first-action behavior and interface measures on this exact panel. CL2 is an exact serialization/prefix-package contrast, not a chat mechanism, memory mechanism, or compute-matched result. CL3 is necessary: this benchmark supplies no evidence for lived discovery, dream-memory growth, retrieval, composition, planning, revision, online learning, recurrence, semantic generalization, robustness, scaling, replication, or continued improvement. In particular, action improvement is not evidence of memory transport unless a later benchmark compares a retained memory path against matched bypasses; even then, composition requires a later goal-conditioned path task.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "d98b55bd298f27253d1e9d7402641fb261c78026a0ebc183522792ec9a54d2f8"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/scope_proposal.json",
+      "purpose": "requested scope",
+      "sha256": "ae9d63b0510313f4a30c32771df57f0d8ad8d6c68eea3cc76c22050c46192641"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base floor",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "first repair overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v2_repair.md",
+      "purpose": "second repair overlay",
+      "sha256": "53c1a332586b7e22b7e49716a259dc2ac7afd747b7084718cff7fad10ffe0ef5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "prior adjudication",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/critique.json",
+      "purpose": "adversarial blockers",
+      "sha256": "705a83392960eb47364e36ce96b891b9e192eb343b929a43248d039a3f61e3f3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/consensus.json",
+      "purpose": "adjudicated repair requirements",
+      "sha256": "1f0810d29d82e0f43d50a11f5c435f0761778abb2d0660fb8672280c438dfa4b"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "legacy bootstrap boundary",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "legacy serving boundary",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "legacy evaluator boundary",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_full_organism_force",
+      "proposed_resolution": "Keep this assay explicitly as a writer/interface floor and require a separately hash-bound paired-world organism benchmark before any claim about dream-memory-think behavior.",
+      "rationale": "A retrieval-empty fresh-reset one-decision policy has no opportunity to read accumulated local dream edges, construct a goal-conditioned path, revise it, or feed outcomes into later memory.",
+      "statement": "The proposed game does not force the complete organism to be useful."
+    },
+    {
+      "disagreement_id": "D2_shortcut_and_prior",
+      "proposed_resolution": "Preserve the current narrow claim ceiling; future mechanism evidence requires opaque target identity, matched task-state access, and bypass controls for base priors, raw context, and retrieval.",
+      "rationale": "AT18 removes concrete source actions from policy-visible context, but canonical URI/family cues, base pretraining, and a generic learned action prior remain available explanations for a positive result.",
+      "statement": "Content disjointness and prompt scanning do not eliminate target-only or pretrained-prior shortcuts."
+    },
+    {
+      "disagreement_id": "D3_substrate_and_ablation_gap",
+      "proposed_resolution": "Do not describe C1/C2/C0 as a memory-substrate test; separately preregister fixed-budget text, RAG, graph, LoRA, and thinker conditions with bridge, recurrence, connectivity-shuffle, scale, and lifetime-length ablations.",
+      "rationale": "The design varies only BOS versus a neutral-chat-prefix training package and assay-local LoRA against base. It contains no graph, retrieval, raw-memory baseline, fixed memory accounting, or mechanism-removal intervention.",
+      "statement": "The proposed comparisons cannot establish memory transport, composition, substrate superiority, or path necessity."
+    },
+    {
+      "disagreement_id": "D4_temporal_learning_gap",
+      "proposed_resolution": "Reserve online-learning and continued-improvement claims for a protocol that temporally separates action, immutable outcome, eligible write, dream processing, later goal, and later evaluated action against no-update and passive-lookup controls.",
+      "rationale": "Historical outcomes select source rows post hoc, target evaluation allows one action, and the report is terminal. The assay has neither a later decision affected by a permitted write nor a recurrence path.",
+      "statement": "The assay can show offline package-associated behavior change, not online learning or continued improvement."
+    }
+  ],
+  "graph_delta_interpretation": "The graph deliberately replaces an organism route with a quarantined linear assay: immutable historical episodes feed provenance extraction, source-oracle row selection, assay-local adapter training, one-shot sealed stateless evaluation, and a terminal report. The added prohibited report-to-future-cycle edge is essential isolation, but it also confirms that no graph-mediated dream-memory-think causal path is exercised.",
+  "human_boundary": {
+    "open_questions": [
+      "Does Rohin ratify only the exact proposed bytes and A0 CPU/no-model/no-tokenizer scope, while retaining separate exact A1, A2, and A3 decisions?",
+      "Does Rohin want a later benchmark whose primary object is full-organism memory use rather than this isolated continuation-writer floor?",
+      "What fixed-budget and paired-world controls must a later benchmark use to distinguish local dream-memory transport, goal-conditioned composition, action improvement, online learning, and continued improvement?"
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v3.benchmark",
+  "loop_delta_interpretation": "L1 is extraction over frozen evidence, L2 is finite three-pass supervised transport, L3 is one stateless action, and L4 forbids feedback. This temporal ordering is adequate to prevent retrospective target adaptation and writeback, but it intentionally omits the necessary organism chronology of action then outcome then memory write then dream transformation then later goal-conditioned use. Therefore local edges cannot accumulate across lives or dreams, and a thinker cannot compose a path only when a later goal requires it.",
+  "perspective": "benchmark",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The intended full organism would accumulate lived action/outcome evidence, transform it during dream time into local memory relations, transport or preserve useful structure, and later retrieve and compose a goal-conditioned path during thought before acting; later outcomes would become eligible evidence for future cycles. This proposal is intentionally not that organism. It is a protected offline continuation-writer assay over archived traces, with source-oracle selection, per-life LoRA transport, retrieval-empty first-action evaluation, and terminal reporting.",
+  "visibility_matrix_interpretation": "The matrix correctly separates source selection oracles from target scores and blocks raw source rows, selected corpus, and source payloads from policy serving. The complete-ID scan is a strong direct-copying protection. Still, I7 target identity/module and I8 rendered target IDs are visible during serving, so the model can exploit URI/family cues; C0 controls only the unadapted baseline, not the source of any adapted policy prior. The matrix also intentionally prevents reports and outcomes from entering later life or dream intake, which guards causality but forecloses evidence for online learning."
+}

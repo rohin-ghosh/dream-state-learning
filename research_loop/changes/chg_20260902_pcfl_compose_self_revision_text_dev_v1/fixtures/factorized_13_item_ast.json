@@ -1,0 +1,29 @@
+{
+  "candidate_id": "C01",
+  "representation": "OPERATOR_AST",
+  "symbols": [
+    {"id": "S1", "args": ["TOKEN"], "result": "OPERATOR"},
+    {"id": "S2", "args": ["TOKEN"], "result": "OPERATOR"}
+  ],
+  "records": [
+    {"id": "R00", "s": {"f": "DEFINE", "n": "N00", "e": ["EQ", ["CALL", "S1", [["TOK", "aaaaaaaa"]]], ["PERM", [0, 1, 2, 3, 4, 5]]]}, "p": {"e": ["E00", "E01"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R01", "s": {"f": "DEFINE", "n": "N01", "e": ["EQ", ["CALL", "S1", [["TOK", "bbbbbbbb"]]], ["PERM", [1, 0, 2, 3, 4, 5]]]}, "p": {"e": ["E00", "E02"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R02", "s": {"f": "DEFINE", "n": "N02", "e": ["EQ", ["CALL", "S1", [["TOK", "cccccccc"]]], ["PERM", [0, 2, 1, 3, 4, 5]]]}, "p": {"e": ["E00", "E03"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R03", "s": {"f": "DEFINE", "n": "N03", "e": ["EQ", ["CALL", "S1", [["TOK", "dddddddd"]]], ["PERM", [0, 1, 3, 2, 4, 5]]]}, "p": {"e": ["E00", "E04"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R04", "s": {"f": "DEFINE", "n": "N04", "e": ["EQ", ["CALL", "S1", [["TOK", "eeeeeeee"]]], ["PERM", [0, 1, 2, 4, 3, 5]]]}, "p": {"e": ["E00", "E05"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R05", "s": {"f": "DEFINE", "n": "N05", "e": ["EQ", ["CALL", "S1", [["TOK", "ffffffff"]]], ["PERM", [0, 1, 2, 3, 5, 4]]]}, "p": {"e": ["E00", "E06"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R06", "s": {"f": "DEFINE", "n": "N06", "e": ["EQ", ["CALL", "S1", [["TOK", "gggggggg"]]], ["PERM", [1, 2, 3, 4, 5, 0]]]}, "p": {"e": ["E00", "E07"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R07", "s": {"f": "DEFINE", "n": "N07", "e": ["EQ", ["CALL", "S1", [["TOK", "hhhhhhhh"]]], ["PERM", [5, 0, 1, 2, 3, 4]]]}, "p": {"e": ["E00", "E08"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R08", "s": {"f": "DEFINE", "n": "N08", "e": ["EQ", ["CALL", "S2", [["TOK", "iiiiiiii"]]], ["PERM", [2, 1, 0, 3, 4, 5]]]}, "p": {"e": ["E00", "E09"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R09", "s": {"f": "DEFINE", "n": "N09", "e": ["EQ", ["CALL", "S2", [["TOK", "jjjjjjjj"]]], ["PERM", [0, 3, 2, 1, 4, 5]]]}, "p": {"e": ["E00", "E10"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R10", "s": {"f": "DEFINE", "n": "N10", "e": ["EQ", ["CALL", "S2", [["TOK", "kkkkkkkk"]]], ["PERM", [0, 1, 4, 3, 2, 5]]]}, "p": {"e": ["E00", "E11"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R11", "s": {"f": "DEFINE", "n": "N11", "e": ["EQ", ["CALL", "S2", [["TOK", "llllllll"]]], ["PERM", [0, 1, 2, 5, 4, 3]]]}, "p": {"e": ["E00", "E12"], "r": [], "n": []}, "u": "LOW"},
+    {"id": "R12", "s": {"f": "RULE", "n": "N12", "v": [["V1", "TOKEN"], ["V2", "TOKEN"]], "g": [], "e": ["EQ", ["OP", ["ACT", [["VAR", "V1"], ["VAR", "V2"]]]], ["COMP", [["CALL", "S1", [["VAR", "V1"]]], ["CALL", "S2", [["VAR", "V2"]]]]]]}, "p": {"e": ["E00"], "r": [], "n": []}, "u": "LOW"}
+  ],
+  "predictions": [
+    {"request_id": "A1", "after_tray": ["0", "1", "2", "3", "4", "5"]},
+    {"request_id": "A2", "after_tray": ["1", "0", "2", "3", "4", "5"]}
+  ],
+  "confidence": "LOW",
+  "audit_explanation": null
+}

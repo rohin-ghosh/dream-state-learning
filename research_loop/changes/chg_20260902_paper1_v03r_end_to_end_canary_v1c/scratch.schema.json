@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-scratch-v1c",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nodes"],
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "maxItems": 11,
+      "items": {"oneOf": [{"$ref": "#/$defs/queryNode"}, {"$ref": "#/$defs/thinkNode"}, {"$ref": "#/$defs/backtrackNode"}]}
+    }
+  },
+  "$defs": {
+    "queryNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "query", "result"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "QUERY"},
+        "query": {"$ref": "think0_operation.schema.json#/$defs/queryOperation"},
+        "result": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "read_handle"],
+          "properties": {
+            "type": {"enum": ["NOT_FOUND", "CONFLICT", "ROW"]},
+            "read_handle": {"type": "string", "pattern": "^H[0-9]{6}$"}
+          }
+        }
+      }
+    },
+    "thinkNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "text", "citations"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "THINK"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+        "citations": {"$ref": "think0_operation.schema.json#/$defs/citations"}
+      }
+    },
+    "backtrackNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "text", "citations"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "BACKTRACK"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+        "citations": {"$ref": "think0_operation.schema.json#/$defs/citations"}
+      }
+    }
+  }
+}

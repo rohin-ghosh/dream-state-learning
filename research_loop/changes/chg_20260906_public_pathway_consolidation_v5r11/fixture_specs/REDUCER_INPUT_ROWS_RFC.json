@@ -1,0 +1,2375 @@
+{
+  "document_kind": "PPC5R11_REDUCER_FACTS_ONLY_INPUT_CATALOG",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "authority_conferred": false,
+  "row_builder_language": "PPC5R9_FINITE_RELATION_V1",
+  "forbidden_executor_columns": [
+    "expected_output",
+    "expected_result",
+    "expected_first_failure",
+    "oracle_output",
+    "answer_key",
+    "branch_key",
+    "axis_values",
+    "mutation_descriptor"
+  ],
+  "builders": [
+    {
+      "law_id": "T04_DREAM_REDUCER_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "raw_call_status",
+        "raw_bytes",
+        "debited_once",
+        "candidate_record_ids",
+        "candidate_focus_id",
+        "known_record_ids",
+        "capacity",
+        "rendered_context_bytes",
+        "rendered_context_sha256",
+        "reference_context_bytes",
+        "reference_context_sha256"
+      ],
+      "rows": [
+        [
+          "OK",
+          "[\"r0\"]",
+          true,
+          [
+            "r0"
+          ],
+          "r0",
+          [
+            "r0",
+            "r1"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[]",
+          true,
+          [],
+          null,
+          [
+            "r0"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "MISSING",
+          null,
+          false,
+          [],
+          null,
+          [
+            "r0"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "{",
+          true,
+          [],
+          null,
+          [
+            "r0"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"r0\",\"r0\"]",
+          true,
+          [
+            "r0",
+            "r0"
+          ],
+          "r0",
+          [
+            "r0"
+          ],
+          2,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"rx\"]",
+          true,
+          [
+            "rx"
+          ],
+          "rx",
+          [
+            "r0"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"r1\",\"r0\"]",
+          true,
+          [
+            "r1",
+            "r0"
+          ],
+          "r0",
+          [
+            "r0",
+            "r1"
+          ],
+          2,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"r0\"]",
+          true,
+          [
+            "r0"
+          ],
+          "rx",
+          [
+            "r0"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"r0\",\"r1\"]",
+          true,
+          [
+            "r0",
+            "r1"
+          ],
+          "r0",
+          [
+            "r0",
+            "r1"
+          ],
+          1,
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ],
+        [
+          "OK",
+          "[\"r0\"]",
+          true,
+          [
+            "r0"
+          ],
+          "r0",
+          [
+            "r0"
+          ],
+          1,
+          "CTX:mismatch",
+          "380393f90189330bb2b602f169bbf89028491d8892ed35c4a1a5769c17b295fb",
+          "CTX:stable",
+          "08a144d16c587be167844dd2d536972877e164ce4317b147171a923a5a16cee4"
+        ]
+      ]
+    },
+    {
+      "law_id": "T04_CONTEXT_STATUS_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "dream_status": [
+          "INSTALLED",
+          "EMPTY_PUBLICATION",
+          "ABSTAINED",
+          "INVALID",
+          "MISSING_NO_RETRY"
+        ],
+        "context_policy": [
+          "AUTHENTIC_DREAM_CONTEXT",
+          "RECENCY_CONTEXT",
+          "PERMUTED_CONTEXT"
+        ]
+      }
+    },
+    {
+      "law_id": "T04_TYPED_DEPENDENCY_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "context_policy",
+        "consumes_dream",
+        "source_role"
+      ],
+      "rows": [
+        [
+          "AUTHENTIC_DREAM_CONTEXT",
+          true,
+          "DREAM_RESULT"
+        ],
+        [
+          "RECENCY_CONTEXT",
+          false,
+          "RECENCY_CONTEXT"
+        ],
+        [
+          "PERMUTED_CONTEXT",
+          false,
+          "PERMUTED_CONTEXT"
+        ]
+      ]
+    },
+    {
+      "law_id": "T04_LIFE_AGGREGATE_MEMBERSHIP_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "N",
+        "present_required_arms"
+      ],
+      "rows": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "law_id": "T04_EMISSION_METAMORPHIC_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "left_upstream",
+        "right_upstream"
+      ],
+      "rows": [
+        [
+          {
+            "intervention_payload_bytes": "A"
+          },
+          {
+            "intervention_payload_bytes": "B"
+          }
+        ],
+        [
+          {
+            "condition": "A"
+          },
+          {
+            "condition": "B"
+          }
+        ],
+        [
+          {
+            "source": "A"
+          },
+          {
+            "source": "B"
+          }
+        ],
+        [
+          {
+            "match_keys": [
+              "a"
+            ]
+          },
+          {
+            "match_keys": [
+              "b"
+            ]
+          }
+        ],
+        [
+          {
+            "provider_scores": [
+              1
+            ]
+          },
+          {
+            "provider_scores": [
+              2
+            ]
+          }
+        ],
+        [
+          {
+            "nonce": "00"
+          },
+          {
+            "nonce": "01"
+          }
+        ],
+        [
+          {
+            "mapping": {
+              "a": "x"
+            }
+          },
+          {
+            "mapping": {
+              "a": "y"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "law_id": "T04_MODEL_DISPATCH_CHAIN_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "DISPATCH"
+      ],
+      "selector": "all rows as one ordered vector"
+    },
+    {
+      "law_id": "T05_CAUSAL_NUMERIC_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "provider_status",
+        "candidate_ids",
+        "score_numerators",
+        "score_denominator",
+        "quantization_scale"
+      ],
+      "rows": [
+        [
+          "OK",
+          [],
+          [],
+          1,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a"
+          ],
+          [
+            1
+          ],
+          1,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a",
+            "b"
+          ],
+          [
+            1,
+            3
+          ],
+          2,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a",
+            "b"
+          ],
+          [
+            1,
+            1
+          ],
+          2,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a"
+          ],
+          [
+            1
+          ],
+          4,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a"
+          ],
+          [
+            3
+          ],
+          4,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a"
+          ],
+          [
+            -1
+          ],
+          4,
+          2
+        ],
+        [
+          "OK",
+          [
+            "a"
+          ],
+          [
+            -3
+          ],
+          4,
+          2
+        ],
+        [
+          "MISSING",
+          [],
+          [],
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "law_id": "T05_CAUSAL_MOUNT_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "mount_is_null",
+        "allowed_null",
+        "artifact_hash_valid"
+      ],
+      "rows": [
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "law_id": "T05_DESCRIPTIVE_PROVIDER_V1",
+      "op": "FILTERED_CROSS_PRODUCT",
+      "dimensions": {
+        "arm": [
+          "RAW_RAG",
+          "FULL_CONTEXT",
+          "EXPLICIT_GRAPH"
+        ],
+        "provider_status": [
+          "FOUND",
+          "NOT_FOUND",
+          "PROVIDER_MISSING"
+        ]
+      },
+      "append_rows": [
+        {
+          "arm": "FULL_CONTEXT",
+          "provider_status": "PREASSIGNMENT_RENDER_OVERFLOW"
+        }
+      ]
+    },
+    {
+      "law_id": "T05_TYPED_REGISTRY_V1",
+      "op": "REGISTRY_FILE_SET",
+      "rows": [
+        "controller_registry.json",
+        "transition_cause_registry.json",
+        "status_registry.json",
+        "visibility_registry.json",
+        "gate_registry.json",
+        "evidence_role_registry.json",
+        "dependency_registry.json",
+        "claim_registry.json",
+        "resource_registry.json",
+        "object_inventory.json",
+        "contract_schema_registry.json",
+        "allowed_dispatch_registry.json",
+        "authority_registry.json"
+      ],
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "CONTRACT_REGISTRY"
+      ]
+    },
+    {
+      "law_id": "T06_PER_LIFE_CONTROL_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "sample_ordinal": [
+          0,
+          1
+        ],
+        "control_kind": [
+          "AUTHENTIC",
+          "WRONG_LIFE",
+          "BINDING_DERANGED"
+        ]
+      },
+      "source_ids": [
+        "D1A",
+        "SHUFFLE",
+        "WRONG_LIFE"
+      ]
+    },
+    {
+      "law_id": "T06_MANIFEST_CLOSURE_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "prospective_sample_ordinals",
+        "manifest_sample_ordinals",
+        "controls_per_life"
+      ],
+      "rows": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          3
+        ]
+      ]
+    },
+    {
+      "law_id": "T06_ALLOWED_PROJECTION_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "stage",
+        "candidate_fields"
+      ],
+      "rows": [
+        [
+          "PROVIDER",
+          []
+        ],
+        [
+          "WRITER",
+          []
+        ],
+        [
+          "TRAINER",
+          []
+        ]
+      ],
+      "source_ids": [
+        "VISIBILITY",
+        "VISIBILITY_CONTRACT"
+      ]
+    },
+    {
+      "law_id": "T06_POINTWISE_POWER_BINDING_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "manifest_id",
+        "support_manifest_ids"
+      ],
+      "rows": [
+        [
+          "m0",
+          [
+            "m0",
+            "m0"
+          ]
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T06_PRE_ENTROPY_ANCESTRY_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "AUTHORITY"
+      ],
+      "selector": "authority stages through POPULATED_RUN"
+    },
+    {
+      "law_id": "T07_FULL_PATH_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "path_length",
+        "world_actions_by_full_observation"
+      ],
+      "rows": [
+        [
+          2,
+          [
+            "A",
+            "A"
+          ]
+        ],
+        [
+          3,
+          [
+            "B",
+            "B",
+            "B"
+          ]
+        ]
+      ],
+      "source_ids": [
+        "PATH"
+      ]
+    },
+    {
+      "law_id": "T07_PROPER_SUBSET_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "path_length",
+        "bitmask",
+        "world_actions"
+      ],
+      "rows": [
+        [
+          2,
+          "01",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          2,
+          "10",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "001",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "010",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "011",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "100",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "101",
+          [
+            "A",
+            "B"
+          ]
+        ],
+        [
+          3,
+          "110",
+          [
+            "A",
+            "B"
+          ]
+        ]
+      ],
+      "source_ids": [
+        "PATH"
+      ]
+    },
+    {
+      "law_id": "T07_ALTERNATE_PATH_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "path_length",
+        "eligible_paths",
+        "registered_path",
+        "sufficient_paths"
+      ],
+      "rows": [
+        [
+          2,
+          [
+            [
+              "e0",
+              "e1"
+            ],
+            [
+              "e2",
+              "e3"
+            ]
+          ],
+          [
+            "e0",
+            "e1"
+          ],
+          [
+            [
+              "e0",
+              "e1"
+            ]
+          ]
+        ],
+        [
+          3,
+          [
+            [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            [
+              "e3",
+              "e4",
+              "e5"
+            ]
+          ],
+          [
+            "e0",
+            "e1",
+            "e2"
+          ],
+          [
+            [
+              "e0",
+              "e1",
+              "e2"
+            ]
+          ]
+        ]
+      ],
+      "source_ids": [
+        "PATH"
+      ]
+    },
+    {
+      "law_id": "T07_EDGE_ARTIFACT_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "edge_key": [
+          "p20",
+          "p21",
+          "p30",
+          "p31",
+          "p32"
+        ],
+        "artifact_role": [
+          "SOURCE",
+          "CUT",
+          "TWIN",
+          "SHAM",
+          "TWIN_PARITY",
+          "SHAM_PARITY"
+        ]
+      },
+      "source_ids": [
+        "PATH"
+      ]
+    },
+    {
+      "law_id": "T07_CLOSURE_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "closure_kind"
+      ],
+      "rows": [
+        [
+          "ROUTE_PROVIDER_AUDIT_SPLIT"
+        ],
+        [
+          "MODEL_VIEW_REPLAY_RETENTION"
+        ],
+        [
+          "CONCRETE_VISIBILITY_ROLE"
+        ],
+        [
+          "INVENTORY_EDGE_EQUALITY"
+        ]
+      ],
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "VISIBILITY"
+      ]
+    },
+    {
+      "law_id": "T08_ROUTE_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "assigned_target_key",
+        "read_key",
+        "matching_route_ids",
+        "provider_public_bytes",
+        "intervention_payload_bytes"
+      ],
+      "rows": [
+        [
+          "target",
+          "target",
+          [],
+          "provider",
+          "intervention"
+        ],
+        [
+          "target",
+          "target",
+          [
+            "route0"
+          ],
+          "provider",
+          "intervention"
+        ],
+        [
+          "target",
+          "target",
+          [
+            "route0",
+            "route1"
+          ],
+          "provider",
+          "intervention"
+        ],
+        [
+          "target",
+          "other",
+          [],
+          "provider",
+          "intervention"
+        ]
+      ],
+      "source_ids": [
+        "PATH"
+      ]
+    },
+    {
+      "law_id": "T08_INFLUENCE_RELATION_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "left_upstream",
+        "right_upstream"
+      ],
+      "rows": [
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "B",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c1",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s1",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "other"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              2
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n1",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ],
+        [
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route0"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          },
+          {
+            "assigned_target_key": "target",
+            "condition": "c0",
+            "intervention_payload_bytes": "A",
+            "mapping": {
+              "target": "route1"
+            },
+            "match_keys": [
+              "target"
+            ],
+            "matching_route_ids": [
+              "route0"
+            ],
+            "nonce": "n0",
+            "provider_response_bytes": "provider",
+            "provider_scores": [
+              1
+            ],
+            "read_key": "target",
+            "source": "s0",
+            "static_context_bytes": "ctx"
+          }
+        ]
+      ],
+      "source_ids": [
+        "PATH",
+        "VISIBILITY",
+        "VISIBILITY_CONTRACT"
+      ]
+    },
+    {
+      "law_id": "T08_QUEUE_OUTCOME_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "ordered_slots",
+        "slot_state",
+        "route_match_count",
+        "route_target_class",
+        "provider_call_status",
+        "schedule_state"
+      ],
+      "rows": [
+        [
+          [
+            "q0"
+          ],
+          "QUEUED",
+          1,
+          "TARGET",
+          "OK",
+          "COMPLETE"
+        ],
+        [
+          [
+            "q0"
+          ],
+          "QUEUED",
+          0,
+          "TARGET",
+          "OK",
+          "COMPLETE"
+        ],
+        [
+          [
+            "q0"
+          ],
+          "REJECTED",
+          0,
+          "TARGET",
+          "OK",
+          "REJECTED"
+        ],
+        [
+          [
+            "q0",
+            "q1"
+          ],
+          "TWO_OUTSTANDING",
+          2,
+          "TARGET",
+          "OK",
+          "ORDERED_DISCARD"
+        ]
+      ],
+      "source_ids": [
+        "CONTROLLER"
+      ]
+    },
+    {
+      "law_id": "T08_OPAQUE_ALLOCATION_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "domain_tag",
+        "run_id",
+        "sample_ordinal",
+        "path_template_id",
+        "edge_position",
+        "edge_id",
+        "entropy_slice_hex"
+      ],
+      "rows": [
+        [
+          "PPC5R9_D1B_OPAQUE",
+          "run0",
+          0,
+          "p3",
+          1,
+          "e1",
+          "00010203"
+        ]
+      ]
+    },
+    {
+      "law_id": "T08_AUDIT_SPLIT_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "audit_kind",
+        "row_roles"
+      ],
+      "rows": [
+        [
+          "ROUTE_LINEAGE",
+          [
+            "ROUTE_LINEAGE"
+          ]
+        ],
+        [
+          "PROVIDER",
+          [
+            "PROVIDER"
+          ]
+        ]
+      ],
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS"
+      ]
+    },
+    {
+      "law_id": "T08_DISPATCH_CLOSURE_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "DISPATCH"
+      ],
+      "selector": "all 23 registered dispatch fields as one closure vector"
+    },
+    {
+      "law_id": "T09_DREAM_CONTEXT_PROGRAM_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "dream_status": [
+          "INSTALLED",
+          "EMPTY_PUBLICATION",
+          "ABSTAINED",
+          "INVALID",
+          "MISSING_NO_RETRY"
+        ],
+        "context_policy": [
+          "AUTHENTIC_DREAM_CONTEXT",
+          "RECENCY_CONTEXT",
+          "PERMUTED_CONTEXT"
+        ],
+        "read_slot_count": [
+          0,
+          1
+        ],
+        "terminal_observation_class": [
+          "ACTION",
+          "NO_ACTION"
+        ]
+      },
+      "source_ids": [
+        "STATUS"
+      ]
+    },
+    {
+      "law_id": "T09_STATUS_RULE_V1",
+      "op": "SOURCE_EXPAND",
+      "source_ids": [
+        "STATUS"
+      ],
+      "selector": "rules[].raw_results -> {raw_result,applies}; status fields remain reducer-law data and are not copied into executor input"
+    },
+    {
+      "law_id": "T09_STATUS_PRECEDENCE_V1",
+      "op": "UNORDERED_PAIRS",
+      "source_ids": [
+        "STATUS"
+      ],
+      "selector": "all two-element combinations of status_contract.precedence"
+    },
+    {
+      "law_id": "T10_ROOT_STATUS_V1",
+      "op": "FILTERED_CROSS_PRODUCT",
+      "dimensions": {
+        "root_policy": [
+          "DREAM_TO_SLEEP",
+          "RECENCY_TO_SLEEP",
+          "HASH_PERMUTED_TO_SLEEP"
+        ],
+        "dream_status": [
+          "INSTALLED",
+          "EMPTY_PUBLICATION",
+          "ABSTAINED",
+          "INVALID",
+          "MISSING_NO_RETRY"
+        ]
+      },
+      "exclude": [
+        {
+          "root_policy": [
+            "RECENCY_TO_SLEEP",
+            "HASH_PERMUTED_TO_SLEEP"
+          ],
+          "dream_status": "MISSING_NO_RETRY"
+        }
+      ],
+      "source_ids": [
+        "STATUS"
+      ]
+    },
+    {
+      "law_id": "T10_REACHABLE_D1D_PIPELINE_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "root_policy": [
+          "DREAM_TO_SLEEP",
+          "RECENCY_TO_SLEEP",
+          "HASH_PERMUTED_TO_SLEEP"
+        ],
+        "stage": [
+          "ROOT",
+          "WRITER",
+          "CORPUS",
+          "TRAINER",
+          "VALIDATION",
+          "PUBLICATION",
+          "PROVIDER",
+          "BEHAVIOR"
+        ]
+      },
+      "source_ids": [
+        "ASSAYS",
+        "STATUS"
+      ]
+    },
+    {
+      "law_id": "T10_DISPATCH_CHAIN_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "root_policy"
+      ],
+      "rows": [
+        [
+          "DREAM_TO_SLEEP"
+        ],
+        [
+          "RECENCY_TO_SLEEP"
+        ],
+        [
+          "HASH_PERMUTED_TO_SLEEP"
+        ]
+      ],
+      "source_ids": [
+        "DISPATCH"
+      ]
+    },
+    {
+      "law_id": "T10_RESOURCE_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "resource_property"
+      ],
+      "rows": [
+        [
+          "INCLUSIVE"
+        ],
+        [
+          "MARGINAL"
+        ],
+        [
+          "PHYSICAL_TOTAL"
+        ],
+        [
+          "PERMUTATION_INVARIANCE"
+        ],
+        [
+          "COMPONENTWISE_CONSERVATION"
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS",
+        "RESOURCES"
+      ]
+    },
+    {
+      "law_id": "T10_D1D_QUALIFICATION_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "claim_id"
+      ],
+      "rows": [
+        [
+          "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY"
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS",
+        "CLAIMS"
+      ]
+    },
+    {
+      "law_id": "T11_LIFE_GATE_AGGREGATE_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "N": [
+          1,
+          2
+        ],
+        "arm_state": [
+          "COMPLETE",
+          "TREATMENT_MISSING",
+          "CONTROL_MISSING",
+          "INTEGRITY_CLEAN_NO_ACTION"
+        ]
+      },
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_PAIRED_BOUNDARY_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "difference_numerator",
+        "difference_denominator",
+        "margin_numerator",
+        "margin_denominator",
+        "required_arm_present"
+      ],
+      "rows": [
+        [
+          0,
+          1,
+          1,
+          2,
+          true
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          true
+        ],
+        [
+          3,
+          4,
+          1,
+          2,
+          true
+        ],
+        [
+          3,
+          4,
+          1,
+          2,
+          false
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_SAFETY_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "endpoint_id": [
+          "FALSE_SELECTION",
+          "NOT_FOUND"
+        ],
+        "provider_state": [
+          "NO_EVENT",
+          "EVENT",
+          "MISSING_PROVIDER"
+        ]
+      },
+      "source_ids": [
+        "ANALYSIS",
+        "STATUS"
+      ]
+    },
+    {
+      "law_id": "T11_MISSINGNESS_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "N",
+        "missing_events",
+        "ceiling_numerator",
+        "ceiling_denominator"
+      ],
+      "rows": [
+        [
+          4,
+          0,
+          1,
+          4
+        ],
+        [
+          4,
+          1,
+          1,
+          4
+        ],
+        [
+          4,
+          4,
+          1,
+          4
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_CP_BRACKET_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "direction": [
+          "LOWER",
+          "UPPER"
+        ],
+        "count_class": [
+          "ZERO",
+          "INTERIOR",
+          "N"
+        ]
+      },
+      "constants": {
+        "N": 4,
+        "tail_alpha_numerator": 1,
+        "tail_alpha_denominator": 40,
+        "decimal_scale": 6
+      },
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_IUT_CRITICAL_COUNT_V1",
+      "op": "CROSS_PRODUCT",
+      "dimensions": {
+        "gate_kind": [
+          "PAIRED",
+          "SAFETY",
+          "MISSINGNESS"
+        ],
+        "position": [
+          "BELOW",
+          "AT",
+          "ABOVE"
+        ]
+      },
+      "constants": {
+        "N": 16,
+        "alpha_numerator": 1,
+        "alpha_denominator": 20,
+        "cp_tail_alpha_numerator": 1,
+        "cp_tail_alpha_denominator": 80,
+        "paired_pi0_numerator": 1,
+        "paired_pi0_denominator": 2,
+        "event_ceiling_numerator": 1,
+        "event_ceiling_denominator": 2,
+        "decimal_scale": 6
+      },
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_HOLM_PERMUTATION_V1",
+      "op": "PERMUTATIONS",
+      "values": [
+        "D1A",
+        "D1B",
+        "D1C",
+        "D1D"
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_HOLM_TIE_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "claim_ids",
+        "p_numerator",
+        "p_denominator",
+        "alpha_numerator",
+        "alpha_denominator"
+      ],
+      "rows": [
+        [
+          [
+            "D1D",
+            "D1B",
+            "D1A",
+            "D1C"
+          ],
+          1,
+          100,
+          1,
+          20
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_HOLM_STOP_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "stop_position"
+      ],
+      "rows": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          null
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_CLAIM_BYTES_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "CLAIMS"
+      ],
+      "selector": "claim_registry.rows joined to claim_renderings by row_key"
+    },
+    {
+      "law_id": "T11_CONSTRUCTION_PROOF_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "proof_kind",
+        "masses"
+      ],
+      "rows": [
+        [
+          "FINITE_SUPPORT",
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          "CONSERVATIVE_PARTITION",
+          [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_POWER_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "power_case",
+        "gate_powers",
+        "support_masses",
+        "covered"
+      ],
+      "rows": [
+        [
+          "UNION_BOUND_POSITIVE",
+          [
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              1
+            ]
+          ],
+          true
+        ],
+        [
+          "UNION_BOUND_FLOOR_ZERO",
+          [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              1
+            ]
+          ],
+          true
+        ],
+        [
+          "POINTWISE_ALL_SUCCESS",
+          [
+            [
+              9,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          true
+        ],
+        [
+          "POINTWISE_MIXED_FAILURE",
+          [
+            [
+              9,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          true
+        ],
+        [
+          "POINTWISE_UNCOVERED_ZERO",
+          [
+            [
+              9,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              2
+            ]
+          ],
+          false
+        ],
+        [
+          "GLOBAL_PRODUCT_SUBSTITUTION_REJECTED",
+          [
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          [
+            [
+              1,
+              1
+            ]
+          ],
+          true
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T11_SAFETY_TEMPLATE_RESOLUTION_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "sample_ordinals",
+        "template_keys",
+        "resolved_life_ids"
+      ],
+      "rows": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            "k0",
+            "k1"
+          ],
+          [
+            "life0",
+            "life1"
+          ]
+        ]
+      ],
+      "source_ids": [
+        "ANALYSIS"
+      ]
+    },
+    {
+      "law_id": "T12_VISIBILITY_CELL_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "VISIBILITY",
+        "VISIBILITY_CONTRACT"
+      ],
+      "selector": "visibility_registry.cells in stored order"
+    },
+    {
+      "law_id": "T12_TYPED_SCHEMA_EDGE_V1",
+      "op": "SCHEMA_EDGE_EXTRACT",
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS"
+      ]
+    },
+    {
+      "law_id": "T12_OBJECT_TYPE_V1",
+      "op": "TOP_LEVEL_TYPE_EXTRACT",
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "CONTRACT_REGISTRY"
+      ]
+    },
+    {
+      "law_id": "T12_TYPED_REGISTRY_V1",
+      "op": "REGISTRY_FILE_SET",
+      "rows": [
+        "controller_registry.json",
+        "transition_cause_registry.json",
+        "status_registry.json",
+        "visibility_registry.json",
+        "gate_registry.json",
+        "evidence_role_registry.json",
+        "dependency_registry.json",
+        "claim_registry.json",
+        "resource_registry.json",
+        "object_inventory.json",
+        "contract_schema_registry.json",
+        "allowed_dispatch_registry.json",
+        "authority_registry.json"
+      ],
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "CONTRACT_REGISTRY"
+      ]
+    },
+    {
+      "law_id": "T12_TRANSITION_CAUSE_V1",
+      "op": "SOURCE_VECTOR",
+      "source_ids": [
+        "CAUSES"
+      ],
+      "selector": "transition_cause_registry.rows in cause_order"
+    },
+    {
+      "law_id": "T12_PREFLIGHT_DENIAL_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "denial_code"
+      ],
+      "rows": [
+        [
+          "MISSING_AUTHORITY"
+        ],
+        [
+          "STALE_AUTHORITY"
+        ],
+        [
+          "WRONG_RUN"
+        ],
+        [
+          "WRONG_TYPE"
+        ],
+        [
+          "WRONG_ROLE"
+        ],
+        [
+          "WRONG_ORDER"
+        ],
+        [
+          "WRONG_CARDINALITY"
+        ],
+        [
+          "UNALLOWED_DISPATCH"
+        ]
+      ],
+      "source_ids": [
+        "AUTHORITY",
+        "DISPATCH"
+      ]
+    },
+    {
+      "law_id": "T12_THREE_WAY_EQUALITY_V1",
+      "op": "THREE_WAY_EDGE_EXTRACT",
+      "source_ids": [
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "VISIBILITY",
+        "VISIBILITY_CONTRACT"
+      ]
+    },
+    {
+      "law_id": "T13_FULL_TECHNICAL_PASS_V1",
+      "op": "T13_TECHNICAL_GRAPH",
+      "source_ids": [
+        "AUTHORITY",
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "CONTRACT_REGISTRY"
+      ]
+    },
+    {
+      "law_id": "T13_PREFLIGHT_DENIAL_V1",
+      "op": "INLINE_ROWS",
+      "columns": [
+        "denial_code"
+      ],
+      "rows": [
+        [
+          "MISSING_AUTHORITY"
+        ],
+        [
+          "STALE_AUTHORITY"
+        ],
+        [
+          "WRONG_RUN"
+        ],
+        [
+          "WRONG_TYPE"
+        ],
+        [
+          "WRONG_ROLE"
+        ],
+        [
+          "WRONG_ORDER"
+        ],
+        [
+          "WRONG_CARDINALITY"
+        ],
+        [
+          "UNALLOWED_DISPATCH"
+        ]
+      ],
+      "source_ids": [
+        "AUTHORITY",
+        "DISPATCH"
+      ]
+    },
+    {
+      "law_id": "T13_AUTHORITY_TOPOLOGY_V1",
+      "op": "AUTHORITY_DAG_EXTRACT",
+      "source_ids": [
+        "AUTHORITY",
+        "AUTHORITY_REGISTRY",
+        "SCHEMA_DEFS",
+        "OBJECTS"
+      ]
+    },
+    {
+      "law_id": "T14_FULL_PREDECESSOR_REPLAY_V1",
+      "op": "T14_REPLAY_GRAPH_EXTRACT",
+      "columns": [
+        "ordinal",
+        "role",
+        "artifact_type",
+        "cardinality",
+        "run_id",
+        "canonical_artifact_bytes",
+        "artifact_sha256"
+      ],
+      "rows": [
+        [
+          0,
+          "PPC5R9_T02_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":0,\"payload\":{\"prior_state\":\"QUEUED\",\"route_match_count\":1,\"slot_id\":\"q0\",\"trigger\":\"OBSERVE\"},\"role\":\"PPC5R9_T02_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "b5ed577b8280b9aea33c4ff03cef8a5f08fa260f599da0788e0516e0c8fbb402"
+        ],
+        [
+          1,
+          "PPC5R9_T03_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":1,\"payload\":{\"ordered_slots\":[\"q0\"],\"route_match_count\":1,\"route_target_class\":\"TARGET\",\"schedule_state\":\"COMPLETE\"},\"role\":\"PPC5R9_T03_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "c6548e025dd5b9382574e19ffc3bdc961c88a214d80359a63264fc07ac32f2d9"
+        ],
+        [
+          2,
+          "PPC5R9_T04_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":2,\"payload\":{\"assigned_target_key\":\"target\",\"matching_route_ids\":[\"route0\"],\"read_key\":\"target\"},\"role\":\"PPC5R9_T04_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "7270b7fe125b5bbf65a18b1329965c0b9f4823cebf57b5455932a8106b6bb11e"
+        ],
+        [
+          3,
+          "PPC5R9_T05_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":3,\"payload\":{\"provider_public_bytes\":\"provider\",\"provider_status\":\"OK\"},\"role\":\"PPC5R9_T05_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "2c5c3093eab254f822aac230e0564132f5e9c62ea0f25782cebaed310ffefa22"
+        ],
+        [
+          4,
+          "PPC5R9_T06_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":4,\"payload\":{\"assigned_target_key\":\"target\",\"left_intervention_payload_bytes\":\"A\",\"matching_route_ids\":[\"route0\"],\"provider_response_bytes\":\"provider\",\"read_key\":\"target\",\"right_intervention_payload_bytes\":\"B\",\"static_context_bytes\":\"ctx\"},\"role\":\"PPC5R9_T06_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "ce4baa33cd27e0dc56c73553b6e41c1bba9e598a4378abe829b5d33b397f681b"
+        ],
+        [
+          5,
+          "PPC5R9_T07_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":5,\"payload\":{\"dispatch_scope\":\"ALL_REGISTERED_ROWS\"},\"role\":\"PPC5R9_T07_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "c2dfe870b7e715fe6fff3bb9b4785926e19fdda31ff91facfdc0d2b6bd44dc5d"
+        ],
+        [
+          6,
+          "PPC5R9_T08_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":6,\"payload\":{\"context_policy\":\"AUTHENTIC_DREAM_CONTEXT\",\"dream_status\":\"INSTALLED\"},\"role\":\"PPC5R9_T08_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "c1d84a3170843395e8acfd1bdabed8b26eece8e88d69312d2b478dd734dea7ea"
+        ],
+        [
+          7,
+          "PPC5R9_T09_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":7,\"payload\":{\"root_policy\":\"DREAM_TO_SLEEP\",\"stage\":\"BEHAVIOR\"},\"role\":\"PPC5R9_T09_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "b0ebc1e98b36da2d114b8f692d546f8c45555d0888b91b9775a41ca772e7e839"
+        ],
+        [
+          8,
+          "PPC5R9_T10_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":8,\"payload\":{\"N\":1,\"present_required_arms\":2},\"role\":\"PPC5R9_T10_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "17f49a69bff9ac0f49c006ab8d1649b6153b9b03499f0e5492680cca96d883f6"
+        ],
+        [
+          9,
+          "PPC5R9_T11_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":9,\"payload\":{\"controls\":[\"AUTHENTIC\",\"WRONG_LIFE\",\"BINDING_DERANGED\"],\"sample_ordinal\":0},\"role\":\"PPC5R9_T11_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "c809d37c4dc8245dd46288dca4fa249bddcd232d7ed82275288206a4b3f46083"
+        ],
+        [
+          10,
+          "PPC5R9_T12_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":10,\"payload\":{\"conditional_bounds\":[[4,5],[3,5]],\"masses\":[[1,2],[1,2]]},\"role\":\"PPC5R9_T12_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "2b81770b18990a5782c049379454fbdcb672cec9f209548ca8cf7605abc505fc"
+        ],
+        [
+          11,
+          "PPC5R9_T13_RESULT",
+          "TEST_RESULT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"TEST_RESULT\",\"cardinality\":\"ONE\",\"ordinal\":11,\"payload\":{\"events\":[{\"amount\":10,\"cell\":\"D1D\",\"event_id\":\"e0\",\"kind\":\"TOKENS\"},{\"amount\":5,\"cell\":\"D1D\",\"event_id\":\"e1\",\"kind\":\"TOKENS\"}]},\"role\":\"PPC5R9_T13_RESULT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "9ae1b724a315d203fe44bc741f1b3927a9eedab1b5e5d7bc3926ec1f71145376"
+        ],
+        [
+          12,
+          "PRE_ENTROPY_DESIGN_LOCK",
+          "PRE_ENTROPY_DESIGN_LOCK",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"PRE_ENTROPY_DESIGN_LOCK\",\"cardinality\":\"ONE\",\"ordinal\":12,\"payload\":{\"left_ids\":[\"x\",\"y\"],\"right_ids\":[\"y\",\"z\"]},\"role\":\"PRE_ENTROPY_DESIGN_LOCK\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "10a8043c27032e7743c4499b059925873f3e516295cbc7363336f9ecf2790dd7"
+        ],
+        [
+          13,
+          "ENTROPY_ACQUISITION",
+          "ENTROPY_ACQUISITION_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"ENTROPY_ACQUISITION_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":13,\"payload\":{\"required_gates\":[true,true,true]},\"role\":\"ENTROPY_ACQUISITION\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "503a1b830cc47c8f38d1dd867bd12e8f4d5ea51b8a93bfe67863d3311edb08ce"
+        ],
+        [
+          14,
+          "POPULATED_RUN_LOCK",
+          "POPULATED_RUN_LOCK",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"POPULATED_RUN_LOCK\",\"cardinality\":\"ONE\",\"ordinal\":14,\"payload\":{\"candidate_pass\":true,\"required_dependencies\":[true,true]},\"role\":\"POPULATED_RUN_LOCK\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "c142fc65e2f6ed1647dd7da0ee7c75a645d10ec303ffd07402eb07f1e6e4e31b"
+        ],
+        [
+          15,
+          "STATIC_SEAL_PAIR",
+          "STATIC_SEAL_PAIR_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"STATIC_SEAL_PAIR_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":15,\"payload\":{\"claim_id\":\"PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY\"},\"role\":\"STATIC_SEAL_PAIR\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "e8540eb6de2fccccb3e6e263083af881fe060a6c4fe4781361477c157b2c2a08"
+        ],
+        [
+          16,
+          "REVIEW_RECEIPT",
+          "REVIEW_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"REVIEW_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":16,\"payload\":{\"present\":true},\"role\":\"REVIEW_RECEIPT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "dd71ef7913c4500aa354b08062aa034d63278044fb43df2db8bf9e1244465d26"
+        ],
+        [
+          17,
+          "ADVOCATE_RECEIPT",
+          "ADVOCATE_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"ADVOCATE_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":17,\"payload\":{\"present\":true},\"role\":\"ADVOCATE_RECEIPT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "218a3b3cd2322764589d3f1a951cfa71e2378a2f47e764301e14ab48ef4c62f3"
+        ],
+        [
+          18,
+          "COMPLETE_RUN_MANIFEST",
+          "COMPLETE_RUN_MANIFEST",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"COMPLETE_RUN_MANIFEST\",\"cardinality\":\"ONE\",\"ordinal\":18,\"payload\":{\"present\":true},\"role\":\"COMPLETE_RUN_MANIFEST\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "839482f320862d639b45554b07a653157c60a378e702bec4b577f6bd5f60b61c"
+        ],
+        [
+          19,
+          "ANALYSIS_BUNDLE",
+          "ANALYSIS_BUNDLE",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"ANALYSIS_BUNDLE\",\"cardinality\":\"ONE\",\"ordinal\":19,\"payload\":{\"present\":true},\"role\":\"ANALYSIS_BUNDLE\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "7710a634ca7f6d3e4adb3b3ff791a1613983885a7f7013b740f5caebcb4c2e88"
+        ],
+        [
+          20,
+          "D1A_CONTROL_SET_MANIFEST",
+          "D1A_CONTROL_SET_MANIFEST",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"D1A_CONTROL_SET_MANIFEST\",\"cardinality\":\"ONE\",\"ordinal\":20,\"payload\":{\"present\":true},\"role\":\"D1A_CONTROL_SET_MANIFEST\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "6999b2d7cc5bbeaa3326a59196cc78ee465f5aa035abad27c5f9f4e3ba9de448"
+        ],
+        [
+          21,
+          "COMPLETE_MODEL_VIEW_MANIFEST",
+          "COMPLETE_MODEL_VIEW_MANIFEST",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"COMPLETE_MODEL_VIEW_MANIFEST\",\"cardinality\":\"ONE\",\"ordinal\":21,\"payload\":{\"present\":true},\"role\":\"COMPLETE_MODEL_VIEW_MANIFEST\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "3258985117030aa5a6c94c4d3d62d01e7b3faa8faba20a16a16b049b34234b63"
+        ],
+        [
+          22,
+          "ROUTE_LINEAGE_AUDIT",
+          "ROUTE_LINEAGE_AUDIT_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"ROUTE_LINEAGE_AUDIT_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":22,\"payload\":{\"present\":true},\"role\":\"ROUTE_LINEAGE_AUDIT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "f2d8f65c5a362ebd5b35e8634113244b9b71d5205e8c1ca095d9ed16a34f1e5d"
+        ],
+        [
+          23,
+          "PROVIDER_AUDIT",
+          "PROVIDER_AUDIT_RECEIPT",
+          "ONE",
+          "RUN_FIXTURE_0001",
+          "{\"artifact_type\":\"PROVIDER_AUDIT_RECEIPT\",\"cardinality\":\"ONE\",\"ordinal\":23,\"payload\":{\"present\":true},\"role\":\"PROVIDER_AUDIT\",\"run_id\":\"RUN_FIXTURE_0001\"}",
+          "2cb34eecafb9a1a0ca88172314964759b27f6d72f9d320c2f0b76459fed380e8"
+        ]
+      ],
+      "source_ids": [
+        "AUTHORITY",
+        "SCHEMA_DEFS",
+        "OBJECTS",
+        "ANALYSIS",
+        "CONTROLLER",
+        "CAUSES",
+        "CLAIMS",
+        "RESOURCES",
+        "DISPATCH"
+      ],
+      "parameter_builder": "T14_BOUND_SOURCES_V1"
+    }
+  ]
+}

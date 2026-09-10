@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-proposal-v1c",
+  "title": "Immutable DREAM proposal audit record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal_id", "slot", "kind", "fields", "citations", "semantic_hash", "audit_prediction", "audit_confidence", "proposal_hash"],
+  "properties": {
+    "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+    "slot": {"type": "integer", "minimum": 0, "maximum": 99},
+    "kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+    "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+    "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M[0-9]{6}$"}},
+    "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "audit_prediction": {"type": "string", "minLength": 1, "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "audit_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "proposal_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "minItems": 2, "maxItems": 2}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "minItems": 3, "maxItems": 3}}}
+    }
+  ],
+  "$defs": {
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]}
+  }
+}

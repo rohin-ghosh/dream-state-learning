@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-read-result-v1c",
+  "title": "Closed thinker-facing read result",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {"type": {"const": "NO_READ"}}
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle"],
+      "properties": {
+        "type": {"const": "NOT_FOUND"},
+        "read_handle": {"$ref": "#/$defs/read_handle"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle"],
+      "properties": {
+        "type": {"const": "CONFLICT"},
+        "read_handle": {"$ref": "#/$defs/read_handle"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle", "kind", "fields", "status", "semantic_hash"],
+      "properties": {
+        "type": {"const": "ROW"},
+        "read_handle": {"$ref": "#/$defs/read_handle"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+        "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "ROUTE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "EFFECT"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"enum": ["SOURCE_VALUE", "ANIMAL_VALUE"]}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "RECIPE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "minItems": 3, "maxItems": 3}}}}
+      ]
+    }
+  ],
+  "$defs": {
+    "read_handle": {"type": "string", "pattern": "^H[0-9]{6}$"},
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]}
+  }
+}

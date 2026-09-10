@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-public-event-v1c",
+  "title": "Closed public event projection",
+  "oneOf": [
+    {"$ref": "#/$defs/route"},
+    {"$ref": "#/$defs/effect"},
+    {"$ref": "#/$defs/source_value"},
+    {"$ref": "#/$defs/animal_value"},
+    {"$ref": "#/$defs/target_baseline"},
+    {"$ref": "#/$defs/recipe"}
+  ],
+  "$defs": {
+    "base_properties": {
+      "event_id": {"type": "string", "pattern": "^E0000(?:[0-3][0-9]|4[0-5])$"},
+      "event_index": {"type": "integer", "minimum": 0, "maximum": 45},
+      "event_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]},
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "ROUTE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "minItems": 2, "maxItems": 2},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "EFFECT"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "source_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "SOURCE_VALUE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "animal_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "ANIMAL_VALUE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "target_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "TARGET_BASELINE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "RECIPE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "minItems": 2, "maxItems": 2},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    }
+  }
+}

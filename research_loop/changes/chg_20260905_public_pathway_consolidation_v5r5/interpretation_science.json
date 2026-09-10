@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r5_science_fresh_v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r5",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "cbbee3847bd548b0fb28211b53b522ad81315ea7340133187526bce2267093b4",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/human_directive.txt",
+      "sha256": "93a35b89f40c1b78e39f4cade46e5df7436e974e30bd6cae75e440dd3b2be080",
+      "purpose": "Verbatim direction and bounded r4-resolution provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/scope_proposal.json",
+      "sha256": "9c4eb37af0a7efde06d105b83ce99c122026bd34a6d0c6e0bc04a57be71e7b70",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/protocol.md",
+      "sha256": "57973de86fac9602377d0947c5854fb41eb8ae2f5c2ad0261eae875c474da012",
+      "purpose": "Standalone scientific question, estimand, construction law, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/machine_contract.md",
+      "sha256": "97a26a2158d354e8290125f16c9bbadf57275cafbb863a2c4ac593aa449cb07c",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/semantic_validators.md",
+      "sha256": "f86fe02d818cb7ef63fe85c03c193f1e5e58d1d3844a8d57febb89b24aff7a89",
+      "purpose": "Pure cross-field, exact-statistical, and acyclic-DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/assay_contract.json",
+      "sha256": "0d7e137660d97941be6e3eb53d83805285724885ffa11215f085145dc18d9f94",
+      "purpose": "Assay populations, freeze matrix, controls, and accepted-constructible generator law."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/analysis_contract.json",
+      "sha256": "e4adc77004a36d4030e358b026990a92099d3bbe8008b46a8052a09a3eafca6b",
+      "purpose": "Exact paired, safety, missingness, Holm, and conditional power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/status_contract.json",
+      "sha256": "5221a4e09c62e0078e42daae7d71d73e300f0b823fd060156f837f4320a6b0d5",
+      "purpose": "Total status-to-endpoint and shared-DREAM dependency mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/visibility_contract.json",
+      "sha256": "3ac798a7daf3045c13f3d010abd18afd6a10444955cbec6ad08349cffe0d58b9",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/authority_contract.json",
+      "sha256": "2cd9d87bcfeef8b07634814422d1608f59817061e65f3c3201d9d54b5baccdd8",
+      "purpose": "Stage-specific, role-closed authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/claim_dependency_map.json",
+      "sha256": "7aa1c6ba276f0bb712c5a88fd8585e0fc44349ca0448ac8cdc9ff4ea9438e671",
+      "purpose": "Literal candidate-decision, T14, authority, and release map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/object_inventory.json",
+      "sha256": "205122bd0b968b12a17b9dd8822d00cd48dad536d19794e48a3eaa85693c0198",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/contracts.schema.json",
+      "sha256": "1e9de72c91a4a953fe2620a3dad1d4eb6a7b80d3ad3e2a5d6b9a61586e3b3b32",
+      "purpose": "Closed typed schemas for every inventoried artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/controller_registry.json",
+      "sha256": "476a97dcae08d22ff0789830762e7c9e8e9a29e7ed0c58519769fdf35296111f",
+      "purpose": "Hash-bound total D1A-D1D controller rows and vocabulary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/test_contract.json",
+      "sha256": "bf0628ae5a7433fefed3e94fc52ad20311b2852097c6c564f021ef4076ca23db",
+      "purpose": "Executable T01-T14 stage and coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/drafts/build_r5_contract_schema.py",
+      "sha256": "bd28e56f7adbe9eb280082929b6a1baef407d1461ba9a6473420ec412f79d3e9",
+      "purpose": "Nonnormative deterministic generator for repetitive schema, inventory, and controller bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Binding PPC5r4 rework consensus and twelve-blocker provenance only; no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Scientific mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "Verdict: REWORK before architecture ratification. The narrow scientific program is worth pursuing as a controlled prerequisite paper: frozen THINK/DREAM/ACT, learning confined to READ scoring, four non-substitutable assays, direct paired execution, and explicit exclusion of continual-learning and hidden-reasoning claims are substantially better identified than an end-to-end flywheel claim. The proposed inferential target is also appropriately narrow: probabilities of strict paired-margin success over an accepted-constructible generator population, not average effect magnitudes or natural-world generalization. But the exact v5r5 bytes do not yet make that population or several claim-critical constructions independently reconstructible. Hash-only references stand where typed byte-bearing generator inputs/outputs, D1A control constructions, finite-world oracle evidence, overlap evidence, and claim evidence manifests are required. The paper concept is potentially paper-worthy after those repairs and a scientifically justified populated run lock; the exact proposal is not presently ratifiable or publication-ready.",
+  "graph_delta_interpretation": "The intended causal graph is scientifically coherent: pretreatment cloning and common seeds support directly observed paired contrasts; the provider/intervention separation prevents the scorer from seeing response treatment; shared DREAM removes stochastic-realization imbalance; SLEEP is the sole parametric writer; life-level reduction prevents pseudoreplication; and the decision-to-T14-to-authority-to-release order is acyclic. The formal graph nevertheless stops short of its literal CLOSED_TYPED_CONTRACT_UNION claim. The admitted union has 85 inventory entries and the top-level schema union matches those 85 exactly, but several scientifically necessary nodes are represented only by unrestricted hashes: theta value bytes, entropy bytes, candidate/recipient/donor bundles, donor-match and binding-derangement proofs, finite world-variant/oracle inputs, CUT/TWIN/SHAM/parity constructions, overlap membership evidence, and release evidence manifests. A hash authenticates supplied bytes but does not identify their grammar or role. The graph therefore cannot yet prove that independent reducers consumed the same causal object.",
+  "loop_delta_interpretation": "The four loops have the right scientific separation. Exact generator-population reduction uses one IID recipient-life/seed bundle and treats items, clones, endpoints, and edge positions as repeated measures. D1D is correctly a total-policy comparison: root-policy assignment is the sole treatment, realized evidence dose and all training/publication failures remain natural downstream consequences, every provider/action endpoint still runs, and post-treatment dose matching or regression is forbidden. Shared DREAM dependence is well chosen: AUTHENTIC_DREAM_CONTEXT consumes DREAM bytes, DREAM_TO_SLEEP consumes nominees, and recency/permuted controls use prospective capacities and remain unaffected by DREAM missingness. Missingness is otherwise conservative and endpoint-local. One controller contradiction is material: D1B_AUTHENTIC maps MODEL_MISSING_NO_RETRY through error_next_phase equal to the same READ/PREDICT/ACT phase, whereas the protocol and status contracts say a missing call never retries. This also gives the authentic timing arm retry opportunities that one-shot/open-loop arms do not receive. The loop is not total until those bytes are made consistent.",
+  "claim_delta_interpretation": "The estimands are mostly scientifically well chosen and unusually explicit. For each paired gate the authority-bearing target is pi_g=Pr_G(d_i>margin_g); every arm is actually executed from the same pretreatment life, equality fails, missing required arms yield Z_i=0, and lower-level observations are aggregated within life. D1A is correctly limited to complete-table candidate-conditioned selection, D1B to public behavioral response dependence, D1C to frozen-DREAM context-policy value, and D1D to a no-post-treatment-adjustment total policy. Per-edge CUT/TWIN superiority plus SHAM noninferiority is an intersection-union construction, and maximum local p-values followed by four-assay Holm is valid without edge or assay independence. Exact binomial tails and outward Clopper-Pearson brackets are appropriate. The claims are not yet releasable, however. Their exact literals say only 'locked PPC5 generator' rather than the accepted-constructible law conditional on successful sealed construction; this conflicts with the analysis contract's demand that conditional power scope be labeled. The fixed qualification is also not textually unique across normative files. Finally, the release package points to an untyped evidence_manifest_hash and the dependency receipt has no in-schema per-claim exact role registry, so exact literal spelling does not yet guarantee exact evidentiary support.",
+  "visibility_matrix_interpretation": "The 13-by-14 matrix is complete: all 182 cells in change.json exactly match visibility_contract.json. Its substantive divisions are strong. Hidden truth and endpoint truth stay out of THINK, READ, RESPONSE_INTERVENTION, DREAM, WRITER, and TRAINER; PROBE/future material is sterile; provider scores and mounted-artifact identity are audit-only; response intervention receives resolved bytes without treatment labels; and claim text appears only at seal/release/audit. These choices support the narrow causal interpretations. Enforceability is weaker than the matrix suggests because several derived-only inputs terminate in bare hashes whose target type and bytes are not in the inventory, and D1B's behavior on a valid off-path READ is not specified. T12 must prove semantic byte lineage through typed targets, not merely field-name absence or agreement between two implementations.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R5_T01",
+    "PPC5R5_T02",
+    "PPC5R5_T03",
+    "PPC5R5_T04",
+    "PPC5R5_T05",
+    "PPC5R5_T06",
+    "PPC5R5_T07",
+    "PPC5R5_T08",
+    "PPC5R5_T09",
+    "PPC5R5_T10",
+    "PPC5R5_T11",
+    "PPC5R5_T12",
+    "PPC5R5_T13",
+    "PPC5R5_T14"
+  ],
+  "acceptance_test_interpretation": "No PPC-specific fixture or behavioral test was executed. A read-only invocation of the authorized generic intake validator accepted change.json's schema, all declared context hashes matched, the 182 visibility cells matched the standalone matrix, and the five change literals matched claim_dependency_map.json; this is structural evidence only and does not establish T01 or scientific adequacy. T01 can check the current generic intake surface but must not be mistaken for a scientific pass. T02 must gain byte-replay cases for theta, entropy, proposals, accepted recipient/donor bundles, D1A corpus/control construction, and exact overlap membership. T03 must expose and resolve the D1B no-retry/controller-row contradiction. T04 and T09 adequately target all DREAM statuses, shared-call cardinality, independent control capacity, and endpoint-local missingness after the schemas bind the actual inputs. T05 correctly covers the common complete-table provider and audit-only scoring boundary. T06 cannot prove wrong-life and derangement specificity until typed construction receipts carry every match invariant. T07 cannot prove every-edge sufficiency, alternates, TWIN, SHAM, parity, or source disjointness from hashes and asserted booleans alone; it needs the finite world table and typed construction bytes. T08 must add valid off-path request behavior and demonstrate that zero/non-target match behavior cannot become differential RUN_INVALID selection. T10 is the correct total-policy cross-product and must preserve downstream execution under every D1D status. T11 has the right inferential themes but must explicitly mutate nonreduced rationals, numerator greater than denominator, all cross-field count/rate inconsistencies, alpha-threshold versus Holm semantics, cp_tail_alpha=alpha/4, conditional-power scope, and the full strict CP release conjunction. T12 must reject every untyped semantic hash target in addition to testing the 182 information-flow cells. T13 must resolve the binding r4 unconditional-release-power requirement or obtain an explicit superseding human decision, and it must bind a populated generator that is independently replayable. T14 must cold-replay typed life/oracle/control/overlap objects and an exact per-claim evidence registry, and must reject any release literal that omits accepted-constructible/conditional-construction scope. Passing fixtures cannot repair missing normative types or contradictory controller rows; proposal bytes must be revised first.",
+  "assumptions": [
+    "The PRECOMMITTED_IID_BYTE_STREAM contract is a scientific randomness model, not an empirical proof; valid IID inference assumes independent uniform entropy slices and deterministic generator decoding conditional on those slices.",
+    "Conditional on complete sealed construction, each accepted life is intended to be the first acceptable proposal from the same ordinal-blind proposal law, so conditioning factorizes across independently addressed life slices; this must be proven from newly bound proposal bytes.",
+    "Model, provider, environment, and trainer behavior is deterministic conditional on bound bytes, seeds, and declared failure events, with no cross-clone interference, hidden wall-clock treatment signal, or unregistered hardware nondeterminism.",
+    "A later separately ratified run lock will choose scientifically justified nonvacuous generator parameters, gate memberships, margins, pi0 values, ceilings, N, capacities, model artifacts, and worst-case power inputs; the architecture proposal supplies none of those numerical judgments.",
+    "The accepted-constructible, target-informed synthetic population is an acceptable estimand only with the fixed no-novelty/no-naturalism qualification; no claim is generalized to rejected proposals, construction attempts, other generators, or natural tasks.",
+    "Missing-as-failure makes each paired estimand the probability of an observed margin-achieving execution, not a pure mean causal effect among always-observed runs; paper language and tables must preserve that composite interpretation."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R5_SCI_A01_D1B_OFF_PATH_ROUTING",
+      "question": "When a D1B model emits a syntactically valid READ whose query/selected response is not the registered edge currently targeted by the sealed path intervention, does the common provider response pass through authentically, does the slot fail as an observed behavioral outcome, or does match_count=0 create RUN_INVALID?",
+      "impact": "The answer changes the causal estimand. Treating adaptive post-intervention query divergence as RUN_INVALID conditions the assay on following the authentic path and can erase the very response dependence D1B intends to measure. Repair the machine/router schema with one total off-path rule and add zero-match, non-target-match, and post-intervention-divergence cases to T07/T08/T14."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SCI_A02_GATE_ALPHA_AND_HOLM",
+      "question": "What exact value must each gate_spec.alpha_threshold take relative to run_lock.alpha, the assay maximum p-value, Holm's data-dependent step, and cp_tail_alpha=alpha/4?",
+      "impact": "The contracts simultaneously require a per-gate PASS, an assay maximum, Holm, and power critical sets computed at alpha/4, but no cross-field rule fixes the gate threshold. Different implementations can produce different gate decisions while agreeing on exact p-values. Add a normative equality/derivation rule and boundary mutations to T11/T13."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SCI_A03_QUALIFICATION_LITERAL",
+      "question": "Is the exact inseparable qualification the three-exclusion sentence in protocol.md/analysis_contract.json or the five-exclusion fixed_qualification in claim_dependency_map.json and contracts.schema.json, and where is the required conditional-on-sealed-construction power label?",
+      "impact": "Literal release forbids paraphrase, so two normative wordings and an absent conditional-power phrase cannot be left to a renderer. Select one exact byte string, include accepted-constructible and conditional-construction scope if conditional power is retained, bind its hash everywhere, and test exact equality in T11/T14."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SCI_A04_PROVENANCE_REVISION",
+      "question": "Why does protocol.md call PPC5r3 consensus binding provenance while human_directive.txt and change.json bind PPC5r4 consensus b890dbc9 as the twelve-blocker source?",
+      "impact": "This does not by itself change an estimand, but it makes the claimed revision provenance non-unique and can route the wrong obligations. Correct the protocol revision identifier and make T01 reject mismatched provenance IDs/hashes."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R5_SCI_D01_GENERATOR_LAW_NOT_BYTE_CLOSED",
+      "statement": "I disagree that v5r5 already supplies an accepted-constructible IID generator law that is independently replayable from the admitted object union.",
+      "rationale": "generator_parameter_space contains hashes of axis values rather than value bytes; entropy_receipt contains entropy_raw_sha256 rather than a byte_ref; proposal_receipt contains an untyped candidate_bundle_hash; life_sample_receipt contains untyped recipient_bundle_hash, donor_bundle_hash, and disjointness_proof_hash; and common_seed_bundle does not bind the entropy/proposal preimage from which its seeds were derived. Candidate, recipient, and donor bundle object types do not appear among the 85 inventory entries. validate_generator prose cannot recover data from a digest. Consequently G(theta,E), its acceptance event, the first accepted draw, and identical invocation across ordinals are not reconstructible from the declared evidence.",
+      "proposed_resolution": "Add inventoried closed schemas and role-labeled byte/artifact references for every parameter value, entropy slice, decoded proposal, candidate/recipient/donor bundle, acceptance-predicate input/result, rejection trace, donor-disjointness proof, and common-seed derivation preimage. Define the exact truncated-rejection conditional law and prove ordinal-blind identical invocation. Extend T02, T06, T13, and T14 with byte-level reexecution, missing-target, wrong-type, reordered-proposal, changed-entropy, and cross-ordinal mutations."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D02_D1A_CONTROLS_NOT_REPRESENTABLE",
+      "statement": "I disagree that the D1A evidence-gated reader, wrong-life adapter, and binding-derangement controls are closed by the current schemas.",
+      "rationale": "The only root_policy enums are DREAM_TO_SLEEP, RECENCY_TO_SLEEP, and HASH_PERMUTED_TO_SLEEP. corpus_manifest nevertheless requires a root_selection_hash, leaving no typed D1A authentic or shuffled root/corpus construction. No inventoried object records the wrong-life exact-match vector, recipient/donor target blindness, within-draw match algorithm, binding permutation, every-destination derangement, preserved multisets/histograms, or opportunity matching. Those properties exist only in prose and bare hashes, so D1A's specificity literals cannot be derived from admitted evidence.",
+      "proposed_resolution": "Add arm-neutral but typed D1A corpus-origin and control-construction receipts, including exact role/cardinality fields for the authentic rows, within-draw wrong-life donor, matching vector, derangement permutation, preserved counts/classes/histograms, target-blind inputs, and preassignment artifact checks. Ensure public/provider/trainer projections remain arm-neutral. Make T02/T06/T12/T14 reconstruct and negatively mutate every invariant."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D03_EVERY_EDGE_PROOF_NOT_RECONSTRUCTIBLE",
+      "statement": "I disagree that path_proof and path_suite_manifest currently establish the literal every-edge construction.",
+      "rationale": "The schemas store oracle_input_hash values and sufficient/twin_reverses_edge/sham_preserves_action booleans, but no typed finite world-variant table or oracle input bytes. cut_receipt_hash, twin_receipt_hash, sham_receipt_hash, parity_receipt_hash, and cross_item_source_disjointness_hash have no corresponding inventoried construction types or role-labeled references. Raw source preimages are hashes only. Thus an independent reducer can authenticate assertions but cannot enumerate consistent variants, verify alternate-path completeness, recompute the lexicographic TWIN/SHAM, or establish source disjointness.",
+      "proposed_resolution": "Inventory the finite world table, oracle evaluations, raw source-event preimages, parity candidate universe, CUT/TWIN/SHAM constructions, and within/cross-item disjointness proofs; replace bare digests with typed ordered refs. T07/T08/T13/T14 must recompute all 2^L-2 masks, every simple path, every edge construction, lexicographic choice, parity, outcome preservation, and source collision from bytes."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D04_D1B_MISSING_RETRY_CONTRADICTION",
+      "statement": "I disagree that the D1B controller is total and consistent with the registered no-retry missingness policy.",
+      "rationale": "protocol.md and status_contract.json say missing model/provider calls never retry. controller_registry.json maps MODEL_MISSING_NO_RETRY in D1B_AUTH_READ to error_next_phase READ[k], in D1B_AUTH_PREDICT to PREDICT, and in D1B_AUTH_ACT to ACT, allowing a later dispatch at the same required slot. In contrast, D1B one-shot/open-loop and D1C/D1D advance or finalize. This both contradicts the literal status and differentially changes opportunity across D1B timing controls.",
+      "proposed_resolution": "Choose one no-retry semantics and encode it identically in protocol, machine, status, controller rows, and endpoint reduction. The cleanest repair is to advance/finalize after a missing physical call while retaining endpoint missing dominance. Add T03/T08/T11 cases proving one physical attempt, next phase, call/seed ordinals, missing dominance, and equal prospective opportunities across schedule controls."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D05_EXACT_RATIONAL_AUTHORITY_INCOMPLETE",
+      "statement": "I disagree that exact rational inference is fully closed by contracts.schema.json and semantic_validators.md.",
+      "rationale": "The rational schemas do not require gcd reduction; probability_rational does not constrain numerator<=denominator; and counts such as successes/adverse_events/missing_events are not structurally bounded by N. The prose says reduced and in-range, but there is no named common validate_rational rule, no complete cross-field validator for observed_rate=count/N, and no explicit equality tying gate/run/result CP alpha and gate alpha semantics. Exact formulas are correct, yet multiple schema-valid authority objects can encode impossible or noncanonical values.",
+      "proposed_resolution": "Add a total canonical-rational and statistical-result validator requiring positive denominators, gcd=1, canonical zero, probability range, count bounds, rate identities, margin/orientation domains, CP bracket order and defining inequalities, and all run-lock/gate/result alpha equalities. Add explicit malformed-rational and cross-field mutations at every boundary to T11 and stale/mismatch cases to T13/T14."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D06_POWER_SCOPE_DOES_NOT_DISPOSE_R4",
+      "statement": "I disagree that conditional-on-sealed-construction power, as currently written, resolves the binding PPC5r4 power blocker.",
+      "rationale": "The bound r4 consensus R09 selected an unconditional complete run-release lower bound including construction/exhaustion unless constructibility is probability one. v5r5 instead makes power_receipt scope unconditionally equal to CONDITIONAL_ON_SEALED_CONSTRUCTION and lets PRE_MODEL_EXECUTION pass on that basis. Scope narrowing can be scientifically legitimate, but it is a substantive change from the bound resolution, not its implementation. Moreover analysis_contract requires release text to label conditional scope while the exact claim/qualification strings do not do so.",
+      "proposed_resolution": "Either implement the r4-selected unconditional construction-plus-release bound (or a proof of construction success probability one), or obtain explicit human authority that supersedes R09 and changes the target to conditional feasibility. In the latter case, revise every literal to say accepted-constructible law and conditional on already-passing sealed construction, report construction acceptance/exhaustion separately, and test both forbidden unconditional language and full conditional critical events in T02/T11/T13/T14."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D07_OVERLAP_EVIDENCE_NOT_AUDITABLE",
+      "statement": "I disagree that binding the current overlap_manifest is sufficient evidence for the fixed overlap qualification.",
+      "rationale": "overlap_manifest contains aggregate stratum counts and a generator hash, but no ordered per-life/item/source membership, comparison keys, or source byte refs, and semantic_validators.md defines no validate_overlap algorithm. T02 and T14 mention overlap only at the theme level. A malformed or differently computed semantic/alias/item/donor/ACQUIRE-PROBE overlap summary can therefore be schema-valid and hash-stable.",
+      "proposed_resolution": "Bind an ordered per-unit overlap membership manifest with exact canonical key construction and source refs, derive aggregate counts and construction-scope qualification from it, add validate_overlap, and make T02/T12/T14 mutate membership, aliasing, exact ACQUIRE-PROBE equality, omitted strata, duplicate units, and detached export hashes."
+    },
+    {
+      "disagreement_id": "PPC5R5_SCI_D08_LITERAL_RELEASE_EVIDENCE_NOT_ROLE_CLOSED",
+      "statement": "I disagree that exact claim strings plus the current release schema make the scientific release chain evidentially closed.",
+      "rationale": "claim_release_package has an untyped evidence_manifest_hash, while dependency_map_receipt accepts arbitrary dependency roles/types and binds only an untyped dependency_registry_hash. T14 and preclaim authority similarly use complete_life_manifest_hash, reducer_output_manifest_hash, candidate_decision_manifest_hash, qualification_manifest_hash, forbidden_claim_manifest_hash, dependency_manifest_hash, and resource_manifest_hash without inventoried schemas. These digest-only escape hatches can hide omitted gates or substituted evidence even though the release_text constant is exact.",
+      "proposed_resolution": "Inventory each manifest or replace it with exact ordered artifact refs and per-claim role/type/ordinal/cardinality branches. Component decisions must bind their exact expanded paired/safety/missingness/assay/Holm/test/endpoint/resource/overlap/scope objects, and the intersection must bind all four eligible component decisions. Extend T12/T14 with omitted, duplicate, wrong-type, wrong-order, stale, and extra-evidence mutations."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require a byte-revised v5r6-style proposal that resolves PPC5R5_SCI_D01 through D08 and A01 through A04 before architecture ratification, implementation, fixtures, sealers, or any model/scientific action?",
+      "If conditional-on-sealed-construction power is an intentional scope change, will Rohin explicitly supersede the contrary bound PPC5r4 R09 disposition and ratify exact accepted-constructible/conditional-power release language rather than treating v5r5 as already compliant?",
+      "At later run-lock review, will Rohin require evidence that the instantiated generator, margins, thresholds, capacities, overlap profile, and worst-case power inputs are scientifically meaningful in addition to merely schema-valid?"
+    ]
+  }
+}

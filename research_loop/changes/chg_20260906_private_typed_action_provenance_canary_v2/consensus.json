@@ -1,0 +1,539 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Necessary fixture closure coverage, but cannot supply the missing exact contract, closed envelope, runtime-observation, or validator-nontriviality tests.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC1_GOLDEN_SUCCESS_AND_REJECTION"
+    },
+    {
+      "rationale": "Necessary structured-binding coverage, but its byte interface and first-error law remain underspecified.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC2_STRUCTURED_CHANNEL_PROVENANCE"
+    },
+    {
+      "rationale": "Retained as necessary prose-inertness coverage, but it does not establish rejected-receipt ownership.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC3_PROSE_IS_INERT"
+    },
+    {
+      "rationale": "Retained as necessary transition-replay coverage, but it cannot exclude hash-allowlist validation.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC4_TRANSITION_AND_ORDER"
+    },
+    {
+      "rationale": "Retained as necessary serialized-lifecycle coverage, but it cannot observe unrecorded runtime operations.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC5_TOTAL_LINEAR_LIFECYCLE"
+    },
+    {
+      "rationale": "Retained as necessary canary-publication coverage, but platform semantics and evidence-receipt recovery are absent.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC6_CRASH_PUBLICATION_MATRIX"
+    },
+    {
+      "rationale": "Retained as useful coordinated-mutation coverage, but the registered oracle still admits an allowlist shortcut.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC7_COORDINATED_RELATIONAL_MUTATIONS"
+    },
+    {
+      "rationale": "Retained as boundary coverage, but parsing-dependent resource predicates lack a total precedence law.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC8_RESOURCE_BOUNDARIES"
+    },
+    {
+      "rationale": "Retained as evidence-binding coverage, but it lacks renderer closure and evidence-receipt crash recovery.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PC9_EVIDENCE_RECEIPT_BINDING"
+    }
+  ],
+  "agreements": [
+    "The candidate is infrastructure-only and cannot support claims about model consumption, intent, real-tool execution, secrecy, memory, learning, planning, benchmark performance, scaling, or GPU science.",
+    "Assistant prose must remain inert; only the structured tool channel may authorize the pure private mock.",
+    "The reduced one-root, deterministic-stub/private-mock scope appropriately removes public projection, recurrence, and organismal feedback from this candidate.",
+    "Exact human ratification remains pending, and model consensus cannot authorize authoring, execution, or claims."
+  ],
+  "architecture_change_sha256": "d92384889ea9eb2d205f544936fe16be88c127ed6b60ef8463f4871d839ee9ff",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v2",
+  "concern_dispositions": [
+    {
+      "concern_id": "C01_exact_contract_ratification_cycle",
+      "rationale": "Accepted. Normative contract and fixture bytes do not exist at the proposed approval point.",
+      "required_change": "Register PC0_EXACT_CONTRACT_RATIFICATION_BINDING: require the complete canonical contract, schemas, manifests, oracle, golden and mutation fixtures, and sorted scope to exist and be hash-bound by explicit human authorization before any implementation source is authored. PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, and PC9 do not cover this gate.",
+      "resolution_id": "DG01_contract_ratification",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C02_response_channel_representation_is_not_closed",
+      "rationale": "Accepted. Canonical envelope extraction cannot simultaneously define raw malformed-channel fixtures without a closed byte representation.",
+      "required_change": "Register PC10_RESPONSE_ENVELOPE_EXTRACTION: freeze response-envelope field types and extraction laws for success, empty, malformed JSON, duplicate keys/calls, unknown tool, assistant Unicode, pointer failure, and canonical re-encoding with one stable first error. PC1, PC2, PC3, and PC7 are only partial coverage.",
+      "resolution_id": "DG02_channel_and_rejection",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C03_rejected_receipt_assigned_to_wrong_module",
+      "rationale": "Accepted. The rejected receipt is attributed to PRIVATE_MOCK_ENV although the architecture says that role is not invoked.",
+      "required_change": "Register PC11_REJECTION_RECEIPT_OWNERSHIP: prove which role creates the rejected-path event-4 receipt, that PRIVATE_MOCK_ENV is not invoked, and that actor and source hashes identify the producer. PC1, PC3, and PC5 are only partial coverage.",
+      "resolution_id": "DG02_channel_and_rejection",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C04_unrecorded_runtime_operations_escape_the_ledger",
+      "rationale": "Accepted. Six serialized records do not observe discarded calls, parses, dispatches, or fsync-before-authorization order.",
+      "required_change": "Register PC12_RUNTIME_OPERATION_CARDINALITY_AND_ORDER: use source-independent spies or operation receipts to detect unrecorded second stub calls, parses, dispatches, discarded branches, and authorization before required fsync. PC1, PC5, PC6, and PC9 are only partial coverage.",
+      "resolution_id": "DG03_runtime_observation",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C05_renderer_and_cross_manifest_binding_gap",
+      "rationale": "Accepted. renderer_manifest_sha256 and overlapping source identities are not fully retrievable and bound.",
+      "required_change": "Register PC13_MANIFEST_CLOSURE: require retrievable renderer and other manifest bytes and prove overlapping source, lock, interpreter, dependency, schema, and payload hashes agree across ledger and receipt. PC2, PC7, and PC9 are only partial coverage.",
+      "resolution_id": "DG04_manifest_closure",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C06_publication_platform_and_immutability_underspecified",
+      "rationale": "Accepted. No unique platform, lock, no-replace, recovery, or immutability threat model is frozen.",
+      "required_change": "Register PC14_PUBLICATION_PLATFORM_AND_IMMUTABILITY: freeze supported filesystem semantics and test no-replace collisions, concurrent writers, lock-owner crash, symlink swaps, inode substitution, directory-fsync recovery, and post-commit mutation detection or prevention. PC6 and PC9 are only partial coverage.",
+      "resolution_id": "DG05_publication_platform",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C07_evidence_receipt_failure_lifecycle_missing",
+      "rationale": "Accepted. Receipt publication is separate from ledger commitment and its sequencing and crash states are inconsistent.",
+      "required_change": "Register PC15_EVIDENCE_RECEIPT_CRASH_RECOVERY: inject failure around every receipt create, write, fsync, rename, collision, and directory-fsync step and prove stale, partial, mismatched, or replaced receipts never make a canary claim-eligible. PC6 and PC9 are only partial coverage.",
+      "resolution_id": "DG06_evidence_lifecycle",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C08_resource_and_error_precedence_is_internally_inconsistent",
+      "rationale": "Accepted. Parsing-dependent resource predicates cannot precede raw syntax errors under the stated order without further law.",
+      "required_change": "Register PC16_VALIDATION_PRECEDENCE_TOTALITY: enumerate simultaneously raw-invalid and parsing-dependent-resource-invalid inputs and require one implementable deterministic first error from both validators. PC2 and PC8 are only partial coverage.",
+      "resolution_id": "DG07_error_precedence",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C09_oracle_acceptlist_shortcut",
+      "rationale": "Accepted. Registered hash acceptance can bypass relational recomputation despite source distinction.",
+      "required_change": "Register PC17_VALIDATOR_NONTRIVIALITY: audit against golden-hash allowlisting and use independently generated or sequestered metamorphic cases to show parser, transition, score, and relational rules are recomputed. PC1, PC2, PC4, PC7, PC8, and PC9 are only partial coverage.",
+      "resolution_id": "DG08_validator_nontriviality",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C10_structural_receipt_not_runtime_provenance",
+      "rationale": "Accepted. Current evidence can establish only internal structural binding of recorded deterministic-fixture bytes.",
+      "required_change": "Phrase the maximum claim exclusively as internal structural binding; reserve independently observed request consumption, response production, operation ordering, transition, and scorer computation for FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE under a separately ratified live change. PC1, PC2, PC4, PC5, PC6, PC7, and PC9 remain structural-only.",
+      "resolution_id": "DG09_claim_ceiling",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C11_no_answer_or_secrecy_inference_from_private_fixture",
+      "rationale": "Accepted as a claim-boundary condition. The fixture may be answer-bearing and private storage establishes no secrecy result.",
+      "required_change": "Preserve the prohibition on answer-leakage, task-blindness, secrecy, and noninterference claims; require a separately ratified paired-world protocol before any such claim. PC2, PC3, and PC9 do not provide that evidence.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C12_no_memory_learning_or_emergent_structure_assay",
+      "rationale": "Accepted as a claim-boundary condition. The removed recurrent graph supplies no memory or learning endpoint.",
+      "required_change": "Preserve the absolute no-memory, no-learning, and no-credit-assignment claim ceiling; require separately ratified recall, composition, planning, action, and online-learning assays before such claims. PC1-PC9 do not measure them.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C13_no_baseline_split_or_statistical_protocol",
+      "rationale": "Accepted as a claim-boundary condition. This deterministic engineering suite is not a statistical experiment.",
+      "required_change": "Preserve the prohibition on comparative, behavioral, negative scientific, and statistical conclusions; require a separately ratified benchmark with splits, baselines, accounting, statistics, stopping, replication, and negative-result language. PC1-PC9 do not cover this requirement.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C14_resource_bounds_are_not_scaling_evidence",
+      "rationale": "Accepted as a claim-boundary condition. Fixture resource conformance is not scaling evidence.",
+      "required_change": "Preserve the prohibition on scalability, continued-improvement, efficiency, and organismal systems claims; require a separately ratified scale and lifetime protocol. PC8 does not cover this requirement.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C15_exact_human_ratification_is_pending",
+      "rationale": "Accepted. Neither the directive nor this consensus ratifies the proposal, future bytes, or scope.",
+      "required_change": "Keep all authoring, execution, PC1-PC9 runs, and claims forbidden. Obtain human ratification only after a repaired, newly hash-bound chain closes the required technical gates; no existing PC test can satisfy ratification.",
+      "resolution_id": "DG01_contract_ratification",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "cons_20260906_private_typed_action_provenance_canary_v2_adjudication_v1",
+  "critique_sha256": "071b75bab96bda1fed6db1e205702e3555e43e69ee56af81de3b98240b09a5db",
+  "disagreements": [
+    {
+      "disagreement_id": "DG01_contract_ratification",
+      "issue": "Whether present approval can ratify bytes that scope authorizes to be authored later.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Exact human ratification may later authorize authoring the frozen contract and fixtures."
+        },
+        {
+          "actor": "critique",
+          "position": "Exact-byte ratification is impossible until the complete normative bundle already exists and is hash-bound."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "The critic's blocking ratification-cycle finding is controlling.",
+        "required_change": "Create and bind the complete bundle before requesting explicit human authorization, and register the missing PC0 test.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C01_exact_contract_ratification_cycle",
+        "C15_exact_human_ratification_is_pending"
+      ]
+    },
+    {
+      "disagreement_id": "DG02_channel_and_rejection",
+      "issue": "Whether the envelope and rejected path have closed byte and actor semantics.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Canonical envelope extraction and PRIVATE_MOCK_ENV receipt define accepted and rejected paths."
+        },
+        {
+          "actor": "critique",
+          "position": "Malformed raw bytes and rejected receipt ownership remain contradictory or unspecified."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC3_PROSE_IS_INERT",
+          "PC5_TOTAL_LINEAR_LIFECYCLE",
+          "PC7_COORDINATED_RELATIONAL_MUTATIONS"
+        ],
+        "rationale": "Both the byte representation and truthful non-dispatch producer require specification.",
+        "required_change": "Freeze extraction representation and rejection receipt ownership; register PC10 and PC11.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C02_response_channel_representation_is_not_closed",
+        "C03_rejected_receipt_assigned_to_wrong_module"
+      ]
+    },
+    {
+      "disagreement_id": "DG03_runtime_observation",
+      "issue": "Whether a valid ledger proves the asserted single runtime lifecycle.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Fsynced record order and a six-record lifecycle enforce one invocation and dispatch."
+        },
+        {
+          "actor": "critique",
+          "position": "Unrecorded operations and fsync ordering can escape a selected valid ledger."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC5_TOTAL_LINEAR_LIFECYCLE",
+          "PC6_CRASH_PUBLICATION_MATRIX",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "Artifact structure does not observe runtime cardinality or syscall order.",
+        "required_change": "Add independent operation observation and register PC12.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C04_unrecorded_runtime_operations_escape_the_ledger",
+        "D1_STRUCTURAL_NOT_RUNTIME_PROVENANCE"
+      ]
+    },
+    {
+      "disagreement_id": "DG04_manifest_closure",
+      "issue": "Whether referenced manifests and cross-manifest identities are completely bound.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Manifest hashes and PC9 bind execution provenance."
+        },
+        {
+          "actor": "critique",
+          "position": "Renderer bytes and overlapping identity equalities are absent from the normative closure."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "An orphan hash cannot provide retrievable provenance.",
+        "required_change": "Define complete manifest artifacts and cross-manifest equality relations; register PC13.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C05_renderer_and_cross_manifest_binding_gap",
+        "D2_PC1_REPRODUCTION_SCOPE"
+      ]
+    },
+    {
+      "disagreement_id": "DG05_publication_platform",
+      "issue": "Whether the stated local publication protocol establishes no-replace durability and immutability.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Exclusive no-follow creation, locking, rename, fsync, and mode 0600 yield immutable commitment."
+        },
+        {
+          "actor": "critique",
+          "position": "Platform semantics, races, recovery, and post-commit mutation threat model are unspecified."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC6_CRASH_PUBLICATION_MATRIX",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "The durability claim has no uniquely implementable supported-platform contract.",
+        "required_change": "Freeze platform and threat model and register PC14.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C06_publication_platform_and_immutability_underspecified",
+        "D3_PRIVATE_BOUNDARY_IS_INTEGRITY_ONLY"
+      ]
+    },
+    {
+      "disagreement_id": "DG06_evidence_lifecycle",
+      "issue": "Whether separate evidence publication has a closed lifecycle relative to canary commitment.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The evidence receipt is separately atomically published after validation and binds the committed file."
+        },
+        {
+          "actor": "systems_and_critique",
+          "position": "Its sequencing is inconsistent and receipt crash, collision, stale, and replacement states are untested."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC6_CRASH_PUBLICATION_MATRIX",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "Claim eligibility depends on an independently published artifact without total recovery semantics.",
+        "required_change": "Freeze receipt ordering and recovery; register PC15.",
+        "selected_position": "systems_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C07_evidence_receipt_failure_lifecycle_missing",
+        "D2_PC1_REPRODUCTION_SCOPE"
+      ]
+    },
+    {
+      "disagreement_id": "DG07_error_precedence",
+      "issue": "Whether validation has a deterministic first-error law for malformed and over-limit inputs.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "E_RESOURCE precedes UTF-8 and raw JSON validation."
+        },
+        {
+          "actor": "critique",
+          "position": "Several resource predicates require decoding or parsing, so this ordering is not implementable as stated."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC8_RESOURCE_BOUNDARIES"
+        ],
+        "rationale": "The printed phase order and PC8 expectation conflict.",
+        "required_change": "Freeze a total precedence law and register PC16.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C08_resource_and_error_precedence_is_internally_inconsistent",
+        "D2_PC1_REPRODUCTION_SCOPE"
+      ]
+    },
+    {
+      "disagreement_id": "DG08_validator_nontriviality",
+      "issue": "Whether declarative-oracle and dual-validator agreement demonstrates relational recomputation.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Registered coordinated mutations and source-distinct validators reject nonregistered bundles."
+        },
+        {
+          "actor": "critique",
+          "position": "Both validators can accept golden hashes and registered error hashes without recomputing semantic relations."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC4_TRANSITION_AND_ORDER",
+          "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+          "PC8_RESOURCE_BOUNDARIES",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "Registered-fixture closure does not preclude hash-allowlist shortcuts.",
+        "required_change": "Add nontriviality evidence and register PC17.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C09_oracle_acceptlist_shortcut",
+        "D2_PC1_REPRODUCTION_SCOPE"
+      ]
+    },
+    {
+      "disagreement_id": "DG09_claim_ceiling",
+      "issue": "Whether the candidate establishes runtime provenance or only structural fixture binding.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The canary prospectively binds a child request and response through a causal ordered trace."
+        },
+        {
+          "actor": "systems_and_critique",
+          "position": "Recorded hashes and labels establish structural relations, not independent child execution, fsync occurrence, or unique runtime computation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC4_TRANSITION_AND_ORDER",
+          "PC5_TOTAL_LINEAR_LIFECYCLE",
+          "PC6_CRASH_PUBLICATION_MATRIX",
+          "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "The narrow claim must remain internal structural binding unless separate runtime observation is introduced.",
+        "required_change": "Revise claim wording and reserve runtime provenance for separately ratified FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE.",
+        "selected_position": "systems_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C10_structural_receipt_not_runtime_provenance",
+        "D1_STRUCTURAL_NOT_RUNTIME_PROVENANCE"
+      ]
+    },
+    {
+      "disagreement_id": "DG10_scientific_boundary",
+      "issue": "Whether private synthetic plumbing or resource tests advance organismal, secrecy, benchmark, or scaling evidence.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The canary is deliberately private and infrastructure-only, with broader claims retired."
+        },
+        {
+          "actor": "benchmark_and_critique",
+          "position": "No paired worlds, later endpoint, memory path, baselines, statistics, or scaling protocol exists; privacy is integrity-only."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+          "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+          "PC3_PROSE_IS_INERT",
+          "PC4_TRANSITION_AND_ORDER",
+          "PC5_TOTAL_LINEAR_LIFECYCLE",
+          "PC6_CRASH_PUBLICATION_MATRIX",
+          "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+          "PC8_RESOURCE_BOUNDARIES",
+          "PC9_EVIDENCE_RECEIPT_BINDING"
+        ],
+        "rationale": "The shared non-claim boundary is necessary, but future scientific work remains wholly unregistered.",
+        "required_change": "Preserve all claim prohibitions and require separately hash-bound benchmark, paired-world, ablation, statistics, and scaling protocols before broader claims.",
+        "selected_position": "benchmark_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C11_no_answer_or_secrecy_inference_from_private_fixture",
+        "C12_no_memory_learning_or_emergent_structure_assay",
+        "C13_no_baseline_split_or_statistical_protocol",
+        "C14_resource_bounds_are_not_scaling_evidence",
+        "D3_PRIVATE_BOUNDARY_IS_INTEGRITY_ONLY",
+        "DIS1_BENCHMARK_FORCE_DEFERRED",
+        "DIS2_PAIRED_WORLD_AND_ABLATION_GAP"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Will Rohin ratify only a repaired, newly hash-bound contract and scope after PC0 and PC10-PC17 are registered and every unresolved disagreement is closed?",
+      "Does Rohin confirm that all implementation, execution, live integration, GPU work, and broader claims remain forbidden pending that repaired chain?"
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_private_typed_action_provenance_canary_v2.systems",
+      "sha256": "f89bec648067ba005f3b78004bc234c5c7c912617911af9391cd7fa44e9d8c93"
+    },
+    {
+      "interpretation_id": "chg_20260906_private_typed_action_provenance_canary_v2.benchmark",
+      "sha256": "20199fb9c8a5c2f6d87af02dc3541d0120c0ea84794697b149acd9ae1b5d3dbc"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "D1_STRUCTURAL_NOT_RUNTIME_PROVENANCE",
+      "rationale": "Accepted: current receipts establish structural fixture relations, not independent runtime provenance.",
+      "resolution_id": "DG09_claim_ceiling",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_PC1_REPRODUCTION_SCOPE",
+      "rationale": "Accepted: validator reproduction is artifact relation checking, not recreation of an unobserved event.",
+      "resolution_id": "DG08_validator_nontriviality",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D3_PRIVATE_BOUNDARY_IS_INTEGRITY_ONLY",
+      "rationale": "Accepted: one private root establishes no secrecy or noninterference result.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS1_BENCHMARK_FORCE_DEFERRED",
+      "rationale": "Accepted: this infrastructure has no organismal benchmark force.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS2_PAIRED_WORLD_AND_ABLATION_GAP",
+      "rationale": "Accepted: paired worlds, accounting, and mechanism ablations require a separate change.",
+      "resolution_id": "DG10_scientific_boundary",
+      "status": "accepted"
+    }
+  ]
+}

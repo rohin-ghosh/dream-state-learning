@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "crit_chg_20260904_experience_model_v6_kernel_lifetime_v1_adversarial_v1",
+  "change_id": "chg_20260904_experience_model_v6_kernel_lifetime_v1",
+  "state": "critiqued",
+  "architecture_change_sha256": "7d03f0497a91f7879e6966177338f6bcc87d0dc196e3c0292de781e2704de3a4",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "systems_and_learning_dynamics",
+      "sha256": "7c970343f73c4bcfcafb16b55fc0aa25228fbe4194bae21c98ced7140f0c3be3"
+    },
+    {
+      "interpretation_id": "experience_model_v6_kernel_lifetime_v1.benchmark_claim_validity",
+      "sha256": "bce60d43e3818b07845b6daeac7053ac744e2568ead70f3fe5c44ae403509e2f"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/change.json",
+      "sha256": "7d03f0497a91f7879e6966177338f6bcc87d0dc196e3c0292de781e2704de3a4",
+      "purpose": "Exact architecture proposal being cross-critiqued."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/interpretation_systems.json",
+      "sha256": "7c970343f73c4bcfcafb16b55fc0aa25228fbe4194bae21c98ced7140f0c3be3",
+      "purpose": "Exact systems and learning-dynamics interpretation being cross-critiqued."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/interpretation_benchmark.json",
+      "sha256": "bce60d43e3818b07845b6daeac7053ac744e2568ead70f3fe5c44ae403509e2f",
+      "purpose": "Exact benchmark and claim-validity interpretation being cross-critiqued."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/human_directive.txt",
+      "sha256": "6811b89951d9a7bf9a0cbfa7433595f40ebb360b51fd96f5058dc2d2840b2282",
+      "purpose": "Verbatim owner motivation: durable improvement from feedback, an off-the-shelf gym, and careful reproducible pre-work."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/discussion_context.md",
+      "sha256": "e8d759ac47f6b0e8fb64c68f0a8c0877c2fdb4df41ea00d23143f6b6ab142798",
+      "purpose": "Non-authoritative synthesis used to distinguish the owner motivation from the narrower scout."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling deliberation, ratification, implementation-review, and compute authority contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict schema for this durable critique."
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da",
+      "purpose": "Project thesis and historical claim boundaries, including the requirement that useful memory change later action."
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "Canonical action, strong-baseline, post-context growth, visibility, and claim-attribution requirements."
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15",
+      "purpose": "Prior specification of objective lifetime curves, post-context checkpoints, replication units, baseline suite, and hard falsifiers."
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d",
+      "purpose": "Prior kernel-pilot row, trainer, control, isolation, and crash semantics used to identify what v6 leaves unresolved."
+    },
+    {
+      "path": "research_notes/49_rml_paper_architecture_and_next_experiment.md",
+      "sha256": "cad5755c8ccae8c81ca1f0136b6c0a8056dfef8daa6755bec4b82f2d59c5d9e9",
+      "purpose": "Current evidence ladder and baseline policy used to assess the scientific consequence of demoting RML-G1."
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937",
+      "purpose": "Historical evidence for exposure sensitivity, training variance, actor erosion, numerical failure, style oscillation, and memorization confounds."
+    },
+    {
+      "path": "research_notes/related_work/zahavy2026_llms_cant_jump.md",
+      "sha256": "a5e4851480a6faa77afcff107dc081de30497656e7a0a93b405cbfd76373bce1",
+      "purpose": "Project-local related-work boundary separating outcome-grounded kernel learning from evidence-free paradigm invention."
+    }
+  ],
+  "strongest_case": "The proposal's strongest defensible form is a thin, external-gym mechanism assay: one frozen model and frozen operation grammar generate all public cognitive and action operations; one life-local LoRA is the only persistent learned inference state; a pure target-blind compiler turns only public acquisition records into fixed rows; and sterile checkpoint forks intervene on authentic, removed, shuffled, text-carried, raw-LoRA, and wrong-life memory while official KernelBench-Verified correctness makes invalid fast code worth zero. The systems interpretation correctly exposes the decisive row, optimizer, cache, and cold-load requirements, while the benchmark interpretation correctly insists that the gym remain literally unmodified, that relatedness coexist with graph/shape deduplication, that two development lives are non-population evidence, and that identical-corpus text is only a transport diagnostic. Together they support a narrow possible result: under one frozen recipe, authentic adapter bytes carry outcome-dependent information that changes objective action on unseen related kernels. They do not yet support the owner's motivating claim that an ordinary agent gets better with a long life, a cognition claim, LoRA superiority, abstraction, or a paper claim. That narrow assay is worth specifying, but the present intake still delegates the causal dataset, baseline, metric, statistics, and lifecycle to implementation and therefore is not close enough for exact implementation ratification.",
+  "reviewed_acceptance_test_ids": [
+    "V6_T01_SCHEMA_AND_CONTEXT_BINDING",
+    "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+    "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+    "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+    "V6_T05_KERNELBENCH_VERIFIED_STATIC_FIT_GATE",
+    "V6_T06_BOUNDED_HARDWARE_HARNESS_FIT_CANARY",
+    "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+    "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+    "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+    "V6_T10_EVALUATION_FORK_STERILITY",
+    "V6_T11_OFF_THE_SHELF_NONMUTATION_GATE",
+    "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+    "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+    "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC",
+    "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+    "V6_T16_RML_G1_PRIORITY_DEMOTION",
+    "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+    "V6_T18_HUMAN_SCOPE_RATIFICATION"
+  ],
+  "concerns": [
+    {
+      "concern_id": "V6_C001_EXECUTION_DEFINING_BYTES_ABSENT",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The intake is an architectural sketch, not an exact ratifiable implementation contract; material scientific choices remain delegated to post-ratification implementers.",
+      "evidence": "The proposal binds neither a base-model/tokenizer revision nor bootstrap bytes, inference sampling, task-state projection, exact KernelBench-Verified commit/interface, 24/8 manifests, task order, row schema, loss masks, replay schedule, rank/alpha/target modules, precision, optimizer lifecycle, seeds, score function, practical margins, or analysis code. Both interpretations enumerate these as ambiguities, yet T18 asks Rohin to approve exact bytes for implementation and T17 cannot retrospectively choose them. T01 validates only the proposal and its eleven context hashes, not the absent experiment-defining artifacts.",
+      "acceptance_test_ids": [
+        "V6_T01_SCHEMA_AND_CONTEXT_BINDING",
+        "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T05_KERNELBENCH_VERIFIED_STATIC_FIT_GATE",
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+        "V6_T18_HUMAN_SCOPE_RATIFICATION"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C002_SCOUT_DOES_NOT_TEST_LIFETIME_MOTIVATION",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "The proposed scout can test short-horizon cross-task adapter action value, but it cannot test continued learning after context saturation or superiority to an ordinary long-running agent.",
+      "evidence": "The scout has only 24 acquisition tasks, three writes, eight repeatedly forked targets, and two development lives; the systems interpretation explicitly says the tokenized stream need not exceed the common context cap, while the benchmark interpretation calls a post-context growth curve the decisive object. The proposal resolves the conflict by reserving post-context growth and strong external-memory baselines for confirmation, so a scout pass is not evidence for the owner's observation that ordinary agents fail to improve over long runs. T12 tests only a final checkpoint contrast and T15 correctly forbids automatic scale, but neither supplies a lifetime estimand.",
+      "acceptance_test_ids": [
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C003_ORDINARY_AGENT_BASELINE_IS_CRIPPLED_OR_UNDEFINED",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The scout lacks a strong, method-appropriate ordinary-agent baseline, so even a clean adapter effect cannot establish that v6 adds value beyond normal context, files, retrieval, or self-maintained lessons.",
+      "evidence": "The regular frozen/sham trajectory is called the ordinary-agent reference but its durable file policy, native context use, self-written notes, retrieval, reflection, and task-boundary state are not specified. The identical compiled-corpus text arm fixes v6's own selected corpus and is therefore a transport diagnostic, as the benchmark interpretation correctly states, not an ordinary agent allowed to organize the same public experience in its natural way. Notes 42 and 43 require native context, raw RAG, linked/organized memory, and reflection/lesson controls for the motivating lifetime comparison. Deferring all such controls to confirmation makes the scout scientifically remote from that question, not a minimal version of it.",
+      "acceptance_test_ids": [
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C004_SLEEP_ROWS_HAVE_NO_IDENTIFIED_LEARNING_OBJECTIVE",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "A deterministic compiler is not a scientifically specified writer until every row's input, loss-bearing target, support rule, and exposure are fixed.",
+      "evidence": "The proposal lists verified improvements, failure-to-recovery pairs, and emitted hypotheses but never states whether the model trains on task state to hypothesis, task state to patch, failed state to recovery operation, code to outcome prose, or the whole assistant transcript; nor does it define loss masks. The systems interpretation correctly identifies this as the central unresolved detail. Training successful code can yield domain/style imitation; training outcome prose can yield reward recitation; training self-authored hypotheses can reinforce unsupported beliefs. T04 tests byte determinism but cannot establish that the bytes assign credit to the future operation that caused the verified outcome.",
+      "acceptance_test_ids": [
+        "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C005_HYPOTHESIS_PROVENANCE_IS_NOT_HYPOTHESIS_SUPPORT",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "Loop-emitted hypotheses cannot be positive LoRA targets merely because they were public, bounded, and provenance-bearing.",
+      "evidence": "The proposal says SLEEP may include explicit hypotheses already emitted by the ordinary loop while also claiming that SLEEP asserts no truth. Provenance establishes authorship, not correctness or utility. The systems interpretation proposes outcome support or non-loss metadata, but the benchmark interpretation does not resolve this. Unsupported self-text can survive an action-outcome shuffle and create a self-confirming style prior. A permissible design must use hypothesis text only as quoted input/audit metadata, or bind its loss-bearing use to a predeclared later public intervention outcome without target leakage.",
+      "acceptance_test_ids": [
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C006_OUTCOME_SHUFFLE_CANNOT_MEET_ITS_OWN_EQUIVALENCE_PROMISE",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "T09 is internally underidentified because outcome labels determine row eligibility while the shuffled arm is also required to preserve authentic row counts, actions, outcomes, formatting, and token/step budgets.",
+      "evidence": "If the compiler first selects authentic verified improvements and then shuffles outcomes, true outcome-grounded selection remains in the control. If it shuffles before improvement, recovery, and hypothesis-support decisions as the systems interpretation requires, a different set and number of rows will normally qualify, especially in the small feature strata that the benchmark interpretation flags. Padding or duplicating rows changes exposure and may add useful information. The proposal needs an outcome-independent candidate superset plus separately named binding, selection, and generic-self-imitation controls; one derangement cannot isolate all three mechanisms.",
+      "acceptance_test_ids": [
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C007_ON_POLICY_AND_CHECKPOINT_ESTIMANDS_ARE_MIXED",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "The proposal does not say whether shuffled, text, raw-LoRA, and sham are independent on-policy lives or read-only interventions derived from the authentic life's acquisition ledger, and the two choices answer different questions.",
+      "evidence": "Adapter-off from an authentic checkpoint is an excellent within-life test of current adapter necessity but preserves all earlier adapter-caused experience collection. Training shuffled and text conditions from the authentic ledger controls transport/content at that checkpoint but cannot compare whole-organism experience acquisition. Independent arms allow acquisition to diverge after sleep and then confound later corpus quality with carrier use. The systems interpretation notices this for sham, while the benchmark interpretation calls for separating common-deck and on-policy comparisons only later. T08's golden schedules do not bind the experience source for every condition.",
+      "acceptance_test_ids": [
+        "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C008_HELDOUT_CURVE_AND_STATISTICS_ARE_NOT_DEFINED",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "The scout has thresholds but no frozen scalar endpoint, derivative, uncertainty model, stochastic-replication rule, or defensible aggregation unit.",
+      "evidence": "T12 requires final improvement in both development lives and a pooled practical margin, but does not define action value, speed transformation, correctness aggregation, task weighting, first-versus-best attempt, timeout/missing treatment, checkpoint AUC, derivative, or the denominator for 'half the gain.' Eight targets repeated at four checkpoints are correlated measurements, not independent replications, and two lives support no population inference. REVIEW_PACK records approximately plus/minus 0.08 LoRA training/read variability and prior style-driven fake retention curves. A valid scout must precompute per-target correctness-gated metrics from raw repeated timings, freeze checkpoint contrasts and curve summaries, repeat adapter training/inference seeds or explicitly label the result a single-realization wiring observation, and never use target or token-level pseudoreplication for confidence.",
+      "acceptance_test_ids": [
+        "V6_T06_BOUNDED_HARDWARE_HARNESS_FIT_CANARY",
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C009_RELATEDNESS_AND_DEDUPLICATION_HAVE_NO_COMMON_OPERATIONALIZATION",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The proposal demands that tasks be related enough for reusable learning yet nonduplicate under graph, dtype, layout, shape, code, and near-neighbor tests, without defining a target-blind relation function or demonstrating any transfer headroom.",
+      "evidence": "KernelBench-Verified's workload count does not imply that a 24/8 partition simultaneously satisfies both properties. Static public metadata can exclude obvious duplicates, but labels such as motif, family, cross-motif, and opposite condition can encode curator knowledge about useful optimizations unless derived by a frozen algorithm. T05 allows a fit report to invent that algorithm after this architecture is ratified, and T13 observes behavior only after the split exists. The fit gate needs positive relation evidence, such as acquisition-only motif annotations and a target-blind upper-bound or fixed skill-library transfer diagnostic, while preserving target solution and scoring blindness.",
+      "acceptance_test_ids": [
+        "V6_T05_KERNELBENCH_VERIFIED_STATIC_FIT_GATE",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C010_LORA_STYLE_VALIDITY_AND_MEMORIZATION_CAN_MIMIC_ACTION_GAIN",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The proposed endpoints do not exclude schema/style stabilization, instruction drift, generic kernel-domain fine-tuning, or memorized code templates as explanations for an authentic adapter gain.",
+      "evidence": "REVIEW_PACK documents actor erosion, numerical instability, majority-answer artifacts, zero product knowledge despite apparently good recall, and rising/falling curves caused entirely by style oscillation. V6 mounts the LoRA on every thought and action token, increasing this risk relative to the earlier read-only adapter protocol. Zeroing incorrect kernels does not prevent gains from fewer malformed outputs, more aggressive benchmarking, shorter code, or globally repeated optimization edits. T13's graph/shape audit is necessary but no unrelated-task/instruction-preservation panel, schema-validity decomposition, output-length/style diagnostic, code-template nearest-neighbor analysis, or no-outcome/domain-SFT control is a required gate.",
+      "acceptance_test_ids": [
+        "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C011_NO_PRIVATE_THOUGHT_OR_SELF_REPORT_ENDPOINT",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "Explicit thought or hypothesis similarity must not become an endpoint, training authority, or proof of learned cognition.",
+      "evidence": "The proposal's objective action endpoint is correct, but the systems interpretation recommends hypothesis conditionality and cognition-like decompositions without defining an external behavioral scoring rule. There is no reference private thought against which a black-box model should be matched, and rationale-token similarity can reward persuasive post hoc stories. Only public typed operations, committed predictions made before outcomes, executed patches, tool allocation, revision after public failure, stopping, and official held-out outcomes may carry endpoint credit. Public hypothesis text may be audited, but its wording or agreement with a hand-authored chain cannot license cognition or abstraction claims.",
+      "acceptance_test_ids": [
+        "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C012_LIFECYCLE_ISOLATION_IS_STRONG_IN_INTENT_BUT_INCOMPLETE",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Life, task, sleep, target, and arm boundaries are not specified as an executable state-transition and file/process allowlist, so non-LoRA state can persist and explain the result.",
+      "evidence": "T03 and T10 name many canaries, but the architecture never declares which source files, generated kernels, compiled binaries, CUDA/Triton caches, autotune state, shell history, model-server KV/prefix caches, RNG, environment variables, retrieval indexes, trainer checkpoints, and benchmark workspaces persist at each boundary. The discussion context explicitly allows ordinary files and tools, while the systems interpretation correctly says unrestricted artifacts become a second lifetime memory. Process cleanup alone also does not reset host-level compilation and timing caches. A cold base-plus-serialized-adapter reproduction from an explicit read allowlist is required to locate the effect in adapter bytes.",
+      "acceptance_test_ids": [
+        "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T10_EVALUATION_FORK_STERILITY",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C013_OPTIMIZER_MOMENTS_ARE_AN_UNDECLARED_LEARNED_LIFE_STATE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "Persisting optimizer state across sleeps violates the one-LoRA learned-object claim and changes later writes even though optimizer moments are not mounted at inference.",
+      "evidence": "The proposal requires optimizer/crash receipts and T03 names distinct optimizer states but never says whether moments reset, persist, or are used in a cumulative clean-base rebuild. The systems interpretation correctly identifies this conflict; the benchmark interpretation assumes matched train budgets without resolving it. Rebuild, incremental update with reset optimizer, and persistent optimizer yield different exposure, forgetting, and failure recovery. One exact lifecycle must be frozen, and only adapter bytes may survive as adaptive life state if the one-object claim is retained.",
+      "acceptance_test_ids": [
+        "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+        "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C014_TIME_AND_BUDGET_VISIBILITY_CAN_REVEAL_CONDITION",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Budget parity is counted offline but the model-visible time, remaining-budget, context-length, retrieval, sleep, and condition cues are neither enumerated nor tested for noninterference.",
+      "evidence": "The wake loop explicitly reads remaining thought, action, token, and tool budgets. Text, adapter, off, shuffled, and sham conditions naturally differ in prompt length, retrieval returns, training duration, inference latency, adapter-loading messages, and possibly sleep/checkpoint timing. T08 requires equal caps but not byte-identical model-visible counters or absence of elapsed wall-clock, condition names, row counts, checkpoint index, adapter origin, cache-warmth cues, and retry status. A policy can branch on those cues, invalidating causal comparisons even when ledger totals match.",
+      "acceptance_test_ids": [
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T10_EVALUATION_FORK_STERILITY",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C015_SCORER_AND_TIMING_FEEDBACK_CREATE_SELECTION_BIAS",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "The same noisy performance feedback is used to select sleep rows and later to score speed, allowing regression-to-the-mean, cache warming, and harness adaptation to masquerade as learned optimization.",
+      "evidence": "The public ledger stores a robust timing aggregate, and SLEEP filters verified improvements, but neither the improvement rule nor independent confirmation samples are defined. T06 checks coefficient of variation and randomized order, yet T12 can still credit best-of-six or selection-biased timings. Long-lived agents can learn evaluator quirks, and wrapper/runtime flags, compilation caches, dynamic-shape handling, stdout, files, asynchronous errors, and reference baseline choice can alter score semantics without editing the upstream tree. T11 must therefore audit dependencies and invocation bytes, while T06/T12 need separated selection and confirmatory timing trials, blinded randomized condition order, raw samples, and a frozen robust estimator.",
+      "acceptance_test_ids": [
+        "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+        "V6_T06_BOUNDED_HARDWARE_HARNESS_FIT_CANARY",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T10_EVALUATION_FORK_STERILITY",
+        "V6_T11_OFF_THE_SHELF_NONMUTATION_GATE",
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C016_WRONG_LIFE_AND_PRETRAINING_CONTROLS_ARE_TOO_WEAK",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "Wrong-life substitution should be mandatory in the two-life scout, and public-benchmark pretraining exposure must bound interpretation even after repository-level deduplication.",
+      "evidence": "The proposal says wrong-life only 'when available' even though it defines two lives; the systems interpretation correctly notes that reciprocal final-checkpoint swaps are cheap specificity tests. T13's setup mentions wrong-life analysis but its expected result does not require it, and T14 omits it. KernelBench-derived tasks and optimization idioms may already exist in the base model's pretraining; exact absence from v6 rows cannot show de novo knowledge. The defensible inference is a within-base causal redirection by life-specific experience, strengthened by reciprocal opaque swaps and nearest-neighbor/pretraining contamination disclosures.",
+      "acceptance_test_ids": [
+        "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C017_HARDWARE_CANARY_GATE_ORDER_CONTRADICTS_THE_SCOUT",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "T06 is marked required only before a scientific claim even though its own expected result says failure forbids the scout.",
+      "evidence": "A noisy, gameable, floor/ceiling-saturated, or broken harness invalidates and wastes the GPU scout; it cannot be discovered after execution and repaired by interpretation. The systems interpretation identifies the mismatch, while the benchmark interpretation calls T06 a hard pre-scout fit gate without reconciling the schema field. T15 and T17 cannot cure an already-run invalid scout. The architecture bytes must set T06 required_before to gpu_run while separately preserving that the canary itself requires explicit human hardware authorization.",
+      "acceptance_test_ids": [
+        "V6_T06_BOUNDED_HARDWARE_HARNESS_FIT_CANARY",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+        "V6_T18_HUMAN_SCOPE_RATIFICATION"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C018_VISIBILITY_MATRIX_COLLAPSES_DIFFERENT_ARMS",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "A single stage-level visibility cell cannot truthfully describe authentic LoRA, adapter-off, shuffled, same-corpus text, raw-LoRA, and sham conditions when those conditions intentionally receive different memory channels.",
+      "evidence": "For CHECKPOINT_EVAL_AGENT, PUBLIC_ACQUISITION_LEDGER is declared forbidden except that text access is confined to a baseline, while COMPILED_SLEEP_ROWS is declared derived_only except that the text arm directly receives retrieved rows. Those are distinct visibility states hidden inside prose exceptions. The matrix also omits condition identity, budget/time telemetry, persistent task files/caches, split-construction inputs, and non-cognitive benchmark auditors. T01 can pass the Cartesian product syntactically while scientifically relevant per-arm cells remain absent.",
+      "acceptance_test_ids": [
+        "V6_T01_SCHEMA_AND_CONTEXT_BINDING",
+        "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+        "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+        "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+        "V6_T10_EVALUATION_FORK_STERILITY"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C019_INTERPRETATIONS_AGREE_ON_BLOCKERS_BUT_OVERSTATE_READINESS",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "The two interpretations are complementary diagnoses, not independent support for implementation, and they leave a material mismatch about the scout's endpoint unresolved.",
+      "evidence": "The systems interpretation says the scout need not cross the context cap and treats cognition-like trace diagnostics as potentially informative; the benchmark interpretation calls post-context growth the decisive object and introduces EnvCommons despite the proposal never selecting it. Both then defer strong ordinary baselines, population statistics, and the rank/capacity question to confirmation while listing the run-defining bytes as ambiguities. Their agreement establishes that the one-loop/one-LoRA graph is coherent, but not that a particular kernel lifetime, writer, estimator, or comparator is ready to implement. EnvCommons should be removed from this deliberation unless separately proposed, and the endpoint should remain objective held-out action rather than thought-text correspondence.",
+      "acceptance_test_ids": [
+        "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+        "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+        "V6_T18_HUMAN_SCOPE_RATIFICATION"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6_C020_RML_DEMOTION_IS_COHERENT_BUT_NOT_EVIDENCE_FOR_V6",
+      "category": "operations",
+      "severity": "note",
+      "statement": "T16 correctly removes RML-G1 from the critical path, but passing the demotion audit contributes no evidence that v6 is identified or ready.",
+      "evidence": "RML-G1 tests use of supplied-gold local memory in an older modular reader path, whereas v6 tests online public experience written to the acting model. Both interpretations and note 49 support preserving RML only as an optional regression fixture. The demotion should be a small workflow/documentation invariant, not a justification for expanding the new subtree or skipping the missing v6 specification gates.",
+      "acceptance_test_ids": [
+        "V6_T16_RML_G1_PRIORITY_DEMOTION",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "V6_C021_HUMAN_RATIFICATION_CANNOT_SELECT_THE_MISSING_SCIENCE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The current change should be reworked before implementation ratification; a human approval of these bytes cannot make unspecified choices exact or validate the candidate gym.",
+      "evidence": "AGENTS.md requires graph, loop, claim, visibility, and test deltas to be adjudicated before exact human approval, followed by scoped implementation and independent review. Here the decisive row contract, split algorithm, strong baseline, curve estimator, timing protocol, lifecycle, and recipe are explicitly unresolved. A safe next scope is additional architecture/specification work and an offline static catalog analysis only if the required benchmark bytes already exist and the human authorizes that exact access; it is not creation of a scientifically committed runner, trainer, or GPU workflow.",
+      "acceptance_test_ids": [
+        "V6_T05_KERNELBENCH_VERIFIED_STATIC_FIT_GATE",
+        "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+        "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+        "V6_T18_HUMAN_SCOPE_RATIFICATION"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "CHECKPOINT_EVAL_AGENT conflates authentic parametric access with direct retrieved-row access in the same visibility cells; per-condition stages or a condition dimension are required.",
+    "Model-visible remaining budgets, elapsed time, context length, retrieval counts, sleep/checkpoint cues, adapter condition/origin, row counts, crash status, and retry status are absent from the information-item set.",
+    "Persistent source trees, generated kernels, compiled binaries, workspaces, shell history, retrieval indexes, model-server prefixes, CUDA/Triton/autotune caches, and RNG state are not represented as lifetime information channels.",
+    "The matrix does not distinguish read permissions of the official harness from those of designated non-cognitive integrity auditors who may inspect hidden hashes or upstream bytes.",
+    "The split/dedup constructor's access to public task-family metadata and its prohibition from model outputs, target scores, reference solutions, and hidden scorer data are not represented as a separate stage.",
+    "The ordinary-agent control's permitted native context, files, notes, retrieval, and reflection channels are not specified, so visibility parity cannot be audited."
+  ],
+  "missing_acceptance_tests": [
+    "V6_MT01_EXACT_RUN_CONTRACT: schema-validate and hash-bind model/tokenizer/bootstrap/inference bytes, upstream revision, manifests, row/loss-mask fixtures, trainer lifecycle, budgets, score code, margins, seeds, and failure rules before implementation.",
+    "V6_MT02_OBJECTIVE_LIFETIME_CURVE: freeze per-target correctness-gated score, raw timing aggregation, checkpoint first differences, post-context AUC/slope, retention, missingness, stochastic replicate policy, and life-level uncertainty without task/probe pseudoreplication.",
+    "V6_MT03_STRONG_ORDINARY_AGENT: compare a frozen ordinary agent allowed native context plus a target-blind self-maintained organized text/RAG memory under explicit visibility and natural/compute-normalized budgets; keep identical-corpus text labeled as transport only.",
+    "V6_MT04_SLEEP_ROW_CAUSAL_FACTORIAL: golden-test state-to-operation loss masks and separately ablate code target, recovery target, supported-hypothesis input, no-outcome self-imitation, outcome binding, task-action binding, selection, and generic domain SFT.",
+    "V6_MT05_RELATEDNESS_WITHOUT_DUPLICATION: freeze the public-feature relation and dedup algorithms and require a target-blind positive transfer-headroom diagnostic plus exact graph/shape/code/template near-neighbor exclusion before any model call.",
+    "V6_MT06_STYLE_INSTRUCTION_NEGATIVE_CONTROL: require unrelated instruction-following and non-kernel tasks, schema-validity/output-length/edit-frequency diagnostics, code nearest-neighbor reuse, and parser/style decomposition at every checkpoint.",
+    "V6_MT07_TIME_BUDGET_VISIBILITY_NONINTERFERENCE: prove byte-identical model-visible budget/counter semantics and absence of wall-clock, condition, checkpoint, adapter-origin, row-count, cache, and retry cues across causal pairs.",
+    "V6_MT08_SELECTION_VERSUS_SCORING_TIMING: use independent randomized timing samples for acquisition eligibility and confirmatory held-out scoring, retain all raw samples, and test cache/warmup/order invariance.",
+    "V6_MT09_NO_PRIVATE_THOUGHT_ENDPOINT: reject any primary or promotion metric based on hidden chain-of-thought, rationale similarity, self-report, or matching a preferred hypothesis string; credit only preregistered public operations and official outcomes.",
+    "V6_MT10_ADAPTER_ONLY_COLD_LOAD_AND_RECIPROCAL_SWAP: reproduce effects from base plus serialized adapter under an explicit file/process allowlist, then require opaque reciprocal A-to-B and B-to-A final-checkpoint swaps.",
+    "V6_MT11_ARM_SOURCE_AND_LIFECYCLE_MAP: declare for every condition whether experience is a common authentic ledger intervention or an independently evolving on-policy life, and hash every state that survives task, sleep, target, crash, arm, and life boundaries.",
+    "V6_MT12_VISIBILITY_BY_CONDITION: expand the visibility contract so authentic, off, shuffled, text, raw-LoRA, sham, wrong-life, harness, split constructor, and offline auditor each have explicit cells."
+  ],
+  "human_questions": [
+    "Does Rohin want the next ratified scope to be specification-only until the exact sleep rows, optimizer lifecycle, model/bootstrap, KernelBench-Verified pin, split, metrics, and analysis bytes have passed a new cross-critique?",
+    "Is the two-life 24-task scout intended only as a short-horizon adapter mechanism/wiring assay, with no claim that agents improve over long lives or beyond context?",
+    "Must the scout itself include one strong ordinary agent with native context and a target-blind organized text/RAG memory, or is Rohin comfortable learning only adapter necessity and deferring practical system value?",
+    "Which exact public state-to-operation target should SLEEP train, and are self-authored hypotheses loss-bearing only after a preregistered later public outcome supports their operational consequence?",
+    "Should outcome binding, outcome-conditioned selection, task-action binding, generic kernel SFT, and self-imitation be separate controls rather than one outcome-shuffled adapter?",
+    "What target-blind public representation will define family, motif, opposite condition, graph/shape duplication, code-template similarity, and positive transfer headroom?",
+    "What single correctness-gated held-out score, checkpoint curve, derivative/AUC, timing estimator, practical margin, stochastic replicate policy, and failure treatment should govern the scout?",
+    "Should all acquisition workspaces, persistent notes, retrieval stores, generated binaries, model-service caches, and optimizer moments be erased at task/sleep boundaries so the adapter is literally the only persistent adaptive cognitive state?",
+    "Will Rohin require reciprocal wrong-life swaps, adapter-only cold-load reproduction, style/instruction controls, and explicit pretraining-contamination disclosure in the scout?",
+    "Will Rohin correct T06 to a pre-GPU-scout gate and keep the hardware canary, scout, scale run, and every scientific claim separately authorized?"
+  ]
+}

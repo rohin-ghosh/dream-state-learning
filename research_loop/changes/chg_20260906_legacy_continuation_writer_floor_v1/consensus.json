@@ -1,0 +1,431 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Retained in the proposal registry, but insufficient for the oracle-visibility, independence, and bootstrap-shortcut requirements; a repaired proposal must register the missing tests rather than mutate this registry in consensus.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT1_source_join_closure"
+    },
+    {
+      "rationale": "Retained in the proposal registry, but its mask-equality object and authorization ordering remain ambiguous; a repaired proposal must register the missing round-trip and stage-order tests.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT2_target_matching"
+    },
+    {
+      "rationale": "Retained in the proposal registry, but insufficient for independence fault injection and durable failed-seal quarantine.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT3_content_disjoint_seal"
+    },
+    {
+      "rationale": "Retained in the proposal registry, but cannot establish serving conformance or resolve the finite-canary GPU-authorization cycle.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT4_reproducibility_canaries"
+    },
+    {
+      "rationale": "Retained as the narrow package-contrast endpoint; it does not cure bootstrap action laundering or establish memory-path, composition, or generalization evidence.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT5_prefix_package_contrast"
+    },
+    {
+      "rationale": "Retained as the narrow total-package endpoint; it does not identify causal corpus content, online learning, recurrence, or population effects.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT6_selected_corpus_floor"
+    },
+    {
+      "rationale": "Retained as a claim-boundary review, but it lacks machine-checkable oracle visibility, no-writeback, and final claim-state requirements.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "AT7_claim_ceiling"
+    }
+  ],
+  "agreements": [
+    "The assay may support only a narrow, descriptive selected-continuation writer/interface reinforcement result if all repaired gates pass.",
+    "C2-minus-C1 is an exact neutral-chat-prefix-package contrast, not an isolated chat-boundary, exposure, position, FLOP, or mechanism contrast.",
+    "C2-minus-C0 is a total post-hoc selected-corpus package contrast, not evidence of task conditioning, verification causality, outcome grounding, novel discovery, learned THINK, parenting, continual improvement, or a flywheel.",
+    "The current fresh-reset one-decision assay intentionally excludes retrieval, graph composition, planning, revision, and active feedback; it cannot evidence the complete recurrent organism.",
+    "Target content must remain unavailable to design and training roles until a separately ratified manifest authorizes score-blind sealing.",
+    "A deterministic canary is a prerequisite for valid execution, not robustness, replication, population inference, or a scientific result.",
+    "The assay must terminate at reporting; no assay output may write to or automatically become eligible input for a live life or future dream cycle."
+  ],
+  "architecture_change_sha256": "5b6de79818e7a8eba22edb385b988b11b39ff3f3028794e10d81f741ece002c5",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v1",
+  "concern_dispositions": [
+    {
+      "concern_id": "C01_bootstrap_action_laundering",
+      "rationale": "Accepted. The bootstrap exposes the dominant action directly to the evaluated policy, so the current floor can measure copying/interface reinforcement but cannot force a memory-mediated action path.",
+      "required_change": "The game admits direct query-to-agenda-style action laundering from the bootstrap, so it tests writer/interface reinforcement but does not force the intended memory path. The visibility contract and AT7 must explicitly preserve this copying interpretation. A repaired proposal must register a separate machine-checkable visibility test for the bootstrap payload and birth-payload diagnostic; AT5, AT6, and AT7 alone do not provide it.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C02_source_oracle_visibility_conflation",
+      "rationale": "Accepted. Corpus eligibility is causally selected using source actions, outcomes, scores, and earlier-score comparisons, which are distinct from target evaluation scores.",
+      "required_change": "The visibility matrix obscures oracle-based source selection. Source actions, outcomes, scores, and improvement comparisons must be represented separately from target evaluation scores and marked visible at extraction. A repaired proposal must register the required visibility-partition acceptance test; AT1 and AT7 only partially cover the issue.",
+      "resolution_id": "D2_oracle_visibility",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C03_prompt_serving_conformance_missing",
+      "rationale": "Accepted. Byte-stable output from a string-based serving path does not prove that sealed token IDs, special tokens, stop rules, adapter identity, and parser bytes were the path actually used.",
+      "required_change": "A prompt/schema round-trip golden is required; deterministic serving is not evidence that the intended prompt and token IDs were served. A repaired proposal must register that golden; AT2 and AT4 are only closest partial coverage.",
+      "resolution_id": "D3_prompt_and_label_contract",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C04_at2_label_mask_ambiguity",
+      "rationale": "Accepted. C1 and C2 necessarily have different full-sequence label-array lengths, so the equality object must be defined as a target-aligned representation.",
+      "required_change": "AT2's byte-level equality object is underspecified and can either fail an intended implementation or bless mismatched target supervision. A repaired proposal must define the target-aligned projection, target labels, full masks, and EOS treatment and register the repaired test under a new proposal registry.",
+      "resolution_id": "D3_prompt_and_label_contract",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C05_tokenizer_authority_stage_conflict",
+      "rationale": "Accepted. The requested CPU scope forbids tokenizer execution while AT1/AT2 and the proposed GPU gates require tokenizer-derived feasibility and goldens beforehand.",
+      "required_change": "The CPU preparation authority, implementation boundary, and tokenizer-execution gate are contradictory and need an acyclic, exact ordering. A repaired proposal must register a mechanically checked authorization-stage test; AT1 and AT2 are affected but do not establish acyclicity.",
+      "resolution_id": "D4_authorization_and_canary_order",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C06_pregpu_canary_gate_cycle",
+      "rationale": "Accepted. AT4 performs GPU training and serving but is stated as required before GPU authorization and before the review that approves it.",
+      "required_change": "GPU authorization is circular. The workflow must distinguish authorization for finite canary GPU commands from promotion to the remaining training/evaluation commands. A repaired proposal must register the required authorization-stage test; AT3 and AT4 are only closest partial coverage.",
+      "resolution_id": "D4_authorization_and_canary_order",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C07_independence_not_operationalized",
+      "rationale": "Accepted. Labels such as independent or source-distinct do not define meaningful independence without separated dependencies and falsifying fixtures.",
+      "required_change": "AT1 and AT3 require an exact independence specification plus fault-injection fixtures capable of producing disagreement when either implementation is wrong. A repaired proposal must register that test; AT1 and AT3 alone are insufficient.",
+      "resolution_id": "D5_independence_and_seal_durability",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C08_target_seal_failure_durability",
+      "rationale": "Accepted. Existing NO-GO language does not establish durable quarantine after partial target exposure or a failed/repaired sealer.",
+      "required_change": "The target-sealing failure state is not operationally durable enough to demonstrate that exposed targets cannot influence a repaired design. A repaired proposal must register an atomicity and namespace-quarantine test; AT3 is only partial coverage.",
+      "resolution_id": "D5_independence_and_seal_durability",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C09_dormant_feedback_not_tested",
+      "rationale": "Accepted. The dormant edge is a valid intended boundary, but prose does not evidence absence of indirect writeback or automatic intake.",
+      "required_change": "The reporting-only future edge needs an explicit no-writeback and no-auto-ingestion receipt; prose prohibition alone does not test indirect future-state leakage. A repaired proposal must register that test; AT7 is only partial coverage.",
+      "resolution_id": "D6_feedback_and_claim_states",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C10_wrong_module_and_emergence_scope",
+      "rationale": "Accepted as a scope ceiling, not a defect in the narrow first-action floor.",
+      "required_change": "There is no wrong-module defect for the narrow first-action question, but this assay supplies no evidence about emergent parent structure or complete-organism cognition. Preserve this ceiling in the repaired claim review, with AT7 as the closest existing coverage.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C11_recall_composition_generalization_not_distinguished",
+      "rationale": "Accepted as an explicit nonattribution boundary. Content-hash disjointness and one-action scoring do not distinguish these mechanisms.",
+      "required_change": "The acceptance suite distinguishes action improvement and interface retention, but not recall, composition, planning, or generalization. Those outcomes must remain explicitly out of scope. AT3, AT5, AT6, and AT7 remain narrow only; a later benchmark needs separate registered tests.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C12_offline_reexpression_not_online_learning",
+      "rationale": "Accepted. The historical post-hoc corpus and no-writeback evaluation are offline selected self-trace re-expression, not online action-outcome learning.",
+      "required_change": "Synthetic re-expression must not be described as new evidence, grounded experience learning, or an online action-outcome learning loop. Preserve this ceiling using AT1, AT5, AT6, and AT7; a later online-learning benchmark requires a newly registered test.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C13_missing_corpus_causal_baselines",
+      "rationale": "Accepted. The registered cells identify only the stated total-package and prefix-package estimands.",
+      "required_change": "The current baselines cannot identify whether useful action content, outcome-based selection, generic continuation training, strict-marker imitation, or the birth-demonstrated payload caused a gain. Only the registered total-package estimands are defensible. Preserve that ceiling with AT5, AT6, and AT7; causal corpus claims require a later newly registered control suite.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C14_fixed_panel_and_life_dependence",
+      "rationale": "Accepted. The three related lives, deterministic common C0, and fixed hash-sorted panel are formative gates, not independent replication.",
+      "required_change": "No population, robustness, scaling, or lifetime-length inference is available; program-wise intervals cannot upgrade the claim. Preserve that ceiling with AT3 through AT7.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C15_repeat_state_is_not_policy_visible",
+      "rationale": "Accepted. Occurrence provenance exists in extraction but repeat state is absent from training/evaluation policy inputs.",
+      "required_change": "Any association with later repeated occurrences cannot be interpreted as the policy learning across repeats or using recurrence state. Preserve that ceiling with AT1, AT6, and AT7.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C16_unexercised_control_plane_hazards",
+      "rationale": "Accepted as a reservation of untested mechanisms, not evidence that the isolated floor is defective.",
+      "required_change": "An author-side advocate cannot treat absent modules as green evidence; dedicated branch-release, diamond-DAG, and policy-visible-repeat tests remain required before those mechanisms are activated or claimed. AT7 only preserves the claim ceiling.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C17_invalid_assay_vs_negative_result",
+      "rationale": "Accepted. Infrastructure, sealing, and reproducibility NO-GO states must be structurally distinct from a valid scientific negative.",
+      "required_change": "Failure-state semantics need a deterministic claim gate so infrastructure, sealing, or reproducibility failure cannot be reported as a scientific negative. A repaired proposal must register a machine-checkable claim-state test; AT3 through AT7 are only partial coverage.",
+      "resolution_id": "D6_feedback_and_claim_states",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "cons_20260906_legacy_continuation_writer_floor_v1_adjudication_v1",
+  "critique_sha256": "e7786b6c2dde5648c743baf5f9806937b8e6a16bd15766191c4bc2c10338d0bd",
+  "disagreements": [
+    {
+      "disagreement_id": "D1_scope_shortcut_and_mechanism",
+      "issue": "Whether the assay can be framed as evidence for a memory-mediated, whole-organism learning mechanism rather than only a narrow writer/interface package.",
+      "positions": [
+        {
+          "actor": "systems interpretation",
+          "position": "The assay terminates at reporting and C1/C2 are assay-local parametric transport, not whole-organism consolidation."
+        },
+        {
+          "actor": "benchmark interpretation",
+          "position": "The severed one-decision route cannot exercise retrieval, composition, recurrence, fixed-memory substrate choice, or full-organism evidence."
+        },
+        {
+          "actor": "proposal/advocate position",
+          "position": "The assay is a bounded continuation/action transport floor with explicit nonattribution ceilings."
+        },
+        {
+          "actor": "critique",
+          "position": "Bootstrap-visible dominant action, fixed post-hoc corpus, absent causal baselines, and absent policy-visible repeat state require an explicit copying/total-package interpretation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT5_prefix_package_contrast",
+          "AT6_selected_corpus_floor",
+          "AT7_claim_ceiling"
+        ],
+        "rationale": "The narrow estimands are defensible only if all broader organism, mechanism, generalization, online-learning, recurrence, and population claims remain prohibited. Bootstrap copying must be represented explicitly; the required test is not in the registry.",
+        "required_change": "Rework the proposal to add the missing machine-checkable bootstrap/visibility test and preserve the exact total-package and copying claim ceiling. Future memory-path, causal-corpus, online-learning, generalization, and control-plane tests require a newly hash-bound benchmark.",
+        "selected_position": "Critique and both interpretations: this is only an isolated writer/interface floor.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C01_bootstrap_action_laundering",
+        "C10_wrong_module_and_emergence_scope",
+        "C11_recall_composition_generalization_not_distinguished",
+        "C12_offline_reexpression_not_online_learning",
+        "C13_missing_corpus_causal_baselines",
+        "C14_fixed_panel_and_life_dependence",
+        "C15_repeat_state_is_not_policy_visible",
+        "C16_unexercised_control_plane_hazards",
+        "D2_adapter_is_not_whole_organism_consolidation",
+        "D1_full_organism_evidence",
+        "D2_mechanism_and_substrate",
+        "D3_ablation_coverage"
+      ]
+    },
+    {
+      "disagreement_id": "D2_oracle_visibility",
+      "issue": "Whether source-oracle selection is adequately represented by the current visibility matrix.",
+      "positions": [
+        {
+          "actor": "proposal position",
+          "position": "I7 groups scores and actions and treats extraction checks as derived provenance."
+        },
+        {
+          "actor": "critique",
+          "position": "Source actions, outcomes, scores, and improvement comparisons are selection oracles and must be separate, visible extraction information."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT1_source_join_closure",
+          "AT7_claim_ceiling"
+        ],
+        "rationale": "The current matrix conflates distinct causal roles and cannot demonstrate the required source-oracle boundary.",
+        "required_change": "Add separate source-oracle and target-score information items, exact stage visibility, causal-use declarations, and the missing visibility-partition acceptance test.",
+        "selected_position": "Critique.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C02_source_oracle_visibility_conflation",
+        "D1_future_edge_is_dormant"
+      ]
+    },
+    {
+      "disagreement_id": "D3_prompt_and_label_contract",
+      "issue": "Whether deterministic and target-matching receipts prove the intended tokenized prompt, labels, and serving path.",
+      "positions": [
+        {
+          "actor": "proposal position",
+          "position": "AT2 matches target IDs/masks and AT4 requires deterministic duplicate serving."
+        },
+        {
+          "actor": "critique",
+          "position": "Full label masks cannot be equal across unequal-length inputs, and deterministic string serving does not prove sealed IDs or adapter/parser bytes were consumed."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT2_target_matching",
+          "AT4_reproducibility_canaries"
+        ],
+        "rationale": "The current receipts leave both the equality object and serving round trip underspecified.",
+        "required_change": "Define the target-aligned mask object and register a prompt/schema round-trip golden covering rendered bytes, IDs, special/stop IDs, engine-consumed IDs, adapter identity, and parser bytes.",
+        "selected_position": "Critique.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C03_prompt_serving_conformance_missing",
+        "C04_at2_label_mask_ambiguity"
+      ]
+    },
+    {
+      "disagreement_id": "D4_authorization_and_canary_order",
+      "issue": "Whether tokenizer and GPU gates form an executable acyclic authorization order.",
+      "positions": [
+        {
+          "actor": "proposal position",
+          "position": "Tokenizer goldens and deterministic canaries are prerequisites before full GPU execution."
+        },
+        {
+          "actor": "critique",
+          "position": "Tokenizer execution is forbidden by current CPU scope and AT4 requires GPU work before the review said to authorize GPU work."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT1_source_join_closure",
+          "AT2_target_matching",
+          "AT3_content_disjoint_seal",
+          "AT4_reproducibility_canaries"
+        ],
+        "rationale": "The stated sequence contains both tokenizer-authority and pre-GPU-canary cycles.",
+        "required_change": "Register a mechanically checked acyclic authorization graph that distinguishes architecture ratification, authorized CPU extraction, tokenizer authorization, target sealing, finite GPU-canary authorization, post-canary promotion review, full execution, reporting, and claims.",
+        "selected_position": "Critique.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C05_tokenizer_authority_stage_conflict",
+        "C06_pregpu_canary_gate_cycle"
+      ]
+    },
+    {
+      "disagreement_id": "D5_independence_and_seal_durability",
+      "issue": "Whether dual extractor/sealer agreement is independent and whether failed target sealing is durably non-reusable.",
+      "positions": [
+        {
+          "actor": "proposal position",
+          "position": "Two source-distinct extractors and two independent score-blind sealers agree byte-for-byte and fail NO-GO on disagreement."
+        },
+        {
+          "actor": "critique",
+          "position": "Shared dependencies and retained exposed artifacts can make agreement correlated and repair target-informed."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT1_source_join_closure",
+          "AT3_content_disjoint_seal"
+        ],
+        "rationale": "Agreement alone neither operationalizes independence nor proves quarantine after failed or partial sealing.",
+        "required_change": "Bind source/dependency/process/fixture separation; demonstrate fault-injection disagreement; and register atomic publication, access logging, partial-artifact quarantine, and irreversible namespace abandonment after target exposure.",
+        "selected_position": "Critique.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C07_independence_not_operationalized",
+        "C08_target_seal_failure_durability"
+      ]
+    },
+    {
+      "disagreement_id": "D6_feedback_and_claim_states",
+      "issue": "Whether dormant reporting feedback and invalid-versus-negative semantics are operationally enforced.",
+      "positions": [
+        {
+          "actor": "systems interpretation and proposal position",
+          "position": "The edge is reporting-only and the assay has no active feedback."
+        },
+        {
+          "actor": "critique",
+          "position": "No receipt proves no writeback/no automatic ingestion, and final-state semantics do not prevent invalid execution from being narrated as a negative."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "AT3_content_disjoint_seal",
+          "AT4_reproducibility_canaries",
+          "AT5_prefix_package_contrast",
+          "AT6_selected_corpus_floor",
+          "AT7_claim_ceiling"
+        ],
+        "rationale": "Prose boundaries are insufficient for stateful systems and claims require deterministic validity classification.",
+        "required_change": "Register no-writeback/no-auto-ingestion and deterministic claim-state-machine tests distinguishing invalid, abandoned, incomplete, valid-negative, prefix-only-positive, package-positive, and valid-positive outcomes.",
+        "selected_position": "Critique.",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C09_dormant_feedback_not_tested",
+        "C17_invalid_assay_vs_negative_result",
+        "D1_future_edge_is_dormant"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Does Rohin ratify a repaired, newly hash-bound proposal only after it registers the missing visibility, serving-round-trip, authority-order, independence, seal-quarantine, no-writeback, and claim-state tests?",
+      "Does Rohin intend the bootstrap-demonstrated four-pass payload to remain evaluation-visible, with any pass explicitly limited to copying/interface reinforcement and total-package effects?",
+      "What exact future separately ratified benchmark, if any, should test memory-path necessity, online action-outcome learning, causal corpus controls, and full-organism recurrence?"
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v1.systems",
+      "sha256": "50a0e24293f9afd3c967db5a6665f79f37707de6b302d74f9c240697d1072c7d"
+    },
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v1.benchmark",
+      "sha256": "5e57e800b1d4594f100f9c6f9848e60e0c1b6ef10d417f0eef7c5d0b39ebb773"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "D1_future_edge_is_dormant",
+      "rationale": "Accepted: the current assay must end at reporting, but this requires a missing no-writeback/no-auto-ingestion receipt.",
+      "resolution_id": "D6_feedback_and_claim_states",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_adapter_is_not_whole_organism_consolidation",
+      "rationale": "Accepted: C1/C2 are assay-local parametric transport/writer reinforcement and cannot receive whole-organism consolidation credit.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D1_full_organism_evidence",
+      "rationale": "Accepted: the isolated one-decision assay cannot evidence the complete dream-memory-think organism.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_mechanism_and_substrate",
+      "rationale": "Accepted: target-token matching does not identify a prefix mechanism or fixed-memory substrate advantage.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D3_ablation_coverage",
+      "rationale": "Accepted: bridge, recurrence, connectivity, scale, and lifetime ablations are reserved for a future benchmark.",
+      "resolution_id": "D1_scope_shortcut_and_mechanism",
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,1080 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "Immutable CPU receipt containing golden fixture hashes and validator-A/validator-B/oracle verdicts.",
+      "expected": "Both source-distinct no-model/no-tokenizer validators and the declarative oracle accept the golden append-only ledger and agree on its canonical hashes.",
+      "falsifies": "The proposed envelope can be independently and deterministically validated without a live life or model execution.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT1 synthetic canonical-JSON fixture, independently encoded by each validator.",
+      "test_id": "NT1_canonical_hash_chain"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt enumerating rejected closure violations and stable error codes from both validators and oracle.",
+      "expected": "Reject undeclared event types, actors, fields, invalid parent cardinalities, cross-life references, duplicate IDs, invalid sequences, and illegal state edges.",
+      "falsifies": "The closed event vocabulary and causal-parent contract prevent structurally ambiguous prospective records.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT2 synthetic valid and adversarial envelope/event fixtures.",
+      "test_id": "NT2_event_schema_closure"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt for synthetic context/generation records, including intended IDs, consumed IDs, engine-text bytes, decode bytes, and rejection codes.",
+      "expected": "Accept exact intended/consumed-ID and byte/decode agreement; reject every mismatch without calling a tokenizer or model.",
+      "falsifies": "A later generation event can be provenance-bound to its rendered context and actual consumed input.",
+      "kind": "unit",
+      "required_before": "implementation",
+      "setup": "NT3 synthetic integer-ID and UTF-8 byte fixtures only.",
+      "test_id": "NT3_context_generation_roundtrip_fixture"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt covering valid atomic typed-call/result joins and each malformed/stale/hidden-text-action fixture.",
+      "expected": "Accept only a schema-bound typed call with one atomic environment result; reject wrong schema/module/index, duplicate call, nonfinite or irrational measurement, stale state, partial result, and prose-only action dispatch.",
+      "falsifies": "The contract separates free THINK text from effectful action routing and binds public outcome to the dispatched call.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT4 synthetic action names, indices, hashes, integer measurements, and rational scores; no environment invocation.",
+      "test_id": "NT4_typed_tool_atomic_join"
+    },
+    {
+      "evidence_artifact": "Static capability-manifest candidate, adversarial filesystem fixture results, and immutable validator receipts.",
+      "expected": "Each role can read only its declared root; parent, compiler, trainer, evaluator, and reporter cross-boundary reads/writes fail, including symlink and path-traversal attempts.",
+      "falsifies": "Prompt omission alone is sufficient to enforce visibility, or the proposed role-root manifest prevents indirect boundary escape.",
+      "kind": "end_to_end",
+      "required_before": "implementation",
+      "setup": "NT5 synthetic directory tree and capability manifests with no live life, task, target, model, or tokenizer artifact.",
+      "test_id": "NT5_role_visibility_noninterference"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt with accept/reject verdicts and error codes for public process-only feedback versus forbidden references.",
+      "expected": "Accept feedback grounded only in earlier training-visible public evidence; reject future, evaluation, unseen, hidden-answer, unobserved-outcome, and undeclared-evidence references.",
+      "falsifies": "The parent-feedback event can remain temporally blind to targets and later results.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT6 synthetic same-episode event DAGs and feedback byte payloads.",
+      "test_id": "NT6_parent_temporal_blindness"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt for valid pointer-swap/rollback fixture and injected invalid-state, missing-evidence, and failed-restoration cases.",
+      "expected": "A successor becomes current only after complete-state validation, earlier/readable evidence checks, declared omission, restoration proof, and reversible pointer swap; all failed candidates preserve predecessor bytes and pointer.",
+      "falsifies": "Dream-time reconciliation can safely replace a compact conscious-state pointer without treating dreaming as a one-shot solution generator or losing ledger evidence.",
+      "kind": "end_to_end",
+      "required_before": "implementation",
+      "setup": "NT7 synthetic immutable ledger and declarative state objects only.",
+      "test_id": "NT7_dream_reversible_successor"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt with rendered synthetic ID arrays, label projections, masks, spans, target counts, and rejection codes.",
+      "expected": "Accept only nonzero supervised target-aligned continuations with retained EOS and no right-truncated target; verify parent/outcome/ledger/transcript are masked inputs and each continuation class has a legal child-origin target.",
+      "falsifies": "The future sleep compiler can distinguish evidence inputs from supervised child thought, typed-call, or dream-state targets.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT8 synthetic IDs and declared spans; neither tokenizer nor model may run.",
+      "test_id": "NT8_sleep_label_projection"
+    },
+    {
+      "evidence_artifact": "Immutable CPU receipt that closes a synthetic adapter receipt over ordered example hashes and manifests.",
+      "expected": "Accept only a receipt whose ordered examples, identity manifests, masks, finite loss trajectory, counts, and raw tensor hash agree; reject omitted/reordered examples, target visibility, wrong masks, nonfinite loss, and identity mismatch.",
+      "falsifies": "A future parametric transport receipt can be causally bound to admitted sleep examples without crediting the adapter with discovery.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "NT9 synthetic trainer metadata and placeholder hashes; no adapter creation, trainer, model, or GPU.",
+      "test_id": "NT9_adapter_provenance_fixture"
+    },
+    {
+      "evidence_artifact": "Graph-reachability report, synthetic capability-tree receipt, and validator verdicts.",
+      "expected": "Evaluator and reporter outputs have no permitted path into life, dream, parent, compiler, trainer, or future intake roots.",
+      "falsifies": "Evaluation/reporting artifacts are safely reporting-only under the prospective contract.",
+      "kind": "ablation",
+      "required_before": "implementation",
+      "setup": "NT10 declarative graph and synthetic filesystem capability fixtures only.",
+      "test_id": "NT10_no_feedback_edge"
+    },
+    {
+      "evidence_artifact": "A signed-by-hash comparison report showing validator-A, validator-B, and declarative-oracle verdict/error-code equality for every NT1--NT10 fixture.",
+      "expected": "All three independently authored specifications agree on every golden and adversarial case; any disagreement blocks implementation promotion and requires adjudication.",
+      "falsifies": "One implementation's interpretation is enough to establish the prospective contract.",
+      "kind": "independent_review",
+      "required_before": "implementation",
+      "setup": "Run only after the exact schemas, two validators with no shared project helper module, and oracle pack have been separately authored under later ratified scope.",
+      "test_id": "NT11_three_way_oracle_agreement"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260906_prospective_nursery_trace_contract_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "Passing synthetic NT1--NT11 can support only the engineering claim that the specified prospective trace contract, as implemented and tested, rejects its registered structural, provenance, visibility, and feedback-edge violations.",
+        "before": "No prospective typed, append-only, independently cross-validated nursery evidence substrate is established.",
+        "claim_id": "CLM_prospective_trace_enforcement",
+        "evidence_needed": "Exact human ratification; hash-bound schemas; two source-distinct validators; declarative oracle; immutable CPU receipts; fresh independent review.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A later life may be credited only with records whose causal path is prospectively captured from rendered context through typed action/outcome, feedback/restatement, dream successor, admitted sleep example, and adapter receipt.",
+        "before": "Legacy v6.1 traces cannot reconstruct prompt-to-continuation provenance or establish causal replay.",
+        "claim_id": "CLM_provenance_boundary",
+        "evidence_needed": "Prospective implementation and passing NT1--NT11; a separate later protocol and evidence for any life-level statement.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "Passing schema fixtures does not establish teachability, disposition transfer, task learning, continual learning, parenting benefit, model capability, or an Experience Models result.",
+        "before": "No scientific result is authorized by this proposal.",
+        "claim_id": "CLM_no_scientific_inference_from_contract",
+        "evidence_needed": "Separate hash-bound benchmark deliberation, exact ratification, pre-GPU gates, executed registered protocol, and independent scientific review.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "Future adapter receipts may demonstrate transport/consolidation provenance over admitted child-origin targets, but never discovery; discovery, if any, remains behavior attributable to the complete organism acting, receiving outcomes, retrieving, reconciling state, and revising across cycles.",
+        "before": "Existing bare-text writer artifacts confound action formatting, context policy, and parameter changes and cannot localize discovery to a LoRA.",
+        "claim_id": "CLM_organism_vs_adapter_attribution",
+        "evidence_needed": "Prospective causal trace plus later registered organism-level controls, including adapter-off and parent-absent probes; no result is claimed here.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/human_directive.txt",
+      "purpose": "Verbatim directive and binding scope.",
+      "sha256": "089b23c63525c85e85a8fe3fac1d37e216125f898175f7b8b2f8fbeab0dae1aa"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Project deliberation and ratification contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden scope.",
+      "sha256": "0e5b6bbe829bcf260d17f00e8d5e39abef2d090a4d53f12db2310d17a4015c98"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Proposed causal-trace contract and tests.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/plans/parenting_nursery_v0.md",
+      "purpose": "Nursery lifecycle and later causal assay candidate.",
+      "sha256": "46b3254b63c0fe09391449e984f7f8376a296ce24b82da902c68581ac34e7e6f"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_static_audit_v1.md",
+      "purpose": "Static failure analysis and prospective requirements.",
+      "sha256": "97dd3e3135afbd9136e0170c993033fe6838dc63cf55db17db63ddf6a3abe615"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_live_artifact_audit_v2.md",
+      "purpose": "Live-artifact limitations and next valid scout.",
+      "sha256": "ae64f9ee688405986e5df001686c6065bffb338bae73711727cb91b62d70d7b0"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Independent long-run mechanism audit and provenance limits.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy-floor stop decision and transferred collection laws.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "Current lived-agent behavioral framing.",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Current free-flow lived action/outcome loop.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/state.py",
+      "purpose": "Current conscious-state rendering and persistence model.",
+      "sha256": "e67ea71c18ef31082be6d2b56fa6004c29af08d8935669ce5099e6c26da429af"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Current append-only ledger and retrieval behavior.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Current generation backend constraints and provenance gaps.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "HARNESS renders only current conscious state plus explicitly admitted earlier same-life training evidence into CONTEXT_RENDERED.",
+        "before": "render_context reconstructs a prompt from mutable state, recalled strings, and truncated tail without immutable render provenance.",
+        "edge_id": "E_harness_context",
+        "from": "N_harness",
+        "operation": "modify",
+        "rationale": "Bind the actual lived context before free THINK while preserving one free-flow operation.",
+        "to": "N_context_rendered"
+      },
+      {
+        "after": "CHILD free-form MODEL_GENERATION is causally bound to exactly one CONTEXT_RENDERED event; prose alone cannot cause an effectful environment action.",
+        "before": "Free thought chunks are scanned for marker text and may dispatch ACT directly.",
+        "edge_id": "E_context_think",
+        "from": "N_context_rendered",
+        "operation": "modify",
+        "rationale": "Preserve THINK as generation while separating serialization from action authority.",
+        "to": "N_child_think"
+      },
+      {
+        "after": "Only a bound structured-output TOOL_CALL_PROPOSED may route from child generation to environment action.",
+        "before": "Regex-detected ACT text routes directly from the thought stream to gym.evaluate.",
+        "edge_id": "E_think_typed_action",
+        "from": "N_child_think",
+        "operation": "modify",
+        "rationale": "Prevent Markdown/prose formatting drift from being mistaken for action dispatch.",
+        "to": "N_typed_action"
+      },
+      {
+        "after": "ENVIRONMENT returns one atomic TOOL_RESULT causally joined to its typed call, sealed reset identity, state hashes, parsed action indices, and public measurement.",
+        "before": "Gym evaluation writes a loosely structured act ledger row after text-marker dispatch.",
+        "edge_id": "E_action_public_outcome",
+        "from": "N_typed_action",
+        "operation": "modify",
+        "rationale": "Bind lived action/outcome episodes without exposing hidden target material to unauthorized roles.",
+        "to": "N_public_outcome"
+      },
+      {
+        "after": "PARENT_FEEDBACK may read only earlier declared public training evidence from its episode and emits process-only correction.",
+        "before": "No runtime parent role or feedback provenance edge exists.",
+        "edge_id": "E_public_outcome_parent",
+        "from": "N_public_outcome",
+        "operation": "add",
+        "rationale": "Represent parenting as a target-blind credit-assignment hypothesis, not an answer channel.",
+        "to": "N_parent_feedback"
+      },
+      {
+        "after": "CHILD_RESTATEMENT responds to exact parent feedback plus public evidence and may lead to a separately recorded typed action, not hidden action prose.",
+        "before": "No child restatement event exists.",
+        "edge_id": "E_parent_restatement",
+        "from": "N_parent_feedback",
+        "operation": "add",
+        "rationale": "Preserve the distinction between received correction and child-owned application.",
+        "to": "N_child_restatement"
+      },
+      {
+        "after": "DREAM_SUCCESSOR reconciles a closed selection of earlier same-life events into a reversible candidate conscious state; validation precedes current-state pointer publication.",
+        "before": "Narrative notes are appended and re-rendered, with no explicit successor, evidence set, omission, rollback, or restoration contract.",
+        "edge_id": "E_life_dream_successor",
+        "from": "N_child_restatement",
+        "operation": "add",
+        "rationale": "Make dream-time local connection growth/memory re-expression explicit without creating a separate learned dream module.",
+        "to": "N_dream_successor"
+      },
+      {
+        "after": "Validated DREAM_SUCCESSOR supplies the next lived context pointer only through HARNESS rendering; raw future/evaluation/report material has no route into it.",
+        "before": "State and tail are directly reused by subsequent render_context calls.",
+        "edge_id": "E_dream_next_context",
+        "from": "N_dream_successor",
+        "operation": "modify",
+        "rationale": "Allow recurrent reconciliation while enforcing prospective evidence and visibility boundaries.",
+        "to": "N_context_rendered"
+      },
+      {
+        "after": "COMPILER selects only admitted closed training-life evidence into SLEEP_EXAMPLE, with masked evidence inputs and child-origin supervised targets.",
+        "before": "Legacy sleep compilation can admit bare thought text without complete prompt/provenance/role/label-span evidence.",
+        "edge_id": "E_closed_life_sleep",
+        "from": "N_public_outcome",
+        "operation": "modify",
+        "rationale": "Make sleep a gated transformation/write-preparation step rather than answer generation or raw transcript copying.",
+        "to": "N_sleep_example"
+      },
+      {
+        "after": "TRAINER reads only ordered SLEEP_EXAMPLE artifacts and writes ADAPTER_RECEIPT; the adapter transports admitted behavior and receives no evaluation or target path.",
+        "before": "Legacy training provenance does not fully bind corpus, identities, labels, loss, and tensor state.",
+        "edge_id": "E_sleep_parametric_transport",
+        "from": "N_sleep_example",
+        "operation": "modify",
+        "rationale": "Localize parametric consolidation/transport and prohibit attributing discovery to the LoRA.",
+        "to": "N_adapter_receipt"
+      },
+      {
+        "after": "A later EVALUATOR may consume sealed evaluation task, ordinary birth state, and exact adapter, and write reporting-only aggregate output with no edge back to life/dream/parent/compiler/trainer.",
+        "before": "Legacy probes and reports have insufficiently executable isolation guarantees.",
+        "edge_id": "E_evaluation_reporting_sink",
+        "from": "N_adapter_receipt",
+        "operation": "add",
+        "rationale": "Reserve later organism-level measurement while making evaluation/report outputs causal sinks.",
+        "to": "N_evaluation_report"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "N_causal_event_ledger: one life-owned canonical JSONL, append-only, hash-chained prospective evidence ledger with atomic publication/recovery rules and nine closed event types.",
+        "before": "N_legacy_ledger: append-only JSONL rows with heterogeneous kind fields, mutable interpretation, and no canonical hash/provenance contract.",
+        "node_id": "N_causal_event_ledger",
+        "operation": "modify",
+        "rationale": "Provide the evidence substrate before parenting time, task selection, or GPU spend."
+      },
+      {
+        "after": "N_context_rendered: HARNESS-authored immutable render/token/template/provenance receipt.",
+        "before": "Implicit render_context string assembled immediately before generation.",
+        "node_id": "N_context_rendered",
+        "operation": "add",
+        "rationale": "Captures actual input evidence prospectively."
+      },
+      {
+        "after": "N_child_think: CHILD MODEL_GENERATION event representing one free-flow THINK output.",
+        "before": "Thought ledger row containing a truncated chunk.",
+        "node_id": "N_child_think",
+        "operation": "modify",
+        "rationale": "Maintains single THINK operation while adding exact provenance."
+      },
+      {
+        "after": "N_typed_action: CHILD TOOL_CALL_PROPOSED event through a bound structured channel.",
+        "before": "ACT marker recognized inside unrestricted prose.",
+        "node_id": "N_typed_action",
+        "operation": "add",
+        "rationale": "Separates action authority from thought text."
+      },
+      {
+        "after": "N_public_outcome: ENVIRONMENT TOOL_RESULT event joining one typed call to public measurement and state transition.",
+        "before": "Loose act row with action/outcome/score fields.",
+        "node_id": "N_public_outcome",
+        "operation": "modify",
+        "rationale": "Records lived action/outcome as an atomic causal fact."
+      },
+      {
+        "after": "N_parent_feedback: target-blind process-only PARENT_FEEDBACK event.",
+        "before": "Absent.",
+        "node_id": "N_parent_feedback",
+        "operation": "add",
+        "rationale": "Adds a role boundary and feedback record, not a learned parenting module."
+      },
+      {
+        "after": "N_child_restatement: CHILD_RESTATEMENT event with scoped lesson and transfer proposal.",
+        "before": "Absent.",
+        "node_id": "N_child_restatement",
+        "operation": "add",
+        "rationale": "Records child re-expression separately from parent advice."
+      },
+      {
+        "after": "N_dream_successor: CHILD-produced, validated, reversible DREAM_SUCCESSOR state candidate executed under DREAM role.",
+        "before": "Notes/tail persistence only; no successor-state validation or rollback.",
+        "node_id": "N_dream_successor",
+        "operation": "add",
+        "rationale": "Makes local dream reconciliation and memory re-expression testable without changing it into one-shot planning."
+      },
+      {
+        "after": "N_sleep_example: COMPILER-selected response-only continuation artifact with explicit masks/spans/admission support.",
+        "before": "Legacy corpus row with incomplete source/render/target provenance.",
+        "node_id": "N_sleep_example",
+        "operation": "modify",
+        "rationale": "Constrain future SLEEP to lawful consolidation inputs."
+      },
+      {
+        "after": "N_adapter_receipt: TRAINER provenance receipt over exact ordered sleep examples and raw adapter identity.",
+        "before": "Training metadata lacks complete closed provenance.",
+        "node_id": "N_adapter_receipt",
+        "operation": "modify",
+        "rationale": "Distinguish parametric transport from organism-level discovery."
+      },
+      {
+        "after": "N_evaluation_report: sealed later evaluation/reporting sink with no admissible feedback path.",
+        "before": "No executable no-feedback contract.",
+        "node_id": "N_evaluation_report",
+        "operation": "add",
+        "rationale": "Protect future scientific measurement from self-contamination."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin exactly ratify the proposed bytes and limited scope: schemas for the canonical envelope and nine event types; two source-distinct CPU/no-model/no-tokenizer validators; a declarative synthetic fixture/oracle pack; NT1--NT10 CPU receipts and static capability-manifest candidate; and a later benchmark-proposal candidate?",
+    "forbidden_before_approval": [
+      "Edit or create implementation code, schemas, validators, fixtures, manifests, receipts, benchmark proposals, or durable artifacts.",
+      "Collect, modify, inspect, enumerate, or expose any live child, parent, dream, sleep, adapter, Fable life, nursery task, training task, evaluation task, action, answer, outcome, target, score, split, or benchmark artifact.",
+      "Select tasks or splits; write lessons, inheritance packs, parent feedback, training corpora, dream state, adapters, or evaluation material.",
+      "Execute a model, tokenizer, trainer, evaluator, target sealer, environment, external parent, GPU command, or any job.",
+      "Claim teachability, disposition transfer, task learning, continual learning, parenting benefit, Experience Models performance, or any scientific result.",
+      "Treat agreement among agents or passing future CPU fixtures as human authorization for later life, benchmark, model, tokenizer, trainer, evaluator, adapter, GPU, or scientific-claim work."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "Lived episode recurrence: HARNESS renders the current validated state and admitted evidence; CHILD emits free THINK; a separately typed call may be proposed; ENVIRONMENT returns public outcome; repetition continues under a predeclared episode budget or DONE condition.",
+        "before": "Model generates a chunk; regex scans PREDICT/ACT/NOTE/RECALL/DONE; ACT text directly dispatches; outcome/tail/note updates repeat.",
+        "loop_id": "L_lived_action_outcome",
+        "operation": "modify",
+        "rationale": "Preserves lived experience as organism action/outcome interaction while making action dispatch and provenance typed.",
+        "reads": [
+          "validated conscious-state pointer",
+          "explicitly admitted earlier same-life training evidence",
+          "sealed training episode state",
+          "typed call schema"
+        ],
+        "stop_condition": "Predeclared episode budget is exhausted or a valid DONE condition occurs; no later target, score, report, or evaluation artifact may alter the loop.",
+        "trigger": "A later separately authorized training-life episode begins.",
+        "writes": [
+          "CONTEXT_RENDERED",
+          "MODEL_GENERATION",
+          "TOOL_CALL_PROPOSED when applicable",
+          "TOOL_RESULT when applicable"
+        ]
+      },
+      {
+        "after": "Parenting/re-expression recurrence: after public training evidence exists, PARENT may provide process-only feedback; CHILD may restate and separately test a proposal; accepted and rejected advice remain distinct evidence rather than automatic truth.",
+        "before": "No parent feedback, restatement, or admission distinction exists.",
+        "loop_id": "L_parent_feedback_restatement",
+        "operation": "add",
+        "rationale": "Represents feedback as a hypothesis in the organism loop, with environment evidence rather than parental authority deciding later admission.",
+        "reads": [
+          "earlier declared same-episode public training evidence",
+          "fixed parent process rubric",
+          "child restatement and any public near-transfer evidence"
+        ],
+        "stop_condition": "No eligible public evidence, feedback is rejected by visibility/temporal validation, or the later prebound admission rule does not support consolidation.",
+        "trigger": "A later authorized public training episode reaches a feedback checkpoint.",
+        "writes": [
+          "PARENT_FEEDBACK",
+          "CHILD_RESTATEMENT",
+          "additional typed-action/outcome events only if separately generated and valid"
+        ]
+      },
+      {
+        "after": "Dream recurrence: DREAM role re-expresses selected earlier same-life training evidence into a complete candidate successor state; validate references, visibility, declared omission, restoration, and rollback before atomically moving the context pointer.",
+        "before": "Notes and recent tail persist opportunistically across render cycles without explicit reconciliation validation.",
+        "loop_id": "L_dream_reconciliation",
+        "operation": "add",
+        "rationale": "Makes dream-time local connection growth and reversible memory re-expression recurrent and auditable, rather than a one-shot answer generator.",
+        "reads": [
+          "closed earlier same-life training events",
+          "current predecessor conscious-state reference",
+          "predeclared reconciliation request and omission/restoration requirement"
+        ],
+        "stop_condition": "A valid reversible successor is published, or validation/restoration fails and predecessor remains current.",
+        "trigger": "A later authorized reconciliation checkpoint, not every model response.",
+        "writes": [
+          "DREAM_SUCCESSOR",
+          "next-context pointer on successful validation"
+        ]
+      },
+      {
+        "after": "Sleep/transport recurrence: COMPILER admits only supported child-origin continuations from closed training events; TRAINER consolidates the exact ordered examples and emits a receipt; later organism use of the adapter is distinct from discovery and must be separately evaluated.",
+        "before": "Legacy compilation/training may use incomplete trace provenance and bare-text continuation rows.",
+        "loop_id": "L_sleep_consolidation_transport",
+        "operation": "modify",
+        "rationale": "Separates SLEEP selection/transformation and parametric transport from lived discovery, dreaming, retrieval, planning, and revision.",
+        "reads": [
+          "closed admitted training-life event set",
+          "admission-rule receipt",
+          "explicit masks and target spans",
+          "frozen model/tokenizer/training manifests"
+        ],
+        "stop_condition": "No admissible examples, any provenance/visibility/label validation failure, nonfinite training, or completion of the separately authorized fixed update schedule.",
+        "trigger": "A later separately authorized sleep boundary after closed training evidence exists.",
+        "writes": [
+          "SLEEP_EXAMPLE",
+          "ADAPTER_RECEIPT"
+        ]
+      },
+      {
+        "after": "Later feedback boundary: sealed evaluation and reporting may measure a later organism under a distinct protocol, but their outputs remain reporting-only and cannot influence future life, dream, parent, compiler, trainer, or intake.",
+        "before": "No enforceable graph-level reporting sink is defined.",
+        "loop_id": "L_evaluation_feedback_firewall",
+        "operation": "add",
+        "rationale": "Prevents results from leaking backward into future dream cycles or training while leaving later independent measurement possible.",
+        "reads": [
+          "sealed evaluation task",
+          "ordinary birth state",
+          "exact adapter",
+          "registered evaluation protocol"
+        ],
+        "stop_condition": "Registered evaluation completes or fails; output remains in reporting-only namespace.",
+        "trigger": "A later newly ratified evaluation protocol.",
+        "writes": [
+          "evaluation aggregate receipt",
+          "reporting-only artifact"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Propose a CPU/schema/fixture-only prospective nursery causal-trace contract: a hash-chained nine-event ledger, typed action boundary, role-root visibility enforcement, reversible dream-successor evidence, and provenance-bound sleep/adapter receipts. It authorizes no live life, task selection, lesson, model/tokenizer/trainer/evaluator/GPU execution, or scientific claim before exact human ratification and later gates.",
+  "system_thesis": "The organism learns across recurrent lived action/outcome episodes, dream-time local connection growth and memory re-expression, and sleep-time parametric consolidation/transport. Goal-conditioned retrieval, composition, planning, and revision arise in the complete organism across these loops; a LoRA can carry admitted information across time but is not itself credited with discovery. This proposal minimally instruments that causal path prospectively, preserving THINK as free-flow generation, DREAM as context reconciliation, and SLEEP as selected transformation plus write.",
+  "title": "Prospective nursery causal-trace contract v1",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Harness/environment-only training artifact; never exposed as a general cross-role corpus item.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Child receives only the lawful rendered task context, not sealing metadata.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Environment requires it to validate reset before action.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Parent sees only declared public trace, never hidden task/sealing identity.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Restatement sees only public evidence lawfully rendered to child.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Dream may use only role-legal state references, not sealed-task internals.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Compiler may use lawful admission support but not hidden task identity as target material.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Trainer reads only sleep examples/manifests.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_training_task_identity_and_sealed_reset",
+        "reason": "Evaluation uses a distinct sealed evaluation task, not a training task.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Harness creates and records exact rendering.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Child receives rendered bytes/IDs as its context.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Environment receives only typed call, not full child context.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Parent may receive only declared public trace, not undeclared full prompt bytes.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Child can receive its declared public evidence context for restatement.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Dream may read selected same-life admissible evidence only.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Compiler can include rendered IDs only as masked, admission-supported input.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Trainer sees only compiled input IDs and labels, not raw ledger roots.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_rendered_context_and_intended_ids",
+        "reason": "Evaluator uses fresh ordinary birth context under later protocol.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Harness records it only as a child generation event.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Child produces the free THINK stream.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Environment must not parse prose as an action.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Parent may inspect declared public child trace only.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Child may use declared public evidence when restating.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Dream may reconcile selected earlier same-life child evidence.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Compiler may use validated child thought as a supervised target only under admission rules.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Trainer may see only compiled masked/target projections.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_free_think_and_generation_receipt",
+        "reason": "Evaluation/report must not read training-life trace.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Harness records lawful event links but does not reinterpret them.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Child receives any outcome only through future lawful rendered context.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Environment consumes typed call and produces its joined public result.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Parent may inspect declared public training trace and outcome.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Child may receive public evidence for restatement.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Dream may reconcile selected same-life public evidence.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Compiler may include it only as masked input/support, never as a casual target.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Trainer has no raw outcome root and cannot read it outside compiled masks.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_typed_call_and_public_outcome",
+        "reason": "Evaluation/report uses distinct sealed evaluation evidence.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Harness may ledger the immutable feedback event but cannot generate or alter it.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Child sees feedback only if explicitly admitted into a lawful later context.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Environment has no parent-feedback input.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Parent creates it from public evidence and fixed rubric.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Child restatement parents exactly this feedback and public evidence.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Dream may read selected training feedback only under later role policy.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Compiler may mask it as input; it cannot be a supervised target.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Trainer has no raw parent-feedback root.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_parent_feedback",
+        "reason": "Evaluation/report cannot read parent material.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Harness records but does not author the child restatement.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Child may use its own earlier admitted restatement through lawful context.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Environment receives only a separately valid typed call.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Parent may view declared public restatement for feedback provenance.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Child produces it.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Dream may reconcile selected restatement evidence.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Compiler may use only validated child restatement-derived continuation as an admitted target class where defined.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Trainer sees only compiled projection.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_child_restatement_and_scoped_lesson",
+        "reason": "Evaluation/report cannot read source-life child text.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Harness validates/publishes pointer but does not derive a hidden answer.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Child may receive only validated current state in next context.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Environment has no dream-state root.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Parent has no dream-state root unless later explicitly declared public evidence allows a derived view.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Restatement is distinct from dream reconciliation.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "DREAM creates/validates successor from selected prior evidence.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Compiler may use validated DREAM_STATE_CONTINUATION target with support/masking rules.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Trainer sees only compiled projection.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_dream_successor_and_omission_receipt",
+        "reason": "Evaluation/report cannot read training-life dream state.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Harness has no compiler/trainer input root.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Child has no sleep-example root.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Environment has no compiler root.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Parent has no compiler root.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Restatement stage has no compiler root.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Dream has no compiler root.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Compiler authors admitted examples and rejection evidence.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Trainer reads exact frozen examples and training manifests only.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_sleep_examples_masks_and_labels",
+        "reason": "Evaluation/report cannot read corpus or labels.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Harness must use an exact adapter only under later separate authorization; current contract only records provenance.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Child receives effects only through an authorized later serving context, never receipt internals.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Environment does not read adapter receipt.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Parent does not read adapter receipt.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Restatement has no trainer root.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Dream has no trainer root.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Compiler has no adapter root.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Trainer writes the receipt and raw adapter identity.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I_adapter_receipt_and_tensor_identity",
+        "reason": "Later evaluator may receive exact adapter identity but reporter sees aggregate receipts only.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Harness/life is forbidden from evaluation roots.",
+        "stage_id": "HARNESS_RENDER",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Child life is forbidden from evaluation roots.",
+        "stage_id": "CHILD_THINK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Training environment is distinct from sealed evaluation environment.",
+        "stage_id": "ENV_ACTION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Parent is target-blind and cannot read evaluation information.",
+        "stage_id": "PARENT_FEEDBACK",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Child restatement cannot access evaluation information.",
+        "stage_id": "CHILD_RESTATEMENT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Dream must not reconcile evaluation/report outputs into future life.",
+        "stage_id": "DREAM_RECONCILIATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Compiler cannot read evaluation roots.",
+        "stage_id": "SLEEP_COMPILATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Trainer cannot read evaluation targets, outputs, scores, or reports.",
+        "stage_id": "PARAMETRIC_CONSOLIDATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I_sealed_evaluation_target_outputs_scores_and_reports",
+        "reason": "Later evaluator may read its sealed task and exact adapter; reporter may read only authorized immutable aggregates, with no feedback edge.",
+        "stage_id": "EVALUATION_REPORT",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I_training_task_identity_and_sealed_reset",
+      "I_rendered_context_and_intended_ids",
+      "I_child_free_think_and_generation_receipt",
+      "I_typed_call_and_public_outcome",
+      "I_parent_feedback",
+      "I_child_restatement_and_scoped_lesson",
+      "I_dream_successor_and_omission_receipt",
+      "I_sleep_examples_masks_and_labels",
+      "I_adapter_receipt_and_tensor_identity",
+      "I_sealed_evaluation_target_outputs_scores_and_reports"
+    ],
+    "stages": [
+      "HARNESS_RENDER",
+      "CHILD_THINK",
+      "ENV_ACTION",
+      "PARENT_FEEDBACK",
+      "CHILD_RESTATEMENT",
+      "DREAM_RECONCILIATION",
+      "SLEEP_COMPILATION",
+      "PARAMETRIC_CONSOLIDATION",
+      "EVALUATION_REPORT"
+    ]
+  }
+}

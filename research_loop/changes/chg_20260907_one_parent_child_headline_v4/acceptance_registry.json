@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260907_one_parent_child_headline_v4",
+  "tests": [
+    {"test_id": "V4_SOURCE_FREEZE", "phase": "PRE_IMPLEMENTATION", "pass": "all proposal paths, schemas, prompts, inherited sources, and workflow bytes match the ratified manifest", "failure": "IMPLEMENTATION_FORBIDDEN"},
+    {"test_id": "V4_PARENT_CLOSED_POLICY", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "schema rejects free text, task content, out-of-view IDs/codes, wrong reset state, and every extra field; renderer bytes are golden", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_VISIBILITY_TAINT", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "paired sentinels prove no hidden truth, oracle/scorer, future state, probe, reporter, filename, length, cache, query-to-agenda, cross-service, or cross-root channel reaches child life, DREAM, SLEEP targets, active text, or deployment", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_COMMITTED_BRANCH", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "draft, parse rejection, supersession, partial dispatch, transport loss, post-dispatch crash, and retry fixtures admit only the single causally committed child branch", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_GRAPH_REPEAT_RESUME", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "shared-ancestor diamonds are not cycles; repeated events remain distinct; every crash boundary resumes exactly once without corpus or ledger duplication", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_BYTE_CONFORMANCE_STATIC", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "prompt, parser, merger, renderer, canonical JSON, EOS placeholder, and chat/tool template source fixtures match golden bytes", "failure": "TOKENIZER_GATE_FORBIDDEN"},
+    {"test_id": "V4_TOKENIZER_CONFORMANCE", "phase": "SEPARATELY_AUTHORIZED_TOKENIZER_GATE", "pass": "pinned tokenizers produce ratified IDs/boundaries, complete targets through EOS, exact neutral role/token matches, and no target truncation", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_EVIDENCE_IDENTITY", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "only committed non-probe action plus public outcome creates one evidence ID; DREAM/rehearsal/re-expression changes dose but never evidence count or n", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_WRITER_RECEIPTS", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "every scientific/rehearsal/anchor slot and every fit/quarantine/mount/rollback/off path emits the exact receipt schema with matched P/U positions and dose", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_SPLIT_ISOLATION", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "URI aliases, wake/probe collision, probe return, writable caches, service/root crossover, and restart contamination all abort", "failure": "MODEL_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_PILOT_TRUTH_TABLE", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "exact exhaustive fixtures cover 3-of-4 conjunction, means, -1/20 boundaries, signed zero, missing/nonfinite values, retained roots, decision blinding, and pilot exclusion", "failure": "SCIENTIFIC_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_REDUCER_AND_CLAIMS", "phase": "POST_IMPLEMENTATION_PRE_MODEL", "pass": "one row per root, fixed D-to-W_P-to-L_terminal-to-C_public-to-T_R0 sequence, robust non-rescuing sensitivity, and every terminal result state generate only allowed claim bytes", "failure": "SCIENTIFIC_CLAIM_FORBIDDEN"},
+    {"test_id": "V4_RESOURCE_AND_LEASE", "phase": "PRE_GPU", "pass": "complete measured resource manifest satisfies every ceiling, p95, storage, multi-LoRA, schedule, guaranteed-lease, and reserve inequality", "failure": "GPU_EXECUTION_FORBIDDEN"},
+    {"test_id": "V4_INDEPENDENT_REVIEW", "phase": "POST_IMPLEMENTATION_PRE_GPU", "pass": "fresh independent PASS with zero unresolved concerns and exact identity/config/context/commit/evidence hashes; no author override", "failure": "GPU_EXECUTION_FORBIDDEN"}
+  ],
+  "terminal_result_states": ["PASSED", "NOT_RELEASED_INCONCLUSIVE", "NOT_RELEASED_ADVERSE", "UNINTERPRETABLE_INVALID", "UNTESTED_AFTER_EARLIER_FAILURE"]
+}
+

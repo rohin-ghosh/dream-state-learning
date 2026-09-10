@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-review-assignment-v1d.schema.json",
+  "title": "Paper-1 v03r canary v1d platform-attested review assignment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "assignment_id", "change_id", "transition", "role", "actor", "review_packet_sha256", "reviewed_lock_sha256", "supplied_context_manifest_sha256", "platform_separation_boundary", "issued_at_utc", "assignment_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-review-assignment-v1d.0"},
+    "assignment_id": {"type": "string", "pattern": "^P1D-ASSIGN-[A-Z_]+-(REVIEWER|ADVOCATE)-[0-9]{4}$"},
+    "change_id": {"const": "chg_20260902_paper1_v03r_end_to_end_canary_v1d"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "role": {"enum": ["INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]},
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "platform_identity_attestation_sha256", "attested_roles_on_reviewed_lock"],
+      "properties": {
+        "actor_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "platform_identity_attestation_sha256": {"$ref": "#/$defs/sha256"},
+        "attested_roles_on_reviewed_lock": {"type": "array", "uniqueItems": true, "items": {"enum": ["AUTHOR", "IMPLEMENTER", "PRODUCER", "INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]}}
+      }
+    },
+    "review_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "supplied_context_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "platform_separation_boundary": {"const": "ROLE_AND_FRESH_CONTEXT_SEPARATION_ARE_PLATFORM_ATTESTED_NOT_PROVED_INDEPENDENCE"},
+    "issued_at_utc": {"type": "string", "format": "date-time"},
+    "assignment_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(assignment excluding assignment_sha256)); the stored digest is external"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"role": {"const": "INDEPENDENT_REVIEWER"}}},
+      "then": {"properties": {"actor": {"properties": {"attested_roles_on_reviewed_lock": {"contains": {"const": "INDEPENDENT_REVIEWER"}, "not": {"contains": {"enum": ["AUTHOR", "IMPLEMENTER", "PRODUCER", "AUTHOR_SIDE_ADVOCATE"]}}}}}}}
+    },
+    {
+      "if": {"properties": {"role": {"const": "AUTHOR_SIDE_ADVOCATE"}}},
+      "then": {"properties": {"actor": {"properties": {"attested_roles_on_reviewed_lock": {"contains": {"const": "AUTHOR_SIDE_ADVOCATE"}, "not": {"contains": {"const": "INDEPENDENT_REVIEWER"}}}}}}}
+    }
+  ],
+  "x-semantic-contract": {
+    "same_packet": "Reviewer and advocate assignments for a transition bind the same review_packet_sha256, reviewed_lock_sha256, and supplied_context_manifest_sha256.",
+    "separation_boundary": "Role exclusions and actor identifiers are platform attestations used for workflow separation and are not proof of human or model independence."
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

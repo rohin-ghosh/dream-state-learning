@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think0-state-v1c",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["probe", "scratch", "previous_read"],
+  "properties": {
+    "probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["probe_id", "source", "target", "question"],
+      "properties": {
+        "probe_id": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9_.:-]+$"},
+        "source": {"$ref": "dream_state.schema.json#/$defs/source"},
+        "target": {"$ref": "dream_state.schema.json#/$defs/target"},
+        "question": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[ -!#-\\[\\]-~]+$"}
+      }
+    },
+    "scratch": {"$ref": "scratch.schema.json"},
+    "previous_read": {"$ref": "#/$defs/previousRead"}
+  },
+  "$defs": {
+    "previousRead": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {"type": {"const": "NO_READ"}}
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "read_handle"],
+          "properties": {
+            "type": {"const": "NOT_FOUND"},
+            "read_handle": {"$ref": "#/$defs/readHandle"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "read_handle"],
+          "properties": {
+            "type": {"const": "CONFLICT"},
+            "read_handle": {"$ref": "#/$defs/readHandle"}
+          }
+        },
+        {"$ref": "#/$defs/rowRead"}
+      ]
+    },
+    "rowRead": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle", "kind", "fields", "status", "semantic_hash"],
+      "properties": {
+        "type": {"const": "ROW"},
+        "read_handle": {"$ref": "#/$defs/readHandle"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"oneOf": [
+          {"$ref": "dream_state.schema.json#/$defs/routeFields"}, {"$ref": "dream_state.schema.json#/$defs/effectFields"},
+          {"$ref": "dream_state.schema.json#/$defs/sourceValueFields"}, {"$ref": "dream_state.schema.json#/$defs/animalValueFields"},
+          {"$ref": "dream_state.schema.json#/$defs/targetBaselineFields"}, {"$ref": "dream_state.schema.json#/$defs/recipeFields"},
+          {"$ref": "dream_state.schema.json#/$defs/roleEquivFields"}, {"$ref": "dream_state.schema.json#/$defs/causalJoinFields"},
+          {"$ref": "dream_state.schema.json#/$defs/roleApplicationFields"}
+        ]},
+        "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+        "semantic_hash": {"$ref": "dream_state.schema.json#/$defs/hash"}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "ROUTE"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/routeFields"}}}},
+        {"if": {"properties": {"kind": {"const": "EFFECT"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/effectFields"}}}},
+        {"if": {"properties": {"kind": {"const": "SOURCE_VALUE"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/sourceValueFields"}}}},
+        {"if": {"properties": {"kind": {"const": "ANIMAL_VALUE"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/animalValueFields"}}}},
+        {"if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/targetBaselineFields"}}}},
+        {"if": {"properties": {"kind": {"const": "RECIPE"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/recipeFields"}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/roleEquivFields"}}}},
+        {"if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/causalJoinFields"}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}}, "then": {"properties": {"fields": {"$ref": "dream_state.schema.json#/$defs/roleApplicationFields"}}}}
+      ]
+    },
+    "readHandle": {"type": "string", "pattern": "^H[0-9]{6}$"}
+  }
+}

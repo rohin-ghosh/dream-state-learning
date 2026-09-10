@@ -1,0 +1,167 @@
+{
+  "acceptance_test_ids_addressed": [
+    "AT1_source_join_closure",
+    "AT2_target_matching",
+    "AT3_content_disjoint_seal",
+    "AT4_reproducibility_canaries",
+    "AT5_prefix_package_contrast",
+    "AT6_selected_corpus_floor",
+    "AT7_claim_ceiling",
+    "AT8_bootstrap_visibility_and_copying",
+    "AT9_visibility_oracle_partition",
+    "AT10_prompt_serving_roundtrip",
+    "AT11_authority_stage_acyclicity",
+    "AT12_independence_fault_injection",
+    "AT13_seal_atomicity_and_quarantine",
+    "AT14_no_writeback_no_autoingestion",
+    "AT15_claim_state_machine"
+  ],
+  "acceptance_test_interpretation": "1. Establishes closed byte-level source extraction, occurrence assignment, exclusions, and grammar agreement. 2. Checks target-token/EOS supervision equality through target-aligned projections, while permitting unequal full prefixes. 3. Verifies score-blind content-hash-disjoint target sealing. 4. Tests deterministic duplicate training, serving, and zero-delta adapter behavior for the finite canary set. 5. Measures only the registered C2-minus-C1 exact-prefix-package contrast. 6. Measures only the registered C2-minus-C0 selected-corpus-package contrast against the common C0. 7. Mechanically prevents broader organism or mechanism claims. 8. Proves the evaluation bootstrap exposes syntax but no selected payload or historical experience text, while retaining copying diagnostics. 9. Tests the source-oracle/target-evaluation information partition and blocks cross-stage taint. 10. Verifies rendered bytes, token IDs, engine-consumed IDs, adapter identity, decoding, stopping, and strict parsing as one serving path. 11. Enforces the exact acyclic A0-to-A3-to-report authority order. 12. Tests separated implementations against declarative fixtures and one-sided mutations. 13. Makes failed or exposed seals non-reusable through atomic publication, quarantine, burned namespaces, and permanent exposure exclusion. 14. Proves results cannot mutate organism or workflow state or enter automatic intake. 15. Separates invalid infrastructure, abandoned sealing, incomplete execution, valid negative, and the three valid positive states before emitting bounded prose.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A1_source_target_field",
+      "impact": "The proposal says a retained thought's decoded note becomes the continuation target while separate note rows are provenance-only, but the exact source-field mapping is not restated in the change artifact.",
+      "question": "Which exact JSON field on a thought row supplies the decoded continuation bytes for tokenizer input?"
+    },
+    {
+      "ambiguity_id": "A2_current_backend_boundary",
+      "impact": "The supplied current backend applies chat templates with tokenize=false, serves strings, and ignores its seed argument, whereas the proposal requires sealed TokensPrompt IDs and bound deterministic settings. The artifact therefore describes a required assay path, not an already-conforming implementation.",
+      "question": "Which exact version-bound serving implementation and loaded source hashes will be bound at the later manifest?"
+    },
+    {
+      "ambiguity_id": "A3_stage_receipt_scope",
+      "impact": "A0 permits a tokenizer-manifest candidate but not tokenizer execution; feasibility and target-aligned goldens depend on later A1 execution. This is coherent only if candidate authoring is purely declarative and all derived tokenizer results wait for A1.",
+      "question": "Will the authority validator distinguish tokenizer-manifest authoring from any tokenizer invocation or tokenizer-derived count?"
+    },
+    {
+      "ambiguity_id": "A4_c0_identity",
+      "impact": "C0 is one common deterministic reference while C1 and C2 are trained independently per source life; any runtime drift would affect the interpretation of life differences.",
+      "question": "Which exact base-model, tokenizer, environment, and serving identity makes the common C0 reference valid across all three comparisons?"
+    },
+    {
+      "ambiguity_id": "A5_panel_scale",
+      "impact": "The fixed panel has 64 canonical targets and three related source lives, so the two-of-three and one-point thresholds are deterministic formative criteria, not population replication or uncertainty estimates.",
+      "question": "Are all scale and lifetime-generalization interpretations permanently excluded from the report vocabulary?"
+    }
+  ],
+  "architecture_change_sha256": "8e5cea0bc6d24823db21a728aac78cbb6ae2aebee7b94c4b5a41b7df659a9d6b",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "B0, B1, and B2 denote the three immutable source lives, and C1/C2 denote independently trained assay-local adapters for each source life while C0 is common.",
+    "The continuation target is the qualifying thought note, with ledger act rows used for provenance and validation; standalone note rows are never supervised targets.",
+    "The phrase dream-time local connection growth is conceptual project context, not evidence that this assay constructs or mutates a persistent memory graph.",
+    "The supplied change.json is the hash-bound architecture artifact whose SHA-256 is recorded here.",
+    "A later human ratification is required before even the A0-limited CPU scope begins; proposal validity does not authorize execution."
+  ],
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v2",
+  "claim_delta_interpretation": "The claim boundary moves from descriptive historical observations to a possible narrow, offline, post-hoc selected-continuation writer/interface result. C2-minus-C1 identifies the exact neutral-chat-prefix training package relative to BOS-only training; C2-minus-C0 identifies the total selected-corpus training package relative to a common frozen base. Neither contrast assigns causal credit to verification, outcome binding, memory retrieval, task conditioning, discovery, planning, recurrence, or online learning. A scientific negative exists only after a complete valid assay fails both registered contrast rules; infrastructure failure, abandoned sealing, and incomplete execution remain non-scientific states. Any positive language must remain explicitly package-level and descriptive, with the bootstrap-copying shortcut and the absence of causal corpus controls disclosed.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "cd83200ce8dd75868df24325b40d25ae036d81cc8bd1877325ab46f3c64662e3"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "deliberation contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/scope_proposal.json",
+      "purpose": "scope and authority limits",
+      "sha256": "40eb024b98b4aa94a8d51c2b8e4e7d31fea3d808a9db44d05bc3a42ae9f0dd54"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base assay proposal",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "repaired assay overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/critique.json",
+      "purpose": "adversarial critique",
+      "sha256": "e7786b6c2dde5648c743baf5f9806937b8e6a16bd15766191c4bc2c10338d0bd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "adjudicated dispositions",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit and limitations",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "source join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v0_audit.md",
+      "purpose": "v0 independent audit",
+      "sha256": "cc3d8146a7a206f89a4d437ff67ada862fafc7739cd33354c706c56e6b4767f2"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v1_reaudit.md",
+      "purpose": "v1 repaired-byte audit",
+      "sha256": "052d6944424a7971260cb95ab4d171c80bc8f8abc3318fa90ec8fff34a198a80"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "current organism bootstrap",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "current serving path",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "current environment interface",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_dream_growth_overstatement",
+      "proposed_resolution": "Interpret dual extraction as deterministic source-oracle filtering, provenance graph resolution, and offline re-expression; reserve breadth-like dream connectivity for a future persistent-memory assay.",
+      "rationale": "No new declarative memory nodes or edges are created in the organism, and no later dream cycle consumes the selected rows. The extraction graph resolves existing historical adjacency rather than growing live connectivity.",
+      "statement": "The node rationale calls this dream-like local connection growth, but operationally the proposal performs closed-world historical selection and attachment, not dreaming or connection growth."
+    },
+    {
+      "disagreement_id": "D2_consolidation_credit_overstatement",
+      "proposed_resolution": "Use parametric transport or assay-local supervised adaptation as the operational meaning of C1/C2; do not treat the LoRA as organism-level consolidation.",
+      "rationale": "The adapters are freshly trained, life-specific, and quarantined. They receive token-loss credit only, have no memory substrate or later feedback, and are not installed into a continuing life.",
+      "statement": "The word consolidation in the system framing is too broad if applied to these adapters; the proposal only demonstrates bounded parameter transport into a one-decision writer."
+    },
+    {
+      "disagreement_id": "D3_action_prior_causal_language",
+      "proposed_resolution": "Treat cross-program action-prior floor as a descriptive behavioral label for the complete selected-corpus package, not evidence that a learned prior rather than URI cues, pretrained knowledge, copying, or generic continuation training caused the effect.",
+      "rationale": "The target URI remains visible, the birth bootstrap historically exposed the dominant action, and no matched action-content or unrelated-corpus controls identify the source of any gain.",
+      "statement": "The claim phrase cross-program action-prior floor can be read as causal learning attribution, which exceeds the registered C0/C1/C2 estimands unless explicitly qualified as package-level behavior."
+    }
+  ],
+  "graph_delta_interpretation": "State begins with immutable historical thought/act/note rows, wake manifests, raw offsets, actions, and outcomes through a successor-fence boundary. These are observed source traces, not new organism discoveries. Two isolated no-model/no-tokenizer extractors derive occurrence assignments, terminal offsets, exclusion reasons, outcome consistency, improvement comparisons, duplicate identities, and retained continuation targets. Source actions, outcomes, scores, and earlier-score comparisons causally select rows at this stage; no prompt is reconstructed. Tokenizer execution later derives target IDs and EOS-aligned training arrays. C1 and C2 then transport the retained target tokens into separate rank-16 LoRA parameter states per source life; C0 remains the unadapted common base. This is the only parametric consolidation-like operation, and it is assay-local rather than a write to organism memory. Serving observes only the sealed target IDs, frozen bootstrap/renderer, base or mounted adapter identity, and temporary request state. A single generated continuation is parsed for its first strict ACT, dispatched once to a fresh CompilerGym reset, and produces target action/outcome diagnostics. Derived artifacts include parser results, scores, marker rates, hashes, losses, and report-state inputs. Written artifacts are isolated receipts, adapters, manifests, quarantine logs, and a bounded report. Nothing writes back to lives, notes, retrieval, parent packs, prompts, dream state, or intake. Invalid or ambiguous source rows, duplicate continuations beyond the lowest-offset representative, fence rows, contaminated target content, duplicate target aliases, malformed actions, and failed seals are excluded or quarantined according to their respective durable registries. The current bootstrap contains a concrete four-pass example and the current backend uses string chat rendering and ignores its seed argument; the repaired assay instead requires a syntax-only evaluation bootstrap and an explicit token-ID serving round trip, so the existing runtime bytes are evidence of a conformance risk, not evidence that the new graph is already implemented.",
+  "human_boundary": {
+    "open_questions": [
+      "Rohin must ratify the exact hash-bound architecture and A0-only CPU source-preparation scope before snapshotting, extraction, or any other execution.",
+      "A1 requires a separate exact human ratification of tokenizer and label-golden bytes after independent A0 receipts; A2 requires separate ratification of the complete manifest, contamination inputs, fresh seal salt, target panel, finite GPU canaries, and output namespace; A3 requires separate ratification of the remaining command set after canary and review receipts.",
+      "No model consensus, independent interpretation, CPU pass, or GPU canary can substitute for those human decisions.",
+      "Any future attempt to feed reports or target outcomes into a dream, memory, adapter, parent pack, or life requires a new deliberation, new hash-bound scope, and explicit human ratification; the current proposal defines no automatic feedback boundary."
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v2.systems",
+  "loop_delta_interpretation": "The first loop is an authority progression, not an agent learning loop: A0 permits only source snapshotting, dual extraction, source receipts, fixtures, and declarative tokenizer-manifest preparation; A1 permits tokenizer execution and CPU target-aligned goldens; A2 permits atomic score-blind sealing and only finite deterministic canaries; A3 permits remaining training, evaluation, aggregation, and bounded reporting. Any failed gate, disagreement, byte drift, abandoned seal, or invalid infrastructure stops progression and does not grant the next stage. The second loop is deliberately one-decision and fresh-state: for each of 64 sealed targets and each authorized cell, render the exact request, serve once with a frozen base or adapter, generate up to 256 tokens, select the first strict column-zero ACT, parse it, dispatch it once to a fresh environment, and record the result. There is no retrieval, note recall, multi-step path construction, planning, revision, continuation after the first action, retry, or cross-program state. Missing, malformed, rejected, or empty actions receive zero under the registered score convention; worsening valid actions remain negative; near-miss parser results are diagnostic only. Training is bounded to three passes, batch size one, fixed row order, no packing, identical target-token/update schedules, and life-specific adapters, with C1/C2 matched on target projections but not total sequence length or positional/FLOP exposure. The third loop is quarantine: scoring aggregates only after required cells complete, maps the gate/contrast combination to a finite claim state, writes a human-readable report, and terminates. Generated attempts and target outcomes can become evidence for this report only after the immutable first action and scoring boundary; they cannot become evidence for a later dream under this design. A future feedback path would require a new ratified architecture, not an implicit continuation of this loop. Scale is three related source lives, at least 64 retained continuations per life, at least 4,096 supervised target tokens, four distinct payloads, a maximum 80-percent payload share, a 64-target fixed panel, and a deterministic two-of-three descriptive rule. These constraints support a formative assay, not generalization, scaling, or population inference.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The project thesis separates lived episodes, dream-time local recombination/re-expression, parametric consolidation, goal-directed thinking, and later feedback. This proposal exercises only a severed offline fragment. Historical lived episodes are read from an immutable B0/B1/B2 prefix and successor fence. Their action/outcome traces are observed and used as explicit source-selection oracles, not treated as discoveries. Extraction derives provenance-preserving continuation rows, while invalid joins, prompts absent from the artifact, ambiguous attachments, and nonqualifying outcomes are discarded with reasons. No persistent declarative memory graph is mounted, no source item is retrieved during evaluation, and no thinker's generated attempt is fed into a subsequent dream. C1/C2 are assay-local LoRA parameter states trained on selected continuation tokens; temporary tokenizer IDs, prompt arrays, adapter mounts, generated tokens, parser state, and fresh CompilerGym state disappear after each request. The one-decision writer receives a goal-conditioned target prompt with the target URI visible, emits at most one actionable first response, and is scored once. Thus the evaluation measures executable first-action behavior and strict interface retention, not a complete dream-memory-think organism. The exact neutral chat prefix changes context, roles, positions, and compute as well as prefix semantics, so its contrast is a package contrast. The C2-minus-C0 result credits the complete selected-corpus-plus-writer package; module-level token-loss credit cannot be promoted to whole-organism credit. Target scores and generated actions exist only after sealed inputs and immutable first-action generation, then flow to reporting and quarantine. The current organism bootstrap and backend illustrate why the repaired visibility and serving checks matter: the old bootstrap teaches a concrete four-pass action, and the old backend string-renders chat prompts while ignoring the seed, whereas the proposed assay removes concrete payloads from the target bootstrap and requires exact ID-level serving verification.",
+  "visibility_matrix_interpretation": "The matrix partitions source-oracle visibility from target-evaluation visibility. S1 extraction may read raw thought/act/note bytes, source actions, outcomes, stored scores, earlier-valid-act comparisons, bootstrap diagnostics, and contamination inputs, and may causally select rows. S2 sees only selected continuation bytes and frozen tokenizer/template candidates; source outcomes and target scores are hidden. S3 may retain hashes, counts, design bytes, and bootstrap-exclusion diagnostics but not candidate target identities or scores. S4 sees only the closed contamination manifest and candidate target universe for score-blind sealing; target scores and generated actions are forbidden. S5 receives only the published sealed target IDs, renderer/template/tokenizer data, frozen bootstrap, and mounted adapter/base identity; source payloads, source outcomes, target scores, and prior reports are hidden or forbidden. S6 sees generated actions, parser outputs, target outcomes, and aggregate diagnostics, and writes only quarantined reports. The target URI is visible at serving and therefore remains a policy cue; content-hash disjointness does not establish semantic novelty or absence from pretrained knowledge. The target bootstrap must contain syntax/task metadata only, not historical source actions, outcomes, corpus text, or concrete pass names. AT8 and AT9 operationalize the distinction between source-oracle selection and target scoring, while AT10 verifies that the information declared visible to serving is the information actually consumed by the engine."
+}

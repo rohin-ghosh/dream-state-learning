@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "summary",
+    "answer_leakage",
+    "evaluation_contamination",
+    "goalpost_drift",
+    "statistical_risk",
+    "required_changes"
+  ],
+  "properties": {
+    "verdict": {"enum": ["approve", "reject", "escalate"]},
+    "summary": {"type": "string"},
+    "answer_leakage": {"type": "string"},
+    "evaluation_contamination": {"type": "string"},
+    "goalpost_drift": {"type": "string"},
+    "statistical_risk": {"type": "string"},
+    "required_changes": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-read-result-v1d",
+  "title": "Closed thinker-facing read result",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {"type": {"const": "NO_READ"}}
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle"],
+      "properties": {
+        "type": {"const": "NOT_FOUND"},
+        "read_handle": {"$ref": "#/$defs/read_handle"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle"],
+      "properties": {
+        "type": {"const": "CONFLICT"},
+        "read_handle": {"$ref": "#/$defs/read_handle"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "read_handle", "kind", "fields", "status", "semantic_hash"],
+      "properties": {
+        "type": {"const": "ROW"},
+        "read_handle": {"$ref": "#/$defs/read_handle"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+        "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "oneOf": [
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROUTE"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "EFFECT"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "items": false, "minItems": 3, "maxItems": 3}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "SOURCE_VALUE"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ANIMAL_VALUE"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "TARGET_BASELINE"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "RECIPE"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_EQUIV"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "CAUSAL_JOIN"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "items": false, "minItems": 3, "maxItems": 3}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_APPLICATION"}, "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3}}}
+      ]
+    }
+  ],
+  "$defs": {
+    "read_handle": {"type": "string", "pattern": "^H[0-9]{6}$"},
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]}
+  },
+  "x-golden-vectors": {
+    "target": "the complete schema; each positive must match exactly one top-level result branch and each ROW exactly one kind branch",
+    "positive": [
+      {"result_branch": "NO_READ", "instance": {"type": "NO_READ"}},
+      {"result_branch": "NOT_FOUND", "instance": {"type": "NOT_FOUND", "read_handle": "H000001"}},
+      {"result_branch": "CONFLICT", "instance": {"type": "CONFLICT", "read_handle": "H000002"}},
+      {"result_branch": "ROW", "kind_branch": "ROUTE", "instance": {"type": "ROW", "read_handle": "H000003", "kind": "ROUTE", "fields": ["valve:copper-valve", "source:candyland"], "status": "WITNESSED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}},
+      {"result_branch": "ROW", "kind_branch": "EFFECT", "instance": {"type": "ROW", "read_handle": "H000004", "kind": "EFFECT", "fields": ["valve:copper-valve", "target:confluenceland", "CHANGE"], "status": "WITNESSED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}},
+      {"result_branch": "ROW", "kind_branch": "SOURCE_VALUE", "instance": {"type": "ROW", "read_handle": "H000005", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6"}},
+      {"result_branch": "ROW", "kind_branch": "ANIMAL_VALUE", "instance": {"type": "ROW", "read_handle": "H000006", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"], "status": "WITNESSED", "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3"}},
+      {"result_branch": "ROW", "kind_branch": "TARGET_BASELINE", "instance": {"type": "ROW", "read_handle": "H000007", "kind": "TARGET_BASELINE", "fields": ["animal:frog", "target:confluenceland", "mixture:1*red+1*yellow"], "status": "WITNESSED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}},
+      {"result_branch": "ROW", "kind_branch": "RECIPE", "instance": {"type": "ROW", "read_handle": "H000008", "kind": "RECIPE", "fields": ["mixture:1*red", "label:red"], "status": "WITNESSED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}},
+      {"result_branch": "ROW", "kind_branch": "ROLE_EQUIV", "instance": {"type": "ROW", "read_handle": "H000009", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "status": "SUPPORTED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}},
+      {"result_branch": "ROW", "kind_branch": "CAUSAL_JOIN", "instance": {"type": "ROW", "read_handle": "H000010", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "status": "SUPPORTED", "semantic_hash": "f9c8fbc09ff0ddf7a698986c97bba0cd78ac906e02e004b1277676bb8b0d2813"}},
+      {"result_branch": "ROW", "kind_branch": "ROLE_APPLICATION", "instance": {"type": "ROW", "read_handle": "H000011", "kind": "ROLE_APPLICATION", "fields": ["animal:otter", "target:confluenceland", "animal:frog"], "status": "SUPPORTED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}}
+    ],
+    "negative": [
+      {"name": "partial-row", "instance": {"type": "ROW", "read_handle": "H000001"}},
+      {"name": "row-kind-fields-mismatch", "instance": {"type": "ROW", "read_handle": "H000001", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "target:confluenceland", "label:red"], "status": "WITNESSED", "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6"}},
+      {"name": "row-with-null-is-not-a-result", "instance": {"type": "ROW", "read_handle": "H000001", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", null], "status": "WITNESSED", "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3"}},
+      {"name": "provenance-leak", "instance": {"type": "ROW", "read_handle": "H000001", "kind": "RECIPE", "fields": ["mixture:1*red", "label:red"], "status": "WITNESSED", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000", "row_id": "M000001"}},
+      {"name": "extra-key-on-not-found", "instance": {"type": "NOT_FOUND", "read_handle": "H000001", "result": null}}
+    ]
+  }
+}

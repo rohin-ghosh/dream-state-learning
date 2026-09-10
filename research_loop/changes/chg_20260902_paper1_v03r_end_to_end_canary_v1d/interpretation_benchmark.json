@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "fresh-benchmark-v1d",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1d",
+  "perspective": "benchmark",
+  "state": "interpreted",
+  "architecture_change_sha256": "44424cce5e0ce6f95a19581bcc294e0c8aaf4dca6283a282436dfe878dc5f2cf",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact ratification, review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 scope and verifier boundary."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Frozen paired public action-outcome world."
+    },
+    {
+      "path": "lands/v03.py",
+      "sha256": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+      "purpose": "Inherited public episode and final-goal rendering implementation."
+    },
+    {
+      "path": "lands/skins.py",
+      "sha256": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+      "purpose": "Aligned surface-name dependency used by the public projection."
+    },
+    {
+      "path": "lands/model.py",
+      "sha256": "6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211",
+      "purpose": "Frozen world configuration and typed public object dependency."
+    },
+    {
+      "path": "lands/v02.py",
+      "sha256": "0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89",
+      "purpose": "Inherited surface and mixture dependency in the v03r renderer closure."
+    },
+    {
+      "path": "lands/world.py",
+      "sha256": "9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac",
+      "purpose": "World-generation dependency in the frozen v03r closure."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing construct, leakage, local-window, edge-removal, and population tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/consensus.json",
+      "sha256": "95a5e147594e7804e0ab4d5fef6854745432675dc08a619ba7e82052975b98e1",
+      "purpose": "Binding v1b rework consensus and complete residual concern inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/consensus.json",
+      "sha256": "9b8e4cdc2c51f91acec3870503208451a82d09d5810cda9c85479761f1f7ec2b",
+      "purpose": "Binding v1c rework consensus requiring this newly hash-bound successor and preserving P1CB01 through P1CB10 identities."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/resolution_brief.md",
+      "sha256": "fa9ad1ebe8729ec5d38016a78fe02adc21c1d38470fafd7022ce52ee46bcf26e",
+      "purpose": "Adjudicated minimum repair choices and scientific boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/experiment_spec.md",
+      "sha256": "0fe327b14f1ab5f0c9585f39376a680e08f1136303a9b17eac3db310cbda7a23",
+      "purpose": "Question, stages, gates, bounded claims, and terminal scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/canary_config.json",
+      "sha256": "83ccd2f33fd2a67708f1a34e07c7adbfe7eaa8874c844c47bca1f89d849ffe7e",
+      "purpose": "World, models, operations, fixed fit recipe, arms, and ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/operation_contract.json",
+      "sha256": "e87be5de045f525a3bf1120fd6ad67cbb61ee9a46dd925e8bc1fb2f3d98b9d56",
+      "purpose": "Closed model states, recurrence, selectors, seeds, parser, scratch, and accounting."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/public_projection_contract.json",
+      "sha256": "7000b82e4db1ce0cd26e9adbed1aab099522791a93b5b56559e2a9ed43c5111e",
+      "purpose": "Exact public API to typed-event, probe, goal, vocabulary, and pre-dispatch control projection."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/memory_transport_contract.json",
+      "sha256": "bae382eb8b46b88a3c66b852ed2dcf179f4cac3d385d3206d6a7739221d4995e",
+      "purpose": "Public projection, proposal admission, immutable rows, reader projection, and candidate mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/intervention_contract.json",
+      "sha256": "207120f8d1c9752e64566aa194a244c0de4216e9891429e4688591fa8d322d3a",
+      "purpose": "Prospective public DIST, path and sham construction, offline correctness, and structural use."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/development_fixture_contract.json",
+      "sha256": "213c0d43f5f0598c4624f23a3a39771c811f2f537b24fc5a6e88bf207a91fb65",
+      "purpose": "Immutable population, six DEV lives, G fixtures, proof rows, parser, and gates."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/compiler_views.json",
+      "sha256": "b8e7c5fe3773f3e9b834d394c3c85ba569c24b7ea347ff94815491c4e9c1a3da",
+      "purpose": "Exact four view families, all legal question indices, round-trip semantics, and presentation counts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/runtime_training_contract.json",
+      "sha256": "abac0db971fa1ee3ca43c412a276c97833d3adb40856702a65c85f144ff3f3a7",
+      "purpose": "Executable lock, generation receipts, deterministic two-fit recipe, fidelity, and atomic recognition."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/stage_review_contract.json",
+      "sha256": "143b93886cc58272a6476172104e63453322dad0abcac5d4dbae0b1418c260f3",
+      "purpose": "Transition authority, validity mapping, packet inventories, actor separation, and claim firewall."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/acceptance_registry.json",
+      "sha256": "468efae5ec85dd6f6d8f6049572e0fa1f51c77b7c97939596697773767d09779",
+      "purpose": "Exact ten v1a-mandated P1CB test identities and artifacts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/scope_proposal.json",
+      "sha256": "ddf2e4c1bbffcc3f736985ffc1e66323dd8ea1b6af0280e786a0e5fad33404b7",
+      "purpose": "Requested and forbidden authority with staged ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_prompt.md",
+      "sha256": "2ec6a76ff1a767e650cb5898d8d8a2e2a6f897bd0676e423265ef8211665f9d6",
+      "purpose": "Frozen local connection-proposal instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check_prompt.md",
+      "sha256": "3e0fcd3fe73c05e441b9c784c90e971abffe4abb9e7625ca1edf40de3299f2c2",
+      "purpose": "Frozen blind fallible model reflection instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_prompt.md",
+      "sha256": "b32a156fb25932bb28db0ade14660f81bce5e7639296e2c751d590e368114bff",
+      "purpose": "Frozen target-absent source-target return instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_prompt.md",
+      "sha256": "ce4f808463de0caa4a0075c5d6f94c568db37aa1a8fcd775e03b1667562d3df9",
+      "purpose": "Frozen proof-sequence-scaffolded final resolver instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/public_event.schema.json",
+      "sha256": "e58e058c94b9c3bb48ac69add606198be380a1a71c369cf74b442f21ddf31175",
+      "purpose": "Closed public event projection schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/proposal.schema.json",
+      "sha256": "e8dd5fbfc78c6641d270d32a1ceb7ecc06213231e2b3cbb8b6e519b89b280a96",
+      "purpose": "Immutable audit proposal schema separate from memory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/memory_row.schema.json",
+      "sha256": "4ccc9db0f5774616736be3a3570cddd20a1e3cc8f515c8538f912f910d62cbdf",
+      "purpose": "Closed immutable witnessed or model-supported row schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/read_result.schema.json",
+      "sha256": "e195ac6c755fc35982dff9d0bc66cb147184e5b3b867d2a430c88ec93d64fc38",
+      "purpose": "Shared provenance-free thinker-facing read result."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/candidate_registry.schema.json",
+      "sha256": "51799147edfb5def1f19145353afce3b3b78a7c8abe8aee459091986bb6527bd",
+      "purpose": "Sealed semantic-only two-backend candidate and completion registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_state.schema.json",
+      "sha256": "467781da3e3f12f13bb248f036dfa1c45918a90162e3db825027b21d9e2e5f0d",
+      "purpose": "Closed DREAM allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check_state.schema.json",
+      "sha256": "aa27f7a5484d5aae14abfa57afce4bcdf25ccd7ab353e1df72fd2e83a3bbe14d",
+      "purpose": "Closed SELF_CHECK allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_state.schema.json",
+      "sha256": "a8fae810067ea984aec741f75c2722706d5a86ee260891101db79fd031bc7304",
+      "purpose": "Closed THINK0 state and public probe."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_state.schema.json",
+      "sha256": "42e3b05918502d6d0699c624a48762cae5a0709c1ae795b19571b9c9b34618ce",
+      "purpose": "Closed THINK1 state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/scratch.schema.json",
+      "sha256": "1de07e281af3ead5a21321552e1275c12ce2fe55e6cd9dadc8d3d9151661d950",
+      "purpose": "Closed discriminated scratch nodes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/dream_operation.schema.json",
+      "sha256": "07441f9504bf70357c67036cde92ecc15186e96bf5917ecc56f1bbc7c137a78b",
+      "purpose": "DREAM PASS/CREATE grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/self_check.schema.json",
+      "sha256": "bacbec98d1373d4dbe42d1aca66bf39a8bbdd82428264cae58fbe24eb3c702a3",
+      "purpose": "Fallible model self-check grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think0_operation.schema.json",
+      "sha256": "8e7ab04d1d99d2def0516b684b0422e447ba52973ca1443cc55e9e3cfa7d7940",
+      "purpose": "THINK0 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/think1_operation.schema.json",
+      "sha256": "5cfe719c7ca20d4866c561d98ff4b8451bfd69b56d35b48c1b824f9b96abf40f",
+      "purpose": "THINK1 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/schema_resource_registry.json",
+      "sha256": "4cfab2589e3a217f77bc1742f7a12eac73fa6f88ca187b82570ace6c65c9ac7b",
+      "purpose": "Closed filename-to-schema-ID resolution contract for all local schema references."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/opportunity_ledger.schema.json",
+      "sha256": "f948b55f50e7d8db7224ca1d98ca117de16714a56429aee2fc434ff572e48b1e",
+      "purpose": "Canonical closed opportunity-ledger row schema and condition/state/reason mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/semantic_consistency_matrix.json",
+      "sha256": "e500562f70c82bfe5564d9939ff3ebe2d1a789ec64353f73681edfcf7779c836",
+      "purpose": "Exhaustive producer/consumer/ordering/validity/ledger semantic lock across every normative contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_packet.schema.json",
+      "sha256": "d19a9b9eb185324b81053b60300a771352fc903262c9e71064456c9a807ab724",
+      "purpose": "Closed transition packet schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_assignment.schema.json",
+      "sha256": "2ad15116456bf52f2c6786ed60eade4647cb6c555e6010d8bb2fedff51a138fe",
+      "purpose": "Closed reviewer/advocate assignment schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/review_disposition.schema.json",
+      "sha256": "8a4fc8c6ee9ee29248be3772866d551d9489621fda67b039a0ea29922cd60865",
+      "purpose": "Closed immutable review disposition schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/authority_token.schema.json",
+      "sha256": "684fb634ebba3e8172a8c5e3adfa429cf828a41bc9336c3e52f5eddb0394946f",
+      "purpose": "Closed monotone successor authority schema."
+    }
+  ],
+  "system_thesis_interpretation": "The proposed object is a deliberately narrow, finite integration canary: one aligned seed-5 twin pair is passed through an exact 32B DREAM/SELF_CHECK/THINK schedule, six prospectively fixed text-reader arms, and, only after a reviewed text pass, two isolated 7B LoRA fits. Its useful thesis is engineering identifiability inside this frozen organism: can the registered pipeline construct model-supported rows and can a sixteen-slot goal-routed return use life-bound mounted content after a shared recurrent prefix? The documents now reject generic construction, open recall, recurrence-as-a-whole, generalization, action improvement, and Paper-1 headline claims. That scientific boundary is appropriate. However, v1d is not yet the single executable lock it claims to be: its normative DEV projection ranges conflict, its golden SELF_CHECK reducer vector violates its own ordering and premise-exclusion rules, and its prospective opportunity-registry rule conflicts with dynamic SELF_CHECK registration. Those contradictions prevent ratification even for the bounded canary and require another hash-bound rework successor before CPU implementation or GPU authority.",
+  "graph_delta_interpretation": "Relative to v1c, v1d substantially sharpens the graph. Public episodes are projected through one typed schema; witnessed E rows, immutable M rows, DREAM audit proposals, fallible SELF_CHECK support, provenance-free reader results, per-cue candidate rosters, and review/authority objects have explicit boundaries. The final goal, question, audit/provenance, results, donors, and counters are kept out of pre-reveal model state; public projections, goal/vocabulary, DIST, candidate rosters, and interventions are sealed prospectively. This is a strong leakage firewall for the 32B path. Yet the graph is not closed consistently. The public projector and DEV fixture admit seed-1 index 48, while memory_transport_contract.json enumerates event-to-row aliases only E000000/M000000 through E000045/M000045 without limiting that manifest to heldout. semantic_consistency_matrix.json labels its coverage exhaustive but omits memory_transport_contract.json as a consumer of PUBLIC_EVENT_AND_E_TO_M_PLAN, omits several acceptance bindings, and assigns MEMORY_ROW solely to the memory transport despite the public projection contract directly producing witnessed rows. This leaves competing normative producers and a DEV-only gap. Cue rosters are now tightly bound to semantic_hash, view_id, missing_index, cue bytes, cue hash, and token IDs, which resolves the central R04 substitution risk, but they are answer-bearing, host-pre-resolved closed candidate sets; that is disclosed and makes the LoRA estimand recognition rather than recovery.",
+  "loop_delta_interpretation": "The loop is much more falsifiable than v1c. All text arms share the exact 84-slot prefix, M0 has zero return, OWN and DIST receive matched sixteen-slot return branches, and the proposal/admission/read order, selectors, seeds, budgets, and terminal behavior are specified. This supports a within-system intervention on the return loop only; it cannot establish necessity of prefix recurrence or repeated dreaming as a whole. T-M0, T-OWN, T-DIST, T-TWIN, T-PATH, and T-SHAM form an informative mechanism ladder, with missing roots treated as a valid negative and sham infeasibility correctly classified as VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE while the other five arms still run. Nevertheless, only one stochastic realization of one aligned pair is observed. Model calls, slots, cues, and ledger opportunities are dependent parts of the same pipeline, not independent scientific units. DEV's three seed pairs are an engineering headroom gate drawn from the same task family and scaffold, not a heldout inferential sample. The loop also has a blocking accounting ambiguity: the canonical ledger requires its prospective opportunity registry to be complete before stage dispatch, but the operation and memory contracts say a SELF_CHECK opportunity is registered only after a schema-valid DREAM CREATE, while PASS or malformed/illegal DREAM outputs register none. The domain and denominator therefore cannot be both complete pre-dispatch and outcome-dependent as written.",
+  "claim_delta_interpretation": "The positive and negative claim firewall is a major improvement. If all text conjunctions pass, the defensible statement is existence of causal dependence on the registered life-bound text mount for this exact prompted, scaffolded seed-5 pair and this exact return intervention. Sham infeasibility must erase both full and weakened causal-use claims. If the conditional LoRA stage passes, the maximum claim is immediate host-pre-resolved candidate-constrained recognition for twelve selected training rows per life and useful behavior under the registered own/donor mounts. The 48 fidelity cases per adapter are resubstitution cases generated from those selected rows and four training views, with repeated exposure during fitting; 44/48 is therefore neither open recall nor an estimate of preservation on unseen rows, cues, lives, or tasks. No confidence interval, replication across model randomness, external baseline, RAG comparison, or population inference is available. A pass is high-value evidence that the exact machinery can be made to work and that its registered interventions matter within this pair; it is low-information evidence for Paper 1, scale, durability, capacity, superiority, or reliability. A failure localizes only to a stage or conjunction, not uniquely to the research hypothesis, because provider stochasticity, prompt compliance, scheduler/parser/reducer/reader correctness, and optimization are entangled. The platform can attest actor separation but cannot prove substantive reviewer independence; v1d now says so correctly.",
+  "visibility_matrix_interpretation": "The intended visibility matrix is scientifically disciplined. DREAM sees public event windows and local durable rows but not the final request; SELF_CHECK sees the proposal, its premises, ordered additional support, and public vocabulary but remains a fallible model rather than a truth oracle; THINK0 sees a strong source-to-target frontier probe and can request return but not the target answer; THINK1 sees the final goal plus an exact game proof-sequence scaffold and the same provenance-free H projection used by both backends. Private world state, host goal coordinates before reveal, audit decisions, semantic correctness labels, donor identity, provenance, intervention labels, and results are excluded from cognition, and scoring occurs only after sealing traces. This blocks the principal answer-equivalent leakage pathways, subject to executable taint tests. It also defines an unusually scaffolded diagnostic rather than an ecological benchmark: the probe exposes the exact frontier, prompts name the ontology, and THINK1 supplies the dependency order. P1CB02 is not fully bound, because acceptance_registry.json falls back to generic private/audit mutations rather than self-contained byte vectors for every named host-goal coordinate and every concrete cross-cue roster substitution required by v1c; the matrix also omits P1CB02 from its acceptance bindings. The underlying memory contract contains much of the required exact roster logic, but the registered acceptance artifact must itself make the exhaustive noninterference test unambiguous.",
+  "acceptance_test_ids_addressed": [
+    "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+    "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+    "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+    "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+    "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+    "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+    "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+    "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+  ],
+  "acceptance_test_interpretation": "P1CB01 / R01: FAIL pending rework. Hash binding, monotone authority, resource resolution, and many producer/consumer relations are specified, but an exhaustive single interpretation is impossible while the sole DEV projector admits index 48 and the memory event_to_row_manifest ends at 45; the semantic matrix fails to register that consumer and omits P1CB02-P1CB05 and P1CB08 acceptance bindings. P1CB02 / R02: PARTIAL. The memory contract enumerates exact final-goal and cross-cue controls and the candidate registry has strong concrete binding, but the acceptance registry's generic mutation setup is not the exact self-contained executable vector v1c required, and wrong-roster rejection versus inertness remains underspecified there. P1CB03 / R03: FAIL pending rework. The kind-disjoint row design and premise-then-support rule are sound, but self_check_state.schema.json supplies a purported positive reducer vector whose additional_rows are [M000005, M000002, M000003], whose emitted support_row_ids are [M000002, M000003, M000005], and whose M000003 duplicates a proposal premise; this violates both supplied-order preservation and premise exclusion. P1CB04 / R04: PASS at the architectural level, conditional on repairing the global matrix. Queries and results are kind-disjoint, and rosters bind semantic hash, view, missing index, cue bytes/hash/token IDs with explicit negative substitutions. P1CB05 / R05: FAIL pending rework. The public schema, sole projector, and DEV fixture correctly support seed-generic counts through index 48 and preserve heldout vectors, but the normative memory manifest remains heldout-length and has no declared DEV exception. P1CB06 / R06: PASS. All claims and gates correctly limit credit to the sixteen-slot return intervention after a shared prefix and expressly exclude recurrence-as-a-whole. P1CB07 / R07: PASS at the claim-policy level. Sham infeasibility is a valid stage failure, forces exact zero T-SHAM attempts, permits the other five arms to run, and forbids both full and weakened causal-use claims; a feasible deterministic sham still supports only exact-reader dependence, not a general semantic mechanism. P1CB08 / R08: PASS only under its narrow disclosed boundary. Two isolated fits and own/donor swaps test immediate selected-cue candidate recognition, but the 48-case fidelity score is in-training resubstitution with an answer-bearing roster and cannot support storage, recall, preservation, durability, or generalization. P1CB09 / R09: FAIL pending rework. The unique state/reason map is much improved, including stage-failure versus trace-terminal distinctions, but pre-dispatch registry completeness contradicts output-contingent SELF_CHECK registration, so opportunity totals are not yet canonical. P1CB10 / R10: PASS at the architectural level. Positive and negative claim fixtures, immutable packets, human terminal stop, environment-generated actions, and the platform-attestation boundary are explicit; actual actor independence remains a human governance fact rather than a proved property. Overall disposition: rework. R04, R06, R07, R08, and R10 are substantively resolved; R02 is materially improved but incompletely acceptance-bound; R01, R03, R05, and R09 retain blocking contradictions.",
+  "assumptions": [
+    "The requested reviewer identifier is represented by interpretation_id=fresh-benchmark-v1d because the governing architecture_interpretation schema has no reviewer_id property and rejects additional properties.",
+    "All context files declared by change.json were read as the normative review closure and independently verified against their declared SHA-256 values; the exact change hash was also independently verified.",
+    "The aligned seed-5 twin pair is the scientific unit for heldout conclusions; model calls, slots, cue completions, rows, and ledger opportunities are dependent measurements inside that unit rather than replications.",
+    "DEV seeds 0, 1, and 2 are treated only as an engineering headroom and executable-projection gate, not as a basis for inferential statistics about heldout performance.",
+    "SELF_CHECK output is fallible model support and never semantic truth; immutable admission can establish structural validity and provenance but not correctness.",
+    "Semantic hashes and canonicalization are assumed collision-resistant and byte-stable only after the cross-contract range and producer/consumer conflicts are repaired and tested.",
+    "The single registered sampling seed per model opportunity yields one realized stochastic pipeline even where generation temperature is nonzero; no reliability estimate follows from that realization.",
+    "No CPU implementation, GPU run, scientific claim, or successor-stage authority is implied by this interpretation; the human and independent-review gates in AGENTS.md remain controlling."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "B-V1D-01",
+      "question": "Is memory_transport_contract.json's E000000..E000045 event_to_row_manifest intended to apply only to the seed-5 heldout lives, or to the sole projector for DEV and heldout as its unqualified public_projection section states?",
+      "impact": "If heldout-only, the scope and separate DEV lineage contract must be explicit and registered; if global, seed-1 events 46-48 have no legal M-row mapping and P1CB01/P1CB03/P1CB05 cannot pass."
+    },
+    {
+      "ambiguity_id": "B-V1D-02",
+      "question": "Does the prospective opportunity registry contain every potential SELF_CHECK opportunity before dispatch, or are SELF_CHECK rows appended dynamically only after valid DREAM CREATE outputs?",
+      "impact": "The answer changes the opportunity domain, denominators, non-dispatch rows, and whether the ledger can be complete before stage execution."
+    },
+    {
+      "ambiguity_id": "B-V1D-03",
+      "question": "Which SELF_CHECK ordering is normative in the golden state vector: supplied additional-row order [M000005, M000002, M000003], emitted support order [M000002, M000003, M000005], or the expected accepted-citation order?",
+      "impact": "The three differ, and M000003 is also a proposal premise, so no implementation can satisfy the current vector plus the premise-exclusion and stable-dedup rules."
+    },
+    {
+      "ambiguity_id": "B-V1D-04",
+      "question": "Should P1CB02 reject invalid cross-cue roster substitutions before evaluating byte noninterference, or provisionally install them and require all descendants to remain inert?",
+      "impact": "The acceptance registry currently combines rejection language with a broad byte-inert expectation; exact negative vectors and expected terminal reasons are needed for reproducible taint testing."
+    },
+    {
+      "ambiguity_id": "B-V1D-05",
+      "question": "Will the terminal LoRA disclosure explicitly call the 44/48 metric training-set resubstitution on twelve selected rows, rather than merely candidate-constrained recognition?",
+      "impact": "Without that fact, readers may incorrectly treat fidelity as heldout preservation; the benchmark supplies no unseen-row or unseen-cue storage estimate."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "B-V1D-D01",
+      "statement": "v1d does not yet supply the single exhaustive executable lock claimed by the resolution brief and P1CB01.",
+      "rationale": "The public projector/DEV fixture accept seed-1 index 48 while the unqualified memory event-to-row manifest stops at 45, and the purported exhaustive semantic matrix omits the conflicting memory consumer and several acceptance bindings.",
+      "proposed_resolution": "Issue a new hash-bound successor that gives every DEV and heldout public event one unambiguous E-to-M lineage, declares scopes explicitly, and regenerates an actually exhaustive producer/consumer/ordering/acceptance matrix."
+    },
+    {
+      "disagreement_id": "B-V1D-D02",
+      "statement": "The current P1CB03 golden SELF_CHECK vector cannot demonstrate the claimed premise-then-support stable reducer.",
+      "rationale": "Its emitted support order is not the supplied additional-row order, and one additional row is already a proposal premise, contrary to the normative exclusion rule.",
+      "proposed_resolution": "Replace the vector with premise-disjoint additional rows whose emitted support IDs preserve their supplied order, derive accepted citations mechanically as premises followed by stable first-occurrence support, and bind the corrected bytes in the successor."
+    },
+    {
+      "disagreement_id": "B-V1D-D03",
+      "statement": "The opportunity ledger is not a single total prospective accounting envelope as currently specified.",
+      "rationale": "It must be complete before dispatch, yet SELF_CHECK opportunity existence is made contingent on a preceding model's valid CREATE output; PASS and invalid DREAM paths create no corresponding row.",
+      "proposed_resolution": "Choose one model: pre-register every potential SELF_CHECK opportunity and resolve unused cases to explicit non-dispatch reasons, or formally define a pre-sealed dynamic-registration domain with reproducible denominators and stage totals. Update every consumer and test vector identically."
+    },
+    {
+      "disagreement_id": "B-V1D-D04",
+      "statement": "R02 is not fully resolved merely because exact taint rules appear in the memory contract.",
+      "rationale": "The registered P1CB02 setup and semantic matrix do not bind the exact host-goal coordinate and concrete roster-substitution vectors demanded by v1c, leaving executable coverage and failure behavior open to interpretation.",
+      "proposed_resolution": "Make P1CB02 self-contained: enumerate each goal coordinate/question mutation, each semantic_hash/view/missing/cue roster substitution, expected rejection or inertness, and every affected byte/hash/token descendant; add its binding to the exhaustive matrix."
+    },
+    {
+      "disagreement_id": "B-V1D-D05",
+      "statement": "A successful T stage would not by itself identify a broad semantic-memory mechanism, and a successful L stage would not identify corpus preservation.",
+      "rationale": "T has one scaffolded pair and a deterministic reader intervention; L scores selected training rows under a host-pre-resolved candidate roster. These designs identify exact pipeline dependence and in-sample recognition only.",
+      "proposed_resolution": "Retain the narrow existence claim, explicitly say 'one-pair exact-pipeline dependence' for T and 'training-set resubstitution recognition' for L, report raw paired traces without inferential statistics, and reserve mechanism generalization and preservation for replicated unseen-life/unseen-row studies."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will the proposal owner issue and re-hash a successor that resolves the DEV E-to-M range, SELF_CHECK golden-vector order, opportunity-registry timing, P1CB02 vectors, and semantic-matrix omissions before requesting ratification?",
+      "Which opportunity-domain policy should humans ratify: pre-registration of all potential SELF_CHECK slots with explicit non-dispatch outcomes, or a formally sealed dynamic-registration protocol?",
+      "Is the limited information value of 632 heldout 32B opportunities plus two conditional fits justified for a one-pair engineering canary with no statistical reliability or population inference?",
+      "Will terminal reporting disclose the strong frontier/proof scaffold and LoRA training-set resubstitution prominently enough that neither stage is mistaken for ecological problem solving, open recall, or preservation?",
+      "Who will serve as the genuinely fresh reviewer and separate advocate at each transition, given that the platform attests identity separation but cannot establish substantive independence?",
+      "No CPU implementation or GPU execution should begin unless a contradiction-free successor completes independent interpretations, critique, consensus, human ratification, and the applicable preflight/DEV gates under AGENTS.md."
+    ]
+  }
+}

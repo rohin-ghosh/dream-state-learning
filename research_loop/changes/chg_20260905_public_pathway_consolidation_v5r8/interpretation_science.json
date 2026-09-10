@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r8-science-interpretation",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r8",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "3d8dd3739cb506ed26e6d3fd1ad13785aa0db3da7190e11aea54529a3335bd50",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "740356111243a4e55d018243a29f0da89e5cdddd6c9410c5ca0cf766665802d6",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/human_directive.txt",
+      "sha256": "8a4251e5937eef464aad38f88a4a045b7bb75006c2210f72df46056bd80f754b",
+      "purpose": "Verbatim direction and binding r6-rework provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/scope_proposal.json",
+      "sha256": "885d7009cbb2135e4d581f6207a934ae570f003b8d713eca5a44ec456ec7ae60",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/protocol.md",
+      "sha256": "5a4f949c53ea5c65b8e22641ddfd56e3f1f73e3788dec64c8eff0845f572061a",
+      "purpose": "Standalone scientific question, estimand, construction law, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/machine_contract.md",
+      "sha256": "c59ad60f20e7e4ab2b069747b298f5a9f55f8ce525fd99fad77535c962105218",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/semantic_validators.md",
+      "sha256": "b907b4adf04aecaddba136f2e77d73b05d7fcf7a4745b69235f0faec5f93f81f",
+      "purpose": "Pure cross-field, exact-statistical, and acyclic-DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/assay_contract.json",
+      "sha256": "71552fced1f2053fb53158566ac5a80a03344ca015458f673dfdc1e67f585afc",
+      "purpose": "Assay populations, freeze matrix, controls, and accepted-constructible generator law."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/analysis_contract.json",
+      "sha256": "29769a20baa121f434fb2cacb644f82e3436b84c43cc484642cf45d5290c7768",
+      "purpose": "Exact paired, safety, missingness, Holm, and conditional power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/status_contract.json",
+      "sha256": "6da6524abb70ac386f978edc683cc1e5c73ef235ee5062f149e183041108de4b",
+      "purpose": "Total status-to-endpoint and shared-DREAM dependency mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/visibility_contract.json",
+      "sha256": "17d09a01bf30be79632fc311ed7d3a18a7c68b06e538fed61f30fc18fa51c142",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/authority_contract.json",
+      "sha256": "b03bff6d9a6c3de34c4107c3cb1ff2df67da52127038eaa3cc7fc1561cb02b47",
+      "purpose": "Stage-specific, role-closed authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/claim_dependency_map.json",
+      "sha256": "e4f261639e6191c8d3b5ff97d297df037f7b6f33697ee07022865e5f70e5341c",
+      "purpose": "Literal candidate-decision, T14, authority, and release map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/object_inventory.json",
+      "sha256": "6d3154afe62cf01a8d89a6d221994f40ccfc9dd40f0fa234079bc121e33d5a84",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/contracts.schema.json",
+      "sha256": "295d20268901f93eb705c8253cece1ff7a1e3a777bd3f765d46445378919351a",
+      "purpose": "Closed typed schemas for every inventoried artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/controller_registry.json",
+      "sha256": "9dd0fd25a6951517986bf77b26bc37c6daf329d2c351426b15511bbb57ca6cbe",
+      "purpose": "Hash-bound total D1A-D1D controller rows and vocabulary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/transition_cause_registry.json",
+      "sha256": "6a16a1feb37489e36b4d478d58435c5770450564cfad6471c510b514ca99abbc",
+      "purpose": "Hash-bound exact seven-branch transition lineage registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/test_contract.json",
+      "sha256": "680ad7078789f02c95fcb0bed8b531633d87053d284eb1e68894c9ea2b86192c",
+      "purpose": "Executable T01-T14 stage and coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/drafts/build_r8_contract_schema.py",
+      "sha256": "7196e5ed176646bf1960bb4736c71a6c766834de8dc53e07feb1c1fb4c736493",
+      "purpose": "Nonnormative deterministic generator for repetitive schema, inventory, and controller bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/drafts/build_r8_change.py",
+      "sha256": "c85e522661e595b0ae9a4b7e83150e13621ed2fda95ba9848f113c16e0158974",
+      "purpose": "Nonnormative deterministic proposal generator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Earlier PPC5r4 rework provenance only; no inherited authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/consensus.json",
+      "sha256": "e93e4f82909e461c86c1f123b6fd6c8c13af155cad2dd3332d00dafb42416139",
+      "purpose": "Immediate binding PPC5r6 rework consensus and seventeen exact successor obligations; no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Scientific mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "REWORK. The proposal has a scientifically coherent intended factorial assay: D1A identifies candidate-conditioned external-corpus selection, D1B identifies behavioral dependence on the actually observed public response path, D1C identifies the total effect of a frozen DREAM context policy, and D1D identifies the total root-policy effect on selection and action. It also correctly treats one independently generated recipient-life/seed bundle as the sampling unit, exact missing outcomes as failures, four gate decisions as the Holm family, and resources as descriptive. But the normative object graph does not preserve those intended estimands. It lacks a typed reduction from all lower-unit observations to one life-level paired value, binds only one recipient's D1A control set to an N-life run, forbids resolved response bytes from influencing THINK in D1B, and multiplies a construction-success probability by a conditional power receipt not proved conditional under the same successful-construction law. These are identification and inference failures, not cosmetic omissions; no ratification or implementation authority should follow from this package.",
+  "graph_delta_interpretation": "At the intended causal level, every arm is directly executed from identical pretreatment state and common seed. D1A varies only the opaque adapter/null while candidate bytes remain fixed and demands reader-versus-off plus matched wrong-life and binding-deranged controls; false selection and NOT_FOUND are safety endpoints. D1B varies the emitted public response on every eligible observation edge and requires authentic versus per-edge CUT and TWIN, SHAM noninferiority, and one-shot/open-loop timing controls; this identifies dependence on the observed path, not private reasoning or a natural mediator. D1C varies only frozen context policy under shared DREAM, and D1D varies the root policy without adjustment for downstream dose, training, publication, failures, or resources. The durable graph fails to instantiate this cleanly: OBSERVATION remains lower-unit, while gate_observation_ref supplies only one treatment and one control OBSERVATION per sample ordinal with no typed complete life aggregate; and POPULATED_RUN_LOCK carries one singular d1a_control_set_ref although D1A origin receipts name one recipient. Thus membership and N cannot enforce one equal-weight analysis unit per sampled life. Separately, the D1B edge RESOLVED_RESPONSE_PROJECTION to INTERVENTION_EMISSION_RECEIPT and public_view_body.last_read is contradicted by the visibility cell that forbids RESOLVED_RESPONSE_BYTES at THINK.",
+  "loop_delta_interpretation": "The intended loop is defensible only under the locked accepted-constructible law: draw independently from the pure ordinal-blind generator, accept according to frozen construction predicates, assign fixed gate memberships before entropy, execute every paired arm directly, reduce repeated queries/items/edges within life, set missing or invalid life-level pairs to Z_i=0, enforce the missingness gate, compute exact paired Binomial tails and Clopper-Pearson bounds, take assay p-values by intersection-union maximum, and Holm-adjust exactly the four D1A-D1D hypotheses. Safety uses exactly one registered Bernoulli trial per life. Conditional release power can be derived from per-gate exact critical sets with a Bonferroni union lower bound. The proposal's separate construction power layer is not yet valid for unconditional power: construction_support_point stores bare predicate booleans and an unreferenced conditional power rational, finite/conservative support proofs bind a singular D1A control set, and overall_run_release_power_receipt multiplies construction success by one realized-construction POWER_RECEIPT. The chain-rule product is licensed only if that factor is a valid lower bound conditional on construction success under the fresh-construction distribution, or is uniform over all successful constructions. The current graph proves neither. A successor should integrate joint mass as sum_s mass_s times I(construction succeeds at s) times a typed lower bound for release given s, counting uncovered mass as failure, or prove a typed uniform conditional lower bound over every successful support point before taking the product.",
+  "claim_delta_interpretation": "The maximum defensible future claims are the four locked population claims over independently sampled accepted-constructible recipient-life/seed bundles: D1A external candidate-conditioned selection beyond possession, D1B dependence of public behavior on the complete observed response path with every proper subset and alternate insufficient, D1C total frozen DREAM context-policy effect, and D1D total root-policy effect on selection and action. N is the number of recipient lives in a gate membership, never the number of queries, candidates, public edges, rollouts, or endpoint rows. Missingness is part of the estimand and cannot be filtered or imputed away. Holm applies to exactly four primary gate hypotheses; the D1A assay's internal intersection-union maximum is not a fifth family member. Resource manifests may be mandatory for package completeness and may report inclusive, marginal, and physical-total accounting, but they never normalize, stratify, adjust, mediate, rescue, or enlarge a causal claim. D1D's inclusion of resource consequences means resources remain downstream consequences, not favorable efficacy endpoints. No claim about private cognition, natural response paths, zero/vanishing overlap, mechanistic anatomy, universal necessity or sufficiency, exhaustive information, or external populations follows. Until the four graph defects are repaired, even these bounded claims are not identified by the typed evidence package.",
+  "visibility_matrix_interpretation": "The complete 195-cell matrix is useful for keeping proposal bytes, hidden conditions, routes, source metadata, low-entropy flags, and forbidden raw artifacts out of model-visible stages. Scientifically, however, RESOLVED_RESPONSE_BYTES cannot be forbidden at THINK in D1B: emitted public bytes must causally enter the next public view for an interleaved path intervention to affect later behavior. The correct permission is a derived-only route through typed INTERVENTION_EMISSION_RECEIPT to public_view_body.last_read and MODEL_VIEW, while route identity, condition identity, raw alternate sources, and orchestration metadata remain forbidden. Recursive noninterference should then prove that only emitted public bytes, not hidden condition metadata, can influence THINK. All resource categories remain observe/finalize-only and have no gate-analysis or causal-adjustment authority.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R8_T01",
+    "PPC5R8_T02",
+    "PPC5R8_T03",
+    "PPC5R8_T04",
+    "PPC5R8_T05",
+    "PPC5R8_T06",
+    "PPC5R8_T07",
+    "PPC5R8_T08",
+    "PPC5R8_T09",
+    "PPC5R8_T10",
+    "PPC5R8_T11",
+    "PPC5R8_T12",
+    "PPC5R8_T13",
+    "PPC5R8_T14"
+  ],
+  "acceptance_test_interpretation": "T01 is the required generic intake lifecycle test and must precede any authority claim. T02/T11/T12/T13/T14 must reject pseudoreplication, incomplete gate membership, singleton D1A controls in N-life runs, and power artifacts not bound to the same construction-conditioned law. T03/T04/T08/T12/T14 must demonstrate that authentic D1B public response bytes are visible only through the emitted public view and can influence subsequent THINK while hidden route/condition/source metadata cannot. T05/T08/T12/T14 must preserve common-seed direct execution, failure dominance, exact one-life units, and total D1C/D1D effects without post-treatment adjustment. T06/T11/T12/T13/T14 must recompute exact Binomial, Clopper-Pearson, intersection-union maximum, four-member Holm, safety denominators, conditional power, construction probability, and a genuinely joint unconditional bound. T07/T12/T14 must keep resource accounting deterministic and complete but scientifically descriptive. T09/T10/T12/T14 must enforce exact bounded claim literals and prevent authority escalation. As written, fixtures cannot demonstrate unique valid outputs for the four blocking gaps; passing superficial schema shape would not establish the scientific obligations.",
+  "assumptions": [
+    "The 29 context files and the architecture change matched their declared SHA-256 hashes at interpretation time.",
+    "The accepted-constructible population is interpreted as the distribution induced by the frozen proposal law, pure ordinal-blind generator, independent entropy draws, and frozen acceptance predicates; it is not an external natural population.",
+    "Every paired arm is a direct intervention from identical pretreatment state under a common seed, not a comparison conditioned on a naturally realized mediator.",
+    "Fixed pre-entropy gate membership may select ordinal positions without changing the target law only because generation is ordinal-blind and the life/seed draws are independent and identically distributed.",
+    "A semantic validator may constrain existing typed objects but cannot invent an absent life-level aggregation artifact, per-life D1A control coverage, or construction-conditioned power binding.",
+    "All lower-unit measurements within one recipient life are repeated measurements and must be reduced by the frozen rule before one life contributes at most one paired value to a gate.",
+    "Missing, invalid, or incomplete required evidence contributes failure rather than exclusion, and the separate missingness release gate is conjunctive.",
+    "Resource accounting is deterministic descriptive evidence only and has no role in causal adjustment or gate rescue.",
+    "The proposal is proposal-only and supplies no run-lock parameter values, evidence, scientific execution, release decision, or implementation authority."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R8_SCI_A01_D1A_SAFETY_KEY_TIMING",
+      "question": "How can the D1A safety trial registry seal exact final observation keys before entropy when the canonical keys contain generated recipient-life and condition identifiers?",
+      "impact": "If only the final hashes are accepted, the pre-entropy one-trial-per-life registration may be impossible or may permit post-outcome choice. A successor should seal typed key templates by sample ordinal, arm, endpoint, and lower-unit ordinal, then resolve them deterministically after generation."
+    },
+    {
+      "ambiguity_id": "PPC5R8_SCI_A02_RESOURCE_WORDING",
+      "question": "Should the D1D phrase inclusive of selection, action, and resource consequences be read solely as requiring descriptive resource observation rather than treating resource totals as beneficial components of the causal endpoint?",
+      "impact": "Without an explicit reading, a downstream cost could be mistaken for efficacy or used to modify a release decision. The analysis and claim boundary should state that only selection and action enter D1D gate inference and resources remain descriptive."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R8_SCI_D01_LIFE_LEVEL_REDUCTION_UNTYPED",
+      "statement": "The package does not close the claimed recipient-life analysis unit.",
+      "rationale": "OBSERVATION is lower-unit and names one stage outcome and lower_unit_ordinal. gate_observation_ref binds only one treatment OBSERVATION, one control OBSERVATION, and one paired difference for a sample ordinal, while paired_gate_result requires N such refs. LIFE_SAMPLE_RECEIPT separately lists all lower_unit_ids, but no inventoried schema object binds that complete set to a canonical within-life treatment/control reduction and missingness decision. This admits one-lower-unit selection, lower-unit N, or an untyped aggregate, defeating IID life-level inference and r6 R17.",
+      "proposed_resolution": "Add an inventoried typed life-gate aggregate for each gate and sample ordinal that exactly covers the gate membership's complete ordered lower-unit set in both arms, applies the frozen reduction, dominates incomplete evidence to missing failure, emits one d_i and Z_i, and forces N to equal the number of distinct covered recipient-life bundles. Bind it through observations, power, seals, authority, release, and T02/T11-T14."
+    },
+    {
+      "disagreement_id": "PPC5R8_SCI_D02_D1A_CONTROL_SET_SINGLETON",
+      "statement": "The D1A control evidence is scoped to one recipient although the estimand and power calculation cover N recipient lives.",
+      "rationale": "D1A_CORPUS_ORIGIN_RECEIPT and its wrong-life and binding proofs name singular recipients/donors; D1A_CONTROL_SET_RECEIPT combines one set of three controls; POPULATED_RUN_LOCK, support proofs, power, and release bind a singular d1a_control_set_ref. An N-life D1A gate therefore has no typed guarantee that every sampled recipient has its own reader/off, matched wrong-life, and binding-deranged controls and disjoint donor.",
+      "proposed_resolution": "Replace the singleton run binding with a typed D1A control-set manifest containing exactly one complete control receipt per D1A sample ordinal/recipient bundle, equal to gate membership and life samples, and carry the manifest through construction support, power, seals, authority, release, and T02/T06/T11-T14."
+    },
+    {
+      "disagreement_id": "PPC5R8_SCI_D03_D1B_RESPONSE_VISIBILITY_CONTRADICTION",
+      "statement": "The visibility contract prohibits the causal exposure that D1B is intended to test.",
+      "rationale": "D1B requires emitted authentic/CUT/TWIN/SHAM public bytes to become public_view_body.last_read and influence later model behavior. Yet RESOLVED_RESPONSE_BYTES at THINK is marked forbidden, whose modality disallows any influence on inputs or outputs and whose recursive validator propagates noninterference. A compliant interleaved controller could not exhibit response-path dependence, so the D1B estimand is structurally null or the visibility validator must fail.",
+      "proposed_resolution": "Mark resolved response bytes derived-only at THINK solely through INTERVENTION_EMISSION_RECEIPT to the public view/MODEL_VIEW chain, keep route, condition, source, and orchestration metadata forbidden, and add T03/T04/T08/T12/T14 witnesses showing emitted-byte influence plus metadata noninterference."
+    },
+    {
+      "disagreement_id": "PPC5R8_SCI_D04_UNCONDITIONAL_POWER_NOT_JOINTLY_CERTIFIED",
+      "statement": "The claimed unconditional complete-release power lower bound is not identified by the construction and conditional-power artifacts.",
+      "rationale": "Support points contain bare construction-predicate booleans and an unbound conditional power rational, finite/conservative proofs bind only a singular D1A control set, and the overall receipt multiplies construction success by one POWER_RECEIPT from a populated realized construction. The chain-rule product needs a lower bound for release conditional on success under the fresh-construction distribution, or a uniform bound over every successful construction. Neither binding is typed or validated, so the product can overstate joint power without invoking statistical independence.",
+      "proposed_resolution": "Bind every finite support or conservative partition point to replayable typed construction predicate evidence, its per-life D1A controls, and its applicable complete-release conditional power result; derive the joint lower bound by exact mass-weighted summation with uncovered mass as failure, or separately prove a typed uniform conditional bound over all successful points before multiplying. Exercise both branches and adversarial mismatches in T02/T06/T11-T14."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Should PPC5r8 be recorded as REWORK, with no ratification, implementation, scientific-run, GPU, or release authority?",
+      "Should a successor be required to close all four scientific disagreements in the normative inventory, schemas, validators, authority graph, and executable T01-T14 fixtures before fresh interpretation?",
+      "At later run ratification, what exact generator law, acceptance predicates, gate memberships, margins, alpha, missingness limits, safety thresholds, and construction-power target should the human authorize?"
+    ]
+  }
+}

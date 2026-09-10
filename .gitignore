@@ -1,4 +1,6 @@
 .DS_Store
+.research_loop/
+research_loop/runtime/
 __pycache__/
 *.pyc
 *.pyo
@@ -9,3 +11,11 @@ gpu_artifacts_local/
 .venv/
 alchemy/smoke_out/
 __pycache__/
+
+# internal host addresses live here, never in git
+gpu/hosts.env
+
+# oversized artifacts (GitHub 100MB cap); regenerate or fetch from the node
+research_loop/changes/chg_20260905_public_pathway_consolidation_v5r9/fixture_specs/ppc5r9_fixture_universe.json
+research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v8/change.json
+research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v7/v8_alt_change.json

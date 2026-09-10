@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "shared_understanding",
+    "disagreements",
+    "evidence_status",
+    "coordination_interface",
+    "next_actions",
+    "risks",
+    "questions_for_rohin"
+  ],
+  "properties": {
+    "verdict": {"enum": ["align", "rework", "escalate"]},
+    "shared_understanding": {"type": "string"},
+    "disagreements": {"type": "array", "items": {"type": "string"}},
+    "evidence_status": {"type": "array", "items": {"type": "string"}},
+    "coordination_interface": {"type": "array", "items": {"type": "string"}},
+    "next_actions": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "questions_for_rohin": {"type": "array", "items": {"type": "string"}}
+  }
+}

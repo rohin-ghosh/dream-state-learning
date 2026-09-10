@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "p1_v03r_canary_science_v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "5ecc4a68705b59b89c02d8d77f8c60c5e62179d3269ec5f8cf72e35b5d9fa071",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Material-change, human-ratification, fresh-review, and GPU-gate contract."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 claim, allowed prompted cognition, forbidden exact verification, and deferred learned LOOP work."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Existing paired collision world whose model-facing public export requires repair."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Current construct, split, local-window, edge-removal, and population tests."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_immediate_end_to_end_gate.md",
+      "sha256": "638946687dd9bb768e4bcf1609d96cebaac8a029c50f2f24eec765f89d53471b",
+      "purpose": "Initial scope audit selecting the immediate end-to-end canary over v2e, RML, or LOOP training."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_canary_fresh_science_audit.md",
+      "sha256": "530d3f93e0a43f748422b92c2a78593d9a1d893f517b6f1eb8d47130cd02ff72",
+      "purpose": "Fresh scientific no-go audit identifying public-ratio leakage, false no-return, final-thinker, and shortcut blockers."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_canary_fresh_systems_audit.md",
+      "sha256": "db2dd4670df8bbcd8ff279073133831b5e8c7cba3216f7bb01685aa8342e21bd",
+      "purpose": "Fresh systems audit identifying exact model bridge, status, corpus, thinker, reader, and life-isolation interfaces."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/human_directive.txt",
+      "sha256": "6ffd5cd1d6e112b1e8ec35265be6bfb73b4b9dabfd69c09a5be7bba40030c703",
+      "purpose": "Verbatim human constraints preserving Paper 1 while closing the amortized system."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/experiment_spec.md",
+      "sha256": "2c93629f5cd21429280c8b615dea4ba090d9011e2cbd1a92a4c40c6d2fb1b714",
+      "purpose": "Complete scientific design, stages, arms, causal outcomes, resource envelope, and stop policy."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/canary_config.json",
+      "sha256": "b9742d453333fffe89c04464e61ff973e3d5bb37c558b5e80f74b99e05b50870",
+      "purpose": "Exact worlds, models, schedules, budgets, adapter recipe, and conditional limits."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/dream_prompt.md",
+      "sha256": "4b798bbd986dd0ccb79a5c27b795e898f0ad1901cd208ce8347316139e28cca9",
+      "purpose": "Exact target-absent recurrent memory-growth controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think0_prompt.md",
+      "sha256": "47e5b44847f5ad8b12a02b5cb46d143c2373c2016bbe0f20ff552423c7e87e6a",
+      "purpose": "Exact non-answer goal-routing controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think1_prompt.md",
+      "sha256": "967f352b27e66398b9fbd9c2a2b78d2628f1df3addaa1f560f6d6ecd43ef30a2",
+      "purpose": "Exact fresh final goal-conditioned controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/memory_row.schema.json",
+      "sha256": "b75cc7a9b824d81a3777f061b42881996b0b485908a5ff27b2097ea2e26ad978",
+      "purpose": "Exact witnessed and dreamed atomic-memory ontology."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/dream_operation.schema.json",
+      "sha256": "0294c22a04faa4014302ad6e35984108c4a731ce9971f5f61cc1a8831b17f99c",
+      "purpose": "Exact one-operation recurrent write grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think_operation.schema.json",
+      "sha256": "a41b255ebdb2c00e3db513b551bcc33d16f87f9c814ba391a3756b30aac4f757",
+      "purpose": "Exact THINK0/THINK1 query, reasoning, request, commit, and defer grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/scope_proposal.json",
+      "sha256": "bf31996aed648380239c5afd7138871e689913cb159e970855376c30d4d97229",
+      "purpose": "Exact requested and forbidden authority for implementation, staged GPU work, and result analysis."
+    }
+  ],
+  "system_thesis_interpretation": "The proposal is a useful one-pair mechanism canary for whether a frozen, heavily scaffolded prompted stack can transmit a life-specific public relation through recurrent semantic memory, bounded text access, and path-local LoRA reads into a paired decision. It does not test the frozen Paper-1 headline requirements of reliability, beyond-context advantage, competitive retrieval baselines, population generality, continued improvement, or a learned controller. Because the life fits native context, actions are fixed, THINK0 is handed the exact source/target relation frontier, and THINK1 is told the required proof decomposition, a green result is an engineered existence and integration result only. Current scientific verdict is REWORK before ratification: the broad staging and claim firewall are sound, but the M0-or-M1 outcome-dependent transport choice, answer-equivalent memory possibility, distractor matching, and causal intervention criteria must be made exact before the canary has clean decision value.",
+  "graph_delta_interpretation": "The graph correctly inserts leak repair, a true zero-return fork, supported-only compilation, fresh final reasoning, conditional two-adapter transport, and a mandatory human terminal. The scientific graph is nevertheless incomplete in four material ways. First, choosing M0 when T-M0 passes and otherwise M1-own when T-OWN passes creates an evaluator-result-to-corpus-selection-to-LoRA edge; predeclaring the order removes analyst discretion but does not make the selected corpus independent of held-out outcomes. Second, every swap and masking intervention must operate on the same candidate stage and exact corpus used in the credited own arm; the bound advisory describes T-TWIN as M1-own even when M0 can be selected. Third, the public probe supplies the exact final-relevant source, target, and relation class, so this edge is supervised agenda routing, not autonomous discovery. Fourth, TRANSFERRED_VALUE can represent an animal-at-target value and bypass the registered multi-edge composition unless a target-independent static eligibility rule forbids answer-equivalent rows. With those repairs, the graph can localize whether an explicit memory path is constructible, retrievable, and transportable, but not whether the architecture outperforms native context or retrieval.",
+  "loop_delta_interpretation": "The three cognitive loops are sensibly separated: target-absent recurrent growth freezes M0; THINK0 supplies a non-evidentiary selection focus to matched own and distractor return branches while M0 receives literal zero return; fresh THINK1 performs bounded final composition; LoRA is mounted only for atomic reads. Scientific attribution requires stronger operational definitions than are currently bound. A new citation handle is not necessarily independent evidence if it is a restatement or descendant of the same event, so support needs lineage-disjoint evidence rules. Computed depth at least two is only syntactic unless the cited earlier semantic parent is necessary to the new claim and its removal breaks the derivation or downstream decision. OWN versus DIST identifies useful selection only if the distractor is matched not just in call count/type/seed but also in public-evidence availability, temporal separation, neighborhood size, row density, and retrieval difficulty. M0 versus M1 is not compute matched and therefore identifies the effect of the entire goal-return package only jointly; DIST is the needed extra-compute control. Invalid, malformed, deferred, and exhausted operations must remain failures with no retries, and model/session state must be fresh across lives, arms, and interventions.",
+  "claim_delta_interpretation": "The proposal mostly preserves the claim firewall. A green M0 text result can support only target-absent prompted construction and bounded text use; it cannot credit THINK0 or return dreaming. A green own-M1 result can credit useful return allocation only if paired M0 and DIST fail, the requested new join is correct and absent from both controls, its semantic parent is necessary rather than merely cited, and matched removal/twin substitution eliminates the correct behavior. LoRA success establishes only path-local read accessibility of the selected rows under the registered cues and a clean thinker's ability to reuse them; a 0.90 score on outcome-selected decisive rows is not whole-corpus preservation, durability across time, or LoRA superiority. P1C_C_NEGATIVE_LOCALIZATION is overstated: a first failed composite stage identifies the observed interface/stage, not a unique broken organ, because prompt capacity, sampling, scheduler exposure, status admission, retrieval, and finite budget remain confounded within stages. No result can establish reliability, baseline saturation, beyond-context value, action improvement, learned agency, continual growth, or a flywheel.",
+  "visibility_matrix_interpretation": "The intended cognition/evaluator firewall is strong: final goal, hidden truth, scorer, other-life memory, and offline results are excluded from DREAM/THINK; focus is non-evidentiary; compiler and readers are bounded; evaluation is write-denied. The current v03r export is known to violate this boundary by copying private pigment ratios into source/animal public_record rows, and its rendered operational-probe object also contains matched-distractor endpoint fields even though THINK0 is specified not to see them; both require byte-level mutation and request-serialization gates before any model call. The operational probe is itself a designer-derived relevance signal sharing the final goal's source and target, which is allowed for this canary only if disclosed as strong solution scaffolding. The matrix also says OFFLINE_RESULT is forbidden at LORA_TRAIN, while the earliest-pass rule uses held-out paired correctness to choose M0 or M1 for training; distinguish result bytes hidden from model/trainer from an explicitly permitted orchestration gate, or remove that selection. Finally, schema validity and prompt admonitions alone do not prevent a TRANSFERRED_VALUE row from directly storing the final animal-at-target value; corpus eligibility needs a static answer-equivalent-row exclusion that does not consult hidden correctness.",
+  "acceptance_test_ids_addressed": [
+    "P1C01_BOUND_SCOPE_HASH_AND_STAGE_ORDER",
+    "P1C02_PUBLIC_PROJECTION_AND_PRIVATE_MUTATION",
+    "P1C03_WORLD_SHORTCUT_AND_GOLD_HEADROOM",
+    "P1C04_RECURRENT_STATUS_AND_TRUE_ZERO_RETURN",
+    "P1C05_PROMPT_SCHEMA_READER_AND_FORBIDDEN_QUERY",
+    "P1C06_CORPUS_EQUALITY_AND_LIFE_ISOLATION",
+    "P1C07_HELDOUT_TEXT_PIPELINE_AND_RETURN_ATTRIBUTION",
+    "P1C08_CONDITIONAL_TWO_LORA_TRANSPORT",
+    "P1C09_FRESH_REVIEW_ADVOCATE_AND_ARTIFACT_CLOSURE"
+  ],
+  "acceptance_test_interpretation": "P1C01 and P1C09 appropriately fail closed on hash drift, authority expansion, incomplete artifacts, and reviewer rejection. P1C02 must cover both semantic and byte-level leakage for every prompt/request, including skin aliases, structured ratios, distractor endpoints, split/pair metadata, caches, filenames, and manifests. P1C03 needs an exact all-development-pairs aggregation rule, a frozen prompt-development stopping rule, gates for every public-feature predictor rather than passive alone, and a necessary-edge intervention definition; GOLD_TEXT is a capability ceiling, not evidence for learned memory. P1C04 correctly requires literal zero return and matched branch budgets, but must test evidence-lineage independence and scientific rather than merely syntactic distractor matching. P1C05 must reject stored as well as queried answer-equivalent tuples, complete-proof aliases, broad null-field enumeration, and repeated one-row queries that amount to a corpus scan. P1C06 should prove byte identity of eligible semantic rows and registered views while keeping training dose explicitly distinct, and swaps must use the same corpus stage as the credited own arm. P1C07 is valid for exploratory existence only if M0 and M1 outcomes are separately reported; return attribution needs M0 and DIST paired failure plus stronger parent necessity and deterministic opposite-twin intervention predictions. P1C08's 0.90 fidelity denominator, cues, expected exact outputs, and treatment of NOT_FOUND/CONFLICT/malformed reads must be frozen before training, and the conclusion must remain path-local. P1C09 must review the selection rule, all excluded-result control flow, full call ledger, and canary-only language before each transition. No acceptance test may use an offline oracle to repair, promote, rank, resample, or rewrite a cognition row.",
+  "assumptions": [
+    "All seventeen bound context files were read and their SHA-256 hashes matched the values in change.json at interpretation time.",
+    "The supplied architecture change hash is the SHA-256 of the exact change.json bytes interpreted here.",
+    "The scored unit is exactly the aligned seed-5 latent-bit pair, with no replacement, prompt repair, threshold repair, or rerun after model exposure.",
+    "Fresh THINK and DREAM sessions mean no KV cache, workspace, retrieval index, adapter state, random-state continuation, or hidden provider conversation crosses lives, phases, arms, or intervention reruns.",
+    "Every arm-specific final decision is generated from a fresh context under the same frozen model, decoding, operation, and query budgets, and every missing or invalid member counts as wrong.",
+    "Offline correctness and path scoring may inspect hidden truth only after artifacts seal and may not alter row status, corpus eligibility, read results, prompts, or retries.",
+    "The one-pair canary is treated as a deterministic kill/advance instrument rather than a statistical estimate of a population effect."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "P1C_SCI_A01_EARLIEST_PASS_TIMING",
+      "question": "Is M0-versus-M1 corpus choice made from held-out final-answer correctness, from a pre-goal structural gate, or by a prospectively fixed corpus independent of seed-5 outcomes?",
+      "impact": "If paired final correctness chooses the training corpus, Stage 2 is an adaptive two-candidate screen and not transport of a single prospectively fixed organism; the OFFLINE_RESULT visibility rule and claim language must change."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A02_SAME_STAGE_TWIN_SWAP",
+      "question": "When M0 is the earliest passing corpus, does T-TWIN mount the other twin's M0 or the advisory's explicitly named other-twin M1-own, and which exact corpus does L-TWIN use?",
+      "impact": "A swap from a different stage changes both life identity and memory-growth treatment, so it cannot identify life binding for the credited corpus."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A03_DISTRACTOR_MATCH",
+      "question": "What frozen measurable criteria make the distractor frontier matched beyond relation type, call count, decoding seed, and number of views?",
+      "impact": "Differences in evidence availability, temporal gap, neighborhood density, or retrieval difficulty can make OWN outperform DIST without useful goal-conditioned routing."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A04_ANSWER_EQUIVALENT_MEMORY",
+      "question": "Which target-independent parser or corpus rule prevents TRANSFERRED_VALUE or free-form value text from storing an animal-at-target answer or complete proof before final-goal reveal?",
+      "impact": "Without a static exclusion, THINK1 can retrieve a direct answer while still satisfying citation and twin-swap tests, defeating the composition claim."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A05_INDEPENDENT_SUPPORT",
+      "question": "Does independent support require provenance-lineage disjointness and a distinct public event, or merely a new citation handle absent from the creation operation?",
+      "impact": "Handle novelty alone permits self-confirmation from paraphrases or descendants of the same evidence and inflates the supported corpus."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A06_DEPTH_PARENT_NECESSITY",
+      "question": "How is the earlier semantic parent shown to be logically necessary for a credited depth-2 row rather than an ornamental citation?",
+      "impact": "Computed depth from citation ancestry demonstrates bookkeeping depth, not multi-hop construction, unless parent removal or counterfactual substitution breaks the row and credited behavior."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A07_GOLD_AND_SHORTCUT_GATE",
+      "question": "Must GOLD_TEXT pass every seed-0--2 pair, how many prompt-development attempts are allowed, and what exact threshold gates each of the 31 public-feature shortcut predictors?",
+      "impact": "An underspecified development aggregation/stopping rule or reporting-only shortcut combinations permits headroom cherry-picking and an unresolved public shortcut before seed 5."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A08_PATH_LOCAL_FIDELITY_SET",
+      "question": "Are decisive and distractor LoRA probe rows and all four expected cue outputs frozen before adapter fitting or selected after successful THINK1 traces?",
+      "impact": "Outcome-selected probe rows can overstate transport fidelity and make the 0.90 threshold ill-defined for a very small denominator."
+    },
+    {
+      "ambiguity_id": "P1C_SCI_A09_INTERVENTION_PREDICTION",
+      "question": "Must a full or decisive-row twin swap produce each recipient's exact opposite-twin-valid token, or is any change/defer and loss of paired success sufficient?",
+      "impact": "The weaker criterion can pass through instability or generic degradation and does not establish that life-specific content causally controls the decision."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "P1C_SCI_D01_EARLIEST_PASS_NOT_FIXED_PIPELINE",
+      "statement": "The M0-then-M1 earliest-passing rule is not a clean confirmatory corpus rule for the held-out transport claim.",
+      "rationale": "The choice is triggered by paired final behavior scored with hidden truth, so the experiment tries two construction stages on the sole held-out pair and trains the one selected by outcome. Predeclaring the order prevents discretionary cherry-picking but retains adaptive selection and conflicts with the stated absence of offline-result influence at LoRA training. It is acceptable only as an explicitly exploratory sequential kill gate whose M0 and M1 results remain separate.",
+      "proposed_resolution": "Prefer one prospectively fixed transport corpus, most directly M1-own, while reporting M0 separately for target-blind sufficiency. If the sequential rule is retained, encode the evaluator-to-orchestrator pass-bit edge, use same-stage own/twin corpora, call the result adaptively selected existence evidence, and forbid any fixed-pipeline or comparative transport inference."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D02_ANSWER_EQUIVALENT_TYPE",
+      "statement": "The current memory ontology does not itself enforce the claimed absence of stored final answers or complete proofs.",
+      "rationale": "TRANSFERRED_VALUE accepts arbitrary public animal, location, and value atoms, and free-form value text can encode answer-equivalent content. Target absence from the prompt does not prevent the model from constructing the exact future animal-at-target tuple from life data.",
+      "proposed_resolution": "Remove TRANSFERRED_VALUE from this canary or add a frozen goal-independent structural rule excluding target-state and complete-proof rows from creation and corpus eligibility; test adversarial aliases and make violations fatal rather than prompt-only."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D03_SWAP_GATE_TOO_WEAK",
+      "statement": "Merely requiring T-TWIN or L-TWIN to lose paired success and change or defer one member is too weak for life-binding attribution.",
+      "rationale": "Generic reader degradation, query mismatch, or stochastic instability can satisfy that gate without the swapped life's causal content controlling the answer.",
+      "proposed_resolution": "Predeclare member-level counterfactual predictions: same-stage twin substitution should yield the donor-twin-valid decisive atom and corresponding opposite token for each recipient, or else use a finer row-level substitution with deterministic expected trace changes. Report generic degradation separately."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D04_DEPTH_IS_SYNTACTIC",
+      "statement": "A correct row with computed depth at least two and one prior semantic citation is insufficient evidence of multi-hop construction.",
+      "rationale": "The prior memory can be unnecessary decoration while route/effect public records alone determine the causal join. Citation ancestry then measures formatting compliance rather than a connection formed through earlier knowledge.",
+      "proposed_resolution": "Require semantic-parent necessity through a registered parent-removal or matched-parent-substitution intervention at row formation and final use, in addition to citation validity and offline correctness."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D05_NEGATIVE_LOCALIZATION_OVERCLAIM",
+      "statement": "A failed staged gate does not uniquely localize a broken scientific organ.",
+      "rationale": "Each stage bundles model capability, prompt scaffolding, stochastic proposal quality, schedule/view exposure, status admission, typed retrieval, and finite budgets. The first red stage localizes the observed failure surface but cannot distinguish these causes without additional interventions.",
+      "proposed_resolution": "Rename the claim to stage-level failure localization and enumerate the remaining within-stage alternatives; require a new ratified diagnostic rather than treating a red cell as proof that one organ is intrinsically incapable."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D06_LORA_PRESERVATION_SCOPE",
+      "statement": "Path-local fidelity at 0.90 does not show that the identical corpus as a whole was preserved in weights.",
+      "rationale": "The probe set contains cited decisive rows plus matched distractors, may be very small, and tests immediate recognition under registered cues rather than whole-corpus recall, retention over time, or interference resistance.",
+      "proposed_resolution": "State only that the selected decisive content remained path-locally accessible through the two per-life adapters; freeze the probe denominator before fitting and reserve whole-corpus preservation or durability language for replication."
+    },
+    {
+      "disagreement_id": "P1C_SCI_D07_RETURN_ROUTING_SCOPE",
+      "statement": "THINK0 success cannot be described as autonomous missing-dependency discovery.",
+      "rationale": "The operational probe supplies the exact final-relevant source, target, relation class, and instruction to request that join; it tests whether the controller can traverse memory and emit an already specified frontier.",
+      "proposed_resolution": "Label any success as strongly scaffolded prompted agenda routing and connection-through-selected-return, and reserve autonomous or generic dependency discovery for later prompt-ablation and held-out-task studies."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin require a single prospectively fixed transport corpus, or explicitly accept the M0-then-M1 rule only as an adaptive exploratory existence screen with no fixed-pipeline inference?",
+      "Will every T-TWIN and L-TWIN intervention be bound to the same memory stage, eligible-row set, views, and reader contract as its credited own condition?",
+      "Should TRANSFERRED_VALUE be removed for this canary, or what exact goal-independent rule will exclude direct animal-at-target and complete-proof rows?",
+      "What lineage-disjoint support rule, semantic-parent necessity intervention, and structural distractor-matching criteria must pass before return-dream credit is possible?",
+      "Should twin substitution be required to produce the exact donor-twin-valid atom and opposite public token for both members rather than merely degrade one outcome?",
+      "Does Rohin ratify only canary-level, path-local, strongly scaffolded existence language and stage-level failure localization, with every Paper-1 headline and replication claim still forbidden?"
+    ]
+  }
+}

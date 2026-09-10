@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v3",
+  "title": "Experience Model v6: CompilerGym two-system recipe-feasibility protocol v3",
+  "summary": "Propose a revised, strictly bounded v6 protocol conditional on unchanged already-local official CompilerGym 0.2.5, LLVM 10, and benchmark://poj104-v1 bytes. HARNESS and EXPERIENTIAL are the only two on-policy systems. They share the same frozen model/bootstrap, reconstructed ORIENT-to-THINK_ACT packet, common locked acquisition order, ledger, capped notebook/retrieval channel, tools, logical budgets, SLEEP cadence, and reset policy. EXPERIENTIAL alone mounts a null-initialized life-local rank-16 q/v LoRA rebuilt from deterministic outcome-filtered public acquisition rows; HARNESS has no mounted adapter. Both primary systems receive matched sterile target evaluation at checkpoints. Adapter-off and final binding-shuffled variants are EXPERIENTIAL-only sterile diagnostics, not agents. The first pilot contains no anchor, preservation, KL, or auxiliary training rows, so adapter-off is not confounded by a preservation update. Stage C is only a fixed-recipe wiring/feasibility observation, never a mechanism, causal-credit, lifetime, population, superiority, or scientific claim. This proposal authorizes no implementation, inspection, install, import, execution, training, model call, CPU/GPU run, target opening, or claim.",
+  "system_thesis": "A recurrent agent's auditable working state is a bounded canonical packet reconstructed for every model call. If exactly two otherwise matched on-policy systems act on public LLVM feedback, and only EXPERIENTIAL deterministically compiles its sealed public acquisition records into one life-local LoRA, the immediate question is whether the exact frozen wiring, score, lifecycle, and sterile-fork construction are feasible. Context reconstruction and common nonparametric evidence stores are part of both whole systems. The LoRA is the only adaptive parameter state across sleep; sealed ledger/notebook records are persistent nonparametric source evidence, not learned parameter state. No Stage-C outcome is evidence that the credit rule is causal or that the treatment effect generalizes beyond this one realization.",
+  "state": "proposed",
+  "context_files": [
+    {"path": "AGENTS.md", "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e", "purpose": "Controlling deliberation, ratification, review, and GPU-claim contract."},
+    {"path": "research_loop/schemas/architecture_change.schema.json", "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b", "purpose": "Schema governing this exact architecture-change artifact."},
+    {"path": "research_loop/architecture_intake.py", "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea", "purpose": "Local architecture-change validator and transition-gate implementation."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/change.json", "sha256": "835f45fbb5d8ef87511ff84be89f155d501ba8b90abfb63e48cd262da1bd0038", "purpose": "Superseded v2 proposal whose graph, loop, visibility, and acceptance deltas are revised here."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/human_directive.txt", "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad", "purpose": "Verbatim owner directive copied unchanged into this proposal directory."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/design_synthesis.md", "sha256": "c51cb136f382b6a4711081c6f3c8804214ff3822a900b51c2e6a8b40175fb258", "purpose": "Prior root synthesis for the two-system packet and deterministic SLEEP design."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/execution_defaults_candidate.md", "sha256": "5dea916ef1f19e8c9ec51711ac5bd7308718830add97ba60ed5154dc21df40c1", "purpose": "Candidate exact reward, score, packet-cap, split, lifecycle, margin, and resource defaults adopted conditionally here."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/interpretation_systems.json", "sha256": "ab9f2c734d9c931aacf175e4f868a77fd88725f62219afb04c26eff0cb96fdd1", "purpose": "Fresh systems interpretation identifying lifecycle, visibility, and determinism requirements."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/interpretation_benchmark.json", "sha256": "0bc5cc1eed62e2402aa6b11beb3e0055fc999d1aaac5eb193284b8d5d9b72442", "purpose": "Fresh benchmark interpretation identifying executable substrate, score, split, and claim requirements."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/critique.json", "sha256": "eebb3bb06706d016de1deb128656c53c3ad09c7a4b5fa4a033c8a1a01c2c440a", "purpose": "Adversarial v2 critique whose blocking concerns are disposed by the v3 bounds and tests."},
+    {"path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/consensus.json", "sha256": "961f4276d38827e81e81ccf1888d66801dc930837947e929f552607bdfd10771", "purpose": "Validated v2 adjudicated consensus requiring the v3 rework."}
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "V6CG_V3_TWO_PRIMARY_ON_POLICY_SYSTEMS",
+        "before": "V2 names two primary systems but does not execute held-out HARNESS measurement at the declared checkpoints and counterbalances a one-pair life by arm.",
+        "after": "HARNESS and EXPERIENTIAL are exactly the two and only two on-policy systems. They use the same frozen base, bootstrap, tokenizer, packet assembler, public task order, public ledger, capped notebook/retriever, tools, six-pair task budget, logical counters, task/life resets, and deterministic SLEEP schedule. A single manifest-locked acquisition order is common to both systems; it is not counterbalancing and yields no arm-effect estimate. At checkpoints 0, 4, and 8, each system cold-starts matched sealed target descendants. Only EXPERIENTIAL additionally has adapter-off at 0/4/8 and final binding-shuffled diagnostics. Forks collect no life and never write back.",
+        "rationale": "Adds the missing whole-system measurement without inflating the on-policy core or pretending one pair identifies order or treatment effects."
+      },
+      {
+        "operation": "add",
+        "node_id": "V6CG_V3_RECONSTRUCTED_PACKET_AND_ATOMIC_VISIBILITY",
+        "before": "V2 prohibits hidden state in prose but collapses mounted bytes, telemetry, public/static data, workspace, source records, and forbidden descendants into composite visibility cells.",
+        "after": "Every ORIENT and THINK_ACT call reconstructs a canonical capped packet from immutable ANCHOR; harness-owned logical counters; opaque life/task progress; a bounded focus object; compact public ENVIRONMENT; capped common retrieval; and complete recent events. ORIENT always precedes THINK_ACT and may request at most two recalled records. Only finite public operational labels may receive loss: focus_mode, recall_kind, recall_source, operation_type, legal pass identifier, and canonical finite operation arguments. Reason, rationale, strategy prose, active-question prose, hypothesis, prediction, uncertainty, expected effect, free text, and unparsed output are provenance/input-only with mask zero. Mounted adapter bytes, hidden condition labels, infrastructure telemetry, current workspace, cross-boundary ephemeral state, sealed source evidence, target/evaluator data, and training receipts have separate matrix items and explicit readers/writers.",
+        "rationale": "Makes prompt state, target authority, and every durable or hidden channel auditable at field and boundary granularity."
+      },
+      {
+        "operation": "add",
+        "node_id": "V6CG_V3_OUTCOME_FILTERED_WRITER_WITHOUT_PRESERVATION",
+        "before": "V2 calls the writer outcome-grounded, mixes causal-credit language with a post-selection shuffle, and includes fixed preservation/anchor training that confounds authentic-versus-off adapter comparisons.",
+        "after": "At sleeps after acquisition tasks 4 and 8, a model-free deterministic compiler reads only EXPERIENTIAL's sealed public acquisition ledger/notebook prefix and forms ORIENT, ACT, and REVISE rows using frozen epsilon, gamma=0.7, rho=0.5, exact deduplication, 192 rows/64 per view, fixed 50:50 old/new replay, frozen ordering/truncation, and assistant loss only on the finite operational fields. Rows are deterministic outcome-filtered supervision, not validated causal credit. No anchor/preservation/KL/instruction auxiliary rows, preservation-only adapter, or other non-acquisition training objective exists in v3. The authentic adapter is a clean-base cumulative rank-16 alpha-16 dropout-0 q_proj/v_proj LoRA rebuild with reset AdamW, 24 target-token touches per retained row, fixed update/token receipt, atomic publication, and destruction of all trainer state. Adapter-off is the null adapter, so it differs from authentic only by the acquisition-derived outcome-filtered writer update.",
+        "rationale": "Keeps one learned parameter object while removing the preservation-update confound rather than introducing another control arm."
+      },
+      {
+        "operation": "add",
+        "node_id": "V6CG_V3_CONDITIONAL_OFFICIAL_SCORE_AND_SPLIT",
+        "before": "V2 uses an IrInstructionCount/normalized-reward slash and a prose related/nonduplicate split, leaving metric direction, invalid treatment, strata, spares, and headroom underdefined.",
+        "after": "The candidate substrate is unchanged already-local official CompilerGym 0.2.5 with LLVM 10, official benchmark://poj104-v1, public Autophase[56], InstCount[70], current IrInstructionCount, and a canonical ordered legal pass list; raw IR and BitcodeFile paths are not model-visible. The sole reward-space identifier is IrInstructionCountOz. With public audit costs I_0, I_Oz, I_i,j and a valid state, S_i,k=(I_0-min_{j<=k,valid} I_i,j)/(I_0-I_Oz); S_i,k=0 until a valid state exists; G_i=(1/6) sum_{k=1..6} S_i,k. The denominator must be finite and strictly positive; malformed, invalid, timeout, and environment-error operations consume budget, remain separately counted, and retain the earlier valid best; an indeterminate primary cell is not regenerated. Epsilon is the manifest-bound public score resolution measured before targets open. A sealed public-static constructor mechanically canonicalizes source/IR, forms duplicate components from exact/normalized graph/signature/nearest-neighbor rules, then makes four relation groups with two acquisition candidates, one target, and two spares each using the first legal sorted candidates. It records public structural relation and target-blind positive headroom diagnostics; any missing local byte, nonreplayable semantics, invalid split cell, duplicate/neighbor leakage, or absent headroom rejects this substrate without repair or substitution.",
+        "rationale": "Turns the benchmark and descriptive scalar into a conditional executable contract before any target or model access."
+      },
+      {
+        "operation": "add",
+        "node_id": "V6CG_V3_TRANSITION_SCOPED_FEASIBILITY_LADDER",
+        "before": "V2 mixes static inspection, fixtures, implementation, offline install, hardware fit, and pilot execution under ambiguous required-before labels.",
+        "after": "This proposed artifact authorizes nothing. One exact human ratification may authorize the full bounded A-through-C program as a single conditional scope: A, non-executing local-byte/static inspection; B1, design and fixture/test implementation; B2, disposable unchanged-install CPU semantic canary and executable harness; B3, hardware/model acquisition-only fixed-recipe canary; then C, the one-pair target wiring/feasibility run after a sealed run manifest and all prior receipts. Transitions are automatic only inside that ratified scope and only after the required independent reviews and machine-verifiable gates pass. Any failed or indeterminate gate stops the program and cannot trigger repair, substitution, tuning, target access, or a new experiment. B3 uses acquisition-only public rows and the exact writer recipe to test row/token-mask, nonzero target-token gradient, fixed updates/touches, numerical status, same-stack receipt tolerance, behavioral cold-load, and schema/style stability; it neither tunes nor opens targets. Stage D and every scientific claim remain outside this scope and require a new change.",
+        "rationale": "Separates artifact classes and executable authority while providing the actual-row fixed-recipe fit gate required before target exposure."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "V6CG_V3_CANONICAL_PACKET_TO_ONE_MODEL_WAKE",
+        "from": "V6CG_V3_RECONSTRUCTED_PACKET_AND_ATOMIC_VISIBILITY",
+        "to": "V6CG_V3_TWO_PRIMARY_ON_POLICY_SYSTEMS",
+        "before": "V2's primary-agent graph has no matched HARNESS target-fork edge and an unatomized packet/visibility representation.",
+        "after": "Authoritative packet -> ORIENT ContextPlan -> common capped target-blind retrieval -> THINK_ACT one typed operation -> one registered public result -> sealed complete event and harness counter update, identically in both on-policy systems except below-prompt EXPERIENTIAL adapter bytes.",
+        "rationale": "Binds the two-system comparison to one explicit recurrent invocation path."
+      },
+      {
+        "operation": "add",
+        "edge_id": "V6CG_V3_PUBLIC_EVIDENCE_TO_OUTCOME_FILTERED_ADAPTER",
+        "from": "V6CG_V3_TWO_PRIMARY_ON_POLICY_SYSTEMS",
+        "to": "V6CG_V3_OUTCOME_FILTERED_WRITER_WITHOUT_PRESERVATION",
+        "before": "V2 permits an unexplained preservation objective in the authentic writer and labels temporal eligibility as outcome grounding.",
+        "after": "Only sealed EXPERIENTIAL acquisition events, declared notebook evidence, public official outcomes, and logical receipts enter the deterministic compiler. Its authentic output writes exactly one LoRA; no target, evaluation descendant, rationale wording, anchor/preservation row, optimizer moment, or auxiliary objective enters the update.",
+        "rationale": "Restricts the treatment update to declared acquisition-derived supervision."
+      },
+      {
+        "operation": "add",
+        "edge_id": "V6CG_V3_CHECKPOINT_TO_ALL_STERILE_EVALUATION_FORKS",
+        "from": "V6CG_V3_TWO_PRIMARY_ON_POLICY_SYSTEMS",
+        "to": "V6CG_V3_CONDITIONAL_OFFICIAL_SCORE_AND_SPLIT",
+        "before": "V2 evaluates experiential authentic/off/shuffle forks but omits the corresponding HARNESS checkpoint target descendant.",
+        "after": "Every sealed checkpoint cold-starts a HARNESS target fork and an EXPERIENTIAL-authentic target fork under the same target packet, six-pair budget, G computation, order, reset, and quarantine. EXPERIENTIAL additionally receives a null adapter-off target fork at each checkpoint and final binding-shuffled adapter fork only after derangement construction passes. Evaluation state cannot reach either life, retriever, compiler, trainer, later target, or split.",
+        "rationale": "Measures the stated two-system descriptive contrast while retaining secondary treatment diagnostics as sterile forks."
+      },
+      {
+        "operation": "add",
+        "edge_id": "V6CG_V3_SELECTED_ROWS_TO_SEMANTIC_BINDING_DIAGNOSTIC",
+        "from": "V6CG_V3_OUTCOME_FILTERED_WRITER_WITHOUT_PRESERVATION",
+        "to": "V6CG_V3_CONDITIONAL_OFFICIAL_SCORE_AND_SPLIT",
+        "before": "V2's shuffle does not distinguish identifier change from semantic disruption and is described as outcome-binding evidence.",
+        "after": "The final binding-shuffled adapter begins from the authentic selected input rows and finite target multiset. Within a manifest-bound compatible public-state stratum, it cyclically deranges focus/action targets only across different declared semantic equivalence classes. Every shuffled target must differ semantically from its original, every stratum needs at least two eligible members, and row/view/token/update counts remain authentic-identical; otherwise no shuffled cell exists and the recipe feasibility report records control-construction failure. It is only a state-operation-binding diagnostic and leaves outcome-filtered selection unchanged.",
+        "rationale": "Prevents semantically vacuous shuffling and forbids causal-credit interpretation."
+      },
+      {
+        "operation": "add",
+        "edge_id": "V6CG_V3_UNCHANGED_LOCAL_FIT_TO_SCOPED_STAGES",
+        "from": "V6CG_V3_CONDITIONAL_OFFICIAL_SCORE_AND_SPLIT",
+        "to": "V6CG_V3_TRANSITION_SCOPED_FEASIBILITY_LADDER",
+        "before": "V2 makes local fit necessary but does not state which artifact authority is necessary before static, CPU, canary, or Stage-C work.",
+        "after": "Only passing hash/static fit, atomized fixture/lifecycle tests, offline semantics and split seal, acquisition-only fixed-recipe fit, independent review, and the exact ratified run manifest may open the next listed stage within the single A-through-C authorization. A failure terminates this substrate or recipe; it is never a reason to patch, substitute, sweep, tune, or reveal targets.",
+        "rationale": "Prevents scope escalation from a passing design document or partial receipt."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "V6CG_V3_RECONSTRUCTED_WAKE_LOOP",
+        "before": "V2 specifies a wake loop but permits unenumerated typed focus prose as a possible target and does not bind the common locked order across the two primary systems.",
+        "after": "For each available decision in the shared locked task order, reconstruct the capped packet from only declared authoritative fields; call the same base/bootstrap/tokenizer/sampling family in ORIENT; parse-or-charge a bounded ContextPlan; materialize at most two common retrieval results; reconstruct the THINK_ACT packet; parse-or-charge one operation; execute one registered public operation; append one complete public event; and charge harness-owned counters. ORIENT cannot act; THINK_ACT cannot bypass packet/retrieval. Finite focus_mode and recall enums may be assistant targets. All prose fields, including reason, rationale, strategy, question, hypothesis, prediction, uncertainty, expected effect and unparsed output, are mask-zero. Both systems receive six ORIENT/THINK_ACT pairs, 4,096 input tokens/call, at most 256 output tokens/call, a 512-token complete-event tail, and at most 3,072 generated tokens/task.",
+        "trigger": "Every acquisition or sterile evaluation decision until STOP, terminal public state, or the declared budget is consumed.",
+        "reads": ["canonical packet", "current public observation and legal action projection", "common capped ledger/notebook retrieval", "same logical counters", "mounted treatment adapter only where assigned below prompt assembly"],
+        "writes": ["finite parsed focus/recall/operation labels", "one public workspace/result update", "one sealed event", "harness-owned logical counter receipt"],
+        "stop_condition": "STOP, terminal public state, malformed/invalid charge as specified, or fixed decision/call/token/action budget exhaustion; no hidden retry, chat, prefix/KV, scheduler, cache, or provider session survives a call.",
+        "rationale": "Preserves one recurrent model while closing target-mask and hidden-state routes."
+      },
+      {
+        "operation": "add",
+        "loop_id": "V6CG_V3_DETERMINISTIC_SLEEP_AND_STATE_BOUNDARY_LOOP",
+        "before": "V2 conflicts over whether source evidence persists across sleep and combines compile determinism with trainer-byte determinism.",
+        "after": "Only after common acquisition task boundaries 4 and 8, seal EXPERIENTIAL's ledger/notebook prefix, compile the exact outcome-filtered corpus, clean-base train the one authentic LoRA with reset optimizer and no preservation objective, atomically publish only on receipt success, and destroy trainer process, optimizer, gradients, data/cache, packed batches, temporary corpus, inference processes, and KV. HARNESS performs the same scheduling and accounting but mounts no adapter and has no useful sham bytes. Within a life, the sealed ledger, bounded notebook, retrieval index definition, immutable manifest and receipt persist as nonparametric source/audit evidence; only the authentic LoRA is adaptive parameter state across sleep. At task boundary focus, tail, workspace, environment, task tools/files, task RNG, compiler/cache and process state reset; at life boundary adapter, sources, indices, counters, files, caches, RNG lineage and all progress reset.",
+        "trigger": "Only after acquisition tasks 4 and 8 in the ratified Stage-C schedule; no target or evaluation event can trigger it.",
+        "reads": ["sealed experiential public source evidence", "frozen compiler/mask/recipe configuration", "clean pinned base and numerical-stack manifest"],
+        "writes": ["canonical candidate/rejection/corpus manifest", "one authentic serialized LoRA", "training receipt with determinism-tier evidence", "HARNESS no-mount accounting receipt"],
+        "stop_condition": "Atomic receipt success or a schema/provenance/mask/budget/numerical/integrity failure that seals the exact recipe failed with no retry, sweep, or repair.",
+        "rationale": "Separates persistent source evidence from learned state and makes training reproducibility claims testable by tier."
+      },
+      {
+        "operation": "add",
+        "loop_id": "V6CG_V3_STERILE_CHECKPOINT_EVALUATION_LOOP",
+        "before": "V2 omits a HARNESS target fork and describes a one-life pilot with mechanism language.",
+        "after": "At checkpoints 0, 4, and 8, cold-start HARNESS and EXPERIENTIAL-authentic target descendants from their independently evolving sealed histories. Each target uses the same sealed public packet, fixed target order, six wake pairs, G score, logical budget, reset and quarantine. At each experiential checkpoint separately cold-start adapter-off from its base/null assignment; at checkpoint 8 cold-start binding-shuffled only if semantic derangement succeeds. Descendants contain no life retrieval store, receive no condition/checkpoint/telemetry marker, and are destroyed after their target; raw target outcomes, artifacts and logs never return to either life.",
+        "trigger": "A sealed checkpoint and target panel that were frozen before any model call, only in an explicitly authorized Stage-C run.",
+        "reads": ["one sealed public target packet", "assigned base/null/authentic/shuffled adapter below packet assembly", "fixed score and budget rules"],
+        "writes": ["quarantined per-target G and integrity receipt", "offline descriptive-resource inputs", "terminal indeterminate receipt when applicable"],
+        "stop_condition": "Six pairs, STOP, terminal task, or declared failure, followed by mandatory teardown and non-return of every descendant state.",
+        "rationale": "Measures the two-system whole-harness wiring under equal target conditions without creating extra acquiring systems."
+      },
+      {
+        "operation": "add",
+        "loop_id": "V6CG_V3_TRANSITION_AUTHORIZATION_LOOP",
+        "before": "V2 leaves static tests, implementation, offline installation, and hardware execution under overlapping gates.",
+        "after": "Stage 0 is this non-executing proposal. One explicit human ratification bound to the exact v3 bytes and A-through-C scope may authorize: Stage A static local-byte inspection; Stage B1 fixture/design implementation; Stage B2 disposable unchanged-install no-network semantic canary and executable CPU harness; Stage B3 acquisition-only fixed-recipe hardware canary; and Stage C one-pair target feasibility. Each later transition still verifies all prior receipts, exact hashes, and its independent-review gate, but does not stop for another human message when it remains byte-for-byte inside the original scope. Any mismatch, failure, repair, new dependency source, alternate substrate, recipe change, target-informed choice, or scope expansion stops and requires a new change. Stage D and claims are never authorized by this ladder.",
+        "trigger": "The single explicit A-through-C human ratification, followed at each transition by passing prior receipts, exact hashes, and the declared independent-review gate.",
+        "reads": ["prior immutable receipts", "exact scoped authorization", "bound source, model, tokenizer, parser, split, recipe and resource manifests"],
+        "writes": ["stage-specific independent-review disposition", "one bound human authorization record", "failure or readiness receipt only"],
+        "stop_condition": "Missing authorization, hash mismatch, rejected fit, invalid receipt, scope expansion, or independent-review failure; no execution or repair follows automatically.",
+        "rationale": "Makes implementation, CPU, canary, hardware, and pilot authority explicit rather than inferred from agreement."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "V6CG_V3_STAGE_C_RECIPE_FEASIBILITY_ONLY",
+        "before": "V2 permits one paired life to be called a short-horizon outcome-grounded mechanism observation.",
+        "after": "A Stage-C report can say only whether this exact frozen two-system wiring, unchanged substrate, score, lifecycle, fixed recipe, and sterile fork construction were feasible, failed, or were indeterminate in one realization. Its primary descriptive quantity is D_HE,c=mean_i(G_EXPERIENTIAL,i,c-G_HARNESS,i,c) for each checkpoint c in {0,4,8}; D_off,c and final D_shuf are secondary diagnostics. Common order, one life, nested targets, and one trainer/inference realization do not estimate an arm effect, validate the outcome-filter heuristic, or establish a mechanism.",
+        "evidence_needed": "All prior stage receipts, raw cell-level ledgers, matched HARNESS/EXPERIENTIAL checkpoint targets, exact score receipts, visibility/lifecycle evidence, semantic-shuffle construction receipt, and a report limited to recipe feasibility.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6CG_V3_PRIVATE_THOUGHT_AND_PROSE_EXCLUDED",
+        "before": "V2 forbids rationale endpoints but leaves reason/strategy/question/uncertainty/expected-effect targetability ambiguous.",
+        "after": "No raw private thought, unparsed output, rationale, reason, strategy prose, active-question prose, hypothesis, prediction, uncertainty, expected-effect prose, self-report, or human-theory similarity is a correctness label, endpoint, promotion criterion, or positive target. Only explicitly enumerated finite public operational fields and legal operation arguments receive loss; every other text token has mask zero. Public outcome and typed-operation metrics are the only Stage-C evidence channels.",
+        "evidence_needed": "Canonical packet/schema fixtures, token-level mask ledger, metric audit, and offline endpoint audit showing no prohibited field reaches a loss-one token or score.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6CG_V3_LIFETIME_COMPARATIVE_AND_CAUSAL_CREDIT_DEFERRED",
+        "before": "The motivating lifetime, outcome-credit, and external-memory comparison can be read into v2's pilot language.",
+        "after": "This proposal cannot establish consciousness, creativity, abstraction, general intelligence, causal outcome credit, LoRA superiority, external-memory superiority, baseline saturation, flywheel compounding, post-context growth, population effects, or paper evidence. Those require a separate Stage-D change with fresh tasks, multiple independent paired lives, life-level uncertainty and order handling, post-context checkpoints, direct outcome-selection intervention, and same-corpus text/raw-LoRA/wrong-life/organized-memory controls.",
+        "evidence_needed": "A separately ratified Stage-D preregistration, independent review, new bound run manifest, and evidence from independent lives rather than the Stage-C cells.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA",
+      "CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS",
+      "SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE",
+      "MOUNTED_ADAPTER_BYTES",
+      "FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK",
+      "PROSE_AND_UNPARSED_MODEL_OUTPUT",
+      "CURRENT_TASK_WORKSPACE",
+      "EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE",
+      "SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA",
+      "HIDDEN_CONDITION_AND_CHECKPOINT_LABELS",
+      "INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS"
+    ],
+    "stages": [
+      "STATIC_SPLIT_INSPECTOR",
+      "OFFLINE_SEMANTIC_CANARY",
+      "HARNESS_ON_POLICY_WAKE",
+      "EXPERIENTIAL_ON_POLICY_WAKE",
+      "SLEEP_COMPILER",
+      "EVAL_HARNESS_FORK",
+      "EVAL_EXPERIENTIAL_AUTHENTIC_FORK",
+      "EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK",
+      "EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK",
+      "OFFLINE_AUDITOR"
+    ],
+    "cells": [
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"visible","reason":"Only immutable public catalog/source/IR metadata and split-construction hashes are readable."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"visible","reason":"Canary uses only the sealed selected local artifacts and public manifests."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"Acquisition packets omit catalog-wide split metadata and target roles."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"Same target-blind acquisition restriction."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"SLEEP_COMPILER","visibility":"forbidden","reason":"Compiler cannot select rows using split/catalog metadata."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Fork receives only its revealed target packet."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Fork receives only its revealed target packet."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Fork receives only its revealed target packet."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Fork receives only its revealed target packet."},
+      {"information_id":"PUBLIC_STATIC_CATALOG_AND_SPLIT_METADATA","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Auditor verifies sealed static split and provenance receipts."},
+
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static construction has no runtime task packet."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"visible","reason":"Official public reset/trace observations and fixed logical counters are canary inputs."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"visible","reason":"Canonical current acquisition packet and harness counters ground wake decisions."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"visible","reason":"Identical packet/counter projection and caps."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"SLEEP_COMPILER","visibility":"visible","reason":"Sealed public pre-state/outcome fields support frozen row rendering."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"EVAL_HARNESS_FORK","visibility":"visible","reason":"Current sealed target packet and equal counter rule only."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"visible","reason":"Same target packet and counters."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"visible","reason":"Same target packet and counters."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"visible","reason":"Same target packet and counters."},
+      {"information_id":"CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS","stage_id":"OFFLINE_AUDITOR","visibility":"derived_only","reason":"Only sealed aggregate/public trace evidence is analyzed offline."},
+
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Split precedes and is independent of life evidence."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"forbidden","reason":"Semantic canary has no life evidence."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"visible","reason":"Common capped retriever accesses only HARNESS's own declared life evidence."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"visible","reason":"Same capped retriever and persistence rule."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"SLEEP_COMPILER","visibility":"visible","reason":"Only EXPERIENTIAL's sealed local evidence is compiler input."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Sterile target fork has no life retrieval channel."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Sterile target fork has no life retrieval channel."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Sterile target fork has no life retrieval channel."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Sterile target fork has no life retrieval channel."},
+      {"information_id":"SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Sealed source evidence is auditable but never live fork context."},
+
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static split is arm-independent."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"derived_only","reason":"Canary may test assigned bytes only after the authorized mount receipt."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"HARNESS is base/null below packet assembly and receives no adapter identifier."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"visible","reason":"The assigned authentic adapter changes inference below prompt assembly, without exposing identity text."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"SLEEP_COMPILER","visibility":"derived_only","reason":"Compiler writes candidate bytes but trains from clean base and cannot use them as row input."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"HARNESS fork receives base/null only and no adapter metadata."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"visible","reason":"Assigned authentic checkpoint bytes affect inference below prompt assembly."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Null assignment has no adapter bytes or identity field."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"visible","reason":"Assigned shuffled bytes affect inference below prompt assembly."},
+      {"information_id":"MOUNTED_ADAPTER_BYTES","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Auditor hashes assigned serialized bytes and cold-load receipts."},
+
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"visible","reason":"Inspector validates finite label schema and mask specification."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"visible","reason":"Canary checks parser and public operation semantics."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"visible","reason":"Finite focus/recall/operation grammar is packet-visible."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"visible","reason":"Identical grammar and parser contract."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"SLEEP_COMPILER","visibility":"visible","reason":"Only enumerated operational tokens can receive loss one."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"EVAL_HARNESS_FORK","visibility":"visible","reason":"Same operation grammar and parse charges."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"visible","reason":"Same operation grammar and parse charges."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"visible","reason":"Same operation grammar and parse charges."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"visible","reason":"Same operation grammar and parse charges."},
+      {"information_id":"FINITE_OPERATIONAL_FIELDS_AND_TOKEN_MASK","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Auditor verifies schema and token-level masks."},
+
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"No model output participates in static inspection."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"forbidden","reason":"Canary records parsed public operation only."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"Fresh packet excludes raw chat, private scratch and unparsed output."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"Same fresh-packet exclusion."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"SLEEP_COMPILER","visibility":"forbidden","reason":"Prose cannot supply credit or loss targets."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"No private/prose endpoint or persistent fork state."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"No private/prose endpoint or persistent fork state."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"No private/prose endpoint or persistent fork state."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"No private/prose endpoint or persistent fork state."},
+      {"information_id":"PROSE_AND_UNPARSED_MODEL_OUTPUT","stage_id":"OFFLINE_AUDITOR","visibility":"forbidden","reason":"Auditor checks masks and public metrics, never thought text."},
+
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static inspector has no task workspace."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"derived_only","reason":"Disposable canary workspace is audited only for reset and source immutability."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"visible","reason":"Declared current-task workspace manifest is packet-visible."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"visible","reason":"Same task-local workspace interface."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"SLEEP_COMPILER","visibility":"forbidden","reason":"Compiler reads sealed evidence, never live workspace files."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"EVAL_HARNESS_FORK","visibility":"visible","reason":"Fresh declared target-local workspace only."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"visible","reason":"Fresh declared target-local workspace only."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"visible","reason":"Fresh declared target-local workspace only."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"visible","reason":"Fresh declared target-local workspace only."},
+      {"information_id":"CURRENT_TASK_WORKSPACE","stage_id":"OFFLINE_AUDITOR","visibility":"derived_only","reason":"Only reset/allowlist receipts are auditable."},
+
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static inspector has no runtime state."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"derived_only","reason":"Fresh-process and reset receipts may be checked but state is not reused."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"No process/KV/cache/RNG lineage is packet-readable."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"Same no-hidden-runtime-state rule."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"SLEEP_COMPILER","visibility":"derived_only","reason":"Trainer ephemeral state is destroyed after receipt and cannot become inference input."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Cold fork uses fresh allowlisted state and returns none."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Cold fork uses fresh allowlisted state and returns none."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Cold fork uses fresh allowlisted state and returns none."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Cold fork uses fresh allowlisted state and returns none."},
+      {"information_id":"EPHEMERAL_PROCESS_CACHE_AND_RNG_STATE","stage_id":"OFFLINE_AUDITOR","visibility":"derived_only","reason":"Only teardown, cache-clear and seed receipts are visible."},
+
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Only public static selection inputs are allowed; roles, outcomes and references remain sealed."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"forbidden","reason":"Canary cannot access pilot target roles or hidden evaluator/reference data."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"Future target role and evaluator/reference data never enter acquisition."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"Same target-blind rule."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"SLEEP_COMPILER","visibility":"forbidden","reason":"Compiler cannot read targets, evaluator descendants or references."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Fork sees only revealed public task fields, never role or reference data."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Fork sees only revealed public task fields, never role or reference data."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Fork sees only revealed public task fields, never role or reference data."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Fork sees only revealed public task fields, never role or reference data."},
+      {"information_id":"SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA","stage_id":"OFFLINE_AUDITOR","visibility":"derived_only","reason":"Only aggregate score and integrity receipts enter offline analysis."},
+
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static split is condition-independent."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"derived_only","reason":"Canary disposition records condition only outside model context."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"No arm/checkpoint/null/sham marker is packet-visible."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"No arm/checkpoint/adapter-origin marker is packet-visible."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"SLEEP_COMPILER","visibility":"derived_only","reason":"Compiler receipts may identify stage offline but do not expose it to model calls."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Fork condition and checkpoint identity are hidden from the model."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Fork condition and checkpoint identity are hidden from the model."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Fork condition and checkpoint identity are hidden from the model."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Fork condition and checkpoint identity are hidden from the model."},
+      {"information_id":"HIDDEN_CONDITION_AND_CHECKPOINT_LABELS","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Audit needs condition and checkpoint attribution outside inference."},
+
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"STATIC_SPLIT_INSPECTOR","visibility":"forbidden","reason":"Static inspection has no runtime telemetry."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"OFFLINE_SEMANTIC_CANARY","visibility":"derived_only","reason":"Canary emits reproducibility/immutability receipt but model sees none."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"HARNESS_ON_POLICY_WAKE","visibility":"forbidden","reason":"Latency, training duration, cache warmth, row count and receipt metadata are not packet fields."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"EXPERIENTIAL_ON_POLICY_WAKE","visibility":"forbidden","reason":"Same no-telemetry rule."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"SLEEP_COMPILER","visibility":"derived_only","reason":"Compiler writes receipt; receipt is not a later model input."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"EVAL_HARNESS_FORK","visibility":"forbidden","reason":"Fork model cannot see latency/cache/retry/training receipt data."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"EVAL_EXPERIENTIAL_AUTHENTIC_FORK","visibility":"forbidden","reason":"Fork model cannot see latency/cache/retry/training receipt data."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"EVAL_EXPERIENTIAL_ADAPTER_OFF_FORK","visibility":"forbidden","reason":"Fork model cannot see latency/cache/retry/training receipt data."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"EVAL_EXPERIENTIAL_BINDING_SHUFFLED_FORK","visibility":"forbidden","reason":"Fork model cannot see latency/cache/retry/training receipt data."},
+      {"information_id":"INFRASTRUCTURE_TELEMETRY_AND_TRAINING_RECEIPTS","stage_id":"OFFLINE_AUDITOR","visibility":"visible","reason":"Offline resource, determinism-tier and training receipts are auditable."}
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id":"V6CG_T01A_CANONICAL_PACKET_OPERATIONAL_MASK_AND_ONE_LOOP","kind":"invariant","setup":"Static canonical fixtures cover every ORIENT/THINK_ACT reconstruction, exact 4,096/512/256/2/6 caps, parser charge path, finite focus/recall/operation labels, and all retained prose fields.","expected":"Only canonical fields are reachable; ORIENT cannot act; THINK_ACT cannot bypass retrieval; malformed output charges once; only enumerated public operational tokens have mask one; reason/rationale/strategy/question/hypothesis/prediction/uncertainty/expected-effect/free text/unparsed output have mask zero; no second model, scheduler, chat, KV, prefix or free-form state exists.","falsifies":"The explicit recurrent-state, one-model, no-private-thought target, or bounded grammar contract.","evidence_artifact":"v6cg_v3_canonical_packet_operational_mask_one_loop.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T02A_OUTCOME_FILTERED_COMPILER_AND_DETERMINISM_TIERS","kind":"invariant","setup":"Golden sealed public ledgers cover immediate improvement, delayed setup, failure/recovery, invalid calls, ties, replay, truncation, rejected rows, every loss subfield, and final selected-row semantic derangement.","expected":"Candidate/credit/row/mask/order/corpus manifests are byte-identical from identical inputs; invalid actions get no positive ACT credit; all prose is mask zero; no anchor/preservation/KL/auxiliary row exists; compile bytes are exact; training receipt requires a pinned same-stack numerical tolerance; behavioral cold-load is evaluated separately; retries or platform-dependent reclassification fail sealed. Shuffle preserves authentic budgets and passes only when every target is semantically disrupted.","falsifies":"Writer authority, absence of preservation confound, token-mask boundary, determinism-tier contract, or binding-diagnostic construction.","evidence_artifact":"v6cg_v3_compiler_masks_determinism_tiers_shuffle.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD","kind":"invariant","setup":"Fixture boundaries exercise call, task, sleep, life, crash and each sterile fork with explicit file/process/cache/RNG/workspace allowlists and base-plus-assigned-adapter replay.","expected":"Sealed ledger/notebook/immutable receipts persist only as declared common nonparametric within-life source evidence; the treatment LoRA alone is adaptive parameter state across sleep; trainer/optimizer/gradient/cache/process/KV/task workspace/RNG and evaluation descendants reset; cold load behavior reproduces the assigned authentic/null/shuffled condition under the declared tolerance; no HARNESS adapter is mounted.","falsifies":"Boundary isolation, adapter attribution, source-versus-learned-state distinction, or fork sterility.","evidence_artifact":"v6cg_v3_lifecycle_source_state_coldload_allowlist.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS","kind":"invariant","setup":"Verify the full atomic matrix and diff model-visible bytes/counters on matched public histories across HARNESS, EXPERIENTIAL, and all four named target forks.","expected":"Exactly the declared readers/writers exist: mounted adapter bytes are distinct from condition labels; current workspace is distinct from forbidden carryover; public static metadata is distinct from target/reference data; receipts/telemetry are distinct from packet fields. HARNESS and EXPERIENTIAL target forks have identical public packet/budget/order/reset rules. No arm, condition, checkpoint, adapter origin, row count, latency, cache warmth, retry, training duration, target role, hidden evaluator, or private-thought cue is visible to a model.","falsifies":"Visibility noninterference, full-harness parity, or the missing HARNESS checkpoint estimand.","evidence_artifact":"v6cg_v3_atomic_visibility_and_harness_fork_parity.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T05A_UNCHANGED_LOCAL_025_POJ104_STATIC_SCORE_SPLIT_FIT","kind":"invariant","setup":"Without importing, downloading, installing, running, or modifying upstream bytes, hash already-local official CompilerGym 0.2.5/LLVM10 artifacts; inspect manifests; and mechanically construct the public-static POJ104 8/4 relation split.","expected":"Unchanged official bytes expose hashable IrInstructionCountOz, audit observations, compact projection, legal action semantics, and POJ104 catalog. The exact G formula, denominator rule, epsilon source, invalid/missing rule, m=max(0.05,2*s_canary) default, first sorted group/spare selection, duplicate/near-neighbor exclusions and target-blind positive headroom reports are bindable. Any unavailable, altered, unhashable, duplicate, no-headroom or no-spare condition rejects this substrate without repair/substitution.","falsifies":"The conditional official substrate, executable descriptive score, or related-nonduplicate transfer basis.","evidence_artifact":"v6cg_v3_025_poj104_static_score_split_fit.json","required_before":"implementation"},
+    {"test_id":"V6CG_T06A_AUTHORIZED_OFFLINE_SEMANTICS_AND_SPLIT_SEAL","kind":"end_to_end","setup":"Within the single ratified A-through-C scope, use sealed local artifacts in fresh disposable no-network processes to install unchanged 0.2.5, replay fixed legal and illegal traces twice, and seal the static split before every model call.","expected":"Reset, public compact observations, terminal behavior, IrInstructionCountOz direction/baseline semantics, denominator, invalid-action handling, epsilon, and resource bound are reproducible; source/task/reward/scorer hashes are unchanged; no model output, outcome, reference or hidden data enters the split. Any failure rejects CompilerGym/POJ104 for this change.","falsifies":"Official semantic reproducibility, score integrity, source immutability, or target blindness.","evidence_artifact":"v6cg_v3_offline_semantics_and_split_seal.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT","kind":"end_to_end","setup":"Within the single ratified A-through-C scope and only after T01A-T06A pass independent review, use acquisition-only public rows and the one frozen rank-16 q/v no-preservation recipe; sealed Stage-C targets remain unavailable.","expected":"The exact recipe yields valid parsed public operations, nonzero target-token gradients, fixed rows/touches/updates, numerical health, same-stack receipt tolerance, behavioral cold-load, and no schema/style collapse; acquisition-only repeat variance fixes s_canary and m before target opening. It performs no sweep, tuning, preservation training, target access, or scientific interpretation. Any failure is STOP_FOR_THIS_RECIPE.","falsifies":"Whether this unmodified fixed recipe and harness are feasible enough to open the one-pair target wiring assay.","evidence_artifact":"v6cg_v3_acquisition_only_fixed_recipe_fit.json","required_before":"gpu_run"},
+    {"test_id":"V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY","kind":"end_to_end","setup":"Within the single ratified A-through-C scope and only after the exact Stage-C manifest is bound to the already-ratified constants and independently approved, execute one HARNESS and one EXPERIENTIAL life over the same locked 8-task order, sleeps after 4/8, and four sealed targets at checkpoints 0/4/8; evaluate both systems in matched cold forks.","expected":"Report every raw cell, D_HE,c at each checkpoint, G/validity/parse/first/best/decision/resource traces, indeterminate cells, and common-order receipt. The only dispositions are WIRING_FAILURE, RECIPE_FEASIBLE_DESCRIPTIVE, or INDETERMINATE under the frozen score/margin rules. No arm effect, counterbalance, causal mechanism, causal credit, lifetime slope, saturation, superiority, or population inference is produced.","falsifies":"Feasibility of the exact two-system wiring and complete primary descriptive measurement, not a scientific hypothesis.","evidence_artifact":"v6cg_v3_stage_c_two_system_recipe_feasibility.json","required_before":"scientific_claim"},
+    {"test_id":"V6CG_T09A_EXPERIENTIAL_OFF_AND_SEMANTIC_BINDING_DIAGNOSTICS","kind":"ablation","setup":"At experiential checkpoints 0/4/8 cold-load authentic and null adapter-off from the same sealed history; at final checkpoint build binding-shuffled only from authentic selected inputs/target multiset under the declared semantic-equivalence/compatibility criteria.","expected":"D_off,c and final D_shuf are reported as secondary diagnostics alongside primary D_HE,c. Adapter-off is unconfounded by preservation because no preservation update exists. Shuffled construction fails terminally if any stratum lacks two compatible semantic alternatives, any target is semantically equivalent to its source, or row/view/token/update budgets differ. A valid shuffled result is called only a post-selection state-operation-binding diagnostic and never evidence that outcome selection or temporal credit is causal.","falsifies":"Adapter-byte assignment or the claimed semantic-binding diagnostic construction; it does not falsify causal-credit alternatives.","evidence_artifact":"v6cg_v3_experiential_off_semantic_binding_diagnostics.json","required_before":"scientific_claim"},
+    {"test_id":"V6CG_T10A_ENDPOINT_MASK_STYLE_REUSE_AND_TRANSPORT_AUDIT","kind":"baseline","setup":"Audit all masks/endpoints, schema/parse/validity rates, output length, action/pass distribution, repeated edits, matched-valid G, exact/near source/IR/graph neighbors, and unrelated public instruction-format behavior for every target fork.","expected":"No prohibited prose/private-thought field is loss-bearing or scored. Any apparent contrast explained by validity, parser/style/global drift, semantic neighbor reuse, or another transport explanation is recorded as such and cannot upgrade Stage-C wording. Absence of deferred same-corpus text/raw-LoRA/wrong-life/organized-memory controls is disclosed rather than imputed to HARNESS.","falsifies":"No-private-thought boundary, outcome/action interpretation, or broad external-memory baseline language.","evidence_artifact":"v6cg_v3_endpoint_mask_style_reuse_transport_audit.json","required_before":"scientific_claim"},
+    {"test_id":"V6CG_T11A_STAGE_D_REPLICATION_COMPARATOR_AND_CLAIM_GATE","kind":"independent_review","setup":"A later proposal supplies fresh tasks, independent paired lives, life-level order/seed/uncertainty plan, post-context checkpoints, direct outcome-selection intervention, strong declared external-memory/transport controls, and independent review.","expected":"No Stage-C disposition opens Stage D. Directional or paper claims require a new hash-bound change/run preregistration, stronger controls including same-corpus text/raw-LoRA/wrong-life/organized memory, life-level analysis, independent approval, and human authorization.","falsifies":"Any attempt to turn one recipe realization into mechanism, causal-credit, lifetime, baseline-superiority, slope, saturation, flywheel, or paper evidence.","evidence_artifact":"v6cg_v3_stage_d_replication_comparator_claim_gate.json","required_before":"scientific_claim"},
+    {"test_id":"V6CG_T12A_TRANSITION_SCOPED_REVIEW_AND_AUTHORIZATION","kind":"independent_review","setup":"Fresh review verifies this exact v3 change, local hashes, atomic matrix, score/split/recipe bytes, determinism-tier contract, and the one A-through-C authorization record. Each transition verifies prior receipts and that its work remains inside those exact bytes.","expected":"One exact ratification may authorize the bounded A-through-C ladder without repeated human prompts. Independent review and machine-verifiable gates still precede each transition. A mismatch, repair, new download source, patch, alternate substrate, model/recipe drift, sweep/tuning, target-informed choice, Stage-D work, or scientific claim stops and requires a new change; nothing silently expands scope.","falsifies":"Unauthorized scope expansion, repeated permission theater inside an already ratified scope, or use of ratification to bypass independent gates.","evidence_artifact":"v6cg_v3_transition_scoped_review_authorization.json","required_before":"implementation"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "Do you ratify these exact v3 two-system architecture bytes and authorize their bounded A-through-C program to run without further human prompts when every independent review and machine-verifiable gate passes: conditional unchanged-local CompilerGym/POJ104 fit, fixture and CPU harness implementation, acquisition-only model/LoRA canary, and the common-order one-pair recipe-feasibility pilot? Any failure, repair, substitution, tuning, target-informed choice, Stage-D experiment, or scientific claim stops outside this authorization.",
+    "forbidden_before_approval": [
+      "Before exact ratification: creating or modifying any v6 runner, packet assembler, trainer, benchmark adapter, split constructor, fixture, test, model integration, or evaluation implementation",
+      "Before exact ratification: inspecting or executing the proposed substrate, installing dependencies, launching CPU/model/GPU work, training, opening targets, or running Stage C",
+      "After ratification: patching or substituting CompilerGym, LLVM, POJ104, model, tokenizer, dependencies, writer recipe, score, split, context contract, or task counts without a new change",
+      "Opening sealed Stage-C target outcomes or using them to choose a cap, split, threshold, order, seed, recipe, repair, or report",
+      "Adding a preservation/anchor/KL/auxiliary training objective, preservation-only adapter, extra on-policy arm, counterbalancing claim, sweep, tuning, text/RAG/wrong-life/raw-LoRA control, or alternate benchmark without a new bound change",
+      "Treating a proposal, static receipt, canary, one-pair disposition, model agreement, or schema validation as a scientific, causal-credit, mechanism, consciousness, lifetime-growth, baseline-superiority, or paper claim"
+    ]
+  }
+}

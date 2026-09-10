@@ -1,0 +1,31 @@
+{
+  "schema_version":1,
+  "artifact_type":"architecture_consensus",
+  "consensus_id":"chg_20260901_rml_d0_exact_v2.consensus",
+  "change_id":"chg_20260901_rml_d0_exact_v2",
+  "state":"human_required",
+  "architecture_change_sha256":"bd3fc32b004047d3a3a9e7700193e9feb8f5850541741a4037bf5a1b8d91e748",
+  "interpretation_hashes":[
+    {"interpretation_id":"chg_20260901_rml_d0_exact_v2.constructibility","sha256":"213cd260833aab2434917e5f3f0b746db0807a1e3ce93893e8b6792ba16e7ab7"},
+    {"interpretation_id":"chg_20260901_rml_d0_exact_v2.paper","sha256":"0ed7614ebe1b72ecf077c5a99679c5f4a9c776c495e8d5723700464a63ca2b31"}
+  ],
+  "critique_sha256":"4633466a95575ebef82b1bc1d729047f9f964637a7e7e7ea1d07b14f7c144af1",
+  "recommendation":"proceed_to_implementation",
+  "agreements":["Candidate B disposes the fatal Candidate A target, bridge, visibility, selection, cardinality, and chronology defects at the design level.","D0 is CPU instrument conformance only and supplies no learning or paper evidence.","Stage A must precede Stage B, and Stage B exact Bayes/resource feasibility must precede the 64-pair gate.","No model, GPU, learned-memory, locked, on-policy, or claim work is reachable from this change."],
+  "disagreements":[
+    {"disagreement_id":"RMLD0V2_D01_WHEN_RESOURCE_UNCERTAINTY_BLOCKS","sources":["constructibility interpretation","adversarial critique"],"issue":"Whether unexecuted production Bayes/resource feasibility should block even the Stage-A microimplementation.","positions":[{"actor":"constructibility interpretation","position":"Proceed to Stage A because the finite design is nonempty and Stage A is itself the registered mathematical check."},{"actor":"adversarial critique","position":"Treat production feasibility as material and do not infer Stage B or CPU release from finite witness success."}],"resolution":{"status":"resolved","rationale":"Both are satisfied by staged authority: Stage A is authorized, while Stage B and CPU release remain unreachable until prior reports pass exactly.","selected_position":"Proceed to Stage A only; preserve Stage B and CPU as separate fail-closed transitions.","required_change":"No proposal-byte change; enforce the declared graph edge and resource receipts in implementation.","acceptance_test_ids":["RMLD0V2_T01_FINITE_NONEMPTINESS_AND_TRANSITIONS","RMLD0V2_T05_RESOURCE_AND_CLAIM_FIREWALL"]}}
+  ],
+  "concern_dispositions":[
+    {"concern_id":"RMLD0V2_C01_EXACT_BAYES_AND_RESOURCE_FEASIBILITY_UNPROVEN","status":"accepted","rationale":"This is a real execution risk, not a design contradiction. It remains a mandatory Stage-B/CPU falsifier.","resolution_id":"RMLD0V2_D01_WHEN_RESOURCE_UNCERTAINTY_BLOCKS","required_change":"Implement exact counters and maxima-based release; never approximate or auto-promote."},
+    {"concern_id":"RMLD0V2_C02_RENDERED_PANEL_IS_STILL_A_SYNTHETIC_TRUTH_TABLE","status":"accepted","rationale":"D0 is deliberately a controlled synthetic instrument and cannot support action-learning or external-validity language; the staged-scope disagreement resolves this by authorizing only conformance work.","resolution_id":"RMLD0V2_D01_WHEN_RESOURCE_UNCERTAINTY_BLOCKS","required_change":"Keep all D0 reports conformance-only and reserve action-learning for separately authorized randomized on-policy work."}
+  ],
+  "upstream_disagreement_dispositions":[],
+  "acceptance_test_dispositions":[
+    {"test_id":"RMLD0V2_T01_FINITE_NONEMPTINESS_AND_TRANSITIONS","status":"retained","rationale":"This is the first executable constructibility gate.","replacement_test_id":""},
+    {"test_id":"RMLD0V2_T02_SOURCE_GROWTH_CHRONOLOGY_AND_LEAKAGE","status":"retained","rationale":"It prevents target, action-string, chronology, and selection shortcuts.","replacement_test_id":""},
+    {"test_id":"RMLD0V2_T03_J_P_HEADROOM_AND_NECESSITY","status":"retained","rationale":"It establishes the connected and prospective target geometry.","replacement_test_id":""},
+    {"test_id":"RMLD0V2_T04_REPLAY_AND_EVALUATION_ISOLATION","status":"retained","rationale":"It prevents evaluation from becoming training data or changing later life state.","replacement_test_id":""},
+    {"test_id":"RMLD0V2_T05_RESOURCE_AND_CLAIM_FIREWALL","status":"retained","rationale":"It converts production feasibility and claim scope into falsifiable gates.","replacement_test_id":""}
+  ],
+  "human_decision":{"required":true,"status":"pending","questions":["Authorize the exact CPU-only implementation and staged execution bound to Candidate B and this consensus?","Preserve every forbidden model/GPU/claim scope even if D0 passes?"],"implementation_forbidden":true}
+}

@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "v6simple_v5.adjudicated",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v5",
+  "state": "human_required",
+  "architecture_change_sha256": "b808cbbe0353f15f6eef67f81037d3b0b3ae562b8b3e72bf42f920bda18b15ff",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "v6simple.science.v5",
+      "sha256": "82180d90e8f060b312f4d097c804327a5db49be2dec474c3b6b0deeba671d8d0"
+    },
+    {
+      "interpretation_id": "v6simple_v5.systems",
+      "sha256": "97cfbf6940c03e26426a67cbc084469d57aa07f4586d43c0e509c3438ff06732"
+    }
+  ],
+  "critique_sha256": "3ce741cdda432364d9b4bd43d3f04f634511ae76390200263bf065e29188c8e7",
+  "recommendation": "rework",
+  "agreements": [
+    "The proposal is a deliberately narrow lower-bracket recipe assay, not the final persistent-context thinker, context-curation policy, intelligent sleeper, continual-learning study, or paper experiment requested in the broader directive.",
+    "HARNESS and EXPERIENTIAL are the only on-policy systems; EXPERIENTIAL_OFF is a final read-only same-snapshot mount diagnostic and not a third on-policy agent.",
+    "The strict one-field action grammar, six charged slots, reconstructed public packet, bounded own-memory rule, success-filtered deterministic writer, syntactic holdout, and target quarantine are appropriate simplifying directions once their byte-level and lifecycle ambiguities are repaired.",
+    "D_HE is only a descriptive whole-life strategy contrast because post-sleep policies, trajectories, and memories may diverge; D_ONOFF is only a descriptive final-mount contrast conditional on one realized EXPERIENTIAL snapshot.",
+    "The writer performs positive-only success-filtered action cloning: the post-action outcome gates row admission but is not an SFT target, so the assay cannot establish an outcome model, reward relation, temporal-credit mechanism, or learning-from-failure mechanism.",
+    "Source and bitcode nonidentity provide syntactic holdout only, and instruction-count reduction is an interface metric rather than functional-correctness, semantic-independence, population, efficacy, superiority, lifelong, or paper evidence.",
+    "T01 through T05 are useful pre-GPU gates, but no model call, learned action, training, target assay, GPU use, or recipe result is authorized by this consensus; exact human ratification and the later exact run gate remain mandatory."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "D01_FINITE_PACKET_AND_LENGTH_CONTRACT",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D01_FINITE_PACKET_DOMAIN",
+        "critique:CRIT_V5_C01_UNBOUNDED_PACKET_CONTRACT"
+      ],
+      "issue": "Whether the current integer and observation domains permit the required proof that a largest legal inference packet exists and also fits the writer's 1,024-token limit.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Counts need only be finite nonnegative integers and observations need only be integer vectors; the later manifest supplies the vector shape and the tokenizer proves the largest packet fits, while runtime overflow aborts."
+        },
+        {
+          "actor": "systems_interpreter_and_critique",
+          "position": "Unbounded JSON integers make the legal serialized domain unbounded, and repeating observations in memory compounds it; no largest packet can be preflighted until normative value, dimension, byte, and token limits are defined."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The latter position follows mathematically. Runtime abort does not repair a promise to preflight the largest legal packet, and a later manifest cannot silently choose architecture-level admissible domains.",
+        "selected_position": "Rework the protocol to define a finite packet domain and prove one exact worst case against both inference capacity and training-sample capacity.",
+        "required_change": "Bind the Autophase vector length and fixed order, signed or unsigned bounds for every serialized integer, maximum array lengths, maximum canonical UTF-8 packet bytes and tokens, exact out-of-domain classification, and one computed maximum including eight full memory records, chat control bytes, generation allowance, and EOR. T01 must exercise all boundaries and T02 must prove every admitted writer row fits 1,024 tokens; values outside the domain fail closed and are never truncated or repaired.",
+        "acceptance_test_ids": [
+          "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D02_NONNEGATIVE_SCORE_DOMAIN",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D02_NEGATIVE_SCORE",
+        "v6simple.science.v5:SCI_V5_D01_NEGATIVE_SCORE",
+        "critique:CRIT_V5_C02_SCORE_DOMAIN_CONTRADICTION"
+      ],
+      "issue": "Whether a determinate F_i can be negative under the proposed best-so-far formula.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "F_i may be below zero or above one and is never clipped."
+        },
+        {
+          "actor": "both_interpreters_and_critique",
+          "position": "With d_i=I0_i-IOz_i at least one and best_count defined as the minimum including reset, best_count is at most I0_i, so every determinate F_i is nonnegative although it may exceed one."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The second position is a direct consequence of the ratified formula. Keeping the contradictory sentence would make T01 internally impossible.",
+        "selected_position": "Retain best-so-far scoring, delete the below-zero assertion, and require F_i greater than or equal to zero without clipping above one.",
+        "required_change": "Correct protocol.md and matching proposal language to state that determinate F_i is in [0,infinity), add exact F=0 and F>1 fixtures and a nonnegativity property golden to T01, and require a new architecture change if final-current-count scoring or any negative-score design is desired.",
+        "acceptance_test_ids": [
+          "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D03_CANONICAL_STATE_IDENTITIES_AND_TRANSITIONS",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems",
+        "critique:CRIT_V5_C11_STATE_IDENTITIES_AND_TRANSITIONS_UNBOUND"
+      ],
+      "issue": "Whether the present prose uniquely determines event sequencing, rejected/no-op transitions, observation timing, memory eviction, and the exact sealed snapshot used by target forks.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The declared history and memory object shapes, current/best-count rules, event order, and statement that target forks receive the same EXPERIENTIAL memory snapshot are sufficient implementation guidance."
+        },
+        {
+          "actor": "systems_interpreter_and_critique",
+          "position": "event_seq scope, rejected-action and no-op post-state, pre-slot observation timing after worsening actions, and whether a snapshot includes counters beyond memory are open design choices that can change prompts, dedup winners, and the ON/OFF intervention."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "These values cross decision and fork boundaries and therefore are normative state, not harmless implementation detail.",
+        "selected_position": "Rework to one canonical slot-transition function, one life-scoped event sequence, and one byte-canonical snapshot schema.",
+        "required_change": "Specify whether event_seq advances for every acquisition slot and its zero point; define pre_count, post_count, current_count, best_count, observation, parse_valid, accepted, history, and memory effects for deliberate no-op, malformed no-op, accepted improvement, accepted worsening, and service rejection; require each packet observation to be the authoritative current pre-action state; define atomic event commit ordering; and bind a canonical snapshot containing every state field needed by a fork, including memory, tasks_completed, sleep_index, and sequence counters, with exact hashes and byte identity for ON/OFF.",
+        "acceptance_test_ids": [
+          "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D04_TOTAL_FAIL_CLOSED_LIFECYCLE",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D08_TOTAL_FAILURE_TABLE_REQUIRED",
+        "critique:CRIT_V5_C03_NO_TOTAL_LIFECYCLE_DISPOSITION"
+      ],
+      "issue": "Whether the three final dispositions and scattered abort language already define a unique terminal result for every acquisition, sleep, publication, rebuild, snapshot, fork, quarantine, and reporting failure.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Target invariant failures map to INTEGRITY_FAILURE, required target-cell uncertainty maps to INDETERMINATE, and writer failures abort publication, which is enough to fail closed."
+        },
+        {
+          "actor": "systems_interpreter_and_critique",
+          "position": "Acquisition indeterminacy, zero rows, sleep-1 or null-receipt failure, atomic interruption, crash timing, snapshot failure, fork failure, partial quarantine, and reporter failure lack one explicit stop/continue and final-disposition mapping."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "An abort instruction without a total run-level disposition permits scientifically different continuation, fallback, resume, and reporting behavior.",
+        "selected_position": "Require a total fail-closed state-transition and disposition table before implementation.",
+        "required_change": "Enumerate every normal and failure transition from reset through report, including acquisition unknown state, both no-op kinds, rejection, zero eligible rows, null receipt failure, sleep/publication interruption, missing or nonfinite update telemetry, rebuild mismatch, snapshot or mount failure, process crash, partial target cell, quarantine/barrier failure, and reporter failure. Give each exactly one atomic commit rule, stop/continue outcome, permitted artifact, and INTEGRITY_FAILURE or INDETERMINATE classification; forbid fallback to a previous/null adapter, retry, substitution, partial resume, or later target opening unless exact revised bytes expressly define it. Exercise every row through T01-T03 fault injection.",
+        "acceptance_test_ids": [
+          "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D05_ACTUAL_RUN_ACCEPTANCE_GATE",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D04_RUNTIME_ACCEPTANCE_GAP",
+        "v6simple.science.v5:SCI_V5_D04_MISSING_POST_RUN_GATE",
+        "critique:CRIT_V5_C04_ACTUAL_RUN_ACCEPTANCE_GAP"
+      ],
+      "issue": "Whether T01-T05 can authorize reporting RECIPE_COMPLETE even though every registered test is completed before the model/GPU run whose evidence must support that result.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "T01-T05 plus later review and run-manifest ratification are sufficient; operational receipts described in the protocol can support the final disposition."
+        },
+        {
+          "actor": "both_interpreters_and_critique",
+          "position": "A prose receipt requirement is not a registered acceptance test, and all five current tests can pass before actual parity, updates, mounts, targets, quarantine, and metric computation fail."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The current registry contains no test capable of accepting the actual run. Consensus cannot invent a replacement ID, so this defect requires a successor proposal with a new registered test and fresh hash-bound deliberation.",
+        "selected_position": "Retain T01-T05 only as pre-GPU gates and add a separately named, later-human-ratified post-run conformance test before any recipe result can be released.",
+        "required_change": "The successor acceptance-test registry must add a post-run test with explicit setup, expected result, falsifier, evidence artifact, and authority boundary. It must consume every actual acquisition slot, exact tasks-1-through-4 parity, both sleep row/copy/update and finiteness receipts, both clean rebuilds, selected authentic and null mount hashes, sealed snapshots, process/teardown evidence, all twelve target cells, quarantine release, independent metric recomputation, and first-applicable disposition. It must fail closed before RECIPE_COMPLETE; T03 and T05 remain only partial pre-run coverage.",
+        "acceptance_test_ids": [
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D06_UNIQUE_FINAL_ADAPTER_AND_COMPARISON",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D06_FINAL_ADAPTER_UNBOUND",
+        "v6simple.science.v5:SCI_V5_D06_REBUILD_TOLERANCE_MOUNT",
+        "critique:CRIT_V5_C05_FINAL_ADAPTER_NOT_IDENTIFIED"
+      ],
+      "issue": "Whether tolerance agreement between clean rebuilds uniquely identifies the exact authentic adapter mounted for targets.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Sleep 2 publishes the final adapter, then the final adapter is built twice and compared within absolute and relative 1e-6 tolerances; a complete tensor manifest and final adapter hash suffice."
+        },
+        {
+          "actor": "both_interpreters_and_critique",
+          "position": "The wording permits two or three builds, tolerance-equivalent builds may have different hashes, and tensor inventory, numerical comparison, serialization, and authentic-build selection are underdefined."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A treatment must be identified before target execution. Numerical closeness is a gate, not a deterministic artifact-selection rule.",
+        "selected_position": "Predeclare build A as the sole publication candidate and authentic target mount; build B is comparison-only, and no separate third sleep-2 build exists.",
+        "required_change": "Specify exactly two clean-process final builds from the same canonical sleep-2 rows and seed; designate A before execution, never mount B, record both adapter and tensor-manifest hashes, and bind A's exact hashes into the sealed target manifest. Define exact tensor-name and shape equality, allowed dtype conversion, missing/extra and NaN/Inf rejection, flattening/name order, float32 conversion, accumulation precision, L2 and max-absolute algorithms, serialization closure, and threshold inclusivity. Any comparison failure or non-A mount is INTEGRITY_FAILURE and blocks targets.",
+        "acceptance_test_ids": [
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D07_EXACT_TRAINING_SAMPLE_SERIALIZATION",
+      "sources": [
+        "proposal",
+        "v6simple.science.v5",
+        "critique:CRIT_V5_C06_TRAINING_SAMPLE_BYTES_UNDERDEFINED"
+      ],
+      "issue": "Whether exact stored user-message and target bytes plus a later-pinned chat template uniquely define the tokenized SFT example and action-only label mask.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The row input and target are exact canonical bytes, while the later manifest pins SYSTEM_TEXT, tokenizer, chat template, EOR, and related library behavior."
+        },
+        {
+          "actor": "science_interpreter_and_critique",
+          "position": "SYSTEM_TEXT placement, template invocation, assistant-boundary bytes, automatic BOS/EOS behavior, exactly-one-EOR handling, padding side, and control-token masking remain materially different sample constructions that cannot be selected later without ratified semantics."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Those choices change sample length, labels, gradients, and adapter identity; pinning bytes later is insufficient without a normative construction algorithm now.",
+        "selected_position": "Rework to one exact training-sample serialization and token-label construction, with later manifests supplying only values within that ratified algorithm.",
+        "required_change": "Define the exact concatenation/template API and flags for SYSTEM_TEXT, stored user bytes, assistant prefix, canonical target, and exactly one EOR; specify BOS/EOS insertion or suppression, special-token handling, padding side and token, truncation prohibition, token-boundary verification, and a token-by-token label rule where only target JSON and one EOR bear labels. T02 must bind literal byte/token/mask goldens and T05 must bind the exact tokenizer/template implementation and hashes.",
+        "acceptance_test_ids": [
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D08_COLD_INFERENCE_AND_NULL_MOUNT_DETERMINISM",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D03_GREEDY_NOT_DETERMINISTIC",
+        "v6simple.science.v5",
+        "critique:CRIT_V5_C07_GREEDY_IS_NOT_RUNTIME_DETERMINISM"
+      ],
+      "issue": "Whether greedy decoding and a named canonical null adapter are enough to establish tasks-1-through-4 equality and reproducible final mount contrasts.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Greedy decoding removes sampling choice, and the same pinned base plus canonical null adapter makes the systems' effective weights identical through task 4."
+        },
+        {
+          "actor": "both_interpreters_and_critique",
+          "position": "Kernel, dtype, batching, concurrency, tie-breaking, seed initialization, generation/stop behavior, byte extraction, and null-mount implementation can diverge without sampling; real-stack evidence is required."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Greedy is a decoding policy, not a complete deterministic-runtime contract, and a null adapter name does not prove numerical base equivalence.",
+        "selected_position": "Bind a cold single-request inference contract, exact null-adapter artifact and mount procedure, and real-run equality checks; any pre-sleep divergence is an integrity failure.",
+        "required_change": "Pin model/runtime/kernel and deterministic flags, dtype, hardware, batch and concurrency policy, all seeds and initialization, tie handling, generation allowance, stop/EOR handling, and response-byte extraction. Define the null adapter's tensor inventory, bytes, hash, mount path, and effective-base equivalence canary. Add repeated cold byte-identical inference canaries to the later run gate and require exact task-1-through-4 equality of request bytes, effective-weight hashes, raw outputs, parsed actions, service transitions, observations, histories, memories, and counters; any mismatch stops as INTEGRITY_FAILURE without averaging or retry.",
+        "acceptance_test_ids": [
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D09_ACTOR_CAPABILITIES_AND_REAL_NONINTERFERENCE",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D05_STAGE_MATRIX_TOO_COARSE",
+        "v6simple.science.v5:SCI_V5_D05_SYNTHETIC_NONINTERFERENCE_LIMIT",
+        "critique:CRIT_V5_C08_STAGE_VISIBILITY_CANNOT_PROVE_NONINTERFERENCE"
+      ],
+      "issue": "Whether the stage-level visibility matrix and synthetic lifecycle mocks can establish target blindness, writer isolation, mount secrecy, no-writeback, process cleanup, and quarantine timing on the actual stack.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The visible/derived/hidden/forbidden stage matrix plus T03 mock lifecycle tests and later audit receipts adequately constrain information flow."
+        },
+        {
+          "actor": "both_interpreters_and_critique",
+          "position": "Stages merge actors with incompatible rights, absence from a packet is not capability denial, mocks cannot prove provider/filesystem/accelerator isolation, and AUDIT lacks the temporal quarantine barrier."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The coarse matrix is a useful summary but cannot be the enforceable least-authority contract or the real-stack evidence gate.",
+        "selected_position": "Retain the summary matrix and add a ratified actor-by-artifact capability and temporal-barrier contract, synthetic denial tests, and actual-run evidence.",
+        "required_change": "Enumerate packet assembler/parser, environment, event ledger, memory writer, row selector, trainer, publisher, mount manager, snapshot reader, target router, each fork, quarantine writer, reporter, reviewer, and sealer as separate principals. For every artifact and service, bind read/write/create/delete/derive/influence rights, filesystem/service/network namespaces, activation times, and teardown. Require target manifests to be unreadable by acquisition/writer/trainer/model principals, target forks to be write-only to quarantine with no cross-fork or life writeback, the reporter to remain disabled until every fork and model process is destroyed including crash recovery, and real receipts for process IDs, open/read/write denials, mounts, caches, RNG/trainer/temp teardown, snapshot hashes, and barrier release. A separately registered later real-stack noninterference test is required because T03 mocks are necessary but insufficient.",
+        "acceptance_test_ids": [
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T04_CPU_ENVIRONMENT_MANIFEST_SEAL",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D10_CANONICAL_ENVIRONMENT_SEAL",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems:V6S_SYS_D07_ENV_SELECTION_UNDERPINNED",
+        "v6simple.science.v5",
+        "critique:CRIT_V5_C09_ENVIRONMENT_SEAL_NOT_CANONICAL"
+      ],
+      "issue": "Whether the current deterministic hash-order rule and a request to repeat baselines uniquely determine the 8/4 environment manifest.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Ascending SHA256(master_split_seed, separator, canonical URI), eligibility, distinct hashes, and repeated reset/Autophase/Oz observations are sufficient to seal the first eight and next four."
+        },
+        {
+          "actor": "interpreters_and_critique",
+          "position": "Seed encoding, URI canonicalization, enumeration and duplicate handling, hash collisions, distinctness/rejection precedence, repeat count, cross-process requirements, and baseline-drift policy are unspecified and can select different panels."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A hash formula is reproducible only after all of its input bytes and candidate-state transitions are canonical.",
+        "selected_position": "Rework T04's normative sealer algorithm and authority boundary so two cold executions produce byte-identical complete manifests and rejection ledgers or fail.",
+        "required_change": "Bind master_split_seed length and byte encoding, canonical URI normalization and UTF-8 rules, exhaustive catalog enumeration order, duplicate policy, hash-collision failure, eligibility and distinctness rejection precedence, first-eight/next-four cutoff, exact selected and rejected transcript, and at least two cold fresh-process baseline/sealer executions. Specify whether Autophase vectors and integer I0/IOz values must be exactly identical on every repetition and require terminal failure on any selected-candidate drift, collision, manual substitution, download, patch, alternate substrate, learned/model action, target outcome, or Fable input. Clarify that architecture approval permits only the one reviewed unchanged-local no-model sealing workflow needed for T04 and that any later rerun follows the separately ratified run scope.",
+        "acceptance_test_ids": [
+          "V6S_T04_CPU_ENVIRONMENT_MANIFEST_SEAL",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D11_DESCRIPTIVE_QUESTION_AND_SUCCESS_FILTERED_WRITER",
+      "sources": [
+        "proposal",
+        "v6simple.science.v5:SCI_V5_D02_CAUSAL_IMPROVEMENT_WORDING",
+        "v6simple.science.v5:SCI_V5_D03_ACTION_OUTCOME_MECHANISM",
+        "critique:CRIT_V5_C10_CAUSAL_LANGUAGE_EXCEEDS_DESIGN"
+      ],
+      "issue": "Whether the opening improvement question and action--outcome wording are compatible with a single-life descriptive assay whose writer sees outcome only as a positive admission filter.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The assay asks whether a deterministic write of successful public action--outcome experience into LoRA can improve held-out decisions beyond an otherwise identical external-memory agent, while later paragraphs prohibit broad claims."
+        },
+        {
+          "actor": "science_interpreter_and_critique",
+          "position": "D_HE includes history and memory divergence, D_ONOFF is conditional on one realized history, four fixed targets provide no inference, and the training example contains no post-action outcome; the registered question itself must be narrowed rather than relying only on a later disclaimer."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The estimands and training signal support recipe completion and raw descriptive contrasts only. Stronger causal language would invite claims the design cannot adjudicate.",
+        "selected_position": "Restate the question as whether the exact success-filtered action-cloning recipe completes and what descriptive fixed-panel D_HE and D_ONOFF values it yields for deciding whether replication is worth allocating.",
+        "required_change": "Replace improvement-beyond and action--outcome-learning formulations throughout the proposal/protocol with success-filtered compilation of immediately improving action examples. State that D_HE is a whole-life strategy contrast, D_ONOFF is an acute final-mount diagnostic conditional on the realized EXPERIENTIAL snapshot, training dose is endogenous to realized row count, and neither contrast identifies outcome learning, reward/credit mechanism, efficacy, superiority, semantic transfer, or population effect. Preserve the existing one-life, instruction-count, syntactic-holdout, functional-correctness, and paper-claim prohibitions in every receipt and report.",
+        "acceptance_test_ids": [
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D12_REVIEW_MANIFEST_AND_CANARY_CLOSURE",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems",
+        "v6simple.science.v5",
+        "critique:CRIT_V5_C12_REVIEW_AND_MANIFEST_CLOSURE_UNDEFINED"
+      ],
+      "issue": "Whether T05 objectively defines reviewer independence, veto semantics, the finite audited surface, run-manifest closure, and the meaning and adaptive influence of the 32B GH200 acquisition canary.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A fresh independent reviewer and author-side advocate inspect exact implementation, receipts, generated manifests, and enumerated audited surfaces; later human ratification can authorize the unchanged sealer, canary, rebuilds, and assay."
+        },
+        {
+          "actor": "interpreters_and_critique",
+          "position": "Fresh/independent, audited surfaces, every changed byte, and canary scope are not operationally closed, so coverage, authority, veto, and whether preliminary output can alter the final run remain variable."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "T05 cannot be an objective gate until it binds a finite closure and non-overridable verdict semantics. An underspecified learned canary also creates an adaptation path.",
+        "selected_position": "Rework T05 to a content-addressed finite review closure with explicit reviewer independence and veto, and define the canary as a nonadaptive part of one exact run or remove it.",
+        "required_change": "Define reviewer freshness and independence, conflicts, required evidence access, signed verdict vocabulary, reject/rework veto, and advocate-only response authority. Enumerate the closed set of source files, schemas, fixtures, receipts, manifests, model/tokenizer/prompt/template/null-adapter/pass catalog, compiler/runtime/trainer libraries, environment variables, deterministic flags, services, hardware/driver properties, commands, readers/writers, expected artifacts, and hashes that the verifier covers. Specify whether the GH200 canary is the complete acquisition life or an exact prefix within the final run; forbid any additional preliminary learned run, tuning, selection, retry, target exposure, state reuse, or output-driven change, and require a new bound change for drift.",
+        "acceptance_test_ids": [
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "D13_INTERPRETATION_REMEDIES_NEED_NEW_BYTES",
+      "sources": [
+        "proposal",
+        "v6simple_v5.systems",
+        "v6simple.science.v5",
+        "critique:CRIT_V5_C13_INTERPRETATION_REMEDIES_REQUIRE_ADJUDICATION"
+      ],
+      "issue": "Whether implementation may treat the interpreters' stronger capability separation, atomicity, hash chaining, restart, and real-stack evidence proposals as already authorized implications of the current proposal.",
+      "positions": [
+        {
+          "actor": "implicit_proposal_path",
+          "position": "The existing audit, atomic-publication, lifecycle, and later-manifest language could be implemented using the interpreters' detailed remedies without revising the architecture bytes."
+        },
+        {
+          "actor": "critique",
+          "position": "Those remedies materially constrain components, state commits, evidence, and failure behavior and therefore must be placed in revised exact bytes, explicitly rejected, or replaced by equally testable controls before implementation."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The durable path requires the human to ratify the actual architecture and tests, not unstated interpretation text. Consensus selects the substantive remedies above but cannot mutate the proposal.",
+        "selected_position": "Create a successor proposal/protocol that explicitly incorporates D01-D12 and registers every missing acceptance gate before seeking a new hash-bound interpretation, critique, consensus, and human decision.",
+        "required_change": "Do not implement directly from interpretation or consensus prose. In revised exact bytes, enumerate capability-separated components; canonical atomic event and publication commits; append-only, content-addressed or equivalently tamper-evident receipts; fail-closed restart behavior; real-stack parity, read/write, mount, process, teardown, and quarantine evidence; and all alternative controls chosen instead of those mechanisms. Re-run the complete durable deliberation chain and bind every new source hash before any implementation or sealer action.",
+        "acceptance_test_ids": [
+          "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+          "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+          "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+          "V6S_T04_CPU_ENVIRONMENT_MANIFEST_SEAL",
+          "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW"
+        ]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "CRIT_V5_C01_UNBOUNDED_PACKET_CONTRACT",
+      "status": "accepted",
+      "rationale": "The legal serialized integer domain is unbounded, so the required largest-packet preflight cannot be implemented from current bytes.",
+      "resolution_id": "D01_FINITE_PACKET_AND_LENGTH_CONTRACT",
+      "required_change": "Add finite value, vector, byte, and token bounds plus exact fail-closed behavior and inference/writer worst-case goldens as specified in D01."
+    },
+    {
+      "concern_id": "CRIT_V5_C02_SCORE_DOMAIN_CONTRADICTION",
+      "status": "accepted",
+      "rationale": "The best-so-far numerator is necessarily nonnegative under a positive denominator, making the below-zero statement contradictory.",
+      "resolution_id": "D02_NONNEGATIVE_SCORE_DOMAIN",
+      "required_change": "Delete the negative-score claim and add exact F=0, F>1, and F>=0 goldens without changing the metric."
+    },
+    {
+      "concern_id": "CRIT_V5_C03_NO_TOTAL_LIFECYCLE_DISPOSITION",
+      "status": "accepted",
+      "rationale": "Scattered abort language does not assign every acquisition-through-report failure one atomic transition and terminal disposition.",
+      "resolution_id": "D04_TOTAL_FAIL_CLOSED_LIFECYCLE",
+      "required_change": "Add and fault-test the total transition/disposition table in D04, forbidding retry, fallback, substitution, partial resume, and unauthorized continuation."
+    },
+    {
+      "concern_id": "CRIT_V5_C04_ACTUAL_RUN_ACCEPTANCE_GAP",
+      "status": "accepted",
+      "rationale": "Every registered test is pre-GPU and therefore none can validate the actual evidence required to report RECIPE_COMPLETE.",
+      "resolution_id": "D05_ACTUAL_RUN_ACCEPTANCE_GATE",
+      "required_change": "Register in a successor change the explicit post-run conformance test described in D05; do not treat T01-T05 or prose receipts as its substitute."
+    },
+    {
+      "concern_id": "CRIT_V5_C05_FINAL_ADAPTER_NOT_IDENTIFIED",
+      "status": "accepted",
+      "rationale": "Tolerance permits byte-distinct rebuilds, and the current two-versus-three-build ambiguity leaves the target treatment unbound.",
+      "resolution_id": "D06_UNIQUE_FINAL_ADAPTER_AND_COMPARISON",
+      "required_change": "Define exactly two builds, predesignate A as the only mount, fully specify tensor comparison/serialization, and bind both hashes with A's hash in the target manifest."
+    },
+    {
+      "concern_id": "CRIT_V5_C06_TRAINING_SAMPLE_BYTES_UNDERDEFINED",
+      "status": "accepted",
+      "rationale": "Stored row bytes do not determine chat control, special-token, boundary, padding, EOR, and token-label behavior, all of which alter training.",
+      "resolution_id": "D07_EXACT_TRAINING_SAMPLE_SERIALIZATION",
+      "required_change": "Bind one exact sample construction and literal byte/token/mask goldens as specified in D07."
+    },
+    {
+      "concern_id": "CRIT_V5_C07_GREEDY_IS_NOT_RUNTIME_DETERMINISM",
+      "status": "accepted",
+      "rationale": "Greedy decoding alone does not control kernels, concurrency, ties, initialization, stop handling, extraction, or null-mount equivalence.",
+      "resolution_id": "D08_COLD_INFERENCE_AND_NULL_MOUNT_DETERMINISM",
+      "required_change": "Bind the full cold inference/null-mount contract and require real exact tasks-1-through-4 parity plus repeated cold canaries, with mismatch classified as INTEGRITY_FAILURE."
+    },
+    {
+      "concern_id": "CRIT_V5_C08_STAGE_VISIBILITY_CANNOT_PROVE_NONINTERFERENCE",
+      "status": "accepted",
+      "rationale": "Composite stages do not encode the different principals, directional rights, or temporal barriers needed for noninterference.",
+      "resolution_id": "D09_ACTOR_CAPABILITIES_AND_REAL_NONINTERFERENCE",
+      "required_change": "Add the actor-by-artifact capability matrix, enforced namespaces, quarantine barrier, denial tests, and actual-run capability/process receipts in D09."
+    },
+    {
+      "concern_id": "CRIT_V5_C09_ENVIRONMENT_SEAL_NOT_CANONICAL",
+      "status": "accepted",
+      "rationale": "Unfixed seed/URI bytes, enumeration, collision and rejection rules, repetition count, and drift policy can produce different manifests.",
+      "resolution_id": "D10_CANONICAL_ENVIRONMENT_SEAL",
+      "required_change": "Bind the complete canonical sealer algorithm, at least two cold executions, byte-identical manifests/rejection ledgers, fail-on-drift rule, and exact staged authority described in D10."
+    },
+    {
+      "concern_id": "CRIT_V5_C10_CAUSAL_LANGUAGE_EXCEEDS_DESIGN",
+      "status": "accepted",
+      "rationale": "The design yields a whole-life descriptive contrast and a conditional acute mount diagnostic from positive-only action cloning, not causal improvement or outcome learning.",
+      "resolution_id": "D11_DESCRIPTIVE_QUESTION_AND_SUCCESS_FILTERED_WRITER",
+      "required_change": "Narrow the registered question and writer/result language throughout exact bytes and receipts as specified in D11."
+    },
+    {
+      "concern_id": "CRIT_V5_C11_STATE_IDENTITIES_AND_TRANSITIONS_UNBOUND",
+      "status": "accepted",
+      "rationale": "Open event, rejected/no-op, observation, commit, and snapshot semantics can change prompts, training rows, and the ON/OFF state identity.",
+      "resolution_id": "D03_CANONICAL_STATE_IDENTITIES_AND_TRANSITIONS",
+      "required_change": "Bind and golden-test the exact transition function, life-scoped event sequence, atomic commit ordering, and complete canonical snapshot described in D03."
+    },
+    {
+      "concern_id": "CRIT_V5_C12_REVIEW_AND_MANIFEST_CLOSURE_UNDEFINED",
+      "status": "accepted",
+      "rationale": "T05 lacks objective reviewer independence, veto, finite closure, and canary semantics, allowing variable authority and coverage.",
+      "resolution_id": "D12_REVIEW_MANIFEST_AND_CANARY_CLOSURE",
+      "required_change": "Define the content-addressed review closure, reviewer/advocate roles, non-overridable verdict, finite verifier surface, and nonadaptive canary role in D12."
+    },
+    {
+      "concern_id": "CRIT_V5_C13_INTERPRETATION_REMEDIES_REQUIRE_ADJUDICATION",
+      "status": "accepted",
+      "rationale": "The proposed auditability remedies materially constrain implementation and cannot enter through interpretation by implication.",
+      "resolution_id": "D13_INTERPRETATION_REMEDIES_NEED_NEW_BYTES",
+      "required_change": "Place every selected remedy or equally testable alternative into a revised proposal/protocol and repeat the complete hash-bound deliberation before implementation."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "V6S_SYS_D01_FINITE_PACKET_DOMAIN",
+      "status": "accepted",
+      "rationale": "Unbounded integer serialization makes the proposal's largest-legal-packet preflight impossible.",
+      "resolution_id": "D01_FINITE_PACKET_AND_LENGTH_CONTRACT"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D02_NEGATIVE_SCORE",
+      "status": "accepted",
+      "rationale": "The score cannot be negative under the retained best-so-far definition and positive denominator.",
+      "resolution_id": "D02_NONNEGATIVE_SCORE_DOMAIN"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D03_GREEDY_NOT_DETERMINISTIC",
+      "status": "accepted",
+      "rationale": "A complete pinned cold-inference and null-mount contract plus real parity evidence is required.",
+      "resolution_id": "D08_COLD_INFERENCE_AND_NULL_MOUNT_DETERMINISM"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D04_RUNTIME_ACCEPTANCE_GAP",
+      "status": "accepted",
+      "rationale": "The registry must contain a later post-run conformance test before any actual result can be accepted.",
+      "resolution_id": "D05_ACTUAL_RUN_ACCEPTANCE_GATE"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D05_STAGE_MATRIX_TOO_COARSE",
+      "status": "accepted",
+      "rationale": "The stage matrix must be supplemented by actor-level directional capabilities and temporal barriers.",
+      "resolution_id": "D09_ACTOR_CAPABILITIES_AND_REAL_NONINTERFERENCE"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D06_FINAL_ADAPTER_UNBOUND",
+      "status": "accepted",
+      "rationale": "The exact build count, tensor comparison, authentic build A, and mounted hash must be predeclared.",
+      "resolution_id": "D06_UNIQUE_FINAL_ADAPTER_AND_COMPARISON"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D07_ENV_SELECTION_UNDERPINNED",
+      "status": "accepted",
+      "rationale": "Canonical seed/URI inputs, selection state transitions, repetitions, and drift rules are necessary for a reproducible seal.",
+      "resolution_id": "D10_CANONICAL_ENVIRONMENT_SEAL"
+    },
+    {
+      "disagreement_id": "V6S_SYS_D08_TOTAL_FAILURE_TABLE_REQUIRED",
+      "status": "accepted",
+      "rationale": "Every lifecycle failure needs exactly one tested transition and disposition before execution.",
+      "resolution_id": "D04_TOTAL_FAIL_CLOSED_LIFECYCLE"
+    },
+    {
+      "disagreement_id": "SCI_V5_D01_NEGATIVE_SCORE",
+      "status": "accepted",
+      "rationale": "The protocol's negative-score sentence is mathematically incompatible with the formula.",
+      "resolution_id": "D02_NONNEGATIVE_SCORE_DOMAIN"
+    },
+    {
+      "disagreement_id": "SCI_V5_D02_CAUSAL_IMPROVEMENT_WORDING",
+      "status": "accepted",
+      "rationale": "One life and four fixed targets support descriptive contrasts, not an improvement or superiority answer.",
+      "resolution_id": "D11_DESCRIPTIVE_QUESTION_AND_SUCCESS_FILTERED_WRITER"
+    },
+    {
+      "disagreement_id": "SCI_V5_D03_ACTION_OUTCOME_MECHANISM",
+      "status": "accepted",
+      "rationale": "Outcome only filters positive examples and is absent from the supervised target, so mechanism language must be narrowed.",
+      "resolution_id": "D11_DESCRIPTIVE_QUESTION_AND_SUCCESS_FILTERED_WRITER"
+    },
+    {
+      "disagreement_id": "SCI_V5_D04_MISSING_POST_RUN_GATE",
+      "status": "accepted",
+      "rationale": "A separately registered, later-ratified post-run integrity/report test is mandatory before result release.",
+      "resolution_id": "D05_ACTUAL_RUN_ACCEPTANCE_GATE"
+    },
+    {
+      "disagreement_id": "SCI_V5_D05_SYNTHETIC_NONINTERFERENCE_LIMIT",
+      "status": "accepted",
+      "rationale": "Mocks establish controller intent only; actual provider, process, filesystem, mount, and quarantine receipts are also required.",
+      "resolution_id": "D09_ACTOR_CAPABILITIES_AND_REAL_NONINTERFERENCE"
+    },
+    {
+      "disagreement_id": "SCI_V5_D06_REBUILD_TOLERANCE_MOUNT",
+      "status": "accepted",
+      "rationale": "Build A must be the predeclared authentic mount and build B comparison-only when hashes differ within tolerance.",
+      "resolution_id": "D06_UNIQUE_FINAL_ADAPTER_AND_COMPARISON"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {
+      "test_id": "V6S_T01_PACKET_MEMORY_SCORE_GOLDENS",
+      "status": "retained",
+      "rationale": "Retain as a necessary pre-GPU unit gate, but it cannot be implementable until revised bytes bind finite packet domains, exact slot/state/snapshot transitions, nonnegative scoring, and the total disposition table. It does not cover actual model-run evidence.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "V6S_T02_WRITER_MASK_UPDATE_GOLDENS",
+      "status": "retained",
+      "rationale": "Retain as a necessary pre-GPU writer/trainer fixture gate, but revised bytes must add exact sample serialization, event ordering, capacity bounds, trainable inventory, failure semantics, and the unique build-A comparison/mount rule. Synthetic tensor math does not validate real rebuilds.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS",
+      "status": "retained",
+      "rationale": "Retain for controller and fault-injection coverage after actor capabilities, canonical snapshots, null mounts, inference rules, and quarantine semantics are specified. Its synthetic/mock evidence is necessary but insufficient for real-stack noninterference or actual-run acceptance.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "V6S_T04_CPU_ENVIRONMENT_MANIFEST_SEAL",
+      "status": "retained",
+      "rationale": "Retain the unchanged-local CPU no-model sealer concept, but exact seed/URI bytes, enumeration/collision/rejection rules, repetition count, drift policy, complete rejection ledger, capability isolation, and invocation authority must be bound before it can pass.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW",
+      "status": "retained",
+      "rationale": "Retain as the final pre-GPU review and human-ratification gate after reviewer independence, veto semantics, finite content-addressed closure, deterministic inference, canonical mount, capability surfaces, canary scope, and proposed post-run test are defined. It cannot substitute for the missing post-run conformance and real-stack noninterference tests.",
+      "replacement_test_id": ""
+    }
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Do you require a revised, newly hash-bound proposal/protocol that incorporates D01-D13 and registers the missing post-run and real-stack noninterference acceptance tests before any implementation or CPU sealer action?",
+      "Do you accept the narrower scientific question: recipe completion plus descriptive fixed-panel D_HE and D_ONOFF from success-filtered action cloning, with no improvement, outcome-learning, mechanism, efficacy, functional-correctness, population, or paper claim?",
+      "Do you accept finite packet domains, nonnegative best-so-far scores, exact state/snapshot transitions, and the total fail-closed disposition table as architecture bytes rather than later-manifest choices?",
+      "Do you approve exactly two clean final builds with predeclared build A as the sole authentic target mount and build B used only for the fully specified numerical comparison?",
+      "What exact cold-inference/null-adapter contract, actor capability matrix, quarantine barrier, environment-seal canonicalization, reviewer independence rule, finite manifest closure, and nonadaptive GH200 canary scope should the revised bytes bind?",
+      "Do you confirm that persistent context, context-curation loops, time awareness beyond counters, model-authored intelligent sleep, stronger memory controls, replication, and paper-level inference remain deferred to separately registered changes?"
+    ],
+    "implementation_forbidden": true
+  }
+}

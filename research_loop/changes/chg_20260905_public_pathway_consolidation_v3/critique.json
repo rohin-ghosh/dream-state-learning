@@ -1,0 +1,401 @@
+{
+  "architecture_change_sha256": "e608d1e5cb9c481b2556457e90d4c50e7a58eac328f52dfee273fbbeff7aa839",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260905_public_pathway_consolidation_v3",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PPC3_T02_OPERATION_DEBIT_AND_LIFECYCLE_GOLDENS",
+        "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T07_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC3_T08_CANONICAL_SHUFFLE_TWIN_CUT_GOLDENS",
+        "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+        "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC3_T15_FRESH_ARCHITECTURE_DELIBERATION",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC3_C01_COMPOSITE_PROTOCOL_BYTES_ARE_NOT_BOUND",
+      "evidence": "The first paragraph of protocol.md declares the complete architecture to be PPC v1 followed by the PPC v2 amendment followed by PPC3, with only conflicting earlier clauses superseded. The required context set contains neither inherited protocol's exact bytes. A v2 change summary and hashes pointing to omitted files cannot establish which nonconflicting state, row, visibility, or lifecycle clauses remain normative. This directly confirms BENCH3_D01 and prevents an independent reviewer from reconstructing the exact composite architecture that T15 would ratify.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "PPC3 cannot be exactly interpreted or ratified as a composite architecture until it is self-contained or the complete inherited normative bytes and precedence relation are rebound and freshly reviewed."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+        "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+        "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+        "PPC3_T13_NEGATIVE_RESULT_AND_FRESH_CHAIN_GATE",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC3_C02_ACQUISITION_AND_EVALUATION_ITEM_ROLES_COLLIDE",
+      "evidence": "The visibility matrix forbids prior_item_result at SLEEP and describes it as a completed target result. Protocol B1 more broadly says that no completed item contributes to any later writer. Protocol B9 nevertheless requires an epistemic action's public observation to enter a later admitted SLEEP row. No exact item-role field or lifecycle transition distinguishes an acquisition observation that may cross the boundary from an evaluation result that must remain reporting-only. Both interpretations identify this collision.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The same ambiguous completed-item boundary can either make the online flywheel impossible or permit quarantined evaluation outcomes to enter memory."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+        "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T09_INDEPENDENT_DUAL_SEAL",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC3_C03_ROOT_CANONICALIZATION_METADATA_HAS_NO_VISIBILITY_CLASS",
+      "evidence": "Protocol B3 makes PCFL roots generator-issued latent-event IDs and requires confirmations, twins, paraphrases, and regenerated views to share a root family. SLEEP therefore needs trusted root-equivalence metadata. The formal matrix has no generator/root-canonicalization class, marks hidden truth and oracle proof forbidden at SLEEP, and defines opaque harness IDs as separately remapped public identifiers. Treating latent generator IDs as hidden truth violates the matrix; treating them as ordinary opaque IDs does not supply the required equivalence relation. Those IDs may also encode latent assignments unless mechanically firewalled from row selection and target bytes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Canonical provenance depends on privileged generator metadata whose visibility, allowed use, and noninterference guarantees are absent from the supposedly complete Cartesian contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+        "PPC3_T02_OPERATION_DEBIT_AND_LIFECYCLE_GOLDENS",
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC3_C04_PUBLIC_OPERATION_TARGETS_CAN_LAUNDER_UNSUPPORTED_CONTENT",
+      "evidence": "Protocol B4 admits exact public operation transitions, while B2 permits HYPOTHESIZE, PREDICT, REVISE, query, and branch operations containing model-generated arguments. The proposal never gives a complete positive-target predicate for committed, failed, unsupported, non-acted, or abandoned-branch operations. Prohibiting DREAM prose and final-answer records does not prevent an answer, composite mapping, or agenda from appearing inside an operation argument and later becoming an SLEEP target through an exact causal prefix. Closed descendants are barred from citation or reopening, but not explicitly from training admission. This is SYS3_A03 in a claim-critical form.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Query-to-agenda and abandoned-branch answer laundering remain possible through the broad category of exact public operation transitions."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+        "PPC3_T02_OPERATION_DEBIT_AND_LIFECYCLE_GOLDENS",
+        "PPC3_T07_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC3_C05_PROMPT_SCHEMA_AND_REPEAT_STATE_ARE_NOT_EXECUTABLE_BYTES",
+      "evidence": "B2 defines fingerprints using schema-normalized arguments and mentions strict DREAM output plus prompt/schema/parser hashes, but the actual operation argument schemas, normalization functions, prompts, parser contracts, and version-compatibility rules are not present in the bound PPC3 bytes. Repeat counts are listed in frozen state, yet no clause requires the count, impending repeat block, or remaining post-error calls to appear in the allowlisted policy input. T02 can therefore prove a deterministic harness transition while the policy remains unable to observe why its third identical operation will be forced to DEFER.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Prompt/parser implementations can disagree or silently mismatch, and repeat blocks can remain invisible to the policy despite a green lifecycle suite."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+        "PPC3_T08_CANONICAL_SHUFFLE_TWIN_CUT_GOLDENS",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC3_C06_DIAMOND_ACCEPTANCE_IS_NOT_AN_EXPLICIT_ORACLE_ASSERTION",
+      "evidence": "B3 says diamonds are allowed and cycles rejected. T03 includes diamonds and cycles in setup, but its expected result requires implementation agreement and descendant support behavior without literally requiring every valid shared-ancestry diamond to be accepted and each true back-edge cycle to be rejected with a canonical witness. Two implementations can share the common visited-node-as-cycle error. T08's acyclicity check can repeat the same mistake.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "False cycle detection on valid diamond or shared ancestry remains compatible with the written acceptance result."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T07_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC3_T08_CANONICAL_SHUFFLE_TWIN_CUT_GOLDENS",
+        "PPC3_T09_INDEPENDENT_DUAL_SEAL",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC3_C07_CONSTRUCTION_AND_POST_HOC_CUTS_DO_NOT_ESTABLISH_ACTUAL_PATH_USE",
+      "evidence": "T04 poisons writer candidates and can establish corpus construction, but its falsifier says PATH requires connected traversal. A trained model may ignore the path and solve from its base prior, same-item scratch, policy weights, or another representation. Protocol B4 says a bridge cut removes an actually traversed edge, yet does not state that the cut edge, twin, null, and expected action are selected prospectively from the sealed oracle path rather than after observing the model trace. Both interpretations warn that writer exclusion alone cannot establish traversal, and BENCH3_A06 identifies the cut-selection ambiguity.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The design needs prospective edge selection and behavioral trace/cut evidence; otherwise shortcut exclusion and realized-trace selection can be mistaken for recurrent pathway causality."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+        "PPC3_T09_INDEPENDENT_DUAL_SEAL",
+        "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC3_C08_BYPASS_BASELINES_ARE_LISTED_BUT_NOT_ALL_CLAIM_GATES",
+      "evidence": "B6 lists STANDARD_AGENT, TARGET_STATE_ONLY, FULL_CONTEXT, RAW_RAG, EXPLICIT_GRAPH, LINKED_TEXT, REFLECTION_LESSON_TEXT, ENDPOINT, DIRECT_QA_LORA, and SAME_LIFETIME_BATCH_POSTTRAIN. The PPC3_PATHWAY_VALUE claim instead names endpoint, shuffle, one-shot, open-loop, components, and generic strong external-memory controls. It does not make the target-only answer prior, standard-agent scratch policy, full context, RAG, reflection, direct-QA LoRA, or batch post-training literal conjunctive falsifiers. T09 also leaves the target-only and standard-agent ceiling statistics and thresholds unspecified.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A favorable PATH result can pass the written claim while a registered answer-prior or nonpathway bypass matches it."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC3_C09_CROSS_SUBSTRATE_PROMOTION_CONFOUNDS_MEMORY_WITH_POLICY_ADAPTATION",
+      "evidence": "B8 permits a LoRA-specific claim when full PATH beats LINKED_TEXT or EXPLICIT_GRAPH at matched active bytes. PATH contains READ, DECIDE, and ACT training, whereas the external-memory treatments are not specified as receiving the same DECIDE/ACT policy adaptation under an identical thinker. The reader-only assay isolates transport but only for one-record READ fidelity; it does not repair the bundled full-PATH comparison. Thus a LoRA win may come from decision-policy or action imitation rather than parametric memory transport.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed LoRA moat comparison does not fairly separate text/graph state, LoRA transport, and thinker-policy computation."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+        "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC3_C10_FACTORIAL_EFFECTS_ARE_CONFOUNDED_BY_TRAINING_DOSE",
+      "evidence": "B5 allocates an effective output-token budget per enabled row family and omits empty families. Total supervised tokens and sampling pressure can therefore grow from zero to three family budgets across the eight cells. Equal rank, optimizer, update count, and inference budget do not separate semantic READ, DECIDE, or ACT content from the generic effect of additional training exposure. Both interpretations independently identify this issue.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The matrix identifies row-family treatment packages, not unqualified component main effects and interactions at fixed training exposure."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC3_C11_READER_TRANSPORT_INTERFACE_IS_UNDERBOUND",
+      "evidence": "B5 promises the same schema and candidate domain for TEXT_READ and READ-LoRA, but does not freeze the exact query bytes, whether either reader receives candidate strings or a recognition list, candidate ordering, partial-cue serialization, NOT_FOUND behavior, parse failures, or returned-record normalization. Reader-only mounting keeps thinker weights fixed but cannot prevent a recognition-versus-generation interface difference from producing the fidelity contrast. This is BENCH3_A05.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Reader isolation is necessary but insufficient to identify parametric transport until the complete byte-level reader interface is identical."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC3_C12_SCHEMA_FORMATION_AND_SUPPORT_ARE_UNDERIDENTIFIED",
+      "evidence": "The bound schema note requires DREAM to commit a target-independent prediction before confirmation, later public outcomes to support or contradict it, and a fresh cohort where atoms alone are insufficient. PPC3 B9 omits this prospective commitment and does not specify whether SLEEP may write a supported schema record despite the local-atom-only rule. Fixed adapter bytes, held-out utility, and low episodic reconstruction can instead arise from base-model priors, evaluation-time induction, or implicit fitting of local episodes. BENCH3_D03 identifies the same conflict.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The compression claim demands a higher-order structure without specifying whether it emerges through recurrent DREAM-memory-THINK iterations or is supplied implicitly by SLEEP or the base thinker."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T07_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+        "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+        "PPC3_T14_PRE_GPU_REVIEW_AND_LATER_CANARY_AUTHORITY",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC3_C13_DISTINCT_BEHAVIORAL_ESTIMANDS_LACK_REGISTERED_EXECUTION_TESTS",
+      "evidence": "T05 is construction and isolation, T07 and T10 are scripted rehearsals, T11 freezes a manifest, and T12 reviews design adequacy. T16 is an omnibus postrun audit rather than a prospectively specified behavioral test. The current registry therefore has no separate executed test IDs and pass rules for atomic recall, held-out composition, schema generalization, recurrent planning, downstream action value, or the complete online action-observation-learning effect. A later manifest is promised by T14, but its required test inventory and binding artifact are not defined here.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "An omnibus audit cannot retroactively create the distinct falsifiers needed to prevent recall, composition, generalization, planning, and action improvement from substituting for one another."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+        "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+        "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC3_C14_FLYWHEEL_MEDIATION_CAN_BE_ASSEMBLED_ACROSS_UNLINKED_AVERAGES",
+      "evidence": "B9 lists separate memory, observation, path, and mount interventions and correctly treats lives as independent units. It does not require a root- and row-level lineage proving that the same randomized prior-memory contrast changed an epistemic action, that action generated the particular later admitted observation, and that the resulting row/path caused the later action contrast within a yoked prospective design. T10 only shows that a synthetic scripted chain can move. Aggregate links from different lives or cohorts could therefore be assembled into a mediation story without demonstrating online learning from the system's own action outcome.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The full-flywheel claim needs linked, randomized action-to-observation-to-row-to-path mediation, not merely favorable stagewise averages."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T09_INDEPENDENT_DUAL_SEAL",
+        "PPC3_T14_PRE_GPU_REVIEW_AND_LATER_CANARY_AUTHORITY",
+        "PPC3_T15_FRESH_ARCHITECTURE_DELIBERATION"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC3_C15_DUAL_SEAL_EXPECTATION_CONFLICTS_WITH_NO_MODEL_AUTHORITY",
+      "evidence": "T09 requires standard-agent development ceilings, while B11 restricts all current preflight and both sealers to CPU/no-model work. Neither T09 nor the protocol says that this ceiling is a deterministic static shortcut statistic. If it is behavioral, the test cannot lawfully pass; if it is static, it does not provide the standard-agent evidence implied by its name. Both interpretations flag this conflict.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The architecture has no legal and scientifically unambiguous path through T09 unless the ceiling is redefined or deferred to a separately ratified model manifest."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+        "PPC3_T02_OPERATION_DEBIT_AND_LIFECYCLE_GOLDENS",
+        "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+        "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC3_C16_HIDDEN_OPERATIONAL_METADATA_CAN_CAUSE_INDIRECT_CONDITION_LEAKAGE",
+      "evidence": "The matrix labels retrieval internals and timing/cache/batch/provider metadata hidden at target stages rather than causally inert. T01 tests forbidden byte mutations, but equal serialized prompts do not prevent condition-dependent candidate work, batching, cache warmth, latency, provider failures, timeout missingness, or process scheduling from changing model outputs and cell survival. B8 specifies a cold-cache policy and audit ledger but no paired schedule/fault distribution or outcome-level noninterference test.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Byte noninterference alone does not close indirect visibility and selection leakage through operational behavior or differential missingness."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+        "PPC3_T14_PRE_GPU_REVIEW_AND_LATER_CANARY_AUTHORITY",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC3_C17_NUMERIC_AND_SCALING_SUCCESS_RULES_REMAIN_DEFERRED",
+      "evidence": "T12 asks an independent reviewer to approve later choices for sample size, effect thresholds, multiplicity, variance transfer, missingness, futility, and extension, but PPC3 supplies no minimum power, simulation-validation rule, co-primary hierarchy, or machine-checkable adequacy threshold. Likewise, four post-native checkpoints and three completed cycles are minimum counts, not a defined favorable lifetime trend, capacity slope, saturation, or crossover criterion. T11 does not identify the exact later hash-bound schema generator/statistics artifact.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Prospective manifests are useful, but reviewer discretion without exact numerical success rules still permits underpowered designs and post-hoc scaling narratives."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+        "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+        "PPC3_T13_NEGATIVE_RESULT_AND_FRESH_CHAIN_GATE",
+        "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC3_C18_AUDIT_FAILURE_IS_CONFLATED_WITH_SCIENTIFIC_FALSIFICATION",
+      "evidence": "T04 and T05 use falsifier language broader than construction evidence, and T16 says it falsifies every reported mechanism and conclusion. An integrity, lifecycle, or estimator failure makes evidence unusable; it does not show that the underlying mechanism is false. Conversely, a valid registered null or adverse contrast is a scientific negative result even when every audit check passes. SYS3_D02, SYS3_D03, and SYS3_D05 all identify parts of this category error.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Status-specific reporting must distinguish failed construction, missing evidence, valid scientific nulls, and positive effects so an audit cannot erase or manufacture a negative result."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/human_directive.txt",
+      "purpose": "Verbatim direction and objective-bound choices.",
+      "sha256": "5763e36d04b9d786bf006db156c410b4e3cb3c8739980608e944b4a3b1f0e53b"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation, ratification, review, and execution contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "purpose": "Strict proposal schema.",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash-bound intake and authority validator.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/protocol.md",
+      "purpose": "Normative PPC3 protocol amendment.",
+      "sha256": "a0af42fc11fbfe20fc6bd20d25415679ea04d7959ba72fa0d93cc49ccf151524"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/change.json",
+      "purpose": "Predecessor proposal reworked by PPC3.",
+      "sha256": "52733a09e915a11bb8cf3bfe0bd7c58207849c3f284977ef591fa78c50e48211"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/critique.json",
+      "purpose": "Blocking PPC2 concern registry.",
+      "sha256": "0aea867f0eb0faff8e34725cdf43417c4dfd267b998ccf0b2aed52cb4f40745c"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/consensus.json",
+      "purpose": "Adjudicated PPC2 rework requirements.",
+      "sha256": "e101aca30a40ae79037933f7e93d4b3fa93c30a61d38280f61fb74fb41b2ca07"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis, baselines, and claim boundaries.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "purpose": "Stream capacity and prospective schema requirements.",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359"
+    }
+  ],
+  "critique_id": "chg_20260905_public_pathway_consolidation_v3.fresh_iclr_adversarial_v1",
+  "human_questions": [
+    "Will PPC3 be made self-contained, or will the exact inherited v1 and v2 protocol bytes and precedence relation be rebound before ratification?",
+    "What immutable manifest role and lifecycle transition distinguish acquisition observations eligible for later SLEEP from evaluation results that remain permanently reporting-only?",
+    "May trusted root-family metadata be visible to the mechanical writer, and what exact noninterference rule prevents latent generator information from affecting row contents or target selection?",
+    "Which committed operation statuses, argument fields, branches, and outcomes are eligible positive SLEEP targets, and are unsupported, failed, non-acted, and abandoned-branch operations excluded?",
+    "Must repeat counters and impending forced-defer state be serialized to the policy, and where will the exact prompt, operation, DREAM, reader, and parser schemas be hash-bound?",
+    "Will every decisive cut be selected prospectively from a sealed oracle path, with realized traces used only for audit?",
+    "Are all named target-only, standard-agent, context, RAG, graph, text, reflection, direct-QA, and batch-posttraining baselines literal pathway-claim gates with frozen ceilings?",
+    "Will LoRA-specific promotion compare substrates under an identical thinker and matched DECIDE/ACT adaptation, or will the conclusion be restricted to the bundled PATH treatment?",
+    "Will component effects be defined as row-family packages with their associated dose, or will total training exposure be matched to identify semantic READ, DECIDE, and ACT effects?",
+    "Does PCFL-Schema require a pre-confirmation DREAM commitment and explicit public support/write semantics, or is the intended claim only implicit fixed-byte transfer?",
+    "Is the T09 standard-agent ceiling a deterministic no-model statistic, or must it be deferred to a separately ratified model run?",
+    "Which later hash-bound artifact will register separate executed tests and numerical thresholds for recall, composition, generalization, planning, action value, mediation, capacity, and compression?",
+    "What yoked randomization and root-to-row lineage will prove that the system learned from the outcome of its own epistemic action rather than assembling stagewise correlations?",
+    "What exact power, multiplicity, variance-transfer, lifetime-trend, saturation, crossover, missingness, and extension criteria must pass before any model result is opened?",
+    "Should integrity failure, missing evidence, a valid null, and a positive audited effect receive distinct immutable reporting states before human ratification?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v3.systems",
+      "sha256": "31b202e91b0686d2dcfd22416b33497a315cd2ffca510403db034b23429b87f5"
+    },
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v3.benchmark",
+      "sha256": "b46568b877d5c93068df9ee4d6a2fdb69f101c2ded51bf492bc25184646a0d10"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PPC3_M01_SELF_CONTAINED_COMPOSITE_PROTOCOL_BINDING",
+    "PPC3_M02_ACQUISITION_EVALUATION_ROLE_AND_WRITER_BOUNDARY",
+    "PPC3_M03_ROOT_METADATA_VISIBILITY_AND_ROW_NONINTERFERENCE",
+    "PPC3_M04_OPERATION_ADMISSION_AND_ABANDONED_BRANCH_NONLAUNDERING",
+    "PPC3_M05_PROMPT_SCHEMA_REPEAT_STATE_COMPATIBILITY",
+    "PPC3_M06_DIAMOND_SHARED_ANCESTRY_AND_TRUE_CYCLE_ORACLE",
+    "PPC3_M07_PROSPECTIVE_DECISIVE_CUT_AND_ACTUAL_PATH_USE",
+    "PPC3_M08_LITERAL_ALL_BYPASS_CLAIM_GATES",
+    "PPC3_M09_CROSS_SUBSTRATE_MATCHED_THINKER_AND_POLICY",
+    "PPC3_M10_MATCHED_TOTAL_TRAINING_DOSE_FACTORIAL",
+    "PPC3_M11_READER_QUERY_CANDIDATE_AND_NOT_FOUND_INTERFACE",
+    "PPC3_M12_PROSPECTIVE_SCHEMA_COMMITMENT_SUPPORT_AND_FORMATION",
+    "PPC3_M13_EXECUTED_RECALL_COMPOSITION_GENERALIZATION_PLANNING_ACTION_TESTS",
+    "PPC3_M14_LINKED_ONLINE_ACTION_OBSERVATION_ROW_PATH_MEDIATION",
+    "PPC3_M15_NO_MODEL_SEALER_CEILING_AUTHORITY",
+    "PPC3_M16_INDIRECT_SIDE_CHANNEL_AND_MISSINGNESS_NONINTERFERENCE",
+    "PPC3_M17_NUMERIC_POWER_SCALING_SATURATION_AND_EXTENSION_THRESHOLDS",
+    "PPC3_M18_STATUS_SPECIFIC_NULL_INTEGRITY_AND_NEGATIVE_RESULT_REPORTING"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PPC3_T01_COMPLETE_VISIBILITY_AND_OPAQUE_IDS",
+    "PPC3_T02_OPERATION_DEBIT_AND_LIFECYCLE_GOLDENS",
+    "PPC3_T03_DOMAIN_ROOT_AND_LIFE_RESET_GOLDENS",
+    "PPC3_T04_LOCAL_ATOM_SHORTCUT_EXCLUSION",
+    "PPC3_T05_COMPONENT_MATRIX_AND_READER_ISOLATION",
+    "PPC3_T06_BASELINE_INTERFACE_AND_RESOURCE_BYTES",
+    "PPC3_T07_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+    "PPC3_T08_CANONICAL_SHUFFLE_TWIN_CUT_GOLDENS",
+    "PPC3_T09_INDEPENDENT_DUAL_SEAL",
+    "PPC3_T10_MEDIATION_CADENCE_AND_SHAM_GOLDENS",
+    "PPC3_T11_STREAM_SCHEMA_CAPACITY_MANIFEST",
+    "PPC3_T12_QUANTITATIVE_ADEQUACY_GATE",
+    "PPC3_T13_NEGATIVE_RESULT_AND_FRESH_CHAIN_GATE",
+    "PPC3_T14_PRE_GPU_REVIEW_AND_LATER_CANARY_AUTHORITY",
+    "PPC3_T15_FRESH_ARCHITECTURE_DELIBERATION",
+    "PPC3_T16_POSTRUN_CAUSAL_AUDIT"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that PPC3 is a substantial repair of the bundled-memory design criticized in PPC2. It makes THINK a charged recurrent public state machine, confines DREAM to requested and provisional reconciliation, and reserves durable learned writing for evidence-gated SLEEP. It introduces opaque identifiers, causal-prefix serialization, local-atom-only construction, domain root families, explicit life resets, a genuine open-loop recurrence ablation, reader-only LoRA transport, a complete nominal READ/DECIDE/ACT matrix, strong text/graph/RAG/posttraining controls, canonical twins/shuffles/cuts, repeated action-to-observation-to-sleep mediation, a separate prospective schema rung, quantitative review, immutable negative-result versioning, and strict human/model/GPU authority boundaries. If the remaining byte-binding, role, interface, estimand, and claim-gate defects are repaired prospectively, this could become a high-information causal study that distinguishes memory transport, adaptive retrieval, recurrent computation, pathway binding, policy adaptation, online experiential learning, capacity, and schema compression instead of inferring them from one aggregate gain.",
+  "visibility_failures": [
+    "The completed-item taxonomy does not distinguish acquisition observations eligible for later SLEEP from quarantined evaluation results.",
+    "PCFL latent root-family metadata is required by SLEEP but has no formal information class or permitted-use rule.",
+    "Model-generated operation arguments and abandoned-branch transitions can reach SLEEP without an exact positive-target admission predicate.",
+    "Repeat counts and impending forced-defer state are not explicitly required in policy-visible prompt bytes.",
+    "The exact operation, DREAM, reader, prompt, parser, and schema-normalization bytes are absent from the bound architecture.",
+    "Reader candidate exposure, ordering, NOT_FOUND behavior, and returned-record normalization are not frozen across TEXT_READ and READ-LoRA.",
+    "Target-only and standard-agent answer-prior ceilings are not literal conjunctive gates in the pathway claim.",
+    "Timing, caching, batching, candidate work, provider failures, and process scheduling can affect outcomes or missingness despite serialized-byte equality.",
+    "A globally trained PATH LoRA is compared with external memories without fixing thinker-policy adaptation, leaking component differences into substrate attribution.",
+    "The schema rung does not bind when a target-independent schema is proposed, supported, or written, permitting base-prior or evaluation-time induction explanations."
+  ]
+}

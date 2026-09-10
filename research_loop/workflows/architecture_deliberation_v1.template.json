@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "architecture-deliberation-replace-me",
+  "workspace": "../..",
+  "change_id": "replace_me",
+  "directive_file": "research_loop/changes/replace_me/human_directive.txt",
+  "context_files": [
+    "research_loop/plans/interleaved_organism_v1.md",
+    "research_notes/00_THESIS.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/35_goalposts_paper1.md",
+    "research_notes/32_v2_experiment_design.md",
+    "research_notes/40_FABLE_HANDOFF_RESEARCH_LOOP.md",
+    "research_notes/41_capacity_compression_and_loop_training.md",
+    "research_notes/IDEAS.md",
+    "REVIEW_PACK.md",
+    "alchemy/v2_out/mini_ledger.md"
+  ],
+  "output_dir": "research_loop/changes/replace_me",
+  "state_path": ".research_loop/intake/replace_me.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/replace_me/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3600,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1800
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 7200,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "systems": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3600,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1800
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 7200,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 7200,
+          "mailbox_poll_sec": 10
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3600,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1800
+        }
+      ]
+    },
+    "critique": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 4800,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 2400
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 7200,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 7200,
+          "mailbox_poll_sec": 10
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3600,
+          "provider_attempts": 2,
+          "provider_attempt_timeout_sec": 1800
+        }
+      ]
+    }
+  }
+}

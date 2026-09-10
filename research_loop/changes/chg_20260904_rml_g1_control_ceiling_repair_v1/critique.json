@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260904_rml_g1_control_ceiling_repair_v1.cross_critique.fresh.v1",
+  "change_id": "chg_20260904_rml_g1_control_ceiling_repair_v1",
+  "state": "critiqued",
+  "architecture_change_sha256": "deb8677ddcf6c8e9c5e3624ded97340fe0b2477d30617399e7d4c97b6ac69ea6",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260904_rml_g1_control_ceiling_repair_v1.systems.fresh.v1",
+      "sha256": "4a91cc103089ea23bfb392d8e83d8b1314a81ba3e69e4783ba073a9f07cf0b8c"
+    },
+    {
+      "interpretation_id": "chg_20260904_rml_g1_control_ceiling_repair_v1.benchmark.fresh.v1",
+      "sha256": "8c340ca1f2054b8ea0060c95c51f0f1b29fc7cbe92a79a807ffd6012d67fbee2"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260904_rml_g1_control_ceiling_repair_v1/human_directive.txt",
+      "sha256": "4c13e88ba8981d2c46cb1cc673a858d07a71e15bf0feed63fdf7c76c653dbfc6",
+      "purpose": "Verbatim owner instruction to continue autonomous paper-directed work and reserve human intervention for genuine taste decisions."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding architecture-change, exact-ratification, review, and GPU-gate contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260903_rml_g1_gold_action_fast_v1/consensus.json",
+      "sha256": "1c27cbe6ac3adda14078f2cdbfe62785ce7161b4ae35c2fb96b899b40da53cb9",
+      "purpose": "Human-approved G1 consensus containing the false R07 P selected-slice structural ceiling and all boundaries that remain binding."
+    },
+    {
+      "path": "research_loop/changes/chg_20260903_rml_g1_gold_action_fast_v1/ratification.json",
+      "sha256": "fa6dd830a67ba03dd336945e74759ae58ce075de201573c4037798cba2e4ab53",
+      "purpose": "Exact prior human authorization whose roster, resources, claims, and no-retry execution scope may not be widened by this amendment."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_rml_g1_control_ceiling_repair_v1/constructibility_audit.md",
+      "sha256": "77dc21581b9bcd182008ddf1ea6fd4b8a85774b5b7b085e816ceffc367776d12",
+      "purpose": "Replayable lower-bound argument and source-only construction finding motivating the narrow repair."
+    }
+  ],
+  "strongest_case": "All five context hashes, the architecture-change hash, and both interpretation hashes match their current bytes. The audit decisively refutes structural P capacity 0/2: on any publicly indistinguishable H/twin pair, replaying either side's certified legal nine-action plan as one fixed visible policy succeeds on that side, so the maximum shared-policy success count is at least one. The proposed repair correctly separates that fixture property from the prospective pinned-model predicate and can preserve the original 18 trajectories, 234 opportunity identities, at-most-234 dispatches, interventions, resources, failure taxonomy, review sequence, and claim firewall. It also strengthens an already ratified R03 requirement by making base-store construction pretarget and source-only. The amendment is not ready for adjudication, however, until it gives an executable definition and upper-bound proof for full history-dependent capacity, partitions legitimate public target-prompt variation from forbidden store/serve variation, establishes affirmative source/reference provenance, and resolves deterministic candidate selection and the fail-closed consequence of capacity above the expected value.",
+  "reviewed_acceptance_test_ids": [
+    "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS",
+    "RML_G1A_T02_SOURCE_ONLY_GOLD_CONSTRUCTION",
+    "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+  ],
+  "concerns": [
+    {
+      "concern_id": "C01_HISTORY_DEPENDENT_VISIBLE_POLICY_CAPACITY_DOMAIN",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Resolve BENCH-G1A-A01, SYS-G1A-A02, and BENCH-G1A-A04 by defining capacity over the complete shared deterministic history-dependent controller, not over open-loop action strings, per-side plans, or an unspecified planner state.",
+      "evidence": "For arm A with fixed registered side set S_A, the binding quantity should be K_A = max over one deterministic policy pi in Pi_A of the number of s in S_A whose exact frozen replay is SCIENTIFIC_VALID_SUCCESS. S_NONE has four registered sides and denominator four; S_P has the two registered P sides and denominator two. Pi_A must map every reachable byte-canonical authorized observation history to the next legal phase-specific output under exactly four READ slots and nine ENV slots. History includes the authorized public target prompt and initial observation, emitted keys and returned arm-visible rows, prior legal actions, ordinary environment feedback, and any other model-visible bytes; it excludes hidden side/truth/score, candidate work, evaluator state, capacity results, and witnesses. The same mapping must be replayed on all sides, but it may branch when legitimately visible histories differ. Success must use the frozen reducer and D0-owned terminal predicate, not merely arrival at an environment state. Self-authored scratch or citations cannot create extra exogenous information. The current change says 'visible policies' without closing these distinctions, so an open-loop enumerator could understate capacity and a per-side oracle could overstate it.",
+      "acceptance_test_ids": [
+        "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C02_EXACT_UPPER_BOUND_REQUIRES_CHECKABLE_HISTORY_QUOTIENT",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Resolve BENCH-G1A-D03 and SYS-G1A-A01 by requiring a mechanically checkable upper-bound certificate that is sound for the full history-dependent policy class; the H-plan witness establishes only K_P >= 1.",
+      "evidence": "A sound exact proof must hash-bind the selected manifests, D0 transition/scoring bytes, arm observation functions, query grammar and returns, reducer, public prompt bytes, ordinary feedback, and four-READ/nine-ENV budget. It must unfold the joint finite history forest for all registered sides and force one action at byte-identical visible histories while permitting different actions only after visible histories diverge. Any quotient must prove that merged nodes preserve the complete visible-history equivalence relevant to a history-dependent controller; merging merely equal current world states or observations is unsound because earlier visible bytes may distinguish them. A replayable witness supplies the lower bound on every side. A separate checker must validate a Bellman/branch certificate or independently reproduce exhaustive enumeration and establish that every admissible policy solves at most the claimed k sides. Side swap, forbidden hidden-bit, altered feedback, extra diagnostic-action, and intentionally corrupted certificate mutations must be rejected. Neither interpretation may convert the audit's expected 1/2 into an exact result before this proof.",
+      "acceptance_test_ids": [
+        "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C03_EMPIRICAL_GATE_AND_DENOMINATOR_MUST_REMAIN_LITERAL",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "Resolve BENCH-G1A-D02 by preserving P ATOMS_REC 0/2 only as the original model-specific operational predicate and by preserving the original NONE_REC and typed-validity semantics exactly.",
+      "evidence": "The prior R01/R10 combination permits the desired P outcome only when both registered P trajectories are SCIENTIFIC_VALID_NONSUCCESS; MODEL_INVALID, INFRASTRUCTURE_FAILURE, RESOURCE_CEILING_EXCEEDED, or CANCELLED cannot manufacture a negative-control pass. The amendment must retain NONE_REC at most 1/4 empirical success while separately reporting its exact structural capacity over four sides. Structural k/2, observed 0/2, and the empirical pass predicate must be distinct typed fields. Reports and claim checks must reject 'zero ceiling', 'impossible', 'chance', 'information-free', and population language. An observed 1/2 fails the frozen operational gate even if it matches K_P = 1, and that failure cannot be described as evidence against construct validity.",
+      "acceptance_test_ids": [
+        "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS",
+        "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C04_TARGET_PROMPT_VARIATION_MUST_BE_PARTITIONED_FROM_STORE_SERVE_NONINTERFERENCE",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Accept SYS-G1A-D01 while retaining the stronger intent of BENCH-G1A-D01: T02's literal equality of 'all model-visible bytes' is overbroad for authorized public target prompts but too weak if reduced to core snapshot hashes.",
+      "evidence": "A target mutation can legitimately change the registered public target description or current public environment observation, and those bytes belong in the policy history and capacity calculation. It must not change the pretarget base stores, rows, indexes, aliases, order, vocabulary, query universe, handles, renderer/tokenizer inputs, projection metadata, same-key store-derived return bytes, cache/KV/process state, or serving timing class because of hidden truth. The equality oracle therefore needs two named partitions: (1) store/build/serve-derived bytes, which are invariant under hidden target permutations; and (2) authorized public target-interface bytes, which may differ but must be shown to be a deterministic function only of the frozen public target projection. Prefix-conditionally, given equal authorized public history and the same emitted key, every model-visible byte and side channel must match except the authorized returned row for that key. The certificate, witness, capacity, scorer, hidden labels, and candidate-selection work must be unreachable in both partitions.",
+      "acceptance_test_ids": [
+        "RML_G1A_T02_SOURCE_ONLY_GOLD_CONSTRUCTION",
+        "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C05_SOURCE_AND_REFERENCE_PROVENANCE_IS_NOT_TARGET_INVARIANCE",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Accept SYS-G1A-D02, SYS-G1A-A04, and BENCH-G1A-A03: forbidding TargetSpec arguments and observing invariance under selected hidden-field mutations do not prove affirmative source-only provenance.",
+      "evidence": "A generic semantic reference, global, filesystem artifact, environment variable, cache, precomputed plan, candidate rank, or hidden surrogate can remain constant under the mutation suite while already encoding target-conditioned relevance. GOLD_SNAPSHOT_BUILDER needs a closed, hash-bound input dependency DAG whose only content leaves are the sealed public source and a frozen public schema/reference with a mechanically audited source-only derivation. Every content-bearing GOLD, ATOMS, and TWIN base row and every index/query/alias/handle/rendering artifact needs reproducible lineage through hash-bound deterministic transforms. The isolated preselection process must deny ambient inputs and reject unknown capabilities dynamically and statically. A separately hash-bound target-blind provenance checker must validate row derivation or source entailment. Later parent-conditioned CUT/SHAM masks may project sealed stores under R03/R05 but may not add content or retrospectively authorize target-conditioned base construction.",
+      "acceptance_test_ids": [
+        "RML_G1A_T02_SOURCE_ONLY_GOLD_CONSTRUCTION"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C06_DETERMINISTIC_SELECTION_RULE_AND_UNEXPECTED_CAPACITY",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Resolve SYS-G1A-A03 and BENCH-G1A-A02 before adjudication: deleting the impossible P 0/2 eligibility clause leaves the original deterministic candidate-advance rule undefined, and capacity inspection must not become a new selection channel.",
+      "evidence": "The amendment must freeze an exact candidate order, all non-capacity eligibility predicates, tie-breaks, selected-manifest commitment point, and failure behavior before capacity is computed. The narrowest unbiased rule is to delete the false P-zero predicate, select the first candidate satisfying the remaining predeclared structural predicates, seal that manifest, then compute and report capacity descriptively; it must not advance to another candidate merely because the result is less control-like. After sealing, K_P < 1 contradicts the replay witness and fails preflight; K_P = 1 is the expected repaired case; K_P = 2 makes P structurally sufficient on both registered sides and changes the comparator's scientific interpretation. Because the current human authority did not choose whether a structurally sufficient P arm remains worth running, K_P > 1 must stop before GPU and return to architecture adjudication and exact human ratification, with no reselection, threshold change, roster change, or model call. Any alternative proceed-on-2/2 rule is a genuine benchmark taste decision and must be stated and ratified prospectively.",
+      "acceptance_test_ids": [
+        "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS",
+        "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C07_NARROW_SCOPE_DIFF_NEEDS_AN_EXACT_ALLOWLIST",
+      "category": "architecture",
+      "severity": "material",
+      "statement": "T03's phrase 'byte-equivalent or stricter' is not a safe scope boundary; it could admit unratified changes to prompts, resources, validity rules, or selection behavior under a subjective stricter label.",
+      "evidence": "The machine-readable amendment diff must allow only: removal of the false P structural-zero assertion and directly dependent capacity/certificate/report text; addition of the exact capacity machinery and evaluator-only artifacts; and clarification/enforcement of the already ratified source-only builder/firewall. Prompts, public target projection, model/tokenizer/runtime, target and condition order, selected-manifest rule except the explicitly adjudicated false-predicate repair, roster, 234 opportunity identities, resources, reducer/interventions, typed outcomes, empirical thresholds, reviews, and claim whitelist must be byte-identical. A proposed stricter change outside the allowlist needs a new architecture change and ratification. The three amendment tests are additive and cannot replace any of the six original replacement tests, the independent implementation reviewer, the separate author-side advocate, the canary, or post-run review.",
+      "acceptance_test_ids": [
+        "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C08_EVALUATOR_CAPACITY_ARTIFACTS_ARE_MISSING_FROM_THE_AMENDMENT_MATRIX",
+      "category": "visibility_leak",
+      "severity": "material",
+      "statement": "The two-item visibility matrix is insufficient as executable coverage unless the adjudicated text explicitly makes it additive to the full ratified R03/T01 matrix.",
+      "evidence": "The new certifier introduces sensitive items not named in the amendment matrix: selected-side truth, policy tables, joint-history quotient, lower-bound witnesses, upper-bound certificate, capacity value, success vectors, scorer results, and candidate work. These are legitimately evaluator-visible only after the base stores and selected manifest are sealed, and forbidden to builders, selectors after commitment, prompts, resolvers, online service processes, caches, indexes, query returns, execution order, and timing channels. Both interpretations say the original full seal remains transitive, but change.json itself does not enumerate these new items. The acceptance artifact must prove the non-cognitive placement and one-way dataflow rather than relying on prose inheritance.",
+      "acceptance_test_ids": [
+        "RML_G1A_T01_EXACT_CONTROL_CAPACITY_WITH_WITNESS",
+        "RML_G1A_T02_SOURCE_ONLY_GOLD_CONSTRUCTION",
+        "RML_G1A_T03_UNCHANGED_EMPIRICAL_GATE_AND_FIREWALL"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "The amendment matrix omits the capacity value, policy witness/table, joint-history quotient, upper-bound certificate, per-side success vector, and scorer outputs; each must be evaluator-only and unreachable from cognition and selection after manifest commitment.",
+    "RML_G1A_T02 conflates authorized public target-prompt/observation variation with forbidden target-conditioned variation in source stores and serving behavior; a two-part byte-provenance and prefix-conditional equality oracle is required.",
+    "The registered semantic reference has no executable hash-bound proof that it is public/schema-level or derived solely from the sealed source before candidate and target selection.",
+    "The deterministic candidate selector can observe certified capacity unless the manifest commitment point and no-reselection dataflow are explicitly ordered and enforced."
+  ],
+  "missing_acceptance_tests": [
+    "RML_G1A_M01_FORMAL_SHARED_HISTORY_POLICY_AND_UPPER_BOUND_CHECKER: define the exact policy/history/success domains, verify a complete joint-history upper-bound certificate independently, and reject quotient, hidden-bit, feedback, detour, witness, and certificate mutations.",
+    "RML_G1A_M02_AUTHORIZED_TARGET_PROJECTION_VERSUS_STORE_SERVE_BYTES: prove that permitted prompt differences derive only from the frozen public target projection while all base-store and prefix-conditional same-key serving bytes and side channels are invariant to hidden-target mutations.",
+    "RML_G1A_M03_SOURCE_REFERENCE_DEPENDENCY_CLOSURE: verify hermetic preselection construction, closed source/reference lineage, every content row's derivation or entailment, ambient-capability denial, and reproducibility from the bound leaves.",
+    "RML_G1A_M04_SELECTION_COMMIT_AND_CAPACITY_BRANCHES: replay the frozen candidate order and tie-breaks; prove capacity cannot affect selection; require no reselection; and exercise P capacity less than one, equal to one, and equal to two with the prospectively ratified stop/proceed behavior.",
+    "RML_G1A_M05_EXACT_AMENDMENT_ALLOWLIST_AND_TRANSITIVE_GATES: reject every non-allowlisted delta and prove that all six original replacement tests and both pre-GPU review roles remain prerequisites in addition to G1A T01-T03."
+  ],
+  "human_questions": [
+    "Does Rohin ratify capacity as the exact maximum registered-side success count achieved by one deterministic policy over the complete authorized visible histories, with NONE denominator four and P denominator two, rather than an open-loop sequence, per-side oracle, probability, or model outcome?",
+    "Does Rohin choose the fail-closed rule that an independently verified P capacity of 2/2 stops before GPU for new benchmark adjudication, without candidate reselection, while capacity 1/2 may proceed only after all unchanged and amended gates pass?",
+    "Does Rohin ratify the exact selection repair: delete the impossible P-zero eligibility predicate, preserve the frozen candidate order and all remaining predicates, seal the first eligible manifest before certification, and forbid capacity-conditioned advancement?",
+    "Does Rohin ratify the split visibility rule under which only authorized public target-prompt/observation bytes may differ across targets, while the semantic reference is demonstrably source-derived and every builder/store/index/query/handle/renderer/same-key serving byte remains target-independent?"
+  ]
+}

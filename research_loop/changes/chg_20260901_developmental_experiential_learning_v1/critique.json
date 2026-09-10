@@ -1,0 +1,431 @@
+{
+  "architecture_change_sha256": "dd8909135951a6d8cb311335f32ed3553eba2fa1e98782c9d4bedcaad74ff2c1",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260901_developmental_experiential_learning_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT03_common_deck_isolation",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "architecture",
+      "concern_id": "C001_unbound_executable_protocol",
+      "evidence": "The proposal deliberately leaves the primary environment, practical margin, predictor floors, budgets, geometric schedule details, baseline realizations, split ordering, and exploration policy unchosen. Both interpretations independently identify these omissions. Consequently A0-A4, C, action value, cloning, and resource equivalence have no executable definitions, while the expected outcomes of AT01 and AT03 presuppose those definitions.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "This is a coherent research direction, not yet a ratifiable or falsifiable experimental protocol."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "architecture",
+      "concern_id": "C002_missing_semantic_store_owner",
+      "evidence": "L02 reads prior_semantic_memories_with_provenance and writes semantic_memory_status_updates, and E04-E05 claim semantic growth precedes LoRA transport. No graph node owns that state. The audit shadow is expressly non-cognitive, the episodic store is verbatim evidence, and the LoRA is expressly not a literal graph. The systems interpretation flags the same inconsistency as D01/A01.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The persistent non-parametric semantic/status object, its reset behavior, and its wake-visible interface are undefined, so implementation would silently choose an architecture and visibility contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "scientific",
+      "concern_id": "C003_unbound_proposal_eligibility",
+      "evidence": "The compiler may accept eligible content, supported shortcuts, procedures, exceptions, and status updates, but no public-data-only transition rule from provisional proposal to compiler-eligible memory is bound. The supplied history documents self-check false approvals, motivated prediction when outcomes were visible, and false structural writes poisoning downstream paths. AT02 asks that only eligible evidence enter the corpus without defining eligibility.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Without a frozen non-oracular eligibility state machine, dream generation, validation, and evidence are confounded and unsupported synthesis can become training data."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C004_query_to_agenda_answer_laundering",
+      "evidence": "L01 can write an unresolved_dependency_agenda from a target-conditioned workspace; E03 lets the agenda steer dream resolution; L02 can then compile dream outputs into the adapter. The visibility prose calls the agenda non-evidentiary but binds neither a typed schema nor a taint rule preventing candidate answers, parent sets, action labels, or target identifiers from being encoded as a supposed dependency. No proposed test executes an adversarial query-to-agenda-to-dream-to-memory cycle.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The current contract does not mechanically prevent a target query or guessed answer from being laundered through the agenda into durable memory."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_common_deck_isolation",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel",
+        "AT07_independent_review_gate"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C005_scorer_and_evaluator_feedback_isolation",
+      "evidence": "The offline scorer reads the audit shadow and may label committed claims, while later sleep reads semantic status and audit-derived metadata. Checkpoint outcomes are declared sealed, but no process boundary, taint label, write-denial rule, or resume-from-pre-evaluation hash comparison is specified. Declarative one-way arrows are insufficient when scorer, audit, status, and scheduler artifacts may share storage.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Indirect scorer, oracle, and evaluation-label feedback remains an unresolved implementation leak surface."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT03_common_deck_isolation",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C006_future_state_and_branch_outcome_boundary",
+      "evidence": "The visibility matrix says target branch outcomes are hidden before action and that checkpoint outcomes are discarded, but it also makes lived traces visible at checkpoint evaluation and permits public outcomes after action. The proposal does not define separate types for ordinary lived outcomes, hidden evaluation-branch outcomes, cloned continuation outcomes, and post-commitment reporting records. The on-policy swap interface is also unspecified.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Future-state and branch-outcome isolation cannot be audited until evaluation branches and ordinary life outcomes have distinct immutable types and stores."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "evaluation",
+      "concern_id": "C007_shortcut_game_not_yet_excluded",
+      "evidence": "No benchmark is selected, so the target-only/current-state/identifier predictors and their floors cannot be instantiated. The benchmark interpretation correctly notes that a global probe can miss family- or checkpoint-specific decoding. The supplied project history contains two concrete precedents: v0.2 target signatures identified the answer, and target anchors bypassed parent/operator induction; the original v0.3 also had passive-signature prediction above majority.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "AT01 and AT05 do not yet demonstrate that success must traverse cross-episode experiential memory rather than a target, state, identifier, action-prior, or passive-signature shortcut."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C008_wrong_module_and_complete_solution_materialization",
+      "evidence": "The architecture says dream should add local relations and the wake resolver should reconstruct complete paths across recurrent iterations. It simultaneously permits procedures and tested hot-path shortcuts without defining when a shortcut becomes an impermissible stored parent set, plan, or final answer. AT04 lists shortcut ablations but does not require cycle-level proof that local additions, rather than a one-shot target solution, caused later reconstruction. The supplied v5 direct-parent diagnostic was a valid negative and should not be silently recreated as the new dream contract.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposal needs a machine-testable boundary preventing parent structures or final answers from being demanded from, or directly installed by, the wrong module."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C009_substrate_reader_thinker_factorial_not_bound",
+      "evidence": "AT04 names many arms but does not freeze a common corpus, query API, candidate set, reader controller, think budget, or two-dimensional capacity ledger for every relevant contrast. Existing evidence in REVIEW_PACK shows context plus recognition equals LoRA plus recognition at small memory, while direct context and direct LoRA both fail; thus the resolution protocol can dominate the substrate. Recognition over a finite answer grammar can itself supply substantial computation or an answer menu.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Text context, organized external memory, explicit graph state, LoRA transport, candidate recognition, and thinker computation are not yet fairly separated or causally attributable."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "scientific",
+      "concern_id": "C010_synthetic_reexpression_as_false_evidence",
+      "evidence": "The compiler generates multiple access views and repeated training examples, and the scheduler may prioritize repetition or support. The proposal does not state that all paraphrases, reverse views, compiled forms, and descendants inherit one evidence-equivalence class. research_notes/42 explicitly warns that repeated wording is not independent support, while the L0 ledger shows exposure multiplicity materially changes LoRA behavior.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Synthetic re-expression can currently inflate support, confidence, selection priority, or evidence counts even though it adds no new lived evidence."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT04_mechanism_and_baseline_suite"
+      ],
+      "category": "architecture",
+      "concern_id": "C011_provenance_diamond_false_cycle",
+      "evidence": "Depth-2 memories may cite earlier memories and multiple descendants may share an ancestor, but no provenance graph semantics or cycle-detection algorithm is specified. A global visited-set implementation would falsely reject valid diamond/shared-ancestry derivations; an overly permissive implementation could admit actual self-support cycles. None of AT02 or AT04 contains a diamond, repeated ancestor, or genuine-cycle fixture.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Valid shared ancestry and invalid evidentiary cycles are not distinguishable under the current provenance contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C012_abandoned_thinker_branch_release",
+      "evidence": "L01 can revise, defer, request dream, or release while writing a cited workspace, agenda, and provisional status, but there is no branch identity or terminal status specifying what survives after rejection, contradiction, budget exhaustion, or release. An abandoned candidate can therefore remain selectable or compilable despite never becoming the committed path.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The system needs an explicit test that an abandoned thinker branch cannot be released into dream selection or memory as supported content."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "operations",
+      "concern_id": "C013_repeat_blocks_invisible_to_policy_state",
+      "evidence": "L01 names bounded working state and budget but no operation identity, repeat counter, or policy-visible repeat block. The supplied gold-control and sequential-thinker traces document repeated queries burning most of the budget and multi-operation completions violating the intended state machine. An external harness guard that the policy cannot observe changes compute and stopping behavior without testing learned or prompted control.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Repeat prevention must be represented in policy state and audited; an invisible runtime block would confound thinker quality, query cost, and action performance."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT05_constructive_action_and_revision",
+        "AT07_independent_review_gate"
+      ],
+      "category": "operations",
+      "concern_id": "C014_prompt_schema_runtime_mismatch",
+      "evidence": "The durable evidence records parser rejection from spaces after commas, self-pairs passing a public agreement check, multi-operation output under a one-operation protocol, negation normalization inversion, directional read failures, partial-cue failure, and a missing attention-mask warning. AT02's generic read-fidelity suite does not require frozen prompt hashes, schema-version negotiation, malformed-output accounting, one-operation enforcement, or adversarial parser tests.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Prompt, parser, schema, and runtime mismatches are demonstrated failure modes and require a dedicated fail-closed acceptance gate."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "evaluation",
+      "concern_id": "C015_capability_ladder_not_identified",
+      "evidence": "AT05 reports A0-A4 separately, but the environment-specific interventions that distinguish them are undefined. A fresh goal absent verbatim from an episode can still be solved by lookup, semantic priors, a one-hop procedure, or target decoding. Planning quality, dependency reconstruction, and action value can also move independently. No matched task families hold observation and action affordances constant while selectively requiring recall, transfer, composition, rule revision, planning, or execution.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed endpoint bundle cannot yet distinguish recall, composition, generalization, planning, and improved action."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "scientific",
+      "concern_id": "C016_on_policy_causal_swap_undefined",
+      "evidence": "AT06 correctly demands experience/representation swaps, but action-conditioned trajectories generally cannot be transferred between agents without impossible states or branch-outcome leakage. Both interpretations flag this. Action-information-gain accounting alone is observational: better actions may reflect controller stochasticity, priors, or an easier reached state rather than memory. No cloning, intervention, or replay semantics are bound.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The on-policy flywheel is not causally identified until a valid paired-world cloning and memory-intervention protocol is specified."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision",
+        "AT07_independent_review_gate"
+      ],
+      "category": "evaluation",
+      "concern_id": "C017_required_strong_baselines_not_frozen",
+      "evidence": "The proposal uses phrases such as strongest feasible and linked A-MEM/GraphRAG-style controls but does not bind implementations. research_notes/11 identifies Auto-Dreamer as the direct baseline-to-beat and calls for Mem0, CLIN, classical continual-learning references, at least two backbones, and at least three task orders. research_notes/42 additionally requires direct trajectory-to-QA LoRA, explicit graph/skill controls, and batch post-training. AT04's broad table does not guarantee these are run or tuned comparably.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Headline comparison is vulnerable to weak, omitted, or post-hoc-selected baselines."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_common_deck_isolation",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "statistics",
+      "concern_id": "C018_statistics_and_replication_unbound",
+      "evidence": "No world-life sample size, number of generators/seeds/orders, estimand, confidence procedure, hierarchical model, multiple-checkpoint correction, missing-life rule, minimum effective sample size, or definition of positive at two later checkpoints is specified. The prior L0 evidence reports LoRA transport standard deviations around 0.06-0.09 with only three worlds, demonstrating that training variance is not negligible. The replication unit is correctly named but not powered.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "C01-C04 cannot be adjudicated statistically, and checkpoint selection creates substantial multiplicity, until a preregistered analysis plan and power rationale are bound."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT03_common_deck_isolation",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "scalability",
+      "concern_id": "C019_context_and_scaling_goalpost",
+      "evidence": "The 0.5C-16C schedule is useful, but C is not fixed, the strongest feasible native-context model is unspecified, and continued causal coverage is described qualitatively. A small chosen C, repeated low-information episodes, changing model context limits, or unequal active versus retained memory can manufacture a post-context crossover. No rule binds checkpoint tokenization, causal novelty density, adapter capacity scaling, or the baseline-flattening criterion.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "A post-context scaling claim is not meaningful until C, causal coverage, memory capacity, and long-context comparisons are frozen independently of outcomes."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision",
+        "AT07_independent_review_gate"
+      ],
+      "category": "evaluation",
+      "concern_id": "C020_split_selection_and_goalpost_movement",
+      "evidence": "The benchmark, target families, predictor floors, practical margin, baseline set, and statistical rule may all be chosen after CPU inspection. AT01 legitimately performs a fit gate, but no frozen candidate roster, selection algorithm, development-only data boundary, or rule for relegating failed worlds is specified. This permits environment shopping or threshold adjustment after informative diagnostics.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Benchmark selection and all decision thresholds must be frozen before model-comparative evidence is observed to prevent post-hoc goalpost movement."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_common_deck_isolation",
+        "AT04_mechanism_and_baseline_suite"
+      ],
+      "category": "evaluation",
+      "concern_id": "C021_external_graph_control_dilemma",
+      "evidence": "The audit graph is forbidden as an answer-bearing solver, yet AT04 calls for strong GraphRAG/A-MEM and explicit graph controls. The permitted native operations, target-conditioned traversal, provenance fields, path computation, and common query API are unspecified. Restricting a graph baseline to atomic reads could cripple it; allowing native path solving while forbidding comparable cognition elsewhere changes the credited module.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The proposal must predeclare a fair treatment of native structured-memory computation without either laundering an oracle or straw-manning graph baselines."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT03_common_deck_isolation",
+        "AT06_on_policy_flywheel",
+        "AT07_independent_review_gate"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C022_cross_life_reset_incomplete",
+      "evidence": "The contract resets MEMORY, episodic state, cache, and working state, but the missing semantic store makes full isolation unverifiable. It also does not enumerate retrieval indexes, compiler caches, optimizer/scheduler state, random-state carryover, temporary files, prompt history, audit-derived selection metadata, or process-global model state. A cross-life adapter control cannot detect every non-adapter route.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Per-life isolation requires an exhaustive state inventory plus canary-based contamination tests, not only rebuilding the adapter from the frozen base."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel"
+      ],
+      "category": "scientific",
+      "concern_id": "C023_negative_result_disposition",
+      "evidence": "C05 names important falsifiers, but the proposal does not bind a decision table for mixed outcomes: for example common-deck benefit without on-policy benefit, A3 gains with A4 regression, threshold crossing on one backbone or order, improved action with worse calibration, or recurrence gains explained by extra sleep compute. Without disposition rules, null cells can be relabeled diagnostics while favorable cells retain headline status.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "All plausible mixed and negative outcomes need preregistered claim consequences so an author-side advocate cannot reinterpret failures after seeing results."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_common_deck_isolation",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision",
+        "AT06_on_policy_flywheel",
+        "AT07_independent_review_gate"
+      ],
+      "category": "operations",
+      "concern_id": "C024_artifact_binding_and_failure_states",
+      "evidence": "The acceptance tests name reports, ledgers, logs, and snapshots but do not define manifest schemas, hash chains, code/container/model/prompt/tokenizer bindings, seed ledgers, atomic commit points, crash recovery, partial-cell handling, or fail-closed states. AT07 requests a packet after the fact but does not itself guarantee that every result is bound to the exact approved bytes or that resumed lives match pre-evaluation hashes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Operational durability is insufficient for a long-running scientific protocol until every input, transition, failure, repair, and output is content-addressed and deterministically auditable."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_experiential_learning_v1/human_directive.txt",
+      "purpose": "Verbatim human directive.",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "purpose": "Developmental proposal and evaluation design.",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis and experiment map.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "purpose": "Project thesis and architecture history.",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da"
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "purpose": "Frozen claim and honesty boundaries.",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c"
+    },
+    {
+      "path": "research_notes/11_baselines_benchmarks.md",
+      "purpose": "Baseline and benchmark requirements.",
+      "sha256": "dbd3afb70c3e03fbacbac479777ddea1e05bfc846bff92ec0f7f9ef0dd8272c6"
+    },
+    {
+      "path": "research_notes/03_agent_memory_benchmarks.md",
+      "purpose": "Memory-system and benchmark survey.",
+      "sha256": "1baa02810c51c5e1826fdb5f7059290353dc5d4df61582276b034e85656458da"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Existing evidence, limitations, and negative results.",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    },
+    {
+      "path": "alchemy/v2_out/mini_ledger.md",
+      "purpose": "L0 mechanism evidence and audit ledger.",
+      "sha256": "a0a077c6276d461864de5a67bd5c360f595e90d374cb9e2963c0ed39328c9549"
+    }
+  ],
+  "critique_id": "crit_chg_20260901_developmental_experiential_learning_v1_adversarial_v1",
+  "human_questions": [
+    "Which exact Level-1 world, Level-2 target, generator version, target families, counterfactual twins, continuation interface, development/evaluation splits, and frozen candidate-selection rule does Rohin ratify?",
+    "What exact per-life object owns semantic memories and statuses, what can read it, how is it reset, and is it exposed as an external-memory baseline?",
+    "What public-data-only state machine determines proposal eligibility, contradiction, revision, shortcut materialization, and ancestry-equivalent evidence counts?",
+    "Must checkpoint memory be frozen before any held-out goal is revealed, and what typed fields are permitted in a request-dream agenda?",
+    "What are the exact active-memory, retained-memory, adapter-byte, training-FLOP, retrieval-token, thought-token, action, consolidation, latency, and native-context matching rules?",
+    "What are C, the practical advantage margin, predictor floors, sample size, backbone and task-order requirements, confidence procedure, multiplicity correction, and missing-data rule?",
+    "Which baseline implementations are mandatory, including Auto-Dreamer, organized text/graph memory, direct-QA LoRA, reflection/skill memory, native long context, classical continual learning, and batch post-training?",
+    "What native computation may graph and skill baselines perform, and what common-interface result versus native-interface result will be reported?",
+    "What exact cloning, replay, branching, and intervention protocol makes the on-policy experience/representation swap causally valid?",
+    "Are complete parent sets, target-specific plans, or final answers ever permissible compiled shortcuts; if so, under what prior action-derived provenance and held-out exclusion rule?",
+    "Does Rohin explicitly exclude L05 and every shared learned controller from the initial study?",
+    "After all blocking concerns are disposed, does Rohin ratify the exact revised bytes, frozen artifact hashes, human decision boundaries, and narrowly enumerated implementation scope?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_developmental_experiential_learning_v1.systems",
+      "sha256": "952ba0571d122f6bb59827ab03747202ce7c950dc615b38bfc857be8f94901bb"
+    },
+    {
+      "interpretation_id": "chg_20260901_developmental_experiential_learning_v1.benchmark",
+      "sha256": "9ef8c520ab7dffd761f76be880b648360207d69a29829f0e2233efb4b3c7b7e2"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "MT01_semantic_store_lifecycle_and_visibility: create, revise, retrieve, reset, and cross-life-canary tests for the non-parametric semantic/status object.",
+    "MT02_proposal_eligibility_and_evidence_equivalence: public-data-only status transitions with paraphrases, reverse views, repeated blocks, and descendants counted as one ancestral evidence source.",
+    "MT03_query_agenda_taint: adversarial target, candidate-answer, parent-set, and identifier payloads must not become evidentiary dream content or adapter training data.",
+    "MT04_scorer_future_state_noninterference: hidden answers, exact solver output, evaluation labels, branch outcomes, and post-commitment scores must produce byte-identical future life state.",
+    "MT05_branch_release_and_rejection: abandoned, contradicted, timed-out, and released thinker branches must not be selected, compiled, or cited as supported memory.",
+    "MT06_provenance_diamond_and_cycle: accept valid shared-ancestry diamonds, reject true directed cycles and self-support, and preserve unique source attribution.",
+    "MT07_policy_visible_repeat_guard: repeated query/action state must be visible to the controller, with one operation per call and deterministic budget accounting.",
+    "MT08_prompt_schema_runtime_compatibility: frozen prompt/parser/schema versions, malformed-output preservation, whitespace and ordering fuzzing, negation cases, self-edge rejection, and attention-mask checks.",
+    "MT09_local_growth_wrong_module: verify that each dream cycle contributes eligible local structure and that no unexperienced held-out answer or one-shot final plan is materialized.",
+    "MT10_shortcut_collision_suite: per-family and per-checkpoint target-only, current-state, identifier, passive-signature, action-prior, and counterfactual-twin predictors.",
+    "MT11_substrate_reader_thinker_factorial: identical accepted corpus across text, organized external memory, explicit graph, and LoRA crossed with direct, generative, and recognition readers under matched thinker budgets.",
+    "MT12_capability_identification_suite: orthogonal matched tasks for A0 recall, A1 transfer, A2 cross-episode generalization, A3 composition/planning, A4 revision/recovery, and actual action value.",
+    "MT13_on_policy_clone_swap_intervention: causal state cloning, memory ablation or swap at randomized decision points, impossible-state rejection, fixed action budget, and sealed branch outcomes.",
+    "MT14_statistical_split_and_order_gate: frozen world-life sample size, power rationale, generators, backbones, task orders, estimand, confidence method, multiplicity, missingness, and mixed-result disposition.",
+    "MT15_artifact_replay_and_failure_state_gate: content-addressed code, environment, model, prompt, tokenizer, seeds, inputs, snapshots, crash/restart points, and byte-identical deterministic replay."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "AT01_environment_and_leakage_fit",
+    "AT02_atomic_memory_contract",
+    "AT03_common_deck_isolation",
+    "AT04_mechanism_and_baseline_suite",
+    "AT05_constructive_action_and_revision",
+    "AT06_on_policy_flywheel",
+    "AT07_independent_review_gate"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is that the proposal converts an underspecified memory thesis into a conditional, falsifiable whole-organism hypothesis with unusually explicit division of labor: immutable lived episodes preserve evidence; recurrent dreaming proposes local structure; compilation preserves provenance; a reset-isolated per-life LoRA supplies lossy persistence; and a goal-conditioned resolver performs explicit reconstruction before action. The common-deck experiment can isolate representation/use from experience collection, while the later paired on-policy experiment can separately test whether memory changes information-seeking and subsequent evidence. The proposal also preserves adverse prior results, allows early external-memory superiority and non-monotone learning, names whole-world-life replication, strong baseline classes, leakage exclusions, and hard falsifiers. If the unresolved protocol, visibility, attribution, and statistical details are frozen before implementation and then pass independent review, this design could support a narrow behavioral claim about sustained post-context A2-A4 action improvement; it does not currently support that claim or authorize implementation.",
+  "visibility_failures": [
+    "No owned semantic/status store exists in the graph even though sleep reads and writes that state, leaving its cognitive visibility and reset boundary undefined.",
+    "A target-conditioned unresolved agenda can reach dream and compilation without a machine-enforced schema excluding candidate answers, parent sets, target identifiers, or unsupported workspace content.",
+    "Offline scorer, audit, semantic-status, and scheduler artifacts lack a specified physical or taint-isolated boundary preventing indirect feedback after scoring.",
+    "Ordinary public outcomes, cloned continuation outcomes, hidden checkpoint-branch outcomes, and reporting-only truth are not represented as distinct immutable information types.",
+    "Recognition candidate sets and read plans are unbound; they may expose an answer menu or target-derived candidate unavailable to other memory substrates.",
+    "The permitted cognitive interface to organized text, GraphRAG, A-MEM, and explicit graph controls is undefined, risking either an answer-bearing solver or a crippled baseline.",
+    "Abandoned, contradicted, deferred, and released thinker branches lack lifecycle labels controlling their later visibility to sleep selection and compilation.",
+    "Cross-life isolation does not enumerate semantic state, retrieval indexes, compiler caches, optimizer state, random state, temporary artifacts, audit metadata, and process-global caches."
+  ]
+}

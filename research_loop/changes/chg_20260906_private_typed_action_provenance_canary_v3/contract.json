@@ -1,0 +1,198 @@
+{
+  "artifact_type": "private_typed_action_structural_fixture_contract",
+  "schema_version": 1,
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v3",
+  "state": "proposal_only",
+  "claim_class": "deterministic_structural_fixture_conformance_only",
+  "runtime_claim": "explicitly_absent",
+  "future_runtime_gate": "FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE",
+  "canonical_bytes": {
+    "json": "RFC8785_JCS_UTF8",
+    "artifact_framing": "one JCS record per line with exactly one trailing LF and no BOM",
+    "hash": "lowercase SHA-256 over the exact framed bytes named by the field",
+    "integer_domain": "JSON integers only; booleans and floating-point values are not integers",
+    "string_domain": "valid Unicode scalar values only; UTF-8 shortest form; lone surrogates forbidden",
+    "duplicate_json_keys": "forbidden before object construction"
+  },
+  "response_envelope": {
+    "transport_representation": "raw_response_envelope_bytes is an opaque byte string. A fixture represents it by exactly one of raw_response_envelope_utf8 (the exact UTF-8 encoding of that string) or raw_response_envelope_bytes_hex (decoded lowercase base16); the resulting bytes need not be valid UTF-8 or JSON",
+    "success_shape": {
+      "additional_properties": false,
+      "required": ["response"],
+      "response_required": ["assistant_text", "tool_calls"],
+      "assistant_text": "Unicode string",
+      "tool_calls": "JSON array; zero calls is EMPTY_CHANNEL, one is parsed, two or more is DUPLICATE_CALL",
+      "call_required": ["arguments_json", "name"],
+      "name": "exact string private_step",
+      "arguments_json": "Unicode string whose UTF-8 bytes are raw_tool_channel_bytes and may independently be malformed JSON"
+    },
+    "extraction": [
+      "decode fixture base16 to raw_response_envelope_bytes",
+      "validate raw envelope byte limits",
+      "strictly decode UTF-8 and reject lone surrogates",
+      "parse JSON while rejecting duplicate keys before object construction",
+      "require one root object and exact /response pointer",
+      "UTF-8 encode /response/assistant_text as assistant_text_bytes",
+      "classify /response/tool_calls cardinality",
+      "for exactly one call require exact keys arguments_json and name",
+      "require name equals private_step",
+      "UTF-8 encode arguments_json content, without JSON quotes, as raw_tool_channel_bytes",
+      "strictly parse raw_tool_channel_bytes with duplicate-key rejection and validate typed arguments",
+      "on success emit canonical_response_envelope_bytes as RFC8785 JCS of the parsed outer object and canonical_typed_arguments_bytes as RFC8785 JCS of the parsed typed arguments; both outputs are absent on rejection"
+    ],
+    "typed_arguments": {
+      "additional_properties": false,
+      "required": ["delta"],
+      "properties": {"delta": {"type": "integer", "minimum": -4, "maximum": 4}}
+    },
+    "prose_authority": "assistant_text_bytes are retained and hashed but never interpreted as a call, argument, authorization, transition, score, or validation result"
+  },
+  "record_grammar": {
+    "record_count": 6,
+    "schema_path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v3/structural_record.schema.json",
+    "common_required": ["actor", "event_index", "event_type", "fixture_id", "prior_record_sha256", "record_schema_version"],
+    "record_schema_version": 1,
+    "first_prior_hash": "64 lowercase zero characters",
+    "chain_rule": "for i>0, prior_record_sha256 equals SHA-256 of exact JCS bytes of record i-1 without its trailing LF",
+    "accepted_sequence": [
+      {"event_index": 0, "event_type": "FIXTURE_OPEN", "actor": "FIXTURE_WRITER"},
+      {"event_index": 1, "event_type": "INVOCATION_DECLARED", "actor": "FIXTURE_WRITER"},
+      {"event_index": 2, "event_type": "RESPONSE_DECLARED", "actor": "FIXTURE_WRITER"},
+      {"event_index": 3, "event_type": "PARSE_DECLARED", "actor": "STRUCTURAL_PARSER"},
+      {"event_index": 4, "event_type": "TRANSITION_DECLARED", "actor": "TRANSITION_ORACLE"},
+      {"event_index": 5, "event_type": "FIXTURE_CLOSE", "actor": "FIXTURE_WRITER"}
+    ],
+    "rejected_sequence": [
+      {"event_index": 0, "event_type": "FIXTURE_OPEN", "actor": "FIXTURE_WRITER"},
+      {"event_index": 1, "event_type": "INVOCATION_DECLARED", "actor": "FIXTURE_WRITER"},
+      {"event_index": 2, "event_type": "RESPONSE_DECLARED", "actor": "FIXTURE_WRITER"},
+      {"event_index": 3, "event_type": "PARSE_DECLARED", "actor": "STRUCTURAL_PARSER"},
+      {"event_index": 4, "event_type": "NONDISPATCH_DECLARED", "actor": "STRUCTURAL_PARSER"},
+      {"event_index": 5, "event_type": "FIXTURE_CLOSE", "actor": "FIXTURE_WRITER"}
+    ],
+    "branch_fields": {
+      "INVOCATION_DECLARED": ["child_request_bytes_hex", "child_request_sha256", "offered_tool_schema_sha256", "renderer_manifest_sha256"],
+      "RESPONSE_DECLARED": ["assistant_text_bytes_hex", "assistant_text_sha256", "raw_response_envelope_bytes_hex", "raw_response_envelope_sha256", "raw_tool_channel_bytes_hex_or_empty", "response_extractor_manifest_sha256"],
+      "PARSE_DECLARED": ["first_error_or_null", "parse_decision", "parse_input_sha256", "parser_manifest_sha256", "typed_arguments_or_null"],
+      "TRANSITION_DECLARED": ["action_authorization_sha256", "after_state", "before_state", "score_denominator", "score_numerator", "transition_manifest_sha256"],
+      "NONDISPATCH_DECLARED": ["dispatch_permitted", "parse_decision_sha256", "transition_present"],
+      "FIXTURE_CLOSE": ["branch", "record_count", "terminal_record_set_sha256"]
+    },
+    "field_relations": [
+      "FIXTURE_OPEN.bundle_manifest_sha256 equals the SHA-256 of normative_bundle_manifest.json",
+      "INVOCATION_DECLARED.child_request_bytes_hex decodes to the exact fixture child_request_utf8 bytes and child_request_sha256 hashes those bytes",
+      "INVOCATION_DECLARED.offered_tool_schema_sha256 equals SHA256(RFC8785_JCS({arguments_schema:contract.response_envelope.typed_arguments,name:contract.structural_oracle.offered_tool_name}))",
+      "each *_manifest_sha256 equals SHA256(RFC8785_JCS(the unique manifests.json object with the corresponding component_id))",
+      "RESPONSE_DECLARED.raw_response_envelope_bytes_hex decodes to the exact fixture envelope bytes and raw_response_envelope_sha256 hashes those bytes",
+      "RESPONSE_DECLARED.assistant_text_bytes_hex and raw_tool_channel_bytes_hex_or_empty equal extractor outputs and assistant_text_sha256 hashes assistant_text_bytes",
+      "PARSE_DECLARED.parse_input_sha256 hashes raw_tool_channel_bytes, including SHA256(empty bytes) for an empty channel; parse decision, first error, and typed arguments equal the total parser outputs",
+      "for ACCEPTED, first_error_or_null is null and typed_arguments_or_null is the exact typed argument object; for REJECTED, first_error_or_null is non-null and typed_arguments_or_null is null",
+      "TRANSITION_DECLARED.action_authorization_sha256, before/after state, and reduced score equal structural_oracle outputs and the accepted fixture expected values",
+      "NONDISPATCH_DECLARED.parse_decision_sha256 equals SHA256(RFC8785_JCS(event 3)); its two booleans are false",
+      "FIXTURE_CLOSE.branch equals the selected grammar, record_count is 6, prior_record_sha256 hashes event 4, and terminal_record_set_sha256 follows structural_oracle.terminal_set_hash",
+      "fixture_id is byte-equal in all six records; every prior_record_sha256 follows chain_rule; no unlisted value may be supplied by an implementation default"
+    ],
+    "rejection_ownership": "The structural parser produces the rejected parse decision and NONDISPATCH_DECLARED semantic receipt; the fixture writer only serializes that receipt. NONDISPATCH_DECLARED declares actor STRUCTURAL_PARSER, binds the parse-decision hash, sets dispatch_permitted=false and transition_present=false, and contains no transition-oracle source or receipt hash",
+    "structural_cardinality": "one and only one record of each ordinal and role in the chosen six-record grammar; this makes no assertion about unrecorded runtime operations because no runtime operation exists in v3"
+  },
+  "structural_oracle": {
+    "request_text": "Apply exactly one private_step call if the structured channel contains one valid call.",
+    "offered_tool_name": "private_step",
+    "before_state": 2,
+    "transition": "after_state = before_state + delta",
+    "score": "start with raw numerator = 8 - abs(8 - after_state) and raw denominator = 8; divide both by gcd(abs(raw numerator),8), with gcd(0,8)=8; store the resulting reduced signed numerator and positive denominator",
+    "authorization_hash": "SHA256(JCS({arguments:typed_arguments,parse_decision_sha256:SHA256(JCS(PARSE_DECLARED record)),tool_name:private_step}))",
+    "terminal_set_hash": "SHA256(concatenation in event-index order of the lowercase SHA-256 values for records 0 through 4, each decoded to 32 bytes); record 5 is excluded to avoid self-reference",
+    "accepted_fixture_expected": {"after_state": 5, "delta": 3, "score_denominator": 8, "score_numerator": 5},
+    "rejected_fixture_expected": {"dispatch_permitted": false, "first_error": "E_ARGUMENT_JSON_SYNTAX", "transition_present": false}
+  },
+  "first_error_precedence": [
+    {"rank": 1, "code": "E_ENVELOPE_HEX", "predicate": "fixture raw_response_envelope_bytes_hex is not even-length lowercase base16"},
+    {"rank": 2, "code": "E_ENVELOPE_BYTES_LIMIT", "predicate": "decoded raw envelope length exceeds 16384 bytes"},
+    {"rank": 3, "code": "E_RESPONSE_UTF8", "predicate": "raw envelope is not strict UTF-8 or contains a lone surrogate"},
+    {"rank": 4, "code": "E_RESPONSE_JSON_DUPKEY", "predicate": "outer JSON lexer observes a duplicate object key at any depth"},
+    {"rank": 5, "code": "E_RESPONSE_JSON_SYNTAX", "predicate": "outer JSON is syntactically invalid"},
+    {"rank": 6, "code": "E_RESPONSE_ROOT", "predicate": "outer JSON root is not an object"},
+    {"rank": 7, "code": "E_RESPONSE_POINTER", "predicate": "exact /response object or required assistant_text/tool_calls member is absent"},
+    {"rank": 8, "code": "E_RESPONSE_SHAPE", "predicate": "response or assistant_text/tool_calls types are wrong, or an outer/response additional property exists"},
+    {"rank": 9, "code": "E_EMPTY_CHANNEL", "predicate": "tool_calls length is zero"},
+    {"rank": 10, "code": "E_DUPLICATE_CALL", "predicate": "tool_calls length is two or more"},
+    {"rank": 11, "code": "E_CALL_SHAPE", "predicate": "the sole call is not an exact object with arguments_json and name strings"},
+    {"rank": 12, "code": "E_UNKNOWN_TOOL", "predicate": "the sole name is not private_step"},
+    {"rank": 13, "code": "E_ARGUMENT_BYTES_LIMIT", "predicate": "UTF-8 encoding of arguments_json exceeds 1024 bytes"},
+    {"rank": 14, "code": "E_ARGUMENT_JSON_DUPKEY", "predicate": "argument JSON lexer observes a duplicate object key"},
+    {"rank": 15, "code": "E_ARGUMENT_JSON_SYNTAX", "predicate": "argument bytes are syntactically invalid JSON"},
+    {"rank": 16, "code": "E_ARGUMENT_SCHEMA", "predicate": "argument JSON fails the exact typed_arguments schema"},
+    {"rank": 17, "code": "E_RECORD_RESOURCE", "predicate": "parsed fixture exceeds six records, 32768 aggregate decoded bytes, depth 8, or 64 scalar fields"},
+    {"rank": 18, "code": "E_RECORD_SCHEMA", "predicate": "a record has missing, additional, incorrectly typed, or branch-illegal fields"},
+    {"rank": 19, "code": "E_RELATION", "predicate": "a hash, actor, ordinal, cardinality, transition, score, manifest, or close relation fails"}
+  ],
+  "precedence_totality": {
+    "rule": "evaluate predicates strictly in ascending rank and return the first true predicate; predicates depending on decoded or parsed values are false when that prerequisite value does not exist",
+    "simultaneous_cases": [
+      {"conditions": ["invalid base16", "apparent semantic oversize"], "expected": "E_ENVELOPE_HEX"},
+      {"conditions": ["valid base16 over 16384 bytes", "invalid UTF-8"], "expected": "E_ENVELOPE_BYTES_LIMIT"},
+      {"conditions": ["valid-size invalid UTF-8", "would exceed parsed limits"], "expected": "E_RESPONSE_UTF8"},
+      {"conditions": ["outer duplicate key", "outer syntax tail error"], "expected": "E_RESPONSE_JSON_DUPKEY"},
+      {"conditions": ["two calls", "first call unknown"], "expected": "E_DUPLICATE_CALL"},
+      {"conditions": ["unknown tool", "malformed arguments_json"], "expected": "E_UNKNOWN_TOOL"},
+      {"conditions": ["arguments over 1024 bytes", "malformed argument JSON"], "expected": "E_ARGUMENT_BYTES_LIMIT"},
+      {"conditions": ["valid argument but record resource and relation invalid"], "expected": "E_RECORD_RESOURCE"}
+    ]
+  },
+  "publication_contract": {
+    "claim_relevance": "future evidence publication only; not evidence of actual request, parse, dispatch, transition, or syscall execution",
+    "supported_platform": {
+      "cpu_arch": "x86_64",
+      "os": "GNU/Linux",
+      "kernel_release": "6.8.0",
+      "libc": "glibc-2.39",
+      "filesystem": "ext4 local block filesystem",
+      "mount": "single mount, rw,data=ordered,barrier; not NFS/FUSE/overlay/tmpfs",
+      "required_primitives": ["flock(LOCK_EX)", "openat2(RESOLVE_BENEATH|RESOLVE_NO_MAGICLINKS|RESOLVE_NO_SYMLINKS)", "open(O_CREAT|O_EXCL|O_NOFOLLOW,0600)", "fsync(file)", "renameat2(RENAME_NOREPLACE)", "fsync(directory)"]
+    },
+    "threat_model": {
+      "protects": ["cooperative concurrent writers using the designated lock", "destination collisions", "symlink substitution at resolved path components", "partial write and crash states admitted by the specified filesystem contract", "post-commit byte mutation detectable by rehash and revalidation"],
+      "does_not_protect": ["root, kernel, firmware, hardware, or storage-controller compromise", "malicious same-UID actors with directory write access", "filesystems or mount options outside the exact supported platform", "rollback of the whole directory to an older valid snapshot", "prevention of post-commit mutation"],
+      "immutability_semantics": "collision-safe no-replace publication plus mutation detection; never physical write prevention"
+    },
+    "canary_publish_steps": ["open the configured publication root once as a no-follow directory fd and reject a non-directory or changed configured root", "acquire designated flock through that directory fd", "open a same-directory random partial relative to that directory fd with openat2 resolve restrictions and exclusive no-follow create", "write exact bytes", "fsync partial", "validate partial with both validators and comparator", "renameat2 on the same directory fd with RENAME_NOREPLACE to the content-addressed destination", "fsync the directory fd", "release lock and close descriptors"],
+    "receipt_publish_steps": ["after canary directory fsync, re-open committed canary by directory fd with no-follow", "rehash and revalidate committed bytes", "create same-directory receipt partial with no-follow exclusive create", "write exact receipt", "fsync receipt partial", "renameat2 RENAME_NOREPLACE to content-addressed receipt destination", "fsync directory", "re-open and revalidate both committed objects", "mark claim eligible only in derived validation output; never mutate either committed object"],
+    "recovery_states": [
+      {"state": "ABSENT", "eligible": false},
+      {"state": "CANARY_PARTIAL", "eligible": false},
+      {"state": "CANARY_RENAMED_DIR_UNSYNCED", "eligible": false},
+      {"state": "CANARY_COMMITTED", "eligible": false},
+      {"state": "RECEIPT_PARTIAL", "eligible": false},
+      {"state": "RECEIPT_RENAMED_DIR_UNSYNCED", "eligible": false},
+      {"state": "CLAIM_ELIGIBLE", "eligible": true}
+    ],
+    "recovery_rule": "on every startup, quarantine partials; never replace a destination; treat collisions as fatal unless exact existing bytes rehash and revalidate to the same content-addressed identity, in which case report ALREADY_PRESENT without writing; eligibility is recomputed only after both directory-fsync boundaries and final reopen/revalidation",
+    "mutation_rule": "any later canary or receipt hash mismatch immediately makes the pair ineligible; this is detection, not prevention"
+  },
+  "evidence_receipt_schema": {
+    "schema_path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v3/evidence_receipt.schema.json",
+    "additional_properties": false,
+    "required": ["bundle_manifest_sha256", "canary_bytes_sha256", "comparator_output_sha256", "implementation_manifests", "platform_manifest_sha256", "receipt_schema_version", "validator_a_output_sha256", "validator_b_output_sha256"],
+    "implementation_manifest_required": ["component_id", "dependency_lock_sha256", "interpreter_sha256", "source_sha256", "spec_manifest_sha256"],
+    "implementation_manifest_component_ids": ["COMPARATOR_SPEC_V3", "EVIDENCE_LIFECYCLE_V3", "FIXTURE_RENDERER_V3", "PUBLICATION_PLATFORM_V3", "RESPONSE_EXTRACTOR_V3", "STRUCTURAL_PARSER_V3", "TRANSITION_ORACLE_V3", "VALIDATOR_A_SPEC_V3", "VALIDATOR_B_SPEC_V3"],
+    "implementation_manifest_set_rule": "implementation_manifests contains exactly one entry for each implementation_manifest_component_ids value and no other component_id",
+    "receipt_schema_version": 1,
+    "closure_rule": "every spec_manifest_sha256 resolves to exactly one object in manifests.json; all overlapping source, dependency lock, interpreter, platform, schema, renderer, payload, canary, and validator-output identities must be byte-equal wherever repeated"
+  },
+  "validator_independence": {
+    "validator_a": "independent streaming UTF-8/JSON lexer plus record-state reducer",
+    "validator_b": "independent full-buffer parser plus separately authored relational predicates",
+    "forbidden_shared_inputs": ["implementation helper imports", "golden artifact hash allowlists", "mutation hash allowlists", "expected result tables", "oracle output files", "the other validator output before both outputs commit"],
+    "permitted_shared_inputs": ["ratified contract.json", "ratified manifests.json", "ratified bundle manifest", "candidate fixture bytes"],
+    "comparator": "receives both committed outputs only after both validators finish and requires byte-identical canonical verdict, first_error, and derived relation values"
+  },
+  "scientific_prohibitions": [
+    "No inference about model input consumption, response authorship, intent, reasoning, or tool use.",
+    "No inference about actual runtime operation cardinality, syscall order, dispatch, transition, or score computation.",
+    "No answer-leakage, task-blindness, secrecy, declassification, or noninterference claim.",
+    "No memory, learning, teachability, credit-assignment, planning, recall, composition, consolidation, or behavior claim.",
+    "No baseline, comparative, statistical, benchmark, negative scientific, performance, efficiency, scaling, or lifetime claim.",
+    "No artifact may enter context, training, evaluation, adapter, report feedback, or another life."
+  ]
+}

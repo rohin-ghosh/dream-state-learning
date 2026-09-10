@@ -1,0 +1,225 @@
+{
+  "schema_version": "pcfl-estimator-v2.0.0",
+  "artifact_type": "pcfl_d0_estimator_manifest",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "stage": "D0_reference_checker_only",
+  "state": "proposed_not_scientific_authority",
+  "scope_statement": "These rules and goldens bind deterministic estimator-checker behavior. D0 has no model observations and cannot estimate a PCFL effect. A future exact backend must receive new authority and rerun the bound estimators on the frozen locked cells.",
+  "fixed_shapes": {
+    "dev_twin_pairs": 8,
+    "cpu_gate_twin_pairs": 64,
+    "calibration_twin_pairs": 6,
+    "confirmation_twin_pairs": 16,
+    "ordered_reserve_streams": 16,
+    "twins_per_pair": 2,
+    "ladders": [
+      "A2",
+      "A3"
+    ],
+    "locked_targets_per_ladder_per_world": 8,
+    "paired_adapter_seeds_per_world": 2,
+    "confirmation_sign_vectors": 65536,
+    "bootstrap_resamples": 100000
+  },
+  "numeric_contract": {
+    "input_domain": "Every item value is an exact decimal or integer in [0,1] and is parsed as a reduced rational. JSON binary64 is not an authority representation.",
+    "difference_domain": "Every paired arm difference is a reduced rational in [-1,1].",
+    "arithmetic": "Means, variances, grid values, p-value counts, comparisons, and adjusted-p multipliers use reduced integers/rationals. Square roots are never needed for a decision comparison.",
+    "reporting": "Report each decision quantity as reduced numerator/denominator plus a decimal rounded half-even to 10 places. Infinity is serialized only as the enum POSITIVE_INFINITY or NEGATIVE_INFINITY, never as a non-JSON number.",
+    "comparison_rule": "All thresholds are exact rationals. Do not compare rounded display decimals."
+  },
+  "item_score": {
+    "A3": "Minimal success is 1; every failure, defer, malformed output, illegal action, cap exhaustion, censored non-success, or structurally missing dispatched cell is 0.",
+    "A2": "Minimal success is 1. A successful item loses exactly min(1/10, avoidable_action_penalty_from_the_ratified_score_table); every non-success/failure/missing disposition is 0.",
+    "separate_reporting": "Success and censored regret are separate fields. Regret never changes a failure from zero and is not substituted for the registered item value."
+  },
+  "pair_score_aggregation": {
+    "order": [
+      "For each arm, twin world, ladder, and adapter seed, average the eight locked target values with denominator 8.",
+      "Within the same twin world and ladder, average the two paired adapter-seed target means with denominator 2. Non-adapter arms use two deterministic identical seed slots declared by the future manifest; they do not gain replication.",
+      "Within the twin world, average the A2 and A3 ladder means with equal weights 1/2 and 1/2.",
+      "Within the counterfactual pair, average H and H_dagger world means with equal weights 1/2 and 1/2 to obtain the sole independent score Y[p,arm]."
+    ],
+    "formula": "Y[p,a] = (1/2) * sum_twin[(1/2) * sum_ladder[(1/2) * sum_seed[(1/8) * sum_target value[p,a,twin,ladder,seed,target]]]]",
+    "prohibited": [
+      "target-, episode-, query-, view-, example-, model-call-, or adapter-seed-level pseudo-replication",
+      "unequal A2/A3 weights",
+      "complete-case deletion",
+      "post-outcome target, seed, twin, world, pair, or reserve replacement",
+      "averaging twins before applying item failure-as-zero"
+    ]
+  },
+  "confirmation_contrasts": {
+    "co_primary": [
+      {
+        "hypothesis_id": "D1_E_LORA_MINUS_D_LORA",
+        "pair_difference": "Y[p,E-LoRA] - Y[p,D-LoRA]",
+        "registered_null": "0/1",
+        "observed_mean_gate": ">= 1/10",
+        "simultaneous_lower_bound_gate": "> 0/1"
+      },
+      {
+        "hypothesis_id": "D2_E_LORA_MINUS_A_NATIVE",
+        "pair_difference": "Y[p,E-LoRA] - Y[p,A-native]",
+        "registered_null": "0/1",
+        "observed_mean_gate": ">= 1/10",
+        "simultaneous_lower_bound_gate": "> 0/1"
+      },
+      {
+        "hypothesis_id": "D3_E_LORA_MINUS_E_TEXT",
+        "pair_difference": "Y[p,E-LoRA] - Y[p,E-text]",
+        "registered_null": "-1/10",
+        "observed_mean_gate": "none_beyond_bound",
+        "simultaneous_lower_bound_gate": "> -1/10"
+      }
+    ],
+    "locked_usefulness_prerequisite": {
+      "hypothesis_id": "U1_E_LORA_MINUS_N",
+      "pair_difference": "Y[p,E-LoRA] - Y[p,N]",
+      "registered_null": "0/1",
+      "observed_mean_gate": "> 0/1",
+      "one_sided_lower_bound_gate": "> 0/1",
+      "p_value_gate": "<= 1/20",
+      "multiplicity_rationale": "U1 is an intersection-union prerequisite for the single bounded positive conclusion and is never reported as a free-standing discovery. All three co-primary rejections and U1 must pass; this extra necessary component cannot increase the type-I error of that conjunction."
+    },
+    "overall_positive_rule": "All three Romano-Wolf adjusted co-primary p-values must be <=1/20, both superiority means must be >=1/10, all registered lower-bound gates must pass strictly, U1 must pass all of its strict usefulness gates, every nonstatistical confirmation/binding/visibility/resource gate must pass, and claim_policy.json must permit the exact comparator-qualified conclusion. Otherwise no positive confirmation claim is attempted or retained."
+  },
+  "studentizer": {
+    "sample_size": 16,
+    "centered_values": "For null h and pair differences d_i, x_i=d_i-h.",
+    "mean": "x_bar = sum_i(x_i)/16.",
+    "sample_variance": "s_squared = sum_i((x_i-x_bar)^2)/15; the finite-sample denominator is n-1, never n.",
+    "statistic": "T=x_bar/(s/sqrt(16)). For exact ordering, when variance is positive represent sign(T) and T_squared = (sum_i x_i)^2 * 15 / (16*sum_i(x_i^2) - (sum_i x_i)^2).",
+    "zero_variance": [
+      "If s_squared=0 and x_bar>0, T=POSITIVE_INFINITY.",
+      "If s_squared=0 and x_bar=0, T=ZERO with squared numerator 0 and denominator 1.",
+      "If s_squared=0 and x_bar<0, T=NEGATIVE_INFINITY."
+    ],
+    "ordering": "NEGATIVE_INFINITY < negative finite values < ZERO < positive finite values < POSITIVE_INFINITY. Compare finite statistics exactly by sign and cross-multiplied squared rational magnitude; reverse magnitude ordering for two negative values.",
+    "all_zero_rule": "An all-zero centered vector has T=ZERO, never NaN. Its observed one-sided sign-flip p-value is 1."
+  },
+  "exhaustive_sign_flip": {
+    "n": 16,
+    "mask_order": "Enumerate unsigned masks 0 through 65535 inclusive in increasing integer order.",
+    "sign_rule": "For pair index i in 0..15, bit i=0 means +1 and bit i=1 means -1. Mask 0 is the observed all-plus vector.",
+    "joint_rule": "Use the same 16-bit sign vector for every contrast in a max-T family, preserving pair-level dependence.",
+    "p_value": "p = count(permuted statistic >= observed statistic)/65536. Equality is included. Because enumeration is exhaustive, no add-one correction is applied.",
+    "one_sided": true,
+    "random_sampling_permitted": false
+  },
+  "romano_wolf_max_t_stepdown": {
+    "family": [
+      "D1_E_LORA_MINUS_D_LORA",
+      "D2_E_LORA_MINUS_A_NATIVE",
+      "D3_E_LORA_MINUS_E_TEXT"
+    ],
+    "null_centering": "Center each pair vector at its registered null before observed and permuted studentization.",
+    "observed_order": "Sort by decreasing observed T. Break an exact T tie by increasing UTF-8 hypothesis_id bytes.",
+    "step": "At ordered step k, for each mask take the maximum permuted T over hypotheses not removed before k. The step raw adjusted p is the inclusive exceedance fraction against the step-k observed T.",
+    "monotonicity": "The reported adjusted p at step k is max of all step raw adjusted p-values from steps 1..k, capped at 1.",
+    "decision": "Reject while reported adjusted p <=1/20. Once a step fails, that and every later ordered hypothesis are not rejected, even if a later unadjusted p is small.",
+    "tie_rule": "The hypothesis-id tie order is normative. Inclusive statistic ties and p-value equality at alpha both favor inclusion/rejection exactly as stated."
+  },
+  "grid_inverted_lower_bounds": {
+    "purpose": "Deterministic one-sided max-T simultaneous checker bounds for the three co-primary contrasts.",
+    "grid": {
+      "integer_ticks": "-10000 through 10000 inclusive",
+      "value": "tick/10000",
+      "step": "1/10000",
+      "domain": "[-1,1]",
+      "order": "increasing tick"
+    },
+    "candidate_test": [
+      "To bound coordinate j at candidate delta, set x_j=d_j-delta.",
+      "For every other co-primary coordinate k, set nuisance residuals x_k=d_k-mean(d_k), so its observed statistic is exactly ZERO under the zero-variance convention when appropriate.",
+      "For each common sign mask, compute max-T over all three candidate/residual vectors.",
+      "The candidate p-value is the fraction of max-T values >= the observed statistic of x_j. Reject the candidate when p<=1/20."
+    ],
+    "endpoint_and_hole_rule": "Starting at tick -10000, take the longest contiguous prefix of rejected candidates. The lower bound is its greatest tick. If the first tick is not rejected, report BELOW_DOMAIN and the gate fails. Stop at the first nonrejected tick even if a later tick would reject. If every tick rejects, report AT_UPPER_DOMAIN with bound 1.",
+    "strict_gate_rule": "Compare the unrounded bound tick strictly to the registered gate. Equality fails.",
+    "u1_rule": "Use the same grid and candidate test with a one-coordinate max rather than the three-coordinate family for U1.",
+    "interpretation": "These are frozen finite-sample checker conventions. D0 golden agreement is not evidence that a future model effect exists or that sign symmetry holds for future data."
+  },
+  "holm_secondary_families": {
+    "families": [
+      {
+        "family_id": "SECONDARY_MECHANISM",
+        "membership": "Exactly the future contrasts enumerated under this ID in the separately ratified scientific authorization; D0 contains only synthetic fixtures and cannot add a member."
+      },
+      {
+        "family_id": "A2_A3_SPECIFIC_SUPERIORITY",
+        "membership": "All and only preregistered A2- and A3-specific superiority contrasts; kept separate from SECONDARY_MECHANISM."
+      }
+    ],
+    "sort": "Increasing exact raw p; ties by increasing UTF-8 contrast_id bytes.",
+    "step_threshold": "At one-indexed rank r of m, reject if p_r <= (1/20)/(m-r+1). Stop after the first failure.",
+    "adjusted_p": "adj_p_r=max_{q<=r}((m-q+1)*p_q), capped at 1, then mapped back to contrast_id.",
+    "raw_p_source": "The exact one-sided exhaustive paired sign-flip rule at the preregistered null unless a future ratification explicitly binds another valid raw test before outcomes exist.",
+    "ties": "Lexical ordering is normative; equality to the Holm threshold rejects."
+  },
+  "bootstrap_robustness_only": {
+    "resamples": 100000,
+    "cluster": "counterfactual twin pair",
+    "draws_per_resample": 16,
+    "joint_resampling": "Use one index vector for every arm and contrast in a replicate. Draw pair indices with replacement; never resample targets, seeds, twins, or ladders independently.",
+    "rng_root": "Use split_seed_manifest.json derive(namespace,labels,counter) exactly as written with namespace='statistics', labels=['confirmation-bootstrap'], and counter=0. Under protocol PCFL-D0-EXACT-V2 this produces stream-key hex f9468652e410b813a8c4cd142ecf4ff99c3186c73ba01ef16439589df11fc99f. The statistics namespace remains dormant/non-openable in D0; D0 may test only the fixed golden primitive inputs.",
+    "rng_derivation": "For replicate r as uint64 big-endian, draw j as uint32 big-endian, and rejection counter q as uint32 big-endian, digest = SHA256(root || 0x00 || UTF8('bootstrap') || 0x00 || r || 0x00 || j || 0x00 || q). Interpret digest[0:8] as unsigned uint64 big-endian x. Let limit=floor(2^64/16)*16. If x>=limit increment q; otherwise index=x mod 16.",
+    "replicate_order": "r=0..99999; within each replicate j=0..15.",
+    "interval": "For a two-sided 95% descriptive percentile interval, sort the 100000 exact replicate means. The lower value is zero-based element 2499 and the upper value is element 97499 (inverse empirical CDF with inclusive nearest rank).",
+    "decision_use": "Report-only robustness. Bootstrap output cannot create, rescue, stop, expand, mask, or overturn any registered decision."
+  },
+  "calibration_power_screen": {
+    "when": "After all six locked calibration pair scores are frozen and before any confirmation outcome is dispatched or unmasked.",
+    "inputs": [
+      "six D1 differences",
+      "six D2 differences",
+      "six D3 differences",
+      "six U1 differences"
+    ],
+    "calibration_sd": "For each vector use sample variance denominator 5. Failures are zeros and remain in n=6.",
+    "confirmation_standard_error_projection": "projected_se_16=s_cal/sqrt(16)=s_cal/4.",
+    "critical_constant": {
+      "name": "z_0.9875",
+      "exact_decimal": "2.241402727604947",
+      "exact_rational": "2241402727604947/1000000000000000",
+      "reason": "Fixed one-sided Bonferroni planning constant for four necessary gates at total 0.05. It is a conservative planning screen, not the confirmation test."
+    },
+    "exact_projected_lower_comparison": "For threshold b, require mean-b>0 and 16*(mean-b)^2 > z_0.9875^2*s_cal^2. This is exactly equivalent to mean-z*s_cal/4>b without computing a square root.",
+    "adequate_at_16": [
+      "D1 calibration mean >=1/10 and its projected lower value >0.",
+      "D2 calibration mean >=1/10 and its projected lower value >0.",
+      "D3 projected lower value >-1/10.",
+      "U1 calibration mean >0 and its projected lower value >0."
+    ],
+    "zero_variance": "If s_cal^2=0, a gate passes the projected-lower comparison exactly when its mean is strictly above b; D1/D2 still must meet the inclusive 1/10 mean gate.",
+    "decision": "If every condition is true, confirmation may be requested only through a new exact authorization. If any condition is false, status is INADEQUATE_POWER_AT_16_NO_POSITIVE_CLAIM: do not attempt a positive confirmation claim, do not unmask or dispatch confirmation for claim-seeking, do not use reserves, and do not increase n. A larger study requires new deliberation and human ratification.",
+    "masked_partial_confirmation": "The first 12 of 16 confirmation pairs may be run operationally but remain masked. They cannot enter this power screen, stop the study, change n, add a contrast, replace a pair, or authorize a claim."
+  },
+  "missing_failure_and_replacement": {
+    "after_scientific_dispatch": [
+      "Failure, defer, malformed output, illegal action, action/operation cap, backend error, indeterminate model call, missing response, missing adapter cell, and unrecoverable dispatched cell all contribute item value 0 at every fixed aggregation slot.",
+      "A missing record is materialized as an explicit zero-valued record with reason, expected cell identity, and no replacement. It is never silently imputed.",
+      "All-zero arms/vectors remain valid inputs with zero statistic and p=1; they are not dropped as degenerate."
+    ],
+    "before_any_scientific_dispatch": [
+      "Structural generator exhaustion, impossible S-bind derangement after the one allowed predeclared adjacent-bin merge, split/hash collision, schema failure, or whole-platform infrastructure loss blocks science and yields no estimator result.",
+      "A whole-platform interruption may resume only the identical hash-bound cell before any scientific dispatch. It never selects a new world, seed, order, pair, or reserve."
+    ],
+    "reserve_rule": "An ordered reserve may be consumed only for generator structural exhaustion or pre-science infrastructure loss under a future explicit authority, never because of an outcome, controller value, model failure, difficulty, variance, or power.",
+    "confirmation_n": "Exactly 16 fixed pairs or no confirmation decision. No 12-pair decision and no complete-case n are legal."
+  },
+  "golden_binding": {
+    "path": "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/golden/estimator_cases.json",
+    "requirements": [
+      "Aggregation order and a missing-as-zero case",
+      "all-zero, positive-zero-variance, negative-zero-variance, and balanced-zero-mean studentizers",
+      "inclusive exhaustive sign-flip counts",
+      "max-T/Romano-Wolf ordering and exact ties",
+      "grid lower-bound endpoint and strict-threshold behavior",
+      "Holm p-value and ID ties",
+      "bootstrap RNG index vectors",
+      "adequate and inadequate calibration power-screen arrays"
+    ],
+    "mismatch_disposition": "Any mismatch is D0 checker nonconformance. It cannot be waived by approximate agreement or used as scientific evidence."
+  }
+}

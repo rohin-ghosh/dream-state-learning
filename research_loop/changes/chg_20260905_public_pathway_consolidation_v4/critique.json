@@ -1,0 +1,407 @@
+{
+  "architecture_change_sha256": "0375ebdaf41b91f2a87a5c8e48100755811baccf7d57faf287fdb2cef3af9e88",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260905_public_pathway_consolidation_v4",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PPC4_T01_COMPLETE_COMPOSITE_BINDING",
+        "PPC4_T17_REPORTING_STATUS_AND_FRESH_CHAIN",
+        "PPC4_T18_FRESH_ARCHITECTURE_DELIBERATION",
+        "PPC4_T25_PRE_GPU_REVIEW_AND_LATER_AUTHORITY",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC4_C01_FIELD_LEVEL_COMPOSITE_PRECEDENCE_IS_UNRESOLVED",
+      "evidence": "The v4 protocol orders eight change/protocol files and says later bytes override an explicit conflict while all other earlier clauses remain. It does not mechanically identify surviving graph objects, claims, acceptance tests, or human-boundary clauses. V2 A11 explicitly replaces the v1 test registry, whereas neither v3 nor v4 explicitly replaces or accumulates later registries. The intake validator reviews only the acceptance tests in the current change object. T01 mutates inherited bytes but does not require a field-level survivor/override manifest. Both interpretations independently flag this ambiguity, with the retained v1 DREAM-context claim being one concrete unresolved case.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Hashing the ordered files is insufficient to define one executable composite architecture; the field-level normative survivor set remains ambiguous."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T01_COMPLETE_COMPOSITE_BINDING",
+        "PPC4_T18_FRESH_ARCHITECTURE_DELIBERATION",
+        "PPC4_T25_PRE_GPU_REVIEW_AND_LATER_AUTHORITY"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC4_C02_UNBOUND_SCOPE_PROPOSAL_CAN_CHANGE_AUTHORITY",
+      "evidence": "The supplied architecture_intake.py conditionally reads research_loop/changes/<change_id>/scope_proposal.json and makes its requested_scope and forbidden_scope controlling for ratification. That file is absent from the exact context set and the declared v1-v4 normative stack. Its later appearance can therefore affect the human authorization contract without changing the architecture hash, interpretation hashes, or T01 receipt. T01 says no unlisted artifact becomes normative, but its setup does not test this conditional intake dependency.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The ratification path can depend on an unreviewed, unbound scope_proposal.json despite the proposal's claim that no unlisted artifact is normative."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T04_OPERATION_SCHEMA_REPEAT_GRAPH_ORACLES",
+        "PPC4_T09_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC4_C03_HYPOTHESIS_STATE_TRANSITIONS_ARE_NOT_CLOSED",
+      "evidence": "C3 defines HYPOTHESIZE as {record_ids} and REVISE as {hypothesis_id,record_ids}, while the canonical state contains hypotheses and the inherited state machine requires hypothesis content, status, citations, replacement relations, and a DAG. C2 simultaneously forbids free-form hypothesis content in loss-bearing arguments. The accepted response therefore lacks enough typed bytes to determine the advertised next hypothesis state. T04 can validate parsing and graph topology while two implementations still construct different hypothesis nodes from the same operation.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The public operation schema does not uniquely determine HYPOTHESIZE and REVISE state mutations, so the claimed deterministic recurrent machine is not executable from the bound bytes."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T04_OPERATION_SCHEMA_REPEAT_GRAPH_ORACLES",
+        "PPC4_T13_EXPLICIT_DREAM_SCHEMA_TEMPORAL_GATE",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC4_C04_DREAM_SCHEMA_PUBLICATION_AND_FORMATION_ARE_AMBIGUOUS",
+      "evidence": "The graph and inherited protocol describe DREAM as producing at most one provisional workspace replacement with no durable publication. C7 instead requires a public, time-stamped ppc4.schema.v1 commitment that persists unchanged across later acquisition items until support, contradiction, and SLEEP eligibility can be assessed. No exact DREAM response union, append-only ledger event, persistence boundary, revision transition, or relationship to the single workspace replacement is specified. The two interpretations adopt different override assumptions. The bytes also do not show whether a complete schema must be generated in one DREAM call or may emerge through prior recurrent THINK-DREAM revisions before the final commitment.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposal does not define how a non-durable DREAM workspace legally creates and preserves the durable declarative commitment required by the schema claim."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T04_OPERATION_SCHEMA_REPEAT_GRAPH_ORACLES",
+        "PPC4_T05_LOCAL_ATOM_AND_PROSPECTIVE_PATH",
+        "PPC4_T17_REPORTING_STATUS_AND_FRESH_CHAIN",
+        "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT_PPC4_C05_TYPED_AGENDA_AND_ABANDONED_BRANCH_LAUNDERING_IS_NOT_CROSS_TESTED",
+      "evidence": "C2 removes free-form targets but still permits loss on operation enums, public relation IDs, action IDs, and prediction bins. Those typed values can themselves encode a target-sufficient query agenda, prediction, or final action. The predicate mentions an active open branch and COMMITTED status but does not state whether a previously admitted transition is retroactively excluded when its branch is later abandoned or its hypothesis contradicted. Inherited clauses may supply that rule, but C01 makes their survival ambiguous. T04 tests branch transitions and T05 tests injected answers separately; neither requires the cross-product in which answer-bearing typed arguments are committed and then abandoned, contradicted, or released through another branch.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Least-privilege syntax does not by itself prevent semantic answer laundering through typed agendas or later-abandoned operation rows."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T02_ITEM_ROLE_AND_WRITER_BOUNDARY",
+        "PPC4_T03_VISIBILITY_PROVENANCE_NONINTERFERENCE",
+        "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+        "PPC4_T22_STREAM_CAPACITY_EXECUTION",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT_PPC4_C06_VISIBLE_PROBE_ROLE_REVEALS_EVALUATION_MEMBERSHIP",
+      "evidence": "The visibility matrix makes item_role_writer_boundary visible during TARGET_CURRENT_ITEM and TARGET_LATER_ITEM, and C1 states that the model sees a fixed PROBE role label. This reveals that the item belongs to the sterile confirmatory regime even though target-manifest membership is nominally forbidden. The harness can enforce writer eligibility mechanically without exposing that distinction. T02 tests role immutability and sterility, not whether the label changes strategy, activates benchmark-specific behavior, or interacts with treatment effects. Target-only baselines do not remove this evaluation-awareness channel unless role exposure is matched and explicitly interpreted.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The public PROBE label is an unnecessary indirect evaluation-membership channel and its behavioral effect is not ablated."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T05_LOCAL_ATOM_AND_PROSPECTIVE_PATH",
+        "PPC4_T10_SHUFFLE_TWIN_CUT_SPLIT_GOLDENS",
+        "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC4_C07_CITATION_AND_SPARSE_CUTS_DO_NOT_PROVE_WHOLE_PATH_USE",
+      "evidence": "C4 requires the run to open and cite every presealed edge, but only the registered bridge, binding twin, and null return are causally intervened on. A model can ceremonially cite the entire unique oracle path while relying on a subset, base-model knowledge, a direct policy association, or same-item inference. Uniqueness of the external oracle path does not identify internal evidentiary dependence. T05 establishes constructibility, T10 validates the interventions, and T21 observes citations and a few cuts; none requires dependence on every decisive edge despite the stronger traversal language. The benchmark interpretation identifies the same overclaim.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "PPC4 can establish dependence on selected bridge/binding records, but not actual cognitive use of every edge in the complete presealed path."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T06_READ_INTERFACE_AND_POLICY_MATCHING",
+        "PPC4_T19_READ_FIDELITY_EXECUTION",
+        "PPC4_T20_COMPONENT_AND_SUBSTRATE_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT_PPC4_C08_READER_RESPONSE_EQUALITY_AND_PRIVATE_CANDIDATE_EXPOSURE_CONFLICT",
+      "evidence": "The public ppc4.read.v1 request contains only candidate_domain_hash, while C5 also says every provider receives identical candidate-domain bytes and order. The private provider envelope supplying those candidates is not specified. Supplying candidate strings to READER_LORA turns the assay into candidate recognition; withholding them creates a different generation/search problem and unmatched candidate work. T06 further expects request/response/token/candidate bytes to match exactly. If that includes realized FOUND/NOT_FOUND records, T19 has no transport difference to estimate; if it means conditional wire-format equality, the test's expected result is misstated. Both interpretations flag this ambiguity.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Reader isolation does not identify transport until candidate exposure and conditional response equality are defined without collapsing the behavioral contrast."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T06_READ_INTERFACE_AND_POLICY_MATCHING",
+        "PPC4_T07_COMPONENT_DOSE_AND_JOINT_PATH",
+        "PPC4_T20_COMPONENT_AND_SUBSTRATE_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT_PPC4_C09_COMMON_POLICY_ADAPTER_HAS_NO_SUBSTRATE_NEUTRAL_PROVENANCE",
+      "evidence": "C5 requires one frozen DECIDE+ACT adapter from an identical row manifest, but does not define how READ returns in those causal-prefix rows are produced. A nominally common adapter trained on text-reader traces, graph-reader traces, reader-LoRA traces, or oracle returns can be privileged toward that provider's error and serialization distribution. T06 verifies a common mount and T20 executes it, but neither requires a target-blind provider-neutral or prospectively counterbalanced training origin. This can change which substrate appears behaviorally superior without changing the adapter hash across cells.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Policy matching is incomplete because the common policy adapter may encode one substrate's retrieval behavior."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T09_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+        "PPC4_T12_LINKED_MEDIATION_LINEAGE_GOLDENS",
+        "PPC4_T13_EXPLICIT_DREAM_SCHEMA_TEMPORAL_GATE",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT_PPC4_C10_FULL_FLYWHEEL_OMITS_DREAM_AND_CONTEXT_MANAGEMENT_VALUE",
+      "evidence": "C8 and T24 link memory, epistemic action, observation, row, adapter, later path, and action, but require no DREAM event or DREAM intervention. The inherited cycle offers requested DREAM opportunities rather than requiring them. T23 tests schema-specific DREAM commitments, not ordinary finite-context reconciliation. Consequently T24 can pass for a THINK-SLEEP memory-action loop, while the project thesis and human directive emphasize learned DREAM context management and a THINK-DREAM-SLEEP organism. No current execution test compares requested DREAM against equal-budget no-DREAM or deterministic truncation on retained dependencies and later action value.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The advertised full organism and learned context-management story are not identified by the full-flywheel test; DREAM is optional except in the separate schema rung."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T12_LINKED_MEDIATION_LINEAGE_GOLDENS",
+        "PPC4_T14_STREAM_SCHEMA_CAPACITY_MANIFEST",
+        "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+        "PPC4_T22_STREAM_CAPACITY_EXECUTION",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "scalability",
+      "concern_id": "CRIT_PPC4_C11_CONTINUED_IMPROVEMENT_CAN_HIDE_FORGETTING_AND_CHECKPOINT_MISMATCH",
+      "evidence": "T24 permits a continued-improvement or post-saturation result from its mediation chain and slope rules, while new acquisition, old retention, and cross-era composition are evaluated separately in T22. Nothing makes promotion conjunctively require those panels on the same lives, mediation IDs, and checkpoints. A positive slope can therefore reflect recent-cohort replacement while old knowledge is forgotten. The stack also contains at least three successive cycles, a four-cycle scripted fixture, and at least four post-native checkpoints without an exact alignment among acquisition boundaries, sleeps, evaluations, and the two slope intervals. The benchmark interpretation raises both problems.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The scaling claim can mistake knowledge turnover for continued developmental improvement and lacks a unique cycle-to-checkpoint map."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T08_BASELINE_INTERFACE_RESOURCE_PROMOTION",
+        "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+        "PPC4_T19_READ_FIDELITY_EXECUTION",
+        "PPC4_T20_COMPONENT_AND_SUBSTRATE_EXECUTION",
+        "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+        "PPC4_T22_STREAM_CAPACITY_EXECUTION",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC4_C12_CONTRAST_TO_METRIC_AND_MULTIPLICITY_MAP_IS_MISSING",
+      "evidence": "C10 specifies Holm control, simultaneous intervals, and a 0.35 threshold generically, but the bytes do not enumerate which C4 bypasses, component interactions, transport probes, schema controls, mediation links, and longitudinal panels are co-primary; nor do they bind each contrast to a metric, direction, superiority/equivalence rule, ceiling, and family. T08 freezes interfaces, and T16 recomputes generic rules, but neither setup requires this complete mapping. Thus 'every conjunct passes' is not machine-checkable and favorable endpoints or multiplicity families can still be chosen after outcomes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The prospective numeric procedure lacks the exhaustive contrast-family map needed to prevent post-hoc promotion."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T15_OPERATIONAL_PERTURBATION_MISSINGNESS",
+        "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+        "PPC4_T17_REPORTING_STATUS_AND_FRESH_CHAIN",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+        "PPC4_T25_PRE_GPU_REVIEW_AND_LATER_AUTHORITY"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC4_C13_DEFERRED_NUMERIC_VALUES_LACK_AN_EXACT_BINDING CONTRACT",
+      "evidence": "The missingness threshold, episodic-detail equivalence margin, independent-life count, maximum extension, and untouched pilot variance source determine validity and promotion but are explicitly deferred. T16 says they will be frozen, and T25 mentions a later exact run manifest, yet no named schema identifies the binding artifact, pilot hash and disjointness, calculation inputs, or whether changing one value requires a fresh run-level review and human decision. Calling all numeric rules exact in the current summary overstates what these bytes bind.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Several outcome-determining numeric values remain discretionary until a later artifact whose identity and change semantics are not defined."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T13_EXPLICIT_DREAM_SCHEMA_TEMPORAL_GATE",
+        "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+        "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC4_C14_SCHEMA_ENUMERATION_AND_STOPPING_CAN_LAUNDER_LUCKY_COMMITMENTS",
+      "evidence": "C7 gates each schema individually on pre-confirmation timing, two later independent supports, and zero registered contradictions. It does not cap or preregister the number of schema commitments, define a hypothesis family, preserve a denominator of failed commitments in the claim gate, or prevent a SLEEP boundary from occurring after two favorable observations but before scheduled contradictors. T13 tests individual examples and T23 tests downstream utility, so a DREAM that sprays many templates and retains the lucky confirmed subset can satisfy both without demonstrating selective schema formation. Root-family provenance correctly prevents re-expression from becoming new evidence but does not solve this multiple-hypothesis selection problem.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Prospective timestamps alone do not prevent lucky-schema selection when the commitment census, multiplicity, and stopping exposure are unbound."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T15_OPERATIONAL_PERTURBATION_MISSINGNESS",
+        "PPC4_T25_PRE_GPU_REVIEW_AND_LATER_AUTHORITY",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT_PPC4_C15_PREFLIGHT_SIDE_CHANNEL_FIXTURES_DO_NOT_TEST_ACTUAL_RUNTIME",
+      "evidence": "T15 is required before GPU execution, while current authority prohibits every model call. It can therefore establish only stubbed or deterministic construction behavior unless a later authority explicitly schedules an actual-model perturbation phase. T26 is an observational postrun audit, not a randomized cache, batching, provider, candidate-work, timeout, or process perturbation. Actual model outputs, adapter publication, and condition-specific survival can still respond to those channels even if preflight model-visible bytes remain invariant.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Operational noninterference is tested only as a preflight contract, with no separately registered actual-runtime perturbation estimand."
+    },
+    {
+      "acceptance_test_ids": [
+        "PPC4_T01_COMPLETE_COMPOSITE_BINDING",
+        "PPC4_T12_LINKED_MEDIATION_LINEAGE_GOLDENS",
+        "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+        "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+        "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT_PPC4_C16_INDEPENDENT_LIFE_RESET_IS_NOT_EXPLICITLY_TESTED_IN_V4",
+      "evidence": "The inherited v3 protocol requires every life to reset adapter, corpus, workspace, ledger, stores, caches, RNG streams, identifiers, and output paths, and both interpretations rely on this assumption. The v4 registry has no direct two-life cold-reset test: T12 simulates linked cycles within a life, T16 checks the statistical design, T24 executes independent lives, and T26 is an omnibus audit. If v4 replaces earlier test registries, the former PPC3 root-and-life-reset golden has disappeared; if it survives, C01 must say so. Any residual cross-life state invalidates the independent-life sampling unit.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Independent-life inference depends on a comprehensive reset invariant that is not unambiguously present in the current acceptance-test registry."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v4/human_directive.txt",
+      "purpose": "Verbatim direction and PPC3 dispositions.",
+      "sha256": "e4d997370c2e469f8259f362ed133f29d87245c7f3f23acac386f054ff21d2c9"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation and authority contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "purpose": "Strict change schema.",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash-bound intake validator.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v4/protocol.md",
+      "purpose": "Normative PPC4 amendment.",
+      "sha256": "9ed3510cbe1a138816a4ad643736cb6ad606b163156c1debde4c6b9ed43f7d84"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/change.json",
+      "purpose": "First bound architecture layer.",
+      "sha256": "7f328a4a1aea31d77816853df40c4b7d5de464ee2c65ba6b941937658f4124de"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/protocol.md",
+      "purpose": "First normative protocol layer.",
+      "sha256": "fca9eac73b91c511682bc5f7dd6c010063ec85ae07f91b588782ea41f290aafc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/change.json",
+      "purpose": "Second bound architecture layer.",
+      "sha256": "52733a09e915a11bb8cf3bfe0bd7c58207849c3f284977ef591fa78c50e48211"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v2/protocol.md",
+      "purpose": "Second normative protocol layer.",
+      "sha256": "2a711e9d37783339bd1b0b87781446c946a81eb8d9219a5d0a53ea265038fb4e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/change.json",
+      "purpose": "Third bound architecture layer.",
+      "sha256": "e608d1e5cb9c481b2556457e90d4c50e7a58eac328f52dfee273fbbeff7aa839"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/protocol.md",
+      "purpose": "Third normative protocol layer.",
+      "sha256": "a0af42fc11fbfe20fc6bd20d25415679ea04d7959ba72fa0d93cc49ccf151524"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/critique.json",
+      "purpose": "PPC3 blocking concern registry.",
+      "sha256": "3fdc29efa863707b1aa08364420130b241e78e8dca645db4c76130772665508c"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v3/consensus.json",
+      "purpose": "PPC3 adjudicated rework.",
+      "sha256": "41a5af896db6cef24a1b0a75d1e1ec9a8efd0f4e61dcf84536b70dd00aa71f81"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis and claim invariants.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "purpose": "Stream and schema distinctions.",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359"
+    }
+  ],
+  "critique_id": "chg_20260905_public_pathway_consolidation_v4.fresh_iclr_adversarial_v1",
+  "human_questions": [
+    "Does the v4 graph, loop, claim, acceptance-test, and human-boundary registry replace earlier registries, or which exact field-level v1-v3 entries survive?",
+    "Will scope_proposal.json be hash-bound as part of the reviewed authority contract, or must intake prove that it is absent and cannot become normative for this change?",
+    "What exact typed bytes create, revise, and persist hypotheses and ppc4.schema.v1 records through canonical state transitions?",
+    "Should cognition see ACQUISITION versus PROBE at all, or should the role remain harness-private with a role-label ablation for any public exposure?",
+    "Will whole-path language require prospective dependence tests for every decisive edge, or be narrowed to dependence on the registered bridge, binding, and null interventions?",
+    "Does T06 require conditional wire-format equality rather than equal realized records, and what exact private candidate-domain input does each reader receive?",
+    "How is the shared DECIDE+ACT adapter's row manifest generated so it is target-blind and neutral among text, graph, and reader-LoRA providers?",
+    "Should PPC4_FULL_FLYWHEEL be narrowed to an experiential memory-action flywheel, or must ordinary DREAM participation and context-management value be causally intervened on?",
+    "Must continued-improvement promotion require new acquisition, old retention, and cross-era composition on the same T24 lives, mediation lineages, and checkpoints?",
+    "What exact artifact binds every contrast-to-metric family plus pilot hash, life count, missingness threshold, equivalence margin, extension rule, and checkpoint map before targets open?",
+    "What prospective cap, hypothesis-family registry, contradiction exposure, and multiplicity rule applies to DREAM schema commitments?",
+    "Which later authorized test will perturb actual model/provider operations rather than only deterministic preflight stubs?",
+    "Will v4 retain an explicit comprehensive cold-reset test proving that no life-local state crosses independent lives?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v4.systems",
+      "sha256": "5606a08aaff2871984ed8aa75c90be0cd90089ee714eb4a5e0f324f2b4a06c27"
+    },
+    {
+      "interpretation_id": "chg_20260905_public_pathway_consolidation_v4.benchmark",
+      "sha256": "c87d99789d9ccb990a798c03d21719944609ac024f4bde2e26625d972d137368"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PPC4_M01_FIELD_LEVEL_COMPOSITE_PRECEDENCE_AND_SURVIVOR_MANIFEST",
+    "PPC4_M02_BOUND_SCOPE_PROPOSAL_OR_PROVEN_ABSENCE",
+    "PPC4_M03_HYPOTHESIS_CONTENT_STATUS_AND_REVISION_TRANSITION_GOLDENS",
+    "PPC4_M04_DREAM_SCHEMA_APPEND_ONLY_PUBLICATION_AND_ITERATIVE_FORMATION",
+    "PPC4_M05_TYPED_AGENDA_AND_ABANDONED_BRANCH_NONLAUNDERING",
+    "PPC4_M06_ROLE_LABEL_EVALUATION_MEMBERSHIP_ABLATION",
+    "PPC4_M07_EDGEWISE_PATH_DEPENDENCE_OR_NARROWED_PATH_GATE",
+    "PPC4_M08_READER_PRIVATE_CANDIDATE_AND_CONDITIONAL_RESPONSE_CONTRACT",
+    "PPC4_M09_SUBSTRATE_NEUTRAL_POLICY_ADAPTER_PROVENANCE",
+    "PPC4_M10_DREAM_CONTEXT_VALUE_AND_FULL_FLYWHEEL_INTERVENTION",
+    "PPC4_M11_LINKED_NEW_OLD_CROSS_ERA_SLOPE_CHECKPOINT_ALIGNMENT",
+    "PPC4_M12_COMPLETE_CONTRAST_METRIC_FAMILY_NUMERIC_MAP",
+    "PPC4_M13_LATER_RUN_NUMERIC_ARTIFACT_AND_PILOT_BINDING",
+    "PPC4_M14_SCHEMA_COMMITMENT_CENSUS_MULTIPLICITY_AND_STOPPING",
+    "PPC4_M15_ACTUAL_RUNTIME_OPERATIONAL_PERTURBATION_EXECUTION",
+    "PPC4_M16_INDEPENDENT_LIFE_COMPREHENSIVE_COLD_RESET"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PPC4_T01_COMPLETE_COMPOSITE_BINDING",
+    "PPC4_T02_ITEM_ROLE_AND_WRITER_BOUNDARY",
+    "PPC4_T03_VISIBILITY_PROVENANCE_NONINTERFERENCE",
+    "PPC4_T04_OPERATION_SCHEMA_REPEAT_GRAPH_ORACLES",
+    "PPC4_T05_LOCAL_ATOM_AND_PROSPECTIVE_PATH",
+    "PPC4_T06_READ_INTERFACE_AND_POLICY_MATCHING",
+    "PPC4_T07_COMPONENT_DOSE_AND_JOINT_PATH",
+    "PPC4_T08_BASELINE_INTERFACE_RESOURCE_PROMOTION",
+    "PPC4_T09_RECURRENCE_ADAPTIVITY_SCRIPTED_REHEARSAL",
+    "PPC4_T10_SHUFFLE_TWIN_CUT_SPLIT_GOLDENS",
+    "PPC4_T11_INDEPENDENT_STATIC_DUAL_SEAL",
+    "PPC4_T12_LINKED_MEDIATION_LINEAGE_GOLDENS",
+    "PPC4_T13_EXPLICIT_DREAM_SCHEMA_TEMPORAL_GATE",
+    "PPC4_T14_STREAM_SCHEMA_CAPACITY_MANIFEST",
+    "PPC4_T15_OPERATIONAL_PERTURBATION_MISSINGNESS",
+    "PPC4_T16_NUMERIC_ADEQUACY_RULES",
+    "PPC4_T17_REPORTING_STATUS_AND_FRESH_CHAIN",
+    "PPC4_T18_FRESH_ARCHITECTURE_DELIBERATION",
+    "PPC4_T19_READ_FIDELITY_EXECUTION",
+    "PPC4_T20_COMPONENT_AND_SUBSTRATE_EXECUTION",
+    "PPC4_T21_RECURRENCE_PATH_AND_BYPASS_EXECUTION",
+    "PPC4_T22_STREAM_CAPACITY_EXECUTION",
+    "PPC4_T23_SCHEMA_COMPRESSION_EXECUTION",
+    "PPC4_T24_FLYWHEEL_MEDIATION_SATURATION_EXECUTION",
+    "PPC4_T25_PRE_GPU_REVIEW_AND_LATER_AUTHORITY",
+    "PPC4_T26_POSTRUN_CAUSAL_STATUS_AUDIT"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that PPC4 is a serious, unusually prospective repair of PPC3. It binds the v1-v4 byte stack, separates acquisition from sterile probes, gives privileged provenance an explicit noninterference role, restricts loss-bearing operations to typed least-privilege fields, explicitly accepts diamonds and rejects cycles, and distinguishes construction checks from later behavioral effects. Reader-only LoRA isolation, a shared policy adapter across memory substrates, equal-D component adapters, separate adaptive-query and recurrent-thought ablations, presealed paths and bypasses, pre-confirmation DREAM schemas, linked action-observation-row-path lineages, static-only sealing, operational perturbations, immutable reporting states, independent-life inference, and separate Stream, Schema, pathway, transport, component, and flywheel executions collectively form a plausible high-information causal program. If its remaining state-transition, authority-binding, pathway-dependence, reader-interface, DREAM-participation, and statistical-registration defects are repaired before implementation, positive results could support narrow claims about experiential record transport, connected recurrent action improvement, continual acquisition, and prospective schema compression without confusing synthetic re-expression, passive lookup, direct action cloning, or invalid execution with genuine online learning.",
+  "visibility_failures": [
+    "The conditional scope_proposal.json authority input is outside the bound context and normative stack.",
+    "The public PROBE role reveals confirmatory-evaluation membership even though target-manifest membership is otherwise forbidden.",
+    "Typed public relation, prediction, and action identifiers can encode a query agenda or final decision without a cross-tested semantic nonlaundering rule.",
+    "The persistent ppc4.schema.v1 commitment has no exact DREAM-to-ledger visibility and lifecycle transition.",
+    "The private candidate-domain bytes exposed to each READ provider are not represented in the visibility matrix or exact interface.",
+    "The common policy adapter may carry substrate-specific retrieval-trace information despite identical mounting across comparison cells.",
+    "Actual cache, batching, provider, timing, candidate-work, process, and failure channels lack an authorized execution-level perturbation test.",
+    "A comprehensive reset of adapters, stores, workspaces, caches, RNG state, identifiers, and outputs across independent lives is not unambiguously tested in the v4 registry."
+  ]
+}

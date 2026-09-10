@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "v6s6.systems.fresh",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v6",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "630b62cd4935aff781caf4a10c5c8f122bbf917d240e18fba8acbcf4a7a64cf9",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling architecture-deliberation, human-ratification, review, and GPU-gate contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Validation requirements for schema conformance, context hashes, proposal binding, exact acceptance-test coverage, and unique concern identifiers."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Exact schema for this interpretation artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/change.json",
+      "sha256": "630b62cd4935aff781caf4a10c5c8f122bbf917d240e18fba8acbcf4a7a64cf9",
+      "purpose": "Architecture proposal whose graph, loops, claims, visibility matrix, tests, and authority boundary are interpreted."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/human_directive.txt",
+      "sha256": "f80607841520297e23f50b2f0736c0ea559c4629162e00070d1907cd21af530f",
+      "purpose": "Verbatim owner direction motivating a simple harness-versus-continual system and context-as-state reconstruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/protocol.md",
+      "sha256": "2cc93fd198322caff24b5c6361285c80fa1d8abb4ab43929f736b99be9546688",
+      "purpose": "Normative proposed v6 assay, lifecycle, isolation, receipt, failure, and gate contract."
+    }
+  ],
+  "system_thesis_interpretation": "The proposal is a deliberately narrow lower-bracket assay, not the requested final thinker/sleeper architecture. It realizes context-as-state by reconstructing a bounded packet for every cold call and realizes minimal experiential persistence through an eight-record public memory plus two success-filtered LoRA rebuilds. H and E are the only on-policy lives; E_OFF is correctly a read-only final mount diagnostic. If fully closed, the system could establish only that one pinned recipe completed and yielded auditable descriptive values on one fixed syntactic panel. It cannot establish causality, superiority, outcome learning, functional correctness, generalization, lifelong improvement, or the design of recursive conscious/subconscious context loops. Human ratification must explicitly accept this narrowing as a complementary assay rather than completion of the broader directive.",
+  "graph_delta_interpretation": "The intended graph has five major regions: two cold on-policy lives H and E; a per-slot CONTROLLER -> MODEL_WORKER -> PARSER -> ENV_SERVICE -> event/MEMORY_WRITER path; an E-only committed-event -> SLEEP_COMPILER -> TRAINER -> PUBLISHER_LOADER path at tasks 4 and 8; a deterministic SEALER -> immutable 8/4 run-manifest path; and a final TARGET_LAUNCHER -> twelve isolated forks -> one-way QUARANTINE_COLLECTOR -> destruction barrier -> AUDITOR_REPORTER path. The graph usefully separates model-visible state from audit-only identity and results. However, several edges are not exact enough to implement independently: the target receipt is specified only as field replacement rather than a complete schema; memory observation provenance and snapshot hash linkage are unstated; successful adapter mount/publication receipts and most run-time receipts lack canonical schemas; and the parity edge demands byte equality of events that necessarily contain different H/E system values. Those are architecture-level interface defects, not choices that an implementation should silently resolve.",
+  "loop_delta_interpretation": "The proposed state machine is: seal twice before model access; birth independent H/E snapshots; for each of eight acquisition tasks reset once and commit six sequential slot transactions; increment next_event_seq for every committed slot regardless of action validity or outcome; keep state unchanged for malformed, deliberate -1, and proven rejection; advance current state for every accepted pass; update best by minimum; append and evict memory only for immediate strict improvements; atomically increment tasks_completed after a completed task; synchronize boundary sleep_index; and, for E only, publish a clean-base cumulative adapter after tasks 4 and 8. Sleep failure stops the life without targets. After final sealing, each of four targets forks under H, E_ON, and E_OFF without life writes, then all results remain quarantined until every fork/server is destroyed, a barrier is sealed, and T06 passes. First-applicable Section-8 disposition and no retry/resume are appropriate fail-closed rules. The proposal still needs exact definitions for task-success commit, boundary ordering, resulting-snapshot hash receipts, and parity comparison projections. As written, exact pre-sleep event equality is impossible because canonical events include system H or E.",
+  "claim_delta_interpretation": "The safe claim boundary is unusually clear: RECIPE_COMPLETE means contract completion, independent of score signs, and the only released measurements are raw curves, validity, F, D_HE, and D_ONOFF after conformance review. D_HE is a whole-system descriptive contrast after potentially divergent histories; D_ONOFF is an acute mount contrast conditional on one realized E history. Neither is causal. Instruction-count movement is not correctness. No p-value, interval, efficacy, mechanism, population, lifelong, creativity, thinker, sleeper, or paper claim follows. The name Experience Model v6 and the directive's broader context-loop language must not be allowed to imply that this assay validates a general experiential architecture.",
+  "visibility_matrix_interpretation": "The intended visibility invariant is reconstruction without hidden carryover: a model sees only bound SYSTEM_TEXT, one canonical current packet, pinned base, and its assigned adapter effect; it never sees raw URI, role/condition label, response history, outcomes beyond public packet state, receipts, quarantine, or future tasks. Parser sees only one response; environment sees one URI/action; memory writer sees one committed acquisition event; sleep compiler/trainer see only E acquisition evidence and the frozen recipe; target forks see one immutable snapshot/mount and one target-local environment; collector receives stdout only; reporter starts after the destruction barrier. The proposal correctly limits negative assurances to enumerated surfaces. Still, a prose actor allowlist does not itself close process capabilities: execute/spawn, IPC, network, mmap/shared caches, inherited descriptors, environment variables, stderr, and directory discovery need explicit denial/enforcement and auditable evidence. PUBLISHER_LOADER combines write-capable publication and read-only loading modes, and AUDITOR_REPORTER has no explicit allowed report-write edge despite the rule that every unlisted write is an integrity failure.",
+  "acceptance_test_ids_addressed": [
+    "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS",
+    "V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS",
+    "V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS",
+    "V6S6_T04_CPU_DOUBLE_SEAL",
+    "V6S6_T05_EXACT_PRE_GPU_REVIEW",
+    "V6S6_T06_ACTUAL_RUN_CONFORMANCE"
+  ],
+  "acceptance_test_interpretation": "V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS must independently prove every canonical byte encoding, value domain, base64/hash binding, parser branch, six-slot budget, event/history/best/memory/snapshot transition, NONE mount, score, and first-applicable disposition; it should fail until H/E parity is defined as an explicit projection and the missing target/snapshot schemas are closed. V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS must reconstruct eligibility from event bytes, verify packet hashes, row collision handling/dedup/order, exact chat-template prefix/suffix/EOR/masks, 24 copies and one update per copy, optimizer/clipping order, exact q/v module inventory, clean-base initialization, atomic publication, authentic build-A-only mounting, comparison-only B, teardown, and numeric comparison edge cases. V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS must enumerate the finite actor-by-artifact-by-operation matrix, test default deny including non-file capabilities and inherited state, distinguish publisher from loader mode, inject every commit/crash boundary, prove tasks 1--4 parity under the corrected projection, and prevent any target result or quarantine handle from reaching another fork or model-visible writer. V6S6_T04_CPU_DOUBLE_SEAL must run exactly two isolated cold no-model invocations from the same immutable inputs, apply exact URI/seed/preimage/order/rejection precedence, prove all intended source/bitcode distinctness and duplicate/collision stops, compare reset bytes/I0/IOz and complete output bytes, and define which invocation can publish the authentic manifest without observing the other. V6S6_T05_EXACT_PRE_GPU_REVIEW must bind the exact review prompt, reviewer independence, implementation, T01--T04 evidence, closed manifest, runtime stack/capability surface, T06 procedure, and veto/advocate/one-time human authority chain; it authorizes nothing by itself. V6S6_T06_ACTUAL_RUN_CONFORMANCE must recompute every actual packet, transition, parity projection, snapshot/hash chain, row, mask, update, tensor/build/mount, teardown, fork, collector/barrier, score, and first-applicable disposition from immutable receipts, and must gate every result or disposition release. The six tests cover the right conceptual layers, but T01--T03 and T06 are not independently executable as exact-byte tests until the receipt schemas, numeric encoding, and runtime enforcement evidence are specified.",
+  "assumptions": [
+    "This interpretation is pre-ratification analysis only and authorizes no implementation, environment opening, model call, training, target action, GPU use, or claim.",
+    "Protocol.md is intended to be normative where the shorter change summary is less detailed, but a later run manifest may only instantiate explicitly deferred values and may not repair or redefine contradictions in the ratified architecture bytes.",
+    "The terms tasks 1--8 are human-facing ordinal labels while task_index in canonical events is intended to be zero-based; this needs an explicit statement before golden bytes are frozen.",
+    "No prior-version artifact or organism_v6 artifact is evidence for this interpretation; their data and decisions remain outside the assay boundary."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "V6S6_SYS_A01_TARGET_RECEIPT_SCHEMA",
+      "question": "What are the exact ordered keys, types, domains, fork_id construction, task indexing, hashes, and trailing-LF bytes of a target receipt and of a failed target-cell receipt?",
+      "impact": "T01 and T06 cannot independently reconstruct target bytes, distinguish cells, or prove that all and only twelve cells reached the barrier."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A02_MEMORY_AND_SNAPSHOT_LINK",
+      "question": "Must a memory record's observation equal the improving event's pre_observation, and where are the pre-snapshot hash, post-snapshot hash, eviction result, task commit, and sleep-index transition bound to the event transaction?",
+      "impact": "Different conforming implementations can expose different future packets, and a post-run reviewer lacks a canonical tamper-evident state chain."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A03_TASK_SLEEP_COMMIT_ORDER",
+      "question": "What exactly makes an acquisition task successful, and what is the atomic ordering among slot-6 event commit, tasks_completed increment, H boundary sleep_index update, E adapter publication, and E sleep_index update?",
+      "impact": "Crash injection and resumed-state rejection cannot have one golden outcome at the task-4 and task-8 boundaries."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A04_RECEIPT_AND_NUMERIC_CLOSURE",
+      "question": "What are the canonical schemas and hash links for sealer candidates/ledger/final manifest, accepted adapter mounts, selected rows, masks, updates, tensor inventories/comparisons, publication, teardown, collector barrier, final report, partial failures, and the exact rational or decimal encodings of F and D values?",
+      "impact": "The named evidence files and T06 recomputation do not yet determine exact bytes, complete provenance, rounding, averaging, or first-disposition evidence."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A05_VALUE_DOMAINS",
+      "question": "Are output token IDs required to be nonnegative and less than tokenizer vocabulary size, what is the exact task_index domain, and how are row_id or task_key SHA-256 collisions between unequal preimages handled?",
+      "impact": "T01/T02 cannot cover every accepted/rejected boundary, and silent hash aliasing or invalid token IDs could contaminate packets, rows, or audit identity."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A06_DOUBLE_SEAL_PUBLICATION",
+      "question": "Where do the two cold sealers write, how are they prevented from reading each other's products, who performs the byte comparison, and which already-verified bytes are atomically promoted as the sole authentic final run manifest and rejection ledger?",
+      "impact": "The required double-seal equality and the SEALER-only creation rule do not yet form a closed, non-self-referential lifecycle."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A07_CAPABILITY_ENFORCEMENT",
+      "question": "Which concrete OS/process mechanism enforces default deny for files, directories, network, process creation, IPC, inherited descriptors, shared memory/cache, environment variables, stdout/stderr, and wall-clock sources for every actor instance and mode?",
+      "impact": "A mock capability test can validate controller intent but cannot support the real-run enumerated-surface noninterference finding required by T05/T06."
+    },
+    {
+      "ambiguity_id": "V6S6_SYS_A08_SPLIT_DISTINCTNESS",
+      "question": "Does T04 require twelve pairwise-distinct source hashes and twelve pairwise-distinct bitcode hashes across acquisition plus target, and is any cross-modality source-hash/bitcode-hash equality forbidden?",
+      "impact": "The test's phrase 8/4 source and bitcode hashes are distinct admits multiple eligibility sets and therefore multiple otherwise conforming manifests."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "V6S6_SYS_D01_IMPOSSIBLE_PARITY_BYTES",
+      "statement": "The requirement that H and E events match exactly during tasks 1--4 is inconsistent with the canonical event schema, whose system field must be H for one life and E for the other.",
+      "rationale": "Byte-identical packets, outputs, outcomes, memory records, and non-identity state are feasible, but byte-identical identity-bearing event or full snapshot bytes are not. Treating this as an integrity failure would make every conforming run fail before sleep 1.",
+      "proposed_resolution": "Define and golden-test one ordered parity projection that excludes only declared identity fields, while separately requiring correct H/E identity fields and binding hashes of both complete artifacts. Replace every unqualified exact-parity statement with that projection."
+    },
+    {
+      "disagreement_id": "V6S6_SYS_D02_EXACT_BYTE_CLOSURE_OVERSTATED",
+      "statement": "The proposal describes packet/event/state, runtime isolation, and post-run acceptance as closed even though many cross-process and evidence artifacts have no exact canonical schema or hash-chain rule.",
+      "rationale": "Named receipts are not sufficient for independent reconstruction. In particular, target/failure receipts, state commits, successful mounts, publication/teardown, barrier, report, and numeric score bytes admit incompatible implementations while T01/T06 demand exact recomputation.",
+      "proposed_resolution": "Add versioned additionalProperties-false schemas, canonical byte examples, domains, producer/consumer identities, pre/post hashes, and failure variants for every artifact in the finite run DAG; bind them in the architecture or an explicitly pre-ratification protocol appendix."
+    },
+    {
+      "disagreement_id": "V6S6_SYS_D03_CAPABILITY_TEST_TOO_WEAK_FOR_RUNTIME_CLAIM",
+      "statement": "Controller-level capability-denial fixtures alone cannot establish that the real model, compiler, trainer, launcher, collector, and reporter processes possessed only the actor allowlist.",
+      "rationale": "The allowlist speaks in read/create/write/delete terms, while leakage can occur through execution, IPC, inherited handles, shared caches, network, stderr, environment, or directory metadata. Enumerating versions and paths does not prove denial or absence of access.",
+      "proposed_resolution": "Bind a concrete per-actor sandbox/capability policy and tamper-evident runtime enforcement/audit receipts; make T03 test that policy and make T05/T06 verify it on the exact run. Split PUBLISHER and LOADER privileges or define non-overlapping modes. Explicitly authorize AUDITOR_REPORTER's report output."
+    },
+    {
+      "disagreement_id": "V6S6_SYS_D04_DETERMINISM_CLAIM_OVERSTATED",
+      "statement": "Calling the writer/build path deterministic is stronger than the specified evidence: sleep 1 has no independent rebuild, and final builds A/B may differ within two numerical tolerances.",
+      "rationale": "Sleep 1 affects the realized E history and therefore the sleep-2 dataset. A single build cannot demonstrate repeatability, while tolerance agreement demonstrates bounded numerical reproducibility rather than exact determinism.",
+      "proposed_resolution": "Either rename the property to manifest-pinned bounded reproducibility and treat authentic A hashes as realized-state identity, or require comparison-only rebuilds for both sleeps and state precisely which tensor/output equality standard supports the word deterministic."
+    },
+    {
+      "disagreement_id": "V6S6_SYS_D05_T06_RELEASE_GATE_MISMATCH",
+      "statement": "change.json marks V6S6_T06_ACTUAL_RUN_CONFORMANCE as required_before scientific_claim even though scientific claims are forbidden and protocol.md requires T06 before any result release.",
+      "rationale": "An orchestrator following the structured acceptance-test metadata could release descriptive results or a disposition before T06 because no scientific claim is being made.",
+      "proposed_resolution": "Make the structured gate explicitly required before any result/disposition release and require the run controller to keep all values quarantined until the bound T06 approval is committed."
+    },
+    {
+      "disagreement_id": "V6S6_SYS_D06_DIRECTIVE_SCOPE_NARROWING",
+      "statement": "The assay does not settle the directive's broader design question about persistent context state, deciding what to think next, or intelligent memory compilation; it tests a hand-specified action-cloning lower bracket.",
+      "rationale": "The narrowing may be a useful complementary experiment, but success cannot be represented as completion or validation of Experience Model v6's conscious/subconscious loop architecture.",
+      "proposed_resolution": "Retain the assay only under a human-ratified complementary-lower-bracket label, keep its evidence namespace separate, and require a future architecture change for the broader context and sleeper design."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin ratify this as only a complementary fixed-recipe lower bracket, not as the final v6 thinker/sleeper or context-loop design?",
+      "Should the proposal be revised before ratification to replace impossible H/E byte equality with an exact identity-aware parity projection?",
+      "Which complete receipt schemas, hash-chain rules, numeric encodings, and double-sealer promotion lifecycle must be frozen so T01--T06 can be independently exact?",
+      "Which concrete runtime sandbox and audit mechanism will enforce the actor capability matrix, including non-file channels and separate publisher/loader/reporter privileges?",
+      "Will T06 be a hard gate on every result and disposition release rather than only on scientific claims?",
+      "Is the build property intended to be exact determinism or bounded numerical reproducibility, and must sleep 1 also receive an independent comparison build?"
+    ]
+  }
+}

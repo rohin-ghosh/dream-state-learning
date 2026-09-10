@@ -1,0 +1,150 @@
+{
+  "schema_version": "paper1-v03r-canary-execution-v1b.0",
+  "public_projection": {
+    "valve_route": ["valve", "source"],
+    "intervention_effect": ["valve", "target", "effect"],
+    "source_anchor_color": ["anchor", "source", "label"],
+    "animal_source_color": ["animal", "source", "label"],
+    "target_passive_baseline": ["anchor", "target", "mixture"],
+    "workshop_recipe": ["mixture", "label"],
+    "forbidden_raw_keys": ["ratio", "latent_bit", "answer", "parents", "source_subset", "role", "split", "latent_tuple_id", "world_fingerprint"],
+    "probe_model_fields": ["probe_id", "source", "target", "question"],
+    "probe_audit_only_fields": ["matched_distractor_source", "matched_distractor_target", "answer_valve", "next_operation"]
+  },
+  "surface_atoms": {
+    "valve": "valve:<public-surface-slug>",
+    "source": "source:<public-surface-slug>",
+    "target": "target:<public-surface-slug>",
+    "animal": "animal:<public-surface-slug>",
+    "label": "label:<public-surface-slug>",
+    "mixture": "mixture:<positive-count>*<public-pigment-slug>[+...]",
+    "effect": ["CHANGE", "STABLE"],
+    "canonicalization": "ASCII lowercase public surface slugs; mixture terms use published primary-pigment order; zero terms omitted; internal IDs forbidden"
+  },
+  "row_kinds": {
+    "ROUTE": {"fields": ["valve", "source"], "origin": "WITNESSED", "touch_class": "concept"},
+    "EFFECT": {"fields": ["valve", "target", "effect"], "origin": "WITNESSED", "touch_class": "concept"},
+    "SOURCE_VALUE": {"fields": ["anchor", "source", "label"], "origin": "WITNESSED", "touch_class": "concept"},
+    "ANIMAL_VALUE": {"fields": ["animal", "source", "label"], "origin": "WITNESSED", "touch_class": "concept"},
+    "TARGET_BASELINE": {"fields": ["anchor", "target", "mixture"], "origin": "WITNESSED", "touch_class": "concept"},
+    "RECIPE": {"fields": ["mixture", "label"], "origin": "WITNESSED", "touch_class": "relation"},
+    "ROLE_EQUIV": {"fields": ["animal", "anchor"], "origin": "DREAMED", "touch_class": "relation"},
+    "CAUSAL_JOIN": {"fields": ["source", "target", "effect"], "origin": "DREAMED", "touch_class": "relation"},
+    "ROLE_APPLICATION": {"fields": ["animal", "target", "anchor"], "origin": "DREAMED", "touch_class": "relation"}
+  },
+  "memory_state_separation": {
+    "model_visible_closed_row": ["row_id", "origin", "kind", "fields", "status", "support_basis", "citations", "depth", "semantic_hash", "record_hash"],
+    "audit_only_events": ["raw_response_sha256", "prediction", "confidence", "reason", "parse_metadata", "verdict_metadata", "requested_mode", "realized_mode"],
+    "semantic_hash": "sha256(RFC8785_JCS({fields:fields,kind:kind}))",
+    "record_hash": "sha256(RFC8785_JCS(closed row excluding record_hash))",
+    "capability_rule": "reader, views, candidate builder, trainer, selector, and request builder reject audit events and audit paths",
+    "taint_noninterference": "mutating all generated free text with answers, labels, proofs, aliases, actions, or target conclusions must leave reader bytes, views, candidates, training bytes, selectors, and later provider messages byte-identical"
+  },
+  "forbidden_row_shapes": [
+    "dreamed row containing label, mixture, final answer, action, or complete proof",
+    "animal-and-target row other than label-free ROLE_APPLICATION",
+    "row containing all registered proof families",
+    "ROLE_APPLICATION without earlier supported ROLE_EQUIV and witnessed TARGET_BASELINE citations",
+    "field tuple not exactly matching kind"
+  ],
+  "self_check_compatibility": [
+    {"verdict": "SUPPORTED", "support_basis": "SELF_REVIEW_SAME_EVIDENCE", "condition": "premise_ids exactly equal CREATE citations", "event": "SELF_SUPPORTED_SAME_EVIDENCE", "status": "SUPPORTED"},
+    {"verdict": "SUPPORTED", "support_basis": "INDEPENDENT_CORROBORATION", "condition": "premise_ids exactly equal CREATE citations and at least one counterevidence row has nonempty public lineage disjoint from creation lineage", "event": "SELF_SUPPORTED_INDEPENDENT", "status": "SUPPORTED"},
+    {"verdict": "CONTRADICTED", "support_basis": "NONE", "condition": "premise_ids exactly equal CREATE citations", "event": "SELF_CONTRADICTED", "status": "CONTRADICTED"},
+    {"verdict": "UNRESOLVED", "support_basis": "NONE", "condition": "premise_ids exactly equal CREATE citations", "event": "SELF_UNRESOLVED", "status": "UNRESOLVED"}
+  ],
+  "self_check_reducer": {
+    "counterevidence_ids": "unique, disjoint from premise_ids, and subset of supplied counterevidence view",
+    "invalid_combination": "consume sole SELF_CHECK call; append SELF_CHECK_INVALID; assign terminal INVALID_SELF_CHECK; no retry",
+    "semantic_entailment_check": false,
+    "independent_wording": "model-claimed distinct-lineage support only",
+    "eligible_statuses": ["WITNESSED", "SUPPORTED"]
+  },
+  "provenance_and_duplicates": {
+    "ownership": "first valid CREATE in schedule order owns the semantic key before SELF_CHECK",
+    "later_identical_create": "consume DREAM and SELF_CHECK; append DUPLICATE_ATTEMPT and reflection audit events; never mutate owner",
+    "witness_duplicate_events": "retain event provenance but project only first canonical row",
+    "public_event_lineage": "the event singleton",
+    "witnessed_row_lineage": "its source-event set",
+    "dreamed_row_lineage": "set union of cited parent lineages",
+    "witnessed_depth": 0,
+    "dreamed_depth": "1 + maximum cited parent depth, treating directly cited public events as depth 0",
+    "citation_order": "only already-visible same-life branch or ancestor rows/events",
+    "forbidden_edges": ["self", "forward", "back edge", "cross-life", "cross-unregistered-branch"],
+    "shared_ancestor_diamonds": true,
+    "descendants": "transitive child closure within sealed manifest"
+  },
+  "self_check_view": {
+    "common": "immutable proposal, exact cited premises, and at most eight eligible additional rows selected without private truth",
+    "ROLE_EQUIV": "ANIMAL_VALUE rows for proposed animal and SOURCE_VALUE rows for proposed anchor on overlapping sources",
+    "CAUSAL_JOIN": "ROUTE rows touching proposed source and EFFECT rows touching proposed target",
+    "ROLE_APPLICATION": "ROLE_EQUIV rows for proposed animal and TARGET_BASELINE rows for proposed anchor or target",
+    "additional_order": "semantic_hash ascending",
+    "harness_checks": "schema, visibility, citations, lineage identity, tuple legality, and reducer table only"
+  },
+  "reader": {
+    "query_rule": "legal kind with exactly one null field and valid public atoms elsewhere; ROLE_APPLICATION only animal+target->anchor or animal+anchor->target",
+    "matching": "exact byte equality on non-null fields among canonical eligible rows",
+    "resolution": "group matches by distinct missing-field value; zero values NOT_FOUND; one value returns canonical earliest-owned row; two or more values CONFLICT",
+    "identical_duplicates_conflict": false,
+    "forbidden": ["all-null", "multiple-null", "prefix", "fuzzy", "closure", "scan", "answer query", "query repair"],
+    "illegal_effect": "consume operation and terminate invalid"
+  },
+  "compiler": {
+    "input": "eligible canonical closed rows only",
+    "sort": ["kind", "semantic_hash"],
+    "encoding": "UTF-8 RFC8785_JCS objects with one LF per record",
+    "views": {
+      "field_completion_forward": "query all fields except last; answer last",
+      "field_completion_reverse": "query all fields except first; answer first; ROLE_APPLICATION instead omits target at index 1",
+      "recognition_declarative": "declarative serialization with last field as answer",
+      "recognition_question": "question serialization with last field as answer; sole online adapter-read view"
+    },
+    "touches_definition": "touches are exposures of each individual view over all four epochs, not totals pooled across a row",
+    "concept_touches_per_view_over_full_fit": 24,
+    "relation_touches_per_view_over_full_fit": 96,
+    "corpus_repetitions_per_view_before_four_epochs": {"concept": 6, "relation": 24},
+    "backend_invariant": "text and LoRA envelopes share semantic_hash, view_id, exact cue bytes, exact answer bytes, order, touch class, and per-view touch count",
+    "excluded": ["audit text", "provisional", "unresolved", "contradicted", "invalid", "focus", "final goal", "think trace", "score", "offline result"]
+  },
+  "fidelity_and_candidates": {
+    "seal_time": "after both M1_OWN manifests and before final-goal reveal or fitting",
+    "rows_per_life": "first eight dreamed eligible rows by semantic_hash, then witnessed eligible rows by semantic_hash until exactly twelve",
+    "cues_per_row": 4,
+    "candidate_universe": "distinct values at the exact kind and missing index across both sealed M1_OWN manifests plus NOT_FOUND",
+    "protected_values": "all values matching the exact query in either manifest plus NOT_FOUND",
+    "maximum": 16,
+    "overflow": "INVALID_PRECONDITION",
+    "fill_order": "sha256(RFC8785_JCS({field_index:index,kind:kind,value:value}))",
+    "own_donor_bytes_identical_except_adapter": true
+  },
+  "prospective_interventions": {
+    "seal_time": "after M1_OWN and public final goal, before any T-arm result",
+    "T_TWIN": "recipient goal with other twin's complete M1_OWN text reader; exact donor-valid token expected",
+    "path_roots": "all eligible ROLE_EQUIV rows with final animal plus all eligible CAUSAL_JOIN rows with final source and target",
+    "T_PATH": "own reader minus all path roots and their typed descendants; missing root class invalidates precondition",
+    "protected_sham_frontier": ["all ANIMAL_VALUE(final animal)", "all ROLE_EQUIV(final animal)", "all ROLE_APPLICATION(final animal,final target)", "all ROUTE(any,final source)", "all CAUSAL_JOIN(final source,final target)", "all EFFECT(any,final target)", "all SOURCE_VALUE(any,final source)", "all TARGET_BASELINE(any,final target)", "all RECIPE", "all ancestors and typed descendants of these rows"],
+    "sham_pool": "eligible rows outside path and protected closure",
+    "sham_matching": "unique minimum-cost bipartite assignment lexicographically minimizing status mismatches, kind mismatches, total absolute controller-token-mass difference, then sorted hash pairs",
+    "sham_constraints": "zero status mismatch; same kind whenever pool suffices; equal row count; token-mass difference at most max(2,ceil(0.05*path token mass))",
+    "T_SHAM": "own reader minus presealed matched sham rows; infeasible matching is INVALID_PRECONDITION",
+    "token_mass": "executable-lock controller tokenizer over exact reader row serialization without special tokens or chat template",
+    "fresh_runs": true,
+    "only_reader_manifest_differs_between_path_and_sham_requests": true
+  },
+  "isolation": {
+    "request_unit": "one stateless model operation",
+    "prefix_cache": false,
+    "conversation_reuse": false,
+    "kv_state_reuse": false,
+    "cross_life": "forbidden except registered T-TWIN or L-TWIN backend",
+    "adapter_mount": "only during one host-side atomic recognition score; unmount before clean 32B continuation",
+    "required_receipts": ["request_id", "external life namespace", "stage", "profile", "model revision", "request hashes", "adapter or none", "reader or none", "runtime lock", "input_truncated=false", "output_truncated=false"]
+  },
+  "accounting": {
+    "ledgers": ["dev_32b", "heldout_proposal_32b", "heldout_self_check_32b", "think0_32b", "text_think1_32b", "path_sham_think1_32b", "lora_fit_7b", "fidelity_7b", "online_read_7b", "lora_think1_32b"],
+    "attempt_rule": "every dispatched request counts including malformed output, defer, timeout, and infrastructure failure",
+    "pre_dispatch_refusal": "lock or authority failure creates a non-dispatch receipt and consumes no provider call",
+    "retry": false
+  }
+}

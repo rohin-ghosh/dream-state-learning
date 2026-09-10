@@ -1,0 +1,1719 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r4",
+  "title": "Public Pathway Consolidation v5r4: executable generator-population four-assay instrument",
+  "summary": "A closed, generator-population causal instrument for supported candidate selection, observable every-edge interleaved-response dependence, frozen DREAM context-policy value, and the total effect of DREAM-guided evidence-to-READ training. It replaces finite-roster average ITT with directly observed paired life outcomes, closes state/queue/status/claim DAGs, and makes every acceptance result executable.",
+  "system_thesis": "Experience Models should ultimately convert verified lived experience into prospective cognition. PPC5r4 does not test that flywheel. It tests four separately identified prerequisites while freezing THINK, DREAM, and ACT and restricting learning to candidate scoring. Success is only a qualified non-mediational intersection over the locked generator population; learned cognition, continual improvement, compression, parenting, populations, and scaling remain later hypotheses.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/human_directive.txt",
+      "sha256": "9ab57ddfb75e95aa827f72afe077dcd07e0311431530ff6af03f7dcfdeb03155",
+      "purpose": "Verbatim direction and bounded interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/scope_proposal.json",
+      "sha256": "f86be7a9626cb0711f6244296b147c7035e10f50f169ed99461a77799ee884d0",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/protocol.md",
+      "sha256": "7000aaefc294276e4921e55f2fb3593e2ec02a09ba3fe39baacddbfd2c68d427",
+      "purpose": "Standalone scientific question, estimand, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/machine_contract.md",
+      "sha256": "9b6229f545576ab83d0ba50385f90ffe55a9505858056e8da6ff6ea3ee911487",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/semantic_validators.md",
+      "sha256": "2b7cc2081d56dc48e4fda966861a48c0ef9bece771f104083174b36cfb7b5542",
+      "purpose": "Pure cross-field and DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/assay_contract.json",
+      "sha256": "6e340b7219c14203c794c74501b0af51f48721ae0447c0a61c3e46c0769f5104",
+      "purpose": "Assay populations, freeze matrix, controls, and construction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/analysis_contract.json",
+      "sha256": "1096a740584b931f4d311bcd6176535edf755dc25ebe8a284c8bf4705b88dc5a",
+      "purpose": "Exact paired/safety/missingness/Holm/power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/status_contract.json",
+      "sha256": "75412cda87c2b346694522ed220f45e408e598545cefebcb09d50c55d4905829",
+      "purpose": "Total status-to-endpoint mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/visibility_contract.json",
+      "sha256": "df566ee003981c0f65788e44a7c80de713da83d35c566aa07c14d85d6b4ef7e4",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/authority_contract.json",
+      "sha256": "1e50a4b109d9921e8ff695950b5fc22af7289bb1527825904497923026f98c99",
+      "purpose": "Stage-specific authority DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/claim_dependency_map.json",
+      "sha256": "b4d00292a98b77502e6aee656b96a80954854e958f26b30dc5a40b55737b97d5",
+      "purpose": "Literal release and blocker map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/object_inventory.json",
+      "sha256": "323413818d1083e9de29f7a4558f722d0954e196504e82b8a265b9c3a3308c65",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/contracts.schema.json",
+      "sha256": "5320dd9e003d90fecc8dc6b7c7712637abe40ec261d911498974808a63da3aea",
+      "purpose": "Closed schemas for every inventory type."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/test_contract.json",
+      "sha256": "3723506047c41e4da313079c1c01786b396a27c67ec8e2223d368bd9d0e22af6",
+      "purpose": "Executable T01-T14 coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/stats_assay_resolution.md",
+      "sha256": "0fc86ddbda27f725d9d3041a3583e7945094d45d08883e9e3d441896b06a8950",
+      "purpose": "Nonnormative independent statistical integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/systems_resolution.md",
+      "sha256": "cbce305fab1c81fbf4c33017b5710947823c06a433cf565a8a3e8daec0dca6da",
+      "purpose": "Nonnormative independent systems integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r3/consensus.json",
+      "sha256": "94564b5be5ddb15b5190f12946ce08480a1e665c2332aac581e925eee8b1cf3a",
+      "purpose": "Binding PPC5r3 rework consensus; provenance only, no inherited authority."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "PUBLIC_LEDGER",
+        "before": "",
+        "after": "Append-only expectation, operation, provider-return, action, and outcome events with domain-separated hash chaining.",
+        "rationale": "Makes lived public evidence replayable without hidden cognition."
+      },
+      {
+        "operation": "add",
+        "node_id": "MINIMAL_FROZEN_POLICY",
+        "before": "",
+        "after": "One frozen model emits only READ, PREDICT, ACT, or STOP under a total public/private controller.",
+        "rationale": "Isolates adaptive response use from a general agent architecture."
+      },
+      {
+        "operation": "add",
+        "node_id": "COMMON_PROVIDER",
+        "before": "",
+        "after": "Complete-table candidate scoring behind one common public response.",
+        "rationale": "Identifies adapter-conditioned discrimination with external support."
+      },
+      {
+        "operation": "add",
+        "node_id": "TYPED_RESPONSE_INTERVENTION",
+        "before": "",
+        "after": "Privileged routing projects only opaque parity-certified replacement bytes into the restricted runtime stage.",
+        "rationale": "Makes every-edge intervention target-blind during scoring and exactly matched during emission."
+      },
+      {
+        "operation": "add",
+        "node_id": "FROZEN_DREAM",
+        "before": "",
+        "after": "One shared no-retry same-model call selects a reversible public context and evidence nominees.",
+        "rationale": "Tests DREAM selection without learned DREAM or evidence invention."
+      },
+      {
+        "operation": "add",
+        "node_id": "EVIDENCE_SLEEP",
+        "before": "",
+        "after": "Nominee-first evidence admission, total root policies, one-pass row rendering, clean-base training, validation, and atomic publication.",
+        "rationale": "Makes SLEEP the only parametric write and keeps PROBE/future/cognition sterile."
+      },
+      {
+        "operation": "add",
+        "node_id": "ISOLATED_READ_ADAPTER",
+        "before": "",
+        "after": "One typed adapter may change only candidate scores inside the provider.",
+        "rationale": "Prevents policy cloning from masquerading as acquired support."
+      },
+      {
+        "operation": "add",
+        "node_id": "DECISIVE_PATH_CONSTRUCTOR",
+        "before": "",
+        "after": "A finite-world oracle constructs unique source-disjoint two/three-edge paths with twins, shams, and proofs.",
+        "rationale": "Establishes observable response dependence rather than inferred thought."
+      },
+      {
+        "operation": "add",
+        "node_id": "LIFE_LEVEL_REDUCER",
+        "before": "",
+        "after": "Exact paired generator-population success probabilities, D1A one-sample safety, missingness, per-edge IUTs, four-claim Holm, aligned exact power, and literal release.",
+        "rationale": "Prevents pseudoreplication, post hoc missingness, and claim substitution."
+      },
+      {
+        "operation": "add",
+        "node_id": "GENERATOR_LIFE_SAMPLER",
+        "before": "finite constructed roster interpreted as the population",
+        "after": "independent recipient-life bundles sampled from the locked generator, each containing its own recipient-disjoint exact donor sub-bundle",
+        "rationale": "Aligns the estimand and exact binomial inference with directly observed IID computational lives."
+      },
+      {
+        "operation": "add",
+        "node_id": "ACYCLIC_TYPED_RECEIPT_DAG",
+        "before": "ambiguous state/terminal/authority hashes",
+        "after": "state-body to transition-event to state-receipt; reduction to claim-decision to preclaim-authority to claim-release",
+        "rationale": "Makes replay, dispatch authority, and release hashes computable without self-ancestry."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "POLICY_TO_LEDGER",
+        "from": "MINIMAL_FROZEN_POLICY",
+        "to": "PUBLIC_LEDGER",
+        "before": "",
+        "after": "Every attempted dispatch and deterministic transition appends one canonical event.",
+        "rationale": "Complete public causality and replay."
+      },
+      {
+        "operation": "add",
+        "edge_id": "LEDGER_TO_DREAM",
+        "from": "PUBLIC_LEDGER",
+        "to": "FROZEN_DREAM",
+        "before": "",
+        "after": "Only the causally prior projected public slice reaches the shared call.",
+        "rationale": "No future or hidden-answer leakage."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DREAM_TO_CONTEXT",
+        "from": "FROZEN_DREAM",
+        "to": "MINIMAL_FROZEN_POLICY",
+        "before": "",
+        "after": "Total authentic, recency, and permuted policies install reversible views.",
+        "rationale": "Identifies total context-policy assignment."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DREAM_TO_EVIDENCE",
+        "from": "FROZEN_DREAM",
+        "to": "EVIDENCE_SLEEP",
+        "before": "",
+        "after": "Nominees enter the same first-failure evidence gate as total mechanical policies.",
+        "rationale": "DREAM selects; evidence decides support."
+      },
+      {
+        "operation": "add",
+        "edge_id": "EVIDENCE_TO_ADAPTER",
+        "from": "EVIDENCE_SLEEP",
+        "to": "ISOLATED_READ_ADAPTER",
+        "before": "",
+        "after": "Only atomic supported READ rows train from the clean base.",
+        "rationale": "SLEEP is the sole writer."
+      },
+      {
+        "operation": "add",
+        "edge_id": "ADAPTER_TO_PROVIDER",
+        "from": "ISOLATED_READ_ADAPTER",
+        "to": "COMMON_PROVIDER",
+        "before": "",
+        "after": "Mounted bytes affect only quantized full-table candidate scores.",
+        "rationale": "D1A causal isolation."
+      },
+      {
+        "operation": "add",
+        "edge_id": "PROVIDER_TO_INTERVENTION",
+        "from": "COMMON_PROVIDER",
+        "to": "TYPED_RESPONSE_INTERVENTION",
+        "before": "",
+        "after": "Selection precedes parity-matched AUTHENTIC/CUT/TWIN/SHAM substitution.",
+        "rationale": "Provider remains treatment blind."
+      },
+      {
+        "operation": "add",
+        "edge_id": "INTERVENTION_TO_POLICY",
+        "from": "TYPED_RESPONSE_INTERVENTION",
+        "to": "MINIMAL_FROZEN_POLICY",
+        "before": "",
+        "after": "Exactly matched public responses enter state under the sealed schedule.",
+        "rationale": "Every-edge response-dependence intervention."
+      },
+      {
+        "operation": "add",
+        "edge_id": "PATH_TO_INTERVENTION",
+        "from": "DECISIVE_PATH_CONSTRUCTOR",
+        "to": "TYPED_RESPONSE_INTERVENTION",
+        "before": "",
+        "after": "Independent proof objects supply target-disjoint twin/sham projections.",
+        "rationale": "Treatment construction is auditable."
+      },
+      {
+        "operation": "add",
+        "edge_id": "OUTCOMES_TO_REDUCER",
+        "from": "PUBLIC_LEDGER",
+        "to": "LIFE_LEVEL_REDUCER",
+        "before": "",
+        "after": "Typed all-assigned observations and statuses reduce at recipient-life level.",
+        "rationale": "Claims follow registered estimands."
+      },
+      {
+        "operation": "add",
+        "edge_id": "GENERATOR_TO_PAIRED_LIVES",
+        "from": "GENERATOR_LIFE_SAMPLER",
+        "to": "LIFE_LEVEL_REDUCER",
+        "before": "finite-roster membership",
+        "after": "one canonical IID life bundle and paired outcome vector per sample ordinal",
+        "rationale": "The probability target is directly observed rather than inferred from a sealed finite roster."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DECISION_TO_AUTHORITY_TO_RELEASE",
+        "from": "LIFE_LEVEL_REDUCER",
+        "to": "ACYCLIC_TYPED_RECEIPT_DAG",
+        "before": "claim release could be an ancestor of its own authority",
+        "after": "pure claim decision precedes preclaim authority; literal release follows authority",
+        "rationale": "Closes the scientific-claim hash DAG."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "MINIMAL_PUBLIC_RECURRENCE",
+        "before": "",
+        "after": "Canonical render, one frozen dispatch, total debit/validation, exact controller step, exclusive queue effect where applicable, one event, and deterministic next state receipt.",
+        "trigger": "A sealed D1B/C/D work item is nonterminal and its schedule permits a call.",
+        "reads": [
+          "closed public model view",
+          "public READ returns and outcomes",
+          "sealed schedule and budgets through typed controller"
+        ],
+        "writes": [
+          "one operation envelope",
+          "one result and ledger event",
+          "one next-state or terminal receipt"
+        ],
+        "stop_condition": "Schedule complete/incomplete, provider sequence complete, model stop, budget stop, third error, construction failure, or run invalid.",
+        "rationale": "Smallest recurrent causal instrument."
+      },
+      {
+        "operation": "add",
+        "loop_id": "SHARED_FROZEN_DREAM",
+        "before": "",
+        "after": "One frozen no-retry call yields PUBLISH, empty, ABSTAIN, invalid, or missing and is shared across paired policy clones.",
+        "trigger": "The presealed snapshot ordinal is reached.",
+        "reads": [
+          "causally prior public slice",
+          "public world state and live prediction",
+          "allowed public record IDs and capacity"
+        ],
+        "writes": [
+          "one shared DREAM receipt",
+          "one authentic reversible view",
+          "one ordered nominee list"
+        ],
+        "stop_condition": "Exactly one charged result; no retry.",
+        "rationale": "Prevents stochastic DREAM realization from confounding policy arms."
+      },
+      {
+        "operation": "add",
+        "loop_id": "TOTAL_EVIDENCE_SLEEP_WRITE",
+        "before": "",
+        "after": "Apply assigned root policy, nominee-first evidence gate, exact dedup/order/capacity, one-pass row rendering, clean-base training, validation, and atomic publication.",
+        "trigger": "A sealed D1A or D1D training arm reaches its one sleep boundary.",
+        "reads": [
+          "closed pre-boundary ACQUIRE evidence",
+          "private eligibility at the evidence gate only",
+          "assigned policy recipe and seed projections"
+        ],
+        "writes": [
+          "projection and stage-status receipts",
+          "authentic or typed negative-control rows",
+          "zero or one adapter manifest"
+        ],
+        "stop_condition": "Valid artifact, valid empty, training failure with adapter-off continuation, missing, construction failure, or run invalid; no retry/fallback.",
+        "rationale": "Makes selection policies total and negative controls causal."
+      },
+      {
+        "operation": "add",
+        "loop_id": "EXACT_GENERATOR_POPULATION_REDUCTION",
+        "before": "finite-roster average ITT with invalid population language",
+        "after": "For every registered gate reduce independent paired lives to strict-margin success indicators, exact binomial tails and certified rational confidence bounds; apply safety, missingness, IUT, Holm, and union-bound power identically.",
+        "trigger": "Every assigned endpoint has exactly one observation or blocker and T14 cold replay agrees.",
+        "reads": [
+          "sealed gate membership",
+          "typed endpoint outcomes",
+          "locked margins, null thresholds, ceilings, alpha, and power floor"
+        ],
+        "writes": [
+          "paired, safety, missingness, assay, Holm, power, claim-decision, and qualified release receipts"
+        ],
+        "stop_condition": "BLOCKED on the first registered global/local failure; otherwise exact literal decision then authority-gated release.",
+        "rationale": "Makes the inferential target, analysis, power, and language one coherent object."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "PPC5_D1A_SUPPORTED_SELECTION",
+        "before": "",
+        "after": "On independently sampled recipient lives from the locked PPC5 generator, the evidence-gated READ-LoRA exceeded each registered paired supported-selection margin with probability above its locked threshold against adapter-off, an exactly dose/opportunity-matched wrong-life adapter, and an exactly dose-matched binding derangement, while passing recipient-life false-selection and NOT_FOUND safety ceilings. This is external complete-table candidate-conditioned selection, not closed-book storage.",
+        "evidence_needed": "Every required cell and gate in claim_dependency_map.json, exact T01-T14, passing Holm and preclaim authority, with fixed qualification.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE",
+        "before": "",
+        "after": "On independently sampled decisive-path recipient lives from the locked PPC5 generator, authentic interleaved use exceeded every registered edge-specific CUT and TWIN margin and both timing-control margins with probability above their locked thresholds, while every edge-specific oracle-preserving SHAM remained noninferior by its registered population criterion. This is observable public behavioral response dependence, not access to private cognition.",
+        "evidence_needed": "Every required cell and gate in claim_dependency_map.json, exact T01-T14, passing Holm and preclaim authority, with fixed qualification.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_D1C_DREAM_CONTEXT_POLICY",
+        "before": "",
+        "after": "On independently sampled recipient lives from the locked PPC5 generator, assignment to the shared frozen-model DREAM-selected reversible context exceeded each registered paired action margin with probability above its locked threshold against total recency and recipient-local hash-permuted context policies, inclusive of context cardinality, order, focus, prompt-token, failure, abstention, and no-view consequences.",
+        "evidence_needed": "Every required cell and gate in claim_dependency_map.json, exact T01-T14, passing Holm and preclaim authority, with fixed qualification.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY",
+        "before": "",
+        "after": "On independently sampled recipient lives from the locked PPC5 generator, DREAM_TO_SLEEP assignment exceeded each registered paired supported-selection and action margin with probability above its locked threshold against total recency and hash-permuted root policies, inclusive of policy-induced evidence dose, training, publication, inference, failure, and resource consequences and without post-treatment dose adjustment.",
+        "evidence_needed": "Every required cell and gate in claim_dependency_map.json, exact T01-T14, passing Holm and preclaim authority, with fixed qualification.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "PPC5_NONMEDIATIONAL_FOUR_ASSAY_INTERSECTION",
+        "before": "",
+        "after": "All four separately identified PPC5 generator-population assays passed: supported complete-table selection, observable every-edge interleaved-response dependence, frozen DREAM context-policy value, and DREAM_TO_SLEEP total-policy value. This is a non-mediational four-assay intersection, not an end-to-end learning mechanism.",
+        "evidence_needed": "All four separately released component claims, all global prerequisites, overlap and construction-scope receipts, and the fixed qualification.",
+        "headline_eligible": true
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "PUBLIC_STATE",
+      "SEMANTIC_CANDIDATES",
+      "HIDDEN_TRUTH",
+      "PROBE_FUTURE_DATA",
+      "RESOLVED_RESPONSE_BYTES",
+      "PRIVATE_ELIGIBILITY",
+      "INERT_ASSIGNMENT",
+      "ACTIVE_ARTIFACT",
+      "LOSS_ROWS",
+      "ENDPOINT_TRUTH",
+      "CLAIM_TEXT",
+      "LOW_ENTROPY_MATCH_HASHES",
+      "OVERLAP_AND_SCOPE"
+    ],
+    "stages": [
+      "BENCHMARK_CONSTRUCTION",
+      "TWIN_SHAM_CONSTRUCTION",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "PRIVILEGED_INTERVENTION_ROUTER",
+      "THINK",
+      "READ_PROVIDER",
+      "RESPONSE_INTERVENTION",
+      "DREAM",
+      "EVIDENCE_GATE",
+      "WRITER",
+      "TRAINER_VALIDATOR_PUBLICATION",
+      "REDUCER",
+      "CLAIM_RELEASE",
+      "AUDIT"
+    ],
+    "cells": [
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "construct public templates and opaque IDs"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "derived_only",
+        "reason": "public_response_shape_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "public_manifest_hash_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "derived_only",
+        "reason": "query_and_selected_response_hash_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "THINK",
+        "visibility": "visible",
+        "reason": "exact closed model view"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "derived_only",
+        "reason": "typed_read_request_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "derived_only",
+        "reason": "selected_response_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "DREAM",
+        "visibility": "derived_only",
+        "reason": "causally_prior_public_slice_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "derived_only",
+        "reason": "source_record_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "WRITER",
+        "visibility": "derived_only",
+        "reason": "admitted_supported_response_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "public_endpoint_observation_projection"
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PUBLIC_STATE",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "replay and leakage audit"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "build complete table"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "finite response candidate set"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "semantic_table_hash_projection"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "THINK",
+        "visibility": "derived_only",
+        "reason": "full_context_reference_projection only in descriptive FULL_CONTEXT cell"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "visible",
+        "reason": "complete canonical table"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "derived_only",
+        "reason": "selected_common_response_projection"
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "REDUCER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "SEMANTIC_CANDIDATES",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "membership and full-scan audit"
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "finite-world oracle only"
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "sufficiency and action-preservation proof only"
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "construction_proof_hash_projection"
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "endpoint_scoring_projection after runtime"
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "HIDDEN_TRUTH",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "construction and endpoint audit"
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "target-blind role and temporal split construction"
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "quarantine_manifest_hash_projection"
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "visible",
+        "reason": "negative admission predicates only"
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "quarantined_probe_endpoint_projection after close"
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PROBE_FUTURE_DATA",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "permanent quarantine audit"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "construct parity-certified per-edge candidate responses"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "seal alternatives and lineage"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "visible",
+        "reason": "resolve exactly one assigned canonical response"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "visible",
+        "reason": "condition-free already-resolved public response bytes"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "intervention compliance projection"
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "RESOLVED_RESPONSE_BYTES",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "construction, lineage, exact-match, and emission audit"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "create immutable predicates and family strata"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "seal provenance and eligibility manifests"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "visible",
+        "reason": "nominee-first admission and equivalence only"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "WRITER",
+        "visibility": "derived_only",
+        "reason": "admitted_root_projection"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "admitted_dose_and_status_projection"
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "PRIVATE_ELIGIBILITY",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "sterility and overlap audit"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "create and seal opaque assignments"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "visible",
+        "reason": "resolve condition to condition-free projection"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "derived_only",
+        "reason": "opaque mounted-artifact handle or null only"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "derived_only",
+        "reason": "opaque root-policy handle only"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "WRITER",
+        "visibility": "derived_only",
+        "reason": "ordered admitted projections without role labels"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "derived_only",
+        "reason": "arm-neutral corpus recipe and seed handles"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "REDUCER",
+        "visibility": "visible",
+        "reason": "paired arm and clone labels after runtime"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "derived_only",
+        "reason": "registered claim membership projection"
+      },
+      {
+        "information_id": "INERT_ASSIGNMENT",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "prospectiveness and condition-free projection audit"
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "base donor and compatibility manifests"
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "derived_only",
+        "reason": "mounted_adapter_bytes_projection affecting scores only"
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "visible",
+        "reason": "train validate and atomically publish"
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "publication_status_and_resource_projection"
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ACTIVE_ARTIFACT",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "hash compatibility and mount-boundary audit"
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "recipe_and_capacity_projection only"
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "WRITER",
+        "visibility": "visible",
+        "reason": "render authentic or typed control rows"
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "visible",
+        "reason": "loss-bearing rows only"
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "dose_hash_and_count_projection"
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOSS_ROWS",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "row reconstruction and support audit"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "registered action and finite-world oracle"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "directional twin and sham proof"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "derived_only",
+        "reason": "endpoint_oracle_hash_projection"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "REDUCER",
+        "visibility": "visible",
+        "reason": "score public outcomes after execution"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "derived_only",
+        "reason": "typed_contrast_and_assay_results_projection"
+      },
+      {
+        "information_id": "ENDPOINT_TRUTH",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "endpoint recomputation"
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "seal exact registered strings and dependencies"
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "REDUCER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "visible",
+        "reason": "emit exact registered string or BLOCKED only"
+      },
+      {
+        "information_id": "CLAIM_TEXT",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "literal non-substitution audit"
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "construct exact query and selected-response match preimages"
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "seal match hashes and lineage"
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "visible",
+        "reason": "verify exactly one match"
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "REDUCER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "LOW_ENTROPY_MATCH_HASHES",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "preimage confinement and exact-match audit"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "BENCHMARK_CONSTRUCTION",
+        "visibility": "visible",
+        "reason": "compute generator, construction, and overlap manifests"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "TWIN_SHAM_CONSTRUCTION",
+        "visibility": "derived_only",
+        "reason": "construction-scope constraints"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+        "visibility": "visible",
+        "reason": "seal overlap and scope receipts"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "PRIVILEGED_INTERVENTION_ROUTER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "READ_PROVIDER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "RESPONSE_INTERVENTION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "EVIDENCE_GATE",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "WRITER",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "TRAINER_VALIDATOR_PUBLICATION",
+        "visibility": "forbidden",
+        "reason": "No dependency or influence is permitted."
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "REDUCER",
+        "visibility": "derived_only",
+        "reason": "descriptive overlap summary"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "CLAIM_RELEASE",
+        "visibility": "derived_only",
+        "reason": "mandatory overlap and construction-scope receipt hashes plus fixed qualification"
+      },
+      {
+        "information_id": "OVERLAP_AND_SCOPE",
+        "stage_id": "AUDIT",
+        "visibility": "visible",
+        "reason": "recompute manifests and export binding"
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "PPC5R4_T01",
+      "kind": "independent_review",
+      "setup": "every normative file/ref and intake phase edge; stale/missing/extra/reordered roles; rework/defer/reject/unresolved/removed-test states; scope and human-evidence mutations",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 is not independently ratifiable.",
+      "evidence_artifact": "ppc5r4_t01_coverage_receipt.json",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "PPC5R4_T02",
+      "kind": "invariant",
+      "setup": "every construction first-failure predicate and clean pass; nominee multiplicity; policy orders; capacity boundaries; empty/all-rejected/quarantined nominees; overlap strata",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t02_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T03",
+      "kind": "unit",
+      "setup": "reachable-state BFS over every D1A-D1D controller row, L=2/3, R=0/1/positive, every operation/error/missing result, debit boundary, queue FLUSHED/DISCARDED, genesis/terminal/cold replay",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t03_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T04",
+      "kind": "unit",
+      "setup": "all five DREAM statuses crossed with input/render/raw/debit branches, all context/root policies, shared-call cardinality, capacity/token boundary, and stale/missing byte refs",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t04_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T05",
+      "kind": "invariant",
+      "setup": "semantic-table order/duplicate/empty/nonfinite/half-even/tie cases; FOUND/NOT_FOUND/provider missing; mount null/non-null; descriptive-provider boundaries",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t05_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T06",
+      "kind": "invariant",
+      "setup": "every forbidden mount; artifact-manifest mutations; recipient-disjoint exact donor construction; dose/opportunity match and mismatch; derangement invariants; condition-free schema leakage",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t06_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T07",
+      "kind": "unit",
+      "setup": "L=2/3, all nonempty proper subsets, full set, every alternate path count, source collisions, every edge CUT/TWIN/SHAM, parity/oracle mutations",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t07_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T08",
+      "kind": "ablation",
+      "setup": "AUTHENTIC, every per-edge intervention, ONE_SHOT, OPEN_LOOP; every phase/op mismatch; intervention match multiplicity; exclusive queue endings; commitment and opacity/exact-once mutations",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t08_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T09",
+      "kind": "ablation",
+      "setup": "five DREAM statuses by three context policies by R boundary classes by endpoint terminal classes; exact ordering/render/token/shared-missing propagation",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t09_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T10",
+      "kind": "ablation",
+      "setup": "three root policies by all root/corpus/trainer/validation/publication/selection/action states; any D1D matching, padding, truncation, conditioning, or adjustment mutation fails",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t10_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T11",
+      "kind": "unit",
+      "setup": "every status row/endpoint; strict margin ties; exact upper and lower tails around critical counts; CP bounds; missing ceilings; per-edge IUT; Holm order/ties/stops; union-bound power; literals",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t11_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T12",
+      "kind": "invariant",
+      "setup": "complete visibility matrix; every field and ingress/egress mutation; low-entropy/arm/provider leak; every authority edge; preflight denial/staleness/forgery/no-process-on-denial",
+      "expected": "Two independent implementations produce exact expected bytes/failures for the complete fixture universe.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t12_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T13",
+      "kind": "independent_review",
+      "setup": "populated run lock and construction manifests; two distinct sealers and exact agreement/disagreement cases; independence evidence; review/advocate semantics; separate run ratification and staleness",
+      "expected": "Two distinct sealers agree exactly and fresh review passes; separate run ratification remains required.",
+      "falsifies": "PPC5r4 contract is not total, isolated, or reproducible at this boundary.",
+      "evidence_artifact": "ppc5r4_t13_coverage_receipt.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "PPC5R4_T14",
+      "kind": "end_to_end",
+      "setup": "cold replay of every sampled life/event/queue/DREAM/SLEEP/outcome; endpoint coverage; dependency/blocker precedence; four decisions/intersection; overlap/scope; alternate estimand, novelty, mechanism, learned-cognition, and overbroad-release mutations",
+      "expected": "Cold replay, reduction, authority, and literal release agree with the sealed run or remain BLOCKED.",
+      "falsifies": "PPC5r4 runtime evidence or claim release differs from the sealed design.",
+      "evidence_artifact": "ppc5r4_t14_coverage_receipt.json",
+      "required_before": "scientific_claim"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "If fresh PPC5r4 interpretations, cross-critique, and consensus recommend proceed with no unresolved concern, do you ratify these exact proposal bytes and only the isolated deterministic CPU/no-model implementation and dual-static-seal scope in scope_proposal.json, while leaving every model, tokenizer, embedding, trainer, behavioral, canary, GPU, and scientific action forbidden until a separate exact run ratification?",
+    "forbidden_before_approval": [
+      "implementation",
+      "static sealer execution",
+      "model tokenizer or embedding dispatch",
+      "LoRA training",
+      "behavioral or canary execution",
+      "GPU work",
+      "scientific claim"
+    ]
+  }
+}
+

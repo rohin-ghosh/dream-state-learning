@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260902_pcfl_compose_self_revision_text_dev_v1.adversarial_v1",
+  "change_id": "chg_20260902_pcfl_compose_self_revision_text_dev_v1",
+  "state": "critiqued",
+  "architecture_change_sha256": "b6464058e7a2b522fb8b7f13835cd8f4c961f8b946f6019d562dbf9bca22e37e",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260902_pcfl_compose_self_revision_text_dev_v1.benchmark",
+      "sha256": "39f2244e4f09d74f586004ddc0cbde602f63bcc41dcf7b2a1e7477bca845099c"
+    },
+    {
+      "interpretation_id": "chg_20260902_pcfl_compose_self_revision_text_dev_v1.systems",
+      "sha256": "a70bf0eb2f5abfb0c4db495d4d3ccef813145fabe3dc4c809d6d89e83306d090"
+    }
+  ],
+  "context_files": [
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/human_directive.txt","sha256":"80d219a26a6c191d5e429effaceb7f77abad8a2e2d2765b340db13b38a404721","purpose":"Verbatim owner thesis, architecture, paper-priority, rigor, and persistence directives; expressly not exact ratification."},
+    {"path":"AGENTS.md","sha256":"1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e","purpose":"Binding deliberation, exact human-ratification, implementation, fresh-review, pre-GPU, and claim authority contract."},
+    {"path":"research_notes/00_THESIS.md","sha256":"2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da","purpose":"Project thesis and boundary among memory, reasoning, dreaming, action, and later claims."},
+    {"path":"research_notes/42_system_thesis_and_experiment_map.md","sha256":"f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa","purpose":"Architecture-arrow, public-evidence, planner/action, and on-policy claim map."},
+    {"path":"research_notes/IDEAS.md","sha256":"e373a19167ac66705fdc92eecb985788fd4c648c84a5d62a4710024ae9a27706","purpose":"Owner's evolving Think/Dream/Sleep, traversal, compression, and experiential-learning ideas; not treated as settled fact."},
+    {"path":"research_loop/advisory/20260902_pcfl_paper_adjudication.md","sha256":"a1d8751d59320c30fccdeb8394d936a2e477191b49aad1d2c032f94f9c6b4457","purpose":"Final paper-world adjudication selecting repaired PCFL-Compose plus matched independent-table negative and staged claim ladder."},
+    {"path":"research_loop/advisory/20260902_sparse_factor_graph_math_audit.md","sha256":"84d118f67d38ecee39b4b08b1aca18eeaeede4df5986faec2869d5b9392415bf","purpose":"Group convention, gauge, sparse-tree identifiability, noncommutation, reader lower bound, and corrected 2^4 D4 orbit theorem."},
+    {"path":"research_loop/advisory/20260902_orbit_sampling_stat_audit.md","sha256":"4051a82e11a93d0c0b2c497870939f58a73cf5010d1e3d7141e1a9a853d3fbe0","purpose":"Orbit sampling, goal-twin byte wording, independent unit, exchangeability, and future adapter-count corrections."},
+    {"path":"research_loop/advisory/20260902_pcfl_dream_loop_granularity_audit.md","sha256":"c8d2931148d11e650d6599e984d443421a4aff8c8d2045cd121b29c60b0371a0","purpose":"Primary recurrent Dream granularity, exact caps, matched one-shot control, retry policy, and pre-context boundary."},
+    {"path":"research_loop/advisory/20260902_pcfl_lifetime_scaling_design.md","sha256":"315af609a7f2e0ab4c169666e8c735412f138e08f21175f66941b990ab925669","purpose":"Separately designed chained-block lifetime protocol, bound here only to justify its explicit exclusion from this minimal-cycle change."},
+    {"path":"research_loop/advisory/20260902_model_owned_dream_revision_protocol.md","sha256":"0eeff729c80cf8da298aad69c06178da0ca93bfd53e7b23e3f5a74ee82623fa9","purpose":"Model-owned Dream-1/raw-event/Dream-2 protocol, sleeper truth boundary, ceiling arms, measurements, and oracle firewall."},
+    {"path":"research_loop/advisory/20260902_pcfl_architecture_mapping_audit.md","sha256":"a9b34558a47c5e9d79aafcc9a88ba9c26e349f44bb4bdd246ddfe050da6fa734","purpose":"Arrow-by-arrow map from intended organism to construct, controls, missing arrows, and falsifiers."},
+    {"path":"research_loop/advisory/20260902_pcfl_compose_novelty_audit.md","sha256":"dd858d171eb8a27549dddc147e846230ffff04c03196e775c9c86a5fd4fb2b31","purpose":"TMEM, PEAM, A-MEM, Voyager, FactWorld, ActionShift, benchmark novelty, baseline, and forbidden-priority audit."},
+    {"path":"research_loop/advisory/20260902_pcfl_compute_feasibility.md","sha256":"cdfb3a35464aa439da3d8ea6c0093382499779d22ae0bf7a5bbca4021194b6c9","purpose":"Measured model runtimes, pinned revisions, fleet constraints, resource envelopes, and stop conditions."},
+    {"path":"research_loop/advisory/20260902_pcfl_sparse_construct_text_spec.md","sha256":"878642a4b102055af28347f5056a6002b428ad45c37b377907470826cdd7bb6b","purpose":"Integrated sparse construct/text specification and remaining design choices superseded only where this exact proposal says so."},
+    {"path":"research_loop/advisory/20260902_pcfl_semantic_memory_contract_audit.md","sha256":"ebb52e04be0b9c9eec7ac9eadd84a45fc89c8bfb8e66374a2afd051e214eb89a","purpose":"Exact-semantic audit motivating a closed operator AST and exposing the implicit-oracle problem in free prose."},
+    {"path":"research_loop/advisory/20260902_pcfl_semantic_ast_countercritique.md","sha256":"a28028d5f69ff59db1c9efa2134a7be2b7762eae4e4bc8b488fca6e42f7380f3","purpose":"Counter-audit showing that the operator AST supplies much of the solution basis and cannot be the natural primary lane."},
+    {"path":"research_loop/advisory/20260902_pcfl_semantic_representation_adjudication.md","sha256":"c2ffdcbdc17f2057522daececf9a164740ddcd0ac2d6219ee073064b7649a3af","purpose":"Dispositive behavior-first two-lane ruling: OPAQUE_NOTE_SELF primary, non-rescuing OPERATOR_AST_SELF diagnostic, shared reducer, neutral sentinels, and continuation fork."},
+    {"path":"research_loop/advisory/20260902_pcfl_orientation_revision_fork_math.md","sha256":"6da03ea6508a16ac174d9c839fe632ec372ff742f4cabefc38b1bdfbc9e609be","purpose":"Exact public-prefix-identical orientation continuation construction, S6 witness, 32-state nesting, target reversal, null analogue, and CPU certificates."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/experiment_spec.md","sha256":"164be4049bc04280f00bfc6e3597ebb50962ab9abffcf190941c28c18bfd566a","purpose":"Exact construct, shared resolver, two-lane roster, continuation/null gates, metrics, and no-lifetime boundary."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/visibility_contract.md","sha256":"ada944a15c2df44dfa2638a7065da5f9ecf0ba46e9708849ca67fd74ce2f2a73","purpose":"Exact process, taint, reset, shared-prefix continuation, conditional null, comparator mutation, and evaluation-sterility contract."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/resource_manifest.md","sha256":"0c62cc8c68bcacfea9ad6e6ef4df30670f8128e38d52ad72e72965257cefe8f5","purpose":"Literal assignment table plus CPU/model/call/token/device/storage ceilings, failure policy, and artifact surface."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/scope_proposal.json","sha256":"66d2b7463cfd2c4dbc03fad8174b6f45955ac0bb39a1872e431a3a33abf17e58","purpose":"Canonical proposed authority for Stage 0 and conditional text-only S1A/S1B, with explicit forbidden scope."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/semantic_dsl.schema.json","sha256":"4d3b78852e704a69b318767e0b38b4e574102b53984d179927aca8eb66147ce2","purpose":"Exact two-lane NOTE/AST objects, shared RESOLVER_STEP, Dream commitments, and one-shot output schema."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/semantic_contract.md","sha256":"68709bc1d07d4d719e4763ab1db1f70ec5c71d29783380e8592aed4d7f722a77","purpose":"Behavior-first OPAQUE_NOTE and non-rescuing OPERATOR_AST memory, reader, interpreter, sleep, and intervention contract."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/resolver_reducer.md","sha256":"78da30f7d720492f0bf88d438c4c49b3284ae5368a61bdd7e72bc96fbe9aff23","purpose":"Real shared Dream/Think resolver state tuple, reducer, permissions, budgets, and failure semantics."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/fixtures/factorized_13_item_ast.json","sha256":"facb5770d3ced3fa89d564e93ad5a340c9e1f22dd7ce2d852d09f33b43333dc7","purpose":"Concrete 13-item structural capacity fixture with canonical byte-count assertions."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/generic_dream1.txt","sha256":"8438dcd5b40a50fbfda90734a7736eefb19ab14a5bfd7024a40a758b41dcfb11","purpose":"Exact primary family-neutral recurrent OPAQUE_NOTE Dream-1 prompt bytes."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/generic_dream2.txt","sha256":"1880973e6d5bb31ce954c2e0d960a0cc1f08e309c500849ffac16d6f0c9295e3","purpose":"Exact primary raw-public-evidence recurrent OPAQUE_NOTE Dream-2 prompt bytes."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/neutral_dream1.txt","sha256":"7adb6fc617f5e8b6bae8122a62368f87032362ee9aeb4fe5f3f62d48a5f5c465","purpose":"Exact neutral recurrent Dream-1 prompt for untouched-factor and independent sentinels."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/neutral_dream2.txt","sha256":"b216370b227baadedb502c7e52882d007d00d299d7a8d4e76315e6a19931a432","purpose":"Exact neutral recurrent Dream-2 prompt for untouched-factor and independent sentinels."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/class_informed_dream1.txt","sha256":"8834b2acb160417c41a1e49e0eebe72453005f796b11b928349b0f3677172e40","purpose":"Exact supplied-family OPERATOR_AST recurrent Dream-1 ceiling prompt."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/class_informed_dream2.txt","sha256":"d4f973a7d2f839e2f93ff29e86516866c113a392c614588c4e4f888b12c61bef","purpose":"Exact supplied-family OPERATOR_AST recurrent Dream-2 ceiling prompt."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/operator_ast_dream1.txt","sha256":"1cde5133bea9818ff75e8a1a86c9216424c96c89bc2e909da5f2f95969c56d90","purpose":"Exact structure-assisted family-uninformed OPERATOR_AST Dream-1 diagnostic prompt."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/operator_ast_dream2.txt","sha256":"2529680d282533fe41981741ef63d7bd72dc979293d73dc716e0927bbedcf798","purpose":"Exact structure-assisted family-uninformed OPERATOR_AST Dream-2 prompt."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_dream1.txt","sha256":"727b6c17a3b43443b344b0e14ac13043d2a65d30a7f665a54238196dcb8bf508","purpose":"Exact one-shot opaque Dream-1 control matched on public information, capacity, and generated-token entitlement, with costs separately reported."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_dream2.txt","sha256":"f373c54610531fae337cded67c2da5078ceac800292a55ee8fc1634fa8daa0b4","purpose":"Exact one-shot opaque Dream-2 control matched on public information, capacity, and generated-token entitlement, with costs separately reported."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/iterative_thinker.txt","sha256":"072ead71cca64076b20b011ac15ce4830db2d2e0c778fd21c75d8bcf2f90428b","purpose":"Exact goal-conditioned shared-resolver reader/Think/action prompt bytes."},
+    {"path":"research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_thinker.txt","sha256":"ccd3bae051d214c9533d50b164bdac2ff036bc02ee751e71d9ecac7085b785c1","purpose":"Exact one-shot full-schema action control prompt bytes."},
+    {"path":"research_loop/schemas/architecture_change.schema.json","sha256":"4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b","purpose":"Canonical architecture-change schema."},
+    {"path":"research_loop/architecture_intake.py","sha256":"62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea","purpose":"Canonical strict validator, hash binding, scope binding, and state-transition gate."},
+    {"path":"research_loop/architecture_deliberation.py","sha256":"f1d8e87cd7bd78b30755e986008936c154453c995c6e83abff70358b80165dcb","purpose":"Canonical fresh-context interpretation, critique, and non-ratifying consensus workflow, including safe adoption of manually authored proposals."}
+  ],
+  "strongest_case": "The proposal's strongest form is a careful, unusually falsifiable one-cycle organism microscope rather than a disguised lifetime or LoRA claim. Its CPU layer separates the 32 private (h,z)/(q,z) descriptions from the exact 16-answer target theorem, requires public-prefix-identical factorized continuations, constructs a conditional-independent null, and makes wrong-law, factor, sham, uniqueness, no-recovery, and totality obligations explicit. Its behavioral layer puts durable SELF selection inside Dream-2 after raw A, keeps the sleeper truth-blind, freezes memory before targets, requires physical USE/LOCK action, separates natural OPAQUE_NOTE from a non-rescuing operator-scaffolded AST lane, includes exact/oracle/RAG/observed/gate/one-shot baselines, retains every failure, and ends S1B at HUMAN_REQUIRED. The fixture independently reproduces at 2510 complete bytes, 2279 active-payload bytes, and 247 bytes for the largest record. If the specification defects below are repaired before ratification, the design could produce high-information descriptive evidence about a frozen prompted resolver's prospective prediction, raw-evidence response, text-memory use, and family specificity while honestly leaving compression, LoRA, lifetime growth, population performance, autonomy, and paper claims untested.",
+  "reviewed_acceptance_test_ids": [
+    "PCFL_SR_T01_ALGEBRA_GRAPH_AND_CHORD_TOTALITY",
+    "PCFL_SR_T02_ORBIT_GOAL_TWIN_AND_PREFIX_FORK",
+    "PCFL_SR_T03_TARGET_UNIQUENESS_AND_CAUSALITY",
+    "PCFL_SR_T04_MATCHED_INDEPENDENT_TABLE_NEGATIVE",
+    "PCFL_SR_T05_CHRONOLOGY_AND_TARGET_FIREWALL",
+    "PCFL_SR_T06_PROMPT_SCHEMA_REDUCER_AND_FAMILY_IDENTITY",
+    "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT",
+    "PCFL_SR_T08_RAW_OUTCOME_AND_COMPARATOR_MUTATION_INVARIANCE",
+    "PCFL_SR_T09_SLEEP_TWO_LANE_CONSERVATION_AND_FALSITY_SYMMETRY",
+    "PCFL_SR_T10_COMMON_TRACE_BRANCH_ARMS",
+    "PCFL_SR_T11_READER_MINIMUM_AND_NO_SOLUTION_PACKETS",
+    "PCFL_SR_T12_EXACT_PROGRAM_AND_ORACLE_SCHEMA_CEILINGS",
+    "PCFL_SR_T13_BASELINE_LANE_FIDELITY_AND_A_MEM_NOT_RUN",
+    "PCFL_SR_T14_RESET_EVALUATION_STERILITY_AND_CROSS_LIFE_CANARY",
+    "PCFL_SR_T15_FAILURE_DENOMINATOR_TOTALITY",
+    "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE",
+    "PCFL_SR_T17_FRESH_REVIEW_ADVOCATE_AND_PRE_GPU_GATE",
+    "PCFL_SR_T18_S1A_OPEN_CANARY_GATE",
+    "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"
+  ],
+  "concerns": [
+    {
+      "concern_id": "CRIT_PCFL_001_TEMPORAL_CAUSAL_CLAIM",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "DIS_SYS_01_PRIMARY_CLAIM_TEMPORAL_CAUSATION is correct: the frozen maximum positive sentence assigns a causal effect of the post-Dream-2 text corpus to A/B predictions that are temporally upstream of that corpus.",
+      "evidence": "Experiment-spec Section 1 says the resulting life-specific text causally improved exact prospective predictions and actions, but T0--T7 place Dream-1 A predictions and Dream-2 B predictions before Sleep freezes the corpus. The h fork can identify raw A -> branch-appropriate Dream-2 prediction/selection; corpus interventions can identify corpus -> later action. They cannot identify corpus -> earlier prediction. Resolve by splitting those clauses exactly as the systems interpretation proposes and by binding each causal verb to its own intervention.",
+      "acceptance_test_ids": ["PCFL_SR_T05_CHRONOLOGY_AND_TARGET_FIREWALL", "PCFL_SR_T08_RAW_OUTCOME_AND_COMPARATOR_MUTATION_INVARIANCE", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_002_OPAQUE_SEMANTIC_CONTRADICTION",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "AMB_SYS_06_OFFLINE_OPAQUE_SCORING_WORDING, BENCHMARK_A01_OPAQUE_PACKET_BOUNDARY, BENCHMARK_D01_OPAQUE_NO_SOLUTION_PACKET, and BENCHMARK_D02_OPAQUE_FALSE_SYMMETRY expose one unresolved contradiction: opaque meaning is undefined, yet the frozen tests require semantic classification of opaque contents.",
+      "evidence": "T11 requires scanning every response for a completed target/path/plan/hidden closure, T09 requires true-versus-false object symmetry, and the visibility matrix says the scorer audits corpus semantics/truth. No target-independent byte rule can recognize an encoded closure or semantic falsity in arbitrary prose. A semantic parser would violate the opaque lane's noninterpretation contract. Limit opaque receipts to bytes, public-reference/provenance closure, target-blind freeze, surface-only retrieval, bounded returns, predictions, actions, and whole-object interventions; apply truth, no-solution-packet, itemwise minimum, and false-shape semantics only to AST/oracle/class-informed objects. Do not let a human/model content audit gate or explain opaque exact endpoints.",
+      "acceptance_test_ids": ["PCFL_SR_T03_TARGET_UNIQUENESS_AND_CAUSALITY", "PCFL_SR_T09_SLEEP_TWO_LANE_CONSERVATION_AND_FALSITY_SYMMETRY", "PCFL_SR_T11_READER_MINIMUM_AND_NO_SOLUTION_PACKETS", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_003_PUBLIC_CATALOG_SIDE_CHANNEL",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "AMB_SYS_01_PUBLIC_EVENT_CATALOG_CONTENT remains unresolved: the exact pre-READ fields for Dream-1 and especially Dream-2 A-event catalogs are not frozen.",
+      "evidence": "The experiment says catalogs contain IDs/actions/times without payload, while the semantic contract explicitly gives the candidate catalog hashes, byte counts, and order and the templates accept a generic PUBLIC_TREE_AND_A_EVENT_CATALOG_JSON. Outcome-derived size, content hash, serialization status, timing, error, or ordering can reveal h/q branch information without a charged READ. Freeze a field-level schema in which only predeclared ID/action/time/shape fields are visible and put every outcome-derived byte, hash, size, parse status, and timing behind the typed read receipt; mutation-test each forbidden field.",
+      "acceptance_test_ids": ["PCFL_SR_T05_CHRONOLOGY_AND_TARGET_FIREWALL", "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T08_RAW_OUTCOME_AND_COMPARATOR_MUTATION_INVARIANCE", "PCFL_SR_T14_RESET_EVALUATION_STERILITY_AND_CROSS_LIFE_CANARY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_004_S1_ESTIMAND_NOT_EXECUTABLE",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "AMB_SYS_02_S1_METRIC_AGGREGATION is dispositive: 'directionally above', 'redirects', and the S1B 0.10 contrasts are not executable estimands over the nested h/q, z/antipode, target, and goal-twin rows.",
+      "evidence": "The proposal specifies failure-inclusive rows but not the exact numerator, denominator, root/side/goal weighting, pair matching, missing/NOT_RUN treatment, tie rule, whether first action or D4 success defines redirection, or whether both h branches must pass separately before averaging. With eight primary fork rows and four ordinary control rows, several reasonable aggregators yield different gate outcomes. Freeze a literal row-keyed aggregation program and golden fixture before ratification; every failure must map to zero and no gate may select its denominator.",
+      "acceptance_test_ids": ["PCFL_SR_T15_FAILURE_DENOMINATOR_TOTALITY", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_005_Q_CONTROL_MISMATCH",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "AMB_SYS_03_INDEPENDENT_Q_CONTROL_MATCHING remains unresolved and can confound the specificity sentinel.",
+      "evidence": "S1B compares eight q-by-z-by-goal SELF rows with only four 'ordinary-q' EMPTY/OBSERVED rows even though the two q continuations may have independently coupled target blocks. Marginal 16-way symmetry does not make two realized finite target blocks interchangeable for a deterministic DEV contrast. Either run EMPTY and OBSERVED on both q target blocks with the same invocation coupling, or provide a CPU-certified equality/equivariance plus an exact declared pairing/weighting rule that makes control reuse valid.",
+      "acceptance_test_ids": ["PCFL_SR_T04_MATCHED_INDEPENDENT_TABLE_NEGATIVE", "PCFL_SR_T10_COMMON_TRACE_BRANCH_ARMS", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_006_CPU_WORST_CASE_CONTRADICTION",
+      "category": "operations",
+      "severity": "material",
+      "statement": "AMB_SYS_04_CPU_ENVELOPE identifies incompatible acceptance language: the per-root and aggregate stops are coherent competing limits, but T16 says the maximum roster fits both simultaneously.",
+      "evidence": "The manifest permits 128 roots times 30 CPU-minutes = 64 CPU-hours, while the aggregate cap is 24 CPU-hours. T16 exercises maximum synthetic envelopes and expects them to fit under 24 hours. Clarify that 30 minutes is a per-root kill threshold and 24 hours is a global earlier stop, or reduce the literal per-root maximum/roster so the joint worst case really fits. The receipt must not claim a simultaneous worst-case bound it did not prove.",
+      "acceptance_test_ids": ["PCFL_SR_T01_ALGEBRA_GRAPH_AND_CHORD_TOTALITY", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_007_EXACT_PROGRAM_LEDGER",
+      "category": "operations",
+      "severity": "material",
+      "statement": "AMB_SYS_05_EXACT_PROGRAM_CALL_ACCOUNTING is unresolved: the supposedly exact literal model-call roster charges recurrent Think calls to a non-LLM exact program.",
+      "evidence": "EXACT_PROGRAM is defined as a non-neural public program/planner, yet the 7216 recurrent-Think subtotal assigns it an 82/164-call condition slot. Conservative capacity reservation is acceptable but is not an actual invocation count. Separate assigned model calls, reserved ceiling slots, CPU program calls, and realized calls; otherwise T12/T16 cannot provide exact resource attribution and the 9000-call ledger is mislabeled.",
+      "acceptance_test_ids": ["PCFL_SR_T12_EXACT_PROGRAM_AND_ORACLE_SCHEMA_CEILINGS", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_008_COUNTERFACTUAL_SEED_MAP",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "BENCHMARK_A02_COUNTERFACTUAL_SEED_MAP and BENCHMARK_D03_ARM_RANDOMNESS_IDENTIFIABILITY are correct: 'presealed by role and root' does not define randomness coupling for matched causal contrasts.",
+      "evidence": "At temperature 0.20, SELF versus EMPTY/antipode/wrong-life/sham/no-revision, q/h branches, targets, goal twins, and one-shot/recurrent sessions can differ from sampling as well as memory. Freeze a canonical seed/namespace map keyed by root, family, z, h/q, lane, phase, candidate, arm, cut, target, goal twin, and invocation ordinal. State which comparisons use common random numbers and which are intentionally independent, bind renderer/reader/actor RNG too, prohibit result-conditioned seed reallocation, and describe uncoupled contrasts only as stochastic descriptive outcomes.",
+      "acceptance_test_ids": ["PCFL_SR_T02_ORBIT_GOAL_TWIN_AND_PREFIX_FORK", "PCFL_SR_T08_RAW_OUTCOME_AND_COMPARATOR_MUTATION_INVARIANCE", "PCFL_SR_T10_COMMON_TRACE_BRANCH_ARMS", "PCFL_SR_T14_RESET_EVALUATION_STERILITY_AND_CROSS_LIFE_CANARY", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_009_MUTATION_TEST_UNDEFINED",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "BENCHMARK_A03_MUTATION_FIELD_REGISTRY is unresolved, and T08's bit-identity criterion is either vacuous or nondeterminism-sensitive without a declared replay boundary.",
+      "evidence": "The actor must retain the hidden transition table that produces public trays, while offline truth/correctness/certificate fields should be mutable. The proposal does not enumerate those fields. If T08 reuses frozen Dream-2 bytes, Dream-2 invariance is tautological and cannot detect a covert filesystem/environment dependency; if it reruns stochastic GPU inference, bitwise equality is not guaranteed merely by a seed. Freeze a field registry, distinguish actor-dynamics bytes from mutable scorer bytes, add static dependency/taint tests, and define which downstream steps replay mechanically from frozen model outputs versus which deterministic model-runtime claim is actually required.",
+      "acceptance_test_ids": ["PCFL_SR_T05_CHRONOLOGY_AND_TARGET_FIREWALL", "PCFL_SR_T08_RAW_OUTCOME_AND_COMPARATOR_MUTATION_INVARIANCE", "PCFL_SR_T14_RESET_EVALUATION_STERILITY_AND_CROSS_LIFE_CANARY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_010_BASELINE_CONCLUSION_BOUNDARY",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "BENCHMARK_A04_BASELINE_CONCLUSION and BENCHMARK_D05_BASELINE_COMPLETENESS are correct: optional A-MEM and a 15-event within-context life cannot support external-memory, persistence, or compilation-superiority language.",
+      "evidence": "T13 honestly permits root-wide A-MEM NOT_RUN, and the proposal explicitly excludes context overflow. Final wording must make every named comparison conditional on a faithful run. NOT_RUN is no evidence against A-MEM; EMPTY/OBSERVED/RAG comparisons are within-interface diagnostics; no result bears on long-context persistence or baseline saturation. If the native implementation is absent, remove every A-MEM/external-memory ranking from summaries rather than treating the missing cell as a failure.",
+      "acceptance_test_ids": ["PCFL_SR_T13_BASELINE_LANE_FIDELITY_AND_A_MEM_NOT_RUN", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_011_DEV_CLAIM_SCOPE",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "BENCHMARK_A05_DEV_CLAIM_WORDING and BENCHMARK_D04_DEV_ENDPOINT_SCOPE are correct: the three-root staged DEV can license only descriptive statements about exact registered roots and interfaces, never a paper efficacy or benchmark-performance claim.",
+      "evidence": "There is one untouched factor root and one independent root; every h/q side, z/antipode, goal twin, target, stage, and call is nested. The 0.10 threshold is a spending/falsification gate, not an estimand with population support. Bind final language to 'descriptive result on the registered DEV roots and frozen interface'; prohibit p-values, intervals, prevalence, comparative rankings, chance inference from nested rows, SOTA, and manuscript efficacy language until a separately powered root-level confirmation receives new authority.",
+      "acceptance_test_ids": ["PCFL_SR_T15_FAILURE_DENOMINATOR_TOTALITY", "PCFL_SR_T17_FRESH_REVIEW_ADVOCATE_AND_PRE_GPU_GATE", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_012_MATCHED_RECURRENCE_LANGUAGE",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "BENCHMARK_D06_RECURRENCE_COMPUTE_LANGUAGE is correct: recurrent and one-shot conditions are only eligible-information/output-capacity matched, not interaction- or compute-matched.",
+      "evidence": "The recurrent arm receives repeated externally updated state presentations and many forward passes; one-shot receives all events or records at once with a different schema. Equal K/R and generated-token entitlement do not match input tokens, calls, state-update opportunities, latency, or FLOPs. Use the qualified label everywhere, report the full resource vector, and restrict a positive contrast to this frozen protocol bundle. A one-shot match removes recurrence advantage language.",
+      "acceptance_test_ids": ["PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_013_OPAQUE_ONESHOT_THINK_MISSING",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "DIS_SYS_02_OPAQUE_THINK_ONESHOT_SCOPE is correct: the registered one-shot Think cells do not test whether recurrent Think is needed for the primary opaque organism.",
+      "evidence": "ONE_SHOT_THINK runs only on open-factor ORACLE/OPERATOR_AST and independent OPERATOR_AST cells, while the graph and C_PCFL_COMPOSE_TEXT_ACTION_DEV language can be read as a recurrent-versus-one-shot result for model-selected opaque text. Structured packets do not remove the recurrent Think loop from OPAQUE_NOTE_SELF. Either add a fully budgeted opaque SELF one-shot Think cell using the exact frozen corpus and paired targets, or narrow every claim/test/report sentence so one-shot Think is explicitly structured-only and iterative-Think necessity in opaque SELF remains untested.",
+      "acceptance_test_ids": ["PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T13_BASELINE_LANE_FIDELITY_AND_A_MEM_NOT_RUN", "PCFL_SR_T18_S1A_OPEN_CANARY_GATE", "PCFL_SR_T19_S1B_UNTOUCHED_SPECIFICITY_AND_TERMINAL_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_014_COMMIT_CAP_IMPOSSIBLE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The literal terminal-output cap cannot represent the byte-for-byte COMMIT object required by the frozen state machine at its allowed candidate capacity.",
+      "evidence": "Dream-1 permits two complete candidates of up to 8192 bytes each and a 16384-byte commitment, while experiment-spec Section 3 and the resource manifest cap a terminal Dream call at 256 generated tokens. COMMIT must repeat both current candidates byte-for-byte. Dream-2 likewise must repeat one selected NOTE/AST payload and citations, potentially thousands of bytes, under the same 256-token terminal class. Even the 2510-byte AST fixture can exceed 256 tokens when embedded in a terminal envelope. A test cannot make incompatible maxima true. Replace COMMIT with a content-addressed staged-object hash/signature, or raise terminal caps and recompute cumulative tokens, calls, input envelopes, and one-shot matching; then add a maximum-size end-to-end commit fixture.",
+      "acceptance_test_ids": ["PCFL_SR_T06_PROMPT_SCHEMA_REDUCER_AND_FAMILY_IDENTITY", "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_015_REVISE_OPERATION_CONFLICT",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The generic prompts authorize candidate/note mutation through cognitive REVISE, while the hash-bound shared reducer defines REVISE only for workspace-node replacement and candidate replacement only through PREDICT.",
+      "evidence": "generic_dream1.txt says REVISE may replace a workspace node or candidate; generic_dream2.txt says it may replace a provisional workspace node or candidate note. resolver_reducer.md says shared REVISE replaces exactly one existing node, and DREAM1/DREAM2 candidate changes occur through PREDICT; the schema runtime invariants require REVISE to emit exactly one node. A model following the prompt can therefore be declared malformed by the promised parser. Remove candidate/note language from cognitive REVISE or change the reducer/schema consistently, and distinguish the DREAM2 staged decision named REVISE from the shared workspace operation.",
+      "acceptance_test_ids": ["PCFL_SR_T06_PROMPT_SCHEMA_REDUCER_AND_FAMILY_IDENTITY", "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_016_PREPROCESSING_OWNERSHIP_ASYMMETRY",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "The frozen proposal does not settle whether exact observed-permutation extraction is common supplied preprocessing or an extra burden placed on the learned lanes, despite the interpretations assuming it is common.",
+      "evidence": "The bound advisories allow and often require common mechanical extraction. The current generic prompts expose raw before/after trays, while OBSERVED_TABLE and EXACT_PROGRAM explicitly receive exact extracted transformations and OPERATOR_AST has EOP/PERM affordances. This changes what a learned-lane failure localizes and can make baseline comparisons asymmetric. Freeze one choice: expose the same deterministic extracted public operator field to every eligible arm and declare local extraction untested, or retain raw-only learned lanes and state that failures conflate tray-to-operator extraction with connection/revision. T13 must audit the chosen equality.",
+      "acceptance_test_ids": ["PCFL_SR_T04_MATCHED_INDEPENDENT_TABLE_NEGATIVE", "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T11_READER_MINIMUM_AND_NO_SOLUTION_PACKETS", "PCFL_SR_T12_EXACT_PROGRAM_AND_ORACLE_SCHEMA_CEILINGS", "PCFL_SR_T13_BASELINE_LANE_FIDELITY_AND_A_MEM_NOT_RUN"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_017_CANONICAL_JSON_UNDERSPECIFIED",
+      "category": "operations",
+      "severity": "material",
+      "statement": "Canonical model JSON is not exact enough for the proposal's byte identities, Unicode byte caps, deduplication, and cross-process hashes.",
+      "evidence": "The files state UTF-8, sorted keys, compact separators, NFC only at the opaque reader boundary, and LF, but do not freeze Unicode escape behavior (for example ensure_ascii), duplicate-key rejection, invalid-surrogate handling, numeric rejection/normalization, tokenizer/Unicode-data versions, or whether authored opaque text is normalized before envelope hashing. These choices can change hashes and 256/4096/8192-byte acceptance while preserving apparent JSON values. Add a versioned canonicalizer and adversarial multibyte/duplicate-key/surrogate fixtures. Opaque authored text must remain byte-preserved after exactly one declared parse/serialization boundary.",
+      "acceptance_test_ids": ["PCFL_SR_T06_PROMPT_SCHEMA_REDUCER_AND_FAMILY_IDENTITY", "PCFL_SR_T09_SLEEP_TWO_LANE_CONSERVATION_AND_FALSITY_SYMMETRY", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_018_RESOURCE_CAPS_INCOMPLETE",
+      "category": "scalability",
+      "severity": "blocking",
+      "statement": "The target-time generation and live-state maxima are not specified tightly enough to prove T16's 5M-output and 8192-input envelopes.",
+      "evidence": "The manifest reserves 251904 one-shot-Think tokens, exactly consistent with an unstated 512-token allowance across the corresponding 492 recurrent Think calls, but no frozen file declares that recurrent Think per-call/cumulative cap. Separately, Dream live state may include 4096 workspace tokens plus up to two large candidates, catalogs, raw payloads, and fixed prompt under an 8192-input cap; no component allocation proves that the maximum legal state fits. Freeze per-operation Think output caps and a complete serialized input budget by component for Dream and Think, then render maximum legal fixtures without truncation. Aggregate caps alone do not define a runnable interface.",
+      "acceptance_test_ids": ["PCFL_SR_T06_PROMPT_SCHEMA_REDUCER_AND_FAMILY_IDENTITY", "PCFL_SR_T07_RECURRENT_DREAM_OWNERSHIP_AND_MATCHED_ONESHOT", "PCFL_SR_T11_READER_MINIMUM_AND_NO_SOLUTION_PACKETS", "PCFL_SR_T16_RESOURCE_AND_COMPLETION_ENVELOPE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT_PCFL_019_STAGE0_STRENGTH_AND_LIMIT",
+      "category": "scientific",
+      "severity": "note",
+      "statement": "The algebra/orbit/target/null/exact-program tests are the strongest portion of the proposal, but their success must remain a construct theorem and cannot discharge neural ownership or empirical replication.",
+      "evidence": "T01--T04 and T12 correctly demand exhaustive nested certificates, a 16-answer orbit rather than 32 fake answers, public-prefix equality, conditional-null factorization, unique irreversible targets, and exact-program abstention on independent tables. These tests materially reduce leakage and shortcut risk. They still supply topology, two-part morphology, fixed chords, action menus, and a tiny S6 family; the root is the independent unit, CPU orbit members are not samples, and exact-program success is a ceiling. Preserve these tests after rework and keep every resulting statement construct-only.",
+      "acceptance_test_ids": ["PCFL_SR_T01_ALGEBRA_GRAPH_AND_CHORD_TOTALITY", "PCFL_SR_T02_ORBIT_GOAL_TWIN_AND_PREFIX_FORK", "PCFL_SR_T03_TARGET_UNIQUENESS_AND_CAUSALITY", "PCFL_SR_T04_MATCHED_INDEPENDENT_TABLE_NEGATIVE", "PCFL_SR_T12_EXACT_PROGRAM_AND_ORACLE_SCHEMA_CEILINGS"],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "CRIT_PCFL_020_CURRENT_GATE_CANNOT_APPROVE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "T17 cannot approve the current exact bytes because multiple required changes remain; any repair changes the architecture hash and requires a fresh bound deliberation chain before human ratification or GPU authority.",
+      "evidence": "AGENTS.md requires every concern/disagreement/test to be disposed, exact human ratification, scoped implementation, a fresh reviewer plus advocate, and a separate pre-GPU gate. The present critique identifies contradictions in causal wording, opaque evaluation, metrics, randomness, terminal capacity, reducer prompts, and resources. Consensus must recommend rework rather than smoothing these into implementation choices. Current agreement or the broad overnight directive is not authority.",
+      "acceptance_test_ids": ["PCFL_SR_T17_FRESH_REVIEW_ADVOCATE_AND_PRE_GPU_GATE"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "Dream-1/Dream-2 public event catalog schemas do not freeze whether outcome-derived hashes, byte counts, parse state, timing, ordering, or error metadata are visible before READ.",
+    "The visibility matrix has no explicit information item for invocation seeds, RNG namespaces, renderer/reader/actor randomness, or the intended common-random-number coupling across counterfactual arms.",
+    "T08 does not enumerate mutable scorer/comparator fields separately from hidden transition-table bytes required by the public actor.",
+    "The offline scorer's permission to audit corpus semantics/truth conflicts with the rule that OPAQUE_NOTE meaning is undefined and unscored.",
+    "Observed-permutation extraction ownership is not frozen: exact/observed arms explicitly receive extracted transformations while primary prompts visibly receive raw tray events.",
+    "Canonical JSON and Unicode parser behavior are not fully frozen, leaving byte-limit, hash, deduplication, and cross-process side channels implementation-dependent."
+  ],
+  "missing_acceptance_tests": [
+    "Maximum-size Dream-1 and Dream-2 staged objects must successfully reach terminal COMMIT under the exact per-operation token caps, or a content-addressed commit design must be tested end to end.",
+    "A golden counterfactual seed-map test must validate every root/family/z/h-or-q/lane/phase/arm/cut/target/goal/invocation namespace and all intended common-random-number pairings.",
+    "A field-registry mutation suite must separately mutate every scorer/comparator/certificate field, hold actor transition bytes fixed, and define static-taint versus frozen-output replay evidence.",
+    "An exact row-keyed S1A/S1B aggregation fixture must cover zero failures, NOT_RUN, ties, h/q branches, z/antipodes, targets, goal twins, first-action redirection, and control weighting.",
+    "Independent EMPTY and OBSERVED controls must run on both q target blocks, or a certificate and golden pairing test must prove ordinary-q control reuse exactly valid.",
+    "Prompt/reducer conformance fixtures must reject the present candidate-level cognitive REVISE wording and distinguish workspace REVISE from the staged Dream-2 REVISE decision.",
+    "A common-preprocessing fidelity test must prove which arms receive raw trays versus mechanically extracted public permutations and prevent cross-arm attribution from silently changing.",
+    "Canonicalization adversarial fixtures must cover non-ASCII text, escape policy, Unicode-data version, invalid surrogates, duplicate JSON keys, multibyte byte boundaries, and exact preserved opaque bytes.",
+    "Maximum serialized live-state fixtures must prove every legal Dream/Think prompt fits its input cap and every Think operation has a frozen output cap before aggregate resource claims.",
+    "Opaque-lane tests must mechanically demonstrate only byte/provenance/surface-reader invariants; semantic no-solution and true/false classifiers must be shown absent from every causal process."
+  ],
+  "human_questions": [
+    "Will the proposal be revised, rehashed, and re-deliberated before ratification to resolve every blocking concern, especially COMMIT capacity and prompt/reducer REVISE inconsistency?",
+    "Will the maximum positive sentence be split into raw-A-caused prediction/revision and corpus-caused later action, with no claim that the corpus caused earlier predictions?",
+    "Will T09/T11 and scorer wording be narrowed so opaque notes are never semantically classified, while semantic truth, false-shape symmetry, no-solution packets, and itemwise cuts remain AST/structured-only?",
+    "What exact failure-inclusive row program defines S1A/S1B directions, margins, redirection, and q-control pairing?",
+    "Will a full seed/namespace map, event-catalog schema, and mutable-field registry be frozen before any implementation is considered complete?",
+    "Should an opaque SELF one-shot Think control be added, or should every recurrence comparison be explicitly restricted to structured conditions?",
+    "Is observed-permutation extraction common supplied preprocessing for all arms, or is raw tray-to-operator extraction intentionally part of the primary treatment?",
+    "Will CPU, model-call, input/output-token, and terminal-object envelopes be corrected so their literal maxima are jointly executable rather than only detected as failures later?",
+    "Does the decision owner accept that A-MEM NOT_RUN forbids any external-memory superiority conclusion and that S1A/S1B permit only exact-root descriptive DEV language?",
+    "After a repaired consensus exists, does Rohin ratify those new exact bytes and only the bounded Stage-0 plus conditional text-only S1A/S1B scope, with no LoRA, lifetime, confirmation, paper claim, public release, or automatic successor?"
+  ]
+}

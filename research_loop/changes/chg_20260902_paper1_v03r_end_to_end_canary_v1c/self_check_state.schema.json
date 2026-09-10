@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-self-check-state-v1c",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal", "premises", "additional_rows"],
+  "properties": {
+    "proposal": {"$ref": "#/$defs/proposal"},
+    "premises": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}},
+    "additional_rows": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}}
+  },
+  "$defs": {
+    "proposal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "ROLE_EQUIV"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleEquivFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "CAUSAL_JOIN"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/causalJoinFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "ROLE_APPLICATION"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleApplicationFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        }
+      ]
+    },
+    "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M[0-9]{6}$"}}
+  }
+}

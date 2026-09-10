@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.status.v4",
+  "precedence": ["RUN_INVALID", "CONSTRUCTION_FAIL", "MISSING_NO_RETRY", "ASSIGNED_POLICY_STATUS", "TERMINAL_NO_ACTION", "OBSERVED"],
+  "endpoint_missing_dominance": "After integrity blockers, any missing required model, provider, or DREAM dependency makes the affected endpoint MISSING_NO_RETRY with null raw value and the registered adverse analysis bound, even if later controller work produced an action. A paired arm that does not consume that missing shared dependency is not marked missing.",
+  "rules": [
+    {"rule_id": "S01_POST_SEAL_INTEGRITY", "applies": "any assay, arm, or stage after seal", "raw_results": ["hash mismatch", "artifact disappearance", "schema mismatch", "unexpected cardinality", "forbidden influence", "ambiguous intervention match"], "status": "RUN_INVALID", "continuation": "halt dependent run", "observation": "none", "missing": false, "claim_blocker": true},
+    {"rule_id": "S02_PRE_ASSIGNMENT_CONSTRUCTION", "applies": "generator, twin/sham, donor, corpus, fixture, run-lock, or required-artifact construction before assignment", "raw_results": ["no eligible object", "proposal limit exhausted", "required artifact absent", "no exact donor match", "no per-edge twin", "no per-edge sham", "proof failure"], "status": "CONSTRUCTION_FAIL", "continuation": "no dispatch", "observation": "none", "missing": false, "claim_blocker": true},
+    {"rule_id": "S03_MODEL_MISSING", "applies": "required model or DREAM call", "raw_results": ["MODEL_MISSING_NO_RETRY", "DREAM_MISSING_NO_RETRY"], "status": "MISSING_NO_RETRY", "continuation": "continue only where the sealed controller has a no-model branch", "observation": "paired success Z=0; raw endpoint null; missing event=1", "missing": true, "claim_blocker": false},
+    {"rule_id": "S04_PROVIDER_MISSING", "applies": "required provider call", "raw_results": ["PROVIDER_MISSING_NO_RETRY"], "status": "MISSING_NO_RETRY", "continuation": "no retry; follow the sealed missing branch", "observation": "paired success Z=0; D1A safety adverse event=1 where applicable; raw endpoint null; missing event=1", "missing": true, "claim_blocker": false},
+    {"rule_id": "S05_DREAM_POLICY", "applies": "D1C or D1D shared DREAM", "raw_results": ["PUBLISH_EMPTY", "ABSTAIN", "DREAM_INVALID_OUTPUT"], "status": "ASSIGNED_POLICY_STATUS", "continuation": "install the exact declared empty/no-view result and execute downstream", "observation": "actual downstream numeric endpoint", "missing": false, "claim_blocker": false},
+    {"rule_id": "S06_ROOT_POLICY", "applies": "D1D root projection", "raw_results": ["NO_ROOTS_SELECTED", "NO_ADMITTED_ROOTS"], "status": "ASSIGNED_POLICY_STATUS", "continuation": "publish no adapter and execute adapter-off downstream", "observation": "actual downstream numeric endpoint", "missing": false, "claim_blocker": false},
+    {"rule_id": "S07_TRAIN_POLICY", "applies": "D1D trainer", "raw_results": ["TRAIN_FAILED"], "status": "ASSIGNED_POLICY_STATUS", "continuation": "retain resource dose, publish no adapter, execute adapter-off downstream", "observation": "actual downstream numeric endpoint", "missing": false, "claim_blocker": false},
+    {"rule_id": "S08_NO_ACTION", "applies": "any behavioral arm whose assigned intact controller terminates without an environment action", "raw_results": ["MODEL_STOP", "NO_VALID_ACTION", "BUDGET_EXHAUSTED", "ERROR_LIMIT", "TOKEN_LIMIT_TERMINAL", "PARSE_ERROR_TERMINAL", "READ_LIMIT_TERMINAL", "ACTION_LIMIT_TERMINAL", "INVALID_DOMAIN_TERMINAL", "INVALID_REFERENCE_TERMINAL", "PREDICTION_REQUIRED_TERMINAL", "PREDICTION_MISMATCH_TERMINAL", "INVALID_ACTION_TERMINAL", "SCHEDULE_VIOLATION_TERMINAL", "OPEN_LOOP_COMMITMENT_ABSENT", "OPEN_LOOP_COMMITMENT_INVALID"], "status": "TERMINAL_NO_ACTION", "continuation": "terminal", "observation": "normalized_action_value=0", "missing": false, "claim_blocker": false},
+    {"rule_id": "S09_ACTION", "applies": "successful schedule-complete ACT", "raw_results": ["SCHEDULE_COMPLETE"], "status": "OBSERVED", "continuation": "terminal", "observation": "registered normalized_action_value in [0,1]", "missing": false, "claim_blocker": false},
+    {"rule_id": "S10_SELECTION", "applies": "valid direct/provider selection endpoint", "raw_results": ["FOUND", "NOT_FOUND"], "status": "OBSERVED", "continuation": "complete endpoint", "observation": "registered selection and safety values in [0,1]", "missing": false, "claim_blocker": false}
+  ],
+  "projection_aggregation": {
+    "per_nominee_rejected": "PROJECTION_REJECTED is retained only in the nominee receipt.",
+    "zero_selected": "aggregate root receipt status NO_ROOTS_SELECTED",
+    "selected_but_zero_admitted": "aggregate root receipt status NO_ADMITTED_ROOTS",
+    "one_or_more_admitted": "aggregate root receipt status ROOTS_ADMITTED",
+    "admitted_row_render_failure": "RUN_INVALID"
+  },
+  "completeness": "T03/T04/T08/T09/T10/T11 fixtures generate the exact assay x arm x stage x reachable terminal/status product and require exactly one matching rule; zero or multiple matches fails."
+}

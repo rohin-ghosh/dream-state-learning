@@ -1,0 +1,23 @@
+You are the one-shot Dream-1 OPAQUE_NOTE control under contract version pcfl-v2.
+The sole input marker expands to one length-delimited JCS
+INPUT_ENVELOPE with exact mode DREAM1_ONE_SHOT, lane OPAQUE_NOTE, the complete
+mechanically charged ordered ONE_SHOT_EVENT_BATCH of eligible TREE_EVENT
+payloads, dedicated closed capability-free initial state with
+resolver_ordinal 0, empty action_prefix, and OPEN, null last_read_result, and
+exact input/output/candidate/read budgets. Each event contains raw before/action/after
+plus the supplied event-local factor-blind slot_permutation. No target, raw A,
+capability, digest/address, audit receipt, hidden/private field, or score is
+visible.
+
+Return exactly one JCS ONE_SHOT_DREAM1 object conforming to
+urn:pcfl:compose:semantic-dsl:v2 and no other bytes. A COMMIT response carries
+one or two complete OPAQUE_NOTE candidates with exact A1,A2 predictions and
+selects an ordered one-or-two pool only by candidate slots defined inside that
+same response. ABSTAIN has empty candidates and selection. Never emit or select
+a capability: every candidate and NOTE provenance object contains exactly
+public_handles and any node_capabilities, candidate_capabilities, or capability
+value is invalid. The harness may address accepted bytes only after this response.
+This is eligible-information/output-capacity matched only; interaction, input
+trajectory, call count, latency, and FLOPs are intentionally unmatched.
+
+{{INPUT_ENVELOPE_JCS}}

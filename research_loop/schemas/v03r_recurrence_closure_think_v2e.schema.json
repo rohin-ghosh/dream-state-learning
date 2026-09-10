@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"v03r-recurrence-closure-think-v2e",
+  "oneOf":[
+    {"$ref":"#/$defs/textOperation"},
+    {"type":"object","additionalProperties":false,"required":["op","source_alias","relation_label","target_alias"],"properties":{"op":{"const":"QUERY"},"source_alias":{"pattern":"^(?:X|M)[0-9]+$"},"relation_label":{"$ref":"#/$defs/text"},"target_alias":{"pattern":"^(?:X|M)[0-9]+$"}}},
+    {"type":"object","additionalProperties":false,"required":["op","memory_alias"],"properties":{"op":{"const":"FOLLOW"},"memory_alias":{"pattern":"^M[0-9]+$"}}},
+    {"type":"object","additionalProperties":false,"required":["op","q"],"properties":{"op":{"const":"REQUEST_DREAM"},"q":{"type":"object","additionalProperties":false,"required":["source_entity_id","relation_label","target_entity_id"],"properties":{"source_entity_id":{"pattern":"^entity:source:[ -~]+$"},"relation_label":{"const":"causal_join"},"target_entity_id":{"pattern":"^entity:target:[ -~]+$"}}}}},
+    {"type":"object","additionalProperties":false,"required":["op","reason_code"],"properties":{"op":{"enum":["BACKTRACK","DEFER"]},"reason_code":{"$ref":"#/$defs/text"}}}
+  ],
+  "$defs":{
+    "text":{"type":"string","minLength":1,"maxLength":192,"pattern":"^[ -!#-\\[\\]-~]+$"},
+    "textOperation":{"type":"object","additionalProperties":false,"required":["op"],"properties":{"op":{"enum":["FORM_SUBGOAL","HYPOTHESIZE","PREDICT","REVISE"]},"subgoal":{"$ref":"#/$defs/text"},"hypothesis":{"$ref":"#/$defs/text"},"prediction":{"$ref":"#/$defs/text"},"revision":{"$ref":"#/$defs/text"}}}
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260901_v03r_recurrence_closure_dev_v2a.cross_critique",
+  "change_id": "chg_20260901_v03r_recurrence_closure_dev_v2a",
+  "state": "critiqued",
+  "architecture_change_sha256": "f2311982015d447f827f6f57174576e6d47eceaf652c8de324ddc1423df55caf",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_v03r_recurrence_closure_dev_v2a.benchmark",
+      "sha256": "5c3ad77238c2b6ab599ea8320109aa7539cc4b88df6548e8e4dee31b73167fa9"
+    },
+    {
+      "interpretation_id": "chg_20260901_v03r_recurrence_closure_dev_v2a.systems",
+      "sha256": "9d2b066db92c96e63081cc91ce6ba51fbad5992d21879562be183b78c044b8f4"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding material-change governance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/human_directive.txt",
+      "sha256": "1e22d5cb31d0f5afe9a2ae6d6268561873d3c80364ca35a74d208f5b8f65539e",
+      "purpose": "Verbatim unratified v2a directive."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/scope_proposal.json",
+      "sha256": "80b6126f263aaf3ac4d7bc25c4d54c78f8b6387258423efdfdf4d04ac438621a",
+      "purpose": "Exact proposed and restricted scopes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/experiment_spec.md",
+      "sha256": "827557aa5dad5e8d0b33f6a1834683cd79c915fe2299f064aa482747289cab97",
+      "purpose": "Normative v2a corrections and claim boundary."
+    },
+    {
+      "path": "research_loop/workflows/v03r_recurrence_closure_dev_v2a.json",
+      "sha256": "cd5979908fa0f4c1c51452f1cade9d89210211ac4f7d885e8ba3c1839a0b38b7",
+      "purpose": "Proposed v2a execution, freeze, review, and stop workflow."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2/experiment_spec.md",
+      "sha256": "f01890b34b03b7f7b5edeebf5251e9d4d1e48264ba6bedc0ede46ca468963c7d",
+      "purpose": "Exact inherited v2 experiment contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2/change.json",
+      "sha256": "599c98d4a9bef3d47298e4fd66530f841b27da847079bbc9df52b8b3f37667c8",
+      "purpose": "Exact inherited v2 architecture and fourteen gates."
+    },
+    {
+      "path": "research_loop/workflows/v03r_recurrence_closure_dev_v2.json",
+      "sha256": "849e6ac7d5e73dc7e4395b99909fffabf4489bbe998007e903bdded114434527",
+      "purpose": "Exact inherited workflow used for closure and input comparison."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/interpretation_systems.json",
+      "sha256": "9d2b066db92c96e63081cc91ce6ba51fbad5992d21879562be183b78c044b8f4",
+      "purpose": "Independent systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/interpretation_benchmark.json",
+      "sha256": "5c3ad77238c2b6ab599ea8320109aa7539cc4b88df6548e8e4dee31b73167fa9",
+      "purpose": "Independent benchmark interpretation."
+    }
+  ],
+  "strongest_case": "V2a preserves the narrow option-C question: trusted THINK_0 may allocate bounded public evidence, immutable DREAM proposals are scored only after MEMORY_1, and OUT_OF_STRATUM cannot supply distractor-go credit. Its four corrections can make that observation auditable, but only after the unresolved mechanical contracts and inherited closure are frozen and tested; the current proposal is not releasable.",
+  "reviewed_acceptance_test_ids": [
+    "t_v2a_inherited_option_c_contract",
+    "t_v2a_exact_exchangeability_classes",
+    "t_v2a_connector_alias_boundary",
+    "t_v2a_maximal_dream_schema_fits_256",
+    "t_v2a_offline_only_relation_normalization",
+    "t_v2a_schedule_baseline_artifact_closure",
+    "t_v2a_immutable_dual_review_and_scope",
+    "t_v2a_unconditional_human_stop"
+  ],
+  "concerns": [
+    {
+      "concern_id": "inherited_contract_and_review_closure_not_executable",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The v2 inheritance is hash-named but not executable or fully frozen. Before ratification, add a machine-readable fourteen-row v2-test-to-v2a-evidence map plus a four-correction override map; freeze the transitive imports, resources, and tests of every v2a implementation entrypoint; and give both reviewers the same inspectable closure, including inherited v2 spec/change/workflow, scientific_dream_adapter, scheduler/provider/ledger tests, capture_environment, runtime_preflight, run manifest, selector traces, proposals, and baseline artifacts.",
+      "evidence": "The v2a aggregate inherited-contract test does not enumerate the fourteen inherited gates. The v2a freeze list omits material inherited modules and tests, while its review/result-analysis inputs omit artifacts present in v2. Hash lists alone cannot show that a gate executes or allow a reviewer to inspect its bytes.",
+      "acceptance_test_ids": [
+        "t_v2a_inherited_option_c_contract",
+        "t_v2a_immutable_dual_review_and_scope"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "exchangeability_formula_and_missing_disposition_conflict",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Freeze one canonical precommit metric module and manifest schema: immutable candidate universe and witness-kind enum; UTF-8/token serialization; token multiset intersection divided by a named denominator; source/target frequency pairing; one-based rendered positions; memory-rank ordering and tie key; and a deterministic mechanical-closure predicate. Define a legitimate absent required matched item as immutable OUT_OF_STRATUM and runnable, but malformed, unavailable, or non-finite metric computation as integrity failure before any provider call. Include fixtures below/equal/above every tolerance, all class rows, no-replacement attacks, and zero-eligible behavior; report EXACT, NEAR, OUT, and any combined eligible row separately.",
+      "evidence": "Correction 1 calls missing/non-finite comparisons OUT_OF_STRATUM and says they run, but the change loop stops preflight on missing/non-finite inputs. Lexical overlap, endpoint pairing, provider position, rank ties, candidate construction, witness vocabulary, and closure opportunity lack reproducible formulas, so class membership can change the primary estimand.",
+      "acceptance_test_ids": [
+        "t_v2a_exact_exchangeability_classes",
+        "t_v2a_schedule_baseline_artifact_closure"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "connector_alias_redaction_and_order_contract_incomplete",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Specify a call-seeded, one-to-one C-alias permutation independent of semantic rank, source order, target, arm, and own/distractor identity; reuse exactly one C alias for repeated occurrences of the same visible connector; bind it externally to the connector hash; and define a renderer redaction grammar that removes canonical connector bytes from every provider-visible field, including embedded concept text. Test those properties plus unknown, duplicate, cross-call, type-wrong, canonical-ID, and private-sentinel attacks, then audit alias label/order/shared-C recoverability separately from parser semantic invariance.",
+      "evidence": "The proposal says only deterministic call-local aliases bound to connector hashes. It does not define permutation independence, repeat behavior, or which connector-bearing render fields are redacted. Equal C handles intentionally expose a join and position-derived C labels can leak rank, so parser permutation invariance alone is insufficient.",
+      "acceptance_test_ids": [
+        "t_v2a_connector_alias_boundary",
+        "t_v2a_inherited_option_c_contract"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "legal_text_and_token_fit_are_not_finite_or_byte_exact",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "Define 192 characters as a single normalized finite character grammar for every free-text field, including forbidden controls and exact quote/backslash handling, and freeze the canonical JSON serializer, whitespace, UTF-8 bytes, tokenizer revision, and operation-specific worst-case records. Preflight must enumerate those serialized outputs and prove each is <=256 generated tokens; reject 193 characters, 257 tokens, truncation, and repair without changing the operation.",
+      "evidence": "A character cap without Unicode normalization, escaping, or serializer definitions has unbounded tokenizer fragmentation and can differ from the actual provider bytes. Thus the stated maximal-schema proof cannot yet be made.",
+      "acceptance_test_ids": [
+        "t_v2a_maximal_dream_schema_fits_256"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "normalization_metric_and_isolation_need_exact_score_graph",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "Freeze an unambiguous one-to-zero-or-one relation mapping and load it only after all eighteen MEMORY_1 commits and independent artifact verification. Preserve raw bytes, write score copies only, and predeclare three rows: verbatim byte-exact closure, allowlist-normalized closure, and witness-bound normalized closure; list every unmatched and normalization-only gain. Scan imports and serialized cognition artifacts as well as prompt strings, and prove scorer or allowlist mutations cannot affect memory, selection, routing, retry, or promotion.",
+      "evidence": "Moving the allowlist offline prevents online teaching but does not make normalized equality a model output. The proposal requires unmatched reporting but does not define ambiguous mappings or the primary verbatim-versus-normalized score, so normalized-only closure would attribute scorer assistance to recurrence.",
+      "acceptance_test_ids": [
+        "t_v2a_offline_only_relation_normalization",
+        "t_v2a_inherited_option_c_contract"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "selected_view_compiler_ceiling_is_missing",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "For each arm and life, run and report before model closure exact selected-view byte-only, shared-C join, canonical-string, query-copy, masked-content, wrong-connector, deterministic-retrieval, and compiler controls. State the residual after these ceilings as the only model-associated quantity; hidden-selector-byte invariance remains a boundary test, not evidence that the model rather than the selected public bytes formed the closure.",
+      "evidence": "The selected view is intentionally query-guided and repeated C aliases reveal connector equality, so a deterministic compiler can create closure-shaped proposals from provider-visible bytes. The inherited shortcut gate calls for related controls, but v2a neither binds their per-arm/life ceilings nor requires their ordering in analysis.",
+      "acceptance_test_ids": [
+        "t_v2a_inherited_option_c_contract",
+        "t_v2a_connector_alias_boundary"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "schedule_and_baseline_labels_are_underconstrained",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Require the inventory to reconcile exactly 802 recurrent DREAM and 102 baseline DREAM calls under the 256-token/192-character override, 288 selector traces, eighteen MEMORY_1/scorer packets, and a terminal-justified observed THINK prefix <=72 with no padding. Link each alias/parser/proposal/outcome row and reject omission, duplication, reordering, or orphaning. Label full-context and RAG as heterogeneous contextual competitors, publish calls/tokens/reads/wall time/opportunity, and prohibit recurrence, memory, efficiency, or architecture-superiority comparisons outside the three matched RETURN_SLEEP arms.",
+      "evidence": "The two interpretations agree on the fixed recurrent and baseline counts, but the workflow's v2a result-analysis inputs omit manifest, selector, proposal, and baseline evidence. Full-context and RAG differ in context, retrieval, state, and opportunity, so they are not matched causal baselines.",
+      "acceptance_test_ids": [
+        "t_v2a_schedule_baseline_artifact_closure",
+        "t_v2a_immutable_dual_review_and_scope"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "Canonical connector IDs may survive in connector-bearing rendered fields because the redaction grammar is unspecified.",
+    "Alias label, record order, rendered position, and shared-C equality can expose selected-view join structure without a required recoverability audit.",
+    "The normalization allowlist's load boundary is not yet proven across imports and serialized cognition-time artifacts."
+  ],
+  "missing_acceptance_tests": [
+    "A machine-executed fourteen-row v2 inheritance map with a four-correction override map and transitive freeze/reviewer-input closure check.",
+    "Exact exchangeability formula fixtures, a missing-item versus malformed-computation split, and a zero-eligible-stratum report test.",
+    "Call-seeded C permutation/reuse/redaction tests plus provider-visible join-recoverability audits.",
+    "Finite normalized-text/JSON-serializer/tokenizer worst-case enumeration for every DREAM operation.",
+    "Per-arm/life byte-only and shared-C compiler ceilings, reported before model closure.",
+    "Separate verbatim, normalized, and witness-bound normalized score rows with ambiguous/unmatched mapping tests."
+  ],
+  "human_questions": [
+    "Will Rohin require the stated formulas, missing-versus-malformed disposition, alias/redaction contract, legal text grammar, score rows, compiler ceilings, and baseline labels to be fixed in new exact bytes before any ratification?",
+    "Will Rohin require executable inherited-v2 mapping, transitive full-closure freeze, and identical reviewer/analyst inputs before approving only the two proposed v2a scopes?",
+    "Does Rohin accept the remaining claim boundary: six named development lives, query-guided public-evidence allocation only, with no discovery, general recurrence, memory, efficiency, behavioral, or follow-up claim?"
+  ]
+}

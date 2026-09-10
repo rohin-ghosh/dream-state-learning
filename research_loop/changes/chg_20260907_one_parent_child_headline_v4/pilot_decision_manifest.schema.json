@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dream-state:one-parent-v4:pilot-decision-manifest",
+  "title": "Blinded four-root spending decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "protocol_hash", "root_rows", "all_valid", "joint_positive_count", "mean_D", "mean_W_P", "mean_L_terminal", "adverse_bound", "decision", "decision_sha256", "writer_receipts_sealed"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_hash": {"$ref": "#/$defs/sha256"},
+    "root_rows": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["root_id", "D", "W_P", "L_terminal", "validity_pass", "resource_pass", "adverse_pass"],
+        "properties": {
+          "root_id": {"type": "string"},
+          "D": {"$ref": "#/$defs/rational"},
+          "W_P": {"$ref": "#/$defs/rational"},
+          "L_terminal": {"$ref": "#/$defs/rational"},
+          "validity_pass": {"type": "boolean"},
+          "resource_pass": {"type": "boolean"},
+          "adverse_pass": {"type": "boolean"}
+        }
+      }
+    },
+    "all_valid": {"type": "boolean"},
+    "joint_positive_count": {"type": "integer", "minimum": 0, "maximum": 4},
+    "mean_D": {"$ref": "#/$defs/rational"},
+    "mean_W_P": {"$ref": "#/$defs/rational"},
+    "mean_L_terminal": {"$ref": "#/$defs/rational"},
+    "adverse_bound": {"const": {"numerator": -1, "denominator": 20}},
+    "decision": {"enum": ["ADVANCE", "NO_ADVANCE"]},
+    "decision_sha256": {"$ref": "#/$defs/sha256"},
+    "writer_receipts_sealed": {"const": true}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    }
+  }
+}
+

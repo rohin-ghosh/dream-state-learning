@@ -1,0 +1,240 @@
+{
+  "schema_version": "pcfl.split_seed_manifest.v2",
+  "artifact_type": "pcfl_d0_exact_split_seed_manifest",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "protocol": {
+    "protocol_id": "PCFL-D0-EXACT-V2",
+    "hash_algorithm": "SHA-256",
+    "hash_preimage_encoding": "UTF-8",
+    "hash_preimage_text_escaped": "PCFL-D0-EXACT-V2\n",
+    "hash_preimage_hex": "5043464c2d44302d45584143542d56320a",
+    "protocol_hash_hex": "284acaf0f2569e4d984fcd8f17828f1ec4be3ee14791df8b0fcfe12341a60af5",
+    "role": "This is the noncircular RNG-domain root. Exact bundle files are separately content-hashed by the authority manifest; changing any scientific protocol artifact requires a new protocol_id and RNG root rather than silently retaining this one."
+  },
+  "integer_encoding": {
+    "u16be": "unsigned 16-bit big-endian; values outside 0..65535 are invalid",
+    "u32be": "unsigned 32-bit big-endian; values outside 0..4294967295 are invalid",
+    "u64be": "unsigned 64-bit big-endian; values outside 0..18446744073709551615 are invalid",
+    "strings": "NFC UTF-8 with no terminator; each string is preceded by u16be byte length"
+  },
+  "derivation": {
+    "derive_prefix_hex": "5043464c02",
+    "derive_function": "derive(namespace,labels,counter)=SHA256(derive_prefix || protocol_hash_raw_32 || u16be(len(namespace_utf8)) || namespace_utf8 || u16be(number_of_labels) || concat_for_each_label(u16be(len(label_utf8)) || label_utf8) || u64be(counter))",
+    "rng_prefix_hex": "524e4702",
+    "rng_block_function": "rng_block(stream_key,block_counter)=SHA256(rng_prefix || stream_key_raw_32 || u64be(block_counter))",
+    "word_order": "Split each 32-byte rng_block into four consecutive unsigned u64be words, word zero first. Exhaust all four before incrementing block_counter.",
+    "bounded_integer": "To sample uniformly in [0,n), require 1<=n<=2^64. Let limit=floor(2^64/n)*n. Consume words until x<limit, then return x mod n. Every x>=limit is logged as SAMPLER_REJECT and never reused.",
+    "bit": "bounded_integer(2)",
+    "permutation": "Fisher-Yates in manifest array order: for i=0 through length-2, sample j uniformly in [i,length) using bounded_integer(length-i) and swap positions i and j.",
+    "ordered_sample_without_replacement": "Run Fisher-Yates only through the requested prefix length and return that prefix in resulting order.",
+    "choice": "Use bounded_integer(array_length) and index the manifest array order.",
+    "no_implicit_randomness": "System RNG, language-runtime hash order, UUID, wall clock, PID, filesystem order, locale, floating point, model seed, and library-default shuffle are forbidden."
+  },
+  "namespaces": [
+    {"name": "pair_candidate", "status_in_D0": "active", "purpose": "ordered structurally screened pair candidates"},
+    {"name": "world", "status_in_D0": "active", "purpose": "nonexception latent world rank"},
+    {"name": "skin", "status_in_D0": "active", "purpose": "pair-common class permutation, descriptors, and public handles"},
+    {"name": "twin", "status_in_D0": "active_audit_only", "purpose": "twin canaries and audit ordering; the hidden twin itself is always the deterministic dagger involution and never a resample"},
+    {"name": "source", "status_in_D0": "active", "purpose": "pair-common source reset handles and episode handles"},
+    {"name": "target", "status_in_D0": "active", "purpose": "pair-common target descriptors, handles, inventory order, route family, and proposal words"},
+    {"name": "rejection", "status_in_D0": "active_audit_only", "purpose": "content IDs and canaries for structural rejection records; it never selects whether to reject"},
+    {"name": "order", "status_in_D0": "active", "purpose": "deterministic target and controller evaluation order, never membership or replacement"},
+    {"name": "controller", "status_in_D0": "active", "purpose": "property-case and audit ordering only; exact controller actions never use random choice"},
+    {"name": "model_call", "status_in_D0": "dormant_forbidden", "purpose": "reserved for a separately ratified future stage"},
+    {"name": "statistics", "status_in_D0": "dormant_forbidden", "purpose": "reserved for future scientific randomization and bootstrap; D0 deterministic golden arithmetic uses no random draw"},
+    {"name": "adapter", "status_in_D0": "dormant_forbidden", "purpose": "reserved for separately ratified paired adapter seeds"}
+  ],
+  "pair_candidate_derivation": {
+    "pair_id_format": "<SPLIT>-P<index as exactly three decimal digits>",
+    "stream_key": "derive(\"pair_candidate\",[split_id,pair_id],candidate_counter)",
+    "candidate_counter_order": "0,1,2,...,99999",
+    "child_stream_key": "derive(child_namespace,[lowercase_pair_candidate_stream_key_hex],0)",
+    "child_namespaces": ["world", "skin", "twin", "source", "target", "rejection", "order", "controller", "model_call", "statistics", "adapter"],
+    "world_rank": "The first unbiased bounded_integer(103680) from the world child stream.",
+    "twin_world": "Apply dagger from world_manifest.json to world_rank. The twin stream is not used to choose or perturb the latent twin.",
+    "candidate_acceptance": "Instantiate the fixed source program and all required target slots from the candidate's active child streams. Accept the first pair candidate for which every world, source, target, chronology, handle, prior-orbit uniqueness, twin, collision, and generic-reachability structural predicate passes.",
+    "candidate_rejection_log": "For every rejected candidate, record split_id, pair_id, candidate_counter, pair_candidate_stream_key_hex, structural rejection codes sorted by unsigned ASCII bytes, and SHA-256 of the canonical rejection record. No controller value or performance measure is present.",
+    "performance_firewall": "Once a candidate is structurally accepted it is the assigned pair. Bayes, exact-memory, shortcut, resource, test, or later model performance can only pass or invalidate the complete generator version; it can never advance candidate_counter.",
+    "exhaustion": "Reaching candidate_counter 100000, a target proposal counter 100000, or an unbiased-sampler impossibility invalidates PCFL-D0-EXACT-V2 globally."
+  },
+  "global_pair_slot_order": "DEV indices 0..7, then CPU 0..63, then CAL 0..5, then CONF 0..15, then RESERVE 0..15. Pair-orbit duplicate rejection considers only earlier slots in this order. D0 instantiates only DEV and CPU; later dormant slots remain derivation commitments until separately authorized and then continue from the already frozen earlier orbit set.",
+  "target_stream_derivation": {
+    "slot_key": "derive(\"target\",[target_child_stream_key_hex,checkpoint_decimal,target_kind,target_ordinal_decimal],proposal_counter)",
+    "checkpoint_decimal_values": ["4096", "8192", "16384"],
+    "target_kind_order": ["A2", "A3"],
+    "target_ordinal_values": ["0", "1", "2", "3", "4", "5", "6", "7"],
+    "proposal_counter_order": "0 through 99999",
+    "draw_order_A2": ["initial T0", "initial T1", "initial T2", "initial T3", "site_family", "ordered three-preparation inventory", "specimen_class", "descriptor skin", "mission handle", "site handle", "specimen handle", "three preparation handles"],
+    "draw_order_A3": ["initial T0", "initial T1", "initial T2", "initial T3", "site_family", "route_family", "ordered four-preparation inventory", "specimen_class", "descriptor skin", "mission handle", "site handle", "specimen handle", "route handle", "four preparation handles"],
+    "handle_alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "handle_body": "Draw seven independent bounded_integer(36) values in order and map through handle_alphabet. Prefix is fixed by the handle schema and object kind.",
+    "shared_twin_bytes": "Every draw occurs once from the pair-common target slot stream and the result is copied to both sides before structural evaluation.",
+    "runtime_event_key": "derive(\"target\",[accepted_target_slot_key_hex,\"event\",world_action_ordinal_decimal],0); draw one E-prefixed event handle from this key. The ordinal is zero through five and the handle is pair-common.",
+    "rejection_record_id": "derive(\"rejection\",[rejection_child_stream_key_hex,checkpoint_decimal,target_kind,target_ordinal_decimal,proposal_counter_decimal],0)",
+    "no_replacement": "A rejected target proposal advances only its own proposal_counter. An accepted target is immutable. Target or pair counters never advance because of controller or model behavior."
+  },
+  "skin_stream_derivation": {
+    "table_key": "skin_child_stream_key_hex",
+    "draw_order": ["Fisher-Yates permutation of the eight specimen-class descriptor strings", "Fisher-Yates permutation of the six preparation-family descriptor strings", "Fisher-Yates permutation of the four site-family descriptor strings", "Fisher-Yates permutation of the three route-family descriptor strings"],
+    "use": "Zip each permuted table to its fixed handles in world-manifest order. Source and target streams select entries from these frozen pair-common maps; they never generate descriptor text and never consult world_rank.",
+    "twin_rule": "The table bytes and every selection index are shared by the two twins."
+  },
+  "source_stream_derivation": {
+    "episode_key": "derive(\"source\",[source_child_stream_key_hex,source_episode_ordinal_decimal],0)",
+    "source_episode_ordinal_values": "0 through 1567 inclusive",
+    "episode_draw_order": ["specimen_class choice", "specimen handle", "scheduled-action instance handle: preparation, site, or route", "event handle", "intervention-cluster root handle"],
+    "action_order": "The action kind, public family, and reset panel are fixed solely by the 49-record periodic program; source RNG supplies only pair-common handles and independent skins.",
+    "twin_rule": "Both sides use identical source episode keys and visible action bytes."
+  },
+  "order_stream_derivation": {
+    "target_order_key": "derive(\"order\",[order_child_stream_key_hex,checkpoint_decimal,target_kind],0)",
+    "target_order": "Fisher-Yates permutation of ordinals 0 through 7, applied identically to every CPU controller and both twins.",
+    "controller_order_key": "derive(\"order\",[order_child_stream_key_hex,\"controllers\"],0)",
+    "scientific_effect": "none; changing execution order cannot change membership, bytes, state, score, replacement, or posterior"
+  },
+  "splits": [
+    {
+      "split_id": "DEV",
+      "pair_count": 8,
+      "indices": {"first": 0, "last": 7},
+      "pair_ids": ["DEV-P000", "DEV-P001", "DEV-P002", "DEV-P003", "DEV-P004", "DEV-P005", "DEV-P006", "DEV-P007"],
+      "status_in_D0": "openable",
+      "permitted_use": "deterministic generator, controller, parser, and property-test development only",
+      "scientific_use": false
+    },
+    {
+      "split_id": "CPU",
+      "pair_count": 64,
+      "indices": {"first": 0, "last": 63},
+      "pair_ids": [
+        "CPU-P000", "CPU-P001", "CPU-P002", "CPU-P003", "CPU-P004", "CPU-P005", "CPU-P006", "CPU-P007",
+        "CPU-P008", "CPU-P009", "CPU-P010", "CPU-P011", "CPU-P012", "CPU-P013", "CPU-P014", "CPU-P015",
+        "CPU-P016", "CPU-P017", "CPU-P018", "CPU-P019", "CPU-P020", "CPU-P021", "CPU-P022", "CPU-P023",
+        "CPU-P024", "CPU-P025", "CPU-P026", "CPU-P027", "CPU-P028", "CPU-P029", "CPU-P030", "CPU-P031",
+        "CPU-P032", "CPU-P033", "CPU-P034", "CPU-P035", "CPU-P036", "CPU-P037", "CPU-P038", "CPU-P039",
+        "CPU-P040", "CPU-P041", "CPU-P042", "CPU-P043", "CPU-P044", "CPU-P045", "CPU-P046", "CPU-P047",
+        "CPU-P048", "CPU-P049", "CPU-P050", "CPU-P051", "CPU-P052", "CPU-P053", "CPU-P054", "CPU-P055",
+        "CPU-P056", "CPU-P057", "CPU-P058", "CPU-P059", "CPU-P060", "CPU-P061", "CPU-P062", "CPU-P063"
+      ],
+      "status_in_D0": "openable_once_for_cpu_gate",
+      "permitted_use": "uncurated generator, Bayes-N, exact-controller, shortcut, reachability, determinism, and resource gates only",
+      "scientific_use": false
+    },
+    {
+      "split_id": "CAL",
+      "pair_count": 6,
+      "indices": {"first": 0, "last": 5},
+      "pair_ids": ["CAL-P000", "CAL-P001", "CAL-P002", "CAL-P003", "CAL-P004", "CAL-P005"],
+      "status_in_D0": "dormant_non_openable",
+      "permitted_use": "derivation grammar and identifier validation only; no stream key, RNG block, world, target, source, or rejection record may be instantiated",
+      "scientific_use": false,
+      "future_authority_required": true
+    },
+    {
+      "split_id": "CONF",
+      "pair_count": 16,
+      "indices": {"first": 0, "last": 15},
+      "pair_ids": [
+        "CONF-P000", "CONF-P001", "CONF-P002", "CONF-P003", "CONF-P004", "CONF-P005", "CONF-P006", "CONF-P007",
+        "CONF-P008", "CONF-P009", "CONF-P010", "CONF-P011", "CONF-P012", "CONF-P013", "CONF-P014", "CONF-P015"
+      ],
+      "status_in_D0": "dormant_non_openable",
+      "permitted_use": "derivation grammar and identifier validation only; no stream key, RNG block, world, target, source, or rejection record may be instantiated",
+      "scientific_use": false,
+      "future_authority_required": true
+    },
+    {
+      "split_id": "RESERVE",
+      "pair_count": 16,
+      "indices": {"first": 0, "last": 15},
+      "pair_ids": [
+        "RESERVE-P000", "RESERVE-P001", "RESERVE-P002", "RESERVE-P003", "RESERVE-P004", "RESERVE-P005", "RESERVE-P006", "RESERVE-P007",
+        "RESERVE-P008", "RESERVE-P009", "RESERVE-P010", "RESERVE-P011", "RESERVE-P012", "RESERVE-P013", "RESERVE-P014", "RESERVE-P015"
+      ],
+      "status_in_D0": "dormant_non_openable",
+      "permitted_use": "derivation grammar and identifier validation only; D0 cannot promote, inspect, instantiate, or substitute a reserve",
+      "scientific_use": false,
+      "future_authority_required": true,
+      "future_limited_use": "Only generator structural exhaustion or pre-science infrastructure loss under a new exact human authorization. Never performance, difficulty, model failure, Bayes value, or scientific outcome."
+    }
+  ],
+  "split_disjointness": {
+    "rule": "split_id and pair_id are length-prefixed derivation labels, so identical candidate_counter values in different split/pair slots have different stream keys unless SHA-256 collides.",
+    "required_test": "Enumerate every permitted DEV and CPU candidate key used in D0 and assert no key or RNG block repeats across namespace, split, pair, candidate, target slot, proposal, episode, or ordering role.",
+    "collision_disposition": "Any 256-bit derivation collision invalidates the protocol; do not add a salt or redraw."
+  },
+  "golden_derivations": [
+    {
+      "case_id": "GSD01_CPU_P000_CANDIDATE_0",
+      "expression": "derive(\"pair_candidate\",[\"CPU\",\"CPU-P000\"],0)",
+      "expected_hex": "4c3af86256885f3fd687e0e023e0e199dcad2e83a7ca352daa89eb0fb19469d4"
+    },
+    {
+      "case_id": "GSD02_CPU_P000_RNG_BLOCK_0",
+      "expression": "rng_block(hex(GSD01),0)",
+      "expected_hex": "f52809616d39f36baa8c23fa6765e0a763a631a6ea47e160bcdda3c5eb7ca8f7"
+    },
+    {
+      "case_id": "GSD03_CPU_P000_WORLD_CHILD",
+      "expression": "derive(\"world\",[GSD01_expected_hex],0)",
+      "expected_hex": "1d968ad501551e895deecfbe3a6fda793e831afdf3385baf08375b86ec7bb843"
+    },
+    {
+      "case_id": "GSD04_CPU_P000_SKIN_CHILD",
+      "expression": "derive(\"skin\",[GSD01_expected_hex],0)",
+      "expected_hex": "6f603dfb54e1f9721cccd75cdf094e86ee83e6f3cd1999bc5a1753242f5418e7"
+    },
+    {
+      "case_id": "GSD05_CPU_P000_TWIN_CHILD",
+      "expression": "derive(\"twin\",[GSD01_expected_hex],0)",
+      "expected_hex": "fbf6094ae615134714d84423fc1b9a3b25706c24a567d0c2304458c5c6ae8235"
+    },
+    {
+      "case_id": "GSD06_CPU_P000_SOURCE_CHILD",
+      "expression": "derive(\"source\",[GSD01_expected_hex],0)",
+      "expected_hex": "7cee185ff5f0c5ecf55bf5e846922607845f6eaf62935adf3d9de16f390cab63"
+    },
+    {
+      "case_id": "GSD07_CPU_P000_TARGET_CHILD",
+      "expression": "derive(\"target\",[GSD01_expected_hex],0)",
+      "expected_hex": "5ccd420933e25ee026b06f7240f3d31b3799db7bc87cfa7bf710792563ad8cd4"
+    },
+    {
+      "case_id": "GSD08_CPU_P000_REJECTION_CHILD",
+      "expression": "derive(\"rejection\",[GSD01_expected_hex],0)",
+      "expected_hex": "f8fce16658baf5bf6e3f04b26163de6257443906a6480bdd115979d63888a862"
+    },
+    {
+      "case_id": "GSD09_CPU_P000_ORDER_CHILD",
+      "expression": "derive(\"order\",[GSD01_expected_hex],0)",
+      "expected_hex": "48be28eb285cd2c31ccd5deabb9f512ba7f5c1c65244df1b1d04409ac15735b2"
+    },
+    {
+      "case_id": "GSD10_CPU_P000_CONTROLLER_CHILD",
+      "expression": "derive(\"controller\",[GSD01_expected_hex],0)",
+      "expected_hex": "f3596eaa0ee7a7f164701b7e2af14da4960c54389bf1aae814abe5e095e0e046"
+    },
+    {
+      "case_id": "GSD11_DEV_P000_CANDIDATE_0",
+      "expression": "derive(\"pair_candidate\",[\"DEV\",\"DEV-P000\"],0)",
+      "expected_hex": "13810363291c5490ca0aee79f3a4661f729e60324ead056bf299733cb2e53d54"
+    },
+    {
+      "case_id": "GSD12_CONF_P000_DERIVATION_ONLY",
+      "expression": "derive(\"pair_candidate\",[\"CONF\",\"CONF-P000\"],0)",
+      "expected_hex": "8216724b513366a36f961c34cc56368c472e96c333294ba984f683f37961ac54",
+      "d0_rule": "The literal golden value may be compared as manifest data, but D0 runtime may not instantiate a CONF stream or consume an RNG block."
+    }
+  ],
+  "replacement_and_opening_firewall": {
+    "no_outcome_conditioned_replacement": true,
+    "forbidden_replacement_reasons": ["Bayes value", "exact-memory value", "shortcut value", "difficulty", "model output", "reader failure", "training failure", "adapter seed", "scientific score", "missing outcome", "unfavorable result"],
+    "cpu_failure": "Keep all assigned CPU pair IDs and item zeros; invalidate the generator version if a registered gate fails.",
+    "dormant_split_open_attempt": "Fail before deriving a stream key, reading a seed, creating a directory, writing a log, dispatching a process, or changing authority state.",
+    "reserve_rule": "Reserve IDs are ordered derivation commitments, not replacements available to D0 and not additional replication units."
+  },
+  "claim_firewall": {
+    "d0_result": "Seed, namespace, split, and no-replacement conformance only.",
+    "not_evidence_for": ["model behavior", "GPU readiness", "scientific calibration", "confirmation", "scaling", "online learning", "continued acquisition", "external validity"]
+  }
+}

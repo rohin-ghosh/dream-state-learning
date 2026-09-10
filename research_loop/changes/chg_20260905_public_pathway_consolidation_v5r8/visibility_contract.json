@@ -1,0 +1,1633 @@
+{
+  "schema_version": 8,
+  "contract": "ppc5.visibility_contract.v8",
+  "modalities": {
+    "visible": "Named source fields occur directly in the stage ingress schema.",
+    "derived_only": "Exactly one named pure projection is allowlisted; its algorithm ID, source hashes, and output hash are recorded, and raw source fields are absent from stage ingress.",
+    "hidden": "A privileged harness may use the item only for the named routing action; every item field is absent from serialized stage ingress, egress, model bytes, scores, errors, timing class, and public IDs.",
+    "forbidden": "Static dependency checks and runtime taint mutation must prove the item cannot be read or influence any stage choice, bytes, debit, status, timing class, or output. Any influence is RUN_INVALID."
+  },
+  "stages": [
+    "BENCHMARK_CONSTRUCTION",
+    "TWIN_SHAM_CONSTRUCTION",
+    "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+    "PRIVILEGED_INTERVENTION_ROUTER",
+    "THINK",
+    "READ_PROVIDER",
+    "RESPONSE_INTERVENTION",
+    "DREAM",
+    "EVIDENCE_GATE",
+    "WRITER",
+    "TRAINER_VALIDATOR_PUBLICATION",
+    "REDUCER",
+    "CANDIDATE_DECISION",
+    "CLAIM_RELEASE",
+    "AUDIT"
+  ],
+  "information_items": [
+    "PUBLIC_STATE",
+    "SEMANTIC_CANDIDATES",
+    "HIDDEN_TRUTH",
+    "PROBE_FUTURE_DATA",
+    "RESOLVED_RESPONSE_BYTES",
+    "PRIVATE_ELIGIBILITY",
+    "INERT_ASSIGNMENT",
+    "ACTIVE_ARTIFACT",
+    "LOSS_ROWS",
+    "ENDPOINT_TRUTH",
+    "CLAIM_TEXT",
+    "LOW_ENTROPY_MATCH_HASHES",
+    "OVERLAP_AND_SCOPE"
+  ],
+  "matrix": {
+    "PUBLIC_STATE": {
+      "BENCHMARK_CONSTRUCTION": "visible: construct public templates and opaque IDs",
+      "TWIN_SHAM_CONSTRUCTION": "derived_only: public_response_shape_projection",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: public_manifest_hash_projection",
+      "PRIVILEGED_INTERVENTION_ROUTER": "derived_only: query_and_selected_response_hash_projection",
+      "THINK": "visible: exact closed model view",
+      "READ_PROVIDER": "derived_only: typed_read_request_projection",
+      "RESPONSE_INTERVENTION": "derived_only: selected_response_projection",
+      "DREAM": "derived_only: causally_prior_public_slice_projection",
+      "EVIDENCE_GATE": "derived_only: source_record_projection",
+      "WRITER": "derived_only: admitted_supported_response_projection",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: public_endpoint_observation_projection",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: replay and leakage audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "SEMANTIC_CANDIDATES": {
+      "BENCHMARK_CONSTRUCTION": "visible: build complete table",
+      "TWIN_SHAM_CONSTRUCTION": "visible: finite response candidate set",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: semantic_table_hash_projection",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "derived_only: full_context_reference_projection only in descriptive FULL_CONTEXT cell",
+      "READ_PROVIDER": "visible: complete canonical table",
+      "RESPONSE_INTERVENTION": "derived_only: selected_common_response_projection",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "forbidden",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: membership and full-scan audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "HIDDEN_TRUTH": {
+      "BENCHMARK_CONSTRUCTION": "visible: finite-world oracle only",
+      "TWIN_SHAM_CONSTRUCTION": "visible: sufficiency and action-preservation proof only",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: construction_proof_hash_projection",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: endpoint_scoring_projection after runtime",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: construction and endpoint audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "PROBE_FUTURE_DATA": {
+      "BENCHMARK_CONSTRUCTION": "visible: target-blind role and temporal split construction",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: quarantine_manifest_hash_projection",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "visible: negative admission predicates only",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: quarantined_probe_endpoint_projection after close",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: permanent quarantine audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "PRIVATE_ELIGIBILITY": {
+      "BENCHMARK_CONSTRUCTION": "visible: create immutable predicates and family strata",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: seal provenance and eligibility manifests",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "visible: nominee-first admission and equivalence only",
+      "WRITER": "derived_only: admitted_root_projection",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: admitted_dose_and_status_projection",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: sterility and overlap audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "INERT_ASSIGNMENT": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: create and seal opaque assignments",
+      "PRIVILEGED_INTERVENTION_ROUTER": "visible: resolve condition to condition-free projection",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "derived_only: opaque mounted-artifact handle or null only",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "derived_only: opaque root-policy handle only",
+      "WRITER": "derived_only: ordered admitted projections without role labels",
+      "TRAINER_VALIDATOR_PUBLICATION": "derived_only: arm-neutral corpus recipe and seed handles",
+      "REDUCER": "visible: paired arm and clone labels after runtime",
+      "CLAIM_RELEASE": "derived_only: registered claim membership projection",
+      "AUDIT": "visible: prospectiveness and condition-free projection audit",
+      "CANDIDATE_DECISION": "derived_only: registered_claim_membership_projection"
+    },
+    "ACTIVE_ARTIFACT": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: base donor and compatibility manifests",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "derived_only: mounted_adapter_bytes_projection affecting scores only",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "visible: train validate and atomically publish",
+      "REDUCER": "derived_only: publication_status_and_resource_projection",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: hash compatibility and mount-boundary audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "LOSS_ROWS": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: recipe_and_capacity_projection only",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "visible: render authentic or typed control rows",
+      "TRAINER_VALIDATOR_PUBLICATION": "visible: loss-bearing rows only",
+      "REDUCER": "derived_only: dose_hash_and_count_projection",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: row reconstruction and support audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "ENDPOINT_TRUTH": {
+      "BENCHMARK_CONSTRUCTION": "visible: registered action and finite-world oracle",
+      "TWIN_SHAM_CONSTRUCTION": "visible: directional twin and sham proof",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "derived_only: endpoint_oracle_hash_projection",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "visible: score public outcomes after execution",
+      "CLAIM_RELEASE": "derived_only: typed_contrast_and_assay_results_projection",
+      "AUDIT": "visible: endpoint recomputation",
+      "CANDIDATE_DECISION": "derived_only: claim_blind_dependency_decision_projection"
+    },
+    "CLAIM_TEXT": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "forbidden",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: seal exact registered strings and dependencies",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "forbidden",
+      "CLAIM_RELEASE": "visible: emit exact registered string or BLOCKED only",
+      "AUDIT": "visible: literal non-substitution audit",
+      "CANDIDATE_DECISION": "derived_only: registered_claim_literal_projection"
+    },
+    "RESOLVED_RESPONSE_BYTES": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "visible: construct parity-certified per-edge candidate responses",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: seal alternatives and lineage",
+      "PRIVILEGED_INTERVENTION_ROUTER": "visible: resolve exactly one assigned canonical response",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "visible: condition-free already-resolved public response bytes",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: intervention compliance projection",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: construction, lineage, exact-match, and emission audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "LOW_ENTROPY_MATCH_HASHES": {
+      "BENCHMARK_CONSTRUCTION": "forbidden",
+      "TWIN_SHAM_CONSTRUCTION": "visible: construct exact query and selected-response match preimages",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: seal match hashes and lineage",
+      "PRIVILEGED_INTERVENTION_ROUTER": "visible: verify exactly one match",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "forbidden",
+      "CLAIM_RELEASE": "forbidden",
+      "AUDIT": "visible: preimage confinement and exact-match audit",
+      "CANDIDATE_DECISION": "forbidden: No dependency or influence is permitted."
+    },
+    "OVERLAP_AND_SCOPE": {
+      "BENCHMARK_CONSTRUCTION": "visible: compute generator, construction, and overlap manifests",
+      "TWIN_SHAM_CONSTRUCTION": "derived_only: construction-scope constraints",
+      "ASSIGNMENT_RUN_LOCK_STATIC_SEAL": "visible: seal overlap and scope receipts",
+      "PRIVILEGED_INTERVENTION_ROUTER": "forbidden",
+      "THINK": "forbidden",
+      "READ_PROVIDER": "forbidden",
+      "RESPONSE_INTERVENTION": "forbidden",
+      "DREAM": "forbidden",
+      "EVIDENCE_GATE": "forbidden",
+      "WRITER": "forbidden",
+      "TRAINER_VALIDATOR_PUBLICATION": "forbidden",
+      "REDUCER": "derived_only: descriptive overlap summary",
+      "CLAIM_RELEASE": "derived_only: mandatory overlap and construction-scope receipt hashes plus fixed qualification",
+      "AUDIT": "visible: recompute manifests and export binding",
+      "CANDIDATE_DECISION": "derived_only: registered_overlap_scope_status_projection"
+    }
+  },
+  "required_test": "PPC5R8_T12 exact 13 x 15 = 195 product in canonical information-item then stage order, exactly one visibility decision and nonempty rationale per pair, an exact capability/projection role for every visible or derived_only pair, stage-schema field equality, forbidden mutation noninterference, recursive field/type/tag/hash taint reachability, low-entropy preimage confinement, and release/export scope binding; absent, duplicate, extra, reordered, stale-stage, stale-item, or stage-divergent cells fail.",
+  "cells": [
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "construct public templates and opaque IDs",
+      "allowed_capability_or_projection_role": "VISIBILITY_1B5392F933FFCAFC"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "derived_only",
+      "rationale": "public_response_shape_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_90BA5DE88006D724"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "public_manifest_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_F5FE6BD7F2E3A114"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "derived_only",
+      "rationale": "query_and_selected_response_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_01B51A527A983731"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "THINK",
+      "visibility": "visible",
+      "rationale": "exact closed model view",
+      "allowed_capability_or_projection_role": "VISIBILITY_059BC990ADB35E31"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "READ_PROVIDER",
+      "visibility": "derived_only",
+      "rationale": "typed_read_request_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_9E992EFCF9960EE2"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "derived_only",
+      "rationale": "selected_response_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_5FCED42E9A71E493"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "DREAM",
+      "visibility": "derived_only",
+      "rationale": "causally_prior_public_slice_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_9C951D55C67F7958"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "derived_only",
+      "rationale": "source_record_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_23F31ABBDE1081DA"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "WRITER",
+      "visibility": "derived_only",
+      "rationale": "admitted_supported_response_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_8E5B300742968D3D"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "public_endpoint_observation_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_8340E6A3D7A7BBA1"
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PUBLIC_STATE",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "replay and leakage audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_4C810BC70F070C82"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "build complete table",
+      "allowed_capability_or_projection_role": "VISIBILITY_3331A9F610A5E830"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "finite response candidate set",
+      "allowed_capability_or_projection_role": "VISIBILITY_F59149389CA4627C"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "semantic_table_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_ABCD906E9B287F79"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "THINK",
+      "visibility": "derived_only",
+      "rationale": "full_context_reference_projection only in descriptive FULL_CONTEXT cell",
+      "allowed_capability_or_projection_role": "VISIBILITY_492454EA74D3A15A"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "READ_PROVIDER",
+      "visibility": "visible",
+      "rationale": "complete canonical table",
+      "allowed_capability_or_projection_role": "VISIBILITY_23C5C7313451C031"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "derived_only",
+      "rationale": "selected_common_response_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_97ECA397A85072AB"
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "REDUCER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "SEMANTIC_CANDIDATES",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "membership and full-scan audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_16816393B9E20340"
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "finite-world oracle only",
+      "allowed_capability_or_projection_role": "VISIBILITY_66F529C7781CAA96"
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "sufficiency and action-preservation proof only",
+      "allowed_capability_or_projection_role": "VISIBILITY_6D275B2E1A235A0D"
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "construction_proof_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_141366AAD98BCEFC"
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "endpoint_scoring_projection after runtime",
+      "allowed_capability_or_projection_role": "VISIBILITY_8736F3897E381261"
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "HIDDEN_TRUTH",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "construction and endpoint audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_57F367E2CD26D929"
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "target-blind role and temporal split construction",
+      "allowed_capability_or_projection_role": "VISIBILITY_96B2414D9353BE34"
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "quarantine_manifest_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_023248FC3AEA87E5"
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "visible",
+      "rationale": "negative admission predicates only",
+      "allowed_capability_or_projection_role": "VISIBILITY_22CFFC5C6BEC8E9A"
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "quarantined_probe_endpoint_projection after close",
+      "allowed_capability_or_projection_role": "VISIBILITY_8236BDD038014A92"
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PROBE_FUTURE_DATA",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "permanent quarantine audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_2BC845B2697E7269"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "construct parity-certified per-edge candidate responses",
+      "allowed_capability_or_projection_role": "VISIBILITY_1DF24E80B7AAB314"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "seal alternatives and lineage",
+      "allowed_capability_or_projection_role": "VISIBILITY_A4A0883D85C7B695"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "visible",
+      "rationale": "resolve exactly one assigned canonical response",
+      "allowed_capability_or_projection_role": "VISIBILITY_C7FF510CA55B2A46"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "visible",
+      "rationale": "condition-free already-resolved public response bytes",
+      "allowed_capability_or_projection_role": "VISIBILITY_6C3999DA5A7C2756"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "intervention compliance projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_16642A491FEA4CCF"
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "RESOLVED_RESPONSE_BYTES",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "construction, lineage, exact-match, and emission audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_2178DF1B23E58E6B"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "create immutable predicates and family strata",
+      "allowed_capability_or_projection_role": "VISIBILITY_AADD26BC68182F9F"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "seal provenance and eligibility manifests",
+      "allowed_capability_or_projection_role": "VISIBILITY_D6F19187C82CF5F9"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "visible",
+      "rationale": "nominee-first admission and equivalence only",
+      "allowed_capability_or_projection_role": "VISIBILITY_6123F9DAC7DC6892"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "WRITER",
+      "visibility": "derived_only",
+      "rationale": "admitted_root_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_439C2F42668AA063"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "admitted_dose_and_status_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_DE7F7F0BCF3842C6"
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "PRIVATE_ELIGIBILITY",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "sterility and overlap audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_02C5E73372FCFE6C"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "create and seal opaque assignments",
+      "allowed_capability_or_projection_role": "VISIBILITY_F6869B179561EA84"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "visible",
+      "rationale": "resolve condition to condition-free projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_BE66B34B953CA8DC"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "READ_PROVIDER",
+      "visibility": "derived_only",
+      "rationale": "opaque mounted-artifact handle or null only",
+      "allowed_capability_or_projection_role": "VISIBILITY_4E28F2C9BDBF832B"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "derived_only",
+      "rationale": "opaque root-policy handle only",
+      "allowed_capability_or_projection_role": "VISIBILITY_335C7CEE7825BBE6"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "WRITER",
+      "visibility": "derived_only",
+      "rationale": "ordered admitted projections without role labels",
+      "allowed_capability_or_projection_role": "VISIBILITY_DF0C85ABEA7F5411"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "derived_only",
+      "rationale": "arm-neutral corpus recipe and seed handles",
+      "allowed_capability_or_projection_role": "VISIBILITY_31B667097B223C41"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "REDUCER",
+      "visibility": "visible",
+      "rationale": "paired arm and clone labels after runtime",
+      "allowed_capability_or_projection_role": "VISIBILITY_CEDC8C99E23F91A6"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "derived_only",
+      "rationale": "registered_claim_membership_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_6D27C8BD9230FAF3"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "derived_only",
+      "rationale": "registered claim membership projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_F6A0FE81C1E54A3B"
+    },
+    {
+      "information_item": "INERT_ASSIGNMENT",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "prospectiveness and condition-free projection audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_CEBD48A5245B7147"
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "base donor and compatibility manifests",
+      "allowed_capability_or_projection_role": "VISIBILITY_B99A1F9FF9DC4D85"
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "READ_PROVIDER",
+      "visibility": "derived_only",
+      "rationale": "mounted_adapter_bytes_projection affecting scores only",
+      "allowed_capability_or_projection_role": "VISIBILITY_FCC9A3D4E8E74A1E"
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "visible",
+      "rationale": "train validate and atomically publish",
+      "allowed_capability_or_projection_role": "VISIBILITY_6161C1480B54D992"
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "publication_status_and_resource_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_994BCCF51E9513E2"
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ACTIVE_ARTIFACT",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "hash compatibility and mount-boundary audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_1CE9CA5C453F2AF5"
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "recipe_and_capacity_projection only",
+      "allowed_capability_or_projection_role": "VISIBILITY_8175F7DC2D8F2FD8"
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "WRITER",
+      "visibility": "visible",
+      "rationale": "render authentic or typed control rows",
+      "allowed_capability_or_projection_role": "VISIBILITY_1302C8B256B69571"
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "visible",
+      "rationale": "loss-bearing rows only",
+      "allowed_capability_or_projection_role": "VISIBILITY_4EF33653F8B987E0"
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "dose_hash_and_count_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_C43AD16DD51AC9AA"
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOSS_ROWS",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "row reconstruction and support audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_4B65E81D4882C22A"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "registered action and finite-world oracle",
+      "allowed_capability_or_projection_role": "VISIBILITY_11CC003A12F4834E"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "directional twin and sham proof",
+      "allowed_capability_or_projection_role": "VISIBILITY_B35B08A8128644F6"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "derived_only",
+      "rationale": "endpoint_oracle_hash_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_5312D7491E137B56"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "REDUCER",
+      "visibility": "visible",
+      "rationale": "score public outcomes after execution",
+      "allowed_capability_or_projection_role": "VISIBILITY_6C1DD2DAA6FD81FB"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "derived_only",
+      "rationale": "claim_blind_dependency_decision_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_9E7FA7B1A44AD082"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "derived_only",
+      "rationale": "typed_contrast_and_assay_results_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_A426C65FB3222CAB"
+    },
+    {
+      "information_item": "ENDPOINT_TRUTH",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "endpoint recomputation",
+      "allowed_capability_or_projection_role": "VISIBILITY_98EB3F3865785DFC"
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "seal exact registered strings and dependencies",
+      "allowed_capability_or_projection_role": "VISIBILITY_C24731E12A9DC56B"
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "REDUCER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "derived_only",
+      "rationale": "registered_claim_literal_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_CA597F121B826691"
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "visible",
+      "rationale": "emit exact registered string or BLOCKED only",
+      "allowed_capability_or_projection_role": "VISIBILITY_0A732F6DB88A2BF3"
+    },
+    {
+      "information_item": "CLAIM_TEXT",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "literal non-substitution audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_4CF9447DFDB52DAB"
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "construct exact query and selected-response match preimages",
+      "allowed_capability_or_projection_role": "VISIBILITY_10A761BA55E6B914"
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "seal match hashes and lineage",
+      "allowed_capability_or_projection_role": "VISIBILITY_0FC50C88B908E019"
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "visible",
+      "rationale": "verify exactly one match",
+      "allowed_capability_or_projection_role": "VISIBILITY_7B1E8356480EC7FB"
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "REDUCER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "LOW_ENTROPY_MATCH_HASHES",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "preimage confinement and exact-match audit",
+      "allowed_capability_or_projection_role": "VISIBILITY_BB5A46625108357F"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "BENCHMARK_CONSTRUCTION",
+      "visibility": "visible",
+      "rationale": "compute generator, construction, and overlap manifests",
+      "allowed_capability_or_projection_role": "VISIBILITY_E7AC0297A516182C"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "TWIN_SHAM_CONSTRUCTION",
+      "visibility": "derived_only",
+      "rationale": "construction-scope constraints",
+      "allowed_capability_or_projection_role": "VISIBILITY_4595992ADD369C67"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "ASSIGNMENT_RUN_LOCK_STATIC_SEAL",
+      "visibility": "visible",
+      "rationale": "seal overlap and scope receipts",
+      "allowed_capability_or_projection_role": "VISIBILITY_5F8EBD74FF9CA4F9"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "PRIVILEGED_INTERVENTION_ROUTER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "THINK",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "READ_PROVIDER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "RESPONSE_INTERVENTION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "DREAM",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "EVIDENCE_GATE",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "WRITER",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "TRAINER_VALIDATOR_PUBLICATION",
+      "visibility": "forbidden",
+      "rationale": "No dependency or influence is permitted.",
+      "allowed_capability_or_projection_role": null
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "REDUCER",
+      "visibility": "derived_only",
+      "rationale": "descriptive overlap summary",
+      "allowed_capability_or_projection_role": "VISIBILITY_38CFF0AFFE9E6FB3"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "CANDIDATE_DECISION",
+      "visibility": "derived_only",
+      "rationale": "registered_overlap_scope_status_projection",
+      "allowed_capability_or_projection_role": "VISIBILITY_5F4D056C4071914D"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "CLAIM_RELEASE",
+      "visibility": "derived_only",
+      "rationale": "mandatory overlap and construction-scope receipt hashes plus fixed qualification",
+      "allowed_capability_or_projection_role": "VISIBILITY_0344D70763C6A350"
+    },
+    {
+      "information_item": "OVERLAP_AND_SCOPE",
+      "stage": "AUDIT",
+      "visibility": "visible",
+      "rationale": "recompute manifests and export binding",
+      "allowed_capability_or_projection_role": "VISIBILITY_37EBB07FB2887D2E"
+    }
+  ]
+}

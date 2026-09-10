@@ -1,0 +1,171 @@
+{
+  "acceptance_test_ids_addressed": [
+    "AT1_source_join_closure",
+    "AT2_target_matching",
+    "AT3_content_disjoint_seal",
+    "AT4_reproducibility_canaries",
+    "AT5_prefix_package_contrast",
+    "AT6_selected_corpus_floor",
+    "AT7_claim_ceiling",
+    "AT8_bootstrap_visibility_and_copying",
+    "AT9_visibility_oracle_partition",
+    "AT10_prompt_serving_roundtrip",
+    "AT11_authority_stage_acyclicity",
+    "AT12_independence_fault_injection",
+    "AT13_seal_atomicity_and_quarantine",
+    "AT14_no_writeback_no_autoingestion",
+    "AT15_claim_state_machine",
+    "AT16_a2_receipt_dependency_order",
+    "AT17_source_corpus_feasibility",
+    "AT18_full_policy_visibility_scan",
+    "AT19_target_dispatch_scoring_roundtrip",
+    "AT20_nonzero_adapter_serving_canary",
+    "AT21_action_validity_and_abstention_decomposition",
+    "AT22_salt_commitment_provenance",
+    "AT23_real_seal_access_and_publication",
+    "AT24_claim_state_precedence"
+  ],
+  "acceptance_test_interpretation": "The registry measures the advertised narrow assay links in sequence. Source-closure and feasibility tests measure byte-bounded provenance and per-life corpus viability, not new experience. Target matching measures identical supervised continuation/EOS projections and update ordinals, not equal full inputs, positions, or compute. Sealing tests content-disjoint panel construction; salt provenance and real-seal receipts separately test nonadaptivity, access isolation, and publication integrity. Reproducibility and mounted-adapter canaries measure deterministic execution, not robustness, replication, or scientific generality. The two contrast tests measure only the registered package effects on the exact sealed panel using the R16 P/A/Q/M floors. Claim-ceiling and visibility tests constrain attribution and prevent source-oracle, corpus, answer, and concrete-action leakage, but cannot establish semantic novelty or absence from pretraining. Serving, authority, independence, quarantine, no-writeback, state-machine, receipt-order, dispatch/scoring, and positive-action tests directly cover their stated operational boundaries. The synthetic quarantine test does not by itself validate the actual seal; the real-seal test supplies that missing link. The full policy scan is stronger than source-file scanning because it covers rendered bytes, template additions, token IDs, and decoded variants. The action decomposition prevents invalidity, abstention, or rejection avoidance from being treated as useful value. The final precedence test prevents infrastructure failure or seal abandonment from becoming a scientific negative.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A1_stage_visibility_split",
+      "impact": "The matrix marks the selected corpus hidden at CANARY while the authorized duplicate trainers must read it; the distinction between training-canary visibility and serving-canary visibility is not explicit.",
+      "question": "Should CANARY be subdivided into trainer input visibility and serving input visibility, or should the matrix state that only the trainer subcommand may read the corpus?"
+    },
+    {
+      "ambiguity_id": "A2_dormant_graph_edge",
+      "impact": "The graph represents the prohibited report-to-future-cycle route as an edge, while the loop and quarantine rules require no reachable writeback.",
+      "question": "Should this be encoded as an explicit denied/non-edge relation with a tested isolation rule rather than as an ordinary graph edge?"
+    },
+    {
+      "ambiguity_id": "A3_target_identity_cue",
+      "impact": "Canonical target URIs remain in the rendered policy, so target identity and family/pretraining cues remain policy-visible even though source answers and concrete action names are excluded.",
+      "question": "Is the intended ceiling explicitly compatible with URI-conditioned and pretrained action priors, as the surrounding plans state?"
+    },
+    {
+      "ambiguity_id": "A4_human_receipt_bytes",
+      "impact": "The supplied artifact defines A0-A3 boundaries but does not include the later exact ratification receipts or command manifests.",
+      "question": "Which exact ratified bytes will bind A1 tokenizer work, A2 sealing/canaries, and A3 remaining execution?"
+    }
+  ],
+  "architecture_change_sha256": "120541b88acd7f1a5642d6ad4d91b098dea34020c318c751ab9dcec613f94d6e",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The change artifact's R10-R19 overlays supersede conflicting v0/v1 wording, while the supplied source files remain immutable provenance inputs.",
+    "A0 permits only the explicitly bounded CPU/no-model/no-tokenizer source-preparation work; tokenizer execution, target exposure, model execution, sealing, GPU work, and claims require their separately ratified stages.",
+    "The continuation target is the persisted note text selected by the declared PREDICT/ACT and ledger-join rules; no absent prompt is reconstructed.",
+    "C0 is one common deterministic frozen-base reference, while C1 and C2 have independently trained per-life rank-16 LoRA adapters.",
+    "The exact three source lives, 64-target panel, three training passes, 256-token generation budget, 1024-token C2 limit, and per-life feasibility floors are fixed scale assumptions, not population or robustness samples."
+  ],
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v3",
+  "claim_delta_interpretation": "The proposal adds two bounded package-level claims: a C2-minus-C1 neutral-chat-prefix package contrast and a C2-minus-C0 offline selected-continuation package contrast, each only in valid claim states and only on the exact sealed panel. Source outcomes, scores, and earlier improvements are historical selection oracles, so they can receive credit for selecting supervised rows but not for online learning, discovery, verification, or causal outcome learning. The LoRA receives module-level assay-local transport credit only; it is not an organism memory, dream consolidation, or discoverer. The explicit ceiling denies credit for lived discovery, dream-time connection growth, retrieval, composition, planning, revision, recurrence, semantic generalization, replication, robustness, scale, population, or future feedback.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "d98b55bd298f27253d1e9d7402641fb261c78026a0ebc183522792ec9a54d2f8"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/scope_proposal.json",
+      "purpose": "requested scope",
+      "sha256": "ae9d63b0510313f4a30c32771df57f0d8ad8d6c68eea3cc76c22050c46192641"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base floor",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "first repair overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v2_repair.md",
+      "purpose": "second repair overlay",
+      "sha256": "53c1a332586b7e22b7e49716a259dc2ac7afd747b7084718cff7fad10ffe0ef5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "prior adjudication",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/critique.json",
+      "purpose": "adversarial blockers",
+      "sha256": "705a83392960eb47364e36ce96b891b9e192eb343b929a43248d039a3f61e3f3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/consensus.json",
+      "purpose": "adjudicated repairs",
+      "sha256": "1f0810d29d82e0f43d50a11f5c435f0761778abb2d0660fb8672280c438dfa4b"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "legacy bootstrap boundary",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "legacy serving boundary",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "legacy evaluator boundary",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_canary_corpus_visibility",
+      "proposed_resolution": "Make trainer-only corpus access explicit in the visibility matrix and keep serving/scoring corpus-blind.",
+      "rationale": "The adapter-training edge requires corpus reads, but the CANARY cell currently says the corpus is hidden. This is an operational inconsistency, not merely terminology.",
+      "statement": "The proposal's graph and loop imply authorized canary trainers consume the selected corpus, while the visibility matrix denies that visibility at CANARY."
+    },
+    {
+      "disagreement_id": "D2_dormant_edge_semantics",
+      "proposed_resolution": "Represent the report-to-future-cycle relation as a deny rule or quarantined attempted edge whose reachability is always false.",
+      "rationale": "An ordinary graph edge can be interpreted as a possible state transition, conflicting with the terminal loop and no-writeback contract.",
+      "statement": "The proposal labels the report-to-future-organism relation as an edge even though its operational thesis requires that no such transition exists."
+    },
+    {
+      "disagreement_id": "D3_task_identity_is_not_hidden",
+      "proposed_resolution": "Retain the canonical URI only as an explicit task cue and prohibit any stronger opacity, semantic generalization, or memory-path interpretation.",
+      "rationale": "The rendered goal and intro contain the target URI. Content-disjoint hashes do not remove URI/family cues or pretrained knowledge.",
+      "statement": "The proposal's no-answer policy boundary is valid, but it must not be read as a target-opaque or semantically novel evaluation."
+    }
+  ],
+  "graph_delta_interpretation": "Operationally, archived lived episodes are copied into an immutable audit snapshot and become extraction authority only; no prompt reconstruction occurs. Two source-distinct extractors read physical row order, wake ticks, byte offsets, and attachment constraints to derive occurrence assignments, terminal boundaries, exclusions, and eligible continuation targets. Source action payloads, outcomes, stored scores, and earlier-score comparisons are observed and causally used at extraction, while notes and invalid or ambiguous rows are discarded from the corpus but retained in receipts. The selected corpus is tokenized into target IDs and supervised labels, then drives per-life C1/C2 assay-local LoRA tensors; this is parametric transport, not persistent organism state. A2 derives and commits a one-shot salt, enumerates and hashes the complete target universe, removes contaminated content classes and aliases, and atomically publishes 64 target identities before scores or model calls. A3 renders each target from a fresh reset with empty retrieval and one decision, parses only the strict first ACT marker, dispatches exact action names and indices against a fresh reset module, and writes only quarantined report data. The graph does not operationalize dream breadth-like connection growth: extraction is finite provenance resolution and row selection, with no new memory nodes or edges. It also does not operationalize thinking as goal-directed path construction: the evaluated policy has one stateless generation and one action, with no retrieval, composition, planning, revision, recurrence, or multi-step path. The dormant future edge is a prohibition boundary, not a permitted data path.",
+  "human_boundary": {
+    "open_questions": [
+      "Rohin must ratify the exact proposed bytes and only the declared A0 CPU/no-model/no-tokenizer preparation scope before any implementation or execution.",
+      "A1 tokenizer authorization, A2 salt/seal/canary authorization, and A3 remaining execution/report authorization must each be separately bound to exact receipts and command sets.",
+      "No target URI, module, hash, score, action, model call, GPU command, or result may be exposed before its ordered human-authorized node.",
+      "The interpretation does not authorize implementation, tokenizer execution, target sealing, model execution, GPU work, reporting, or changes to lives, adapters, prompts, ledgers, dreams, or intake."
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v3.systems",
+  "loop_delta_interpretation": "The source loop is a single finite pass over immutable snapshots. It reads archived rows, manifests, byte offsets, and historical action/outcome oracles; it writes extractor receipts and a frozen selected corpus, and stops on dual agreement plus feasibility or becomes INVALID_INFRA. The adapter loop is exactly three fixed-order supervised passes per source life after the tokenizer and ordered A2 gates. It reads the frozen corpus, writes quarantined C1/C2 LoRA tensors, and stops on deterministic tensor/loss canary closure; it has no organism writeback or consolidation boundary. The evaluation loop is one fresh-reset request per cell and sealed target, with a 256 generated-token budget, greedy frozen serving, no retry, no retrieval, no prior outcome, and no cross-program state. A strict parser dispatches at most the first eligible action; the near-miss parser is a separate diagnostic evaluated once. A failed parse or evaluator rejection is classified in the R16 partition, while scorer identity failures invalidate infrastructure rather than becoming zero. The report loop is terminal: P/A/Q/M and state classification are emitted only after A3, and report outputs cannot enter lives, dreams, adapters, corpora, or automatic intake. Historical thinker attempts/outcomes can be evidence for this offline corpus only at the extraction boundary over already archived episodes. Target thinker attempts/outcomes cannot become evidence for a later dream in this assay because the report boundary is terminal and no-writeback/no-auto-ingestion isolation is required. Any future feedback would require a new deliberated and human-ratified architecture.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The complete organism thesis separates lived action/outcome episodes, dream-time local connection growth and re-expression, parametric consolidation, goal-conditioned retrieval/composition/planning/revision, and later feedback into future dream cycles. This proposal deliberately severs that recurrent route. Its actual system is a closed-world provenance extractor over archived lives, an offline source-oracle-selected continuation corpus, a per-life assay-local LoRA transport path, a score-blind sealed target panel, and a retrieval-empty one-decision writer/evaluator. Declarative state consists of immutable source snapshots, manifests, row assignments, target-aligned labels, contamination and exposure registries, target IDs, module hashes, parser rules, authority DAGs, and claim-state rules. LoRA state is temporary assay-local trained tensor state, never an organism adapter or consolidated memory. Temporary working state includes extractor/sealer capsules, tokenizer/render buffers, model KV/generation state, fresh evaluator environments, action vectors, and canary processes; these must not persist into future lives. The source extractor observes and derives provenance; the trainer consolidates only into the local adapter; the evaluator observes no retrieved history and writes only outcomes/diagnostics to the quarantined report. Module-level credit is limited to source-selection correctness, token/update alignment, adapter transport, serving, dispatch/scoring identity, and report classification. Whole-organism credit is explicitly zero.",
+  "visibility_matrix_interpretation": "At A0, raw source rows, source-oracle fields, payload registries, selected-corpus candidates, and design declarations are visible for extraction and manifest authoring; target identity, rendered prompts, outputs, scores, and future reports are unavailable. At A1, only derived tokenizer/label information and exact candidate bindings are exposed; target universe and target results remain forbidden. At A2, the salt/exposure registry, target identity/module data, manifest, and validator-only contamination registry become visible, while source rows, source oracles, corpus contents, generated outputs, and scores remain hidden or derived-only. After publication, exact rendered policy IDs and sealed target/module identity are visible to canaries and A3, but source rows, source-oracle data, corpus text, and future intake remain hidden. Generated output, mounted adapters, dispatch data, and scores become visible only in canary/A3 execution and reporting, with reports reduced to bounded diagnostics and aggregate statistics. The causal partition is asymmetric: source oracles may select historical training rows, but target values cannot flow backward into extraction, corpus, tokenizer, design, or training. The policy-visible context still includes the target URI and task metadata, so the contract excludes answer/action leakage rather than all task cues. The intended boundary is that historical source attempts/outcomes are offline selection evidence, target attempts/outcomes are evaluation-only, and report data is terminal and quarantined."
+}

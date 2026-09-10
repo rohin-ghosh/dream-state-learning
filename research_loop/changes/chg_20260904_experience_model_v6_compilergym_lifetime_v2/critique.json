@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "crit_chg_20260904_experience_model_v6_compilergym_lifetime_v2_adversarial_v1",
+  "change_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v2",
+  "state": "critiqued",
+  "architecture_change_sha256": "835f45fbb5d8ef87511ff84be89f155d501ba8b90abfb63e48cd262da1bd0038",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v2.systems.v1",
+      "sha256": "ab9f2c734d9c931aacf175e4f868a77fd88725f62219afb04c26eff0cb96fdd1"
+    },
+    {
+      "interpretation_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v2.benchmark",
+      "sha256": "0bc5cc1eed62e2402aa6b11beb3e0055fc999d1aaac5eb193284b8d5d9b72442"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling deliberation, human-ratification, review, and GPU-claim contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Schema governing this exact proposed architecture artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/human_directive.txt",
+      "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad",
+      "purpose": "Verbatim owner directive for two agents, context as state, context reconstruction, memory compilation, CompilerGym, and time awareness."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/discussion_context.md",
+      "sha256": "a53ce2e0f2233c75e7536d28d6433104f5356f98b24133c4e48ae930e04fa6e3",
+      "purpose": "Non-authoritative v6 problem framing and claim boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/context_state_candidate.md",
+      "sha256": "06b14c731782d7a9b7233afb62ead09f283d9452629cb69519c2d10364f604ff",
+      "purpose": "Candidate canonical packet, recurrence, parity, and reset contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/sleep_compiler_candidate.md",
+      "sha256": "7bb9879bff47f0564aa258882b594f671fb67b2554f2b3ac79064bdf215525f3",
+      "purpose": "Candidate outcome-grounded compiler, controls, and falsifiers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/compilergym_protocol_candidate.md",
+      "sha256": "8cafa6abd98ae01723430fb54bad773b63ed00a6cd43841cbf668eef5f451ee9",
+      "purpose": "Candidate offline fit, upstream integrity, LLVM protocol, and lifecycle gates."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/design_synthesis.md",
+      "sha256": "c51cb136f382b6a4711081c6f3c8804214ff3822a900b51c2e6a8b40175fb258",
+      "purpose": "Root recommendation resolving candidate conflicts; it controls this proposal where candidates differ."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/change.json",
+      "sha256": "7d03f0497a91f7879e6966177338f6bcc87d0dc196e3c0292de781e2704de3a4",
+      "purpose": "Prior v1 proposal whose incomplete execution and claim contract is superseded."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/critique.json",
+      "sha256": "a6d1938ed34151449b3659f5c69ac08e452743b343537ba374b623010280763c",
+      "purpose": "Prior adversarial critique; every blocking concern is disposed by the exact deltas and gates below."
+    }
+  ],
+  "strongest_case": "The proposal's strongest defensible form is a tightly governed, recipe-specific engineering pilot with exactly two on-policy acquisition histories. HARNESS and EXPERIENTIAL share an unusually explicit reconstructed packet, bounded ledger/notebook retrieval, tools, logical budgets, reset policy, and deterministic sleep schedule; only EXPERIENTIAL mounts the life-local adapter. Sterile adapter-off and post-selection target-deranged forks can then ask whether serialized adapter bytes are necessary for behavior and whether useful state-to-operation pairing matters, while objective LLVM instruction count avoids private-thought scoring. The systems interpretation is the faithful reading of the controlling synthesis on lifecycle, baseline scope, and the deliberately limited post-selection shuffle. The benchmark interpretation is stronger on reward identity, relatedness, resource accounting, and the inability of one life to support population or lifetime claims, but it is not faithful when it rewrites T02's shuffle as a pre-credit/pre-selection binding-bundle intervention. Reconciled adversarially, the design can support at most a single-realization feasibility observation about a fixed compiler/adapter recipe after the missing evaluation and scoring contracts are supplied. It cannot presently identify outcome-conditioned selection, experiential superiority to a strong ordinary agent, continued post-context learning, or a paper-level mechanism.",
+  "reviewed_acceptance_test_ids": [
+    "V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC",
+    "V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM",
+    "V6CG_T03_LIFECYCLE_PARITY_AND_COLD_LOAD",
+    "V6CG_T04_VISIBILITY_NONINTERFERENCE",
+    "V6CG_T05_OFFICIAL_025_POJ104_STATIC_FIT",
+    "V6CG_T06_OFFLINE_SEMANTICS_AND_SPLIT_SEAL",
+    "V6CG_T07_BOUNDED_NONCLAIM_CANARY",
+    "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM",
+    "V6CG_T09_CHECKPOINT_CAUSAL_FORKS",
+    "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION",
+    "V6CG_T11_STAGE_D_FRESH_REPLICATION_GATE",
+    "V6CG_T12_INDEPENDENT_IMPLEMENTATION_AND_SCOPE_REVIEW"
+  ],
+  "concerns": [
+    {
+      "concern_id": "V6CG_C001_TWO_AGENT_LABEL_EXCEEDS_EXPERIMENTAL_SIMPLICITY",
+      "category": "architecture",
+      "severity": "material",
+      "statement": "The proposal has two on-policy identities, but it is not a simple two-agent experiment in any operational or causal-component sense.",
+      "evidence": "Each decision uses two model invocations, a focus writer, a query-producing retrieval controller, a ledger, notebook, retriever, task workspace, tool and gym processes, a deterministic credit/selection compiler, a LoRA trainer, sham bytes, and multiple sterile checkpoint evaluators. Calling ORIENT and THINK_ACT one loop is a coherent state-machine convention because they share weights and adapter, but it does not collapse their distinct prompts, outputs, failure modes, or learned targets. T01 proves call-graph and packet invariants; it does not show that an aggregate gain arose from context selection, retrieval, action choice, or their interaction.",
+      "acceptance_test_ids": ["V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC", "V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C002_HARNESS_HELDOUT_ESTIMAND_IS_MISSING",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The declared two-agent whole-organism contrast lacks an explicit HARNESS held-out evaluation fork, visibility stage, and primary contrast.",
+      "evidence": "The checkpoint edge and sterile evaluation loop cold-load authentic, adapter-off, and final binding-shuffled conditions from EXPERIENTIAL checkpoints. The visibility matrix likewise contains EVAL_AUTHENTIC_FORK, EVAL_ADAPTER_OFF_FORK, and EVAL_BINDING_SHUFFLED_FORK but no HARNESS checkpoint evaluation. T08 says to report a paired on-policy life and vaguely falsifies a complete-organism signal, yet T09 and V6_CLAIM_MECHANISM_ONLY require only authentic-from-zero, authentic-over-off, and shuffle loss. Without sealed target behavior from the independently evolving HARNESS life at the same checkpoints, the advertised treatment-minus-strong-harness estimand is not executed.",
+      "acceptance_test_ids": ["V6CG_T04_VISIBILITY_NONINTERFERENCE", "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C003_ONE_PAIR_CANNOT_COUNTERBALANCE_ORDER_OR_SUPPORT_A_TWO_AGENT_EFFECT",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "One paired life cannot disentangle arm from task order, model sampling, training realization, or other life-level stochasticity, even if the two task sequences are called counterbalanced.",
+      "evidence": "Stage C contains one HARNESS history and one EXPERIENTIAL history. Giving them opposite task orders confounds order with arm; giving them the same order does not counterbalance. Four targets and three checkpoints are repeated observations inside the same life, not independent replicates. No inference-seed or trainer-seed replication rule is bound. T08 correctly forbids population inference, but T09 still promotes one realization to a mechanism signal when all three inequalities happen to align.",
+      "acceptance_test_ids": ["V6CG_T07_BOUNDED_NONCLAIM_CANARY", "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T11_STAGE_D_FRESH_REPLICATION_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C004_COMMON_NOTEBOOK_IS_CREDIBLE_PARITY_BUT_NOT_A_STRONG_BASELINE_SUITE",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "Ledger/notebook parity avoids a memoryless strawman, but it does not by itself preserve the strong ordinary-agent baseline implied by the motivating question.",
+      "evidence": "HARNESS receives a small append-only notebook and a fixed capped target-blind retriever, which is stronger and fairer than no memory. It is still only one hand-constrained memory policy, and its organizer, retrieval quality, cap, write cost, native-long-context use, and ability to summarize or link experience are not frozen here. Same-corpus text, raw LoRA, organized RAG, reflection memory, and wrong-life comparisons are all deferred. The proposal appropriately forbids broad baseline-superiority claims, but phrases such as strong ordinary agent and full-harness parity should mean parity within this declared harness, not a strong-baseline result.",
+      "acceptance_test_ids": ["V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC", "V6CG_T04_VISIBILITY_NONINTERFERENCE", "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM", "V6CG_T11_STAGE_D_FRESH_REPLICATION_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C005_DETERMINISTIC_ROWS_DO_NOT_IDENTIFY_CAUSAL_CREDIT",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "Byte-deterministic ORIENT, ACT, and REVISE compilation makes the writer reproducible, not scientifically correct or causally identified.",
+      "evidence": "ORIENT imitates a self-authored focus that preceded an improving segment, ACT imitates every valid action in a temporally credited segment, and REVISE targets the first later operation on a recovery path. Gamma 0.7 and rho 0.5 merely encode a heuristic; they do not establish that a setup pass, focus, or recovery action caused the later best. Selection therefore mixes policy cloning, success filtering, temporal eligibility, and outcome conditioning. With at most 48 decisions in an eight-task life and 24 target-token touches per retained row, correlated self-imitation and generic pass priors are at least as plausible as reusable outcome learning. T02 tests frozen masks and arithmetic; T10 diagnoses some style/reuse stories only after scarce targets are opened.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T07_BOUNDED_NONCLAIM_CANARY", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C006_POST_SELECTION_SHUFFLE_CANNOT_ESTABLISH_OUTCOME_GROUNDING",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "The controlling post-selection target-object derangement tests state-to-operation pairing, not whether official outcomes were necessary to select or credit the learned rows.",
+      "evidence": "The change explicitly starts BINDING_SHUFFLED from the exact authentic selected inputs and typed focus/action target multiset, then deranges targets across compatible public-state strata. Outcome-conditioned selection and its successful-action marginals are preserved. A shuffle loss can show that the selected operation must be paired with an appropriate state; it cannot distinguish outcome-grounded learning from supervised imitation of actions already filtered as useful. The systems interpretation states this limitation faithfully. The benchmark interpretation instead requires derangement before credit/selection, contradicting the controlling synthesis and T09's equal selected-row contract. V6_CLAIM_MECHANISM_ONLY nevertheless calls the result outcome-grounded, which overstates what this control identifies.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C007_DERANGEMENT_CAN_BE_ID_DISTINCT_BUT_SEMANTICALLY_UNCHANGED",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "Small compatible strata and repeated LLVM operations can yield a formally fixed-point-free shuffle that fails to break semantic state-action binding.",
+      "evidence": "Rows may repeat the same pass, focus template, or equivalent operation arguments. Deranging target object IDs across a stratum can therefore preserve the same semantic target or exchange near-equivalent states. The proposal freezes row/view/token/update budgets and fails construction when derangement is impossible, but it does not require a minimum number of distinct semantic targets, a measured binding disruption rate, or sufficient stratum entropy. With only eight acquisition programs and six decisions each, this is a likely rather than exotic failure mode.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C008_PRESERVATION_ROWS_CONFOUND_AUTHENTIC_VERSUS_OFF",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "Adapter-off does not isolate experiential rows because the authentic adapter also receives fixed preservation training that the null adapter does not.",
+      "evidence": "The writer includes fixed anchor preservation rows or loss while T09 compares the resulting authentic adapter with a null adapter. Even task-free preservation updates can change instruction following, output calibration, and schema validity. Thus authentic-minus-off combines outcome-selected experience, preservation training, optimizer noise, and their interaction. Sharing anchors between authentic and shuffled helps the shuffle contrast but does not repair the off contrast. A preservation-only trained adapter or an exactly justified zero-update preservation mechanism is required before adapter necessity can be attributed to experience.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C009_RANK16_QV_IS_A_RECIPE_GUESS_WITH_NO_ACTUAL_ROW_FIT_GATE",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "Qwen2.5-32B rank-16 alpha-16 q/v-only LoRA is a plausible conservative guess, but there is no evidence that it is a viable untuned point for the tiny, structured compiler corpus.",
+      "evidence": "The bound candidates disagree sharply: one recommends rank 16 q/v at learning rate 1e-4, another rank 64 q/k/v/o at 2e-4. The controlling synthesis chooses the former without a model revision, sequence packing, exact token caps, gradient-health criterion, effective update count, or seed policy. T07's tiny synthetic/cached adapter proves masks and mounting, not that actual ORIENT/ACT/REVISE rows produce nondegenerate learning without eroding the actor. A failure therefore says only that one arbitrary point failed; a success remains vulnerable to a lucky trainer or sampling realization.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T07_BOUNDED_NONCLAIM_CANARY", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C010_REWARD_SCORE_AND_MARGIN_ARE_NOT_EXECUTABLE",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "The proposal has a metric menu but no single executable primary score, contrast, or practical-margin rule.",
+      "evidence": "IrInstructionCount/normalized-baseline reward conflates a raw observation with potentially distinct official reward semantics. The bytes do not fix direction, baseline, normalization, epsilon, invalid/timeout/error mapping, target weighting, best-state retention, first-action definition, checkpoint-AUC interpolation, checkpoint-zero treatment, missing cells, or whether validity is part of the primary estimand or a gate. T08 requests AUC, final, first, best, and decisions-to-best without ranking them. T09's material fraction lacks a denominator and behavior when the authentic gain is small or negative. Deriving a target margin from acquisition-only canary variance does not estimate held-out paired-fork, inference-seed, or trainer-seed variability.",
+      "acceptance_test_ids": ["V6CG_T05_OFFICIAL_025_POJ104_STATIC_FIT", "V6CG_T06_OFFLINE_SEMANTICS_AND_SPLIT_SEAL", "V6CG_T07_BOUNDED_NONCLAIM_CANARY", "V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C011_POJ104_FIT_GATE_IS_OPERATIONALLY_STRICT_BUT_SCIENTIFICALLY_UNDERDEFINED",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "Terminal rejection of unchanged CompilerGym 0.2.5/LLVM 10 is good governance, but T05-T07 do not yet establish that POJ104 yields an informative transfer assay.",
+      "evidence": "The archive/LLVM10 dependency, already-local-only rule, unchanged-byte requirement, offline replay, and terminal failure policy are appropriately conservative. But the proposed 8/4 split has no frozen public relatedness features, similarity thresholds, family quotas, spare-candidate rule, minimum source/IR complexity, or positive transfer-opportunity criterion. Excluding exact and near graph/opcode/type/loop neighbors demonstrates nonduplication, not shared learnable structure. Acquisition-only reward headroom does not show target transfer headroom. A tiny handpicked split can therefore be either disguised duplication or four unrelated targets while still passing the prose gate.",
+      "acceptance_test_ids": ["V6CG_T05_OFFICIAL_025_POJ104_STATIC_FIT", "V6CG_T06_OFFLINE_SEMANTICS_AND_SPLIT_SEAL", "V6CG_T07_BOUNDED_NONCLAIM_CANARY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C012_STATIC_FIT_AND_IMPLEMENTATION_GATE_ORDER_REMAINS_AMBIGUOUS",
+      "category": "operations",
+      "severity": "material",
+      "statement": "The proposal defers exact package, projection, parser, split, trainer, and run bytes while marking several tests required before implementation, leaving unclear what can be built to execute those tests.",
+      "evidence": "T05 is required before implementation yet needs inspection of official factory/projection/reward manifests and a public-static split constructor. T01-T04 are also required before implementation but describe fixture packets, compiler manifests, trainer lifecycle, cold replay, and packet diffs that ordinarily require executable artifacts. The human boundary forbids implementing any runner, trainer, packet, benchmark adapter, or test before approval. The systems interpretation resolves this by treating the change as specification-only and requiring a later manifest, but T12 still says a reviewer verifies exact implementation/run bytes before implementation. The stage transition needs a precise authorization for design fixtures/static inspectors versus production implementation.",
+      "acceptance_test_ids": ["V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC", "V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T03_LIFECYCLE_PARITY_AND_COLD_LOAD", "V6CG_T04_VISIBILITY_NONINTERFERENCE", "V6CG_T05_OFFICIAL_025_POJ104_STATIC_FIT", "V6CG_T12_INDEPENDENT_IMPLEMENTATION_AND_SCOPE_REVIEW"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C013_SLEEP_PERSISTENCE_CONTRACT_IS_SELF_CONTRADICTORY",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "T03 says only the adapter persists across sleep, while the cumulative compiler requires the sealed ledger/notebook prefix to persist across sleep.",
+      "evidence": "The graph, wake loop, context candidate, and deterministic cumulative SLEEP loop all retain and reread sealed life records after each sleep. T03's expected text first permits ledger/notebook and adapter within life, then says only adapter persists across sleep. A literal implementation either deletes the compiler's source evidence or keeps undeclared state. The systems interpretation correctly flags this and proposes distinguishing nonparametric source/audit state from learned parameter state; the change itself must make that distinction normative.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T03_LIFECYCLE_PARITY_AND_COLD_LOAD", "V6CG_T12_INDEPENDENT_IMPLEMENTATION_AND_SCOPE_REVIEW"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C014_VISIBILITY_MATRIX_COMBINES_CHANNELS_WITH_OPPOSITE_PERMISSIONS",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "Several visibility items are composites that cannot truthfully receive one visibility value, so T04 cannot prove the claimed information isolation against the matrix as written.",
+      "evidence": "ASSIGNED_ADAPTER_OR_CONDITION_AND_HIDDEN_TELEMETRY is forbidden to experiential wake and evaluation even though assigned adapter bytes are explicitly read below prompt assembly and must causally affect inference; only condition metadata and telemetry are forbidden. PROCESSES_CACHES_RNG_WORKSPACE_AND_EVALUATION_DESCENDANTS is forbidden to wake even though the current task workspace and manifest are declared visible and writable; only persistence beyond the task is forbidden. PUBLIC_TASK_AND_OFFICIAL_OUTCOME is derived-only at the split auditor even though public static task metadata is visible and outcomes are forbidden. SEALED_SPLIT_AND_HIDDEN_EVALUATOR_DATA similarly combines public integrity hashes with forbidden hidden scorer contents. Prose exceptions do not repair a cell whose enumerated status is wrong.",
+      "acceptance_test_ids": ["V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC", "V6CG_T03_LIFECYCLE_PARITY_AND_COLD_LOAD", "V6CG_T04_VISIBILITY_NONINTERFERENCE", "V6CG_T05_OFFICIAL_025_POJ104_STATIC_FIT", "V6CG_T06_OFFLINE_SEMANTICS_AND_SPLIT_SEAL"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C015_PARSED_THOUGHT_BOUNDARY_IS_GOOD_BUT_NOT_BYTE_CLOSED",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The private-thought endpoint prohibition is scientifically sound, but the retained parsed-text and ORIENT target boundary remains ambiguous enough to reintroduce self-authored rationale through typed fields.",
+      "evidence": "The packet and operation schemas retain focus.reason, strategy, active_question, uncertainties, expected_public_effect, and potentially thought_projection fields. Candidate row prose at one point targets reason_tag, while the change says rationale/hypothesis is input or provenance only and the loss mask is one on typed focus or operation targets. If reason, strategy, or expected effect are inside the typed focus target, self-authored explanatory text is loss-bearing despite the stated prohibition. T02 says targets are exactly frozen but does not enumerate the token-level subfield mask; T10 audits after implementation. The architecture must define which parsed semantic fields persist, which are input-only, and which exact tokens may receive loss.",
+      "acceptance_test_ids": ["V6CG_T01_CONTEXT_AND_ONE_LOOP_STATIC", "V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C016_STAGE_C_NONCLAIM_AND_MECHANISM_LANGUAGE_CONFLICT",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "Stage C is correctly fenced away from paper and lifetime claims, but calling a one-life result an outcome-grounded mechanism observation still exceeds its design.",
+      "evidence": "The proposal repeatedly labels Stage C non-claim, headline-ineligible, and incapable of population, slope, saturation, or general-agent inference. Yet V6_CLAIM_MECHANISM_ONLY and T09 define a positive mechanism observation from one life, four targets, one adapter-training realization, an adapter-off contrast confounded by preservation updates, and a post-selection shuffle that does not test outcome selection. Chance, order, seed, style, and split idiosyncrasy remain live explanations. The honest output is a wiring/feasibility result that either falsifies this exact realization or motivates a separately preregistered replicated mechanism study; it is not itself mechanism evidence.",
+      "acceptance_test_ids": ["V6CG_T08_STAGE_C_PAIRED_ON_POLICY_NONCLAIM", "V6CG_T09_CHECKPOINT_CAUSAL_FORKS", "V6CG_T10_STYLE_REUSE_AND_PRIVATE_THOUGHT_EXCLUSION", "V6CG_T11_STAGE_D_FRESH_REPLICATION_GATE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_C017_BYTE_DETERMINISTIC_TRAINING_IS_NOT_OPERATIONALIZED",
+      "category": "operations",
+      "severity": "material",
+      "statement": "The proposal alternates between deterministic compilation and byte-deterministic adapter rebuild without defining the hardware/software scope in which LoRA bytes must reproduce.",
+      "evidence": "Canonical row selection, rendering, and derangement can be byte-deterministic. BF16 Qwen training with AdamW may still vary across kernels, devices, library builds, distributed settings, and nondeterministic operators. T02's expected language joins fresh-optimizer cumulative rebuild and shuffled derangement under byte determinism, T03 requires cold replay, and T06 pins an old LLVM stack but no exact model-training stack is bound. The contract must distinguish manifest determinism, same-platform numerical tolerance, exact serialized-byte identity, and behavioral cold-load reproducibility; otherwise a legitimate platform difference or a hidden retry can be interpreted opportunistically.",
+      "acceptance_test_ids": ["V6CG_T02_WRITER_AUTHORITY_AND_DETERMINISM", "V6CG_T03_LIFECYCLE_PARITY_AND_COLD_LOAD", "V6CG_T07_BOUNDED_NONCLAIM_CANARY", "V6CG_T12_INDEPENDENT_IMPLEMENTATION_AND_SCOPE_REVIEW"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "ASSIGNED_ADAPTER_OR_CONDITION_AND_HIDDEN_TELEMETRY conflates mounted adapter bytes, which are an intentional inference input, with condition labels and telemetry, which must be forbidden.",
+    "PROCESSES_CACHES_RNG_WORKSPACE_AND_EVALUATION_DESCENDANTS conflates the visible current task workspace with prohibited cross-boundary workspace, cache, process, RNG, and evaluation carryover.",
+    "PUBLIC_TASK_AND_OFFICIAL_OUTCOME gives one status to public static split metadata and forbidden outcome values; the split auditor needs separate information items.",
+    "SEALED_SPLIT_AND_HIDDEN_EVALUATOR_DATA conflates public task/integrity hashes available to the static auditor with hidden evaluator or scorer contents that remain forbidden.",
+    "There is no EVAL_HARNESS_FORK stage, so model-visible parity and sterility for the primary HARNESS held-out condition cannot be represented or tested.",
+    "Ledger/notebook persistence across sleep is required by the compiler but contradicted by T03's only-adapter-persists wording, leaving an undeclared state channel or an impossible rebuild.",
+    "The matrix does not separately represent parsed public focus/reason/expected-effect fields, raw unparsed output, and token-level loss masks, so the no-private-thought rule is not auditable at field granularity.",
+    "The split auditor and offline integrity auditor are collapsed around hidden evaluator data; designated non-cognitive hash inspection must be separated from analysis that receives only aggregate metrics."
+  ],
+  "missing_acceptance_tests": [
+    "V6CG_MT01_HARNESS_CHECKPOINT_EVALUATION: cold-start the independently evolving HARNESS checkpoint at every sealed target checkpoint, add explicit visibility cells, and predeclare treatment-minus-HARNESS target contrasts alongside authentic/off/shuffle forks.",
+    "V6CG_MT02_PRIMARY_SCORE_AND_MARGIN: bind one official reward/observation identifier and one correctness-gated per-target scalar, direction, normalization, epsilon, missing/invalid/timeout rule, target weighting, checkpoint summary, and absolute-plus-relative margins before target opening.",
+    "V6CG_MT03_ORDER_AND_SEED_REALIZATION: specify task-order assignments and independently repeat inference and adapter-training seeds enough to distinguish a wiring realization from a treatment effect; never describe one opposite-order pair as counterbalanced evidence.",
+    "V6CG_MT04_OUTCOME_SELECTION_FACTORIAL: add separately named no-outcome/self-imitation, pre-selection outcome-binding, post-selection state-target derangement, and preservation-only adapters so outcome selection, useful pairing, fixed preservation training, and generic SFT are not pooled.",
+    "V6CG_MT05_SEMANTIC_DERANGEMENT_STRENGTH: require minimum distinct targets and stratum entropy, no semantic fixed points, quantified state-target incompatibility, and a predeclared fallback/fail rule without changing authentic row budgets.",
+    "V6CG_MT06_ACTUAL_CORPUS_TRAINABILITY: before sealed targets open, train only on acquisition-derived golden rows and verify nonzero target-token gradients, fixed update/touch counts, numerical stability, cold-load effect, unrelated-instruction preservation, and no parser/style collapse under the exact Qwen revision and LoRA recipe.",
+    "V6CG_MT07_RELATEDNESS_AND_TRANSFER_HEADROOM: freeze public POJ104 feature extraction, family quotas, thresholds, spare candidates, deduplication, complexity bounds, and a target-blind positive relation/opportunity diagnostic rather than relying only on exclusion.",
+    "V6CG_MT08_PERSISTENCE_AND_VISIBILITY_ATOMIC_ITEMS: split adapter bytes from condition telemetry, current workspace from forbidden carryover, public split metadata from outcomes/hidden scorer data, and immutable ledger evidence from learned state; test the full Cartesian matrix including HARNESS evaluation.",
+    "V6CG_MT09_TOKEN_LEVEL_THOUGHT_MASK: enumerate every parsed ORIENT/THINK_ACT field and exact loss mask, proving that reason, rationale, prediction, expected-effect, uncertainty, and unparsed/private text are never positive targets or endpoints.",
+    "V6CG_MT10_PRESERVATION_ONLY_CONTROL: train the fixed anchor/preservation objective with no experiential rows under identical optimizer and update accounting, then compare authentic, preservation-only, null, and shuffled adapters on validity and reward.",
+    "V6CG_MT11_TRAINING_REPRODUCIBILITY_SCOPE: distinguish byte-identical compile artifacts from exact adapter-byte reproducibility and behavioral tolerance, pin the numerical stack, and forbid retries or device-dependent pass/fail reinterpretation.",
+    "V6CG_MT12_PILOT_LANGUAGE_AND_DISPOSITION: force Stage C output to one of wiring-failure, recipe-specific feasibility signal, or indeterminate; reserve outcome-grounded mechanism language for fresh replicated lives with the causal factorial and life-level uncertainty."
+  ],
+  "human_questions": [
+    "Does Rohin want Stage C to compare the two on-policy agents on the sealed targets, in which case should a HARNESS checkpoint evaluation fork and treatment-minus-HARNESS primary contrast be added explicitly?",
+    "Is one paired 8-task life intended only as a recipe-specific wiring/feasibility pilot, with all mechanism language deferred until independent lives and training/inference realizations replicate?",
+    "Does full-harness parity mean only parity within the fixed capped notebook/retriever, rather than evidence that the baseline represents the strongest ordinary external-memory agent?",
+    "Should the post-selection BINDING_SHUFFLED fork retain its honest state-to-operation-binding interpretation, while a separate pre-selection/no-outcome control is required before using outcome-grounded causal language?",
+    "Will Rohin require a preservation-only trained adapter so authentic-versus-off does not attribute fixed anchor-training effects to life experience?",
+    "Which exact official CompilerGym identifier and formula, per-target scalar, checkpoint summary, invalid/missing rule, and absolute and relative practical margins should govern Stage C?",
+    "What exact public POJ104 relation features, thresholds, quotas, spare-candidate policy, and target-blind transfer-opportunity test must pass before the 8/4 split is considered scientifically fit?",
+    "Does Rohin accept rank-16 q/v on the exact pinned Qwen2.5-32B revision as an intentionally arbitrary first recipe whose failure has no architectural force, or should an acquisition-only actual-row fit gate be mandatory?",
+    "Should ledger/notebook and immutable receipts explicitly persist across sleep as nonparametric source evidence while only the LoRA persists as learned parameter state?",
+    "Which parsed focus, strategy, reason, uncertainty, prediction, and expected-effect fields may persist as public provenance, and which exact subfields are forbidden from receiving loss?",
+    "Will Rohin require the visibility matrix to split mounted bytes from hidden condition telemetry and current task workspace from prohibited cross-task state before implementation ratification?",
+    "Should T01-T05/T12 be reordered into specification validation, separately authorized static inspectors/fixtures, scoped implementation, offline substrate canary, and only then hardware/model execution?"
+  ]
+}

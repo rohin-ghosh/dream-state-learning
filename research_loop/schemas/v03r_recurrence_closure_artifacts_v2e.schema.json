@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"v03r-recurrence-closure-artifacts-v2e",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","run_id","change_id","phase","artifact_type","payload","payload_sha256","provenance"],
+  "properties":{
+    "schema_version":{"const":"v03r-recurrence-closure-artifact-v2e"},
+    "run_id":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "change_id":{"const":"chg_20260901_v03r_recurrence_closure_dev_v2e"},
+    "phase":{"enum":["STATIC","ZERO_SCIENCE","PHASE_A","PHASE_B","TERMINAL"]},
+    "artifact_type":{"type":"string","minLength":1,"maxLength":96,"pattern":"^[a-z0-9_]+$"},
+    "payload":{"type":"object"},
+    "payload_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "provenance":{"type":"object","additionalProperties":false,"required":["lock_sha256","ratification_binding_sha256","created_after_phase_a"],"properties":{"lock_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"ratification_binding_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"created_after_phase_a":{"type":"boolean"}}}
+  }
+}

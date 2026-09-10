@@ -1,0 +1,62 @@
+{
+  "artifacts": {
+    "architecture_change": {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/change.json",
+      "sha256": "3d8dd3739cb506ed26e6d3fd1ad13785aa0db3da7190e11aea54529a3335bd50"
+    },
+    "architecture_consensus": {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/consensus.json",
+      "sha256": "b56561fa6903a5ac48fa9c2fda09522e7747e37bd3a270ddb17b762b6750bdca"
+    },
+    "architecture_critique": {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/critique.json",
+      "sha256": "061f187148db74fa444dce9401e297f70a62bea16ce543c7459ffc5f80ff6ef1"
+    },
+    "architecture_interpretation:ppc5r8-science-interpretation": {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/interpretation_science.json",
+      "sha256": "eab28fdc407565619cc14d824c21a3722b61f3e4061390f31a3581ee2a7c4115"
+    },
+    "architecture_interpretation:ppc5r8_systems_executable_closure": {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/interpretation_systems.json",
+      "sha256": "5034f5e923e75f9aef6a085f3f58cf961fb0d04a8028491b220089d6044841df"
+    }
+  },
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r8",
+  "created_at": "2026-09-06T04:48:34.179094+00:00",
+  "history": [
+    {
+      "artifact_sha256": "3d8dd3739cb506ed26e6d3fd1ad13785aa0db3da7190e11aea54529a3335bd50",
+      "at": "2026-09-06T04:48:34.179250+00:00",
+      "transition": "proposed->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "5034f5e923e75f9aef6a085f3f58cf961fb0d04a8028491b220089d6044841df",
+      "at": "2026-09-06T04:59:37.082941+00:00",
+      "source_state_sha256": "40d6445852fd6c1a33d3b7afd7f46a125881fafa165e5af274bdb25140d09c77",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "eab28fdc407565619cc14d824c21a3722b61f3e4061390f31a3581ee2a7c4115",
+      "at": "2026-09-06T05:00:01.461996+00:00",
+      "source_state_sha256": "e38a245d507a4488247d057c99ef9c0dbf3231fb6f4df40476e778ad13a30437",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "061f187148db74fa444dce9401e297f70a62bea16ce543c7459ffc5f80ff6ef1",
+      "at": "2026-09-06T05:11:38.907296+00:00",
+      "source_state_sha256": "d4d3974d6b1b2afc4455ddba587f027b1ae7576e1336e750b7a014a233521e0b",
+      "transition": "collecting_interpretations->awaiting_consensus"
+    },
+    {
+      "artifact_sha256": "b56561fa6903a5ac48fa9c2fda09522e7747e37bd3a270ddb17b762b6750bdca",
+      "at": "2026-09-06T05:23:38.039483+00:00",
+      "source_state_sha256": "26af834a2636c70e12b8e730e1ff1102769519583262d1cd00ab192bc4ab7ff9",
+      "transition": "awaiting_consensus->human_required"
+    }
+  ],
+  "human_required": true,
+  "implementation_authorized": false,
+  "phase": "human_required",
+  "schema_version": 1,
+  "updated_at": "2026-09-06T05:23:38.039412+00:00"
+}

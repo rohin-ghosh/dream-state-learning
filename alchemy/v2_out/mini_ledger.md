@@ -827,3 +827,33 @@ config preserved in alchemy/v2_out/gold_control/ (committed).
   shared lands — mechanical public-data comparison, no oracle), roles
   prompt asks for exhaustive pairs, k=6. The emerging pattern at every
   stage: MODEL PROPOSES, MECHANICAL PUBLIC-DATA CHECK FILTERS.
+
+## DREAM LADDER v5 FINAL: VALID NEGATIVE DIRECT-PROPOSAL DIAGNOSTIC
+- Permanent label: task-family-scaffolded direct-parent-proposal
+  ceiling/reference; independent cumulative sample prefixes, NOT recurrent
+  dreaming and not headline-eligible. Aligned seed 0 development only;
+  53 generations, 50,297 prompt tokens, 73,319 output tokens, not matched to
+  v4 compute.
+- Exact parent-set proposal recall by prefix: 0/12 -> 3/12 -> 3/12 -> 3/12.
+  Four samples did not compound beyond sample 2. Of 270 eligible candidate
+  lines, 269 parsed, one malformed, zero overflow.
+- The public comparison gate retained zero true parent claims: supported
+  precision 0/5. The final corpus retained 12 parent claims, all 12 false
+  (five false supported claims plus seven explicitly contradicted legacy
+  fallbacks); true retained presence 0/12. This corpus is barred from LoRA
+  transport.
+- Root defect: the role path admitted self-pairs. Final unique role proposals
+  were 10/38 true; retained role P/R was 9/24 = .375 precision and 9/30 = .30
+  recall. The 15 false retained role edges were trivial self-pairs, which pass
+  an agreement check by construction and poison blind parent arithmetic.
+- Downstream dreamtext scored 1/30 (D0 1/6; D1 0/6; D2 0/6; D3 0/12), but
+  29/30 outputs were malformed: the 32B emitted several operations in one
+  completion, usually until the 150-token cap. This is an interface/runtime
+  failure, not a clean thinker-capability estimate. The frozen run also logged
+  a missing attention-mask warning.
+- Independent fresh Sol review and deterministic artifact analysis agree: the
+  run is hash/accounting-valid and scientifically negative. Preserve it; do
+  not replicate or transport it. The direct-parent method is not repaired into
+  the headline. Its lessons transfer to the recurrent design: prohibit
+  self-edges, preserve malformed outputs as failures rather than repairing
+  them, and enforce one local operation per call.

@@ -1,0 +1,21 @@
+{
+  "artifact_type": "private_typed_action_generated_metamorphic_spec",
+  "schema_version": 1,
+  "index_domain": "all unsigned 32-bit integers",
+  "selection_after_source_freeze": "Let H=SHA256(validator_a_source_sha256 || validator_b_source_sha256 || normative_bundle_manifest_sha256), with each digest decoded to 32 bytes before concatenation. For j=0..63, index_j is the big-endian uint32 at H[(4*j) mod 32:(4*j) mod 32+4] XOR (0x9e3779b9*j mod 2^32). Duplicate indices advance by +1 modulo 2^32 until unique. Validator sources must commit before H is computed.",
+  "case_generator": [
+    "D=SHA256(ASCII('PC17_V3|') || uint32be(index)).",
+    "before_state=(D[0] mod 17)-8; delta=(D[1] mod 9)-4; prose_codepoint=U+1F300+(big_endian_uint16(D[2:4]) mod 768).",
+    "Base case is one valid accepted envelope with exact private_step arguments delta and assistant prose containing prose_codepoint and a conflicting valid-looking delta ((delta+1) mod 5).",
+    "family=D[4] mod 8. Family 0 is valid. Family 1 changes only prose. Family 2 duplicates the delta key in arguments_json. Family 3 emits two calls. Family 4 changes tool name. Family 5 makes outer JSON malformed at offset 1+(D[5] mod (length-1)). Family 6 changes one relational hash after otherwise complete rendering. Family 7 creates an over-limit arguments_json plus malformed tail.",
+    "Expected result is computed only from contract first_error_precedence and structural_oracle; no golden or mutation hash table is an oracle. Family 0 and 1 are accepted; families 2..7 return their earliest applicable registered error."
+  ],
+  "anti_allowlist_requirements": [
+    "Run both validators on all 64 post-source-freeze selected indices and on 64 additional indices obtained by bitwise complement.",
+    "Reject validator source containing either golden artifact SHA-256, any mutation artifact SHA-256, a branch on a candidate whole-file SHA-256, or a table keyed by selected indices.",
+    "Require at least 16 accepted and 16 rejected generated cases; otherwise derive another 128 unique indices by incrementing the last index.",
+    "For every valid generated case independently recompute parse, transition, reduced score, record chain, close, and evidence relations.",
+    "For every invalid case require both validators to agree on the exact first error before the comparator sees either output."
+  ],
+  "claim_limit": "Generated tests show rule recomputation over a large structural domain; they still do not observe a runtime operation or establish scientific behavior."
+}

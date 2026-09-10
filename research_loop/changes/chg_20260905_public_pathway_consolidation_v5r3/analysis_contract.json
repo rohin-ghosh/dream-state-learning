@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.analysis_contract.v3",
+  "sampling": {
+    "unit": "recipient_life",
+    "population": "exact sealed recipient-life roster",
+    "pairing": "all required arms are paired pre-treatment clones within life",
+    "lower_unit_order": "item_id, clone_id, edge_position, endpoint_id lexicographic",
+    "within_life": "equal-weight arithmetic mean over every prospectively assigned lower unit",
+    "across_life": "equal-weight arithmetic mean over every sealed recipient life",
+    "no_pseudoreplication": true
+  },
+  "endpoint_ranges": {
+    "correct_supported_selection": [0, 1],
+    "false_selection_rate": [0, 1],
+    "not_found_rate": [0, 1],
+    "normalized_action_value": [0, 1]
+  },
+  "status_rules": [
+    {"raw_status":"VALID","installed":"declared artifact or context","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"PUBLISH_EMPTY","installed":"empty context or zero roots","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"VALID_EMPTY","installed":"none","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"ABSTAIN","installed":"none","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"DREAM_INVALID_OUTPUT","installed":"none","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"PROJECTION_REJECTED","installed":"none for rejected nominee","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"WRITER_EMPTY","installed":"none","downstream":"execute","missing":false,"endpoint":"observed","claim_blocker":false},
+    {"raw_status":"TRAIN_FAILED","installed":"adapter off","downstream":"execute","missing":false,"endpoint":"observed; training resource dose retained","claim_blocker":false},
+    {"raw_status":"DREAM_MISSING_NO_RETRY","installed":"none","downstream":"execute if possible","missing":true,"endpoint":"directionally adverse bound","claim_blocker":false},
+    {"raw_status":"MODEL_MISSING_NO_RETRY","installed":"unchanged","downstream":"no retry","missing":true,"endpoint":"directionally adverse bound","claim_blocker":false},
+    {"raw_status":"PROVIDER_MISSING_NO_RETRY","installed":"unchanged","downstream":"no retry","missing":true,"endpoint":"directionally adverse bound","claim_blocker":false},
+    {"raw_status":"CONSTRUCTION_FAIL","installed":"none","downstream":"no dispatch","missing":false,"endpoint":"none","claim_blocker":true},
+    {"raw_status":"RUN_INVALID","installed":"invalid","downstream":"halt dependent run","missing":false,"endpoint":"none","claim_blocker":true}
+  ],
+  "missing": {
+    "benefit_contrast": "For treatment-minus-control with higher beneficial, substitute finite_min for missing treatment and finite_max for missing control; if both are missing apply both substitutions.",
+    "lower_better_contrast": "Orient every safety contrast as control-minus-treatment benefit, then apply the same adverse substitution rule.",
+    "rate": "For each claim and arm, numerator is sealed recipient lives with at least one required missing observation; denominator is all assigned recipient lives.",
+    "limit": "A rate greater than the run-locked threshold blocks; equality is allowed."
+  },
+  "paired_randomization": {
+    "statistic": "For each named treatment-control gate, compute within-life benefit d_i after adverse substitution and lower-unit aggregation; observed statistic is mean_i(d_i - margin).",
+    "null": "sharp additive boundary d_i = margin",
+    "distribution": "Enumerate all 2^N within-life label swaps. For swap vector s_i in {-1,+1}, statistic is mean_i(s_i * (d_i - margin)).",
+    "p_value": "Count enumerated statistics greater than or equal to the observed statistic, including the observed assignment, divided by 2^N.",
+    "interval": "Invert the same exact test over the run-locked finite margin grid; report the closed set of margins not rejected. The grid is numeric run-lock content; the inversion algorithm is fixed here.",
+    "direction": "one-sided; larger benefit is better",
+    "maximum_lives": 20,
+    "tie_rule": "greater than or equal counts against release"
+  },
+  "gates": {
+    "D1A": [
+      {"gate_id":"D1A_READER_GT_ADAPTER_OFF","benefit":"READER_LORA correct_supported_selection minus ADAPTER_OFF","kind":"superiority"},
+      {"gate_id":"D1A_READER_GT_WRONG_LIFE","benefit":"READER_LORA correct_supported_selection minus WRONG_LIFE_ADAPTER","kind":"specificity_superiority"},
+      {"gate_id":"D1A_READER_GT_BINDING_SHUFFLE","benefit":"READER_LORA correct_supported_selection minus MATCHED_BINDING_SHUFFLED_READER","kind":"specificity_superiority"},
+      {"gate_id":"D1A_FALSE_SELECTION_SAFE","benefit":"locked false-selection ceiling minus READER_LORA false_selection_rate","kind":"noninferiority_to_ceiling"},
+      {"gate_id":"D1A_NOT_FOUND_SAFE","benefit":"locked NOT_FOUND ceiling minus READER_LORA not_found_rate","kind":"noninferiority_to_ceiling"}
+    ],
+    "D1B": [
+      {"gate_id":"D1B_AUTHENTIC_GT_EACH_CUT","benefit":"AUTHENTIC_PATH normalized_action_value minus each edge-specific CUT value","kind":"one gate per edge position; all required"},
+      {"gate_id":"D1B_AUTHENTIC_GT_EACH_TWIN","benefit":"AUTHENTIC_PATH normalized_action_value minus each edge-specific TWIN value","kind":"one gate per edge position; all required"},
+      {"gate_id":"D1B_SHAM_NONINFERIOR","benefit":"SHAM normalized_action_value minus AUTHENTIC_PATH","kind":"noninferiority; demonstrates intervention machinery alone is not harmful"},
+      {"gate_id":"D1B_AUTHENTIC_GT_ONE_SHOT","benefit":"AUTHENTIC_PATH normalized_action_value minus ONE_SHOT_READ","kind":"adaptive_interleaving_superiority"},
+      {"gate_id":"D1B_AUTHENTIC_GT_OPEN_LOOP","benefit":"AUTHENTIC_PATH normalized_action_value minus OPEN_LOOP","kind":"feedback_recurrence_superiority"}
+    ],
+    "D1C": [
+      {"gate_id":"D1C_AUTHENTIC_GT_RECENCY","benefit":"AUTHENTIC_DREAM_CONTEXT normalized_action_value minus RECENCY_CONTEXT","kind":"total_policy_superiority"},
+      {"gate_id":"D1C_AUTHENTIC_GT_PERMUTED","benefit":"AUTHENTIC_DREAM_CONTEXT normalized_action_value minus PERMUTED_CONTEXT","kind":"total_policy_superiority"}
+    ],
+    "D1D": [
+      {"gate_id":"D1D_SELECTION_GT_RECENCY","benefit":"DREAM_TO_SLEEP correct_supported_selection minus RECENCY_TO_SLEEP","kind":"total_policy_superiority"},
+      {"gate_id":"D1D_SELECTION_GT_PERMUTED","benefit":"DREAM_TO_SLEEP correct_supported_selection minus HASH_PERMUTED_TO_SLEEP","kind":"total_policy_superiority"},
+      {"gate_id":"D1D_ACTION_GT_RECENCY","benefit":"DREAM_TO_SLEEP normalized_action_value minus RECENCY_TO_SLEEP","kind":"total_policy_superiority"},
+      {"gate_id":"D1D_ACTION_GT_PERMUTED","benefit":"DREAM_TO_SLEEP normalized_action_value minus HASH_PERMUTED_TO_SLEEP","kind":"total_policy_superiority"}
+    ]
+  },
+  "assay_decision": {
+    "direction_margin_rule": "Every named gate's observed benefit must be strictly greater than its run-locked margin.",
+    "intersection_union_p": "If every direction/margin rule passes, assay_p is max of all named gate p-values, expanding every per-edge gate separately. Otherwise assay blocks.",
+    "safety": "Safety gates are conjunctive and never descriptive substitutes.",
+    "missing": "Missingness limit is conjunctive for every required arm.",
+    "blockers": "CONSTRUCTION_FAIL or RUN_INVALID blocks the dependent assay before inference."
+  },
+  "family": {
+    "claims": ["PPC5_D1A_SUPPORTED_SELECTION", "PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE", "PPC5_D1C_DREAM_CONTEXT_POLICY", "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY"],
+    "procedure": "Holm step-down on four assay p-values ascending; claim_id lexicographic tie-break.",
+    "thresholds": "At ordered position j in 1..4, reject while p_(j) <= alpha/(5-j); stop at first failure and retain it and all later hypotheses.",
+    "intersection": "The four-assay label releases only if all four assay claims reject and all global gates pass; it adds no fifth test."
+  },
+  "global_blocker_precedence": ["CONSTRUCTION_FAIL", "RUN_INVALID", "missingness_limit", "failed_global_test", "failed_claim_local_test_or_cell", "failed_assay_direction_or_composite", "failed_Holm", "BLOCKED"],
+  "power": {
+    "purpose": "Conservative pre-run familywise probability that all four assays release.",
+    "inputs_locked_later": ["N_lives_at_most_20", "per_gate_probability_life_benefit_exceeds_margin", "arm_specific_missing_probability", "minimum_familywise_power", "alpha"],
+    "algorithm": "For each gate, compute the exact binomial probability that its conservative one-sided favorable-sign count p-value is at most alpha/4 after replacing a life with failure whenever its required arm is missing. Let power_g be that probability. Familywise lower bound is max(0, 1 - sum_g(1-power_g)). Use the worst registered input scenario. Pre-model authority requires lower bound >= the locked floor.",
+    "scope": "This is a conservative design gate, not the primary inference method and not an observed-data analysis."
+  },
+  "resource_accounting": {
+    "fields": ["accounting_mode", "recipient_life_id", "cell_id", "stage_id", "event_id", "shared_event_id", "model_calls", "input_tokens", "output_tokens", "training_rows", "training_tokens", "updates", "adapter_rank", "adapter_bytes", "wall_seconds", "gpu_seconds", "energy_value", "energy_available", "energy_unavailable_reason", "cost_value", "cost_available", "cost_unavailable_reason", "derivation_hashes"],
+    "inclusive": "Each cell includes every dependency and counts a shared DREAM event fully for each dependent cell.",
+    "marginal": "Shared physical work is recorded once under presealed SHARED_DREAM; a cell records only incremental work.",
+    "physical_total": "Deduplicate by event_id and shared_event_id before summing.",
+    "claim_role": "Reported treatment dose/outcome only; no normalization, regression, or Pareto result gates a causal release."
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "p1_v03r_canary_v1a_science",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1a",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "8353d35558926c240b966824e089d073789142f1537ea41427f809f5f8763bcb",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Material-change deliberation, exact ratification, independent review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 claim, self-check arm, prompted recurrence, and verifier boundary."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Paired action-outcome world and current leaking precheckpoint export."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing paired construct, local-window, edge-removal, and shortcut tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/consensus.json",
+      "sha256": "085dc5075c3fbe1561d6b81e90448847c8fddf8fc44dbfbd07a413c7f23b2bdd",
+      "purpose": "Hash-bound rework disposition that v1a must resolve without scope expansion."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_canary_v1a_science_repair.md",
+      "sha256": "6f20b436c02fe4198ba0ffd77927fc34315af08a03a5ec4130b751e93e2ea1f5",
+      "purpose": "Fresh pre-proposal science repair on fixed corpus, honest self-review, typed depth, matched controls, interventions, claims, and accounting."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/human_directive.txt",
+      "sha256": "e4a6e0e5e89cc8486469eb7cd77d432a7ef0a8fc7a9c28cfa20b86097593e544",
+      "purpose": "Verbatim owner constraints; not ratification."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/experiment_spec.md",
+      "sha256": "6c59af5e63303dfdbbdaf033fa414a9f107a643a040925adbda69cf22cefca20",
+      "purpose": "Exact scientific question, stages, arms, gates, accounting, and maximum claims."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/canary_config.json",
+      "sha256": "5a55212c5e2211cc0e4b3ab6ca4bdcf3fae4c6145907a9d6f4e8dfb3c1081eef",
+      "purpose": "Pinned worlds, models, decoding, schedules, adapter recipe, stages, and exact maxima."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/execution_contract.json",
+      "sha256": "eabce6002497b8e3039679398878af96a205a65f9bf3ecc022740c0044da4166",
+      "purpose": "Exact public projection, typed rows, reducer, self-check view, reader, corpus, isolation, interventions, authority, and accounting."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/dream_prompt.md",
+      "sha256": "7126654b3f7068ff3a30e4e414ef2b761bfe61f498b1c62d65534ecd5515e6d7",
+      "purpose": "Frozen local connection proposal prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/self_check_prompt.md",
+      "sha256": "fd53da39c511d93948796f81ccb4da208fc26aa5c0e7091c36d272b519490fd2",
+      "purpose": "Frozen blind counterevidence-aware model-reflection prompt with no exact truth access."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think0_prompt.md",
+      "sha256": "8ddab890636661a63a27d557c36c9c5d6ffed861f7a2f1dd9bcbf517bda07c8f",
+      "purpose": "Frozen non-answer goal-return controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think1_prompt.md",
+      "sha256": "a4ab6ba7f112e842af870ed899fd56f83b0a34f697414b9e9f319c0a2d522bb1",
+      "purpose": "Frozen fresh final traversal/composition prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/memory_row.schema.json",
+      "sha256": "27f99605a50d7035872d8ee3e2e29ea8508651dad0163d7b348bd9458bf5a335",
+      "purpose": "Strict memory-row envelope; exact per-kind tuples are bound by execution_contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/dream_operation.schema.json",
+      "sha256": "641c01d5434098bee4527061b2850ad53ba85df8067b08e9d5e9379bc688a672",
+      "purpose": "DREAM phase PASS/CREATE grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/self_check.schema.json",
+      "sha256": "0ad01f520b9ba13a2882b95f0ce523b7e631d0947655192475614264a40a89fc",
+      "purpose": "Blind reflection verdict, support basis, counterevidence, prediction, and confidence grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think0_operation.schema.json",
+      "sha256": "8c6202f4f408732f117bbba58cfe6a65d330656cb069625138bc1d15c8304d89",
+      "purpose": "Phase-legal THINK0 query/reason/request/defer grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/think1_operation.schema.json",
+      "sha256": "9b0915141b60f7242fb01c91f49547925ce0ad46dddf64e0e0572a7374e9faf1",
+      "purpose": "Phase-legal THINK1 query/reason/commit/defer grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/scope_proposal.json",
+      "sha256": "d13fb3ba240a5b3710f1c5e9979a85548b2ffa25bf7b6525eddadcb5095ac91a",
+      "purpose": "Exact requested and forbidden authority."
+    }
+  ],
+  "system_thesis_interpretation": "The proposal is a narrow existence and mechanism canary, not a test of the frozen Paper-1 headline. Its estimand is whether one highly scaffolded, frozen prompted system can turn dispersed public observations from one aligned seed-5 latent-twin pair into typed self-reviewed memory, use the prospectively fixed M1_OWN corpus in a fresh text decision, and, only after that text gate, expose decision-relevant parts of the same registered corpus through two per-life LoRA readers. A green result would be evidence about this one pair and this exact prompting, ontology, schedule, reader, and intervention bundle. It would not estimate reliability, compare against strong memory systems beyond the reported development diagnostics, establish beyond-context advantage or durability, demonstrate autonomous goal discovery, or support scale, continual-learning, action-improvement, or flywheel claims.",
+  "graph_delta_interpretation": "The proposed graph makes important scientific repairs: public projection precedes model work; proposal and model reflection are separated; M0, OWN, and DIST are distinct; M1_OWN is fixed before outcome access; final decisions and donor/path/sham interventions are fresh thinker runs; LoRA is conditional on the fixed text arm; and every route ends at a human terminal. This is the right causal skeleton for separating construction, goal-return allocation, text use, life binding, and parametric access. However, the graph is not yet uniquely executable because the acceptance metadata still labels development-model and live-accounting evidence as required before a generic gpu_run, even though those artifacts can only be produced inside later ordered stages. The model-facing request envelope, recurrent context selectors, gold fixtures, scratch reducer, and adapter candidate-scoring protocol are also not byte-bound, so materially different experiments can occupy the same graph.",
+  "loop_delta_interpretation": "The recurrent loop operationalizes local memory growth rather than demanding a complete proof in one generation, and it correctly treats self-check as fallible same-model reflection rather than exact verification. Literal zero-return M0, matched OWN/DIST budgets, fixed M1_OWN transport, and fresh write-denied THINK1 conditions are scientifically valuable. Yet counts alone do not freeze a recurrence: the identities and order of the 22 REACTIVATE contexts, 16 SLEEP contexts, OWN/DIST views, at-most-six neighbor selection, bounded scratch representation, event-to-witnessed-row mapping, and duplicate proposal reduction all influence which corpus is produced. In particular, identical semantic proposals can carry different citations, verdicts, and support bases, while the contract says semantic hashes deduplicate without defining which provenance/status/view survives. Until those rules are exact, the loop's causal treatment is underdetermined.",
+  "claim_delta_interpretation": "The claim firewall is substantially improved. T-OWN paired correctness plus required citations, exact donor-token substitution, path-prune loss, sham retention, complete visibility, and accounting can support a one-pair statement that this exact scaffold constructed and used life-bound typed memory in text. Return credit is a separate and stricter within-pair treatment contrast and must not be inferred merely from T-OWN success. A passing LoRA stage can at most support immediate, cue- and path-local accessibility for the two fitted adapters, not preservation of the whole corpus, durability, capacity, superiority, or Paper-1 success. The proposed two-adapter wording additionally requires a per-life fidelity criterion; one pooled 96-case threshold can hide a weak adapter behind a strong twin. Any red result localizes a valid failure surface only after precondition and infrastructure invalidity are excluded, and does not identify a unique failed organ.",
+  "visibility_matrix_interpretation": "The intended information firewall is scientifically appropriate: final truth is embargoed until sealed corpora exist, evaluator results have no feedback edge, focus is non-evidentiary, ordinary cognition is life-local, donor visibility is limited to registered interventions, and every operation is stateless. Actual visibility must nevertheless be defined by serialized provider-visible bytes and retained state. The current package does not fully bind those bytes or the scratch/update envelope. More importantly, dreamed rows require a free-text prediction and the reader returns the immutable full row; unless prediction and other free text are structurally excluded from reader/training views or converted to a closed typed form, they remain a channel for label, target-state, or complete-proof information despite the typed fields. Prompt admonitions alone do not close that channel. Audit-only IDs, filenames, arm/life labels, counterevidence selection metadata, scoring data, and cache/index state must remain absent from every model request, with mutation tests comparing the exact final request bytes.",
+  "acceptance_test_ids_addressed": [
+    "P1CA01_SCOPE_HASH_AND_AUTHORITY",
+    "P1CA02_PUBLIC_PROJECTION_MUTATION",
+    "P1CA03_ONTOLOGY_REFLECTION_AND_REDUCER",
+    "P1CA04_READER_CORPUS_AND_ISOLATION",
+    "P1CA05_WORLD_SHORTCUT_AND_DEV_GOLD",
+    "P1CA06_RECURRENT_BRANCH_AND_DISTRACTOR",
+    "P1CA07_HELDOUT_TEXT_AND_INTERVENTIONS",
+    "P1CA08_CONDITIONAL_FIXED_CORPUS_LORA",
+    "P1CA09_RUNTIME_AND_ACCOUNTING",
+    "P1CA10_FRESH_REVIEW_ADVOCATE_AND_CLAIMS"
+  ],
+  "acceptance_test_interpretation": "P1CA01 is the necessary scope and reachability invariant: exact hashes, pinned revisions, fixed M1_OWN transport, exact call ceilings, ordered authority, and unconditional HUMAN_TERMINAL must fail closed. Its stage-specific meaning is not consistent with the generic required_before labels on P1CA05 and P1CA09 and must be repaired before release. P1CA02 must mutate every private or audit-only source independently and compare the final canonical provider request, not an intermediate projection; ordinary public surface mutations should be the only permitted causes of byte changes. P1CA03 must test the full typed lifecycle without semantic truth checking, including exactly one reflection for every valid CREATE, invalid-call consumption, false-supported persistence, conditional support-basis legality, answer-equivalent attacks through every field, and deterministic duplicate/provenance reduction; the present free-text prediction and duplicate-collapse rules are not sufficiently bound. P1CA04 should establish one backend-neutral semantic/view/touch manifest, exact one-null read behavior, audit-history invariance, and strict life/arm/adapter reset isolation; it also needs an exact rule for which status/provenance survives semantic deduplication and an exact LoRA candidate/tie protocol. P1CA05 is a precondition and headroom check, not canary evidence. All 31 predictor gates are appropriate, but population-majority computation, exact GOLD_TEXT/GOLD_TWIN rows and expected donor tokens, RAW_RAG construction, GOLD_OPEN_LOOP behavior, message assembly, and necessary-edge interventions must be frozen; otherwise the development gate is movable. P1CA06 is an implementation invariant rather than scientific evidence. It should reproduce exact schedule identities, views, public distractor selection, literal zero M0 return work, copy-on-write branches, fixed M1_OWN selection without outcomes, and complete receipts under adversarial fake providers; the current package freezes counts and a distractor identity but not all contexts and selection rules. P1CA07 is the primary held-out scientific gate. T-OWN must pass both twins and use registered role/causal rows; donor substitution must yield exact donor-valid tokens; T-PATH must lose paired success; and matched T-SHAM must retain both answers, all under fresh sealed runs. This supports one-pair path-dependent text use. Return credit is earned only with the additional prospective M0/DIST failures and an OWN-only newly supported focus-matching row; base canary success does not imply return credit. P1CA08 is correctly conditional on the complete text/intervention gate and fixed manifests, but candidate scoring, exact error/tie behavior, and fidelity aggregation must be fixed. To support claims about two adapters, each life's 48 cue cases should independently meet the threshold, in addition to paired L-OWN and exact L-TWIN behavior. P1CA09 must reconcile attempted requests, tokenizer-exact tokens, malformed/timeouts, early terminals, candidate scores, adapter mounts, two fits, and all partial artifacts without retries or hidden state. It must be instantiated once per authority stage rather than required in full before the first model stage. P1CA10 correctly requires fresh independent review, separate advocacy, immutable locks, reviewer supremacy, claim linting, and human termination. Freshness, independence, exact reviewed artifact set, and transition-specific pass/fail semantics must be explicit; neither reviewers nor a green canary may ratify, repair, expand, or promote the work.",
+  "assumptions": [
+    "The pre-proposal advisory is context and rationale, while the exact v1a proposal, configuration, execution contract, prompts, schemas, and scope proposal control this interpretation where their numbers differ from the advisory.",
+    "A provider generation is counted per dispatched DREAM, SELF_CHECK, THINK0, THINK1, fidelity, or online-recognition request according to the proposal's categorized ledgers, and an early terminal reduces actual calls but never increases a maximum.",
+    "The phrase loss of paired success means that at least one twin is no longer correct under the registered intervention; it does not imply that both individual decisions fail.",
+    "SELF_REVIEW_SAME_EVIDENCE is a model confidence status over one public lineage and is not independent corroboration, verification, or ground truth.",
+    "No model, provider, GPU, adapter fit, seed-5 exposure, implementation, ratification, or scientific result is authorized by this interpretation."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "P1CA_SCI_A01_STAGE_LABEL_CYCLE",
+      "question": "How can P1CA05, which requires development model calls, and P1CA09, which requires live ledgers, both be required before the generic gpu_run boundary?",
+      "impact": "Literal enforcement is cyclic; loose enforcement permits stage bypass. The ordered DEV_GOLD, HELDOUT_TEXT, and CONDITIONAL_LORA authorities need test-specific predecessor labels."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A02_REQUEST_AND_SCRATCH_BYTES",
+      "question": "What exact message roles, serialization, allowed-state payload, scratch size and reducer, prior-read representation, token limits, and provider request envelope are used for every operation?",
+      "impact": "Different envelopes and scratch reducers can materially change proposal, reflection, traversal, visibility, token accounting, and headroom while passing the narrative contract."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A03_RECURRENT_CONTEXT_SELECTION",
+      "question": "What exact identities, order, and deterministic selection rules define the REACTIVATE, SLEEP, OWN, and DIST contexts and their at-most-six local neighbors?",
+      "impact": "The treatment is not fixed by call counts alone; context selection can determine whether decisive relations are proposed and supported."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A04_DUPLICATE_AND_PROVENANCE_REDUCTION",
+      "question": "When multiple CREATE events have the same semantic key but different citations, predictions, verdicts, or support bases, which immutable row, status, provenance, views, and touch plan survive compilation?",
+      "impact": "Corpus membership and the apparent independence or depth of support can vary across conforming reducers, altering both text and LoRA results."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A05_EVENT_ROW_IDENTITY",
+      "question": "How are projected event IDs, witnessed memory-row IDs, DREAM citations, transitive public lineages, and reader-returned row IDs canonically mapped?",
+      "impact": "Without one mapping, citation validity, lineage classification, depth, deduplication, path pruning, and final-use receipts are not reproducible."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A06_DEVELOPMENT_FIXTURES_AND_MAJORITY",
+      "question": "What exact gold corpus, RAG corpus and retrieval rule, open-loop interface, required-edge fixtures, donor expectations, and definition of population-majority accuracy govern P1CA05?",
+      "impact": "Development headroom and held-out release can be made easier or harder by implementation choices not currently hash-bound."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A07_SHAM_MATCHING",
+      "question": "What deterministic pre-goal rule chooses the T-SHAM rows, what token-mass tokenizer and tolerance are used, and what happens if no equal status/kind/mass match exists?",
+      "impact": "The causal interpretation of path loss versus generic deletion depends on a truly prospective, reproducible, and feasible sham."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A08_LORA_READ_AND_FIDELITY_METRIC",
+      "question": "How are candidate lists truncated and ordered, how does the adapter score candidates, how are ties and NOT_FOUND handled, and is the 0.90 threshold pooled or required per life?",
+      "impact": "Different choices change read accuracy and can allow one adapter to mask failure of the other, weakening the stated two-life access claim."
+    },
+    {
+      "ambiguity_id": "P1CA_SCI_A09_REVIEW_FRESHNESS",
+      "question": "What operationally makes a reviewer fresh and independent, which exact artifacts are mandatory at each transition, and how are incomplete or advocate-rejected stages represented?",
+      "impact": "P1CA10 cannot provide a reproducible non-self-certification gate without exact independence and stage-disposition rules."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "P1CA_SCI_D01_NOT_YET_UNIQUELY_EXECUTABLE",
+      "statement": "I disagree that the current bound files define one exact executable canary suitable for ratification.",
+      "rationale": "The causal skeleton is strong, but model-request bytes, scratch evolution, recurrent context selection, gold fixtures, duplicate/provenance reduction, sham selection, adapter candidate scoring, and stage-specific prerequisite semantics remain materially underbound.",
+      "proposed_resolution": "Publish a byte-bound revision that resolves P1CA_SCI_A01 through P1CA_SCI_A09 with canary-specific tables and fixtures, without adding broader experiments or a general orchestration framework."
+    },
+    {
+      "disagreement_id": "P1CA_SCI_D02_FREE_TEXT_REOPENS_ANSWER_EQUIVALENCE",
+      "statement": "I disagree that removal of answer-valued tuple fields alone closes answer-equivalent durable memory.",
+      "rationale": "Every dreamed memory requires a free-text prediction, the memory-row schema permits arbitrary printable ASCII, and the reader promises the immutable full row. A prompt prohibition is not a structural firewall against labels, target-state conclusions, proof summaries, or aliases in that field or in reflection text.",
+      "proposed_resolution": "Make predictions closed typed local values per row kind, or keep all free-text prediction/reason/confidence material audit-only and absent from corpus views, reader results, and training data; add adversarial alias and proof-encoding cases to P1CA03 and P1CA04."
+    },
+    {
+      "disagreement_id": "P1CA_SCI_D03_GENERIC_REQUIRED_BEFORE_IS_INCOHERENT",
+      "statement": "I disagree with retaining generic required_before=gpu_run metadata for evidence that is itself produced by development or live model stages.",
+      "rationale": "P1CA05 cannot pass before its development generations, and a complete P1CA09 live ledger cannot pass before the requests it audits. This conflicts with the proposal's otherwise correct monotone authority graph.",
+      "proposed_resolution": "Bind CPU-only invariants before DEV_GOLD, P1CA05 after DEV_GOLD before HELDOUT_TEXT, P1CA07 after HELDOUT_TEXT before CONDITIONAL_LORA, and stage-local P1CA09/P1CA10 instances at every transition and terminal."
+    },
+    {
+      "disagreement_id": "P1CA_SCI_D04_POOLED_FIDELITY_TOO_WEAK_FOR_TWO_ADAPTERS",
+      "statement": "I disagree that a pooled fidelity threshold over 96 cue cases is sufficient for the proposed claim about two per-life adapters.",
+      "rationale": "One near-perfect adapter can compensate numerically for a materially weaker twin, while the claim says both life corpora remained accessible through their respective adapters.",
+      "proposed_resolution": "Require each life independently to achieve at least 0.90 on its 48 frozen cues, report both exact numerators and denominators, and retain the paired L-OWN and exact donor-token L-TWIN gates."
+    },
+    {
+      "disagreement_id": "P1CA_SCI_D05_DEVELOPMENT_GATE_NOT_FROZEN_ENOUGH",
+      "statement": "I disagree that P1CA05 presently establishes a fixed nonshortcut headroom precondition.",
+      "rationale": "The numerical shortcut thresholds are useful, but the exact majority calculation, gold memories, raw-RAG construction, open-loop behavior, donor fixtures, edge interventions, and provider message assembly are not bound. Those choices can control whether the held-out stage is released.",
+      "proposed_resolution": "Add immutable development fixture manifests and exact evaluation code or tables for every arm, predictor, edge removal, donor token, aggregation rule, and request byte sequence before any development call."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin want a revised v1a package that closes the stage, free-text, reducer, request, fixture, sham, and LoRA-metric ambiguities before any exact-byte ratification?",
+      "Does Rohin agree that any eventual green text result is only a strongly scaffolded one-pair path-dependent existence result, and any green LoRA result is only immediate per-life cue/path-local access?",
+      "Does Rohin keep implementation, all model/provider/GPU work, the two adapter fits, result analysis, replication, scope expansion, and scientific claims forbidden until the required exact ratification and later stage-specific reviews?"
+    ]
+  }
+}

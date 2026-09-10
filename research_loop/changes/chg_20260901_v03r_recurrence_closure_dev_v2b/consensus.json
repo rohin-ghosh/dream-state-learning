@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "chg_20260901_v03r_recurrence_closure_dev_v2b.consensus",
+  "change_id": "chg_20260901_v03r_recurrence_closure_dev_v2b",
+  "state": "human_required",
+  "architecture_change_sha256": "00988c361ecd893d33182addd557173c7b0f0190768b0d2cb3c89322482ec88c",
+  "interpretation_hashes": [
+    {"interpretation_id": "chg_20260901_v03r_recurrence_closure_dev_v2b.systems", "sha256": "4af0a2e72662a4f787bc635934cbff78b098616a82893faca3df0f27efc13b40"},
+    {"interpretation_id": "chg_20260901_v03r_recurrence_closure_dev_v2b.scientific", "sha256": "26a638699a5239a34fae4b2c468f204e3195215aa9acaf2f2b679442df1c1091"}
+  ],
+  "critique_sha256": "284820d5e23ca490a7bdfeaf3a4d326cdf620e7a0a6da32928ec3bfde9a19ae6",
+  "recommendation": "rework",
+  "agreements": [
+    "The current v2b bytes are not authorized for implementation, provider execution, GPU execution, review promotion, or ratification; a new v2c-equivalent package is required.",
+    "The admissible question remains a narrow postcommit, target-blind, no-feedback, query-guided public-evidence-allocation observation, not discovery, final behavior, LoRA, efficiency, memory superiority, population inference, or an automatic follow-up authority.",
+    "All cognition-time proposals must remain append-only and target/truth/scorer-blind; scoring must occur only after an independently verified immutable raw seal and must have no provider or control-flow edge.",
+    "Every future result, null, primary-undefined life, control win, integrity failure, timeout, and review outcome must stop at Rohin without repair, rerun, replication, claim promotion, external action, or spend authority."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "v2c_01_temporal_manifest_and_cardinality",
+      "sources": ["proposal", "scientific", "critique"],
+      "issue": "V2b calls post-prefix inputs pre-provider and simultaneously requires unconditional branch cardinalities despite no-frontier and short-universe states.",
+      "positions": [
+        {"actor": "proposal", "position": "Precommit matching and fixed 802/288/18 totals apply to every life."},
+        {"actor": "scientific/critique", "position": "Matching depends on prefix/THINK results, so legitimate terminal states require manifest-derived cardinalities."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The proposed ordering is impossible for inputs that do not exist until after shared calls, and padding would fabricate scientific opportunities.",
+        "selected_position": "Static validation first; post-prefix/pre-branch validation and terminal-manifest accounting second.",
+        "required_change": "V2c correction 01: define temporal phases: (A0) static immutable input, environment, schedule-template, and scope validation before any provider call; (A1) shared prefix and bounded THINK_0 with unique sunk receipts; (A2) post-prefix/pre-branch target-blind universe, measured-balance, assignment, and branch-manifest gate; (B) only manifest-authorized branch calls; (C) raw seal; (D) scoring/final seal. Define DEFER, malformed/failed THINK_0, no valid frontier, and fewer-than-sixteen distinct candidates as explicit PRIMARY_UNDEFINED terminal manifests (recommended) with sunk A1 reporting, no resampling, duplication, padding, or fabricated views. Derive per-life and aggregate recurrent calls, selector traces, MEMORY_1 commits, scorer packets, exploratory calls, and terminal justification from the frozen terminal manifests; an alternative content-free missing-view branch protocol is allowed only if separately specified and tested.",
+        "acceptance_test_ids": ["t_v2b_candidate_universe_integrity_states", "t_v2b_exact_exchangeability_formulas", "t_v2b_schedule_802_72_102_and_cardinalities", "t_v2b_exact_provider_and_experiment_ledgers", "t_v2b_complete_independent_artifact_graph", "t_v2b_durable_remote_markers"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_02_arm_assignment_same_target_and_opportunity",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "No-feedback selection, distractor assignment, outcome target, and opportunity scope are not algorithmically bound.",
+      "positions": [
+        {"actor": "proposal", "position": "Named no-feedback and matched-distractor arms plus formulas are sufficient."},
+        {"actor": "systems/scientific/critique", "position": "Selection and scoring must be deterministic and every arm must share one own outcome target."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A formula that classifies a selected pair does not select it, and arm-varying targets destroy the paired contrast.",
+        "selected_position": "Freeze complete target-blind arm assignment before branch outcomes and score every arm against the same own q.",
+        "required_change": "V2c correction 02: freeze a target-blind no-feedback candidate universe, rank, tie key, exclusions, and sixteen-slot mapping; freeze a recipient-local same-kind distractor universe, exclusions, one-to-one assignment/bijection policy, lexicographic matching objective, and semantic-hash final tie key. Define all no-match cases in the terminal manifest. Bind own q into every arm scorer packet; a distractor q may affect only trusted selection. Define one mechanical-closure-opportunity predicate (per candidate or union of the sixteen selected views), then use exactly that predicate for ranks, strata, controls, and scores.",
+        "acceptance_test_ids": ["t_v2b_candidate_universe_integrity_states", "t_v2b_exact_exchangeability_formulas", "t_v2b_zero_eligible_no_pool_or_go", "t_v2b_selector_provider_byte_separation", "t_v2b_four_closure_metrics_and_normalization_gain", "t_v2b_1000_pair_exact_byte_shortcut_audit"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_03_common_randomness_and_execution_order",
+      "sources": ["proposal", "scientific", "critique"],
+      "issue": "Physical-slot seeds and unspecified branch order confound the allocation manipulation with decoding randomness and execution state.",
+      "positions": [
+        {"actor": "proposal", "position": "Physical call-slot seeding and receipt accounting are adequate."},
+        {"actor": "scientific/critique", "position": "Corresponding arm slots require common logical randomness independent of unique physical receipts."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "At nonzero temperature, distinct physical slots create distinct random streams and make allocation not the sole intervention.",
+        "selected_position": "Use common random numbers keyed by logical correspondence, while retaining physical identities solely for accounting.",
+        "required_change": "V2c correction 03: derive an arm-independent logical seed from frozen run_id, life_id, stage, logical_round, and corresponding_slot; use it for each matched RETURN_SLEEP arm call. Keep physical slot/session/request/receipt IDs unique and exclude them from seed derivation. Precommit deterministic arm interleaving or execution order, enforce reset isolation, and prove provider request/config/parser bytes and decoded output invariance under permitted branch-order permutations except for the rendered selected public content.",
+        "acceptance_test_ids": ["t_v2b_h100_qwen_exact_environment", "t_v2b_selector_provider_byte_separation", "t_v2b_exact_provider_and_experiment_ledgers", "t_v2b_schedule_802_72_102_and_cardinalities"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_04_measured_balance_and_claim_boundary",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "EXACT/NEAR metric equality is described as exchangeability and supports causal wording that the current design cannot justify.",
+      "positions": [
+        {"actor": "proposal", "position": "Frozen low-dimensional equality/stratification establishes exchangeability."},
+        {"actor": "systems/scientific/critique", "position": "It is only measured balance and leaves semantic and visible-interface confounding."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Matching observed fields is not randomization or probabilistic exchangeability, particularly for three selected pairs.",
+        "selected_position": "Measured-balance diagnostics with qualified within-life language only after the seed and same-target repairs.",
+        "required_change": "V2c correction 04: rename EXACT and NEAR to measured-balance strata; publish all allowed visible imbalances and shortcut survivors; forbid population inference and any statement that matching removes confounding. Before corrections 02 and 03, describe results only as associated differences. Afterwards, permit 'changed' only for the precisely defined within-life allocation intervention with common logical seeds and the same own q; retain all non-discovery and non-superiority claim prohibitions.",
+        "acceptance_test_ids": ["t_v2b_zero_eligible_no_pool_or_go", "t_v2b_connector_alias_derivation_and_redaction", "t_v2b_1000_pair_exact_byte_shortcut_audit", "t_v2b_exploratory_ceilings_not_matched_baselines", "t_v2b_exact_human_scope_and_unconditional_stop"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_05_two_phase_raw_and_final_seal",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "The proposed complete graph circularly requires score/control artifacts before code may score them.",
+      "positions": [
+        {"actor": "proposal", "position": "One complete verifier runs before scorer import."},
+        {"actor": "systems/scientific/critique", "position": "A raw-only seal must unlock scoring, followed by a distinct final closure verifier."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A verifier cannot require artifacts that do not yet exist without either failing every run or silently weakening the barrier.",
+        "selected_position": "Separate raw and final immutable evidence phases.",
+        "required_change": "V2c correction 05: phase A creates an immutable raw inventory of manifests, provider receipts, parser/proposal rows, selector traces, checkpoints, aliases, terminal rows, and required raw controls; an independent raw verifier emits a raw-seal hash. All runner subprocesses must import-block scorer/target/oracle/allowlist modules until that seal. Phase B is a no-provider scorer/control process producing score packets, metrics, summaries, and a final inventory; an independent final verifier checks both phase-A references and phase-B completeness. done.json is permitted only after the phase-B final seal. Reject premature imports, phase-A omissions, post-score omissions, and mutation of either seal.",
+        "acceptance_test_ids": ["t_v2b_memory1_scorer_import_barrier", "t_v2b_four_closure_metrics_and_normalization_gain", "t_v2b_complete_independent_artifact_graph", "t_v2b_transitive_freeze_and_resource_closure"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_06_common_unit_controls",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "Subtracting a maximum of heterogeneous once-per-life controls from sixteen evolving model slots is not a model residual or compiler-adjusted estimand.",
+      "positions": [
+        {"actor": "proposal", "position": "Signed model-minus-maximum-control residuals quantify model contribution."},
+        {"actor": "systems/scientific/critique", "position": "Controls are diagnostic unless exactly common-unit and schema-legal."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Privileged oracle/query-copy inputs and unequal opportunity counts preclude residual causal attribution.",
+        "selected_position": "Separately labeled diagnostics plus common-unit comparable controls only.",
+        "required_change": "V2c correction 06: retain every deterministic control as a labeled sufficiency/opportunity diagnostic, not a residual. Report common-unit any closure, unique semantic closure, first post-branch closure, duplicate count, and closure per legal proposal opportunity. Where a compiler control is model-comparable, execute it per selected slot with the same schema-legal visible input and opportunity denominator. Never pool, clip, or label privileged query-copy/public-witness-oracle differences as latent reasoning, model contribution, or residual.",
+        "acceptance_test_ids": ["t_v2b_four_closure_metrics_and_normalization_gain", "t_v2b_deterministic_no_model_controls", "t_v2b_1000_pair_exact_byte_shortcut_audit", "t_v2b_exploratory_ceilings_not_matched_baselines"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_07_live_zero_science_provider_preflight",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "Configuration hashes and device capacity do not demonstrate that the exact resident engine can execute maximum envelopes with reset isolation.",
+      "positions": [
+        {"actor": "proposal", "position": "The H100 threshold and declared configuration establish feasibility."},
+        {"actor": "systems/scientific/critique", "position": "Observed zero-science-call allocation and reset receipts are required."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Actual allocator headroom, cache disablement, and session reset are runtime facts, not source-file facts.",
+        "selected_position": "Lock-bound live preflight with no scientific calls before any branch launch.",
+        "required_change": "V2c correction 07: run a zero-science-call preflight on the exact locked bf16 revision and device before science. Exercise every maximum declared input/output call class, record model/provider revision, peak allocation, cache-disablement, empty KV/session/request reset, logical seed, unique physical receipt, token counts, and receipt telemetry. Fail closed before science on any mismatch, capacity shortfall, cache/session reuse, reset failure, or missing telemetry; preserve logical seeds separately from physical receipts.",
+        "acceptance_test_ids": ["t_v2b_h100_qwen_exact_environment", "t_v2b_ascii_json_and_256_token_legality", "t_v2b_exact_provider_and_experiment_ledgers"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_08_alias_and_visible_shortcut_qualification",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "Raw connector redaction does not eliminate allowed visible structures such as shared-C equality, alias multiplicity, ordering, lexical texture, or renderer templates.",
+      "positions": [
+        {"actor": "proposal", "position": "Alias redaction and hidden-field byte separation make the provider target-blind."},
+        {"actor": "systems/scientific/critique", "position": "Forbidden identity leakage and permitted treatment-mediated visible shortcuts require different dispositions."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A visible shortcut can qualify interpretation even when it is not forbidden private/final leakage.",
+        "selected_position": "One-to-one redaction plus complete visible-survivor audit and claim qualification.",
+        "required_change": "V2c correction 08: preserve one-to-one external C-alias ledgers and reject raw/private/final identity leakage. Expand the 1000-pair audit/report/stratification to shared-C equality, alias multiplicity, slot/order, endpoint frequency, lexical texture, schema position, renderer templates, repaired selection bytes, complete request bytes, and decoding-config bytes. Fail on forbidden leakage; report allowed survivors as treatment-mediated shortcuts that qualify claims rather than treating them as invisible or proof of blindness.",
+        "acceptance_test_ids": ["t_v2b_connector_alias_derivation_and_redaction", "t_v2b_selector_provider_byte_separation", "t_v2b_ascii_json_and_256_token_legality", "t_v2b_provisional_append_only_no_online_signal", "t_v2b_1000_pair_exact_byte_shortcut_audit"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_09_immutable_review_context",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "Mutable intake transition state has been placed in interpretation/review context, creating self-reference and invalidating otherwise valid control-plane transitions.",
+      "positions": [
+        {"actor": "proposal", "position": "Intake state can be hash-bound with architecture evidence."},
+        {"actor": "systems/scientific/critique", "position": "Mutable intake is command state, not immutable interpretation context."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Interpretation and review evidence must stay immutable while intake history necessarily records later transitions.",
+        "selected_position": "Prohibit mutable intake state from architecture interpretation and review context.",
+        "required_change": "V2c correction 09: prohibit every mutable intake-state path or hash, including intake.restarted.state.json, from interpretation context_files, critique/consensus review evidence, transitive review closures, and artifact evidence. State hashes may appear only in intake transition records for transition verification. Bind review to immutable proposal/spec/scope/workflow/interpretation/test/resource bytes and, if needed, a separately named immutable state snapshot with explicit creation time and hash. Add a validator that rejects mutable intake context and requires identical immutable reviewer inputs.",
+        "acceptance_test_ids": ["t_v2b_transitive_freeze_and_resource_closure", "t_v2b_identical_inspectable_dual_review", "t_v2b_durable_remote_markers", "t_v2b_exact_human_scope_and_unconditional_stop"]
+      }
+    },
+    {
+      "disagreement_id": "v2c_10_authority_and_rework_gate",
+      "sources": ["proposal", "systems", "scientific", "critique"],
+      "issue": "The current unratified scope cannot authorize implementation or a costly ambiguous run.",
+      "positions": [
+        {"actor": "proposal", "position": "The v2b package can proceed once its named checks are available."},
+        {"actor": "systems/scientific/critique", "position": "All repaired bytes require fresh deliberation, exact ratification, preflight, and identical independent review."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Neither agreement among artifacts nor this consensus grants human authority, and unresolved blocking defects make the present run non-informative.",
+        "selected_position": "New v2c package and full governance path before any implementation or execution authority.",
+        "required_change": "V2c correction 10: create a new exact package containing corrections 01-09 and replacement fixtures; obtain two fresh independent interpretations, cross-critique, a consensus disposing every concern/disagreement/test, and exact human ratification of only the repaired scope. Then permit only scoped implementation, CPU checks, the live zero-science preflight, and identical independent review of the immutable closure before any provider call, sync, or GPU launch. No artifact may infer implementation permission from this rework consensus.",
+        "acceptance_test_ids": ["t_v2b_scope_excludes_final_behavior_and_lora", "t_v2b_zero_eligible_no_pool_or_go", "t_v2b_exploratory_ceilings_not_matched_baselines", "t_v2b_identical_inspectable_dual_review", "t_v2b_exact_human_scope_and_unconditional_stop"]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {"concern_id": "v2c_temporal_precommit_and_terminal_manifest", "status": "accepted", "rationale": "Blocking temporal and cardinality contradiction.", "resolution_id": "v2c_01_temporal_manifest_and_cardinality", "required_change": "Apply correction 01 before implementation."},
+    {"concern_id": "v2c_complete_arm_assignment_and_same_outcome_target", "status": "accepted", "rationale": "Blocking undefined treatment and outcome mapping.", "resolution_id": "v2c_02_arm_assignment_same_target_and_opportunity", "required_change": "Apply correction 02 before branch execution."},
+    {"concern_id": "v2c_matched_randomness_and_branch_order", "status": "accepted", "rationale": "Blocking common-randomness and order confound.", "resolution_id": "v2c_03_common_randomness_and_execution_order", "required_change": "Apply correction 03 before provider execution."},
+    {"concern_id": "v2c_measured_balance_not_exchangeability_and_claim_repair", "status": "accepted", "rationale": "Blocking claim overreach from measured matching.", "resolution_id": "v2c_04_measured_balance_and_claim_boundary", "required_change": "Apply correction 04 in the v2c spec and claims."},
+    {"concern_id": "v2c_phase_a_raw_seal_before_phase_b_scoring", "status": "accepted", "rationale": "Blocking circular score barrier.", "resolution_id": "v2c_05_two_phase_raw_and_final_seal", "required_change": "Apply correction 05 before scorer design."},
+    {"concern_id": "v2c_controls_are_diagnostics_not_model_residuals", "status": "accepted", "rationale": "Blocking invalid residual interpretation.", "resolution_id": "v2c_06_common_unit_controls", "required_change": "Apply correction 06 before analysis."},
+    {"concern_id": "v2c_hardware_provider_preflight_is_measured", "status": "accepted", "rationale": "Blocking missing runtime feasibility evidence.", "resolution_id": "v2c_07_live_zero_science_provider_preflight", "required_change": "Apply correction 07 before any science call."},
+    {"concern_id": "v2c_alias_and_byte_audit_qualifies_visible_shortcuts", "status": "accepted", "rationale": "Material visible-shortcut qualification gap.", "resolution_id": "v2c_08_alias_and_visible_shortcut_qualification", "required_change": "Apply correction 08 before interpreting model rows."},
+    {"concern_id": "v2c_intake_self_reference_breaks_review_closure", "status": "accepted", "rationale": "Blocking mutable-control-plane self-reference.", "resolution_id": "v2c_09_immutable_review_context", "required_change": "Apply correction 09 before any fresh interpretation."},
+    {"concern_id": "v2c_authority_and_scope_remain_unreleased", "status": "accepted", "rationale": "No human authority is present and all repairs require a new package.", "resolution_id": "v2c_10_authority_and_rework_gate", "required_change": "Apply correction 10; implementation remains forbidden."}
+  ],
+  "upstream_disagreement_dispositions": [
+    {"disagreement_id": "d_no_feedback_is_not_yet_a_mechanism", "status": "accepted", "rationale": "Named arms need deterministic selection and assignment bytes.", "resolution_id": "v2c_02_arm_assignment_same_target_and_opportunity"},
+    {"disagreement_id": "d_scorer_barrier_is_circular", "status": "accepted", "rationale": "A raw seal must precede and differ from final scored closure.", "resolution_id": "v2c_05_two_phase_raw_and_final_seal"},
+    {"disagreement_id": "d_hardware_feasibility_needs_live_preflight_evidence", "status": "accepted", "rationale": "Only observed exact-engine telemetry establishes the required runtime boundary.", "resolution_id": "v2c_07_live_zero_science_provider_preflight"},
+    {"disagreement_id": "d_science_rework_temporal_precommit", "status": "accepted", "rationale": "Post-prefix inputs cannot support a literal before-all-calls claim.", "resolution_id": "v2c_01_temporal_manifest_and_cardinality"},
+    {"disagreement_id": "d_science_rework_rng_confound", "status": "accepted", "rationale": "Physical-slot seeding confounds arm comparisons.", "resolution_id": "v2c_03_common_randomness_and_execution_order"},
+    {"disagreement_id": "d_science_rework_undefined_branch_states", "status": "accepted", "rationale": "Legitimate no-frontier and short-universe branches require terminal manifests.", "resolution_id": "v2c_01_temporal_manifest_and_cardinality"},
+    {"disagreement_id": "d_science_rework_pair_estimand", "status": "accepted", "rationale": "Paired outcomes require same own q and a frozen distractor algorithm.", "resolution_id": "v2c_02_arm_assignment_same_target_and_opportunity"},
+    {"disagreement_id": "d_science_rework_exchangeability_claim", "status": "accepted", "rationale": "Measured field balance is not exchangeability.", "resolution_id": "v2c_04_measured_balance_and_claim_boundary"},
+    {"disagreement_id": "d_science_rework_compiler_ceiling", "status": "accepted", "rationale": "Heterogeneous privileged controls cannot yield a residual model contribution.", "resolution_id": "v2c_06_common_unit_controls"},
+    {"disagreement_id": "d_science_rework_causal_wording", "status": "accepted", "rationale": "Causal wording is conditional on same target and common randomness repairs.", "resolution_id": "v2c_04_measured_balance_and_claim_boundary"},
+    {"disagreement_id": "d_science_rework_gpu_value_gate", "status": "accepted", "rationale": "The current package does not justify the proposed spend.", "resolution_id": "v2c_10_authority_and_rework_gate"}
+  ],
+  "acceptance_test_dispositions": [
+    {"test_id": "t_v2b_scope_excludes_final_behavior_and_lora", "status": "modified", "rationale": "Retain exclusions and make v2c implementation prohibition explicit until exact ratification.", "replacement_test_id": "t_v2c_scope_and_rework_authority"},
+    {"test_id": "t_v2b_h100_qwen_exact_environment", "status": "modified", "rationale": "Add observed maximum-envelope allocation and reset telemetry.", "replacement_test_id": "t_v2c_live_provider_capacity_reset_receipt"},
+    {"test_id": "t_v2b_candidate_universe_integrity_states", "status": "modified", "rationale": "Split static and post-prefix gates and cover primary-undefined states.", "replacement_test_id": "t_v2c_postprefix_terminal_manifest"},
+    {"test_id": "t_v2b_exact_exchangeability_formulas", "status": "modified", "rationale": "Use canonical measured-balance metrics, assignment, and opportunity scope.", "replacement_test_id": "t_v2c_arm_assignment_and_same_target"},
+    {"test_id": "t_v2b_zero_eligible_no_pool_or_go", "status": "modified", "rationale": "Bind zero eligibility to terminal manifests and measured-balance reporting.", "replacement_test_id": "t_v2c_terminal_manifest_zero_eligible"},
+    {"test_id": "t_v2b_connector_alias_derivation_and_redaction", "status": "modified", "rationale": "Audit redaction separately from allowed visible shortcut survivors.", "replacement_test_id": "t_v2c_visible_shortcut_survivor_audit"},
+    {"test_id": "t_v2b_selector_provider_byte_separation", "status": "modified", "rationale": "Add same target, logical seeds, branch-order, and repaired selection-byte checks.", "replacement_test_id": "t_v2c_common_randomness_and_order"},
+    {"test_id": "t_v2b_ascii_json_and_256_token_legality", "status": "modified", "rationale": "Exercise maximum live preflight envelopes as well as canonical legality.", "replacement_test_id": "t_v2c_live_provider_capacity_reset_receipt"},
+    {"test_id": "t_v2b_provisional_append_only_no_online_signal", "status": "modified", "rationale": "Cover phase-A scorer import prohibition and no feedback through raw seal.", "replacement_test_id": "t_v2c_two_phase_raw_and_scored_graph"},
+    {"test_id": "t_v2b_schedule_802_72_102_and_cardinalities", "status": "modified", "rationale": "Replace unconditional totals with terminal-manifest-derived cardinalities and sunk receipts.", "replacement_test_id": "t_v2c_postprefix_terminal_manifest"},
+    {"test_id": "t_v2b_exact_provider_and_experiment_ledgers", "status": "modified", "rationale": "Separate logical seed correspondence from unique physical receipt identities.", "replacement_test_id": "t_v2c_common_randomness_and_order"},
+    {"test_id": "t_v2b_memory1_scorer_import_barrier", "status": "modified", "rationale": "Require independent phase-A raw seal before any scorer import in every subprocess.", "replacement_test_id": "t_v2c_two_phase_raw_and_scored_graph"},
+    {"test_id": "t_v2b_four_closure_metrics_and_normalization_gain", "status": "modified", "rationale": "Bind all score packets to same own q and common-unit outcome rows.", "replacement_test_id": "t_v2c_common_unit_control_diagnostics"},
+    {"test_id": "t_v2b_deterministic_no_model_controls", "status": "modified", "rationale": "Forbid heterogeneous residuals and require per-slot comparable controls where feasible.", "replacement_test_id": "t_v2c_common_unit_control_diagnostics"},
+    {"test_id": "t_v2b_1000_pair_exact_byte_shortcut_audit", "status": "modified", "rationale": "Report all allowed survivors and distinguish them from forbidden leakage.", "replacement_test_id": "t_v2c_visible_shortcut_survivor_audit"},
+    {"test_id": "t_v2b_exploratory_ceilings_not_matched_baselines", "status": "modified", "rationale": "Retain heterogeneous labels and prohibit residual/superiority language.", "replacement_test_id": "t_v2c_common_unit_control_diagnostics"},
+    {"test_id": "t_v2b_complete_independent_artifact_graph", "status": "modified", "rationale": "Require independently verified phase-A raw and phase-B final graphs.", "replacement_test_id": "t_v2c_two_phase_raw_and_scored_graph"},
+    {"test_id": "t_v2b_transitive_freeze_and_resource_closure", "status": "modified", "rationale": "Reject mutable intake state from interpretation/review context and bind immutable snapshots only.", "replacement_test_id": "t_v2c_interpretation_context_excludes_mutable_intake"},
+    {"test_id": "t_v2b_identical_inspectable_dual_review", "status": "modified", "rationale": "Require identical immutable reviewer closures without mutable intake evidence.", "replacement_test_id": "t_v2c_interpretation_context_excludes_mutable_intake"},
+    {"test_id": "t_v2b_durable_remote_markers", "status": "modified", "rationale": "Reconcile terminal manifests and keep mutable state only in transition control records.", "replacement_test_id": "t_v2c_postprefix_terminal_manifest"},
+    {"test_id": "t_v2b_exact_human_scope_and_unconditional_stop", "status": "modified", "rationale": "Require a fresh v2c ratification and forbid auto-go from this consensus.", "replacement_test_id": "t_v2c_scope_and_rework_authority"}
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Does Rohin require a newly hash-bound v2c-equivalent package implementing corrections 01-10 before considering ratification of any analysis or GPU scope?",
+      "For no-frontier and short-universe lives, does Rohin select the recommended PRIMARY_UNDEFINED terminal-manifest policy with sunk-call reporting, rather than a separately specified content-free branch protocol?",
+      "After the repaired package, fresh deliberation, exact ratification, CPU checks, live zero-science preflight, and identical independent review, does Rohin authorize considering one bounded calibration run with no implied repair, rerun, replication, or broader claim?"
+    ],
+    "implementation_forbidden": true
+  }
+}

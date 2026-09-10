@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1",
+  "state": "proposal_only",
+  "human_ratification_required": true,
+  "requested_scope": [
+    "analysis:paper1_v03r_canary_dev_and_heldout_results_v1",
+    "gpu:paper1_v03r_conditional_two_lora_transport_jobs_v1",
+    "gpu:paper1_v03r_gold_and_text_canary_v1",
+    "implementation:paper1_v03r_end_to_end_canary_v1",
+    "testing:paper1_v03r_pre_gpu_and_artifact_gates_v1"
+  ],
+  "forbidden_scope": [
+    "claim:paper1_headline_generalization_scale_saturation_or_flywheel",
+    "external:publication_outreach_submission_sync_credentials_lease_or_spend",
+    "gpu:paper1_replication_prompt_rank_model_scale_or_lifetime_sweep",
+    "gpu:v03r_recurrence_closure_v2e_or_rml",
+    "science:learned_loop_adapter_rank_pyramid_base_promotion_or_on_policy_action",
+    "science:mechanical_exact_verifier_hidden_truth_or_answer_in_cognitive_loop",
+    "science:postresult_prompt_budget_rank_seed_or_threshold_repair",
+    "science:rml_pcfl_action_world_or_new_benchmark_implementation"
+  ],
+  "authorization_effect": "None before exact human ratification of the eventual consensus and these exact requested/forbidden scopes. If ratified, implementation and CPU tests must run first. The development gold-reader and held-out text canary may run only after fresh independent reviewer plus author-side advocate approve the frozen implementation and visibility evidence. Exactly two conditional rank-64 per-life LoRA jobs may run only if the predeclared text gate passes. Every result terminates at human review; no replication, claim, benchmark, LOOP, pyramid, external, lease, credential, or spend transition is automatic."
+}

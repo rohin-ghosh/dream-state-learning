@@ -1,0 +1,592 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcfl:d0:exact:v2:objects",
+  "title": "PCFL D0 exact v2 objects",
+  "description": "Closed schemas for PCFL D0 cognitive, audit, compiler, collision, and resource objects. Semantic constraints identified by $comment are mandatory parts of the contract.",
+  "$comment": "Canonical bytes are strict UTF-8. Duplicate keys are rejected before normalization. Every member name and string value is NFC-normalized before RFC 8785 JCS. A normalized-key collision is rejected. The accepted wire form must equal the JCS bytes followed by exactly one LF. Floats, null, unknown members, and noncanonical handles fail closed.",
+  "oneOf": [
+    {"$ref": "#/$defs/public_goal"},
+    {"$ref": "#/$defs/public_state"},
+    {"$ref": "#/$defs/public_event"},
+    {"$ref": "#/$defs/semantic_workspace"},
+    {"$ref": "#/$defs/reader_query"},
+    {"$ref": "#/$defs/read_return"},
+    {"$ref": "#/$defs/claim_proposal"},
+    {"$ref": "#/$defs/status_event"},
+    {"$ref": "#/$defs/snapshot_manifest"},
+    {"$ref": "#/$defs/resource_receipt_ref"},
+    {"$ref": "#/$defs/compiled_view"},
+    {"$ref": "#/$defs/preaction_twin_collision_certificate"},
+    {"$ref": "#/$defs/s_bind_manifest"},
+    {"$ref": "#/$defs/twin_intervention_certificate"}
+  ],
+  "$defs": {
+    "schema_version": {"const": "PCFL_D0_EXACT_V2"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "short_id": {"type": "string", "pattern": "^[0-9A-Z_]{1,64}$"},
+    "json_pointer": {"type": "string", "pattern": "^(?:/(?:[^~/]|~0|~1)*)*$"},
+    "nfc_text": {"type": "string", "minLength": 1, "maxLength": 256},
+    "descriptor": {"type": "string", "minLength": 1, "maxLength": 96},
+    "mission_handle": {"type": "string", "pattern": "^M[0-9A-Z]{7}$"},
+    "specimen_handle": {"type": "string", "pattern": "^X[0-9A-Z]{7}$"},
+    "site_handle": {"type": "string", "pattern": "^S[0-9A-Z]{7}$"},
+    "route_handle": {"type": "string", "pattern": "^R[0-9A-Z]{7}$"},
+    "event_handle": {"type": "string", "pattern": "^E[0-9A-Z]{7}$"},
+    "root_handle": {"type": "string", "pattern": "^B[0-9A-Z]{7}$"},
+    "preparation_handle": {"type": "string", "pattern": "^P[0-9A-Z]{7}$"},
+    "snapshot_handle": {"type": "string", "pattern": "^Q[0-9A-Z]{7}$"},
+    "specimen_class_handle": {"type": "string", "pattern": "^X[0-9A-Z]{7}$"},
+    "preparation_family_handle": {"type": "string", "pattern": "^P[0-9A-Z]{7}$"},
+    "site_family_handle": {"type": "string", "pattern": "^S[0-9A-Z]{7}$"},
+    "route_family_handle": {"type": "string", "pattern": "^R[0-9A-Z]{7}$"},
+    "trait_name": {"enum": ["T0", "T1", "T2", "T3"]},
+    "trait_value": {"enum": ["ZERO", "ONE"]},
+    "transform": {"enum": ["SET_T0_0", "SET_T0_1", "SET_T1_0", "SET_T1_1", "SET_T2_0", "SET_T2_1"]},
+    "site_predicate": {"enum": ["F0", "F1", "F2", "F3"]},
+    "route_requirement": {"enum": ["G0", "G1", "G2"]},
+    "relation": {"enum": ["PREPARATION_TRANSFORM", "SITE_PREDICATE", "ROUTE_REQUIREMENT"]},
+    "trait_panel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["T0", "T1", "T2", "T3"],
+      "properties": {
+        "T0": {"$ref": "#/$defs/trait_value"},
+        "T1": {"$ref": "#/$defs/trait_value"},
+        "T2": {"$ref": "#/$defs/trait_value"},
+        "T3": {"$ref": "#/$defs/trait_value"}
+      }
+    },
+    "node_ref": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "MISSION"}, "value": {"$ref": "#/$defs/mission_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SPECIMEN"}, "value": {"$ref": "#/$defs/specimen_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SITE"}, "value": {"$ref": "#/$defs/site_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE"}, "value": {"$ref": "#/$defs/route_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "EVENT"}, "value": {"$ref": "#/$defs/event_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROOT"}, "value": {"$ref": "#/$defs/root_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREPARATION"}, "value": {"$ref": "#/$defs/preparation_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SPECIMEN_CLASS"}, "value": {"$ref": "#/$defs/specimen_class_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREPARATION_FAMILY"}, "value": {"$ref": "#/$defs/preparation_family_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SITE_FAMILY"}, "value": {"$ref": "#/$defs/site_family_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_FAMILY"}, "value": {"$ref": "#/$defs/route_family_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "TRAIT"}, "value": {"$ref": "#/$defs/trait_name"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "TRAIT_VALUE"}, "value": {"$ref": "#/$defs/trait_value"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "TRANSFORM_TEMPLATE"}, "value": {"$ref": "#/$defs/transform"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREDICATE_TEMPLATE"}, "value": {"$ref": "#/$defs/site_predicate"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_REQUIREMENT"}, "value": {"$ref": "#/$defs/route_requirement"}}}
+      ]
+    },
+    "canonical_atom": {
+      "$comment": "atom_id is SHA-256 over the NFC-before-JCS semantic projection containing exactly object, relation, and subject, without LF.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atom_id", "object", "relation", "subject"],
+          "properties": {
+            "atom_id": {"$ref": "#/$defs/sha256"},
+            "object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "TRANSFORM_TEMPLATE"}, "value": {"$ref": "#/$defs/transform"}}},
+            "relation": {"const": "PREPARATION_TRANSFORM"},
+            "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREPARATION_FAMILY"}, "value": {"$ref": "#/$defs/preparation_family_handle"}}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atom_id", "object", "relation", "subject"],
+          "properties": {
+            "atom_id": {"$ref": "#/$defs/sha256"},
+            "object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREDICATE_TEMPLATE"}, "value": {"$ref": "#/$defs/site_predicate"}}},
+            "relation": {"const": "SITE_PREDICATE"},
+            "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SITE_FAMILY"}, "value": {"$ref": "#/$defs/site_family_handle"}}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atom_id", "object", "relation", "subject"],
+          "properties": {
+            "atom_id": {"$ref": "#/$defs/sha256"},
+            "object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_REQUIREMENT"}, "value": {"$ref": "#/$defs/route_requirement"}}},
+            "relation": {"const": "ROUTE_REQUIREMENT"},
+            "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_FAMILY"}, "value": {"$ref": "#/$defs/route_family_handle"}}}
+          }
+        }
+      ]
+    },
+    "public_goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mission_handle", "object_type", "objective", "schema_version", "site_handle", "specimen_handle"],
+      "properties": {
+        "mission_handle": {"$ref": "#/$defs/mission_handle"},
+        "object_type": {"const": "PUBLIC_GOAL"},
+        "objective": {"const": "COMPLETE_FIELD_MISSION"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "site_handle": {"$ref": "#/$defs/site_handle"},
+        "specimen_handle": {"$ref": "#/$defs/specimen_handle"}
+      }
+    },
+    "surveyed_route": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["surveyed"], "properties": {"surveyed": {"const": false}}},
+        {"type": "object", "additionalProperties": false, "required": ["descriptor", "family_handle", "handle", "surveyed"], "properties": {"descriptor": {"$ref": "#/$defs/descriptor"}, "family_handle": {"$ref": "#/$defs/route_family_handle"}, "handle": {"$ref": "#/$defs/route_handle"}, "surveyed": {"const": true}}}
+      ]
+    },
+    "inventory_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["descriptor", "preparation_family_handle", "preparation_handle"],
+      "properties": {
+        "descriptor": {"$ref": "#/$defs/descriptor"},
+        "preparation_family_handle": {"$ref": "#/$defs/preparation_family_handle"},
+        "preparation_handle": {"$ref": "#/$defs/preparation_handle"}
+      }
+    },
+    "state_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query_local_remaining", "resolver_operations_remaining", "world_actions_remaining"],
+      "properties": {
+        "query_local_remaining": {"type": "integer", "minimum": 0, "maximum": 4},
+        "resolver_operations_remaining": {"type": "integer", "minimum": 0, "maximum": 18},
+        "world_actions_remaining": {"type": "integer", "minimum": 0, "maximum": 6}
+      }
+    },
+    "public_outcome_summary": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"const": "NONE"}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "event_handle", "kind", "terminal"], "properties": {"code": {"enum": ["SURVEYED", "ASSAY_OBSERVED", "PREPARED", "TRAVERSE_PASSED", "INTERVENTION_ACCEPTED", "MISSION_SUCCEEDED", "TERMINAL_FAILURE"]}, "event_handle": {"$ref": "#/$defs/event_handle"}, "kind": {"const": "EVENT_OUTCOME"}, "terminal": {"type": "boolean"}}}
+      ]
+    },
+    "public_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applied_preparations", "budget", "inventory", "last_public_outcome", "object_type", "schema_version", "site", "specimen", "step_index", "surveyed_route"],
+      "properties": {
+        "applied_preparations": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/preparation_handle"}},
+        "budget": {"$ref": "#/$defs/state_budget"},
+        "inventory": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/inventory_entry"}},
+        "last_public_outcome": {"$ref": "#/$defs/public_outcome_summary"},
+        "object_type": {"const": "PUBLIC_STATE"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "site": {"type": "object", "additionalProperties": false, "required": ["descriptor", "family_handle", "handle"], "properties": {"descriptor": {"$ref": "#/$defs/descriptor"}, "family_handle": {"$ref": "#/$defs/site_family_handle"}, "handle": {"$ref": "#/$defs/site_handle"}}},
+        "specimen": {"type": "object", "additionalProperties": false, "required": ["class_handle", "descriptor", "handle", "traits"], "properties": {"class_handle": {"$ref": "#/$defs/specimen_class_handle"}, "descriptor": {"$ref": "#/$defs/descriptor"}, "handle": {"$ref": "#/$defs/specimen_handle"}, "traits": {"$ref": "#/$defs/trait_panel"}}},
+        "step_index": {"type": "integer", "minimum": 0, "maximum": 6},
+        "surveyed_route": {"$ref": "#/$defs/surveyed_route"}
+      }
+    },
+    "world_action": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["action", "site_handle"], "properties": {"action": {"const": "SURVEY"}, "site_handle": {"$ref": "#/$defs/site_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["action", "specimen_handle", "trait"], "properties": {"action": {"const": "ASSAY"}, "specimen_handle": {"$ref": "#/$defs/specimen_handle"}, "trait": {"$ref": "#/$defs/trait_name"}}},
+        {"type": "object", "additionalProperties": false, "required": ["action", "preparation_handle", "specimen_handle"], "properties": {"action": {"const": "PREPARE"}, "preparation_handle": {"$ref": "#/$defs/preparation_handle"}, "specimen_handle": {"$ref": "#/$defs/specimen_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["action", "route_handle", "specimen_handle"], "properties": {"action": {"const": "TRAVERSE"}, "route_handle": {"$ref": "#/$defs/route_handle"}, "specimen_handle": {"$ref": "#/$defs/specimen_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["action", "site_handle", "specimen_handle"], "properties": {"action": {"const": "INTERVENE"}, "site_handle": {"$ref": "#/$defs/site_handle"}, "specimen_handle": {"$ref": "#/$defs/specimen_handle"}}},
+        {"type": "object", "additionalProperties": false, "required": ["action", "mission_handle"], "properties": {"action": {"const": "COMMIT"}, "mission_handle": {"$ref": "#/$defs/mission_handle"}}}
+      ]
+    },
+    "event_outcome": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["code", "route_descriptor", "route_family_handle", "route_handle", "terminal"], "properties": {"code": {"const": "SURVEYED"}, "route_descriptor": {"$ref": "#/$defs/descriptor"}, "route_family_handle": {"$ref": "#/$defs/route_family_handle"}, "route_handle": {"$ref": "#/$defs/route_handle"}, "terminal": {"const": false}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "terminal", "trait", "value"], "properties": {"code": {"const": "ASSAY_OBSERVED"}, "terminal": {"const": false}, "trait": {"$ref": "#/$defs/trait_name"}, "value": {"$ref": "#/$defs/trait_value"}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "new_traits", "terminal"], "properties": {"code": {"const": "PREPARED"}, "new_traits": {"$ref": "#/$defs/trait_panel"}, "terminal": {"const": false}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "terminal"], "properties": {"code": {"const": "TRAVERSE_PASSED"}, "terminal": {"const": false}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "terminal"], "properties": {"code": {"const": "INTERVENTION_ACCEPTED"}, "terminal": {"const": false}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "terminal"], "properties": {"code": {"const": "MISSION_SUCCEEDED"}, "terminal": {"const": true}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "failure_kind", "terminal"], "properties": {"code": {"const": "TERMINAL_FAILURE"}, "failure_kind": {"enum": ["ILLEGAL_ACTION", "MALFORMED_ACTION", "ROUTE_REJECTED", "SITE_REJECTED", "COMMIT_REJECTED", "ACTION_CAP_EXHAUSTED"]}, "terminal": {"const": true}}}
+      ]
+    },
+    "public_event": {
+      "$comment": "Action/outcome kind compatibility, token_start < token_end, monotone event_index, and stable root/source-block membership are mandatory semantic checks.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "event_handle", "event_index", "intervention_cluster_root", "object_type", "outcome", "schema_version", "source_block_handle", "token_end", "token_start"],
+      "properties": {
+        "action": {"$ref": "#/$defs/world_action"},
+        "event_handle": {"$ref": "#/$defs/event_handle"},
+        "event_index": {"type": "integer", "minimum": 0},
+        "intervention_cluster_root": {"$ref": "#/$defs/root_handle"},
+        "object_type": {"const": "PUBLIC_EVENT"},
+        "outcome": {"$ref": "#/$defs/event_outcome"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "source_block_handle": {"$ref": "#/$defs/root_handle"},
+        "token_end": {"type": "integer", "minimum": 1},
+        "token_start": {"type": "integer", "minimum": 0}
+      }
+    },
+    "copy_origin": {
+      "$comment": "COPIED resolves one exact schema-enumerated pointer and byte-matches anchor.value. MODEL_DERIVED_TRANSFORM is permitted only for a TRANSFORM_TEMPLATE anchor selected by the resolver from the frozen six-value ontology, with one cited earlier predicate/requirement path read, an optional already selected first-transform path read, and current public trait slots. Runtime neither computes nor corrects the derived anchor and returns no validation feedback; an offline trace checker decides entailment for later composition credit. Wrong derived anchors consume budget normally.",
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["origin_mode", "source_kind", "source_pointer"], "properties": {"origin_mode": {"const": "COPIED"}, "source_kind": {"const": "GOAL"}, "source_pointer": {"enum": ["/mission_handle", "/site_handle", "/specimen_handle"]}}},
+        {"type": "object", "additionalProperties": false, "required": ["origin_mode", "source_kind", "source_pointer"], "properties": {"origin_mode": {"const": "COPIED"}, "source_kind": {"const": "STATE"}, "source_pointer": {"pattern": "^/(?:specimen/(?:handle|class_handle|traits/T[0-3])|site/(?:handle|family_handle)|surveyed_route/(?:handle|family_handle)|inventory/[0-3]/(?:preparation_handle|preparation_family_handle)|applied_preparations/[0-1])$", "type": "string"}}},
+        {"type": "object", "additionalProperties": false, "required": ["origin_mode", "source_kind", "source_pointer", "source_slot"], "properties": {"origin_mode": {"const": "COPIED"}, "source_kind": {"const": "OUTCOME_SLOT"}, "source_pointer": {"pattern": "^/(?:action/(?:mission_handle|preparation_handle|route_handle|site_handle|specimen_handle|trait)|outcome/(?:route_family_handle|route_handle|trait|value|new_traits/T[0-3]))$", "type": "string"}, "source_slot": {"pattern": "^OUT[0-5]$", "type": "string"}}},
+        {"type": "object", "additionalProperties": false, "required": ["origin_mode", "source_kind", "source_pointer", "source_slot"], "properties": {"origin_mode": {"const": "COPIED"}, "source_kind": {"const": "READ_SLOT"}, "source_pointer": {"enum": ["/atom/object/value", "/atom/subject/value"]}, "source_slot": {"pattern": "^MEM[0-3]$", "type": "string"}}},
+        {"type": "object", "additionalProperties": false, "required": ["origin_mode", "source_kind", "source_pointer", "source_slot"], "properties": {"origin_mode": {"const": "COPIED"}, "source_kind": {"const": "PATH_SLOT"}, "source_pointer": {"enum": ["/atom/object/value", "/atom/subject/value"]}, "source_slot": {"pattern": "^EDGE[0-3]$", "type": "string"}}},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["derivation_source_slots", "origin_mode", "public_trait_sources"],
+          "properties": {
+            "derivation_source_slots": {"type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["source_pointer", "source_slot"], "properties": {"source_pointer": {"const": "/atom/object/value"}, "source_slot": {"pattern": "^EDGE[0-3]$", "type": "string"}}}},
+            "origin_mode": {"const": "MODEL_DERIVED_TRANSFORM"},
+            "public_trait_sources": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["source_pointer"], "properties": {"source_pointer": {"pattern": "^/specimen/traits/T[0-3]$", "type": "string"}}}}
+          }
+        }
+      ]
+    },
+    "memory_slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom", "slot"],
+      "properties": {
+        "atom": {"$ref": "#/$defs/canonical_atom"},
+        "slot": {"pattern": "^MEM[0-3]$", "type": "string"}
+      }
+    },
+    "outcome_slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event", "slot"],
+      "properties": {
+        "event": {"$ref": "#/$defs/public_event"},
+        "slot": {"pattern": "^OUT[0-5]$", "type": "string"}
+      }
+    },
+    "typed_node_slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["copy_origin", "node", "slot"],
+      "properties": {
+        "copy_origin": {"$ref": "#/$defs/copy_origin"},
+        "node": {"$ref": "#/$defs/node_ref"},
+        "slot": {"pattern": "^NODE(?:0[0-9]|1[0-5])$", "type": "string"}
+      }
+    },
+    "path_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom", "orientation", "path_ordinal", "slot", "source_memory_slot"],
+      "properties": {
+        "atom": {"$ref": "#/$defs/canonical_atom"},
+        "orientation": {"enum": ["FORWARD", "REVERSE"]},
+        "path_ordinal": {"type": "integer", "minimum": 0, "maximum": 3},
+        "slot": {"pattern": "^EDGE[0-3]$", "type": "string"},
+        "source_memory_slot": {"pattern": "^MEM[0-3]$", "type": "string"}
+      }
+    },
+    "semantic_workspace": {
+      "$comment": "Arrays are ordered by numeric slot. Slot identifiers are unique. discarded_edge_slots are tombstones and may not coexist in path. There are no free notes, rationale, confidence, proof, agenda, hidden identifiers, or chain-of-thought fields.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["discarded_edge_slots", "memory_slots", "object_type", "outcome_slots", "path", "schema_version", "typed_nodes"],
+      "properties": {
+        "discarded_edge_slots": {"type": "array", "maxItems": 4, "uniqueItems": true, "items": {"pattern": "^EDGE[0-3]$", "type": "string"}},
+        "memory_slots": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/memory_slot"}},
+        "object_type": {"const": "SEMANTIC_WORKSPACE"},
+        "outcome_slots": {"type": "array", "maxItems": 6, "items": {"$ref": "#/$defs/outcome_slot"}},
+        "path": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/path_entry"}},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "typed_nodes": {"type": "array", "maxItems": 16, "items": {"$ref": "#/$defs/typed_node_slot"}}
+      }
+    },
+    "reader_query": {
+      "$comment": "QUERY_LOCAL is the only primary query. relation, direction, desired answer, goal text, scorer fields, and concatenated aliases are forbidden by closure. already_returned_candidate_ids is runtime-to-reader state and is never placed in resolver-visible input.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["already_returned_candidate_ids", "anchor", "copy_origin", "object_type", "operation", "query_index", "schema_version", "snapshot_handle"],
+      "properties": {
+        "already_returned_candidate_ids": {"type": "array", "maxItems": 4, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "anchor": {"$ref": "#/$defs/node_ref"},
+        "copy_origin": {"$ref": "#/$defs/copy_origin"},
+        "object_type": {"const": "READER_QUERY"},
+        "operation": {"const": "QUERY_LOCAL"},
+        "query_index": {"type": "integer", "minimum": 0, "maximum": 3},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "snapshot_handle": {"$ref": "#/$defs/snapshot_handle"}
+      }
+    },
+    "read_return": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atom", "object_type", "result", "schema_version"],
+          "properties": {
+            "atom": {"$ref": "#/$defs/canonical_atom"},
+            "object_type": {"const": "READ_RETURN"},
+            "result": {"const": "FOUND"},
+            "schema_version": {"$ref": "#/$defs/schema_version"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["object_type", "result", "schema_version"],
+          "properties": {
+            "object_type": {"const": "READ_RETURN"},
+            "result": {"const": "NOT_FOUND"},
+            "schema_version": {"$ref": "#/$defs/schema_version"}
+          }
+        }
+      ]
+    },
+    "proposal_root": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_handle", "replay_slot", "root_handle", "source_block_handle"],
+      "properties": {
+        "event_handle": {"$ref": "#/$defs/event_handle"},
+        "replay_slot": {"pattern": "^REPLAY[0-3]$", "type": "string"},
+        "root_handle": {"$ref": "#/$defs/root_handle"},
+        "source_block_handle": {"$ref": "#/$defs/root_handle"}
+      }
+    },
+    "proposal_parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "memory_slot"],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/sha256"},
+        "memory_slot": {"pattern": "^MEM[0-3]$", "type": "string"}
+      }
+    },
+    "prediction": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["expected_object", "future_source_block_handle", "subject", "template"], "properties": {"expected_object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "TRANSFORM_TEMPLATE"}, "value": {"$ref": "#/$defs/transform"}}}, "future_source_block_handle": {"$ref": "#/$defs/root_handle"}, "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREPARATION_FAMILY"}, "value": {"$ref": "#/$defs/preparation_family_handle"}}}, "template": {"const": "APPLY_PREPARATION_TO_FRESH_RESET_AND_OBSERVE_TRAITS"}}},
+        {"type": "object", "additionalProperties": false, "required": ["expected_object", "future_source_block_handle", "subject", "template"], "properties": {"expected_object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "PREDICATE_TEMPLATE"}, "value": {"$ref": "#/$defs/site_predicate"}}}, "future_source_block_handle": {"$ref": "#/$defs/root_handle"}, "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "SITE_FAMILY"}, "value": {"$ref": "#/$defs/site_family_handle"}}}, "template": {"const": "INTERVENE_AT_MATCHED_SEPARATING_STATE_AND_OBSERVE_ACCEPTANCE"}}},
+        {"type": "object", "additionalProperties": false, "required": ["expected_object", "future_source_block_handle", "subject", "template"], "properties": {"expected_object": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_REQUIREMENT"}, "value": {"$ref": "#/$defs/route_requirement"}}}, "future_source_block_handle": {"$ref": "#/$defs/root_handle"}, "subject": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "ROUTE_FAMILY"}, "value": {"$ref": "#/$defs/route_family_handle"}}}, "template": {"const": "TRAVERSE_AT_MATCHED_SEPARATING_STATE_AND_OBSERVE_PASS"}}}
+      ]
+    },
+    "claim_proposal": {
+      "$comment": "Proposal identity is distinct from atom identity. Atom, prediction subject, and expected object must match exactly. Roots are public replay roots; parents must be earlier SUPPORTED canonical claims. The proposal carries no truth/status/importance/confidence/proof/target/goal/action field.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom", "object_type", "parents", "prediction", "proposal_id", "roots", "schema_version"],
+      "properties": {
+        "atom": {"$ref": "#/$defs/canonical_atom"},
+        "object_type": {"const": "CLAIM_PROPOSAL"},
+        "parents": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/proposal_parent"}},
+        "prediction": {"$ref": "#/$defs/prediction"},
+        "proposal_id": {"$ref": "#/$defs/sha256"},
+        "roots": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"$ref": "#/$defs/proposal_root"}},
+        "schema_version": {"$ref": "#/$defs/schema_version"}
+      }
+    },
+    "status_transition": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["from", "to"], "properties": {"from": {"const": "NONE"}, "to": {"const": "PROPOSED"}}},
+        {"type": "object", "additionalProperties": false, "required": ["from", "to"], "properties": {"from": {"const": "PROPOSED"}, "to": {"const": "PROVISIONAL"}}},
+        {"type": "object", "additionalProperties": false, "required": ["from", "to"], "properties": {"from": {"const": "PROVISIONAL"}, "to": {"const": "SUPPORTED"}}},
+        {"type": "object", "additionalProperties": false, "required": ["from", "to"], "properties": {"from": {"const": "PROVISIONAL"}, "to": {"const": "CONTRADICTED"}}},
+        {"type": "object", "additionalProperties": false, "required": ["from", "to"], "properties": {"from": {"const": "SUPPORTED"}, "to": {"const": "REVOKED"}}}
+      ]
+    },
+    "status_event": {
+      "$comment": "Events append by snapshot and ordinal; no earlier event is rewritten. SUPPORTED requires relation-specific fit, distinct post-proposal prediction, separating contrasts, root deduplication, and no contradiction. REVOKED must be in a later snapshot.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom_id", "claim_id", "evidence_root_handles", "event_ordinal", "object_type", "parent_claim_ids", "prediction_event_handles", "reason", "schema_version", "snapshot_handle", "status_event_id", "transition"],
+      "properties": {
+        "atom_id": {"$ref": "#/$defs/sha256"},
+        "claim_id": {"$ref": "#/$defs/sha256"},
+        "evidence_root_handles": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/root_handle"}},
+        "event_ordinal": {"type": "integer", "minimum": 0},
+        "object_type": {"const": "STATUS_EVENT"},
+        "parent_claim_ids": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "prediction_event_handles": {"type": "array", "maxItems": 1, "items": {"$ref": "#/$defs/event_handle"}},
+        "reason": {"enum": ["PROPOSAL_RECORDED", "PREFIT_COMPLETE", "PREDICTION_AND_CONTRASTS_PASSED", "CONTRADICTION_OBSERVED", "LATER_CONTRADICTION_OBSERVED"]},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "snapshot_handle": {"$ref": "#/$defs/snapshot_handle"},
+        "status_event_id": {"$ref": "#/$defs/sha256"},
+        "transition": {"$ref": "#/$defs/status_transition"}
+      }
+    },
+    "named_digest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "sha256"],
+      "properties": {"name": {"$ref": "#/$defs/nfc_text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "snapshot_manifest": {
+      "$comment": "The manifest is audit-only. snapshot_handle is an opaque eight-byte per-life namespace coordinate, not a content digest, so paired twins may expose identical handle bytes while isolated namespaces resolve different authentic memories. Every digest is content-addressed; sealing is fsync, validate, atomic rename, read-only.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapter", "artifact_digests", "compiler_input_atom_ids", "cut", "eligible_atom_ids", "object_type", "schema_version", "sealed", "snapshot_handle", "source_prefix_sha256"],
+      "properties": {
+        "adapter": {"type": "object", "additionalProperties": false, "required": ["present"], "properties": {"present": {"const": false}}},
+        "artifact_digests": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/named_digest"}},
+        "compiler_input_atom_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "cut": {"type": "object", "additionalProperties": false, "required": ["complete_event_count", "token_limit"], "properties": {"complete_event_count": {"type": "integer", "minimum": 0}, "token_limit": {"enum": [4096, 8192, 16384]}}},
+        "eligible_atom_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "object_type": {"const": "SNAPSHOT_MANIFEST"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "sealed": {"const": true},
+        "snapshot_handle": {"$ref": "#/$defs/snapshot_handle"},
+        "source_prefix_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "resource_receipt_ref": {
+      "$comment": "This is only a cognitive/audit receipt. The sole authoritative ledger shape is ../resource_ledger.schema.json; no compact competing ledger is defined here.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ledger_path", "ledger_sha256", "object_type", "schema_version", "summary"],
+      "properties": {
+        "ledger_path": {"const": "resource_ledger.jsonl"},
+        "ledger_sha256": {"$ref": "#/$defs/sha256"},
+        "object_type": {"const": "RESOURCE_RECEIPT_REF"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "summary": {"type": "object", "additionalProperties": false, "required": ["reader_operations", "resolver_operations", "source_actions", "source_tokens", "views"], "properties": {"reader_operations": {"type": "integer", "minimum": 0}, "resolver_operations": {"type": "integer", "minimum": 0}, "source_actions": {"type": "integer", "minimum": 0}, "source_tokens": {"type": "integer", "minimum": 0}, "views": {"type": "integer", "minimum": 0}}}
+      }
+    },
+    "compiled_view": {
+      "$comment": "Exactly one canonical atom is present. view_id is SHA-256 of the canonical view semantic projection excluding view_id. The four renderer templates and exact ordering are bound in compiler_contract.json.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anchor", "atom", "completion", "control_taint", "edge_count", "object_type", "prompt", "schema_version", "view_id", "view_kind"],
+      "properties": {
+        "anchor": {"$ref": "#/$defs/node_ref"},
+        "atom": {"$ref": "#/$defs/canonical_atom"},
+        "completion": {"type": "string", "minLength": 1, "maxLength": 256},
+        "control_taint": {"enum": ["AUTHENTIC", "CONTROL_CORRUPTED_S_BIND"]},
+        "edge_count": {"const": 1},
+        "object_type": {"const": "COMPILED_VIEW"},
+        "prompt": {"type": "string", "minLength": 1, "maxLength": 256},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "view_id": {"$ref": "#/$defs/sha256"},
+        "view_kind": {"enum": ["FORWARD_COMPLETION", "REVERSE_COMPLETION", "INCIDENT_EDGE_RECALL", "ONE_MEMORY_STATEMENT"]}
+      }
+    },
+    "collision_component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["encoding", "equal", "left_byte_length", "left_sha256", "right_byte_length", "right_sha256"],
+      "properties": {
+        "encoding": {"enum": ["JCS_UTF8_LF", "NFC_UTF8_LF", "ASCII_SCALAR", "TIMING_CLASS"]},
+        "equal": {"const": true},
+        "left_byte_length": {"type": "integer", "minimum": 1},
+        "left_sha256": {"$ref": "#/$defs/sha256"},
+        "right_byte_length": {"type": "integer", "minimum": 1},
+        "right_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "collision_components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["budget", "candidate_catalog", "goal", "last_read", "prompt_input", "repeat_state", "return_envelope", "snapshot_handle", "state", "system_prompt", "timing_class", "workspace"],
+      "properties": {
+        "budget": {"$ref": "#/$defs/collision_component"},
+        "candidate_catalog": {"$ref": "#/$defs/collision_component"},
+        "goal": {"$ref": "#/$defs/collision_component"},
+        "last_read": {"$ref": "#/$defs/collision_component"},
+        "prompt_input": {"$ref": "#/$defs/collision_component"},
+        "repeat_state": {"$ref": "#/$defs/collision_component"},
+        "return_envelope": {"$ref": "#/$defs/collision_component"},
+        "snapshot_handle": {"$ref": "#/$defs/collision_component"},
+        "state": {"$ref": "#/$defs/collision_component"},
+        "system_prompt": {"$ref": "#/$defs/collision_component"},
+        "timing_class": {"$ref": "#/$defs/collision_component"},
+        "workspace": {"$ref": "#/$defs/collision_component"}
+      }
+    },
+    "registered_answer_pair": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["disjoint", "left_preparations", "right_preparations", "target_level"], "properties": {"disjoint": {"const": true}, "left_preparations": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/preparation_handle"}}, "right_preparations": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/preparation_handle"}}, "target_level": {"const": "A2"}}},
+        {"type": "object", "additionalProperties": false, "required": ["disjoint", "left_preparations", "right_preparations", "target_level"], "properties": {"disjoint": {"const": true}, "left_preparations": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/preparation_handle"}}, "right_preparations": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/preparation_handle"}}, "target_level": {"const": "A3"}}}
+      ]
+    },
+    "preaction_twin_collision_certificate": {
+      "$comment": "For every component, the checker independently computes both digests and lengths and requires left == right. It also requires the complete legal-query catalog/order digest and return envelope/timing class to collide. Authentic post-query atom payloads may differ; no pre-action input may. The registered preparation sets must be distinct and disjoint.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate_id", "components", "different_correct_assignments", "left_world_commitment", "object_type", "registered_answers", "right_world_commitment", "schema_version", "valid"],
+      "properties": {
+        "certificate_id": {"$ref": "#/$defs/sha256"},
+        "components": {"$ref": "#/$defs/collision_components"},
+        "different_correct_assignments": {"const": true},
+        "left_world_commitment": {"$ref": "#/$defs/sha256"},
+        "object_type": {"const": "PREACTION_TWIN_COLLISION_CERTIFICATE"},
+        "registered_answers": {"$ref": "#/$defs/registered_answer_pair"},
+        "right_world_commitment": {"$ref": "#/$defs/sha256"},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "valid": {"const": true}
+      }
+    },
+    "binding_map_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["after_object", "before_object", "donor_atom_id", "rebound_atom_id", "source_atom_id", "stratum_id"],
+      "properties": {
+        "after_object": {"$ref": "#/$defs/node_ref"},
+        "before_object": {"$ref": "#/$defs/node_ref"},
+        "donor_atom_id": {"$ref": "#/$defs/sha256"},
+        "rebound_atom_id": {"$ref": "#/$defs/sha256"},
+        "source_atom_id": {"$ref": "#/$defs/sha256"},
+        "stratum_id": {"$ref": "#/$defs/short_id"}
+      }
+    },
+    "four_view_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["FORWARD_COMPLETION", "INCIDENT_EDGE_RECALL", "ONE_MEMORY_STATEMENT", "REVERSE_COMPLETION"],
+      "properties": {
+        "FORWARD_COMPLETION": {"type": "integer", "minimum": 0},
+        "INCIDENT_EDGE_RECALL": {"type": "integer", "minimum": 0},
+        "ONE_MEMORY_STATEMENT": {"type": "integer", "minimum": 0},
+        "REVERSE_COMPLETION": {"type": "integer", "minimum": 0}
+      }
+    },
+    "s_bind_manifest": {
+      "$comment": "One frozen claim-level derangement is applied once and then propagated to atom identities, alias targets, control root projections, all four views, candidate/query membership, answer slots, returns, and manifests. Rebound products are tainted controls, never SUPPORTED claims. before_object != after_object and the source->donor map is a fixed-point-free bijection within each frozen stratum; only the predeclared adjacent length-bin merge is legal.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alias_rewrite_sha256", "answer_slot_rewrite_sha256", "binding_map", "candidate_membership_rewrite_sha256", "control_id", "control_root_projection_sha256", "lifecycle_status", "object_type", "return_rewrite_sha256", "root_compatibility_audit", "schema_version", "source_snapshot_handle", "taint", "training_envelope_equal", "view_counts_after", "view_counts_before"],
+      "properties": {
+        "alias_rewrite_sha256": {"$ref": "#/$defs/sha256"},
+        "answer_slot_rewrite_sha256": {"$ref": "#/$defs/sha256"},
+        "binding_map": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/binding_map_entry"}},
+        "candidate_membership_rewrite_sha256": {"$ref": "#/$defs/sha256"},
+        "control_id": {"$ref": "#/$defs/sha256"},
+        "control_root_projection_sha256": {"$ref": "#/$defs/sha256"},
+        "lifecycle_status": {"const": "NOT_A_LIFECYCLE_CLAIM"},
+        "object_type": {"const": "S_BIND_MANIFEST"},
+        "return_rewrite_sha256": {"$ref": "#/$defs/sha256"},
+        "root_compatibility_audit": {"type": "object", "additionalProperties": false, "required": ["all_projected_roots_match_rebound_atoms", "authentic_roots_unchanged", "passed"], "properties": {"all_projected_roots_match_rebound_atoms": {"const": true}, "authentic_roots_unchanged": {"const": true}, "passed": {"const": true}}},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "source_snapshot_handle": {"$ref": "#/$defs/snapshot_handle"},
+        "taint": {"const": "CONTROL_CORRUPTED_S_BIND"},
+        "training_envelope_equal": {"const": true},
+        "view_counts_after": {"$ref": "#/$defs/four_view_counts"},
+        "view_counts_before": {"$ref": "#/$defs/four_view_counts"}
+      }
+    },
+    "changed_pointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["change_class", "pointer"],
+      "properties": {
+        "change_class": {"enum": ["MEMORY_ATOM", "PATH_COPY", "PUBLIC_STATE", "PUBLIC_OUTCOME", "REPEAT_STATE", "BUDGET" ]},
+        "pointer": {"$ref": "#/$defs/json_pointer"}
+      }
+    },
+    "twin_intervention_certificate": {
+      "$comment": "MEMORY_ONLY_AT_COLLIDING_CUT permits changes only to MEMORY_ATOM and dependent PATH_COPY pointers and requires a valid pre-action or decision-cut collision certificate. MATCHED_TWIN_STATE_FORK must be independently replayed to a simulator-reachable twin cut, enumerate every changed pointer, and use the complete matched twin public state/outcomes/repeat/budget rather than a hybrid. All unlisted bytes must match.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_unlisted_bytes_equal", "changed_pointers", "collision_certificate_id", "intervention_id", "mode", "object_type", "replayed_reachable", "schema_version", "source_cut_sha256", "twin_cut_sha256", "valid"],
+      "properties": {
+        "all_unlisted_bytes_equal": {"const": true},
+        "changed_pointers": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/changed_pointer"}},
+        "collision_certificate_id": {"$ref": "#/$defs/sha256"},
+        "intervention_id": {"$ref": "#/$defs/sha256"},
+        "mode": {"enum": ["MEMORY_ONLY_AT_COLLIDING_CUT", "MATCHED_TWIN_STATE_FORK"]},
+        "object_type": {"const": "TWIN_INTERVENTION_CERTIFICATE"},
+        "replayed_reachable": {"const": true},
+        "schema_version": {"$ref": "#/$defs/schema_version"},
+        "source_cut_sha256": {"$ref": "#/$defs/sha256"},
+        "twin_cut_sha256": {"$ref": "#/$defs/sha256"},
+        "valid": {"const": true}
+      }
+    }
+  }
+}

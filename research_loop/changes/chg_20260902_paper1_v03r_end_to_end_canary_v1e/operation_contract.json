@@ -1,0 +1,462 @@
+{
+  "schema_version": "paper1-v03r-canary-operation-contract-v1e.0",
+  "status": "architecture_proposal_only",
+  "authority": {
+    "implementation_authorized": false,
+    "model_dispatch_authorized": false,
+    "gpu_or_science_run_authorized": false,
+    "ratification_required": true
+  },
+  "canonical_json": {
+    "standard": "RFC8785_JCS",
+    "encoding": "UTF-8",
+    "bom": false,
+    "terminal_newline": false,
+    "reject_duplicate_keys": true,
+    "reject_nonfinite_numbers": true
+  },
+  "schema_registry": {
+    "DREAM_state": "dream_state.schema.json",
+    "DREAM_output": "dream_operation.schema.json",
+    "SELF_CHECK_state": "self_check_state.schema.json",
+    "SELF_CHECK_output": "self_check.schema.json",
+    "THINK0_state": "think0_state.schema.json",
+    "THINK0_output": "think0_operation.schema.json",
+    "THINK1_state": "think1_state.schema.json",
+    "THINK1_output": "think1_operation.schema.json",
+    "public_projection": "public_projection_contract.json",
+    "scratch": "scratch.schema.json",
+    "opportunity_ledger": "opportunity_ledger.schema.json",
+    "semantic_consistency_matrix": "semantic_consistency_matrix.json",
+    "object_rule": "Every model-visible object is validated by its registered schema and every schema object has additionalProperties=false. Semantic checks below are applied after schema validation without repair."
+  },
+  "provider_request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "PROMPT_LF+ALLOWED_STATE_ENVELOPE+OUTPUT_SCHEMA_ENVELOPE"
+      }
+    ],
+    "content_construction": [
+      "exact registered prompt-file UTF-8 bytes ending in exactly one LF",
+      "literal <ALLOWED_STATE> followed by LF",
+      "RFC8785_JCS allowed-state object followed by LF",
+      "literal </ALLOWED_STATE> followed by LF",
+      "literal <OUTPUT_SCHEMA> followed by LF",
+      "RFC8785_JCS registered output-schema object followed by LF",
+      "literal </OUTPUT_SCHEMA> followed by LF"
+    ],
+    "chat_template": "resolved executable-lock chat template applied exactly once",
+    "add_generation_prompt": true,
+    "tokenize_during_render": false,
+    "generation_config": "separate RFC8785_JCS object",
+    "forbidden_model_visible_metadata": [
+      "run identity",
+      "life identity",
+      "latent bit",
+      "branch or arm identity",
+      "donor identity",
+      "path or sham identity",
+      "request identity",
+      "filename or artifact path",
+      "audit event or generated audit annotation",
+      "selector counters or requested/realized mode",
+      "scorer state or offline result",
+      "lock hash",
+      "private truth or final answer"
+    ]
+  },
+  "response_parser": {
+    "accepted_shape": "one bare UTF-8 RFC8259 JSON object",
+    "reject": [
+      "invalid UTF-8",
+      "leading non-whitespace bytes",
+      "trailing non-whitespace bytes",
+      "code fences",
+      "duplicate keys",
+      "NaN or infinity",
+      "unknown fields",
+      "registered-schema failure",
+      "semantic operation failure",
+      "substring extraction",
+      "repair"
+    ],
+    "accepted_state_encoding": "RFC8785_JCS",
+    "invalid_consumes_dispatched_opportunity": true,
+    "retry": false
+  },
+  "atom_and_kind_registry": {
+    "namespaces": {
+      "valve": "valve:<ascii-lowercase-public-slug>",
+      "source": "source:<ascii-lowercase-public-slug>",
+      "target": "target:<ascii-lowercase-public-slug>",
+      "animal": "animal:<ascii-lowercase-public-slug>",
+      "label": "label:<ascii-lowercase-public-slug>",
+      "mixture": "mixture:<positive-decimal>*<public-pigment-slug>[+<positive-decimal>*<public-pigment-slug>...] in published primary-pigment order",
+      "effect": ["CHANGE", "STABLE"],
+      "anchor": "No anchor: namespace exists. Every anchor position is an animal: atom."
+    },
+    "kinds": {
+      "ROUTE": {"origin": "WITNESSED", "fields": ["valve", "source"], "arity": 2},
+      "EFFECT": {"origin": "WITNESSED", "fields": ["valve", "target", "effect"], "arity": 3},
+      "SOURCE_VALUE": {"origin": "WITNESSED", "fields": ["animal-anchor", "source", "label"], "arity": 3},
+      "ANIMAL_VALUE": {"origin": "WITNESSED", "fields": ["animal", "source", "label"], "arity": 3},
+      "TARGET_BASELINE": {"origin": "WITNESSED", "fields": ["animal-anchor", "target", "mixture"], "arity": 3},
+      "RECIPE": {"origin": "WITNESSED", "fields": ["mixture", "label"], "arity": 2},
+      "ROLE_EQUIV": {"origin": "DREAMED", "fields": ["animal", "animal-anchor"], "arity": 2},
+      "CAUSAL_JOIN": {"origin": "DREAMED", "fields": ["source", "target", "effect"], "arity": 3},
+      "ROLE_APPLICATION": {"origin": "DREAMED", "fields": ["animal", "target", "animal-anchor"], "arity": 3}
+    },
+    "reader_query_rule": {
+      "common": "Exact registered arity, exactly one null, and exact namespaces in every non-null position.",
+      "ROLE_APPLICATION": "Only [animal,null,animal-anchor] and [animal,target,null] are legal; [null,target,animal-anchor] is forbidden.",
+      "forbidden": ["zero nulls", "two or more nulls", "prefix match", "fuzzy match", "scan", "closure", "query repair", "answer query"]
+    }
+  },
+  "model_local_identity": {
+    "registered_witnessed_lexical_domain": "E000000 through E000048 and M000000 through M000048 only. E000049, M000049, and every higher witnessed alias are always invalid.",
+    "public_event_aliases": "For a life with actual_event_count in 1..49, the sole public projector assigns exactly E000000 through E(actual_event_count-1) in chronological life-local order, with no gap, reuse, or alias at or above actual_event_count. E aliases are audit/projection identities and are never model-citable.",
+    "witnessed_row_aliases": "For every and only produced Ei at i in 0..actual_event_count-1, the sole projector deterministically creates Mi before the corresponding WAKE. Thus the instantiated witnessed-row domain is exactly M000000 through M(actual_event_count-1); an otherwise lexically legal M alias at or above this life's actual_event_count is invalid because no corresponding event exists.",
+    "registered_examples": "A seed-1 DEV life with actual_event_count=49 requires E000048->M000048. A heldout seed-5 life with actual_event_count=46 instantiates only E/M000000..000045, so E/M000046..000048 are absent and invalid for that life. E/M000049 are invalid for every life.",
+    "proposal_ids": "For proposal slot s in 0..99, the first schema-valid nonduplicate CREATE receives P(001000+s) formatted as six decimal digits.",
+    "dreamed_row_aliases": "A SUPPORTED owner proposal at slot s creates M(001000+s) formatted as six decimal digits; PASS, duplicate, malformed, CONTRADICTED, and UNRESOLVED leave that alias unused.",
+    "external_namespace": ["life_manifest_sha256", "origin_branch", "local_alias"],
+    "origin_branches": ["PREFIX", "OWN", "DIST"],
+    "copy_on_write": "Prefix aliases retain PREFIX origin. OWN and DIST start from the same sealed prefix but independently own any supported return-slot rows. No citation resolves across lives or sibling branches.",
+    "model_visible_identity": "Only the local M alias is visible to DREAM or SELF_CHECK; THINK sees only request-local H handles."
+  },
+  "row_and_proposal_reducer": {
+    "witnessed_row": {
+      "origin": "WITNESSED",
+      "status": "WITNESSED",
+      "support_basis": "WITNESS",
+      "citations": [],
+      "depth": 0,
+      "lineage": "singleton external public-event identity"
+    },
+    "proposal": {
+      "record": "Immutable proposal.schema.json audit object {proposal_id,slot,kind,fields,citations,semantic_hash,audit_prediction,audit_confidence,proposal_hash}; it is not a memory row and has no row status, support basis, depth, record hash, or cognitive owner before SELF_CHECK.",
+      "SELF_CHECK_projection": "Only {proposal_id,kind,fields,citations} enters self_check_state.schema.json; slot, hashes, prediction, and confidence remain audit-only.",
+      "citation_rule": "Exactly 2..8 distinct visible M rows in emitted order, all owned before the proposal slot and all WITNESSED or SUPPORTED.",
+      "semantic_hash": "sha256(RFC8785_JCS({fields:fields,kind:kind}))",
+      "ownership": "Within one external life and the current branch ancestry (PREFIX plus OWN, or PREFIX plus DIST), the first schema-valid CREATE for a semantic hash reserves the sole proposal owner. A later identical CREATE in that ancestry is a duplicate audit event, creates no proposal owner or row, and its already prospectively registered paired SELF_CHECK opportunity is not dispatched. Sibling-branch and cross-life namespaces never resolve into one another."
+    },
+    "self_check_dispatch": {
+      "prospective_registry": "Before the first HELDOUT_TEXT provider dispatch, seal exactly 232 SELF_CHECK opportunities in bijection with the 232 sealed DREAM opportunities. Each pair has the same stage=HELDOUT_TEXT, external life, origin branch, and proposal slot; only profile differs (DREAM versus SELF_CHECK). No DREAM result may add, delete, rename, or re-pair an opportunity.",
+      "heldout_pair_domain": "For each of exactly two heldout lives, pair all 84 PREFIX slots 0..83, all 16 OWN slots 84..99, and all 16 DIST slots 84..99: 116 DREAM/SELF_CHECK pairs per life and 232 pairs total.",
+      "dispatch_rule": "A schema-valid CREATE that is the new semantic owner dispatches its already registered paired SELF_CHECK exactly once. No other DREAM result dispatches SELF_CHECK.",
+      "nondispatch_rule": "Duplicate CREATE uses NON_DISPATCH_DUPLICATE/NON_DISPATCH_DUPLICATE/DUPLICATE_PROPOSAL. PASS uses NON_DISPATCH_SELF_CHECK_NO_PROPOSAL/NON_DISPATCH_NOT_APPLICABLE/DREAM_PASS_NO_PROPOSAL. Malformed or semantically illegal CREATE uses NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL/NON_DISPATCH_NOT_APPLICABLE/DREAM_INVALID_NO_PROPOSAL. Each binds cause_opportunity_id to the exact paired DREAM and has attempts=0,input_tokens=0,output_tokens=0,provider_request_id=null.",
+      "upstream_rule": "Precondition, authority, and registered stage-wide blocks have higher priority and apply their own zero-attempt condition with the cause required by that condition. If the paired DREAM was dispatched and ended in infrastructure invalidity, SELF_CHECK uses NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY/NON_DISPATCH_POST_INVALID/PRIOR_INFRASTRUCTURE_INVALIDITY and binds the exact DREAM opportunity as cause. No SELF_CHECK request is constructed or sent on any non-dispatch route.",
+      "scientific_boundary": "Prospective registration and deterministic dispatch eligibility are accounting only. They neither evaluate proposal truth nor add a verifier, semantic oracle, retry, model request, or cognitive input.",
+      "premises": "Exact closed cited rows in proposal-citation order.",
+      "additional_rows": "Zero through eight eligible non-premise rows from the kind-specific pool, sorted by semantic_hash then row_id and truncated to eight.",
+      "ROLE_EQUIV_pool": "Eligible ANIMAL_VALUE(proposed animal,source,label) and SOURCE_VALUE(proposed anchor,source,label) rows that participate in at least one pair sharing the exact source atom.",
+      "CAUSAL_JOIN_pool": "Eligible ROUTE(valve,proposed source) and EFFECT(valve,proposed target,effect) rows that participate in at least one pair sharing the exact valve atom.",
+      "ROLE_APPLICATION_pool": "Eligible SUPPORTED ROLE_EQUIV(proposed animal,proposed anchor) rows and WITNESSED TARGET_BASELINE(proposed anchor,proposed target,mixture) rows.",
+      "exclude": ["proposal premises", "rows owned at or after the proposal slot", "audit-only objects", "private truth"]
+    },
+    "self_check_reduction": {
+      "common": "premise_ids must byte-equal proposal citations in the same order; support_row_ids must be distinct, drawn only from supplied additional_rows, preserve their relative order in additional_rows, and satisfy len(premise_ids)+len(support_row_ids)<=8. Because additional_rows exclude proposal premises, the canonical accepted-row citation union is premise_ids followed by support_row_ids; first-occurrence deduplication is still applied defensively and must leave the same sequence.",
+      "SELF_REVIEW_SAME_EVIDENCE": "SUPPORTED with an empty support_row_ids array.",
+      "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT": "SUPPORTED with at least one named support row whose public-event lineage is nonempty and disjoint from the union of every premise lineage.",
+      "harness_judgment": "Schema, supplied IDs, order, visibility, lineage nonemptiness, and set disjointness only; never semantic entailment or private truth.",
+      "SUPPORTED": "Create one immutable DREAMED row with the proposal kind and fields, citations equal to the full canonical proposal-premise plus model-identified support-row union, the emitted support basis, status SUPPORTED, depth 1+max(depth over every row in that full citation union), and lineage equal to the set union of every cited row's public-event lineage. No identified supporting premise may be discarded.",
+      "CONTRADICTED_or_UNRESOLVED": "Append an audit receipt and create no cognitive row.",
+      "malformed_or_illegal": "Append an invalid SELF_CHECK audit receipt and create no cognitive row.",
+      "false_support": "A structurally valid false model-supported row remains eligible and may damage later behavior."
+    },
+    "hashes": {
+      "semantic_hash": "sha256(RFC8785_JCS({fields:fields,kind:kind}))",
+      "record_hash": "sha256(RFC8785_JCS(closed immutable row excluding record_hash))",
+      "canonical_owner": "The earliest schedule owner of one semantic_hash is canonical. Later identical CREATEs never mutate it. Conflicting missing-field values have different semantic hashes, remain separate rows, and cause reader CONFLICT."
+    }
+  },
+  "allowed_state_semantics": {
+    "DREAM": {
+      "schema": "dream_state.schema.json",
+      "trigger": "Always one M row. WAKE public event Ei is first projected to witnessed Mi; no EVENT object and no E citation ever enters DREAM.",
+      "rows": "Trigger is element zero followed by zero through five selected neighbors; no duplicate row IDs.",
+      "focus": "NO_FOCUS or the one registered CAUSAL_JOIN_FOCUS. It is non-evidentiary and may not be cited.",
+      "forbidden": ["audit text", "final goal", "answer", "private truth"]
+    },
+    "SELF_CHECK": {
+      "schema": "self_check_state.schema.json",
+      "proposal": "Immutable proposal object, never a provisional or mutable row.",
+      "premises": "Exact proposal-cited M rows in identical order.",
+      "additional_rows": "Zero through eight rows selected by the fixed public rule.",
+      "forbidden": ["DREAM prediction", "DREAM confidence", "DREAM reason", "focus", "final goal", "answer", "private truth"]
+    },
+    "THINK0": {
+      "schema": "think0_state.schema.json",
+      "forbidden": ["final animal", "final goal", "answer", "valve", "effect", "DIST control", "raw life", "private truth"]
+    },
+    "THINK1": {
+      "schema": "think1_state.schema.json",
+      "state_tokens": "ASCII-byte-sorted unique RECIPE label field values from the sealed typed public projection, sealed before the first heldout provider dispatch, required to byte-equal the later recipient M0 WITNESSED RECIPE projection, and reused byte-identically in every recipient T and L arm after final-goal reveal.",
+      "forbidden": ["row ID", "row citations", "row depth", "backend ID", "host provenance", "raw life", "audit stream", "arm or donor identity", "private truth"]
+    }
+  },
+  "heldout_pre_dispatch_seal": {
+    "contract": "public_projection_contract.json",
+    "order": [
+      "project and seal both seed-5 public event lists and E-to-M plans",
+      "project and seal the byte-identical public probe",
+      "project and seal the byte-identical host-only withheld final goal and state-token vocabulary",
+      "derive and seal the public DIST-control manifest from only those sealed public objects",
+      "verify every seed-5 frozen vector and cross-twin equality receipt",
+      "seal exactly 232 DREAM opportunities and exactly 232 bijectively paired SELF_CHECK opportunities, plus 24 THINK0 and 144 THINK1_TEXT opportunities, before observing any heldout DREAM output",
+      "only then permit the first heldout DREAM, SELF_CHECK, THINK0, or THINK1 provider dispatch"
+    ],
+    "immutability": "Later heldout stages consume the sealed hashes and bytes; they may not reconstruct, revise, or replace any projection or control from model output, memory rows, branch results, scores, or private truth.",
+    "failure": "Any missing byte, dependency/hash mismatch, projection mismatch, DIST mismatch, or cross-twin mismatch is INVALID_PRECONDITION/PUBLIC_PROJECTION_MISMATCH or INVALID_PRECONDITION/DIST_PUBLIC_DERIVATION_MISMATCH before every heldout provider dispatch."
+  },
+  "heldout_recurrence": {
+    "proposal_slots": {
+      "range": [0, 99],
+      "prefix_range": [0, 83],
+      "return_range": [84, 99],
+      "WAKE": "For event index i=0..45, its proposal slot is i + 2*floor(i/4). Project Ei to Mi, then seal and dispatch this WAKE state.",
+      "WAKE_slots": [
+        0, 1, 2, 3, 6, 7, 8, 9, 12, 13, 14, 15, 18, 19, 20, 21,
+        24, 25, 26, 27, 30, 31, 32, 33, 36, 37, 38, 39, 42, 43, 44, 45,
+        48, 49, 50, 51, 54, 55, 56, 57, 60, 61, 62, 63, 66, 67
+      ],
+      "REACTIVATE": "For k=0..10 after WAKE event index 4k+3, dispatch proposal slots 6k+4 and 6k+5, in that order.",
+      "REACTIVATE_slots": [4, 5, 10, 11, 16, 17, 22, 23, 28, 29, 34, 35, 40, 41, 46, 47, 52, 53, 58, 59, 64, 65],
+      "SLEEP": "After WAKE event 45 and every associated REACTIVATE, dispatch proposal slots 68..83 in ascending order.",
+      "SLEEP_slots": [68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83],
+      "RETURN": "OWN and DIST each dispatch proposal slots 84..99 in ascending order; corresponding slots share the same request seed. M0 dispatches no return proposal slots.",
+      "RETURN_slots": [84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+    },
+    "mode_sequences": {
+      "cycle": ["UNDER_LINKED", "RECENT", "SUPPORTED"],
+      "REACTIVATE": [
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED", "RECENT", "SUPPORTED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED", "RECENT", "SUPPORTED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED", "RECENT", "SUPPORTED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED"
+      ],
+      "SLEEP_and_NO_FOCUS_RETURN": [
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED", "RECENT", "SUPPORTED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED", "RECENT", "SUPPORTED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNDER_LINKED"
+      ],
+      "return_side": [
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE"
+      ]
+    },
+    "evidence_eligibility": {
+      "eligible": ["WITNESSED", "SUPPORTED"],
+      "ineligible": ["proposal", "CONTRADICTED", "UNRESOLVED", "malformed", "illegal", "duplicate", "audit receipt"],
+      "unresolved_trigger_pool": false
+    },
+    "selector_state": {
+      "key": "branch-local row_id",
+      "initial_value": 0,
+      "citation_graph_degree": "At state-selection time, the number of distinct currently eligible rows joined to the candidate by an outgoing or incoming citation edge in the current branch.",
+      "creation_slot": "Witnessed Mi uses event index i. A dreamed M row uses its proposal slot.",
+      "increment": "Increment the selected trigger row exactly once only after the complete DREAM allowed-state object seals and before dispatch. Neighbor appearances never increment. A failed state seal does not increment.",
+      "prefix_scope": "One PREFIX counter map evolves through slots 0..83.",
+      "fork_scope": "M0 is the sealed prefix map. OWN and DIST each copy M0 counters before slot 84 and then evolve independently; neither branch reads the other's counters or results."
+    },
+    "trigger_pools_and_order": {
+      "UNDER_LINKED": {
+        "predicate": "Every currently eligible row owned before this slot.",
+        "order": ["citation_graph_degree ascending", "selection_count ascending", "semantic_hash ascending", "row_id ascending"]
+      },
+      "RECENT": {
+        "predicate": "Every currently eligible row owned before this slot.",
+        "order": ["selection_count ascending", "creation_slot descending", "semantic_hash ascending", "row_id ascending"]
+      },
+      "SUPPORTED": {
+        "predicate": "Every row with origin DREAMED and status SUPPORTED owned before this slot.",
+        "order": ["selection_count ascending", "semantic_hash ascending", "row_id ascending"]
+      },
+      "empty_requested_pool": "Advance cyclically UNDER_LINKED->RECENT->SUPPORTED->UNDER_LINKED until a nonempty pool is found. If all three are empty, fail pre-dispatch. requested_mode and realized_mode are audit-only.",
+      "selection": "Choose the first row in the realized ordered pool."
+    },
+    "context_rows": {
+      "WAKE": "The newly projected witnessed Mi is trigger and element zero. Append at most five prior eligible rows sharing at least one exact typed atom with Mi, ordered by shared-atom count descending, creation_slot descending, semantic_hash ascending, row_id ascending.",
+      "REACTIVATE_SLEEP_RETURN": "The selected trigger is element zero. Append at most five other eligible rows that are citation-adjacent to the trigger in either direction or share at least one exact typed atom. Order by citation-adjacent true first, shared-atom count descending, absolute creation-slot distance ascending, semantic_hash ascending, row_id ascending.",
+      "typed_atom_equality": "Namespace and complete UTF-8 atom bytes must match; equal suffixes in different namespaces do not match.",
+      "padding": false
+    },
+    "focus_return_selector": {
+      "scheduled_side_pool": "Eligible rows containing the exact registered source atom for SOURCE_SIDE or exact registered target atom for TARGET_SIDE.",
+      "order": ["selection_count ascending", "number of exact focus atoms present descending", "semantic_hash ascending", "row_id ascending"],
+      "fallback": "If the scheduled-side pool is empty, use the other-side pool with the same order. If both are empty, realize UNDER_LINKED using its exact pool and order.",
+      "NO_FOCUS": "Use SLEEP_and_NO_FOCUS_RETURN mode at return index slot-84.",
+      "focus_visibility": "Only the prospectively registered focus object enters DREAM state. Selector counters, side, and fallback are audit-only."
+    },
+    "counts_per_life": {
+      "WAKE": 46,
+      "REACTIVATE": 22,
+      "SLEEP": 16,
+      "TOTAL_PREFIX": 84,
+      "M0_RETURN": 0,
+      "OWN_RETURN": 16,
+      "DIST_RETURN": 16,
+      "TOTAL_EACH_RETURN_BRANCH": 100
+    }
+  },
+  "return_branches": {
+    "THINK0_before_fork": true,
+    "OWN_focus": "If THINK0 terminates REQUEST_RETURN with the exact probe CAUSAL_JOIN, use its source and target. If THINK0 terminates DEFER or any valid system/trace failure, use NO_FOCUS. THINK0 DEFER is trace-local and nonfatal to the stage: OWN and DIST still execute their fixed sixteen slots, but feedback/return credit is impossible and aggregate classification waits until all prospective traces seal.",
+    "DIST_focus": "Always use the sealed prospective DIST control, independent of THINK0 result.",
+    "prospective_DIST_derivation": {
+      "inputs": ["sealed public source/target probe", "sealed typed public ROUTE events plus their predetermined M aliases", "sealed typed public EFFECT events plus their predetermined M aliases"],
+      "forbidden_inputs": ["matched_distractor fields", "latent bit", "answer", "private truth", "THINK0 output", "branch result"],
+      "primary_gap": "In the sealed typed public projection, at the public probe target resolve exactly one ROUTE for the public probe source and exactly one EFFECT for that route valve; primary_gap is the absolute difference of their public event indices.",
+      "candidate_pool": "Every source other than the public probe source having exactly one typed public ROUTE and exactly one typed public EFFECT for that route valve at the public probe target, with absolute event-index gap strictly greater than the frozen context_observation_budget 12, and with the same source/target/predetermined-M aliases in both twins.",
+      "selection": "Choose the candidate minimizing (absolute(candidate_gap-primary_gap), source atom) lexicographically. Seal {source,target=public probe target,route_row_id,effect_row_id,candidate_gap,primary_gap} plus derivation input hashes before the first heldout model provider dispatch.",
+      "seed5_required_vector": {
+        "source": "source:candyland",
+        "target": "target:confluenceland",
+        "route_row_id": "M000002",
+        "effect_row_id": "M000026"
+      },
+      "twin_rule": "Both seed-5 twins must independently reproduce the required vector with unique route and effect resolutions. Missing, multiple, cross-twin-different, or vector-mismatching resolution is INVALID_PRECONDITION/DIST_PUBLIC_DERIVATION_MISMATCH before every heldout model provider dispatch."
+    },
+    "matched_fields": [
+      "sealed prefix rows and counter snapshot",
+      "16 return slots and source/target side sequence",
+      "DREAM and conditional SELF_CHECK schemas, prompts, generation profiles, and slot seeds",
+      "selector algorithms and state limits",
+      "no retry and ledger rules"
+    ],
+    "independence": "OWN and DIST reducers and counters evolve independently after the fork. M1_OWN is fixed for transport regardless of M0, DIST, THINK0, or later score.",
+    "P1CB06_intervention_boundary": "M0, OWN, and DIST retain the complete identical 84-slot recurrent prefix. P1CB06 tests only literal zero return versus the sixteen-slot goal-routed OWN/public-control DIST return treatment after that common prefix. It is schedule and return-loop executability evidence, not an ablation of prefix recurrence, repeated dreaming as a whole, or graph growth, and cannot support their necessity."
+  },
+  "seed_derivation": {
+    "root_hex": "381de6315e048429bc2accc4abef2cc25636218d768f73c55ca86d8190dbaf67",
+    "formula": "uint64_be(SHA256(ASCII('P1CB-SEED\\0') || root_bytes || 0x00 || ASCII(profile) || 0x00 || uint32_be(slot))[0:8]) mod 2147483647",
+    "profiles": {
+      "DREAM": {"ascii": "DREAM", "legal_slots": [0, 99], "meaning": "proposal slot"},
+      "SELF_CHECK": {"ascii": "SELF_CHECK", "legal_slots": [0, 99], "meaning": "prospectively paired DREAM proposal slot; dispatched only for a schema-valid new-owner CREATE, otherwise represented by exactly one registered zero-attempt row"},
+      "THINK0": {"ascii": "THINK0", "legal_slots": [0, 11], "meaning": "zero-based operation opportunity"},
+      "THINK1_DEV": {"ascii": "THINK1_DEV", "legal_slots": [0, 11], "meaning": "zero-based operation opportunity"},
+      "THINK1_TEXT": {"ascii": "THINK1_TEXT", "legal_slots": [0, 11], "meaning": "zero-based operation opportunity"},
+      "THINK1_LORA": {"ascii": "THINK1_LORA", "legal_slots": [0, 11], "meaning": "zero-based operation opportunity"}
+    },
+    "pairing": "The seed bytes contain no life, latent bit, branch, arm, result, answer, or lock hash. Corresponding twin, OWN/DIST, and matched arm profile+slot pairs therefore share seeds.",
+    "slot_encoding": "Unsigned four-byte big-endian integer. Thinker operation ordinal equals slot+1."
+  },
+  "generation_profiles": {
+    "DREAM": {"max_input_tokens": 4096, "max_new_tokens": 256, "temperature": 0.2, "top_p": 0.95},
+    "SELF_CHECK": {"max_input_tokens": 4096, "max_new_tokens": 128, "temperature": 0.0, "top_p": 1.0},
+    "THINK0": {"max_input_tokens": 6144, "max_new_tokens": 128, "temperature": 0.0, "top_p": 1.0},
+    "THINK1_DEV": {"max_input_tokens": 6144, "max_new_tokens": 192, "temperature": 0.0, "top_p": 1.0},
+    "THINK1_TEXT": {"max_input_tokens": 6144, "max_new_tokens": 192, "temperature": 0.0, "top_p": 1.0},
+    "THINK1_LORA": {"max_input_tokens": 6144, "max_new_tokens": 192, "temperature": 0.0, "top_p": 1.0}
+  },
+  "reader_and_scratch": {
+    "previous_read": {
+      "NO_READ": "Initial value and value after THINK or BACKTRACK.",
+      "NOT_FOUND": "One atomic query produced no value; expose only type and request-local read_handle.",
+      "CONFLICT": "One atomic query produced at least two distinct missing-field values; this is a legal read result and exposes only type and request-local read_handle.",
+      "ROW": "Expose only type, request-local read_handle, kind, complete fields, WITNESSED or SUPPORTED status, and semantic_hash.",
+      "forbidden": ["query echo", "row_id", "creation citations", "depth", "record_hash", "backend ID", "host provenance"]
+    },
+    "read_handle": "A QUERY at thinker operation ordinal n receives H followed by n as six decimal digits, so operation 1 uses H000001 and operation 12 uses H000012. Handles never cross traces.",
+    "scratch": {
+      "initial": {"nodes": []},
+      "schema": "scratch.schema.json",
+      "maximum_appended_nodes": 11,
+      "maximum_RFC8785_JCS_bytes": 6144,
+      "QUERY": "Execute one atomic read, allocate its H handle, append a QUERY node containing the exact query and only result type+handle, and expose the full allowed result only as next operation previous_read.",
+      "THINK": "Append exact text and already-returned H citations; set next previous_read to NO_READ.",
+      "BACKTRACK": "THINK1 only. Append exact text and already-returned H citations; it does not delete or mutate earlier nodes; set next previous_read to NO_READ.",
+      "terminal_operations": ["REQUEST_RETURN", "COMMIT", "DEFER"],
+      "terminal_location": "Trace only; never append a terminal scratch node.",
+      "pruning": false,
+      "summarization": false,
+      "citation_rule": "Only H handles allocated by earlier QUERY operations in the same trace. COMMIT requires at least one. A handle qualifies as structurally used only when it is returned by QUERY, cited in a later retained THINK or BACKTRACK node whose scratch prefix is passed unchanged into every subsequent request through terminal COMMIT, and cited again by COMMIT. A COMMIT-only citation, prose mention, or returned-but-unreasoned handle is decorative and never earns a causal-use claim.",
+      "schema_bound": "Every legal sequence of at most eleven registered nodes is at most 6144 RFC8785_JCS bytes under the registered field limits; violation is implementation/runtime drift, not a model outcome."
+    }
+  },
+  "twelve_operation_reducer": {
+    "registered_opportunities": 12,
+    "dispatch_order": "Slots 0..11 in ascending order until a terminal or failure. Before each dispatch, validate and seal the closed state and record exactly one dispatch receipt for that opportunity.",
+    "operations_1_through_11": {
+      "valid_nonterminal": "Execute it, retain it in the trace, append exactly one scratch node, set previous_read as registered, and dispatch the next opportunity.",
+      "valid_terminal": "Retain it in the trace, append no scratch node, seal the terminal immediately, and do not dispatch later opportunities."
+    },
+    "operation_12": {
+      "valid_terminal": "Retain it in the trace, append no scratch node, and seal its registered terminal result.",
+      "valid_nonterminal": "Execute it and retain its operation and any atomic read result in the trace, append no scratch node because no next request exists, and seal VALID_STAGE_FAILURE/BUDGET_EXHAUSTED.",
+      "no_operation_13": true
+    },
+    "failure_table": {
+      "COMMIT": "Valid trace terminal; stage classification is deferred to the registered offline scorer and may become VALID_STAGE_PASS or VALID_STAGE_FAILURE.",
+      "REQUEST_RETURN": "Valid THINK0 trace terminal; seal the requested focus and continue the registered stage without assigning a stage validity class by this operation alone.",
+      "DEFER": "Trace-local terminal, not an immediate aggregate-stage classification. THINK0 DEFER fixes OWN to NO_FOCUS, preserves the presealed DIST branch, dispatches both return branches, and makes feedback/return credit impossible. THINK1 DEFER marks only that trace unsuccessful. Aggregate validity is assigned only after every prospectively runnable trace seals.",
+      "twelfth_valid_nonterminal": "VALID_STAGE_FAILURE/BUDGET_EXHAUSTED",
+      "malformed_or_schema_invalid_model_output": "VALID_STAGE_FAILURE/MALFORMED_MODEL_OUTPUT",
+      "schema_valid_but_semantically_illegal_model_output": "VALID_STAGE_FAILURE/ILLEGAL_OPERATION",
+      "provider_refusal": "INVALID_INFRASTRUCTURE/PROVIDER_REFUSAL",
+      "provider_timeout": "INVALID_INFRASTRUCTURE/PROVIDER_TIMEOUT",
+      "truncated_output": "INVALID_INFRASTRUCTURE/TRUNCATED_OUTPUT",
+      "output_limit": "INVALID_INFRASTRUCTURE/OUTPUT_LIMIT",
+      "runtime_or_revision_drift": "INVALID_INFRASTRUCTURE/RUNTIME_OR_REVISION_DRIFT",
+      "cache_or_state_reuse": "INVALID_INFRASTRUCTURE/CACHE_OR_STATE_REUSE",
+      "missing_required_abstraction": "VALID_STAGE_FAILURE/MISSING_REQUIRED_ABSTRACTION after a root-absence manifest seals; no T traces dispatch.",
+      "sham_infeasible": "VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE; only T-SHAM is non-dispatched with exact zero-attempt rows, every other prospectively runnable T arm still executes, and neither the full causal-use claim nor any weakened replacement causal claim is permitted.",
+      "fidelity_gate_failed": "VALID_STAGE_FAILURE/FIDELITY_GATE_FAILED after both registered fidelity sets seal; no L thinker trace dispatches.",
+      "CONFLICT": "legal nonterminal read result"
+    },
+    "retry": false
+  },
+  "opportunity_ledger": {
+    "sole_schema": "opportunity_ledger.schema.json",
+    "semantic_lock": "semantic_consistency_matrix.json",
+    "exactly_one_record_per_registered_opportunity": "The prospective opportunity registry is complete before stage dispatch. Every registered opportunity_id appears exactly once under opportunity_ledger.schema.json; no opportunity has both a dispatched and a non-dispatch row or neither. HELDOUT_TEXT contains exactly 232 DREAM plus 232 SELF_CHECK plus 24 THINK0 plus 144 THINK1_TEXT opportunities = 632 fixed opportunities.",
+    "condition_mapping": "Use only the condition-to-ledger_state-to-reason triples in opportunity_ledger.schema.json x-semantic-contract.condition_state_reason_map. This contract does not define a second vocabulary.",
+    "post_terminal": "NON_DISPATCH_POST_TERMINAL is trace-local only: every later opportunity in that same trace binds the terminal cause_opportunity_id and has attempts=0, input_tokens=0, output_tokens=0, and provider_request_id=null. Aggregate stage gates and infrastructure invalidity never use it.",
+    "stage_failure": "NON_DISPATCH_STAGE_FAILURE is exclusive to MISSING_REQUIRED_ABSTRACTION, SHAM_NOT_IDENTIFIABLE, and FIDELITY_GATE_FAILED. Sham infeasibility affects only T-SHAM; its other five T arms execute.",
+    "post_invalid": "Later opportunities blocked by a dispatched infrastructure invalidity use NON_DISPATCH_POST_INVALID/PRIOR_INFRASTRUCTURE_INVALIDITY.",
+    "self_check_fixed_pairs": "Before HELDOUT_TEXT dispatch, every one of 232 DREAM opportunities has exactly one SELF_CHECK partner with identical stage, external life, origin branch, and slot and the SELF_CHECK profile. The 232 partners are immutable and exhaustive. A new-owner CREATE dispatches its partner; duplicate, PASS, malformed/illegal CREATE, or upstream invalidity selects the sole registered zero-attempt route. Dynamic registration, deletion, re-pairing, and a second effect are PROTOCOL_CONTRADICTION.",
+    "nondispatch_zero_accounting": "Every non-dispatch route, including the paired SELF_CHECK no-proposal and invalid-proposal routes, has attempts=0,input_tokens=0,output_tokens=0,provider_request_id=null. The paired DREAM cause is mandatory for duplicate, PASS, invalid CREATE, and dispatched upstream infrastructure invalidity; precondition, authority, and stage-wide routes retain their schema-defined cause and higher priority.",
+    "contradiction": "An unlisted condition, multiple applicable conditions after the canonical priority, state/reason mismatch, duplicate opportunity_id, missing registered opportunity, or cross-contract difference is INVALID_PRECONDITION/PROTOCOL_CONTRADICTION before affected dispatch.",
+    "ceilings": {
+      "DEV_registered_and_maximum_dispatched_controller_calls": 216,
+      "DEV_denominator": "3 arms * 6 DEV lives * 12 THINK1_DEV opportunities = 216",
+      "heldout_text_registered_opportunities": 632,
+      "heldout_text_maximum_dispatched_controller_calls": 632,
+      "heldout_text_denominator": "232 DREAM + 232 prospectively paired SELF_CHECK + 24 THINK0 + 144 THINK1_TEXT = 632; ineligible SELF_CHECK partners remain in the denominator as zero-attempt ledger rows, so actual dispatched calls may be lower",
+      "conditional_LoRA_thinker_calls": 48,
+      "conditional_LoRA_denominator": "2 heldout lives * 2 LoRA arms * 12 THINK1_LORA opportunities = 48; conditional on the reviewed text and fidelity gates",
+      "conditional_total_controller_calls": 896,
+      "conditional_fits": 2,
+      "fidelity_cases": 96,
+      "online_recognition_reads": 48
+    }
+  },
+  "pre_dev_golden_vectors": {
+    "required_per_profile": [
+      "prompt_sha256",
+      "state_schema_sha256",
+      "output_schema_sha256",
+      "allowed_state_sha256",
+      "messages_sha256",
+      "rendered_request_sha256",
+      "input_token_count",
+      "input_token_ids_sha256",
+      "generation_config_sha256"
+    ],
+    "semantic_vectors": [
+      "all nine exact kind/field shapes and every legal one-null query",
+      "E-to-M WAKE projection and M-only proposal citations",
+      "raw v03r public/probe/withheld-goal/state-token projection and pre-heldout seal ordering",
+      "proposal-not-row SELF_CHECK, full premise-plus-support citation union, and all four reduction outcomes",
+      "46/22/16/16 schedule slots and three-mode sequences",
+      "selector pools, counter increments, fork copy, and deterministic ties",
+      "seed bytes for every profile boundary slot and paired life/branch equality",
+      "operations 1, 11, and 12 for every terminal and nonterminal class",
+      "every opportunity_ledger.schema.json condition/state/reason vector, including fixed 232-pair SELF_CHECK registration; exact duplicate, PASS, invalid-CREATE, upstream-infrastructure, missing-abstraction, T-SHAM-infeasibility, and fidelity-failure zero-attempt rows; wrong-cause and double-effect negatives; and exact 216/632/48 denominators"
+    ],
+    "seal_rule": "Vectors are generated from the resolved executable lock after human ratification during CPU work, independently reviewed, and sealed before the first DEV dispatch. They verify these proposal bytes and may not choose new semantics."
+  }
+}

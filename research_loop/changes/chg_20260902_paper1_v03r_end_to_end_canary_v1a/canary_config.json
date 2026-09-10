@@ -1,0 +1,86 @@
+{
+  "schema_version": "paper1-v03r-canary-config-v1a.0",
+  "world": {
+    "schema_version": "lands-v0.3r-counterfactual-confluence",
+    "skin": "aligned",
+    "prompt_development_seeds": [0, 1, 2],
+    "scored_seed": 5,
+    "scored_latent_bits": [0, 1],
+    "pair_is_one_unit": true
+  },
+  "controller": {
+    "model": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "dtype": "bfloat16",
+    "stateless_request_per_operation": true,
+    "dream": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_new_tokens": 256,
+      "wake_calls_per_life": 46,
+      "reactivate_calls_per_life": 22,
+      "target_blind_sleep_calls_per_life": 16,
+      "return_calls_per_arm_life": 16,
+      "max_memory_neighbors": 6
+    },
+    "self_check": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_new_tokens": 128,
+      "one_call_per_valid_create": true
+    },
+    "think0": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_new_tokens": 128,
+      "max_operations": 12
+    },
+    "think1": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_new_tokens": 192,
+      "max_operations": 12,
+      "max_rows_per_query": 1
+    }
+  },
+  "memory_adapter": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "dtype": "bfloat16",
+    "rank": 64,
+    "alpha": 128,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "learning_rate": 0.0002,
+    "epochs": 4,
+    "batch_size": 32,
+    "max_line_tokens": 96,
+    "concept_touches": 24,
+    "relation_touches": 96,
+    "fresh_adapter_per_life": true,
+    "mounted_for_atomic_recognition_reads_only": true,
+    "max_recognition_candidates": 16
+  },
+  "fixed_transport_corpus": "M1_OWN",
+  "text_arms": ["T-M0", "T-OWN", "T-DIST", "T-TWIN", "T-PATH", "T-SHAM"],
+  "lora_arms": ["L-OWN", "L-TWIN"],
+  "authority_order": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA", "HUMAN_TERMINAL"],
+  "call_maxima": {
+    "dev_gold_32b_operations": 360,
+    "heldout_32b_proposals": 232,
+    "heldout_32b_self_checks": 232,
+    "heldout_32b_think0_operations": 24,
+    "heldout_32b_core_think1_operations": 96,
+    "heldout_32b_path_sham_think1_operations": 48,
+    "conditional_32b_think1_operations": 48,
+    "total_32b_operations": 1040,
+    "conditional_adapter_fits": 2,
+    "fidelity_cue_cases": 96,
+    "conditional_online_adapter_read_requests": 48
+  },
+  "lora_read_fidelity_min": 0.9,
+  "post_result_repair": false,
+  "rank_sweep": false,
+  "model_scale_sweep": false,
+  "prompt_revision_after_dev_start": false
+}

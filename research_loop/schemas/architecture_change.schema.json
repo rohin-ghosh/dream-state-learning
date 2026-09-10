@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "context_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "purpose"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "purpose": {"type": "string", "minLength": 1}
+      }
+    },
+    "node_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "node_id", "before", "after", "rationale"],
+      "properties": {
+        "operation": {"enum": ["add", "modify", "remove"]},
+        "node_id": {"type": "string", "minLength": 1},
+        "before": {"type": "string"},
+        "after": {"type": "string"},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "edge_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "edge_id", "from", "to", "before", "after", "rationale"],
+      "properties": {
+        "operation": {"enum": ["add", "modify", "remove"]},
+        "edge_id": {"type": "string", "minLength": 1},
+        "from": {"type": "string", "minLength": 1},
+        "to": {"type": "string", "minLength": 1},
+        "before": {"type": "string"},
+        "after": {"type": "string"},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "loop_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "loop_id", "before", "after", "trigger", "reads", "writes", "stop_condition", "rationale"],
+      "properties": {
+        "operation": {"enum": ["add", "modify", "remove"]},
+        "loop_id": {"type": "string", "minLength": 1},
+        "before": {"type": "string"},
+        "after": {"type": "string"},
+        "trigger": {"type": "string", "minLength": 1},
+        "reads": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "writes": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "stop_condition": {"type": "string", "minLength": 1},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "claim_id", "before", "after", "evidence_needed", "headline_eligible"],
+      "properties": {
+        "operation": {"enum": ["add", "modify", "retire"]},
+        "claim_id": {"type": "string", "minLength": 1},
+        "before": {"type": "string"},
+        "after": {"type": "string"},
+        "evidence_needed": {"type": "string", "minLength": 1},
+        "headline_eligible": {"type": "boolean"}
+      }
+    },
+    "acceptance_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_id", "kind", "setup", "expected", "falsifies", "evidence_artifact", "required_before"],
+      "properties": {
+        "test_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["unit", "invariant", "ablation", "baseline", "end_to_end", "independent_review"]},
+        "setup": {"type": "string", "minLength": 1},
+        "expected": {"type": "string", "minLength": 1},
+        "falsifies": {"type": "string", "minLength": 1},
+        "evidence_artifact": {"type": "string", "minLength": 1},
+        "required_before": {"enum": ["implementation", "model_execution", "gpu_run", "scientific_claim"]}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "artifact_type", "change_id", "title", "summary",
+    "system_thesis", "state", "context_files", "graph_delta", "loop_delta",
+    "claim_delta", "visibility_matrix", "acceptance_tests", "human_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "artifact_type": {"const": "architecture_change"},
+    "change_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "system_thesis": {"type": "string", "minLength": 1},
+    "state": {"const": "proposed"},
+    "context_files": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/context_file"}},
+    "graph_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nodes", "edges"],
+      "properties": {
+        "nodes": {"type": "array", "items": {"$ref": "#/$defs/node_delta"}},
+        "edges": {"type": "array", "items": {"$ref": "#/$defs/edge_delta"}}
+      }
+    },
+    "loop_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["loops"],
+      "properties": {"loops": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/loop_delta"}}}
+    },
+    "claim_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claims"],
+      "properties": {"claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim_delta"}}}
+    },
+    "visibility_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["information_items", "stages", "cells"],
+      "properties": {
+        "information_items": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "stages": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "cells": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["information_id", "stage_id", "visibility", "reason"],
+            "properties": {
+              "information_id": {"type": "string", "minLength": 1},
+              "stage_id": {"type": "string", "minLength": 1},
+              "visibility": {"enum": ["visible", "hidden", "derived_only", "forbidden"]},
+              "reason": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "acceptance_tests": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/acceptance_test"}},
+    "human_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "decision_owner", "decision_question", "forbidden_before_approval"],
+      "properties": {
+        "required": {"const": true},
+        "decision_owner": {"type": "string", "minLength": 1},
+        "decision_question": {"type": "string", "minLength": 1},
+        "forbidden_before_approval": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    }
+  }
+}

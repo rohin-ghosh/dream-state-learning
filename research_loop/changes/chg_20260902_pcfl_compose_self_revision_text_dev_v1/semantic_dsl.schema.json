@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pcfl-compose-semantic-dsl-v1",
+  "$defs": {
+    "sort": {"enum": ["TOKEN", "ACTION", "OPERATOR", "TRAY", "BOOL"]},
+    "tray": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 1}},
+    "term": {
+      "oneOf": [
+        {"type": "array", "prefixItems": [{"const": "TOK"}, {"type": "string", "minLength": 1, "maxLength": 32}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "VAR"}, {"type": "string", "pattern": "^V[0-9]{1,2}$"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "ACT"}, {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/term"}}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "PACT"}, {"type": "string", "pattern": "^(E|A)[0-9]{2}$"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "EOP"}, {"type": "string", "pattern": "^(E|A)[0-9]{2}$"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "PERM"}, {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 5}}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "CALL"}, {"type": "string", "pattern": "^S[0-9]{1,2}$"}, {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/term"}}], "minItems": 3, "maxItems": 3},
+        {"type": "array", "prefixItems": [{"const": "OP"}, {"$ref": "#/$defs/term"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "INV"}, {"$ref": "#/$defs/term"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "COMP"}, {"type": "array", "minItems": 2, "maxItems": 4, "items": {"$ref": "#/$defs/term"}}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "TRAY"}, {"$ref": "#/$defs/tray"}], "minItems": 2, "maxItems": 2},
+        {"type": "array", "prefixItems": [{"const": "APPLY"}, {"$ref": "#/$defs/term"}, {"$ref": "#/$defs/term"}], "minItems": 3, "maxItems": 3},
+        {"type": "array", "prefixItems": [{"enum": ["EQ", "NEQ"]}, {"$ref": "#/$defs/term"}, {"$ref": "#/$defs/term"}], "minItems": 3, "maxItems": 3}
+      ]
+    },
+    "var_decl": {"type": "array", "prefixItems": [{"type": "string", "pattern": "^V[0-9]{1,2}$"}, {"$ref": "#/$defs/sort"}], "minItems": 2, "maxItems": 2},
+    "symbol_decl": {"type": "object", "additionalProperties": false, "required": ["id", "args", "result"], "properties": {"id": {"type": "string", "pattern": "^S[0-9]{1,2}$"}, "args": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/sort"}}, "result": {"$ref": "#/$defs/sort"}}},
+    "statement": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["f", "n", "e"], "properties": {"f": {"enum": ["DEFINE", "ASSERT"]}, "n": {"type": "string", "pattern": "^N[0-9]{1,2}$"}, "e": {"$ref": "#/$defs/term"}}},
+        {"type": "object", "additionalProperties": false, "required": ["f", "n", "v", "g", "e"], "properties": {"f": {"const": "RULE"}, "n": {"type": "string", "pattern": "^N[0-9]{1,2}$"}, "v": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/var_decl"}}, "g": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/term"}}, "e": {"$ref": "#/$defs/term"}}},
+        {"type": "object", "additionalProperties": false, "required": ["f", "n", "over", "scope", "e"], "properties": {"f": {"const": "EXCEPTION"}, "n": {"type": "string", "pattern": "^N[0-9]{1,2}$"}, "over": {"type": "string", "pattern": "^R[0-9]{2}$"}, "scope": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/term"}}, "e": {"$ref": "#/$defs/term"}}},
+        {"type": "object", "additionalProperties": false, "required": ["f", "n", "alts"], "properties": {"f": {"const": "UNRESOLVED"}, "n": {"type": "string", "pattern": "^N[0-9]{1,2}$"}, "alts": {"type": "array", "minItems": 2, "maxItems": 4, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}
+      ]
+    },
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["e", "r", "n"], "properties": {"e": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^(E|A)[0-9]{2}$"}}, "r": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^R[0-9]{2}$"}}, "n": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^W[0-9]{2}$"}}}},
+    "memory_record": {"type": "object", "additionalProperties": false, "required": ["id", "s", "p", "u"], "properties": {"id": {"type": "string", "pattern": "^R[0-9]{2}$"}, "s": {"$ref": "#/$defs/statement"}, "p": {"$ref": "#/$defs/provenance"}, "u": {"enum": ["LOW", "MEDIUM", "HIGH"]}}},
+    "note": {"type": "object", "additionalProperties": false, "required": ["id", "text", "events", "premise_nodes", "uncertainty"], "properties": {"id": {"type": "string", "pattern": "^R[0-9]{2}$"}, "text": {"type": "string", "minLength": 1, "maxLength": 256}, "events": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^(E|A)[0-9]{2}$"}}, "premise_nodes": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^W[0-9]{2}$"}}, "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]}}},
+    "ast_workspace_node": {"type": "object", "additionalProperties": false, "required": ["id", "op", "premises", "s"], "properties": {"id": {"type": "string", "pattern": "^W[0-9]{2}$"}, "op": {"enum": ["NOTICE", "CONNECT", "REVISE"]}, "premises": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^((E|A)[0-9]{2}|C0[12]|R[0-9]{2}|W[0-9]{2})$"}}, "s": {"$ref": "#/$defs/statement"}}},
+    "note_workspace_node": {"type": "object", "additionalProperties": false, "required": ["id", "op", "premises", "text"], "properties": {"id": {"type": "string", "pattern": "^W[0-9]{2}$"}, "op": {"enum": ["NOTICE", "CONNECT", "REVISE"]}, "premises": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^((E|A)[0-9]{2}|C0[12]|R[0-9]{2}|W[0-9]{2})$"}}, "text": {"type": "string", "minLength": 1, "maxLength": 256}}},
+    "workspace_node": {"oneOf": [{"$ref": "#/$defs/ast_workspace_node"}, {"$ref": "#/$defs/note_workspace_node"}]},
+    "prediction": {"type": "object", "additionalProperties": false, "required": ["request_id", "after_tray"], "properties": {"request_id": {"type": "string", "pattern": "^[AB][12]$"}, "after_tray": {"$ref": "#/$defs/tray"}}},
+    "ast_candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "representation", "symbols", "records", "predictions", "confidence", "audit_explanation"], "properties": {"candidate_id": {"type": "string", "pattern": "^C0[12]$"}, "representation": {"const": "OPERATOR_AST"}, "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/symbol_decl"}}, "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/memory_record"}}, "predictions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/prediction"}}, "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]}, "audit_explanation": {"type": ["string", "null"], "maxLength": 768}}},
+    "note_candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "representation", "notes", "predictions", "confidence", "audit_explanation"], "properties": {"candidate_id": {"type": "string", "pattern": "^C0[12]$"}, "representation": {"const": "OPAQUE_NOTE"}, "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/note"}}, "predictions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/prediction"}}, "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]}, "audit_explanation": {"type": ["string", "null"], "maxLength": 768}}},
+    "candidate": {"oneOf": [{"$ref": "#/$defs/note_candidate"}, {"$ref": "#/$defs/ast_candidate"}]},
+    "ast_query": {"type": "object", "additionalProperties": false, "required": ["kind", "match", "statement_form", "cursor"], "properties": {"kind": {"const": "AST"}, "match": {"type": "array", "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["field", "value"], "properties": {"field": {"enum": ["PUBLIC_TOKEN", "PUBLIC_ACTION", "RECORD_ID", "SYMBOL_ID", "STATEMENT_FORM"]}, "value": {"type": "string", "minLength": 1, "maxLength": 128}}}, "statement_form": {"oneOf": [{"enum": ["DEFINE", "ASSERT", "RULE", "EXCEPTION", "UNRESOLVED"]}, {"type": "null"}]}, "cursor": {"type": "integer", "minimum": 0, "maximum": 12}}},
+    "lexical_query": {"type": "object", "additionalProperties": false, "required": ["kind", "text", "cursor"], "properties": {"kind": {"const": "LEXICAL"}, "text": {"type": "string", "minLength": 1, "maxLength": 256}, "cursor": {"type": "integer", "minimum": 0, "maximum": 12}}},
+    "query": {"oneOf": [{"$ref": "#/$defs/lexical_query"}, {"$ref": "#/$defs/ast_query"}]}
+  },
+  "oneOf": [
+    {
+      "title": "RESOLVER_STEP", "type": "object", "additionalProperties": false,
+      "required": ["artifact", "mode", "op", "read_handle", "query", "node", "workspace", "candidate", "commitment", "representation", "decision", "parent_candidate_ids", "symbols", "records", "notes", "predictions", "citations", "action", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"}, "mode": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"enum": ["READ", "NOTICE", "CONNECT", "REVISE", "PASS", "PREDICT", "COMMIT", "USE", "LOCK", "ABSTAIN"]},
+        "read_handle": {"oneOf": [{"type": "string", "pattern": "^(E|A)[0-9]{2}$"}, {"type": "string", "pattern": "^C0[12]$"}, {"type": "null"}]},
+        "query": {"oneOf": [{"$ref": "#/$defs/query"}, {"type": "null"}]},
+        "node": {"oneOf": [{"$ref": "#/$defs/workspace_node"}, {"type": "null"}]},
+        "workspace": {"type": ["string", "null"], "maxLength": 1536},
+        "candidate": {"oneOf": [{"$ref": "#/$defs/candidate"}, {"type": "null"}]},
+        "commitment": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/candidate"}},
+        "representation": {"type": ["string", "null"], "enum": ["OPAQUE_NOTE", "OPERATOR_AST", null]},
+        "decision": {"type": ["string", "null"], "enum": ["RETAIN", "REVISE", null]},
+        "parent_candidate_ids": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^C0[12]$"}},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/symbol_decl"}},
+        "records": {"type": "array", "maxItems": 13, "items": {"$ref": "#/$defs/memory_record"}},
+        "notes": {"type": "array", "maxItems": 13, "items": {"$ref": "#/$defs/note"}},
+        "predictions": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/prediction"}},
+        "citations": {"type": "array", "maxItems": 16, "uniqueItems": true, "items": {"type": "string", "pattern": "^((E|A)[0-9]{2}|C0[12]|R[0-9]{2}|W[0-9]{2})$"}},
+        "action": {"type": ["string", "null"], "maxLength": 128},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 768}
+      },
+      "x-runtime-cross-field-invariants": [
+        "All modes share one parser and READ/NOTICE/CONNECT/REVISE/PASS state transition code; permissions differ only by mode and terminal operation.",
+        "DREAM1 READ permits only E handles; DREAM2 READ permits declared E/A/C handles; THINK READ uses structured query and no read_handle; every non-READ has null read_handle and query.",
+        "NOTICE/CONNECT/REVISE emits exactly one typed node with one/two/one-or-more premises; PASS emits no node and changes no state.",
+        "DREAM1 permits PREDICT/COMMIT/ABSTAIN but not USE/LOCK; PREDICT stages one C01/C02 candidate with exact A1,A2; COMMIT copies current ordered candidates; ABSTAIN commits none.",
+        "DREAM2 permits PREDICT/COMMIT/ABSTAIN but not USE/LOCK; PREDICT stages one RETAIN or REVISE choice with exact B1,B2; RETAIN copies a read candidate and REVISE cites a read parent plus public evidence.",
+        "DREAM2 COMMIT has zero predictions and repeats the latest staged representation, decision, parents, symbols plus records or notes, and citations byte-for-byte; ABSTAIN has no active memory fields.",
+        "THINK permits USE/LOCK/ABSTAIN but not PREDICT/COMMIT; USE names exactly one legal visible action and LOCK/ABSTAIN terminate.",
+        "All irrelevant fields are null/empty; malformed output never mutates state and still consumes its registered budget."
+      ]
+    },
+    {
+      "title": "DREAM1", "type": "object", "additionalProperties": false,
+      "required": ["artifact", "candidates", "abstain_reason"],
+      "properties": {"artifact": {"const": "DREAM1"}, "candidates": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/candidate"}}, "abstain_reason": {"type": ["string", "null"], "maxLength": 768}}
+    },
+    {
+      "title": "DREAM2", "type": "object", "additionalProperties": false,
+      "required": ["artifact", "representation", "decision", "parent_candidate_ids", "symbols", "records", "notes", "predictions", "citations", "reason"],
+      "properties": {"artifact": {"const": "DREAM2"}, "representation": {"type": ["string", "null"], "enum": ["OPAQUE_NOTE", "OPERATOR_AST", null]}, "decision": {"enum": ["RETAIN", "REVISE", "ABSTAIN"]}, "parent_candidate_ids": {"type": "array", "maxItems": 2, "items": {"type": "string", "pattern": "^C0[12]$"}}, "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/symbol_decl"}}, "records": {"type": "array", "maxItems": 13, "items": {"$ref": "#/$defs/memory_record"}}, "notes": {"type": "array", "maxItems": 13, "items": {"$ref": "#/$defs/note"}}, "predictions": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/prediction"}}, "citations": {"type": "array", "maxItems": 16, "items": {"type": "string"}}, "reason": {"type": "string", "minLength": 1, "maxLength": 768}}
+    },
+    {
+      "title": "ONE_SHOT_PLAN", "type": "object", "additionalProperties": false,
+      "required": ["artifact", "decision", "actions", "citations", "reason"],
+      "properties": {"artifact": {"const": "ONE_SHOT_PLAN"}, "decision": {"enum": ["ACT", "ABSTAIN"]}, "actions": {"type": "array", "maxItems": 4, "items": {"type": "string", "minLength": 1, "maxLength": 128}}, "citations": {"type": "array", "maxItems": 16, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "reason": {"type": "string", "minLength": 1, "maxLength": 768}}
+    }
+  ]
+}
+}

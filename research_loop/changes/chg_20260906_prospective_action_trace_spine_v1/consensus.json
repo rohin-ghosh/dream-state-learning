@@ -1,0 +1,766 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Retained as necessary canonical and recovery coverage, but it cannot define the missing cross-root topology, crash transaction, evidence-binding, relational-mutation, or deterministic resource requirements.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST1_canonical_chain_and_recovery"
+    },
+    {
+      "rationale": "Retained as necessary lifecycle coverage, but it lacks a total failure transition table, branch eligibility, and rendered-policy observability.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST2_episode_budget_lifecycle"
+    },
+    {
+      "rationale": "Retained as a synthetic local consistency check; it neither proves runtime consumption nor binds policy fields, offered schema bytes, or raw structured-channel output.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST3_context_generation_local_roundtrip"
+    },
+    {
+      "rationale": "Retained as typed-call and prose-separation coverage, but it does not bind a proposed call to offered schema bytes, raw structured output, or branch eligibility.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST4_typed_call_cardinality"
+    },
+    {
+      "rationale": "Retained as synthetic private-transition coverage, but it does not close cross-root atomic publication or the total invalid-transition law.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST5_private_dispatch_score_atomicity"
+    },
+    {
+      "rationale": "Retained as exact registered byte-projection coverage, but it cannot establish semantic declassification, paired-world indistinguishability, or admission non-laundering.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST6_public_projection_noninterference"
+    },
+    {
+      "rationale": "Retained as enumerated synthetic capability coverage, but it lacks a frozen observer, secret-variation, and process-topology model for named indirect channels.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST7_role_capability_fixture"
+    },
+    {
+      "rationale": "Retained as closed-graph coverage, but event-instance temporal semantics and durable abandoned-branch status remain unspecified.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST8_closed_graph_and_no_feedback"
+    },
+    {
+      "rationale": "Retained as registered one-sided mutation and agreement coverage, but it cannot establish semantic completeness or detect all coordinated relational mutations.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "ST9_dual_validator_mutation"
+    }
+  ],
+  "agreements": [
+    "The change is infrastructure-only; ST1-ST9 can support only bounded synthetic structural enforcement and no learning, planning, retrieval, dreaming, transport, generalization, improvement, or Experience Models claim.",
+    "Free THINK must remain non-effectful prose; only a separately typed TOOL_CALL_PROPOSED record may authorize dispatch.",
+    "Separating target-bearing private results from a public projection is directionally necessary, and later context may receive only explicitly admitted public material.",
+    "CPU fixture equality, validator agreement, and synthetic capability checks are not evidence of actual tokenizer, model, environment, scorer, or runtime-isolation truth.",
+    "Exact human ratification remains required before any artifact authoring, and no consensus authorizes implementation, live execution, GPU work, or scientific claims."
+  ],
+  "architecture_change_sha256": "053a53ef855abae3a6a625979d35e41e77b1cac81933e44a7e879e8ec1c3eed4",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260906_prospective_action_trace_spine_v1",
+  "concern_dispositions": [
+    {
+      "concern_id": "C01_private_public_ledger_topology_undefined",
+      "rationale": "Accepted. Separate roots and a purported single life chain do not define one validator-independent sequence, hash, parent-resolution, or event-placement topology.",
+      "required_change": "Freeze private/public ledger topology, global-versus-ledger-local event sequencing and previous-hash rules, event placement, inaccessible-parent verification, and cross-ledger source-hash rules. Register the critique's missing topology test; ST1, ST6, ST8, and ST9 are only partial coverage.",
+      "resolution_id": "DG01_ledger_topology",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C02_cross_root_publication_not_atomic",
+      "rationale": "Accepted. The stated rename and append steps have multiple durability points and do not define exactly-once recovery across private and public roots.",
+      "required_change": "Specify a recoverable cross-root publication protocol and inject failure at every rename, fsync, append, projection, and directory-fsync boundary. Register the critique's missing crash-atomicity test; ST1 and ST5 are partial prerequisites.",
+      "resolution_id": "DG02_cross_root_atomicity",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C03_public_declassifier_has_semantic_covert_channels",
+      "rationale": "Accepted. An allowlist and forbidden-byte scan prove registered projection correctness, not semantic secrecy of permitted text, identifiers, scores, order, or correlations.",
+      "required_change": "Either narrow the current claim to registered byte-level projection or freeze a closed public representation and paired hidden-world semantic criterion. Register the critique's missing semantic-declassification test; ST6 is only partial coverage.",
+      "resolution_id": "DG03_semantic_declassification",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C04_query_to_agenda_admission_laundering",
+      "rationale": "Accepted. HARNESS can select, order, omit, repeat, and budget public records while possessing task-related metadata, without a durable task-blind selector trace.",
+      "required_change": "Bind candidate set, selector inputs, selected and rejected IDs, render order, budget allocation, and a task-blind admission policy; test query-to-agenda signaling. Register the critique's missing admission-laundering test; ST2, ST3, ST6, ST8, and ST9 are partial coverage.",
+      "resolution_id": "DG04_context_admission",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C05_prompt_schema_and_typed_call_provenance_gap",
+      "rationale": "Accepted. A valid call record can be fabricated independently of the schema offered to a generator or any structured-channel response.",
+      "required_change": "Bind exact offered tool-schema bytes, structured-output configuration, raw channel response bytes, parser input, parsed call, and generation identity, with stable mismatch errors. Register the critique's missing structured-channel provenance test; ST3, ST4, ST5, and ST9 are partial coverage.",
+      "resolution_id": "DG05_structured_provenance",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C06_abandoned_generation_branch_release",
+      "rationale": "Accepted. Lifecycle boundaries alone do not make failed, superseded, retried, or abandoned contexts, generations, calls, and projections durably ineligible.",
+      "required_change": "Define durable branch status, revocation, and eligibility transitions; prove abandoned content cannot dispatch, enter context, or be released. Register the critique's missing branch-eligibility test; ST2, ST4, ST5, and ST8 are partial coverage.",
+      "resolution_id": "DG06_branch_eligibility",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C07_type_graph_and_event_dag_conflated",
+      "rationale": "Accepted. The type graph is recurrent while only a time-unrolled event-instance graph can be acyclic.",
+      "required_change": "Specify event-instance temporal DAG semantics, including cross-ledger parents; accept lawful repeated iterations and diamonds while rejecting true back edges. Register the critique's missing temporally-unrolled-DAG test; ST8 and ST9 are partial coverage.",
+      "resolution_id": "DG07_event_dag",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C08_repeat_and_budget_state_not_proven_policy_visible",
+      "rationale": "Accepted. Boundary fields do not prove that declared repeat, retry, block, clock, and budget values occur in actual child input.",
+      "required_change": "Define required field-to-byte rendering relations and test sentinels for every policy-visible repeat, retry, block, clock, and budget field without exposing sealed identity. Register the critique's missing policy-observability test; ST2 and ST3 are partial coverage.",
+      "resolution_id": "DG08_policy_observability",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C09_invalid_transition_and_budget_law_incomplete",
+      "rationale": "Accepted. The proposal lacks a total state machine for malformed, stale, over-budget, crash, publication, invalid-projection, close, and retry outcomes.",
+      "required_change": "Freeze a total transition table covering budget consumption, transaction advancement, appends, invalid public projections, CLOSE behavior, retries, and stable errors. Register the critique's missing total-failure-budget test; ST2, ST5, and ST6 are partial coverage.",
+      "resolution_id": "DG09_total_lifecycle",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C10_evidence_artifacts_and_manifests_not_bound",
+      "rationale": "Accepted. Auxiliary evidence and referenced manifests lack their own closed provenance, durability, and architecture binding.",
+      "required_change": "Schema- and hash-bind schemas, oracle, fixtures, validator sources, manifests, quarantine outputs, comparator outputs, execution environment, and each receipt to this architecture hash. Register the critique's missing evidence-artifact-binding test; ST1, ST3, ST5, ST7, and ST9 are partial coverage.",
+      "resolution_id": "DG10_evidence_binding",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C11_synthetic_capability_test_lacks_observation_model",
+      "rationale": "Accepted. Fixture denials do not define observers or equivalence for timing, error, cache, IPC, network, inherited-descriptor, and log channels.",
+      "required_change": "Freeze attacker, observer, secret variation, permitted traces, process topology, and stable denial semantics for every named synthetic channel. Register the critique's missing capability-observation-equivalence test; ST7 and ST9 are partial coverage.",
+      "resolution_id": "DG11_capability_observation",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C12_oracle_agreement_does_not_cover_relational_mutations",
+      "rationale": "Accepted. Source-distinct agreement over one-sided mutations cannot establish semantic completeness or catch coordinated oracle-preserving changes.",
+      "required_change": "Expand the revised registry with coordinated relational mutations of linked records, recomputed hashes, private/public pairs, schema-fixture bundles, manifests, and branch eligibility. Register the critique's missing relational-mutation test; ST9 remains a useful but insufficient prerequisite.",
+      "resolution_id": "DG12_oracle_scope",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C13_resource_limits_not_deterministically_defined",
+      "rationale": "Accepted. Size, depth, memory, record-total, and wall-clock semantics are ambiguous and the advertised envelope is not deterministically feasible as written.",
+      "required_change": "Freeze aggregate decoded and encoded limits, parser-memory and depth accounting, ledger totals, deterministic operation bounds, preallocation failure behavior, and any hardware profile for a time SLA. Register the critique's missing resource-envelope test; ST1, ST7, and ST9 are partial coverage.",
+      "resolution_id": "DG13_resource_envelope",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C14_causal_spine_wording_exceeds_cpu_evidence",
+      "rationale": "Accepted. The proposed CPU fixtures can establish structural provenance only, not actual context consumption, dispatch, state transition, or score causality.",
+      "required_change": "Describe this artifact exclusively as a prospective structural-provenance contract and reserve causal runtime truth for a separately ratified live consumer-and-dispatch canary. ST3, ST5, ST6, and ST9 remain limited synthetic checks.",
+      "resolution_id": "DG14_claim_ceiling",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C15_no_behavioral_or_online_learning_assay",
+      "rationale": "Accepted as a claim-boundary condition rather than a defect in an infrastructure-only change.",
+      "required_change": "Preserve the absolute no-behavioral-inference ceiling; require a separately hash-bound and ratified behavioral protocol before any recall, composition, planning, action-improvement, or learning claim. ST1-ST9 do not measure these endpoints.",
+      "resolution_id": "DG15_behavioral_boundary",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C16_future_benchmark_and_ablation_protocol_absent",
+      "rationale": "Accepted. The current infrastructure has no benchmark force, shortcut controls, endpoint, statistical protocol, or matched mechanism ablations.",
+      "required_change": "Before task inspection, separately deliberate and ratify a benchmark with paired worlds, leakage controls, matched accounting, mechanism ablations, split audits, endpoints, statistics, stopping, replication, and negative-result interpretation. No registered ST test genuinely covers this requirement.",
+      "resolution_id": "DG16_future_benchmark",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C17_exact_human_ratification_pending",
+      "rationale": "Accepted. Supplied human language and model agreement do not ratify the exact proposal bytes or scope.",
+      "required_change": "Obtain explicit human ratification only after a repaired, newly hash-bound proposal closes the required contract choices and registers its missing tests; until then all authoring and execution remain forbidden. ST1-ST9 cannot satisfy ratification.",
+      "resolution_id": "DG17_human_ratification",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "cons_20260906_prospective_action_trace_spine_v1_adjudication_v1",
+  "critique_sha256": "b946d852eb02aa5f9584527849cde70b07751d25c58d9893e71fd885891724c8",
+  "disagreements": [
+    {
+      "disagreement_id": "DG01_ledger_topology",
+      "issue": "Whether separate private/public roots nevertheless form one uniquely validated append-only chain.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "One life uses one append-only JSONL ledger while public results are stored in a separate public ledger."
+        },
+        {
+          "actor": "systems_and_critique",
+          "position": "The proposal does not determine global versus ledger-local sequencing, previous hashes, parent resolution, or public verification of inaccessible private sources."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST6_public_projection_noninterference",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "The contract has no unique independent-validator interpretation.",
+        "required_change": "Freeze the topology and register the missing topology test before implementation.",
+        "selected_position": "systems_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C01_private_public_ledger_topology_undefined",
+        "D3_private_public_chain_model"
+      ]
+    },
+    {
+      "disagreement_id": "DG02_cross_root_atomicity",
+      "issue": "Whether per-root publication steps provide atomic, exactly-once private/public outcome publication.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Temporary-file rename, ledger fsync, separate locks, and fail-closed errors provide publication and recovery."
+        },
+        {
+          "actor": "critique",
+          "position": "Private and public publication have separate durability points and no specified cross-root recovery transaction."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference"
+        ],
+        "rationale": "A crash can leave orphan or one-sided artifacts under the stated protocol.",
+        "required_change": "Specify cross-root transactional recovery and register the missing crash-atomicity test.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C02_cross_root_publication_not_atomic",
+        "D3_private_public_chain_model"
+      ]
+    },
+    {
+      "disagreement_id": "DG03_semantic_declassification",
+      "issue": "Whether ST6 establishes public noninterference beyond registered literal bytes and fields.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Byte-identical allowlist projection and forbidden-byte scans prevent private task/scorer material from reaching public output."
+        },
+        {
+          "actor": "systems_benchmark_and_critique",
+          "position": "Allowed outcome text, hashes, measurements, identifiers, errors, order, and timing can encode or correlate with sealed facts without serializing forbidden bytes."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference",
+          "ST7_role_capability_fixture",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "The present evidence supports deterministic registered byte projection, not semantic secrecy.",
+        "required_change": "Narrow the claim or add a closed representation and register paired-world semantic-declassification coverage.",
+        "selected_position": "systems_benchmark_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C03_public_declassifier_has_semantic_covert_channels",
+        "D2_public_projection_noninterference_scope",
+        "DIS1_ST6_semantic_noninterference"
+      ]
+    },
+    {
+      "disagreement_id": "DG04_context_admission",
+      "issue": "Whether explicit admission of earlier public outcomes prevents task-dependent agenda laundering.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Only earlier same-life public outcomes may be explicitly admitted to context."
+        },
+        {
+          "actor": "critique",
+          "position": "Selection, omission, ordering, repetition, IDs, and budget allocation remain an unobserved secret-to-prompt channel."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST2_episode_budget_lifecycle",
+          "ST3_context_generation_local_roundtrip",
+          "ST6_public_projection_noninterference",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Explicit admission is not a task-blind selection rule or selector provenance record.",
+        "required_change": "Define selector provenance and register admission-laundering coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C04_query_to_agenda_admission_laundering",
+        "DIS2_benchmark_force_absent"
+      ]
+    },
+    {
+      "disagreement_id": "DG05_structured_provenance",
+      "issue": "Whether call cardinality and a schema hash bind dispatch to the offered structured-output channel.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A TOOL_CALL_PROPOSED record has schema hash, canonical arguments, parsed object, parser receipt, and at-most-one-call cardinality."
+        },
+        {
+          "actor": "critique",
+          "position": "Neither exact offered schema nor raw structured response is byte-bound to the call or its generation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST3_context_generation_local_roundtrip",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Structural cardinality cannot prevent fabricated or schema-mismatched calls.",
+        "required_change": "Bind schema/configuration/response/parser provenance and register the missing structured-channel test.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C05_prompt_schema_and_typed_call_provenance_gap",
+        "D1_causal_spine_wording"
+      ]
+    },
+    {
+      "disagreement_id": "DG06_branch_eligibility",
+      "issue": "Whether OPEN/CLOSE and retry identity make abandoned generated branches ineligible.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Lifecycle, retry identity, call cardinality, and fail-closed publication constrain episodes."
+        },
+        {
+          "actor": "critique",
+          "position": "No durable status identifies failed, superseded, abandoned, or revoked branches for dispatch and admission exclusion."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST2_episode_budget_lifecycle",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST8_closed_graph_and_no_feedback"
+        ],
+        "rationale": "Serialization validity is not durable release eligibility.",
+        "required_change": "Define branch lifecycle and register abandoned-branch release coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C06_abandoned_generation_branch_release",
+        "C09_invalid_transition_and_budget_law_incomplete"
+      ]
+    },
+    {
+      "disagreement_id": "DG07_event_dag",
+      "issue": "Whether the six-type graph itself is a DAG or only time-unrolled event instances are acyclic.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "ST8 accepts the exact six-type DAG, diamonds, and rejects back edges and feedback."
+        },
+        {
+          "actor": "critique",
+          "position": "The type graph has a public-outcome-to-context recurrence; only backward event-instance parentage can define acyclicity."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST2_episode_budget_lifecycle",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Without instance-level rules, validators may reject lawful iterations or accept disguised future edges.",
+        "required_change": "Specify temporal event-instance DAG semantics and register the missing unrolled-DAG test.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C07_type_graph_and_event_dag_conflated",
+        "C06_abandoned_generation_branch_release"
+      ]
+    },
+    {
+      "disagreement_id": "DG08_policy_observability",
+      "issue": "Whether recorded repeat and budget state is proven visible to the policy.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Episode boundaries record policy-visible budget and repeat state, and the visibility matrix marks policy state visible to renderer and child."
+        },
+        {
+          "actor": "critique",
+          "position": "CONTEXT_RENDERED lacks a required field-to-byte relation, so operational state can remain absent from child input."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST2_episode_budget_lifecycle",
+          "ST3_context_generation_local_roundtrip",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "A visibility declaration and ledger field do not prove rendered observability.",
+        "required_change": "Define rendered-field inclusion and register policy-observability coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C08_repeat_and_budget_state_not_proven_policy_visible",
+        "C09_invalid_transition_and_budget_law_incomplete"
+      ]
+    },
+    {
+      "disagreement_id": "DG09_total_lifecycle",
+      "issue": "Whether invalid, failure, retry, budget, transaction, and CLOSE transitions are fully defined.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Malformed calls, invalid receipts, restricted invalid projections, publication errors, and retries are described as fail-closed."
+        },
+        {
+          "actor": "systems_and_critique",
+          "position": "The proposal lacks a total transition table with exact counter, transaction, projection, append, retry, and close consequences."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST2_episode_budget_lifecycle",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference"
+        ],
+        "rationale": "The validators cannot share one oracle where state transition consequences are unspecified.",
+        "required_change": "Freeze the total transition law and register lifecycle fault coverage.",
+        "selected_position": "systems_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C09_invalid_transition_and_budget_law_incomplete",
+        "C02_cross_root_publication_not_atomic"
+      ]
+    },
+    {
+      "disagreement_id": "DG10_evidence_binding",
+      "issue": "Whether auxiliary receipts and manifest references are immutable and attributable merely by being named evidence artifacts.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Immutable receipts, manifests, oracle, fixtures, validators, and comparator outputs are required evidence."
+        },
+        {
+          "actor": "critique",
+          "position": "No closed schema, hash chain, lifecycle, or retrieval requirement binds those artifacts to the change and execution."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST3_context_generation_local_roundtrip",
+          "ST5_private_dispatch_score_atomicity",
+          "ST7_role_capability_fixture",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Evidence can be swapped, orphaned, or self-asserted without an auxiliary-artifact contract.",
+        "required_change": "Define evidence provenance and register evidence-binding coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C10_evidence_artifacts_and_manifests_not_bound",
+        "C01_private_public_ledger_topology_undefined"
+      ]
+    },
+    {
+      "disagreement_id": "DG11_capability_observation",
+      "issue": "Whether synthetic attempted-read/write denials test all listed capability channels.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "ST7 covers registered filesystem and process-adjacent fixture channels while explicitly deferring live-runtime noninterference."
+        },
+        {
+          "actor": "critique",
+          "position": "Timing, errors, IPC, network, caches, descriptors, and logs require observers, secret variation, process topology, and equivalence rules even for a synthetic assertion."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST6_public_projection_noninterference",
+          "ST7_role_capability_fixture",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Enumerating denials is not a test definition for indirect observation channels.",
+        "required_change": "Freeze the synthetic observation model and register capability-observation coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C11_synthetic_capability_test_lacks_observation_model",
+        "C03_public_declassifier_has_semantic_covert_channels"
+      ]
+    },
+    {
+      "disagreement_id": "DG12_oracle_scope",
+      "issue": "Whether oracle and dual-validator agreement establishes sufficient correctness over the proposed contract.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Two source-distinct validators and a declarative oracle agree over registered one-sided mutations."
+        },
+        {
+          "actor": "critique",
+          "position": "Coordinated mutations and shared underspecification can preserve local agreement while violating intended relations."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST2_episode_budget_lifecycle",
+          "ST3_context_generation_local_roundtrip",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference",
+          "ST7_role_capability_fixture",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Agreement remains valuable but is neither semantic completeness nor independent truth.",
+        "required_change": "Register relational coordinated mutations and retain the limited interpretation of validator agreement.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C12_oracle_agreement_does_not_cover_relational_mutations",
+        "C10_evidence_artifacts_and_manifests_not_bound"
+      ]
+    },
+    {
+      "disagreement_id": "DG13_resource_envelope",
+      "issue": "Whether the stated resource limits define deterministic safe validation.",
+      "positions": [
+        {
+          "actor": "systems",
+          "position": "The interpretation supplies numerical bounds and a 30-second complete-validation limit."
+        },
+        {
+          "actor": "critique",
+          "position": "Aggregate size, pre-decode bounds, depth and memory accounting, total volume, and hardware basis for wall-clock limits remain undefined."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST7_role_capability_fixture",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "The advertised limits do not form an unambiguous or hardware-independent resource envelope.",
+        "required_change": "Freeze deterministic resource semantics and register resource-envelope feasibility coverage.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C13_resource_limits_not_deterministically_defined",
+        "C12_oracle_agreement_does_not_cover_relational_mutations"
+      ]
+    },
+    {
+      "disagreement_id": "DG14_claim_ceiling",
+      "issue": "Whether causal-spine terminology is justified by CPU-only synthetic fixtures.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The title and rationale describe a prospective causal action/outcome spine while claim delta narrows passing evidence to synthetic enforcement."
+        },
+        {
+          "actor": "systems_and_critique",
+          "position": "Actual consumption, dispatch, environment transition, and score causation are not evidenced; the artifact is structural provenance only."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST3_context_generation_local_roundtrip",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "The narrower claim is the only one supported by the authorized evidence.",
+        "required_change": "Remove causal-runtime implication from terminology and reserve it for a later ratified live canary.",
+        "selected_position": "systems_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C14_causal_spine_wording_exceeds_cpu_evidence",
+        "D1_causal_spine_wording"
+      ]
+    },
+    {
+      "disagreement_id": "DG15_behavioral_boundary",
+      "issue": "Whether the absence of behavioral and online-learning assays is acceptable in this change.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The explicit claim ceiling denies learning, planning, retrieval, task-improvement, and generalization conclusions."
+        },
+        {
+          "actor": "benchmark_and_critique",
+          "position": "ST1-ST9 provide no behavioral evidence, which is acceptable only if that ceiling remains absolute."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST2_episode_budget_lifecycle",
+          "ST3_context_generation_local_roundtrip",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference",
+          "ST7_role_capability_fixture",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "The parties agree on the present non-claim boundary.",
+        "required_change": "Preserve the no-behavioral-inference ceiling and require a separate ratified assay for behavioral claims.",
+        "selected_position": "shared limited-claim position",
+        "status": "resolved"
+      },
+      "sources": [
+        "C15_no_behavioral_or_online_learning_assay",
+        "D1_causal_spine_wording"
+      ]
+    },
+    {
+      "disagreement_id": "DG16_future_benchmark",
+      "issue": "Whether this infrastructure supplies a benchmark that forces or measures the intended organismal mechanism.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A later integration proposal can follow passing infrastructure receipts."
+        },
+        {
+          "actor": "benchmark_and_critique",
+          "position": "No game, shortcut-resistant paired worlds, endpoints, accounting, ablations, statistics, or scaling protocol is registered."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [],
+        "rationale": "The reduced graph deliberately omits the relevant organismal mechanisms and no current test measures them.",
+        "required_change": "Create a separate hash-bound benchmark proposal before task inspection; it must register the missing benchmark and ablation protocol in its own test registry.",
+        "selected_position": "benchmark_and_critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C16_future_benchmark_and_ablation_protocol_absent",
+        "DIS2_benchmark_force_absent"
+      ]
+    },
+    {
+      "disagreement_id": "DG17_human_ratification",
+      "issue": "Whether the supplied directive or this consensus authorizes authoring or execution.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Exact human ratification is required before bounded CPU artifact authoring."
+        },
+        {
+          "actor": "critique_and_agents_contract",
+          "position": "No exact ratification of this proposal hash and scope has occurred, and model consensus cannot infer it."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "ST1_canonical_chain_and_recovery",
+          "ST2_episode_budget_lifecycle",
+          "ST3_context_generation_local_roundtrip",
+          "ST4_typed_call_cardinality",
+          "ST5_private_dispatch_score_atomicity",
+          "ST6_public_projection_noninterference",
+          "ST7_role_capability_fixture",
+          "ST8_closed_graph_and_no_feedback",
+          "ST9_dual_validator_mutation"
+        ],
+        "rationale": "Ratification is a human decision external to validator results and remains pending.",
+        "required_change": "Obtain human ratification only for a repaired, newly hash-bound scope after unresolved technical gates are closed.",
+        "selected_position": "critique_and_agents_contract",
+        "status": "unresolved"
+      },
+      "sources": [
+        "C17_exact_human_ratification_pending",
+        "D3_private_public_chain_model"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Does Rohin ratify only a repaired, newly hash-bound proposal that fixes every unresolved disagreement and registers the missing acceptance coverage?",
+      "Does Rohin confirm that CPU artifact authoring, live integration, model/tokenizer/environment/GPU work, and every scientific claim remain forbidden until their separately applicable gates are satisfied?"
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_prospective_action_trace_spine_v1.systems",
+      "sha256": "8911f1f1ace211c333ed72494beff9b75ef1874c69bfa594e399c015f7bfd049"
+    },
+    {
+      "interpretation_id": "chg_20260906_prospective_action_trace_spine_v1.benchmark",
+      "sha256": "37265c050a5c921f0a1b971f0d5bdc59b5fa0d158a2bd27ccfd4c3cb1013b7ee"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "D1_causal_spine_wording",
+      "rationale": "Accepted: CPU fixtures establish structural provenance only, so causal-runtime wording must be removed or deferred to a later live canary.",
+      "resolution_id": "DG14_claim_ceiling",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D2_public_projection_noninterference_scope",
+      "rationale": "Accepted: current ST6 evidence is limited to registered byte-level projection and cannot establish semantic secrecy.",
+      "resolution_id": "DG03_semantic_declassification",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D3_private_public_chain_model",
+      "rationale": "Accepted: topology and cross-ledger validation are unresolved and must be frozen before implementation.",
+      "resolution_id": "DG01_ledger_topology",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS1_ST6_semantic_noninterference",
+      "rationale": "Accepted: paired hidden-world semantic coverage is absent; ST6 must not be over-read.",
+      "resolution_id": "DG03_semantic_declassification",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS2_benchmark_force_absent",
+      "rationale": "Accepted: the present infrastructure cannot force or test the deferred whole-organism mechanism.",
+      "resolution_id": "DG16_future_benchmark",
+      "status": "accepted"
+    }
+  ]
+}

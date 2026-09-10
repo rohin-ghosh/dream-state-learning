@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "contract_id": "pcfl-compose-v2-rng-r3",
+  "canonical_json": "RFC8785 JCS encoded as UTF-8; duplicate JSON members and non-Unicode-scalar strings are rejected before canonicalization",
+  "seed_derivation_version": "pcfl-v2-hmac-sha256-v2",
+  "root_secret": {
+    "length_octets": 32,
+    "creation": "one operating-system CSPRNG draw after ratified Stage-0 start and before any root or assignment draw",
+    "storage": "sealed secret store; never serialized into a model, reader, actor, report, or ordinary artifact",
+    "commitment": "SHA-256(UTF8('pcfl-compose-v2/root-secret-commitment/v1') || root_secret)",
+    "binding_time": "before assignment generation and before any model call"
+  },
+  "invocation_row_required_fields": [
+    "call_id", "assignment_id", "root_id", "family", "z_side", "h_or_q",
+    "lane", "sampling_lane", "phase_role", "condition_id", "memory_variant_or_cut",
+    "target_id", "goal_twin", "draw_role", "resolver_ordinal",
+    "coupling_group", "coupling_kind", "sampler_config_id",
+    "scientific_or_diagnostic", "replay_eligible",
+    "seed_key_jcs_utf8_sha256", "seed_digest", "backend_seed_u32"
+  ],
+  "coupling_kinds": {
+    "COMMON_SEED": "Members have identical invocation topology and byte-identical seed_key JCS. Treatment fields may differ, but every retained seed-key field must match. The same backend seed and sampler configuration are mandatory at each paired ordinal.",
+    "ANALYSIS_PAIR_ONLY": "Members are paired only by the analysis contract. They use distinct coupling groups and independently derived seeds; no stepwise common randomness is claimed.",
+    "INDEPENDENT": "No random or analysis coupling is asserted."
+  },
+  "seed_key": {
+    "domain": "pcfl-compose-v2/model-seed",
+    "ordered_semantic_fields": [
+      "domain", "seed_derivation_version", "coupling_group", "root_id",
+      "z_side", "sampling_lane", "phase_role", "target_id", "goal_twin",
+      "draw_role", "resolver_ordinal"
+    ],
+    "excluded_treatment_and_audit_fields": [
+      "call_id", "assignment_id", "family", "h_or_q", "lane", "condition_id",
+      "memory_variant_or_cut", "arm_id", "cut_id", "intervention_id",
+      "scientific_or_diagnostic", "replay_eligible", "process_status",
+      "parse_status", "output", "output_digest"
+    ],
+    "sampling_lane_rule": "sampling_lane is invocation topology, not treatment identity: OPAQUE_DREAM, AST_DREAM, OPAQUE_TARGET_THINK, AST_TARGET_THINK, ORACLE_TARGET_THINK, or STRUCTURED_ONESHOT_THINK. SELF/EMPTY/OBSERVED/CROSSED/SHAM recurrent opaque rows all use OPAQUE_TARGET_THINK. The descriptive lane stays in the audit row and is excluded from seed_key.",
+    "null_rule": "A retained field with no semantic value is the JSON null value; it is never omitted.",
+    "validation": "For COMMON_SEED, group members must have byte-identical seed_key JCS and sampler_config_id. A mismatch in any retained field rejects the entire coupling group before calls. Changing any excluded treatment field leaves seed_key and seed unchanged. ANALYSIS_PAIR_ONLY members must not share a coupling_group."
+  },
+  "derivation": {
+    "message_octets": "the exact RFC8785 JCS UTF-8 encoding of the seed_key object and no prefix, suffix, newline, or length field",
+    "mac": "HMAC-SHA-256 with root_secret as the 32-octet key and message_octets as the message",
+    "seed_digest": "all 32 HMAC output octets rendered as 64 lowercase hexadecimal characters",
+    "backend_seed_mapping": "Interpret digest octets 0..3 as one unsigned big-endian 32-bit integer in [0,4294967295]. No signed conversion, modulo, range reduction, retry, or collision repair is permitted.",
+    "collision_rule": "Equal backend_seed_u32 values in different coupling groups are retained and reported; they are not re-drawn. Full seed_digest and seed_key distinguish the groups.",
+    "sampler_contract": "Every treatment-affecting sampler and runtime value is the literal value in runtime_envelope.json; output bytes never affect a seed or namespace."
+  },
+  "required_common_seed_groups": [
+    "Matched h=0/h=1 Dream-2 calls at the same root, z_side, sampling_lane, phase role, draw role, and resolver ordinal.",
+    "Matched q=0/q=1 Dream-2 calls only where the assignment manifest explicitly declares a common-topology q fork.",
+    "SELF versus EMPTY, OBSERVED, CROSSED, and SHAM recurrent Think calls at the same root, selected continuation, z_side, target_id, goal_twin, phase role, and resolver ordinal when both rows exist.",
+    "Dream-1 is invoked once per selected life and its immutable staged result is cloned; no h/q branch reruns Dream-1."
+  ],
+  "required_analysis_only_groups": [
+    "Each structured one-shot Think row and its iterative AST comparator because their invocation topologies differ.",
+    "Each one-shot Dream result and recurrent Dream diagnostic comparison because their invocation topologies differ."
+  ],
+  "deterministic_nonmodel_namespaces": {
+    "derivation": "HMAC-SHA-256(root_secret, JCS({domain:'pcfl-compose-v2/nonmodel-seed',namespace,root_id,stage,object_id,ordinal})) with all six members present; use the first eight digest octets as unsigned big-endian uint64",
+    "namespaces": [
+      "renderer", "event_extractor", "target_reader", "public_actor",
+      "sham_constructor", "assignment_generator", "cache_canary", "error_canary"
+    ],
+    "dedicated_namespace": "model_visible_identifier is defined by the separate closed contract below and does not use this generic nonmodel-seed message shape.",
+    "separation": "The namespace string is mandatory and distinct. No model output, content address, corpus variant, timing, cache state, score, or error text is an input."
+  },
+  "model_visible_identifier": {
+    "identity_derivation_version": "pcfl-v2-model-visible-id-v1",
+    "domain_utf8": "pcfl-compose-v2/model-visible-identifier/v1",
+    "key": "the exact 32 root_secret octets; this is a deterministic harness derivation, not an additional draw",
+    "message_object_required_members": [
+      "domain", "identifier_kind", "identity_derivation_version",
+      "issuance_role", "issue_ordinal", "namespace", "resolver_ordinal",
+      "session_scope", "source_ordinal"
+    ],
+    "message_octets": "The exact RFC8785-JCS UTF-8 encoding of an object having exactly the required members. domain is the literal domain_utf8 string; namespace is the literal model_visible_identifier. session_scope is the exact closed object below. No prefix, suffix, newline, length, or hidden field is added.",
+    "session_scope": {
+      "required_members": [
+        "goal_twin", "operation_topology", "phase_role", "root_id",
+        "sampling_lane", "target_id", "z_side"
+      ],
+      "source": "Copy these seven values from the assignment/session topology. A semantically absent value is JSON null and is never omitted. sampling_lane is the treatment-free topology lane from seed_key, not descriptive lane. operation_topology is one of DREAM1_32, DREAM2_16, THINK_D1_10, THINK_D4_31, ONE_SHOT_DREAM1_1, ONE_SHOT_DREAM2_1, or ONE_SHOT_THINK_D4_1.",
+      "excluded_fields": [
+        "call_id", "assignment_id", "family", "h_or_q", "lane",
+        "condition_id", "memory_variant_or_cut", "arm_id", "cut_id",
+        "intervention_id", "candidate_bytes", "event_bytes", "note_or_record_bytes",
+        "query", "reader_status", "content_address", "digest", "path", "byte_length",
+        "token_length", "cache_or_dedup_state", "timing", "score", "error", "model_output"
+      ],
+      "paired_equality": "Corresponding COMMON_SEED rows and SELF/EMPTY/OBSERVED/CROSSED/SHAM treatment clones must have byte-identical session_scope JCS. h_or_q and every condition/variant/cut field are excluded even when their public payloads differ. An excluded-field-only mutation must leave every identifier byte-identical."
+    },
+    "ordinal_rules": {
+      "resolver_ordinal": "The assignment row's zero-based resolver_ordinal. The model-visible operation_ordinal is exactly resolver_ordinal + 1. Preissued catalog or memory handles use JSON null. A one-shot batch receipt item uses resolver_ordinal 0 because its sole model operation is operation_ordinal 1.",
+      "source_ordinal": "Zero-based stable source slot: catalog ordinal minus 1 for TREE_EVENT/RAW_A_EVENT; committed Dream-1 candidate position minus 1 for candidate handles/reads; 0 for the sole target memory handle; C01->0 and C02->1 for staged objects; JSON null for authored nodes. It never depends on source bytes or read results.",
+      "issue_ordinal": "Zero-based count within identifier_kind and session_scope. Preissued candidate handles use their zero-based committed-pool position; the sole target memory handle uses 0. Read receipts/candidate-read capabilities use the count of prior successfully charged issuances of that kind. Authored-node and staged-object capabilities use the count of prior accepted mints of that kind. Counts advance only after the event named by issuance_role is accepted or charged; a rejected attempt mints nothing and terminality prevents a later reuse.",
+      "topology_mapping": "Two clones with the same session_scope and the same ordered prefix of issuance_role/source_ordinal/resolver_ordinal tuples map that prefix to identical issue_ordinal values and therefore identical identifiers. If model-authored operation kinds, source slots, resolver positions, or mint counts diverge, subsequent tuples use each branch's natural zero-based order and may diverge. Payload/query text alone never changes a tuple or identifier."
+    },
+    "identifier_kinds": {
+      "PUBLIC_EVENT_READ_RECEIPT": {"allowed_issuance_roles": ["READ_TREE_EVENT"], "prefix": "rcpt_", "encoded_length": 22, "total_ascii_length": 27},
+      "RAW_A_READ_RECEIPT": {"allowed_issuance_roles": ["READ_RAW_A_EVENT"], "prefix": "rcpt_", "encoded_length": 22, "total_ascii_length": 27},
+      "D1_CANDIDATE_HANDLE": {"allowed_issuance_roles": ["CANDIDATE_CATALOG_ENTRY"], "prefix": "hdl_c_", "encoded_length": 22, "total_ascii_length": 28},
+      "CANDIDATE_READ_RECEIPT": {"allowed_issuance_roles": ["READ_CANDIDATE"], "prefix": "rcpt_", "encoded_length": 22, "total_ascii_length": 27},
+      "CANDIDATE_READ_CAPABILITY": {"allowed_issuance_roles": ["READ_CANDIDATE"], "prefix": "cap_o_", "encoded_length": 22, "total_ascii_length": 28},
+      "TARGET_MEMORY_HANDLE": {"allowed_issuance_roles": ["TARGET_MEMORY_ENTRY"], "prefix": "hdl_m_", "encoded_length": 22, "total_ascii_length": 28},
+      "TARGET_READER_RECEIPT": {"allowed_issuance_roles": ["READ_MEMORY"], "prefix": "rcpt_", "encoded_length": 22, "total_ascii_length": 27},
+      "AUTHORED_NODE_CAPABILITY": {"allowed_issuance_roles": ["NOTICE", "CONNECT", "REVISE"], "prefix": "cap_n_", "encoded_length": 22, "total_ascii_length": 28},
+      "STAGED_OBJECT_CAPABILITY": {"allowed_issuance_roles": ["PREDICT_DREAM1", "PREDICT_DREAM2_RETAIN", "PREDICT_DREAM2_REPLACE"], "prefix": "cap_o_", "encoded_length": 22, "total_ascii_length": 28}
+    },
+    "derivation_and_encoding": "Compute HMAC-SHA-256(root_secret, message_octets), take digest octets 0..15 without integer conversion, encode those 16 octets with RFC4648 base64url using the URL-safe alphabet A-Z a-z 0-9 - _, omit both = padding characters, and prepend the identifier_kind prefix. The encoded payload is exactly 22 ASCII characters. No rejection sampling, case conversion, normalization, modulo, retry, collision repair, or entropy draw is permitted.",
+    "visibility_and_collision_rule": "Only the prefixed identifier is model-visible. The message object, digest, root secret, source/path/content identities, and equality-class bookkeeping are not. If two distinct message JCS byte strings produce the same complete identifier anywhere in the sealed manifest/roster, Stage 0 fails IDENTIFIER_COLLISION and the scientific roster is NOT_RUN; no redraw or suffix is allowed. Reuse of the same identifier for byte-identical messages in corresponding clone sessions is required, not a collision.",
+    "golden_vectors": {
+      "fixture_only_root_secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "public_event_receipt": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"PUBLIC_EVENT_READ_RECEIPT\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"READ_TREE_EVENT\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":0,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM1_32\",\"phase_role\":\"DREAM1\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"A1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "327c9402ae50f88d2acf2f8a08ae4aecdcba7cb713a025b783a5bd38d8f0677f",
+        "identifier": "rcpt_MnyUAq5Q-I0qzy-KCK5K7A"
+      },
+      "raw_a_receipt": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"RAW_A_READ_RECEIPT\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"READ_RAW_A_EVENT\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":4,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM2_16\",\"phase_role\":\"DREAM2\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "8ac07634688645ad322ea9bca5f1c33ac52cd0fa293c574b7a36115972b357b0",
+        "identifier": "rcpt_isB2NGiGRa0yLqm8pfHDOg"
+      },
+      "candidate_handle": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"D1_CANDIDATE_HANDLE\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"CANDIDATE_CATALOG_ENTRY\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":null,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM2_16\",\"phase_role\":\"DREAM2\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "e8c532824f3808520bc0fa6de67bf96da074ce194c387defe2b262361449d637",
+        "identifier": "hdl_c_6MUygk84CFILwPpt5nv5bQ"
+      },
+      "candidate_read_capability": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"CANDIDATE_READ_CAPABILITY\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"READ_CANDIDATE\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":5,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM2_16\",\"phase_role\":\"DREAM2\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "00017a3dd9d9a2050a62abec300189aca5e5a5bd9b3cc692b702f034924f79a0",
+        "identifier": "cap_o_AAF6PdnZogUKYqvsMAGJrA"
+      },
+      "authored_node_capability": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"AUTHORED_NODE_CAPABILITY\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"CONNECT\",\"issue_ordinal\":1,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":6,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM2_16\",\"phase_role\":\"DREAM2\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":null}",
+        "hmac_sha256_hex": "84f581a77650856f1c1396e4eed419504a208279a232d25ca9f2362ec2c284fe",
+        "identifier": "cap_n_hPWBp3ZQhW8cE5bk7tQZUA"
+      },
+      "staged_object_capability": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"STAGED_OBJECT_CAPABILITY\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"PREDICT_DREAM2_REPLACE\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":7,\"session_scope\":{\"goal_twin\":null,\"operation_topology\":\"DREAM2_16\",\"phase_role\":\"DREAM2\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "033f212658184241e7fd6e7960d4f1a4ff5e3e686e368d0b2486876042da495d",
+        "identifier": "cap_o_Az8hJlgYQkHn_W55YNTxpA"
+      },
+      "target_memory_handle": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"TARGET_MEMORY_HANDLE\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"TARGET_MEMORY_ENTRY\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":null,\"session_scope\":{\"goal_twin\":0,\"operation_topology\":\"THINK_D4_31\",\"phase_role\":\"THINK_D4\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_TARGET_THINK\",\"target_id\":\"fixture-target-0000\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "30961cddfb4680772fd37d039444b681b1968f2b6204bcbfe851fa9eaff8c93a",
+        "identifier": "hdl_m_MJYc3ftGgHcv030DlES2gQ"
+      },
+      "target_reader_receipt": {
+        "message_jcs_utf8": "{\"domain\":\"pcfl-compose-v2/model-visible-identifier/v1\",\"identifier_kind\":\"TARGET_READER_RECEIPT\",\"identity_derivation_version\":\"pcfl-v2-model-visible-id-v1\",\"issuance_role\":\"READ_MEMORY\",\"issue_ordinal\":0,\"namespace\":\"model_visible_identifier\",\"resolver_ordinal\":3,\"session_scope\":{\"goal_twin\":0,\"operation_topology\":\"THINK_D4_31\",\"phase_role\":\"THINK_D4\",\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_TARGET_THINK\",\"target_id\":\"fixture-target-0000\",\"z_side\":\"SAMPLED\"},\"source_ordinal\":0}",
+        "hmac_sha256_hex": "b61fc8ae5fb7cd335855da69f71723e86ffef253446eff6fbeb039674fa6e8aa",
+        "identifier": "rcpt_th_Irl-3zTNYVdpp9xcj6A"
+      }
+    }
+  },
+  "golden_vector": {
+    "fixture_only_root_secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "seed_key_jcs_utf8": "{\"coupling_group\":\"fixture-common-001\",\"domain\":\"pcfl-compose-v2/model-seed\",\"draw_role\":\"sample_next_token\",\"goal_twin\":0,\"phase_role\":\"DREAM2\",\"resolver_ordinal\":0,\"root_id\":\"fixture-factor-0000\",\"sampling_lane\":\"OPAQUE_DREAM\",\"seed_derivation_version\":\"pcfl-v2-hmac-sha256-v2\",\"target_id\":\"B1\",\"z_side\":\"SAMPLED\"}",
+    "seed_digest": "3e1b04970b9914ffca37d970aa138e399392ef1325ac44d7be6ee316c01b8157",
+    "backend_seed_u32": 1041958039
+  },
+  "replay_policy": {
+    "slots": ["replay-001", "replay-002"],
+    "rule": "A replay uses the source call's exact input bytes, seed key, full seed digest, backend seed, sampler/runtime envelope, and a fresh process. It is diagnostic and never replaces or changes the source scientific row.",
+    "allocation": "In canonical scientific call_id order, replay-001 is assigned to the first eligible failed source call and replay-002 to the next distinct eligible failed source call. No third replay exists."
+  },
+  "required_static_assertions": [
+    "Golden paired h and SELF/EMPTY/CROSSED/SHAM rows have identical seed_key bytes, full digest, backend seed, and sampler_config_id.",
+    "Changing only an excluded treatment field preserves the seed; changing any retained field rejects a COMMON_SEED group.",
+    "Different namespace or coupling-group vectors are domain-separated.",
+    "Every model_visible_identifier golden vector reproduces exactly; its decoded payload is exactly digest octets 0..15 and all prefixes/ASCII lengths match the kind table.",
+    "Every model_visible_identifier message uses an issuance_role allowed by its identifier_kind; an unknown kind/role or an extra/missing message/session-scope member is rejected before derivation.",
+    "Corresponding treatment clones have byte-identical session scopes and identifiers through every corresponding topology tuple; excluded content/treatment/path/digest/length mutations preserve IDs, while an issuance-role/source/resolver/issue-ordinal change produces the separately derived branch-natural ID.",
+    "For every recurrent and one-shot row, model operation_ordinal equals resolver_ordinal + 1 exactly; zero/one-based confusion is rejected before rendering or generation.",
+    "ANALYSIS_PAIR_ONLY never implies equal seeds or stepwise coupling.",
+    "The generated manifest contains exactly 3414 scientific call opportunities plus two named non-replacing replay slots."
+  ]
+}

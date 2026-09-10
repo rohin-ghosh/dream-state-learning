@@ -1,0 +1,369 @@
+{
+  "architecture_change_sha256": "d74d6295403090ed3dee51d97fb37097c54c6f21a6889bf44dec57d451c343ec",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260901_pcfl_constructive_assay_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "AT10_exact_execution_bundle_and_review_gate",
+        "AT12_independent_review_before_gpu"
+      ],
+      "category": "operations",
+      "concern_id": "C001_execution_bundle_absent_and_gate_order_ambiguous",
+      "evidence": "The proposal deliberately defers the generator, target manifests, exact public-goal bytes, prompts, schemas, parsers, reader, candidate policy, controls, model revisions, training recipe, estimators, seeds, and failure rules to a future AT10 change. AT01, AT02, AT03, and AT09 are labeled required_before implementation even though their setups require implemented generators, lifecycle fixtures, checkpoint replay, and process audits. The current human boundary also asks whether to ratify a future exact bundle rather than the supplied bytes. Without distinct meanings for design ratification, reference-harness implementation, scientific implementation, and GPU authorization, the stated ordering is not executable.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The current artifact can delimit a design, but it cannot authorize implementation, and its before-implementation gates form an ambiguous or circular workflow until the exact execution bundle and stage semantics are separately bound."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_pcfl_environment_necessity_and_leakage",
+        "AT05_solution_boundary_and_constructive_proof",
+        "AT09_visibility_taint_reset_and_goal_noninterference",
+        "AT10_exact_execution_bundle_and_review_gate"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C002_goal_query_candidate_answer_laundering",
+      "evidence": "AT09 allows target-dependent information inside the declared public current goal/state, but the canonical serialized bytes and permitted normalizations are absent. AT05 can be satisfied syntactically if later queries contain earlier values even when the first query, query kind, candidate universe, candidate ordering, omission pattern, or goal normalization already identifies the decisive route. Counterfactual twins and target-only probes bounded at 0.35 do not by themselves prove byte-level conditional noninterference for every goal/query surface.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The public-goal exception leaves a query-to-agenda-style answer-laundering channel unless exact collision twins and transformations demonstrate that no target-derived surface supplies the route or answer."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_oracle_closure_reader_thinker_factorial",
+        "AT05_solution_boundary_and_constructive_proof",
+        "AT08_matched_transport_pipeline_and_shuffle_controls",
+        "AT09_visibility_taint_reset_and_goal_noninterference"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C003_reader_return_and_backend_side_channels",
+      "evidence": "The systems interpretation permits several candidates in one bounded return, while AT02 limits a record to one ontology edge. Earlier protocol context includes fields such as confidence, token counts, status, and receipt hashes, whereas the superseded pilot explicitly hid them. The PCFL proposal does not bind which fields, ranks, counts, NOT_FOUND patterns, latency classes, truncation behavior, or failure modes reach cognition. A text index and LoRA candidate recognizer can therefore reveal backend identity or target-specific ranking despite sharing a nominal result schema.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A common typed reader is not yet a common information channel; candidate multiplicity, ranking, metadata, and substrate-specific failures can indirectly disclose the answer or assigned backend."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_provenance_and_positive_corpus_contract",
+        "AT03_prefix_and_common_deck_isolation",
+        "AT09_visibility_taint_reset_and_goal_noninterference"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C004_checkpoint_status_snapshot_not_formalized",
+      "evidence": "L1 permits later ordinary outcomes to support or contradict an earlier proposal, while AT03 requires post-checkpoint status and outcome changes to leave earlier artifacts byte-identical. The only coherent interpretation is that a proposal at 0.5C may acquire support in a later snapshot, never retroactively in the 0.5C corpus or adapter, but that rule is supplied by the systems interpretation rather than formal proposal bytes. Cache, projection, status-index, and compiler-input snapshots also need the same causal cut.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Chronological support can become future-state leakage or retroactive checkpoint mutation unless immutable snapshot eligibility is mechanically defined for every lifecycle object."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_provenance_and_positive_corpus_contract",
+        "AT03_prefix_and_common_deck_isolation",
+        "AT09_visibility_taint_reset_and_goal_noninterference"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C005_selector_terminal_branch_and_workspace_taint",
+      "evidence": "L1 reads declassified replay selectors, and I9 permits typed selectors derived from workspace, but the exact selector schema, source-branch status, dependency closure, and declassification proof are absent. AT02 says terminal-branch descendants and tainted descendants are rejected, yet replay selection itself can change which public roots DREAM sees without inserting forbidden text into a record. A selector produced by an abandoned, contradicted, exhausted, malformed, or evaluation-only branch can therefore alter positive memory indirectly.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Public-handle-only selectors can still launder unsupported workspace or abandoned-branch information through attention and replay selection."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_provenance_and_positive_corpus_contract",
+        "AT07_text_pipeline_and_causal_binding_suite"
+      ],
+      "category": "scientific",
+      "concern_id": "C006_support_strength_and_evidence_provenance_underdefined",
+      "evidence": "The proposal correctly states that episodes are provenance-distinct rather than causally independent and that paraphrases never add support. However, it does not bind claim-type-specific evidence requirements for promoting a general preparation effect, predicate, route rule, procedure, or exception. A committed proposal apparently may become supported after one later matching outcome even when both observations arise from the same scripted latent mechanism or intervention cluster. Root deduplication prevents double counting but does not establish generalization evidence.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The semantic lifecycle has provenance accounting but lacks an operational standard for when local observations justify a reusable causal relation."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_provenance_and_positive_corpus_contract"
+      ],
+      "category": "architecture",
+      "concern_id": "C007_provenance_dag_identity_and_cycle_semantics_incomplete",
+      "evidence": "AT02 names valid diamonds, cycles, descendant citations, canonical-equivalent mutual support, duplicate roots, and tainted descendants, which is a major improvement. It still does not define node identity across claim revisions, supersession, semantic canonicalization, realization aliases, and root-equivalent intervention events. An implementation could collapse distinct claims into a false self-cycle or accept a cycle hidden through revision/alias edges while passing a finite fixture list.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Valid shared ancestry and true cyclic support cannot be distinguished durably until canonical identity and graph traversal semantics are formally bound and property-tested."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_oracle_closure_reader_thinker_factorial",
+        "AT05_solution_boundary_and_constructive_proof",
+        "AT06_sequential_execution_revision_and_stage_credit"
+      ],
+      "category": "evaluation",
+      "concern_id": "C008_constructive_trace_may_be_post_hoc_rationalization",
+      "evidence": "AT05 requires a mechanically valid dependency DAG and AT06 records sequential operations, but validity alone does not show that the cited reads caused the action. A resolver can choose from pretrained priors or goal cues and then issue compatible queries or construct a valid-looking workspace trace. Global shuffled/twin-memory effects establish population-level dependence, not faithfulness of the item-level proof. No test intervenes on a cited value immediately before the decision or compares the action with the cited edge masked or counterfactually replaced.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A valid proof-shaped trace is not necessarily a causal proof that recurrent memory composition produced the action."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_oracle_closure_reader_thinker_factorial",
+        "AT05_solution_boundary_and_constructive_proof",
+        "AT07_text_pipeline_and_causal_binding_suite",
+        "AT08_matched_transport_pipeline_and_shuffle_controls"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C009_resolution_protocol_can_carry_the_intelligence",
+      "evidence": "The fixed query ontology, candidate recognition, canonical values, four-query chain, and recurrent resolver can encode a hand-designed dependency traversal. O-rec versus O-open shows that adaptive access matters, but it does not separate generic thinker computation from task-specific query scaffolding, candidate enumeration, or an explicit graph traversal supplied by the harness. REVIEW_PACK and note 42 explicitly warn that recognition and resolution protocols have carried prior results.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The assay may demonstrate an engineered query-and-resolution program using memory rather than constructive capability attributable to the proposed experiential-memory organism."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_pcfl_environment_necessity_and_leakage",
+        "AT07_text_pipeline_and_causal_binding_suite",
+        "AT08_matched_transport_pipeline_and_shuffle_controls",
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "evaluation",
+      "concern_id": "C010_paper_claim_baseline_set_incomplete",
+      "evidence": "The named arms include recent/no memory, raw episodic RAG, one A-MEM-style builder, supported text, and direct-QA LoRA. They do not require an honest full-transcript arm while the life fits, the strongest pinned native-long-context controller through its maximum as a reported comparator, a reflection/lesson memory, or native explicit graph/skill-library access. Note 42 identifies these as required narrow-claim baselines. AT11 locates an endpoint beyond native context but does not require the native-context result in its expected contrasts.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "E-LoRA exceeding A-text and D-LoRA is not sufficient for a paper-facing comparison against the strongest standard context, organized-memory, and explicit-structure alternatives."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_oracle_closure_reader_thinker_factorial",
+        "AT07_text_pipeline_and_causal_binding_suite",
+        "AT08_matched_transport_pipeline_and_shuffle_controls"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C011_substrate_resource_equivalence_not_operational",
+      "evidence": "AT07 equalizes source life, reader protocol, model, context, query, operation, and action budgets and reports a resource ledger, but text/RAG can store and search explicit records while LoRA performs candidate recognition through parametric inference. Retained corpus bytes, index bytes, candidate-universe enumeration, retrieval compute, model-visible tokens, reader inference, adapter bytes, training compute, and native graph access are not constrained by one substrate-neutral accounting rule. Reporting unequal resources does not make the comparison fixed-memory or fixed-compute.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The design supports a bounded ledger-specific systems comparison, not a fair substrate-efficiency or fixed-memory conclusion, unless capacity and computation accounting are explicitly defined."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT06_sequential_execution_revision_and_stage_credit"
+      ],
+      "category": "evaluation",
+      "concern_id": "C012_revision_and_online_action_credit_not_established",
+      "evidence": "AT06 correctly requires typed sequential A3 actions and labels uncited correct actions separately, but its revision setup is only an A4-ready contradiction fixture while the locked assay includes A0-A3. Revision is scored only when a contradiction happens; no target quota guarantees such events, no causal test requires backtracking to improve a later analogous decision, and evaluation writes remain forbidden. The fixture therefore tests runtime plumbing, not learned revision or reconsolidation.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The assay can measure within-item replanning but cannot claim durable learning from evaluation outcomes or reliable revision capability from the proposed A2/A3 deck."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT06_sequential_execution_revision_and_stage_credit",
+        "AT07_text_pipeline_and_causal_binding_suite",
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "scientific",
+      "concern_id": "C013_fixed_deck_does_not_test_the_online_flywheel",
+      "evidence": "The source policy is scripted and byte-identical across arms, evaluation memory is read-only, and current-item outcomes update only temporary workspace. This is appropriate for representation/use attribution but prevents memory from changing evidence-gathering actions, later source experience, subsequent dreaming, or later memory. L3 is explicitly dormant. Outcome shuffling demonstrates dependence on recorded bindings, not online action-selected learning.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Any positive result must remain a fixed-deck memory-use result; it cannot be described as online experiential learning, an action-to-memory flywheel, or improved future evidence acquisition."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "statistics",
+      "concern_id": "C014_confirmation_sample_size_and_multiplicity_rule_unbound",
+      "evidence": "AT11 permits expansion from 12 to 16 twin-pairs under a preregistered calibration-variance rule, but the exact rule is absent. It also requires corrected paired 95% lower bounds for two superiority contrasts and one non-inferiority contrast while A2/A3, checkpoints, and possible A4 secondaries create a larger test family. The correction family, bootstrap method, sign-flip statistic, finite-sample confidence construction, missing-pair rule, and relationship between the 12-to-16 decision and type-I error are not specified.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The claim-eligible confirmation remains vulnerable to optional sample expansion and ambiguous multiplicity unless its estimator and decision rule are executable before outcomes exist."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT08_matched_transport_pipeline_and_shuffle_controls",
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "statistics",
+      "concern_id": "C015_calibration_promotion_sensitive_to_adapter_noise",
+      "evidence": "Locked calibration uses six twin-pairs and one adapter seed, promotes when a 0.10 threshold holds in four of six pairs, and treats this only descriptively. REVIEW_PACK reports roughly plus or minus 0.08 LoRA run-to-run variation concentrated in action-relevant reads. The proposal does not bind paired training randomness across arms, a deterministic seed-selection rule, or a stability diagnostic before the four-of-six promotion decision. Confirmation averages two seeds, but selection into confirmation can still be driven by a favorable single calibration seed.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The promotion gate can select stochastic adapter luck rather than a reproducible transport effect."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_prefix_and_common_deck_isolation",
+        "AT10_exact_execution_bundle_and_review_gate",
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "evaluation",
+      "concern_id": "C016_split_and_target_freeze_integrity_incomplete",
+      "evidence": "The proposal names development, six locked calibration pairs, and 12 or 16 new confirmation pairs, but it does not yet bind generator-family partitions, world seeds, skin/order assignment, target generation timing, target rejection rules, builder/controller development data, or whether failed generator seeds may be replaced. Because the environment is procedurally generated, inspecting or rejecting locked worlds after method behavior is known can tune difficulty and shortcut prevalence without changing model weights.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "World, target, ordering, and rejection manifests must be frozen independently of method outcomes to prevent cross-split adaptation and post-hoc deck selection."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_claim_eligible_confirmation"
+      ],
+      "category": "scalability",
+      "concern_id": "C017_post_context_endpoint_is_not_a_scaling_curve",
+      "evidence": "AT11 tests the first checkpoint beyond a pinned native-long-context maximum. A positive contrast at one such point can show performance under a post-context condition, but not continued improvement with lifetime, baseline flattening, a crossover, or scaling. The exact native maximum may also fall outside or between the proposed checkpoint grid. C4 forbids beyond-context scaling, while C2 and AT11 use paper-facing post-context language that could be read more broadly.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "One post-context endpoint supports only a bounded overlength comparison, not a developmental or beyond-context scaling claim."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT07_text_pipeline_and_causal_binding_suite",
+        "AT08_matched_transport_pipeline_and_shuffle_controls"
+      ],
+      "category": "scientific",
+      "concern_id": "C018_shuffle_control_changes_more_than_binding",
+      "evidence": "Matched outcome shuffling preserves family, surface shape, chronology bucket, token length, and compute, but it can change which claims receive chronological support, corpus size, contradiction rate, semantic coherence, candidate frequency, and training difficulty. E-text minus S-text or E-LoRA minus S-LoRA can therefore reflect corpus degradation generally rather than specifically authentic action-outcome binding. Corpus hashes and resource ledgers report these differences but do not isolate them.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The shuffle is a useful falsifier but is not by itself a clean causal estimate of binding unless admission, corpus composition, and language-distribution changes are matched or separately controlled."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_pcfl_environment_necessity_and_leakage",
+        "AT08_matched_transport_pipeline_and_shuffle_controls",
+        "AT10_exact_execution_bundle_and_review_gate"
+      ],
+      "category": "evaluation",
+      "concern_id": "C019_necessity_and_gain_formulas_unbound",
+      "evidence": "AT01 uses materially improves and remove at least half that gain without specifying the endpoint, baseline, aggregation unit, denominator, or behavior when intact gain is zero or negative. The Bayes-optimal controller's observation state, exact dynamic program, prior, tie-breaking, and numerical validation are also absent, as are the frozen 32B controller bytes. AT08 repeats half-gain and four-of-six thresholds. Both interpretations independently flag these unresolved choices.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Memory necessity and causal-binding gates are not reproducible until every controller and gain formula is frozen, including edge cases."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT06_sequential_execution_revision_and_stage_credit",
+        "AT09_visibility_taint_reset_and_goal_noninterference",
+        "AT10_exact_execution_bundle_and_review_gate",
+        "AT12_independent_review_before_gpu"
+      ],
+      "category": "operations",
+      "concern_id": "C020_prompt_schema_repeat_and_failure_durability_missing",
+      "evidence": "The proposal requires policy-visible repeat state and an exact bundle, but no acceptance test explicitly requires golden prompt/schema/parser/attention-mask compatibility, rejects extra prose or multiple operations, verifies normalized repeat fingerprints and reset causes in prompts, tests crash-before/after-seal resume, quarantines partial artifacts, distinguishes post-dispatch indeterminate calls, or inserts cross-life canaries into every state channel. These were explicit requirements in notes 44 and 45 and address known failure modes; AT09's general process audit and AT10's manifest list do not exercise them.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Operational failures can silently repair malformed behavior, hide repeat blocks from the policy, contaminate lives, or regenerate scientific cells unless explicit runtime durability tests are restored."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_constructive_assay_v1/human_directive.txt",
+      "purpose": "Human scientific-priority directive",
+      "sha256": "c3a265f6727a61f2cb7629b7a9f474e7b3b0c4c911ad39d46387bbcc236e7b1e"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "purpose": "Proposed PCFL constructive assay",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis and attribution map",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "purpose": "Developmental protocol and visibility lineage",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Superseded pilot and design lineage",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_kernel_pilot_v1/critique.json",
+      "purpose": "Prior adversarial concerns to dispose",
+      "sha256": "6a370093b77e91908b3b589b07b9dbd0ea2dde62e8618b1112ab951a02785785"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Historical evidence and known limitations",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    }
+  ],
+  "critique_id": "crit_chg_20260901_pcfl_constructive_assay_v1_adversarial_v1",
+  "human_questions": [
+    "Is the present change intended only to authorize preparation of the AT10 exact execution bundle, with no generator or fixture implementation before that bundle is separately ratified?",
+    "What exact bytes constitute the public goal and state, and which normalizations, query transformations, candidate policies, and reader-return fields are model-visible?",
+    "Must counterfactual target pairs have byte-identical model-visible goal/state while requiring different actions under different authentic lifetime memories?",
+    "What claim-type-specific evidence rule promotes a proposed preparation effect, predicate, route rule, procedure, or exception to supported status?",
+    "Which exact adaptive Bayes-optimal and frozen 32B no-lifetime-memory controllers define the necessity ceiling, and how are their procedures selected without locked-world feedback?",
+    "Which native-long-context, full-transcript, reflection/lesson, and explicit-graph or skill-library baselines are mandatory for the paper-facing confirmation?",
+    "What substrate-neutral capacity and computation ledger governs text, RAG, native graph, and LoRA comparisons, and which conclusions are permitted if resources remain intentionally unequal?",
+    "What exact paired estimator, multiplicity family, 12-to-16 expansion rule, adapter-seed coupling, missing-cell rule, and confidence construction govern AT11?",
+    "Does Rohin ratify that this change can support only fixed-deck memory representation/use, with online action-selected learning, reconsolidation, recurrence superiority, and scaling reserved for later changes?",
+    "Must the exact execution bundle restore prompt/schema golden fixtures, policy-visible repeat-state tests, crash/seal/resume tests, indeterminate-call handling, and cross-life canaries before implementation approval?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_pcfl_constructive_assay_v1.systems",
+      "sha256": "b31f0a36db833fc78d8bd0101148e1a52834671c299b04658586016466500f43"
+    },
+    {
+      "interpretation_id": "chg_20260901_pcfl_constructive_assay_v1.benchmark",
+      "sha256": "9867d6b447d1d59d305b9f5432fcfe47fdf806cb5074b40be473b9daf07cf65e"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "MAT01_stage_order_and_authority: distinguish design ratification, reference-harness implementation, scientific implementation, CPU execution, GPU execution, and claim promotion, and prove that each prerequisite can be satisfied without crossing its authority boundary.",
+    "MAT02_goal_query_collision_noninterference: use byte-identical model-visible goal/state pairs with swapped hidden mappings and vary goal wording, handles, answers, candidates, query order, and reader-return serialization across every cognitive surface.",
+    "MAT03_reader_information_channel_equivalence: freeze and compare candidate count/order, confidence/status fields, provenance handles, NOT_FOUND behavior, truncation, latency class, token accounting, and backend failure patterns for text, graph, and LoRA readers.",
+    "MAT04_checkpoint_snapshot_lifecycle: prove that later support or contradiction enters only later snapshots and cannot mutate any earlier status index, selector, corpus, adapter, cache, or audit artifact.",
+    "MAT05_selector_declassification_and_terminal_branch_taint: require source-branch identity, allowed dependency closure, status, and declassification receipts; reject selectors descended from unsupported or terminal branches even when their payload contains only public handles.",
+    "MAT06_claim_type_support_sufficiency: bind minimum provenance-distinct observations, contrasts, predictions, exceptions, and generator-level dependence criteria for each reusable semantic claim type.",
+    "MAT07_provenance_property_suite: generate revisions, aliases, realizations, shared-root diamonds, canonical equivalents, true cycles, and descendant cycles to test sound and complete DAG admission rather than only named fixtures.",
+    "MAT08_trace_causal_faithfulness: mask, swap, or counterfactually replace cited reads before action selection and require predicted item-level action changes while uncited prior-driven success remains composition failure.",
+    "MAT09_query_scaffold_and_native_graph_ablation: compare generic versus task-specific query ontologies, canonical candidate recognition, native explicit-graph traversal, fixed-query reads, and recurrent thinker computation under separately reported budgets.",
+    "MAT10_strong_baseline_confirmation_suite: require honest full transcript while it fits, strongest pinned native context, raw episodic RAG, reflection or lesson memory, independent linked memory, native explicit graph or skill memory, direct-QA LoRA, and standard frozen-agent controls.",
+    "MAT11_substrate_neutral_resource_ledger: bind active and retained bytes, source and corpus bytes, index state, candidate enumeration, retrieval compute, reader inference, model-visible tokens, training tokens and FLOPs, thinker compute, and action budgets.",
+    "MAT12_controlled_revision_behavior: include preregistered contradiction and exception targets requiring observation-triggered backtracking and improved later action, while proving no evaluation outcome enters durable memory.",
+    "MAT13_fixed_deck_claim_language_gate: mechanically reject reports that describe the assay as on-policy learning, reconsolidation, action-selected evidence acquisition, recurrent-sleep superiority, a continual flywheel, or developmental scaling.",
+    "MAT14_confirmation_estimator_and_optional_expansion: executable paired statistics with a frozen multiplicity family, finite-sample method, non-inferiority construction, 12-to-16 rule, adapter-seed nesting, missing-cell handling, and all-world reporting.",
+    "MAT15_locked_split_and_rejection_manifest: freeze generator families, world/twin seeds, target decks, lifetime orderings, development access, rejection predicates, and replacement rules before any locked method output exists.",
+    "MAT16_shuffle_decomposition: report and, where possible, match support counts, contradiction rates, claim types, corpus size, candidate frequencies, and training difficulty so binding disruption is separated from generic corpus degradation.",
+    "MAT17_exact_gain_and_controller_oracle: bind normalized-value aggregation, material-gain and half-gain formulas including nonpositive denominators, controller observations, dynamic program, priors, tie-breaking, and numerical oracle checks.",
+    "MAT18_runtime_golden_and_failure_suite: test prompt/schema/parser/attention-mask compatibility, malformed and multi-operation fail-closed behavior, policy-visible repeat fingerprints and reset causes, phase sealing, crash/resume, indeterminate provider calls, cross-life canaries, and cache/file-descriptor isolation."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "AT01_pcfl_environment_necessity_and_leakage",
+    "AT02_atomic_provenance_and_positive_corpus_contract",
+    "AT03_prefix_and_common_deck_isolation",
+    "AT04_oracle_closure_reader_thinker_factorial",
+    "AT05_solution_boundary_and_constructive_proof",
+    "AT06_sequential_execution_revision_and_stage_credit",
+    "AT07_text_pipeline_and_causal_binding_suite",
+    "AT08_matched_transport_pipeline_and_shuffle_controls",
+    "AT09_visibility_taint_reset_and_goal_noninterference",
+    "AT10_exact_execution_bundle_and_review_gate",
+    "AT11_claim_eligible_confirmation",
+    "AT12_independent_review_before_gpu"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is a carefully narrowed mechanism assay rather than a claim about the full developmental flywheel. Byte-identical scripted action-outcome lives and counterfactual twins can isolate the behavioral effect of memory representation and use from policy-induced experience differences. The proposal materially repairs the prior pilot: it distinguishes forbidden direct solution storage from legal adaptive composition; places parent-path construction in recurrent wake resolution rather than demanding a final answer from DREAM or one reader call; executes A3 actions sequentially; preserves policy-visible repeat state; requires valid shared-ancestry diamonds while rejecting true provenance cycles and terminal-branch taint; adds suffix noninterference, scorer isolation, fresh-process reset, outcome shuffles, twin-memory interventions, stage-specific metrics, and a same-corpus text-to-LoRA transport comparison. Oracle recurrent versus non-adaptive access can establish that the environment admits constructive closure, and E-text versus raw episodic and independent organized memory can test whether chronologically supported atomic structure is useful under a frozen resolver. If an exact execution bundle resolves the remaining ambiguities, the pre-GPU gates pass, and paired confirmation succeeds, the defensible positive claim is limited but valuable: under one frozen PCFL ledger, a complete provenance-supported experiential-memory, reader, recurrent-resolver, and per-life transport pipeline improved held-out A2/A3 action, depended on authentic action-outcome bindings, and retained near-text value after LoRA transport. It would not establish autonomous discovery, LoRA sufficiency, learned THINK or DREAM, online reconsolidation, action-selected evidence acquisition, recurrence superiority, a continual flywheel, external validity, or a developmental scaling law.",
+  "visibility_failures": [
+    "The canonical public goal/state bytes and permitted target-derived transformations are absent, leaving a goal-to-query answer channel.",
+    "Candidate count, order, omission, confidence, status, provenance handles, truncation, timing, and NOT_FOUND behavior can reveal the answer or backend indirectly.",
+    "A reader return containing several ranked candidates can be answer-bearing even when each underlying record contains only one ontology edge.",
+    "Later support and contradiction can leak into earlier checkpoints unless every lifecycle snapshot and cache obeys one formal causal cut.",
+    "Replay selectors can transmit unsupported workspace or terminal-branch information through selection even when their payload contains only public evidence handles.",
+    "A valid dependency DAG can be generated after an action choice and therefore launder prior- or goal-derived decisions as memory-supported composition.",
+    "Task-specific query ontologies and canonical candidate recognition can encode the intended dependency path without appearing as explicit graph state.",
+    "Substrate-specific reader failures can expose text-versus-LoRA assignment even when an explicit backend label is hidden.",
+    "Scorer, audit, hidden oracle, cross-item, and source-life capabilities are declared forbidden but remain unbound until exact process permissions and schemas exist.",
+    "Runtime repair, repeat blocking, cache reuse, or regenerated indeterminate calls can change cognition without appearing in the policy-visible trace unless explicit durability tests are restored."
+  ]
+}

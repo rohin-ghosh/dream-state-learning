@@ -1,0 +1,88 @@
+{
+  "schema_version": "paper1-v03r-canary-stage-review-v1b.0",
+  "validity_classes": ["INVALID_PRECONDITION", "INVALID_INFRASTRUCTURE", "VALID_STAGE_FAILURE", "VALID_STAGE_PASS"],
+  "monotone_authority": [
+    {
+      "from": "HUMAN_RATIFICATION",
+      "to": "CPU_IMPLEMENTATION",
+      "requires": ["exact protocol hashes", "exact scope ratification"],
+      "grants": ["scoped source edits", "CPU tests", "resolved executable lock construction"],
+      "forbids": ["model request", "GPU science", "LoRA fit"]
+    },
+    {
+      "from": "CPU_IMPLEMENTATION",
+      "to": "DEV_GOLD",
+      "requires": ["P1CB01", "P1CB02", "P1CB03", "P1CB04", "P1CB06", "CPU P1CB09", "resolved executable lock", "independent reviewer APPROVE", "author-side advocate APPROVE"],
+      "grants": ["at most 216 registered controller operations"],
+      "forbids": ["heldout seed exposure", "LoRA fit"]
+    },
+    {
+      "from": "DEV_GOLD",
+      "to": "HELDOUT_TEXT",
+      "requires": ["P1CB05 VALID_STAGE_PASS", "DEV P1CB09", "unchanged frozen bytes", "independent reviewer APPROVE", "author-side advocate APPROVE"],
+      "grants": ["at most 632 registered heldout controller operations"],
+      "forbids": ["LoRA fit", "prompt repair", "rank or model change"]
+    },
+    {
+      "from": "HELDOUT_TEXT",
+      "to": "CONDITIONAL_LORA",
+      "requires": ["P1CB07 VALID_STAGE_PASS", "Stage-T P1CB09", "unchanged frozen bytes", "independent reviewer APPROVE", "author-side advocate APPROVE"],
+      "grants": ["exactly two registered 7B fits", "96 presealed cue cases", "at most 48 7B atomic read requests", "at most 48 32B THINK1 operations"],
+      "forbids": ["corpus repair", "outcome selection", "rank sweep", "replication"]
+    },
+    {
+      "from": "CONDITIONAL_LORA",
+      "to": "HUMAN_TERMINAL",
+      "requires": ["P1CB08 disposition", "Stage-L P1CB09", "P1CB10 claim lint", "terminal reviewer and advocate dispositions"],
+      "grants": ["report registered terminal wording only"],
+      "forbids": ["all further requests, fits, retries, successors, or scientific promotion"]
+    }
+  ],
+  "failure_routing": {
+    "any_nonpass_or_invalid": "seal partial leaf manifest, reconcile accounting, prove no retry/no further dispatch, run terminal review and claim lint, then HUMAN_TERMINAL",
+    "review_reject_or_invalid": "permanently terminal for exact reviewed bytes; repair requires changed lock and new reviews",
+    "missing_or_out_of_order_authority": "pre-dispatch stop with non-dispatch receipt"
+  },
+  "authority_token": {
+    "fields": ["predecessor token", "protocol-lock hash", "executable-lock hash", "evidence-packet hash", "reviewer disposition hash", "advocate disposition hash", "validity class", "new exact scope ceiling"],
+    "hash": "external over token bytes; token contains no self digest",
+    "advance_rule": "VALID_STAGE_PASS and two approving dispositions only"
+  },
+  "review_disposition": {
+    "required_fields": ["role", "actor_id", "assignment_sha256", "review_packet_sha256", "reviewed_lock_sha256", "supplied_context_manifest_sha256", "verdict", "reason_codes", "reasons", "fresh_context", "no_mutation"],
+    "roles": ["INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"],
+    "verdicts": ["APPROVE", "REJECT", "INVALID"],
+    "fresh_context": {"prior_turn_count": 0, "unlisted_context_received": false},
+    "reviewer_separation": "independent reviewer actor differs from every producer, author, implementer, and advocate; advocate may be an author or implementer but never reviewer",
+    "same_packet": "both roles independently receive the identical immutable evidence packet excluding both review outputs",
+    "no_mutation": "before and after reviewed artifact-set hashes equal; mutated reviewed paths empty",
+    "nonrecursive_rejection": "transition reviewer rejection itself is terminal and needs no reviewer of the rejection"
+  },
+  "review_packets": {
+    "CPU_TO_DEV": ["ratified protocol and scope", "human ratification", "implementation source manifest", "resolved executable lock", "model and tokenizer manifests", "operation registry", "recurrence and identity contract", "golden vectors", "P1CB01-04 and P1CB06 receipts", "CPU P1CB09", "taint and isolation report", "stage seal"],
+    "DEV_TO_HELDOUT": ["CPU authority token", "unchanged locks", "immutable development fixture manifest", "all 216 receipts or sealed partial manifest", "P1CB05 disposition", "DEV accounting", "parser and scorer receipts", "post-DEV byte-freeze proof", "stage seal"],
+    "HELDOUT_TO_LORA": ["DEV authority token", "unchanged locks", "complete selector/request/response/status/read manifests", "M0 M1_OWN M1_DIST manifests", "presealed fidelity and candidate registries", "path and sham manifests", "all T-arm traces", "P1CB07 disposition", "Stage-T accounting noninterference and no-retry receipts", "stage seal"],
+    "STAGE_L_TERMINAL": ["CONDITIONAL_LORA authority token", "training lock", "two fit input and output receipts", "adapter hashes", "96 cue results", "online read and mount receipts", "L-OWN and L-TWIN traces", "P1CB08 disposition", "Stage-L accounting", "terminal wording", "claim-linter receipt", "stage seal"],
+    "EARLY_TERMINAL": ["predecessor token or ratification", "unchanged locks", "exact partial-stage leaf manifest", "classified failure receipt", "reconciled accounting", "no-retry and no-further-dispatch receipt", "terminal wording and claim lint", "stage seal"]
+  },
+  "acceptance_tests": {
+    "P1CB01": "scope, source/runtime lock structure, call arithmetic, monotone authority, and terminal routing",
+    "P1CB02": "public projection and final-request audit-taint noninterference",
+    "P1CB03": "closed rows, self-check compatibility, duplicate reducer, provenance, depth, and conflict",
+    "P1CB04": "reader, four corpus views, per-view touches, shared candidates, isolation, and matched mounts",
+    "P1CB05": "all 31 exact shortcut vectors, proof masks, strict parser/scorer, and three-arm DEV headroom",
+    "P1CB06": "46/22/16 recurrence, literal zero-return M0, matched OWN/DIST forks, deterministic IDs and seeds",
+    "P1CB07": "prospective heldout text organism plus donor, path, and matched-sham interventions",
+    "P1CB08": "two pristine per-life adapters, separate 44/48 fidelity gates, own and donor behavior",
+    "P1CB09": "resolved runtime, receipts, exact accounting, no hidden retry/truncation/cache/state",
+    "P1CB10": "fresh review/advocate at every transition, claim firewall, mandatory human terminal"
+  },
+  "claim_firewall": {
+    "text_pass": "On the aligned v03r seed-5 twin pair, this exact strongly source/target-frontier-scaffolded prompted system produced model-self-supported typed rows and used registered life-local reader content on both fresh T-OWN decisions; the presealed donor, path-removal, and matched-sham interventions behaved as registered.",
+    "goal_return_credit": "Return-routing credit additionally requires T-OWN paired success; T-M0 and T-DIST paired loss; no NO_FOCUS; an OWN-only correctly typed model-self-supported focus-matching row; actual citation/use; donor tokens; path loss; and sham retention. It is only the effect of this fixed OWN-return treatment relative to these deterministic within-pair controls.",
+    "lora_pass": "Each exact per-life adapter achieved at least 44/48 presealed recognition cues and supported its registered immediate own/donor decision path.",
+    "valid_failure": "A valid failure must list prompt, model, schedule, reducer, reader, runtime, and optimization alternatives; it cannot uniquely localize a biological or architectural organ.",
+    "forbidden_words_or_claims": ["verified memory", "independently corroborated without model-claimed qualifier", "whole corpus preserved", "durable", "necessary memory", "failed organ", "reliable", "autonomous", "superior", "scaled", "Paper-1 proven", "rank pyramid works", "self-training flywheel works"]
+  },
+  "scope_stop": "No outcome authorizes replication, prompt/model/rank/seed changes, Action World, lifetime scaling, LOOP adapters, rank pyramids, base promotion, publication, outreach, credentials, leases, or spend."
+}

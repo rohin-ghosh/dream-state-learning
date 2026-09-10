@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dream-state:one-parent-v4:evidence-identity",
+  "title": "Public experiential evidence identity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "protocol_hash", "root_id", "service", "evidence_id", "dispatch_id", "is_probe", "action_sha256", "public_outcome_sha256", "environment_reset_sha256", "committed_ordinal", "training_reexpressions", "counts_as_evidence"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_hash": {"$ref": "#/$defs/sha256"},
+    "root_id": {"type": "string", "minLength": 1},
+    "service": {"enum": ["P0", "P1", "U0", "U1", "R0", "P_CHILDHOOD", "U_CHILDHOOD"]},
+    "evidence_id": {"type": "string", "pattern": "^EVID_[A-F0-9]{24}$"},
+    "dispatch_id": {"type": "string", "minLength": 1},
+    "is_probe": {"type": "boolean"},
+    "action_sha256": {"$ref": "#/$defs/sha256"},
+    "public_outcome_sha256": {"$ref": "#/$defs/sha256"},
+    "environment_reset_sha256": {"$ref": "#/$defs/sha256"},
+    "committed_ordinal": {"type": "integer", "minimum": 0},
+    "training_reexpressions": {"type": "integer", "minimum": 0},
+    "counts_as_evidence": {"const": 1}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}
+

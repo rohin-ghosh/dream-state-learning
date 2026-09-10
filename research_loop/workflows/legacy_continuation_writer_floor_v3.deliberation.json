@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "legacy-continuation-writer-floor-v3",
+  "workspace": "../..",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v3",
+  "directive_file": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/scope_proposal.json",
+    "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+    "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+    "research_loop/plans/legacy_continuation_writer_floor_v2_repair.md",
+    "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+    "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/critique.json",
+    "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/consensus.json",
+    "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+    "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+    "organism_v6/bootstrap.txt",
+    "organism_v6/model_backend.py",
+    "organism_v6/gym_backend.py"
+  ],
+  "output_dir": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3",
+  "state_path": ".research_loop/intake/chg_20260906_legacy_continuation_writer_floor_v3.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]},
+    "systems": {"executors": [{"provider": "codex", "model": "gpt-5.6-luna", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}]},
+    "benchmark": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]},
+    "critique": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "max_context_chars_per_file": 400000, "timeout_sec": 3000, "provider_attempts": 2, "provider_attempt_timeout_sec": 1500}]},
+    "consensus": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]}
+  }
+}

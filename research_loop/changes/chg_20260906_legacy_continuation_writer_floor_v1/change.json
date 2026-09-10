@@ -1,0 +1,836 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "immutable source snapshot plus two independent extractor receipts",
+      "expected": "Both extractors produce byte-identical per-life terminal offsets, occurrence ordinals, thought/act/note offsets, candidate edges, assignments, exclusions, and rejection reasons; all three lives meet the fixed corpus feasibility floors.",
+      "falsifies": "Any source drift, invalid/interleaved row, nonunique attachment, extractor disagreement, or feasibility failure makes the assay NO-GO.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Run only the separately ratified CPU extractors against the hash-bound B0/B1/B2 prefix-plus-fence snapshot.",
+      "test_id": "AT1_source_join_closure"
+    },
+    {
+      "evidence_artifact": "CPU tokenizer/label golden receipt",
+      "expected": "For each life, C1 and C2 have byte-identical continuation target IDs, target label masks, row order, supervised-token totals, and update counts; C2 prefixes are masked and no row is truncated.",
+      "falsifies": "Any target-token mismatch, prefix label leakage, truncation, or differing update ordinal makes the proposed paired contrast invalid and NO-GO.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Use the frozen tokenizer revision and candidate manifest only; do not invoke a trainer or model.",
+      "test_id": "AT2_target_matching"
+    },
+    {
+      "evidence_artifact": "two independent blinded target-sealer manifests",
+      "expected": "After exact run-manifest ratification, both sealers produce byte-identical complete POJ-104 enumeration, contamination resolution, content hashes, alias handling, constructibility results, and ordered 64-program panel.",
+      "falsifies": "Target exposure before configuration freeze, malformed contamination input, timeout, disagreement, collision handling failure, or fewer than 64 survivors is NO-GO.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "Run only after a separately ratified manifest binds all design and contamination bytes; do not score targets during sealing.",
+      "test_id": "AT3_content_disjoint_seal"
+    },
+    {
+      "evidence_artifact": "ratified deterministic canary receipt",
+      "expected": "Duplicate B0/C1 and B0/C2 training runs have byte-identical adapter tensor hashes and loss trajectories; duplicate C0 serving has byte-identical token IDs, parser outputs, and scores; zero-delta LoRA equals the base path.",
+      "falsifies": "Any canary mismatch is NO-GO and requires a newly deliberated reproducibility design, not tolerance relaxation or seed averaging.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Execute only the finite duplicate command set bound in the separately ratified GPU manifest.",
+      "test_id": "AT4_reproducibility_canaries"
+    },
+    {
+      "evidence_artifact": "sealed per-life strict first-action score and strict-marker report",
+      "expected": "Report S[C0,l], S[C1,l], S[C2,l], M[C0,l], M[C1,l], D_prefix, target-position distributions, masked-prefix/total tokens, estimated FLOPs, action histograms, and birth-payload diagnostics without changing thresholds.",
+      "falsifies": "A claimed neutral-prefix-package advantage fails if D_prefix is below +1.0 percentage point, fewer than two life differences reach +0.5 point, or mean C2-minus-C1 marker-rate difference is below +0.05.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Fresh-reset, greedy, one-decision evaluation on the sealed panel with identical target input IDs across C0/C1/C2 and the strict parser.",
+      "test_id": "AT5_prefix_package_contrast"
+    },
+    {
+      "evidence_artifact": "sealed C2-versus-C0 aggregate report",
+      "expected": "Call a useful selected-continuation training effect only if mean_l(S[C2,l]-S[C0]) is at least +1.0 point, at least two C2 life means exceed C0 by at least +0.5 point, and mean C2 marker rate is no more than 0.02 below C0.",
+      "falsifies": "Failure of any pre-registered threshold means no useful selected-continuation training effect under this floor; it does not establish a null general learning claim.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "Use the same sealed strict first-action evaluation as AT5; C0 is one common deterministic reference, not pseudo-replicated by life.",
+      "test_id": "AT6_selected_corpus_floor"
+    },
+    {
+      "evidence_artifact": "claim-boundary review citing corpus receipts, target seal, and final report",
+      "expected": "The report labels C2-minus-C0 as the total effect of the post-hoc selected-continuation training package and labels C2-minus-C1 as the exact neutral-chat-prefix-package contrast.",
+      "falsifies": "Any attribution to task conditioning, verification causality, outcome grounding, novel action discovery, learned THINK, parenting, continual improvement, or an experience-model flywheel is rejected regardless of score.",
+      "kind": "independent_review",
+      "required_before": "scientific_claim",
+      "setup": "Fresh independent reviewer checks final wording against the sealed artifacts and the stated claim ceilings.",
+      "test_id": "AT7_claim_ceiling"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "A passing C2-versus-C0 result supports only that the complete post-hoc selected legacy-continuation training package reinforced useful strict first-action behavior and retained the executable ACT interface on the sealed content-disjoint panel.",
+        "before": "No prospective, leakage-safe test exists for selected legacy continuation/action reinforcement.",
+        "claim_id": "CL1_selected_continuation_floor",
+        "evidence_needed": "AT1 through AT7, including the exact C2-versus-C0 rule, sealed panel, reproducibility canaries, and independent claim-boundary review.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A passing C2-versus-C1 result supports only an advantage of the exact frozen neutral-chat-prefix package over BOS-only training, with target-token/update matching but not full exposure, position, conditioning, or FLOP matching.",
+        "before": "The effect of placing identical continuation targets behind the specified neutral-chat-prefix package is unmeasured.",
+        "claim_id": "CL2_prefix_package",
+        "evidence_needed": "AT2, AT3, AT4, AT5, and reporting of prefix tokens, total tokens, target positions, and FLOPs.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A negative result means this fixed corpus/package did not clear its pre-registered strict first-action and interface-retention thresholds; it neither disproves future organism learning nor licenses goalpost changes.",
+        "before": "No negative-result interpretation is registered for this floor.",
+        "claim_id": "CL3_negative_interpretation",
+        "evidence_needed": "AT5 and AT6 using the sealed unchanged thresholds and complete failure accounting.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "Neither outcome can be credited as task-conditioned learning, causal verification or outcome binding, novel action discovery, learned THINK, parenting, continual improvement, or an experience-model flywheel.",
+        "before": "The legacy audit evidence could be overread as broader organism learning.",
+        "claim_id": "CL4_nonattribution_ceiling",
+        "evidence_needed": "AT7 and explicit reporting of absent prompts, post-hoc selection, birth-demonstrated payload frequency, and diagnostic-only birth-exclusion counts.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/human_directive.txt",
+      "purpose": "verbatim directive and authority boundary",
+      "sha256": "80f275a01c43f4072df0830e84886915714d261456a0ccb4e5b70a119b63c63a"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "project deliberation and ratification contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/scope_proposal.json",
+      "purpose": "requested CPU-only preparation scope and exclusions",
+      "sha256": "6e6ff9cd2e42c400478bb0184745514b507d220984c4a5c886aa1f9171980752"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "proposed assay, gates, metrics, and ceilings",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "independent audit and causal limitations",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "legacy source feasibility and join diagnostics",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v0_audit.md",
+      "purpose": "independent design audit",
+      "sha256": "cc3d8146a7a206f89a4d437ff67ada862fafc7739cd33354c706c56e6b4767f2"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v1_reaudit.md",
+      "purpose": "repaired-byte re-audit and remaining-resolution record",
+      "sha256": "052d6944424a7971260cb95ab4d171c80bc8f8abc3318fa90ec8fff34a198a80"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "lived organism/bootstrap behavior contract",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "existing generation and LoRA-serving behavior",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "existing executable action/outcome interface",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "preserved: lived action creates action/outcome episode records for later dream eligibility",
+        "before": "existing lived action/outcome recording",
+        "edge_id": "E1_lived_to_episode",
+        "from": "N_lived_episode",
+        "operation": "modify",
+        "rationale": "Preserve the organism-level lived-action loop while recognizing legacy rows lack persisted prompts.",
+        "to": "N_episode_archive"
+      },
+      {
+        "after": "read-only raw-byte copy and fence binding; no live process, ledger, adapter, or prompt is changed",
+        "before": "unbound historical source use",
+        "edge_id": "E2_archive_to_snapshot",
+        "from": "N_episode_archive",
+        "operation": "add",
+        "rationale": "Makes legacy evidence auditable without modifying the running lives.",
+        "to": "N_legacy_snapshot"
+      },
+      {
+        "after": "artifact-only unique attachment of thought and act/note groups emits continuation candidates and provenance",
+        "before": "no closed continuation extraction path",
+        "edge_id": "E3_snapshot_to_extractor",
+        "from": "N_legacy_snapshot",
+        "operation": "add",
+        "rationale": "Separates evidence recovery from inferred runtime writer behavior.",
+        "to": "N_artifact_extractor"
+      },
+      {
+        "after": "only qualifying decoded continuation targets, action payload checks, outcome checks, and exclusions enter the per-life corpus",
+        "before": "no frozen continuation-only corpus",
+        "edge_id": "E4_extractor_to_corpus",
+        "from": "N_artifact_extractor",
+        "operation": "add",
+        "rationale": "Constructs a narrow dream-time re-expression input, not native task-conditioned episodes.",
+        "to": "N_selected_continuation_corpus"
+      },
+      {
+        "after": "same per-life corpus trains C1 behind BOS-only inputs after separate approval",
+        "before": "no C1 floor cell",
+        "edge_id": "E5_corpus_to_c1",
+        "from": "N_selected_continuation_corpus",
+        "operation": "add",
+        "rationale": "Defines the BOS-only reference writer path.",
+        "to": "N_C1_bare_lora"
+      },
+      {
+        "after": "same per-life corpus trains C2 behind the frozen neutral-chat-prefix package after separate approval",
+        "before": "no C2 floor cell",
+        "edge_id": "E6_corpus_to_c2",
+        "from": "N_selected_continuation_corpus",
+        "operation": "add",
+        "rationale": "Defines parametric transport/re-expression only; discovery is not attributed to LoRA.",
+        "to": "N_C2_chat_lora"
+      },
+      {
+        "after": "frozen manifest precedes any target enumeration and governs sealers, training, serving, parser, and reporting",
+        "before": "no exact later execution authority",
+        "edge_id": "E7_manifest_to_seal",
+        "from": "N_exact_run_manifest",
+        "operation": "add",
+        "rationale": "Prevents target-informed design changes.",
+        "to": "N_target_seal"
+      },
+      {
+        "after": "sealed fresh reset and identical target input IDs evaluate C0, C1, and C2 with strict ACT dispatch",
+        "before": "unsealed/noncomparable evaluation",
+        "edge_id": "E8_cells_to_eval",
+        "from": "N_C0_base",
+        "operation": "add",
+        "rationale": "Common deterministic reference is evaluated without cross-program memory or retrieval.",
+        "to": "N_one_decision_evaluation"
+      },
+      {
+        "after": "sealed fresh reset and identical target input IDs evaluate C1 with strict ACT dispatch",
+        "before": "unsealed/noncomparable evaluation",
+        "edge_id": "E9_c1_to_eval",
+        "from": "N_C1_bare_lora",
+        "operation": "add",
+        "rationale": "Measures the BOS-only cell under the same organism-facing action interface.",
+        "to": "N_one_decision_evaluation"
+      },
+      {
+        "after": "sealed fresh reset and identical target input IDs evaluate C2 with strict ACT dispatch",
+        "before": "unsealed/noncomparable evaluation",
+        "edge_id": "E10_c2_to_eval",
+        "from": "N_C2_chat_lora",
+        "operation": "add",
+        "rationale": "Measures transported behavior, not dream discovery or complete-organism cognition.",
+        "to": "N_one_decision_evaluation"
+      },
+      {
+        "after": "aggregate scores, marker rates, diagnostics, and failures are reporting-only inputs to a later human-reviewed future-dream decision",
+        "before": "no bounded feedback connection",
+        "edge_id": "E11_eval_to_future_cycle",
+        "from": "N_one_decision_evaluation",
+        "operation": "add",
+        "rationale": "Preserves the thesis that later thinking and outcomes can inform future dream cycles while prohibiting feedback in this assay.",
+        "to": "N_future_dream_cycle"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "preserved lived action, executable ACT dispatch, environment outcome, and episode recording",
+        "before": "existing organism component",
+        "node_id": "N_lived_episode",
+        "operation": "modify",
+        "rationale": "The floor must not replace organism action/outcome episodes with answer generation."
+      },
+      {
+        "after": "immutable B0/B1/B2 raw ledger and wake-manifest snapshot through wake 256 plus successor fence",
+        "before": "no bound legacy snapshot node",
+        "node_id": "N_legacy_snapshot",
+        "operation": "add",
+        "rationale": "Creates an auditable source boundary only."
+      },
+      {
+        "after": "two source-distinct artifact-only join/extraction implementations with fail-closed agreement",
+        "before": "no closed extraction node",
+        "node_id": "N_artifact_extractor",
+        "operation": "add",
+        "rationale": "Legacy serialization order is not inferred from current source code."
+      },
+      {
+        "after": "per-life post-hoc selected continuation-only corpus with provenance, exclusions, and birth-payload tag",
+        "before": "no continuation-only corpus node",
+        "node_id": "N_selected_continuation_corpus",
+        "operation": "add",
+        "rationale": "This is dream-time local memory re-expression preparation, not prompt-conditioned memory."
+      },
+      {
+        "after": "frozen base model reference with no adapter and no training",
+        "before": "no explicit common C0 node",
+        "node_id": "N_C0_base",
+        "operation": "add",
+        "rationale": "Supplies the common deterministic baseline."
+      },
+      {
+        "after": "independent rank-16 per-life LoRA trained on BOS plus continuation targets",
+        "before": "no C1 cell",
+        "node_id": "N_C1_bare_lora",
+        "operation": "add",
+        "rationale": "Defines a comparator without crediting LoRA for source discovery."
+      },
+      {
+        "after": "independent rank-16 per-life LoRA trained on frozen neutral-chat-prefix plus identical continuation targets",
+        "before": "no C2 cell",
+        "node_id": "N_C2_chat_lora",
+        "operation": "add",
+        "rationale": "Defines the exact prefix-package transport cell."
+      },
+      {
+        "after": "separately ratified immutable manifest binding all execution and contamination bytes before target enumeration",
+        "before": "no exact run-manifest node",
+        "node_id": "N_exact_run_manifest",
+        "operation": "add",
+        "rationale": "Material GPU and target access remain outside current authority."
+      },
+      {
+        "after": "two score-blind target sealers and content-disjoint ordered panel",
+        "before": "no sealed target node",
+        "node_id": "N_target_seal",
+        "operation": "add",
+        "rationale": "Prevents leakage and target-informed tuning."
+      },
+      {
+        "after": "fresh-reset one-decision strict-parser evaluation with diagnostic-only near-miss parser",
+        "before": "no isolated floor evaluator",
+        "node_id": "N_one_decision_evaluation",
+        "operation": "add",
+        "rationale": "Credits interface success to the evaluated organism-plus-mounted-cell, not the adapter alone."
+      },
+      {
+        "after": "future, separately designed feedback route from reported evidence into later dream-cycle deliberation",
+        "before": "implicit possible feedback",
+        "node_id": "N_future_dream_cycle",
+        "operation": "add",
+        "rationale": "Makes feedback explicit but forbids its activation by this floor."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin ratify the exact proposed architecture bytes and only the requested isolated CPU-preparation scope, followed later by a separately reviewed and exact GPU run manifest?",
+    "forbidden_before_approval": [
+      "Any code edit or implementation.",
+      "Any model, tokenizer, trainer, evaluator, serving, benchmark, or GPU execution.",
+      "Target-panel URI/module/content enumeration or score exposure.",
+      "Modification, restart, stop, mount, training-from, or feedback into a Fable life, adapter, prompt, process, ledger, probe, or result.",
+      "Any claim beyond preparation; specifically task-conditioned learning, verification causality, novel discovery, learned THINK, parenting, continual improvement, or flywheel claims.",
+      "Activation of the future-dream feedback edge or use of results to alter any life."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "Lived episode records remain inputs to future dream eligibility, but this floor consumes only a frozen historical snapshot and never writes back to a life.",
+        "before": "existing recurrent lived-action/outcome to future sleep relationship",
+        "loop_id": "L1_lived_dream_feedback",
+        "operation": "modify",
+        "rationale": "Preserves recurrence at organism scale while isolating this assay from it.",
+        "reads": [
+          "N_lived_episode",
+          "N_episode_archive"
+        ],
+        "stop_condition": "This assay stops at reporting; no output is fed into dreaming, retrieval, planning, or a live organism.",
+        "trigger": "A future separately approved organism dream cycle, not this assay.",
+        "writes": [
+          "N_future_dream_cycle"
+        ]
+      },
+      {
+        "after": "Artifact extraction iterates bounded raw rows and attachment candidates until each group is uniquely assigned or the life fails closed.",
+        "before": "no bounded artifact extraction loop",
+        "loop_id": "L2_source_attachment",
+        "operation": "add",
+        "rationale": "Resolves local connection/provenance from historical topology without a generative reconstruction.",
+        "reads": [
+          "N_legacy_snapshot"
+        ],
+        "stop_condition": "All prefix-plus-fence rows are assigned/excluded under the grammar and both extractors agree, or any failure condition occurs.",
+        "trigger": "Only after human approval of CPU preparation scope.",
+        "writes": [
+          "N_artifact_extractor",
+          "N_selected_continuation_corpus"
+        ]
+      },
+      {
+        "after": "For each source life, the frozen corpus may be transported through C1/C2 training only under a later ratified command set; it is not recurrent self-training.",
+        "before": "no proposed bounded transport loop",
+        "loop_id": "L3_parametric_transport",
+        "operation": "add",
+        "rationale": "Separates local memory re-expression from parametric consolidation and blocks a self-reinforcing writer loop.",
+        "reads": [
+          "N_selected_continuation_corpus",
+          "N_exact_run_manifest"
+        ],
+        "stop_condition": "Exactly three frozen passes, or fail-closed deterministic/validation failure.",
+        "trigger": "Separate human ratification, target seal, pre-GPU approval, and passing gates.",
+        "writes": [
+          "N_C1_bare_lora",
+          "N_C2_chat_lora"
+        ]
+      },
+      {
+        "after": "Goal-conditioned rendering, greedy generation, strict action dispatch, fresh outcome evaluation, and aggregate reporting run once per sealed target/cell with no retrieval or revision turn.",
+        "before": "no proposed isolated one-decision loop",
+        "loop_id": "L4_goal_conditioned_evaluation",
+        "operation": "add",
+        "rationale": "Tests a deliberately truncated organism-facing decision, not complete planning or revision.",
+        "reads": [
+          "N_target_seal",
+          "N_C0_base",
+          "N_C1_bare_lora",
+          "N_C2_chat_lora",
+          "N_exact_run_manifest"
+        ],
+        "stop_condition": "All finite sealed cell-target evaluations complete or a ratified failure condition occurs.",
+        "trigger": "Passing deterministic canaries after GPU authorization.",
+        "writes": [
+          "N_one_decision_evaluation"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Propose a narrowly bounded, later-ratified legacy continuation-writer floor: extract post-hoc selected continuation-only rows from immutable B0/B1/B2 snapshots; compare BOS-only versus an exact neutral-chat-prefix training package and an untrained base on a sealed content-disjoint one-action panel. The floor tests parametric transport/reinforcement and strict executable-interface retention only, while preserving the broader organism thesis and prohibiting attribution of discovery or recurrent learning to the LoRA.",
+  "system_thesis": "The organism learns across recurrent scales: lived goal-directed action produces real outcomes; dream-time processes locally re-express and connect retained episodes; parametric consolidation can transport selected regularities; later goal-conditioned retrieval, composition, planning, and revision use\u2014but do not by themselves constitute\u2014those memories; and later thinking/outcomes may inform subsequent dream cycles. Credit belongs to the complete organism when behavior requires its context, action interface, environment, and feedback loop. This isolated floor deliberately removes retrieval, multi-step planning, revision, and feedback, so any observed effect is attributable only to the evaluated frozen cell-plus-serving-and-environment package, never to LoRA discovery or complete-organism continual learning.",
+  "title": "Legacy continuation-writer floor: bounded continuation/action transport assay",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Needed to bind and audit provenance.",
+        "stage_id": "S1_snapshot",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Required for independent artifact-only parsing.",
+        "stage_id": "S2_extract",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Only hashes and receipt references are needed.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Irrelevant to score-blind target construction.",
+        "stage_id": "S4_target_seal",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Training receives selected rows, not raw ledgers.",
+        "stage_id": "S5_train",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Evaluation must not receive source memories.",
+        "stage_id": "S6_evaluate",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I1_raw_legacy_bytes",
+        "reason": "Only hash-bound audit references may be reported.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Absence is audited from thought-row schema.",
+        "stage_id": "S1_snapshot",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Extractor verifies no prompt reconstruction occurs.",
+        "stage_id": "S2_extract",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Manifest binds the no-prompt claim ceiling.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Target sealing does not need it.",
+        "stage_id": "S4_target_seal",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "No prompts exist or may be supplied to training.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Evaluation has target renderer only, never reconstructed source prompts.",
+        "stage_id": "S6_evaluate",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I2_prompts_absent",
+        "reason": "Report the absence and resulting nonattribution boundary.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Not yet derived.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Derived with provenance and exclusion reasons.",
+        "stage_id": "S2_extract",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Corpus hashes and row-order commitments are bound.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Must not influence target selection.",
+        "stage_id": "S4_target_seal",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Visible only as frozen continuation targets to the trainer.",
+        "stage_id": "S5_train",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Never supplied as retrieval or context at evaluation.",
+        "stage_id": "S6_evaluate",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I3_selected_continuations",
+        "reason": "Only aggregate counts/hashes and permitted diagnostics are reported.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "May be tagged only after corpus extraction.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Exact payload identity is tagged without changing eligibility.",
+        "stage_id": "S2_extract",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Diagnostic computation and reporting commitment are bound.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Cannot influence target sealing.",
+        "stage_id": "S4_target_seal",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Cannot condition row selection or create a birth-excluded adapter.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Not available to generation or evaluator.",
+        "stage_id": "S6_evaluate",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I4_birth_payload_diagnostic",
+        "reason": "Aggregate frequencies and birth-excluded feasibility counts only.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Not finalized at snapshot time.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "CPU preparation may receive only approved extractor scope.",
+        "stage_id": "S2_extract",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Exact bytes are visible for human ratification.",
+        "stage_id": "S3_manifest",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Sealers use only sealed enumeration/contamination instructions.",
+        "stage_id": "S4_target_seal",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Trainer uses immutable bound recipe only.",
+        "stage_id": "S5_train",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Evaluator uses immutable renderer/parser/serving bytes only.",
+        "stage_id": "S6_evaluate",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_manifest_design_bytes",
+        "reason": "Report cites hashes and exact protocol identity.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "No target enumeration before manifest ratification.",
+        "stage_id": "S1_snapshot",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "No target enumeration during extraction.",
+        "stage_id": "S2_extract",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "Must remain hidden while design is ratified.",
+        "stage_id": "S3_manifest",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "Visible only to independent score-blind sealers after ratification.",
+        "stage_id": "S4_target_seal",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "Training must not receive target content.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "Visible only through frozen per-target renderer during evaluation.",
+        "stage_id": "S6_evaluate",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_target_panel_content",
+        "reason": "Only permitted sealed identifiers/hashes may be reported after completion.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "No scores/actions exist in snapshot stage.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Source outcome checks are provenance, not target scores.",
+        "stage_id": "S2_extract",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Target scores are forbidden before target seal and execution.",
+        "stage_id": "S3_manifest",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Sealers may not make model calls or score actions.",
+        "stage_id": "S4_target_seal",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Trainer never receives target evaluation outcomes.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Visible to the strict evaluator for one fresh-reset action only.",
+        "stage_id": "S6_evaluate",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_scores_and_actions",
+        "reason": "Aggregate and per-protocol evidence is reported after completion.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "No adapter exists.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "No trainer may run.",
+        "stage_id": "S2_extract",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "Initial hashes and expected canary requirements are bound, but no resulting artifact exists.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "Target seal is independent of training artifacts.",
+        "stage_id": "S4_target_seal",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "Visible to bound training/canary process.",
+        "stage_id": "S5_train",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "Only approved mounted adapter identity is visible to serving.",
+        "stage_id": "S6_evaluate",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_adapter_and_loss_artifacts",
+        "reason": "Hashes and reproducibility outcomes, not private tensors, are reported.",
+        "stage_id": "S7_report",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "No result exists.",
+        "stage_id": "S1_snapshot",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "No scientific result may be produced.",
+        "stage_id": "S2_extract",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "Thresholds/claim ceilings are visible; outcomes do not exist.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "Score-blind sealing forbids outcome visibility.",
+        "stage_id": "S4_target_seal",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "Training cannot use evaluation outcomes.",
+        "stage_id": "S5_train",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "Evaluator produces raw result records but cannot revise design or train.",
+        "stage_id": "S6_evaluate",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_aggregate_results_and_claims",
+        "reason": "Visible only as bounded descriptive reporting after independent review.",
+        "stage_id": "S7_report",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I1_raw_legacy_bytes",
+      "I2_prompts_absent",
+      "I3_selected_continuations",
+      "I4_birth_payload_diagnostic",
+      "I5_manifest_design_bytes",
+      "I6_target_panel_content",
+      "I7_scores_and_actions",
+      "I8_adapter_and_loss_artifacts",
+      "I9_aggregate_results_and_claims"
+    ],
+    "stages": [
+      "S1_snapshot",
+      "S2_extract",
+      "S3_manifest",
+      "S4_target_seal",
+      "S5_train",
+      "S6_evaluate",
+      "S7_report"
+    ]
+  }
+}

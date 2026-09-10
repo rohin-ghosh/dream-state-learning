@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact_type": "claim_test_applicability",
+  "change_id": "chg_20260902_pcfl_active_stream_paper_target_v1",
+  "status": "proposal_only_unratified",
+  "protocol_terminal_status": "DEFERRED_NEW_PREREGISTRATION",
+  "claim_namespace_map": {
+    "path": "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/claim_namespace_map.json",
+    "sha256": "1bc8704f8961cdbca011e5a4baee4c9d9317c96555ed1e7973133853b0e95f9c",
+    "rule": "Every claim join and every T09/T10/T11 disposition must resolve through the canonical_claim_id row; implicit numeric or prose joins are forbidden."
+  },
+  "coarse_required_before_rule": "The required_before enum in change.json supplies timing only. This file supplies normative applicability. Tests executed through B3 are construct, integrity, DEV, falsification, or descriptive checks; they cannot convert a deferred conceptual claim into current evidence. An inapplicable future-stage test cannot block the B3/deferred disposition.",
+  "current_scientific_claims": [],
+  "deferred_text_claims": [
+    "C1_MODEL_OWNED_TEXT_MEMORY",
+    "C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+    "C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"
+  ],
+  "canonical_deferred_text_claims": [
+    "PCFL_C1_MODEL_OWNED_TEXT_MEMORY",
+    "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+    "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"
+  ],
+  "status_semantics": {
+    "PASS": "The applicable B3 construct/integrity/DEV/descriptive requirement passed; this is not a scientific claim.",
+    "FAIL": "The applicable B3 requirement failed.",
+    "NOT_RUN": "An applicable authorized stage did not run; no scientific claim is available.",
+    "DEFERRED_NEW_PREREGISTRATION": "Mandatory terminal status after B3; any population claim needs a fresh human-ratified proposal using untouched roots.",
+    "NOT_REQUESTED_STAGE_D": "Passing not-applicable disposition for every deferred text claim; no Stage-D artifact is required and the B3/deferred disposition is not blocked."
+  },
+  "tests": [
+    {"test_id": "PAS_T01_TOTAL_WORLD_OPPORTUNITY_TARGET_AND_CONTEXT", "deferred_text_claims": "required_b3_construct_check_only"},
+    {"test_id": "PAS_T02_ON_POLICY_ACTION_AND_D4_HEADROOM", "deferred_text_claims": "required_b3_construct_check_only"},
+    {"test_id": "PAS_T03_RANDOMIZED_UNMOUNTED_MEDIATION", "deferred_text_claims": "required_b3_descriptive_cascade_check_only"},
+    {"test_id": "PAS_T04_MODEL_OWNED_COMPILER_AND_MECHANICAL_CONTROL", "deferred_text_claims": "required_b3_descriptive_compiler_check_only"},
+    {"test_id": "PAS_T05_TEXT_BASELINES_AND_DEV_SELECTION", "deferred_text_claims": "required_b3_dev_check_only"},
+    {"test_id": "PAS_T06_LIFETIME_STATISTICS_POWER_AND_PLATEAU", "deferred_text_claims": "required_b3_descriptive_reporting_and_defer_firewall", "population_inference_available": false},
+    {"test_id": "PAS_T07_DESCENDANT_VISIBILITY_TAINT_RESET", "deferred_text_claims": "required_b3_integrity_check_only"},
+    {"test_id": "PAS_T08_RESOURCE_CALENDAR_AND_STAGE_LOCK", "deferred_text_claims": "required_b3_resource_and_defer_lock"},
+    {
+      "test_id": "PAS_T09_A4_REVISION_SENTINEL",
+      "deferred_text_claims": "required_b3_integrity_only",
+      "canonical_claim_ids": ["PCFL_C1_MODEL_OWNED_TEXT_MEMORY", "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE", "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"],
+      "required_for_b3_descriptive_package": [
+        "all preassigned A4 rows are present in the unchanged 908-row roster",
+        "A4 V is scored only from legal world/action trajectory and terminal return for every arm",
+        "A4 failures remain zero in assigned denominators",
+        "A4 evaluation is sterile and target/truth/result leakage fails closed"
+      ],
+      "not_a_current_claim_gate": [
+        "positive A4 action efficacy",
+        "contradiction-detection efficacy",
+        "model-owned revision efficacy",
+        "later analogous recovery efficacy",
+        "unrelated-memory retention efficacy"
+      ],
+      "future_a4_claim": "requires_separate_power_and_separate_human_authority"
+    },
+    {
+      "test_id": "PAS_T10_CONDITIONAL_LORA_READER_AND_CAUSAL_SENTINEL",
+      "deferred_text_claims": "not_applicable",
+      "not_applicable_canonical_claim_ids": ["PCFL_C1_MODEL_OWNED_TEXT_MEMORY", "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE", "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"],
+      "future_mandatory_for_canonical_claim_id": "PCFL_C5_CONDITIONAL_LORA_SENTINEL",
+      "deferred_text_pass_status": "NOT_REQUESTED_STAGE_D",
+      "deferred_text_evidence_artifact_required": false,
+      "future_lora_claim": "mandatory only if a future separately ratified DEFERRED_ASSOCIATIVE_LORA_PREREGISTRATION names it as a component control before that LoRA claim; it is not the successor headline"
+    },
+    {"test_id": "PAS_T11_INDEPENDENT_REPRODUCTION_AND_CLAIM_FIREWALL", "deferred_text_claims": "required_b3_reproduction_and_defer_firewall", "claim_namespace_reproduction": "required_exact_set_equality_uniqueness_terminal_status_and_T09_T10_projection"},
+    {"test_id": "PAS_T12_PREMODEL_COGNITION_BYTE_FREEZE", "deferred_text_claims": "required_b3_cognition_freeze_only"}
+  ]
+}

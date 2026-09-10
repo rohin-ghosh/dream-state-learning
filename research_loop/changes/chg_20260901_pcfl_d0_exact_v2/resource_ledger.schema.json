@@ -1,0 +1,488 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dream-state:pcfl:d0:resource-ledger:v2",
+  "title": "PCFL pair/world/checkpoint/arm/adapter-seed resource ledger record",
+  "description": "Strict shape for D0 synthetic validation and a future separately authorized PCFL resource ledger. Schema validity never authorizes a scientific run.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "run_id",
+    "authority_sha256",
+    "protocol_sha256",
+    "split_manifest_sha256",
+    "pair_id",
+    "world_id",
+    "twin_role",
+    "checkpoint",
+    "arm",
+    "adapter_seed",
+    "execution_scope",
+    "cell_status",
+    "source",
+    "writer_compiler",
+    "claims",
+    "memory_structure",
+    "storage",
+    "candidates",
+    "retrieval_reader_resolver",
+    "training",
+    "reliability",
+    "action_accounting",
+    "outcome_accounting",
+    "resource_totals",
+    "equivalence_claims",
+    "measurement_disposition"
+  ],
+  "properties": {
+    "schema_version": {"const": "pcfl-resource-ledger-v2.0.0"},
+    "record_id": {"type": "string", "pattern": "^RL[0-9A-F]{14}$"},
+    "run_id": {"type": "string", "pattern": "^d0-[0-9a-f]{16}$|^SCI-[0-9A-F]{12}$"},
+    "authority_sha256": {"$ref": "#/$defs/sha256"},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "split_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "pair_id": {"type": "string", "pattern": "^(DEV|CPU|CAL|CONF|RESERVE)-P[0-9]{3}$"},
+    "world_id": {"type": "string", "pattern": "^WR(00000[0-9]|0000[1-9][0-9]|000[1-9][0-9]{2}|00[1-9][0-9]{3}|0[1-9][0-9]{4}|10[0-2][0-9]{3}|103[0-5][0-9]{2}|1036[0-7][0-9])$"},
+    "twin_role": {"enum": ["H", "H_DAGGER", "PAIR_AGGREGATE"]},
+    "checkpoint": {
+      "enum": [
+        "D0_SIMULATOR_1000",
+        "D0_CPU_GATE",
+        "HALF_C",
+        "ONE_C",
+        "TWO_C"
+      ]
+    },
+    "arm": {
+      "enum": [
+        "L",
+        "N",
+        "Bayes-N",
+        "Exact-memory",
+        "Null",
+        "Shortcut",
+        "Bad-assignment",
+        "Twin-assignment",
+        "CTX-C",
+        "CTX-H",
+        "O-open",
+        "O-rec",
+        "O-typed",
+        "R-rec",
+        "X-text",
+        "A-common",
+        "A-native",
+        "E-text",
+        "D-LoRA",
+        "Raw-LoRA",
+        "E-LoRA",
+        "O-LoRA",
+        "E-gen-LoRA",
+        "S-life",
+        "S-bind",
+        "T-swap"
+      ]
+    },
+    "adapter_seed": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^AS[0-9A-F]{14}$"}
+      ]
+    },
+    "execution_scope": {"enum": ["D0_SYNTHETIC_FIXTURE", "FUTURE_SEPARATELY_AUTHORIZED_BACKEND"]},
+    "cell_status": {
+      "enum": [
+        "COMPLETE",
+        "FAILED_ZERO",
+        "INDETERMINATE_ZERO",
+        "MISSING_ZERO",
+        "PRE_DISPATCH_BLOCKED",
+        "RESOURCE_EXHAUSTED"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["events", "actions", "canonical_utf8_bytes", "renderer_tokens", "eligible_events", "eligible_tokens"],
+      "properties": {
+        "events": {"$ref": "#/$defs/nonnegative_integer"},
+        "actions": {"$ref": "#/$defs/nonnegative_integer"},
+        "canonical_utf8_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "renderer_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "eligible_events": {"$ref": "#/$defs/nonnegative_integer"},
+        "eligible_tokens": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "writer_compiler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "writer_calls",
+        "writer_input_tokens",
+        "writer_output_tokens",
+        "writer_flops",
+        "writer_wall_nanoseconds",
+        "writer_energy_microjoules",
+        "compiler_calls",
+        "compiler_input_atoms",
+        "compiler_input_tokens",
+        "compiler_output_tokens",
+        "compiler_views_emitted",
+        "compiler_utf8_bytes",
+        "compiler_wall_nanoseconds",
+        "compiler_energy_microjoules"
+      ],
+      "properties": {
+        "writer_calls": {"$ref": "#/$defs/nonnegative_integer"},
+        "writer_input_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "writer_output_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "writer_flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "writer_wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "writer_energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_calls": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_input_atoms": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_input_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_output_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_views_emitted": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_utf8_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "compiler_energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposals",
+        "admitted",
+        "provisional",
+        "supported",
+        "contradicted",
+        "revoked",
+        "aliases",
+        "revisions",
+        "prediction_checks",
+        "separating_contrasts"
+      ],
+      "properties": {
+        "proposals": {"$ref": "#/$defs/nonnegative_integer"},
+        "admitted": {"$ref": "#/$defs/nonnegative_integer"},
+        "provisional": {"$ref": "#/$defs/nonnegative_integer"},
+        "supported": {"$ref": "#/$defs/nonnegative_integer"},
+        "contradicted": {"$ref": "#/$defs/nonnegative_integer"},
+        "revoked": {"$ref": "#/$defs/nonnegative_integer"},
+        "aliases": {"$ref": "#/$defs/nonnegative_integer"},
+        "revisions": {"$ref": "#/$defs/nonnegative_integer"},
+        "prediction_checks": {"$ref": "#/$defs/nonnegative_integer"},
+        "separating_contrasts": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "memory_structure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["records", "semantic_atoms", "edges", "distinct_roots", "views", "active_records", "retained_records", "index_entries"],
+      "properties": {
+        "records": {"$ref": "#/$defs/nonnegative_integer"},
+        "semantic_atoms": {"$ref": "#/$defs/nonnegative_integer"},
+        "edges": {"$ref": "#/$defs/nonnegative_integer"},
+        "distinct_roots": {"$ref": "#/$defs/nonnegative_integer"},
+        "views": {"$ref": "#/$defs/nonnegative_integer"},
+        "active_records": {"$ref": "#/$defs/nonnegative_integer"},
+        "retained_records": {"$ref": "#/$defs/nonnegative_integer"},
+        "index_entries": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_bytes",
+        "status_log_bytes",
+        "corpus_bytes",
+        "active_memory_bytes",
+        "retained_memory_bytes",
+        "index_bytes",
+        "adapter_bytes",
+        "optimizer_bytes",
+        "cache_bytes",
+        "peak_temporary_bytes"
+      ],
+      "properties": {
+        "event_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "status_log_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "corpus_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "active_memory_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "retained_memory_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "index_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "adapter_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "optimizer_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "cache_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "peak_temporary_bytes": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "candidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["legal_universe_size", "enumerated", "indexed", "scored", "returned", "catalog_utf8_bytes"],
+      "properties": {
+        "legal_universe_size": {"$ref": "#/$defs/nonnegative_integer"},
+        "enumerated": {"$ref": "#/$defs/nonnegative_integer"},
+        "indexed": {"$ref": "#/$defs/nonnegative_integer"},
+        "scored": {"$ref": "#/$defs/nonnegative_integer"},
+        "returned": {"$ref": "#/$defs/nonnegative_integer"},
+        "catalog_utf8_bytes": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "retrieval_reader_resolver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retrieval_operations",
+        "retrieval_flops",
+        "retrieval_wall_nanoseconds",
+        "retrieval_energy_microjoules",
+        "reader_operations",
+        "reader_found",
+        "reader_not_found",
+        "reader_errors",
+        "reader_visible_tokens",
+        "reader_flops",
+        "reader_wall_nanoseconds",
+        "reader_energy_microjoules",
+        "resolver_operations",
+        "resolver_input_tokens",
+        "resolver_output_tokens",
+        "resolver_flops",
+        "resolver_wall_nanoseconds",
+        "resolver_energy_microjoules"
+      ],
+      "properties": {
+        "retrieval_operations": {"$ref": "#/$defs/nonnegative_integer"},
+        "retrieval_flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "retrieval_wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "retrieval_energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_operations": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_found": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_not_found": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_errors": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_visible_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "reader_energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_operations": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_input_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_output_tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "resolver_energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "training": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applicable",
+        "examples",
+        "tokens",
+        "steps",
+        "example_touches",
+        "rank",
+        "target_modules",
+        "dtype",
+        "optimizer",
+        "flops",
+        "wall_nanoseconds",
+        "energy_microjoules"
+      ],
+      "properties": {
+        "applicable": {"type": "boolean"},
+        "examples": {"$ref": "#/$defs/nonnegative_integer"},
+        "tokens": {"$ref": "#/$defs/nonnegative_integer"},
+        "steps": {"$ref": "#/$defs/nonnegative_integer"},
+        "example_touches": {"$ref": "#/$defs/nonnegative_integer"},
+        "rank": {"$ref": "#/$defs/nonnegative_integer"},
+        "target_modules": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "dtype": {"type": "string", "minLength": 1},
+        "optimizer": {"type": "string", "minLength": 1},
+        "flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "reliability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dispatch_attempts",
+        "pre_dispatch_resumes",
+        "retries",
+        "indeterminate_calls",
+        "malformed_outputs",
+        "backend_errors",
+        "missing_cells",
+        "zero_valued_failures",
+        "blocked_operations",
+        "failures"
+      ],
+      "properties": {
+        "dispatch_attempts": {"$ref": "#/$defs/nonnegative_integer"},
+        "pre_dispatch_resumes": {"$ref": "#/$defs/nonnegative_integer"},
+        "retries": {"$ref": "#/$defs/nonnegative_integer"},
+        "indeterminate_calls": {"$ref": "#/$defs/nonnegative_integer"},
+        "malformed_outputs": {"$ref": "#/$defs/nonnegative_integer"},
+        "backend_errors": {"$ref": "#/$defs/nonnegative_integer"},
+        "missing_cells": {"$ref": "#/$defs/nonnegative_integer"},
+        "zero_valued_failures": {"$ref": "#/$defs/nonnegative_integer"},
+        "blocked_operations": {"$ref": "#/$defs/nonnegative_integer"},
+        "failures": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/failure_record"}
+        }
+      }
+    },
+    "action_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "survey",
+        "assay",
+        "prepare",
+        "traverse",
+        "intervene",
+        "commit",
+        "illegal",
+        "total_action_cost_microunits",
+        "avoidable_action_penalty_microunits"
+      ],
+      "properties": {
+        "survey": {"$ref": "#/$defs/nonnegative_integer"},
+        "assay": {"$ref": "#/$defs/nonnegative_integer"},
+        "prepare": {"$ref": "#/$defs/nonnegative_integer"},
+        "traverse": {"$ref": "#/$defs/nonnegative_integer"},
+        "intervene": {"$ref": "#/$defs/nonnegative_integer"},
+        "commit": {"$ref": "#/$defs/nonnegative_integer"},
+        "illegal": {"$ref": "#/$defs/nonnegative_integer"},
+        "total_action_cost_microunits": {"$ref": "#/$defs/nonnegative_integer"},
+        "avoidable_action_penalty_microunits": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "outcome_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_item_slots",
+        "observed_item_slots",
+        "missing_zero_slots",
+        "failure_zero_slots",
+        "successful_slots",
+        "pair_score"
+      ],
+      "properties": {
+        "expected_item_slots": {"$ref": "#/$defs/nonnegative_integer"},
+        "observed_item_slots": {"$ref": "#/$defs/nonnegative_integer"},
+        "missing_zero_slots": {"$ref": "#/$defs/nonnegative_integer"},
+        "failure_zero_slots": {"$ref": "#/$defs/nonnegative_integer"},
+        "successful_slots": {"$ref": "#/$defs/nonnegative_integer"},
+        "pair_score": {"$ref": "#/$defs/rational_score"}
+      }
+    },
+    "resource_totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wall_nanoseconds",
+        "cpu_nanoseconds",
+        "peak_resident_bytes",
+        "max_processes",
+        "max_threads",
+        "max_concurrent_cpu_cores",
+        "flops",
+        "energy_microjoules",
+        "energy_method",
+        "energy_scope",
+        "meter_resolution_microjoules"
+      ],
+      "properties": {
+        "wall_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "cpu_nanoseconds": {"$ref": "#/$defs/nonnegative_integer"},
+        "peak_resident_bytes": {"$ref": "#/$defs/nonnegative_integer"},
+        "max_processes": {"$ref": "#/$defs/nonnegative_integer"},
+        "max_threads": {"$ref": "#/$defs/nonnegative_integer"},
+        "max_concurrent_cpu_cores": {"$ref": "#/$defs/nonnegative_integer"},
+        "flops": {"$ref": "#/$defs/nonnegative_integer"},
+        "energy_microjoules": {"$ref": "#/$defs/nonnegative_integer"},
+        "energy_method": {
+          "enum": [
+            "D0_DURATION_X_RATIFIED_65W_UPPER_BOUND",
+            "FUTURE_DIRECT_PACKAGE_METER",
+            "FUTURE_EXTERNAL_WHOLE_SYSTEM_METER",
+            "NOT_MEASURED_FAIL"
+          ]
+        },
+        "energy_scope": {"enum": ["CPU_PACKAGE_UPPER_BOUND", "CPU_PACKAGE", "CPU_AND_DRAM", "WHOLE_SYSTEM", "NONE"]},
+        "meter_resolution_microjoules": {"$ref": "#/$defs/nonnegative_integer"}
+      }
+    },
+    "equivalence_claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_memory_claim", "fixed_compute_claim", "efficiency_claim", "equal_visible_bytes_only", "pareto_reporting_required"],
+      "properties": {
+        "fixed_memory_claim": {"const": false},
+        "fixed_compute_claim": {"const": false},
+        "efficiency_claim": {"const": false},
+        "equal_visible_bytes_only": {"type": "boolean"},
+        "pareto_reporting_required": {"const": true}
+      }
+    },
+    "measurement_disposition": {
+      "enum": ["COMPLETE", "PARTIAL_FAIL", "UNMEASURABLE_FAIL", "CEILING_EXCEEDED_FAIL"]
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nonnegative_integer": {"type": "integer", "minimum": 0},
+    "rational_score": {
+      "$comment": "The canonical validator additionally requires numerator<=denominator and gcd(numerator,denominator)=1; JSON Schema cannot express the cross-field gcd constraint.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer", "minimum": 0},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "failure_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["failure_id", "stage", "reason", "after_dispatch", "zero_valued", "replacement_used"],
+      "properties": {
+        "failure_id": {"type": "string", "pattern": "^F[0-9A-F]{15}$"},
+        "stage": {
+          "enum": [
+            "SOURCE",
+            "WRITER",
+            "SUPPORT",
+            "COMPILER",
+            "TRAINING",
+            "READER",
+            "RESOLVER",
+            "WORLD_ACTION",
+            "ESTIMATOR",
+            "RESOURCE_MEASUREMENT",
+            "INFRASTRUCTURE"
+          ]
+        },
+        "reason": {"type": "string", "minLength": 1},
+        "after_dispatch": {"type": "boolean"},
+        "zero_valued": {"type": "boolean"},
+        "replacement_used": {"const": false}
+      }
+    }
+  }
+}

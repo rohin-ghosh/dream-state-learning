@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "era_experimental_identification_v1",
+  "change_id": "chg_20260901_experiential_reasoning_adapter_v1",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "5c2414cf1978fe644ff015376b220e79817f26b89b6b204cebde66030e161fbb",
+  "context_files": [
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "Current three-timescale thesis and claim boundaries."
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15",
+      "purpose": "Current developmental architecture and lifetime evaluation proposal."
+    },
+    {
+      "path": "research_loop/plans/one_resolver_sleep_compiler_discussion_v0.md",
+      "sha256": "7d16783d3efa9d62195051364a2d72c5d2639ba872f818973f4dc7e9be64aae9",
+      "purpose": "Shared resolver, associative traversal, and evidence-bound compiler discussion."
+    },
+    {
+      "path": "research_loop/plans/rml_pilot_v1.md",
+      "sha256": "62637b045cd34a0501c14b1651974df9700b35ba4900cbe6dbbeefee291dc2fd",
+      "purpose": "Current RML causal ladder and paper-facing benchmark."
+    },
+    {
+      "path": "research_loop/plans/rml_g1g2_hybrid_consensus_v1.md",
+      "sha256": "de0fae3a5737950eeac52c0ae379a469f1179f4dd8b02945e932d6425ef78c8e",
+      "purpose": "Current minimum text-memory mechanism design that must not be silently superseded."
+    }
+  ],
+  "system_thesis_interpretation": "The directive is a useful causal reframing, not yet an ontological conclusion: a pretrained base supplies broad compressed priors, context supplies the current working set, an immutable episodic store supplies exact life-specific evidence, and a fast per-life adapter may change the computation used to retrieve, traverse, hypothesize, and act. The experimentally defensible question is whether experience-conditioned fast weights cause useful operation and path changes that mediate novel held-out action after controlling for explicit content access and ordinary supervised trajectory learning. The base-pretraining-as-evolution analogy should remain an intuition pump because pretraining also contains cultural and task supervision, and learned agency or creativity is much broader than the proposed intervention. TMEM is direct prior art, not merely a baseline: it already formalizes within-rollout actions from pi(theta_0 + Delta_t), extracts QA or instruction-response supervision, performs cumulative online LoRA SFT, and uses across-rollout outcome RL to improve ordinary actions and memory-extraction actions. Therefore neither fast weights changing the future policy, online LoRA memory, distilled QA writes, nor outcome-trained extraction is novel here. A potentially distinct paper contribution would be a causal decomposition showing that connected, provenance-grounded experiential compilation changes observable search/traversal operations and later multi-dependency action beyond TMEM-style direct content writes, matched generic trajectory SFT, and strong explicit-memory systems.",
+  "graph_delta_interpretation": "Treat the proposed per-life adapter as an experimental intervention surface rather than assume it is a pure reasoning module. Content supervision can change operation logits, while operation-trajectory supervision can encode world content through states, arguments, ordering, length, and selection; the two are not naturally orthogonal in neural weights. The graph should therefore distinguish (i) the authoritative immutable episodic store and common bounded reader, (ii) a content-supervision fast-weight condition, (iii) an operational-supervision fast-weight condition, and (iv) their registered joint condition, without claiming these are psychologically or parametrically separable modules. The operation edge must be measured at byte-identical cloned public states by separating operation-family choice from entity/argument choice, subsequent query results, path shape, and final action. The across-life LOOP policy must remain a separately trained object, frozen within evaluation lives, because otherwise a reusable learned search prior is confounded with per-life world adaptation. The exact evidence store is not optional: adapter emissions are hypotheses or access cues until reconciled with cited public roots. An audit graph may record this causal chain but cannot be exposed as a solver.",
+  "loop_delta_interpretation": "Do not supersede the current G1/G2 text mechanism gate. First establish that the frozen generic resolver can use admitted semantics and that authentic wake/DREAM/SLEEP text memory adds value under the existing G1/G2 design. Only then add a later mechanism stage using one frozen common life and corpus. The minimum DEV loop is: freeze experience, admitted content, and eligible pre-target operation traces; construct null, TMEM-style content-only, sanitized operational-supervision-only, joint, matched shuffled-operation, binding-shuffled, and cross-life-assignment conditions; rebuild every per-life adapter from the same base; reset context/cache/workspace between items; intervene on adapter assignment at identical public states; record legal next-operation scores, query arguments, reads, backtracks, path length, information gain, defer behavior, action, and sealed outcome; then score offline. Call the second factor operational supervision rather than policy-only until leakage audits demonstrate that it cannot reconstruct life content. A cheap pre-adapter control should place the identical content and operation examples in bounded text to determine whether any effect is parametric or merely demonstration conditioning. Confirmation requires independent world-life replication; one common life is a DEV identifiability probe only. Across-life learning of the LOOP policy remains a later experiment and cannot be silently folded into this per-life factorial.",
+  "claim_delta_interpretation": "The proposed paper claim is currently headline-ineligible and should remain so. The strongest result this design could eventually support is: in controlled RML lives, outcome-grounded per-life operational supervision caused authentic-binding-dependent changes in legal retrieval/traversal/action choices at held-out cloned states, those changes statistically mediated improved multi-dependency action, and the gain was not explained by identical explicit content, TMEM-style direct QA/instruction-response LoRA, matched ordinary trajectory SFT, extra compute, or answer-bearing traces. It would not establish general learned reasoning, learned agency, creativity, human-like memory, autonomous controller learning, or a unique advantage of LoRA. If content-only matches joint, the operational hypothesis fails. If bounded text demonstrations match the adapter, the finding concerns supervision/interface rather than parametric consolidation. If direct trajectory SFT matches the proposed compiler, the new mechanism reduces to ordinary SFT. If graph/program or linked external memory wins, that system must be reported as stronger. A timescale-hierarchy claim cannot be tested until a real across-life LOOP object exists and can be independently reset and swapped.",
+  "visibility_matrix_interpretation": "The proposed visibility matrix has the right high-level direction but needs byte-level trace projection rules before it is executable. For operational supervision, record separately every model-visible input token, trained target token, loss mask, entity or argument token, state identifier, chronology marker, branch length, termination token, and sampling seed. Loss on only generic operation tokens does not by itself prevent content leakage because the conditioning states and the sequence of operations can encode the answer. Held-out target bytes, proof paths, future outcomes, scorer values, admission decisions, offline truth, and evaluator artifacts must be absent from both inputs and targets. Eligible traces must end before target release and be derived only from ordinary public state/action/outcome chronology; unsupported rationales are excluded. At wake evaluation, the frozen adapter is read-only, every item receives a fresh context/cache/workspace clone, exact evidence is available only through the common bounded reader, and evaluation outcomes cannot cross item boundaries or update any adapter. Offline truth may enter only after proposals, corpora, adapters, operation traces, and outcomes freeze. Same-model self-checks may control search or defer but cannot promote evidence. Timing, length, candidate-order, target-generation, and cross-life channels require explicit taint attacks, not just semantic inspection.",
+  "acceptance_test_ids_addressed": [
+    "era_01_content_policy_identifiability",
+    "era_02_exact_evidence_authority",
+    "era_03_paired_state_operation_shift",
+    "era_04_no_answer_trajectory",
+    "era_05_timescale_reset_swap",
+    "era_06_strong_baselines"
+  ],
+  "acceptance_test_interpretation": "ERA-01 is the core identification test, but its factors should be named content supervision and operational supervision, not content and policy as if the latent mechanisms were cleanly separated. It needs common experience, base, rank, trainable modules, optimizer, tokens, FLOPs, sleep budget, reader, inference budget, and targets, plus TMEM-style direct QA, same examples in text, sanitized operation traces, shuffled operations, binding shuffles, and cross-life assignments. Report both the intended 2x2 estimands and residual non-identifiability. ERA-02 should inject conflicts, omissions, and plausible prior-driven intrusions; success requires the final cited claim/action to follow immutable evidence or defer, not merely that the harness mechanically overwrites the model. Separate adapter source monitoring from an externally forced reader rule. ERA-03 should use predeclared byte-identical state clones and compare the distribution over legal operation families and arguments before examining outcomes; authentic-versus-shuffled assignment, path efficiency, information gain, and a registered mediation analysis are required. ERA-04 requires a dependency and taint audit over inputs, targets, masks, ordering, length, timing, IDs, and target reconstruction, because an answer can be encoded without appearing as answer text. ERA-05 is only partially executable now: context, episodic store, and per-life adapter resets/swaps can be tested, but the across-life LOOP swap and the full timescale claim must wait until that object exists. ERA-06 must include uncrippled native context, episodic and linked RAG/A-MEM, exact graph/program, identical-corpus text, content LoRA, TMEM-faithful online direct-QA or instruction-response LoRA, raw and ordinary trajectory SFT, matched operational SFT, and batch SFT, with both resource and native-interface reporting. The current required-before-gpu labels for ERA-01, ERA-02, and ERA-04 are internally inconsistent if they mean empirical adapter tests; split them into CPU preflight artifacts before dispatch and frozen model/GPU tests before scientific promotion.",
+  "assumptions": [
+    "The frozen resolver exposes a stable typed operation alphabet whose choices are meaningfully upstream of later action rather than decorative chain-of-thought.",
+    "RML can clone byte-identical public states, reader snapshots, budgets, and stochastic seeds while varying only the mounted per-life adapter.",
+    "Eligible pre-target trajectories contain enough repeated outcome-grounded signal for a low-rank within-life update to alter later behavior.",
+    "The exact episodic store and common bounded reader can remain identical across all conditions and can be audited independently of adapter generations.",
+    "Held-out J and P actions require connected reconstruction and cannot be solved by current-state, target-signature, identifier, renderer, or base-prior shortcuts.",
+    "The per-life adapter is rebuilt from the clean base and never transfers across world, skin, or life boundaries.",
+    "Operation traces are useful supervision even though model-generated rationales are not assumed faithful descriptions of internal computation.",
+    "Matching or fully reporting optimization tokens, FLOPs, calls, memory bytes, and inference work is possible without silently giving the joint condition extra capacity.",
+    "The direct TMEM comparator can be reproduced faithfully enough that differences reflect corpus and task structure rather than a deliberately weak implementation.",
+    "A later across-life LOOP adapter, if built, can be frozen and isolated from every per-life MEMORY adapter during evaluation."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "era_amb_01_policy_only_definition",
+      "question": "What exact model-visible inputs, targets, masks, argument tokens, and state abstractions define the proposed policy-only corpus?",
+      "impact": "Without a byte-level definition, the arm may store world content or answers and cannot identify a reasoning-policy contribution."
+    },
+    {
+      "ambiguity_id": "era_amb_02_adapter_factorization",
+      "question": "Are content and operational supervision trained into separate composable adapters, separate matched adapters, or one adapter under different corpora?",
+      "impact": "The choice changes capacity matching, interference, the joint estimand, and whether a 2x2 interaction is interpretable."
+    },
+    {
+      "ambiguity_id": "era_amb_03_operation_metric",
+      "question": "What is the canonical finite legal-operation and argument space used to measure a paired next-operation shift?",
+      "impact": "Free-form generation makes distributional comparison unstable and can conflate content recall, formatting, and search control."
+    },
+    {
+      "ambiguity_id": "era_amb_04_trace_eligibility",
+      "question": "Which wake and dream trace fields are eligible, what outcome grounds each target, and how are unsupported rationales or post-hoc explanations removed?",
+      "impact": "Trace selection can become a hidden verifier, answer channel, or hindsight policy label."
+    },
+    {
+      "ambiguity_id": "era_amb_05_joint_budget",
+      "question": "Will the joint condition receive the same total optimization budget as single-factor arms or the same budget per supervision family?",
+      "impact": "Either convention changes the causal contrast; the choice and both resource vectors must be declared before results."
+    },
+    {
+      "ambiguity_id": "era_amb_06_tmem_replication",
+      "question": "Which TMEM extraction prompt, online trigger, SVD initialization, target modules, rank, update schedule, and across-rollout learning state constitute the faithful comparator?",
+      "impact": "TMEM already owns the broad fast-weight-policy claim, so a weak or materially altered baseline would invalidate novelty and performance comparisons."
+    },
+    {
+      "ambiguity_id": "era_amb_07_mediation_estimand",
+      "question": "Which predeclared path feature mediates action value: operation-family choice, query target, supported depth, information gain, path length, or another quantity?",
+      "impact": "Post-hoc selection among many trace metrics would turn any final gain into an unfalsifiable reasoning story."
+    },
+    {
+      "ambiguity_id": "era_amb_08_timescale_scope",
+      "question": "Is the timescale hierarchy intended as a current empirical claim or a future architecture hypothesis pending a trained across-life LOOP adapter?",
+      "impact": "The current system cannot perform the full reset/swap test, so retaining the claim now would exceed the available intervention."
+    },
+    {
+      "ambiguity_id": "era_amb_09_stage_placement",
+      "question": "Is this factorial a new G3 mechanism stage after G1/G2 text success, or is it intended to alter the frozen G1/G2 resolver and corpus?",
+      "impact": "Changing G1/G2 now would erase the clean content-mechanism baseline and confound the paper ladder."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "era_dis_01_reasoning_novelty",
+      "statement": "A per-life LoRA that changes future reasoning or policy is not itself a new contribution.",
+      "rationale": "TMEM already samples ordinary and extraction actions from a fast-weight policy, updates cumulative online LoRA from extracted QA or instruction-response supervision, and trains ordinary plus extraction behavior across rollouts with outcome RL.",
+      "proposed_resolution": "Narrow novelty to connected, provenance-grounded experiential compilation and experimentally identified operation/path mediation beyond a faithful TMEM direct-write comparator and matched ordinary trajectory SFT."
+    },
+    {
+      "disagreement_id": "era_dis_02_policy_only_label",
+      "statement": "The proposed policy-only arm is not intrinsically content-free and should not be presented as a clean neural policy factor.",
+      "rationale": "Conditioning states, query arguments, trace order, branch length, and generic operation targets can jointly encode life-specific semantics even when answer tokens are masked.",
+      "proposed_resolution": "Rename it operational-supervision-only, register sanitization and taint probes, use matched twin and cross-life controls, and report remaining non-identifiability."
+    },
+    {
+      "disagreement_id": "era_dis_03_pre_gpu_tests",
+      "statement": "ERA-01, ERA-02, and ERA-04 cannot all be completed empirically before any GPU run if they require trained adapters and model completions.",
+      "rationale": "Their stated setups include adapter training, generated conflicts, and trajectory behavior, which are model experiments rather than CPU-only design checks.",
+      "proposed_resolution": "Split each into a pre-dispatch CPU gate for schemas, manifests, static taint injections, and target-reconstruction tooling, followed by a separately ratified frozen model/GPU execution required before scientific-claim promotion."
+    },
+    {
+      "disagreement_id": "era_dis_04_single_life_inference",
+      "statement": "One common frozen life can diagnose identifiability but cannot support the proposed paper mechanism claim.",
+      "rationale": "Calls, operations, targets, and adapter seeds are nested; the independent unit remains a world-life or counterfactual pair.",
+      "proposed_resolution": "Use one life only for DEV and require new locked world-life replication with paired assignment and world-level inference before claim eligibility."
+    },
+    {
+      "disagreement_id": "era_dis_05_timescale_claim",
+      "statement": "The full timescale hierarchy should not be an active empirical claim before an across-life LOOP adapter exists.",
+      "rationale": "A named but unimplemented state object cannot be reset, swapped, or causally distinguished from the frozen prompted resolver.",
+      "proposed_resolution": "Test current context, episodic, and per-life adapter isolation now; preserve the complete hierarchy as a future hypothesis and promote it only after the LOOP object is trained and frozen."
+    },
+    {
+      "disagreement_id": "era_dis_06_g1g2_order",
+      "statement": "The new framing should not alter or bypass the ratified ordering of the G1/G2 explicit-text mechanism gate.",
+      "rationale": "Without first establishing usable content and a competent fixed resolver, a policy-adapter result cannot be attributed and a failure cannot be localized.",
+      "proposed_resolution": "Place the proposed factorial after G1/G2 as a new predecessor-bound mechanism stage; do not edit the current RML-D0 or G1/G2 scientific bytes under this discussion."
+    },
+    {
+      "disagreement_id": "era_dis_07_evidence_authority_attribution",
+      "statement": "A harness rule that always forces exact retrieval on conflict cannot by itself show that the adapter learned source monitoring.",
+      "rationale": "The desired behavior could be entirely supplied by the fixed resolver or reader protocol rather than the per-life adaptation.",
+      "proposed_resolution": "Report evidence-authority as a system invariant, and separately intervene on the adapter while holding the resolver rule fixed; claim adapter calibration only if its unsupported-release or query behavior changes beyond the fixed rule."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Should this be adopted only as a later G3 experimental hypothesis, leaving RML-D0 and the G1/G2 text mechanism bytes unchanged?",
+      "Should the second factor be named operational supervision rather than policy-only, with explicit acknowledgement that content and computation are not perfectly separable?",
+      "Should the immediate authority cover only exact schemas, corpus projections, CPU taint attacks, resource estimates, and a frozen DEV design, with model and GPU execution requiring a later ratification?",
+      "Should the faithful TMEM comparator include its online trigger, QA or instruction-response extraction, cumulative LoRA update, SVD initialization, and an across-rollout-trained reference where feasible?",
+      "Should content and operational supervision use separate composable adapters, separate matched adapters, or one adapter trained on registered corpus variants?",
+      "What single primary operation-level mediator will be preregistered before outcomes are opened?",
+      "Should the timescale-hierarchy claim remain future-only until a real across-life LOOP adapter exists?"
+    ]
+  }
+}

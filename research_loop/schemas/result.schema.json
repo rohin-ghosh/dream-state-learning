@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "classification",
+    "summary",
+    "metrics",
+    "artifact_validity",
+    "claim_ceiling",
+    "next_decision",
+    "human_reason"
+  ],
+  "properties": {
+    "classification": {
+      "enum": ["valid_result", "infrastructure_failure", "invalid_result", "inconclusive"]
+    },
+    "summary": {"type": "string"},
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value", "scope"],
+        "properties": {
+          "name": {"type": "string"},
+          "value": {"type": "string"},
+          "scope": {"type": "string"}
+        }
+      }
+    },
+    "artifact_validity": {"type": "string"},
+    "claim_ceiling": {"type": "string"},
+    "next_decision": {
+      "enum": ["repair", "run_frozen", "replicate_frozen", "stop", "escalate"]
+    },
+    "human_reason": {"type": "string"}
+  }
+}

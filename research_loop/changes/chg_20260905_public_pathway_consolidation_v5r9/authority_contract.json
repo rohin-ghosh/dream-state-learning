@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.authority.v9",
+  "current_authority": "NONE_PROPOSAL_ONLY",
+  "dispatch_classes": ["MODEL_INFERENCE", "TOKENIZER_EXECUTION", "EMBEDDING_EXECUTION", "TRAINING", "CANARY", "CPU_BEHAVIORAL", "GPU_BEHAVIORAL", "GPU_JOB"],
+  "stages": [
+    {
+      "stage": "ARCHITECTURE_RATIFICATION",
+      "predecessor": null,
+      "receipt_type": "ARCHITECTURE_RATIFICATION_RECEIPT",
+      "required": ["exact proposal", "two fresh interpretations", "cross-critique", "proceed consensus", "exact human architecture ratification", "scope proposal", "truthful generic intake state/history"],
+      "scope": "exact proposal plus CPU/no-model implementation of its already-frozen fixtures",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "PRE_ENTROPY_DESIGN",
+      "predecessor": "ARCHITECTURE_RATIFICATION",
+      "receipt_type": "PRE_ENTROPY_DESIGN_LOCK",
+      "required": ["generator and proposal law", "N and ordinal memberships", "safety/path templates", "analysis constants", "budgets/capacities", "seed allocation", "dispatch plan", "typed registries", "fixture registry"],
+      "scope": "immutable design commitment",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "ENTROPY_ACQUISITION",
+      "predecessor": "PRE_ENTROPY_DESIGN",
+      "receipt_type": "ENTROPY_ACQUISITION_RECEIPT",
+      "required": ["one design-lock predecessor", "raw entropy bound to the exact run", "ordered disjoint slices", "acquisition precedes proposal decoding"],
+      "scope": "entropy bytes for one exact run",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "PROPOSAL_REALIZATION",
+      "predecessor": "ENTROPY_ACQUISITION",
+      "receipt_type": "PROPOSAL_TRACE_RECEIPT",
+      "required": ["decoded proposals in ordinal order", "acceptance predicate results", "first accepted proposal or exact exhaustion", "no post-acceptance decoding"],
+      "scope": "accepted or exhausted proposal trace for one exact run",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "LIFE_REALIZATION",
+      "predecessor": "PROPOSAL_REALIZATION",
+      "receipt_type": "LIFE_SAMPLE_RECEIPT",
+      "required": ["accepted proposal trace", "complete recipient and donor realization", "prospective ordinal memberships", "stable life/sample identities"],
+      "scope": "all realized lives and prospective memberships",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "SAFETY_RESOLUTION",
+      "predecessor": "LIFE_REALIZATION",
+      "receipt_type": "RESOLVED_D1A_SAFETY_TRIAL_REGISTRY",
+      "required": ["complete life-sample vector", "resolved safety keys", "per-life D1A control construction and exact manifest closure"],
+      "scope": "safety and D1A control identities before populated lock",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "POPULATED_RUN",
+      "predecessor": "SAFETY_RESOLUTION",
+      "receipt_type": "POPULATED_RUN_LOCK",
+      "required": ["entropy acquisition", "all proposal/life receipts", "resolved safety keys", "per-life D1A control manifest", "unchanged design parameters", "exact membership equalities"],
+      "scope": "one exact realized no-model run design",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "CPU_CONFORMANCE",
+      "predecessor": "POPULATED_RUN",
+      "receipt_type": "CONFORMANCE_RECEIPT",
+      "required": ["two independent CPU/no-model executors", "passing T02-T12", "exact fixture specifications", "typed registry/schema/inventory closure"],
+      "scope": "CPU/no-model conformance over the exact populated run",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "T13_TECHNICAL_GATE",
+      "predecessor": "CPU_CONFORMANCE",
+      "receipt_type": "T13_PREMODEL_TECHNICAL_GATE",
+      "required": ["passing CONFORMANCE receipt", "typed static-seal pair", "fresh passing independent review over conformance and seals", "non-overriding advocate", "joint release-power result", "acyclic authority topology"],
+      "forbidden": ["human run ratification", "PRE_MODEL authority", "any model or behavioral result"],
+      "scope": "last technical premodel decision",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "HUMAN_RUN_RATIFICATION",
+      "predecessor": "T13_TECHNICAL_GATE",
+      "receipt_type": "HUMAN_RUN_RATIFICATION_RECEIPT",
+      "required": ["one passing T13 predecessor", "exact evidence path/hash/excerpt", "authorized and forbidden run scope"],
+      "scope": "one exact hash-bound run",
+      "model_execution_reachable": false
+    },
+    {
+      "stage": "PRE_MODEL_EXECUTION",
+      "predecessor": "HUMAN_RUN_RATIFICATION",
+      "receipt_type": "PRE_MODEL_AUTHORITY_RECEIPT",
+      "required": ["one exact human run receipt", "recursive T13 and populated-run closure", "allowed dispatch registry"],
+      "scope": "only dispatches enumerated by the exact run",
+      "model_execution_reachable": true
+    },
+    {
+      "stage": "DISPATCH_PREFLIGHT",
+      "predecessor": "PRE_MODEL_EXECUTION",
+      "receipt_type": "DISPATCH_PREFLIGHT_RECEIPT",
+      "required": ["recomputed PRE_MODEL grant", "one exact allowed-dispatch row", "immediate model/adapter/tokenizer/prompt/data/seed/view/run-package hash equality"],
+      "scope": "one exact dispatch; denial launches no process",
+      "model_execution_reachable": true
+    },
+    {
+      "stage": "RUNTIME_VALIDITY",
+      "predecessor": "DISPATCH_PREFLIGHT",
+      "receipt_type": "RUNTIME_INTEGRITY_RECEIPT",
+      "required": ["preflight permit before every dispatch", "complete run manifest", "hash/visibility/audit closure"],
+      "scope": "runtime evidence for the exact run",
+      "model_execution_reachable": true
+    },
+    {
+      "stage": "PRE_SCIENTIFIC_CLAIM",
+      "predecessor": "T14_FINAL_REPLAY_RESULT",
+      "receipt_type": "PRECLAIM_AUTHORITY_RECEIPT",
+      "required": ["exactly one passing final T14 predecessor", "passing runtime integrity", "analysis bundle", "exactly five eligible candidate decisions", "exactly five passing dependency decisions", "qualifications and complete evidence"],
+      "scope": "literal release packages only",
+      "model_execution_reachable": true
+    }
+  ],
+  "release_order": "per-dispatch preflight -> passing runtime integrity -> claim-blind analysis -> five candidate plus five dependency decisions -> exactly two predecessor-only independent passing cold replays -> one passing T14 result -> exactly one PRECLAIM predecessor edge -> literal release -> export -> optional audit",
+  "t13_rule": "T13 never consumes human run ratification or PRE_MODEL authority; human run ratification consumes T13 and PRE_MODEL authority consumes that ratification.",
+  "t14_rule": "Both cold replays consume the same passing runtime-integrity receipt, complete predecessor evidence, and release_bytes_consumed=false. One passing T14 result consumes exactly two passing replay receipts plus independence. PRECLAIM authority references that T14 result once and grants only with all five candidate/dependency pairs eligible.",
+  "preflight_rule": "Before every dispatch, recompute the complete PRE_MODEL chain and exact allowed-dispatch entry. Any denial or stale/missing/duplicate/wrong-run/type/role/order/cardinality subject starts no process.",
+  "sealer_rule": "STATIC_SEAL_PAIR contains exactly two entries produced by source- and implementation-distinct CPU/no-model sealers and proves exact output equality.",
+  "review_rule": "A fresh reviewer must pass the exact populated run, fixtures, seals, power, and authority topology. The advocate can explain or request repair but cannot override failure.",
+  "global_tests": ["PPC5R9_T01", "PPC5R9_T02", "PPC5R9_T03", "PPC5R9_T04", "PPC5R9_T05", "PPC5R9_T06", "PPC5R9_T07", "PPC5R9_T08", "PPC5R9_T09", "PPC5R9_T10", "PPC5R9_T11", "PPC5R9_T12", "PPC5R9_T13", "PPC5R9_T14"]
+}

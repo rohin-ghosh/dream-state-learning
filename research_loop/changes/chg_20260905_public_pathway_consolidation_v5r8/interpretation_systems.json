@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r8_systems_executable_closure",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r8",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "3d8dd3739cb506ed26e6d3fd1ad13785aa0db3da7190e11aea54529a3335bd50",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "740356111243a4e55d018243a29f0da89e5cdddd6c9410c5ca0cf766665802d6",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/human_directive.txt",
+      "sha256": "8a4251e5937eef464aad38f88a4a045b7bb75006c2210f72df46056bd80f754b",
+      "purpose": "Verbatim direction and binding r6-rework provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/scope_proposal.json",
+      "sha256": "885d7009cbb2135e4d581f6207a934ae570f003b8d713eca5a44ec456ec7ae60",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/protocol.md",
+      "sha256": "5a4f949c53ea5c65b8e22641ddfd56e3f1f73e3788dec64c8eff0845f572061a",
+      "purpose": "Standalone scientific question, estimand, construction law, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/machine_contract.md",
+      "sha256": "c59ad60f20e7e4ab2b069747b298f5a9f55f8ce525fd99fad77535c962105218",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/semantic_validators.md",
+      "sha256": "b907b4adf04aecaddba136f2e77d73b05d7fcf7a4745b69235f0faec5f93f81f",
+      "purpose": "Pure cross-field, exact-statistical, and acyclic-DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/assay_contract.json",
+      "sha256": "71552fced1f2053fb53158566ac5a80a03344ca015458f673dfdc1e67f585afc",
+      "purpose": "Assay populations, freeze matrix, controls, and accepted-constructible generator law."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/analysis_contract.json",
+      "sha256": "29769a20baa121f434fb2cacb644f82e3436b84c43cc484642cf45d5290c7768",
+      "purpose": "Exact paired, safety, missingness, Holm, and conditional power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/status_contract.json",
+      "sha256": "6da6524abb70ac386f978edc683cc1e5c73ef235ee5062f149e183041108de4b",
+      "purpose": "Total status-to-endpoint and shared-DREAM dependency mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/visibility_contract.json",
+      "sha256": "17d09a01bf30be79632fc311ed7d3a18a7c68b06e538fed61f30fc18fa51c142",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/authority_contract.json",
+      "sha256": "b03bff6d9a6c3de34c4107c3cb1ff2df67da52127038eaa3cc7fc1561cb02b47",
+      "purpose": "Stage-specific, role-closed authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/claim_dependency_map.json",
+      "sha256": "e4f261639e6191c8d3b5ff97d297df037f7b6f33697ee07022865e5f70e5341c",
+      "purpose": "Literal candidate-decision, T14, authority, and release map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/object_inventory.json",
+      "sha256": "6d3154afe62cf01a8d89a6d221994f40ccfc9dd40f0fa234079bc121e33d5a84",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/contracts.schema.json",
+      "sha256": "295d20268901f93eb705c8253cece1ff7a1e3a777bd3f765d46445378919351a",
+      "purpose": "Closed typed schemas for every inventoried artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/controller_registry.json",
+      "sha256": "9dd0fd25a6951517986bf77b26bc37c6daf329d2c351426b15511bbb57ca6cbe",
+      "purpose": "Hash-bound total D1A-D1D controller rows and vocabulary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/transition_cause_registry.json",
+      "sha256": "6a16a1feb37489e36b4d478d58435c5770450564cfad6471c510b514ca99abbc",
+      "purpose": "Hash-bound exact seven-branch transition lineage registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/test_contract.json",
+      "sha256": "680ad7078789f02c95fcb0bed8b531633d87053d284eb1e68894c9ea2b86192c",
+      "purpose": "Executable T01-T14 stage and coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/drafts/build_r8_contract_schema.py",
+      "sha256": "7196e5ed176646bf1960bb4736c71a6c766834de8dc53e07feb1c1fb4c736493",
+      "purpose": "Nonnormative deterministic generator for repetitive schema, inventory, and controller bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r8/drafts/build_r8_change.py",
+      "sha256": "c85e522661e595b0ae9a4b7e83150e13621ed2fda95ba9848f113c16e0158974",
+      "purpose": "Nonnormative deterministic proposal generator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Earlier PPC5r4 rework provenance only; no inherited authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/consensus.json",
+      "sha256": "e93e4f82909e461c86c1f123b6fd6c8c13af155cad2dd3332d00dafb42416139",
+      "purpose": "Immediate binding PPC5r6 rework consensus and seventeen exact successor obligations; no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Scientific mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "The narrow thesis and four prerequisites remain scientifically coherent, but the frozen r8 proposal is not yet an executable closed system. It repairs substantial r6 surface structure, including the 13-by-15 visibility product, seven typed transition-cause branches, four canonical Holm identifiers, five literal release claims, and a phase-correct generic T01 intent. Those gains do not offset concrete byte-graph defects in controller error/queue totality, fixture enumeration, typed authority, recursive inventory, D1B capability separation, model-dispatch causality, and release acyclicity. Systems recommendation: rework before consensus or ratification; no implementation, fixture execution, model call, training, or GPU work is authorized.",
+  "graph_delta_interpretation": "The intended graph is reduction -> five candidate decisions -> two independent predecessor-only cold replays -> one final T14 result -> preclaim authority -> release, with optional post-release audit. The frozen schemas do not realize that graph exactly: several required registries remain generic BYTE_ARTIFACT_MANIFEST values, model dispatch lacks a typed common-seed edge, the controller directly consumes a resolved response projection, recursive inventory does not follow artifact-target references to a fixed point, T13 and HUMAN_RUN_RATIFICATION_RECEIPT mutually depend on one another, and PRECLAIM_AUTHORITY_RECEIPT names the T14 predecessor twice. These are authority and causality defects, not documentation gaps.",
+  "loop_delta_interpretation": "The public loop correctly removes CONSTRUCTION_FAIL and TERMINAL as ordinary provider results, preserves the specified first-failure order, distinguishes ordinary no-action from missingness, and introduces a genuine D1B finalizer and typed seven-way transition-cause vocabulary. It is still not total at the third consecutive error: private count permits 3 while the public view permits only 0..2, and D1B rows that both QUEUE and take EQ2 directly to terminal ERROR_LIMIT do not guarantee that every queued slot reaches exactly one FLUSHED or DISCARDED receipt. Exact T02-T14 cases and negative mutations are also deferred to future generators instead of being frozen as an enumerable executable universe.",
+  "claim_delta_interpretation": "The five candidate/release claim strings and the four Holm family identifiers are byte-exact across the proposal and claim map. Claim authority nevertheless remains withheld because exact fixture evidence, typed run-lock authority, final replay causality, and an acyclic single-consumption T14-to-preclaim-to-release chain are prerequisites to interpreting any candidate decision as a release claim. The proposal supports no flywheel claim and no broad architectural closure claim in its present form.",
+  "visibility_matrix_interpretation": "The matrix contains the complete ordered 13 artifacts by 15 stages, all 195 cells, and separates forbidden from capability/projection entries. However, the 83 allowed capability_or_projection_role values are generated VISIBILITY_<hash> tokens that are not roles in contracts.schema.json or object_inventory.json, so a validator cannot equate a permitted matrix cell to an actual typed schema ingress or projection edge. In addition, PRIVATE_CONTROLLER_RECEIPT directly references RESOLVED_RESPONSE_PROJECTION, bypassing the required sanitized projection -> intervention -> typed emission boundary; route/provider audit arrays also use a shared union role that cannot require both audit classes. Thus cell completeness does not yet establish capability separation.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R8_T01",
+    "PPC5R8_T02",
+    "PPC5R8_T03",
+    "PPC5R8_T04",
+    "PPC5R8_T05",
+    "PPC5R8_T06",
+    "PPC5R8_T07",
+    "PPC5R8_T08",
+    "PPC5R8_T09",
+    "PPC5R8_T10",
+    "PPC5R8_T11",
+    "PPC5R8_T12",
+    "PPC5R8_T13",
+    "PPC5R8_T14"
+  ],
+  "acceptance_test_interpretation": "T01 has the right generic phase boundary and correctly denies PPC-produced evidence, but intake.state.json alone does not retain the exact invoked command or stdout bytes. T02-T12 specify valuable branch themes, yet FIXTURE_UNIVERSE_MANIFEST and FIXTURE_CASE permit self-asserted counts, arbitrary branch keys, and blob completeness proofs rather than freezing the exact Cartesian unions and negative rows required by r6. T03 is additionally blocked by the third-error/queue-finalization inconsistency; T08 and T12 by the controller projection bypass and unbound visibility roles; T09 by the missing typed seed and cold-replay model-view edges; T11 by under-typed construction support; T13 by generic registries and a ratification cycle; and T14 by incomplete separated audits and duplicated final-T14 consumption. Consequently none of T02-T14 is executable from the frozen proposal bytes, and T01 cannot yet establish its full transcript obligation.",
+  "assumptions": [
+    "All context_files listed by change.json were read and independently SHA-256 checked against the frozen filesystem bytes.",
+    "Executable closure is evaluated from the frozen normative proposal and its hash-bound context, not from fixtures, registry instances, code, or validators promised for post-ratification authoring.",
+    "semantic_validators.md may define cross-field rules, but prose assertions and boolean self-attestations do not replace missing typed operands, exact byte sets, or an acyclic authority graph.",
+    "No PPC fixture, model, training, GPU, or other implementation workload was run during this interpretation."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "SYS-A01-TERMINAL-ERROR-COUNT",
+      "question": "Must the terminal third-error public state record consecutive_error_count=3, or is the public count intentionally capped at 2 after an internal increment?",
+      "impact": "Without a single specified representation, independent controllers can produce different terminal bytes or fail public-view schema validation."
+    },
+    {
+      "ambiguity_id": "SYS-A02-T01-TRANSCRIPT-PRODUCER",
+      "question": "Which generic pre-PPC artifact atomically records the canonical consensus command, exit code, stdout bytes, predecessor state hash, and successor state hash?",
+      "impact": "The current intake state proves a phase transition but cannot by itself prove the exact command/stdout or absence of an unrecorded PPC producer."
+    },
+    {
+      "ambiguity_id": "SYS-A03-RUN-LOCK-ENTROPY-TIMING",
+      "question": "Is a separate pre-entropy design lock required before POPULATED_RUN_LOCK can include realized life_sample_refs?",
+      "impact": "A single object cannot both commit realized samples and precede the entropy that realizes them unless membership and realization are split explicitly."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "SYS-D01-CONTROLLER-ERROR-QUEUE-TOTALITY",
+      "statement": "The frozen controller is not total at the third consecutive error and does not close every D1B queue slot exactly once.",
+      "rationale": "Error rows increment at EQ2 and terminalize as ERROR_LIMIT, PRIVATE_CONTROLLER_RECEIPT permits count 3, but public_view_body permits only 0..2. D1B plan/commit rows carry row-level QUEUE effects even on EQ2 direct-terminal branches, so an existing or newly allocated slot can reach terminal state without a typed FLUSHED or DISCARDED finalization.",
+      "proposed_resolution": "Specify one schema-valid post-third-error count, expand controller rows over per-result queue effects, and route every terminal/error exit through a finalizer that emits exactly one typed FLUSHED or DISCARDED receipt for every queued slot. Then exhaustively enumerate reachable count/state/queue tuples."
+    },
+    {
+      "disagreement_id": "SYS-D02-EXACT-FIXTURE-UNIVERSES",
+      "statement": "The proposal does not freeze exact T02-T14 fixture cases or an equivalently executable finite generator universe.",
+      "rationale": "No T02-T14 fixture manifests or cases are present. FIXTURE_UNIVERSE_MANIFEST accepts arbitrary generator names, versions, coverage axes, branch keys, counts, and a blob completeness proof, while test_contract.json supplies thematic prose rather than the exact Cartesian unions and negative mutation rows required by r6.",
+      "proposed_resolution": "Before ratification, bind canonical branch registries and deterministic finite generator algorithms and materialize every positive and negative case with exact expected counts and independently recomputable set equality."
+    },
+    {
+      "disagreement_id": "SYS-D03-TYPED-REGISTRY-AUTHORITY",
+      "statement": "Run-lock and static-seal authority remains generic rather than exact and typed.",
+      "rationale": "POPULATED_RUN_LOCK and STATIC_SEAL_RECEIPT bind status, visibility, claim, resource, inventory, schema, allowed-dispatch, and authority content through BYTE_ARTIFACT_MANIFEST, and the schema has no top-level ALLOWED_DISPATCH_REGISTRY or AUTHORITY_REGISTRY objects. Fixture and test evidence similarly admit generic manifest roles, contrary to r6's populated self-hashed typed-registry requirement.",
+      "proposed_resolution": "Create a unique typed object schema and exact role/cardinality for every registry and evidence class, populate each with canonical bytes before run lock, and reject generic byte manifests anywhere authority depends on semantic type."
+    },
+    {
+      "disagreement_id": "SYS-D04-RECURSIVE-INVENTORY-AND-VISIBILITY",
+      "statement": "The inventory and visibility checks are not an independent recursive fixed-point proof of the schema graph.",
+      "rationale": "The generator follows local $defs but stops at typed reference objects instead of recursively traversing referenced artifact schemas, then derives both compared edge sets from the same generated reference bindings. Concretely, MODEL_VIEW records MODEL_DISPATCH but not the required COLD_REPLAY consumer, and all 83 non-forbidden VISIBILITY_<hash> roles are absent from the schema and inventory role vocabulary.",
+      "proposed_resolution": "Compute transitive artifact-reference closure from contracts.schema.json independently of object_inventory.json, compare exact ordered typed edges to a separately materialized inventory, and replace synthetic visibility tokens with actual schema/inventory roles for every permitted cell."
+    },
+    {
+      "disagreement_id": "SYS-D05-CAPABILITY-SEPARATION",
+      "statement": "The D1B privileged/sanitized capability boundary has a direct controller bypass and cannot require complete separated audits.",
+      "rationale": "PRIVATE_CONTROLLER_RECEIPT directly consumes RESOLVED_RESPONSE_PROJECTION although r6 requires the controller to consume only INTERVENTION_EMISSION_RECEIPT. T14 and release evidence use a single PROVIDER_AUDIT union role for ROUTE_LINEAGE_AUDIT_RECEIPT and PROVIDER_AUDIT_RECEIPT with minItems=1, allowing either class to be omitted. The opaque commitment is only a 64-hex string with no typed nonce/allocation receipt or canonical commitment algorithm.",
+      "proposed_resolution": "Remove the controller-to-projection edge; require an exact typed emission edge; split provider-audit and route-audit fields, roles, and cardinalities; and bind a privileged fresh 256-bit nonce/allocation plus canonical commitment preimage and algorithm while exposing only the sanitized commitment."
+    },
+    {
+      "disagreement_id": "SYS-D06-MODEL-DISPATCH-CAUSALITY",
+      "statement": "The frozen MODEL_VIEW -> MODEL_DISPATCH -> OPERATION_ENVELOPE -> TRANSITION_EVENT -> closure chain is not fully typed and replay-closed.",
+      "rationale": "MODEL_DISPATCH_RECEIPT stores a bare integer seed rather than a typed COMMON_SEED_BUNDLE or seed-entry reference, and the inventory gives MODEL_VIEW no COLD_REPLAY consumer role. Therefore an exact same-run model/state/head/input/token/seed chain cannot be reconstructed solely from required typed predecessors.",
+      "proposed_resolution": "Add exact typed common-seed-entry and model-view replay references with run, model, state, ledger-head, input, token and ordinal constraints, then regenerate and independently verify the recursive consumer inventory."
+    },
+    {
+      "disagreement_id": "SYS-D07-ACYCLIC-SINGLE-T14-AUTHORITY",
+      "statement": "The authority/release graph is cyclic around T13 ratification and consumes the final T14 result twice.",
+      "rationale": "T13 requires exact run ratification, while HUMAN_RUN_RATIFICATION_RECEIPT in turn requires the T13 TEST_RESULT, creating a literal dependency cycle. PRECLAIM_AUTHORITY_RECEIPT separately requires predecessor_receipt_ref and t14_test_result_ref, both the same T14_TEST_RESULT role and ordinal, although the final T14 result must be consumed exactly once before authority and release.",
+      "proposed_resolution": "Make T13 precede run ratification without consuming it, let ratification consume T13, let preclaim authority consume both exactly once, and replace the two T14 fields with one uniquely typed final-T14 predecessor reference. Recompute and reject cycles over exact byte references."
+    },
+    {
+      "disagreement_id": "SYS-D08-T01-EVIDENCE-CLOSURE",
+      "statement": "The T01 staging intent is genuinely generic, but its exact evidence closure is incomplete.",
+      "rationale": "There is correctly no PPC T01 fixture, TEST_RESULT, model, sealer, or implementation producer. However, intake.state.json does not retain the exact consensus command or stdout bytes, and the later ARCHITECTURE_INTAKE_HISTORY permits arbitrary byte references rather than freezing a canonical transcript producer and exact command literal.",
+      "proposed_resolution": "Have the generic intake launcher atomically emit a typed, canonical transcript receipt containing command bytes, exit 0, JSON stdout ok=true, predecessor/successor state hashes, and the distinct phase transition; later PPC locks may reference that generic receipt without producing it."
+    },
+    {
+      "disagreement_id": "SYS-D09-CONSTRUCTION-PROOF-TYPING",
+      "statement": "The finite-support and conservative construction proofs are not fully typed executable objects.",
+      "rationale": "CONSTRUCTION_SUPPORT_POINT retains raw recipient/proposal byte references, inline predicate booleans, and a stored conditional_complete_release_power rational rather than exact typed recipient/proposal, ordered acceptance-result, and applicable power-result predecessors. That permits a proof object to assert, rather than reconstruct, its decisive support facts.",
+      "proposed_resolution": "Require typed support-point predecessors, exact ordered predicate-result receipts and first-failure semantics, exact rational mass arithmetic, and a typed applicable conditional-power result; recompute unconditional chain-rule power for both proof variants from those predecessors."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Should PPC5r8 be returned for rework before consensus so the controller, fixture, registry, inventory, capability, dispatch, and authority blockers are repaired in frozen normative bytes?",
+      "For the release DAG, should T13 precede and be consumed by human run ratification, with the ratification and the single final T14 result then consumed by preclaim authority?",
+      "Must exact T02-T14 fixture rows be materialized in the next proposal, or will a frozen executable finite generator plus independently recomputable enumeration receipt be accepted as equivalent?"
+    ]
+  }
+}

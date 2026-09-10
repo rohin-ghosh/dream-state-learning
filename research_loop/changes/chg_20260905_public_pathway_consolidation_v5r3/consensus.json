@@ -1,0 +1,748 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "chg_20260905_public_pathway_consolidation_v5r3.consensus.fresh.v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r3",
+  "state": "human_required",
+  "architecture_change_sha256": "460f37b0f78be15bc900151fb84eb38184fde10a1362ce927d29965b63888da1",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "ppc5r3_science_fresh_v1",
+      "sha256": "17e3e5d90a70a2a25d4c458d00886f049b182b814207c015b0524b8fd6beb9a6"
+    },
+    {
+      "interpretation_id": "ppc5r3_systems_fresh_v1",
+      "sha256": "ce50f2f72c100ee39a6f5fd50e4de1f6091b637e8464934ed77f3471746fb835"
+    }
+  ],
+  "critique_sha256": "f3217cb9237a198bb63d7d3ca16037f3295bbf0c3f0775cb23c4302a57148212",
+  "recommendation": "rework",
+  "agreements": [
+    "This consensus is bound to the exact r3 change, both fresh interpretations, and the adversarial critique named by the four SHA-256 values above; PPC5r2 consensus is provenance only and contributes neither evidence nor authority.",
+    "PPC5r3 is a useful but deliberately narrow precursor: D1A supported complete-table selection, D1B observable every-edge response dependence, D1C frozen DREAM context-policy value, and D1D DREAM_TO_SLEEP total-policy value are separate, non-substitutable assays rather than an end-to-end learning mechanism.",
+    "THINK, DREAM, and ACT must remain frozen; the only learned object is a clean-base READ-scoring adapter mounted only inside one common complete-table provider, and no PPC5 result supports learned cognition, continual improvement, compression, parenting, population learning, inheritance, or scaling.",
+    "The r3 assay freeze matrix, nominee-first evidence gate, matched-binding derangement, shared DREAM realization, recipient-life pairing, complete visibility product, exact claim strings, resource accounting, and architecture-versus-run authority split are valuable and should be preserved through rework.",
+    "The present bytes are not independently executable: the circular ledger commitment, incomplete controllers and status algebra, mismatched inference and power, undefined one-sample safety gates, single SHAM, unmatched wrong-life control, open path proof, semantic field leakage, incomplete receipt DAG, self-assertable authority, and insufficient test oracles can change observations, p-values, claims, or reachability.",
+    "Because every computational arm can be instantiated from the same pre-treatment life and seed bundle, a repaired design need not randomize one observed arm label or pretend an unobserved counterfactual; it can execute both paired arms and directly record their difference.",
+    "D1D must remain an unadjusted total-policy comparison inclusive of policy-induced evidence dose, training, publication, inference, failures, and resources. Exact dose and opportunity matching belongs only to the separate D1A WRONG_LIFE specificity control.",
+    "No current r3 acceptance-test theme should be removed, but all fourteen must be strengthened in place with typed fixture-universe, expected-output, coverage, mutation, dependency, and independence evidence after the normative defects are repaired.",
+    "This rework recommendation supplies no architecture ratification or implementation authority. All implementation, static-sealer execution, model/tokenizer/embedding dispatch, training, behavioral or canary execution, GPU work, and scientific release remain forbidden."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "PPC5R3_CONS_D01_ACYCLIC_STATE_EVENT_LEDGER",
+      "sources": [
+        "architecture_change",
+        "critique:PPC5R3_CRIT_C01_CIRCULAR_LEDGER_STATE_COMMITMENT"
+      ],
+      "issue": "Whether an event can bind the final post-state hash while that post-state embeds the same event as its ledger head.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "The event binds post_state_hash and the post-state ledger hash equals that event hash."
+        },
+        {
+          "actor": "adversarial critique",
+          "position": "Those commitments are circular, and terminal state removes the only ledger-head field, so neither transition nor terminal replay has computable canonical bytes."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A hash DAG must be computable in one direction and must retain the ledger head in both terminal and nonterminal states.",
+        "selected_position": "Adopt an acyclic pre-state, event, post-state receipt sequence.",
+        "required_change": "Split state body from state receipt. Starting from an already sealed pre_state_receipt_hash and prior_event_hash, compute the post-state body without the new ledger head, hash that body, compute event_hash over the prior event, pre-state receipt, operation/result bindings, debits, and post_state_body_hash, then compute the post-state receipt over post_state_body_hash plus event_hash. Store ledger_head=event_hash in every terminal and nonterminal state receipt. Rename the event field so it cannot be mistaken for the final post-state receipt hash, domain-separate all three objects, and exhaust genesis, ordinary, error, queue-flush, terminal, and cold-replay vectors.",
+        "acceptance_test_ids": [
+          "PPC5R3_T03",
+          "PPC5R3_T12",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D02_TOTAL_ASSAY_CONTROLLERS",
+      "sources": [
+        "PPC5R3_SYS_A01_NON_D1B_SCHEDULE",
+        "PPC5R3_SYS_A02_SUCCESSFUL_ACT_TERMINAL",
+        "PPC5R3_SYS_A03_FLUSH_EVENT_LINEAGE",
+        "PPC5R3_SYS_D02_MACHINE_AND_STATUS_NOT_TOTAL",
+        "critique:PPC5R3_CRIT_C02_MACHINE_TRANSITION_NOT_TOTAL"
+      ],
+      "issue": "Whether the D1B controller prose also determines D1C/D1D execution, successful completion, operation precedence, and no-model flush lineage.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "AUTHENTIC plus the specialized D1B schedules and generic transition precedence suffice for every assay."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "D1C/D1D schedules, successful ACT termination, STOP-at-required-slot precedence, provider/INVALID_CELL precedence, and typed queue lineage remain externally visible choices."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Two implementations cannot agree on bytes, debits, or endpoints without one row for every reachable assay, controller phase, operation, provider result, flush, and completion.",
+        "selected_position": "Require separate exhaustive controllers and a typed queue lifecycle for every assay.",
+        "required_change": "Publish an assay-by-controller-phase-by-operation transition table for D1A's no-policy provider execution and for D1B, D1C, and D1D behavioral execution. Define exact required READ/PREDICT/ACT slots, make a model STOP at a required non-STOP slot SCHEDULE_VIOLATION, define first-applicable provider and INVALID_CELL precedence, and make every successful schedule-complete ACT produce one SCHEDULE_COMPLETE terminal body, event, and terminal receipt. Every queued slot must bind its original envelope/request, provider receipt, intervention receipt, private-controller before/after receipts, public flush event, and discard receipt. No default controller or implicit event is permitted.",
+        "acceptance_test_ids": [
+          "PPC5R3_T03",
+          "PPC5R3_T04",
+          "PPC5R3_T08",
+          "PPC5R3_T09",
+          "PPC5R3_T10",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D03_TOTAL_STATUS_OBSERVATION_MAPPING",
+      "sources": [
+        "PPC5R3_SYS_A04_RUNTIME_TO_ANALYSIS_STATUS",
+        "ppc5r3-sci-a01-no-action-endpoint",
+        "ppc5r3-sci-d01-status-itt-not-total",
+        "critique:PPC5R3_CRIT_C03_STATUS_TO_ITT_NOT_TOTAL"
+      ],
+      "issue": "How every construction, artifact, runtime, policy, and no-action result becomes exactly one observation or integrity blocker.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "The listed policy, missing, construction, and invalid statuses are exhaustive and adverse substitution completes all-assigned analysis."
+        },
+        {
+          "actor": "both interpretations and critique",
+          "position": "Adapter MISSING, operation failures, no-action terminals, mixed nominee projections, and successful completion lack a unique assay/arm/endpoint disposition."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "No-action caused by an intact assigned policy is observed poor performance, while unavailable data and integrity failures require distinct treatment; conflating them changes the causal outcome.",
+        "selected_position": "Use an exhaustive raw-result cross-product with observed zero for intact no-action task failure, explicit missing failure, and fail-closed integrity status.",
+        "required_change": "Define one table over assay, arm, stage, raw result, endpoint, continuation, installation, missingness, and blocker. MODEL STOP, BUDGET_EXHAUSTED, ERROR_LIMIT, TOKEN/PARSE/READ/ACTION/DOMAIN/REFERENCE/PREDICTION/ACTION/SCHEDULE failures, absent or invalid OPEN_LOOP commitment, and any other integrity-clean assigned path that executes no action produce raw normalized_action_value=0, analysis_value=0, missing=false, and no claim blocker. A genuinely missing model/provider call remains a no-retry missing observation, is coded as failure for the primary exceedance indicator, and is counted by the missingness gate. Verify every required artifact's presence and hash before assay assignment: absence then is CONSTRUCTION_FAIL; disappearance or mismatch after the seal is RUN_INVALID, so adapter_manifest MISSING is not an analyzable arm outcome. TRAIN_FAILED, DREAM empty/abstain/invalid, no selected roots, and no admitted roots are named assigned-policy statuses that continue with actual downstream performance. PROJECTION_REJECTED remains per-nominee only; one aggregate root receipt deterministically derives NO_ROOTS_SELECTED or NO_ADMITTED_ROOTS, while an admitted root that fails deterministic row rendering is RUN_INVALID. Normalize provider missing vocabulary exactly once and require exactly one observation or blocking receipt per assigned endpoint.",
+        "acceptance_test_ids": [
+          "PPC5R3_T03",
+          "PPC5R3_T04",
+          "PPC5R3_T08",
+          "PPC5R3_T09",
+          "PPC5R3_T10",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D04_GENERATOR_POPULATION_PAIRED_INFERENCE",
+      "sources": [
+        "ppc5r3-sci-a02-randomization-source",
+        "ppc5r3-sci-a03-sharp-versus-average",
+        "ppc5r3-sci-d02-paired-inference-invalid",
+        "critique:PPC5R3_CRIT_C04_FINITE_ROSTER_INFERENCE_MISMATCH"
+      ],
+      "issue": "Whether hash-swapped finite-roster clones support inference for an average ITT, a Fisher sharp null, or a different directly observable paired estimand.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "A sealed hash ordering plus 2^N sign flips provides exact inference for a finite-roster mean paired ITT."
+        },
+        {
+          "actor": "scientific interpretation and critique",
+          "position": "No random assignment law is specified, and Fisher sign flips at an additive boundary do not generally test a heterogeneous weak-null mean effect."
+        },
+        {
+          "actor": "adjudicator",
+          "position": "Because both computational clones can be run, replace assignment-based finite-roster mean inference with direct paired outcomes from independently generator-sampled life/seed bundles."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Executing both arms observes the paired contrast directly. IID sampling of complete pre-treatment life/seed bundles supplies the probability law that an exact sign/binomial analysis needs, without random arm labels, a sharp additive null, or an unobserved counterfactual.",
+        "selected_position": "Make the primary estimand for every paired superiority or noninferiority gate pi_g = Pr_G[difference_g > registered_margin_g] over independently generator-sampled recipient-life/seed bundles; report mean difference only descriptively.",
+        "required_change": "Replace the exact sealed finite roster, assignment_rule, average ITT language, arm-label swaps, mean-direction gate, and inverted additive-effect grid everywhere. Bind a versioned generator distribution G, rejection-free or fully specified pre-treatment sampling algorithm, independent auditable entropy receipts, and inclusion of every sampled life with no post-outcome resampling or exclusion. Treat each sampled life plus its common-random seed bundle as one IID unit; instantiate all required clones, execute every arm from the identical pre-treatment snapshot, and compute each direct paired d_i after canonical within-life lower-unit aggregation. For gate g set Z_i=1 exactly when d_i is strictly greater than margin_g and no required arm is missing, otherwise 0. Test H0: pi_g <= pi0_g using the exact upper-tail Binomial(N,pi0_g) p-value with equality counted against release and report an exact one-sided Clopper-Pearson lower bound. pi0_g, margins, generator, life count, path-length strata, and gate sample membership are prospective run-lock values. Preserve per-edge and per-control gates, assay max-p conjunction, four-assay Holm, and recipient life as the sole independent unit. Claims must say that the paired margin was exceeded with probability above pi0 under G, not that a finite roster's mean assignment effect improved; arithmetic mean, quantiles, and magnitude intervals are descriptive and cannot rescue release.",
+        "acceptance_test_ids": [
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D05_D1A_ONE_SAMPLE_SAFETY",
+      "sources": [
+        "architecture_change:analysis_contract",
+        "critique:PPC5R3_CRIT_C05_D1A_SAFETY_GATE_INFERENCE_UNDEFINED"
+      ],
+      "issue": "How fixed false-selection and NOT_FOUND ceilings receive p-values when neither has a randomized control arm.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Every named gate, including a fixed ceiling minus a treatment rate, receives the paired label-swap test and a two-arm contrast receipt."
+        },
+        {
+          "actor": "adversarial critique",
+          "position": "A fixed ceiling has no exchangeable control label; the reducer must define a one-sample procedure and matching receipt."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A ceiling on a Bernoulli event probability is directly testable by an exact one-sample lower-tail binomial test and must not be forced into a paired contrast schema.",
+        "selected_position": "Use separate exact one-sample binomial safety gates at recipient-life level.",
+        "required_change": "Give every generated life exactly one prospectively designated D1A primary safety trial, so FALSE_SELECTION and NOT_FOUND are separate Bernoulli events at the recipient-life unit rather than pooled lower-query pseudoreplicates. For each event count X among all N sampled lives and test H0: p_event >= ceiling with the exact lower-tail probability Pr_{Binomial(N,ceiling)}(X <= X_observed), equality counted against release; require the observed rate strictly below the ceiling and report the exact one-sided Clopper-Pearson upper bound. Missing required provider output counts as the adverse event and also enters the missingness gate. Add a one_sample_safety_result schema with endpoint, N, count, ceiling, p-value, upper bound, direction and missingness results; it has no treatment_arm, control_arm, or paired-effect interval. Keep both safety p-values inside the D1A max-p conjunction and Holm path.",
+        "acceptance_test_ids": [
+          "PPC5R3_T05",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D06_POWER_IDENTICAL_TO_RELEASE_STATISTIC",
+      "sources": [
+        "ppc5r3-sci-d03-power-not-conservative-for-primary",
+        "critique:PPC5R3_CRIT_C06_POWER_GATE_NOT_CONSERVATIVE_FOR_PRIMARY"
+      ],
+      "issue": "Whether favorable-sign-count power can lower-bound release when primary inference instead uses a magnitude-sensitive mean sign-flip statistic.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Per-gate favorable-sign binomial power and a union bound are conservative for the mean-based primary gates and all-four release."
+        },
+        {
+          "actor": "scientific interpretation and critique",
+          "position": "The sign-count event need not imply the mean direction, randomization p-value, IUT, or Holm release, so the claimed lower bound is invalid."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "After D04 makes the exceedance indicator the primary statistic, exact binomial design power can be computed for the same rejection event; a union bound needs no independence across gates.",
+        "selected_position": "Power every release-critical binomial gate on its exact registered statistic and threshold, then use a Bonferroni union lower bound for the sufficient event that all individual gate p-values are at most alpha/4 and all nonstatistical gates pass.",
+        "required_change": "For each paired exceedance gate, each D1A one-sample safety gate, and each registered missingness ceiling, derive the exact critical count used by the observed-data reducer and compute its exact binomial power under a prospectively locked worst-case success or adverse-event probability. Missing required arms are already failures in the paired Z indicator. Define the sufficient statistical release event as every individual assay gate p<=alpha/4 plus every direction-free safety/missingness gate passing; this implies every assay max-p<=alpha/4 and therefore all four Holm rejections. Lower-bound its probability by max(0,1-sum over all release-critical gate failure probabilities), without an independence assumption. Construction, integrity, fixture, authority, and runtime-validity prerequisites remain deterministic blockers rather than probabilistic power inputs. Bind the same N, pi0, critical-count, tail, tie, margin, missingness, and gate registry in power and primary receipts and calibrate boundary/adversarial fixtures.",
+        "acceptance_test_ids": [
+          "PPC5R3_T11",
+          "PPC5R3_T12",
+          "PPC5R3_T13"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D07_EDGE_INDEXED_PATH_TWIN_SHAM_PROOF",
+      "sources": [
+        "ppc5r3-sci-a04-sham-position",
+        "ppc5r3-sci-a06-path-proof-indexing",
+        "ppc5r3-sci-d04-d1b-sham-not-edge-matched",
+        "ppc5r3-sci-d07-path-proof-not-closed",
+        "critique:PPC5R3_CRIT_C07_D1B_SHAM_NOT_PER_EDGE",
+        "critique:PPC5R3_CRIT_C09_PATH_PROOF_NOT_MECHANICALLY_CLOSED"
+      ],
+      "issue": "Whether one unpositioned SHAM and unindexed proof arrays establish unique, minimal, source-disjoint every-edge response dependence.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "One SHAM, an unindexed proper-subset Boolean array, unlabeled source hashes, and zero alternate sufficient paths adequately witness the path oracle."
+        },
+        {
+          "actor": "scientific interpretation and critique",
+          "position": "Every position needs a benign matched intervention and explicit edge, source, subset, and path-universe proof bindings."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A generic perturbation at one position cannot validate intervention harmlessness at another, and arrays without canonical indices do not prove the stated minimality or disjointness.",
+        "selected_position": "Use one CUT, TWIN, and oracle-preserving SHAM per edge with a closed canonical proof object and a separate gate for every edge intervention.",
+        "required_change": "For path length L, encode each ordered edge position with edge_id, source_event_id, source preimage hash, CUT id, TWIN id, and SHAM id. Require source_event_ids pairwise distinct within each path and disjoint across all selected benchmark items. Enumerate nonempty proper subsets by increasing L-bit integer mask 1 through 2^L-2 and store each mask with sufficient=false and its oracle input/output hashes; store the full-set sufficient proof separately. Bind the complete canonical directed multigraph and the lexicographic universe of all simple paths of length at most the locked READ budget, and prove the selected path is the only sufficient member. Construct a parity-matched action-reversing TWIN and a parity-matched, nonpath, unique-action-preserving SHAM separately for each position. Require AUTHENTIC superiority to every CUT and TWIN, SHAM_edge minus AUTHENTIC noninferiority at every edge, and the existing timing controls; no averaging or other edge can rescue a failed gate.",
+        "acceptance_test_ids": [
+          "PPC5R3_T07",
+          "PPC5R3_T08",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D08_WRONG_LIFE_MATCHING_VERSUS_D1D_TOTALITY",
+      "sources": [
+        "ppc5r3-sci-a05-wrong-life-dose",
+        "ppc5r3-sci-d06-wrong-life-specificity-confounded",
+        "critique:PPC5R3_CRIT_C08_WRONG_LIFE_SPECIFICITY_NOT_DOSE_MATCHED",
+        "provenance:PPC5R2_CONS_R05_D1D_TOTAL_ASSIGNMENT_POLICY_EFFECT"
+      ],
+      "issue": "Where exact dose/opportunity matching is needed and where it would condition on treatment mediators.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Interface-compatible recipient-disjoint donors suffice for D1A wrong-life specificity, while D1D remains a total-policy estimand."
+        },
+        {
+          "actor": "scientific interpretation and critique",
+          "position": "D1A wrong-life differences can reflect training dose or opportunity unless those are prospectively matched, but applying the same match to D1D would destroy its total-policy estimand."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Wrong-life is intended to isolate association ownership and therefore needs pre-treatment comparability; D1D intentionally includes its naturally induced dose as part of treatment.",
+        "selected_position": "Exactly dose/opportunity-match D1A donors and categorically forbid realized-dose matching or adjustment in primary D1D.",
+        "required_change": "Before D1A provider-assay assignment, require every donor adapter to be present and hash-valid and match exactly on base, tokenizer, shape, recipe family, mount interface, rank, row count, ordered per-row token-count and byte-class vectors, total training tokens, and update count. Also match an exact target-blind pre-training opportunity signature containing candidate-table cardinality, eligible equivalence-class count before and after capacity, support multiplicity histogram, and row byte/token-class histogram; exclude targets, PROBE/future outcomes, scores, and recipient identity. Preserve recipient disjointness, one-to-one use, prospectiveness, no replacement, and construction failure when no perfect match exists. In D1D, do not pad, truncate, match, stratify, regress, normalize, or condition on realized rows, tokens, updates, publication, failures, or resources; report them descriptively as policy mediators and keep the primary paired total-policy contrast unchanged.",
+        "acceptance_test_ids": [
+          "PPC5R3_T06",
+          "PPC5R3_T10",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D09_CONDITION_FREE_STAGE_PROJECTIONS",
+      "sources": [
+        "PPC5R3_SYS_D04_INTERVENTION_VISIBILITY_CONFLICT",
+        "ppc5r3-sci-d05-runtime-treatment-field-leak",
+        "critique:PPC5R3_CRIT_C10_TREATMENT_SEMANTICS_CROSS_RESTRICTED_STAGES"
+      ],
+      "issue": "Whether explicit intervention, provider-arm, and control-row labels may cross stages declared assignment-hidden.",
+      "positions": [
+        {
+          "actor": "architecture_change schemas",
+          "position": "runtime_intervention.kind, provider_kind, and distinct authentic/control row contract names are useful typed fields at restricted stages."
+        },
+        {
+          "actor": "both interpretations and critique",
+          "position": "Those fields expose treatment semantics and permit branching beyond the intended replacement bytes, mounted artifact, or loss rows."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Treatment identity belongs in privileged routing and downstream reduction, not in a stage whose invariance depends on a common algorithm.",
+        "selected_position": "Route condition-free resolved response bytes and use one arm-neutral provider and row contract at restricted stages.",
+        "required_change": "Move exact expected-match verification and AUTHENTIC/CUT/TWIN/SHAM resolution into the privileged router. Its restricted output contains only an opaque instance ID, the already resolved canonical public response bytes, parity/debit class, and an opaque lineage receipt hash; omit kind, condition, arm, item, target, truth, role, query hash, and selected-response hash. RESPONSE_INTERVENTION deterministically emits those resolved bytes and cannot branch on treatment. D1A READ_PROVIDER receives one fixed MEAN_RESPONSE_LOGPROB algorithm plus an opaque mounted-artifact handle or null, never READER_LORA, WRONG_LIFE, or shuffle labels. Use one sleep-row schema for authentic and shuffled rows; WRITER/TRAINER see only row bytes, recipe, and seeds, while privileged manifests retain role mappings for audit. Represent FULL_CONTEXT in an arm-neutral descriptive-provider schema or remove it normatively. Keep low-entropy matcher hashes confined to the privileged router and prove they cannot affect model/public bytes, errors, debits, scores, choices, or timing except through the resolved response bytes.",
+        "acceptance_test_ids": [
+          "PPC5R3_T05",
+          "PPC5R3_T06",
+          "PPC5R3_T08",
+          "PPC5R3_T12",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D10_TYPED_RECEIPT_AND_BOUNDARY_DAG",
+      "sources": [
+        "PPC5R3_SYS_A05_DREAM_AND_CONTEXT_BYTES",
+        "PPC5R3_SYS_A06_ROOT_WRITER_PUBLICATION_DAG",
+        "PPC5R3_SYS_D03_RECEIPT_DAG_INCOMPLETE",
+        "PPC5R3_SYS_D05_BOUNDARY_SCHEMA_INCONSISTENCIES",
+        "critique:PPC5R3_CRIT_C11_RECEIPT_DAG_AND_BOUNDARY_SCHEMAS_INCOMPLETE"
+      ],
+      "issue": "Whether prose plus unlabeled hash arrays can cold-replay shared DREAM, root selection, corpus writing, publication, tests, reduction, and release.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Existing per-object receipts, semantic pseudocode, and generic hash arrays sufficiently close normative boundaries."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Missing byte-bearing objects and unlabeled dependencies allow omission, reordering, role substitution, and self-asserted passage."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A digest proves only the supplied bytes; causal provenance requires typed role bindings, complete payloads, exact cardinality/order, and status-dependent nullability.",
+        "selected_position": "Define a domain-separated self-hashed receipt DAG for every construction, execution, analysis, and release boundary.",
+        "required_change": "Add closed schemas and literal validators for generator manifest and each life sample; exact DREAM public-slice/render/tokenizer/prompt/raw-output/debit/shared-event request and receipt; context bytes; aggregate root-policy selection with every nominee projection, order, dedup, capacity, and status; ordered corpus manifest; trainer execution; validation; atomic publication transition; and a self-hashed adapter manifest. Add fixture-universe, test-coverage, power, status, observation, gate, assay, Holm, overlap, dependency-map, and claim-release receipts. Replace every unlabeled hashes array with role-named fields or arrays of objects containing role, ordinal, artifact type, and hash, with exact required cardinality and canonical order. Bind every and only current T01-T14, gate, assay, authority, overlap, scope, and claim predecessor. Carry invalid DREAM raw-output hash privately, represent FULL_CONTEXT consistently, and make every status-dependent null/non-null relationship schema-valid and semantically recomputable.",
+        "acceptance_test_ids": [
+          "PPC5R3_T02",
+          "PPC5R3_T03",
+          "PPC5R3_T04",
+          "PPC5R3_T05",
+          "PPC5R3_T06",
+          "PPC5R3_T09",
+          "PPC5R3_T10",
+          "PPC5R3_T11",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D11_TYPED_AUTHORITY_PREDECESSOR_DAG",
+      "sources": [
+        "PPC5R3_SYS_A07_AUTHORITY_SUBJECT_BINDINGS",
+        "PPC5R3_SYS_D01_AUTHORITY_NOT_EXECUTABLY_CLOSED",
+        "critique:PPC5R3_CRIT_C12_AUTHORITY_RECEIPTS_SELF_ASSERTABLE"
+      ],
+      "issue": "Whether one generic authority receipt with Boolean passed/reachable and unlabeled subject hashes can enforce the five-stage authority contract.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Generic authority and preflight receipts can be semantically validated against the prose stage requirements."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Absent run-lock, seal, independence, review, advocate, human-evidence, canary, and runtime schemas make reachability self-assertable."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Model reachability must be derived from typed evidence and exact predecessor hashes, never trusted from a Boolean in the artifact being checked.",
+        "selected_position": "Use stage-specific authority schemas and a role-labeled acyclic prerequisite DAG that preflight recomputes from source artifacts.",
+        "required_change": "Define separate closed receipts for architecture ratification, conformance, populated run lock, each of exactly two independently implemented static sealers, sealer-independence evidence, fresh reviewer verdict, non-overriding advocate, separate human run ratification, canary, per-dispatch preflight, runtime integrity, and pre-claim reduction. Each schema fixes artifact type, stage, predecessor, role-labeled exact-cardinality subjects, scope, decision, reachable value, and self hash. Human decisions bind evidence path, hash, and excerpt. PRE_MODEL_EXECUTION reachability is recomputed only from the exact passing predecessor, current run lock, all T01-T13 receipts, both distinct sealer implementations, passing independent review, advocate receipt, and exact human run ratification; the advocate cannot override a failed review. Every denied or stale preflight starts no process. T14 and the complete runtime/reducer DAG are required before PRE_SCIENTIFIC_CLAIM.",
+        "acceptance_test_ids": [
+          "PPC5R3_T01",
+          "PPC5R3_T12",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D12_EXECUTABLE_ACCEPTANCE_ORACLES",
+      "sources": [
+        "PPC5R3_SYS_D06_ACCEPTANCE_TESTS_NOT_SUFFICIENT",
+        "critique:PPC5R3_CRIT_C13_ACCEPTANCE_ORACLES_NOT_EXECUTABLY_SUFFICIENT"
+      ],
+      "issue": "Whether prose verbs such as exhaust and seal plus a generic passing test receipt prove T01-T14 coverage and independent agreement.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "The fourteen setups, expected results, falsifiers, and evidence artifact names sufficiently define acceptance."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Without finite universe manifests, expected outputs, coverage counts, negative mutations, dependency roles, and implementation-identity evidence, any test can self-assert passage."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The themes are necessary but cannot be executable or independently sealable until both the underlying contracts and each test's oracle are closed.",
+        "selected_position": "Retain and strengthen T01-T14 in place after all other resolutions, without inventing consensus-only test IDs.",
+        "required_change": "For each registered test, add a typed manifest binding generator name/version/hash, input universe or exact coverage rule and cardinality, canonical expected outputs and hashes, negative mutation catalogue, prerequisite roles, evidence roles, pass/fail reduction, and result self hash. Exhaustive claims must enumerate a finite cross-product or provide a ratified generator plus a completeness proof. Agreement tests must bind distinct implementation identities and source hashes, not two executions of one code path. A test result is derived from its coverage receipt and cannot carry a free passed Boolean. Incorporate every repair in D01-D11 and D13 into the existing T01-T14 registry, then require two validators and two independent sealers to agree exactly.",
+        "acceptance_test_ids": [
+          "PPC5R3_T01",
+          "PPC5R3_T02",
+          "PPC5R3_T03",
+          "PPC5R3_T04",
+          "PPC5R3_T05",
+          "PPC5R3_T06",
+          "PPC5R3_T07",
+          "PPC5R3_T08",
+          "PPC5R3_T09",
+          "PPC5R3_T10",
+          "PPC5R3_T11",
+          "PPC5R3_T12",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R3_CONS_D13_OVERLAP_AND_CONSTRUCTION_SCOPE_EXPORT",
+      "sources": [
+        "ppc5r3-sci-a07-overlap-interpretation",
+        "critique:PPC5R3_CRIT_C14_OVERLAP_DISCLOSURE_NOT_RELEASE_BOUND"
+      ],
+      "issue": "Whether descriptive overlap and target-informed construction qualifications must be cryptographically inseparable from released claims even though they do not gate the narrow result.",
+      "positions": [
+        {
+          "actor": "architecture_change",
+          "position": "Presealed overlap strata may be reported descriptively and the exact release text alone is sufficient."
+        },
+        {
+          "actor": "scientific interpretation and critique",
+          "position": "A claim can be exported without the overlap profile or locked-constructor limitation, inviting unsupported novelty or naturalistic-generalization readings."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Overlap is not a rescue or blocker for supported selection, but its disclosure and the finite target-informed construction boundary are necessary interpretation metadata.",
+        "selected_position": "Bind immutable overlap and construction-scope receipts into every component and intersection release/export package without changing pass logic.",
+        "required_change": "Seal exact ACQUIRE/PROBE, alias-family, item-family, semantic-family, and cross-donor overlap counts and strata before outcomes. Add overlap_manifest_hash and construction_scope_receipt_hash to every claim-release and export receipt, and attach a fixed qualification that the result concerns the locked generator/constructed benchmark and makes no novelty, zero-overlap generalization, or naturalistic path-structure claim. The pure release reducer still emits only the registered component/intersection result string plus fixed qualifications and forbidden-claim list; overlap strata remain descriptive and cannot rescue or block the registered narrow hypotheses.",
+        "acceptance_test_ids": [
+          "PPC5R3_T02",
+          "PPC5R3_T05",
+          "PPC5R3_T06",
+          "PPC5R3_T13",
+          "PPC5R3_T14"
+        ]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "PPC5R3_CRIT_C01_CIRCULAR_LEDGER_STATE_COMMITMENT",
+      "status": "accepted",
+      "rationale": "The event/post-state cycle and absent terminal ledger head make the declared transition digest uncomputable.",
+      "resolution_id": "PPC5R3_CONS_D01_ACYCLIC_STATE_EVENT_LEDGER",
+      "required_change": "Adopt the exact acyclic state-body, event, and state-receipt sequence in D01 and retain the ledger head in terminal state."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C02_MACHINE_TRANSITION_NOT_TOTAL",
+      "status": "accepted",
+      "rationale": "Non-D1B controllers, success termination, precedence, and flush lineage determine public bytes and cannot be implementation defaults.",
+      "resolution_id": "PPC5R3_CONS_D02_TOTAL_ASSAY_CONTROLLERS",
+      "required_change": "Publish and schema-bind every controller/operation row and queue predecessor named in D02."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C03_STATUS_TO_ITT_NOT_TOTAL",
+      "status": "accepted",
+      "rationale": "Reachable assigned results lack one status-to-observation mapping, and adapter construction absence is incorrectly conflated with runtime missingness.",
+      "resolution_id": "PPC5R3_CONS_D03_TOTAL_STATUS_OBSERVATION_MAPPING",
+      "required_change": "Implement D03's exhaustive mapping, including observed zero for integrity-clean no-action failures and construction-time versus post-seal artifact handling."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C04_FINITE_ROSTER_INFERENCE_MISMATCH",
+      "status": "accepted",
+      "rationale": "The label-swap procedure has no assignment law and does not test the heterogeneous finite-roster average effect claimed.",
+      "resolution_id": "PPC5R3_CONS_D04_GENERATOR_POPULATION_PAIRED_INFERENCE",
+      "required_change": "Replace the finite-roster average ITT with D04's IID generator-population paired exceedance-probability estimand and exact binomial inference."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C05_D1A_SAFETY_GATE_INFERENCE_UNDEFINED",
+      "status": "accepted",
+      "rationale": "A fixed ceiling has no control-arm label exchange and needs its own life-level one-sample analysis.",
+      "resolution_id": "PPC5R3_CONS_D05_D1A_ONE_SAMPLE_SAFETY",
+      "required_change": "Use D05's exact lower-tail one-sample binomial tests and typed safety receipts for false selection and NOT_FOUND."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C06_POWER_GATE_NOT_CONSERVATIVE_FOR_PRIMARY",
+      "status": "accepted",
+      "rationale": "The current sign-count event does not imply passage of the magnitude-sensitive primary analysis or Holm family.",
+      "resolution_id": "PPC5R3_CONS_D06_POWER_IDENTICAL_TO_RELEASE_STATISTIC",
+      "required_change": "Power the exact binomial primary/safety/missingness gates and use D06's sufficient-event union lower bound."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C07_D1B_SHAM_NOT_PER_EDGE",
+      "status": "accepted",
+      "rationale": "A SHAM at one position cannot exclude a generic perturbation effect at every other position.",
+      "resolution_id": "PPC5R3_CONS_D07_EDGE_INDEXED_PATH_TWIN_SHAM_PROOF",
+      "required_change": "Construct and test one action-preserving SHAM noninferiority gate per edge as specified in D07."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C08_WRONG_LIFE_SPECIFICITY_NOT_DOSE_MATCHED",
+      "status": "accepted",
+      "rationale": "Interface-only donor compatibility does not separate recipient association specificity from dose and pre-training opportunity.",
+      "resolution_id": "PPC5R3_CONS_D08_WRONG_LIFE_MATCHING_VERSUS_D1D_TOTALITY",
+      "required_change": "Apply D08's exact prospective D1A dose/opportunity matching while forbidding any analogous post-treatment D1D adjustment."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C09_PATH_PROOF_NOT_MECHANICALLY_CLOSED",
+      "status": "accepted",
+      "rationale": "Unindexed subsets, sources, interventions, and alternate paths do not establish the stated path construct.",
+      "resolution_id": "PPC5R3_CONS_D07_EDGE_INDEXED_PATH_TWIN_SHAM_PROOF",
+      "required_change": "Encode and recompute every subset, edge/source/intervention mapping, source-disjointness rule, and alternate-path universe in D07."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C10_TREATMENT_SEMANTICS_CROSS_RESTRICTED_STAGES",
+      "status": "accepted",
+      "rationale": "Explicit kind/provider/control-row labels contradict assignment-hidden stage contracts and permit treatment-dependent branching.",
+      "resolution_id": "PPC5R3_CONS_D09_CONDITION_FREE_STAGE_PROJECTIONS",
+      "required_change": "Use D09's condition-free resolved response bytes, arm-neutral provider ingress, and single row contract."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C11_RECEIPT_DAG_AND_BOUNDARY_SCHEMAS_INCOMPLETE",
+      "status": "accepted",
+      "rationale": "The current objects cannot cold-replay or prove every DREAM, root, corpus, training, publication, test, or release dependency.",
+      "resolution_id": "PPC5R3_CONS_D10_TYPED_RECEIPT_AND_BOUNDARY_DAG",
+      "required_change": "Add every byte-bearing, self-hashed, role-labeled receipt and cross-field validator enumerated in D10."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C12_AUTHORITY_RECEIPTS_SELF_ASSERTABLE",
+      "status": "accepted",
+      "rationale": "A generic passed/reachable Boolean and unlabeled subjects cannot prove predecessor or human authority.",
+      "resolution_id": "PPC5R3_CONS_D11_TYPED_AUTHORITY_PREDECESSOR_DAG",
+      "required_change": "Implement D11's stage-specific typed authority/test DAG and recomputing dispatch preflight."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C13_ACCEPTANCE_ORACLES_NOT_EXECUTABLY_SUFFICIENT",
+      "status": "accepted",
+      "rationale": "All test themes are necessary, but generic receipts do not prove coverage, expected outputs, negative cases, or independent implementations.",
+      "resolution_id": "PPC5R3_CONS_D12_EXECUTABLE_ACCEPTANCE_ORACLES",
+      "required_change": "Strengthen all T01-T14 in place with the fixture and coverage machinery in D12 after closing D01-D11 and D13."
+    },
+    {
+      "concern_id": "PPC5R3_CRIT_C14_OVERLAP_DISCLOSURE_NOT_RELEASE_BOUND",
+      "status": "accepted",
+      "rationale": "Overlap need not gate supported selection, but separating it and the target-informed construction boundary from exported claims invites overinterpretation.",
+      "resolution_id": "PPC5R3_CONS_D13_OVERLAP_AND_CONSTRUCTION_SCOPE_EXPORT",
+      "required_change": "Bind the sealed overlap manifest and fixed construction-scope qualification into every release/export receipt as D13 specifies."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "PPC5R3_SYS_D01_AUTHORITY_NOT_EXECUTABLY_CLOSED",
+      "status": "accepted",
+      "rationale": "The authority chain needs stage-specific typed prerequisites and recomputation, not an asserted reachable flag.",
+      "resolution_id": "PPC5R3_CONS_D11_TYPED_AUTHORITY_PREDECESSOR_DAG"
+    },
+    {
+      "disagreement_id": "PPC5R3_SYS_D02_MACHINE_AND_STATUS_NOT_TOTAL",
+      "status": "accepted",
+      "rationale": "D02 closes transitions and D03 closes the resulting observation/status product.",
+      "resolution_id": "PPC5R3_CONS_D02_TOTAL_ASSAY_CONTROLLERS"
+    },
+    {
+      "disagreement_id": "PPC5R3_SYS_D03_RECEIPT_DAG_INCOMPLETE",
+      "status": "accepted",
+      "rationale": "Cold replay and release require the complete role-labeled receipt DAG in D10.",
+      "resolution_id": "PPC5R3_CONS_D10_TYPED_RECEIPT_AND_BOUNDARY_DAG"
+    },
+    {
+      "disagreement_id": "PPC5R3_SYS_D04_INTERVENTION_VISIBILITY_CONFLICT",
+      "status": "accepted",
+      "rationale": "Treatment kind and related arm-semantic labels must be removed from restricted ingress.",
+      "resolution_id": "PPC5R3_CONS_D09_CONDITION_FREE_STAGE_PROJECTIONS"
+    },
+    {
+      "disagreement_id": "PPC5R3_SYS_D05_BOUNDARY_SCHEMA_INCONSISTENCIES",
+      "status": "accepted",
+      "rationale": "Normative behaviors absent from the schema cannot be enforced by semantic prose alone.",
+      "resolution_id": "PPC5R3_CONS_D10_TYPED_RECEIPT_AND_BOUNDARY_DAG"
+    },
+    {
+      "disagreement_id": "PPC5R3_SYS_D06_ACCEPTANCE_TESTS_NOT_SUFFICIENT",
+      "status": "accepted",
+      "rationale": "T01-T14 need closed executable oracles and independently bound coverage evidence.",
+      "resolution_id": "PPC5R3_CONS_D12_EXECUTABLE_ACCEPTANCE_ORACLES"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d01-status-itt-not-total",
+      "status": "accepted",
+      "rationale": "Every assigned result must map to an observed value, explicit missing failure, or integrity blocker.",
+      "resolution_id": "PPC5R3_CONS_D03_TOTAL_STATUS_OBSERVATION_MAPPING"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d02-paired-inference-invalid",
+      "status": "accepted",
+      "rationale": "D04 replaces unsupported label-swap average-ITT inference with directly observed paired exceedance probability under IID generator sampling.",
+      "resolution_id": "PPC5R3_CONS_D04_GENERATOR_POPULATION_PAIRED_INFERENCE"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d03-power-not-conservative-for-primary",
+      "status": "accepted",
+      "rationale": "Power must use the same exact binomial release statistics and thresholds as the primary analysis.",
+      "resolution_id": "PPC5R3_CONS_D06_POWER_IDENTICAL_TO_RELEASE_STATISTIC"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d04-d1b-sham-not-edge-matched",
+      "status": "accepted",
+      "rationale": "Every interpreted edge needs its own harmless matched perturbation check.",
+      "resolution_id": "PPC5R3_CONS_D07_EDGE_INDEXED_PATH_TWIN_SHAM_PROOF"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d05-runtime-treatment-field-leak",
+      "status": "accepted",
+      "rationale": "The restricted response stage should receive already resolved bytes without treatment kind or low-entropy match hashes.",
+      "resolution_id": "PPC5R3_CONS_D09_CONDITION_FREE_STAGE_PROJECTIONS"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d06-wrong-life-specificity-confounded",
+      "status": "accepted",
+      "rationale": "D1A wrong-life specificity requires exact prospective dose/opportunity matching, unlike total-policy D1D.",
+      "resolution_id": "PPC5R3_CONS_D08_WRONG_LIFE_MATCHING_VERSUS_D1D_TOTALITY"
+    },
+    {
+      "disagreement_id": "ppc5r3-sci-d07-path-proof-not-closed",
+      "status": "accepted",
+      "rationale": "D07 provides canonical subset, source, alternate-universe, and edge intervention mappings.",
+      "resolution_id": "PPC5R3_CONS_D07_EDGE_INDEXED_PATH_TWIN_SHAM_PROOF"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {
+      "test_id": "PPC5R3_T01",
+      "status": "modified",
+      "rationale": "Retain exact fresh deliberation and human scope authority, but require repaired acyclic, statistical, receipt, visibility, test, and authority schemas plus a new hash-bound proceed consensus; the present rework chain cannot pass T01.",
+      "replacement_test_id": "PPC5R3_T01"
+    },
+    {
+      "test_id": "PPC5R3_T02",
+      "status": "modified",
+      "rationale": "Add typed complete nominee-universe, first-failure, equivalence, aggregate root, ordered corpus, zero-dose, quarantine, and overlap receipts with exact expected coverage; keep overlap descriptive.",
+      "replacement_test_id": "PPC5R3_T02"
+    },
+    {
+      "test_id": "PPC5R3_T03",
+      "status": "modified",
+      "rationale": "Exhaust D01's acyclic state/event receipts and D02-D03's every-assay transition, post-ACT terminal, STOP/provider precedence, queue lineage, no-action zero, missing, and cold-replay rows in two implementations.",
+      "replacement_test_id": "PPC5R3_T03"
+    },
+    {
+      "test_id": "PPC5R3_T04",
+      "status": "modified",
+      "rationale": "Bind exact DREAM input/render/tokenizer/prompt/raw-output/debit/shared-event bytes and aggregate context/root receipts across every status, with no retry and the repaired observation mapping.",
+      "replacement_test_id": "PPC5R3_T04"
+    },
+    {
+      "test_id": "PPC5R3_T05",
+      "status": "modified",
+      "rationale": "Require one arm-neutral common provider, complete FULL_CONTEXT representation or retirement, exact D1A life-level safety-trial denominators, and exact one-sample binomial boundary fixtures.",
+      "replacement_test_id": "PPC5R3_T05"
+    },
+    {
+      "test_id": "PPC5R3_T06",
+      "status": "modified",
+      "rationale": "Add D08's exact recipient-disjoint dose/opportunity matching, construction-versus-runtime artifact states, self-hashed publication manifests, arm-neutral mounts/rows, and preserve matched-binding derangement invariants.",
+      "replacement_test_id": "PPC5R3_T06"
+    },
+    {
+      "test_id": "PPC5R3_T07",
+      "status": "modified",
+      "rationale": "Require canonical 2^L-2 indexed subset proofs, explicit edge/source disjointness and alternate-path universe, and edge-indexed CUT/TWIN/SHAM construction and proof objects.",
+      "replacement_test_id": "PPC5R3_T07"
+    },
+    {
+      "test_id": "PPC5R3_T08",
+      "status": "modified",
+      "rationale": "Add one SHAM noninferiority gate per edge, condition-free resolved response bytes, exact match in the privileged router, and all repaired schedule/error/queue branches and compliance receipts.",
+      "replacement_test_id": "PPC5R3_T08"
+    },
+    {
+      "test_id": "PPC5R3_T09",
+      "status": "modified",
+      "rationale": "Cross all DREAM statuses with byte-bearing authentic/recency/permuted installs under the explicit D1C controller and D03's observed-zero, missing-failure, continuation, and blocker rules.",
+      "replacement_test_id": "PPC5R3_T09"
+    },
+    {
+      "test_id": "PPC5R3_T10",
+      "status": "modified",
+      "rationale": "Cross every root policy through aggregate selection, ordered corpus, trainer validation, atomic publication, mixed nominee states, adapter-off continuation, and total paired outcome while proving no D1D dose matching or adjustment.",
+      "replacement_test_id": "PPC5R3_T10"
+    },
+    {
+      "test_id": "PPC5R3_T11",
+      "status": "modified",
+      "rationale": "Two reducers must agree on every status, direct paired exceedance indicator, exact upper-tail binomial and lower bound, exact one-sample safety tails and upper bounds, missingness gates, per-edge IUT, Holm, matching power, resources, and rewritten literal claims.",
+      "replacement_test_id": "PPC5R3_T11"
+    },
+    {
+      "test_id": "PPC5R3_T12",
+      "status": "modified",
+      "rationale": "Test minimal closed ingress/egress projections for all 154 visibility cells and the typed authority DAG, rejecting condition/provider/control-row leakage, low-entropy hash exposure, forged reachability, stale predecessors, and denied dispatches.",
+      "replacement_test_id": "PPC5R3_T12"
+    },
+    {
+      "test_id": "PPC5R3_T13",
+      "status": "modified",
+      "rationale": "Bind the generator and independent life-sample receipts, populated run lock, two distinct sealer implementations, all repaired manifests/DAGs/reducers/power objects, review, advocate, and separate run-ratification roles with exact-cardinality hashes.",
+      "replacement_test_id": "PPC5R3_T13"
+    },
+    {
+      "test_id": "PPC5R3_T14",
+      "status": "modified",
+      "rationale": "Replay the acyclic ledger and all sampled-life outcomes from raw receipts, recompute every exact binomial/global/local/authority dependency, attach overlap and construction scope, and reject average-ITT, novelty, mechanism, or other alternate release bytes.",
+      "replacement_test_id": "PPC5R3_T14"
+    }
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Does Rohin require a newly hash-bound successor implementing every resolution D01-D13, followed by two new fresh interpretations, adversarial critique, and a proceed consensus before any architecture/scope ratification or implementation?",
+      "Does Rohin accept the selected statistical repair: independently generator-sampled recipient-life/seed bundles, both computational arms instantiated, primary Pr_G(paired difference exceeds margin) with exact binomial inference and matching power, exact one-sample D1A safety gates, and mean magnitude reported only descriptively?",
+      "Does Rohin confirm the control and scope decisions: per-edge SHAM, exact prospective D1A wrong-life dose/opportunity matching, no post-treatment D1D dose matching or adjustment, and no authority for implementation, static sealing, model/tokenizer/embedding execution, training, behavioral/canary/GPU work, or scientific release from these r3 bytes?"
+    ],
+    "implementation_forbidden": true
+  }
+}

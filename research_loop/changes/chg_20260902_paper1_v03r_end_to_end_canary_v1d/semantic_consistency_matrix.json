@@ -1,0 +1,750 @@
+{
+  "schema_version": "paper1-v03r-canary-semantic-consistency-matrix-v1d.0",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1d",
+  "status": "architecture_proposal_only",
+  "authority": {
+    "implementation_authorized": false,
+    "model_dispatch_authorized": false,
+    "gpu_or_science_run_authorized": false,
+    "ratification_required": true
+  },
+  "normative_precedence": {
+    "joint_authority": "Every v1d file in normative_file_inventory is jointly normative. No listed file silently overrides another.",
+    "historical_only": "v1a, v1b, and v1c proposal files are provenance and defect evidence only; v1c consensus is binding repair provenance but no v1c runtime byte has inherited authority.",
+    "contradiction": "Any missing inventory entry, unregistered producer or consumer, unregistered object shape or ordering, unmapped condition, multiple mapping, or disagreement among listed v1d bytes is INVALID_PRECONDITION/PROTOCOL_CONTRADICTION before dispatch. Implementation and tests may reject but may not choose a preferred reading.",
+    "completeness_test": "P1CB01 extracts the v1d paths named by change.json and requires exact set equality with normative_file_inventory; it then verifies every producer_consumer_matrix, object_schema_registry, ordering_registry, validity_registry, ledger_registry, review_boundary, and claim_boundary assertion."
+  },
+  "normative_file_inventory": [
+    {
+      "file": "resolution_brief.md",
+      "roles": [
+        "design_choice_summary",
+        "scientific_boundary"
+      ]
+    },
+    {
+      "file": "experiment_spec.md",
+      "roles": [
+        "stage_graph",
+        "joint_normativity",
+        "experiment_question"
+      ]
+    },
+    {
+      "file": "canary_config.json",
+      "roles": [
+        "world_model_compute_configuration",
+        "arm_and_ceiling_registry"
+      ]
+    },
+    {
+      "file": "operation_contract.json",
+      "roles": [
+        "model_state_reducer",
+        "recurrence_schedule",
+        "ledger_consumer"
+      ]
+    },
+    {
+      "file": "public_projection_contract.json",
+      "roles": [
+        "sole_raw_to_public_typed_projection",
+        "goal_vocabulary_and_dist_producer"
+      ]
+    },
+    {
+      "file": "memory_transport_contract.json",
+      "roles": [
+        "proposal_to_row_reducer",
+        "semantic_reader_projection"
+      ]
+    },
+    {
+      "file": "intervention_contract.json",
+      "roles": [
+        "prospective_path_sham_and_twin_producer",
+        "stage_t_gate",
+        "ledger_consumer"
+      ]
+    },
+    {
+      "file": "development_fixture_contract.json",
+      "roles": [
+        "dev_fixture_producer",
+        "dev_gate"
+      ]
+    },
+    {
+      "file": "compiler_views.json",
+      "roles": [
+        "row_to_training_and_recognition_view_compiler"
+      ]
+    },
+    {
+      "file": "runtime_training_contract.json",
+      "roles": [
+        "runtime_lock",
+        "two_fit_and_recognition_reducer",
+        "fidelity_gate",
+        "ledger_consumer"
+      ]
+    },
+    {
+      "file": "stage_review_contract.json",
+      "roles": [
+        "validity_and_transition_reducer",
+        "review_and_claim_boundary",
+        "ledger_consumer"
+      ]
+    },
+    {
+      "file": "acceptance_registry.json",
+      "roles": [
+        "P1CB01_through_P1CB10_registry",
+        "ledger_review_and_claim_test_consumer"
+      ]
+    },
+    {
+      "file": "scope_proposal.json",
+      "roles": [
+        "requested_and_forbidden_authority",
+        "compute_ceiling"
+      ]
+    },
+    {
+      "file": "dream_prompt.md",
+      "roles": [
+        "DREAM_instruction_bytes"
+      ]
+    },
+    {
+      "file": "self_check_prompt.md",
+      "roles": [
+        "SELF_CHECK_instruction_bytes"
+      ]
+    },
+    {
+      "file": "think0_prompt.md",
+      "roles": [
+        "THINK0_instruction_bytes"
+      ]
+    },
+    {
+      "file": "think1_prompt.md",
+      "roles": [
+        "THINK1_instruction_bytes"
+      ]
+    },
+    {
+      "file": "public_event.schema.json",
+      "roles": [
+        "PUBLIC_EVENT_schema"
+      ]
+    },
+    {
+      "file": "proposal.schema.json",
+      "roles": [
+        "PROPOSAL_schema"
+      ]
+    },
+    {
+      "file": "memory_row.schema.json",
+      "roles": [
+        "MEMORY_ROW_schema"
+      ]
+    },
+    {
+      "file": "read_result.schema.json",
+      "roles": [
+        "READ_RESULT_schema"
+      ]
+    },
+    {
+      "file": "candidate_registry.schema.json",
+      "roles": [
+        "CANDIDATE_REGISTRY_schema"
+      ]
+    },
+    {
+      "file": "dream_state.schema.json",
+      "roles": [
+        "DREAM_STATE_schema"
+      ]
+    },
+    {
+      "file": "self_check_state.schema.json",
+      "roles": [
+        "SELF_CHECK_STATE_schema"
+      ]
+    },
+    {
+      "file": "think0_state.schema.json",
+      "roles": [
+        "THINK0_STATE_schema"
+      ]
+    },
+    {
+      "file": "think1_state.schema.json",
+      "roles": [
+        "THINK1_STATE_schema"
+      ]
+    },
+    {
+      "file": "scratch.schema.json",
+      "roles": [
+        "SCRATCH_schema"
+      ]
+    },
+    {
+      "file": "dream_operation.schema.json",
+      "roles": [
+        "DREAM_OPERATION_schema"
+      ]
+    },
+    {
+      "file": "self_check.schema.json",
+      "roles": [
+        "SELF_CHECK_OPERATION_schema"
+      ]
+    },
+    {
+      "file": "think0_operation.schema.json",
+      "roles": [
+        "THINK0_OPERATION_schema"
+      ]
+    },
+    {
+      "file": "think1_operation.schema.json",
+      "roles": [
+        "THINK1_OPERATION_schema"
+      ]
+    },
+    {
+      "file": "schema_resource_registry.json",
+      "roles": [
+        "closed_schema_filename_to_id_registry"
+      ]
+    },
+    {
+      "file": "opportunity_ledger.schema.json",
+      "roles": [
+        "sole_opportunity_row_schema",
+        "sole_condition_state_reason_mapping"
+      ]
+    },
+    {
+      "file": "semantic_consistency_matrix.json",
+      "roles": [
+        "exhaustive_cross_contract_registry"
+      ]
+    },
+    {
+      "file": "review_packet.schema.json",
+      "roles": [
+        "immutable_review_packet_schema"
+      ]
+    },
+    {
+      "file": "review_assignment.schema.json",
+      "roles": [
+        "platform_attested_review_assignment_schema"
+      ]
+    },
+    {
+      "file": "review_disposition.schema.json",
+      "roles": [
+        "immutable_review_disposition_schema"
+      ]
+    },
+    {
+      "file": "authority_token.schema.json",
+      "roles": [
+        "monotone_successor_or_terminal_authority_schema"
+      ]
+    }
+  ],
+  "producer_consumer_matrix": [
+    {
+      "semantic_object": "PUBLIC_EVENT_AND_E_TO_M_PLAN",
+      "producer": "public_projection_contract.json",
+      "consumers": [
+        "operation_contract.json",
+        "development_fixture_contract.json",
+        "intervention_contract.json"
+      ],
+      "schema": "public_event.schema.json",
+      "ordering": "PUBLIC_PROJECTION_ORDER",
+      "validity": "projection mismatch is INVALID_PRECONDITION",
+      "ledger": "NON_DISPATCH_PRECONDITION"
+    },
+    {
+      "semantic_object": "DREAM_ALLOWED_STATE_AND_OPERATION",
+      "producer": "operation_contract.json plus dream_prompt.md",
+      "consumers": [
+        "memory_transport_contract.json",
+        "operation_contract.json"
+      ],
+      "schema": "dream_state.schema.json and dream_operation.schema.json",
+      "ordering": "RECURRENCE_SLOT_ORDER",
+      "validity": "model output failure consumes one attempt without retry",
+      "ledger": "DISPATCHED/MODEL_OUTPUT_FAILURE when malformed or illegal"
+    },
+    {
+      "semantic_object": "AUDIT_PROPOSAL",
+      "producer": "DREAM reducer in operation_contract.json",
+      "consumers": [
+        "SELF_CHECK reducer in operation_contract.json",
+        "memory_transport_contract.json"
+      ],
+      "schema": "proposal.schema.json",
+      "ordering": "proposal citation order is emitted order",
+      "validity": "duplicate registers no second owner",
+      "ledger": "NON_DISPATCH_DUPLICATE/DUPLICATE_PROPOSAL for its reserved SELF_CHECK"
+    },
+    {
+      "semantic_object": "SELF_CHECK_ALLOWED_STATE_AND_OPERATION",
+      "producer": "operation_contract.json plus self_check_prompt.md",
+      "consumers": [
+        "memory_transport_contract.json",
+        "operation_contract.json"
+      ],
+      "schema": "self_check_state.schema.json and self_check.schema.json",
+      "ordering": "CITATION_UNION_ORDER",
+      "validity": "SUPPORTED is model-claimed support, never truth verification",
+      "ledger": "one dispatched SELF_CHECK only for a schema-valid new-owner CREATE"
+    },
+    {
+      "semantic_object": "IMMUTABLE_MEMORY_ROW",
+      "producer": "memory_transport_contract.json and operation_contract.json reducer",
+      "consumers": [
+        "operation_contract.json selectors",
+        "intervention_contract.json",
+        "compiler_views.json",
+        "runtime_training_contract.json"
+      ],
+      "schema": "memory_row.schema.json",
+      "ordering": "CITATION_UNION_ORDER",
+      "validity": "only WITNESSED and model-SUPPORTED rows are eligible",
+      "ledger": "row creation never adds a provider opportunity beyond the registered DREAM/SELF_CHECK pair"
+    },
+    {
+      "semantic_object": "THINK0_TRACE_AND_RETURN_FOCUS",
+      "producer": "operation_contract.json plus think0_prompt.md",
+      "consumers": [
+        "operation_contract.json OWN return branch",
+        "intervention_contract.json Stage-T gate"
+      ],
+      "schema": "think0_state.schema.json, think0_operation.schema.json, scratch.schema.json, and read_result.schema.json",
+      "ordering": "TWELVE_OPERATION_ORDER then RETURN_BRANCH_ORDER",
+      "validity": "REQUEST_RETURN or DEFER terminates only the THINK0 trace; DEFER does not cancel OWN or DIST",
+      "ledger": "DISPATCHED/REQUEST_RETURN or DISPATCHED/DEFER followed only by trace-local NON_DISPATCH_POST_TERMINAL rows"
+    },
+    {
+      "semantic_object": "COMMON_PREFIX_M0_AND_RETURN_BRANCHES",
+      "producer": "operation_contract.json",
+      "consumers": [
+        "intervention_contract.json",
+        "memory_transport_contract.json"
+      ],
+      "schema": "memory_row.schema.json plus operation_contract closed states",
+      "ordering": "RECURRENCE_SLOT_ORDER and RETURN_BRANCH_ORDER",
+      "validity": "M0, OWN, and DIST share the complete 84-slot recurrent prefix; only the sixteen return slots are intervened",
+      "ledger": "every prefix and return opportunity uses opportunity_ledger.schema.json"
+    },
+    {
+      "semantic_object": "GOAL_VOCABULARY_AND_PUBLIC_DIST_CONTROL",
+      "producer": "public_projection_contract.json",
+      "consumers": [
+        "operation_contract.json",
+        "intervention_contract.json",
+        "think0_state.schema.json",
+        "think1_state.schema.json"
+      ],
+      "schema": "closed objects specified by public_projection_contract.json",
+      "ordering": "PUBLIC_PROJECTION_ORDER",
+      "validity": "all bytes seal before the first heldout provider dispatch",
+      "ledger": "mismatch blocks heldout opportunities as NON_DISPATCH_PRECONDITION"
+    },
+    {
+      "semantic_object": "PATH_AND_SHAM_MANIFESTS",
+      "producer": "intervention_contract.json",
+      "consumers": [
+        "text readers",
+        "stage_review_contract.json",
+        "acceptance_registry.json P1CB07"
+      ],
+      "schema": "closed manifest fields in intervention_contract.json",
+      "ordering": "PATH_SHAM_ORDER",
+      "validity": "missing roots and sham infeasibility are distinct VALID_STAGE_FAILURE gates",
+      "ledger": "NON_DISPATCH_STAGE_FAILURE is used only as fixed by LEDGER_GATE_ORDER"
+    },
+    {
+      "semantic_object": "THINK1_TEXT_TRACES",
+      "producer": "operation_contract.json, intervention_contract.json, and think1_prompt.md",
+      "consumers": [
+        "offline scorer",
+        "stage_review_contract.json"
+      ],
+      "schema": "think1_state.schema.json, think1_operation.schema.json, scratch.schema.json, and read_result.schema.json",
+      "ordering": "TEXT_ARM_ORDER and TWELVE_OPERATION_ORDER",
+      "validity": "five runnable arms execute when sham is infeasible; full and weakened causal-use passes are forbidden",
+      "ledger": "T-SHAM alone receives exact zero-attempt NON_DISPATCH_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE rows"
+    },
+    {
+      "semantic_object": "DEV_TRACES_AND_GATE",
+      "producer": "development_fixture_contract.json and operation_contract.json",
+      "consumers": [
+        "stage_review_contract.json",
+        "acceptance_registry.json P1CB05"
+      ],
+      "schema": "THINK1 and opportunity ledger schemas",
+      "ordering": "DEV_SEAL_BEFORE_SCORE",
+      "validity": "all eighteen traces seal before scoring",
+      "ledger": "all 216 registered opportunities reconcile against opportunity_ledger.schema.json"
+    },
+    {
+      "semantic_object": "COMPILER_VIEW_AND_CANDIDATE_ROSTER",
+      "producer": "compiler_views.json and candidate_registry.schema.json",
+      "consumers": [
+        "runtime_training_contract.json",
+        "acceptance_registry.json P1CB04 and P1CB08"
+      ],
+      "schema": "candidate_registry.schema.json",
+      "ordering": "COMPILER_AND_CANDIDATE_ORDER",
+      "validity": "every realized semantic_hash/view_id/missing_index cue has exactly one cue-byte and cue-token-bound roster",
+      "ledger": "fixture or boundary infeasibility is pre-dispatch, never a stage failure"
+    },
+    {
+      "semantic_object": "TWO_LORA_FITS_FIDELITY_AND_L_TRACES",
+      "producer": "runtime_training_contract.json",
+      "consumers": [
+        "stage_review_contract.json",
+        "acceptance_registry.json P1CB08 and P1CB09"
+      ],
+      "schema": "candidate_registry.schema.json, read_result.schema.json, and opportunity_ledger.schema.json",
+      "ordering": "LORA_FIT_AND_FIDELITY_ORDER",
+      "validity": "both fits and both 48-case sets complete absent infrastructure invalidity before the joint fidelity gate",
+      "ledger": "fidelity failure creates zero-attempt NON_DISPATCH_STAGE_FAILURE/FIDELITY_GATE_FAILED L thinker rows"
+    },
+    {
+      "semantic_object": "OPPORTUNITY_LEDGER",
+      "producer": "opportunity_ledger.schema.json condition_state_reason_map",
+      "consumers": [
+        "operation_contract.json",
+        "intervention_contract.json",
+        "runtime_training_contract.json",
+        "stage_review_contract.json",
+        "acceptance_registry.json",
+        "review_packet.schema.json",
+        "authority_token.schema.json"
+      ],
+      "schema": "opportunity_ledger.schema.json",
+      "ordering": "ASCII-byte-sorted opportunity_id",
+      "validity": "exactly one effect per prospective registered opportunity",
+      "ledger": "no other file may define, alias, or extend a state/reason pair"
+    },
+    {
+      "semantic_object": "REVIEW_PACKET_ASSIGNMENTS_AND_DISPOSITIONS",
+      "producer": "stage_review_contract.json",
+      "consumers": [
+        "review_packet.schema.json",
+        "review_assignment.schema.json",
+        "review_disposition.schema.json",
+        "authority_token.schema.json"
+      ],
+      "schema": "the four review and authority schemas",
+      "ordering": "REVIEW_AUTHORITY_ORDER",
+      "validity": "review separation is platform-attested workflow separation, not proved independence",
+      "ledger": "blocked later-stage opportunities are NON_DISPATCH_NOT_AUTHORIZED/STAGE_NOT_AUTHORIZED"
+    },
+    {
+      "semantic_object": "TERMINAL_CLAIM",
+      "producer": "stage_review_contract.json claim firewall",
+      "consumers": [
+        "review packets",
+        "review dispositions",
+        "acceptance_registry.json P1CB10",
+        "every terminal report"
+      ],
+      "schema": "claim rejection fixtures and claim-linter receipt in review packet",
+      "ordering": "claim lint precedes approving terminal dispositions",
+      "validity": "both broad positive claims and overlocalized broad negative claims are rejected",
+      "ledger": "claim validity never rewrites execution rows"
+    },
+    {
+      "semantic_object": "MONOTONE_AUTHORITY_TOKEN",
+      "producer": "authority_token.schema.json after stage_review_contract.json gates",
+      "consumers": [
+        "next registered stage or HUMAN_TERMINAL"
+      ],
+      "schema": "authority_token.schema.json",
+      "ordering": "REVIEW_AUTHORITY_ORDER",
+      "validity": "only exact predecessor plus two approving unchanged-byte dispositions advances; any failure ends at HUMAN_TERMINAL",
+      "ledger": "authority never retroactively changes an opportunity condition, state, or reason"
+    }
+  ],
+  "object_schema_registry": [
+    {
+      "object": "PUBLIC_EVENT",
+      "schema": "public_event.schema.json",
+      "producer": "public_projection_contract.json"
+    },
+    {
+      "object": "PROPOSAL",
+      "schema": "proposal.schema.json",
+      "producer": "operation_contract.json DREAM reducer"
+    },
+    {
+      "object": "MEMORY_ROW",
+      "schema": "memory_row.schema.json",
+      "producer": "memory_transport_contract.json reducer"
+    },
+    {
+      "object": "READ_RESULT",
+      "schema": "read_result.schema.json",
+      "producer": "memory_transport_contract.json text or LoRA reader mapping"
+    },
+    {
+      "object": "CANDIDATE_REGISTRY",
+      "schema": "candidate_registry.schema.json",
+      "producer": "runtime_training_contract.json prospective roster compiler"
+    },
+    {
+      "object": "DREAM_STATE",
+      "schema": "dream_state.schema.json",
+      "producer": "operation_contract.json"
+    },
+    {
+      "object": "DREAM_OPERATION",
+      "schema": "dream_operation.schema.json",
+      "producer": "DREAM model call"
+    },
+    {
+      "object": "SELF_CHECK_STATE",
+      "schema": "self_check_state.schema.json",
+      "producer": "operation_contract.json"
+    },
+    {
+      "object": "SELF_CHECK_OPERATION",
+      "schema": "self_check.schema.json",
+      "producer": "SELF_CHECK model call"
+    },
+    {
+      "object": "THINK0_STATE",
+      "schema": "think0_state.schema.json",
+      "producer": "operation_contract.json"
+    },
+    {
+      "object": "THINK0_OPERATION",
+      "schema": "think0_operation.schema.json",
+      "producer": "THINK0 model call"
+    },
+    {
+      "object": "THINK1_STATE",
+      "schema": "think1_state.schema.json",
+      "producer": "operation_contract.json"
+    },
+    {
+      "object": "THINK1_OPERATION",
+      "schema": "think1_operation.schema.json",
+      "producer": "THINK1 model call"
+    },
+    {
+      "object": "SCRATCH",
+      "schema": "scratch.schema.json",
+      "producer": "operation_contract.json twelve-operation reducer"
+    },
+    {
+      "object": "OPPORTUNITY_LEDGER",
+      "schema": "opportunity_ledger.schema.json",
+      "producer": "stage-local controller"
+    },
+    {
+      "object": "REVIEW_PACKET",
+      "schema": "review_packet.schema.json",
+      "producer": "packet producer"
+    },
+    {
+      "object": "REVIEW_ASSIGNMENT",
+      "schema": "review_assignment.schema.json",
+      "producer": "platform workflow"
+    },
+    {
+      "object": "REVIEW_DISPOSITION",
+      "schema": "review_disposition.schema.json",
+      "producer": "assigned reviewer or advocate"
+    },
+    {
+      "object": "AUTHORITY_TOKEN",
+      "schema": "authority_token.schema.json",
+      "producer": "transition controller after review"
+    }
+  ],
+  "ordering_registry": [
+    {
+      "ordering_id": "PUBLIC_PROJECTION_ORDER",
+      "order": "project both lives and E-to-M plans, shared probe, host-only goal and question, vocabularies, public DIST, frozen vectors; then first heldout dispatch"
+    },
+    {
+      "ordering_id": "CITATION_UNION_ORDER",
+      "order": "proposal premise_ids in emitted order followed by support_row_ids in supplied additional_rows order, first-occurrence deduplicated"
+    },
+    {
+      "ordering_id": "RECURRENCE_SLOT_ORDER",
+      "order": "46 WAKE plus 22 interleaved REACTIVATE plus 16 SLEEP slots form one 84-slot common prefix"
+    },
+    {
+      "ordering_id": "RETURN_BRANCH_ORDER",
+      "order": "after the common 84-slot prefix and THINK0, M0 has zero return attempts while OWN and DIST independently execute slots 84 through 99 in ascending order"
+    },
+    {
+      "ordering_id": "TWELVE_OPERATION_ORDER",
+      "order": "slots 0 through 11 ascend until trace terminal or failure; valid nonterminal slot 11 seals BUDGET_EXHAUSTED and no slot 12 exists"
+    },
+    {
+      "ordering_id": "PATH_SHAM_ORDER",
+      "order": "after goal reveal but before any T output, sort path exclusions by semantic_hash and minimize the registered sham objective with lexicographic final tie break"
+    },
+    {
+      "ordering_id": "TEXT_ARM_ORDER",
+      "order": "seal all six plans, run every runnable T-M0, T-OWN, T-DIST, T-TWIN, T-PATH, and T-SHAM trace without outcome cancellation, then score"
+    },
+    {
+      "ordering_id": "DEV_SEAL_BEFORE_SCORE",
+      "order": "seal all eighteen NO_MEMORY, GOLD_TEXT, and GOLD_TWIN traces before any DEV scoring"
+    },
+    {
+      "ordering_id": "COMPILER_AND_CANDIDATE_ORDER",
+      "order": "rows by semantic_hash, view family by compiler_views ordinal, missing_index ascending, candidate array in prospectively sealed order"
+    },
+    {
+      "ordering_id": "LORA_FIT_AND_FIDELITY_ORDER",
+      "order": "two pristine independent fits and both complete 48-case fidelity sets seal absent infrastructure invalidity; evaluate the joint gate; only then dispatch any L thinker opportunity"
+    },
+    {
+      "ordering_id": "LEDGER_GATE_ORDER",
+      "order": "precondition, authority, one of exactly three stage gates, prior infrastructure invalidity, trace-local prior terminal, duplicate, dispatch"
+    },
+    {
+      "ordering_id": "REVIEW_AUTHORITY_ORDER",
+      "order": "immutable packet, reviewer and advocate assignments, separate unchanged-byte dispositions, authority token or HUMAN_TERMINAL"
+    }
+  ],
+  "validity_registry": [
+    {
+      "condition": "protocol contradiction, bad lock or scope, missing or invalid review artifact, authority ordering error, actor overlap, rejection, changed reviewed byte, public DIST mismatch, or fixture infeasibility",
+      "validity_class": "INVALID_PRECONDITION",
+      "authority_reason_domain": "authority_token.schema.json INVALID_PRECONDITION branch",
+      "dispatch_effect": "none after detection"
+    },
+    {
+      "condition": "refusal, timeout, truncation, output limit, runtime or revision drift, state reuse, partial fit, or LoRA runtime failure after dispatch or fit start",
+      "validity_class": "INVALID_INFRASTRUCTURE",
+      "authority_reason_domain": "authority_token.schema.json INVALID_INFRASTRUCTURE branch",
+      "dispatch_effect": "failed work counts once; no retry"
+    },
+    {
+      "condition": "model output failure, illegal operation, wrong commit, missing citation, budget exhaustion, missing abstraction, sham infeasibility, behavioral gate failure, or fidelity failure",
+      "validity_class": "VALID_STAGE_FAILURE",
+      "authority_reason_domain": "authority_token.schema.json VALID_STAGE_FAILURE branch",
+      "dispatch_effect": "execute the prospectively runnable set, then stop under the exact failure route"
+    },
+    {
+      "condition": "complete registered stage conjunction",
+      "validity_class": "VALID_STAGE_PASS",
+      "authority_reason_domain": "COMPLETE_REGISTERED_PASS",
+      "dispatch_effect": "advance only after both approving dispositions and one bound token"
+    },
+    {
+      "condition": "valid THINK0 or THINK1 DEFER",
+      "validity_class": "trace-local outcome only",
+      "authority_reason_domain": "DEFERRED is forbidden in authority tokens",
+      "dispatch_effect": "terminate only that trace; other prospectively registered branches and arms continue"
+    },
+    {
+      "condition": "unidentifiable sham",
+      "validity_class": "VALID_STAGE_FAILURE",
+      "authority_reason_domain": "SHAM_NOT_IDENTIFIABLE",
+      "dispatch_effect": "execute the other five T arms, zero-attempt T-SHAM, and forbid full or weakened causal-use credit"
+    }
+  ],
+  "ledger_registry": {
+    "sole_schema": "opportunity_ledger.schema.json",
+    "required_consumers": [
+      "operation_contract.json",
+      "intervention_contract.json",
+      "runtime_training_contract.json",
+      "stage_review_contract.json",
+      "acceptance_registry.json",
+      "review_packet.schema.json",
+      "authority_token.schema.json"
+    ],
+    "state_reason_rule": "The x-semantic-contract condition_state_reason_map in opportunity_ledger.schema.json is exhaustive and byte-authoritative. Consumers reference condition identifiers and may not restate a competing vocabulary.",
+    "stage_failure_rule": "NON_DISPATCH_STAGE_FAILURE is legal only for NON_DISPATCH_STAGE_MISSING_ABSTRACTION, NON_DISPATCH_STAGE_SHAM_INFEASIBLE, and NON_DISPATCH_STAGE_FIDELITY_FAILURE.",
+    "post_terminal_rule": "NON_DISPATCH_POST_TERMINAL is legal only for later opportunities in the same trace after COMMIT, REQUEST_RETURN, DEFER, budget exhaustion, or terminal thinker model-output failure. It is never a stage-gate or cross-stage encoding.",
+    "post_invalid_rule": "Later opportunities blocked by a dispatched infrastructure invalidity use NON_DISPATCH_POST_INVALID/PRIOR_INFRASTRUCTURE_INVALIDITY, never NON_DISPATCH_POST_TERMINAL.",
+    "P1CB09_rule": "Verify one row per registered opportunity, unique opportunity_id, the exact condition/state/reason triple, cause scope, attempt and token fields, all ceilings, no retry, and rejection of unlisted, multiply applicable, or cross-contract-different mappings."
+  },
+  "return_intervention_boundary": {
+    "common_prefix": "M0, OWN, and DIST retain the complete identical recurrent prefix of 46 WAKE, 22 REACTIVATE, and 16 SLEEP slots.",
+    "intervention": "P1CB06 changes only the post-prefix return treatment: literal zero return for M0 versus sixteen goal-routed OWN or public-control DIST return slots.",
+    "permitted_inference": "P1CB06 is schedule executability and branch-matching evidence for the return loop after a common prefix.",
+    "forbidden_inferences": [
+      "prefix recurrence was necessary",
+      "repeated dreaming as a whole was necessary",
+      "graph growth as a whole was necessary",
+      "full recurrence was ablated",
+      "generic recurrence improves action"
+    ]
+  },
+  "review_boundary": {
+    "separation": "Reviewer and advocate roles, actor identifiers, fresh-context receipts, and packet equality are platform-attested and schema-checked workflow facts only.",
+    "not_proved": "The package does not claim cryptographic, ontological, human, or model independence from identity receipts or actor_id inequality.",
+    "reviewer_supremacy": "An advocate may explain or recommend repair but cannot override REJECT or INVALID; changed bytes require new ratification and new reviews.",
+    "packet_requirements": "Every packet contains P1CB10, the broad-positive and broad-negative claim-rejection fixture receipt, the platform separation attestation, and the canonical ledger/schema consistency artifacts applicable to that transition."
+  },
+  "claim_boundary": {
+    "required_terminal_facts": [
+      "public actions were generated by the frozen environment rather than chosen or improved by the model",
+      "review separation was platform-attested rather than proved",
+      "the experiment is one aligned seed-5 pair under a game-specific ontology and proof-sequence scaffold",
+      "SUPPORTED denotes model-claimed support rather than verified truth",
+      "LoRA access, when applicable, is immediate host-rostered candidate-constrained recognition"
+    ],
+    "positive_rejection_fixtures": [
+      "recurrence as a whole was necessary",
+      "prefix recurrence was necessary",
+      "generic constructive memory was demonstrated",
+      "generalization was demonstrated",
+      "action selection or action improvement was demonstrated",
+      "online learning or continued improvement was demonstrated",
+      "open recall was demonstrated",
+      "whole-corpus storage or preservation was demonstrated",
+      "durability was demonstrated",
+      "capacity or scale was demonstrated",
+      "superiority over a baseline was demonstrated",
+      "text and LoRA memory were equivalent",
+      "reviewer independence was proved",
+      "the Paper-1 headline was established"
+    ],
+    "negative_rejection_fixtures": [
+      "recurrence is ineffective or unnecessary in general",
+      "constructive memory is impossible in general",
+      "the model cannot form or use abstractions in general",
+      "the model, prompt, schedule, reducer, reader, runtime, or optimizer was uniquely at fault",
+      "LoRA cannot preserve or expose memories in general",
+      "a sham failure shows the mechanism failed rather than the registered control was unidentifiable",
+      "a fidelity failure establishes no adapter can work",
+      "a one-pair failure establishes a Paper-1-wide negative conclusion"
+    ],
+    "sham_failure_claim": "SHAM_NOT_IDENTIFIABLE permits descriptive reporting of the five executed arms and the control-identifiability failure only. It supports neither the full causal-use claim nor a weakened replacement causal claim.",
+    "claim_fixture_test": "P1CB10 must reject every listed positive and negative fixture, accept only wording within the registered maximum, require every terminal fact, and preserve unconditional HUMAN_TERMINAL."
+  },
+  "acceptance_bindings": {
+    "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY": "exact inventory equality, every matrix edge and ordering, sole ledger schema, all schema identifiers, monotone authority, and PROTOCOL_CONTRADICTION negatives",
+    "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES": "schedule executability and zero/OWN/DIST return treatment after the complete common recurrent prefix only",
+    "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS": "VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE, five-arm continuation, exact zero-attempt T-SHAM rows, terminal route, and no full or weakened causal-use claim",
+    "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY": "every canonical ledger condition/state/reason vector and rejection of missing, multiple, or cross-contract-different rows",
+    "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP": "broad positive and negative claim fixtures, platform-attested separation boundary, reviewer supremacy, unchanged bytes, and HUMAN_TERMINAL"
+  }
+}

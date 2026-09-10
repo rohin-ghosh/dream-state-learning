@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "citations": {"items": {"maxLength": 64, "type": "string"}, "maxItems": 16, "type": "array", "uniqueItems": true},
+        "operation": {"additionalProperties": false, "properties": {"key": {"maxLength": 256, "minLength": 1, "type": "string"}, "kind": {"const": "READ"}}, "required": ["kind", "key"], "type": "object"},
+        "scratch": {"maxLength": 2048, "type": "string"}
+      },
+      "required": ["operation", "scratch", "citations"],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "citations": {"items": {"maxLength": 64, "type": "string"}, "maxItems": 16, "type": "array", "uniqueItems": true},
+        "operation": {"additionalProperties": false, "properties": {"action": {"type": "object"}, "kind": {"const": "ENV"}}, "required": ["kind", "action"], "type": "object"},
+        "scratch": {"maxLength": 2048, "type": "string"}
+      },
+      "required": ["operation", "scratch", "citations"],
+      "type": "object"
+    }
+  ],
+  "title": "RML Stage-B one-operation output",
+  "type": "object"
+}

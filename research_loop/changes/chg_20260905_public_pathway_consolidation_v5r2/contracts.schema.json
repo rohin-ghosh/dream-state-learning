@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ppc5r2-contracts.schema.json",
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "opaque_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*-[0-9]{8}$"},
+    "nullable_opaque_id": {"type": ["string", "null"], "pattern": "^[a-z][a-z0-9]*-[0-9]{8}$"},
+    "finite_symbol": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,63}$"},
+    "canonical_bytes": {"type": "string", "minLength": 1},
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calls", "reads", "actions", "tokens"],
+      "properties": {
+        "calls": {"type": "integer", "minimum": 0},
+        "reads": {"type": "integer", "minimum": 0},
+        "actions": {"type": "integer", "minimum": 0},
+        "tokens": {"type": "integer", "minimum": 0}
+      }
+    },
+    "prediction": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["action_id", "direction", "value_bin"],
+      "properties": {
+        "action_id": {"$ref": "#/$defs/opaque_id"},
+        "direction": {"enum": ["INCREASE", "DECREASE", "SAME"]},
+        "value_bin": {"$ref": "#/$defs/finite_symbol"}
+      }
+    },
+    "public_outcome": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["action_id", "direction", "value_bin", "normalized_value"],
+      "properties": {
+        "action_id": {"$ref": "#/$defs/opaque_id"},
+        "direction": {"enum": ["INCREASE", "DECREASE", "SAME"]},
+        "value_bin": {"$ref": "#/$defs/finite_symbol"},
+        "normalized_value": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "phase", "item_id", "world_state", "workspace_record_ids", "opened_record_ids", "last_read", "live_prediction", "last_outcome", "budgets", "call_ordinal", "consecutive_error_count", "latest_error", "prior_transition_hash", "ledger_hash", "terminal_reason"],
+      "properties": {
+        "contract": {"const": "ppc5.state.v2"},
+        "phase": {"enum": ["INITIAL", "RUNNING", "TERMINAL"]},
+        "item_id": {"$ref": "#/$defs/opaque_id"},
+        "world_state": {"$ref": "#/$defs/canonical_bytes"},
+        "workspace_record_ids": {"type": "array", "items": {"$ref": "#/$defs/opaque_id"}, "uniqueItems": true},
+        "opened_record_ids": {"type": "array", "items": {"$ref": "#/$defs/opaque_id"}, "uniqueItems": true},
+        "last_read": {"anyOf": [{"$ref": "#/$defs/read_response"}, {"type": "null"}]},
+        "live_prediction": {"$ref": "#/$defs/prediction"},
+        "last_outcome": {"$ref": "#/$defs/public_outcome"},
+        "budgets": {"$ref": "#/$defs/budget"},
+        "call_ordinal": {"type": "integer", "minimum": 0},
+        "consecutive_error_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "latest_error": {"type": ["string", "null"], "enum": [null, "MISSING_NO_RETRY", "TOKEN_LIMIT", "PARSE_ERROR", "READ_LIMIT", "ACTION_LIMIT", "INVALID_DOMAIN", "INVALID_REFERENCE", "PREDICTION_REQUIRED", "PREDICTION_MISMATCH", "INVALID_ACTION", "RUN_INVALID"]},
+        "prior_transition_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "ledger_hash": {"$ref": "#/$defs/hash"},
+        "terminal_reason": {"type": ["string", "null"], "enum": [null, "GOAL_COMPLETE", "NO_VALID_ACTION", "BUDGET_EXHAUSTED", "ERROR_LIMIT", "USER_STOP", "INVALID_CELL", "RUN_INVALID"]}
+      }
+    },
+    "op_read": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "op", "subject_id", "relation_id"],
+      "properties": {"contract": {"const": "ppc5.op.v2"}, "op": {"const": "READ"}, "subject_id": {"$ref": "#/$defs/opaque_id"}, "relation_id": {"$ref": "#/$defs/opaque_id"}}
+    },
+    "op_predict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "op", "action_id", "direction", "value_bin"],
+      "properties": {"contract": {"const": "ppc5.op.v2"}, "op": {"const": "PREDICT"}, "action_id": {"$ref": "#/$defs/opaque_id"}, "direction": {"enum": ["INCREASE", "DECREASE", "SAME"]}, "value_bin": {"$ref": "#/$defs/finite_symbol"}}
+    },
+    "op_act": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "op", "action_id"],
+      "properties": {"contract": {"const": "ppc5.op.v2"}, "op": {"const": "ACT"}, "action_id": {"$ref": "#/$defs/opaque_id"}}
+    },
+    "op_stop": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "op", "reason"],
+      "properties": {"contract": {"const": "ppc5.op.v2"}, "op": {"const": "STOP"}, "reason": {"enum": ["GOAL_COMPLETE", "NO_VALID_ACTION", "BUDGET_EXHAUSTED", "ERROR_LIMIT", "USER_STOP"]}}
+    },
+    "operation": {"oneOf": [{"$ref": "#/$defs/op_read"}, {"$ref": "#/$defs/op_predict"}, {"$ref": "#/$defs/op_act"}, {"$ref": "#/$defs/op_stop"}]},
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "record_id", "subject_id", "relation_id", "object_id", "public_record_bytes"],
+      "properties": {
+        "candidate_id": {"$ref": "#/$defs/opaque_id"}, "record_id": {"$ref": "#/$defs/opaque_id"}, "subject_id": {"$ref": "#/$defs/opaque_id"}, "relation_id": {"$ref": "#/$defs/opaque_id"}, "object_id": {"$ref": "#/$defs/opaque_id"}, "public_record_bytes": {"$ref": "#/$defs/canonical_bytes"}
+      }
+    },
+    "read_request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "subject_id", "relation_id"],
+      "properties": {"contract": {"const": "ppc5.read_request.v2"}, "subject_id": {"$ref": "#/$defs/opaque_id"}, "relation_id": {"$ref": "#/$defs/opaque_id"}}
+    },
+    "read_response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "status", "subject_id", "relation_id", "object_id", "record_id"],
+      "properties": {
+        "contract": {"const": "ppc5.read.v2"},
+        "status": {"enum": ["FOUND", "NOT_FOUND", "MISSING_NO_RETRY", "INVALID_CELL"]},
+        "subject_id": {"$ref": "#/$defs/nullable_opaque_id"}, "relation_id": {"$ref": "#/$defs/nullable_opaque_id"}, "object_id": {"$ref": "#/$defs/nullable_opaque_id"}, "record_id": {"$ref": "#/$defs/nullable_opaque_id"}
+      }
+    },
+    "dream_publish": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "status", "retained_record_ids", "next_focus_record_id"],
+      "properties": {"contract": {"const": "ppc5.dream.v2"}, "status": {"const": "PUBLISH"}, "retained_record_ids": {"type": "array", "items": {"$ref": "#/$defs/opaque_id"}, "uniqueItems": true}, "next_focus_record_id": {"$ref": "#/$defs/nullable_opaque_id"}}
+    },
+    "dream_abstain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "status", "reason"],
+      "properties": {"contract": {"const": "ppc5.dream.v2"}, "status": {"const": "ABSTAIN"}, "reason": {"enum": ["NO_USEFUL_CONTEXT", "INSUFFICIENT_SUPPORT", "CONTEXT_ALREADY_MINIMAL"]}}
+    },
+    "dream_result": {"oneOf": [{"$ref": "#/$defs/dream_publish"}, {"$ref": "#/$defs/dream_abstain"}]},
+    "root_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "record_id", "source_event_id", "equivalence_class_id"],
+      "properties": {"contract": {"const": "ppc5.root_provenance.v2"}, "record_id": {"$ref": "#/$defs/opaque_id"}, "source_event_id": {"$ref": "#/$defs/opaque_id"}, "equivalence_class_id": {"$ref": "#/$defs/hash"}}
+    },
+    "writer_eligibility": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "source_event_id", "role", "item_close_event_id", "source_commit_ordinal", "source_channel_kind", "target_derived", "eligible"],
+      "properties": {"contract": {"const": "ppc5.writer_eligibility.v2"}, "source_event_id": {"$ref": "#/$defs/opaque_id"}, "role": {"enum": ["ACQUIRE", "PROBE", "STATIC"]}, "item_close_event_id": {"$ref": "#/$defs/nullable_opaque_id"}, "source_commit_ordinal": {"type": "integer", "minimum": 0}, "source_channel_kind": {"enum": ["DIRECT_ENVIRONMENT_OBSERVATION", "COGNITIVE", "DREAM", "SCORER", "POLICY_TARGET", "OTHER"]}, "target_derived": {"type": "boolean"}, "eligible": {"type": "boolean"}}
+    },
+    "treatment_assignment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "recipient_life_id", "cell_id", "mounted_artifact_hash", "response_intervention_id", "context_policy_id", "root_policy_id", "donor_life_id"],
+      "properties": {"contract": {"const": "ppc5.treatment_assignment.v2"}, "recipient_life_id": {"$ref": "#/$defs/opaque_id"}, "cell_id": {"$ref": "#/$defs/finite_symbol"}, "mounted_artifact_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "response_intervention_id": {"$ref": "#/$defs/nullable_opaque_id"}, "context_policy_id": {"type": ["string", "null"]}, "root_policy_id": {"type": ["string", "null"]}, "donor_life_id": {"$ref": "#/$defs/nullable_opaque_id"}}
+    },
+    "response_intervention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "intervention_id", "kind", "condition_id", "item_id", "target_id", "query_hash", "selected_response_hash", "replacement_response", "token_count", "byte_length_class"],
+      "properties": {"contract": {"const": "ppc5.response_intervention.v2"}, "intervention_id": {"$ref": "#/$defs/opaque_id"}, "kind": {"enum": ["AUTHENTIC", "CUT", "TWIN", "SHAM"]}, "condition_id": {"$ref": "#/$defs/finite_symbol"}, "item_id": {"$ref": "#/$defs/opaque_id"}, "target_id": {"$ref": "#/$defs/opaque_id"}, "query_hash": {"$ref": "#/$defs/hash"}, "selected_response_hash": {"$ref": "#/$defs/hash"}, "replacement_response": {"anyOf": [{"$ref": "#/$defs/read_response"}, {"type": "null"}]}, "token_count": {"type": "integer", "minimum": 0}, "byte_length_class": {"$ref": "#/$defs/finite_symbol"}}
+    },
+    "sleep_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "root_record_id", "request", "target_response", "source_hash"],
+      "properties": {"contract": {"const": "ppc5.sleep_row.v2"}, "root_record_id": {"$ref": "#/$defs/opaque_id"}, "request": {"$ref": "#/$defs/read_request"}, "target_response": {"$ref": "#/$defs/read_response"}, "source_hash": {"$ref": "#/$defs/hash"}}
+    },
+    "status_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "unit_id", "status", "installed_hash", "calls_debited", "tokens_debited", "rows_admitted", "downstream_executed", "reducer_input"],
+      "properties": {"contract": {"const": "ppc5.status_receipt.v2"}, "unit_id": {"$ref": "#/$defs/opaque_id"}, "status": {"enum": ["VALID", "VALID_EMPTY", "ABSTAIN", "MISSING", "PROJECTION_REJECTED", "WRITER_EMPTY", "TRAIN_FAILED", "CONSTRUCTION_FAIL", "RUN_INVALID"]}, "installed_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "calls_debited": {"type": "integer", "minimum": 0}, "tokens_debited": {"type": "integer", "minimum": 0}, "rows_admitted": {"type": "integer", "minimum": 0}, "downstream_executed": {"type": "boolean"}, "reducer_input": {"enum": ["OBSERVED", "ZERO_DOSE_OBSERVED", "WORST_CASE_BOUND", "BLOCK_CLAIM"]}}
+    },
+    "resource_manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "cell_id", "model_calls", "input_tokens", "output_tokens", "training_rows", "training_tokens", "updates", "adapter_rank", "adapter_bytes", "wall_seconds", "gpu_seconds", "energy_joules", "cost_usd"],
+      "properties": {"contract": {"const": "ppc5.resources.v2"}, "cell_id": {"$ref": "#/$defs/finite_symbol"}, "model_calls": {"type": "integer", "minimum": 0}, "input_tokens": {"type": "integer", "minimum": 0}, "output_tokens": {"type": "integer", "minimum": 0}, "training_rows": {"type": "integer", "minimum": 0}, "training_tokens": {"type": "integer", "minimum": 0}, "updates": {"type": "integer", "minimum": 0}, "adapter_rank": {"type": "integer", "minimum": 0}, "adapter_bytes": {"type": "integer", "minimum": 0}, "wall_seconds": {"type": "number", "minimum": 0}, "gpu_seconds": {"type": "number", "minimum": 0}, "energy_joules": {"type": ["number", "null"], "minimum": 0}, "cost_usd": {"type": ["number", "null"], "minimum": 0}}
+    },
+    "life_reducer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "claim_id", "recipient_life_ids", "unit_order", "endpoint", "finite_min", "finite_max", "missing_rule", "zero_eligible_rule", "nested_aggregation", "family_procedure"],
+      "properties": {"contract": {"const": "ppc5.life_reducer.v2"}, "claim_id": {"$ref": "#/$defs/finite_symbol"}, "recipient_life_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/opaque_id"}, "uniqueItems": true}, "unit_order": {"enum": ["ITEM_CLONE_EDGE_LEXICOGRAPHIC"]}, "endpoint": {"enum": ["CORRECT_SUPPORTED_SELECTION", "FALSE_SELECTION_RATE", "NOT_FOUND_RATE", "NORMALIZED_ACTION_VALUE"]}, "finite_min": {"type": "number"}, "finite_max": {"type": "number"}, "missing_rule": {"const": "ADVERSE_BOUND_AND_LOCKED_LIMIT"}, "zero_eligible_rule": {"const": "OBSERVED_ZERO_DOSE"}, "nested_aggregation": {"const": "LOWER_UNITS_EQUAL_WITHIN_LIFE_THEN_LIVES_EQUAL"}, "family_procedure": {"const": "HOLM_STEP_DOWN"}}
+    },
+    "stage_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract", "stage", "subject_hashes", "passed", "model_execution_reachable"],
+      "properties": {"contract": {"const": "ppc5.stage_receipt.v2"}, "stage": {"enum": ["PRE_RATIFICATION_SPECIFICATION", "POST_RATIFICATION_PRE_STATIC_SEAL_CONFORMANCE", "PRE_MODEL_EXECUTION", "RUNTIME_VALIDITY", "PRE_SCIENTIFIC_CLAIM"]}, "subject_hashes": {"type": "array", "items": {"$ref": "#/$defs/hash"}, "uniqueItems": true}, "passed": {"type": "boolean"}, "model_execution_reachable": {"type": "boolean"}}
+    }
+  },
+  "oneOf": [
+    {"$ref": "#/$defs/state"}, {"$ref": "#/$defs/operation"}, {"$ref": "#/$defs/candidate"}, {"$ref": "#/$defs/read_request"}, {"$ref": "#/$defs/read_response"}, {"$ref": "#/$defs/dream_result"}, {"$ref": "#/$defs/root_provenance"}, {"$ref": "#/$defs/writer_eligibility"}, {"$ref": "#/$defs/treatment_assignment"}, {"$ref": "#/$defs/response_intervention"}, {"$ref": "#/$defs/sleep_row"}, {"$ref": "#/$defs/status_receipt"}, {"$ref": "#/$defs/resource_manifest"}, {"$ref": "#/$defs/life_reducer"}, {"$ref": "#/$defs/stage_receipt"}
+  ]
+}

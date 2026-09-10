@@ -1,0 +1,124 @@
+{
+  "schema_version": "paper1-v03r-canary-acceptance-registry-v1f.0",
+  "semantic_lock": "semantic_consistency_matrix.json",
+  "opportunity_ledger_schema": "opportunity_ledger.schema.json",
+  "lineage_source": {
+    "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/consensus.json",
+    "sha256": "e1871515f7c8e6a52312e2be2473172da6c4e695ab9dbcba387038c6adc3ad0d",
+    "rule": "test_id is byte-identical to each mandated replacement_test_id; aliases and shortened IDs are forbidden"
+  },
+  "tests": [
+    {
+      "test_id": "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "After exact human ratification, validate all bound protocol/source/runtime hashes; exact set equality between change.json's v1f normative context paths and the canonical ASCII-sorted exact filename-edge registry; mechanically derived per-file producer/consumer views only, with exact set equality to that registry and no independently maintained duplicate list; every direct producer/consumer/object/ordering/validity/ledger edge in both endpoint directions; exactly P1CB01 through P1CB10 bindings; the sole opportunity ledger; schema registry including terminal_claim_state; scope; compute envelope; hash-bound SELF_DECLARED_UNVERIFIED review-audit boundary and required external witness release; authority predecessor links; G namespace isolation; prospective pre-fit 48-entry L registration; and ordinary plus direct fail-stop terminal routes.",
+      "expected": "Every normative v1f file, exact edge, derived view, acceptance binding, schema resource, compute quantity, and lifecycle binding is present exactly once and consistent. Missing, extra, duplicate, asymmetric, nonfilename, wildcard, category-mismatched, stale-derived, or independently duplicated edge; a late/dynamic/partial L registration; wrong endpoint/route; compute omission/mismatch; or fabricated platform-attestation claim is INVALID_PRECONDITION/PROTOCOL_CONTRADICTION before dispatch. Direct nonrecursive HUMAN_TERMINAL fail-stop vectors for terminal reviewer/advocate REJECT or INVALID, malformed/missing disposition, role overlap, changed reviewed bytes, and terminal packet/claim-artifact construction failure require no approval and grant no execution or claim authority. Role/freshness records remain self-declared audit metadata, not authentication or independence proof.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/preflight/P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW",
+      "forbidden_before": "HUMAN_RATIFICATION"
+    },
+    {
+      "test_id": "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Run the exact memory_transport_contract.golden_vectors.p1cb02_noninterference vectors: independently mutate final goal goal_id, animal, source, target, and rendered question; then for every realized target cue substitute the roster from every other realized cue. Compare every listed pre-reveal request/token, selector, proposal/row, compiler view, roster binding/completion, corpus, training example, state token, read projection, and other durable state. Separately prove the disclosed THINK0 endpoint equality and missing-join agenda while proving final animal, rendered question, answer, intervention truth, private factorization, donor/backend identity, and evaluator result are absent; require atomic public-final-question and donor/backend visibility cells.",
+      "expected": "Each of the five goal-coordinate/question mutations is byte-inert over all listed pre-reveal bytes. THINK0 is final-question/animal/answer withheld, endpoint-cued: its source and target equal the later final-goal endpoints and it requests their causal join. P1CB02 proves registered noninterference, not absence of that disclosed agenda or autonomous relevance discovery. Every cross-cue roster substitution and donor/backend taint is rejected before sealed-registry replacement or consumer use; the adversarial input and receipt remain audit-only and the valid sealed state stays byte-identical. Omitted vectors, compound visibility, a wrong expected route, premature state replacement, or any taint is rejected before dispatch.",
+      "vector_bindings": {
+        "source": "memory_transport_contract.json#/golden_vectors/p1cb02_noninterference",
+        "positive_names_in_order": ["goal_id_taint", "animal_taint", "source_taint", "target_taint", "question_taint"],
+        "cross_cue_rule": "For every realized target cue instance, attempt every roster belonging to every other realized cue instance; require N*(N-1) rejected substitutions for N realized cue instances.",
+        "required_rejection_timing": "before sealed-registry replacement and before consumer use",
+        "required_inert_state": ["pre-reveal rendered requests", "pre-reveal tokenized requests", "selectors", "proposals", "accepted rows", "compiler views", "candidate registry bindings", "candidate completions", "transport corpora", "training examples", "state tokens", "read projections"],
+        "negative_fixtures": ["omitted independent goal mutation", "omitted cross-cue ordered pair", "self-roster incorrectly treated as substitution", "wrong expected route", "rejection after registry replacement", "rejection after consumer use", "audit receipt enters cognitive state", "valid sealed state changes", "missing endpoint-cued equality/withheld-field disclosure", "compound public-final-question/donor visibility item", "donor/backend identity exposed to a thinker"]
+      },
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/preflight/P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "unit",
+      "setup": "Exercise every kind/arity/atom namespace, witnessed and dreamed compatibility tuple, proposal/check verdict, explicit model-cited distinct-lineage support, duplicate ownership, conflict, E-to-M witness mapping, depth, cycle, diamond, hash, and DEV G-namespace separation vector.",
+      "expected": "Only immutable witnessed rows and immutable model-SUPPORTED dreamed rows become cognitive rows; proposals and receipts remain audit objects; canonical ownership, hashes, lineage, and conflicts are deterministic without a semantic truth verifier.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/preflight/P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Exercise exact public events, atomic visibility cells, state-token derivation, all legal and illegal one-null queries, closed read-result projections and handles, four UTF-8/JCS compiler views and token IDs, shared candidates, candidate-to-row mapping, two-life isolation, and matched atomic adapter mounts.",
+      "expected": "Text and LoRA share one semantic manifest and thinker-facing projection; adapter selection supplies every semantic field; the public final question and donor/backend identity have distinct permissions, and host provenance, donor identity, audit state, and G fixtures cannot carry a heldout answer.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/preflight/P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+      "phase": "DEV_GOLD",
+      "kind": "baseline",
+      "setup": "Match the exact 31-entry predictor vector, source/precheckpoint/pair hashes, six DEV lives, G gold rows, proof masks, parser/scorer vectors, own/donor tokens, terminal non-dispatch receipts, and then seal every dispatched NO_MEMORY/GOLD_TEXT/GOLD_TWIN response before scoring.",
+      "expected": "All shortcut ceilings hold; GOLD_TEXT and GOLD_TWIN each achieve 3/3 paired success with required returned H handles offline-bound to and cited for the G rows; NO_MEMORY is below 3/3; no G identifier is model-visible or enters heldout ownership or proposal identity.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/dev/P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM.jcs.json",
+      "required_before": "DEV_TO_HELDOUT_REVIEW"
+    },
+    {
+      "test_id": "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Use deterministic fake providers for the exact 46 WAKE, 22 REACTIVATE, and 16 SLEEP common prefix followed by THINK0 and the post-prefix return treatment; check trigger/witness conversion, mode pools, branch-local counters, profiles/slots/seeds, literal zero-return M0, sixteen-slot OWN/DIST, public DIST including DEFER, twelve-operation boundary, and canonical ledger rows.",
+      "expected": "Every request, selector, ID, seed, state hash, counter update, branch copy, terminal, and ledger row matches the frozen contracts; M1_OWN remains fixed regardless of results. The test is evidence only for schedule executability and the zero/OWN/DIST return-loop intervention after the common recurrent prefix, never necessity of prefix recurrence, repeated dreaming as a whole, graph growth, generic construction, or action improvement.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/preflight/P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+      "phase": "HELDOUT_TEXT",
+      "kind": "end_to_end",
+      "setup": "On both seed-5 twins, follow the registered reveal order; seal M0/M1/DIST/vocabulary/candidate/path/sham/arm plans prospectively; run all runnable T-M0/T-OWN/T-DIST/T-TWIN/T-PATH/T-SHAM traces; then score private correctness and returned-and-cited use offline.",
+      "expected": "Validity follows the canonical total mapping. Missing required dreamed abstractions is VALID_STAGE_FAILURE/MISSING_REQUIRED_ABSTRACTION. Sham infeasibility is VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE: T-M0, T-OWN, T-DIST, T-TWIN, and T-PATH still execute, every T-SHAM opportunity is an exact zero-attempt NON_DISPATCH_STAGE_SHAM_INFEASIBLE/NON_DISPATCH_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE row, terminal routing completes, and neither a full nor weakened causal-use claim is permitted.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/heldout_text/P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS.jcs.json",
+      "required_before": "HELDOUT_TO_LORA_REVIEW"
+    },
+    {
+      "test_id": "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+      "phase": "CONDITIONAL_LORA",
+      "kind": "end_to_end",
+      "setup": "After valid reviewed Stage-T (HELDOUT_TO_LORA) authority and before either fit or fidelity request, prospectively register and seal exactly 48 THINK1_LORA opportunities (two lives * L-OWN/L-TWIN * slots 0..11) as REGISTERED_NOT_DISPATCHABLE. Then fit exactly two pristine per-life rank-64 adapters on sealed M1_OWN compiler bytes. For each life, select twelve M1_OWN training rows and one cue from each row's four trained view families (48 cues), after repeated training exposures defined by runtime_training_contract; score each host-pre-resolved shared answer-bearing roster; transition the complete registry to dispatch-authorized only if both separate gates pass; then run matched L-OWN/L-TWIN requests whose mounted backend alone changes.",
+      "expected": "Each adapter separately reaches at least 44/48 immediate selected-cue candidate-constrained training-set-resubstitution recognitions on selected cues and its registered own/donor behavior criteria. The evidence states the twelve selected training rows, four trained view families, repeated exposures, host pre-resolution, answer roster, separate thresholds, and own/donor-only paths. If either gate fails, exactly one zero-attempt NON_DISPATCH_STAGE_FIDELITY_FAILURE/NON_DISPATCH_STAGE_FAILURE/FIDELITY_GATE_FAILED row exists for every registered L opportunity; no L dispatch occurs. It rejects unseen, held-out, preservation, storage, generalization, open recall, durability, capacity, scale, superiority, and text-equivalence claims. No pooled gate, host-text answer path, third fit, retry, late/dynamic registration, partial authorization, or result-selected candidate exists.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/conditional_lora/P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP.jcs.json",
+      "required_before": "STAGE_L_TERMINAL_REVIEW"
+    },
+    {
+      "test_id": "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+      "phase": "EVERY_TRANSITION",
+      "kind": "invariant",
+      "setup": "At CPU, DEV, T, L, and terminal boundaries reconcile locks, canonical exact edge registry derived views, authority, every opportunity_ledger.schema.json condition/state/reason vector, request/response tokens, parser stops, runtime failures, the three exclusive stage gates, prospective pre-fit 48-entry L registration, fit receipts, partial leaves, worst-case compute manifest (including 2304 candidate-forward maximum and sealed optimizer/token disclosure), ceilings, direct terminal fail-stop partial accounting, and no-retry seals against the total validity map. Include positives and mismatch negatives for duplicate, precondition, unauthorized, COMMIT, REQUEST_RETURN, DEFER, budget exhaustion, model failure, infrastructure invalidity, missing abstraction, sham infeasibility, fidelity failure, all lifecycle violations, direct terminal fail-stop vectors, and every post-terminal subtype.",
+      "expected": "Every registered opportunity has exactly one canonical ledger effect and every terminal has exactly one validity/reason pair. The 48 L opportunities register before fit/fidelity, remain non-dispatchable until both 44/48 gates pass, and on failure have exactly one zero-attempt row each. NON_DISPATCH_STAGE_FAILURE is accepted only for the three registered gates; NON_DISPATCH_POST_TERMINAL is accepted only trace-locally; missing, multiple, unregistered, lifecycle-invalid, compute-mismatched, or cross-contract-different mappings are PROTOCOL_CONTRADICTION. No drift, retry, fake receipt, uncounted dispatch, or over-ceiling transition advances.",
+      "evidence_artifacts": {
+        "CPU_TO_DEV": "artifacts/paper1_v03r_canary_v1f/review/cpu_to_dev/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "DEV_TO_HELDOUT": "artifacts/paper1_v03r_canary_v1f/review/dev_to_heldout/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "HELDOUT_TO_LORA": "artifacts/paper1_v03r_canary_v1f/review/heldout_to_lora/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "STAGE_L_TERMINAL": "artifacts/paper1_v03r_canary_v1f/review/stage_l_terminal/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "EARLY_TERMINAL": "artifacts/paper1_v03r_canary_v1f/review/early_terminal/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json"
+      },
+      "required_before": "EACH_TRANSITION_OR_TERMINAL"
+    },
+    {
+      "test_id": "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP",
+      "phase": "EVERY_TRANSITION_AND_TERMINAL",
+      "kind": "independent_review",
+      "setup": "P1CB10 has two phases under this one ID. Before review, validate an immutable mechanism/fixture receipt proving schema, inventory, claim linter, separation-request plan, external-witness-release requirement, and negatives, but containing no future assignment, response, disposition, authority, terminal, or transition digest. Then send that unchanged packet in separate AGENTS.md-governed fresh-context requests to an INDEPENDENT_REVIEWER-labelled actor and an AUTHOR_SIDE_ADVOCATE-labelled actor; persist only hash-bound SELF_DECLARED_UNVERIFIED role/freshness audit records. After review, create a separate realized-transition receipt binding the unchanged packet, assignments, completed dispositions, reviewer-supremacy outcome, and exactly one successor token or direct HUMAN_TERMINAL fail-stop; only then may a joining evidence manifest bind both phase hashes. Validate terminal_claim_state.schema.json and run broad, stage-conditional CPU/DEV/T/L, ambiguous-negation, review-order, fail-stop, and immediate selected-cue candidate-constrained training-set-resubstitution fixtures.",
+      "expected": "Only two schema-valid APPROVE dispositions that each bind the same unchanged pre-review packet, plus the required external human witness release, advance; the authority token binds both completed disposition hashes after review and grants the exact successor stage or ordinary HUMAN_TERMINAL. Terminal reviewer/advocate REJECT or INVALID, malformed/missing disposition, prohibited declared overlap, changed reviewed bytes, or terminal packet/claim-artifact construction failure creates exactly one direct nonrecursive non-authorizing HUMAN_TERMINAL fail-stop receipt without requiring approval or another review. Any future digest in the packet or retroactive transition evidence is rejected. The records are unauthenticated audit metadata and explicitly do not prove platform attestation, authentication, freshness, identity, independence, non-fabrication, or anti-self-certification. Every terminal truthfully distinguishes REALIZED, NOT_REACHED, INFEASIBLE, and FAILED, includes endpoint-cued, resubstitution, and engineering-only compute disclosures, and reaches HUMAN_TERMINAL.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1f/review/P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP.jcs.json",
+      "required_before": "EACH_TRANSITION_OR_TERMINAL"
+    }
+  ],
+  "global_rules": {
+    "tests_are_verification_not_design_authority": true,
+    "P1CB01_temporal_position": "wholly after human ratification during CPU implementation and before any DEV dispatch",
+    "model_or_gpu_run_during_preflight_design": false,
+    "changed_test_or_protocol_byte": "requires a new protocol lock, human ratification, assignments, packets, and dispositions",
+    "review_evidence_limit": "Freshness and role separation are operationally requested under AGENTS.md but persisted only as hash-bound SELF_DECLARED_UNVERIFIED records; no platform attestation or reviewer-independence claim is allowed."
+  }
+}

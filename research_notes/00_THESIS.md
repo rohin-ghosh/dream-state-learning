@@ -5,6 +5,19 @@ DESIGN_SUPER.md (architecture), SPEC_V2.md I–III (experiments),
 research_notes/32 (decision log), VISION_ROADMAP.md (far vision),
 REVIEW_PACK.md (current state + results).)*
 
+> **2026-08-31 architecture correction.** The detailed controlling design is
+> now `research_loop/plans/interleaved_organism_v1.md`. Several bullets below
+> describe an earlier one-way/ceiling formulation and must not be used to build
+> a new experiment: dreaming is both offline and online recurrent semantic
+> growth; the thinker may `DEFER` or emit a non-evidentiary missing-dependency
+> agenda; that agenda can guide a later dream; exact engine verification is a
+> labeled ceiling/offline scorer rather than the principal cognition path; and
+> the per-life LoRA is first credited with persistence/associative access, not
+> with discovering structure or directly becoming the task policy. Semantic
+> graph growth and multi-view LoRA write realizations are separate operations.
+> The current v0.3 world is a small interface calibration, not a long-context,
+> recurrent-depth, or LoRA-necessity benchmark.
+
 ## The one-sentence thesis
 An agent should get better the longer it lives — its second month better
 than its first — by consolidating its own lived experience into weights

@@ -1,0 +1,157 @@
+{
+  "acceptance_test_ids_addressed": [
+    "NT1_canonical_hash_chain",
+    "NT2_event_schema_closure",
+    "NT3_context_generation_roundtrip_fixture",
+    "NT4_typed_tool_atomic_join",
+    "NT5_role_visibility_noninterference",
+    "NT6_parent_temporal_blindness",
+    "NT7_dream_reversible_successor",
+    "NT8_sleep_label_projection",
+    "NT9_adapter_provenance_fixture",
+    "NT10_no_feedback_edge",
+    "NT11_three_way_oracle_agreement"
+  ],
+  "acceptance_test_interpretation": "The registered tests form a CPU-only contract-verification ladder. They measure deterministic hashing, closed vocabulary and causal-parent enforcement, exact context/generation provenance, typed action and atomic outcome joining, role-root isolation, temporal parent blindness, reversible dream-state publication, masked sleep labels, adapter provenance, reporting isolation, and three-way validator/oracle agreement. Together they establish only structural, provenance, visibility, and feedback-edge enforcement\u2014not learning, behavior, or scientific endpoints. Their CPU-only setup preserves the mandatory human boundary: no implementation or execution is implied before exact ratification.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A1_event_type_count",
+      "impact": "The proposal calls the ledger a nine-event contract but also mentions later immutable rejection events. Implementers could disagree whether rejection records are in-contract events.",
+      "question": "Are rejection records and validator/capability receipts outside the life ledger, or must they be added to the closed event vocabulary?"
+    },
+    {
+      "ambiguity_id": "A2_role_authority_and_pointer",
+      "impact": "DREAM_SUCCESSOR is child-produced but executed and validated under DREAM, while pointer publication authority is not explicit.",
+      "question": "Which role validates and atomically publishes the successor pointer, and how is that authority bound to the child-produced candidate?"
+    },
+    {
+      "ambiguity_id": "A3_feedback_boundary",
+      "impact": "Parent feedback requires earlier public evidence, but the exact cutoff and inclusion of the immediately preceding outcome are not formalized.",
+      "question": "What exact event closure defines the parent observation boundary?"
+    },
+    {
+      "ambiguity_id": "A4_generation_cardinality",
+      "impact": "A generation has one context parent, but the proposal does not state whether one generation may produce multiple typed calls.",
+      "question": "Is TOOL_CALL_PROPOSED limited to one per generation, and what ordering rule applies if multiple calls are permitted?"
+    },
+    {
+      "ambiguity_id": "A5_scale_and_budget",
+      "impact": "Episode/token budgets exist conceptually, but numeric limits, retry counts, artifact sizes, sleep dose, and reconciliation retries are unspecified.",
+      "question": "Which numerical budgets and failure/retry semantics belong to this contract versus a later ratified protocol?"
+    }
+  ],
+  "architecture_change_sha256": "edf9885e48afab64ac5d8b1c2973ce820c384e9ab516ddde29533e6c12fcc7f4",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The supplied change.json is the hash-bound architecture proposal, and its displayed SHA-256 is the architecture_change_sha256.",
+    "The nine listed event types are durable causal events; validator receipts, capability manifests, and rejection receipts are auxiliary artifacts unless later ratified otherwise.",
+    "A validated DREAM_SUCCESSOR changes only the current conscious-state pointer; predecessor state and ledger bytes remain recoverable.",
+    "Public training measurements are distinct from hidden targets and evaluation outputs.",
+    "A later adapter may be served only under a separately ratified protocol; this proposal establishes transport provenance, not serving authority.",
+    "Temporary tail, recalled text, pending prediction, KV/cache, and candidate successor memory are working state; omission from a render is not ledger deletion."
+  ],
+  "change_id": "chg_20260906_prospective_nursery_trace_contract_v1",
+  "claim_delta_interpretation": "The proposal adds only bounded engineering claims about prospective causal-trace enforcement and provenance. It permits later life-level attribution only for records captured along the specified path, while explicitly withholding claims about teachability, disposition transfer, task or continual learning, parenting benefit, model capability, and Experience Models performance. Adapter receipts can show transport of admitted targets into parameters, not discovery. Discovery remains attributable, if at all, to the complete organism and its recurrent action, outcome, retrieval, reconciliation, and revision history.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/human_directive.txt",
+      "purpose": "Verbatim directive and binding CPU/schema-only scope.",
+      "sha256": "089b23c63525c85e85a8fe3fac1d37e216125f898175f7b8b2f8fbeab0dae1aa"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Project deliberation, ratification, and GPU/scientific-claim gate.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden scope.",
+      "sha256": "0e5b6bbe829bcf260d17f00e8d5e39abef2d090a4d53f12db2310d17a4015c98"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Prospective event contract, roles, invariants, and tests.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/plans/parenting_nursery_v0.md",
+      "purpose": "Later nursery lifecycle and assay candidate.",
+      "sha256": "46b3254b63c0fe09391449e984f7f8376a296ce24b82da902c68581ac34e7e6f"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_static_audit_v1.md",
+      "purpose": "Static failure analysis and prospective requirements.",
+      "sha256": "97dd3e3135afbd9136e0170c993033fe6838dc63cf55db17db63ddf6a3abe615"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_live_artifact_audit_v2.md",
+      "purpose": "Live-artifact limitations and next valid scout.",
+      "sha256": "ae64f9ee688405986e5df001686c6065bffb338bae73711727cb91b62d70d7b0"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Long-run mechanism and provenance audit.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy stop decision and transferred collection laws.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "Current lived-agent behavioral framing.",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Current free-flow lived action/outcome loop.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/state.py",
+      "purpose": "Current conscious-state rendering and persistence model.",
+      "sha256": "e67ea71c18ef31082be6d2b56fa6004c29af08d8935669ce5099e6c26da429af"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Current append-only ledger and retrieval behavior.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Current generation backend constraints and provenance gaps.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_nine_events_vs_rejection_events",
+      "proposed_resolution": "Keep rejection events and CPU/capability receipts outside the nine-event life ledger, while defining their artifact relationship and error-code vocabulary in later implementation scope.",
+      "rationale": "The proposal says the ledger has nine closed event types but also describes separate immutable rejection events. Adding a tenth event would alter sequence semantics without an explicit ratified delta.",
+      "statement": "The proposal is internally ambiguous about whether rejected sleep examples are causal ledger events or auxiliary receipts; this interpretation does not silently resolve them as in-contract events."
+    },
+    {
+      "disagreement_id": "D2_dream_producer_vs_publisher",
+      "proposed_resolution": "Require explicit authority-controlled validation/publication binding, either through separate records or exact fields/signatures within DREAM_SUCCESSOR.",
+      "rationale": "A child-produced candidate and a DREAM execution role have different capabilities, and pointer publication is the control point for current-state mutation.",
+      "statement": "The proposal treats DREAM_SUCCESSOR as child-produced but also executed and validated under DREAM without fully specifying the producer/publisher boundary."
+    }
+  ],
+  "graph_delta_interpretation": "The graph replaces the legacy untyped stream-to-parser path with a prospective causal DAG rooted in one life-owned append-only hash chain. HARNESS materializes exact context bytes, IDs, manifests, state version, and admitted earlier events. CHILD produces free-form THINK bound to that render; prose alone cannot dispatch. A structured TOOL_CALL_PROPOSED is the sole action route, and ENVIRONMENT atomically joins it to reset identity, parsed indices, state hashes, measurements, and public score. PARENT reads only earlier public training evidence and emits process-only feedback; CHILD records a separate restatement and any later action/outcome. DREAM selects earlier same-life evidence, derives a complete candidate state with explicit omissions and predecessor, validates restoration, and only then advances the context pointer. COMPILER derives masked-input/child-origin-target sleep examples; TRAINER derives an adapter receipt over their exact ordered set. EVALUATOR later consumes sealed evaluation material and the exact adapter, while REPORTER is a causal sink. The material change is the addition of evidence-bearing, role-scoped boundaries rather than new cognitive modules.",
+  "human_boundary": {
+    "open_questions": [
+      "Rohin must exactly ratify the hash-bound bytes and limited CPU/schema/fixture-only scope before implementation.",
+      "A later deliberation must specify benchmark tasks and splits, live-life collection, parent content, training, adapter serving, evaluation, and scientific endpoints.",
+      "Implementation must settle event/rejection status, DREAM authority, feedback cutoff, call cardinality, and numerical budgets before those become fixed behavior."
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_prospective_nursery_trace_contract_v1.systems",
+  "loop_delta_interpretation": "The lifetime is bounded recurrence with immutable evidence accumulation and selective declarative state carry-forward. In each live episode, HARNESS reads the validated conscious-state pointer, admitted earlier evidence, and sealed training state; it renders exact input bytes/IDs, and CHILD performs free THINK under token/chunk and episode budgets. A typed call, when produced, is a goal-directed action proposal; ENVIRONMENT observes only that call and writes one atomic public result. The loop stops at valid DONE or budget exhaustion, with malformed calls, stale state, and failed joins rejected rather than silently treated as success. Parent feedback begins only after an admissible public training boundary. PARENT proposes process credit from earlier visible evidence; CHILD restates it and may test it through a separately valid action/outcome. Advice remains distinct evidence until the prebound admission rule supports consolidation. DREAM is periodic reconciliation, not every response or a one-shot answer generator: it reads selected closed evidence, derives a complete successor, declares omissions, proves restoration, and atomically swaps the pointer or leaves the predecessor current. This supports local declarative connection growth or memory re-expression, but does not guarantee breadth growth or add a dream learner. SLEEP occurs after closed evidence: COMPILER selects examples and derives masks, spans, labels, and child-origin targets; TRAINER performs a separately authorized update and writes an adapter receipt. The adapter is parametric transport/consolidation state relative to the base, not an explicit declarative node or autonomous discoverer. Later evaluation is a terminal reporting path with no feedback into life, dream, parent, compiler, trainer, or intake. Module-level credit is localized by joins\u2014outcome to call, feedback to evidence, dream to selected events, examples to source/target spans, and adapter metadata to examples\u2014but whole-organism credit remains a later behavioral question. Retrieval is selective and role-scoped. Tail text, recalled text, pending predictions, KV state, and unselected successor content are temporary or omitted working state; ledger evidence is retained, and failed candidates do not mutate the predecessor pointer.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The proposal preserves a minimal organismal thesis: recurrent lived action/outcome episodes produce public evidence; selective retrieval and dream-time reconciliation re-express declarative conscious state; sleep-time compilation and low-rank training transport admitted behavior into parametric state. THINK remains free-flowing. Typed tools separate effectful action authority from prose without creating a learned planner. DREAM uses the same child model/weights as a reconciliation role, not a separate learned module. SLEEP is selection/transformation plus write. Goal-directed path construction belongs to typed action proposals and organism-level planning/revision; dream-time breadth-like association is only a supported interpretation of local evidence re-expression, not a guaranteed property. Declarative nodes are ledger records, rendered receipts, outcomes, feedback/restatements, successor states, sleep examples, and adapter metadata. Active state and retrieved/tail text are working projections; LoRA tensors are parametric state. Attribution therefore belongs to the complete organism, with receipts localizing transport and provenance but not granting discovery to the adapter, parent, compiler, or dream role.",
+  "visibility_matrix_interpretation": "Visibility is a role-root capability contract, not prompt omission. HARNESS sees current state and explicitly admitted earlier event bytes and renders exact context. CHILD sees that render, not sealing metadata or evaluation material. ENVIRONMENT sees one sealed training task/reset identity and one typed call, then emits public measurements. PARENT sees only an earlier declared public training trace and fixed process rubric; hidden targets, evaluation data, and later outcomes are unavailable. CHILD_RESTATEMENT receives exact feedback plus lawful public evidence. DREAM sees a selected closed same-life set and predecessor reference. COMPILER sees closed training-life evidence and admission support, deriving examples where ledger, outcome, old transcript, and parent text are masked inputs and only validated child thought, typed-call, or dream-state bytes are targets. TRAINER sees exact ordered examples and training manifests, never raw evaluation or target roots, and writes adapter state/receipt. EVALUATOR sees only a sealed evaluation task, ordinary birth state, and exact adapter. REPORTER sees authorized aggregates and cannot route output into any earlier or future intake. Direct, derived, and forbidden visibility must be enforced by capability manifests with symlink and traversal defenses. Temporal eligibility is separate from role readability: future, unobserved, hidden-answer, cross-life, or undeclared evidence remains ineligible even if a role could technically read its storage."
+}

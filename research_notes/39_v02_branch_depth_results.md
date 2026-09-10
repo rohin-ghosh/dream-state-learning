@@ -5,9 +5,10 @@ Date: 2026-08-26. Branch: `semantic-world-v02`.
 ## Headline
 
 The repaired D3 diagnostic is solvable by a verifier-free frozen-model system
-when thinking is factored into inspectable atomic branches and recurrent
-compression. With Qwen2.5-32B-Instruct, the system discovers the exact hidden
-parent set in 35/36 targets across aligned seeds 0-2. On the two untouched
+when thinking is factored into exhaustively enumerated, inspectable atomic
+branches followed by branch revisit/compression. With
+Qwen2.5-32B-Instruct, the system discovers the exact hidden parent set in
+35/36 targets across aligned seeds 0-2. On the two untouched
 replication seeds, the frozen finishing protocol reaches 23/24 final answers
 (.958) against a 1/12 (.083) per-seed floor.
 
@@ -139,9 +140,11 @@ releasing the GPU lease.
 - Higher-order structure can be produced without an exact in-loop verifier:
   operator memory -> branch memories -> parent memory -> role read -> unseen
   consequence.
-- The user's tree-growth intuition is operational: reliable depth came from
-  revisiting many local memory states and extending them one proof leaf at a
-  time, not from one very long chain.
+- Under an exhaustive external controller, the user's tree-growth intuition has
+  a computational ceiling: reliable depth came from revisiting many local
+  branch states and extending them one proof leaf at a time, not from one very
+  long chain. This is not yet evidence that a dreamer selects those local
+  extensions efficiently or grows them from its own evolving memory.
 - Dreamer/thinker scale has a measured effect once state representation and
   reads are sound.
 - Recognition/canonical reads remain part of the intelligence. Free generation

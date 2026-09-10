@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.claim_dependency_map.v1",
+  "family": {
+    "procedure": "holm_step_down",
+    "members": ["PPC5_D1A_SUPPORTED_SELECTION", "PPC5_D1B_RECURRENT_PATH_USE", "PPC5_D1C_DREAM_CONTEXT_VALUE", "PPC5_D1D_DREAM_SLEEP_SELECTION_VALUE"],
+    "finite_label_rule": "intersection_only_all_four_release",
+    "finite_label_is_mediation": false
+  },
+  "claims": [
+    {
+      "claim_id": "PPC5_D1A_SUPPORTED_SELECTION",
+      "release_text": "An isolated evidence-gated READ-LoRA improved candidate-conditioned selection of supported public records from a complete external candidate table.",
+      "required_tests": ["PPC5R2_T02", "PPC5R2_T05", "PPC5R2_T06", "PPC5R2_T11", "PPC5R2_T14"],
+      "required_cells": ["READER_LORA", "ADAPTER_OFF", "WRONG_LIFE_ADAPTER", "OUTCOME_SHUFFLED_READER"],
+      "missing_rule": "worst_case_bound_and_limit",
+      "headline_eligible": false
+    },
+    {
+      "claim_id": "PPC5_D1B_RECURRENT_PATH_USE",
+      "release_text": "A frozen recurrent policy used every returned local edge in a presealed decisive path to improve a later action.",
+      "required_tests": ["PPC5R2_T03", "PPC5R2_T07", "PPC5R2_T08", "PPC5R2_T11", "PPC5R2_T14"],
+      "required_cells": ["AUTHENTIC_PATH", "EVERY_EDGE_CUT", "EVERY_EDGE_TWIN", "SHAM_INTERVENTION", "ONE_SHOT_READ", "OPEN_LOOP"],
+      "missing_rule": "worst_case_bound_and_limit",
+      "headline_eligible": false
+    },
+    {
+      "claim_id": "PPC5_D1C_DREAM_CONTEXT_VALUE",
+      "release_text": "A frozen same-model DREAM call selected a working context that improved subsequent action relative to prospective recipient-local context policies.",
+      "required_tests": ["PPC5R2_T04", "PPC5R2_T09", "PPC5R2_T11", "PPC5R2_T14"],
+      "required_cells": ["AUTHENTIC_DREAM_CONTEXT", "RECENCY_CONTEXT", "PERMUTED_CONTEXT"],
+      "missing_rule": "worst_case_bound_and_limit",
+      "headline_eligible": false
+    },
+    {
+      "claim_id": "PPC5_D1D_DREAM_SLEEP_SELECTION_VALUE",
+      "release_text": "Frozen same-model DREAM selected public evidence roots whose evidence-gated READ writes improved supported selection and downstream action relative to prospective recipient-local root policies.",
+      "required_tests": ["PPC5R2_T02", "PPC5R2_T04", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T14"],
+      "required_cells": ["DREAM_TO_SLEEP", "RECENCY_TO_SLEEP", "HASH_PERMUTED_TO_SLEEP"],
+      "missing_rule": "worst_case_bound_and_limit",
+      "headline_eligible": false
+    }
+  ],
+  "finite_label": {
+    "claim_id": "PPC5_FINITE_MECHANISM_ONLY",
+    "release_text": "All four separately identified PPC5 component assays passed: supported candidate selection, recurrent every-edge path use, frozen DREAM context value, and DREAM-guided evidence selection.",
+    "required_component_claims": ["PPC5_D1A_SUPPORTED_SELECTION", "PPC5_D1B_RECURRENT_PATH_USE", "PPC5_D1C_DREAM_CONTEXT_VALUE", "PPC5_D1D_DREAM_SLEEP_SELECTION_VALUE"],
+    "headline_eligible": true,
+    "forbidden_interpretation": "This label is not an end-to-end mediation result and does not establish learned THINK, learned DREAM, continual improvement, prospective abstraction, a flywheel, parenting, populations, inheritance, or scaling."
+  },
+  "global_blockers": ["CONSTRUCTION_FAIL", "RUN_INVALID", "unpassed_required_test", "missingness_above_locked_limit"],
+  "forbidden_aliases": ["closed-book memory", "closed-book storage", "autonomous recall", "learned THINK", "learned DREAM", "continual learning", "schema compression", "lifetime scaling", "flywheel", "parenting", "population learning", "cultural inheritance"]
+}

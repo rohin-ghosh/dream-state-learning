@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260901_rml_pilot_v1",
+  "state": "proposal_only",
+  "human_ratification_required": true,
+  "requested_scope": [
+    "analysis:rml_pilot_v1_dev_gate_evidence",
+    "gpu:rml_pilot_v1_gold_thinker_and_text_compiler_dev",
+    "gpu:rml_pilot_v1_lora_transport_dev_after_text_gate",
+    "implementation:rml_pilot_v1_cpu_world_and_dev_gate_harness",
+    "testing:rml_pilot_v1_pre_gpu_and_stage_gates"
+  ],
+  "forbidden_scope": [
+    "claim:benchmark_scientific_paper_performance_or_headline_result",
+    "external:publication_outreach_submission_sync_or_remote_action",
+    "gpu:locked_calibration_confirmation_on_policy_or_scale_run",
+    "gpu:lora_transport_before_cpu_gold_thinker_and_text_gates",
+    "human:credential_quota_lease_or_spend_change",
+    "science:additional_mechanism_pack_locked_world_or_confirmation",
+    "science:automatic_promotion_threshold_relaxation_or_postresult_repair",
+    "science:on_policy_flywheel_or_loop_adapter_training"
+  ],
+  "authorization_effect": "None before exact human ratification of the eventual paused deliberation. Exact ratification may authorize only the staged one-pack DEV pilot: CPU world/validity implementation and tests first; then bounded gold-thinker and learned-text DEV model calls; then, only if the registered CPU, gold-thinker, and text gates pass, a separately gated same-corpus LoRA transport DEV run. It does not authorize locked calibration or confirmation, on-policy work, claims, publication, outreach, sync, credentials, leasing, spending, or any other external action."
+}

@@ -1,0 +1,132 @@
+{
+  "acceptance_test_ids_addressed": [
+    "AT01_environment_and_leakage_fit",
+    "AT02_atomic_memory_contract",
+    "AT03_common_deck_isolation",
+    "AT04_mechanism_and_baseline_suite",
+    "AT05_constructive_action_and_revision",
+    "AT06_on_policy_flywheel",
+    "AT07_independent_review_gate"
+  ],
+  "acceptance_test_interpretation": "AT01 tests whether a candidate life can supply reusable, non-leaking, action-relevant cross-episode evidence; it measures benchmark feasibility, not memory benefit. AT02 tests the memory write/read substrate and per-life reset isolation, but does not establish constructive action. AT03 tests that fixed-deck checkpoint differences can be attributed to representation/use rather than experience, transient state, evaluation feedback, or resources. AT04 tests whether the advertised causal stages and substrates are necessary under matched budgets; it supports decomposition only if each control is actually implementable equivalently. AT05 tests the behavioral endpoint: later A2-A4 action, revision, calibration, and provenance after commitment; its advertised constructive interpretation depends on the as-yet-unselected world's dependency and shortcut gates. AT06 tests the additional organism-level feedback path, requiring memory-caused action-selection changes, public outcomes, later dream eligibility, and swap-based separation of collected experience from representation/use. AT07 tests procedural validity and claim scope through fresh review; it does not itself establish a positive scientific result.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A01_semantic_store_ownership",
+      "impact": "The proposal names prior semantic memories, status updates, compiled examples, and multiple access views, but no explicit persistent semantic-memory node distinct from the audit shadow, episodic store, or LoRA. Lifecycle, wake-readable interface, retention, and reset semantics are therefore underdetermined.",
+      "question": "What concrete per-life object holds compiler-produced semantic/status records and access views, which stages can read it, and whether it is an evaluated baseline-visible external memory?"
+    },
+    {
+      "ambiguity_id": "A02_eligibility_and_validation",
+      "impact": "Eligible lived evidence, supported shortcuts, contradiction handling, and compiler acceptance determine whether dream proposals can affect later learning, but the non-oracular acceptance rule is not bound.",
+      "question": "What public-data-only rule changes a proposal from provisional to compiler-eligible, and how are unsupported or contradicted proposals retained, excluded, or later revised?"
+    },
+    {
+      "ambiguity_id": "A03_schedule_budgets_and_retries",
+      "impact": "Geometric checkpoints, sleep compute, read/query limits, action density, practical margin, predictor floors, and retry/defer policy are named but not quantified. Results cannot yet be resource-matched or preregistered.",
+      "question": "What exact checkpoint series, per-stage budgets, retry limits, scheduler priorities, and stop/defer rules apply to every arm?"
+    },
+    {
+      "ambiguity_id": "A04_benchmark_and_construct_mapping",
+      "impact": "No Level-1 world or Level-2 primary target is selected, so A0-A4 labels, dependency depth, public outcome timing, and shortcut predictors have no executable mapping.",
+      "question": "Which approved world operationalizes each capability tier and which target-only/current-state/identifier probes certify that its A2-A4 tasks require the claimed cross-episode structure?"
+    },
+    {
+      "ambiguity_id": "A05_on_policy_swap_protocol",
+      "impact": "The experience/representation swap is conceptually specified but does not say how action-conditioned state trajectories can be replayed or transferred without creating impossible counterfactuals or leaking branch outcomes.",
+      "question": "What exact cloning, branching, and swap interface preserves public causality, fixed action budgets, and each system's reset-isolated state?"
+    }
+  ],
+  "architecture_change_sha256": "dd8909135951a6d8cb311335f32ed3553eba2fa1e98782c9d4bedcaad74ff2c1",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "A life is isolated by world/life identity and begins with a frozen base, null/new MEMORY adapter, empty episodic store, cleared working state/cache, and no reused per-life semantic state.",
+    "A public environment outcome becomes eligible lived evidence only after the agent has acted or committed; a checkpoint evaluator's answer/outcome never becomes such evidence.",
+    "Dream proposals are not facts merely because they are generated: only compiler-accepted, provenance-bearing material can train the MEMORY adapter or become a wake-readable status-typed memory.",
+    "The initial system uses fixed prompted wake/dream/scheduler behavior; L05 is a separately approved future extension and cannot explain an initial within-life result.",
+    "The fixed common deck supplies an identical ordered lived stream to all arms and evaluates snapshots without altering the stream or future state."
+  ],
+  "change_id": "chg_20260901_developmental_experiential_learning_v1",
+  "claim_delta_interpretation": "C01 changes the headline from prerequisite diagnostics to a conditional, post-context behavioral growth claim over whole lives. C02 restricts component credit: the LoRA persists lossy compiler-produced associations and shortcuts; declarative tokens, episodic traces, and temporary workspace reconstruct multi-hop paths; dream/compiler propose and validate local structure. C03 requires an observed sustained crossover rather than immediate or monotone LoRA superiority. C04 permits an on-policy claim only for the combined organism after swap-based causal isolation. C05 makes named null, shuffle, leakage, resource, and false-memory outcomes claim-narrowing evidence rather than failures to omit.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_experiential_learning_v1/human_directive.txt",
+      "purpose": "Verbatim directive.",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "purpose": "Proposal.",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Thesis and experiment map.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "purpose": "Project thesis context.",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da"
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "purpose": "Claim and gate boundaries.",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c"
+    },
+    {
+      "path": "research_notes/11_baselines_benchmarks.md",
+      "purpose": "Benchmark and baseline requirements.",
+      "sha256": "dbd3afb70c3e03fbacbac479777ddea1e05bfc846bff92ec0f7f9ef0dd8272c6"
+    },
+    {
+      "path": "research_notes/03_agent_memory_benchmarks.md",
+      "purpose": "Memory benchmark survey.",
+      "sha256": "1baa02810c51c5e1826fdb5f7059290353dc5d4df61582276b034e85656458da"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Evidence and limitations.",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    },
+    {
+      "path": "alchemy/v2_out/mini_ledger.md",
+      "purpose": "L0 audit ledger.",
+      "sha256": "a0a077c6276d461864de5a67bd5c360f595e90d374cb9e2963c0ed39328c9549"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D01_semantic_graph_separation_not_fully_realized",
+      "proposed_resolution": "Specify a reset-isolated semantic/status store and its wake interface, or revise the graph/loop language to state that compiler outputs exist only as training material plus audit metadata.",
+      "rationale": "L02 reads and updates prior semantic memories, while E04-E05 describe semantic growth and compilation, but the graph contains no destination node that owns those memories. The audit shadow is expressly non-cognitive and the LoRA is expressly not a literal graph.",
+      "statement": "The proposal states that semantic graph growth and parametric transport are separate causal stages, yet the proposed graph does not fully represent the non-parametric semantic stage as an operational state object."
+    },
+    {
+      "disagreement_id": "D02_AT04_does_not_by_itself_measure_all_advertised_links",
+      "proposed_resolution": "Bind per-control corpus interfaces, capacity accounting, query/read policy, and a declared expected directional contrast for each causal stage before execution.",
+      "rationale": "A broad table can detect some substitutions and shuffles, but cannot uniquely decompose trace selection, recurrent local growth, compiler materialization, LoRA transport, and reconstruction unless controls preserve the relevant inputs and expose stage-level measurements.",
+      "statement": "AT04's ablation table is necessary but insufficiently specified to ensure that every claimed mechanism link is measured rather than jointly perturbed."
+    },
+    {
+      "disagreement_id": "D03_AT07_is_a_gate_not_empirical_validation",
+      "proposed_resolution": "Keep AT07 as an independent procedural/attribution gate and treat AT01-AT06 evidence, not reviewer passage, as the source of empirical support.",
+      "rationale": "Independent review can establish adherence, missing evidence, and claim alignment, but it cannot independently make a benchmark fit, action gain, or on-policy effect true.",
+      "statement": "The proposal's wording that AT07 falsifies invalid promotion is appropriate, but its expected reviewer verification should not be interpreted as a measurement of the behavioral mechanism."
+    }
+  ],
+  "graph_delta_interpretation": "A life emits only public action, observation, outcome, and provenance into an immutable per-life episodic store (E01). Wake retrieves bounded exact support from that store (E02) and lossy associative candidates from the per-life LoRA (E06), then explicitly constructs a cited, goal-conditioned dependency path before acting or deferring (E07). Deferral writes a non-evidentiary unresolved agenda, not a fact. At scheduled sleep boundaries, selected public traces plus that agenda enter dream resolution (E03); dreaming grows local relations, procedures, exceptions, alternatives, uncertainty, and shortcut proposals with provenance (E04). Compilation canonicalizes and deduplicates accepted material before rebuilding the sole learned per-life parameter object from the clean base (E05). Exact episodes remain non-parametric; explicit workspace is temporary; the adapter is lossy and not an answer database. Append-only audit records observe provenance and status without becoming a cognitive solver (E08), while offline scoring may compare commitments only after the relevant boundary (E09). Frozen snapshots feed read-only evaluation whose outcomes are discarded (E10).",
+  "human_boundary": {
+    "open_questions": [
+      "Does Rohin ratify the exact proposed bytes and implementation scope after resolving benchmark choice, semantic-store interface, visibility rules, schedule, budgets, predictor floors, practical margin, held-out ordering, and baseline realizations?",
+      "Does Rohin approve whether L05 remains excluded from the initial study and whether any proposed public-data validation rule for dream proposals is within the claimed non-oracular boundary?"
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260901_developmental_experiential_learning_v1.systems",
+  "loop_delta_interpretation": "L01 is the fast within-episode cognitive loop: visible current public state/goal, bounded workspace, episodic support, and adapter candidates are read; the resolver performs narrow goal-directed dependency traversal, commits or acts, appends public outcomes, revises after contradiction, and stops on outcome, supported action, irreducible missing dependency, budget exhaustion, or defer. An attempt and its later public outcome can affect a future dream only after that outcome is appended to the episodic trace; an unresolved agenda can direct attention but cannot supply evidence. L02 is the medium within-life consolidation loop at geometric checkpoints: it selects eligible traces, may replay broadly and recurrently to connect local evidence, records typed uncertain proposals, compiles accepted content, and cumulatively rebuilds the MEMORY LoRA from the clean base within its sleep budget. It ends by declared compute/agenda/eligibility/scheduler limits, never an evaluation label. L03 freezes state, clears transient context/cache, evaluates a sealed held-out deck, and resumes from the pre-evaluation state; it isolates representation/use from exploration. L04 is a later complete-organism loop under fixed action budgets: memory can alter information-seeking actions, public outcomes can become later L02 inputs, and swaps separate experience collection from memory representation/use. L05 is a slower cross-life controller-learning extension: development-world trajectories may train a distinct LOOP adapter, which must be frozen in evaluation lives and cannot carry prior-life MEMORY, episodic, cache, or workspace state.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The organism's proposed source of lifetime improvement is a temporal division of labor: action produces public evidence; immutable episodic memory preserves exact evidence; dream-time recurrence proposes and revises local connected semantic/procedural structure; compilation makes selected forms trainable; a reset-isolated MEMORY LoRA persists lossy associations across context loss; and wake-time explicit reconstruction turns candidates plus exact support into new plans and actions. Breadth-like growth belongs to dream's local connection/replay regime, while thinking is goal-directed path construction in temporary tokens. Credit is therefore distributed: module-level tests may credit trace eligibility, read fidelity, connection growth, compilation, transport, or resolver use, whereas action and flywheel claims belong only to the whole causally isolated organism.",
+  "visibility_matrix_interpretation": "Wake may see current public state/goals, bounded episodic support, and declared adapter reads, but never held-out answers, branch outcomes before action, offline truth, solver outputs, checkpoint labels, or uncompiled dream drafts. Episodic storage receives public acted/observed traces, not evaluator outcomes or hidden truth. Sleep selection/dream/compile may consume only eligible public traces, status/provenance, and a non-evidentiary agenda; they cannot use hidden answers, offline solvers, or evaluation metrics. The compiler may preserve provenance and uncertainty but cannot encode the wake workspace as an answer or task policy. The MEMORY adapter receives only compiler-produced associations via its declared write interface, is rebuilt per life from a clean frozen base, and returns candidates rather than exact episodes/final answers. The audit shadow and offline scorer may observe commitments and hidden truth only after commitment; neither can steer cognition. Checkpoint evaluation may read frozen memory and private answers internally but must clear transient state, seal outputs, and discard them from the life. Cross-life MEMORY, episodic, cache, and working state are forbidden; a frozen LOOP adapter is only a separately approved future controller input."
+}

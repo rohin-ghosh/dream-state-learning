@@ -1,0 +1,419 @@
+{
+  "architecture_change_sha256": "8e5cea0bc6d24823db21a728aac78cbb6ae2aebee7b94c4b5a41b7df659a9d6b",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v2",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT4_reproducibility_canaries",
+        "AT8_bootstrap_visibility_and_copying",
+        "AT9_visibility_oracle_partition",
+        "AT11_authority_stage_acyclicity",
+        "AT12_independence_fault_injection",
+        "AT13_seal_atomicity_and_quarantine"
+      ],
+      "category": "operations",
+      "concern_id": "C01_a2_internal_gpu_gate_missing",
+      "evidence": "A2 simultaneously authorizes real target sealing and GPU canaries, while AT3, AT8, AT9, AT12, and AT13 are marked required before gpu_run. AT11 only rejects sealing or canaries before A2; it does not encode receipt dependencies inside A2. Thus B0 GPU training can be A2-authorized before the static visibility checks, synthetic seal faults, real seal agreement, and publication receipt pass. AT4 is marked required before scientific_claim rather than before A3 promotion.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The human authority DAG is acyclic, but the executable command/receipt DAG is not specified tightly enough to prevent premature GPU canaries or A3 promotion."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT11_authority_stage_acyclicity"
+      ],
+      "category": "operations",
+      "concern_id": "C02_preimplementation_test_cycle",
+      "evidence": "AT1 is required before implementation but its setup requires running two newly authored extractors. A0 is the authority that permits authoring those extractors. AT11 is likewise required before implementation although its validator may itself need to be implemented. The artifact does not define a narrower meaning such as before tokenizer or model-path implementation.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The required_before metadata creates a test-versus-implementation cycle unless implementation stages are explicitly distinguished."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT2_target_matching",
+        "AT15_claim_state_machine"
+      ],
+      "category": "evaluation",
+      "concern_id": "C03_corpus_feasibility_floors_unasserted",
+      "evidence": "The bound v0 plan requires, per life, at least 64 unique continuations, 4,096 supervised target tokens, four ACT payloads, maximum payload share at most 80 percent, and no C2 truncation. AT1 checks row grammar and extraction agreement; AT2 checks C1/C2 equality and reports totals. Neither expected result asserts these minimums or requires failure to enter an invalid state.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The acceptance registry can go green with a corpus that violates the frozen feasibility floor."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT8_bootstrap_visibility_and_copying",
+        "AT9_visibility_oracle_partition",
+        "AT10_prompt_serving_roundtrip"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C04_full_policy_byte_scan_missing",
+      "evidence": "AT8 names the bootstrap and renderer and permits concrete pass names characterized as immutable syntax/task metadata. It does not unambiguously require scanning the complete target-specific policy-visible token sequence after chat-template application, including template-added text and special-token decoding. The supplied legacy bootstrap demonstrates how a concrete pass example can launder an action directly into policy context.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The repaired scanner still has a classification and coverage loophole through which answer-like pass text could enter the served prompt."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT9_visibility_oracle_partition",
+        "AT10_prompt_serving_roundtrip"
+      ],
+      "category": "evaluation",
+      "concern_id": "C05_target_dispatch_scoring_roundtrip_missing",
+      "evidence": "AT3 hashes reset-state modules during sealing, while AT10 ends at the strict-parser result. No test requires the scorer's fresh reset to reproduce the sealed module hash or binds the exact parser payload to the pass vector consumed by CompilerGym and the resulting I0/I1. The supplied gym_backend.py resolves a mutable external interpreter path and rewrites action spaces and commas before dispatch, so a wrong module, environment, or normalization can survive the prompt round trip.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The assay does not end-to-end prove that the sealed prompted target and parsed action are the module and action actually scored."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT4_reproducibility_canaries",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT10_prompt_serving_roundtrip"
+      ],
+      "category": "operations",
+      "concern_id": "C06_nonzero_adapter_serving_canary_absent",
+      "evidence": "AT4 duplicates B0/C1 and B0/C2 training but duplicates serving only for C0; zero-delta LoRA exercises a base-equivalent mount. AT10 checks IDs and adapter identity once per request, not repeatability of generation with a nonzero adapter. Adapter-specific kernels, mounting, or decoding can therefore be nondeterministic even when base serving and trained tensor hashes are deterministic.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The reproducibility canary does not exercise duplicate nonzero-LoRA serving, although all scientific endpoints depend on it."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT15_claim_state_machine"
+      ],
+      "category": "scientific",
+      "concern_id": "C07_invalid_action_abstention_shortcut",
+      "evidence": "Missing, malformed, empty, and evaluator-rejected actions score zero, while valid worsening actions remain negative. Strict-marker rate counts syntax, not evaluator acceptance. A cell can therefore improve mean score by emitting strict-looking invalid actions or otherwise converting harmful executable actions into zero-scored abstentions, while satisfying the marker criterion. No registered endpoint reports evaluator-valid action rate or decomposes gains into accepted positive actions, accepted worsening actions, and rejection/abstention.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "A registered positive can reflect rejection avoidance rather than a more useful executable action prior."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT13_seal_atomicity_and_quarantine"
+      ],
+      "category": "statistics",
+      "concern_id": "C08_salt_commitment_provenance_missing",
+      "evidence": "The panel is the first 64 classes under a human-ratified salt, but neither AT3 nor AT13 proves that the salt was generated once from an independent committed source before anyone enumerated the public dataset or tried candidate salts. Salt search can act as a post-hoc panel selector without inspecting scores directly.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Salted ordering is non-adaptive only if salt generation and single-use commitment have auditable provenance."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT13_seal_atomicity_and_quarantine",
+        "AT15_claim_state_machine"
+      ],
+      "category": "operations",
+      "concern_id": "C09_real_seal_access_attestation_gap",
+      "evidence": "AT13 fault-injects synthetic sealing logic before real enumeration. AT3 requires agreement on enumeration and final panel but does not explicitly require the real access logs, write-ahead exposure records, atomic publication transition, and absence of unexpected reads to be validated. A synthetic implementation pass does not prove that the real seal avoided exposure.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Real sealing needs a fail-closed access/publication receipt, not only synthetic atomicity tests and final-output agreement."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C10_uri_and_pretraining_shortcut_remains",
+      "evidence": "Canonical target URIs remain in the served prompt. Content-hash exclusion is only against the bound project contamination manifest and cannot establish semantic novelty, opaque identity, or absence from base pretraining. C0 controls the base policy but does not identify why adaptation changes URI- or family-conditioned behavior.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "A positive result remains compatible with URI/family cues, pretrained compiler knowledge, and a generic pass prior; it is not evidence of semantic generalization or memory-path use."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT14_no_writeback_no_autoingestion"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C11_offline_selection_is_not_online_evidence",
+      "evidence": "Historical outcomes, scores, and earlier comparisons causally select frozen continuations after the fact. Evaluation performs one action and quarantines the outcome, with no later eligible write, dream transformation, or subsequent policy decision. Reusing self-generated text is synthetic re-expression of existing evidence, not a new observation.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The assay tests offline supervised adaptation to oracle-selected traces, not online action/outcome learning or continual improvement."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT7_claim_ceiling"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C12_memory_growth_language_overstates_object",
+      "evidence": "N_dual_extraction describes dream-like local connection growth/re-expression and E2 refers to dream-time/local re-expression evidence, yet extraction only resolves attachments and selects existing historical rows. It creates no persistent memory variants or organism connections. Both independent interpretations explicitly dispute growth or organism-level consolidation language.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The architecture prose risks confusing provenance-preserving selection with memory growth and assay-local LoRA adaptation with organism consolidation."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "architecture",
+      "concern_id": "C13_wrong_module_scope_is_deliberately_unmeasured",
+      "evidence": "The writer is asked only for one first ACT from empty recalled state. No parent structure, retrieved path, plan, revision, or recurrent dream-memory-think iteration is requested. This is coherent for a writer floor, but nothing may be credited as emerging across the omitted modules.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "There is no wrong-module defect for the narrow endpoint, but the assay provides no evidence about emergent parent structures or complete-organism cognition."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT2_target_matching",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "scientific",
+      "concern_id": "C14_memory_substrate_and_compute_ablation_absent",
+      "evidence": "C1 and C2 compare BOS-only and neutral-chat-prefix LoRA training with matched target tokens and updates but unequal context length, positions, and FLOPs. There are no fixed-budget raw-text, RAG, explicit-graph, LoRA, or thinker-compute conditions and no bridge, recurrence, or connectivity intervention.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The design cannot compare memory substrates, separate thinker computation from transport, or establish memory-path necessity."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "scientific",
+      "concern_id": "C15_causal_corpus_baselines_absent",
+      "evidence": "C0/C1/C2 omit matched non-improving, unrelated, action-shuffled, marker-only, and birth-payload-controlled corpora. Birth-payload exclusion is diagnostic and B0/B1 have fewer than 64 remaining rows. Consequently outcome selection, useful action content, generic continuation training, and strict-marker imitation are not separately identified.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Only the exact prefix-package and total selected-corpus-package contrasts are defensible; no corpus component receives causal credit."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "evaluation",
+      "concern_id": "C16_endpoints_do_not_distinguish_cognitive_capabilities",
+      "evidence": "AT5 and AT6 measure only strict first-action score and marker rate. Retrieval is empty, no graph is mounted, no multi-step plan or revision is permitted, and content-hash disjointness is not a semantic split. The suite therefore measures action/interface behavior but cannot distinguish recall, composition, generalization, or planning.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Green endpoint tests must not be narrated as evidence for unmeasured cognitive capabilities."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C17_repeat_state_not_policy_visible",
+      "evidence": "The long-run audit shows a 67-program sequence repeated 15-16 times. Extraction preserves occurrence ordinals, but C1/C2 inputs contain only continuation tokens and evaluation starts from empty state. Repeat index, earlier occurrence, and intervening outcomes never condition the policy.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The three source lives cannot support a claim that the policy learned across repeat blocks or used recurrent episode state."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT4_reproducibility_canaries",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT15_claim_state_machine"
+      ],
+      "category": "statistics",
+      "concern_id": "C18_scale_and_replication_ceiling_needs_explicit_words",
+      "evidence": "The three lives share model, bootstrap, and repeated curriculum and are not independent population draws. The 64-target panel is one salt-selected finite panel, and same-seed canaries test determinism rather than robustness. Although CL1 says exact sealed panel, AT7's explicit exclusion list does not name scaling, population inference, lifetime-length effects, seed robustness, or hardware robustness.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The fixed report vocabulary should explicitly prohibit scaling, replication, robustness, and population claims rather than relying only on the phrase exact panel."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT7_claim_ceiling",
+        "AT11_authority_stage_acyclicity"
+      ],
+      "category": "architecture",
+      "concern_id": "C19_control_plane_hazards_unexercised",
+      "evidence": "The active assay has no competing thinker branches, release transition, semantic ancestry graph, or policy-visible repeat block. AT11 validates only the exact linear authority chain, so it cannot detect release from an abandoned thinker branch or false cycle detection on a valid diamond/shared-ancestry graph.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Absent control-plane modules are not green evidence; dedicated branch-release, valid-diamond, and repeat-visibility tests remain mandatory before those mechanisms are activated or claimed."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT13_seal_atomicity_and_quarantine",
+        "AT14_no_writeback_no_autoingestion",
+        "AT15_claim_state_machine"
+      ],
+      "category": "operations",
+      "concern_id": "C20_claim_state_precedence_underspecified",
+      "evidence": "AT15 says every gate/contrast combination maps to an allowed state but does not state the expected precedence for overlapping faults. For example, an unexpected real-seal read plus a failed review can satisfy abandoned-seal and infrastructure-failure predicates; a serving timeout can also leave a required cell absent. Merely returning one allowed label does not prove the correct durable response.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The claim-state machine needs an exact precedence table so quarantine, invalidity, and incompleteness cannot be misclassified."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "cd83200ce8dd75868df24325b40d25ae036d81cc8bd1877325ab46f3c64662e3"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "deliberation contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/scope_proposal.json",
+      "purpose": "scope and authority limits",
+      "sha256": "40eb024b98b4aa94a8d51c2b8e4e7d31fea3d808a9db44d05bc3a42ae9f0dd54"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base assay proposal",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "repaired assay overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/critique.json",
+      "purpose": "prior adversarial critique",
+      "sha256": "e7786b6c2dde5648c743baf5f9806937b8e6a16bd15766191c4bc2c10338d0bd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "prior adjudicated dispositions",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit and limitations",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "source-join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v0_audit.md",
+      "purpose": "v0 independent audit",
+      "sha256": "cc3d8146a7a206f89a4d437ff67ada862fafc7739cd33354c706c56e6b4767f2"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v1_reaudit.md",
+      "purpose": "v1 repaired-byte audit",
+      "sha256": "052d6944424a7971260cb95ab4d171c80bc8f8abc3318fa90ec8fff34a198a80"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "current organism bootstrap",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "current serving path",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "current environment interface",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "critique_id": "crit_20260906_legacy_continuation_writer_floor_v2_adversarial_v1",
+  "human_questions": [
+    "Will the authority artifact add exact receipt dependencies inside A2 so AT8, AT9, AT12, AT13, real sealing, and AT3 must pass in order before any GPU canary, and AT4 plus review must pass before A3?",
+    "Does required_before implementation mean before downstream tokenizer/model implementation, and which work is permitted to create the AT1 and AT11 implementations?",
+    "Will corpus feasibility floors and no-truncation conditions be promoted into explicit pass/fail acceptance criteria for every life?",
+    "Must the visibility scanner reject every concrete pass token in the complete engine-consumed policy prompt, including chat-template-added text, without a task-metadata exception?",
+    "Which exact evaluator executable, dependency hashes, reset-state module hash, action-normalization rule, consumed pass vector, and I0/I1 receipt bind scoring to the sealed target?",
+    "Does a useful package effect permit gains caused by evaluator rejection or abstention, or must accepted-action value and validity remain above registered floors?",
+    "What independently committed source and one-shot procedure will generate the seal salt and prove that candidate salts were not searched?",
+    "Should all memory-growth and consolidation wording be replaced by closed-world extraction and assay-local supervised transport before exact-byte ratification?",
+    "What exact precedence resolves ABANDONED_SEAL, INVALID_INFRA, and INCOMPLETE when multiple predicates hold?",
+    "Are scaling, population, robustness, lifetime, recurrence, semantic-generalization, and full-organism claims explicitly forbidden in both templates and diagnostics?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v2.systems",
+      "sha256": "d6cec1ffba4dc32ac573e888b5e08909a023d2329a25c69c7f3b47de91910c05"
+    },
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v2.benchmark",
+      "sha256": "c24008a6b7b1e1e4fde8aa2c4d12b54808edb118cb4579e8b9188d897c5d59e3"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "AT16_a2_receipt_dependency_order: encode the within-stage command DAG from static pre-GPU checks through synthetic faults, real seal agreement, nonzero canaries, post-canary review, and A3 promotion.",
+    "AT17_source_corpus_feasibility: assert every per-life row, token, payload-diversity, payload-share, EOS, length, and no-truncation floor and map any failure to INVALID_INFRA.",
+    "AT18_full_policy_visibility_scan: scan the exact engine-consumed target token sequence and all template-added bytes for selected payloads, historical actions/outcomes, corpus text, and every concrete pass name.",
+    "AT19_target_dispatch_scoring_roundtrip: bind sealed URI and module hash to scorer reset hash, parser payload, engine-consumed pass vector, evaluator identity, I0/I1, and final score.",
+    "AT20_nonzero_adapter_serving_canary: duplicate deterministic serving with mounted nonzero B0/C1 and B0/C2 adapters and verify that the intended tensor identity is actually applied.",
+    "AT21_action_validity_and_abstention_decomposition: report and gate evaluator acceptance, positive/worsening accepted actions, invalid strict actions, malformed output, and abstention so zero-scored rejection cannot masquerade as useful action improvement.",
+    "AT22_salt_commitment_provenance: prove one-shot independent salt generation, pre-enumeration commitment, non-reuse, and absence of candidate-salt search.",
+    "AT23_real_seal_access_and_publication: validate write-ahead access logs, exposure records, comparator agreement, and the atomic publication transition during the actual seal, not only a synthetic universe.",
+    "AT24_claim_state_precedence: exhaustively assert the exact expected label for overlapping seal, infrastructure, review, serving, missing-cell, and contrast predicates.",
+    "FUTURE_AT_memory_substrate_and_compute: compare fixed-budget raw context, retrieval, explicit graph state, LoRA transport, and thinker computation with bridge, recurrence, and connectivity interventions.",
+    "FUTURE_AT_online_action_outcome_learning: require action, immutable outcome, eligible memory write, later dream processing, and improved later action against passive-lookup and no-update controls.",
+    "FUTURE_AT_generalization_and_uri_cues: use opaque identities and preregistered semantic, family, and structural splits to separate hash disjointness, URI cues, pretrained priors, and generalization.",
+    "FUTURE_AT_control_plane_regressions: test query-to-agenda laundering, abandoned-branch release, valid diamond/shared-ancestry traversal, and repeat blocks represented in policy state.",
+    "FUTURE_AT_corpus_causal_controls: compare improving selections with matched non-improving, unrelated, action-shuffled, marker-only, and birth-payload-controlled corpora."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "AT1_source_join_closure",
+    "AT2_target_matching",
+    "AT3_content_disjoint_seal",
+    "AT4_reproducibility_canaries",
+    "AT5_prefix_package_contrast",
+    "AT6_selected_corpus_floor",
+    "AT7_claim_ceiling",
+    "AT8_bootstrap_visibility_and_copying",
+    "AT9_visibility_oracle_partition",
+    "AT10_prompt_serving_roundtrip",
+    "AT11_authority_stage_acyclicity",
+    "AT12_independence_fault_injection",
+    "AT13_seal_atomicity_and_quarantine",
+    "AT14_no_writeback_no_autoingestion",
+    "AT15_claim_state_machine"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is a narrow, fail-closed descriptive assay over a frozen historical artifact. Dual extraction can preserve byte-level provenance; target-aligned C1/C2 supervision isolates the exact BOS-versus-neutral-chat-prefix training package while acknowledging unequal positions and compute; source outcome oracles are explicitly separated from target scoring; score-blind content-hash sealing, fresh resets, strict ACT parsing, exact token-ID serving, deterministic canaries, quarantine, and staged human authority substantially reduce leakage and operational ambiguity. If every registered gate and the additional blockers below are resolved, a positive result could support only that this exact post-hoc selected-continuation training package changed strict first-action behavior on this exact sealed panel, with C2-minus-C1 and C2-minus-C0 interpreted strictly as package-level descriptive contrasts.",
+  "visibility_failures": [
+    "VF1: AT8 does not unambiguously scan the complete engine-consumed prompt and leaves a task-metadata exception through which concrete pass text could be laundered.",
+    "VF2: Canonical target URIs remain policy-visible, preserving URI/family and pretrained-prior shortcuts despite content-hash disjointness.",
+    "VF3: No end-to-end receipt binds the prompted sealed target module and parsed action to the module and normalized pass vector actually scored.",
+    "VF4: Source actions, outcomes, scores, and improvement comparisons intentionally select training rows; this is acceptable only as disclosed offline oracle selection, never target-blind experience learning.",
+    "VF5: Synthetic seal fault injection does not prove that the real seal had no unexpected read, partial exposure, or pre-comparator publication.",
+    "VF6: Occurrence and repeat provenance are retained in extraction but invisible to the trained and evaluated policy, so recurrent learning cannot be inferred."
+  ]
+}

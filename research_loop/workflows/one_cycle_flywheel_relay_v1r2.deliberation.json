@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "one-cycle-flywheel-relay-v1r2-deliberation",
+  "workspace": "../..",
+  "change_id": "chg_20260902_one_cycle_flywheel_relay_v1",
+  "directive_file": "research_loop/changes/chg_20260902_one_cycle_flywheel_relay_v1/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_notes/00_THESIS.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/43_developmental_experiential_learning_v1.md",
+    "research_notes/44_developmental_protocol_v2.md",
+    "research_notes/IDEAS.md",
+    "research_loop/advisory/20260902_pcfl_minimalism_and_paper_alignment.md",
+    "research_loop/advisory/20260902_pcfl_lite_science_design.md",
+    "research_loop/advisory/20260902_pcfl_lite_code_feasibility.md",
+    "research_loop/advisory/20260902_paper_path_b_vs_c_adjudication.md",
+    "research_loop/advisory/20260902_loop_adapter_experiment_audit.md",
+    "research_loop/advisory/20260902_rank_pyramid_theory_audit.md",
+    "research_loop/advisory/20260902_flywheel_relay_construct_audit.md",
+    "research_loop/advisory/20260902_paper1_immediate_end_to_end_gate.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/consensus.json"
+  ],
+  "output_dir": "research_loop/changes/chg_20260902_one_cycle_flywheel_relay_v1",
+  "state_path": ".research_loop/intake/chg_20260902_one_cycle_flywheel_relay_v1r2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260902_one_cycle_flywheel_relay_v1/intake.v1r2.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 1000000, "timeout_sec": 3600, "provider_attempts": 2, "provider_attempt_timeout_sec": 1800}]},
+    "systems": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 1000000, "timeout_sec": 3600, "provider_attempts": 2, "provider_attempt_timeout_sec": 1800}]},
+    "benchmark": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 1000000, "timeout_sec": 3600, "provider_attempts": 2, "provider_attempt_timeout_sec": 1800}]},
+    "critique": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "max_context_chars_per_file": 1000000, "timeout_sec": 4800, "provider_attempts": 2, "provider_attempt_timeout_sec": 2400}]},
+    "consensus": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 1000000, "timeout_sec": 3600, "provider_attempts": 2, "provider_attempt_timeout_sec": 1800}]}
+  }
+}

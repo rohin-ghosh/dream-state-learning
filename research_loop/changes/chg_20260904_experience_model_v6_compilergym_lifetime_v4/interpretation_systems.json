@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v4.systems.fresh.v1",
+  "change_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v4",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "9188560596d3946263c571d41eead554fdaeaa4978c0685ac02cd34fa62d4bdd",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling deliberation, ratification, review, and GPU/scientific-claim contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Schema for the exact v4 architecture-change artifact."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Schema for this systems interpretation artifact."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Local hash, schema, context-binding, and interpretation validator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/human_directive.txt",
+      "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad",
+      "purpose": "Prior directive bytes copied into the v4 proposal context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/change.json",
+      "sha256": "9b314360c9deff631ad0627a22290cec66ff1883d71beecf031d1a0fc50753bd",
+      "purpose": "Superseded v3 proposal whose unresolved context and lifecycle choices are repaired by v4."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/intake.state.json",
+      "sha256": "0129fe3ec7e2ac0ca8eb32fb125b47372a30131da858fe57b2c18bf860b43af1",
+      "purpose": "Immutable historical v3 intake evidence that implementation remained unauthorized."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/consensus.json",
+      "sha256": "34859481fdb1fa403db35fa6b44c3e7e16aeab2bd8c59d3ba9f774099cf2221b",
+      "purpose": "Adjudicated v3 findings and claim boundary carried into the v4 repair."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/critique.json",
+      "sha256": "d0fa3e442eebe59188d0c150c4ed8013342368c3e5dbc02462141b5bfb779ef1",
+      "purpose": "Adversarial v3 concerns addressed by the v4 context, lifecycle, and compiler contracts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/interpretation_systems.json",
+      "sha256": "09e69d345602f897f2e237043c7c7376768c36859c37f3b0a034e8898d8d6b03",
+      "purpose": "Prior independent systems interpretation used as historical context only."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v3/interpretation_science.json",
+      "sha256": "1a639f6909c9c64708521452539eb368f3d68eb003a03a7bb369129405ed9b29",
+      "purpose": "Prior independent scientific interpretation and its narrowed claim boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/human_directive.txt",
+      "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad",
+      "purpose": "Verbatim owner directive motivating context-as-state, two designs, memory compilation, and CompilerGym testing."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/context_visibility_spec.md",
+      "sha256": "01c67aed1ed6faf636c223f85d390d4006c6132399558fd53048186efc77ade7",
+      "purpose": "Normative v4 packet, one-model phases, grammar, masks, lifecycle, snapshots, and reader/writer allowlist."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/experiment_spec.md",
+      "sha256": "fcbd9efa922c7099ccdc0c2f350cc09de59f160b3194f4c4ccd1d58691fc9256",
+      "purpose": "Normative v4 CompilerGym score, compiler, split, seed, determinism, and Stage-C feasibility contract."
+    }
+  ],
+  "system_thesis_interpretation": "The directive's context window is operationally a reconstructed serialized state interface, not a second mind or persistent provider conversation. There are exactly two on-policy whole systems: HARNESS and EXPERIENTIAL. They share the pinned base/bootstrap/tokenizer, canonical packet assembler, parser, public tools, bounded ledger/notebook retriever, budgets, task order, and reset schedule; HARNESS mounts null and EXPERIENTIAL alone mounts one cumulative life-local authentic q_proj/v_proj LoRA below prompt assembly. ORIENT and THINK_ACT are phases of one pinned model invocation family, while SLEEP is a model-free compiler rather than a third agent or learned subconscious. Stable objective and rules live in ANCHOR; finite focus, counters, public observations, bounded recalled records, and complete recent events are explicit state re-rendered for each call. Private thought, provider history, KV/prefix cache, raw output, and hidden context do not persist. The primary comparison is consequently a matched whole-system contrast, with common nonparametric life evidence and only EXPERIENTIAL adaptive parameter state across sleep. Target forks are read-only, cold, and quarantined descendants, not additional on-policy identities.",
+  "graph_delta_interpretation": "The graph closes as authoritative state -> fresh canonical v4.packet -> ORIENT parser -> at-most-two own-snapshot retrieval records -> fresh THINK_ACT packet -> one validated finite operation -> public service result or bounded note/focus event -> append-only sealed ledger/notebook evidence. The packet has fixed ordered sections PACKET_HEADER, ANCHOR, CLOCK_BUDGET, LIFE, FOCUS, ENVIRONMENT, RECALLED_EXPERIENCE, RECENT_TAIL, PACKET_END; it is rebuilt on every phase with no hidden prefix or cache. The public ledger and bounded notebook are source evidence within a life, not learned weights. At acquisition task boundaries 4 and 8, only EXPERIENTIAL's sealed public acquisition projection reaches the deterministic outcome-filtered compiler, which emits ORIENT/ACT/REVISE rows, deduplicates and selects them per view/bucket, makes fixed copies and packs, then asks a fresh trainer to rebuild one authentic LoRA from the clean base. Optimizer, gradients, trainer process, corpus/cache, inference process, and temporary state are destroyed before the next wake; HARNESS receives accounting only and no sham adapter. Static A selects the predeclared 8/4 roster from public structural bytes; non-cognitive B2 seals reset/baseline/reward semantics and spares before any model access. Cold checkpoint forks mount each system's own capped target-blind snapshot, and EXPERIENTIAL off/shuffled forks use the exact authentic snapshot, so D_HE is a whole-system descriptive contrast. Evaluation outcomes remain quarantined and cannot flow back to life, compiler, split, or later target.",
+  "loop_delta_interpretation": "Each acquisition or fork task runs at most six ORIENT/THINK_ACT pairs and at most six environment-action attempts. ORIENT emits exactly the finite focus mode, up to two finite recall tuples, nullable bounded public strings, and uncertainty; it cannot act. Syntax or semantic failure costs one ORIENT call and falls back deterministically to KEEP with no recall, then the mandatory THINK_ACT call still occurs. THINK_ACT emits exactly one typed operation: INSPECT, APPLY_PASS, NOTE_APPEND, FOCUS_REVISE, or STOP with canonical finite arguments. Malformed or invalid output consumes its pair and appends MALFORMED without retry; valid APPLY_PASS consumes an action attempt even if the service returns INVALID, TIMEOUT, or ENV_ERROR. One complete public event is sealed per decision, and all task state, tail, workspace, environment, and task retrieval cache are destroyed at task end. Positive loss is restricted to finite focus/recall enums, operation type, and finite operation arguments; punctuation, field names, all observations/counts/scores, all prose, rationale/hypothesis bytes, and unparsed output are mask zero. SLEEP occurs only after acquisition tasks 4 and 8, filters improvement segments using the exact gamma/rho credit rules, constructs one REVISE candidate per eligible failure, applies canonical deduplication and OLD/NEW scarcity fallback independently per view, and performs fixed 24-copy next-fit packing and one-update-per-sequence training with no preservation, KL, auxiliary, negative, non-acquisition, early-stop, retry, or tuning path. Every byte, visibility, score, seed, mask, lifecycle, and numerical mismatch is terminal. The A_STATIC -> B1_IMPLEMENT -> B2_EXECUTABLE_SEAL path may proceed only inside explicit human-ratified scope with independent reviews; model/GPU B3 and target Stage C remain behind a fresh exact run-byte review and later human ratification.",
+  "claim_delta_interpretation": "The only supportable Stage-C result is the first applicable integrity/descriptive feasibility disposition for this one common-order life and its quarantined H/E/off/shuffled fork set. D_HE,c, D_off,c, D_shuf, validity, and target-wise signs are descriptive receipts under the exact score and denominator rules; a complete cell requires two fresh cold score realizations, and any missing constituent makes the contrast indeterminate. Even all predicates passing cannot establish efficacy, an arm effect, causal credit, temporal necessity, mechanism, functional correctness, lifetime growth, population behavior, superiority, consciousness, creativity, abstraction, or a paper claim. Outcome-filtered rows and binding shuffle diagnose wiring and possible state-to-operation binding only; they do not prove that credited outcomes caused later behavior. B3's canary scale is pre-target descriptive normalization, not power or effect variance. A stronger causal, lifetime, or scientific interpretation requires a new bound change with independent lives, controls, and human authorization. No A, B1, or B2 receipt and no Stage-C descriptive disposition can waive the required GPU/model run-byte gate.",
+  "visibility_matrix_interpretation": "Visibility is directional and process-scoped. STATIC_CONSTRUCTOR reads only already-local public catalog/source/IR/static metadata; TARGET_SEALER reads sealed public roster and authorized reset/headroom receipts but performs no model call or trajectory. LIFE_CONTROLLER reads and writes only current public state and its own life evidence. PACKET_ASSEMBLER sees the declared controller projection, current public environment/workspace, own retrieval result, and recent complete events. MODEL sees only the canonical packet plus causally assigned below-prompt weights; adapter identity, hash, arm, checkpoint, row counts, telemetry, roles, targets, raw/private/unparsed output, and provider/cache state are forbidden. ORIENT_PARSER and THINK_ACT_PARSER receive one output each, while RETRIEVER accepts only the finite caller-owned query and returns at most two caller-snapshot records. The dispatcher and LLVM service exchange only typed public operations and public observations. SLEEP_COMPILER reads only the sealed EXPERIENTIAL public acquisition projection and frozen recipe bytes; TRAINER sees selected rows and the clean base; the publisher writes only the authentic EXPERIENTIAL adapter. HARNESS has null weights and no learned bytes. Forks receive a sealed target packet, assigned read-only base/adapter, and the appropriate immutable target-blind snapshot; authentic/off/shuffled EXPERIENTIAL forks share exactly one snapshot at checkpoint 8, and fork writes are disabled or quarantined locally with no parent writeback. EVAL_QUARANTINE and OFFLINE_AUDITOR receive results only after teardown. Any unauthorized read/write, snapshot mutation, leakage, adapter mismatch, cache/process/RNG carryover, or evaluation return path stops the recipe.",
+  "acceptance_test_ids_addressed": [
+    "V6CG_V4_T01_SPEC_HASH_AND_PACKET_GOLDENS",
+    "V6CG_V4_T02_VISIBILITY_AND_SNAPSHOT_NONINTERFERENCE",
+    "V6CG_V4_T03_WRITER_SELECTION_PACKING_AND_NO_PRESERVATION",
+    "V6CG_V4_T04_SCORE_SPLIT_SEED_GOLDENS",
+    "V6CG_V4_T05_LIFECYCLE_AND_COLD_LOAD_FIXTURES",
+    "V6CG_V4_T06_STAGE_C_INTEGRITY_DISPOSITION_GOLDENS",
+    "V6CG_V4_T07_SCOPED_AUTHORITY_REVIEW_GATE"
+  ],
+  "acceptance_test_interpretation": "T01 must bind the proposal and both normative v4 specifications, then golden-test declared serialization order, exact packet section order/caps/collision loss order, ORIENT and THINK_ACT grammars, parser charges, finite-only masks, and malformed/overflow/prose rejection. T02 must exercise the complete principal allowlist and matched cold mounts at checkpoints 0/4/8, prove own-system snapshot identity, identical EXPERIENTIAL authentic/off/shuffled snapshots, read-only/no-writeback behavior, and absence of target, arm, checkpoint, receipt, or cache cues. T03 must replay synthetic ledgers for improvement segments, gamma/rho credits, REVISE construction, canonical dedup tie-breaking, per-view OLD/NEW scarcity fallback, bucket caps, 24 copies, seeded shuffle, next-fit packing, positive-loss masks, and forbidden preservation/auxiliary/non-acquisition rows; any mismatch publishes nothing. T04 must verify unchanged local CompilerGym 0.2.5/LLVM 10 POJ104 bytes, target-blind four-group 8/4 split and spare rules, B2 reset/baseline authority, IrInstructionCountOz integer denominator and all score edge cases, exact SHA-256 seed domains, matched score seeds, no retry, and indeterminate propagation. T05 must prove the same sleep boundary and null-adapter accounting for HARNESS, clean-base rebuild/destruction for EXPERIENTIAL, life reset, cold adapter/snapshot loading, replay determinism tiers, quarantine teardown, and absence of optimizer, gradient, cache, workspace, provider, or RNG carryover. T06 must run complete, indeterminate, integrity, diagnostic, and predicate-failure fixtures through the first-applicable Section-8 classifier and verify that no disposition becomes efficacy, causal, mechanism, lifetime, or superiority evidence. T07 must independently review exact hashes, A/B1/B2 receipts, scoped state transitions, and forbidden generated model/dependency/hardware/run bytes; architecture ratification may cover only the expressly named A-through-B2 scope, while B3/GPU and Stage-C target work require fresh review and explicit human ratification of exact run bytes.",
+  "assumptions": [
+    "The proposal SHA 9188560596d3946263c571d41eead554fdaeaa4978c0685ac02cd34fa62d4bdd and every declared proposal context-file SHA were independently recomputed and matched; the mutable v4 intake.state.json is intentionally not an interpretation context file.",
+    "The v4 context_visibility_spec.md is the authority for declared-key canonical serialization, packet order, phase grammars, parser charges, event/notebook schemas, masks, and reader/writer direction; its instruction to reconcile the experiment specification's conflicting sorted-key sentence is a pre-ratification requirement.",
+    "Opaque nonces and manifests carry no arm, target, checkpoint, adapter-origin, or telemetry meaning; actual Autophase and InstCount vectors are exactly 56 and 70 integer slots as bound by a later manifest.",
+    "Ledger, notebook, immutable receipts, and sealed public projections are bounded nonparametric source evidence within one life, while only the authentic EXPERIENTIAL LoRA is adaptive parameter state across sleeps; all other trainer/runtime/cache/RNG state is disposable.",
+    "The unchanged local CompilerGym/LLVM/POJ104 substrate, its bytes, static relation grouping, and B2 headroom are conditional and cannot be inferred from names, consensus, or model agreement.",
+    "The A/B1/B2 stage scope is not currently authorized by the collecting_interpretations intake state; this artifact records an interpretation and cannot infer the owner's ratification or release any execution."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "SYS_V4_A01_CANONICAL_ORDER_RECONCILIATION",
+      "question": "Before ratification, will experiment_spec.md's sentence requiring sorted-key canonical JSON be patched or otherwise explicitly superseded by context_visibility_spec.md's declared schema key order, with the resulting exact bytes rebound?",
+      "impact": "The two specifications currently contain an internal serialization conflict; without one byte-level resolution, packet/event/row hashes and every exact golden are not executable."
+    },
+    {
+      "ambiguity_id": "SYS_V4_A02_FORK_NOTE_APPEND_BEHAVIOR",
+      "question": "For target forks, is NOTE_APPEND disabled outright or permitted only as an explicitly fork-local quarantine record, and which choice is fixed in the run manifest?",
+      "impact": "Both choices preserve parent snapshot isolation, but they differ in event counts, packet reconstruction, and cold-fork receipts unless one behavior is bound."
+    },
+    {
+      "ambiguity_id": "SYS_V4_A03_MANIFEST_BINDINGS",
+      "question": "Which exact later run-manifest bytes bind the immutable ANCHOR, nonce construction, model/tokenizer/runtime stack, vector lengths, and tokenizer token-count implementation before B3/C?",
+      "impact": "The current specs define types and caps but intentionally leave these generated bytes unratified; choosing them from observed outcomes would violate the no-tuning and GPU boundary."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "SYS_V4_D01_SORTED_JSON_CONFLICT_IS_NOT_CLOSED",
+      "statement": "The proposal describes exact v4 specification bytes, but the two normative files do not yet agree on canonical JSON ordering: experiment_spec.md says sorted keys while context_visibility_spec.md requires declared schema order and says the conflict must be patched before ratification.",
+      "rationale": "A serializer choice changes packet, event, row, seed, and artifact hashes. Treating the proposal as executablely closed before the conflict is resolved would undermine the exact-hash and golden-test claims.",
+      "proposed_resolution": "Patch the experiment specification to defer to declared schema order (or make an equally explicit single rule), compute new hashes, and require human ratification of the resulting exact bytes before A/B1/B2 or any later stage."
+    },
+    {
+      "disagreement_id": "SYS_V4_D02_FORK_WRITE_MODE_NEEDS_ONE_BINDING",
+      "statement": "The context contract leaves target-fork NOTE_APPEND as either disabled or fork-local quarantine, whereas the architecture's exact snapshot/lifecycle claim needs one selected mode rather than a runtime option.",
+      "rationale": "A fork-local append is safe only if it cannot alter mounted retrieval or parent artifacts, but its event and packet effects differ from disabling the operation; allowing both would weaken matched replay and snapshot receipts.",
+      "proposed_resolution": "Select and bind one fork mode before implementation, test that it cannot write back or be retrieved by another fork, and classify any mismatch as terminal rather than selecting behavior after inspection."
+    },
+    {
+      "disagreement_id": "SYS_V4_D03_CONTEXT_IS_STATE_NOT_SUBCONSCIOUS_AGENT",
+      "statement": "The directive's conscious/subconscious wording should not be implemented as a second model, hidden context process, or provider-preserved conversation; ORIENT and THINK_ACT must remain phases of one reconstructed model.",
+      "rationale": "The normative v4 contract explicitly prohibits a second on-policy identity, hidden prefix/KV state, private-prose persistence, and adapter or phase labels in model-visible fields. A subconscious agent interpretation would add an unauthorized system and an unmeasured memory channel.",
+      "proposed_resolution": "Represent continuity only with the declared packet state, bounded own-snapshot retrieval, public events/notebook, and the below-prompt EXPERIENTIAL adapter; send any alternate cognitive decomposition through a new bound change."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin ratify the reconciled exact v4 specification bytes and explicitly enumerate the permitted A_STATIC, B1, and B2 scope while keeping model/GPU and target execution blocked?",
+      "Will Rohin select the exact target-fork NOTE_APPEND behavior and later ratify generated model, dependency, hardware, and run-manifest bytes after a fresh independent review?",
+      "Does Rohin accept the one-life Stage-C output as integrity/descriptive feasibility only, with no efficacy, causal, mechanism, lifetime, or superiority claim?"
+    ]
+  }
+}

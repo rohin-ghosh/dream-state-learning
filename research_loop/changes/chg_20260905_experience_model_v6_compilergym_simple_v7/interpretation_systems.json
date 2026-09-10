@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "v6s7_systems_constructibility",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v7",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "6b85cab835cc5e8244f7a082e14583f34cbe033f93f8037a98a9c8cf80a767d4",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling architecture-deliberation, human-authorization, independent-review, and GPU-gate contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Exact intake validation, proposal binding, context-hash verification, and release-state semantics."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Schema used by the intake validator to validate the authoritative proposal."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Exact schema governing this systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v7/change.json",
+      "sha256": "6b85cab835cc5e8244f7a082e14583f34cbe033f93f8037a98a9c8cf80a767d4",
+      "purpose": "Authoritative v7 architecture proposal; intake validation also verified every context hash it declares against current repository bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v7/protocol.md",
+      "sha256": "6ddec2537cabcd4228a1d3144988f3483ba1e86ecc6be85fe5c82301449836b1",
+      "purpose": "Normative public-state, writer, target-panel, failure, sealing, and gate contract interpreted here."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v7/human_directive.txt",
+      "sha256": "beaab124ff2ee0548ffa01dc9941dcc32f7d8aed9f7ba6ba8fa43ab0c84f47c7",
+      "purpose": "Verbatim owner direction defining a small controlled branch beside Fable and its limited design-learning purpose."
+    }
+  ],
+  "system_thesis_interpretation": "The proposal is constructible as a small, single-manifest 7B component assay rather than a production continual-learning system. Its causal control comes from executing acquisition tasks 1--4 once, sealing one condition-free public snapshot, byte-cloning that snapshot for H and E, and making the E adapter mount the only model-visible difference at the first post-fork decision. Its evidence surface is intentionally finite: canonical packets and state transitions, immediate-improvement events, two clean-base LoRA publications, sealed H/E states, one final adapter, twelve cold target cells, and offline receipts. A 7B rank-16 q/v LoRA with batch size one, 2,048-token samples, fixed update counts, and a maximum-length forward/backward/mount canary is operationally plausible on a GH200, subject to the quantitative T04 budget and canary rather than an architectural capacity promise. No OS-level actor sandbox or global noninterference proof is necessary for the stated descriptive claim; code-path inspection, hash-bound artifacts, packet receipts, process isolation where convenient, and T05 replay are proportionate. One authority ambiguity about T03 target sealing versus the later prohibition on target access must be resolved before implementation authorization can be treated as unambiguous.",
+  "graph_delta_interpretation": "V6S7_COMMON_PREFIX_FORK is an actual state boundary, not a request for two nominally reproducible prefixes: task 4 must commit completely, the condition-free public snapshot must be sealed, and H and E must receive exact byte copies. Neither provider conversation state, KV cache, an environment process, an adapter, condition identity, audit metadata, nor optimizer state belongs in that clone. Each branch then cold-resets the same task-5 program; the sealed reset values and T01 packet golden jointly establish identical first model-visible system and user bytes, while E alone receives the sleep-1 mount below the prompt. V6S7_PUBLIC_ACTION_LOOP is implementable as a deterministic reducer from the prior public snapshot plus a proven service result to the next packet and append-only audit event, with one charged slot per strict parse attempt and atomic event/state commits. V6S7_VERIFIED_WRITER consumes only hash-validated committed immediate-improvement events, emits suffix-only action labels, rebuilds from the pinned clean base at each sleep, and publishes one verified adapter atomically. V6S7_FIXED_PANEL consumes sealed H or E public snapshots plus final-adapter/NONE assignments to make independent cell-local states; E_OFF is the same final E state with no adapter and is not another life. The graph contains no receipt-to-model, target-to-life, target-to-writer, H-postfork-to-writer, or Fable-to-pilot edge. T04 may freeze implementation-level audit encodings without adding them to the cognitive graph, provided the exact schemas, canonical encoders, hashes, replay code, and manifest are all review-bound before GPU execution.",
+  "loop_delta_interpretation": "The executable lifecycle is: exact architecture ratification; isolated implementation plus synthetic CPU fixtures; exactly two authorized no-model environment seal invocations; T01--T03 completion; history-free reviewer T04 with a non-overriding advocate; separate human ratification of one exact run manifest; synthetic maximum-length engineering canary; one common prefix; sealed fork; sleep 1 from common-prefix rows; H and E continuations over tasks 5--8; sleep 2 rebuilt from the clean base on the cumulative common-plus-E row union; sealing of final H state, final E state, and final E adapter; twelve cold target cells; and T05 replay before any status or value release. Wake calls are reconstructed from canonical public state, use exactly six charged slots, and update last-eight improving-event memory only after a valid accepted action beats the previous best. Training has a closed sample and update lifecycle: validate, canonicalize, deduplicate, row-hash sort, tokenize, require exact prefix relation, mask the prefix, repeat each row sixteen times in fixed order, perform one update per sample, verify finiteness and target inventory, atomically publish, seal, and verify the mount. Sleep 2 is cumulative data retraining from the clean base, not a continuation of sleep-1 optimizer or adapter state. Zero rows, sample overflow, nonfinite computation, publication failure, or mount mismatch ends E as RUN_INCOMPLETE with no substitution or resume. Pre-panel ordinary failure prevents the panel; during the panel only an ordinary cell failure is sealed missing while remaining cold cells continue, yielding PANEL_INCOMPLETE. Any integrity-class mismatch overrides ordinary completion and suppresses scientific values. T05 is the sole release gate for statuses, cells, aggregates, and interpretations.",
+  "claim_delta_interpretation": "The supported output is an audited descriptive record of whether the one frozen pilot completed and, only for a complete panel, its exact rational per-cell F values and paired D_HE and D_ONOFF values. D_HE combines the acquired public-state path and adapter effect; D_ONOFF isolates the final adapter-present versus adapter-absent behavior on the exact same E public state, but neither contrast establishes population efficacy, semantic generalization, functional correctness, causal credit assignment, learned sleep intelligence, or continual/lifelong improvement. The absence of shuffled, random, alternative-writer, failure-learning, or replicate arms is not a blocker for this deliberately lower-bracket descriptive mount test, but it forbids attributing any observed difference to a general experience-learning mechanism. Missing target cells suppress both aggregates; integrity failure suppresses every scientific value. The only legitimate scientific use is to update the design of a later richer sleeper assay.",
+  "visibility_matrix_interpretation": "The matrix is complete and coherent for its limited claim. During COMMON_PREFIX, condition/training identity is forbidden and only the canonical public packet is visible. During forked acquisition, labels, row membership, optimizer state, sleep count, and telemetry remain offline; the model experiences only the assigned weights and its branch-local packet, while the writer sees only exact eligible common/E packets and canonical actions. During FINAL_PANEL, cell condition is represented only by the sealed snapshot and adapter/NONE assignment below the prompt; target outcomes and receipts remain offline and cannot change later requests, memory, life state, rows, or mounts. POSTRUN_AUDIT is the first stage where the complete training, mount, and target evidence is jointly visible. This is enforceable by a small number of explicit serializer/trainer/evaluator interfaces and replayable receipts. The stated claim does not require speculative machine-wide secrecy, an OS default-deny proof, or isolation from every possible host observation; it does require T04 to inspect every actual data path crossing the model, writer, state, and target boundaries and T05 to verify that no target-derived datum re-entered them.",
+  "acceptance_test_ids_addressed": [
+    "V6S7_T01_STATE_ACTION_GOLDENS",
+    "V6S7_T02_SLEEP_SAMPLE_GOLDENS",
+    "V6S7_T03_DOUBLE_SEAL",
+    "V6S7_T04_PRE_GPU_REVIEW",
+    "V6S7_T05_POSTRUN_AUDIT"
+  ],
+  "acceptance_test_interpretation": "T01 must independently lock the public reducer: canonical packet bytes and size/domain bounds; strict parse-to-action/no-op behavior; accepted, rejected, malformed, no-op, commit, crash, budget, history, best-count, memory append/eviction, score, and status transitions; task-4 snapshot cloning; and equality of the first post-fork H/E model-visible packets before E's mount effect. T02 must independently reconstruct eligibility from immutable events, reject hash or provenance errors, freeze deduplication and row order, verify exact chat-template prefix/full token IDs and suffix-only labels, calculate row/copy/update counts, enumerate every q_proj/v_proj target, exercise ordered AdamW and clipping on toy tensors, and cover atomic publish and mount-failure branches. T03 must be exactly two fresh CPU/no-model invocations over unchanged local CompilerGym bytes; the canonical 8/4 manifests must match byte-for-byte, URI and bitcode hashes must each be pairwise distinct, repeated reset Autophase/I0/IOz values must agree, and evidence must explicitly limit the panel to syntactic hash distinctness. T04 is the binding constructibility gate: a fresh reviewer must inspect exact implementation and commands, T01--T03, finite visibility paths, the final manifest, and quantitative GH200 memory/storage/time headroom, then approve or veto; the advocate cannot override. Freezing exact audit encodings here is coherent and proportionate because they are evidence machinery rather than model-visible architecture, but approval must bind their canonical schema/serializer/replay bytes and failure mappings so T05 is executable. T05 must recompute all actual packets, actions, reducer states, memories, selected rows, token masks, update counts, serialized adapters, mounts, target cells, exact rational scores, aggregate availability, and final status, and must audit the absence of target feedback. It releases all statuses and values only on a passing audit; any mismatch yields value suppression. Together the five tests cover state/fork correctness, writer correctness, environment reproducibility and stated limitation, pre-GPU feasibility/closure, and postrun evidentiary integrity.",
+  "assumptions": [
+    "A public snapshot is the canonical condition-free cross-task state only; task-local CompilerGym process state ends with task completion, and each next acquisition or target task begins from its manifest-bound cold reset.",
+    "Each target cell starts from an independent byte clone of its assigned sealed H or E public snapshot; target-slot history may evolve within that cell, while acquisition memory and the source snapshot remain immutable and target events never become acquisition memory.",
+    "INTEGRITY_FAILURE has precedence over RUN_INCOMPLETE, PANEL_INCOMPLETE, and PILOT_COMPLETE whenever an integrity-class mismatch is discovered, including during T05.",
+    "Before the panel, an ordinary failure terminates the single manifest globally because the panel trigger requires both acquisition continuations and sleep 2 to have sealed successfully; the target-cell continuation exception applies only after panel entry.",
+    "The exact run manifest will bind branch/cell execution order and all implementation, runtime, model, tokenizer, seed, dtype, generation, training, adapter, driver, GPU, and command identities needed by T04 and T05.",
+    "No inference about the content of predecessor interpretations, critique, or consensus was used; their hashes were checked only because the authoritative proposal declares them as context and proposal validation requires exact current bytes."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "V6S7_SYS_A01_TARGET_ACCESS_AUTHORITY",
+      "question": "Does the protocol's statement that architecture ratification does not authorize 'target access' exclude the exact no-model held-out-program resets and I0/IOz measurements required by T03, even though the same section and the proposal explicitly authorize exactly two no-model sealers before T04?",
+      "impact": "On a literal reading, the pre-GPU acceptance chain cannot be executed within its authority boundary. Consensus and exact human ratification must bind the intended distinction between authorized T03 environment sealing and forbidden model-conditioned target execution/result access."
+    },
+    {
+      "ambiguity_id": "V6S7_SYS_A02_FAILURE_STOP_SCOPE",
+      "question": "Does 'the first other failure stops the affected run' require immediate global termination of the one manifest for every pre-panel ordinary failure, or may an unaffected H/E branch finish for engineering evidence even though no panel may start?",
+      "impact": "This changes the legal receipt suffix, resource use, and T05 replay after a branch-local failure. T04 should freeze one explicit lifecycle transition table; it need not broaden the scientific claim or add a science arm."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "V6S7_SYS_D01_RECONCILE_TARGET_SEAL_AUTHORITY",
+      "statement": "The authority text is internally inconsistent if 'target access' includes T03's no-model reset inspection: T03 and T04 require the four held-out programs to be sealed before later run ratification, while Section 6 says architecture ratification does not authorize target access.",
+      "rationale": "This is a material constructibility and authorization issue, not a speculative security demand. Exact scope must permit every required precondition while continuing to forbid target inference, result exposure, model feedback, and training use before the one ratified run.",
+      "proposed_resolution": "Bind in consensus and exact human ratification that the two specified T03 CPU/no-model sealer invocations may enumerate and cold-reset candidate programs and record only the manifest-bound bitcode hash, Autophase, I0, and IOz evidence; 'target access' otherwise remains forbidden and includes every model-conditioned target action, target cell, target receipt opening, or target-result use until the later exact run authorization. If that is not the intended meaning, revise the protocol/gate order and create a new proposal hash before implementation."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin ratify these exact architecture and protocol bytes only after consensus resolves the T03 no-model sealing versus target-access authority conflict without broadening the pilot?",
+      "After T01--T04, will Rohin separately ratify the one exact 7B GH200 manifest, including its frozen audit encodings, lifecycle failure table, quantitative budget, synthetic canary, and no-rerun rule?"
+    ]
+  }
+}

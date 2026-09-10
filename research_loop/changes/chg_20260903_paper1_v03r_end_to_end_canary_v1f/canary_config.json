@@ -1,0 +1,132 @@
+{
+  "schema_version": "paper1-v03r-canary-config-v1f.0",
+  "cross_contract_invariants": {
+    "accepted_citation_order": "proposal premises in emitted order, followed by selected support rows in supplied additional_rows order, with first-occurrence deduplication; never ASCII sort",
+    "candidate_roster_instance_key": ["semantic_hash", "view_id", "missing_index"],
+    "candidate_roster_cardinality": "exactly one prospectively registered roster for every unique realized compiler cue-instance key and no extra, duplicate, swapped, or reused roster",
+    "atomic_read_projection": "one complete backend-neutral read_result.schema.json JCS object per executed query"
+  },
+  "world": {
+    "schema_version": "lands-v0.3r-counterfactual-confluence",
+    "skin": "aligned",
+    "population_seed_min": 0,
+    "population_seed_max": 999,
+    "development_seeds": [0, 1, 2],
+    "heldout_seed": 5,
+    "latent_bits": [0, 1],
+    "pair_is_one_replication_unit": true
+  },
+  "controller": {
+    "model": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "dtype": "bfloat16",
+    "context_tokens": 8192,
+    "stateless_request_per_operation": true,
+    "dream": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_input_tokens": 4096,
+      "max_new_tokens": 256,
+      "wake_slots_per_life": 46,
+      "reactivate_slots_per_life": 22,
+      "sleep_slots_per_life": 16,
+      "return_slots_per_arm_life": 16,
+      "max_visible_rows": 6
+    },
+    "self_check": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_input_tokens": 4096,
+      "max_new_tokens": 128,
+      "one_call_per_schema_valid_new_proposal": true,
+      "semantic_verifier": false
+    },
+    "think0": {
+      "construct_label": "FINAL_QUESTION_ANIMAL_ANSWER_WITHHELD_ENDPOINT_CUE / exact-endpoint-cued; probe source and target equal later final-goal endpoints, while final goal ID, animal, rendered question, answer, intervention truth, and private factorization are withheld; this is coached relevance construction, not autonomous relevance discovery",
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_input_tokens": 6144,
+      "max_new_tokens": 128,
+      "max_operations": 12
+    },
+    "think1": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_input_tokens": 6144,
+      "max_new_tokens": 192,
+      "max_operations": 12,
+      "max_reader_rows_per_query": 1
+    }
+  },
+  "memory_adapter": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "dtype": "bfloat16",
+    "rank": 64,
+    "alpha": 128,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "learning_rate": 0.0002,
+    "epochs": 4,
+    "batch_size": 32,
+    "gradient_accumulation": 1,
+    "max_record_tokens_including_eos": 96,
+    "concept_touches_per_view_over_full_fit": 24,
+    "relation_touches_per_view_over_full_fit": 96,
+    "fresh_pristine_base_per_life": true,
+    "mounted_for_one_atomic_recognition_request_only": true,
+    "max_recognition_candidates": 16
+  },
+  "fixed_transport_corpus": "M1_OWN",
+  "development_arms": ["NO_MEMORY", "GOLD_TEXT", "GOLD_TWIN"],
+  "text_arms": ["T-M0", "T-OWN", "T-DIST", "T-TWIN", "T-PATH", "T-SHAM"],
+  "lora_arms": ["L-OWN", "L-TWIN"],
+  "authority_order": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA", "HUMAN_TERMINAL"],
+  "dispatched_call_ceilings": {
+    "dev_no_memory_32b": 72,
+    "dev_gold_text_32b": 72,
+    "dev_gold_twin_32b": 72,
+    "dev_total_32b": 216,
+    "heldout_dream_32b": 232,
+    "heldout_self_check_32b": 232,
+    "heldout_think0_32b": 24,
+    "heldout_core_think1_32b": 96,
+    "heldout_path_sham_think1_32b": 48,
+    "heldout_total_32b": 632,
+    "pre_lora_total_32b": 848,
+    "conditional_lora_think1_32b": 48,
+    "whole_conditional_canary_32b": 896,
+    "conditional_adapter_fits": 2,
+    "fidelity_cases": 96,
+    "online_adapter_reads": 48
+  },
+  "lora_read_fidelity_gate_per_life": {"minimum_correct": 44, "registered_cases": 48},
+  "conditional_lora_disclosure_and_claim_boundary": {
+    "prospective_selection": "All 48 registered fidelity cue instances per life, their exact cue/token hashes, and their exact roster bindings seal before either fit and before final-goal reveal.",
+    "training_set_resubstitution": "Each life selects twelve M1_OWN rows and one fidelity cue from each of those rows' four trained view families, for 48 cues. Those row/view semantics are members of the same training-derived compiler corpus and receive repeated training exposure: 24 presentations per concept row/view/missing-index instance or 96 per relation row/view/missing-index instance over four epochs. The gate is immediate candidate-constrained training-set-resubstitution recognition, not unseen, held-out, preservation, storage, recall, or generalization.",
+    "host_pre_resolution": "For every read the host resolves zero, one, or multiple byte-exact manifest values before any adapter scoring; only the unique-value case scores candidates.",
+    "shared_answer_roster": "Every scored cue uses its prospectively sealed shared host-enumerated two-backend answer roster.",
+    "threshold": "Each adapter independently must reach at least 44 correct of its 48 selected cues; pooling is forbidden.",
+    "evaluated_paths_only": {"L-OWN": "recipient's own adapter/backend", "L-TWIN": "registered donor adapter/backend"},
+    "supported_claim_only": "immediate candidate-constrained training-set-resubstitution recognition on the selected cues and the registered own/donor decision paths of exactly two isolated adapters",
+    "forbidden_claims": ["text equivalence", "LoRA/text equivalence", "unseen or held-out access", "generalization", "retrieval-free recall", "open recall", "whole-corpus preservation", "whole-corpus storage", "durability", "capacity", "scale", "RAG comparison", "raw-context comparison", "superiority"]
+  },
+  "golden_vectors": {
+    "positive_lora_terminal": "Each of two isolated adapters was evaluated by immediate candidate-constrained training-set-resubstitution recognition on 48 selected cues per life: twelve selected M1_OWN rows and one cue from each of their four trained view families, after repeated training exposure to those row/view semantics. The host pre-resolved zero/one/multiple values and supplied the shared answer-bearing roster; thresholds were separate at 44/48, and only registered own/donor decision paths were evaluated.",
+    "negative_lora_terminals_must_reject": [
+      "The adapter is equivalent to text memory.",
+      "The adapter generalized to unseen or held-out rows or cues.",
+      "The adapter recalls without retrieval or a roster.",
+      "The result demonstrates open recall or preservation of the whole corpus.",
+      "The result establishes durable, high-capacity, or scalable memory.",
+      "The adapter is superior to RAG, raw context, or another memory substrate."
+    ],
+    "roster_binding_must_reject": ["missing", "duplicate", "swapped", "wrong-semantic", "wrong-view", "wrong-missing-index", "wrong-cue-sha256", "wrong-cue-token-hash-or-representation", "reused-roster"]
+  },
+  "no_retry": true,
+  "post_result_repair": false,
+  "rank_sweep": false,
+  "loop_adapter": false,
+  "model_scale_sweep": false,
+  "prompt_revision_after_dev_authority": false
+}

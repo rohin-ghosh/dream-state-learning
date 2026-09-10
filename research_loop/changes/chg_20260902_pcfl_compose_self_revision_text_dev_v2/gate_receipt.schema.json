@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcfl:compose:stage1-gate:v2",
+  "title": "PCFL-Compose v2 Stage-1 evidence and total gate evaluation",
+  "oneOf": [
+    {"$ref": "#/$defs/construct_receipt"},
+    {"$ref": "#/$defs/manifest_receipt"},
+    {"$ref": "#/$defs/dream1_a_receipt"},
+    {"$ref": "#/$defs/revision_receipt"},
+    {"$ref": "#/$defs/dream2_b_receipt"},
+    {"$ref": "#/$defs/oracle_receipt"},
+    {"$ref": "#/$defs/actor_endpoint_receipt"},
+    {"$ref": "#/$defs/goal_twin_pair_receipt"},
+    {"$ref": "#/$defs/empty_contrast_receipt"},
+    {"$ref": "#/$defs/crossed_contrast_receipt"},
+    {"$ref": "#/$defs/sham_receipt"},
+    {"$ref": "#/$defs/gate_pass"},
+    {"$ref": "#/$defs/gate_fail"}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "capability": {"type": "string", "pattern": "^cap_o_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28},
+    "raw_a_handle": {"type": "string", "pattern": "^A0[1-2]$", "minLength": 3, "maxLength": 3},
+    "public_event_handle": {"type": "string", "pattern": "^(E(0[1-9]|1[0-3])|A0[1-2])$", "minLength": 3, "maxLength": 3},
+    "candidate_read_handle": {"type": "string", "pattern": "^hdl_c_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28},
+    "read_receipt_id": {"type": "string", "pattern": "^rcpt_[A-Za-z0-9_-]{22}$", "minLength": 27, "maxLength": 27},
+    "action": {"type": "string", "pattern": "^USE\\([A-Za-z0-9][A-Za-z0-9_-]{0,31}::[A-Za-z0-9][A-Za-z0-9_-]{0,31}\\)$", "minLength": 8, "maxLength": 71},
+    "root_id": {"const": "pcfl-open-factor-0000"},
+    "z_side": {"enum": ["SAMPLED", "ANTIPODE"]},
+    "endpoint_value": {"type": "integer", "minimum": 0, "maximum": 1},
+    "construct_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "root_certificate_count", "open_root_present", "exact_program_valid", "schema_suite_receipt_sha256", "schema_suite_valid", "runtime_freeze_receipt_sha256", "runtime_freeze_valid", "report_lint_receipt_sha256", "report_lint_valid", "gate_value"],
+      "properties": {
+        "artifact": {"const": "STAGE1_GATE_RECEIPT"},
+        "receipt_id": {"const": "s1-g01-construct"},
+        "gate_id": {"const": "G01"},
+        "receipt_kind": {"const": "CONSTRUCT_SCHEMA_RUNTIME_REPORT_RECEIPT"},
+        "root_certificate_count": {"const": 128},
+        "open_root_present": {"type": "boolean"},
+        "exact_program_valid": {"type": "boolean"},
+        "schema_suite_receipt_sha256": {"$ref":"#/$defs/sha256"},
+        "schema_suite_valid": {"type": "boolean"},
+        "runtime_freeze_receipt_sha256": {"$ref":"#/$defs/sha256"},
+        "runtime_freeze_valid": {"type": "boolean"},
+        "report_lint_receipt_sha256": {"$ref":"#/$defs/sha256"},
+        "report_lint_valid": {"type": "boolean"},
+        "gate_value": {"type": "boolean"}
+      }
+    },
+    "count_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage1_dream", "stage1_recurrent_think", "stage1_all", "stage2_dream", "stage2_recurrent_think", "stage2_one_shot_think", "stage2_all", "scientific_all", "process_all"],
+      "properties": {
+        "stage1_dream": {"const": 128},
+        "stage1_recurrent_think": {"const": 782},
+        "stage1_all": {"const": 910},
+        "stage2_dream": {"const": 356},
+        "stage2_recurrent_think": {"const": 2144},
+        "stage2_one_shot_think": {"const": 4},
+        "stage2_all": {"const": 2504},
+        "scientific_all": {"const": 3414},
+        "process_all": {"const": 3416}
+      }
+    },
+    "manifest_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "assignment_manifest_sha256", "assignment_schema_sha256", "call_ledger_schema_sha256", "counts", "literal_call_ids_unique", "all_gate_rows_bound", "no_extra_or_missing_calls", "gate_value"],
+      "properties": {
+        "artifact": {"const": "STAGE1_GATE_RECEIPT"},
+        "receipt_id": {"const": "s1-g02-manifest"},
+        "gate_id": {"const": "G02"},
+        "receipt_kind": {"const": "ROSTER_MANIFEST_COUNT_RECEIPT"},
+        "assignment_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "assignment_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "call_ledger_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "counts": {"$ref": "#/$defs/count_summary"},
+        "literal_call_ids_unique": {"type": "boolean"},
+        "all_gate_rows_bound": {"type": "boolean"},
+        "no_extra_or_missing_calls": {"type": "boolean"},
+        "gate_value": {"type": "boolean"}
+      }
+    },
+    "a_side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["z_side", "assignment_row_id", "dream1_terminal_receipt_id", "exact_candidate_exists", "a1_exact", "a2_exact"],
+      "properties": {
+        "z_side": {"$ref": "#/$defs/z_side"},
+        "assignment_row_id": {"enum": ["row:s1:self:dream1:sampled", "row:s1:self:dream1:antipode"]},
+        "dream1_terminal_receipt_id": {"type": "string", "pattern": "^terminal:s1:self:dream1:(sampled|antipode)$"},
+        "exact_candidate_exists": {"type": "boolean"},
+        "a1_exact": {"type": "boolean"},
+        "a2_exact": {"type": "boolean"}
+      }
+    },
+    "dream1_a_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "root_id", "sides", "gate_value"],
+      "properties": {
+        "artifact": {"const": "STAGE1_GATE_RECEIPT"},
+        "receipt_id": {"const": "s1-g03-dream1-a"},
+        "gate_id": {"const": "G03"},
+        "receipt_kind": {"const": "DREAM1_A_COMMITMENT_RECEIPT"},
+        "root_id": {"$ref": "#/$defs/root_id"},
+        "sides": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "prefixItems": [
+            {"allOf": [{"$ref": "#/$defs/a_side"}, {"properties": {"z_side": {"const": "SAMPLED"}, "assignment_row_id": {"const": "row:s1:self:dream1:sampled"}, "dream1_terminal_receipt_id": {"const": "terminal:s1:self:dream1:sampled"}}}]},
+            {"allOf": [{"$ref": "#/$defs/a_side"}, {"properties": {"z_side": {"const": "ANTIPODE"}, "assignment_row_id": {"const": "row:s1:self:dream1:antipode"}, "dream1_terminal_receipt_id": {"const": "terminal:s1:self:dream1:antipode"}}}]}
+          ],
+          "items": false
+        },
+        "gate_value": {"type": "boolean"}
+      }
+    },
+    "revision_branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["h", "dream1_clone_sha256", "seed_key_sha256", "coupling_kind", "pre_a_dream1_pool", "raw_a_read_count", "raw_a_read", "candidate_parent_read_count", "candidate_parent_read", "decisive_predict", "terminal", "selected_candidate_sha256", "changed_from_every_pre_a_candidate"],
+      "properties": {
+        "h": {"enum": [0, 1]},
+        "dream1_clone_sha256": {"$ref": "#/$defs/sha256"},
+        "seed_key_sha256": {"$ref": "#/$defs/sha256"},
+        "coupling_kind": {"const": "COMMON_SEED"},
+        "pre_a_dream1_pool": {
+          "type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["pool_ordinal", "candidate_handle", "candidate_sha256"],
+            "properties": {
+              "pool_ordinal": {"type": "integer", "minimum": 0, "maximum": 1},
+              "candidate_handle": {"$ref": "#/$defs/candidate_read_handle"},
+              "candidate_sha256": {"$ref": "#/$defs/sha256"}
+            }
+          }
+        },
+        "raw_a_read_count": {"const": 1},
+        "raw_a_read": {
+          "type": "object", "additionalProperties": false,
+          "required": ["receipt_id", "handle_id", "resolver_ordinal", "charged"],
+          "properties": {
+            "receipt_id": {"$ref": "#/$defs/read_receipt_id"},
+            "handle_id": {"$ref": "#/$defs/raw_a_handle"},
+            "resolver_ordinal": {"type": "integer", "minimum": 0, "maximum": 14},
+            "charged": {"const": true}
+          }
+        },
+        "candidate_parent_read_count": {"const": 1},
+        "candidate_parent_read": {
+          "type": "object", "additionalProperties": false,
+          "required": ["receipt_id", "handle_id", "resolver_ordinal", "charged", "candidate_capability", "candidate_sha256"],
+          "properties": {
+            "receipt_id": {"$ref": "#/$defs/read_receipt_id"},
+            "handle_id": {"$ref": "#/$defs/candidate_read_handle"},
+            "resolver_ordinal": {"type": "integer", "minimum": 0, "maximum": 14},
+            "charged": {"const": true},
+            "candidate_capability": {"$ref": "#/$defs/capability"},
+            "candidate_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "decisive_predict": {
+          "type": "object", "additionalProperties": false,
+          "required": ["resolver_ordinal", "decision", "parent_candidate_capability", "candidate_capability", "decision_provenance_receipt_ids", "public_handles", "b1_exact", "b2_exact"],
+          "properties": {
+            "resolver_ordinal": {"type": "integer", "minimum": 1, "maximum": 14},
+            "decision": {"const": "REPLACE"},
+            "parent_candidate_capability": {"$ref": "#/$defs/capability"},
+            "candidate_capability": {"$ref": "#/$defs/capability"},
+            "decision_provenance_receipt_ids": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/read_receipt_id"}},
+            "public_handles": {"type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": true, "items": {"$ref": "#/$defs/public_event_handle"}},
+            "b1_exact": {"type": "boolean"},
+            "b2_exact": {"type": "boolean"}
+          }
+        },
+        "terminal": {
+          "type": "object", "additionalProperties": false,
+          "required": ["resolver_ordinal", "decision", "selected_capability", "decision_provenance_receipt_ids"],
+          "properties": {
+            "resolver_ordinal": {"type": "integer", "minimum": 2, "maximum": 15},
+            "decision": {"const": "REPLACE"},
+            "selected_capability": {"$ref": "#/$defs/capability"},
+            "decision_provenance_receipt_ids": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/read_receipt_id"}}
+          }
+        },
+        "selected_candidate_sha256": {"$ref": "#/$defs/sha256"},
+        "changed_from_every_pre_a_candidate": {"type": "boolean"}
+      }
+    },
+    "revision_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["z_side", "branches", "branch_selected_bytes_differ"],
+      "properties": {
+        "z_side": {"$ref": "#/$defs/z_side"},
+        "branches": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "prefixItems": [
+            {"allOf": [{"$ref": "#/$defs/revision_branch"}, {"properties": {"h": {"const": 0}}}]},
+            {"allOf": [{"$ref": "#/$defs/revision_branch"}, {"properties": {"h": {"const": 1}}}]}
+          ],
+          "items": false
+        },
+        "branch_selected_bytes_differ": {"type": "boolean"}
+      }
+    },
+    "revision_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "root_id", "pairs", "gate_value"],
+      "properties": {
+        "artifact": {"const": "STAGE1_GATE_RECEIPT"},
+        "receipt_id": {"const": "s1-g04-revision"},
+        "gate_id": {"const": "G04"},
+        "receipt_kind": {"const": "RAW_A_CAUSAL_REVISION_RECEIPT"},
+        "root_id": {"$ref": "#/$defs/root_id"},
+        "pairs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "prefixItems": [
+            {"allOf": [{"$ref": "#/$defs/revision_pair"}, {"properties": {"z_side": {"const": "SAMPLED"}}}]},
+            {"allOf": [{"$ref": "#/$defs/revision_pair"}, {"properties": {"z_side": {"const": "ANTIPODE"}}}]}
+          ],
+          "items": false
+        },
+        "gate_value": {"type": "boolean"}
+      }
+    },
+    "b_branch": {
+      "type": "object", "additionalProperties": false,
+      "required": ["z_side", "h", "assignment_row_id", "b1_exact", "b2_exact", "endpoint_value"],
+      "properties": {"z_side": {"$ref": "#/$defs/z_side"}, "h": {"enum": [0, 1]}, "assignment_row_id": {"type": "string", "pattern": "^row:s1:self:dream2:(sampled|antipode):h[01]$"}, "b1_exact": {"type": "boolean"}, "b2_exact": {"type": "boolean"}, "endpoint_value": {"$ref": "#/$defs/endpoint_value"}}
+    },
+    "dream2_b_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "branches", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"const": "s1-g05-dream2-b"}, "gate_id": {"const": "G05"}, "receipt_kind": {"const": "DREAM2_B_COMMITMENT_RECEIPT"}, "branches": {"type": "array", "minItems": 4, "maxItems": 4, "prefixItems": [{"allOf":[{"$ref":"#/$defs/b_branch"},{"properties":{"z_side":{"const":"SAMPLED"},"h":{"const":0},"assignment_row_id":{"const":"row:s1:self:dream2:sampled:h0"}}}]},{"allOf":[{"$ref":"#/$defs/b_branch"},{"properties":{"z_side":{"const":"SAMPLED"},"h":{"const":1},"assignment_row_id":{"const":"row:s1:self:dream2:sampled:h1"}}}]},{"allOf":[{"$ref":"#/$defs/b_branch"},{"properties":{"z_side":{"const":"ANTIPODE"},"h":{"const":0},"assignment_row_id":{"const":"row:s1:self:dream2:antipode:h0"}}}]},{"allOf":[{"$ref":"#/$defs/b_branch"},{"properties":{"z_side":{"const":"ANTIPODE"},"h":{"const":1},"assignment_row_id":{"const":"row:s1:self:dream2:antipode:h1"}}}]}],"items":false}, "gate_value": {"type": "boolean"}}
+    },
+    "oracle_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "exact_program_solver_count", "exact_program_actor_count", "exact_program_model_calls", "oracle_schema_row_id", "oracle_d1_exact", "oracle_d4_exact", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"const": "s1-g06-oracle"}, "gate_id": {"const": "G06"}, "receipt_kind": {"const": "EXACT_AND_ORACLE_CEILING_RECEIPT"}, "exact_program_solver_count": {"const": 28}, "exact_program_actor_count": {"const": 60}, "exact_program_model_calls": {"const": 0}, "oracle_schema_row_id": {"const": "row:s1:oracle:sampled:h0:d1d4"}, "oracle_d1_exact": {"type": "boolean"}, "oracle_d4_exact": {"type": "boolean"}, "gate_value": {"type": "boolean"}}
+    },
+    "actor_endpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "z_side", "goal_twin", "assignment_status", "invocation_status", "parse_reducer_status", "actor_use_receipt_ids", "actor_input_projection_valid", "lock_local_to_think", "actor_status", "registered_sequence_exact", "endpoint_value"],
+      "properties": {"row_id": {"type": "string", "pattern": "^row:s1:self:h0:(sampled|antipode):d4:twin[01]$"}, "z_side": {"$ref": "#/$defs/z_side"}, "goal_twin": {"enum": [0, 1]}, "assignment_status": {"const": "ASSIGNED"}, "invocation_status": {"const": "RETURNED"}, "parse_reducer_status": {"const": "ACCEPTED"}, "actor_use_receipt_ids": {"type":"array","minItems":4,"maxItems":4,"uniqueItems":true,"items":{"type":"string","pattern":"^actor-use:[A-Za-z0-9._:-]+:[1-4]$"}}, "actor_input_projection_valid": {"type":"boolean"}, "lock_local_to_think": {"type":"boolean"}, "actor_status": {"const": "FOUR_VALID_USE_THEN_LOCAL_LOCK"}, "registered_sequence_exact": {"type": "boolean"}, "endpoint_value": {"$ref": "#/$defs/endpoint_value"}}
+    },
+    "actor_endpoint_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "endpoints", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"const": "s1-g07-actor-self"}, "gate_id": {"const": "G07"}, "receipt_kind": {"const": "SELECTED_H_SELF_ACTOR_ENDPOINT_RECEIPT"}, "endpoints": {"type": "array", "minItems": 4, "maxItems": 4, "prefixItems": [{"allOf":[{"$ref":"#/$defs/actor_endpoint"},{"properties":{"row_id":{"const":"row:s1:self:h0:sampled:d4:twin0"},"z_side":{"const":"SAMPLED"},"goal_twin":{"const":0}}}]},{"allOf":[{"$ref":"#/$defs/actor_endpoint"},{"properties":{"row_id":{"const":"row:s1:self:h0:sampled:d4:twin1"},"z_side":{"const":"SAMPLED"},"goal_twin":{"const":1}}}]},{"allOf":[{"$ref":"#/$defs/actor_endpoint"},{"properties":{"row_id":{"const":"row:s1:self:h0:antipode:d4:twin0"},"z_side":{"const":"ANTIPODE"},"goal_twin":{"const":0}}}]},{"allOf":[{"$ref":"#/$defs/actor_endpoint"},{"properties":{"row_id":{"const":"row:s1:self:h0:antipode:d4:twin1"},"z_side":{"const":"ANTIPODE"},"goal_twin":{"const":1}}}]}],"items":false}, "gate_value": {"type": "boolean"}}
+    },
+    "goal_twin_pair": {
+      "type": "object", "additionalProperties": false,
+      "required": ["z_side", "twin0_row_id", "twin1_row_id", "twin0_first_action", "twin1_first_action", "both_registered_sequences_exact", "first_actions_differ", "complementary_redirection"],
+      "properties": {"z_side": {"$ref": "#/$defs/z_side"}, "twin0_row_id": {"type": "string", "pattern": "^row:s1:self:h0:(sampled|antipode):d4:twin0$"}, "twin1_row_id": {"type": "string", "pattern": "^row:s1:self:h0:(sampled|antipode):d4:twin1$"}, "twin0_first_action": {"$ref": "#/$defs/action"}, "twin1_first_action": {"$ref": "#/$defs/action"}, "both_registered_sequences_exact": {"type": "boolean"}, "first_actions_differ": {"type": "boolean"}, "complementary_redirection": {"type": "boolean"}}
+    },
+    "goal_twin_pair_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "pairs", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"const": "s1-g08-goal-twins"}, "gate_id": {"const": "G08"}, "receipt_kind": {"const": "GOAL_TWIN_PAIR_COUPLING_RECEIPT"}, "pairs": {"type": "array", "minItems": 2, "maxItems": 2, "prefixItems":[{"allOf":[{"$ref":"#/$defs/goal_twin_pair"},{"properties":{"z_side":{"const":"SAMPLED"},"twin0_row_id":{"const":"row:s1:self:h0:sampled:d4:twin0"},"twin1_row_id":{"const":"row:s1:self:h0:sampled:d4:twin1"}}}]},{"allOf":[{"$ref":"#/$defs/goal_twin_pair"},{"properties":{"z_side":{"const":"ANTIPODE"},"twin0_row_id":{"const":"row:s1:self:h0:antipode:d4:twin0"},"twin1_row_id":{"const":"row:s1:self:h0:antipode:d4:twin1"}}}]}],"items":false}, "gate_value": {"type": "boolean"}}
+    },
+    "contrast_common": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "treatment", "control", "pair_count", "paired_row_ids", "self_success_sum", "control_success_sum", "difference_numerator", "difference_denominator", "strictly_positive", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"type": "string"}, "gate_id": {"enum": ["G09", "G10"]}, "receipt_kind": {"const": "STRICT_PAIRED_ACTION_CONTRAST_RECEIPT"}, "treatment": {"const": "SELF"}, "control": {"enum": ["EMPTY", "CROSSED_ANTIPODE"]}, "pair_count": {"const": 4}, "paired_row_ids": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["self_row_id", "control_row_id"], "properties": {"self_row_id": {"type": "string", "pattern": "^row:s1:self:h0:(sampled|antipode):d4:twin[01]$"}, "control_row_id": {"type": "string", "pattern": "^row:s1:(empty|crossed):h0:(sampled|antipode):d4:twin[01]$"}}}}, "self_success_sum": {"type": "integer", "minimum": 0, "maximum": 4}, "control_success_sum": {"type": "integer", "minimum": 0, "maximum": 4}, "difference_numerator": {"type": "integer", "minimum": -4, "maximum": 4}, "difference_denominator": {"const": 4}, "strictly_positive": {"type": "boolean"}, "gate_value": {"type": "boolean"}}
+    },
+    "empty_contrast_receipt": {
+      "allOf": [{"$ref": "#/$defs/contrast_common"}, {"properties": {"receipt_id": {"const": "s1-g09-self-minus-empty"}, "gate_id": {"const": "G09"}, "control": {"const": "EMPTY"}, "paired_row_ids": {"const": [{"self_row_id":"row:s1:self:h0:sampled:d4:twin0","control_row_id":"row:s1:empty:h0:sampled:d4:twin0"},{"self_row_id":"row:s1:self:h0:sampled:d4:twin1","control_row_id":"row:s1:empty:h0:sampled:d4:twin1"},{"self_row_id":"row:s1:self:h0:antipode:d4:twin0","control_row_id":"row:s1:empty:h0:antipode:d4:twin0"},{"self_row_id":"row:s1:self:h0:antipode:d4:twin1","control_row_id":"row:s1:empty:h0:antipode:d4:twin1"}]}}}]
+    },
+    "crossed_contrast_receipt": {
+      "allOf": [{"$ref": "#/$defs/contrast_common"}, {"properties": {"receipt_id": {"const": "s1-g10-self-minus-crossed"}, "gate_id": {"const": "G10"}, "control": {"const": "CROSSED_ANTIPODE"}, "paired_row_ids": {"const": [{"self_row_id":"row:s1:self:h0:sampled:d4:twin0","control_row_id":"row:s1:crossed:h0:sampled:d4:twin0"},{"self_row_id":"row:s1:self:h0:sampled:d4:twin1","control_row_id":"row:s1:crossed:h0:sampled:d4:twin1"},{"self_row_id":"row:s1:self:h0:antipode:d4:twin0","control_row_id":"row:s1:crossed:h0:antipode:d4:twin0"},{"self_row_id":"row:s1:self:h0:antipode:d4:twin1","control_row_id":"row:s1:crossed:h0:antipode:d4:twin1"}]}}}]
+    },
+    "sham_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_id", "gate_id", "receipt_kind", "constructor_receipt_ids", "pre_target_and_query_sealed", "target_independence_passed", "declared_nuisance_matches_passed", "opaque_semantic_label_absent", "pair_count", "sham_success_sum", "self_success_sum", "difference_numerator", "difference_denominator", "strictly_positive", "sham_complementary_redirection_count", "gate_value"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_RECEIPT"}, "receipt_id": {"const": "s1-g11-sham"}, "gate_id": {"const": "G11"}, "receipt_kind": {"const": "PRESEALED_SHAM_ENDPOINT_RECEIPT"}, "constructor_receipt_ids": {"const":["sham:s1:sampled","sham:s1:antipode"]}, "pre_target_and_query_sealed": {"type": "boolean"}, "target_independence_passed": {"type": "boolean"}, "declared_nuisance_matches_passed": {"type": "boolean"}, "opaque_semantic_label_absent": {"type": "boolean"}, "pair_count": {"const": 4}, "sham_success_sum": {"type": "integer", "minimum": 0, "maximum": 4}, "self_success_sum": {"type": "integer", "minimum": 0, "maximum": 4}, "difference_numerator": {"type": "integer", "minimum": -4, "maximum": 4}, "difference_denominator": {"const": 4}, "strictly_positive": {"type": "boolean"}, "sham_complementary_redirection_count": {"const": 0}, "gate_value": {"type": "boolean"}}
+    },
+    "gate_values": {
+      "type": "object", "additionalProperties": false,
+      "required": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+      "properties": {"G01": {"type": "boolean"}, "G02": {"type": "boolean"}, "G03": {"type": "boolean"}, "G04": {"type": "boolean"}, "G05": {"type": "boolean"}, "G06": {"type": "boolean"}, "G07": {"type": "boolean"}, "G08": {"type": "boolean"}, "G09": {"type": "boolean"}, "G10": {"type": "boolean"}, "G11": {"type": "boolean"}}
+    },
+    "all_true_values": {"const": {"G01": true, "G02": true, "G03": true, "G04": true, "G05": true, "G06": true, "G07": true, "G08": true, "G09": true, "G10": true, "G11": true}},
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+      "properties": {"G01": {"$ref": "#/$defs/construct_receipt"}, "G02": {"$ref": "#/$defs/manifest_receipt"}, "G03": {"$ref": "#/$defs/dream1_a_receipt"}, "G04": {"$ref": "#/$defs/revision_receipt"}, "G05": {"$ref": "#/$defs/dream2_b_receipt"}, "G06": {"$ref": "#/$defs/oracle_receipt"}, "G07": {"$ref": "#/$defs/actor_endpoint_receipt"}, "G08": {"$ref": "#/$defs/goal_twin_pair_receipt"}, "G09": {"$ref": "#/$defs/empty_contrast_receipt"}, "G10": {"$ref": "#/$defs/crossed_contrast_receipt"}, "G11": {"$ref": "#/$defs/sham_receipt"}}
+    },
+    "evidence_pass": {
+      "type": "object", "additionalProperties": false,
+      "required": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+      "properties": {
+        "G01": {"allOf":[{"$ref":"#/$defs/construct_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G02": {"allOf":[{"$ref":"#/$defs/manifest_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G03": {"allOf":[{"$ref":"#/$defs/dream1_a_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G04": {"allOf":[{"$ref":"#/$defs/revision_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G05": {"allOf":[{"$ref":"#/$defs/dream2_b_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G06": {"allOf":[{"$ref":"#/$defs/oracle_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G07": {"allOf":[{"$ref":"#/$defs/actor_endpoint_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G08": {"allOf":[{"$ref":"#/$defs/goal_twin_pair_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G09": {"allOf":[{"$ref":"#/$defs/empty_contrast_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G10": {"allOf":[{"$ref":"#/$defs/crossed_contrast_receipt"},{"properties":{"gate_value":{"const":true}}}]},
+        "G11": {"allOf":[{"$ref":"#/$defs/sham_receipt"},{"properties":{"gate_value":{"const":true}}}]}
+      }
+    },
+    "gate_pass": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "schema_version", "expression", "evidence", "values", "stage1_pass", "stage2_status", "terminal_route"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_EVALUATION"}, "schema_version": {"const": 1}, "expression": {"const": "G01&&G02&&G03&&G04&&G05&&G06&&G07&&G08&&G09&&G10&&G11"}, "evidence": {"$ref": "#/$defs/evidence_pass"}, "values": {"$ref": "#/$defs/all_true_values"}, "stage1_pass": {"const": true}, "stage2_status": {"const": "OPEN_EXACT_2504_CALL_STAGE2"}, "terminal_route": {"const": "CONTINUE_TO_STAGE2"}}
+    },
+    "gate_fail": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "schema_version", "expression", "evidence", "values", "stage1_pass", "stage2_status", "terminal_route"],
+      "properties": {"artifact": {"const": "STAGE1_GATE_EVALUATION"}, "schema_version": {"const": 1}, "expression": {"const": "G01&&G02&&G03&&G04&&G05&&G06&&G07&&G08&&G09&&G10&&G11"}, "evidence": {"$ref": "#/$defs/evidence"}, "values": {"allOf": [{"$ref": "#/$defs/gate_values"}, {"not": {"$ref": "#/$defs/all_true_values"}}]}, "stage1_pass": {"const": false}, "stage2_status": {"const": "NOT_TRIGGERED"}, "terminal_route": {"const": "HUMAN_REQUIRED"}}
+    }
+  },
+  "x-runtime-invariants": [
+    "Every evidence property is present exactly once, validates against its gate-specific receipt kind and exact receipt_id, and its embedded gate_id equals the property name; any missing, duplicate-key, wrong-kind, wrong-ID, malformed, or unresolved row reference invalidates the evaluation rather than setting a discretionary value.",
+    "Each gate value equals its receipt gate_value. A receipt gate_value is the exact conjunction in gate_receipt_contract.md; no caller-supplied Boolean overrides component evidence.",
+    "For every revision branch, resolve the full fresh Dream-2 trace and require exactly one charged RAW_A_EVENT read and exactly one charged Dream-1 candidate read. The two read receipt IDs are distinct and both occur exactly once in decisive_predict.decision_provenance_receipt_ids; raw_a_read.handle_id occurs exactly once in decisive_predict.public_handles. candidate_parent_read.handle_id and candidate_sha256 match exactly one pre_a_dream1_pool member, candidate_parent_read.candidate_capability equals decisive_predict.parent_candidate_capability, and the parent capability was minted only by that charged read. Both read ordinals are distinct and less than decisive_predict.resolver_ordinal, which is less than terminal.resolver_ordinal. decisive_predict.decision and terminal.decision are REPLACE; terminal.selected_capability equals decisive_predict.candidate_capability; terminal.decision_provenance_receipt_ids byte-for-byte equals the PREDICT array. selected_candidate_sha256 differs from every pre-A pool candidate hash and changed_from_every_pre_a_candidate is exactly that conjunction.",
+    "Within each revision pair, h=0 and h=1 pre_a_dream1_pool arrays, dream1_clone_sha256 values, and seed_key_sha256 values are byte-for-byte equal, while selected_candidate_sha256 values differ and branch_selected_bytes_differ is exactly that inequality.",
+    "Every four-item endpoint or branch array resolves to the exact literal z-side/h/goal-twin row set once each; duplicates, missing combinations, and extra combinations invalidate the receipt.",
+    "For G09/G10/G11 difference_numerator equals self_success_sum-control_success_sum, strictly_positive is exactly difference_numerator>0, and gate_value equals strictly_positive plus the receipt-specific validity conditions.",
+    "STAGE1_PASS is true if and only if all eleven derived values are true. All other complete valid vectors route Stage 2 to NOT_TRIGGERED and terminate HUMAN_REQUIRED."
+  ]
+}

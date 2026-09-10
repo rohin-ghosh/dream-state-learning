@@ -1,0 +1,776 @@
+{
+  "schema_version": 5,
+  "contract": "ppc5.object_inventory.v5",
+  "closed_world": true,
+  "canonical_json": "RFC8785-compatible project canonical JSON: sorted keys, compact separators, UTF-8, one LF; arrays retain contract order",
+  "hash_algorithm": "SHA256(contract_utf8 || NUL || schema_version_ascii || NUL || canonical_object_without_self_hash)",
+  "schema_bundle": "ppc5r5-contracts.schema.json",
+  "unknown_type_policy": "REJECT",
+  "objects": [
+    {
+      "type": "byte_artifact_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/byte_artifact_manifest",
+      "contract": "ppc5.byte_artifact_manifest.v5",
+      "domain": "PPC5R5_BYTE_ARTIFACT_MANIFEST",
+      "producer": "BYTE_MANIFEST_BUILDER",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "generator_parameter_space",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/generator_parameter_space",
+      "contract": "ppc5.generator_parameter_space.v5",
+      "domain": "PPC5R5_GENERATOR_PARAMETER_SPACE",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "entropy_source_contract",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/entropy_source_contract",
+      "contract": "ppc5.entropy_source_contract.v5",
+      "domain": "PPC5R5_ENTROPY_SOURCE_CONTRACT",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "contract_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "pre_entropy_membership_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/pre_entropy_membership_manifest",
+      "contract": "ppc5.pre_entropy_membership_manifest.v5",
+      "domain": "PPC5R5_PRE_ENTROPY_MEMBERSHIP_MANIFEST",
+      "producer": "RUN_DESIGN",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "common_seed_bundle",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/common_seed_bundle",
+      "contract": "ppc5.common_seed_bundle.v5",
+      "domain": "PPC5R5_COMMON_SEED_BUNDLE",
+      "producer": "SAMPLER",
+      "self_hash": "bundle_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "gate_registry",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/gate_registry",
+      "contract": "ppc5.gate_registry.v5",
+      "domain": "PPC5R5_GATE_REGISTRY",
+      "producer": "RUN_DESIGN",
+      "self_hash": "registry_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "generator_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/generator_manifest",
+      "contract": "ppc5.generator_manifest.v5",
+      "domain": "PPC5R5_GENERATOR_MANIFEST",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "entropy_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/entropy_receipt",
+      "contract": "ppc5.entropy_receipt.v5",
+      "domain": "PPC5R5_ENTROPY_RECEIPT",
+      "producer": "SAMPLER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "life_sample_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/life_sample_receipt",
+      "contract": "ppc5.life_sample_receipt.v5",
+      "domain": "PPC5R5_LIFE_SAMPLE_RECEIPT",
+      "producer": "SAMPLER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "semantic_table",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/semantic_table",
+      "contract": "ppc5.semantic_table.v5",
+      "domain": "PPC5R5_SEMANTIC_TABLE",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "table_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "assay_assignment",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/assay_assignment",
+      "contract": "ppc5.assay_assignment.v5",
+      "domain": "PPC5R5_ASSAY_ASSIGNMENT",
+      "producer": "ASSIGNMENT",
+      "self_hash": "assignment_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "overlap_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/overlap_manifest",
+      "contract": "ppc5.overlap_manifest.v5",
+      "domain": "PPC5R5_OVERLAP_MANIFEST",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "construction_scope_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/construction_scope_receipt",
+      "contract": "ppc5.construction_scope_receipt.v5",
+      "domain": "PPC5R5_CONSTRUCTION_SCOPE_RECEIPT",
+      "producer": "BENCHMARK_CONSTRUCTION",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "path_suite_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/path_suite_manifest",
+      "contract": "ppc5.path_suite_manifest.v5",
+      "domain": "PPC5R5_PATH_SUITE_MANIFEST",
+      "producer": "PATH_CONSTRUCTION",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "path_proof",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/path_proof",
+      "contract": "ppc5.path_proof.v5",
+      "domain": "PPC5R5_PATH_PROOF",
+      "producer": "PATH_CONSTRUCTION",
+      "self_hash": "proof_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "model_view",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/model_view",
+      "contract": "ppc5.model_view.v5",
+      "domain": "PPC5R5_MODEL_VIEW",
+      "producer": "STATE_RENDERER",
+      "self_hash": "view_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "private_controller_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/private_controller_receipt",
+      "contract": "ppc5.private_controller_receipt.v5",
+      "domain": "PPC5R5_PRIVATE_CONTROLLER_RECEIPT",
+      "producer": "CONTROLLER",
+      "self_hash": "controller_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "operation_envelope",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/operation_envelope",
+      "contract": "ppc5.operation_envelope.v5",
+      "domain": "PPC5R5_OPERATION_ENVELOPE",
+      "producer": "MODEL_DISPATCH",
+      "self_hash": "envelope_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "operation_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/operation_result",
+      "contract": "ppc5.operation_result.v5",
+      "domain": "PPC5R5_OPERATION_RESULT",
+      "producer": "CONTROLLER_OR_TOOL",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "queue_slot_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/queue_slot_receipt",
+      "contract": "ppc5.queue_slot_receipt.v5",
+      "domain": "PPC5R5_QUEUE_SLOT_RECEIPT",
+      "producer": "CONTROLLER",
+      "self_hash": "slot_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "queue_effect_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/queue_effect_receipt",
+      "contract": "ppc5.queue_effect_receipt.v5",
+      "domain": "PPC5R5_QUEUE_EFFECT_RECEIPT",
+      "producer": "CONTROLLER",
+      "self_hash": "effect_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "state_body",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/state_body",
+      "contract": "ppc5.state_body.v5",
+      "domain": "PPC5R5_STATE_BODY",
+      "producer": "TRANSITION_REDUCER",
+      "self_hash": "body_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "transition_event",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/transition_event",
+      "contract": "ppc5.transition_event.v5",
+      "domain": "PPC5R5_TRANSITION_EVENT",
+      "producer": "TRANSITION_REDUCER",
+      "self_hash": "event_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "state_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/state_receipt",
+      "contract": "ppc5.state_receipt.v5",
+      "domain": "PPC5R5_STATE_RECEIPT",
+      "producer": "TRANSITION_REDUCER",
+      "self_hash": "state_receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "controller_registry",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/controller_registry",
+      "contract": "ppc5.controller_registry.v5",
+      "domain": "PPC5R5_CONTROLLER_REGISTRY",
+      "producer": "CONTRACT_AUTHOR",
+      "self_hash": "registry_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "provider_ingress",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/provider_ingress",
+      "contract": "ppc5.provider_ingress.v5",
+      "domain": "PPC5R5_PROVIDER_INGRESS",
+      "producer": "CONTROLLER",
+      "self_hash": "ingress_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "provider_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/provider_receipt",
+      "contract": "ppc5.provider_receipt.v5",
+      "domain": "PPC5R5_PROVIDER_RECEIPT",
+      "producer": "READ_PROVIDER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "provider_audit_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/provider_audit_receipt",
+      "contract": "ppc5.provider_audit_receipt.v5",
+      "domain": "PPC5R5_PROVIDER_AUDIT_RECEIPT",
+      "producer": "READ_PROVIDER_AUDIT",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "descriptive_provider_ingress",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/descriptive_provider_ingress",
+      "contract": "ppc5.descriptive_provider_ingress.v5",
+      "domain": "PPC5R5_DESCRIPTIVE_PROVIDER_INGRESS",
+      "producer": "DESCRIPTIVE_CONTROLLER",
+      "self_hash": "ingress_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "descriptive_provider_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/descriptive_provider_receipt",
+      "contract": "ppc5.descriptive_provider_receipt.v5",
+      "domain": "PPC5R5_DESCRIPTIVE_PROVIDER_RECEIPT",
+      "producer": "DESCRIPTIVE_PROVIDER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "intervention_route_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/intervention_route_receipt",
+      "contract": "ppc5.intervention_route_receipt.v5",
+      "domain": "PPC5R5_INTERVENTION_ROUTE_RECEIPT",
+      "producer": "PRIVILEGED_ROUTER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "resolved_response_projection",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/resolved_response_projection",
+      "contract": "ppc5.resolved_response_projection.v5",
+      "domain": "PPC5R5_RESOLVED_RESPONSE_PROJECTION",
+      "producer": "PRIVILEGED_ROUTER",
+      "self_hash": "projection_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "intervention_emission_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/intervention_emission_receipt",
+      "contract": "ppc5.intervention_emission_receipt.v5",
+      "domain": "PPC5R5_INTERVENTION_EMISSION_RECEIPT",
+      "producer": "RESPONSE_INTERVENTION",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dream_input",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dream_input",
+      "contract": "ppc5.dream_input.v5",
+      "domain": "PPC5R5_DREAM_INPUT",
+      "producer": "DREAM_SCHEDULER",
+      "self_hash": "input_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dream_render",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dream_render",
+      "contract": "ppc5.dream_render.v5",
+      "domain": "PPC5R5_DREAM_RENDER",
+      "producer": "DREAM_RENDERER",
+      "self_hash": "render_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dream_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dream_receipt",
+      "contract": "ppc5.dream_receipt.v5",
+      "domain": "PPC5R5_DREAM_RECEIPT",
+      "producer": "DREAM",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "context_install_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/context_install_receipt",
+      "contract": "ppc5.context_install_receipt.v5",
+      "domain": "PPC5R5_CONTEXT_INSTALL_RECEIPT",
+      "producer": "CONTEXT_POLICY",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "eligibility_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/eligibility_receipt",
+      "contract": "ppc5.eligibility_receipt.v5",
+      "domain": "PPC5R5_ELIGIBILITY_RECEIPT",
+      "producer": "EVIDENCE_GATE",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "nominee_universe_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/nominee_universe_receipt",
+      "contract": "ppc5.nominee_universe_receipt.v5",
+      "domain": "PPC5R5_NOMINEE_UNIVERSE_RECEIPT",
+      "producer": "EVIDENCE_GATE",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "evidence_projection_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/evidence_projection_receipt",
+      "contract": "ppc5.evidence_projection_receipt.v5",
+      "domain": "PPC5R5_EVIDENCE_PROJECTION_RECEIPT",
+      "producer": "ROOT_POLICY",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "root_selection_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/root_selection_receipt",
+      "contract": "ppc5.root_selection_receipt.v5",
+      "domain": "PPC5R5_ROOT_SELECTION_RECEIPT",
+      "producer": "ROOT_POLICY",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "sleep_row",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/sleep_row",
+      "contract": "ppc5.sleep_row.v5",
+      "domain": "PPC5R5_SLEEP_ROW",
+      "producer": "WRITER",
+      "self_hash": "row_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "corpus_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/corpus_manifest",
+      "contract": "ppc5.corpus_manifest.v5",
+      "domain": "PPC5R5_CORPUS_MANIFEST",
+      "producer": "WRITER",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "trainer_execution_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/trainer_execution_receipt",
+      "contract": "ppc5.trainer_execution_receipt.v5",
+      "domain": "PPC5R5_TRAINER_EXECUTION_RECEIPT",
+      "producer": "TRAINER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "adapter_validation_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/adapter_validation_receipt",
+      "contract": "ppc5.adapter_validation_receipt.v5",
+      "domain": "PPC5R5_ADAPTER_VALIDATION_RECEIPT",
+      "producer": "VALIDATOR",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "adapter_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/adapter_manifest",
+      "contract": "ppc5.adapter_manifest.v5",
+      "domain": "PPC5R5_ADAPTER_MANIFEST",
+      "producer": "VALIDATOR",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "publication_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/publication_receipt",
+      "contract": "ppc5.publication_receipt.v5",
+      "domain": "PPC5R5_PUBLICATION_RECEIPT",
+      "producer": "PUBLICATION",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "stage_outcome",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/stage_outcome",
+      "contract": "ppc5.stage_outcome.v5",
+      "domain": "PPC5R5_STAGE_OUTCOME",
+      "producer": "STATUS_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "observation",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/observation",
+      "contract": "ppc5.observation.v5",
+      "domain": "PPC5R5_OBSERVATION",
+      "producer": "OBSERVATION_REDUCER",
+      "self_hash": "observation_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "paired_gate_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/paired_gate_result",
+      "contract": "ppc5.paired_gate_result.v5",
+      "domain": "PPC5R5_PAIRED_GATE_RESULT",
+      "producer": "GATE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "one_sample_safety_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/one_sample_safety_result",
+      "contract": "ppc5.one_sample_safety_result.v5",
+      "domain": "PPC5R5_ONE_SAMPLE_SAFETY_RESULT",
+      "producer": "GATE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "missingness_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/missingness_result",
+      "contract": "ppc5.missingness_result.v5",
+      "domain": "PPC5R5_MISSINGNESS_RESULT",
+      "producer": "GATE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "gate_power_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/gate_power_result",
+      "contract": "ppc5.gate_power_result.v5",
+      "domain": "PPC5R5_GATE_POWER_RESULT",
+      "producer": "POWER_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "power_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/power_receipt",
+      "contract": "ppc5.power_receipt.v5",
+      "domain": "PPC5R5_POWER_RECEIPT",
+      "producer": "POWER_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "resource_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/resource_receipt",
+      "contract": "ppc5.resource_receipt.v5",
+      "domain": "PPC5R5_RESOURCE_RECEIPT",
+      "producer": "RESOURCE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "assay_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/assay_result",
+      "contract": "ppc5.assay_result.v5",
+      "domain": "PPC5R5_ASSAY_RESULT",
+      "producer": "ASSAY_REDUCER",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "holm_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/holm_result",
+      "contract": "ppc5.holm_result.v5",
+      "domain": "PPC5R5_HOLM_RESULT",
+      "producer": "HOLM_REDUCER",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dependency_map_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dependency_map_receipt",
+      "contract": "ppc5.dependency_map_receipt.v5",
+      "domain": "PPC5R5_DEPENDENCY_MAP_RECEIPT",
+      "producer": "CLAIM_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "claim_decision_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/claim_decision_receipt",
+      "contract": "ppc5.claim_decision_receipt.v5",
+      "domain": "PPC5R5_CLAIM_DECISION_RECEIPT",
+      "producer": "CLAIM_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "claim_release_package",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/claim_release_package",
+      "contract": "ppc5.claim_release_package.v5",
+      "domain": "PPC5R5_CLAIM_RELEASE_PACKAGE",
+      "producer": "RELEASE_REDUCER",
+      "self_hash": "package_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "implementation_identity_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/implementation_identity_receipt",
+      "contract": "ppc5.implementation_identity_receipt.v5",
+      "domain": "PPC5R5_IMPLEMENTATION_IDENTITY_RECEIPT",
+      "producer": "BUILD_AUDIT",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "implementation_independence_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/implementation_independence_receipt",
+      "contract": "ppc5.implementation_independence_receipt.v5",
+      "domain": "PPC5R5_IMPLEMENTATION_INDEPENDENCE_RECEIPT",
+      "producer": "INDEPENDENCE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "fixture_case",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/fixture_case",
+      "contract": "ppc5.fixture_case.v5",
+      "domain": "PPC5R5_FIXTURE_CASE",
+      "producer": "TEST_CONSTRUCTION",
+      "self_hash": "case_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "negative_mutation",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/negative_mutation",
+      "contract": "ppc5.negative_mutation.v5",
+      "domain": "PPC5R5_NEGATIVE_MUTATION",
+      "producer": "TEST_CONSTRUCTION",
+      "self_hash": "mutation_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "fixture_universe_manifest",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/fixture_universe_manifest",
+      "contract": "ppc5.fixture_universe_manifest.v5",
+      "domain": "PPC5R5_FIXTURE_UNIVERSE_MANIFEST",
+      "producer": "TEST_CONSTRUCTION",
+      "self_hash": "manifest_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "case_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/case_result",
+      "contract": "ppc5.case_result.v5",
+      "domain": "PPC5R5_CASE_RESULT",
+      "producer": "TEST_RUNNER",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "mutation_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/mutation_result",
+      "contract": "ppc5.mutation_result.v5",
+      "domain": "PPC5R5_MUTATION_RESULT",
+      "producer": "TEST_RUNNER",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "test_coverage_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/test_coverage_receipt",
+      "contract": "ppc5.test_coverage_receipt.v5",
+      "domain": "PPC5R5_TEST_COVERAGE_RECEIPT",
+      "producer": "TEST_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "test_result",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/test_result",
+      "contract": "ppc5.test_result.v5",
+      "domain": "PPC5R5_TEST_RESULT",
+      "producer": "TEST_REDUCER",
+      "self_hash": "result_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "endpoint_coverage_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/endpoint_coverage_receipt",
+      "contract": "ppc5.endpoint_coverage_receipt.v5",
+      "domain": "PPC5R5_ENDPOINT_COVERAGE_RECEIPT",
+      "producer": "ENDPOINT_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "populated_run_lock",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/populated_run_lock",
+      "contract": "ppc5.populated_run_lock.v5",
+      "domain": "PPC5R5_POPULATED_RUN_LOCK",
+      "producer": "RUN_DESIGN",
+      "self_hash": "run_lock_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "static_seal_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/static_seal_receipt",
+      "contract": "ppc5.static_seal_receipt.v5",
+      "domain": "PPC5R5_STATIC_SEAL_RECEIPT",
+      "producer": "STATIC_SEALER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "sealer_independence_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/sealer_independence_receipt",
+      "contract": "ppc5.sealer_independence_receipt.v5",
+      "domain": "PPC5R5_SEALER_INDEPENDENCE_RECEIPT",
+      "producer": "INDEPENDENCE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "independent_review_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/independent_review_receipt",
+      "contract": "ppc5.independent_review_receipt.v5",
+      "domain": "PPC5R5_INDEPENDENT_REVIEW_RECEIPT",
+      "producer": "FRESH_REVIEWER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "advocate_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/advocate_receipt",
+      "contract": "ppc5.advocate_receipt.v5",
+      "domain": "PPC5R5_ADVOCATE_RECEIPT",
+      "producer": "AUTHOR_ADVOCATE",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "architecture_ratification_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/architecture_ratification_receipt",
+      "contract": "ppc5.architecture_ratification_receipt.v5",
+      "domain": "PPC5R5_ARCHITECTURE_RATIFICATION_RECEIPT",
+      "producer": "HUMAN_INTAKE",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "conformance_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/conformance_receipt",
+      "contract": "ppc5.conformance_receipt.v5",
+      "domain": "PPC5R5_CONFORMANCE_RECEIPT",
+      "producer": "CONFORMANCE_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "human_run_ratification_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/human_run_ratification_receipt",
+      "contract": "ppc5.human_run_ratification_receipt.v5",
+      "domain": "PPC5R5_HUMAN_RUN_RATIFICATION_RECEIPT",
+      "producer": "HUMAN_INTAKE",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "pre_model_authority_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/pre_model_authority_receipt",
+      "contract": "ppc5.pre_model_authority_receipt.v5",
+      "domain": "PPC5R5_PRE_MODEL_AUTHORITY_RECEIPT",
+      "producer": "AUTHORITY_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dispatch_preflight_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dispatch_preflight_receipt",
+      "contract": "ppc5.dispatch_preflight_receipt.v5",
+      "domain": "PPC5R5_DISPATCH_PREFLIGHT_RECEIPT",
+      "producer": "PREFLIGHT",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "dispatch_result_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/dispatch_result_receipt",
+      "contract": "ppc5.dispatch_result_receipt.v5",
+      "domain": "PPC5R5_DISPATCH_RESULT_RECEIPT",
+      "producer": "DISPATCH_AUDIT",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "canary_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/canary_receipt",
+      "contract": "ppc5.canary_receipt.v5",
+      "domain": "PPC5R5_CANARY_RECEIPT",
+      "producer": "CANARY",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "runtime_integrity_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/runtime_integrity_receipt",
+      "contract": "ppc5.runtime_integrity_receipt.v5",
+      "domain": "PPC5R5_RUNTIME_INTEGRITY_RECEIPT",
+      "producer": "RUNTIME_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "t14_cold_replay_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/t14_cold_replay_receipt",
+      "contract": "ppc5.t14_cold_replay_receipt.v5",
+      "domain": "PPC5R5_T14_COLD_REPLAY_RECEIPT",
+      "producer": "COLD_REPLAY",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    },
+    {
+      "type": "preclaim_authority_receipt",
+      "schema_ref": "ppc5r5-contracts.schema.json#/$defs/preclaim_authority_receipt",
+      "contract": "ppc5.preclaim_authority_receipt.v5",
+      "domain": "PPC5R5_PRECLAIM_AUTHORITY_RECEIPT",
+      "producer": "AUTHORITY_REDUCER",
+      "self_hash": "receipt_hash",
+      "payload_mode": "INLINE_CLOSED_FIELDS_NO_PAYLOAD_REF"
+    }
+  ]
+}

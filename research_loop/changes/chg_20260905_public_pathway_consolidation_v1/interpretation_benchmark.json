@@ -1,0 +1,207 @@
+{
+  "acceptance_test_ids_addressed": [
+    "PPC_T01_PUBLIC_COGNITION_GOLDENS",
+    "PPC_T02_DELAYED_CREDIT_AND_ADMISSION_GOLDENS",
+    "PPC_T03_WRITER_AND_MATCHING_GOLDENS",
+    "PPC_T04_DUAL_ENVIRONMENT_SEAL",
+    "PPC_T05_PRE_GPU_INDEPENDENT_REVIEW",
+    "PPC_T06_POSTRUN_CAUSAL_AUDIT"
+  ],
+  "acceptance_test_interpretation": "PPC_T01 must establish one-operation transitions, measured context limits, dream provenance, and equal charging, but it cannot establish useful cognition; it should also resolve whether REQUEST_DREAM is a legal THINK operation and whether within-item public outcomes remain visible. PPC_T02 can validate deterministic admission and fixed-sequence action necessity, but deletion replay identifies contribution only within the replayed trajectory and does not by itself causally validate preceding cognitive operations or generalized semantic edges. PPC_T03 is the principal defense against format, token-volume, update-count, and outcome-stratum confounds; it must demonstrate that shuffling destroys authentic bindings while preserving all declared marginals. As written, it does not create a pure fixed-corpus text-versus-LoRA memory comparison because PATH jointly trains READ and DECIDE while LINKED_TEXT changes only external memory. PPC_T04 must establish both environments before any model science: CompilerGym identity separation and complementarity, plus PCFL direct-record closure, recurrent oracle solvability, paired-twin indistinguishability under every permitted target-only feature, and failure of state-only, identifier, passive-signature, action-frequency, and answer-prior predictors. PPC_T05 is a genuine veto gate and should reject an exact run manifest if the visibility contradiction, baseline coverage, substrate confound, recurrence ablation, capacity matching, or root-level uncertainty plan remains unresolved. PPC_T06 must release separate findings for read transport, adaptive composition, action value, adapter contribution, authentic binding, dream reconciliation, on-policy learning, and longitudinal improvement; success on one cannot substitute for evidence on another.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "BENCH_A01_TARGET_OUTCOME_VISIBILITY",
+      "impact": "Literal enforcement would prevent recurrent target action, recovery, and replanning; permissive enforcement without an exact boundary could leak target results across calls, items, or writer stages.",
+      "question": "Does sealed_target_results/TARGET hidden prohibit only offline scores and cross-item feedback, or also the ordinary public action result and next state needed by later calls within the same target item?"
+    },
+    {
+      "ambiguity_id": "BENCH_A02_REQUEST_DREAM_OPERATION",
+      "impact": "The invocation rate, operation budget, and treatment exposure cannot be reproduced or matched until REQUEST_DREAM has one normative typed representation.",
+      "question": "Is REQUEST_DREAM an additional legal THINK operation, an alias of another listed operation, or an out-of-band harness event? Section 2 invokes it but omits it from the THINK operation enumeration."
+    },
+    {
+      "ambiguity_id": "BENCH_A03_TWIN_INDISTINGUISHABILITY_LEVEL",
+      "impact": "Matching names and aggregate marginals is insufficient if a target-only classifier can infer the twin, cohort, or correct action from serialized state, ordering, identifiers, or generator artifacts.",
+      "question": "Must PCFL twins be byte-identical in all pre-memory model-visible target bytes at the paired decision point, or only distributionally matched on selected fields?"
+    },
+    {
+      "ambiguity_id": "BENCH_A04_LINKED_TEXT_INTERFACE_AND_CAPACITY",
+      "impact": "Unspecified retrieval topology, bytes, candidate work, and returned fields could make PATH-LINKED_TEXT reflect interface or resource differences instead of substrate differences.",
+      "question": "What exact reader, capacity cap, retrieval computation, metadata visibility, and eviction policy define LINKED_TEXT at each lifetime checkpoint?"
+    },
+    {
+      "ambiguity_id": "BENCH_A05_DELETION_REPLAY_SEMANTICS",
+      "impact": "Deleting an early action can place later recorded actions in an unreachable or semantically different state, making sequence-essential status implementation-dependent.",
+      "question": "When an action is deleted, are later actions replayed open-loop, re-bound to the counterfactual public state, rejected if illegal, or reselected by a frozen policy?"
+    },
+    {
+      "ambiguity_id": "BENCH_A06_ACCUMULATION_ACROSS_LIVES",
+      "impact": "The proposed per-life reset supports accumulation across sleeps within one life, but not durable semantic accumulation across independent lives; confusing these would overstate the learned object.",
+      "question": "Does 'multiple lives' mean replicated independent roots, successive checkpoints within one life, or cross-life inheritance? Only the first two are currently defined, while Stage D transfers visible parenting text rather than per-life memory."
+    },
+    {
+      "ambiguity_id": "BENCH_A07_FIXED_MEMORY_ACCOUNTING",
+      "impact": "Fixed rank does not by itself ensure fixed serialized bytes, optimizer state exclusions, equal retained-information budgets, or comparable text-memory capacity.",
+      "question": "Which bytes count toward fixed memory for LoRA, raw RAG, linked text, and any explicit graph, and are indexes, metadata, and retrieval caches included?"
+    },
+    {
+      "ambiguity_id": "BENCH_A08_STAGE_C_ONLINE_EVIDENCE",
+      "impact": "Condition-local experience and later improvement show on-policy updating, but not necessarily the full memory-to-information-seeking-to-better-experience flywheel.",
+      "question": "Will Stage C include registered epistemic actions and tests that assigned memory changes evidence acquisition, that the resulting observations change the next admitted memory, and that this mediates later action value?"
+    }
+  ],
+  "architecture_change_sha256": "7f328a4a1aea31d77816853df40c4b7d5de464ee2c65ba6b941937658f4124de",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The architecture proposal is bound to change.json SHA-256 7f328a4a1aea31d77816853df40c4b7d5de464ee2c65ba6b941937658f4124de, and the listed durable-source hashes are the intended context bindings.",
+    "One per-life LoRA is cumulatively rebuilt from the clean base across sleep checkpoints within a life and is never shared across independent evaluation lives.",
+    "Independent source roots, not targets or programs within a root, are the experimental and uncertainty units.",
+    "Offline truth, hidden PCFL structure, CompilerGym scoring internals, and target metrics are reporting or sealer inputs only and never enter model calls, candidate generation, admission, retrieval, or training.",
+    "CompilerGym deletion replay is deterministic or is made reproducible by sealed state and action receipts; otherwise sequence-essential labels are not stable.",
+    "PATH_SHUFFLE is generated target-blind within frozen outcome and chronology strata and removes every authentic parent, order, and binding signal rather than leaving reconstructible identifiers.",
+    "PCFL source and target identities, handles, and generator seeds are frozen before any model-dependent artifact exists.",
+    "A cold target may use ordinary public outcomes from earlier actions in the same target item, while those outcomes cannot cross item boundaries or enter later writing; this assumption requires ratified clarification because the current visibility text conflicts with it.",
+    "The parenting pack is identical visible text across relevant conditions, contains no task solution channel, and is not counted as learned memory.",
+    "Fixed adapter capacity means identical module inventory and serialized adapter bytes at every Stage-C checkpoint, with any capacity failure reported rather than repaired from target results."
+  ],
+  "change_id": "chg_20260905_public_pathway_consolidation_v1",
+  "claim_delta_interpretation": "The evidence ladder must remain disaggregated. Successful fixed-query READ probes with an identical accepted corpus support memory transport, not composition or action improvement. Adaptive queries whose later arguments depend on earlier returns, together with a mechanically valid dependency DAG and loss under recurrence/path cuts, support recurrent composition. Higher held-out return under PATH versus RAW and ENDPOINT supports bundled action improvement; same-state PATH_ON versus PATH_OFF supports a realized adapter effect; PATH versus PATH_SHUFFLE and PCFL twin/cut sensitivity support authentic binding only in the instrument where those interventions pass. Stage B does not establish online learning because source experience is common and sealed. Stage C can establish bounded on-policy continued improvement only over the observed checkpoints when new knowledge grows, old knowledge remains useful, cross-era composition improves, fixed capacity holds, and strong baselines are actually observed to flatten or degrade. It does not establish the full action-experience flywheel unless memory is shown to change information-seeking actions, those actions change acquired evidence and later admitted memory, and that mediated change improves subsequent action. DREAM evidence is confined to context reconciliation against truncation; parenting evidence is confined to held-out child learning slope. CompilerGym can support external action/search value and delayed setup credit, not connected semantic knowledge. PCFL can support connected local causal use, not external usefulness. No result licenses private-thought learning, a literal graph in LoRA, unbounded improvement, autonomous creativity, or generic superiority to memory systems.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/human_directive.txt",
+      "purpose": "Verbatim objective and architecture, measurement, triad, and parenting corrections.",
+      "sha256": "c463b09a28ae405054b4f11992abcfba137e151ab4bbb16549234b3023781be2"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation, ratification, implementation, review, and GPU authority contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "purpose": "Strict proposal structure and test vocabulary.",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash, state-transition, acceptance-test, and human-authority validation.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/protocol.md",
+      "purpose": "Normative staged benchmark and writer proposal.",
+      "sha256": "fca9eac73b91c511682bc5f7dd6c010063ec85ae07f91b588782ea41f290aafc"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Full-organism thesis, baseline requirements, claim ladder, and scaling invariants.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Earlier whole-flow pilot, controls, temporal support, and promotion boundaries.",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "purpose": "PCFL composition, shortcut closure, twins, and stage-credit instrument.",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1"
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "purpose": "Post-context scale, capacity, cross-era, and prospective-schema axes.",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359"
+    },
+    {
+      "path": "research_loop/trajectory_contract.py",
+      "purpose": "Public causal transition and trainable-token contract.",
+      "sha256": "f150a416031a9a4bed035c1fb4face0424810e2a539ce00d5625d8e934fc7784"
+    },
+    {
+      "path": "research_loop/goal_conditioned_thinker.py",
+      "purpose": "Typed recurrent retrieval, provenance, recurrence, and release reference.",
+      "sha256": "c35805b20f20337657f1ac6bf4a198922a2657c1a0f015306d502ee589623d46"
+    },
+    {
+      "path": "organism_v6/sleep_compile.py",
+      "purpose": "Exploratory free-form writer motivating evidence and runtime-format controls.",
+      "sha256": "9e7cbd4316910af205ff25df7e2ec051447f0b1c1e1e7e993bbb6692991e8ca3"
+    },
+    {
+      "path": "organism_v6/batch_loop.py",
+      "purpose": "Exploratory multi-action parsing and unequal-action failure surface.",
+      "sha256": "604b1acf9605f4828fb78b12b176e7e1003ff451d58da4ae134107b3ae34f8a4"
+    },
+    {
+      "path": "organism_v6/run_life_v2.py",
+      "purpose": "Exploratory lifetime implementation kept outside controlled evidence.",
+      "sha256": "9133cdd8c4d62cbe94e2c5f30ddb69193cb5f78ce9a840216092a4e6dc9a42e5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v9/consensus.json",
+      "purpose": "Endpoint-only lower bracket retained as the ENDPOINT control.",
+      "sha256": "9f4f3c321ccfed63bcc69157297f09690750310ce8e1d0318169ffa6305cdd44"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "BENCH_D01_TARGET_VISIBILITY_CONTRACT_CONTRADICTS_RECURRENCE",
+      "proposed_resolution": "Define three separate items: within-current-item ordinary public transition, quarantined offline score, and prior-item result. Make the first visible to the next call in the same item, forbid the latter two, forbid all three from SLEEP, and add boundary goldens to PPC_T01 and PPC_T06.",
+      "rationale": "The protocol requires one action at a time followed by ordinary public state and possible replanning, but the visibility cell says each target result cannot enter a later target call or state. Both cannot be true under a recurrent action assay.",
+      "statement": "The literal sealed_target_results/TARGET rule is incompatible with the proposed recurrent target controller and must be clarified before implementation."
+    },
+    {
+      "disagreement_id": "BENCH_D02_STAGE_B_BYPASS_BASELINES_ARE_INCOMPLETE",
+      "proposed_resolution": "Add frozen same-budget diagnostic arms for a stateless standard agent, honest full raw context while it fits followed by deterministic truncation, a target-only/state-only action-prior controller, and an explicit atomic graph or skill-library reader. Retain RAW RAG and LINKED_TEXT, and report all without allowing target-driven selection.",
+      "rationale": "RAW already grants source-life RAG and therefore is not a no-memory standard-agent baseline. LINKED_TEXT is an accepted pathway DAG but does not necessarily cover a direct explicit graph implementation. PCFL twins constrain answer priors only if every model-visible signature is audited, while CompilerGym may admit generic pass priors.",
+      "statement": "RAW, ENDPOINT, PATH_SHUFFLE, and LINKED_TEXT do not by themselves rule out all standard-agent, raw-context, RAG, explicit-graph, and target-only bypasses required by the project thesis."
+    },
+    {
+      "disagreement_id": "BENCH_D03_TEXT_LORA_TRANSPORT_IS_CONFOUNDED_WITH_POLICY_TRAINING",
+      "proposed_resolution": "Introduce a fixed accepted-memory corpus comparison in which compiled text and a READ-only LoRA expose the same one-record interface to an identical frozen recurrent thinker, with fixed-query exact/reverse/paraphrase/partial-cue probes and matched retained bytes. Keep full PATH READ+DECIDE versus LINKED_TEXT as a separate end-to-end systems contrast.",
+      "rationale": "PATH trains both memory-return tokens and next cognitive/action operations, whereas LINKED_TEXT supplies external memory to an otherwise unadapted controller. A difference can arise from policy adaptation, memory transport, reader behavior, or substrate capacity.",
+      "statement": "The proposed PATH-versus-LINKED_TEXT contrast cannot isolate fixed-memory text-to-LoRA transport."
+    },
+    {
+      "disagreement_id": "BENCH_D04_RECURRENCE_REMOVAL_IS_NOT_AN EXECUTED_MECHANISM_ABLATION",
+      "proposed_resolution": "Add an actual Stage-B recurrence ablation over identical accepted atoms: commit all queries before reads or permit only one read/one decision, with no FOLLOW or value-dependent query. Compare it with the recurrent arm at matched calls, reads, tokens, and candidate access; require adaptive dependency and certified path-depth evidence for composition credit.",
+      "rationale": "PPC_T04 checks that an oracle recurrent controller can solve PCFL while a non-adaptive shortcut fails, but it does not test whether the learned PATH treatment uses recurrence. Correct actions could arise from an answer prior, one-shot recognition, or direct policy bias.",
+      "statement": "The proposal lacks a treatment-level recurrence-removal ablation needed to attribute success to goal-conditioned construction of a path from local edges."
+    },
+    {
+      "disagreement_id": "BENCH_D05_FIXED_CAPACITY_AND_SCALE_ABLATIONS_ARE_UNDERSPECIFIED",
+      "proposed_resolution": "Before Stage C, register a small adapter-rank and external-memory-capacity grid, matched retained-byte points for text and LoRA, at least one pre-native and three strictly post-native lifetime lengths, and new/old/cross-era panels at every point. Report unique mappings and minimal sufficient-statistic bytes so repeated exposure cannot count as scale.",
+      "rationale": "Holding one rank constant across three checkpoints can falsify that one setting continues to work, but it cannot characterize whether success depends on excess capacity or whether text and LoRA receive comparable memory. Raw token growth is not knowledge growth.",
+      "statement": "The proposal specifies lifetime checkpoints and fixed adapter rank but not the capacity, retained-byte, and knowledge-growth ablations required for a fixed-substrate scaling interpretation."
+    },
+    {
+      "disagreement_id": "BENCH_D06_ACTION_DELETION_DOES_NOT_VALIDATE_COGNITIVE_ROW_CREDIT",
+      "proposed_resolution": "Restrict deletion-derived sequence-essential status to action targets. Treat intervening cognitive operations as outcome-associated policy examples unless separate trace-bundle deletion, matched cognitive shuffle, or COGNITIVE_NO_ACT evidence shows their contribution; reflect this distinction in manifests and claims.",
+      "rationale": "Deleting an environment action can establish that the action mattered to a fixed sequence. It cannot establish that every HYPOTHESIZE, QUERY, LINK, or REVISE operation preceding the terminal outcome was necessary, truthful, or useful.",
+      "statement": "The current delayed-credit language risks transferring action-level deletion evidence to public cognitive operations that were not causally tested."
+    },
+    {
+      "disagreement_id": "BENCH_D07_STAGE_B_PROMOTION_OMITS_STRONG_MEMORY_BASELINE_SUCCESS",
+      "proposed_resolution": "Permit Stage B to report pathway-over-endpoint and binding evidence when those gates pass, but require PATH to exceed the registered strongest external-memory baseline, including LINKED_TEXT or its strengthened successor, before promoting a LoRA-specific moat claim or selecting LoRA as the unique Stage-C treatment.",
+      "rationale": "The registered mechanism gate requires PATH-ENDPOINT, PATH-PATH_SHUFFLE, on/off, completion, cuts, and integrity, but not PATH-LINKED_TEXT. The protocol separately calls PATH less than or equal to LINKED_TEXT a hard falsifier for LoRA advantage.",
+      "statement": "Passing the current Stage-B gate can advance a writer even when organized external memory matches or beats it, so promotion and the claimed LoRA advantage are not aligned."
+    }
+  ],
+  "graph_delta_interpretation": "The proposed organism has one pretrained recurrent model, one bounded public workspace, an append-only public ledger, and one cumulative per-life LoRA. PPC_PARENTING initializes visible learning behavior without carrying task answers. PPC_THINK repeatedly chooses a single typed public workspace or environment operation. PPC_DREAM is the same mounted model operating on the workspace: it retains, drops, links, questions, or revises cited material, but writes only provisional conscious state. PPC_SLEEP alone changes durable learned state: after committed public outcomes, it performs target-blind eligibility, candidate organization, non-generative admission, exact READ/DECIDE serialization, and cumulative clean-base adapter rebuilding. The intended causal bridge is therefore outcome-bearing public paths to supported local rows, rows to the LoRA, and the mounted LoRA back to later recurrent decisions. PPC_DUAL_INSTRUMENT separates external action value in CompilerGym from identifiable semantic connectivity in PCFL. PPC_DEVELOPMENT permits on-policy lifetime evidence only after the common-source mechanism survives. Local edges can accumulate across multiple DREAM/SLEEP checkpoints within one life because prior accepted rows are interleaved at every rebuild; independent lives remain isolated. At a later goal, the thinker is intended to open only relevant local records and construct a cited path recurrently rather than retrieve a stored final answer. This graph is coherent, but the proposed comparisons do not yet force pure memory transport, treatment-level recurrence, or superiority to every strong bypass baseline.",
+  "human_boundary": {
+    "open_questions": [
+      "After fresh interpretations, cross-critique, and consensus dispose of the visibility contradiction and benchmark disagreements, does Rohin ratify the exact architecture bytes and proposal-only scope, authorizing only scoped contracts, CPU fixtures, and exactly two no-model environment sealers?",
+      "Should exact ratified Stage-B claims remain limited to pathway-over-endpoint and authentic-binding evidence unless a pure fixed-corpus text-versus-LoRA comparison and stronger bypass baselines are added?",
+      "After PPC_T01 through PPC_T05 pass, does Rohin separately ratify the exact model, sample-size, uncertainty, storage, time, and GPU run manifest?",
+      "Does Rohin intend cross-life inheritance to remain solely a later visible parenting-pack experiment, with per-life LoRA state reset between independent lives?"
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260905_public_pathway_consolidation_v1.benchmark",
+  "loop_delta_interpretation": "The required chronology is source action, committed ordinary outcome, optional later DREAM reconciliation of bounded cited records, frozen checkpoint, target-blind SLEEP admission and adapter publication, then a cold later goal. DREAM cannot certify a row, SLEEP cannot observe a target, and target results cannot repair the writer. Stage B derives every memory condition from the same sealed source life, so it can identify effects of writer assignment without claiming on-policy learning. Repeated source checkpoints allow supported local atoms and links to accumulate inside one life while the target thinker adaptively queries and follows them only when a goal creates a dependency. PATH_SHUFFLE tests authentic order/binding, PCFL edge cuts and twin swaps remove bridges, and same-state mount/unmount tests realized adapter contribution. The proposed loop lacks an executed recurrence-removal arm, and its target visibility wording conflicts with within-item action/outcome recurrence. Stage C allows condition-local trajectories and repeated writes, which is necessary for online improvement, but continued improvement is distinct from the full flywheel: the latter additionally requires memory-conditioned information gathering, changed experience quality, reconsolidation of that evidence, and mediation of later return.",
+  "perspective": "benchmark",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The intended organism is not a separately learned thinker, dreamer, planner, or verifier. General reasoning capacity resides in the frozen pretrained and agentically trained base. Its bounded public context is the conscious state. The same recurrent model, with the current per-life LoRA mounted, alternates public cognitive operations and world actions. DREAM is a same-model context-reconciliation regime that may reorganize cited conscious material but cannot create evidence. SLEEP is the only durable write regime: after outcomes commit, it selects target-blind public pathways, admits only publicly grounded content, renders exact runtime READ and DECIDE targets, and cumulatively rebuilds one life-local LoRA from the clean base. Later goals should cause the recurrent thinker to retrieve local records and construct a path as needed. The benchmark must judge this organism through later decisions and longitudinal action-value curves, not similarity to a human-authored thought. As proposed, the dual instruments can force evidence beyond immediate action cloning and can test authentic bindings in PCFL, but they do not yet exclude every target-only or external-memory shortcut, isolate text-to-LoRA memory transport, or demonstrate that learned recurrence rather than answer/policy priors produced the action.",
+  "visibility_matrix_interpretation": "The source, dream, sleep, target, and audit roles are mostly separated correctly. Source and DREAM see only public life material and assigned-weight effects; SLEEP sees committed source records, prior accepted manifests, and the frozen recipe; target inference receives only current public state plus its assigned frozen memory interface; audit alone opens identities, rows, mounts, metrics, and quarantined results. Hidden support verdicts, trainer telemetry, condition labels, offline truth, and target scores must never become prompt fields or retrieval keys. The matrix nevertheless contains a material contradiction: public target state is visible and the controller must act recurrently, while sealed_target_results is said to be hidden and barred from every later target call or state. The benchmark-valid boundary is that an ordinary public transition from action k may inform action k+1 within the same item, but offline scores and all prior-item outcomes are quarantined; none may enter SLEEP or another cell. PCFL twin validity further requires indistinguishability over the exact permitted pre-memory target view, not merely matched marginal descriptions. Adapter identity must remain derived-only, and differing absence, latency, NOT_FOUND behavior, or metadata must not reveal condition."
+}

@@ -1,0 +1,511 @@
+{
+  "architecture_change_sha256": "120541b88acd7f1a5642d6ad4d91b098dea34020c318c751ab9dcec613f94d6e",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v3",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "AT9_visibility_oracle_partition",
+        "AT11_authority_stage_acyclicity",
+        "AT16_a2_receipt_dependency_order"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C01_training_role_visibility_contradiction",
+      "evidence": "I4 is marked hidden at CANARY and A3 even though the authorized B0 trainers at CANARY and B1/B2 trainers at A3 must read the selected corpus. At those same coarse stages I7 target identity and I10 target scores are visible. Enforcing the matrix makes training impossible; granting stage-wide access risks target identities or scores reaching trainers. The systems interpretation independently identifies the CANARY half of this contradiction.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The stage-only visibility matrix neither authorizes necessary trainer reads nor isolates trainers from target and scorer information."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_authority_stage_acyclicity",
+        "AT16_a2_receipt_dependency_order"
+      ],
+      "category": "operations",
+      "concern_id": "C02_a2_a3_training_authority_conflict",
+      "evidence": "L2_assay_transport describes per-life C1/C2 training with trigger A2. The scope proposal and R11 authorize only duplicate B0/C1 and B0/C2 trainers at A2 and reserve B1/B2 training for A3. AT11 checks the coarse A0\u2192A1\u2192A2\u2192A3\u2192REPORT chain, while AT16 says only that canary closure precedes A3; neither expected result explicitly proves B1/B2 trainers unreachable from A2.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The loop definition can make B1/B2 training reachable under A2 despite the exact human boundary reserving it for A3."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT8_bootstrap_visibility_and_copying",
+        "AT16_a2_receipt_dependency_order"
+      ],
+      "category": "operations",
+      "concern_id": "C03_at8_generated_evidence_gate_cycle",
+      "evidence": "AT8 is required before gpu_run, but its required evidence artifact includes a generated copying histogram. Generated outputs do not exist before a model call and I9 is forbidden at A2 before CANARY. R11 orders AT8 before the first GPU trainer or serving request. The input scan can pass pre-GPU, but the registered test as a whole cannot produce all of its declared evidence then.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "AT8 mixes a pre-GPU prompt-visibility gate with a post-generation diagnostic, recreating an authorization cycle."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT10_prompt_serving_roundtrip",
+        "AT16_a2_receipt_dependency_order",
+        "AT18_full_policy_visibility_scan"
+      ],
+      "category": "operations",
+      "concern_id": "C04_at18_engine_consumption_gate_cycle",
+      "evidence": "AT18 is required before gpu_run and its evidence requires per-target engine-consumed-ID receipts. Engine-consumed IDs can only be observed after an engine request, whereas R11 requires AT18-full-policy to pass after rendering and before any model call. Pre-call sealed input IDs and post-call engine-consumed IDs are different evidence objects; AT10 checks their equality only after serving.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "AT18 cannot both inspect engine-consumed IDs and complete before the first GPU request."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_authority_stage_acyclicity",
+        "AT16_a2_receipt_dependency_order",
+        "AT22_salt_commitment_provenance"
+      ],
+      "category": "operations",
+      "concern_id": "C05_salt_commit_authority_gap",
+      "evidence": "R17 freezes the beacon law at A1, requires a steward to retrieve and commit the pulse, and makes the committed salt part of A2 ratification. A1 authorizes tokenizer-only work, while A2 cannot be ratified until the salt already exists. No authority node permits the intervening network retrieval, verification, write, or inspection. The human boundary also literally forbids exposure of any hash before A2, conflicting with inspection of the hash-valued salt needed to ratify A2.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The one-shot salt must exist before A2 ratification, but no authorized and visibility-consistent stage can create it."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT13_seal_atomicity_and_quarantine",
+        "AT23_real_seal_access_and_publication"
+      ],
+      "category": "operations",
+      "concern_id": "C06_prehash_exposure_quarantine_gap",
+      "evidence": "Real sealers write access records before opening dataset objects, but failed-seal quarantine is keyed to exposed content hashes. A timeout or crash after a URI or module is opened or emitted but before its module hash is computed leaves an exposed target object without the content-class identifier required for permanent exclusion. AT13 and AT23 do not state the conservative URI/class resolution rule for this state.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A real seal can expose target information before producing the hash needed to quarantine it durably."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT22_salt_commitment_provenance"
+      ],
+      "category": "statistics",
+      "concern_id": "C07_cross_proposal_salt_shopping",
+      "evidence": "R17 permits a newly deliberated epoch after failed retrieval. AT22 proves one request and one salt within a proposal, but it does not bind the sequence of proposed epochs, valid pulse values, externally verifiable failures, and abandonment reasons across proposals. Repeated proposals could therefore select among epochs after prior pulse values become known.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "One-shot commitment per proposal does not prevent value-dependent salt selection across abandoned proposals."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_authority_stage_acyclicity",
+        "AT14_no_writeback_no_autoingestion"
+      ],
+      "category": "architecture",
+      "concern_id": "C08_denied_edge_encoded_as_edge",
+      "evidence": "E6 has operation add with ordinary from/to fields from N_quarantined_report to N_future_organism_cycle, while only its prose and the \u219b character say the relation is prohibited. A generic graph consumer can treat every edge object as reachable. This conflicts with L4's empty write set and the systems interpretation's explicit disagreement that the relation should be a deny rule or non-edge.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The terminal no-writeback relation is represented using the same edge structure as permitted dataflow."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT12_independence_fault_injection"
+      ],
+      "category": "operations",
+      "concern_id": "C09_a0_source_intake_not_byte_bound",
+      "evidence": "A0 authorizes copying the exact B0/B1/B2 legacy artifacts, but the scope proposal and v0 plan do not give their concrete source paths, origin snapshot identity, or pre-copy hashes. The supplied durable context intentionally contains no ledger or wake-manifest bytes. AT1 will hash a later local snapshot, but that does not prove the human-approved intake was the source copied, especially given the audit's documented runtime and on-disk drift.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The A0 intake is described structurally but is not bound to exact source identities before copying is authorized."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT14_no_writeback_no_autoingestion",
+        "AT16_a2_receipt_dependency_order"
+      ],
+      "category": "operations",
+      "concern_id": "C10_full_execution_isolation_closure_missing",
+      "evidence": "R11 places AT14 in the canary closure before A3, while AT14's evidence includes pre/post tree manifests intended to prove that only the output directory changed. A pre-A3 post-tree cannot attest the later B1/B2 training, target evaluation, aggregation, and reporting commands. The registry does not define a second post-A3 closure or its dependency before scientific prose.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Canary isolation evidence does not by itself prove that the complete A3 execution remained reporting-only."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT10_prompt_serving_roundtrip",
+        "AT15_claim_state_machine",
+        "AT19_target_dispatch_scoring_roundtrip",
+        "AT20_nonzero_adapter_serving_canary",
+        "AT24_claim_state_precedence"
+      ],
+      "category": "operations",
+      "concern_id": "C11_partial_evaluation_failure_policy",
+      "evidence": "AT10 forbids retry, AT19 says a disagreement invalidates the assay, and R18 maps execution failures to INVALID_INFRA. However, no registered command DAG covers all A3 requests and requires an atomic stop, quarantine of already produced outputs/scores, prohibition on later cells, and prohibition on partial aggregation after the first failure. Selective continuation or operator-triggered reruns could otherwise expose target results before invalidation.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Per-request failure semantics do not fully specify atomic whole-assay invalidation and partial-result quarantine."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT7_claim_ceiling",
+        "AT8_bootstrap_visibility_and_copying",
+        "AT9_visibility_oracle_partition",
+        "AT18_full_policy_visibility_scan"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C12_policy_scanner_overclaims_no_answer",
+      "evidence": "AT18 scans declared literal and contextual tokenizations of source continuations, actions, outcomes, scores, payloads, and valid action names. It does not define normalization or semantic-taint handling for Unicode confusables, escaped or encoded text, token-fragment constructions, aliases, or descriptive re-expression. More fundamentally, lexical scanning cannot exclude an action reconstructed from target cues and pretraining. Its falsifier therefore supports absence of declared direct bytes, not the broader no-answer-in-policy-context wording.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The scanner is a strong direct-copying check but cannot certify the stated general no-answer policy contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT18_full_policy_visibility_scan"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C13_uri_and_pretraining_shortcut",
+      "evidence": "I7 and I8 expose canonical target URIs and rendered task text to the policy. Both independent interpretations agree that exact content-hash exclusion does not remove URI/family cues or establish absence from pretraining. C0 measures the frozen base but cannot identify whether adaptation merely changes expression of pretrained compiler knowledge or a generic action prior.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The game admits a URI-conditioned or generic-action-prior shortcut that bypasses any intended memory path."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT2_target_matching",
+        "AT5_prefix_package_contrast",
+        "AT7_claim_ceiling"
+      ],
+      "category": "scientific",
+      "concern_id": "C14_prefix_compute_position_confound",
+      "evidence": "C1 and C2 match target IDs, labels, EOS, row order, supervised-token totals, and update ordinals, but C2 changes role tokens, instruction bytes, sequence length, target positions, RoPE phases, attention context, and FLOPs. The v0 plan and both interpretations explicitly acknowledge these differences.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "C2-minus-C1 identifies only the complete neutral-chat-prefix serialization package, not a prefix mechanism or compute-matched effect."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT21_action_validity_and_abstention_decomposition"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C15_causal_corpus_baselines_absent",
+      "evidence": "C0/C1/C2 omit matched non-improving, outcome-shuffled, action-shuffled, unrelated, marker-only, and birth-payload-controlled corpora. Historical action/outcome/score oracles select the rows, and the birth-demonstrated four-pass payload remains frequent. AT21 excludes rejection avoidance but cannot identify which corpus component caused a gain.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Only the complete selected-training package can receive descriptive credit; outcome selection, action content, marker imitation, and birth-prompt shaping remain confounded."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT7_claim_ceiling",
+        "AT9_visibility_oracle_partition",
+        "AT14_no_writeback_no_autoingestion"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C16_offline_reexpression_not_online_evidence",
+      "evidence": "L1 selects archived self-generated text using recorded historical outcomes, L2 performs offline supervised training, and L3/L4 provide no target-outcome write, later dream transformation, or subsequent decision. Re-expression of archived text supplies no new observation, and AT14 intentionally prevents target feedback.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The assay is offline adaptation to post-hoc oracle-selected traces, not online action/outcome learning or continued improvement."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT21_action_validity_and_abstention_decomposition"
+      ],
+      "category": "evaluation",
+      "concern_id": "C17_cognitive_capabilities_not_distinguished",
+      "evidence": "The endpoints aggregate accepted-positive first-action utility and interface rates from one stateless request. There is no memory query, multi-source bridge, multi-step plan, revision, held-out semantic relation, or later decision after an outcome. Content-hash disjointness is not a semantic generalization split.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The suite can measure first-action and interface improvement but cannot distinguish recall, composition, planning, semantic generalization, or learning from outcomes."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT2_target_matching",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "scientific",
+      "concern_id": "C18_substrate_and_thinker_ablation_gap",
+      "evidence": "The only learned substrate is an assay-local LoRA; retrieval is empty and no explicit graph state, fixed raw-text context, RAG condition, matched thinker-compute budget, bridge removal, recurrence removal, or connectivity shuffle is present. Matching target tokens and updates is not fixed-memory or fixed-compute matching.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The design cannot fairly separate text context, explicit graph state, LoRA transport, and thinker computation or establish memory-path necessity."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "architecture",
+      "concern_id": "C19_parent_structure_scope",
+      "evidence": "The evaluated module receives empty recall, generates once, and dispatches at most one strict ACT. No parent structure, retrieved path, plan, revision, or recurrent dream-memory-think iteration exists. This is coherent for the declared writer floor but cannot evaluate where a higher-level structure should emerge.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "There is no wrong-module defect for the narrow endpoint, but it provides no evidence about recurrently emergent parent structures or whole-organism cognition."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT3_content_disjoint_seal",
+        "AT4_reproducibility_canaries",
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "statistics",
+      "concern_id": "C20_sample_split_and_replication_ceiling",
+      "evidence": "The corpus floors were chosen after aggregate legacy inspection; the three lives share a model, bootstrap, and repeated 67-program curriculum; C0 is one deterministic reference; and the 64 targets form one salt-selected panel. No power analysis, independent replication, multiple seed inference, semantic split, or hardware/library robustness test is registered. Same-seed duplicate canaries establish execution determinism only.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Any VALID_* result is a deterministic description of this finite assay, not population evidence, replication, robustness, scaling, or semantic generalization."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling",
+        "AT15_claim_state_machine",
+        "AT24_claim_state_precedence"
+      ],
+      "category": "statistics",
+      "concern_id": "C21_valid_negative_semantics",
+      "evidence": "VALID_NEGATIVE is selected whenever neither threshold conjunction is true. That state includes small positive estimates, mixed life effects, failed interface floors, and underpowered or borderline outcomes; it is not an equivalence test and does not establish zero effect or package uselessness. AT15 and AT24 constrain state selection but do not state the exact scientifically permitted negative-result sentence.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The negative state must mean only that the preregistered thresholds were not jointly met, never that an effect is absent."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT5_prefix_package_contrast",
+        "AT6_selected_corpus_floor",
+        "AT15_claim_state_machine",
+        "AT21_action_validity_and_abstention_decomposition",
+        "AT24_claim_state_precedence"
+      ],
+      "category": "operations",
+      "concern_id": "C22_numeric_state_determinism",
+      "evidence": "R16 defines means and decimal percentage-point thresholds but does not bind accumulator representation, summation order, rounding, comparison precision, nonfinite handling, or serialization before comparison. Scores originate from integer I0/I1, yet floating implementations can classify boundary cases differently while satisfying the prose formulas.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The claim-state machine is not byte-deterministic until numeric aggregation and threshold semantics are frozen."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT7_claim_ceiling",
+        "AT14_no_writeback_no_autoingestion",
+        "AT15_claim_state_machine",
+        "AT24_claim_state_precedence"
+      ],
+      "category": "operations",
+      "concern_id": "C23_claim_scanner_output_coverage",
+      "evidence": "AT7 names reports, diagnostics, and templates, but its evidence binds only a scanner result and fixed report-template hash. It does not enumerate every structured field, table, plot title, notebook, auxiliary JSON, log, console stream, or metadata surface that may become human-visible. AT14 proves filesystem isolation rather than closed claim-surface coverage.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Broader scientific language can escape through an unregistered auxiliary output while the fixed report template remains green."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT12_independence_fault_injection"
+      ],
+      "category": "evaluation",
+      "concern_id": "C24_extractor_agreement_not_runtime_truth",
+      "evidence": "The extractors implement the same artifact-defined attachment law and are checked against fixtures derived from that law. Separation and fault injection reduce correlated implementation errors, but neither can recover missing source prompts or the historical process's loaded source bytes. The long-run audit documents precisely such runtime/on-disk drift.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Dual extraction can certify reproducible closed-world artifact provenance, not the unobserved historical runtime semantics."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT1_source_join_closure",
+        "AT6_selected_corpus_floor",
+        "AT7_claim_ceiling"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C25_repeat_state_invisible_to_policy",
+      "evidence": "The audit reports a 67-program curriculum repeated 15\u201316 times. Extraction retains occurrence ordinals, but C1/C2 supervise only continuation tokens and target evaluation starts from empty state. Repeat number, earlier occurrence, and intervening outcomes never condition the trained or evaluated policy.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The assay cannot support learning-across-repeat-blocks, recurrence, or lifetime-state credit."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT7_claim_ceiling",
+        "AT11_authority_stage_acyclicity"
+      ],
+      "category": "architecture",
+      "concern_id": "C26_inactive_control_plane_hazards",
+      "evidence": "The assay has a linear authority DAG and no competing thinker branches, release transition, semantic ancestry graph, shared-ancestry traversal, or policy-visible repeat controller. AT11 therefore cannot detect release from an abandoned thinker branch or false cycle detection on a valid diamond/shared-ancestry graph.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Branch-release, valid-diamond, and repeat-visibility regressions remain mandatory before those inactive mechanisms are activated or claimed."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "d98b55bd298f27253d1e9d7402641fb261c78026a0ebc183522792ec9a54d2f8"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v3/scope_proposal.json",
+      "purpose": "requested scope",
+      "sha256": "ae9d63b0510313f4a30c32771df57f0d8ad8d6c68eea3cc76c22050c46192641"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base floor",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "first repair overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v2_repair.md",
+      "purpose": "second repair overlay",
+      "sha256": "53c1a332586b7e22b7e49716a259dc2ac7afd747b7084718cff7fad10ffe0ef5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "prior adjudication",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/critique.json",
+      "purpose": "adversarial blockers",
+      "sha256": "705a83392960eb47364e36ce96b891b9e192eb343b929a43248d039a3f61e3f3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/consensus.json",
+      "purpose": "adjudicated repair requirements",
+      "sha256": "1f0810d29d82e0f43d50a11f5c435f0761778abb2d0660fb8672280c438dfa4b"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "legacy bootstrap boundary",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "legacy serving boundary",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "legacy evaluator boundary",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "critique_id": "crit_20260906_legacy_continuation_writer_floor_v3_adversarial_v1",
+  "human_questions": [
+    "Will the visibility contract be split by trainer, renderer, serving, scorer, and reporter roles so required corpus reads do not expose target identities or scores to training?",
+    "Will the command DAG prove that only duplicate B0 trainers are reachable at A2 and every B1/B2 trainer is reachable only after exact A3 ratification?",
+    "Will AT8 and AT18 be split into pre-GPU intended-input checks and post-request engine/output checks so their evidence is temporally obtainable?",
+    "Which authority permits the post-A1 beacon retrieval and salt commitment, and may Rohin inspect the committed salt while ratifying A2?",
+    "What conservative exclusion identity is burned when a sealer exposes a URI or module but fails before computing its content hash?",
+    "What durable cross-proposal record and deterministic replacement rule prevent beacon-epoch or salt shopping?",
+    "Which exact B0/B1/B2 ledger and wake-manifest paths, origins, and source hashes constitute the A0-approved intake?",
+    "Will the final A3 command DAG atomically stop on the first failure, forbid retries and partial aggregates, quarantine outputs, and close with post-execution isolation evidence?",
+    "Will VALID_NEGATIVE report only failure to meet the registered conjunctions, without implying equivalence, no effect, or package uselessness?",
+    "Which exact numeric representation, aggregation order, nonfinite rule, rounding rule, and comparison bytes determine R16 and every VALID_* state?",
+    "Will every releasable report, diagnostic, structured field, plot, log, and metadata artifact be enumerated, hash-bound, and scanned before human release?",
+    "Does Rohin ratify only an exact-panel offline package association, explicitly excluding memory-path use, corpus-component causality, semantic generalization, online learning, recurrence, scaling, robustness, and replication?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v3.systems",
+      "sha256": "8eadbbd02f508d0d4c34f87ca324e60b1c1619eef02b651ce60a4d21e3745a9d"
+    },
+    {
+      "interpretation_id": "chg_20260906_legacy_continuation_writer_floor_v3.benchmark",
+      "sha256": "ac541144c34301f06ad2ce6e05364c9d87fa7c6650be3186cb7162b1708f50bf"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "AT0_source_intake_identity: bind exact B0/B1/B2 source paths, origin identities, pre-copy hashes, boundary files, and an atomic immutable-snapshot procedure before A0 copying.",
+    "AT25_role_scoped_visibility_noninterference: separate trainer, renderer, server, scorer, and reporter capabilities; prove trainers can read only their corpus while target identities, rendered prompts, outputs, and scores cannot reach training.",
+    "AT26_a3_training_reachability: prove duplicate B0/C1 and B0/C2 are the only trainers reachable at A2 and all B1/B2 training is reachable only after independent review and exact A3 ratification.",
+    "AT27_visibility_evidence_phase_split: require intended rendered/token IDs and lexical scans before GPU, then engine-consumed-ID equality and generated-copying diagnostics after authorized requests without making either phase circular.",
+    "AT28_salt_commit_authority: represent the post-A1 steward node, exact allowed network/read/write operations, committed-value visibility, A2 ratification dependency, and failure state in the authority DAG.",
+    "AT29_prehash_exposure_quarantine: fault before and during reset/export/hash computation and prove every opened or emitted object receives a durable conservative exclusion identity even when no content hash exists.",
+    "AT30_cross_proposal_salt_nonselection: bind all proposed epochs, retrieval attempts, signed pulses, externally verified failures, committed values, and abandonment reasons; reject value-dependent epoch replacement.",
+    "AT31_denied_edge_semantics: encode report-to-future-intake as a typed deny relation or absent edge and prove no reachability consumer can treat it as permitted flow.",
+    "AT32_a3_atomic_execution_and_isolation: inject every serving, parsing, dispatch, reset, module-hash, action-index, scoring, and canary fault; require immediate whole-assay invalidation, no retry, no partial aggregate, output quarantine, and final post-A3 tree verification.",
+    "AT33_policy_scan_claim_alignment: test canonical lexical evasions and require scanner claims to be limited to declared direct-byte leakage rather than semantic or pretrained-answer absence.",
+    "AT34_negative_and_numeric_determinism: freeze exact rational or integer score arithmetic, aggregation order, nonfinite handling, threshold comparisons, serialization, and the sole permitted VALID_NEGATIVE sentence; test every boundary.",
+    "AT35_closed_output_claim_scan: enumerate and hash-bind every releasable output surface and fail on any unregistered artifact, field, or forbidden scientific language.",
+    "FUTURE_AT_memory_substrate_and_compute: compare fixed-budget raw text, RAG, explicit graph state, LoRA transport, and thinker computation with position, FLOP, bridge, recurrence, and connectivity-shuffle controls.",
+    "FUTURE_AT_online_action_outcome_learning: require action, immutable outcome, eligible write, later dream transformation, later goal-conditioned decision, and improvement against no-update and passive-lookup controls.",
+    "FUTURE_AT_generalization_and_uri_shortcuts: use opaque identities, URI-swap controls, matched task-state access, and preregistered family, semantic, structural, and near-duplicate splits.",
+    "FUTURE_AT_corpus_causal_controls: compare the selected corpus with matched non-improving, outcome-shuffled, action-shuffled, unrelated, marker-only, and birth-payload-controlled corpora.",
+    "FUTURE_AT_control_plane_regressions: test query-to-agenda answer laundering, release from an abandoned thinker branch, valid diamond/shared-ancestry traversal without false cycle detection, and repeat blocks represented in policy state."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "AT1_source_join_closure",
+    "AT2_target_matching",
+    "AT3_content_disjoint_seal",
+    "AT4_reproducibility_canaries",
+    "AT5_prefix_package_contrast",
+    "AT6_selected_corpus_floor",
+    "AT7_claim_ceiling",
+    "AT8_bootstrap_visibility_and_copying",
+    "AT9_visibility_oracle_partition",
+    "AT10_prompt_serving_roundtrip",
+    "AT11_authority_stage_acyclicity",
+    "AT12_independence_fault_injection",
+    "AT13_seal_atomicity_and_quarantine",
+    "AT14_no_writeback_no_autoingestion",
+    "AT15_claim_state_machine",
+    "AT16_a2_receipt_dependency_order",
+    "AT17_source_corpus_feasibility",
+    "AT18_full_policy_visibility_scan",
+    "AT19_target_dispatch_scoring_roundtrip",
+    "AT20_nonzero_adapter_serving_canary",
+    "AT21_action_validity_and_abstention_decomposition",
+    "AT22_salt_commitment_provenance",
+    "AT23_real_seal_access_and_publication",
+    "AT24_claim_state_precedence"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is a narrow, fail-closed, exact-panel assay of an offline training package. Relative to earlier versions, v3 substantially improves byte-level source provenance, source-oracle disclosure, target-aligned supervision, score-blind content sealing, direct prompt-leakage scanning, prompt/adapter/dispatch/scorer identity, nonzero-adapter determinism, positive accepted-action endpoints, failure-state precedence, report quarantine, and explicit credit ceilings. If the remaining blocking inconsistencies are repaired and every gate passes, a positive result may support only that this exact post-hoc source-oracle-selected continuation-training package changed accepted positive first-action utility and strict-interface measures on this exact sealed panel; C2-minus-C1 remains only the effect of the complete neutral-chat-prefix serialization package.",
+  "visibility_failures": [
+    "VF1: CANARY and A3 conflate trainer, server, and scorer roles; the corpus is marked hidden where trainers need it while target identities and scores are stage-visible.",
+    "VF2: L2 makes per-life training A2-triggered even though B1/B2 training is reserved for A3.",
+    "VF3: AT8 requires generated-output evidence before any GPU/model request is authorized.",
+    "VF4: AT18 requires engine-consumed IDs before an engine request can occur.",
+    "VF5: The committed salt must be created and inspected between A1 and A2, but that actor and visibility transition are absent.",
+    "VF6: A sealer can expose a URI/module and fail before producing the content hash used for future quarantine.",
+    "VF7: Canonical target URIs remain policy-visible, preserving family and pretrained-prior shortcuts.",
+    "VF8: Lexical scanning excludes declared direct bytes but cannot establish absence of encoded, re-expressed, semantic, or pretrained answer reconstruction.",
+    "VF9: Source actions, outcomes, scores, and earlier comparisons intentionally select training rows; they are offline oracles, not new evidence or target labels.",
+    "VF10: The report-to-future relation is encoded as an added edge despite being prohibited, and no explicit post-A3 isolation closure is registered.",
+    "VF11: Partial target outputs and scores can become visible before a later per-request fault invalidates the assay unless execution is atomic and quarantined.",
+    "VF12: Occurrence and repeat provenance are retained in receipts but absent from policy state, so recurrent or across-repeat learning cannot be inferred.",
+    "VF13: No closed output manifest proves that every auxiliary artifact is subject to the claim ceiling."
+  ]
+}

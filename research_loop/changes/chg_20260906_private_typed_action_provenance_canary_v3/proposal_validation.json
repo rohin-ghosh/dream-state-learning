@@ -1,0 +1,34 @@
+{
+  "artifact_type": "private_typed_action_v3_proposal_validation",
+  "schema_version": 1,
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v3",
+  "overall_status": "PASS_PROPOSAL_ONLY_NOT_DELIBERATED_OR_RATIFIED",
+  "validated_hashes": {
+    "architecture_change_sha256": "4b4156b548c37f84d4aff5dae061f63b8baf49fc7b0595910fd776ca17fef5af",
+    "normative_bundle_manifest_sha256": "6531601d1024729bfccc1bb35d715b047def505c9f3ccddf5b9701e6d1bcf659",
+    "proposal_workflow_sha256": "1dafd8bbcd33959100213366d18598dd3ddbf1cce755723a21d12a914c80e1ea",
+    "ratification_request_sha256": "a2c1aa40b7ae4d1f712e13684af79c4edb78439e3bc2516c1e4a2c3d79170e2e",
+    "scope_proposal_sha256": "b6efb9d1a00b192515535de12d11570ca90a231c27aa0e3f401fdc25463e3e2e",
+    "v2_consensus_sha256": "f2cf7045a85747a3c80c4717a96cc2fee0e224013dfe7abe758d90a16c9f87ce",
+    "v2_critique_sha256": "071b75bab96bda1fed6db1e205702e3555e43e69ee56af81de3b98240b09a5db"
+  },
+  "checks": [
+    {"check_id":"V01_JSON_PARSE","status":"PASS","evidence":"Every current v3 JSON artifact parsed with jq."},
+    {"check_id":"V02_BUNDLE_HASH_CLOSURE","status":"PASS","evidence":"All ten unique sorted paths in normative_bundle_manifest.json exist and each SHA-256 matches its current bytes."},
+    {"check_id":"V03_SCOPE_CANONICALITY","status":"PASS","evidence":"requested_scope and forbidden_scope are independently lexicographically sorted, unique, and disjoint; architecture_intake canonical scope checks pass through validate_change."},
+    {"check_id":"V04_CHANGE_SCHEMA_AND_CONTEXT","status":"PASS","evidence":"research_loop.architecture_intake.validate_change accepted change.json and verified every context path/hash plus complete visibility Cartesian product."},
+    {"check_id":"V05_REGISTRY_COMPLETENESS","status":"PASS","evidence":"PC0-PC17 are present exactly once; retained PC1-PC9 and new PC0/PC10-PC17 sets match repair_matrix.json."},
+    {"check_id":"V06_CONSENSUS_REPAIR_COVERAGE","status":"PASS","evidence":"repair_matrix.json covers DG01 through DG10 exactly once and binds the authoritative v2 consensus/critique hashes."},
+    {"check_id":"V07_SCHEMA_STATIC_INSPECTION","status":"PASS_WITH_LIMITATION","evidence":"Both schema files declare Draft 2020-12, parse as JSON, use closed branch/top-level objects, and every local fragment reference resolves. The environment lacks the external jsonschema package, so no third-party metaschema execution was claimed."},
+    {"check_id":"V08_RUNTIME_CLAIM_RETREAT","status":"PASS","evidence":"Plan, contract, change, scope, and PC12 consistently limit v3 to synthetic structural conformance and separately gate FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE."},
+    {"check_id":"V09_AUTHORITY_STOP","status":"PASS","evidence":"No architecture_intake init, deliberation, ratification, implementation, fixture materialization, acceptance-test execution, model/tool/environment call, training, or GPU run occurred."},
+    {"check_id":"V10_V2_IMMUTABILITY","status":"PASS","evidence":"Current v2 consensus and critique hashes remain exactly the authoritative values supplied in the directive."}
+  ],
+  "not_validated": [
+    "No semantic fixture renderer or validator exists, so no golden, mutation, metamorphic, crash, publication, or PC1-PC17 execution result is claimed.",
+    "No platform availability was tested; the exact Linux 6.8.0/ext4 contract is a future prerequisite, not a description of the authoring host.",
+    "No independent architecture interpretation, cross-critique, adjudicated v3 consensus, or human ratification exists.",
+    "No actual-runtime provenance or scientific capability is established."
+  ],
+  "next_legal_state": "Await a new explicit instruction to begin architecture intake and fresh-context deliberation over these exact bytes."
+}

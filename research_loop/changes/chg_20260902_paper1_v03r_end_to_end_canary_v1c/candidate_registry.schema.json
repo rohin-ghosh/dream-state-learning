@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-candidate-registry-v1c",
+  "title": "Sealed host-only shared LoRA candidate registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "sealed_before_final_goal", "semantic_rows_only", "host_enumerated_two_backend_union", "source_manifest_hashes", "tokenizer_lock_hash", "backend_manifests", "rosters", "registry_hash"],
+  "properties": {
+    "registry_id": {"type": "string", "pattern": "^CR[0-9]{6}$"},
+    "sealed_before_final_goal": {"const": true},
+    "semantic_rows_only": {"const": true},
+    "host_enumerated_two_backend_union": {"const": true},
+    "source_manifest_hashes": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "tokenizer_lock_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "backend_manifests": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["backend_id", "life_manifest_hash", "rows"],
+          "properties": {
+            "backend_id": {"const": "B0"},
+            "life_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "rows": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/backendSemanticRow"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["backend_id", "life_manifest_hash", "rows"],
+          "properties": {
+            "backend_id": {"const": "B1"},
+            "life_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "rows": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/backendSemanticRow"}}
+          }
+        }
+      ]
+    },
+    "rosters": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["roster_id", "kind", "missing_index", "view_id", "candidates"],
+        "properties": {
+          "roster_id": {"type": "string", "pattern": "^K[0-9]{6}$"},
+          "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+          "missing_index": {"type": "integer", "minimum": 0, "maximum": 2},
+          "view_id": {"enum": ["FIELD_COMPLETION_FORWARD", "FIELD_COMPLETION_REVERSE", "DECLARATIVE_RECOGNITION", "QUESTION_RECOGNITION"]},
+          "candidates": {"type": "array", "minItems": 2, "maxItems": 16, "uniqueItems": true, "items": {"$ref": "#/$defs/candidate"}}
+        }
+      }
+    },
+    "registry_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "atom": {"oneOf": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/label"}, {"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/effect"}]},
+    "backendSemanticRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "fields", "status", "semantic_hash"],
+      "properties": {
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+        "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE"]}}, "required": ["kind"]}, "then": {"properties": {"status": {"const": "WITNESSED"}}}},
+        {"if": {"properties": {"kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]}}, "required": ["kind"]}, "then": {"properties": {"status": {"const": "SUPPORTED"}}}},
+        {"if": {"properties": {"kind": {"const": "ROUTE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "EFFECT"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"enum": ["SOURCE_VALUE", "ANIMAL_VALUE"]}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "RECIPE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3}}}}
+      ]
+    },
+    "candidate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "type", "completion_utf8_hex", "completion_sha256", "completion_token_ids_including_eos", "completion_token_ids_including_eos_sha256"],
+          "properties": {
+            "candidate_id": {"type": "string", "pattern": "^C[0-9]{6}$"},
+            "type": {"const": "NOT_FOUND"},
+            "completion_utf8_hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+            "completion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "completion_token_ids_including_eos": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+            "completion_token_ids_including_eos_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "type", "value", "completion_utf8_hex", "completion_sha256", "completion_token_ids_including_eos", "completion_token_ids_including_eos_sha256"],
+          "properties": {
+            "candidate_id": {"type": "string", "pattern": "^C[0-9]{6}$"},
+            "type": {"const": "VALUE"},
+            "value": {"$ref": "#/$defs/atom"},
+            "completion_utf8_hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+            "completion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "completion_token_ids_including_eos": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+            "completion_token_ids_including_eos_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      ]
+    }
+  }
+}

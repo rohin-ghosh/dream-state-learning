@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think0-operation-v1d",
+  "oneOf": [
+    {"$ref": "#/$defs/queryOperation"},
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "text", "citations"],
+      "properties": {
+        "op": {"const": "THINK"},
+        "text": {"$ref": "#/$defs/text"},
+        "citations": {"$ref": "#/$defs/citations"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields"],
+      "properties": {
+        "op": {"const": "REQUEST_RETURN"},
+        "kind": {"const": "CAUSAL_JOIN"},
+        "fields": {
+          "type": "array",
+          "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"type": "null"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "reason"],
+      "properties": {
+        "op": {"const": "DEFER"},
+        "reason": {"$ref": "#/$defs/text"}
+      }
+    }
+  ],
+  "$defs": {
+    "queryOperation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields"],
+      "properties": {
+        "op": {"const": "QUERY"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3}
+      },
+      "oneOf": [
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROUTE"}, "fields": {"$ref": "#/$defs/routeQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "EFFECT"}, "fields": {"$ref": "#/$defs/effectQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "SOURCE_VALUE"}, "fields": {"$ref": "#/$defs/sourceValueQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ANIMAL_VALUE"}, "fields": {"$ref": "#/$defs/animalValueQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "TARGET_BASELINE"}, "fields": {"$ref": "#/$defs/targetBaselineQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "RECIPE"}, "fields": {"$ref": "#/$defs/recipeQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_EQUIV"}, "fields": {"$ref": "#/$defs/roleEquivQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "CAUSAL_JOIN"}, "fields": {"$ref": "#/$defs/causalJoinQuery"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_APPLICATION"}, "fields": {"$ref": "#/$defs/roleApplicationQuery"}}}
+      ]
+    },
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "routeQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "effectQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"type": "null"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "sourceValueQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "animalValueQuery": {"$ref": "#/$defs/sourceValueQuery"},
+    "targetBaselineQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "recipeQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "roleEquivQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}], "items": false, "minItems": 2, "maxItems": 2}
+    ]},
+    "causalJoinQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"type": "null"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"type": "null"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "roleApplicationQuery": {"oneOf": [
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"type": "null"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3},
+      {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"type": "null"}], "items": false, "minItems": 3, "maxItems": 3}
+    ]},
+    "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "citations": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^H[0-9]{6}$"}}
+  },
+  "x-golden-vectors": {
+    "target": "#/$defs/queryOperation; each positive has exactly one null and must match exactly one kind branch and one missing-index branch",
+    "positive": [
+      {"kind_branch": "ROUTE", "missing_index": 0, "instance": {"op": "QUERY", "kind": "ROUTE", "fields": [null, "source:candyland"]}},
+      {"kind_branch": "ROUTE", "missing_index": 1, "instance": {"op": "QUERY", "kind": "ROUTE", "fields": ["valve:copper-valve", null]}},
+      {"kind_branch": "EFFECT", "missing_index": 0, "instance": {"op": "QUERY", "kind": "EFFECT", "fields": [null, "target:confluenceland", "CHANGE"]}},
+      {"kind_branch": "EFFECT", "missing_index": 1, "instance": {"op": "QUERY", "kind": "EFFECT", "fields": ["valve:copper-valve", null, "CHANGE"]}},
+      {"kind_branch": "EFFECT", "missing_index": 2, "instance": {"op": "QUERY", "kind": "EFFECT", "fields": ["valve:copper-valve", "target:confluenceland", null]}},
+      {"kind_branch": "SOURCE_VALUE", "missing_index": 0, "instance": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": [null, "source:candyland", "label:red"]}},
+      {"kind_branch": "SOURCE_VALUE", "missing_index": 1, "instance": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": ["animal:cow", null, "label:red"]}},
+      {"kind_branch": "SOURCE_VALUE", "missing_index": 2, "instance": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", null]}},
+      {"kind_branch": "ANIMAL_VALUE", "missing_index": 0, "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": [null, "source:candyland", "label:red"]}},
+      {"kind_branch": "ANIMAL_VALUE", "missing_index": 1, "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", null, "label:red"]}},
+      {"kind_branch": "ANIMAL_VALUE", "missing_index": 2, "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:candyland", null]}},
+      {"kind_branch": "TARGET_BASELINE", "missing_index": 0, "instance": {"op": "QUERY", "kind": "TARGET_BASELINE", "fields": [null, "target:confluenceland", "mixture:1*red"]}},
+      {"kind_branch": "TARGET_BASELINE", "missing_index": 1, "instance": {"op": "QUERY", "kind": "TARGET_BASELINE", "fields": ["animal:cow", null, "mixture:1*red"]}},
+      {"kind_branch": "TARGET_BASELINE", "missing_index": 2, "instance": {"op": "QUERY", "kind": "TARGET_BASELINE", "fields": ["animal:cow", "target:confluenceland", null]}},
+      {"kind_branch": "RECIPE", "missing_index": 0, "instance": {"op": "QUERY", "kind": "RECIPE", "fields": [null, "label:red"]}},
+      {"kind_branch": "RECIPE", "missing_index": 1, "instance": {"op": "QUERY", "kind": "RECIPE", "fields": ["mixture:1*red", null]}},
+      {"kind_branch": "ROLE_EQUIV", "missing_index": 0, "instance": {"op": "QUERY", "kind": "ROLE_EQUIV", "fields": [null, "animal:frog"]}},
+      {"kind_branch": "ROLE_EQUIV", "missing_index": 1, "instance": {"op": "QUERY", "kind": "ROLE_EQUIV", "fields": ["animal:otter", null]}},
+      {"kind_branch": "CAUSAL_JOIN", "missing_index": 0, "instance": {"op": "QUERY", "kind": "CAUSAL_JOIN", "fields": [null, "target:confluenceland", "CHANGE"]}},
+      {"kind_branch": "CAUSAL_JOIN", "missing_index": 1, "instance": {"op": "QUERY", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", null, "CHANGE"]}},
+      {"kind_branch": "CAUSAL_JOIN", "missing_index": 2, "instance": {"op": "QUERY", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", null]}},
+      {"kind_branch": "ROLE_APPLICATION", "missing_index": 1, "instance": {"op": "QUERY", "kind": "ROLE_APPLICATION", "fields": ["animal:otter", null, "animal:frog"]}},
+      {"kind_branch": "ROLE_APPLICATION", "missing_index": 2, "instance": {"op": "QUERY", "kind": "ROLE_APPLICATION", "fields": ["animal:otter", "target:confluenceland", null]}}
+    ],
+    "negative": [
+      {"name": "all-null", "instance": {"op": "QUERY", "kind": "CAUSAL_JOIN", "fields": [null, null, null]}},
+      {"name": "multiple-null", "instance": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": [null, "source:candyland", null]}},
+      {"name": "no-null", "instance": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:candyland", "label:red"]}},
+      {"name": "wrong-kind-namespace", "instance": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "target:confluenceland", null]}},
+      {"name": "wrong-arity", "instance": {"op": "QUERY", "kind": "ROUTE", "fields": ["valve:copper-valve", null, "label:red"]}},
+      {"name": "unclosed-extra-key", "instance": {"op": "QUERY", "kind": "RECIPE", "fields": ["mixture:1*red", null], "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000"}}
+    ]
+  }
+}

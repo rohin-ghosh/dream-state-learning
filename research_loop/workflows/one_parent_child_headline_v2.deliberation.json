@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "one-parent-child-headline-v2",
+  "workspace": "../..",
+  "change_id": "chg_20260907_one_parent_child_headline_v2",
+  "directive_file": "research_loop/changes/chg_20260907_one_parent_child_headline_v2/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_loop/changes/chg_20260907_one_parent_child_headline_v2/scope_proposal.json",
+    "research_loop/plans/one_parent_child_headline_v1.md",
+    "research_loop/plans/one_parent_child_headline_v2_addendum.md",
+    "research_loop/plans/active_text_fixed_contract_v1.md",
+    "research_loop/plans/active_text_fixed_prompt_schema_v1.txt",
+    "research_loop/advisory/20260907_manuscript_protocol_consistency_audit_v1.md",
+    "research_loop/advisory/20260907_one_parent_statistics_attack_v1.md",
+    "research_loop/advisory/20260907_objective_coverage_audit_v1.md",
+    "research_loop/advisory/20260907_one_parent_v2_repair_synthesis.md",
+    "research_loop/advisory/20260907_one_parent_v2_manuscript_crosscritique_v1.md",
+    "research_loop/advisory/20260907_one_parent_v2_stats_crosscritique_v1.md",
+    "research_loop/advisory/20260907_one_parent_v2_objective_crosscritique_v1.md",
+    "research_loop/advisory/20260907_one_parent_v2_stats_reaudit_v2.md",
+    "research_loop/advisory/20260907_one_parent_v2_objective_reaudit_v2.md",
+    "research_loop/advisory/20260907_one_parent_v2_stats_reaudit_v3.md",
+    "research_loop/advisory/20260907_one_parent_v2_objective_reaudit_v3.md",
+    "research_loop/advisory/one_parent_v2_power_sim.py",
+    "research_loop/advisory/20260907_one_parent_v2_power_receipt_v2.md",
+    "research_loop/advisory/20260907_one_parent_v2_local_consensus_v1.md",
+    "research_notes/ICLR_2027_READINESS_20260906.md",
+    "paper/iclr2027_experience_models/main.tex"
+  ],
+  "output_dir": "research_loop/changes/chg_20260907_one_parent_child_headline_v2",
+  "state_path": ".research_loop/intake/chg_20260907_one_parent_child_headline_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260907_one_parent_child_headline_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]},
+    "systems": {"executors": [{"provider": "codex", "model": "gpt-5.6-luna", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}]},
+    "benchmark": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]},
+    "critique": {"executors": [{"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "max_context_chars_per_file": 400000, "timeout_sec": 3000, "provider_attempts": 2, "provider_attempt_timeout_sec": 1500}]},
+    "consensus": {"executors": [{"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 400000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}]}
+  }
+}

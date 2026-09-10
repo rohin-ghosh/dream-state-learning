@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+  "change_id": "chg_20260902_mjp_d0_bwrap_backend_v2",
+  "perspective": "implementation",
+  "state": "interpreted",
+  "architecture_change_sha256": "89de3457d0ecc53e655732843784cb911ed4eaf89c090fe5c53943ed333e72af",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact ratification, independent review, and compute-authority contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/backend_observation.md",
+      "sha256": "4dbda6c911eb320691bec2c0fb631708712131bb38c1a077e49350f91c98cab1",
+      "purpose": "Read-only evidence that the named host can run the core Bubblewrap, privilege-drop, network-namespace, and cgroup primitives."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/change.json",
+      "sha256": "89de3457d0ecc53e655732843784cb911ed4eaf89c090fe5c53943ed333e72af",
+      "purpose": "Exact backend-delta proposal under interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/human_directive.txt",
+      "sha256": "f5341b6654c3b57149bdd6fa1526033f9947d4e4fd2da2e2e9c185d74f9b536b",
+      "purpose": "Verbatim owner directives requiring paper-first rigor without rushing or reducing the design."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/scope_proposal.json",
+      "sha256": "bede2e7e1a95598372aa9bb84f1b0510c6bcbb756379c95ebd5df875cc50b087",
+      "purpose": "Proposed combined CPU-only authority and explicit forbidden scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_rml_minimal_jp_d0_v1/consensus.json",
+      "sha256": "647cc06be22142d983e691c8e14ebd183b215af3c53ef89bd8dbfd03271d4624",
+      "purpose": "Parent scientific consensus whose world, oracle, reader, control, resource, and claim rulings must remain unchanged."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Strict schema governing this interpretation."
+    }
+  ],
+  "system_thesis_interpretation": "Bubblewrap is an implementable and proportionate replacement for the unavailable OCI runtime, but only for the proposal's narrow CPU-interface-hygiene claim. The observed canary establishes useful feasibility: a new user, mount, PID, and network namespace can run the payload as 65534:65534 with NoNewPrivs=1, zero capability sets, no home mounts, and no external IPv4 route. It does not yet establish the production boundary. A scientifically meaningful design must make accidental ambient-file, inherited-descriptor, socket, dependency, and result-feedback paths fail closed while explicitly excluding a hostile-payload or kernel-escape claim. The exact proposal is not ready to ratify unchanged because its writable output mount cannot enforce no reread, its observed whole-/usr mount contradicts the promised minimal closure, its transient cgroup measurements disappear before post-exit collection, and its payload boundary is ambiguous about components that need hidden environment state. These are local backend corrections; none requires changing the 384-world construction or any parent scientific byte.",
+  "graph_delta_interpretation": "The backend node should become two nested trust boundaries rather than one vaguely named evaluator payload. An unprivileged model-facing/non-model cognition namespace may receive only a regular-file-only public bundle, a staged minimal executable closure, declared proc/dev pseudo-files, and write-only stdout/stderr audit pipes. A trusted host-side environment/audit wrapper may own hidden transition state, score only after cognitive outputs freeze, drain receipts without replying, regenerate suffixes from the original snapshot, and compare roots. If the exact future action executor must return public observations step by step, each observation must be a separately declared public projection and each cognition step must start in a fresh namespace from a newly sealed public snapshot; hidden state must never be colocated with controller-importable modules. The graph needs an inner cgroup monitor that remains alive long enough to read raw memory.peak and pids.peak, plus an outer monitor that verifies unit exit and absence of surviving descendants. BWRAP_CPU_INTERFACE_ISOLATION is appropriate only after both boundaries and the exact loaded source closure are reviewed. Bubblewrap, sudo/systemd-run if used, the dynamic loader, Python, setpriv or its equivalent, GNU time if retained, and the trusted wrapper are all part of the backend TCB and must be hash- and metadata-bound.",
+  "loop_delta_interpretation": "The viable loop is: (1) as an unprivileged builder, copy only allowlisted regular public inputs and runtime files into fresh staging trees, reject symlinks, hardlinks, devices, FIFOs, sockets, unexpected xattrs/ACLs/file capabilities, and record content plus type/mode/uid/gid/link/xattr digests; (2) move those trees under a root-owned, non-writable staging parent or an equivalently sealed snapshot, hash before and after execution, and never bind the mutable repository or host /usr; (3) launch one fixed, non-payload-controlled transient cgroup unit before Bubblewrap, with explicit MemoryMax and TasksMax values that permit only the audited namespace helper/process tree; (4) a trusted wrapper inside that cgroup starts Bubblewrap with a tmpfs root, private mount propagation, unshared user/PID/network/IPC/UTS namespaces, fresh proc, only minimal declared dev nodes, read-only staged closure/input mounts, private tmpfs work, empty environment, null stdin, write-only audit pipes on stdout/stderr, all other descriptors closed, fixed rlimits/umask/locale/timezone/hash seed, and a literal argv; (5) the same entry preflight used by the real payload checks canonical mount semantics, groups, capabilities, NoNewPrivs, FDs, network namespaces, cwd, and environment before exec; (6) after the payload and all descendants exit, the still-live trusted wrapper reads raw cgroup memory.peak/pids.peak and emits a hash-bound record, while an outer monitor verifies service status, OOM/timeout state, KillMode=control-group cleanup, and no survivors; (7) no audit path is mounted back into cognition, the audit sink never sends data or status-dependent signals back while cognition is live, and run/skip suffix generation occurs in fresh processes from the original immutable snapshots with neither receipts nor counters mounted; (8) pre/post closure and input roots, suffix roots, public projections, and external counters are compared. Any mismatch, timeout, signal, OOM, unexpected dependency, output backchannel, or inability to retain counters is NOT_RUN. If passwordless sudo is necessary, only a literal root launcher with an empty environment and fixed paths may use it; payload bytes must never parameterize a shell, mount source, cgroup name/property, uid/gid map, or executable path.",
+  "claim_delta_interpretation": "After repair, a pass can honestly say that one exact, reviewed non-model CPU interface path ran on the named host with its scientific input restricted to the sealed public projection and without a detected filesystem, descriptor, external-network, audit-result, or persistent-suffix channel. It cannot literally say the process could read only the public bundle: it also reads its interpreter/runtime closure and observes declared kernel, proc, dev, clock, and resource metadata. It cannot claim an adversarial sandbox, OCI equivalence, malicious-code containment, deterministic execution, hidden-state noninterference solely from suffix equality, future model isolation, or benchmark validity. Mount/FD/network canaries establish absence of named read channels; run/skip root equality separately establishes absence of detected persistent causal effects. Both are required and neither substitutes for content review of the public bundle and executable closure.",
+  "visibility_matrix_interpretation": "The proposed matrix preserves the intended high-level direction but merges distinct stages and therefore hides one critical contradiction. The exact action executor or scorer may require hidden world state, whereas BWRAP_EVALUATOR_PAYLOAD declares that state forbidden. Either the payload excludes those trusted environment components, or cognition and environment must be split with only predeclared public action observations crossing back on the next fresh invocation. AUDIT_OUTPUT_AND_RESOURCE_COUNTERS must also be separated from allowed online public environment observations; otherwise forbidding every output reread forbids the agent-environment loop itself. A writable /out bind is not a one-way boundary: a creator can reopen and read its files, list names, observe metadata, and use existence/errors/timing as feedback. Replace it with O_WRONLY pipes or inherited write-only descriptors to an external drain, allowlist those exact descriptors, prevent the drain from replying or closing conditionally, and terminate cognition before any audit interpretation. SEALED_PUBLIC_EVALUATOR_BUNDLE must mean a sanitized byte projection, not merely a hash of a directory: its builder, classification, path traversal, symlink/hardlink handling, and code/data descendants are part of the visibility proof. The implementation matrix must retain the parent's full constructor/renderer/allocator/compiler/index/candidate/prompt/assigner/parser/environment/evaluator/audit/suffix stages rather than treating Bubblewrap as a substitute for that lineage audit.",
+  "acceptance_test_ids_addressed": [
+    "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+    "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+    "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+    "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+  ],
+  "acceptance_test_interpretation": "T01 must be split by time: before subject editing, freeze the host/backend profile, literal launcher specification, metadata-hash algorithm, allowed pseudo-files, closure-construction rule, cgroup measurement method, and expected canaries; after implementation and before execution, attest the actual staged evaluator closure and all loaded TCB bytes. SHA-256 of bwrap alone is insufficient: bind owner, mode, setuid bit, file capabilities/xattrs, ELF interpreter and libraries, sudo/systemd/setpriv/time dependencies actually used, Python interpreter/stdlib/extensions, evaluator source, sys.path, exact argv, and pre/post Merkle roots. A read-only bind of live /usr is not an immutable closure. T02 must run through the identical production launcher/profile and prove root mount propagation is private; input contains only approved regular files and cannot be altered through symlink, hardlink, rename, open directory FD, proc root, or cwd paths; supplementary groups are empty; stdin is /dev/null; stdout/stderr are write-only audit pipes; every FD above the allowlist is closed; no host PID or filesystem/abstract Unix socket is reachable; IPv4/IPv6 have no external route; forbidden paths and DBus/SSH/agent sockets are absent; and all invalid output/read attempts have constant failure semantics. The original requirement for a host-writable /out and no reread is unachievable and must be removed. T03 must keep a trusted monitor alive inside each transient cgroup until the child exits and raw memory.peak/pids.peak are read, because the observed systemd MemoryPeak/TasksPeak properties are not retained after a short collected unit. An outer monitor must then verify no descendant survives. Freeze whether resource limits are backend-inclusive or subject-plus-oracle-only; cgroup peaks include bwrap, Python, pipes, and the monitor, while GNU time max RSS is not a substitute for aggregate cgroup peak. Distinguish one evaluator worker from the several audited PIDs Bubblewrap/systemd require. Run and skip need independent fresh namespaces and byte-identical immutable snapshots; suffix equality must cover all parent roots but is evidence of persistent noninterference, not proof that hidden bytes were unreadable. T04 should receive literal launcher argv, all TCB/content/metadata manifests, canonical mountinfo and FD/group/status evidence, public-bundle classifier evidence, pipe topology, cgroup lifecycle logs and raw peaks, process trees and cleanup evidence, run/skip roots, exact source closure, and the parent's expanded lineage matrix. Approval must be REWORK if a full /usr mount, writable output mount, shell-expanded sudo command, ambient cwd/env, post-exit-only systemd peak query, hidden state in the cognition process, or unbound dependency remains.",
+  "assumptions": [
+    "The payload is reviewed project code and accidental leakage is in scope; a malicious payload exploiting the Linux kernel, Bubblewrap, Python, or the root launcher is explicitly out of scope.",
+    "The named host remains an owned disposable lease, but concurrent root-level host mutation is not part of the security claim.",
+    "Bubblewrap is available with working user, mount, PID, and network namespaces on the exact kernel and host, as the observed canary indicates.",
+    "No model, GPU, package installation, lease change, networked science process, or successor-stage execution is authorized by this interpretation.",
+    "The parent 384-world, oracle, chronology, reader, control, resource, and claim contracts remain unchanged except for replacing the unavailable OCI backend with a narrowly labeled Bubblewrap backend.",
+    "The future G1 model is not run in this D0 boundary; a later exact R1 must bind and test the model process separately.",
+    "A root-owned sealed staging tree is sufficient against accidental concurrent mutation on the owned host; this is not a defense against a hostile administrator with passwordless sudo.",
+    "Public observations legitimately produced by an action executor are distinct from audit receipts and must be separately declared if the exact interface is interactive."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "BW_SEC_A01_PAYLOAD_COMPONENT_BOUNDARY",
+      "question": "Which exact parent components execute inside BWRAP_EVALUATOR_PAYLOAD, and which trusted component owns hidden transition state, action execution, and scoring?",
+      "impact": "The current hidden-state-forbidden payload cannot also contain an action executor that needs hidden world state without making that state importable or readable by cognition."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A02_INTERACTIVE_PUBLIC_OBSERVATIONS",
+      "question": "Does the exact CPU path require action-by-action public observations, and if so how are those allowed observations distinguished from forbidden audit outputs and delivered without a general bidirectional socket?",
+      "impact": "Forbidding all output reread can accidentally reduce the certified path to a batch stand-in rather than the exact future interface."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A03_RUNTIME_CLOSURE",
+      "question": "What exact files, modes, owners, capabilities, xattrs, Python paths, shared libraries, locale/timezone data, and pseudo-files comprise the minimal runtime closure, and how is it staged immutably rather than mounted from live /usr?",
+      "impact": "A mutable or overbroad closure admits ambient code/data and defeats exact byte binding even when the mount is read-only."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A04_PRIVILEGED_LAUNCHER",
+      "question": "Can the verified profile run unprivileged, and if not what exact sudo/systemd/bwrap launcher, policy, environment, ownership/mode/capability manifest, and argument-construction rule form the root TCB?",
+      "impact": "Passwordless sudo plus shell- or payload-controlled arguments can turn a narrow namespace wrapper into a host-privilege and mount-source injection seam."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A05_OUTPUT_TOPOLOGY",
+      "question": "Why is a writable output mount needed instead of write-only stdout/stderr pipes, and what OS mechanism would prevent a process that created a file there from reopening it?",
+      "impact": "Ordinary POSIX mount permissions cannot provide the proposed write-but-never-reread guarantee."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A06_CGROUP_LIFECYCLE",
+      "question": "What exact transient-unit lifecycle keeps raw memory.peak and pids.peak readable after the payload exits but before the accounting process exits, and how is descendant cleanup proven afterward?",
+      "impact": "The observed systemd peak properties disappear after the short unit exits, so post-hoc resource evidence can silently be absent or undercounted."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A07_RESOURCE_DOMAIN",
+      "question": "Are the strict RSS, PID, wall, and worker bounds measured over subject and oracle only, each fork separately, their sum, or the backend-inclusive cgroup containing bwrap and the trusted monitor?",
+      "impact": "Different definitions produce incomparable peaks; TasksMax=1 would also be incompatible with Bubblewrap helpers even though the scientific controller still uses one worker."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A08_DEPENDENCY_TOCTOU",
+      "question": "What prevents a dependency or input inode from changing between pre-hash and execution, and how are pre/post roots, open descriptors, hardlinks, and symlink targets handled?",
+      "impact": "Hash-then-ro-bind of a live host tree does not freeze the underlying inode against an external writer."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A09_PROCESS_TERMINALITY",
+      "question": "What exact PID-namespace init/reaping, KillMode, timeout, cgroup-drain, signal, and parent-death rules ensure grandchildren cannot survive or write after audit completion?",
+      "impact": "--die-with-parent alone does not substitute for proving that every daemonized descendant is dead before suffix regeneration."
+    },
+    {
+      "ambiguity_id": "BW_SEC_A10_T01_TIMING",
+      "question": "How can T01 attest the complete evaluator source/package closure before implementation when those bytes do not yet exist?",
+      "impact": "Combining profile freeze and post-build closure attestation in a required-before-implementation test creates another impossible gate and invites informal skipping."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "BW_SEC_D01_REMOVE_WRITABLE_OUTPUT_MOUNT",
+      "statement": "The proposed initially empty host-writable audit mount does not enforce that evaluator output is never reread.",
+      "rationale": "A process with write/create permission can retain or reopen its own output FD, read files it created when mode permits, observe directory metadata and errors, and branch on sink behavior. Emptiness removes preexisting-link attacks but does not create one-way I/O.",
+      "proposed_resolution": "Mount no host-writable output path. Give the payload null stdin and only O_WRONLY stdout/stderr pipes to a trusted external drain; close all other FDs; never send acknowledgments or conditionally close the pipe while cognition is live; terminate cognition before interpreting receipts."
+    },
+    {
+      "disagreement_id": "BW_SEC_D02_NO_LIVE_USR_BIND",
+      "statement": "The successful canary's read-only /usr mount is not the minimal immutable executable closure promised by the change.",
+      "rationale": "Read-only prevents payload writes but exposes ambient executables, packages, data, setuid/capability-bearing files, and externally mutable inodes. It also makes loaded-source provenance hard to close.",
+      "proposed_resolution": "Construct a fresh regular-file-only runtime tree containing the exact interpreter, loader, shared libraries, standard-library/extensions, and reviewed evaluator source; bind only that staged tree and attest content plus metadata before and after."
+    },
+    {
+      "disagreement_id": "BW_SEC_D03_SPLIT_T01_BY_TIME",
+      "statement": "T01 cannot both precede implementation and attest a complete evaluator/package closure that has not been built.",
+      "rationale": "This repeats the temporal defect the parent consensus explicitly repaired for its oracle gate.",
+      "proposed_resolution": "Before implementation freeze the backend profile and construction/measurement specifications; after implementation but before any conformance run attest the actual executable and input closures."
+    },
+    {
+      "disagreement_id": "BW_SEC_D04_CGROUP_MONITOR_MUST_STAY_ALIVE",
+      "statement": "A short transient systemd unit cannot be queried for reliable peak properties only after it has exited and been collected.",
+      "rationale": "The target-host observation found MemoryPeak and TasksPeak unavailable post-exit; GNU time max RSS is not aggregate cgroup memory and does not replace raw memory.peak.",
+      "proposed_resolution": "Keep a trusted wrapper alive in the same transient cgroup, wait for bwrap and every payload descendant, read raw memory.peak and pids.peak before wrapper exit, emit the hash-bound record, then let an outer monitor verify service exit and no survivors."
+    },
+    {
+      "disagreement_id": "BW_SEC_D05_SPLIT_COGNITION_FROM_HIDDEN_ENVIRONMENT",
+      "statement": "The visibility claim that hidden science state is absent from the payload is incompatible with colocating an exact hidden-state action executor or scorer in that payload.",
+      "rationale": "Process isolation cannot hide Python modules or memory from other code in the same process boundary. The parent requires the exact model-facing path, not a stand-in that omits state transitions.",
+      "proposed_resolution": "Define a public-only cognition namespace and a trusted hidden-state environment/scorer outside it. If interactive, seal each allowed public observation and invoke the next cognition step fresh; never expose a general environment socket or hidden module to cognition."
+    },
+    {
+      "disagreement_id": "BW_SEC_D06_NARROW_ONLY_PUBLIC_BUNDLE_WORDING",
+      "statement": "A pass cannot literally establish that the payload read only its public bundle.",
+      "rationale": "The payload necessarily reads runtime code and can observe declared proc/dev/kernel/clock/resource state. A hash-pinned closure controls these channels but does not make them disappear.",
+      "proposed_resolution": "Claim that the only scientific data input was the sealed public projection, while enumerating the non-scientific runtime and kernel metadata still visible."
+    },
+    {
+      "disagreement_id": "BW_SEC_D07_BIND_FULL_PRIVILEGED_TCB",
+      "statement": "Hashing Bubblewrap alone is insufficient when passwordless sudo, systemd-run, setpriv, the dynamic loader, shared libraries, and a trusted wrapper participate in privileged setup or accounting.",
+      "rationale": "Any one of those bytes, modes, file capabilities, inherited environments, or shell expansions can change the resulting namespace or cgroup before the unprivileged payload begins.",
+      "proposed_resolution": "Prefer unprivileged bwrap where feasible; otherwise bind and independently review a literal no-shell root launcher and the complete actually loaded host TCB, including owner/mode/setuid/capability/xattr metadata and exact arguments."
+    },
+    {
+      "disagreement_id": "BW_SEC_D08_CLOSE_FDS_WITH_EXPLICIT_ALLOWLIST",
+      "statement": "The expected descriptor set cannot be described simply as closed because stdout/stderr audit pipes and Bubblewrap/systemd control descriptors may exist.",
+      "rationale": "Directory FDs, memfds, pidfds, inherited Unix sockets, terminals, and activation descriptors bypass pathname and socket-mount restrictions. Conversely, closing every FD would remove the audit channel.",
+      "proposed_resolution": "Freeze exact FD semantics, set stdin to /dev/null, allow only write-only audit stdout/stderr at payload exec, close_range every other descriptor, and verify access mode and target for each surviving FD through /proc/self/fd and fdinfo."
+    },
+    {
+      "disagreement_id": "BW_SEC_D09_SEPARATE_VISIBILITY_FROM_SUFFIX_EQUALITY",
+      "statement": "Byte-identical regenerated suffixes do not prove that hidden state was unreadable.",
+      "rationale": "A payload could read hidden bytes and emit an audit receipt that is later discarded without changing the suffix. Conversely mount/FD canaries do not prove the evaluator caused no persistent effect.",
+      "proposed_resolution": "Require both channel-closure evidence and run/skip suffix equality, and state their separate meanings in the claim and independent review."
+    },
+    {
+      "disagreement_id": "BW_SEC_D10_DISTINGUISH_WORKER_FROM_PID_CAP",
+      "statement": "The parent one-worker rule cannot be implemented as a one-PID cgroup and the proposal does not freeze TasksMax or process-tree semantics.",
+      "rationale": "systemd, bwrap's namespace/init helper, the trusted monitor, and Python can require several processes even when the evaluator has one scientific worker. An unfrozen generous TasksMax weakens runaway-process containment; TasksMax=1 makes the backend impossible.",
+      "proposed_resolution": "Define one scientific evaluator worker separately from a small enumerated backend PID tree; set TasksMax to the smallest canary-proven fixed bound, report pids.peak, and fail on any unexpected executable or descendant."
+    },
+    {
+      "disagreement_id": "BW_SEC_D11_EXPAND_MATRIX_AT_COMPONENT_BOUNDARIES",
+      "statement": "The backend delta's four aggregate stages are insufficient to demonstrate preservation of the parent's required descendant visibility matrix.",
+      "rationale": "Constructor, renderer, allocator, compiler, index, candidates, prompt builder, assigner, parser, environment executor, scorer, audit sink, and suffix generator have different legitimate inputs and leak risks; a namespace around an aggregate payload does not resolve them.",
+      "proposed_resolution": "Carry the full parent component-by-information matrix into the combined scope and annotate each component with process/namespace, mount/input, output, and post-exit consumers."
+    },
+    {
+      "disagreement_id": "BW_SEC_D12_SANITIZE_INPUT_NOT_JUST_HASH_IT",
+      "statement": "Hashing and read-only binding an input directory is insufficient if it contains symlinks, hardlinks, special files, sockets, unexpected metadata, or hidden-science descendants.",
+      "rationale": "Hardlinks can expose bytes under an innocent path, symlinks can redirect into runtime mounts, special files create IPC/device channels, and a perfectly hashed bundle can still contain prohibited content.",
+      "proposed_resolution": "Build the bundle by copying allowlisted regular-file bytes into a fresh sealed tree; reject every other file type, multiple-link inode, escape path, and unexpected metadata; independently validate its public projection before launch."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin ratify a repaired backend that removes the writable /out mount, uses one-way audit pipes, and narrows the claim to named accidental-channel isolation rather than OCI or adversarial security?",
+      "Does Rohin ratify splitting public-only cognition from any trusted hidden-state environment/scorer, with separately sealed public action observations if the exact path is interactive?",
+      "Does Rohin ratify a staged minimal runtime closure rather than a live read-only /usr bind, including complete TCB content and metadata attestations before and after execution?",
+      "Does Rohin ratify the two-monitor cgroup lifecycle: an inner trusted monitor retains and reads raw peaks before exit, and an outer monitor proves termination and no surviving descendants?",
+      "Does Rohin ratify splitting T01 into a preimplementation backend-profile freeze and a postimplementation/pre-run actual-closure attestation while preserving all parent scientific gates and forbidding model/GPU/G1 work?"
+    ]
+  }
+}

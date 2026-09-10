@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v6",
+  "title": "Experience Model v6: closed minimal CompilerGym recipe assay",
+  "summary": "Rework the v5 minimal assay without expanding its cognitive scope. HARNESS and EXPERIENTIAL remain the only on-policy systems. One bounded canonical decision packet yields one pass index in each of six slots; each system keeps its own last-eight immediately improving events. EXPERIENTIAL alone compiles its immediately successful public action examples into a cumulative q/v LoRA after tasks 4 and 8. The final four syntactic holdouts compare HARNESS, EXPERIENTIAL-on, and the same E snapshot with no adapter. Protocol v6 closes packet domains, event/snapshot transitions, training serialization, environment sealing, inference/rebuild determinism, adapter identity, capability isolation, quarantine, total failure handling, and post-run acceptance.",
+  "system_thesis": "This controlled lower bracket tests only whether one exact success-filtered action-cloning recipe completes and yields auditable descriptive fixed-panel contrasts. It complements but does not ingest the free-flow organism_v6 scout. It does not test a final thinker, intelligent sleep, outcome modeling, causal credit, general improvement, lifelong learning, creativity, or a paper claim.",
+  "state": "proposed",
+  "context_files": [
+    {"path":"AGENTS.md","sha256":"1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e","purpose":"Controlling architecture, ratification, review, and GPU gate."},
+    {"path":"research_loop/schemas/architecture_change.schema.json","sha256":"4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b","purpose":"Proposal schema."},
+    {"path":"research_loop/architecture_intake.py","sha256":"62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea","purpose":"Hash-bound intake validator."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/human_directive.txt","sha256":"f80607841520297e23f50b2f0736c0ea559c4629162e00070d1907cd21af530f","purpose":"Verbatim owner direction for simple complementary experiments."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v6/protocol.md","sha256":"2cc93fd198322caff24b5c6361285c80fa1d8abb4ab43929f736b99be9546688","purpose":"Normative executable assay contract."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v5/critique.json","sha256":"3ce741cdda432364d9b4bd43d3f04f634511ae76390200263bf065e29188c8e7","purpose":"Adversarial findings requiring v6 closure."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v5/consensus.json","sha256":"78ed3e62f16199f0f367758f2b1861bc69c9a52dbcda2d781114f1f3dc7baa82","purpose":"Adjudicated v5 rework requirements."}
+  ],
+  "graph_delta": {
+    "nodes": [
+      {"operation":"modify","node_id":"V6S6_TWO_SYSTEMS","before":"v5 defined the right two systems but left state identities and runtime closure ambiguous.","after":"H and E share one exact bounded six-slot interface and own eight-record snapshots; E alone receives two deterministic success-filtered LoRA publications. E_OFF is a final read-only mount diagnostic with byte-identical E snapshot.","rationale":"Preserves the causal lower bracket while closing identity and snapshot semantics."},
+      {"operation":"modify","node_id":"V6S6_PACKET_EVENT_STATE","before":"v5 packet, event sequence, rejected/no-op state, token bounds, and snapshot contents were incomplete.","after":"Protocol Sections 2--3 normatively bind finite domains, canonical packet/event/snapshot/history/memory schemas, global acquisition event numbering, state transitions, null mount, training packet binding, and cold inference parity.","rationale":"Makes every model-visible and persisted state transition independently testable."},
+      {"operation":"modify","node_id":"V6S6_ENVIRONMENT_SEAL","before":"v5 left URI/seed encodings, rejection order, and repeat count to implementation.","after":"Two cold CPU no-model sealers use exact URI acceptance, seed preimage, selection order, rejection precedence, duplicate/collision handling, and byte-identical reset/Autophase/Oz checks to bind 8/4 syntactic holdouts.","rationale":"Prevents target-informed or discretionary split construction."},
+      {"operation":"modify","node_id":"V6S6_WRITER_AND_BUILD_IDENTITY","before":"v5 left sample serialization, final build roles, tensor comparison, and authentic mount ambiguous.","after":"Protocol Section 5 fixes chat-template prefix/full construction, target-only masks, optimizer order, atomic publication, sleep-2 build A as the only mount, build B as comparison-only, and exact tensor inventory/comparison math.","rationale":"Uniquely identifies the treatment and makes its rebuild audit reproducible."},
+      {"operation":"modify","node_id":"V6S6_RUNTIME_ISOLATION_AND_RESULT_GATE","before":"v5 had a coarse stage matrix and pre-run tests only.","after":"An actor-by-artifact capability allowlist, one-way target quarantine, total failure table, closed run manifest, and post-run V6S_T06 conformance review govern actual execution and result release.","rationale":"Extends controller fixtures into bounded real-stack evidence without a global noninterference claim."}
+    ],
+    "edges": [
+      {"operation":"modify","edge_id":"V6S6_PUBLIC_STATE_TO_ACTION","from":"V6S6_PACKET_EVENT_STATE","to":"V6S6_TWO_SYSTEMS","before":"v5's intended one-call edge had underbounded inputs and incomplete transition receipts.","after":"bounded authoritative state -> exact system+user chat -> one greedy response -> strict pass-index parse/no-op -> one environment transition -> one canonical event/snapshot transaction.","rationale":"Closes budget, state, and pre-sleep parity paths."},
+      {"operation":"modify","edge_id":"V6S6_EVENT_TO_ADAPTER","from":"V6S6_TWO_SYSTEMS","to":"V6S6_WRITER_AND_BUILD_IDENTITY","before":"v5 did not uniquely reconstruct samples or designate an authentic rebuild.","after":"sealed immediately improving E event and exact producing packet -> canonical masked sample -> cumulative clean-base build A -> atomic publication; final build B only verifies A.","rationale":"Restricts learning and unambiguously binds the final mount."},
+      {"operation":"modify","edge_id":"V6S6_SEAL_TO_QUARANTINED_TARGETS","from":"V6S6_ENVIRONMENT_SEAL","to":"V6S6_RUNTIME_ISOLATION_AND_RESULT_GATE","before":"v5 target lifecycle and reporter barrier were incomplete.","after":"sealed 8/4 manifest plus final snapshots/mount -> 12 fresh target forks -> one-way collector -> destruction barrier -> independent recomputation before result release.","rationale":"Prevents target feedback and makes every final cell accountable."}
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {"operation":"modify","loop_id":"V6S6_WAKE","before":"v5 specified one-call decisions but not total state/failure semantics.","after":"H and E each run eight tasks of six canonical slots; malformed/no-op/rejected events charge and continue only under exact unchanged-state rules, while every other failure follows the total table. Target forks later use the same loop read-only.","trigger":"Each acquisition task or final target fork.","reads":["sealed environment state","own canonical snapshot","assigned build-A or NONE mount"],"writes":["canonical event transaction","own acquisition snapshot update","target stdout receipt only"],"stop_condition":"Six slots or the first Section-8 stop condition; no retry/resume.","rationale":"Makes the one-loop organism minimal and fail-closed."},
+      {"operation":"modify","loop_id":"V6S6_SLEEP","before":"v5's simple writer lacked unique serialization, build roles, and actual-run acceptance.","after":"After E tasks 4/8, select cumulative immediate improvements, construct exact target-only masked chat samples, rebuild and publish under fixed updates; after sleep 2 compare build B to mounted build A, destroy ephemera, then pass all receipts to post-run review.","trigger":"Committed E task 4 or 8.","reads":["committed E acquisition events and packet bytes","frozen recipe and run manifest","pinned clean base"],"writes":["rows/masks/update/tensor receipts","sleep-1 adapter or final build A","comparison-only build B receipt"],"stop_condition":"The first data, training, publication, rebuild, inventory, tolerance, or integrity failure in Section 8.","rationale":"Tests only verified successful-action compilation."}
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {"operation":"modify","claim_id":"V6S6_RECIPE_COMPLETE_ONLY","before":"v5's opening question could be read as an improvement or action-outcome learning claim.","after":"The run may report only one first-applicable integrity disposition and raw fixed-panel F, D_HE, D_ONOFF, and validity after V6S_T06. RECIPE_COMPLETE is independent of score sign.","evidence_needed":"Exact ratifications plus passing T01--T06, complete receipts, and fresh post-run recomputation.","headline_eligible":false},
+      {"operation":"retire","claim_id":"V6S6_NO_EFFECT_OR_OUTCOME_MODEL_CLAIM","before":"Any claim that success-filtered action cloning learned outcomes, causal credit, general improvement, final thinker/sleeper design, lifelong growth, or superiority.","after":"All are forbidden for this one-life syntactic-holdout recipe assay.","evidence_needed":"New registered replicated studies with appropriate controls and inference.","headline_eligible":false}
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": ["canonical_request_state","life_memory_and_events","adapter_training_state","target_and_quarantine"],
+    "stages": ["B1_FIXTURES","B2_CPU_SEAL","ACQUISITION_SLEEP","TARGET_EXECUTION","POSTRUN_AUDIT"],
+    "cells": [
+      {"information_id":"canonical_request_state","stage_id":"B1_FIXTURES","visibility":"derived_only","reason":"Synthetic bytes only."},
+      {"information_id":"canonical_request_state","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"Sealer has no model request reader."},
+      {"information_id":"canonical_request_state","stage_id":"ACQUISITION_SLEEP","visibility":"visible","reason":"Packet/model/parser and exact row binder only, per actor allowlist."},
+      {"information_id":"canonical_request_state","stage_id":"TARGET_EXECUTION","visibility":"visible","reason":"Only the current isolated fork receives its request."},
+      {"information_id":"canonical_request_state","stage_id":"POSTRUN_AUDIT","visibility":"visible","reason":"Auditor recomputes serialized receipts after barrier."},
+
+      {"information_id":"life_memory_and_events","stage_id":"B1_FIXTURES","visibility":"derived_only","reason":"Synthetic transition fixtures."},
+      {"information_id":"life_memory_and_events","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"No life exists."},
+      {"information_id":"life_memory_and_events","stage_id":"ACQUISITION_SLEEP","visibility":"visible","reason":"Each actor receives only its own allowlisted event/snapshot projection."},
+      {"information_id":"life_memory_and_events","stage_id":"TARGET_EXECUTION","visibility":"visible","reason":"Fork reads one immutable snapshot and cannot write life state."},
+      {"information_id":"life_memory_and_events","stage_id":"POSTRUN_AUDIT","visibility":"visible","reason":"All snapshot/event hashes are recomputed."},
+
+      {"information_id":"adapter_training_state","stage_id":"B1_FIXTURES","visibility":"derived_only","reason":"Mock masks, updates, mounts, and failures."},
+      {"information_id":"adapter_training_state","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"No learned-state access."},
+      {"information_id":"adapter_training_state","stage_id":"ACQUISITION_SLEEP","visibility":"derived_only","reason":"Only compiler/trainer/publisher read their allowlisted pieces; the model sees effects below prompt."},
+      {"information_id":"adapter_training_state","stage_id":"TARGET_EXECUTION","visibility":"derived_only","reason":"Only build A or NONE is mounted; labels and trainer state are absent."},
+      {"information_id":"adapter_training_state","stage_id":"POSTRUN_AUDIT","visibility":"visible","reason":"Rows, masks, tensors, builds, mounts, and teardown are audited."},
+
+      {"information_id":"target_and_quarantine","stage_id":"B1_FIXTURES","visibility":"hidden","reason":"Only synthetic denial fixtures."},
+      {"information_id":"target_and_quarantine","stage_id":"B2_CPU_SEAL","visibility":"derived_only","reason":"Sealer binds identities/reset baselines but runs no learned action."},
+      {"information_id":"target_and_quarantine","stage_id":"ACQUISITION_SLEEP","visibility":"forbidden","reason":"Target roles/outcomes cannot reach life or writer."},
+      {"information_id":"target_and_quarantine","stage_id":"TARGET_EXECUTION","visibility":"derived_only","reason":"One target-local service and one-way collector only; no prior result enters a fork."},
+      {"information_id":"target_and_quarantine","stage_id":"POSTRUN_AUDIT","visibility":"visible","reason":"Reporter activates only after all processes end and barrier seals."}
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id":"V6S6_T01_STATE_PACKET_TRANSITION_GOLDENS","kind":"unit","setup":"Independently authored fixtures cover canonical JSON/base64/hashes, integer/vector/byte/token bounds, response parser, every event-sequence/history/memory/snapshot transition, null mount, six-slot score, and total disposition table.","expected":"All exact bytes/properties match protocol v6; malformed/no-op/rejected and every failure row produce their sole declared transition with no retry.","falsifies":"That bounded context-as-state and lifecycle semantics are executable.","evidence_artifact":"v6s6_state_packet_transition_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S6_T02_SAMPLE_WRITER_BUILD_GOLDENS","kind":"unit","setup":"Synthetic events test eligibility, packet hash binding, row IDs/dedup/order, prefix/full tokenization, exact suffix/EOR, masks, 24-copy updates, optimizer constants, atomic failure, build-A/B identity, tensor inventory, and float32/float64 comparison math.","expected":"Rows/tokens/masks/updates/build roles/hashes match independent expected fixtures; any forbidden input or mismatch fails closed.","falsifies":"That the success-filtered LoRA writer and authentic mount are uniquely defined.","evidence_artifact":"v6s6_writer_build_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S6_T03_CAPABILITY_LIFECYCLE_QUARANTINE_GOLDENS","kind":"invariant","setup":"Fault-inject every actor capability, H/E pre-sleep parity, snapshot/mount identity, process/cache/RNG teardown, atomic commit/crash, one-way target collection, early report attempt, and no-writeback path.","expected":"Only the protocol allowlist succeeds; every denied read/write and stale/resume path yields the exact Section-8 stop/disposition.","falsifies":"Controller-level isolation and quarantine enforcement.","evidence_artifact":"v6s6_capability_lifecycle_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S6_T04_CPU_DOUBLE_SEAL","kind":"end_to_end","setup":"After architecture ratification, run exactly two fresh CPU no-model sealers over unchanged local CompilerGym bytes using the exact URI/seed/preimage/order/rejection/repeat rules.","expected":"Complete manifest and rejection ledger are byte-identical; 8/4 source and bitcode hashes are distinct; reset Autophase/I0/IOz repeat exactly; no model/Fable/learned action/download/patch/substitution occurs.","falsifies":"That an off-the-shelf syntactic-holdout environment can be sealed without discretionary or target-informed selection.","evidence_artifact":"v6s6_environment_seal_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S6_T05_EXACT_PRE_GPU_REVIEW","kind":"independent_review","setup":"A fresh history-free independent reviewer and non-overriding advocate inspect exact protocol, implementation, T01--T04 receipts, finite audited-surface/run manifest, commands, 32B stack, GH200 identity, and runtime T06 definition before any model call.","expected":"Reviewer approves exact conformance or vetoes; only an approval bundle may be presented once for Rohin's exact run-manifest ratification.","falsifies":"Closure of the executable and authority boundary.","evidence_artifact":"v6s6_pre_gpu_review_bundle.json","required_before":"gpu_run"},
+    {"test_id":"V6S6_T06_ACTUAL_RUN_CONFORMANCE","kind":"independent_review","setup":"After the one ratified run, a fresh history-free reviewer recomputes every actual request/event/parity/snapshot/row/mask/update/build/tensor/mount/process/fork/quarantine/score/disposition receipt from immutable artifacts.","expected":"All actual evidence matches the ratified run and first-applicable disposition; no result is released on mismatch and no repair/rerun is performed.","falsifies":"That RECIPE_COMPLETE or another reported disposition is supported on the enumerated real-run surfaces.","evidence_artifact":"v6s6_postrun_conformance_bundle.json","required_before":"scientific_claim"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "Do you ratify these exact v6 architecture/protocol bytes, authorizing only isolated B1 implementation/fixtures and exactly two cold CPU no-model sealers over unchanged already-local CompilerGym bytes? After T01--T05, one later explicit ratification of the exact closed 32B GH200 run manifest may authorize the single indivisible acquisition/sleep/final-target run without further prompts.",
+    "forbidden_before_approval": [
+      "Any implementation, environment opening, model call, training, target action, GPU use, or result claim before exact architecture ratification",
+      "Any model/GPU call before fresh T05 approval and later exact run-manifest ratification",
+      "Any Fable/organism_v6 data, program, prompt, outcome, adapter, threshold, or probe use in selection, training, tuning, or scoring",
+      "Any repair, rerun, substitution, tuning, resume, added system/control, changed recipe, or scientific claim without a new bound change"
+    ]
+  }
+}

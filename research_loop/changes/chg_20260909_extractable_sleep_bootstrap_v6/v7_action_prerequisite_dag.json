@@ -1,0 +1,2409 @@
+{
+  "schema_version": 1,
+  "artifact_type": "v6_action_prerequisite_dag_proposal_input",
+  "dag_id": "extractable_sleep_bootstrap_v7_action_prerequisite_dag_v1",
+  "state": "successor_proposal_input_only",
+  "bindings": {
+    "v6_change_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/change.json",
+    "v6_change_sha256": "7246d9826f3246dad2416fc3c2d230877256eaa2eb09dde3a359820e565f72b5",
+    "v6_consensus_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/consensus.json",
+    "v6_consensus_sha256": "61702bc0bd5e19c2ef5a285c68a335abf5b5146319e9322e9053a8d032092016",
+    "v7_resolution_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_blocker_resolution.md",
+    "v7_resolution_sha256": "a14744cb6c23e52227e32617df933ba463d61e9b1f4d6a71a4097fe577e57a93",
+    "v7_science_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_scientific_core.json",
+    "v7_science_sha256": "f44f3512b1248d0a945b5e039459e068dbdc42ba97728026f572c3a572940710",
+    "v7_capability_registry_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v6/v7_capability_registry.json",
+    "v7_capability_registry_sha256": "9c44fe870c56f3009b08512d48175c50a1378beeeebc378a7cfff2e89548c94d"
+  },
+  "canonicalization": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "duplicate_object_keys": "forbidden",
+    "array_order": "normative as written",
+    "unknown_action": "DENIED",
+    "unknown_receipt": "DENIED",
+    "unknown_prerequisite": "DENIED"
+  },
+  "authority_layers": [
+    {
+      "layer_id": "G0_MODEL_FREE_HARNESS",
+      "scope": "A separately exact human ratification may authorize only the registry parser, fake artifacts, fake dispatchers, epoch bridge, receipt validator, action DAG gate, and deterministic fake fault fixtures.",
+      "forbidden": [
+        "real_model_or_tokenizer",
+        "treatment_or_benchmark_data",
+        "writer_adapter_merge_or_checkpoint",
+        "candidate_or_exam",
+        "gpu_or_remote_resource",
+        "external_science",
+        "claim",
+        "publication",
+        "push",
+        "release"
+      ]
+    },
+    {
+      "layer_id": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "scope": "Only named implementation actions under a new exact human authorization, a ratified successor architecture, installed G0 gate, and relevant frozen contracts.",
+      "forbidden": [
+        "model_execution",
+        "tokenizer_execution",
+        "data_or_benchmark_generation",
+        "writer_adapter_merge_or_checkpoint_execution",
+        "candidate_or_exam_execution",
+        "gpu_or_remote_resource",
+        "external_science",
+        "claim",
+        "publication",
+        "push",
+        "release"
+      ]
+    },
+    {
+      "layer_id": "G2_GUARDED_DOMAIN_EXECUTION",
+      "scope": "Each first data, tokenizer, model, writer, adapter, merge, checkpoint, candidate, exam, scorer, reporter, or resource action requires its own exact authorization and all action-specific predecessor receipts."
+    },
+    {
+      "layer_id": "G3_GPU_AND_EXTERNAL_SCIENCE",
+      "scope": "GPU/resource and external-science actions remain separately gated after the cheapest CPU and review receipts."
+    },
+    {
+      "layer_id": "G4_CLAIM_AND_RELEASE",
+      "scope": "Claim, publication, push, and opaque release are four distinct actions with distinct human authority; none is implied by science or another terminal action."
+    }
+  ],
+  "external_prerequisite_receipts": [
+    {
+      "receipt_id": "R_AUTH_CLAIM_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "claim_text_root",
+        "evidence_manifest_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_CPU_EXECUTION_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "implementation_root",
+        "input_manifest_root",
+        "resource_ceiling",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_DATA_GENERATION_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "source_contract_root",
+        "statistics_contract_root",
+        "generator_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_EXTERNAL_SCIENCE_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "study_packet_root",
+        "resource_manifest_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_G0_HARNESS_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "capability_registry_root",
+        "action_dag_root",
+        "parser_root",
+        "capability_issuer_root",
+        "epoch_bridge_root",
+        "receipt_validator_root",
+        "action_gate_root",
+        "fake_artifacts_root",
+        "fake_dispatchers_root",
+        "fault_fixtures_root",
+        "allowed_path_manifest_root",
+        "forbidden_scope_root",
+        "expected_static_output_manifest_root",
+        "expected_fault_output_manifest_root",
+        "expected_installed_gate_output_manifest_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_G1_IMPLEMENTATION_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "implementation_manifest_root",
+        "allowed_path_manifest_root",
+        "forbidden_scope_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_GPU_EXECUTION_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "implementation_root",
+        "input_manifest_root",
+        "gpu_allocation_root",
+        "resource_ceiling",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_PUBLICATION_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "publication_bytes_root",
+        "destination_identity",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_PUSH_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "repository_identity",
+        "ref_identity",
+        "object_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_AUTH_RELEASE_EXACT",
+      "source": "external_human",
+      "required_bindings": [
+        "action_id",
+        "artifact_root",
+        "artifact_class",
+        "destination_identity",
+        "transfer_operation",
+        "protocol",
+        "requested_scope",
+        "nonce",
+        "expiry",
+        "one_shot_idempotency_key"
+      ]
+    },
+    {
+      "receipt_id": "R_BOOTSTRAP_SOURCE_AND_SPLIT_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "source_roots",
+        "split_roots",
+        "overlap_rules_root",
+        "pair_rules_root",
+        "rubric_root",
+        "m0_difficulty_rule_root"
+      ]
+    },
+    {
+      "receipt_id": "R_CAPABILITY_AND_EPOCH_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "registry_root",
+        "wire_schema_root",
+        "issuer_root",
+        "lease_root",
+        "revocation_root",
+        "constant_shape_failure_root"
+      ]
+    },
+    {
+      "receipt_id": "R_CLAIM_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "claim_text_root",
+        "estimand_root",
+        "evidence_requirements_root",
+        "multiplicity_root",
+        "safety_root"
+      ]
+    },
+    {
+      "receipt_id": "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "executor_root",
+        "transcript_schema_root",
+        "truth_scorer_root",
+        "score_schema_root",
+        "reporter_root",
+        "preservation_panel_root",
+        "verdict_root"
+      ]
+    },
+    {
+      "receipt_id": "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+      "source": "fresh_independent_review",
+      "required_bindings": [
+        "implementation_root",
+        "registry_root",
+        "action_dag_root",
+        "allowed_scope_root",
+        "forbidden_scope_root",
+        "reviewer_independence"
+      ]
+    },
+    {
+      "receipt_id": "R_GPU_ALLOCATION_AND_RESOURCE_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "gpu_type",
+        "count",
+        "time_ceiling",
+        "job_root",
+        "input_root",
+        "output_root",
+        "network_policy_root"
+      ]
+    },
+    {
+      "receipt_id": "R_PUBLICATION_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "publication_bytes_root",
+        "venue_or_destination",
+        "claim_authority_root",
+        "redaction_review_root"
+      ]
+    },
+    {
+      "receipt_id": "R_REPLAY_SUPPORT_AND_WRITER_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "child_authorship_root",
+        "support_resolver_root",
+        "replay_closure_root",
+        "filler_root",
+        "writer_factorial_root",
+        "dose_root",
+        "rank_exposure_root"
+      ]
+    },
+    {
+      "receipt_id": "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "endpoint_root",
+        "power_root",
+        "interval_root",
+        "multiplicity_root",
+        "missingness_root",
+        "safety_comparator_root",
+        "stopping_root",
+        "spend_order_root"
+      ]
+    },
+    {
+      "receipt_id": "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+      "source": "external_human",
+      "required_bindings": [
+        "successor_change_root",
+        "interpretation_roots",
+        "critique_root",
+        "consensus_root",
+        "approved_scope_root",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_TOKENIZER_AND_GENERATOR_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "tokenizer_root",
+        "generator_root",
+        "serializer_root",
+        "normalization_root",
+        "truncation_root",
+        "seed_root"
+      ]
+    },
+    {
+      "receipt_id": "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "transaction_schema_root",
+        "cas_root",
+        "fsync_root",
+        "concurrency_root",
+        "retry_root",
+        "quarantine_root",
+        "dream_cache_root"
+      ]
+    },
+    {
+      "receipt_id": "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN",
+      "source": "separate_exact_packet",
+      "required_bindings": [
+        "bootstrap_writer_contract_root",
+        "sleep_writer_contract_root",
+        "merge_root",
+        "dtype_root",
+        "serializer_root",
+        "checkpoint_root",
+        "seed_root"
+      ]
+    },
+    {
+      "receipt_id": "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+      "source": "frozen_contract_source",
+      "required_bindings": [
+        "contract_root",
+        "receipt_root",
+        "arm_root_identities",
+        "covered_action_ids",
+        "resource_and_opportunity_fields",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_SUPPORT_RESOLVER_CONTRACT_FROZEN",
+      "source": "frozen_contract_source",
+      "required_bindings": [
+        "contract_root",
+        "representation_root",
+        "rules_root",
+        "threshold_root",
+        "dispute_policy_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_CUMULATIVE_COVERAGE_DOSE_CONTRACT_FROZEN",
+      "source": "frozen_contract_source",
+      "required_bindings": [
+        "contract_root",
+        "eligible_closure_root",
+        "order_root",
+        "coverage_rule_root",
+        "dose_root",
+        "ceiling_root",
+        "overflow_and_missingness_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    },
+    {
+      "receipt_id": "R_SCIENTIFIC_ANALYSIS_PACKET_FROZEN",
+      "source": "frozen_contract_source",
+      "required_bindings": [
+        "packet_root",
+        "assignment_root",
+        "endpoint_root",
+        "estimand_root",
+        "missingness_root",
+        "safety_root",
+        "multiplicity_root",
+        "analysis_code_root",
+        "label_root",
+        "scope",
+        "nonce",
+        "expiry"
+      ]
+    }
+  ],
+  "action_defaults": {
+    "missing_failed_stale_wrong_root_wrong_scope_expired_replayed_or_cyclic_prerequisite": "DENIED",
+    "receipt_validity": "Every receipt must bind the requested action ID, exact input and implementation roots, exact scope, nonce, and nonexpired authority where applicable.",
+    "execution_rule": "An action may run once only after every direct and transitive prerequisite validates; a passing receipt never widens another action."
+  },
+  "actions": [
+    {
+      "action_id": "A_G0_01_IMPLEMENT_REGISTRY_PARSER",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_registry_parser_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_REGISTRY_PARSER_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_02_IMPLEMENT_FAKE_ARTIFACTS",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_fake_artifact_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_FAKE_ARTIFACTS_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_03_IMPLEMENT_FAKE_DISPATCHERS",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_fake_dispatcher_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_FAKE_DISPATCHERS_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_04_IMPLEMENT_EPOCH_BRIDGE",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_epoch_bridge_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_EPOCH_BRIDGE_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_05_IMPLEMENT_RECEIPT_VALIDATOR",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_receipt_validator_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_RECEIPT_VALIDATOR_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_06_IMPLEMENT_ACTION_DAG_GATE",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_action_gate_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_ACTION_DAG_GATE_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_07_IMPLEMENT_FAULT_FIXTURES",
+      "topological_rank": 10,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_deterministic_fake_fault_fixture_implementation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT"
+      ],
+      "produces_receipt_id": "R_G0_FAULT_FIXTURES_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+      "topological_rank": 20,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_static_registry_and_dag_validation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT",
+        "R_G0_ACTION_DAG_GATE_IMPLEMENTED",
+        "R_G0_EPOCH_BRIDGE_IMPLEMENTED",
+        "R_G0_FAKE_ARTIFACTS_IMPLEMENTED",
+        "R_G0_FAKE_DISPATCHERS_IMPLEMENTED",
+        "R_G0_RECEIPT_VALIDATOR_IMPLEMENTED",
+        "R_G0_REGISTRY_PARSER_IMPLEMENTED"
+      ],
+      "produces_receipt_id": "R_G0_STATIC_COMPLETENESS_PASS"
+    },
+    {
+      "action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+      "topological_rank": 20,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_fake_transaction_and_capability_fault_validation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT",
+        "R_G0_ACTION_DAG_GATE_IMPLEMENTED",
+        "R_G0_EPOCH_BRIDGE_IMPLEMENTED",
+        "R_G0_FAKE_ARTIFACTS_IMPLEMENTED",
+        "R_G0_FAKE_DISPATCHERS_IMPLEMENTED",
+        "R_G0_FAULT_FIXTURES_IMPLEMENTED",
+        "R_G0_RECEIPT_VALIDATOR_IMPLEMENTED",
+        "R_G0_REGISTRY_PARSER_IMPLEMENTED"
+      ],
+      "produces_receipt_id": "R_G0_FAKE_FAULTS_PASS"
+    },
+    {
+      "action_id": "A_G0_10_INSTALL_FAIL_CLOSED_GATE",
+      "topological_rank": 30,
+      "authority_layer": "G0_MODEL_FREE_HARNESS",
+      "action_class": "g0_fail_closed_gate_installation",
+      "guarded_domain_action": false,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G0_HARNESS_EXACT",
+        "R_G0_FAKE_FAULTS_PASS",
+        "R_G0_STATIC_COMPLETENESS_PASS"
+      ],
+      "produces_receipt_id": "R_G0_FAIL_CLOSED_GATE_INSTALLED"
+    },
+    {
+      "action_id": "A_G1_01_IMPLEMENT_CAPABILITY_TRANSACTION_RUNTIME",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_capability_epoch_transaction_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_CAPABILITY_AND_EPOCH_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_CAPABILITY_TRANSACTION_RUNTIME_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_02_IMPLEMENT_TOKENIZER_AND_GENERATORS",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_tokenizer_data_and_benchmark_generator_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_BOOTSTRAP_SOURCE_AND_SPLIT_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_TOKENIZER_AND_GENERATOR_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_03_IMPLEMENT_WRITER_ADAPTER_MERGE_CHECKPOINT",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_writer_adapter_merge_checkpoint_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_REPLAY_SUPPORT_AND_WRITER_CONTRACT_FROZEN",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_WRITER_MERGE_CHECKPOINT_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_04_IMPLEMENT_PARENT_WAKE_DREAM_SUPPORT",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_parent_wake_dream_support_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_REPLAY_SUPPORT_AND_WRITER_CONTRACT_FROZEN",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_PARENT_WAKE_DREAM_SUPPORT_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_05_IMPLEMENT_CONSTRUCTOR_STAGER_EVALUATOR_ATOMIC_PROMOTION",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_constructor_stager_evaluator_atomic_promotion_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_CANDIDATE_EVALUATION_PROMOTION_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_06_IMPLEMENT_EXECUTOR_SCORER_REPORTER",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_split_exam_scoring_reporting_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION"
+      ],
+      "produces_receipt_id": "R_G1_EXECUTOR_SCORER_REPORTER_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G1_07_IMPLEMENT_AUDIT_AUTHORITY_RELEASE",
+      "topological_rank": 100,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "domain_audit_authority_opaque_release_implementation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_CAPABILITY_AND_EPOCH_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G1_AUDIT_AUTHORITY_RELEASE_IMPLEMENTED"
+    },
+    {
+      "action_id": "A_G2_01_REGISTER_TREATMENT_SOURCES",
+      "topological_rank": 200,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "treatment_source_read_or_registration",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_DATA_GENERATION_EXACT",
+        "R_BOOTSTRAP_SOURCE_AND_SPLIT_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_SUCCESSOR_V7_ARCHITECTURE_HUMAN_RATIFICATION",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_TREATMENT_SOURCES_REGISTERED"
+    },
+    {
+      "action_id": "A_G2_02_EXECUTE_TREATMENT_TOKENIZER",
+      "topological_rank": 210,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "treatment_data_tokenizer_execution",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_DATA_GENERATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_G2_TREATMENT_SOURCES_REGISTERED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_TOKENIZER_AND_GENERATOR_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_TREATMENT_TOKENIZER_PASS"
+    },
+    {
+      "action_id": "A_G2_03_GENERATE_BOOTSTRAP_DATA",
+      "topological_rank": 220,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "bootstrap_data_generation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_DATA_GENERATION_EXACT",
+        "R_BOOTSTRAP_SOURCE_AND_SPLIT_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_G2_TREATMENT_SOURCES_REGISTERED",
+        "R_G2_TREATMENT_TOKENIZER_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_BOOTSTRAP_DATA_GENERATED"
+    },
+    {
+      "action_id": "A_G2_04_GENERATE_BENCHMARK_DATA",
+      "topological_rank": 220,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "benchmark_data_generation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_DATA_GENERATION_EXACT",
+        "R_BOOTSTRAP_SOURCE_AND_SPLIT_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_G2_TREATMENT_SOURCES_REGISTERED",
+        "R_G2_TREATMENT_TOKENIZER_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_BENCHMARK_DATA_GENERATED"
+    },
+    {
+      "action_id": "A_G2_05_GENERATE_OTHER_TREATMENT_DATA",
+      "topological_rank": 220,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "other_treatment_or_evaluation_data_generation",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_DATA_GENERATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_G2_TREATMENT_SOURCES_REGISTERED",
+        "R_G2_TREATMENT_TOKENIZER_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_OTHER_TREATMENT_DATA_GENERATED"
+    },
+    {
+      "action_id": "A_G2_06_RUN_ZERO_DELTA_FIXTURE",
+      "topological_rank": 230,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "model_free_zero_effective_delta_fixture",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_WRITER_MERGE_CHECKPOINT_IMPLEMENTED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G2_ZERO_DELTA_FIXTURE_PASS"
+    },
+    {
+      "action_id": "A_G2_07_RUN_BOOTSTRAP_WRITER_ADAPTER",
+      "topological_rank": 240,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "bootstrap_writer_or_adapter_execution",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_CAPABILITY_TRANSACTION_RUNTIME_IMPLEMENTED",
+        "R_G1_WRITER_MERGE_CHECKPOINT_IMPLEMENTED",
+        "R_G2_BOOTSTRAP_DATA_GENERATED",
+        "R_G2_ZERO_DELTA_FIXTURE_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G2_BOOTSTRAP_ADAPTER_WRITTEN"
+    },
+    {
+      "action_id": "A_G2_08_RUN_BIRTH_MERGE",
+      "topological_rank": 250,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "birth_merge_execution",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G2_BOOTSTRAP_ADAPTER_WRITTEN",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G2_BIRTH_MERGE_PASS"
+    },
+    {
+      "action_id": "A_G2_09_SERIALIZE_CHECKPOINT",
+      "topological_rank": 260,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "checkpoint_serialization_or_materialization",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G2_BIRTH_MERGE_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G2_BIRTH_CHECKPOINT_SEALED"
+    },
+    {
+      "action_id": "A_G2_10_RUN_CPU_MODEL_CALL",
+      "topological_rank": 270,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "cpu_model_call_any_think_dream_parent_or_exam",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_EXECUTOR_SCORER_REPORTER_IMPLEMENTED",
+        "R_G1_PARENT_WAKE_DREAM_SUPPORT_IMPLEMENTED",
+        "R_G2_BENCHMARK_DATA_GENERATED",
+        "R_G2_BIRTH_CHECKPOINT_SEALED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_REPLAY_SUPPORT_AND_WRITER_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_CPU_MODEL_CALL_PASS"
+    },
+    {
+      "action_id": "A_G2_11_CONSTRUCT_PERSONAL_SLEEP_CANDIDATE",
+      "topological_rank": 280,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "personal_sleep_candidate_construction",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_CUMULATIVE_COVERAGE_DOSE_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_CAPABILITY_TRANSACTION_RUNTIME_IMPLEMENTED",
+        "R_G1_PARENT_WAKE_DREAM_SUPPORT_IMPLEMENTED",
+        "R_G1_WRITER_MERGE_CHECKPOINT_IMPLEMENTED",
+        "R_G2_BIRTH_CHECKPOINT_SEALED",
+        "R_G2_CPU_MODEL_CALL_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_REPLAY_SUPPORT_AND_WRITER_CONTRACT_FROZEN",
+        "R_SUPPORT_RESOLVER_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "R_WRITER_MERGE_CHECKPOINT_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G2_CANDIDATE_CONSTRUCTED"
+    },
+    {
+      "action_id": "A_G2_12_STAGE_CLOSED_CANDIDATE",
+      "topological_rank": 290,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "postclosure_candidate_staging",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_CANDIDATE_EVALUATION_PROMOTION_IMPLEMENTED",
+        "R_G2_CANDIDATE_CONSTRUCTED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_CANDIDATE_STAGED"
+    },
+    {
+      "action_id": "A_G2_13_EVALUATE_CANDIDATE",
+      "topological_rank": 300,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "candidate_preservation_evaluate",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_CANDIDATE_EVALUATION_PROMOTION_IMPLEMENTED",
+        "R_G2_CANDIDATE_STAGED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_CANDIDATE_EVALUATED"
+    },
+    {
+      "action_id": "A_G2_14_PROMOTE_CANDIDATE_ATOMIC",
+      "topological_rank": 310,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "atomic_candidate_promote_or_quarantine",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_CAPABILITY_TRANSACTION_RUNTIME_IMPLEMENTED",
+        "R_G2_CANDIDATE_EVALUATED",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_TRANSACTION_AND_CACHE_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_CANDIDATE_PROMOTION_DECIDED"
+    },
+    {
+      "action_id": "A_G2_15_RUN_DISPOSABLE_EXAM",
+      "topological_rank": 320,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "disposable_exam_executor_scorer_reporter",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_EVALUATION_AND_PRESERVATION_CONTRACT_FROZEN",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_EXECUTOR_SCORER_REPORTER_IMPLEMENTED",
+        "R_G2_BENCHMARK_DATA_GENERATED",
+        "R_G2_CPU_MODEL_CALL_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_DISPOSABLE_EXAM_PASS"
+    },
+    {
+      "action_id": "A_G2_16_DISPATCH_NON_GPU_RESOURCE",
+      "topological_rank": 330,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "non_gpu_or_remote_resource_dispatch",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G2_DISPOSABLE_EXAM_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G2_NON_GPU_RESOURCE_DISPATCHED"
+    },
+    {
+      "action_id": "A_G3_01_DISPATCH_GPU_RESOURCE",
+      "topological_rank": 400,
+      "authority_layer": "G3_GPU_AND_EXTERNAL_SCIENCE",
+      "action_class": "gpu_or_accelerator_resource_dispatch",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_GPU_EXECUTION_EXACT",
+        "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G2_DISPOSABLE_EXAM_PASS",
+        "R_G2_NON_GPU_RESOURCE_DISPATCHED",
+        "R_GPU_ALLOCATION_AND_RESOURCE_CONTRACT_FROZEN",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G2_CPU_DOMAIN_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G3_GPU_RESOURCE_DISPATCHED"
+    },
+    {
+      "action_id": "A_G3_02_RUN_GPU_MODEL_WRITER_OR_EXAM",
+      "topological_rank": 410,
+      "authority_layer": "G3_GPU_AND_EXTERNAL_SCIENCE",
+      "action_class": "gpu_model_writer_adapter_candidate_or_exam_execution",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_GPU_EXECUTION_EXACT",
+        "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G3_GPU_RESOURCE_DISPATCHED",
+        "R_GPU_ALLOCATION_AND_RESOURCE_CONTRACT_FROZEN",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G2_CPU_DOMAIN_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G3_GPU_EXECUTION_PASS"
+    },
+    {
+      "action_id": "A_G3_03_RUN_EXTERNAL_SCIENCE",
+      "topological_rank": 420,
+      "authority_layer": "G3_GPU_AND_EXTERNAL_SCIENCE",
+      "action_class": "external_scientific_execution",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_EXTERNAL_SCIENCE_EXACT",
+        "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G3_GPU_EXECUTION_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_STATISTICS_AND_STOPPING_CONTRACT_FROZEN",
+        "R_V7_G2_CPU_DOMAIN_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G3_EXTERNAL_SCIENCE_COMPLETE"
+    },
+    {
+      "action_id": "A_G4_01_MAKE_SCIENTIFIC_CLAIM",
+      "topological_rank": 500,
+      "authority_layer": "G4_CLAIM_AND_RELEASE",
+      "action_class": "scientific_claim",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CLAIM_EXACT",
+        "R_CLAIM_CONTRACT_FROZEN",
+        "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G3_EXTERNAL_SCIENCE_COMPLETE",
+        "R_SCIENTIFIC_ANALYSIS_PACKET_FROZEN",
+        "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "R_V7_G4_CLAIM_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_G4_CLAIM_AUTHORIZED_AND_MADE"
+    },
+    {
+      "action_id": "A_G4_02_PUBLISH",
+      "topological_rank": 510,
+      "authority_layer": "G4_CLAIM_AND_RELEASE",
+      "action_class": "publication",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_PUBLICATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G4_CLAIM_AUTHORIZED_AND_MADE",
+        "R_PUBLICATION_CONTRACT_FROZEN"
+      ],
+      "produces_receipt_id": "R_G4_PUBLICATION_COMPLETE"
+    },
+    {
+      "action_id": "A_G4_03_PUSH",
+      "topological_rank": 510,
+      "authority_layer": "G4_CLAIM_AND_RELEASE",
+      "action_class": "repository_or_remote_push",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_PUSH_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G4_CLAIM_AUTHORIZED_AND_MADE"
+      ],
+      "produces_receipt_id": "R_G4_PUSH_COMPLETE"
+    },
+    {
+      "action_id": "A_G4_04_TRANSFER_OPAQUE_RELEASE",
+      "topological_rank": 520,
+      "authority_layer": "G4_CLAIM_AND_RELEASE",
+      "action_class": "external_scientific_release",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_RELEASE_EXACT",
+        "R_FRESH_INDEPENDENT_IMPLEMENTATION_REVIEW_PASS",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_AUDIT_AUTHORITY_RELEASE_IMPLEMENTED",
+        "R_G3_EXTERNAL_SCIENCE_COMPLETE"
+      ],
+      "produces_receipt_id": "R_G4_OPAQUE_RELEASE_RECEIPT"
+    },
+    {
+      "action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+      "topological_rank": 150,
+      "authority_layer": "G1_GUARDED_DOMAIN_IMPLEMENTATION",
+      "action_class": "typed_implementation_review_phase",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_G1_IMPLEMENTATION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G1_AUDIT_AUTHORITY_RELEASE_IMPLEMENTED",
+        "R_G1_CANDIDATE_EVALUATION_PROMOTION_IMPLEMENTED",
+        "R_G1_CAPABILITY_TRANSACTION_RUNTIME_IMPLEMENTED",
+        "R_G1_EXECUTOR_SCORER_REPORTER_IMPLEMENTED",
+        "R_G1_PARENT_WAKE_DREAM_SUPPORT_IMPLEMENTED",
+        "R_G1_TOKENIZER_GENERATORS_IMPLEMENTED",
+        "R_G1_WRITER_MERGE_CHECKPOINT_IMPLEMENTED"
+      ],
+      "produces_receipt_id": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+    },
+    {
+      "action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+      "topological_rank": 350,
+      "authority_layer": "G2_GUARDED_DOMAIN_EXECUTION",
+      "action_class": "typed_cpu_domain_test_phase",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CPU_EXECUTION_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G2_BENCHMARK_DATA_GENERATED",
+        "R_G2_BIRTH_CHECKPOINT_SEALED",
+        "R_G2_BIRTH_MERGE_PASS",
+        "R_G2_BOOTSTRAP_ADAPTER_WRITTEN",
+        "R_G2_BOOTSTRAP_DATA_GENERATED",
+        "R_G2_CANDIDATE_CONSTRUCTED",
+        "R_G2_CANDIDATE_EVALUATED",
+        "R_G2_CANDIDATE_PROMOTION_DECIDED",
+        "R_G2_CANDIDATE_STAGED",
+        "R_G2_CPU_MODEL_CALL_PASS",
+        "R_G2_DISPOSABLE_EXAM_PASS",
+        "R_G2_NON_GPU_RESOURCE_DISPATCHED",
+        "R_G2_OTHER_TREATMENT_DATA_GENERATED",
+        "R_G2_TREATMENT_SOURCES_REGISTERED",
+        "R_G2_TREATMENT_TOKENIZER_PASS",
+        "R_G2_ZERO_DELTA_FIXTURE_PASS",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_V7_G2_CPU_DOMAIN_PHASE_PASS"
+    },
+    {
+      "action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+      "topological_rank": 450,
+      "authority_layer": "G3_GPU_AND_EXTERNAL_SCIENCE",
+      "action_class": "typed_gpu_science_test_phase",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_EXTERNAL_SCIENCE_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_G3_EXTERNAL_SCIENCE_COMPLETE",
+        "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+        "R_V7_G2_CPU_DOMAIN_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_V7_G3_GPU_SCIENCE_PHASE_PASS"
+    },
+    {
+      "action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+      "topological_rank": 490,
+      "authority_layer": "G4_TERMINAL_ACTION",
+      "action_class": "typed_claim_test_phase",
+      "guarded_domain_action": true,
+      "prerequisite_receipt_ids": [
+        "R_AUTH_CLAIM_EXACT",
+        "R_G0_FAIL_CLOSED_GATE_INSTALLED",
+        "R_SCIENTIFIC_ANALYSIS_PACKET_FROZEN",
+        "R_V7_G3_GPU_SCIENCE_PHASE_PASS"
+      ],
+      "produces_receipt_id": "R_V7_G4_CLAIM_PHASE_PASS"
+    }
+  ],
+  "first_affected_action_classes": [
+    "atomic_candidate_promote_or_quarantine",
+    "benchmark_data_generation",
+    "birth_merge_execution",
+    "bootstrap_data_generation",
+    "bootstrap_writer_or_adapter_execution",
+    "candidate_preservation_evaluate",
+    "checkpoint_serialization_or_materialization",
+    "cpu_model_call_any_think_dream_parent_or_exam",
+    "disposable_exam_executor_scorer_reporter",
+    "domain_audit_authority_opaque_release_implementation",
+    "domain_capability_epoch_transaction_implementation",
+    "domain_constructor_stager_evaluator_atomic_promotion_implementation",
+    "domain_parent_wake_dream_support_implementation",
+    "domain_split_exam_scoring_reporting_implementation",
+    "domain_tokenizer_data_and_benchmark_generator_implementation",
+    "domain_writer_adapter_merge_checkpoint_implementation",
+    "external_scientific_execution",
+    "external_scientific_release",
+    "gpu_model_writer_adapter_candidate_or_exam_execution",
+    "gpu_or_accelerator_resource_dispatch",
+    "model_free_zero_effective_delta_fixture",
+    "non_gpu_or_remote_resource_dispatch",
+    "other_treatment_or_evaluation_data_generation",
+    "personal_sleep_candidate_construction",
+    "postclosure_candidate_staging",
+    "publication",
+    "repository_or_remote_push",
+    "scientific_claim",
+    "treatment_data_tokenizer_execution",
+    "treatment_source_read_or_registration",
+    "typed_claim_test_phase",
+    "typed_cpu_domain_test_phase",
+    "typed_gpu_science_test_phase",
+    "typed_implementation_review_phase"
+  ],
+  "release_tuple_schema": {
+    "schema_id": "RELEASE_TUPLE_V1",
+    "required_fields_in_order": [
+      "artifact_root",
+      "artifact_class",
+      "destination_identity",
+      "transfer_operation",
+      "protocol",
+      "requested_scope",
+      "nonce",
+      "expiry",
+      "one_shot_idempotency_key"
+    ],
+    "transfer_operation_const": "TRANSFER_OPAQUE",
+    "binding_path": [
+      "R_AUTH_RELEASE_EXACT",
+      "authority_verifier_verdict",
+      "E8_RELEASE_CONTROLLER_input",
+      "A_G4_04_TRANSFER_OPAQUE_RELEASE",
+      "R_G4_OPAQUE_RELEASE_RECEIPT"
+    ],
+    "bare_root_authority": "forbidden",
+    "content_inspection_or_branching": "forbidden",
+    "replay": "DENIED"
+  },
+  "lowest_gpu_sequence": [
+    "A_G0_01_IMPLEMENT_REGISTRY_PARSER",
+    "A_G0_02_IMPLEMENT_FAKE_ARTIFACTS",
+    "A_G0_03_IMPLEMENT_FAKE_DISPATCHERS",
+    "A_G0_04_IMPLEMENT_EPOCH_BRIDGE",
+    "A_G0_05_IMPLEMENT_RECEIPT_VALIDATOR",
+    "A_G0_06_IMPLEMENT_ACTION_DAG_GATE",
+    "A_G0_07_IMPLEMENT_FAULT_FIXTURES",
+    "A_G0_08_RUN_STATIC_COMPLETENESS",
+    "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+    "A_G0_10_INSTALL_FAIL_CLOSED_GATE",
+    "A_G1_01_IMPLEMENT_CAPABILITY_TRANSACTION_RUNTIME",
+    "A_G1_02_IMPLEMENT_TOKENIZER_AND_GENERATORS",
+    "A_G1_03_IMPLEMENT_WRITER_ADAPTER_MERGE_CHECKPOINT",
+    "A_G1_04_IMPLEMENT_PARENT_WAKE_DREAM_SUPPORT",
+    "A_G1_05_IMPLEMENT_CONSTRUCTOR_STAGER_EVALUATOR_ATOMIC_PROMOTION",
+    "A_G1_06_IMPLEMENT_EXECUTOR_SCORER_REPORTER",
+    "A_G1_07_IMPLEMENT_AUDIT_AUTHORITY_RELEASE",
+    "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+    "A_G2_01_REGISTER_TREATMENT_SOURCES",
+    "A_G2_02_EXECUTE_TREATMENT_TOKENIZER",
+    "A_G2_03_GENERATE_BOOTSTRAP_DATA",
+    "A_G2_04_GENERATE_BENCHMARK_DATA",
+    "A_G2_05_GENERATE_OTHER_TREATMENT_DATA",
+    "A_G2_06_RUN_ZERO_DELTA_FIXTURE",
+    "A_G2_07_RUN_BOOTSTRAP_WRITER_ADAPTER",
+    "A_G2_08_RUN_BIRTH_MERGE",
+    "A_G2_09_SERIALIZE_CHECKPOINT",
+    "A_G2_10_RUN_CPU_MODEL_CALL",
+    "A_G2_11_CONSTRUCT_PERSONAL_SLEEP_CANDIDATE",
+    "A_G2_12_STAGE_CLOSED_CANDIDATE",
+    "A_G2_13_EVALUATE_CANDIDATE",
+    "A_G2_14_PROMOTE_CANDIDATE_ATOMIC",
+    "A_G2_15_RUN_DISPOSABLE_EXAM",
+    "A_G2_16_DISPATCH_NON_GPU_RESOURCE",
+    "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+    "A_G3_01_DISPATCH_GPU_RESOURCE",
+    "A_G3_02_RUN_GPU_MODEL_WRITER_OR_EXAM",
+    "A_G3_03_RUN_EXTERNAL_SCIENCE",
+    "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE"
+  ],
+  "internal_invariants": [
+    {
+      "invariant_id": "V7AD01_UNIQUE_AND_RECEIPT_CLOSED",
+      "predicate": "Action, produced-receipt, and external-receipt IDs are unique; every prerequisite is external or produced by exactly one earlier action."
+    },
+    {
+      "invariant_id": "V7AD02_ACYCLIC",
+      "predicate": "Every produced prerequisite has a strictly lower topological rank; all actions topologically sort."
+    },
+    {
+      "invariant_id": "V7AD03_G0_EXACT_BYTE_TRUST_ROOT",
+      "predicate": "G0 authorization binds registry, DAG, parser, issuer, bridge, validator, gate, fakes, dispatchers, faults, path/scope manifests, expected outputs, action, scope, nonce, and expiry."
+    },
+    {
+      "invariant_id": "V7AD04_CONSTRUCTIBLE_PHASE_ORDER",
+      "predicate": "STATIC_SCHEMA, G0_FAKE_RUNTIME, G1_IMPLEMENTATION_REVIEW, G2_CPU_DOMAIN, G3_GPU_SCIENCE, and G4_CLAIM receipts guard only later constructible actions."
+    },
+    {
+      "invariant_id": "V7AD05_MATCHED_SOLO_FIRST_ACTION",
+      "predicate": "Every covered G2/G3 generation or execution action requires the exact matched-solo opportunity receipt before it begins."
+    },
+    {
+      "invariant_id": "V7AD06_GPU_AFTER_CPU_AND_AUDITS",
+      "predicate": "GPU dispatch requires G1 and G2 phase manifests plus target-blindness, semantic, and noninterference rows under exact GPU authority."
+    },
+    {
+      "invariant_id": "V7AD07_CLAIM_AFTER_POWERED_EVIDENCE",
+      "predicate": "A claim requires G3 and G4 manifests, frozen analysis packet, powered root-level evidence, uncertainty, multiplicity, missingness, safety, extraction/use, and separate exact claim authority."
+    },
+    {
+      "invariant_id": "V7AD08_ATOMIC_PROMOTION",
+      "predicate": "The candidate sequence is construct, close/stage, evaluate, then one atomic promote-or-no-change action."
+    },
+    {
+      "invariant_id": "V7AD09_NO_SELF_GATE",
+      "predicate": "No protected action constructs or runs its own G0 gate prerequisite."
+    },
+    {
+      "invariant_id": "V7AD10_TERMINAL_AUTHORITIES_SEPARATE",
+      "predicate": "External science, claim, publication, push, and release retain separate exact human authorities."
+    },
+    {
+      "invariant_id": "V7AD11_RELEASE_CLASS_ROOT_TUPLE",
+      "predicate": "Opaque release equality-binds wrapper, concrete payload class/root, destination, operation, protocol, scope, nonce, expiry, and idempotency."
+    },
+    {
+      "invariant_id": "V7AD12_PROPOSAL_ONLY",
+      "predicate": "This DAG authorizes no implementation, execution, GPU, science, claim, publication, push, release, ratification, or intake transition."
+    }
+  ],
+  "present_authority": {
+    "status": "none",
+    "allowed_now": [
+      "successor_proposal_drafting"
+    ],
+    "all_actions_in_this_dag": "not_authorized"
+  },
+  "test_phase_receipt_schema": {
+    "artifact_class": "TYPED_ACCEPTANCE_TEST_PHASE_RECEIPT",
+    "required_bindings": [
+      "test_id",
+      "phase_id",
+      "subject_root",
+      "input_roots",
+      "fixture_or_implementation_or_result_roots",
+      "pass_fail",
+      "reviewer_identity_when_applicable",
+      "expiry",
+      "replay_policy",
+      "exact_downstream_action_ids"
+    ],
+    "failure_policy": "Any missing, failed, stale, replayed, wrong-root, or wrong-action row fails closed."
+  },
+  "test_phase_receipt_mappings": {
+    "V7_ES01_EXACT_EXTERNAL_AUTHORITY_AND_CLASS_BOUND_RELEASE": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES02_EPOCH_ATTENUATED_AUTHORSHIP_GROUNDING_AND_REPETITION": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES03_FRESH_FROM_BIRTH_CONSTRUCTOR_MASK_DOSE_AND_TAINT": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES05_BIRTH_MERGE_CONTRACT_AND_CONTENT_IDENTITY": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES06_ATOMIC_LINEAGE_PROMOTION_AND_RETRY_FAULTS": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES07_BOOTSTRAP_CONTROL_TARGET_BLINDNESS_AND_SEMANTIC_AUDIT": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES08_PRODUCER_CLOSED_AUDIT_TARGET_BLINDNESS": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES09_SPLIT_EXECUTOR_STANDARDIZED_ADVICE_RECEPTIVITY": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES10_FIXED_CURRICULUM_DEVELOPMENTAL_AUC_INTERACTION": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES11_ADAPTIVE_PACKAGE_DEVELOPMENTAL_AUC_INTERACTION": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES12_CURSOR_REPETITION_CONTROL_AND_ENACTMENT": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES13_CHILD_AUTHORED_STORAGE_EXTRACTION_NATIVE_USE": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES14_FRESH_FROM_BIRTH_REPLAY_DEPENDENCE": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES15_RANK_BY_EXPOSURE_ONLY": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES16_FRESH_FROM_BIRTH_CADENCE_TOTAL_PACKAGE": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES17_PREGENERATION_STATISTICS_RECEIPTS_AND_REPORT_LABELS": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES19_PRODUCER_CLOSED_EPOCH_CAPABILITY_NONINTERFERENCE": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES20_POSTCLOSURE_STAGING_ATOMIC_CAS_AND_LIFE_PRESERVATION": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES18_FRESH_REVIEW_AND_SEPARATE_TERMINAL_AUTHORITIES": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ],
+    "V7_ES21_PRODUCER_CLOSED_NONCIRCULAR_ACTION_DAG": [
+      {
+        "phase_id": "STATIC_SCHEMA",
+        "producer_action_id": "A_G0_08_RUN_STATIC_COMPLETENESS",
+        "typed_pass_receipt": "R_G0_STATIC_COMPLETENESS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G0_FAKE_RUNTIME",
+        "producer_action_id": "A_G0_09_RUN_FAKE_TRANSACTION_FAULTS",
+        "typed_pass_receipt": "R_G0_FAKE_FAULTS_PASS",
+        "exact_downstream_action_ids": [
+          "A_G0_10_INSTALL_FAIL_CLOSED_GATE"
+        ]
+      },
+      {
+        "phase_id": "G1_IMPLEMENTATION_REVIEW",
+        "producer_action_id": "A_G1_08_RUN_IMPLEMENTATION_REVIEW_PHASE",
+        "typed_pass_receipt": "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G2_01_REGISTER_TREATMENT_SOURCES"
+        ]
+      },
+      {
+        "phase_id": "G2_CPU_DOMAIN",
+        "producer_action_id": "A_G2_17_RUN_CPU_DOMAIN_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G3_01_DISPATCH_GPU_RESOURCE"
+        ]
+      },
+      {
+        "phase_id": "G3_GPU_SCIENCE",
+        "producer_action_id": "A_G3_04_RUN_GPU_SCIENCE_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_00_RUN_CLAIM_TEST_PHASE"
+        ]
+      },
+      {
+        "phase_id": "G4_CLAIM",
+        "producer_action_id": "A_G4_00_RUN_CLAIM_TEST_PHASE",
+        "typed_pass_receipt": "R_V7_G4_CLAIM_PHASE_PASS",
+        "exact_downstream_action_ids": [
+          "A_G4_01_MAKE_SCIENTIFIC_CLAIM"
+        ]
+      }
+    ]
+  },
+  "analysis_and_evidence_prerequisites": {
+    "GPU_dispatch_requires": [
+      "R_MATCHED_SOLO_RESOURCE_OPPORTUNITY_FROZEN",
+      "R_SUPPORT_RESOLVER_CONTRACT_FROZEN",
+      "R_CUMULATIVE_COVERAGE_DOSE_CONTRACT_FROZEN",
+      "R_V7_G1_IMPLEMENTATION_REVIEW_PHASE_PASS",
+      "R_V7_G2_CPU_DOMAIN_PHASE_PASS",
+      "typed target-blindness and bootstrap semantic-audit rows",
+      "typed producer-closed noninterference rows"
+    ],
+    "scientific_claim_requires": [
+      "R_V7_G3_GPU_SCIENCE_PHASE_PASS",
+      "R_V7_G4_CLAIM_PHASE_PASS",
+      "R_SCIENTIFIC_ANALYSIS_PACKET_FROZEN",
+      "powered root-level endpoints and intervals",
+      "multiplicity and missingness",
+      "safety",
+      "child authorship",
+      "held-out extraction and native use",
+      "claim-specific semantic receipts"
+    ],
+    "generic_completion_receipt_is_sufficient": false,
+    "human_authority_substitutes_for_evidence": false
+  }
+}

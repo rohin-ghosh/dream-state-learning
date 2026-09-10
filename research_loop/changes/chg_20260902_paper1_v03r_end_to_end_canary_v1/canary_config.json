@@ -1,0 +1,67 @@
+{
+  "schema_version": "paper1-v03r-canary-config-v1.0",
+  "world": {
+    "schema_version": "lands-v0.3r-counterfactual-confluence",
+    "skin": "aligned",
+    "prompt_development_seeds": [0, 1, 2],
+    "scored_seed": 5,
+    "scored_latent_bits": [0, 1],
+    "pair_is_one_unit": true
+  },
+  "controller": {
+    "model": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "dtype": "bfloat16",
+    "fresh_session_per_life_phase": true,
+    "dream": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_new_tokens": 256,
+      "wake_calls_per_life": 46,
+      "reactivate_calls_per_life": 22,
+      "target_blind_sleep_calls_per_life": 16,
+      "return_calls_per_selected_arm_life": 16,
+      "max_memory_neighbors": 6
+    },
+    "think0": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_new_tokens": 128,
+      "max_operations": 12
+    },
+    "think1": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_new_tokens": 192,
+      "max_operations": 12,
+      "max_rows_per_query": 1
+    }
+  },
+  "memory_adapter": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "dtype": "bfloat16",
+    "rank": 64,
+    "alpha": 128,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "learning_rate": 0.0002,
+    "epochs": 4,
+    "batch_size": 32,
+    "max_line_tokens": 96,
+    "concept_touches": 24,
+    "relation_touches": 96,
+    "fresh_adapter_per_life": true,
+    "mounted_for_atomic_reads_only": true
+  },
+  "arms": ["T-M0", "T-OWN", "T-DIST", "T-TWIN", "L-OWN", "L-TWIN"],
+  "stage_order": ["CPU_AND_GOLD_DEV", "HELDOUT_TEXT", "CONDITIONAL_LORA"],
+  "text_gate_max_32b_generations": 352,
+  "full_gate_max_32b_generations": 400,
+  "conditional_adapter_fits": 2,
+  "conditional_max_7b_reads": 48,
+  "lora_path_local_read_fidelity_min": 0.9,
+  "post_result_repair": false,
+  "rank_sweep": false,
+  "model_scale_sweep": false
+}

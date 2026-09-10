@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "private-typed-action-structural-record-v3",
+  "$defs": {
+    "hash": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "hex": {"type":"string","pattern":"^(?:[0-9a-f]{2})*$"},
+    "common": {
+      "type": "object",
+      "required": ["actor","event_index","event_type","fixture_id","prior_record_sha256","record_schema_version"],
+      "properties": {
+        "actor": {"type":"string"},
+        "event_index": {"type":"integer","minimum":0,"maximum":5},
+        "event_type": {"type":"string"},
+        "fixture_id": {"type":"string","minLength":1,"maxLength":128},
+        "prior_record_sha256": {"$ref":"#/$defs/hash"},
+        "record_schema_version": {"const":1}
+      }
+    },
+    "typed_arguments": {
+      "type":"object",
+      "additionalProperties":false,
+      "required":["delta"],
+      "properties":{"delta":{"type":"integer","minimum":-4,"maximum":4}}
+    }
+  },
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","bundle_manifest_sha256","event_index","event_type","fixture_id","prior_record_sha256","record_schema_version"],"properties":{"actor":{"const":"FIXTURE_WRITER"},"bundle_manifest_sha256":{"$ref":"#/$defs/hash"},"event_index":{"const":0},"event_type":{"const":"FIXTURE_OPEN"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"prior_record_sha256":{"const":"0000000000000000000000000000000000000000000000000000000000000000"},"record_schema_version":{"const":1}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","child_request_bytes_hex","child_request_sha256","event_index","event_type","fixture_id","offered_tool_schema_sha256","prior_record_sha256","record_schema_version","renderer_manifest_sha256"],"properties":{"actor":{"const":"FIXTURE_WRITER"},"child_request_bytes_hex":{"$ref":"#/$defs/hex"},"child_request_sha256":{"$ref":"#/$defs/hash"},"event_index":{"const":1},"event_type":{"const":"INVOCATION_DECLARED"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"offered_tool_schema_sha256":{"$ref":"#/$defs/hash"},"prior_record_sha256":{"$ref":"#/$defs/hash"},"record_schema_version":{"const":1},"renderer_manifest_sha256":{"$ref":"#/$defs/hash"}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","assistant_text_bytes_hex","assistant_text_sha256","event_index","event_type","fixture_id","prior_record_sha256","raw_response_envelope_bytes_hex","raw_response_envelope_sha256","raw_tool_channel_bytes_hex_or_empty","record_schema_version","response_extractor_manifest_sha256"],"properties":{"actor":{"const":"FIXTURE_WRITER"},"assistant_text_bytes_hex":{"$ref":"#/$defs/hex"},"assistant_text_sha256":{"$ref":"#/$defs/hash"},"event_index":{"const":2},"event_type":{"const":"RESPONSE_DECLARED"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"prior_record_sha256":{"$ref":"#/$defs/hash"},"raw_response_envelope_bytes_hex":{"$ref":"#/$defs/hex"},"raw_response_envelope_sha256":{"$ref":"#/$defs/hash"},"raw_tool_channel_bytes_hex_or_empty":{"$ref":"#/$defs/hex"},"record_schema_version":{"const":1},"response_extractor_manifest_sha256":{"$ref":"#/$defs/hash"}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","event_index","event_type","first_error_or_null","fixture_id","parse_decision","parse_input_sha256","parser_manifest_sha256","prior_record_sha256","record_schema_version","typed_arguments_or_null"],"properties":{"actor":{"const":"STRUCTURAL_PARSER"},"event_index":{"const":3},"event_type":{"const":"PARSE_DECLARED"},"first_error_or_null":{"enum":[null,"E_ENVELOPE_HEX","E_ENVELOPE_BYTES_LIMIT","E_RESPONSE_UTF8","E_RESPONSE_JSON_DUPKEY","E_RESPONSE_JSON_SYNTAX","E_RESPONSE_ROOT","E_RESPONSE_POINTER","E_RESPONSE_SHAPE","E_EMPTY_CHANNEL","E_DUPLICATE_CALL","E_CALL_SHAPE","E_UNKNOWN_TOOL","E_ARGUMENT_BYTES_LIMIT","E_ARGUMENT_JSON_DUPKEY","E_ARGUMENT_JSON_SYNTAX","E_ARGUMENT_SCHEMA","E_RECORD_RESOURCE","E_RECORD_SCHEMA","E_RELATION"]},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"parse_decision":{"enum":["ACCEPTED","REJECTED"]},"parse_input_sha256":{"$ref":"#/$defs/hash"},"parser_manifest_sha256":{"$ref":"#/$defs/hash"},"prior_record_sha256":{"$ref":"#/$defs/hash"},"record_schema_version":{"const":1},"typed_arguments_or_null":{"oneOf":[{"$ref":"#/$defs/typed_arguments"},{"type":"null"}]}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["action_authorization_sha256","actor","after_state","before_state","event_index","event_type","fixture_id","prior_record_sha256","record_schema_version","score_denominator","score_numerator","transition_manifest_sha256"],"properties":{"action_authorization_sha256":{"$ref":"#/$defs/hash"},"actor":{"const":"TRANSITION_ORACLE"},"after_state":{"type":"integer","minimum":-12,"maximum":12},"before_state":{"type":"integer","minimum":-8,"maximum":8},"event_index":{"const":4},"event_type":{"const":"TRANSITION_DECLARED"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"prior_record_sha256":{"$ref":"#/$defs/hash"},"record_schema_version":{"const":1},"score_denominator":{"enum":[1,2,4,8]},"score_numerator":{"type":"integer","minimum":-12,"maximum":8},"transition_manifest_sha256":{"$ref":"#/$defs/hash"}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","dispatch_permitted","event_index","event_type","fixture_id","parse_decision_sha256","prior_record_sha256","record_schema_version","transition_present"],"properties":{"actor":{"const":"STRUCTURAL_PARSER"},"dispatch_permitted":{"const":false},"event_index":{"const":4},"event_type":{"const":"NONDISPATCH_DECLARED"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"parse_decision_sha256":{"$ref":"#/$defs/hash"},"prior_record_sha256":{"$ref":"#/$defs/hash"},"record_schema_version":{"const":1},"transition_present":{"const":false}}}
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref":"#/$defs/common"},
+        {"type":"object","additionalProperties":false,"required":["actor","branch","event_index","event_type","fixture_id","prior_record_sha256","record_count","record_schema_version","terminal_record_set_sha256"],"properties":{"actor":{"const":"FIXTURE_WRITER"},"branch":{"enum":["ACCEPTED","REJECTED"]},"event_index":{"const":5},"event_type":{"const":"FIXTURE_CLOSE"},"fixture_id":{"type":"string","minLength":1,"maxLength":128},"prior_record_sha256":{"$ref":"#/$defs/hash"},"record_count":{"const":6},"record_schema_version":{"const":1},"terminal_record_set_sha256":{"$ref":"#/$defs/hash"}}}
+      ]
+    }
+  ]
+}

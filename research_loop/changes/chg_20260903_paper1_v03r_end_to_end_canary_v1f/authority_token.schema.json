@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-authority-token-v1f.schema.json",
+  "title": "Paper-1 v03r canary v1f authority token",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "change_id", "transition", "terminal_stage", "granted_authority", "predecessor_authority_token_sha256", "human_ratification_sha256", "protocol_lock_sha256", "semantic_consistency_matrix_sha256", "opportunity_ledger_schema_sha256", "executable_lock_sha256", "evidence_packet_sha256", "reviewer_disposition_sha256", "advocate_disposition_sha256", "operator_witness_release_sha256", "p1cb10_transition_receipt_sha256", "validity_class", "reason_code", "scope_ceiling", "issued_at_utc", "token_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-authority-token-v1f.0"},
+    "change_id": {"const": "chg_20260903_paper1_v03r_end_to_end_canary_v1f"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "terminal_stage": {"oneOf": [{"type": "null"}, {"enum": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]}]},
+    "granted_authority": {"enum": ["DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA", "HUMAN_TERMINAL"]},
+    "predecessor_authority_token_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "human_ratification_sha256": {"$ref": "#/$defs/sha256"},
+    "protocol_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "semantic_consistency_matrix_sha256": {"$ref": "#/$defs/sha256"},
+    "opportunity_ledger_schema_sha256": {"$ref": "#/$defs/sha256"},
+    "executable_lock_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "evidence_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewer_disposition_sha256": {"$ref": "#/$defs/sha256"},
+    "advocate_disposition_sha256": {"$ref": "#/$defs/sha256"},
+    "operator_witness_release_sha256": {"$ref": "#/$defs/sha256"},
+    "p1cb10_transition_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "validity_class": {"enum": ["INVALID_PRECONDITION", "INVALID_INFRASTRUCTURE", "VALID_STAGE_FAILURE", "VALID_STAGE_PASS"]},
+    "reason_code": {"enum": ["PROTOCOL_CONTRADICTION", "LOCK_OR_SCOPE_INVALID", "AUTHORITY_MISSING_OR_OUT_OF_ORDER", "REVIEW_ARTIFACT_SCHEMA_INVALID", "REVIEW_ARTIFACT_MISSING", "DIST_PUBLIC_DERIVATION_MISMATCH", "CONTROL_OR_FIXTURE_INFEASIBLE", "PROVIDER_REFUSAL", "PROVIDER_TIMEOUT", "TRUNCATED_OUTPUT", "OUTPUT_LIMIT", "RUNTIME_OR_REVISION_DRIFT", "CACHE_OR_STATE_REUSE", "PARTIAL_FIT_RUNTIME_FAILURE", "LORA_RUNTIME_FAILURE", "MALFORMED_MODEL_OUTPUT", "ILLEGAL_OPERATION", "WRONG_COMMIT", "MISSING_REQUIRED_CITATION", "BUDGET_EXHAUSTED", "MISSING_REQUIRED_ABSTRACTION", "SHAM_NOT_IDENTIFIABLE", "BEHAVIORAL_GATE_FAILED", "FIDELITY_GATE_FAILED", "COMPLETE_REGISTERED_PASS"]},
+    "scope_ceiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dev_32b_operations", "heldout_text_32b_operations", "conditional_lora_32b_operations", "total_32b_operations", "adapter_fits", "fidelity_cases", "online_7b_reads", "retry"],
+      "properties": {
+        "dev_32b_operations": {"const": 216},
+        "heldout_text_32b_operations": {"const": 632},
+        "conditional_lora_32b_operations": {"const": 48},
+        "total_32b_operations": {"const": 896},
+        "adapter_fits": {"const": 2},
+        "fidelity_cases": {"const": 96},
+        "online_7b_reads": {"const": 48},
+        "retry": {"const": false}
+      }
+    },
+    "issued_at_utc": {"type": "string", "format": "date-time"},
+    "token_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(token excluding token_sha256)); the stored digest is external"}
+  },
+  "oneOf": [
+    {"properties": {"transition": {"const": "CPU_TO_DEV"}, "terminal_stage": {"type": "null"}, "granted_authority": {"const": "DEV_GOLD"}, "predecessor_authority_token_sha256": {"type": "null"}, "executable_lock_sha256": {"$ref": "#/$defs/sha256"}, "validity_class": {"const": "VALID_STAGE_PASS"}, "reason_code": {"const": "COMPLETE_REGISTERED_PASS"}}},
+    {"properties": {"transition": {"const": "DEV_TO_HELDOUT"}, "terminal_stage": {"type": "null"}, "granted_authority": {"const": "HELDOUT_TEXT"}, "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"}, "executable_lock_sha256": {"$ref": "#/$defs/sha256"}, "validity_class": {"const": "VALID_STAGE_PASS"}, "reason_code": {"const": "COMPLETE_REGISTERED_PASS"}}},
+    {"properties": {"transition": {"const": "HELDOUT_TO_LORA"}, "terminal_stage": {"type": "null"}, "granted_authority": {"const": "CONDITIONAL_LORA"}, "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"}, "executable_lock_sha256": {"$ref": "#/$defs/sha256"}, "validity_class": {"const": "VALID_STAGE_PASS"}, "reason_code": {"const": "COMPLETE_REGISTERED_PASS"}}},
+    {"properties": {"transition": {"const": "STAGE_L_TERMINAL"}, "terminal_stage": {"const": "CONDITIONAL_LORA"}, "granted_authority": {"const": "HUMAN_TERMINAL"}, "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"}}},
+    {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "granted_authority": {"const": "HUMAN_TERMINAL"}, "terminal_stage": {"enum": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]}}}
+  ],
+  "allOf": [
+    {"if": {"properties": {"validity_class": {"const": "INVALID_PRECONDITION"}}, "required": ["validity_class"]}, "then": {"properties": {"reason_code": {"enum": ["PROTOCOL_CONTRADICTION", "LOCK_OR_SCOPE_INVALID", "AUTHORITY_MISSING_OR_OUT_OF_ORDER", "REVIEW_ARTIFACT_SCHEMA_INVALID", "REVIEW_ARTIFACT_MISSING", "DIST_PUBLIC_DERIVATION_MISMATCH", "CONTROL_OR_FIXTURE_INFEASIBLE"]}}}},
+    {"if": {"properties": {"validity_class": {"const": "INVALID_INFRASTRUCTURE"}}, "required": ["validity_class"]}, "then": {"properties": {"reason_code": {"enum": ["PROVIDER_REFUSAL", "PROVIDER_TIMEOUT", "TRUNCATED_OUTPUT", "OUTPUT_LIMIT", "RUNTIME_OR_REVISION_DRIFT", "CACHE_OR_STATE_REUSE", "PARTIAL_FIT_RUNTIME_FAILURE", "LORA_RUNTIME_FAILURE"]}}}},
+    {"if": {"properties": {"validity_class": {"const": "VALID_STAGE_FAILURE"}}, "required": ["validity_class"]}, "then": {"properties": {"reason_code": {"enum": ["MALFORMED_MODEL_OUTPUT", "ILLEGAL_OPERATION", "WRONG_COMMIT", "MISSING_REQUIRED_CITATION", "BUDGET_EXHAUSTED", "MISSING_REQUIRED_ABSTRACTION", "SHAM_NOT_IDENTIFIABLE", "BEHAVIORAL_GATE_FAILED", "FIDELITY_GATE_FAILED"]}}}},
+    {"if": {"properties": {"validity_class": {"const": "VALID_STAGE_PASS"}}, "required": ["validity_class"]}, "then": {"properties": {"reason_code": {"const": "COMPLETE_REGISTERED_PASS"}}}},
+    {"if": {"properties": {"transition": {"const": "STAGE_L_TERMINAL"}}, "required": ["transition"]}, "then": {"oneOf": [{"properties": {"validity_class": {"const": "VALID_STAGE_PASS"}, "reason_code": {"const": "COMPLETE_REGISTERED_PASS"}}}, {"properties": {"validity_class": {"const": "VALID_STAGE_FAILURE"}, "reason_code": {"const": "BEHAVIORAL_GATE_FAILED"}}}]}},
+    {"if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}}, "required": ["transition"]}, "then": {"properties": {"validity_class": {"enum": ["INVALID_PRECONDITION", "INVALID_INFRASTRUCTURE", "VALID_STAGE_FAILURE"]}}}},
+    {"if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"const": "CPU_IMPLEMENTATION"}}, "required": ["transition", "terminal_stage"]}, "then": {"properties": {"predecessor_authority_token_sha256": {"type": "null"}}}},
+    {"if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"enum": ["DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]}}, "required": ["transition", "terminal_stage"]}, "then": {"properties": {"predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"}}}},
+    {"if": {"properties": {"reason_code": {"enum": ["MISSING_REQUIRED_ABSTRACTION", "SHAM_NOT_IDENTIFIABLE"]}}, "required": ["reason_code"]}, "then": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"const": "HELDOUT_TEXT"}, "granted_authority": {"const": "HUMAN_TERMINAL"}}}},
+    {"if": {"properties": {"reason_code": {"const": "FIDELITY_GATE_FAILED"}}, "required": ["reason_code"]}, "then": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"const": "CONDITIONAL_LORA"}, "granted_authority": {"const": "HUMAN_TERMINAL"}}}}
+  ],
+  "x-semantic-contract": {
+    "semantic_lock_binding": "semantic_consistency_matrix_sha256 and opportunity_ledger_schema_sha256 must byte-equal the corresponding immutable review-packet hashes and the ratified protocol manifest entries.",
+    "review_binding": "evidence_packet_sha256, both disposition hashes, an operator witness release, and the post-review P1CB10 transition receipt bind the unchanged packet. SELF_DECLARED_UNVERIFIED role/freshness metadata is not an authority by itself and does not authenticate actor identity or context freshness.",
+    "fail_stop_exclusion": "REVIEW_ACTOR_OVERLAP, REVIEW_REJECTED, BYTES_CHANGED_AFTER_REVIEW, missing or malformed terminal dispositions, terminal artifact construction failure, and terminal receipt write failure are not authority-token reasons. They use only human_terminal_stop.schema.json and never mint a token.",
+    "sham_route": "SHAM_NOT_IDENTIFIABLE is VALID_STAGE_FAILURE and can appear only on an EARLY_TERMINAL token for HELDOUT_TEXT; it never grants CONDITIONAL_LORA.",
+    "ledger_immutability": "Issuing a token never rewrites opportunity-ledger rows. Later-stage opportunities without a granted predecessor use NON_DISPATCH_NOT_AUTHORIZED/STAGE_NOT_AUTHORIZED if registered."
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

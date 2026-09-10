@@ -31,6 +31,62 @@ from lands.v02 import SemanticWorldV02, TARGET_LAND_IDS
 
 DREAMER = "Qwen/Qwen2.5-32B-Instruct"
 EXECUTOR = "Qwen/Qwen2.5-7B-Instruct"
+QWEN_32B_REVISION = "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+
+
+def canonical_label_answer(text, valid_labels):
+    """Accept one exact canonical label; reject prose and negation."""
+    normalized = (text or "").strip().lower()
+    return normalized if normalized in set(valid_labels) else None
+
+
+def public_canonical_labels(rows):
+    """Derive the answer vocabulary only from public lifetime text."""
+    labels = set()
+    patterns = (
+        r"Its coat is ([\w-]+)\.",
+        r"state-token ([\w-]+)\.",
+        r"is labeled ([\w-]+)\.",
+    )
+    for row in rows:
+        for pattern in patterns:
+            labels.update(value.lower() for value in re.findall(pattern, row))
+    return labels
+
+
+def parse_thinker_operation(raw_completion):
+    """Parse exactly one complete operation with no surrounding prose."""
+    normalized = (raw_completion or "").strip()
+    markers = re.findall(r"(?<!\w)(?:MEMORY|THINK|ANSWER):", normalized)
+    if len(markers) != 1:
+        return None
+    match = re.fullmatch(r"(MEMORY|THINK|ANSWER):[ \t]+([^\r\n]+)", normalized)
+    if match is None:
+        return None
+    return match.group(1), match.group(2).strip()
+
+
+def score_canonical_answer(raw_answer, public_labels, expected):
+    parsed = canonical_label_answer(raw_answer, public_labels)
+    return {
+        "parsed_answer": parsed,
+        "malformed": parsed is None,
+        "correct": parsed == expected,
+    }
+
+
+def exact_token_usage(input_ids, output_ids, prompt_truncated=False,
+                      original_prompt_tokens=None):
+    return {
+        "prompt_tokens": len(input_ids),
+        "output_tokens": len(output_ids),
+        "original_prompt_tokens": (
+            len(input_ids) if original_prompt_tokens is None
+            else original_prompt_tokens
+        ),
+        "prompt_truncated": bool(prompt_truncated),
+        "token_count_source": "model_token_ids",
+    }
 
 CYCLE = """You are dreaming — reflecting over a slice of your memories
 with no immediate task. Across many dreams you are building a compact,
@@ -236,6 +292,9 @@ def phase_think(a):
     from peft import PeftModel
     from alchemy.lora_mem import load_base
     world, skin_obj, rows, goals_pub = load_world(a)
+    public_labels = public_canonical_labels(rows)
+    if not public_labels:
+        raise RuntimeError("public lifetime exposed no canonical state-tokens")
     answered = world.render_goals(a.skin, include_answers=True)
     answers = {g["goal_id"]: g["answer"].lower() for g in answered}
     depths = {g["goal_id"]: "D3blend" for g in goals_pub}
@@ -254,7 +313,7 @@ def phase_think(a):
             depths[bg.id] = bg.depth.value
     corpus = json.load(open(f"alchemy/v2_out/organism_corpus_{tag(a)}.json"))
     qmap = {g["goal_id"]: g["question"] for g in goals_pub}
-    base, tok = load_base(a.executor)
+    base, tok = load_base(a.executor, revision=a.executor_revision)
     for arm in a.arms.split(","):
         if arm.endswith("text"):
             model = base
@@ -279,8 +338,11 @@ def phase_think(a):
                 else:
                     out = mdl.generate(ids, max_new_tokens=n, do_sample=False,
                                        pad_token_id=tok.eos_token_id)
-                return tok.decode(out[0, ids.shape[1]:],
-                                  skip_special_tokens=True)
+                output_ids = out[0, ids.shape[1]:]
+                text = tok.decode(output_ids, skip_special_tokens=True)
+                return text, exact_token_usage(
+                    ids[0], output_ids, prompt_truncated=False
+                )
 
         all_entities = ([skin_obj.animal(x) for x in world.animal_ids]
                         + [skin_obj.land(l) for l in world.source_land_ids]
@@ -296,20 +358,27 @@ def phase_think(a):
                 ents = [e for e in set(all_entities)
                         if e.lower() in q.lower()]
                 if not ents:
-                    return "(no matching memory — name a specific animal or place)"
+                    return ("(no matching memory — name a specific animal or place)",
+                            None)
                 scored = sorted(lines, key=lambda l: -sum(
                     1 for e in ents if e.lower() in l.lower()))
                 hits = [l for l in scored[:4]
                         if any(e.lower() in l.lower() for e in ents)]
-                return (" | ".join(hits) if hits
-                        else "(no matching memory)")
-            return gen(f"Q: What did you conclude about {q}? A:"
-                       if not q.endswith("?") else f"Q: {q} A:",
-                       60, adapter=True).strip().split("\n")[0]
+                return ((" | ".join(hits) if hits
+                         else "(no matching memory)"), None)
+            raw, usage = gen(
+                f"Q: What did you conclude about {q}? A:"
+                if not q.endswith("?") else f"Q: {q} A:",
+                60, adapter=True,
+            )
+            usage = {**usage, "raw_completion": raw}
+            return raw.strip().split("\n")[0], usage
 
-        results, traces = [], []
+        results, traces, calls = [], [], []
+        memory_query_operations = 0
+        memory_queries_served = 0
         for gp in goals_pub:
-            state, trace = [], []
+            state, trace, goal_calls = [], [], []
             final = None
             for step in range(a.budget):
                 last = step == a.budget - 1
@@ -318,21 +387,40 @@ def phase_think(a):
                                           q=qmap[gp["goal_id"]])
                 if last:
                     prompt += "\nBudget exhausted: you MUST output ANSWER now."
-                out = gen(prompt, 150)
-                m = re.search(r"(MEMORY|THINK|ANSWER|DEFER)[:]?(.*)", out)
-                if not m:
+                raw_out, usage = gen(prompt, 150)
+                call = {
+                    "kind": "thinker",
+                    "goal": gp["goal_id"],
+                    "step": step,
+                    "raw_completion": raw_out,
+                    **usage,
+                }
+                calls.append(call)
+                goal_calls.append(call)
+                operation = parse_thinker_operation(raw_out)
+                if operation is None:
+                    trace.append(("MALFORMED_OPERATION", raw_out, ""))
                     break
-                op = m.group(1)
-                body = m.group(2).strip().splitlines()[0] if m.group(2).strip() else ""
-                body = re.split(r"\b(?:MEMORY|THINK|ANSWER|DEFER)\s*:", body)[0].strip(" ->")
+                op, body = operation
                 if op == "MEMORY" and not last:
+                    memory_query_operations += 1
                     if any(t[0] == "MEMORY" and t[1] == body for t in trace):
                         state.append(f"(you already asked: {body} — do not "
                                      "repeat; use what you have or ask "
                                      "something NEW)")
                         trace.append(("REPEAT", body, ""))
                         continue
-                    ans = memory_answer(body)
+                    ans, memory_usage = memory_answer(body)
+                    memory_queries_served += 1
+                    if memory_usage is not None:
+                        memory_call = {
+                            "kind": "memory_model_read",
+                            "goal": gp["goal_id"],
+                            "step": step,
+                            **memory_usage,
+                        }
+                        calls.append(memory_call)
+                        goal_calls.append(memory_call)
                     state.append(f"asked: {body} -> {ans[:140]}")
                     trace.append(("MEMORY", body, ans[:140]))
                 elif op == "THINK" and not last:
@@ -343,27 +431,62 @@ def phase_think(a):
                     trace.append(("ANSWER", body, ""))
                     break
                 elif last:
-                    m2 = re.search(r"([a-z]+(?:-[a-z]+)?)", body.lower())
-                    final = m2.group(1) if m2 else body
-                    trace.append(("FORCED", body, ""))
-                    break
-                else:
-                    trace.append(("DEFER", "", ""))
+                    if op == "MEMORY":
+                        memory_query_operations += 1
+                    trace.append(("BUDGET_EXHAUSTED_WITHOUT_ANSWER",
+                                  op, body))
                     break
             want = answers[gp["goal_id"]]
-            got = (final or "").lower().strip().rstrip(".")
-            ok = want == got or want in got.split()
+            score = score_canonical_answer(final, public_labels, want)
+            got = score["parsed_answer"]
+            malformed = score["malformed"]
+            ok = score["correct"]
             results.append(bool(ok))
             traces.append({"goal": gp["goal_id"],
                            "depth": depths.get(gp["goal_id"], "?"),
-                           "trace": trace, "final": final, "ok": bool(ok)})
+                           "trace": trace, "final": final,
+                           "calls": goal_calls,
+                           "parsed_answer": got,
+                           "malformed": malformed, "ok": bool(ok)})
+        thinker_calls = [call for call in calls if call["kind"] == "thinker"]
+        memory_model_calls = [
+            call for call in calls if call["kind"] == "memory_model_read"
+        ]
         rep = {"acc": round(sum(results) / len(results), 3),
-               "n": len(results)}
+               "n": len(results),
+               "malformed_outputs": sum(t["malformed"] for t in traces)}
         byd = {}
         for tr in traces:
             byd.setdefault(tr["depth"], []).append(tr["ok"])
         rep["by_depth"] = {d: f"{sum(v)}/{len(v)}" for d, v in sorted(byd.items())}
-        json.dump({"rep": rep, "traces": traces},
+        budget = {
+            "goals": len(goals_pub),
+            "max_operations_per_goal": a.budget,
+            "max_thinker_calls": len(goals_pub) * a.budget,
+            "thinker_generation_calls": len(thinker_calls),
+            "memory_query_operations": memory_query_operations,
+            "memory_queries_served": memory_queries_served,
+            "memory_model_generation_calls": len(memory_model_calls),
+            "thinker_prompt_tokens": sum(
+                call["prompt_tokens"] for call in thinker_calls
+            ),
+            "thinker_output_tokens": sum(
+                call["output_tokens"] for call in thinker_calls
+            ),
+            "memory_prompt_tokens": sum(
+                call["prompt_tokens"] for call in memory_model_calls
+            ),
+            "memory_output_tokens": sum(
+                call["output_tokens"] for call in memory_model_calls
+            ),
+            "prompt_truncations": sum(
+                call["prompt_truncated"] for call in calls
+            ),
+            "token_count_source": "model_token_ids",
+        }
+        json.dump({"rep": rep, "budget": budget,
+                   "public_canonical_labels": sorted(public_labels),
+                   "calls": calls, "traces": traces},
                   open(f"alchemy/v2_out/organism_think_{arm}_{tag(a)}.json",
                        "w"), indent=1)
         acc = round(sum(results) / len(results), 3)
@@ -386,6 +509,7 @@ def main():
     ap.add_argument("--arms", default="text,lora,raw,shuf")
     ap.add_argument("--goalset", default="blend", choices=["blend", "ladder"])
     ap.add_argument("--executor", default=EXECUTOR)
+    ap.add_argument("--executor-revision", default=None)
     a = ap.parse_args()
     {"dream": phase_dream, "corpus": phase_corpus,
      "train": phase_train, "think": phase_think}[a.phase](a)

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r6_science_exact_bytes_v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r6",
+  "perspective": "scientific",
+  "state": "interpreted",
+  "architecture_change_sha256": "3b286a4944f0e30c66c347e7caa1bde35db67fce9b835be48b97c3809d13bfc7",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "740356111243a4e55d018243a29f0da89e5cdddd6c9410c5ca0cf766665802d6",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/human_directive.txt",
+      "sha256": "f85def55a24b40219b4cc8c34e91acfb48e25848b1ba4e89e3ab051c335dc4d2",
+      "purpose": "Verbatim direction and bounded r5-resolution provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/scope_proposal.json",
+      "sha256": "bf0342ca15d673104dfc88103e064487fd78334b90cbe5fb80eaaf729fab2151",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/protocol.md",
+      "sha256": "86ba172e8fd6c9faf89d09ec920b08847ea62365f7669a84e6d21132a3bf0c33",
+      "purpose": "Standalone scientific question, estimand, construction law, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/machine_contract.md",
+      "sha256": "843dae479ffa775818a59c34ad914255a46ada5d19706d91b54a13c6d5c65bf8",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/semantic_validators.md",
+      "sha256": "c0c39a86809b44ad9973860cd60f3166052479dc69cfc0563f44ae2de4b99703",
+      "purpose": "Pure cross-field, exact-statistical, and acyclic-DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/assay_contract.json",
+      "sha256": "ab6301bc98bccb18efa011b3deb36a4af29114a212df856f8bf32e1f11ff49be",
+      "purpose": "Assay populations, freeze matrix, controls, and accepted-constructible generator law."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/analysis_contract.json",
+      "sha256": "a13ff78fe1a871494711552496f00d18ade69b60da1782f00c29fba4cc1d013a",
+      "purpose": "Exact paired, safety, missingness, Holm, and conditional power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/status_contract.json",
+      "sha256": "faa195acc8f03d5611e5711451521e54d94b725485eb115b089281343e697b53",
+      "purpose": "Total status-to-endpoint and shared-DREAM dependency mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/visibility_contract.json",
+      "sha256": "32aacfb81d4c41f9855143da4b5e8bc26018f4bbb09d3e2f799c44986a391420",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/authority_contract.json",
+      "sha256": "faa20056acc8173f8deec2905047feb35e42ebe35c5a681653cd2a27cdfa1ca1",
+      "purpose": "Stage-specific, role-closed authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/claim_dependency_map.json",
+      "sha256": "791bb5259b46426501a09b7654992f931f488127d42b123b64611d6ebfee9dce",
+      "purpose": "Literal candidate-decision, T14, authority, and release map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/object_inventory.json",
+      "sha256": "a80b8016700c954bc308dba14c39bfee89d16b1b2786387dec0e0fc11ce715a6",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/contracts.schema.json",
+      "sha256": "8f33faf1cfeba691ed79c44f877b2edc5e41c4cb0a63c3061007fac2ed556050",
+      "purpose": "Closed typed schemas for every inventoried artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/controller_registry.json",
+      "sha256": "af8ba3f7ad1ac4bad6538c89c8c40ed29060d0560b5af42077c27e2bda94c475",
+      "purpose": "Hash-bound total D1A-D1D controller rows and vocabulary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/test_contract.json",
+      "sha256": "adb0b61ff74d846b67e81dd312d5db107977718ce3836f5939b51526b719a1e5",
+      "purpose": "Executable T01-T14 stage and coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/drafts/build_r6_contract_schema.py",
+      "sha256": "a1af676d422825d8dd44bf981528288a4731f100d257c441cbebafa6471be853",
+      "purpose": "Nonnormative deterministic generator for repetitive schema, inventory, and controller bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r6/drafts/build_r6_change.py",
+      "sha256": "88fb2fc0de6d00aa5929a1bbf568b99827dcde3e565c0dd9bbe3aebe9115860a",
+      "purpose": "Nonnormative deterministic proposal generator."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Binding PPC5r4 rework consensus and twelve-blocker provenance only; no inherited authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/consensus.json",
+      "sha256": "8505c2d1586a50eacd7496c48039e3ebf96f9998e4c040e0e3e7a131bec1da22",
+      "purpose": "Immediate binding PPC5r5 rework consensus and seventeen exact successor-byte repairs; no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Scientific mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "REWORK. The intended architecture is a scientifically coherent, deliberately non-mediational four-assay precursor to the broader public-pathway consolidation thesis in note 52: D1A tests complete-table external supported selection rather than storage, D1B tests observable every-edge interleaved-response dependence rather than private cognition, D1C tests the total value of a frozen shared DREAM context policy, and D1D tests the total DREAM-to-SLEEP policy including all mediators and failures without adjustment. The independent unit, strict paired estimand, accepted-constructible population, exact tests, safety and missingness gates, descriptive overlap, and narrow fixed qualification are appropriate in intent. If exact controls and evidence paths were closed and a later populated run were scientifically justified, the design could support a valuable methods or benchmark paper about these four prerequisites. It could not establish a learned THINK/DREAM loop, continual improvement, novelty, private reasoning, population learning, inheritance, scaling, or the end-to-end mechanism. The frozen r6 bytes do not close every binding r5 issue: they contain material contradictions and unreachable evidence objects that can change endpoint classification, Holm mapping, construction-power authority, and release replay. No implementation or later convention may repair those proposal-byte defects.",
+  "graph_delta_interpretation": "The proposed graph correctly separates a predeclared finite accepted-constructible generator law from within-life repeated measures, executes paired arms from identical pretreatment clones and common seeds, keeps D1D policy-induced evidence dose/training/publication/failure as mediators, and places candidate decision before non-releasing T14, preclaim authority, and release. Provider empty behavior is scientifically well-defined: a valid empty semantic table yields NOT_FOUND with all-null read fields, while malformed or post-seal-invalid state fails at its declared boundary. Overlap evidence is usefully represented by ordered per-unit membership entries with comparison-key and source lineage and remains descriptive. However, the purported closed graph is not exact-byte closed. DOSE_OPPORTUNITY_MATCH_RECEIPT and INTERVENTION_ROUTE_RECEIPT are inventoried with no permitted consumers or reference roles and are not referenced by another concrete schema; the route receipt also cannot reference the actual common-provider receipt for off-path pass-through. OUTCOME.environment_receipt_hash and TERMINAL_PAYLOAD.endpoint_outcome_hash are bare semantic hashes without a unique inventoried target. These gaps prevent the D1A control proof, D1B provider-to-projection-to-emission proof, endpoint provenance, and static every-hash-to-one-type/producer claim from being reconstructed on the admitted graph.",
+  "loop_delta_interpretation": "The no-retry physical-slot discipline, shared DREAM realization, prospective DREAM-independent capacities, off-path authentic-pass-through rule in prose, exclusive queue endings, and D1D downstream continuation are the right causal policies. The populated controller bytes are nevertheless not total and do not agree with status_contract.json. D1B_AUTH_PREDICT sends ERROR and MODEL_MISSING_NO_RETRY to FINALIZE_INCOMPLETE, but the registry has no D1B_AUTHENTIC FINALIZE_INCOMPLETE row; its sole such row is D1B_ONE_FINAL for D1B_ONE_SHOT. D1B_AUTH_ACT, D1C_ACT, and D1D_ACT label ordinary ERROR as MISSING_OBSERVATION even though status rule S08 classifies integrity-clean no-action schedule/error terminals as observed normalized action zero with missing=false. D1B_OPEN_COMMIT likewise labels COMMITMENT_ABSENT/INVALID missing despite S08, and D1D_ROOT_TO_PROVIDER labels TRAIN_FAILED missing despite S07 requiring assigned-policy continuation, retained dose, an actual downstream endpoint, and missing=false. The registry orders SCHEDULE before DOMAIN/REFERENCE/PREDICTION whereas machine_contract.md declares domain/reference/prediction/schedule precedence. These disagreements alter Z_i and missingness events, so the estimand is not executable uniquely from current bytes.",
+  "claim_delta_interpretation": "The intended inferential contract is sound at the scientific level: for each registered life-level gate, Z_i=1 only for d_i strictly above the margin with every required arm present; required-arm absence gives Z_i=0; exact rational upper binomial tails and one-sided Clopper-Pearson lower bounds test paired benefit, exact lower tails and upper bounds test D1A safety and missingness, D1B is an every-edge intersection-union maximum, and exactly four assay p-values enter Holm with claim-ID tie breaking. Conditional complete-release power is explicitly conditional on a passed sealed construction, and PRE_MODEL authority is intended to require a distinct construction-success lower bound combined by the probability chain rule without independence. Claim scope and paper scope are appropriately narrow and inseparably qualified. The executable claim path is still blocked. contracts.schema.json admits stale Holm claim IDs for D1B, D1C, and D1D that differ from analysis_contract.json, claim_dependency_map.json, and the registered release literals. CONSTRUCTION_SUCCESS_POWER_RESULT can state an EXACT_FINITE_SUPPORT or CERTIFIED_CONSERVATIVE_LOWER_BOUND value but contains no finite-support enumeration or typed derivation certificate for the ordinary branch, and its required construction reference enum omits the unreachable D1A dose/opportunity receipt; one realized construction cannot certify its fresh-attempt probability. The overall receipt therefore cannot make the unconditional construction-plus-complete-release lower bound authoritative. In addition, claim_dependency_map.json names a singular passing T14 cold-replay receipt where the schema and authority design require one final T14_TEST_RESULT derived from exactly two independent non-releasing cold-replay receipts. No component or intersection claim is releasable from these bytes.",
+  "visibility_matrix_interpretation": "The substantive matrix in change.json and visibility_contract.json covers 13 information items across 15 stages, including CANDIDATE_DECISION, and its 195 cells preserve the intended condition/low-entropy/provider isolation and release visibility boundaries. The exact standalone visibility contract nevertheless calls its required test an exact 13 x 14 product, contradicting its own 15-stage matrix and the binding r5 requirement for 13 x 15 = 195. More importantly, information-flow declarations cannot cure missing typed causal edges: the D1A dose receipt and D1B route receipt have no admitted consumers, the resolved projection is admitted only to CONTROLLER rather than RESPONSE_INTERVENTION, and intervention_emission_receipt carries only an untyped projection_hash rather than a role-closed projection reference. Thus nominal cell completeness does not establish the required semantic-target reachability, per-cause roles, or replayable off-path flow.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R6_T01",
+    "PPC5R6_T02",
+    "PPC5R6_T03",
+    "PPC5R6_T04",
+    "PPC5R6_T05",
+    "PPC5R6_T06",
+    "PPC5R6_T07",
+    "PPC5R6_T08",
+    "PPC5R6_T09",
+    "PPC5R6_T10",
+    "PPC5R6_T11",
+    "PPC5R6_T12",
+    "PPC5R6_T13",
+    "PPC5R6_T14"
+  ],
+  "acceptance_test_interpretation": "PPC5R6_T01 through PPC5R6_T14 are necessary future evidence obligations and none is passed by this interpretation. T03-T05, T07, T09-T11, and the intended portions of T13-T14 cover the right state, provider-empty, every-edge, DREAM/SLEEP, exact-statistical, seal, power, and release boundaries, but current contradictions make unique expected outputs impossible. T01 is false as written: the bound generic architecture_intake validates the architecture_change schema, declared context hashes, generic graph/test/matrix invariants, and intake edges, but it neither schema-parses every bound PPC normative JSON nor emits the inventoried ppc5.architecture_intake_command_result.v6 and intake_state_history.v6 artifacts; after one interpretation the legal state also remains collecting_interpretations, not awaiting_consensus. T02 regresses the binding r5 coverage grammar by omitting explicit byte reexecution of parameter values, entropy slices, every decoded proposal and predicate result, accepted bundles, common-seed preimages, D1A origins, and all-proposal exhaustion traces. T06 cannot consume the unreferenced dose/opportunity receipt. T08 does not explicitly enumerate valid non-target zero-match pass-through and post-intervention divergence, while the route lineage is not schema-closed. T11 cannot produce schema-valid intended Holm steps for three claims and cannot validate an absent construction-probability certificate. T12 inherits the standalone 13 x 14 typo and does not state the binding r5 static every-hash-to-one-type/producer reachability, per-cause role, overlap/resource lineage, and run-lock mutation requirements. T13 cannot seal authoritative unconditional power from the admitted construction result. T14's two-replay-to-final-result design is correct in test_contract.json, but claim_dependency_map.json names the wrong release prerequisite. Exact successor bytes must make every listed test falsifiable with one consistent typed contract before any test fixture or implementation exists.",
+  "assumptions": [
+    "The scientific population is exactly the accepted-constructible recipient-life/common-seed bundle law of the locked finite generator, not an external natural population and not a law conditional on observed assay outcomes.",
+    "Each accepted recipient life is the independent unit; queries, items, clones, endpoints, and D1B edges are repeated measures whose canonical within-life reductions do not increase N.",
+    "All paired arm outcomes are intended to be physically observed from byte-identical pretreatment clones with common random seeds; no unobserved counterfactual or randomized-label estimand is asserted.",
+    "Semantic validator prose is normative for cross-field checks but cannot create a missing schema field, reference edge, controller row, artifact producer, or generic-intake output.",
+    "No populated run lock, scientific parameter values, effect sizes, construction probability, overlap profile, resource totals, or runtime evidence has been reviewed here; those remain later scientific and human decisions.",
+    "Overlap and all three resource views are descriptive only and may not match, normalize, condition, regress, adjust, or rescue any D1D causal decision.",
+    "All 28 declared context-file digests and the frozen architecture-change digest were independently matched to the current exact bytes before this interpretation was written."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R6_SCI_A01_RESOURCE_MARGINAL_OWNERSHIP",
+      "question": "What exact baseline and ownership order defines SUM_INCREMENTAL_WORK_ONLY for a shared physical event when RESOURCE_RECEIPT is keyed per life, opaque instance, and endpoint, and which single receipt owns each PHYSICAL_TOTAL shared event?",
+      "impact": "The named modes, shared_event_id, deduplication label, and conservation boolean are substantial improvements, but two conforming reducers can allocate shared work differently unless marginal increments and physical ownership are deterministic. Because the typed resource manifest is mandatory release evidence, this can change exact descriptive totals and release-package hashes even though it must never change causal inference."
+    },
+    {
+      "ambiguity_id": "PPC5R6_SCI_A02_T01_AWAITING_CONSENSUS_TIMING",
+      "question": "Is T01 intended to record only the current generic intake transition and command stdout, or to require the later collecting_interpretations-to-awaiting_consensus transition that can occur only after both interpretations and critique?",
+      "impact": "The current expected text requires an awaiting-consensus state/history during pre-ratification generic intake, but the generic state machine cannot reach that phase from a single interpretation. The intended T01 evidence moment and artifact cardinality are therefore not uniquely executable."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R6_SCI_D01_CONTROLLER_STATUS_NOT_TOTAL",
+      "statement": "The frozen controller registry and status contract do not define one total status-to-endpoint machine.",
+      "rationale": "D1B_AUTHENTIC has no reachable FINALIZE_INCOMPLETE row; ordinary action ERROR, open-loop commitment absence/invalidity, and D1D TRAIN_FAILED have endpoint_effect values that contradict S07/S08; and first-failure precedence differs between the registry and machine contract. These choices change observed-zero versus missing classification and hence paired success and missingness gates.",
+      "proposed_resolution": "Add the missing D1B_AUTHENTIC finalization row or use a defined terminal transition, make each transition endpoint_effect agree exactly with S01-S10, give TRAIN_FAILED assigned-policy downstream semantics, and regenerate one identical first-failure order in every normative source and schema constant."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D02_D1A_CONTROL_EVIDENCE_DANGLING",
+      "statement": "D1A exact dose/opportunity matching is described but its principal typed proof is not admissible in the evidence DAG.",
+      "rationale": "DOSE_OPPORTUNITY_MATCH_RECEIPT has no consumer stage or reference role, no concrete schema references it, D1A_CORPUS_ORIGIN_RECEIPT has no dose-match reference, and CONSTRUCTION_SUCCESS_POWER_RESULT cannot name it. Its schema also records only a subset of the protocol's explicit wrong-life matching dimensions, leaving base/tokenizer/shape/recipe/mount/rank and candidate-table constraints to disconnected artifacts or prose. Exact specificity controls cannot be established by an unreachable assertion.",
+      "proposed_resolution": "Add a required role-typed dose/opportunity reference to each relevant D1A corpus-origin/control proof, admit it through construction power, static seals, T06, T13, and T14, and encode or uniquely derive every protocol-listed matching dimension from linked adapter/corpus/run-lock objects."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D03_D1B_OFF_PATH_LINEAGE_NOT_CLOSED",
+      "statement": "The scientifically correct D1B off-path authentic-pass-through policy is not reconstructible from the admitted typed bytes.",
+      "rationale": "INTERVENTION_ROUTE_RECEIPT has no consumers and cannot reference a PROVIDER_RECEIPT; selected_source_ref admits raw/CUT/TWIN/SHAM construction sources instead. RESOLVED_RESPONSE_PROJECTION does not reference the route receipt, is admitted only to CONTROLLER, and INTERVENTION_EMISSION_RECEIPT carries a bare projection_hash. Consequently, a replay cannot prove that a valid non-target zero match emitted the common provider's authentic response, while preserving target zero/multi invalidity and every-edge treatment lineage.",
+      "proposed_resolution": "Create a role-closed PROVIDER_RECEIPT-to-INTERVENTION_ROUTE_RECEIPT-to-RESOLVED_RESPONSE_PROJECTION-to-INTERVENTION_EMISSION_RECEIPT chain, admit the actual producer/consumer stages, require exact byte equality on OFF_PATH_AUTHENTIC_PASS_THROUGH, and explicitly cover non-target zero, target zero, one, multi, and treatment-induced divergence in T08/T14."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D04_HOLM_CLAIM_IDS_STALE",
+      "statement": "Three of four intended assay p-values cannot be represented with their registered claim IDs in HOLM_STEP.",
+      "rationale": "analysis_contract.json and claim_dependency_map.json use PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE, PPC5_D1C_DREAM_CONTEXT_POLICY, and PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY, while contracts.schema.json permits only PPC5_D1B_EVERY_EDGE_DEPENDENCE, PPC5_D1C_DREAM_CONTEXT_VALUE, and PPC5_D1D_TOTAL_POLICY_VALUE. Holm is therefore not an exact four-claim executable mapping.",
+      "proposed_resolution": "Replace the stale HOLM_STEP claim_id enum with the four exact registered component IDs and regenerate all dependent literals, hashes, tie-break fixtures, result schemas, and claim map references."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D05_UNCONDITIONAL_POWER_NOT_CERTIFIED",
+      "statement": "The proposal labels conditional and unconditional power correctly but does not admit enough evidence to certify the construction-success factor required for unconditional authority.",
+      "rationale": "CONSTRUCTION_SUCCESS_POWER_RESULT contains a method label and asserted rational lower bound but no exact finite-support enumeration or typed conservative-bound derivation for the non-probability-one branch. Its required refs are realized construction objects, not a proof of probability over fresh generator proposals, and they omit the D1A dose/opportunity proof. Multiplying that assertion by conditional release power cannot satisfy binding r5 R14.",
+      "proposed_resolution": "Inventory a typed, replayable finite-support or certified-bound proof containing its probability law, support/exhaustion accounting, predicates, arithmetic derivation, and all generator/donor/path/D1A-control/overlap events; require the construction result to reference it and make the overall receipt recompute the chain-rule lower bound exactly."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D06_GENERIC_T01_PRODUCER_DOES_NOT_EXIST",
+      "statement": "PPC5R6_T01 assigns PPC-specific validation and evidence production to a generic intake that does not perform those functions.",
+      "rationale": "The bound architecture_intake.py validates the architecture_change against its generic schema, checks declared context hashes and generic graph/test/visibility invariants, and updates/prints its generic mutable state. It does not schema-parse every bound PPC normative source and does not emit ppc5.architecture_intake_command_result.v6 or intake_state_history.v6, despite object_inventory.json naming GENERIC_INTAKE as their producer. This repeats the exact-producer problem that r5 R08 required the successor to remove.",
+      "proposed_resolution": "Restrict T01 to outputs the unchanged generic intake really produces and bind those existing generic artifacts, or separately authorize and specify a pre-ratification generic producer whose exact bytes and output schemas are themselves context-bound; do not require PPC fixtures, implementation, or a sealer before ratification."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D07_CLOSED_REFERENCE_UNION_INCOMPLETE",
+      "statement": "The asserted closed typed contract union still contains semantic hashes without one unique inventoried target.",
+      "rationale": "OUTCOME.environment_receipt_hash has no inventoried environment-receipt type, TERMINAL_PAYLOAD.endpoint_outcome_hash is a bare untyped hash, and the D1A/D1B dangling objects demonstrate that schema admission alone does not imply producer-to-consumer reachability. This defeats the binding every-semantic-hash-to-one-type/producer and cold-replay requirements.",
+      "proposed_resolution": "Replace each semantic bare hash with an exact role/type/ordinal reference to one inventoried object, inventory any missing environment receipt, and regenerate the static DAG/reachability grammar so every authority-bearing object has a producer, admitted consumer, and retained T14 path."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D08_ACCEPTANCE_GRAMMAR_REGRESSED",
+      "statement": "The successor acceptance grammar does not fully carry forward the binding r5 T02, T08, T11, and T12 coverage obligations.",
+      "rationale": "T02 omits explicit parameter/entropy/proposal/predicate/accepted-bundle/common-seed byte reexecution; T08 omits explicit non-target zero-match authentic pass-through and post-intervention divergence; T11 names union-bound power but not the certified construction proof grammar; T12's standalone contract says 13 x 14 despite 15 stages and omits several exact static typed-reachability and lineage mutations required by r5. Broad phrases cannot substitute for finite mandatory coverage axes.",
+      "proposed_resolution": "Restore each adjudicated r5 successor coverage clause verbatim or as an explicit finite superset, correct T12 to 13 x 15 = 195, and keep T02-T13 post-ratification and pre-model with two independent CPU/no-model implementations where specified."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D09_T14_RELEASE_PREREQUISITE_MISMATCH",
+      "statement": "The claim dependency map does not name the same T14 object as the test, authority, and release schemas.",
+      "rationale": "claim_dependency_map.json requires a singular passing non-releasing PPC5R6_T14 cold-replay receipt and orders a cold replay before authority, whereas test_contract.json and the typed design require exactly two independent cold-replay receipts to feed one final T14_TEST_RESULT, which alone is the preclaim/release prerequisite. A release reducer must not choose among these readings.",
+      "proposed_resolution": "Make every candidate, dependency, authority, and release byte name one final T14_TEST_RESULT derived from exactly two independent predecessor-only non-releasing cold-replay receipts; retain both receipts and the independence proof as ancestors but never as substitute release prerequisites."
+    },
+    {
+      "disagreement_id": "PPC5R6_SCI_D10_RESOURCE_RULE_NOT_UNIQUE",
+      "statement": "The three descriptive resource modes are named and lineage-bearing but their marginal and physical ownership rules are not fully deterministic.",
+      "rationale": "RESOURCE_MANIFEST fixes SUM_INCREMENTAL_WORK_ONLY and DEDUP_EVENT_AND_SHARED_EVENT_ONCE, yet RESOURCE_RECEIPT remains keyed per life/instance/endpoint and no exact baseline, ordering, or owner rule identifies where shared physical work is recorded once. A true conservation check needs unique equations and coverage ownership, not only a boolean. The ambiguity cannot affect causal inference, but it can alter mandatory release evidence.",
+      "proposed_resolution": "Specify exact per-life/arm/endpoint coverage keys, a predeclared baseline and marginal ownership order, one canonical owner for each event_id/shared_event_id in PHYSICAL_TOTAL, and explicit per-metric conservation equations with omission/duplication mutations in T10/T12/T14."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin accept routing these exact frozen r6 bytes to REWORK, with no architecture ratification and no implementation, fixture, model, tokenizer, training, behavioral, canary, GPU, or scientific-claim authority?",
+      "After exact successor bytes close every technical disagreement and undergo two fresh interpretations, critique, and consensus, does Rohin ratify only that exact narrow architecture scope?",
+      "At a later separate populated-run boundary, does Rohin judge the locked population, margins, thresholds, capacities, conditional and unconditional power assumptions, overlap profile, resource rules, and narrow paper scope scientifically meaningful before any model-related authority?"
+    ]
+  }
+}

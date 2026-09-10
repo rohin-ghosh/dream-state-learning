@@ -1,0 +1,921 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1e",
+  "title": "Paper-1 v03r end-to-end organism canary v1e",
+  "summary": "Preserve the narrow v03r canary while repairing every blocker accepted by the v1d adjudication: one executable semantic lock; one actual-count witnessed identity domain through index 48; one legal no-repair citation reducer; 232 fixed prospective DREAM/SELF_CHECK pairs; exhaustive taint, matrix, and acceptance bindings; stage-conditional claims; explicit LoRA training-set-resubstitution wording; and an honest unverified review-record boundary because no authentic platform issuer exists. The cognitive mechanism is unchanged: proposals remain audit state until one fallible blind model self-check, and only model-supported proposals become immutable memory rows.",
+  "system_thesis": "Before testing learned LOOP policy, rank pyramids, long lifetimes, or base promotion, determine whether one frozen and explicitly game-scaffolded resolver can convert dispersed public action outcomes into fallibly self-reviewed typed connections, use those connections under a later goal, and preserve immediate registered access through two isolated per-life LoRAs without an exact cognitive verifier or outcome-selected corpus.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact ratification, review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 scope and verifier boundary."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Frozen paired public action-outcome world."
+    },
+    {
+      "path": "lands/v03.py",
+      "sha256": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+      "purpose": "Inherited public episode and final-goal rendering implementation."
+    },
+    {
+      "path": "lands/skins.py",
+      "sha256": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+      "purpose": "Aligned surface-name dependency used by the public projection."
+    },
+    {
+      "path": "lands/model.py",
+      "sha256": "6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211",
+      "purpose": "Frozen world configuration and typed public object dependency."
+    },
+    {
+      "path": "lands/v02.py",
+      "sha256": "0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89",
+      "purpose": "Inherited surface and mixture dependency in the v03r renderer closure."
+    },
+    {
+      "path": "lands/world.py",
+      "sha256": "9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac",
+      "purpose": "World-generation dependency in the frozen v03r closure."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing construct, leakage, local-window, edge-removal, and population tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/consensus.json",
+      "sha256": "95a5e147594e7804e0ab4d5fef6854745432675dc08a619ba7e82052975b98e1",
+      "purpose": "Binding v1b rework consensus and complete residual concern inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/consensus.json",
+      "sha256": "9b8e4cdc2c51f91acec3870503208451a82d09d5810cda9c85479761f1f7ec2b",
+      "purpose": "Binding v1c rework consensus requiring this newly hash-bound successor and preserving P1CB01 through P1CB10 identities."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/consensus.json",
+      "sha256": "5ba99ff697f8b012090d87d1eb0a6fd68e4faf14feab6e24877d9bbb2405158c",
+      "purpose": "Binding v1d rework consensus selecting fixed prospective SELF_CHECK accounting and the exact R01-R10 successor repairs."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/resolution_brief.md",
+      "sha256": "2e7ea5963851f56f8fd6f8f169df8839c30bb4d9f2586d67f8eb2233eb550369",
+      "purpose": "Adjudicated minimum repair choices and scientific boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/experiment_spec.md",
+      "sha256": "a9a96d13c1f63e2a123531a05ce57b93dae0c8541ed6a0e709a9f76d38d5d6d7",
+      "purpose": "Question, stages, gates, bounded claims, and terminal scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/canary_config.json",
+      "sha256": "f8c60b8c3c44463353980a8536febaa4c52d2caeba29c00f630fd71634590164",
+      "purpose": "World, models, operations, fixed fit recipe, arms, and ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/operation_contract.json",
+      "sha256": "3fa199c64d2d93d486486e9d84173c34ce65b8fbaad3fb88bf62fa17a31011f7",
+      "purpose": "Closed model states, recurrence, selectors, seeds, parser, scratch, and accounting."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/public_projection_contract.json",
+      "sha256": "3081a0c4e9022521a97908c7d36966c7c99e0f5c9292fbcc403ab8bf0ab2102a",
+      "purpose": "Exact public API to typed-event, probe, goal, vocabulary, and pre-dispatch control projection."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/memory_transport_contract.json",
+      "sha256": "8f732f6cc5b1374be2e34be28d9a467422d7ebcad25537562303b91c5adea7ad",
+      "purpose": "Public projection, proposal admission, immutable rows, reader projection, and candidate mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/intervention_contract.json",
+      "sha256": "934352e3fbc033d537b59ee1589a7ef7ea00cd609cd6fcef7bf87047c8369111",
+      "purpose": "Prospective public DIST, path and sham construction, offline correctness, and structural use."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/development_fixture_contract.json",
+      "sha256": "37f17001fa06f5a7ddfee95101a09306256d8c8854c1d92e05f7e7567864c50d",
+      "purpose": "Immutable population, six DEV lives, G fixtures, proof rows, parser, and gates."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/compiler_views.json",
+      "sha256": "2d2cdfb0dfc81b8c3f7fdd319b9ae5ee220bbeb55eb006f28ee27770aa998094",
+      "purpose": "Exact four view families, all legal question indices, round-trip semantics, and presentation counts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/runtime_training_contract.json",
+      "sha256": "ff8e5f6bc7953bf21b24a91f464041d21015320dcdb4e4e9c55f4425b3c0a1da",
+      "purpose": "Executable lock, generation receipts, deterministic two-fit recipe, fidelity, and atomic recognition."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/stage_review_contract.json",
+      "sha256": "a1421a112d6a21eaeb1ae4aeaa9d9ddff788440752d677cb08340cb2ef4355b3",
+      "purpose": "Transition authority, validity mapping, packet inventories, actor separation, and claim firewall."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/acceptance_registry.json",
+      "sha256": "5942d7d065e8882282df213224774ad48649efbdba6e32062bc0aa3480d587c9",
+      "purpose": "Exact ten v1a-mandated P1CB test identities and artifacts."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/scope_proposal.json",
+      "sha256": "15b2ded176a3d2b837f18878ca26f6b6395110dcddd9b0782dda1e2df78cb4b0",
+      "purpose": "Requested and forbidden authority with staged ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_prompt.md",
+      "sha256": "2ec6a76ff1a767e650cb5898d8d8a2e2a6f897bd0676e423265ef8211665f9d6",
+      "purpose": "Frozen local connection-proposal instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check_prompt.md",
+      "sha256": "3e0fcd3fe73c05e441b9c784c90e971abffe4abb9e7625ca1edf40de3299f2c2",
+      "purpose": "Frozen blind fallible model reflection instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_prompt.md",
+      "sha256": "b32a156fb25932bb28db0ade14660f81bce5e7639296e2c751d590e368114bff",
+      "purpose": "Frozen target-absent source-target return instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_prompt.md",
+      "sha256": "ce4f808463de0caa4a0075c5d6f94c568db37aa1a8fcd775e03b1667562d3df9",
+      "purpose": "Frozen proof-sequence-scaffolded final resolver instruction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/public_event.schema.json",
+      "sha256": "8574cb4d850a2630f58db5794147efc2fc3a95e79d91d42c256e2a327c5914f0",
+      "purpose": "Closed public event projection schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/proposal.schema.json",
+      "sha256": "7af394a464cc2c502243ecbf82360fd3324bdca423c706a9dca7b8486bb65f09",
+      "purpose": "Immutable audit proposal schema separate from memory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/memory_row.schema.json",
+      "sha256": "1b7c037d8921b4c7274687aae5f02026c59df456602993e5cdc45d4a8177f3da",
+      "purpose": "Closed immutable witnessed or model-supported row schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/read_result.schema.json",
+      "sha256": "942e2ff0da2f22126c7aa42f7e0ca10fe9ef8e5e7644dd97649e2474641b9056",
+      "purpose": "Shared provenance-free thinker-facing read result."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/candidate_registry.schema.json",
+      "sha256": "9fbaf7594c47abb43353b8ab4509f1d223164fb9a73d714120b393c07d438b5b",
+      "purpose": "Sealed semantic-only two-backend candidate and completion registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_state.schema.json",
+      "sha256": "6ce520a9254fec7812f9910cb65f186c40c8ad257f7adbde2b75c9b784d4cb17",
+      "purpose": "Closed DREAM allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check_state.schema.json",
+      "sha256": "b52d33ca8f57d18606d6015acd11f0f814f6702f2ddda0ba1981b05c566f60b9",
+      "purpose": "Closed SELF_CHECK allowed state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_state.schema.json",
+      "sha256": "a5fca6dc26dbb8f3f7f216cf22e7d9883d7e37f85b7ec50e981fd90fac053685",
+      "purpose": "Closed THINK0 state and public probe."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_state.schema.json",
+      "sha256": "3d18eea1cc38046e3b7fde2048ffcd2adf21bdf9ed52915678130556389db95a",
+      "purpose": "Closed THINK1 state."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/scratch.schema.json",
+      "sha256": "48c605d86ce03a624e7b95abed9a73468fed1f82fa88359aa05f2312c8a018de",
+      "purpose": "Closed discriminated scratch nodes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_operation.schema.json",
+      "sha256": "3a591edae0ad7e692b1cb6aff1e23a3c53fde84de1984fe6034d546530ca9dde",
+      "purpose": "DREAM PASS/CREATE grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check.schema.json",
+      "sha256": "ea2b1c2043a3be243f29b6d7dfbb49a6637e13757d132502abd765cba255739f",
+      "purpose": "Fallible model self-check grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_operation.schema.json",
+      "sha256": "075dad6b9f79e591ab283c08f8e72a7adbcb277152f63ea9715384cfc9b4d4e7",
+      "purpose": "THINK0 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_operation.schema.json",
+      "sha256": "76e8e9ac2920c442015eb111973edf95f26e0149bf987c310bd1d8e0138ac881",
+      "purpose": "THINK1 atomic operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/schema_resource_registry.json",
+      "sha256": "2872af7719d0045d29e0182fda24c1a40ae3f8a46b6d83f3da2c607d446806f3",
+      "purpose": "Closed filename-to-schema-ID resolution contract for all local schema references."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/opportunity_ledger.schema.json",
+      "sha256": "7a6f5e3550d90656c0218683c43033eb0e5d175a423163ce3b61d65218083350",
+      "purpose": "Canonical closed opportunity-ledger row schema and condition/state/reason mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/semantic_consistency_matrix.json",
+      "sha256": "a4f47de1ceb870f8057b85770ad9340d1ca22bef33aaf351ce0aae2cc700f28e",
+      "purpose": "Exhaustive producer/consumer/ordering/validity/ledger semantic lock across every normative contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/terminal_claim_state.schema.json",
+      "sha256": "bd8ee8596fa1d4a0cf7829b49e7275cd7bc79b20eeba3b09776f352f51e07536",
+      "purpose": "Closed stage-conditional terminal claim-state schema and exact report wording."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_packet.schema.json",
+      "sha256": "5e27cabcb15bbe9d451960f7b9decd6d2b146cb2d76d39a564a153c0d70de6a5",
+      "purpose": "Closed transition packet schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_assignment.schema.json",
+      "sha256": "b32c5bb2c6f73011bfb5e81f98b14956ad9dd2d722cf8cb7a52109b931af1ef7",
+      "purpose": "Closed reviewer/advocate assignment schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_disposition.schema.json",
+      "sha256": "6d8ed41416c701ebbdc38e052733d386136c20b138d30339e8f67d0242cce86c",
+      "purpose": "Closed immutable review disposition schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/authority_token.schema.json",
+      "sha256": "f92b39e6181c3aef3e38c1900a830f1d538c18c42e4f80f1d3d207d754e2716d",
+      "purpose": "Closed monotone successor authority schema."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "P1CC_PUBLIC_PROJECTOR",
+        "before": "Public v03r records had no canary-specific closed cognitive projection.",
+        "after": "Before any heldout model dispatch, each public episode becomes one exact E audit object and predetermined witnessed-M projection; the probe, host-only goal, vocabulary, and public DIST control also seal, and only M enters cognition.",
+        "rationale": "Bind experience and every outcome-relevant public transform without private-compatible fields or duplicated E/M evidence."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_PROPOSAL_ADMISSION",
+        "before": "v1b treated a provisional proposal as a mutable memory row.",
+        "after": "DREAM creates an immutable audit proposal; one blind model SELF_CHECK either creates one immutable SUPPORTED row or no cognitive row.",
+        "rationale": "Preserve false self-approval while eliminating status mutation and semantic verification."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_RECURRENT_CONSTRUCTOR",
+        "before": "v1b recurrence pools, counters, seeds, and states were not machine-unique.",
+        "after": "One exact 46-WAKE/22-REACTIVATE/16-SLEEP prefix and matched sixteen-slot OWN/DIST branches use closed states and branch-local deterministic selectors.",
+        "rationale": "Test one-hop breadth/depth growth with reproducible treatment."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_ATOMIC_RESOLVER",
+        "before": "Text and LoRA returned incomparable or provenance-bearing objects.",
+        "after": "THINK0/THINK1 operate for at most twelve opportunities and receive one closed H-handle semantic read projection independent of backend provenance.",
+        "rationale": "Put traversal/composition in model tokens while preventing host text from carrying the path."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_PROSPECTIVE_INTERVENTIONS",
+        "before": "v1b goal timing was circular and DIST/path/sham could depend on forbidden or wrong data.",
+        "after": "Public DIST seals pre-goal; role/causal candidates and unique matched sham seal after goal but before any T output; correctness is offline only.",
+        "rationale": "Causally test realized memory content without selecting generation or repairs by result."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_MEMORY_LORA_TRANSPORT",
+        "before": "Candidate-to-row reconstruction and fit execution were selectable.",
+        "after": "Exactly two pristine per-life rank-64 fits use four exact view families, every legal question index, one shared host-enumerated two-backend candidate roster, deterministic updates, two complete 48-case fidelity sets, and atomic mounts.",
+        "rationale": "Test immediate candidate-constrained recognition only after useful text memory exists, without mislabeling it open recall."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_MONOTONE_AUTHORITY",
+        "before": "v1b review objects and validity routing were prose-level and P1CB01 straddled implementation.",
+        "after": "Ratification releases CPU only; exact packets, separately requested role-labelled reviewer and advocate dispositions, and closed authority tokens gate DEV, T, L, and terminal. Persisted records are explicitly self-declared and unverified rather than platform attestations.",
+        "rationale": "Prevent self-certification, changed-byte continuation, invented identity evidence, and unregistered GPU work."
+      },
+      {
+        "operation": "add",
+        "node_id": "P1CC_EXECUTABLE_SEMANTIC_LOCK",
+        "before": "v1d still contained mutually contradictory reducer, identity-domain, opportunity-lifecycle, terminal-claim, matrix, and review-evidence bytes.",
+        "after": "One exhaustive semantic-consistency matrix and one canonical opportunity-ledger schema bind every producer, consumer, ordering, validity class, fixed prospective DREAM/SELF_CHECK pair, and condition/state/reason mapping; unlisted, multiple, or contradictory semantics fail pre-dispatch.",
+        "rationale": "Make implementation a transcription of ratified semantics rather than an outcome-relevant design choice."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_PUBLIC_TO_WITNESSED",
+        "from": "P1CC_PUBLIC_PROJECTOR",
+        "to": "P1CC_RECURRENT_CONSTRUCTOR",
+        "before": "No single M-only cognitive evidence path.",
+        "after": "The current witnessed M row is each WAKE trigger; E remains host-only provenance.",
+        "rationale": "Make allowed evidence exact."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_PROPOSE_CHECK_ACCEPT",
+        "from": "P1CC_RECURRENT_CONSTRUCTOR",
+        "to": "P1CC_PROPOSAL_ADMISSION",
+        "before": "Proposal and row lifecycle were conflated.",
+        "after": "Each new CREATE gets one check; structural model support alone admits one immutable row.",
+        "rationale": "Make admission fallible, inspectable, and non-oracular."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_ACCEPT_TO_RECURRENCE",
+        "from": "P1CC_PROPOSAL_ADMISSION",
+        "to": "P1CC_RECURRENT_CONSTRUCTOR",
+        "before": "Later calls could consume underdefined statuses.",
+        "after": "Only WITNESSED and model-SUPPORTED canonical rows re-enter deterministic selectors.",
+        "rationale": "Allow iterative connection growth without audit-text leakage."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_MEMORY_TO_RESOLVER",
+        "from": "P1CC_PROPOSAL_ADMISSION",
+        "to": "P1CC_ATOMIC_RESOLVER",
+        "before": "Reader results exposed inconsistent row/provenance fields.",
+        "after": "Exact one-null queries return only type, H handle, kind, fields, status, and semantic hash.",
+        "rationale": "Measure memory-derived semantics, not host graph transfer."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_INTERVENTION_TO_READER",
+        "from": "P1CC_PROSPECTIVE_INTERVENTIONS",
+        "to": "P1CC_ATOMIC_RESOLVER",
+        "before": "Path/sham masks could be chosen or scored after outcomes.",
+        "after": "M0/OWN/DIST/TWIN/PATH/SHAM readers seal before T execution and all traces seal before scoring.",
+        "rationale": "Identify dependence on registered role/causal content."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_MEMORY_TO_LORA",
+        "from": "P1CC_PROPOSAL_ADMISSION",
+        "to": "P1CC_MEMORY_LORA_TRANSPORT",
+        "before": "Fit data and view bytes were underbound.",
+        "after": "Already sealed M1_OWN rows deterministically compile into exact per-life examples.",
+        "rationale": "Hold write quality fixed while testing transport."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_LORA_TO_RESOLVER",
+        "from": "P1CC_MEMORY_LORA_TRANSPORT",
+        "to": "P1CC_ATOMIC_RESOLVER",
+        "before": "The winning candidate had no safe full-row mapping.",
+        "after": "The candidate completes a semantic tuple in the mounted backend, then emits the same provenance-free H projection as text.",
+        "rationale": "Prevent host metadata or donor identity from carrying the answer."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_AUTHORITY_TO_STAGES",
+        "from": "P1CC_MONOTONE_AUTHORITY",
+        "to": "P1CC_RECURRENT_CONSTRUCTOR",
+        "before": "A positive plan could be mistaken for execution authority.",
+        "after": "Every request or fit requires the exact predecessor token and reviewed immutable packet.",
+        "rationale": "Fail closed at every stage boundary."
+      },
+      {
+        "operation": "add",
+        "edge_id": "P1CC_E_LOCK_TO_AUTHORITY",
+        "from": "P1CC_EXECUTABLE_SEMANTIC_LOCK",
+        "to": "P1CC_MONOTONE_AUTHORITY",
+        "before": "Hash equality could authorize conflicting contracts.",
+        "after": "P1CB01 and P1CB09 must validate the complete matrix and unique ledger mapping before any successor authority can exist.",
+        "rationale": "Bind governance to executable scientific semantics, not merely file identity."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "P1CC_L_CONSTRUCT",
+        "before": "Dedicated dreams either restated episodes or jumped directly to solutions.",
+        "after": "Stateless local DREAM calls traverse witnessed/model-supported rows and propose at most one new typed connection; admission is a separate blind model call.",
+        "trigger": "Each registered WAKE, REACTIVATE, SLEEP, OWN, or DIST slot.",
+        "reads": [
+          "one trigger row",
+          "at most five deterministic eligible neighbors",
+          "registered focus only in return branches"
+        ],
+        "writes": [
+          "PASS or one audit proposal",
+          "zero or one immutable supported row after SELF_CHECK",
+          "closed opportunity receipts"
+        ],
+        "stop_condition": "End after registered slots; malformed, illegal, duplicate, contradicted, or unresolved attempts consume their opportunities without retry.",
+        "rationale": "Approximate incremental BFS-like breadth and depth while retaining every loss."
+      },
+      {
+        "operation": "add",
+        "loop_id": "P1CC_L_GOAL_RETURN",
+        "before": "Goal return could leak final answers or depend on outcomes.",
+        "after": "Target-absent THINK0 requests one source-target frontier or defers; zero-call M0 and fixed OWN/DIST branches then evolve independently.",
+        "trigger": "Both target-absent M0 corpora and the non-answer public probe seal.",
+        "reads": [
+          "public non-answer probe",
+          "one M0 H projection per query",
+          "bounded scratch"
+        ],
+        "writes": [
+          "one focus or defer",
+          "fixed branch histories",
+          "M1_OWN transport corpus regardless of score"
+        ],
+        "stop_condition": "At most twelve THINK0 operations and sixteen return slots per nonzero branch; no retry.",
+        "rationale": "Test thinking-to-later-memory feedback without goal answer exposure."
+      },
+      {
+        "operation": "add",
+        "loop_id": "P1CC_L_FINAL_RESOLUTION",
+        "before": "No closed sequential contract joined memory and a later action decision.",
+        "after": "Fresh THINK1 traces query one row, think/backtrack, and commit one public token under six prospective text readers and two conditional LoRA readers.",
+        "trigger": "Final goal and all applicable reader plans seal.",
+        "reads": [
+          "public goal and pre-goal state vocabulary",
+          "one H read result",
+          "at most eleven scratch nodes"
+        ],
+        "writes": [
+          "twelve operation receipts",
+          "read handles and cited scratch",
+          "one commit/defer or classified failure"
+        ],
+        "stop_condition": "COMMIT, DEFER, invalid operation, infrastructure failure, or operation twelve; never operation thirteen.",
+        "rationale": "Measure DFS-like composition by the model rather than a graph solver."
+      },
+      {
+        "operation": "add",
+        "loop_id": "P1CC_L_CONDITIONAL_TRANSPORT",
+        "before": "LoRA could be trained before one useful honest corpus existed.",
+        "after": "A reviewed T pass triggers exactly two fixed-corpus fits, both complete 48-case fidelity sets, their joint gate, atomic recognition reads, and clean-controller L traces.",
+        "trigger": "Valid reviewed HELDOUT_TEXT pass authority.",
+        "reads": [
+          "sealed M1_OWN rows and exact view-instance examples",
+          "shared host-enumerated candidate registry",
+          "one pristine 7B base per life"
+        ],
+        "writes": [
+          "two isolated adapters",
+          "96 cue outcomes",
+          "L-OWN/L-TWIN traces"
+        ],
+        "stop_condition": "Absent infrastructure invalidity, both fits and all 96 fidelity cases complete before the joint gate; any later fidelity/isolation/runtime failure or completion ends without refit, tuning, stacking, or retry.",
+        "rationale": "Separate construction quality, candidate-constrained parametric recognition, and final composition."
+      },
+      {
+        "operation": "add",
+        "loop_id": "P1CC_L_STAGE_GATE",
+        "before": "Stage review and authority admitted incompatible implementations.",
+        "after": "Each stage seals an exact inventory, receives two separately requested role-labelled dispositions, and emits either one successor token or a terminal seal. The record claims no authenticated identity, freshness, or substantive independence.",
+        "trigger": "CPU, DEV, T, L, or early failure seal.",
+        "reads": [
+          "predecessor authority",
+          "exact packet and context manifest",
+          "self-declared unverified role-labelled assignments"
+        ],
+        "writes": [
+          "reviewer and advocate dispositions",
+          "successor token or terminal receipt",
+          "stage-conditional claim-lint artifact"
+        ],
+        "stop_condition": "Any missing/changed artifact, declared overlap, rejection, invalidity, failure, or final result stops the graph.",
+        "rationale": "Keep the experiment prospective and auditable without fabricating platform evidence."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "add",
+        "claim_id": "P1CC_C_TEXT_ENGINEERING_CANARY",
+        "before": "No v03r recurrent organism had an exact prospective causal memory-use test.",
+        "after": "A green T supports only that this exact game-specific ontology- and proof-sequence-scaffolded system completed the target-absent THINK0-to-return-write feedback loop and structurally used offline-correct life-local content in later reasoning on one aligned seed-5 pair under registered readers. Public actions were environment-generated and the model committed only a final answer token, so this is not evidence of action improvement or online action learning.",
+        "evidence_needed": "Both exact non-NO_FOCUS THINK0 requests, paired T-OWN success, paired T-M0/T-DIST loss, an OWN-only correct focus row, donor-valid T-TWIN, T-PATH loss, T-SHAM retention, correct role/causal H handles cited in later ancestral reasoning and COMMIT, complete locks, accounting, and reviews.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "P1CC_C_RETURN_CREDIT",
+        "before": "Goal-conditioned return could be credited from T-OWN success alone.",
+        "after": "Return credit requires the additional registered M0/DIST losses, nonempty OWN focus, OWN-only correct focus-matching row, actual returned-and-cited use, donor tokens, path loss, and sham retention.",
+        "evidence_needed": "All prospectively fixed branch/read artifacts and the complete extra conjunction.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "P1CC_C_LORA_IMMEDIATE_ACCESS",
+        "before": "Candidate recognition was not safely mapped back to thinker-visible semantics.",
+        "after": "A green L supports only separate 44/48 immediate candidate-constrained training-set-resubstitution recognition on each selected 48-cue set and the registered own/donor decision paths for exactly two isolated per-life adapters. Each set is twelve selected M1_OWN training rows crossed with the same four repeatedly trained view families; the host pre-resolves query cardinality and supplies one shared answer-bearing two-backend roster per concrete cue. This is not unseen recall, preservation, text equivalence, whole-corpus storage, durability, capacity, scale, RAG comparison, generalization, or superiority evidence.",
+        "evidence_needed": "Two pristine fixed-corpus fits, both complete selected-row resubstitution sets, candidate-to-semantic mapping, roster disclosure, atomic mounts, structurally used relation handles, paired L-OWN, donor-valid L-TWIN, and reviews.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "modify",
+        "claim_id": "P1_FROZEN_SCOPE",
+        "before": "Paper 1 seeks reliable improvement over strong memory baselines across increasing agent lifetimes.",
+        "after": "Unchanged. v1e cannot establish the Paper-1 headline, recurrence as a whole, generic construction, generalization, action improvement, online learning, continued improvement, open recall, whole-corpus storage, learned agency, rank scaling, saturation, durability, capacity, superiority, reviewer independence, autonomous discovery, or base promotion. A negative result also cannot localize failure beyond the registered stage and reason.",
+        "evidence_needed": "Later separately ratified replicated multi-world, multi-skin, strong-baseline, increasing-lifetime action studies.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "PUBLIC_WITNESSED_ROWS",
+      "MODEL_SUPPORTED_ROWS",
+      "AUDIT_OR_SELECTOR_STATE",
+      "RETURN_FOCUS",
+      "FINAL_GOAL_OR_DONOR_BACKEND",
+      "PRIVATE_TRUTH_OR_RESULT"
+    ],
+    "stages": [
+      "DREAM",
+      "SELF_CHECK",
+      "THINK0",
+      "RETURN_DREAM",
+      "COMPILE_OR_TRAIN",
+      "THINK1",
+      "OFFLINE_EVAL"
+    ],
+    "cells": [
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "DREAM",
+        "visibility": "visible",
+        "reason": "Current witnessed trigger and bounded prior rows."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "DREAM",
+        "visibility": "visible",
+        "reason": "Only canonical earlier model-supported rows selected by the registered recurrence."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "Prose, confidence, counters, requested modes, and receipts never render."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "Prefix remains target absent."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "Final goal and other life are absent."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "No oracle or score feedback."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "SELF_CHECK",
+        "visibility": "derived_only",
+        "reason": "Only exact proposal premises and registered additional rows."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "SELF_CHECK",
+        "visibility": "derived_only",
+        "reason": "Only cited or kind-matched supplied rows."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "SELF_CHECK",
+        "visibility": "forbidden",
+        "reason": "Proposal hashes/slot and earlier audit text are excluded; new prose exits to audit only."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "SELF_CHECK",
+        "visibility": "forbidden",
+        "reason": "Focus cannot determine epistemic status."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "SELF_CHECK",
+        "visibility": "forbidden",
+        "reason": "Usefulness and donor data are not evidence."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "SELF_CHECK",
+        "visibility": "forbidden",
+        "reason": "The check is fallible model reflection."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "THINK0",
+        "visibility": "derived_only",
+        "reason": "Public non-answer probe and atomic M0 reads only."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "THINK0",
+        "visibility": "derived_only",
+        "reason": "One provenance-free M0 H projection per legal query."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "THINK0",
+        "visibility": "forbidden",
+        "reason": "Audit stream and recurrence controls excluded."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "THINK0",
+        "visibility": "hidden",
+        "reason": "Produced at terminal, not consumed."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "THINK0",
+        "visibility": "forbidden",
+        "reason": "Final animal, answer, and donor absent."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "THINK0",
+        "visibility": "forbidden",
+        "reason": "No evaluator feedback."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "derived_only",
+        "reason": "Only selected own closed rows."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "visible",
+        "reason": "Own M0 model-supported rows may be selected."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "forbidden",
+        "reason": "Counters and all free text remain host-only."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "visible",
+        "reason": "Registered OWN or public DIST focus is a selector hint, not evidence."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "forbidden",
+        "reason": "Final goal and donor remain embargoed."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "RETURN_DREAM",
+        "visibility": "forbidden",
+        "reason": "No score can repair memory."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "derived_only",
+        "reason": "Eligible M1_OWN semantic rows deterministically project to views."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "derived_only",
+        "reason": "Eligible fixed corpus only."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "forbidden",
+        "reason": "No audit prose, controls, or receipts enter examples."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "forbidden",
+        "reason": "Focus is never training data."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "forbidden",
+        "reason": "No final goal, answer, or cross-life corpus enters a fit."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "COMPILE_OR_TRAIN",
+        "visibility": "forbidden",
+        "reason": "Corpus fixed before scoring."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "THINK1",
+        "visibility": "hidden",
+        "reason": "Raw lifetime is unavailable after reset."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "THINK1",
+        "visibility": "derived_only",
+        "reason": "Only one provenance-free H projection per query."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "THINK1",
+        "visibility": "forbidden",
+        "reason": "No dream audit or backend scores/IDs render."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "THINK1",
+        "visibility": "forbidden",
+        "reason": "Fresh final resolver receives no THINK0 state."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "THINK1",
+        "visibility": "visible",
+        "reason": "Public question is visible; donor backend varies only in registered twin arms and identity stays hidden."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "THINK1",
+        "visibility": "forbidden",
+        "reason": "Scoring is offline after traces seal."
+      },
+      {
+        "information_id": "PUBLIC_WITNESSED_ROWS",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "Committed public inputs are auditable."
+      },
+      {
+        "information_id": "MODEL_SUPPORTED_ROWS",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "Rows, handles, corpora, and traces are scored."
+      },
+      {
+        "information_id": "AUDIT_OR_SELECTOR_STATE",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "Diagnostics become visible only after affected outputs seal."
+      },
+      {
+        "information_id": "RETURN_FOCUS",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "Branch allocation and realized rows are audited."
+      },
+      {
+        "information_id": "FINAL_GOAL_OR_DONOR_BACKEND",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "Own/donor tokens and assignments are scored."
+      },
+      {
+        "information_id": "PRIVATE_TRUTH_OR_RESULT",
+        "stage_id": "OFFLINE_EVAL",
+        "visibility": "visible",
+        "reason": "The sole truth consumer has no feedback edge."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+      "kind": "invariant",
+      "setup": "After ratification, validate every protocol/source/executable hash, scope, ceiling, stage dependency, review object, authority transition, schema resource, and every row of the exhaustive semantic-consistency matrix and canonical ledger mapping.",
+      "expected": "Only CPU to reviewed 216-call DEV to reviewed 632-call T to conditional two-fit L to HUMAN_TERMINAL is reachable; seed-generic DEV through index 48 is legal; every contradictory or unlisted normative byte fails closed; P1CB01 never blocks CPU implementation itself.",
+      "falsifies": "The canary is one immutable finite staged experiment with one executable interpretation.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/preflight/P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY.jcs.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+      "kind": "invariant",
+      "setup": "Independently mutate every private/audit/prose/counter/result/donor/provenance field, each host-only final-goal coordinate, the rendered final question, and rosters swapped across concrete cue instances while public pre-reveal inputs remain fixed; separately mutate the registered focus treatment.",
+      "expected": "Every pre-reveal rendered and tokenized request, selector, proposal, row, compiler view, concrete roster binding, corpus, training example, and read projection is byte-inert except registered descendants after authorized reveal; missing, swapped, wrong, or reused cue rosters are rejected; only allowlisted focus changes its branch.",
+      "falsifies": "No answer-equivalent host-goal, audit, or roster side channel exists.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/preflight/P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE.jcs.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+      "kind": "unit",
+      "setup": "Golden and adversarial-test every kind, event-to-row projection, proposal/check combination, duplicate ancestry, lineage, depth, conflict, cycle, and hash, including interleaved premise/support citation vectors and exactly-one-branch SOURCE_VALUE/ANIMAL_VALUE rows in DREAM and SELF_CHECK.",
+      "expected": "Accepted citations always preserve emitted premises then supplied support-row order with first-occurrence dedup; valid witnessed row kinds validate exactly once; only witnessed or structurally model-supported immutable rows enter cognition, without semantic verifier, mutation, retry, or audit leakage.",
+      "falsifies": "Memory admission and provenance reduction are deterministic and honestly fallible.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/preflight/P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE.jcs.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+      "kind": "invariant",
+      "setup": "Exercise every legal one-null query/result branch in THINK0, THINK1, scratch, and previous_read; all H handles, state vocabulary, exact views, ambiguity and winner mappings; and one roster for every concrete semantic_hash/view_id/missing_index/cue instance with all named substitution negatives.",
+      "expected": "Every legal query/result validates exactly one kind branch; each realized cue has exactly one exact cue-byte and token-hash-bound roster; missing, duplicate, swapped, wrong-semantic, wrong-view, or reused rosters fail; text and LoRA share only one provenance-free thinker projection and atomic mount discipline.",
+      "falsifies": "Registered candidate-constrained backend comparisons isolate mounted content without host path transfer.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/preflight/P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS.jcs.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+      "kind": "baseline",
+      "setup": "Match the complete 31-predictor vector and masks; seal NO_MEMORY, GOLD_TEXT, and GOLD_TWIN on six exact DEV lives; verify exact seed-0/1/2 public-projection and vocabulary hashes at actual counts through index 48 and unchanged seed-5 vectors.",
+      "expected": "Every registered DEV life has one legal contiguous sole-projector output with no fixture-local mapper, truncation, alias gap, or heldout drift; shortcuts stay below threshold; both gold arms solve 3/3 with required G handles; NO_MEMORY is below 3/3; all 216 opportunities reconcile.",
+      "falsifies": "The heldout protocol has demonstrated nonshortcut downstream headroom on legally projected DEV fixtures.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/dev/P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM.jcs.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+      "kind": "invariant",
+      "setup": "Use deterministic fake providers across the common exact 46/22/16 prefix, proposal admission, THINK0, M0 zero return, and matched sixteen-slot OWN/DIST return branches, including seeds, selectors, op-12, and non-dispatch cases.",
+      "expected": "Every state, seed, counter, owner, row, handle, and ledger record matches; M1_OWN is fixed without results. Evidence is limited to executability and the goal-routed return intervention after a shared recurrent prefix.",
+      "falsifies": "The registered return-loop treatment is uniquely executable; it does not test necessity of prefix recurrence or repeated dreaming as a whole.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/preflight/P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES.jcs.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+      "kind": "end_to_end",
+      "setup": "On seed-5 twins, seal public projections, goal, vocabulary, DIST, candidates, path/sham, and all T plans in registered order; run every prospectively runnable trace and score only after seals.",
+      "expected": "Missing roots is a valid mechanism negative. Sham infeasibility is only VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE: the other five arms run, T-SHAM emits exact zero-attempt rows, and no full or weakened causal-use claim passes. Otherwise the complete pre-registered feedback, own/donor, path, sham, structural-use, accounting, and review conjunction is required.",
+      "falsifies": "This exact prompted system can complete the registered feedback organism and causally use life-bound text content on the canary.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/heldout_text/P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS.jcs.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+      "kind": "end_to_end",
+      "setup": "Conditional on reviewed T pass, run exactly two pristine fixed-corpus fits; for each, score twelve selected M1_OWN training rows crossed with the same four repeatedly trained view families under host pre-resolution and one prospectively cue-bound shared answer-bearing roster; then run atomic own/donor mounts and L-OWN/L-TWIN traces.",
+      "expected": "Each adapter independently reaches 44/48; registered own/donor paths, isolation, accounting, and structural use pass. Evidence is disclosed only as immediate selected-cue candidate-constrained training-set-resubstitution recognition, never unseen or open recall, preservation, text equivalence, whole-corpus storage, durability, capacity, scale, RAG comparison, generalization, or superiority.",
+      "falsifies": "Useful fixed corpora remain immediately candidate-recognizable through exactly two isolated per-life adapters on the registered training-derived resubstitution cues.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/conditional_lora/P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP.jcs.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+      "kind": "invariant",
+      "setup": "Validate one canonical ledger schema and exhaustive unique condition/state/reason vectors for all 896 potential opportunities, including the 232 pre-registered DREAM/SELF_CHECK pairs, PASS/invalid/duplicate companion non-dispatch, precondition, authority, trace terminal, model failure, infrastructure invalidity, stage failure, and terminal claim-state reconciliation.",
+      "expected": "Every registered opportunity has exactly one mapped effect; companion registry membership is invariant to DREAM output; ineligible checks have the exact zero-attempt cause row; stage failures use NON_DISPATCH_STAGE_FAILURE, trace-local terminals use NON_DISPATCH_POST_TERMINAL only where legal, and every normative consumer is byte-identical. Missing, extra, dynamically appended, multiply mapped, retried, fake, or partial rows fail.",
+      "falsifies": "Reported outcomes correspond to one fixed prospective runtime and compute accounting envelope.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/runtime/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP",
+      "kind": "independent_review",
+      "setup": "At every transition and terminal, request separate fresh-context reviewer and advocate responses over identical immutable packets; persist only hash-bound SELF_DECLARED_UNVERIFIED role-labelled records; validate exact inventories, no mutation, reviewer supremacy, stage-conditional REALIZED/NOT_REACHED/INFEASIBLE/FAILED evidence, and positive/negative claim fixtures.",
+      "expected": "Any rejection or changed byte stops; every result reaches HUMAN_TERMINAL. Reports explicitly state that actor identity and context freshness were not authenticated. The linter rejects invented platform attestation or independence, unrealized positive-stage facts, ambiguous keyword negation, recurrence-as-a-whole, generic construction, generalization, action improvement, online or continued learning, unseen/open recall, whole-corpus storage, durability, capacity, scale, superiority, text/LoRA equivalence, Paper-1-headline language, and negative-result overlocalization.",
+      "falsifies": "The experiment cannot self-certify, fabricate review evidence, drift, or promote one scaffolded pair beyond its evidence.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1e/review/P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP.jcs.json",
+      "required_before": "scientific_claim"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "After two new fresh-context interpretations, adversarial cross-critique, and a releasable consensus, does Rohin ratify the exact v1e protocol-lock and scope for CPU implementation; reviewed 216-operation DEV_GOLD; reviewed 632-operation HELDOUT_TEXT; and, only after a reviewed text pass, exactly two isolated rank-64 per-life M1_OWN MEMORY-LoRA fits plus 96 fidelity cases and at most 48 LoRA-backed THINK1 operations, with every result ending at HUMAN_TERMINAL?",
+    "forbidden_before_approval": [
+      "editing v03r or canary implementation/science code",
+      "running any v1e model or GPU request",
+      "exposing heldout seed 5 to a model",
+      "training or mounting v1e adapters",
+      "reporting v1e results or broader scientific claims"
+    ]
+  }
+}

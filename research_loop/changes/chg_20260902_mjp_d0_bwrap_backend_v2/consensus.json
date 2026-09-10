@@ -1,0 +1,543 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "chg_20260902_mjp_d0_bwrap_backend_v2.consensus",
+  "change_id": "chg_20260902_mjp_d0_bwrap_backend_v2",
+  "state": "human_required",
+  "architecture_change_sha256": "89de3457d0ecc53e655732843784cb911ed4eaf89c090fe5c53943ed333e72af",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260902_mjp_d0_bwrap_backend_v2.scientific",
+      "sha256": "ed7815ecde301800b0b332d22ce9cfb03157deae2286b59def80177a15c70d82"
+    },
+    {
+      "interpretation_id": "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+      "sha256": "895566c4f52cf71d4a1277d2c318fb31d495628adc2147f8d0c25fbc8136593d"
+    }
+  ],
+  "critique_sha256": "a505b82f5e3e3393650865230dee0a744b7e1314c7b7be213b6769ec3e356a47",
+  "recommendation": "proceed_to_implementation",
+  "agreements": [
+    "Supersede only the unavailable OCI backend and its CPU_INTERFACE_ISOLATION label in parent consensus SHA-256 647cc06be22142d983e691c8e14ebd183b215af3c53ef89bd8dbfd03271d4624; the parent artifact itself remains byte-immutable and all scientific rulings, tests, lineage, visibility, stop rules, and claim limits remain authoritative.",
+    "The only passing backend token is exactly BWRAP_CPU_INTERFACE_ISOLATION. It is a non-headline, one-host engineering receipt for a reviewed deterministic non-model CPU path, not OCI conformance, adversarial sandbox security, an unreadability or determinism theorem, hidden-state noninterference proof, model isolation, benchmark validation, learning evidence, scaling evidence, or paper evidence.",
+    "The repaired payload has no writable /out and no writable host mount: stdin is /dev/null; payload stdout and stderr are separate, predeclared-size-bounded O_WRONLY pipes to a trusted content-invariant non-signaling drain; every other payload descriptor is closed; overflow or drain anomaly is recorded without signaling cognition and makes the run NOT_RUN after whole-cgroup termination.",
+    "Freeze the host/backend profile and protocol before subject editing, then after scoped implementation and independent source review but before remote execution freeze the exact source, runtime, public input, full TCB, literal argv, command, mount, descriptor, and pre-run root closure. Any subsequent content or metadata change invalidates review and conformance evidence.",
+    "Both the public input and executable runtime are copied into fresh sealed staging trees whose data leaves are allowlisted immutable regular files; symlinks, hardlinks with link count other than one, devices, FIFOs, sockets, setuid/setgid files, capabilities, and unexpected ACLs/xattrs/metadata are rejected. No live /usr, /lib, /lib64, repository, home, or other broad host tree is mounted.",
+    "The trusted fixed launcher uses literal absolute paths and no shell, glob, discovery, interpolation, or ambient cwd/environment. No input byte, filename, manifest field, or payload output may select or alter argv, executable or TCB path, mount source/destination, environment, cwd, UID/GID mapping, descriptor topology, cgroup name/property, resource limit, or privileged command.",
+    "D0 uses a deterministic batch boundary: public-only cognition may perform every parent-authorized SEM and PTR reader/index/candidate interaction using only the sealed public projection, then commits its complete action transcript and exits before a trusted hidden-state executor and scorer run. No outcome, score, audit interpretation, resource counter, prior receipt, suffix comparison, hidden-derived observation, or host response returns to cognition.",
+    "Any future interactive model path that adapts to action-by-action environment observations requires a new material deliberation, explicit public-observation enumeration, exact visibility binding, fresh ratification, and fresh model-facing isolation evidence; no D0 receipt transfers to G1 or model isolation.",
+    "An in-cgroup trusted monitor remains alive until Bubblewrap and every payload descendant exit, reaps them, and reads raw memory.peak and pids.peak before its own exit. A separately trusted outer monitor then proves unit outcome, timeout/OOM cleanup, empty membership, and no surviving descendant before audit interpretation or suffix regeneration.",
+    "One scientific evaluator worker is distinct from the audited helper process tree. TasksMax is the smallest fixed production-canary-proven cap for the manifest-listed monitor, Bubblewrap namespace/init helper, interpreter, and descendants; unexpected executable or descendant identity is NOT_RUN.",
+    "Parent scientific accounting remains unchanged and separate from backend-inclusive accounting: at most 2,500 non-test logical statements under the frozen AST counter, exactly one scientific worker, warm-cache wall time strictly below 10,000 ms, aggregate subject-plus-oracle peak RSS strictly below 268,435,456 bytes, fewer than 100,000 transition edges, temporary bytes strictly below 33,554,432, sealed evidence strictly below 16,777,216, and zero network/model/GPU calls. The additional cgroup ledger reports backend-inclusive raw memory.peak, pids.peak, wall time, TasksMax, output/log counts, and process identities without replacing or relaxing a parent bound.",
+    "The full TCB manifest covers every actually used launcher, privilege boundary, sudo/systemd component if retained, Bubblewrap, setpriv equivalent, dynamic loader and libraries, Python/runtime/extensions, source, inner and outer monitors, pipe drains, GNU time if evidentiary, policy/configuration, and kernel/OS/cgroup context, with content hashes, file type/size/owner/group/mode, setuid/setgid, capabilities, ACL/xattr digest, ELF resolution, provenance when available, exact invocations, environment, cwd, umask, rlimits, groups, descriptors, mounts, and unit properties.",
+    "The finite threat model covers accidental or structural leakage through the reviewed project code's declared filesystem, projection, descriptor, network/socket, environment/cwd, privilege/capability, control-plane, output-feedback, reset, process-survival, and persistence channels. Malicious payload exploits, kernel or Bubblewrap compromise, hostile administration, and concurrent root mutation are explicitly out of scope; no open-ended penetration testing, whole-host hashing, or OCI-parity work is authorized.",
+    "The parent exact-value manifest is mechanically preserved: 384 era-local worlds and 192 tau twins; total rejection-free target construction and exhaustive target-byte equality; J legal value 1, target-only 1/16, old-only 1/2, current-only 1/2, and physical/registered cuts 0; P legal value 1, target-only 1/16, old-only 1/4, current-only 1/3, no pre-evaluation same-law D11 outcome, and ATOMS_ONLY_P 1/4 only as a model-class ablation; SEM is primary with direct and graph-edge-deleted full-facts value 1; PTR_REC is 1 and PTR_OPEN is 1/16 with origin-gated capabilities; the nine-action plan is 1, ten-action success is 9/10, every other malformed/illegal/exhausted/missing-evidence/wrong-RUN result is 0 and wrong RUN is terminal; typed controls are itemwise 1 and matched wrong-twin is itemwise 0.",
+    "The parent sampling, oracle, and claim rulings are mechanically preserved: four independent with-replacement pair slots with disjoint tape namespaces, retained duplicates and failures, fixed nested crossing, pair-only replication, and DEV-only stop/request logic; the two-phase disjoint literal oracle and named seam mutations; the full KEEP/DELETE ledger; no approximation, threshold repair, self-oracling, synthetic isolation, automatic successor, inferential promotion, or scientific claim.",
+    "The parent descendant visibility matrix is expanded rather than collapsed: constructor, renderer, allocator, comparer, compiler, reader, index, candidates, prompt builder, assigner, parser, public cognition, hidden environment/action executor, scorer, audit sink, cache/reset, and suffix generator retain their exact permitted inputs and prohibitions. Hidden completion, orbit, pair/side, attempt, law, answer, proof, posterior, score, condition, prior outcome, ordering, phrasing, length, rank, timing, retry, repair, and branch information cannot enter target-visible bytes or public cognition.",
+    "Run and skip use byte-identical immutable snapshots but independent fresh namespaces and cgroups. Channel-closure evidence proves only the named visibility controls; separately, after all action bytes freeze and all run outputs are excluded, suffixes regenerated from the original snapshots must match every parent source/target/commitment/reader/index/handle/cursor/cache/root and model-facing byte. Neither evidence substitutes for the other.",
+    "All production canaries use the identical frozen launcher, runtime/input closure, mount and pipe topology, cgroup profile, and payload entry path used for conformance. A mismatch, timeout, OOM, signal, output-cap violation, missing raw counter, survivor, mutable root, unexpected dependency, or forbidden channel is NOT_RUN; there is no unisolated fallback and no OCI installation.",
+    "Exact SHA-bound human ratification remains pending. A green CPU suite or reviewer can support only BWRAP_CPU_INTERFACE_ISOLATION and cannot authorize implementation before ratification, model/provider calls, GPU use, G1/G2/G3, networked payload/science work, lease/credential/quota/package/runtime/host changes, edits to archived Candidate B or existing G1/G2 science bytes, threshold repair, automatic successor dispatch, or scientific/paper claim promotion."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "R-BW-01-ONE-WAY-OUTPUT-AND-FD-TOPOLOGY",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial"
+      ],
+      "issue": "Whether an initially empty writable audit mount can implement a no-reread boundary and what payload descriptors may remain.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Provide one initially empty writable audit mount and claim that output cannot reenter cognition."
+        },
+        {
+          "actor": "scientific interpretation",
+          "position": "Prefer a bounded one-way pipe, with a narrower no-host-input claim only as a fallback if the mount remains."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "Remove every writable host mount; use null stdin and separately bounded O_WRONLY stdout/stderr pipes to a trusted drain that never replies or varies behavior from content/status while cognition is live."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A writable directory is readable and observable by its writer, so the fallback is rejected. Receipt bytes known to the payload are not themselves forbidden; forbidden feedback is auditor interpretation, counters, scores, prior receipts, comparisons, acknowledgments, conditional closure/throttling, EPIPE, or host response. The drain continuously consumes both streams using frozen content-invariant behavior, stores at most each separate cap plus count/digest evidence, silently discards excess while cognition lives, and reports overflow only after termination as NOT_RUN.",
+        "selected_position": "No writable /out or host mount; /dev/null stdin; exact O_WRONLY stdout and stderr pipe FDs only; all other payload FDs closed and verified through proc fd/fdinfo; a bounded non-signaling external drain never writes back.",
+        "required_change": "Replace the proposed output mount and impossible reread assertion with the frozen pipe topology, separate byte maxima and emitted-byte counts, invariant drain protocol, overflow/drain-failure NOT_RUN semantics, and production-profile FD canaries.",
+        "acceptance_test_ids": [
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial"
+      ],
+      "issue": "When backend and implementation bytes freeze, whether live host runtime trees are allowed, and how much TCB content and metadata must be bound.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Before implementation attest Bubblewrap, Python, complete dependency closure, exact argv, mount graph, environment, cgroup wrapper, and the feasibility canary's read-only host runtime layout."
+        },
+        {
+          "actor": "scientific interpretation",
+          "position": "Freeze the backend protocol before editing and the actual minimal mounted source/runtime closure after implementation but before execution; avoid broad host-tree hashes."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "Use immutable regular-file-only staging with no live /usr/repository, and bind every actually loaded TCB byte plus security-relevant metadata and literal invocation at the correct freeze phase."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Future source and argv cannot be frozen before they exist, while read-only live inodes remain ambient and mutable. The preimplementation artifact freezes the exact host/profile, launcher and staging algorithms, metadata/Merkle rules, pseudo-files, mount/env/FD/pipe/cgroup/resource protocol, fixed canary matrix, limits, and NOT_RUN behavior. After scoped implementation and independent source review, a distinct pre-run artifact freezes and attests the exact staged public/source/runtime closure, imports/sys.path, complete privileged/runtime TCB content and metadata, literal argv/commands, mount/FD manifests, host context, and roots. Changes after either applicable freeze invalidate the evidence.",
+        "selected_position": "Adopt the two-stage freeze and immutable staged minimal closure with a complete content-and-metadata TCB manifest; never mount live /usr, /lib, /lib64, repository, or another broad host tree.",
+        "required_change": "Split T01 into mandatory T01A and T01B gates, implement fresh root-owned or equivalently immutable staging with regular-file data leaves and explicit pseudo-files, bind all listed TCB fields, prefer unprivileged Bubblewrap, and if privilege remains use only a reviewed fixed no-shell launcher.",
+        "acceptance_test_ids": [
+          "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-03-PUBLIC-PROJECTION-AND-CONTROL-PLANE-INDEPENDENCE",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific"
+      ],
+      "issue": "Whether hashing a public directory is sufficient and whether input data or names may influence sandbox construction.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Hash and read-only bind a sealed public evaluator bundle."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "Independently sanitize and classify the public projection, allow only canonical regular-file bytes, and prove that no input or output controls any launcher or privileged parameter."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A correctly hashed tree can still contain prohibited content or dangerous file types, and filenames or manifest fields can become privileged configuration. A trusted builder copies an explicit scientific-data allowlist into fixed canonical destinations, rejects every non-regular or multiply linked data object and unexpected metadata, and independently checks the parent visibility projection. A separate fixed launcher consumes no untrusted configuration and uses no shell or discovery. Input mutations may alter payload data or yield constant-shape NOT_RUN only; they cannot change control-plane observations.",
+        "selected_position": "Sanitized public projection plus mechanical control-plane independence, not hash-only sealing.",
+        "required_change": "Add classification/path/link/metadata tests and exhaustive input-byte/name mutation tests proving invariant argv, executable paths, mounts, environment, cwd, UID/GID, descriptors, cgroup values, unit names, limits, TCB paths, and shell absence.",
+        "acceptance_test_ids": [
+          "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-04-D0-BATCH-COGNITION-HIDDEN-ENVIRONMENT-BOUNDARY",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific"
+      ],
+      "issue": "How the exact non-model path can forbid hidden state from cognition while retaining a trusted action executor/scorer, and whether interactive observations are covered.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Place an aggregate evaluator payload in Bubblewrap while declaring hidden science state forbidden to it."
+        },
+        {
+          "actor": "security interpretation",
+          "position": "Split public cognition from trusted hidden environment/scoring, using fresh invocations for explicitly declared public observations if interaction is necessary."
+        },
+        {
+          "actor": "critique",
+          "position": "For D0 use a deterministic batch contract: allow only public SEM/PTR interactions, freeze the complete action transcript and terminate cognition, then execute and score against hidden state with no response edge."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Hidden modules or memory cannot be hidden from code in the same process, while a bidirectional environment socket would violate the one-way D0 gate. The deterministic typed controller needs only parent-authorized public reader/index/candidate/PTR replies derived from the sealed projection. It can freeze the whole plan before trusted hidden execution/scoring begins. Runtime/kernel/proc/dev/clock/resource metadata remain enumerated non-scientific visibility and cannot justify saying the bundle is literally the only readable object.",
+        "selected_position": "Ratify only the D0 batch boundary; no hidden-derived online observation returns. Future interactive observations are neither tested nor authorized and require separate material ratification and fresh isolation evidence.",
+        "required_change": "Split components and process boundaries explicitly, freeze and hash the complete transcript before hidden execution/scoring, prohibit every hidden/audit/counter/result return edge, and include a negative test showing the receipt does not cover a future interactive G1 loop.",
+        "acceptance_test_ids": [
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-05-TWO-MONITOR-LIFECYCLE-AND-DUAL-RESOURCE-DOMAINS",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific"
+      ],
+      "issue": "How raw cgroup peaks and terminality are observed, how helper PIDs relate to one worker, and whether backend overhead changes parent resource limits.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Measure the whole wrapper with GNU time and cgroup-v2 memory.peak/pids.peak and require one worker."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "Keep an inner trusted monitor alive to read raw peaks before cgroup collection, use an outer monitor to prove cleanup, distinguish one scientific worker from a fixed helper PID cap, and separate backend-inclusive from parent accounting."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Post-collected systemd properties may disappear and GNU-time max RSS is not aggregate cgroup memory. The inner monitor belongs to the same cgroup, waits and reaps, confirms payload descendants are gone, then reads raw peaks before exit. The outer monitor verifies status, timeout/OOM and KillMode=control-group cleanup, empty membership, and no surviving PID before suffix work. Parent subject-plus-oracle measurements and strict inequalities remain exact; cgroup-inclusive counters are separately named supporting evidence.",
+        "selected_position": "Two-monitor lifecycle, one scientific worker, a separately frozen minimum viable helper TasksMax, and dual non-substitutable resource ledgers.",
+        "required_change": "Freeze the exact measurement domains, whole-cgroup timeout and cleanup protocol, helper executable/PID manifest and TasksMax, raw counter capture, outer survivor proof, parent ledger, and backend-inclusive ledger for both fresh run and skip cgroups.",
+        "acceptance_test_ids": [
+          "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+          "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-06-PARENT-MANIFEST-AND-DESCENDANT-VISIBILITY-EQUALITY",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "chg_20260902_rml_minimal_jp_d0_v1.consensus"
+      ],
+      "issue": "Whether a four-stage aggregate backend matrix is enough to prove that every parent scientific and descendant visibility ruling survives the backend correction.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Use four aggregate host, payload, audit, and future-model stages while promising parent preservation."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "Mechanically preserve the parent artifact and exact-value manifest and carry every component-specific lineage and visibility rule into the implementation evidence."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Aggregate labels conceal component-specific legitimate inputs and leak paths. The immutable parent consensus remains hash-bound. A generated preservation manifest compares every parent scientific field, exact value, chronology, renderer, control, sampling unit, oracle, resource, KEEP/DELETE, stop, authority, and visibility cell, and permits only an explicit allowlist replacing the named OCI backend clauses and CPU label with this repaired Bubblewrap protocol and exact BWRAP_CPU_INTERFACE_ISOLATION token. All parent descendant stages are mapped to an explicit process/namespace, input/mount, output, post-exit consumer, and forbidden information set.",
+        "selected_position": "Full mechanical parent-manifest equality and expanded component visibility, with no semantic delta outside the OCI-to-Bubblewrap allowlist.",
+        "required_change": "Generate and independently review the exact-value and descendant-visibility equality artifacts covering every parent item enumerated in the agreements; any unallowlisted change is NOT_RUN and requires a new material deliberation.",
+        "acceptance_test_ids": [
+          "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-07-FINITE-THREAT-MODEL-AND-EVIDENCE-SEPARATION",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial"
+      ],
+      "issue": "What the canary suite and suffix equality can establish, what claim wording is valid, and how far security work should extend.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Use broad containment canaries and run/skip equality to report a Bubblewrap isolation result."
+        },
+        {
+          "actor": "scientific interpretation",
+          "position": "Bound testing to finite causal channels with high paper ROI and avoid general sandbox or OCI-parity work."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "State the reviewed-code threat model, narrow only-scientific-input wording, and keep channel-closure evidence logically separate from persistent run/skip noninterference evidence."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Finite production canaries can falsify named accidental/structural channels but cannot prove malicious-code containment, kernel integrity, general unreadability, determinism, or hidden-state noninterference. Suffix equality detects registered persistent effects but cannot prove hidden bytes were unavailable. A pass needs both bodies of evidence plus public-bundle/runtime review and uses only the exact non-headline token BWRAP_CPU_INTERFACE_ISOLATION. One deterministic run/skip pair is sufficient; open-ended penetration testing, whole-host hashing, cross-platform work, OCI parity, and repeated conformance runs have low paper ROI and are excluded.",
+        "selected_position": "Finite reviewed-code channel gate plus independent persistence comparison, with a narrowly enumerated claim and explicit exclusions.",
+        "required_change": "Freeze the negative-test matrix and claim text before implementation; enumerate visible non-scientific runtime/kernel/proc/dev/clock/resource metadata; require both channel and suffix evidence; return NOT_RUN on mismatch; stop security work at the finite suite.",
+        "acceptance_test_ids": [
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-08-EXACT-PRODUCTION-PROFILE-CANARIES",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "backend_observation.md"
+      ],
+      "issue": "Whether feasibility observations or a similar namespace are sufficient for production conformance.",
+      "positions": [
+        {
+          "actor": "backend observation and proposal",
+          "position": "The successful Bubblewrap namespace demonstrations motivate the replacement, with production canaries to follow."
+        },
+        {
+          "actor": "security interpretation and critique",
+          "position": "All canaries must traverse the identical production launcher, staged closures, pipe topology, cgroup profile, and entry path, with frozen exact expected observations and constant failure semantics."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The observation proves feasibility only. Production evidence must cover private mount propagation; fresh user/mount/PID/network/IPC/UTS/cgroup namespaces; canonical root/mountinfo; declared minimal proc/dev; no home/repo/credentials/DBus/SSH agent/hidden/oracle/prior output; UID/GID 65534 and no supplementary groups; zero capability sets and NoNewPrivs one; fixed cwd/env/umask/rlimits; private tmp/work; exact FD modes and targets; no external IPv4/IPv6 or filesystem/abstract Unix socket; immutable staged roots; no writable host path; fixed control plane; constant-shape forbidden failures; and full fresh reset between run and skip.",
+        "selected_position": "Only identical-production-profile canaries count; demonstration namespaces and alternate launchers do not.",
+        "required_change": "Freeze exact positive and negative expectations, run them through the production artifact, bind canonical evidence, and require T04 rejection for any topology or launcher mismatch.",
+        "acceptance_test_ids": [
+          "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "R-BW-09-HUMAN-REVIEW-AND-SUCCESSOR-AUTHORITY",
+      "sources": [
+        "chg_20260902_mjp_d0_bwrap_backend_v2.scientific",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.security",
+        "chg_20260902_mjp_d0_bwrap_backend_v2.adversarial",
+        "AGENTS.md"
+      ],
+      "issue": "Whether technical agreement or a green backend receipt can authorize implementation, model/GPU work, successor dispatch, host changes, or claims.",
+      "positions": [
+        {
+          "actor": "proposal scope",
+          "position": "Require exact human ratification and forbid model, GPU, network, host/runtime changes, successors, and broad claims."
+        },
+        {
+          "actor": "interpretations and critique",
+          "position": "Retain those prohibitions after a pass; require a fresh independent reviewer plus non-overriding author-side advocate, and separately ratify any repaired bytes or later stage."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The durable gate is human-required even with a proceed recommendation. Exact consensus and scope ratification is necessary before subject/oracle/evaluator implementation or the one CPU conformance execution. Later independent review may approve only the narrow token; an advocate cannot override rejection, and repaired bytes require new bound review. No CPU artifact grants model, GPU, G1, successor, host-change, or claim authority.",
+        "selected_position": "Proceed only after exact human ratification, then only within the canonical CPU scope; retain every forbidden scope after technical success.",
+        "required_change": "Keep implementation_forbidden true and state pending; after ratification require scoped implementation, fresh independent review plus advocate, and a separate material gate for model/GPU/G1, interactive observations, successor work, or claims.",
+        "acceptance_test_ids": [
+          "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW"
+        ]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "BW_CRIT_C01_WRITABLE_OUT_IS_A_FEEDBACK_CHANNEL",
+      "status": "accepted",
+      "rationale": "An ordinary writable mount cannot be made unreadable to its creator and creates metadata, error, and timing feedback.",
+      "resolution_id": "R-BW-01-ONE-WAY-OUTPUT-AND-FD-TOPOLOGY",
+      "required_change": "Remove /out and every writable host mount; use null stdin and separately bounded O_WRONLY stdout/stderr pipes to the frozen content-invariant non-signaling drain."
+    },
+    {
+      "concern_id": "BW_CRIT_C02_FREEZE_TIMING_IS_TEMPORALLY_IMPOSSIBLE",
+      "status": "accepted",
+      "rationale": "Final source/runtime/argv bytes do not exist before implementation, but leaving them mutable before execution is unacceptable.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB",
+      "required_change": "Create distinct preimplementation profile/protocol and postimplementation-independent-review/pre-run exact closure freezes."
+    },
+    {
+      "concern_id": "BW_CRIT_C03_LIVE_USR_IS_NOT_AN_IMMUTABLE_CLOSURE",
+      "status": "accepted",
+      "rationale": "Read-only live host trees expose ambient files and mutable inodes and do not satisfy the minimal closure claim.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB",
+      "required_change": "Use a sealed regular-file-only staged runtime/source tree with inert directory structure and separate declared pseudo-files; mount no live /usr, library tree, or repository."
+    },
+    {
+      "concern_id": "BW_CRIT_C04_PUBLIC_INPUT_MUST_NOT_CONTROL_THE_SANDBOX",
+      "status": "accepted",
+      "rationale": "Hashing input does not prevent names or fields from becoming privileged launcher configuration.",
+      "resolution_id": "R-BW-03-PUBLIC-PROJECTION-AND-CONTROL-PLANE-INDEPENDENCE",
+      "required_change": "Sanitize the public projection into fixed paths and mechanically prove input/output independence from every launcher, mount, environment, descriptor, cgroup, limit, and TCB choice."
+    },
+    {
+      "concern_id": "BW_CRIT_C05_COGNITION_AND_HIDDEN_EXECUTOR_ARE_CONFLATED",
+      "status": "accepted",
+      "rationale": "A single process cannot hide imported hidden-state executor/scorer code or memory from cognition, while D0 needs no hidden-derived interactive response.",
+      "resolution_id": "R-BW-04-D0-BATCH-COGNITION-HIDDEN-ENVIRONMENT-BOUNDARY",
+      "required_change": "Keep public SEM/PTR interactions inside public cognition, freeze the full action transcript and exit, then execute and score in the trusted hidden boundary without a return edge."
+    },
+    {
+      "concern_id": "BW_CRIT_C06_CGROUP_PEAKS_AND_TERMINALITY_NEED_TWO_MONITORS",
+      "status": "accepted",
+      "rationale": "Raw cgroup peaks can disappear after collection and parent-death behavior alone does not prove descendant termination.",
+      "resolution_id": "R-BW-05-TWO-MONITOR-LIFECYCLE-AND-DUAL-RESOURCE-DOMAINS",
+      "required_change": "Use an in-cgroup monitor to read raw peaks before exit and an outer monitor to prove unit cleanup and no survivors before suffix work."
+    },
+    {
+      "concern_id": "BW_CRIT_C07_COMPLETE_TCB_METADATA_IS_UNBOUND",
+      "status": "accepted",
+      "rationale": "Bubblewrap's content hash alone omits the launcher, privilege, loader, runtime, monitor, drain, configuration, metadata, and exact invocation that determine the boundary.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB",
+      "required_change": "Bind and independently review the complete actually loaded TCB content, metadata, configuration, context, and literal invocations before execution and verify roots afterward."
+    },
+    {
+      "concern_id": "BW_CRIT_C08_PARENT_SCIENCE_MUST_BE_BYTE_PRESERVED",
+      "status": "accepted",
+      "rationale": "A backend correction has no authority to alter a world, value, chronology, reader, oracle, control, resource, sampling, stop, visibility, or claim ruling.",
+      "resolution_id": "R-BW-06-PARENT-MANIFEST-AND-DESCENDANT-VISIBILITY-EQUALITY",
+      "required_change": "Keep the parent artifact at its exact SHA and mechanically compare full exact-value, scientific, resource, authority, and descendant-visibility manifests with only the enumerated OCI backend/token substitution allowed."
+    },
+    {
+      "concern_id": "BW_CRIT_C09_THREAT_MODEL_AND_CLAIM_ARE_TOO_IMPLICIT",
+      "status": "accepted",
+      "rationale": "Finite canaries and suffix equality support different narrow observations, not a general security or scientific theorem.",
+      "resolution_id": "R-BW-07-FINITE-THREAT-MODEL-AND-EVIDENCE-SEPARATION",
+      "required_change": "Freeze the reviewed-code threat model, separate channel and persistence evidence, enumerate visible non-scientific metadata, and permit exactly BWRAP_CPU_INTERFACE_ISOLATION only."
+    },
+    {
+      "concern_id": "BW_CRIT_C10_RESOURCE_DOMAIN_MUST_PRESERVE_PARENT_BOUNDS",
+      "status": "accepted",
+      "rationale": "Backend-inclusive cgroup peaks cannot silently replace or relax parent subject-plus-oracle accounting, and one worker is not one PID.",
+      "resolution_id": "R-BW-05-TWO-MONITOR-LIFECYCLE-AND-DUAL-RESOURCE-DOMAINS",
+      "required_change": "Retain every exact parent bound in a scientific ledger and add a separate backend-inclusive ledger with fixed helper cap and raw cgroup peaks."
+    },
+    {
+      "concern_id": "BW_CRIT_C11_PRODUCTION_CANARIES_NEED_EXACT_PROFILE_AND_CONSTANT_FAILURES",
+      "status": "accepted",
+      "rationale": "A similar demonstration namespace cannot establish properties of the production launcher and topology.",
+      "resolution_id": "R-BW-08-EXACT-PRODUCTION-PROFILE-CANARIES",
+      "required_change": "Run the finite canary matrix through the identical frozen production profile and require canonical expected observations plus constant-shape forbidden failures."
+    },
+    {
+      "concern_id": "BW_CRIT_C12_AUTHORITY_AND_REVIEW_CANNOT_AUTO_EXPAND",
+      "status": "accepted",
+      "rationale": "Consensus, technical success, or advocacy cannot supply human authorization or broaden the narrow CPU scope.",
+      "resolution_id": "R-BW-09-HUMAN-REVIEW-AND-SUCCESSOR-AUTHORITY",
+      "required_change": "Require exact human ratification now and separate authority later; preserve all model/GPU/G1/network/host-change/successor/claim prohibitions after a pass."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "BW_SCI_D01_OUTPUT_MOUNT_IS_NOT_WRITE_ONLY",
+      "status": "accepted",
+      "rationale": "The stronger no-mount pipe design is executable and removes the narrower-claim fallback's avoidable feedback surface.",
+      "resolution_id": "R-BW-01-ONE-WAY-OUTPUT-AND-FD-TOPOLOGY"
+    },
+    {
+      "disagreement_id": "BW_SCI_D02_SPLIT_PREFLIGHT_FROM_POSTBUILD_FREEZE",
+      "status": "accepted",
+      "rationale": "The two-phase freeze binds specifications before editing and actual bytes before execution without an impossible future-byte gate.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB"
+    },
+    {
+      "disagreement_id": "BW_SCI_D03_BOUND_THE_CANARY_SUITE_TO_THE_SCIENTIFIC_THREAT_MODEL",
+      "status": "accepted",
+      "rationale": "The gate is limited to finite causal channels and one deterministic conformance pair; general penetration testing and OCI parity are excluded.",
+      "resolution_id": "R-BW-07-FINITE-THREAT-MODEL-AND-EVIDENCE-SEPARATION"
+    },
+    {
+      "disagreement_id": "BW_SEC_D01_REMOVE_WRITABLE_OUTPUT_MOUNT",
+      "status": "accepted",
+      "rationale": "No writable host path remains; output uses only bounded one-way pipes with non-signaling drain semantics.",
+      "resolution_id": "R-BW-01-ONE-WAY-OUTPUT-AND-FD-TOPOLOGY"
+    },
+    {
+      "disagreement_id": "BW_SEC_D02_NO_LIVE_USR_BIND",
+      "status": "accepted",
+      "rationale": "Only the copied, sealed and metadata-attested minimal runtime/source tree is mounted.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB"
+    },
+    {
+      "disagreement_id": "BW_SEC_D03_SPLIT_T01_BY_TIME",
+      "status": "accepted",
+      "rationale": "T01A freezes protocol before editing and T01B freezes actual implementation closure before the run.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB"
+    },
+    {
+      "disagreement_id": "BW_SEC_D04_CGROUP_MONITOR_MUST_STAY_ALIVE",
+      "status": "accepted",
+      "rationale": "The in-cgroup monitor retains raw peaks before exit and the outer monitor separately proves terminality.",
+      "resolution_id": "R-BW-05-TWO-MONITOR-LIFECYCLE-AND-DUAL-RESOURCE-DOMAINS"
+    },
+    {
+      "disagreement_id": "BW_SEC_D05_SPLIT_COGNITION_FROM_HIDDEN_ENVIRONMENT",
+      "status": "accepted",
+      "rationale": "D0 freezes a public-only batch transcript before hidden execution/scoring; interactive observations require a new gate.",
+      "resolution_id": "R-BW-04-D0-BATCH-COGNITION-HIDDEN-ENVIRONMENT-BOUNDARY"
+    },
+    {
+      "disagreement_id": "BW_SEC_D06_NARROW_ONLY_PUBLIC_BUNDLE_WORDING",
+      "status": "accepted",
+      "rationale": "The claim says only scientific data input was public and separately enumerates runtime/kernel/proc/dev/clock/resource visibility.",
+      "resolution_id": "R-BW-07-FINITE-THREAT-MODEL-AND-EVIDENCE-SEPARATION"
+    },
+    {
+      "disagreement_id": "BW_SEC_D07_BIND_FULL_PRIVILEGED_TCB",
+      "status": "accepted",
+      "rationale": "Every actually used privileged/runtime component, metadata field, configuration and literal invocation is bound; no-shell unprivileged launch is preferred.",
+      "resolution_id": "R-BW-02-TWO-STAGE-FREEZE-STAGED-RUNTIME-AND-FULL-TCB"
+    },
+    {
+      "disagreement_id": "BW_SEC_D08_CLOSE_FDS_WITH_EXPLICIT_ALLOWLIST",
+      "status": "accepted",
+      "rationale": "At payload exec stdin is null, stdout/stderr are exact O_WRONLY pipes, and every other descriptor is closed and verified by target and access mode.",
+      "resolution_id": "R-BW-01-ONE-WAY-OUTPUT-AND-FD-TOPOLOGY"
+    },
+    {
+      "disagreement_id": "BW_SEC_D09_SEPARATE_VISIBILITY_FROM_SUFFIX_EQUALITY",
+      "status": "accepted",
+      "rationale": "Named channel closure and persistent suffix equality are separately required and separately interpreted.",
+      "resolution_id": "R-BW-07-FINITE-THREAT-MODEL-AND-EVIDENCE-SEPARATION"
+    },
+    {
+      "disagreement_id": "BW_SEC_D10_DISTINGUISH_WORKER_FROM_PID_CAP",
+      "status": "accepted",
+      "rationale": "One scientific worker remains exact while the small enumerated backend process tree receives its own frozen canary-proven TasksMax.",
+      "resolution_id": "R-BW-05-TWO-MONITOR-LIFECYCLE-AND-DUAL-RESOURCE-DOMAINS"
+    },
+    {
+      "disagreement_id": "BW_SEC_D11_EXPAND_MATRIX_AT_COMPONENT_BOUNDARIES",
+      "status": "accepted",
+      "rationale": "The implementation and review evidence carry the full parent descendant matrix with process, input, output, consumer and prohibition annotations.",
+      "resolution_id": "R-BW-06-PARENT-MANIFEST-AND-DESCENDANT-VISIBILITY-EQUALITY"
+    },
+    {
+      "disagreement_id": "BW_SEC_D12_SANITIZE_INPUT_NOT_JUST_HASH_IT",
+      "status": "accepted",
+      "rationale": "A trusted builder copies only classified regular-file public bytes to canonical paths and rejects links, special files, unexpected metadata and prohibited descendants.",
+      "resolution_id": "R-BW-03-PUBLIC-PROJECTION-AND-CONTROL-PLANE-INDEPENDENCE"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {
+      "test_id": "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+      "status": "modified",
+      "rationale": "Replace the temporally impossible single gate with suite MJP_BW_T01R_TWO_STAGE_PROFILE_AND_CLOSURE_FREEZE. Its mandatory subtests explicitly incorporate missing MJP_BW_T01A_PREIMPLEMENTATION_BACKEND_PROFILE_FREEZE and MJP_BW_T01B_POSTIMPLEMENTATION_EXACT_CLOSURE_FREEZE: first freeze the exact host/profile, threat model, launcher/staging/metadata rules, pseudo-files, mount/env/FD/pipe/cgroup/resource protocol, limits, canaries and NOT_RUN semantics before subject editing; then after scoped implementation and independent source review but before execution bind the sealed regular-file-only public/source/runtime trees, complete loaded TCB content and metadata, imports/sys.path, literal argv/commands, mount/FD manifest and pre-run roots. Reject live host runtime/repository trees, mutable inodes, unbound dependencies, or later drift.",
+      "replacement_test_id": "MJP_BW_T01R_TWO_STAGE_PROFILE_AND_CLOSURE_FREEZE"
+    },
+    {
+      "test_id": "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+      "status": "modified",
+      "rationale": "Replace it with finite production suite MJP_BW_T02R_PRODUCTION_BOUNDARY_CANARY_SUITE. Its mandatory subtests explicitly incorporate missing MJP_BW_T02A_ONE_WAY_BOUNDED_PIPE_TOPOLOGY, MJP_BW_T02B_PUBLIC_BUNDLE_AND_CONTROL_PLANE_INDEPENDENCE, and MJP_BW_T02C_BATCH_COGNITION_HIDDEN_ENVIRONMENT_BOUNDARY. Through the identical frozen launcher/profile prove private propagation and fresh namespaces; canonical root/mounts; immutable sanitized public/runtime roots; minimal proc/dev; absent forbidden paths/sockets/network; UID/GID 65534, empty groups, zero capabilities and NoNewPrivs one; fixed cwd/env/umask/rlimits; null stdin; only separately capped O_WRONLY stdout/stderr to the invariant non-signaling drain; closed remaining FDs; no writable host path; input-independent control plane; constant failures and reset; public-only SEM/PTR interactions; transcript freeze and cognition exit before trusted hidden execution/scoring; and explicit noncoverage of future interactive observations.",
+      "replacement_test_id": "MJP_BW_T02R_PRODUCTION_BOUNDARY_CANARY_SUITE"
+    },
+    {
+      "test_id": "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+      "status": "modified",
+      "rationale": "Replace it with MJP_BW_T03R_TWO_MONITOR_RESOURCE_AND_NONINTERFERENCE. Its mandatory subtests explicitly incorporate missing MJP_BW_T03A_RAW_CGROUP_PEAK_AND_TERMINALITY and MJP_BW_T03B_SEPARATE_CHANNEL_AND_PERSISTENCE_EVIDENCE. Run and skip start from independently verified byte-identical immutable snapshots in fresh namespaces/cgroups. The inner monitor waits/reaps and reads raw memory.peak/pids.peak before exit; the outer monitor proves timeout/OOM outcome, cleanup, empty membership and no survivors before suffix work. Report one scientific worker separately from the fixed helper cap and preserve the parent ledger separately from backend-inclusive accounting. Require both finite channel-closure evidence and suffix equality across every parent root/model-facing byte after regeneration only from original snapshots with all receipts/counters excluded; neither body of evidence substitutes for the other.",
+      "replacement_test_id": "MJP_BW_T03R_TWO_MONITOR_RESOURCE_AND_NONINTERFERENCE"
+    },
+    {
+      "test_id": "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW",
+      "status": "modified",
+      "rationale": "Replace it with MJP_BW_T04R_PARENT_EQUALITY_AND_CLAIM_AUTHORITY. Its mandatory subtests explicitly incorporate missing MJP_BW_T04A_PARENT_MANIFEST_AND_VISIBILITY_EQUALITY and MJP_BW_T04B_EXACT_CLAIM_AUTHORITY_REVIEW. A fresh reviewer without author conclusions receives exact commands/argv, full TCB content/metadata and staged roots, import trace, canonical mount/FD/group/status/socket evidence, projection classifier, pipe topology and caps, process/cgroup lifecycle and raw peaks, dual resource ledgers, run/skip roots, exact source closure, and expanded parent lineage matrix. Mechanically allow only the OCI-backend/token delta, approve at most exact BWRAP_CPU_INTERFACE_ISOLATION under the finite threat model, and reject any live host tree, writable output, shell-expanded privilege, ambient dependency, alternate production profile, hidden state in cognition, post-exit-only peak query, parent-byte drift, survivor, broader claim, or authority expansion. A separate author-side advocate cannot override rejection; repaired evidence needs new bound review.",
+      "replacement_test_id": "MJP_BW_T04R_PARENT_EQUALITY_AND_CLAIM_AUTHORITY"
+    }
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Does Rohin ratify this exact consensus by SHA-256 and the canonical CPU-only requested/forbidden scope, including no writable /out, null stdin, separately bounded O_WRONLY stdout/stderr pipes to a content-invariant non-signaling drain, and the exact non-headline token BWRAP_CPU_INTERFACE_ISOLATION?",
+      "Does Rohin ratify the two-stage freeze, immutable regular-file-only staged public/runtime closure with no live /usr or repository, fixed input-independent launcher, full content-and-metadata TCB binding, identical-production finite canaries, two-monitor cgroup lifecycle, one scientific worker distinct from the helper PID cap, and separate parent versus backend-inclusive resource ledgers?",
+      "Does Rohin ratify the deterministic D0 batch boundary in which public SEM/PTR interactions complete and the full action transcript freezes before trusted hidden-state execution/scoring, with no hidden-derived return and no coverage or authority for future interactive observations?",
+      "Does Rohin confirm that parent consensus SHA-256 647cc06be22142d983e691c8e14ebd183b215af3c53ef89bd8dbfd03271d4624 remains scientifically authoritative byte-for-byte except for the explicitly allowlisted OCI backend/token correction, and that model, GPU, G1/G2/G3, networked science, host/runtime changes, automatic successors, threshold repair, and scientific or paper claims remain forbidden after any CPU pass?"
+    ],
+    "implementation_forbidden": true
+  }
+}

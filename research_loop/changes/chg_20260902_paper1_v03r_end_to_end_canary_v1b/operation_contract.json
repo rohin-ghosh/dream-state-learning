@@ -1,0 +1,168 @@
+{
+  "schema_version": "paper1-v03r-canary-operation-contract-v1b.0",
+  "canonical_json": {
+    "standard": "RFC8785_JCS",
+    "encoding": "UTF-8",
+    "bom": false,
+    "terminal_newline": false,
+    "reject_duplicate_keys": true,
+    "reject_nonfinite_numbers": true
+  },
+  "provider_request": {
+    "messages": [{"role": "user", "content": "PROMPT_LF+ALLOWED_STATE_ENVELOPE+OUTPUT_SCHEMA_ENVELOPE"}],
+    "content_construction": [
+      "exact prompt-file UTF-8 bytes with exactly one terminal LF",
+      "literal <ALLOWED_STATE> followed by LF",
+      "JCS allowed-state object followed by LF",
+      "literal </ALLOWED_STATE> followed by LF",
+      "literal <OUTPUT_SCHEMA> followed by LF",
+      "JCS phase-schema object followed by LF",
+      "literal </OUTPUT_SCHEMA> followed by LF"
+    ],
+    "chat_template": "controller executable-lock chat template applied exactly once",
+    "add_generation_prompt": true,
+    "tokenize_during_render": false,
+    "generation_config_is_separate_jcs": true,
+    "forbidden_model_visible_metadata": [
+      "run identity", "life identity", "arm identity", "donor identity",
+      "path or sham identity", "request identity", "filename", "audit event",
+      "scorer state", "lock hash", "private truth", "offline result"
+    ]
+  },
+  "response_parser": {
+    "accepted_shape": "one bare UTF-8 RFC8259 JSON object",
+    "reject": [
+      "invalid UTF-8", "leading non-whitespace bytes", "trailing non-whitespace bytes",
+      "code fences", "duplicate keys", "NaN", "infinity", "unknown fields",
+      "schema failure", "semantic operation failure", "substring extraction", "repair"
+    ],
+    "accepted_state_encoding": "RFC8785_JCS",
+    "invalid_consumes_registered_opportunity": true,
+    "retry": false
+  },
+  "allowed_state_profiles": {
+    "DREAM": {
+      "required_keys": ["trigger", "rows", "focus"],
+      "trigger": "one EVENT or one ROW object",
+      "rows": "zero through six closed local memory rows, trigger included",
+      "focus": "NO_FOCUS or one source,target CAUSAL_JOIN tuple",
+      "forbidden": ["audit text", "final goal", "answer", "private truth"]
+    },
+    "SELF_CHECK": {
+      "required_keys": ["proposal", "premises", "counterevidence"],
+      "premises": "exact closed cited rows in citation order",
+      "counterevidence": "zero through eight closed rows in semantic-hash order",
+      "forbidden": ["dream prose", "dream confidence", "focus", "final goal", "answer", "private truth"]
+    },
+    "THINK0": {
+      "required_keys": ["probe", "scratch", "previous_read"],
+      "forbidden": ["final animal", "final answer", "raw life", "private truth"]
+    },
+    "THINK1": {
+      "required_keys": ["question", "state_tokens", "scratch", "previous_read"],
+      "state_tokens": "sorted unique public legal label tokens",
+      "forbidden": ["raw life", "audit stream", "arm identity", "donor identity", "private truth"]
+    }
+  },
+  "previous_read": {
+    "variants": [
+      {"type": "NO_READ"},
+      {"type": "NOT_FOUND"},
+      {"type": "CONFLICT"},
+      {"type": "ROW", "row": "one closed memory-row projection"}
+    ],
+    "query_echo_forbidden": true
+  },
+  "scratch": {
+    "initial": {"nodes": []},
+    "node_fields": ["ordinal", "type", "operation_fields", "result_type", "result_row_id", "text", "citations"],
+    "maximum_nodes": 11,
+    "maximum_jcs_bytes": 6144,
+    "query_effect": "execute one atomic read; append QUERY node with result type and optional row_id only; expose full result only as the next operation previous_read",
+    "think_or_backtrack_effect": "append exact typed node and reset previous_read to NO_READ",
+    "terminal_operations": ["REQUEST_RETURN", "COMMIT", "DEFER"],
+    "terminal_record_location": "run trace only",
+    "backtrack_is_append_only": true,
+    "pruning": false,
+    "summarization": false,
+    "citation_rule": "only row IDs previously returned in this thinker run",
+    "overflow_effect": "consume opportunity and terminate INVALID_INFRASTRUCTURE without mutation",
+    "invalid_read_or_response_mutates_scratch": false
+  },
+  "model_local_identity": {
+    "public_event_aliases": "E000000 through E000099 in chronological life-local order",
+    "witnessed_row_aliases": "M000000 through M000099 with Ei mapped to Mi",
+    "proposal_row_aliases": "M001000 plus proposal slot; PASS leaves the reserved alias unused",
+    "external_namespace": ["life_manifest_sha256", "origin_branch", "local_alias"],
+    "origin_branches": ["PREFIX", "OWN", "DIST"],
+    "copy_on_write_rule": "prefix aliases retain PREFIX origin; new return rows use their branch; no cross-namespace citation resolution",
+    "model_visible_component": "local alias only"
+  },
+  "heldout_recurrence": {
+    "prefix": {
+      "wake": "for event index 0 through 45, append witnessed event and row, then one WAKE DREAM opportunity",
+      "reactivate": "after WAKE indices 3,7,11,15,19,23,27,31,35,39,43, run exactly two REACTIVATE DREAM opportunities",
+      "reactivate_modes": [
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT"
+      ],
+      "sleep_modes": [
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED",
+        "UNDER_LINKED", "RECENT", "SUPPORTED", "UNRESOLVED"
+      ],
+      "counts_per_life": {"WAKE": 46, "REACTIVATE": 22, "SLEEP": 16, "TOTAL_PREFIX": 84}
+    },
+    "branch": {
+      "think0_before_fork": true,
+      "M0_return_calls": 0,
+      "OWN_return_calls": 16,
+      "DIST_return_calls": 16,
+      "return_side_sequence": [
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE",
+        "SOURCE_SIDE", "TARGET_SIDE", "SOURCE_SIDE", "TARGET_SIDE"
+      ],
+      "fixed_transport_branch": "OWN"
+    }
+  },
+  "context_selection": {
+    "eligible_evidence_statuses": ["WITNESSED", "SUPPORTED"],
+    "unsupported_context_statuses": ["PROVISIONAL", "CONTRADICTED", "UNRESOLVED", "INVALID_SELF_CHECK"],
+    "wake_neighbors": "prior eligible rows sharing at least one exact typed atom with current event, ordered by negative shared-atom count, negative creation slot, semantic_hash",
+    "row_trigger_neighbors": "trigger first; then eligible citation-adjacent or shared-atom rows ordered by adjacency first, negative shared-atom count, absolute creation-slot distance, semantic_hash; six total",
+    "mode_keys": {
+      "UNDER_LINKED": ["citation_graph_degree", "prior_selection_count", "semantic_hash"],
+      "RECENT": ["prior_selection_count", "negative_creation_slot", "semantic_hash"],
+      "SUPPORTED": ["prior_selection_count", "semantic_hash"],
+      "UNRESOLVED": ["prior_selection_count", "semantic_hash"]
+    },
+    "empty_pool": "visit remaining modes cyclically; record requested and realized mode audit-only; never pad",
+    "return_selector": "least-used eligible row containing exact focus source or target on scheduled side, tie by negative focus-atom matches then semantic_hash; fall to other side then UNDER_LINKED",
+    "no_focus_return_selector": "use SLEEP mode sequence",
+    "matched_branch_rule": "OWN and DIST selectors are byte-identical except presealed focus tuple"
+  },
+  "seed_derivation": {
+    "root_hex": "381de6315e048429bc2accc4abef2cc25636218d768f73c55ca86d8190dbaf67",
+    "formula": "uint64_be(SHA256(ASCII('P1CB-SEED\\0') || root_bytes || 0x00 || profile_ascii || 0x00 || uint32_be(slot))[0:8]) mod 2147483647",
+    "paired_slots_share_seed": true,
+    "own_dist_slots_share_seed": true,
+    "lock_hash_is_not_seed_material": true
+  },
+  "generation_profiles": {
+    "DREAM": {"max_input_tokens": 4096, "max_new_tokens": 256, "temperature": 0.2, "top_p": 0.95},
+    "SELF_CHECK": {"max_input_tokens": 4096, "max_new_tokens": 128, "temperature": 0.0, "top_p": 1.0},
+    "THINK0": {"max_input_tokens": 6144, "max_new_tokens": 128, "temperature": 0.0, "top_p": 1.0},
+    "THINK1": {"max_input_tokens": 6144, "max_new_tokens": 192, "temperature": 0.0, "top_p": 1.0}
+  },
+  "pre_dev_golden_vectors": {
+    "required_per_profile": ["prompt_sha256", "schema_sha256", "allowed_state_sha256", "messages_sha256", "rendered_request_sha256", "input_token_count", "input_token_ids_sha256", "config_sha256"],
+    "seal_rule": "actual vectors are generated from the resolved executable lock, reviewed, and sealed before the first DEV dispatch"
+  }
+}

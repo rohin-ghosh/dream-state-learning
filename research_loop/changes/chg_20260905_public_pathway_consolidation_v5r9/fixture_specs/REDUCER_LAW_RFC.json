@@ -1,0 +1,549 @@
+{
+  "document_kind": "PPC5R9_REDUCER_LAW_CATALOG_RFC",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "authority_conferred": false,
+  "materializes_fixtures": false,
+  "purpose": "Concrete deterministic reducer laws for the 58 vector suites in VECTOR_FIXTURE_RFC.json. Axis labels are audit-only; every executor receives facts only and never an expected value.",
+  "normative_machine_contract": {
+    "join_key": "law_id",
+    "facts_only_input_catalog": {"file":"REDUCER_INPUT_ROWS_RFC.json","raw_sha256":"304a8386f15d5ac420df805d59a2f5c42018eb15f3228094a905693da09548f3"},
+    "closed_output_and_program_catalog": {"file":"REDUCER_PROGRAMS_RFC.json","raw_sha256":"57b703dd1914dd00bf50cbda20e8b3a89625d5655a6d89cc39d66a54c2daccc7"},
+    "source_pointer_snapshots": {"file":"REDUCER_SOURCE_SNAPSHOTS.json","raw_sha256":"2f1ead9ded98f4fb1f6d7b2d3958fd129d5e84e4ce65998358d336402aa507b5"},
+    "exact_source_bindings": {"file":"REDUCER_EXACT_SOURCE_BINDINGS_RFC.json","raw_sha256":"3c3f2e11c8f5205844e30468737ac19c228fed6935159289b508e1a9aa260771"},
+    "reference_semantics_validator": {"file":"validate_reducer_semantics.py","raw_sha256":"3251a45d9a4e4a0dec049a4e753990f97e5d3bf59c046a13a6f18bc82c498c09"},
+    "facts_only_graph_construction": "For each law, expand its finite input rows, copy every named exact source-pointer value into a content-addressed companion node, write one root node containing only {law_id,rows,ordered source-node bindings}, and join companions to the root with ordered REDUCER_SOURCE_COMPANION edges. Node IDs are SHA-256(artifact_type || NUL || canonical_json_bytes). The case ID is SHA-256 of canonical {test_id,suite_id,law_id,input_graph}. validate_reducer_semantics.py constructs and parses all 58 graphs solely through this projection before invoking a reducer.",
+    "input_graph_manifest_sha256": "e9ad39e17dfcd8013f197bd34043f1d7cc261bf7bf9a104b408d80742d961233",
+    "semantic_output_set_sha256": "890756a29e8176683373acd728b95a28ac92ee7f73cca900c0fe9c975a9e8438",
+    "algorithm_authority": "The machine program selected by law_id is normative for this RFC. The prose algorithm arrays below are explanatory only and cannot determine an executor output.",
+    "source_binding_rule": "Every reducer source is a file plus JSON pointer whose canonical pointer value is SHA-256 bound in REDUCER_SOURCE_SNAPSHOTS.json. Child fields named below are cryptographically covered by their bound parent pointer value."
+  },
+  "canonical_value_rules": {
+    "json": "UTF-8 RFC 8259 JSON, object keys sorted lexicographically, separators comma and colon without surrounding whitespace, final LF excluded from value hashes",
+    "set": "deduplicate exact canonical rows, then sort by the field tuple named by the law",
+    "ordered_vector": "preserve the input ordinal; reject gaps, duplicates, negative ordinals, and nonzero starts",
+    "integer_rational": "reduced numerator/denominator, denominator positive, zero encoded 0/1, comparisons by integer cross multiplication",
+    "hash": "lowercase SHA-256 over canonical JSON bytes",
+    "boolean": "BOOLEAN true or false; strings are rejected"
+  },
+  "executor_projection": {
+    "canonical_contract": "VECTOR_FIXTURE_RFC.json#/executor_input_envelope",
+    "included": ["case_id", "test_id", "suite_id", "law_id", "input_graph"],
+    "excluded": ["expected_output", "expected_result", "expected_first_failure", "oracle_output", "answer_key"],
+    "law_catalog_visibility": "Executors may be given the reducer algorithm identified by law_id, but never the frozen expected vector or mutation expectation.",
+    "input_rule": "input_graph contains a root node with canonical facts-only vector bytes and every exact source companion byte string needed by the reducer. Mnemonic axis labels do not select a branch and do not enter a reducer."
+  },
+  "global_failure_prefix": [
+    "FIXTURE_SCHEMA_INVALID",
+    "NONCANONICAL_BYTES",
+    "SELF_HASH_MISMATCH",
+    "REFERENCE_TARGET_MISSING",
+    "REFERENCE_RUN_MISMATCH",
+    "REFERENCE_TYPE_MISMATCH",
+    "REFERENCE_ROLE_MISMATCH",
+    "REFERENCE_ORDINAL_OR_CARDINALITY",
+    "ORDER_OR_UNIQUENESS_INVALID"
+  ],
+  "test_failure_orders": {
+    "PPC5R9_T04": ["DREAM_INPUT_BINDING", "DREAM_RENDER_OR_DEBIT", "DREAM_MISSING", "DREAM_PARSE", "DREAM_ID_ORDER_FOCUS_CAPACITY", "CONTEXT_DEPENDENCY", "CONTEXT_RENDER", "EMISSION_CAPABILITY", "DISPATCH_BINDING", "LIFE_MEMBERSHIP"],
+    "PPC5R9_T05": ["SEMANTIC_TABLE", "FP32_FINITE", "RESPONSE_TOKEN_SEQUENCE", "HALF_EVEN_QUANTIZATION", "ARGMAX_TIEBREAK", "PROVIDER_MISSING", "PROVIDER_AUDIT", "DESCRIPTIVE_ISOLATION", "TYPED_REGISTRY"],
+    "PPC5R9_T06": ["DESIGN_ANCESTRY", "LIFE_MEMBERSHIP_EQUALITY", "ORIGIN_ELIGIBILITY", "WRONG_LIFE_MATCH", "DERANGEMENT", "DOSE_OPPORTUNITY", "CONTROL_MANIFEST_CARDINALITY", "ARM_NEUTRAL_PROJECTION", "POINTWISE_POWER_BINDING"],
+    "PPC5R9_T07": ["FINITE_WORLD", "PATH_ENUMERATION", "SOURCE_DISJOINTNESS", "SUBSET_ORACLE", "FULL_PATH_ORACLE", "ALTERNATE_PATH_ORACLE", "CUT", "TWIN", "SHAM", "PARITY", "RECURSIVE_REFERENCE_CLOSURE", "AUDIT_SPLIT", "VIEW_REPLAY_RETENTION", "VISIBILITY_EDGE_EQUALITY"],
+    "PPC5R9_T08": ["ASSIGNMENT_AND_NONCE", "ROUTE_TARGET_MATCH", "PROVIDER_RESULT", "INTERVENTION_SELECTION", "RESTRICTED_PROJECTION", "EMISSION_EQUALITY", "QUEUE_EXCLUSIVITY", "SCHEDULE_COMMITMENT", "PUBLIC_VIEW_INFLUENCE", "DISPATCH_CLOSURE", "AUDIT_COMPLETENESS"],
+    "PPC5R9_T09": ["RUN_INVALID", "CONSTRUCTION_FAIL", "MISSING_NO_RETRY", "ASSIGNED_POLICY_STATUS", "TERMINAL_NO_ACTION", "OBSERVED", "CONTEXT_POLICY_PROPAGATION", "ENDPOINT_LOCALITY", "DISPATCH_ANCESTRY"],
+    "PPC5R9_T10": ["ROOT_POLICY_DEPENDENCY", "ROOT_STATUS", "WRITER_SANITIZATION", "CORPUS", "TRAINER", "VALIDATION", "PUBLICATION", "PROVIDER_CONTINUATION", "BEHAVIOR_CONTINUATION", "DISPATCH_BINDING", "RESOURCE_OWNERSHIP", "RESOURCE_CONSERVATION", "RESOURCE_NONADJUSTMENT", "QUALIFICATION_ADJACENCY"],
+    "PPC5R9_T11": ["MEMBERSHIP_AND_AGGREGATE", "SAFETY_TEMPLATE", "MISSING_DOMINANCE", "CANONICAL_RATIONAL", "TAIL_ARITHMETIC", "CP_BRACKET", "STRICT_DIRECTION", "MISSINGNESS", "GATE_IUT", "ASSAY_MAX_P", "HOLM_FAMILY", "CLAIM_LITERAL", "CONDITIONAL_POWER", "POINTWISE_JOINT_POWER"],
+    "PPC5R9_T12": ["VISIBILITY_PRODUCT_SHAPE", "VISIBILITY_CELL_VALUE", "CONCRETE_CAPABILITY_ROLE", "FORBIDDEN_TAINT", "SCHEMA_REF_RECURSION", "OBJECT_INVENTORY_EDGE", "VISIBILITY_EDGE", "THREE_WAY_EDGE_EQUALITY", "TYPED_REGISTRY", "TRANSITION_CAUSE", "DESIGN_ANCESTRY", "LIFE_AND_CONTROL_CLOSURE", "VIEW_REPLAY_RETENTION", "RESOURCE_AND_QUALIFICATION", "PREFLIGHT_DENIAL"],
+    "PPC5R9_T13": ["NARROW_T01", "DESIGN_TEMPORAL_DAG", "POPULATED_LOCK", "FIXTURE_UNIVERSE_COMPLETENESS", "TEST_RESULT_ORDER", "TYPED_REGISTRIES", "LIFE_CONTROL_CLOSURE", "CLAIM_HOLM_BYTES", "SEALER_INDEPENDENCE", "FRESH_REVIEW", "ADVOCATE_NONOVERRIDE", "CONDITIONAL_POWER", "POINTWISE_JOINT_POWER", "PREFLIGHT_NO_PROCESS", "FORBIDDEN_FUTURE_INPUT", "AUTHORITY_TOPOLOGY"],
+    "PPC5R9_T14": ["T02_T13_PREDECESSORS", "RUNTIME_INTEGRITY", "TRANSITION_AND_QUEUE_REPLAY", "AUDIT_SPLIT", "EMISSION_NONINTERFERENCE", "SEED_VIEW_DISPATCH_CLOSURE", "DREAM_SLEEP", "LIFE_OBSERVATION_GATE", "D1A_CONTROL_MANIFEST", "POINTWISE_POWER", "RESOURCE_OVERLAP_SCOPE", "CANDIDATE_DECISIONS", "QUALIFICATION_AND_FORBIDDEN_CLAIMS", "RELEASE_BYTES_FORBIDDEN", "REPLAY_INDEPENDENCE", "REPLAY_AGREEMENT", "SINGLE_FINAL_T14_EDGE"]
+  },
+  "laws": [
+    {
+      "law_id": "T04_DREAM_REDUCER_V1", "test_id": "PPC5R9_T04", "suite_id": "DREAM_REDUCER", "entry_count": 10,
+      "input_table": {"name": "dream_reducer_facts", "columns": ["raw_call_status", "raw_bytes", "debited_once", "candidate_record_ids", "candidate_focus_id", "capacity", "rendered_context_bytes", "published_context_bytes"], "row_domain": ["RAW_OK", "RAW_EMPTY", "RAW_MISSING", "PARSE_INVALID", "DUPLICATE_ID", "UNKNOWN_ID", "ORDER_INVALID", "FOCUS_INVALID", "CAPACITY_OVERFLOW", "RENDER_MISMATCH"]},
+      "algorithm": ["If raw_call_status is missing, emit MISSING_NO_RETRY without parsing.", "Otherwise debit exactly once, parse raw_bytes with the frozen DREAM grammar, require unique known IDs in canonical order, a known-or-null focus, cardinality not above capacity, and byte-identical deterministic rendering.", "RAW_EMPTY is a valid empty publication; any other failed check emits its first local failure."],
+      "output_shape": {"fields": ["dream_status:STRING", "installed_record_ids:ARRAY[STRING]", "next_focus_record_id:STRING_OR_NULL", "context_bytes_sha256:STRING_OR_NULL", "debit_count:INTEGER", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["status_contract.json#/dream_capacity_rule", "status_contract.json#/rules/2", "status_contract.json#/rules/4", "contracts.schema.json#/$defs/model_dispatch_receipt", "contracts.schema.json#/$defs/model_view"]
+    },
+    {
+      "law_id": "T04_CONTEXT_STATUS_V1", "test_id": "PPC5R9_T04", "suite_id": "CONTEXT_STATUS", "entry_count": 15,
+      "input_table": {"name": "context_status_facts", "columns": ["dream_status", "context_policy", "dream_context_bytes", "recency_context_bytes", "permuted_context_bytes", "capacity"]},
+      "algorithm": ["Form the complete 5 by 3 relation over dream_status in INSTALLED, EMPTY_PUBLICATION, ABSTAINED, INVALID, MISSING_NO_RETRY and the three registered context policies.", "AUTHENTIC_DREAM_CONTEXT consumes dream bytes and inherits missing DREAM; RECENCY_CONTEXT and PERMUTED_CONTEXT select only their named bytes and remain endpoint-local.", "Render the selected bytes within the fixed capacity without changing the capacity."],
+      "output_shape": {"fields": ["context_policy:STRING", "installed_context_sha256:STRING_OR_NULL", "status:STRING", "continuation:STRING", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["status_contract.json#/dream_dependency_registry", "status_contract.json#/endpoint_missing_dominance", "status_contract.json#/dream_capacity_rule"]
+    },
+    {
+      "law_id": "T04_TYPED_DEPENDENCY_V1", "test_id": "PPC5R9_T04", "suite_id": "TYPED_DEPENDENCY", "entry_count": 3,
+      "input_table": {"name": "context_dependency_refs", "columns": ["context_policy", "dependency_ref", "artifact_table", "run_id"]},
+      "algorithm": ["Resolve dependency_ref by self hash and require same run, registered artifact type, role, ordinal, and cardinality.", "Require exactly one dependency source matching context_policy and reject any unregistered alternate source."],
+      "output_shape": {"fields": ["context_policy:STRING", "resolved_artifact_type:STRING", "resolved_self_hash:STRING", "binding_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["status_contract.json#/dream_dependency_registry", "object_inventory.json#/objects", "contracts.schema.json#/$defs"]
+    },
+    {
+      "law_id": "T04_LIFE_AGGREGATE_MEMBERSHIP_V1", "test_id": "PPC5R9_T04", "suite_id": "LIFE_AGGREGATE_MEMBERSHIP", "entry_count": 4,
+      "input_table": {"name": "life_context_membership", "columns": ["prospective_life_keys", "aggregate_rows", "required_arm_roles"]},
+      "algorithm": ["Sort prospective life keys and aggregate rows by sample ordinal and life ID.", "For each one-life or two-life microcase require exactly one aggregate and both required arm observations; missing arms remain members and produce the registered missing outcome rather than deletion."],
+      "output_shape": {"fields": ["N:INTEGER", "complete_aggregate_count:INTEGER", "missing_aggregate_count:INTEGER", "membership_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["analysis_contract.json#/population/gate_membership", "analysis_contract.json#/within_life_reduction", "contracts.schema.json#/$defs/life_gate_aggregate"]
+    },
+    {
+      "law_id": "T04_EMISSION_METAMORPHIC_V1", "test_id": "PPC5R9_T04", "suite_id": "EMISSION_METAMORPHIC", "entry_count": 7,
+      "input_table": {"name": "paired_emission_worlds", "columns": ["left_public_bytes", "right_public_bytes", "left_privileged_route", "right_privileged_route", "left_model_view", "right_model_view"], "paired_changed_fields": ["emitted_public_bytes", "condition", "source", "match_keys", "provider_scores", "nonce", "mapping"]},
+      "algorithm": ["Canonicalize each paired world and assert exactly one named field differs before downstream recomputation.", "A change to emitted_public_bytes must change public_view.last_read and may change later model-view bytes.", "A change to any of the six privileged fields must leave public and model-view bytes identical; any influence is forbidden taint."],
+      "output_shape": {"fields": ["changed_field:STRING", "public_bytes_changed:BOOLEAN", "model_view_changed:BOOLEAN", "influence_permitted:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["assay_contract.json#/assays/1/varies_only", "visibility_registry.json#/cells", "contracts.schema.json#/$defs/intervention_emission_receipt", "contracts.schema.json#/$defs/model_view"]
+    },
+    {
+      "law_id": "T04_MODEL_DISPATCH_CHAIN_V1", "test_id": "PPC5R9_T04", "suite_id": "MODEL_DISPATCH_CHAIN", "entry_count": 1,
+      "input_table": {"name": "dispatch_chain_facts", "columns": ["common_seed_entry_ref", "life_sample_ref", "model_view", "model_dispatch_receipt", "controller_transition_receipt", "complete_run_manifest"]},
+      "algorithm": ["Join all six records by run ID, recipient life, sample ordinal, step ordinal, call role, and call ordinal.", "Recompute rendered input and input/output token bindings, require one controller successor, and require the dispatch reference to occur once in the complete run manifest."],
+      "output_shape": {"fields": ["joined_dispatch_key:ARRAY", "rendered_input_sha256:STRING", "closure_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T04", "source_bindings": ["allowed_dispatch_registry.json#/rows", "contracts.schema.json#/$defs/model_dispatch_receipt", "contracts.schema.json#/$defs/controller_transition_receipt", "contracts.schema.json#/$defs/complete_run_manifest"]
+    },
+
+    {
+      "law_id": "T05_CAUSAL_NUMERIC_V1", "test_id": "PPC5R9_T05", "suite_id": "CAUSAL_NUMERIC", "entry_count": 9,
+      "input_table": {"name": "provider_numeric_facts", "columns": ["candidate_ids", "response_token_ids", "token_logprob_fp32_bits", "quantization_scale", "provider_call_status"]},
+      "algorithm": ["Reject nonfinite IEEE-754 binary32 values and token-sequence mismatch.", "Compute each candidate mean response log probability from the exact binary32 values, quantize by integer half-even rounding at the supplied scale, and choose maximum with candidate-ID lexical tie-break.", "An empty table yields NOT_FOUND; provider missing yields null raw value and MISSING_NO_RETRY."],
+      "output_shape": {"fields": ["status:STRING", "selected_candidate_id:STRING_OR_NULL", "quantized_scores:ARRAY[INTEGER]", "tie_break_used:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T05", "source_bindings": ["assay_contract.json#/assays/0/fixed", "status_contract.json#/rules/3", "contracts.schema.json#/$defs/operation_result_receipt"]
+    },
+    {
+      "law_id": "T05_CAUSAL_MOUNT_V1", "test_id": "PPC5R9_T05", "suite_id": "CAUSAL_MOUNT", "entry_count": 2,
+      "input_table": {"name": "provider_mount_facts", "columns": ["mounted_artifact_ref", "artifact_table", "allowed_null"]},
+      "algorithm": ["For null mount require allowed_null and expose no artifact bytes.", "For non-null mount resolve exactly one hash-valid adapter artifact with the registered mount role and interface; reject substitution."],
+      "output_shape": {"fields": ["mount_class:STRING", "resolved_artifact_sha256:STRING_OR_NULL", "mount_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T05", "source_bindings": ["assay_contract.json#/assays/0/varies_only", "assay_contract.json#/wrong_life/artifact_check", "object_inventory.json#/objects"]
+    },
+    {
+      "law_id": "T05_DESCRIPTIVE_PROVIDER_V1", "test_id": "PPC5R9_T05", "suite_id": "DESCRIPTIVE_PROVIDER", "entry_count": 10,
+      "input_table": {"name": "descriptive_provider_facts", "columns": ["arm", "provider_call_status", "selected_candidate_id", "raw_scores", "preassignment_render_size", "context_capacity"]},
+      "algorithm": ["Reduce RAW_RAG, FULL_CONTEXT, and EXPLICIT_GRAPH independently for FOUND, NOT_FOUND, and PROVIDER_MISSING.", "Treat FULL_CONTEXT preassignment overflow as its own construction failure.", "Never copy descriptive provider fields into the causal provider table, gate, or intervention choice."],
+      "output_shape": {"fields": ["arm:STRING", "status:STRING", "selected_candidate_id:STRING_OR_NULL", "descriptive_only:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T05", "source_bindings": ["status_contract.json#/rules/3", "status_contract.json#/rules/9", "visibility_contract.json", "assay_contract.json#/unlisted_difference"]
+    },
+    {
+      "law_id": "T05_TYPED_REGISTRY_V1", "test_id": "PPC5R9_T05", "suite_id": "TYPED_REGISTRY", "entry_count": 13,
+      "input_table": {"name": "semantic_registry_vector", "columns": ["registry_kind", "artifact_type", "contract", "schema_version", "ordered_row_keys", "rows", "self_hash"]},
+      "algorithm": ["For each of the 13 registered kinds resolve the top-level schema by artifact_type, validate canonical bytes and self hash, and compare ordered_row_keys with row keys in order and as a set.", "Require artifact_type to occur exactly once in contract_schema_registry.top_level_artifact_types and require contract, schema_version, producer_role, registry_kind, lifecycle_state, and architecture_id to satisfy its resolved schema consts."],
+      "output_shape": {"fields": ["registry_kind:STRING", "row_count:INTEGER", "ordered_key_sha256:STRING", "typed_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T05", "source_bindings": ["contract_schema_registry.json#/top_level_artifact_types", "object_inventory.json#/objects", "contracts.schema.json#/$defs"]
+    },
+
+    {
+      "law_id": "T06_PER_LIFE_CONTROL_V1", "test_id": "PPC5R9_T06", "suite_id": "PER_LIFE_CONTROL", "entry_count": 6,
+      "input_table": {"name": "per_life_control_facts", "columns": ["sample_ordinal", "recipient_life_id", "control_kind", "origin_ref", "destination_rows", "donor_rows", "matching_fields"]},
+      "algorithm": ["For each of two prospective lives construct AUTHENTIC, WRONG_LIFE, and BINDING_DERANGED rows.", "Wrong-life donors must be recipient-disjoint and exactly match every allowed field; binding-shuffled rows use the lexicographically first perfect derangement and preserve the registered multisets."],
+      "output_shape": {"fields": ["sample_ordinal:INTEGER", "control_kind:STRING", "row_count:INTEGER", "membership_sha256:STRING", "construction_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T06", "source_bindings": ["assay_contract.json#/d1a_corpus", "assay_contract.json#/binding_shuffle", "assay_contract.json#/wrong_life", "contracts.schema.json#/$defs/d1a_control_set_receipt"]
+    },
+    {
+      "law_id": "T06_MANIFEST_CLOSURE_V1", "test_id": "PPC5R9_T06", "suite_id": "MANIFEST_CLOSURE", "entry_count": 1,
+      "input_table": {"name": "d1a_manifest_facts", "columns": ["prospective_sample_ordinals", "control_receipt_refs", "control_receipts"]},
+      "algorithm": ["Sort refs by sample ordinal and require ordinals 0 and 1 exactly once.", "Compare the manifest life/sample multiset to the prospective membership and require one complete three-control receipt per life."],
+      "output_shape": {"fields": ["N:INTEGER", "control_receipt_count:INTEGER", "membership_equal:BOOLEAN", "manifest_sha256:STRING", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T06", "source_bindings": ["assay_contract.json#/d1a_corpus/per_life_control", "contracts.schema.json#/$defs/d1a_control_set_manifest"]
+    },
+    {
+      "law_id": "T06_ALLOWED_PROJECTION_V1", "test_id": "PPC5R9_T06", "suite_id": "ALLOWED_PROJECTION", "entry_count": 3,
+      "input_table": {"name": "arm_projection_facts", "columns": ["stage", "public_fields", "privileged_fields", "projected_fields"]},
+      "algorithm": ["At PROVIDER, WRITER, and TRAINER compute projected field names from the registered allowed visibility relation.", "Require projected_fields to equal the allowed set and its intersection with condition, source, match_keys, provider_scores, nonce, mapping to be empty."],
+      "output_shape": {"fields": ["stage:STRING", "allowed_fields:ARRAY[STRING]", "forbidden_taint_fields:ARRAY[STRING]", "projection_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T06", "source_bindings": ["visibility_registry.json#/cells", "visibility_contract.json", "assay_contract.json#/d1a_corpus/sterile"]
+    },
+    {
+      "law_id": "T06_POINTWISE_POWER_BINDING_V1", "test_id": "PPC5R9_T06", "suite_id": "POINTWISE_POWER_BINDING", "entry_count": 1,
+      "input_table": {"name": "control_power_binding", "columns": ["control_manifest_ref", "construction_support_rows", "sample_membership"]},
+      "algorithm": ["Resolve the exact D1A manifest once and require every support row to bind its hash and the same prospective membership.", "Reject a global or different-life manifest even if its aggregate counts match."],
+      "output_shape": {"fields": ["control_manifest_sha256:STRING", "support_row_count:INTEGER", "all_rows_bound:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T06", "source_bindings": ["analysis_contract.json#/power/construction_scope", "analysis_contract.json#/power/conditional_scope", "contracts.schema.json#/$defs/complete_run_construction_support_point"]
+    },
+    {
+      "law_id": "T06_PRE_ENTROPY_ANCESTRY_V1", "test_id": "PPC5R9_T06", "suite_id": "PRE_ENTROPY_ANCESTRY", "entry_count": 1,
+      "input_table": {"name": "d1a_ancestry_edges", "columns": ["design_lock_ref", "entropy_ref", "proposal_ref", "life_refs", "safety_registry_ref", "populated_run_lock_ref"]},
+      "algorithm": ["Resolve the exact typed edges and topologically sort design, entropy, proposal, life, safety resolution, populated lock.", "Require all control templates before entropy and all resolved identities after entropy but before populated lock; reject descendant backreferences."],
+      "output_shape": {"fields": ["topological_types:ARRAY[STRING]", "acyclic:BOOLEAN", "temporal_binding_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T06", "source_bindings": ["authority_contract.json#/stages", "assay_contract.json#/generator_sampling/temporal_order", "object_inventory.json#/objects"]
+    },
+
+    {
+      "law_id": "T07_FULL_PATH_V1", "test_id": "PPC5R9_T07", "suite_id": "FULL_PATH", "entry_count": 2,
+      "input_table": {"name": "full_path_worlds", "columns": ["path_length", "ordered_edge_ids", "observations_by_edge", "hidden_worlds", "correct_actions"]},
+      "algorithm": ["For length 2 and 3 enumerate all hidden worlds consistent with the complete ordered observation set.", "PASS iff the surviving worlds are nonempty and imply one identical unique correct action."],
+      "output_shape": {"fields": ["path_length:INTEGER", "surviving_world_count:INTEGER", "unique_action:STRING_OR_NULL", "sufficient:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T07", "source_bindings": ["assay_contract.json#/path_oracle/lengths", "assay_contract.json#/path_oracle/sufficiency", "contracts.schema.json#/$defs/path_construction_receipt"]
+    },
+    {
+      "law_id": "T07_PROPER_SUBSET_V1", "test_id": "PPC5R9_T07", "suite_id": "PROPER_SUBSET", "entry_count": 8,
+      "input_table": {"name": "proper_subset_worlds", "columns": ["path_length", "ascending_bitmask", "selected_observations", "hidden_worlds", "correct_actions"]},
+      "algorithm": ["Enumerate nonempty proper masks 01,10 for L2 and 001 through 110 excluding 000 and 111 for L3.", "For each mask enumerate consistent worlds; PASS iff at least two correct actions remain possible."],
+      "output_shape": {"fields": ["path_length:INTEGER", "bitmask:STRING", "surviving_world_count:INTEGER", "distinct_action_count:INTEGER", "insufficient:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T07", "source_bindings": ["assay_contract.json#/path_oracle/proper_subsets", "contracts.schema.json#/$defs/path_construction_receipt"]
+    },
+    {
+      "law_id": "T07_ALTERNATE_PATH_V1", "test_id": "PPC5R9_T07", "suite_id": "ALTERNATE_PATH", "entry_count": 2,
+      "input_table": {"name": "alternate_path_worlds", "columns": ["eligible_multigraph", "read_budget", "registered_edge_tuple", "observations_by_edge", "hidden_worlds"]},
+      "algorithm": ["Enumerate every simple directed path within the read budget ordered by length then edge-ID tuple.", "Evaluate sufficiency by full hidden-world enumeration and require exactly the registered tuple to be sufficient for each L2 and L3 micro-world."],
+      "output_shape": {"fields": ["path_length:INTEGER", "enumerated_paths:ARRAY[ARRAY[STRING]]", "sufficient_paths:ARRAY[ARRAY[STRING]]", "unique_registered_path:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T07", "source_bindings": ["assay_contract.json#/path_oracle/alternate_universe", "assay_contract.json#/path_oracle/gate_key"]
+    },
+    {
+      "law_id": "T07_EDGE_ARTIFACT_V1", "test_id": "PPC5R9_T07", "suite_id": "EDGE_ARTIFACT", "entry_count": 30,
+      "input_table": {"name": "edge_artifact_matrix", "columns": ["edge_key", "source_event", "cut_construction", "twin_construction", "sham_construction", "twin_parity_proof", "sham_parity_proof"]},
+      "algorithm": ["For five frozen edge keys resolve all six required artifact roles.", "Require distinct source preimages, CUT removes exactly the edge public bytes, TWIN changes the target causal bytes with preserved non-target parity, and SHAM changes only opaque identity while preserving causal bytes."],
+      "output_shape": {"fields": ["edge_key:ARRAY", "role:STRING", "artifact_sha256:STRING", "role_predicate_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T07", "source_bindings": ["assay_contract.json#/path_oracle/per_edge", "assay_contract.json#/path_oracle/source_disjointness", "contracts.schema.json#/$defs/path_construction_receipt"]
+    },
+    {
+      "law_id": "T07_CLOSURE_V1", "test_id": "PPC5R9_T07", "suite_id": "CLOSURE", "entry_count": 4,
+      "input_table": {"name": "path_closure_facts", "columns": ["path_root_ref", "artifact_table", "route_audit_refs", "provider_audit_refs", "model_view_refs", "visibility_edges", "inventory_edges"]},
+      "algorithm": ["Walk typed references backward from PATH_CONSTRUCTION_RECEIPT and emit the canonical edge sextuple producer_type, consumer_type, consumer_stage, field_path, role, ordinal/cardinality.", "Prove route/provider audit separation, model-view replay retention, concrete visibility role resolution, and inventory/schema edge equality.", "For recursive-operation fixtures apply exactly one of OMIT, EXTRA, REORDER, WRONG_TARGET to the ordered 53-edge path-root closure candidate and recompute closure."],
+      "output_shape": {"fields": ["typed_edges:ARRAY[OBJECT]", "typed_edge_count:INTEGER", "route_provider_split:BOOLEAN", "model_view_retained:BOOLEAN", "visibility_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T07", "source_bindings": ["object_inventory.json#/objects", "contracts.schema.json#/$defs/path_construction_receipt", "visibility_registry.json#/cells"]
+    },
+
+    {
+      "law_id": "T08_ROUTE_V1", "test_id": "PPC5R9_T08", "suite_id": "ROUTE", "entry_count": 4,
+      "input_table": {"name": "route_micro_worlds", "columns": ["assigned_target_key", "read_key", "matching_route_rows", "provider_public_bytes", "intervention_public_bytes", "queue_slots"]},
+      "algorithm": ["Count exact matches of read_key to the assigned target key before choosing an emission.", "TARGET with zero or multiple matches produces RUN_INVALID and public_continuation=false; TARGET with exactly one match produces INTERVENTION and public_continuation=true; NON_TARGET with zero matches produces OFF_PATH_AUTHENTIC_PASS_THROUGH from provider_public_bytes and public_continuation=true.", "No public continuation bytes may be constructed for an invalid route."],
+      "output_shape": {"fields": ["route_class:STRING", "match_count:INTEGER", "emission_kind:STRING_OR_NULL", "public_continuation:BOOLEAN", "public_bytes_sha256:STRING_OR_NULL", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["assay_contract.json#/path_oracle/off_path", "contracts.schema.json#/$defs/privileged_route_receipt", "contracts.schema.json#/$defs/intervention_emission_receipt"]
+    },
+    {
+      "law_id": "T08_INFLUENCE_RELATION_V1", "test_id": "PPC5R9_T08", "suite_id": "INFLUENCE_RELATION", "entry_count": 7,
+      "input_table": {"name": "paired_route_upstream_facts", "columns": ["perturbation_id", "left_assigned_target_key", "right_assigned_target_key", "left_read_key", "right_read_key", "left_matching_route_rows", "right_matching_route_rows", "left_provider_response_bytes", "right_provider_response_bytes", "left_intervention_payload_bytes", "right_intervention_payload_bytes", "left_condition", "right_condition", "left_source", "right_source", "left_match_keys", "right_match_keys", "left_provider_scores", "right_provider_scores", "left_nonce", "right_nonce", "left_mapping", "right_mapping", "static_context_bytes"], "one_field_pairs": ["emitted_public_bytes", "condition", "source", "match_keys", "provider_scores", "nonce", "mapping"], "perturbation_source_for_emitted_public_bytes": "intervention_payload_bytes"},
+      "algorithm": ["For each pair require byte equality of every upstream fact except the one perturbation source named by perturbation_id; no emission, public-state, model-view, behavior, terminal, or discard value is accepted as input.", "Independently run ROUTE_V1, construct sanitized emission solely from the selected provider_response_bytes or intervention_payload_bytes, install public_state.last_read, render model view, and render behavior input.", "Changing intervention_payload_bytes in the emitted_public_bytes case must change public_state.last_read and its dependent model-view bytes.", "Changing condition, source, match_keys, provider_scores, nonce, or mapping must not change sanitized emission, public state, model view, or behavior input; any difference is PUBLIC_VIEW_INFLUENCE failure."],
+      "output_shape": {"fields": ["changed_field:STRING", "input_one_field_diff:BOOLEAN", "emission_changed:BOOLEAN", "public_state_changed:BOOLEAN", "model_view_changed:BOOLEAN", "behavior_input_changed:BOOLEAN", "law_satisfied:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["assay_contract.json#/assays/1/varies_only", "assay_contract.json#/path_oracle/off_path", "visibility_registry.json#/cells", "contracts.schema.json#/$defs/sanitized_response_projection", "contracts.schema.json#/$defs/model_view"]
+    },
+    {
+      "law_id": "T08_QUEUE_OUTCOME_V1", "test_id": "PPC5R9_T08", "suite_id": "QUEUE_OUTCOME", "entry_count": 4,
+      "input_table": {"name": "queue_slot_upstream_facts", "columns": ["ordered_slots", "slot_state", "route_match_count", "route_target_class", "provider_call_status", "schedule_state"]},
+      "algorithm": ["Derive route validity and terminality from route_match_count, route_target_class, provider_call_status, and schedule_state; terminal_intent and discard events are outputs and are forbidden in input.", "Reduce QUEUED_VALID, QUEUED_INVALID, REJECTED, and TWO_OUTSTANDING_INVALID from those upstream facts.", "Each identified outstanding slot must receive exactly one terminal consume-or-discard effect and no other slot may be changed.", "For TWO_OUTSTANDING with ORDERED_DISCARD require slot 0 discard_count=1 and slot 1 discard_count=1; do not reduce this to one total effect."],
+      "output_shape": {"fields": ["slot_effects:ARRAY[OBJECT{slot_id,ordinal,effect,count}]", "all_outstanding_finalized:BOOLEAN", "exactly_once_per_slot:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["contracts.schema.json#/$defs/queue_slot_receipt", "contracts.schema.json#/$defs/queue_effect_receipt", "contracts.schema.json#/$defs/queue_finalization_receipt", "controller_registry.json#/rows"]
+    },
+    {
+      "law_id": "T08_OPAQUE_ALLOCATION_V1", "test_id": "PPC5R9_T08", "suite_id": "OPAQUE_ALLOCATION", "entry_count": 1,
+      "input_table": {"name": "opaque_allocation_facts", "columns": ["domain_tag", "run_id", "sample_ordinal", "path_template_id", "edge_position", "edge_id", "entropy_slice"]},
+      "algorithm": ["Concatenate the frozen domain-separated length-prefixed preimage in field order and hash once with SHA-256.", "Require exactly 32 bytes, uniqueness within the run, and no dependence on condition, source, match keys, provider scores, mapping, or outcome."],
+      "output_shape": {"fields": ["opaque_id_hex:STRING", "preimage_sha256:STRING", "unique_in_run:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["contracts.schema.json#/$defs/opaque_lineage_allocation_receipt", "assay_contract.json#/path_oracle/gate_key"]
+    },
+    {
+      "law_id": "T08_AUDIT_SPLIT_V1", "test_id": "PPC5R9_T08", "suite_id": "AUDIT_SPLIT", "entry_count": 2,
+      "input_table": {"name": "d1b_audit_facts", "columns": ["route_lineage_rows", "provider_rows", "route_receipt_refs", "provider_receipt_refs"]},
+      "algorithm": ["Build ROUTE_LINEAGE and PROVIDER audit vectors independently, each sorted by its registered ordinal.", "Reject missing, duplicate, cross-typed, or cross-populated rows and reject either audit containing fields assigned exclusively to the other."],
+      "output_shape": {"fields": ["audit_kind:STRING", "row_count:INTEGER", "ordered_rows_sha256:STRING", "split_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["contracts.schema.json#/$defs/route_lineage_audit_receipt", "contracts.schema.json#/$defs/provider_audit_receipt", "visibility_registry.json#/cells"]
+    },
+    {
+      "law_id": "T08_DISPATCH_CLOSURE_V1", "test_id": "PPC5R9_T08", "suite_id": "DISPATCH_CLOSURE", "entry_count": 1,
+      "input_table": {"name": "d1b_dispatch_facts", "columns": ["common_seed_entry", "model_view", "dispatch_receipt", "transition_receipt", "route_receipt", "emission_receipt", "complete_run_manifest"]},
+      "algorithm": ["Join all records on the frozen 23 dispatch fields and verify rendered input and token IDs from bytes.", "Require the route/emission pair to precede the model view, transition to consume the same dispatch, and the complete manifest to contain the dispatch exactly once."],
+      "output_shape": {"fields": ["dispatch_field_count:INTEGER", "joined_key_sha256:STRING", "typed_chain_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T08", "source_bindings": ["allowed_dispatch_registry.json#/rows", "contracts.schema.json#/$defs/model_dispatch_receipt", "contracts.schema.json#/$defs/controller_transition_receipt", "contracts.schema.json#/$defs/complete_run_manifest"]
+    },
+
+    {
+      "law_id": "T09_DREAM_CONTEXT_PROGRAM_V1", "test_id": "PPC5R9_T09", "suite_id": "DREAM_CONTEXT_PROGRAM", "entry_count": 60,
+      "input_table": {"name": "dream_context_program_facts", "columns": ["dream_status", "context_policy", "read_slot_count", "terminal_observation_class", "dependency_presence", "raw_endpoint"]},
+      "algorithm": ["Enumerate the closed 5 by 3 by 2 by 2 fact product and apply the status reducer, not the mnemonic coordinates.", "Propagate missingness only to a policy consuming the missing DREAM dependency; preserve fixed read capacity for empty, abstain, or invalid policy outcomes; map action/no-action to numeric endpoint or zero as registered."],
+      "output_shape": {"fields": ["status:STRING", "continuation:STRING", "observation_kind:STRING", "observation_value:INTEGER_OR_NULL", "missing:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T09", "source_bindings": ["status_contract.json#/dream_dependency_registry", "status_contract.json#/rules", "status_contract.json#/dream_capacity_rule"]
+    },
+    {
+      "law_id": "T09_STATUS_RULE_V1", "test_id": "PPC5R9_T09", "suite_id": "STATUS_RULE", "entry_count": 43,
+      "input_table": {"name": "raw_status_facts", "columns": ["assay_id", "arm", "stage", "raw_result", "integrity_flags", "required_dependency_presence", "raw_endpoint"]},
+      "algorithm": ["Select all status_contract rules whose applies predicate matches the facts and whose raw_results contains raw_result.", "Require exactly one selected rule after precedence; project its status, continuation, observation, missing, and claim_blocker fields verbatim except for computing the named numeric observation from raw_endpoint."],
+      "output_shape": {"fields": ["rule_id:STRING", "status:STRING", "continuation:STRING", "observation:STRING_OR_NUMBER_OR_NULL", "missing:BOOLEAN", "claim_blocker:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T09", "source_bindings": ["status_contract.json#/rules", "status_registry.json#/rows", "status_contract.json#/completeness"]
+    },
+    {
+      "law_id": "T09_STATUS_PRECEDENCE_V1", "test_id": "PPC5R9_T09", "suite_id": "STATUS_PRECEDENCE", "entry_count": 15,
+      "input_table": {"name": "status_precedence_pairs", "columns": ["left_status_class", "right_status_class", "active_left", "active_right"]},
+      "algorithm": ["Index both active status classes in the frozen six-class status precedence vector.", "Choose the lower index; reject absent, duplicate, or unknown classes. Evaluate all 15 unordered pairs."],
+      "output_shape": {"fields": ["selected_status_class:STRING", "selected_index:INTEGER", "suppressed_status_class:STRING", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T09", "source_bindings": ["status_contract.json#/precedence", "status_contract.json#/endpoint_missing_dominance"]
+    },
+
+    {
+      "law_id": "T10_ROOT_STATUS_V1", "test_id": "PPC5R9_T10", "suite_id": "ROOT_STATUS", "entry_count": 13,
+      "input_table": {"name": "root_status_facts", "columns": ["root_policy", "dream_status", "selected_root_count", "admitted_root_count", "dependency_presence"]},
+      "algorithm": ["For DREAM_TO_SLEEP reduce all five DREAM statuses; for RECENCY_TO_SLEEP and HASH_PERMUTED_TO_SLEEP reduce the four applicable nonmissing statuses.", "Zero selected maps NO_ROOTS_SELECTED; positive selected and zero admitted maps NO_ADMITTED_ROOTS; positive admitted maps ROOTS_ADMITTED; missing only propagates through consumed dependencies."],
+      "output_shape": {"fields": ["root_policy:STRING", "root_status:STRING", "selected_count:INTEGER", "admitted_count:INTEGER", "continuation:STRING", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T10", "source_bindings": ["status_contract.json#/projection_aggregation", "status_contract.json#/dream_dependency_registry", "status_contract.json#/rules/5"]
+    },
+    {
+      "law_id": "T10_REACHABLE_D1D_PIPELINE_V1", "test_id": "PPC5R9_T10", "suite_id": "REACHABLE_D1D_PIPELINE", "entry_count": 24,
+      "input_table": {"name": "d1d_pipeline_facts", "columns": ["root_policy", "stage", "stage_input_refs", "stage_status", "resource_events", "privileged_fields_present"]},
+      "algorithm": ["For each of three policies walk ROOT, WRITER, CORPUS, TRAINER, VALIDATION, PUBLICATION, PROVIDER, BEHAVIOR in order using typed same-run references.", "Apply the registered policy branch at each stage, preserve natural downstream failures and resources, forbid post-treatment matching, and forbid six privileged route fields at writer/trainer."],
+      "output_shape": {"fields": ["root_policy:STRING", "stage:STRING", "stage_status:STRING", "continuation:STRING", "published_adapter:BOOLEAN", "resource_event_ids:ARRAY[STRING]", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T10", "source_bindings": ["assay_contract.json#/assays/3", "status_contract.json#/rules/5", "status_contract.json#/rules/6", "analysis_contract.json#/resource_accounting"]
+    },
+    {
+      "law_id": "T10_DISPATCH_CHAIN_V1", "test_id": "PPC5R9_T10", "suite_id": "DISPATCH_CHAIN", "entry_count": 3,
+      "input_table": {"name": "d1d_dispatch_chains", "columns": ["root_policy", "common_seed_entries", "model_views", "dispatch_receipts", "transition_receipts", "manifest_refs"]},
+      "algorithm": ["For each root policy join the full ordered dispatch sequence on all 23 binding fields.", "Require each declared call exactly once, every input view to be derivable before dispatch, every transition after dispatch, and no unregistered extra call."],
+      "output_shape": {"fields": ["root_policy:STRING", "dispatch_count:INTEGER", "ordered_dispatch_sha256:STRING", "closure_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T10", "source_bindings": ["allowed_dispatch_registry.json#/rows", "contracts.schema.json#/$defs/model_dispatch_receipt", "contracts.schema.json#/$defs/complete_run_manifest"]
+    },
+    {
+      "law_id": "T10_RESOURCE_V1", "test_id": "PPC5R9_T10", "suite_id": "RESOURCE", "entry_count": 5,
+      "input_table": {"name": "resource_event_facts", "columns": ["cell_id", "event_id", "shared_event_id", "resource_kind", "integer_amount", "causal_dependency", "policy"]},
+      "algorithm": ["Inclusive totals sum every causal dependency per cell; marginal totals count only cell-incremental events; physical total deduplicates exact event_id/shared_event_id.", "Verify permutation invariance and componentwise conservation using integer arithmetic; never feed a resource value into efficacy or adjustment."],
+      "output_shape": {"fields": ["inclusive_by_cell:OBJECT", "marginal_by_cell:OBJECT", "physical_total_by_kind:OBJECT", "permutation_invariant:BOOLEAN", "conserved:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T10", "source_bindings": ["analysis_contract.json#/resource_accounting", "resource_registry.json#/rows", "contracts.schema.json#/$defs/resource_accounting_receipt"]
+    },
+    {
+      "law_id": "T10_D1D_QUALIFICATION_V1", "test_id": "PPC5R9_T10", "suite_id": "D1D_QUALIFICATION", "entry_count": 1,
+      "input_table": {"name": "d1d_claim_render_facts", "columns": ["claim_literal_bytes", "resource_sentence_bytes", "fixed_qualification_bytes"]},
+      "algorithm": ["Concatenate the three byte strings in their frozen order with the frozen separators.", "Require the resource sentence immediately adjacent to the claim and the fixed qualification immediately after it; reject paraphrase, omission, or reordered bytes."],
+      "output_shape": {"fields": ["rendered_bytes_sha256:STRING", "byte_length:INTEGER", "adjacency_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T10", "source_bindings": ["analysis_contract.json#/resource_accounting/d1d_required_qualification", "analysis_contract.json#/release_qualification", "claim_registry.json#/claim_renderings"]
+    },
+
+    {
+      "law_id": "T11_LIFE_GATE_AGGREGATE_V1", "test_id": "PPC5R9_T11", "suite_id": "LIFE_GATE_AGGREGATE", "entry_count": 8,
+      "input_table": {"name": "life_gate_lower_units", "columns": ["prospective_life_key", "required_lower_unit_keys", "treatment_observations", "control_observations", "integrity_clean_no_action"]},
+      "algorithm": ["For N=1 and N=2 sort lower units lexicographically and require exact required membership.", "Compute equal-weight treatment/control means and their canonical difference; any missing required arm gives null difference, Z=0, missing=true; clean no-action is observed numeric zero."],
+      "output_shape": {"fields": ["N:INTEGER", "treatment_mean:RATIONAL_OR_NULL", "control_mean:RATIONAL_OR_NULL", "difference:RATIONAL_OR_NULL", "success_indicator:INTEGER", "missing:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/within_life_reduction", "analysis_contract.json#/canonical_rational_validator", "contracts.schema.json#/$defs/life_gate_aggregate"]
+    },
+    {
+      "law_id": "T11_PAIRED_BOUNDARY_V1", "test_id": "PPC5R9_T11", "suite_id": "PAIRED_BOUNDARY", "entry_count": 4,
+      "input_table": {"name": "paired_boundary_facts", "columns": ["difference", "margin", "required_arm_present"]},
+      "algorithm": ["Validate canonical rationals and compare difference strictly greater than margin by cross multiplication.", "Below and equal fail, above passes, and required-arm missing forces Z=0 regardless of numeric placeholders."],
+      "output_shape": {"fields": ["success_indicator:INTEGER", "strict_direction_pass:BOOLEAN", "missing:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/paired_gate/success_indicator", "analysis_contract.json#/exact_numeric_encoding/effect_tie"]
+    },
+    {
+      "law_id": "T11_SAFETY_V1", "test_id": "PPC5R9_T11", "suite_id": "SAFETY", "entry_count": 6,
+      "input_table": {"name": "safety_trial_facts", "columns": ["endpoint_id", "provider_status", "observed_event"]},
+      "algorithm": ["For FALSE_SELECTION and NOT_FOUND map NO_EVENT to 0 and EVENT to 1.", "A missing required provider output maps both safety endpoints to adverse_event=1 and missing_event=1; do not retry or impute."],
+      "output_shape": {"fields": ["endpoint_id:STRING", "adverse_event:INTEGER", "missing_event:INTEGER", "observed:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/one_sample_safety_gate/event", "status_contract.json#/rules/3"]
+    },
+    {
+      "law_id": "T11_MISSINGNESS_V1", "test_id": "PPC5R9_T11", "suite_id": "MISSINGNESS", "entry_count": 3,
+      "input_table": {"name": "missingness_count_facts", "columns": ["N", "missing_events", "ceiling"]},
+      "algorithm": ["Validate 0 <= missing_events <= N and canonical ceiling.", "Compute exact observed missing rate and the lower-tail binomial p-value for ZERO, INTERIOR_OR_EQUAL_CEILING, and N boundary cases; equality to ceiling fails."],
+      "output_shape": {"fields": ["observed_rate:RATIONAL", "p_value:RATIONAL", "strict_below_ceiling:BOOLEAN", "gate_pass:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/missingness_gate", "analysis_contract.json#/exact_numeric_encoding/ceiling_tie"]
+    },
+    {
+      "law_id": "T11_CP_BRACKET_V1", "test_id": "PPC5R9_T11", "suite_id": "CP_BRACKET", "entry_count": 6,
+      "input_table": {"name": "cp_bracket_facts", "columns": ["direction", "N", "count", "tail_alpha", "decimal_scale"]},
+      "algorithm": ["Use integer binomial-tail arithmetic and bisection over decimal-grid rationals at the fixed scale.", "For lower bound use zero when count=0; for upper bound use one when count=N; otherwise emit floor and ceil neighbors and verify the defining tail inequalities on both sides."],
+      "output_shape": {"fields": ["direction:STRING", "floor:RATIONAL", "ceil:RATIONAL", "published_endpoint:RATIONAL", "left_inequality:BOOLEAN", "right_inequality:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/exact_numeric_encoding/cp_bracket", "analysis_contract.json#/paired_gate/bound", "analysis_contract.json#/one_sample_safety_gate/bound"]
+    },
+    {
+      "law_id": "T11_IUT_CRITICAL_COUNT_V1", "test_id": "PPC5R9_T11", "suite_id": "IUT_CRITICAL_COUNT", "entry_count": 9,
+      "input_table": {"name": "critical_count_facts", "columns": ["gate_kind", "N", "count", "margin_or_ceiling", "null_probability", "alpha", "cp_tail_alpha"]},
+      "algorithm": ["Enumerate counts 0 through N and retain exactly those satisfying the complete paired, safety, or missingness conjunction: p threshold inclusive and effect/rate and CP direction strict.", "For each gate kind test the count immediately below, at, and above the first retained critical count."],
+      "output_shape": {"fields": ["gate_kind:STRING", "critical_counts:ARRAY[INTEGER]", "tested_count:INTEGER", "in_critical_set:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/power/per_gate", "analysis_contract.json#/paired_gate/release", "analysis_contract.json#/one_sample_safety_gate/release"]
+    },
+    {
+      "law_id": "T11_HOLM_PERMUTATION_V1", "test_id": "PPC5R9_T11", "suite_id": "HOLM_PERMUTATION", "entry_count": 24,
+      "input_table": {"name": "holm_strict_order_facts", "columns": ["claim_id", "p_value", "alpha"]},
+      "algorithm": ["Validate four distinct claim IDs and exact rational p-values, sort by ascending p then claim_id lexical tie-break.", "At sorted index j=1..4 compare p <= alpha/(5-j), continuing only after rejection. Evaluate all 24 strict rank orders."],
+      "output_shape": {"fields": ["steps:ARRAY[OBJECT{index,claim_id,p_value,divisor,threshold,reject,stop}]", "family_pass:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/family/procedure", "analysis_contract.json#/family/thresholds"]
+    },
+    {
+      "law_id": "T11_HOLM_TIE_V1", "test_id": "PPC5R9_T11", "suite_id": "HOLM_TIE", "entry_count": 1,
+      "input_table": {"name": "holm_tie_facts", "columns": ["claim_id", "equal_p_value", "alpha"]},
+      "algorithm": ["Require four equal canonical p-values and sort exclusively by claim_id lexical order.", "Apply the same step-down thresholds without perturbation or unstable input-order dependence."],
+      "output_shape": {"fields": ["ordered_claim_ids:ARRAY[STRING]", "steps:ARRAY[OBJECT]", "tie_break_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/family/procedure", "claim_registry.json#/ordered_row_keys"]
+    },
+    {
+      "law_id": "T11_HOLM_STOP_V1", "test_id": "PPC5R9_T11", "suite_id": "HOLM_STOP", "entry_count": 5,
+      "input_table": {"name": "holm_stop_facts", "columns": ["ordered_claim_ids", "ordered_p_values", "alpha"]},
+      "algorithm": ["Walk sorted steps and stop at the first p greater than its threshold.", "Encode stop positions 0,1,2,3 or NONE exactly; all later reject flags must be false after a stop."],
+      "output_shape": {"fields": ["stop_position:INTEGER_OR_NULL", "reject_flags:ARRAY[BOOLEAN]", "family_pass:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/family/thresholds", "analysis_contract.json#/assay_decision"]
+    },
+    {
+      "law_id": "T11_CLAIM_BYTES_V1", "test_id": "PPC5R9_T11", "suite_id": "CLAIM_BYTES", "entry_count": 5,
+      "input_table": {"name": "claim_render_facts", "columns": ["claim_id", "claim_literal_bytes", "qualification_bytes", "component_claim_ids", "gate_refs"]},
+      "algorithm": ["Resolve each of five claim rows by claim_id and recompute its rendering from exact literal plus required qualification bytes.", "Require byte equality with claim_renderings and exact component/gate adjacency; reject synonyms or strengthened scope."],
+      "output_shape": {"fields": ["claim_id:STRING", "rendered_bytes_sha256:STRING", "qualification_present:BOOLEAN", "literal_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["claim_registry.json#/rows", "claim_registry.json#/claim_renderings", "analysis_contract.json#/release_qualification"]
+    },
+    {
+      "law_id": "T11_CONSTRUCTION_PROOF_V1", "test_id": "PPC5R9_T11", "suite_id": "CONSTRUCTION_PROOF", "entry_count": 2,
+      "input_table": {"name": "construction_support_facts", "columns": ["support_rows", "support_mass", "partition_cell", "construction_success", "conditional_power"]},
+      "algorithm": ["For FINITE_SUPPORT require a complete duplicate-free finite support with exact rational mass summing to one.", "For CONSERVATIVE_PARTITION require disjoint cells covering the registered scope; failed and uncovered mass contributes exactly zero."],
+      "output_shape": {"fields": ["proof_kind:STRING", "covered_mass:RATIONAL", "uncovered_mass:RATIONAL", "partition_disjoint:BOOLEAN", "proof_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/power/construction_scope", "analysis_contract.json#/power/overall_lower_bound", "contracts.schema.json#/$defs/complete_run_construction_support_point"]
+    },
+    {
+      "law_id": "T11_POWER_V1", "test_id": "PPC5R9_T11", "suite_id": "POWER", "entry_count": 6,
+      "input_table": {"name": "power_support_facts", "columns": ["gate_critical_sets", "per_gate_power", "support_rows", "support_mass", "construction_success"]},
+      "algorithm": ["Compute each conditional lower bound as max(0,1-sum_g(1-power_g)) using exact rationals.", "Compute unconditional joint power as the support-mass weighted sum of successful row bounds with failures/uncovered mass zero.", "Reject any substituted global product or independence multiplication; preserve all-success, mixed-failure, floor-zero, uncovered-zero boundaries."],
+      "output_shape": {"fields": ["conditional_bounds:ARRAY[RATIONAL]", "unconditional_lower_bound:RATIONAL", "minimum_met:BOOLEAN", "substitution_rejected:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/power/lower_bound", "analysis_contract.json#/power/overall_lower_bound", "analysis_contract.json#/power/uniform_shortcut"]
+    },
+    {
+      "law_id": "T11_SAFETY_TEMPLATE_RESOLUTION_V1", "test_id": "PPC5R9_T11", "suite_id": "SAFETY_TEMPLATE_RESOLUTION", "entry_count": 1,
+      "input_table": {"name": "safety_template_facts", "columns": ["prospective_sample_ordinals", "template_keys", "resolved_trial_refs", "life_ids"]},
+      "algorithm": ["Resolve each pre-entropy safety template to exactly one trial in each of two lives without changing membership.", "Require a one-to-one mapping, same-run typed refs, no duplicate target, and resolution before populated lock."],
+      "output_shape": {"fields": ["resolved_pairs:ARRAY[OBJECT]", "one_to_one:BOOLEAN", "membership_preserved:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T11", "source_bindings": ["analysis_contract.json#/one_sample_safety_gate/unit", "analysis_contract.json#/gate_registry_rule/membership", "contracts.schema.json#/$defs/resolved_d1a_safety_trial_registry"]
+    },
+
+    {
+      "law_id": "T12_VISIBILITY_CELL_V1", "test_id": "PPC5R9_T12", "suite_id": "VISIBILITY_CELL", "entry_count": 195,
+      "input_table": {"name": "visibility_cell_vector", "columns": ["information_item", "consumer_stage", "allowed", "concrete_role", "rationale"]},
+      "algorithm": ["Require the information-item-major Cartesian product of all 13 items and 15 stages, exactly 195 ordered rows.", "For every row recompute allowed/concrete_role from visibility_contract capability laws; forbidden rows must have no concrete role and cannot influence the consumer."],
+      "output_shape": {"fields": ["ordered_cells:ARRAY[OBJECT]", "cell_count:INTEGER", "allowed_edge_count:INTEGER", "forbidden_cell_count:INTEGER", "product_complete:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["visibility_registry.json#/cells", "visibility_contract.json", "contracts.schema.json#/$defs/visibility_registry"]
+    },
+    {
+      "law_id": "T12_TYPED_SCHEMA_EDGE_V1", "test_id": "PPC5R9_T12", "suite_id": "TYPED_SCHEMA_EDGE", "entry_count": 363,
+      "input_table": {"name": "schema_and_inventory_bytes", "columns": ["contracts_schema_bytes", "object_inventory_bytes"]},
+      "algorithm": ["Recursively walk every top-level artifact schema through $ref, properties, items, prefixItems, allOf, anyOf, and oneOf; emit each x-artifact-ref as producer_type, consumer_type, consumer_stage, field_path, role, ordinal, cardinality.", "Independently read object_inventory reference_bindings and canonicalize the same sextuples.", "Require exactly 363 unique ordered edges and byte-identical set equality; aliases and stale paths fail."],
+      "output_shape": {"fields": ["schema_edges:ARRAY[OBJECT]", "inventory_edges:ARRAY[OBJECT]", "edge_count:INTEGER", "sets_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["contracts.schema.json#/$defs", "object_inventory.json#/objects", "contract_schema_registry.json#/top_level_artifact_types"]
+    },
+    {
+      "law_id": "T12_OBJECT_TYPE_V1", "test_id": "PPC5R9_T12", "suite_id": "OBJECT_TYPE", "entry_count": 84,
+      "input_table": {"name": "top_level_object_vector", "columns": ["type", "contract", "schema_ref", "producer_role", "reference_bindings"]},
+      "algorithm": ["Extract all schemas marked x-top-level-artifact and map artifact_type const to schema name and contract const.", "Require exactly 84 unique types and exact equality with object_inventory objects ordered by type; validate schema_ref and producer_role for each."],
+      "output_shape": {"fields": ["object_types:ARRAY[STRING]", "object_count:INTEGER", "inventory_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["contracts.schema.json#/$defs", "object_inventory.json#/objects", "object_inventory.json#/closed_world"]
+    },
+    {
+      "law_id": "T12_TYPED_REGISTRY_V1", "test_id": "PPC5R9_T12", "suite_id": "TYPED_REGISTRY", "entry_count": 13,
+      "input_table": {"name": "all_registry_bytes", "columns": ["registry_kind", "artifact_type", "contract", "schema_version", "producer_role", "ordered_row_keys", "rows", "self_hash"]},
+      "algorithm": ["Validate each registry under its exact schema and recompute self hash.", "Require artifact_type to occur exactly once in contract_schema_registry.top_level_artifact_types and require contract, schema_version, producer_role, registry_kind, lifecycle_state, architecture_id, ordered_row_keys, and row-key set equality; emit one row for each of 13 kinds."],
+      "output_shape": {"fields": ["registries:ARRAY[OBJECT{registry_kind,artifact_type,contract,row_count,self_hash}]", "registry_count:INTEGER", "all_typed:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["contract_schema_registry.json#/top_level_artifact_types", "object_inventory.json#/objects", "contracts.schema.json#/$defs"]
+    },
+    {
+      "law_id": "T12_TRANSITION_CAUSE_V1", "test_id": "PPC5R9_T12", "suite_id": "TRANSITION_CAUSE", "entry_count": 7,
+      "input_table": {"name": "transition_cause_rows", "columns": ["ordinal", "cause", "producer_role", "consumer_stages", "content_sha256"]},
+      "algorithm": ["Require ordinals 0 through 6, exact cause_order equality, unique cause names, and content_sha256 recomputation over each row without its hash.", "Resolve each cause role at every declared consumer and reject unregistered causes."],
+      "output_shape": {"fields": ["causes:ARRAY[OBJECT]", "cause_count:INTEGER", "order_valid:BOOLEAN", "role_resolution_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["transition_cause_registry.json#/cause_order", "transition_cause_registry.json#/rows", "object_inventory.json#/objects"]
+    },
+    {
+      "law_id": "T12_PREFLIGHT_DENIAL_V1", "test_id": "PPC5R9_T12", "suite_id": "PREFLIGHT_DENIAL", "entry_count": 8,
+      "input_table": {"name": "preflight_candidate_facts", "columns": ["authority_ref", "authority_age", "run_id", "artifact_type", "role", "ordinal", "cardinality", "dispatch_key", "allowed_dispatch_rows"]},
+      "algorithm": ["Evaluate MISSING_AUTHORITY, STALE_AUTHORITY, WRONG_RUN, WRONG_TYPE, WRONG_ROLE, WRONG_ORDER, WRONG_CARDINALITY, UNALLOWED_DISPATCH in that order.", "On any denial emit permit=false and launch_process=false; never construct a runtime process or dispatch receipt."],
+      "output_shape": {"fields": ["permit:BOOLEAN", "denial_code:STRING_OR_NULL", "launch_process:BOOLEAN", "checked_dispatch_key:ARRAY", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["authority_contract.json#/preflight_rule", "allowed_dispatch_registry.json#/rows", "contracts.schema.json#/$defs/dispatch_preflight_receipt"]
+    },
+    {
+      "law_id": "T12_THREE_WAY_EQUALITY_V1", "test_id": "PPC5R9_T12", "suite_id": "THREE_WAY_EQUALITY", "entry_count": 1,
+      "input_table": {"name": "three_edge_sources", "columns": ["contracts_schema_bytes", "object_inventory_bytes", "visibility_registry_bytes"]},
+      "algorithm": ["Independently extract typed schema edges, inventory reference-binding edges, and allowed visibility capability edges using three separate parsers.", "Project all three to the shared canonical edge relation required by visibility_contract and require exact set equality; hashes alone are insufficient."],
+      "output_shape": {"fields": ["schema_projection:ARRAY[OBJECT]", "inventory_projection:ARRAY[OBJECT]", "visibility_projection:ARRAY[OBJECT]", "three_way_equal:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T12", "source_bindings": ["contracts.schema.json#/$defs", "object_inventory.json#/objects", "visibility_registry.json#/cells", "visibility_contract.json"]
+    },
+
+    {
+      "law_id": "T13_FULL_TECHNICAL_PASS_V1", "test_id": "PPC5R9_T13", "suite_id": "FULL_TECHNICAL_PASS", "entry_count": 1,
+      "input_table": {"name": "t13_technical_package_facts", "columns": ["generic_t01_evidence", "populated_run_lock", "conformance_receipt", "fixture_spec", "fixture_set_equality_receipt", "fixture_executor_manifests", "static_seal_pair", "review_receipt", "advocate_receipt", "conditional_power_results", "joint_power_receipt", "artifact_table"]},
+      "algorithm": ["Resolve the T13 receipt schema and independently extract its 12 typed inbound reference edges from object_inventory; validate each actual reference against its field-path edge.", "Require narrow T01 evidence, exact populated-run ancestry, passing CPU conformance and fixture equality from two independent executors, typed seals, fresh independent review, non-overriding advocate, all conditional power rows, and passing joint power.", "Reject any human-run-ratification, PRE_MODEL authority, model/behavioral result, T14, PRECLAIM, release, export, or audit artifact in the technical input graph."],
+      "output_shape": {"fields": ["status:STRING", "verified_inbound_edges:ARRAY[OBJECT]", "inbound_edge_count:INTEGER", "technical_prerequisites:OBJECT", "forbidden_future_input_count:INTEGER", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T13", "source_bindings": ["authority_contract.json#/t13_rule", "contracts.schema.json#/$defs/t13_premodel_technical_gate", "object_inventory.json#/objects", "contracts.schema.json#/$defs/conformance_receipt"]
+    },
+    {
+      "law_id": "T13_PREFLIGHT_DENIAL_V1", "test_id": "PPC5R9_T13", "suite_id": "PREFLIGHT_DENIAL", "entry_count": 8,
+      "input_table": {"name": "t13_preflight_candidate_facts", "columns": ["premodel_authority_ref", "authority_age", "run_id", "artifact_type", "role", "ordinal", "cardinality", "dispatch_key", "allowed_dispatch_rows"]},
+      "algorithm": ["Recompute PRE_MODEL grant closure to human ratification and T13 before checking the dispatch.", "Apply the same eight exact denial branches and require permit=false, launch_process=false for each; T13 evidence alone can never authorize a process."],
+      "output_shape": {"fields": ["permit:BOOLEAN", "denial_code:STRING_OR_NULL", "launch_process:BOOLEAN", "authority_chain_valid:BOOLEAN", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T13", "source_bindings": ["authority_contract.json#/preflight_rule", "authority_contract.json#/t13_rule", "allowed_dispatch_registry.json#/rows", "contracts.schema.json#/$defs/dispatch_preflight_receipt"]
+    },
+    {
+      "law_id": "T13_AUTHORITY_TOPOLOGY_V1", "test_id": "PPC5R9_T13", "suite_id": "AUTHORITY_TOPOLOGY", "entry_count": 14,
+      "input_table": {"name": "authority_and_receipt_schema_facts", "columns": ["authority_registry_rows", "authority_contract_stages", "contracts_schema_bytes", "object_inventory_bytes"]},
+      "topology_contract": {
+        "exact_stage_order": ["ARCHITECTURE_RATIFICATION", "PRE_ENTROPY_DESIGN", "ENTROPY_ACQUISITION", "PROPOSAL_REALIZATION", "LIFE_REALIZATION", "SAFETY_RESOLUTION", "POPULATED_RUN", "CPU_CONFORMANCE", "T13_TECHNICAL_GATE", "HUMAN_RUN_RATIFICATION", "PRE_MODEL_EXECUTION", "DISPATCH_PREFLIGHT", "RUNTIME_VALIDITY", "PRE_SCIENTIFIC_CLAIM"],
+        "t13_inbound_edges": [
+          {"producer_type": "ADVOCATE_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/advocate_ref", "role": "NON_OVERRIDING_ADVOCATE", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "CONDITIONAL_COMPLETE_RELEASE_POWER_RESULT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/conditional_power_refs/items", "role": "CONDITIONAL_COMPLETE_RELEASE_POWER", "ordinal": "VARIABLE", "cardinality": "ORDERED_EXACT"},
+          {"producer_type": "CONFORMANCE_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/conformance_ref", "role": "CPU_CONFORMANCE", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "FIXTURE_EXECUTION_MANIFEST", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/fixture_executor_a_manifest_ref", "role": "T13_FIXTURE_EXECUTION_MANIFEST_A", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "FIXTURE_EXECUTION_MANIFEST", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/fixture_executor_b_manifest_ref", "role": "T13_FIXTURE_EXECUTION_MANIFEST_B", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "FIXTURE_SET_EQUALITY_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/fixture_set_equality_ref", "role": "T13_FIXTURE_SET_EQUALITY", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "FIXTURE_GENERATOR_SPEC", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/fixture_spec_ref", "role": "FIXTURE_SPEC", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "JOINT_CONSTRUCTION_RELEASE_POWER_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/joint_power_ref", "role": "JOINT_CONSTRUCTION_RELEASE_POWER", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "POPULATED_RUN_LOCK", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/populated_run_lock_ref", "role": "POPULATED_RUN_LOCK", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "REVIEW_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/review_ref", "role": "INDEPENDENT_REVIEW", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "STATIC_SEAL_PAIR_RECEIPT", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/static_seal_pair_ref", "role": "STATIC_SEAL_PAIR", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "GENERIC_T01_INTAKE_EVIDENCE", "consumer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_stage": "T13", "field_path": "/properties/t01_evidence_ref", "role": "GENERIC_T01_INTAKE_EVIDENCE", "ordinal": 0, "cardinality": "ONE"}
+        ],
+        "t13_outbound_edges": [
+          {"producer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_type": "HUMAN_RUN_RATIFICATION_RECEIPT", "consumer_stage": "HUMAN_RUN_RATIFICATION", "field_path": "/properties/t13_ref", "role": "T13_PREMODEL_TECHNICAL_GATE", "ordinal": 0, "cardinality": "ONE"},
+          {"producer_type": "T13_PREMODEL_TECHNICAL_GATE", "consumer_type": "PRE_MODEL_AUTHORITY_RECEIPT", "consumer_stage": "PREMODEL_AUTHORITY", "field_path": "/properties/t13_ref", "role": "T13_PREMODEL_TECHNICAL_GATE", "ordinal": 0, "cardinality": "ONE"}
+        ],
+        "external_t14_authority_edge": {"producer_type": "T14_FINAL_REPLAY_RESULT", "consumer_type": "PRECLAIM_AUTHORITY_RECEIPT", "consumer_stage": "PRECLAIM_AUTHORITY", "field_path": "/properties/final_t14_result_ref", "role": "FINAL_T14_RESULT", "ordinal": 0, "cardinality": "ONE"}
+      },
+      "algorithm": ["From authority_contract.stages construct directed predecessor->stage edges using the literal predecessor and receipt_type fields; PRE_SCIENTIFIC_CLAIM has predecessor T14_FINAL_REPLAY_RESULT and is not a shortcut from RUNTIME_VALIDITY.", "For every source stage construct the exact registry row {row_key=stage, ordinal=index, role=AUTHORITY_STAGE, cardinality=ONE, producer_role=AUTHORITY_REGISTRY_AUTHOR, consumer_stages=[T13,PREFLIGHT,COLD_REPLAY], content_sha256=SHA256(canonical stage object)} and require byte equality with authority_registry.rows.", "Kahn-sort with the frozen stage ordinal as the only tie-break and require the exact 14-stage order, unique receipt types, no alias stage names, and no backedge.", "Independently walk the T13 receipt schema and object inventory to extract exactly the 12 inbound typed edges and the two outbound T13 edges to HUMAN_RUN_RATIFICATION_RECEIPT and PRE_MODEL_AUTHORITY_RECEIPT; separately extract the external FINAL_T14_RESULT edge into PRECLAIM authority; T13 input may contain none of those downstream consumers.", "Require model_execution_reachable=false through T13 and true only from PRE_MODEL_EXECUTION onward."],
+      "output_shape": {"fields": ["ordered_stages:ARRAY[OBJECT{ordinal,row_key,receipt_type,predecessor,content_sha256}]", "authority_edge_set:ARRAY[OBJECT]", "t13_inbound_edges:ARRAY[OBJECT]", "t13_outbound_edges:ARRAY[OBJECT]", "acyclic:BOOLEAN", "aliases:ARRAY[STRING]", "backedges:ARRAY[OBJECT]", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T13", "source_bindings": ["authority_registry.json#/rows", "authority_registry.json#/ordered_row_keys", "authority_contract.json#/stages", "authority_contract.json#/t13_rule", "contracts.schema.json#/$defs/t13_premodel_technical_gate", "object_inventory.json#/objects"]
+    },
+
+    {
+      "law_id": "T14_FULL_PREDECESSOR_REPLAY_V1", "test_id": "PPC5R9_T14", "suite_id": "FULL_PREDECESSOR_REPLAY", "entry_count": 24,
+      "input_table": {"name": "cold_replay_predecessor_graph", "columns": ["run_id", "ordered_predecessor_roles", "predecessor_refs", "artifact_table", "replay_a_implementation_sha256", "replay_b_implementation_sha256"]},
+      "replay_graph_contract": {
+        "exact_ordered_predecessors": [
+          {"ordinal": 0, "role": "PPC5R9_T02_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 1, "role": "PPC5R9_T03_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 2, "role": "PPC5R9_T04_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 3, "role": "PPC5R9_T05_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 4, "role": "PPC5R9_T06_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 5, "role": "PPC5R9_T07_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 6, "role": "PPC5R9_T08_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 7, "role": "PPC5R9_T09_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 8, "role": "PPC5R9_T10_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 9, "role": "PPC5R9_T11_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 10, "role": "PPC5R9_T12_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 11, "role": "PPC5R9_T13_RESULT", "artifact_type": "TEST_RESULT", "cardinality": "ONE"},
+          {"ordinal": 12, "role": "PRE_ENTROPY_DESIGN_LOCK", "artifact_type": "PRE_ENTROPY_DESIGN_LOCK", "cardinality": "ONE"},
+          {"ordinal": 13, "role": "ENTROPY_ACQUISITION", "artifact_type": "ENTROPY_ACQUISITION_RECEIPT", "cardinality": "ONE"},
+          {"ordinal": 14, "role": "POPULATED_RUN_LOCK", "artifact_type": "POPULATED_RUN_LOCK", "cardinality": "ONE"},
+          {"ordinal": 15, "role": "STATIC_SEAL_PAIR", "artifact_type": "STATIC_SEAL_PAIR_RECEIPT", "cardinality": "ONE"},
+          {"ordinal": 16, "role": "REVIEW_RECEIPT", "artifact_type": "REVIEW_RECEIPT", "cardinality": "ONE"},
+          {"ordinal": 17, "role": "ADVOCATE_RECEIPT", "artifact_type": "ADVOCATE_RECEIPT", "cardinality": "ONE"},
+          {"ordinal": 18, "role": "COMPLETE_RUN_MANIFEST", "artifact_type": "COMPLETE_RUN_MANIFEST", "cardinality": "ONE"},
+          {"ordinal": 19, "role": "ANALYSIS_BUNDLE", "artifact_type": "ANALYSIS_BUNDLE", "cardinality": "ONE"},
+          {"ordinal": 20, "role": "D1A_CONTROL_SET_MANIFEST", "artifact_type": "D1A_CONTROL_SET_MANIFEST", "cardinality": "ONE"},
+          {"ordinal": 21, "role": "COMPLETE_MODEL_VIEW_MANIFEST", "artifact_type": "COMPLETE_MODEL_VIEW_MANIFEST", "cardinality": "ONE"},
+          {"ordinal": 22, "role": "ROUTE_LINEAGE_AUDIT", "artifact_type": "ROUTE_LINEAGE_AUDIT_RECEIPT", "cardinality": "ONE"},
+          {"ordinal": 23, "role": "PROVIDER_AUDIT", "artifact_type": "PROVIDER_AUDIT_RECEIPT", "cardinality": "ONE"}
+        ],
+        "schema_derived_membership": {
+          "cold_replay_consumer_type": "COLD_REPLAY_RECEIPT",
+          "cold_replay_ingress_count": 11,
+          "cold_replay_ingress_roles": ["ANALYSIS_BUNDLE", "CANDIDATE_DECISION", "COMPLETE_RUN_MANIFEST", "D1A_CONTROL_SET_MANIFEST", "DEPENDENCY_DECISION", "JOINT_CONSTRUCTION_RELEASE_POWER", "COMPLETE_MODEL_VIEW_MANIFEST", "PROVIDER_AUDIT", "RAW_COLD_REPLAY_IMPLEMENTATION", "ROUTE_LINEAGE_AUDIT", "RUNTIME_INTEGRITY"],
+          "final_consumer_type": "T14_FINAL_REPLAY_RESULT",
+          "final_ingress_count": 6,
+          "final_ingress_roles": ["COLD_REPLAY_A", "COLD_REPLAY_B", "T14_FIXTURE_EXECUTION_MANIFEST_A", "T14_FIXTURE_EXECUTION_MANIFEST_B", "T14_FIXTURE_SET_EQUALITY", "FIXTURE_SPEC"],
+          "outbound_consumer_type": "PRECLAIM_AUTHORITY_RECEIPT",
+          "outbound_count": 1,
+          "outbound_role": "FINAL_T14_RESULT"
+        }
+      },
+      "algorithm": ["Resolve all 24 ordered predecessor roles by same run, exact artifact type, role, ordinal/cardinality, and self hash; reject omission, duplicate, reorder, wrong target, alias, or extra role.", "Independently walk contracts.schema.json and object_inventory.json to derive the complete canonical typed ingress relation for COLD_REPLAY_RECEIPT and require exactly 11 unique roles; derive the T14_FINAL_REPLAY_RESULT ingress relation and require exactly 6 unique roles; derive exactly one outbound FINAL_T14_RESULT edge to PRECLAIM_AUTHORITY_RECEIPT. The frozen role arrays are equality witnesses, not executor-supplied answers.", "For each independent replay reconstruct controller transitions and per-slot queue effects, separate route/provider audits, recompute emitted-byte influence and six-field noninterference, join the 23 dispatch fields, DREAM/context and D1D sleep pipeline, life aggregates, D1A manifest, pointwise power, resources, overlap, candidate/dependency eligibility, and required claim qualifications solely from predecessor bytes.", "The canonical reconstructed relation is the sorted union of {controller_transition}, {queue_effect_per_slot}, {route_lineage_audit}, {provider_audit}, {emission_influence}, {dispatch_binding}, {dream_context_status}, {d1d_stage}, {life_gate_aggregate}, {d1a_control_membership}, {pointwise_power_support}, {resource_accounting}, {overlap_membership}, {candidate_decision}, {dependency_decision}, and {claim_qualification}; each row is an object with relation_kind, primary_key, canonical_value_json and ordering is relation_kind then primary_key.", "Require the replay input graph to contain no PRECLAIM, claim release, export, audit, or release-rendered bytes; release_bytes_consumed=false.", "Require replay implementations A and B to have distinct implementation hashes, byte-identical canonical reconstructed relation bytes, passing runtime integrity, and decision PASS with null first_failure.", "Construct T14_FINAL_REPLAY_RESULT only from exactly COLD_REPLAY_A ordinal 0 and COLD_REPLAY_B ordinal 1 plus its fixture spec, set-equality receipt, and two fixture executor manifests; require predecessor_only=true, both_replays_pass=true, shared_runtime_integrity_pass=true, fixture_conformance_verified_pass=true, status PASS, and exactly one outbound FINAL_T14_RESULT edge to PRECLAIM_AUTHORITY_RECEIPT."],
+      "output_shape": {"fields": ["ordered_predecessors:ARRAY[OBJECT{ordinal,role,artifact_type,self_hash}]", "predecessor_count:INTEGER", "replay_a_relation_sha256:STRING", "replay_b_relation_sha256:STRING", "independent_implementations:BOOLEAN", "relations_equal:BOOLEAN", "release_bytes_consumed:BOOLEAN", "t14_status:STRING", "final_t14_outbound_edge_count:INTEGER", "first_failure:STRING_OR_NULL"], "additional_fields": false},
+      "failure_precedence_ref": "PPC5R9_T14", "source_bindings": ["authority_contract.json#/t14_rule", "authority_contract.json#/release_order", "contracts.schema.json#/$defs/cold_replay_receipt", "contracts.schema.json#/$defs/t14_final_replay_result", "object_inventory.json#/objects", "analysis_contract.json#/assay_decision", "analysis_contract.json#/power", "analysis_contract.json#/resource_accounting"]
+    }
+  ],
+  "self_audit_requirements": {
+    "exact_law_count": 58,
+    "exact_suite_vector_count": 58,
+    "one_law_per_suite_vector": true,
+    "entry_count_sum": 1113,
+    "executor_input_contains_expected_values": false,
+    "generic_boolean_oracle_permitted": false,
+    "hash_only_semantic_oracle_permitted": false,
+    "fixture_execution_permitted": false
+  }
+}

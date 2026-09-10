@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r4.systems_and_learning_loop.fresh.v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r4",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "f6e24583e9b38dc2cd28297ed5df00abcf82c53b269d012a05129a0905908c5a",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/human_directive.txt",
+      "sha256": "9ab57ddfb75e95aa827f72afe077dcd07e0311431530ff6af03f7dcfdeb03155",
+      "purpose": "Verbatim direction and bounded interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/scope_proposal.json",
+      "sha256": "f86be7a9626cb0711f6244296b147c7035e10f50f169ed99461a77799ee884d0",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/protocol.md",
+      "sha256": "7000aaefc294276e4921e55f2fb3593e2ec02a09ba3fe39baacddbfd2c68d427",
+      "purpose": "Standalone scientific question, estimand, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/machine_contract.md",
+      "sha256": "9b6229f545576ab83d0ba50385f90ffe55a9505858056e8da6ff6ea3ee911487",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/semantic_validators.md",
+      "sha256": "2b7cc2081d56dc48e4fda966861a48c0ef9bece771f104083174b36cfb7b5542",
+      "purpose": "Pure cross-field and DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/assay_contract.json",
+      "sha256": "6e340b7219c14203c794c74501b0af51f48721ae0447c0a61c3e46c0769f5104",
+      "purpose": "Assay populations, freeze matrix, controls, and construction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/analysis_contract.json",
+      "sha256": "1096a740584b931f4d311bcd6176535edf755dc25ebe8a284c8bf4705b88dc5a",
+      "purpose": "Exact paired/safety/missingness/Holm/power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/status_contract.json",
+      "sha256": "75412cda87c2b346694522ed220f45e408e598545cefebcb09d50c55d4905829",
+      "purpose": "Total status-to-endpoint mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/visibility_contract.json",
+      "sha256": "df566ee003981c0f65788e44a7c80de713da83d35c566aa07c14d85d6b4ef7e4",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/authority_contract.json",
+      "sha256": "1e50a4b109d9921e8ff695950b5fc22af7289bb1527825904497923026f98c99",
+      "purpose": "Stage-specific authority DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/claim_dependency_map.json",
+      "sha256": "b4d00292a98b77502e6aee656b96a80954854e958f26b30dc5a40b55737b97d5",
+      "purpose": "Literal release and blocker map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/object_inventory.json",
+      "sha256": "323413818d1083e9de29f7a4558f722d0954e196504e82b8a265b9c3a3308c65",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/contracts.schema.json",
+      "sha256": "5320dd9e003d90fecc8dc6b7c7712637abe40ec261d911498974808a63da3aea",
+      "purpose": "Closed schemas for every inventory type."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/test_contract.json",
+      "sha256": "3723506047c41e4da313079c1c01786b396a27c67ec8e2223d368bd9d0e22af6",
+      "purpose": "Executable T01-T14 coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/stats_assay_resolution.md",
+      "sha256": "0fc86ddbda27f725d9d3041a3583e7945094d45d08883e9e3d441896b06a8950",
+      "purpose": "Nonnormative independent statistical integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/drafts/systems_resolution.md",
+      "sha256": "cbce305fab1c81fbf4c33017b5710947823c06a433cf565a8a3e8daec0dca6da",
+      "purpose": "Nonnormative independent systems integration draft."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r3/consensus.json",
+      "sha256": "94564b5be5ddb15b5190f12946ce08480a1e665c2332aac581e925eee8b1cf3a",
+      "purpose": "Binding PPC5r3 rework consensus; provenance only, no inherited authority."
+    }
+  ],
+  "system_thesis_interpretation": "Agreement: PPC5r4 is appropriately framed as a narrow, frozen-cognition four-assay causal instrument, not as the Experience Model flywheel. The proposed organism samples complete recipient-life bundles from a locked generator; executes every required paired computational arm from byte-identical pretreatment state and common-random seeds; permits learning only in an isolated READ candidate scorer; and releases, at most, four qualified component claims plus a non-mediational intersection. This preserves the project thesis by testing prerequisites for converting verified public experience into prospective cognition without grading hidden thought. Concern and disposition: the prose architecture is substantially coherent, but the exact bound contract bytes are not yet an executable realization of that architecture. Several schemas retain r3-era types, treatment labels, unlabeled dependencies, non-exact numeric fields, and self-hash inconsistencies. These are not harmless implementation details because they determine replay, controller outcomes, visibility, authority, test passage, and claim reachability. My systems disposition is REWORK before any proceed consensus or architecture ratification; no implementation or execution authority follows from this interpretation.",
+  "graph_delta_interpretation": "Agreement: the intended causal graph is a one-way organism pipeline: locked generator and construction -> identical life clones -> frozen public recurrence/common provider/intervention or shared DREAM -> evidence-gated SLEEP as the sole parametric writer -> endpoint-local status reduction -> exact life-level gates -> assay/Holm decisions -> claim decisions -> preclaim authority -> literal releases. The intended transition subgraph is acyclic: prior state receipt -> post-state body -> transition event -> post-state receipt, with genesis using an EMPTY_LEDGER_HEAD and terminal replay producing no new object. The intended queue subgraph is likewise exclusive: each QUEUED slot has exactly one FLUSHED XOR DISCARDED effect, while REJECTED has none. The intended release graph correctly places claim_decision before preclaim_authority and claim_release after it. Concern: `contracts.schema.json` does not make the transition graph exact. Its `$defs.transition_event` has the right body/event/receipt fields, but `transition_event` is absent from both the 64-type inventory and the top-level `oneOf`; the admitted `ledger_event` instead uses `pre_state_hash` and `post_state_hash`, omits schema version, cause, controller before/after, role lineage, and the explicit post-state-body name. Seven inventory/schema self-hash names also disagree: private_controller_receipt, operation_envelope, dream_request, adapter_manifest, assay_result, holm_result, and test_result. The controller receipt does not bind its separately inventoried private-controller body, and queue_slot_receipt omits the controller-after binding promised by the machine contract. Therefore the declared DAG is conceptually correct but byte-level non-closed, and must be repaired rather than inferred by an implementer.",
+  "loop_delta_interpretation": "Agreement: the learning loop is deliberately decomposed rather than claimed end to end. Minimal recurrence renders one public view, performs at most one frozen dispatch under a total controller row, applies exact debit and provider/environment precedence, commits one event/receipt transition, and stops under sealed conditions. Shared DREAM performs exactly one no-retry frozen call and shares its physical receipt across policy clones. Evidence-to-SLEEP is nominee-first, uses total DREAM/recency/permuted root policies, admits only direct closed preboundary ACQUIRE evidence, renders rows once, trains from a clean base, validates, and atomically publishes; empty, abstain, invalid-output, no-root, no-admitted-root, and TRAIN_FAILED states continue through their registered natural consequences. D1D is correctly a total-policy effect with no post-treatment dose adjustment. Concern: totality is not carried by the accepted schemas. The operation schema permits GOAL_COMPLETE and USER_STOP but not the machine's MODEL_STOP vocabulary; operation_result cannot encode SCHEDULE_COMPLETE, SCHEDULE_INCOMPLETE, PROVIDER_SEQUENCE_COMPLETE, CONSTRUCTION_FAIL, or PROVIDER_MISSING_NO_RETRY as declared, and still contains INVALID_CELL. The accepted ledger event cannot bind the total controller transition. Generic payload-ref wrappers have no bound type-specific payload schemas or exact role registries. Thus D1A-D1D are total in prose and validator intent, including R=0 and L=2/3 branches, but not executable to unique bytes from the current schema bundle.",
+  "claim_delta_interpretation": "Agreement: D1A is external complete-table supported selection rather than closed-book memory; D1B is observable public response dependence rather than private reasoning; D1C is a frozen-DREAM total context-policy effect; D1D is an unadjusted DREAM-to-SLEEP total-policy effect; and their only conjunction is non-mediational. Directly observed paired life outcomes and exact generator-population exceedance probabilities are a sound replacement for finite-roster average-ITT language. The component and intersection literals remain inseparable from the locked-generator, target-informed-construction, overlap, and forbidden-claim qualifications. The high-level release order `reduction -> claim_decision -> preclaim_authority -> claim_release` is acyclic and should be retained. Concern: release eligibility is not yet mechanically trustworthy because assay_result and holm_result use binary JSON numbers and unlabeled hash arrays despite the exact-rational analysis contract; missingness_result omits the required Clopper-Pearson upper bracket; the generic preclaim authority subjects do not schema-fix the claim-decision roles/cardinalities; and claim/test dependency payloads are opaque byte refs without closed payload schemas. Disposition: retain the claim meanings and literal strings, but block every claim until the exact reduction, authority, and dependency schemas are repaired and T14 independently replays them.",
+  "visibility_matrix_interpretation": "Agreement: the proposal supplies the complete 13-information-item by 14-stage product (182 cells) and gives a useful four-level semantics: visible is direct ingress; derived_only is one named pure projection; hidden is privileged routing without serialized or behavioral influence; forbidden is noninfluence proved by dependency checks and taint mutation. The core organism boundaries are correct: hidden truth, endpoint truth, PROBE/future data, low-entropy matching material, claim text, and treatment identity stay outside THINK/DREAM/provider/writer/trainer except through named projections; the privileged intervention router alone resolves a condition and emits already-resolved public bytes; SLEEP rows and the causal provider should be arm neutral. Concern: the bound schemas contradict those boundaries. `provider_receipt` contains treatment-semantic `provider_kind` values such as READER_LORA, ADAPTER_OFF, WRONG_LIFE_ADAPTER, and MATCHED_BINDING_SHUFFLED_READER, and `sleep_row.contract` distinguishes `ppc5.sleep_row.v4` from `ppc5.control_sleep_row.v4`. The restricted-response and many stage objects are only generic payload refs, so their actual field allowlists are neither closed nor cross-linked to the 182 cells. The visibility contract's named projections therefore cannot yet be proven from accepted bytes. Disposition: preserve the complete matrix, but replace restricted schemas with explicit condition-free ingress/egress records and test byte-taint noninterference for all cells before execution.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R4_T01",
+    "PPC5R4_T02",
+    "PPC5R4_T03",
+    "PPC5R4_T04",
+    "PPC5R4_T05",
+    "PPC5R4_T06",
+    "PPC5R4_T07",
+    "PPC5R4_T08",
+    "PPC5R4_T09",
+    "PPC5R4_T10",
+    "PPC5R4_T11",
+    "PPC5R4_T12",
+    "PPC5R4_T13",
+    "PPC5R4_T14"
+  ],
+  "acceptance_test_interpretation": "Global disposition: RETAIN every T01-T14 obligation, REMOVE none, but classify the present definitions as NOT YET EXECUTABLE because their fixtures refer to unspecified case/mutation/result artifact types and permit a status field to say PASS without schema-level derivation. `fixture_manifest` carries only opaque `case_refs`/`mutation_refs`, its coverage-axis values are unconstrained, and no inventoried closed schemas define case expected bytes, expected failure codes, mutation field paths, or case/mutation results. `test_coverage_receipt` and `test_result` each accept a free status; prose validators cannot reconstruct evidence whose byte grammar is absent. Per-test dispositions: T01 retain and block until the exact r4 schema/inventory/authority chain and failure universe are closed in two implementations. T02 retain and block until nominee, predicate, root-policy, overlap, and wrapper-payload schemas enumerate exact bytes and first failures. T03 retain and block until transition_event replaces the admitted legacy ledger_event, all D1A-D1D result vocabularies are representable, the reachable-state BFS has materialized expected outputs, and queue coverage is XOR-complete. T04 retain and block until DREAM input, render, prompt/token IDs, raw output, debit, predecessor, shared event, and context bytes are byte-bearing. T05 retain and block until one arm-neutral causal provider schema, provider-missing vocabulary, exact score evidence, and descriptive-provider separation are closed. T06 retain and block until donor/dose/derangement fixtures are closed and provider/row treatment labels are absent from restricted stages. T07 retain and block until path_proof contains the complete canonical path universe, indexed subset/full-set proofs, edge/source identities, and one CUT/TWIN/SHAM proof per edge rather than a singular SHAM field. T08 retain and block until every controller phase, exclusive queue successor, commitment, privileged match, and condition-free emission case has exact bytes. T09 retain; the endpoint-local shared-DREAM missing rule is sound, but require all five statuses, all policies, R boundaries, exact render bytes, and consuming-versus-nonconsuming endpoint expectations. T10 retain; require closed total root/corpus/trainer/validation/publication payloads and negative fixtures proving that no D1D matching, padding, truncation, conditioning, or resource adjustment occurs. T11 retain and block until all authority-bearing probabilities are exact rationals, missingness includes its exact bound/tie rule, every status maps to exactly one endpoint observation or blocker, and assay/Holm results are role-labeled and recomputed. T12 retain and block until all 182 matrix cells name enforceable closed ingress/egress schemas, treatment labels are removed, stage authority roles are exact, and DENY structurally implies zero process creation. T13 retain and block until the populated run lock, exactly two distinct sealer identities, independence evidence, review non-override, power, and separate human run ratification have closed role-specific schemas. T14 retain and block until cold replay can reconstruct every life/event/queue/DREAM/SLEEP/outcome, exact reducer, dependency blocker, four claim decisions, preclaim authority, releases, overlap/scope qualification, and alternate-claim rejection. Passing evidence must be derived from materialized expected outputs and exact failure codes in two independently source-bound implementations; two invocations of one code path do not qualify.",
+  "assumptions": [
+    "The architecture change, protocol, machine, JSON contracts, status, visibility, authority, claim map, object inventory, schemas, and semantic-validator text are normative together; the two drafts are nonnormative aids and cannot silently repair a normative mismatch.",
+    "The PPC5r3 consensus is binding rework provenance but supplies no inherited implementation, execution, or scientific authority.",
+    "A semantic validator may enforce cross-field relations only over fields and payload bytes whose exact closed grammar and role registry are normatively available; an opaque payload_ref plus prose function name is not treated as an executable schema.",
+    "No numeric run-lock value, model, tokenizer, embedding, trainer, candidate table, seed, generator sample, or empirical result is assumed by this interpretation.",
+    "The mutable intake state was read only to establish the current collecting_interpretations phase and is intentionally excluded from context_files, as required by architecture_intake.py.",
+    "Integrity-clean no-action is an observed normalized action value of zero, while an endpoint-local required-call absence remains missing even if later independent controller work produces an action.",
+    "All required paired arms are actually executed from the same pretreatment life; the proposal makes no randomized arm-label or unobserved-counterfactual estimand."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R4_SYS_A01_EVENT_TYPE_AUTHORITY",
+      "question": "Is the normative persisted transition object `ledger_event` admitted by inventory/oneOf, or the richer `transition_event` definition required by machine_contract and semantic_validators?",
+      "impact": "Until one type, domain tag, self-hash name, and field set are selected everywhere, transition hashes, terminal replay, queue lineage, and T03/T14 expected bytes are not unique."
+    },
+    {
+      "ambiguity_id": "PPC5R4_SYS_A02_OPERATION_STATUS_VOCABULARY",
+      "question": "Which exact STOP, terminal, provider-missing, schedule-completion, construction-failure, and invalid-cell vocabulary is authoritative when machine_contract, status_contract, and contracts.schema disagree?",
+      "impact": "Different conforming-looking controllers can emit different events, terminal states, missing observations, or blockers for the same reachable state."
+    },
+    {
+      "ambiguity_id": "PPC5R4_SYS_A03_GENERIC_PAYLOAD_GRAMMAR",
+      "question": "Where are the exact type-specific closed schemas and role registries for each generic `payload_ref` wrapper, fixture case, negative mutation, implementation identity, gate-power result, endpoint coverage result, and claim dependency payload?",
+      "impact": "Without those grammars, byte availability is provable but semantic completeness, field nullability, role cardinality, and independent expected outputs are not."
+    },
+    {
+      "ambiguity_id": "PPC5R4_SYS_A04_AUTHORITY_ROLE_REGISTRIES",
+      "question": "What exact ordered role/type/cardinality registry does each stage-specific authority receipt apply to `subject_refs`, and how is it versioned and hash-bound?",
+      "impact": "The current generic arrays cannot by themselves exclude missing, duplicate, substituted, reordered, or claim-release-as-predecessor subjects, so reachability is not uniquely reducible."
+    },
+    {
+      "ambiguity_id": "PPC5R4_SYS_A05_PATH_SHAM_CARDINALITY",
+      "question": "Should the persisted path proof use one `sham_intervention_id` as currently schematized or one position-indexed SHAM proof and gate for every ordered edge as all normative prose and D1B claims require?",
+      "impact": "A singular SHAM cannot establish harmlessness at every tested edge or materialize the required per-edge IUT/gate registry."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R4_SYS_D01_ACYCLIC_DAG_NOT_SCHEMA_CLOSED",
+      "statement": "Blocking concern: the proposal says the state/event/state-receipt DAG is executable, but its closed inventory and top-level schema admit the legacy `ledger_event` and do not admit `transition_event`.",
+      "rationale": "The admitted event has `pre_state_hash` and `post_state_hash` and lacks the explicit state-receipt, post-state-body, controller-before/after, cause, role lineage, and schema-version bindings required to prove the one-way hash order. The correct transition definition is unreachable from the closed-world schema. Seven additional inventory self-hash names do not exist in their corresponding schema definitions.",
+      "proposed_resolution": "REWORK. Replace `ledger_event` consistently with one inventoried, oneOf-admitted, domain-separated `transition_event`; align all producer/consumer names and self-hash fields; bind private-controller body to receipt; add the promised queue-slot before/after bindings; and require T03/T14 golden vectors for genesis, ordinary, error, flush, discard, terminal, RUN_INVALID, and zero-write cold replay."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D02_TOTAL_CONTROLLERS_NOT_REPRESENTABLE",
+      "statement": "Blocking concern: D1A-D1D controller prose is total, but the operation/result schemas cannot represent the declared terminal and missing outcomes.",
+      "rationale": "The operation STOP enum uses GOAL_COMPLETE/USER_STOP instead of MODEL_STOP, while operation_result omits SCHEDULE_COMPLETE, SCHEDULE_INCOMPLETE, PROVIDER_SEQUENCE_COMPLETE, CONSTRUCTION_FAIL, and PROVIDER_MISSING_NO_RETRY and retains INVALID_CELL. A total transition reducer cannot emit unique schema-valid bytes for all T03/T08/T09/T10 branches.",
+      "proposed_resolution": "REWORK. Publish one exact operation/result/terminal vocabulary and an explicit machine-readable row registry for every assay, program, phase, required operation, raw result, debit, next phase, queue action, status, observation, and terminal reason, including L=2/3, R=0/1/positive, third-error replacement, and no-model finalizers."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D03_QUEUE_LIFECYCLE_NOT_FULLY_BOUND",
+      "statement": "Material concern: FLUSHED XOR DISCARDED is the correct lifecycle, but the persisted slot/effect/event bindings do not fully match the declared queue lineage.",
+      "rationale": "queue_slot_receipt binds only controller-before, not controller-after as promised; the admitted legacy event cannot bind the typed cause lineage; and exact one-effect-per-QUEUED coverage exists only in prose. This leaves slot progression and terminal discard replay underdetermined.",
+      "proposed_resolution": "REWORK. Make slot creation, REJECTED no-effect, FLUSHED fields, DISCARDED fields, controller before/after, event lineage, slot ordering, terminal all-and-only remaining discard, and run-wide coverage structural schema relations plus materialized T03/T08 fixtures."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D04_PATH_PROOF_NOT_EVERY_EDGE_CLOSED",
+      "statement": "Blocking concern: the path_proof schema does not encode the complete per-edge CUT/TWIN/SHAM, source, subset, and alternate-path proof required by D1B.",
+      "rationale": "It has a singular `sham_intervention_id`, unlabeled `source_preimage_hashes`, Boolean-only subset results, and an alternate-path count rather than the canonical universe. It lacks edge positions/source_event_ids, per-edge intervention proof bytes, masks and oracle IO, graph bytes, selected path identity, and cross-item source-disjointness evidence.",
+      "proposed_resolution": "REWORK. Adopt a position-indexed path proof and suite manifest containing the complete canonical multigraph/path universe, every proper-subset mask and full-set proof, distinct source events/preimages, and one parity/oracle proof plus separate gate for CUT, TWIN, and SHAM at every edge; exhaust T07/T08/T11/T14."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D05_CONDITION_FREE_BOUNDARIES_VIOLATED",
+      "statement": "Blocking visibility concern: accepted restricted-stage schemas expose treatment semantics that the proposal says must be absent.",
+      "rationale": "provider_receipt has arm-semantic `provider_kind` values, and sleep_row has distinct authentic/control contract strings. Generic restricted projection payloads have no exact field schema, so absence of kind, arm, item, edge, target, truth, query hash, response hash, and low-entropy matcher material cannot be statically proved.",
+      "proposed_resolution": "REWORK. Use one constant causal-provider algorithm schema with only an opaque mount handle, one sleep-row contract for authentic and control rows, and explicit condition-free router projection/emission schemas. Keep semantic labels solely in privileged assignment/routing and post-runtime reduction, then run all 182 cell field/taint mutations in T12."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D06_BYTE_BEARING_RECEIPTS_INCOMPLETE",
+      "statement": "Blocking concern: several receipt boundaries bind hashes or generic payload refs but not the exact available bytes and closed records promised by the proposal.",
+      "rationale": "operation_envelope lacks a self hash, schema version, raw-output byte ref, and token-ID refs; dream_request lacks its self hash; dream_receipt lacks explicit input/render/prompt/token/raw-output byte refs, tokenizer/prompt hashes, debit before/after, prior receipt/preflight, and shared resource/event binding. Many generator/root/corpus/trainer/publication/run-lock objects are generic wrappers whose payloads have no normative schemas. adapter_manifest also lacks its inventoried manifest_hash.",
+      "proposed_resolution": "REWORK. Define every type-specific payload as a closed schema with status-dependent nullability, role-labeled byte/artifact refs, exact cardinality/order, and aligned inventory self hash. Bind raw invalid bytes privately and require T02-T06/T09/T10/T14 to cold-read and rehash all referenced bytes."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D07_EXACT_REDUCTION_NOT_SCHEMA_CLOSED",
+      "statement": "Blocking analysis concern: authority-bearing assay and Holm objects contradict the exact-rational reducer contract.",
+      "rationale": "assay_result and holm_result use JSON numbers for p-values/alpha, use unlabeled hash arrays, lack schema version, and disagree with their inventoried `receipt_hash`; missingness_result omits the declared one-sided Clopper-Pearson upper bracket. These gaps permit different rounding, ordering, dependency, and tie decisions.",
+      "proposed_resolution": "REWORK. Use reduced rational values and certified outward brackets everywhere authority bearing; role-label every expanded gate in canonical registry order; align self hashes; encode exact missingness tail/bound/tie rules; and materialize T11 boundary fixtures below, at, and above every critical count and Holm stop."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D08_T01_T14_ORACLES_NOT_EXECUTABLE",
+      "statement": "Blocking concern: the T01-T14 themes are comprehensive, but their accepted artifact schemas cannot derive coverage or PASS from complete expected cases.",
+      "rationale": "Fixture cases, negative mutations, expected outputs/failures, case results, mutation results, implementation identities, independence evidence, and gate-power/endpoint-coverage evidence are only generic refs or absent from the inventory. coverage_axes values are unconstrained. Both coverage and final test receipts carry free PASS/FAIL fields, so a self-asserted pass cannot be excluded from schema bytes.",
+      "proposed_resolution": "REWORK. Add closed inventoried schemas for implementation identities/independence, fixture cases and mutations, expected canonical output or typed failure, executed case/mutation results, completeness proof, and evidence roles. Derive PASS only from exact counts, zero defects, mutation agreement, and two distinct source/executable identities; retain and strengthen all T01-T14."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D09_STAGE_AUTHORITY_NOT_ROLE_CLOSED",
+      "statement": "Blocking authority concern: the five-stage authority sequence is correct in prose, but each stage schema uses an unrestricted generic `subject_refs` array and does not fix exact ordered predecessor roles/cardinalities.",
+      "rationale": "The same schema shape can say PASS with missing, duplicate, substituted, or reordered subjects unless an implementation invents hard-coded registries not present in bytes. Human evidence is nullable even at human stages. Preflight lacks a dispatch ID/ordinal and mounted-artifact refs, and its schema allows spawned_process_count=1 on DENY; review non-override and exactly-two distinct sealers live only in prose/generic payloads.",
+      "proposed_resolution": "REWORK. Give each authority stage a distinct closed role registry, fixed predecessor, exact scope, derived decision/reachability, and status-dependent human evidence; add closed sealer/review/advocate/run-ratification payloads; make preflight bind dispatch identity, mounted artifacts, immediate state receipt, and structurally require DENY to create zero processes. Preserve separate architecture and run human decisions."
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D10_RELEASE_DAG_DEPENDS_ON_UNCLOSED_AUTHORITY",
+      "statement": "Material concern: claim-decision -> preclaim-authority -> release removes the old hash cycle, but current generic dependency and authority schemas do not yet prevent role substitution or prove literal release prerequisites.",
+      "rationale": "claim_release correctly binds a decision and preclaim authority, yet the decision's dependency payload and preclaim subject registry are not closed; assay/Holm/test predecessors themselves are not exact. The DAG direction is right but its admission predicates remain non-executable.",
+      "proposed_resolution": "REWORK while retaining the three-step order. Close component/intersection dependency registries, emit decisions without release authority, require preclaim authority to consume every exact decision and runtime/T14/reducer predecessor, then allow release to consume only that authority and emit the exact registered literal plus immutable qualification, overlap, scope, and forbidden-claim material."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require a byte-revised PPC5r4 proposal that resolves every disagreement above and undergoes new fresh interpretations, critique, and a technically releasable consensus before considering architecture ratification?",
+      "If revised, does Rohin ratify only the exact CPU/no-model contract, fixture, and exactly-two-static-sealer scope in scope_proposal.json, leaving every model, tokenizer, embedding, trainer, behavioral, canary, GPU, and scientific action forbidden?",
+      "After a populated run lock exists, will Rohin require the separate exact run ratification, fresh passing reviewer, non-overriding advocate, T01-T13, two distinct seals, and power receipt before any process becomes reachable, and T14 plus preclaim authority before any literal scientific release?"
+    ]
+  }
+}

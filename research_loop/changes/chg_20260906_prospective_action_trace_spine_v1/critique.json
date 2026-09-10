@@ -1,0 +1,390 @@
+{
+  "architecture_change_sha256": "053a53ef855abae3a6a625979d35e41e77b1cac81933e44a7e879e8ec1c3eed4",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260906_prospective_action_trace_spine_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "architecture",
+      "concern_id": "C01_private_public_ledger_topology_undefined",
+      "evidence": "The plan first specifies one life as one append-only JSONL ledger with globally consecutive event_seq, event_id, previous_record_sha256, and earlier same-life parents. It later places TOOL_RESULT_PUBLIC in a separate public ledger and states that private and public ledgers have separate roots, manifests, hashes, locks, and writers. A public event nevertheless parents a private result and exposes its hash and call ID. The proposal does not decide whether sequence numbers and previous hashes are global or ledger-local, how a public validator resolves an inaccessible private parent, or which ledger contains the four non-result event types. The systems interpretation independently identifies this ambiguity.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The six-artifact chain has no unique private/public storage and hash-chain semantics, so independent implementations can accept incompatible ledgers."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference"
+      ],
+      "category": "operations",
+      "concern_id": "C02_cross_root_publication_not_atomic",
+      "evidence": "Publication performs a temporary-file rename and then appends and fsyncs a ledger line, although payload bytes are inline and the role of the renamed file is unspecified. Rename, ledger append, private receipt publication, and public projection publication are separate durability points. A crash can leave an orphan renamed artifact, a private result without its required public projection, or a public line whose private source is unavailable. Separate private/public locks cannot provide an exactly-once cross-root transaction. ST1's interrupted-publication fixture and ST5's synthetic atomic transaction do not define recovery for these states.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed durability protocol cannot yet guarantee atomic or recoverable publication across record files and the private/public ledgers."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST7_role_capability_fixture",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C03_public_declassifier_has_semantic_covert_channels",
+      "evidence": "TOOL_RESULT_PUBLIC permits a private-record hash, tool-call event ID, action hash, validity/error class, measurements, rational score, and unrestricted outcome-text bytes; every envelope also carries episode/event identifiers and code/environment manifest hashes. These allowed values, their ordering, or a paraphrase in outcome text can identify a task, state, scorer, or answer without reproducing a forbidden literal byte. The projector law is only an allowlist over a private record, and the projector is intentionally allowed to read the secret and write the public output. ST6's byte comparison and forbidden-byte scan therefore establish projection consistency, not semantic noninterference or paired-world indistinguishability.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The public projection can encode or correlate with sealed information through allowed fields even when every registered forbidden byte and key is absent."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST2_episode_budget_lifecycle",
+        "ST3_context_generation_local_roundtrip",
+        "ST6_public_projection_noninterference",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C04_query_to_agenda_admission_laundering",
+      "evidence": "HARNESS sees episode metadata needed to derive the task handle, reads prior public records, chooses which records enter CONTEXT_RENDERED, and writes the exact child input. The change permits explicitly admitted earlier same-life outcomes, while the plan says only the immediately prior outcome; neither fixes a task-blind selection rule. Inclusion, omission, order, repetition, selected event IDs, or budget allocation can encode a query-dependent agenda or answer. No record captures the candidate set, selector inputs, rejected records, or proof that selection was independent of sealed identity and future goals.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The context-admission mechanism permits query-to-agenda answer laundering and an unobserved raw-history shortcut."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST3_context_generation_local_roundtrip",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "architecture",
+      "concern_id": "C05_prompt_schema_and_typed_call_provenance_gap",
+      "evidence": "CONTEXT_RENDERED binds rendered/message bytes and manifest hashes but not the exact tool-schema bytes or structured-output configuration offered to the engine. MODEL_GENERATION records free text but no raw structured-channel response. TOOL_CALL_PROPOSED separately records a schema hash, canonical arguments, parsed object, and parser receipt without a byte-level join to the engine response that allegedly produced it. A fabricated call record can therefore be internally valid and parent a generation whose actual prompt exposed a different schema or no tool channel. ST4 checks fixture shape and cardinality, not origin or actual schema exposure.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The typed action boundary is not prospectively bound to the exact schema presented to, and structured output returned by, the generating system."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST2_episode_budget_lifecycle",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST8_closed_graph_and_no_feedback"
+      ],
+      "category": "operations",
+      "concern_id": "C06_abandoned_generation_branch_release",
+      "evidence": "OPEN/CLOSE and retry ordinals describe episode lifecycle, but no context, generation, or call has a committed, superseded, failed, abandoned, or revoked eligibility status. The rules limit calls per generation but do not limit generations per context or make a generation ineligible after a competing branch, parser failure, publication failure, or retry. ST8 says abandoned/private release should be rejected, yet the six event schemas provide no fact from which a validator can identify an abandoned thinker branch.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A validly serialized generation from a failed or superseded branch can still be dispatched or admitted because branch eligibility is not durable state."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST2_episode_budget_lifecycle",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "architecture",
+      "concern_id": "C07_type_graph_and_event_dag_conflated",
+      "evidence": "The type-level graph contains TOOL_RESULT_PUBLIC to CONTEXT_RENDERED followed by CONTEXT_RENDERED to MODEL_GENERATION to TOOL_CALL_PROPOSED to TOOL_RESULT_PRIVATE to TOOL_RESULT_PUBLIC; CLOSE also reuses EPISODE_BOUNDARY. It is therefore cyclic by event type even though correctly time-unrolled event instances can be acyclic because parents point backward. ST8 appropriately requests a positive shared-ancestry diamond, but calling the six-type graph a DAG does not specify whether cycle detection operates on event instances, event types, or cross-ledger references. An implementation can reject lawful repeated action/outcome iterations or accept a disguised back edge.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The cycle law is underspecified despite the positive-diamond requirement, risking false cycle detection and inconsistent recurrence validation."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST2_episode_budget_lifecycle",
+        "ST3_context_generation_local_roundtrip",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C08_repeat_and_budget_state_not_proven_policy_visible",
+      "evidence": "EPISODE_BOUNDARY records block, occurrence/repeat, retry, and remaining-budget fields, and the matrix labels episode policy state visible to the renderer and child. CONTEXT_RENDERED, however, only stores the final rendered bytes and opaque intended IDs; it does not require a field-to-byte rendering relation or require every declared policy field to appear. ST2 can prove that repeat and budget values exist in the ledger while ST3 proves only opaque local equality. A run can therefore be controlled by repeats and budgets that remain invisible to the actual policy.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Recording repeat blocks and budgets in a boundary object does not establish that the thinker received them as policy state."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST2_episode_budget_lifecycle",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference"
+      ],
+      "category": "operations",
+      "concern_id": "C09_invalid_transition_and_budget_law_incomplete",
+      "evidence": "Malformed typed calls append nothing, environment mismatches create a private invalid receipt, invalid private receipts create a restricted public projection, publication errors stop the loop, and retries require new episode IDs. The proposal does not give a total transition table specifying which failures consume token/tool budgets, whether transaction IDs advance, whether an invalid projection is mandatory, whether CLOSE is permitted or required after failure, or how clock fields interact with authoritative counters. The systems interpretation raises the same invalid-projection, clock, and budget ambiguities.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Failure, retry, invalid-projection, and budget transitions are not causally closed enough for ST2, ST5, and ST6 to share one oracle."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST3_context_generation_local_roundtrip",
+        "ST5_private_dispatch_score_atomicity",
+        "ST7_role_capability_fixture",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "operations",
+      "concern_id": "C10_evidence_artifacts_and_manifests_not_bound",
+      "evidence": "The promotion evidence includes immutable receipts, golden ledgers, corruption corpora, quarantine manifests, capability manifests, validator verdicts, a declarative oracle, and comparator output, but only six organism event schemas are authorized. No closed schema or lifecycle binds these auxiliary artifacts to the architecture hash, schema bundle, validator source hashes, oracle hash, fixture hash, error taxonomy, execution environment, and prior receipt. Likewise code_manifest_sha256 and environment_manifest_sha256 fields do not require the referenced manifest bytes to exist or be retrievable. The adjective immutable is not an operational binding.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The artifacts used to decide success can be swapped, orphaned, or self-asserted because their own provenance and durability contract is absent."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST6_public_projection_noninterference",
+        "ST7_role_capability_fixture",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C11_synthetic_capability_test_lacks_observation_model",
+      "evidence": "ST7 lists inherited descriptors, environment, IPC, network, logs, caches, timing, and error channels, but defines only attempted reads/writes and stable denials over synthetic role roots. Timing and error leakage require secret-varying paired executions and an observer-equivalence rule; network, IPC, cache, and inherited-descriptor isolation require a concrete process topology and operating-system boundary. Mocking each channel as a denied fixture can validate an enumeration without testing the channel. The stated live-runtime limitation is correct, but the exact synthetic claim remains underspecified.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "ST7 cannot consistently test several named indirect channels until the attacker, observer, secret variation, and denial semantics are frozen."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST2_episode_budget_lifecycle",
+        "ST3_context_generation_local_roundtrip",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST7_role_capability_fixture",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "evaluation",
+      "concern_id": "C12_oracle_agreement_does_not_cover_relational_mutations",
+      "evidence": "ST9 emphasizes one-sided mutations of registered fields and edges. Coordinated mutations can preserve local consistency: mutate a record and recompute its hash, alter both private and public values, replace a manifest and its hash, change a schema together with fixtures, or release a branch while updating all local references. Both validators and the oracle also share the written schemas, JSON behavior, SHA-256, error taxonomy, and potentially authorship. Source distinction is valuable but is not independent scientific truth or semantic completeness.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Dual-validator agreement can reproduce the same underspecified contract and miss coordinated, relational, or oracle-preserving faults."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST7_role_capability_fixture",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "scalability",
+      "concern_id": "C13_resource_limits_not_deterministically_defined",
+      "evidence": "The plan does not say whether the 1 MiB bound is per decoded field or the aggregate decoded payload, does not bound encoded JSON bytes before base64 decoding, and does not define depth counting or memory use during raw duplicate-key parsing. Up to 100,000 records each near 1 MiB permits roughly 100 GB before encoding overhead, yet complete validation is assigned a 30-second wall-clock limit without a hardware profile. A wall-clock threshold is nondeterministic and can fail benign ledgers or permit pre-validation memory exhaustion.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The advertised resource envelope is neither unambiguous nor demonstrably compatible with deterministic validation."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST3_context_generation_local_roundtrip",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "scientific",
+      "concern_id": "C14_causal_spine_wording_exceeds_cpu_evidence",
+      "evidence": "The claim delta correctly limits a pass to registered synthetic enforcement, but the title, summary, plan, and private-receipt rationale repeatedly use causal action/outcome or causal truth language. ST3 explicitly cannot prove actual consumption, ST5 uses a synthetic state machine, and ST6 proves a declared projection. All fields could be fabricated consistently without any thinker or real environment transition. The systems interpretation independently recommends treating the spine as structural provenance until later consumer-side and environment canaries exist.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The artifact should be described as a prospective structural-provenance contract, not evidence that a causal action/outcome path actually ran."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST2_episode_budget_lifecycle",
+        "ST3_context_generation_local_roundtrip",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST7_role_capability_fixture",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "scientific",
+      "concern_id": "C15_no_behavioral_or_online_learning_assay",
+      "evidence": "All nine tests are synthetic invariants or consistency checks. The graph deliberately contains no parent, dream, retrieval, explicit memory graph, sleep, adapter, evaluator, later-life goal, or behavioral endpoint. Its only memory-like path directly renders prior public outcomes, which permits passive lookup or ordinary in-context adaptation. Consequently the suite cannot distinguish recall, composition, generalization, multi-step planning, revision, valid action selection, task-value improvement, or learning from action/outcome. This is acceptable only because the claim ceiling explicitly denies all such conclusions.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "A green ST1-ST9 suite supplies no evidence for the intended recurrent memory path or any behavioral learning capability."
+    },
+    {
+      "acceptance_test_ids": [],
+      "category": "statistics",
+      "concern_id": "C16_future_benchmark_and_ablation_protocol_absent",
+      "evidence": "No game, opaque split, duplicate or semantic-family audit, statistical unit, sample size, power calculation, paired seed rule, baseline interface, endpoint, multiplicity control, equivalence margin, stopping rule, replication rule, negative-result sentence, or scaling schedule is frozen. No common accounting separates raw text context, passive lookup/RAG, explicit graph state, dream-memory edges, LoRA parameters, tool calls, and thinker computation. The legacy audit demonstrates why this matters: 67 programs repeated 15-16 times, missing generation seeds, dependent checkpoints, and post-hoc diagnostics admitted alternative fixed-prior explanations. These omissions are legitimate only while every behavioral and scaling claim remains deferred.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Any later scientific step still requires a separately ratified benchmark with shortcut-resistant games, matched baselines, mechanism ablations, statistics, and fixed negative-result interpretation."
+    },
+    {
+      "acceptance_test_ids": [
+        "ST1_canonical_chain_and_recovery",
+        "ST2_episode_budget_lifecycle",
+        "ST3_context_generation_local_roundtrip",
+        "ST4_typed_call_cardinality",
+        "ST5_private_dispatch_score_atomicity",
+        "ST6_public_projection_noninterference",
+        "ST7_role_capability_fixture",
+        "ST8_closed_graph_and_no_feedback",
+        "ST9_dual_validator_mutation"
+      ],
+      "category": "operations",
+      "concern_id": "C17_exact_human_ratification_pending",
+      "evidence": "The verbatim human excerpts express general approval of strict research and broad permission for possible mini-experiments, but they do not ratify the SHA-256 of this proposal or its exact requested scope. The binding interpretation narrows authority to CPU schemas and fixtures, and both AGENTS.md and change.json explicitly require a subsequent exact human decision. Model agreement or this critique cannot infer that authorization.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "No schema, validator, oracle, fixture, receipt, model, environment, or experiment work is currently authorized by the supplied human bytes."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/human_directive.txt",
+      "purpose": "Binding reduced directive and authority boundary.",
+      "sha256": "9183cb1daf9a9bd641179194cfd75e29d412bcdfb54b24db53a5a2fde86cdaa0"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation, ratification, and GPU/claim gates.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden implementation scope.",
+      "sha256": "d5208d65159aa0688dcbc60dc120299e7d2c64eafd26e55eaefd7e36002584c6"
+    },
+    {
+      "path": "research_loop/plans/prospective_action_trace_spine_v0.md",
+      "purpose": "Bounded six-artifact spine proposal.",
+      "sha256": "a77035b6687a097c37c196bbf761a968d4ecac13c1e1d373f96f95cdaa5328a7"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Superseded broader nursery contract.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/critique.json",
+      "purpose": "Prior adversarial findings motivating reduction.",
+      "sha256": "6e936147046a4b1fbce1269d6d6e715445353e055a3b3307f2649becdbad7e8c"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/consensus.json",
+      "purpose": "Prior adjudication and unresolved limits.",
+      "sha256": "03c62de0f6c638f0be1528cb08a5d0c9d5c258a00e6fd970b2c85e40990e6daf"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy stop and prospective evidence requirements.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Legacy provenance and action-routing audit.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Legacy marker-dispatch loop baseline.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Legacy ledger and retrieval baseline.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Legacy serving and provenance baseline.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "Legacy effectful environment baseline.",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "critique_id": "crit_20260906_prospective_action_trace_spine_v1_adversarial_v1",
+  "human_questions": [
+    "Does Rohin ratify the exact architecture-change hash only after the blocking topology, declassification, lifecycle, receipt-binding, and branch-eligibility issues are repaired, or does he reject this scope for rework?",
+    "Are event_seq, event_id, previous_record_sha256, and parent resolution global across private and public stores or independently scoped per ledger, and which store owns each of the six event types?",
+    "What closed public representation, task-independent manifest policy, and paired-world criterion will prevent outcome text, hashes, measurements, errors, identifiers, order, and timing from identifying sealed tasks or answers?",
+    "Who selects admitted prior public outcomes, what exact candidate and rejection trace is recorded, and must selection be independent of the current sealed task and future evaluation goal?",
+    "What exact structured-output schema bytes and engine response bytes must be bound to TOOL_CALL_PROPOSED so a prompt/schema mismatch or fabricated call cannot pass?",
+    "What durable states make failed, superseded, retried, and abandoned contexts, generations, calls, and projections ineligible for dispatch, rendering, or release?",
+    "What total state-machine table defines budget consumption, transaction advancement, invalid public projections, CLOSE behavior, and retry after every malformed, stale, over-budget, crash, and publication failure?",
+    "Which repeat, retry, block, clock, and remaining-budget fields must appear in the actual rendered child input, and how will their field-to-byte inclusion be verified without revealing task identity?",
+    "What schemas and hash chain bind the oracle, fixture corpus, validator sources, quarantine and capability manifests, comparator outputs, and every ST receipt to this exact architecture and execution environment?",
+    "Does Rohin confirm that even a fully repaired and green CPU suite supports only structural synthetic enforcement, while runtime causality, memory use, online learning, LoRA transport, planning, generalization, improvement, and scaling remain subject to a new benchmark deliberation and exact ratification?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_prospective_action_trace_spine_v1.systems",
+      "sha256": "8911f1f1ace211c333ed72494beff9b75ef1874c69bfa594e399c015f7bfd049"
+    },
+    {
+      "interpretation_id": "chg_20260906_prospective_action_trace_spine_v1.benchmark",
+      "sha256": "37265c050a5c921f0a1b971f0d5bdc59b5fa0d158a2bd27ccfd4c3cb1013b7ee"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "ST10_private_public_ledger_topology: freeze global-versus-local sequence, hash-chain, parent-resolution, event-placement, and public verification rules across separate roots, including inaccessible private parents.",
+    "ST11_cross_root_crash_atomicity: inject failure at every rename, file-fsync, ledger-append, ledger-fsync, projection, and directory-fsync boundary and prove deterministic exactly-once recovery without orphan or false-success publication.",
+    "ST12_public_semantic_declassification: use paired hidden worlds and adversarial allowed-field encodings to test outcome text, hashes, manifests, identifiers, measurements, scores, errors, ordering, timing, and cross-artifact linkage rather than literal forbidden bytes alone.",
+    "ST13_context_admission_laundering: bind selector inputs, complete candidate set, selected and rejected public IDs, render order, and task-blind policy; test query-to-agenda signaling through inclusion, omission, order, repetition, IDs, and budgets.",
+    "ST14_structured_channel_provenance: bind exact offered tool-schema bytes, structured-output configuration, raw engine channel bytes, parser input, parsed call, generation identity, and stable mismatch errors.",
+    "ST15_branch_eligibility_and_abandoned_release: inject competing, failed, superseded, retried, and abandoned generations and prove they cannot dispatch, enter later context, or be released.",
+    "ST16_temporally_unrolled_dag_semantics: accept multiple lawful action/outcome iterations and valid shared-ancestry diamonds at the event-instance level while rejecting true back edges, cross-ledger future parents, and type-level false-cycle implementations.",
+    "ST17_policy_state_render_observability: place sentinels in every repeat, retry, block, clock, and budget field and prove the required values occur in exact rendered bytes and consumed IDs under the declared visibility policy.",
+    "ST18_total_failure_budget_lifecycle: enumerate malformed call, stale state, invalid score, crash, partial publication, over-budget, retry, invalid projection, and close transitions with exact budget, transaction, append, and error-code consequences.",
+    "ST19_evidence_artifact_binding: schema and hash-bind schemas, oracle, fixtures, validator sources, manifests, quarantine outputs, comparator results, execution environment, and every receipt to the architecture-change hash.",
+    "ST20_relational_and_coordinated_mutation: mutate linked records and recompute local hashes, mutate private/public pairs together, swap schema-plus-fixture bundles, replace manifests, and alter branch eligibility while requiring an independent expected verdict.",
+    "ST21_capability_observation_equivalence: define secret-varying paired executions, observers, permitted traces, process topology, and stable semantics for inherited-FD, environment, IPC, network, cache, log, timing, and error-channel fixtures.",
+    "ST22_resource_envelope_feasibility: freeze aggregate decoded and encoded sizes, parser memory, depth accounting, ledger totals, deterministic operation bounds, hardware profile for any time SLA, and fail-closed preallocation behavior.",
+    "FUTURE_ST_actual_consumer_and_dispatch_canary: under separately ratified live authority, independently capture actual template/tokenizer/tool-schema consumption, adapter/cache/code identity, dispatched action order, state hashes, integer measurements, and scorer recomputation.",
+    "FUTURE_ST_recall_composition_generalization_planning_action: separately measure verbatim recall, multi-source composition, structural and semantic generalization, multi-step planning, revision after outcome, valid dispatch, and task-value improvement.",
+    "FUTURE_ST_online_action_outcome_learning: require a prospective action and outcome followed by an eligible memory update and later parent-absent decision, compared with no-update, passive-lookup, outcome-shuffled, wrong-life, and fixed-prior controls.",
+    "FUTURE_ST_memory_connection_provenance_and_compute_ablation: label copied evidence, supported inference, hypothesis, contradiction, and synthetic re-expression for every local connection; budget-match raw context, RAG, explicit graph state, dream recurrence, LoRA transport, and thinker computation with bridge, recurrence, connectivity, and adapter ablations.",
+    "FUTURE_ST_split_statistics_negative_scaling: before task inspection freeze opaque splits, duplicate and semantic-family audits, statistical units, sample size and power, common-random seeds, multiplicity, equivalence margins, stopping, replication, permitted negative-result language, lifetime length, memory scale, and compute-scale claims."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "ST1_canonical_chain_and_recovery",
+    "ST2_episode_budget_lifecycle",
+    "ST3_context_generation_local_roundtrip",
+    "ST4_typed_call_cardinality",
+    "ST5_private_dispatch_score_atomicity",
+    "ST6_public_projection_noninterference",
+    "ST7_role_capability_fixture",
+    "ST8_closed_graph_and_no_feedback",
+    "ST9_dual_validator_mutation"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is deliberately narrow and worthwhile. The proposal responds directly to documented legacy failures\u2014unrecorded prompts, source/runtime drift, prose-marker dispatch, mixed secret/public outcomes, invisible repeat structure, and over-reading of self-consistent receipts\u2014by replacing retrospective reconstruction with prospective immutable records, a typed effectful-action boundary, explicit episode budgets, private/public projection, bounded recovery cases, a positive shared-ancestry diamond, and source-distinct CPU validation. It also avoids assigning a parent, dream, retrieval system, LoRA, or one-shot answer generator responsibility that should emerge only in a later recurrent organism, and it states the correct claim ceiling: green ST1-ST9 evidence would establish only registered synthetic structural enforcement, not actual consumption, causality, memory, planning, learning, transport, generalization, or improvement. Subject to exact human ratification, this could become useful provenance infrastructure after the blocking ambiguities below are repaired; schema compliance alone would not constitute scientific approval.",
+  "visibility_failures": [
+    "VF1: HARNESS can access task-related episode metadata and prior public records while also selecting and writing the exact child context, creating an authorized secret-to-prompt declassification path.",
+    "VF2: ENVIRONMENT_PUBLIC reads the full private receipt and can write unrestricted public outcome text, so role-root isolation does not prevent semantic encoding of private facts.",
+    "VF3: Public private-record hashes, tool-call IDs, action hashes, measurements, scores, error classes, manifest hashes, event order, and timing can identify or correlate with a sealed task without containing its literal bytes.",
+    "VF4: Inclusion, omission, ordering, repetition, and budget allocation for admitted public outcomes can launder a query-dependent agenda or answer.",
+    "VF5: TOOL_CALL_PROPOSED is not byte-bound to the exact tool schema offered to the engine or the raw structured-channel response, permitting fabricated calls and prompt/schema mismatch.",
+    "VF6: Failed, superseded, or abandoned generation branches have no durable ineligibility state preventing dispatch or later admission.",
+    "VF7: Repeat, retry, block, clock, and budget fields may exist in EPISODE_BOUNDARY while remaining absent from the actual rendered policy input.",
+    "VF8: Direct public-outcome-to-context admission provides a passive lookup and in-context adaptation shortcut that bypasses any future dream-memory path.",
+    "VF9: Ambiguous cross-ledger parent and hash semantics can either expose private identifiers to public validation or leave public provenance unverifiable.",
+    "VF10: Synthetic read/write denials do not define noninterference for timing, error, cache, IPC, network, inherited-descriptor, log, or operator-mediated channels."
+  ]
+}

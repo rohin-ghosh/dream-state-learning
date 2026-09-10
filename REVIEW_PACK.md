@@ -1,552 +1,281 @@
-# REVIEW PACK — the v2 system and results, written for Rohin's weekend deep-read
-*(Refactored 2026-08-22; current through the 2026-08-26 Semantic World v0.2
-depth result. This is the
-one document to read instead of the repo. Plain language throughout; every
-number here is reproducible via `alchemy/report.py` or quoted from
-results.json files named inline. Tail checkpoints of seeds 1–2 were still
-running at writing; those cells are marked "pending" and will be patched.)*
+# REVIEW PACK — Experience Models era, written for Rohin's deep-read
+
+*(Refactored 2026-09-06 by Fable. Supersedes the v2/Semantic-World pack; that
+content is preserved in git history at commit 786f2c46 and summarized in the
+VERSIONING section. This is the one document to read to know where the
+project stands.)*
 
 ---
-## FRESH-MIND PICKUP (left 2026-08-27, for the rested read)
-1. WHERE WE ARE: the whole stack is measured. Ceiling 23/24 (exhaustive
-   32B). Autonomy 0.25 flat (top-k; audited — generation is the loss,
-   ranking/verification are clean, 0 false accepts). Free dreaming:
-   depth now COMPOUNDS (1->5 over 32 cycles) with a generic citation
-   interface, but chains don't converge — the missing organ everywhere
-   is SELF-SCHEDULED VERIFICATION inside the dream loop.
-2. THE ARCHITECTURE IS SETTLED (notes/35): three nested loops; memory
-   adapter vs loop adapter; outcome critic (V/Q, never a thought-
-   verifier); loop trained by outcome-filtered SFT on trajectories we
-   are already saving; learning rates fall out of data volume.
-2b. GOLD-CONTROL RESULT (overnight): the organism's downstream path is
-   CERTIFIED — first D3 blend solved end-to-end from faithful memory
-   (parents -> role transfer -> per-parent lookups -> recipe -> mix) at
-   32B with a generic sequential protocol. The empirically-derived
-   memory+protocol contract is in the ledger; the open half is purely
-   dream-side production of parents/roles/recipes.
-3. MONDAY'S HIGHEST-VALUE MOVES, in order: (a) add the verify-own-
-   proposal step to the 32B dream loop (C3s self-check already does
-   this for simple claims — extend to parent-set predictions); (b) the
-   same-world verification control (24 leaves, queued); (c) Track A/B
-   gates: thinker question-generation is at 0.44 coverage (weak organ,
-   quantified), memory-character probe results pending; (d) then the
-   two-track connect: dreamed corpus -> LoRA -> adaptive thinker.
-4. THE THESIS SENTENCE (canonical): "An agent converts the consequences
-   of its actions into an increasingly connected experiential world
-   model; that model supports better future reasoning and action,
-   which generates better experience — a continual intelligence
-   flywheel."
-5. TWO-TRACK GATE first pass (in ledger): thinker question-generation
-   0.44 coverage (weak, quantified); memory character = associative
-   pattern, not database (paraphrase 1.0, analogy 1.0, reversed 0.33,
-   partial-cue 0.0) — probe transcript saved for the manual pass.
-6. Deadline math: abstract Sep 18, paper Sep 25. The four-arm ladder +
-   autonomy spectrum + substrate 2x2 + prior-localization are already
-   paper-grade results with error bars where it matters.
 
----
-## 0. The story so far, in five sentences
-We built a crafting world whose rules can only be learned from lived
-experience, and a pipeline that turns one agent-lifetime (15,360 games)
-into seven competing memory systems, measured at seven points along the
-life. The first full run (seed 0, "naive recipe") showed that naively
-fine-tuning experience into adapter weights stores nothing and eventually
-makes the model confidently wrong. We diagnosed why (single-exposure
-facts + numerically unstable training), fixed the corpus construction
-("fixed recipe"), and the second run shows facts now partially stick
-(recall 0 → ~0.2) while retrieval baselines saturate (recall 1.0). The
-world and instruments are validated; the memory-side bottleneck was then
-fully diagnosed and FIXED at L0 scale — the G-series (§4d) closed the
-nonce mini-world end-to-end at the oracle ceiling (0.949/0.882/0.923
-across three worlds, real dreamer, no oracle in the write path). The
-project has pivoted to the prior-anchored Semantic World (lands/,
-built by Codex on Fable's measured constraints) with nonce worlds kept
-as the zero-prior control; its corrected v0.2 depth diagnostic now has a
-verifier-free prompt/controller ceiling (§4f), and compression plus matched
-LoRA transport are the current program.
+## VERSIONING
 
----
-## 1. The game, mechanically
-- **1,024 ingredients** with made-up names; 128 are secretly inert. Each
-  ingredient secretly belongs to one of **96 classes** ("essences").
-  Classes sit at secret positions on a circle.
-- **Rules are over class PAIRS** (4,656 of them), so thousands of
-  ingredient pairs share each rule. 40% of rules are generated from the
-  circle geometry (equal-distance pairs behave alike and share product
-  families — the *learnable-pattern* stratum, "fn"); 60% are independent
-  coin flips (the *must-be-experienced* stratum, "iid").
-- **Products are tiered**: combining refined items makes genuinely new
-  higher-tier items, so recipes are real chains (goals span depth 1–4).
-- **Episodes**: a goal ("craft X"), a 6-item inventory guaranteed to
-  contain a valid plan, ~12–20 combine steps, and an exact
-  distance-to-goal value logged every step.
-- **The held-out set**: 30% of ingredient pairs are never allowed in the
-  same inventory, ever. Anything the memory knows about them must have
-  been INFERRED (via class structure), not remembered.
-- **Leakage-proofing**: class labels never appear in any text (a grep
-  proves it); names are nonces so pretraining knows nothing.
+| Version | What it was | Status |
+|---|---|---|
+| v1–v3 | AlchemyWorld / retrieval-vs-LoRA scaling attempts | closed; falsifier failed honestly; lessons absorbed |
+| Semantic World v0.2 (v4–v5) | mechanistic diagnostic era: five-rule stack, recognition reads, dream ladder | closed as headline (D3 shortcut audit demoted it); survives as the mechanistic toolbox and Paper-1 fallback |
+| **v6 (scout)** | 64-episode CompilerGym lives, sleep-v1, 2 arms × 3 seeds | **complete** — results below |
+| **v6.1 (complete; exploratory)** | 1024-episode lives, sleep-v2 (pathways + anchors), sealed split, batched wake | all 3 sleep roots terminal; two narrow positive concentrated paths, one severe registered action-routing failure; not confirmatory |
+| **one-parent/one-child headline (proposal closed; deliberation pending)** | one frozen target-blind parent teaches one child process-level thinking through tasks and thought-to-action correction; the parent then disappears; deployment crosses parenting with per-life Think--Dream--Sleep writes | next paper-grade build after exact deliberation approval and ratification |
 
-## 2. The seven memory systems (arms)
-All arms see the IDENTICAL life and use the same 7B reasoner + prompts.
-1. **no_memory** — floor.
-2. **long_context** — the raw life log in the model's real 32k window,
-   until it doesn't fit (dies honestly after ~E=60).
-3. **rag_raw** — top-12 lines retrieved from the raw log per question.
-4. **rag_dreamed** — same retrieval over the dreamed/augmented corpus.
-5. **lora_raw** — raw log fine-tuned into a LoRA adapter.
-6. **lora_dreamed** — dreamed/augmented corpus fine-tuned into a LoRA.
-7. **lora_dreamed_multiread** — same adapter, but before acting the agent
-   interrogates its own memory with several questions first.
+## THE PROJECT IN ONE PARAGRAPH (current form)
 
-**What a LoRA is (since it carries the thesis):** a low-rank "delta"
-bolted onto the frozen model's attention weights — rank 16 ≈ 30M trainable
-numbers vs the 7B frozen ones. Training is plain next-token prediction on
-the corpus text; a "fact" is whatever weight change makes those sentences
-more likely. Facts only become *extractable* if seen in many varied
-phrasings (the injection literature's core finding, now replicated by us
-twice). "The dreamer" = the LLM call + augmentation code that turns the
-life log into that corpus; **the corpus format is therefore the whole
-ballgame**, which is why it's where both bugs and fixes concentrated.
+Experience models: use parametric memory (an all-layer low-rank adapter) to
+make a frozen, lab-schooled base model prospective and thought-intelligent.
+One thinking loop (a self-conversation where acting is tool use), a surprise
+ledger (every action preceded by a prediction; expectation-violations are
+the error signal — "the error lives in experiences"), dreaming as learned
+context reconciliation, and sleep as the write mechanism ("the model edits
+its weights by thinking; sleep is the commit"). One frozen parent teaches one
+child how to turn process-level thinking into action on target-blind practice
+tasks, then disappears. At deployment, compare that parented child's
+Think--Dream--Sleep per-life learner with an equally provisioned
+frozen-parameter active-memory agent, while a matched parenting-by-write
+$2\times2$ separates inherited competence from measured learning. There is
+no classroom, cohort, peer exchange, teacher ensemble, or population mechanism
+in the paper. Current manuscript: paper/iclr2027_experience_models/main.tex.
+Claim-safe causal abstract proposal:
+research_notes/abstract_experience_models_v3_one_parent_causal.md. The broader
+lifetime-parametric positioning draft remains
+research_notes/abstract_experience_models_v2_positioning.md.
+Full idea ledger:
+research_notes/IDEAS.md (the 09-04→09-06 entries are the meat).
 
-## 3. How we measure (and the numbers to know cold)
-Per arm per checkpoint: **held-out prediction** (200 never-seen pairs,
-free-form answer, confabulation-priced), **seen recall** (200 experienced
-pairs — the G1 gate ≥0.9), **task success** (200 fresh games).
-- **0.25** = all-"UNKNOWN" score (abstain floor). **0.42** = answer
-  NOTHING to everything (the majority-class trap — seed 0's fake win).
-- **acc_product** is the only unguessable metric (~13,500 names).
-- **Ceiling** (ideal reasoner): ~0.09 @960 eps, ~0.92 @3840, 1.00 @7680.
-  Scores meaningfully above ceiling = leak/artifact, investigate.
-- **Task floor** = no_memory's ~0.07–0.17 (varies by seed).
-- Parsing caveat: models sometimes answer "RUIN | NOTHING" (echoing the
-  menu); the parser takes the first recognized keyword — treat 1–2% of
-  kind-accuracy as noise.
+## V6 SCOUT — WHAT ACTUALLY HAPPENED (all numbers cell-counted)
 
-## 4. Results
-**FORMAL VERDICT (2026-08-22, now 3 seeds):** the v2.1 recipe **fails
-the pre-registered falsifier** — at E=3840, lora_dreamed − best-RAG =
-−0.026, t=−3.25, n=3 (needed ≥ +0.05; with df=2 this is p≈.08 two-sided —
-a strong DIRECTIONAL negative, not conclusive; the pre-registered five
-seeds were not completed). Per
-pre-registration the substrate claim is dead *in this form* (rank-16,
-one-pass dreaming). All three seeds show the same shape: retrieval
-recall 0.94–1.00, in-weights recall bouncing at noise, held-out at floor
-for everyone while the ceiling reaches 1.00, and every apparent
-late-life LoRA "win" decomposing into the answer-NOTHING prior.
-The attribution question this raised ("bigger memory or richer
-dreaming?") was answered by the G-series (§4d): neither — the write
-FORMAT was broken. With the five-rule stack, the same substrate carries
-the whole L0 structure at the oracle ceiling.
-### Seed 0 — naive recipe (COMPLETE; alchemy/v2_out/seed0_naive_results.json)
-- Naive LoRA arms: recall ≈ 0 everywhere (G1 fail ⇒ no claims); by
-  mid-life they answer confidently and wrongly (confab ~0.6–1.0). The one
-  adapter accidentally trained in bf16 scored held 0.38 vs 0.00 for its
-  fp16 siblings — numerical instability was damaging adapters alongside
-  the exposure problem.
-- RAG: recall grows 0.24→0.38 but held-out stays ~0.25–0.30 while the
-  ceiling climbs to 1.0 — remembers, never composes.
-- lora_dreamed's "0.42 @960" decomposed exactly into the answer-NOTHING
-  prior — caught by the reference numbers above; that catch created the
-  acc_product metric.
+**Setup:** Qwen2.5-7B frozen; CompilerGym llvm (deterministic IR-instruction
+reduction); 64 episodes/life; sleep every 8 (sleep-v1: verified exemplars +
+contrast pairs + ≥2-episode principles + waking brief); probes on 8 programs
+at ep 0/16/32/48/64; arms A (frozen) vs B (sleep-LoRA), 3 seeds each.
 
-### Seeds 1–3 — fixed recipe (ALL COMPLETE; alchemy/v2_out/seed{1,2,3}_fixed_results.json — run report.py on all three for the aggregate)
-Fixed recipe = bf16 + gradient clipping, undeduplicated raw corpus,
-paraphrase×ordering augmentation (~12 phrasings/fact + QA lines +
-capped UNKNOWN slice), size-scaled epochs.
-- **Retrieval saturates**: rag_dreamed recall 0.99–1.00 at every point
-  (the QA lines make seen-pair recall trivially retrievable — a strong,
-  honest baseline). rag_raw climbs 0.68→0.82. Held-out for both: still
-  floor (~0.25) — the remember-vs-compose split is now unambiguous.
-- **In-weights facts partially stick**: lora_dreamed recall 0.10 @60 →
-  0.02 @320 → 0.18 @960 (naive was 0.00) — real but ~5× below the G1
-  gate and ~5× below retrieval. Interference/dilution signature as the
-  corpus grows.
-- **Nobody extrapolates yet**: held-out acc_product = 0.00 for ALL arms
-  including RAG — the held-out contest so far is only kind-guessing.
-  Normal at a 0.09 ceiling; the 3840 checkpoint (ceiling 0.92) is where
-  extrapolation becomes measurable at all.
-- Task play: LoRA arms still at/below floor — adapters still erode the
-  actor; instruction-preservation mix is a pending fix.
-- **Full-run verdict (all 7 checkpoints):** in-weights recall never
-  climbs — it bounces at noise (0.10/0.02/0.18/0.04/0.01/0.00/0.11)
-  while retrieval sits at 0.94–1.00. Held-out stays at floor for every
-  arm even as the ceiling reaches 1.00 — NOBODY composes yet. Every
-  apparent late-life win decomposes into the answer-NOTHING prior
-  (e.g., lora_raw@15360 "0.44" = acc_nothing 0.94, acc_product 0.00 —
-  same trap as seed 0's 0.42, caught the same way). G1 fails for
-  consolidation at rank 16 + one-pass dreaming: the fixed recipe made
-  facts representable but not retainable at scale.
+**Measured noise ruler:** nine completed base-model probe panels give mean
+`0.493554` and sample SD `0.011344` per panel (observed range
+`0.478156--0.515694`; approximately `0.016` SD for a difference of two
+independent panels). These are unseeded descriptive repeats, not a substitute
+for common-random confirmatory coupling.
 
-### What this adds up to
-The world, evals, gates, and retrieval baselines all work. Consolidation
-into weights is real but ~5× too weak, in exactly the way the literature
-and our pre-registration predicted. This is the intended scientific
-position: a measured gap with named causes, not a mystery.
+**Result 1 — the flywheel machinery works end-to-end.** Lives run, sleep
+compiles, adapters train and reload, briefs carry forward, everything
+resumable. The organism's waking briefs are coherent and evidence-grounded.
 
-## 4b. The rank-64 cell and the STYLE-OSCILLATION finding (2026-08-22 night)
-The first capacity cell (rank 64, seed-1's corpora) completed, and its
-decomposition (alchemy/v2_out/seed1_r64_results.json) closed the case:
-- **acc_product = 0.00 in EVERY lora cell at BOTH ranks.** No pair
-  knowledge exists in weights anywhere, in any of the four runs.
-- Every apparently-good recall number correlates perfectly with
-  acc_nothing ≈ 0.9 (and every bad one with ≈ 0): the adapters
-  OSCILLATE BETWEEN ANSWER STYLES ("say NOTHING" vs "name products"),
-  and "recall" merely measured which style the training landed in.
-  The rising-then-falling "retention curves" were style artifacts.
-- Conclusion: neither 2×2 axis was the binding constraint. The
-  MECHANISM is under-driven: each fact received ~12–50 gradient touches
-  (12 phrasings × 1–4 epochs) where the injection literature uses
-  hundreds — and the epoch-scaling that kept big trains cheap cut
-  exactly this. Fact injection was never actually attempted at the
-  intensity it requires.
-**THE INJECTION CAPACITY CURVE (weekend result — the first scaling law):**
-at the measured sweet spot (lr 5e-4, 200 touches/fact): 50 facts → 0.72
-recall (r64); 200 → 0.41 (r64); 1,000 → 0.23 (r64) / 0.44 (r128).
-Recall decays with fact count; rank buys it back ~linearly. Holding a
-lifetime (~10k+ facts) at G1 levels by brute SFT would need rank in the
-thousands ⇒ **store-everything consolidation is measurably impossible ⇒
-selection (salience/curation) is FORCED by the substrate** — the capacity
-wall is paper 1's measured motivation for paper 2's learned curation.
-v2.2 full-run consequence: measured recipe (5e-4 / 200 touches / rank
-≥128) + the dreamer consolidates a CURATED SUBSET sized by this curve,
-not everything. Overtraining note: touches beyond ~200 DEGRADE recall at
-high LR (0.72→0.44 at 600) — the sweet spot is finite.
+**Result 2 — sleep-v1 does NOT beat the frozen loop.** Adapter-on lost 8/12
+paired on/off checkpoints (mean paired diff ≈ −0.067 before noise
+correction; several gaps within ~2σ). Temporal pattern: on lost 3/3 lives at
+ep16 but won 2/3 at ep64 (+.020, +.027, −.080) — a recovery-with-data trend
+in 2 of 3 lives, suggestive (~1.7σ) not significant.
 
-**Pivot: the injection micro-benchmark** (alchemy/micro_inject.py,
-RUNNING): 50 real facts, grid over learning-rate × touches-per-fact ×
-rank, scored on exact recall + a confabulation control. Twenty minutes
-per cell; establishes the consolidation recipe empirically before any
-further full run. This is the experiment that should have preceded v2.0
-— recorded as such.
+**Result 3 — mechanism NOT established.** "Fewer, better actions" held in
+only one life cleanly (fewer acts 6/8 checkpoints, better validity only
+4/8, with explicit reversals). Codex's independent audit corrected an
+over-claim here; the fixed-action-budget assay (Codex's) owns this question.
 
-## 4c. THE ORACLE RESULT — the reasoner is not the wall (2026-08-24)
-Handing the model the latent structure directly (its two ingredients'
-class labels + the relevant class rule + grades) yields **0.945 score /
-0.91 acc_product** on held-out pairs; with classes but no rule: 0.33/0.00.
-(alchemy/v2_out/oracle_diag.json). Combined with the capacity curve this
-closes the diagnosis:
-- pair-facts are unstorable (~500k of them; measured capacity wall);
-- STRUCTURE is small (~1,024 memberships + 4,656 rules — fits measured
-  LoRA capacity) and converts to answers at ~90%;
-⇒ the dreamer's real job is INDUCING AND CONSOLIDATING CLASS STRUCTURE,
-not enriching pair facts. Selection was forced by capacity; abstraction
-is forced by the oracle. This redefines v2.2's dreamer target: emit
-class-equivalence lines ("X behaves like Y") + class-rules mined from
-cross-episode evidence, and measure fn−iid separation (the geometry-
-induction number) as the primary composition metric.
+**Known defects of the scout (documented in ~/v6_out/CONTAMINATION_NOTE.md):**
+probe set leaked into training via a URI-prefix bug (fixed: `_canon`); ep0
+probes ran under a different harness version. The scout is infrastructure
+validation + recipe characterization, not a held-out learning result.
 
-## 4d. THE G-SERIES — the machinery works, then reassembling it honestly (2026-08-24/25)
-The L0 isolation campaign (alchemy/mini_g2*.py, mini_g4*.py; every cycle
-in alchemy/v2_out/mini_ledger.md) first PROVED transport through weights,
-then hunted the real dreamer's gap to that proof.
+## COMPLETED LEGACY EVIDENCE
 
-**G2f — the breakthrough (oracle statements, real weights): kind_bal
-0.949, family-reads 1.00.** The five-rule stack it proved:
-1. dreams COIN NAMES for abstractions ("the belyl-family") — concept
-   formation, so everything downstream is one hop;
-2. memories stored as 1-hop atomic QA facts (2-hop reads collapse inside
-   adapters — G2d showed rule_acc 0.25 when reads had to hop);
-3. exposure ~200 touches/fact (32 touches → 0.58 storage; 200 → 1.00);
-4. thinker performs atomic RESOLVED reads (the model applies resolved
-   knowledge at 0.77–0.91 but cannot select from an in-context rulebook,
-   0.28);
-5. the CLEAN base composes — adapter is mounted only to produce the
-   memory block, then unmounted (read-only adapter protocol).
+1. **v6.1 long run — complete.** All three sleep-v2 roots reached episode
+   1,024 with sixteen paired adapter-on/off checkpoints. Terminal ON-OFF is
+   `+0.037078/+0.058894/-0.434834`; normalized post-first-write probe-window
+   AUC difference is
+   `+0.033005/+0.046554/-0.290745`. Roots 0/1 concentrate 98.8%/92.9% of
+   terminal actions on one supplied six-pass routine; root 2 emits only one
+   registered action; only 353/797 (`44.3%`) terminal action-label candidates
+   would be accepted as `ACT` by the post-run on-disk parser source proxy.
+   This is a heterogeneous three-path writer outcome, not a pooled learning
+   win. The repaired analyzer validates every available eight-program ledger
+   against its saved summary and receipts 492 analysis-input/lifecycle
+   artifacts, while explicitly noting that valid-record-boundary truncation
+   and exact runtime ancestry cannot be proved. Full evidence and limitations:
+   `research_loop/advisory/20260907_fable_v61_terminal_three_root_report_v3.md`.
+   Fresh local-package reaudit: **PASS**, with the 549 MB remote bytes still
+   correctly labeled author-observed rather than independently verified:
+   `research_loop/advisory/20260907_fable_v61_terminal_three_root_report_independent_reaudit_v3.md`.
+2. **Noise band — complete:** nine unseeded base panels, mean `0.493554`,
+   sample SD `0.011344`, range `0.478156--0.515694`.
+3. **Exploratory controls — complete, audit-limited:** base, outcome-tail
+   shuffle, r8, and true-r16 panels completed; r64 training completed but its
+   probe failed the serving-rank limit. These are recipe diagnostics, not
+   accepted causal controls (correction below).
 
-**G4 series — replacing oracle statements with the real dreamer:**
-- G4 (thin one-shot "group and emit" prompt): 0.282. Dreamer coined
-  families from PRODUCT NAMES, not behavior. Lesson: grouping and
-  emission are different cognitive steps.
-- G4b (fresh grouping dream, 2 passes + LLM merge): 0.333. My
-  reimplementation regressed the proven run_mini dreamer. Lesson: don't
-  reimplement a proven organ.
-- G4c (consume proven artifact, naive union-find): 0.41. A 17-name blob
-  line chained everything. But focused-evidence pair dreams verified 3/3.
-- G4d (VERIFIED-CLAIM GRAPH): dreamer proposes executable pair-claims,
-  engine verifies each (Voyager rule), verified ruin-pairs are
-  same-family edges, components = families. 3 families, purity 1.0,
-  coverage 0.542 — end-to-end 0.256 because uncovered ingredients
-  hallucinate family reads.
-- G4e (+ DAYDREAMING: re-dream focused on still-ungrouped ingredients):
-  coverage 0.542 → 0.917 in ONE round, 4 families all purity 1.0, 10/10
-  pair-rules verified. **The dreamer side of L0 is solved.** End-to-end
-  0.308 → read diagnostic showed memberships 21/24, rules 7/10, with
-  the two PRODUCT rules exactly the corrupted reads.
-- G4f (rule upweighting ×3 + thinker-normalized rule reads): 0.513;
-  diagnostic now memberships 22/24, rules 10/10 — reads solved; the leak
-  moved to composition: (a) rule reads are ORDER-SENSITIVE (reversed
-  family order misses), (b) the 2 uncovered ingredients are both type B
-  (product-critical) — B members lack ruin evidence by nature, (c) the
-  base answers bare "PRODUCT" (no name in memory) which the parser
-  scored unparseable.
-- G4g (symmetrized rules + membership inference through verified product
-  edges + kind-level parse): coverage 1.000, purity 1.0 ×4, product 1.0,
-  ruin 1.0 — nothing 0.0 from ONE bug: the normalizer checked "product"
-  before "nothing", inverting the adapter's correct "nothing happens.
-  they do not form a product."
-- **G4h — L0 CLOSED: kind_bal 0.949 (product 1.0, nothing 0.846, ruin
-  1.0), coverage 1.000 — real dreamer, no oracle in the write path,
-  EQUAL to the G2f oracle-statement ceiling.** The five-rule stack holds
-  end-to-end; every point between 0.282 and 0.949 is attributed to a
-  named, fixed defect (see mini_ledger.md).
-- **G4i — replicated on fresh worlds** (self-contained pipeline, new
-  dreams): seed 1 = 0.804, seed 2 = 0.872 (coverage 0.958, purity 1.0 on
-  both). Residual gap: a true type sometimes arrives as two disconnected
-  components with NO witnessed evidence between the halves.
-- **G4k — experiment-resolution + family-merge: 3-world line
-  0.949 / 0.849±0.06 / 0.872±0.09 (per-seed means over n=3 full-pipeline
-  reps; grand mean ~0.89; prior 0.33; best-rep line 0.949/0.882/0.923).**
-  Structure is deterministic across reps (same families, same merges,
-  coverage 0.958, 10/10 rules every time); ALL variance is in LoRA
-  training/reads, concentrated in acc_product. When daydreaming
-  finds a family pair with no witnessed evidence, the agent ACTS — runs
-  one combine in the world — and the verified outcome (ruin => same
-  family) triggers the merge. Notice a gap -> act to fill it -> verify ->
-  consolidate: curiosity as a memory organ, and the first working
-  second-order inference. (G4j, dreamed-rules-only, showed the merge
-  can't fire without that action; also measured run-to-run training
-  variance ~±0.08 — no fixed shuffle seed yet.)
+**Control audit correction:** the completed two-panel means were base
+`0.485`, r8 true-corpus `0.515`, original r16 true-corpus `0.409`, and r16
+outcome-shuffled `0.526`. These do not prove a rank optimum or binding effect:
+training/probes were unseeded and not common-random; the shuffle retained the
+program and action text and permuted only outcome tails; and r64 produced no
+probe because vLLM's frozen maximum rank was 32. Treat this as writer
+sensitivity only. Exact hashes and limitations are in the independent audit.
 
-The through-line: every point lost between G2f (0.949) and the real
-dreamer has been attributed to a named, fixed defect — nothing is
-mysterious. Alongside: the DREAM LANGUAGE spec (five strata: witnessed
-facts w/ provenance, evidence-scaled generalizations, prior-contrast/
-surprise, named abstractions, connections), the docker-image principle
-(dream = commit layer; write diffs + reinforce repeats), dreamer==thinker
-as one question-engine with two ports, and the IDENTIFIER-VIVIDNESS
-variable (nonce vs "red monkey in candyland" skins, same hidden laws) —
-all in research_notes/32.
+**Independent mid-run audit (2026-09-06):** the sealed train/probe URI split
+is now clean, but each “1,024-episode” life repeats only 67 unique programs
+15--16 times. At episodes 64--256, 10/12 available adapter-on/off differences
+were positive (mean `+0.021`, suggestive only; generation is unseeded). One
+life then collapsed: B2 scored `0.000` at episode 576 with zero parsed ACTs,
+while a diagnostic extraction of its Markdown-wrapped `### ACT:` /
+`- **ACT:**` lines scored `0.529` in the unchanged gym. Its cumulative corpus
+fraction containing off-dialect ACT markers grew from 0 at sleep 64 to 0.356
+at sleep 576. This is consistent with a self-reinforcing writer/parser dialect
+shift contributing to the routing failure; unseeded writer realization and
+unbound runtime ancestry prevent causal localization. The post-hoc recovered
+score is diagnostic, never a replacement result. Full hashes, tables, causal
+limitations, and the prospective repair assay:
+`research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md`.
 
-## 4e. SEMANTIC WORLD — the C-ladder, first 24 hours (2026-08-25/26)
-Instrument by Codex (lands/), machinery by the G-series stack. Floors:
-D0-D2 0.167, D3 0.333. Aligned skin, seed 0 (skins/seeds fan-out queued):
-- C0 (full lifetime in context): D2 0.08 — in-context induction fails
-  even with every observation visible (the designed context-break).
-- C1a (oracle atomic leaves + reasoning room): D2 0.72. The one-word
-  answer protocol had suppressed reasoning (our own eval trap); D3
-  showed an OVERTHINKING effect (resolved-D3 0.83 no-CoT -> 0.35 CoT).
-- C2 (oracle corpus in rank-64 LoRA, RECOGNITION READS, clean-base
-  compose): D1 0.83-0.92, D2 0.92-1.0, read fidelity 228/228 across all
-  three skins — parametric transport proven at lands scale. Recognition
-  reads (argmax candidate scoring under the adapter over the claim
-  grammar's finite answer space) are the read-channel fix.
-- C3 (REAL DREAMER: grammar claims + thinker-assembled citation paths +
-  verifier gating + daydream rounds + gauge-pinned emission):
-  **D2 0.917 — equal to the oracle transport ceiling.** This is retained and
-  relabeled the **perfect-checker ceiling**, because the exact FactorSolver
-  must not sit inside the headline cognitive loop. Coverage->
-  accuracy measured: 9/15 animals connected -> D2 0.50; 14/15 -> 0.917.
-- C3 skin fan-out (the vividness thesis, measured): dreamer coverage
-  aligned 14/15 / neutral 13/15 / conflicting 11/15; end-to-end D2
-  0.917 / 0.667 / 0.75. Priors scaffold the dreamer's connection-
-  proposing and the composer's reasoning; storage is prior-indifferent
-  (G5b). The original D3 is now retired as an inference claim: its public
-  signature collides with an ordinary copy rule in every audited seed, and it
-  exposes one same-role target anchor, making the queried cell directly
-  recoverable after role induction. See corrected v0.2 in §4f.
-- Science: prior scaffolding acts on REASONING (nonce skin -20 pts in
-  multi-step composition; storage is prior-indifferent, G5b); exposure
-  cost is fact-SHAPE-driven (relations > entities; G5c). D0-D2 findings are
-  unaffected by the retired D3 diagnostic.
+A post-hoc fixed-action diagnostic makes the early signal more specific: at
+caps of the first 1/2/4/8 actions per probe, mean ON-OFF was respectively
+`+0.0178/+0.0240/+0.0223/+0.0210` (positive in 11/12, 12/12, 10/12, and
+10/12 paired checkpoints). The adapter therefore appears to improve early
+panel scores even when later executed actions beyond the cap are discarded;
+those later actions alone cannot explain the positive differences. Generated
+tokens, parsing probability, unseeded sampling, and other arm differences
+remain uncontrolled. This stays exploratory until repeated prospectively.
 
-## 4f. SEMANTIC WORLD v0.2 — honest higher-order depth ceiling (2026-08-26)
+Action-string analysis narrows that interpretation further: adapter-on more
+often used one broadly useful four-pass opening
+(`mem2reg+sroa+gvn+simplifycfg`) across all eight sealed programs, replacing
+weaker two/three-pass openings on `dijkstra`, `stringsearch`, and `sha` by
+roughly `+0.10/+0.10/+0.021`. That opening was supplied in the birth prompt,
+so this is compatible with reuse of a taught action prior, not discovery or
+yet program-specific thinking. The same action content later remained
+gym-effective in a post-hoc
+extraction while the registered interface did not execute it. Reproducer:
+`research_loop/advisory/analyze_fable_v61_probe_actions.py`.
 
-V0.2 repairs both D3 shortcuts: 12 independent target lands, queried-role
-withholding, ratio-preserving pigment sums with 2–5 latent parents, unique
-target recipes, and joint operator+parent identifiability. It passes 1,000 /
-1,000 CPU audits with 1,000 distinct public fingerprints; the 12-way answer
-floor is .083.
+At terminal time the two surviving positive roots retain the same narrow
+result: B0/B1 ON-OFF is `+0.037078/+0.058894`, and their first-action-cap
+differences are `+0.063425/+0.067999`, but 306/319 combined on-adapter actions
+follow each root's dominant six-pass routine. These paths are compatible with
+stable selection/reinforcement of supplied procedures, but do not identify a
+causal transport mechanism or an improving investigation policy. B2
+simultaneously finishes `-0.434834` with a severe registered routing failure.
+The repaired report supersedes the episode-960 partial snapshot without
+deleting it:
+`research_loop/advisory/20260907_fable_v61_terminal_three_root_report_v3.md`.
 
-The clean-model gates localized the problem. Full lifetime in context and one
-generic scaffold both score 0/12; giving correct atomic operator, parents, and
-source leaves yields 9/12. Monolithic recurrent dreaming still fails (7B:
-answer/parents 0/0; 32B: .083/0) because its long state collapses roles and
-confuses role-evidence lands with target parents.
+**Nursery status:** Fable's phase-0 run is curriculum self-distillation, not
+parenting. Every lesson was clipped to its first 1,176 source characters; 55
+of 56 allegedly native NOTE-admitted thoughts lacked a line-start native NOTE
+marker. The current repaired trainer did retain 7,947 supervised tokens with
+no truncation for its actual 24 rows. Treat results only as a formative writer
+scout. Exact audit:
+`research_loop/advisory/20260906_nursery_phase0_live_artifact_audit_v2.md`.
+The completed unseeded behavior check was null/adverse (ACT 8/8 OFF vs 7/8
+ON; scoped notes 0/8 in both; RECALL 3/8 OFF vs 1/8 ON), and its stated
+mystery-box task had no box evaluator while retaining the compiler bootstrap.
+It is probe-invalid for disposition learning and will not be scaled.
 
-The working verifier-free condition decomposes thought into an explicit search
-tree: dream the operator from public demonstrations; enumerate 57 public
-source subsets; ask one atomic LLM proof leaf for each of the two observed
-target roles; mechanically AND the model's own verdicts; revisit surviving
-branches into parent memory; recognize the queried role; retrieve only the
-needed public row; compose a recipe; and perform an exact lookup in the public
-workshop dictionary. No FactorSolver result or hidden state reaches a prompt.
-The controller routes and enumerates, so this is an over-scaffolded ceiling—not
-yet learned, efficient, or parametric dreaming. It is currently aligned-only:
-the canonical source reader uses conventional color recipes. Neutral and
-conflicting skins require a separately scored model-dreamed recipe gauge from
-their public calibration/demo evidence; deriving it from the hidden skin map
-would be leakage.
+## CURRENT HUMAN GATE
 
-Under this identical controller, 7B versus 32B on development seed 0 moves
-true-branch recall .50→1.00, exact-parent recovery .50→1.00, and false MATCH
-branches 32→5. With the finishing protocol frozen after seed 0, untouched 32B
-seeds 1–2 achieve exact parents 23/24 (.958), atomic roles 24/24 (1.000), and
-final answers 23/24 (.958). The only seed-2 answer miss is the same target whose
-true parent branch was rejected. This is direct evidence for the user's
-tree-growth idea: revisit precise memory states and extend them one proof leaf
-at a time; simply lengthening a monolithic chain does not create useful depth.
+- Submission-critical path, scientific go/no-go dates, fallback claim ladder,
+  and AI-use posture are consolidated in
+  `research_notes/ICLR_2027_SUBMISSION_CRITICAL_PATH_20260907.md` (planning
+  only; outside the frozen v2 source packet).
+- The non-shrunk project objective is mapped rung-by-rung in
+  `research_notes/DREAM_LORA_THINK_FULL_EVIDENCE_STACK_20260907.md`: the
+  parenting headline tests prospective learning, while connected parametric
+  transport, rate--distortion compression, goal-conditioned traversal, and
+  the action--knowledge--later-goal expansion relay remain separately
+  falsifiable mechanism experiments.
+- The physical-carrier intercept is now exact and independently passed at its
+  deliberately narrow scope. The real rank-8 all-layer Qwen2.5-7B adapter has
+  `20,185,088` elements, a `40,370,176`-byte hypothetical bf16 tensor floor,
+  and an author-observed serialized fp32 file of `80,792,096` bytes. That file
+  alone needs an expanded artifact larger than `161,584,192` bytes to cross
+  `<0.50`; at `8x16k` tokens this implies `1,232.7896` bytes/token. This is a
+  demanding numerator intercept, not an observed denominator, rate, or
+  impossibility result. The absence of a qualifying generated-load receipt is
+  nevertheless a fail-closed reason not to spend on the proposed 8x positive
+  panel. Preserve physical LoRA compression as a later-scale objective; keep
+  semantic-code compression and LoRA transport separate meanwhile. Passed
+  partial receipt and final audit:
+  `research_loop/advisory/20260907_pcfl_physical_intercept_receipt_v4.md` and
+  `research_loop/advisory/20260907_pcfl_physical_intercept_receipt_final_audit_v4.md`.
+- Three fresh independent attacks and their cross-critiques are adjudicated
+  in
+  `research_loop/advisory/20260907_one_parent_fresh_attack_adjudication_v1.md`.
+  The adopted ruling is: keep the writer/near-transfer canary, use the exact
+  four-root deployment pilot as the cross-ontology learning bridge, and
+  repair its spending rule to require directional `D + W_P + L_terminal`
+  rather than `D` alone. Report writer yield by arm/cut; never adjust it away.
+- The closest-work audit materially narrows novelty. TMEM already performs
+  online QA-to-LoRA fast-weight updates, PEAM already consolidates embodied
+  success/failure-correction trajectories, EVAF already uses surprise-gated
+  LoRA after context unload, and Learning on the Job already learns scoped
+  active-text rules from deployment feedback. The ICLR paper is therefore a
+  causal developmental intervention paper unless the separate mechanism
+  rungs run; it is not the first online parametric-memory paper. Current
+  primary-source synthesis:
+  `research_notes/related_work/20260906_experience_learning_neighbors.md`.
 
-Next: replace exhaustive enumeration with model-proposed top-k branches and
-report success@k against model-call/token budget; ablate canonical reads,
-atomic factoring, revisit, and the component ledger; replicate more seeds and
-skins; then write the exact same accepted memories into context versus LoRA
-under a matched read plan. Full protocol and claim boundaries:
-`research_notes/39_v02_branch_depth_results.md`.
+- The architecture scope is settled: one parent, one child, no classroom.
+  Parenting teaches process-level thinking and forces practice that converts
+  thought into action. It ends before deployment. The paper-facing comparison
+  is the resulting parented Think--Dream--Sleep learner (`P1`) versus a regular
+  strong frozen-parameter active-text agent (`R0`); `U0/U1/P0/P1` supply the
+  causal parenting-by-deployment-write diagnostic. Independent roots are
+  repeated trials of this fixed topology, never learners that teach, share
+  state with, compete with, or observe one another.
+- The optional post-confirmation one-child PCFL relay is now a **PASSING
+  unbound information-efficient candidate**, not an authorized experiment.
+  V4 keeps the entire same-root TEXT+LoRA mediator/control chain but replaces
+  75 co-primary population decisions and a 32-root copula pilot with one exact
+  fixed-`N=96` endpoint (`47/96` complete roots; conditional confirmation
+  power `.9016` at the `.55` planning point). A disjoint eight-root DEV gate
+  opens or closes confirmation but cannot modify it; no hidden confirmation
+  TEXT threshold remains. TEXT-first short-circuiting and five byte-identical
+  LoRA transaction classes reduce estimated confirmation builds by roughly
+  87--89%. This relay remains separate from and cannot delay or rescue the
+  parenting headline; adoption still needs its own bound deliberation,
+  ratification, implementation review, and run authority. Candidate:
+  `research_notes/60_one_child_pcfl_relay_v4_information_efficient_candidate.md`;
+  independent PASS re-audit:
+  `research_loop/advisory/20260907_one_child_pcfl_relay_v4_revised_candidate_reaudit_v1.md`.
+- External five-role architecture deliberation remains blocked until Rohin
+  gives the exact approval sentence for the repaired v3 packet, bound to
+  workflow SHA
+  `deb896c6a9aa96491c712d5d64f71a341e15d01fe4caf0aa82417c37053a7274`,
+  source-binding-manifest SHA
+  `18bcbe31550e4f31e90bdd445d20d017d43c17dd0a828ee34fca51b57262d186`,
+  and initialized zero-attempt state SHA
+  `1e69856fd3da8ba7f6b834b70c0aea0a1a0ab1687f5645765c09992b43c43a5c`.
+  A fresh local recheck recomputed all 30 bound source paths with zero
+  mismatches; the state remains `advocate_pending` with zero role attempts and
+  implementation authorization false. Receipt:
+  `research_loop/advisory/20260907_one_parent_v3_source_binding_recheck_v1.md`.
+  V3 supersedes the unexecuted v2 packet only by requiring directional
+  `D + W_P + L_terminal` in the four-root spending pilot and immutable
+  writer-path receipts.
+  That approval authorizes deliberation only, never implementation, model or
+  tokenizer execution, benchmark generation, adapter operations, or GPU use.
+- A fresh execution-gap audit gives the current implementation a **REVISE**:
+  all 30 frozen sources match and 19/19 relevant model-free legacy tests pass,
+  but no conforming headline runtime exists. The five dependency-ordered
+  blockers are the root/RNG/reducer, native typed causal transaction, exact
+  response-only rank-8 writer with transactional rollback, executable and
+  certified `ACTIVE_TEXT_FIXED`, and isolated five-service CompilerGym runner.
+  No four-root pilot is valid until all five plus their CPU gates pass. Audit:
+  `research_loop/advisory/20260907_one_parent_child_v3_execution_gap_audit_v1.md`.
+- A separate information/GPU-hour attack gives the September-16 schedule a
+  **NO-GO on current evidence, conditional GO after measured systems gates**.
+  The mandatory campaign is 38 full roots (2 DEV + 4 excluded pilot + 32
+  confirmation), 201,058 full-root calls, 36,956,672 maximum output tokens,
+  456 root fits, and 474 fits including writer canaries. The only plausible
+  eight-A40 schedule uses one isolated root/A40 with dynamic per-request LoRA
+  selection plus one shared reset TP2 32B parent; its makespan is
+  `8*H_nursery + 6*H_deployment`. Current code and lease evidence do not prove
+  that runtime. Exact gates and recalculation:
+  `research_loop/advisory/20260907_one_parent_v3_information_per_gpu_hour_schedule_attack_v1.md`.
 
-## 4f. THE AUTONOMY SPECTRUM (v0.2 repaired D3, 2026-08-26)
-D3 was relabeled underspecified, repaired by Codex (v0.2: 12 targets,
-parent sets 2-5, joint operator+parent identifiability, 1000-seed
-checks), and the guided-to-autonomous spectrum measured:
-| exhaustive verify (32B, all 57 subsets) | 23/24 |
-| top-k propose+verify (32B, k=1..12)     | 3/12, FLAT in k |
-| free recurrent dreams (32B)             | 0/12, 3 near-miss proposals |
-| free recurrent dreams (7B)              | 0/12, 0 proposals |
-Verification-shaped cognition is cheap; hypothesis GENERATION is the
-scarce operation the dream architecture must amortize. Scale moves the
-failure from no-hypotheses to wrong-by-one hypotheses (real pigment
-reasoning, superset parent sets). Temporal cadence at 7B (long /
-independent / recurrent, equal budget): uniform null — operator family
-recognized every time, parents never proposed, agenda unused.
-Also today: T1 adaptive thinker (D0 1.0, measured compute curve
-1.8->8.5 reads by depth, self-assessment overconfident 46/48@0.478);
-substrate x protocol 2x2 (context+recognition == LoRA+recognition at
-1086 memory tokens — the RESOLUTION PROTOCOL is the intelligence, the
-substrate carries it beyond the window); verifier-free D2 replicated
-5/5 world-skins (0.25-0.58 vs 0.167 floor, 0.917 ceiling).
+## THE LAWS THIS ERA ADDED (each bought with a failure)
 
-## 5. Diagnosis and the next experiment: SLEEP + DAYDREAMING
-(Rohin's framing.) The brain doesn't consolidate a memory by seeing it
-once in a nightly batch — it revisits the needed ones, offline (sleep)
-and online between tasks (daydreaming), enriching them into more
-learnable, more connected forms. [SUPERSEDED 2026-08-25 — this ladder was BUILT AND VALIDATED at L0:
-rung (2) re-dreaming and rung (3) the daydreamer are the workhorses of
-the G-series closure (§4d), plus a rung the ladder didn't anticipate —
-EXPERIMENT-RESOLUTION (G4k): when dreaming finds a structural gap with
-no lived evidence, the agent acts in the world to create the missing
-evidence. The enrichment × capacity 2×2 is retired; capacity was never
-the wall (G5/G5b: atomic facts store at ~24 touches even at 96-fact
-load) — corpus FORMAT was (G5c grid running). Next program: the C0–C5
-Semantic World ladder in lands/HANDOFF_FABLE.md.]
-Vision anchor (yours, near-verbatim): dreams are experiences replayed
-through other experiences, building the experiential world model; as the
-built world grows, raw reality fades — a puzzle off a light-projected
-real world. The literal mechanisms are this weekend's design question.
-
-## 6. Bugs ledger (why the numbers are trustable)
-Caught by tiny local test: peft adapter stacking (would have corrupted
-13/14 trains). By the canary: dream-chunk window overflow; LoRA silently
-training on CPU; phase memory-handoff crash; fp16 NaN at 147k lines. By
-eval integrity passes: majority-class score inflation (→ acc_product);
-abstention slice nearly UNKNOWN-training the holdout (→ capped). Each
-fix is a commit; the falsifier and gates were registered before any run.
-
-## 7. Play it yourself (ten minutes, real generated content)
-=== ONE REAL EPISODE (as the log records it) ===
-[episode 0] goal: craft vexane6301-II | success: False
-  combine corshiith nympolane -> You combine corshiith and nympolane. Nothing happens. (value 2)
-  combine beltaura coreth -> You combine beltaura and coreth. They fuse into kelsic6300-II. (value 2)
-  combine coreth nympolane -> You combine coreth and nympolane. They fuse into galov7708-II. (value 2)
-  combine nympolane galov7708-II -> You combine nympolane and galov7708-II. Nothing happens. (value 2)
-  combine corshiith kelsic6300-II -> You combine corshiith and kelsic6300-II. They fuse into sabvasic-II. (value 2)
-  combine beltaura galshiard -> You combine beltaura and galshiard. They fuse into fenvaura-II. (value 2)
-  combine nymshiura kelsic6300-II -> You combine nymshiura and kelsic6300-II. They fuse into drushirun-II. (value 2)
-  combine nymshiura sabvasic-II -> You combine nymshiura and sabvasic-II. They fuse into tesock2698-II. (value 2)
-  combine galov7708-II fenvaura-II -> You combine galov7708-II and fenvaura-II. They fuse into drutaane-II. (value 2)
-  combine coreth nymshiura -> You combine coreth and nymshiura. The mixture curdles and is ruined. (value 2)
-
-=== FIVE REAL HELD-OUT QUESTIONS (answers at bottom) ===
-Q1. What happens when you combine lurvaem and oseth?  (PRODUCT <name> | NOTHING | RUIN | UNKNOWN)
-Q2. What happens when you combine belneov and belshiov?  (PRODUCT <name> | NOTHING | RUIN | UNKNOWN)
-Q3. What happens when you combine drugoyl and sabtasic?  (PRODUCT <name> | NOTHING | RUIN | UNKNOWN)
-Q4. What happens when you combine fenvarun and mortail?  (PRODUCT <name> | NOTHING | RUIN | UNKNOWN)
-Q5. What happens when you combine drutayl and sabneost?  (PRODUCT <name> | NOTHING | RUIN | UNKNOWN)
-
---- answers ---
-A1. ('product', 'sabvaem-II')
-A2. ('product', 'sabesk7008-II')
-A3. ('nothing', None)
-A4. ('product', 'luryl7536-I')
-A5. ('product', 'hartaov-II')
-
-=== REFERENCE NUMBERS (seed-0 world) ===
-P(product) over holdout ~ 0.43
-P(nothing) over holdout ~ 0.42
-P(ruin) over holdout ~ 0.15
-distinct product names: 13568
-
-Try the five questions before looking. You will feel: "nothing" is
-guessable, product NAMES are not — that is acc_product's whole point.
-
-## 8. VERSIONING — what's running vs what's planned
-**Recipe v2.0 — "naive" (seed 0, COMPLETE, kept as baseline):**
-world with chains (depth≤4) + 40% geometric rules; one-pass dreamer;
-deduplicated raw corpus; fp16 training (mostly); 4 epochs flat; scalar
-metrics only. Its results are the "why naive fails" record.
-
-**Recipe v2.1 — "fixed" (COMPLETE: seeds 1, 2, 3):**
-everything in v2.0 plus — bf16 + gradient clipping; UNdeduplicated raw
-corpus (natural frequency preserved); exposure augmentation (~12
-phrasings/fact × both orderings + QA lines + capped UNKNOWN slice);
-size-scaled epochs; per-truth-class accuracy (acc_product); answer-sample
-logging; 7th arm (multiread); per-phase process isolation.
-
-**Recipe v2.2 — IN PROGRESS (first cell running):**
-- rank-64 capacity cell: COMPLETE (see §4b — style oscillation, acc_product 0)
-- injection micro-benchmark: RUNNING (sets the consolidation recipe)
-- enrichment × capacity 2×2: LoRA rank {16, 64, 128} × enrichment depth
-  (the attribution experiment for "too little dreaming vs too small memory")
-- salience-as-replay-count (needed memories get more variants)
-- re-dreaming (dreams that cite/connect other memories)
-- the DAYDREAMER (targeted between-episode enrichment; formalized note 32)
-- instruction-preservation mix (fix adapters eroding task play)
-- arm 8: "agentic-grep" (search tools over raw log — strongest honest
-  retrieval baseline; from Meta-Harness)
-- 128k extended-window long_context variant
-Exact v2.2 contents get locked (and this section updated) before launch —
-some items may slip to v2.3 after the 2×2 reads out.
-
-**V3 (being designed now — supersedes the v2.2 label for the next full
-run):** game redesigned for shallow induction (post induction-ceiling
-result); dream+think rich but pre-shaped; tries-to-success (pass@k) as
-headline with shape-practiced/material-new split; contexts-per-fact
-micro-test feeds dream design. v2 is closed for learning.
-
-**G-series / L0 (2026-08-24/25, COMPLETE):** the isolation-and-closure
-campaign of §4d. Nonce L0 closed end-to-end at the oracle ceiling with
-the real dreamer; five-rule stack proven; daydreaming + experiment-
-resolution validated; n=3 variance measured. Ledger: alchemy/v2_out/
-mini_ledger.md.
-
-**G5/G5b/G5c storage pilots (2026-08-25, G5+G5b COMPLETE):** exposure
-cost is format-mixture-driven, not fact-count-driven; storage is
-prior-indifferent (even conflicting bindings store at 24 touches);
-vividness therefore matters at the DREAM layer, not the storage layer.
-
-**Semantic World v0 (2026-08-25, D0–D2 FROZEN; D3 RETIRED):** lands/ package merged from
-Codex's semantic-world-v0 branch (commit 04c81a1) — Candyland/Blendyland
-instrument, three isomorphic skins, D0–D3 proof-graded goals, claim
-grammar + verification entitlement, priced reachout. GPU program =
-C0–C5 ladder (lands/HANDOFF_FABLE.md); C0/C1/C2 launched on the H100.
-Paper frame: two-front comparison (vs RAG downward, vs batch
-post-training upward) per notes/32 2026-08-25. **Semantic World v0.2 is the
-current D3 replacement** on `semantic-world-v02`: 1,000-seed identifiability
-audit and the 23/24 untouched verifier-free depth ceiling are complete; see
-notes/37 and notes/39.
-
-**Backlog (designed, deliberately NOT next):** fn difficulty ladder
-(calibrates after v2.1's 3840 numbers); A-Mem external baseline;
-context-distillation training loss; dreamer ladder rungs 2/4/5; ρ-mixture
-sweep (compressibility curve); learned curator (paper 2); hypernetwork
-writes, population tier (paper 3).
-
-**Rule:** anything you propose live gets filed to a version above within
-the same day; "running now" never changes mid-run.
-
-## 9. Open decisions with your name on them
-1. Dreamer co-learning: frozen-generator + learned-curator split (my
-   proposal) vs fully-learned dreamer — sets paper-2 scope.
-2. fn difficulty ladder calibration (IQ-matched questions) — after
-   fixed-recipe fn numbers at 3840 land.
-3. Enrichment × capacity 2×2 approval (next run, all four workers).
-4. Instruction-preservation mix for task play.
-5. September switch date; A-Mem baseline timing.
+- Cell-count every mechanism claim; name reversals; expect the cross-agent
+  audit (Codex caught Fable's over-claim; reviewers caught Codex thrice).
+- Normalize identifiers on both sides of any train/test split.
+- The organism's first death was context overflow — consciousness must be
+  managed; v6 manages it by arithmetic, v6.2 by taught dreaming, eventually
+  learned.
+- pkill/pgrep self-match and orphaned engine children: kill parents AND
+  EngineCore, verify nvidia-smi zero before relaunch.
+- A "monthly" quota may be a rolling window; verify semantics before
+  forecasting (lease planning).

@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "crit_chg_20260904_experience_model_v6_compilergym_lifetime_v3_adversarial_v1",
+  "change_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v3",
+  "state": "critiqued",
+  "architecture_change_sha256": "9b314360c9deff631ad0627a22290cec66ff1883d71beecf031d1a0fc50753bd",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v3.science",
+      "sha256": "1a639f6909c9c64708521452539eb368f3d68eb003a03a7bb369129405ed9b29"
+    },
+    {
+      "interpretation_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v3.systems.v1",
+      "sha256": "09e69d345602f897f2e237043c7c7376768c36859c37f3b0a034e8898d8d6b03"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling deliberation, ratification, review, and GPU-claim contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Schema governing this exact architecture-change artifact."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Local architecture-change validator and transition-gate implementation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/change.json",
+      "sha256": "835f45fbb5d8ef87511ff84be89f155d501ba8b90abfb63e48cd262da1bd0038",
+      "purpose": "Superseded v2 proposal whose graph, loop, visibility, and acceptance deltas are revised here."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/human_directive.txt",
+      "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad",
+      "purpose": "Verbatim owner directive copied unchanged into this proposal directory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/design_synthesis.md",
+      "sha256": "c51cb136f382b6a4711081c6f3c8804214ff3822a900b51c2e6a8b40175fb258",
+      "purpose": "Prior root synthesis for the two-system packet and deterministic SLEEP design."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/execution_defaults_candidate.md",
+      "sha256": "5dea916ef1f19e8c9ec51711ac5bd7308718830add97ba60ed5154dc21df40c1",
+      "purpose": "Candidate exact reward, score, packet-cap, split, lifecycle, margin, and resource defaults adopted conditionally here."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/interpretation_systems.json",
+      "sha256": "ab9f2c734d9c931aacf175e4f868a77fd88725f62219afb04c26eff0cb96fdd1",
+      "purpose": "Fresh systems interpretation identifying lifecycle, visibility, and determinism requirements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/interpretation_benchmark.json",
+      "sha256": "0bc5cc1eed62e2402aa6b11beb3e0055fc999d1aaac5eb193284b8d5d9b72442",
+      "purpose": "Fresh benchmark interpretation identifying executable substrate, score, split, and claim requirements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/critique.json",
+      "sha256": "eebb3bb06706d016de1deb128656c53c3ad09c7a4b5fa4a033c8a1a01c2c440a",
+      "purpose": "Adversarial v2 critique whose blocking concerns are disposed by the v3 bounds and tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v2/consensus.json",
+      "sha256": "961f4276d38827e81e81ccf1888d66801dc930837947e929f552607bdfd10771",
+      "purpose": "Validated v2 adjudicated consensus requiring the v3 rework."
+    }
+  ],
+  "strongest_case": "V3 is substantially more defensible than v2 as a deliberately unpowered engineering pilot. It adds the missing HARNESS target forks, uses one common order without pretending to counterbalance one pair, replaces causal-credit language with outcome-filtered supervision, limits the post-selection shuffle to a semantic state-operation-binding diagnostic, removes the preservation update rather than adding an unnecessary preservation-only arm, separates persistent source evidence from adaptive parameter state, chooses one IrInstructionCountOz-derived six-decision score, adds an acquisition-only fixed-recipe canary, and explicitly confines Stage C to one-realization wiring/recipe feasibility. Those changes resolve v2 concerns C002, C003, C005-C009, C013, C016, and C017 at the level needed for a scoped pilot, and they appropriately defer full factorials, strong carrier comparators, independent lives, power, and causal outcome-selection interventions to Stage D. They partially resolve C001, C004, C010-C012, C014, and C015. They do not resolve every material v2 consensus issue: the target forks remove the common life-memory channel and therefore do not execute the advertised whole-system comparison; packet, writer, score-disposition, seed, and mask bytes remain deferred; the matrix still lacks exact reader/writer principals and directly conflicts over prose and target-role access; the static headroom gate requires information or execution its stage forbids; and the intake has neither a canonical scope proposal in this directory nor A/B1/B2/B3/C transition states. The correct remedy is a narrow specification/governance rework before B2/B3/C, not a powered experiment or an on-policy factorial.",
+  "reviewed_acceptance_test_ids": [
+    "V6CG_T01A_CANONICAL_PACKET_OPERATIONAL_MASK_AND_ONE_LOOP",
+    "V6CG_T02A_OUTCOME_FILTERED_COMPILER_AND_DETERMINISM_TIERS",
+    "V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD",
+    "V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS",
+    "V6CG_T05A_UNCHANGED_LOCAL_025_POJ104_STATIC_SCORE_SPLIT_FIT",
+    "V6CG_T06A_AUTHORIZED_OFFLINE_SEMANTICS_AND_SPLIT_SEAL",
+    "V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT",
+    "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY",
+    "V6CG_T09A_EXPERIENTIAL_OFF_AND_SEMANTIC_BINDING_DIAGNOSTICS",
+    "V6CG_T10A_ENDPOINT_MASK_STYLE_REUSE_AND_TRANSPORT_AUDIT",
+    "V6CG_T11A_STAGE_D_REPLICATION_COMPARATOR_AND_CLAIM_GATE",
+    "V6CG_T12A_TRANSITION_SCOPED_REVIEW_AND_AUTHORIZATION"
+  ],
+  "concerns": [
+    {
+      "concern_id": "V6CG_V3_C001_ONE_RATIFICATION_IS_NOT_MACHINE_ENFORCED",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The proposed one-ratification A-through-C ladder is prose, not an enforceable authority contract in the reviewed intake, so it cannot safely release scoped implementation or the pilot.",
+      "evidence": "architecture_intake.py enforces exact authorized_scope/forbidden_scope equality only when the canonical research_loop/changes/<change_id>/scope_proposal.json exists; the complete v3 directory has no such file. After one human_approved transition the intake exposes a single implementation_authorized=true flag and contains no A, B1, B2, B3, or C states, receipt bindings, or independent-review transitions. T12A promises those gates but neither change.json nor the validator names an enforcing artifact/state machine. A ratification can therefore validate with arbitrarily chosen scope lists, and downstream code can see global implementation authority without proving the advertised stage prerequisites. This is a blocker to releasing work, not a demand for repeated human prompts: one exact ratification remains acceptable if its scope and internal gates are actually bound and enforced.",
+      "acceptance_test_ids": ["V6CG_T12A_TRANSITION_SCOPED_REVIEW_AND_AUTHORIZATION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C002_CANONICAL_STATE_AND_MASK_REMAIN_DESIGN_VARIABLES",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The canonical context state, finite operational vocabulary, serializer/parser, truncation precedence, and token-level loss mask are still not byte-closed; T01A asserts the desired result without supplying the normative object to test.",
+      "evidence": "The proposal names ANCHOR, counters, opaque progress, focus, compact environment, retrieval, and recent events, but it does not enumerate the finite focus_mode/recall_kind/recall_source values or canonical operation arguments, define retained focus fields, specify exact serializers/parsers, or decide which field loses data when the 4,096/512/256 caps collide. Both interpretations independently leave these as ambiguities to be filled by a later manifest. Those choices determine model input, target tokens, parser failures, time/progress cues, and treatment behavior, so they are material architecture rather than mechanical implementation trivia. This need not block authorized B1 fixture work, but it blocks B2/B3/C until the exact artifacts are deliberated or produced by an already-bound deterministic procedure and independently reviewed.",
+      "acceptance_test_ids": ["V6CG_T01A_CANONICAL_PACKET_OPERATIONAL_MASK_AND_ONE_LOOP", "V6CG_T02A_OUTCOME_FILTERED_COMPILER_AND_DETERMINISM_TIERS", "V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C003_PROSE_VISIBILITY_CONTRADICTS_SLEEP_INPUTS",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "V3 simultaneously permits model-authored prose as row input/provenance, lets SLEEP read notebook evidence, and marks all prose model output forbidden to SLEEP; these contracts cannot all be true.",
+      "evidence": "The graph and wake-loop text say reason, rationale, strategy, question, hypothesis, prediction, uncertainty, expected effect, and free text are provenance/input-only with mask zero. The public-evidence edge instead says no rationale wording enters the update. The matrix marks PROSE_AND_UNPARSED_MODEL_OUTPUT forbidden at SLEEP_COMPILER, while SLEEP reads the sealed ledger/notebook prefix and the inherited notebook supports NOTE_APPEND without a byte-bound finite content schema. A zero target mask does not mean an input is absent: prose conditioning can still affect hidden states and gradients on later operational targets. T02A audits masks but does not decide whether parsed prose is stripped, retained as conditioning, or admissible in notebook records. Until that choice and the sealed-record projection are exact, the private-thought boundary and writer authority are unverifiable.",
+      "acceptance_test_ids": ["V6CG_T01A_CANONICAL_PACKET_OPERATIONAL_MASK_AND_ONE_LOOP", "V6CG_T02A_OUTCOME_FILTERED_COMPILER_AND_DETERMINISM_TIERS", "V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS", "V6CG_T10A_ENDPOINT_MASK_STYLE_REUSE_AND_TRANSPORT_AUDIT"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C004_PRIMARY_FORKS_DROP_THE_COMMON_MEMORY_SYSTEM",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "D_HE,c is called a matched whole-system HARNESS-versus-EXPERIENTIAL contrast, but every target fork is forbidden from reading its system's sealed life ledger/notebook, making HARNESS's eight-task acquisition life behaviorally irrelevant to its held-out checkpoint evaluation.",
+      "evidence": "The thesis says context reconstruction and common nonparametric evidence stores are part of both whole systems, and v2 consensus required a matched whole-harness estimand. Yet V6CG_V3_STERILE_CHECKPOINT_EVALUATION_LOOP says descendants contain no life retrieval store, and every SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE evaluation cell is forbidden. HARNESS has no adapter, so its checkpoint-0/4/8 target forks are merely fresh base-model forks; nothing learned or recorded by the HARNESS life reaches them. EXPERIENTIAL alone transports acquisition history through its LoRA. Thus the measured contrast is parameterized experience transport versus no experience transport, not two otherwise complete systems with common external-memory capability. This can be repaired without another on-policy arm or a factorial: either mount matched read-only, target-blind life-evidence snapshots in both sterile forks, or rename and bound D_HE as a parameter-only transport contrast and stop claiming whole-system/full-harness measurement.",
+      "acceptance_test_ids": ["V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD", "V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY", "V6CG_T10A_ENDPOINT_MASK_STYLE_REUSE_AND_TRANSPORT_AUDIT"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C005_STATIC_HEADROOM_GATE_REQUIRES_FORBIDDEN_EXECUTION_OR_ROLE_ACCESS",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "T05A cannot both be a non-importing, non-executing static gate and establish per-cell positive score headroom and exact reward semantics for selected target cells.",
+      "evidence": "Positive IrInstructionCountOz headroom requires at least I_0 and I_Oz for the selected program, and replayable valid-state/invalid/terminal behavior requires the environment. T05A forbids import or execution but expects target-blind positive-headroom reports, denominator bindability, and rejection of no-headroom cells; T06A is the first stage allowed to execute those semantics. The matrix also makes SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA forbidden to STATIC_SPLIT_INSPECTOR even though that stage assigns and seals which candidates are targets and spares. Static structure can choose candidates and define a prospective check, but it cannot certify runtime reward headroom. Move empirical headroom/denominator validation to the authorized pre-model B2 seal, preserve predeclared first-legal/spare rules, and keep failure terminal; no target outcome, tuning, or scientific expansion is needed.",
+      "acceptance_test_ids": ["V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS", "V6CG_T05A_UNCHANGED_LOCAL_025_POJ104_STATIC_SCORE_SPLIT_FIT", "V6CG_T06A_AUTHORIZED_OFFLINE_SEMANTICS_AND_SPLIT_SEAL"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C006_SCORE_CELL_AND_FEASIBILITY_DISPOSITION_ARE_NOT_EXECUTABLE",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "V3 fixes a useful descriptive G formula but leaves valid-state membership, non-environment operations, early termination, partial environment errors, missing-cell classification, seed aggregation, and the mapping from scores/margin to its three Stage-C dispositions unresolved.",
+      "evidence": "The formula minimizes I_i,j over valid j but does not say explicitly whether reset I_0 is always the first valid best, whether INSPECT/NOTE_APPEND/FOCUS_REVISE/STOP repeat the prior state in each S_i,k slot, or when an environment error makes a whole cell indeterminate rather than merely consuming a budget and retaining the prior best. T07A freezes s_canary and m, and T08A invokes frozen score/margin rules, but v3 never defines how m affects WIRING_FAILURE, RECIPE_FEASIBLE_DESCRIPTIVE, or INDETERMINATE. The conditionally adopted v2 defaults instead use D_off, D_zero, D_shuf and MECHANISM_GO labels, conflict with v3's D_HE primary and non-mechanism boundary, and therefore cannot silently fill the gap. For a feasibility pilot, the clean solution may be to make completion/integrity determine feasibility and report all signed contrasts without a directional go rule; powered inference is not required.",
+      "acceptance_test_ids": ["V6CG_T05A_UNCHANGED_LOCAL_025_POJ104_STATIC_SCORE_SPLIT_FIT", "V6CG_T06A_AUTHORIZED_OFFLINE_SEMANTICS_AND_SPLIT_SEAL", "V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY", "V6CG_T09A_EXPERIENTIAL_OFF_AND_SEMANTIC_BINDING_DIAGNOSTICS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C007_SLEEP_COMPILER_AND_TRAINING_RECEIPT_ARE_STILL_UNDERDEFINED",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "Calling the compiler deterministic does not make its improvement segments, recovery links, rho rule, view scarcity, old/new fallback, packing, optimizer, seed stream, or update accounting executable.",
+      "evidence": "V3 supplies epsilon, gamma=0.7, rho=0.5, quotas, replay ratio, LoRA rank/targets, and target-token touches, but it never defines rho's exact operation, the endpoints and tie behavior of outcome-improving/recovery segments, which later focus/action is selected when several recoveries exist, how fewer than 64 rows in a view or absent old/new capacity is filled, or how 24 variable-length target-token touches map to packed batches and AdamW steps. The inherited candidate defaults name lr=1e-4 and some caps but remain proposal-only, retain preservation language that v3 retires, and explicitly leave model/training stack and sampling bytes unresolved. T02A golden manifests and T07A can test an exact recipe only after these normative choices exist. This blocks B3 and C, while not implying that the heuristic needs causal validation or a hyperparameter sweep for the scoped pilot.",
+      "acceptance_test_ids": ["V6CG_T02A_OUTCOME_FILTERED_COMPILER_AND_DETERMINISM_TIERS", "V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD", "V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT", "V6CG_T09A_EXPERIENTIAL_OFF_AND_SEMANTIC_BINDING_DIAGNOSTICS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C008_MATRIX_IS_NOT_AN_EXACT_READER_WRITER_CONTRACT",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The allegedly atomized visibility matrix still cannot express the exact principals, read versus write authority, or computational influence needed to prove noninterference.",
+      "evidence": "The schema gives each information/stage pair one visibility label only. SLEEP_COMPILER is described as derived_only for MOUNTED_ADAPTER_BYTES even though it writes candidate bytes; OFFLINE_AUDITOR is visible to adapter bytes although an auditor should ordinarily receive serialized artifacts through a declared reader; EXPERIENTIAL wake marks adapter bytes visible to mean below-prompt causal influence, while forbidden in HARNESS means absence, not a comparable information-access rule. Parser, packet assembler, notebook writer, retriever, trainer, environment service, artifact publisher, and quarantine boundary are not separate stages/principals. CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS and SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE also remain composites with field-specific permissions. T04A's phrase exactly the declared readers/writers cannot be validated against a matrix that declares neither readers nor writers. This leaves v2 C014/R06 only partially resolved and blocks leakage-sensitive B3/C until a directional allowlist exists.",
+      "acceptance_test_ids": ["V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD", "V6CG_T04A_ATOMIZED_VISIBILITY_AND_MATCHED_HARNESS_FORKS", "V6CG_T12A_TRANSITION_SCOPED_REVIEW_AND_AUTHORIZATION"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C009_SEED_AND_COLD_LOAD_POLICY_IS_DEFERRED",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "The common-order one-pair pilot correctly makes no effect estimate, but a manifest-bound inference/trainer seed-stream and stochastic cold-load comparison rule are still necessary to make its cells and canary receipts reproducible.",
+      "evidence": "V2 consensus R01/R02 explicitly required declared per-call inference and trainer seed streams. V3 says only that sampling families and RNG reset policies match, while the systems interpretation admits seeds remain for a later manifest. T03A requires behavioral cold-load reproduction under a tolerance and T07A derives s_canary from independent repeats, but neither defines common-random-number pairing, retry prohibition after stochastic failures, number/order of canary repeats, or the stochastic metric used for cold-load equivalence. This does not justify a powered Stage C or confidence intervals; it is a finite receipt-definition requirement for the already-scoped canary and pilot.",
+      "acceptance_test_ids": ["V6CG_T03A_LIFECYCLE_SOURCE_EVIDENCE_AND_COLD_LOAD", "V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V6CG_V3_C010_COMPILERGYM_SCORE_IS_NOT_FUNCTIONAL_CORRECTNESS",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "Environment acceptance plus IR instruction-count improvement is an optimization-interface signal, not evidence that the POJ104 program remains functionally correct.",
+      "evidence": "The declared context notes that official POJ104-v1 is non-validatable and defines valid as the LLVM environment accepting an operation and returning deterministic IR cost. G can therefore reward an instruction-count reduction without an independent semantic-equivalence check. V3 mostly respects this by limiting Stage C to feasibility, but phrases such as valid state, score-valid observation, and official outcome can still be read as task correctness. The Stage-C artifact must label this limitation and keep malformed/service validity separate from program correctness. An independent functional oracle is a later scientific-control requirement, not a blocker to testing the exact wiring against the declared CompilerGym interface.",
+      "acceptance_test_ids": ["V6CG_T05A_UNCHANGED_LOCAL_025_POJ104_STATIC_SCORE_SPLIT_FIT", "V6CG_T06A_AUTHORIZED_OFFLINE_SEMANTICS_AND_SPLIT_SEAL", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY", "V6CG_T10A_ENDPOINT_MASK_STYLE_REUSE_AND_TRANSPORT_AUDIT"],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "V6CG_V3_C011_TWO_SYSTEM_LABEL_IS_ONLY_IDENTITY_SIMPLE",
+      "category": "architecture",
+      "severity": "note",
+      "statement": "V3 now uses the defensible phrase two on-policy systems, but the protocol remains operationally elaborate and cannot localize any observed contrast to context reconstruction, ORIENT, retrieval, action selection, outcome filtering, or LoRA storage.",
+      "evidence": "Each decision has two model invocations plus parsing, retrieval, workspace/environment execution, ledger/notebook writes, a three-view compiler, training, artifact publication, and several sterile descendants. Counting ORIENT and THINK_ACT as one state-machine loop is coherent and adapter-off/shuffled forks are not additional learning agents. The claim boundary correctly forbids component causality, so this is not a pilot blocker and does not warrant a full factorial. Reports should continue to say exactly two on-policy identities under one complex whole-harness recipe, not a simple causal comparison of memory mechanisms.",
+      "acceptance_test_ids": ["V6CG_T01A_CANONICAL_PACKET_OPERATIONAL_MASK_AND_ONE_LOOP", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY", "V6CG_T11A_STAGE_D_REPLICATION_COMPARATOR_AND_CLAIM_GATE"],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "V6CG_V3_C012_CLAIM_BOUNDARY_IS_FIXED_BUT_MUST_NOT_BE_REOPENED_BY_MARGIN",
+      "category": "scientific",
+      "severity": "note",
+      "statement": "V3 correctly resolves the v2 one-life mechanism overclaim; later controls and power belong to Stage D, but any Stage-C margin-based positive label would silently recreate the rejected directional claim.",
+      "evidence": "The proposal explicitly says D_HE,c and the diagnostics are raw nested observations from one common-order paired life and forbids arm effects, causal credit, lifetime slopes, population inference, superiority, and paper evidence. It also requires a new Stage-D intake with independent lives, order/seed handling, direct outcome-selection intervention, post-context checkpoints, strong transports, and life-level uncertainty. That is proportionate and no such factorial or power analysis is required to run a wiring pilot. The remaining risk is T07A/T08A's unexplained m: if RECIPE_FEASIBLE_DESCRIPTIVE is conditioned on D_HE, D_off, or D_shuf exceeding m, the label becomes a one-realization efficacy screen. Feasibility should instead be integrity/completion based, with signed diagnostics reported without inferential promotion.",
+      "acceptance_test_ids": ["V6CG_T07A_ACQUISITION_ONLY_FIXED_RECIPE_FIT", "V6CG_T08A_STAGE_C_TWO_SYSTEM_RECIPE_FEASIBILITY", "V6CG_T09A_EXPERIENTIAL_OFF_AND_SEMANTIC_BINDING_DIAGNOSTICS", "V6CG_T11A_STAGE_D_REPLICATION_COMPARATOR_AND_CLAIM_GATE"],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [
+    "PROSE_AND_UNPARSED_MODEL_OUTPUT is forbidden to SLEEP_COMPILER even though parsed prose is permitted as row input/provenance and unconstrained NOTE_APPEND evidence can enter the sealed notebook prefix.",
+    "SEALED_TARGET_ROLE_EVALUATOR_AND_REFERENCE_DATA is forbidden to STATIC_SPLIT_INSPECTOR even though that stage assigns and seals target and spare roles; target role must be separated from hidden evaluator/reference content.",
+    "The matrix uses visibility to mean direct readability, causal parameter influence, artifact derivation, and absence in different cells, so MOUNTED_ADAPTER_BYTES does not have one consistent access semantics.",
+    "No directional reader/writer authority is declared for parser, packet assembler, notebook writer/retriever, environment, trainer, publisher, fork launcher, or quarantine sink despite T04A requiring exact readers and writers.",
+    "All evaluation forks forbid sealed life evidence, contradicting the claim that common ledger/notebook retrieval is part of the matched whole systems measured by D_HE,c.",
+    "CURRENT_PUBLIC_TASK_PACKET_AND_LOGICAL_COUNTERS and SEALED_LIFE_LEDGER_AND_NOTEBOOK_EVIDENCE remain composite information items whose constituent fields have different stage and model visibility."
+  ],
+  "missing_acceptance_tests": [
+    "V6CG_T13A_CANONICAL_SCOPE_PROPOSAL_AND_STAGE_STATE_MACHINE: validate exact sorted A/B1/B2/B3/C authorization, forbidden scope, receipt hashes, independent-review transitions, and refusal of global implementation release when any stage gate is absent.",
+    "V6CG_T14A_READ_ONLY_LIFE_MEMORY_ESTIMAND: either prove matched target forks mount capped target-blind read-only life-evidence snapshots with no writeback, or prove every report names D_HE as a parameter-only transport contrast and never a whole-system comparison.",
+    "V6CG_T15A_NOTEBOOK_PROSE_AND_SLEEP_PROJECTION: enumerate notebook/event schemas and prove whether parsed prose is stripped or retained as zero-mask conditioning, with unparsed output unreachable and no contradiction against the visibility matrix.",
+    "V6CG_T16A_SCORE_EDGE_CASE_AND_DISPOSITION_GOLDENS: cover reset/no-op, non-environment operations, all-worsening valid passes, early STOP/terminal, malformed/invalid/timeout/partial environment error, indeterminate cells, and the exact integrity-based mapping to all three Stage-C dispositions.",
+    "V6CG_T17A_STATIC_TO_SEMANTIC_HEADROOM_AUTHORITY: prove static selection uses no executed target outcome, B2 checks I_0/I_Oz and runtime headroom before model calls under predeclared spare rules, and target-role access is available only to the authorized constructor/sealer.",
+    "V6CG_T18A_SEED_STREAM_AND_STOCHASTIC_COLD_LOAD_RECEIPT: bind inference/trainer/canary seed streams, repeat order, stochastic tolerance metric, and no-retry behavior without treating repeats as powered Stage-C evidence."
+  ],
+  "human_questions": [
+    "Is Stage C intended to compare two complete systems with their matched read-only life memories, or only an EXPERIENTIAL adapter against a fresh base model after both life-memory channels are removed?",
+    "Will the owner require a canonical scope_proposal plus an enforceable A/B1/B2/B3/C receipt state machine before one ratification is allowed to release any work beyond specification fixtures?",
+    "Should RECIPE_FEASIBLE_DESCRIPTIVE mean only that the frozen wiring completed with valid integrity receipts, with D_HE/D_off/D_shuf reported descriptively, or should a numerical margin control that label despite the explicit no-efficacy boundary?"
+  ]
+}

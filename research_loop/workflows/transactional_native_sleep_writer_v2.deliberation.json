@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "transactional-native-sleep-writer-v2",
+  "workspace": "../..",
+  "change_id": "chg_20260910_transactional_native_sleep_writer_v2",
+  "directive_file": "research_loop/changes/chg_20260910_transactional_native_sleep_writer_v2/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "organism_v6/DESIGN.md",
+    "organism_v6/run_life_v2.py",
+    "organism_v6/run_life.py",
+    "organism_v6/sleep_compile.py",
+    "organism_v6/train_adapter.py",
+    "organism_v6/train_adapter_v21.py",
+    "organism_v6/classroom_round.py",
+    "research_loop/advisory/20260909_long_lifetime_writer_wiring_audit_v1.md",
+    "research_loop/advisory/20260909_v9_formal_spec_information_efficiency_audit_v1.md",
+    "research_loop/coordination/20260910_compilergym_bootstrap_quarantine.md",
+    "research_loop/plans/adaptive_parent_development_v5_consensus.md",
+    "research_loop/plans/scaled_think_clean_lineage_freeze_v1_consensus.md"
+  ],
+  "output_dir": "research_loop/changes/chg_20260910_transactional_native_sleep_writer_v2",
+  "state_path": ".research_loop/intake/chg_20260910_transactional_native_sleep_writer_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260910_transactional_native_sleep_writer_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "systems": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-luna", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "critique": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "max_context_chars_per_file": 300000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-review-packet-v1d.schema.json",
+  "title": "Paper-1 v03r canary v1d immutable review packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "packet_id", "change_id", "transition", "terminal_stage", "protocol_lock_sha256", "semantic_consistency_matrix_sha256", "opportunity_ledger_schema_sha256", "reviewed_lock_sha256", "predecessor_authority_token_sha256", "human_ratification_sha256", "producer_actor_ids", "author_actor_ids", "implementer_actor_ids", "actor_identity_manifest_sha256", "platform_review_separation_attestation_sha256", "claim_rejection_fixture_receipt_sha256", "review_separation_claim_boundary", "artifact_inventory_id", "artifacts", "supplied_context_manifest_sha256", "artifact_set_sha256", "packet_creation_receipt_sha256", "created_at_utc", "packet_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-review-packet-v1d.0"},
+    "packet_id": {"type": "string", "pattern": "^P1D-PACKET-(CPU_TO_DEV|DEV_TO_HELDOUT|HELDOUT_TO_LORA|STAGE_L_TERMINAL|EARLY_TERMINAL)-[0-9]{4}$"},
+    "change_id": {"const": "chg_20260902_paper1_v03r_end_to_end_canary_v1d"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "terminal_stage": {"oneOf": [{"type": "null"}, {"enum": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]}]},
+    "protocol_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "semantic_consistency_matrix_sha256": {"$ref": "#/$defs/sha256"},
+    "opportunity_ledger_schema_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "predecessor_authority_token_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "human_ratification_sha256": {"$ref": "#/$defs/sha256"},
+    "producer_actor_ids": {"$ref": "#/$defs/actor_ids"},
+    "author_actor_ids": {"$ref": "#/$defs/actor_ids"},
+    "implementer_actor_ids": {"$ref": "#/$defs/actor_ids"},
+    "actor_identity_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "platform_review_separation_attestation_sha256": {"$ref": "#/$defs/sha256"},
+    "claim_rejection_fixture_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "review_separation_claim_boundary": {"const": "PLATFORM_ATTESTED_WORKFLOW_SEPARATION_NOT_PROVED_HUMAN_OR_MODEL_INDEPENDENCE"},
+    "artifact_inventory_id": {"enum": ["CPU_TO_DEV_V1D", "DEV_TO_HELDOUT_V1D", "HELDOUT_TO_LORA_V1D", "STAGE_L_TERMINAL_V1D", "EARLY_TERMINAL_V1D"]},
+    "artifacts": {"type": "object"},
+    "supplied_context_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+    "packet_creation_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "packet_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(packet excluding packet_sha256)); artifact_set_sha256 hashes the ASCII-byte-sorted array of exact artifact-reference JCS objects"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"transition": {"const": "CPU_TO_DEV"}}},
+      "then": {
+        "properties": {
+          "terminal_stage": {"type": "null"},
+          "predecessor_authority_token_sha256": {"type": "null"},
+          "artifact_inventory_id": {"const": "CPU_TO_DEV_V1D"},
+          "artifacts": {"$ref": "#/$defs/cpu_to_dev_artifacts"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"transition": {"const": "DEV_TO_HELDOUT"}}},
+      "then": {
+        "properties": {
+          "terminal_stage": {"type": "null"},
+          "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"},
+          "artifact_inventory_id": {"const": "DEV_TO_HELDOUT_V1D"},
+          "artifacts": {"$ref": "#/$defs/dev_to_heldout_artifacts"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"transition": {"const": "HELDOUT_TO_LORA"}}},
+      "then": {
+        "properties": {
+          "terminal_stage": {"type": "null"},
+          "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"},
+          "artifact_inventory_id": {"const": "HELDOUT_TO_LORA_V1D"},
+          "artifacts": {"$ref": "#/$defs/heldout_to_lora_artifacts"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"transition": {"const": "STAGE_L_TERMINAL"}}},
+      "then": {
+        "properties": {
+          "terminal_stage": {"const": "CONDITIONAL_LORA"},
+          "predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"},
+          "artifact_inventory_id": {"const": "STAGE_L_TERMINAL_V1D"},
+          "artifacts": {"$ref": "#/$defs/stage_l_terminal_artifacts"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}}},
+      "then": {
+        "properties": {
+          "terminal_stage": {"enum": ["CPU_IMPLEMENTATION", "DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]},
+          "artifact_inventory_id": {"const": "EARLY_TERMINAL_V1D"},
+          "artifacts": {"$ref": "#/$defs/early_terminal_artifacts"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"const": "CPU_IMPLEMENTATION"}}, "required": ["transition", "terminal_stage"]},
+      "then": {"properties": {"predecessor_authority_token_sha256": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"transition": {"const": "EARLY_TERMINAL"}, "terminal_stage": {"enum": ["DEV_GOLD", "HELDOUT_TEXT", "CONDITIONAL_LORA"]}}, "required": ["transition", "terminal_stage"]},
+      "then": {"properties": {"predecessor_authority_token_sha256": {"$ref": "#/$defs/sha256"}}}
+    }
+  ],
+  "x-semantic-contract": {
+    "bound_artifact_hashes": "semantic_consistency_matrix_sha256, opportunity_ledger_schema_sha256, platform_review_separation_attestation_sha256, and claim_rejection_fixture_receipt_sha256 must byte-equal the sha256 fields of artifacts.semantic_consistency_matrix, artifacts.opportunity_ledger_schema, artifacts.platform_review_separation_attestation, and artifacts.claim_rejection_fixtures respectively.",
+    "P1CB10": "artifacts.p1cb10 must verify every positive and negative rejection fixture in semantic_consistency_matrix.json and stage_review_contract.json, the required terminal disclosures, reviewer supremacy, unchanged bytes, and HUMAN_TERMINAL.",
+    "separation_boundary": "Actor identifiers, role exclusions, and fresh-context receipts establish platform-attested workflow separation only; packet validation must not report proved human or model independence."
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "actor_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 256}},
+    "artifact_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "media_type"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^(research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/|artifacts/paper1_v03r_canary_v1d/)[A-Za-z0-9._/{}/-]+$"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "media_type": {"enum": ["application/json", "application/jcs+json", "text/markdown", "text/plain"]}
+      }
+    },
+    "cpu_to_dev_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["actor_identity_manifest", "semantic_consistency_matrix", "opportunity_ledger_schema", "claim_rejection_fixtures", "platform_review_separation_attestation", "ratified_protocol_manifest", "human_ratification", "schema_resource_registry", "implementation_source_manifest", "resolved_executable_lock", "model_tokenizer_manifests", "operation_registry", "recurrence_identity_contract", "golden_vectors", "p1cb01", "p1cb02", "p1cb03", "p1cb04", "p1cb06", "p1cb09", "p1cb10", "taint_isolation_report", "stage_seal"],
+      "properties": {
+        "actor_identity_manifest": {"$ref": "#/$defs/artifact_reference"}, "semantic_consistency_matrix": {"$ref": "#/$defs/artifact_reference"}, "opportunity_ledger_schema": {"$ref": "#/$defs/artifact_reference"}, "claim_rejection_fixtures": {"$ref": "#/$defs/artifact_reference"}, "platform_review_separation_attestation": {"$ref": "#/$defs/artifact_reference"}, "ratified_protocol_manifest": {"$ref": "#/$defs/artifact_reference"}, "human_ratification": {"$ref": "#/$defs/artifact_reference"}, "schema_resource_registry": {"$ref": "#/$defs/artifact_reference"}, "implementation_source_manifest": {"$ref": "#/$defs/artifact_reference"}, "resolved_executable_lock": {"$ref": "#/$defs/artifact_reference"}, "model_tokenizer_manifests": {"$ref": "#/$defs/artifact_reference"}, "operation_registry": {"$ref": "#/$defs/artifact_reference"}, "recurrence_identity_contract": {"$ref": "#/$defs/artifact_reference"}, "golden_vectors": {"$ref": "#/$defs/artifact_reference"}, "p1cb01": {"$ref": "#/$defs/artifact_reference"}, "p1cb02": {"$ref": "#/$defs/artifact_reference"}, "p1cb03": {"$ref": "#/$defs/artifact_reference"}, "p1cb04": {"$ref": "#/$defs/artifact_reference"}, "p1cb06": {"$ref": "#/$defs/artifact_reference"}, "p1cb09": {"$ref": "#/$defs/artifact_reference"}, "p1cb10": {"$ref": "#/$defs/artifact_reference"}, "taint_isolation_report": {"$ref": "#/$defs/artifact_reference"}, "stage_seal": {"$ref": "#/$defs/artifact_reference"}
+      }
+    },
+    "dev_to_heldout_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["actor_identity_manifest", "semantic_consistency_matrix", "opportunity_ledger_schema", "claim_rejection_fixtures", "platform_review_separation_attestation", "cpu_authority_token", "unchanged_locks", "development_fixture_manifest", "dev_opportunity_ledger", "dev_response_or_partial_leaf_manifest", "p1cb05", "p1cb09", "p1cb10", "dev_accounting", "parser_scorer_receipts", "post_dev_byte_freeze", "stage_seal"],
+      "properties": {
+        "actor_identity_manifest": {"$ref": "#/$defs/artifact_reference"}, "semantic_consistency_matrix": {"$ref": "#/$defs/artifact_reference"}, "opportunity_ledger_schema": {"$ref": "#/$defs/artifact_reference"}, "claim_rejection_fixtures": {"$ref": "#/$defs/artifact_reference"}, "platform_review_separation_attestation": {"$ref": "#/$defs/artifact_reference"}, "cpu_authority_token": {"$ref": "#/$defs/artifact_reference"}, "unchanged_locks": {"$ref": "#/$defs/artifact_reference"}, "development_fixture_manifest": {"$ref": "#/$defs/artifact_reference"}, "dev_opportunity_ledger": {"$ref": "#/$defs/artifact_reference"}, "dev_response_or_partial_leaf_manifest": {"$ref": "#/$defs/artifact_reference"}, "p1cb05": {"$ref": "#/$defs/artifact_reference"}, "p1cb09": {"$ref": "#/$defs/artifact_reference"}, "p1cb10": {"$ref": "#/$defs/artifact_reference"}, "dev_accounting": {"$ref": "#/$defs/artifact_reference"}, "parser_scorer_receipts": {"$ref": "#/$defs/artifact_reference"}, "post_dev_byte_freeze": {"$ref": "#/$defs/artifact_reference"}, "stage_seal": {"$ref": "#/$defs/artifact_reference"}
+      }
+    },
+    "heldout_to_lora_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["actor_identity_manifest", "semantic_consistency_matrix", "opportunity_ledger_schema", "claim_rejection_fixtures", "platform_review_separation_attestation", "dev_authority_token", "unchanged_locks", "selector_request_response_status_read_manifests", "m0_m1_manifests", "public_dist_control_manifest", "state_token_vocabularies", "transport_corpora", "fidelity_candidate_registries", "path_manifests", "sham_manifests", "text_arm_plans", "all_t_traces", "offline_correctness_use_scores", "structural_use_evidence", "p1cb07", "p1cb09", "p1cb10", "stage_t_accounting_noninterference_no_retry", "stage_seal"],
+      "properties": {
+        "actor_identity_manifest": {"$ref": "#/$defs/artifact_reference"}, "semantic_consistency_matrix": {"$ref": "#/$defs/artifact_reference"}, "opportunity_ledger_schema": {"$ref": "#/$defs/artifact_reference"}, "claim_rejection_fixtures": {"$ref": "#/$defs/artifact_reference"}, "platform_review_separation_attestation": {"$ref": "#/$defs/artifact_reference"}, "dev_authority_token": {"$ref": "#/$defs/artifact_reference"}, "unchanged_locks": {"$ref": "#/$defs/artifact_reference"}, "selector_request_response_status_read_manifests": {"$ref": "#/$defs/artifact_reference"}, "m0_m1_manifests": {"$ref": "#/$defs/artifact_reference"}, "public_dist_control_manifest": {"$ref": "#/$defs/artifact_reference"}, "state_token_vocabularies": {"$ref": "#/$defs/artifact_reference"}, "transport_corpora": {"$ref": "#/$defs/artifact_reference"}, "fidelity_candidate_registries": {"$ref": "#/$defs/artifact_reference"}, "path_manifests": {"$ref": "#/$defs/artifact_reference"}, "sham_manifests": {"$ref": "#/$defs/artifact_reference"}, "text_arm_plans": {"$ref": "#/$defs/artifact_reference"}, "all_t_traces": {"$ref": "#/$defs/artifact_reference"}, "offline_correctness_use_scores": {"$ref": "#/$defs/artifact_reference"}, "structural_use_evidence": {"$ref": "#/$defs/artifact_reference"}, "p1cb07": {"$ref": "#/$defs/artifact_reference"}, "p1cb09": {"$ref": "#/$defs/artifact_reference"}, "p1cb10": {"$ref": "#/$defs/artifact_reference"}, "stage_t_accounting_noninterference_no_retry": {"$ref": "#/$defs/artifact_reference"}, "stage_seal": {"$ref": "#/$defs/artifact_reference"}
+      }
+    },
+    "stage_l_terminal_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["actor_identity_manifest", "semantic_consistency_matrix", "opportunity_ledger_schema", "claim_rejection_fixtures", "platform_review_separation_attestation", "conditional_lora_authority_token", "training_lock", "two_fit_input_output_receipts", "adapter_hashes", "fidelity_96_cases", "online_read_mount_unmount_receipts", "l_own_l_twin_traces", "structural_use_evidence", "p1cb08", "p1cb09", "p1cb10", "stage_l_accounting", "terminal_wording", "claim_linter_receipt", "stage_seal"],
+      "properties": {
+        "actor_identity_manifest": {"$ref": "#/$defs/artifact_reference"}, "semantic_consistency_matrix": {"$ref": "#/$defs/artifact_reference"}, "opportunity_ledger_schema": {"$ref": "#/$defs/artifact_reference"}, "claim_rejection_fixtures": {"$ref": "#/$defs/artifact_reference"}, "platform_review_separation_attestation": {"$ref": "#/$defs/artifact_reference"}, "conditional_lora_authority_token": {"$ref": "#/$defs/artifact_reference"}, "training_lock": {"$ref": "#/$defs/artifact_reference"}, "two_fit_input_output_receipts": {"$ref": "#/$defs/artifact_reference"}, "adapter_hashes": {"$ref": "#/$defs/artifact_reference"}, "fidelity_96_cases": {"$ref": "#/$defs/artifact_reference"}, "online_read_mount_unmount_receipts": {"$ref": "#/$defs/artifact_reference"}, "l_own_l_twin_traces": {"$ref": "#/$defs/artifact_reference"}, "structural_use_evidence": {"$ref": "#/$defs/artifact_reference"}, "p1cb08": {"$ref": "#/$defs/artifact_reference"}, "p1cb09": {"$ref": "#/$defs/artifact_reference"}, "p1cb10": {"$ref": "#/$defs/artifact_reference"}, "stage_l_accounting": {"$ref": "#/$defs/artifact_reference"}, "terminal_wording": {"$ref": "#/$defs/artifact_reference"}, "claim_linter_receipt": {"$ref": "#/$defs/artifact_reference"}, "stage_seal": {"$ref": "#/$defs/artifact_reference"}
+      }
+    },
+    "early_terminal_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["actor_identity_manifest", "semantic_consistency_matrix", "opportunity_ledger_schema", "claim_rejection_fixtures", "platform_review_separation_attestation", "predecessor_token_or_ratification", "unchanged_locks", "exact_partial_stage_leaf_manifest", "classified_failure_receipt", "p1cb09", "p1cb10", "reconciled_accounting", "no_retry_no_further_dispatch", "terminal_wording", "claim_linter_receipt", "stage_seal"],
+      "properties": {
+        "actor_identity_manifest": {"$ref": "#/$defs/artifact_reference"}, "semantic_consistency_matrix": {"$ref": "#/$defs/artifact_reference"}, "opportunity_ledger_schema": {"$ref": "#/$defs/artifact_reference"}, "claim_rejection_fixtures": {"$ref": "#/$defs/artifact_reference"}, "platform_review_separation_attestation": {"$ref": "#/$defs/artifact_reference"}, "predecessor_token_or_ratification": {"$ref": "#/$defs/artifact_reference"}, "unchanged_locks": {"$ref": "#/$defs/artifact_reference"}, "exact_partial_stage_leaf_manifest": {"$ref": "#/$defs/artifact_reference"}, "classified_failure_receipt": {"$ref": "#/$defs/artifact_reference"}, "p1cb09": {"$ref": "#/$defs/artifact_reference"}, "p1cb10": {"$ref": "#/$defs/artifact_reference"}, "reconciled_accounting": {"$ref": "#/$defs/artifact_reference"}, "no_retry_no_further_dispatch": {"$ref": "#/$defs/artifact_reference"}, "terminal_wording": {"$ref": "#/$defs/artifact_reference"}, "claim_linter_receipt": {"$ref": "#/$defs/artifact_reference"}, "stage_seal": {"$ref": "#/$defs/artifact_reference"}
+      }
+    }
+  }
+}

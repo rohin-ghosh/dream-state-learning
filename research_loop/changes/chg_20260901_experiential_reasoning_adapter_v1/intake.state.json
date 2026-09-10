@@ -1,0 +1,62 @@
+{
+  "artifacts": {
+    "architecture_change": {
+      "path": "research_loop/changes/chg_20260901_experiential_reasoning_adapter_v1/change.json",
+      "sha256": "5c2414cf1978fe644ff015376b220e79817f26b89b6b204cebde66030e161fbb"
+    },
+    "architecture_consensus": {
+      "path": "research_loop/changes/chg_20260901_experiential_reasoning_adapter_v1/consensus.json",
+      "sha256": "d2c565b2d863874555534cb022afcd13bd5a5f813b3f1ab045ac9cb18f7db6d2"
+    },
+    "architecture_critique": {
+      "path": "research_loop/changes/chg_20260901_experiential_reasoning_adapter_v1/critique.json",
+      "sha256": "77a3f92eccd17db4b565b083f11cad8de1003f626b8a11277a0f22899a5f00e2"
+    },
+    "architecture_interpretation:chg_20260901_experiential_reasoning_adapter_v1.systems": {
+      "path": "research_loop/changes/chg_20260901_experiential_reasoning_adapter_v1/interpretation_systems.json",
+      "sha256": "91042a095e0e898844cd00f91c87780164e153e44bfe1c49bb260cf705daa200"
+    },
+    "architecture_interpretation:era_experimental_identification_v1": {
+      "path": "research_loop/changes/chg_20260901_experiential_reasoning_adapter_v1/interpretation_experiment.json",
+      "sha256": "2243fecfc0ee58023d57052e117983fefe9102c9266c4dd566e3e132c1fd2749"
+    }
+  },
+  "change_id": "chg_20260901_experiential_reasoning_adapter_v1",
+  "created_at": "2026-09-02T05:54:35.945525+00:00",
+  "history": [
+    {
+      "artifact_sha256": "5c2414cf1978fe644ff015376b220e79817f26b89b6b204cebde66030e161fbb",
+      "at": "2026-09-02T05:54:35.945669+00:00",
+      "transition": "proposed->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "91042a095e0e898844cd00f91c87780164e153e44bfe1c49bb260cf705daa200",
+      "at": "2026-09-02T06:03:33.196632+00:00",
+      "source_state_sha256": "2cfc70225111a09b5fd089998bc8745f97ff3e41cb56364736102391aed40e8f",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "2243fecfc0ee58023d57052e117983fefe9102c9266c4dd566e3e132c1fd2749",
+      "at": "2026-09-02T06:11:58.685707+00:00",
+      "source_state_sha256": "75a8e497740b8f301dcce6196e5500c3f46d5fd6de0a8fd4add3e197d2c305fc",
+      "transition": "collecting_interpretations->collecting_interpretations"
+    },
+    {
+      "artifact_sha256": "77a3f92eccd17db4b565b083f11cad8de1003f626b8a11277a0f22899a5f00e2",
+      "at": "2026-09-02T06:22:04.573250+00:00",
+      "source_state_sha256": "605b3bb8ec14ca5f61e7cf2a11facaf7d1c35ef9c314601d6bca8242d460de5d",
+      "transition": "collecting_interpretations->awaiting_consensus"
+    },
+    {
+      "artifact_sha256": "d2c565b2d863874555534cb022afcd13bd5a5f813b3f1ab045ac9cb18f7db6d2",
+      "at": "2026-09-02T06:36:30.295322+00:00",
+      "source_state_sha256": "12a0e2de926348b4c041fbaada6df1525efc5d437568d69239b67ba0fa08e8b6",
+      "transition": "awaiting_consensus->human_required"
+    }
+  ],
+  "human_required": true,
+  "implementation_authorized": false,
+  "phase": "human_required",
+  "schema_version": 1,
+  "updated_at": "2026-09-02T06:36:30.295001+00:00"
+}

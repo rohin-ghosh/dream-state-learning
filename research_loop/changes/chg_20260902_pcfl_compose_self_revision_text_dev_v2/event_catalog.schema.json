@@ -1,0 +1,474 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcfl:compose:event-catalog:v2",
+  "title": "PCFL-Compose v2 catalogs, model-visible reads, audit receipts, and target packets",
+  "$comment": "The semantic schema with $id urn:pcfl:compose:semantic-dsl:v2 is a required local registry dependency. Network reference retrieval is forbidden.",
+  "x-discriminator": ["artifact", "result_kind", "handle_kind", "status"],
+  "$defs": {
+    "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+    "public_event_handle": {
+      "$comment": "Fixed-shape non-content handle: E plus the one-based TREE_EVENT source ordinal 01..13, or A plus the one-based RAW_A_EVENT source ordinal 01..02.",
+      "type": "string", "pattern": "^(E(0[1-9]|1[0-3])|A0[1-2])$", "minLength": 3, "maxLength": 3
+    },
+    "candidate_read_handle": {
+      "$comment": "Fixed-shape, non-content Dream-1 pool handle deterministically derived from pool ordinal under rng_contract.json's model_visible_identifier namespace.",
+      "type": "string", "pattern": "^hdl_c_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28
+    },
+    "memory_read_handle": {
+      "$comment": "Fixed-shape, non-content target-memory handle deterministically derived from target-session topology and handle ordinal under rng_contract.json's model_visible_identifier namespace.",
+      "type": "string", "pattern": "^hdl_m_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28
+    },
+    "object_capability": {
+      "$comment": "Current-session fixed-shape, non-content token deterministically derived from its issuing resolver ordinal under rng_contract.json's model_visible_identifier namespace; never a digest, address, path, length, variant, cache, or deduplication signal.",
+      "type": "string", "pattern": "^cap_o_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28
+    },
+    "receipt_ref": {
+      "$comment": "Fixed-shape receipt label deterministically derived from the charged read/source ordinal under rng_contract.json's model_visible_identifier namespace, with no content- or treatment-derived component.",
+      "type": "string", "pattern": "^rcpt_[A-Za-z0-9_-]{22}$", "minLength": 27, "maxLength": 27
+    },
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$", "minLength": 64, "maxLength": 64},
+    "slot_permutation": {
+      "type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0, "maximum": 5}
+    },
+    "public_event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["before", "action", "after", "slot_permutation"],
+      "properties": {
+        "before": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/tray"},
+        "action": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/use_action_string"},
+        "after": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/tray"},
+        "slot_permutation": {"$ref": "#/$defs/slot_permutation"}
+      }
+    },
+    "tree_catalog_entry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["handle_id", "handle_kind", "ordinal", "readable"],
+      "properties": {
+        "handle_id": {"type": "string", "pattern": "^E(0[1-9]|1[0-3])$", "minLength": 3, "maxLength": 3},
+        "handle_kind": {"const": "TREE_EVENT"},
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 13},
+        "readable": {"type": "boolean"}
+      }
+    },
+    "raw_a_catalog_entry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["handle_id", "handle_kind", "ordinal", "readable"],
+      "properties": {
+        "handle_id": {"type": "string", "pattern": "^A0[1-2]$", "minLength": 3, "maxLength": 3},
+        "handle_kind": {"const": "RAW_A_EVENT"},
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 2},
+        "readable": {"type": "boolean"}
+      }
+    },
+    "candidate_catalog_entry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["handle_id", "handle_kind", "ordinal", "readable"],
+      "properties": {
+        "handle_id": {"$ref": "#/$defs/candidate_read_handle"},
+        "handle_kind": {"const": "CANDIDATE"},
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 2},
+        "readable": {"type": "boolean"}
+      }
+    },
+    "catalog_entry": {
+      "oneOf": [
+        {"$ref": "#/$defs/tree_catalog_entry"},
+        {"$ref": "#/$defs/raw_a_catalog_entry"},
+        {"$ref": "#/$defs/candidate_catalog_entry"}
+      ]
+    },
+    "pre_read_catalog": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "phase", "entries"],
+      "properties": {
+        "artifact": {"const": "PRE_READ_CATALOG"},
+        "phase": {"enum": ["DREAM1", "DREAM2"]},
+        "entries": {"type": "array", "maxItems": 16, "uniqueItems": true, "items": {"$ref": "#/$defs/catalog_entry"}}
+      }
+    },
+    "event_read_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "handle_id", "handle_kind", "payload"],
+      "properties": {
+        "artifact": {"const": "EVENT_READ_RECEIPT"},
+        "result_kind": {"const": "PUBLIC_EVENT"},
+        "phase": {"enum": ["DREAM1", "DREAM2"]},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"},
+        "handle_id": {"$ref": "#/$defs/public_event_handle"},
+        "handle_kind": {"enum": ["TREE_EVENT", "RAW_A_EVENT"]},
+        "payload": {"$ref": "#/$defs/public_event"}
+      }
+    },
+    "opaque_candidate_payload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/note"}},
+        "predictions": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/A_predictions"},
+        "provenance": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/audit_explanation"}
+      }
+    },
+    "ast_candidate_payload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "symbols", "records", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPERATOR_AST"},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/symbol_decl"}},
+        "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/ast_record"}},
+        "predictions": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/A_predictions"},
+        "provenance": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/audit_explanation"}
+      }
+    },
+    "candidate_payload": {"oneOf": [{"$ref": "#/$defs/opaque_candidate_payload"}, {"$ref": "#/$defs/ast_candidate_payload"}]},
+    "one_shot_opaque_candidate_payload": {
+      "$comment": "Immutable one-shot Dream-1 pool item. Every nested provenance object is capability-free; additionalProperties:false rejects capability-named members.",
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/one_shot_note"}},
+        "predictions": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/A_predictions"},
+        "provenance": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/audit_explanation"}
+      }
+    },
+    "candidate_read_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "handle_id", "handle_kind", "candidate", "candidate_capability"],
+      "properties": {
+        "artifact": {"const": "MODEL_READ_RESULT"},
+        "result_kind": {"const": "CANDIDATE"},
+        "phase": {"const": "DREAM2"},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"},
+        "handle_id": {"$ref": "#/$defs/candidate_read_handle"},
+        "handle_kind": {"const": "CANDIDATE"},
+        "candidate": {"$ref": "#/$defs/candidate_payload"},
+        "candidate_capability": {"$ref": "#/$defs/object_capability"}
+      }
+    },
+    "opaque_memory_found": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "lane", "status", "query", "next_cursor", "note_value"],
+      "properties": {
+        "artifact": {"const": "MODEL_READ_RESULT"}, "result_kind": {"const": "MEMORY"}, "phase": {"const": "THINK"},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "lane": {"const": "OPAQUE_NOTE"}, "status": {"const": "FOUND"},
+        "query": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/lexical_query"},
+        "next_cursor": {"oneOf": [{"type": "integer", "minimum": 0, "maximum": 12}, {"type": "null"}]},
+        "note_value": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/note"}
+      }
+    },
+    "ast_memory_found": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "lane", "status", "query", "next_cursor", "record_value"],
+      "properties": {
+        "artifact": {"const": "MODEL_READ_RESULT"}, "result_kind": {"const": "MEMORY"}, "phase": {"const": "THINK"},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "lane": {"const": "OPERATOR_AST"}, "status": {"const": "FOUND"},
+        "query": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/ast_query"},
+        "next_cursor": {"oneOf": [{"type": "integer", "minimum": 0, "maximum": 12}, {"type": "null"}]},
+        "record_value": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/ast_record"}
+      }
+    },
+    "opaque_memory_not_found": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "lane", "status", "query", "next_cursor"],
+      "properties": {
+        "artifact": {"const": "MODEL_READ_RESULT"}, "result_kind": {"const": "MEMORY"}, "phase": {"const": "THINK"},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "lane": {"const": "OPAQUE_NOTE"}, "status": {"const": "NOT_FOUND"},
+        "query": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/lexical_query"}, "next_cursor": {"type": "null"}
+      }
+    },
+    "ast_memory_not_found": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "result_kind", "phase", "receipt_ref", "lane", "status", "query", "next_cursor"],
+      "properties": {
+        "artifact": {"const": "MODEL_READ_RESULT"}, "result_kind": {"const": "MEMORY"}, "phase": {"const": "THINK"},
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "lane": {"const": "OPERATOR_AST"}, "status": {"const": "NOT_FOUND"},
+        "query": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/ast_query"}, "next_cursor": {"type": "null"}
+      }
+    },
+    "model_read_result": {
+      "oneOf": [
+        {"$ref": "#/$defs/event_read_result"}, {"$ref": "#/$defs/candidate_read_result"},
+        {"$ref": "#/$defs/opaque_memory_found"}, {"$ref": "#/$defs/ast_memory_found"},
+        {"$ref": "#/$defs/opaque_memory_not_found"}, {"$ref": "#/$defs/ast_memory_not_found"}
+      ]
+    },
+    "batch_event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["receipt_ref", "handle_id", "handle_kind", "payload"],
+      "properties": {
+        "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "handle_id": {"$ref": "#/$defs/public_event_handle"},
+        "handle_kind": {"enum": ["TREE_EVENT", "RAW_A_EVENT"]}, "payload": {"$ref": "#/$defs/public_event"}
+      }
+    },
+    "one_shot_event_batch": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "phase", "delivery", "events", "charged_read_count"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_EVENT_BATCH"}, "phase": {"enum": ["DREAM1", "DREAM2"]},
+        "delivery": {"const": "MECHANICALLY_CHARGED_PREINPUT"},
+        "events": {"type": "array", "minItems": 1, "maxItems": 15, "items": {"$ref": "#/$defs/batch_event"}},
+        "charged_read_count": {"type": "integer", "minimum": 1, "maximum": 15}
+      }
+    },
+    "target_menu_packet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "release", "target_id", "action_ordinal", "current_tray", "goal_tray", "legal_actions"],
+      "properties": {
+        "artifact": {"const": "TARGET_MENU_PACKET"}, "release": {"const": "POST_CORPUS_FREEZE_T3"},
+        "target_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,63}$", "minLength": 1, "maxLength": 64},
+        "action_ordinal": {"type": "integer", "minimum": 1, "maximum": 4},
+        "current_tray": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/tray"},
+        "goal_tray": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/tray"},
+        "legal_actions": {"type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": true, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/use_action_string"}}
+      }
+    },
+    "audit_read_receipt": {
+      "$comment": "AUDIT_READ_RECEIPT and its digest/length fields are forbidden from every model input.",
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "receipt_ref", "phase", "source_kind", "operation_ordinal", "charged", "canonical_payload_sha256", "canonical_payload_bytes"],
+      "properties": {
+        "artifact": {"const": "AUDIT_READ_RECEIPT"}, "receipt_ref": {"$ref": "#/$defs/receipt_ref"}, "phase": {"$ref": "#/$defs/phase"},
+        "source_kind": {"enum": ["TREE_EVENT", "RAW_A_EVENT", "CANDIDATE", "OPAQUE_NOTE", "AST_RECORD", "NOT_FOUND"]},
+        "operation_ordinal": {"type": "integer", "minimum": 1, "maximum": 32}, "charged": {"const": true},
+        "canonical_payload_sha256": {"$ref": "#/$defs/sha256"},
+        "canonical_payload_bytes": {"type": "integer", "minimum": 0, "maximum": 32768}
+      }
+    },
+    "audit_batch_receipt": {
+      "$comment": "Audit-only proof of one-shot event-by-event charging and ordering.",
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "phase", "source_ledger_sha256", "batch_jcs_sha256", "ordered_receipt_refs", "charged_read_count", "canonical_payload_bytes"],
+      "properties": {
+        "artifact": {"const": "AUDIT_BATCH_RECEIPT"}, "phase": {"enum": ["DREAM1", "DREAM2"]},
+        "source_ledger_sha256": {"$ref": "#/$defs/sha256"}, "batch_jcs_sha256": {"$ref": "#/$defs/sha256"},
+        "ordered_receipt_refs": {"type": "array", "minItems": 1, "maxItems": 15, "uniqueItems": true, "items": {"$ref": "#/$defs/receipt_ref"}},
+        "charged_read_count": {"type": "integer", "minimum": 1, "maximum": 15},
+        "canonical_payload_bytes": {"type": "integer", "minimum": 1, "maximum": 32768}
+      }
+    },
+    "node_capability": {
+      "$comment": "Current-session fixed-shape, non-content node token deterministically derived from its accepted authoring resolver ordinal under rng_contract.json's model_visible_identifier namespace.",
+      "type": "string", "pattern": "^cap_n_[A-Za-z0-9_-]{22}$", "minLength": 28, "maxLength": 28
+    },
+    "resolver_state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["phase", "resolver_ordinal", "workspace_node_capabilities", "staged_object_capabilities", "action_prefix", "terminal_status"],
+      "properties": {
+        "phase": {"$ref": "#/$defs/phase"},
+        "resolver_ordinal": {
+          "$comment": "Zero-based pre-operation resolver ordinal r. Every operation_ordinal for this opportunity and the emitted RESOLVER_STEP ordinal are exactly r+1.",
+          "type": "integer", "minimum": 0, "maximum": 32
+        },
+        "workspace_node_capabilities": {"type": "array", "maxItems": 13, "uniqueItems": true, "items": {"$ref": "#/$defs/node_capability"}},
+        "staged_object_capabilities": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/object_capability"}},
+        "action_prefix": {"type": "array", "maxItems": 4, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/use_action_string"}},
+        "terminal_status": {"enum": ["OPEN", "COMMITTED", "ABSTAINED", "LOCKED", "FAILED"]}
+      }
+    },
+    "one_shot_resolver_state": {
+      "$comment": "Exact empty initial one-shot state. It is structurally capability-free: workspace_node_capabilities, staged_object_capabilities, and every other undeclared capability member are rejected by additionalProperties:false.",
+      "type": "object", "additionalProperties": false,
+      "required": ["phase", "resolver_ordinal", "action_prefix", "terminal_status"],
+      "properties": {
+        "phase": {"$ref": "#/$defs/phase"},
+        "resolver_ordinal": {"const": 0},
+        "action_prefix": {"type": "array", "maxItems": 0},
+        "terminal_status": {"const": "OPEN"}
+      }
+    },
+    "dream1_recurrent_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operations_remaining", "reads_remaining", "raw_output_tokens_remaining", "prospective_output_tokens"],
+      "properties": {
+        "operations_remaining": {"type": "integer", "minimum": 0, "maximum": 32},
+        "reads_remaining": {"type": "integer", "minimum": 0, "maximum": 13},
+        "raw_output_tokens_remaining": {"type": "integer", "minimum": 0, "maximum": 8192},
+        "prospective_output_tokens": {"type": "integer", "minimum": 0, "maximum": 2048}
+      }
+    },
+    "dream2_recurrent_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operations_remaining", "reads_remaining", "raw_output_tokens_remaining", "prospective_output_tokens"],
+      "properties": {
+        "operations_remaining": {"type": "integer", "minimum": 0, "maximum": 16},
+        "reads_remaining": {"type": "integer", "minimum": 0, "maximum": 8},
+        "raw_output_tokens_remaining": {"type": "integer", "minimum": 0, "maximum": 4096},
+        "prospective_output_tokens": {"type": "integer", "minimum": 0, "maximum": 2048}
+      }
+    },
+    "think_recurrent_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operations_remaining", "reads_remaining", "actions_remaining", "raw_output_tokens_remaining", "prospective_output_tokens"],
+      "properties": {
+        "operations_remaining": {"type": "integer", "minimum": 0, "maximum": 31},
+        "reads_remaining": {"type": "integer", "minimum": 0, "maximum": 13},
+        "actions_remaining": {"type": "integer", "minimum": 0, "maximum": 4},
+        "raw_output_tokens_remaining": {"type": "integer", "minimum": 0, "maximum": 15872},
+        "prospective_output_tokens": {"type": "integer", "minimum": 0, "maximum": 512}
+      }
+    },
+    "one_shot_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_tokens_max", "output_tokens_max", "candidate_count_max", "charged_read_count"],
+      "properties": {
+        "input_tokens_max": {"type": "integer", "minimum": 1, "maximum": 32768},
+        "output_tokens_max": {"type": "integer", "minimum": 1, "maximum": 15872},
+        "candidate_count_max": {"type": "integer", "minimum": 0, "maximum": 2},
+        "charged_read_count": {"type": "integer", "minimum": 0, "maximum": 15}
+      }
+    },
+    "dream1_one_shot_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_tokens_max", "output_tokens_max", "candidate_count_max", "charged_read_count"],
+      "properties": {
+        "input_tokens_max": {"const": 32768}, "output_tokens_max": {"const": 8192},
+        "candidate_count_max": {"const": 2}, "charged_read_count": {"type": "integer", "minimum": 1, "maximum": 13}
+      }
+    },
+    "dream2_one_shot_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_tokens_max", "output_tokens_max", "candidate_count_max", "charged_read_count"],
+      "properties": {
+        "input_tokens_max": {"const": 32768}, "output_tokens_max": {"const": 4096},
+        "candidate_count_max": {"const": 1}, "charged_read_count": {"type": "integer", "minimum": 1, "maximum": 15}
+      }
+    },
+    "think_one_shot_budgets": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_tokens_max", "output_tokens_max", "candidate_count_max", "charged_read_count"],
+      "properties": {
+        "input_tokens_max": {"const": 32768}, "output_tokens_max": {"const": 15872},
+        "candidate_count_max": {"const": 0}, "charged_read_count": {"const": 0}
+      }
+    },
+    "dream1_recurrent_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "catalog", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "DREAM1_RECURRENT"},
+        "lane": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]}, "operation_ordinal": {"type": "integer", "minimum": 1, "maximum": 32},
+        "budgets": {"$ref": "#/$defs/dream1_recurrent_budgets"}, "state": {"$ref": "#/$defs/resolver_state"},
+        "catalog": {"$ref": "#/$defs/pre_read_catalog"},
+        "last_read_result": {"oneOf": [{"$ref": "#/$defs/event_read_result"}, {"type": "null"}]}
+      }
+    },
+    "dream2_recurrent_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "catalog", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "DREAM2_RECURRENT"},
+        "lane": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]}, "operation_ordinal": {"type": "integer", "minimum": 1, "maximum": 16},
+        "budgets": {"$ref": "#/$defs/dream2_recurrent_budgets"}, "state": {"$ref": "#/$defs/resolver_state"},
+        "catalog": {"$ref": "#/$defs/pre_read_catalog"},
+        "last_read_result": {"oneOf": [{"$ref": "#/$defs/event_read_result"}, {"$ref": "#/$defs/candidate_read_result"}, {"type": "null"}]}
+      }
+    },
+    "think_recurrent_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "memory_handle", "target_packet", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "THINK_RECURRENT"},
+        "lane": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]}, "operation_ordinal": {"type": "integer", "minimum": 1, "maximum": 31},
+        "budgets": {"$ref": "#/$defs/think_recurrent_budgets"}, "state": {"$ref": "#/$defs/resolver_state"},
+        "memory_handle": {"$ref": "#/$defs/memory_read_handle"},
+        "target_packet": {"$ref": "#/$defs/target_menu_packet"},
+        "last_read_result": {"oneOf": [{"$ref": "#/$defs/opaque_memory_found"}, {"$ref": "#/$defs/ast_memory_found"}, {"$ref": "#/$defs/opaque_memory_not_found"}, {"$ref": "#/$defs/ast_memory_not_found"}, {"type": "null"}]}
+      }
+    },
+    "dream1_one_shot_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "event_batch", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "DREAM1_ONE_SHOT"},
+        "lane": {"const": "OPAQUE_NOTE"}, "operation_ordinal": {"const": 1}, "budgets": {"$ref": "#/$defs/dream1_one_shot_budgets"},
+        "state": {"$ref": "#/$defs/one_shot_resolver_state"}, "event_batch": {"$ref": "#/$defs/one_shot_event_batch"},
+        "last_read_result": {"type": "null"}
+      }
+    },
+    "dream2_one_shot_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "event_batch", "candidate_pool", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "DREAM2_ONE_SHOT"},
+        "lane": {"const": "OPAQUE_NOTE"}, "operation_ordinal": {"const": 1}, "budgets": {"$ref": "#/$defs/dream2_one_shot_budgets"},
+        "state": {"$ref": "#/$defs/one_shot_resolver_state"}, "event_batch": {"$ref": "#/$defs/one_shot_event_batch"},
+        "candidate_pool": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"$ref": "#/$defs/one_shot_opaque_candidate_payload"}},
+        "last_read_result": {"type": "null"}
+      }
+    },
+    "ast_memory_packet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representation", "symbols", "records"],
+      "properties": {
+        "representation": {"const": "OPERATOR_AST"},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/symbol_decl"}},
+        "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/ast_record"}}
+      }
+    },
+    "one_shot_ast_memory_packet": {
+      "$comment": "Closed presealed one-shot Think packet. Every record uses one_shot_ast_record, whose closed provenance permits only public_handles; recurrent record/capability alternatives are unreachable.",
+      "type": "object", "additionalProperties": false,
+      "required": ["representation", "symbols", "records"],
+      "properties": {
+        "representation": {"const": "OPERATOR_AST"},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/symbol_decl"}},
+        "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "urn:pcfl:compose:semantic-dsl:v2#/$defs/one_shot_ast_record"}}
+      }
+    },
+    "think_one_shot_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact", "contract_version", "mode", "lane", "operation_ordinal", "budgets", "state", "target_packet", "ast_packet", "last_read_result"],
+      "properties": {
+        "artifact": {"const": "INPUT_ENVELOPE"}, "contract_version": {"const": "pcfl-v2"}, "mode": {"const": "THINK_ONE_SHOT"},
+        "lane": {"const": "OPERATOR_AST"}, "operation_ordinal": {"const": 1}, "budgets": {"$ref": "#/$defs/think_one_shot_budgets"},
+        "state": {"$ref": "#/$defs/one_shot_resolver_state"}, "target_packet": {"$ref": "#/$defs/target_menu_packet"},
+        "ast_packet": {"$ref": "#/$defs/one_shot_ast_memory_packet"}, "last_read_result": {"type": "null"}
+      }
+    }
+  },
+  "type": "object",
+  "unevaluatedProperties": false,
+  "oneOf": [
+    {"$ref": "#/$defs/pre_read_catalog"}, {"$ref": "#/$defs/event_read_result"},
+    {"$ref": "#/$defs/candidate_read_result"}, {"$ref": "#/$defs/opaque_memory_found"},
+    {"$ref": "#/$defs/ast_memory_found"}, {"$ref": "#/$defs/opaque_memory_not_found"},
+    {"$ref": "#/$defs/ast_memory_not_found"}, {"$ref": "#/$defs/one_shot_event_batch"},
+    {"$ref": "#/$defs/target_menu_packet"}, {"$ref": "#/$defs/audit_read_receipt"},
+    {"$ref": "#/$defs/audit_batch_receipt"}, {"$ref": "#/$defs/dream1_recurrent_input"},
+    {"$ref": "#/$defs/dream2_recurrent_input"}, {"$ref": "#/$defs/think_recurrent_input"},
+    {"$ref": "#/$defs/dream1_one_shot_input"}, {"$ref": "#/$defs/dream2_one_shot_input"},
+    {"$ref": "#/$defs/think_one_shot_input"}
+  ],
+  "x-runtime-invariants": [
+    "Register this schema and urn:pcfl:compose:semantic-dsl:v2 from hash-bound local bytes before validation; network retrieval, unresolved-reference fallback, or permissive unknown formats are forbidden.",
+    "Reject duplicate JSON names, malformed UTF-8, invalid Unicode scalars, non-I-JSON values, and noncanonical JCS where canonical input is required before applying this schema.",
+    "DREAM1 catalogs contain only TREE_EVENT entries. DREAM2 catalogs may contain TREE_EVENT, RAW_A_EVENT, and committed Dream-1 CANDIDATE entries. TARGET_MENU_PACKET is direct post-freeze input and never a pre-Dream catalog entry.",
+    "The assignment row's resolver_ordinal r and resolver_state.resolver_ordinal are the same zero-based value. Every recurrent INPUT_ENVELOPE operation_ordinal, model-authored RESOLVER_STEP ordinal, and AUDIT_READ_RECEIPT operation_ordinal for that opportunity is exactly r+1; an off-by-one or cross-object mismatch fails before disclosure or mutation.",
+    "Public event/raw-A handle_id values are direct fixed labels of event kind plus one-based source ordinal. All opaque model-visible identifier values are fixed-shape, non-content, and deterministically ordinal-derived under the model_visible_identifier namespace supplied by rng_contract.json; this schema does not define its cryptographic derivation. Public event/raw-A receipt refs, Dream-1 candidate handles and candidate-read capabilities, target-memory handles and memory-read receipt refs, and session-local node/object capabilities are byte-identical across corresponding paired treatments whenever topology and zero-based issuance/source/resolver ordinals correspond. Treatment/content/address/path/length/variant/cache/dedup/timing/score/model-byte inputs, collisions, and paired-value differences are rejected.",
+    "READ is charged before any model-visible read result is constructed. Handle, kind, phase, payload, and one-based operation ordinal agree with the readable catalog/source ledger; unread, unavailable, repeated where forbidden, or wrong-kind reads fail without disclosure.",
+    "An EVENT_READ_RECEIPT is the exact immutable raw before/action/after event plus deterministic event-local slot_permutation. Before and after each contain six distinct valid public labels with exactly equal label sets. TREE_EVENT uses E handles; RAW_A_EVENT uses A handles and is DREAM2-only.",
+    "A CANDIDATE result is DREAM2-only and returns the exact immutable committed Dream-1 candidate plus the fixed-shape Dream-2-session object capability deterministically assigned to that charged candidate-read ordinal. The capability is unrelated to content identity and is rejected if stale, reused, colliding, cross-session, reordered, treatment-varying under corresponding topology, or issued without this charged read.",
+    "A MEMORY result is THINK-only, lane-matched, and contains exactly one unchanged NOTE, one typed AST record, or explicit NOT_FOUND. The request memory_handle equals the fixed handle rendered in that session; query and cursor equal the charged request. Its receipt_ref is derived from the corresponding read ordinal, never content or intervention. No source event, extractor record, score, truth, root/family/h/q/z, target rank, or other-lane value is added.",
+    "No model-visible read result contains a digest, byte count, path, address, corpus variant/cut, cache/dedup state, timing, parse state, error class, target truth, comparator, or evaluator result. Audit receipts never enter a model prompt.",
+    "Recurrent Dream public events use interactive charged READ results. One-shot Dream uses only ONE_SHOT_EVENT_BATCH, built mechanically by charging each eligible event in source-ledger order before prompt construction. Model-visible fields are only artifact, phase, delivery, ordered events, and charged_read_count; canonical byte length and digests exist only in AUDIT_BATCH_RECEIPT. The noncognitive audit comparison checks count, receipt order, and JCS bytes.",
+    "A DREAM1 one-shot batch contains only TREE_EVENT values. A DREAM2 one-shot batch contains the eligible immutable tree prefix and raw A and is accompanied by the immutable one-shot Dream-1 candidate pool; neither batch contains a target. Every pool item and nested note uses one_shot_provenance with public_handles as its sole member; capability-named fields or values are rejected.",
+    "Every one-shot input uses one_shot_resolver_state, whose exact empty initial state has no workspace_node_capabilities or staged_object_capabilities. THINK_ONE_SHOT additionally uses one_shot_ast_memory_packet and one_shot_ast_record, never the recurrent ast_memory_packet or ast_record. The closed one-shot state, packet, record, and provenance graph has no node_capability or object_capability reference; injecting any capability-named field or capability value is schema-invalid.",
+    "TARGET_MENU_PACKET is released only after the assigned corpus is frozen. Think receives it as public task input; Dream, Sleep, and pre-freeze processes never receive it.",
+    "The event action has canonical USE(stem::suffix) syntax and belongs to the public action registry and legal source schedule. slot_permutation contains each integer 0 through 5 once and is computed solely by exact decoded-scalar equality between that event's before and after arrays; action text cannot change it and no normalization, casefold, sorting, history, or other input is used.",
+    "Canonical caps include container overhead and multibyte UTF-8: NOTE or AST record 256 JCS bytes, model-visible node 512, materialized payload 2510, complete candidate 3072, and one-shot batch within its 32768-byte input envelope.",
+    "Every candidate has unique record/note IDs, valid public provenance, exact ordered A1/A2 predictions, one lane only, and no private or target-time fields. The harness never synthesizes or semantically repairs payload bytes.",
+    "The actor receives none of these objects except the exact public current tray/menu projection and a schema-valid USE. LOCK terminates Think locally and is never actor IPC; corpus, candidate, reader result/query/receipt, capability, digest, index, and intervention identity are forbidden actor inputs.",
+    "Every INPUT_ENVELOPE branch has exactly one declared mode. Its contract version, lane, one-based operation_ordinal, zero-based state resolver_ordinal, budgets, state phase, catalog/batch phase, last-result phase/lane, memory handle, candidate pool, and target/AST packets must agree; the dedicated capability-free empty initial one-shot state and null last result are checked before rendering."
+  ]
+}

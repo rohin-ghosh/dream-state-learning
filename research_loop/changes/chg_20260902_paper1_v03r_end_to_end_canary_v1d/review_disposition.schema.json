@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-review-disposition-v1d.schema.json",
+  "title": "Paper-1 v03r canary v1d review disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "change_id", "transition", "role", "actor_id", "assignment_sha256", "review_packet_sha256", "reviewed_lock_sha256", "supplied_context_manifest_sha256", "claim_rejection_fixture_receipt_sha256", "platform_separation_boundary", "verdict", "reason_codes", "reasons", "fresh_context", "identity_receipt_sha256", "no_mutation", "completed_at_utc", "disposition_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-review-disposition-v1d.0"},
+    "change_id": {"const": "chg_20260902_paper1_v03r_end_to_end_canary_v1d"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "role": {"enum": ["INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]},
+    "actor_id": {"type": "string", "minLength": 1, "maxLength": 256},
+    "assignment_sha256": {"$ref": "#/$defs/sha256"},
+    "review_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "supplied_context_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "claim_rejection_fixture_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "platform_separation_boundary": {"const": "ROLE_AND_FRESH_CONTEXT_SEPARATION_ARE_PLATFORM_ATTESTED_NOT_PROVED_INDEPENDENCE"},
+    "verdict": {"enum": ["APPROVE", "REJECT", "INVALID"]},
+    "reason_codes": {"type": "array", "uniqueItems": true, "items": {"enum": ["NONE", "MISSING_ARTIFACT", "HASH_MISMATCH", "LOCK_CHANGED", "SCHEMA_INVALID", "AUTHORITY_INVALID", "ACTOR_OVERLAP", "FRESH_CONTEXT_INVALID", "NO_MUTATION_INVALID", "TEST_FAILURE", "VALIDITY_INVALID", "ACCOUNTING_INVALID", "CLAIM_FIREWALL_INVALID", "SCOPE_EXCEEDED", "OTHER_SPECIFIED"]}},
+    "reasons": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 4096}},
+    "fresh_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prior_turn_count", "unlisted_context_received", "platform_attestation_sha256"],
+      "properties": {
+        "prior_turn_count": {"const": 0},
+        "unlisted_context_received": {"const": false},
+        "platform_attestation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "identity_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "no_mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before_artifact_set_sha256", "after_artifact_set_sha256", "mutated_reviewed_paths"],
+      "properties": {
+        "before_artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "after_artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "mutated_reviewed_paths": {"type": "array", "maxItems": 0}
+      }
+    },
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "disposition_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(disposition excluding disposition_sha256)); the stored digest is external"}
+  },
+  "allOf": [
+    {"if": {"properties": {"verdict": {"const": "APPROVE"}}}, "then": {"properties": {"reason_codes": {"const": ["NONE"]}, "reasons": {"maxItems": 0}}}},
+    {"if": {"properties": {"verdict": {"enum": ["REJECT", "INVALID"]}}}, "then": {"properties": {"reason_codes": {"minItems": 1, "not": {"contains": {"const": "NONE"}}}, "reasons": {"minItems": 1}}}}
+  ],
+  "x-semantic-contract": {
+    "claim_fixture_binding": "claim_rejection_fixture_receipt_sha256 must byte-equal the same immutable packet's claim_rejection_fixture_receipt_sha256; APPROVE is invalid unless every registered broad positive and negative fixture was rejected.",
+    "separation_boundary": "Identity and fresh-context receipts are platform attestations used for workflow separation and are not proof of human or model independence.",
+    "reviewer_supremacy": "Any independent-reviewer REJECT or INVALID wins for the exact bytes; an advocate disposition cannot override it."
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

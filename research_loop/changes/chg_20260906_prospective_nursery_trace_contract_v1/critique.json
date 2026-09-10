@@ -1,0 +1,426 @@
+{
+  "architecture_change_sha256": "edf9885e48afab64ac5d8b1c2973ce820c384e9ab516ddde29533e6c12fcc7f4",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260906_prospective_nursery_trace_contract_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "NT2_event_schema_closure",
+        "NT3_context_generation_roundtrip_fixture",
+        "NT6_parent_temporal_blindness",
+        "NT7_dream_reversible_successor"
+      ],
+      "category": "architecture",
+      "concern_id": "C01_cross_role_generation_provenance_gap",
+      "evidence": "Only CHILD MODEL_GENERATION is formally joined to a CONTEXT_RENDERED event. PARENT_FEEDBACK embeds prompt/model/human provenance in its own payload, while CHILD_RESTATEMENT and DREAM_SUCCESSOR carry authored bytes without a common intended-input/consumed-input generation join. DREAM_SUCCESSOR is simultaneously specified as actor CHILD and as execution under role DREAM. Thus exact prompt consumption and producer/executor authority are not uniformly reconstructable across the proposed causal chain.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The schema does not prospectively bind the actual inputs and generation authority for parent feedback, child restatement, and dream reconciliation."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT4_typed_tool_atomic_join",
+        "NT5_role_visibility_noninterference",
+        "NT6_parent_temporal_blindness",
+        "NT8_sleep_label_projection",
+        "NT10_no_feedback_edge"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C02_mixed_public_and_secret_tool_result",
+      "evidence": "TOOL_RESULT combines canonical target identity, sealed reset/module identity, state hashes, action indices, measurements, and score in one event. The matrix makes target/reset identity hidden from PARENT and only derived for COMPILER, while making the typed call/public outcome visible to PARENT and readable as support by COMPILER. A role-root permission cannot expose selected fields of one immutable record without also exposing its target-bearing fields unless an explicit byte-level public projection exists.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed single TOOL_RESULT object defeats the declared separation between public outcome evidence and hidden task/sealing identity."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT5_role_visibility_noninterference",
+        "NT6_parent_temporal_blindness",
+        "NT8_sleep_label_projection"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C03_query_to_agenda_answer_laundering",
+      "evidence": "PARENT legally sees prior public actions, measurements, and scores and emits free feedback bytes plus a question and next exercise. It can communicate an action answer indirectly through topic choice, ordering, omission, an exercise that uniquely identifies the action, an encoding, or a request to repeat the best observed action. The closed answer_content declaration is self-description. NT6 checks event references and synthetic bytes but defines no paired hidden-answer worlds or semantic noninterference oracle.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Temporal blindness and syntactic process fields do not prevent query-to-agenda or re-expression laundering of an answer."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT3_context_generation_roundtrip_fixture",
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture"
+      ],
+      "category": "architecture",
+      "concern_id": "C04_memory_path_bypass_and_missing_retrieval_trace",
+      "evidence": "HARNESS may render explicitly admitted earlier event bytes directly, allowing raw transcript or outcome lookup without using the dream successor. E_closed_life_sleep connects N_public_outcome directly to N_sleep_example, so feedback, restatement, and dream reconciliation are not necessary ancestors of an adapter receipt. No event records a retrieval query, candidate set, ranking, index identity, selection policy, or rejected memories. This conflicts with the all-stage wording of CLM_provenance_boundary and leaves selective retrieval outside the prospective trace.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The graph records several lawful routes but does not force or fully observe the intended recurrent dream-memory path."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C05_dream_reexpression_as_unearned_evidence",
+      "evidence": "DREAM_SUCCESSOR contains a complete current model, active plan, notes, and other synthesized fields. Validation checks earlier readable references, omission, restoration of one fact, and rollback, but not field-level support, contradiction, novelty, or answer taint. The complete successor can therefore contain a one-shot final answer or unsupported inference and later become a DREAM_STATE_CONTINUATION target. NT7 cannot substantiate its stated claim that dreaming is not a one-shot solution generator, and NT8 only verifies label placement.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Synthetic dream re-expression can be mistaken for new supported evidence and teacher-forced into the adapter without provenance for each local memory variant or connection."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT2_event_schema_closure",
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT10_no_feedback_edge"
+      ],
+      "category": "operations",
+      "concern_id": "C06_abandoned_branch_release",
+      "evidence": "NT7 requires failed candidates to leave the predecessor pointer unchanged, but the proposal defines no durable branch status, revocation, eligibility transition, or rule excluding failed and superseded candidate artifacts from later CONTEXT_RENDERED or SLEEP_EXAMPLE selection. The promised rejection event is not in the closed vocabulary. A validly serialized generation or candidate from an abandoned retry branch could therefore be released into a later context or corpus even though it never became current.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Pointer rollback does not prevent release or training use of content from an abandoned thinker or dream branch."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT2_event_schema_closure",
+        "NT7_dream_reversible_successor",
+        "NT11_three_way_oracle_agreement"
+      ],
+      "category": "architecture",
+      "concern_id": "C07_valid_diamond_false_cycle_risk",
+      "evidence": "Parent IDs must refer backward, which makes a true causal cycle impossible, but valid feedback, restatement, and dream records can share ancestors and form diamonds. NT2 names illegal edges but does not require acceptance of a valid shared-ancestry diamond or distinguish a recursion-stack cycle check from a global visited-set check. Three implementations could inherit the same erroneous fixture omission.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The suite can reject valid shared ancestry as a cycle because it lacks an explicit positive diamond fixture."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT2_event_schema_closure",
+        "NT4_typed_tool_atomic_join",
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT10_no_feedback_edge"
+      ],
+      "category": "architecture",
+      "concern_id": "C08_event_and_artifact_vocabulary_not_closed",
+      "evidence": "The proposal declares nine closed event types yet promises a separate immutable rejection event, references an episode sealed-task record needed to validate TOOL_RESULT, adds N_evaluation_report without an event type, and leaves pointer publication/validation receipts outside the event vocabulary. The systems interpretation independently flags the rejection-event and dream-publisher ambiguities. NT2 cannot enforce closure until these objects are explicitly classified as ledger events or hash-bound auxiliary artifacts with lifecycle rules.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The supposedly closed causal contract depends on undeclared rejection, sealing, publication, and reporting artifacts."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT4_typed_tool_atomic_join",
+        "NT11_three_way_oracle_agreement"
+      ],
+      "category": "evaluation",
+      "concern_id": "C09_call_cardinality_and_scorer_truth",
+      "evidence": "The proposal does not decide whether one MODEL_GENERATION may parent multiple calls or how multiple structured calls are ordered; both interpretations preserve this ambiguity. TOOL_RESULT stores a rational score but no canonical score function, normalization, denominator rule, or independent recomputation law. NT4 uses synthetic metadata and invokes no environment, so it can prove a structural join but not that the declared call ran on the sealed state or that the public measurement and score are truthful.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Atomic serialization is not equivalent to correct dispatch or correct scoring, and the call cardinality remains undefined."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT3_context_generation_roundtrip_fixture"
+      ],
+      "category": "operations",
+      "concern_id": "C10_self_reported_engine_consumption",
+      "evidence": "NT3 deliberately uses arbitrary integer IDs and UTF-8 fixtures with no tokenizer or model. Engine-reported consumed IDs can agree with intended IDs while a wrapper adds a system prompt, applies a different chat template, truncates, selects another adapter, or uses undeclared cache state. The current model_backend.py already applies its chat template internally and ignores the seed argument, while the long-run audit documents runtime/on-disk source drift. The fixture therefore cannot establish actual consumer-side input truth.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The CPU roundtrip verifies record consistency, not what a future tokenizer or inference engine actually consumed."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT5_role_visibility_noninterference",
+        "NT10_no_feedback_edge"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C11_filesystem_only_noninterference",
+      "evidence": "NT5 covers declared roots, symlinks, and traversal; NT10 covers declarative reachability and a synthetic capability tree. Neither covers inherited file descriptors, environment variables, process memory, IPC, network services, model or tokenizer caches, adapter state, logs/stdout, filenames, timing/error channels, or operator-mediated reuse of reports. The benchmark interpretation independently identifies this gap. Consequently the expected statement that each role can read only its declared root is broader than the tested mechanism.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Synthetic path isolation cannot establish runtime noninterference or a durable no-feedback boundary."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT1_canonical_hash_chain",
+        "NT2_event_schema_closure",
+        "NT11_three_way_oracle_agreement"
+      ],
+      "category": "evaluation",
+      "concern_id": "C12_three_way_agreement_is_not_independent_truth",
+      "evidence": "No shared project helper is a useful restriction, but both validators may still share a JSON library, schema engine, error taxonomy, prose ambiguity, fixture generator, or author. A declarative oracle enumerates registered cases rather than all valid states. Agreement therefore cannot resolve the producer/publisher, event-vocabulary, feedback-cutoff, or call-cardinality ambiguities already identified by the systems interpretation.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Three agreeing implementations can faithfully reproduce the same underspecified or incorrect contract."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT1_canonical_hash_chain",
+        "NT2_event_schema_closure",
+        "NT3_context_generation_roundtrip_fixture",
+        "NT4_typed_tool_atomic_join",
+        "NT5_role_visibility_noninterference",
+        "NT6_parent_temporal_blindness",
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture",
+        "NT10_no_feedback_edge",
+        "NT11_three_way_oracle_agreement"
+      ],
+      "category": "operations",
+      "concern_id": "C13_authority_and_gate_order_cycle",
+      "evidence": "Every test is marked required_before implementation, yet schemas, validators, and fixtures must first be implemented to run any test. The ratified scope and v0 plan name NT1 through NT10; change.json adds a separately identified NT11 comparison receipt. Material schema choices are also deferred to implementation despite the operating contract requiring exact human ratification before architecture-changing implementation. The order must distinguish authorization to author artifacts from promotion after their validation and must bind NT11 explicitly.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The requested authority, implementation work, and pre-implementation acceptance gates are circular and not scope-identical."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT2_event_schema_closure",
+        "NT3_context_generation_roundtrip_fixture",
+        "NT7_dream_reversible_successor"
+      ],
+      "category": "architecture",
+      "concern_id": "C14_repeat_and_budget_state_invisible",
+      "evidence": "Records carry episode_id and the loop mentions predeclared budgets, but no episode-open/close, curriculum block, repeat ordinal, retry count, lifetime position, or remaining aggregate budget is defined as lawful policy-visible state. The systems interpretation explicitly leaves numerical budgets and retry semantics unresolved. The long-run audit shows why this matters: 67 programs repeated 15\u201316 times, while repeat structure can be omitted from the policy state and later misdescribed as recurrence.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Repeat blocks and control budgets can affect the experiment while remaining invisible to the policy and causal trace."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT1_canonical_hash_chain",
+        "NT3_context_generation_roundtrip_fixture",
+        "NT7_dream_reversible_successor"
+      ],
+      "category": "operations",
+      "concern_id": "C15_canonicalization_blob_and_crash_ambiguity",
+      "evidence": "The Python-style canonical JSON recipe does not state handling for duplicate raw object keys, invalid UTF-8, BOM/CRLF, Unicode-equivalent byte strings, negative zero, exponent forms, or floating fields such as wall time, sampling values, and confidence. Large payloads may be external blobs, but publication order, blob fsync, directory fsync, missing/blob-swap recovery, and safe relative-path closure are not registered. Atomic rename alone does not prove durable ledger-plus-blob publication after a crash.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Canonical hashes and append-only recovery are not yet byte-deterministic or crash-closed across all permitted payloads."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C16_adapter_receipt_is_self_consistent_metadata",
+      "evidence": "NT9 uses placeholder hashes and no trainer, model, GPU, or adapter creation. A fabricated receipt can list the admitted examples, finite losses, and a tensor hash without proving those examples caused the tensor, that no hidden corpus was read, or that the canonical tensor hash binds dtype, ordering, and values. NT8 establishes legal targets but not the unspecified public-support/admission rule. The tests support receipt-schema closure only, not causal transport into parameters.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The adapter receipt cannot yet demonstrate transport provenance beyond internally consistent metadata."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture",
+        "NT10_no_feedback_edge"
+      ],
+      "category": "scientific",
+      "concern_id": "C17_no_behavioral_capability_test",
+      "evidence": "Both interpretations correctly state that NT1\u2013NT11 test infrastructure only. There is no memory query, multi-source bridge, held-out semantic relation, multi-step plan, revision after an outcome, executable action comparison, or prospective within-life counterfactual. Passing the suite therefore cannot distinguish recall, composition, generalization, planning, action improvement, or online learning.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "The suite supplies no behavioral evidence, which is acceptable only while the explicit no-scientific-inference claim ceiling remains absolute."
+    },
+    {
+      "acceptance_test_ids": [],
+      "category": "statistics",
+      "concern_id": "C18_unregistered_benchmark_inference",
+      "evidence": "The parenting design note suggests useful arms, but this change freezes no game, split, primary endpoint, statistical unit, sample size, paired seed rule, multiplicity control, equivalence margin, stopping rule, or negative-result sentence. Legacy evidence is repeated-curriculum, unseeded, and partly post-hoc; its recovered-action and fixed-action diagnostics are explicitly descriptive. A later benchmark must not reuse those diagnostics as preregistered confirmation or interpret a null as failure of teachability.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Baseline, split, sampling, negative-result, scaling, and post-hoc goalpost protections remain entirely deferred."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture"
+      ],
+      "category": "evaluation",
+      "concern_id": "C19_memory_substrate_and_compute_ablation_gap",
+      "evidence": "The contract tracks text context, a successor state, sleep examples, and an adapter, but provides no common accounting across raw rendered tokens, RAG retrieval, explicit graph nodes/edges, successor bytes, adapter parameters, tool calls, thinker tokens, FLOPs, or wall time. It registers no adapter-off, raw-context, graph-memory, no-dream, no-recurrence, bridge-removal, shuffled-connectivity, or parent-absent comparison. The benchmark interpretation independently identifies this omission.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The later experiment could credit dream memory or LoRA transport when unequal context, storage, or thinker computation caused the result."
+    },
+    {
+      "acceptance_test_ids": [
+        "NT1_canonical_hash_chain",
+        "NT2_event_schema_closure",
+        "NT7_dream_reversible_successor",
+        "NT8_sleep_label_projection",
+        "NT9_adapter_provenance_fixture"
+      ],
+      "category": "scalability",
+      "concern_id": "C20_resource_and_failure_bounds_absent",
+      "evidence": "No maximum JSON depth, payload size, parent count, blob count, ledger length, successor size, supervised sequence length, example count, or validation time is bound. Revalidating an append-only ledger, traversing ancestry, restoring omitted facts, and hashing ordered examples may become superlinear or permit model-produced denial of service. The systems interpretation explicitly identifies missing numerical limits and retry semantics.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The contract has no deterministic resource ceilings or fail-closed behavior for large or adversarial lives."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/human_directive.txt",
+      "purpose": "Verbatim directive and authority boundary.",
+      "sha256": "089b23c63525c85e85a8fe3fac1d37e216125f898175f7b8b2f8fbeab0dae1aa"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Deliberation, ratification, and scientific gate.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden scope.",
+      "sha256": "0e5b6bbe829bcf260d17f00e8d5e39abef2d090a4d53f12db2310d17a4015c98"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Prospective causal-trace design.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/plans/parenting_nursery_v0.md",
+      "purpose": "Later nursery and assay candidate.",
+      "sha256": "46b3254b63c0fe09391449e984f7f8376a296ce24b82da902c68581ac34e7e6f"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_static_audit_v1.md",
+      "purpose": "Static failure analysis.",
+      "sha256": "97dd3e3135afbd9136e0170c993033fe6838dc63cf55db17db63ddf6a3abe615"
+    },
+    {
+      "path": "research_loop/advisory/20260906_nursery_phase0_live_artifact_audit_v2.md",
+      "purpose": "Live-artifact limitations.",
+      "sha256": "ae64f9ee688405986e5df001686c6065bffb338bae73711727cb91b62d70d7b0"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Long-run mechanism and provenance audit.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy stop and prospective collection laws.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "Current lived-agent framing.",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Current untyped action/outcome loop.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/state.py",
+      "purpose": "Current rendering and persistence behavior.",
+      "sha256": "e67ea71c18ef31082be6d2b56fa6004c29af08d8935669ce5099e6c26da429af"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Current ledger and retrieval behavior.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Current serving and provenance constraints.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    }
+  ],
+  "critique_id": "crit_20260906_prospective_nursery_trace_contract_v1_adversarial_v1",
+  "human_questions": [
+    "Will every model- or human-authored parent, restatement, and dream payload receive an exact role-specific context/generation receipt, and which role produces, validates, and publishes DREAM_SUCCESSOR?",
+    "Will TOOL_RESULT be split into a target-bearing environment-private record and an exact public projection so PARENT and COMPILER never receive sealed task identity through a permitted root?",
+    "What exact event closure defines the parent observation cutoff, and what paired-world or capability rule prevents questions, exercises, ordering, encodings, and re-expressions from laundering an action answer?",
+    "Is the claimed causal path required to pass through feedback, restatement, and dream before sleep, or are these optional branches whose absence must narrow credit and claims?",
+    "How will each dream-state field and local connection distinguish copied observation, supported inference, unresolved hypothesis, contradiction, and synthetic re-expression?",
+    "What durable status makes failed, superseded, or abandoned thinker branches ineligible for rendering, compilation, training, and release?",
+    "Are rejection attempts, sealed-task records, pointer publications, evaluation reports, and validation receipts ledger events or auxiliary artifacts, and what exact hash-bound lifecycle governs each?",
+    "May a generation propose more than one tool call, and what exact independent integer/rational law recomputes every public score from the dispatched call and state transition?",
+    "Will Rohin ratify a revised authority DAG that authorizes artifact authoring before validation, requires NT1\u2013NT11 before promotion, and explicitly includes NT11 in scope?",
+    "Which runtime isolation surfaces beyond filesystem roots must close before any live role is authorized?",
+    "Which repeat ordinal, curriculum position, retry state, and remaining budgets are intentionally visible to the child without exposing sealed task identity?",
+    "Will the later benchmark freeze opaque paired worlds, semantic split rules, sample size, statistical unit, common-random seeds, primary endpoints, stopping rules, and the sole permitted negative-result interpretation before task inspection?",
+    "Will the later causal assay budget-match raw context, RAG, explicit graph memory, dream successors, LoRA parameters, and thinker computation and include adapter-off, parent-absent, no-dream, no-recurrence, bridge-removal, and shuffled-connectivity arms?",
+    "Does Rohin agree that passing NT1\u2013NT11 supports only synthetic contract enforcement and cannot establish actual engine consumption, adapter causality, learning, teachability, memory use, planning, action improvement, generalization, or scaling?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_prospective_nursery_trace_contract_v1.systems",
+      "sha256": "f82fa638994b6db2b6f4e144a098fadc9e435004156f98bed47a58afa84f73d4"
+    },
+    {
+      "interpretation_id": "chg_20260906_prospective_nursery_trace_contract_v1.benchmark",
+      "sha256": "66c7bf073837a0c541f4e3b810947ca20b16dae0695f115e28d23d6a80fe7a93"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "NT12_cross_role_context_generation_roundtrip: bind intended bytes/IDs, actual consumed bytes/IDs, engine or human provenance, producer role, validator role, and publisher role for PARENT_FEEDBACK, CHILD_RESTATEMENT, and DREAM_SUCCESSOR.",
+    "NT13_public_projection_visibility_noninterference: prove byte-level separation of sealed target/reset/scorer data from the exact public TOOL_RESULT projection and reject permitted roots containing forbidden fields.",
+    "NT14_query_to_agenda_laundering: use paired hidden-answer worlds and adversarial questions, exercises, ordering, aliases, encodings, and paraphrases to test that parent-visible output cannot carry answer-dependent information beyond the registered public process channel.",
+    "NT15_branch_eligibility_and_abandoned_release: inject failed, superseded, and abandoned generation/dream branches and prove they cannot become current, rendered, compiled, trained, evaluated, or released.",
+    "NT16_valid_diamond_shared_ancestry: accept valid diamond and repeated shared-ancestor DAGs while rejecting true back-edge cycles with stable error codes in all three specifications.",
+    "NT17_event_auxiliary_artifact_closure: classify rejection attempts, sealed-task records, pointer publications, validation receipts, and evaluation reports; bind their hashes, authorities, lifecycle, and eligibility edges.",
+    "NT18_blob_canonical_crash_recovery: test duplicate raw keys, invalid UTF-8, BOM/CRLF, numeric edge forms, Unicode byte distinctions, missing/swapped/traversing blobs, fsync boundaries, partial publication, concurrent writers, and deterministic recovery.",
+    "NT19_runtime_capability_noninterference: under later authority, test inherited descriptors, environment, IPC, network, caches, logs, timing/error channels, and operator-visible outputs in addition to filesystem roots.",
+    "NT20_actual_consumer_prompt_roundtrip: under later model/tokenizer authority, independently capture tokenizer/template output and engine-consumed IDs, adapter/cache identity, truncation, stop configuration, and loaded code manifests.",
+    "NT21_dispatch_and_score_recomputation: under later environment authority, execute typed calls against sealed synthetic states and independently recompute indices, state hashes, measurements, reduced rationals, and error outcomes.",
+    "NT22_retrieval_dream_field_provenance: record retrieval query, candidate set, index/ranker identities, selected and rejected evidence, per-field dream support, hypothesis status, contradictions, novelty, and synthetic re-expression without counting paraphrase as new evidence.",
+    "NT23_repeat_block_policy_observability: bind episode lifecycle, block/repeat ordinal, retry state, lifetime position, and remaining budgets; verify lawful visibility without revealing task identity.",
+    "NT24_adapter_causal_transport_canary: under later trainer authority, sandbox trainer inputs, run a deterministic known update, bind canonical tensor serialization, test omitted/reordered/counterfeit data, and verify serving with adapter-on/off canaries.",
+    "NT25_resource_bound_and_failure_stress: freeze limits for JSON depth, parents, payloads, blobs, ledger length, successor state, sequence length, corpus size, validation time, retries, and deterministic fail-closed errors.",
+    "NT26_authority_dependency_and_scope: prove that exact ratification authorizes schema/validator/oracle authoring, that NT1\u2013NT11 receipts are obtainable only afterward, and that no implementation promotion or broader action is reachable before their closure and a new bound decision.",
+    "FUTURE_NT_recall_composition_planning_action: separately test verbatim recall, multi-source composition, semantic/structural generalization, multi-step planning, revision after outcome, valid dispatch, and task-value improvement.",
+    "FUTURE_NT_online_action_outcome_learning: require a prospective action, immutable public outcome, eligible memory update, later parent-absent decision, and paired improvement over no-update, passive-lookup, outcome-shuffled, and wrong-life controls.",
+    "FUTURE_NT_memory_substrate_compute_ablation: compare budget-matched raw text, RAG, explicit graph state, recurrent dream successor, LoRA transport, and thinker computation with no-bridge, no-recurrence, and shuffled-connectivity controls.",
+    "FUTURE_NT_split_statistics_negative_scaling: freeze opaque identities, duplicate/semantic-family audits, independent statistical units, power, seeds, multiplicity, equivalence margins, stopping, negative-result wording, replication, lifetime-length, memory-scale, and compute-scale claims before inspection."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "NT1_canonical_hash_chain",
+    "NT2_event_schema_closure",
+    "NT3_context_generation_roundtrip_fixture",
+    "NT4_typed_tool_atomic_join",
+    "NT5_role_visibility_noninterference",
+    "NT6_parent_temporal_blindness",
+    "NT7_dream_reversible_successor",
+    "NT8_sleep_label_projection",
+    "NT9_adapter_provenance_fixture",
+    "NT10_no_feedback_edge",
+    "NT11_three_way_oracle_agreement"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is a narrow infrastructure case. The proposal correctly responds to documented legacy failures\u2014missing prompt provenance, mutable reconstruction, marker-based action loss, target truncation, ungrounded self-training, incomplete adapter receipts, and evaluation writeback risk\u2014by requiring prospective immutable context records, typed effectful calls, atomic outcomes, reversible state publication, response-only label projection, role-scoped capabilities, and independent CPU validation before any life or GPU work. It also states an unusually appropriate claim ceiling: even a completely green NT1\u2013NT11 suite would support only enforcement of registered structural, provenance, visibility, and feedback-edge rules, not learning, teachability, planning, generalization, parenting benefit, or discovery by a LoRA. That engineering substrate is worth pursuing after the blocking contract ambiguities and visibility defects below are resolved and the exact repaired bytes are ratified.",
+  "visibility_failures": [
+    "VF1: TOOL_RESULT co-locates sealed target/reset identity with the public action, outcome, measurement, and score that PARENT and COMPILER may read.",
+    "VF2: Derived-only visibility is not defined as an exact byte projection, so permitted access to a mixed record can reveal forbidden fields.",
+    "VF3: Parent questions, exercises, ordering, aliases, and re-expressions can launder an action answer despite a process-only declaration.",
+    "VF4: Parent, restatement, and dream outputs lack the same intended-input/consumed-input provenance required for initial CHILD generation.",
+    "VF5: A dream successor can synthesize and carry an unsupported or final answer into the next child context and sleep targets.",
+    "VF6: Failed or abandoned candidate branches have no durable ineligibility status preventing later rendering or training.",
+    "VF7: Direct rendering of admitted ledger evidence and direct outcome-to-sleep edges permit raw lookup and compilation paths that bypass dream reconciliation.",
+    "VF8: Retrieval selection has no prospective query, candidate, ranker, or rejection trace, allowing undeclared selection cues to enter context.",
+    "VF9: Engine-consumed IDs, code manifests, losses, and tensor hashes are self-reported fields until a consumer-side or sandboxed runtime check exists.",
+    "VF10: Filesystem roots do not close inherited descriptors, environment, IPC, network, caches, logs, timing/error channels, or human-mediated report reuse.",
+    "VF11: EVALUATOR and REPORTER are collapsed in one matrix stage and graph sink, obscuring raw-target versus aggregate-only capabilities.",
+    "VF12: Repeat ordinal, retry state, and aggregate budget can be experimentally operative while invisible to the policy state."
+  ]
+}

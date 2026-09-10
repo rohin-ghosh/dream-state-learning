@@ -1,0 +1,459 @@
+{
+  "schema_version": "pcfl-d0-authority-v2.0.0",
+  "artifact_type": "pcfl_d0_authority_manifest",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "stage": "D0",
+  "state": "proposed_not_effective",
+  "purpose": "Exact fail-closed authority for a future local deterministic CPU reference implementation and its checker fixtures.",
+  "authority_chain": {
+    "effective_only_if": [
+      "Every path in read_only_bundle_inputs.required_companion_artifacts exists at the bytes ratified for this successor change.",
+      "change.json, two fresh interpretations, critique.json, consensus.json, intake.state.json, and human_ratification.json exist and record an affirmative exact-byte D0-only human decision.",
+      "human_ratification.json binds the SHA-256 of every ratified companion and deliberation artifact, including this manifest; the successor change/context binds the ratification artifact. No artifact is required to contain its own hash.",
+      "The preflight entry point verifies the complete predecessor/hash chain before any output other than a terminal failure receipt is written."
+    ],
+    "non_implication": "Proposal, consensus, ratification, implementation, passing D0, or D1 review does not authorize a model call, tokenizer execution, scientific split, GPU, LoRA, remote service, locked result, promotion, or scientific claim.",
+    "self_hash_circularity_rule": "Paths and semantics are declared here; exact bytes are bound by the successor change/context map and human ratification. This file does not embed its own digest or peer digests."
+  },
+  "post_ratification_scope": {
+    "authorized": [
+      "Create and edit only the exact future source and test files enumerated in allowed_repository_writes while bringing the ratified D0 reference contract into conformance.",
+      "Execute only the two argv templates in allowed_commands from the repository root in the ratified local CPU environment.",
+      "Read only the ratified v2 inputs, the enumerated D0 source/tests, and the Python interpreter/standard-library runtime needed to execute them.",
+      "Write only the derived run directory and exact final/staging artifacts declared in allowed_run_outputs.",
+      "Freeze D0 code and receipts for fresh D1 independent review after all gates pass."
+    ],
+    "not_authorized": [
+      "Changing any world, target, visibility, schema, reader, controller, compiler, estimator, claim, split, RNG, or resource contract after ratification.",
+      "Reading note 47 or any other repository file as an implementation-time fallback authority.",
+      "DEV tuning, CPU-gate instance replacement, calibration, confirmation, reserve consumption, scientific dispatch, or unmasking.",
+      "Any network, credential, remote, provider, model, tokenizer, accelerator, GPU, Metal/MPS, CUDA, training, adapter, or LoRA operation.",
+      "Vendoring or installing dependencies, invoking a shell or child process, dynamic native loading, or writing caches outside the run directory.",
+      "Promotion beyond D0, publication language, a scientific claim, or treating a fixture result as evidence about a future exact backend."
+    ],
+    "freeze_rule": "After a D0 run is submitted for D1 review, any source/test or ratified-input byte change invalidates that run. Repair requires new output lineage and fresh review; a material contract change requires a new deliberation and human ratification."
+  },
+  "read_only_bundle_inputs": {
+    "root": "research_loop/changes/chg_20260901_pcfl_d0_exact_v2",
+    "required_companion_artifacts": [
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/human_directive.txt",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/experiment_spec.md",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/schemas/pcfl_d0_objects.schema.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/reader_contract.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/compiler_contract.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/golden/canonical_examples.jsonl",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/schema_reader_manifest.md",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/world_manifest.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/controller_manifest.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/split_seed_manifest.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/golden/controller_cases.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/world_controller_manifest.md",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/authority_manifest.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/estimator_manifest.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/resource_ledger.schema.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/claim_policy.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/golden/estimator_cases.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/authority_stats_manifest.md"
+    ],
+    "required_deliberation_and_ratification_artifacts": [
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/change.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/interpretation_systems.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/interpretation_benchmark.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/critique.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/consensus.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/intake.state.json",
+      "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/human_ratification.json"
+    ],
+    "fallback_rule": "A missing, extra, unreadable, unhashed, mismatched, or non-ratified authority input is a preflight failure. No older note, change, generated default, environment value, or implementation choice may fill the gap."
+  },
+  "allowed_repository_writes": {
+    "source_files": [
+      "pcfl_d0/__init__.py",
+      "pcfl_d0/canonical.py",
+      "pcfl_d0/schema_validation.py",
+      "pcfl_d0/world.py",
+      "pcfl_d0/generator.py",
+      "pcfl_d0/controllers.py",
+      "pcfl_d0/reader.py",
+      "pcfl_d0/claims.py",
+      "pcfl_d0/compiler.py",
+      "pcfl_d0/interventions.py",
+      "pcfl_d0/estimators.py",
+      "pcfl_d0/resources.py",
+      "pcfl_d0/claim_policy.py",
+      "pcfl_d0/preflight.py",
+      "pcfl_d0/run_cpu_gate.py"
+    ],
+    "test_files": [
+      "pcfl_d0/tests/__init__.py",
+      "pcfl_d0/tests/test_package.py",
+      "pcfl_d0/tests/test_canonical.py",
+      "pcfl_d0/tests/test_schema_validation.py",
+      "pcfl_d0/tests/test_world.py",
+      "pcfl_d0/tests/test_generator.py",
+      "pcfl_d0/tests/test_controllers.py",
+      "pcfl_d0/tests/test_reader.py",
+      "pcfl_d0/tests/test_claims.py",
+      "pcfl_d0/tests/test_compiler.py",
+      "pcfl_d0/tests/test_interventions.py",
+      "pcfl_d0/tests/test_estimators.py",
+      "pcfl_d0/tests/test_resources.py",
+      "pcfl_d0/tests/test_claim_policy.py",
+      "pcfl_d0/tests/test_preflight.py",
+      "pcfl_d0/tests/test_run_cpu_gate.py",
+      "pcfl_d0/tests/test_contract.py"
+    ],
+    "directory_only_entries": [
+      "pcfl_d0",
+      "pcfl_d0/tests",
+      ".research_loop/pcfl_d0"
+    ],
+    "deny_unlisted": true,
+    "wildcards_permitted": false,
+    "generated_source_or_test_files_permitted": false,
+    "bytecode_and_cache_writes_permitted": false
+  },
+  "allowed_commands": [
+    {
+      "command_id": "D0_PREFLIGHT",
+      "cwd": "/Users/rohing/dream-state",
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "pcfl_d0.preflight",
+        "--bundle",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2",
+        "--authority",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/authority_manifest.json",
+        "--ratification",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/human_ratification.json",
+        "--run-id",
+        "{derived_run_id}",
+        "--output-root",
+        ".research_loop/pcfl_d0"
+      ],
+      "placeholder_rule": "{derived_run_id} is exactly 'd0-' plus the first 16 lowercase hexadecimal characters of SHA-256 over the raw bytes of human_ratification.json. No caller-selected run identifier is legal.",
+      "effect": "Validate authority, hashes, imports, capabilities, golden contracts, and resource measurability. It must not generate worlds from a scientific split."
+    },
+    {
+      "command_id": "D0_CPU_GATE",
+      "cwd": "/Users/rohing/dream-state",
+      "argv": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "pcfl_d0.run_cpu_gate",
+        "--bundle",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2",
+        "--authority",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/authority_manifest.json",
+        "--ratification",
+        "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/human_ratification.json",
+        "--preflight-receipt",
+        ".research_loop/pcfl_d0/{derived_run_id}/preflight/authority_receipt.json",
+        "--run-id",
+        "{derived_run_id}",
+        "--output-root",
+        ".research_loop/pcfl_d0",
+        "--suite",
+        "full"
+      ],
+      "placeholder_rule": "Both placeholders use the same deterministic run identifier defined for D0_PREFLIGHT.",
+      "effect": "Run the frozen 1000-step reference timing check, 64-pair CPU controller/oracle gate, all D0 property tests, and synthetic estimator/resource/claim-policy golden checks."
+    }
+  ],
+  "required_process_environment": {
+    "PYTHONHASHSEED": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONNOUSERSITE": "1",
+    "TZ": "UTC",
+    "LC_ALL": "C",
+    "LANG": "C",
+    "PYTHONUTF8": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "HIP_VISIBLE_DEVICES": "",
+    "ROCR_VISIBLE_DEVICES": ""
+  },
+  "environment_access": {
+    "may_read_exact_names": [
+      "PYTHONHASHSEED",
+      "PYTHONDONTWRITEBYTECODE",
+      "PYTHONNOUSERSITE",
+      "TZ",
+      "LC_ALL",
+      "LANG",
+      "PYTHONUTF8",
+      "OMP_NUM_THREADS",
+      "OPENBLAS_NUM_THREADS",
+      "MKL_NUM_THREADS",
+      "VECLIB_MAXIMUM_THREADS",
+      "NUMEXPR_NUM_THREADS",
+      "CUDA_VISIBLE_DEVICES",
+      "HIP_VISIBLE_DEVICES",
+      "ROCR_VISIBLE_DEVICES"
+    ],
+    "credential_or_environment_enumeration": "forbidden",
+    "unexpected_pythonpath_or_usersite": "fail_preflight"
+  },
+  "transitive_capability_policy": {
+    "closure_rule": "The preflight computes the recursive import/call capability closure of every allowed source and test entry. A forbidden capability reached directly, conditionally, lazily, through a plugin/entry point, through the standard library, or only on an error path is forbidden.",
+    "allowed_classes": [
+      {
+        "class_id": "PURE_DETERMINISTIC_CPU",
+        "description": "Single-process, single-thread Python integer, Fraction, Decimal, string, collection, sorting, hashing, and explicitly ordered binary64-free checker computation."
+      },
+      {
+        "class_id": "RATIFIED_LOCAL_READ",
+        "description": "Read raw bytes only from required ratified bundle inputs and enumerated pcfl_d0 source/test files; read interpreter and standard-library bytes only as runtime dependencies."
+      },
+      {
+        "class_id": "RUN_SCOPED_LOCAL_WRITE",
+        "description": "Create directories and atomically write only the exact derived run outputs and their deterministic staging names."
+      },
+      {
+        "class_id": "LOCAL_RESOURCE_OBSERVATION",
+        "description": "Read monotonic/process CPU time, self/child resource usage, process identity, interpreter/platform identity, and the ratified CPU power envelope; no process discovery beyond the current process family."
+      },
+      {
+        "class_id": "STDLIB_UNIT_TEST",
+        "description": "Use unittest to load only the exact enumerated test modules; no third-party test plugins or discovery outside pcfl_d0/tests."
+      }
+    ],
+    "allowed_dependency_policy": {
+      "project_packages": [
+        "pcfl_d0"
+      ],
+      "third_party_distributions": [],
+      "runtime": "The .venv interpreter and Python standard library only. Importing any package from site-packages, user-site, an entry point, or a repository sibling fails preflight.",
+      "native_extensions": "Only native modules shipped as part of the exact ratified Python runtime may load. ctypes, cffi, custom dlopen, and package native extensions are forbidden."
+    },
+    "forbidden_classes": [
+      {
+        "class_id": "NETWORK_OR_IPC",
+        "examples": [
+          "socket or DNS",
+          "HTTP(S)",
+          "Unix-domain sockets",
+          "RPC",
+          "shared-memory IPC",
+          "listening ports"
+        ],
+        "disposition": "fail before connection, bind, resolution, or credential lookup"
+      },
+      {
+        "class_id": "REMOTE_PROVIDER_OR_SYNC",
+        "examples": [
+          "cloud SDK",
+          "model provider",
+          "Hugging Face hub",
+          "git remote",
+          "telemetry",
+          "remote cache"
+        ],
+        "disposition": "fail before initialization"
+      },
+      {
+        "class_id": "MODEL_OR_TOKENIZER",
+        "examples": [
+          "model weights",
+          "transformers",
+          "tokenizers",
+          "sentencepiece",
+          "tiktoken",
+          "embedding",
+          "inference",
+          "generation"
+        ],
+        "disposition": "fail before path lookup or load"
+      },
+      {
+        "class_id": "ACCELERATOR_OR_GPU",
+        "examples": [
+          "CUDA",
+          "ROCm",
+          "Metal/MPS",
+          "MLX",
+          "OpenCL",
+          "GPU device enumeration",
+          "accelerator kernels"
+        ],
+        "disposition": "fail before device enumeration or context creation"
+      },
+      {
+        "class_id": "TRAINING_OR_ADAPTER",
+        "examples": [
+          "autograd",
+          "optimizer",
+          "PEFT",
+          "LoRA",
+          "adapter load/read/write",
+          "checkpoint"
+        ],
+        "disposition": "fail before object construction"
+      },
+      {
+        "class_id": "CREDENTIAL_OR_SECRET",
+        "examples": [
+          "keychain",
+          "credential file",
+          "cloud metadata",
+          "environment key/token/secret",
+          "SSH agent"
+        ],
+        "disposition": "fail before lookup"
+      },
+      {
+        "class_id": "PROCESS_OR_DYNAMIC_EXECUTION",
+        "examples": [
+          "subprocess",
+          "fork",
+          "multiprocessing",
+          "thread creation",
+          "shell",
+          "os.system",
+          "eval/exec of data",
+          "plugin loading",
+          "pickle",
+          "marshal payload"
+        ],
+        "disposition": "fail before creation or execution"
+      },
+      {
+        "class_id": "UNRATIFIED_DATA_OR_SCIENCE",
+        "examples": [
+          "DEV",
+          "calibration",
+          "confirmation",
+          "reserve",
+          "provider response",
+          "live model state",
+          "scientific result",
+          "future backend artifact"
+        ],
+        "disposition": "deny read and write"
+      },
+      {
+        "class_id": "UNSCOPED_FILESYSTEM",
+        "examples": [
+          "home cache",
+          "temporary directory outside derived run root",
+          "repository glob",
+          "directory crawl outside exact roots",
+          "symlink escape"
+        ],
+        "disposition": "fail closed; resolve paths without following a link outside scope"
+      }
+    ],
+    "dynamic_enforcement": [
+      "Network APIs are patched to raise before use and a socket-denial fixture proves the patch is active.",
+      "Imports are captured; every loaded non-bootstrap module must resolve to pcfl_d0 or the ratified standard-library runtime.",
+      "Open calls are audited against the exact read/output path sets after realpath resolution.",
+      "Process/thread creation and accelerator/model/tokenizer/training imports are trapped before side effects.",
+      "The process starts and ends with one process and one thread; any child, extra thread, open network descriptor, or out-of-scope descriptor fails."
+    ]
+  },
+  "allowed_run_outputs": {
+    "root_template": ".research_loop/pcfl_d0/{derived_run_id}",
+    "existing_root_rule": "The preflight may resume only byte-identical staging state for the same authority and run ID. A completed or mismatched root is never overwritten and no alternate run ID is chosen.",
+    "final_files": [
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/authority_receipt.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/bundle_hashes.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/capability_graph.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/import_scan.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/contract_tests.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/preflight/resource_probe.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/simulator_1000.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/world_generator_controller.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/reader_claim_compiler.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/intervention_properties.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/estimator_goldens.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/claim_policy_goldens.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/resource_ledger.jsonl",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/resource_summary.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/cpu_gate/final_report.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/failure.json",
+      ".research_loop/pcfl_d0/{derived_run_id}/manifest.json"
+    ],
+    "optional_files": [
+      ".research_loop/pcfl_d0/{derived_run_id}/failure.json"
+    ],
+    "staging_rule": "For each final path P, the only temporary path is root/.staging/<lowercase_sha256_of_UTF8_relative_P>.partial. A successful atomic rename removes it. Staging files are enumerated by this one-to-one derivation and may not contain an unlisted payload.",
+    "symlinks_hardlinks_special_files": "forbidden",
+    "other_outputs": "forbidden"
+  },
+  "cpu_resource_ceiling": {
+    "reference_execution_class": "One local CPU process, one thread, no accelerator, no network, Python standard library only, on a ratified host whose certified maximum CPU package power is at most 65 W.",
+    "hard_limits": {
+      "concurrent_cpu_cores": 1,
+      "processes_in_process_family": 1,
+      "threads_in_process_family": 1,
+      "peak_resident_bytes": 17179869184,
+      "open_file_descriptors": 64,
+      "total_final_and_staging_output_bytes": 2147483648,
+      "preflight_wall_seconds": 900,
+      "preflight_cpu_seconds": 900,
+      "simulator_1000_wall_seconds": 300,
+      "simulator_1000_cpu_seconds": 300,
+      "full_cpu_gate_wall_seconds": 43200,
+      "full_cpu_gate_cpu_seconds": 43200,
+      "combined_preflight_and_gate_wall_seconds": 44100,
+      "combined_preflight_and_gate_cpu_seconds": 44100,
+      "combined_energy_joules": 2866500
+    },
+    "measurement": {
+      "wall_time": "time.monotonic_ns sampled immediately around each named phase; subtract start from end; a backward or unavailable counter fails.",
+      "cpu_time": "resource.getrusage(RUSAGE_SELF) plus RUSAGE_CHILDREN, normalized to integer microseconds; nonzero child usage fails the one-process rule even if below time ceiling.",
+      "resident_memory": "resource.getrusage maximum RSS normalized to bytes (Darwin value is bytes; Linux value is multiplied by 1024); unsupported or ambiguous platform fails.",
+      "processes_threads_cores": "The forbidden creation hooks and start/end current-process inspection must both report one process and one thread. One runnable thread bounds concurrent core use to one.",
+      "file_descriptors": "Count descriptors owned by the current process at every phase boundary using the ratified platform probe; unsupported measurement fails.",
+      "energy": "Conservative measured-duration accounting: energy_upper_bound_joules = combined_elapsed_monotonic_nanoseconds * 65 / 1000000000. The host environment receipt must certify maximum CPU package power <=65 W. Direct package/meter joules, if available without a forbidden capability, are reported as supplemental only; the pass/fail value is the conservative upper bound.",
+      "rounding": "Integer ceilings are inclusive. Rational energy is compared before decimal rounding; displayed joules round upward to the next integer."
+    },
+    "exhaustion_disposition": {
+      "status": "RESOURCE_EXHAUSTED_FAIL",
+      "rules": [
+        "Crossing or being unable to measure any hard limit terminates the phase at the next safe checker boundary and prevents a PASS receipt.",
+        "A ceiling failure is not an item-level scientific zero because D0 runs no scientific cell; it invalidates the D0 gate run.",
+        "No pair, target, seed, phase, or run replacement is legal. The same run may resume only from a byte-identical pre-dispatch checkpoint and only if the combined ceilings remain measured across the entire lineage.",
+        "Write failure.json and the resource summary if those exact writes remain safe; otherwise report the absence. Never relax a ceiling or select a different machine after seeing controller outputs.",
+        "Any 1000-step phase over 300 seconds fails even if the full-suite total remains below its ceiling."
+      ]
+    }
+  },
+  "future_exact_backend_reauthorization": {
+    "mandatory": true,
+    "new_human_authority_required": true,
+    "predecessor_binding_required": [
+      "ratified v2 bundle hashes",
+      "frozen D0 source/test hashes",
+      "complete D0 output manifest",
+      "fresh D1 independent verdict and advocate response"
+    ],
+    "backend_classes_that_must_rerun_equivalent_audits": [
+      "E-text and raw/common text readers",
+      "A-MEM common-channel implementation",
+      "A-MEM native implementation",
+      "adapted-minus-clean recognition reader",
+      "strict-parser generative LoRA reader",
+      "all exact LoRA train/load/read paths",
+      "exact renderer and tokenizer",
+      "model/provider dispatch and recovery",
+      "cache/index/process/runtime isolation"
+    ],
+    "required_live_audits": [
+      "complete model-visible input byte collisions",
+      "timing and backend-error behavior",
+      "credential/network/provider/cache/process isolation and resume",
+      "all-cut masking and twin substitution from actual sealed pre-decision model states",
+      "S-life, S-bind, and T-swap outcomes on actual built corpora/adapters"
+    ],
+    "evidence_rule": "D0 fixture outputs validate only the frozen reference checkers. They are neither inherited evidence nor a substitute for rerunning these audits on every exact future backend."
+  },
+  "fail_closed_default": "Anything not expressly allowed by this manifest is forbidden."
+}

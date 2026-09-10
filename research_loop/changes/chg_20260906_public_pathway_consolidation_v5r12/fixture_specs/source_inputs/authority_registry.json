@@ -1,0 +1,211 @@
+{
+  "contract": "ppc5.authority_registry.v9",
+  "schema_version": 9,
+  "artifact_type": "AUTHORITY_REGISTRY",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "registry_kind": "AUTHORITY_REGISTRY",
+  "ordered_row_keys": [
+    "ARCHITECTURE_RATIFICATION",
+    "PRE_ENTROPY_DESIGN",
+    "ENTROPY_ACQUISITION",
+    "PROPOSAL_REALIZATION",
+    "LIFE_REALIZATION",
+    "SAFETY_RESOLUTION",
+    "POPULATED_RUN",
+    "CPU_CONFORMANCE",
+    "T13_TECHNICAL_GATE",
+    "HUMAN_RUN_RATIFICATION",
+    "PRE_MODEL_EXECUTION",
+    "DISPATCH_PREFLIGHT",
+    "RUNTIME_VALIDITY",
+    "PRE_SCIENTIFIC_CLAIM"
+  ],
+  "rows": [
+    {
+      "row_key": "ARCHITECTURE_RATIFICATION",
+      "ordinal": 0,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "3842bf7e962a78bdabac0fc1051167c1d7c7bc9c69841675f8fc211e893d0459"
+    },
+    {
+      "row_key": "PRE_ENTROPY_DESIGN",
+      "ordinal": 1,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "6b11845af12b098b72e24b08138fcf2ddf4d50dc6b1e88d73c01e968e0e60dd1"
+    },
+    {
+      "row_key": "ENTROPY_ACQUISITION",
+      "ordinal": 2,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "5545c2ccc7a279ebaedafe9012d4f839b5a66e4d47a5fa58860e43c5a3cb8478"
+    },
+    {
+      "row_key": "PROPOSAL_REALIZATION",
+      "ordinal": 3,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "d4b5111f21d430ac1e65861dbbfa101075c4d8a7e5159a5e44fa590f31343682"
+    },
+    {
+      "row_key": "LIFE_REALIZATION",
+      "ordinal": 4,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "2fb6b59467a388f1c431a2d9c5a701b501141e392a133754e96d5fe1a7a10a56"
+    },
+    {
+      "row_key": "SAFETY_RESOLUTION",
+      "ordinal": 5,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "d857e8b503e2e2e08cff9c018c9040175641f30c40b28eabfa3aa09b4c379cbc"
+    },
+    {
+      "row_key": "POPULATED_RUN",
+      "ordinal": 6,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "e23f53aa2c81e821107f3cd92f525d11a8e16656bc381d147c8b2745b10f4101"
+    },
+    {
+      "row_key": "CPU_CONFORMANCE",
+      "ordinal": 7,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "b2b1d659103547074e43695b7ba62c5c8d6a8d2a608a369899a169ddd506bfeb"
+    },
+    {
+      "row_key": "T13_TECHNICAL_GATE",
+      "ordinal": 8,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "d30f3597ef2ff96ceabd1e907211b615503fc74979e62b403656589deae28506"
+    },
+    {
+      "row_key": "HUMAN_RUN_RATIFICATION",
+      "ordinal": 9,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "48b209206debcd81e223d6c9ac6330114f6930f4769f8b2410f990be09e4d2d6"
+    },
+    {
+      "row_key": "PRE_MODEL_EXECUTION",
+      "ordinal": 10,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "22acc901edcfcf04c03a00eeae4ce37ff71183cfc567d25ef529021844b8a10e"
+    },
+    {
+      "row_key": "DISPATCH_PREFLIGHT",
+      "ordinal": 11,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "5e076c379fca9590f74d2152a6d943381cc45662615ca8d066f1cad8d844ddc2"
+    },
+    {
+      "row_key": "RUNTIME_VALIDITY",
+      "ordinal": 12,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "d7f1dc2aa10142b0266029c5d4fe64658138932976311873b14ead7085316b1c"
+    },
+    {
+      "row_key": "PRE_SCIENTIFIC_CLAIM",
+      "ordinal": 13,
+      "role": "AUTHORITY_STAGE",
+      "cardinality": "ONE",
+      "producer_role": "AUTHORITY_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "T13",
+        "PREFLIGHT",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "50181563b1bbef3df23ca83fcc4d46f7c5c127fd66e224a4eda4103378dc94e3"
+    }
+  ],
+  "row_key_set_equality": true,
+  "self_hash": "f32cc6a2ad6cd4f188b96c478060f0dc65d5f3dcd9539d61e58409be24ed0d0b"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-memory-row-v1a",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["row_id", "origin", "kind", "fields", "status", "support_basis", "citations", "depth", "prediction", "confidence", "semantic_hash"],
+  "properties": {
+    "row_id": {"type": "string", "pattern": "^M[0-9]+$"},
+    "origin": {"enum": ["WITNESSED", "DREAMED"]},
+    "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+    "fields": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"$ref": "#/$defs/atom"}},
+    "status": {"enum": ["WITNESSED", "PROVISIONAL", "SUPPORTED", "CONTRADICTED", "UNRESOLVED"]},
+    "support_basis": {"enum": ["WITNESS", "NONE", "SELF_REVIEW_SAME_EVIDENCE", "INDEPENDENT_CORROBORATION"]},
+    "citations": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^(?:E|M)[0-9]+$"}},
+    "depth": {"type": "integer", "minimum": 0, "maximum": 16},
+    "prediction": {"type": "string", "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]*$"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {"atom": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:+*-]{0,127}$"}}
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version":1,
+  "artifact_type":"architecture_critique",
+  "critique_id":"chg_20260901_rml_d0_exact_v2.adversarial",
+  "change_id":"chg_20260901_rml_d0_exact_v2",
+  "state":"critiqued",
+  "architecture_change_sha256":"bd3fc32b004047d3a3a9e7700193e9feb8f5850541741a4037bf5a1b8d91e748",
+  "interpretation_hashes":[
+    {"interpretation_id":"chg_20260901_rml_d0_exact_v2.constructibility","sha256":"213cd260833aab2434917e5f3f0b746db0807a1e3ce93893e8b6792ba16e7ab7"},
+    {"interpretation_id":"chg_20260901_rml_d0_exact_v2.paper","sha256":"0ed7614ebe1b72ecf077c5a99679c5f4a9c776c495e8d5723700464a63ca2b31"}
+  ],
+  "context_files":[
+    {"path":"research_loop/plans/rml_d0_world_candidate_B.md","sha256":"bd2a3b2bc11dd0b7f9591266ca9b9094e89195a0af581e248bc09e41e481805b","purpose":"Final exact candidate audited for residual failure modes."},
+    {"path":"research_loop/plans/rml_d0_world_candidate_A_adversarial_review.md","sha256":"c9661c94e4d141d53f7c8dc70c1cedb141ee1451f43d536dfcee156e16ec748c","purpose":"Independent predecessor adversarial audit used to confirm all fatal Candidate A defects were disposed."}
+  ],
+  "strongest_case":"Candidate B converts the vague action-lifetime idea into a falsifiable finite instrument: targets are nonempty on registered twins, J and P have exact ablations, target acceptance is hidden-class invariant, balance actions do not reveal the omitted value, and model/GPU claims are structurally unreachable.",
+  "reviewed_acceptance_test_ids":["RMLD0V2_T01_FINITE_NONEMPTINESS_AND_TRANSITIONS","RMLD0V2_T02_SOURCE_GROWTH_CHRONOLOGY_AND_LEAKAGE","RMLD0V2_T03_J_P_HEADROOM_AND_NECESSITY","RMLD0V2_T04_REPLAY_AND_EVALUATION_ISOLATION","RMLD0V2_T05_RESOURCE_AND_CLAIM_FIREWALL"],
+  "concerns":[
+    {"concern_id":"RMLD0V2_C01_EXACT_BAYES_AND_RESOURCE_FEASIBILITY_UNPROVEN","category":"scalability","severity":"material","statement":"The production accepted-deck Bayes factorization, state quotient, artifact bounds, and 64-pair wall/RSS limits are mathematically specified but not yet executed.","evidence":"Candidate B explicitly treats Stage B feasibility as a hypothesis; exact belief-state enumeration may exceed registered maxima even though the finite witnesses pass.","acceptance_test_ids":["RMLD0V2_T02_SOURCE_GROWTH_CHRONOLOGY_AND_LEAKAGE","RMLD0V2_T04_REPLAY_AND_EVALUATION_ISOLATION","RMLD0V2_T05_RESOURCE_AND_CLAIM_FIREWALL"],"resolution_required":true},
+    {"concern_id":"RMLD0V2_C02_RENDERED_PANEL_IS_STILL_A_SYNTHETIC_TRUTH_TABLE","category":"scientific","severity":"note","statement":"The fixed source panel is action-rendered but highly diagnostic, so D0 does not establish autonomous action learning or external validity.","evidence":"The source policy supplies reset bench interventions and D0 has no learned collector; only later randomized on-policy evidence could support learning-through-actions.","acceptance_test_ids":["RMLD0V2_T03_J_P_HEADROOM_AND_NECESSITY","RMLD0V2_T05_RESOURCE_AND_CLAIM_FIREWALL"],"resolution_required":true}
+  ],
+  "visibility_failures":[],
+  "missing_acceptance_tests":[],
+  "human_questions":["Authorize Stage A immediately while treating Stage B exact Bayes/resource feasibility as a fail-closed empirical gate?","Confirm D0 remains conformance-only even if all CPU tests pass?"]
+}

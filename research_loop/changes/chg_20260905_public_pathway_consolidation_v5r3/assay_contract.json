@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.assay_contract.v3",
+  "sampling_unit": "RECIPIENT_LIFE",
+  "target_population": "EXACT_SEALED_RECIPIENT_LIFE_ROSTER",
+  "clone_rule": "Every required arm is a paired clone of the byte-identical assay-specific pre-treatment snapshot.",
+  "assignment_rule": "Before execution, assign arm labels to clone slots by SHA256(domain || recipient_life_id || run_seed || arm_id), ascending hash then arm_id; seal the complete map.",
+  "seed_rule": "Before execution, seal label-independent seeds keyed by recipient_life_id, assay_id, stage_id, and call_ordinal. Corresponding extant calls use the same seed. An absent call consumes no seed and never shifts later ordinals.",
+  "unlisted_difference": "RUN_INVALID",
+  "assays": [
+    {
+      "assay_id": "D1A",
+      "estimand": "paired provider-only supported-selection effects",
+      "arms": ["READER_LORA", "ADAPTER_OFF", "WRONG_LIFE_ADAPTER", "MATCHED_BINDING_SHUFFLED_READER"],
+      "varies_only": ["mounted_adapter_hash"],
+      "fixed": {
+        "policy": "NO_POLICY_CALL",
+        "provider_algorithm": "MEAN_RESPONSE_LOGPROB_V3",
+        "semantic_table": "IDENTICAL_COMPLETE_TABLE",
+        "read_requests": "IDENTICAL_CANONICAL_REQUEST_SET",
+        "dream": "DISABLED",
+        "context_policy": "DISABLED",
+        "response_intervention": "AUTHENTIC",
+        "root_policy": "D1A_SEALED_ACQUIRE_CORPUS",
+        "sleep_recipe_family": "IDENTICAL_CLEAN_BASE_READER",
+        "task_set": "IDENTICAL",
+        "budget": "IDENTICAL",
+        "snapshot": "IDENTICAL"
+      }
+    },
+    {
+      "assay_id": "D1B",
+      "estimand": "paired observable dependence of action value on response identity and timing",
+      "arms": ["AUTHENTIC_PATH", "EDGE_CUT_EACH", "EDGE_TWIN_EACH", "SHAM", "ONE_SHOT_READ", "OPEN_LOOP"],
+      "varies_only": ["schedule_mode", "runtime_intervention_projection"],
+      "fixed": {
+        "provider_algorithm": "IDENTICAL_LOCKED_PROVIDER",
+        "mounted_adapter_hash": "IDENTICAL_LOCKED_ARTIFACT_OR_NULL",
+        "semantic_table": "IDENTICAL_COMPLETE_TABLE",
+        "dream": "DISABLED",
+        "context_policy": "IDENTICAL_STATIC_CONTEXT",
+        "root_policy": "DISABLED",
+        "sleep": "DISABLED",
+        "task_set": "IDENTICAL_PRESEALED_PATH_ITEMS",
+        "budget": "IDENTICAL_PROSPECTIVE_ALLOWANCE",
+        "snapshot": "IDENTICAL"
+      }
+    },
+    {
+      "assay_id": "D1C",
+      "estimand": "paired total context-policy assignment effects",
+      "arms": ["AUTHENTIC_DREAM_CONTEXT", "RECENCY_CONTEXT", "PERMUTED_CONTEXT"],
+      "varies_only": ["installed_context_view"],
+      "fixed": {
+        "authentic_dream_call": "ONE_SHARED_CALL_AND_RECEIPT",
+        "provider_algorithm": "IDENTICAL",
+        "mounted_adapter_hash": "IDENTICAL",
+        "semantic_table": "IDENTICAL",
+        "response_intervention": "AUTHENTIC",
+        "root_policy": "DISABLED",
+        "sleep": "DISABLED",
+        "task_set": "IDENTICAL",
+        "budget": "IDENTICAL_PROSPECTIVE_ALLOWANCE",
+        "snapshot": "IDENTICAL"
+      }
+    },
+    {
+      "assay_id": "D1D",
+      "estimand": "paired total effects of DREAM_TO_SLEEP assignment inclusive of induced evidence dose, training, publication, inference, and resources",
+      "arms": ["DREAM_TO_SLEEP", "RECENCY_TO_SLEEP", "HASH_PERMUTED_TO_SLEEP"],
+      "varies_only": ["root_policy_assignment_and_its_downstream_consequences"],
+      "fixed": {
+        "authentic_dream_call": "ONE_SHARED_CALL_AND_RECEIPT",
+        "context_policy": "RECENCY_CONTEXT_ALL_ARMS",
+        "response_intervention": "AUTHENTIC",
+        "base_model": "IDENTICAL_CLEAN_BASE",
+        "provider_algorithm": "IDENTICAL",
+        "semantic_table": "IDENTICAL",
+        "task_set": "IDENTICAL",
+        "snapshot": "IDENTICAL",
+        "budget_rules": "IDENTICAL_PROSPECTIVE_RULES",
+        "training_recipe_family": "IDENTICAL"
+      }
+    }
+  ],
+  "d1a_corpus": {
+    "policy": "D1A_SEALED_ACQUIRE_CORPUS",
+    "snapshot": "All pre-boundary direct closed eligible ACQUIRE records; no DREAM nomination.",
+    "dedup": "Group exact canonical tuple (subject_id,relation_id,object_id,public_record_bytes); choose lexicographically least eligible record_id.",
+    "order": "source_commit_ordinal ascending, then record_id ascending",
+    "capacity": "Apply K_root once after deduplication; first K_root rows survive.",
+    "zero": "VALID_EMPTY and a zero-dose observed arm."
+  },
+  "matched_binding_shuffle": {
+    "construction_time": "Before PROBE assignment and without action outcomes or target fields.",
+    "eligible_pair": "Destination and donor are different authentic rows; object_id and record_id bindings differ; substitute donor object/record into destination subject/relation response; substituted target has the same locked-token count and byte-length class as destination authentic target.",
+    "matching": "Build the finite bipartite graph. Order destination vertices by canonical authentic row order. Order candidate donor edges by SHA256('PPC5R3_BINDING' || recipient_life_id || sealed_seed || destination_row_hash || donor_row_hash), then donor_row_hash. Depth-first enumerate assignments in destination order and select the first perfect derangement.",
+    "invariants": ["no fixed binding", "identical request multiset", "identical donor object/record multiset", "identical row count", "identical update count", "identical per-row locked-token count", "different authentic and shuffled corpus hashes"],
+    "failure": "Any missing perfect derangement or failed invariant is CONSTRUCTION_FAIL before assignment.",
+    "boundary": "Control rows use contract ppc5.control_sleep_row.v3 and may enter only MATCHED_BINDING_SHUFFLED_READER training. They never enter the public ledger or positive-evidence audit."
+  },
+  "wrong_life": {
+    "population": "Recipient-disjoint sealed donor roster constructed before any model or training call.",
+    "compatibility": ["base_architecture_hash", "tokenizer_hash", "adapter_shape_hash", "recipe_family_hash", "mount_interface_hash"],
+    "matching": "Order compatible donor edges by SHA256('PPC5R3_DONOR' || run_seed || recipient_life_id || donor_life_id), then donor_life_id; depth-first enumerate recipients in recipient_life_id order and select the first perfect one-to-one matching.",
+    "constraints": ["no donor reuse", "no recipient is a donor", "no adaptive replacement"],
+    "construction_failure": "No perfect compatible matching is CONSTRUCTION_FAIL before assignment.",
+    "runtime_failure": "Assigned donor adapter missing is MISSING with no replacement; hash/shape mismatch is RUN_INVALID.",
+    "cross_life_payload": "Only typed adapter bytes and compatibility manifest; all donor ledger, IDs, roots, answers, prompts, and workspace bytes are forbidden."
+  },
+  "overlap_scope": {
+    "construction_only_fields": ["semantic_family_id", "alias_family_id", "item_family_id", "donor_overlap_group"],
+    "rule": "Publish and seal cross-role and cross-donor overlap counts before assignment; report presealed strata descriptively.",
+    "claim_boundary": "PPC5 tests supported selection, not novelty or semantic generalization. No overlap stratum can rescue or block the registered narrow claim. Any future novelty claim requires a separate zero-overlap design."
+  }
+}

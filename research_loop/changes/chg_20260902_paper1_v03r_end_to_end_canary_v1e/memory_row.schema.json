@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-memory-row-v1e",
+  "title": "Immutable accepted cognitive memory row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["row_id", "origin", "kind", "fields", "status", "support_basis", "citations", "depth", "semantic_hash", "record_hash"],
+  "properties": {
+    "row_id": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"},
+    "origin": {"enum": ["WITNESSED", "DREAMED"]},
+    "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+    "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+    "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+    "support_basis": {"enum": ["WITNESS", "SELF_REVIEW_SAME_EVIDENCE", "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT"]},
+    "citations": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"}},
+    "depth": {"type": "integer", "minimum": 0, "maximum": 100},
+    "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "record_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"origin": {"const": "WITNESSED"}}, "required": ["origin"]},
+      "then": {
+        "properties": {
+          "row_id": {"type": "string", "pattern": "^M0000(?:[0-3][0-9]|4[0-8])$"},
+          "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE"]},
+          "status": {"const": "WITNESSED"},
+          "support_basis": {"const": "WITNESS"},
+          "citations": {"maxItems": 0},
+          "depth": {"const": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"origin": {"const": "DREAMED"}}, "required": ["origin"]},
+      "then": {
+        "properties": {
+          "row_id": {"type": "string", "pattern": "^M0010[0-9]{2}$"},
+          "kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+          "status": {"const": "SUPPORTED"},
+          "support_basis": {"enum": ["SELF_REVIEW_SAME_EVIDENCE", "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT"]},
+          "citations": {"minItems": 2, "maxItems": 8},
+          "depth": {"type": "integer", "minimum": 1, "maximum": 100}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ROUTE"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "minItems": 2, "maxItems": 2}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "EFFECT"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "SOURCE_VALUE"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ANIMAL_VALUE"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "RECIPE"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "minItems": 2, "maxItems": 2}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "minItems": 2, "maxItems": 2}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "minItems": 3, "maxItems": 3}}}
+    }
+  ],
+  "x-kind-discrimination-contract": {
+    "rule": "kind is the discriminator. Exactly the conditional for that exact kind supplies the fields tuple schema; identical field namespaces for SOURCE_VALUE and ANIMAL_VALUE do not create alternate branches.",
+    "source_value": "kind=SOURCE_VALUE with [animal:,source:,label:] validates as SOURCE_VALUE only",
+    "animal_value": "kind=ANIMAL_VALUE with [animal:,source:,label:] validates as ANIMAL_VALUE only",
+    "failure": "A missing kind, wrong arity, wrong namespace, or attempt to reinterpret one kind as the other is rejected."
+  },
+  "x-witnessed-identity-contract": {
+    "global_lexical_domain": "M000000..M000048 only; M000049 and every M000050..M000099 alias are invalid. Dreamed aliases remain the disjoint M001000..M001099 domain.",
+    "per_life_existence": "For a sealed life with actual_event_count n, the witnessed row set is exactly M000000..M plus n-1. A syntactically global-valid alias at or above n is contextually invalid for that life.",
+    "projection": "For every public Ei at index i, the sole projector creates exactly one Mi with the same six digits, origin/status WITNESSED, support_basis WITNESS, citations=[], depth=0, and external lineage exactly [Ei]. No other producer may create or repair an M000xxx row.",
+    "hashes": "semantic_hash is lowerhex(SHA256(UTF8(JCS({fields,kind})))); record_hash is lowerhex(SHA256(UTF8(JCS(the closed row excluding record_hash)))).",
+    "failure": "A missing, gapped, reused, above-life, index-49, wrong-metadata, wrong-lineage, wrong-semantic-hash, or wrong-record-hash witnessed row is rejected before dispatch."
+  },
+  "x-accepted-citation-contract": {
+    "witnessed": "citations is exactly [] and depth is 0",
+    "dreamed": "citations is proposal premise_ids in emitted order followed by accepted support_row_ids in their supplied additional_rows order, retaining only the first occurrence of each ID; ASCII sorting is forbidden",
+    "depth": "1+max(depth of every citation in the exact stored citations sequence)",
+    "record_hash": "lowerhex(SHA256(UTF8(JCS(row excluding record_hash)))); therefore citation order is hash-significant",
+    "immutability": "citations, depth, semantic_hash, and record_hash never change after acceptance"
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {
+        "name": "source_value_exact_kind_branch",
+        "row": {"row_id": "M000006", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:otter", "source:s0", "label:blue"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "7e377178f950722b6faea8031ed59a45181570ba262ab5f78029dd5cc30e6e03", "record_hash": "21ec30d76c9c9bcd89c5acaa0baf6494a537b12ba11355b920440ac90166a854"},
+        "expected_valid_kind_branches": ["SOURCE_VALUE"]
+      },
+      {
+        "name": "animal_value_exact_kind_branch",
+        "row": {"row_id": "M000007", "origin": "WITNESSED", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:s0", "label:blue"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "80425713b7df746b91f4aefac4ab0f8a134f9c086568048fef04ec7b36fa6c87", "record_hash": "f486a15f88a496d84fb31b712daebedc60668735ba189510f333179be608e74f"},
+        "expected_valid_kind_branches": ["ANIMAL_VALUE"]
+      },
+      {
+        "name": "premises_then_supplied_support",
+        "premise_ids": ["M001005", "M000001"],
+        "supplied_additional_rows": ["M000003", "M001004", "M000002"],
+        "support_row_ids": ["M001004", "M000002"],
+        "row": {"row_id": "M001084", "origin": "DREAMED", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M001005", "M000001", "M001004", "M000002"], "depth": 4, "semantic_hash": "4a496090c2b949f942d734edc73ed07501b0d2581747ca63943c4b39d87f8a75", "record_hash": "ab09afc1093cdb87fb49c8e602bea616b932f838d213c765d9d03a53019a4b06"},
+        "expected": "ACCEPT"
+      },
+      {
+        "name": "seed1_witnessed_last_index_48",
+        "event_id": "E000048",
+        "external_lineage": ["E000048"],
+        "row": {"row_id": "M000048", "origin": "WITNESSED", "kind": "RECIPE", "fields": ["mixture:1*red+1*yellow+1*blue", "label:brown"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "bfc95fcb9175eb6ab68df775531ee0d81fc020386eecde0de232453a60a2d66e", "record_hash": "7299b6167c5ee6c265be1f72b619ffcd3e9117f79d105de39193d31dab561838"},
+        "expected": "ACCEPT_IN_49_EVENT_LIFE"
+      }
+    ],
+    "negative": [
+      {"name": "missing_kind", "mutation": "remove kind from either witnessed value vector", "expected": "REJECT"},
+      {"name": "wrong_kind_namespace", "mutation": "set kind=ROUTE while retaining [animal:,source:,label:]", "expected": "REJECT"},
+      {"name": "wrong_arity", "mutation": "remove label: from SOURCE_VALUE or ANIMAL_VALUE fields", "expected": "REJECT"},
+      {"name": "ascii_sorted_accepted_citations", "mutated_citations": ["M000001", "M000002", "M001004", "M001005"], "expected": "REJECT"},
+      {"name": "swapped_support_order", "mutated_citations": ["M001005", "M000001", "M000002", "M001004"], "expected": "REJECT"},
+      {"name": "duplicate_citation", "mutated_citations": ["M001005", "M000001", "M001004", "M001004"], "expected": "REJECT"},
+      {"name": "stale_record_hash", "mutation": "change citations or depth while retaining ab09afc1093cdb87fb49c8e602bea616b932f838d213c765d9d03a53019a4b06", "expected": "REJECT"},
+      {"name": "witnessed_index_49", "mutation": "replace the M000048 positive row_id with M000049", "expected": "REJECT_SCHEMA"},
+      {"name": "witnessed_above_life_count", "life_actual_event_count": 46, "mutation": "supply the otherwise well-formed M000048 positive", "expected": "REJECT_CONTEXTUALLY"},
+      {"name": "witnessed_dreamed_metadata", "mutation": "set M000048 origin=DREAMED,status=SUPPORTED,support_basis=SELF_REVIEW_SAME_EVIDENCE,citations=[M000001,M000002],depth=1", "expected": "REJECT_SCHEMA"},
+      {"name": "witnessed_nonempty_citations", "mutation": "set M000048 citations=[M000001]", "expected": "REJECT_SCHEMA"},
+      {"name": "witnessed_wrong_depth", "mutation": "set M000048 depth=1", "expected": "REJECT_SCHEMA"},
+      {"name": "witnessed_wrong_lineage", "mutation": "bind M000048 to [] or [E000047] or [E000048,E000047]", "expected": "REJECT_CONTEXTUALLY"},
+      {"name": "witnessed_wrong_semantic_hash", "mutation": "replace M000048 semantic_hash with 64 zeroes", "expected": "REJECT_HASH_VALIDATOR"},
+      {"name": "witnessed_wrong_record_hash", "mutation": "replace M000048 record_hash with 64 zeroes", "expected": "REJECT_HASH_VALIDATOR"},
+      {"name": "selected_support_dropped", "mutated_citations": ["M001005", "M000001", "M001004"], "expected": "REJECT"},
+      {"name": "silent_repair", "mutation": "accept any illegal reducer input after sorting, deduplication, premise removal, or support insertion", "expected": "REJECT; INVALID_SELF_CHECK creates no row"}
+    ]
+  },
+  "$defs": {
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]}
+  }
+}

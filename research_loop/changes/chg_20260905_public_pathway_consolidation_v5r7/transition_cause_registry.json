@@ -1,0 +1,187 @@
+{
+  "contract": "ppc5.transition_cause_registry.v7",
+  "schema_version": 7,
+  "cause_roles": [
+    {
+      "cause": "MODEL_DISPATCH",
+      "ordered_roles": [
+        {
+          "role": "MODEL_DISPATCH",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "MODEL_DISPATCH_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "DIRECT_PROVIDER",
+      "ordered_roles": [
+        {
+          "role": "PROVIDER_INGRESS",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "PROVIDER_INGRESS"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "PROVIDER_RECEIPT",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "PROVIDER_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "CONTROLLER_PHASE",
+      "ordered_roles": [
+        {
+          "role": "CONTROLLER_REGISTRY",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "CONTROLLER_REGISTRY"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "CONTROLLER_RESULT",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "OPERATION_RESULT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "QUEUE_FLUSH",
+      "ordered_roles": [
+        {
+          "role": "QUEUE_SLOT",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "QUEUE_SLOT_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "PROVIDER_RECEIPT",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "PROVIDER_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "INTERVENTION_EMISSION",
+          "ordinal": 2,
+          "allowed_artifact_types": [
+            "INTERVENTION_EMISSION_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "PUBLIC_RESULT",
+          "ordinal": 3,
+          "allowed_artifact_types": [
+            "OPERATION_RESULT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "QUEUE_EFFECT",
+          "ordinal": 4,
+          "allowed_artifact_types": [
+            "QUEUE_EFFECT_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "QUEUE_DISCARD",
+      "ordered_roles": [
+        {
+          "role": "QUEUE_SLOT",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "QUEUE_SLOT_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "QUEUE_EFFECT",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "QUEUE_EFFECT_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "COMMITTED_ACTION",
+      "ordered_roles": [
+        {
+          "role": "COMMITTED_ACTION",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "OPERATION_ENVELOPE"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "ENVIRONMENT_RECEIPT",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "ENVIRONMENT_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    },
+    {
+      "cause": "HARNESS_TERMINAL",
+      "ordered_roles": [
+        {
+          "role": "TERMINAL_CAUSE",
+          "ordinal": 0,
+          "allowed_artifact_types": [
+            "OPERATION_RESULT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        },
+        {
+          "role": "ENDPOINT_OUTCOME",
+          "ordinal": 1,
+          "allowed_artifact_types": [
+            "ENDPOINT_OUTCOME_RECEIPT"
+          ],
+          "consumer_stage": "TRANSITION_REDUCER",
+          "cardinality": 1
+        }
+      ]
+    }
+  ],
+  "exact_cardinality": true,
+  "registry_hash": "228068181f8cdcf6368f063e6af2e83b20a198119b0265a06be7a5218b10528a"
+}

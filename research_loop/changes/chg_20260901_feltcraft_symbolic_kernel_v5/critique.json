@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260901_feltcraft_symbolic_kernel_v5.cross_critique",
+  "change_id": "chg_20260901_feltcraft_symbolic_kernel_v5",
+  "state": "critiqued",
+  "architecture_change_sha256": "9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_feltcraft_symbolic_kernel_v5.science",
+      "sha256": "7fe747ce60d26f1f186453b64cb71b7d5f7d40331f0551d011ca81cd3339006e"
+    },
+    {
+      "interpretation_id": "chg_20260901_feltcraft_symbolic_kernel_v5.scope",
+      "sha256": "8bf9559a8be3c6e2139905cfe63cbd1fee9e182ea9dcd1b0ffcf4c6f5dfc6c67"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Research operating contract requiring durable deliberation, separate exact human ratification, scoped implementation, independent review, and separate compute and claim gates."
+    },
+    {
+      "path": ".git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "purpose": "Byte evidence that repository HEAD resolves through refs/heads/main when this proposal is formed."
+    },
+    {
+      "path": ".git/refs/heads/main",
+      "sha256": "1e01a51f8018360076328287cce24b8f38b92133f1083be40c9607394b4e87dd",
+      "purpose": "Byte evidence that the bound main-branch HEAD and SK10 diff base are the full commit 742f8bfa4bf4e530fdf264150bff962506fe449f."
+    },
+    {
+      "path": "research_loop/architecture_deliberation.py",
+      "sha256": "4f5c3f3601a1e19fc687fa4ab04d3dd973a8ed035f063b15637f0631ed096d65",
+      "purpose": "Deliberation runner that binds exact source bytes and terminates model adjudication at human-required state."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Strict validator for schemas, context hashes, exact Cartesian visibility, unique identifiers, transitive ratification provenance, scope equality, and human-only release."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict schema governing this architecture-change artifact."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Strict schema for fresh independent interpretations in the permitted governance loop."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict schema for the permitted adversarial cross-critique artifact."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Strict schema for adjudicated consensus and its releasability dispositions."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Strict human-ratification schema whose actual fields define the transitive authority chain and forbid a nonexistent direct change_sha256 field."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/change.json",
+      "sha256": "3f349860ec02a906caff8c735f3c8068e525dfa2bb9a3fd32aa81bef707489dd",
+      "purpose": "Proposal-only V1 ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v2/change.json",
+      "sha256": "cdb10a61638454ce86e54de359d09c1cdd082029b2a433209b9553d917324361",
+      "purpose": "Reworked V2 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v3/change.json",
+      "sha256": "53fd4e0bce3360bfb649e06c3dccf85356eea45188bb1c9cea5e8afffc2b7db3",
+      "purpose": "Reworked V3 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v4/change.json",
+      "sha256": "fa5ef77c127b7fe614ef33875d55a4099a023bec8fc6a8a1dd98db5f0fbf2a8e",
+      "purpose": "Reworked V4 proposal ancestry, never applied to the standalone FeltCraft implementation registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v4/consensus.json",
+      "sha256": "682a6b53dce625283df32b82bad559ca03e5ec77e64f36279b1da8fd119ab12e",
+      "purpose": "Adjudicated V4 rework whose exact R01-R07 resolutions and acceptance-test dispositions this successor implements."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/audit_contract.md",
+      "sha256": "529bb737778679f8d4f528c06552d2cd4566e6da9b173bd7996ceb8d4b0799ea",
+      "purpose": "Normative standalone lineage, complete source-manifest algorithm, deterministic capability closure, reviewer freshness and independence, external visibility, and real ratification binding."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/golden_report.json",
+      "sha256": "f94cbc8e0fe65d4144ea7cdf849e2a98983803914576d12f3557f34061556baf",
+      "purpose": "Preimplementation 2,102-byte all-pass runtime oracle with exact V5 protocol, aggregate fields, nine ordered SK01-SK09 receipts, and one terminal LF."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/golden_vectors.json",
+      "sha256": "9db56cbb6df4f4d481269ffc480a81b2634a0996d4d51c3612dcbd9056638dca",
+      "purpose": "Independent governance oracle for 72 exact vectors, pi-inverse direction sentinel, and the ordered 25-call negative registry."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/human_directive.txt",
+      "sha256": "806ea2eb17c8582ea0219e0ad9fbf1b0393745403beddf080c08230c005987aa",
+      "purpose": "Verbatim directive to preserve design depth, persist in research design, and optimize for a useful paper rather than irrelevant engineering."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/proposal.md",
+      "sha256": "ddffab7054319ad52c0bd53dcdc5897aaa8f4bf7a52a35bbbe8525aec8e03896",
+      "purpose": "Integrated V5 summary disposing V4 R01-R07 while withholding all implementation and scientific authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/science_repair.md",
+      "sha256": "d9599a5c7b501496f56008ab53a850f56f6e9f83bac1f0f141e7f58d77b68338",
+      "purpose": "Normative pi-inverse equations, independent-vector construction, canonical constructors, validation precedence, and closed negative boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_audit.schema.json",
+      "sha256": "115f1ce1efe996537adcfa57c452fbd7d2d5b349cbcdf4a210cc947ec840099a",
+      "purpose": "Strict external SK10 receipt schema for complete manifest, closure, request, reviewer, check, and pass/fail evidence."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/scope_proposal.json",
+      "sha256": "f7f1798ccc3023a7c9044ac62e34e2cc0b296530d4dcd742a349cae888eb38d8",
+      "purpose": "Canonical exact sorted three-atom requested scope and exact sorted eight-atom forbidden scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v5/symbolic_contract.md",
+      "sha256": "f9e4954d14ecd0056e7215fbc3573cb2f9407b6f1b434ded0dce7ce91b0f2edb",
+      "purpose": "Normative complete V5 standalone registries, inverse algebra, finite domains, negative boundary, twin/cost/deletion, golden, SK10, visibility, ratification, and terminal authority contract."
+    }
+  ],
+  "strongest_case": "V5 preserves the mathematically coherent and scientifically narrow part of V4 while repairing most of R01-R07. The descriptor-to-role convention, pi-inverse rendering, non-self-inverse direction sentinel, 72 copied governance vectors, closed 25-call negative registry, exact positive domains, 2,102-byte report, five-file audit subject, real transitive ratification fields, and complete final 5/9/2/6 registries are substantial improvements. The finite identities remain valid specification mathematics: 96 alignments quotient to 48 graphs and six calibration classes of 16; LOCAL and RANDOM_SOURCE have value 1/4, MOTIF_SCHEMA and ORACLE have direct-access value 1; tau is involutive and content-changing; costs are 5/8/16/17; and 36,864 bridge cases induce 73,728 typed deletion checks. All claims remain non-headline, LOCAL remains target-local rather than atoms, MOTIF_SCHEMA is direct complete-graph access rather than learned induction, all three requested and eight forbidden scope atoms are exact, SK10 is external, and no implementation or scientific authority exists. The exact bytes nevertheless have one blocking architecture defect: they provide no declared comparator stage that can see both the independent oracles and candidate outputs. The graph prose alternatively sends vector/negative constants from authority into implementation-under-test nodes while the matrix forbids those nodes the same information. Thus the contract either leaks expectations into the subject or cannot derive SK01-SK05/SK08 receipts, and SK09 cannot validly certify them. The missing isolated base digest is a material literal shortfall against V4 R02, but the exact inline empty base plus complete replacement registries already remove predecessor ambiguity, so demanding a second hash solely for ceremony would overstate it. Audit-contract section 7's stale tense and SK10's claim of deterministic complete Python call closure are material: the former needs fixed-versus-future precedence, while the latter should be honestly narrowed to fresh human-adjudicated source review unless a reproducible resolver is actually bound. The context-file SHA aliases are only a naming-level visibility issue, not a capability leak: SKN01 learns public paths and digests, not the forbidden audit bytes. R03, R04, R07, SK06, SK07, the non-headline firewall, scope equality, and the substantive source-manifest closure otherwise survive cross-examination.",
+  "reviewed_acceptance_test_ids": [
+    "SK01_DOMAIN_INVERSE_V5",
+    "SK02_CALIBRATION_VECTORS_V5",
+    "SK03_RANDOM_WITNESSES_V5",
+    "SK04_MOTIF_WITNESSES_V5",
+    "SK05_TWIN_WITNESSES_V5",
+    "SK06_COSTS",
+    "SK07_BRIDGE_DELETION",
+    "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5",
+    "SK09_REPORT",
+    "SK10_SCOPE_AUDIT_MANIFEST_V5"
+  ],
+  "concerns": [
+    {
+      "concern_id": "V5_VIS_001_ORACLE_COMPARATOR_PATH_IS_UNREALIZABLE",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The exact graph and visibility product contain no principal that may observe both the 72-vector/25-call governance oracles and the candidate per-case outputs, while edge prose separately conveys those oracles into implementation-under-test nodes; either reading invalidates the claimed independent receipts.",
+      "evidence": "contract.independent_vector_registry_72_checks and contract.negative_registry_25_calls are visible only to SKN01_AUTHORITY and HUMAN_GOVERNANCE_REVIEW and forbidden to SKN02, all four SKN03 stages, SKN04, SKN05, and SK10. Candidate enumerator, LOCAL, MOTIF_SCHEMA, RANDOM_SOURCE, ORACLE, and checker witnesses are confined to their producing principals and are forbidden or hidden from human governance. No test-harness/comparator stage exists among the ten stages. Yet SKN02 says it checks vectors, SKN04 says it checks fixed twins, SKE01 releases vector constants to SKN02, SKE02 releases the negative registry to SKN03, SKE03 releases fixed twin vectors to SKN04, and SKE07-SKE09 claim resulting aggregates. If edge prose controls, implementation under test receives expectations it is supposed to be independently checked against; if the matrix controls, no actor can perform the comparisons or negative calls. The terminal validator sees only asserted aggregates, so SK09 cannot repair the missing derivation.",
+      "acceptance_test_ids": [
+        "SK01_DOMAIN_INVERSE_V5",
+        "SK02_CALIBRATION_VECTORS_V5",
+        "SK03_RANDOM_WITNESSES_V5",
+        "SK04_MOTIF_WITNESSES_V5",
+        "SK05_TWIN_WITNESSES_V5",
+        "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5",
+        "SK09_REPORT"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V5_ARCH_002_R02_BASE_DIGEST_IS_NOT_DECLARED",
+      "category": "architecture",
+      "severity": "material",
+      "statement": "V5 gives an unambiguous standalone empty base and complete replacement snapshot but does not literally provide the separately identifiable base-state SHA-256 required by V4 resolution R02.",
+      "evidence": "FELTCRAFT_UNIMPLEMENTED_PROPOSAL_BASE_V1 is repeatedly defined as five empty registries, every V5 entry is add, ancestor proposals are explicitly inactive, and the final 5/9/2/6 registries are complete. Those hash-bound inline definitions remove the implementer-selected predecessor problem that made V4 blocking. However, no base artifact, canonical base serialization, or base_sha256 is declared, so the claim that R02 is fully disposed is literally false and a future intake cannot compare an isolated base digest. This is material resolution accounting rather than a current graph ambiguity: a duplicate digest of the same synthetic empty literal adds no security by itself. Consensus should either bind a canonical base artifact/digest in successor bytes or explicitly justify why the hash-bound inline snapshot is accepted as the R02 base binding.",
+      "acceptance_test_ids": [],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V5_OPS_003_AUDIT_BINDING_TENSE_CONFLICT",
+      "category": "operations",
+      "severity": "material",
+      "statement": "Normative audit_contract.md section 7 calls proposal-time bindings nonexistent and future-filled even though the bound V5 bundle already fixes the change hash, contract hash, schema hash, and diff-base commit.",
+      "evidence": "Section 7 groups architecture_change_sha256, audit_contract_sha256, scope_audit_schema_sha256, and diff_base_commit with genuinely future manifest/request/reviewer/timestamp/receipt values and says all do not yet exist and must be filled only after ratification. In the exact bundle the first four already exist: change.json is 9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a, the context list fixes contract and schema hashes, and symbolic_contract.md fixes commit 742f8bfa4bf4e530fdf264150bff962506fe449f. A future request must copy those fixed proposal-time bindings and must not select replacements. This is not a reason to embed the contract's own hash inside itself; precedence can be clarified by distinguishing externally bound immutable values from post-freeze evidence.",
+      "acceptance_test_ids": [
+        "SK10_SCOPE_AUDIT_MANIFEST_V5"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V5_OPS_004_SK10_DETERMINISM_IS_OVERCLAIMED",
+      "category": "operations",
+      "severity": "material",
+      "statement": "SK10's manifest and rule registry are strong, but feltcraft_scope_rules_v1 does not uniquely determine the advertised complete Python call/capability closure; the honest contract is a fresh human-adjudicated source review unless exact resolver semantics are separately bound.",
+      "evidence": "The audit fixes five source files, import grammar and allowlist, CLI, explicit forbidden rules, conservative failure on unresolved indirect calls, inventories, request binding, chronology, and reviewer evidence. It does not define a complete name-binding and call-resolution procedure for aliases, locally stored callables, callbacks, decorators, context managers, inheritance/attributes, or dormant branches, and section 7 expressly says no evaluator is designed or authorized. The schema can require a reviewer to record call_edges, unresolved_calls, booleans, and passed, but it cannot establish that the inventory is the unique complete one. Requiring a purported security-proof evaluator would be disproportionate for this nonadversarial five-file governance review. Narrow SK10 to a conservative human-adjudicated review with schema-bound evidence and human governance disposition, or, only if deterministic reproducibility is essential, bind actual resolver semantics and test cases before claiming exact closure.",
+      "acceptance_test_ids": [
+        "SK10_SCOPE_AUDIT_MANIFEST_V5"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "V5_VIS_005_CONTEXT_HASH_ALIAS_IS_NOT_A_CAPABILITY_LEAK",
+      "category": "visibility_leak",
+      "severity": "note",
+      "statement": "The visible authority.context_files metadata overlaps the SHA/path components of audit.contract_bytes_and_sha256 and audit.schema_bytes_and_sha256, but this is a compound-name ambiguity rather than runtime access to the forbidden audit oracles.",
+      "evidence": "SKN01 may read every context path, SHA-256, and purpose, including the audit-contract and audit-schema entries, while the two compound audit items are forbidden to SKN01. Exact public digests and path labels do not reveal contract/schema bytes or confer an audit capability, and hiding them would conflict with authority's context validation. The matrix should split audit bytes from already-public binding metadata or state that the forbidden compound means bytes plus the full audit input object, not separately visible digest aliases. Treating the hash alone as a blocker would be security theater; the oracle comparator failure is the real visibility blocker.",
+      "acceptance_test_ids": [
+        "SK10_SCOPE_AUDIT_MANIFEST_V5"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "V5_CORE_006_PRESERVE_VALID_MATH_SCOPE_AND_AUTHORITY",
+      "category": "scientific",
+      "severity": "note",
+      "statement": "The remaining defects do not undermine the finite algebra, SK06-SK07, the exact scope boundary, the real transitive ratification chain, or the non-headline interpretation, all of which should be preserved through rework.",
+      "evidence": "The inverse equations and direction sentinel repair R03; the 25 distinct fixtures and exact DomainError surface repair R04; SK06 retains 192 intermediate and 192 top cases with costs 5 and 8 plus CONJ 16 and BRIDGE 17; SK07 retains 36,864 namespace-tagged cases and 73,728 deletion checks without a substitution claim. The sorted three requested and eight forbidden scope atoms are exact and disjoint. The authority items now name actual ratification, consensus, paused-state, transition, and scope fields validated by architecture_intake.py, repairing R07. Every C01-C06 claim is non-headline; LOCAL is target-local calibration, MOTIF_SCHEMA is direct complete-graph access, and no report, audit, governance artifact, implementation, GPU action, model result, benchmark, promotion, or scientific claim is authorized.",
+      "acceptance_test_ids": [
+        "SK01_DOMAIN_INVERSE_V5",
+        "SK02_CALIBRATION_VECTORS_V5",
+        "SK03_RANDOM_WITNESSES_V5",
+        "SK04_MOTIF_WITNESSES_V5",
+        "SK05_TWIN_WITNESSES_V5",
+        "SK06_COSTS",
+        "SK07_BRIDGE_DELETION",
+        "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5",
+        "SK09_REPORT",
+        "SK10_SCOPE_AUDIT_MANIFEST_V5"
+      ],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [
+    "No declared stage can simultaneously read contract.independent_vector_registry_72_checks and candidate enumerator/projection/checker witnesses, so SK01-SK05 and the positive-vector part of SK08 have no realizable comparison path.",
+    "No declared stage can read contract.negative_registry_25_calls, invoke the four isolated public projection surfaces, observe exact DomainError outcomes and side-effect timing, and emit only aggregates, so SK08's negative receipt has no realizable derivation path.",
+    "SKE01-SKE03 describe vector and negative-oracle constants flowing from SKN01 into implementation-under-test nodes even though the matrix forbids those same items there; this is either an expectation leak or an edge/matrix contradiction.",
+    "authority.context_files path/SHA/purpose exposes audit contract and schema binding metadata to SKN01 while compound audit bytes_and_sha256 items are forbidden there; this needs semantic splitting but does not expose the forbidden bytes."
+  ],
+  "missing_acceptance_tests": [
+    "Add a hash-bound conformance-comparator information-flow invariant: exactly one pure CPU test principal may read copied independent vectors and negative fixtures, invoke public implementation surfaces, observe immutable outputs/exact exceptions, and emit only mismatch/count/receipt aggregates; every implementation-under-test principal must remain unable to read expected values.",
+    "Before any SK10 pass is accepted, check that request_binding copies the already-fixed proposal-time change, external contract, schema, and diff-base bindings while only manifest, request bytes, reviewer evidence, times, and receipt are post-freeze values.",
+    "If SK10 continues to claim deterministic complete closure, add reproducibility fixtures that force identical call_edges, unresolved_calls, capability findings, and pass disposition for alias/callback/decorator/context-manager/dormant-branch cases; otherwise replace this with an explicit human-adjudicated review criterion."
+  ],
+  "human_questions": [
+    "Will Rohin Ghosh withhold implementation ratification of exact change hash 9ef68abf7bd04879c895bcb9643bb1a724c743b34c2559ff6f442acc2fef1d4a until a newly bound contract provides an oracle-visible but implementation-isolated comparator path for SK01-SK05 and SK08, with SK09 consuming only legitimately derived aggregates?",
+    "Does adjudicated consensus require a standalone canonical base artifact and digest to satisfy V4 R02 literally, or does it explicitly accept the exact hash-bound inline empty base plus complete replacement registries as sufficient and record the missing separate digest as a nonblocking provenance deviation?",
+    "Should SK10 be narrowed to a conservative fresh human-adjudicated five-file source review, preserving manifest/request/reviewer evidence and terminal non-scientific use, rather than claiming a uniquely deterministic Python call/capability closure that the bound rules do not define?",
+    "Will consensus clarify that the fixed change/contract/schema/diff-base bindings control over audit_contract.md section 7's stale tense, while only the frozen manifest, request, reviewer evidence, times, and receipt remain future values?",
+    "Does the human confirm that any repaired successor preserves the valid pi-inverse mathematics, SK06-SK07, LOCAL-not-atoms and direct-access MOTIF interpretation, exact three requested/eight forbidden scope atoms, real transitive ratification chain, terminal outputs, and no implementation, compute, promotion, benchmark, or scientific authority before separate exact ratification?"
+  ]
+}

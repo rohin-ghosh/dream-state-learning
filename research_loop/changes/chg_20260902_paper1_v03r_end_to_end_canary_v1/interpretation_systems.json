@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "p1c_v03r_canary_systems_v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "5ecc4a68705b59b89c02d8d77f8c60c5e62179d3269ec5f8cf72e35b5d9fa071",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Material-change, human-ratification, fresh-review, and GPU-gate contract."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 claim, allowed prompted cognition, forbidden exact verification, and deferred learned LOOP work."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Existing paired collision world whose model-facing public export requires repair."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Current construct, split, local-window, edge-removal, and population tests."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_immediate_end_to_end_gate.md",
+      "sha256": "638946687dd9bb768e4bcf1609d96cebaac8a029c50f2f24eec765f89d53471b",
+      "purpose": "Initial scope audit selecting the immediate end-to-end canary over v2e, RML, or LOOP training."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_canary_fresh_science_audit.md",
+      "sha256": "530d3f93e0a43f748422b92c2a78593d9a1d893f517b6f1eb8d47130cd02ff72",
+      "purpose": "Fresh scientific no-go audit identifying public-ratio leakage, false no-return, final-thinker, and shortcut blockers."
+    },
+    {
+      "path": "research_loop/advisory/20260902_paper1_canary_fresh_systems_audit.md",
+      "sha256": "db2dd4670df8bbcd8ff279073133831b5e8c7cba3216f7bb01685aa8342e21bd",
+      "purpose": "Fresh systems audit identifying exact model bridge, status, corpus, thinker, reader, and life-isolation interfaces."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/human_directive.txt",
+      "sha256": "6ffd5cd1d6e112b1e8ec35265be6bfb73b4b9dabfd69c09a5be7bba40030c703",
+      "purpose": "Verbatim human constraints preserving Paper 1 while closing the amortized system."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/experiment_spec.md",
+      "sha256": "2c93629f5cd21429280c8b615dea4ba090d9011e2cbd1a92a4c40c6d2fb1b714",
+      "purpose": "Complete scientific design, stages, arms, causal outcomes, resource envelope, and stop policy."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/canary_config.json",
+      "sha256": "b9742d453333fffe89c04464e61ff973e3d5bb37c558b5e80f74b99e05b50870",
+      "purpose": "Exact worlds, models, schedules, budgets, adapter recipe, and conditional limits."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/dream_prompt.md",
+      "sha256": "4b798bbd986dd0ccb79a5c27b795e898f0ad1901cd208ce8347316139e28cca9",
+      "purpose": "Exact target-absent recurrent memory-growth controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think0_prompt.md",
+      "sha256": "47e5b44847f5ad8b12a02b5cb46d143c2373c2016bbe0f20ff552423c7e87e6a",
+      "purpose": "Exact non-answer goal-routing controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think1_prompt.md",
+      "sha256": "967f352b27e66398b9fbd9c2a2b78d2628f1df3addaa1f560f6d6ecd43ef30a2",
+      "purpose": "Exact fresh final goal-conditioned controller prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/memory_row.schema.json",
+      "sha256": "b75cc7a9b824d81a3777f061b42881996b0b485908a5ff27b2097ea2e26ad978",
+      "purpose": "Exact witnessed and dreamed atomic-memory ontology."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/dream_operation.schema.json",
+      "sha256": "0294c22a04faa4014302ad6e35984108c4a731ce9971f5f61cc1a8831b17f99c",
+      "purpose": "Exact one-operation recurrent write grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/think_operation.schema.json",
+      "sha256": "a41b255ebdb2c00e3db513b551bcc33d16f87f9c814ba391a3756b30aac4f757",
+      "purpose": "Exact THINK0/THINK1 query, reasoning, request, commit, and defer grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1/scope_proposal.json",
+      "sha256": "bf31996aed648380239c5afd7138871e689913cb159e970855376c30d4d97229",
+      "purpose": "Exact requested and forbidden authority for implementation, staged GPU work, and result analysis."
+    }
+  ],
+  "system_thesis_interpretation": "Verdict: REWORK before ratification or implementation. The proposed canary is the right bounded systems question and preserves the frozen Paper-1 separation between prompted control, reliable witnessed atoms, learned life memory, fresh composition, offline scoring, and later replication. Its causal graph is plausible, but the bound bytes do not yet determine one executable system. Exact phase-specific operation legality, kind-specific tuple typing, status transitions, public alias projection, corpus realization, reader conflict behavior, process isolation, intervention execution, accounting categories, and GPU transition tokens remain missing or contradictory. Until those are hash-bound, different conforming implementations could expose different information, train different bytes, count different calls, or reach GPU stages under different evidence. A green run under such discretion would not support the proposed localization claim.",
+  "graph_delta_interpretation": "The intended graph should be implemented as a fail-closed control plane around content-addressed data-plane artifacts: PROJECT_PUBLIC -> BUILD_WITNESSED -> per-life PREFIX -> seal M0 -> per-life THINK0 -> copy-on-write NO/OWN/DIST branches -> seal every branch -> compile immutable corpus manifests -> fresh text THINK1 arms -> offline disposition -> deterministic earliest-pass selector -> conditional two-adapter training -> fresh own/swap THINK1 -> write-denied evaluation -> human terminal. Each twin needs a distinct namespace; M0 is shared only among that twin's arms, never between twins. Read-only base model/tokenizer weights may be shared, while prompts, KV/chat state, RNG state, retrieval indexes, memory stores, adapter state, output directories, and evaluator channels must be isolated or explicitly content-addressed. Missing graph nodes are an actual provider-request serializer/gateway, phase validator, append-only memory transition reducer, canonical corpus compiler, backend-neutral reader receipt layer, authority-token gate, and audit-only evaluator. T-TWIN and L-TWIN are intentional model-facing cross-life interventions, not merely offline views, so they require explicit exception edges that mount the corresponding donor artifact without revealing donor, life, or arm labels to THINK1.",
+  "loop_delta_interpretation": "The recurrence counts are internally coherent only under one provider generation per scheduled DREAM opportunity: per twin 46 WAKE + 22 REACTIVATE + 16 target-blind SLEEP, followed by zero M0 calls and 16 each for OWN and DIST; THINK0 and each THINK1 stop at 12 operations. Every operation must rebuild the exact allowed request from committed state rather than inherit a provider conversation, because fresh_session_per_life_phase is too weak to enforce one-record/six-row visibility. The reducer must assign row ids and CREATE=PROVISIONAL mechanically, verify citations against the exact call view, compute depth from transitive committed parents, and apply a fully specified append-only transition table. Independence for REINFORCE must be defined over transitive public provenance, otherwise a differently worded memory derived from the same episode can falsely count as new evidence. Prefix artifacts are generated independently per twin and cloned byte-for-byte only across that twin's return arms. Malformed or forbidden model output consumes the scheduled opportunity and receives no semantic retry; infrastructure failures must fail the cell and preserve the partial ledger. THINK0/THINK1 workspace persists only as explicitly serialized bounded state, and every arm/life starts a new context, reader, and reset id. The transport loop must be gated by a signed disposition over already sealed candidate corpora, never by letting evaluation output enter the compiler or trainer input.",
+  "claim_delta_interpretation": "The maximum positive claim is appropriately non-headline: one held-out aligned collision pair carried a life-specific connected atom through explicit text and, conditionally, two per-life adapters into fresh prompted composition. M0 success and return benefit must remain separate claims. Life binding requires model-facing own-versus-twin reruns and path-use intervention evidence, not merely an offline inspection of an existing trace. Text/LoRA equality must mean the selected adapter manifest derives from the exact content-addressed semantic/view/touch manifest used by the corresponding text condition; it cannot mean that a structured row reader and an exposure-expanded SFT file literally receive the same byte stream. Negative localization is valid only after the world, gold-thinker, schema, visibility, runtime, reader, and artifact gates are complete. A failure caused by ambiguous query rejection, truncation, provider transport, cache leakage, or uncounted intervention calls is an infrastructure failure, not localization to a scientific organ. No canary outcome establishes beyond-context value, RAG superiority, population reliability, learned control, active improvement, saturation, or a flywheel.",
+  "visibility_matrix_interpretation": "Use four separately hashed surfaces for every call: allowed source state, canonical model-visible messages, provider configuration, and private audit metadata. Public episode projection must be an episode-kind allowlist derived from rendered information, not dict(episode.payload); source/animal internal ratios and canonical identifiers not present in the skin must be absent, while gauge/recipe quantities may appear only in their rendered public form. The THINK0 projection must exclude the matched_distractor fields currently returned by render_operational_probe and expose only its own public endpoints/question. DREAM prefix receives exactly one projected record plus at most six earlier recipient-local rows; RETURN_DREAM may additionally receive the typed focus for selection, but focus, probe bytes, workspace, arm/life labels, and donor identity cannot appear in citable rows or corpus bytes. THINK1 gets the final public goal/vocabulary, explicit bounded state, and at most one backend-neutral row receipt per query. The current matrix is wrong for OTHER_LIFE_MEMORY at THINK1: T-TWIN and L-TWIN deliberately expose donor-derived rows through the reader during model calls, so this cell needs an explicit swap-only derived visibility, while ordinary arms remain forbidden. Likewise decisive-row masking that claims behavioral loss must be a predeclared fresh THINK1 intervention with the modified reader, not an offline rescore. Hidden truth, exact proof, scorer expectations, split/latent metadata, and offline results belong only in a write-denied evaluator process whose output cannot reach cognition, corpus construction, or training bytes.",
+  "acceptance_test_ids_addressed": [
+    "P1C01_BOUND_SCOPE_HASH_AND_STAGE_ORDER",
+    "P1C02_PUBLIC_PROJECTION_AND_PRIVATE_MUTATION",
+    "P1C03_WORLD_SHORTCUT_AND_GOLD_HEADROOM",
+    "P1C04_RECURRENT_STATUS_AND_TRUE_ZERO_RETURN",
+    "P1C05_PROMPT_SCHEMA_READER_AND_FORBIDDEN_QUERY",
+    "P1C06_CORPUS_EQUALITY_AND_LIFE_ISOLATION",
+    "P1C07_HELDOUT_TEXT_PIPELINE_AND_RETURN_ATTRIBUTION",
+    "P1C08_CONDITIONAL_TWO_LORA_TRANSPORT",
+    "P1C09_FRESH_REVIEW_ADVOCATE_AND_ARTIFACT_CLOSURE"
+  ],
+  "acceptance_test_interpretation": "P1C01 must validate a monotone authority state machine and exact hashes, not only strings in a config. P1C02 must enumerate the field allowlist for every episode kind and compare the actual serialized provider messages under mutations, including canonical ids and the distractor fields in the operational-probe export. P1C03 needs numerical pass thresholds for every complete public-feature shortcut and must be split into CPU world gates, a development-only GPU gold gate, and a post-gold freeze gate. P1C04 must test transitive evidence independence, every legal status transition, literal zero calls after M0, immutable copy-on-write arm forks, and per-twin rather than cross-twin sharing. P1C05 must add phase-specific legality and kind-specific ontology constraints; the shared schema currently permits COMMIT in THINK0, REQUEST_DREAM in THINK1, broad atoms, all-null queries, and tuples whose fields do not match their kind. Forbidden-query rejection needs a finite structural rule rather than semantic guesswork. P1C06 needs canonical encoding, order, line endings, view templates, dedup/conflict rules, row/provenance/touch hashes, and a reset inventory; audit-history mutation should change an audit hash but not eligible semantic/view/touch hashes. P1C07 must define which donor corpus T-TWIN uses when M0 is earliest, and count masking/twin reruns as model calls if behavioral change is asserted. P1C08 must include fixed fidelity-probe calls in the 7B ledger, fail on line truncation, bind total exposure across touch expansion and four epochs, and prove that each adapter derives from its selected text manifest. P1C09 must issue distinct reviewed transition tokens for development gold, held-out text, and conditional LoRA, preserve reviewer supremacy over the advocate, seal partial failures, and terminate at human review. No required-before=gpu_run label may name evidence that itself requires that same undifferentiated GPU transition.",
+  "assumptions": [
+    "Each scheduled DREAM opportunity is one model generation whose operation may CREATE, REINFORCE, SUPERSEDE, or PASS; there is no additional uncounted self-check generation.",
+    "The deterministic witnessed layer is admitted as reliable episodic memory, remains disclosed and separately labeled, and is available to final readers even though it is not credited as dreamed construction.",
+    "M0 sharing means byte reuse across arms of one logical life only; the two latent twins always construct and seal independent M0 states.",
+    "Same-corpus attribution means a common content-addressed per-life manifest of eligible rows, provenance, registered views, and touch plan, with backend-specific delivery derived without semantic changes.",
+    "All provider operations are stateless requests rebuilt from explicit allowed state; shared hidden chat history or KV state is prohibited even within a life phase.",
+    "All proposed implementation, CPU testing, provider/GPU work, result analysis, and claims remain unauthorized until the required deliberation and exact human ratification complete."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "P1C_SYS_A01_PUBLIC_PROJECTION",
+      "question": "What exact per-kind structured fields, skin aliases, public entity handles, encoding, and operational-probe subset constitute model-visible public bytes?",
+      "impact": "Without an allowlist, an implementation can retain internal ratios or stable canonical ids, and THINK0 can accidentally receive the matched distractor coordinate."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A02_STATUS_TRANSITIONS",
+      "question": "What exact append-only transition table distinguishes CONTRADICTED from SUPERSEDED, handles SUPERSEDE with a null replacement, and decides whether witnessed rows are mechanically SUPPORTED?",
+      "impact": "The prompt and schemas do not uniquely determine active rows, conflict history, reader results, or the compiled corpus."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A03_EVIDENCE_INDEPENDENCE",
+      "question": "Is independent reinforcement checked against direct creation citations or the full transitive public-provenance closure of the created row and new premise?",
+      "impact": "A direct-only check can promote circular or duplicate evidence and materially inflate supported depth and corpus membership."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A04_TYPED_ONTOLOGY",
+      "question": "What kind-specific subject, relation, object, value, alias-namespace, and phase constraints supplement the generic JSON schemas?",
+      "impact": "Schema-valid but ontology-invalid rows and operations can currently pass, including COMMIT in THINK0, REQUEST_DREAM in THINK1, and semantically malformed tuple kinds."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A05_READER_RULES",
+      "question": "What exact matching, conflict, ordering, all-null-query, answer-equivalent-query, and immutable receipt rules are shared by text and LoRA readers?",
+      "impact": "Different readers may rank, scan, enumerate, or reject differently, shifting reasoning work out of THINK1 and invalidating substrate comparison."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A06_CORPUS_BYTES",
+      "question": "What are the exact four view templates, canonical serialization, dedup representative/provenance rule, ordering, line endings, touch expansion, and epoch interaction?",
+      "impact": "The bound proposal references registered views but does not bind their bytes; text/LoRA equality and exact runtime size are therefore not reproducible."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A07_EARLIEST_PASS",
+      "question": "Which component consumes text outcomes to select M0 before OWN M1, what hash-bound rule proves the selection, and which corresponding corpus supplies T-TWIN and L-TWIN?",
+      "impact": "The proposal both forbids offline results from selecting a corpus and requires an outcome-dependent earliest-passing transport choice."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A08_INTERVENTION_EXECUTION",
+      "question": "Are decisive-row masking and twin substitution fresh model-facing THINK1 reruns or only offline trace analyses?",
+      "impact": "Offline rescoring cannot establish behavioral loss under a changed reader, while fresh reruns require visibility rules, frozen seeds, and additional call accounting."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A09_CALL_LEDGER",
+      "question": "Do the 352/400 ceilings exclude development gold, path interventions, fidelity probes, provider failures, tokenizer calls, and training retries, and what separate ceilings govern each category?",
+      "impact": "Required work can exceed the stated limits without a protocol violation, so P1C08 cannot reconcile exact call and job ceilings."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A10_PROCESS_RESET",
+      "question": "What concrete reset receipt inventory proves phase/life/arm isolation for chat/KV state, RNG, retrieval index, caches, workspace, adapter mounts, and output namespaces?",
+      "impact": "fresh_session_per_life_phase does not prove the one-record/six-row boundary or prevent cross-arm and cross-life contamination."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A11_GPU_GATES",
+      "question": "What distinct authority tokens and review artifacts gate development gold, held-out text, and conditional LoRA execution?",
+      "impact": "P1C03 and P1C07 require GPU-derived evidence while being labeled required before an undifferentiated gpu_run, creating an impossible or bypassable gate."
+    },
+    {
+      "ambiguity_id": "P1C_SYS_A12_SHORTCUT_THRESHOLDS",
+      "question": "What exact predictors, train/evaluation populations, thresholds, and aggregate rule define the complete public-feature shortcut pass?",
+      "impact": "The current source gates only the passive predictor; reporting that unspecified additional gates pass is not reproducible."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "P1C_SYS_D01_IMPLEMENTATION_READY",
+      "statement": "The exact prompts and schemas are not yet sufficient to authorize a unique implementation.",
+      "rationale": "The generic schemas omit phase legality and kind-specific tuple contracts, and the narrative leaves status, reader, corpus, and serializer behavior open to material engineering discretion.",
+      "proposed_resolution": "Bind phase-specific validators, typed ontology tables, reducer semantics, canonical serializers, reader rules, and corpus templates in a revised hashed package before ratification."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D02_TWIN_VISIBILITY",
+      "statement": "OTHER_LIFE_MEMORY cannot be globally forbidden at THINK1 while T-TWIN and L-TWIN are required model-facing arms.",
+      "rationale": "A fresh thinker must receive donor-derived read results for the swap intervention; describing this only as an offline exception hides a real cross-life data edge.",
+      "proposed_resolution": "Add an explicit swap-only THINK1 visibility state and isolated donor mount edge, keeping arm/donor identity out of model-visible bytes and ordinary arms fail-closed."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D03_OFFLINE_PATH_USE",
+      "statement": "Offline masking of an already produced trace is insufficient to claim that masking removes final behavior.",
+      "rationale": "The thinker could retrieve an alternate path when the decisive row is absent; that counterfactual is not measured by deleting a citation after commitment.",
+      "proposed_resolution": "Predeclare fresh deterministic THINK1 masking and matched twin-substitution reruns, count them, and score them only after their outputs seal."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D04_CORPUS_SELECTION_VISIBILITY",
+      "statement": "The earliest-passing transport choice is outcome-dependent even though SLEEP_COMPILE says no offline result may select the corpus.",
+      "rationale": "M0 versus OWN cannot be chosen until text behavior and path gates are scored.",
+      "proposed_resolution": "Seal both candidates before goal reveal, keep compiler inputs result-blind, and add a separate deterministic post-text selector whose only output is the hash of the first passing sealed candidate."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D05_GPU_REQUIRED_BEFORE",
+      "statement": "P1C03 and P1C07 cannot both be required before gpu_run as written because their evidence itself requires distinct GPU/model stages.",
+      "rationale": "An undifferentiated label either blocks the first necessary model call or permits later GPU work without the intended intermediate review.",
+      "proposed_resolution": "Replace gpu_run with ordered DEV_GOLD, HELDOUT_TEXT, and CONDITIONAL_LORA transition tokens and specify the tests/reviews required for each."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D06_ACCOUNTING_COMPLETE",
+      "statement": "The declared 352/400 generation and 48-read ceilings do not cover all required evidence.",
+      "rationale": "Development gold, behavioral masking reruns, and fixed varied-cue fidelity probes are required but absent from those arithmetic totals; probe count depends on the sealed decisive-row set.",
+      "proposed_resolution": "Publish separate exact ledgers for development, held-out core arms, path interventions, online 7B reads, fidelity probes, and training jobs, with a tokenizer-exact preflight before each authority transition."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D07_SESSION_ISOLATION",
+      "statement": "fresh_session_per_life_phase is not strong enough for the stated visibility contract.",
+      "rationale": "A phase-long provider conversation or KV cache would expose prior raw records beyond the allowed current record and six rows, and could contaminate later calls within the life.",
+      "proposed_resolution": "Require stateless per-operation provider requests and reconstruct all permitted recurrent state explicitly; issue reset receipts for every thinker invocation, life, arm, reader, and adapter mount."
+    },
+    {
+      "disagreement_id": "P1C_SYS_D08_NEGATIVE_LOCALIZATION",
+      "statement": "The current package overstates negative localization until interface and runtime failure classes are separately gated.",
+      "rationale": "A red cell under ambiguous schemas, truncation, provider failure, incomplete shortcut gates, or cache leakage does not identify a scientific organ.",
+      "proposed_resolution": "Classify PRECONDITION_INVALID and INFRASTRUCTURE_INVALID separately from scientific stage failures; only a fully valid sealed predecessor permits organ-level localization."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin require a revised, newly hash-bound proposal resolving the phase schemas, status reducer, public projection, corpus compiler, reader, intervention, accounting, and GPU-gate issues before ratifying implementation?",
+      "Should T-TWIN/L-TWIN and decisive-row masking be ratified as explicit fresh model-facing intervention runs, with donor identity hidden but donor memory intentionally accessible through the selected reader?",
+      "Should same-corpus equality be ratified as equality of a common semantic/view/touch manifest with backend-specific derived delivery, rather than literal equality of text-reader and SFT input bytes?",
+      "What exact separate ceilings and authority transitions apply to development gold, held-out text, path interventions, LoRA fidelity probes, and the two adapter fits?"
+    ]
+  }
+}

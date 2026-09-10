@@ -1,0 +1,852 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "Immutable ST1 receipt, golden ledger, corruption corpus, quarantine manifest, and independent-validator verdicts.",
+      "expected": "Both validators and the declarative oracle accept the golden canonical six-type chain and agree on every registered rejection/error code.",
+      "falsifies": "The bounded envelope is not deterministically canonical, append-only, recoverable, or validator-consistent over the registered synthetic cases.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU only; no tokenizer, model, environment, task, trainer, evaluator, or GPU. Exercise duplicate raw keys, invalid UTF-8/BOM/CRLF, numeric edge forms, hash/sequence faults, partial lines, interrupted publication, concurrent writers, and bounded recovery.",
+      "test_id": "ST1_canonical_chain_and_recovery"
+    },
+    {
+      "evidence_artifact": "Immutable ST2 lifecycle fixture pack and dual-validator receipt.",
+      "expected": "Validators accept only OPEN-to-closed episode lifecycles with explicit block/repeat/retry/budget transitions.",
+      "falsifies": "Episode state, retry identity, or policy-visible budget accounting can be silently mutated or become causally ambiguous.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU synthetic episode artifacts only; include valid repeat/retry cases and missing, duplicate, reused, post-close, and over-budget cases.",
+      "test_id": "ST2_episode_budget_lifecycle"
+    },
+    {
+      "evidence_artifact": "Immutable ST3 fixture receipt containing byte/ID/hash comparisons and dual-validator verdicts.",
+      "expected": "For opaque synthetic fields, intended and recorded consumed IDs agree exactly and each generation has exactly one context parent.",
+      "falsifies": "The prospective record can internally misbind context, generation, identities, or byte receipts.",
+      "kind": "unit",
+      "required_before": "model_execution",
+      "setup": "CPU self-consistency fixtures only; explicitly label this as not evidence of actual tokenizer/template/engine consumption.",
+      "test_id": "ST3_context_generation_local_roundtrip"
+    },
+    {
+      "evidence_artifact": "Immutable ST4 fixture/oracle receipt comparing prose-only, malformed, duplicate, and valid structured calls.",
+      "expected": "Only one valid typed call may descend from a generation; action-looking free THINK text never dispatches.",
+      "falsifies": "Effectful actions are not cleanly separated from free-form prose or call cardinality is not closed.",
+      "kind": "ablation",
+      "required_before": "model_execution",
+      "setup": "CPU fixtures contrast an otherwise identical free-text `ACT:`-like string with a schema-valid typed-call record; no environment invocation.",
+      "test_id": "ST4_typed_call_cardinality"
+    },
+    {
+      "evidence_artifact": "Immutable ST5 state-machine fixture receipt, independently recomputed score table, and validator verdicts.",
+      "expected": "Private synthetic dispatch receipts preserve action order, state/measurement hashes, transaction uniqueness, integer score-law recomputation, and fail closed atomically.",
+      "falsifies": "Private receipt serialization can represent a non-atomic, reordered, mismatched, or arithmetically invalid action/outcome transition.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU synthetic state machine only; inject wrong state, index, action order, score, crash, and partial-publication faults.",
+      "test_id": "ST5_private_dispatch_score_atomicity"
+    },
+    {
+      "evidence_artifact": "Immutable ST6 public-ledger fixture receipt, byte-level projection comparisons, forbidden-byte scan result, and validator verdicts.",
+      "expected": "Every public outcome is the byte-identical allowlist projection of one private receipt and contains no sealed identity, state, path, index, or source byte.",
+      "falsifies": "The public channel can reveal private task/scorer material or diverge from its private provenance anchor.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU fixtures only; include invalid private results, stale hashes, covert keys, alternate encodings, symlink/path escape, and public/private disagreement.",
+      "test_id": "ST6_public_projection_noninterference"
+    },
+    {
+      "evidence_artifact": "Immutable ST7 capability-fixture receipt listing attempted reads/writes and stable denials.",
+      "expected": "Registered synthetic roles can access only their designated roots and cannot reach forbidden roots through registered filesystem/process-adjacent fixture channels.",
+      "falsifies": "The proposed CPU capability manifest fails for the enumerated channels.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU-only role roots; cover inherited-FD, environment, symlink, traversal, IPC, network, stdout/log-name, cache, timing, and error-channel fixtures. The result is limited to registered synthetic channels, not live runtime noninterference.",
+      "test_id": "ST7_role_capability_fixture"
+    },
+    {
+      "evidence_artifact": "Immutable ST8 DAG fixture receipt with accepted shared-ancestry diamonds and rejected illegal edges.",
+      "expected": "Validators accept exactly the six-type prospective DAG, including valid diamonds, and reject back edges, private release, undeclared roles/artifacts, and output-to-future edges.",
+      "falsifies": "The graph is not closed or incorrectly treats shared ancestry as a cycle.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "CPU graph fixtures only; dream, sleep, parent, retrieval, adapter, evaluator, and feedback artifacts are deliberately absent and must be rejected if introduced.",
+      "test_id": "ST8_closed_graph_and_no_feedback"
+    },
+    {
+      "evidence_artifact": "Immutable ST9 mutation matrix, declarative oracle, two independent validator outputs, comparator receipt, and disclosed shared trust base.",
+      "expected": "Every registered one-sided mutation changes the expected verdict or stable error; both independently authored validators agree with the oracle.",
+      "falsifies": "A validator accepts a registered malformed case, disagrees with the oracle, or fails to detect a protected-field/edge/limit mutation.",
+      "kind": "baseline",
+      "required_before": "model_execution",
+      "setup": "CPU only. Baseline is the declarative synthetic oracle; compare two source-distinct implementations sharing only Python, JSON, SHA-256, and written schemas.",
+      "test_id": "ST9_dual_validator_mutation"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260906_prospective_action_trace_spine_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "A passing ST1-ST9 CPU fixture suite would support only that the registered synthetic cases enforce a bounded prospective six-artifact action/outcome trace, local provenance, private/public projection, capability, and no-feedback rules.",
+        "before": "Legacy v6 traces can be used to reconstruct a causal action/outcome or learning path after the fact.",
+        "claim_id": "CLM_prospective_spine_syntactic_enforcement",
+        "evidence_needed": "Exactly ratified schemas; immutable oracle and dual-validator receipts for ST1-ST9; fresh independent review before any later integration proposal.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "Free-form THINK remains a model-generation artifact; only a separately typed TOOL_CALL_PROPOSED record may cause an effectful environment action.",
+        "before": "Marker-like prose in a generated chunk may be scanned and dispatched as an action.",
+        "claim_id": "CLM_typed_action_boundary",
+        "evidence_needed": "ST4 fixtures and ST5 synthetic private-dispatch receipts.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "No result from this change supports learning, parenting benefit, dreaming, retrieval, consolidation, LoRA transport, planning, task improvement, generalization, runtime prompt-consumption truth, or Experience Models claims.",
+        "before": "Legacy observations could be over-read as evidence about recurrent learning or parametric adaptation.",
+        "claim_id": "CLM_scientific_claim_ceiling",
+        "evidence_needed": "A separate hash-bound, ratified live benchmark with independent review, pre-GPU gates, registered endpoints, and mechanism-discriminating ablations.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "Dream-time connection growth/memory re-expression, parametric consolidation/transport, goal-conditioned retrieval/composition/planning/revision, and feedback into later dream cycles are explicitly outside this minimal spine and receive no organ-level credit.",
+        "before": "The broader nursery contract proposed a future complete causal chain containing these stages.",
+        "claim_id": "CLM_organism_vs_organ_credit",
+        "evidence_needed": "A later separately ratified architecture and benchmark that records and tests those stages and matched whole-organism alternatives.",
+        "headline_eligible": false,
+        "operation": "modify"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/human_directive.txt",
+      "purpose": "Binding reduced directive and authority boundary.",
+      "sha256": "9183cb1daf9a9bd641179194cfd75e29d412bcdfb54b24db53a5a2fde86cdaa0"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Research deliberation, ratification, and GPU/claim gates.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/scope_proposal.json",
+      "purpose": "Requested and forbidden implementation scope.",
+      "sha256": "d5208d65159aa0688dcbc60dc120299e7d2c64eafd26e55eaefd7e36002584c6"
+    },
+    {
+      "path": "research_loop/plans/prospective_action_trace_spine_v0.md",
+      "purpose": "Bounded six-artifact prospective spine proposal.",
+      "sha256": "a77035b6687a097c37c196bbf761a968d4ecac13c1e1d373f96f95cdaa5328a7"
+    },
+    {
+      "path": "research_loop/plans/prospective_nursery_trace_contract_v0.md",
+      "purpose": "Superseded broader nursery-contract context and deferred stages.",
+      "sha256": "ac9cf95596d7c94bcb5bb1698962adc13e6c776d1342b64c482e1488cce4ac94"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/critique.json",
+      "purpose": "Adversarial findings motivating the reduced spine and claim ceiling.",
+      "sha256": "6e936147046a4b1fbce1269d6d6e715445353e055a3b3307f2649becdbad7e8c"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_nursery_trace_contract_v1/consensus.json",
+      "purpose": "Adjudicated unresolved issues and scope limits for the broader proposal.",
+      "sha256": "03c62de0f6c638f0be1528cb08a5d0c9d5c258a00e6fd970b2c85e40990e6daf"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_writer_floor_stop_and_prospective_requirements.md",
+      "purpose": "Legacy stop decision and prospective evidence requirements.",
+      "sha256": "0fd8c4d95bc5cb2ca6f495a6476b41941177dae6db39e3f674b447833e60a951"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "Legacy provenance and action-routing failure analysis.",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "organism_v6/loop.py",
+      "purpose": "Current lived-loop marker-dispatch baseline.",
+      "sha256": "c336b672fe7da166799d1e9f849c71792155dde44be5d8c5ed8b4acc2941fa6b"
+    },
+    {
+      "path": "organism_v6/ledger.py",
+      "purpose": "Current append-only ledger and retrieval baseline.",
+      "sha256": "d76a78f48609345bd228fd3917fc1981de26d5bbf610276b52c491a38b24bf51"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "Current serving/provenance limitation baseline.",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "Current effectful CompilerGym interface baseline.",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "N_episode_boundary -> N_context_rendered",
+        "before": "",
+        "edge_id": "E_open_context",
+        "from": "N_episode_boundary",
+        "operation": "add",
+        "rationale": "A context is prospective, episode-scoped, and parents the current OPEN boundary.",
+        "to": "N_context_rendered"
+      },
+      {
+        "after": "N_public_outcome -> N_context_rendered only when earlier, same-life, and explicitly admitted",
+        "before": "Legacy ledger recall may render keyword-selected mutable/untyped rows.",
+        "edge_id": "E_public_history_context",
+        "from": "N_public_outcome",
+        "operation": "modify",
+        "rationale": "Past public outcomes may inform later lived thinking without exposing private task identity.",
+        "to": "N_context_rendered"
+      },
+      {
+        "after": "N_context_rendered -> N_model_generation",
+        "before": "Rendered prompt -> unrecorded model chunk",
+        "edge_id": "E_context_generation",
+        "from": "N_context_rendered",
+        "operation": "modify",
+        "rationale": "Bind free THINK bytes and opaque generation receipts to one exact prospective context.",
+        "to": "N_model_generation"
+      },
+      {
+        "after": "N_model_generation -> N_tool_call_proposed",
+        "before": "Generated marker prose -> direct harness dispatch",
+        "edge_id": "E_generation_typed_call",
+        "from": "N_model_generation",
+        "operation": "modify",
+        "rationale": "Preserve free THINK while requiring a separate typed effectful-action channel.",
+        "to": "N_tool_call_proposed"
+      },
+      {
+        "after": "N_tool_call_proposed -> N_tool_result_private",
+        "before": "ACT marker -> mixed public environment result",
+        "edge_id": "E_typed_call_private_result",
+        "from": "N_tool_call_proposed",
+        "operation": "modify",
+        "rationale": "Record target-bearing reset/state/measurement details only in the private environment receipt.",
+        "to": "N_tool_result_private"
+      },
+      {
+        "after": "N_tool_result_private -> N_tool_result_public",
+        "before": "Mixed tool result directly visible to later prompt/ledger paths",
+        "edge_id": "E_private_public_projection",
+        "from": "N_tool_result_private",
+        "operation": "add",
+        "rationale": "The one-way projector emits an exact allowlisted public outcome bound to private provenance.",
+        "to": "N_tool_result_public"
+      },
+      {
+        "after": "N_episode_boundary CLOSE may parent completed current-episode public artifacts",
+        "before": "Episode return summary outside an immutable causal ledger",
+        "edge_id": "E_episode_close",
+        "from": "N_tool_result_public",
+        "operation": "add",
+        "rationale": "Close records explicit lifecycle and remaining budgets without opening future feedback edges.",
+        "to": "N_episode_boundary"
+      },
+      {
+        "after": "",
+        "before": "N_lived_trace -> N_parent_feedback -> N_child_restatement -> N_dream_successor -> N_sleep_example -> N_adapter_receipt",
+        "edge_id": "E_deferred_nursery_cycle",
+        "from": "N_lived_trace",
+        "operation": "remove",
+        "rationale": "These organs and their recurrent/transport feedback loop are intentionally excluded; no absent stage may be credited.",
+        "to": "N_adapter_receipt"
+      },
+      {
+        "after": "",
+        "before": "N_evaluation_or_report -> N_life_or_future_intake",
+        "edge_id": "E_eval_writeback",
+        "from": "N_evaluation_or_report",
+        "operation": "remove",
+        "rationale": "Evaluation/reporting remain absent from this spine and have no feedback route.",
+        "to": "N_life_or_future_intake"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Immutable EPISODE_BOUNDARY/HARNESS record with OPEN/CLOSE lifecycle, public policy-visible budgets, repeat/retry ordinals, opaque task-handle hash, and predecessor boundary.",
+        "before": "Ephemeral Episode object and returned summary in the legacy loop.",
+        "node_id": "N_episode_boundary",
+        "operation": "modify",
+        "rationale": "Makes lived episode boundaries and operational state prospective without recording task identity."
+      },
+      {
+        "after": "Immutable CONTEXT_RENDERED/HARNESS record containing exact rendered/message bytes, manifest hashes, opaque intended IDs, admitted earlier public IDs, and requested budget.",
+        "before": "Unrecorded render_context prompt assembly.",
+        "node_id": "N_context_rendered",
+        "operation": "modify",
+        "rationale": "Prevents post-hoc prompt reconstruction while making no tokenizer-correctness claim."
+      },
+      {
+        "after": "Immutable MODEL_GENERATION/CHILD record: free THINK bytes, opaque IDs, engine/decode receipt, stop reason, and counters; no action semantics from text.",
+        "before": "Legacy thought ledger row plus marker scanning.",
+        "node_id": "N_model_generation",
+        "operation": "modify",
+        "rationale": "Preserves free-form thought but separates it from effectful control."
+      },
+      {
+        "after": "Immutable TOOL_CALL_PROPOSED/CHILD record with closed structured channel, schema, canonical arguments, parser receipt, and at-most-one-call rule.",
+        "before": "Regex-discovered ACT marker.",
+        "node_id": "N_tool_call_proposed",
+        "operation": "add",
+        "rationale": "A typed action is the sole prospective authorization to dispatch."
+      },
+      {
+        "after": "Immutable TOOL_RESULT_PRIVATE/ENVIRONMENT_PRIVATE record with sealed task/reset/state/action-index/scorer details and atomic transaction receipt.",
+        "before": "Mixed legacy action/outcome row and subprocess response.",
+        "node_id": "N_tool_result_private",
+        "operation": "add",
+        "rationale": "Separates private causal truth required for a later canary from policy-visible outcome."
+      },
+      {
+        "after": "Immutable TOOL_RESULT_PUBLIC/ENVIRONMENT_PUBLIC record in a separate public ledger, produced solely by an exact allowlist projection of one private receipt.",
+        "before": "Outcome string and score embedded in public legacy act row.",
+        "node_id": "N_tool_result_public",
+        "operation": "add",
+        "rationale": "Allows later lived context to see an outcome without sealed target/state leakage."
+      },
+      {
+        "after": "No node in this change.",
+        "before": "Broader proposed DREAM_SUCCESSOR local-memory/re-expression organ.",
+        "node_id": "N_dream_successor",
+        "operation": "remove",
+        "rationale": "Dream-time connection growth and memory re-expression are deferred rather than approximated by a one-shot answer generator."
+      },
+      {
+        "after": "No node in this change.",
+        "before": "Broader proposed SLEEP_EXAMPLE and ADAPTER_RECEIPT consolidation/transport organs.",
+        "node_id": "N_parametric_consolidation_transport",
+        "operation": "remove",
+        "rationale": "No LoRA, trainer, adapter, or transport claim is authorized."
+      },
+      {
+        "after": "No retrieval/composition/planning/revision node beyond the bounded context renderer.",
+        "before": "Legacy RECALL marker-driven ledger retrieval and broader goal-conditioned cognitive path.",
+        "node_id": "N_goal_conditioned_retrieval_planning",
+        "operation": "remove",
+        "rationale": "The spine neither credits nor tests complete-solution construction by thinking, dreaming, or retrieval."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin exactly ratify the hash-bound scope authorizing only six prospective schema files, two source-distinct CPU/no-model/no-tokenizer validators, one declarative synthetic oracle, ST1-ST9 execution, immutable receipts, and a later live-integration proposal candidate?",
+    "forbidden_before_approval": [
+      "Edit code, schemas, fixtures, validators, ledgers, or plans.",
+      "Collect, inspect, select, enumerate, expose, or score a real life, task, parent, dream, sleep, adapter, Fable artifact, evaluation, or research intake.",
+      "Execute a tokenizer, model, inference engine, real environment, trainer, evaluator, target sealer, external parent, GPU command, or live integration.",
+      "Write a parent lesson, dream state, sleep corpus, adapter, benchmark result, runtime result, or scientific result.",
+      "Claim learning, teachability, parenting, dreaming, consolidation, transport, retrieval, planning, task improvement, or Experience Models evidence.",
+      "Treat CPU receipts, validator agreement, or advocate agreement as ratification, promotion, or authorization for a later stage."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "Within one prospective episode: OPEN boundary -> context rendering (optionally admitting only earlier public outcomes) -> free THINK generation -> zero or one typed call -> private result -> public projection -> next context or CLOSE. It stops on CLOSE, exhausted recorded budget, or a fail-closed validation/publication error. It has no edge to a later life, parent, dream, sleep, trainer, adapter, evaluator, report, or intake.",
+        "before": "Legacy tick loop: render context -> model chunk -> regex marker scan -> direct gym action/ledger mutation -> marker recall -> next tick.",
+        "loop_id": "L_lived_action_outcome_spine",
+        "operation": "modify",
+        "rationale": "Replaces incomplete legacy causal reconstruction with the smallest prospective, typed, private/public action-outcome spine.",
+        "reads": [
+          "Current OPEN boundary and policy-visible budget state",
+          "Earlier same-life TOOL_RESULT_PUBLIC records explicitly admitted by CONTEXT_RENDERED",
+          "For private dispatch only: opaque task map, typed call, and sealed synthetic/real state; live use remains unauthorized"
+        ],
+        "stop_condition": "CLOSE boundary; exact generated-token or tool-call budget exhaustion; or any stable fail-closed schema/hash/capability/publication error.",
+        "trigger": "Authorized future live integration only; current proposal authorizes no live trigger.",
+        "writes": [
+          "EPISODE_BOUNDARY",
+          "CONTEXT_RENDERED",
+          "MODEL_GENERATION",
+          "TOOL_CALL_PROPOSED when present",
+          "TOOL_RESULT_PRIVATE",
+          "TOOL_RESULT_PUBLIC"
+        ]
+      },
+      {
+        "after": "Absent. Future public outcomes do not feed a dream, retrieval index, parent, compiler, trainer, adapter, evaluator, report, or later-life intake in this change.",
+        "before": "Broader nursery recurrence: outcomes -> parent/restatement -> dream local re-expression -> sleep examples -> adapter transport -> later behavior -> future dream cycles.",
+        "loop_id": "L_dream_consolidation_feedback",
+        "operation": "remove",
+        "rationale": "The proposal deliberately declines to claim or implement recurrent local connection growth, parametric consolidation, transport, or complete-organism learning.",
+        "reads": [],
+        "stop_condition": "Not instantiated.",
+        "trigger": "None.",
+        "writes": []
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "A strictly infrastructure-only prospective action/outcome spine replaces legacy marker-dispatch reconstruction: immutable episode/context/free-THINK/typed-call/private-result/public-projection records, separate private/public roots, bounded CPU synthetic validation, and no recurrent-memory, sleep, adapter, benchmark, live-runtime, GPU, or scientific authority.",
+  "system_thesis": "The organismal thesis remains that lived action/outcome episodes can later support a recurrent organism in which dream-time local connection growth and memory re-expression, parametric consolidation/transport, goal-conditioned retrieval/composition/planning/revision, and later outcome feedback jointly contribute to behavior. This reduced change does not instantiate or credit those organs. It establishes only the minimal prospective lived action/outcome evidence spine needed before their future, separately ratified study; free THINK remains an organ-local generation, and no LoRA or isolated organ may be credited with discovery or a complete solution.",
+  "title": "Prospective action/outcome trace spine v1",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Opaque task handle only; identity bytes are never written to the public spine.",
+        "stage_id": "episode_harness",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Not a renderer input.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Not policy-visible.",
+        "stage_id": "child_think",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Required only for private sealed dispatch.",
+        "stage_id": "private_environment",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Must be removed by allowlist projection.",
+        "stage_id": "public_projector",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "Future context may receive public outcome only.",
+        "stage_id": "future_context",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "These organs do not exist in this change.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "sealed_task_identity",
+        "reason": "No evaluation/report stage exists or is authorized.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Writes lifecycle and policy-visible budgets.",
+        "stage_id": "episode_harness",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Renders declared policy-visible fields only.",
+        "stage_id": "context_renderer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Receives only rendered declared fields.",
+        "stage_id": "child_think",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "May enforce call/budget limits but not disclose identity.",
+        "stage_id": "private_environment",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "No need in outcome projection beyond permitted public fields.",
+        "stage_id": "public_projector",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Earlier public boundary fields may be admitted only through a later renderer.",
+        "stage_id": "future_context",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Absent organ.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "episode_policy_state",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Creates and records them.",
+        "stage_id": "episode_harness",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Produces exact bytes.",
+        "stage_id": "context_renderer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Only lawful child input.",
+        "stage_id": "child_think",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Not a dispatch input.",
+        "stage_id": "private_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Not a projection input.",
+        "stage_id": "public_projector",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "May be newly rendered, never raw-reused without admission.",
+        "stage_id": "future_context",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Absent organ.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "rendered_context_bytes",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Records generation but does not interpret prose as control.",
+        "stage_id": "episode_harness",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Does not pre-read future generation.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Produces free-form THINK.",
+        "stage_id": "child_think",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Cannot dispatch from prose.",
+        "stage_id": "private_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Not public outcome material.",
+        "stage_id": "public_projector",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Not admitted directly by this spine.",
+        "stage_id": "future_context",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "No dream/sleep write path.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "free_think_bytes",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Receives a proposed structured call for validation.",
+        "stage_id": "episode_harness",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Does not generate calls.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "May emit one typed proposal through the bound channel.",
+        "stage_id": "child_think",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Consumes exact parsed action and indices.",
+        "stage_id": "private_environment",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Projects only permitted action hash/text outcome fields.",
+        "stage_id": "public_projector",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Only its public projection may later be admitted.",
+        "stage_id": "future_context",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "No dream/sleep/adapter path.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "typed_action",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "May hold opaque provenance anchor only, not private bytes.",
+        "stage_id": "episode_harness",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "No private record access.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "No private record access.",
+        "stage_id": "child_think",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "Produces sealed receipt.",
+        "stage_id": "private_environment",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "Sole reader; derives exact public projection.",
+        "stage_id": "public_projector",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "Only opaque source hash may appear in public provenance.",
+        "stage_id": "future_context",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "Absent organ.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "private_environment_receipt",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Writes/references public record identity only.",
+        "stage_id": "episode_harness",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "May admit earlier same-life public outcomes.",
+        "stage_id": "context_renderer",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Sees only what rendered context includes.",
+        "stage_id": "child_think",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Does not consume public projection for dispatch.",
+        "stage_id": "private_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Produces it from private receipt.",
+        "stage_id": "public_projector",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Only lawful past-outcome memory in this spine.",
+        "stage_id": "future_context",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "No dream/sleep path.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "public_outcome_projection",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "No such artifacts may be authored.",
+        "stage_id": "episode_harness",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "No retrieval index or dream state exists.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "No adapter/dream input exists.",
+        "stage_id": "child_think",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "Not an environment input.",
+        "stage_id": "private_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "Not a public projection input.",
+        "stage_id": "public_projector",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "No future feedback path.",
+        "stage_id": "future_context",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "Explicitly absent.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "retrieval_dream_sleep_adapter_artifacts",
+        "reason": "Absent stage.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No evaluator or reporter may be invoked.",
+        "stage_id": "episode_harness",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No input from evaluation/reporting.",
+        "stage_id": "context_renderer",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No input from evaluation/reporting.",
+        "stage_id": "child_think",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No input from evaluation/reporting.",
+        "stage_id": "private_environment",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No input from evaluation/reporting.",
+        "stage_id": "public_projector",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No output-to-future edge.",
+        "stage_id": "future_context",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "No output-to-dream/sleep/transport edge.",
+        "stage_id": "dream_sleep_transport",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_report_artifacts",
+        "reason": "Explicitly uninstantiated and reporting-only if later proposed.",
+        "stage_id": "evaluation_reporting",
+        "visibility": "forbidden"
+      }
+    ],
+    "information_items": [
+      "sealed_task_identity",
+      "episode_policy_state",
+      "rendered_context_bytes",
+      "free_think_bytes",
+      "typed_action",
+      "private_environment_receipt",
+      "public_outcome_projection",
+      "retrieval_dream_sleep_adapter_artifacts",
+      "evaluation_report_artifacts"
+    ],
+    "stages": [
+      "episode_harness",
+      "context_renderer",
+      "child_think",
+      "private_environment",
+      "public_projector",
+      "future_context",
+      "dream_sleep_transport",
+      "evaluation_reporting"
+    ]
+  }
+}

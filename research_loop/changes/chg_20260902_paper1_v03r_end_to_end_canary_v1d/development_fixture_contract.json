@@ -1,0 +1,158 @@
+{
+  "schema_version": "paper1-v03r-canary-development-fixture-v1d.0",
+  "source_lock": {
+    "lands/v03r.py": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+    "lands/v03.py": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+    "lands/skins.py": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+    "lands/test_v03r.py": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1"
+  },
+  "public_projection_binding": "Heldout and DEV typed witnessed rows, public probes, question projections, and state-token vocabularies use only the seed-generic registered-domain branches of public_projection_contract.json. This fixture selects an exact registered seed+latent_bit key but performs no projection. The projection dependency closure, algorithms, and golden hashes are part of the executable lock; no fixture-local mapper, alias rule, truncation, repair, or alternate hash input is legal.",
+  "population": {
+    "seeds_inclusive": [0, 999],
+    "latent_bits": [0, 1],
+    "skin": "aligned",
+    "development_pairs": 850,
+    "development_worlds": 1700,
+    "heldout_pairs": 150,
+    "heldout_worlds": 300
+  },
+  "development_lives": [
+    {"seed": 0, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "eca5d35d7bd2aca49a7f0bdf86eb5dec0583f967cfa545c19f3d869e144cd8bd", "pair_private_sha256": "ed3f18ffff7f06e84b1f549cb7282e4a9d8f2b2014ac32b9b408a44ea8aa19c3", "own_token": "label:yellow-green", "donor_token": "label:mixture-02"},
+    {"seed": 0, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "e8ad2b3547e60aa5ca216ba468f261aa0dbe56670b8cb394216c94d2e471d656", "pair_private_sha256": "ed3f18ffff7f06e84b1f549cb7282e4a9d8f2b2014ac32b9b408a44ea8aa19c3", "own_token": "label:mixture-02", "donor_token": "label:yellow-green"},
+    {"seed": 1, "latent_bit": 0, "episodes": 49, "precheckpoint_sha256": "9c7e1f45fd2800b0842bd7141a892845c995e4f4fa1b003c8befac39aeaf09f1", "pair_private_sha256": "67d2876d26baf86f9485934546a8c3defc6b829cf3f831d225b265c21e4cb59f", "own_token": "label:blue-green", "donor_token": "label:mixture-01"},
+    {"seed": 1, "latent_bit": 1, "episodes": 49, "precheckpoint_sha256": "8cd9bbfe17e2eea91f8344ab42e2bc69b548389a72818c7065ea12f95d70f4e1", "pair_private_sha256": "67d2876d26baf86f9485934546a8c3defc6b829cf3f831d225b265c21e4cb59f", "own_token": "label:mixture-01", "donor_token": "label:blue-green"},
+    {"seed": 2, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "efbf8b2c892cdfd92f93d55e818a1dc2986f342da97bb1b9674cfee1db3935ff", "pair_private_sha256": "0157a497553eafaa4a6b9dc9d95ee4df357735b2a342a972e52768e384305581", "own_token": "label:green", "donor_token": "label:brown"},
+    {"seed": 2, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "c3b9f361fd3897042f523c07da17bf207bcf38551d4018d0e82d87c2b843b96f", "pair_private_sha256": "0157a497553eafaa4a6b9dc9d95ee4df357735b2a342a972e52768e384305581", "own_token": "label:brown", "donor_token": "label:green"}
+  ],
+  "heldout_lives": [
+    {"seed": 5, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "63e0d46d703a9dd7ed9a92f361abdb6caa680e211850fcc98321405133b6bd4d", "pair_private_sha256": "b6cfc158dccd4c1472c0e92077092e5bad9e9341aa7b497980214eb25ef8b0f2", "own_token": "label:blue-purple", "donor_token": "label:mixture-02"},
+    {"seed": 5, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "c6a82ffbaf7b562aa7a0e29d25d25da38f9b69438fbdd2f62146ff110c8073bb", "pair_private_sha256": "b6cfc158dccd4c1472c0e92077092e5bad9e9341aa7b497980214eb25ef8b0f2", "own_token": "label:mixture-02", "donor_token": "label:blue-purple"}
+  ],
+  "public_projection_receipts": {
+    "hash_definitions": "Byte-identical to public_projection_contract.json projection_hash_contract; this fixture neither redefines nor recomputes a different projection object.",
+    "expected": [
+      {"domain": "DEV", "seed": 0, "latent_bit": 0, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "a795958587a9ff1aefd7cdd7f611633fe3f0f7656ed71f77da2d8677e8543d86", "event_list_sha256": "be30b4cca8a130c6e67c7cc1f91aa32d7581986096a21c60e3ce6b799bb68279", "public_projection_sha256": "7f447e60008776c558c3f443f906cc6fdc07800403fab3f6a137db86b405ac58", "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac"},
+      {"domain": "DEV", "seed": 0, "latent_bit": 1, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "6c0ac825bdadad3b133b2717d05f8784d0176fc15cf5211b8f56e9e4daa6a4a6", "event_list_sha256": "ca64982b85417e3dd0c79f3c0713ecb3d355a935afceb674597d038b31dca669", "public_projection_sha256": "b1da04513a46c52bffc6f39f80ba06cd799aed710f9cd96db401a512e651d976", "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac"},
+      {"domain": "DEV", "seed": 1, "latent_bit": 0, "episodes": 49, "last_event_id": "E000048", "last_row_id": "M000048", "allowed_source_fingerprint": "765de043776baf02830936b5867c8ad939c2027dda8939c68768c359b5906fd1", "event_list_sha256": "bf39f89ad236e6be47bf8d98947dccc06c41f95e26a7d0947a444b4039872bee", "public_projection_sha256": "a1b4055c38d7aba71a2fead950dc2083e1754949d06793835d430736dd1615ee", "state_token_vocabulary_sha256": "a97a5ec170bafbab9b91a939c0be01496d2e82585bcb952159de847a4c94f1e9"},
+      {"domain": "DEV", "seed": 1, "latent_bit": 1, "episodes": 49, "last_event_id": "E000048", "last_row_id": "M000048", "allowed_source_fingerprint": "5fcc57bdc858dd3d3fc1302579e97d18061548e643a01b8cf14ff8b7aa54f3f0", "event_list_sha256": "c2cee315eefd44c5162f8e0ff57b6f67531d9ab64afbb075e01eb7a756e3d497", "public_projection_sha256": "b5026cb361063fe9cdebd2231fd6411e4ba9f3f051ce33fcda2ad6fcb6558210", "state_token_vocabulary_sha256": "a97a5ec170bafbab9b91a939c0be01496d2e82585bcb952159de847a4c94f1e9"},
+      {"domain": "DEV", "seed": 2, "latent_bit": 0, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "08ce1883930d146c23e7e63fc5ba0f69c6f6359b9747920ad8bc1f58c9843045", "event_list_sha256": "5e0903741688dbb0d17870ca30696af48de80432286f1440b6b31da62f89e5cc", "public_projection_sha256": "6c6cca36004ebd9ef9a66d83d90afc1b2d52d7ac5d5779457b26be4dc4bef3e7", "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac"},
+      {"domain": "DEV", "seed": 2, "latent_bit": 1, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "eab1aa73527ed2f04d6519c9dcf48e0bd9c7d20d73de1af88d9dfd9232d120ba", "event_list_sha256": "ec6ee87f7833f711d016e9afb1b7e25e727cd45295bc739310b8d76972fb2dd7", "public_projection_sha256": "20ce8d5ec964d76fd403a9edb1db6ef67258ae9b0ba4c7ea6b48e8a20a836903", "state_token_vocabulary_sha256": "5b26877c5b8def6285dc1d2f2629bb6bd5e44faa5ceeb7096e9c238b41390eac"},
+      {"domain": "HELDOUT_CANARY", "seed": 5, "latent_bit": 0, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "37c097f4691aa62eaa9c7b7d0a8080767167844f571a21b31edddc98d3b9fbe8", "event_list_sha256": "4b262334c83e5c41d0a86f2b8f108e643c7d449eb129eec9b16dfa1f83c2a263", "public_projection_sha256": "a6703e6caccd89f70802247a13da1a4378b1597866e839587b2ce700d1825448", "state_token_vocabulary_sha256": "15b787919ccc1914b0a6e4f1bf1c36f623db0b49f4ae7c3340bc84bad7052b51"},
+      {"domain": "HELDOUT_CANARY", "seed": 5, "latent_bit": 1, "episodes": 46, "last_event_id": "E000045", "last_row_id": "M000045", "allowed_source_fingerprint": "54e7ba9e5eed4d1f661becf517cde45de08e33d85d7e73be5e482b0f53d22820", "event_list_sha256": "513b6f82f892efacdc411703c21f681bbe64dc8bb164b190964ebb72ab7a903f", "public_projection_sha256": "1b8b818d59d9ff8454f79f59bc72c6f2c5351db277a1242aa1a18ea148cced7f", "state_token_vocabulary_sha256": "15b787919ccc1914b0a6e4f1bf1c36f623db0b49f4ae7c3340bc84bad7052b51"}
+    ],
+    "heldout_v1c_compatibility": {"seed5_vector_sha256": "8e804ba006907bfa0417ec3a8728752f207c12756ba6575a82c6759df32a8838", "required": "probe, host coordinates, THINK1 question, and state-token array remain byte-identical to the v1c seed5_expected vector for both latent bits"},
+    "negative": [
+      {"name": "fixture-local-mapper", "expected": "reject; only public_projection_contract.json may project"},
+      {"name": "seed1-truncated-to-46", "expected": "reject; both seed-1 lives require 49 contiguous events/rows through index 48"},
+      {"name": "seed1-alias-gap-or-reuse", "expected": "reject; E/M aliases are one-to-one and contiguous"},
+      {"name": "wrong-seed-or-bit-receipt", "expected": "reject exact hash mismatch"},
+      {"name": "heldout-byte-drift", "expected": "reject exact seed5 compatibility hash mismatch"}
+    ]
+  },
+  "offline_registered_gold_namespace": {
+    "namespace": "G",
+    "id_pattern": "^G[0-9]{6}$",
+    "schema": {
+      "required": ["gold_id", "seed", "kind", "fields", "citations"],
+      "optional": ["latent_bit"],
+      "additional_properties": false,
+      "allowed_kinds": ["ROLE_EQUIV", "CAUSAL_JOIN"],
+      "citation_pattern": "^M[0-9]{6}$"
+    },
+    "separation": "G objects are fixture-only scorer/reader records; they are not heldout memory rows, proposal objects, proposal slots, row owners, or legal heldout citations",
+    "reader_projection_rule": "DEV uses the shared read_result.schema.json: a successful read exposes only H read_handle, kind, fields, projected status SUPPORTED, and semantic_hash; the sealed offline handle binding maps H to the G fixture object; G itself is never model-visible and is never translated to an M or P identifier",
+    "hash_rule": "sha256(RFC8785_JCS({citations:citations,fields:fields,gold_id:gold_id,kind:kind,latent_bit:latent_bit when present,seed:seed}))",
+    "construction": "OFFLINE_REGISTERED_GOLD; no DREAM or SELF_CHECK call and no model-claimed support status"
+  },
+  "registered_gold_rows": [
+    {"gold_id": "G000000", "seed": 0, "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "citations": ["M000005", "M000010", "M000029", "M000031"]},
+    {"gold_id": "G000001", "seed": 0, "latent_bit": 0, "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "citations": ["M000001", "M000026"]},
+    {"gold_id": "G000002", "seed": 0, "latent_bit": 1, "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "STABLE"], "citations": ["M000001", "M000026"]},
+    {"gold_id": "G000003", "seed": 1, "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:fox"], "citations": ["M000020", "M000021", "M000022", "M000043"]},
+    {"gold_id": "G000004", "seed": 1, "latent_bit": 0, "kind": "CAUSAL_JOIN", "fields": ["source:dandyland", "target:confluenceland", "CHANGE"], "citations": ["M000003", "M000039"]},
+    {"gold_id": "G000005", "seed": 1, "latent_bit": 1, "kind": "CAUSAL_JOIN", "fields": ["source:dandyland", "target:confluenceland", "STABLE"], "citations": ["M000003", "M000039"]},
+    {"gold_id": "G000006", "seed": 2, "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:owl"], "citations": ["M000006", "M000018", "M000025", "M000045"]},
+    {"gold_id": "G000007", "seed": 2, "latent_bit": 0, "kind": "CAUSAL_JOIN", "fields": ["source:mandyland", "target:confluenceland", "CHANGE"], "citations": ["M000004", "M000026"]},
+    {"gold_id": "G000008", "seed": 2, "latent_bit": 1, "kind": "CAUSAL_JOIN", "fields": ["source:mandyland", "target:confluenceland", "STABLE"], "citations": ["M000004", "M000026"]}
+  ],
+  "registered_proof_rows": [
+    {"seed": 0, "role": "G000000", "causal_bit0": "G000001", "causal_bit1": "G000002", "baseline": "M000033", "contribution": "M000008", "contribution_recipe": "M000034", "answer_recipe_bit0": "M000015", "answer_recipe_bit1": "M000035"},
+    {"seed": 1, "role": "G000003", "causal_bit0": "G000004", "causal_bit1": "G000005", "baseline": "M000006", "contribution": "M000020", "contribution_recipe": "M000046", "answer_recipe_bit0": "M000042", "answer_recipe_bit1": "M000027"},
+    {"seed": 2, "role": "G000006", "causal_bit0": "G000007", "causal_bit1": "G000008", "baseline": "M000037", "contribution": "M000018", "contribution_recipe": "M000012", "answer_recipe_bit0": "M000028", "answer_recipe_bit1": "M000034"}
+  ],
+  "gold_corpus": {
+    "GOLD_TEXT": "all witnessed M rows in exact episode order, followed by the registered G ROLE_EQUIV then registered bit-specific G CAUSAL_JOIN",
+    "GOLD_TWIN": "other bit's complete GOLD_TEXT reader with recipient goal and recipient frozen public state-token vocabulary",
+    "identity_visibility": "donor, life, bit, arm, fixture construction, and G-to-fixture binding remain audit-only",
+    "success_requires_return_and_citation": ["a read handle offline-bound to the registered G role row", "a read handle offline-bound to the registered G causal row"]
+  },
+  "proof_row_masks": {
+    "count_per_life": 6,
+    "rule": "remove each life-applicable registered proof reference once and require deterministic proof checker MISSING_REQUIRED_EDGE",
+    "model_calls": 0,
+    "interpretation": "CPU proof-contract checks, not behavioral ablations"
+  },
+  "no_memory": {
+    "reader": "immutable empty exact reader",
+    "legal_query_result": "For a legal QUERY executed at thinker operation ordinal n, allocate H followed by n as six decimal digits and return exactly the read_result.schema.json object {\"type\":\"NOT_FOUND\",\"read_handle\":\"Hnnnnnn\"}. Examples: operation 1 returns {\"type\":\"NOT_FOUND\",\"read_handle\":\"H000001\"}; operation 12 returns {\"type\":\"NOT_FOUND\",\"read_handle\":\"H000012\"}. There is no result key.",
+    "illegal_query_effect": "consume the current opportunity and seal VALID_STAGE_FAILURE/ILLEGAL_OPERATION",
+    "matched": ["goal", "state-token vocabulary", "prompt", "scratch reducer", "twelve-operation envelope"],
+    "terminal_dispatch_rule": "COMMIT or DEFER ends only that trace's provider dispatch; remaining registered opportunities receive zero-attempt NON_DISPATCH_POST_TERMINAL ledger rows. DEFER marks the DEV trace unsuccessful, but the DEV aggregate is classified only after all eighteen prospective traces seal."
+  },
+  "shortcut_audit": {
+    "feature_order": ["goal", "passive", "effects", "source", "role"],
+    "definitions": {
+      "goal": "animal_id,target_id,blocked_source_id",
+      "passive": "sorted anchor_id,raw_ratio_tuple for target baselines at goal target",
+      "effects": "sorted valve_id,target_id,effect for all intervention effects",
+      "source": "sorted anchor_id,source_id,label for all source anchors",
+      "role": "sorted source_id,label for goal-animal observations"
+    },
+    "fit": "individual development worlds only; per-key maximum count with lexicographic ratio-tuple tie break; global majority fallback",
+    "evaluation": "all 300 heldout worlds and 150 complete heldout pairs",
+    "global_majority": {"ratio": [1, 1, 1], "development_count": 144, "individual_correct": 38, "paired_correct": 0},
+    "maximum_individual_correct": 44,
+    "maximum_paired_correct": 3,
+    "golden_vector": [
+      ["goal",19,0,300], ["passive",38,0,0], ["effects",37,1,300], ["source",36,0,38], ["role",26,0,300],
+      ["goal+passive",38,0,0], ["goal+effects",35,2,104], ["goal+source",38,0,0], ["goal+role",35,0,54],
+      ["passive+effects",38,0,0], ["passive+source",38,0,0], ["passive+role",38,0,0], ["effects+source",38,0,1], ["effects+role",37,1,82], ["source+role",38,0,2],
+      ["goal+passive+effects",38,0,0], ["goal+passive+source",38,0,0], ["goal+passive+role",38,0,0], ["goal+effects+source",38,0,0], ["goal+effects+role",38,0,0], ["goal+source+role",38,0,0],
+      ["passive+effects+source",38,0,0], ["passive+effects+role",38,0,0], ["passive+source+role",38,0,0], ["effects+source+role",38,0,0],
+      ["goal+passive+effects+source",38,0,0], ["goal+passive+effects+role",38,0,0], ["goal+passive+source+role",38,0,0], ["goal+effects+source+role",38,0,0], ["passive+effects+source+role",38,0,0],
+      ["goal+passive+effects+source+role",38,0,0]
+    ]
+  },
+  "thinker_parser_and_scorer": {
+    "shared_with_heldout": true,
+    "gold_storage_schema_shared_with_heldout": false,
+    "strict_json": true,
+    "one_response_one_operation": true,
+    "continue_operations": ["QUERY", "THINK", "BACKTRACK"],
+    "terminal_operations": ["COMMIT", "DEFER"],
+    "valid_system_failures": ["malformed", "illegal operation", "wrong token", "missing required citation", "trace-local DEFER", "budget exhaustion"],
+    "infrastructure_invalidity": ["provider refusal", "timeout", "truncation", "output limit", "runtime mismatch"],
+    "budget": "operation 12 executes; if nonterminal it is retained only in the trace and seals VALID_STAGE_FAILURE/BUDGET_EXHAUSTED; no call 13",
+    "success": "valid COMMIT of exact registered token whose cited prior H handles are offline-bound to the arm-required registered G role and causal rows",
+    "pair_success": "strict AND",
+    "golden_cases": ["every valid operation", "duplicate keys", "trailing text", "code fence", "wrong token", "own token in twin cell", "correct token without required citations", "cross-life citation", "DEFER", "budget exhaustion", "reader CONFLICT", "provider refusal", "timeout", "truncation", "output limit", "runtime mismatch"]
+  },
+  "development_gate": {
+    "seal_all_dispatched_outputs_before_scoring": true,
+    "GOLD_TEXT": "3/3 paired own successes",
+    "GOLD_TWIN": "3/3 paired donor-token successes",
+    "NO_MEMORY": "strictly fewer than 3/3 paired successes",
+    "infrastructure_invalid_invalidates_stage": true,
+    "post_first_dispatch_immutability": ["prompts", "schemas", "runtime", "request builder", "fixtures", "readers", "parser", "scorer", "expected tokens", "masks", "shortcut audit"],
+    "changed_byte_effect": "new ratified lock and new reviews, never a rerun of the changed bytes"
+  },
+  "call_accounting_ceiling": {
+    "NO_MEMORY": 72,
+    "GOLD_TEXT": 72,
+    "GOLD_TWIN": 72,
+    "total": 216,
+    "post_terminal_opportunities": "NON_DISPATCH_POST_TERMINAL rows with attempts=0 and tokens=0",
+    "retry": false,
+    "removed_arms": ["RAW_RAG", "GOLD_OPEN_LOOP"]
+  }
+}

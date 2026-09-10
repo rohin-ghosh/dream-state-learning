@@ -1,0 +1,324 @@
+\documentclass{article}
+
+% Install the official ICLR 2027 style beside this file before submission.
+\usepackage{iclr2027_conference,times}
+\usepackage{amsmath,amssymb,booktabs,graphicx,microtype,url}
+
+\title{Experience Models: Per-Life Parametric Learning for Acting Agents}
+\author{Anonymous authors}
+
+\newcommand{\tbd}{\textbf{[TBD]}}
+\newcommand{\unproven}[1]{\textbf{[UNPROVEN: #1]}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Agent post-training teaches a model how to act before deployment, but does not
+teach one deployed agent to improve from its own subsequent life. We study
+whether process-level parenting can bootstrap that ability. One parent teaches
+one child how to think through target-blind practice tasks and
+thought-to-action correction, then disappears. The child enters a fresh
+compiler-optimization gym with a frozen base model, ordinary external agent
+resources, and a per-life low-rank state updated by a Think--Dream--Sleep
+loop. A matched $2\times2$ design crosses parenting with deployment-time
+parametric consolidation, separating inherited starting competence, online
+learning, and their interaction; a fit-free frozen-parameter agent with the
+same validated evolving textual memory supplies the paper-facing
+frozen-parameter active-memory reference. We measure held-out value as a function of
+lifetime under equal generated-token budgets, with proposal/routing assays,
+forward-transfer and retention panels, adapter-removal controls, and complete
+resource accounting. \unproven{Replace this sentence with the registered
+parent-absent learning result, or the strongest surviving lower-rung result,
+only after the sealed run.}
+\end{abstract}
+
+\section{Introduction}
+
+Pretraining and fleet-level agent post-training amortize experience across a
+population before deployment. External memory lets an individual retain a
+life while leaving its acting policy fixed. Our question is complementary:
+can one deployed agent convert its own action--outcome experience into a
+persistent parametric change that improves how it acts later?
+
+The difficulty is not merely storing facts. The writer must preserve the
+agent's executable interface, distinguish local episodes from reusable
+structure, avoid reinforcing its own formatting accidents, and remain stable
+over repeated writes. These requirements turn personal experiential learning
+into an online stability--plasticity problem.
+
+Our intended contributions are:
+\begin{enumerate}
+  \item A one-parent/one-child protocol that teaches process-level thinking
+        through action and public consequence, while keeping the parent out
+        of the verifier role and removing all parental text at deployment.
+  \item A prospective $2\times2$ test of parenting by deployment-time
+        parametric consolidation, with a common development-gated active-text
+        memory system and separate measures of starting competence and
+        learning rate.
+  \item A provenance-bound Think--Dream--Sleep architecture with separate
+        measures of proposal content, executable routing, forward transfer,
+        backward retention, and writer-induced failure.
+  \item \unproven{A registered positive parent-absent lifetime result and,
+        conditionally, a terminal parametric-carrier mechanism result.}
+\end{enumerate}
+
+\section{Setting and hypotheses}
+
+Let a life produce an append-only stream
+\(e_t=(c_t,z_t,a_t,o_t)\), where \(c_t\) is rendered state, \(z_t\) is
+free-form thinking, \(a_t\) is a typed action, and \(o_t\) is a public
+outcome. A frozen base policy \(\pi_0\) acts with a per-life low-rank state
+\(\Delta_t\). Periodically, an experience compiler admits supported native
+continuations and produces \(\Delta_{t+1}\).
+
+The primary hypothesis is that process-only parenting increases the benefit
+of deployment-time per-life consolidation after the parent is removed. The
+primary estimand is therefore the interaction between parenting and personal
+writes over the held-out lifetime curve, not the final score of a single
+parented agent. Secondary hypotheses test parent-absent starting competence,
+unparented online learning, forward transfer, backward retention, and whether
+any gain survives adapter-removal and carrier interventions.
+
+``Model meta-intelligence'' is used only if prior target-blind parenting
+improves the rate at which the parent-absent child learns a fresh environment.
+Continual weight change alone, or a higher score at deployment entry, does not
+establish this claim.
+
+\section{Architecture}
+
+\paragraph{Think.}
+One model generates a continuous reasoning stream and typed tool calls.
+Thinking, planning, reflection, and context reconciliation are uses of the
+same inference operation under different admitted state; they are not
+separately trained modules.
+
+\paragraph{Ledger and conscious state.}
+Every invocation, native response envelope, dispatched action, public
+outcome, correction, and compiled row is recorded prospectively. Context may
+be distilled only after a validated successor state is published; the ledger
+keeps the operation reversible.
+
+\paragraph{Sleep-write.}
+Sleep is the write boundary, not a second intelligence. The compiler emits
+native, response-only training targets whose action bytes actually dispatched
+and whose support is bound to public outcomes. Context, tool results, parent
+text, and old history are masked inputs. The adapter is trained from the
+frozen base plus the cumulative accepted corpus.
+
+\paragraph{Strong active-text control.}
+Every deployment service also receives the same isolated
+\texttt{ACTIVE\_TEXT\_FIXED} system: an adapter-free reflector/curator updates
+a typed evidence-linked playbook after each program, and a prospectively
+pinned lexical+dense retriever returns bounded complete records. This makes
+the frozen-parameter reference an adapting memory agent and asks whether
+personal LoRA writes add value after a strong textual path is already present.
+Its on-policy store is a mediator, so the comparison is a closed-loop total
+effect rather than a same-memory carrier substitution.
+The exact typed schema and updater/retrieval bytes are frozen prospectively;
+the control earns the label strong only after disjoint, once-only semantic
+faithfulness, retrieval, use, and headroom certificates pass.
+
+\paragraph{Parenting.}
+A parent may propose process-level credit assignment but never supplies a
+hidden answer. A correction is admitted only after the child applies it on a
+separate training situation and the public environment supports it. Parent
+scaffolds are faded in the write, and all headline probes remove parent text.
+The paper uses one parent and one child; classroom, multi-teacher, peer, and
+population mechanisms are outside scope.
+
+\section{Benchmark and protocol}
+
+\subsection{Controlled experiential environment}
+\tbd{} Specify the target-blind nursery tasks used for process correction and
+the conditional terminal carrier assay. Nursery content must exclude
+CompilerGym programs, LLVM pass sequences, benchmark outcomes, and probe
+targets.
+
+\subsection{Compiler optimization transfer environment}
+We use a deterministic CompilerGym objective as an externally grounded
+transfer demonstration. Programs, exact action tuples, and content hashes are
+partitioned before target enumeration. Evaluation uses equal generated-token
+budgets, common random generation, isolated ledgers, and fresh environment
+resets.
+
+\subsection{Parenting and deployment transfer}
+
+One parent teaches one child process-level thinking through target-blind
+practice tasks. The child must turn corrections into actions on separate
+training situations; the public environment admits supported corrections into
+sleep. At deployment, the parent, correction text, nursery transcript, and
+practice ledger are absent. The child retains only the permitted learned
+parametric state and enters a fresh task stream.
+
+The headline compares this parented Think--Dream--Sleep agent with a fit-free
+frozen-parameter active-memory agent under identical deployment affordances and generated-token budgets. A
+$2\times2$ diagnostic crosses parenting with deployment-time consolidation:
+the parented checkpoint and a dose-matched unparented practice-written
+checkpoint, each forked with deployment writes off/on. All services own an
+isolated, frozen-policy ACE/ReMem-style playbook updater and pinned hybrid
+retriever; the common mechanism must pass prospective write, read/use,
+end-to-end, and task-headroom gates before it is called a strong baseline.
+This separates inherited starting competence from a higher learning rate and
+from the interaction of parenting with the per-life learning loop. No
+classroom or population mechanism is used.
+
+Let $Y_{p,\ell}(t)$ denote held-out value after deployment lifetime $t$, where
+$p$ indicates parenting and $\ell$ permits deployment-time consolidation. The
+parenting contribution to online learning is the predeclared
+difference-in-differences
+\[
+  I(t)=\bigl[Y_{1,1}(t)-Y_{1,0}(t)\bigr]
+       -\bigl[Y_{0,1}(t)-Y_{0,0}(t)\bigr].
+\]
+We also compare change from each cell's pre-deployment checkpoint and fit the
+registered life-level learning curve. A higher parented starting score without
+positive $I(t)$ is inherited competence, not evidence that parenting taught
+the child to learn better.
+
+If only one child is parented, we report this extension as a mechanistic case
+study; deployment tasks do not replicate its childhood. A general parenting
+effect requires independently raised one-on-one child lives, all taught by the
+same parent under the frozen protocol.
+
+\subsection{Causal arms and matched resources}
+
+The four deployment cells are unparented frozen (\texttt{U0}), parented frozen
+(\texttt{P0}), unparented continual (\texttt{U1}), and parented continual
+(\texttt{P1}). Both unparented cells inherit a target-blind, dose-matched
+childhood LoRA written only from their own supported practice, so \texttt{U0}
+is not the pristine base. The fit-free reference \texttt{R0} retains raw
+pinned actor weights while its isolated active-text playbook evolves, so the
+complete system is frozen-parameter rather than memory-static.
+The paper-facing two-agent comparison is \texttt{P1} versus \texttt{R0}; the
+P/U $2\times2$ identifies the parenting interaction.
+
+All cells receive matched tools, base model, generated-token budgets, task
+opportunities, public outcomes, files, skills, and the same
+\texttt{ACTIVE\_TEXT\_FIXED} updater/retriever. Only parenting and/or per-life
+parametric writes are disabled. The registered hierarchy tests the parenting-
+by-write interaction, then \texttt{P1}-\texttt{P0} as the total closed-loop
+benefit of LoRA writes on top of strong active text, then
+\texttt{P1}-\texttt{R0} as the full-system public contrast. Raw-trajectory
+distillation, a bounded descriptive-only terminal LEAFE-style system, binding
+derangement, and adapter removal are staged diagnostics rather than coequal
+longitudinal arms. The LEAFE-style result supports no powered superiority
+claim.
+Accepted rows, supervised target tokens, optimization steps, model calls,
+wall time, and GPU time are reported.
+
+\subsection{Endpoints and statistics}
+
+Primary endpoints are held-out task value and normalized area under the
+value--lifetime curve, analyzed through the registered $2\times2$ interaction
+and change from deployment entry. We additionally report early learning
+slope, value per generated token, free typed-call compliance, typed-forced
+proposal quality, forward transfer, backward retention, and forgetting. The
+independent unit is a separately raised child life; checkpoints, programs,
+actions, and decoding samples are repeated measures. \tbd{} Insert the frozen
+parent identity/policy, parenting-cycle count, preregistered SESOIs, blinded
+variance rule, intervals, root count, missing-action value, and joint success
+rule.
+
+\section{Results}
+
+\subsection{Exploratory failure: useful proposals leave the action channel}
+
+In one exploratory life, the terminal periodic adapter scored $0.0511$ under
+the registered strict parser, versus $0.4859$ with that checkpoint's adapter
+removed. A post-hoc permissive parser recovered a first proposed action on all
+eight saved tasks; executing those exact saved strings once scored $0.5287$.
+This localizes a writer-induced routing failure but is not a learning benefit:
+generation was unseeded, context policy was confounded, and the permissive
+analysis was defined after observing the failure.
+
+\subsection{Prospective parenting and lifetime results}
+
+\tbd{} Figure 1: the parented Think--Dream--Sleep child and frozen-parameter
+active-memory reference,
+with the full four-cell held-out value curves and life-level uncertainty.
+
+\tbd{} Figure 2: entry-adjusted parenting-by-learning interaction plus
+proposal quality versus free routing, showing that any gain is neither a
+starting-score nor interface/action-volume artifact.
+
+\tbd{} Table 1: final/nAUC/early-slope/forward/backward results and resource
+accounting for \texttt{R0}, \texttt{U0}, \texttt{P0}, \texttt{U1}, and
+\texttt{P1}.
+
+\tbd{} Table 2: adapter-off, shuffled/wrong-child parenting, and conditional
+terminal writer/carrier interventions.
+
+\section{Related work}
+
+Batch experience internalization includes Early Experience
+\citep{zhang2025earlyexperience} and LEAFE \citep{ge2026leafe}; the
+latter reflects on failures, rolls back, generates improved branches, and
+distills those actions into the acting model while removing the explicit
+reflection at test time. Active external-memory systems such as MemoPilot
+\citep{cai2026memopilot} and Evo-Memory \citep{wei2025evomemory} instead
+refine textual state while freezing the actor. Our intended
+distinction is repeated, personal, within-life parametric writes and their
+online stability, not the first internalization of reflective experience.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+Method family & Learned state & Experience source & Update schedule & Acting policy at deployment \\
+\midrule
+Early Experience \citep{zhang2025earlyexperience} & full model & alternative actions/future states & batch mid-training & updated once \\
+LEAFE \citep{ge2026leafe} & full model & reflection and recovered branches & batch post-training & updated once \\
+MemoPilot \citep{cai2026memopilot} & textual memory policy & streaming task trajectories & online text update & frozen \\
+Evo-Memory/ReMem \citep{wei2025evomemory} & external textual state & streaming action/thought traces & online text update & frozen \\
+Experience Models (target) & per-life low-rank state & own typed actions/outcomes/corrections & periodic within life & repeatedly updated \\
+\bottomrule
+\end{tabular}
+\caption{Mechanism-level positioning. The final row is the setting tested in
+this paper, not a claim that its benefit is already established.}
+\label{tab:positioning}
+\end{table*}
+
+\tbd{} Complete primary-source citations and distinguish the exact paper
+implementations from the method-family summary in Table~\ref{tab:positioning}.
+
+\section{Limitations and conclusion}
+
+Per-life adaptation can amplify self-generated errors, erase interfaces,
+overfit a narrow environment, and forget prior competence. A compiler gym does
+not by itself establish general learning-to-learn, creativity, or physical
+world modeling. Parenting is useful only if its effect survives parent removal
+and transfers beyond taught content. We therefore separate the narrow
+registered claims from the longer-term experience-model architecture.
+
+\section*{Reproducibility statement}
+\tbd{} Reference the immutable manifests, source and artifact hashes, exact
+commands, seeds, data partitions, acceptance gates, analysis scripts, and
+anonymous code supplement.
+
+\section*{AI use statement}
+Generative AI systems assisted with implementation, literature search,
+experimental-design critique, artifact analysis, result interpretation, and
+drafting support. The human author originated and directed the research
+program, made the final architecture, protocol, and claim decisions, supplied
+extensive iterative scientific feedback, audited the evidence, and wrote or
+substantively revised the final manuscript. AI outputs were treated as
+proposals rather than evidence and were accepted only after artifact-level or
+primary-source verification. We retained hash-bound deliberation and audit
+records and did not promote exploratory runs with unresolved provenance or
+causal limitations into headline evidence. The human author reviewed the final
+code, experiments, numerical claims, citations, and manuscript and takes
+responsibility for the submission. \tbd{} Add exact systems/versions and final
+human verification assignments from \texttt{AI_USE_LOG.md}; revise singular or
+plural authorship after the author list is frozen.
+
+\bibliography{references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\section{Extended contracts and diagnostics}
+\tbd{} Provenance contract, writer fixtures, complete failure table, prompt
+and tool schemas, additional curves, and all exploratory-result boundaries.
+
+\end{document}

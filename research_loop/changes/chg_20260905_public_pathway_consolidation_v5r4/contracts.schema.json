@@ -1,0 +1,5015 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ppc5r3-contracts.schema.json",
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*-[0-9]{8}$"
+    },
+    "nullable_id": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "symbol": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]{0,95}$"
+    },
+    "bytes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hashes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hash"
+      },
+      "uniqueItems": true
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calls",
+        "reads",
+        "actions",
+        "tokens"
+      ],
+      "properties": {
+        "calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tokens": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "prediction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "direction",
+        "value_bin"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/$defs/id"
+        },
+        "direction": {
+          "enum": [
+            "INCREASE",
+            "DECREASE",
+            "SAME"
+          ]
+        },
+        "value_bin": {
+          "$ref": "#/$defs/symbol"
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "direction",
+        "value_bin",
+        "normalized_value"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/$defs/id"
+        },
+        "direction": {
+          "enum": [
+            "INCREASE",
+            "DECREASE",
+            "SAME"
+          ]
+        },
+        "value_bin": {
+          "$ref": "#/$defs/symbol"
+        },
+        "normalized_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "read_found": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "status",
+        "subject_id",
+        "relation_id",
+        "object_id",
+        "record_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.read.v4"
+        },
+        "status": {
+          "const": "FOUND"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "relation_id": {
+          "$ref": "#/$defs/id"
+        },
+        "object_id": {
+          "$ref": "#/$defs/id"
+        },
+        "record_id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "read_null": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "status",
+        "subject_id",
+        "relation_id",
+        "object_id",
+        "record_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.read.v4"
+        },
+        "status": {
+          "enum": [
+            "NOT_FOUND",
+            "MISSING_NO_RETRY",
+            "INVALID_CELL"
+          ]
+        },
+        "subject_id": {
+          "type": "null"
+        },
+        "relation_id": {
+          "type": "null"
+        },
+        "object_id": {
+          "type": "null"
+        },
+        "record_id": {
+          "type": "null"
+        }
+      }
+    },
+    "read_response": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/read_found"
+        },
+        {
+          "$ref": "#/$defs/read_null"
+        }
+      ]
+    },
+    "op_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "op",
+        "subject_id",
+        "relation_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.op.v4"
+        },
+        "op": {
+          "const": "READ"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "relation_id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "op_predict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "op",
+        "prediction"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.op.v4"
+        },
+        "op": {
+          "const": "PREDICT"
+        },
+        "prediction": {
+          "$ref": "#/$defs/prediction"
+        }
+      }
+    },
+    "op_act": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "op",
+        "action_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.op.v4"
+        },
+        "op": {
+          "const": "ACT"
+        },
+        "action_id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "op_stop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "op",
+        "reason"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.op.v4"
+        },
+        "op": {
+          "const": "STOP"
+        },
+        "reason": {
+          "enum": [
+            "GOAL_COMPLETE",
+            "NO_VALID_ACTION",
+            "USER_STOP"
+          ]
+        }
+      }
+    },
+    "operation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/op_read"
+        },
+        {
+          "$ref": "#/$defs/op_predict"
+        },
+        {
+          "$ref": "#/$defs/op_act"
+        },
+        {
+          "$ref": "#/$defs/op_stop"
+        }
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "record_id",
+        "subject_id",
+        "relation_id",
+        "object_id",
+        "public_record_bytes"
+      ],
+      "properties": {
+        "candidate_id": {
+          "$ref": "#/$defs/id"
+        },
+        "record_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "relation_id": {
+          "$ref": "#/$defs/id"
+        },
+        "object_id": {
+          "$ref": "#/$defs/id"
+        },
+        "public_record_bytes": {
+          "$ref": "#/$defs/bytes"
+        }
+      }
+    },
+    "semantic_table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "table_id",
+        "candidates",
+        "table_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.semantic_table.v4"
+        },
+        "table_id": {
+          "$ref": "#/$defs/id"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "table_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "model_view": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "public_view_body",
+        "ledger_head",
+        "view_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.model_view.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "public_view_body": {
+          "$ref": "#/$defs/public_view_body"
+        },
+        "ledger_head": {
+          "$ref": "#/$defs/hash"
+        },
+        "view_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "operation_envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "call_id",
+        "call_ordinal",
+        "model_hash",
+        "tokenizer_hash",
+        "prompt_hash",
+        "adapter_hash",
+        "seed",
+        "input_tokens",
+        "output_tokens",
+        "raw_output_hash",
+        "parse_status",
+        "operation"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.operation_envelope.v4"
+        },
+        "call_id": {
+          "$ref": "#/$defs/id"
+        },
+        "call_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "model_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "tokenizer_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "prompt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "adapter_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_output_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parse_status": {
+          "enum": [
+            "PARSED",
+            "MODEL_MISSING_NO_RETRY",
+            "PARSE_ERROR"
+          ]
+        },
+        "operation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/operation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "operation_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "status",
+        "origin",
+        "read_response",
+        "outcome",
+        "error_code",
+        "stop_reason",
+        "slot_ack",
+        "result_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.operation_result.v4"
+        },
+        "status": {
+          "enum": [
+            "SUCCESS",
+            "ERROR",
+            "TERMINAL",
+            "SLOT_ACK"
+          ]
+        },
+        "origin": {
+          "enum": [
+            "MODEL",
+            "HARNESS",
+            "PROVIDER",
+            "ENVIRONMENT",
+            "CONTROLLER"
+          ]
+        },
+        "read_response": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/read_response"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/outcome"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "enum": [
+                "MODEL_MISSING_NO_RETRY",
+                "TOKEN_LIMIT",
+                "PARSE_ERROR",
+                "READ_LIMIT",
+                "ACTION_LIMIT",
+                "INVALID_DOMAIN",
+                "INVALID_REFERENCE",
+                "PREDICTION_REQUIRED",
+                "PREDICTION_MISMATCH",
+                "INVALID_ACTION",
+                "SCHEDULE_VIOLATION",
+                "RUN_INVALID"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stop_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "GOAL_COMPLETE",
+                "NO_VALID_ACTION",
+                "USER_STOP",
+                "BUDGET_EXHAUSTED",
+                "ERROR_LIMIT",
+                "INVALID_CELL",
+                "RUN_INVALID"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "slot_ack": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "slot",
+                "status"
+              ],
+              "properties": {
+                "slot": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "status": {
+                  "enum": [
+                    "QUEUED",
+                    "REJECTED"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "ledger_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "event_id",
+        "event_ordinal",
+        "prior_event_hash",
+        "pre_state_hash",
+        "operation_envelope_hash",
+        "result_hash",
+        "post_state_hash",
+        "debit_before",
+        "debit_after",
+        "event_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.ledger_event.v4"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prior_event_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "pre_state_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "operation_envelope_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "post_state_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "debit_before": {
+          "$ref": "#/$defs/budget"
+        },
+        "debit_after": {
+          "$ref": "#/$defs/budget"
+        },
+        "event_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "provider_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "request_hash",
+        "table_hash",
+        "provider_kind",
+        "mounted_artifact_hash",
+        "candidate_score_micros",
+        "selected_candidate_id",
+        "response",
+        "scoring_kernel_hash",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.provider_receipt.v4"
+        },
+        "request_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "table_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "provider_kind": {
+          "enum": [
+            "READER_LORA",
+            "ADAPTER_OFF",
+            "WRONG_LIFE_ADAPTER",
+            "MATCHED_BINDING_SHUFFLED_READER",
+            "RAW_RAG",
+            "EXPLICIT_GRAPH"
+          ]
+        },
+        "mounted_artifact_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "candidate_score_micros": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "selected_candidate_id": {
+          "$ref": "#/$defs/nullable_id"
+        },
+        "response": {
+          "$ref": "#/$defs/read_response"
+        },
+        "scoring_kernel_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "intervention_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "intervention_id",
+        "match_count",
+        "input_response_hash",
+        "output_response_hash",
+        "parity_passed",
+        "non_target_noop",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.intervention_receipt.v4"
+        },
+        "intervention_id": {
+          "$ref": "#/$defs/id"
+        },
+        "match_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "input_response_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "output_response_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "parity_passed": {
+          "type": "boolean"
+        },
+        "non_target_noop": {
+          "type": "boolean"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "dream_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "snapshot_hash",
+        "public_slice_hash",
+        "world_state_hash",
+        "live_prediction_hash",
+        "allowed_record_ids",
+        "capacity_records",
+        "render_token_ceiling",
+        "shared_call_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.dream_request.v4"
+        },
+        "snapshot_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "public_slice_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "world_state_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "live_prediction_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "allowed_record_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "capacity_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "render_token_ceiling": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shared_call_id": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "dream_publish": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "kind",
+        "retained_record_ids",
+        "next_focus_record_id"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.dream_result.v4"
+        },
+        "kind": {
+          "const": "PUBLISH"
+        },
+        "retained_record_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "next_focus_record_id": {
+          "$ref": "#/$defs/nullable_id"
+        }
+      }
+    },
+    "dream_abstain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "kind",
+        "reason"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.dream_result.v4"
+        },
+        "kind": {
+          "const": "ABSTAIN"
+        },
+        "reason": {
+          "enum": [
+            "NO_USEFUL_CONTEXT",
+            "INSUFFICIENT_SUPPORT",
+            "CONTEXT_ALREADY_MINIMAL"
+          ]
+        }
+      }
+    },
+    "dream_result": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/dream_publish"
+        },
+        {
+          "$ref": "#/$defs/dream_abstain"
+        }
+      ]
+    },
+    "dream_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "shared_call_id",
+        "request_hash",
+        "status",
+        "result",
+        "input_tokens",
+        "output_tokens",
+        "model_hash",
+        "seed",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.dream_receipt.v4"
+        },
+        "shared_call_id": {
+          "$ref": "#/$defs/id"
+        },
+        "request_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "PUBLISH_EMPTY",
+            "ABSTAIN",
+            "DREAM_INVALID_OUTPUT",
+            "DREAM_MISSING_NO_RETRY"
+          ]
+        },
+        "result": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/dream_result"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "model_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "context_install_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "arm_id",
+        "dream_receipt_hash",
+        "status",
+        "ordered_record_ids",
+        "focus_record_id",
+        "render_hash",
+        "render_tokens",
+        "installed",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.context_install.v4"
+        },
+        "arm_id": {
+          "enum": [
+            "AUTHENTIC_DREAM_CONTEXT",
+            "RECENCY_CONTEXT",
+            "PERMUTED_CONTEXT"
+          ]
+        },
+        "dream_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "VALID_EMPTY",
+            "ABSTAIN",
+            "DREAM_INVALID_OUTPUT",
+            "DREAM_MISSING_NO_RETRY",
+            "CONSTRUCTION_FAIL",
+            "RUN_INVALID"
+          ]
+        },
+        "ordered_record_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "focus_record_id": {
+          "$ref": "#/$defs/nullable_id"
+        },
+        "render_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "render_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "installed": {
+          "type": "boolean"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "record_id",
+        "source_event_id",
+        "role",
+        "dream_visible",
+        "item_closed",
+        "source_commit_ordinal",
+        "before_boundary",
+        "probe_or_future",
+        "target_derived",
+        "source_channel",
+        "direct_relation",
+        "source_hash",
+        "eligible",
+        "equivalence_tuple_hash",
+        "semantic_family_id",
+        "alias_family_id",
+        "item_family_id",
+        "donor_overlap_group"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.eligibility.v4"
+        },
+        "record_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "enum": [
+            "ACQUIRE",
+            "PROBE",
+            "STATIC"
+          ]
+        },
+        "dream_visible": {
+          "type": "boolean"
+        },
+        "item_closed": {
+          "type": "boolean"
+        },
+        "source_commit_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "before_boundary": {
+          "type": "boolean"
+        },
+        "probe_or_future": {
+          "type": "boolean"
+        },
+        "target_derived": {
+          "type": "boolean"
+        },
+        "source_channel": {
+          "enum": [
+            "DIRECT_PUBLIC_ENVIRONMENT",
+            "COGNITIVE",
+            "DREAM",
+            "SCORER",
+            "POLICY_TARGET",
+            "OTHER"
+          ]
+        },
+        "direct_relation": {
+          "type": "boolean"
+        },
+        "source_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "eligible": {
+          "type": "boolean"
+        },
+        "equivalence_tuple_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "semantic_family_id": {
+          "$ref": "#/$defs/id"
+        },
+        "alias_family_id": {
+          "$ref": "#/$defs/id"
+        },
+        "item_family_id": {
+          "$ref": "#/$defs/id"
+        },
+        "donor_overlap_group": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "projection_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "policy_id",
+        "nominee_record_id",
+        "first_failure",
+        "representative_record_id",
+        "source_hashes",
+        "projection_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.projection_receipt.v4"
+        },
+        "policy_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "nominee_record_id": {
+          "$ref": "#/$defs/id"
+        },
+        "first_failure": {
+          "anyOf": [
+            {
+              "enum": [
+                "MISSING_RECORD",
+                "NOT_DREAM_VISIBLE",
+                "NOT_ACQUIRE",
+                "ITEM_OPEN",
+                "AFTER_BOUNDARY",
+                "PROBE_OR_FUTURE",
+                "TARGET_DERIVED",
+                "NOT_DIRECT_PUBLIC_ENVIRONMENT",
+                "NOT_DIRECT_RELATION",
+                "SOURCE_HASH_MISMATCH",
+                "NOT_ELIGIBLE"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "representative_record_id": {
+          "$ref": "#/$defs/nullable_id"
+        },
+        "source_hashes": {
+          "$ref": "#/$defs/hashes"
+        },
+        "projection_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "sleep_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "row_id",
+        "root_record_id",
+        "request_subject_id",
+        "request_relation_id",
+        "target_response",
+        "source_hash",
+        "row_token_count",
+        "byte_length_class",
+        "row_hash"
+      ],
+      "properties": {
+        "contract": {
+          "enum": [
+            "ppc5.sleep_row.v4",
+            "ppc5.control_sleep_row.v4"
+          ]
+        },
+        "row_id": {
+          "$ref": "#/$defs/id"
+        },
+        "root_record_id": {
+          "$ref": "#/$defs/id"
+        },
+        "request_subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "request_relation_id": {
+          "$ref": "#/$defs/id"
+        },
+        "target_response": {
+          "$ref": "#/$defs/read_found"
+        },
+        "source_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "row_token_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "byte_length_class": {
+          "$ref": "#/$defs/symbol"
+        },
+        "row_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "adapter_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "artifact_id",
+        "artifact_hash",
+        "status",
+        "base_hash",
+        "tokenizer_hash",
+        "shape_hash",
+        "recipe_family_hash",
+        "mount_interface_hash",
+        "corpus_hash",
+        "row_count",
+        "token_count",
+        "update_count",
+        "rank",
+        "finite_tensors",
+        "structural_check_passed"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.adapter_manifest.v4"
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "artifact_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "VALID_EMPTY",
+            "TRAIN_FAILED",
+            "MISSING",
+            "RUN_INVALID"
+          ]
+        },
+        "base_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "tokenizer_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "shape_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "recipe_family_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "mount_interface_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "corpus_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "token_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "update_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finite_tensors": {
+          "type": "boolean"
+        },
+        "structural_check_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "path_proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "item_id",
+        "alias_map_hash",
+        "world_variant_table_hash",
+        "registered_action_id",
+        "ordered_edge_ids",
+        "proper_subset_sufficiency",
+        "alternate_sufficient_path_count",
+        "source_preimage_hashes",
+        "twin_intervention_ids",
+        "sham_intervention_id",
+        "proof_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.path_proof.v4"
+        },
+        "item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "alias_map_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "world_variant_table_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "registered_action_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ordered_edge_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "proper_subset_sufficiency": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "alternate_sufficient_path_count": {
+          "const": 0
+        },
+        "source_preimage_hashes": {
+          "$ref": "#/$defs/hashes"
+        },
+        "twin_intervention_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "sham_intervention_id": {
+          "$ref": "#/$defs/id"
+        },
+        "proof_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "assay_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "recipient_life_id",
+        "assay_id",
+        "clone_id",
+        "arm_id",
+        "snapshot_hash",
+        "seed_bundle_hash",
+        "component_matrix_hash",
+        "assignment_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.assay_assignment.v4"
+        },
+        "recipient_life_id": {
+          "$ref": "#/$defs/id"
+        },
+        "assay_id": {
+          "enum": [
+            "D1A",
+            "D1B",
+            "D1C",
+            "D1D"
+          ]
+        },
+        "clone_id": {
+          "$ref": "#/$defs/id"
+        },
+        "arm_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "snapshot_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "seed_bundle_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "component_matrix_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "assignment_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "stage_outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "recipient_life_id",
+        "assay_id",
+        "arm_id",
+        "endpoint_id",
+        "terminal_class",
+        "raw_result_code",
+        "raw_value",
+        "analysis_value",
+        "missing",
+        "claim_blocker",
+        "cause_event_refs",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.stage_outcome.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "recipient_life_id": {
+          "$ref": "#/$defs/id"
+        },
+        "assay_id": {
+          "enum": [
+            "D1A",
+            "D1B",
+            "D1C",
+            "D1D"
+          ]
+        },
+        "arm_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "endpoint_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "terminal_class": {
+          "enum": [
+            "OBSERVED",
+            "NO_ACTION",
+            "MISSING",
+            "BLOCKED"
+          ]
+        },
+        "raw_result_code": {
+          "$ref": "#/$defs/symbol"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "analysis_value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing": {
+          "type": "boolean"
+        },
+        "claim_blocker": {
+          "type": "boolean"
+        },
+        "cause_event_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "recipient_life_id",
+        "assay_id",
+        "arm_id",
+        "unit_id",
+        "endpoint_id",
+        "raw_value",
+        "analysis_value",
+        "missing",
+        "status_receipt_hash",
+        "observation_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.observation.v4"
+        },
+        "recipient_life_id": {
+          "$ref": "#/$defs/id"
+        },
+        "assay_id": {
+          "enum": [
+            "D1A",
+            "D1B",
+            "D1C",
+            "D1D"
+          ]
+        },
+        "arm_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "unit_id": {
+          "$ref": "#/$defs/id"
+        },
+        "endpoint_id": {
+          "enum": [
+            "CORRECT_SUPPORTED_SELECTION",
+            "FALSE_SELECTION_RATE",
+            "NOT_FOUND_RATE",
+            "NORMALIZED_ACTION_VALUE"
+          ]
+        },
+        "raw_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "analysis_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "missing": {
+          "type": "boolean"
+        },
+        "status_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "observation_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "assay_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "claim_id",
+        "gate_result_hashes",
+        "assay_p_value",
+        "all_directions_passed",
+        "all_local_tests_passed",
+        "blocked",
+        "result_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.assay_result.v4"
+        },
+        "claim_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "gate_result_hashes": {
+          "$ref": "#/$defs/hashes"
+        },
+        "assay_p_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "all_directions_passed": {
+          "type": "boolean"
+        },
+        "all_local_tests_passed": {
+          "type": "boolean"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "result_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "holm_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "alpha",
+        "ordered_claim_ids",
+        "ordered_p_values",
+        "rejected_claim_ids",
+        "stopped_at_index",
+        "all_four_rejected",
+        "result_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.holm.v4"
+        },
+        "alpha": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "ordered_claim_ids": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/symbol"
+          },
+          "uniqueItems": true
+        },
+        "ordered_p_values": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "rejected_claim_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/symbol"
+          },
+          "uniqueItems": true
+        },
+        "stopped_at_index": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 3
+        },
+        "all_four_rejected": {
+          "type": "boolean"
+        },
+        "result_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "test_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "test_id",
+        "declared_stage",
+        "fixture_manifest_hash",
+        "coverage_receipt_hash",
+        "evidence_refs",
+        "status",
+        "result_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.test_result.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "test_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "declared_stage": {
+          "$ref": "#/$defs/symbol"
+        },
+        "fixture_manifest_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "coverage_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "result_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "claim_release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "claim_id",
+        "status",
+        "release_text",
+        "qualification_text",
+        "claim_decision_hash",
+        "preclaim_authority_hash",
+        "overlap_manifest_hash",
+        "construction_scope_hash",
+        "blocker",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.claim_release.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "claim_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "status": {
+          "enum": [
+            "RELEASED",
+            "BLOCKED"
+          ]
+        },
+        "release_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "qualification_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claim_decision_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "preclaim_authority_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "overlap_manifest_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "construction_scope_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "blocker": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "accounting_mode",
+        "recipient_life_id",
+        "cell_id",
+        "stage_id",
+        "event_id",
+        "shared_event_id",
+        "model_calls",
+        "input_tokens",
+        "output_tokens",
+        "training_rows",
+        "training_tokens",
+        "updates",
+        "adapter_rank",
+        "adapter_bytes",
+        "wall_seconds",
+        "gpu_seconds",
+        "energy_value",
+        "energy_available",
+        "energy_unavailable_reason",
+        "cost_value",
+        "cost_available",
+        "cost_unavailable_reason",
+        "derivation_hashes",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.resource.v4"
+        },
+        "accounting_mode": {
+          "enum": [
+            "INCLUSIVE",
+            "MARGINAL"
+          ]
+        },
+        "recipient_life_id": {
+          "$ref": "#/$defs/nullable_id"
+        },
+        "cell_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "stage_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "shared_event_id": {
+          "$ref": "#/$defs/nullable_id"
+        },
+        "model_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "training_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "training_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "updates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "adapter_rank": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "adapter_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "wall_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "gpu_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "energy_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "energy_available": {
+          "type": "boolean"
+        },
+        "energy_unavailable_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cost_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cost_available": {
+          "type": "boolean"
+        },
+        "cost_unavailable_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "derivation_hashes": {
+          "$ref": "#/$defs/hashes"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "rational_bracket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lower",
+        "upper"
+      ],
+      "properties": {
+        "lower": {
+          "$ref": "#/$defs/rational"
+        },
+        "upper": {
+          "$ref": "#/$defs/rational"
+        }
+      }
+    },
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "ordinal",
+        "artifact_type",
+        "sha256"
+      ],
+      "properties": {
+        "role": {
+          "$ref": "#/$defs/symbol"
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "artifact_type": {
+          "$ref": "#/$defs/symbol"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "byte_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "ordinal",
+        "media_type",
+        "relative_path",
+        "byte_length",
+        "raw_sha256"
+      ],
+      "properties": {
+        "role": {
+          "$ref": "#/$defs/symbol"
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "media_type": {
+          "$ref": "#/$defs/symbol"
+        },
+        "relative_path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "byte_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "public_view_body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "phase",
+        "slot",
+        "item_id",
+        "world_blob",
+        "visible_record_refs",
+        "opened_record_ids",
+        "last_read",
+        "live_prediction",
+        "last_outcome",
+        "budgets",
+        "call_ordinal",
+        "consecutive_error_count",
+        "latest_error",
+        "prior_public_summary",
+        "legal_action_ids",
+        "operation_schema_hash",
+        "view_body_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.public_view_body.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "phase": {
+          "$ref": "#/$defs/symbol"
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "world_blob": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "visible_record_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "opened_record_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "last_read": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/read_response"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "live_prediction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/prediction"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "last_outcome": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/outcome"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budgets": {
+          "$ref": "#/$defs/budget"
+        },
+        "call_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "consecutive_error_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "latest_error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_public_summary": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "legal_action_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "operation_schema_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "view_body_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "state_body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "state_id",
+        "state_ordinal",
+        "phase",
+        "public_view_body",
+        "private_controller_receipt_hash",
+        "terminal",
+        "body_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.state_body.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "state_id": {
+          "$ref": "#/$defs/id"
+        },
+        "state_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "phase": {
+          "enum": [
+            "INITIAL",
+            "RUNNING",
+            "TERMINAL"
+          ]
+        },
+        "public_view_body": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/public_view_body"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "private_controller_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "terminal": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "origin",
+                "reason",
+                "attempted_call_id",
+                "attempted_error_code",
+                "attempted_debits",
+                "queue_effect_refs",
+                "endpoint_outcome_hash"
+              ],
+              "properties": {
+                "origin": {
+                  "enum": [
+                    "MODEL",
+                    "HARNESS",
+                    "CONTROLLER"
+                  ]
+                },
+                "reason": {
+                  "$ref": "#/$defs/symbol"
+                },
+                "attempted_call_id": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/id"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "attempted_error_code": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/symbol"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "attempted_debits": {
+                  "$ref": "#/$defs/budget"
+                },
+                "queue_effect_refs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/artifact_ref"
+                  }
+                },
+                "endpoint_outcome_hash": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/hash"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "body_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "phase": {
+                "const": "TERMINAL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "public_view_body": {
+                "type": "null"
+              },
+              "terminal": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "phase": {
+                "enum": [
+                  "INITIAL",
+                  "RUNNING"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "public_view_body": {
+                "$ref": "#/$defs/public_view_body"
+              },
+              "terminal": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "state_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "state_id",
+        "state_ordinal",
+        "state_body_hash",
+        "ledger_head",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.state_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "state_id": {
+          "$ref": "#/$defs/id"
+        },
+        "state_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "state_body_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "ledger_head": {
+          "$ref": "#/$defs/hash"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "transition_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "event_id",
+        "event_ordinal",
+        "cause",
+        "prior_event_hash",
+        "pre_state_receipt_hash",
+        "operation_envelope_hash",
+        "operation_result_hash",
+        "controller_before_receipt_hash",
+        "controller_after_receipt_hash",
+        "lineage",
+        "debit_before",
+        "debit_after",
+        "post_state_body_hash",
+        "event_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.transition_event.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_ordinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cause": {
+          "$ref": "#/$defs/symbol"
+        },
+        "prior_event_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "pre_state_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "operation_envelope_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operation_result_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "controller_before_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "controller_after_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "debit_before": {
+          "$ref": "#/$defs/budget"
+        },
+        "debit_after": {
+          "$ref": "#/$defs/budget"
+        },
+        "post_state_body_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "event_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "private_controller_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "assay_id",
+        "program",
+        "phase",
+        "required_operation",
+        "slot",
+        "slot_limit",
+        "accepted_read_count",
+        "queue_slots",
+        "next_flush_slot",
+        "committed_prediction_envelope_hash",
+        "committed_action_envelope_hash",
+        "committed_action_id",
+        "controller_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.private_controller.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "assay_id": {
+          "enum": [
+            "D1A",
+            "D1B",
+            "D1C",
+            "D1D"
+          ]
+        },
+        "program": {
+          "$ref": "#/$defs/symbol"
+        },
+        "phase": {
+          "$ref": "#/$defs/symbol"
+        },
+        "required_operation": {
+          "enum": [
+            "READ",
+            "PREDICT",
+            "ACT",
+            "NONE"
+          ]
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slot_limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_read_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "queue_slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "next_flush_slot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "committed_prediction_envelope_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "committed_action_envelope_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "committed_action_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "controller_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "queue_slot_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "slot",
+        "state",
+        "controller_before_hash",
+        "operation_envelope_hash",
+        "request_hash",
+        "rejection_error",
+        "slot_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.queue_slot.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "state": {
+          "enum": [
+            "QUEUED",
+            "REJECTED"
+          ]
+        },
+        "controller_before_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "operation_envelope_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "request_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rejection_error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "slot_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "queue_effect_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "slot",
+        "queued_slot_hash",
+        "effect",
+        "provider_receipt_hash",
+        "intervention_receipt_hash",
+        "public_result_hash",
+        "public_event_hash",
+        "discard_reason",
+        "controller_after_hash",
+        "effect_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.queue_effect.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "queued_slot_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "effect": {
+          "enum": [
+            "FLUSHED",
+            "DISCARDED"
+          ]
+        },
+        "provider_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "intervention_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "public_result_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "public_event_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "discard_reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "controller_after_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "effect_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "endpoint_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "life_id",
+        "gate_id",
+        "arm_id",
+        "endpoint_id",
+        "raw_value",
+        "analysis_value",
+        "missing",
+        "stage_outcome_hash",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.endpoint_observation.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "life_id": {
+          "$ref": "#/$defs/id"
+        },
+        "gate_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "arm_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "endpoint_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "analysis_value": {
+          "$ref": "#/$defs/rational"
+        },
+        "missing": {
+          "type": "boolean"
+        },
+        "stage_outcome_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "paired_gate_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "gate_id",
+        "N",
+        "successes",
+        "margin",
+        "pi0",
+        "tail_probability",
+        "cp_lower_bracket",
+        "observed_rate",
+        "direction_passed",
+        "missingness_passed",
+        "decision",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.paired_gate_result.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "gate_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "N": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "successes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "margin": {
+          "$ref": "#/$defs/rational"
+        },
+        "pi0": {
+          "$ref": "#/$defs/rational"
+        },
+        "tail_probability": {
+          "$ref": "#/$defs/rational"
+        },
+        "cp_lower_bracket": {
+          "$ref": "#/$defs/rational_bracket"
+        },
+        "observed_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "direction_passed": {
+          "type": "boolean"
+        },
+        "missingness_passed": {
+          "type": "boolean"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "one_sample_safety_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "gate_id",
+        "N",
+        "adverse_events",
+        "ceiling",
+        "tail_probability",
+        "cp_upper_bracket",
+        "observed_rate",
+        "decision",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.one_sample_safety_result.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "gate_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "N": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "adverse_events": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ceiling": {
+          "$ref": "#/$defs/rational"
+        },
+        "tail_probability": {
+          "$ref": "#/$defs/rational"
+        },
+        "cp_upper_bracket": {
+          "$ref": "#/$defs/rational_bracket"
+        },
+        "observed_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "missingness_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "gate_id",
+        "N",
+        "missing_events",
+        "ceiling",
+        "tail_probability",
+        "observed_rate",
+        "decision",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.missingness_result.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "gate_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "N": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "missing_events": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ceiling": {
+          "$ref": "#/$defs/rational"
+        },
+        "tail_probability": {
+          "$ref": "#/$defs/rational"
+        },
+        "observed_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "power_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "gate_power_refs",
+        "union_lower_bound",
+        "minimum_familywise_power",
+        "decision",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.power_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "gate_power_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "union_lower_bound": {
+          "$ref": "#/$defs/rational"
+        },
+        "minimum_familywise_power": {
+          "$ref": "#/$defs/rational"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "fixture_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "test_id",
+        "declared_stage",
+        "generator_name",
+        "generator_version",
+        "generator_source_hash",
+        "coverage_mode",
+        "coverage_axes",
+        "expected_case_count",
+        "case_refs",
+        "mutation_refs",
+        "prerequisite_refs",
+        "evidence_role_registry",
+        "reduction_algorithm_hash",
+        "completeness_proof",
+        "manifest_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.fixture_manifest.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "test_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "declared_stage": {
+          "$ref": "#/$defs/symbol"
+        },
+        "generator_name": {
+          "$ref": "#/$defs/symbol"
+        },
+        "generator_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generator_source_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "coverage_mode": {
+          "enum": [
+            "ENUMERATED",
+            "GENERATED_PROVEN_COMPLETE"
+          ]
+        },
+        "coverage_axes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "values"
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/$defs/symbol"
+              },
+              "values": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          }
+        },
+        "expected_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "case_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "mutation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "prerequisite_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "evidence_role_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/symbol"
+          },
+          "uniqueItems": true
+        },
+        "reduction_algorithm_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "completeness_proof": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manifest_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "test_coverage_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "test_id",
+        "fixture_manifest_hash",
+        "implementation_refs",
+        "case_result_refs",
+        "mutation_result_refs",
+        "expected_count",
+        "executed_count",
+        "missing_count",
+        "extra_count",
+        "duplicate_count",
+        "mismatch_count",
+        "independence_receipt_hash",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.test_coverage.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "test_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "fixture_manifest_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "implementation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "case_result_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "mutation_result_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "expected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extra_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mismatch_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "independence_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "claim_decision_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "claim_id",
+        "decision",
+        "candidate_release_text",
+        "qualification_text",
+        "dependency_receipt_hash",
+        "blocker",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.claim_decision.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "claim_id": {
+          "$ref": "#/$defs/symbol"
+        },
+        "decision": {
+          "enum": [
+            "ELIGIBLE",
+            "BLOCKED"
+          ]
+        },
+        "candidate_release_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "qualification_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dependency_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "blocker": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "architecture_ratification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "stage",
+        "predecessor_receipt_hash",
+        "subject_refs",
+        "scope",
+        "decision",
+        "model_execution_reachable",
+        "human_evidence",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.architecture_ratification.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "stage": {
+          "const": "PRE_RATIFICATION_SPECIFICATION"
+        },
+        "predecessor_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "model_execution_reachable": {
+          "const": false
+        },
+        "human_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "conformance_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "stage",
+        "predecessor_receipt_hash",
+        "subject_refs",
+        "scope",
+        "decision",
+        "model_execution_reachable",
+        "human_evidence",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.conformance.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "stage": {
+          "const": "POST_RATIFICATION_CONFORMANCE"
+        },
+        "predecessor_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "model_execution_reachable": {
+          "const": false
+        },
+        "human_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "run_authority_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "stage",
+        "predecessor_receipt_hash",
+        "subject_refs",
+        "scope",
+        "decision",
+        "model_execution_reachable",
+        "human_evidence",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.run_authority.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "stage": {
+          "const": "PRE_MODEL_EXECUTION"
+        },
+        "predecessor_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "model_execution_reachable": {
+          "const": true
+        },
+        "human_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "runtime_integrity_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "stage",
+        "predecessor_receipt_hash",
+        "subject_refs",
+        "scope",
+        "decision",
+        "model_execution_reachable",
+        "human_evidence",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.runtime_integrity.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "stage": {
+          "const": "RUNTIME_VALIDITY"
+        },
+        "predecessor_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "model_execution_reachable": {
+          "const": true
+        },
+        "human_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "preclaim_authority_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "stage",
+        "predecessor_receipt_hash",
+        "subject_refs",
+        "scope",
+        "decision",
+        "model_execution_reachable",
+        "human_evidence",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.preclaim_authority.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "stage": {
+          "const": "PRE_SCIENTIFIC_CLAIM"
+        },
+        "predecessor_receipt_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "model_execution_reachable": {
+          "const": true
+        },
+        "human_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/byte_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "dispatch_preflight_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "dispatch_class",
+        "executable_hash",
+        "run_lock_hash",
+        "authority_receipt_hash",
+        "immediate_state_hash",
+        "decision",
+        "denial_reason",
+        "spawned_process_count",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.dispatch_preflight.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "dispatch_class": {
+          "$ref": "#/$defs/symbol"
+        },
+        "executable_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "run_lock_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "authority_receipt_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "immediate_state_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "decision": {
+          "enum": [
+            "PERMIT",
+            "DENY"
+          ]
+        },
+        "denial_reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/symbol"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "spawned_process_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "blob_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "blob_ref_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.blob_ref.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "blob_ref_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "generator_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "manifest_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.generator_manifest.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "manifest_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "entropy_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.entropy_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "life_sample_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.life_sample_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "private_controller_body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "body_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.private_controller_body.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "body_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "provider_ingress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "ingress_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.provider_ingress.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "ingress_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "descriptive_provider_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.descriptive_provider_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "privileged_intervention_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.privileged_intervention_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "restricted_response_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "projection_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.restricted_response_projection.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "projection_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "response_intervention_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.response_intervention_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "nominee_universe_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.nominee_universe_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "evidence_projection_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.evidence_projection_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "root_policy_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.root_policy_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "corpus_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "manifest_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.corpus_manifest.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "manifest_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "trainer_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.trainer_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "adapter_validation_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.adapter_validation_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "publication_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.publication_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "resource_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.resource_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "overlap_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "manifest_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.overlap_manifest.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "manifest_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "construction_scope_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.construction_scope_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "claim_dependency_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.claim_dependency_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "run_lock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "run_lock_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.run_lock.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "run_lock_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "static_seal_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.static_seal_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "sealer_independence_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.sealer_independence_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "review_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.review_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "advocate_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.advocate_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "run_ratification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.run_ratification_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "canary_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "schema_version",
+        "artifact_id",
+        "subject_refs",
+        "payload_ref",
+        "status",
+        "receipt_hash"
+      ],
+      "properties": {
+        "contract": {
+          "const": "ppc5.canary_receipt.v4"
+        },
+        "schema_version": {
+          "const": 4
+        },
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        },
+        "payload_ref": {
+          "$ref": "#/$defs/byte_ref"
+        },
+        "status": {
+          "$ref": "#/$defs/symbol"
+        },
+        "receipt_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/blob_ref"
+    },
+    {
+      "$ref": "#/$defs/generator_manifest"
+    },
+    {
+      "$ref": "#/$defs/entropy_receipt"
+    },
+    {
+      "$ref": "#/$defs/life_sample_receipt"
+    },
+    {
+      "$ref": "#/$defs/semantic_table"
+    },
+    {
+      "$ref": "#/$defs/state_body"
+    },
+    {
+      "$ref": "#/$defs/state_receipt"
+    },
+    {
+      "$ref": "#/$defs/private_controller_body"
+    },
+    {
+      "$ref": "#/$defs/private_controller_receipt"
+    },
+    {
+      "$ref": "#/$defs/model_view"
+    },
+    {
+      "$ref": "#/$defs/operation_envelope"
+    },
+    {
+      "$ref": "#/$defs/operation_result"
+    },
+    {
+      "$ref": "#/$defs/queue_slot_receipt"
+    },
+    {
+      "$ref": "#/$defs/queue_effect_receipt"
+    },
+    {
+      "$ref": "#/$defs/ledger_event"
+    },
+    {
+      "$ref": "#/$defs/provider_ingress"
+    },
+    {
+      "$ref": "#/$defs/provider_receipt"
+    },
+    {
+      "$ref": "#/$defs/descriptive_provider_receipt"
+    },
+    {
+      "$ref": "#/$defs/path_proof"
+    },
+    {
+      "$ref": "#/$defs/privileged_intervention_receipt"
+    },
+    {
+      "$ref": "#/$defs/restricted_response_projection"
+    },
+    {
+      "$ref": "#/$defs/response_intervention_receipt"
+    },
+    {
+      "$ref": "#/$defs/dream_request"
+    },
+    {
+      "$ref": "#/$defs/dream_receipt"
+    },
+    {
+      "$ref": "#/$defs/context_install_receipt"
+    },
+    {
+      "$ref": "#/$defs/nominee_universe_receipt"
+    },
+    {
+      "$ref": "#/$defs/evidence_projection_receipt"
+    },
+    {
+      "$ref": "#/$defs/root_policy_receipt"
+    },
+    {
+      "$ref": "#/$defs/sleep_row"
+    },
+    {
+      "$ref": "#/$defs/corpus_manifest"
+    },
+    {
+      "$ref": "#/$defs/trainer_receipt"
+    },
+    {
+      "$ref": "#/$defs/adapter_validation_receipt"
+    },
+    {
+      "$ref": "#/$defs/adapter_manifest"
+    },
+    {
+      "$ref": "#/$defs/publication_receipt"
+    },
+    {
+      "$ref": "#/$defs/stage_outcome"
+    },
+    {
+      "$ref": "#/$defs/endpoint_observation"
+    },
+    {
+      "$ref": "#/$defs/paired_gate_result"
+    },
+    {
+      "$ref": "#/$defs/one_sample_safety_result"
+    },
+    {
+      "$ref": "#/$defs/missingness_result"
+    },
+    {
+      "$ref": "#/$defs/assay_result"
+    },
+    {
+      "$ref": "#/$defs/holm_result"
+    },
+    {
+      "$ref": "#/$defs/power_receipt"
+    },
+    {
+      "$ref": "#/$defs/resource_receipt"
+    },
+    {
+      "$ref": "#/$defs/overlap_manifest"
+    },
+    {
+      "$ref": "#/$defs/construction_scope_receipt"
+    },
+    {
+      "$ref": "#/$defs/claim_dependency_receipt"
+    },
+    {
+      "$ref": "#/$defs/claim_decision_receipt"
+    },
+    {
+      "$ref": "#/$defs/claim_release"
+    },
+    {
+      "$ref": "#/$defs/fixture_manifest"
+    },
+    {
+      "$ref": "#/$defs/test_coverage_receipt"
+    },
+    {
+      "$ref": "#/$defs/test_result"
+    },
+    {
+      "$ref": "#/$defs/architecture_ratification_receipt"
+    },
+    {
+      "$ref": "#/$defs/conformance_receipt"
+    },
+    {
+      "$ref": "#/$defs/run_lock"
+    },
+    {
+      "$ref": "#/$defs/static_seal_receipt"
+    },
+    {
+      "$ref": "#/$defs/sealer_independence_receipt"
+    },
+    {
+      "$ref": "#/$defs/review_receipt"
+    },
+    {
+      "$ref": "#/$defs/advocate_receipt"
+    },
+    {
+      "$ref": "#/$defs/run_ratification_receipt"
+    },
+    {
+      "$ref": "#/$defs/run_authority_receipt"
+    },
+    {
+      "$ref": "#/$defs/dispatch_preflight_receipt"
+    },
+    {
+      "$ref": "#/$defs/canary_receipt"
+    },
+    {
+      "$ref": "#/$defs/runtime_integrity_receipt"
+    },
+    {
+      "$ref": "#/$defs/preclaim_authority_receipt"
+    }
+  ]
+}
+
+

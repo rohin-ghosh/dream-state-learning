@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-dream-operation-v1e",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "reason"],
+      "properties": {
+        "op": {"const": "PASS"},
+        "reason": {"$ref": "#/$defs/auditText"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields", "citations", "prediction", "confidence"],
+      "properties": {
+        "op": {"const": "CREATE"},
+        "kind": {"const": "ROLE_EQUIV"},
+        "fields": {"$ref": "#/$defs/roleEquivFields"},
+        "citations": {"$ref": "#/$defs/citations"},
+        "prediction": {"$ref": "#/$defs/auditText"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields", "citations", "prediction", "confidence"],
+      "properties": {
+        "op": {"const": "CREATE"},
+        "kind": {"const": "CAUSAL_JOIN"},
+        "fields": {"$ref": "#/$defs/causalJoinFields"},
+        "citations": {"$ref": "#/$defs/citations"},
+        "prediction": {"$ref": "#/$defs/auditText"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "fields", "citations", "prediction", "confidence"],
+      "properties": {
+        "op": {"const": "CREATE"},
+        "kind": {"const": "ROLE_APPLICATION"},
+        "fields": {"$ref": "#/$defs/roleApplicationFields"},
+        "citations": {"$ref": "#/$defs/citations"},
+        "prediction": {"$ref": "#/$defs/auditText"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  ],
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "roleEquivFields": {
+      "type": "array",
+      "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "causalJoinFields": {
+      "type": "array",
+      "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "roleApplicationFields": {
+      "type": "array",
+      "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "citations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"}
+    },
+    "auditText": {"type": "string", "minLength": 1, "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]+$"}
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-candidate-registry-v1e",
+  "title": "Sealed host-only shared LoRA candidate registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "prospectively_registered", "sealed_before_final_goal", "sealed_before_fitting", "semantic_rows_only", "host_enumerated_two_backend_union", "source_manifest_hashes", "tokenizer_lock_hash", "backend_manifests", "instance_cardinality", "rosters", "registry_hash"],
+  "properties": {
+    "registry_id": {"type": "string", "pattern": "^CR[0-9]{6}$"},
+    "prospectively_registered": {"const": true},
+    "sealed_before_final_goal": {"const": true},
+    "sealed_before_fitting": {"const": true},
+    "semantic_rows_only": {"const": true},
+    "host_enumerated_two_backend_union": {"const": true},
+    "source_manifest_hashes": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "tokenizer_lock_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "backend_manifests": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["backend_id", "life_manifest_hash", "rows"],
+          "properties": {
+            "backend_id": {"const": "B0"},
+            "life_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "rows": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/backendSemanticRow"}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["backend_id", "life_manifest_hash", "rows"],
+          "properties": {
+            "backend_id": {"const": "B1"},
+            "life_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "rows": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/backendSemanticRow"}}
+          }
+        }
+      ]
+    },
+    "instance_cardinality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["realized_unique_instance_keys", "roster_entries", "exact_set_equality_verified", "binding_keys_unique", "roster_ids_unique"],
+      "properties": {
+        "realized_unique_instance_keys": {"type": "integer", "minimum": 1},
+        "roster_entries": {"type": "integer", "minimum": 1},
+        "exact_set_equality_verified": {"const": true},
+        "binding_keys_unique": {"const": true},
+        "roster_ids_unique": {"const": true}
+      }
+    },
+    "rosters": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["roster_id", "kind", "semantic_hash", "missing_index", "view_id", "cue_utf8_hex", "cue_sha256", "cue_token_ids", "cue_token_ids_sha256", "candidates"],
+        "properties": {
+          "roster_id": {"type": "string", "pattern": "^K[0-9]{6}$"},
+          "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+          "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "missing_index": {"type": "integer", "minimum": 0, "maximum": 2},
+          "view_id": {"enum": ["FIELD_COMPLETION_FORWARD", "FIELD_COMPLETION_REVERSE", "DECLARATIVE_RECOGNITION", "QUESTION_RECOGNITION"]},
+          "cue_utf8_hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+          "cue_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "cue_token_ids": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+          "cue_token_ids_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "candidates": {"type": "array", "minItems": 2, "maxItems": 16, "uniqueItems": true, "items": {"$ref": "#/$defs/candidate"}}
+        }
+      }
+    },
+    "registry_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "x-instance-binding-contract": {
+    "realized_instance_source": "The unique set union of compiler_views.json vectors produced from both sealed backend manifests, keyed by [semantic_hash,view_id,missing_index].",
+    "exact_cardinality": "instance_cardinality.realized_unique_instance_keys MUST equal instance_cardinality.roster_entries MUST equal len(rosters), and the roster binding-key set MUST equal the realized compiler instance-key set exactly.",
+    "binding_key": ["semantic_hash", "view_id", "missing_index"],
+    "kind_check": "roster.kind MUST byte-equal the kind of the semantic row identified by semantic_hash in every backend manifest containing that semantic hash.",
+    "cue_check": "cue_utf8_hex and cue_sha256 MUST equal the exact compiler cue bytes for the binding key; cue_token_ids MUST equal locked-tokenizer encode(cue,add_special_tokens=false), and cue_token_ids_sha256 MUST equal lowerhex(SHA256(UTF8(JCS(cue_token_ids)))).",
+    "uniqueness": "Exactly one roster_id and one roster object are permitted per binding key. A roster_id or roster object MUST NOT be reused for another binding key, even when candidates happen to be byte-identical.",
+    "failure": "Reject before fitting or scoring as INVALID_PRECONDITION/CANDIDATE_ROSTER_BINDING_MISMATCH; no lookup fallback, inferred roster, or repair."
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {
+        "name": "exact_concrete_cue_instance_binding",
+        "binding": {
+          "roster_id": "K000001",
+          "kind": "ROUTE",
+          "semantic_hash": "67369272e957659039a32ccfc9afc1b2809edcc5c1c44223817e87ed973b5503",
+          "view_id": "QUESTION_RECOGNITION",
+          "missing_index": 1,
+          "cue_utf8_hex": "513a7b226669656c6473223a5b2276616c76653a7630222c6e756c6c5d2c226b696e64223a22524f555445222c2276696577223a225155455354494f4e5f5245434f474e4954494f4e227d0a413a",
+          "cue_sha256": "c71fc322446df4ae1c243484f49df9b89b3548b66df912cb27439005d15f89fb",
+          "cue_token_ids": [101, 202, 303],
+          "cue_token_ids_sha256": "cb36a560f41132022d1448f94f818b960a6818ff4c88b086963f5a08dc11467c"
+        },
+        "tokenizer_fixture_note": "The three token IDs are the sealed structural-test tokenizer representation; a production registry substitutes the exact locked production tokenizer IDs and their hash.",
+        "expected": "ACCEPT only when this is the sole roster for the exact realized key and all cue bytes/token checks pass"
+      }
+    ],
+    "negative": [
+      {"name": "missing_roster", "mutation": "delete the sole roster for one realized binding key", "expected": "REJECT"},
+      {"name": "duplicate_roster", "mutation": "add a second roster_id for the same [semantic_hash,view_id,missing_index]", "expected": "REJECT"},
+      {"name": "swapped_roster", "mutation": "exchange the complete rosters of two realized binding keys", "expected": "REJECT"},
+      {"name": "wrong_semantic", "mutation": "change semantic_hash while retaining cue bytes, token IDs, view_id, and missing_index", "expected": "REJECT"},
+      {"name": "wrong_view", "mutation": "change view_id while retaining the QUESTION_RECOGNITION cue", "expected": "REJECT"},
+      {"name": "wrong_missing_index", "mutation": "change missing_index from 1 to 0 while retaining the cue", "expected": "REJECT"},
+      {"name": "wrong_cue_sha256", "mutation": "change cue_sha256 without changing cue_utf8_hex", "expected": "REJECT"},
+      {"name": "wrong_cue_token_representation", "mutation": "change cue_token_ids or cue_token_ids_sha256 independently", "expected": "REJECT"},
+      {"name": "reused_roster", "mutation": "reuse K000001 or its roster object for any second binding key", "expected": "REJECT"}
+    ]
+  },
+  "$defs": {
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "atom": {"oneOf": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/label"}, {"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/effect"}]},
+    "backendSemanticRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "fields", "status", "semantic_hash"],
+      "properties": {
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"enum": ["WITNESSED", "SUPPORTED"]},
+        "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE"]}}, "required": ["kind"]}, "then": {"properties": {"status": {"const": "WITNESSED"}}}},
+        {"if": {"properties": {"kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]}}, "required": ["kind"]}, "then": {"properties": {"status": {"const": "SUPPORTED"}}}},
+        {"if": {"properties": {"kind": {"const": "ROUTE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "EFFECT"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"enum": ["SOURCE_VALUE", "ANIMAL_VALUE"]}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "TARGET_BASELINE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "RECIPE"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3}}}},
+        {"if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]}, "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3}}}}
+      ]
+    },
+    "candidate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "type", "completion_utf8_hex", "completion_sha256", "completion_token_ids_including_eos", "completion_token_ids_including_eos_sha256"],
+          "properties": {
+            "candidate_id": {"type": "string", "pattern": "^C[0-9]{6}$"},
+            "type": {"const": "NOT_FOUND"},
+            "completion_utf8_hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+            "completion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "completion_token_ids_including_eos": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+            "completion_token_ids_including_eos_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "type", "value", "completion_utf8_hex", "completion_sha256", "completion_token_ids_including_eos", "completion_token_ids_including_eos_sha256"],
+          "properties": {
+            "candidate_id": {"type": "string", "pattern": "^C[0-9]{6}$"},
+            "type": {"const": "VALUE"},
+            "value": {"$ref": "#/$defs/atom"},
+            "completion_utf8_hex": {"type": "string", "pattern": "^(?:[0-9a-f]{2})+$"},
+            "completion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "completion_token_ids_including_eos": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+            "completion_token_ids_including_eos_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      ]
+    }
+  }
+}

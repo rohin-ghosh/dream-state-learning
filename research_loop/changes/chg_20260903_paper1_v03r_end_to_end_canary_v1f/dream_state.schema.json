@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-dream-state-v1f",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trigger", "rows", "focus"],
+  "properties": {
+    "trigger": {"$ref": "#/$defs/row"},
+    "rows": {"type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/row"}},
+    "focus": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {"type": {"const": "NO_FOCUS"}}
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "source", "target"],
+          "properties": {
+            "type": {"const": "CAUSAL_JOIN_FOCUS"},
+            "source": {"$ref": "#/$defs/source"},
+            "target": {"$ref": "#/$defs/target"}
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "row": {"oneOf": [{"$ref": "#/$defs/witnessedRow"}, {"$ref": "#/$defs/dreamedRow"}]},
+    "witnessedRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_id", "origin", "kind", "fields", "status", "support_basis", "citations", "depth", "semantic_hash", "record_hash"],
+      "properties": {
+        "row_id": {"type": "string", "pattern": "^M0000(?:[0-3][0-9]|4[0-8])$"},
+        "origin": {"const": "WITNESSED"},
+        "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"const": "WITNESSED"},
+        "support_basis": {"const": "WITNESS"},
+        "citations": {"type": "array", "maxItems": 0},
+        "depth": {"const": 0},
+        "semantic_hash": {"$ref": "#/$defs/hash"},
+        "record_hash": {"$ref": "#/$defs/hash"}
+      },
+      "oneOf": [
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROUTE"}, "fields": {"$ref": "#/$defs/routeFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "EFFECT"}, "fields": {"$ref": "#/$defs/effectFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "SOURCE_VALUE"}, "fields": {"$ref": "#/$defs/sourceValueFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ANIMAL_VALUE"}, "fields": {"$ref": "#/$defs/animalValueFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "TARGET_BASELINE"}, "fields": {"$ref": "#/$defs/targetBaselineFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "RECIPE"}, "fields": {"$ref": "#/$defs/recipeFields"}}}
+      ]
+    },
+    "dreamedRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_id", "origin", "kind", "fields", "status", "support_basis", "citations", "depth", "semantic_hash", "record_hash"],
+      "properties": {
+        "row_id": {"type": "string", "pattern": "^M0010[0-9]{2}$"},
+        "origin": {"const": "DREAMED"},
+        "kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+        "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+        "status": {"const": "SUPPORTED"},
+        "support_basis": {"enum": ["SELF_REVIEW_SAME_EVIDENCE", "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT"]},
+        "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"}},
+        "depth": {"type": "integer", "minimum": 1, "maximum": 100},
+        "semantic_hash": {"$ref": "#/$defs/hash"},
+        "record_hash": {"$ref": "#/$defs/hash"}
+      },
+      "oneOf": [
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_EQUIV"}, "fields": {"$ref": "#/$defs/roleEquivFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "CAUSAL_JOIN"}, "fields": {"$ref": "#/$defs/causalJoinFields"}}},
+        {"required": ["kind", "fields"], "properties": {"kind": {"const": "ROLE_APPLICATION"}, "fields": {"$ref": "#/$defs/roleApplicationFields"}}}
+      ]
+    },
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect": {"enum": ["CHANGE", "STABLE"]},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "routeFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "items": false, "minItems": 2, "maxItems": 2},
+    "effectFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+    "sourceValueFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 3, "maxItems": 3},
+    "animalValueFields": {"$ref": "#/$defs/sourceValueFields"},
+    "targetBaselineFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "items": false, "minItems": 3, "maxItems": 3},
+    "recipeFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "items": false, "minItems": 2, "maxItems": 2},
+    "roleEquivFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 2, "maxItems": 2},
+    "causalJoinFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect"}], "items": false, "minItems": 3, "maxItems": 3},
+    "roleApplicationFields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "items": false, "minItems": 3, "maxItems": 3}
+  },
+  "x-witnessed-identity-contract": {
+    "global_lexical_domain": "Witnessed row IDs are exactly M000000..M000048. M000049 and every higher M000xxx alias are invalid; dreamed IDs remain M001000..M001099.",
+    "per_life_actual_count": "A DREAM state may reference witnessed Mi only when 0 <= i < the sealed life actual_event_count. The contextual validator rejects M000046..M000048 for every 46-event life and requires their projected existence for each 49-event seed-1 life.",
+    "witnessed_shape": "Every M000xxx row is origin/status WITNESSED, support_basis WITNESS, citations=[], depth=0, with host lineage exactly [E plus the same six digits]. Dreamed metadata, derived depth, or composite/mismatched lineage under M000xxx is invalid.",
+    "failure": "Any schema-valid global alias absent from the current life is rejected before DREAM dispatch; no alias repair, truncation, renumbering, or cross-life substitution is allowed."
+  },
+  "x-golden-vectors": {
+    "target": "#/$defs/row; every positive must match exactly one origin branch and exactly one kind branch",
+    "positive": [
+      {"name": "witnessed-source-value", "expected_origin_branch": "witnessedRow", "expected_kind_branch": "SOURCE_VALUE", "instance": {"row_id": "M000005", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6", "record_hash": "023be187f2924544eac6e6e46b692610edb746d945cadab9dff591ed8b95cbb0"}},
+      {"name": "witnessed-animal-value", "expected_origin_branch": "witnessedRow", "expected_kind_branch": "ANIMAL_VALUE", "instance": {"row_id": "M000021", "origin": "WITNESSED", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3", "record_hash": "f34fa1b06ee90e939f8c7d1cf157852571f51ea5225dc4e818a710753c4e95ca"}},
+      {"name": "seed1-witnessed-last-index-48", "expected_origin_branch": "witnessedRow", "expected_kind_branch": "RECIPE", "external_lineage": ["E000048"], "instance": {"row_id": "M000048", "origin": "WITNESSED", "kind": "RECIPE", "fields": ["mixture:1*red+1*yellow+1*blue", "label:brown"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "bfc95fcb9175eb6ab68df775531ee0d81fc020386eecde0de232453a60a2d66e", "record_hash": "7299b6167c5ee6c265be1f72b619ffcd3e9117f79d105de39193d31dab561838"}},
+      {"name": "dreamed-role-equiv-legal-p001084-result", "expected_origin_branch": "dreamedRow", "expected_kind_branch": "ROLE_EQUIV", "premise_ids": ["M001005", "M000001"], "supplied_additional_rows": ["M000003", "M001004", "M000002"], "support_row_ids": ["M001004", "M000002"], "cited_depths": [2, 0, 3, 0], "external_lineage": ["E000001", "E000002", "E000004", "E000005", "E000010"], "instance": {"row_id": "M001084", "origin": "DREAMED", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M001005", "M000001", "M001004", "M000002"], "depth": 4, "semantic_hash": "4a496090c2b949f942d734edc73ed07501b0d2581747ca63943c4b39d87f8a75", "record_hash": "ab09afc1093cdb87fb49c8e602bea616b932f838d213c765d9d03a53019a4b06"}}
+    ],
+    "negative": [
+      {"name": "source-value-wrong-namespace", "instance": {"row_id": "M000005", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "target:confluenceland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6", "record_hash": "023be187f2924544eac6e6e46b692610edb746d945cadab9dff591ed8b95cbb0"}},
+      {"name": "origin-and-row-id-branch-mismatch", "instance": {"row_id": "M001007", "origin": "WITNESSED", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M000004", "M000001"], "depth": 1, "semantic_hash": "f9c8fbc09ff0ddf7a698986c97bba0cd78ac906e02e004b1277676bb8b0d2813", "record_hash": "f986f130506c6e68a1c6e5d25fb183c92cee220759c6719e9b766e17a3d6f0fc"}},
+      {"name": "witnessed-index-49", "mutation": "replace M000048 with M000049", "expected": "REJECT_SCHEMA"},
+      {"name": "above-life-alias", "life_actual_event_count": 46, "mutation": "supply the otherwise valid M000048 row", "expected": "REJECT_CONTEXTUALLY"},
+      {"name": "witnessed-dreamed-metadata", "mutation": "give M000048 origin/status/support/citations/depth from a dreamed row", "expected": "REJECT_SCHEMA"},
+      {"name": "witnessed-wrong-lineage", "mutation": "bind M000048 to [E000047] or multiple event IDs", "expected": "REJECT_CONTEXTUALLY"},
+      {"name": "dreamed-support-permutation", "mutation": "set M001084 citations to [M001005,M000001,M000002,M001004]", "expected": "REJECT_REDUCER_OR_RECORD_HASH"},
+      {"name": "dreamed-duplicate-support", "mutation": "repeat M001004 in M001084 citations", "expected": "REJECT_SCHEMA"},
+      {"name": "dreamed-silent-repair", "mutation": "construct M001084 after repairing any illegal SELF_CHECK input", "expected": "REJECT; no row exists"},
+      {"name": "dreamed-wrong-depth-lineage-or-hash", "mutation": "change depth, derived external lineage, semantic_hash, or record_hash in the P001084 result", "expected": "REJECT_CONTEXT_OR_HASH_VALIDATOR"}
+    ]
+  }
+}

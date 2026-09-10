@@ -1,0 +1,349 @@
+{
+  "artifact_type": "feltcraft_symbolic_governance_vectors",
+  "change_id": "chg_20260901_feltcraft_symbolic_kernel_v5",
+  "derivation_kind": "normative_preimplementation_governance_oracle",
+  "golden_report_delta": {
+    "add_fields": {
+      "projection_negative_attempt_count": 25,
+      "projection_negative_code_histogram": [
+        {
+          "code": "SK08_E_ALIGNMENT",
+          "count": 2
+        },
+        {
+          "code": "SK08_E_ARITY",
+          "count": 7
+        },
+        {
+          "code": "SK08_E_ATOM",
+          "count": 2
+        },
+        {
+          "code": "SK08_E_GOAL",
+          "count": 4
+        },
+        {
+          "code": "SK08_E_MOTIF_INCOMPATIBLE",
+          "count": 2
+        },
+        {
+          "code": "SK08_E_ORDER",
+          "count": 2
+        },
+        {
+          "code": "SK08_E_SOURCE_GRAPH",
+          "count": 2
+        },
+        {
+          "code": "SK08_E_TYPE",
+          "count": 4
+        }
+      ],
+      "projection_negative_mismatch_count": 0,
+      "projection_negative_rejected_count": 25,
+      "symbolic_vector_check_count": 72,
+      "symbolic_vector_mismatch_count": 0
+    },
+    "protocol_id": "feltcraft_symbolic_kernel_v5",
+    "replace_test_receipts": [
+      {
+        "observed_counts": [96, 48, 4, 10, 10, 0],
+        "passed": true,
+        "test_id": "SK01_DOMAIN_INVERSE_V5"
+      },
+      {
+        "observed_counts": [6, 16, 6, 0],
+        "passed": true,
+        "test_id": "SK02_CALIBRATION_VECTORS_V5"
+      },
+      {
+        "observed_counts": [12, 4, 4, 1, 4, 12, 12, 0],
+        "passed": true,
+        "test_id": "SK03_RANDOM_WITNESSES_V5"
+      },
+      {
+        "observed_counts": [96, 1, 1, 20, 0],
+        "passed": true,
+        "test_id": "SK04_MOTIF_WITNESSES_V5"
+      },
+      {
+        "observed_counts": [96, 2, 0, 0, 0],
+        "passed": true,
+        "test_id": "SK05_TWIN_WITNESSES_V5"
+      },
+      {
+        "observed_counts": [192, 5, 192, 8, 16, 17, 0],
+        "passed": true,
+        "test_id": "SK06_COSTS"
+      },
+      {
+        "observed_counts": [36864, 73728, 0],
+        "passed": true,
+        "test_id": "SK07_BRIDGE_DELETION"
+      },
+      {
+        "observed_counts": [12, 96, 27648, 192, 72, 25, 25, 0],
+        "passed": true,
+        "test_id": "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5"
+      },
+      {
+        "observed_counts": [1, 6, 0],
+        "passed": true,
+        "test_id": "SK09_REPORT"
+      }
+    ],
+    "receipt_count_grammar": {
+      "SK01_DOMAIN_INVERSE_V5": ["alignment_count", "distinct_graph_count", "edges_per_graph", "alignment_vector_checks", "graph_vector_checks", "mismatches"],
+      "SK02_CALIBRATION_VECTORS_V5": ["class_count", "class_size", "cal_vector_checks", "mismatches"],
+      "SK03_RANDOM_WITNESSES_V5": ["cal_goal_case_count", "pairs_per_case", "count_per_pair", "value_numerator", "value_denominator", "support_vector_checks", "chosen_pair_checks", "mismatches"],
+      "SK04_MOTIF_WITNESSES_V5": ["legal_case_count", "value_numerator", "value_denominator", "top_point_mass_vector_checks", "mismatches"],
+      "SK05_TWIN_WITNESSES_V5": ["alignment_count", "fixed_twin_relation_checks", "roundtrip_failures", "edge_change_failures", "top_action_change_failures"],
+      "SK06_COSTS": ["intermediate_case_count", "intermediate_cost", "top_case_count", "top_cost", "conjunctive_cost", "bridge_cost", "failures"],
+      "SK07_BRIDGE_DELETION": ["bridge_case_count", "deletion_check_count", "dependency_failures"],
+      "SK08_PROJECTIONS_CLOSED_BOUNDARY_V5": ["local_legal_count", "motif_legal_count", "random_legal_count", "oracle_legal_count", "bound_vector_check_count", "negative_attempt_count", "exact_domainerror_rejection_count", "mismatches"],
+      "SK09_REPORT": ["golden_roundtrip_count", "mutation_rejection_count", "failures"]
+    }
+  },
+  "negative_registry": {
+    "category_counts": {
+      "incompatible": 2,
+      "malformed": 11,
+      "noncanonical": 12
+    },
+    "code_histogram": [
+      {"code": "SK08_E_ALIGNMENT", "count": 2},
+      {"code": "SK08_E_ARITY", "count": 7},
+      {"code": "SK08_E_ATOM", "count": 2},
+      {"code": "SK08_E_GOAL", "count": 4},
+      {"code": "SK08_E_MOTIF_INCOMPATIBLE", "count": 2},
+      {"code": "SK08_E_ORDER", "count": 2},
+      {"code": "SK08_E_SOURCE_GRAPH", "count": 2},
+      {"code": "SK08_E_TYPE", "count": 4}
+    ],
+    "domain_error_surface": {
+      "accepted_exception_type": "DomainError",
+      "args_rule": "exc.args == (exc.code,)",
+      "codes": ["SK08_E_ALIGNMENT", "SK08_E_ARITY", "SK08_E_ATOM", "SK08_E_GOAL", "SK08_E_MOTIF_INCOMPATIBLE", "SK08_E_ORDER", "SK08_E_SOURCE_GRAPH", "SK08_E_TYPE"],
+      "exact_type_rule": "type(exc) is DomainError",
+      "timing_rule": "raise before projection computation and before any mutation, report write, filesystem, environment, cache, or other side effect"
+    },
+    "fixtures": [
+      {"args": [{"ref": "CAL_000"}], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_001", "projection": "LOCAL"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "CAL_000"}], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_002", "projection": "MOTIF_SCHEMA"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "GRAPH_000"}, {"ref": "CAL_000"}], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_003", "projection": "RANDOM_SOURCE"},
+      {"args": [{"ref": "PI_000"}], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_004", "projection": "ORACLE"},
+      {"args": [[["DI0", "DR0", "DR1"]], "DT0"], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_005", "projection": "LOCAL"},
+      {"args": [[ ["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR2", "DI0"] ], {"ref": "CAL_000"}, "DT0"], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_006", "projection": "MOTIF_SCHEMA"},
+      {"args": [["R0", "R1", "R2", "R3", "I0", "I1", "T0"], "DT0"], "category": "malformed", "expected_code": "SK08_E_ARITY", "fixture_id": "SK08_NEG_007", "projection": "ORACLE"},
+      {"args": [0, "DT0"], "category": "malformed", "expected_code": "SK08_E_TYPE", "fixture_id": "SK08_NEG_008", "projection": "LOCAL"},
+      {"args": [{"ref": "GRAPH_000"}, "CAL_000", "DT0"], "category": "malformed", "expected_code": "SK08_E_TYPE", "fixture_id": "SK08_NEG_009", "projection": "MOTIF_SCHEMA"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "GRAPH_000"}, null, "DT0"], "category": "malformed", "expected_code": "SK08_E_TYPE", "fixture_id": "SK08_NEG_010", "projection": "RANDOM_SOURCE"},
+      {"args": [{"not": "an immutable tuple"}, "DT0"], "category": "malformed", "expected_code": "SK08_E_TYPE", "fixture_id": "SK08_NEG_011", "projection": "ORACLE"},
+      {"args": [[ ["DI0", "DR4", "DR1"], ["DI1", "DR2", "DR3"] ], "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ATOM", "fixture_id": "SK08_NEG_012", "projection": "LOCAL"},
+      {"args": [[ ["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR2", "DI0"], ["DT1", "DR0", "DX"] ], {"ref": "CAL_000"}, "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ATOM", "fixture_id": "SK08_NEG_013", "projection": "MOTIF_SCHEMA"},
+      {"args": [[ ["DI0", "DR1", "DR0"], ["DI1", "DR2", "DR3"] ], "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ORDER", "fixture_id": "SK08_NEG_014", "projection": "LOCAL"},
+      {"args": [[ ["DI1", "DR2", "DR3"], ["DI0", "DR0", "DR1"], ["DT0", "DR2", "DI0"], ["DT1", "DR0", "DI1"] ], {"ref": "CAL_000"}, "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ORDER", "fixture_id": "SK08_NEG_015", "projection": "MOTIF_SCHEMA"},
+      {"args": [{"ref": "CAL_000"}, "DT2"], "category": "noncanonical", "expected_code": "SK08_E_GOAL", "fixture_id": "SK08_NEG_016", "projection": "LOCAL"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "CAL_000"}, "DT2"], "category": "noncanonical", "expected_code": "SK08_E_GOAL", "fixture_id": "SK08_NEG_017", "projection": "MOTIF_SCHEMA"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "GRAPH_000"}, {"ref": "CAL_000"}, "DT2"], "category": "noncanonical", "expected_code": "SK08_E_GOAL", "fixture_id": "SK08_NEG_018", "projection": "RANDOM_SOURCE"},
+      {"args": [{"ref": "PI_000"}, "DT2"], "category": "noncanonical", "expected_code": "SK08_E_GOAL", "fixture_id": "SK08_NEG_019", "projection": "ORACLE"},
+      {"args": [["R0", "R0", "R2", "R3", "I0", "I1", "T0", "T1"], "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ALIGNMENT", "fixture_id": "SK08_NEG_020", "projection": "ORACLE"},
+      {"args": [["I0", "R1", "R2", "R3", "R0", "I1", "T0", "T1"], "DT0"], "category": "noncanonical", "expected_code": "SK08_E_ALIGNMENT", "fixture_id": "SK08_NEG_021", "projection": "ORACLE"},
+      {"args": [{"ref": "GRAPH_000"}, {"ref": "CAL_012"}, "DT0"], "category": "incompatible", "expected_code": "SK08_E_MOTIF_INCOMPATIBLE", "fixture_id": "SK08_NEG_022", "projection": "MOTIF_SCHEMA"},
+      {"args": [{"ref": "GRAPH_012"}, {"ref": "CAL_000"}, "DT1"], "category": "incompatible", "expected_code": "SK08_E_MOTIF_INCOMPATIBLE", "fixture_id": "SK08_NEG_023", "projection": "MOTIF_SCHEMA"},
+      {"args": [[ ["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR0", "DI0"], ["DT1", "DR0", "DI1"] ], {"ref": "GRAPH_000"}, {"ref": "CAL_000"}, "DT0"], "category": "noncanonical", "expected_code": "SK08_E_SOURCE_GRAPH", "fixture_id": "SK08_NEG_024", "projection": "RANDOM_SOURCE"},
+      {"args": [{"ref": "GRAPH_000"}, [ ["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR2", "DI0"], ["DT1", "DR2", "DI1"] ], {"ref": "CAL_000"}, "DT1"], "category": "noncanonical", "expected_code": "SK08_E_SOURCE_GRAPH", "fixture_id": "SK08_NEG_025", "projection": "RANDOM_SOURCE"}
+    ],
+    "per_projection_attempt_counts": {
+      "LOCAL": 6,
+      "MOTIF_SCHEMA": 8,
+      "ORACLE": 6,
+      "RANDOM_SOURCE": 5
+    },
+    "reference_resolution": "An object with sole member ref is replaced before call construction by the exact immutable tuple named by that vector_id in this artifact; an unwrapped string such as CAL_000 is an ordinary string and is not a reference.",
+    "total_attempt_count": 25
+  },
+  "representation": {
+    "alignment_index_equation": "4*raw_lexicographic_rank + 2*intermediate_lexicographic_rank + top_lexicographic_rank",
+    "alignment_value_order": ["DR0", "DR1", "DR2", "DR3", "DI0", "DI1", "DT0", "DT1"],
+    "descriptor_to_role_direction": "pi maps each descriptor position to the role atom stored at that position",
+    "global_descriptor_order": ["DR0", "DR1", "DR2", "DR3", "DI0", "DI1", "DT0", "DT1"],
+    "graph_output_order": ["DI0", "DI1", "DT0", "DT1"],
+    "graph_triple_encoding": ["output_descriptor", "ingredient_descriptor_0", "ingredient_descriptor_1"],
+    "ingredient_order_rule": "strictly increasing global descriptor indices after inverse rendering",
+    "inverse_rendering_equation": "EDGE_pi(d)=(d,sort_D(pi^-1(a_pi(d)),pi^-1(b_pi(d))))",
+    "json_array_meaning": "normative immutable tuple",
+    "structural_equality_rule": "same tuple arity and recursively identical atoms at every position; no coercion, sorting, normalization, aliasing, or semantic-equivalence fallback"
+  },
+  "runtime_result_claimed": false,
+  "schema_version": 1,
+  "source_provenance": {
+    "v3_consensus_sha256": "72c92e9fe66acac56bce467565f51c9dab88fd90185e9c79ba5ceeb6fba0cae1",
+    "v3_contract_sha256": "b0b8e7ea67702d8c00283142eb0ef76c059a629ad5fd4067eca311e4e1b2a3c4",
+    "v4_architecture_change_sha256": "fa5ef77c127b7fe614ef33875d55a4099a023bec8fc6a8a1dd98db5f0fbf2a8e",
+    "v4_consensus_sha256": "682a6b53dce625283df32b82bad559ca03e5ec77e64f36279b1da8fd119ab12e",
+    "v4_contract_sha256": "e3ad2936c8288e0e5815d779d400db389b0e354f1cbfc513184d7a9088487ea3",
+    "v4_golden_report_sha256": "f14fbf5de43926b19ad8c19dc71a5d0d6a8fcc37ffbe310b60d4d8d0475c6b51"
+  },
+  "vector_counts": {
+    "ALIGN": 10,
+    "CAL": 6,
+    "GRAPH": 10,
+    "TOP": 20,
+    "chosen_pair": 12,
+    "fixed_twin_relation": 2,
+    "support_table": 12,
+    "total_checks": 72
+  },
+  "vectors": {
+    "alignment_graph_top": [
+      {
+        "descriptor_to_role": ["R0", "R1", "R2", "R3", "I0", "I1", "T0", "T1"],
+        "graph": [["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR2", "DI0"], ["DT1", "DR0", "DI1"]],
+        "index": 0,
+        "inverse_role_to_descriptor": ["DR0", "DR1", "DR2", "DR3", "DI0", "DI1", "DT0", "DT1"],
+        "top": {"DT0": ["DR2", "DI0"], "DT1": ["DR0", "DI1"]},
+        "vector_ids": {"alignment": "PI_000", "graph": "GRAPH_000"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R1", "R2", "R3", "I0", "I1", "T1", "T0"],
+        "graph": [["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"], ["DT0", "DR0", "DI1"], ["DT1", "DR2", "DI0"]],
+        "index": 1,
+        "inverse_role_to_descriptor": ["DR0", "DR1", "DR2", "DR3", "DI0", "DI1", "DT1", "DT0"],
+        "top": {"DT0": ["DR0", "DI1"], "DT1": ["DR2", "DI0"]},
+        "vector_ids": {"alignment": "PI_001", "graph": "GRAPH_001"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R1", "R2", "R3", "I1", "I0", "T0", "T1"],
+        "graph": [["DI0", "DR2", "DR3"], ["DI1", "DR0", "DR1"], ["DT0", "DR2", "DI1"], ["DT1", "DR0", "DI0"]],
+        "index": 2,
+        "inverse_role_to_descriptor": ["DR0", "DR1", "DR2", "DR3", "DI1", "DI0", "DT0", "DT1"],
+        "top": {"DT0": ["DR2", "DI1"], "DT1": ["DR0", "DI0"]},
+        "vector_ids": {"alignment": "PI_002", "graph": "GRAPH_002"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R1", "R2", "R3", "I1", "I0", "T1", "T0"],
+        "graph": [["DI0", "DR2", "DR3"], ["DI1", "DR0", "DR1"], ["DT0", "DR0", "DI0"], ["DT1", "DR2", "DI1"]],
+        "index": 3,
+        "inverse_role_to_descriptor": ["DR0", "DR1", "DR2", "DR3", "DI1", "DI0", "DT1", "DT0"],
+        "top": {"DT0": ["DR0", "DI0"], "DT1": ["DR2", "DI1"]},
+        "vector_ids": {"alignment": "PI_003", "graph": "GRAPH_003"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R2", "R1", "R3", "I0", "I1", "T0", "T1"],
+        "graph": [["DI0", "DR0", "DR2"], ["DI1", "DR1", "DR3"], ["DT0", "DR1", "DI0"], ["DT1", "DR0", "DI1"]],
+        "index": 8,
+        "inverse_role_to_descriptor": ["DR0", "DR2", "DR1", "DR3", "DI0", "DI1", "DT0", "DT1"],
+        "top": {"DT0": ["DR1", "DI0"], "DT1": ["DR0", "DI1"]},
+        "vector_ids": {"alignment": "PI_008", "graph": "GRAPH_008"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R2", "R1", "R3", "I1", "I0", "T0", "T1"],
+        "graph": [["DI0", "DR1", "DR3"], ["DI1", "DR0", "DR2"], ["DT0", "DR1", "DI1"], ["DT1", "DR0", "DI0"]],
+        "index": 10,
+        "inverse_role_to_descriptor": ["DR0", "DR2", "DR1", "DR3", "DI1", "DI0", "DT0", "DT1"],
+        "top": {"DT0": ["DR1", "DI1"], "DT1": ["DR0", "DI0"]},
+        "vector_ids": {"alignment": "PI_010", "graph": "GRAPH_010"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R2", "R3", "R1", "I0", "I1", "T0", "T1"],
+        "graph": [["DI0", "DR0", "DR3"], ["DI1", "DR1", "DR2"], ["DT0", "DR1", "DI0"], ["DT1", "DR0", "DI1"]],
+        "index": 12,
+        "inverse_role_to_descriptor": ["DR0", "DR3", "DR1", "DR2", "DI0", "DI1", "DT0", "DT1"],
+        "top": {"DT0": ["DR1", "DI0"], "DT1": ["DR0", "DI1"]},
+        "vector_ids": {"alignment": "PI_012", "graph": "GRAPH_012"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R2", "R3", "R1", "I1", "I0", "T0", "T1"],
+        "graph": [["DI0", "DR1", "DR2"], ["DI1", "DR0", "DR3"], ["DT0", "DR1", "DI1"], ["DT1", "DR0", "DI0"]],
+        "index": 14,
+        "inverse_role_to_descriptor": ["DR0", "DR3", "DR1", "DR2", "DI1", "DI0", "DT0", "DT1"],
+        "top": {"DT0": ["DR1", "DI1"], "DT1": ["DR0", "DI0"]},
+        "vector_ids": {"alignment": "PI_014", "graph": "GRAPH_014"}
+      },
+      {
+        "descriptor_to_role": ["R0", "R3", "R1", "R2", "I0", "I1", "T0", "T1"],
+        "graph": [["DI0", "DR0", "DR2"], ["DI1", "DR1", "DR3"], ["DT0", "DR3", "DI0"], ["DT1", "DR0", "DI1"]],
+        "index": 16,
+        "inverse_role_to_descriptor": ["DR0", "DR2", "DR3", "DR1", "DI0", "DI1", "DT0", "DT1"],
+        "top": {"DT0": ["DR3", "DI0"], "DT1": ["DR0", "DI1"]},
+        "vector_ids": {"alignment": "PI_016", "graph": "GRAPH_016"}
+      },
+      {
+        "descriptor_to_role": ["R2", "R0", "R1", "R3", "I0", "I1", "T0", "T1"],
+        "graph": [["DI0", "DR1", "DR2"], ["DI1", "DR0", "DR3"], ["DT0", "DR0", "DI0"], ["DT1", "DR1", "DI1"]],
+        "index": 48,
+        "inverse_role_to_descriptor": ["DR1", "DR2", "DR0", "DR3", "DI0", "DI1", "DT0", "DT1"],
+        "top": {"DT0": ["DR0", "DI0"], "DT1": ["DR1", "DI1"]},
+        "vector_ids": {"alignment": "PI_048", "graph": "GRAPH_048"}
+      }
+    ],
+    "calibration_support": [
+      {
+        "cal": [["DI0", "DR0", "DR1"], ["DI1", "DR2", "DR3"]],
+        "representative_alignment_index": 0,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI1"], 4], [["DR2", "DI0"], 4], [["DR3", "DI0"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI1"], 4], [["DR2", "DI0"], 4], [["DR3", "DI0"], 4]]}
+        },
+        "vector_id": "CAL_000"
+      },
+      {
+        "cal": [["DI0", "DR2", "DR3"], ["DI1", "DR0", "DR1"]],
+        "representative_alignment_index": 2,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI0"], 4], [["DR2", "DI1"], 4], [["DR3", "DI1"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI0"], 4], [["DR2", "DI1"], 4], [["DR3", "DI1"], 4]]}
+        },
+        "vector_id": "CAL_002"
+      },
+      {
+        "cal": [["DI0", "DR0", "DR2"], ["DI1", "DR1", "DR3"]],
+        "representative_alignment_index": 8,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI0"], 4], [["DR2", "DI1"], 4], [["DR3", "DI0"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI0"], 4], [["DR2", "DI1"], 4], [["DR3", "DI0"], 4]]}
+        },
+        "vector_id": "CAL_008"
+      },
+      {
+        "cal": [["DI0", "DR1", "DR3"], ["DI1", "DR0", "DR2"]],
+        "representative_alignment_index": 10,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI1"], 4], [["DR2", "DI0"], 4], [["DR3", "DI1"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI1"], 4], [["DR2", "DI0"], 4], [["DR3", "DI1"], 4]]}
+        },
+        "vector_id": "CAL_010"
+      },
+      {
+        "cal": [["DI0", "DR0", "DR3"], ["DI1", "DR1", "DR2"]],
+        "representative_alignment_index": 12,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI0"], 4], [["DR2", "DI0"], 4], [["DR3", "DI1"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI1"], "support_table": [[ ["DR0", "DI1"], 4], [["DR1", "DI0"], 4], [["DR2", "DI0"], 4], [["DR3", "DI1"], 4]]}
+        },
+        "vector_id": "CAL_012"
+      },
+      {
+        "cal": [["DI0", "DR1", "DR2"], ["DI1", "DR0", "DR3"]],
+        "representative_alignment_index": 14,
+        "support_by_goal": {
+          "DT0": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI1"], 4], [["DR2", "DI1"], 4], [["DR3", "DI0"], 4]]},
+          "DT1": {"chosen_pair": ["DR0", "DI0"], "support_table": [[ ["DR0", "DI0"], 4], [["DR1", "DI1"], 4], [["DR2", "DI1"], 4], [["DR3", "DI0"], 4]]}
+        },
+        "vector_id": "CAL_014"
+      }
+    ],
+    "direction_sentinel": {
+      "correct_graph_vector_id": "GRAPH_012",
+      "earliest_non_self_inverse_alignment_index": 12,
+      "inverse_alignment_index_under_wrong_direction": 16,
+      "required_inequality": "GRAPH_012 != GRAPH_016",
+      "wrong_direction_graph_vector_id": "GRAPH_016"
+    },
+    "fixed_twin_relations": [
+      {"alignment_index": 12, "expected_twin_alignment_index": 48},
+      {"alignment_index": 48, "expected_twin_alignment_index": 12}
+    ]
+  }
+}

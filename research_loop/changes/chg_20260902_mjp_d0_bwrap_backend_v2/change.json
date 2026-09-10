@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260902_mjp_d0_bwrap_backend_v2",
+  "title": "Bubblewrap backend correction for the minimal J/P D0 CPU isolation gate",
+  "summary": "Supersede only the unexecutable OCI-backend clause in the registered minimal J/P D0 consensus. Bind the already-held A40 Linux host and its verified Bubblewrap namespace sandbox, strengthen mount, capability, file-descriptor, network, and cgroup canaries, and label the evidence BWRAP_CPU_INTERFACE_ISOLATION. Preserve every world, chronology, oracle, reader, control, resource, claim, and human-gate ruling in the parent consensus.",
+  "system_thesis": "Isolation is supporting scientific hygiene, not the paper contribution. The smallest honest backend should prevent hidden state and evaluator outputs from entering model-facing bytes without installing an unrelated container stack or pretending Bubblewrap is OCI. This correction must neither weaken causal validity nor delay the direct semantic-use experiment with infrastructure that does not change its scientific question.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/human_directive.txt",
+      "sha256": "f5341b6654c3b57149bdd6fa1526033f9947d4e4fd2da2e2e9c185d74f9b536b",
+      "purpose": "Verbatim owner directives requiring paper-first rigor, persistence, and no rushed or reduced design."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_mjp_d0_bwrap_backend_v2/backend_observation.md",
+      "sha256": "4dbda6c911eb320691bec2c0fb631708712131bb38c1a077e49350f91c98cab1",
+      "purpose": "Read-only target-host observations and successful namespace canaries that motivate this exact backend correction."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_rml_minimal_jp_d0_v1/consensus.json",
+      "sha256": "647cc06be22142d983e691c8e14ebd183b215af3c53ef89bd8dbfd03271d4624",
+      "purpose": "Registered parent scientific consensus inherited unchanged except for the explicitly named OCI backend clauses."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory deliberation, exact ratification, review, and compute authority contract."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "modify",
+        "node_id": "RML_MINIMAL_JP_D0_CPU_INTERFACE_ISOLATION",
+        "before": "The parent consensus requires a named Linux OCI container and immutable image digest, but no OCI runtime exists on either held Linux worker.",
+        "after": "The CPU interface gate uses a hash-pinned Bubblewrap 0.9.0 namespace on a4u8g-0105, separately attests its minimal dependency closure and mount graph, and reports BWRAP_CPU_INTERFACE_ISOLATION rather than OCI equivalence.",
+        "rationale": "Use the smallest already-available real containment mechanism while preserving exact visibility and noninterference checks and avoiding an unrelated runtime installation."
+      }
+    ],
+    "edges": []
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "modify",
+        "loop_id": "MINIMAL_JP_MODEL_FACING_CPU_ISOLATION_LOOP",
+        "before": "Fork run and skip inside a Linux OCI container with an image digest that cannot currently be instantiated on the held hosts.",
+        "after": "Attest host and dependency hashes; create identical sealed run/skip input roots; start fresh Bubblewrap namespaces under transient cgroup-v2 units; expose only a minimal read-only executable closure and one sealed read-only input root; provide private tmpfs work and one initially empty audit-only output mount; run the exact non-model evaluator path as UID/GID 65534 with no capabilities, no_new_privs, a closed descriptor set, fixed environment, and no network; discard run outputs from cognition; regenerate both suffixes from their original snapshots; compare every registered root and external resource counter.",
+        "trigger": "The backend-delta consensus and exact combined CPU scope are human-ratified, and every preflight hash/canary matches.",
+        "reads": [
+          "hash-bound parent MJP-D0 consensus and implementation manifest",
+          "sealed public evaluator input bundle",
+          "pinned Bubblewrap, Python, shared-library, package, kernel, OS, and host attestations"
+        ],
+        "writes": [
+          "audit-only evaluator receipts",
+          "external cgroup-v2 and GNU-time resource record",
+          "run-skip suffix comparison and containment canary report"
+        ],
+        "stop_condition": "Return NOT_RUN on any host, binary, dependency, mount, capability, descriptor, environment, network, input-root, output-flow, cgroup, suffix, or resource mismatch. Never fall back to an unisolated process or reinterpret Bubblewrap as OCI.",
+        "rationale": "A fail-closed namespace boundary answers the CPU noninterference question without changing the scientific benchmark or installing a new container system."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "modify",
+        "claim_id": "C_MINIMAL_JP_D0_CONFORMANCE",
+        "before": "The parent consensus allows a CPU_INTERFACE_ISOLATION result only under a named Linux OCI backend.",
+        "after": "A complete pass may additionally report BWRAP_CPU_INTERFACE_ISOLATION on the exact attested host: the non-model evaluator received only its sealed public bundle, wrote only audit receipts, and did not alter the regenerated life suffix. It may not claim OCI conformance, adversarial sandbox security, model isolation, benchmark validity, or any learning result.",
+        "evidence_needed": "Every backend test in this delta plus every unchanged parent-consensus CPU invariant must pass under independent review.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "SEALED_PUBLIC_EVALUATOR_BUNDLE",
+      "HOST_PRIVATE_OR_HIDDEN_SCIENCE_STATE",
+      "AUDIT_OUTPUT_AND_RESOURCE_COUNTERS"
+    ],
+    "stages": [
+      "HOST_ATTESTATION_AND_BUNDLE_SEAL",
+      "BWRAP_EVALUATOR_PAYLOAD",
+      "AUDIT_SINK_AND_SUFFIX_COMPARER",
+      "FUTURE_G1_MODEL"
+    ],
+    "cells": [
+      {"information_id":"SEALED_PUBLIC_EVALUATOR_BUNDLE","stage_id":"HOST_ATTESTATION_AND_BUNDLE_SEAL","visibility":"visible","reason":"The trusted host wrapper hashes and binds the exact public bundle."},
+      {"information_id":"SEALED_PUBLIC_EVALUATOR_BUNDLE","stage_id":"BWRAP_EVALUATOR_PAYLOAD","visibility":"visible","reason":"The payload receives the sealed bundle read-only at one fixed mount."},
+      {"information_id":"SEALED_PUBLIC_EVALUATOR_BUNDLE","stage_id":"AUDIT_SINK_AND_SUFFIX_COMPARER","visibility":"visible","reason":"The trusted comparer verifies pre/post roots and receipts."},
+      {"information_id":"SEALED_PUBLIC_EVALUATOR_BUNDLE","stage_id":"FUTURE_G1_MODEL","visibility":"forbidden","reason":"This change authorizes no model stage; later inputs require separate exact ratification."},
+      {"information_id":"HOST_PRIVATE_OR_HIDDEN_SCIENCE_STATE","stage_id":"HOST_ATTESTATION_AND_BUNDLE_SEAL","visibility":"derived_only","reason":"The wrapper may attest forbidden paths and hidden-state absence without copying their contents into the bundle."},
+      {"information_id":"HOST_PRIVATE_OR_HIDDEN_SCIENCE_STATE","stage_id":"BWRAP_EVALUATOR_PAYLOAD","visibility":"forbidden","reason":"Home, repository, credentials, sockets, hidden truth, oracle, scorer, and ambient artifacts are absent from the namespace."},
+      {"information_id":"HOST_PRIVATE_OR_HIDDEN_SCIENCE_STATE","stage_id":"AUDIT_SINK_AND_SUFFIX_COMPARER","visibility":"visible","reason":"The trusted offline audit may inspect hidden truth only after evaluator decisions and public suffixes freeze, with no write-back edge."},
+      {"information_id":"HOST_PRIVATE_OR_HIDDEN_SCIENCE_STATE","stage_id":"FUTURE_G1_MODEL","visibility":"forbidden","reason":"A later model may receive only its separately ratified public projection."},
+      {"information_id":"AUDIT_OUTPUT_AND_RESOURCE_COUNTERS","stage_id":"HOST_ATTESTATION_AND_BUNDLE_SEAL","visibility":"forbidden","reason":"Inputs freeze before evaluation or resource outcomes exist."},
+      {"information_id":"AUDIT_OUTPUT_AND_RESOURCE_COUNTERS","stage_id":"BWRAP_EVALUATOR_PAYLOAD","visibility":"forbidden","reason":"The payload writes receipts outward but never rereads output, score, counters, or suffix comparisons."},
+      {"information_id":"AUDIT_OUTPUT_AND_RESOURCE_COUNTERS","stage_id":"AUDIT_SINK_AND_SUFFIX_COMPARER","visibility":"visible","reason":"Only the offline audit consumes receipts and external counters."},
+      {"information_id":"AUDIT_OUTPUT_AND_RESOURCE_COUNTERS","stage_id":"FUTURE_G1_MODEL","visibility":"forbidden","reason":"No previous run result or condition label may enter a later model input."}
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "MJP_BW_T01_EXACT_HOST_BINARY_AND_CLOSURE",
+      "kind": "invariant",
+      "setup": "Attest a4u8g-0105, Ubuntu 24.04.4, kernel 6.17.0-35-generic x86_64, AMD EPYC 7742, Bubblewrap 0.9.0 SHA-256 52231e1caf55bcbc667b269f49c63599a6f7db4767ae6a039580d0ff853db712, Python and the complete read-only executable/shared-library/package closure, exact argv, mount graph, environment, and cgroup wrapper before subject editing.",
+      "expected": "Every observed byte matches the frozen manifest; an absent or changed dependency returns NOT_RUN; no OCI-equivalence label appears.",
+      "falsifies": "The replacement backend is mutable, unspecified, or mislabeled.",
+      "evidence_artifact": "artifacts/rml_minimal_jp_d0/bwrap_host_attestation.json",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "MJP_BW_T02_NAMESPACE_VISIBILITY_AND_CAPABILITY_CANARIES",
+      "kind": "invariant",
+      "setup": "Inside fresh run and skip namespaces enumerate root, mountinfo, descriptors, environment, status, UID/GID, and network behavior; attempt every declared input mutation and symlink/hardlink/rename escape; test IPv4, IPv6, inherited Unix sockets, forbidden paths, output-only writes, output rereads, and namespace reset.",
+      "expected": "Only the frozen executable closure and sealed input are readable; every input or forbidden-path mutation fails; only the initially empty audit mount is host-writable; /tmp and /work are private tmpfs; UID/GID are 65534; all capability sets are zero; NoNewPrivs is one; inherited descriptors are closed; network is unreachable; output never enters cognition.",
+      "falsifies": "Hidden state or evaluator output can influence model-facing computation, or containment exists only by convention.",
+      "evidence_artifact": "artifacts/rml_minimal_jp_d0/bwrap_canaries.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "MJP_BW_T03_EXTERNAL_RESOURCE_AND_RUN_SKIP_NONINTERFERENCE",
+      "kind": "end_to_end",
+      "setup": "Run the exact non-model evaluator path and a skip path from byte-identical immutable snapshots in fresh namespaces. Measure the whole wrapper with monotonic wall time, GNU time -v, cgroup-v2 memory.peak and pids.peak, count descendants and transition edges, discard run outputs, regenerate suffixes from the original snapshots, and compare all parent-consensus roots.",
+      "expected": "Run and skip suffixes are byte-identical; one worker is used; external counters satisfy every unchanged parent bound; audit receipts are nonempty and schema-valid; no evaluator output is read by generation or cognition.",
+      "falsifies": "Evaluation mutates the life, resource reporting undercounts subprocesses, or the backend exceeds the minimal-design envelope.",
+      "evidence_artifact": "artifacts/rml_minimal_jp_d0/bwrap_noninterference.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "MJP_BW_T04_BACKEND_DELTA_INDEPENDENT_REVIEW",
+      "kind": "independent_review",
+      "setup": "A fresh reviewer receives the parent consensus, backend manifest, exact commands, canary outputs, resource evidence, run/skip roots, and source closure but no author narrative.",
+      "expected": "The reviewer approves BWRAP_CPU_INTERFACE_ISOLATION only, confirms every scientific parent byte is unchanged, and finds no fallback, hidden mount, ambient dependency, output reread, or broader claim.",
+      "falsifies": "The backend correction weakens or silently changes the experiment, or its evidence does not support the narrow isolation label.",
+      "evidence_artifact": "artifacts/rml_minimal_jp_d0/bwrap_independent_review.json",
+      "required_before": "scientific_claim"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "After fresh interpretation, critique, and consensus, authorize the exact combined CPU-only MJP-D0 scope using the attested Bubblewrap backend instead of the unavailable OCI backend, while preserving all parent scientific rulings and forbidding model/GPU/G1 work?",
+    "forbidden_before_approval": [
+      "edit or execute the minimal J/P subject, oracle, reader, evaluator, or evidence generator",
+      "install or modify host container runtimes, leases, credentials, or system packages",
+      "launch model, network, LoRA, GPU, G1, G2, or later scientific work",
+      "state an OCI, sandbox-security, learning, memory, benchmark, scaling, or paper result"
+    ]
+  }
+}

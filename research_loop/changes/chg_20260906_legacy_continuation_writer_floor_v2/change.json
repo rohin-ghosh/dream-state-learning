@@ -1,0 +1,847 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "dual_extractor_receipt.json",
+      "expected": "Two isolated extractors emit byte-identical snapshot hashes, terminal offsets, occurrence assignments, excluded-note provenance, continuation identities, and rejection reasons for all three lives; every retained row satisfies the frozen grammar.",
+      "falsifies": "Any claim that the corpus is a closed, provenance-preserving extraction from the bound legacy prefix.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Run independent forward-stream and offset-constraint extractors on the immutable B0/B1/B2 snapshot plus declarative source fixtures.",
+      "test_id": "AT1_source_join_closure"
+    },
+    {
+      "evidence_artifact": "target_alignment_golden.json",
+      "expected": "For every retained row, C1 and C2 have byte-identical ordered target-aligned projections including EOS, target labels equal target input IDs, all prefix labels are -100, and row order, target totals, updates, schedules, and initial adapter tensors match.",
+      "falsifies": "The stated target-token/update matching contract or the exact-prefix-package estimand.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "After A1-only tokenizer authorization, render C1 and C2 with the ratified local tokenizer; compare full arrays separately and target-aligned projections exactly.",
+      "test_id": "AT2_target_matching"
+    },
+    {
+      "evidence_artifact": "sealed_panel_comparator_receipt.json",
+      "expected": "Two independent score-blind sealers produce the same complete enumeration, contamination exclusions, duplicate aliases, content hashes, salted ordering, and 64-target panel without scores or model calls.",
+      "falsifies": "The claim that the scored panel is content-hash-disjoint from the bound contamination manifest and selected without score inspection.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "After A2 ratification only, execute both sealers in isolated unpublished capsules using the ratified salt and frozen CompilerGym/dataset environment.",
+      "test_id": "AT3_content_disjoint_seal"
+    },
+    {
+      "evidence_artifact": "gpu_canary_receipt.json",
+      "expected": "Duplicate B0/C1 and B0/C2 runs have identical adapter tensor hashes and loss trajectories; duplicate C0 serving has identical generated IDs, parser outputs, and scores; zero-delta LoRA equals base serving.",
+      "falsifies": "Eligibility of the finite assay command set for A3 promotion.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "Run only the A2-ratified finite GPU canary commands with bound hardware, libraries, seeds, row order, deterministic settings, and serving path.",
+      "test_id": "AT4_reproducibility_canaries"
+    },
+    {
+      "evidence_artifact": "prefix_contrast_report.json",
+      "expected": "Report D_prefix and per-life strict score and marker-rate differences; call an advantage present only when all pre-registered score and marker criteria hold.",
+      "falsifies": "A positive exact neutral-chat-prefix-package contrast on the sealed panel.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "After A3, evaluate C1 and C2 independently trained per source life using identical sealed per-target IDs and fresh environments.",
+      "test_id": "AT5_prefix_package_contrast"
+    },
+    {
+      "evidence_artifact": "selected_package_report.json",
+      "expected": "Report each C2-minus-C0 life difference and strict-marker rate; call a selected-continuation package effect present only when all registered criteria hold.",
+      "falsifies": "A useful total effect of this exact post-hoc selected-continuation package relative to frozen C0 on this panel.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "After A3, compare each source-life C2 adapter to one duplicated deterministic common C0 reference over the sealed panel.",
+      "test_id": "AT6_selected_corpus_floor"
+    },
+    {
+      "evidence_artifact": "claim_ceiling_review.json",
+      "expected": "Report language is mechanically limited to the two registered descriptive contrasts and explicitly excludes discovery, learned THINK, retrieval, composition, planning, revision, parenting, online learning, continual improvement, and an Experience Models flywheel.",
+      "falsifies": "Any broader attribution to the LoRA, dream process, or complete organism.",
+      "kind": "independent_review",
+      "required_before": "scientific_claim",
+      "setup": "Compare report templates, diagnostics, and claim-state output with the frozen claim vocabulary and forbidden-claim scanner.",
+      "test_id": "AT7_claim_ceiling"
+    },
+    {
+      "evidence_artifact": "bootstrap_visibility_receipt.json",
+      "expected": "The target bootstrap and renderer contain no selected payload, historical source action, source outcome, source score, corpus text, or concrete pass name beyond immutable syntax/task metadata; source and generated birth-payload shares are retained only as diagnostics.",
+      "falsifies": "The assertion that evaluation avoids direct prompt copying of selected source actions.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Statically scan A2-bound bootstrap, renderer, manifest, and generated-output diagnostics against the source-payload registry.",
+      "test_id": "AT8_bootstrap_visibility_and_copying"
+    },
+    {
+      "evidence_artifact": "visibility_partition_receipt.json",
+      "expected": "All declared information items have the exact permitted stage accesses, source selection oracles cannot enter target inputs/labels, and target identities/modules/scores/actions cannot reach extraction, tokenizer fitting, trainer settings, renderer bytes, thresholds, or design choices.",
+      "falsifies": "The source-oracle/target-evaluation information barrier.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Execute taint-style fixture tests against stage interfaces and the visibility matrix.",
+      "test_id": "AT9_visibility_oracle_partition"
+    },
+    {
+      "evidence_artifact": "serving_roundtrip_receipt.json",
+      "expected": "For each canary and scored request, rendered bytes, message bytes, template bytes, sealed IDs, engine-consumed IDs, special/stop IDs, adapter identity, generated IDs, decoded bytes, and strict-parser result agree exactly under the bound stop rule.",
+      "falsifies": "That C0/C1/C2 were evaluated through the sealed tokenized prompt and adapter path.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Use TokensPrompt or the exact version-bound equivalent; reject string fallback, double templating, ID mismatch, decoder mismatch, or retry.",
+      "test_id": "AT10_prompt_serving_roundtrip"
+    },
+    {
+      "evidence_artifact": "authority_dag_validation.json",
+      "expected": "The machine-readable graph contains exactly A0\u2192A1\u2192A2\u2192A3\u2192REPORT, has no cycle, and rejects tokenizer commands before A1, sealing/canaries before A2, and remaining execution before A3.",
+      "falsifies": "The claimed acyclic human authorization order.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Validate graph reachability against every proposed command classification and stage authorization receipt.",
+      "test_id": "AT11_authority_stage_acyclicity"
+    },
+    {
+      "evidence_artifact": "independence_fault_injection_receipt.json",
+      "expected": "Both implementations pass all declarative valid/rejected fixtures; one-sided mutations of offsets, attachments, exclusions, aliases, order, boundaries, or hashes produce comparator disagreement and NO-GO.",
+      "falsifies": "The claimed independent corroboration of extraction or sealing.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Run separately hashed processes with no shared project helper module or intermediate outputs, disclosed shared trust bases, and the required fixture manifest.",
+      "test_id": "AT12_independence_fault_injection"
+    },
+    {
+      "evidence_artifact": "seal_quarantine_fault_receipt.json",
+      "expected": "Synthetic partial publication, disagreement, timeout, unexpected read, and exposure faults atomically prevent publication, burn the seal ID/salt/namespace, quarantine capsules, and add exposed hashes to the permanent exclusion registry.",
+      "falsifies": "The durability of score-blind sealing after any exposure or failed attempt.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Exercise A2 sealing logic only on a synthetic universe before any real target enumeration.",
+      "test_id": "AT13_seal_atomicity_and_quarantine"
+    },
+    {
+      "evidence_artifact": "no_writeback_receipt.json",
+      "expected": "Pre/post manifests show no mutation outside the ratified output directory; denied writes fail; output paths match no life/dream/trainer/intake glob; scanner and empty dry-run intake prove no automatic ingestion.",
+      "falsifies": "That results terminate at reporting without altering future organism state.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "Run sandbox and ingestion checks over source snapshots, organism paths, live-life paths, research workflows, adapters, prompts, ledgers, and retrieval/intake locations.",
+      "test_id": "AT14_no_writeback_no_autoingestion"
+    },
+    {
+      "evidence_artifact": "claim_state_truth_table.json",
+      "expected": "Every gate/contrast combination maps only to INVALID_INFRA, ABANDONED_SEAL, INCOMPLETE, VALID_NEGATIVE, VALID_PREFIX_ONLY, VALID_PACKAGE_ONLY, or VALID_BOTH; only valid completed states emit their fixed narrow report templates.",
+      "falsifies": "Any reporting of infrastructure failure as a scientific negative or any unregistered claim state.",
+      "kind": "unit",
+      "required_before": "scientific_claim",
+      "setup": "Exhaustively test the deterministic report-state machine and forbidden-prose scanner.",
+      "test_id": "AT15_claim_state_machine"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260906_legacy_continuation_writer_floor_v2",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "A valid positive result may support only an offline, post-hoc source-oracle-selected continuation-writer/interface and cross-program action-prior floor on the exact sealed panel; C2-minus-C1 is the exact neutral-chat-prefix-package contrast and C2-minus-C0 is the total selected-corpus-package contrast.",
+        "before": "The historical Fable observations were descriptive and did not define a leakage-safe, deterministic selected-continuation writer assay.",
+        "claim_id": "CL1_narrow_writer_floor",
+        "evidence_needed": "All AT1--AT15, A0--A3 ratifications, valid complete execution, and a resulting VALID_PREFIX_ONLY, VALID_PACKAGE_ONLY, or VALID_BOTH report state.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A valid negative means only that neither registered contrast rule was met after a complete valid assay; INVALID_INFRA, ABANDONED_SEAL, and INCOMPLETE are not scientific negatives.",
+        "before": "NO-GO and negative-result semantics were not fully separated.",
+        "claim_id": "CL2_failure_semantics",
+        "evidence_needed": "AT15 truth-table receipt and complete stage receipts.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "No result may claim task-conditioned learning, source-task/action binding, causal verification or outcome learning, memory-path necessity, novel action discovery, learned THINK, retrieval, composition, planning, revision, parenting, continual learning, population generalization, or an Experience Models flywheel.",
+        "before": "Historical exploratory observations could be mistakenly narrated as broader organism learning.",
+        "claim_id": "CL3_organism_credit_ceiling",
+        "evidence_needed": "AT7 claim-ceiling review, AT8/AT9 visibility evidence, AT14 no-writeback evidence, and bounded report template.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/human_directive.txt",
+      "purpose": "verbatim directive",
+      "sha256": "cd83200ce8dd75868df24325b40d25ae036d81cc8bd1877325ab46f3c64662e3"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "deliberation contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v2/scope_proposal.json",
+      "purpose": "scope and authority limits",
+      "sha256": "40eb024b98b4aa94a8d51c2b8e4e7d31fea3d808a9db44d05bc3a42ae9f0dd54"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v0.md",
+      "purpose": "base assay proposal",
+      "sha256": "1d844a658188abe7c8ae0cf0e3b1666d2458f9bb2165bfbed0aed89dfd3c0c95"
+    },
+    {
+      "path": "research_loop/plans/legacy_continuation_writer_floor_v1_repair.md",
+      "purpose": "repaired assay overlay",
+      "sha256": "f26f8ed82e8b125e3e856cb637def30da97a334507725a0ec28b2d6b9e2d23c3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/critique.json",
+      "purpose": "adversarial critique",
+      "sha256": "e7786b6c2dde5648c743baf5f9806937b8e6a16bd15766191c4bc2c10338d0bd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_legacy_continuation_writer_floor_v1/consensus.json",
+      "purpose": "adjudicated dispositions",
+      "sha256": "5243c0173c3a6326bc3096d40f17bc06734976fa6181077d6bee8bd5d146e89d"
+    },
+    {
+      "path": "research_loop/advisory/20260906_fable_v61_longrun_independent_audit_v1.md",
+      "purpose": "legacy audit and limitations",
+      "sha256": "4b5d70926ddb846e7307043974200b88d86bdef4d160f4e793d69cd64a7e9e39"
+    },
+    {
+      "path": "research_loop/advisory/20260906_native_writer_counter_ordering_advisory.md",
+      "purpose": "source join advisory",
+      "sha256": "674b5377daacd78fdf3d2b7f6ce4bc2023069e2e8482414cff690b18c4ac43bb"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v0_audit.md",
+      "purpose": "v0 independent audit",
+      "sha256": "cc3d8146a7a206f89a4d437ff67ada862fafc7739cd33354c706c56e6b4767f2"
+    },
+    {
+      "path": "research_loop/advisory/20260906_legacy_continuation_writer_floor_v1_reaudit.md",
+      "purpose": "v1 repaired-byte audit",
+      "sha256": "052d6944424a7971260cb95ab4d171c80bc8f8abc3318fa90ec8fff34a198a80"
+    },
+    {
+      "path": "organism_v6/bootstrap.txt",
+      "purpose": "current organism bootstrap",
+      "sha256": "ab8713e43a1cbce7761f30518a5a04217a536bcc3e25163c6431825f2e6b8da9"
+    },
+    {
+      "path": "organism_v6/model_backend.py",
+      "purpose": "current serving path",
+      "sha256": "1b224307db99e33423bd7029415384967bb7dee831966bdbecc0a72bb80c92c8"
+    },
+    {
+      "path": "organism_v6/gym_backend.py",
+      "purpose": "current environment interface",
+      "sha256": "e112d4de98166539bff654b2ada92070d1c6cbb8d598d20b36d25a6964e1454e"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "E1_source_to_extractor: immutable legacy source snapshot feeds dual provenance extractors only.",
+        "before": "",
+        "edge_id": "E1_source_to_extractor",
+        "from": "N_lived_episodes",
+        "operation": "add",
+        "rationale": "Historical lived action/outcome episodes are source-oracle-selected data, not new discoveries.",
+        "to": "N_dual_extraction"
+      },
+      {
+        "after": "E2_extraction_to_transport: frozen continuation targets feed assay-local C1/C2 parametric transport after A1 authorization.",
+        "before": "",
+        "edge_id": "E2_extraction_to_transport",
+        "from": "N_dual_extraction",
+        "operation": "add",
+        "rationale": "Separates dream-time/local re-expression evidence from constrained offline parameter transport.",
+        "to": "N_parametric_transport"
+      },
+      {
+        "after": "E3_transport_to_writer: selected adapters and C0 feed a one-decision strict writer interface only after A3.",
+        "before": "",
+        "edge_id": "E3_transport_to_writer",
+        "from": "N_parametric_transport",
+        "operation": "add",
+        "rationale": "The adapter may transport a selected action prior but is not credited with discovery or full cognition.",
+        "to": "N_one_decision_writer"
+      },
+      {
+        "after": "E4_writer_to_scoring: first emitted strict ACT dispatches once to a fresh CompilerGym reset and reporting.",
+        "before": "",
+        "edge_id": "E4_writer_to_scoring",
+        "from": "N_one_decision_writer",
+        "operation": "add",
+        "rationale": "Measures one executable first action, not planning or recurrent outcome learning.",
+        "to": "N_scoring_report"
+      },
+      {
+        "after": "E5_report_quarantine: report has no write edge to lives, dream memory, retrieval, adapters, parent packs, or intake.",
+        "before": "",
+        "edge_id": "E5_report_quarantine",
+        "from": "N_scoring_report",
+        "operation": "add",
+        "rationale": "Later feedback into dream cycles remains forbidden and reporting-only.",
+        "to": "N_quarantined_output"
+      },
+      {
+        "after": "A0\u2192A1\u2192A2\u2192A3\u2192REPORT exact human authority chain.",
+        "before": "",
+        "edge_id": "E6_authority_dag",
+        "from": "N_A0",
+        "operation": "add",
+        "rationale": "Removes tokenizer and GPU authorization cycles.",
+        "to": "N_REPORT"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Immutable historical lived episodes: thought/act/note rows, manifests, actions, and outcomes through the fence.",
+        "before": "",
+        "node_id": "N_lived_episodes",
+        "operation": "add",
+        "rationale": "Source evidence is disclosed but cannot be reconstructed as prompt-conditioned experience."
+      },
+      {
+        "after": "Two isolated no-model/no-tokenizer extractors and source receipts selecting frozen continuation rows by source-oracle criteria.",
+        "before": "",
+        "node_id": "N_dual_extraction",
+        "operation": "add",
+        "rationale": "Dream-like local connection growth/re-expression is represented only as offline source selection, not ongoing organism dreaming."
+      },
+      {
+        "after": "Assay-local C1/C2 LoRA training, target-token/update matched, after independent tokenizer goldens.",
+        "before": "",
+        "node_id": "N_parametric_transport",
+        "operation": "add",
+        "rationale": "Parametric consolidation/transport is strictly bounded and receives no discovery credit."
+      },
+      {
+        "after": "Fresh-reset, goal-conditioned, one-decision C0/C1/C2 continuation writer with no retrieval, notes, planning, revision, or cross-program state.",
+        "before": "",
+        "node_id": "N_one_decision_writer",
+        "operation": "add",
+        "rationale": "Isolates executable ACT interface and first-action prior rather than complete organism cognition."
+      },
+      {
+        "after": "Strict parser, one fresh environment dispatch, fixed-panel aggregation, bounded state report.",
+        "before": "",
+        "node_id": "N_scoring_report",
+        "operation": "add",
+        "rationale": "Target outcomes inform only reporting and cannot feed future training or design."
+      },
+      {
+        "after": "Assay output directory excluded from lives, dreams, adapters, retrieval, parent packs, and intake.",
+        "before": "",
+        "node_id": "N_quarantined_output",
+        "operation": "add",
+        "rationale": "Keeps later thinking/outcome feedback into future dream cycles dormant."
+      },
+      {
+        "after": "Human authorization nodes A0, A1, A2, A3, and REPORT.",
+        "before": "",
+        "node_id": "N_A0",
+        "operation": "add",
+        "rationale": "Exact ratification is required at every transition; no model consensus is authorization."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Whether to ratify the exact architecture artifact for A0-only CPU source preparation, and later whether to ratify each newly hash-bound A1, A2, and A3 scope after its independent receipts.",
+    "forbidden_before_approval": [
+      "Any code edit, source snapshot copy, extractor execution, tokenizer execution, model forward pass, trainer, evaluator, GPU command, target sealing, output-directory creation, or assay command.",
+      "Exposure of a candidate target URI, module, content hash, score, action, or panel before separate A2 ratification.",
+      "Modification, stopping, restart, mount, training from, or ingestion into any Fable life, adapter, prompt, ledger, probe, waking brief, dream, parent pack, or intake workflow.",
+      "Any scientific conclusion beyond a proposal for this narrow floor."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "Acyclic authorization loop: A0 source preparation \u2192 independent review \u2192 A1 tokenizer goldens/manifest \u2192 independent review \u2192 A2 score-blind sealing and finite canaries \u2192 independent review/advocate \u2192 A3 remaining execution \u2192 REPORT.",
+        "before": "",
+        "loop_id": "L1_authority_progression",
+        "operation": "add",
+        "rationale": "Human ratification, not consensus, advances each stage; failures stop rather than grant the next node.",
+        "reads": [
+          "hash-bound proposal bytes",
+          "prior-stage receipts",
+          "independent reviews",
+          "exact command manifests"
+        ],
+        "stop_condition": "Any failed gate, disagreement, unratified byte change, invalid infrastructure, or abandoned seal terminates advancement.",
+        "trigger": "Explicit exact human ratification at the preceding authority node.",
+        "writes": [
+          "stage receipt",
+          "new hash-bound candidate",
+          "NO-GO or promotion decision"
+        ]
+      },
+      {
+        "after": "One-decision assay loop: for each sealed target and authorized cell, render sealed IDs, generate once, parse first strict ACT, evaluate once from a fresh reset, then aggregate only after all required cells complete.",
+        "before": "",
+        "loop_id": "L2_one_decision_assay",
+        "operation": "add",
+        "rationale": "Goal-conditioned retrieval, composition, planning, and revision are intentionally absent.",
+        "reads": [
+          "sealed target IDs",
+          "frozen adapter/base identity",
+          "strict parser",
+          "fresh environment"
+        ],
+        "stop_condition": "One generated action per target; malformed or rejected action scores zero; no retry or continuation.",
+        "trigger": "A3 authorization for a finite remaining command set.",
+        "writes": [
+          "per-request conformance receipt",
+          "strict action result",
+          "score/report inputs"
+        ]
+      },
+      {
+        "after": "Feedback quarantine: reporting may be read by humans only; it neither updates local dream connectivity nor re-expresses memory nor transports parameters into any life.",
+        "before": "",
+        "loop_id": "L3_feedback_quarantine",
+        "operation": "add",
+        "rationale": "Preserves the complete-organism future-feedback boundary while acknowledging it is not exercised.",
+        "reads": [
+          "assay receipts",
+          "fixed report template"
+        ],
+        "stop_condition": "End at report; any attempted writeback or auto-ingestion is INVALID_INFRA.",
+        "trigger": "Completion of L2 and report-state classification.",
+        "writes": [
+          "human-readable bounded report"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "A repaired, staged proposal for a fail-closed offline selected-continuation writer/interface floor. It preserves Fable\u2019s exploratory evidence while preventing source-oracle leakage, bootstrap copying, premature tokenizer/GPU work, target exposure, writeback, and broader organism attribution.",
+  "system_thesis": "The organism\u2019s thesis distinguishes lived action/outcome episodes; dream-time local connection growth and memory re-expression; parametric consolidation/transport; goal-conditioned retrieval, composition, planning, and revision; and later feedback into subsequent dream cycles. This proposal exercises only a quarantined fragment: historical episode traces are post-hoc selected by source outcome oracles, then transported through an assay-local LoRA into a one-decision strict action writer. It does not exercise retrieval, compositional planning, revision, recurrent dream-memory-think loops, or feedback from outcomes into later dreams. Any behavioral result belongs to the complete selected-corpus-plus-writer assay, not to a LoRA as discoverer and not to the complete organism.",
+  "title": "Legacy selected-continuation writer floor v2: repaired staged authorization and quarantine",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "Raw source only.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "Selected target bytes only.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "Only hashes/counts.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "No source access.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "No source access.",
+        "stage_id": "S5_serving",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I1_source_thought_act_note_bytes",
+        "reason": "Aggregate diagnostics only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Selection oracle.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Continuation target bytes only.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Hashes/counts only.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Hidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Hidden.",
+        "stage_id": "S5_serving",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I2_source_actions",
+        "reason": "Aggregate/hash diagnostics only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Selection oracle.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Not needed.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Aggregate counts only.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Hidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Hidden.",
+        "stage_id": "S5_serving",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I3_source_outcomes_counts",
+        "reason": "Aggregate diagnostics only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Selection oracle after independent recomputation.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Not needed.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Aggregate counts only.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Hidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Hidden.",
+        "stage_id": "S5_serving",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I4_source_scores_and_prior_comparisons",
+        "reason": "Aggregate diagnostics only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Diagnostic, never joined as prompt.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Not needed.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Scanner exclusion oracle.",
+        "stage_id": "S3_manifest",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Hidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Forbidden in target bootstrap.",
+        "stage_id": "S5_serving",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I5_birth_payload_and_bootstrap",
+        "reason": "Copying diagnostic only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Bound input extraction only.",
+        "stage_id": "S1_extraction",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Not needed.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Hashes/counts only.",
+        "stage_id": "S3_manifest",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Exclusion oracle.",
+        "stage_id": "S4_sealing",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Hidden.",
+        "stage_id": "S5_serving",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I6_contamination_uris",
+        "reason": "Counts only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Must remain unavailable.",
+        "stage_id": "S1_extraction",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Must remain unavailable.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Must remain unavailable.",
+        "stage_id": "S3_manifest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Score-blind selection only.",
+        "stage_id": "S4_sealing",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Only published sealed targets.",
+        "stage_id": "S5_serving",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I7_candidate_targets_and_modules",
+        "reason": "Sealed panel only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Unavailable.",
+        "stage_id": "S1_extraction",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Unavailable.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Unavailable.",
+        "stage_id": "S3_manifest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Scores forbidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Forbidden until immutable first action exists.",
+        "stage_id": "S5_serving",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I8_target_scores_and_counts",
+        "reason": "Scoring/reporting only.",
+        "stage_id": "S6_scoring",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "No target-aware rendering.",
+        "stage_id": "S1_extraction",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "Template candidate only, no targets.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "Frozen design bytes only.",
+        "stage_id": "S3_manifest",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "Target IDs sealed after selection.",
+        "stage_id": "S4_sealing",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "Exact sealed IDs consumed.",
+        "stage_id": "S5_serving",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I9_target_renderer_and_input_ids",
+        "reason": "Receipt hashes only.",
+        "stage_id": "S6_scoring",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Not present.",
+        "stage_id": "S1_extraction",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Not present.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Not present.",
+        "stage_id": "S3_manifest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Model calls forbidden.",
+        "stage_id": "S4_sealing",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Dispatch input.",
+        "stage_id": "S5_serving",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_generated_actions",
+        "reason": "Parser and aggregate diagnostics.",
+        "stage_id": "S6_scoring",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "No prior results permitted.",
+        "stage_id": "S1_extraction",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "No prior results permitted.",
+        "stage_id": "S2_tokenizer",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "No prior results permitted.",
+        "stage_id": "S3_manifest",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "No prior results permitted.",
+        "stage_id": "S4_sealing",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "No feedback permitted.",
+        "stage_id": "S5_serving",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_assay_results_and_reports",
+        "reason": "Written only to quarantined reporting output.",
+        "stage_id": "S6_scoring",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I1_source_thought_act_note_bytes",
+      "I2_source_actions",
+      "I3_source_outcomes_counts",
+      "I4_source_scores_and_prior_comparisons",
+      "I5_birth_payload_and_bootstrap",
+      "I6_contamination_uris",
+      "I7_candidate_targets_and_modules",
+      "I8_target_scores_and_counts",
+      "I9_target_renderer_and_input_ids",
+      "I10_generated_actions",
+      "I11_assay_results_and_reports"
+    ],
+    "stages": [
+      "S1_extraction",
+      "S2_tokenizer",
+      "S3_manifest",
+      "S4_sealing",
+      "S5_serving",
+      "S6_scoring"
+    ]
+  }
+}

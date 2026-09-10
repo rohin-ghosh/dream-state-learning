@@ -1,0 +1,122 @@
+{
+  "contract": "ppc5.evidence_role_registry.v9",
+  "schema_version": 9,
+  "artifact_type": "EVIDENCE_ROLE_REGISTRY",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "registry_kind": "EVIDENCE_ROLE_REGISTRY",
+  "ordered_row_keys": [
+    "DIRECT_PUBLIC_ACQUIRE",
+    "DREAM_NOMINEE",
+    "DREAM_PROSE",
+    "PROBE_FUTURE_TARGET",
+    "SCORER_OUTPUT",
+    "LIFE_GATE_AGGREGATE",
+    "D1A_CONTROL_SET_MANIFEST",
+    "MODEL_VIEW_MANIFEST"
+  ],
+  "rows": [
+    {
+      "row_key": "DIRECT_PUBLIC_ACQUIRE",
+      "ordinal": 0,
+      "role": "POSITIVE_EVIDENCE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "EVIDENCE_GATE",
+        "WRITER"
+      ],
+      "content_sha256": "cefe5956ed22798c07197cb7e944567d163b5d6fb2f1cf3d9858598ebe844721"
+    },
+    {
+      "row_key": "DREAM_NOMINEE",
+      "ordinal": 1,
+      "role": "ROOT_POLICY_INPUT",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "EVIDENCE_GATE"
+      ],
+      "content_sha256": "576efa6e2a9e10f8f7cd28c94349b69e765c37f39c415821c4c0cc8e7bbfde51"
+    },
+    {
+      "row_key": "DREAM_PROSE",
+      "ordinal": 2,
+      "role": "FORBIDDEN_POSITIVE_EVIDENCE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "EVIDENCE_GATE",
+        "WRITER",
+        "TRAINER"
+      ],
+      "content_sha256": "a23becf3256dd868403435c84792dc0f0dde1db31d60eef89a52a0b3633c63b4"
+    },
+    {
+      "row_key": "PROBE_FUTURE_TARGET",
+      "ordinal": 3,
+      "role": "FORBIDDEN_POSITIVE_EVIDENCE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "EVIDENCE_GATE",
+        "WRITER",
+        "TRAINER"
+      ],
+      "content_sha256": "071b41353118a62b232c18a314e7d56caa9f8acf83ec5ab204a2f3638971ed99"
+    },
+    {
+      "row_key": "SCORER_OUTPUT",
+      "ordinal": 4,
+      "role": "FORBIDDEN_POSITIVE_EVIDENCE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "EVIDENCE_GATE",
+        "WRITER",
+        "TRAINER"
+      ],
+      "content_sha256": "47d4ae2a2e5debac6b2f17e409f5b4c7def04c988eb93c12ec711133df6d4c8f"
+    },
+    {
+      "row_key": "LIFE_GATE_AGGREGATE",
+      "ordinal": 5,
+      "role": "ANALYSIS_UNIT",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "ANALYSIS",
+        "T13",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "5d314b5edfc4a0c742340d4f59bd28131d4f3a03cbc8332519440fa5a46d5ba5"
+    },
+    {
+      "row_key": "D1A_CONTROL_SET_MANIFEST",
+      "ordinal": 6,
+      "role": "CONTROL_CLOSURE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "JOINT_POWER",
+        "T13",
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "056c8726204acb3fb30890c39002924fc0d0ad7fb8d59b863dc50f7ce2ae507b"
+    },
+    {
+      "row_key": "MODEL_VIEW_MANIFEST",
+      "ordinal": 7,
+      "role": "REPLAY_CLOSURE",
+      "cardinality": "ONE",
+      "producer_role": "EVIDENCE_ROLE_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "COLD_REPLAY"
+      ],
+      "content_sha256": "4a41acb503c66a96d4e9b85d40f6a32161e9c71792e4e64df008ea976900f47d"
+    }
+  ],
+  "row_key_set_equality": true,
+  "self_hash": "2d13bf81a5e11a02e8659c03da9a9946e7d66ad383d08a7932a79d13550685b9"
+}

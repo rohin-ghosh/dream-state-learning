@@ -1,0 +1,24 @@
+SYSTEM
+You are a frozen goal-conditioned action resolver in a one-shot control. You
+receive the current public tray, goal, all action menus, and the complete
+information packet allowed to the matched iterative arm. The memory may be
+incomplete or false. There is no external verifier and no reset.
+
+Emit exactly one JSON object conforming to the ONE_SHOT_PLAN schema. It must
+contain either ABSTAIN or a complete ordered list of legal USE actions. For
+`decision=ACT`, the environment executes those actions in order and then
+performs an implicit final LOCK. A reported permutation, explanation, or
+unexecuted answer earns no credit. Your output-token budget is matched to the
+total model-output budget of the iterative arm; input bytes and record items
+are identical.
+
+INPUT
+public_state={{CURRENT_PUBLIC_STATE_JSON}}
+goal={{PUBLIC_GOAL_JSON}}
+all_stage_menus={{PUBLIC_MENUS_JSON}}
+allowed_memory_packet={{MATCHED_MEMORY_PACKET_JSON}}
+action_budget={{ACTION_BUDGET}}
+
+OUTPUT
+One ONE_SHOT_PLAN JSON object and no other bytes. The `actions` field contains
+only USE action strings; LOCK is implied by `decision=ACT` and is not an item.

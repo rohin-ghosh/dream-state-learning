@@ -1,0 +1,211 @@
+{
+  "artifact_type": "PCFL_READER_CONTRACT",
+  "budgets": {
+    "dream_per_sample": {
+      "backtrack_max": 2,
+      "query_local_max": 2,
+      "resolver_operations_max": 5,
+      "world_actions_max": 0
+    },
+    "dream_samples_per_replay_bundle": 4,
+    "think_per_item": {
+      "blocked_outputs_before_terminal_failure": 2,
+      "path_entries_active_max": 4,
+      "query_local_max": 4,
+      "reader_found_returns_max": 4,
+      "resolver_operations_max": 18,
+      "workspace_memory_slots_max": 4,
+      "workspace_outcome_slots_max": 6,
+      "workspace_typed_nodes_max": 16,
+      "world_actions_max": 6
+    }
+  },
+  "candidate_catalog": {
+    "atom_universe": {
+      "PREPARATION_TRANSFORM": {
+        "objects": ["SET_T0_0", "SET_T0_1", "SET_T1_0", "SET_T1_1", "SET_T2_0", "SET_T2_1"],
+        "subjects": "all public P[0-9A-Z]{7} preparation-family handles frozen before target generation; NodeRef kind disambiguates family from instance"
+      },
+      "ROUTE_REQUIREMENT": {
+        "objects": ["G0", "G1", "G2"],
+        "subjects": "all public R[0-9A-Z]{7} route-family handles frozen before target generation; NodeRef kind disambiguates family from instance"
+      },
+      "SITE_PREDICATE": {
+        "objects": ["F0", "F1", "F2", "F3"],
+        "subjects": "all public S[0-9A-Z]{7} site-family handles frozen before target generation; NodeRef kind disambiguates family from instance"
+      }
+    },
+    "candidate_id": "canonical_atom.atom_id",
+    "freeze_time": "before target generation and before any target handle, goal, state, answer, controller output, or score exists",
+    "includes": "every syntactically legal true and false one-edge canonical atom over the reusable public family vocabulary",
+    "indexing": {
+      "forward": "index each atom under its exact subject NodeRef",
+      "reverse": "index the same atom_id under its exact object NodeRef; do not synthesize a second atom, alias, relation filter, or direction hint"
+    },
+    "ordering": {
+      "comparison": "unsigned lexicographic comparison of the concatenated UTF-8 bytes",
+      "key": [
+        "orientation rank: FORWARD=0, REVERSE=1",
+        "relation rank: PREPARATION_TRANSFORM=0, SITE_PREDICATE=1, ROUTE_REQUIREMENT=2",
+        "opposite endpoint NodeRef NFC-before-JCS bytes without LF",
+        "candidate_id lowercase ASCII bytes"
+      ],
+      "stable": true,
+      "target_blind": true
+    }
+  },
+  "canonicalization": {
+    "accepted_wire_form": "RFC8785_JCS_UTF8_PLUS_ONE_LF",
+    "duplicate_keys": "REJECT_BEFORE_NORMALIZATION",
+    "floats": "REJECT",
+    "key_or_string_normalization": "NFC_BEFORE_JCS",
+    "normalization_collision": "REJECT",
+    "null": "REJECT",
+    "unknown_keys": "REJECT"
+  },
+  "copy_origin": {
+    "allowed_modes": ["COPIED", "MODEL_DERIVED_TRANSFORM"],
+    "allowed_source_kinds_for_copied": ["GOAL", "STATE", "OUTCOME_SLOT", "READ_SLOT", "PATH_SLOT"],
+    "copied_check": "resolve the exact schema-enumerated JSON pointer in the sealed named source and require its scalar NFC-before-JCS value bytes to equal anchor.value",
+    "derived_transform_check": "anchor must be one TRANSFORM_TEMPLATE enum chosen by the resolver; cite exactly one earlier PREDICATE_TEMPLATE or ROUTE_REQUIREMENT path slot, optionally the already selected first PREPARATION_TRANSFORM path slot for the second A3 derivation, plus the exact current public trait slots used. Runtime checks only syntax and citations, never computes, corrects, scores, or acknowledges entailment. Wrong derived anchors consume one query and one operation normally. An offline trace checker may later verify ontology entailment for composition credit.",
+    "forbidden": [
+      "substring",
+      "concatenation",
+      "case folding",
+      "description-to-handle lookup",
+      "alias expansion",
+      "family inference",
+      "goal-derived search string other than the explicit MODEL_DERIVED_TRANSFORM reasoning operation",
+      "hidden lookup",
+      "target-conditioned candidate",
+      "coercion"
+    ],
+    "receipt_visibility": "copy_origin, including derivation citations, is retained in the audit query and omitted from the one-atom model-visible return"
+  },
+  "d0_scope": {
+    "allowed": ["schema validation", "canonicalization", "deterministic catalog enumeration", "exact membership fixture", "scripted reachability", "collision certification", "resource accounting"],
+    "forbidden": ["model call", "model weight load", "recognizer execution", "LoRA", "GPU", "network", "remote service", "scientific cell", "scientific claim"],
+    "meaning_of_green": "reference-contract and checker conformance only"
+  },
+  "error_and_timing": {
+    "backend_error": "READER_FAILURE_NEVER_NOT_FOUND",
+    "model_visible_error_payload": "NONE",
+    "timing": "every completed FOUND and NOT_FOUND response is released at the same frozen timing class barrier; timeout or backend error is item failure",
+    "timing_class": "READER_BARRIER_D0_V2"
+  },
+  "fresh_target_bridge": {
+    "preparation": "each PUBLIC_STATE.inventory entry binds a PREPARATION instance NodeRef to its persistent PREPARATION_FAMILY NodeRef; both use P plus seven base36 bytes and kind disambiguates them",
+    "route": "SURVEY binds a ROUTE instance NodeRef to its persistent ROUTE_FAMILY NodeRef; both use R plus seven base36 bytes and kind disambiguates them",
+    "site": "PUBLIC_STATE.site binds a SITE instance NodeRef to its persistent SITE_FAMILY NodeRef; both use S plus seven base36 bytes and kind disambiguates them",
+    "rule": "the bridge is a public state/outcome binding only; no reader-side target, goal, class, hidden mapping, or desired-answer join is permitted"
+  },
+  "identities": {
+    "atom_id": "sha256(NFC-before-JCS({object,relation,subject})) without LF",
+    "candidate_id": "atom_id",
+    "query_fingerprint": "sha256(NFC-before-JCS({anchor,snapshot_handle})) without LF",
+    "return_fingerprint": "sha256(NFC-before-JCS(READ_RETURN)) without LF"
+  },
+  "public_ontology": {
+    "predicate_templates": {
+      "F0": "t0 AND t3",
+      "F1": "t0 OR t3",
+      "F2": "t1 XOR t3",
+      "F3": "(NOT t0) AND (NOT t3)"
+    },
+    "route_requirements": {"G0": "t0=1", "G1": "t1=0", "G2": "t2=1"},
+    "transform_templates": ["SET_T0_0", "SET_T0_1", "SET_T1_0", "SET_T1_1", "SET_T2_0", "SET_T2_1"],
+    "reasoning_rule": "the resolver may reason from a returned public ontology enum plus cited current public traits to one TRANSFORM_TEMPLATE anchor; the runtime exposes no derived literal, answer, validation bit, correction, or retry hint"
+  },
+  "input": {
+    "already_returned_candidate_ids": "ordered unique atom IDs maintained by the runtime and never exposed in resolver input",
+    "object_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/reader_query",
+    "reader_receives_exactly": ["snapshot_handle", "canonical QUERY_LOCAL anchor plus copy_origin", "already_returned_candidate_ids"],
+    "reader_never_receives": [
+      "goal",
+      "state",
+      "scorer",
+      "world",
+      "twin",
+      "seed",
+      "proof",
+      "action oracle",
+      "source manifest",
+      "target manifest",
+      "held-out goals",
+      "claim status",
+      "provenance",
+      "support count",
+      "selector receipt",
+      "corpus metadata",
+      "backend metadata",
+      "candidate metadata",
+      "other item",
+      "other life",
+      "wall time",
+      "retry state",
+      "provider cache",
+      "audit fork"
+    ]
+  },
+  "operation_accounting": {
+    "blocked_output": "consumes one resolver operation; the second blocked output terminates the item at value zero",
+    "counts_as_one_resolver_operation": ["QUERY_LOCAL", "UPDATE_PATH", "BACKTRACK", "EXECUTE_ACTION", "DEFER", "STOP", "PROPOSE_CLAIM", "blocked output"],
+    "execute_action_also_counts": "one world action",
+    "malformed": "consumes the attempted operation and terminates THINK; consumes the preallocated sample without replacement in DREAM",
+    "reader_return": "does not consume a second resolver operation",
+    "worst_case_constructive_paths": {
+      "A2": "site-family forward read + derived-transform reverse read + two UPDATE_PATH + three EXECUTE_ACTION = seven resolver operations",
+      "A3": "site-family forward read + route-family forward read + two independently derived-transform reverse reads + four UPDATE_PATH + six EXECUTE_ACTION = fourteen resolver operations, leaving four operations for adaptive BACKTRACK/DEFER/STOP"
+    }
+  },
+  "output": {
+    "found_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/read_return",
+    "model_visible_found_keys": ["atom", "object_type", "result", "schema_version"],
+    "model_visible_not_found_keys": ["object_type", "result", "schema_version"],
+    "never_visible": ["candidate_id", "rank", "score", "provenance", "confidence", "backend", "count", "token count", "truncation", "latency", "alternative", "orientation"],
+    "values": ["FOUND", "NOT_FOUND"]
+  },
+  "primary_interface": {
+    "anchor": "exactly one schema-valid NodeRef with one copy_origin",
+    "forbidden_primary_fields": ["relation", "direction", "desired_object", "candidate_ids", "search_text", "limit"],
+    "operation": "QUERY_LOCAL",
+    "typed_ceiling": "QUERY_TYPED is absent from this contract and may exist only in a separately reported scaffold-ceiling contract"
+  },
+  "reachability_certificate": {
+    "accepted_targets": "every frozen A2 and A3 item in both twins",
+    "must_check": [
+      "all decisive PREPARATION_FAMILY, SITE_FAMILY, and post-SURVEY ROUTE_FAMILY anchors occur at schema-enumerated public copy origins",
+      "each MODEL_DERIVED_TRANSFORM anchor cites the exact site/route path slots and public traits and is logically entailed under the frozen public F0..F3/G0..G2 ontology",
+      "each required authentic atom is incident to its family anchor",
+      "each required atom can be returned, stored, copied into path, retained or safely evicted, and cited before its decisive action",
+      "all legal sequential world actions fit the six-action cap",
+      "all reads, updates, actions, repeats, and backtracks fit the exact budgets",
+      "all permutations of target-legal anchor acquisition order",
+      "canonical incident order and every repeated-FOUND prefix",
+      "discard tombstones and global returned-ID deduplication",
+      "no QUERY_TYPED, committed query list, goal join, or target-conditioned catalog"
+    ],
+    "failure": "generator version invalid before any model or scientific call",
+    "why_order_independent": "each site/route family has one authentic eligible forward atom and each required transform template has one authentic eligible reverse preparation atom; false catalog candidates and other reverse incidents cannot suppress those atoms under exact membership"
+  },
+  "repeat_dedup_and_discard": {
+    "after_found": "the exact same query fingerprint returns the first ordered eligible candidate not in already_returned_candidate_ids",
+    "after_not_found": "the same query fingerprint with the same or a superset returned-ID history is BLOCKED; it is not dispatched again",
+    "dedup_scope": "global within item and snapshot by atom_id, across anchors, forward/reverse index entries, compiler views, repeats, and workspace eviction",
+    "discarded_edge_slot": "BACKTRACK removes the named edge and every later path_ordinal edge, appends their EDGE0..EDGE3 slot IDs as immutable tombstones in path order, never reuses a tombstoned slot, and never makes their atom IDs returnable again",
+    "memory_found_placement": "place FOUND into the lowest empty MEM slot; if all four are occupied, return BLOCKED_MEMORY_FULL, not NOT_FOUND and do not evict",
+    "memory_overwrite": "automatic overwrite is forbidden; UPDATE_PATH is the normal release operation and atom_id remains in already_returned_candidate_ids after release",
+    "path_update": "UPDATE_PATH copies the complete cited memory atom byte-for-byte into the lowest never-used nontombstoned active EDGE0..EDGE3 slot, assigns the next path_ordinal, records FORWARD when anchor was the atom subject or REVERSE when anchor was the atom object, then clears the cited MEM slot",
+    "public_state_change": "does not reset reader history; reset_reason is visible to the resolver but the same snapshot membership remains deduplicated",
+    "snapshot_change": "starts a new returned-ID history only at a new sealed item/checkpoint, never within an item"
+  },
+  "schema_version": "PCFL_D0_EXACT_V2",
+  "twin_collision": {
+    "certificate_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/preaction_twin_collision_certificate",
+    "preaction_components": ["system_prompt", "goal", "state", "workspace", "last_read", "repeat_state", "budget", "prompt_input", "snapshot_handle", "candidate_catalog", "return_envelope", "timing_class"],
+    "reader_catalog_collision": "all syntactically legal candidates, incidence entries, ordering, result envelope, and timing class collide; authentic membership and the first post-query atom may differ only because memory is the intended treatment",
+    "snapshot_handle_rule": "the exposed Q handle is an opaque per-life namespace coordinate and collides across twins; isolated life roots resolve it without passing world/twin identity to the reader",
+    "validity": "independently computed left/right bytes, lengths, and hashes must be equal for every component while the registered correct preparation sets are disjoint",
+    "when_required": "every paired A2/A3 target before the first resolver operation"
+  }
+}

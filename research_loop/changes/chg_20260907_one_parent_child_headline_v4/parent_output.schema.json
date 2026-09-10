@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dream-state:one-parent-v4:parent-output",
+  "title": "Closed parent decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lesson_code", "evidence_event_ids", "template_version", "answer_content"],
+  "properties": {
+    "lesson_code": {"enum": ["PREDICT_UPDATE", "DISCRIMINATE", "SCOPE", "NO_CORRECTION"]},
+    "evidence_event_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 2,
+      "items": {"type": "string", "pattern": "^EV_[A-F0-9]{16}$"}
+    },
+    "template_version": {"const": "ONE_PARENT_V4_1"},
+    "answer_content": {"const": "NONE"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"lesson_code": {"const": "NO_CORRECTION"}}},
+      "then": {"properties": {"evidence_event_ids": {"maxItems": 0}}},
+      "else": {"properties": {"evidence_event_ids": {"minItems": 1}}}
+    }
+  ]
+}
+

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260907_one_parent_child_headline_v4",
+  "inherits": {
+    "v1": {"path": "research_loop/plans/one_parent_child_headline_v1.md", "sha256": "e356bcecc0cdec3199cf8ecb23c2dc9790a59a11ee6dc8f81b1bfd399c7cf4d5"},
+    "v2": {"path": "research_loop/plans/one_parent_child_headline_v2_addendum.md", "sha256": "3c13492bb1378e07d966597efb9eb72f3c8742631a1e7ef1cb7b8977a5039cff"},
+    "v3": {"path": "research_loop/plans/one_parent_child_headline_v3_spending_repair.md", "sha256": "632008a3306da4e09e6cfb73563f398aab5f6abf81e31b32de249ee177a81cd3"},
+    "v3_consensus": {"path": "research_loop/changes/chg_20260907_one_parent_child_headline_v3/consensus.json", "sha256": "558ce56fd3859b99954812515076b8b3b2f5086c16a17c0d87f0c3a1aa2a3b19"}
+  },
+  "identities": {
+    "parent_model": "Qwen/Qwen2.5-32B-Instruct",
+    "parent_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "child_model": "Qwen/Qwen2.5-7B-Instruct",
+    "child_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "parent_prompt": "research_loop/changes/chg_20260907_one_parent_child_headline_v4/parent_policy_prompt.txt",
+    "parent_input_schema": "research_loop/changes/chg_20260907_one_parent_child_headline_v4/parent_input.schema.json",
+    "parent_output_schema": "research_loop/changes/chg_20260907_one_parent_child_headline_v4/parent_output.schema.json"
+  },
+  "parent_runtime": {
+    "reset": "fresh stateless provider session from the pinned checkpoint for every one of the at-most-12 correction opportunities per root",
+    "decoding": {"temperature": 0, "top_p": 1, "max_output_tokens": 96, "constrained_json_schema": true},
+    "tools": false,
+    "memory_across_calls": false,
+    "input": "only parent_input.schema.json; no raw task text or action payload",
+    "output": "only parent_output.schema.json; evidence IDs must be a subset of supplied IDs and lesson_code must be supplied as eligible",
+    "renderer": {
+      "PREDICT_UPDATE": "Before another action, state one falsifiable prediction about its public outcome. If the outcome contradicts it, identify one causal assumption you are narrowing before choosing the next action.",
+      "DISCRIMINATE": "Keep two live explanations. Choose a legal action whose possible public outcomes would distinguish them. The action is yours to choose.",
+      "SCOPE": "Keep the current belief local to its cited evidence. Promote it only after support from a distinct task; narrow or retract it after contrary public evidence.",
+      "NO_CORRECTION": "Continue using only public evidence. Decide for yourself what to test, revise, or retain."
+    },
+    "neutral_renderer_vocabulary": [
+      "Continue.",
+      "Choose your next step.",
+      "Review public evidence.",
+      "Test, revise, or retain."
+    ],
+    "neutral_matching": "At the separately authorized tokenizer gate, enumerate concatenations of 1 through 32 entries from neutral_renderer_vocabulary, order candidates lexicographically by their UTF-8 bytes, and choose the first candidate that exactly matches role and token count. If no candidate matches within 96 tokens, return TOKEN_MATCH_NO_GO before scientific identities exist. No wording may be invented after this proposal."
+  },
+  "sleep_visibility": {
+    "parent_correction": "VISIBLE_MASKED_CONDITIONING in childhood fits C1 and C2; zero supervised labels; absent from C3 and every deployment fit",
+    "child_restatement": "VISIBLE_MASKED_CONDITIONING under the inherited 2/1/1/0, 1/1/1/1, 0/1/1/2 scaffold schedule; never a target by virtue of being a restatement",
+    "public_result_and_old_history": "VISIBLE_MASKED_CONDITIONING only where inherited; zero supervised labels",
+    "eligible_targets": ["exact committed child THINK_TO_ACT suffix through EOS", "exact validated child DREAM_STATE suffix through EOS"],
+    "post_childhood": "parent prompt, output, restatement, nursery task/state/ledger, optimizer, rehearsal corpus, caches, environment variables, filenames, and process memory are deleted and sentinel-audited before deployment"
+  },
+  "pilot": {
+    "adverse_bound": {"numerator": -1, "denominator": 20},
+    "adverse_rule": "every one of D, W_P, and L_terminal in every pilot root must be at least -1/20",
+    "advance_rule": "all four roots pass validity and resource gates; no adverse crossing; at least three roots have D>0 AND W_P>0 AND L_terminal>0 jointly; exact-rational means of all three quantities are >0",
+    "numeric_law": "reduce canonical integer counts to exact rationals; denominator positive; signed zero canonicalizes to 0/1 and is not positive; missing, nonfinite, duplicate, noncanonical, or unreduced input yields NO_ADVANCE",
+    "missingness": "any absent committed primary cut, failed root validity, or administrative missingness yields NO_ADVANCE; roots are retained and never retried or replaced",
+    "blinding": "pilot_decision_manifest is computed and hash-committed before any detailed writer-path receipt is unsealed to the analyst or human spender"
+  },
+  "q_support": {
+    "programs": "canonical enumeration of the hash-bound eligible CompilerGym universe; reject aliases/collisions; keyed permutation; first 56 unique valid programs without replacement, first 48 wake and last 8 probe",
+    "nursery": "canonical candidate enumeration under the two inherited generator families; keyed permutation; first 12 structurally valid matched opportunity packets, each with source and fresh homologous application tasks, yielding 24 unique tasks per P/U branch",
+    "exhaustion": "fewer than 56 unique eligible programs or 12 matched nursery opportunities is Q_SUPPORT_INVALID before root execution; do not retry, substitute, or change the universe",
+    "root_independence": "roots draw independently with replacement from Q using the inherited HMAC/PCG64DXSM counter-key law; P/U and five-service within-root coupling remains exact"
+  },
+  "resource_contract": {
+    "per_root": {"logical_calls_max": 5291, "generated_output_tokens_max": 972544, "fits_exact": 12, "active_memory_input_tokens_max": 8192000, "query_embeddings_max": 4400, "changed_record_embeddings_max": 960, "bm25_inserts_max": 3840, "bm25_removals_max": 960},
+    "writer_canary": {"fits_max": 18, "logical_calls_max": 1032, "generated_output_tokens_max": 528384},
+    "campaign_N32": {"roots_total": 38, "logical_calls_max": 204090, "generated_output_tokens_max": 37885056, "fits_max": 474},
+    "latency_gates": {"fit_to_hashed_checkpoint_p95_seconds_max": 600, "shutdown_to_fresh_mount_and_canary_p95_seconds_max": 900},
+    "schedule_gate": "with H_N=measured p95 childhood wall/root on one child A40 with shared TP2 parent and H_D=measured p95 deployment wall/root on one A40, 8*H_N + 6*H_D must be no greater than remaining guaranteed lease minus max(12 hours, 20 percent of remaining guaranteed lease)",
+    "storage_gate": "projected terminal artifacts plus two transactional copies must fit while preserving max(100 GiB, 20 percent of filesystem capacity) free",
+    "runtime_gate": "dynamic per-request multi-LoRA must pass hash/mount/isolation fixtures; otherwise the one-root-per-A40 schedule is NO_GO",
+    "required_receipts": ["model/tokenizer/dependency/source revisions", "device UUID and driver/runtime", "actual input/output/labeled/attended tokens", "calls/actions/fits", "raw/store/index/checkpoint bytes", "CPU/GPU/wall/latency/energy", "process concurrency and peak memory", "guaranteed lease interval and reserve inequality"]
+  },
+  "review_gate": {
+    "verdicts": ["PASS", "REWORK", "REJECT"],
+    "advance_only_if": "fresh independent reviewer verdict PASS, unresolved_count=0, reviewer/config/context/implementation/evidence hashes present, independence attestation true",
+    "nonoverride": "author-side advocacy cannot override REWORK or REJECT; repaired bytes require a new bound review and, when material, new human approval"
+  },
+  "claim_boundary": {
+    "headline_object": "fixed finite-horizon distribution-conditional total parenting-by-write interaction for one pinned reset parent policy and one pinned child checkpoint",
+    "mechanism_descriptor": "outcome-gated self-distillation",
+    "P1_R0": "deployment-affordance-parity full-package comparison only",
+    "forbidden_without_separate_gate": ["DREAM necessity or efficacy", "LoRA or substrate superiority", "explicit links as necessary", "equal-memory comparison", "online binding rather than lookup or imitation", "connected or compressed knowledge inside weights", "planning, composition, generalization, creativity, sentience, alignment", "continued or asymptotic improvement", "first-method novelty"]
+  }
+}

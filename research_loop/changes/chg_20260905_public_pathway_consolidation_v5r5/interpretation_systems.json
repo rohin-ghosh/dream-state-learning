@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "ppc5r5_systems_fresh_v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r5",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "cbbee3847bd548b0fb28211b53b522ad81315ea7340133187526bce2267093b4",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/change.json",
+      "sha256": "cbbee3847bd548b0fb28211b53b522ad81315ea7340133187526bce2267093b4",
+      "purpose": "Exact architecture proposal interpreted by this artifact."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling research workflow contract."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash-bound intake and authority validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive canonical IO dependency."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Proposal schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Interpretation schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Critique schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_consensus.schema.json",
+      "sha256": "3d741c8724d73a6a2b7ca71f04219203fb3bdf6373176720e2238ae6988ce16f",
+      "purpose": "Consensus schema."
+    },
+    {
+      "path": "research_loop/schemas/architecture_human_ratification.schema.json",
+      "sha256": "9aac347cac5ca427d65c7617c39314bb8fd821919043867e3781a03153b3d58b",
+      "purpose": "Human ratification schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/human_directive.txt",
+      "sha256": "93a35b89f40c1b78e39f4cade46e5df7436e974e30bd6cae75e440dd3b2be080",
+      "purpose": "Verbatim direction and bounded r4-resolution provenance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/scope_proposal.json",
+      "sha256": "9c4eb37af0a7efde06d105b83ce99c122026bd34a6d0c6e0bc04a57be71e7b70",
+      "purpose": "Exact proposal-only scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/protocol.md",
+      "sha256": "57973de86fac9602377d0947c5854fb41eb8ae2f5c2ad0261eae875c474da012",
+      "purpose": "Standalone scientific question, estimand, construction law, and boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/machine_contract.md",
+      "sha256": "97a26a2158d354e8290125f16c9bbadf57275cafbb863a2c4ac593aa449cb07c",
+      "purpose": "Total public machine, provider, path, DREAM, and SLEEP algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/semantic_validators.md",
+      "sha256": "f86fe02d818cb7ef63fe85c03c193f1e5e58d1d3844a8d57febb89b24aff7a89",
+      "purpose": "Pure cross-field, exact-statistical, and acyclic-DAG validators."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/assay_contract.json",
+      "sha256": "0d7e137660d97941be6e3eb53d83805285724885ffa11215f085145dc18d9f94",
+      "purpose": "Assay populations, freeze matrix, controls, and accepted-constructible generator law."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/analysis_contract.json",
+      "sha256": "e4adc77004a36d4030e358b026990a92099d3bbe8008b46a8052a09a3eafca6b",
+      "purpose": "Exact paired, safety, missingness, Holm, and conditional power algorithms."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/status_contract.json",
+      "sha256": "5221a4e09c62e0078e42daae7d71d73e300f0b823fd060156f837f4320a6b0d5",
+      "purpose": "Total status-to-endpoint and shared-DREAM dependency mapping."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/visibility_contract.json",
+      "sha256": "3ac798a7daf3045c13f3d010abd18afd6a10444955cbec6ad08349cffe0d58b9",
+      "purpose": "Complete information-flow matrix."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/authority_contract.json",
+      "sha256": "2cd9d87bcfeef8b07634814422d1608f59817061e65f3c3201d9d54b5baccdd8",
+      "purpose": "Stage-specific, role-closed authority and release DAG."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/claim_dependency_map.json",
+      "sha256": "7aa1c6ba276f0bb712c5a88fd8585e0fc44349ca0448ac8cdc9ff4ea9438e671",
+      "purpose": "Literal candidate-decision, T14, authority, and release map."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/object_inventory.json",
+      "sha256": "205122bd0b968b12a17b9dd8822d00cd48dad536d19794e48a3eaa85693c0198",
+      "purpose": "Closed durable-artifact inventory."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/contracts.schema.json",
+      "sha256": "1e9de72c91a4a953fe2620a3dad1d4eb6a7b80d3ad3e2a5d6b9a61586e3b3b32",
+      "purpose": "Closed typed schemas for every inventoried artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/controller_registry.json",
+      "sha256": "476a97dcae08d22ff0789830762e7c9e8e9a29e7ed0c58519769fdf35296111f",
+      "purpose": "Hash-bound total D1A-D1D controller rows and vocabulary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/test_contract.json",
+      "sha256": "bf0628ae5a7433fefed3e94fc52ad20311b2852097c6c564f021ef4076ca23db",
+      "purpose": "Executable T01-T14 stage and coverage obligations."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r5/drafts/build_r5_contract_schema.py",
+      "sha256": "bd28e56f7adbe9eb280082929b6a1baef407d1461ba9a6473420ec412f79d3e9",
+      "purpose": "Nonnormative deterministic generator for repetitive schema, inventory, and controller bytes."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r4/consensus.json",
+      "sha256": "b890dbc9565712aba137ac93f0d63b39593d76eebba2b26f3dbfafa6685340f9",
+      "purpose": "Binding PPC5r4 rework consensus and twelve-blocker provenance only; no inherited authority."
+    },
+    {
+      "path": "research_notes/52_public_pathway_consolidation_mechanism.md",
+      "sha256": "7ada1014fca505cf6fea5e25b67611d2b93ea0c7fe5e5ff504aa5b7b7b25f00d",
+      "purpose": "Scientific mechanism framing and assay-to-thesis boundary provenance."
+    }
+  ],
+  "system_thesis_interpretation": "The proposed scientific thesis is appropriately narrower than the Experience Model flywheel: it separates four prerequisite assays, freezes THINK/DREAM/ACT, confines parametric change to READ scoring, uses directly observed paired computational arms, and limits any headline to a qualified non-mediational intersection over a locked generator population. That conceptual boundary is strong. The exact v5r5 bytes are nevertheless not an executable realization of that thesis and do not resolve every inherited r4 blocker. Multiple shipped artifacts contradict their own schemas or prose, several mandatory evidence objects are only untyped hashes, and the controller, queue, acceptance, power, visibility, and release paths still contain unreachable states or cycles. Verdict: REWORK before human architecture ratification or PPC-specific implementation.",
+  "graph_delta_interpretation": "The node/edge decomposition is directionally coherent: public state and ledger, common provider, privileged intervention, shared DREAM, evidence-only SLEEP, isolated adapter, path constructor, life reducer, typed receipts, and staged authority are the right architectural cuts. The claimed CLOSED_TYPED_CONTRACT_UNION and ACYCLIC_TYPED_RECEIPT_DAG nodes are false for the bound bytes. The controller registry is not an instance of its declared schema; the queue-slot/controller-after relationship is cyclic; transition lineage lacks an exact cause-specific role registry; D1A donor/derangement and D1B parity/intervention proof hashes have no inventoried closed target types; and candidate/T14 evidence registries are represented by dangling hashes or generic artifact arrays. The conceptual decision -> T14 -> authority -> release direction is present, but the t14_cold_replay_receipt.test_result_hash plus T14 test-result evidence relationship is undefined and potentially cyclic.",
+  "loop_delta_interpretation": "The intended recurrence orders preflight, dispatch, debit, parse, controller reduction, queue effect, event, and next receipt and correctly makes missing/error branches observable. The shipped row machine is not total. Twenty-two success_next_phase/error_next_phase values such as READ[k+1], PLAN_READ[k+1], FLUSH[k+1], and PROVIDER[i+1] violate the SYMBOL schema used by controller_row. No rows or normalization rule bridge READ[L] to PREDICT, PLAN_READ[L] to FLUSH or BLIND_PREDICT, FLUSH[L] to PREDICT or EXECUTE_COMMIT, PROVIDER[Q] to D1D READ/PREDICT, or R=0 directly to PREDICT. Registry accepted result classes such as FOUND, NOT_FOUND, FINALIZE, PUBLISHED, and NO_ADAPTER are not values of operation_result.status even though every transition_event requires operation_result_hash, and no typed mapping is specified. A newly queued controller-after receipt must include the queue slot receipt hash while that queue_slot_receipt requires the same controller-after hash, creating mutual hash ancestry. The status table also omits declared terminal outcomes including SCHEDULE_INCOMPLETE and PROVIDER_SEQUENCE_COMPLETE as raw-result rows, while terminal_payload cannot encode NO_VALID_ACTION or CONSTRUCTION_FAIL. Therefore the minimal public recurrence cannot be executed or cold-replayed uniquely.",
+  "claim_delta_interpretation": "The five literal claims and fixed qualification are appropriately bounded and schema-constant, and the component/intersection distinction is scientifically legible. None is currently releasable because the exact evidence construction is incomplete. D1A lacks typed donor-bundle, exact-match, binding-derangement, and dose/opportunity proof objects; D1B per-edge fields contain bare CUT/TWIN/SHAM/parity hashes without closed target types; test and dependency role registries are not materialized as inventoried objects; and release-critical controller/status paths are not total. In addition, the r4 power resolution required an unconditional complete construction-plus-release bound unless constructability is probability one, whereas v5r5 authorizes only power conditional on a successful static construction and does not supply the required probability-one proof or unconditional bound. Redefining the target as the accepted-constructible law can bound the eventual claim, but it does not satisfy the inherited run-authority requirement without an explicit adjudicated change to that requirement.",
+  "visibility_matrix_interpretation": "The 13 x 14 product is complete and the standalone visibility matrix agrees in modality with change.json. The provider/audit split, privileged response resolution, shared arm-neutral row schema, target/future sterility, and DREAM-consumer-specific missingness are useful repairs. One normative contradiction remains: CLAIM_TEXT is forbidden at REDUCER, meaning it may not influence reducer output, while CLAIM_REDUCER produces claim_decision_receipt and that schema requires the exact candidate_release_text, qualification_text, and forbidden_claims before T14 and CLAIM_RELEASE. Compiling the literal into the reducer still makes claim text influence REDUCER bytes. The matrix must instead allow an exact derived-only claim-literal projection at the candidate-decision reducer or move candidate-decision construction to a separately named stage. Cause-specific transition lineage and generic test/dependency evidence arrays also leave no closed stage-schema proof that audit-only or condition-semantic artifacts cannot enter restricted descendants.",
+  "acceptance_test_ids_addressed": [
+    "PPC5R5_T01",
+    "PPC5R5_T02",
+    "PPC5R5_T03",
+    "PPC5R5_T04",
+    "PPC5R5_T05",
+    "PPC5R5_T06",
+    "PPC5R5_T07",
+    "PPC5R5_T08",
+    "PPC5R5_T09",
+    "PPC5R5_T10",
+    "PPC5R5_T11",
+    "PPC5R5_T12",
+    "PPC5R5_T13",
+    "PPC5R5_T14"
+  ],
+  "acceptance_test_interpretation": "T01 is not sufficient as stated: architecture_intake.py hash-checks context files but does not parse or semantically validate every normative PPC contract, does not validate controller_registry against contracts.schema, and does not emit the PPC fixture/case/coverage/test objects required by the v5 acceptance schema. The proposal also forbids PPC-specific fixture execution before ratification, so the promised pre-ratification T01 evidence grammar needs a lawful generic producer. T02 is blocked by bare candidate/donor/disjointness/predicate hashes and the absence of typed rejection-predicate input records. T03 is blocked by schema-invalid next phases, missing boundary transitions, result-vocabulary mismatch, queue hash recursion, and terminal/status gaps. T04 cannot bind a unique run because populated_run_lock omits prompt, initial budget, scoring-kernel, and several render/controller inputs. T05 is internally impossible because semantic_table.candidates has minItems=1 although the machine and T05 require an empty-table NOT_FOUND case. T06 has no closed wrong-life exact-match or binding-derangement proof type. T07 has per-edge arrays but its CUT/TWIN/SHAM/parity proof hashes have no typed inventoried targets. T08 inherits the controller boundary and queue-cycle failures and lacks cause-specific transition lineage cardinalities. T09 inherits missing terminal/status closure and the unspecified R=0 phase transition. T10 inherits the missing D1D PROVIDER[Q] -> behavior bridge and untyped root/training dependency hashes. T11 cannot satisfy the inherited unconditional construction-plus-release power requirement and depends on unclosed membership/dependency roles. T12 must fail the CLAIM_TEXT/REDUCER contradiction, controller schema violations, dangling role registries, and canonical-hash mismatch. T13 cannot establish authority from those failed prerequisites and the run lock omits authority-bearing prompt/budget/scoring-kernel inputs. T14 is not acyclic or uniquely defined while t14_cold_replay_receipt requires an unexplained test_result_hash and change.json expects T14 to agree with authority and literal release even though the normative release DAG places both after T14. Separately, change.json labels T02-T13 only required_before=gpu_run, contradicting the protocol/test/authority rule that they are PRE_MODEL; this repeats the r4 phase-label blocker. The T02-T14 test_coverage_receipt schema is also unsatisfiable: its base implementation_refs items require role IMPLEMENTATION, while its two-implementation branch simultaneously requires IMPLEMENTATION_A and IMPLEMENTATION_B.",
+  "assumptions": [
+    "The exact bound proposal and every file listed in change.json.context_files are normative to the extent stated by their own status; the draft generator is nonnormative but is evidence for how the normative schema, inventory, and controller bytes were produced.",
+    "The contracts.schema.json $id ppc5r5-contracts.schema.json intentionally resolves the schema_ref strings in object_inventory.json despite the repository filename being contracts.schema.json.",
+    "The controller registry's next-phase strings are interpreted literally because no normative boundary-normalization or indexed-phase evaluation algorithm is specified.",
+    "CLAIM_REDUCER is part of the visibility stage REDUCER because the proposal places candidate decisions in runtime reduction before T14.",
+    "The canonical payload in the hash rule includes the declared terminal LF; the shipped controller_registry hash was recomputed over compact JSON without that LF by the bound generator source.",
+    "A t14_cold_replay_receipt.test_result_hash would ordinarily denote the PPC5R5_T14 test result unless a different predecessor role is explicitly specified; no such role is present.",
+    "The r4 consensus is used only as the binding list of defects and required successor changes, not as authority and not as a prior interpretation of v5r5."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "PPC5R5_SYS_A01_INDEXED_PHASE_SEMANTICS",
+      "question": "What exact pure algorithm parses indexed phase expressions and maps each boundary value, including R=0, READ[L], PLAN_READ[L], FLUSH[L], and PROVIDER[Q], to the next concrete phase?",
+      "impact": "Without a schema-valid grammar and explicit boundary rows, T03/T08/T09/T10 BFS implementations can legitimately diverge or stop in uncovered states."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A02_RESULT_CLASS_MAPPING",
+      "question": "Which closed mapping converts provider, controller, root/publication, and environment result classes into the operation_result required by every transition_event?",
+      "impact": "FOUND/NOT_FOUND/FINALIZE/PUBLISHED/NO_ADAPTER/TRAIN_FAILED rows cannot currently produce a unique transition event, affecting T03-T05, T08, T10, and T14."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A03_HASH_DOMAIN_AND_NEWLINE",
+      "question": "Does H prefix the object's contract string or the separate inventory domain string, and is the terminal LF inside the hash preimage?",
+      "impact": "machine_contract and object_inventory name contract-prefixed hashing while semantic_validators says domain tag; the shipped controller hash matches contract-prefix/no-LF only. T01/T03/T12/T14 cannot have byte-identical independent answers until one rule is selected."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A04_T14_TEST_RESULT_ANCESTRY",
+      "question": "What predecessor does t14_cold_replay_receipt.test_result_hash reference, and how is the final PPC5R5_T14 test_result derived without consuming that receipt cyclically?",
+      "impact": "If it references T14, receipt and result are mutually ancestral; if it references another result, the role/test ID is unstated. T14 and preclaim authority cannot be constructed uniquely."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A05_DANGLING_ROLE_REGISTRIES",
+      "question": "Where are the closed bytes and schema types for evidence_role_registry_hash, dependency_registry_hash, transition-event cause registries, D1A matching/derangement proofs, and D1B parity/intervention construction receipts?",
+      "impact": "A bare digest authenticates unknown bytes but cannot enforce role, type, order, cardinality, status, or consumer visibility. T06/T07/T08/T11-T14 remain non-reconstructive."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A06_RUN_LOCK_COMPLETENESS",
+      "question": "Which run-lock fields prospectively bind initial call/read/action/input/output budgets, THINK and DREAM prompts, the scoring kernel, phase/render algorithms, and other hashes that preflight is required to verify?",
+      "impact": "Those values affect behavior, parity, scoring, and stopping but are absent from populated_run_lock; T03-T05, T08-T10, T12-T14 cannot prove two executions instantiate the same experiment."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A07_STATUS_TERMINAL_COVERAGE",
+      "question": "How do SCHEDULE_INCOMPLETE, PROVIDER_SEQUENCE_COMPLETE, NO_VALID_ACTION, and CONSTRUCTION_FAIL map into stage_outcome under the claimed exhaustive first-match status table?",
+      "impact": "The status rules do not list the first two as raw results, terminal_payload omits the latter two, and endpoint missing/no-action/blocker reduction is therefore not total for T03/T09-T11/T14."
+    },
+    {
+      "ambiguity_id": "PPC5R5_SYS_A08_T01_GENERIC_PRODUCER",
+      "question": "What already-authorized generic component creates the required T01 fixture_universe_manifest, case/mutation results, coverage receipt, and test result without constituting forbidden PPC5-specific fixture execution?",
+      "impact": "architecture_intake.py produces none of those artifacts, so T01 either lacks its promised evidence or repeats the preauthorization deadlock that r4 required the successor to remove."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "PPC5R5_SYS_D01_CONTROLLER_NOT_SCHEMA_VALID_OR_TOTAL",
+      "statement": "The bound controller registry is neither schema-valid nor a total D1A-D1D transition table.",
+      "rationale": "Its next-phase fields are SYMBOLs but 22 values contain brackets, lowercase index variables, or plus signs. Boundary rows/normalization are absent for every indexed program, D1D has no provider-to-behavior bridge, and result-class names are not representable by operation_result.status. This directly preserves the r4 total-machine blocker.",
+      "proposed_resolution": "Define a closed indexed-phase AST or enumerate every concrete boundary row, make all registry values validate, add explicit L/R/Q boundary transitions including R=0, and give every accepted result class one closed typed operation-result mapping. Require the registry itself to pass contracts.schema before deliberation can proceed."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D02_QUEUE_HASH_DAG_IS_CYCLIC",
+      "statement": "The queue/controller receipt graph violates the proposal's no-self-ancestry rule.",
+      "rationale": "private_controller_receipt.queue_slots stores slot_receipt_hash for the newly queued slot, while queue_slot_receipt requires controller_after_hash. Computing either current object therefore requires the other's final digest.",
+      "proposed_resolution": "Introduce a queue-slot body or pending entry computed before controller-after, then a receipt/event computed after it, or remove the controller-after dependency from the object whose hash is embedded by controller-after. Publish explicit queue genesis/queue/flush/discard hash vectors in T03/T08."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D03_CANONICAL_HASH_BYTES_DISAGREE",
+      "statement": "The sole populated normative self hash does not follow the declared canonical-byte rule.",
+      "rationale": "machine_contract and object_inventory require canonical JSON with one terminal LF. controller_registry.registry_hash equals the contract-prefixed hash of compact JSON without LF and differs when LF is included. The separate inventory domain tag is also not part of the documented or generated prefix despite semantic_validators saying it is recomputed.",
+      "proposed_resolution": "Choose one exact domain-prefix and newline rule, regenerate every hash-bearing normative artifact with it, add known-answer empty/genesis/controller vectors, and make T01 reject the current registry hash."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D04_SCHEMA_CONTRADICTS_REQUIRED_EMPTY_TABLE",
+      "statement": "The schema cannot represent a required valid provider case.",
+      "rationale": "machine_contract says an empty semantic table is valid and returns NOT_FOUND, and T05 explicitly covers empty tables, but contracts.schema requires semantic_table.candidates minItems=1.",
+      "proposed_resolution": "Permit zero candidates in semantic_table and constrain FOUND/NOT_FOUND branches cross-field, or redefine the provider to use a nonempty global table plus an explicitly typed empty query projection and update all prose/tests consistently."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D05_CLOSED_OBJECT_UNION_IS_INCOMPLETE",
+      "statement": "The 85-type union is syntactically closed but is not semantically closed for all durable artifacts and dependencies claimed by the proposal.",
+      "rationale": "Required objects are represented only by untyped hashes: generator candidate/recipient/donor bundles and predicate traces; recipient-donor exact-match/disjointness proofs; D1A binding derangement/dose proofs; D1B CUT/TWIN/SHAM/parity receipts; test evidence-role registries; dependency registries; transition cause registries; and several evidence manifests. Generic artifact_ref/dependency_entry arrays leave roles/types/cardinalities open. public_view_body also contains a self-like view_body_hash without an inventory/domain rule.",
+      "proposed_resolution": "Inventory and schema every authority-bearing target or replace each bare hash with an exact typed artifact/byte reference and closed role registry. Make a static reachability audit prove that every required hash resolves to one inventoried type and every consumer array has exact role, type, ordinal, order, and cardinality."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D06_VISIBILITY_FORBIDS_CLAIM_DECISION_OUTPUT",
+      "statement": "The visibility matrix forbids an input that the candidate claim reducer is required to emit verbatim.",
+      "rationale": "CLAIM_TEXT at REDUCER is forbidden and therefore may not influence output, while claim_decision_receipt produced by CLAIM_REDUCER requires exact candidate_release_text, qualification_text, and forbidden_claims before T14. This fails T12 even if literals are compiled into code.",
+      "proposed_resolution": "Mark CLAIM_TEXT at the candidate-decision reducer derived_only through a named constant projection, or add a distinct CANDIDATE_DECISION stage with that allowance while keeping runtime statistical reducers claim-blind."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D07_ACCEPTANCE_EVIDENCE_AND_PHASES_ARE_NOT_EXECUTABLE",
+      "statement": "The bound acceptance grammar cannot produce the evidence and stage ordering it promises.",
+      "rationale": "For T02-T14, test_coverage_receipt's base schema requires every implementation_refs role to equal IMPLEMENTATION while its branch requires IMPLEMENTATION_A and IMPLEMENTATION_B, making the branch unsatisfiable. Test/dependency evidence roles remain generic or hash-only. architecture_intake.py does not produce the required T01 PPC evidence objects. Finally, change.json marks T02-T13 only required_before=gpu_run even though the protocol, test contract, authority contract, and inherited r4 resolution require PRE_MODEL execution.",
+      "proposed_resolution": "Repair the intersecting role constraints, materialize exact per-test role registries, define a genuinely pre-existing generic T01 producer and evidence format, and change the architecture acceptance-stage field so T02-T12 are POST_RATIFICATION_PRE_MODEL and T13 is the final PRE_MODEL_EXECUTION gate rather than merely pre-GPU."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D08_RELEASE_DAG_REMAINS_UNCLOSED",
+      "statement": "The prose-level decision-to-release order is improved but the exact T14 evidence graph is not demonstrably acyclic.",
+      "rationale": "t14_cold_replay_receipt requires test_result_hash, while PPC5R5_T14 test_result requires evidence for the cold replay; no predecessor role breaks that apparent cycle. change.json additionally expects T14 to agree with authority and literal release although both are required to occur after non-releasing T14. Generic T14 evidence_refs do not settle the ancestry.",
+      "proposed_resolution": "Remove the final T14 result from the cold-replay receipt preimage; use explicit T01-T13/runtime/candidate-decision predecessor refs; derive the T14 test result from two cold-replay executions; then let preclaim authority consume that final T14 result or agreed receipt and let release consume authority. Update T14 expected text to exclude already-constructed authority/release."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D09_INHERITED_POWER_BLOCKER_NOT_RESOLVED",
+      "statement": "Conditional-on-successful-construction power does not satisfy the binding r4 full-release-event power disposition.",
+      "rationale": "The r4 consensus required PRE_MODEL authority to use an unconditional construction-plus-release lower bound over G unless construction succeeds with probability one on the locked support. v5r5 instead conditions both the population and power on accepted sealed construction, while finite rejection exhaustion remains possible, and supplies neither an unconditional bound nor a probability-one proof.",
+      "proposed_resolution": "Either restore an unconditional lower bound including proposal exhaustion, prove exact probability-one construction on the locked support, or explicitly adjudicate and human-ratify a changed requirement that limits authority and claims to conditional power only. Do not describe the current bytes as resolving the inherited blocker."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D10_GENERATOR_AND_CONTROL_PROOFS_ARE_NOT_RECONSTRUCTIVE",
+      "statement": "The accepted-constructible generator law and D1A/D1B controls are described but not fully encoded as independently replayable proof objects.",
+      "rationale": "proposal_receipt records only a candidate_bundle_hash, status, and first_failure symbol, not the ordered predicate results and inputs semantic_validators says must be retained. Recipient/donor bundles and exact-match proof are bare hashes, as are parity and CUT/TWIN/SHAM construction receipts. Two implementations therefore cannot reconstruct the claimed acceptance law or exact controls from typed bytes alone.",
+      "proposed_resolution": "Add closed proposal-predicate traces with ordered inputs/results, typed recipient/donor bundle manifests, exact donor-match and derangement proofs, and typed per-edge construction/parity receipts, all bound by life_sample/path/gate registries and T02/T06/T07 fixtures."
+    },
+    {
+      "disagreement_id": "PPC5R5_SYS_D11_PROVENANCE_STATEMENT_IS_INCONSISTENT",
+      "statement": "protocol.md incorrectly declares PPC5r3 consensus binding provenance while the exact change and directive identify PPC5r4 consensus as the binding rework provenance and deny inherited authority.",
+      "rationale": "A normative standalone protocol cannot leave which predecessor defects and scope are binding to version inference, especially when the task is to resolve the exact r4 consensus.",
+      "proposed_resolution": "Replace the PPC5r3 reference with the exact PPC5r4 consensus ID and SHA-256 and state explicitly that it supplies blocker provenance only, never authority."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require a byte-revised v5r5 successor and fresh deliberation rather than ratify or implement the current schema-invalid, non-total controller and cyclic queue bytes?",
+      "Will Rohin preserve the r4 requirement for unconditional construction-plus-release power unless exact probability-one constructability is proved, or explicitly authorize a newly adjudicated conditional-only authority rule?",
+      "Will Rohin require the acceptance-stage contract to be PRE_MODEL for T02-T13 and require an actually executable generic T01 evidence producer before architecture implementation authority?",
+      "Will Rohin require every D1A control proof, D1B per-edge construction proof, test/dependency registry, and transition lineage target to be a closed inventoried type rather than a bare hash?",
+      "Will Rohin require an explicit candidate-decision visibility allowance and a T14 evidence DAG with no test-result self-ancestry before any scientific release path is considered ratifiable?"
+    ]
+  }
+}

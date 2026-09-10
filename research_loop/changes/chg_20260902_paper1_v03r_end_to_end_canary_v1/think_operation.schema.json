@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think-operation-v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "text", "citations"],
+      "properties": {
+        "op": {"enum": ["FORM_SUBGOAL", "THINK", "BACKTRACK"]},
+        "text": {"$ref": "#/$defs/text"},
+        "citations": {"$ref": "#/$defs/citations"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "subject", "relation", "object", "value"],
+      "properties": {
+        "op": {"const": "QUERY"},
+        "kind": {"$ref": "#/$defs/kind"},
+        "subject": {"$ref": "#/$defs/filter"},
+        "relation": {"$ref": "#/$defs/filter"},
+        "object": {"$ref": "#/$defs/filter"},
+        "value": {"$ref": "#/$defs/filter"}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "kind", "subject", "relation", "object", "value"],
+      "properties": {
+        "op": {"const": "REQUEST_DREAM"},
+        "kind": {"const": "CAUSAL_JOIN"},
+        "subject": {"$ref": "#/$defs/atom"},
+        "relation": {"const": "causal_effect_on"},
+        "object": {"$ref": "#/$defs/atom"},
+        "value": {"enum": ["CHANGE", "STABLE", "UNKNOWN"]}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "state_token", "citations"],
+      "properties": {
+        "op": {"const": "COMMIT"},
+        "state_token": {"$ref": "#/$defs/atom"},
+        "citations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^M[0-9]+$"}
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "reason"],
+      "properties": {
+        "op": {"const": "DEFER"},
+        "reason": {"$ref": "#/$defs/text"}
+      }
+    }
+  ],
+  "$defs": {
+    "atom": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,127}$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[ -!#-\\[\\]-~]+$"
+    },
+    "filter": {"oneOf": [{"$ref": "#/$defs/atom"}, {"type": "null"}]},
+    "kind": {
+      "enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "TRANSFERRED_VALUE"]
+    },
+    "citations": {
+      "type": "array",
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^M[0-9]+$"}
+    }
+  }
+}

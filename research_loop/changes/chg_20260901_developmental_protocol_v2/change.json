@@ -1,0 +1,1302 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "Pinned benchmark-fit manifest; deterministic replay hashes; leakage-predictor and oracle audit reports.",
+      "expected": "Controlled world passes oracle, action-binding shuffle, counterfactual-twin, and predictor thresholds; external roster produces either a frozen selected benchmark or the declared failure disposition.",
+      "falsifies": "Any claim that the task requires lived causal learning rather than target/state/signature leakage, or that an external-development result is available.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Run the controlled-world audits and the fixed DiscoveryWorld-first, ScienceWorld-fallback CPU fit gate exactly as specified.",
+      "test_id": "AT01_environment_and_leakage_fit"
+    },
+    {
+      "evidence_artifact": "Atomic writer/read fixtures with provenance, lifecycle, shortcut-admission, and negative-corpus receipts.",
+      "expected": "Witnessed atoms, relations, exceptions, and one legal shortcut can be written and read; invalid, stale, unsupported, cyclic, or complete-solution records are rejected.",
+      "falsifies": "The claimed memory contract if the system cannot distinguish admissible local experiential structure from unsupported or answer-bearing material.",
+      "kind": "unit",
+      "required_before": "gpu_run",
+      "setup": "Exercise every lifecycle transition, evidence-equivalence case, valid diamond, forbidden cycle, and corpus eligibility class.",
+      "test_id": "AT02_atomic_memory_contract"
+    },
+    {
+      "evidence_artifact": "Read-only common-deck manifests, state hashes before/after evaluation, scorer write-denial logs, and reset receipts.",
+      "expected": "All common-deck arms see identical public streams and frozen reader budgets; evaluation leaves source-life bytes unchanged and sealed outcomes cannot enter cognition.",
+      "falsifies": "Fixed-deck attribution if evaluation or arm-specific experience changes the life state.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Run every arm on the same ordered stream, then adversarially attempt evaluator/scorer writes and verify byte-identical source-life hashes.",
+      "test_id": "AT03_common_deck_isolation"
+    },
+    {
+      "evidence_artifact": "Per-arm corpus hashes, reader receipts, resource ledger, calibration result table, and mandatory-arm failure report.",
+      "expected": "Mandatory P0/P1/P2/P3C/P4/P5T/P5L/P6 implementations are present, matched where comparison requires matching, and report any failed cell rather than omitting it.",
+      "falsifies": "A comparative compiler or substrate conclusion if corpus, reader, thinker, budget, or baseline implementation differs without separate labeling.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "Use the fixed common deck at frozen checkpoints; compare the declared mandatory arms and preserve active/retained bytes, compute, and token ledgers.",
+      "test_id": "AT04_mechanism_and_baseline_suite"
+    },
+    {
+      "evidence_artifact": "Capability-family fixtures, shortcut collision audit, action traces, revision traces, and per-family scores.",
+      "expected": "A0 is diagnostic only; A1-A4 meet their construction definitions, no shortcut ends an A3/A4 goal, and exception evidence can cause a supported revision and recovery.",
+      "falsifies": "A constructive action claim if gains reduce to witnessed lookup, a stored final plan, or unrevised false memory.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Evaluate frozen A0-A4 decks with four-to-six-action A3/A4 goals, paired twins, and controlled exception/rule-change cases.",
+      "test_id": "AT05_constructive_action_and_revision"
+    },
+    {
+      "evidence_artifact": "Seeded-prefix replay hashes, clone manifests, randomized memory-assignment ledger, sealed branch-outcome store, and paired estimand report.",
+      "expected": "Valid clones begin from the same canonical state, receive only assigned memory, preserve action budgets, and never return branch outcomes to the source life.",
+      "falsifies": "The on-policy flywheel claim if clone semantics are invalid, memory assignment is not causal, or branch outcomes contaminate training.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Replay a public prefix, reject hash-mismatched clones, randomize memory at the branch boundary, and evaluate independent sealed decks afterward.",
+      "test_id": "AT06_on_policy_flywheel"
+    },
+    {
+      "evidence_artifact": "Independent-review report over frozen code, manifests, prompts, models, budgets, inputs, outputs, and claim boundary; separate author-side advocate response.",
+      "expected": "A fresh reviewer finds no unresolved leakage, attribution, protocol, or artifact-binding defect; any repaired defect receives a new bound review.",
+      "falsifies": "Eligibility for a GPU science run or scientific promotion when independent review rejects the exact frozen evidence.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "Review the exact ratified implementation and evidence bundle; the advocate may clarify or repair but may not override the reviewer.",
+      "test_id": "AT07_independent_review_gate"
+    },
+    {
+      "evidence_artifact": "Append-only claim/status log and adversarial provenance fixtures.",
+      "expected": "Chronology, root-event equivalence, immutable revisions, valid diamonds, rejected cycles, and supported-only positive corpus admission all hold mechanically.",
+      "falsifies": "The claim that dreaming adds evidence-preserving local structure rather than laundering repeated or future-derived text into memory.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Test all status transitions plus paraphrase/reverse/cloze descendants, shared-root diamonds, self-citation, descendant citation, and revision cases.",
+      "test_id": "AT08_semantic_lifecycle_and_provenance"
+    },
+    {
+      "evidence_artifact": "Visibility/taint test report, agenda-laundering attempts, branch-release fixtures, cross-life canary report, and cache/process reset receipts.",
+      "expected": "Forbidden information is inaccessible; agendas select evidence only; terminal branches cannot become positive memory; new lives reject all prior-life canaries.",
+      "falsifies": "The visibility contract if a workspace, agenda, evaluation, scorer, audit, cache, or prior-life artifact reaches cognition or positive training.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Attempt candidate-answer, target-ID, hidden-truth, evaluator-output, and old-life canary injection at every stage.",
+      "test_id": "AT09_visibility_taint_and_reset"
+    },
+    {
+      "evidence_artifact": "Same-corpus factorial table with common-reader receipts, native-interface report, atoms-versus-shortcuts results, and active/retained resource ledger.",
+      "expected": "P5T and P5L share accepted semantic bytes; common-interface comparisons hold reader/candidate/thinking policy fixed; P3N is separately labeled; P5S isolates legal shortcut materialization from atoms.",
+      "falsifies": "Attribution to LoRA, dreaming, shortcuts, or a graph substrate when the observed benefit is supplied by a different reader, candidate universe, or thinker budget.",
+      "kind": "ablation",
+      "required_before": "scientific_claim",
+      "setup": "Run text, LoRA, atoms-only, legal-shortcut, shuffled-binding, and native-graph variants under frozen query and resource interfaces.",
+      "test_id": "AT10_reader_substrate_thinker_factorial"
+    },
+    {
+      "evidence_artifact": "Locked split manifest, checkpoint curves, paired bootstrap intervals, randomization-test output, Holm-adjusted secondary results, and negative-result decision record.",
+      "expected": "Primary endpoint, onset rule, missing-cell handling, replication unit, and all negative/mixed result dispositions are applied without post-hoc goalpost changes.",
+      "falsifies": "Any headline claim not supported by the preregistered P5S contrast, developmental contrast, and locked-world analysis.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "After development-only rank selection, run the frozen confirmation schedule on 24 new locked paired world-lives and preserve every cell.",
+      "test_id": "AT11_statistics_splits_and_negative_decisions"
+    },
+    {
+      "evidence_artifact": "Content-addressed phase manifests, crash-at-every-phase replay report, malformed-output corpus, deterministic-resume hashes, and quarantined-partial-run receipts.",
+      "expected": "Malformed or multi-operation output fails closed; every phase resumes only from a valid sealed predecessor; restart/replay produces bound manifests and deterministic state.",
+      "falsifies": "Scientific reproducibility or any result whose runtime/parser state cannot be reconstructed from durable artifacts.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Inject crashes at every phase and malformed schemas at every cognitive call; compare resulting sealed manifests and replay hashes.",
+      "test_id": "AT12_runtime_artifact_and_resume_integrity"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_developmental_protocol_v2",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "The protocol, if its pre-GPU gates pass, establishes only a faithful and auditable testbed for per-life experiential-memory hypotheses; it establishes no behavioral or scientific success by itself.",
+        "before": "The prior v1 proposal was unratified and lacked a fully bound executable protocol.",
+        "claim_id": "C0_protocol_fidelity",
+        "evidence_needed": "AT01-AT03, AT07-AT09, and AT12 over the exact ratified implementation and manifests.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "A positive confirmation result may support the bounded behavioral claim: with frozen base theta_0 and frozen shared loop phi, per-life sleep-compiled memory psi_l improves normalized held-out A1-A4 action value at 8C, after lived history exceeds the fixed context/read budget, against max(P1L,P2,P3N,P4), under the declared fixed-deck controls.",
+        "before": "No post-context parametric-memory advantage has been demonstrated.",
+        "claim_id": "C1_post_context_behavioral_memory",
+        "evidence_needed": "Locked 24-world-life confirmation satisfying the primary paired contrast, developmental contrast, leakage controls, mandatory baselines, and AT11.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "A positive P5S-versus-P4 result may support that the declared sleep compiler contributes useful supported local structure beyond matched direct/raw trajectory-to-QA LoRA; failure to beat P4 rejects that incremental compiler claim.",
+        "before": "Prior results establish atomic transport and local calibration prerequisites, not useful sleep compilation at lifetime scale.",
+        "claim_id": "C2_compiler_increment",
+        "evidence_needed": "Matched corpus/training ledger, P4/P5L/P5S comparisons, chronology/provenance evidence, and AT04/AT08/AT10.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A positive P5S-versus-P3N result may support a bounded parametric-substrate claim: under the declared common reader and reported resource ledger, per-life LoRA has earned an action advantage over the fair native graph control. P5S beating P4 but not P3N leaves only a compiler-not-substrate conclusion.",
+        "before": "Text and LoRA had matched small-memory resolution behavior; no beyond-context substrate advantage is established.",
+        "claim_id": "C3_parametric_substrate",
+        "evidence_needed": "Same accepted corpus, common-reader factorial, separately labeled P3N result, context-pressure curve, and P6/P7 controls.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "A positive on-policy result may support a separate causal claim that assigned memory improves later evidence quality and action value in valid cloned continuations. Fixed-deck success alone supports memory use, not an experiential flywheel.",
+        "before": "The prior proposal described experience swapping but did not bind a valid intervention semantics.",
+        "claim_id": "C4_on_policy_flywheel",
+        "evidence_needed": "AT06 paired randomized-memory evidence with sealed branches plus independent read-only evaluation.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "Null, mixed, or leakage-confounded findings must narrow claims exactly as follows: no P5S>P4 rejects compiler increment; no P5S>P3N rejects the parametric-substrate claim; only pre-context benefit rejects scaling; P6/P7 survival is leakage/generic-prompting/compute; A0/A1-only gains are retention/transfer; fixed-only gains exclude flywheel; no recurrent-sleep advantage excludes cadence; no shortcut efficiency excludes shortcut value; false-memory accumulation rejects continual viability; one backbone/order success is a bounded interaction; external-fit failure removes external-development language.",
+        "before": "Negative-result consequences were incompletely bound in v1.",
+        "claim_id": "C5_negative_result_disposition",
+        "evidence_needed": "AT11 decision record containing every planned and failed cell, without silent reruns or omissions.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_protocol_v2/human_directive.txt",
+      "purpose": "Verbatim human architectural directive.",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "purpose": "Proposed executable pilot protocol.",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_experiential_learning_v1/consensus.json",
+      "purpose": "Prior adjudication and unresolved-concern record.",
+      "sha256": "9f6e9f69e44893375cf8a99897ba17312d381768bed93c1cc2a7e59d2f4b6937"
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "purpose": "Prior developmental experiential-learning proposal.",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis and experiment-to-claim map.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "purpose": "Project thesis and architecture history.",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da"
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "purpose": "Frozen Paper-1 claim and cheating boundaries.",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Prior empirical evidence and calibrated limitations.",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    },
+    {
+      "path": "alchemy/v2_out/mini_ledger.md",
+      "purpose": "L0 calibration ledger and prior mechanism evidence.",
+      "sha256": "a0a077c6276d461864de5a67bd5c360f595e90d374cb9e2963c0ed39328c9549"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "Public action-conditioned observations and outcomes enter the wake resolver as current public state.",
+        "before": "Wake/action-to-evidence boundary was described but not bound to an owned public event stream.",
+        "edge_id": "E01_world_to_wake",
+        "from": "N01_CausalActionWorld",
+        "operation": "modify",
+        "rationale": "Makes lived action/outcome episodes the only primary evidence source.",
+        "to": "N02_WakeResolver"
+      },
+      {
+        "after": "Each released action and its later ordinary public outcome append immutable ExperienceEvents.",
+        "before": "Episodic storage existed conceptually without a complete ownership/lifecycle contract.",
+        "edge_id": "E02_wake_to_episodic",
+        "from": "N02_WakeResolver",
+        "operation": "modify",
+        "rationale": "Separates action-selected public experience from thought, evaluation, and scorer artifacts.",
+        "to": "N03_EpisodicStore"
+      },
+      {
+        "after": "Wake workspace creates a typed BranchStore record; only RELEASED_ACTION can later supply a selectable wake path.",
+        "before": "Terminal branch eligibility was unbound.",
+        "edge_id": "E03_wake_to_branch",
+        "from": "N02_WakeResolver",
+        "operation": "add",
+        "rationale": "Prevents abandoned, malformed, contradicted, and evaluation-only reasoning from becoming positive memory.",
+        "to": "N05_BranchStore"
+      },
+      {
+        "after": "A deferred wake branch may emit one selection-only typed agenda.",
+        "before": "Agenda had no machine-enforceable information boundary.",
+        "edge_id": "E04_branch_to_agenda",
+        "from": "N05_BranchStore",
+        "operation": "add",
+        "rationale": "Allows later dream targeting without transmitting candidate answers, plans, targets, or unsupported workspace content.",
+        "to": "N06_AgendaStore"
+      },
+      {
+        "after": "Immutable public events are available to dream only as eligible lived evidence.",
+        "before": "Dream-time input was not fully typed against future/evaluation information.",
+        "edge_id": "E05_episodic_to_dream",
+        "from": "N03_EpisodicStore",
+        "operation": "modify",
+        "rationale": "Preserves the human's recurrent local connection-building idea while excluding offline truth as cognition.",
+        "to": "N07_DreamResolver"
+      },
+      {
+        "after": "Eligible semantic records, released wake paths, and selection-only agendas are distinct dream inputs with taint constraints.",
+        "before": "Semantic/status ownership, release semantics, and agenda taint were unresolved.",
+        "edge_id": "E06_life_state_to_dream",
+        "from": "N04_SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Dreaming can re-express and locally connect supported experience but cannot promote a hypothesis merely because it was revisited.",
+        "to": "N07_DreamResolver"
+      },
+      {
+        "after": "Dream proposals append immutable claims/status events; they do not directly write the adapter.",
+        "before": "Dream, semantic growth, and transport were insufficiently separated.",
+        "edge_id": "E07_dream_to_semantic",
+        "from": "N07_DreamResolver",
+        "operation": "add",
+        "rationale": "Credits dream-time local relation/exception/procedure proposal separately from parametric transport.",
+        "to": "N04_SemanticStatusStore"
+      },
+      {
+        "after": "Only compiler-eligible supported records and legal shortcuts produce frozen multi-view corpus realizations.",
+        "before": "Corpus eligibility and re-expression evidence accounting were unbound.",
+        "edge_id": "E08_semantic_to_corpus",
+        "from": "N04_SemanticStatusStore",
+        "operation": "modify",
+        "rationale": "Ensures synthetic access views preserve root evidence and cannot become new evidence.",
+        "to": "N08_SleepCompiler"
+      },
+      {
+        "after": "The compiler records accepted corpus content and its root provenance in a manifest.",
+        "before": "Training material and audit surface were not fully separated.",
+        "edge_id": "E09_compiler_to_manifest",
+        "from": "N08_SleepCompiler",
+        "operation": "add",
+        "rationale": "Provides an auditable same-corpus input for text and LoRA contrasts.",
+        "to": "N09_CorpusManifest"
+      },
+      {
+        "after": "Each checkpoint rebuilds a per-life MEMORY LoRA from clean theta_0 using the cumulative accepted corpus.",
+        "before": "Per-life adapter rebuild/reset was proposed but not connected to a bound checkpoint object.",
+        "edge_id": "E10_manifest_to_memory",
+        "from": "N09_CorpusManifest",
+        "operation": "modify",
+        "rationale": "Makes psi_l persistent lossy associative transport, not the discoverer or task policy.",
+        "to": "N10_MemoryCheckpoint"
+      },
+      {
+        "after": "The checkpoint-specific backend answers only typed local queries through the frozen common reader.",
+        "before": "Reader, candidate policy, and substrate comparison were not fully factorized.",
+        "edge_id": "E11_memory_to_reader",
+        "from": "N10_MemoryCheckpoint",
+        "operation": "add",
+        "rationale": "Limits every read to one local operation and holds the cognitive interface fixed across common-interface arms.",
+        "to": "N11_CommonMemoryReader"
+      },
+      {
+        "after": "Later wake receives bounded MemoryRead records and exact episodic handles only through the common reader.",
+        "before": "Wake access to semantic/episodic memory could become an unbounded second store.",
+        "edge_id": "E12_reader_to_wake",
+        "from": "N11_CommonMemoryReader",
+        "operation": "modify",
+        "rationale": "Attributes explicit goal-conditioned reconstruction and action to the complete organism, not to the LoRA alone.",
+        "to": "N02_WakeResolver"
+      },
+      {
+        "after": "Frozen checkpoint memory is mounted in isolated read-only fixed-deck evaluation.",
+        "before": "Evaluation noninterference was declarative rather than an owned store boundary.",
+        "edge_id": "E13_checkpoint_to_evaluation",
+        "from": "N10_MemoryCheckpoint",
+        "operation": "add",
+        "rationale": "Separates representation/use evidence from action-policy collection effects.",
+        "to": "N13_EvaluationStore"
+      },
+      {
+        "after": "Evaluation outcomes enter only the sealed evaluation store and never any life, agenda, semantic, corpus, or adapter store.",
+        "before": "Evaluation and future-state outcomes lacked distinct types and write denial.",
+        "edge_id": "E14_evaluation_seal",
+        "from": "N13_EvaluationStore",
+        "operation": "add",
+        "rationale": "Blocks held-out target and outcome leakage.",
+        "to": "N15_AuditStore"
+      },
+      {
+        "after": "The scorer receives sealed outputs and hidden truth only after commitment, emitting reporting-only derived scores.",
+        "before": "Scorer isolation was not mechanically located in the graph.",
+        "edge_id": "E15_evaluation_to_scorer",
+        "from": "N13_EvaluationStore",
+        "operation": "add",
+        "rationale": "Preserves offline truth as scoring rather than cognitive verification.",
+        "to": "N14_ScorerStore"
+      },
+      {
+        "after": "A canonical public prefix is replayed into isolated clones; assigned memory affects only continuation behavior and branches remain sealed.",
+        "before": "On-policy swap/intervention semantics were undefined.",
+        "edge_id": "E16_life_to_clone",
+        "from": "N12_LifeRuntime",
+        "operation": "add",
+        "rationale": "Identifies memory's causal effect on future evidence/action without invalid final-state swapping.",
+        "to": "N16_OnPolicyCloneHarness"
+      },
+      {
+        "after": "Every phase, read, generation, score receipt, reset, and clone receipt is content-addressed in the audit store.",
+        "before": "Runtime artifacts and failure states were not durably bound.",
+        "edge_id": "E17_runtime_to_audit",
+        "from": "N12_LifeRuntime",
+        "operation": "add",
+        "rationale": "Enables fail-closed resume, review, and independent reproducibility.",
+        "to": "N15_AuditStore"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Controlled Persistent Causal Action-World v0 with action-conditioned evidence, stable per-life causal parameters, counterfactual twins, A0-A4 decks, and offline-only truth.",
+        "before": "No bound mechanism microscope for long-horizon experiential action learning.",
+        "node_id": "N01_CausalActionWorld",
+        "operation": "add",
+        "rationale": "Supplies lived action/outcome episodes without making a memory-game or answer-label benchmark."
+      },
+      {
+        "after": "Frozen shared phi: bounded goal-conditioned local querying, explicit DFS-like dependency traversal, broaden/backtrack, one operation per call, and cited release/defer behavior.",
+        "before": "Wake thinking was described but its action, stop, and policy-visible runtime interface was unbound.",
+        "node_id": "N02_WakeResolver",
+        "operation": "modify",
+        "rationale": "Keeps narrow thinking as reconstruction and planning rather than one-shot answer generation."
+      },
+      {
+        "after": "Per-life immutable public ExperienceEvents with provenance handles and no unrestricted search surface.",
+        "before": "Verbatim episodic state lacked a complete reader and evaluation-isolation contract.",
+        "node_id": "N03_EpisodicStore",
+        "operation": "modify",
+        "rationale": "Preserves exact lived evidence while preventing it from becoming unlimited hidden retrieval."
+      },
+      {
+        "after": "Per-life authoritative immutable SemanticStatusStore with append-only lifecycle events, evidence equivalence, provenance DAG, and corpus eligibility.",
+        "before": "Semantic records had no explicit owner, lifecycle, or wake visibility policy.",
+        "node_id": "N04_SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Separates local dream-time semantic growth from the adapter and audit shadow."
+      },
+      {
+        "after": "Per-life BranchStore with ACTIVE, RELEASED_ACTION, DEFERRED, ABANDONED, CONTRADICTED, BUDGET_EXHAUSTED, MALFORMED, and EVALUATION_ONLY lifecycle states.",
+        "before": "Workspace branches could not be mechanically prevented from being compiled after failure.",
+        "node_id": "N05_BranchStore",
+        "operation": "add",
+        "rationale": "Binds which thinking traces may select replay and which are negative-only."
+      },
+      {
+        "after": "Per-life typed DreamAgenda store limited to evidence anchors, missing-dependency kind, failure reason, and uncertainty bucket.",
+        "before": "Wake-to-dream requests could launder answer-bearing workspace state.",
+        "node_id": "N06_AgendaStore",
+        "operation": "add",
+        "rationale": "Permits recurrent wake-to-dream feedback while preserving an evidentiary firewall."
+      },
+      {
+        "after": "Frozen broader offline use of the same resolver that proposes local relations, exceptions, bounded procedures, and legal shortcuts from eligible inputs.",
+        "before": "Dreaming lacked a bounded local-growth contract.",
+        "node_id": "N07_DreamResolver",
+        "operation": "modify",
+        "rationale": "Retains recurrent connection growth and re-expression without requiring dream alone to solve a held-out goal."
+      },
+      {
+        "after": "Sleep compiler that canonicalizes, checks chronology/provenance/eligibility, creates six frozen access views, and labels negative examples.",
+        "before": "Compiler transport and evidence creation were conflated.",
+        "node_id": "N08_SleepCompiler",
+        "operation": "modify",
+        "rationale": "Separates supported local semantic structure from synthetic training surfaces and adapter updates."
+      },
+      {
+        "after": "Per-checkpoint manifest of accepted semantic corpus, root provenance, corpus hashes, and training allocation.",
+        "before": "No authoritative same-corpus object for text/LoRA comparisons.",
+        "node_id": "N09_CorpusManifest",
+        "operation": "add",
+        "rationale": "Makes substrate and compiler comparisons auditable and matched."
+      },
+      {
+        "after": "Per-life checkpointed MEMORY LoRA psi_l, cumulatively rebuilt from theta_0, with optimizer/scheduler/reset manifest and rank-selection boundary.",
+        "before": "Lifetime adapter behavior was described without a full reset/training provenance object.",
+        "node_id": "N10_MemoryCheckpoint",
+        "operation": "modify",
+        "rationale": "Limits LoRA's role to lossy persistence and associative access across context pressure."
+      },
+      {
+        "after": "Frozen typed common reader with public candidate universe, local result schema, top-k, token budget, and backend receipt.",
+        "before": "Reader/candidate recognition could confound substrate and thinker claims.",
+        "node_id": "N11_CommonMemoryReader",
+        "operation": "add",
+        "rationale": "Separates substrate transport from explicit reconstruction, native graph interfaces, and controller intelligence."
+      },
+      {
+        "after": "LifeRuntime owning all per-life cognitive state, budgets, RNG, caches, scheduler, and reset contract.",
+        "before": "Cross-life ownership/reset inventory was incomplete.",
+        "node_id": "N12_LifeRuntime",
+        "operation": "modify",
+        "rationale": "Enforces a distinct life boundary for psi_l and every cognitive artifact."
+      },
+      {
+        "after": "Sealed EvaluationStore for read-only held-out deck and branch outcomes, inaccessible to cognition after evaluation.",
+        "before": "Held-out outcomes were not fully isolated as a separate store.",
+        "node_id": "N13_EvaluationStore",
+        "operation": "add",
+        "rationale": "Allows scoring without training or steering the source life."
+      },
+      {
+        "after": "Separate ScorerStore containing hidden world truth and post-commitment score derivations only.",
+        "before": "Offline truth boundary was insufficiently operationalized.",
+        "node_id": "N14_ScorerStore",
+        "operation": "add",
+        "rationale": "Prevents an exact verifier or hidden world model from becoming a cognitive organ."
+      },
+      {
+        "after": "AuditStore with hashes, provenance, prompts, runtime receipts, manifests, failures, and reviewer evidence; never cognitive memory.",
+        "before": "Audit shadow and runtime durability boundaries were incomplete.",
+        "node_id": "N15_AuditStore",
+        "operation": "modify",
+        "rationale": "Supports reproducibility without answer-bearing graph access."
+      },
+      {
+        "after": "OnPolicyCloneHarness using seeded action-prefix replay, canonical state hashes, randomized memory intervention, sealed branches, and impossible-state rejection.",
+        "before": "Cross-system experience swapping lacked valid causal mechanics.",
+        "node_id": "N16_OnPolicyCloneHarness",
+        "operation": "add",
+        "rationale": "Separates fixed-deck representation/use from the later action-to-better-experience flywheel."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin ratify the exact bytes and implementation scope of chg_20260901_developmental_protocol_v2, including the controlled world, benchmark fallback disposition, frozen model/budget/rank/split/baseline rules, visibility contract, acceptance tests, and stated claim boundary?",
+    "forbidden_before_approval": [
+      "Editing or implementing any affected system, benchmark, prompt, test, runtime, or evaluation code.",
+      "Launching CPU fit work, calibration, GPU work, model training, benchmark selection, or model-comparative evaluation.",
+      "Choosing or changing benchmark goalposts, world generators, thresholds, rank, baselines, splits, task order, or resource/statistical policy.",
+      "Treating this proposed artifact, consensus, prior results, or model agreement as human authorization.",
+      "Promoting any result to a scientific, external-development, flywheel, LoRA-discovery, or headline claim."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "For each ordinary episode: current public state plus bounded reader results -> wake chooses exactly one cognitive/action operation -> environment returns ordinary public outcome -> immutable event/status append -> released/deferred branch handling. Wake stops on release, supported action, irreducible missing dependency, budget exhaustion, malformed output, or defer.",
+        "before": "Within-episode thinking/action loop had no fully bound branch and fail-closed transition contract.",
+        "loop_id": "L01_cognitive_episode",
+        "operation": "modify",
+        "rationale": "Models lived action/outcome experience and narrow planning as distinct from sleep consolidation.",
+        "reads": [
+          "N01_CausalActionWorld",
+          "N03_EpisodicStore",
+          "N11_CommonMemoryReader",
+          "N05_BranchStore"
+        ],
+        "stop_condition": "Released action obtains an ordinary outcome; otherwise explicit terminal/deferred state or hard visible budget.",
+        "trigger": "A public goal/state or a resumed active branch.",
+        "writes": [
+          "N03_EpisodicStore",
+          "N05_BranchStore",
+          "N06_AgendaStore",
+          "N04_SemanticStatusStore"
+        ]
+      },
+      {
+        "after": "At fixed geometric checkpoints, sleep reads only the new ordinary event block, released paths, eligible prior semantic records, and typed selection-only agendas; dream proposes local candidates; chronology/status machinery validates them; compiler emits supported multi-view corpus; psi_l is cumulatively rebuilt from theta_0. Recur at each checkpoint.",
+        "before": "Experience, dream, compiler, and LoRA updates were conceptually connected but eligibility, recurrence, and transport were not fully bound.",
+        "loop_id": "L02_experience_dream_consolidation",
+        "operation": "modify",
+        "rationale": "Preserves human's sleep-as-compiler idea while making local semantic growth, re-expression, and parametric transport separately falsifiable.",
+        "reads": [
+          "N03_EpisodicStore",
+          "N04_SemanticStatusStore",
+          "N05_BranchStore",
+          "N06_AgendaStore",
+          "N09_CorpusManifest"
+        ],
+        "stop_condition": "Checkpoint corpus is sealed and adapter/optimizer manifest is complete; malformed or ineligible material is retained only as negative/audit data.",
+        "trigger": "Geometric lifetime checkpoint after ordinary public outcomes, not evaluator feedback.",
+        "writes": [
+          "N04_SemanticStatusStore",
+          "N08_SleepCompiler",
+          "N09_CorpusManifest",
+          "N10_MemoryCheckpoint",
+          "N15_AuditStore"
+        ]
+      },
+      {
+        "after": "A later wake resolver receives only bounded local MemoryRead records from its assigned backend and reconstructs a goal-conditioned explicit working path; outcome feedback can create later released traces/agendas and therefore influence a future sleep checkpoint.",
+        "before": "The decompression/reconstruction distinction and later feedback path were insufficiently bound.",
+        "loop_id": "L03_retrieval_reconstruction_feedback",
+        "operation": "add",
+        "rationale": "Makes memory a source of intermediary associations, while the complete organism performs composition, planning, revision, and action.",
+        "reads": [
+          "N10_MemoryCheckpoint",
+          "N11_CommonMemoryReader",
+          "N03_EpisodicStore",
+          "N02_WakeResolver"
+        ],
+        "stop_condition": "Wake reaches a supported release, defers, or exhausts its visible operation/query budget.",
+        "trigger": "A later goal after a checkpoint mounts its assigned memory backend.",
+        "writes": [
+          "N05_BranchStore",
+          "N03_EpisodicStore",
+          "N06_AgendaStore",
+          "N04_SemanticStatusStore"
+        ]
+      },
+      {
+        "after": "At each fixed checkpoint, freeze source-life writes/caches, mount assigned checkpoint memory, run a fresh read-only held-out deck, seal outcomes, and score only offline. No evaluation artifact recurs into life state.",
+        "before": "Fixed-deck evaluation was not fully enforced as a non-recurrent isolation loop.",
+        "loop_id": "L04_fixed_deck_evaluation",
+        "operation": "add",
+        "rationale": "Identifies representation/use without crediting a memory arm for different experience collection.",
+        "reads": [
+          "N10_MemoryCheckpoint",
+          "N13_EvaluationStore",
+          "N14_ScorerStore"
+        ],
+        "stop_condition": "Deck completes or action cap is reached; source-life pre/post hashes must be identical.",
+        "trigger": "A sealed checkpoint under the common ordered public stream.",
+        "writes": [
+          "N13_EvaluationStore",
+          "N14_ScorerStore",
+          "N15_AuditStore"
+        ]
+      },
+      {
+        "after": "Replay a canonical public prefix to isolated hash-checked clones, randomly assign allowed memory intervention, allow matched remaining action budget, seal clone outcomes, then evaluate all arms on an independent read-only deck. Repeat over paired worlds; never write clone outcomes to source life.",
+        "before": "On-policy experience/representation swaps were described without valid recurrence and sealing semantics.",
+        "loop_id": "L05_on_policy_flywheel_test",
+        "operation": "add",
+        "rationale": "Tests later feedback from memory-informed thinking/action into future evidence separately from the fixed-deck claim.",
+        "reads": [
+          "N03_EpisodicStore",
+          "N10_MemoryCheckpoint",
+          "N16_OnPolicyCloneHarness"
+        ],
+        "stop_condition": "Clone hash mismatch, impossible continuation, or matched remaining action budget exhausted; all resulting branch outcomes remain sealed.",
+        "trigger": "A paired-world checkpoint with a valid public action-prefix replay.",
+        "writes": [
+          "N13_EvaluationStore",
+          "N14_ScorerStore",
+          "N15_AuditStore"
+        ]
+      },
+      {
+        "after": "Across distinct lives, reset every per-life cognitive store, adapter, optimizer, cache, RNG, process handle, prompt history, and temporary path; inject prior-life canaries and require NOT_FOUND plus clean-base adapter hash before admitting the new life.",
+        "before": "Per-life reset was incomplete and did not bind process/global artifacts.",
+        "loop_id": "L06_life_reset",
+        "operation": "add",
+        "rationale": "Ensures lifetime learning is per-life psi_l, while a future shared LOOP adapter remains outside this unimplemented pilot.",
+        "reads": [
+          "N12_LifeRuntime",
+          "N15_AuditStore"
+        ],
+        "stop_condition": "All canaries return NOT_FOUND and reset receipts validate; otherwise fail closed and quarantine the run.",
+        "trigger": "Before every new world-life or resume from a sealed predecessor.",
+        "writes": [
+          "N12_LifeRuntime",
+          "N15_AuditStore"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "This proposal turns the developmental idea into a bounded pilot: ordinary action/outcome episodes create immutable evidence; recurrent sleep proposes and validates only local semantic growth; a compiler re-expresses supported content into a per-life LoRA; later goal-conditioned retrieval plus explicit waking reconstruction supports action; and fixed-deck and isolated on-policy loops separately test memory use and feedback. It intentionally does not claim a learned thinker, learned dreamer, human development, general intelligence, or LoRA-based discovery.",
+  "system_thesis": "The complete temporal organism\u2014not a LoRA alone\u2014may progressively convert its own ordinary action/outcome history into an auditable, connected experiential approximation. Dream-time local connection growth and re-expression create supported semantic material; per-life LoRA carries lossy associations across context pressure; goal-conditioned waking retrieval and explicit multi-step reconstruction turn those associations into planning, revision, and action; and later action outcomes can supply evidence for subsequent dream cycles. The proposed pilot tests a bounded behavioral version of this thesis with frozen base and controller, not autonomous discovery or a learned general intelligence.",
+  "title": "Developmental experiential learning v2: bound recurrent sleep-compiler and per-life memory protocol",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Current ordinary observations/actions/outcomes are the only primary evidence.",
+        "stage_id": "S01_LIVE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "May arise only through an append-only status transition after live evidence.",
+        "stage_id": "S01_LIVE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Not a live action input.",
+        "stage_id": "S01_LIVE",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Exists only after branch release.",
+        "stage_id": "S01_LIVE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Agenda is not an action-time evidence channel.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Sleep corpus is not live evidence.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "May affect wake only via the reader.",
+        "stage_id": "S01_LIVE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Active branch state is policy-visible.",
+        "stage_id": "S01_LIVE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Held-out outcomes are sealed from life.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "World truth is scorer-only.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scores are reporting-only.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit is never cognitive state.",
+        "stage_id": "S01_LIVE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Wake sees current public state and exact prior events only through valid reader handles.",
+        "stage_id": "S02_WAKE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Wake may receive only a bounded reader result, never the store directly.",
+        "stage_id": "S02_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Provisional content cannot support wake memory reads.",
+        "stage_id": "S02_WAKE",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Wake can inspect its own released path under branch rules.",
+        "stage_id": "S02_WAKE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Wake may create/read its typed own agenda but it is non-evidentiary.",
+        "stage_id": "S02_WAKE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Corpus content is reached only through the assigned reader backend.",
+        "stage_id": "S02_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Raw weights are not an unrestricted cognitive interface.",
+        "stage_id": "S02_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Branch workspace, budget, and repeat state are policy-visible.",
+        "stage_id": "S02_WAKE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Evaluation outcomes cannot steer life cognition.",
+        "stage_id": "S02_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "No exact verifier or hidden engine is a wake tool.",
+        "stage_id": "S02_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scores cannot steer thought or action.",
+        "stage_id": "S02_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Hashes and logs are not memory.",
+        "stage_id": "S02_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Authoritative immutable event storage.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Authoritative semantic/status store owns supported claims.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Store preserves hypotheses with non-support status.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Branch store records eligible released paths.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Agenda store owns typed selection-only requests.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Corpus belongs to checkpoint compiler, not life-store authority.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Adapter checkpoint is separate parametric state.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Workspace belongs only to active branch and is not a durable store read.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Evaluation store is isolated.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "Scorer-only data.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Reporting-only data.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit store is separate and non-cognitive.",
+        "stage_id": "S03_LIFE_STORES",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Eligible ordinary traces are dream evidence.",
+        "stage_id": "S04_DREAM",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Eligible supported records may be recombined locally.",
+        "stage_id": "S04_DREAM",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "May be hypothesis input but never self-support.",
+        "stage_id": "S04_DREAM",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Released paths are selectable dream inputs.",
+        "stage_id": "S04_DREAM",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Typed fields may select replay only.",
+        "stage_id": "S04_DREAM",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "New realization can only be produced after eligibility checks.",
+        "stage_id": "S04_DREAM",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Sleep generation is not allowed to inspect adapter contents as evidence.",
+        "stage_id": "S04_DREAM",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Unsupported workspace and terminal branches are excluded.",
+        "stage_id": "S04_DREAM",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Sealed evaluation is excluded.",
+        "stage_id": "S04_DREAM",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "Offline truth cannot verify or guide dreams.",
+        "stage_id": "S04_DREAM",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scores are never dream input.",
+        "stage_id": "S04_DREAM",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit artifacts cannot act as cognitive evidence.",
+        "stage_id": "S04_DREAM",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Compiler may preserve root provenance.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Only supported material is positive-corpus eligible.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Visible for status enforcement but excluded from positive corpus.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Visible only to check legal shortcut conditions.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Visible only to enforce non-evidentiary taint and selection semantics.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Compiler creates the frozen corpus surface.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Training output is not a compiler evidence source.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Unsupported workspace cannot be compiled.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Evaluation data cannot train memory.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "Hidden truth cannot train or select corpus content.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scores cannot rank or repair corpus content.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit provenance records are not positive corpus content.",
+        "stage_id": "S05_COMPILE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Reachable only through corpus-derived provenance, not raw replay.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Reachable only through accepted corpus derivation.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Excluded from stable adapter corpus.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "May be represented only through legal supported shortcut realizations.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Selection-only taint cannot enter adapter.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Frozen accepted corpus is training-visible.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Checkpoint owns the trained per-life adapter.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "No workspace survives into adapter training.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "No evaluation outcome can enter training.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "No hidden truth can enter training.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "No scorer output can enter training.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit data is excluded from model training.",
+        "stage_id": "S06_CHECKPOINT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Later wake accesses it only through bounded valid provenance handles.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Later wake receives local reader candidates, not semantic-store traversal.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Not stable reader support.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Not an unrestricted answer-bearing reader surface.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Agenda cannot be used as evidence or answer channel.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Reader exposes local derived records only.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Adapter contributes associations only through common-reader results.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Current goal-conditioned reconstruction is visible.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "No held-out feedback reaches life cognition.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "No truth oracle is available.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "No scorer steering is available.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit is not a reader backend.",
+        "stage_id": "S07_LATER_WAKE",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "Evaluation uses permitted frozen public prefix/current state.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "Only derived bounded reader results may be used.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Not positive evaluation memory.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Source-life path is not an evaluation evidence channel.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Evaluation cannot receive life agendas.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Available only through assigned backend/common reader.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Mounted read-only via common reader.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Evaluation-local workspace is visible only inside its sealed branch.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Visible only to the isolated evaluation process, then sealed.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "Cognition never receives hidden truth.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scores cannot influence evaluation cognition.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit data remains non-cognitive.",
+        "stage_id": "S08_EVALUATION",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I01_PUBLIC_LIVED",
+        "reason": "May be hashed/reported after commitment.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I02_SUPPORTED_SEMANTIC",
+        "reason": "May be audited but is not needed as scorer truth.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I03_PROVISIONAL_SEMANTIC",
+        "reason": "Not a scoring input unless reported as status metadata.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I04_RELEASED_WAKE_PATH",
+        "reason": "Not a scorer truth input.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I05_SELECTION_AGENDA",
+        "reason": "Never scoring evidence.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I06_POSITIVE_REALIZATION",
+        "reason": "Not a truth source for scoring.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I07_MEMORY_ADAPTER",
+        "reason": "Not inspectable as a scorer oracle.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I08_WORKSPACE",
+        "reason": "Cognitive scratchpad is not scorer feedback.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I09_EVAL_OUTCOME",
+        "reason": "Sealed outcomes are score inputs.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I10_HIDDEN_TRUTH",
+        "reason": "Visible only here for post-commitment scoring.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I11_SCORER_DERIVED",
+        "reason": "Scorer owns derived metrics and reports.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I12_AUDIT_RECEIPT",
+        "reason": "Audit owns receipts and manifests, never cognition.",
+        "stage_id": "S09_SCORER_AUDIT",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "I01_PUBLIC_LIVED",
+      "I02_SUPPORTED_SEMANTIC",
+      "I03_PROVISIONAL_SEMANTIC",
+      "I04_RELEASED_WAKE_PATH",
+      "I05_SELECTION_AGENDA",
+      "I06_POSITIVE_REALIZATION",
+      "I07_MEMORY_ADAPTER",
+      "I08_WORKSPACE",
+      "I09_EVAL_OUTCOME",
+      "I10_HIDDEN_TRUTH",
+      "I11_SCORER_DERIVED",
+      "I12_AUDIT_RECEIPT"
+    ],
+    "stages": [
+      "S01_LIVE",
+      "S02_WAKE",
+      "S03_LIFE_STORES",
+      "S04_DREAM",
+      "S05_COMPILE",
+      "S06_CHECKPOINT",
+      "S07_LATER_WAKE",
+      "S08_EVALUATION",
+      "S09_SCORER_AUDIT"
+    ]
+  }
+}

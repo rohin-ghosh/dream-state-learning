@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "pcfl-active-stream-paper-target-v2-deliberation",
+  "workspace": "../..",
+  "change_id": "chg_20260902_pcfl_active_stream_paper_target_v2",
+  "directive_file": "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_notes/00_THESIS.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/43_developmental_experiential_learning_v1.md",
+    "research_notes/44_developmental_protocol_v2.md",
+    "research_notes/46_pcfl_constructive_assay_v1.md",
+    "research_notes/47_pcfl_execution_bundle_v1.md",
+    "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+    "research_loop/schemas/architecture_change.schema.json",
+    "research_loop/architecture_intake.py",
+    "research_loop/architecture_deliberation.py",
+    "research_loop/workflows/pcfl_active_stream_paper_target_v1.deliberation.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/ideas_context_snapshot_20260902.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/source_drift_incident_20260902.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/bundle_manifest.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/change.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/interpretation_systems.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/interpretation_benchmark.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/critique.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/consensus.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/scope_proposal.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/claim_namespace_map.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/claim_test_applicability.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/experiment_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/mediation_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/compiler_memory_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/statistics_and_claim_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/baseline_and_resource_manifest.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/stage_gate_and_test_manifest.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/visibility_taint_reset_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v1/prior_concern_disposition.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/rework_disposition.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/scope_proposal.json",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/field_information_ontology_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/fork_assignment_and_phase_split_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/shortcut_resource_policy_attribution_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/paper_result_and_successor_contract.md"
+  ],
+  "output_dir": "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2",
+  "state_path": ".research_loop/intake/chg_20260902_pcfl_active_stream_paper_target_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260902_pcfl_active_stream_paper_target_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    },
+    "systems": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3000,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800
+        }
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    },
+    "critique": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 4200,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 2400
+        }
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    }
+  }
+}

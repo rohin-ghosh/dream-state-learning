@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "resource_id": "v03r-zero-science-envelopes-v2e",
+  "purpose": "Deterministic synthetic maximum-envelope requests for the post-review, pre-science H100/provider preflight only.",
+  "science_material_policy": {
+    "public_life_inputs_allowed": false,
+    "target_or_witness_material_allowed": false,
+    "science_observation": false,
+    "required_literal_prefix": "V2D_ZERO_SCIENCE_ENVELOPE",
+    "forbidden_source_namespaces": [
+      "CounterfactualConfluenceV03R",
+      "public life packet",
+      "q_own",
+      "q_dist",
+      "target registry",
+      "witness registry"
+    ]
+  },
+  "model_contract": {
+    "model": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "weights": "clean_bf16_base",
+    "adapter": null,
+    "tokenizer_add_special_tokens": false,
+    "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config_json_sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab_json_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges_txt_sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+  },
+  "provider_contract": {
+    "exact_device_count": 1,
+    "device_name": "NVIDIA H100 NVL",
+    "minimum_total_memory_mib": 95000,
+    "known_total_memory_mib": 95830,
+    "prefix_caching": false,
+    "request_truncation": false,
+    "resident_immutable_base_engine_allowed": true,
+    "cross_call_conversation_state": false,
+    "cross_call_kv_state": false,
+    "cross_call_prefix_cache_state": false,
+    "cross_call_request_state": false,
+    "unique_physical_session_id_per_call": true,
+    "unique_receipt_id_per_call": true
+  },
+  "generator": {
+    "encoding": "ASCII",
+    "prefix_template": "V2D_ZERO_SCIENCE_ENVELOPE|class={class_id}|call={call_index}|payload=",
+    "filler_unit": " x",
+    "suffix": "|END",
+    "algorithm": [
+      "Require class_id and call_index from the frozen call table below.",
+      "Render prefix_template by exact ASCII substitution with no escaping, whitespace, or newline.",
+      "Append filler_unit exactly repetition_count times, then append suffix.",
+      "Encode the resulting string as ASCII bytes and require exact byte_count and input_bytes_sha256.",
+      "Tokenize the complete byte string once with the pinned tokenizer and add_special_tokens=false.",
+      "Require exact input_token_count and no truncation.",
+      "Serialize token IDs as unsigned base-10 integers joined by one comma, with no spaces or terminal newline, and require token_ids_ascii_sha256.",
+      "Any byte, tokenizer-file, count, token-ID, hash, or re-encoding mismatch is ZERO_SCIENCE_PREFLIGHT_FAILURE before public inputs."
+    ],
+    "logical_seed_algorithm": "SHA256 over ASCII v2d-zero-science-seed, one NUL byte, class_id, one NUL byte, and the base-10 call_index with no sign, padding, whitespace, or terminator",
+    "hash_algorithm": "SHA-256 lowercase hex over exact bytes",
+    "token_id_serialization": "comma-separated unsigned base-10 ASCII; no spaces; no terminal newline"
+  },
+  "execution": {
+    "calls_per_class": 2,
+    "total_calls": 8,
+    "class_order": ["dream", "think", "full_context", "rag"],
+    "call_index_order": [0, 1],
+    "fresh_session_and_receipt_each_call": true,
+    "reset_before_and_after_each_call": true,
+    "active_sequences_before_call": 0,
+    "active_sequences_after_reset": 0,
+    "minimum_generation_tokens_equals_maximum": true,
+    "ignore_eos_for_capacity_preflight_only": true,
+    "stop_sequences": [],
+    "response_parser": "none_capacity_telemetry_only"
+  },
+  "telemetry_thresholds": {
+    "peak_allocated_mib_max": 93000,
+    "peak_reserved_mib_max": 94500,
+    "minimum_free_headroom_mib": 1024,
+    "post_reset_allocated_delta_from_loaded_idle_mib_max": 64,
+    "post_reset_reserved_delta_from_loaded_idle_mib_max": 256,
+    "active_sequences_exact_before_and_after": 0,
+    "session_id_duplicates_max": 0,
+    "receipt_id_duplicates_max": 0,
+    "request_truncations_max": 0,
+    "prefix_cache_hits_max": 0
+  },
+  "classes": [
+    {
+      "class_id": "dream",
+      "input_token_limit": 2048,
+      "output_token_limit": 256,
+      "temperature": "0.2",
+      "top_p": "0.95",
+      "calls": [
+        {
+          "call_index": 0,
+          "repetition_count": 2025,
+          "byte_count": 4107,
+          "input_token_count": 2048,
+          "input_bytes_sha256": "c3044a88721707c16d9c83621f581100ca714abc800b9572301c053065c7ca6c",
+          "token_ids_ascii_sha256": "fd2905ececba9d8ce45999dcf963ff0ccf46c786ff90f3b73c6c267a7ac56ede",
+          "logical_seed_sha256": "5ef30114c95b3014ddbb8c7baf3432829d0fe6e16ec5aa1d23ec466fb9fa4da2"
+        },
+        {
+          "call_index": 1,
+          "repetition_count": 2025,
+          "byte_count": 4107,
+          "input_token_count": 2048,
+          "input_bytes_sha256": "2ae66391b92fc0f58cfadeb92ce7ead15907de9b44d203d313eef0bdd3d6468d",
+          "token_ids_ascii_sha256": "12495fb1d7c4cc0632fa80d427b5721d382876a3113d8e5594d5e0df6167533f",
+          "logical_seed_sha256": "c70c11522bb73668d75cd9bf4f44754c80cf87a0690f7b6cad7398ca845b50dc"
+        }
+      ]
+    },
+    {
+      "class_id": "think",
+      "input_token_limit": 8192,
+      "output_token_limit": 128,
+      "temperature": "0",
+      "top_p": "1",
+      "calls": [
+        {
+          "call_index": 0,
+          "repetition_count": 8169,
+          "byte_count": 16395,
+          "input_token_count": 8192,
+          "input_bytes_sha256": "d3cde62e5ad2c190c51d28c79902b7a87d77d361525b79aaee777e783171aadf",
+          "token_ids_ascii_sha256": "c809ebdbc4340c7cdaca990d7693f268e63f79152997fdc8195ac2546906f42f",
+          "logical_seed_sha256": "01fb21e4ebc4e6eaca5063f3e4deed99dae7ecaab0238d4e3adbe0218b0a6c65"
+        },
+        {
+          "call_index": 1,
+          "repetition_count": 8169,
+          "byte_count": 16395,
+          "input_token_count": 8192,
+          "input_bytes_sha256": "c93caeda521fd9375bcec7014365c9e2a34d85f4f8650bd3699b22d58351139a",
+          "token_ids_ascii_sha256": "fec77442a226fc935865c1471298938e70c155d866593e7d398243a53e439f67",
+          "logical_seed_sha256": "39e7bb6174a5efd7cc36ad957820e8aa3d71dfcc05b868c7e54087d3c5224825"
+        }
+      ]
+    },
+    {
+      "class_id": "full_context",
+      "input_token_limit": 8192,
+      "output_token_limit": 256,
+      "temperature": "0.2",
+      "top_p": "0.95",
+      "calls": [
+        {
+          "call_index": 0,
+          "repetition_count": 8168,
+          "byte_count": 16400,
+          "input_token_count": 8192,
+          "input_bytes_sha256": "06b60d18ad555ceff0099c4cefb2f7c8839a96890f372b7a796966bf58ad989d",
+          "token_ids_ascii_sha256": "2b4d0b33726d9dab4b124fd99bf3a78c389613d641c2a26cec8d77a988d92b9b",
+          "logical_seed_sha256": "0c2ef658b2413854e3618808466a0e73111903518ca44f5de5f3904021282d54"
+        },
+        {
+          "call_index": 1,
+          "repetition_count": 8168,
+          "byte_count": 16400,
+          "input_token_count": 8192,
+          "input_bytes_sha256": "ab3145937d42cafd6cb812e74d5a28825e8ff9815ff677d3ab3535804c4335ab",
+          "token_ids_ascii_sha256": "b514520c2db917755147bd9358633f32a3c0848de7d5dd866cbd2b0bbc7458fc",
+          "logical_seed_sha256": "87d515a46f57ed1832a2fa79b5c74ba3dd00ddc6ed923ae2fd0f4124e286971d"
+        }
+      ]
+    },
+    {
+      "class_id": "rag",
+      "input_token_limit": 2048,
+      "output_token_limit": 256,
+      "temperature": "0.2",
+      "top_p": "0.95",
+      "calls": [
+        {
+          "call_index": 0,
+          "repetition_count": 2025,
+          "byte_count": 4105,
+          "input_token_count": 2048,
+          "input_bytes_sha256": "53d59508f1e064065504c1d4b7130b46bb332d0a474497696a31b92d419fd5a8",
+          "token_ids_ascii_sha256": "8fbb17a27a2eb6e223c26cf4acd3d683f0ae59e4d15dcbbcc7a64e108a8aa7b7",
+          "logical_seed_sha256": "076d71b8db444a96c0d023320ad13f86154e57b8d32e144c6526961d740b59b8"
+        },
+        {
+          "call_index": 1,
+          "repetition_count": 2025,
+          "byte_count": 4105,
+          "input_token_count": 2048,
+          "input_bytes_sha256": "2ad7180c7eae0ff1b4dbfb58c61c9863f4be7d8328ab27b8d741f78470dde0cf",
+          "token_ids_ascii_sha256": "6daa5fbce6340ff3f919772a869c87f46bf42aa71f7c83348f658459e85d2df1",
+          "logical_seed_sha256": "e6963d8d7410275ac873e86f9f2ee1890591a358e26f64c948b98ac20831991a"
+        }
+      ]
+    }
+  ]
+}

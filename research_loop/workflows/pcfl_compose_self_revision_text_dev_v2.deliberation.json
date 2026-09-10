@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "pcfl-compose-self-revision-text-dev-v2-deliberation",
+  "workspace": "../..",
+  "change_id": "chg_20260902_pcfl_compose_self_revision_text_dev_v2",
+  "directive_file": "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_notes/00_THESIS.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/IDEAS.md",
+    "research_loop/advisory/20260902_pcfl_paper_adjudication.md",
+    "research_loop/advisory/20260902_sparse_factor_graph_math_audit.md",
+    "research_loop/advisory/20260902_orbit_sampling_stat_audit.md",
+    "research_loop/advisory/20260902_pcfl_dream_loop_granularity_audit.md",
+    "research_loop/advisory/20260902_pcfl_lifetime_scaling_design.md",
+    "research_loop/advisory/20260902_model_owned_dream_revision_protocol.md",
+    "research_loop/advisory/20260902_pcfl_architecture_mapping_audit.md",
+    "research_loop/advisory/20260902_pcfl_compose_novelty_audit.md",
+    "research_loop/advisory/20260902_pcfl_compute_feasibility.md",
+    "research_loop/advisory/20260902_pcfl_sparse_construct_text_spec.md",
+    "research_loop/advisory/20260902_pcfl_semantic_memory_contract_audit.md",
+    "research_loop/advisory/20260902_pcfl_semantic_ast_countercritique.md",
+    "research_loop/advisory/20260902_pcfl_semantic_representation_adjudication.md",
+    "research_loop/advisory/20260902_pcfl_orientation_revision_fork_math.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/change.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/human_directive.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/interpretation_benchmark.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/interpretation_systems.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/critique.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/consensus.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/experiment_spec.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/visibility_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/resource_manifest.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/scope_proposal.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/semantic_dsl.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/semantic_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/resolver_reducer.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/generic_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/generic_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/neutral_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/neutral_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/class_informed_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/class_informed_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/operator_ast_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/operator_ast_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/iterative_thinker.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/prompts/one_shot_thinker.txt",
+    "research_loop/advisory/20260902_pcfl_v1_interpretation_repair_map.md",
+    "research_loop/advisory/20260902_pcfl_v1_value_and_efficiency_audit.md",
+    "research_loop/advisory/20260902_pcfl_v2_roster_adjudication.md",
+    "research_loop/advisory/20260902_pcfl_v2_staged_roster_arithmetic_audit.md",
+    "research_loop/advisory/20260902_pcfl_v2_design_premortem.md",
+    "research_loop/advisory/20260902_pcfl_v2_token_and_state_envelope.md",
+    "research_loop/advisory/20260902_pcfl_v2_preintake_contract_audit.md",
+    "research_loop/advisory/20260902_pcfl_v2_preintake_science_audit.md",
+    "research_loop/advisory/20260902_pcfl_v2_preintake_adversarial_audit.md",
+    "research_loop/advisory/20260902_pcfl_v2_postrepair_acceptance_matrix.md",
+    "research_loop/advisory/20260902_pcfl_v2_fixture_authority_adjudication.md",
+    "research_loop/advisory/20260902_pcfl_paper_value_and_thesis_alignment.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/experiment_spec.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/visibility_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/resource_manifest.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/scope_proposal.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/semantic_dsl.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/semantic_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/resolver_reducer.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/rng_contract.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/event_catalog.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/private_field_registry.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/analysis_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/gate_receipt.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/gate_receipt_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/v1_disposition.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/assignment_ledger.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/assignment_generator_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/assignment_manifest.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/experiment_call_ledger.schema.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/premortem_disposition.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/preintake_repair_disposition.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/runtime_envelope.json",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/static_fixture_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/event_extractor_contract.md",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/generic_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/generic_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/operator_ast_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/operator_ast_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/one_shot_dream1.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/one_shot_dream2.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/iterative_thinker.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/prompts/one_shot_thinker.txt",
+    "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v1/fixtures/factorized_13_item_ast.json",
+    "research_loop/schemas/architecture_change.schema.json",
+    "research_loop/architecture_intake.py",
+    "research_loop/architecture_deliberation.py"
+  ],
+  "output_dir": "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2",
+  "state_path": ".research_loop/intake/chg_20260902_pcfl_compose_self_revision_text_dev_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260902_pcfl_compose_self_revision_text_dev_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-luna",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 900
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 900,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "systems": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3000,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 900,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 900,
+          "mailbox_poll_sec": 10
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 3000,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1800
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        }
+      ]
+    },
+    "critique": {
+      "executors": [
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "xhigh",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 4200,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 2400
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 900,
+          "mailbox_poll_sec": 10
+        }
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {
+          "provider": "fable_mailbox",
+          "timeout_sec": 900,
+          "mailbox_poll_sec": 10
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 2400,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 1200
+        },
+        {
+          "provider": "codex",
+          "model": "gpt-5.6-luna",
+          "reasoning_effort": "high",
+          "max_context_chars_per_file": 1000000,
+          "timeout_sec": 1800,
+          "provider_attempts": 1,
+          "provider_attempt_timeout_sec": 900
+        }
+      ]
+    }
+  }
+}

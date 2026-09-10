@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "context_file": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "purpose"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "purpose": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "artifact_type", "critique_id", "change_id", "state",
+    "architecture_change_sha256", "interpretation_hashes", "context_files",
+    "strongest_case", "reviewed_acceptance_test_ids", "concerns",
+    "visibility_failures", "missing_acceptance_tests", "human_questions"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "artifact_type": {"const": "architecture_critique"},
+    "critique_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "change_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "state": {"const": "critiqued"},
+    "architecture_change_sha256": {"$ref": "#/$defs/hash"},
+    "interpretation_hashes": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["interpretation_id", "sha256"],
+        "properties": {
+          "interpretation_id": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/hash"}
+        }
+      }
+    },
+    "context_files": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/context_file"}},
+    "strongest_case": {"type": "string", "minLength": 1},
+    "reviewed_acceptance_test_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "concerns": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["concern_id", "category", "severity", "statement", "evidence", "acceptance_test_ids", "resolution_required"],
+        "properties": {
+          "concern_id": {"type": "string", "minLength": 1},
+          "category": {"enum": ["scientific", "architecture", "credit_assignment", "visibility_leak", "evaluation", "statistics", "scalability", "operations"]},
+          "severity": {"enum": ["note", "material", "blocking"]},
+          "statement": {"type": "string", "minLength": 1},
+          "evidence": {"type": "string", "minLength": 1},
+          "acceptance_test_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "resolution_required": {"type": "boolean"}
+        }
+      }
+    },
+    "visibility_failures": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "missing_acceptance_tests": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "human_questions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  }
+}

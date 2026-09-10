@@ -1,0 +1,967 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "Environment-fit report with deterministic replay logs, token/action density measurements, continuation/cloning check, reuse analysis, and leakage/shortcut audit.",
+      "expected": "A selected Level-1 world and the proposed Level-2 target satisfy the declared fit gates: reusable within-life structure exists, held-out action value requires cross-episode evidence, decision-time memory injection is possible, and no target-only/current-state/identifier predictor exceeds its preregistered floor.",
+      "falsifies": "The target environment cannot support a developmental, action-first lifetime protocol; it must not be promoted as the primary benchmark.",
+      "kind": "baseline",
+      "required_before": "implementation",
+      "setup": "CPU-first inspection of DiscoveryWorld-Lifetimes feasibility and small deterministic candidate controlled worlds; fit criteria and predictor floors are bound before model experiments.",
+      "test_id": "AT01_environment_and_leakage_fit"
+    },
+    {
+      "evidence_artifact": "Atomic-writer/read-fidelity report: witnessed atoms, reverse/paraphrase/partial-cue reads, exceptions, one supported shortcut, provenance records, and adapter-reset checks.",
+      "expected": "Only eligible lived evidence enters the candidate corpus; the MEMORY adapter is rebuilt from the clean frozen base per life, read fidelity and uncertainty behavior are reported separately from action performance, and no read plan exposes held-out answers.",
+      "falsifies": "Observed gains could be caused by malformed installation, leakage, cross-life contamination, or a reader that is not faithful enough to interpret downstream results.",
+      "kind": "unit",
+      "required_before": "implementation",
+      "setup": "CPU tests on varied action-outcome atoms and locally supported procedures, including contradicted and stale cases; no hidden environment truth is model-visible.",
+      "test_id": "AT02_atomic_memory_contract"
+    },
+    {
+      "evidence_artifact": "Deterministic common-deck checkpoint outputs, cleared-context/cache logs, memory snapshots, paired seed statistics, budget ledger, and hidden evaluation-deck disposition records.",
+      "expected": "At each geometric checkpoint, all arms receive exactly the same lived stream, comparable action/thought/retrieval/context/adapter-byte/consolidation-compute budgets, cleared transient state, and a frozen memory snapshot before read-only held-out tasks.",
+      "falsifies": "A claimed representational or consolidation advantage is actually explained by unequal experience, retained working context/cache, evaluation feedback, or unequal resources.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Run fixed common-deck attribution at 1C and 2C after the CPU gates; checkpoint evaluations are read-only and their outcomes never re-enter the life.",
+      "test_id": "AT03_common_deck_isolation"
+    },
+    {
+      "evidence_artifact": "Pre-registered ablation table with per-world-life curves for full system, no memory, context controls, raw and organized external memory, direct/raw LoRA, sleep-text, same-corpus LoRA, shortcut ablations, shuffled controls, cross-life controls, and batch-SFT reference.",
+      "expected": "The full system's effect decomposes into trace selection, dream-local connection growth, compiler/materialization, per-life parametric transport, and goal-conditioned reconstruction; each comparison preserves declared budgets.",
+      "falsifies": "Any apparent full-system gain persists under shuffled action-outcome bindings or cross-life adapters, is reproduced by direct/raw trajectory LoRA or external memory, or depends on an omitted resource mismatch.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Use whole held-out world-lives as replication units; include strongest feasible native-long-context and linked A-MEM/GraphRAG-style controls, not only weak raw replay.",
+      "test_id": "AT04_mechanism_and_baseline_suite"
+    },
+    {
+      "evidence_artifact": "Blinded action-life evaluation package: per-checkpoint A0-A4 action outcomes, provenance-cited paths, prediction-before-outcome logs, calibration/false-memory metrics, correction traces, and offline scoring report.",
+      "expected": "A positive result is limited to improved normalized A2-A4 held-out action value and post-context lifetime AUC under the frozen protocol; exact recall, reader fidelity, dependency reconstruction, query cost, and action benefit are reported separately.",
+      "falsifies": "The result is confined to A0/A1 recall or lookup, relies on an answer-bearing graph/verifier, fails under counterfactual twins or rule changes, or false-memory accumulation exceeds correction.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Evaluate fresh goals whose exact solution was not in an episode, including one- through four-dependency goals, exceptions, counterfactual twins, and controlled changes; commit before later outcome is visible.",
+      "test_id": "AT05_constructive_action_and_revision"
+    },
+    {
+      "evidence_artifact": "On-policy paired-world report with fixed action budgets, hidden checkpoint branches, cross-system experience-swap matrix, and action-information-gain accounting.",
+      "expected": "If the on-policy flywheel is claimed, better memory causes measurably different information-seeking actions, those public outcomes alter later eligible dream inputs, and the resulting later held-out action gain survives the experience/representation swap decomposition.",
+      "falsifies": "The on-policy improvement is entirely due to a better fixed representation of an identical stream, to extra actions, or to evaluation outcomes leaking back into the life.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Run only after common-deck attribution and independent review; pair world seeds and hold action budgets fixed.",
+      "test_id": "AT06_on_policy_flywheel"
+    },
+    {
+      "evidence_artifact": "Independent-review packet containing bound protocol, source hashes, code diff, test evidence, budget ledger, held-out split ledger, leakage audit, and every failed/negative result.",
+      "expected": "A fresh reviewer verifies that all pre-GPU gates passed, no forbidden information reached cognition, all declared baselines and falsifiers were executed, and the stated conclusion matches the evidence.",
+      "falsifies": "Any unreviewed protocol drift, missing baseline, leakage route, invalid replication unit, or overbroad attribution blocks GPU promotion and headline use.",
+      "kind": "independent_review",
+      "required_before": "scientific_claim",
+      "setup": "Fresh-context review occurs after implementation/tests and again after any repair; an author-side advocate may respond but cannot override the verdict.",
+      "test_id": "AT07_independent_review_gate"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_developmental_experiential_learning_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "The proposed primary behavioral hypothesis is conditional: a fixed pretrained agent may continue improving on held-out A2-A4 actions after lived experience exceeds a disclosed working-context budget if recurrent trace-conditioned dream compilation plus a reset-isolated per-life MEMORY LoRA and goal-conditioned reconstruction outperform matched episodic, linked-text, direct-parametric, and native-long-context controls.",
+        "before": "Current evidence establishes selected prerequisites and small-scale transport/controlled composition diagnostics, but not a long-horizon developmental action advantage or baseline saturation.",
+        "claim_id": "C01_post_context_developmental_action",
+        "evidence_needed": "Pre-registered whole-world-life curves at 0.5C, 1C, 2C, 4C, 8C, and 16C; matched controls; post-context A2-A4 action value/AUC; two later positive checkpoints; independent review.",
+        "headline_eligible": true,
+        "operation": "modify"
+      },
+      {
+        "after": "The MEMORY LoRA is credited only as lossy per-life persistence and associative access for compiler-produced semantic/procedural associations and tested hot-path shortcuts; explicit tokens and working state perform multi-hop reconstruction, while the dream resolver/compiler proposes and validates eligible local structure.",
+        "before": "Existing transport results can show that formatted atomic experiential content is installed and recognized under a specified protocol, but do not establish autonomous structural discovery, complete planning, or LoRA-specific intelligence.",
+        "claim_id": "C02_component_attribution",
+        "evidence_needed": "Same accepted corpus in text and LoRA; reader-fidelity probes; dream-text versus direct replay ablations; atomic versus shortcut ablations; cited reconstruction paths; matched action tests.",
+        "headline_eligible": false,
+        "operation": "modify"
+      },
+      {
+        "after": "The developmental prediction explicitly permits early context/RAG superiority and non-monotone learning; the useful-memory threshold is the first checkpoint with a preregistered practical advantage over the strongest matched organized external-memory baseline that remains positive at two later checkpoints.",
+        "before": "No threshold or crossover has been demonstrated; small-memory context-plus-recognition and LoRA-plus-recognition may be equivalent.",
+        "claim_id": "C03_onset_and_scale",
+        "evidence_needed": "Lifetime curves beyond C, native-long-context control, causal coverage accounting, threshold analysis, and whole-world-life replication.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "A later on-policy claim is limited to the complete organism: memory-guided information-seeking actions can improve the later experience distribution and subsequent action only if paired fixed-action and cross-system experience-swap experiments isolate that feedback loop.",
+        "before": "Controlled L0 experiment-resolution and fixed-corpus/ceiling work show component possibilities, not a general self-improving on-policy lifetime flywheel.",
+        "claim_id": "C04_on_policy_feedback",
+        "evidence_needed": "Paired on-policy lives with fixed action budget, hidden checkpoint evaluations, swap decomposition, provenance logs, and independent review.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "Negative or null results require narrowing or rejecting the headline: no sustained post-context advantage; identical-deck disappearance; insensitivity to action-outcome or cross-life shuffling; A0/A1-only gains; no sleep-compilation benefit; no matched shortcut cost reduction; no recurrent-over-batch gain; resource confounds; uncontrolled false-memory drift; or target-only shortcut prediction.",
+        "before": "These falsifiers are proposed but have not been executed for the developmental benchmark.",
+        "claim_id": "C05_falsifier_contract",
+        "evidence_needed": "Registered falsifier outcomes and unaltered evidence artifacts, including null/negative cells.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_experiential_learning_v1/human_directive.txt",
+      "purpose": "Verbatim human directive.",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "purpose": "Developmental proposal and evaluation design.",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "System thesis, component boundaries, and experiment map.",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "purpose": "Project thesis and historical architecture context.",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da"
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "purpose": "Frozen claim boundaries, gates, and honesty rules.",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c"
+    },
+    {
+      "path": "research_notes/11_baselines_benchmarks.md",
+      "purpose": "Baseline and benchmark requirements.",
+      "sha256": "dbd3afb70c3e03fbacbac479777ddea1e05bfc846bff92ec0f7f9ef0dd8272c6"
+    },
+    {
+      "path": "research_notes/03_agent_memory_benchmarks.md",
+      "purpose": "Memory-system and benchmark survey.",
+      "sha256": "1baa02810c51c5e1826fdb5f7059290353dc5d4df61582276b034e85656458da"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Current evidence, limitations, and preserved negative results.",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    },
+    {
+      "path": "alchemy/v2_out/mini_ledger.md",
+      "purpose": "L0 mechanism evidence and audit ledger.",
+      "sha256": "a0a077c6276d461864de5a67bd5c360f595e90d374cb9e2963c0ed39328c9549"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "public action, observation, outcome, and provenance",
+        "before": "",
+        "edge_id": "E01_lived_trace",
+        "from": "persistent_action_life",
+        "operation": "add",
+        "rationale": "Makes lived action/outcome episodes the sole source of per-life experience.",
+        "to": "verbatim_episodic_store"
+      },
+      {
+        "after": "goal-conditioned exact support, retrieved without hidden truth",
+        "before": "",
+        "edge_id": "E02_wake_episodic_support",
+        "from": "verbatim_episodic_store",
+        "operation": "add",
+        "rationale": "Preserves exact recollection as support, not as a replacement for constructive reconstruction.",
+        "to": "wake_resolver"
+      },
+      {
+        "after": "selected public traces plus non-evidentiary unresolved-dependency agenda",
+        "before": "",
+        "edge_id": "E03_sleep_selection",
+        "from": "sleep_scheduler",
+        "operation": "add",
+        "rationale": "Dreaming is conditioned on public experience, surprise, contradictions, repetitions, traversal, or current usefulness; agenda selection cannot assert facts.",
+        "to": "dream_resolver"
+      },
+      {
+        "after": "local relations, procedures, exceptions, alternative views, proposed shortcuts, uncertainty, and provenance",
+        "before": "",
+        "edge_id": "E04_local_growth",
+        "from": "dream_resolver",
+        "operation": "add",
+        "rationale": "Represents recurrent local connection growth rather than one-shot answer production.",
+        "to": "sleep_compiler"
+      },
+      {
+        "after": "canonicalized, deduplicated, provenance-preserving training examples and access views",
+        "before": "",
+        "edge_id": "E05_compile_memory",
+        "from": "sleep_compiler",
+        "operation": "add",
+        "rationale": "Separates semantic graph growth from parametric transport.",
+        "to": "per_life_memory_lora"
+      },
+      {
+        "after": "associative candidates and tested shortcuts, not exact episodes or final answers",
+        "before": "",
+        "edge_id": "E06_goal_conditioned_adapter_read",
+        "from": "per_life_memory_lora",
+        "operation": "add",
+        "rationale": "LoRA contributes lossy associative transport/access; the resolver reconstructs paths explicitly.",
+        "to": "wake_resolver"
+      },
+      {
+        "after": "cited prediction/plan/action plus unresolved dependencies and request-dream agenda",
+        "before": "",
+        "edge_id": "E07_wake_to_life",
+        "from": "wake_resolver",
+        "operation": "add",
+        "rationale": "Wake thinking is narrow, goal-conditioned dependency traversal and action, with later feedback.",
+        "to": "persistent_action_life"
+      },
+      {
+        "after": "append-only provenance/dependency/status records",
+        "before": "",
+        "edge_id": "E08_audit_shadow",
+        "from": "verbatim_episodic_store",
+        "operation": "add",
+        "rationale": "Enables audit of retrieval, reinforcement, revision, and materialization without granting an answer-bearing solver to cognition.",
+        "to": "audit_shadow"
+      },
+      {
+        "after": "blind commitment records and public outcome comparison",
+        "before": "",
+        "edge_id": "E09_offline_scoring",
+        "from": "audit_shadow",
+        "operation": "add",
+        "rationale": "Mechanical/offline scoring records agreement after commitment and never proposes, retrieves, or steers cognitive content.",
+        "to": "offline_scorer"
+      },
+      {
+        "after": "read-only held-out scores and no feedback into the life",
+        "before": "",
+        "edge_id": "E10_checkpoint_eval",
+        "from": "frozen_checkpoint_snapshot",
+        "operation": "add",
+        "rationale": "Separates evaluation from future learning and enables common-deck attribution.",
+        "to": "read_only_evaluator"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "Persistent causal action-life with partial observation, inspect/experiment/prepare/act/recover actions, costs, exceptions, controlled changes, deterministic replay, and held-out dependency goals; exact benchmark instantiation remains unchosen pending environment-fit approval.",
+        "before": "",
+        "node_id": "persistent_action_life",
+        "operation": "add",
+        "rationale": "Introduces the required long-horizon lived-experience substrate without selecting DiscoveryWorld, ScienceWorld, or a new controlled world prematurely."
+      },
+      {
+        "after": "Immutable per-life public action-observation-outcome trace with timestamps and provenance; resets with each life.",
+        "before": "",
+        "node_id": "verbatim_episodic_store",
+        "operation": "add",
+        "rationale": "Keeps exact experience available as auditable non-parametric support."
+      },
+      {
+        "after": "Narrow, goal-conditioned resolver: retrieves, resolves typed dependencies, maintains explicit workspace, plans, acts, revises, defers, or emits a non-evidentiary agenda; fixed prompted controller in the proposed initial study.",
+        "before": "Current thinker diagnostics and staged protocols are not a validated lifelong action resolver.",
+        "node_id": "wake_resolver",
+        "operation": "modify",
+        "rationale": "Defines thinking as explicit reconstruction rather than claiming either LoRA or a single answer call discovers the solution."
+      },
+      {
+        "after": "Trace/uncertainty/surprise/reward/contradiction/usefulness-based selector with declared sleep checkpoints; fixed in the initial proposal.",
+        "before": "",
+        "node_id": "sleep_scheduler",
+        "operation": "add",
+        "rationale": "Separates choosing what to revisit from making claims or learning an eventual LOOP policy."
+      },
+      {
+        "after": "Broad recurrent resolver that replays selected traces, proposes local connections/procedures/exceptions and access shortcuts, cites eligible evidence, and may consume a non-evidentiary agenda; it has no hidden truth or answer scoring access.",
+        "before": "Existing batch, temporal, and direct-parent diagnostics are insufficient to establish recurrent autonomous structural discovery.",
+        "node_id": "dream_resolver",
+        "operation": "modify",
+        "rationale": "Preserves the dream regime as local recurrent connection building, not a one-shot final-answer generator."
+      },
+      {
+        "after": "Compiler that deduplicates, canonicalizes, retains uncertainty/provenance, creates multiple access views, and materializes training examples; it does not invent scientific structure absent an eligible dream proposal/evidence path.",
+        "before": "",
+        "node_id": "sleep_compiler",
+        "operation": "add",
+        "rationale": "Makes graph-like semantic construction and LoRA transport distinct causal stages."
+      },
+      {
+        "after": "The only per-life learned parameter object: reset and cumulatively rebuilt from clean frozen base at checkpoints; carries lossy semantic/procedural associations and hot-path shortcuts, not a literal graph, exact episodic database, or trained task policy.",
+        "before": "Small-scale adapter transport has been demonstrated under particular formats/read protocols but not post-context lifelong value.",
+        "node_id": "per_life_memory_lora",
+        "operation": "modify",
+        "rationale": "Binds the intended attribution and life isolation."
+      },
+      {
+        "after": "Append-only, non-cognitive audit of evidence, statuses, derivation depth, retrieval/traversal/reinforcement/revision/materialization; never exposed as a solver or answer-bearing graph.",
+        "before": "",
+        "node_id": "audit_shadow",
+        "operation": "add",
+        "rationale": "Supports provenance and failure attribution while enforcing the visibility contract."
+      },
+      {
+        "after": "Frozen memory/context/cache snapshot at geometric checkpoint, isolated from read-only evaluation outcomes.",
+        "before": "",
+        "node_id": "frozen_checkpoint_snapshot",
+        "operation": "add",
+        "rationale": "Required for attribution of representation/use independent of exploration."
+      },
+      {
+        "after": "Programmatic reporting-only scorer using hidden truth after commitment; may compare and record but cannot generate proposals, choose retrieval, steer planning, or return hidden answers.",
+        "before": "",
+        "node_id": "offline_scorer",
+        "operation": "add",
+        "rationale": "Preserves honest verification and forbids in-loop oracle behavior."
+      },
+      {
+        "after": "Read-only held-out action-task evaluator whose outcomes are discarded from the life.",
+        "before": "",
+        "node_id": "read_only_evaluator",
+        "operation": "add",
+        "rationale": "Prevents checkpoint/evaluation feedback contamination."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin ratify the exact architecture-change bytes, selected benchmark/environment, information-visibility contract, preregistered practical margin and predictor floors, resource budgets, baselines, held-out split/ordering, and permitted implementation scope for chg_20260901_developmental_experiential_learning_v1?",
+    "forbidden_before_approval": [
+      "Editing code, benchmark definitions, evaluation labels, or frozen protocols for this change.",
+      "Selecting DiscoveryWorld-Lifetimes, ScienceWorld-Lifetimes, or a new controlled persistent world as the primary benchmark.",
+      "Choosing the practical threshold margin, target-only predictor floor, memory/context/action/compute budgets, geometric schedule, or goalposts.",
+      "Launching CPU implementation experiments beyond read-only inspection or any GPU/scientific run.",
+      "Claiming that dreaming autonomously discovers complete solutions, that LoRA is the discovery/planning organ, that the organism has a developmental advantage, or that an on-policy flywheel has been shown.",
+      "Using hidden truth, exact solver outputs, offline evaluation labels, held-out answers, or checkpoint outcomes inside generation, retrieval, planning, training, or subsequent life state.",
+      "Training or enabling a shared LOOP adapter within an evaluation life, reusing a MEMORY adapter, episodic state, cache, or working state across lives, or treating model consensus as ratification."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "For each episode: observe public state and goal; retrieve exact episodic support plus adapter-associated candidates; resolve one typed dependency at a time in explicit workspace; form a cited plan/prediction; act; append public outcome; revise, defer, or release.",
+        "before": "Existing staged thinker/protocol diagnostics do not constitute a long-horizon action-life loop.",
+        "loop_id": "L01_cognitive_wake",
+        "operation": "add",
+        "rationale": "Implements DFS-like goal-conditioned thinking and separates cognition from memory transport.",
+        "reads": [
+          "current_public_state",
+          "current_goal",
+          "bounded_working_state",
+          "verbatim_episodic_store",
+          "per_life_memory_lora"
+        ],
+        "stop_condition": "Public outcome, supported action/answer, irreducible missing dependency, budget exhaustion, or defer/request-dream agenda.",
+        "trigger": "Every actionable decision point and post-outcome contradiction/replan event.",
+        "writes": [
+          "action_to_environment",
+          "append_only_episode_trace",
+          "cited_workspace",
+          "unresolved_dependency_agenda",
+          "provisional_prediction_status"
+        ]
+      },
+      {
+        "after": "At declared geometric episode/action checkpoints: select eligible traces; recurrently replay and connect local evidence; propose relations/procedures/exceptions/shortcuts with provenance and uncertainty; blind-predict before later public evidence when applicable; compile accepted eligible content; rebuild cumulative MEMORY LoRA from clean base; retain audit records.",
+        "before": "Prior batch/streaming results and L0 daydreaming are mechanisms/diagnostics, not a ratified long-lifetime sleep protocol.",
+        "loop_id": "L02_experience_dream_consolidation",
+        "operation": "add",
+        "rationale": "Tests recurrent local semantic growth and parametric persistence as separate steps.",
+        "reads": [
+          "verbatim_episodic_store",
+          "unresolved_dependency_agenda",
+          "prior_semantic_memories_with_provenance",
+          "prior_memory_adapter_snapshot",
+          "sleep_budget"
+        ],
+        "stop_condition": "Declared checkpoint compute budget consumed, agenda exhausted, no eligible pending trace, or scheduler stop rule; no evaluation label may terminate or steer it.",
+        "trigger": "Geometric action/episode checkpoints; optionally declared surprise, contradiction, repeated traversal, reward, or usefulness signals.",
+        "writes": [
+          "append_only_dream_proposals",
+          "semantic_memory_status_updates",
+          "compiled_training_examples",
+          "per_life_memory_lora_snapshot",
+          "audit_shadow"
+        ]
+      },
+      {
+        "after": "At each fixed common-deck checkpoint: freeze memory; clear working context/caches; run fresh read-only held-out action deck; score externally; discard outcomes; resume only from pre-evaluation life state.",
+        "before": "",
+        "loop_id": "L03_fixed_common_deck_attribution",
+        "operation": "add",
+        "rationale": "Causally separates representation/use from policy-selected experience quality.",
+        "reads": [
+          "frozen_checkpoint_snapshot",
+          "held_out_read_only_deck",
+          "offline_ground_truth"
+        ],
+        "stop_condition": "All predeclared held-out tasks complete; results are sealed from cognition and training.",
+        "trigger": "Each geometric checkpoint in an identical ordered action-observation-outcome stream.",
+        "writes": [
+          "sealed_checkpoint_metrics",
+          "budget_ledger",
+          "offline_audit_report"
+        ]
+      },
+      {
+        "after": "Across paired on-policy lives: select actions under fixed action budget; consolidate only public lived outcomes; run hidden read-only branches; execute cross-system experience swaps to distinguish evidence collection from representation/use.",
+        "before": "",
+        "loop_id": "L04_on_policy_developmental_flywheel",
+        "operation": "add",
+        "rationale": "Tests the complete organism feedback claim only after attribution gates; exact exploration policy remains unspecified.",
+        "reads": [
+          "current_public_state",
+          "per_life_memory_lora",
+          "verbatim_episodic_store",
+          "fixed_action_budget",
+          "paired_world_seed"
+        ],
+        "stop_condition": "Fixed life/action budget, predeclared terminal world state, or safety/defer condition; hidden evaluation does not update the life.",
+        "trigger": "Only after L03 and pre-GPU acceptance gates pass.",
+        "writes": [
+          "policy_selected_episode_trace",
+          "per_life_memory_lora_snapshot",
+          "experience_swap_artifacts",
+          "sealed_on_policy_metrics"
+        ]
+      },
+      {
+        "after": "Across development worlds only, optionally train a distinct LOOP adapter from saved successful and failed public causal trajectories; freeze it for every evaluation life and keep MEMORY adapter null/new at life start.",
+        "before": "No within-life learned controller is required or authorized for the initial developmental claim.",
+        "loop_id": "L05_outer_controller_learning",
+        "operation": "add",
+        "rationale": "Encodes the future slow learning timescale without conflating controller learning with per-life world learning.",
+        "reads": [
+          "development_world_public_trajectories",
+          "delayed_outcomes",
+          "offline_filtered_training_manifest"
+        ],
+        "stop_condition": "Predeclared development-training budget and held-out-world validation protocol; never runs within an evaluation life.",
+        "trigger": "Future extension after the prompted-organism mechanism is separately established and human-approved.",
+        "writes": [
+          "frozen_loop_adapter_candidate",
+          "controller_training_audit"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Proposal to evaluate developmental experiential learning as a controlled long-horizon organism: lived action/outcome traces feed recurrent dream-time local connection growth and a provenance-preserving compiler; a reset-isolated MEMORY LoRA provides lossy per-life associative persistence; goal-conditioned wake reconstruction composes explicit working paths into later actions. The proposal intentionally leaves the benchmark choice, threshold, budgets, schedule details, and controller-learning inclusion for human ratification.",
+  "system_thesis": "An agent may become more capable over its own lifetime when it converts public consequences of action into an increasingly connected experiential world approximation: lived episodes preserve exact evidence; dream-time recurrence builds and revises local semantic/procedural connections; compilation transports selected associations into a per-life LoRA; goal-conditioned retrieval plus explicit planning reconstructs useful paths for new actions; later thinking and outcomes become eligible inputs to future dream cycles. Intelligence and behavioral credit belong to the complete temporal organism, not to LoRA alone, dreaming alone, or a static retrieval store.",
+  "title": "Developmental experiential learning: recurrent dream compilation and per-life parametric memory",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "Required for action selection and goal-conditioned reconstruction.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "Stored only when acted/observed as a public episode.",
+        "stage_id": "episodic",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "May be selected later only through an eligible recorded trace or agenda.",
+        "stage_id": "sleep_select",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "Available only as part of selected eligible public trace, not as hidden evaluation state.",
+        "stage_id": "dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "May appear in eligible training examples after provenance-preserving compilation.",
+        "stage_id": "compile",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "No literal state storage claim; only derived associations may persist.",
+        "stage_id": "memory_adapter",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "Visible only in read-only task prompt at its appropriate evaluation time.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "current_public_state_and_goal",
+        "reason": "Can be scored only insofar as it is public task input.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Exact public support is available under bounded, goal-conditioned retrieval.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Immutable authoritative per-life record.",
+        "stage_id": "episodic",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Selector reads public traces and metadata only.",
+        "stage_id": "sleep_select",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Dream resolver sees only selected eligible public traces.",
+        "stage_id": "dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Compiler receives cited eligible evidence.",
+        "stage_id": "compile",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Not literally stored; only lossy compiled associations/procedures may be transported.",
+        "stage_id": "memory_adapter",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Frozen snapshot may be queried only through the declared evaluator interface.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "lived_action_observation_outcome_trace",
+        "reason": "Available for audit/scoring after commitment, never as an oracle proposal source.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Active explicit cognitive state for within-episode reasoning.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Only selected public action/outcome records persist; transient scratch is not episodic truth.",
+        "stage_id": "episodic",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Only typed unresolved agenda/provenance may be selected; unsupported free-form guesses are excluded.",
+        "stage_id": "sleep_select",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Non-evidentiary agenda may guide attention, but does not establish a memory claim.",
+        "stage_id": "dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "May be recorded as selection metadata, not compiled as evidence without eligible support.",
+        "stage_id": "compile",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Never directly trained as hidden solution or task policy.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "Evaluation uses a fresh workspace and cannot inherit prior cache/state.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_workspace_and_cited_plan",
+        "reason": "May be audited after the fact but cannot steer scoring or cognition.",
+        "stage_id": "offline_score",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Wake can retrieve only compiled, eligible status-typed memories and adapter-associated candidates; it does not read uncompiled hidden drafts.",
+        "stage_id": "wake",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Audit/provenance link only; source trace remains immutable.",
+        "stage_id": "episodic",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Prior status, contradiction, support, and traversal may select re-dream targets.",
+        "stage_id": "sleep_select",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Dream may revisit prior semantic memories with provenance and uncertainty.",
+        "stage_id": "dream",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Compiler canonicalizes only eligible, status-typed outputs.",
+        "stage_id": "compile",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Only compiler-produced lossy realizations enter the adapter.",
+        "stage_id": "memory_adapter",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Frozen pre-evaluation memory may be read; evaluation outcomes cannot revise status.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "dream_proposals_and_semantic_status",
+        "reason": "Offline scorer may label committed claims but cannot author them.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Goal-conditioned atomic/iterative reads produce candidates; explicit workspace performs multi-hop composition.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Adapter is not the verbatim episodic store.",
+        "stage_id": "episodic",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Prior snapshot may inform selection only through declared diagnostic/use protocol.",
+        "stage_id": "sleep_select",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Dream may use prior semantic memories, not opaque adapter contents as an answer oracle.",
+        "stage_id": "dream",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Compiler prepares new cumulative training material from clean-base policy; it does not decode exact weights.",
+        "stage_id": "compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Per-life learned state is visible only through declared adapter read/write operations.",
+        "stage_id": "memory_adapter",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "Frozen snapshot is the evaluated persistent-memory condition.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "memory_adapter_associations",
+        "reason": "May be diagnosed offline for fidelity/capacity; hidden truth may not alter it.",
+        "stage_id": "offline_score",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Only the new goal may be shown; answer and later branch outcome are unavailable before action/commitment.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Never enters lived record before the permitted action outcome; read-only evaluation outcomes are discarded.",
+        "stage_id": "episodic",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Cannot select sleep traces.",
+        "stage_id": "sleep_select",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Cannot guide proposal, retrieval, prediction, or revision.",
+        "stage_id": "dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Cannot enter corpus or training examples.",
+        "stage_id": "compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Cannot enter the MEMORY adapter.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Evaluator holds it privately and exposes only permitted public environment outcome after action; checkpoint outcomes are not returned to the life.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "held_out_target_answer_and_branch_outcome",
+        "reason": "Reporting-only truth used after commitment for mechanical scoring.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Never visible to cognitive generation, retrieval, planning, action, or training.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Never recorded as experience.",
+        "stage_id": "episodic",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Cannot determine selection.",
+        "stage_id": "sleep_select",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Cannot verify, rank, or steer dream content in headline conditions.",
+        "stage_id": "dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Cannot filter or create training examples in headline conditions.",
+        "stage_id": "compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Cannot train or modify the memory adapter.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Hidden from model and frozen checkpoint memory; evaluator uses it only internally for sealed result computation.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "offline_ground_truth_and_exact_solver",
+        "reason": "Permitted solely for post-commitment reporting and leakage audits.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "No in-life access.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "No in-life access.",
+        "stage_id": "episodic",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Cannot alter sleep scheduling.",
+        "stage_id": "sleep_select",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Cannot alter dreaming, proposals, or compilation.",
+        "stage_id": "dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Cannot enter training examples or goal selection.",
+        "stage_id": "compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Cannot train/update an evaluation-life adapter.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Produced only as sealed outputs after read-only evaluation.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "evaluation_metrics_and_checkpoint_labels",
+        "reason": "Visible for reporting after the relevant life/checkpoint is sealed.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Cognition may receive cited immutable fact/provenance fields through declared memory interfaces, never graph traversal or answer-bearing structure.",
+        "stage_id": "wake",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Append-only audit records derive from the episodic source.",
+        "stage_id": "episodic",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Selection may consume permitted trace/status metadata, not hidden graph-derived answers.",
+        "stage_id": "sleep_select",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Dream sees cited eligible memories/traces, not an audit-graph solver.",
+        "stage_id": "dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Compiler retains provenance but cannot use hidden answer paths.",
+        "stage_id": "compile",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Never encoded as a privileged graph solver in weights.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Available for audit, not as evaluation cognition.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "audit_shadow_provenance_graph",
+        "reason": "Visible for offline audit and attribution.",
+        "stage_id": "offline_score",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "A frozen shared LOOP adapter may supply fixed controller behavior only in a later approved extension; prior life MEMORY/episodic/working state is prohibited.",
+        "stage_id": "wake",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "Per-life episodic store must reset; prior episodic state is forbidden.",
+        "stage_id": "episodic",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "No prior-life MEMORY state may affect selection; a frozen LOOP policy remains an unratified extension.",
+        "stage_id": "sleep_select",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "No prior-life semantic/memory state; frozen future LOOP policy only if separately approved.",
+        "stage_id": "dream",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "Cross-life MEMORY data cannot enter compiler; future LOOP training uses development-only trajectories.",
+        "stage_id": "compile",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "MEMORY adapter is newly initialized/rebuilt per life; no cross-life reuse.",
+        "stage_id": "memory_adapter",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "Evaluator verifies reset isolation.",
+        "stage_id": "checkpoint_eval",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "cross_life_state_and_loop_adapter",
+        "reason": "Offline audit verifies isolation and, if relevant, frozen LOOP-adapter provenance.",
+        "stage_id": "offline_score",
+        "visibility": "derived_only"
+      }
+    ],
+    "information_items": [
+      "current_public_state_and_goal",
+      "lived_action_observation_outcome_trace",
+      "wake_workspace_and_cited_plan",
+      "dream_proposals_and_semantic_status",
+      "memory_adapter_associations",
+      "held_out_target_answer_and_branch_outcome",
+      "offline_ground_truth_and_exact_solver",
+      "evaluation_metrics_and_checkpoint_labels",
+      "audit_shadow_provenance_graph",
+      "cross_life_state_and_loop_adapter"
+    ],
+    "stages": [
+      "wake",
+      "episodic",
+      "sleep_select",
+      "dream",
+      "compile",
+      "memory_adapter",
+      "checkpoint_eval",
+      "offline_score"
+    ]
+  }
+}

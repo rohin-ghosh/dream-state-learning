@@ -1,0 +1,394 @@
+{
+  "schema_version": "pcfl.world_manifest.v2",
+  "artifact_type": "pcfl_d0_exact_world_manifest",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "protocol_id": "PCFL-D0-EXACT-V2",
+  "authority_scope": {
+    "stage": "D0",
+    "experience_mode": "fixed_deck",
+    "evaluation_writes": false,
+    "on_policy": false,
+    "model_calls": false,
+    "model_weight_access": false,
+    "lora_operations": false,
+    "gpu_operations": false,
+    "network_operations": false,
+    "scientific_cells": false,
+    "scientific_claims": false
+  },
+  "constants": {
+    "traits": ["T0", "T1", "T2", "T3"],
+    "trait_values": ["ZERO", "ONE"],
+    "latent_bit_to_public_value": {"0": "ZERO", "1": "ONE"},
+    "mutable_traits": ["T0", "T1", "T2"],
+    "immutable_traits": ["T3"],
+    "action_cap": 6,
+    "working_token_budget_c": 8192,
+    "checkpoint_token_ends": [4096, 8192, 16384],
+    "targets_per_kind_per_checkpoint": 8,
+    "target_proposal_cap_per_slot": 100000,
+    "pair_candidate_cap": 100000,
+    "dormant_exception_families": 2
+  },
+  "latent_family": {
+    "nonexception_world_count": 103680,
+    "world_rank_domain": {"minimum": 0, "maximum": 103679},
+    "preparation_labels": ["P0000000", "P0000001", "P0000002", "P0000003", "P0000004", "P0000005"],
+    "preparation_templates": [
+      {"template_id": "SET_T0_0", "operation": "SET", "trait": "T0", "value": "ZERO"},
+      {"template_id": "SET_T0_1", "operation": "SET", "trait": "T0", "value": "ONE"},
+      {"template_id": "SET_T1_0", "operation": "SET", "trait": "T1", "value": "ZERO"},
+      {"template_id": "SET_T1_1", "operation": "SET", "trait": "T1", "value": "ONE"},
+      {"template_id": "SET_T2_0", "operation": "SET", "trait": "T2", "value": "ZERO"},
+      {"template_id": "SET_T2_1", "operation": "SET", "trait": "T2", "value": "ONE"}
+    ],
+    "preparation_assignment": "A permutation p of [SET_T0_0,SET_T0_1,SET_T1_0,SET_T1_1,SET_T2_0,SET_T2_1] maps the preparation_labels entry at index i to p[i]. Every one of 6! permutations is generator-legal.",
+    "site_labels": ["S0000000", "S0000001", "S0000002", "S0000003"],
+    "site_predicates": [
+      {"predicate_id": "F0", "expression": "T0 AND T3", "truth_table_T0_T3": [0, 0, 0, 1]},
+      {"predicate_id": "F1", "expression": "T0 OR T3", "truth_table_T0_T3": [0, 1, 1, 1]},
+      {"predicate_id": "F2", "expression": "T1 XOR T3", "truth_table_T1_T3": [0, 1, 1, 0]},
+      {"predicate_id": "F3", "expression": "(NOT T0) AND (NOT T3)", "truth_table_T0_T3": [1, 0, 0, 0]}
+    ],
+    "site_assignment": "A permutation s of [F0,F1,F2,F3] maps the site_labels entry at index i to s[i]. Their public semantics are fixed by the expressions above. Every one of 4! permutations is generator-legal.",
+    "route_labels": ["R0000000", "R0000001", "R0000002"],
+    "route_requirements": [
+      {"requirement_id": "G0", "trait": "T0", "value": "ONE"},
+      {"requirement_id": "G1", "trait": "T1", "value": "ZERO"},
+      {"requirement_id": "G2", "trait": "T2", "value": "ONE"}
+    ],
+    "route_assignment": "A permutation r of [G0,G1,G2] maps the route_labels entry at index i to r[i]. Their public semantics are fixed by the trait/value records above. Every one of 3! permutations is generator-legal.",
+    "permutation_enumeration": {
+      "algorithm": "lexicographic_permutation_unrank",
+      "element_order": "the array order written in this manifest",
+      "rank_zero": "identity permutation",
+      "unrank_rule": "For n elements and rank q in [0,n!-1], at position i select the floor(q/(n-1-i)!)th still-unused element in manifest order, then replace q by q mod (n-1-i)!.",
+      "rank_formula": "world_rank=((preparation_rank*24)+site_rank)*6+route_rank"
+    },
+    "world_decode": {
+      "preparation_rank": "floor(world_rank/144)",
+      "site_rank": "floor((world_rank mod 144)/6)",
+      "route_rank": "world_rank mod 6"
+    },
+    "specimen_classes": ["XCLASS00", "XCLASS01", "XCLASS02", "XCLASS03", "XCLASS04", "XCLASS05", "XCLASS06", "XCLASS07"],
+    "skin_descriptor_tables": {
+      "specimen_class_descriptors": ["amber specimen", "cobalt specimen", "fern specimen", "ivory specimen", "lilac specimen", "ochre specimen", "silver specimen", "teal specimen"],
+      "preparation_family_descriptors": ["alpha preparation", "bravo preparation", "charlie preparation", "delta preparation", "echo preparation", "foxtrot preparation"],
+      "site_family_descriptors": ["arch site", "basin site", "cairn site", "dune site"],
+      "route_family_descriptors": ["arc route", "bridge route", "causeway route"],
+      "assignment": "For each table independently, apply the Fisher-Yates permutation from the skin child stream and zip the permuted descriptors to the corresponding fixed handle array in manifest order."
+    },
+    "public_family_handle_rule": "The preparation, site, route, and specimen-class handles listed above are the complete persistent opaque eight-byte reusable vocabulary. Their numeric-looking suffixes are identifiers only and have no semantic ordering beyond manifest order.",
+    "skin_independence": "The eight-class skin permutation and natural-language descriptor table are sampled only from the skin namespace. Source instance handles come only from the source namespace and target instance handles only from the target namespace. The fixed persistent family handles carry no descriptor-derived semantics. Skins, descriptors, and all instance handles are independent of world_rank and reused byte-for-byte by both members of a twin pair. No descriptor or handle token is computed from a preparation, site, or route assignment.",
+    "exceptions": {
+      "ids": ["A4E0", "A4E1"],
+      "enabled": false,
+      "rule": "Any A4 exception bit in an A0-A3 source event, eligible atom, target, controller hypothesis, or score invalidates the generator version."
+    }
+  },
+  "twin_involution": {
+    "name": "dagger",
+    "preparation_template_map": {"SET_T0_0": "SET_T1_0", "SET_T0_1": "SET_T1_1", "SET_T1_0": "SET_T0_0", "SET_T1_1": "SET_T0_1", "SET_T2_0": "SET_T2_0", "SET_T2_1": "SET_T2_1"},
+    "site_predicate_map": {"F0": "F3", "F1": "F1", "F2": "F2", "F3": "F0"},
+    "route_requirement_map": {"G0": "G2", "G1": "G1", "G2": "G0"},
+    "application": "Keep public label positions fixed and replace each assigned template, predicate, or requirement by the mapped value above. Skin, handles, source action schedule, target proposal bytes, initial public states, action counts, and public ordering are unchanged.",
+    "prefix_noninterference": "For identical public states and identical action bytes, the two transitions must emit identical canonical public outcome and successor-state bytes unless that action evaluates or applies a preparation, site, or route assignment whose template is changed by dagger. No side bit or latent rank affects any other transition field.",
+    "required_properties": [
+      "dagger(dagger(H)) equals H byte-for-byte",
+      "world_rank decoding followed by dagger and re-ranking is total on ranks 0 through 103679",
+      "the two sides use one common skin seed and one common target proposal stream",
+      "the registered A2 correct preparation differs across sides",
+      "the registered A3 correct unordered preparation pairs are disjoint across sides"
+    ]
+  },
+  "golden_world_cases": [
+    {
+      "case_id": "GW01_RANK_ZERO_DAGGER",
+      "world_rank": 0,
+      "decoded_ranks": {"preparation_rank": 0, "site_rank": 0, "route_rank": 0},
+      "dagger_decoded_ranks": {"preparation_rank": 288, "site_rank": 21, "route_rank": 5},
+      "dagger_world_rank": 41603,
+      "dagger_twice_world_rank": 0
+    }
+  ],
+  "world_state_machine": {
+    "initial_flags": {"terminal": false, "intervention_accepted": false, "commit_succeeded": false},
+    "step_rule": "Exactly one typed action is parsed and executed per step. Every parsed action, including ASSAY and an action that terminates in failure, consumes one of six actions. Illegal, malformed, unknown-field, null, floating-point, or multi-action input ends the item with value zero before any partial mutation.",
+    "actions": [
+      {
+        "action": "SURVEY",
+        "arguments": ["site_handle"],
+        "preconditions": ["not terminal", "site_handle is the target site", "site has not already been surveyed"],
+        "mutation": "Set surveyed=true and copy the target's preassigned route_handle and route_family into public state.",
+        "public_result_codes": ["SURVEYED"],
+        "hidden_information_forbidden": ["route requirement", "site predicate", "correct preparation"]
+      },
+      {
+        "action": "ASSAY",
+        "arguments": ["specimen_handle", "trait"],
+        "preconditions": ["not terminal", "specimen_handle is current", "trait is one of T0,T1,T2,T3"],
+        "mutation": "None.",
+        "public_result_codes": ["ASSAY_OBSERVED"],
+        "public_observation": "Return the selected bit already present in the public trait panel."
+      },
+      {
+        "action": "PREPARE",
+        "arguments": ["specimen_handle", "preparation_handle"],
+        "preconditions": ["not terminal", "specimen_handle is current", "preparation_handle is in public inventory", "preparation_handle has not been consumed"],
+        "mutation": "Resolve the handle's public preparation_family through the hidden permutation, SET the designated mutable trait, consume that inventory item, append the handle to preparations in action order, and expose the complete new trait panel.",
+        "public_result_codes": ["PREPARED"]
+      },
+      {
+        "action": "TRAVERSE",
+        "arguments": ["route_handle", "specimen_handle"],
+        "preconditions": ["not terminal", "surveyed=true", "route_handle equals the surveyed route", "specimen_handle is current"],
+        "mutation": "Evaluate the hidden requirement assigned to the public route_family. On pass set traversed=true. On fail set terminal=true and irreversible_failure=true.",
+        "public_result_codes": ["TRAVERSE_PASSED", "TERMINAL_FAILURE"],
+        "terminal_failure_kind": "ROUTE_REJECTED"
+      },
+      {
+        "action": "INTERVENE",
+        "arguments": ["specimen_handle", "site_handle"],
+        "preconditions": ["not terminal", "specimen_handle is current", "site_handle is the target site", "for A3 traversed=true"],
+        "mutation": "Evaluate the hidden predicate assigned to the public site_family. On acceptance set intervention_accepted=true. On rejection set terminal=true and irreversible_failure=true.",
+        "public_result_codes": ["INTERVENTION_ACCEPTED", "TERMINAL_FAILURE"],
+        "terminal_failure_kind": "SITE_REJECTED"
+      },
+      {
+        "action": "COMMIT",
+        "arguments": ["mission_handle"],
+        "preconditions": ["not terminal"],
+        "mutation": "If mission_handle equals the public goal mission and intervention_accepted=true, set terminal=true and commit_succeeded=true. Otherwise set terminal=true and irreversible_failure=true.",
+        "public_result_codes": ["MISSION_SUCCEEDED", "TERMINAL_FAILURE"],
+        "terminal_failure_kind": "COMMIT_REJECTED"
+      }
+    ],
+    "illegal_action_result": {"code": "TERMINAL_FAILURE", "failure_kind": "ILLEGAL_ACTION", "terminal": true},
+    "malformed_action_result": {"code": "TERMINAL_FAILURE", "failure_kind": "MALFORMED_ACTION", "terminal": true},
+    "terminal_action_attempt_result": {"code": "TERMINAL_FAILURE", "failure_kind": "ILLEGAL_ACTION", "terminal": true},
+    "action_cap_result": {"code": "TERMINAL_FAILURE", "failure_kind": "ACTION_CAP_EXHAUSTED", "terminal": true}
+  },
+  "source_life": {
+    "policy_properties": [
+      "scripted",
+      "target-blind",
+      "outcome-blind in action choice and order",
+      "memory-arm-blind",
+      "fresh-reset specimen for every source episode",
+      "one action per source episode",
+      "byte-identical public action bytes across future arms"
+    ],
+    "schedule": {
+      "kind": "exactly_32_complete_repetitions_of_the_fixed_49_record_supercycle",
+      "selection_rule": "The next source action is the next record in the fixed 49-record supercycle below, wrapping to record zero and incrementing cycle_index through exactly 0..31. Outcome bytes and token counts never select, stop, skip, reorder, or replace an action.",
+      "supercycle_order": ["PREPARATION_PANEL", "ROUTE_PANEL", "SITE_PANEL"],
+      "preparation_panel": {
+        "expansion_order": "panel_row major, then preparation_family P0000000 through P0000005 in manifest order",
+        "panel_rows": [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1],
+          [0, 1, 1, 0],
+          [1, 0, 0, 1]
+        ],
+        "action": "PREPARE",
+        "records_per_supercycle": 24
+      },
+      "site_panel": {
+        "expansion_order": "site_family S0000000 through S0000003 in manifest order, then panel_row order",
+        "panel_rows": [
+          [0, 0, 0, 0],
+          [0, 0, 1, 1],
+          [1, 1, 1, 0],
+          [1, 1, 0, 1]
+        ],
+        "expected_predicate_accept_vectors_in_F0_F1_F2_F3_order": [
+          [0, 0, 0, 1],
+          [0, 1, 1, 0],
+          [0, 1, 1, 0],
+          [1, 1, 0, 0]
+        ],
+        "action": "INTERVENE",
+        "records_per_supercycle": 16
+      },
+      "route_panel": {
+        "expansion_order": "route_family R0000000 through R0000002 in manifest order, then panel_row order",
+        "source_test_rig_initialization": "Each fresh route source episode begins with surveyed=true and a pair-common public route instance bound to the scheduled route_family, so its sole typed action is TRAVERSE. This initialization is source-only ordinary public state and never appears in a held-out target initial state.",
+        "panel_rows": [
+          [1, 1, 0, 0],
+          [0, 0, 0, 1],
+          [0, 1, 1, 0]
+        ],
+        "expected_requirement_pass_vectors_in_R0_R1_R2_order": [
+          [1, 0, 0],
+          [0, 1, 0],
+          [0, 0, 1]
+        ],
+        "action": "TRAVERSE",
+        "records_per_supercycle": 9
+      },
+      "records_per_supercycle": 49,
+      "supercycle_count": 32,
+      "total_source_episodes_and_actions_per_twin": 1568,
+      "exact_full_deck_marginal_outcome_counts_per_twin": {
+        "PREPARED": 768,
+        "INTERVENTION_ACCEPTED": 224,
+        "TERMINAL_FAILURE_SITE_REJECTED": 288,
+        "TRAVERSE_PASSED": 96,
+        "TERMINAL_FAILURE_ROUTE_REJECTED": 192
+      },
+      "fresh_handle_derivation": "source namespace, labels [pair_id, twin-neutral source episode ordinal, object kind], counter zero",
+      "twin_rule": "The same 1568 reset panels, public families, handles, episode order, and action bytes are used on both sides. Public outcomes may differ only when the action evaluates an assignment changed by dagger; the exact full-deck marginal outcome table above is identical because swapped predicates and requirements have matched panel marginals.",
+      "no_padding_rule": "Every emitted event belongs to a balanced transform panel, a complete site truth-table panel, or a route separating panel. No filler, prose-only, or token-padding event exists."
+    },
+    "minimum_length_gate": "The final event must have token_end>16384 on both twins. Otherwise the pair candidate is structurally rejected; the source action count remains fixed and is never extended.",
+    "cut_rule": "At cut K, the prefix contains exactly complete canonical events with token_end<=K. An event with token_start<K<token_end is absent from that snapshot and first appears at the later snapshot whose cut is at least token_end.",
+    "root_windows": {
+      "formula_for_checkpoint_K": {
+        "old": "0 < token_end < K/2",
+        "third": "K/2 <= token_end < 3K/4",
+        "recent": "3K/4 <= token_end <= K"
+      },
+      "A2_required_roots": ["one preparation-mapping root cluster from old", "one site-predicate root cluster from recent"],
+      "A3_required_roots": ["preparation-mapping root clusters from old", "one route-requirement root cluster from third", "one site-predicate root cluster from recent"],
+      "distinctness": "All decisive roots for one target have distinct intervention_cluster_id values and distinct source episode handles.",
+      "post_working_window_at_2C": "At K=16384 every old decisive root has token_end<8192, so its last byte is strictly more than C tokens before the target cut and is outside an 8192-token chronological non-memory surface.",
+      "support_availability": "If the fixed source prefix lacks any required separating-panel observation in its required window, the pair candidate is structurally rejected. No controller result is consulted."
+    },
+    "terminal_proposal_rule": "A claim proposed at token_end 16384 has no future evidence and is never an eligible positive atom."
+  },
+  "target_generation": {
+    "shared_rules": {
+      "checkpoints": [4096, 8192, 16384],
+      "deck_per_world_side": "For each checkpoint, exactly eight A2 and eight A3 accepted paired target records are materialized. A0 and A1 are diagnostic fixtures and are not part of the scored CPU gate.",
+      "proposal_order": "checkpoint ascending, kind A2 before A3, target ordinal 0 through 7, proposal counter 0 through 99999",
+      "proposal_sampling": "All public descriptor choices, handles, skins, initial traits, family labels, inventory order, and route assignment are drawn from the pair-common target stream. The two twins never draw target bytes separately.",
+      "accept_first": "For each slot, accept the first proposal satisfying every structural predicate for H and dagger(H) and not duplicating an earlier accepted public goal/state tuple at that checkpoint.",
+      "rejection_policy": "Log every rejected proposal counter and the complete rejection-code set sorted by unsigned ASCII bytes. Rejection reads only the latent world, its deterministic twin, the candidate public descriptor, source chronology, earlier accepted public target tuples, and the structural predicates in this manifest.",
+      "forbidden_rejection_inputs": ["any controller action", "any controller value", "any model output", "any reader trace", "any arm score", "any performance statistic", "wall time", "retry count"],
+      "exhaustion": "If no acceptable proposal exists by counter 99999 for any target slot, invalidate PCFL-D0-EXACT-V2. Do not relax a predicate, change a stream, promote a reserve, or choose a favorable world.",
+      "source_nonmatch": "The canonical public goal bytes and initial-state tuple of every target must differ from every source episode goal/state tuple and every other target at the same world/checkpoint.",
+      "handle_uniqueness": "Within a pair candidate, every source or target instance handle is unique within its schema handle type and differs from every fixed family/class handle with the same byte prefix. A collision structurally rejects the enclosing target proposal or pair candidate; handle bytes are never locally redrawn.",
+      "exceptions_absent": true
+    },
+    "A0": {
+      "status": "diagnostic_only",
+      "interface": "internal D0 simulator transition fixture; it does not instantiate the PUBLIC_GOAL schema, enter a scored split, or count as a target replication unit",
+      "public_inventory_size": 1,
+      "action_budget": 1,
+      "acceptance": "The fresh target handle has the same public initial trait tuple and preparation_family as one witnessed source PREPARE transition but a different specimen handle and class. Executing that sole PREPARE must reproduce the witnessed trait delta. The diagnostic terminates and scores exact transition reproduction after that action; COMMIT is not used."
+    },
+    "A1": {
+      "status": "diagnostic_only",
+      "interface": "internal D0 simulator transfer fixture; it does not instantiate the PUBLIC_GOAL schema, enter a scored split, or count as a target replication unit",
+      "public_inventory_size": 1,
+      "action_budget": 1,
+      "acceptance": "The preparation_family is supported by source transitions in at least two specimen classes. The target uses a fresh third class and handle. Executing the sole PREPARE must produce the assignment-defined trait delta. The diagnostic terminates after that action; COMMIT is not used."
+    },
+    "A2": {
+      "public_inventory_size": 3,
+      "inventory_sampling": "Ordered sample without replacement from the six opaque preparation_labels in manifest order.",
+      "public_route_present": false,
+      "minimal_action_sequence": ["PREPARE", "INTERVENE", "COMMIT"],
+      "acceptance_predicates": [
+        "With zero preparations, the target site predicate rejects in H and in dagger(H).",
+        "Among the three inventory preparations, exactly one makes the target site predicate accept in H.",
+        "Among the same three preparations, exactly one makes the target site predicate accept in dagger(H).",
+        "The two unique correct preparation handles differ.",
+        "Every other single preparation rejects in its respective side.",
+        "The registered three-action path succeeds and no path of fewer than three actions can COMMIT successfully.",
+        "The old preparation root and recent site root exist and are distinct under the checkpoint-relative root windows."
+      ],
+      "scoring": "Successful MISSION_SUCCEEDED at exactly three actions has value 1. Any successful MISSION_SUCCEEDED path using four through six actions has value 9/10, so the total avoidable-action penalty is capped at 1/10. Failure, defer, malformed output, illegal action, terminal rejection, or action-cap exhaustion has value zero."
+    },
+    "A3": {
+      "public_inventory_size": 4,
+      "inventory_sampling": "Ordered sample without replacement from the six opaque preparation_labels in manifest order.",
+      "route_sampling": "One opaque public route_family from route_labels is preassigned pair-common and becomes visible only in the SURVEY outcome.",
+      "minimal_action_sequence": ["SURVEY", "PREPARE", "PREPARE", "TRAVERSE", "INTERVENE", "COMMIT"],
+      "acceptance_predicates": [
+        "In each side, no preparation and every singleton fails at least one of the assigned route requirement and site predicate.",
+        "In each side, exactly one of the six unordered preparation pairs is jointly sufficient for both the route and site.",
+        "For each correct pair, both application orders produce the same final trait panel and both satisfy route then site.",
+        "Every other unordered pair fails route or site in its respective side.",
+        "The two correct unordered preparation-handle sets for H and dagger(H) are disjoint.",
+        "For each side, the fixed public ontology plus initial state entails one route-enabling TRANSFORM_TEMPLATE and then one distinct site-enabling TRANSFORM_TEMPLATE in the registered minimal pair; reverse generic lookup of those two NodeRefs returns two preparation families present in the public inventory.",
+        "The registered six-action path succeeds and no path of fewer than six actions can COMMIT successfully.",
+        "The old preparation roots, third-window route root, and recent site root exist and are pairwise cluster-distinct."
+      ],
+      "scoring": "MISSION_SUCCEEDED after exactly SURVEY, the two correct preparations in either order, TRAVERSE, INTERVENE, COMMIT has value 1. Every other disposition has value zero."
+    },
+    "joint_twin_acceptance": "A target slot is accepted once, as a pair. Its public proposal bytes are serialized once and copied to both sides. Structural predicates are evaluated on both hidden assignments before acceptance; no side-specific target rejection or side-specific handle generation exists."
+  },
+  "complete_target_pair_collision": {
+    "required_for": "every accepted A2 and A3 pair at every checkpoint",
+    "collision_cut": "after item initialization and before the first QUERY_LOCAL, world action, or reader return",
+    "must_be_byte_identical": [
+      "system_prompt",
+      "goal",
+      "state",
+      "workspace",
+      "last_read",
+      "repeat_state",
+      "budget",
+      "prompt_input",
+      "snapshot_handle",
+      "candidate_catalog",
+      "return_envelope",
+      "timing_class"
+    ],
+    "component_schema": "schemas/pcfl_d0_objects.schema.json#/$defs/preaction_twin_collision_certificate",
+    "additional_non_cognitive_runtime_equality": ["process-visible environment allowlist", "initial error class"],
+    "permitted_hidden_differences": [
+      "latent world_rank",
+      "dagger side",
+      "authentic source-derived eligible atom membership",
+      "hidden snapshot content hash",
+      "registered correct action or preparation set",
+      "scorer truth"
+    ],
+    "required_hidden_difference": "A2 correct preparation handles differ and A3 correct preparation sets are disjoint.",
+    "certificate": "For each schema component above record left/right bytes, lengths, and SHA-256 and require equality. certificate_id hashes the canonical certificate projection. Any mismatch invalidates the generator version before controller execution.",
+    "timing_rule": "Both sides are assigned the same discrete timing class before execution. Wall-clock measurements are audit-only, unavailable to cognition, and never used for acceptance."
+  },
+  "structural_rejection_codes": [
+    "A2_ZERO_PREP_ACCEPTS",
+    "A2_NOT_UNIQUE_LEFT",
+    "A2_NOT_UNIQUE_RIGHT",
+    "A2_TWIN_ANSWER_EQUAL",
+    "A2_NONMINIMAL",
+    "A3_SINGLETON_SUFFICIENT",
+    "A3_PAIR_NOT_UNIQUE_LEFT",
+    "A3_PAIR_NOT_UNIQUE_RIGHT",
+    "A3_TWIN_PAIRS_NOT_DISJOINT",
+    "A3_PAIR_ORDER_DEPENDENT",
+    "A3_DERIVED_TRANSFORM_NOT_UNIQUE",
+    "A3_REVERSE_TRANSFORM_NOT_IN_INVENTORY",
+    "A3_NONMINIMAL",
+    "SOURCE_ROOT_WINDOW_MISSING",
+    "SOURCE_ROOT_CLUSTER_REUSED",
+    "SOURCE_TARGET_PUBLIC_MATCH",
+    "TARGET_DUPLICATE",
+    "TARGET_PAIR_COLLISION_FAILURE",
+    "HANDLE_COLLISION_OR_NONCANONICAL",
+    "PAIR_ORBIT_DUPLICATE",
+    "A4_EXCEPTION_PRESENT"
+  ],
+  "generator_failure_rules": [
+    "Any proposal-stream exhaustion invalidates this generator version globally.",
+    "Any malformed derivation, biased sampler, namespace collision, non-involutive twin, target collision mismatch, or source chronology failure invalidates this generator version globally.",
+    "Failure of a Bayes, exact-memory, shortcut, bad-assignment, or CPU-resource gate invalidates this generator version; it never triggers pair, target, seed, or reserve replacement.",
+    "A structurally accepted difficult or easy world remains in its assigned split and receives its measured value, including zero."
+  ],
+  "pair_orbit_identity": {
+    "orbit_id": "minimum(world_rank,dagger_world_rank) as an integer",
+    "uniqueness": "A split pair slot may accept only an orbit_id absent from every earlier pair slot in the frozen global order DEV, CPU, CAL, CONF, RESERVE and ascending index within split.",
+    "rejection_code": "PAIR_ORBIT_DUPLICATE",
+    "purpose": "Prevent the same unordered counterfactual pair from appearing twice while preserving ordered structural-only candidate scanning."
+  },
+  "claim_firewall": {
+    "d0_interpretation": "A pass establishes only conformance of deterministic CPU world, generator, collision, and checker contracts.",
+    "pcfl13_bound": "PCFL-13 contains only thirteen reusable mappings and is a fixed-deck finite mechanism assay. No checkpoint or repeated supercycle is evidence of scaling, continued acquisition, developmental improvement, online learning, or an action-experience flywheel.",
+    "required_future_qualifiers": ["fixed-deck", "post-working-window retention", "resource-ledger-qualified"],
+    "operational_support_phrase": "operationally supported PCFL relations under registered interventions"
+  }
+}

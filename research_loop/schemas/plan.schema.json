@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "named_defect",
+    "hypothesis",
+    "proposed_change",
+    "falsifier",
+    "evaluation_split",
+    "goalpost_check",
+    "human_reason"
+  ],
+  "properties": {
+    "decision": {
+      "enum": ["repair", "run_frozen", "replicate_frozen", "stop", "escalate"]
+    },
+    "named_defect": {"type": "string"},
+    "hypothesis": {"type": "string"},
+    "proposed_change": {"type": "string"},
+    "files_allowed": {"type": "array", "items": {"type": "string"}},
+    "falsifier": {"type": "string"},
+    "evaluation_split": {"enum": ["development", "locked_replication", "none"]},
+    "goalpost_check": {"type": "string"},
+    "human_reason": {"type": "string"}
+  }
+}

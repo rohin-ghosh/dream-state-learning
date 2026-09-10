@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "public-pathway-consolidation-v1-deliberation",
+  "workspace": "../..",
+  "change_id": "chg_20260905_public_pathway_consolidation_v1",
+  "directive_file": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_loop/schemas/architecture_change.schema.json",
+    "research_loop/architecture_intake.py",
+    "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/protocol.md",
+    "research_notes/42_system_thesis_and_experiment_map.md",
+    "research_notes/45_developmental_kernel_pilot_v1.md",
+    "research_notes/46_pcfl_constructive_assay_v1.md",
+    "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+    "research_loop/trajectory_contract.py",
+    "research_loop/goal_conditioned_thinker.py",
+    "organism_v6/sleep_compile.py",
+    "organism_v6/batch_loop.py",
+    "organism_v6/run_life_v2.py",
+    "research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v9/consensus.json"
+  ],
+  "output_dir": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1",
+  "state_path": ".research_loop/intake/chg_20260905_public_pathway_consolidation_v1.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v1/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {"provider":"codex","model":"gpt-5.6-sol","reasoning_effort":"high","max_context_chars_per_file":300000,"timeout_sec":3600,"provider_attempts":2,"provider_attempt_timeout_sec":1800}
+      ]
+    },
+    "systems": {
+      "executors": [
+        {"provider":"codex","model":"gpt-5.6-sol","reasoning_effort":"high","max_context_chars_per_file":300000,"timeout_sec":3600,"provider_attempts":2,"provider_attempt_timeout_sec":1800}
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {"provider":"codex","model":"gpt-5.6-sol","reasoning_effort":"high","max_context_chars_per_file":300000,"timeout_sec":3600,"provider_attempts":2,"provider_attempt_timeout_sec":1800}
+      ]
+    },
+    "critique": {
+      "executors": [
+        {"provider":"codex","model":"gpt-5.6-sol","reasoning_effort":"xhigh","max_context_chars_per_file":300000,"timeout_sec":4800,"provider_attempts":2,"provider_attempt_timeout_sec":2400}
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {"provider":"codex","model":"gpt-5.6-sol","reasoning_effort":"high","max_context_chars_per_file":300000,"timeout_sec":3600,"provider_attempts":2,"provider_attempt_timeout_sec":1800}
+      ]
+    }
+  }
+}

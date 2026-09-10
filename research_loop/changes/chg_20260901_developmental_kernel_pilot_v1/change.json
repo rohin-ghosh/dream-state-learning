@@ -1,0 +1,860 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "sealed_environment_gate_report.json",
+      "expected": "Each locked world passes oracle >=0.85, adaptive no-lifetime-memory A2/A3 <=0.35 under the full budget, all specified leakage probes <=0.35, paired twins differ in correct A2/A3 action, decisive reacquisition needs >=7 actions, and action-outcome shuffling lowers exact-memory-oracle value >=0.30.",
+      "falsifies": "A positive K5 result can be interpreted as memory utility rather than target decoding, adaptive reacquisition, or a public-life shortcut.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Run frozen generator audits and strong adaptive no-memory experimenter on every locked world before any memory arm.",
+      "test_id": "AT01_environment_and_leakage_fit"
+    },
+    {
+      "evidence_artifact": "semantic_authority_and_provenance_fixtures.json",
+      "expected": "Only the designated writer can create each event type; unsupported/tainted/cyclic claims and derived claims lacking claim-type evidence thresholds are rejected; equivalent events/views count once per intervention-equivalence class.",
+      "falsifies": "Dream or wake can self-promote unsupported semantics, or repeated realizations can manufacture support.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Exercise authorized and unauthorized caller/event pairs for public events, witnessed atoms, proposed claims, status transitions, corpus realization, and adapter checkpoints.",
+      "test_id": "AT02_atomic_memory_contract"
+    },
+    {
+      "evidence_artifact": "common_deck_and_item_reset_receipts.json",
+      "expected": "All arms receive byte-identical COMMON_DECK_REPLAY events; every held-out item begins in a fresh process with clean adapter/cache/KV/prompt/workspace/RNG state and evaluation leaves no writable effect on source-life state.",
+      "falsifies": "Representation comparison is confounded by different lived evidence or cross-item learning.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Hash source replay receipts per arm and inject per-life/per-item canaries into all state surfaces.",
+      "test_id": "AT03_common_deck_isolation"
+    },
+    {
+      "evidence_artifact": "arm_manifest_and_resource_ledger.json",
+      "expected": "K0\u2013K7 are instantiated with frozen prompts, reader interface, budgets, resource ledger, independent raw-life builders, same-corpus K4/K5 comparison, and matched K7 final-batch padding; omissions fail closed.",
+      "falsifies": "Observed differences can be credited to sleep compilation, LoRA transport, or cadence without the required comparator.",
+      "kind": "baseline",
+      "required_before": "gpu_run",
+      "setup": "Validate six locked-world arm manifests before calls; K2 consumes raw episodes only and K3 receives matched training tokens.",
+      "test_id": "AT04_mechanism_and_baseline_suite"
+    },
+    {
+      "evidence_artifact": "solution_closure_and_constructive_action_report.json",
+      "expected": "No individual or legal set of returned records closes a held-out A2/A3 ordered plan; held-out target handles and complete plans are rejected; known-good memory plus six-step thinker reaches >=0.75 A2/A3 and degraded-memory performance falls under the frozen diagnostic grid.",
+      "falsifies": "The benchmark measures stored answer closure rather than goal-conditioned local retrieval, composition, planning, and revision.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Mechanically search all reader-legal record sets and execute known-good/degraded memory x reader x thinker-budget fixtures.",
+      "test_id": "AT05_constructive_action_and_revision"
+    },
+    {
+      "evidence_artifact": "fixed_deck_scope_disposition.json",
+      "expected": "The protocol records that COMMON_DECK_REPLAY is scripted action/outcome experience for representation/use attribution only; it neither enables nor supports an on-policy flywheel claim.",
+      "falsifies": "A fixed-deck result is described as policy-selected experience acquisition, reconsolidation, or complete continual self-improvement.",
+      "kind": "invariant",
+      "required_before": "scientific_claim",
+      "setup": "Audit report language, event provenance, and claim eligibility for every pilot result.",
+      "test_id": "AT06_fixed_deck_claim_firewall"
+    },
+    {
+      "evidence_artifact": "independent_review_verdict.json",
+      "expected": "A fresh independent implementation reviewer evaluates frozen code, prompts, schemas, inputs, gates, budgets, manifests, and claim boundary; an author-side advocate may respond but cannot override a rejection.",
+      "falsifies": "CPU green status or author reasoning alone licenses the calibration.",
+      "kind": "independent_review",
+      "required_before": "gpu_run",
+      "setup": "Review occurs after implementation and all pre-GPU evidence are sealed, before any GPU science call.",
+      "test_id": "AT07_independent_review_gate"
+    },
+    {
+      "evidence_artifact": "visibility_counterfactual_fixtures.json",
+      "expected": "Answer/hidden-truth swaps holding public events fixed yield byte-identical TraceProjections; workspace descendants, agenda content, audit receipts, scores, target IDs, backend metadata, and status history cannot enter dream positive data, corpus, reader cognition, or LoRA.",
+      "falsifies": "Typed traces, metadata, or evaluation artifacts form covert target channels.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Counterfactually swap answers and targets; fuzz forbidden fields, ordering, timing, selected replay, reader metadata, and derived descendants.",
+      "test_id": "AT08_visibility_taint_and_reset"
+    },
+    {
+      "evidence_artifact": "reader_transport_factorial.json",
+      "expected": "At fixed known-good/degraded semantic content and frozen reader/thinker budgets, common-interface text and LoRA results separate reader usefulness, thinker usefulness, and transport loss; native backends remain separately labelled.",
+      "falsifies": "An outcome is attributed to LoRA when it is produced by reader protocol, candidate recognition, or the frozen resolver.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Run known-good/degraded x no-reader/common-reader x 0/3/6 operations, including identical K4/K5 corpus and K5 atoms-only versus shortcuts.",
+      "test_id": "AT09_reader_substrate_thinker_factorial"
+    },
+    {
+      "evidence_artifact": "recurrent_final_batch_equivalence.json",
+      "expected": "K5 and K7 have equal declared source span, accepted-record cap, claim touches, adapter training tokens, dream input/output caps, reader, and evaluation schedule; only intermediate recurrence and interim usable checkpoints differ.",
+      "falsifies": "A cadence result is caused by unmatched compute, data, or usable-memory timing.",
+      "kind": "ablation",
+      "required_before": "gpu_run",
+      "setup": "Compare manifests and execute deterministic padding-call fixtures whose discarded outputs are sealed.",
+      "test_id": "AT10_recurrent_final_batch_equivalence"
+    },
+    {
+      "evidence_artifact": "runtime_and_resume_fixture_report.json",
+      "expected": "Golden prompt/schema/parser/attention-mask fixtures pass; malformed calls consume budget; state-versioned repeated operations force BUDGET_EXHAUSTED; sealed outputs replay byte-for-byte; unsealed post-dispatch crashes mark the cell INDETERMINATE without regeneration.",
+      "falsifies": "Runtime retries, parsing repair, resume behavior, or looping changes scientific identity.",
+      "kind": "invariant",
+      "required_before": "gpu_run",
+      "setup": "Inject malformed, repeat-state, crash-before-seal, and crash-after-seal failures at each cognitive phase.",
+      "test_id": "AT11_runtime_artifact_and_resume_integrity"
+    },
+    {
+      "evidence_artifact": "six_world_calibration_report.json",
+      "expected": "All six locked worlds report every arm/family/checkpoint/failure/resource. Promotion is permitted only when known-good >=0.75 A2/A3, K5-K3 >=0.10 mean and positive in >=4 worlds, K6 removes >=half K5 gain over K0, K5 is within 0.10 of K4, and no gate fails.",
+      "falsifies": "The narrow exploratory result supports a scale transition, or a negative result is hidden by aggregation or retuning.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "After ratification, pre-GPU gates, and independent review, run the locked six-world calibration at 1C and 2C under the exact manifest.",
+      "test_id": "AT12_pilot_estimator_and_promotion"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_developmental_kernel_pilot_v1",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "A passing calibration may support only: under this frozen scripted common-life protocol and fixed resolver/reader budget, recurrent sleep compilation yields per-life LoRA associations that improve held-out A2/A3 action value over matched direct trajectory-to-QA LoRA at the declared ledger point.",
+        "before": "No controlled whole-flow evidence yet isolates recurrent sleep-compiled per-life LoRA transport from raw/direct-QA LoRA on held-out compositional action.",
+        "claim_id": "C1_fixed_deck_compiled_transport",
+        "evidence_needed": "AT01\u2013AT12 and the predeclared K5-K3 contrast across six locked worlds.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "K5 versus K4 measures only whether the same accepted compiled corpus remains usable after lossy per-life LoRA transport through the common reader.",
+        "before": "Transport fidelity has not been tested in this proposed action-world flow.",
+        "claim_id": "C2_transport_fidelity",
+        "evidence_needed": "Same-corpus K4/K5 ledger, AT09, and K5 within 0.10 of K4.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "K5 versus K7 can support or reject a bounded recurrent-versus-final-batch cadence effect under exactly matched declared budgets.",
+        "before": "No registered final-batch cadence comparison exists for this pilot.",
+        "claim_id": "C3_recurrent_cadence",
+        "evidence_needed": "AT10 and reported K5-K7 result; no positive conclusion if equivalence fails.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "The pilot explicitly does not claim learned dreaming, learned thinking, LoRA discovery, on-policy evidence acquisition, full reconsolidation flywheel, external generality, developmental scaling law, or organism-level intelligence.",
+        "before": "Earlier architectural thesis includes these later ambitions but does not establish them through a fixed common deck.",
+        "claim_id": "C4_forbidden_extrapolations",
+        "evidence_needed": "AT06 claim-firewall audit and final report language.",
+        "headline_eligible": false,
+        "operation": "modify"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_protocol_v2/human_directive.txt",
+      "purpose": "Human directive and developmental thesis",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Bound pilot proposal",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_protocol_v2/consensus.json",
+      "purpose": "Prior adjudication constraints",
+      "sha256": "5cda08802d2f2f443ec111f993875e0f250c96d9cbab5a5e49aaa0a67fc381f8"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "purpose": "Superseded broad protocol and design lineage",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Project thesis and attribution map",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Historical empirical context and prior limits",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "Scripted public action/outcome event appended as COMMON_DECK_REPLAY",
+        "before": "",
+        "edge_id": "E01",
+        "from": "ScriptedFieldExpeditionWorld",
+        "operation": "add",
+        "rationale": "Separates lived action/outcome evidence from policy-selected acquisition.",
+        "to": "EpisodicStore"
+      },
+      {
+        "after": "Deterministic direct observations become witnessed atoms",
+        "before": "",
+        "edge_id": "E02",
+        "from": "EpisodicStore",
+        "operation": "add",
+        "rationale": "Witness ingestor alone may write directly witnessed semantics.",
+        "to": "SemanticStatusStore"
+      },
+      {
+        "after": "Evidence-only typed traversal projections",
+        "before": "",
+        "edge_id": "E03",
+        "from": "WakeResolver",
+        "operation": "add",
+        "rationale": "Wake contributes traversal evidence projection, not semantic claims or free workspace.",
+        "to": "TraceProjectionStore"
+      },
+      {
+        "after": "Public episodes, prior eligible semantics, and TraceProjection",
+        "before": "",
+        "edge_id": "E04",
+        "from": "EpisodicStore",
+        "operation": "add",
+        "rationale": "Sleep sees bounded public evidence and invariant projections only.",
+        "to": "DreamResolver"
+      },
+      {
+        "after": "Eligible semantics",
+        "before": "",
+        "edge_id": "E05",
+        "from": "SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Prior supported local structure may guide further local proposal without self-promotion.",
+        "to": "DreamResolver"
+      },
+      {
+        "after": "Bounded local derived proposals",
+        "before": "",
+        "edge_id": "E06",
+        "from": "DreamResolver",
+        "operation": "add",
+        "rationale": "Dream-time connection growth is recurrent and proposal-only.",
+        "to": "SemanticStatusStore"
+      },
+      {
+        "after": "Later public-outcome status updates",
+        "before": "",
+        "edge_id": "E07",
+        "from": "ChronologicalOutcomeComparator",
+        "operation": "add",
+        "rationale": "A mechanical public-outcome comparator, not dream, promotes or contradicts derived claims.",
+        "to": "SemanticStatusStore"
+      },
+      {
+        "after": "Supported claims only, six fixed views",
+        "before": "",
+        "edge_id": "E08",
+        "from": "SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Compiler realizes evidence-supported local memories as training examples.",
+        "to": "CorpusManifest"
+      },
+      {
+        "after": "Sealed cumulative corpus manifest",
+        "before": "",
+        "edge_id": "E09",
+        "from": "CorpusManifest",
+        "operation": "add",
+        "rationale": "Per-life LoRA transports compiled associations; it is not the discoverer.",
+        "to": "PerLifeMemoryLoRA"
+      },
+      {
+        "after": "One bounded local record or NOT_FOUND/CONFLICT",
+        "before": "",
+        "edge_id": "E10",
+        "from": "AssignedMemoryBackend",
+        "operation": "add",
+        "rationale": "Common reader preserves substrate attribution and prevents chain/plan return.",
+        "to": "WakeResolver"
+      },
+      {
+        "after": "Goal-conditioned typed local queries",
+        "before": "",
+        "edge_id": "E11",
+        "from": "WakeResolver",
+        "operation": "add",
+        "rationale": "Thinker reconstructs/plans/revises within bounded cognition; complete behavior belongs to this frozen-loop organism.",
+        "to": "AssignedMemoryBackend"
+      },
+      {
+        "after": "Public action",
+        "before": "",
+        "edge_id": "E12",
+        "from": "WakeResolver",
+        "operation": "add",
+        "rationale": "Goal-conditioned reconstruction leads to action, whose outcome can later enter a future sleep cycle only in a future on-policy protocol.",
+        "to": "ScriptedFieldExpeditionWorld"
+      },
+      {
+        "after": "Sealed read-only action value",
+        "before": "",
+        "edge_id": "E13",
+        "from": "EvaluationRuntime",
+        "operation": "add",
+        "rationale": "Scoring remains outside cognition and life writes.",
+        "to": "ScorerStore"
+      },
+      {
+        "after": "No cognitive or training edge",
+        "before": "Implicit evaluative feedback risk",
+        "edge_id": "E14",
+        "from": "ScorerStore",
+        "operation": "add",
+        "rationale": "Hidden truth, scores, and evaluation outcomes are forbidden from source life, dream, corpus, reader, and LoRA.",
+        "to": "CognitiveAndTrainingSurfaces"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "CPU-generated paired-twin world with a fixed scripted information-gathering producer and frozen held-out target deck",
+        "before": "",
+        "node_id": "ScriptedFieldExpeditionWorld",
+        "operation": "add",
+        "rationale": "Defines a controlled common life while refusing an on-policy attribution."
+      },
+      {
+        "after": "Immutable public COMMON_DECK_REPLAY action/outcome episodes and evidence-equivalence classes",
+        "before": "",
+        "node_id": "EpisodicStore",
+        "operation": "add",
+        "rationale": "Retains lived episodes as authoritative evidence."
+      },
+      {
+        "after": "Fixed 32B resolver emitting only deterministic bounded TraceProjection from sealed public events",
+        "before": "",
+        "node_id": "WakeResolver",
+        "operation": "add",
+        "rationale": "Supplies goal-conditioned local reading/operation, not semantic authorship."
+      },
+      {
+        "after": "Typed deterministic evidence-only trace projections; no free workspace, agenda, target, answer, score, rationale, or ordering freedom",
+        "before": "",
+        "node_id": "TraceProjectionStore",
+        "operation": "add",
+        "rationale": "Permits sleep access to wake traversal without a covert solution channel."
+      },
+      {
+        "after": "Append-only claims/statuses with exclusive writer table, causal intervention-equivalence support, and chronological promotion",
+        "before": "",
+        "node_id": "SemanticStatusStore",
+        "operation": "add",
+        "rationale": "Separates dream proposal from evidence-based promotion."
+      },
+      {
+        "after": "Frozen broad offline resolver proposing bounded local relations/procedures/exceptions; cannot promote itself or produce whole plans",
+        "before": "",
+        "node_id": "DreamResolver",
+        "operation": "add",
+        "rationale": "Implements recurrent local connection growth and re-expression."
+      },
+      {
+        "after": "Deterministic chronological public-outcome comparator",
+        "before": "",
+        "node_id": "ChronologicalOutcomeComparator",
+        "operation": "add",
+        "rationale": "Makes support decisions outside generative dream output."
+      },
+      {
+        "after": "Deterministic capped six-view realization of supported claims",
+        "before": "",
+        "node_id": "CorpusManifest",
+        "operation": "add",
+        "rationale": "Separates corpus construction from semantics and training."
+      },
+      {
+        "after": "Per-life rank-64 adapter rebuilt from clean frozen 7B base at each sleep checkpoint",
+        "before": "",
+        "node_id": "PerLifeMemoryLoRA",
+        "operation": "add",
+        "rationale": "Defines parametric consolidation/associative transport only."
+      },
+      {
+        "after": "K0\u2013K7 assigned backend behind one frozen local-record reader interface",
+        "before": "",
+        "node_id": "AssignedMemoryBackend",
+        "operation": "add",
+        "rationale": "Allows text, raw memory, independent builder, LoRA, shuffled, and final-batch controls."
+      },
+      {
+        "after": "Fresh-process held-out-item runner",
+        "before": "",
+        "node_id": "EvaluationRuntime",
+        "operation": "add",
+        "rationale": "Enforces item-level isolation and read-only evaluation."
+      },
+      {
+        "after": "Non-cognitive hidden truth and post-commitment scoring",
+        "before": "",
+        "node_id": "ScorerStore",
+        "operation": "add",
+        "rationale": "Prevents evaluator-to-cognition feedback."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin",
+    "decision_question": "Does Rohin ratify the exact bytes and scope of chg_20260901_developmental_kernel_pilot_v1, limited to the six-world exploratory scripted-common-deck GPU calibration and its stated non-claims?",
+    "forbidden_before_approval": [
+      "Edit or implement affected system code, prompts, schemas, world generator, arms, tests, or manifests.",
+      "Launch any GPU/science run or choose/retune goalposts, models, budgets, prompts, hyperparameters, worlds, or locked-target content.",
+      "Treat fixed-deck results as on-policy flywheel, learned-controller, learned-dreamer, external, scale, paper, or headline evidence.",
+      "Promote to a scale protocol without satisfying the sealed acceptance tests, fresh independent review, and a subsequent human decision."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "Scripted action/outcome episodes -> immutable public deck -> fixed wake evidence-only trace -> sleep at 0.5C/1C/2C -> local proposals -> chronological public-outcome support -> compiler -> cumulative clean-base per-life LoRA -> later held-out goal-conditioned bounded reads/actions.",
+        "before": "",
+        "loop_id": "L1_fixed_deck_dream_consolidation_and_use",
+        "operation": "add",
+        "rationale": "Smallest test of recurrent local sleep growth, corpus realization, parametric transport, and complete-organism goal-conditioned use.",
+        "reads": [
+          "EpisodicStore",
+          "TraceProjectionStore",
+          "eligible SemanticStatusStore records",
+          "CorpusManifest",
+          "assigned memory backend",
+          "current held-out public item state"
+        ],
+        "stop_condition": "For source life, terminal source episode after 2C; for each held-out item, one committed action or six resolver operations/three memory queries/repeat-state exhaustion; no evaluation write returns to life.",
+        "trigger": "Source cumulative canonical public-event tokens first reach or exceed 0.5C, 1C, or 2C after a terminal episode; evaluation begins at sealed 1C and 2C checkpoints.",
+        "writes": [
+          "EpisodicStore",
+          "SemanticStatusStore proposals and deterministic status events",
+          "CorpusManifest",
+          "PerLifeMemoryLoRA checkpoint",
+          "audit-only receipts"
+        ]
+      },
+      {
+        "after": "Future scope only: policy-selected action -> outcome -> isolated episodic append -> later sleep/recompile -> later action.",
+        "before": "Not instantiated in this pilot; fixed COMMON_DECK_REPLAY cannot demonstrate it.",
+        "loop_id": "L2_full_experiential_flywheel",
+        "operation": "add",
+        "rationale": "Retains the project thesis without laundering it into the calibration's fixed-deck estimand.",
+        "reads": [
+          "future policy-selected public outcomes",
+          "future per-life semantic and memory state"
+        ],
+        "stop_condition": "Underspecified; requires separately ratified on-policy intervention and reconsolidation protocol.",
+        "trigger": "Not active in this pilot.",
+        "writes": [
+          "No writes in this pilot"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "A narrowly scoped developmental-kernel calibration: a scripted common action/outcome life feeds recurrent evidence-constrained dream proposals, deterministic support and compilation, a per-life LoRA transport, and a frozen goal-conditioned reader/thinker. It tests whether recurrent compiled LoRA improves held-out compositional action beyond matched direct-QA LoRA while explicitly excluding on-policy flywheel and broad intelligence claims.",
+  "system_thesis": "An organism can convert consequences of lived actions into an increasingly connected experiential world approximation; recurrent dream-time local connection growth and re-expression may be consolidated into per-life parametric associations, while a goal-conditioned thinker retrieves, composes, plans, and revises those associations for later action. The LoRA is only a lossy transport organ: discovery and behavior, where present, belong to the complete evidence-constrained organism. This fixed-deck pilot isolates a bounded middle segment of that thesis and deliberately does not test the later feedback loop in which policy-selected thinking and outcomes change future dream cycles.",
+  "title": "Developmental kernel pilot v1: recurrent sleep-compiled per-life LoRA calibration",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Authoritative scripted lived action/outcome evidence.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Eligible bounded public evidence.",
+        "stage_id": "sleep",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "May support deterministic status comparison.",
+        "stage_id": "support",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Only supported semantic realization, not raw event text, enters positive corpus.",
+        "stage_id": "compiler",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Not direct adapter input outside compiled corpus.",
+        "stage_id": "lora_training",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Only current-item public outcomes remain visible.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "public_common_deck_events",
+        "reason": "Scorer may audit public history.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Wake produces it but it is not a semantic write.",
+        "stage_id": "wake",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Evidence-only bounded dream input.",
+        "stage_id": "sleep",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Never supplies support alone.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Never positive corpus content.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Never training content.",
+        "stage_id": "lora_training",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "No cross-phase cognitive replay.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "trace_projection",
+        "reason": "Audit-only verification permitted.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Bounded workspace remains local and cannot become semantics.",
+        "stage_id": "wake",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Explicitly excluded from sleep.",
+        "stage_id": "sleep",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Cannot support claims.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Cannot enter corpus/training.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Cannot enter corpus/training.",
+        "stage_id": "lora_training",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "Fresh per-item workspace only.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "wake_freeform_workspace",
+        "reason": "May be preserved as audit receipt only.",
+        "stage_id": "scoring_audit",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Wake cannot inspect semantic store directly.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Eligible prior local structure informs bounded proposals.",
+        "stage_id": "sleep",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Status engine reads lifecycle/provenance.",
+        "stage_id": "support",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Only admissible positive compilation source.",
+        "stage_id": "compiler",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Visible only through sealed corpus realization.",
+        "stage_id": "lora_training",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Visible only via one-record common reader.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "supported_semantics",
+        "reason": "Audit may inspect full store.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Wake has no direct semantic-store surface.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Proposals may be considered as hypotheses, never promoted by dream.",
+        "stage_id": "sleep",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Required for deterministic lifecycle disposition.",
+        "stage_id": "support",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Excluded from positive corpus.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Excluded from positive training.",
+        "stage_id": "lora_training",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Not exposed through cognitive reader.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "provisional_or_contradicted_semantics",
+        "reason": "Audit-only.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Not a wake input.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Compiler output is unavailable during current sleep proposal.",
+        "stage_id": "sleep",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Not evidence for support.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Compiler owns realization.",
+        "stage_id": "compiler",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Sealed training input.",
+        "stage_id": "lora_training",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Text arm only through common reader; LoRA arm never sees corpus directly.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "compiled_corpus",
+        "reason": "Audit manifest only.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "No wake cognitive access beyond reader result.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Not a dream input.",
+        "stage_id": "sleep",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Not support evidence.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Not compiler input.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Trainer consumes sealed adapter recipe/manifest.",
+        "stage_id": "lora_training",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Backend ID, receipt, score, status history, and token metadata are hidden; only canonical local read surface is visible.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "adapter_and_backend_metadata",
+        "reason": "Full ledger is audit-visible.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Absent from source wake.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Absent from dream inputs/proposals.",
+        "stage_id": "sleep",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Cannot support source semantics.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Mechanically rejected from corpus.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Mechanically rejected from training.",
+        "stage_id": "lora_training",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Current goal is public to its fresh evaluation item, but correct answer remains hidden.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "heldout_target_handles_and_answers",
+        "reason": "Hidden answer is scorer-visible after commitment.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Never visible to source wake.",
+        "stage_id": "wake",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Never visible to sleep.",
+        "stage_id": "sleep",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Never support evidence.",
+        "stage_id": "support",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Never corpus input.",
+        "stage_id": "compiler",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Never training input.",
+        "stage_id": "lora_training",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Evaluation outcomes do not cross items or return to source life; hidden truth/scores never reach cognition.",
+        "stage_id": "evaluation_thinking",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "hidden_truth_scores_and_evaluation_outcomes",
+        "reason": "Owned by isolated scorer/audit process.",
+        "stage_id": "scoring_audit",
+        "visibility": "visible"
+      }
+    ],
+    "information_items": [
+      "public_common_deck_events",
+      "trace_projection",
+      "wake_freeform_workspace",
+      "supported_semantics",
+      "provisional_or_contradicted_semantics",
+      "compiled_corpus",
+      "adapter_and_backend_metadata",
+      "heldout_target_handles_and_answers",
+      "hidden_truth_scores_and_evaluation_outcomes"
+    ],
+    "stages": [
+      "wake",
+      "sleep",
+      "support",
+      "compiler",
+      "lora_training",
+      "evaluation_thinking",
+      "scoring_audit"
+    ]
+  }
+}

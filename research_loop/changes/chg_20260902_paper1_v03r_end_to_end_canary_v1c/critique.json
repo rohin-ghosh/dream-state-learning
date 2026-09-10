@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1c.formal_adversarial.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1c",
+  "state": "critiqued",
+  "architecture_change_sha256": "24bf36c5e821cb04b0da520ecd73134a58a530d50c5b5c1ce7d2e72202c25f0a",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1c.systems.v1",
+      "sha256": "74586bf1420b99f0676fb69fb9cb0ab72603537636ebc1af1a8b081e30b2e03f"
+    },
+    {
+      "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1c.benchmark.fresh.v1",
+      "sha256": "98977fdb81c8299c8c9d95abcef6f24b89498ca34d8c980e055b9a2206ee4324"
+    }
+  ],
+  "context_files": [
+    {"path":"AGENTS.md","sha256":"1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e","purpose":"Mandatory deliberation, exact ratification, review, and GPU gate."},
+    {"path":"research_notes/35_goalposts_paper1.md","sha256":"be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c","purpose":"Frozen Paper-1 scope and verifier boundary."},
+    {"path":"lands/v03r.py","sha256":"484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999","purpose":"Frozen paired public action-outcome world."},
+    {"path":"lands/v03.py","sha256":"6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16","purpose":"Inherited public episode and final-goal rendering implementation."},
+    {"path":"lands/skins.py","sha256":"cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0","purpose":"Aligned surface-name dependency used by the public projection."},
+    {"path":"lands/model.py","sha256":"6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211","purpose":"Frozen world configuration and typed public object dependency."},
+    {"path":"lands/v02.py","sha256":"0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89","purpose":"Inherited surface and mixture dependency in the v03r renderer closure."},
+    {"path":"lands/world.py","sha256":"9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac","purpose":"World-generation dependency in the frozen v03r closure."},
+    {"path":"lands/test_v03r.py","sha256":"4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1","purpose":"Existing construct, leakage, local-window, edge-removal, and population tests."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/consensus.json","sha256":"95a5e147594e7804e0ab4d5fef6854745432675dc08a619ba7e82052975b98e1","purpose":"Binding v1b rework consensus and complete residual concern inventory."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/resolution_brief.md","sha256":"270e9ed4cf4df5b55a6c199429d940e9a6e712163ba6bc802b12dcda1a2b2a73","purpose":"Adjudicated minimum repair choices and scientific boundary."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/experiment_spec.md","sha256":"03806495c63654b71bd2c8f362bde0d04b946e8bc7954275071223d04c822913","purpose":"Question, stages, gates, bounded claims, and terminal scope."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/canary_config.json","sha256":"b5ad4f6d6625880c93aca89b7f776f06a7ce78d538568a52d1c3be1f1e38a36b","purpose":"World, models, operations, fixed fit recipe, arms, and ceilings."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/operation_contract.json","sha256":"bcf66f9feb1969aeb8d9d9980df63523db1a3c4277741a04ec1c74c7a43e3f40","purpose":"Closed model states, recurrence, selectors, seeds, parser, scratch, and accounting."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/public_projection_contract.json","sha256":"e0f5bc9512790f68ed95f965e8c46164e04f5899226d627e674f8315a55403e4","purpose":"Exact public API to typed-event, probe, goal, vocabulary, and pre-dispatch control projection."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/memory_transport_contract.json","sha256":"2d4a92e0b4df783634ccae3cb908a53be6ef09c988fd8ebf18452ddd77785378","purpose":"Public projection, proposal admission, immutable rows, reader projection, and candidate mapping."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/intervention_contract.json","sha256":"1c0e4688c685e7d11e4ff40df23c9e9b25af345593b640ea8c3d5436d3a79a0c","purpose":"Prospective public DIST, path and sham construction, offline correctness, and structural use."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/development_fixture_contract.json","sha256":"f72827d82e0deaffcc944444b302dddac2a2044fa4820907f871cc46f68c9b32","purpose":"Immutable population, six DEV lives, G fixtures, proof rows, parser, and gates."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/compiler_views.json","sha256":"0e91e553ca412fe2fa219615c16496a3f1fead541445796570eff84bc1f85601","purpose":"Exact four view families, all legal question indices, round-trip semantics, and presentation counts."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/runtime_training_contract.json","sha256":"60a660278d2baa5ccfb92c0ae922d4e1e458956a48c2987b607e8e72a862a81a","purpose":"Executable lock, generation receipts, deterministic two-fit recipe, fidelity, and atomic recognition."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/stage_review_contract.json","sha256":"6982277cdd2c46cfacfd6c01c6d610ca0c13265fb7f869ff6af9a025f71b52d3","purpose":"Transition authority, validity mapping, packet inventories, actor separation, and claim firewall."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/acceptance_registry.json","sha256":"e255d937f0347d5f5ba8fb5e54cfd095d1c2ad3a5267bb5bf4140f45e62bf59c","purpose":"Exact ten v1a-mandated P1CB test identities and artifacts."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/scope_proposal.json","sha256":"a69bdcd936b1c4af3825c4455693067c7d1edd521b4dec60040d5123e119ef1a","purpose":"Requested and forbidden authority with staged ceilings."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/dream_prompt.md","sha256":"2ec6a76ff1a767e650cb5898d8d8a2e2a6f897bd0676e423265ef8211665f9d6","purpose":"Frozen local connection-proposal instruction."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/self_check_prompt.md","sha256":"3e0fcd3fe73c05e441b9c784c90e971abffe4abb9e7625ca1edf40de3299f2c2","purpose":"Frozen blind fallible model reflection instruction."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think0_prompt.md","sha256":"b32a156fb25932bb28db0ade14660f81bce5e7639296e2c751d590e368114bff","purpose":"Frozen target-absent source-target return instruction."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think1_prompt.md","sha256":"ce4f808463de0caa4a0075c5d6f94c568db37aa1a8fcd775e03b1667562d3df9","purpose":"Frozen proof-sequence-scaffolded final resolver instruction."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/public_event.schema.json","sha256":"f7fe7fb2f8f6590888df6497b4f484ea67194b258041bb65b57b7e43a56e1d44","purpose":"Closed public event projection schema."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/proposal.schema.json","sha256":"c0b265c3ac7142a6ccf19290d9ddbeda565b8984ecc6eb84ff446661c47fed36","purpose":"Immutable audit proposal schema separate from memory."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/memory_row.schema.json","sha256":"20f4375de0f620a1a7f34702c0a6759dece7118c5b2fcd5a737cdb04f9783a3d","purpose":"Closed immutable witnessed or model-supported row schema."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/read_result.schema.json","sha256":"ddc6b54b63740882c9194a30412865520e6ce8a92fe67cfbd388364e2df39332","purpose":"Shared provenance-free thinker-facing read result."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/candidate_registry.schema.json","sha256":"ba819f62338c7f6841661f93b888cd96b1f9c85ed90f37f0a86e0235a258bc39","purpose":"Sealed semantic-only two-backend candidate and completion registry."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/dream_state.schema.json","sha256":"2379f16de4bd656aa97bf476fb559c921e99efaad4dd6650f5c5dca107baa605","purpose":"Closed DREAM allowed state."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/self_check_state.schema.json","sha256":"20853350471ac599565803aca5ede800e343cc236e94c7a01a5b3eeee6183667","purpose":"Closed SELF_CHECK allowed state."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think0_state.schema.json","sha256":"29ee318087c2e999ce3a2b5b80d35bb2dee698ef7bc63241bd622fdf4cbdbae9","purpose":"Closed THINK0 state and public probe."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think1_state.schema.json","sha256":"fead8837b0a46892b5f9dc282251cd8b1485fdde251f6ca5a38be9d854912299","purpose":"Closed THINK1 state."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/scratch.schema.json","sha256":"716b0782a88120eedeea42c7589b45390e74e6678139de69a5ef3ca9b786523a","purpose":"Closed discriminated scratch nodes."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/dream_operation.schema.json","sha256":"f29c33390de33b91b4d1bc92a2a47e814522973c533d78c6140814550c74c85c","purpose":"DREAM PASS/CREATE grammar."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/self_check.schema.json","sha256":"69716b119f5a2f05643452b1edd956dba39649215657e4c0075b81591115329d","purpose":"Fallible model self-check grammar."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think0_operation.schema.json","sha256":"0ec894df0a724fe024a5d4d58aed1fb0abf72f2a0a5a316308f51da48672dc86","purpose":"THINK0 atomic operation grammar."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/think1_operation.schema.json","sha256":"fbe67240d30b7d8a95d7ee48d7739f410d4d763e90f08aca88a8bd16ee879acf","purpose":"THINK1 atomic operation grammar."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/schema_resource_registry.json","sha256":"db0445c7bdc16ede903c438c4ad9b46d0d5ba1a3c9f32a56263d28e88d567179","purpose":"Closed filename-to-schema-ID resolution contract for all local schema references."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/review_packet.schema.json","sha256":"9981a1685a3e577c40637327fae72e32b0b41422025cfdd054518798d50419f7","purpose":"Closed transition packet schema."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/review_assignment.schema.json","sha256":"3f1e90d19f42cd292d54feb67a389af6b96eaf7e40416b2baae6492952790818","purpose":"Closed reviewer/advocate assignment schema."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/review_disposition.schema.json","sha256":"2e6a6628270027c25e21cef8cf6433053d7e7b60abd572b56d5448e0e7b0d232","purpose":"Closed immutable review disposition schema."},
+    {"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/authority_token.schema.json","sha256":"64154f7cfb08a1c2252a4959adbbb42a6fcf58680e87b7075acff0b240d2eed8","purpose":"Closed monotone successor authority schema."}
+  ],
+  "strongest_case": "If its cross-file contradictions are repaired before ratification, v1c is a scientifically defensible engineering-ceiling canary. It fixes a public, answer-free event projection; separates fallible same-model proposal support from semantic truth; preserves immutable life-local provenance; makes goal-return, path, sham, and twin interventions prospective; resets the final thinker and limits it to atomic provenance-free reads; transports an already sealed corpus into exactly two isolated adapters; and forces all results through monotone reviewed authority to a human terminal. The full T conjunction could establish realized dependence on registered life-local text-memory content for exactly one aligned seed-5 pair under unusually strong game and proof scaffolding. The conditional L conjunction could establish only immediate candidate-constrained access on registered cues and paths. Neither result would establish the frozen Paper-1 headline, generalization, action improvement, durability, scaling, open recall, or superiority.",
+  "reviewed_acceptance_test_ids": [
+    "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+    "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+    "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+    "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+    "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+    "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+    "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+    "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+  ],
+  "concerns": [
+    {
+      "concern_id": "C01_PROTOCOL_IS_NOT_A_SINGLE_EXECUTABLE_LOCK",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "P1CB01 cannot certify one immutable finite experiment because the jointly normative v1c package contains incompatible executable readings. Hash equality binds the contradiction; it does not resolve it.",
+      "evidence": "experiment_spec.md declares every v1c file jointly normative and requires contradictions to route as INVALID_PRECONDITION/PROTOCOL_CONTRADICTION. The package nevertheless conflicts on the DEV projection domain, accepted citation order, sham validity, ledger encodings, and candidate-roster cardinality/binding. In addition, several closed state/query schemas reject required rows and queries because their oneOf branches overlap. No implementation may choose preferred semantics, so P1CB01 must fail until a newly bound successor package makes every choice unique.",
+      "acceptance_test_ids": ["P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C02_HOST_ONLY_GOAL_AND_ROSTER_TAINT_ARE_UNDERTESTED",
+      "category": "visibility_leak",
+      "severity": "material",
+      "statement": "The information-flow design is strong, but P1CB02 does not explicitly require the decisive mutations needed to exclude host-side goal or cue-roster agenda laundering before authorized reveal.",
+      "evidence": "public_projection_contract.json places the withheld final-goal coordinates and rendered question in the same pre-dispatch allowed source object used to derive sealed artifacts, while the visibility contract requires every DREAM, SELF_CHECK, THINK0, return, corpus, and candidate byte to remain independent of those goal bytes until reveal. The acceptance-registry setup names private fields, audit data, unauthorized focus, donor identity, and G metadata, but does not explicitly enumerate mutations of the host-only goal coordinates/question or substitution of a roster from a different cue instance. Because the source-target probe already identifies the later causal frontier, an accidental host dependency would be an answer-agenda channel even without exposing the answer token.",
+      "acceptance_test_ids": ["P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C03_REDUCER_ORDER_AND_CLOSED_ROW_SCHEMAS_CONTRADICT",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The row reducer has incompatible accepted-citation bytes, and the DREAM/SELF_CHECK state schema family cannot validate two required witnessed row kinds.",
+      "evidence": "resolution_brief.md and operation_contract.json require proposal premise order followed by additional support-row order, with defensive first-occurrence deduplication. memory_transport_contract.json instead ASCII-byte-sorts the unique citation union. This changes citations, record_hash, depth/lineage traversal order, adjacency ties, and later model-visible bytes. Independently, dream_state.schema.json defines witnessedRow.fields as a oneOf containing sourceValueFields and animalValueFields, but animalValueFields is exactly a $ref to sourceValueFields. Therefore every otherwise valid SOURCE_VALUE or ANIMAL_VALUE field array matches two branches and fails oneOf. self_check_state.schema.json inherits the same invalid row definition. These rows are required to form ROLE_EQUIV, so the defect is not peripheral.",
+      "acceptance_test_ids": ["P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C04_ATOMIC_QUERY_AND_CANDIDATE_INSTANCE_BINDING_ARE_NOT_CLOSED",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The atomic reader grammar rejects required SOURCE_VALUE/ANIMAL_VALUE queries, and the candidate registry cannot identify which roster belongs to a concrete compiler cue instance.",
+      "evidence": "think0_operation.schema.json and think1_operation.schema.json each place sourceValueQuery and animalValueQuery in one fields.oneOf, while animalValueQuery is exactly a $ref to sourceValueQuery. Any legal query of either kind therefore satisfies two branches and fails oneOf; think0_state.schema.json also repeats the overlapping SOURCE_VALUE/ANIMAL_VALUE row-read alternatives. Separately, memory_transport_contract.json requires exactly one roster for every compiler view instance, whose identity is semantic_hash, view_id, and missing_index, but declares roster_key as only kind, missing_index, and view_id. candidate_registry.schema.json records no semantic_hash, cue hash, cue bytes, or view-instance key in a roster. It can therefore validate either one reused roster per coarse key or arbitrary indistinguishable per-instance rosters, and cannot prove which answer-bearing roster was scored for an actual cue.",
+      "acceptance_test_ids": ["P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C05_DEV_FIXTURE_HAS_NO_LEGAL_PUBLIC_PROJECTION",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The six-life DEV headroom experiment is not constructible under its sole allowed public mapper.",
+      "evidence": "development_fixture_contract.json forbids a fixture-local mapper and requires DEV and heldout to use only public_projection_contract.json. That mapper hard-codes CounterfactualConfluenceV03R(WorldConfig(seed=5)), exactly 46 events, E000000..E000045, and M000000..M000045. The registered seed-1 DEV twins have 49 episodes and registered proof material references M000046. public_event.schema.json caps event_index at 45 and event_id at E000045. Thus no object can simultaneously satisfy the DEV fixture, the public projection contract, and the closed schemas; GOLD_TEXT/GOLD_TWIN evidence for seed 1 cannot legally exist.",
+      "acceptance_test_ids": ["P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C06_SCHEDULE_TEST_DOES_NOT_ABLATE_PREFIX_RECURRENCE",
+      "category": "credit_assignment",
+      "severity": "note",
+      "statement": "P1CB06 can verify the deterministic 46/22/16 prefix and matched 16-slot return branches, but it cannot support a claim that recurrent construction as a whole was necessary.",
+      "evidence": "M0, OWN, and DIST all inherit the same full 84-slot recurrent prefix. M0 removes only the sixteen return DREAM slots; DIST retains the same number of return slots with another focus. Therefore the registered comparisons identify goal-routed return feedback within this constructor, not the value of the recurrent prefix against a nonrecurrent constructor, shuffled connectivity, or an invisible-repeat alternative. This is acceptable only if the report calls P1CB06 an executability/matching invariant and limits causal language to the return loop.",
+      "acceptance_test_ids": ["P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES"],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "C07_SHAM_INFEASIBILITY_HAS_TWO_VALIDITY_CLASSES",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The registered text gate cannot be interpreted because sham infeasibility is both a valid scientific stage failure and an invalid benchmark precondition.",
+      "evidence": "change.json, resolution_brief.md, experiment_spec.md, operation_contract.json, intervention_contract.json, and stage_review_contract.json prescribe VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE, continued execution of the other five T arms, and zero-attempt T-SHAM non-dispatch rows. acceptance_registry.json instead says in P1CB07.expected that sham infeasibility is invalid precondition. The difference determines whether heldout outputs remain scientifically interpretable, which terminal packet is built, which authority-token validity class is legal, and whether those five arms execute. A green schema check cannot reconcile it.",
+      "acceptance_test_ids": ["P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C08_LORA_GATE_SUPPORTS_ONLY_SELECTED_CLOSED_RECOGNITION",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "Even after mechanical repairs, P1CB08 must not be described as text-memory equivalence, whole-corpus preservation, retrieval-free recall, durability, or a fair substrate comparison.",
+      "evidence": "The host first resolves whether a mounted manifest has zero, one, or multiple values. Only a unique-value query reaches the adapter, which receives a shared host-enumerated answer roster containing the correct completion. Text instead performs exact lookup. Fidelity tests only 48 preselected cases per life, including at most the first eight DREAMED rows by semantic hash, and permits four errors. There is no matched statistical comparison against text, RAG, an explicit graph, or raw-context memory. A pass supports only immediate candidate-constrained recognition for the registered cues and structurally used own/donor decision paths of these two adapters.",
+      "acceptance_test_ids": ["P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C09_LEDGER_STATE_REASON_MAPPING_IS_NOT_TOTAL_OR_UNIQUE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "P1CB09 cannot prove exactly one ledger effect per opportunity because two jointly normative closed vocabularies assign different states and reasons to the same conditions.",
+      "evidence": "operation_contract.json defines NON_DISPATCH_STAGE_FAILURE and PRIOR_COMMIT, PRIOR_REQUEST_RETURN, PRIOR_DEFER, PRIOR_BUDGET_EXHAUSTED, PRIOR_MODEL_OUTPUT_FAILURE, PRIOR_INFRASTRUCTURE_FAILURE, PRE_DISPATCH_INVALID_PRECONDITION, MISSING_REQUIRED_ABSTRACTION, SHAM_NOT_IDENTIFIABLE, and FIDELITY_GATE_FAILED. stage_review_contract.json omits NON_DISPATCH_STAGE_FAILURE and instead uses NON_DISPATCH_POST_TERMINAL with TRACE_LOCAL_DEFER, TRACE_TERMINATED, STAGE_TERMINATED, STAGE_INVALID, PRECONDITION_FAILED, and AUTHORITY_NOT_GRANTED. It specifically maps missing abstraction, sham infeasibility, and fidelity failure to POST_TERMINAL, directly contradicting the operation schema's STAGE_FAILURE mapping. No single row can satisfy both closed tables, and acceptance_registry.json requires the nonexistent total mapping.",
+      "acceptance_test_ids": ["P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C10_CLAIM_FIREWALL_IS_RIGHT_BUT_REVIEW_INDEPENDENCE_IS_ATTESTED_ONLY",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "P1CB10 should preserve the narrow claim ceiling and describe reviewer separation as a platform-attested operational control, not proof of substantive or cryptographic independence.",
+      "evidence": "The frozen goalposts require multi-seed, multi-skin, strong-baseline, increasing-lifetime action evidence for the Paper-1 headline, while v1c uses one aligned seed-5 pair, discloses the exact source-target frontier in THINK0, gives DREAM the solution ontology, gives THINK1 the proof sequence, and performs no model-selected environment action. stage_review_contract.json correctly caps positive text and LoRA language and explicitly says identity/fresh-context receipts are platform attestations. P1CB10 can enforce byte binding, actor declarations, reviewer supremacy, claim lint, and human stop, but cannot turn those attestations into scientific independence or the one-pair canary into general usefulness. The linter needs explicit negative fixtures for every forbidden inference and must apply the same ceiling to negative-result localization.",
+      "acceptance_test_ids": ["P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "The host-only withheld final-goal coordinates and question are sealed before heldout dispatch in the same allowed source object used by the projector, but no explicit P1CB02 mutation vector proves that changing those bytes leaves every pre-reveal DREAM, SELF_CHECK, THINK0, return, row, view, candidate, and training artifact byte-inert.",
+    "The 7B candidate roster is intentionally answer-bearing multiple-choice context. Because a roster record is not bound to a concrete semantic_hash/cue hash/view-instance identity, the sealed artifact cannot prove that the roster presented during scoring was the roster prospectively registered for that exact cue; wrong-roster selection would be a host-side answer channel even though the 32B thinker sees only the projected result."
+  ],
+  "missing_acceptance_tests": [
+    "Add schema-branch-disjointness vectors proving valid SOURCE_VALUE and ANIMAL_VALUE rows, previous_read objects, and all legal one-null queries validate exactly one branch in DREAM, SELF_CHECK, THINK0, THINK1, and scratch resources.",
+    "Add frozen DEV public-projection vectors for every seed-0/1/2 life using its actual episode count, including legal E/M identities through index 48, while proving the seed-5 heldout 46-event vectors remain unchanged.",
+    "Add one cross-contract accepted-citation golden vector with interleaved premise/support IDs and require the same citation array, record hash, lineage, depth, SELF_CHECK projection, and selector adjacency under every normative file.",
+    "Add candidate-registry cardinality and cue-instance-binding negatives: swapped roster, missing cue hash, duplicate coarse key, wrong semantic_hash, wrong view instance, and roster reuse when the chosen normative rule requires per-instance identity.",
+    "Add explicit host-only final-goal taint vectors that mutate goal coordinates and question before reveal and compare every pre-reveal rendered/tokenized request and durable derivative byte.",
+    "Add one canonical ledger schema and exhaustive cross-contract condition-to-state-to-reason vectors for duplicate, trace terminal, DEFER, budget exhaustion, model failure, infrastructure invalidity, missing abstraction, sham infeasibility, fidelity failure, precondition failure, and unauthorized stages.",
+    "Add a sham-infeasibility end-to-end routing vector that asserts one validity/reason pair, exact five-arm continuation behavior, exact T-SHAM non-dispatch rows, terminal packet selection, and impossibility of a causal-use pass.",
+    "Add claim-linter rejection fixtures for recurrence-as-a-whole, generalization, action improvement, online learning, open recall, whole-corpus storage, durability, scaling, superiority, reviewer-independence proof, and Paper-1-headline language, plus negative-result overlocalization."
+  ],
+  "human_questions": [
+    "Will Rohin require a newly hash-bound successor proposal before ratification that resolves the DEV projection domain, accepted-citation order, sham validity class, ledger vocabulary, roster instance identity, and overlapping oneOf schemas, rather than allowing CPU implementation to choose among them?",
+    "For accepted dreamed rows, does Rohin choose emitted proposal-premise order followed by supplied additional-support order, or ASCII-byte-sorted union, and will every contract and golden vector use that one exact order?",
+    "For DEV, should the sole public projector become seed-generic with event/row schemas extended through the actual maximum index, or should the six registered fixtures be replaced by all-46-event lives?",
+    "Should the candidate registry contain one roster per concrete semantic_hash/view_id/missing_index cue instance with an exact cue hash, or one reusable roster per kind/view_id/missing_index key?",
+    "Does Rohin confirm SHAM_NOT_IDENTIFIABLE is a valid scientific Stage-T failure with the other five arms executed and T-SHAM alone non-dispatched, rather than an invalid precondition?",
+    "Does Rohin confirm that v1c remains only a one-pair, aligned, game- and proof-scaffolded engineering diagnostic, with no claim of action improvement, general usefulness, text/LoRA equivalence, open recall, durability, scaling, superiority, or proved reviewer independence?"
+  ]
+}

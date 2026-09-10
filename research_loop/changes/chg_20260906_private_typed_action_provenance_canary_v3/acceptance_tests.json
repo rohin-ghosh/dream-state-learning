@@ -1,0 +1,168 @@
+{
+  "artifact_type": "private_typed_action_acceptance_registry",
+  "schema_version": 1,
+  "tests": [
+    {
+      "test_id": "PC0_EXACT_CONTRACT_RATIFICATION_BINDING",
+      "kind": "invariant",
+      "setup": "Before any implementation source or executable fixture runner exists, verify that plan.md, contract.json, manifests.json, the exact declarative golden/mutation fixture sources in fixtures.json, metamorphic_spec.json, acceptance_tests.json, repair_matrix.json, scope_proposal.json, structural_record.schema.json, and evidence_receipt.schema.json already exist, validate, and exactly match normative_bundle_manifest.json; then require Rohin's explicit decision naming both the normative-bundle-manifest SHA-256 and scope-proposal SHA-256.",
+      "expected": "All normative choices and exact golden/mutation inputs pre-exist the decision; requested_scope and forbidden_scope are sorted and byte-bound; no model or model consensus can produce the human ratification; any later normative-byte change invalidates the decision and restarts deliberation.",
+      "falsifies": "Any post-ratification invention of normative bytes, stale hash, inferred approval, changed scope, or implementation source predating approval falsifies authority.",
+      "evidence_artifact": "Future exact human ratification receipt plus current normative_bundle_manifest.json and scope_proposal.json.",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+      "kind": "end_to_end",
+      "setup": "After exact ratification only, render the exact GOLDEN_ACCEPT_V3 and GOLDEN_REJECT_V3 six-record structural fixtures from fixtures.json and the normative manifests.",
+      "expected": "Both source-distinct validators reproduce every exact byte and independently derive record order, chain, extraction, parse, transition or parser-authored non-dispatch, score, close, and evidence relations.",
+      "falsifies": "Any mismatch falsifies total structural fixture closure and blocks publication and the narrow claim.",
+      "evidence_artifact": "Future PC1 fixture bytes, dual-validator outputs, comparator output, and evidence receipt.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+      "kind": "invariant",
+      "setup": "Mutate offered schema, request, raw envelope, extraction result, raw tool-channel bytes, parser input, typed arguments, authorization, action, or manifest binding one at a time and through coordinated variants.",
+      "expected": "Both validators reject each illegal structural relation at the exact first applicable error; assistant prose never supplies structured authority.",
+      "falsifies": "Any accepted illegal mutation falsifies the structural byte-binding claim.",
+      "evidence_artifact": "Future PC2 generated cases and dual first-error outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC3_PROSE_IS_INERT",
+      "kind": "invariant",
+      "setup": "Generate paired fixtures varying only assistant_text, including valid-looking conflicting actions, while holding tool_calls fixed; also pair tool_calls-empty or malformed cases with tool-looking prose.",
+      "expected": "Prose-only changes alter only assistant-text and downstream chain hashes; parse/authorization/transition/score semantic values remain equal. Empty or malformed tool channels structurally yield REJECTED and parser-authored NONDISPATCH_DECLARED with transition_present=false.",
+      "falsifies": "Any prose-derived structural action, transition, score, or authorization falsifies channel isolation.",
+      "evidence_artifact": "Future PC3 paired generated fixtures and relation diffs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC4_TRANSITION_AND_ORDER",
+      "kind": "invariant",
+      "setup": "Generate valid and invalid before_state/delta/after_state/reduced-score combinations and permute, duplicate, omit, or replace record roles and ordinals.",
+      "expected": "Both validators independently recompute the pure declared transition and reduced score and reject every illegal order or value.",
+      "falsifies": "Any accepted semantic or order mismatch falsifies structural transition conformance.",
+      "evidence_artifact": "Future PC4 generated cases and independent derived-value outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC5_TOTAL_LINEAR_LIFECYCLE",
+      "kind": "invariant",
+      "setup": "Generate missing, duplicated, reordered, extra, cross-fixture, non-immediate-parent, post-close, recurrence, second-invocation, second-response, second-parse, second-transition, and second-nondispatch structural records.",
+      "expected": "Only the exact accepted and rejected six-record grammars validate; this is a fixture-grammar statement and makes no runtime-cardinality assertion.",
+      "falsifies": "Any third structural grammar or ambiguous chain falsifies lifecycle totality.",
+      "evidence_artifact": "Future PC5 generated structural cases and dual-validator outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC6_CRASH_PUBLICATION_MATRIX",
+      "kind": "invariant",
+      "setup": "On the exact supported platform only, inject a crash before and after every canary and evidence-receipt create, write, file-fsync, no-replace rename, directory-fsync, reopen, rehash, and revalidation boundary, plus lock-owner crash and restart.",
+      "expected": "Recovery derives either ineligible/absent state or one complete revalidated content-addressed pair; partial, directory-unsynced, stale, mismatched, collided, or later-mutated objects are never claim-eligible. This tests evidence publication, not earlier request/parse/transition runtime operations.",
+      "falsifies": "Any promoted partial, silent replacement, unresolved collision, or eligible mismatch falsifies publication durability.",
+      "evidence_artifact": "Future PC6 fault schedule, exact platform receipt, filesystem-state inventory, and eligibility outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+      "kind": "invariant",
+      "setup": "Generate coordinated alternatives that repair downstream checksums after changing envelope, parser result, transition, score, manifests, payload, or close fields.",
+      "expected": "Both validators recompute semantic relations from source bytes. Invalid alternatives reject even with self-consistent checksums; independently generated alternatives satisfying every law are accepted as newly derived cases without consulting a registered whole-file hash.",
+      "falsifies": "Acceptance by checksum consistency alone, or rejection of a novel law-satisfying case solely because its hash is unregistered, falsifies relational validation.",
+      "evidence_artifact": "Future PC7 generated cases plus complete derived-value traces from both validators.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC8_RESOURCE_BOUNDARIES",
+      "kind": "unit",
+      "setup": "Exercise exact-limit and one-over-limit raw-envelope bytes, argument bytes, record count, aggregate decoded bytes, JSON depth, scalar-field count, integer range, and canonical encoding, including simultaneous malformed/resource-invalid cases.",
+      "expected": "Exact-limit valid cases accept; over-limit cases reject without truncation at the unique earliest error defined by contract first_error_precedence.",
+      "falsifies": "Any unchecked allocation, truncation, nondeterministic classification, or accepted over-limit fixture falsifies the resource envelope.",
+      "evidence_artifact": "Future PC8 boundary generator inputs and dual first-error outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC9_EVIDENCE_RECEIPT_BINDING",
+      "kind": "independent_review",
+      "setup": "Mutate or omit every normative bundle, schema, component spec manifest, implementation source, dependency lock, interpreter, platform, fixture, canary, validator, comparator, and receipt identity, individually and through cross-manifest substitutions.",
+      "expected": "No stale, missing, inconsistent, circularly self-certified, or post-commit-mutated pair is claim-eligible; every identity resolves to exact retrievable bytes and fresh review recomputes closure.",
+      "falsifies": "Any incomplete or inconsistent evidence accepted as eligible falsifies the evidence gate.",
+      "evidence_artifact": "Future PC9 mutation outputs, complete receipt, and fresh independent-review advisory.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC10_RESPONSE_ENVELOPE_EXTRACTION",
+      "kind": "unit",
+      "setup": "Use fixtures.json response cases and generated variants for success, empty channel, malformed outer JSON, duplicate outer and argument keys, duplicate calls, unknown tool, Unicode prose, pointer failure, invalid UTF-8, malformed arguments_json, and canonical re-encoding.",
+      "expected": "Opaque envelope bytes, assistant-text bytes, and raw tool-channel bytes are uniquely derived; both validators return the same stable first error or exact extracted bytes under the closed representation.",
+      "falsifies": "Any ambiguous byte interface, silent duplicate-key collapse, pointer ambiguity, or divergent first error falsifies envelope closure.",
+      "evidence_artifact": "Future PC10 exact inputs, extraction outputs, re-encodings, and dual verdicts.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC11_REJECTION_RECEIPT_OWNERSHIP",
+      "kind": "invariant",
+      "setup": "Render every rejection family and mutate event-4 actor, parse-decision hash, dispatch_permitted, transition_present, and presence of transition source/receipt fields.",
+      "expected": "Only STRUCTURAL_PARSER authors NONDISPATCH_DECLARED; it binds the exact parse decision, sets both booleans false, and contains no transition-oracle identity. TRANSITION_ORACLE appears only on ACCEPTED event 4.",
+      "falsifies": "Any mock/oracle-authored rejection or rejected transition field falsifies truthful structural ownership.",
+      "evidence_artifact": "Future PC11 branch fixtures and dual schema/relation outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC12_RUNTIME_OPERATION_CARDINALITY_AND_ORDER",
+      "kind": "invariant",
+      "setup": "Lint all v3 normative bytes and future v3 report text, then validate extra/duplicate/reordered structural-record cases.",
+      "expected": "The fixture grammar enforces one record at each of six ordinals, while all text explicitly denies inference about actual request consumption, response production, parse/dispatch/transition cardinality, discarded branches, fsync-before-authorization, or syscall order. FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE is named but unreachable.",
+      "falsifies": "Any runtime-provenance wording or inference from the six records, or any accepted extra fixture record, violates the chosen scope retreat.",
+      "evidence_artifact": "Future PC12 claim-lint output and structural-cardinality cases.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC13_MANIFEST_CLOSURE",
+      "kind": "invariant",
+      "setup": "Resolve every component spec manifest and every future implementation/evidence identity, recompute each manifest's JCS hash, and mutate every overlapping renderer, extractor, parser, transition, platform, source, lock, interpreter, dependency, schema, payload, and output binding.",
+      "expected": "Every reference resolves to one retrievable byte string and all overlapping identities are exactly equal; orphan, ambiguous, substituted, or stale references reject.",
+      "falsifies": "Any orphan manifest or inconsistent overlapping identity falsifies provenance closure.",
+      "evidence_artifact": "Future PC13 resolution inventory, mutation cases, and dual closure outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC14_PUBLICATION_PLATFORM_AND_IMMUTABILITY",
+      "kind": "invariant",
+      "setup": "Require exact supported-platform match, then test concurrent cooperative writers, no-replace destination collision, symlink swap, inode substitution, lock-owner crash, directory-fsync recovery, and post-commit mutation.",
+      "expected": "Unsupported platforms cannot pass; no-replace never overwrites; path attacks and collisions are ineligible; restart obeys the closed recovery rule; post-commit mutation is detected and revokes eligibility. No prevention claim is made against excluded adversaries.",
+      "falsifies": "Any ambiguous platform, replacement, undetected mutation, or claim beyond the threat model falsifies publication semantics.",
+      "evidence_artifact": "Future PC14 platform attestation, adversarial filesystem cases, and eligibility outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC15_EVIDENCE_RECEIPT_CRASH_RECOVERY",
+      "kind": "invariant",
+      "setup": "Inject every receipt-side crash/collision state in publication_contract, including stale receipt, mismatched canary, canary replacement attempt, receipt replacement attempt, and restart after each boundary.",
+      "expected": "Only a directory-fsynced, reopened, rehashed, revalidated canary/receipt pair reaches CLAIM_ELIGIBLE; all other states remain false and recovery never replaces a destination.",
+      "falsifies": "Any partial, stale, mismatched, replaced, or directory-unsynced receipt yielding eligibility falsifies evidence lifecycle closure.",
+      "evidence_artifact": "Future PC15 complete crash-state matrix and post-restart eligibility outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC16_VALIDATION_PRECEDENCE_TOTALITY",
+      "kind": "unit",
+      "setup": "Enumerate every contract precedence_totality case plus pairwise combinations of one raw predicate and one parsing-dependent predicate, including absent prerequisite values.",
+      "expected": "Both validators evaluate ascending ranks, treat unavailable parsing-dependent predicates as false, and emit exactly one identical first error for every input.",
+      "falsifies": "Any undefined, multiple, implementation-dependent, or validator-divergent first error falsifies totality.",
+      "evidence_artifact": "Future PC16 Cartesian precedence table and dual outputs.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "PC17_VALIDATOR_NONTRIVIALITY",
+      "kind": "independent_review",
+      "setup": "Freeze source-distinct validator implementations first; derive at least 128 unseen cases from metamorphic_spec.json using both source hashes and the normative-bundle hash; statically audit for whole-file hash branches, registered hashes, selected-index tables, shared helpers, and expected outputs.",
+      "expected": "Both validators accept novel law-satisfying cases, reject novel invalid cases at the same first error, and independently recompute extraction, parser, transition, score, chain, close, and receipt relations. Source audit finds no allowlist or answer table.",
+      "falsifies": "Success achievable by golden/mutation hash allowlisting, shared implementation logic, selected-case tables, or expected-output lookup falsifies validator independence.",
+      "evidence_artifact": "Future PC17 validator source hashes, selected indices, generated cases, static audit, dual outputs, and comparator output.",
+      "required_before": "scientific_claim"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-review-disposition-v1e.schema.json",
+  "title": "Paper-1 v03r canary v1e immutable role-labelled review disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "change_id", "transition", "role", "declared_actor_id", "assignment_sha256", "review_packet_sha256", "reviewed_lock_sha256", "supplied_context_manifest_sha256", "claim_rejection_fixture_receipt_sha256", "workflow_separation_evidence_boundary", "verdict", "reason_codes", "reasons", "fresh_context_declaration", "no_mutation", "completed_at_utc", "disposition_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-review-disposition-v1e.0"},
+    "change_id": {"const": "chg_20260902_paper1_v03r_end_to_end_canary_v1e"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "role": {"enum": ["INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]},
+    "declared_actor_id": {"type": "string", "minLength": 1, "maxLength": 256},
+    "assignment_sha256": {"$ref": "#/$defs/sha256"},
+    "review_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "supplied_context_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "claim_rejection_fixture_receipt_sha256": {"$ref": "#/$defs/sha256"},
+    "workflow_separation_evidence_boundary": {"const": "HASH_BOUND_ROLE_LABELS_AND_FRESHNESS_DECLARATIONS_SELF_DECLARED_UNVERIFIED"},
+    "verdict": {"enum": ["APPROVE", "REJECT", "INVALID"]},
+    "reason_codes": {"type": "array", "uniqueItems": true, "items": {"enum": ["NONE", "MISSING_ARTIFACT", "HASH_MISMATCH", "LOCK_CHANGED", "SCHEMA_INVALID", "AUTHORITY_INVALID", "DECLARED_ACTOR_OVERLAP", "FRESH_CONTEXT_DECLARATION_INVALID", "NO_MUTATION_INVALID", "TEST_FAILURE", "VALIDITY_INVALID", "ACCOUNTING_INVALID", "CLAIM_FIREWALL_INVALID", "SCOPE_EXCEEDED", "OTHER_SPECIFIED"]}},
+    "reasons": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 4096}},
+    "fresh_context_declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prior_turn_count", "unlisted_context_received", "declaration_status"],
+      "properties": {
+        "prior_turn_count": {"const": 0},
+        "unlisted_context_received": {"const": false},
+        "declaration_status": {"const": "SELF_DECLARED_UNVERIFIED"}
+      }
+    },
+    "no_mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before_artifact_set_sha256", "after_artifact_set_sha256", "mutated_reviewed_paths"],
+      "properties": {
+        "before_artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "after_artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "mutated_reviewed_paths": {"type": "array", "maxItems": 0}
+      }
+    },
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "disposition_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(disposition excluding disposition_sha256)); the stored digest is external"}
+  },
+  "allOf": [
+    {"if": {"properties": {"verdict": {"const": "APPROVE"}}, "required": ["verdict"]}, "then": {"properties": {"reason_codes": {"const": ["NONE"]}, "reasons": {"maxItems": 0}}}},
+    {"if": {"properties": {"verdict": {"enum": ["REJECT", "INVALID"]}}, "required": ["verdict"]}, "then": {"properties": {"reason_codes": {"minItems": 1, "not": {"contains": {"const": "NONE"}}}, "reasons": {"minItems": 1}}}}
+  ],
+  "x-semantic-contract": {
+    "claim_fixture_binding": "claim_rejection_fixture_receipt_sha256 must byte-equal the same immutable packet's claim_rejection_fixture_receipt_sha256; APPROVE is invalid unless every registered broad, stage-conditional, and LoRA-resubstitution fixture was handled exactly.",
+    "evidence_boundary": "The actor ID, role label, and fresh-context declaration are self-declared and unverified. A disposition cannot be reported as platform-attested, authenticated, canonically identified, or proof of reviewer independence.",
+    "reviewer_supremacy": "Any INDEPENDENT_REVIEWER-labelled REJECT or INVALID wins for the exact bytes; an advocate disposition cannot override it.",
+    "changed_bytes": "Any changed reviewed byte requires a new lock, human ratification, packet, assignments, and both dispositions; no disposition carries forward."
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

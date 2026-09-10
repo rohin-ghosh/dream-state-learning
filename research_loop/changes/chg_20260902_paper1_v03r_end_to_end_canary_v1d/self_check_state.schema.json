@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-self-check-state-v1d",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal", "premises", "additional_rows"],
+  "properties": {
+    "proposal": {"$ref": "#/$defs/proposal"},
+    "premises": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}},
+    "additional_rows": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}}
+  },
+  "$defs": {
+    "proposal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "ROLE_EQUIV"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleEquivFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "CAUSAL_JOIN"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/causalJoinFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P[0-9]{6}$"},
+            "kind": {"const": "ROLE_APPLICATION"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleApplicationFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        }
+      ]
+    },
+    "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M[0-9]{6}$"}}
+  },
+  "x-golden-vectors": {
+    "schema_positive": [
+      {
+        "name": "source-and-animal-premises-each-match-one-row-kind",
+        "instance": {
+          "proposal": {"proposal_id": "P001007", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "citations": ["M000005", "M000021"]},
+          "premises": [
+            {"row_id": "M000005", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6", "record_hash": "023be187f2924544eac6e6e46b692610edb746d945cadab9dff591ed8b95cbb0"},
+            {"row_id": "M000021", "origin": "WITNESSED", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "b513b1e94a84fdda16e41cfc8f23a359814f67a2f940f569b90b1374f1cd2fb3", "record_hash": "f34fa1b06ee90e939f8c7d1cf157852571f51ea5225dc4e818a710753c4e95ca"}
+          ],
+          "additional_rows": []
+        }
+      }
+    ],
+    "schema_negative": [
+      {
+        "name": "duplicate-premise-object",
+        "instance": {
+          "proposal": {"proposal_id": "P001007", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "citations": ["M000005", "M000021"]},
+          "premises": [
+            {"row_id": "M000005", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6", "record_hash": "023be187f2924544eac6e6e46b692610edb746d945cadab9dff591ed8b95cbb0"},
+            {"row_id": "M000005", "origin": "WITNESSED", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6", "record_hash": "023be187f2924544eac6e6e46b692610edb746d945cadab9dff591ed8b95cbb0"}
+          ],
+          "additional_rows": []
+        }
+      }
+    ],
+    "ordered_reducer": {
+      "name": "interleaved-premise-and-support-order",
+      "proposal_projection": {"proposal_id": "P001007", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "citations": ["M000004", "M000001", "M000003"]},
+      "premise_depth_and_lineage_in_proposal_order": [
+        {"row_id": "M000004", "depth": 1, "lineage": ["E000020"]},
+        {"row_id": "M000001", "depth": 0, "lineage": ["E000010"]},
+        {"row_id": "M000003", "depth": 2, "lineage": ["E000011", "E000030"]}
+      ],
+      "additional_rows_in_supplied_order": [
+        {"row_id": "M000005", "depth": 4, "lineage": ["E000040"]},
+        {"row_id": "M000002", "depth": 0, "lineage": ["E000002", "E000010"]},
+        {"row_id": "M000003", "depth": 2, "lineage": ["E000011", "E000030"]}
+      ],
+      "self_check_output": {"verdict": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "premise_ids": ["M000004", "M000001", "M000003"], "support_row_ids": ["M000002", "M000003", "M000005"], "prediction": "supported", "confidence": 1, "reason": "distinct lineage"},
+      "expected": {
+        "accepted_citations": ["M000004", "M000001", "M000003", "M000005", "M000002"],
+        "depth": 5,
+        "citation_traversal_lineage_first_occurrence": ["E000020", "E000010", "E000011", "E000030", "E000040", "E000002"],
+        "external_lineage_manifest_value_ascii_sorted": ["E000002", "E000010", "E000011", "E000020", "E000030", "E000040"],
+        "ordered_adjacency": [["M001007", "M000004"], ["M001007", "M000001"], ["M001007", "M000003"], ["M001007", "M000005"], ["M001007", "M000002"]],
+        "semantic_hash": "f9c8fbc09ff0ddf7a698986c97bba0cd78ac906e02e004b1277676bb8b0d2813",
+        "record_hash": "f986f130506c6e68a1c6e5d25fb183c92cee220759c6719e9b766e17a3d6f0fc"
+      },
+      "negative": {
+        "ascii_sorted_citations": ["M000001", "M000002", "M000003", "M000004", "M000005"],
+        "wrong_reason": "sorting destroys emitted premise order and supplied support-row order"
+      }
+    }
+  }
+}

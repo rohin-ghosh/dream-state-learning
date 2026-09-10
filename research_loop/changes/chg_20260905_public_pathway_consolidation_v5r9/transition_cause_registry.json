@@ -1,0 +1,86 @@
+{
+  "contract": "ppc5.transition_cause_registry.v9",
+  "schema_version": 9,
+  "artifact_type": "TRANSITION_CAUSE_REGISTRY",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "producer_role": "TRANSITION_CAUSE_REGISTRY_AUTHOR",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "rows": [
+    {
+      "cause": "MODEL_DISPATCH",
+      "ordinal": 0,
+      "ordered_lineage_roles": [
+        "MODEL_DISPATCH"
+      ],
+      "content_sha256": "16f93b14e652d5fae425edc9e5e5492b47f3383c60e9891baf44ee9c02651033"
+    },
+    {
+      "cause": "DIRECT_PROVIDER",
+      "ordinal": 1,
+      "ordered_lineage_roles": [
+        "PROVIDER_INGRESS",
+        "PROVIDER_RECEIPT"
+      ],
+      "content_sha256": "4258baf9d0c9b00f77b53bd939b85f415fc9afcc904b8359469c210c4cc72ad7"
+    },
+    {
+      "cause": "CONTROLLER_PHASE",
+      "ordinal": 2,
+      "ordered_lineage_roles": [
+        "CONTROLLER_REGISTRY",
+        "CONTROLLER_RESULT"
+      ],
+      "content_sha256": "21de55a62e2234a8f6eefbe143008c1ff38f361fd2270585e927083f9998a345"
+    },
+    {
+      "cause": "QUEUE_FLUSH",
+      "ordinal": 3,
+      "ordered_lineage_roles": [
+        "QUEUE_SLOT",
+        "PROVIDER_RECEIPT",
+        "INTERVENTION_EMISSION",
+        "PUBLIC_RESULT",
+        "QUEUE_EFFECT"
+      ],
+      "content_sha256": "8ef9a76de0c209061a0ba283eabd7a4cd5ca81b3be19296efe8347f5fc04d698"
+    },
+    {
+      "cause": "QUEUE_DISCARD",
+      "ordinal": 4,
+      "ordered_lineage_roles": [
+        "QUEUE_SLOT",
+        "QUEUE_EFFECT"
+      ],
+      "content_sha256": "a5f5c63a370c59a7b451d090b096deba8bf6a587bcc5bc0c4bbeaaf7a5a495b3"
+    },
+    {
+      "cause": "COMMITTED_ACTION",
+      "ordinal": 5,
+      "ordered_lineage_roles": [
+        "COMMITTED_ACTION",
+        "ENVIRONMENT_RECEIPT"
+      ],
+      "content_sha256": "7f3891c72dbb2af9d1d162ac3c2bf60eb0be2b7638d31a73899dddc90ac73dd6"
+    },
+    {
+      "cause": "HARNESS_TERMINAL",
+      "ordinal": 6,
+      "ordered_lineage_roles": [
+        "TERMINAL_CAUSE",
+        "ENDPOINT_OUTCOME"
+      ],
+      "content_sha256": "d10470cb3b1f508bb5f9ecbb4568eaed92d57e45ef5e05f830be14aee9176fce"
+    }
+  ],
+  "cause_order": [
+    "MODEL_DISPATCH",
+    "DIRECT_PROVIDER",
+    "CONTROLLER_PHASE",
+    "QUEUE_FLUSH",
+    "QUEUE_DISCARD",
+    "COMMITTED_ACTION",
+    "HARNESS_TERMINAL"
+  ],
+  "exact_cardinality": true,
+  "self_hash": "3d2d662ce4028294bf0c3ca8a91c421d5e3351b88a19e366f0c83b74932f3c95"
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "paper1-v03r-canary-public-projection-v1c.0",
+  "status": "architecture_proposal_only",
+  "purpose": "Bind the only legal conversion from the frozen v03r public API to typed public events, the target-absent probe, the withheld final-goal projection, and the fixed state-token vocabulary. These artifacts seal before any heldout provider dispatch.",
+  "dependency_closure": {
+    "lands/v03r.py": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+    "lands/v03.py": "6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16",
+    "lands/skins.py": "cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0",
+    "lands/model.py": "6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211",
+    "lands/v02.py": "0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89",
+    "lands/world.py": "9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac"
+  },
+  "construction": {
+    "worlds": "Instantiate CounterfactualConfluenceV03R(WorldConfig(seed=5),latent_bit=b) for b=0 then b=1 with no mutation.",
+    "skin": "aligned",
+    "event_source": "For each world call public_episodes('aligned'); never read world.episodes, private attributes, precheckpoint_export().public_record, public_export answer fields, an oracle, or matched-distractor fields.",
+    "probe_source": "Call public_operational_probe(); do not call render_operational_probe(), whose returned object also contains audit-only matched-distractor coordinates.",
+    "goal_source": "Call public_goal() for public coordinates and reveal_final_goal('aligned') for the answer-free rendered question. Construct and seal this host projection before heldout dispatch, but do not expose any goal byte to DREAM, SELF_CHECK, THINK0, M0, OWN, or DIST.",
+    "allowed_source_object": "Serialize exactly {events:[episode.to_dict() for episode in public_episodes('aligned') in returned order],goal:{id,animal_id,target_id,blocked_source_id} from public_goal(),probe:{id,source_id,target_id} from public_operational_probe(),rendered_goal:reveal_final_goal('aligned')}. Tuple payload values serialize as JSON arrays. No other world field or rendered-probe field is read.",
+    "forbidden_key_check": "Recursively reject the allowed source object if any object key is parents, source_subset, source_subset_0, source_subset_1, latent_bit, answer, answer_ratio, role, answer_valve_id, next_operation, matched_distractor_source_entity_id, or matched_distractor_target_entity_id. rendered_goal must have exactly goal_id and question.",
+    "allowed_source_fingerprint": "sha256(JCS(the exact allowed_source_object))",
+    "canonicalization": "Every object is UTF-8 RFC8785 JCS. Hashes are lowercase SHA-256 over the stated exact JCS object with no terminal newline. Duplicate keys and nonfinite numbers are rejected."
+  },
+  "surface_atom_rule": {
+    "slug": "Take the frozen aligned surface string, require printable ASCII, strip leading/trailing ASCII spaces, lowercase ASCII A-Z, replace each maximal nonempty run of ASCII spaces with one hyphen, and reject if the result is empty or contains a byte outside [a-z0-9_.+-]. No other normalization is permitted.",
+    "valve": "'valve:' + slug(world.valve_surface(raw valve_id,'aligned'))",
+    "source": "'source:' + slug(make_skin('aligned',world.animal_ids,world.source_land_ids).land(raw source_id))",
+    "target": "'target:' + slug(world.target_surface(raw target_id,'aligned'))",
+    "animal": "'animal:' + slug(world.animal_surface(raw animal_id or anchor_id,'aligned'))",
+    "label": "'label:' + slug(public payload label)",
+    "mixture": "For the exact public payload ratio [r,y,b], require three nonnegative integers and at least one positive integer; emit 'mixture:' followed by each positive term as '<count>*<slug(aligned pigment surface)>' joined by '+', in the fixed raw channel order red,yellow,blue. Preserve counts; do not normalize the ratio.",
+    "effect": "The exact public payload string, which must be CHANGE or STABLE."
+  },
+  "event_projection": {
+    "common_validation": "The tuple length must be 46. At zero-based index i the raw public episode id must equal v03r_edge_ followed by i as four decimal digits and episode_id must equal v03r_episode_ followed by i as four decimal digits. Only kind and payload determine semantic fields; phase and rendered text are audit-only and cannot enter a row.",
+    "event_identity": "event_id is E followed by i as six decimal digits and event_index is i.",
+    "kind_map": {
+      "valve_route": {"kind": "ROUTE", "required_payload_keys_exactly": ["source_id", "valve_id"], "fields": ["valve(raw valve_id)", "source(raw source_id)"]},
+      "intervention_effect": {"kind": "EFFECT", "required_payload_keys_exactly": ["effect", "target_id", "valve_id"], "fields": ["valve(raw valve_id)", "target(raw target_id)", "effect(raw effect)"]},
+      "source_anchor_color": {"kind": "SOURCE_VALUE", "required_payload_keys_exactly": ["anchor_id", "label", "source_id"], "fields": ["animal(raw anchor_id)", "source(raw source_id)", "label(raw label)"]},
+      "animal_source_color": {"kind": "ANIMAL_VALUE", "required_payload_keys_exactly": ["animal_id", "label", "source_id"], "fields": ["animal(raw animal_id)", "source(raw source_id)", "label(raw label)"]},
+      "target_passive_baseline": {"kind": "TARGET_BASELINE", "required_payload_keys_exactly": ["anchor_id", "label", "ratio", "target_id"], "fields": ["animal(raw anchor_id)", "target(raw target_id)", "mixture(raw ratio)"]},
+      "workshop_recipe": {"kind": "RECIPE", "required_payload_keys_exactly": ["label", "ratio"], "fields": ["mixture(raw ratio)", "label(raw label)"]}
+    },
+    "event_hash": "sha256(JCS({event_id,event_index,fields,kind}))",
+    "closed_event": "Exactly {event_id,event_index,kind,fields,event_hash}, validated by public_event.schema.json.",
+    "witnessed_row": "Before the corresponding WAKE state, deterministically map Ei to Mi by replacing event_id with row_id M plus the same six digits; set origin=WITNESSED,status=WITNESSED,support_basis=WITNESS,citations=[],depth=0; semantic_hash=sha256(JCS({fields,kind})); record_hash=sha256(JCS(the closed memory_row object excluding record_hash)). The external host lineage sidecar is exactly [event_hash].",
+    "forbidden": ["raw internal ratio on source_anchor_color", "raw internal ratio on animal_source_color", "hidden parents", "source subsets", "latent bit", "answer ratio", "goal role", "oracle output", "matched distractor coordinates"]
+  },
+  "probe_projection": {
+    "closed_object": "Exactly {probe_id,source,target,question}. probe_id is raw PublicOperationalProbe.id; source and target use the surface-atom rule; question is 'Determine whether committed experience supports a causal join from ' + the aligned source surface + ' to ' + the aligned target surface + '. If it does not, request that missing typed join.'",
+    "seed5_expected": {"probe_id": "v03r_probe_0000", "source": "source:dandyland", "target": "target:confluenceland", "question": "Determine whether committed experience supports a causal join from Dandyland to Confluenceland. If it does not, request that missing typed join."},
+    "twin_rule": "The exact closed object must byte-equal across latent bits 0 and 1.",
+    "visibility": "This object is the only probe object visible to THINK0."
+  },
+  "withheld_final_goal_projection": {
+    "host_coordinates": "Exactly {goal_id,animal,source,target}, where goal_id is PublicCounterfactualGoal.id, animal maps animal_id, source maps blocked_source_id, and target maps target_id through the surface-atom rule.",
+    "think1_question": "Exactly {goal_id,question} from reveal_final_goal('aligned'); the returned object must have exactly those keys and must not contain answer.",
+    "seed5_expected_coordinates": {"goal_id": "v03r_goal_0000", "animal": "animal:otter", "source": "source:dandyland", "target": "target:confluenceland"},
+    "seed5_expected_question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Dandyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."},
+    "twin_rule": "Coordinates and question must each byte-equal across latent bits 0 and 1.",
+    "visibility": "Seal before the first heldout provider dispatch in a host-only artifact. Reveal only think1_question after both M1 branches and their manifests seal. Host coordinates may then drive prospective path registration but never enter THINK1."
+  },
+  "state_token_projection": {
+    "rule": "From the sealed typed public-event list, select every RECIPE label field, deduplicate by exact UTF-8 bytes, and sort by ascending unsigned ASCII bytes. This equals the vocabulary derivable from M0 witnessed RECIPE rows and is sealed before the first heldout provider dispatch.",
+    "seed5_expected": ["label:blue", "label:blue-purple", "label:brown", "label:green", "label:mixture-02", "label:mixture-03", "label:mixture-05", "label:orange", "label:purple", "label:red", "label:red-orange", "label:yellow", "label:yellow-green"],
+    "twin_rule": "The exact array must byte-equal across latent bits 0 and 1.",
+    "visibility": "Withheld from DREAM, SELF_CHECK, and THINK0; reused byte-identically in every recipient THINK1 text and LoRA arm after final-goal reveal."
+  },
+  "pre_dispatch_seal": {
+    "artifacts_per_life": ["allowed public API source-object fingerprint over public_episodes, public_operational_probe, public_goal, and reveal_final_goal after exact forbidden-key checks", "closed typed public-event list", "event-to-witnessed-row projection plan", "closed probe object", "host-only withheld final-goal projection", "state-token vocabulary"],
+    "cross_twin_artifacts": ["public DIST-control manifest derived only from the two sealed event lists and the shared probe", "byte-equality receipts for probe, withheld goal, and state-token vocabulary"],
+    "ordering": "All listed artifacts, their hashes, and the seed-5 frozen-vector checks must seal before the first heldout DREAM, SELF_CHECK, THINK0, or THINK1 provider dispatch. Later stages may consume these sealed artifacts but may not reconstruct or replace them.",
+    "mismatch": "INVALID_PRECONDITION/PUBLIC_PROJECTION_MISMATCH with every heldout opportunity recorded as zero-attempt NON_DISPATCH_PRECONDITION."
+  }
+}

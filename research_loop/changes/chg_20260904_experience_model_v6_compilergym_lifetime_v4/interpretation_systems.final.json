@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "v6cg-v4-systems-final",
+  "change_id": "chg_20260904_experience_model_v6_compilergym_lifetime_v4",
+  "perspective": "systems",
+  "state": "interpreted",
+  "architecture_change_sha256": "786148da7ecc12b9caa056d532dfca8188bc5abc4fd622f3b055fb1ddca33e34",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling architecture-deliberation, human-ratification, independent-review, and GPU-claim boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/change.json",
+      "sha256": "786148da7ecc12b9caa056d532dfca8188bc5abc4fd622f3b055fb1ddca33e34",
+      "purpose": "Exact proposed v4 architecture change interpreted here."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/context_visibility_spec.md",
+      "sha256": "b1a7ddeccbd1f9209df21f0eb79541a168d9da1211881746d51655a533b28cf8",
+      "purpose": "Normative packet, parser, state, lifecycle, snapshot, persistence, and directional-visibility contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/experiment_spec.md",
+      "sha256": "e2de2fe681318c84ed201dd05bee21ea4437fd8defbf4015e9999afe4f1d4e0e",
+      "purpose": "Normative score, writer, shuffle, split, seed, determinism, assay-disposition, and staged-state contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_compilergym_lifetime_v4/human_directive.txt",
+      "sha256": "b58e04dedd8d61ab8e196d9b24bdcd88d31e9e65573f7cc6d59a0aa0bb9fa7ad",
+      "purpose": "Verbatim human intent for two systems, reconstructed context/state, recall, memory compilation, time awareness, and rapid CompilerGym iteration."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Strict schema governing this interpretation artifact."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Validator requirements for context hashes, proposal binding, exact acceptance-test coverage, and unique concern identifiers."
+    }
+  ],
+  "system_thesis_interpretation": "The proposal translates the directive into exactly two matched on-policy whole systems rather than two model roles: HARNESS is always the pinned clean base with a null adapter, while EXPERIENTIAL alone may carry a cumulative life-local rank-16 q_proj/v_proj LoRA across the two sleep boundaries. ORIENT and THINK_ACT are two calls to the same reconstructed model, and SLEEP is a model-free compiler/trainer boundary, not another agent. Both systems retain bounded public ledger/notebook evidence within a life, and target forks preserve the caller's own target-blind evidence snapshot; therefore D_HE is intentionally a whole-system descriptive contrast, while off and shuffled are EXPERIENTIAL-only diagnostics sharing the exact EXPERIENTIAL snapshot. The architecture is admirably strict about fail-closed visibility, cold forks, no evaluation writeback, no preservation objective, and the one-life claim boundary. However, the exact-byte and deterministic-execution thesis is not yet achieved by the two specifications: several byte encodings, sampling seeds, compiler mappings, split algorithms, and lifecycle receipts are missing or contradictory. Those gaps must be resolved by new ratified bytes, not implementation discretion. Even after resolution and a complete Stage C, the strongest result remains that the sealed recipe completed with valid integrity receipts; signs or magnitudes of D_HE, D_off, D_shuf, or m cannot establish efficacy, causal credit, mechanism, correctness, lifetime growth, population behavior, or superiority.",
+  "graph_delta_interpretation": "The four proposed nodes form a sensible separation of concerns: two on-policy system identities; canonical reconstructed context plus common snapshot evidence; an EXPERIENTIAL-only deterministic writer; and a conditional CompilerGym integrity assay. The three directed edges correctly constrain flow to authoritative state -> fresh ORIENT packet -> parsed bounded retrieval -> fresh THINK_ACT packet -> one typed public operation -> append-only event, then sealed EXPERIENTIAL acquisition projection -> compiler/trainer -> atomically published authentic adapter, and finally checkpoint artifacts -> cold read-only target forks -> quarantine. No target/evaluation byte may flow back to either life or writer, and no trainer/cache/RNG state may cross sleep. The graph must be implemented as process/capability boundaries rather than trusted naming: packet assembler, parsers, retriever, service, ledger/notebook writers, compiler, trainer, publisher, loader, fork launcher, quarantine, and auditor each need deny-by-default handles and hash-bound input/output receipts. The change-level visibility matrix is too coarse to enforce this on its own because it merges WAKE_AND_SLEEP and uses visibility labels where different principals have different access; the companion principal allowlist must be the authoritative access-control graph. As written, exact edges for public prose, ORIENT parse dispositions, reset/baseline service access, seed issuance, and quarantine sealing are not fully closed, so the claimed deterministic graph is not yet executable without additional normative choices.",
+  "loop_delta_interpretation": "The wake loop is a bounded two-phase state machine, not conversational continuation. For each available pair, the controller serializes a fresh packet, invokes ORIENT once, strictly parses or substitutes the fixed invalid fallback, executes at most two finite retrievals from the caller's own snapshot, serializes a fresh THINK_ACT packet, invokes once, strictly parses, dispatches at most one operation, charges budgets, and appends one complete public event. Provider history, raw output, hidden prefixes, KV state, process state, and retries are forbidden. STOP, terminal service state, hard caps, packet overflow, and lifecycle failure end the task under fixed score carry-forward or indeterminate rules. Task reset destroys task-local focus/tail/workspace/process/cache/files/RNG while the life ledger/notebook and authentic adapter persist; life reset destroys all of them. At tasks 4 and 8, EXPERIENTIAL seals its public acquisition projection, compiles selected rows, rebuilds from the clean base with a fresh optimizer, publishes only on complete finite receipts, then destroys trainer ephemera; HARNESS crosses the accounting boundary but never trains or mounts sham bytes. Target evaluation occurs only in sterile cold forks with immutable checkpoint snapshots and fork-local notebook overlays, followed by quarantine and teardown. The intended loop is clear, but exact replay is blocked by undefined acquisition inference seeds, unclear STOP-versus-six-event accounting, absent ORIENT-invalid provenance in the event schema, and incomplete compiler construction. The staged supervisory loop is also absolute: UNRATIFIED permits none of the proposed inspection or execution; architecture ratification can release only A through B2 within exact scope; B3/C require a later exact run-byte review and human ratification; any invariant failure transitions irreversibly to STOPPED for this change.",
+  "claim_delta_interpretation": "The claim boundary is correct and unusually important. RECIPE_ASSAY_COMPLETE means only that every required primary and adapter-off cell produced complete valid receipts under the sealed wiring; it is independent of score direction or magnitude. INTEGRITY_OR_WIRING_FAILURE takes priority over every other disposition, and INDETERMINATE_PRIMARY takes priority over completion. SHUFFLE_UNAVAILABLE removes only D_shuf when the exact construction is unavailable and cannot demote an otherwise complete primary assay. D_HE is confounded by the systems' distinct life histories and snapshots by design, D_off is an EXPERIENTIAL within-snapshot adapter-mount diagnostic, and D_shuf is a construction-dependent binding diagnostic; none is an effect estimate. Two cold realizations are receipt replication, the single common acquisition order is not a population sample, and the three canaries define only a descriptive pre-target scale. Neither official environment acceptance nor instruction-count improvement establishes functional correctness. No p-value, interval, slope, power statement, thresholded success label, target-level generalization claim, mechanism story, lifetime-learning claim, or superiority headline is supported. Static/B1/B2 evidence supports implementation integrity only, and even a later B3/C run cannot expand the claim without another deliberated and human-ratified change.",
+  "visibility_matrix_interpretation": "The effective visibility policy is the companion specification's principal-level allowlist with all unlisted reads and writes denied. The model may see only the canonical packet and be causally conditioned by assigned below-prompt weights; it may never see system/fork/checkpoint labels, adapter identity or hashes, target roles, receipts, telemetry, filesystem paths, raw IR, reference data, future candidates, evaluator data, or cache/process/RNG state. Each life controller accesses only its own public ledger/notebook. The sleep compiler is EXPERIENTIAL-only and may read only the sealed public acquisition projection plus frozen recipe/mask/base-hash inputs; the trainer receives selected rows and clean base, and only the publisher may expose a successful authentic adapter to later inference. Target routing and outcome handling must remain outside the packet, with each fork mounting its assigned read-only life snapshot, writing notes only to a fork-local ephemeral overlay, and writing outcomes only into quarantine. The auditor may inspect serialized artifacts after teardown but cannot feed information into any model call. Snapshot equality is scoped: H@c forks share the exact HARNESS snapshot for c; E-authentic/E-off and, at c=8, E-shuffled share the exact EXPERIENTIAL snapshot; H and E snapshots are not expected to be equal. The change matrix's WAKE_AND_SLEEP cell for acquisition_public_projection must not be read as model visibility, and its cell for own_life_snapshot must not give the trainer access. A direct contradiction remains because experiment_spec.md's table groups raw/unparsed/provenance prose as parser-transient and denies compiler access, while both normative prose sections permit bounded parsed public provenance as zero-mask compiler conditioning. The conservative implementation must stop rather than choose between those readings.",
+  "acceptance_test_ids_addressed": [
+    "V6CG_V4_T01_SPEC_HASH_AND_PACKET_GOLDENS",
+    "V6CG_V4_T02_VISIBILITY_AND_SNAPSHOT_NONINTERFERENCE",
+    "V6CG_V4_T03_WRITER_SELECTION_PACKING_AND_NO_PRESERVATION",
+    "V6CG_V4_T04_SCORE_SPLIT_SEED_GOLDENS",
+    "V6CG_V4_T05_LIFECYCLE_AND_COLD_LOAD_FIXTURES",
+    "V6CG_V4_T06_STAGE_C_INTEGRITY_DISPOSITION_GOLDENS",
+    "V6CG_V4_T07_SCOPED_AUTHORITY_REVIEW_GATE"
+  ],
+  "acceptance_test_interpretation": "T01 must first bind both normative specification hashes and then prove byte-for-byte declared-key serialization, section order, tokenizer-inclusive caps, collision order, ORIENT fallback/mandatory-THINK_ACT charging, THINK_ACT malformed/no-operation charging, PACKET_OVERFLOW no-call termination, unknown/duplicate/missing/out-of-order-key rejection, output truncation rejection, and the exact finite-only loss mask including zero-loss EOR and all prose. It cannot produce a meaningful exact packet golden until literal framing delimiters, final-LF scope, ANCHOR field types/limits, and required field encodings are ratified. T02 must exercise the principal allowlist as deny-by-default, including forbidden cross-life/cross-system reads, model attempts to observe labels or receipts, compiler attempts to read targets/private/raw bytes/unrelated notes, trainer and ledger cross-writes, immutable snapshot mounts, fork-local NOTE_APPEND overlays, quarantine non-writeback, cold teardown, and pairwise snapshot hashes at 0/4/8. H uses its own snapshot; all E variants at a checkpoint use one identical E snapshot. The combined change matrix is not sufficient evidence. T03 must use synthetic ledgers containing multiple improvements, accepted non-improvers, non-environment decisions, malformed outputs, each failure class, later and absent recoveries, equal-credit and byte-identical dedup ties, OLD/NEW scarcity in both directions, bucket saturation, short views, row overflow, 24 copies, zero-loss EOR, seeded Fisher-Yates, next-fit final packs, nonfinite gradients, skipped updates, atomic no-publication failures, forbidden targets/rows/losses, and shuffle constructible/unavailable cases. It is blocked until ACT segment membership, ORIENT credit, candidate/row IDs and renderers, bucket functions, and shuffle target semantics are exact. T04 must prove A performs no CompilerGym import/instantiation and uses only sealed local public bytes; test transitive duplicate components, cross-role exclusions, grouping/ties, selection order, two-spare exhaustion, B2-only reset/baseline access, and role sealing before model access. Score goldens must cover accepted improvements/worsening, every non-environment operation, proven unchanged invalids, unknown post-state, timeout/error/partial/nonfinite results, bad reset/denominator, STOP carry-forward, two-realization completeness, unclamped S/G, four-target contrast propagation, and rates outside G. Seed goldens must cover every domain, byte encoding, canonical indices, one-shot consumption, crash/no-replacement, and common-random-number relationships. The current split and seed rules are not closed enough to make those goldens unique. T05 must prove candidate-versus-published adapter separation, failure atomicity, authentic-only sleep persistence, fresh optimizer rebuild, destruction of gradients/moments/trainer/corpus/cache/RNG/inference state, HARNESS null-adapter accounting, task reset versus life reset, checkpoint-0 mount, sterile process/workspace mounts, overlay destruction, quarantine sealing, and no later-target contamination. Mock fixtures can verify orchestration but cannot satisfy later real same-stack numerical or cold-behavioral determinism; those require separately authorized exact run bytes and receipts. T06 needs a classifier truth table in which combined integrity and indeterminate defects select INTEGRITY_OR_WIRING_FAILURE, any primary/off incompleteness selects INDETERMINATE_PRIMARY absent an integrity defect, complete negative/zero/positive signed diagnostics all select RECIPE_ASSAY_COMPLETE, and SHUFFLE_UNAVAILABLE omits only D_shuf. Missing constituents must propagate without dropping, weighting, regeneration, or imputation, and no diagnostic or m threshold may alter disposition. T07 must independently verify exact hashes and permitted-scope hashes at every transition, receipt completeness, review freshness, human evidence binding, no action while UNRATIFIED, A's read-only/no-import authority, B1's non-executing artifact scope, B2's disposable unchanged-local non-model semantic scope, irreversible STOPPED behavior, and the absence of any use of unratified model/dependency/hardware/run bytes. Passing T07 is not ratification and cannot release B3/C; a later fresh review and explicit human ratification of exact generated run bytes remain mandatory. Collectively the tests are strong fail-closed outlines, but T01/T03/T04 cannot have unique expected bytes until the disagreements below are resolved, and T05's pre-GPU mock cannot stand in for real numerical/behavioral replay evidence.",
+  "assumptions": [
+    "This interpretation treats the proposal and both companion specifications as design-only bytes; it performs no inspection of the proposed substrate, import, environment execution, model call, training, target opening, CPU semantic trace, or GPU work.",
+    "ENV_ACT is presumed to intend the service dispatch caused by a parse-valid APPLY_PASS operation, but this alias is not normative enough for implementation and is retained as an open ambiguity.",
+    "Checkpoint 0 is presumed to precede any successful sleep, so EXPERIENTIAL-authentic@0 and EXPERIENTIAL-off@0 would both mount null adapter state while sharing the canonical empty EXPERIENTIAL snapshot; the specifications must state this explicitly.",
+    "Where the change-level stage matrix and the principal-level allowlist differ in granularity, the principal allowlist is treated as the intended enforcement source, without using that assumption to resolve the public-provenance contradiction.",
+    "A failed or missing required receipt is treated as integrity failure and STOPPED rather than as an assay observation, unless experiment_spec.md explicitly classifies a single frozen target cell as INDETERMINATE_PRIMARY."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "V6CG_V4_A01_PACKET_FRAMING_BYTES",
+      "question": "What are the literal UTF-8 bytes for every section opener/closer and PACKET_END, where are separators/newlines placed, what byte sequence is the forbidden raw delimiter, and does the experiment specification's final LF apply to each embedded JSON object, each complete packet, row inputs, and receipts?",
+      "impact": "T01 cannot bind a unique packet hash, tokenizer count, 32-token framing budget, overflow result, row input, or cross-platform logical replay without these bytes."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A02_ANCHOR_AND_FIELD_TYPES",
+      "question": "What are the exact JSON types, element schemas, per-field prose caps, and normalization/truncation rules for ANCHOR.objective, rules, operation_grammar, public_field_rules, ENVIRONMENT.public_summary, workspace identifiers, observations, instruction features, and public outcome reward?",
+      "impact": "Required-field validation, canonical rendering, packet fit, event fit, compiler projection, and loss-mask goldens otherwise admit multiple conforming implementations."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A03_STOP_EVENT_ACCOUNTING",
+      "question": "After STOP or an early terminal state, are the remaining score slots represented only by carried B values or also by synthetic ledger events, and are RESET records decision events?",
+      "impact": "The statement that checkpoint prefixes contain exactly 24 and 48 events conflicts with early task termination unless events are synthesized; snapshot bytes, ordinals, retrieval, compiler inputs, and receipts change."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A04_ORIENT_INVALID_PROVENANCE",
+      "question": "Where is ORIENT_INVALID recorded in the complete event/public_source_projection, and can the controller-generated KEEP fallback ever become an ORIENT training target paired with a later improving action?",
+      "impact": "The current event schema cannot distinguish a valid KEEP from an invalid-output fallback, so the compiler cannot deterministically enforce parse-valid targets or audit parser health from its allowed input."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A05_OPERATION_VOCABULARY",
+      "question": "Is ENV_ACT exactly an alias for APPLY_PASS, and how do event operation tags, compiler ACT/REVISE targets, score classes, shuffle strata, and public service statuses map byte-for-byte?",
+      "impact": "T03 and T04 cannot share a single operation classifier or canonical target renderer until the vocabulary is unified."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A06_COMPILER_CANDIDATE_CONSTRUCTION",
+      "question": "How are accepted actions filtered within an improvement interval, how is credit assigned to the ORIENT view, what makes an ORIENT/ACT/REVISE candidate ID, what are their exact input/target schemas, and how are legal-pass-family and Autophase-sign-bin computed?",
+      "impact": "Different reasonable choices change candidates, deduplication, quotas, row hashes, pack plans, gradient updates, and final adapter tensors, defeating exact logical determinism."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A07_SHUFFLE_SEMANTICS",
+      "question": "For each of ORIENT, ACT, and REVISE, which finite target is permuted, what operation tag and pass family apply, how is pass inequality checked for non-ACT fields, and must target permutation preserve exact token lengths and pack boundaries or only the declared caps?",
+      "impact": "The shuffled adapter may be impossible or non-unique, and unequal packing/update counts would undermine the stated binding-only diagnostic."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A08_SEED_ENCODING_AND_MATCHING",
+      "question": "Is master_seed hashed as 64 ASCII hex characters or decoded 32 bytes, how are domain parameters and canonical_index serialized, and which H/E/off/shuffled calls share one score seed despite fork appearing in the domain name?",
+      "impact": "T04 cannot derive unique seeds, and matched-fork common-random-number behavior is contradictory as written."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A09_ACQUISITION_GENERATION_SEEDS",
+      "question": "Which domain issues the sampling RNG for each HARNESS and EXPERIENTIAL acquisition ORIENT/THINK_ACT call, service randomness, and task reset, and are matched systems intended to share those streams?",
+      "impact": "The acquisition life, sealed ledger, selected corpus, authentic adapter, and every downstream checkpoint are not reproducible from the listed seed domains."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A10_STATIC_SPLIT_ALGORITHMS",
+      "question": "Which parser and exact normalization algorithm define canonical IR, graph isomorphism, identifier/constant renaming, public vector encoding, feature scaling/distance, and the fallback lexicographic four-cluster algorithm including initialization and ties?",
+      "impact": "A_STATIC can yield different duplicate components, groups, role assignments, and spares on identical bytes, so T04 and later target sealing lack a unique expected split."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A11_NUMERICAL_DETERMINISM_METRIC",
+      "question": "Are max-absolute and relative-L2 tolerances computed per tensor or globally, in which comparison dtype/order, with what denominator and zero-norm rule, and must every tensor pass both bounds?",
+      "impact": "Two reviewers can classify the same rebuild pair differently, and T05/B3 cannot emit a canonical determinism disposition."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A12_CHECKPOINT_AND_CANARY_CONTEXT",
+      "question": "When exactly are checkpoint forks launched, what adapter bytes constitute authentic checkpoint 0, and which immutable ledger/notebook snapshot, overlay policy, call seeds, and write destination are used for each B3 acquisition canary?",
+      "impact": "Cold-load inputs and visibility differ across plausible schedules; canary m and checkpoint replay are therefore not uniquely reproducible."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A13_B2_BASELINE_MECHANISM",
+      "question": "How does the non-cognitive B2 sealer obtain IOz and prove an invalid/rejected pass leaves state unchanged without performing what the specification calls a target trajectory, and which principal invokes the unchanged environment service?",
+      "impact": "The A/B2 authority boundary and score-indeterminate classifier cannot be audited from the current principal graph."
+    },
+    {
+      "ambiguity_id": "V6CG_V4_A14_RECEIPT_AND_STATE_SCHEMAS",
+      "question": "What are the complete canonical schemas, sealing order, atomicity protocol, storage isolation, and hash aggregation rules for controller state, snapshots, projections, split/B2/trainer/replay/quarantine receipts, and the final report?",
+      "impact": "T02, T05, T06, and T07 can assert concepts but cannot prove exact bytes, freshness, absence, or transition causality across processes."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "V6CG_V4_D01_EXACT_PACKET_NOT_YET_HASH_CLOSED",
+      "statement": "I disagree that the v4 specifications already own enough exact packet bytes for a deterministic canonical packet and T01 goldens.",
+      "rationale": "The packet uses unspecified literal delimiters and an undefined forbidden delimiter, the final-LF rule is not scoped across embedded JSON and concatenated packets, and several required field types/caps are deferred. Section order and key order alone do not define a byte stream or tokenizer count.",
+      "proposed_resolution": "Add a normative byte-level packet ABNF or hex/UTF-8 golden with exact delimiters, newline rules, every section/value schema and field cap, tokenizer identity, at least one full packet/hash/token-count fixture, and fail-closed fixtures for every collision branch; rebind the change to those bytes."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D02_WRITER_NOT_FULLY_EXECUTABLE",
+      "statement": "I disagree with the proposal's claim that Sections 1 and 4 define a fully executable deterministic outcome-filtered writer.",
+      "rationale": "An improvement interval is said to contain only accepted ENV_ACTs even though failures and non-environment decisions may occur between improvements; the member filter is not specified. ORIENT credit, candidate IDs, exact row renderers, legal-pass families, Autophase sign bins, and several tie inputs are absent. These are material choices that alter selection and learned tensors.",
+      "proposed_resolution": "Normatively specify filtered interval membership, credit for every view, candidate and row schemas/IDs, bucket lookup tables and bin edges, dedup inputs, complete renderer bytes, and worked ledgers covering interleaved failures/non-actions and all ties before permitting B1 implementation."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D03_SEED_CONTRACT_INCOMPLETE_AND_CONTRADICTORY",
+      "statement": "I disagree that the listed SHA-256 domains are sufficient to reproduce the two acquisition lives and matched target forks.",
+      "rationale": "No domain seeds acquisition ORIENT/THINK_ACT sampling or task/service RNG. The concatenation encoding is undefined. Further, score(stage,checkpoint,fork,target,repeat) makes fork identity affect the seed while the next sentence requires matched forks to share it.",
+      "proposed_resolution": "Define a canonical seed-preimage schema with typed length-delimited UTF-8 fields and a master-seed representation; add per-system/per-task/per-pair/per-phase acquisition and service domains; define a condition-independent matched score seed key shared by the intended H/E/off/shuffled set; add complete input/digest/uint64 goldens and consumption ledgers."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D04_STATIC_SPLIT_NOT_ALGORITHMICALLY_DETERMINISTIC",
+      "statement": "I disagree that Section 6 uniquely fixes the 8/4 split and spare ordering from already-local public bytes.",
+      "rationale": "IR canonicalization, normalized isomorphism, renaming equivalence, public feature-vector encoding, official family-token provenance, and especially fallback clustering are descriptions rather than pinned algorithms. Multiple compliant tools and tie policies can produce different duplicate components and groups.",
+      "proposed_resolution": "Bind exact parser/tool bytes or a complete pure algorithm, normalization grammar, graph labels, feature schema/scaling, clustering objective/initialization/update/tie/termination rules, family-token source, and static golden corpus with expected components/groups/roles; make any unavailable input reject rather than invoke discretion."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D05_PUBLIC_PROVENANCE_VISIBILITY_CONTRADICTION",
+      "statement": "I disagree that public-provenance visibility is internally consistent across the two normative specifications.",
+      "rationale": "The prose in both specifications allows bounded parsed public provenance to persist and condition selected compiler rows with zero loss, while experiment_spec.md's lifecycle table combines raw/unparsed/provenance prose, calls it parser-transient, and gives the compiler no read access. Raw/private/unparsed bytes and parsed public provenance require different rows.",
+      "proposed_resolution": "Replace the combined table row with separate raw-unparsed-private and parsed-public-provenance items, explicitly allow only the selected decision's packet-bound public provenance to the compiler, forbid all other prose, and add information-flow tests proving the distinction."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D06_EVENT_LIFECYCLE_CANNOT_SUPPORT_DECLARED_AUDIT",
+      "statement": "I disagree that the current complete-event schema and checkpoint-count assertions fully audit the wake loop.",
+      "rationale": "ORIENT_INVALID has a receipt but no field in the event/source projection, so valid KEEP and fallback KEEP are indistinguishable to the permitted compiler/auditor path. STOP ends a task while the text also asserts 24/48 checkpoint events, and RESET is an allowed event status without a clear decision slot. Packet-overflow may append no event if the minimal event does not fit despite the append-per-decision invariant.",
+      "proposed_resolution": "Add canonical orient_parse_disposition and charge fields, define whether reset and carried score slots create events, replace exact checkpoint counts with a derived invariant or require six canonical slot receipts, and define a separate bounded terminal receipt when no complete ledger event can fit."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D07_SHUFFLE_IS_NOT_A_UNIQUE_BINDING_CONTROL",
+      "statement": "I disagree that the binding-shuffled construction is fully defined for all authentic ORIENT/ACT/REVISE rows while preserving the declared training comparison.",
+      "rationale": "ORIENT targets do not inherently contain a pass, operation-tag and pass-family derivation is unspecified, REVISE has compound targets, and the requirement that every permuted pass differ does not say what else moves. Permuted target token lengths can change next-fit pack boundaries and update counts despite the stated identical budgets.",
+      "proposed_resolution": "Define the atomic permuted target component for each view, stratum keys from exact pre-outcome fields, a total derangement algorithm and inequality predicate, and whether copies/token counts/pack boundaries/update counts must be identical. If exact matching is required, constrain permutation accordingly or classify shuffle unavailable."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D08_PRE_GPU_FIXTURES_DO_NOT_EVIDENCE_REAL_DETERMINISM",
+      "statement": "I disagree with any reading of T05 or the seven pre-GPU acceptance tests as evidence that real same-stack numerical and behavioral determinism has passed.",
+      "rationale": "T05 explicitly uses a mock backend and every listed acceptance test is required before GPU work, whereas numerical tolerance requires two real clean rebuilds and behavioral replay requires the pinned model/runtime/driver/kernels. Those checks can only occur after separate exact run-byte ratification, within B3 or another authorized gate.",
+      "proposed_resolution": "Label T05 as orchestration-only, add separately hash-bound post-ratification numerical and behavioral acceptance receipts with exact comparison algorithms, require independent review of them before C, and prevent any pre-GPU receipt from populating those real-determinism fields."
+    },
+    {
+      "disagreement_id": "V6CG_V4_D09_CANARY_AND_CHECKPOINT_ZERO_INPUTS_UNDERDEFINED",
+      "statement": "I disagree that the checkpoint and B3 cold-load inputs are sufficiently fixed for reproducible lifecycle testing.",
+      "rationale": "The authentic adapter at checkpoint 0 is not explicitly declared null, fork launch chronology is not fixed, and B3's three rescored acquisition panels do not name a life snapshot, overlay, packet-state initialization, or call-seed expansion. These choices affect model context and m.",
+      "proposed_resolution": "State the exact checkpoint-0 adapter artifact/hash semantics, seal a launch schedule, and define B3 as explicit cold fork manifests with immutable snapshot hashes, initial controller state, per-call seeds, read/write isolation, score receipts, and teardown rules."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Does Rohin want this exact v4 proposal reworked to close the packet, writer, split, seed, event, shuffle, and canary ambiguities before any architecture ratification, rather than allowing implementers to choose those material bytes?",
+      "If revised architecture bytes become exact, does Rohin ratify only the bounded A_STATIC, non-executing B1 implementation/fixture, and disposable unchanged-local non-model B2 semantic scope, with all inspection and execution still forbidden before that explicit ratification?",
+      "After A/B1/B2 and independent review, will Rohin separately inspect and explicitly ratify the exact generated model, tokenizer, dependency, hardware, determinism, and run-manifest bytes before any B3 model/GPU call or Stage-C target opening?",
+      "Does Rohin accept that RECIPE_ASSAY_COMPLETE is an integrity/recipe-completion label regardless of all score signs and cannot support efficacy, causal-credit, mechanism, functional-correctness, lifetime, population, superiority, or paper claims?"
+    ]
+  }
+}

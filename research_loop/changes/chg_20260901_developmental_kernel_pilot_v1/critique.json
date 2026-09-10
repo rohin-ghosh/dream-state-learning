@@ -1,0 +1,314 @@
+{
+  "architecture_change_sha256": "cc87bf1f0eb6446c50efb6441e1557728057de275135db8867be2d3de20f11ee",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260901_developmental_kernel_pilot_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "AT07_independent_review_gate",
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "operations",
+      "concern_id": "C001_interpretation_binding_inconsistent",
+      "evidence": "The benchmark interpretation's top-level architecture_change_sha256 correctly names cc87bf1f0eb6446c50efb6441e1557728057de275135db8867be2d3de20f11ee, but its first assumption names the different string cc87bf1f0eb6446c50efb6441e155772805db8867be2d3de20f11ee. The file is therefore hash-bound here as supplied, but its own statement of which proposal it interprets is contradictory.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "One of the two required independent interpretations is not internally consistent about the proposal hash, so exact-input deliberation is not yet durable."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_mechanism_and_baseline_suite",
+        "AT07_independent_review_gate",
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "operations",
+      "concern_id": "C002_exact_implementation_bytes_unbound",
+      "evidence": "AT04 and AT11 demand frozen prompts, schemas, parsers, masks, models, readers, candidate policies, and manifests, but the bound sources do not contain the exact prompt bytes, complete operation schemas, model revision hashes, generation configuration, A-MEM implementation, adaptive-control implementation, world-generator revision, locked seeds, or target-generation manifest. The proposal simultaneously asks Rohin to ratify exact bytes and forbids choosing these details before approval.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Material scientific behavior remains delegated to post-ratification implementation, so the present bytes are not an exact ratifiable execution scope."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT03_common_deck_isolation",
+        "AT08_visibility_taint_and_reset",
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C003_checkpoint_future_state_leakage",
+      "evidence": "Section 4 runs the wake resolver once over the common source deck, while sleep occurs at 0.5C, 1C, and 2C. TraceProjection has no checkpoint or causal-cut field, and L1 reads TraceProjectionStore without an explicit rule that all source events and projections must predate the checkpoint. AT08 swaps answers and targets but does not require checkpoint artifacts to remain identical when the post-checkpoint source suffix is changed.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Earlier sleep checkpoints may receive future source events, projections, or status consequences unless prefix eligibility is mechanically bound."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT05_constructive_action_and_revision",
+        "AT08_visibility_taint_and_reset",
+        "AT09_reader_substrate_thinker_factorial"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C004_goal_query_answer_laundering",
+      "evidence": "The visibility matrix permits a derived current goal while forbidding held-out target handles, but no canonical model-visible goal representation or allowed transformation is specified. AT08's byte-identity requirement is stated primarily for TraceProjection, which is produced from the source deck, and does not explicitly cover evaluation prompts, goal-conditioned query arguments, candidate lists, query ordering, or reader outputs. A target-only probe allowed to score as high as 0.35 does not establish noninterference.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A target-derived goal or query can act as a query-to-agenda-style answer channel even if source TraceProjections pass answer-swap identity."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT08_visibility_taint_and_reset",
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C005_workspace_and_terminal_branch_laundering",
+      "evidence": "TraceProjection records the operation kind and selected public handles, but not the source branch, branch status, or a declassification proof. Those selections can be descendants of free-form workspace hypotheses. The pilot does not bind the prior protocol's rule that abandoned, contradicted, exhausted, malformed, and evaluation-only branches cannot release positive sleep inputs. Saying that workspace descendants are forbidden is inconsistent with admitting a projection chosen by a workspace-driven operation unless the permitted dependency is defined.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Unsupported workspace and abandoned-branch content can influence dream replay selection through apparently evidence-only projections."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract"
+      ],
+      "category": "architecture",
+      "concern_id": "C006_provenance_dag_positive_cases_missing",
+      "evidence": "AT02 requires rejection of cyclic claims, but does not require acceptance of a valid shared-ancestry diamond, distinguish a back-edge from shared ancestry, or verify canonical-equivalent mutual-support handling. An implementation that rejects every repeated ancestor could pass the stated negative cycle test while deleting legitimate compositional provenance.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Cycle detection is under-specified and can falsely reject valid diamond/shared-ancestry provenance."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT02_atomic_memory_contract",
+        "AT06_fixed_deck_claim_firewall",
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "scientific",
+      "concern_id": "C007_support_independence_not_identified",
+      "evidence": "The proposal counts intervention-equivalence classes and forbids synthetic views from increasing support, which is useful deduplication. It nevertheless calls episodes independent without defining causal independence under a common scripted policy and hidden world mechanism. Distinct classes can be deterministic consequences of the same intervention or latent cause. AT02 also does not state whether six realizations can affect truncation priority, proposal selection, or gradient allocation beyond the fixed per-claim exposure.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Provenance deduplication is being treated as stronger evidence independence than the design establishes."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT05_constructive_action_and_revision",
+        "AT09_reader_substrate_thinker_factorial"
+      ],
+      "category": "architecture",
+      "concern_id": "C008_solution_closure_conflicts_with_composition",
+      "evidence": "AT05 requires that no legal set of returned records close an A2/A3 ordered plan, while the intended thinker is supposed to retrieve up to three local records and compose them into that plan. If the union of legitimately returned evidence cannot close the plan, success must come from public context or pretrained priors; if it can close the plan, AT05 fails. The protocol does not define the intended distinction between stored whole-solution closure and a set of atomic premises that becomes sufficient only after recurrent query, state update, and composition.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The closure test may prohibit the very parent structure that should emerge across recurrent memory-think iterations."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT05_constructive_action_and_revision",
+        "AT09_reader_substrate_thinker_factorial",
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "evaluation",
+      "concern_id": "C009_planning_execution_and_stage_credit_ambiguous",
+      "evidence": "A3 is defined as a four-to-six-action plan, reacquisition is compared with a six-action cap, and current-item outcomes may remain visible. L1 nevertheless stops an item after one committed action, while the reader budget is described per evaluation action. It is unclear whether COMMIT serializes an entire plan, whether intermediate actions execute, and when replanning occurs. The tests threshold aggregate A2/A3 action value without binding separate scores for read correctness, composed dependency path, plan validity, revision, and executed action value.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The benchmark does not yet distinguish planning, recurrent revision, and action improvement, and may demand a final plan from one module."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT01_environment_and_leakage_fit",
+        "AT04_mechanism_and_baseline_suite",
+        "AT05_constructive_action_and_revision"
+      ],
+      "category": "evaluation",
+      "concern_id": "C010_adaptive_no_memory_control_unregistered",
+      "evidence": "The decisive environment gate names the strongest no-lifetime-memory adaptive experimenter but supplies no model revision, prompt, exploration algorithm, state, tie-breaking, development procedure, or resource ledger for it, and it is not a named K0-K7 arm. A weak or post-hoc control can satisfy the 0.35 ceiling even when active reacquisition bypasses lifetime memory. The seven-action mechanical bound also does not exclude partial, indirect, prior-assisted, or information-gain-optimal strategies.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Memory necessity rests on an unspecified adaptive competitor."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_mechanism_and_baseline_suite",
+        "AT09_reader_substrate_thinker_factorial"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C011_reader_transport_factorial_incomplete",
+      "evidence": "K4 can search explicit text records, whereas K5 must recognize or score candidate values through a parametric model. A common output schema does not equalize candidate enumeration, recognition computation, query failure modes, or information available to the resolver. The proposed known-good/degraded by reader by 0/3/6-operation grid does not explicitly include fixed-query read fidelity, identical candidate scoring for text and LoRA, explicit graph-state access, and text-in-context controls at matched cognition and compute.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Text context, explicit semantic state, LoRA transport, reader cognition, and thinker computation are not yet causally separated."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT04_mechanism_and_baseline_suite",
+        "AT09_reader_substrate_thinker_factorial",
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C012_k5_k3_pipeline_credit_and_baselines",
+      "evidence": "K5 and K3 differ simultaneously in dream proposal, evidence filtering, semantic representation, multi-view realization, recurrence, and possibly training-example semantics; equal training tokens do not isolate sleep compilation. K2 is the only independent organized builder, while the thesis context identifies honest long-context, reflection/lesson, graph/skill, and matched batch controls. The proposal disclaims SOTA, which limits the damage, but C1 still attributes the contrast to recurrent sleep compilation rather than the complete compiled-memory pipeline at one ledger point.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The primary contrast supports at most a bundled pipeline result, not module-specific credit for dreaming, compilation, or LoRA."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT10_recurrent_final_batch_equivalence",
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C013_k7_checkpoint_identity_unbound",
+      "evidence": "The proposal says K7 receives the complete 0..2C life once and has no intermediate usable memory, yet all arms are evaluated at 1C and 2C and AT10 demands the same evaluation schedule. A 1C K7 evaluation either has no comparable memory, uses a 0..1C batch checkpoint, or leaks the 1C..2C suffix. Discarded padding also matches ledger quantities without defining which calls, state transitions, or proposal opportunities are counterfactually equal.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The recurrent-versus-final-batch estimand is not executable without choosing an unbound checkpoint semantics."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "statistics",
+      "concern_id": "C014_estimator_sample_and_goalposts_unbound",
+      "evidence": "There are two checkpoints and multiple capability families, but AT12 does not define whether promotion contrasts use 1C, 2C, an average, or a selected point; how failed cells enter means; or the exact K6 half-gain formula when K5-K0 is zero or negative. Six worlds have no uncertainty criterion or minimum detectable effect, and REVIEW_PACK documents roughly 0.08 run-to-run LoRA variation concentrated in action-relevant reads. No replicate/training-seed rule separates method effect from adapter noise. The note says no paper claim, while C1-C3 say a passing calibration may support scientific claims.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The pilot can cross its 0.10 thresholds through checkpoint choice or stochastic adapter variation, and its claim status is internally inconsistent."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT11_runtime_artifact_and_resume_integrity"
+      ],
+      "category": "operations",
+      "concern_id": "C015_repeat_block_not_policy_visible",
+      "evidence": "Operation identity and forced exhaustion are defined in the runtime, but the current thinker/read schemas do not expose the last-operation fingerprint, repeat count, normalized identity, or reset reason to the policy. AT11 can pass if the harness silently forces BUDGET_EXHAUSTED after three repeats, even though the policy cannot observe why the operation became illegal or distinguish a valid diamond-like revisit after state change.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Repeat blocking can alter behavior while remaining invisible to policy state."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT05_constructive_action_and_revision",
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "evaluation",
+      "concern_id": "C016_capability_families_do_not_fully_separate_mechanisms",
+      "evidence": "A0, A1, A2, and A3 nominally label recall, role transfer, composition, and planning, but only mean A2/A3 action value drives promotion. There is no registered causal-path or parent-set metric, no controlled revision/exception family, and no rule that a correct action with missing support remains a composition failure. Degraded-memory sensitivity can show dependence without showing which cognitive stage used the memory correctly.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Acceptance outcomes cannot cleanly distinguish recall, generalization, composition, planning, revision, and final action improvement."
+    },
+    {
+      "acceptance_test_ids": [
+        "AT06_fixed_deck_claim_firewall",
+        "AT07_independent_review_gate",
+        "AT12_pilot_estimator_and_promotion"
+      ],
+      "category": "scientific",
+      "concern_id": "C017_claim_and_human_boundary_requires_rework",
+      "evidence": "AT06 correctly forbids on-policy, reconsolidation, scaling, and broad-intelligence claims, and AT07 correctly denies advocate override. However, procedural review cannot select the missing goal representation, adaptive control, K7 schedule, endpoint, prompts, or world manifest. A negative K5 result would reject only this rank-64, frozen-controller, six-world ledger point; a positive result would be exploratory bundled-pipeline evidence, not an identified recurrent mechanism. Human agreement cannot make these absent choices part of the exact bytes.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The change should not be ratified, implemented, or promoted until the unresolved scientific choices are newly hash-bound and re-reviewed."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_protocol_v2/human_directive.txt",
+      "purpose": "Human directive and developmental thesis",
+      "sha256": "b302e6a604d142039bd74b48d0f03ea5e705973e344e25c323097f79034366fb"
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "purpose": "Bound pilot proposal",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_developmental_protocol_v2/consensus.json",
+      "purpose": "Prior adjudication constraints",
+      "sha256": "5cda08802d2f2f443ec111f993875e0f250c96d9cbab5a5e49aaa0a67fc381f8"
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "purpose": "Superseded protocol and design lineage",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091"
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "purpose": "Project thesis and attribution map",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa"
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "purpose": "Historical evidence and prior limitations",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937"
+    }
+  ],
+  "critique_id": "crit_chg_20260901_developmental_kernel_pilot_v1_adversarial_v1",
+  "human_questions": [
+    "Will Rohin require a corrected, newly hash-bound benchmark interpretation before this deliberation can proceed?",
+    "What exact model-visible bytes represent a held-out goal, and which target-derived transformations are permitted in prompts and memory queries?",
+    "Is WakeResolver-to-world action inactive during source-life collection, and are A3 plans executed sequentially or submitted as one COMMIT payload?",
+    "What formal predicate distinguishes prohibited stored-solution closure from the intended sufficiency of several atomic records after recurrent composition?",
+    "Which frozen adaptive no-lifetime-memory controller is the AT01 comparator, and how is it selected without locked-world feedback?",
+    "What causal criterion, beyond intervention-equivalence deduplication, makes support episodes independent?",
+    "What exactly is K7's memory state at 1C, and which checkpoint defines each K5-K7 cadence contrast?",
+    "Are C1-C3 merely descriptive calibration signals for designing a later protocol, or claim-eligible scientific conclusions from six worlds?",
+    "Which checkpoint aggregation, training-seed policy, failure rule, and uncertainty criterion govern every promotion inequality?",
+    "Does Rohin require the exact prompts, schemas, model revisions, reader implementation, generator, worlds, and manifests to be bound in new bytes before ratification?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_developmental_kernel_pilot_v1.systems",
+      "sha256": "2921c187b33d382987a6daf12b285c9d2194ecd091dad5143ea7e9d433680dc6"
+    },
+    {
+      "interpretation_id": "chg_20260901_developmental_kernel_pilot_v1.benchmark",
+      "sha256": "e4761a6ac9d7fc7920950499f29602d432a968d99c0cb0a34eaa8e9f9b3464fe"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "MAT01_interpretation_binding_consistency: reject an interpretation whose internal proposal-hash assertions disagree with its bound architecture_change_sha256.",
+    "MAT02_checkpoint_prefix_future_noninterference: modifying all post-checkpoint source events, outcomes, projections, and hidden state must leave the earlier checkpoint byte-identical.",
+    "MAT03_goal_query_agenda_noninterference: counterfactually vary target handles, equivalent goal wording, answer assignment, query order, and candidate order across every evaluation cognitive surface.",
+    "MAT04_terminal_branch_release_and_descendant_taint: prove that abandoned, contradicted, malformed, exhausted, and evaluation-only branches cannot contribute positive projections, replay selection, semantics, corpus, or LoRA data.",
+    "MAT05_provenance_diamond_and_shared_ancestry_acceptance: accept valid diamonds while rejecting true cycles, descendant citation, equivalent mutual support, and duplicate-root counting.",
+    "MAT06_formal_solution_closure_vs_composition: distinguish answer-bearing records from atomic premises that become sufficient only after legal recurrent queries and thinker updates.",
+    "MAT07_sequential_plan_execution_and_stage_credit: score reader correctness, dependency composition, ordered-plan validity, revision, and executed action value separately under an exact action timeline.",
+    "MAT08_registered_adaptive_no_memory_controller: freeze the strongest stateless experimenter, selection procedure, prompts, state, budgets, and per-family/per-checkpoint thresholds.",
+    "MAT09_reader_candidate_recognition_transport_decomposition: compare fixed-query text, explicit semantic state, and LoRA reads with identical candidate computation before adding thinker operations.",
+    "MAT10_exact_frozen_execution_manifest: bind prompt and schema bytes, model/tokenizer revisions, masks, generation configuration, readers, builders, generator, worlds, targets, and resource rules.",
+    "MAT11_endpoint_estimator_seed_variance_and_failure_rule: bind checkpoint aggregation, formulas, stochastic replicates, paired seeds, missing-cell treatment, uncertainty, and negative-result language.",
+    "MAT12_policy_visible_repeat_state: require fingerprints, repeat counts, reset causes, and newly legal operations to be present and correct in every relevant model prompt.",
+    "MAT13_controlled_revision_from_action_outcome: require a contradiction or exception to trigger observable backtracking and improved later action without crossing the fixed-deck write firewall."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "AT01_environment_and_leakage_fit",
+    "AT02_atomic_memory_contract",
+    "AT03_common_deck_isolation",
+    "AT04_mechanism_and_baseline_suite",
+    "AT05_constructive_action_and_revision",
+    "AT06_fixed_deck_claim_firewall",
+    "AT07_independent_review_gate",
+    "AT08_visibility_taint_and_reset",
+    "AT09_reader_substrate_thinker_factorial",
+    "AT10_recurrent_final_batch_equivalence",
+    "AT11_runtime_artifact_and_resume_integrity",
+    "AT12_pilot_estimator_and_promotion"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is a narrow, useful mechanism calibration: byte-identical scripted action/outcome experience removes policy-induced data-distribution differences; exclusive semantic writers and chronological public-outcome support prevent the dreamer from self-certifying; synthetic views are explicitly denied evidentiary status; K4/K5 can estimate loss from transporting one accepted corpus through LoRA; K6 probes dependence on action-outcome binding; K7 attempts a cadence contrast; fresh-item resets and scorer isolation limit evaluator feedback; and AT06 sharply excludes on-policy, reconsolidation, scaling, and intelligence claims. If the unresolved execution and estimator details were frozen and the gates passed, a positive result could justify only an exploratory statement that this complete compiled-memory-plus-reader-thinker pipeline improves held-out A2/A3 action over the registered direct-QA LoRA at one declared resource point. It would not establish online learning, autonomous dreaming, LoRA discovery, external generality, or a developmental scaling law.",
+  "visibility_failures": [
+    "No causal prefix rule prevents 0.5C or 1C sleep artifacts from depending on the later source-deck suffix.",
+    "The exact current-goal representation and its transformations into memory queries are unbound, leaving a target-identity and answer-laundering channel.",
+    "TraceProjection selection can remain a descendant of unsupported free-form workspace even though its fields contain only public handles.",
+    "TraceProjection lacks branch provenance/status, so an abandoned or otherwise terminal thinker branch can influence positive sleep input.",
+    "Answer-swap identity for source TraceProjection does not establish noninterference for evaluation prompts, candidate recognition, reader outputs, query timing, caches, or policy state.",
+    "Oracle, hidden-generator, scorer, and audit data are declared forbidden but are not bound to exact process capabilities and artifact read-denial rules.",
+    "Backend identity can be inferred indirectly from substrate-specific candidate-recognition behavior and failure patterns even when explicit metadata fields are hidden."
+  ]
+}

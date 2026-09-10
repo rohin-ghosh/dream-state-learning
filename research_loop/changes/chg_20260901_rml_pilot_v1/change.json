@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_rml_pilot_v1",
+  "title": "Rendered Maintenance Lifetimes staged DEV pilot v1",
+  "summary": "Propose RML as the paper-facing rendered lifetime benchmark and request only a staged one-pack DEV scope: CPU world, leakage, oracle, necessity, isolation, and growth gates first; then gold-thinker and learned-text DEV model calls; then same-corpus LoRA transport only if both prior model gates pass. This proposal reports no result and excludes locked, on-policy, publication, and external actions.",
+  "system_thesis": "Test whether a frozen recurrent agent can turn ordinary public action/outcome experience into chronologically supported lifetime memory that enables bounded reconstruction and later executed action after native context, while attributing compiler, controller, external-memory, and parametric-transport contributions separately and reserving flywheel credit for a later randomized on-policy study.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260901_rml_pilot_v1/human_directive.txt",
+      "sha256": "d10f8690606dcaf38649f0af46e1149a43332f024964f4431ad1284340bb5f93",
+      "purpose": "Verbatim current human directive permitting CPU/GPU use without pausing; it is preserved as the design input and is not a result claim."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_rml_pilot_v1/scope_proposal.json",
+      "sha256": "a88068bea6e758e671b0dff14c8e8cddcbea736fad31197be464cddc4f160bd4",
+      "purpose": "Canonical exact requested and forbidden scope for any later ratification."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Research governance contract for material architecture changes, independent review, compute gates, and claim boundaries."
+    },
+    {
+      "path": "research_loop/plans/rml_pilot_v1.md",
+      "sha256": "62637b045cd34a0501c14b1651974df9700b35ba4900cbe6dbbeefee291dc2fd",
+      "purpose": "Reconciled RML science design controlling the staged pilot."
+    },
+    {
+      "path": "research_loop/plans/rendered_lifetime_candidate_A.md",
+      "sha256": "627f0a18aca4a612c9aa16304a0c3a015476fb23df134afa3d8dac6172918841",
+      "purpose": "Candidate design contributing lifetime scale, prospective schema, fair baselines, and staged transport gates."
+    },
+    {
+      "path": "research_loop/plans/rendered_lifetime_candidate_B_adversarial.md",
+      "sha256": "09319fad1689a62d64980194abb00f111fd1c717e38e4983fb42cd22e17c0995",
+      "purpose": "Adversarial candidate contributing the RML action geometry, leakage firewall, native baselines, and causal flywheel boundary."
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "Project flywheel thesis, three learning timescales, baseline obligations, and claim map."
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15",
+      "purpose": "Developmental fixed-deck versus on-policy distinction and lifetime response-surface proposal."
+    },
+    {
+      "path": "research_notes/44_developmental_protocol_v2.md",
+      "sha256": "707e0a2385519882972bee8eff019604c155bc48227d3a45bb8cd05b55a3e091",
+      "purpose": "Lifecycle, provenance, visibility, reader, reset, baseline, and runtime contracts."
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d",
+      "purpose": "Prior smallest-pilot boundaries and common-deck stage attribution lessons."
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1",
+      "purpose": "Constructive closure, thinker factorial, chronological support, and text-before-LoRA gate design."
+    },
+    {
+      "path": "research_notes/47_pcfl_execution_bundle_v1.md",
+      "sha256": "1aa5d1206a58bc7b0b82da8830221dbe4d8704e485e3d1c2213f0721d0dc5959",
+      "purpose": "Exact execution, snapshot, causal-use, native-baseline, staged authority, and claim-firewall precedent."
+    },
+    {
+      "path": "research_notes/48_pcfl_stream_and_schema_design_v0.md",
+      "sha256": "f0fcbfbf1aa58032b16340821dfa160a40d8674a27dec785276514a876d31359",
+      "purpose": "Post-native growth, old/new/cross-era targets, prospective-schema controls, and capacity falsifiers."
+    },
+    {
+      "path": "research_loop/architecture_deliberation.py",
+      "sha256": "4f5c3f3601a1e19fc687fa4ab04d3dd973a8ed035f063b15637f0631ed096d65",
+      "purpose": "Durable fresh-context deliberation runner that stops at human-required."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Validator for schema, byte bindings, visibility products, scope equality, and human-only release."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict architecture-change schema used for this artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_execution_bundle_v1/change.json",
+      "sha256": "22af8508d3ccedd8ac0acda1a6aae53775e6843e8a37b6cad7ed7adea88ccaff",
+      "purpose": "Existing material-change example for graph, visibility, test, claim, and staged authority structure."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2e/scope_proposal.json",
+      "sha256": "602a38cecefe1d3c3eb71009c8a2be68604e44030342c2d129745f99dba364e4",
+      "purpose": "Existing canonical exact-scope proposal example."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "RML_CPU_WORLD_GATE",
+        "before": "No RML implementation or evidence exists; symbolic games and PCFL remain diagnostics.",
+        "after": "One fluid/thermal DEV pack may be implemented locally with deterministic replay, connected causal eras, twin worlds, target necessity, growing unique causal coverage, exact legal-history/oracle controllers, leakage probes, and evaluation isolation. No model call occurs at this node.",
+        "rationale": "Establish the world and identifiability instrument before spending model compute."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_FROZEN_ORGANISM_AND_MEMORY",
+        "before": "Prior organism and memory contracts are not bound to RML.",
+        "after": "One frozen resolver supplies goal-conditioned THINK and bounded target-blind DREAM operations; deterministic SLEEP admits only chronologically supported local claims and emits text/graph/LoRA views; exact events and provenance remain outside weights; reads are one-hop and composition remains in resolver state.",
+        "rationale": "Bind organ ownership and prevent compiler, controller, or LoRA credit from absorbing supplied cognition or truth."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_GOLD_THINKER_TEXT_DEV_GATE",
+        "before": "No RML model execution is permitted.",
+        "after": "After an exact CPU pass and required review, DEV-only model calls cross gold atoms/schema with nonadaptive, generic recurrent, and program-search controllers on J/P/X, then compare learned compiled text with raw RAG, native graph, A-MEM, reflection, and explicit program induction. No LoRA training occurs here.",
+        "rationale": "Separate world, thinker, and compiler validity from parametric transport."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_LORA_TRANSPORT_DEV_GATE",
+        "before": "LoRA/GPU transport is not permitted merely because CPU or gold memory works.",
+        "after": "Only after the registered gold-thinker and learned-text thresholds pass, freeze one admitted DEV corpus and compare text, recognition-assisted LoRA, and unaided generative LoRA at one post-native cut under a fixed training/read envelope. This node is DEV-only and cannot promote itself.",
+        "rationale": "Make LoRA transport conditional, separately attributable, and independently stoppable."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_FUTURE_LOCKED_BOUNDARY",
+        "before": "No RML locked study is authorized.",
+        "after": "Three-pack common-deck confirmation, randomized on-policy confirmation, additional packs, scale runs, LOOP training, and any claim remain dormant and require a new byte-bound architecture change, review, and exact human authority after DEV evidence is frozen.",
+        "rationale": "Keep the present scope a one-pack engineering and information-value pilot."
+      },
+      {
+        "operation": "add",
+        "node_id": "RML_CLAIM_FIREWALL",
+        "before": "The reconciled plan states claim limits but has no intake-bound DEV firewall.",
+        "after": "All artifacts from this scope are labeled DEV/pilot and non-claim evidence; they may support only a later go/stop design decision and cannot state benchmark success, paper performance, developmental scaling, a flywheel, LoRA superiority, or general learning.",
+        "rationale": "Passing protocol or DEV gates must not be converted into a scientific result."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "RML_E_PUBLIC_LIFE_TO_DREAM_SLEEP",
+        "from": "RML_CPU_WORLD_GATE",
+        "to": "RML_FROZEN_ORGANISM_AND_MEMORY",
+        "before": "No RML experience-to-memory edge exists.",
+        "after": "Bounded ordinary public replay and eligible earlier supported memories feed target-blind DREAM proposals; only later ordinary public outcomes may append support or contradiction; SLEEP cannot invent a claim.",
+        "rationale": "Preserve chronological experience dependence without verifier-guided search."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_E_MEMORY_TO_THINK_ACTION",
+        "from": "RML_FROZEN_ORGANISM_AND_MEMORY",
+        "to": "RML_GOLD_THINKER_TEXT_DEV_GATE",
+        "before": "No RML bounded-use edge exists.",
+        "after": "A frozen read-only memory snapshot returns one local atom or NOT_FOUND to THINK; THINK reconstructs a cited path, backtracks, and releases one ordinary world action under fixed query/operation/action caps.",
+        "rationale": "Measure constructive use without storing or returning a complete plan."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_E_CPU_PASS_TO_GOLD_TEXT_DEV",
+        "from": "RML_CPU_WORLD_GATE",
+        "to": "RML_GOLD_THINKER_TEXT_DEV_GATE",
+        "before": "A CPU implementation could otherwise be mistaken for permission to run models.",
+        "after": "Model execution is reachable only from an exact passing CPU evidence manifest plus fresh independent review and author-side scientific-advocate approval over the same frozen bytes.",
+        "rationale": "Enforce CPU-first staging and preserve the compute gate."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_E_GOLD_TEXT_PASS_TO_LORA_TRANSPORT",
+        "from": "RML_GOLD_THINKER_TEXT_DEV_GATE",
+        "to": "RML_LORA_TRANSPORT_DEV_GATE",
+        "before": "LoRA could otherwise start after an unrelated or partial DEV success.",
+        "after": "Transport is reachable only when generic recurrent gold reaches at least .85, nonadaptive gold remains at or below .35, learned text recovers at least 70% of gold gain, and learned text trails no strongest declared external baseline by more than .10, with no firewall failure.",
+        "rationale": "Stop weight work when the world, controller, or compiler has not established useful structure."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_E_DEV_TO_FUTURE_LOCKED",
+        "from": "RML_LORA_TRANSPORT_DEV_GATE",
+        "to": "RML_FUTURE_LOCKED_BOUNDARY",
+        "before": "No transition is authorized.",
+        "after": "DEV completion terminates at a human stop; any locked, multi-pack, on-policy, scale, external, or claim transition requires a new proposal and exact ratification and is not executable through this edge.",
+        "rationale": "Make DEV evidence non-promotional."
+      },
+      {
+        "operation": "add",
+        "edge_id": "RML_E_EVALUATION_ISOLATION",
+        "from": "RML_GOLD_THINKER_TEXT_DEV_GATE",
+        "to": "RML_CPU_WORLD_GATE",
+        "before": "No RML run/skip noninterference edge is bound.",
+        "after": "Evaluation returns only sealed audit evidence; no target prompt, read, action, outcome, cache, RNG, workspace, or scorer datum can mutate the source life, and run-versus-skip suffix hashes must match.",
+        "rationale": "Prevent checkpoint evaluation from improving or changing the later life."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "RML_L_CPU_WORLD_VALIDATION",
+        "before": "No RML generator-validation loop exists.",
+        "after": "Generate fluid/thermal DEV world-life twins, certify connected old/new programs and R/N/O/J/P/X targets, run legal-history and no-life controllers plus leakage probes, verify deterministic replay/isolation/growth, and seal a pass/fail manifest without model calls.",
+        "trigger": "Exact ratification and completion of the CPU implementation/tests authorized by this scope.",
+        "reads": [
+          "frozen fluid/thermal generator and renderer",
+          "structural target and necessity rules",
+          "public source schedule",
+          "offline hidden program for oracle/scorer only"
+        ],
+        "writes": [
+          "sealed CPU gate manifest",
+          "deterministic replay and twin receipts",
+          "oracle/leakage/necessity/growth/isolation evidence"
+        ],
+        "stop_condition": "Stop on any failed threshold, mismatch, leakage, missing necessity certificate, plateaued causal coverage, or isolation defect; otherwise stop at a frozen CPU pass awaiting review.",
+        "rationale": "CPU validity is the prerequisite for any model science."
+      },
+      {
+        "operation": "add",
+        "loop_id": "RML_L_COMMON_DECK_DEV",
+        "before": "No model-facing RML loop exists.",
+        "after": "Replay byte-identical public source events; run the frozen THINK/DREAM/SLEEP organism over gold and learned-text memories; at each cut mount a fresh read-only snapshot, execute disposable J/P/X targets, discard evaluation outcomes, and preserve all operation traces and resource vectors.",
+        "trigger": "Exact CPU pass plus independent reviewer and author-side advocate approval over the frozen implementation and DEV inputs.",
+        "reads": [
+          "bounded public replay bundles",
+          "eligible earlier supported semantic records",
+          "fresh public target goal/state for THINK only",
+          "assigned read-only memory snapshot"
+        ],
+        "writes": [
+          "raw model calls and parsed operations",
+          "append-only proposals and status events",
+          "compiled text snapshots",
+          "sealed DEV evaluation and resource evidence"
+        ],
+        "stop_condition": "Stop before LoRA if the gold-thinker or learned-text gate fails; otherwise stop at a frozen text-gate pass awaiting the separate transport edge.",
+        "rationale": "Identify thinker and text-compiler information value before weights."
+      },
+      {
+        "operation": "add",
+        "loop_id": "RML_L_CONDITIONAL_LORA_TRANSPORT_DEV",
+        "before": "No RML weight-training loop is authorized.",
+        "after": "From one frozen admitted corpus, rebuild a per-life adapter from the clean base and compare same-query text, recognition-assisted LoRA, and unaided generative LoRA reads/actions at one DEV post-native cut; record fidelity, noninferiority, failures, compute, and bytes.",
+        "trigger": "Exact passing gold-thinker and learned-text manifests on the graph edge RML_E_GOLD_TEXT_PASS_TO_LORA_TRANSPORT.",
+        "reads": [
+          "one frozen admitted DEV corpus",
+          "frozen model/tokenizer/training configuration",
+          "common one-atom query deck",
+          "sealed disposable DEV targets"
+        ],
+        "writes": [
+          "DEV adapter and training manifest",
+          "same-corpus read-fidelity evidence",
+          "DEV text-versus-LoRA action/resource evidence",
+          "terminal pass/fail gate report"
+        ],
+        "stop_condition": "Always stop after the bounded DEV transport comparison; any threshold failure narrows the future design, and any pass still forbids automatic locked, on-policy, scale, or claim work.",
+        "rationale": "Test transport only after its inputs and downstream use are known to work."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "retire",
+        "claim_id": "C_PCFL_OR_SYMBOLIC_DEVELOPMENTAL_HEADLINE",
+        "before": "A larger finite PCFL/FeltCraft-style table might be treated as the paper-facing developmental benchmark.",
+        "after": "PCFL-13 remains a transport microscope and FeltCraft V7 remains a symbolic conformance reference; neither supplies the RML developmental headline.",
+        "evidence_needed": "The reconciled RML design and a future separately authorized rendered study; this proposal itself is design evidence only.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_RML_DEV_PILOT_BOUNDARY",
+        "before": "",
+        "after": "This scope may report only protocol fidelity, DEV gate values, failures, and resource observations from one fluid/thermal pack; it cannot report benchmark, population, paper, developmental, flywheel, or superiority conclusions.",
+        "evidence_needed": "Exact ratification, completed staged implementation, sealed gate artifacts, and claim-linter pass; these permit a DEV design decision only.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_RML_LORA_TRANSPORT_BOUNDARY",
+        "before": "",
+        "after": "LoRA may receive only conditional associative-access/transport credit relative to the identical compiled text corpus; DREAM/compiler discovery and multi-hop reasoning remain separately supplied and measured.",
+        "evidence_needed": "A frozen identical corpus, fixed-query fidelity at least .90, DEV noninferiority margin -.05, unaided-read ablation, complete resource ledger, and later locked confirmation under new authority before any scientific claim.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_RML_FUTURE_CONDITIONAL_PAPER_CLAIM",
+        "before": "",
+        "after": "A future claim about post-native acquisition, retention, connected/prospective action, weights, baseline saturation, or a memory-action-experience flywheel is explicitly outside this scope and must lose every clause whose separately registered locked gate fails.",
+        "evidence_needed": "New authority for three non-isomorphic packs, three post-native locked cuts, honest native baselines, world-life inference, same-corpus transport, authentic-binding interventions, and randomized on-policy evidence improving later memory and sealed action.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "V_PUBLIC_LIFE_SLICE",
+      "V_EVAL_GOAL_STATE_AND_ITEM_OUTCOMES",
+      "V_SUPPORTED_MEMORY_AND_PROVENANCE",
+      "V_HIDDEN_PROGRAM_PROOFS_SCORER_PAIRING_RECEIPTS_AND_EVAL_RECORDS"
+    ],
+    "stages": [
+      "THINK",
+      "DREAM",
+      "SLEEP_COMPILER",
+      "OFFLINE_SCORER_AUDIT"
+    ],
+    "cells": [
+      {
+        "information_id": "V_PUBLIC_LIFE_SLICE",
+        "stage_id": "THINK",
+        "visibility": "visible",
+        "reason": "THINK sees only the current public goal/state, current-item ordinary outcomes, bounded workspace, and returned one-hop memory, not the full lifetime."
+      },
+      {
+        "information_id": "V_PUBLIC_LIFE_SLICE",
+        "stage_id": "DREAM",
+        "visibility": "visible",
+        "reason": "DREAM sees only the predeclared bounded public replay bundle and no target."
+      },
+      {
+        "information_id": "V_PUBLIC_LIFE_SLICE",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "visible",
+        "reason": "The deterministic status/compiler process may read eligible public roots and later ordinary outcomes needed for chronological admission."
+      },
+      {
+        "information_id": "V_PUBLIC_LIFE_SLICE",
+        "stage_id": "OFFLINE_SCORER_AUDIT",
+        "visibility": "visible",
+        "reason": "Offline validity and causal-use audits may inspect public bytes."
+      },
+      {
+        "information_id": "V_EVAL_GOAL_STATE_AND_ITEM_OUTCOMES",
+        "stage_id": "THINK",
+        "visibility": "visible",
+        "reason": "THINK acts on the fresh public target and its ordinary within-item consequences."
+      },
+      {
+        "information_id": "V_EVAL_GOAL_STATE_AND_ITEM_OUTCOMES",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "Targets and evaluation outcomes cannot steer proposal generation or support."
+      },
+      {
+        "information_id": "V_EVAL_GOAL_STATE_AND_ITEM_OUTCOMES",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "Evaluation is disposable and never enters status, corpus, or adapter state."
+      },
+      {
+        "information_id": "V_EVAL_GOAL_STATE_AND_ITEM_OUTCOMES",
+        "stage_id": "OFFLINE_SCORER_AUDIT",
+        "visibility": "visible",
+        "reason": "The sealed scorer/audit process measures target action and isolation after commitment."
+      },
+      {
+        "information_id": "V_SUPPORTED_MEMORY_AND_PROVENANCE",
+        "stage_id": "THINK",
+        "visibility": "derived_only",
+        "reason": "THINK receives at most one local atom or NOT_FOUND plus bounded public support handles; it never sees provenance topology, status history, candidates, scores, or global memory."
+      },
+      {
+        "information_id": "V_SUPPORTED_MEMORY_AND_PROVENANCE",
+        "stage_id": "DREAM",
+        "visibility": "visible",
+        "reason": "DREAM may read only eligible earlier supported local memories and their allowed root citations inside its bounded bundle."
+      },
+      {
+        "information_id": "V_SUPPORTED_MEMORY_AND_PROVENANCE",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "visible",
+        "reason": "SLEEP must validate lifecycle, provenance, chronology, deduplication, and evidence-equivalence before emitting views."
+      },
+      {
+        "information_id": "V_SUPPORTED_MEMORY_AND_PROVENANCE",
+        "stage_id": "OFFLINE_SCORER_AUDIT",
+        "visibility": "visible",
+        "reason": "Offline audits inspect complete provenance and trace cuts without returning them to cognition."
+      },
+      {
+        "information_id": "V_HIDDEN_PROGRAM_PROOFS_SCORER_PAIRING_RECEIPTS_AND_EVAL_RECORDS",
+        "stage_id": "THINK",
+        "visibility": "forbidden",
+        "reason": "Hidden rules, solutions, pair metadata, acceptance information, and prior evaluation records cannot guide target action."
+      },
+      {
+        "information_id": "V_HIDDEN_PROGRAM_PROOFS_SCORER_PAIRING_RECEIPTS_AND_EVAL_RECORDS",
+        "stage_id": "DREAM",
+        "visibility": "forbidden",
+        "reason": "Privileged truth cannot guide proposal search, ranking, repair, retry, or support."
+      },
+      {
+        "information_id": "V_HIDDEN_PROGRAM_PROOFS_SCORER_PAIRING_RECEIPTS_AND_EVAL_RECORDS",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "SLEEP relies on committed predictions and later public outcomes only; it is not a truth oracle."
+      },
+      {
+        "information_id": "V_HIDDEN_PROGRAM_PROOFS_SCORER_PAIRING_RECEIPTS_AND_EVAL_RECORDS",
+        "stage_id": "OFFLINE_SCORER_AUDIT",
+        "visibility": "visible",
+        "reason": "Only the isolated offline process may use hidden program, proofs, pairing, scorer truth, receipts, and sealed evaluation records."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "RML01_EXACT_SCOPE_AND_STAGE_GRAPH",
+      "kind": "invariant",
+      "setup": "Attempt missing, extra, reordered, overlapping, or broadened scope; skip CPU/review/text gates; start LoRA early; or request locked, on-policy, claim, publication, sync, credential, lease, spend, or other external work.",
+      "expected": "Ratification must exactly equal the canonical sorted scope; workflows request only authorized atoms; every graph predecessor and pass manifest is enforced; all forbidden work fails before the first action.",
+      "falsifies": "Authority or stage order can be inferred, broadened, bypassed, or used outside the one-pack DEV pilot.",
+      "evidence_artifact": "Future intake ratification binding, staged supervisor workflow, and scope/stage-gate test report.",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "RML02_CPU_WORLD_DETERMINISM_GROWTH_TWINS_NECESSITY",
+      "kind": "invariant",
+      "setup": "Generate and replay many fluid/thermal DEV twin world-lives; perturb suffixes and evaluation run/skip; enumerate legal plans; inspect every era and R/N/O/J/P/X target.",
+      "expected": "Replays and pre-cut bytes match; twins have byte-identical target-visible bytes but different valid plans; each target is solvable and certified; J requires the early bridge; P requires the precommitted schema; X is sealed before exception evidence; every interval adds unique roots, local relations, an old/new interaction, and a prospective prediction.",
+      "falsifies": "The world is nondeterministic, separable, leaked, unsolvable, non-necessary, evaluation-mutated, or grows only tokens.",
+      "evidence_artifact": "Future sealed CPU generator, replay, twin, target, necessity, isolation, and causal-growth manifest.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML03_CPU_ORACLE_HEADROOM_AND_LEAKAGE",
+      "kind": "baseline",
+      "setup": "Across the frozen CPU suite, run legal-history/gold memory and generator-aware no-life Bayes, target-only, state-only, identifier-only, renderer-only, passive-signature, action-frequency, and source-action-string predictors under registered budgets.",
+      "expected": "Legal-history/gold value is at least .85 in every primary stratum; every no-life/leakage predictor is at most .35; authentic history identifies the twin; selection and rejection geometry is audited.",
+      "falsifies": "RML lacks solvability/headroom or a public shortcut predicts the answer.",
+      "evidence_artifact": "Future sealed CPU oracle, Bayes, leakage, and selection-conditioned audit report.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML04_VISIBILITY_CHRONOLOGY_PROVENANCE_AND_ISOLATION",
+      "kind": "invariant",
+      "setup": "Inject hidden programs, proofs, scorer output, pair metadata, receipts, target/evaluation bytes, future outcomes, duplicate-root views, evaluator writes, cache/RNG leakage, or compiler truth/repair into every model-facing and lifecycle boundary.",
+      "expected": "Every forbidden ingress fails; proposals and sample counts predate outcomes; only a mechanical later-public comparator appends status; repeated views add no evidence; evaluation/source run-skip hashes match; all per-life and per-item canaries are absent after reset.",
+      "falsifies": "Truth, target feedback, evidence multiplication, or evaluation/cross-life state can enter cognition or memory.",
+      "evidence_artifact": "Future field-level visibility/taint, chronology, provenance, reset, canary, and evaluation-noninterference report.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML05_GOLD_THINKER_DEV_GATE",
+      "kind": "baseline",
+      "setup": "After RML01-RML04 and review pass, cross gold atoms/schema with nonadaptive, generic recurrent, and generator-aware program-search controllers on disposable DEV J/P/X targets under fixed one-hop read, operation, and action caps.",
+      "expected": "Generic recurrent gold scores at least .85; nonadaptive gold remains at or below .35; direct-record closure is zero; successful constructive traces have valid cited cuts and change under full-cut masking and matched twin substitution.",
+      "falsifies": "The resolver, target geometry, or query scaffold—not learned memory—is the limiting or answer-bearing mechanism.",
+      "evidence_artifact": "Future sealed DEV gold-thinker factorial and causal-use audit.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "RML06_LEARNED_TEXT_COMPILER_DEV_GATE",
+      "kind": "baseline",
+      "setup": "On the same DEV common deck, compare learned DREAM/SLEEP compiled text with raw RAG, native witnessed graph, native A-MEM, reflection/summary, and explicit generator-aware program induction; preserve native interfaces and full resource vectors.",
+      "expected": "Learned compiled text recovers at least 70% of gold memory's gain and trails the strongest declared external baseline by no more than .10, with chronological support, no target leakage, and no failed mandatory arm.",
+      "falsifies": "The learned compiler has not established enough useful structure to justify weight transport.",
+      "evidence_artifact": "Future sealed DEV text-compiler/native-baseline/resource report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "RML07_CONDITIONAL_SAME_CORPUS_LORA_TRANSPORT_DEV",
+      "kind": "baseline",
+      "setup": "Only after exact RML05 and RML06 passes, freeze one admitted corpus and compare text, recognition-assisted LoRA, and strict unaided generative LoRA at one post-native DEV cut with fixed queries, return schema, rank, bytes, examples, tokens, steps, and no content-dependent retries.",
+      "expected": "Fixed-query read fidelity is at least .90 and same-corpus LoRA is noninferior to text at margin -.05; all failures/resources and the unaided-versus-assisted distinction are reported; the run terminates without promotion.",
+      "falsifies": "The admitted corpus does not retain its action-relevant value in weights under the declared transport contract.",
+      "evidence_artifact": "Future sealed DEV corpus, adapter/training manifest, reader fixtures, transport report, and terminal stop receipt.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "RML08_FRESH_REVIEW_AND_GPU_GATE",
+      "kind": "independent_review",
+      "setup": "Before the first DEV model call, present the exact frozen implementation, tests, generator/splits, prompts, schemas, model/tokenizer revisions, budgets, visibility, artifacts, and claim firewall to a fresh independent reviewer and a separate author-side scientific advocate.",
+      "expected": "Both inspect identical hashes; any reviewer rejection blocks execution; advocate approval cannot override rejection; repairs require new bound review; the approved GPU scope remains DEV-only.",
+      "falsifies": "Model compute can start from stale, partial, unreviewed, or advocate-overridden evidence.",
+      "evidence_artifact": "Future immutable review bundle, independent verdict, advocate verdict, and pre-GPU binding receipt.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "RML09_DEV_CLAIM_AND_EXTERNAL_ACTION_FIREWALL",
+      "kind": "independent_review",
+      "setup": "Scan reports, workflows, prompts, result routing, and terminal actions for benchmark/paper/performance, scaling/saturation, developmental/flywheel, LoRA-superiority, population/general claims, automatic promotion, locked work, publication/outreach/submission/sync, credential/quota/lease/spend changes, or other external actions.",
+      "expected": "Only one-pack DEV gate observations and resource/failure evidence remain; every route stops at the human boundary; no outward action or scientific claim is available.",
+      "falsifies": "A pilot observation or protocol pass can be converted into a result, promotion, locked run, or external action.",
+      "evidence_artifact": "Future claim-linter, scope audit, terminal human-stop receipt, and fresh final review.",
+      "required_before": "scientific_claim"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "After two fresh interpretations, adversarial critique, and a proceed consensus bind these exact bytes, do you ratify exactly the canonical staged scope for the one-pack RML DEV pilot: CPU world/validity work first, then gold-thinker and learned-text DEV model calls, then same-corpus LoRA transport only after the registered gold/text gates pass, with no locked, on-policy, claim, publication, sync, credential, spending, or other external authority?",
+    "forbidden_before_approval": [
+      "treating the verbatim directive or this proposal as completed ratification",
+      "implementation or test execution",
+      "model calls, adapter training, GPU execution, or remote sync",
+      "locked calibration, confirmation, additional packs, scale, or on-policy work",
+      "claim promotion, publication, outreach, submission, or other external action"
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": "paper1-v03r-canary-compiler-views-v1d.0",
+  "canonical_json": "RFC8785_JCS",
+  "text_encoding": "UTF-8",
+  "bom": false,
+  "line_ending_hex": "0a",
+  "input_rows": "canonical eligible rows validating memory_row.schema.json, ordered by kind ASCII bytes then semantic_hash ASCII bytes",
+  "semantic_hash": "lowerhex(SHA256(UTF8(JCS({fields:row.fields,kind:row.kind}))))",
+  "views_in_order": [
+    "FIELD_COMPLETION_FORWARD",
+    "FIELD_COMPLETION_REVERSE",
+    "DECLARATIVE_RECOGNITION",
+    "QUESTION_RECOGNITION"
+  ],
+  "missing_index": {
+    "FIELD_COMPLETION_FORWARD": "len(fields)-1",
+    "FIELD_COMPLETION_REVERSE": "1 for ROLE_APPLICATION; otherwise 0",
+    "DECLARATIVE_RECOGNITION": "len(fields)-1",
+    "QUESTION_RECOGNITION": "emit one separate view instance for every index in legal_question_missing_indices[kind], in ascending integer order"
+  },
+  "legal_question_missing_indices": {
+    "ROUTE": [0, 1],
+    "EFFECT": [0, 1, 2],
+    "SOURCE_VALUE": [0, 1, 2],
+    "ANIMAL_VALUE": [0, 1, 2],
+    "TARGET_BASELINE": [0, 1, 2],
+    "RECIPE": [0, 1],
+    "ROLE_EQUIV": [0, 1],
+    "CAUSAL_JOIN": [0, 1, 2],
+    "ROLE_APPLICATION": [1, 2]
+  },
+  "view_instance_order": {
+    "row_order": "input_rows order",
+    "family_order": "views_in_order ordinal",
+    "within_QUESTION_RECOGNITION": "missing_index ascending",
+    "instance_identity": ["semantic_hash", "view_id", "missing_index"],
+    "duplicate_identity": "forbidden; two backend manifests containing the same semantic_hash contribute the same shared instance, not a second instance"
+  },
+  "exact_instance_cardinality": {
+    "per_unique_semantic_row_kind": {
+      "ROUTE": 5,
+      "EFFECT": 6,
+      "SOURCE_VALUE": 6,
+      "ANIMAL_VALUE": 6,
+      "TARGET_BASELINE": 6,
+      "RECIPE": 5,
+      "ROLE_EQUIV": 5,
+      "CAUSAL_JOIN": 6,
+      "ROLE_APPLICATION": 5
+    },
+    "formula": "three non-question instances plus one QUESTION_RECOGNITION instance for each legal_question_missing_indices[kind] entry",
+    "registry_set_equality": "The candidate registry MUST be prospectively sealed with exactly one roster for every unique realized [semantic_hash,view_id,missing_index] and no other roster."
+  },
+  "exact_byte_construction": {
+    "query_object": "{fields: row.fields with exactly missing_index replaced by null, kind: row.kind, view: view_id}",
+    "answer_object": "{value: row.fields[missing_index]}",
+    "jcs_query_member_order": ["fields", "kind", "view"],
+    "jcs_answer_member_order": ["value"],
+    "literal_utf8_hex": {
+      "FIELD_COMPLETION_FORWARD_prefix": "463a",
+      "FIELD_COMPLETION_REVERSE_prefix": "523a",
+      "DECLARATIVE_RECOGNITION_prefix": "443a",
+      "QUESTION_RECOGNITION_prefix": "513a",
+      "cue_suffix": "0a413a",
+      "completion_prefix": "20",
+      "completion_suffix": "0a"
+    },
+    "FIELD_COMPLETION_FORWARD": {
+      "cue": "ASCII('F:') || UTF8(JCS(query_object)) || ASCII('\\nA:')",
+      "completion": "ASCII(' ') || UTF8(JCS(answer_object)) || ASCII('\\n')"
+    },
+    "FIELD_COMPLETION_REVERSE": {
+      "cue": "ASCII('R:') || UTF8(JCS(query_object)) || ASCII('\\nA:')",
+      "completion": "ASCII(' ') || UTF8(JCS(answer_object)) || ASCII('\\n')"
+    },
+    "DECLARATIVE_RECOGNITION": {
+      "cue": "ASCII('D:') || UTF8(JCS(query_object)) || ASCII('\\nA:')",
+      "completion": "ASCII(' ') || UTF8(JCS(answer_object)) || ASCII('\\n')"
+    },
+    "QUESTION_RECOGNITION": {
+      "cue": "ASCII('Q:') || UTF8(JCS(query_object)) || ASCII('\\nA:')",
+      "completion": "ASCII(' ') || UTF8(JCS(answer_object)) || ASCII('\\n')"
+    }
+  },
+  "boundaries": {
+    "cue_end": "immediately after the final ASCII ':' in ASCII('\\nA:')",
+    "completion_start": "the following single ASCII space",
+    "completion_end": "the LF following the JCS answer_object",
+    "training_sequence": "cue || completion || tokenizer_eos_token",
+    "recognition_scored_sequence": "completion || tokenizer_eos_token conditioned on cue",
+    "online_view": "QUESTION_RECOGNITION at the query's sole null index; every schema-legal thinker query therefore has one registered cue"
+  },
+  "cue_binding": {
+    "cue_utf8_hex": "lowercase hexadecimal encoding of the exact cue bytes",
+    "cue_sha256": "lowerhex(SHA256(exact cue bytes))",
+    "cue_token_ids": "locked-tokenizer encode(cue,add_special_tokens=false), preserving integer order and duplicates exactly",
+    "cue_token_ids_sha256": "lowerhex(SHA256(UTF8(JCS(cue_token_ids))))",
+    "prospective_seal": "Every realized cue vector and its candidate roster binding seal after both M1_OWN semantic manifests and before final-goal reveal or either fit.",
+    "failure": "Any absent, duplicate, swapped, wrong-semantic, wrong-view, wrong-missing-index, wrong-cue-hash, wrong-token-hash, or reused roster binding is INVALID_PRECONDITION before fitting or scoring; no repair or fallback."
+  },
+  "round_trip": {
+    "decoder": "select the view from the first two cue bytes; parse the remaining cue prefix through ASCII('\\nA:') as exactly one JCS query_object; parse completion after its one leading space and before its one terminal LF as exactly one JCS answer_object; replace the sole null field with answer_object.value",
+    "acceptance": "decoded kind and fields must byte-equal the source semantic row and recomputed semantic_hash must equal row.semantic_hash",
+    "tokenizer_acceptance": "tokenizer.decode(tokenizer.encode(cue||completion,add_special_tokens=false),skip_special_tokens=false) UTF-8 bytes must equal cue||completion",
+    "failure": "generic tokenizer/compiler fixture failure is INVALID_PRECONDITION before DEV; a realized heldout-row failure is INVALID_PRECONDITION after M1_OWN seals and before either fit; no repair, normalization, alternate template, or dropped view"
+  },
+  "touches": {
+    "concept_kinds": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE"],
+    "relation_kinds": ["RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"],
+    "repetitions_per_row_view_instance_per_epoch": {"concept": 6, "relation": 24},
+    "epochs": 4,
+    "exposures_per_row_view_instance_over_fit": {"concept": 24, "relation": 96},
+    "touch_definition": "one touch is one presentation of the complete cue||completion||EOS training sequence; cue tokens after sequence position zero are supervised, so touches are neither answer-only exposures nor equalized optimizer mass",
+    "scope": "repetitions apply to LoRA full-sequence examples only; text readers expose one semantic read result per query and receive no touches"
+  },
+  "excluded_inputs": [
+    "row_id",
+    "origin",
+    "status",
+    "support_basis",
+    "citations",
+    "depth",
+    "record_hash",
+    "proposal_id",
+    "public event IDs or lineage",
+    "audit prose or confidence",
+    "focus",
+    "final goal",
+    "answer",
+    "donor or backend identity",
+    "trace or score"
+  ],
+  "required_vector_fields_per_row_view_instance": [
+    "kind",
+    "semantic_hash",
+    "view_id",
+    "missing_index",
+    "cue_utf8_hex",
+    "completion_utf8_hex",
+    "cue_sha256",
+    "cue_token_ids_sha256",
+    "completion_sha256",
+    "cue_token_ids",
+    "completion_token_ids_including_eos",
+    "full_sequence_token_ids",
+    "full_sequence_token_ids_sha256",
+    "round_trip_semantic_hash"
+  ],
+  "golden_vectors": {
+    "positive": [
+      {
+        "name": "route_question_missing_source",
+        "source_row": {"kind": "ROUTE", "fields": ["valve:v0", "source:s0"], "semantic_hash": "67369272e957659039a32ccfc9afc1b2809edcc5c1c44223817e87ed973b5503"},
+        "view_id": "QUESTION_RECOGNITION",
+        "missing_index": 1,
+        "cue_utf8_hex": "513a7b226669656c6473223a5b2276616c76653a7630222c6e756c6c5d2c226b696e64223a22524f555445222c2276696577223a225155455354494f4e5f5245434f474e4954494f4e227d0a413a",
+        "cue_sha256": "c71fc322446df4ae1c243484f49df9b89b3548b66df912cb27439005d15f89fb",
+        "structural_test_tokenizer": {"cue_token_ids": [101, 202, 303], "cue_token_ids_sha256": "cb36a560f41132022d1448f94f818b960a6818ff4c88b086963f5a08dc11467c"},
+        "expected_registry_key": ["67369272e957659039a32ccfc9afc1b2809edcc5c1c44223817e87ed973b5503", "QUESTION_RECOGNITION", 1],
+        "expected": "one and only one exact roster binding"
+      }
+    ],
+    "negative": [
+      {"name": "missing_instance", "mutation": "omit one required QUESTION_RECOGNITION index", "expected": "REJECT"},
+      {"name": "duplicate_instance", "mutation": "emit the same [semantic_hash,view_id,missing_index] twice", "expected": "REJECT"},
+      {"name": "swapped_cue", "mutation": "bind the positive vector cue to another semantic_hash or missing_index", "expected": "REJECT"},
+      {"name": "wrong_view", "mutation": "label the Q: cue FIELD_COMPLETION_FORWARD", "expected": "REJECT"},
+      {"name": "wrong_semantic", "mutation": "retain the cue but replace its semantic_hash", "expected": "REJECT"},
+      {"name": "wrong_token_hash", "mutation": "retain cue_token_ids but replace cue_token_ids_sha256", "expected": "REJECT"},
+      {"name": "reused_roster", "mutation": "use one roster_id for two distinct realized instance keys", "expected": "REJECT"}
+    ]
+  }
+}

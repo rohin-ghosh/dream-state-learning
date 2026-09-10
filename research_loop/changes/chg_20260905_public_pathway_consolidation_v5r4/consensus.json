@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "ppc5r4_rework_adjudication_final_v1",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r4",
+  "state": "human_required",
+  "architecture_change_sha256": "f6e24583e9b38dc2cd28297ed5df00abcf82c53b269d012a05129a0905908c5a",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "ppc5r4.systems_and_learning_loop.fresh.v1",
+      "sha256": "0c79940282e0977952d7ad02f5ad5d81bf78dc22ef4d39f6a4926208648d07ee"
+    },
+    {
+      "interpretation_id": "ppc5r4_benchmark_identifiability",
+      "sha256": "2b1bb481f071705565682488ea6a5a0f1dc51057e1d339ca94978d34999337a1"
+    }
+  ],
+  "critique_sha256": "db1b087a32d6810848283e4f81e60eaa81170f2fe9f4047aa4a99a434497ce21",
+  "recommendation": "rework",
+  "agreements": [
+    "The scientific object should remain a narrow four-assay precursor: supported complete-table selection, observable every-edge response dependence, frozen-DREAM context-policy value, and DREAM-to-SLEEP total-policy value, with frozen THINK, DREAM, and ACT and learning confined to READ candidate scoring.",
+    "The independent unit and estimand should remain a complete recipient-life and seed bundle sampled from a locked generator, with all paired arms directly executed from byte-identical pretreatment state and lower queries, items, clones, endpoints, and edges treated only as repeated measures.",
+    "D1A is external supported candidate selection rather than closed-book storage; D1B is public behavioral response dependence rather than private reasoning; D1C and D1D are total-policy effects; and the four-way conjunction is non-mediational and adds no fifth hypothesis.",
+    "The intended state transition order, queue exclusivity, and claim order are conceptually sound: state body precedes event and state receipt; every queued slot is flushed XOR discarded; candidate claim decisions precede preclaim authority and literal release.",
+    "The complete 13-by-14 visibility matrix, target and future sterility, privileged response resolution, arm-neutral runtime boundaries, exact life-level inference, every-edge CUT/TWIN/SHAM controls, and separate architecture and run ratifications are necessary design commitments.",
+    "All PPC5R4_T01 through PPC5R4_T14 coverage obligations remain necessary; none is passed by proposal prose or by this consensus, and every model, tokenizer, embedding, trainer, behavioral, canary, GPU, and scientific action remains forbidden.",
+    "The two interpretations and the critique agree that the current normative bytes do not implement their own declared architecture; nonnormative drafts and future implementation choices cannot repair those contradictions by inference."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "PPC5R4_CONS_R01_EVENT_AND_HASH_DAG",
+      "sources": [
+        "change.json and machine_contract.md",
+        "interpretation_systems.json:PPC5R4_SYS_A01_EVENT_TYPE_AUTHORITY",
+        "critique.json:PPC5R4_CRIT_C01_LEGACY_MACHINE_DAG_NOT_CLOSED"
+      ],
+      "issue": "PPC5R4_SYS_A01_EVENT_TYPE_AUTHORITY asks whether the persisted transition object is the admitted legacy ledger_event or the richer but unadmitted transition_event; the proposal asserts that the resulting hash DAG is already executable.",
+      "positions": [
+        {
+          "actor": "proposal prose",
+          "position": "Treat the state-body to event to state-receipt order and its prose validator as sufficient closure."
+        },
+        {
+          "actor": "systems interpreter and critic",
+          "position": "The closed inventory and top-level schema, not an unreachable definition or prose, determine admissible bytes; they currently admit the incompatible legacy ledger_event and mismatched self-hash fields."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The closed-world contract makes the second position controlling. A definition omitted from both the inventory and top-level oneOf cannot be the authoritative persisted event, and seven inventory/schema self-hash mismatches prevent unique verification.",
+        "selected_position": "Retire ledger_event and admit exactly one r4 transition_event with one domain tag and aligned field, producer, consumer, and self-hash names.",
+        "required_change": "A successor proposal must change the stale schema ID; replace ledger_event consistently in object inventory, schema oneOf, producers, consumers, and validators; bind prior event, pre-state receipt, controller before/after, operation/result, queue lineage, debit, and post-state body; align every inventoried self-hash; and materialize genesis, ordinary, error, missing, terminal, and zero-write replay vectors.",
+        "acceptance_test_ids": [
+          "PPC5R4_T01",
+          "PPC5R4_T03",
+          "PPC5R4_T12",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R02_TOTAL_MACHINE_AND_QUEUE",
+      "sources": [
+        "machine_contract.md and status_contract.json",
+        "interpretation_systems.json:PPC5R4_SYS_A02_OPERATION_STATUS_VOCABULARY",
+        "critique.json:PPC5R4_CRIT_C01_LEGACY_MACHINE_DAG_NOT_CLOSED"
+      ],
+      "issue": "PPC5R4_SYS_A02_OPERATION_STATUS_VOCABULARY asks which STOP, terminal, provider-missing, schedule, construction, budget, prediction, outcome, and queue vocabulary is authoritative where prose and schema disagree.",
+      "positions": [
+        {
+          "actor": "proposal summary",
+          "position": "The prose controller and status table can define total behavior despite legacy or incomplete schema enums and records."
+        },
+        {
+          "actor": "systems interpreter and critic",
+          "position": "Every reachable branch must be expressible as one closed schema-valid object; the current enums omit declared results, retain invalid legacy terms, collapse token budgets, and omit queue lineage."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A total byte-exact controller cannot delegate vocabulary reconciliation to its implementation. The second position is required for replay and endpoint determinism.",
+        "selected_position": "Publish one r4 operation, result, terminal, status, budget, prediction, outcome, controller-row, and queue vocabulary, with no aliases or implementation defaults.",
+        "required_change": "The successor must encode MODEL_STOP and all declared harness terminal and no-retry provider/model results; remove GOAL_COMPLETE, USER_STOP, and INVALID_CELL unless scientifically reintroduced everywhere; separate input/output token accounting; use exact outcome values; bind controller body to receipt; bind queue controller-before/controller-after and seed ordinal; structurally require one FLUSHED XOR DISCARDED effect for each QUEUED slot and none for REJECTED; and enumerate all L=2/3, R=0/1/positive, third-error, missing, schedule, and terminal rows.",
+        "acceptance_test_ids": [
+          "PPC5R4_T03",
+          "PPC5R4_T04",
+          "PPC5R4_T08",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T11",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R03_CLOSED_PAYLOAD_AND_BYTE_GRAMMAR",
+      "sources": [
+        "machine_contract.md section 9",
+        "interpretation_systems.json:PPC5R4_SYS_A03_GENERIC_PAYLOAD_GRAMMAR",
+        "critique.json:PPC5R4_CRIT_C02_GENERIC_PAYLOADS_HAVE_NO_SEMANTIC_GRAMMAR"
+      ],
+      "issue": "PPC5R4_SYS_A03_GENERIC_PAYLOAD_GRAMMAR asks whether generic payload_ref wrappers plus prose-named validators are enough to close generator, DREAM, SLEEP, run-lock, fixture, authority, dependency, and export objects.",
+      "positions": [
+        {
+          "actor": "proposal prose",
+          "position": "A content-addressed payload_ref can carry the complete record and semantic_validators.md can define its meaning."
+        },
+        {
+          "actor": "both interpreters and critic",
+          "position": "An envelope is acceptable only when it binds a normative closed payload schema, validator identity and hash, status-dependent grammar, and exact role registry; none of those payload grammars exists in the present bytes."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A hash authenticates whatever bytes were supplied but cannot determine absent field semantics or cardinalities. The qualified reviewer position is selected; payload references are not banned, but untyped opaque payloads are.",
+        "selected_position": "Require every persisted payload either to be inline and closed or to bind an inventoried closed payload type, exact schema/validator hashes, and exact role and status rules.",
+        "required_change": "Add closed byte-bearing schemas and inventory entries for every opaque generator, entropy, life, controller, provider, intervention, DREAM, evidence, root, row, corpus, trainer, publication, analysis, power, fixture, implementation-identity, authority, overlap, scope, dependency, and export payload; define exact byte refs, ordering, nullability, type roles, and cardinalities; reject unknown fields before implementation conformance.",
+        "acceptance_test_ids": [
+          "PPC5R4_T01",
+          "PPC5R4_T02",
+          "PPC5R4_T04",
+          "PPC5R4_T05",
+          "PPC5R4_T06",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T12",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R04_AUTHORITY_ROLE_CLOSURE",
+      "sources": [
+        "authority_contract.json",
+        "interpretation_systems.json:PPC5R4_SYS_A04_AUTHORITY_ROLE_REGISTRIES",
+        "critique.json:PPC5R4_CRIT_C09_AUTHORITY_ROLES_AND_REACHABILITY_SELF_ASSERT"
+      ],
+      "issue": "PPC5R4_SYS_A04_AUTHORITY_ROLE_REGISTRIES asks what exact ordered role, type, ordinal, and cardinality registry governs each authority receipt and dispatch preflight.",
+      "positions": [
+        {
+          "actor": "authority prose",
+          "position": "Named required_roles in authority_contract.json and a generic subject_refs array are sufficient for a reducer to infer each stage."
+        },
+        {
+          "actor": "systems interpreter and critic",
+          "position": "Each stage needs its own schema-fixed registry and conditional PASS/FAIL reachability; otherwise missing, duplicate, substituted, reordered, or self-authorizing subjects remain schema-valid."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Authority cannot depend on implementation-invented role registries or trusted Boolean fields. Fail-closed reachability requires the second position.",
+        "selected_position": "Give every authority stage and preflight a closed role registry, predecessor rule, fixed scope, status-specific branch, and derived reachability.",
+        "required_change": "The successor must require human evidence only and always at the two human stages; set reachable false for every failed authority; close sealer, independence, reviewer, advocate, run-ratification, and canary payloads; require exactly two distinct implementations/source trees; bind preflight dispatch identity and ordinal, executable, run lock, mounted artifacts, immediate state, class, and authority; and structurally make DENY create zero processes with a nonnull reason while PERMIT has no denial reason.",
+        "acceptance_test_ids": [
+          "PPC5R4_T01",
+          "PPC5R4_T12",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R05_EVERY_EDGE_PATH_PROOF",
+      "sources": [
+        "protocol.md section 4",
+        "interpretation_systems.json:PPC5R4_SYS_A05_PATH_SHAM_CARDINALITY",
+        "interpretation_science.json:ppc5r4_bench_d03_every_edge_path_claim_not_closed"
+      ],
+      "issue": "PPC5R4_SYS_A05_PATH_SHAM_CARDINALITY asks whether one sham_intervention_id and unindexed arrays suffice or whether every stable path edge needs its own typed CUT, TWIN, SHAM, subset, source, and alternate-path proof.",
+      "positions": [
+        {
+          "actor": "current path_proof schema",
+          "position": "One singular SHAM ID, arrays of twins and source hashes, Boolean subset results, and an alternate-path count can summarize a path proof."
+        },
+        {
+          "actor": "both interpreters and critic",
+          "position": "The every-edge claim requires an ordered record for every path-template, edge position, and edge ID, with explicit source identity and separate CUT, directional TWIN, and action-preserving SHAM evidence."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The singular and unindexed representation permits edge substitution and cannot support per-edge IUT gates. The second position is necessary for the literal D1B claim.",
+        "selected_position": "Use a closed path-suite manifest and ordered edge_proof records for every stable edge key.",
+        "required_change": "Bind the canonical multigraph, path_template_id, L=2/3, ordered edge IDs and positions, distinct typed source event IDs and raw preimages, exactly 2^L-2 ascending proper-subset masks, full-set proof, complete enumerated alternate-path universe, and one separate CUT, TWIN, and SHAM construction/parity/oracle receipt and pre-entropy gate for every edge key; reject omissions, duplicates, source collision, averaging, and reversed SHAM orientation.",
+        "acceptance_test_ids": [
+          "PPC5R4_T07",
+          "PPC5R4_T08",
+          "PPC5R4_T11",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R06_GENERATOR_FAILURE_AND_DONOR_LAW",
+      "sources": [
+        "protocol.md section 3",
+        "interpretation_science.json:ppc5r4_bench_a01_generator_payload_and_failure_law",
+        "interpretation_science.json:ppc5r4_bench_a02_cross_draw_donor_collision"
+      ],
+      "issue": "ppc5r4_bench_a01_generator_payload_and_failure_law leaves G, entropy, rejection and failure semantics unspecified, while ppc5r4_bench_a02_cross_draw_donor_collision asks whether coincident donor identities are retained or globally excluded/rematched.",
+      "positions": [
+        {
+          "actor": "loose reading of current proposal",
+          "position": "Disjoint entropy slices and no donor reuse are enough, and an implementation may enforce global donor uniqueness or choose rejection/exhaustion details."
+        },
+        {
+          "actor": "benchmark interpreter and critic",
+          "position": "Each B_i must be emitted by the same pure ordinal-blind G under a closed law; donors are constructed wholly within their recipient draw, and natural cross-draw collisions must be retained without matching, deduplication, exclusion, or redraw."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Global identity filtering couples trials and changes the target distribution. Disjoint entropy alone does not prove independence or identical invocation. The second position preserves the registered generator-population estimand.",
+        "selected_position": "Define B_i=G(theta,E_i) with one closed pure ordinal-blind generator and source law; use only within-draw donor construction and retain natural cross-draw collisions.",
+        "required_change": "Close generator code/version/dependencies, theta and support, entropy source and independence evidence, ordinal-independent invocation, proposal/rejection maximum and ordered trace, exhaustion, fixed pre-entropy gate/lower-unit membership, seed derivation, and the recipient-disjoint exactly matched donor sub-bundle. Forbid cross-life reassignment, deduplication, exclusion, rematching, and redraw. Construction failure must block rather than alter membership.",
+        "acceptance_test_ids": [
+          "PPC5R4_T02",
+          "PPC5R4_T03",
+          "PPC5R4_T06",
+          "PPC5R4_T11",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R07_CONDITION_FREE_RUNTIME_BOUNDARIES",
+      "sources": [
+        "visibility_contract.json",
+        "interpretation_systems.json:PPC5R4_SYS_D05_CONDITION_FREE_BOUNDARIES_VIOLATED",
+        "interpretation_science.json:ppc5r4_bench_d04_condition_free_provider_not_enforced"
+      ],
+      "issue": "The proposal says causal provider and row boundaries are arm-neutral, but current provider receipts expose provider_kind, mounted artifact, scores, and selected candidate to controller/reducer consumers and sleep_row uses distinct authentic/control contract tags.",
+      "positions": [
+        {
+          "actor": "current schemas",
+          "position": "Treatment-semantic provider kinds and scorer details may remain in the causal provider receipt, and separate row contract tags are acceptable if downstream code behaves correctly."
+        },
+        {
+          "actor": "both interpreters and critic",
+          "position": "Condition may influence causal runtime only through opaque mounted bytes or already-resolved response bytes; labels, score vectors, selected candidates, artifact identity, and diagnostics must be confined to privileged or audit-only records."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Behavioral noninterference cannot be established while forbidden treatment and scorer fields are admitted to controller/reducer inputs. The second position implements the visibility matrix.",
+        "selected_position": "Use one MEAN_RESPONSE_LOGPROB_V4 causal ingress/algorithm and a minimal controller-facing FOUND/NOT_FOUND projection; isolate audit-only scorer internals and use one row schema.",
+        "required_change": "Remove provider_kind and all condition semantics from causal ingress/egress; keep only an opaque nullable mount where allowed; prevent scores, selected candidate, artifact identity, rank, timing, and diagnostics from reaching controller or causal reducer; unify authentic/control row contracts; close privileged router and restricted projection schemas; and test every forbidden/hidden field for noninfluence across all 182 visibility cells.",
+        "acceptance_test_ids": [
+          "PPC5R4_T05",
+          "PPC5R4_T06",
+          "PPC5R4_T08",
+          "PPC5R4_T10",
+          "PPC5R4_T12",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R08_EXACT_INFERENCE_AND_MARGIN_ORIENTATION",
+      "sources": [
+        "analysis_contract.json",
+        "interpretation_science.json:ppc5r4_bench_a03_margin_orientation_and_bounds",
+        "critique.json:PPC5R4_CRIT_C06_EXACT_INFERENCE_AND_POWER_NOT_EXECUTABLE",
+        "critique.json:PPC5R4_CRIT_C12_MARGIN_ORIENTATION_CAN_TRIVIALIZE_CLAIMS"
+      ],
+      "issue": "ppc5r4_bench_a03_margin_orientation_and_bounds asks which closed rules constrain superiority and SHAM margins, while current exact-inference schemas also omit inputs, bounds, roles, and canonical rational constraints.",
+      "positions": [
+        {
+          "actor": "current generic run-lock and analysis schemas",
+          "position": "Any supplied rational margin, pi0, ceiling, Boolean direction, and summary decision can be validated later by prose reducers."
+        },
+        {
+          "actor": "benchmark interpreter and critic",
+          "position": "The gate registry must fix endpoint range, treatment/control orientation, allowed margin and probability ranges, exact inputs, and literal; authority values must be canonical reduced rationals with independently reconstructible tails and CP certificates."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Unconstrained signs, out-of-range probabilities, floating assay/Holm values, and free direction flags can turn a formal pass into a vacuous or reversed scientific claim. The stricter position is selected.",
+        "selected_position": "Schema-fix every gate orientation and scientifically nontrivial range, and derive every release-critical value from role-labeled exact observations using canonical rational arithmetic.",
+        "required_change": "Require nonnegative superiority, specificity, and total-policy margins strictly below the attainable upper difference; require SHAM d=SHAM minus AUTHENTIC with a justified nonpositive margin strictly inside the attainable range; constrain pi0, ceilings, alpha, and all probabilities to [0,1] with nonvacuous hypotheses; enforce reduced rationals and certified outward CP brackets; bind run lock, generator, membership, ordered lower units and observations, endpoints, arms, cp_tail_alpha, missingness, thresholds, and exact role-labeled assay/Holm inputs; remove authority-bearing binary floats and trusted decision Booleans.",
+        "acceptance_test_ids": [
+          "PPC5R4_T03",
+          "PPC5R4_T05",
+          "PPC5R4_T07",
+          "PPC5R4_T08",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T11",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R09_FULL_RELEASE_EVENT_POWER",
+      "sources": [
+        "analysis_contract.json power section",
+        "interpretation_science.json:ppc5r4_bench_a04_cp_power_critical_event",
+        "critique.json:PPC5R4_CRIT_C03_GENERATOR_IID_AND_FAILURE_LAW_UNIDENTIFIED"
+      ],
+      "issue": "ppc5r4_bench_a04_cp_power_critical_event asks whether each powered critical count is defined by the full release conjunction and how cp_tail_alpha relates to alpha/4; the proposal also omits stochastic construction success from unconditional run-success power.",
+      "positions": [
+        {
+          "actor": "current power prose",
+          "position": "Per-gate p-value less than or equal to alpha/4 is a sufficient proxy for release, and all nonstatistical prerequisites may be treated as deterministic."
+        },
+        {
+          "actor": "benchmark interpreter and critic",
+          "position": "Power must use the exact full observed release event, including strict effect/rate/CP directions, missingness, and any stochastic construction/exhaustion event; otherwise it must be explicitly conditional and cannot authorize an unconditional run-success claim."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "P-value equality may pass while a strict CP bound fails, and random construction failure reduces release probability. A p-only count is therefore not the full authority event.",
+        "selected_position": "Report conditional statistical-gate power separately, but require PRE_MODEL_EXECUTION authority to use an unconditional lower bound for the complete release event over G, including construction/exhaustion, unless construction is proven deterministic with probability one on the locked support.",
+        "required_change": "Define an inventoried gate_power_result for every paired, safety, and missingness gate; derive its critical set from exact N, tail, p threshold, effect/rate/CP strictness, cp_tail_alpha, missing treatment, and orientation; define the relation between cp_tail_alpha and the family threshold rather than assuming it; incorporate an exact justified construction-success lower bound into overall run-release power or prohibit unconditional power language; and test all boundary counts with two reducers.",
+        "acceptance_test_ids": [
+          "PPC5R4_T02",
+          "PPC5R4_T06",
+          "PPC5R4_T11",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R10_SHARED_DREAM_DEPENDENCY",
+      "sources": [
+        "machine_contract.md section 7",
+        "interpretation_science.json:ppc5r4_bench_a05_dream_missing_control_dependency",
+        "critique.json:PPC5R4_CRIT_C07_SHARED_DREAM_DEPENDENCY_UNDERDETERMINED"
+      ],
+      "issue": "ppc5r4_bench_a05_dream_missing_control_dependency asks which D1C/D1D controls consume a missing DREAM receipt and whether context cardinality, focus, and root capacity come from DREAM or from prospective run-lock values.",
+      "positions": [
+        {
+          "actor": "one reading of current machine prose",
+          "position": "RECENCY and PERMUTED inherit DREAM publication cardinality K or focus and therefore may all become missing when DREAM is missing."
+        },
+        {
+          "actor": "total-policy identification reading",
+          "position": "Control cardinality/capacity and focus rules are prospectively fixed outside DREAM; only AUTHENTIC_DREAM_CONTEXT and DREAM_TO_SLEEP consume the missing DREAM result, while mechanical controls execute their complete predeclared policies."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The second position yields identifiable total-policy controls and prevents a missing treatment mechanism from erasing its comparators. Cardinality and focus may legitimately differ as natural policy consequences, but their algorithms and capacity limits must be prospective.",
+        "selected_position": "Seal control capacities and focus rules independently of DREAM; only arms whose actual policy input includes DREAM bytes or nominees inherit DREAM_MISSING_NO_RETRY.",
+        "required_change": "For every D1C/D1D policy and endpoint, add an exact dependency list and prospective cardinality, capacity, and focus source; specify VALID, PUBLISH_EMPTY, ABSTAIN, DREAM_INVALID_OUTPUT, and DREAM_MISSING_NO_RETRY installs without defaults; require mechanical RECENCY/PERMUTED context and root controls to continue from their run-locked rules when DREAM is missing; and preserve missing dominance only for authentic/DREAM-consuming endpoints.",
+        "acceptance_test_ids": [
+          "PPC5R4_T04",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T11",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R11_DERIVED_ACCEPTANCE_EVIDENCE",
+      "sources": [
+        "change.json acceptance_tests",
+        "interpretation_systems.json:PPC5R4_SYS_D08_T01_T14_ORACLES_NOT_EXECUTABLE",
+        "critique.json:PPC5R4_CRIT_C08_ACCEPTANCE_PASS_IS_NOT_DERIVABLE"
+      ],
+      "issue": "The proposal treats T01-T14 as executable acceptance tests, while their schemas lack closed case, mutation, expected-result, executed-result, implementation-identity, independence, completeness, endpoint-coverage, and gate-power records and allow free PASS fields.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Coverage prose, generic artifact references, summary counts, and a semantic reducer are enough for two implementations to establish PASS."
+        },
+        {
+          "actor": "systems interpreter and critic",
+          "position": "PASS is derivable only from a nonempty closed universe of materialized expected bytes or typed failures, exact executed results and mutations, exact roles and counts, and two distinct implementation/source identities."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A free summary status is acceptable only when all closed inputs needed to recompute it exist; here they do not. The second position is selected while retaining every test ID and scientific coverage obligation.",
+        "selected_position": "Make test PASS a closed derived branch over fully typed, role-bound, nonempty fixture and mutation evidence from two distinct implementations.",
+        "required_change": "Inventory and schema fixture cases, negative mutations with exact field paths, expected canonical output or typed first-failure, executed case and mutation results, completeness proof, implementation identity and root-source hashes, independence evidence, endpoint coverage, and gate-power evidence; require exact per-test role/type/order/cardinality registries, expected=executed, zero missing/extra/duplicate/mismatch, exact negative failures, and independent agreement; remove or constrain free PASS fields by status-specific derived branches.",
+        "acceptance_test_ids": [
+          "PPC5R4_T01",
+          "PPC5R4_T02",
+          "PPC5R4_T03",
+          "PPC5R4_T04",
+          "PPC5R4_T05",
+          "PPC5R4_T06",
+          "PPC5R4_T07",
+          "PPC5R4_T08",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T11",
+          "PPC5R4_T12",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R12_T01_PREAUTHORIZATION_DEADLOCK",
+      "sources": [
+        "change.json:PPC5R4_T01",
+        "scope_proposal.json",
+        "critique.json:PPC5R4_CRIT_C11_TEST_AND_AUTHORITY_PHASE_DEADLOCK"
+      ],
+      "issue": "T01 is required before implementation and test_contract places it at PRE_RATIFICATION_SPECIFICATION, yet it requires two PPC5r4 implementations whose code and fixtures are forbidden until architecture ratification; T02-T13 are also described as pre-GPU although the authority DAG requires them before any model or CPU behavioral process.",
+      "positions": [
+        {
+          "actor": "literal current test ordering",
+          "position": "Complete two PPC5r4 implementations and their fixture universe before architecture ratification, then use that evidence to authorize implementation."
+        },
+        {
+          "actor": "critic and adjudicator",
+          "position": "Pre-ratification may run only already-authorized generic source/schema/intake validation; PPC5r4-specific implementations and conformance fixtures must be authored only after exact architecture ratification and must pass before every model-related or behavioral dispatch."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The first position is a genuine authorization cycle: the evidence cannot lawfully exist before the action it is meant to authorize. This is a technical release blocker, not a human-waivable sequencing preference.",
+        "selected_position": "Split T01 into a pre-ratification generic specification/intake audit and a post-ratification two-implementation PPC5r4 conformance obligation under the same stable T01 coverage identity; place all PPC5r4 implementation work after architecture ratification and before model reachability.",
+        "required_change": "The successor proposal must define which T01 cases are executable by pre-existing architecture-intake validators without creating PPC5r4 code, move every PPC5r4-specific case, fixture, identity, and independent implementation result into POST_RATIFICATION_CONFORMANCE, and align required_before/stage labels so T01-T12 pass before PRE_MODEL_EXECUTION, T13 completes PRE_MODEL_EXECUTION including separate run ratification, and none is merely pre-GPU. No current-byte implementation is authorized to break the cycle.",
+        "acceptance_test_ids": [
+          "PPC5R4_T01",
+          "PPC5R4_T02",
+          "PPC5R4_T03",
+          "PPC5R4_T04",
+          "PPC5R4_T05",
+          "PPC5R4_T06",
+          "PPC5R4_T07",
+          "PPC5R4_T08",
+          "PPC5R4_T09",
+          "PPC5R4_T10",
+          "PPC5R4_T11",
+          "PPC5R4_T12",
+          "PPC5R4_T13"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5R4_CONS_R13_PRECLAIM_T14_RELEASE_DAG",
+      "sources": [
+        "claim_dependency_map.json",
+        "interpretation_science.json:ppc5r4_bench_a06_export_inseparability",
+        "critique.json:PPC5R4_CRIT_C10_RELEASE_DAG_AND_EXPORT_NOT_CLOSED"
+      ],
+      "issue": "The intended claim-decision to preclaim-authority to release graph conflicts with current global prerequisites: claim_dependency requires PRE_SCIENTIFIC_CLAIM and T14 before claim_decision, PRE_SCIENTIFIC_CLAIM requires claim decisions and T14, and T14 says it verifies authority and literal release. ppc5r4_bench_a06_export_inseparability additionally asks how qualification and forbidden claims remain attached outside claim_release.",
+      "positions": [
+        {
+          "actor": "literal current dependency map and T14 prose",
+          "position": "Claim decisions consume all T01-T14 and preclaim authority, while T14 verifies the eventual authority and release and preclaim authority consumes those decisions."
+        },
+        {
+          "actor": "critic and adjudicator",
+          "position": "Candidate decisions must consume only closed runtime and reducer prerequisites; a non-releasing T14 then verifies replay and candidate decisions; preclaim authority consumes both; only afterward may a pure fixed release/export package be created."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The first position has a directed cycle and cannot produce a first valid artifact. The second is acyclic and preserves the intended scientific gate without letting T14 preconsume a nonexistent release.",
+        "selected_position": "Use runtime/reduction dependencies -> candidate claim decisions -> non-releasing T14 replay -> PRE_SCIENTIFIC_CLAIM authority -> fixed claim release/export, with any post-release audit downstream and non-authorizing.",
+        "required_change": "Split candidate-decision prerequisites from release prerequisites. Candidate dependency receipts must exclude T14, preclaim authority, and release; candidate decisions must contain exact schema-constant literal and qualification candidates but cannot release. T14 must replay all lives, events, queues, DREAM/SLEEP, outcomes, reducers, decisions, overlap/scope/forbidden-claim mutations without requiring authority or a final release. Preclaim authority must consume runtime integrity, T14, exact decisions, tests and reducer evidence. The final release/export package must consume passing authority and require one exact registered literal, exact fixed qualification, full forbidden-claim list, and role-labeled overlap, construction-scope, dependency, resource, test, gate, assay, and Holm hashes. No paraphrase or detachable headline is valid.",
+        "acceptance_test_ids": [
+          "PPC5R4_T11",
+          "PPC5R4_T12",
+          "PPC5R4_T13",
+          "PPC5R4_T14"
+        ]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "PPC5R4_CRIT_C01_LEGACY_MACHINE_DAG_NOT_CLOSED",
+      "status": "accepted",
+      "rationale": "Direct inspection confirms the stale ppc5r3 schema ID, unadmitted transition_event, admitted incompatible ledger_event, vocabulary conflicts, collapsed budget, inexact outcome, controller and queue omissions, and self-hash mismatches. These prevent unique machine bytes.",
+      "resolution_id": "PPC5R4_CONS_R01_EVENT_AND_HASH_DAG",
+      "required_change": "Implement both R01 event/hash closure and R02 total-machine/queue closure in a successor proposal; neither prose validators nor aliases may bridge the current contradictions."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C02_GENERIC_PAYLOADS_HAVE_NO_SEMANTIC_GRAMMAR",
+      "status": "accepted",
+      "rationale": "The present generic envelopes do not name closed payload schemas, role registries, validator hashes, or status-specific field grammar. Byte identity alone is not semantic closure.",
+      "resolution_id": "PPC5R4_CONS_R03_CLOSED_PAYLOAD_AND_BYTE_GRAMMAR",
+      "required_change": "Close every referenced payload and exact role registry as specified in R03 before claiming executable architecture or derived test evidence."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C03_GENERATOR_IID_AND_FAILURE_LAW_UNIDENTIFIED",
+      "status": "accepted",
+      "rationale": "The current generator, entropy, sample, and run-lock envelopes do not identify G or its failure law; global donor uniqueness would couple draws; and stochastic construction is absent from unconditional power.",
+      "resolution_id": "PPC5R4_CONS_R06_GENERATOR_FAILURE_AND_DONOR_LAW",
+      "required_change": "Close G, entropy, rejection/exhaustion, membership, seed, and within-draw donor semantics per R06 and incorporate construction into the unconditional run-release power rule per R09."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C04_EVERY_EDGE_PATH_PROOF_NOT_REPRESENTABLE",
+      "status": "accepted",
+      "rationale": "A singular SHAM and unindexed arrays cannot establish path minimality, alternate-path exclusion, source disjointness, or per-edge CUT/TWIN/SHAM gates for the literal every-edge claim.",
+      "resolution_id": "PPC5R4_CONS_R05_EVERY_EDGE_PATH_PROOF",
+      "required_change": "Replace path_proof with the closed path-suite and ordered per-edge records required by R05."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C05_RESTRICTED_STAGE_LABEL_AND_SCORE_LEAKAGE",
+      "status": "accepted",
+      "rationale": "provider_kind, score vectors, selected candidates, mounted-artifact identity, and distinct control-row tags contradict the declared arm-neutral causal boundaries and create additional paths for condition influence.",
+      "resolution_id": "PPC5R4_CONS_R07_CONDITION_FREE_RUNTIME_BOUNDARIES",
+      "required_change": "Adopt the causal/audit split, one provider identity, one row schema, closed restricted projections, and full noninterference mutations in R07."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C06_EXACT_INFERENCE_AND_POWER_NOT_EXECUTABLE",
+      "status": "accepted",
+      "rationale": "Current gate, safety, missingness, assay, Holm, CP, and power records omit reconstructive inputs, use noncanonical or floating values, lack a gate-power type, and do not encode the full release event.",
+      "resolution_id": "PPC5R4_CONS_R08_EXACT_INFERENCE_AND_MARGIN_ORIENTATION",
+      "required_change": "Apply R08 exact inference and role closure and R09 full-event power closure; two reducers must agree at every p-value, margin, rate, CP, Holm, and critical-count boundary."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C07_SHARED_DREAM_DEPENDENCY_UNDERDETERMINED",
+      "status": "accepted",
+      "rationale": "The exact bytes do not identify which controls consume DREAM-derived K, focus, capacity, nominations, or receipts, so a missing DREAM can yield different valid-looking endpoint vectors.",
+      "resolution_id": "PPC5R4_CONS_R10_SHARED_DREAM_DEPENDENCY",
+      "required_change": "Seal policy and endpoint dependency registries and independent prospective control capacity/focus rules exactly as selected in R10."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C08_ACCEPTANCE_PASS_IS_NOT_DERIVABLE",
+      "status": "accepted",
+      "rationale": "The fixture and result schemas allow opaque references, arbitrary coverage values, zero expected cases, absent evidence types, and free PASS without the inputs needed for total recomputation.",
+      "resolution_id": "PPC5R4_CONS_R11_DERIVED_ACCEPTANCE_EVIDENCE",
+      "required_change": "Retain all fourteen coverage obligations but rebuild their evidence grammar and derived PASS rules as specified in R11."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C09_AUTHORITY_ROLES_AND_REACHABILITY_SELF_ASSERT",
+      "status": "accepted",
+      "rationale": "Generic subject_refs, nullable predecessors/evidence, reachable=true on FAIL-capable schemas, and permissive preflight branches do not fail closed or prove the declared human and reviewer boundaries.",
+      "resolution_id": "PPC5R4_CONS_R04_AUTHORITY_ROLE_CLOSURE",
+      "required_change": "Replace generic authority shapes with stage-specific, status-specific, role-closed schemas and structurally safe preflight under R04."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C10_RELEASE_DAG_AND_EXPORT_NOT_CLOSED",
+      "status": "accepted",
+      "rationale": "The current claim-dependency, T14, and preclaim prerequisites form a literal cycle, and generic/free release fields do not make the bounded qualification and forbidden-claim list inseparable from export.",
+      "resolution_id": "PPC5R4_CONS_R13_PRECLAIM_T14_RELEASE_DAG",
+      "required_change": "Implement the acyclic candidate-decision, non-releasing T14, authority, release/export order and fixed package grammar in R13."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C11_TEST_AND_AUTHORITY_PHASE_DEADLOCK",
+      "status": "accepted",
+      "rationale": "T01 requires two PPC5r4 implementations before the ratification that alone could authorize creating them. The pre-GPU labels also conflict with the stricter pre-model and pre-behavior authority boundary.",
+      "resolution_id": "PPC5R4_CONS_R12_T01_PREAUTHORIZATION_DEADLOCK",
+      "required_change": "Repair the stage graph exactly as R12 requires. The present deadlock cannot be escaped by writing implementation first or by human ratification of a rework consensus."
+    },
+    {
+      "concern_id": "PPC5R4_CRIT_C12_MARGIN_ORIENTATION_CAN_TRIVIALIZE_CLAIMS",
+      "status": "accepted",
+      "rationale": "The generic run lock and permissive rational schema allow vacuous or reversed margins and out-of-range thresholds while retaining formally passing language.",
+      "resolution_id": "PPC5R4_CONS_R08_EXACT_INFERENCE_AND_MARGIN_ORIENTATION",
+      "required_change": "Schema-fix gate kind, endpoint range, treatment/control orientation, allowed margin interval, probability ranges, justification hash, and canonical literal as required by R08."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "PPC5R4_SYS_D01_ACYCLIC_DAG_NOT_SCHEMA_CLOSED",
+      "status": "accepted",
+      "rationale": "The admitted artifact universe contradicts the proposed transition DAG; the richer definition is unreachable and inventory/schema hashes disagree.",
+      "resolution_id": "PPC5R4_CONS_R01_EVENT_AND_HASH_DAG"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D02_TOTAL_CONTROLLERS_NOT_REPRESENTABLE",
+      "status": "accepted",
+      "rationale": "The schema cannot encode all declared STOP, schedule, construction, and provider-missing outcomes, so the controller is not total in current bytes.",
+      "resolution_id": "PPC5R4_CONS_R02_TOTAL_MACHINE_AND_QUEUE"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D03_QUEUE_LIFECYCLE_NOT_FULLY_BOUND",
+      "status": "accepted",
+      "rationale": "Queue before/after controller lineage, seed ordinal, and all-and-only XOR coverage are absent from the admitted records.",
+      "resolution_id": "PPC5R4_CONS_R02_TOTAL_MACHINE_AND_QUEUE"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D04_PATH_PROOF_NOT_EVERY_EDGE_CLOSED",
+      "status": "accepted",
+      "rationale": "The singular and unindexed path schema cannot support the every-edge D1B claim or gates.",
+      "resolution_id": "PPC5R4_CONS_R05_EVERY_EDGE_PATH_PROOF"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D05_CONDITION_FREE_BOUNDARIES_VIOLATED",
+      "status": "accepted",
+      "rationale": "Treatment labels and row-contract distinctions cross boundaries whose causal interpretation requires arm neutrality.",
+      "resolution_id": "PPC5R4_CONS_R07_CONDITION_FREE_RUNTIME_BOUNDARIES"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D06_BYTE_BEARING_RECEIPTS_INCOMPLETE",
+      "status": "accepted",
+      "rationale": "Multiple required boundaries lack exact byte refs or closed type-specific payload grammars and aligned self hashes.",
+      "resolution_id": "PPC5R4_CONS_R03_CLOSED_PAYLOAD_AND_BYTE_GRAMMAR"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D07_EXACT_REDUCTION_NOT_SCHEMA_CLOSED",
+      "status": "accepted",
+      "rationale": "Floating values, unlabeled arrays, missing CP evidence, and absent reconstructive inputs violate the exact reducer contract.",
+      "resolution_id": "PPC5R4_CONS_R08_EXACT_INFERENCE_AND_MARGIN_ORIENTATION"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D08_T01_T14_ORACLES_NOT_EXECUTABLE",
+      "status": "accepted",
+      "rationale": "The test themes are valuable but their current evidence artifacts cannot derive exhaustive, independent PASS.",
+      "resolution_id": "PPC5R4_CONS_R11_DERIVED_ACCEPTANCE_EVIDENCE"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D09_STAGE_AUTHORITY_NOT_ROLE_CLOSED",
+      "status": "accepted",
+      "rationale": "Authority roles and reachability are not fixed by the schema and can be self-asserted or substituted.",
+      "resolution_id": "PPC5R4_CONS_R04_AUTHORITY_ROLE_CLOSURE"
+    },
+    {
+      "disagreement_id": "PPC5R4_SYS_D10_RELEASE_DAG_DEPENDS_ON_UNCLOSED_AUTHORITY",
+      "status": "accepted",
+      "rationale": "The intended three-step direction is correct, but current dependency roles are unclosed and, with T14/global prerequisites, cyclic.",
+      "resolution_id": "PPC5R4_CONS_R13_PRECLAIM_T14_RELEASE_DAG"
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d01_population_not_schema_identified",
+      "status": "accepted",
+      "rationale": "Generic generator, entropy, sample, and run-lock envelopes do not identify G, IID sampling, or within-draw donor construction.",
+      "resolution_id": "PPC5R4_CONS_R06_GENERATOR_FAILURE_AND_DONOR_LAW"
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d02_exact_reduction_not_schema_executable",
+      "status": "accepted",
+      "rationale": "The current reduction and power schemas cannot independently reconstruct the exact observed and powered release event.",
+      "resolution_id": "PPC5R4_CONS_R08_EXACT_INFERENCE_AND_MARGIN_ORIENTATION"
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d03_every_edge_path_claim_not_closed",
+      "status": "accepted",
+      "rationale": "The normative path representation permits the exact per-edge substitution the claim is intended to exclude.",
+      "resolution_id": "PPC5R4_CONS_R05_EVERY_EDGE_PATH_PROOF"
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d04_condition_free_provider_not_enforced",
+      "status": "accepted",
+      "rationale": "provider_kind and scorer internals expose causal-arm semantics beyond opaque mounted bytes.",
+      "resolution_id": "PPC5R4_CONS_R07_CONDITION_FREE_RUNTIME_BOUNDARIES"
+    },
+    {
+      "disagreement_id": "ppc5r4_bench_d05_bounded_intersection_not_export_closed",
+      "status": "accepted",
+      "rationale": "The current release/export grammar cannot prevent detached qualifications or overbroad claims and participates in an impossible prerequisite cycle.",
+      "resolution_id": "PPC5R4_CONS_R13_PRECLAIM_T14_RELEASE_DAG"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {
+      "test_id": "PPC5R4_T01",
+      "status": "retained",
+      "rationale": "Retain its full source, schema, intake, stale-role, recommendation, scope, and human-evidence mutation coverage, but it is not executable as currently staged. A successor must split generic pre-ratification validation from post-ratification two-implementation PPC5r4 conformance to remove the pre-authorization implementation deadlock and must use closed expected-result evidence.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T02",
+      "status": "retained",
+      "rationale": "Retain and require closed generator proposal/rejection/exhaustion, entropy, nominee, predicate, root-policy, capacity, overlap, construction-first-failure, natural collision, and no-redraw/rematching cases. It remains blocked until R03 and R06 are embodied in successor bytes and its stage is explicitly pre-model.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T03",
+      "status": "retained",
+      "rationale": "Retain reachable-state BFS, repeated-measure protection, queue XOR, genesis, terminal, and cold-replay coverage. It remains blocked until the sole r4 transition event, total vocabulary, exact budgets/outcomes, controller rows, expected bytes, and typed failures exist.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T04",
+      "status": "retained",
+      "rationale": "Retain all DREAM request/render/raw/token/debit/status/cardinality branches, but add exact byte-bearing receipt roles and the R10 per-policy dependency and prospective capacity/focus registry. It is not passed by current prose.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T05",
+      "status": "retained",
+      "rationale": "Retain table, scoring, tie, FOUND/NOT_FOUND, missing, mount, and descriptive-provider boundaries; require one causal provider identity, controller-facing score-free projection, exact endpoints, both D1A safety indicators, and audit-only scorer details.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T06",
+      "status": "retained",
+      "rationale": "Retain donor, dose, derangement, mount, and leakage coverage; require donors wholly within each IID draw, retention of cross-draw identity collisions, no replacement or cross-life matching, exact prospective matches, one row contract, and no arm labels at restricted boundaries.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T07",
+      "status": "retained",
+      "rationale": "Retain L=2/3, subset, full-set, alternate-path, source, and parity/oracle coverage; require materialized canonical path universes and a separate CUT, directional TWIN, action-preserving SHAM proof and gate for every stable edge key.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T08",
+      "status": "retained",
+      "rationale": "Retain every authentic/intervention/timing controller branch, commitment, privileged matching, opacity, exact-once, and queue ending; add exact condition-free emission and reject any SHAM reversal or treatment-tainted behavior.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T09",
+      "status": "retained",
+      "rationale": "Retain five DREAM statuses by three policies, R boundaries, endpoint terminals, rendering, and missing dominance; fix controls to prospective DREAM-independent capacity/focus rules and verify missing inheritance only for exact consuming endpoints.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T10",
+      "status": "retained",
+      "rationale": "Retain the complete root-to-publication and endpoint cross-product and the prohibition on matching, padding, truncation, conditioning, regression, or normalization of D1D realized dose/resources; close every payload and status first.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T11",
+      "status": "retained",
+      "rationale": "Retain two-reducer agreement over exact tails, strict ties, CP bounds, missingness, every-edge IUT, assay maxima, Holm and literals; add canonical rational/range validation, exact orientations, raw membership/observation roles, and full-release-event critical counts including construction semantics.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T12",
+      "status": "retained",
+      "rationale": "Retain all 182 visibility cells, authority edges, staleness/forgery, and denial behavior; add provider score/candidate/artifact isolation, unified row schemas, low-entropy confinement, closed stage ingress/egress, FAIL reachability false, and structural zero-process DENY.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T13",
+      "status": "retained",
+      "rationale": "Retain populated run-lock, two distinct sealers, independence, reviewer/advocate, power, staleness, and separate run-ratification coverage; close G, failure law, gate memberships, orientations, full power event, exact roles and identities, and make it a pre-model rather than merely pre-GPU gate.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5R4_T14",
+      "status": "retained",
+      "rationale": "Retain cold replay, endpoint/dependency/blocker/four-decision/intersection/overlap/scope and overclaim mutations, but define it as a non-releasing replay over candidate decisions before preclaim authority. It must not require a release that cannot exist until after the authority it helps establish; final fixed export may be audited only downstream.",
+      "replacement_test_id": ""
+    }
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "HB_CHANGE_01 — Adjudicated disposition: the condition in change.json's decision question is false because consensus is REWORK with accepted blockers. Will Rohin decline ratification of these exact r4 bytes and keep implementation, static sealers, model/tokenizer/embedding/trainer work, behavioral/canary/GPU execution, and scientific claims forbidden?",
+      "HB_SYS_01 — Adjudicated disposition: yes, a byte-revised successor resolving every accepted blocker must undergo new fresh interpretations, critique, and adjudication. Will Rohin require that new chain before considering architecture ratification?",
+      "HB_SYS_02 — Adjudicated disposition: any future technically releasable architecture ratification may authorize only the exact deterministic CPU/no-model contract, fixture, and exactly-two-static-sealer scope, never the current bytes or forbidden model/science scope. Will Rohin preserve that boundary?",
+      "HB_SYS_03 — Adjudicated disposition: a successor must require post-ratification T01-T12 conformance, a populated run lock, T01-T13, two distinct seals, fresh passing reviewer, non-overriding advocate, power, and exact run ratification before model or behavioral reachability; non-releasing T14 and preclaim authority then precede release. Will Rohin require this repaired ordering?",
+      "HB_BENCH_01 — Adjudicated disposition: yes, closed generator/IID payloads, exact inference/power, every-edge proofs, condition-free provider boundaries, and fixed export bytes are mandatory before architecture ratification. Will Rohin require all of them in the successor?",
+      "HB_BENCH_02 — Adjudicated disposition: later run ratification must bind the exact G, within-draw donor law, memberships, orientations, margins, pi0/ceilings, cp_tail_alpha, alpha, full unconditional run-release power event, overlap profile, and non-mediational literals. Will Rohin ratify those exact populated bytes separately rather than infer approval from architecture ratification?",
+      "HB_BENCH_03 — Adjudicated disposition: the exact intake is now awaiting_consensus, human_required=true, implementation_authorized=false, not the earlier collecting_interpretations phase; it grants no implementation, sealer, model, tokenizer, embedding, trainer, behavioral, canary, GPU, or release authority. Does Rohin confirm that no authority is inferred from the phase correction or this artifact?",
+      "HB_CRIT_01 — Adjudicated disposition: the twelve blocking critique concerns are accepted and require a new hash-bound proposal and full fresh deliberation. Will Rohin route the work to rework rather than attempt to ratify this technically unreleasable consensus?",
+      "HB_CRIT_02 — Adjudicated disposition: report conditional statistical-gate power separately, but require authority to use an unconditional complete run-release lower bound including stochastic construction/exhaustion unless success is proven probability one on the locked support. Will Rohin approve that stronger power boundary?",
+      "HB_CRIT_03 — Adjudicated disposition: RECENCY and PERMUTED control capacity/cardinality and focus rules are prospectively fixed outside DREAM; only policies and endpoints that actually consume DREAM bytes or nominees inherit DREAM_MISSING_NO_RETRY. Will Rohin approve this exact dependency choice at later run ratification?",
+      "HB_CRIT_04 — Adjudicated disposition: the only valid release sequence is runtime/reducer dependencies to candidate decisions to non-releasing T14 to PRE_SCIENTIFIC_CLAIM authority to fixed release/export, with any post-release audit downstream. Will Rohin approve this sequencing repair for the successor?",
+      "HB_CRIT_05 — Adjudicated disposition: the present awaiting_consensus chain and this REWORK consensus confer no implementation or execution authority of any kind. Does Rohin confirm that a later human action cannot turn this rework artifact into a technical pass and that only a repaired newly hash-bound chain may become ratifiable?"
+    ],
+    "implementation_forbidden": true
+  }
+}

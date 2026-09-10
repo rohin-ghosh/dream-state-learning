@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-scratch-v1f",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nodes"],
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "maxItems": 11,
+      "items": {"oneOf": [{"$ref": "#/$defs/queryNode"}, {"$ref": "#/$defs/thinkNode"}, {"$ref": "#/$defs/backtrackNode"}]}
+    }
+  },
+  "$defs": {
+    "queryNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "query", "result"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "QUERY"},
+        "query": {"$ref": "think0_operation.schema.json#/$defs/queryOperation"},
+        "result": {"oneOf": [
+          {"type": "object", "additionalProperties": false, "required": ["type", "read_handle"], "properties": {"type": {"const": "NOT_FOUND"}, "read_handle": {"$ref": "#/$defs/readHandle"}}},
+          {"type": "object", "additionalProperties": false, "required": ["type", "read_handle"], "properties": {"type": {"const": "CONFLICT"}, "read_handle": {"$ref": "#/$defs/readHandle"}}},
+          {"type": "object", "additionalProperties": false, "required": ["type", "read_handle"], "properties": {"type": {"const": "ROW"}, "read_handle": {"$ref": "#/$defs/readHandle"}}}
+        ]}
+      }
+    },
+    "thinkNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "text", "citations"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "THINK"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+        "citations": {"$ref": "think0_operation.schema.json#/$defs/citations"}
+      }
+    },
+    "backtrackNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "type", "text", "citations"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 11},
+        "type": {"const": "BACKTRACK"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+        "citations": {"$ref": "think0_operation.schema.json#/$defs/citations"}
+      }
+    },
+    "readHandle": {"type": "string", "pattern": "^H[0-9]{6}$"}
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {"name": "kind-disjoint-source-and-animal-query-markers", "instance": {"nodes": [
+        {"ordinal": 1, "type": "QUERY", "query": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", null]}, "result": {"type": "ROW", "read_handle": "H000001"}},
+        {"ordinal": 2, "type": "QUERY", "query": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", null]}, "result": {"type": "NOT_FOUND", "read_handle": "H000002"}}
+      ]}},
+      {"name": "conflict-marker", "instance": {"nodes": [{"ordinal": 1, "type": "QUERY", "query": {"op": "QUERY", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", null]}, "result": {"type": "CONFLICT", "read_handle": "H000001"}}]}}
+    ],
+    "negative": [
+      {"name": "multiple-null-query", "instance": {"nodes": [{"ordinal": 1, "type": "QUERY", "query": {"op": "QUERY", "kind": "SOURCE_VALUE", "fields": [null, "source:candyland", null]}, "result": {"type": "NOT_FOUND", "read_handle": "H000001"}}]}},
+      {"name": "full-row-leaks-into-scratch-marker", "instance": {"nodes": [{"ordinal": 1, "type": "QUERY", "query": {"op": "QUERY", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", null]}, "result": {"type": "ROW", "read_handle": "H000001", "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"]}}]}},
+      {"name": "no-read-is-not-a-query-marker", "instance": {"nodes": [{"ordinal": 1, "type": "QUERY", "query": {"op": "QUERY", "kind": "RECIPE", "fields": ["mixture:1*red", null]}, "result": {"type": "NO_READ", "read_handle": "H000001"}}]}}
+    ]
+  }
+}

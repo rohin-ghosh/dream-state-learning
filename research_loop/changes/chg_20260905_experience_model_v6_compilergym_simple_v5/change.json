@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260905_experience_model_v6_compilergym_simple_v5",
+  "title": "Experience Model v6: minimal CompilerGym LoRA recipe assay",
+  "summary": "Replace the over-specified v4 pilot with a small, separately namespaced recipe assay. HARNESS and EXPERIENTIAL are the only on-policy systems. Each makes one strict pass-index decision in each of six slots from a freshly reconstructed public packet and its own last-eight improving-event memory. EXPERIENTIAL alone receives a deterministic cumulative q/v LoRA rebuilt after acquisition tasks 4 and 8 from immediately improving action rows. Four syntactically held-out targets compare HARNESS, EXPERIENTIAL-on, and the same EXPERIENTIAL snapshot with its adapter off. The companion protocol owns all operational semantics and confines this first life to integrity and recipe-completion evidence.",
+  "system_thesis": "This is the controlled lower bracket to the separate free-flow organism_v6 scout: it tests whether verified public action--outcome experience can traverse a minimal deterministic sleep-to-LoRA path and condition later held-out decisions while the ordinary external-memory harness remains available. It does not test the final thinker, context-curation policy, intelligent sleeper, creativity, lifelong improvement, or a paper claim.",
+  "state": "proposed",
+  "context_files": [
+    {"path":"AGENTS.md","sha256":"1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e","purpose":"Controlling architecture, ratification, review, and GPU gate."},
+    {"path":"research_loop/schemas/architecture_change.schema.json","sha256":"4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b","purpose":"Schema for this proposal."},
+    {"path":"research_loop/architecture_intake.py","sha256":"62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea","purpose":"Hash-bound intake validator."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v5/human_directive.txt","sha256":"f80607841520297e23f50b2f0736c0ea559c4629162e00070d1907cd21af530f","purpose":"Verbatim owner direction for a simple paired assay and a complementary controlled path."},
+    {"path":"research_loop/changes/chg_20260905_experience_model_v6_compilergym_simple_v5/protocol.md","sha256":"6288f0ab48cc22f988ea110d2dc25ac7fcfeb4a5a190d20a62a1871c2a724e36","purpose":"Normative minimal packet, memory, writer, score, split, lifecycle, and claim contract."}
+  ],
+  "graph_delta": {
+    "nodes": [
+      {"operation":"modify","node_id":"V6S_TWO_ON_POLICY_SYSTEMS","before":"v4 embedded a dual-phase cognitive protocol, notebook/retriever, and numerous diagnostics in the first recipe assay.","after":"Only HARNESS and EXPERIENTIAL act on-policy. They share the pinned base, one-call packet, six slots, greedy decoding, last-eight improving-event memory, task order, tools, and score. HARNESS always mounts null; EXPERIENTIAL alone mounts its cumulative life-local LoRA after sleeps 4 and 8.","rationale":"Isolates the adaptive parameter path without prematurely deciding the final thinker/state architecture."},
+      {"operation":"modify","node_id":"V6S_RECONSTRUCTED_PUBLIC_CONTEXT","before":"v4 used ORIENT and THINK_ACT calls with notes, finite prose, learned recall, and collision/truncation rules.","after":"Each slot reconstructs one canonical public JSON packet containing task hash, progress, remaining budget, counts, Autophase vector, within-task history, and at most eight own improving acquisition records; the only parsed output is pass_index.","rationale":"Makes context-as-state executable and matched while leaving free-flow consciousness to the parallel scout."},
+      {"operation":"modify","node_id":"V6S_DETERMINISTIC_SLEEP_WRITE","before":"v4 used temporal credit, three views, REVISE, OLD/NEW quotas, buckets, copy packing, and a binding shuffle.","after":"At tasks 4 and 8, select only immediately improving parse-valid accepted EXPERIENTIAL actions, bind the exact producing packet to its canonical action JSON, deduplicate, make 24 copies, and rebuild rank-16 alpha-16 dropout-0 q/v LoRA from the clean base with fixed masked SFT.","rationale":"Tests the smallest verified experience-to-weight write before intelligent model-authored sleep."},
+      {"operation":"modify","node_id":"V6S_FINAL_HELDOUT_ASSAY","before":"v4 opened targets at three checkpoints and added canary-scale and shuffle diagnostics.","after":"After task 8 only, four sealed syntactic holdouts run under HARNESS, EXPERIENTIAL-on, and EXPERIENTIAL-off with the exact same EXPERIENTIAL snapshot; results are quarantined and only raw curves, D_HE, D_ONOFF, validity, and an integrity disposition are reported.","rationale":"Retains the decisive comparison and weight-mount diagnostic while minimizing target use and implementation surface."}
+    ],
+    "edges": [
+      {"operation":"modify","edge_id":"V6S_STATE_TO_ACTION","from":"V6S_RECONSTRUCTED_PUBLIC_CONTEXT","to":"V6S_TWO_ON_POLICY_SYSTEMS","before":"A dual-phase model call selected recall and then an operation.","after":"authoritative public state plus own bounded memory -> canonical packet -> one greedy pass-index JSON -> one charged slot -> public environment result.","rationale":"One typed action path gives exact budget parity and simple auditability."},
+      {"operation":"modify","edge_id":"V6S_EXPERIENCE_TO_ADAPTER","from":"V6S_TWO_ON_POLICY_SYSTEMS","to":"V6S_DETERMINISTIC_SLEEP_WRITE","before":"Many candidate views and credit rules transformed public history.","after":"sealed immediately improving EXPERIENTIAL event plus its exact producing packet -> deterministic row -> masked action-only SFT -> atomically published adapter.","rationale":"Restricts learning to verified action--outcome experience."},
+      {"operation":"modify","edge_id":"V6S_CHECKPOINT_TO_TARGET_FORKS","from":"V6S_TWO_ON_POLICY_SYSTEMS","to":"V6S_FINAL_HELDOUT_ASSAY","before":"Multiple checkpoints and controls opened the target panel repeatedly.","after":"final sealed HARNESS and EXPERIENTIAL snapshots -> cold final target forks; on/off forks differ only in adapter mount and never write back.","rationale":"Supports a minimal whole-system comparison and a same-state adapter diagnostic."}
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {"operation":"modify","loop_id":"V6S_WAKE","before":"ORIENT, learned retrieval, THINK_ACT, notebook, and parser collision rules formed each decision.","after":"For each of eight acquisition tasks and later each target fork, reset once and execute exactly six independently reconstructed one-call slots. Parse exactly pass_index or charge a no-op; append canonical public history and, only for acquisition improvements, update the caller's eight-record memory.","trigger":"Each task or target fork under its six-slot budget.","reads":["authoritative public environment state","own bounded public acquisition memory","assigned adapter below prompt assembly"],"writes":["canonical slot event","public environment action or no-op","own memory only during acquisition"],"stop_condition":"After six slots or a declared indeterminate environment/process failure; no retry.","rationale":"Creates one matched, bounded action loop without specifying private thought."},
+      {"operation":"modify","loop_id":"V6S_SLEEP","before":"v4 compiled multiple views and diagnostics from the acquisition ledger.","after":"After acquisition tasks 4 and 8, deterministically select all cumulative immediately improving EXPERIENTIAL rows, rebuild the fixed LoRA from clean base, verify two final clean rebuilds, atomically publish, and destroy trainer ephemera. HARNESS records only the sleep boundary.","trigger":"Successful completion of acquisition task 4 or 8.","reads":["sealed EXPERIENTIAL public acquisition events","exact producing packet bytes","fixed trainer recipe"],"writes":["row/update/tensor receipt","one authentic adapter"],"stop_condition":"Zero rows, overflow, count/hash drift, skipped/nonfinite update, nondeterministic rebuild, or publication failure stops the recipe.","rationale":"Measures a simple verified write path rather than a model-authored sleeper."}
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {"operation":"modify","claim_id":"V6S_RECIPE_COMPLETION_ONLY","before":"v4 permitted a broad integrity-only multi-checkpoint recipe report.","after":"The first life may report only INTEGRITY_FAILURE, INDETERMINATE, or RECIPE_COMPLETE plus raw final held-out curves, D_HE, D_ONOFF, and validity. Completion is independent of score sign.","evidence_needed":"Ratified exact implementation and later run manifest; passing schema, writer, lifecycle, environment, deterministic-rebuild, target-quarantine, and independent-review gates.","headline_eligible":false},
+      {"operation":"retire","claim_id":"V6S_NO_SCIENTIFIC_EFFECT_CLAIM","before":"Any interpretation of this first life as efficacy, mechanism, transfer superiority, lifelong improvement, creativity, or paper evidence.","after":"All such claims are explicitly forbidden; a separately registered replicated study is required.","evidence_needed":"Multiple paired lives, larger horizons, prespecified inference, strong controls, and fresh tasks under a new ratified change.","headline_eligible":false}
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": ["model_packet","own_public_memory","adapter_and_trainer","target_material"],
+    "stages": ["B1_IMPLEMENT","B2_CPU_SEAL","ACQUISITION_SLEEP","TARGET_FORK","AUDIT"],
+    "cells": [
+      {"information_id":"model_packet","stage_id":"B1_IMPLEMENT","visibility":"derived_only","reason":"Fixtures construct synthetic packets without a model."},
+      {"information_id":"model_packet","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"The no-model sealer never constructs a model request."},
+      {"information_id":"model_packet","stage_id":"ACQUISITION_SLEEP","visibility":"visible","reason":"Only the model and deterministic row binder receive the current canonical packet."},
+      {"information_id":"model_packet","stage_id":"TARGET_FORK","visibility":"visible","reason":"Each cold fork receives only its local canonical packet."},
+      {"information_id":"model_packet","stage_id":"AUDIT","visibility":"visible","reason":"Exact serialized request receipts are auditable after quarantine."},
+
+      {"information_id":"own_public_memory","stage_id":"B1_IMPLEMENT","visibility":"derived_only","reason":"Synthetic fixtures exercise cap and eviction."},
+      {"information_id":"own_public_memory","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"No life exists in the sealer."},
+      {"information_id":"own_public_memory","stage_id":"ACQUISITION_SLEEP","visibility":"visible","reason":"Each system reads and updates only its own bounded acquisition memory."},
+      {"information_id":"own_public_memory","stage_id":"TARGET_FORK","visibility":"visible","reason":"A fork reads only its sealed source-system snapshot and cannot write it."},
+      {"information_id":"own_public_memory","stage_id":"AUDIT","visibility":"visible","reason":"Snapshot bytes and mount identity are auditable."},
+
+      {"information_id":"adapter_and_trainer","stage_id":"B1_IMPLEMENT","visibility":"derived_only","reason":"Mock lifecycle and masked-loss fixtures only."},
+      {"information_id":"adapter_and_trainer","stage_id":"B2_CPU_SEAL","visibility":"forbidden","reason":"The sealer cannot read or create learned state."},
+      {"information_id":"adapter_and_trainer","stage_id":"ACQUISITION_SLEEP","visibility":"derived_only","reason":"EXPERIENTIAL is conditioned by mounted weights below prompt assembly; only the trainer reads rows and writes adapter bytes."},
+      {"information_id":"adapter_and_trainer","stage_id":"TARGET_FORK","visibility":"derived_only","reason":"A fork mounts exactly authentic or null bytes without a model-visible label; no trainer state is mounted."},
+      {"information_id":"adapter_and_trainer","stage_id":"AUDIT","visibility":"visible","reason":"Receipts, tensor manifests, hashes, and teardown evidence are auditable."},
+
+      {"information_id":"target_material","stage_id":"B1_IMPLEMENT","visibility":"hidden","reason":"Only synthetic task fixtures exist."},
+      {"information_id":"target_material","stage_id":"B2_CPU_SEAL","visibility":"derived_only","reason":"The sealer may bind target identifiers, hashes, reset observations, and Oz baselines but runs no learned action."},
+      {"information_id":"target_material","stage_id":"ACQUISITION_SLEEP","visibility":"forbidden","reason":"Acquisition models, memories, writer, and trainer cannot access target identities or outcomes."},
+      {"information_id":"target_material","stage_id":"TARGET_FORK","visibility":"derived_only","reason":"Router/service use one local target while role and future targets remain model-forbidden; outcomes write only to quarantine."},
+      {"information_id":"target_material","stage_id":"AUDIT","visibility":"visible","reason":"The offline reporter reads target receipts only after all forks end."}
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id":"V6S_T01_PACKET_MEMORY_SCORE_GOLDENS","kind":"unit","setup":"Implement synthetic goldens for canonical JSON bytes, duplicate-key rejection, six-slot charging, history, last-eight improvement memory eviction, exact score edge cases, and first-applicable disposition.","expected":"All declared bytes and edge cases match protocol.md; malformed/overflow/unknown/indeterminate cases fail closed with no retry.","falsifies":"That the single-call state and scoring contract is executable.","evidence_artifact":"v6simple_packet_memory_score_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S_T02_WRITER_MASK_UPDATE_GOLDENS","kind":"unit","setup":"Use independently authored synthetic event ledgers to test eligibility, exact packet binding, row IDs, earliest dedup, cumulative sleeps, 24-copy order, action-only labels, optimizer/update counts, atomic failure, and deterministic tensor comparison math.","expected":"Rows, masks, updates, rejects, and hashes match fixed expected fixtures; every forbidden row/loss and failure prevents publication.","falsifies":"That the simple sleep recipe is deterministic and outcome-bound.","evidence_artifact":"v6simple_writer_trainer_fixture_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S_T03_VISIBILITY_LIFECYCLE_GOLDENS","kind":"invariant","setup":"Exercise synthetic HARNESS/EXPERIENTIAL lives, sleep boundaries, null/authentic mounts, final on/off snapshot identity, target no-writeback, restart, cold process, cache/RNG/trainer destruction, and quarantine routing.","expected":"Only declared bytes cross each boundary and condition labels never enter packets; any alternate reader/writer or stale state fails.","falsifies":"Controller-level visibility and lifecycle conformance.","evidence_artifact":"v6simple_visibility_lifecycle_receipt.json","required_before":"gpu_run"},
+    {"test_id":"V6S_T04_CPU_ENVIRONMENT_MANIFEST_SEAL","kind":"end_to_end","setup":"After architecture ratification only, use an unchanged already-local CPU CompilerGym stack with no model to enumerate, hash, eligibility-check, and seal the deterministic 8/4 manifest and repeat reset/Autophase/Oz baseline observations.","expected":"All pinned bytes and observations reproduce, every URI/hash is distinct, denominators are positive, no Fable/model/learned-action/outcome input exists, and no download/patch/substitution occurs; otherwise stop.","falsifies":"That the candidate off-the-shelf environment can instantiate the protocol without target-informed selection.","evidence_artifact":"v6simple_cpu_environment_manifest.json","required_before":"gpu_run"},
+    {"test_id":"V6S_T05_EXACT_IMPLEMENTATION_AND_RUN_REVIEW","kind":"independent_review","setup":"A fresh independent reviewer and author-side advocate inspect exact protocol, implementation, passing T01--T04 receipts, model/tokenizer/prompt/pass/runtime/hardware/trainer manifest, audited surfaces, and proposed commands before any model/GPU call.","expected":"The implementation matches ratified architecture bytes and the generated run manifest is separately presented for Rohin's one explicit ratification; no pre-GPU evidence is described as a model-stack or scientific result.","falsifies":"That the exact runnable path and authority boundary are closed.","evidence_artifact":"v6simple_pre_gpu_review_bundle.json","required_before":"gpu_run"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "Do you ratify these exact minimal v5 architecture/protocol bytes, authorizing only the isolated B1 implementation, fixtures, and CPU-only unchanged-local no-model CompilerGym sealer without further prompts inside that scope? Exact model, tokenizer, prompts, programs, dependencies, hardware, commands, and GPU run remain blocked until one later bound review and one explicit run-manifest ratification.",
+    "forbidden_before_approval": [
+      "Any implementation, CompilerGym opening, model call, training, target action, GPU use, or result claim before exact architecture ratification",
+      "Any model/GPU call or target assay before fresh review and later exact run-manifest ratification",
+      "Any use of organism_v6/Fable traces, programs, outcomes, prompts, thresholds, adapters, or probe results in this assay",
+      "Any repair, substitution, tuning, retry, added system/control, changed task/recipe, or scientific claim without a new bound change"
+    ]
+  }
+}

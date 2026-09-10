@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.claim_dependency_map.v3",
+  "global_prerequisites": ["all PPC5R3_T01 through PPC5R3_T14 pass at their declared stages", "no CONSTRUCTION_FAIL", "no RUN_INVALID", "missingness at or below locked limit in every required arm", "passing authority predecessor chain", "passing four-assay Holm procedure"],
+  "blocker_precedence": ["CONSTRUCTION_FAIL", "RUN_INVALID", "MISSINGNESS_LIMIT", "FAILED_GLOBAL_TEST", "FAILED_LOCAL_TEST_OR_CELL", "FAILED_ASSAY_COMPOSITE", "FAILED_HOLM", "BLOCKED"],
+  "claims": [
+    {
+      "claim_id": "PPC5_D1A_SUPPORTED_SELECTION",
+      "required_cells": ["READER_LORA", "ADAPTER_OFF", "WRONG_LIFE_ADAPTER", "MATCHED_BINDING_SHUFFLED_READER"],
+      "required_tests": ["PPC5R3_T02", "PPC5R3_T05", "PPC5R3_T06", "PPC5R3_T11", "PPC5R3_T14"],
+      "release_text": "On the locked complete-table provider assay and recipient-life roster, READER_LORA improved supported candidate selection relative to the identical ADAPTER_OFF provider; WRONG_LIFE_ADAPTER and MATCHED_BINDING_SHUFFLED_READER specificity gates and the false-selection and NOT_FOUND safety gates also passed. This is candidate-conditioned selection with external semantic support, not closed-book storage or autonomous recall."
+    },
+    {
+      "claim_id": "PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE",
+      "required_cells": ["AUTHENTIC_PATH", "EDGE_CUT_EACH", "EDGE_TWIN_EACH", "SHAM", "ONE_SHOT_READ", "OPEN_LOOP"],
+      "required_tests": ["PPC5R3_T03", "PPC5R3_T07", "PPC5R3_T08", "PPC5R3_T11", "PPC5R3_T14"],
+      "release_text": "On the locked presealed decisive-path benchmark, normalized action performance depended on every exactly matched interleaved edge response: AUTHENTIC_PATH exceeded every edge CUT and TWIN plus ONE_SHOT_READ and OPEN_LOOP, while SHAM remained noninferior to AUTHENTIC_PATH. This is observable behavioral dependence and does not reveal private cognition."
+    },
+    {
+      "claim_id": "PPC5_D1C_DREAM_CONTEXT_POLICY",
+      "required_cells": ["AUTHENTIC_DREAM_CONTEXT", "RECENCY_CONTEXT", "PERMUTED_CONTEXT"],
+      "required_tests": ["PPC5R3_T04", "PPC5R3_T09", "PPC5R3_T11", "PPC5R3_T14"],
+      "release_text": "Within the locked PPC5 benchmark and recipient-life roster, assignment to AUTHENTIC_DREAM_CONTEXT rather than each of RECENCY_CONTEXT and PERMUTED_CONTEXT improved normalized downstream action in life-level ITT, inclusive of selected cardinality, order, focus, prompt-token, and failure or abstention consequences."
+    },
+    {
+      "claim_id": "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY",
+      "required_cells": ["DREAM_TO_SLEEP", "RECENCY_TO_SLEEP", "HASH_PERMUTED_TO_SLEEP"],
+      "required_tests": ["PPC5R3_T02", "PPC5R3_T04", "PPC5R3_T10", "PPC5R3_T11", "PPC5R3_T14"],
+      "release_text": "Within the locked PPC5 benchmark and recipient-life roster, assignment to DREAM_TO_SLEEP rather than each of RECENCY_TO_SLEEP and HASH_PERMUTED_TO_SLEEP improved supported candidate selection and normalized downstream action in life-level ITT, inclusive of assignment-induced evidence dose, training, publication, inference, and resource differences."
+    }
+  ],
+  "intersection": {
+    "claim_id": "PPC5_NONMEDIATIONAL_FOUR_ASSAY_INTERSECTION",
+    "required_components": ["PPC5_D1A_SUPPORTED_SELECTION", "PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE", "PPC5_D1C_DREAM_CONTEXT_POLICY", "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY"],
+    "release_text": "All four separately identified PPC5 assays passed on the locked recipient-life benchmark: supported candidate selection, observable every-edge interleaved-response dependence, frozen DREAM context-policy value, and DREAM_TO_SLEEP total-policy value. This is a non-mediational four-assay intersection, not an end-to-end learning mechanism.",
+    "adds_hypothesis": false
+  },
+  "forbidden_claims_appended_to_every_release_receipt": ["closed-book storage", "autonomous recall", "learned THINK", "learned DREAM", "continual improvement", "schema compression", "lifetime scaling", "flywheel", "parenting", "population learning", "cultural inheritance"],
+  "rendering_rule": "A release reducer may emit exactly one registered release_text unchanged plus the complete forbidden-claims list. It may not paraphrase, alias, truncate, or construct a headline from fragments. Optional analyses never alter release."
+}

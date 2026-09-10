@@ -1,0 +1,1806 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260909_extractable_sleep_bootstrap_v4",
+  "title": "Extractable SLEEP writer and feedback-to-learning birth bootstrap v4",
+  "summary": "Close the six v3 proposal blockers with a complete stage-by-information visibility product, separate scientific and candidate evaluation, control-plane-only repetition state, equal learning opportunity rather than identical realized writes, classified SLEEP retry semantics, and safety gates before the first affected execution.",
+  "system_thesis": "THINK remains the live thought/action/outcome stream, DREAM only rebuilds finite active context, and SLEEP compiles grounded child experience and writes a personal LoRA. A separately labeled schooling stage may create a birth model that more readily turns feedback into useful child-authored thought and action; live parent text never becomes a personal SLEEP target.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Binding architecture and execution governance."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/human_directive.txt",
+      "sha256": "cee1703c552739c51bcef302b7e5e92fae1651109963458d3532f49b7add34cc",
+      "purpose": "Verbatim direction on extractability, dosage, bootstrap, parenting, and repetition."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/change.json",
+      "sha256": "aa864a0141540915c8a51557152da0400941729ef924865e8d47df0c69542dff",
+      "purpose": "Rejected predecessor proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/interpretation_bootstrap_scientific.json",
+      "sha256": "847c10c7c69d5612d06cfea90e7f90f12d292a24ef5b26726d47b86456bc0406",
+      "purpose": "Predecessor scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/interpretation_bootstrap_benchmark.json",
+      "sha256": "868c5e713f5c5f9444294a651721f07bd48a4f133fb4be0f0adb48fb60a1fb9c",
+      "purpose": "Predecessor benchmark interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/critique.json",
+      "sha256": "58a370db2fc487d3c172eb7d6e409de9fc6d89fb0a25e94e8a8e91924efba389",
+      "purpose": "Fourteen predecessor concerns and six missing tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/consensus.json",
+      "sha256": "cf0f0e126035d99e76f6f59cde833371a2f8a53ef8419668445eef7065c80d53",
+      "purpose": "Predecessor rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_resolution.md",
+      "sha256": "c3b8cf6edddea5e0b9140b004a3ad9e41b652dfeac4b841eccc4266ff80b8b02",
+      "purpose": "Exact successor design choices."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_science_attack.md",
+      "sha256": "c490689279abbe8d1fb727b0b04c13781adbe058ca95d851dfd3f5e7d1a443fc",
+      "purpose": "Independent attack on estimands, active control, repetition, and target blindness."
+    },
+    {
+      "path": "research_loop/changes/chg_20260908_extractable_sleep_compiler_v1/v2_rework_systems_attack.md",
+      "sha256": "54836eb5450dc1db5e7dc7d2818c3e0e453b4555bc19aa710cabe6ebc7c172a6",
+      "purpose": "Independent attack on writer, merge, lineage, dose, and isolation constructibility."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/change.json",
+      "sha256": "481d7fe7a5999d1fb2237a767bc9710e714339db54a6c5126c848ba12c9b883d",
+      "purpose": "V2 predecessor proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/interpretation_science.json",
+      "sha256": "ed2e7b26927596d065fa5610367d8824acdeef27d2a8223553dc064e2987273e",
+      "purpose": "Fresh v2 scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/interpretation_systems.json",
+      "sha256": "76d6d8751db8fc8a324131b77f785b379d7629110118dafd7de0b9a51d5ab169",
+      "purpose": "Fresh v2 systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/critique.json",
+      "sha256": "99a20fb13bcd3321567f182fca1e09c295e2e64a63231a4e9ba92ec27df6ded1",
+      "purpose": "V2 cross-critique identifying five proposal blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/consensus.json",
+      "sha256": "aa4d9cd32247b62590510f68dd26a4ca4c24bdbdfac08619ed014d5cd5a52c57",
+      "purpose": "V2 adjudicated rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v2/v3_blocker_resolution.md",
+      "sha256": "6429e2643564ece014057dc624559ba6bb5e9ca6c46b789aaef0678239b41ef9",
+      "purpose": "Exact resolution of the five v2 proposal-byte blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/change.json",
+      "sha256": "549e55e143fac31a6179568a9c6e3b9ad9a1a982a77e68f173f3e704d6f0ab92",
+      "purpose": "Rejected v3 exact proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/interpretation_science.json",
+      "sha256": "ea70c65c127e43283dc0f5f0de95004894790728f49ca3f86073cd64dcd85d02",
+      "purpose": "Fresh v3 scientific interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/interpretation_systems.json",
+      "sha256": "41168c164ebb945468600d9477d5fc619ad2af51cf4e377c1eae4397e03c827a",
+      "purpose": "Fresh v3 systems interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/critique.json",
+      "sha256": "72f88535d360c086cf605adb71d798e8b3d9b442d4b4a33b68f38690d481de78",
+      "purpose": "V3 cross-critique identifying six exact proposal blockers."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/consensus.json",
+      "sha256": "d0a842cfb0dbda8bfbb2e517e0633f7863870585f64e724c615857999a81c973",
+      "purpose": "V3 adjudicated rework decision."
+    },
+    {
+      "path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v3/v4_blocker_resolution.md",
+      "sha256": "8b69384c6b6318c536efc608183939481e7355df3ed027fa57e02cbce14c4d3e",
+      "purpose": "Exact successor resolution of the six v3 blockers."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "modify",
+        "node_id": "CANONICAL_EXPERIENCE_INDEX",
+        "before": "Evidence, lessons, augmented views, and optimizer exposure can be conflated.",
+        "after": "Immutable public action-outcome evidence IDs, supported lesson IDs, rendered view IDs, supervised-token exposures, and optimizer updates are separate counted objects.",
+        "rationale": "Experience count, augmentation, and SGD dose answer different causal questions."
+      },
+      {
+        "operation": "modify",
+        "node_id": "SLEEP_COMPILER",
+        "before": "Legacy cumulative prose may include unsupported principles, generic recall prompts, or parent-like text.",
+        "after": "Only provenance-bound child-native episodic, corrective, or multi-evidence generalized continuations are rendered; parent text and unsupported thought clauses are forbidden targets.",
+        "rationale": "SLEEP must write grounded child experience while training extraction and native use."
+      },
+      {
+        "operation": "modify",
+        "node_id": "CHILD_LORA_WRITER",
+        "before": "Several writer paths differ in masking, rank, dose, seeding, truncation, and receipts.",
+        "after": "One exact response-only rank-8 all-layer writer with zero-effective-delta initialization, exact encoded-dose receipts, abort-on-nonfinite behavior, and prior-child preservation gates serves every screened condition.",
+        "rationale": "A writer comparison is uninterpretable when optimizer opportunity or loss surface changes."
+      },
+      {
+        "operation": "add",
+        "node_id": "MERGED_SCHOOLED_BIRTH_BUILDER",
+        "before": "Bootstrap persistence and personal LoRA ancestry are ambiguous.",
+        "after": "Teachability and direct-solution bootstrap adapters are each merged once into the same BF16 M0 using one FP32 reference equation, rounded once, serialized and content-addressed as immutable birth checkpoints; later personal adapters start at zero effective delta on the assigned birth.",
+        "rationale": "Schooling persists without personal SLEEP with no stacked-adapter or optimizer-state ambiguity."
+      },
+      {
+        "operation": "add",
+        "node_id": "DIRECT_SOLUTION_ACTIVE_CONTROL",
+        "before": "A semantically undefined neutral bootstrap could be easier, harmful, or secretly teach the treatment computation.",
+        "after": "Each permanent pair shares one canonical state/action/outcome; the treatment derives the action through one of six frozen learning computations while the active control receives the canonical action directly; M0 remains a no-bootstrap damage diagnostic. Computation 3 requires an explicit judgment that further internal recursion has negative expected value or no new evidence followed by action; mere supplied-action execution does not qualify. Computation 6 requires retrieving and adapting a correction from a distinct earlier episode; a current instruction or repeated action does not qualify.",
+        "rationale": "This names the actual curriculum-package contrast instead of claiming impossible semantic identity."
+      },
+      {
+        "operation": "add",
+        "node_id": "STANDARDIZED_ADVICE_CLONE_ASSAY",
+        "before": "A sequential before/after assay mixes advice with practice and outcome feedback.",
+        "after": "Disposable same-state clones receive correct, none, irrelevant, or wrong byte-fixed advice with no SLEEP or lineage write.",
+        "rationale": "This isolates immediate selective advice use at birth."
+      },
+      {
+        "operation": "add",
+        "node_id": "FIXED_POLICY_DEVELOPMENT_ASSAY",
+        "before": "Adaptive parent behavior and SLEEP obscure whether the child learns faster from the same teaching.",
+        "after": "Birth treatments receive byte-identical lessons before lessons 1, 9, 17, and 25, plus identical tasks, compute, and SLEEP; the fixed policy cannot inspect behavior, acquisition, relapse, scores, or SLEEP decisions and never fades or restores a lesson in response to the child.",
+        "rationale": "This estimates the fixed-curriculum-plus-personal-SLEEP package under an exogenous teaching schedule."
+      },
+      {
+        "operation": "add",
+        "node_id": "ADAPTIVE_PARENT_DEVELOPMENT_ASSAY",
+        "before": "Child receptivity and the ecological parent-child system can be conflated.",
+        "after": "A separately labeled adaptive parent-plus-child-plus-SLEEP 2x2 records all parent information and effort and uses disposable clean-context exams.",
+        "rationale": "The practical developmental package is valuable but is not parenting-alone or a weight-only mediator."
+      },
+      {
+        "operation": "add",
+        "node_id": "ATOMIC_LINEAGE_HEAD",
+        "before": "Directory scans can admit rejected corpora, briefs, adapters, or incomplete transactions.",
+        "after": "The authoritative head binds active weights, committed wake data, restricted parent audit, and control-plane repetition roots. DREAM/context is a nonauthoritative disposable cache bound to those roots. Candidate compiler artifacts and private preservation evidence are staged separately. Only a promotion verdict can atomically replace the active-weight root; rejection preserves lived roots and previous weights while quarantining all candidate derivatives.",
+        "rationale": "Rejecting a write must preserve lived experience while excluding every failed derivative and candidate weight."
+      },
+      {
+        "operation": "add",
+        "node_id": "REPETITION_CONTROL_PLANE",
+        "before": "Mixed repetition state could enter semantic SLEEP.",
+        "after": "Reminder schedule/count/order and adaptive acquisition/relapse state are parent/auditor control-plane data only. Child-authored grounded enactments enter SLEEP solely through ordinary life evidence.",
+        "rationale": "Repetition guides parenting without becoming an indirect teacher-to-gradient channel."
+      },
+      {
+        "operation": "add",
+        "node_id": "DREAM_DISPOSABLE_CONTEXT",
+        "before": "Context state could become an undeclared memory authority.",
+        "after": "DREAM emits a disposable cache content-bound to the committed lineage head. It is visible only to waking cognition, rebuilt on source change, and forbidden to personal SLEEP as an independent source.",
+        "rationale": "DREAM manages consciousness; it does not create a fourth persistent store."
+      },
+      {
+        "operation": "add",
+        "node_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "before": "Candidate gates and scientific evaluation shared one score type.",
+        "after": "A private staged evaluator reads the candidate, previous child, and frozen preservation panel; it emits only preservation evidence and a staged promotion verdict.",
+        "rationale": "Safety evidence may decide a write without contaminating scientific evaluation or later learning."
+      },
+      {
+        "operation": "add",
+        "node_id": "LINEAGE_PROMOTION_GATE",
+        "before": "Candidate evaluation and weight promotion were implicit.",
+        "after": "The gate reads the opaque current-head token, staged candidate descriptor, and preservation verdict; it may only atomically promote the candidate weight root or quarantine it.",
+        "rationale": "Promotion is a typed transaction, not directory discovery."
+      },
+      {
+        "operation": "add",
+        "node_id": "SCIENTIFIC_EVALUATION_FIREWALL",
+        "before": "Disposable exam products could be confused with promotion evidence.",
+        "after": "Advice clones, developmental exams, panels, and final evaluation alter reporting/audit roots only and cannot affect child, parent, DREAM, SLEEP, candidate, promotion, or release inputs.",
+        "rationale": "Measurement must not teach the learner or select its lineage."
+      },
+      {
+        "operation": "add",
+        "node_id": "RELEASE_CONTROLLER",
+        "before": "Release authority was not an explicit stage.",
+        "after": "The release controller may read only a separately authorized audit/release decision and bound artifact roots; it cannot inspect hidden answers, scientific scores, candidate evidence, or developmental state.",
+        "rationale": "Human authority and scientific evidence remain distinct from learning and selection."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "CANONICAL_PAIR_TO_BOOTSTRAP_RENDERINGS",
+        "from": "DIRECT_SOLUTION_ACTIVE_CONTROL",
+        "to": "CHILD_LORA_WRITER",
+        "before": "Bootstrap arms may be independently sampled or selected.",
+        "after": "One pre-render canonical transition produces exactly one treatment row and one direct-solution row with identical action/outcome and optimizer slot.",
+        "rationale": "Pairwise construction prevents treatment-dependent admission and outcome selection."
+      },
+      {
+        "operation": "add",
+        "edge_id": "BOOTSTRAP_ADAPTER_TO_IMMUTABLE_BIRTH",
+        "from": "CHILD_LORA_WRITER",
+        "to": "MERGED_SCHOOLED_BIRTH_BUILDER",
+        "before": "Bootstrap adapter could be stacked, replayed, or reused as a personal adapter.",
+        "after": "A sealed bootstrap adapter is merged by the reference algorithm; only its content-addressed birth is a personal writer base.",
+        "rationale": "The birth and personal memory have separate roles and capacity accounting."
+      },
+      {
+        "operation": "modify",
+        "edge_id": "PARENT_TO_CHILD_TO_SLEEP",
+        "from": "ADAPTIVE_PARENT_DEVELOPMENT_ASSAY",
+        "to": "SLEEP_COMPILER",
+        "before": "Parent text could be replayed directly or literal phrase repetition could manufacture uptake.",
+        "after": "Longitudinal parent prose is attended only during waking and stored only in a restricted audit ledger. Parent bytes, hashes, identifiers, ordering, and counts have no edge into personal SLEEP selection, prompts, labels, rendering, cache keys, dose, or gradients; exclusion is proven by an isolated audit sidecar outside the semantic compiler DAG. Response-loss masking applies only to separately frozen static bootstrap conditioning. Only later grounded child-authored action/outcome experience can enter SLEEP.",
+        "rationale": "Parenting changes the child's cognition rather than becoming teacher-text imitation."
+      },
+      {
+        "operation": "add",
+        "edge_id": "CANDIDATE_TO_ATOMIC_HEAD",
+        "from": "CHILD_LORA_WRITER",
+        "to": "ATOMIC_LINEAGE_HEAD",
+        "before": "Candidate artifacts and marker files can become independently visible.",
+        "after": "A candidate snapshots the already committed wake/parent/repetition roots and can change only the active weight root through one compare-and-swap promotion after all gates pass. Rejection retains those committed roots, keeps the previous weights, and quarantines candidate derivatives.",
+        "rationale": "A failed SLEEP must cost one write, not erase life or poison the future lineage."
+      },
+      {
+        "operation": "add",
+        "edge_id": "REPETITION_STATE_TO_PARENT_CONTROL_ONLY",
+        "from": "REPETITION_CONTROL_PLANE",
+        "to": "SLEEP_COMPILER",
+        "before": "SLEEP listed the mixed repetition root as a read.",
+        "after": "No semantic edge exists. Parent controllers and the auditor may read repetition control; SLEEP receives only independently eligible child-grounded life evidence.",
+        "rationale": "The child may internalize repetition through lived behavior, but parent scheduling never becomes training input."
+      },
+      {
+        "operation": "add",
+        "edge_id": "CANDIDATE_TO_PRIVATE_EVALUATION_TO_PROMOTION",
+        "from": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "to": "LINEAGE_PROMOTION_GATE",
+        "before": "Candidate and scientific evaluation were conflated.",
+        "after": "Private preservation evidence produces one promotion verdict; the gate consumes only that verdict and the staged candidate descriptor.",
+        "rationale": "Candidate safety affects only weight promotion."
+      },
+      {
+        "operation": "add",
+        "edge_id": "SCIENTIFIC_EVALUATION_TO_REPORTING_ONLY",
+        "from": "SCIENTIFIC_EVALUATION_FIREWALL",
+        "to": "RELEASE_CONTROLLER",
+        "before": "Evaluation products lacked a complete causal firewall.",
+        "after": "Scientific products reach isolated reporting/audit only; the release controller sees only the human/audit decision, never raw scores or transcripts.",
+        "rationale": "Exams cannot feed learning or secretly select a released child."
+      },
+      {
+        "operation": "add",
+        "edge_id": "DREAM_CACHE_TO_WAKE_ONLY",
+        "from": "DREAM_DISPOSABLE_CONTEXT",
+        "to": "SLEEP_COMPILER",
+        "before": "DREAM cache persistence was ambiguous.",
+        "after": "No source edge exists. DREAM cache is waking-only and personal SLEEP resolves evidence from committed life data instead.",
+        "rationale": "Context compaction cannot silently become evidence compilation."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "modify",
+        "loop_id": "SLEEP_COMPILE_WRITE_COMMIT",
+        "before": "Legacy compiler/writer paths and directory discovery are used across current lives.",
+        "after": "Snapshot the opaque committed-head token; semantically read only eligible committed wake evidence plus the immutable birth and previous active child; render exact dose-counted native views; train and privately evaluate a staged candidate; then atomically promote only its weight root or quarantine it. Parent audit, repetition control, DREAM cache, and scientific evaluation are not semantic reads.",
+        "trigger": "Only after CPU provenance, mask, writer-route, initializer, serialization, and fault fixtures pass under separately approved implementation scope.",
+        "reads": [
+          "eligible committed wake-evidence root",
+          "opaque committed-head compare-and-swap token",
+          "immutable lineage birth",
+          "previous committed child",
+          "frozen compiler/writer contract",
+          "static preservation panel"
+        ],
+        "writes": [
+          "staged lesson/view/dose roots",
+          "staged candidate personal adapter",
+          "private candidate-preservation evidence and verdict",
+          "atomic active-weight-root promotion or quarantined rejection"
+        ],
+        "stop_condition": "An operational crash before a valid verdict may retry the exact content-addressed snapshot once with identical inputs, seed, configuration, and attempt record; a second crash waits for the next evidence threshold. Behavioral or preservation rejection never retries the same data and waits for the next preregistered evidence threshold. Source, dose, visibility, or provenance invalidity fails closed until separately authorized repair. Every failure preserves committed lived roots and prior weights.",
+        "rationale": "SLEEP is safe only when experience is grounded, accessible, useful, and transactionally isolated."
+      },
+      {
+        "operation": "add",
+        "loop_id": "BOOTSTRAP_BUILD_AND_BIRTH",
+        "before": "No exact schooling-to-birth topology.",
+        "after": "Generate 192-240 paired rows containing no incremental downstream-derived information over six computations and four unrelated microdomains, train matched bootstrap adapters, merge each once into M0, audit numeric preservation, and freeze content-addressed births before sealed downstream instances exist.",
+        "trigger": "After implementation authority and source/disjointness/control audits; before downstream benchmark generation.",
+        "reads": [
+          "allowlisted bootstrap generators",
+          "canonical transition pairs",
+          "pinned process-advice templates",
+          "exact M0/writer/toolchain"
+        ],
+        "writes": [
+          "paired corpus roots",
+          "sealed BT/BD adapters",
+          "M_birth_T and M_birth_D",
+          "birth and audit receipts"
+        ],
+        "stop_condition": "Stop for final-derived input, structural policy isomorphism, semantic-control failure, dose mismatch, direct-control harm, merge loss, or nonreproducible roots.",
+        "rationale": "The bootstrap should install a general feedback-to-action habit without importing final-task experience."
+      },
+      {
+        "operation": "add",
+        "loop_id": "PARENT_REPETITION_AND_FADE",
+        "before": "A fixed first-NOTE phrase and lexical overlap can be mistaken for parenting uptake.",
+        "after": "Repeat one computation across varied relevant cases and log uncued selective enactment, action/outcome, irrelevant misapplication, and reset retention. The fixed policy delivers byte-identical reminders only before lessons 1, 9, 17, and 25 and cannot inspect the child or fade/restore. Only the separately labeled adaptive policy may use frozen acquisition, fade, relapse, and restoration rules.",
+        "trigger": "A lesson is assigned by the exogenous fixed schedule or by the separately labeled adaptive policy.",
+        "reads": [
+          "lesson ID",
+          "current public task evidence",
+          "fixed schedule in the fixed arm",
+          "committed child history and frozen fade/relapse rule in the adaptive arm only"
+        ],
+        "writes": [
+          "parent audit message outside SLEEP",
+          "child grounded action/outcome trace",
+          "behavioral uptake receipt"
+        ],
+        "stop_condition": "Do not call the lesson acquired for phrase echo, irrelevant ritual use, absent action change, public harm, or reset failure.",
+        "rationale": "Repetition should rehearse a useful computation until it becomes selective behavior, not teach a mantra."
+      },
+      {
+        "operation": "modify",
+        "loop_id": "SLEEP_CADENCE_EVALUATION",
+        "before": "Periodic and delayed writes can be narrated as a uniquely weight-mediated cadence effect.",
+        "after": "Randomized K4-vs-K1 natural lives estimate the total cadence package; standardized terminal rewrites estimate consequences of treatment-induced ledger differences under one writer; natural-vs-standardized terminal comparisons remain descriptive conditional on each ledger.",
+        "trigger": "Only after the static writer and bootstrap screens pass and a separate prospective packet is approved.",
+        "reads": [
+          "matched life tasks/seeds",
+          "frozen writer and gates",
+          "canonical terminal ledgers"
+        ],
+        "writes": [
+          "checkpoint AUC",
+          "terminal total contrast",
+          "standardized-ledger contrast",
+          "descriptive writer/history contrast"
+        ],
+        "stop_condition": "Stop for seed/source mismatch, repeated material harm, or exhausted preregistered roots.",
+        "rationale": "Earlier weights can change later data, but terminal contrasts do not uniquely identify a natural direct or indirect path."
+      },
+      {
+        "operation": "add",
+        "loop_id": "CANDIDATE_PRESERVATION_AND_PROMOTION",
+        "before": "Candidate scoring and scientific evaluation shared an implicit path.",
+        "after": "Evaluate the staged candidate on the frozen private preservation panel, issue a typed verdict, and let the lineage gate atomically promote or quarantine only the candidate weight root.",
+        "trigger": "After a candidate writer transaction completes and before that candidate is visible to waking or scientific evaluation.",
+        "reads": [
+          "staged candidate descriptor",
+          "previous committed child",
+          "frozen preservation/safety panel",
+          "opaque committed-head token"
+        ],
+        "writes": [
+          "private candidate-preservation evidence",
+          "staged promotion verdict",
+          "atomic promotion or quarantine receipt"
+        ],
+        "stop_condition": "Any stale head, missing receipt, scientific-evaluation input, parent/repetition input, or failed preservation rule rejects promotion.",
+        "rationale": "Safety can gate a write without becoming a scientific or teaching channel."
+      },
+      {
+        "operation": "add",
+        "loop_id": "DISPOSABLE_SCIENTIFIC_EVALUATION",
+        "before": "Evaluation products could affect continuing state.",
+        "after": "Fork a disposable clone from a committed head, run the frozen exam, write reporting/audit artifacts, and destroy the clone with no mutation of continuing roots, caches, parent state, SLEEP, candidate selection, or release decisions.",
+        "trigger": "Only at preregistered ages after the noninterference fixture passes.",
+        "reads": [
+          "committed child descriptor",
+          "public disposable evaluation instance",
+          "private truth inside isolated evaluator"
+        ],
+        "writes": [
+          "scientific evaluation transcript",
+          "scientific scores",
+          "reporting/audit root"
+        ],
+        "stop_condition": "Any root diff outside reporting/audit invalidates the exam and halts the affected packet.",
+        "rationale": "An exam measures development without becoming experience."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "retire",
+        "claim_id": "C_V1_NATIVE_WRITER_CERTIFIED",
+        "before": "R2 and the write swarm certify the intended native response-masked writer.",
+        "after": "R2 used the old compile_sleep/v1 writer and the swarm confounded augmentation with dose; they remain exploratory old-writer observations only.",
+        "evidence_needed": "Source and remote receipt audit already recorded; no successor credit.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_EXPERIENCE_EXTRACTABLE_AND_USABLE",
+        "before": "Corpus fit is treated as absorption.",
+        "after": "Conditional on separate gates, provenance-bound personal LoRA experience is recoverable under held-out cues and improves native action on fresh homologous tasks without textual retrieval or interface harm.",
+        "evidence_needed": "Dose-matched writer factorial, exact support, source fit, held-out cue extraction, native use, derangement/wrong-life/adapter-off controls, and powered independent roots.",
+        "headline_eligible": true
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_BOOTSTRAP_IMMEDIATE_RECEPTIVITY",
+        "before": "A bootstrap gain can be only higher entry skill.",
+        "after": "Conditional on clone counterfactuals, the teachability birth selectively uses identical novel correct process advice better than the direct-solution birth at entry.",
+        "evidence_needed": "Delta_R with none/irrelevant/wrong directional controls, clean disposable clones, M0 diagnostics, two-root screen and later powered roots.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_BOOTSTRAP_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+        "before": "Adaptive parent behavior and personal SLEEP can be conflated with bootstrap receptivity.",
+        "after": "Conditional on Delta_F, the teachability birth acquires the fixed-curriculum-plus-personal-SLEEP package faster than the direct-solution birth under an exogenous byte-identical reminder schedule.",
+        "evidence_needed": "Birth x fixed-advice/solo randomized roots, entry-normalized disposable-exam AUC, identical reminder bytes/timing, child budgets, task opportunities, writer implementation, compiler rules, initialized optimizer opportunity, dose rule, preservation gates, and exam schedule; treatment-induced grounded traces, corpora, gradients, candidates, verdicts, and commits may differ and are outcomes.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_BOOTSTRAP_ADAPTIVE_PACKAGE_ACCELERATION",
+        "before": "A full-system interaction can be called parenting alone.",
+        "after": "Conditional on Delta_E, the teachability bootstrap amplifies the selected adaptive parent-plus-child-plus-SLEEP developmental package.",
+        "evidence_needed": "Ecological birth x parent/solo roots, parent information/effort receipts, disposable clean exams, fixed standardized panel, raw curves and safety.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "C_SLEEP_CADENCE_TOTAL_PACKAGE",
+        "before": "Cadence mediation is overidentified from terminal adapters.",
+        "after": "Conditional on prospective K4/K1 evidence, earlier SLEEP availability changes lifetime checkpoint AUC and possibly terminal performance as a randomized total package.",
+        "evidence_needed": "Matched prospective roots plus standardized-ledger and descriptive terminal contrasts under the narrowed labels.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "final.hidden_answers",
+      "development.public_observation",
+      "evaluation.public_observation",
+      "bootstrap.parent_conditioning",
+      "life.child_grounded_trace",
+      "life.live_parent_text",
+      "control.repetition_state",
+      "audit.parent_state",
+      "cache.dream_context",
+      "evaluation.scientific_products",
+      "transaction.candidate_preservation_evidence",
+      "transaction.promotion_verdict",
+      "audit.release_decision",
+      "lineage.committed_head",
+      "transaction.candidate_closure"
+    ],
+    "stages": [
+      "BOOTSTRAP_BUILDER",
+      "BIRTH_WRITER",
+      "FIXED_PARENT_CONTROLLER",
+      "ADAPTIVE_PARENT_CONTROLLER",
+      "WAKE_CHILD",
+      "DREAM_CONTEXT_BUILDER",
+      "SLEEP_COMPILER",
+      "CANDIDATE_PRESERVATION_EVALUATOR",
+      "LINEAGE_PROMOTION_GATE",
+      "DEPLOYMENT_EVALUATOR",
+      "ISOLATED_AUDITOR",
+      "RELEASE_CONTROLLER"
+    ],
+    "cells": [
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "visible",
+        "reason": "DEPLOYMENT_EVALUATOR has the declared narrow role-specific access to final.hidden_answers."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to final.hidden_answers."
+      },
+      {
+        "information_id": "final.hidden_answers",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "final.hidden_answers has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "ADAPTIVE_PARENT_CONTROLLER has the declared narrow role-specific access to development.public_observation."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "visible",
+        "reason": "WAKE_CHILD has the declared narrow role-specific access to development.public_observation."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "visible",
+        "reason": "DREAM_CONTEXT_BUILDER has the declared narrow role-specific access to development.public_observation."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "derived_only",
+        "reason": "SLEEP_COMPILER may bind or derive only the declared nonsemantic projection of development.public_observation, not inspect its semantic contents."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to development.public_observation."
+      },
+      {
+        "information_id": "development.public_observation",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "development.public_observation has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "visible",
+        "reason": "DEPLOYMENT_EVALUATOR has the declared narrow role-specific access to evaluation.public_observation."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to evaluation.public_observation."
+      },
+      {
+        "information_id": "evaluation.public_observation",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.public_observation has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "visible",
+        "reason": "BOOTSTRAP_BUILDER has the declared narrow role-specific access to bootstrap.parent_conditioning."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "visible",
+        "reason": "BIRTH_WRITER has the declared narrow role-specific access to bootstrap.parent_conditioning."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to bootstrap.parent_conditioning."
+      },
+      {
+        "information_id": "bootstrap.parent_conditioning",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "bootstrap.parent_conditioning has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "ADAPTIVE_PARENT_CONTROLLER has the declared narrow role-specific access to life.child_grounded_trace."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "visible",
+        "reason": "WAKE_CHILD has the declared narrow role-specific access to life.child_grounded_trace."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "visible",
+        "reason": "DREAM_CONTEXT_BUILDER has the declared narrow role-specific access to life.child_grounded_trace."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "visible",
+        "reason": "SLEEP_COMPILER has the declared narrow role-specific access to life.child_grounded_trace."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to life.child_grounded_trace."
+      },
+      {
+        "information_id": "life.child_grounded_trace",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "life.child_grounded_trace has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "FIXED_PARENT_CONTROLLER has the declared narrow role-specific access to life.live_parent_text."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "ADAPTIVE_PARENT_CONTROLLER has the declared narrow role-specific access to life.live_parent_text."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "visible",
+        "reason": "WAKE_CHILD has the declared narrow role-specific access to life.live_parent_text."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "visible",
+        "reason": "DREAM_CONTEXT_BUILDER has the declared narrow role-specific access to life.live_parent_text."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to life.live_parent_text."
+      },
+      {
+        "information_id": "life.live_parent_text",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "life.live_parent_text has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "FIXED_PARENT_CONTROLLER has the declared narrow role-specific access to control.repetition_state."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "ADAPTIVE_PARENT_CONTROLLER has the declared narrow role-specific access to control.repetition_state."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "derived_only",
+        "reason": "LINEAGE_PROMOTION_GATE may bind or derive only the declared nonsemantic projection of control.repetition_state, not inspect its semantic contents."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to control.repetition_state."
+      },
+      {
+        "information_id": "control.repetition_state",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "control.repetition_state has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "derived_only",
+        "reason": "FIXED_PARENT_CONTROLLER may bind or derive only the declared nonsemantic projection of audit.parent_state, not inspect its semantic contents."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "visible",
+        "reason": "ADAPTIVE_PARENT_CONTROLLER has the declared narrow role-specific access to audit.parent_state."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "derived_only",
+        "reason": "LINEAGE_PROMOTION_GATE may bind or derive only the declared nonsemantic projection of audit.parent_state, not inspect its semantic contents."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to audit.parent_state."
+      },
+      {
+        "information_id": "audit.parent_state",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "audit.parent_state has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "visible",
+        "reason": "WAKE_CHILD has the declared narrow role-specific access to cache.dream_context."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "visible",
+        "reason": "DREAM_CONTEXT_BUILDER has the declared narrow role-specific access to cache.dream_context."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to cache.dream_context."
+      },
+      {
+        "information_id": "cache.dream_context",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "cache.dream_context has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "visible",
+        "reason": "DEPLOYMENT_EVALUATOR has the declared narrow role-specific access to evaluation.scientific_products."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to evaluation.scientific_products."
+      },
+      {
+        "information_id": "evaluation.scientific_products",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "evaluation.scientific_products has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "visible",
+        "reason": "CANDIDATE_PRESERVATION_EVALUATOR has the declared narrow role-specific access to transaction.candidate_preservation_evidence."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to transaction.candidate_preservation_evidence."
+      },
+      {
+        "information_id": "transaction.candidate_preservation_evidence",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_preservation_evidence has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "visible",
+        "reason": "CANDIDATE_PRESERVATION_EVALUATOR has the declared narrow role-specific access to transaction.promotion_verdict."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "visible",
+        "reason": "LINEAGE_PROMOTION_GATE has the declared narrow role-specific access to transaction.promotion_verdict."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to transaction.promotion_verdict."
+      },
+      {
+        "information_id": "transaction.promotion_verdict",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.promotion_verdict has no authorized edge into RELEASE_CONTROLLER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into SLEEP_COMPILER."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into CANDIDATE_PRESERVATION_EVALUATOR."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into LINEAGE_PROMOTION_GATE."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "audit.release_decision has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to audit.release_decision."
+      },
+      {
+        "information_id": "audit.release_decision",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "visible",
+        "reason": "RELEASE_CONTROLLER has the declared narrow role-specific access to audit.release_decision."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "lineage.committed_head has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "lineage.committed_head has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "lineage.committed_head has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "lineage.committed_head has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "visible",
+        "reason": "WAKE_CHILD has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "visible",
+        "reason": "DREAM_CONTEXT_BUILDER has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "visible",
+        "reason": "SLEEP_COMPILER has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "visible",
+        "reason": "CANDIDATE_PRESERVATION_EVALUATOR has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "visible",
+        "reason": "LINEAGE_PROMOTION_GATE has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "visible",
+        "reason": "DEPLOYMENT_EVALUATOR has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to lineage.committed_head."
+      },
+      {
+        "information_id": "lineage.committed_head",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "derived_only",
+        "reason": "RELEASE_CONTROLLER may bind or derive only the declared nonsemantic projection of lineage.committed_head, not inspect its semantic contents."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "BOOTSTRAP_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into BOOTSTRAP_BUILDER."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "BIRTH_WRITER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into BIRTH_WRITER."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "FIXED_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into FIXED_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "ADAPTIVE_PARENT_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into ADAPTIVE_PARENT_CONTROLLER."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "WAKE_CHILD",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into WAKE_CHILD."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "DREAM_CONTEXT_BUILDER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into DREAM_CONTEXT_BUILDER."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "SLEEP_COMPILER",
+        "visibility": "visible",
+        "reason": "SLEEP_COMPILER has the declared narrow role-specific access to transaction.candidate_closure."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "CANDIDATE_PRESERVATION_EVALUATOR",
+        "visibility": "visible",
+        "reason": "CANDIDATE_PRESERVATION_EVALUATOR has the declared narrow role-specific access to transaction.candidate_closure."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "LINEAGE_PROMOTION_GATE",
+        "visibility": "derived_only",
+        "reason": "LINEAGE_PROMOTION_GATE may bind or derive only the declared nonsemantic projection of transaction.candidate_closure, not inspect its semantic contents."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "DEPLOYMENT_EVALUATOR",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into DEPLOYMENT_EVALUATOR."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "ISOLATED_AUDITOR",
+        "visibility": "visible",
+        "reason": "ISOLATED_AUDITOR has the declared narrow role-specific access to transaction.candidate_closure."
+      },
+      {
+        "information_id": "transaction.candidate_closure",
+        "stage_id": "RELEASE_CONTROLLER",
+        "visibility": "forbidden",
+        "reason": "transaction.candidate_closure has no authorized edge into RELEASE_CONTROLLER."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "V2_ES01_EXACT_AUTHORITY",
+      "kind": "invariant",
+      "setup": "Validate every source hash, successor interpretation/critique/consensus, requested scope, and later exact implementation packet.",
+      "expected": "Only explicit human approval of unchanged exact bytes releases its exact scope; every normative change restarts the gate.",
+      "falsifies": "Inferred, stale, widened, or post-hoc authority invalidates implementation and evidence.",
+      "evidence_artifact": "Future intake and exact source-binding receipt.",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "V4_ES02_EVIDENCE_SUPPORT_AND_REPETITION_FIREWALL",
+      "kind": "unit",
+      "setup": "Exercise support/view fixtures while tainting reminder schedule, count, order, adaptive-parent state, parent audit, and independently grounded child enactments.",
+      "expected": "Only independently eligible child-grounded public traces can become lessons/views; repetition and parent state remain control-plane-only and cannot change compiler selection, cache, dose, labels, or gradients.",
+      "falsifies": "Any parent/repetition metadata changes semantic compiler output, or grounded child evidence cannot enter through ordinary life-data rules.",
+      "evidence_artifact": "Future dual-validator support and repetition-firewall receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V4_ES03_EXACT_WRITER_ROUTE_MASK_DOSE_AND_TAINT",
+      "kind": "unit",
+      "setup": "Bind the sole writer and compare encoded IDs, labels, masks, declared spans, batches, updates, optimizer/init, seeds, roots, and replay-candidate RNG/config while mutating every excluded parent/repetition/DREAM/scientific-evaluation value.",
+      "expected": "Only declared treatment spans differ; supervised response-token counts/positions and optimizer opportunity match; excluded-state mutation leaves semantic writer bytes invariant; replay candidates bind identical RNG/config.",
+      "falsifies": "Fallback writer, leakage, truncation/nonfinite skip, dropped seed, undeclared difference, unmatched dose, or taint-sensitive writer output.",
+      "evidence_artifact": "Future route, tokenizer, dose, RNG, mask, and taint-invariance receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V2_ES04_ZERO_EFFECTIVE_DELTA_INITIALIZER",
+      "kind": "unit",
+      "setup": "Use a tiny CPU linear LoRA fixture with treatment-paired initialization hashes and an all-zero/all-zero negative fixture.",
+      "expected": "Initial effective delta is exactly zero, one factor is nonzero, gradients flow, one step changes the delta, and paired hashes match.",
+      "falsifies": "Both factors zero, nonzero initial function, absent gradient, or arm-dependent initialization invalidates the writer.",
+      "evidence_artifact": "Future CPU initializer receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V2_ES05_BIRTH_MERGE_AND_CONTENT_IDENTITY",
+      "kind": "invariant",
+      "setup": "Validate the FP32 reference merge on tiny tensors, deterministic directory roots, real tensor inventories, unmerged/merged fixed-input parity, and BF16 rounding metrics.",
+      "expected": "Two fresh serializations match byte roots; births have equal schemas/dtypes/ties/counts, no adapter keys, bounded symmetric rounding loss, and explicit immutable roots.",
+      "falsifies": "Ambiguous arithmetic, vanished/asymmetric deltas, mutable roots, extra/symlink files, or reloaded behavior outside tolerance rejects the birth.",
+      "evidence_artifact": "Future merge, tensor, directory, and parity receipt.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V4_ES06_TYPED_LINEAGE_EVALUATION_AND_RETRY_FAULTS",
+      "kind": "unit",
+      "setup": "Route correct/mismatched births and inject faults across pre-SLEEP roots, staged compiler artifacts, private candidate evaluation, verdict, fsync, CAS, quarantine, restart, and each retry class.",
+      "expected": "Scientific products alter reporting only; private candidate evidence alters only staged promotion. Operational crash retries identical inputs once; second crash waits. Behavioral/preservation rejection never retries same data. Invalid source fails closed. Lived roots survive and failed derivatives remain quarantined.",
+      "falsifies": "Type collision, parent/exam feedback, stale promotion, retry drift, same-data behavioral retry, loss of lived state, or failed-derivative discovery.",
+      "evidence_artifact": "Future typed lineage, evaluation split, retry, and fault-matrix receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V2_ES07_DIRECT_CONTROL_PAIR_AND_SEMANTIC_AUDIT",
+      "kind": "invariant",
+      "setup": "Join all 192-240 permanent pairs, replay canonical actions, audit full prompt+target spans for all six frozen computations with two independent coders, and calibrate M0 difficulty. The rubric states that computation 3 requires explicitly diagnosing no new evidence or negative expected value before acting, and computation 6 requires retrieving and adapting a correction from a distinct earlier episode; supplied current actions/instructions do not count.",
+      "expected": "One T/D row per pair, identical rational action/outcome and optimizer slot, no treatment-dependent admission, 100% declared T computation, 0% D computation under the frozen noncircular rubric, reported irreducible difficulty, and D noninferior to M0 within -0.05.",
+      "falsifies": "Orphans, response-only audit, circular coding, supplied action counted as computation 3/6, deliberate failure, control harm, arm-dependent selection, or gross unhandled difficulty invalidates the bootstrap contrast.",
+      "evidence_artifact": "Future pair join, replay, semantic audit, M0 calibration, and active-control safety report.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V2_ES08_INCREMENTAL_TARGET_BLINDNESS",
+      "kind": "independent_review",
+      "setup": "Freeze bootstrap sources/births in an allowlisted environment before sealed downstream instances; audit dependency closure, structural-overlap table, action-equivalence advice cap, and downstream-byte mutation through an isolated auditor.",
+      "expected": "No incremental downstream-derived value reaches the builder/birth DAG; renamed downstream clones fail structural review; bootstrap bytes are invariant to downstream-only mutation; release binds only bootstrap root, policy, and auditor.",
+      "falsifies": "Downstream artifact access, conceptual one-to-one policy isomorphism, post-action advice, semantic action prescription, manual score selection, or tainted hash feedback invalidates incremental target blindness.",
+      "evidence_artifact": "Future ACL/dependency/structural/temporal/mutation audit receipt.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V2_ES09_STANDARDIZED_ADVICE_RECEPTIVITY",
+      "kind": "ablation",
+      "setup": "At birth, disposable same-state/seed clones receive correct, none, irrelevant, or wrong unseen process advice; no personal SLEEP or lineage feedback is permitted.",
+      "expected": "Correct advice selectively changes the mechanically scored action/outcome; irrelevant is null and wrong redirects/reduces the prespecified strategy; Delta_R reaches +0.05 on both canary roots without safety harm.",
+      "falsifies": "Generic second-attempt improvement, advice-insensitive gain, phrase-only change, mixed sign after the one allowed rerun, or harm beyond -0.05 stops bootstrap spending.",
+      "evidence_artifact": "Future clone counterfactual and Delta_R report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V4_ES10_FIXED_CURRICULUM_SLEEP_ACCELERATION",
+      "kind": "end_to_end",
+      "setup": "Randomize births to fixed byte-identical advice or solo development with identical tasks, reminder ages 1/9/17/25, child budgets, writer/compiler/dose rules, initialized opportunities, gates, and disposable exams. Use divergent mock grounded corpora and candidate outcomes.",
+      "expected": "Mechanism/opportunity invariants match while treatment-induced corpora/candidates may differ; Delta_F AUC reaches +0.03 on both canary roots with selective reset-persistent action use and no safety harm. Label fixed-curriculum-plus-personal-SLEEP.",
+      "falsifies": "Identical-realized-write requirement, behavior-dependent schedule, entry-only gain, exam feedback, unequal resources, ritual misuse, mixed sign after one rerun, or harm beyond -0.05.",
+      "evidence_artifact": "Future fixed-controller, equal-opportunity, lineage, exam, and Delta_F report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V2_ES11_ADAPTIVE_PACKAGE_ACCELERATION",
+      "kind": "end_to_end",
+      "setup": "Run direct/teachability birth x adaptive-parent/solo with the frozen personal SLEEP mechanism, equal nonparent resources, full parent information/effort receipts, standardized panels, and disposable exams.",
+      "expected": "Entry-normalized Delta_E AUC reaches +0.03 on both canary roots without safety harm; result is labeled the adaptive parent+child+SLEEP package interaction.",
+      "falsifies": "Calling the result parenting alone, missing parent information, exam contamination, pure entry gain, mixed sign after one rerun, or harm beyond -0.05 invalidates promotion.",
+      "evidence_artifact": "Future ecological package and Delta_E report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V4_ES12_REPETITION_CONTROL_AND_ENACTMENT",
+      "kind": "unit",
+      "setup": "Across relevant/irrelevant opportunities and resets, compare fixed exogenous reminders with adaptive acquisition/fade/relapse while tainting all control metadata and separately admitting child-grounded enactments through life data.",
+      "expected": "Control metadata never changes SLEEP; child-grounded selective enactment may enter ordinary evidence; fixed schedule ignores behavior; adaptive rules fire only at exact public criteria.",
+      "falsifies": "Lexical echo alone, irrelevant ritual, no action change, metadata-to-SLEEP path, behavior-dependent fixed schedule, or parent prose in SLEEP.",
+      "evidence_artifact": "Future control-plane taint, state-machine, and selective-enactment receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V2_ES13_STORAGE_EXTRACTION_USE_AND_CONTROLS",
+      "kind": "ablation",
+      "setup": "After clean reload/reset, separately score source reproduction, held-out cue extraction without text memory, and native action on fresh homologous tasks under correct, deranged, shuffled, wrong-life, equal-dose repetition, adapter-off, and previous-child conditions with frozen directional predictions.",
+      "expected": "Each metric is separate; the correct binding exceeds its practical margin, semantic controls remove or directionally redirect the declared effect, and preservation passes.",
+      "falsifies": "Lower source NLL called use, STATE_ONLY called recollection, unchanged semantic-control gain, or retrieval/context leakage invalidates the experiential-memory claim.",
+      "evidence_artifact": "Future writer assay and directional control matrix.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V2_ES14_PERSONAL_REPLAY_DEPENDENCE",
+      "kind": "ablation",
+      "setup": "After one admitted personal-SLEEP sentinel and an immediate clean probe, prospectively freeze its mechanical descendant-closure rule, dual-validator disagreement rule, and two disposable next-SLEEP candidates from the same immutable birth and later evidence: cumulative replay includes the sentinel closure; full ablation excludes it. Neither candidate may change the continuing lineage. Also run a dose-standardized sensitivity in which removed supervised-token positions are filled by a pre-frozen, arm-independent, bootstrap/downstream-disjoint preservation pool selected by content ID before outcomes.",
+      "expected": "Report the primary total sentinel-closure-removal effect and the dose-standardized sensitivity separately as replay dependence, alongside the immediate write effect and previous-child baseline; do not call either arm unreplayed natural retention or isolate the sentinel beyond its declared closure.",
+      "falsifies": "Different births/later evidence, post-outcome filler selection, incomplete or outcome-dependent descendant removal, unreported dose difference, lineage feedback, bootstrap sentinel substitution, or evaluation leakage invalidates the counterfactual.",
+      "evidence_artifact": "Future frozen closure/filler rules, dual-validator report, disposable-candidate roots, dose receipt, and replay-dependence report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V2_ES15_RANK_BY_EXPOSURE_ONLY",
+      "kind": "ablation",
+      "setup": "After compiler selection, cross rank 8/16 with low/high equalized supervised exposure while holding alpha/r, modules, writer, roots, and evaluation fixed.",
+      "expected": "Report capacity-by-exposure, parameter counts, source/extraction/use, and update/drift measures only.",
+      "falsifies": "Calling rank generic plasticity/age, changing other knobs, or selecting on final performance invalidates inference.",
+      "evidence_artifact": "Future rank-by-exposure calibration report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V2_ES16_CADENCE_TOTAL_AND_STANDARDIZED_LEDGER",
+      "kind": "ablation",
+      "setup": "After all prior gates and new authority, randomize matched lives K4/K1 and perform same-writer standardized terminal rewrites of each canonical ledger.",
+      "expected": "Report total checkpoint-AUC/terminal cadence effect, standardized-ledger consequence, and conditional descriptive writer/history contrast under exact labels.",
+      "falsifies": "Natural mediation labels, writer/dose/seed mismatch, or repeated material harm invalidates cadence inference.",
+      "evidence_artifact": "Future prospective cadence and standardized-ledger report.",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V2_ES17_PRIMARY_STATISTICS_AND_SPEND_ORDER",
+      "kind": "invariant",
+      "setup": "Before generation, freeze Y=1 iff the public engine records task success within the fixed action budget (invalid, missing, or noncrossing output is Y=0); ages 0,8,16,24,32; gain G_a=Y_a-Y_0; normalized trapezoid AUC=sum over adjacent ages of (G_left+G_right)/2 times age-width divided by 32; +0.05 Delta_R; +0.03 Delta_F/Delta_E; -0.05 safety; root unit; one mixed-sign rerun; and six-new-root replication requirement.",
+      "expected": "Two-root canaries only license the next sequential stage; scientific claims use six separately frozen new independent roots and no task/age/seed pseudoreplication.",
+      "falsifies": "Post-hoc endpoint/margin/root changes, pooling canaries as confirmation, ambiguous success/AUC arithmetic, or skipping a failed stage invalidates promotion.",
+      "evidence_artifact": "Future preregistration and analysis-schema receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V4_ES19_COMPLETE_VISIBILITY_AND_EVALUATION_NONINTERFERENCE",
+      "kind": "unit",
+      "setup": "Enumerate every registered stage-information cell, exercise allowed edges, taint forbidden inputs, and run both disposable scientific evaluation and private candidate preservation before comparing all roots and products.",
+      "expected": "The full Cartesian product is present. Scientific evaluation changes reporting/audit only; candidate evidence changes only the staged verdict/promotion path; every forbidden mutation is inert or fails closed.",
+      "falsifies": "Missing cell/stage/type, type collision, evaluation feedback, parent visibility into candidate gates, or unexpected root/cache/selection change.",
+      "evidence_artifact": "Future complete visibility-product, taint, and root-diff receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V4_ES20_CLASSIFIED_REJECTION_PRESERVES_LIFE",
+      "kind": "unit",
+      "setup": "Commit distinctive wake/parent/repetition sentinels; force one and two operational crashes, behavioral rejection, preservation rejection, and source/dose/visibility invalidity at every boundary; restart, rebuild DREAM, and attempt the next allowed candidate.",
+      "expected": "One operational retry is byte-identical; second crash waits for threshold. Behavioral/preservation rejection has no same-data retry. Invalidity fails closed. Lived roots survive, prior weights stay active, candidate derivatives quarantine, DREAM rebuilds, and next-head ancestry is exact.",
+      "falsifies": "Retry-class confusion, changed retry inputs, lost life/history, failed promotion, derivative leakage, stale DREAM, or premature next attempt.",
+      "evidence_artifact": "Future classified-rejection, ancestry, restart, and next-head receipt.",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "V2_ES18_FRESH_REVIEW_AND_GPU_GATE",
+      "kind": "independent_review",
+      "setup": "After scoped implementation, obtain a fresh independent reviewer and separate author-side advocate over exact sources, CPU fixtures, dry-run receipts, visibility, resources, and claims; then request separate GPU authority.",
+      "expected": "Reviewer passes exact implementation and lowest-cost preceding gates; advocate cannot override rejection; human explicitly authorizes the exact GPU packet.",
+      "falsifies": "Self-certification, stale review, widened scope, or GPU execution from proposal approval invalidates evidence.",
+      "evidence_artifact": "Future review, advocate, human decision, and GPU authorization receipt.",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V4_ES21_FIRST_AFFECTED_EXECUTION_GATE_ORDER",
+      "kind": "invariant",
+      "setup": "Attempt every affected CPU evaluation, writer, candidate, model, benchmark-generation, adapter, and GPU packet with ES19/ES20 absent, failed, stale, and passed.",
+      "expected": "Every affected packet fails closed until both exact model-free safety receipts pass and remain hash-valid; later scopes still require their own authority.",
+      "falsifies": "Any CPU/GPU/model/evaluation/write/data action starts from architecture approval alone or before the safety receipts.",
+      "evidence_artifact": "Future gate-order dependency and negative-dispatch receipt.",
+      "required_before": "model_execution"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "After fresh independent interpretation, critique, and consensus, does Rohin ratify the exact v4 architecture identified by chg_20260909_extractable_sleep_bootstrap_v4 and its bound consensus hash, and only a separately enumerated downstream scope?",
+    "forbidden_before_approval": [
+      "implementation",
+      "model_execution",
+      "tokenizer_execution",
+      "benchmark_generation",
+      "adapter_work",
+      "gpu_use",
+      "resource_acquisition",
+      "external_scientific_execution",
+      "scientific_claim",
+      "publication_or_push"
+    ]
+  }
+}

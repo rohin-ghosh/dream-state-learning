@@ -1,0 +1,2984 @@
+{
+  "contract": "ppc5.controller_registry.v7",
+  "schema_version": 7,
+  "operation_vocabulary": [
+    "ACT",
+    "PREDICT",
+    "READ",
+    "STOP"
+  ],
+  "result_vocabulary": [
+    "ACT_SUCCESS",
+    "COMMITMENT_ABSENT",
+    "COMMITMENT_INVALID",
+    "COMMIT_ACK",
+    "DREAM_MISSING_NO_RETRY",
+    "ERROR",
+    "ERROR_LIMIT",
+    "FINALIZE",
+    "FLUSH_SKIPPED_REJECTED",
+    "FOUND",
+    "MODEL_MISSING_NO_RETRY",
+    "NO_ADAPTER",
+    "NOT_FOUND",
+    "PREDICT_SUCCESS",
+    "PROVIDER_MISSING_NO_RETRY",
+    "PUBLISHED",
+    "READ_SUCCESS",
+    "SLOT_ACK",
+    "TRAIN_FAILED"
+  ],
+  "terminal_vocabulary": [
+    "BUDGET_EXHAUSTED",
+    "CONSTRUCTION_FAIL",
+    "ERROR_LIMIT",
+    "MODEL_STOP",
+    "NO_VALID_ACTION",
+    "PROVIDER_SEQUENCE_COMPLETE",
+    "RUN_INVALID",
+    "SCHEDULE_COMPLETE",
+    "SCHEDULE_INCOMPLETE"
+  ],
+  "error_vocabulary": [
+    "ACTION_LIMIT",
+    "INVALID_ACTION",
+    "INVALID_DOMAIN",
+    "INVALID_REFERENCE",
+    "MODEL_MISSING_NO_RETRY",
+    "PARSE_ERROR",
+    "PREDICTION_MISMATCH",
+    "PREDICTION_REQUIRED",
+    "READ_LIMIT",
+    "RUN_INVALID",
+    "SCHEDULE_VIOLATION",
+    "TOKEN_LIMIT"
+  ],
+  "first_failure_order": [
+    "INTEGRITY",
+    "PREDISPATCH_BUDGET",
+    "MISSING_CALL",
+    "TOKEN_LIMIT",
+    "PARSE_ERROR",
+    "LOGICAL_ALLOWANCE",
+    "DOMAIN",
+    "REFERENCE",
+    "PREDICTION",
+    "SCHEDULE",
+    "PROVIDER_MISSING",
+    "ENVIRONMENT_INVALID",
+    "SUCCESS"
+  ],
+  "rows": [
+    {
+      "row_id": "D1A_PROVIDER",
+      "assay_id": "D1A",
+      "program": "DIRECT_PROVIDER",
+      "phase_pattern": {
+        "family": "PROVIDER",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "Q",
+        "increment": 1,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "PROVIDER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FOUND",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "FOUND",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "SELECTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "NOT_FOUND",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "NOT_FOUND",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "SELECTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "PROVIDER_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "PROVIDER_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1A_PROVIDER_BOUNDARY",
+      "assay_id": "D1A",
+      "program": "DIRECT_PROVIDER",
+      "phase_pattern": {
+        "family": "PROVIDER",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "Q",
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "PROVIDER_SEQUENCE_COMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_READ",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "L",
+        "increment": 1,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "result_transitions": [
+        {
+          "accepted_result": "READ_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "READ_SUCCESS",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_READ_BOUNDARY",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "L",
+        "increment": 0,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": {
+        "family": "PREDICT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "result_transitions": [
+        {
+          "accepted_result": "PREDICT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "PREDICT_SUCCESS",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": {
+        "family": "ACT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "result_transitions": [
+        {
+          "accepted_result": "ACT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "ACT_SUCCESS",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_COMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "ACTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_AUTH_FINAL",
+      "assay_id": "D1B",
+      "program": "D1B_AUTHENTIC",
+      "phase_pattern": {
+        "family": "FINALIZE_INCOMPLETE",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "DISCARD"
+    },
+    {
+      "row_id": "D1B_ONE_PLAN",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "PLAN_READ",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "L",
+        "increment": 1,
+        "boundary_phase": "FLUSH",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "result_transitions": [
+        {
+          "accepted_result": "SLOT_ACK",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "SLOT_ACK",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE"
+    },
+    {
+      "row_id": "D1B_ONE_PLAN_BOUNDARY",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "PLAN_READ",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "L",
+        "increment": 0,
+        "boundary_phase": "FLUSH",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_FLUSH",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "FLUSH",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "L",
+        "increment": 1,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "READ_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "READ_SUCCESS",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "FLUSH_SKIPPED_REJECTED",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FLUSH_SKIPPED_REJECTED",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "PROVIDER_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "PROVIDER_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "FLUSH"
+    },
+    {
+      "row_id": "D1B_ONE_FLUSH_BOUNDARY",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "FLUSH",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "L",
+        "increment": 0,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "PREDICT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "result_transitions": [
+        {
+          "accepted_result": "PREDICT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "PREDICT_SUCCESS",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "ACT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "result_transitions": [
+        {
+          "accepted_result": "ACT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "ACT_SUCCESS",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_COMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "ACTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FINALIZE_INCOMPLETE",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_ONE_FINAL",
+      "assay_id": "D1B",
+      "program": "D1B_ONE_SHOT",
+      "phase_pattern": {
+        "family": "FINALIZE_INCOMPLETE",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "DISCARD"
+    },
+    {
+      "row_id": "D1B_OPEN_PLAN",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "PLAN_READ",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "L",
+        "increment": 1,
+        "boundary_phase": "BLIND_PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "result_transitions": [
+        {
+          "accepted_result": "SLOT_ACK",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "SLOT_ACK",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "PLAN_READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE"
+    },
+    {
+      "row_id": "D1B_OPEN_PLAN_BOUNDARY",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "PLAN_READ",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "L",
+        "increment": 0,
+        "boundary_phase": "BLIND_PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "BLIND_PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_BLIND_PREDICT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "BLIND_PREDICT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "result_transitions": [
+        {
+          "accepted_result": "COMMIT_ACK",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "COMMIT_ACK",
+          "next_phase": {
+            "family": "BLIND_ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "BLIND_ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "BLIND_ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "BLIND_ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE"
+    },
+    {
+      "row_id": "D1B_OPEN_BLIND_ACT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "BLIND_ACT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "result_transitions": [
+        {
+          "accepted_result": "COMMIT_ACK",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "COMMIT_ACK",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "QUEUE"
+    },
+    {
+      "row_id": "D1B_OPEN_FLUSH",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "FLUSH",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "L",
+        "increment": 1,
+        "boundary_phase": "EXECUTE_COMMIT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "READ_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "READ_SUCCESS",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "FLUSH_SKIPPED_REJECTED",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FLUSH_SKIPPED_REJECTED",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "PROVIDER_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "PROVIDER_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "FLUSH",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "FLUSH"
+    },
+    {
+      "row_id": "D1B_OPEN_FLUSH_BOUNDARY",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "FLUSH",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "L",
+        "increment": 0,
+        "boundary_phase": "EXECUTE_COMMIT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "EXECUTE_COMMIT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1B_OPEN_COMMIT",
+      "assay_id": "D1B",
+      "program": "D1B_OPEN_LOOP",
+      "phase_pattern": {
+        "family": "EXECUTE_COMMIT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "ENVIRONMENT",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "ACT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "ACT_SUCCESS",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_COMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "ACTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "COMMITMENT_ABSENT",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "COMMITMENT_ABSENT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "COMMITMENT_INVALID",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "COMMITMENT_INVALID",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "EXECUTE_COMMIT"
+    },
+    {
+      "row_id": "D1C_READ",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "R",
+        "increment": 1,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "result_transitions": [
+        {
+          "accepted_result": "READ_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "READ_SUCCESS",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1C_READ_BOUNDARY",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "R",
+        "increment": 0,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1C_PREDICT",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": {
+        "family": "PREDICT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "result_transitions": [
+        {
+          "accepted_result": "PREDICT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "PREDICT_SUCCESS",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1C_ACT",
+      "assay_id": "D1C",
+      "program": "FIXED_BEHAVIOR",
+      "phase_pattern": {
+        "family": "ACT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "result_transitions": [
+        {
+          "accepted_result": "ACT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "ACT_SUCCESS",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_COMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "ACTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_ROOT_TO_PROVIDER",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "ROOT_SLEEP_PUBLICATION",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "PUBLISHED",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "PUBLISHED",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "NO_ADAPTER",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "NO_ADAPTER",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "TRAIN_FAILED",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "TRAIN_FAILED",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "ASSIGNED_POLICY_CONTINUATION"
+        },
+        {
+          "accepted_result": "DREAM_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "DREAM_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PROVIDER",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "PROVIDER",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "Q",
+        "increment": 1,
+        "boundary_phase": "READ",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "PROVIDER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FOUND",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "FOUND",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "SELECTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "NOT_FOUND",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "NOT_FOUND",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "SELECTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "PROVIDER_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "PROVIDER_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "PROVIDER",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PROVIDER_BOUNDARY_R_POSITIVE",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "PROVIDER",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "Q",
+        "increment": 0,
+        "boundary_phase": "READ",
+        "guard": "R_POSITIVE"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "ZERO",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PROVIDER_BOUNDARY_R_ZERO",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "PROVIDER",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "Q",
+        "increment": 0,
+        "boundary_phase": "PREDICT",
+        "guard": "R_ZERO"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_READ",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "LESS_THAN_BOUND",
+        "bound_symbol": "R",
+        "increment": 1,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "READ",
+      "result_transitions": [
+        {
+          "accepted_result": "READ_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "READ_SUCCESS",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "READ",
+            "index_rule": "INCREMENT",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 1,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_READ_BOUNDARY",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "READ",
+        "index_relation": "AT_BOUNDARY",
+        "bound_symbol": "R",
+        "increment": 0,
+        "boundary_phase": "PREDICT",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "CONTROLLER",
+      "required_operation": "NONE",
+      "result_transitions": [
+        {
+          "accepted_result": "FINALIZE",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "FINALIZE",
+          "next_phase": {
+            "family": "PREDICT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": false,
+          "advance_once": false,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 0,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_PREDICT",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "PREDICT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "PREDICT",
+      "result_transitions": [
+        {
+          "accepted_result": "PREDICT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "PREDICT_SUCCESS",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "NONE"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "ACT",
+            "index_rule": "NONE",
+            "terminal_reason": null
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 0,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    },
+    {
+      "row_id": "D1D_ACT",
+      "assay_id": "D1D",
+      "program": "D1D_TOTAL",
+      "phase_pattern": {
+        "family": "ACT",
+        "index_relation": "UNINDEXED",
+        "bound_symbol": null,
+        "increment": 0,
+        "boundary_phase": "TERMINAL",
+        "guard": "ALWAYS"
+      },
+      "dispatch_kind": "MODEL",
+      "required_operation": "ACT",
+      "result_transitions": [
+        {
+          "accepted_result": "ACT_SUCCESS",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "RESET_ZERO",
+          "normalized_result": "ACT_SUCCESS",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_COMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "ACTION_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_0",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_1",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "ERROR",
+          "counter_predicate": "EQ_2",
+          "counter_update": "INCREMENT",
+          "normalized_result": "ERROR_LIMIT",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "ERROR_LIMIT"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "TERMINAL_ZERO_OBSERVATION"
+        },
+        {
+          "accepted_result": "MODEL_MISSING_NO_RETRY",
+          "counter_predicate": "ANY_0_2",
+          "counter_update": "PRESERVE",
+          "normalized_result": "MODEL_MISSING_NO_RETRY",
+          "next_phase": {
+            "family": "TERMINAL",
+            "index_rule": "NONE",
+            "terminal_reason": "SCHEDULE_INCOMPLETE"
+          },
+          "consume_call": true,
+          "advance_once": true,
+          "retry_allowed": false,
+          "endpoint_effect": "MISSING_OBSERVATION"
+        }
+      ],
+      "first_failure_order": [
+        "INTEGRITY",
+        "PREDISPATCH_BUDGET",
+        "MISSING_CALL",
+        "TOKEN_LIMIT",
+        "PARSE_ERROR",
+        "LOGICAL_ALLOWANCE",
+        "DOMAIN",
+        "REFERENCE",
+        "PREDICTION",
+        "SCHEDULE",
+        "PROVIDER_MISSING",
+        "ENVIRONMENT_INVALID",
+        "SUCCESS"
+      ],
+      "debit": {
+        "calls": 1,
+        "reads": 0,
+        "actions": 1,
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "queue_effect": "NONE"
+    }
+  ],
+  "registry_hash": "22f328b8a41ca6e8b0b8d244ba53f092fce0bf363987cb53fd4751936c11ccea"
+}

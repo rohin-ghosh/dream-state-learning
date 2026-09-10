@@ -1,0 +1,162 @@
+{
+  "artifact_type": "PCFL_COMPILER_CONTRACT",
+  "canonicalization": {
+    "accepted_wire_form": "RFC8785_JCS_UTF8_PLUS_ONE_LF",
+    "atom_identity": "sha256(NFC-before-JCS({object,relation,subject})) without LF",
+    "normalization_order": ["strict UTF-8 parse with duplicate-key rejection", "NFC normalize every key and string", "reject normalized-key collisions", "closed-schema validation", "RFC 8785 JCS", "append exactly one LF"],
+    "reject": ["duplicate key", "float", "null", "unknown key", "noncanonical handle", "non-NFC accepted wire bytes", "more or fewer than one trailing LF"]
+  },
+  "compiler": {
+    "calls_model": false,
+    "candidate_generation": "the four compiled views never create additional semantic candidates; candidate identity remains canonical atom_id",
+    "deduplication": "resolve aliases first, deduplicate by canonical atom_id, and retain one atom only",
+    "direct_closure_rule": "each view contains exactly one edge and no view or group metadata may encode a target, route plan, preparation set, action sequence, terminal action, proof, status, provenance, confidence, or solution closure",
+    "eligibility": "latest append-only status at the sealed snapshot is SUPPORTED; PROPOSED, PROVISIONAL, CONTRADICTED, REVOKED, terminal/evaluation descendants, and control-tainted products emit no authentic positive view",
+    "input_order": {
+      "age_band": "OLD when first SUPPORTED in a predecessor snapshot; NEW when first SUPPORTED in the current snapshot",
+      "bucket_order": ["PREPARATION_TRANSFORM_OLD", "PREPARATION_TRANSFORM_NEW", "SITE_PREDICATE_OLD", "SITE_PREDICATE_NEW", "ROUTE_REQUIREMENT_OLD", "ROUTE_REQUIREMENT_NEW"],
+      "within_bucket": "atom_id ascending lowercase ASCII",
+      "round_robin": "emit one atom from each nonempty bucket in bucket_order, repeat from the first bucket, and skip exhausted buckets",
+      "suffix_noninterference": "adding later events/statuses creates a new snapshot and cannot change any prior bucket, atom order, view bytes, corpus bytes, or digest"
+    },
+    "output_cardinality": "exactly four views per eligible deduplicated atom, one of each named kind, with no repetitions",
+    "output_order_per_atom": ["FORWARD_COMPLETION", "REVERSE_COMPLETION", "INCIDENT_EDGE_RECALL", "ONE_MEMORY_STATEMENT"],
+    "output_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/compiled_view",
+    "training_exposure": "compiler exposure is one per view; any later training repeat belongs to a separately frozen recipe and adds no epistemic support"
+  },
+  "d0_scope": {
+    "allowed": ["exact supported-atom fixture input", "alias/dedup checker", "four-view renderer", "S-bind fixture transform", "matched-state intervention checker", "canonical hashes", "resource counts"],
+    "forbidden": ["model call", "model weight load", "DREAM execution", "LoRA", "training", "GPU", "network", "remote service", "scientific cell", "scientific claim"],
+    "meaning_of_green": "deterministic compiler and intervention-checker conformance only"
+  },
+  "node_token": {
+    "definition": "ASCII concatenation node.kind + ':' + node.value",
+    "escaping": "none; every kind and value is restricted to the schema ASCII alphabet",
+    "examples": ["PREPARATION_FAMILY:P1000001", "TRANSFORM_TEMPLATE:SET_T0_1", "SITE_FAMILY:S1000001", "PREDICATE_TEMPLATE:F0", "ROUTE_REQUIREMENT:G0"]
+  },
+  "s_bind": {
+    "adjacent_length_bin_merge": {
+      "attempt_order": "for an underivable stratum, try the immediately lower answer-token-length bin first, then the immediately higher bin; endpoints have one neighbor",
+      "bins": ["TOK_1_2", "TOK_3_4", "TOK_5_8", "TOK_9_16", "TOK_17_PLUS"],
+      "limit": "one adjacent merge per original stratum; no relation, claim-type, status, root-count, provenance-count, candidate-count, or nonadjacent length merge",
+      "on_failure": "invalidate the generator/control fixture before model calls"
+    },
+    "answer_marginals": "objects are permuted, never invented or dropped; the multiset of object NodeRefs and every rendered completion is preserved within each final stratum",
+    "application": [
+      "freeze and hash the authentic eligible atom set, aliases, root projections, four views, candidate membership, answer slots, return fixtures, corpus manifest, and training envelope",
+      "form exact strata and compute one source-claim to donor-claim permutation",
+      "replace each source atom object with its donor atom object and keep the source subject and relation",
+      "require before_object != after_object and recompute rebound atom_id from the rebound semantic atom",
+      "rewrite every alias target to the corresponding rebound atom_id",
+      "apply the same claim binding map to control root semantic projections, all four co-referent views, candidate/query membership, answer slots, read returns, corpus entries, and manifests",
+      "keep authentic roots, authentic lifecycle logs, and authentic snapshots byte-unchanged",
+      "mark every derived product CONTROL_CORRUPTED_S_BIND and NOT_A_LIFECYCLE_CLAIM"
+    ],
+    "global_coherence": "the binding map is created once at canonical-claim level; no view, alias, root projection, query, answer, return, or manifest may choose or infer its own permutation",
+    "identity": "rebound_atom_id is a new semantic atom identity; source_atom_id, donor_atom_id, proposal_id, status_event_id, alias_id, view_id, and training-realization IDs remain distinct",
+    "manifest_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/s_bind_manifest",
+    "permutation_algorithm": {
+      "fixed_point_rule": "both donor_atom_id != source_atom_id and donor.object != source.object for every source",
+      "method": "sort source claims by atom_id; choose the numerically smallest cyclic left shift k in 1..n-1 satisfying the fixed-point rule for every row",
+      "scope": "each final stratum independently, then concatenate binding_map entries by source_atom_id ascending",
+      "uniqueness": "source and donor atom IDs each occur exactly once within the final stratum"
+    },
+    "preserved": [
+      "relation kind",
+      "claim type",
+      "source lifecycle status label as a stratification attribute only",
+      "root-count bin",
+      "provenance-count bin",
+      "answer-token-length bin or the single declared adjacent merged bin",
+      "candidate count",
+      "answer marginal multiset",
+      "exactly four view counts",
+      "training examples, tokens, steps, touches, and all other envelope fields"
+    ],
+    "root_compatibility": {
+      "authentic": "authentic evidence roots and status events remain unchanged and continue to support only authentic atoms",
+      "control_projection": "copy each root's public semantic projection, apply the same binding-map rewrite to all mapping-bearing fields, assign a distinct control projection digest, and require the rebound atom to agree with the rewritten projection",
+      "forbidden": "a control projection may not appear in an authentic status transition, support count, claim identity, or scientific truth ledger",
+      "pass_condition": "every rebound atom agrees with every mapping-bearing control root projection and no authentic root byte changes"
+    },
+    "stratum_key": [
+      "relation",
+      "claim_type",
+      "source_status=SUPPORTED",
+      "root_count_bin: ROOT_1, ROOT_2, ROOT_3_4, ROOT_5_PLUS",
+      "provenance_count_bin: PROV_0, PROV_1, PROV_2_PLUS",
+      "answer_token_length_bin under the frozen tokenizer: TOK_1_2, TOK_3_4, TOK_5_8, TOK_9_16, TOK_17_PLUS",
+      "incident_candidate_count as an exact integer"
+    ],
+    "taint": "CONTROL_CORRUPTED_S_BIND",
+    "view_count": 4
+  },
+  "schema_version": "PCFL_D0_EXACT_V2",
+  "twin_intervention": {
+    "common": {
+      "all_unlisted_bytes": "must byte-collide",
+      "atom_mapping": "use the registered canonical twin atom map; relation and endpoint kinds must match, source/twin atoms must be authentic at their own sealed snapshots, and all dependent path copies must be changed with their source slots",
+      "certificate_schema_ref": "schemas/pcfl_d0_objects.schema.json#/$defs/twin_intervention_certificate",
+      "changed_bytes": "enumerate the minimal complete set as canonical JSON pointers with before/after hashes",
+      "credit_rule": "D0 can validate the checker only; later constructive credit requires the same intervention on an actually sealed pre-decision model state under new authority"
+    },
+    "matched_twin_state_fork": {
+      "allowed_when": "the non-memory public decision states do not byte-collide",
+      "construction": "independently replay the registered twin world and its registered action prefix to the matched decision index; take goal, public state, public outcome workspace, repeat state, remaining budgets, and authentic memory/path from that reachable twin cut",
+      "forbidden": "copying twin atoms into the original divergent public state, editing an original trait panel to look plausible, or retaining an original outcome/path that the replayed twin could not produce",
+      "required_changed_pointer_classes": ["PUBLIC_STATE", "PUBLIC_OUTCOME", "REPEAT_STATE", "BUDGET", "MEMORY_ATOM", "PATH_COPY"],
+      "validity": "simulator replay hash equals twin_cut_sha256, action count and budgets equal the replayed prefix, every changed pointer is enumerated, and every unlisted byte equals the source fork",
+      "verdict": "evaluate the operation against the registered valid action/set for the coherent twin state; do not interpret a source-versus-twin difference as a memory-only effect"
+    },
+    "memory_only_at_colliding_cut": {
+      "allowed_changed_pointer_classes": ["MEMORY_ATOM", "PATH_COPY"],
+      "allowed_when": "a collision certificate proves all non-memory resolver-input bytes, public state/outcomes, repeat state, budgets, prompt bytes, snapshot-handle bytes, catalog envelope, and timing class are identical at the exact decision cut",
+      "required": "replace every atom in the registered minimal cited cut and every dependent path copy with its type-matched authentic twin atom; cut all redundant cited paths",
+      "validity": "the intervened resolver input is reachable in both twins at the certified cut and differs only at enumerated memory/path pointers",
+      "verdict": "the decisive operation must become the registered twin-valid action or unordered preparation set"
+    }
+  },
+  "view_count": 4,
+  "views": [
+    {
+      "anchor": "atom.subject",
+      "completion_template": "{object_node_token}",
+      "edge_count": 1,
+      "kind": "FORWARD_COMPLETION",
+      "prompt_template": "PCFL edge completion | subject={subject_node_token} | relation={relation} | object="
+    },
+    {
+      "anchor": "atom.object",
+      "completion_template": "{subject_node_token}",
+      "edge_count": 1,
+      "kind": "REVERSE_COMPLETION",
+      "prompt_template": "PCFL reverse edge | object={object_node_token} | relation={relation} | subject="
+    },
+    {
+      "anchor": "atom.subject",
+      "completion_template": "{subject_node_token} --{relation}--> {object_node_token}",
+      "edge_count": 1,
+      "kind": "INCIDENT_EDGE_RECALL",
+      "prompt_template": "PCFL incident edge | anchor={subject_node_token} | edge="
+    },
+    {
+      "anchor": "atom.subject",
+      "completion_template": "{subject_node_token} --{relation}--> {object_node_token}",
+      "edge_count": 1,
+      "kind": "ONE_MEMORY_STATEMENT",
+      "prompt_template": "PCFL memory | "
+    }
+  ],
+  "view_semantics": {
+    "forward_completion": "complete the exact object endpoint from the subject and relation",
+    "incident_edge_recall": "return the same single full edge from a generic subject anchor without a desired relation argument",
+    "one_memory_statement": "state only the same single edge",
+    "reverse_completion": "complete the exact subject endpoint from the object and relation; for PREPARATION_TRANSFORM this exposes transform-template to preparation-family recognition after an explicit MODEL_DERIVED_TRANSFORM query. It is the same atom_id, not an inverse causal claim or runtime projection oracle"
+  },
+  "view_string_rules": {
+    "delimiter_bytes": "all spaces, vertical bars, colons, hyphens, greater-than signs, and equals signs shown in the templates are literal ASCII",
+    "substitution": "replace each brace token exactly once after computing node_token; braces never appear in output",
+    "trailing_newline_inside_prompt_or_completion": false,
+    "view_id": "sha256(NFC-before-JCS({anchor,atom,completion,control_taint,edge_count,object_type,prompt,schema_version,view_kind})) without LF"
+  }
+}

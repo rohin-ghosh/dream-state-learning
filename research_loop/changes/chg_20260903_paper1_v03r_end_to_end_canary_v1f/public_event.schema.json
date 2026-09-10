@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-public-event-v1f",
+  "title": "Closed public event projection",
+  "oneOf": [
+    {"$ref": "#/$defs/route"},
+    {"$ref": "#/$defs/effect"},
+    {"$ref": "#/$defs/source_value"},
+    {"$ref": "#/$defs/animal_value"},
+    {"$ref": "#/$defs/target_baseline"},
+    {"$ref": "#/$defs/recipe"}
+  ],
+  "$defs": {
+    "base_properties": {
+      "event_id": {"type": "string", "pattern": "^E0000(?:[0-3][0-9]|4[0-8])$"},
+      "event_index": {"type": "integer", "minimum": 0, "maximum": 48},
+      "event_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "valve": {"type": "string", "pattern": "^valve:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "label": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "mixture": {"type": "string", "maxLength": 128, "pattern": "^mixture:[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63}(?:\\+[1-9][0-9]*\\*[a-z0-9][a-z0-9_.-]{0,63})*$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]},
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "ROUTE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/source"}], "minItems": 2, "maxItems": 2},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "EFFECT"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/valve"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "source_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "SOURCE_VALUE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "animal_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "ANIMAL_VALUE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/source"}, {"$ref": "#/$defs/label"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "target_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "TARGET_BASELINE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/mixture"}], "minItems": 3, "maxItems": 3},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_index", "kind", "fields", "event_hash"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/base_properties/event_id"},
+        "event_index": {"$ref": "#/$defs/base_properties/event_index"},
+        "kind": {"const": "RECIPE"},
+        "fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/mixture"}, {"$ref": "#/$defs/label"}], "minItems": 2, "maxItems": 2},
+        "event_hash": {"$ref": "#/$defs/base_properties/event_hash"}
+      }
+    }
+  },
+  "x-identity-contract": {
+    "global_lexical_domain": "event_id is one of E000000..E000048 and event_index is one of 0..48. E000049 and every higher E000xxx alias are invalid.",
+    "identity_index_equality": "event_id must equal E plus event_index rendered as six decimal digits; a closed-event contextual validator enforces this equality in addition to JSON Schema shape.",
+    "per_life_actual_count": "For a sealed life with actual_event_count n, the event list contains exactly one event for every index 0..n-1 in order and contains no event at index n or above. Seed-1 DEV lives require n=49; seeds 0, 2, and heldout seed 5 require n=46.",
+    "projection_pair": "Every accepted Ei is paired one-to-one with witnessed Mi carrying the same six digits and singleton external lineage [Ei]. Missing, gapped, reused, reordered, cross-life, or above-life identities fail before dispatch."
+  },
+  "x-golden-vectors": {
+    "target": "the complete public-event schema; expected_branch is the sole matching top-level oneOf branch",
+    "positive": [
+      {
+        "name": "source-value-kind-disjoint",
+        "expected_branch": "source_value",
+        "instance": {"event_id": "E000005", "event_index": 5, "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "event_hash": "ce6da5c6158d50ae14203b05bdce652da9be10460ecf22d8b0c65fd95a1d37dd"}
+      },
+      {
+        "name": "animal-value-kind-disjoint",
+        "expected_branch": "animal_value",
+        "instance": {"event_id": "E000021", "event_index": 21, "kind": "ANIMAL_VALUE", "fields": ["animal:otter", "source:dandyland", "label:red"], "event_hash": "5bd0e9cc169282272c1ad7e8eb707b6544b7c410949d194664b088601c4592dd"}
+      },
+      {
+        "name": "dev-seed1-last-index-48",
+        "expected_branch": "recipe",
+        "instance": {"event_id": "E000048", "event_index": 48, "kind": "RECIPE", "fields": ["mixture:1*red+1*yellow+1*blue", "label:brown"], "event_hash": "4f841ddfa01aa447c51cc3a92875594c6501d6f1bafb1482acb318b8c19638e1"}
+      }
+    ],
+    "negative": [
+      {
+        "name": "index-49-is-outside-registered-domain",
+        "instance": {"event_id": "E000049", "event_index": 49, "kind": "RECIPE", "fields": ["mixture:1*red", "label:red"], "event_hash": "0000000000000000000000000000000000000000000000000000000000000000"}
+      },
+      {
+        "name": "event-id-index-mismatch",
+        "mutation": "pair event_id E000048 with event_index 47",
+        "expected": "REJECT_CONTEXTUALLY"
+      },
+      {
+        "name": "above-life-alias",
+        "life_actual_event_count": 46,
+        "mutation": "supply the otherwise schema-valid E000046/event_index=46",
+        "expected": "REJECT_CONTEXTUALLY"
+      },
+      {
+        "name": "kind-and-fields-namespace-mismatch",
+        "instance": {"event_id": "E000005", "event_index": 5, "kind": "SOURCE_VALUE", "fields": ["animal:cow", "target:confluenceland", "label:red"], "event_hash": "0000000000000000000000000000000000000000000000000000000000000000"}
+      },
+      {
+        "name": "unclosed-extra-key",
+        "instance": {"event_id": "E000005", "event_index": 5, "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "event_hash": "ce6da5c6158d50ae14203b05bdce652da9be10460ecf22d8b0c65fd95a1d37dd", "latent_bit": 0}
+      }
+    ]
+  }
+}

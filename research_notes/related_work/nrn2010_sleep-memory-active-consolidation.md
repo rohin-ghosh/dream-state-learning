@@ -1,0 +1,11 @@
+# The memory function of sleep
+Source: Nature Reviews Neuroscience 11(2):114-126, 2010. DOI: 10.1038/nrn2762 (not on arXiv)  
+Authors: Susanne Diekelmann, Jan Born
+
+## Abstract
+Sleep has been identified as a state that optimizes the consolidation of newly acquired information in memory, depending on the specific conditions of learning and the timing of sleep. Consolidation during sleep promotes both quantitative and qualitative changes of memory representations. Through specific patterns of neuromodulatory activity and electric field potential oscillations, slow-wave sleep (SWS) and rapid eye movement (REM) sleep support system consolidation and synaptic consolidation, respectively. During SWS, slow oscillations, spindles and ripples - at minimum cholinergic activity - coordinate the re-activation and redistribution of hippocampus-dependent memories to neocortical sites, whereas during REM sleep, local increases in plasticity-related immediate-early gene activity - at high cholinergic and theta activity - might favour the subsequent synaptic consolidation of memories in the cortex.
+
+## Our differentiation
+Claims: the "active system consolidation" account — sleep is not passive protection but an active, selective process; SWS performs *system* consolidation (replay-driven redistribution from hippocampus to neocortex, with gist abstraction / qualitative transformation), while REM performs *synaptic* consolidation that stabilizes the redistributed traces. Subsumes the classic dual-process view (SWS aids declarative, REM aids procedural/emotional memory) and the sequential hypothesis (Giuditta): SWS and REM must occur in succession, cyclically.
+Mechanism (biological): slow oscillations gate spindle-ripple events that replay selected hippocampal traces into cortex under low acetylcholine; REM then runs local plasticity at high acetylcholine with hippocampus decoupled.
+Sleeper relevance: direct scientific footing for a two-pass sleeper — pass 1 "SWS-write": selective, prioritized copy+abstract from the episodic log into the structured store; pass 2 "REM-reorganize": integrate, cross-link and stabilize the new structure with the episodic source decoupled. Also licenses running the two passes in repeated small cycles rather than one monolithic batch.

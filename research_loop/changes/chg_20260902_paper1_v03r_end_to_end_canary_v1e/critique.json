@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1e.cross_critique.fresh.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1e",
+  "state": "critiqued",
+  "architecture_change_sha256": "f2a0cc569afecef0449cf1743ff598ef5730b07a07dd2ade42502c9cdc6ea0e1",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1e.systems.fresh.v1",
+      "sha256": "6b2c49d4ab459855ae8a549bdec4c086988a87d19849c4face53e4ce5bb322e1"
+    },
+    {
+      "interpretation_id": "benchmark_v1e_fresh_20260902",
+      "sha256": "927d0fd5665302635134ee266fb0e2adf0cae258ff547026a72841cd4c092079"
+    }
+  ],
+  "context_files": [{"path":"AGENTS.md","sha256":"1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e","purpose":"Mandatory deliberation, exact ratification, review, and GPU gate."},{"path":"research_notes/35_goalposts_paper1.md","sha256":"be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c","purpose":"Frozen Paper-1 scope and verifier boundary."},{"path":"lands/v03r.py","sha256":"484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999","purpose":"Frozen paired public action-outcome world."},{"path":"lands/v03.py","sha256":"6a4b1ae5be1ccecf9a0eebcc5ae8831792ce1233f276951ca882a1621571ec16","purpose":"Inherited public episode and final-goal rendering implementation."},{"path":"lands/skins.py","sha256":"cbb953167c2f1c4a788bae8dfea4451230d96db880b521e1010368e57f0f92a0","purpose":"Aligned surface-name dependency used by the public projection."},{"path":"lands/model.py","sha256":"6b1727280873ca4ed74708808f03dbf6c3eb761cadc164b786cacb93a1e77211","purpose":"Frozen world configuration and typed public object dependency."},{"path":"lands/v02.py","sha256":"0e24af622500fad63519ce2f698a7d3354615acdaf47e0a89335f1d0048aee89","purpose":"Inherited surface and mixture dependency in the v03r renderer closure."},{"path":"lands/world.py","sha256":"9cd7f2963bf62e34bb46098eeb3434948314c936d04892294056b3144f1bfdac","purpose":"World-generation dependency in the frozen v03r closure."},{"path":"lands/test_v03r.py","sha256":"4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1","purpose":"Existing construct, leakage, local-window, edge-removal, and population tests."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/consensus.json","sha256":"95a5e147594e7804e0ab4d5fef6854745432675dc08a619ba7e82052975b98e1","purpose":"Binding v1b rework consensus and complete residual concern inventory."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1c/consensus.json","sha256":"9b8e4cdc2c51f91acec3870503208451a82d09d5810cda9c85479761f1f7ec2b","purpose":"Binding v1c rework consensus requiring this newly hash-bound successor and preserving P1CB01 through P1CB10 identities."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1d/consensus.json","sha256":"5ba99ff697f8b012090d87d1eb0a6fd68e4faf14feab6e24877d9bbb2405158c","purpose":"Binding v1d rework consensus selecting fixed prospective SELF_CHECK accounting and the exact R01-R10 successor repairs."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/resolution_brief.md","sha256":"2e7ea5963851f56f8fd6f8f169df8839c30bb4d9f2586d67f8eb2233eb550369","purpose":"Adjudicated minimum repair choices and scientific boundary."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/experiment_spec.md","sha256":"a9a96d13c1f63e2a123531a05ce57b93dae0c8541ed6a0e709a9f76d38d5d6d7","purpose":"Question, stages, gates, bounded claims, and terminal scope."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/canary_config.json","sha256":"f8c60b8c3c44463353980a8536febaa4c52d2caeba29c00f630fd71634590164","purpose":"World, models, operations, fixed fit recipe, arms, and ceilings."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/operation_contract.json","sha256":"3fa199c64d2d93d486486e9d84173c34ce65b8fbaad3fb88bf62fa17a31011f7","purpose":"Closed model states, recurrence, selectors, seeds, parser, scratch, and accounting."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/public_projection_contract.json","sha256":"3081a0c4e9022521a97908c7d36966c7c99e0f5c9292fbcc403ab8bf0ab2102a","purpose":"Exact public API to typed-event, probe, goal, vocabulary, and pre-dispatch control projection."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/memory_transport_contract.json","sha256":"8f732f6cc5b1374be2e34be28d9a467422d7ebcad25537562303b91c5adea7ad","purpose":"Public projection, proposal admission, immutable rows, reader projection, and candidate mapping."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/intervention_contract.json","sha256":"934352e3fbc033d537b59ee1589a7ef7ea00cd609cd6fcef7bf87047c8369111","purpose":"Prospective public DIST, path and sham construction, offline correctness, and structural use."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/development_fixture_contract.json","sha256":"37f17001fa06f5a7ddfee95101a09306256d8c8854c1d92e05f7e7567864c50d","purpose":"Immutable population, six DEV lives, G fixtures, proof rows, parser, and gates."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/compiler_views.json","sha256":"2d2cdfb0dfc81b8c3f7fdd319b9ae5ee220bbeb55eb006f28ee27770aa998094","purpose":"Exact four view families, all legal question indices, round-trip semantics, and presentation counts."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/runtime_training_contract.json","sha256":"ff8e5f6bc7953bf21b24a91f464041d21015320dcdb4e4e9c55f4425b3c0a1da","purpose":"Executable lock, generation receipts, deterministic two-fit recipe, fidelity, and atomic recognition."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/stage_review_contract.json","sha256":"a1421a112d6a21eaeb1ae4aeaa9d9ddff788440752d677cb08340cb2ef4355b3","purpose":"Transition authority, validity mapping, packet inventories, actor separation, and claim firewall."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/acceptance_registry.json","sha256":"5942d7d065e8882282df213224774ad48649efbdba6e32062bc0aa3480d587c9","purpose":"Exact ten v1a-mandated P1CB test identities and artifacts."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/scope_proposal.json","sha256":"15b2ded176a3d2b837f18878ca26f6b6395110dcddd9b0782dda1e2df78cb4b0","purpose":"Requested and forbidden authority with staged ceilings."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_prompt.md","sha256":"2ec6a76ff1a767e650cb5898d8d8a2e2a6f897bd0676e423265ef8211665f9d6","purpose":"Frozen local connection-proposal instruction."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check_prompt.md","sha256":"3e0fcd3fe73c05e441b9c784c90e971abffe4abb9e7625ca1edf40de3299f2c2","purpose":"Frozen blind fallible model reflection instruction."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_prompt.md","sha256":"b32a156fb25932bb28db0ade14660f81bce5e7639296e2c751d590e368114bff","purpose":"Frozen target-absent source-target return instruction."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_prompt.md","sha256":"ce4f808463de0caa4a0075c5d6f94c568db37aa1a8fcd775e03b1667562d3df9","purpose":"Frozen proof-sequence-scaffolded final resolver instruction."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/public_event.schema.json","sha256":"8574cb4d850a2630f58db5794147efc2fc3a95e79d91d42c256e2a327c5914f0","purpose":"Closed public event projection schema."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/proposal.schema.json","sha256":"7af394a464cc2c502243ecbf82360fd3324bdca423c706a9dca7b8486bb65f09","purpose":"Immutable audit proposal schema separate from memory."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/memory_row.schema.json","sha256":"1b7c037d8921b4c7274687aae5f02026c59df456602993e5cdc45d4a8177f3da","purpose":"Closed immutable witnessed or model-supported row schema."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/read_result.schema.json","sha256":"942e2ff0da2f22126c7aa42f7e0ca10fe9ef8e5e7644dd97649e2474641b9056","purpose":"Shared provenance-free thinker-facing read result."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/candidate_registry.schema.json","sha256":"9fbaf7594c47abb43353b8ab4509f1d223164fb9a73d714120b393c07d438b5b","purpose":"Sealed semantic-only two-backend candidate and completion registry."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_state.schema.json","sha256":"6ce520a9254fec7812f9910cb65f186c40c8ad257f7adbde2b75c9b784d4cb17","purpose":"Closed DREAM allowed state."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check_state.schema.json","sha256":"b52d33ca8f57d18606d6015acd11f0f814f6702f2ddda0ba1981b05c566f60b9","purpose":"Closed SELF_CHECK allowed state."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_state.schema.json","sha256":"a5fca6dc26dbb8f3f7f216cf22e7d9883d7e37f85b7ec50e981fd90fac053685","purpose":"Closed THINK0 state and public probe."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_state.schema.json","sha256":"3d18eea1cc38046e3b7fde2048ffcd2adf21bdf9ed52915678130556389db95a","purpose":"Closed THINK1 state."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/scratch.schema.json","sha256":"48c605d86ce03a624e7b95abed9a73468fed1f82fa88359aa05f2312c8a018de","purpose":"Closed discriminated scratch nodes."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/dream_operation.schema.json","sha256":"3a591edae0ad7e692b1cb6aff1e23a3c53fde84de1984fe6034d546530ca9dde","purpose":"DREAM PASS/CREATE grammar."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/self_check.schema.json","sha256":"ea2b1c2043a3be243f29b6d7dfbb49a6637e13757d132502abd765cba255739f","purpose":"Fallible model self-check grammar."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think0_operation.schema.json","sha256":"075dad6b9f79e591ab283c08f8e72a7adbcb277152f63ea9715384cfc9b4d4e7","purpose":"THINK0 atomic operation grammar."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/think1_operation.schema.json","sha256":"76e8e9ac2920c442015eb111973edf95f26e0149bf987c310bd1d8e0138ac881","purpose":"THINK1 atomic operation grammar."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/schema_resource_registry.json","sha256":"2872af7719d0045d29e0182fda24c1a40ae3f8a46b6d83f3da2c607d446806f3","purpose":"Closed filename-to-schema-ID resolution contract for all local schema references."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/opportunity_ledger.schema.json","sha256":"7a6f5e3550d90656c0218683c43033eb0e5d175a423163ce3b61d65218083350","purpose":"Canonical closed opportunity-ledger row schema and condition/state/reason mapping."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/semantic_consistency_matrix.json","sha256":"a4f47de1ceb870f8057b85770ad9340d1ca22bef33aaf351ce0aae2cc700f28e","purpose":"Exhaustive producer/consumer/ordering/validity/ledger semantic lock across every normative contract."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/terminal_claim_state.schema.json","sha256":"bd8ee8596fa1d4a0cf7829b49e7275cd7bc79b20eeba3b09776f352f51e07536","purpose":"Closed stage-conditional terminal claim-state schema and exact report wording."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_packet.schema.json","sha256":"5e27cabcb15bbe9d451960f7b9decd6d2b146cb2d76d39a564a153c0d70de6a5","purpose":"Closed transition packet schema."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_assignment.schema.json","sha256":"b32c5bb2c6f73011bfb5e81f98b14956ad9dd2d722cf8cb7a52109b931af1ef7","purpose":"Closed reviewer/advocate assignment schema."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/review_disposition.schema.json","sha256":"6d8ed41416c701ebbdc38e052733d386136c20b138d30339e8f67d0242cce86c","purpose":"Closed immutable review disposition schema."},{"path":"research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1e/authority_token.schema.json","sha256":"f92b39e6181c3aef3e38c1900a830f1d538c18c42e4f80f1d3d207d754e2716d","purpose":"Closed monotone successor authority schema."}],
+  "strongest_case": "The best case for proceeding is a repaired, explicitly engineering-only integration canary. The 51-file context closure is byte-consistent with the change and both registered interpretations; the frozen v03r source closure supplies a deterministic aligned seed-5 latent pair, public-only atomic episodes, an exact non-answer probe, a post-checkpoint final question, local-window and edge-removal checks, and paired scoring. P1CB01 provides a serious hash/scope/authority skeleton; P1CB02 names concrete goal and roster taint mutations; P1CB03 keeps DREAM proposals audit-only and treats same-model SELF_CHECK as fallible model-claimed support; P1CB04 makes text and LoRA reads share a provenance-free atomic projection; P1CB05 supplies immutable DEV fixtures and shortcut/headroom gates; P1CB06 fixes the common prefix and isolates the post-prefix return treatment; P1CB07 prospectively seals OWN, DIST, path-loss, and sham interventions; P1CB08 fixes exactly two isolated per-life adapters and separate 44/48 gates; P1CB09 defines transition-local accounting and no retry; and P1CB10 attempts reviewer supremacy, claim containment, and HUMAN_TERMINAL. The detailed LoRA contracts candidly limit positive evidence to selected-cue, candidate-constrained training-set-resubstitution recognition. If the blocking graph, terminal, evidence-order, lifecycle, visibility, and authority defects below are repaired, this is a comparatively cheap way to de-risk plumbing before a multi-seed, multi-skin, baseline-controlled Paper-1 experiment; it is not itself evidence for the Paper-1 headline.",
+  "reviewed_acceptance_test_ids": [
+    "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+    "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+    "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+    "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+    "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+    "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+    "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+    "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+  ],
+  "concerns": [
+    {
+      "concern_id": "C01_LITERAL_DEPENDENCY_GRAPH_IS_NOT_CLOSED",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The semantic matrix fails its own literal reciprocal-edge rule, so P1CB01 cannot certify a single closed normative dependency graph.",
+      "evidence": "semantic_consistency_matrix.json says every direct filename dependency must appear in both a producer provides list and the consumer consumes list and that a unidirectional edge is PROTOCOL_CONTRADICTION. Literal set comparison produces 25 PROVIDED_NOT_CONSUMED edges: acceptance_registry->semantic_consistency_matrix; development_fixture->acceptance_registry; dream_operation->operation_contract; dream_state->operation_contract; experiment_spec->semantic_consistency_matrix; intervention->acceptance_registry; memory_row->operation_contract; opportunity_ledger->acceptance_registry; opportunity_ledger->semantic_consistency_matrix; proposal->operation_contract; read_result->operation_contract; resolution_brief->semantic_consistency_matrix; runtime_training->acceptance_registry; schema_resource_registry->semantic_consistency_matrix; scope_proposal->semantic_consistency_matrix; scratch->operation_contract; self_check->operation_contract; self_check_state->operation_contract; semantic_consistency_matrix->acceptance_registry; stage_review->acceptance_registry; terminal_claim_state->acceptance_registry; think0_operation->operation_contract; think0_state->operation_contract; think1_operation->operation_contract; and think1_state->operation_contract. The consumer cells instead use aggregate phrases such as 'all operation and state schemas', 'all normative contracts and schemas', 'all schema files', and 'all other normative files'. Those strings are not filenames and cannot satisfy the matrix's literal reciprocal rule. This confirms the systems interpretation and strengthens it from an inability to prove closure to an enumerated closure violation.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C02_TERMINAL_REVIEW_FAILURE_HAS_NO_TOTAL_ROUTE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "REJECT, INVALID, or role overlap during terminal review has no finite fail-closed route to HUMAN_TERMINAL.",
+      "evidence": "stage_review_contract.json allows advancement only after exactly one schema-valid APPROVE from each role and says REJECT or INVALID wins. Its general failure route builds an EARLY_TERMINAL packet, obtains terminal reviewer and advocate dispositions, and then mints HUMAN_TERMINAL authority; authority_token.schema.json in turn requires both disposition hashes. But failure_routing.review_reject_invalid_or_overlap specifies only terminal exact bytes, not a successor packet, bypass, or direct non-approval terminal token. Therefore a rejection of the terminal packet cannot satisfy the approval prerequisite, while recursively reviewing another terminal packet has no registered base case. The systems interpretation is correct: P1CB09 accounts for ordinary stage failures but not failure of the review mechanism that is supposed to terminate them.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C03_P1CB10_REVIEW_EVIDENCE_IS_TEMPORALLY_CIRCULAR",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "P1CB10 is required inside the immutable pre-review packet even though its registered evidence includes the review dispositions and terminal transition produced only after that packet is reviewed.",
+      "evidence": "acceptance_registry.json defines P1CB10's setup as validating the packet, sending the identical packet to reviewer and advocate, persisting their dispositions, and enforcing the successor or HUMAN_TERMINAL outcome. review_packet.schema.json requires artifacts.p1cb10 in each packet branch, while its noncircularity rule forbids future assignment, response, or disposition digests in the packet. A static unit-test receipt could exist before review, but it cannot be the registered evidence that the actual packet obtained the two dispositions and correct transition; a post-review receipt could show that outcome but cannot already be an immutable field of the reviewed packet. Neither registered interpretation identifies this two-phase evidence cycle.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C04_CONDITIONAL_LORA_OPPORTUNITY_LIFECYCLE_CONTRADICTS_FAILURE_ACCOUNTING",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The LoRA thinker denominator is said to register only after the reviewed text and fidelity gates, yet fidelity failure already requires non-dispatch rows for all 48 registered LoRA opportunities.",
+      "evidence": "opportunity_ledger.schema.json states that the 48 THINK1_LORA opportunities are conditionally registered and authorized only after the reviewed text and fidelity gates. intervention_contract.json and runtime_training_contract.json state that if either per-life fidelity gate is below 44/48, all 48 registered L thinker opportunities receive fidelity-failure non-dispatch rows. On that path the opportunities cannot both be not yet registered and already require rows. This omission was not raised by either interpretation and breaks P1CB08/P1CB09 denominator closure. The lifecycle needs a prospective registration point after Stage-T authority but before fitting/fidelity, with dispatch authority withheld until both gates pass.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C05_TARGET_ABSENT_LABEL_HIDES_EXACT_ENDPOINT_AND_AGENDA_CUEING",
+      "category": "visibility_leak",
+      "severity": "material",
+      "statement": "THINK0 is not answer-leaking, but calling it target-absent materially understates that it receives the exact source and target endpoints of the later final goal and a direct missing-join agenda.",
+      "evidence": "public_projection_contract.json fixes the seed-5 THINK0 probe to source dandyland and target confluenceland and asks whether committed experience supports a causal join from Dandyland to Confluenceland, otherwise requesting that exact missing typed join. The withheld final-goal projection uses the same source dandyland and target confluenceland; lands/v03r.py constructs operational_probe.source_id from goal.blocked_source_id and operational_probe.target_id from goal.target_id. think1_prompt.md later supplies the exact proof-sequence scaffold. The benchmark interpretation is right about construct cueing but should be qualified: final animal, rendered final question, correct answer, intervention truth, and private factorization remain withheld, so this is endpoint/agenda disclosure rather than answer leakage. P1CB02 proves registered taint behavior, not absence of this deliberately registered cue.",
+      "acceptance_test_ids": [
+        "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+        "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+        "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C06_COMPOUND_VISIBILITY_CELL_IS_NOT_ATOMIC",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The supposedly exhaustive visibility matrix combines final-goal information and donor-backend identity into one object whose THINK1 cell is 'visible', even though donor/backend identity must remain hidden.",
+      "evidence": "change.json names one visibility item FINAL_GOAL_OR_DONOR_BACKEND. Its THINK1 value is visible, while the adjacent reason says only the public final question is visible and donor identity remains hidden; think1_prompt.md and the reader contracts likewise prohibit backend, donor, row, score, and provenance bytes. A machine or implementer consuming the value rather than prose is therefore authorized to expose a forbidden field. The systems interpretation correctly flags the compound item, but the remedy must be atomic objects and per-operation values, not a prose clarification.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+        "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C07_SELF_DECLARED_REVIEW_RECORDS_CANNOT_ENFORCE_ANTI_SELF_CERTIFICATION",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The review artifacts are useful audit records but cannot serve as technical authority for the proposal's claim that the experiment cannot self-certify or fabricate review evidence.",
+      "evidence": "stage_review_contract.json explicitly disclaims a platform issuer, signature, trust root, canonical identity, and freshness proof. review_assignment.schema.json and review_disposition.schema.json validate caller-supplied actor IDs and role strings, so one producer can fabricate two distinct strings and two APPROVE records that satisfy structural separation. Yet the change rationale says self-certification is prevented and P1CB10's falsification boundary says the experiment cannot self-certify or fabricate review evidence. The systems interpretation is correct for an in-protocol enforcement claim. The strongest charitable reading is that a human supervisor outside these bytes witnesses separation and treats the records as unauthenticated audit data; if that is intended, it must be named as the sole authority and the technical anti-fabrication claim removed.",
+      "acceptance_test_ids": [
+        "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C08_PRESERVATION_WORDING_CONTRADICTS_RESUBSTITUTION_BOUNDARY",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The proposal's top-level 'preserve immediate registered access' wording overclaims a gate that the detailed contracts correctly define as selected-cue candidate-constrained training-set resubstitution.",
+      "evidence": "change.json's system thesis and experiment_spec.md's question use preservation language. runtime_training_contract.json, canary_config.json, compiler_views.json, memory_transport_contract.json, and terminal_claim_state.schema.json instead disclose twelve selected M1_OWN training rows per life, the same four trained view families, repeated exposure, host pre-resolution, answer-bearing candidate rosters, separate 44/48 thresholds, and own/donor paths, and explicitly reject preservation, open recall, whole-corpus storage, durability, capacity, generalization, and text equivalence. The benchmark interpretation is correct. Replace the thesis/question language with immediate selected-cue candidate-constrained training-set-resubstitution recognition everywhere, including P1CB08 and P1CB10 fixtures.",
+      "acceptance_test_ids": [
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "C09_COMPUTE_ENVELOPE_BUYS_INTEGRATION_EVIDENCE_NOT_PAPER_VALUE",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "The scientific return is too narrow for the disclosed 32B and training workload unless humans explicitly approve it as engineering de-risking rather than a Paper-1 result.",
+      "evidence": "The frozen design permits 896 32B controller opportunities, up to 2304 candidate forward sequences across 144 atomic read cycles, exactly two rank-64 7B fits, 96 selected fidelity cases, and up to 48 online LoRA reads for one deterministic aligned seed-5 pair. The human-facing scope highlights fits, fidelity cases, and reads but not the 2304 candidate-forward ceiling or a worst-case optimizer-step/token envelope. P1CB05 compares NO_MEMORY, GOLD_TEXT, and GOLD_TWIN only on DEV headroom; it does not compare the learned system with strong raw-context, RAG, graph, skill-library, or same-lifetime batch-training baselines. P1CB06 isolates only the 16-slot post-prefix return treatment, P1CB07 establishes instance-local causal reader dependence if its conjunction passes, and P1CB08 is resubstitution recognition. There is no replication, uncertainty interval, population inference, model-selected environment action, or action-improvement endpoint. The benchmark interpretation correctly calls the scientific return low; its possible overreach is treating that as no value at all, because a repaired run could still expose end-to-end integration failures before expensive scaling.",
+      "acceptance_test_ids": [
+        "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+        "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+        "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+        "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+        "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+        "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP"
+      ],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "The information taxonomy says the final goal is forbidden before THINK1, but THINK0 receives the final goal's exact source and target coordinates and an explicit missing-causal-join agenda; this must be disclosed as endpoint-cued even though animal, final question, and answer remain withheld.",
+    "FINAL_GOAL_OR_DONOR_BACKEND is a non-atomic visibility item: THINK1='visible' conflicts with the prose and lower-level contracts that keep donor/backend identity hidden.",
+    "Role labels and actor IDs are visible as if they carried review authority, but their provenance and identity are unverified; the artifact must expose that distinction wherever review evidence is consumed."
+  ],
+  "missing_acceptance_tests": [
+    "A literal exact-filename producer/consumer set-equality test that expands no wildcards and rejects every missing, extra, or nonreciprocal normative dependency edge.",
+    "A terminal-review base-case test covering reviewer/advocate REJECT, INVALID, malformed disposition, missing disposition, and role overlap, proving one finite route to HUMAN_TERMINAL without requiring approval of the failed terminal review.",
+    "A two-phase P1CB10 evidence-order test that separates pre-review mechanism evidence from post-review transition evidence and rejects any packet whose required evidence depends on future dispositions.",
+    "A LoRA opportunity lifecycle test that prospectively seals all 48 conditional opportunities before fitting/fidelity, emits exactly one zero-attempt row per opportunity on fidelity failure, and authorizes dispatch only after both gates pass.",
+    "A construct-disclosure test that asserts THINK0 endpoint equality to the final goal, requires the term endpoint-cued, and still proves the animal, rendered final question, answer, intervention truth, and private factorization are absent.",
+    "A human-readable worst-case compute-envelope test covering candidate forward sequences, 32B controller calls, optimizer steps/tokens, fits, fidelity cases, and online reads, plus an explicit engineering-only value decision before GPU authority."
+  ],
+  "human_questions": [
+    "Will Rohin withhold ratification of exact v1e SHA f2a0cc569afecef0449cf1743ff598ef5730b07a07dd2ade42502c9cdc6ea0e1 and require a newly hash-bound successor fixing the literal dependency graph, terminal-review base case, P1CB10 evidence cycle, LoRA opportunity lifecycle, atomic visibility items, and review-authority boundary?",
+    "Will the successor explicitly call THINK0 endpoint-cued, retain the fact that animal/question/answer/truth remain withheld, and prohibit interpreting P1CB02 as proof that the final-goal agenda is absent?",
+    "Is review separation intended to be authenticated technical authority, which requires a bound external identity/trust mechanism, or human-witnessed unauthenticated audit evidence, which requires deleting the anti-fabrication/self-certification claim?",
+    "Will every thesis, question, acceptance, and terminal sentence use selected-cue candidate-constrained training-set-resubstitution recognition rather than preservation for the LoRA stage?",
+    "After a complete worst-case compute disclosure, does Rohin judge this one-pair run worth authorizing solely as an engineering integration canary, with no Paper-1 headline, comparative, population, action-improvement, durability, generalization, or scale inference?"
+  ]
+}

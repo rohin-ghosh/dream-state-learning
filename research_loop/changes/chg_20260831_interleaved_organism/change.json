@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260831_interleaved_organism",
+  "title": "Interleaved dream-memory-think organism and graph-first intake",
+  "summary": "Replace the one-way pipeline with recurrent local semantic dreaming, separate write-realization fanout, per-life memory checkpoints, narrow goal-conditioned thinking, and non-evidentiary thinker-to-dream agendas; require independent architecture deliberation before implementation.",
+  "system_thesis": "An agent can turn its own action/outcome history into a progressively richer experiential world model when broad local dreaming, compressed parametric memory, narrow goal-conditioned thinking, and new experience form a recurrent audited loop.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/plans/interleaved_organism_v1.md",
+      "sha256": "6e773538ccc43622fba6a343a8a2f5591de81b4485c83ba404fc9c7b570e8b25",
+      "purpose": "Controlling graph, loop, ontology, benchmark ladder, and claim boundaries."
+    },
+    {
+      "path": "research_loop/changes/chg_20260831_interleaved_organism/consensus.md",
+      "sha256": "86f2da5740ead1a6d236fa56185e137d21898992841b04ab00af298c9a2e03c5",
+      "purpose": "Durable record of the independent architecture, contract, and reviewer deliberation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260831_interleaved_organism/human_directive.txt",
+      "sha256": "43d20f44e6c3a0853b83609545a978e72c3c6b287a0a5c59e28d998b3b9b1926",
+      "purpose": "Human-origin authorization and process directive."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "semantic_dream_growth",
+        "before": "Dreaming was treated as a batch that should emit task-level structure.",
+        "after": "Each dream operation adds, revises, reinforces, or questions one local semantic concept or edge with provenance.",
+        "rationale": "The durable graph should grow incrementally across revisits rather than require the first dream to solve Blendyland."
+      },
+      {
+        "operation": "add",
+        "node_id": "write_realization_fanout",
+        "before": "Semantic claims and LoRA supervision forms were conflated.",
+        "after": "Accepted semantic items receive separate canonical, QA, reverse, partial, situated, and contrast realizations plus touch plans.",
+        "rationale": "Representation diversity changes write/read fidelity but must not manufacture beliefs or depth."
+      },
+      {
+        "operation": "modify",
+        "node_id": "goal_conditioned_thinker",
+        "before": "A terminal thinker answered after one frozen memory build.",
+        "after": "A typed DFS-like thinker can retrieve, follow, revise, backtrack, release, defer, or request a later dream over an immutable checkpoint.",
+        "rationale": "Task-specific composition belongs to the whole recurrent trajectory, not the first dream alone."
+      },
+      {
+        "operation": "add",
+        "node_id": "architecture_intake_gate",
+        "before": "Design corrections could move directly from chat interpretation into code.",
+        "after": "Graph, loop, claim, visibility, test, independent interpretation, cross-critique, consensus, and human scope are hash-bound before implementation.",
+        "rationale": "Preserve the high-level thesis while engineering proceeds autonomously."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "think_feedback_to_later_dream",
+        "from": "goal_conditioned_thinker",
+        "to": "semantic_dream_growth",
+        "before": "No return edge existed.",
+        "after": "Typed confusion and desire records may select later dream inputs but are never evidence.",
+        "rationale": "This is the recurrent convergence mechanism without answer laundering."
+      },
+      {
+        "operation": "add",
+        "edge_id": "semantic_to_realization",
+        "from": "semantic_dream_growth",
+        "to": "write_realization_fanout",
+        "before": "The namespaces were conflated.",
+        "after": "Only live semantic items can source realizations; realizations cannot source semantics.",
+        "rationale": "Separate experiential structure from LoRA write format."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "modify",
+        "loop_id": "organism_life_loop",
+        "before": "experience -> dream -> memory -> terminal think",
+        "after": "experience -> dream -> realize -> checkpoint -> think -> non-evidentiary feedback -> later dream -> refreshed checkpoint -> rethink -> action/outcome experience",
+        "trigger": "New public experience, scheduled consolidation, or an unresolved thinker frontier.",
+        "reads": ["immutable public experiences", "prior live semantic memory", "typed selection-only agenda"],
+        "writes": ["append-only semantic derivations", "realization manifests", "per-life checkpoints", "thinker trace", "non-evidentiary agenda"],
+        "stop_condition": "Release, defer at budget, explicit pass, or experiment-level matched call budget.",
+        "rationale": "The complete inference may emerge across organs and rounds."
+      },
+      {
+        "operation": "add",
+        "loop_id": "architecture_change_loop",
+        "before": "No enforced deliberation lifecycle.",
+        "after": "proposal -> two independent interpretations -> cross-critique -> adjudication -> human ratification -> scoped implementation -> tests -> independent review",
+        "trigger": "Any material human change to architecture, learning loop, benchmark, visibility, or headline claim.",
+        "reads": ["human directive", "durable repo context", "current evidence ledger"],
+        "writes": ["hash-bound change artifacts", "scoped authorization", "review receipts"],
+        "stop_condition": "Human-approved exact scope or human-required pause.",
+        "rationale": "Autonomy should scale execution, not silently alter the scientific target."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "modify",
+        "claim_id": "full_organism_claim",
+        "before": "A strong first dream followed by LoRA and a terminal thinker is the intended full system.",
+        "after": "The test object is the recurrent dream-memory-think trajectory, and intelligence may be distributed across rounds and organs.",
+        "evidence_needed": "Matched recurrent controls showing intermediate transfer, later semantic growth, memory transport, task composition, and paired final behavior without hidden-answer visibility.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "constructive_experiential_memory",
+        "before": "",
+        "after": "Dreamed parametric memory may improve later agent decisions by compressing and reconnecting action/outcome experience beyond a fixed working window.",
+        "evidence_needed": "Per-life end-to-end action results against equal-compute no-memory, raw-context/RAG, text-memory, and non-recurrent controls across increasing lifetimes.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": ["public_experience", "semantic_memory", "thinker_feedback", "hidden_goal_truth"],
+    "stages": ["dream", "realize", "memory_write", "think", "offline_score"],
+    "cells": [
+      {"information_id": "public_experience", "stage_id": "dream", "visibility": "visible", "reason": "Eligible lived evidence."},
+      {"information_id": "public_experience", "stage_id": "realize", "visibility": "derived_only", "reason": "Only accepted semantic claims, not raw history, source realizations."},
+      {"information_id": "public_experience", "stage_id": "memory_write", "visibility": "derived_only", "reason": "Writer receives the frozen realization corpus."},
+      {"information_id": "public_experience", "stage_id": "think", "visibility": "hidden", "reason": "Thinker must use the declared checkpoint interface in the memory arm."},
+      {"information_id": "public_experience", "stage_id": "offline_score", "visibility": "visible", "reason": "Reporting may audit provenance after commitment."},
+      {"information_id": "semantic_memory", "stage_id": "dream", "visibility": "visible", "reason": "Dreaming can extend prior local semantic items."},
+      {"information_id": "semantic_memory", "stage_id": "realize", "visibility": "visible", "reason": "Live semantic items are the only realization sources."},
+      {"information_id": "semantic_memory", "stage_id": "memory_write", "visibility": "derived_only", "reason": "The writer sees compiled training forms."},
+      {"information_id": "semantic_memory", "stage_id": "think", "visibility": "derived_only", "reason": "The thinker accesses memory through exact typed reads."},
+      {"information_id": "semantic_memory", "stage_id": "offline_score", "visibility": "visible", "reason": "Committed structure is auditable."},
+      {"information_id": "thinker_feedback", "stage_id": "dream", "visibility": "visible", "reason": "It selects a local reactivation target only."},
+      {"information_id": "thinker_feedback", "stage_id": "realize", "visibility": "forbidden", "reason": "Feedback cannot be written as semantic content."},
+      {"information_id": "thinker_feedback", "stage_id": "memory_write", "visibility": "forbidden", "reason": "Feedback cannot be memorized directly."},
+      {"information_id": "thinker_feedback", "stage_id": "think", "visibility": "derived_only", "reason": "It is mechanically projected from the frozen thinker trace."},
+      {"information_id": "thinker_feedback", "stage_id": "offline_score", "visibility": "visible", "reason": "Agenda utility and leakage are audited."},
+      {"information_id": "hidden_goal_truth", "stage_id": "dream", "visibility": "forbidden", "reason": "No answer-bearing oracle in the loop."},
+      {"information_id": "hidden_goal_truth", "stage_id": "realize", "visibility": "forbidden", "reason": "No answer-bearing training realization."},
+      {"information_id": "hidden_goal_truth", "stage_id": "memory_write", "visibility": "forbidden", "reason": "No answer leakage into weights."},
+      {"information_id": "hidden_goal_truth", "stage_id": "think", "visibility": "forbidden", "reason": "The final goal exposes only the question."},
+      {"information_id": "hidden_goal_truth", "stage_id": "offline_score", "visibility": "visible", "reason": "Truth is revealed only for post-commit scoring."}
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id": "t_intake_gate", "kind": "invariant", "setup": "Attempt implementation authorization without two interpretations, cross-critique, consensus, or exact ratification.", "expected": "Fail closed at human_required.", "falsifies": "The graph-first process is not actually enforced.", "evidence_artifact": "research_loop/test_architecture_intake.py", "required_before": "implementation"},
+    {"test_id": "t_cyclic_contract", "kind": "invariant", "setup": "Construct and adversarially mutate a two-round cyclic trace.", "expected": "Valid trace passes; phase, scope, provenance, and feedback-laundering mutations fail.", "falsifies": "The recurrent organism cannot be audited causally.", "evidence_artifact": "research_loop/test_cyclic_organism_contract.py", "required_before": "implementation"},
+    {"test_id": "t_realization_separation", "kind": "ablation", "setup": "Increase paraphrase/QA realization count at fixed semantics.", "expected": "Write metrics change while semantic nodes, support, and depth remain fixed.", "falsifies": "Write fanout can fake structure.", "evidence_artifact": "research_loop/test_cyclic_organism_contract.py", "required_before": "gpu_run"},
+    {"test_id": "t_feedback_non_evidence", "kind": "ablation", "setup": "Try to cite a thinker hypothesis, desire, or agenda as a dream premise.", "expected": "The artifact is rejected; only eligible public or prior semantic premises count.", "falsifies": "Thinker feedback leaks answers into memory.", "evidence_artifact": "research_loop/test_cyclic_organism_contract.py", "required_before": "gpu_run"},
+    {"test_id": "t_v03r_shortcuts", "kind": "baseline", "setup": "Audit 1000 paired v0.3-R worlds with local-window, edge-removal, majority, and trained public-feature predictors.", "expected": "Oracle solves both twins; local windows and removed proofs fail; passive heldout lookup is at most majority plus .02.", "falsifies": "The calibration game is solvable through unintended shortcuts.", "evidence_artifact": "lands/test_v03r.py", "required_before": "gpu_run"},
+    {"test_id": "t_recurrent_end_to_end", "kind": "end_to_end", "setup": "Run matched no-feedback, agenda-feedback, and shuffled-feedback text organisms before LoRA.", "expected": "All arms have identical pre-feedback histories and budgets; any gain follows the typed return edge and survives paired scoring.", "falsifies": "The recurrent link does not contribute beyond compute or leakage.", "evidence_artifact": "future recurrent text result bundle", "required_before": "scientific_claim"},
+    {"test_id": "t_independent_review", "kind": "independent_review", "setup": "Fresh architecture and benchmark reviewers receive frozen inputs and inspect the full causal chain.", "expected": "No blocking leakage, attribution, or implementation concern remains undispositioned.", "falsifies": "The result is not ready for scientific interpretation.", "evidence_artifact": "future hash-bound review receipts", "required_before": "scientific_claim"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "Authorize the adjudicated CPU implementation scope while keeping science GPU runs and claims blocked?",
+    "forbidden_before_approval": ["science GPU launch", "headline claim", "external submission", "expansion beyond the adjudicated architecture"]
+  }
+}

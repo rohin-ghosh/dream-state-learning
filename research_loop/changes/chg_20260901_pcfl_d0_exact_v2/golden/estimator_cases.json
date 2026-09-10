@@ -1,0 +1,373 @@
+{
+  "schema_version": "pcfl-estimator-goldens-v2.0.0",
+  "artifact_type": "pcfl_d0_estimator_golden_cases",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "authority": "estimator_manifest.json",
+  "notation": {
+    "rational": "All strings A/B denote exact reduced rationals.",
+    "missing": "The literal string MISSING is an expected dispatched item slot and is injected as exact value 0/1 with an explicit missing flag.",
+    "repetition": "Objects of the form {value:A/B,repeat:N} expand to N consecutive exact values only in this golden file; production scientific records are never compressed this way."
+  },
+  "aggregation_cases": [
+    {
+      "case_id": "AGG_ORDER_TWINS_LADDERS_SEEDS_TARGETS",
+      "input": {
+        "H": {
+          "A2": [
+            {"value": "1/1", "repeat": 8},
+            {"value": "1/1", "repeat": 8}
+          ],
+          "A3": [
+            ["1/1", "1/1", "1/1", "1/1", "0/1", "0/1", "0/1", "0/1"],
+            {"value": "0/1", "repeat": 8}
+          ]
+        },
+        "H_DAGGER": {
+          "A2": [
+            {"value": "0/1", "repeat": 8},
+            {"value": "0/1", "repeat": 8}
+          ],
+          "A3": [
+            {"value": "1/1", "repeat": 8},
+            {"value": "1/1", "repeat": 8}
+          ]
+        }
+      },
+      "expected": {
+        "H_ladder_means": {"A2": "1/1", "A3": "1/4"},
+        "H_world_mean": "5/8",
+        "H_DAGGER_ladder_means": {"A2": "0/1", "A3": "1/1"},
+        "H_DAGGER_world_mean": "1/2",
+        "pair_score_Y": "9/16",
+        "independent_units": 1
+      }
+    },
+    {
+      "case_id": "AGG_EXPLICIT_MISSING_IS_ZERO",
+      "input": {
+        "H": {
+          "A2": [
+            ["1/1", "1/1", "1/1", "1/1", "1/1", "1/1", "1/1", "MISSING"],
+            {"value": "1/1", "repeat": 8}
+          ],
+          "A3": [
+            {"value": "0/1", "repeat": 8},
+            {"value": "0/1", "repeat": 8}
+          ]
+        },
+        "H_DAGGER": {
+          "A2": [
+            {"value": "0/1", "repeat": 8},
+            {"value": "0/1", "repeat": 8}
+          ],
+          "A3": [
+            {"value": "0/1", "repeat": 8},
+            {"value": "0/1", "repeat": 8}
+          ]
+        }
+      },
+      "expected": {
+        "injected_zero_count": 1,
+        "H_ladder_means": {"A2": "15/16", "A3": "0/1"},
+        "H_world_mean": "15/32",
+        "H_DAGGER_world_mean": "0/1",
+        "pair_score_Y": "15/64",
+        "replacement_permitted": false
+      }
+    }
+  ],
+  "studentizer_and_single_contrast_cases": [
+    {
+      "case_id": "STUDENT_ALL_ZERO",
+      "centered_vector": {"value": "0/1", "repeat": 16},
+      "expected": {
+        "mean": "0/1",
+        "sample_variance": "0/1",
+        "statistic_kind": "ZERO",
+        "statistic_squared": "0/1",
+        "inclusive_signflip_exceedances": 65536,
+        "signflip_p": "1/1"
+      }
+    },
+    {
+      "case_id": "STUDENT_CONSTANT_POSITIVE",
+      "centered_vector": {"value": "1/5", "repeat": 16},
+      "expected": {
+        "mean": "1/5",
+        "sample_variance": "0/1",
+        "statistic_kind": "POSITIVE_INFINITY",
+        "inclusive_signflip_exceedances": 1,
+        "signflip_p": "1/65536"
+      }
+    },
+    {
+      "case_id": "STUDENT_CONSTANT_NEGATIVE",
+      "centered_vector": {"value": "-1/5", "repeat": 16},
+      "expected": {
+        "mean": "-1/5",
+        "sample_variance": "0/1",
+        "statistic_kind": "NEGATIVE_INFINITY",
+        "inclusive_signflip_exceedances": 65536,
+        "signflip_p": "1/1"
+      }
+    },
+    {
+      "case_id": "STUDENT_BALANCED_ZERO_MEAN",
+      "centered_vector": ["1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1"],
+      "expected": {
+        "mean": "0/1",
+        "sample_variance": "16/15",
+        "statistic_kind": "ZERO",
+        "statistic_squared": "0/1",
+        "inclusive_signflip_exceedances": 39203,
+        "signflip_p": "39203/65536",
+        "zero_sum_sign_vectors": 12870
+      }
+    }
+  ],
+  "romano_wolf_cases": [
+    {
+      "case_id": "RW_ALL_CONSTANT_STRONG_WITH_TIES",
+      "pair_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "1/5", "repeat": 16},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "1/5", "repeat": 16},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/20", "repeat": 16}
+      },
+      "registered_nulls": {
+        "D1_E_LORA_MINUS_D_LORA": "0/1",
+        "D2_E_LORA_MINUS_A_NATIVE": "0/1",
+        "D3_E_LORA_MINUS_E_TEXT": "-1/10"
+      },
+      "expected": {
+        "observed_order": [
+          "D1_E_LORA_MINUS_D_LORA",
+          "D2_E_LORA_MINUS_A_NATIVE",
+          "D3_E_LORA_MINUS_E_TEXT"
+        ],
+        "observed_statistic_kinds": ["POSITIVE_INFINITY", "POSITIVE_INFINITY", "POSITIVE_INFINITY"],
+        "step_raw_adjusted_p": ["1/65536", "1/65536", "1/65536"],
+        "reported_adjusted_p": ["1/65536", "1/65536", "1/65536"],
+        "rejected": [true, true, true]
+      }
+    },
+    {
+      "case_id": "RW_MAX_T_COUNTS_OTHER_HYPOTHESIS_INFINITY",
+      "pair_differences": {
+        "D1_E_LORA_MINUS_D_LORA": ["1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1"],
+        "D2_E_LORA_MINUS_A_NATIVE": ["1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1", "1/1", "-1/1"],
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/20", "repeat": 16}
+      },
+      "expected": {
+        "observed_order": [
+          "D3_E_LORA_MINUS_E_TEXT",
+          "D1_E_LORA_MINUS_D_LORA",
+          "D2_E_LORA_MINUS_A_NATIVE"
+        ],
+        "step_raw_adjusted_p": ["2/65536", "39203/65536", "39203/65536"],
+        "reported_adjusted_p": ["2/65536", "39203/65536", "39203/65536"],
+        "rejected": [true, false, false]
+      }
+    },
+    {
+      "case_id": "RW_ALL_AT_REGISTERED_NULL",
+      "pair_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "0/1", "repeat": 16},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "0/1", "repeat": 16},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/10", "repeat": 16}
+      },
+      "expected": {
+        "observed_order": [
+          "D1_E_LORA_MINUS_D_LORA",
+          "D2_E_LORA_MINUS_A_NATIVE",
+          "D3_E_LORA_MINUS_E_TEXT"
+        ],
+        "reported_adjusted_p": ["1/1", "1/1", "1/1"],
+        "rejected": [false, false, false]
+      }
+    }
+  ],
+  "grid_and_overall_decision_cases": [
+    {
+      "case_id": "GRID_CONSTANT_STRONG_PASS",
+      "pair_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "1/5", "repeat": 16},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "1/5", "repeat": 16},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/20", "repeat": 16},
+        "U1_E_LORA_MINUS_N": {"value": "3/20", "repeat": 16}
+      },
+      "expected": {
+        "means": {
+          "D1_E_LORA_MINUS_D_LORA": "1/5",
+          "D2_E_LORA_MINUS_A_NATIVE": "1/5",
+          "D3_E_LORA_MINUS_E_TEXT": "-1/20",
+          "U1_E_LORA_MINUS_N": "3/20"
+        },
+        "lower_bound_ticks": {
+          "D1_E_LORA_MINUS_D_LORA": 1999,
+          "D2_E_LORA_MINUS_A_NATIVE": 1999,
+          "D3_E_LORA_MINUS_E_TEXT": -501,
+          "U1_E_LORA_MINUS_N": 1499
+        },
+        "lower_bounds": {
+          "D1_E_LORA_MINUS_D_LORA": "1999/10000",
+          "D2_E_LORA_MINUS_A_NATIVE": "1999/10000",
+          "D3_E_LORA_MINUS_E_TEXT": "-501/10000",
+          "U1_E_LORA_MINUS_N": "1499/10000"
+        },
+        "all_statistical_gates_pass": true
+      }
+    },
+    {
+      "case_id": "GRID_EXACT_NULL_STRICT_FAILURE",
+      "pair_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "0/1", "repeat": 16},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "0/1", "repeat": 16},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/10", "repeat": 16},
+        "U1_E_LORA_MINUS_N": {"value": "0/1", "repeat": 16}
+      },
+      "expected": {
+        "lower_bound_ticks": {
+          "D1_E_LORA_MINUS_D_LORA": -1,
+          "D2_E_LORA_MINUS_A_NATIVE": -1,
+          "D3_E_LORA_MINUS_E_TEXT": -1001,
+          "U1_E_LORA_MINUS_N": -1
+        },
+        "lower_bounds": {
+          "D1_E_LORA_MINUS_D_LORA": "-1/10000",
+          "D2_E_LORA_MINUS_A_NATIVE": "-1/10000",
+          "D3_E_LORA_MINUS_E_TEXT": "-1001/10000",
+          "U1_E_LORA_MINUS_N": "-1/10000"
+        },
+        "all_statistical_gates_pass": false,
+        "failure_reasons": [
+          "D1_OBSERVED_MEAN_BELOW_1_10",
+          "D1_RW_NOT_REJECTED",
+          "D1_BOUND_NOT_ABOVE_ZERO",
+          "D2_OBSERVED_MEAN_BELOW_1_10",
+          "D2_RW_NOT_REJECTED",
+          "D2_BOUND_NOT_ABOVE_ZERO",
+          "D3_RW_NOT_REJECTED",
+          "D3_BOUND_NOT_ABOVE_MINUS_1_10",
+          "U1_MEAN_NOT_POSITIVE",
+          "U1_P_NOT_SIGNIFICANT",
+          "U1_BOUND_NOT_ABOVE_ZERO"
+        ]
+      }
+    }
+  ],
+  "holm_cases": [
+    {
+      "case_id": "HOLM_P_AND_ID_TIES",
+      "alpha": "1/20",
+      "raw_p_by_id": {
+        "zeta": "1/100",
+        "alpha": "1/100",
+        "beta": "1/40",
+        "gamma": "1/2"
+      },
+      "expected": {
+        "order": ["alpha", "zeta", "beta", "gamma"],
+        "step_thresholds": ["1/80", "1/60", "1/40", "1/20"],
+        "adjusted_p_by_id": {
+          "alpha": "1/25",
+          "zeta": "1/25",
+          "beta": "1/20",
+          "gamma": "1/2"
+        },
+        "reject_by_id": {
+          "alpha": true,
+          "zeta": true,
+          "beta": true,
+          "gamma": false
+        },
+        "equality_at_beta_rejects": true
+      }
+    }
+  ],
+  "bootstrap_rng_cases": [
+    {
+      "case_id": "BOOTSTRAP_ZERO_ROOT_FIRST_THREE",
+      "rng_root_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "n_pairs": 16,
+      "expected_index_vectors": [
+        [11, 2, 2, 7, 15, 4, 3, 10, 4, 12, 0, 10, 2, 12, 11, 9],
+        [7, 1, 7, 9, 8, 8, 14, 3, 2, 6, 14, 15, 9, 10, 11, 2],
+        [15, 11, 8, 5, 13, 5, 4, 14, 5, 14, 1, 7, 5, 9, 11, 11]
+      ],
+      "expected_percentile_indices_zero_based": {"lower_2_5_percent": 2499, "upper_97_5_percent": 97499}
+    },
+    {
+      "case_id": "BOOTSTRAP_PROTOCOL_ROOT_FIRST_THREE",
+      "root_expression": "derive('statistics',['confirmation-bootstrap'],0) under split_seed_manifest.json",
+      "rng_root_hex": "f9468652e410b813a8c4cd142ecf4ff99c3186c73ba01ef16439589df11fc99f",
+      "d0_status": "GOLDEN_BYTES_ONLY_STATISTICS_NAMESPACE_REMAINS_DORMANT",
+      "n_pairs": 16,
+      "expected_index_vectors": [
+        [5, 4, 10, 1, 4, 13, 4, 12, 8, 1, 4, 11, 14, 7, 5, 14],
+        [9, 1, 5, 2, 14, 15, 10, 7, 8, 1, 7, 14, 15, 3, 7, 14],
+        [8, 2, 5, 6, 5, 0, 3, 7, 5, 8, 8, 3, 0, 8, 5, 3]
+      ]
+    }
+  ],
+  "calibration_power_screen_cases": [
+    {
+      "case_id": "POWER_CONSTANT_ADEQUATE",
+      "six_calibration_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "1/5", "repeat": 6},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "3/20", "repeat": 6},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "-1/20", "repeat": 6},
+        "U1_E_LORA_MINUS_N": {"value": "1/10", "repeat": 6}
+      },
+      "expected": {
+        "sample_variances": {
+          "D1_E_LORA_MINUS_D_LORA": "0/1",
+          "D2_E_LORA_MINUS_A_NATIVE": "0/1",
+          "D3_E_LORA_MINUS_E_TEXT": "0/1",
+          "U1_E_LORA_MINUS_N": "0/1"
+        },
+        "projected_lower_values": {
+          "D1_E_LORA_MINUS_D_LORA": "1/5",
+          "D2_E_LORA_MINUS_A_NATIVE": "3/20",
+          "D3_E_LORA_MINUS_E_TEXT": "-1/20",
+          "U1_E_LORA_MINUS_N": "1/10"
+        },
+        "adequate_at_16": true,
+        "confirmation_automatically_authorized": false
+      }
+    },
+    {
+      "case_id": "POWER_ALL_ZERO_INADEQUATE",
+      "six_calibration_differences": {
+        "D1_E_LORA_MINUS_D_LORA": {"value": "0/1", "repeat": 6},
+        "D2_E_LORA_MINUS_A_NATIVE": {"value": "0/1", "repeat": 6},
+        "D3_E_LORA_MINUS_E_TEXT": {"value": "0/1", "repeat": 6},
+        "U1_E_LORA_MINUS_N": {"value": "0/1", "repeat": 6}
+      },
+      "expected": {
+        "sample_variances": {
+          "D1_E_LORA_MINUS_D_LORA": "0/1",
+          "D2_E_LORA_MINUS_A_NATIVE": "0/1",
+          "D3_E_LORA_MINUS_E_TEXT": "0/1",
+          "U1_E_LORA_MINUS_N": "0/1"
+        },
+        "projected_lower_values": {
+          "D1_E_LORA_MINUS_D_LORA": "0/1",
+          "D2_E_LORA_MINUS_A_NATIVE": "0/1",
+          "D3_E_LORA_MINUS_E_TEXT": "0/1",
+          "U1_E_LORA_MINUS_N": "0/1"
+        },
+        "adequate_at_16": false,
+        "disposition": "INADEQUATE_POWER_AT_16_NO_POSITIVE_CLAIM",
+        "failure_reasons": [
+          "D1_CALIBRATION_MEAN_BELOW_1_10",
+          "D1_PROJECTED_LOWER_NOT_ABOVE_ZERO",
+          "D2_CALIBRATION_MEAN_BELOW_1_10",
+          "D2_PROJECTED_LOWER_NOT_ABOVE_ZERO",
+          "U1_CALIBRATION_MEAN_NOT_POSITIVE",
+          "U1_PROJECTED_LOWER_NOT_ABOVE_ZERO"
+        ],
+        "increase_n_or_use_reserve": false
+      }
+    }
+  ]
+}

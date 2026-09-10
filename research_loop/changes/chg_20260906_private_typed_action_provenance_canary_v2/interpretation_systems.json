@@ -1,0 +1,135 @@
+{
+  "acceptance_test_ids_addressed": [
+    "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+    "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+    "PC3_PROSE_IS_INERT",
+    "PC4_TRANSITION_AND_ORDER",
+    "PC5_TOTAL_LINEAR_LIFECYCLE",
+    "PC6_CRASH_PUBLICATION_MATRIX",
+    "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+    "PC8_RESOURCE_BOUNDARIES",
+    "PC9_EVIDENCE_RECEIPT_BINDING"
+  ],
+  "acceptance_test_interpretation": "PC1 checks closure of the exact successful and rejected six-record fixtures. PC2 checks that mutations fail at the first applicable provenance boundary rather than being repaired by downstream hashes. PC3 checks that assistant prose is recorded but cannot authorize parsing or state change. PC4 checks ordered opcode, state, measurement, rational-score, and transaction derivation. PC5 checks that only the two specified six-record lifecycles exist, with no retry, recurrence, or second dispatch. PC6 checks crash recovery and publication boundaries; the pure mock means no external effect can escape an uncommitted trace. PC7 checks relational integrity against coordinated, locally rehashed mutations. PC8 checks deterministic encoded, decoded, structural, identifier, action, and integer limits without truncation. PC9 checks that claim eligibility requires a complete independently bound evidence bundle. Together these tests measure fixture-level structural provenance and durability, not model consumption, intent, real-tool execution, learning, memory, or scientific performance.",
+  "ambiguities": [
+    {
+      "ambiguity_id": "A1_EXACT_FIXTURE_BYTES",
+      "impact": "The semantic fixture description fixes the intended vocabulary and transition, but does not uniquely determine every canonical message, manifest, schema, renderer, or response byte. Implementations cannot infer these bytes without violating the ratification boundary.",
+      "question": "Which exact canonical contract, message, manifest, schema, response, and mutation-fixture bytes will Rohin ratify?"
+    },
+    {
+      "ambiguity_id": "A2_STUB_SOURCE_RECEIPT_SCOPE",
+      "impact": "A child-source hash and received-request hash can bind the stub's declared source and input bytes inside the fixture, but do not independently prove that an external process executed that source or that any model consumed the request.",
+      "question": "Is source-bound provenance intentionally limited to deterministic stub execution receipts, with no claim of independent process-consumption truth?"
+    },
+    {
+      "ambiguity_id": "A3_EVIDENCE_ARTIFACT_BOUNDARY",
+      "impact": "The canary has six ledger records, while validator outputs, comparator output, and the evidence receipt are separate artifacts. Their relationship is described, but they are not part of the six-record causal chain.",
+      "question": "Which artifacts are merely eligibility evidence versus members of the committed canary state, and which failure states make each evidence artifact ineligible?"
+    },
+    {
+      "ambiguity_id": "A4_RUNTIME_ERROR_PRECEDENCE",
+      "impact": "The validator error order is frozen, but the writer and stub scheduling behavior for failures occurring between fsync, child return, parse, validation, and publication is not represented as a richer state machine because all such failures terminate eligibility.",
+      "question": "For every crash or non-validation failure, is the required observable result only quarantine/no claim, or must a particular partial-file disposition and stable status also be recorded?"
+    }
+  ],
+  "architecture_change_sha256": "d92384889ea9eb2d205f544936fe16be88c127ed6b60ef8463f4871d839ee9ff",
+  "artifact_type": "architecture_interpretation",
+  "assumptions": [
+    "The exact six-record schemas, canonical fixture bytes, manifests, and mutation registry will be supplied by later exact human ratification; prose descriptions are not implementation authority.",
+    "The private mock's state is temporary in-memory computation whose only durable representation is the validated receipt; it is not organism memory or learned state.",
+    "The evidence receipt is separate from the six-record ledger and cannot authorize a claim unless the committed ledger and both validator outputs are valid and mutually bound.",
+    "A rejected parse can close only through the exact non-dispatched path; an invalid executed receipt is a synthetic mutation artifact and is never a legal runtime observation or commit.",
+    "The human directive grants no implementation, execution, GPU, model, tokenizer, real-tool, or scientific authority before exact ratification."
+  ],
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v2",
+  "claim_delta_interpretation": "The supported future claim is byte- and fixture-level: after exact ratification, scoped CPU implementation, PC1-PC9, and fresh independent audit, one deterministic child-stub request/response can be prospectively linked to one offered typed schema, one parser decision, and one recomputable pure private transition in one committed six-event trace. The trace is declarative and explicit: manifests, schemas, fixtures, request bytes, response bytes, parser receipts, dispatch bytes, state snapshots, hashes, and terminal counters are records or bound inputs. Derived values include chain hashes, JSON-pointer extraction, parser authorization, opcodes, post-state, and reduced score. Temporary parser and mock state is not LoRA-parametric state, and no LoRA update, consolidation, retrieval memory, or learned parameter change exists. There is no thinker attempt, outcome feedback, module-level credit assignment, or whole-organism credit assignment; validator agreement is provenance checking, not credit attribution. The claim must not be generalized to model consumption, intent, reasoning, real-tool atomicity, secrecy, noninterference, recurrence, dreaming, sleep, consolidation, memory, learning, behavior, benchmark performance, or GPU science.",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v2/human_directive.txt",
+      "purpose": "Binding human permission and strict pre-ratification authority boundary.",
+      "sha256": "4d6620787b1190a27cedaaafd8b9a37637ad82727c240756fed3f983a6683843"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Project deliberation, ratification, implementation, audit, and GPU-gate contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v2/scope_proposal.json",
+      "purpose": "Exact requested and forbidden future CPU stub/mock scope.",
+      "sha256": "b8ec17dca421977be9a12a2deb1e516e99dc88074f3de5a1eda7f8895019d193"
+    },
+    {
+      "path": "research_loop/plans/private_typed_action_provenance_canary_v2.md",
+      "purpose": "Deliberation plan, topology, lifecycle, claim ceiling, and authority boundary.",
+      "sha256": "b696f2e6645b009cdb303be3f9de5d9ba425c6154c90d8b8fb3ee42200ed5a47"
+    },
+    {
+      "path": "research_loop/advisory/20260906_private_typed_action_provenance_canary_v2_design.md",
+      "purpose": "Normative canary design, schemas, durability, resources, tests, and deferred work.",
+      "sha256": "6c379465a0e7bcfeb44beb8adaef2acba117afe56afb83cdde0bc2f5ef5aae7e"
+    },
+    {
+      "path": "research_loop/plans/prospective_action_trace_spine_v0.md",
+      "purpose": "Superseded broader prospective action-trace topology and claim limits.",
+      "sha256": "a77035b6687a097c37c196bbf761a968d4ecac13c1e1d373f96f95cdaa5328a7"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/critique.json",
+      "purpose": "Prior adversarial blockers motivating deletion of public and recurrent surfaces.",
+      "sha256": "b946d852eb02aa5f9584527849cde70b07751d25c58d9893e71fd885891724c8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/consensus.json",
+      "purpose": "Prior adjudication rejecting the unrepaired broad spine.",
+      "sha256": "ecf61f99c5bfb60df33f5deee6a04892b12b11cdb5418af0b5906a46a7ecb4e9"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash-bound intake, scope-equality, validation, and human-transition implementation.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/architecture_deliberation.py",
+      "purpose": "Persistent independent-interpretation, critique, consensus, and human-required workflow.",
+      "sha256": "f1d8e87cd7bd78b30755e986008936c154453c995c6e83abff70358b80165dcb"
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "D1_STRUCTURAL_NOT_RUNTIME_PROVENANCE",
+      "proposed_resolution": "Interpret the maximum claim as structural byte provenance within the registered deterministic stub and pure mock, and explicitly exclude proof that an independently operating child process or model consumed the request. Retain the human boundary for any stronger runtime-consumption claim.",
+      "rationale": "The source hash, request hash, and validator recomputation establish relations among supplied and generated bytes, but they do not establish model truth, intent, or independent process observation. The proposal largely states this limitation, but its provenance terminology can still be over-read.",
+      "statement": "I disagree with treating the canary's source-bound receipts as general child or action provenance; they are fixture-local structural provenance only."
+    },
+    {
+      "disagreement_id": "D2_PC1_REPRODUCTION_SCOPE",
+      "proposed_resolution": "Define validator reproduction as independent recomputation and acceptance of the registered artifact and oracle relations, not independent recreation of an unrecorded runtime event. Any claim of reproducing execution must remain limited to the deterministic fixture.",
+      "rationale": "The validators can recompute hashes, parsing, transition, and score from committed bytes. They cannot independently establish that an external actor produced those bytes, and the pure mock deliberately has no external effect.",
+      "statement": "I disagree with reading validator agreement as reproducing an actual child response or environment transition rather than validating a deterministic committed fixture."
+    },
+    {
+      "disagreement_id": "D3_PRIVATE_BOUNDARY_IS_INTEGRITY_ONLY",
+      "proposed_resolution": "Keep the one-root design as a private integrity and publication boundary, while stating that it provides no semantic secrecy or noninterference result. Any public projection or sealed-information claim must be separately ratified.",
+      "rationale": "The proposal deletes the prior public projector and future context, which removes the immediate cross-root leak, but private storage alone does not prove confidentiality against an implementation, operator, or future consumer.",
+      "statement": "I disagree with any interpretation that the private root itself establishes secrecy; it establishes scoped absence of an authorized public consumer, not semantic noninterference."
+    }
+  ],
+  "graph_delta_interpretation": "Operationally, the graph is a bounded linear provenance pipeline. Ratified declarative contract, schemas, manifests, fixtures, limits, and oracle bytes feed the single writer. The writer emits CANARY_OPEN, then durably records the exact child request in INVOCATION_PREPARED before delivering it once to the deterministic stub. The stub returns one closed response envelope; the writer durably records CHILD_RESPONSE_RECEIVED before the parser may inspect only the extracted structured channel. The parser derives either a rejected decision with no authority or one accepted typed call with recomputed authorization, action names, opcodes, and dispatch bytes. Only an fsynced accepted decision reaches the pure mock, which derives temporary pre-state, ordered transition, post-state, transaction receipt, and reduced score; the writer then records the dispatch receipt and terminal close. After file fsync, two source-distinct validators and a comparator validate the complete chain, and a separate evidence binder binds the committed file and validation outputs. Discarded or non-evidentiary material includes assistant prose as action authority, rejected dispatch fields, synthetic invalid receipts, stale or cross-canary bytes, and all partial files quarantined after failure. The removed public projector and future-context nodes mean no result is projected, retrieved, admitted, written into a later context, or used by a parent, dream, sleep, trainer, adapter, evaluator, or report. The three-action sequence is a typed dispatch order, not learned goal-directed path construction; there is no breadth-like connection growth during dreaming and no thinking graph. Explicit declarative nodes are manifests, schemas, fixtures, oracle entries, and six ledger records. There is no LoRA-parametric state. Temporary working state exists only inside parser/mock execution and writer buffers/partials, with durable eligibility beginning only at a validated no-replace commit. No module or whole organism receives credit; validator outputs assign consistency failures to relations, not causal contribution.",
+  "human_boundary": {
+    "open_questions": [
+      "Will Rohin ratify the exact hash-bound proposal, exact canonical contract and fixture bytes, and exactly the three sorted CPU stub/mock scopes after both interpretations, critique, and consensus?",
+      "Will the human decision preserve all five forbidden scopes, including model/tokenizer, real tool/task, public projection, recurrence/dream/sleep/LoRA, and evaluation/benchmark/GPU work?",
+      "If later runtime or scientific claims are desired, which new material change will define independent consumer receipts, feedback boundaries, benchmark controls, and the applicable GPU/scientific gate?"
+    ],
+    "required": true
+  },
+  "interpretation_id": "chg_20260906_private_typed_action_provenance_canary_v2.systems",
+  "loop_delta_interpretation": "The added loop is exactly one bounded canary lifetime: acquire the single-writer lock, open one private ledger, write and fsync one open record, prepare and fsync one invocation, send one canonical request, receive and fsync one response, parse once, fsync the parse decision, perform at most one pure dispatch, fsync its receipt, close once, validate twice, bind evidence, atomically rename without replacement, and directory-fsync. The two legal terminal paths are accepted-plus-executed-success or rejected-plus-not-dispatched; invalid transitions, budget violations, stale bytes, crashes, validation disagreement, and publication errors stop eligibility and do not resume or promote a partial. Budgets are exact constants: one generation, one accepted call, one dispatch, six records, and the registered byte/depth/action/ID limits. There is no retry, cancellation, recurrence, second generation, second call, second dispatch, successor episode, retrieval, dreaming, sleep, training, adapter update, LoRA write, or feedback edge. Consequently thinker attempts and outcomes cannot become evidence for a later dream: no thinker exists in this loop, no outcome is admitted to future context, and the boundary for any such use is a new material change with fresh deliberation, exact human ratification, and applicable independent review. Scale assumptions are intentionally small and deterministic CPU fixture scale; there is no wall-clock SLA or memory-usage claim, and no GPU or scientific run is permitted.",
+  "perspective": "systems",
+  "schema_version": 1,
+  "state": "interpreted",
+  "system_thesis_interpretation": "The project thesis remains a future recurrent agent learning prospectively from thoughts, actions, outcomes, corrections, dreams, and low-rank consolidation. This change does not instantiate that organismal loop. It isolates a prerequisite structural contract: one deterministic typed-action exchange and one pure private state transition can be causally ordered and byte-bound in a durable private artifact. It therefore preserves the thesis by refusing to claim that plumbing is learning, memory, dreaming, LoRA consolidation, tool use, or improvement.",
+  "visibility_matrix_interpretation": "Governance sees the exact proposed contract and derives the future scope but executes nothing. After ratification, the writer sees the frozen schemas, manifests, fixtures, limits, request/response bytes, prose bytes, typed-channel bytes, and private receipt, but has no live model or task. The deterministic child stub sees only one canonical child request and emits one source-bound closed response; it does not see private transition state or future feedback. The parser sees the offered schema-derived vocabulary and only the extracted structured channel; assistant prose is explicitly forbidden as authority. The pure mock sees only the frozen private fixture/manifest and accepted dispatch bytes; it has no filesystem, network, subprocess, device, or external effect. Validators see the frozen declarative inputs, complete ledger, transition receipt, mutation fixtures, and evidence artifacts and independently recompute relations; validation cannot influence stub, parser, or mock behavior. Live model, tokenizer, task, training, adapter, evaluator, benchmark, and GPU artifacts are forbidden at every stage, including any future-science stage because that stage is absent. The private root is an integrity boundary for this canary, not a tested secrecy or noninterference boundary. Nothing is retrieved from prior life history, nothing is consolidated into parameters, and nothing is exposed to a later context or dream."
+}

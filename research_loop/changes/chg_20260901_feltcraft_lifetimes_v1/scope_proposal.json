@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260901_feltcraft_lifetimes_v1",
+  "state": "proposal_only",
+  "human_ratification_required": true,
+  "requested_scope": [
+    "cpu_instrument_bakeoff_evidence",
+    "cpu_leakage_entropy_oracle_path_resource_tests",
+    "new_nonarchive_feltcraft_lifetimes_generator",
+    "paired_random_motif_twin_construction",
+    "pcfl_stream_analytic_comparison",
+    "source_target_deck_construction"
+  ],
+  "forbidden_scope": [
+    "gpu_or_remote_actions",
+    "locked_calibration_or_confirmation",
+    "lora_or_model_weight_operations",
+    "model_or_provider_calls",
+    "paper_or_scientific_claims",
+    "promotion_beyond_cpu_instrument_bakeoff",
+    "scientific_tokenizer_cut_execution"
+  ],
+  "authorization_effect": "Ratification would authorize only deterministic local CPU implementation and evidence for choosing and hardening the lifetime instrument; it would not authorize model-backed science or any scientific conclusion."
+}

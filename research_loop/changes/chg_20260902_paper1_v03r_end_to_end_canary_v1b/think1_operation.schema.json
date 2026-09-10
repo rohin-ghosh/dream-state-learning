@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think1-operation-v1b",
+  "oneOf": [
+    {"type": "object", "additionalProperties": false, "required": ["op", "kind", "fields"], "properties": {"op": {"const": "QUERY"}, "kind": {"$ref": "#/$defs/kind"}, "fields": {"$ref": "#/$defs/queryFields"}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "text", "citations"], "properties": {"op": {"enum": ["THINK", "BACKTRACK"]}, "text": {"$ref": "#/$defs/text"}, "citations": {"$ref": "#/$defs/citations"}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "state_token", "citations"], "properties": {"op": {"const": "COMMIT"}, "state_token": {"type": "string", "pattern": "^label:[A-Za-z0-9_.+-]+$"}, "citations": {"type": "array", "minItems": 1, "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^M[0-9]{6}$"}}}},
+    {"type": "object", "additionalProperties": false, "required": ["op", "reason"], "properties": {"op": {"const": "DEFER"}, "reason": {"$ref": "#/$defs/text"}}}
+  ],
+  "$defs": {
+    "atom": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:+*-]{0,127}$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "kind": {"enum": ["ROUTE", "EFFECT", "SOURCE_VALUE", "ANIMAL_VALUE", "TARGET_BASELINE", "RECIPE", "ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+    "queryFields": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"oneOf": [{"$ref": "#/$defs/atom"}, {"type": "null"}]}},
+    "citations": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^M[0-9]{6}$"}}
+  }
+}

@@ -1,0 +1,822 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260904_experience_model_v6_kernel_lifetime_v1",
+  "title": "Experience Model v6: one-loop per-life LoRA learning in a KernelBench-Verified lifetime",
+  "summary": "Create a new, separately ratified Experience Model v6 architecture whose scientific object is one frozen prompted cognitive loop acting across a life and one LoRA mounted on that same model as the only within-life learned parameter state. Thinking, planning, self-criticism, hypothesis generation, daydreaming, and dreaming are modes of the same loop; none receives a separately learned controller, planner, verifier, critic, or dreamer. SLEEP performs no cognition and asserts no truth: it deterministically selects and renders bounded public thought--action--outcome records and applies a fixed LoRA write. Replace another bespoke semantic-world build as the next priority with a pinned, unmodified KernelBench-Verified fit gate followed, only if it passes, by a small non-claim scout on related but nonduplicate kernels. Demote RML-G1 to an optional regression/integration fixture. The scout asks only whether authentic outcome-grounded LoRA state causally improves action on sealed unseen kernels relative to adapter-off and outcome-shuffled controls; independent replicated lives, strong external-memory baselines, post-context growth, capacity curves, and any paper claim remain later gates.",
+  "system_thesis": "A base model already contains broadly learned intelligence, while its bounded conscious workspace can only project a small part of lived structure at once. A fixed recurrent loop can generate thoughts, hypotheses, imagined continuations, actions, and judgments from public experience, but ordinary context eventually disappears. If a simple sleep/write operation repeatedly consolidates the loop's own outcome-bearing experience into one isolated per-life LoRA on the same model, then future inference may become better at generating abstractions, allocating search, revising beliefs, using tools, and acting on situations whose exact solutions were never in the training stream. The first falsifiable requirement is not recollection or a separately trained dreamer: it is a causal, retained improvement on unseen action after the originating context is gone, with the gain lost under adapter removal, outcome shuffling, or wrong-life substitution.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/human_directive.txt",
+      "sha256": "6811b89951d9a7bf9a0cbfa7433595f40ebb360b51fd96f5058dc2d2840b2282",
+      "purpose": "Verbatim owner directive requesting a new v6 subtree, an off-the-shelf gym, careful reproducible pre-work, and a direct test of whether agent feedback can persist intelligently rather than decay in context."
+    },
+    {
+      "path": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/discussion_context.md",
+      "sha256": "e8d759ac47f6b0e8fb64c68f0a8c0877c2fdb4df41ea00d23143f6b6ab142798",
+      "purpose": "Immutable discussion synthesis defining the one-loop/one-LoRA hypothesis, simple sleep boundary, KernelBench-Verified candidate, scout endpoints, controls, and RML-G1 demotion under deliberation."
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory architecture-deliberation, exact human-ratification, independent-review, and GPU/scientific-claim authority contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict schema governing the exact structure, graph and loop deltas, claim boundaries, visibility matrix, acceptance tests, and human boundary of this proposal."
+    },
+    {
+      "path": "research_notes/00_THESIS.md",
+      "sha256": "2a259aaf281b22843f21327e69c77fcd12246b6c526391ee0ac919d55f2e11da",
+      "purpose": "Canonical developmental thesis, prior empirical lessons, capacity failures, action-grounding motivation, and historical architecture that v6 modifies."
+    },
+    {
+      "path": "research_notes/42_system_thesis_and_experiment_map.md",
+      "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa",
+      "purpose": "Flywheel arrows, matched-baseline requirements, action and lifetime claim gates, leakage rules, and warning that scripted common lives cannot prove the online flywheel."
+    },
+    {
+      "path": "research_notes/43_developmental_experiential_learning_v1.md",
+      "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15",
+      "purpose": "Earlier developmental protocol, post-context response surface, common-deck/on-policy distinction, capacity hypothesis, endpoints, and hard falsifiers retained or narrowed by v6."
+    },
+    {
+      "path": "research_notes/45_developmental_kernel_pilot_v1.md",
+      "sha256": "a92f406445c8d47fd583bb3e2c857e93aed0340c82c2512f66917a0a38d3b53d",
+      "purpose": "Prior scripted synthetic kernel-pilot design supplying useful writer authority, compute matching, adapter isolation, shuffle, reader, runtime, and pre-GPU controls while remaining insufficient for the v6 online claim."
+    },
+    {
+      "path": "research_notes/49_rml_paper_architecture_and_next_experiment.md",
+      "sha256": "cad5755c8ccae8c81ca1f0136b6c0a8056dfef8daa6755bec4b82f2d59c5d9e9",
+      "purpose": "Current RML evidence ladder and RML-G1 fast falsifier whose supplied-gold modular-reader priority is explicitly demoted by this change."
+    },
+    {
+      "path": "research_notes/related_work/zahavy2026_llms_cant_jump.md",
+      "sha256": "a5e4851480a6faa77afcff107dc081de30497656e7a0a93b405cbfd76373bce1",
+      "purpose": "Abduction, imagined experience, internal-coherence loss, and compression framing; bounds v6 to outcome-grounded lifetime evidence rather than claiming evidence-free paradigm invention."
+    },
+    {
+      "path": "REVIEW_PACK.md",
+      "sha256": "1c85d701a72c73e76bcf59df840f40b978e8c2ed8cc3660e99692fd1bfa94937",
+      "purpose": "Historical results and failure ledger showing LoRA write-format, exposure, style-collapse, capacity, hypothesis-generation, and evaluation-integrity lessons that the v6 scout must not relearn expensively."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "add",
+        "node_id": "EXPERIENCE_MODEL_V6",
+        "before": "No isolated v6 architecture expresses the revised one-loop and one-per-life-LoRA hypothesis.",
+        "after": "A new experience_model_v6 subtree is proposed as an isolated implementation target after exact ratification; it reuses generic ledgers, checkpointing, evaluation, and test patterns without mutating RML, Semantic World, FeltCraft, or prior result artifacts.",
+        "rationale": "The revised architecture is materially different from the modular reader/dreamer ladder and must not be smuggled into an older benchmark package."
+      },
+      {
+        "operation": "add",
+        "node_id": "UNIFIED_FROZEN_COGNITIVE_LOOP",
+        "before": "Earlier plans separated prompted THINK and DREAM regimes and contemplated a separately learned LOOP adapter, scheduler, or critic.",
+        "after": "One pinned base model plus one frozen bootstrap prompt/schema performs all within-life cognition: task reasoning, planning, code generation, self-criticism, hypothesis formation, counterfactual simulation, daydreaming, tool selection, revision, and stopping. Invocation state may differ, but no separately learned cognitive module exists in v6.",
+        "rationale": "The hypothesis is that the pretrained model already supplies the cognitive machinery; only lived content and useful recurrent tendencies need within-life consolidation."
+      },
+      {
+        "operation": "add",
+        "node_id": "SINGLE_PER_LIFE_LORA",
+        "before": "Per-life adapters were treated primarily as associative memory transports read by a clean-base composer, while policy learning was assigned to a future distinct LOOP adapter.",
+        "after": "Exactly one LoRA is mounted directly on the same model that thinks and acts. It is the only within-life learned parameter object and may jointly alter recall, abstraction, hypothesis generation, search allocation, judgment, tool use, action, revision, and stopping. It begins from a null adapter for every independent life, persists across tasks within that life, and is never reused across lives.",
+        "rationale": "This tests whether experiential consolidation changes the whole future inference distribution without prespecifying separate factual and procedural compartments."
+      },
+      {
+        "operation": "add",
+        "node_id": "DETERMINISTIC_SLEEP_WRITE_COMPILER",
+        "before": "Sleep/dream components could themselves call specialized resolvers, propose semantic graphs, rank memories, or act as a second intelligence.",
+        "after": "SLEEP contains no model call, search policy, learned selector, truth proposal, or hidden verifier. At fixed predeclared checkpoints it deterministically consumes only the sealed public acquisition ledger; filters schema-valid, provenance-bearing verified improvements and bounded failure-to-recovery pairs; includes bounded explicit hypotheses already emitted by the ordinary loop; deduplicates and balances by public task features; mixes fixed old/new replay; renders fixed training rows; and invokes the fixed LoRA update recipe. The official environment outcome may gate a row, but SLEEP cannot invent or certify a claim.",
+        "rationale": "The first experiment should test the flywheel with the simplest plausible write mechanism and leave all creative cognition inside the single recurrent loop."
+      },
+      {
+        "operation": "add",
+        "node_id": "KERNELBENCH_VERIFIED_OFF_THE_SHELF_GYM",
+        "before": "The next priorities centered on project-built semantic/RML environments and a supplied-gold reader integration gate.",
+        "after": "KernelBench-Verified is the candidate external action gym, used only at a pinned upstream revision through its official task definitions, hidden multi-distribution correctness checks, TF32-aware baselines, and timing harness. V6 may write adapters and agent-side glue but may not modify, fork, weaken, or replace the benchmark, correctness distributions, reference workload semantics, or scorer. Adoption is conditional on a predeclared static/CPU fit audit and a separately authorized bounded hardware canary.",
+        "rationale": "Real kernel construction supplies objective action--outcome feedback and avoids spending another cycle designing a world that may encode the desired answer."
+      },
+      {
+        "operation": "add",
+        "node_id": "KERNEL_LIFETIME_SCOUT",
+        "before": "No direct, bounded v6 lifetime experiment existed.",
+        "after": "After the off-the-shelf fit gate, a non-claim scout uses two development lives, 24 related but nonduplicate acquisition kernels in three fixed blocks of eight, and eight sealed unseen checkpoint kernels split between same-family transfer and cross-motif or opposite-condition transfer. Checkpoints occur before acquisition and after 8, 16, and 24 kernels. Every task has the same six cognitive/action opportunities. Core conditions are authentic SLEEP-LoRA, its adapter-off replay, an equal-token outcome-shuffled adapter, and the identical compiled corpus as bounded text; a regular frozen/sham-write trajectory is retained as the ordinary-agent reference.",
+        "rationale": "This is the smallest direct falsifier of whether outcome-bearing experience becomes useful future action while keeping scale and claims behind later gates."
+      },
+      {
+        "operation": "add",
+        "node_id": "KERNEL_LIFETIME_CONFIRMATION_GATE",
+        "before": "A promising development curve could trigger unbounded scaling or a paper claim.",
+        "after": "No scale run follows automatically. A new hash-bound preregistration, independent life replication, post-context checkpoints, native long-context and strong RAG/organized-memory baselines, raw/direct LoRA, rank/capacity bracket, retained-compute accounting, and fresh human GPU authorization are mandatory before confirmation. Baseline plateau or degradation may be stated only if actually measured with oracle headroom.",
+        "rationale": "The two-life scout can debug and falsify a mechanism but is neither an independent population result nor evidence of lifelong scaling."
+      },
+      {
+        "operation": "modify",
+        "node_id": "RML_G1_FAST_FALSIFIER",
+        "before": "RML-G1 was the immediate 234-call scientific priority and gate to learned DREAM text and LoRA transport.",
+        "after": "RML-G1 is demoted to an optional modular-reader regression or integration fixture. It may be revisited only by a separate ratified scope and cannot block, substitute for, or provide evidence for v6 longitudinal LoRA learning.",
+        "rationale": "Supplied-gold local memory tests whether an older reader/controller can use known rows; it does not test a one-loop agent metabolizing its own experience into future cognition."
+      },
+      {
+        "operation": "modify",
+        "node_id": "FUTURE_LOOP_ADAPTER",
+        "before": "A shared cross-life LOOP adapter was the planned learned controller for retrieval, dreaming, scheduling, action, and stopping.",
+        "after": "No LOOP adapter, learned scheduler, learned critic, separate dreamer adapter, or base-model update is part of v6 or permitted to repair its scout. Any future cross-life amortization is a distinct later architecture change after the per-life LoRA mechanism is measured.",
+        "rationale": "Adding a second learned intelligence would make it impossible to attribute improvement to the proposed single experiential state."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "add",
+        "edge_id": "PUBLIC_KERNEL_STATE_TO_UNIFIED_THINK",
+        "from": "PUBLIC_KERNEL_TASK_AND_CURRENT_TRACE",
+        "to": "UNIFIED_FROZEN_COGNITIVE_LOOP",
+        "before": "No v6 edge existed.",
+        "after": "The loop receives the current public task packet, bounded current-task history, permitted recent public context, tool outputs, and its mounted per-life LoRA; it never receives hidden correctness inputs, future tasks, reference optimized kernels, scorer internals, or other lives.",
+        "rationale": "This defines the conscious working projection and the exact public grounding of cognition."
+      },
+      {
+        "operation": "add",
+        "edge_id": "UNIFIED_THINK_TO_KERNEL_ACTION",
+        "from": "UNIFIED_FROZEN_COGNITIVE_LOOP",
+        "to": "OFFICIAL_KERNELBENCH_VERIFIED_ACTION_INTERFACE",
+        "before": "No v6 edge existed.",
+        "after": "Each counted operation emits at most one schema-valid hypothesis, patch, benchmark request, or stop; invalid or excess operations consume budget and are never silently retried.",
+        "rationale": "Action and thought budgets must be inspectable and identical across memory conditions."
+      },
+      {
+        "operation": "add",
+        "edge_id": "KERNEL_OUTCOME_TO_PUBLIC_LIFE_LEDGER",
+        "from": "OFFICIAL_KERNELBENCH_VERIFIED_ACTION_INTERFACE",
+        "to": "IMMUTABLE_PUBLIC_ACQUISITION_LEDGER",
+        "before": "No v6 edge existed.",
+        "after": "Public compiler status, correctness result, robust timing aggregate, action bytes, explicit loop hypothesis, and provenance append to the acquisition ledger; hidden test cases, raw hidden inputs, scorer internals, and reference optimized code never append.",
+        "rationale": "Only lived action--outcome experience may become writable memory."
+      },
+      {
+        "operation": "add",
+        "edge_id": "PUBLIC_LEDGER_TO_DETERMINISTIC_SLEEP_ROWS",
+        "from": "IMMUTABLE_PUBLIC_ACQUISITION_LEDGER",
+        "to": "DETERMINISTIC_SLEEP_WRITE_COMPILER",
+        "before": "No v6 edge existed.",
+        "after": "At fixed cadence, a byte-deterministic, target-blind compiler maps only eligible public records into a capped, provenance-bound training manifest with fixed selection, old/new replay, and rendering rules.",
+        "rationale": "This is the sole experience-to-write boundary and must be auditable without interpreting hidden model state."
+      },
+      {
+        "operation": "add",
+        "edge_id": "SLEEP_ROWS_TO_SINGLE_LORA",
+        "from": "DETERMINISTIC_SLEEP_WRITE_COMPILER",
+        "to": "SINGLE_PER_LIFE_LORA",
+        "before": "No v6 edge existed.",
+        "after": "A pinned LoRA trainer applies the exact sealed rows for a fixed token/step recipe; no evaluation data, external labels, hidden truth, content-dependent retry, early stopping, or second adapter may enter.",
+        "rationale": "The adapter is the only parametric write target and training variability must not become an undeclared selector."
+      },
+      {
+        "operation": "add",
+        "edge_id": "SINGLE_LORA_TO_LATER_UNIFIED_THINK",
+        "from": "SINGLE_PER_LIFE_LORA",
+        "to": "UNIFIED_FROZEN_COGNITIVE_LOOP",
+        "before": "Earlier systems often unmounted the adapter after recognition reads and used the clean base to compose.",
+        "after": "The current per-life adapter remains mounted on the same loop during later acquisition and in authentic checkpoint forks, allowing learned experiential state to affect every future cognitive and action token.",
+        "rationale": "This is the architecture's claimed upward flywheel rather than a database read followed by an unchanged actor."
+      },
+      {
+        "operation": "add",
+        "edge_id": "CHECKPOINT_TO_STERILE_HELDOUT_FORK",
+        "from": "SEALED_LIFE_CHECKPOINT",
+        "to": "READ_ONLY_KERNEL_EVALUATION_FORK",
+        "before": "No v6 edge existed.",
+        "after": "Authentic, adapter-off, shuffled, wrong-life when available, and same-corpus-text conditions start from byte-identical checkpoint state in clean processes; evaluation feedback exists only inside the current fork and is destroyed or access-denied before acquisition resumes.",
+        "rationale": "Within-checkpoint interventions identify whether adapter content, rather than lifetime order or leaked evaluation experience, changes future action."
+      },
+      {
+        "operation": "remove",
+        "edge_id": "RML_G1_TO_NEXT_SCIENTIFIC_PRIORITY",
+        "from": "RML_G1_FAST_FALSIFIER",
+        "to": "NEXT_GPU_SCIENCE_RUN",
+        "before": "Passing supplied-gold RML-G1 licensed learned-memory work as the immediate route.",
+        "after": "",
+        "rationale": "V6 directly tests longitudinal outcome-to-LoRA-to-action learning; the older modular-reader gate is neither necessary nor sufficient for that question."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "add",
+        "loop_id": "V6_UNIFIED_COGNITIVE_ACTION_LOOP",
+        "before": "No v6 loop; earlier designs assigned different intellectual roles and future learned parameters to THINK, DREAM, schedulers, and critics.",
+        "after": "STATE(current public kernel, current-task trace, bounded recent public context, mounted life LoRA, remaining budget) -> one invocation of the pinned model/bootstrap -> HYPOTHESIZE, PATCH, BENCHMARK, REVISE, DAYDREAM, or STOP -> official public tool/environment outcome -> append public record -> repeat. DAYDREAM and DREAM are ordinary invocations with different immediate state, not different models or trainable policies.",
+        "trigger": "A new acquisition task, a new public action outcome, or one predeclared between-task reflection slot; cadence and maximum calls are identical across arms.",
+        "reads": [
+          "current public KernelBench-Verified task packet",
+          "current-task public actions and official outcomes",
+          "bounded recent public context under the common context cap",
+          "the single mounted per-life LoRA in adapter-enabled conditions",
+          "remaining thought, action, token, and tool budgets"
+        ],
+        "writes": [
+          "one schema-valid public operation",
+          "one bounded explicit hypothesis or learning note when the schema permits",
+          "current-task patch/workspace state",
+          "append-only public acquisition-ledger record"
+        ],
+        "stop_condition": "The loop emits STOP, reaches the fixed six-operation task cap, produces an unrecoverable invalid action under the frozen semantics, or the official environment terminates the task; no hidden retry replaces a consumed operation.",
+        "rationale": "All creative and evaluative behavior must emerge from the same frozen model plus accumulated life state."
+      },
+      {
+        "operation": "add",
+        "loop_id": "V6_DETERMINISTIC_SLEEP_WRITE_LOOP",
+        "before": "Sleep could include a model-owned proposal, verification, graph-building, or learned scheduling loop.",
+        "after": "SEAL eligible public ledger prefix -> mechanically validate provenance and official outcomes -> select fixed quotas of verified improvements, failure-to-recovery pairs, and already-emitted explicit hypotheses -> deterministic deduplication and public-feature balance -> fixed old/new rehearsal -> render fixed rows -> train/update the one life LoRA -> seal checkpoint and complete receipts. The compiler makes no model call and introduces no new semantic content.",
+        "trigger": "Exactly after acquisition kernels 8, 16, and 24 in the scout; later cadence requires a new run manifest and ratification.",
+        "reads": [
+          "sealed public acquisition-ledger prefix through the checkpoint",
+          "prior public sleep manifest and replay cursor",
+          "fixed compiler, tokenizer, LoRA recipe, quota, and random-seed bytes"
+        ],
+        "writes": [
+          "deterministic selected-record manifest",
+          "fixed rendered training rows with source record IDs",
+          "single per-life LoRA checkpoint",
+          "training, token, step, byte, seed, and crash receipts"
+        ],
+        "stop_condition": "The fixed compiler finishes all eligible rows and the exact fixed LoRA steps, or any schema, provenance, budget, numerical, crash-seal, or contamination invariant fails and preserves the checkpoint as failed without content-dependent repair.",
+        "rationale": "SLEEP is the write mechanism whose quality is tested, not a second hidden intelligence."
+      },
+      {
+        "operation": "add",
+        "loop_id": "V6_CHECKPOINT_CAUSAL_EVALUATION_LOOP",
+        "before": "Training-task hill climbing or a single final score could be mistaken for lifetime learning.",
+        "after": "At checkpoints 0, 8, 16, and 24, freeze acquisition, fork clean processes from the same sealed public state, expose one held-out task at a time, run exactly six loop operations with the assigned authentic/off/shuffled/text condition, score via the official harness, destroy or quarantine the complete evaluation descendant state, and resume acquisition only from the pre-evaluation checkpoint. Incorrect kernels score zero. Primary scout summaries are held-out action curve, adapter-on minus adapter-off, authentic minus shuffled, same-family versus cross-motif transfer, first-attempt correctness/speed, attempts to first correct, and old-panel retention.",
+        "trigger": "A sealed initial or post-sleep scout checkpoint and a precommitted target/condition schedule.",
+        "reads": [
+          "one currently revealed held-out public task packet",
+          "one assigned memory condition from the sealed checkpoint",
+          "only within-target public evaluation outcomes",
+          "fixed evaluation action, thought, token, context, and timing budgets"
+        ],
+        "writes": [
+          "sterile per-target trace",
+          "official correctness and repeated timing receipts",
+          "condition-level held-out action metrics",
+          "contamination and process-isolation receipts"
+        ],
+        "stop_condition": "The target stops or consumes six operations; the entire evaluation fork then terminates and no descendant bytes are readable by acquisition, SLEEP, LoRA training, or later evaluation targets.",
+        "rationale": "Only held-out behavior under adapter interventions can distinguish lifetime transfer from training-kernel memorization or ordinary within-task hill climbing."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "retire",
+        "claim_id": "SEPARATELY_LEARNED_DREAM_THINK_CONTROLLER_NEEDED_FOR_PAPER1",
+        "before": "A distinct future LOOP adapter or learned scheduler/critic was expected to amortize how the agent thinks, dreams, verifies, retrieves, and stops.",
+        "after": "V6 tests no separately learned thinker, dreamer, planner, scheduler, verifier, critic, or controller. The prompted base loop is fixed; only one per-life LoRA learns.",
+        "evidence_needed": "No positive result is required to remove the extra learned object from v6. Reintroducing one requires a separate architecture change showing that the one-LoRA loop failed for a localized reason the new object tests.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6_SCOUT_CAUSAL_EXPERIENTIAL_WRITE_SIGNAL",
+        "before": "No v6 evidence exists.",
+        "after": "A bounded development scout may establish only that authentic public action--outcome experience written into the life LoRA causally changes held-out kernel action relative to adapter-off and correctly constructed outcome-shuffled controls.",
+        "evidence_needed": "All fit, leakage, reset, compute, and writer gates pass; authentic minus adapter-off held-out action value is positive at the final checkpoint in both development lives and exceeds a preregistered practical margin in their pooled descriptive result; outcome shuffling removes at least half of that gain; no target or evaluation descendant enters writing. Exact numerical margins must be frozen in the separately ratified run manifest before outputs.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6_OUTCOME_GROUNDED_CROSS_KERNEL_ABSTRACTION",
+        "before": "No v6 evidence exists.",
+        "after": "An abstraction claim requires improved action on graph/shape-deduplicated targets that combine or reverse conditions encountered separately, not verbal theory quality, seen-kernel score, style change, or exact code reuse.",
+        "evidence_needed": "Prospectively sealed independent lives; positive authentic-versus-off and authentic-versus-shuffled effects on the cross-motif/opposite-condition stratum; target solutions and exact operator-graph-and-shape combinations absent from every write row; wrong-life swap and nearest-neighbor controls; and trace evidence that credited actions depend on conditions rather than one globally repeated optimization.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6_LIFETIME_GROWTH_PAPER_CLAIM",
+        "before": "The current project has not shown post-context action growth from one per-life LoRA in an external action gym.",
+        "after": "A future confirmation may claim that a fixed prompted agent continues to acquire, retain, and combine useful outcome-grounded kernel knowledge through its per-life LoRA after the lived stream exceeds working context, relative to measured strong ordinary-agent and external-memory baselines.",
+        "evidence_needed": "A new preregistered confirmation with independent life as the replication unit; multiple strictly post-context checkpoints; sealed related/nonduplicate tasks; no-memory, recent/native-long-context, raw episodic RAG, organized/reflection text, raw/direct LoRA, same-corpus text, outcome-shuffle, adapter-off, wrong-life, and batch references; matched action/thought/context and disclosed consolidation compute; positive post-context lower growth bound with retention; oracle headroom; and fresh independent review and human claim ratification.",
+        "headline_eligible": true
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6_LOW_RANK_SHARED_DIRECTION_HYPOTHESIS",
+        "before": "Low rank was often treated as a storage/cost choice or assumed capacity advantage.",
+        "after": "Low rank may act as an inductive bias that turns repeated sparse corrections into shared behavioral directions, with too little rank underfitting and too much rank memorizing; v6 registers but does not assume this Goldilocks hypothesis.",
+        "evidence_needed": "After a scout signal, a separately preregistered rank/capacity curve at fixed base, data, update tokens, and evaluation budgets, measuring exact-neighbor retention, graph/shape-deduplicated transfer, compositional action, false transfer, and adapter bytes. A flat curve, installation failure, or raw memorization falsifies the claimed bias.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "retire",
+        "claim_id": "RML_G1_AS_NEXT_SCIENTIFIC_GATE",
+        "before": "RML-G1 supplied-gold recurrent memory use was the immediate model-facing gate to the paper ladder.",
+        "after": "RML-G1 can support only an optional older-interface engineering statement and has no evidentiary role in v6 longitudinal experiential learning.",
+        "evidence_needed": "Any future RML-G1 execution requires its own current architecture intake and may report only the exact modular-reader construct it runs.",
+        "headline_eligible": false
+      },
+      {
+        "operation": "add",
+        "claim_id": "V6_NO_EVIDENCE_FREE_PARADIGM_INVENTION_CLAIM",
+        "before": "The broad discussion connected dreaming, internal coherence, abduction, and paradigm-changing creativity.",
+        "after": "Kernel lifetime results may motivate experience-grounded hypothesis generation but cannot establish evidence-free scientific invention, general creativity, consciousness, or human-like dreaming.",
+        "evidence_needed": "Those broader constructs require separately operationalized environments, losses, counterfactuals, and preregistered evaluations beyond verified kernel outcomes.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+      "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+      "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+      "CURRENT_PER_LIFE_LORA",
+      "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+      "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+      "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+      "OTHER_ARM_OR_OTHER_LIFE_STATE"
+    ],
+    "stages": [
+      "WAKE_THINK_ACT",
+      "SLEEP_COMPILE",
+      "LORA_WRITE",
+      "CHECKPOINT_EVAL_AGENT",
+      "OFFICIAL_ENVIRONMENT_HARNESS",
+      "OFFLINE_AUDIT_AND_ANALYSIS"
+    ],
+    "cells": [
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "visible",
+        "reason": "This is the ordinary public state from which the single loop thinks and acts."
+      },
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "derived_only",
+        "reason": "SLEEP sees only the sealed canonical copy embedded in eligible acquisition-ledger records, never live tools or an unreconciled workspace."
+      },
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "LORA_WRITE",
+        "visibility": "derived_only",
+        "reason": "The trainer sees only deterministic rendered rows, not the live task or tool channel."
+      },
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "visible",
+        "reason": "Only the currently revealed held-out task and its within-target public results are visible in its sterile fork."
+      },
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "visible",
+        "reason": "The official harness must execute the submitted public workload and return the declared public result."
+      },
+      {
+        "information_id": "PUBLIC_CURRENT_TASK_PACKET_AND_TOOL_RESULT",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Auditors may inspect sealed public packets and outputs after scientific identities are fixed."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "derived_only",
+        "reason": "The live loop receives only the common bounded recent-context projection, not unrestricted lifetime replay; persistent text access exists only in declared baseline arms."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "visible",
+        "reason": "The sealed public acquisition prefix is the compiler's complete and exclusive semantic input."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "LORA_WRITE",
+        "visibility": "derived_only",
+        "reason": "Only selected rendered rows with provenance reach training."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "forbidden",
+        "reason": "Authentic LoRA evaluation receives parametric effects only; exact same-corpus text access is confined to its explicitly labeled baseline condition."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "forbidden",
+        "reason": "The correctness/timing harness has no need for prior agent history."
+      },
+      {
+        "information_id": "PUBLIC_ACQUISITION_LEDGER_AND_EXPLICIT_LOOP_HYPOTHESES",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Complete public provenance must remain available for leakage, lineage, and causal audits."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "forbidden",
+        "reason": "The primary live agent may receive their learned effect through the LoRA but not an undeclared direct text channel."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "visible",
+        "reason": "The deterministic compiler creates and seals these bytes."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "LORA_WRITE",
+        "visibility": "visible",
+        "reason": "These are the trainer's exclusive data inputs."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "derived_only",
+        "reason": "Authentic LoRA sees only their parametric consequence; the separately labeled same-corpus text arm sees bounded retrieved rows through its frozen interface."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "forbidden",
+        "reason": "Memory data cannot influence official correctness or timing evaluation."
+      },
+      {
+        "information_id": "COMPILED_SLEEP_ROWS_AND_PROVENANCE_MANIFEST",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Auditors require exact row, selection, token, and lineage bytes."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "visible",
+        "reason": "The one current life adapter is mounted on the same model in authentic conditions."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "forbidden",
+        "reason": "The deterministic compiler cannot inspect weights or condition row selection on model internals."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "LORA_WRITE",
+        "visibility": "visible",
+        "reason": "The trainer updates exactly this life-local object and records its hash."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "visible",
+        "reason": "The assigned authentic, null, shuffled, or swapped adapter is mounted before a clean fork begins and remains fixed within it."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "forbidden",
+        "reason": "The benchmark harness scores submitted code and cannot branch on memory condition."
+      },
+      {
+        "information_id": "CURRENT_PER_LIFE_LORA",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Hashes, configuration, bytes, and condition assignment are available after sealing for audit and analysis."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "forbidden",
+        "reason": "Future tasks, target membership, family labels used by splitting, and evaluation schedules cannot steer acquisition."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "forbidden",
+        "reason": "The writer must be target-blind and cannot select records using future-task similarity."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "LORA_WRITE",
+        "visibility": "forbidden",
+        "reason": "No future-task token, label, ordering, or split metadata may enter training."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "derived_only",
+        "reason": "Exactly one public target packet is revealed at a time; its checkpoint role, future targets, and split metadata remain hidden."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "visible",
+        "reason": "The sealed scheduler and official harness may resolve target identity and split membership outside cognition."
+      },
+      {
+        "information_id": "SEALED_FUTURE_OR_CHECKPOINT_TASKS_AND_SPLIT_METADATA",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Static deduplication, balance, and target-sealing audits require the full split manifest."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "forbidden",
+        "reason": "Hidden tests, optimized answers, and scoring internals would directly leak success."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "forbidden",
+        "reason": "SLEEP may use only the official public outcome, never the hidden evidence that produced it."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "LORA_WRITE",
+        "visibility": "forbidden",
+        "reason": "No hidden evaluator content may become a training token or target."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "forbidden",
+        "reason": "The agent receives only the declared public correctness/timing response."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "visible",
+        "reason": "Only the pinned official harness may use its hidden inputs and scoring implementation to evaluate submitted kernels."
+      },
+      {
+        "information_id": "HIDDEN_KBV_CORRECTNESS_INPUTS_REFERENCE_OPTIMIZED_KERNELS_AND_SCORER_INTERNALS",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "derived_only",
+        "reason": "Analysis receives official aggregate scores and integrity receipts, not hidden cases or optimized solution bodies; designated non-cognitive auditors may verify hashes separately."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "forbidden",
+        "reason": "No evaluation descendant may return to the living acquisition process."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "forbidden",
+        "reason": "Evaluation feedback is never eligible life experience."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "LORA_WRITE",
+        "visibility": "forbidden",
+        "reason": "Checkpoint targets and outcomes cannot train any current or later life adapter."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "visible",
+        "reason": "Within one target fork, the loop may use only that target's public feedback for its bounded hill climb; the fork dies afterward."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "visible",
+        "reason": "The harness produces and seals the current target's official feedback and receipts."
+      },
+      {
+        "information_id": "CHECKPOINT_EVALUATION_FEEDBACK_AND_DESCENDANT_TRACES",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Sterile traces and scores are retained outside the living agent for final analysis and contamination audit."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "WAKE_THINK_ACT",
+        "visibility": "forbidden",
+        "reason": "No agent may observe another condition's actions, data, adapter, memory, or score."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "SLEEP_COMPILE",
+        "visibility": "forbidden",
+        "reason": "Compilation is life-local and cannot use cross-arm quality or content."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "LORA_WRITE",
+        "visibility": "forbidden",
+        "reason": "Training data, optimizer state, RNG, and adapters are isolated by life and condition."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "CHECKPOINT_EVAL_AGENT",
+        "visibility": "forbidden",
+        "reason": "Swapped-adapter conditions receive only the assigned opaque adapter, never its origin, source trace, or other-life results."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "OFFICIAL_ENVIRONMENT_HARNESS",
+        "visibility": "forbidden",
+        "reason": "The harness evaluates one sealed submission without cross-arm branching or score normalization visible to cognition."
+      },
+      {
+        "information_id": "OTHER_ARM_OR_OTHER_LIFE_STATE",
+        "stage_id": "OFFLINE_AUDIT_AND_ANALYSIS",
+        "visibility": "visible",
+        "reason": "Only offline analysis may join sealed conditions and lives for paired summaries after all outputs are fixed."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "V6_T01_SCHEMA_AND_CONTEXT_BINDING",
+      "kind": "invariant",
+      "setup": "Run research_loop.architecture_intake.validate_change against this exact change.json and repository root; independently recompute every declared context SHA-256.",
+      "expected": "Strict schema, unique identifiers, complete visibility Cartesian product, existing root-relative paths, and all eleven declared hashes validate with no exception.",
+      "falsifies": "The proposal is not a durable byte-bound architecture intake and cannot enter deliberation.",
+      "evidence_artifact": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/change_validation.json",
+      "required_before": "implementation"
+    },
+    {
+      "test_id": "V6_T02_ONE_LOOP_ONE_LEARNED_OBJECT_STATIC_GATE",
+      "kind": "invariant",
+      "setup": "After ratified implementation, statically enumerate model checkpoints, adapters, optimizers, trainable parameter groups, learned selectors, model call sites, and prompt identities reachable from v6 acquisition, reflection, sleep, and evaluation.",
+      "expected": "One pinned base model and bootstrap operation family serve every cognitive call; exactly one per-life LoRA is trainable; SLEEP has zero model call sites; no learned dreamer, thinker, planner, scheduler, verifier, critic, router, second adapter, or base-weight update is reachable.",
+      "falsifies": "Observed improvement cannot be attributed to the proposed one-loop/one-LoRA architecture.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/one_loop_one_object_audit.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T03_LIFE_ADAPTER_RESET_AND_ISOLATION",
+      "kind": "unit",
+      "setup": "Create two CPU/mock lives with distinct canary rows, checkpoints, optimizer states, retrieval/text stores, workspaces, process trees, and crash/resume paths; attempt cross-life reads and swaps outside the declared opaque evaluation intervention.",
+      "expected": "Every life begins with the clean base and null LoRA; only its own single adapter persists across its acquisition tasks; no canary, optimizer byte, cache, filesystem descendant, retrieval record, or evaluation trace crosses lives; declared swap forks reveal no origin metadata.",
+      "falsifies": "Per-life learning and independent replication are contaminated.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/life_isolation_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T04_SLEEP_COMPILER_DETERMINISM_AND_AUTHORITY",
+      "kind": "unit",
+      "setup": "Compile the same sealed synthetic public ledger repeatedly under process, ordering, locale, hash-seed, hidden-answer, future-target, and scorer-metadata perturbations; include malformed provenance, unverified improvements, failures without recoveries, hidden fields, and evaluation-tainted records.",
+      "expected": "Eligible inputs produce byte-identical manifests/rows and fixed quotas; ineligible or tainted records are rejected; target/answer/scorer perturbations produce identical output; every output token traces to public ledger content or fixed rendering text; no model call or content-dependent retry occurs.",
+      "falsifies": "SLEEP is either a hidden intelligence, nondeterministic selector, leakage path, or uncontrolled source of semantic content.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/sleep_determinism_authority_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T05_KERNELBENCH_VERIFIED_STATIC_FIT_GATE",
+      "kind": "invariant",
+      "setup": "Before benchmark integration, pin and hash the upstream KernelBench-Verified revision, license, task catalog, public task interface, official hidden multi-distribution correctness path, TF32 baseline path, scorer, and required hardware/software; derive the proposed 24 acquisition plus eight held-out scout split solely from static public metadata and a frozen algorithm, without any model outputs or target scores.",
+      "expected": "The official package can be called without editing benchmark or scorer bytes; at least 32 eligible tasks exist on held hardware; public inputs and legal actions are well defined; hidden correctness cases and optimized references stay outside cognition; the frozen split has recurring public optimization motifs but no exact normalized operator-graph, dtype/layout, and shape-regime duplicate across acquisition and evaluation. Otherwise KernelBench-Verified is rejected and any replacement requires a new architecture intake.",
+      "falsifies": "The off-the-shelf gym cannot support a target-blind related-but-nonduplicate lifetime without benchmark construction or leakage.",
+      "evidence_artifact": "experience_model_v6/fit/kernelbench_verified_static_fit_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T06_BOUNDED_HARDWARE_HARNESS_FIT_CANARY",
+      "kind": "end_to_end",
+      "setup": "Under a separately human-authorized non-scientific canary, run only predeclared official reference and deliberately incorrect submissions plus a tiny frozen-agent development sample; repeat timings in randomized order and exercise timeout, compile-failure, hidden-shape, TF32, and crash/resume paths.",
+      "expected": "Incorrect and shape-specialized kernels fail; official references pass all declared distributions; timing coefficient of variation and minimum resolvable effect meet predeclared fit bounds; scorer output cannot be forged through stdout/files; useful performance headroom remains above the frozen agent and the frozen agent is not uniformly at floor or ceiling. Failure forbids the scout, not benchmark repair.",
+      "falsifies": "Correctness/speed reward is too noisy, gameable, broken, or uninformative for the v6 causal test.",
+      "evidence_artifact": "experience_model_v6/fit/kernelbench_verified_hardware_canary.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V6_T07_TARGET_SEAL_DEDUP_AND_LEAKAGE_GATE",
+      "kind": "invariant",
+      "setup": "Seal hashes for all scout tasks, normalized program graphs, dtypes/layouts, shape regimes, identifiers, schedules, conditions, hidden files, prompts, compiler bytes, and score interfaces before the first model call; run exact, AST/graph, identifier, nearest-neighbor, and target-only probes plus future-target/scorer canaries through all model-visible descendants.",
+      "expected": "No exact acquisition/evaluation graph-and-shape duplicate exists; fresh surface identifiers do not predict condition or answer; no held-out task, hidden case, optimized solution, future ordering, split label, scorer internal, or evaluation descendant appears in acquisition prompts, public ledgers, sleep manifests, rows, adapters by deliberate canary read, text memory, or later lives.",
+      "falsifies": "A held-out gain can be explained by target duplication, surface shortcuts, or information leakage.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/target_seal_dedup_leakage_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T08_MATCHED_BUDGET_AND_SHAM_WRITE_GATE",
+      "kind": "baseline",
+      "setup": "Construct golden schedules for authentic, regular/sham, same-corpus text, raw-LoRA diagnostic, adapter-off, and outcome-shuffled conditions; account for model calls, input/output tokens, context, tool actions, benchmark invocations, sleep-selection calls, training tokens/steps/FLOPs, adapter bytes, retrieval bytes/tokens, wall time, and crashes.",
+      "expected": "Core causal pairs have identical task opportunities, six-operation caps, bootstrap bytes, context caps, public tool budget, checkpoint schedule, compiler calls, effective training tokens/steps, LoRA shape, and evaluation calls. The regular control executes the same compiler/trainer work but never loads its adapter. Any unavoidable text-versus-weight or system-versus-baseline resource difference is reported in both natural-resource and compute-normalized views and cannot be silently padded with useful information.",
+      "falsifies": "The apparent learning effect is explainable by more thinking, actions, feedback, context, training exposure, retrieval, or hidden retries.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/matched_budget_ledger.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T09_OUTCOME_SHUFFLE_CONSTRUCTION",
+      "kind": "ablation",
+      "setup": "Within each sealed life and public task-feature stratum, permute action--outcome bindings using a precommitted derangement; rerun the same deterministic compiler and exact trainer token/step schedule while preserving marginal task, action, outcome, row-count, and formatting distributions.",
+      "expected": "No original action retains its outcome where a legal derangement exists; manifests have identical quotas and effective token/step budgets; neither hidden targets nor authentic condition results influence the permutation; the mapping and audit receipts are sealed before evaluation.",
+      "falsifies": "The shuffled control fails to isolate outcome grounding from generic self-imitation, format, or update compute.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/outcome_shuffle_equivalence_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T10_EVALUATION_FORK_STERILITY",
+      "kind": "unit",
+      "setup": "Run mock and canary checkpoint evaluations that attempt to write target packets, feedback, caches, temporary files, process environment, retrieval state, optimizer state, and model-serving prefixes back into acquisition or subsequent targets; test interruptions before and after result sealing.",
+      "expected": "Each target starts from the same declared checkpoint in a clean process; only within-target feedback is readable; all evaluation descendants are quarantined from later acquisition, SLEEP, training, and targets; interrupted unsealed calls mark the cell indeterminate and are never regenerated under the same identity.",
+      "falsifies": "The lifetime curve can contain practice on its evaluation panel or cross-target residue.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/evaluation_sterility_crash_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T11_OFF_THE_SHELF_NONMUTATION_GATE",
+      "kind": "independent_review",
+      "setup": "A fresh reviewer compares the pinned upstream KernelBench-Verified tree, task/scorer hashes, runtime invocation, environment projection, and hidden-data permissions against the v6 integration and repository diff.",
+      "expected": "All benchmark scientific bytes equal the pinned upstream revision; v6 contains only agent-side adapters, projections, manifests, and tests; no task, hidden distribution, correctness tolerance, baseline, timing rule, scorer, or reference workload was weakened or reconstructed.",
+      "falsifies": "The claimed external gym is actually a project-built or altered benchmark.",
+      "evidence_artifact": "research_loop/reviews/experience_model_v6_kernelbench_nonmutation_review.md",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T12_SCOUT_PRIMARY_CAUSAL_FALSIFIER",
+      "kind": "end_to_end",
+      "setup": "Run only the separately ratified two-life, 24-acquisition, eight-heldout, four-checkpoint scout after every prior gate; freeze numerical practical margins and cell roster before outputs; score incorrect kernels zero and preserve every failure.",
+      "expected": "A mechanism signal requires authentic SLEEP-LoRA to improve from its pre-life checkpoint and exceed adapter-off by the frozen practical margin at the final checkpoint in both development lives, while the properly shuffled adapter loses at least half of the authentic adapter-on gain. Absence, reversal, or correctness degradation is reported as a stop result and does not trigger prompt, compiler, task, rank, or threshold repair on these lives.",
+      "falsifies": "The simplest plausible outcome-grounded write produces no causal useful future-action signal in this gym and recipe.",
+      "evidence_artifact": "experience_model_v6/scout/scout_primary_causal_report.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V6_T13_COMPOSITION_NOT_RECOLLECTION_GATE",
+      "kind": "ablation",
+      "setup": "Partition the sealed checkpoint panel before execution into same-family nonduplicate and cross-motif/opposite-condition targets; mechanically audit every compiled row and acquisition task against normalized target graphs/shapes and code similarity; compare first action, area under best verified speedup over six operations, and conditional action direction across authentic, off, shuffled, and same-corpus text conditions.",
+      "expected": "Any abstraction wording requires a positive authentic causal effect on the cross-motif/opposite-condition stratum, zero exact target solution or graph-and-shape occurrence in training rows, condition-sensitive rather than globally repeated edits, and loss under adapter removal/shuffle. Otherwise the result is labeled retention, near transfer, style, or memorization only.",
+      "falsifies": "The adapter created a self-generated action-useful abstraction rather than replaying or globally biasing familiar code."
+      ,"evidence_artifact": "experience_model_v6/scout/scout_composition_audit.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V6_T14_MEMORY_BASELINE_AND_TRANSPORT_DIAGNOSTIC",
+      "kind": "baseline",
+      "setup": "At the final scout checkpoint, evaluate the identical authentic compiled corpus through a bounded target-blind text retrieval interface with the LoRA removed, and evaluate an equal-token raw-trajectory LoRA diagnostic under the same six-operation action budget; retain the ordinary frozen/sham reference.",
+      "expected": "Report authentic LoRA, same-corpus text, raw LoRA, and regular/sham results without requiring LoRA to win the development scout. A text match localizes the signal to experience compilation rather than parametric necessity; raw-LoRA parity localizes no value to the compiler; regular superiority is retained honestly. No paper or scale claim follows from directional two-life differences.",
+      "falsifies": "A broad v6 interpretation that attributes all useful information transformation or efficiency to the LoRA without measuring strong simpler carriers.",
+      "evidence_artifact": "experience_model_v6/scout/scout_memory_baseline_report.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V6_T15_SCOUT_STOP_GO_AND_NO_AUTOMATIC_SCALE",
+      "kind": "invariant",
+      "setup": "After sealing all scout reports, apply the pre-output decision table: leakage, nonmutation, reset, numerical, or budget failure is STOP; no authentic-off effect or no authentic-shuffle separation is STOP for this write recipe; a causal signal without external-memory superiority is MECHANISM_GO_ONLY; only a signal with preserved correctness and cross-motif contribution may motivate a new confirmation proposal.",
+      "expected": "The scout ends with exactly one recorded disposition and no automatic implementation change, additional life, rank sweep, full benchmark run, GPU continuation, baseline-degradation claim, or paper claim. Any continuation begins with a new architecture/run intake using untouched tasks and fresh human authorization.",
+      "falsifies": "Development observations can silently expand scope, tune on targets, or become population evidence.",
+      "evidence_artifact": "experience_model_v6/scout/scout_stop_go_disposition.json",
+      "required_before": "scientific_claim"
+    },
+    {
+      "test_id": "V6_T16_RML_G1_PRIORITY_DEMOTION",
+      "kind": "invariant",
+      "setup": "Inspect run manifests, schedulers, workflow defaults, documentation, and requested scope after v6 implementation; attempt to route an RML-G1 run or use an RML-G1 result as a v6 prerequisite/evidence source.",
+      "expected": "No v6 workflow launches or waits on RML-G1; the attempt is rejected without a separate ratified change; historical RML artifacts remain byte-preserved and may be referenced only as prior mechanism context."
+      ,"falsifies": "The actual next-priority graph still follows the older modular-reader experiment rather than the ratified v6 architecture.",
+      "evidence_artifact": "experience_model_v6/tests/artifacts/rml_g1_demotion_report.json",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T17_FRESH_IMPLEMENTATION_AND_SCIENCE_REVIEW",
+      "kind": "independent_review",
+      "setup": "After scoped implementation and all CPU/static tests, a fresh independent reviewer and a separate author-side scientific advocate inspect the exact ratified intake, implementation diff, upstream nonmutation, visibility paths, prompt/compiler/trainer bytes, budgets, split seal, controls, crash semantics, and proposed GPU run manifest.",
+      "expected": "The independent reviewer issues an unqualified proceed verdict for the exact bounded next stage and dispositions every acceptance test; the advocate may explain or repair but cannot override. Any repair changes evidence bytes and requires a new bound review."
+      ,"falsifies": "CPU-green code is sufficient authority for a GPU science run or claim.",
+      "evidence_artifact": "research_loop/reviews/experience_model_v6_pre_gpu_independent_review.md",
+      "required_before": "gpu_run"
+    },
+    {
+      "test_id": "V6_T18_HUMAN_SCOPE_RATIFICATION",
+      "kind": "independent_review",
+      "setup": "Complete two fresh-context independent interpretations, adversarial cross-critique, adjudicated consensus, and obtain a human-authored ratification bound to the exact consensus, paused state, authorization evidence, and requested scope.",
+      "expected": "Rohin explicitly approves exact bytes and a finite stage scope. Proposal agreement alone never creates authority; implementation, fit canary, scout GPU execution, scale, and claims remain separately bounded exactly as the ratification states."
+      ,"falsifies": "The owner directive or model consensus can be treated as implicit approval of implementation or compute.",
+      "evidence_artifact": "research_loop/changes/chg_20260904_experience_model_v6_kernel_lifetime_v1/human_ratification.json",
+      "required_before": "implementation"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "After two independent interpretations, adversarial cross-critique, and adjudicated consensus, does Rohin ratify the exact architecture bytes and an explicitly enumerated finite scope for creating the isolated experience_model_v6 subtree and its CPU/static tests? Any KernelBench-Verified hardware fit canary, GPU scout, scale run, RML-G1 run, or scientific claim requires the additional exact review and human authorization declared by the relevant gate; none is implied by this proposal.",
+    "forbidden_before_approval": [
+      "Create or modify experience_model_v6 implementation files beyond architecture-intake artifacts",
+      "Install, download, fork, patch, or execute KernelBench-Verified or another gym",
+      "Modify any RML, Semantic World, FeltCraft, Alchemy, prior result, benchmark, scorer, or hidden-evaluation artifact",
+      "Launch local or remote GPU/model science calls, including RML-G1, a KernelBench fit canary, or the v6 scout",
+      "Train or update any LoRA, model, learned selector, critic, planner, dreamer, or base checkpoint",
+      "Represent the owner directive, this proposal, model agreement, or a passing schema validation as implementation or compute authorization",
+      "Claim experiential learning, abstraction, creativity, baseline saturation or degradation, lifetime growth, low-rank inductive bias, or paper evidence"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact_type": "pcfl_claim_namespace_map",
+  "change_id": "chg_20260902_pcfl_active_stream_paper_target_v1",
+  "status": "proposal_only_unratified",
+  "protocol_terminal_status": "DEFERRED_NEW_PREREGISTRATION",
+  "normative_rule": "This is the sole canonical join across change.json claim_delta IDs, statistics_and_claim_contract.md ladder IDs, and claim_test_applicability.json deferred-text IDs. Labels are aliases only through an explicit row below; no suffix, ordinal, or prose match is permitted. C1--C5 are conceptual future claims, not current evidence claims.",
+  "source_locations": {
+    "proposal_claims": "change.json#/claim_delta/claims/*/claim_id",
+    "statistics_ladder": "statistics_and_claim_contract.md#6-claim-ladder",
+    "deferred_text_applicability": "claim_test_applicability.json#/deferred_text_claims"
+  },
+  "claims": [
+    {
+      "canonical_claim_id": "PCFL_C0_CONSTRUCT",
+      "proposal_claim_id": "C_PCFL_CONSTRUCT_VALIDITY_ONLY",
+      "statistics_claim_id": "C0_CONSTRUCT",
+      "applicability_claim_id": null,
+      "status": "construct_only_prospective",
+      "primary_test_family": null
+    },
+    {
+      "canonical_claim_id": "PCFL_C1_MODEL_OWNED_TEXT_MEMORY",
+      "proposal_claim_id": "C_PCFL_MODEL_OWNED_TEXT_MEMORY",
+      "statistics_claim_id": "C1_MODEL_OWNED_TEXT_MEMORY",
+      "applicability_claim_id": "C1_MODEL_OWNED_TEXT_MEMORY",
+      "status": "deferred_future_text_claim",
+      "primary_test_family": "FUTURE_NEW_PREREGISTRATION"
+    },
+    {
+      "canonical_claim_id": "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+      "proposal_claim_id": "C_PCFL_ACTION_CONDITIONED_CAUSAL_CASCADE",
+      "statistics_claim_id": "C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+      "applicability_claim_id": "C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+      "status": "deferred_future_text_claim",
+      "primary_test_family": "FUTURE_NEW_PREREGISTRATION"
+    },
+    {
+      "canonical_claim_id": "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION",
+      "proposal_claim_id": "C_PCFL_FINITE_POST_NATIVE_CONTINUAL_ACTION",
+      "statistics_claim_id": "C3_FINITE_POST_NATIVE_CONTINUAL_ACTION",
+      "applicability_claim_id": "C3_FINITE_POST_NATIVE_CONTINUAL_ACTION",
+      "status": "deferred_future_text_claim",
+      "primary_test_family": "FUTURE_NEW_PREREGISTRATION"
+    },
+    {
+      "canonical_claim_id": "PCFL_C4_NAMED_BASELINE_PLATEAU",
+      "proposal_claim_id": "C_PCFL_NAMED_BASELINE_PLATEAU_OPTIONAL",
+      "statistics_claim_id": "C4_NAMED_BASELINE_PLATEAU",
+      "applicability_claim_id": null,
+      "status": "deferred_future_optional_claim",
+      "primary_test_family": "FUTURE_NEW_PREREGISTRATION"
+    },
+    {
+      "canonical_claim_id": "PCFL_C5_CONDITIONAL_LORA_SENTINEL",
+      "proposal_claim_id": "C_PCFL_CONDITIONAL_LORA_SENTINEL",
+      "statistics_claim_id": "C5_CONDITIONAL_LORA_SENTINEL",
+      "applicability_claim_id": null,
+      "status": "deferred_associative_lora_successor_target",
+      "primary_test_family": "DEFERRED_ASSOCIATIVE_LORA_PREREGISTRATION"
+    }
+  ],
+  "validation": {
+    "proposal_claim_ids": "Set equality is required between change.json#/claim_delta/claims/*/claim_id and claims/*/proposal_claim_id; each value must occur exactly once in each source.",
+    "statistics_claim_ids": "Set equality is required between the six C0--C5 ladder IDs and claims/*/statistics_claim_id; each value must occur exactly once in each source.",
+    "canonical_claim_ids": "Every canonical_claim_id must be unique and every alias lookup must resolve to exactly one row.",
+    "applicability_claim_ids": "After nulls are removed, set equality is required between claims/*/applicability_claim_id and claim_test_applicability.json#/deferred_text_claims; each C1--C3 value must occur exactly once.",
+    "terminal_status": "Every C1--C5 row must remain deferred and nonclaiming under this protocol; any population rejection or current scientific-claim status is a hard failure.",
+    "unknown_or_duplicate": "Any orphan, duplicate, unknown, implicit, many-to-one, or one-to-many join is a hard failure of PAS_T11_INDEPENDENT_REPRODUCTION_AND_CLAIM_FIREWALL."
+  },
+  "test_reproduction": {
+    "PAS_T09_A4_REVISION_SENTINEL": {
+      "applies_to_canonical_claim_ids": [
+        "PCFL_C1_MODEL_OWNED_TEXT_MEMORY",
+        "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+        "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"
+      ],
+      "mode": "b3_descriptive_integrity_only",
+      "expected": "Assigned A4 rows, representation-neutral world/action scoring, failure inclusion, and sterility/leakage pass for the descriptive B3 package; A4 efficacy and mechanism values neither gate a current claim nor create one.",
+      "falsifies": "A missing/dropped A4 row, representation-dependent score, omitted failure, leakage, sterility failure, or any conversion of A4 efficacy into current-claim credit; weak A4 efficacy alone does not fail integrity."
+    },
+    "PAS_T10_CONDITIONAL_LORA_READER_AND_CAUSAL_SENTINEL": {
+      "not_applicable_to_canonical_claim_ids": [
+        "PCFL_C1_MODEL_OWNED_TEXT_MEMORY",
+        "PCFL_C2_ACTION_CONDITIONED_CAUSAL_CASCADE",
+        "PCFL_C3_FINITE_POST_NATIVE_CONTINUAL_ACTION"
+      ],
+      "future_mandatory_for_canonical_claim_id": "PCFL_C5_CONDITIONAL_LORA_SENTINEL",
+      "deferred_text_pass_status": "NOT_REQUESTED_STAGE_D",
+      "expected": "No Stage-D evidence artifact is required for the deferred C1--C3 dispositions. A future separately ratified DEFERRED_ASSOCIATIVE_LORA_PREREGISTRATION may make T10 a mandatory transport/component control before a C5 claim, but T10 is not that successor's headline.",
+      "falsifies": "Blocking the B3/deferred C1--C3 disposition for absent Stage D, or making a future LoRA claim without the tests mandated by its separately ratified successor proposal."
+    },
+    "PAS_T11_INDEPENDENT_REPRODUCTION_AND_CLAIM_FIREWALL": {
+      "applies_to_all_canonical_claim_ids": true,
+      "procedure": "Parse all three normative sources at their declared locations, prove the exact set equalities and uniqueness rules above, reproduce T09 and T10 applicability by canonical_claim_id, and reproduce DEFERRED_NEW_PREREGISTRATION for C1--C4 and DEFERRED_ASSOCIATIVE_LORA_PREREGISTRATION for C5 rather than inferring a claim from a favorable B3 value.",
+      "expected": "Exactly six one-to-one proposal/statistics rows exist; exactly canonical C1--C3 join to the three deferred-text applicability IDs; T09/T10 and the terminal deferred statuses reproduce exactly.",
+      "falsifies": "Any orphan, duplicate, unknown, implicit, ambiguous, missing, or extra alias/applicability row, or any current/population claim status."
+    }
+  },
+  "claim_firewall": {
+    "retired_fixed_source_language": "Fixed-source representation/use results cannot establish an action-conditioned continual-learning claim.",
+    "current_protocol_claim_status": "No C1--C5 scientific claim is available; B3 is DEV/falsification/descriptive only, Stage C is DEFERRED_NEW_PREREGISTRATION, and the associative-LoRA successor is separately deferred.",
+    "forbidden_paper_1_language": [
+      "compression",
+      "unbounded continual learning",
+      "autonomous discovery",
+      "learned compiler/controller",
+      "generic SOTA",
+      "organism-scale generalization"
+    ]
+  }
+}

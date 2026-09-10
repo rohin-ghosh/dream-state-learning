@@ -1,0 +1,308 @@
+{
+  "schema_version": "pcfl.controller_manifest.v2",
+  "artifact_type": "pcfl_d0_exact_controller_manifest",
+  "change_id": "chg_20260901_pcfl_d0_exact_v2",
+  "protocol_id": "PCFL-D0-EXACT-V2",
+  "authority_scope": {
+    "stage": "D0",
+    "implementation_kind": "deterministic_local_cpu_reference",
+    "model_conditioned_behavior": false,
+    "model_calls": false,
+    "model_weights": false,
+    "gpu": false,
+    "network": false,
+    "scientific_claim": false
+  },
+  "semantic_atom_family": {
+    "relation_order": ["PREPARATION_TRANSFORM", "SITE_PREDICATE", "ROUTE_REQUIREMENT"],
+    "candidate_counts": {
+      "PREPARATION_TRANSFORM": 36,
+      "SITE_PREDICATE": 16,
+      "ROUTE_REQUIREMENT": 9,
+      "total": 61,
+      "true_per_world": 13
+    },
+    "candidate_enumeration": [
+      "For PREPARATION_TRANSFORM, enumerate PREPARATION_FAMILY subject handles P0000000 through P0000005 in world-manifest order, then TRANSFORM_TEMPLATE objects SET_T0_0, SET_T0_1, SET_T1_0, SET_T1_1, SET_T2_0, SET_T2_1.",
+      "For SITE_PREDICATE, enumerate SITE_FAMILY subject handles S0000000 through S0000003 in world-manifest order, then PREDICATE_TEMPLATE objects F0, F1, F2, F3.",
+      "For ROUTE_REQUIREMENT, enumerate ROUTE_FAMILY subject handles R0000000 through R0000002 in world-manifest order, then ROUTE_REQUIREMENT objects G0, G1, G2."
+    ],
+    "canonical_atom_object": "The semantic projection has exactly object, relation, and subject. subject and object are typed NodeRef objects from schemas/pcfl_d0_objects.schema.json. NFC-normalize strings, reject normalization collisions, then RFC 8785 JCS serialize with no trailing LF for identity.",
+    "candidate_id": "lowercase hex SHA-256 of the semantic projection's NFC-before-JCS bytes without LF; candidate_id equals atom_id. Durable JSONL records append exactly one LF only after identity is computed.",
+    "catalog_order": "relation_order, then subject manifest order, then object manifest order",
+    "catalog_freeze": "The 61 candidates and their order are determined from protocol bytes before any world, skin, source, target, split outcome, goal, state, or controller value exists.",
+    "eligible_atom_rule": "At a sealed cut an atom is eligible only if it is the true world mapping, is derived from the fixed source life, has the required pre-fit and later distinct-root prediction support by that cut, and is neither contradicted nor revoked. Candidate syntax, catalog membership, or hidden truth alone does not make an atom eligible.",
+    "cpu_gate_cut": 16384,
+    "cpu_gate_expected_eligible_set": "Exactly all thirteen true nonexception mapping atoms. A missing, extra, hidden-world-only, unsupported, contradicted, revoked, or A4 atom invalidates the source-derived memory controllers."
+  },
+  "generic_one_atom_reader": {
+    "query_schema": {"operation": "QUERY_LOCAL", "arguments": ["anchor"]},
+    "anchor_rule": "Ordinarily anchor is exactly one NodeRef copied byte-for-byte from the current public goal, public state, public outcome, a prior FOUND atom, or a retained path entry. The sole additional form is MODEL_DERIVED_TRANSFORM below. No concatenation, substring, alias construction, relation, direction, goal-derived search string, hidden-family lookup, target-conditioned candidate, or other derived anchor is legal.",
+    "model_derived_transform": {
+      "allowed_kind": "TRANSFORM_TEMPLATE",
+      "allowed_values": ["SET_T0_0", "SET_T0_1", "SET_T1_0", "SET_T1_1", "SET_T2_0", "SET_T2_1"],
+      "derivation_source_slots": "The query audit record cites the earlier SITE_PREDICATE or ROUTE_REQUIREMENT FOUND/path slot plus the exact current PUBLIC_STATE trait panel and, for the second A3 transform, the already selected first transform/path slot.",
+      "A2_entailment": "Let x be the public trait panel and f the cited F0..F3 predicate. Enumerate the six transforms in semantic_atom_family object order. The derived transform is the sole z for which f(x)=false and f(apply(z,x))=true. Zero or multiple such z makes the trace invalid.",
+      "A3_route_entailment": "Let x be the post-SURVEY public trait panel and g the cited G0..G2 requirement. The route transform is the sole z for which g(x)=false and g(apply(z,x))=true.",
+      "A3_site_entailment": "Let z_r be the cited route transform, x_r=apply(z_r,x), and f the cited predicate. The site transform is the sole z_s distinct from z_r for which f(x_r)=false, f(apply(z_s,x_r))=true, and g(apply(z_s,x_r))=true. Zero or multiple choices invalidates the trace.",
+      "runtime_behavior": "The runtime checks only schema membership, cited-slot existence, and byte identity of cited state. It does not compute, correct, rank, reveal, or reject the semantic validity of the chosen transform. A wrong but schema-valid transform query consumes budget normally.",
+      "offline_trace_check": "For constructive trace credit only, the D0 checker exhaustively evaluates the fixed public ontology and verifies that the selected transform is entailed by the cited predicate or requirement plus public state and is necessary in the registered minimal solution.",
+      "nonadaptive_firewall": "A controller that commits queries before any read must commit its transform anchors before observing predicate or requirement returns, so those anchors are guesses and receive no later repair."
+    },
+    "target_family_bridge": {
+      "site": "The public initial state contains the target site's public site_family NodeRef.",
+      "preparations": "Each public inventory record contains its public preparation_family NodeRef.",
+      "route": "A successful SURVEY public outcome and subsequent state contain the public route_family NodeRef.",
+      "security_property": "These labels identify stable public families but reveal none of their permuted hidden mappings. They are shared byte-for-byte by twins."
+    },
+    "hidden_reader_inputs": ["sealed snapshot content hash", "eligible atom membership", "candidate catalog", "already-returned candidate IDs"],
+    "reader_inputs_forbidden": ["goal", "state", "target handle", "mission handle", "world rank", "twin side", "seed", "scorer", "correct action", "controller identity", "arm identity", "rejection count", "wall time"],
+    "incident_membership": "A candidate is incident when anchor equals its canonical subject or object NodeRef. The backend then filters to eligible atoms in its assigned snapshot.",
+    "incident_order": "Sort by orientation rank FORWARD=0 then REVERSE=1, relation rank PREPARATION_TRANSFORM=0 then SITE_PREDICATE=1 then ROUTE_REQUIREMENT=2, opposite-endpoint NodeRef NFC-before-JCS bytes without LF, and candidate_id lowercase ASCII bytes.",
+    "return_state_machine": {
+      "FOUND": "Return the first incident eligible candidate in incident_order whose candidate_id is not in the item-global already-returned set; atom bytes are the only payload. Add its ID to the set.",
+      "NOT_FOUND": "Return the canonical NOT_FOUND object when no unseen incident eligible candidate remains.",
+      "ERROR": "A backend, parsing, snapshot, catalog, or integrity error fails the item and is never converted to NOT_FOUND.",
+      "repeat_after_FOUND": "A repeated identical anchor advances to the next unseen incident eligible atom.",
+      "repeat_after_NOT_FOUND": "The runtime blocks the query, consumes one cognitive operation, and exposes the canonical blocked repeat state. A second blocked resolver output ends the item at value zero.",
+      "discard_rule": "Clearing or overwriting a workspace memory slot never removes its candidate_id from the item-global already-returned set."
+    },
+    "visible_return": "Exactly one canonical FOUND atom or canonical NOT_FOUND record. Candidate IDs, alternatives, rank, score, confidence, provenance, support count, catalog size, backend identity, bytes, token count, truncation, error detail, latency, and timing are absent.",
+    "timing": "A fixed discrete timing class is assigned before item execution and a barrier delays every successful return to that class. Wall time is audit-only.",
+    "authentic_membership": "AUTH-GEN membership is only the source-derived eligible set at the sealed checkpoint; it is never the latent truth table or the complete 61-candidate universe."
+  },
+  "workspace_and_budgets": {
+    "per_item": {
+      "world_actions": 6,
+      "QUERY_LOCAL": 4,
+      "FOUND_returns": 4,
+      "resolver_operations": 18,
+      "memory_slots": 4,
+      "public_outcome_slots": 6,
+      "typed_nodes": 16,
+      "active_path_edges": 4,
+      "free_text_notes": 0,
+      "rationale_fields": 0,
+      "hidden_id_fields": 0
+    },
+    "resolver_operation_set": ["QUERY_LOCAL", "UPDATE_PATH", "BACKTRACK", "EXECUTE_ACTION", "DEFER", "STOP", "blocked output"],
+    "counting_rule": "Each QUERY_LOCAL, UPDATE_PATH, BACKTRACK, EXECUTE_ACTION, DEFER, STOP, or blocked output consumes one of eighteen item-global resolver operations. A reader return does not consume a second operation. EXECUTE_ACTION also consumes one of six world actions. No per-decision operation reset or separate terminal-operation allowance exists.",
+    "query_storage": "FOUND writes to the lowest empty memory slot. If all four slots are occupied, emit BLOCKED_MEMORY_FULL and consume the QUERY_LOCAL resolver operation; no automatic overwrite or eviction exists.",
+    "path_update": "UPDATE_PATH cites one occupied memory slot and a source NodeRef. The runtime copies that exact atom into the lowest never-used nontombstoned active path edge, records FORWARD when the source is the atom subject or REVERSE when the source is its object, and clears the cited memory slot. It consumes one resolver operation. No new semantic text is accepted.",
+    "backtrack": "BACKTRACK cites one existing path edge, discards that edge and every later edge, appends their slot IDs as tombstones, and consumes one resolver operation. Tombstoned slots and atom IDs are never reused in the item.",
+    "path_persistence": "At most four active path entries persist across decisions in the same item; memory and path state never cross items.",
+    "overflow": "Any cap exceedance, invalid slot, second blocked output, free-form text, or unregistered operation ends the item at value zero."
+  },
+  "controllers": [
+    {
+      "controller_id": "HW-SOLVE",
+      "name": "hidden-world solvability oracle",
+      "inputs": ["complete latent preparation/site/route assignments", "complete target-local hidden descriptor", "public state", "remaining action budget"],
+      "memory_interface": "none",
+      "policy": "Enumerate all legal action sequences in canonical action order and choose the shortest successful sequence, breaking equal-length ties lexicographically.",
+      "purpose": "Establish only that every structurally accepted target is solvable inside the action cap.",
+      "claim_forbidden": "This oracle supplies hidden truth and cannot establish source-memory information value or usability."
+    },
+    {
+      "controller_id": "ATOM-CEILING",
+      "name": "complete eligible-atom information ceiling",
+      "inputs": ["complete source-derived eligible atom set at the sealed cut", "public goal", "public state", "public outcomes", "remaining action budget"],
+      "memory_interface": "All eligible atoms are available simultaneously; the one-atom reader, query, repeat, memory-slot, path-edge, and cognitive-operation limits are bypassed. World actions remain capped at six.",
+      "policy": "Decode only the mappings contained in eligible atoms, enumerate legal target-local action sequences, and choose the shortest successful sequence with canonical lexicographic ties.",
+      "purpose": "Establish that the complete causally eligible source-derived atom set contains sufficient information.",
+      "claim_forbidden": "Bypassing the reader cannot establish authentic bounded memory usability."
+    },
+    {
+      "controller_id": "AUTH-GEN",
+      "name": "authentic source-derived bounded generic-reader controller",
+      "inputs": ["public goal", "public state", "public outcomes", "generic one-atom returns", "bounded workspace", "repeat state", "remaining budgets"],
+      "memory_interface": "Only generic_one_atom_reader with the exact workspace and budgets in this manifest.",
+      "policy": {
+        "A2": [
+          "Query the public site_family and UPDATE_PATH its SITE_PREDICATE atom in FORWARD orientation.",
+          "Using that predicate and the public trait panel, select the unique public TRANSFORM_TEMPLATE enum that changes rejection to acceptance. Issue MODEL_DERIVED_TRANSFORM with predicate/path and state citations, query that transform in REVERSE orientation, and UPDATE_PATH the returned PREPARATION_TRANSFORM atom.",
+          "Resolve the returned preparation_family to its fresh inventory preparation handle and EXECUTE_ACTION with that preparation.",
+          "At the next decision execute INTERVENE; after acceptance execute COMMIT. No further query is issued."
+        ],
+        "A3": [
+          "Execute SURVEY without a read.",
+          "Query the public site_family and surveyed route_family in that order, UPDATE_PATH each returned SITE_PREDICATE and ROUTE_REQUIREMENT atom in FORWARD orientation.",
+          "From the returned requirement plus public state select the unique route-enabling TRANSFORM_TEMPLATE enum in the registered minimal pair. Issue MODEL_DERIVED_TRANSFORM with requirement/path and state citations, query it in REVERSE orientation, and UPDATE_PATH the returned PREPARATION_TRANSFORM atom.",
+          "From the returned predicate, public state, and first selected transform select the distinct second TRANSFORM_TEMPLATE enum that makes the site accept while preserving route success. Query it through MODEL_DERIVED_TRANSFORM in REVERSE orientation and UPDATE_PATH the returned PREPARATION_TRANSFORM atom.",
+          "Resolve the two returned preparation_family handles to fresh inventory preparation handles. Execute the route-enabling preparation and then the site-enabling preparation on successive decisions.",
+          "Then execute TRAVERSE, INTERVENE, and COMMIT on successive decisions without another read."
+        ]
+      },
+      "tie_rule": "If a structural target unexpectedly yields zero or multiple prescribed choices, fail the item with value zero and invalidate the reachability certificate; never use hidden truth or a typed query.",
+      "purpose": "This is the only exact controller allowed to support the bounded lifetime-source-memory usability gate.",
+      "model_conditioning": false
+    },
+    {
+      "controller_id": "OPEN-GEN",
+      "name": "nonadaptive committed-query generic-reader control",
+      "inputs": ["the same public goal/state and generic reader as AUTH-GEN"],
+      "memory_interface": "Before receiving any read return, commit the complete query anchor list and order for the item. A2 commits site_family plus one guessed TRANSFORM_TEMPLATE. A3 may execute SURVEY first, then commits site_family, route_family, and two distinct guessed TRANSFORM_TEMPLATE anchors before receiving any of their returns.",
+      "policy": "Using the accepted-visible-item posterior but no source or reader return, enumerate all schema-legal committed transform-anchor choices and orders, evaluate their exact expected item value with the same rational Bellman machinery after all reads, and commit the value-maximizing list; ties use canonical anchor-list JCS bytes. Execute the committed queries without revision, then actions may use the returned atoms under the same world-action and total-operation caps. No return may change a later query anchor or order.",
+      "purpose": "Composition-negative control. It tests target-independent precommitted recognition, not adaptive constructive lookup.",
+      "model_conditioning": false
+    },
+    {
+      "controller_id": "BAYES-N",
+      "name": "exact accepted-visible-item no-lifetime Bayes controller",
+      "inputs": ["public goal", "current public state", "current-item public action/outcome history", "remaining action budget"],
+      "forbidden_inputs": ["source life", "eligible atoms", "reader", "workspace memory", "world rank", "twin side", "split", "seed", "target ordinal", "other targets", "proposal counter", "rejection count", "rejection codes", "candidate acceptance path", "scorer truth"],
+      "policy": "Use the exact posterior and Bellman recursion below."
+    },
+    {
+      "controller_id": "NULL",
+      "name": "no lifetime memory deterministic null",
+      "policy": "Use the canonical lexicographically first legal action at every state without reading source or hidden information."
+    }
+  ],
+  "accepted_visible_item_posterior": {
+    "prior_world_measure": "Each of the 103680 generator-legal nonexception hidden worlds has prior mass 1/103680 before observing a target item.",
+    "twin_side_measure": "The evaluated side is marginalized with exact prior mass 1/2 for H and 1/2 for dagger(H); the side bit is never observed.",
+    "construction_kernel": "Use the exact public descriptor samplers, without-replacement inventory samplers, target-slot order, structural acceptance, joint-twin rule, and duplicate exclusion from world_manifest.json. Nuisance handles and skins use their declared independent uniform samplers.",
+    "accepted_item_likelihood": "For hidden world h and visible initial item bytes v, L(h,v) is the exact rational probability that one target slot's ordered proposal process emits v as its first structurally accepted pair item after marginalizing proposal descriptors, prior accepted-target public tuples, target ordinal, twin side, and all rejected proposals through the cap. The finite proposal cap and discrete samplers make L rational.",
+    "initial_posterior": "P(h|v,accepted)=L(h,v)/sum_{g in Omega}L(g,v). Worlds with L(h,v)=0 have zero mass. Do not replace L with a posterior conditioned on audit metadata.",
+    "symmetry_requirement": "The full-family enumerator must prove that the number and proposal mass of acceptable public descriptors is invariant under public-label permutations and dagger. When this proof passes, factors independent of h cancel, but the implementation must calculate and compare both the unsimplified likelihood and simplified acceptance-indicator posterior.",
+    "explicitly_marginalized_hidden_metadata": [
+      "number of rejected pair candidates",
+      "number of rejected target proposals",
+      "rejection-code sequence",
+      "accepted proposal counter",
+      "split and pair slot",
+      "target ordinal",
+      "other accepted or rejected targets",
+      "RNG words and sampler rejections",
+      "generation wall time"
+    ],
+    "posterior_update": "After each observed public outcome o from legal action a in public state s, set the mass of every hypothesis whose deterministic PCFL transition does not emit exactly o to zero, retain the other masses, and divide by their exact rational sum.",
+    "arithmetic": "Use arbitrary-precision signed integers for numerators and positive denominators. Reduce each rational by the positive gcd after every addition, multiplication, comparison, and normalization. Floating point, decimal approximation, pruning, epsilon equality, and Monte Carlo are forbidden.",
+    "initial_zero_mass": "If sum_h L(h,v)=0, emit GENERATOR_INVALID_ZERO_VISIBLE_MASS, give the item value zero, and invalidate the generator version. Do not install a uniform fallback.",
+    "update_zero_mass": "If a canonical legal public outcome leaves zero posterior mass, emit INCONSISTENT_PUBLIC_OBSERVATION, give the item value zero, and invalidate the replay. Do not restore prior mass.",
+    "empty_action_set": "If a nonterminal state has no legal action, its value is exactly zero and its policy is ITEM_FAILED.",
+    "terminal_value": "A terminal state has its exact item score from world_manifest.json and no outgoing action. Failure terminals have value zero."
+  },
+  "target_local_quotient": {
+    "A2_key": ["assignments of the three visible inventory preparation_family labels in inventory order", "predicate assigned to the visible site_family"],
+    "A2_maximum_classes": 480,
+    "A2_count_derivation": "6P3 * 4 = 120 * 4 = 480",
+    "A3_key": ["assignments of the four visible inventory preparation_family labels in inventory order", "predicate assigned to the visible site_family", "requirement assigned to the target's surveyed route_family"],
+    "A3_maximum_classes": 4320,
+    "A3_count_derivation": "6P4 * 4 * 3 = 360 * 4 * 3 = 4320",
+    "mass": "The mass of a quotient class is the exact sum of accepted-visible-item full-world posterior masses of all worlds with that key.",
+    "transition": "For each legal public action, group full hypotheses in a class by their exact canonical public outcome bytes. Each outcome successor is the quotient key induced by the surviving full hypotheses and new public state.",
+    "bisimulation": "Two full hypotheses may share a quotient class only when every legal action at every reachable target-local state has identical immediate score, canonical public outcome distribution, legal-action set, and successor quotient distribution.",
+    "degenerate_classes": "Zero-mass classes are omitted and never queried. A positive-mass class that violates bisimulation invalidates the quotient. A successor outcome with zero class mass follows update_zero_mass; it is not represented as a dummy class.",
+    "required_equivalence": "For every accepted CPU target and every reachable belief state, full-family and quotient posterior masses, canonical chosen actions, action values, item values, terminal scores, and tie decisions must agree exactly."
+  },
+  "bayes_dynamic_program": {
+    "horizon": "remaining world actions from zero through six",
+    "state_key": ["canonical public goal bytes", "canonical public state bytes", "canonical current-item outcome history bytes", "reduced rational quotient-mass vector", "remaining world actions"],
+    "action_order": ["ASSAY", "COMMIT", "INTERVENE", "PREPARE", "SURVEY", "TRAVERSE"],
+    "argument_order": "Within an action kind compare the canonical JCS action bytes as unsigned UTF-8 byte strings.",
+    "legal_action_enumeration": "Enumerate every schema-valid action whose public preconditions hold, including each legal handle and enum argument, then sort by action_order and argument_order.",
+    "recursion": "Q(b,s,a)=sum_o P(o|b,s,a)*V(update(b,a,o),transition(s,a,o),remaining-1); V=max_a Q. Terminal score is supplied by the world state machine. There is no reward for information except its effect on terminal item score.",
+    "tie_breaking": "Choose the first canonical action among actions with exactly equal reduced-rational Q values.",
+    "memoization": "Memoization may change runtime only. Keys include the complete state_key and values are exact rationals plus canonical actions.",
+    "certificate": "Record every reachable state's posterior mass sum, legal action list, exact Q fractions, selected action, Bellman residual numerator, and full-versus-quotient equality. Every Bellman residual numerator must be zero."
+  },
+  "generic_reachability_gate": {
+    "scope": "Every structurally accepted A2 and A3 target on both twins at checkpoints 4096, 8192, and 16384 for DEV and CPU-gate streams.",
+    "proof_method": "Execute AUTH-GEN from the exact collision cut using only source-derived eligible atoms and the fixed incident ordering. Independently breadth-first enumerate every legal generic-reader/workspace/controller state inside the exact budgets and verify that the prescribed successful trace exists and contains no QUERY_TYPED or direct atom access.",
+    "A2_expected_counts": {"queries": 2, "path_updates": 2, "resolver_operations": 7, "world_actions": 3, "maximum_live_memory_slots": 1, "active_path_edges": 2},
+    "A3_expected_counts": {"queries": 4, "path_updates": 4, "resolver_operations": 14, "world_actions": 6, "maximum_live_memory_slots": 1, "active_path_edges": 4},
+    "ordering_coverage": "Permute the input serialization order of all 61 catalog records exhaustively by relation block and by every subject/object ordering fixture; canonicalization must restore the one registered incident order and the AUTH-GEN trace must remain identical. A backend that preserves an unregistered input order fails.",
+    "premise_coverage": "The certificate names the exact site and route atoms, the two MODEL_DERIVED_TRANSFORM anchors with their source-slot entailment receipts, the two reverse-returned preparation atoms, every query, source root, memory slot, path edge, later cited action, and remaining budget.",
+    "failure": "Any accepted target without the exact generic trace invalidates the generator version. A typed, open, hidden-world, favorable-order, or hand-injected trace cannot repair it."
+  },
+  "cpu_pair_aggregation": {
+    "checkpoint": 16384,
+    "target_average": "For each twin side and target kind, arithmetic mean of all eight locked target values with failures retained as zero.",
+    "kind_average": "For each twin side, (A2_mean + A3_mean)/2.",
+    "seed_average": "Not applicable: CPU controllers have no adapter and no adapter seed. Their deterministic world-side value enters the kind and twin averages once.",
+    "pair_value": "Arithmetic mean of the two twin-side kind averages.",
+    "independent_unit": "twin pair",
+    "missing": "A missing, crashed, malformed, cap-exhausted, or indeterminate item has value zero; no item, target, side, pair, or seed is deleted."
+  },
+  "shortcut_and_bad_assignment_controllers": {
+    "common_exact_policy": "For the declared initial information projection, enumerate the exact accepted-visible-item posterior after deleting every forbidden field, then use the same rational Bellman recursion, public within-item action/outcome updates, six-action cap, and canonical tie rule as BAYES-N. No controller is hand scripted, tuned on CPU outcomes, or allowed source outcome bytes unless explicitly stated.",
+    "shortcuts": [
+      {"controller_id": "TARGET_ONLY", "initial_projection": ["PUBLIC_GOAL"]},
+      {"controller_id": "CURRENT_STATE_ONLY", "initial_projection": ["PUBLIC_STATE excluding descriptors and all family handles"]},
+      {"controller_id": "IDENTIFIER_ONLY", "initial_projection": ["typed public handles and NodeRef kinds only; descriptors, traits, family mappings, and source outcomes absent"]},
+      {"controller_id": "PASSIVE_SIGNATURE", "initial_projection": ["public descriptors, specimen class, and initial trait panel; family handles and source outcomes absent"]},
+      {"controller_id": "ACTION_FREQUENCY", "initial_projection": ["the fixed source action-kind and public-family frequency table only; outcome codes and new traits absent"]},
+      {"controller_id": "SOURCE_ACTION_STRING", "initial_projection": ["canonical source action bytes in chronological order; every outcome and event-result field absent"]},
+      {"controller_id": "NULL", "initial_projection": [], "override": "canonical first legal action rather than posterior optimization, as declared in controllers"}
+    ],
+    "bad_assignments": [
+      {"controller_id": "TWIN_ATOMS", "assignment": "Run the AUTH-GEN algorithm and budgets but resolve the colliding visible snapshot alias to the opposite twin's authentic source-derived eligible atom membership."},
+      {"controller_id": "FIXED_POINT_FREE_OBJECT_DERANGEMENT", "assignment": "Run AUTH-GEN against the globally coherent CONTROL_CORRUPTED_S_BIND membership produced by compiler_contract.json; no authentic lifecycle atom or root is rewritten."}
+    ],
+    "score_firewall": "Controller projections and assignments are fixed before execution. A wrong or missing read, illegal derived transform, or failed action remains zero and never changes a projection, assignment, pair, target, or seed."
+  },
+  "cpu_gates": {
+    "bayes_n": {
+      "mean_pair_value_maximum": "7/20",
+      "empirical_p90_pair_value_maximum": "9/20",
+      "empirical_p90": "Sort all 64 exact pair values in nondecreasing rational order and take the one-indexed nearest-rank element ceil(9*64/10)=58. Ties retain pair_id ascending only for audit; the selected value is order-invariant."
+    },
+    "hidden_world_solvability": {
+      "every_accepted_item_value": "1",
+      "mean_pair_value": "1",
+      "interpretation": "world solvability only"
+    },
+    "complete_eligible_atom_information": {
+      "every_accepted_item_value": "1",
+      "mean_pair_value": "1",
+      "interpretation": "information sufficiency only"
+    },
+    "authentic_generic_memory": {
+      "alias_in_gate_formulas": "A_exact",
+      "mean_pair_value_minimum": "17/20",
+      "gain_over_bayes_n_minimum": "3/10",
+      "gain_formula": "G_exact=mean_pair(AUTH-GEN)-mean_pair(BAYES-N)",
+      "interpretation": "bounded authentic source-derived memory usability"
+    },
+    "shortcuts": {
+      "controller_ids": ["OPEN-GEN", "TARGET_ONLY", "CURRENT_STATE_ONLY", "IDENTIFIER_ONLY", "PASSIVE_SIGNATURE", "ACTION_FREQUENCY", "SOURCE_ACTION_STRING", "NULL"],
+      "each_mean_pair_value_maximum": "7/20"
+    },
+    "bad_assignments": {
+      "controller_ids": ["TWIN_ATOMS", "FIXED_POINT_FREE_OBJECT_DERANGEMENT"],
+      "loss_minimum": "max(3/20,G_exact/2)",
+      "loss_formula": "mean_pair(AUTH-GEN)-mean_pair(B)",
+      "nonpositive_gain": "If G_exact<=0, the gate fails and no ratio or favorable replacement is defined."
+    },
+    "failure_disposition": "Failure of any gate invalidates PCFL-D0-EXACT-V2 as an instrument. All 64 assigned CPU pairs, including zero-valued failures, remain in the ledger. No pair, target, candidate counter, stream, seed, controller, threshold, or reserve is replaced."
+  },
+  "exactness_tests": [
+    "full 103680-world versus quotient equivalence on every reachable accepted-target belief state",
+    "accepted-visible-item likelihood versus independently enumerated finite proposal traces",
+    "rejection-count and rejection-code invariance of the visible posterior",
+    "posterior mass sums exactly to one at every reachable nondegenerate state",
+    "zero-visible-mass and zero-update-mass fail closed",
+    "Bellman residual numerator exactly zero",
+    "lexicographic ties choose the registered action",
+    "dagger symmetry preserves Bayes value and swaps the registered exact-memory action",
+    "64-pair nearest-rank p90 uses element 58",
+    "AUTH-GEN never receives an atom absent from the source-derived eligible set",
+    "all accepted targets have exhaustive generic-reader reachability under exact budgets"
+  ],
+  "claim_firewall": {
+    "controller_specific": {
+      "HW-SOLVE": "hidden-world solvability only",
+      "ATOM-CEILING": "complete eligible-atom information sufficiency only",
+      "AUTH-GEN": "bounded authentic source-derived generic-reader usability in a fixed-deck CPU reference only",
+      "BAYES-N": "exact accepted-visible-item no-lifetime reference value only"
+    },
+    "forbidden_inferences": [
+      "a hidden-world oracle is evidence for lifetime memory",
+      "direct complete-atom access is evidence for bounded reader usability",
+      "a scripted CPU controller is evidence that a model THINK composes",
+      "a green D0 gate is a model, LoRA, GPU, behavioral, developmental, scaling, online-learning, recurrence, or causal-discovery result"
+    ]
+  }
+}

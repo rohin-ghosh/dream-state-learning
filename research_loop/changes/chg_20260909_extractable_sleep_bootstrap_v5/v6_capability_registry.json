@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "artifact_type": "v6_capability_registry_proposal_input",
+  "registry_id": "extractable_sleep_bootstrap_v6_capability_registry_v1",
+  "state": "proposal_input_only",
+  "bindings": {
+    "v5_consensus_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v5/consensus.json",
+    "v5_consensus_sha256": "d276d82fd01661e8c5d8fc19565aa769dd16fbf57af77c4e023b58bfa1c8586b",
+    "v6_blocker_resolution_path": "research_loop/changes/chg_20260909_extractable_sleep_bootstrap_v5/v6_blocker_resolution.md",
+    "v6_blocker_resolution_sha256": "ec39e73f5a13c4aae216fd10cb81a4b8c4c020b8d9fda441934bc31f612e9511"
+  },
+  "canonicalization": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "json_numbers": "base-10 integers only",
+    "duplicate_object_keys": "forbidden",
+    "array_order": "normative as written",
+    "unknown_fields": "forbidden by the later exact validator",
+    "content_roots": "sha256 over later-bound canonical artifact bytes"
+  },
+  "authority_boundary": {
+    "authorizes": [
+      "successor_proposal_drafting"
+    ],
+    "forbids": [
+      "implementation",
+      "model_execution",
+      "tokenizer_execution",
+      "data_generation",
+      "benchmark_generation",
+      "writer_or_adapter_work",
+      "merge_or_checkpoint_work",
+      "gpu_or_resource_use",
+      "external_scientific_execution",
+      "scientific_claim",
+      "publication",
+      "push",
+      "release",
+      "intake_transition",
+      "ratification"
+    ]
+  },
+  "registered_operations": [
+    {
+      "operation": "ADVANCE",
+      "request_schema_id": "CAPABILITY_REQUEST_ADVANCE_V1",
+      "result_schema_id": "CAPABILITY_RESULT_ADVANCE_V1",
+      "semantics": "Compare the bound cursor root and atomically replace it with exactly the registered next cursor; no cursor content is returned."
+    },
+    {
+      "operation": "APPEND",
+      "request_schema_id": "CAPABILITY_REQUEST_APPEND_V1",
+      "result_schema_id": "CAPABILITY_RESULT_APPEND_V1",
+      "semantics": "Append exactly one schema-valid sealed record to the named append-only artifact class; no prior record is readable."
+    },
+    {
+      "operation": "BIND_EQUALITY",
+      "request_schema_id": "CAPABILITY_REQUEST_BIND_EQUALITY_V1",
+      "result_schema_id": "CAPABILITY_RESULT_BIND_EQUALITY_V1",
+      "semantics": "Compare registered class, namespace, and roots for equality without dereferencing content, then consume the handle if single-use."
+    },
+    {
+      "operation": "DEREFERENCE",
+      "request_schema_id": "CAPABILITY_REQUEST_DEREFERENCE_V1",
+      "result_schema_id": "CAPABILITY_RESULT_DEREFERENCE_V1",
+      "semantics": "Materialize exactly one sealed artifact of the registered class and root inside the sole consumer invocation; no identifier enumeration is available."
+    },
+    {
+      "operation": "READ",
+      "request_schema_id": "CAPABILITY_REQUEST_READ_V1",
+      "result_schema_id": "CAPABILITY_RESULT_READ_V1",
+      "semantics": "Read exactly one schema-valid sealed artifact of the registered class and root; no sibling, path, filename, or cache discovery is available."
+    },
+    {
+      "operation": "TRANSFER_OPAQUE",
+      "request_schema_id": "CAPABILITY_REQUEST_TRANSFER_OPAQUE_V1",
+      "result_schema_id": "CAPABILITY_RESULT_TRANSFER_OPAQUE_V1",
+      "semantics": "Copy the exact bound artifact bytes once under the complete release tuple without inspecting content or branching on content, size, type inference, or destination response."
+    },
+    {
+      "operation": "WRITE",
+      "request_schema_id": "CAPABILITY_REQUEST_WRITE_V1",
+      "result_schema_id": "CAPABILITY_RESULT_WRITE_V1",
+      "semantics": "Create exactly one schema-valid artifact in the registered namespace and return only the fixed-shape seal outcome; overwrite and ambient discovery are unavailable."
+    }
+  ],
+  "canonical_schema_templates": {
+    "request_envelope": {
+      "schema_id": "CAPABILITY_REQUEST_ENVELOPE_V1",
+      "required_fields_in_order": [
+        "capability_id",
+        "capability_version",
+        "invocation_id",
+        "consumer_id",
+        "operation",
+        "artifact_class",
+        "artifact_root",
+        "expiry_epoch",
+        "one_shot_nonce",
+        "operation_body"
+      ],
+      "field_types": {
+        "capability_id": "registered ASCII identifier",
+        "capability_version": "integer const 1",
+        "invocation_id": "opaque 128-bit identifier",
+        "consumer_id": "registered stage identifier",
+        "operation": "registered operation enum",
+        "artifact_class": "registered artifact-class identifier",
+        "artifact_root": "lowercase sha256 or all-zero sentinel for a new write",
+        "expiry_epoch": "registered epoch identifier",
+        "one_shot_nonce": "opaque 256-bit nonce or all-zero sentinel for multi-use",
+        "operation_body": "operation-specific fixed-schema object"
+      },
+      "additional_fields": false
+    },
+    "result_envelope": {
+      "schema_id": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "required_fields_in_order": [
+        "capability_id",
+        "invocation_id",
+        "outcome",
+        "result_slot",
+        "transition_receipt_slot"
+      ],
+      "field_types": {
+        "capability_id": "registered ASCII identifier",
+        "invocation_id": "opaque 128-bit identifier",
+        "outcome": "OK or DENIED",
+        "result_slot": "fixed-width artifact-class slot bound by the later exact wire contract",
+        "transition_receipt_slot": "fixed-width transition-receipt slot"
+      },
+      "additional_fields": false,
+      "failure_padding": "DENIED uses the same field sequence and registered byte widths as OK; result and receipt slots are deterministic padding."
+    },
+    "operation_bodies": {
+      "CAPABILITY_REQUEST_ADVANCE_V1": [
+        "expected_cursor_root",
+        "registered_next_cursor_root"
+      ],
+      "CAPABILITY_REQUEST_APPEND_V1": [
+        "record_root",
+        "append_namespace_root"
+      ],
+      "CAPABILITY_REQUEST_BIND_EQUALITY_V1": [
+        "left_registered_root",
+        "right_registered_root",
+        "binding_purpose_id"
+      ],
+      "CAPABILITY_REQUEST_DEREFERENCE_V1": [
+        "sealed_artifact_root"
+      ],
+      "CAPABILITY_REQUEST_READ_V1": [
+        "sealed_artifact_root"
+      ],
+      "CAPABILITY_REQUEST_TRANSFER_OPAQUE_V1": [
+        "artifact_root",
+        "artifact_class",
+        "destination_identity",
+        "transfer_operation",
+        "protocol",
+        "requested_scope",
+        "nonce",
+        "expiry",
+        "one_shot_idempotency_key"
+      ],
+      "CAPABILITY_REQUEST_WRITE_V1": [
+        "new_artifact_root",
+        "write_namespace_root"
+      ]
+    },
+    "operation_results": {
+      "CAPABILITY_RESULT_ADVANCE_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_APPEND_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_BIND_EQUALITY_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_DEREFERENCE_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_READ_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_TRANSFER_OPAQUE_V1": "CAPABILITY_RESULT_ENVELOPE_V1",
+      "CAPABILITY_RESULT_WRITE_V1": "CAPABILITY_RESULT_ENVELOPE_V1"
+    },
+    "downstream_wire_contract_boundary": "Exact byte widths, authentication primitives, serializers, filesystem/CAS/fsync mechanics, and artifact payload schemas remain separately frozen before corresponding implementation; their absence grants no ambient method or authority."
+  },
+  "constant_shape_failure_contract": {
+    "failure_contract_id": "CONSTANT_SHAPE_DENIAL_V1",
+    "public_outcome": "DENIED",
+    "collapsed_causes": [
+      "copied_handle",
+      "expired_handle",
+      "forged_handle",
+      "replayed_handle",
+      "revoked_handle",
+      "stale_handle",
+      "unknown_method",
+      "widened_handle",
+      "wrong_artifact_class",
+      "wrong_consumer",
+      "wrong_epoch",
+      "wrong_namespace",
+      "wrong_operation",
+      "wrong_root"
+    ],
+    "forbidden_observables": [
+      "content_derived_count",
+      "content_derived_hash",
+      "content_derived_identifier",
+      "content_derived_order",
+      "content_derived_timing",
+      "cache_key",
+      "filename",
+      "path",
+      "stale_object_identifier",
+      "variable_error_text"
+    ],
+    "timing_rule": "A later exact implementation contract must bind one padded response deadline for OK and DENIED before implementation.",
+    "logging_rule": "Detailed causes may enter only a quarantined fixed-schema capability-monitor artifact unavailable to the caller and semantic stages."
+  },
+  "artifact_lifetime_classes": [
+    {
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "rule": "Each sealed record persists for the lineage audit retention window; producer handles close after one append and consumers receive per-invocation read handles."
+    },
+    {
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "rule": "Artifact exists only through its producing invocation and one declared close/reissue boundary; it is destroyed after all named consumers close."
+    },
+    {
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "rule": "Sealed content-addressed artifact persists for the project lineage; operation handles never persist and are reissued per consumer invocation."
+    },
+    {
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "rule": "Only the current committed version is active; every version is sealed, each advance or promotion is atomic, and readers receive root-bound handles to one version."
+    },
+    {
+      "lifetime_id": "QUARANTINED_AUDIT_V1",
+      "rule": "Detailed finding persists in an auditor-only namespace and has no transition to semantic, authority-verifier, release, or scientific stages."
+    },
+    {
+      "lifetime_id": "ONE_SHOT_EXTERNAL_V1",
+      "rule": "Authenticated external artifact persists until its exact expiry or first successful consumption; replay is denied."
+    }
+  ],
+  "handle_lifetime": {
+    "handle_lifetime_id": "ONE_CONSUMER_ONE_INVOCATION_V1",
+    "issue": "The sole issuer creates a new handle bound to one consumer, operation, artifact class/root, namespace, invocation ID, epoch, expiry, and use rule.",
+    "close": "The handle closes on success, denial, invocation completion, revocation, or epoch end, whichever occurs first.",
+    "copy_rule": "A copy does not create a second valid nonce and receives CONSTANT_SHAPE_DENIAL_V1.",
+    "cross_epoch_rule": "No handle crosses an epoch; only a sealed artifact may be reissued through an epoch bridge.",
+    "equality_rule": "BIND_EQUALITY handles never contain or return dereferenceable content."
+  },
+  "registered_principals": [
+    "E1_BIRTH_WRITER",
+    "E1_BOOTSTRAP_DATA_BUILDER",
+    "E2_ADAPTIVE_PARENT_CONTROLLER",
+    "E2_FIXED_PARENT_CONTROLLER",
+    "E2_WAKE_CHILD",
+    "E3_DREAM_CONTEXT_BUILDER",
+    "E4_COMPILER_CAPABILITY_MONITOR",
+    "E4_EVIDENCE_SUPPORT_RESOLVER",
+    "E4_SLEEP_COMPILER_WRITER",
+    "E4_SUPPORT_CAPABILITY_MONITOR",
+    "E5_CANDIDATE_PRESERVATION_EVALUATOR",
+    "E5_LINEAGE_PROMOTION_GATE",
+    "E6_EXAM_MODEL_EXECUTOR",
+    "E6_SCIENTIFIC_REPORTER",
+    "E6_TRUTH_SCORER",
+    "E7_BLINDNESS_AUDITOR",
+    "E7_LINEAGE_SAFETY_AUDITOR",
+    "E8_AUTHORITY_VERIFIER",
+    "E8_RELEASE_CONTROLLER",
+    "G0_CAPABILITY_ISSUER",
+    "G0_EPOCH_BRIDGE",
+    "G0_STATIC_MANIFEST_SEALER",
+    "X0_COMMITTED_LINEAGE_STORE",
+    "X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE",
+    "X0_FIXED_CURSOR_STORE",
+    "X0_FROZEN_CONTRACT_SOURCE",
+    "X0_HIDDEN_TRUTH_STORE",
+    "X0_PUBLIC_ENVIRONMENT_SOURCE",
+    "X0_REGISTERED_RELEASE_ARTIFACT_STORE"
+  ],
+  "external_and_registered_sources": [
+    {
+      "source_id": "X0_COMMITTED_LINEAGE_STORE",
+      "source_kind": "registered_internal_store",
+      "produces": [
+        "ACTIVE_WEIGHT_ARTIFACT",
+        "COMMITTED_TRANSACTION_CAS_TOKEN"
+      ],
+      "producer_closure": "Genesis active weight is equality-bound from one IMMUTABLE_BIRTH_ARTIFACT; successor active weights are accepted only from E5_GATE_WRITE_ACTIVE_WEIGHT after a valid root-bound verdict and full-head CAS. CAS tokens are store-issued, equality-only, invocation-bound, and never dereferenceable."
+    },
+    {
+      "source_id": "X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE",
+      "source_kind": "external_human_only",
+      "produces": [
+        "EXTERNAL_HUMAN_AUTHORIZATION",
+        "RELEASE_TUPLE_BINDING"
+      ],
+      "producer_closure": "Exact authenticated human bytes only; repository code, models, auditors, verifiers, and controllers cannot author, renew, widen, or substitute them."
+    },
+    {
+      "source_id": "X0_FIXED_CURSOR_STORE",
+      "source_kind": "registered_internal_store",
+      "produces": [
+        "FIXED_SCHEDULE_CURSOR"
+      ],
+      "producer_closure": "The store initializes one frozen schedule cursor and accepts only equality-bound monotone ADVANCE from E2_FIXED_PARENT_CONTROLLER."
+    },
+    {
+      "source_id": "X0_FROZEN_CONTRACT_SOURCE",
+      "source_kind": "exact_separately_ratified_artifact_source",
+      "produces": [
+        "BOOTSTRAP_WRITER_MATERIALIZATION_CONTRACT",
+        "FIXED_LESSON_TABLE",
+        "FROZEN_M0",
+        "FROZEN_PRESERVATION_PANEL",
+        "FROZEN_SLEEP_WRITER_CONTRACT",
+        "STATIC_BOOTSTRAP_SPEC"
+      ],
+      "producer_closure": "Each artifact is immutable and content-addressed before its first corresponding action; ambient environment and network fallback are denied."
+    },
+    {
+      "source_id": "X0_HIDDEN_TRUTH_STORE",
+      "source_kind": "sealed_external_evaluation_source",
+      "produces": [
+        "HIDDEN_EVALUATION_TRUTH"
+      ],
+      "producer_closure": "Only E6_TRUTH_SCORER receives a per-invocation READ handle; no semantic, model, audit-authority, or release stage receives truth."
+    },
+    {
+      "source_id": "X0_PUBLIC_ENVIRONMENT_SOURCE",
+      "source_kind": "registered_public_observation_source",
+      "produces": [
+        "PUBLIC_OBSERVATION"
+      ],
+      "producer_closure": "Each observation occurrence is immutable, temporally committed, and labeled development or evaluation before per-consumer handle issuance."
+    },
+    {
+      "source_id": "X0_REGISTERED_RELEASE_ARTIFACT_STORE",
+      "source_kind": "sealed_opaque_release_source",
+      "produces": [
+        "RELEASE_TARGET_ARTIFACT"
+      ],
+      "producer_closure": "The store admits only the exact separately authorized artifact root and class; it exposes no read or dereference method and can issue one tuple-bound TRANSFER_OPAQUE handle."
+    }
+  ],
+  "artifact_classes": [
+    {
+      "artifact_class": "ACTIVE_WEIGHT_ARTIFACT",
+      "payload_schema_id": "DOWNSTREAM_ACTIVE_WEIGHT_SCHEMA",
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "producer_policy": "Exactly one committed version per lineage generation; genesis is bound from IMMUTABLE_BIRTH_ARTIFACT and successors only by E5_LINEAGE_PROMOTION_GATE."
+    },
+    {
+      "artifact_class": "ADAPTIVE_PARENT_HISTORY",
+      "payload_schema_id": "DOWNSTREAM_ADAPTIVE_PARENT_HISTORY_SCHEMA",
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "producer_policy": "E2_ADAPTIVE_PARENT_CONTROLLER only."
+    },
+    {
+      "artifact_class": "ADAPTIVE_REPETITION_STATE",
+      "payload_schema_id": "DOWNSTREAM_ADAPTIVE_REPETITION_SCHEMA",
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "producer_policy": "E2_ADAPTIVE_PARENT_CONTROLLER only."
+    },
+    {
+      "artifact_class": "AUTHORITY_VERDICT",
+      "payload_schema_id": "DOWNSTREAM_AUTHORITY_VERDICT_SCHEMA",
+      "lifetime_id": "ONE_SHOT_EXTERNAL_V1",
+      "producer_policy": "E8_AUTHORITY_VERIFIER only."
+    },
+    {
+      "artifact_class": "BLINDNESS_AUDIT_ATTESTATION",
+      "payload_schema_id": "DOWNSTREAM_FIXED_SIZE_BLINDNESS_ATTESTATION_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E7_BLINDNESS_AUDITOR only; fixed-size pass/fail and named roots, no semantic content."
+    },
+    {
+      "artifact_class": "BLINDNESS_AUDIT_FINDING",
+      "payload_schema_id": "DOWNSTREAM_QUARANTINED_BLINDNESS_FINDING_SCHEMA",
+      "lifetime_id": "QUARANTINED_AUDIT_V1",
+      "producer_policy": "E7_BLINDNESS_AUDITOR only."
+    },
+    {
+      "artifact_class": "BOOTSTRAP_AUDIT_RECEIPT",
+      "payload_schema_id": "DOWNSTREAM_BOOTSTRAP_AUDIT_RECEIPT_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "E1_BIRTH_WRITER only."
+    },
+    {
+      "artifact_class": "BOOTSTRAP_WRITER_MATERIALIZATION_CONTRACT",
+      "payload_schema_id": "DOWNSTREAM_FROZEN_BOOTSTRAP_CONTRACT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only; binds writer, response mask, tokenizer, merge equation, dtype, serializer, toolchain, M0 root, seed, truncation, and receipt schemas."
+    },
+    {
+      "artifact_class": "CANDIDATE_CLOSURE",
+      "payload_schema_id": "DOWNSTREAM_CANDIDATE_CLOSURE_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "E4_SLEEP_COMPILER_WRITER only, from immutable birth and never prior active weights."
+    },
+    {
+      "artifact_class": "CANDIDATE_TRANSACTION_RECEIPT",
+      "payload_schema_id": "DOWNSTREAM_CANDIDATE_TRANSACTION_RECEIPT_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "E4_SLEEP_COMPILER_WRITER only."
+    },
+    {
+      "artifact_class": "CAPABILITY_EVENT_LOG",
+      "payload_schema_id": "DOWNSTREAM_CONTENT_FREE_CAPABILITY_EVENT_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "Exactly one of E4_EVIDENCE_SUPPORT_RESOLVER or E4_SLEEP_COMPILER_WRITER per namespaced log; contains capability IDs and outcomes only."
+    },
+    {
+      "artifact_class": "CHILD_GROUNDED_TRACE",
+      "payload_schema_id": "DOWNSTREAM_CHILD_TRACE_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "E2_WAKE_CHILD only."
+    },
+    {
+      "artifact_class": "COMMITTED_TRANSACTION_CAS_TOKEN",
+      "payload_schema_id": "DOWNSTREAM_EQUALITY_ONLY_CAS_TOKEN_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "X0_COMMITTED_LINEAGE_STORE only; non-dereferenceable full-head snapshot token."
+    },
+    {
+      "artifact_class": "DECLARED_DEPENDENCY_MANIFEST",
+      "payload_schema_id": "DOWNSTREAM_STATIC_DEPENDENCY_MANIFEST_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "G0_STATIC_MANIFEST_SEALER only."
+    },
+    {
+      "artifact_class": "DISPATCHER_MANIFEST",
+      "payload_schema_id": "DOWNSTREAM_STATIC_DISPATCHER_MANIFEST_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "G0_STATIC_MANIFEST_SEALER only."
+    },
+    {
+      "artifact_class": "DREAM_CACHE",
+      "payload_schema_id": "DOWNSTREAM_DREAM_CACHE_SCHEMA",
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "producer_policy": "E3_DREAM_CONTEXT_BUILDER only; disposable and waking-only."
+    },
+    {
+      "artifact_class": "ELIGIBLE_CHILD_LIFE_EVIDENCE",
+      "payload_schema_id": "DOWNSTREAM_CHILD_AUTHORSHIP_AND_SUPPORT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E4_EVIDENCE_SUPPORT_RESOLVER only; every loss-bearing clause binds prior child-authored proposition IDs and public support IDs."
+    },
+    {
+      "artifact_class": "EXAM_TRANSCRIPT",
+      "payload_schema_id": "DOWNSTREAM_CLOSED_EXAM_TRANSCRIPT_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "E6_EXAM_MODEL_EXECUTOR only."
+    },
+    {
+      "artifact_class": "EXTERNAL_HUMAN_AUTHORIZATION",
+      "payload_schema_id": "DOWNSTREAM_SIGNED_HUMAN_AUTHORIZATION_SCHEMA",
+      "lifetime_id": "ONE_SHOT_EXTERNAL_V1",
+      "producer_policy": "X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE only; never repository or model authored."
+    },
+    {
+      "artifact_class": "FIXED_LESSON_TABLE",
+      "payload_schema_id": "DOWNSTREAM_FIXED_LESSON_TABLE_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only."
+    },
+    {
+      "artifact_class": "FIXED_SCHEDULE_CURSOR",
+      "payload_schema_id": "DOWNSTREAM_MONOTONE_CURSOR_SCHEMA",
+      "lifetime_id": "MUTABLE_COMMITTED_VERSION_V1",
+      "producer_policy": "X0_FIXED_CURSOR_STORE only; E2_FIXED_PARENT_CONTROLLER may only ADVANCE."
+    },
+    {
+      "artifact_class": "FROZEN_M0",
+      "payload_schema_id": "DOWNSTREAM_FROZEN_MODEL_ROOT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only."
+    },
+    {
+      "artifact_class": "FROZEN_PRESERVATION_PANEL",
+      "payload_schema_id": "DOWNSTREAM_PRESERVATION_PANEL_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only."
+    },
+    {
+      "artifact_class": "FROZEN_SLEEP_WRITER_CONTRACT",
+      "payload_schema_id": "DOWNSTREAM_SLEEP_WRITER_CONTRACT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only."
+    },
+    {
+      "artifact_class": "HIDDEN_EVALUATION_TRUTH",
+      "payload_schema_id": "DOWNSTREAM_HIDDEN_TRUTH_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_HIDDEN_TRUTH_STORE only."
+    },
+    {
+      "artifact_class": "IMMUTABLE_BIRTH_ARTIFACT",
+      "payload_schema_id": "DOWNSTREAM_IMMUTABLE_BIRTH_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E1_BIRTH_WRITER only."
+    },
+    {
+      "artifact_class": "LINEAGE_AUDIT_ATTESTATION",
+      "payload_schema_id": "DOWNSTREAM_FIXED_SIZE_LINEAGE_ATTESTATION_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E7_LINEAGE_SAFETY_AUDITOR only; fixed-size pass/fail and named roots, no semantic content."
+    },
+    {
+      "artifact_class": "LINEAGE_AUDIT_FINDING",
+      "payload_schema_id": "DOWNSTREAM_QUARANTINED_LINEAGE_FINDING_SCHEMA",
+      "lifetime_id": "QUARANTINED_AUDIT_V1",
+      "producer_policy": "E7_LINEAGE_SAFETY_AUDITOR only."
+    },
+    {
+      "artifact_class": "LIVE_PARENT_MESSAGE",
+      "payload_schema_id": "DOWNSTREAM_LIVE_PARENT_MESSAGE_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "Exactly one of E2_FIXED_PARENT_CONTROLLER or E2_ADAPTIVE_PARENT_CONTROLLER per frozen assigned parent arm."
+    },
+    {
+      "artifact_class": "PAIRED_BOOTSTRAP_CORPUS",
+      "payload_schema_id": "DOWNSTREAM_PAIRED_BOOTSTRAP_CORPUS_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E1_BOOTSTRAP_DATA_BUILDER only."
+    },
+    {
+      "artifact_class": "PARENT_AUDIT_EVENT",
+      "payload_schema_id": "DOWNSTREAM_PARENT_AUDIT_EVENT_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "Exactly one controller per event under the frozen assigned parent arm."
+    },
+    {
+      "artifact_class": "PRESERVATION_EVIDENCE",
+      "payload_schema_id": "DOWNSTREAM_PRESERVATION_EVIDENCE_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E5_CANDIDATE_PRESERVATION_EVALUATOR only."
+    },
+    {
+      "artifact_class": "PROMOTION_TRANSACTION_RECEIPT",
+      "payload_schema_id": "DOWNSTREAM_PROMOTION_TRANSACTION_RECEIPT_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "E5_LINEAGE_PROMOTION_GATE only."
+    },
+    {
+      "artifact_class": "PROMOTION_VERDICT",
+      "payload_schema_id": "DOWNSTREAM_PROMOTION_VERDICT_SCHEMA",
+      "lifetime_id": "EPHEMERAL_INVOCATION_V1",
+      "producer_policy": "E5_CANDIDATE_PRESERVATION_EVALUATOR only."
+    },
+    {
+      "artifact_class": "PUBLIC_OBSERVATION",
+      "payload_schema_id": "DOWNSTREAM_PUBLIC_OBSERVATION_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "X0_PUBLIC_ENVIRONMENT_SOURCE only."
+    },
+    {
+      "artifact_class": "RELEASE_RECEIPT",
+      "payload_schema_id": "DOWNSTREAM_RELEASE_RECEIPT_SCHEMA",
+      "lifetime_id": "APPEND_ONLY_LINEAGE_V1",
+      "producer_policy": "E8_RELEASE_CONTROLLER only; echoes the complete release tuple and outcome."
+    },
+    {
+      "artifact_class": "RELEASE_TARGET_ARTIFACT",
+      "payload_schema_id": "DOWNSTREAM_REGISTERED_RELEASE_TARGET_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_REGISTERED_RELEASE_ARTIFACT_STORE only; the store admits only a separately authorized exact root and class."
+    },
+    {
+      "artifact_class": "RELEASE_TUPLE_BINDING",
+      "payload_schema_id": "RELEASE_TUPLE_V1",
+      "lifetime_id": "ONE_SHOT_EXTERNAL_V1",
+      "producer_policy": "X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE only; tuple fields are artifact_root, artifact_class, destination_identity, transfer_operation, protocol, requested_scope, nonce, expiry, one_shot_idempotency_key."
+    },
+    {
+      "artifact_class": "SCIENTIFIC_REPORT",
+      "payload_schema_id": "DOWNSTREAM_SCIENTIFIC_REPORT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E6_SCIENTIFIC_REPORTER only; no internal consumer."
+    },
+    {
+      "artifact_class": "SCIENTIFIC_SCORE_RECORD",
+      "payload_schema_id": "DOWNSTREAM_CLOSED_SCORE_RECORD_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "E6_TRUTH_SCORER only."
+    },
+    {
+      "artifact_class": "STATIC_BOOTSTRAP_SPEC",
+      "payload_schema_id": "DOWNSTREAM_STATIC_BOOTSTRAP_SPEC_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "X0_FROZEN_CONTRACT_SOURCE only."
+    },
+    {
+      "artifact_class": "TAINT_RECEIPT",
+      "payload_schema_id": "DOWNSTREAM_FIXED_SIZE_TAINT_RECEIPT_SCHEMA",
+      "lifetime_id": "IMMUTABLE_PROJECT_V1",
+      "producer_policy": "Exactly one registered E4 capability monitor per namespaced receipt; contains no child, parent, candidate, truth, score, or report semantics."
+    }
+  ],
+  "capability_defaults": {
+    "capability_version": 1,
+    "issuer_id": "G0_CAPABILITY_ISSUER",
+    "handle_lifetime_id": "ONE_CONSUMER_ONE_INVOCATION_V1",
+    "failure_contract_id": "CONSTANT_SHAPE_DENIAL_V1",
+    "allowed_consumer_cardinality": 1,
+    "unknown_operations": "forbidden"
+  },
+  "capabilities": [
+    {"capability_id":"E1_BIRTH_APPEND_BOOTSTRAP_AUDIT","operation":"APPEND","artifact_class":"BOOTSTRAP_AUDIT_RECEIPT","artifact_producer_id":"E1_BIRTH_WRITER","allowed_consumers":["E1_BIRTH_WRITER"],"namespace":"e1/bootstrap-audit","epoch":"E1_BIRTH_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_APPEND_V1","result_schema_id":"CAPABILITY_RESULT_APPEND_V1"},
+    {"capability_id":"E1_BIRTH_READ_BOOTSTRAP_CONTRACT","operation":"READ","artifact_class":"BOOTSTRAP_WRITER_MATERIALIZATION_CONTRACT","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E1_BIRTH_WRITER"],"namespace":"e1/frozen-contract/bootstrap-materialization","epoch":"E1_BIRTH_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E1_BIRTH_READ_FROZEN_M0","operation":"READ","artifact_class":"FROZEN_M0","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E1_BIRTH_WRITER"],"namespace":"e1/frozen-model/m0","epoch":"E1_BIRTH_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E1_BIRTH_READ_PAIRED_CORPUS","operation":"READ","artifact_class":"PAIRED_BOOTSTRAP_CORPUS","artifact_producer_id":"E1_BOOTSTRAP_DATA_BUILDER","allowed_consumers":["E1_BIRTH_WRITER"],"namespace":"e1/bootstrap-corpus/paired","epoch":"E1_BIRTH_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E1_BIRTH_WRITE_IMMUTABLE_BIRTH","operation":"WRITE","artifact_class":"IMMUTABLE_BIRTH_ARTIFACT","artifact_producer_id":"E1_BIRTH_WRITER","allowed_consumers":["E1_BIRTH_WRITER"],"namespace":"e1/birth/immutable","epoch":"E1_BIRTH_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E1_BUILDER_READ_STATIC_SPEC","operation":"READ","artifact_class":"STATIC_BOOTSTRAP_SPEC","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E1_BOOTSTRAP_DATA_BUILDER"],"namespace":"e1/frozen-contract/bootstrap-spec","epoch":"E1_BUILDER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E1_BUILDER_WRITE_PAIRED_CORPUS","operation":"WRITE","artifact_class":"PAIRED_BOOTSTRAP_CORPUS","artifact_producer_id":"E1_BOOTSTRAP_DATA_BUILDER","allowed_consumers":["E1_BOOTSTRAP_DATA_BUILDER"],"namespace":"e1/bootstrap-corpus/paired","epoch":"E1_BUILDER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E2_ADAPTIVE_APPEND_PARENT_AUDIT","operation":"APPEND","artifact_class":"PARENT_AUDIT_EVENT","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/parent-audit/adaptive","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_APPEND_V1","result_schema_id":"CAPABILITY_RESULT_APPEND_V1"},
+    {"capability_id":"E2_ADAPTIVE_READ_CHILD_TRACE","operation":"READ","artifact_class":"CHILD_GROUNDED_TRACE","artifact_producer_id":"E2_WAKE_CHILD","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/child-trace/committed","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_ADAPTIVE_READ_PARENT_HISTORY","operation":"READ","artifact_class":"ADAPTIVE_PARENT_HISTORY","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/adaptive-parent/history","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_ADAPTIVE_READ_PUBLIC_OBSERVATION","operation":"READ","artifact_class":"PUBLIC_OBSERVATION","artifact_producer_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/environment/development-public","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_ADAPTIVE_READ_REPETITION_STATE","operation":"READ","artifact_class":"ADAPTIVE_REPETITION_STATE","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/adaptive-parent/repetition","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_ADAPTIVE_WRITE_LIVE_PARENT_MESSAGE","operation":"WRITE","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/live-parent/adaptive","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E2_ADAPTIVE_WRITE_PARENT_HISTORY","operation":"WRITE","artifact_class":"ADAPTIVE_PARENT_HISTORY","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/adaptive-parent/history","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E2_ADAPTIVE_WRITE_REPETITION_STATE","operation":"WRITE","artifact_class":"ADAPTIVE_REPETITION_STATE","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_ADAPTIVE_PARENT_CONTROLLER"],"namespace":"e2/adaptive-parent/repetition","epoch":"E2_ADAPTIVE_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E2_FIXED_ADVANCE_CURSOR","operation":"ADVANCE","artifact_class":"FIXED_SCHEDULE_CURSOR","artifact_producer_id":"X0_FIXED_CURSOR_STORE","allowed_consumers":["E2_FIXED_PARENT_CONTROLLER"],"namespace":"e2/fixed-parent/cursor","epoch":"E2_FIXED_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_ADVANCE_V1","result_schema_id":"CAPABILITY_RESULT_ADVANCE_V1"},
+    {"capability_id":"E2_FIXED_APPEND_PARENT_AUDIT","operation":"APPEND","artifact_class":"PARENT_AUDIT_EVENT","artifact_producer_id":"E2_FIXED_PARENT_CONTROLLER","allowed_consumers":["E2_FIXED_PARENT_CONTROLLER"],"namespace":"e2/parent-audit/fixed","epoch":"E2_FIXED_PARENT_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_APPEND_V1","result_schema_id":"CAPABILITY_RESULT_APPEND_V1"},
+    {"capability_id":"E2_FIXED_READ_CURSOR","operation":"READ","artifact_class":"FIXED_SCHEDULE_CURSOR","artifact_producer_id":"X0_FIXED_CURSOR_STORE","allowed_consumers":["E2_FIXED_PARENT_CONTROLLER"],"namespace":"e2/fixed-parent/cursor","epoch":"E2_FIXED_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_FIXED_READ_LESSON_TABLE","operation":"READ","artifact_class":"FIXED_LESSON_TABLE","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E2_FIXED_PARENT_CONTROLLER"],"namespace":"e2/fixed-parent/lesson-table","epoch":"E2_FIXED_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_FIXED_WRITE_LIVE_PARENT_MESSAGE","operation":"WRITE","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_FIXED_PARENT_CONTROLLER","allowed_consumers":["E2_FIXED_PARENT_CONTROLLER"],"namespace":"e2/live-parent/fixed","epoch":"E2_FIXED_PARENT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E2_WAKE_DEREFERENCE_ACTIVE_WEIGHT","operation":"DEREFERENCE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e2/lineage/active-weight","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_DEREFERENCE_V1","result_schema_id":"CAPABILITY_RESULT_DEREFERENCE_V1"},
+    {"capability_id":"E2_WAKE_READ_ADAPTIVE_PARENT_MESSAGE","operation":"READ","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e2/live-parent/adaptive","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use_by_assigned_arm","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_WAKE_READ_DREAM_CACHE","operation":"READ","artifact_class":"DREAM_CACHE","artifact_producer_id":"E3_DREAM_CONTEXT_BUILDER","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e3/dream-cache/waking","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_WAKE_READ_FIXED_PARENT_MESSAGE","operation":"READ","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_FIXED_PARENT_CONTROLLER","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e2/live-parent/fixed","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use_by_assigned_arm","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_WAKE_READ_PUBLIC_OBSERVATION","operation":"READ","artifact_class":"PUBLIC_OBSERVATION","artifact_producer_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e2/environment/development-public","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E2_WAKE_WRITE_CHILD_TRACE","operation":"WRITE","artifact_class":"CHILD_GROUNDED_TRACE","artifact_producer_id":"E2_WAKE_CHILD","allowed_consumers":["E2_WAKE_CHILD"],"namespace":"e2/child-trace/committed","epoch":"E2_WAKE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E3_DREAM_DEREFERENCE_ACTIVE_WEIGHT","operation":"DEREFERENCE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e2/lineage/active-weight","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_DEREFERENCE_V1","result_schema_id":"CAPABILITY_RESULT_DEREFERENCE_V1"},
+    {"capability_id":"E3_DREAM_READ_ADAPTIVE_PARENT_MESSAGE","operation":"READ","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_ADAPTIVE_PARENT_CONTROLLER","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e2/live-parent/adaptive","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use_by_assigned_arm","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E3_DREAM_READ_CHILD_TRACE","operation":"READ","artifact_class":"CHILD_GROUNDED_TRACE","artifact_producer_id":"E2_WAKE_CHILD","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e2/child-trace/committed","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E3_DREAM_READ_FIXED_PARENT_MESSAGE","operation":"READ","artifact_class":"LIVE_PARENT_MESSAGE","artifact_producer_id":"E2_FIXED_PARENT_CONTROLLER","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e2/live-parent/fixed","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use_by_assigned_arm","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E3_DREAM_READ_PRIOR_CACHE","operation":"READ","artifact_class":"DREAM_CACHE","artifact_producer_id":"E3_DREAM_CONTEXT_BUILDER","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e3/dream-cache/waking","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E3_DREAM_READ_PUBLIC_OBSERVATION","operation":"READ","artifact_class":"PUBLIC_OBSERVATION","artifact_producer_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e2/environment/development-public","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E3_DREAM_WRITE_CACHE","operation":"WRITE","artifact_class":"DREAM_CACHE","artifact_producer_id":"E3_DREAM_CONTEXT_BUILDER","allowed_consumers":["E3_DREAM_CONTEXT_BUILDER"],"namespace":"e3/dream-cache/waking","epoch":"E3_DREAM_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E4_COMPILER_APPEND_CAPABILITY_EVENTS","operation":"APPEND","artifact_class":"CAPABILITY_EVENT_LOG","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/capability-events/compiler","epoch":"E4_SLEEP_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_APPEND_V1","result_schema_id":"CAPABILITY_RESULT_APPEND_V1"},
+    {"capability_id":"E4_COMPILER_BIND_COMMITTED_SNAPSHOT","operation":"BIND_EQUALITY","artifact_class":"COMMITTED_TRANSACTION_CAS_TOKEN","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/lineage/snapshot","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E4_COMPILER_READ_ELIGIBLE_EVIDENCE","operation":"READ","artifact_class":"ELIGIBLE_CHILD_LIFE_EVIDENCE","artifact_producer_id":"E4_EVIDENCE_SUPPORT_RESOLVER","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/eligible-evidence/child-authored","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_COMPILER_READ_IMMUTABLE_BIRTH","operation":"READ","artifact_class":"IMMUTABLE_BIRTH_ARTIFACT","artifact_producer_id":"E1_BIRTH_WRITER","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e1/birth/immutable","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_COMPILER_READ_SLEEP_WRITER_CONTRACT","operation":"READ","artifact_class":"FROZEN_SLEEP_WRITER_CONTRACT","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/frozen-contract/sleep-writer","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_COMPILER_WRITE_CANDIDATE","operation":"WRITE","artifact_class":"CANDIDATE_CLOSURE","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/candidate/staged","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E4_COMPILER_WRITE_TRANSACTION_RECEIPT","operation":"WRITE","artifact_class":"CANDIDATE_TRANSACTION_RECEIPT","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E4_SLEEP_COMPILER_WRITER"],"namespace":"e4/lineage/candidate-receipt","epoch":"E4_SLEEP_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E4_COMPILER_MONITOR_READ_EVENTS","operation":"READ","artifact_class":"CAPABILITY_EVENT_LOG","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E4_COMPILER_CAPABILITY_MONITOR"],"namespace":"e4/capability-events/compiler","epoch":"E4_COMPILER_MONITOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_COMPILER_MONITOR_WRITE_TAINT","operation":"WRITE","artifact_class":"TAINT_RECEIPT","artifact_producer_id":"E4_COMPILER_CAPABILITY_MONITOR","allowed_consumers":["E4_COMPILER_CAPABILITY_MONITOR"],"namespace":"e4/taint/compiler","epoch":"E4_COMPILER_MONITOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E4_SUPPORT_APPEND_CAPABILITY_EVENTS","operation":"APPEND","artifact_class":"CAPABILITY_EVENT_LOG","artifact_producer_id":"E4_EVIDENCE_SUPPORT_RESOLVER","allowed_consumers":["E4_EVIDENCE_SUPPORT_RESOLVER"],"namespace":"e4/capability-events/support","epoch":"E4_SUPPORT_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_APPEND_V1","result_schema_id":"CAPABILITY_RESULT_APPEND_V1"},
+    {"capability_id":"E4_SUPPORT_READ_CHILD_TRACE","operation":"READ","artifact_class":"CHILD_GROUNDED_TRACE","artifact_producer_id":"E2_WAKE_CHILD","allowed_consumers":["E4_EVIDENCE_SUPPORT_RESOLVER"],"namespace":"e2/child-trace/committed","epoch":"E4_SUPPORT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_SUPPORT_READ_PUBLIC_OBSERVATION","operation":"READ","artifact_class":"PUBLIC_OBSERVATION","artifact_producer_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","allowed_consumers":["E4_EVIDENCE_SUPPORT_RESOLVER"],"namespace":"e2/environment/development-public","epoch":"E4_SUPPORT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_SUPPORT_WRITE_ELIGIBLE_EVIDENCE","operation":"WRITE","artifact_class":"ELIGIBLE_CHILD_LIFE_EVIDENCE","artifact_producer_id":"E4_EVIDENCE_SUPPORT_RESOLVER","allowed_consumers":["E4_EVIDENCE_SUPPORT_RESOLVER"],"namespace":"e4/eligible-evidence/child-authored","epoch":"E4_SUPPORT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E4_SUPPORT_MONITOR_READ_EVENTS","operation":"READ","artifact_class":"CAPABILITY_EVENT_LOG","artifact_producer_id":"E4_EVIDENCE_SUPPORT_RESOLVER","allowed_consumers":["E4_SUPPORT_CAPABILITY_MONITOR"],"namespace":"e4/capability-events/support","epoch":"E4_SUPPORT_MONITOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E4_SUPPORT_MONITOR_WRITE_TAINT","operation":"WRITE","artifact_class":"TAINT_RECEIPT","artifact_producer_id":"E4_SUPPORT_CAPABILITY_MONITOR","allowed_consumers":["E4_SUPPORT_CAPABILITY_MONITOR"],"namespace":"e4/taint/support","epoch":"E4_SUPPORT_MONITOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E5_EVALUATOR_BIND_CANDIDATE_ROOT","operation":"BIND_EQUALITY","artifact_class":"CANDIDATE_CLOSURE","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e4/candidate/staged","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E5_EVALUATOR_DEREFERENCE_CANDIDATE","operation":"DEREFERENCE","artifact_class":"CANDIDATE_CLOSURE","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e4/candidate/staged","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_DEREFERENCE_V1","result_schema_id":"CAPABILITY_RESULT_DEREFERENCE_V1"},
+    {"capability_id":"E5_EVALUATOR_DEREFERENCE_PRIOR_ACTIVE","operation":"DEREFERENCE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e2/lineage/active-weight","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_DEREFERENCE_V1","result_schema_id":"CAPABILITY_RESULT_DEREFERENCE_V1"},
+    {"capability_id":"E5_EVALUATOR_READ_PRESERVATION_PANEL","operation":"READ","artifact_class":"FROZEN_PRESERVATION_PANEL","artifact_producer_id":"X0_FROZEN_CONTRACT_SOURCE","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e5/frozen-contract/preservation-panel","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E5_EVALUATOR_WRITE_PRESERVATION_EVIDENCE","operation":"WRITE","artifact_class":"PRESERVATION_EVIDENCE","artifact_producer_id":"E5_CANDIDATE_PRESERVATION_EVALUATOR","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e5/preservation/evidence","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E5_EVALUATOR_WRITE_PROMOTION_VERDICT","operation":"WRITE","artifact_class":"PROMOTION_VERDICT","artifact_producer_id":"E5_CANDIDATE_PRESERVATION_EVALUATOR","allowed_consumers":["E5_CANDIDATE_PRESERVATION_EVALUATOR"],"namespace":"e5/preservation/verdict","epoch":"E5_EVALUATION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E5_GATE_BIND_CANDIDATE_ROOT","operation":"BIND_EQUALITY","artifact_class":"CANDIDATE_CLOSURE","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E5_LINEAGE_PROMOTION_GATE"],"namespace":"e4/candidate/staged","epoch":"E5_PROMOTION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E5_GATE_BIND_COMMITTED_CAS","operation":"BIND_EQUALITY","artifact_class":"COMMITTED_TRANSACTION_CAS_TOKEN","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E5_LINEAGE_PROMOTION_GATE"],"namespace":"e5/lineage/promotion-cas","epoch":"E5_PROMOTION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E5_GATE_READ_PROMOTION_VERDICT","operation":"READ","artifact_class":"PROMOTION_VERDICT","artifact_producer_id":"E5_CANDIDATE_PRESERVATION_EVALUATOR","allowed_consumers":["E5_LINEAGE_PROMOTION_GATE"],"namespace":"e5/preservation/verdict","epoch":"E5_PROMOTION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E5_GATE_WRITE_ACTIVE_WEIGHT","operation":"WRITE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","artifact_producer_id":"E5_LINEAGE_PROMOTION_GATE","allowed_consumers":["E5_LINEAGE_PROMOTION_GATE"],"namespace":"e2/lineage/active-weight","epoch":"E5_PROMOTION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E5_GATE_WRITE_TRANSACTION_RECEIPT","operation":"WRITE","artifact_class":"PROMOTION_TRANSACTION_RECEIPT","artifact_producer_id":"E5_LINEAGE_PROMOTION_GATE","allowed_consumers":["E5_LINEAGE_PROMOTION_GATE"],"namespace":"e5/lineage/promotion-receipt","epoch":"E5_PROMOTION_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E6_EXECUTOR_DEREFERENCE_ACTIVE_WEIGHT","operation":"DEREFERENCE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","artifact_producer_id":"X0_COMMITTED_LINEAGE_STORE","allowed_consumers":["E6_EXAM_MODEL_EXECUTOR"],"namespace":"e2/lineage/active-weight","epoch":"E6_EXECUTOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_DEREFERENCE_V1","result_schema_id":"CAPABILITY_RESULT_DEREFERENCE_V1"},
+    {"capability_id":"E6_EXECUTOR_READ_PUBLIC_OBSERVATION","operation":"READ","artifact_class":"PUBLIC_OBSERVATION","artifact_producer_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","allowed_consumers":["E6_EXAM_MODEL_EXECUTOR"],"namespace":"e6/environment/evaluation-public","epoch":"E6_EXECUTOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E6_EXECUTOR_WRITE_TRANSCRIPT","operation":"WRITE","artifact_class":"EXAM_TRANSCRIPT","artifact_producer_id":"E6_EXAM_MODEL_EXECUTOR","allowed_consumers":["E6_EXAM_MODEL_EXECUTOR"],"namespace":"e6/exam/transcript","epoch":"E6_EXECUTOR_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E6_REPORTER_READ_SCORE_RECORD","operation":"READ","artifact_class":"SCIENTIFIC_SCORE_RECORD","artifact_producer_id":"E6_TRUTH_SCORER","allowed_consumers":["E6_SCIENTIFIC_REPORTER"],"namespace":"e6/science/scores","epoch":"E6_REPORTER_INVOCATION","use_rule":"multi_use_bounded_by_contract","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E6_REPORTER_WRITE_REPORT","operation":"WRITE","artifact_class":"SCIENTIFIC_REPORT","artifact_producer_id":"E6_SCIENTIFIC_REPORTER","allowed_consumers":["E6_SCIENTIFIC_REPORTER"],"namespace":"e6/science/report","epoch":"E6_REPORTER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E6_SCORER_READ_HIDDEN_TRUTH","operation":"READ","artifact_class":"HIDDEN_EVALUATION_TRUTH","artifact_producer_id":"X0_HIDDEN_TRUTH_STORE","allowed_consumers":["E6_TRUTH_SCORER"],"namespace":"e6/hidden-truth","epoch":"E6_SCORER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E6_SCORER_READ_TRANSCRIPT","operation":"READ","artifact_class":"EXAM_TRANSCRIPT","artifact_producer_id":"E6_EXAM_MODEL_EXECUTOR","allowed_consumers":["E6_TRUTH_SCORER"],"namespace":"e6/exam/transcript","epoch":"E6_SCORER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E6_SCORER_WRITE_SCORE_RECORD","operation":"WRITE","artifact_class":"SCIENTIFIC_SCORE_RECORD","artifact_producer_id":"E6_TRUTH_SCORER","allowed_consumers":["E6_TRUTH_SCORER"],"namespace":"e6/science/scores","epoch":"E6_SCORER_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E7_BLINDNESS_READ_COMPILER_TAINT","operation":"READ","artifact_class":"TAINT_RECEIPT","artifact_producer_id":"E4_COMPILER_CAPABILITY_MONITOR","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"e4/taint/compiler","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_BLINDNESS_READ_DEPENDENCY_MANIFEST","operation":"READ","artifact_class":"DECLARED_DEPENDENCY_MANIFEST","artifact_producer_id":"G0_STATIC_MANIFEST_SEALER","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"g0/static-manifest/dependencies","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_BLINDNESS_READ_DISPATCHER_MANIFEST","operation":"READ","artifact_class":"DISPATCHER_MANIFEST","artifact_producer_id":"G0_STATIC_MANIFEST_SEALER","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"g0/static-manifest/dispatchers","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_BLINDNESS_READ_SUPPORT_TAINT","operation":"READ","artifact_class":"TAINT_RECEIPT","artifact_producer_id":"E4_SUPPORT_CAPABILITY_MONITOR","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"e4/taint/support","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_BLINDNESS_WRITE_ATTESTATION","operation":"WRITE","artifact_class":"BLINDNESS_AUDIT_ATTESTATION","artifact_producer_id":"E7_BLINDNESS_AUDITOR","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"e7/attestation/blindness","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E7_BLINDNESS_WRITE_FINDING","operation":"WRITE","artifact_class":"BLINDNESS_AUDIT_FINDING","artifact_producer_id":"E7_BLINDNESS_AUDITOR","allowed_consumers":["E7_BLINDNESS_AUDITOR"],"namespace":"e7/quarantine/blindness-finding","epoch":"E7_BLINDNESS_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E7_LINEAGE_READ_CANDIDATE_RECEIPT","operation":"READ","artifact_class":"CANDIDATE_TRANSACTION_RECEIPT","artifact_producer_id":"E4_SLEEP_COMPILER_WRITER","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e4/lineage/candidate-receipt","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_LINEAGE_READ_PRESERVATION_EVIDENCE","operation":"READ","artifact_class":"PRESERVATION_EVIDENCE","artifact_producer_id":"E5_CANDIDATE_PRESERVATION_EVALUATOR","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e5/preservation/evidence","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_LINEAGE_READ_PROMOTION_RECEIPT","operation":"READ","artifact_class":"PROMOTION_TRANSACTION_RECEIPT","artifact_producer_id":"E5_LINEAGE_PROMOTION_GATE","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e5/lineage/promotion-receipt","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_LINEAGE_READ_PROMOTION_VERDICT","operation":"READ","artifact_class":"PROMOTION_VERDICT","artifact_producer_id":"E5_CANDIDATE_PRESERVATION_EVALUATOR","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e5/preservation/verdict","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E7_LINEAGE_WRITE_ATTESTATION","operation":"WRITE","artifact_class":"LINEAGE_AUDIT_ATTESTATION","artifact_producer_id":"E7_LINEAGE_SAFETY_AUDITOR","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e7/attestation/lineage","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E7_LINEAGE_WRITE_FINDING","operation":"WRITE","artifact_class":"LINEAGE_AUDIT_FINDING","artifact_producer_id":"E7_LINEAGE_SAFETY_AUDITOR","allowed_consumers":["E7_LINEAGE_SAFETY_AUDITOR"],"namespace":"e7/quarantine/lineage-finding","epoch":"E7_LINEAGE_AUDIT_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E8_RELEASE_BIND_RELEASE_TUPLE","operation":"BIND_EQUALITY","artifact_class":"RELEASE_TUPLE_BINDING","artifact_producer_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","allowed_consumers":["E8_RELEASE_CONTROLLER"],"namespace":"e8/release/tuple","epoch":"E8_RELEASE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E8_RELEASE_READ_AUTHORITY_VERDICT","operation":"READ","artifact_class":"AUTHORITY_VERDICT","artifact_producer_id":"E8_AUTHORITY_VERIFIER","allowed_consumers":["E8_RELEASE_CONTROLLER"],"namespace":"e8/authority/verdict","epoch":"E8_RELEASE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E8_RELEASE_TRANSFER_TARGET","operation":"TRANSFER_OPAQUE","artifact_class":"RELEASE_TARGET_ARTIFACT","artifact_producer_id":"X0_REGISTERED_RELEASE_ARTIFACT_STORE","allowed_consumers":["E8_RELEASE_CONTROLLER"],"namespace":"e8/release/target","epoch":"E8_RELEASE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_TRANSFER_OPAQUE_V1","result_schema_id":"CAPABILITY_RESULT_TRANSFER_OPAQUE_V1"},
+    {"capability_id":"E8_RELEASE_WRITE_RECEIPT","operation":"WRITE","artifact_class":"RELEASE_RECEIPT","artifact_producer_id":"E8_RELEASE_CONTROLLER","allowed_consumers":["E8_RELEASE_CONTROLLER"],"namespace":"e8/release/receipt","epoch":"E8_RELEASE_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"E8_VERIFIER_BIND_RELEASE_TUPLE","operation":"BIND_EQUALITY","artifact_class":"RELEASE_TUPLE_BINDING","artifact_producer_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","allowed_consumers":["E8_AUTHORITY_VERIFIER"],"namespace":"e8/release/tuple","epoch":"E8_AUTHORITY_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_BIND_EQUALITY_V1","result_schema_id":"CAPABILITY_RESULT_BIND_EQUALITY_V1"},
+    {"capability_id":"E8_VERIFIER_READ_BLINDNESS_ATTESTATION","operation":"READ","artifact_class":"BLINDNESS_AUDIT_ATTESTATION","artifact_producer_id":"E7_BLINDNESS_AUDITOR","allowed_consumers":["E8_AUTHORITY_VERIFIER"],"namespace":"e7/attestation/blindness","epoch":"E8_AUTHORITY_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E8_VERIFIER_READ_EXTERNAL_AUTHORIZATION","operation":"READ","artifact_class":"EXTERNAL_HUMAN_AUTHORIZATION","artifact_producer_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","allowed_consumers":["E8_AUTHORITY_VERIFIER"],"namespace":"e8/authority/external-human","epoch":"E8_AUTHORITY_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E8_VERIFIER_READ_LINEAGE_ATTESTATION","operation":"READ","artifact_class":"LINEAGE_AUDIT_ATTESTATION","artifact_producer_id":"E7_LINEAGE_SAFETY_AUDITOR","allowed_consumers":["E8_AUTHORITY_VERIFIER"],"namespace":"e7/attestation/lineage","epoch":"E8_AUTHORITY_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_READ_V1","result_schema_id":"CAPABILITY_RESULT_READ_V1"},
+    {"capability_id":"E8_VERIFIER_WRITE_AUTHORITY_VERDICT","operation":"WRITE","artifact_class":"AUTHORITY_VERDICT","artifact_producer_id":"E8_AUTHORITY_VERIFIER","allowed_consumers":["E8_AUTHORITY_VERIFIER"],"namespace":"e8/authority/verdict","epoch":"E8_AUTHORITY_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"G0_MANIFEST_WRITE_DEPENDENCIES","operation":"WRITE","artifact_class":"DECLARED_DEPENDENCY_MANIFEST","artifact_producer_id":"G0_STATIC_MANIFEST_SEALER","allowed_consumers":["G0_STATIC_MANIFEST_SEALER"],"namespace":"g0/static-manifest/dependencies","epoch":"G0_MANIFEST_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"},
+    {"capability_id":"G0_MANIFEST_WRITE_DISPATCHERS","operation":"WRITE","artifact_class":"DISPATCHER_MANIFEST","artifact_producer_id":"G0_STATIC_MANIFEST_SEALER","allowed_consumers":["G0_STATIC_MANIFEST_SEALER"],"namespace":"g0/static-manifest/dispatchers","epoch":"G0_MANIFEST_INVOCATION","use_rule":"single_use","request_schema_id":"CAPABILITY_REQUEST_WRITE_V1","result_schema_id":"CAPABILITY_RESULT_WRITE_V1"}
+  ],
+  "epoch_bridge_defaults": {
+    "bridge_id": "G0_EPOCH_BRIDGE",
+    "steps_in_order": [
+      "seal_source_artifact",
+      "close_source_handle",
+      "verify_artifact_class_and_root_equality",
+      "issue_new_consumer_handle",
+      "append_fixed_schema_transition_receipt"
+    ],
+    "new_handle_fields": [
+      "new_invocation_id",
+      "exact_operation",
+      "exact_artifact_class",
+      "exact_artifact_root",
+      "consumer_id",
+      "namespace",
+      "expiry_epoch",
+      "use_rule"
+    ],
+    "failure_contract_id": "CONSTANT_SHAPE_DENIAL_V1"
+  },
+  "epoch_bridges": [
+    {"transition_id":"T001","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E1_BUILDER_READ_STATIC_SPEC","artifact_class":"STATIC_BOOTSTRAP_SPEC","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E1_BUILDER_INVOCATION"},
+    {"transition_id":"T002","source_id":"E1_BUILDER_WRITE_PAIRED_CORPUS","target_capability_id":"E1_BIRTH_READ_PAIRED_CORPUS","artifact_class":"PAIRED_BOOTSTRAP_CORPUS","from_epoch":"E1_BUILDER_INVOCATION","to_epoch":"E1_BIRTH_INVOCATION"},
+    {"transition_id":"T003","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E1_BIRTH_READ_FROZEN_M0","artifact_class":"FROZEN_M0","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E1_BIRTH_INVOCATION"},
+    {"transition_id":"T004","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E1_BIRTH_READ_BOOTSTRAP_CONTRACT","artifact_class":"BOOTSTRAP_WRITER_MATERIALIZATION_CONTRACT","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E1_BIRTH_INVOCATION"},
+    {"transition_id":"T005","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E2_FIXED_READ_LESSON_TABLE","artifact_class":"FIXED_LESSON_TABLE","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E2_FIXED_PARENT_INVOCATION"},
+    {"transition_id":"T006","source_id":"X0_FIXED_CURSOR_STORE","target_capability_id":"E2_FIXED_READ_CURSOR","artifact_class":"FIXED_SCHEDULE_CURSOR","from_epoch":"COMMITTED_CURSOR_VERSION","to_epoch":"E2_FIXED_PARENT_INVOCATION"},
+    {"transition_id":"T007","source_id":"X0_FIXED_CURSOR_STORE","target_capability_id":"E2_FIXED_ADVANCE_CURSOR","artifact_class":"FIXED_SCHEDULE_CURSOR","from_epoch":"COMMITTED_CURSOR_VERSION","to_epoch":"E2_FIXED_PARENT_INVOCATION"},
+    {"transition_id":"T008","source_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","target_capability_id":"E2_ADAPTIVE_READ_PUBLIC_OBSERVATION","artifact_class":"PUBLIC_OBSERVATION","from_epoch":"COMMITTED_DEVELOPMENT_OBSERVATION","to_epoch":"E2_ADAPTIVE_PARENT_INVOCATION"},
+    {"transition_id":"T009","source_id":"E2_WAKE_WRITE_CHILD_TRACE","target_capability_id":"E2_ADAPTIVE_READ_CHILD_TRACE","artifact_class":"CHILD_GROUNDED_TRACE","from_epoch":"E2_WAKE_INVOCATION","to_epoch":"E2_ADAPTIVE_PARENT_INVOCATION"},
+    {"transition_id":"T010","source_id":"E2_ADAPTIVE_WRITE_PARENT_HISTORY","target_capability_id":"E2_ADAPTIVE_READ_PARENT_HISTORY","artifact_class":"ADAPTIVE_PARENT_HISTORY","from_epoch":"E2_ADAPTIVE_PARENT_INVOCATION_PREVIOUS","to_epoch":"E2_ADAPTIVE_PARENT_INVOCATION"},
+    {"transition_id":"T011","source_id":"E2_ADAPTIVE_WRITE_REPETITION_STATE","target_capability_id":"E2_ADAPTIVE_READ_REPETITION_STATE","artifact_class":"ADAPTIVE_REPETITION_STATE","from_epoch":"E2_ADAPTIVE_PARENT_INVOCATION_PREVIOUS","to_epoch":"E2_ADAPTIVE_PARENT_INVOCATION"},
+    {"transition_id":"T012","source_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","target_capability_id":"E2_WAKE_READ_PUBLIC_OBSERVATION","artifact_class":"PUBLIC_OBSERVATION","from_epoch":"COMMITTED_DEVELOPMENT_OBSERVATION","to_epoch":"E2_WAKE_INVOCATION"},
+    {"transition_id":"T013","source_id":"E2_FIXED_WRITE_LIVE_PARENT_MESSAGE","target_capability_id":"E2_WAKE_READ_FIXED_PARENT_MESSAGE","artifact_class":"LIVE_PARENT_MESSAGE","from_epoch":"E2_FIXED_PARENT_INVOCATION","to_epoch":"E2_WAKE_INVOCATION"},
+    {"transition_id":"T014","source_id":"E2_ADAPTIVE_WRITE_LIVE_PARENT_MESSAGE","target_capability_id":"E2_WAKE_READ_ADAPTIVE_PARENT_MESSAGE","artifact_class":"LIVE_PARENT_MESSAGE","from_epoch":"E2_ADAPTIVE_PARENT_INVOCATION","to_epoch":"E2_WAKE_INVOCATION"},
+    {"transition_id":"T015","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E2_WAKE_DEREFERENCE_ACTIVE_WEIGHT","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","from_epoch":"COMMITTED_ACTIVE_WEIGHT_VERSION","to_epoch":"E2_WAKE_INVOCATION"},
+    {"transition_id":"T016","source_id":"E3_DREAM_WRITE_CACHE","target_capability_id":"E2_WAKE_READ_DREAM_CACHE","artifact_class":"DREAM_CACHE","from_epoch":"E3_DREAM_INVOCATION","to_epoch":"E2_WAKE_INVOCATION"},
+    {"transition_id":"T017","source_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","target_capability_id":"E3_DREAM_READ_PUBLIC_OBSERVATION","artifact_class":"PUBLIC_OBSERVATION","from_epoch":"COMMITTED_DEVELOPMENT_OBSERVATION","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T018","source_id":"E2_WAKE_WRITE_CHILD_TRACE","target_capability_id":"E3_DREAM_READ_CHILD_TRACE","artifact_class":"CHILD_GROUNDED_TRACE","from_epoch":"E2_WAKE_INVOCATION","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T019","source_id":"E2_FIXED_WRITE_LIVE_PARENT_MESSAGE","target_capability_id":"E3_DREAM_READ_FIXED_PARENT_MESSAGE","artifact_class":"LIVE_PARENT_MESSAGE","from_epoch":"E2_FIXED_PARENT_INVOCATION","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T020","source_id":"E2_ADAPTIVE_WRITE_LIVE_PARENT_MESSAGE","target_capability_id":"E3_DREAM_READ_ADAPTIVE_PARENT_MESSAGE","artifact_class":"LIVE_PARENT_MESSAGE","from_epoch":"E2_ADAPTIVE_PARENT_INVOCATION","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T021","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E3_DREAM_DEREFERENCE_ACTIVE_WEIGHT","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","from_epoch":"COMMITTED_ACTIVE_WEIGHT_VERSION","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T022","source_id":"E3_DREAM_WRITE_CACHE","target_capability_id":"E3_DREAM_READ_PRIOR_CACHE","artifact_class":"DREAM_CACHE","from_epoch":"E3_DREAM_INVOCATION_PREVIOUS","to_epoch":"E3_DREAM_INVOCATION"},
+    {"transition_id":"T023","source_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","target_capability_id":"E4_SUPPORT_READ_PUBLIC_OBSERVATION","artifact_class":"PUBLIC_OBSERVATION","from_epoch":"COMMITTED_DEVELOPMENT_OBSERVATION","to_epoch":"E4_SUPPORT_INVOCATION"},
+    {"transition_id":"T024","source_id":"E2_WAKE_WRITE_CHILD_TRACE","target_capability_id":"E4_SUPPORT_READ_CHILD_TRACE","artifact_class":"CHILD_GROUNDED_TRACE","from_epoch":"E2_WAKE_INVOCATION","to_epoch":"E4_SUPPORT_INVOCATION"},
+    {"transition_id":"T025","source_id":"E4_SUPPORT_APPEND_CAPABILITY_EVENTS","target_capability_id":"E4_SUPPORT_MONITOR_READ_EVENTS","artifact_class":"CAPABILITY_EVENT_LOG","from_epoch":"E4_SUPPORT_INVOCATION","to_epoch":"E4_SUPPORT_MONITOR_INVOCATION"},
+    {"transition_id":"T026","source_id":"E4_SUPPORT_WRITE_ELIGIBLE_EVIDENCE","target_capability_id":"E4_COMPILER_READ_ELIGIBLE_EVIDENCE","artifact_class":"ELIGIBLE_CHILD_LIFE_EVIDENCE","from_epoch":"E4_SUPPORT_INVOCATION","to_epoch":"E4_SLEEP_INVOCATION"},
+    {"transition_id":"T027","source_id":"E1_BIRTH_WRITE_IMMUTABLE_BIRTH","target_capability_id":"E4_COMPILER_READ_IMMUTABLE_BIRTH","artifact_class":"IMMUTABLE_BIRTH_ARTIFACT","from_epoch":"E1_BIRTH_INVOCATION","to_epoch":"E4_SLEEP_INVOCATION"},
+    {"transition_id":"T028","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E4_COMPILER_READ_SLEEP_WRITER_CONTRACT","artifact_class":"FROZEN_SLEEP_WRITER_CONTRACT","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E4_SLEEP_INVOCATION"},
+    {"transition_id":"T029","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E4_COMPILER_BIND_COMMITTED_SNAPSHOT","artifact_class":"COMMITTED_TRANSACTION_CAS_TOKEN","from_epoch":"COMMITTED_TRANSACTION_VERSION","to_epoch":"E4_SLEEP_INVOCATION"},
+    {"transition_id":"T030","source_id":"E4_COMPILER_APPEND_CAPABILITY_EVENTS","target_capability_id":"E4_COMPILER_MONITOR_READ_EVENTS","artifact_class":"CAPABILITY_EVENT_LOG","from_epoch":"E4_SLEEP_INVOCATION","to_epoch":"E4_COMPILER_MONITOR_INVOCATION"},
+    {"transition_id":"T031","source_id":"E4_COMPILER_WRITE_CANDIDATE","target_capability_id":"E5_EVALUATOR_DEREFERENCE_CANDIDATE","artifact_class":"CANDIDATE_CLOSURE","from_epoch":"E4_SLEEP_INVOCATION","to_epoch":"E5_EVALUATION_INVOCATION"},
+    {"transition_id":"T032","source_id":"E4_COMPILER_WRITE_CANDIDATE","target_capability_id":"E5_EVALUATOR_BIND_CANDIDATE_ROOT","artifact_class":"CANDIDATE_CLOSURE","from_epoch":"E4_SLEEP_INVOCATION","to_epoch":"E5_EVALUATION_INVOCATION"},
+    {"transition_id":"T033","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E5_EVALUATOR_DEREFERENCE_PRIOR_ACTIVE","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","from_epoch":"COMMITTED_ACTIVE_WEIGHT_VERSION","to_epoch":"E5_EVALUATION_INVOCATION"},
+    {"transition_id":"T034","source_id":"X0_FROZEN_CONTRACT_SOURCE","target_capability_id":"E5_EVALUATOR_READ_PRESERVATION_PANEL","artifact_class":"FROZEN_PRESERVATION_PANEL","from_epoch":"FROZEN_EXTERNAL","to_epoch":"E5_EVALUATION_INVOCATION"},
+    {"transition_id":"T035","source_id":"E4_COMPILER_WRITE_CANDIDATE","target_capability_id":"E5_GATE_BIND_CANDIDATE_ROOT","artifact_class":"CANDIDATE_CLOSURE","from_epoch":"E4_SLEEP_INVOCATION","to_epoch":"E5_PROMOTION_INVOCATION"},
+    {"transition_id":"T036","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E5_GATE_BIND_COMMITTED_CAS","artifact_class":"COMMITTED_TRANSACTION_CAS_TOKEN","from_epoch":"COMMITTED_TRANSACTION_VERSION","to_epoch":"E5_PROMOTION_INVOCATION"},
+    {"transition_id":"T037","source_id":"E5_EVALUATOR_WRITE_PROMOTION_VERDICT","target_capability_id":"E5_GATE_READ_PROMOTION_VERDICT","artifact_class":"PROMOTION_VERDICT","from_epoch":"E5_EVALUATION_INVOCATION","to_epoch":"E5_PROMOTION_INVOCATION"},
+    {"transition_id":"T038","source_id":"X0_COMMITTED_LINEAGE_STORE","target_capability_id":"E6_EXECUTOR_DEREFERENCE_ACTIVE_WEIGHT","artifact_class":"ACTIVE_WEIGHT_ARTIFACT","from_epoch":"COMMITTED_ACTIVE_WEIGHT_VERSION","to_epoch":"E6_EXECUTOR_INVOCATION"},
+    {"transition_id":"T039","source_id":"X0_PUBLIC_ENVIRONMENT_SOURCE","target_capability_id":"E6_EXECUTOR_READ_PUBLIC_OBSERVATION","artifact_class":"PUBLIC_OBSERVATION","from_epoch":"COMMITTED_EVALUATION_OBSERVATION","to_epoch":"E6_EXECUTOR_INVOCATION"},
+    {"transition_id":"T040","source_id":"E6_EXECUTOR_WRITE_TRANSCRIPT","target_capability_id":"E6_SCORER_READ_TRANSCRIPT","artifact_class":"EXAM_TRANSCRIPT","from_epoch":"E6_EXECUTOR_INVOCATION","to_epoch":"E6_SCORER_INVOCATION"},
+    {"transition_id":"T041","source_id":"X0_HIDDEN_TRUTH_STORE","target_capability_id":"E6_SCORER_READ_HIDDEN_TRUTH","artifact_class":"HIDDEN_EVALUATION_TRUTH","from_epoch":"FROZEN_HIDDEN_TRUTH","to_epoch":"E6_SCORER_INVOCATION"},
+    {"transition_id":"T042","source_id":"E6_SCORER_WRITE_SCORE_RECORD","target_capability_id":"E6_REPORTER_READ_SCORE_RECORD","artifact_class":"SCIENTIFIC_SCORE_RECORD","from_epoch":"E6_SCORER_INVOCATION","to_epoch":"E6_REPORTER_INVOCATION"},
+    {"transition_id":"T043","source_id":"G0_MANIFEST_WRITE_DEPENDENCIES","target_capability_id":"E7_BLINDNESS_READ_DEPENDENCY_MANIFEST","artifact_class":"DECLARED_DEPENDENCY_MANIFEST","from_epoch":"G0_MANIFEST_INVOCATION","to_epoch":"E7_BLINDNESS_AUDIT_INVOCATION"},
+    {"transition_id":"T044","source_id":"G0_MANIFEST_WRITE_DISPATCHERS","target_capability_id":"E7_BLINDNESS_READ_DISPATCHER_MANIFEST","artifact_class":"DISPATCHER_MANIFEST","from_epoch":"G0_MANIFEST_INVOCATION","to_epoch":"E7_BLINDNESS_AUDIT_INVOCATION"},
+    {"transition_id":"T045","source_id":"E4_SUPPORT_MONITOR_WRITE_TAINT","target_capability_id":"E7_BLINDNESS_READ_SUPPORT_TAINT","artifact_class":"TAINT_RECEIPT","from_epoch":"E4_SUPPORT_MONITOR_INVOCATION","to_epoch":"E7_BLINDNESS_AUDIT_INVOCATION"},
+    {"transition_id":"T046","source_id":"E4_COMPILER_MONITOR_WRITE_TAINT","target_capability_id":"E7_BLINDNESS_READ_COMPILER_TAINT","artifact_class":"TAINT_RECEIPT","from_epoch":"E4_COMPILER_MONITOR_INVOCATION","to_epoch":"E7_BLINDNESS_AUDIT_INVOCATION"},
+    {"transition_id":"T047","source_id":"E4_COMPILER_WRITE_TRANSACTION_RECEIPT","target_capability_id":"E7_LINEAGE_READ_CANDIDATE_RECEIPT","artifact_class":"CANDIDATE_TRANSACTION_RECEIPT","from_epoch":"E4_SLEEP_INVOCATION","to_epoch":"E7_LINEAGE_AUDIT_INVOCATION"},
+    {"transition_id":"T048","source_id":"E5_GATE_WRITE_TRANSACTION_RECEIPT","target_capability_id":"E7_LINEAGE_READ_PROMOTION_RECEIPT","artifact_class":"PROMOTION_TRANSACTION_RECEIPT","from_epoch":"E5_PROMOTION_INVOCATION","to_epoch":"E7_LINEAGE_AUDIT_INVOCATION"},
+    {"transition_id":"T049","source_id":"E5_EVALUATOR_WRITE_PRESERVATION_EVIDENCE","target_capability_id":"E7_LINEAGE_READ_PRESERVATION_EVIDENCE","artifact_class":"PRESERVATION_EVIDENCE","from_epoch":"E5_EVALUATION_INVOCATION","to_epoch":"E7_LINEAGE_AUDIT_INVOCATION"},
+    {"transition_id":"T050","source_id":"E5_EVALUATOR_WRITE_PROMOTION_VERDICT","target_capability_id":"E7_LINEAGE_READ_PROMOTION_VERDICT","artifact_class":"PROMOTION_VERDICT","from_epoch":"E5_EVALUATION_INVOCATION","to_epoch":"E7_LINEAGE_AUDIT_INVOCATION"},
+    {"transition_id":"T051","source_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","target_capability_id":"E8_VERIFIER_READ_EXTERNAL_AUTHORIZATION","artifact_class":"EXTERNAL_HUMAN_AUTHORIZATION","from_epoch":"EXTERNAL_AUTHORIZATION","to_epoch":"E8_AUTHORITY_INVOCATION"},
+    {"transition_id":"T052","source_id":"E7_BLINDNESS_WRITE_ATTESTATION","target_capability_id":"E8_VERIFIER_READ_BLINDNESS_ATTESTATION","artifact_class":"BLINDNESS_AUDIT_ATTESTATION","from_epoch":"E7_BLINDNESS_AUDIT_INVOCATION","to_epoch":"E8_AUTHORITY_INVOCATION"},
+    {"transition_id":"T053","source_id":"E7_LINEAGE_WRITE_ATTESTATION","target_capability_id":"E8_VERIFIER_READ_LINEAGE_ATTESTATION","artifact_class":"LINEAGE_AUDIT_ATTESTATION","from_epoch":"E7_LINEAGE_AUDIT_INVOCATION","to_epoch":"E8_AUTHORITY_INVOCATION"},
+    {"transition_id":"T054","source_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","target_capability_id":"E8_VERIFIER_BIND_RELEASE_TUPLE","artifact_class":"RELEASE_TUPLE_BINDING","from_epoch":"EXTERNAL_AUTHORIZATION","to_epoch":"E8_AUTHORITY_INVOCATION"},
+    {"transition_id":"T055","source_id":"E8_VERIFIER_WRITE_AUTHORITY_VERDICT","target_capability_id":"E8_RELEASE_READ_AUTHORITY_VERDICT","artifact_class":"AUTHORITY_VERDICT","from_epoch":"E8_AUTHORITY_INVOCATION","to_epoch":"E8_RELEASE_INVOCATION"},
+    {"transition_id":"T056","source_id":"X0_EXTERNAL_HUMAN_AUTHORITY_SOURCE","target_capability_id":"E8_RELEASE_BIND_RELEASE_TUPLE","artifact_class":"RELEASE_TUPLE_BINDING","from_epoch":"EXTERNAL_AUTHORIZATION","to_epoch":"E8_RELEASE_INVOCATION"},
+    {"transition_id":"T057","source_id":"X0_REGISTERED_RELEASE_ARTIFACT_STORE","target_capability_id":"E8_RELEASE_TRANSFER_TARGET","artifact_class":"RELEASE_TARGET_ARTIFACT","from_epoch":"SEALED_RELEASE_TARGET","to_epoch":"E8_RELEASE_INVOCATION"}
+  ],
+  "explicit_denials": [
+    {
+      "principal_id": "E4_SLEEP_COMPILER_WRITER",
+      "forbidden_artifact_classes": [
+        "ACTIVE_WEIGHT_ARTIFACT",
+        "ADAPTIVE_PARENT_HISTORY",
+        "ADAPTIVE_REPETITION_STATE",
+        "DREAM_CACHE",
+        "HIDDEN_EVALUATION_TRUTH",
+        "LIVE_PARENT_MESSAGE",
+        "PARENT_AUDIT_EVENT",
+        "PRESERVATION_EVIDENCE",
+        "SCIENTIFIC_REPORT",
+        "SCIENTIFIC_SCORE_RECORD"
+      ],
+      "reason": "Every personal candidate is rebuilt from immutable birth, cumulative eligible child-authored evidence, frozen writer contract, seed, and equality-only snapshot binding; prior active weights and control/scientific semantics cannot condition candidate bytes."
+    },
+    {
+      "principal_id": "E8_AUTHORITY_VERIFIER",
+      "forbidden_artifact_classes": [
+        "BLINDNESS_AUDIT_FINDING",
+        "CHILD_GROUNDED_TRACE",
+        "HIDDEN_EVALUATION_TRUTH",
+        "LINEAGE_AUDIT_FINDING",
+        "LIVE_PARENT_MESSAGE",
+        "PRESERVATION_EVIDENCE",
+        "SCIENTIFIC_REPORT",
+        "SCIENTIFIC_SCORE_RECORD"
+      ],
+      "reason": "The verifier receives only fixed-size narrow attestations, exact external authorization, and equality-only release-tuple binding."
+    },
+    {
+      "principal_id": "E8_RELEASE_CONTROLLER",
+      "forbidden_artifact_classes": [
+        "BLINDNESS_AUDIT_FINDING",
+        "CHILD_GROUNDED_TRACE",
+        "HIDDEN_EVALUATION_TRUTH",
+        "LINEAGE_AUDIT_FINDING",
+        "LIVE_PARENT_MESSAGE",
+        "PRESERVATION_EVIDENCE",
+        "SCIENTIFIC_REPORT",
+        "SCIENTIFIC_SCORE_RECORD"
+      ],
+      "reason": "Release is one-shot, tuple-bound, opaque, non-inspecting, and content-independent."
+    }
+  ],
+  "release_tuple_schema": {
+    "schema_id": "RELEASE_TUPLE_V1",
+    "required_fields_in_order": [
+      "artifact_root",
+      "artifact_class",
+      "destination_identity",
+      "transfer_operation",
+      "protocol",
+      "requested_scope",
+      "nonce",
+      "expiry",
+      "one_shot_idempotency_key"
+    ],
+    "field_constraints": {
+      "artifact_root": "lowercase sha256",
+      "artifact_class": "registered release artifact class",
+      "destination_identity": "later-bound canonical destination principal",
+      "transfer_operation": "const TRANSFER_OPAQUE",
+      "protocol": "later-bound allowlisted protocol identifier",
+      "requested_scope": "exact human-authorized scope identifier",
+      "nonce": "unique opaque 256-bit value",
+      "expiry": "later-bound UTC instant with no renewal",
+      "one_shot_idempotency_key": "unique opaque 256-bit value consumed on OK"
+    },
+    "additional_fields": false,
+    "binding_path": [
+      "EXTERNAL_HUMAN_AUTHORIZATION",
+      "E8_VERIFIER_BIND_RELEASE_TUPLE",
+      "AUTHORITY_VERDICT",
+      "E8_RELEASE_BIND_RELEASE_TUPLE",
+      "E8_RELEASE_TRANSFER_TARGET",
+      "RELEASE_RECEIPT"
+    ]
+  },
+  "internal_invariants": [
+    {
+      "invariant_id": "CR01_REGISTERED_OPERATION_ONLY",
+      "predicate": "Every capabilities[].operation occurs exactly once in registered_operations[].operation."
+    },
+    {
+      "invariant_id": "CR02_UNIQUE_CAPABILITY_AND_TRANSITION_IDS",
+      "predicate": "Capability IDs and transition IDs are each unique; every capability has version 1 through capability_defaults."
+    },
+    {
+      "invariant_id": "CR03_ONE_CONSUMER_PER_HANDLE",
+      "predicate": "Every capability has exactly one allowed consumer, which equals the sole invocation principal that may receive the handle."
+    },
+    {
+      "invariant_id": "CR04_ARTIFACT_AND_HANDLE_LIFETIMES_SEPARATE",
+      "predicate": "Every artifact class names one artifact lifetime and every capability uses ONE_CONSUMER_ONE_INVOCATION_V1; no target capability ID equals its source capability ID."
+    },
+    {
+      "invariant_id": "CR05_CONSUMER_ISSUANCE_CLOSED",
+      "predicate": "Every READ, DEREFERENCE, BIND_EQUALITY, TRANSFER_OPAQUE, or ADVANCE capability has exactly one epoch_bridge target entry; each entry matches artifact class and target epoch."
+    },
+    {
+      "invariant_id": "CR06_E7_E8_PRODUCER_CLOSED",
+      "predicate": "Every E7 or E8 read, bind, dereference, or transfer handle has one explicit internal producer capability or X0 external source and one close/reissue bridge."
+    },
+    {
+      "invariant_id": "CR07_NO_PRIOR_WEIGHT_TO_PERSONAL_SLEEP",
+      "predicate": "No E4_SLEEP_COMPILER_WRITER capability names ACTIVE_WEIGHT_ARTIFACT or a DEREFERENCE operation; prior active weight is available only to E5 evaluator and waking/exam consumers."
+    },
+    {
+      "invariant_id": "CR08_E1_CONTRACT_EXPLICIT",
+      "predicate": "E1_BIRTH_READ_BOOTSTRAP_CONTRACT exists and binds the frozen bootstrap writer, response mask, tokenizer, merge, dtype, serializer, toolchain, M0, seed, truncation, and receipt schema artifact."
+    },
+    {
+      "invariant_id": "CR09_TRANSFER_REGISTERED_AND_TUPLE_BOUND",
+      "predicate": "TRANSFER_OPAQUE is registered; exactly one capability uses it; its sole consumer is E8_RELEASE_CONTROLLER and its request includes all RELEASE_TUPLE_V1 fields."
+    },
+    {
+      "invariant_id": "CR10_QUARANTINED_FINDINGS_HAVE_NO_BRIDGE",
+      "predicate": "BLINDNESS_AUDIT_FINDING and LINEAGE_AUDIT_FINDING are never epoch_bridge artifact classes; only their fixed-size attestations reach E8."
+    },
+    {
+      "invariant_id": "CR11_NO_AMBIENT_AUTHORITY",
+      "predicate": "Every readable or transferable artifact is reached only by its exact capability and bridge; unknown operation, path, environment, network fallback, reflection, and sibling enumeration are absent."
+    },
+    {
+      "invariant_id": "CR12_PROPOSAL_ONLY",
+      "predicate": "This registry is an input to successor proposal deliberation and creates no valid handle, receipt, authorization, implementation scope, execution scope, claim, or release."
+    }
+  ]
+}

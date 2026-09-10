@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "name": "v03r-recurrence-closure-dev-v2a",
+  "architecture_intake": {
+    "mode": "material_change",
+    "state": "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json",
+    "requested_scope": [
+      "analysis:bound_postcommit_v03r_closure_v2a",
+      "gpu:v03r_recurrence_closure_dev_v2a"
+    ]
+  },
+  "workspace": "../..",
+  "state_dir": ".research_loop",
+  "start": "v2a_cpu_and_preflight_gate",
+  "max_steps": 18,
+  "nodes": {
+    "v2a_cpu_and_preflight_gate": {
+      "kind": "command",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "research_loop.v03r_recurrence_closure_preflight_v2a",
+        "--root", ".",
+        "--pairs", "1000",
+        "--expected-recurrent-dream-calls", "802",
+        "--max-think-calls", "72",
+        "--expected-baseline-model-calls", "102",
+        "--dream-max-output-tokens", "256",
+        "--canonical-text-max-chars", "192"
+      ],
+      "stdout_regex": "\"ok\": true",
+      "timeout_sec": 1800,
+      "next": "freeze_v2a_full_closure",
+      "on_failure": "preflight_escalation"
+    },
+    "freeze_v2a_full_closure": {
+      "kind": "command",
+      "argv": [
+        ".venv/bin/python", "-m", "research_loop.freeze", "create",
+        "--root", ".", "--out", "research_loop/runtime/{run_id}.lock.json",
+        "--file", "AGENTS.md",
+        "--file", "lands/v03r.py",
+        "--file", "lands/test_v03r.py",
+        "--file", "research_loop/model_call_ledger.py",
+        "--file", "research_loop/model_provider_boundary.py",
+        "--file", "research_loop/experiment_call_ledger.py",
+        "--file", "research_loop/goal_conditioned_thinker.py",
+        "--file", "research_loop/recurrent_text_organism.py",
+        "--file", "research_loop/scientific_thinker_adapter.py",
+        "--file", "research_loop/v03r_recurrence_closure_preflight_v2a.py",
+        "--file", "research_loop/run_v03r_recurrence_closure_v2a.py",
+        "--file", "research_loop/v03r_recurrence_closure_remote_job_v2a.py",
+        "--file", "research_loop/verify_v03r_recurrence_closure_artifacts_v2a.py",
+        "--file", "research_loop/test_v03r_recurrence_closure_transition_v2a.py",
+        "--file", "research_loop/prompts/v03r_recurrence_closure_dream_v2a.md",
+        "--file", "research_loop/prompts/v03r_recurrence_closure_think_v2a.md",
+        "--file", "research_loop/schemas/v03r_recurrence_closure_dream_v2a.schema.json",
+        "--file", "research_loop/schemas/v03r_recurrence_closure_think_v2a.schema.json",
+        "--file", "research_loop/schemas/v03r_relation_normalization_v2a.json",
+        "--file", "research_loop/schemas/v03r_recurrence_closure_artifacts_v2a.schema.json",
+        "--file", "research_loop/prompts/science_reviewer.md",
+        "--file", "research_loop/prompts/result_analyst.md",
+        "--file", "research_loop/schemas/review.schema.json",
+        "--file", "research_loop/schemas/result.schema.json",
+        "--file", "research_loop/freeze.py",
+        "--file", "research_loop/review_binding.py",
+        "--file", "research_loop/supervisor.py",
+        "--file", "research_loop/watchdog.py",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/human_directive.txt",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/experiment_spec.md",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/scope_proposal.json",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/change.json",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json",
+        "--file", "research_loop/workflows/v03r_recurrence_closure_dev_v2a.json",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2/experiment_spec.md",
+        "--file", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2/change.json",
+        "--file", "research_loop/changes/chg_20260831_v03r_live_text_recurrence_dev_v1/consensus.json",
+        "--file", "research_notes/42_system_thesis_and_experiment_map.md",
+        "--file", "gpu/v2node_sync.sh",
+        "--file", "gpu/v2node_ssh.sh",
+        "--file", "gpu/v2node_pull_research_job.sh"
+      ],
+      "require_fresh_files": ["research_loop/runtime/{run_id}.lock.json"],
+      "timeout_sec": 180,
+      "next": "fresh_fable_v2a_review",
+      "on_failure": "preflight_escalation"
+    },
+    "fresh_fable_v2a_review": {
+      "kind": "agent",
+      "provider": "fable_mailbox",
+      "allow_write": false,
+      "request_id": "{run_id}-fable-v03r-closure-v2a",
+      "prompt_file": "research_loop/prompts/science_reviewer.md",
+      "schema_file": "research_loop/schemas/review.schema.json",
+      "binding_file": "research_loop/runtime/{run_id}.fable-review.json",
+      "context_files": [
+        "research_loop/runtime/{run_id}.lock.json",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/experiment_spec.md",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/change.json",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json",
+        "research_loop/workflows/v03r_recurrence_closure_dev_v2a.json",
+        "research_loop/run_v03r_recurrence_closure_v2a.py",
+        "research_loop/test_v03r_recurrence_closure_transition_v2a.py"
+      ],
+      "route_field": "verdict",
+      "next_by": {"approve":"fresh_sol_v2a_review","reject":"review_failure","escalate":"review_failure"},
+      "on_failure": "review_failure",
+      "timeout_sec": 7200
+    },
+    "fresh_sol_v2a_review": {
+      "kind": "agent",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "ultra",
+      "provider_attempts": 2,
+      "provider_attempt_timeout_sec": 1800,
+      "allow_write": false,
+      "prompt_file": "research_loop/prompts/science_reviewer.md",
+      "schema_file": "research_loop/schemas/review.schema.json",
+      "binding_file": "research_loop/runtime/{run_id}.sol-review.json",
+      "context_files": [
+        "research_loop/runtime/{run_id}.lock.json",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/experiment_spec.md",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/change.json",
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json",
+        "research_loop/workflows/v03r_recurrence_closure_dev_v2a.json",
+        "research_notes/42_system_thesis_and_experiment_map.md",
+        "lands/v03r.py",
+        "research_loop/model_provider_boundary.py",
+        "research_loop/experiment_call_ledger.py",
+        "research_loop/run_v03r_recurrence_closure_v2a.py",
+        "research_loop/verify_v03r_recurrence_closure_artifacts_v2a.py",
+        "research_loop/test_v03r_recurrence_closure_transition_v2a.py"
+      ],
+      "route_field": "verdict",
+      "next_by": {"approve":"verify_v2a_release","reject":"review_failure","escalate":"review_failure"},
+      "on_failure": "review_failure",
+      "timeout_sec": 4800
+    },
+    "verify_v2a_release": {
+      "kind": "command",
+      "argv": [
+        ".venv/bin/python", "-m", "research_loop.v03r_recurrence_closure_preflight_v2a",
+        "--root", ".",
+        "--lock", "research_loop/runtime/{run_id}.lock.json",
+        "--fable-review", "research_loop/runtime/{run_id}.fable-review.json",
+        "--sol-review", "research_loop/runtime/{run_id}.sol-review.json",
+        "--intake-state", "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json",
+        "--required-scope", "gpu:v03r_recurrence_closure_dev_v2a",
+        "--required-scope", "analysis:bound_postcommit_v03r_closure_v2a"
+      ],
+      "stdout_regex": "\"ok\": true",
+      "timeout_sec": 300,
+      "next": "sync_gpu",
+      "on_failure": "preflight_escalation"
+    },
+    "sync_gpu": {
+      "kind": "command",
+      "argv": ["./gpu/v2node_sync.sh"],
+      "timeout_sec": 900,
+      "next": "launch_remote",
+      "on_failure": "infrastructure_escalation"
+    },
+    "launch_remote": {
+      "kind": "command",
+      "argv": [
+        "./gpu/v2node_ssh.sh",
+        "cd ~/dream-state && env PYTHONPATH=. /localhome/local-rohing/v2/venv/bin/python -m research_loop.v03r_recurrence_closure_remote_job_v2a start --run-id {run_id} --job-root /localhome/local-rohing/v2/jobs --lock research_loop/runtime/{run_id}.lock.json --fable-review research_loop/runtime/{run_id}.fable-review.json --sol-review research_loop/runtime/{run_id}.sol-review.json --intake-state research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/intake.state.json"
+      ],
+      "success_exit_codes": [0, 75],
+      "stdout_regex": "{run_id}",
+      "timeout_sec": 180,
+      "next": "wait_remote",
+      "on_failure": "infrastructure_escalation"
+    },
+    "wait_remote": {
+      "kind": "poll",
+      "argv": [
+        "./gpu/v2node_ssh.sh",
+        "cd ~/dream-state && env PYTHONPATH=. /localhome/local-rohing/v2/venv/bin/python -m research_loop.v03r_recurrence_closure_remote_job_v2a status --run-id {run_id} --job-root /localhome/local-rohing/v2/jobs"
+      ],
+      "pending_exit_codes": [75, 76],
+      "interval_sec": 30,
+      "command_timeout_sec": 60,
+      "timeout_sec": 43200,
+      "next": "pull_artifacts",
+      "on_failure": "infrastructure_escalation",
+      "on_timeout": "infrastructure_escalation"
+    },
+    "pull_artifacts": {
+      "kind": "command",
+      "argv": ["./gpu/v2node_pull_research_job.sh", "{run_id}"],
+      "stdout_regex": "{run_id}",
+      "timeout_sec": 900,
+      "next": "verify_v2a_artifacts",
+      "on_failure": "infrastructure_escalation"
+    },
+    "verify_v2a_artifacts": {
+      "kind": "command",
+      "argv": [
+        ".venv/bin/python", "-m", "research_loop.verify_v03r_recurrence_closure_artifacts_v2a",
+        "--job-dir", "gpu_artifacts_local/research_loop/{run_id}/job",
+        "--expected-recurrent-dream-calls", "802",
+        "--max-think-calls", "72",
+        "--expected-baseline-model-calls", "102"
+      ],
+      "stdout_regex": "\"ok\": true",
+      "timeout_sec": 300,
+      "next": "bound_result_analysis",
+      "on_failure": "infrastructure_escalation"
+    },
+    "bound_result_analysis": {
+      "kind": "agent",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "allow_write": false,
+      "prompt_file": "research_loop/prompts/result_analyst.md",
+      "schema_file": "research_loop/schemas/result.schema.json",
+      "context_files": [
+        "research_loop/changes/chg_20260901_v03r_recurrence_closure_dev_v2a/experiment_spec.md",
+        "gpu_artifacts_local/research_loop/{run_id}/job/done.json",
+        "gpu_artifacts_local/research_loop/{run_id}/job/artifacts/required_inventory.json",
+        "gpu_artifacts_local/research_loop/{run_id}/job/artifacts/exchangeability.json",
+        "gpu_artifacts_local/research_loop/{run_id}/job/artifacts/call_ledger.jsonl",
+        "gpu_artifacts_local/research_loop/{run_id}/job/artifacts/postcommit_closure_scores.jsonl",
+        "gpu_artifacts_local/research_loop/{run_id}/job/artifacts/metrics.json"
+      ],
+      "route_field": "next_decision",
+      "next_by": {"repair":"mandatory_human_stop","run_frozen":"mandatory_human_stop","replicate_frozen":"mandatory_human_stop","stop":"mandatory_human_stop","escalate":"mandatory_human_stop"},
+      "on_failure": "review_failure",
+      "timeout_sec": 4800
+    },
+    "preflight_escalation": {"kind":"human","instructions":"A v2a intake, missing-module, inherited-contract, exchangeability, alias, tokenizer-fit, normalization-isolation, schedule, baseline, artifact, or exact-scope gate failed. No provider or GPU call is authorized.","next":"stopped"},
+    "review_failure": {"kind":"human","instructions":"A fresh v2a reviewer failed, rejected, escalated, or returned malformed output. No override is authorized.","next":"stopped"},
+    "infrastructure_escalation": {"kind":"human","instructions":"Remote persistence, markers, timeout, sync, pull, or independent artifact verification failed. Do not infer success or relaunch science.","next":"stopped"},
+    "mandatory_human_stop": {"kind":"human","instructions":"The bounded v2a result is ready or invalid. No repair, rerun, replication, LoRA, heldout, claim, external action, or second GPU run is authorized.","next":"stopped"},
+    "stopped": {"kind":"end","status":"complete","message":"V2a stopped at its unconditional human boundary."}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-proposal-v1f",
+  "title": "Immutable DREAM proposal audit record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal_id", "slot", "kind", "fields", "citations", "semantic_hash", "audit_prediction", "audit_confidence", "proposal_hash"],
+  "properties": {
+    "proposal_id": {"type": "string", "pattern": "^P0010[0-9]{2}$"},
+    "slot": {"type": "integer", "minimum": 0, "maximum": 99},
+    "kind": {"enum": ["ROLE_EQUIV", "CAUSAL_JOIN", "ROLE_APPLICATION"]},
+    "fields": {"type": "array", "minItems": 2, "maxItems": 3},
+    "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/ownedRowId"}},
+    "semantic_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "audit_prediction": {"type": "string", "minLength": 1, "maxLength": 192, "pattern": "^[ -!#-\\[\\]-~]+$"},
+    "audit_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "proposal_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_EQUIV"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/animal"}], "minItems": 2, "maxItems": 2}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "CAUSAL_JOIN"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/source"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/effect_atom"}], "minItems": 3, "maxItems": 3}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "ROLE_APPLICATION"}}, "required": ["kind"]},
+      "then": {"properties": {"fields": {"type": "array", "prefixItems": [{"$ref": "#/$defs/animal"}, {"$ref": "#/$defs/target"}, {"$ref": "#/$defs/animal"}], "minItems": 3, "maxItems": 3}}}
+    }
+  ],
+  "x-citation-order-contract": {
+    "role": "proposal.citations is the premise_ids sequence only",
+    "construction": "Copy DREAM CREATE citations byte-for-byte in model-emitted order. Do not sort, regroup, or add SELF_CHECK support rows to the proposal.",
+    "acceptance_reducer": "For an accepted row, append accepted SELF_CHECK support_row_ids in supplied additional_rows order, then apply first-occurrence deduplication over the concatenation. The proposal itself remains immutable.",
+    "hash_binding": "proposal_hash commits to the emitted premise order; a reorder is a different byte sequence and MUST be rejected when it does not byte-equal the originating CREATE.",
+    "failure": "Any duplicate premise, copied-order change, support/premise interleaving, or ASCII sort is invalid; no repair."
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {
+        "name": "emitted_premise_order_preserved",
+        "originating_create_citations": ["M001005", "M000001"],
+        "proposal": {"proposal_id": "P001084", "slot": 84, "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "citations": ["M001005", "M000001"], "semantic_hash": "4a496090c2b949f942d734edc73ed07501b0d2581747ca63943c4b39d87f8a75", "audit_prediction": "role match", "audit_confidence": 0.5, "proposal_hash": "d485eb33d4b12354656c7883af280fb5f4cd54d7fe0db769c8b366b0fd838e2a"},
+        "expected": "ACCEPT"
+      }
+    ],
+    "negative": [
+      {"name": "ascii_sorted_premises", "originating_create_citations": ["M001005", "M000001"], "mutated_proposal_citations": ["M000001", "M001005"], "expected": "REJECT"},
+      {"name": "duplicate_premise", "mutated_proposal_citations": ["M001005", "M000001", "M001005"], "expected": "REJECT"},
+      {"name": "support_interleaved_into_proposal", "mutated_proposal_citations": ["M001005", "M001004", "M000001"], "expected": "REJECT"},
+      {"name": "stale_hash_after_reorder", "mutation": "reorder citations while retaining d485eb33d4b12354656c7883af280fb5f4cd54d7fe0db769c8b366b0fd838e2a", "expected": "REJECT"}
+    ]
+  },
+  "$defs": {
+    "ownedRowId": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"},
+    "source": {"type": "string", "pattern": "^source:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "target": {"type": "string", "pattern": "^target:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "animal": {"type": "string", "pattern": "^animal:[a-z0-9][a-z0-9_.+-]{0,63}$"},
+    "effect_atom": {"enum": ["CHANGE", "STABLE"]}
+  }
+}

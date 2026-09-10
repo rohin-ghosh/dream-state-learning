@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"v03r-recurrence-closure-dream-v2e",
+  "oneOf":[
+    {"type":"object","additionalProperties":false,"required":["op","reason_code"],"properties":{"op":{"const":"PASS"},"reason_code":{"const":"NO_BOUNDED_UPDATE"}}},
+    {"type":"object","additionalProperties":false,"required":["op","new_alias","entity_alias","concept_type","canonical_text","citations"],"properties":{"op":{"const":"CREATE_CONCEPT"},"new_alias":{"const":"N0"},"entity_alias":{"pattern":"^X[0-9]+$"},"concept_type":{"$ref":"#/$defs/text64"},"canonical_text":{"$ref":"#/$defs/text192"},"citations":{"$ref":"#/$defs/citations"}}},
+    {"type":"object","additionalProperties":false,"required":["op","left_alias","relation_label","right_alias","connector_alias","polarity","canonical_text","citations"],"properties":{"op":{"const":"CREATE_EDGE"},"left_alias":{"$ref":"#/$defs/entityMemoryAlias"},"relation_label":{"$ref":"#/$defs/text64"},"right_alias":{"$ref":"#/$defs/entityMemoryAlias"},"connector_alias":{"pattern":"^C[0-9]+$"},"polarity":{"$ref":"#/$defs/polarity"},"canonical_text":{"$ref":"#/$defs/text192"},"citations":{"$ref":"#/$defs/citations"}}},
+    {"type":"object","additionalProperties":false,"required":["op","memory_alias","canonical_text","citations"],"properties":{"op":{"const":"REINFORCE"},"memory_alias":{"pattern":"^M[0-9]+$"},"canonical_text":{"$ref":"#/$defs/text192"},"citations":{"$ref":"#/$defs/citations"}}},
+    {"type":"object","additionalProperties":false,"required":["op","memory_alias","replacement_kind","left_or_entity_alias","relation_label","right_alias","connector_alias","polarity","canonical_text","citations"],"properties":{"op":{"const":"SUPERSEDE"},"memory_alias":{"pattern":"^M[0-9]+$"},"replacement_kind":{"enum":["CONCEPT","EDGE"]},"left_or_entity_alias":{"$ref":"#/$defs/entityMemoryAlias"},"relation_label":{"oneOf":[{"$ref":"#/$defs/text64"},{"type":"null"}]},"right_alias":{"oneOf":[{"$ref":"#/$defs/entityMemoryAlias"},{"type":"null"}]},"connector_alias":{"oneOf":[{"pattern":"^C[0-9]+$"},{"type":"null"}]},"polarity":{"oneOf":[{"$ref":"#/$defs/polarity"},{"type":"null"}]},"canonical_text":{"$ref":"#/$defs/text192"},"citations":{"$ref":"#/$defs/citations"}}}
+  ],
+  "$defs":{
+    "text64":{"type":"string","minLength":1,"maxLength":64,"pattern":"^[ -!#-\\[\\]-~]+$"},
+    "text192":{"type":"string","minLength":1,"maxLength":192,"pattern":"^[ -!#-\\[\\]-~]+$"},
+    "entityMemoryAlias":{"type":"string","pattern":"^(?:X|M)[0-9]+|N0$"},
+    "polarity":{"enum":["POSITIVE","NEGATIVE","UNKNOWN"]},
+    "citations":{"type":"array","minItems":1,"maxItems":7,"uniqueItems":true,"items":{"type":"string","pattern":"^(?:E|M)[0-9]+$"}}
+  }
+}

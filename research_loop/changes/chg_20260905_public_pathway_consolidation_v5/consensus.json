@@ -1,0 +1,839 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "ppc5_consensus_01",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5",
+  "state": "human_required",
+  "architecture_change_sha256": "88e5a976003c63dd8811acf7b73d640b68e73321d192e7acad2b0b58f63fd44d",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "ppc5_systems_interpretation_01",
+      "sha256": "6f43d3e7b99ab38d049b31a856425db04dbce72f3225f1b7e3fd823b7c71df5b"
+    },
+    {
+      "interpretation_id": "ppc5_benchmark_science_interpretation",
+      "sha256": "d6ce473be8618d4659319d605ef2d5e49b543bbcfcfc796b585fc4c1b1cb4bbd"
+    }
+  ],
+  "critique_sha256": "33348a55f6bcdee2f7b0a7b4f9f9220afe8f4641744ce6ebf7bd116c5545e8aa",
+  "recommendation": "rework",
+  "agreements": [
+    "PPC5 is a useful finite identification rung that preserves, but cannot substitute for, the learned-THINK, continual-learning, schema, flywheel, parenting, asymptote, and population stages.",
+    "Closed ACQUIRE evidence, a READ-only writer, clean-base rebuilding, and reader-process isolation are necessary controls against probe leakage, unsupported semantic laundering, and direct policy imitation.",
+    "The byte-identical frozen THINK/ACT policy and public recurrent operation trace make adaptive retrieval and post-return cognition observable, but they are controls rather than proof of storage or causal path use by themselves.",
+    "D1A, D1B, D1C, and D1D are distinct assays whose literal claims require distinct conjunctive gates; only PPC5_FINITE_MECHANISM_ONLY requires all four assays to pass.",
+    "Every model call, canary, LoRA training action, GPU action, behavioral treatment, and scientific claim remains forbidden until a later exact run lock, independent review, and human ratification.",
+    "Current architecture bytes must determine visibility, state transitions, DREAM-to-root projection, donor imports, control semantics, baseline construction, intervention layers, resource serialization, and sealer independence; implementers may not invent them.",
+    "Exact model, tokenizer, checkpoint, training recipe, numeric budgets, capacities, margins, power inputs, life count, runtime limits, assignment seeds, and life-level aggregation functions belong in the separately reviewed later run lock.",
+    "The present proposal-only scope remains the maximum eventual implementation authority after repaired bytes undergo fresh deliberation and exact human ratification."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "PPC5_RES01_CANDIDATE_RECOGNITION_BOUNDARY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether the full-table READER_LORA assay establishes parametric record transport or only adapter-conditioned candidate recognition.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Names PPC5_SUPPORTED_RECORD_TRANSPORT and says supported public experience is written into or transported by the READ-LoRA through a recognition interface."
+        },
+        {
+          "actor": "benchmark interpretation and critique",
+          "position": "The external full candidate table supplies the semantic record bytes, so the adapter contribution is candidate-conditioned recognition or selection, not closed-book storage or autonomous reproduction."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Forced scoring over externally supplied semantic candidates cannot identify where the complete readable record content is stored, even when adapter ablations identify a causal effect on selection.",
+        "selected_position": "PPC5 may claim supported candidate-conditioned record recognition/selection through an external full-table interface; closed-book parametric storage is explicitly untested.",
+        "required_change": "Rename PPC5_SUPPORTED_RECORD_TRANSPORT to PPC5_SUPPORTED_CANDIDATE_RECOGNITION and replace transport, absorption, stored-worldview, and written-into language throughout the summary, graph rationales, protocol, claim map, T09/T10/T21, and reporting lint with the selected wording. Require a separately ratified closed-book assay before any claim that the LoRA alone stores or reproduces complete record bytes.",
+        "acceptance_test_ids": [
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES02_ROOT_PROVENANCE_VISIBILITY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether opaque root-union provenance may appear in the canonical READ response consumed by THINK.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Returns root_union_hash in ppc5.read.v1 while also declaring root_partition forbidden to THINK and private to SLEEP and audit."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "A stable opaque hash exposes equivalence structure and contradicts the least-privilege declaration; it should remain private provenance."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "THINK does not need root equivalence to query, cite, or use a public record, and equality itself is model-usable information.",
+        "selected_position": "Remove root_union_hash from every model-visible request, response, prompt, record, and training-target byte; retain root equivalence only in a private SLEEP/audit provenance map keyed by public record ID.",
+        "required_change": "Revise ppc5.read.v1 and the canonical READ-row renderer to omit root_union_hash; split candidate semantic rows from a private root-provenance companion; mark root_partition forbidden at THINK, DREAM, and READ_PROVIDER selection/emission, visible only to SLEEP and AUDIT; and add byte-noninterference fixtures proving root mutations cannot change provider scoring inputs or public responses when semantic rows are fixed.",
+        "acceptance_test_ids": [
+          "PPC5_T03_VISIBILITY_NONINTERFERENCE_PRODUCT",
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES03_DREAM_RECORD_TO_ROOT_PROJECTION",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Which legal DREAM output fields define the D1D root-selection treatment without revealing private root provenance.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Says DREAM-selected root IDs determine SLEEP eligibility although ppc5.dream.v1 emits no root IDs and DREAM cannot observe root_partition."
+        },
+        {
+          "actor": "critique",
+          "position": "A deterministic private projection is required because retained records, hypotheses, subgoals, surprises, request inputs, and ancestor closure imply different root sets."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Retained record IDs are the only DREAM output already tied to concrete public evidence records; using other fields would let agendas or derived state nominate evidence.",
+        "selected_position": "Only ordered retain_record_ids nominate D1D roots. A private SLEEP projection maps each retained record to its closed-ACQUIRE source equivalence class, chooses the lexicographically least eligible public source ID as class representative, and deduplicates by first retained occurrence; no other DREAM field or ancestor closure nominates a root.",
+        "required_change": "Add a closed dream_to_sleep_projection.v1 schema and total oracle: validate retained IDs and order; map through the private provenance companion; reject non-ACQUIRE, open, missing, PROBE, target-derived, and status-ineligible sources with canonical reasons; choose the stated representative; stable-deduplicate; emit only a private SLEEP/audit receipt; and prove no root information returns to THINK or DREAM.",
+        "acceptance_test_ids": [
+          "PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY",
+          "PPC5_T06_AGENDA_BRANCH_PROSE_LAUNDERING_CROSSPRODUCT",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES04_TYPED_DONOR_IMPORT_AND_INDEPENDENCE",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "How wrong-life and mismatch controls can depend on donor artifacts without violating reset noninterference or independent-life inference.",
+      "positions": [
+        {
+          "actor": "proposal and benchmark interpretation",
+          "position": "Require cross-fitted or wrong-life controls and independently reset lives, but leave intentional donor dependence implicit."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "A typed donor boundary and dependence rule are necessary because valid donor mutations intentionally change recipient treatment inputs."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A disjoint one-to-one donor pool preserves recipient-life independence more cleanly than reciprocal or reused experimental-life donors and makes the intended exception to noninterference explicit.",
+        "selected_position": "Use a prospectively sealed donor pool outside the confirmatory recipient-life sample, with one immutable, non-reused, non-reciprocal donor per recipient and a typed allowlist containing only the exact donor artifact needed by that control.",
+        "required_change": "Add donor_fixture.v1 and donor_import.v1 manifests sealed before recipient assignment. WRONG_LIFE_ADAPTER may mount only its compatible donor adapter. D1C MISMATCH must use a presealed field-type, cardinality, token-envelope, and pressure-matched bijection from donor retained slots to recipient-local eligible decoy IDs. D1D PUBLISH_MISMATCH must map the donor's ordered within-stratum selection ranks onto recipient-local eligible roots, so no foreign root becomes writer evidence. Forbid donor reuse and reciprocal pairing; declare incompatibility or unavailable mapping before assignment as CONSTRUCTION_FAIL with no fallback. Revise T15 so all ambient prior-life state is noninterfering while mutation of the one declared donor blob is an intended, separately tested treatment dependence.",
+        "acceptance_test_ids": [
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+          "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T15_TWO_LIFE_COLD_RESET_NONINTERFERENCE",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES05_DREAM_FAILURE_AND_ITT_RULES",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "How DREAM ABSTAIN, failures, empty outputs, unequal selections, unavailable matches, and retained-item cuts enter the causal estimands.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Promises equal budgets and matched content controls but does not define assignment-preserving outcomes for legal or operational non-publication cases."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "A total failure and fallback policy is required to prevent post-treatment exclusions and differential missingness."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "ABSTAIN and failure are properties of the assigned DREAM policy and must not be removed or silently replaced after randomization.",
+        "selected_position": "All assigned branches remain in intention-to-treat summaries. ABSTAIN and valid empty selections are zero-selection outcomes; parse, provider, overflow, and post-assignment match failures receive distinct canonical statuses and the prespecified MISSING or RUN_INVALID consequence. No branch is reassigned, dropped, or given authentic fallback content.",
+        "required_change": "Add a total DREAM treatment-status table for PUBLISH, ABSTAIN, empty, stale reference, closure overflow, parse failure, provider failure, unavailable match, and publication failure. Define pre-assignment infeasibility as CONSTRUCTION_FAIL and post-assignment absence under the later locked missingness rule. Match logical allowances and charged budgets, not necessarily realized semantic output length. For retained-item cuts, remove the registered item without replacement and treat the resulting count/token change as part of the intervention; do not condition the primary analysis on successful publication or nonempty selection.",
+        "acceptance_test_ids": [
+          "PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY",
+          "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T18_RUNTIME_PERTURBATION_FUTURE_EXECUTION"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES06_FROZEN_POLICY_AND_TRACE_IDENTIFICATION",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether frozen-policy isolation and compliant observed traces are sufficient evidence of path causality.",
+      "positions": [
+        {
+          "actor": "proposal and interpretations",
+          "position": "Treat process isolation, ordered opens/citations, and recurrence ablations as strong identification controls."
+        },
+        {
+          "actor": "critique",
+          "position": "Retrieval traces remain endogenous; assigned return interventions and all-assigned-target analysis, rather than trace-selected analysis, must carry the causal claim."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Freezing removes policy-weight learning but not treatment-dependent behavior or adherence selection.",
+        "selected_position": "Prospectively assigned provider-return interventions and life-level intention-to-treat action effects identify path causality; ordered edge opens and citations are prespecified adherence and mediation outcomes and never define the analyzed subset.",
+        "required_change": "Revise D1B, T08, T11, T16, and T21 to record assignment before model input, include every assigned target and failure status in life-level summaries, separately report trace adherence, and forbid per-protocol promotion based only on traces that opened or cited every edge. Keep frozen-policy and mount-isolation checks as necessary negative controls, not sufficient evidence of storage or path use.",
+        "acceptance_test_ids": [
+          "PPC5_T08_PROSPECTIVE_PATH_EVERY_EDGE_ORACLES",
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+          "PPC5_T11_ADAPTIVITY_AND_RECURRENCE_SCRIPTED_SENSITIVITY",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES07_READER_AND_NEGATIVE_CONTROL_TOTALITY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "How a complete provider scan deterministically yields one FOUND or NOT_FOUND response in every reader and negative-control cell.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Specifies full scan work and an output envelope but leaves score extraction, abstention, ties, non-finite values, root shuffle, and control selectors undefined."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "The semantic selection function and every negative control require exact present-tense contracts."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "One deterministic parameterized algorithm can be fixed now while model, tokenizer, and training hashes remain later run-lock fields.",
+        "selected_position": "Each provider scores all N canonical FOUND candidates plus one canonical NOT_FOUND candidate under one normative renderer; select the greatest finite mean target-token log probability, prefer NOT_FOUND in a tie involving it, otherwise choose the lexicographically least candidate_id, and classify any non-finite score or count mismatch as RUN_INVALID.",
+        "required_change": "Bind exact cue-family request schemas for exact, reverse, paraphrase, and partial cues; prompt and candidate renderers; tokenizer-span boundaries; score extraction; N-plus-one selection; ties; candidate-to-record mapping; and normalized failures. ADAPTER_OFF_CANDIDATE_ONLY uses the same clean base and algorithm with no adapter; WRONG_LIFE_ADAPTER uses the single declared compatible donor adapter; READER_ROOT_SHUFFLE uses a presealed fixed-point-free permutation of object/public-record targets across eligible root unions within exact relation and token strata while preserving query rows and work, and fails construction if no derangement exists. TEXT and GRAPH must have equally total full-scan selectors and emit the same public envelope.",
+        "acceptance_test_ids": [
+          "PPC5_T07_READ_ONLY_SLEEP_AND_ATOMIC_PUBLICATION",
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES08_BASELINE_CONSTRUCTIBILITY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether naming mandatory baselines plus aggregate dose rules is sufficient to seal the strongest-baseline comparisons.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Lists mandatory comparator names and broad matching dimensions without complete per-cell dataflow or infeasibility semantics."
+        },
+        {
+          "actor": "critique",
+          "position": "Each baseline needs an executable source, target, mount, interface, truncation, action, dose, and construction-failure contract before it can be mandatory evidence."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "T14 can audit only quantities generated by already-defined cells; it cannot make an undefined or infeasible comparator scientifically strong.",
+        "selected_position": "Every mandatory baseline must have a closed current architecture contract, and failure to construct or prospectively match a mandatory baseline makes its dependent claim CONSTRUCTION_FAIL rather than permitting omission, substitution, fake padding, or post-result relaxation.",
+        "required_change": "For BASE_AGENT, TARGET_STATE_ONLY, NATIVE_CONTEXT_THEN_TRUNCATION, FULL_CONTEXT, RAW_RAG, REFLECTION_LESSON_TEXT, LINKED_TEXT, EXPLICIT_GRAPH, ENDPOINT_LORA, DIRECT_ACTION_LORA, DIRECT_QA_LORA, RAW_BATCH_LORA, and every ablation/control cell, bind exact eligible source bytes, target renderer and loss spans, mount location, query/return and action contract, truncation/order rule, clean-base lifecycle, dose dimensions, and failure status. FULL_CONTEXT must contain the complete eligible context; the later run lock must choose a common budget that accommodates it or the dependent comparison is CONSTRUCTION_FAIL. Match real positive targets only; deterministic cycling or down-selection may be used only if prospectively specified and every sealed example retains the required minimum coverage; otherwise fail rather than pad.",
+        "acceptance_test_ids": [
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+          "PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES09_RESOURCE_AND_D1D_MEDIATOR_SEMANTICS",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "How to serialize comparable retained resources and whether D1D should equalize realized admitted rows and training exposure after DREAM selection.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Requires an exact active-retained-byte view and equal row/training budgets without defining ownership, copies, or whether realized rows are mediators."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Ownership and serialization must be fixed, and post-selection equalization can erase or distort the DREAM-selection mechanism."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "DREAM-selected root and admitted-row counts are part of the D1D causal path, whereas ex ante capacity and execution limits are design controls.",
+        "selected_position": "Fix selection and training capacity ceilings prospectively, but do not truncate, oversample, pad, or condition on realized selected/admitted rows in the primary D1D intention-to-treat estimand; treat realized rows, target tokens, and updates as measured mediators and resource outcomes.",
+        "required_change": "Replace equal-realized-row language with fixed-capacity language and define one-pass deterministic training over all admitted rows up to the preselection cap; cap overflow is a canonical predeclared status and never outcome-informed. Permit a separately labeled dose-normalized sensitivity only if prospectively locked. Add resource_manifest.v1 that counts every condition-readable payload, semantic table, metadata/index, adapter tensor at realized dtype and padding, and process-private retained copy exactly once per owner; report common base/tokenizer bytes both inclusive and marginal; keep transient cache/KV and construction/training costs in the mandatory secondary ledger. Concrete capacities, dtype, and quantities remain later run-lock values.",
+        "acceptance_test_ids": [
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES10_WHOLE_PATH_INTERVENTION_LAYER",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "What deletion and binding-twin interventions do, where they act, and how their action effects are analyzed.",
+      "positions": [
+        {
+          "actor": "proposal and benchmark interpretation",
+          "position": "Mix deletion and twin direction-change language and do not specify whether the intervention changes acquisition, training, candidates, or returned records."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Deletion should remove the advantage, twins should redirect it, and the intervention layer and intention-to-treat analysis must be fixed."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "A provider-return intervention localizes the causal manipulation to the record made available to frozen recurrent cognition while preserving acquisition, training, candidate scans, and global adapter weights.",
+        "selected_position": "Apply cuts after the mandatory full scan and semantic selection but before canonical public emission: deletion substitutes canonical NOT_FOUND for the registered edge; a twin substitutes its presealed directional-twin record; a sham applies the same mechanism to a presealed nonpath edge. Deletion must remove the prespecified action advantage, twins must produce the prespecified redirect, and shams must preserve the solution.",
+        "required_change": "Bind intervention_assignment.v1 before model input, exact target/query matching, canonical substituted bytes, unchanged scan/work accounting, failure precedence, and blindness to realized trace. Analyze all assigned targets and lives; report opening/citation as adherence and mediation only. Harmonize protocol section 9, core gates, T08, T11, T16, and T21 with the selected deletion/twin/sham semantics.",
+        "acceptance_test_ids": [
+          "PPC5_T08_PROSPECTIVE_PATH_EVERY_EDGE_ORACLES",
+          "PPC5_T11_ADAPTIVITY_AND_RECURRENCE_SCRIPTED_SENSITIVITY",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES11_EXACT_STATE_MACHINE_TOTALITY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether the present THINK and DREAM prose is a total exact transition contract.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Calls the machines exact after listing operation shapes and selected transitions."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Initial and terminal states, closed enum domains, observation classification, action validity, budget precedence, errors, and edge cases remain undefined."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "T04 and two independent sealers require one output for every valid or invalid input without implementation convention.",
+        "selected_position": "The current state machine is incomplete and must become a closed total transition function before ratification.",
+        "required_change": "Add closed JSON schemas and exhaustive transition tables for initial, running, and terminal states; every operation argument enum and ID domain; allocation and reference validation; action validity; public observation support/contradiction classification; branch, citation-DAG, prediction, and hypothesis precedence; all budget exhaustion and repeat-limit orderings; DREAM publication/remap failures; provider failures; and canonical public error, no-op, DEFER, STOP, MISSING, INVALID_CELL, and terminal objects. Add exhaustive golden vectors that both sealers implement independently.",
+        "acceptance_test_ids": [
+          "PPC5_T04_OPERATION_AND_STATE_MACHINE_ORACLES",
+          "PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY",
+          "PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES12_ACCEPTANCE_STAGE_ORDER",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "When specification, implementation-conformance, run-lock, runtime-validity, and claim-audit evidence can exist.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Marks T01-T16 required before implementation even though T02-T16 exercise or validate implementation artifacts."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "T19 and human ratification gate coding; implementation-conformance receipts necessarily follow coding and precede sealing or model execution."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Authority must be strict without asking test evidence to preexist the implementation it evaluates.",
+        "selected_position": "Use five ordered stages: pre_ratification_specification, post_ratification_pre_static_seal_conformance, pre_model_execution, runtime_validity, and pre_scientific_claim.",
+        "required_change": "Place T01 and T19 at pre_ratification_specification. Place deterministic implementation-conformance portions of T02-T15 and the run-lock schema-validator fixture at post_ratification_pre_static_seal_conformance. Require the two T17 static seals, a fully populated T16 run lock, T20 independent review/advocate bundle, and separate exact human run ratification at pre_model_execution. Execute T18 only during authorized runtime and require it for runtime_validity. Require T21 at pre_scientific_claim. Split T16 into schema-conformance and populated-run-lock receipts. Preserve every current scope prohibition throughout.",
+        "acceptance_test_ids": [
+          "PPC5_T01_STANDALONE_SCOPE_HASH_AUTHORITY",
+          "PPC5_T02_PRIVATE_ROLE_AND_PROBE_QUARANTINE",
+          "PPC5_T03_VISIBILITY_NONINTERFERENCE_PRODUCT",
+          "PPC5_T04_OPERATION_AND_STATE_MACHINE_ORACLES",
+          "PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY",
+          "PPC5_T06_AGENDA_BRANCH_PROSE_LAUNDERING_CROSSPRODUCT",
+          "PPC5_T07_READ_ONLY_SLEEP_AND_ATOMIC_PUBLICATION",
+          "PPC5_T08_PROSPECTIVE_PATH_EVERY_EDGE_ORACLES",
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+          "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+          "PPC5_T11_ADAPTIVITY_AND_RECURRENCE_SCRIPTED_SENSITIVITY",
+          "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT",
+          "PPC5_T15_TWO_LIFE_COLD_RESET_NONINTERFERENCE",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL",
+          "PPC5_T18_RUNTIME_PERTURBATION_FUTURE_EXECUTION",
+          "PPC5_T19_FRESH_ARCHITECTURE_DELIBERATION",
+          "PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES13_LIFE_LEVEL_AGGREGATION",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether naming independent lives as the sample unit is enough to prevent pseudo-replication.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Names lives as the unit and defers sample-unit mappings to the later run lock without requiring complete within-life reducers."
+        },
+        {
+          "actor": "benchmark interpretation and critique",
+          "position": "Every multi-item, multi-cue, multi-edge, and DREAM contrast needs one prospectively sealed life-level aggregation function and explicit denominator and missingness rules."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The architecture must require complete reducers now, while the exact numerical reducer choices can properly remain prospective run-lock bytes.",
+        "selected_position": "T16 must require one total deterministic life-level aggregation function per contrast before any model execution; no item, path, edge, cue, or pressure point is an independent replicate.",
+        "required_change": "Extend the current run-lock schema contract to require, for every contrast, ordered within-life inputs, weighting, denominator, zero-eligible behavior, nested paired-item handling, every-edge conjunction, donor ID, missing-status mapping, raw-life-value serialization, multiplicity family, and promotion consequence. The later run lock supplies the exact hash-bound functions and numeric choices; T21 recomputes them byte-for-byte.",
+        "acceptance_test_ids": [
+          "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES14_DREAM_AND_SUCCESSOR_CLAIM_BOUNDARY",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Whether PPC5 tests learned DREAM and whether its mechanism claims can promote later Experience Models claims.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Uses learned and learned-style DREAM wording while also freezing DREAM and naming later successors."
+        },
+        {
+          "actor": "benchmark interpretation and critique",
+          "position": "PPC5 tests causal utility of frozen same-model reconciliation only, and its claims must be machine-checkably unable to substitute for later integrated learning stages."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "No DREAM, DECIDE, or ACT target trains in PPC5, so learning those operations is outside its evidence.",
+        "selected_position": "Describe D1C/D1D only as frozen same-model DREAM reconciliation/context or selection utility. PPC5 claims have no promotion edge to learned THINK, continual learning, compression, flywheel, parenting, asymptote, population, or scaling claims.",
+        "required_change": "Rename protocol section 7 and remove learned or learned-style DREAM language. Add a machine-readable claim dependency map in which each PPC5 assay releases only its own literal claim, PPC5_FINITE_MECHANISM_ONLY requires all four, and every successor claim remains forbidden. State that a future separately ratified PPC6 must specify whether and how READ and learned DECIDE coexist in an integrated per-life artifact while retaining evidence and target-quarantine controls; PPC5 neither decides nor authorizes that later architecture.",
+        "acceptance_test_ids": [
+          "PPC5_T01_STANDALONE_SCOPE_HASH_AUTHORITY",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T19_FRESH_ARCHITECTURE_DELIBERATION",
+          "PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY",
+          "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES15_STATIC_SEALER_INDEPENDENCE",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "What independence means for exactly two no-import static sealers.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Requires independent authorship and exact agreement but does not define allowed shared inputs, code, dependencies, or provenance."
+        },
+        {
+          "actor": "systems interpretation and critique",
+          "position": "Shared latent parsers, canonicalizers, RNGs, generators, or path oracles can make exact agreement non-independent."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Independent implementations may share the ratified specification but not project implementation logic or generated products.",
+        "selected_position": "The two sealers may share only the exact ratified normative bytes, public schema standards, OS/runtime primitives, and frozen input manifests; they may not share project parser, canonicalizer, RNG, matching, projection, generator, path-oracle, resource-accounting code, generated intermediate artifacts, or source authorship context.",
+        "required_change": "Add sealer_provenance.v1 recording distinct author or fresh-agent identity, source-tree hash, dependency lock, build/runtime hash, allowed shared inputs, import graph, and a no-generated-artifact-import attestation. Each sealer must independently implement canonical JSON, deterministic seed expansion, matching, projection, path, resource, and transition logic against common normative golden vectors. T17 fails if provenance is absent, dependencies exceed the allowlist, or outputs disagree.",
+        "acceptance_test_ids": [
+          "PPC5_T01_STANDALONE_SCOPE_HASH_AUTHORITY",
+          "PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL",
+          "PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY"
+        ]
+      }
+    },
+    {
+      "disagreement_id": "PPC5_RES16_CURRENT_CONTRACT_VS_LATER_RUN_LOCK",
+      "sources": [
+        "change.json and protocol.md",
+        "ppc5_systems_interpretation_01",
+        "ppc5_benchmark_science_interpretation",
+        "ppc5_adversarial_crosscritique_01"
+      ],
+      "issue": "Which unresolved choices must be repaired in current normative architecture bytes and which may be bound numerically in the later run lock.",
+      "positions": [
+        {
+          "actor": "systems interpretation",
+          "position": "Causally material transition, provider, donor, remap, fallback, and resource rules cannot be delegated, though its reader ambiguity also mentions numeric calibration."
+        },
+        {
+          "actor": "benchmark interpretation",
+          "position": "Life-level aggregation, margins, thresholds, sample size, and other quantitative analysis choices should be prospectively sealed before model execution."
+        },
+        {
+          "actor": "critique",
+          "position": "Current architecture must define executable algorithm families and authority fields, while exact model/run quantities remain later reviewed bytes."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "Executability and causal meaning must precede coding; quantities that depend on the eventual model and powered design may remain prospective provided their required schema and authority gate are fixed now.",
+        "selected_position": "Current repaired bytes must bind schemas, total transitions, cue and selection algorithms, root projection, donor import/remap, ITT failures, baseline cell semantics, path intervention layer, resource ownership/serialization, claim dependencies, stage ordering, and sealer independence. The later run lock binds exact model/tokenizer/checkpoint/trainer hashes, training recipe, numeric budgets/caps, tensor dtype, resource quantities, life count, power inputs, margins, aggregation functions, missingness limits, assignment seeds, runtime limits, and stopping rules.",
+        "required_change": "Add closed parameterized contracts and validators for every current-bound item, and extend T16/T20 so every later-bound value is present, hash-bound, independently reviewed, and exactly human-ratified before any model call. Any later attempt to change a current-bound semantic or algorithm requires a new architecture change and fresh deliberation, not a run-lock edit.",
+        "acceptance_test_ids": [
+          "PPC5_T04_OPERATION_AND_STATE_MACHINE_ORACLES",
+          "PPC5_T07_READ_ONLY_SLEEP_AND_ATOMIC_PUBLICATION",
+          "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+          "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+          "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+          "PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT",
+          "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+          "PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL",
+          "PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY"
+        ]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "PPC5_CRIT_C01_CANDIDATE_RECOGNITION_BOUNDARY",
+      "status": "accepted",
+      "rationale": "The candidate table, not the adapter alone, supplies complete semantic record bytes; adapter ablations identify selection only.",
+      "resolution_id": "PPC5_RES01_CANDIDATE_RECOGNITION_BOUNDARY",
+      "required_change": "Apply the candidate-conditioned claim rename, noninference rule, and claim lint specified in PPC5_RES01."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C02_ROOT_PROVENANCE_VISIBILITY",
+      "status": "accepted",
+      "rationale": "A stable root_union_hash exposes equivalence structure to THINK and directly contradicts the declared visibility boundary.",
+      "resolution_id": "PPC5_RES02_ROOT_PROVENANCE_VISIBILITY",
+      "required_change": "Remove root provenance from all model-visible and loss-bearing bytes and test private-only provenance noninterference."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C03_DREAM_ROOT_TREATMENT_UNDEFINED",
+      "status": "accepted",
+      "rationale": "The exact DREAM object contains no root field, so the D1D treatment is presently underdetermined.",
+      "resolution_id": "PPC5_RES03_DREAM_RECORD_TO_ROOT_PROJECTION",
+      "required_change": "Bind the retain_record_ids-only private projection and exhaustive rejection oracle specified in PPC5_RES03."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C04_DONOR_RESET_AND_INDEPENDENCE",
+      "status": "accepted",
+      "rationale": "Unqualified reset noninterference is incompatible with intentional donor inputs, and reuse or reciprocity would correlate nominal life units.",
+      "resolution_id": "PPC5_RES04_TYPED_DONOR_IMPORT_AND_INDEPENDENCE",
+      "required_change": "Use the disjoint one-to-one donor pool, typed imports, recipient-local remaps, and revised reset oracle specified in PPC5_RES04."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C05_DREAM_ESTIMAND_FAILURE_RULES",
+      "status": "accepted",
+      "rationale": "Without total assignment-preserving statuses, legal ABSTAIN and operational failures can create post-treatment selection.",
+      "resolution_id": "PPC5_RES05_DREAM_FAILURE_AND_ITT_RULES",
+      "required_change": "Bind the full DREAM status table, no-fallback rule, pre/post-assignment distinction, and ITT inclusion specified in PPC5_RES05."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C06_FROZEN_POLICY_IDENTIFICATION_LIMIT",
+      "status": "accepted",
+      "rationale": "Frozen weights block policy training but do not randomize which retrieval trace the policy follows or prove closed-book storage.",
+      "resolution_id": "PPC5_RES06_FROZEN_POLICY_AND_TRACE_IDENTIFICATION",
+      "required_change": "Make provider-return assignment and all-assigned-target ITT effects primary; keep traces as adherence/mediation and isolation as a necessary control."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C07_READER_AND_CONTROL_TOTALITY",
+      "status": "accepted",
+      "rationale": "Full-scan work alone does not specify selection, abstention, ties, failure behavior, or the negative controls.",
+      "resolution_id": "PPC5_RES07_READER_AND_NEGATIVE_CONTROL_TOTALITY",
+      "required_change": "Bind the N-plus-one score-and-select contract and exact adapter-off, wrong-life, and root-shuffle semantics specified in PPC5_RES07."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C08_BASELINE_CONSTRUCTIBILITY",
+      "status": "accepted",
+      "rationale": "A baseline name and aggregate dose ledger do not define its semantic dataflow or make simultaneous matching feasible.",
+      "resolution_id": "PPC5_RES08_BASELINE_CONSTRUCTIBILITY",
+      "required_change": "Add closed per-cell comparator contracts and make infeasible mandatory matching a prospective CONSTRUCTION_FAIL without substitution or padding."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C09_RESOURCE_AND_ROW_DOSE_SEMANTICS",
+      "status": "accepted",
+      "rationale": "Undefined ownership permits favorable byte accounting, and equalizing realized post-selection rows would condition away a D1D mediator.",
+      "resolution_id": "PPC5_RES09_RESOURCE_AND_D1D_MEDIATOR_SEMANTICS",
+      "required_change": "Bind resource ownership/serialization now and use prospective capacity ceilings with realized rows, tokens, and updates retained as mediators."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C10_WHOLE_PATH_INTERVENTION_SEMANTICS",
+      "status": "accepted",
+      "rationale": "The current text conflicts on deletion outcomes and leaves the causal intervention layer ambiguous.",
+      "resolution_id": "PPC5_RES10_WHOLE_PATH_INTERVENTION_LAYER",
+      "required_change": "Standardize provider-return interventions, deletion-as-advantage-removal, twin-as-redirect, sham preservation, and all-assigned-target analysis."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C11_EXACT_STATE_MACHINE_INCOMPLETENESS",
+      "status": "accepted",
+      "rationale": "Independent exact agreement is impossible while state, domain, classifier, precedence, and failure cases remain open.",
+      "resolution_id": "PPC5_RES11_EXACT_STATE_MACHINE_TOTALITY",
+      "required_change": "Add closed schemas, total transition tables, canonical outputs, and exhaustive golden vectors before ratification."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C12_TEST_STAGE_CIRCULARITY",
+      "status": "accepted",
+      "rationale": "Implementation-conformance receipts cannot literally be prerequisites to coding the implementation under test.",
+      "resolution_id": "PPC5_RES12_ACCEPTANCE_STAGE_ORDER",
+      "required_change": "Replace current required_before labels with the five-stage ordering and split T16 as specified in PPC5_RES12."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C13_LIFE_LEVEL_AGGREGATION",
+      "status": "accepted",
+      "rationale": "Naming lives as units does not determine the raw life values supplied to inference.",
+      "resolution_id": "PPC5_RES13_LIFE_LEVEL_AGGREGATION",
+      "required_change": "Require total per-contrast within-life reducers and status/denominator rules in the current T16 schema, with exact functions bound only in the later run lock."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C14_DREAM_AND_SUCCESSOR_CLAIM_PRESERVATION",
+      "status": "accepted",
+      "rationale": "Frozen DREAM is not learned DREAM, and preserving a prose successor ladder is weaker than a machine-enforced non-substitution map.",
+      "resolution_id": "PPC5_RES14_DREAM_AND_SUCCESSOR_CLAIM_BOUNDARY",
+      "required_change": "Remove learned-DREAM wording and bind assay-specific PPC5 promotion plus absolute non-substitution for all later-stage claims; leave integrated PPC6 design to fresh ratification."
+    },
+    {
+      "concern_id": "PPC5_CRIT_C15_STATIC_SEALER_INDEPENDENCE",
+      "status": "accepted",
+      "rationale": "Two wrappers over shared implementation logic do not provide independent construction evidence.",
+      "resolution_id": "PPC5_RES15_STATIC_SEALER_INDEPENDENCE",
+      "required_change": "Bind allowed shared specification inputs, prohibited shared code/artifacts, distinct authorship, dependency provenance, and independent implementation receipts."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "PPC5_SYS_D01_ROOT_HASH_VISIBILITY",
+      "status": "accepted",
+      "rationale": "The public hash contradicts the private-provenance contract; private-only provenance is selected.",
+      "resolution_id": "PPC5_RES02_ROOT_PROVENANCE_VISIBILITY"
+    },
+    {
+      "disagreement_id": "PPC5_SYS_D02_RESET_CONTROL_COLLISION",
+      "status": "accepted",
+      "rationale": "Intentional donor dependence needs a typed exception and disjoint donor design rather than an impossible universal noninterference claim.",
+      "resolution_id": "PPC5_RES04_TYPED_DONOR_IMPORT_AND_INDEPENDENCE"
+    },
+    {
+      "disagreement_id": "PPC5_SYS_D03_CIRCULAR_TEST_STAGE",
+      "status": "accepted",
+      "rationale": "T19 plus human ratification gates coding; conformance tests must follow implementation and precede sealing or execution.",
+      "resolution_id": "PPC5_RES12_ACCEPTANCE_STAGE_ORDER"
+    },
+    {
+      "disagreement_id": "PPC5_SYS_D04_EXACT_CONTRACT_COMPLETENESS",
+      "status": "accepted",
+      "rationale": "All causally material deterministic semantics belong in repaired architecture bytes, while only the explicitly enumerated numeric and execution values may wait for the run lock.",
+      "resolution_id": "PPC5_RES16_CURRENT_CONTRACT_VS_LATER_RUN_LOCK"
+    },
+    {
+      "disagreement_id": "PPC5_SYS_D05_EDGE_CUT_EXPECTATION",
+      "status": "accepted",
+      "rationale": "Deletion establishes necessity by removing advantage; only a presealed binding twin is required to redirect.",
+      "resolution_id": "PPC5_RES10_WHOLE_PATH_INTERVENTION_LAYER"
+    },
+    {
+      "disagreement_id": "DIS_TRANSPORT_WORDING",
+      "status": "accepted",
+      "rationale": "The full table supplies semantics, so candidate-conditioned recognition is the maximum warranted claim.",
+      "resolution_id": "PPC5_RES01_CANDIDATE_RECOGNITION_BOUNDARY"
+    },
+    {
+      "disagreement_id": "DIS_LEARNED_DREAM_WORDING",
+      "status": "accepted",
+      "rationale": "PPC5 freezes DREAM and supplies no DREAM targets; it can establish reconciliation utility but not learned DREAM.",
+      "resolution_id": "PPC5_RES14_DREAM_AND_SUCCESSOR_CLAIM_BOUNDARY"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {
+      "test_id": "PPC5_T01_STANDALONE_SCOPE_HASH_AUTHORITY",
+      "status": "retained",
+      "rationale": "The standalone hash and no-inheritance authority check is correct and remains a pre-ratification specification gate.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5_T02_PRIVATE_ROLE_AND_PROBE_QUARANTINE",
+      "status": "modified",
+      "rationale": "The substance is retained, but the conformance receipt follows ratified implementation and must also cover the private DREAM-to-root projection's closed-ACQUIRE filter.",
+      "replacement_test_id": "PPC5_T02R_ROLE_PROBE_AND_PROJECTION_QUARANTINE"
+    },
+    {
+      "test_id": "PPC5_T03_VISIBILITY_NONINTERFERENCE_PRODUCT",
+      "status": "modified",
+      "rationale": "Remove public root provenance and add exact candidate-construction target noninterference, donor allowlist boundaries, and private projection nonemission before running the visibility cross-product.",
+      "replacement_test_id": "PPC5_T03R_VISIBILITY_PROVENANCE_DONOR_AND_CANDIDATE_NONINTERFERENCE"
+    },
+    {
+      "test_id": "PPC5_T04_OPERATION_AND_STATE_MACHINE_ORACLES",
+      "status": "modified",
+      "rationale": "Retain exhaustive oracle intent but execute it against the new closed schemas, total transitions, canonical failures, initialization, and terminal objects after implementation and before static sealing.",
+      "replacement_test_id": "PPC5_T04R_TOTAL_OPERATION_DREAM_AND_STATE_ORACLES"
+    },
+    {
+      "test_id": "PPC5_T05_DREAM_PUBLICATION_AND_REVERSIBILITY",
+      "status": "modified",
+      "rationale": "Add the retain_record_ids-only private root projection and the complete ABSTAIN, empty, failure, overflow, stale-reference, and ITT status table; remove learned-style wording.",
+      "replacement_test_id": "PPC5_T05R_DREAM_PUBLICATION_REVERSIBILITY_PROJECTION_AND_FAILURE"
+    },
+    {
+      "test_id": "PPC5_T06_AGENDA_BRANCH_PROSE_LAUNDERING_CROSSPRODUCT",
+      "status": "modified",
+      "rationale": "Retain the evidence-laundering cross-product and add proof that hypotheses, subgoals, surprises, focus, request inputs, and ancestor closure never nominate D1D roots.",
+      "replacement_test_id": "PPC5_T06R_LAUNDERING_AND_DREAM_ROOT_NOMINATION_CROSSPRODUCT"
+    },
+    {
+      "test_id": "PPC5_T07_READ_ONLY_SLEEP_AND_ATOMIC_PUBLICATION",
+      "status": "modified",
+      "rationale": "Retain READ-only atomicity and add the exact canonical response targets and score/failure preconditions needed by the total reader contract; stage after implementation and before static seal.",
+      "replacement_test_id": "PPC5_T07R_READ_ONLY_SLEEP_TARGET_AND_PUBLICATION_TOTALITY"
+    },
+    {
+      "test_id": "PPC5_T08_PROSPECTIVE_PATH_EVERY_EDGE_ORACLES",
+      "status": "modified",
+      "rationale": "Bind provider-return intervention assignment: deletion emits NOT_FOUND and removes advantage, twins substitute prespecified redirects, shams preserve, and every assigned target remains in ITT regardless of trace adherence.",
+      "replacement_test_id": "PPC5_T08R_PROVIDER_RETURN_EVERY_EDGE_INTERVENTION_AND_ITT"
+    },
+    {
+      "test_id": "PPC5_T09_CANDIDATE_PROVIDER_FULL_SCAN_CONTRACT",
+      "status": "modified",
+      "rationale": "Add exact four-cue renderers, N-plus-one selection, score spans, ties, NOT_FOUND, non-finite handling, candidate mapping, every negative control, target-independent candidate construction, and root-provenance exclusion.",
+      "replacement_test_id": "PPC5_T09R_PROVIDER_CUE_SELECTION_CONTROL_AND_CONSTRUCTION_TOTALITY"
+    },
+    {
+      "test_id": "PPC5_T10_READER_ISOLATION_AND_FROZEN_POLICY",
+      "status": "modified",
+      "rationale": "Retain mount and frozen-weight checks, add the typed wrong-life donor mount, and state that isolation supports only candidate-conditioned selection and is not sufficient path-causal evidence.",
+      "replacement_test_id": "PPC5_T10R_READER_DONOR_ISOLATION_AND_FROZEN_POLICY"
+    },
+    {
+      "test_id": "PPC5_T11_ADAPTIVITY_AND_RECURRENCE_SCRIPTED_SENSITIVITY",
+      "status": "modified",
+      "rationale": "Retain separable FULL, ONE_SHOT_QUERY, and OPEN_LOOP fixtures, but bind provider-return interventions and verify ITT outcomes separately from trace adherence.",
+      "replacement_test_id": "PPC5_T11R_ADAPTIVITY_RECURRENCE_INTERVENTION_AND_ITT_SENSITIVITY"
+    },
+    {
+      "test_id": "PPC5_T12_DREAM_CONTEXT_INTERVENTION_FIXTURES",
+      "status": "modified",
+      "rationale": "Use the disjoint donor pool and recipient-local presealed remap; cover ABSTAIN, empty, failures, unavailable matches, no fallback, no-replacement leave-one-out, and all-assigned-branch ITT behavior.",
+      "replacement_test_id": "PPC5_T12R_DREAM_CONTEXT_TYPED_DONOR_FAILURE_AND_ITT_FIXTURES"
+    },
+    {
+      "test_id": "PPC5_T13_DREAM_TO_SLEEP_SELECTION_FIXTURES",
+      "status": "modified",
+      "rationale": "Add the retained-record-to-root projection, recipient-local donor-rank remap, exact failure statuses, and fixed-capacity mediator-preserving row/training rules.",
+      "replacement_test_id": "PPC5_T13R_DREAM_ROOT_PROJECTION_DONOR_AND_MEDIATOR_FIXTURES"
+    },
+    {
+      "test_id": "PPC5_T14_BASELINE_DOSE_RESOURCE_CONTRACT",
+      "status": "modified",
+      "rationale": "Require executable per-baseline semantic contracts, a no-substitution construction-failure rule, real-target-only dose matching, and exact resource ownership and copy serialization before static sealing.",
+      "replacement_test_id": "PPC5_T14R_BASELINE_CONSTRUCTIBILITY_DOSE_AND_RESOURCE_OWNERSHIP"
+    },
+    {
+      "test_id": "PPC5_T15_TWO_LIFE_COLD_RESET_NONINTERFERENCE",
+      "status": "modified",
+      "rationale": "Preserve ambient cross-life noninterference while excluding exactly one manifest-declared immutable external donor input and separately proving that changing that donor changes only its intended control treatment.",
+      "replacement_test_id": "PPC5_T15R_COLD_RESET_TYPED_DONOR_NONINTERFERENCE_AND_DEPENDENCE"
+    },
+    {
+      "test_id": "PPC5_T16_LATER_RUN_LOCK_NUMERIC_SCHEMA",
+      "status": "modified",
+      "rationale": "Split schema-validator conformance from the later populated lock and require exact life reducers, denominators, zero-eligible handling, nested pairing, every-edge conjunctions, donor IDs, missingness, claim dependencies, and all numeric execution fields.",
+      "replacement_test_id": "PPC5_T16R_RUN_LOCK_SCHEMA_AND_POPULATED_NUMERIC_AUTHORITY"
+    },
+    {
+      "test_id": "PPC5_T17_INDEPENDENT_STATIC_DUAL_SEAL",
+      "status": "modified",
+      "rationale": "Retain exact no-model agreement, add dependency/import/authorship provenance and prohibited shared code/artifacts, and require it before any model execution rather than merely before GPU use.",
+      "replacement_test_id": "PPC5_T17R_INDEPENDENT_DEPENDENCY_AUDITED_STATIC_DUAL_SEAL"
+    },
+    {
+      "test_id": "PPC5_T18_RUNTIME_PERTURBATION_FUTURE_EXECUTION",
+      "status": "modified",
+      "rationale": "Retain actual-runtime evidence and add DREAM failure/status survival, typed donor isolation, provider-return intervention integrity, and assignment-preserving differential-missingness checks.",
+      "replacement_test_id": "PPC5_T18R_RUNTIME_PERTURBATION_ASSIGNMENT_DONOR_AND_FAILURE_VALIDITY"
+    },
+    {
+      "test_id": "PPC5_T19_FRESH_ARCHITECTURE_DELIBERATION",
+      "status": "retained",
+      "rationale": "It correctly keeps implementation forbidden unless fresh consensus recommends the exact repaired bytes and the human ratifies exact bytes and proposal-only scope; the current bytes fail this gate.",
+      "replacement_test_id": ""
+    },
+    {
+      "test_id": "PPC5_T20_PRE_GPU_REVIEW_AND_SEPARATE_RUN_AUTHORITY",
+      "status": "modified",
+      "rationale": "Require it before every model call, not only GPU work, and add baseline constructibility, sealer-dependency provenance, exact claim lint, complete run-lock reducers, and separate human run ratification.",
+      "replacement_test_id": "PPC5_T20R_PRE_MODEL_REVIEW_CLAIM_MAP_AND_SEPARATE_RUN_AUTHORITY"
+    },
+    {
+      "test_id": "PPC5_T21_POSTRUN_CAUSAL_STATUS_AUDIT",
+      "status": "modified",
+      "rationale": "Recompute all-assigned-target ITT effects and life reducers, forbid closed-book or learned-DREAM inference, release assay-specific claims independently, and reserve the finite mechanism claim for the four-assay conjunction with no successor substitution.",
+      "replacement_test_id": "PPC5_T21R_POSTRUN_ITT_LIFE_LEVEL_AND_CLAIM_BOUNDARY_AUDIT"
+    }
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Does Rohin accept this adjudicated rework disposition, returning the current PPC5 bytes for the exact PPC5_RES01 through PPC5_RES16 repairs while preserving the proposal-only scope and every existing model, training, GPU, scientific-claim, parenting, and population prohibition?"
+    ],
+    "implementation_forbidden": true
+  }
+}

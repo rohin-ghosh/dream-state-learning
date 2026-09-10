@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "private-typed-action-evidence-receipt-v3",
+  "$defs": {
+    "hash": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "implementation_manifest": {
+      "type":"object",
+      "additionalProperties":false,
+      "required":["component_id","dependency_lock_sha256","interpreter_sha256","source_sha256","spec_manifest_sha256"],
+      "properties": {
+        "component_id":{"type":"string","minLength":1},
+        "dependency_lock_sha256":{"$ref":"#/$defs/hash"},
+        "interpreter_sha256":{"$ref":"#/$defs/hash"},
+        "source_sha256":{"$ref":"#/$defs/hash"},
+        "spec_manifest_sha256":{"$ref":"#/$defs/hash"}
+      }
+    }
+  },
+  "type":"object",
+  "additionalProperties":false,
+  "required":["bundle_manifest_sha256","canary_bytes_sha256","comparator_output_sha256","implementation_manifests","platform_manifest_sha256","receipt_schema_version","validator_a_output_sha256","validator_b_output_sha256"],
+  "properties": {
+    "bundle_manifest_sha256":{"$ref":"#/$defs/hash"},
+    "canary_bytes_sha256":{"$ref":"#/$defs/hash"},
+    "comparator_output_sha256":{"$ref":"#/$defs/hash"},
+    "implementation_manifests":{"type":"array","minItems":9,"maxItems":9,"items":{"$ref":"#/$defs/implementation_manifest"}},
+    "platform_manifest_sha256":{"$ref":"#/$defs/hash"},
+    "receipt_schema_version":{"const":1},
+    "validator_a_output_sha256":{"$ref":"#/$defs/hash"},
+    "validator_b_output_sha256":{"$ref":"#/$defs/hash"}
+  }
+}

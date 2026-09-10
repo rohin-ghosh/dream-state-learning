@@ -1,0 +1,345 @@
+{
+  "architecture_change_sha256": "d92384889ea9eb2d205f544936fe16be88c127ed6b60ef8463f4871d839ee9ff",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260906_private_typed_action_provenance_canary_v2",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC8_RESOURCE_BOUNDARIES",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "architecture",
+      "concern_id": "C01_exact_contract_ratification_cycle",
+      "evidence": "The plan says exact canonical contract, schema, manifest, message, response, oracle, and fixture bytes must be ratified and may not be invented by post-ratification implementation. However, scope_proposal.json asks Rohin first to ratify permission to author those bytes, and the human decision question binds only the present proposal, context, and three requested-scope strings. Therefore the normative bytes on which PC1-PC9 depend do not exist at the proposed approval point. This contradicts PAC2_E01's rationale that implementation must not define normative bytes after approval.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed authorization sequence cannot provide exact-byte ratification because it authorizes authorship of the normative bytes only after the purported ratification."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS"
+      ],
+      "category": "architecture",
+      "concern_id": "C02_response_channel_representation_is_not_closed",
+      "evidence": "The response envelope must itself be canonical JSON, while the value at /response/tool_call is independently extracted and required to equal raw_tool_channel_bytes, which must be canonical JSON or zero-length. Direct canonical serialization of a valid JSON value cannot yield the MALFORMED_JSON fixture required by the parser. If the field instead contains an encoded raw byte sequence, neither that representation nor its decoding law is specified. The same gap affects the exact byte encoding of the extracted assistant-text value. DUPLICATE_CALL is also not distinguished from duplicate JSON keys rejected earlier as E_JSON_RAW.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The closed envelope, pointer-extraction, malformed-channel, and parser-error rules do not determine one byte-level interface for the success and rejection fixtures."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC3_PROSE_IS_INERT",
+        "PC5_TOTAL_LINEAR_LIFECYCLE"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C03_rejected_receipt_assigned_to_wrong_module",
+      "evidence": "Record 4 is always PRIVATE_DISPATCH_RECEIPT / PRIVATE_MOCK_ENV. On the rejected path, however, the parser grants no dispatch, the mock is stated to be not invoked, and the mock is forbidden from seeing the response. Someone must nevertheless create NOT_EXECUTED/PARSE_REJECTED. If HARNESS or PARSER creates it, the actor role falsely attributes the record to the mock; if the mock creates it, the asserted non-invocation boundary is false. PC3's state-comparison artifact does not resolve this ownership contradiction.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The rejected path demands an authoritative non-execution receipt from a module that the same architecture says is not invoked."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "operations",
+      "concern_id": "C04_unrecorded_runtime_operations_escape_the_ledger",
+      "evidence": "PC5 rejects extra serialized records, but a valid six-record ledger does not prove that the harness did not invoke the stub twice, parse an abandoned response, dispatch the pure mock twice, or discard an intermediate branch before recording only one path. Likewise, record order alone does not prove the required fsync completed before the operation it authorizes. PC6 names synthetic crash points but freezes no independent call-count, syscall-order, or discarded-result observation transcript.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A valid artifact can coexist with unrecorded extra invocations or reordered authorization operations, so the suite does not yet establish the asserted single runtime lifecycle."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "operations",
+      "concern_id": "C05_renderer_and_cross_manifest_binding_gap",
+      "evidence": "INVOCATION_PREPARED contains renderer_manifest_sha256, but event 0's listed execution-manifest contents omit the renderer, no renderer-manifest ByteString is otherwise present, and the evidence-receipt list does not explicitly bind renderer source or manifest bytes. PC9 promises mutation coverage for every manifest, which cannot be fulfilled for an artifact represented only by an orphan hash. The contract also needs explicit equality relations between overlapping source identities in the execution, child-stub, parser, and mock manifests rather than relying on the future fixture oracle to imply them.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "At least one provenance-bearing manifest hash has no required artifact or evidence binding, and cross-manifest identity relations are not fully normative."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "operations",
+      "concern_id": "C06_publication_platform_and_immutability_underspecified",
+      "evidence": "The design requires an atomic no-replace rename, a single-writer lock, no-follow creation, directory fsync, and an immutable committed file, but it freezes no operating-system or filesystem contract, lock acquisition/recovery semantics, or concrete no-replace primitive. Mode 0600 leaves the owner able to modify the committed inode, so immutability is at most a convention unless the threat model is explicitly detection-only. PC6 omits competing-writer, destination-collision, symlink-swap, lock-owner-crash, and post-commit mutation cases. Merely binding a platform manifest after execution does not define which platform behavior was approved.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The central durability claim lacks a uniquely implementable platform contract and does not operationally establish no-replace publication or immutability."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "operations",
+      "concern_id": "C07_evidence_receipt_failure_lifecycle_missing",
+      "evidence": "The evidence receipt is outside the six-record chain and has its own partial-file, fsync, rename, and directory-fsync sequence. PC6's expected result discusses only the committed canary artifact, while PC9 mutates receipt contents but does not freeze recovery after receipt-write crashes, destination collisions, stale receipts, or receipt/canary replacement races. The interpretations also disagree in sequencing: the systems interpretation places evidence binding before rename, whereas the proposal and advisory require the binder to hash the committed file after publication.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Claim eligibility depends on a separately published receipt whose crash states and exact position relative to canary commitment are not consistently specified or tested."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC8_RESOURCE_BOUNDARIES"
+      ],
+      "category": "evaluation",
+      "concern_id": "C08_resource_and_error_precedence_is_internally_inconsistent",
+      "evidence": "The frozen validation order places E_RESOURCE before E_UTF8 and E_JSON_RAW. Several resource predicates\u2014decoded ByteString aggregate, JSON depth, ByteString count, ID-array length, and action count\u2014cannot be classified without parsing or decoding the input. PC8 nevertheless allows E_RESOURCE or an 'earlier raw-byte error,' although no raw-byte error is earlier in the printed order. Inputs that are simultaneously malformed and over a semantic limit therefore have no unique first failure.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "PC2 and PC8 cannot demand deterministic first-failure agreement until parsing-dependent resource checks and raw-syntax errors have a coherent precedence law."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC8_RESOURCE_BOUNDARIES",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "evaluation",
+      "concern_id": "C09_oracle_acceptlist_shortcut",
+      "evidence": "PC7 requires every coordinated alternative to fail unless it is a pre-registered immutable fixture, and all success, rejection, and mutation fixtures are fixed before implementation. Two validators can consequently pass the entire suite by accepting the registered golden hashes, returning registered errors for the mutation hashes, and rejecting everything else. Source distinction does not prevent this because both validators share the schemas and declarative oracle. That would demonstrate registry reproduction, not the claimed independent recomputation of parser, transition, score, and relational bindings.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The test universe admits a hash-allowlist shortcut that bypasses the intended relational-validation path."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "scientific",
+      "concern_id": "C10_structural_receipt_not_runtime_provenance",
+      "evidence": "The source hash, received-request hash, actor labels, and committed response can all be generated consistently by the harness or fixture oracle. The validators can establish relations among recorded bytes but cannot independently establish that the named child produced the response, that the recorded fsyncs occurred, or that the transition was the unique runtime computation. The systems interpretation independently raises this distinction, whereas the title, 'causally ordered' rationale, and maximum-claim phrase 'child request and response' remain susceptible to a runtime-provenance reading.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The maximum claim must be phrased as internal structural binding of recorded fixture bytes unless independent runtime observations are added."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "C11_no_answer_or_secrecy_inference_from_private_fixture",
+      "evidence": "The deterministic stub source, private fixture, manifests, oracle, and validators may contain or derive the golden action sequence, transition constants, and score. Exact message and response bytes are not yet present, so it is impossible to audit whether the future child request itself embeds the expected action or scorer information. PC3 proves only that assistant prose is inert as dispatch authority. The one-root design has no future policy consumer and makes no secrecy claim, so this does not invalidate the narrow integrity canary, but it precludes any conclusion about answer leakage, task blindness, or noninterference.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "The fixture is allowed to be answer-bearing and fully synthetic; its private label and prose-inertness test provide no answer-leakage or secrecy evidence."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC8_RESOURCE_BOUNDARIES",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C12_no_memory_learning_or_emergent_structure_assay",
+      "evidence": "The proposal deliberately removes every parent, thinker, future answer, recurrence, outcome-feedback, dream, local memory edge, explicit graph, LoRA transport, context-selection, and later action endpoint. Accordingly there is no module from which a parent structure or final answer is improperly demanded, but neither can such structure emerge across recurrent dream-memory-think iterations. PC1-PC9 cannot distinguish recall, composition, generalization, planning, revision, action improvement, or online learning from passive lookup or a fixed prior. No local memory variant or connection exists whose evidence provenance could be distinguished from synthetic re-expression.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "A passing canary supplies no credit-assignment or mechanism evidence for the project thesis and cannot be reused as a memory or online-learning result."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC8_RESOURCE_BOUNDARIES",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "statistics",
+      "concern_id": "C13_no_baseline_split_or_statistical_protocol",
+      "evidence": "PC1 contains two registered synthetic paths and the remaining tests are deterministic mutation and boundary cases. There are no sampling units, seeds, sample-size or power calculation, opaque splits, duplicate or semantic-family audit, baseline interfaces, multiplicity control, equivalence margins, stopping rule, replication rule, or predeclared negative-result language. This is acceptable only because every behavioral and scientific-performance claim is explicitly forbidden.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "The suite is deterministic engineering verification, not a statistical experiment, and cannot support comparative or negative scientific conclusions."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC8_RESOURCE_BOUNDARIES"
+      ],
+      "category": "scalability",
+      "concern_id": "C14_resource_bounds_are_not_scaling_evidence",
+      "evidence": "PC8 tests parser and artifact limits for one six-record fixture. The design freezes no lifetime length, memory scale, model scale, throughput, wall-clock behavior, task distribution, or compute-matched mechanism comparison. Exact-limit acceptance therefore cannot support a scalability, continued-improvement, or efficiency claim.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Resource-envelope conformance must not be reported as evidence of organismal or systems scaling."
+    },
+    {
+      "acceptance_test_ids": [
+        "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+        "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+        "PC3_PROSE_IS_INERT",
+        "PC4_TRANSITION_AND_ORDER",
+        "PC5_TOTAL_LINEAR_LIFECYCLE",
+        "PC6_CRASH_PUBLICATION_MATRIX",
+        "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+        "PC8_RESOURCE_BOUNDARIES",
+        "PC9_EVIDENCE_RECEIPT_BINDING"
+      ],
+      "category": "operations",
+      "concern_id": "C15_exact_human_ratification_is_pending",
+      "evidence": "The verbatim directive gives general approval of strictness and conditional compute latitude but explicitly does not ratify this proposal, its SHA-256, its future contract bytes, or the exact requested scope. AGENTS.md, scope_proposal.json, both interpretations, and the proposal's human boundary all require a later exact human decision. Neither schema compliance, this critique, nor eventual model consensus can authorize authoring or execution.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "No implementation, fixture authoring, PC1-PC9 execution, or claim is currently authorized."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v2/human_directive.txt",
+      "purpose": "Binding directive and pre-ratification authority boundary.",
+      "sha256": "4d6620787b1190a27cedaaafd8b9a37637ad82727c240756fed3f983a6683843"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Architecture deliberation, human ratification, review, and GPU gate.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_private_typed_action_provenance_canary_v2/scope_proposal.json",
+      "purpose": "Requested CPU scope and forbidden live or scientific scope.",
+      "sha256": "b8ec17dca421977be9a12a2deb1e516e99dc88074f3de5a1eda7f8895019d193"
+    },
+    {
+      "path": "research_loop/plans/private_typed_action_provenance_canary_v2.md",
+      "purpose": "Canary plan, lifecycle, tests, claim ceiling, and authority boundary.",
+      "sha256": "b696f2e6645b009cdb303be3f9de5d9ba425c6154c90d8b8fb3ee42200ed5a47"
+    },
+    {
+      "path": "research_loop/advisory/20260906_private_typed_action_provenance_canary_v2_design.md",
+      "purpose": "Normative protocol, schemas, durability, resources, and deferred work.",
+      "sha256": "6c379465a0e7bcfeb44beb8adaef2acba117afe56afb83cdde0bc2f5ef5aae7e"
+    },
+    {
+      "path": "research_loop/plans/prospective_action_trace_spine_v0.md",
+      "purpose": "Superseded broader action-trace proposal.",
+      "sha256": "a77035b6687a097c37c196bbf761a968d4ecac13c1e1d373f96f95cdaa5328a7"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/critique.json",
+      "purpose": "Prior adversarial blockers motivating the reduced canary.",
+      "sha256": "b946d852eb02aa5f9584527849cde70b07751d25c58d9893e71fd885891724c8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260906_prospective_action_trace_spine_v1/consensus.json",
+      "purpose": "Prior rework adjudication and preserved claim boundaries.",
+      "sha256": "ecf61f99c5bfb60df33f5deee6a04892b12b11cdb5418af0b5906a46a7ecb4e9"
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "purpose": "Hash, scope, schema, state-transition, and human-authorization gate.",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea"
+    },
+    {
+      "path": "research_loop/architecture_deliberation.py",
+      "purpose": "Persistent fresh-context deliberation workflow.",
+      "sha256": "f1d8e87cd7bd78b30755e986008936c154453c995c6e83abff70358b80165dcb"
+    }
+  ],
+  "critique_id": "crit_20260906_private_typed_action_provenance_canary_v2_adversarial_v1",
+  "human_questions": [
+    "Will Rohin ratify one fully authored, hash-bound contract/schema/manifest/oracle/fixture bundle before implementation, or is a second exact human ratification required after the currently requested authoring step?",
+    "What exact response-envelope field type and extraction algorithm produce successful, empty, malformed, unknown-tool, duplicate-call, and assistant-prose fixtures without contradicting canonical JSON?",
+    "Which module authors the PRIVATE_DISPATCH_RECEIPT on a rejected parse, and how will its actor role prove non-dispatch without invoking PRIVATE_MOCK_ENV?",
+    "Is the claim intentionally limited to internal structural relations among recorded deterministic-fixture bytes, with no assertion that a child independently produced the response or that the ledger captures every runtime invocation?",
+    "What exact operating-system, filesystem, lock, no-replace primitive, recovery model, and post-commit mutation threat model define the local durability claim?",
+    "Must approval add independent runtime instrumentation for stub/parser/mock call cardinality and fsync-before-authorization order, including discarded or abandoned outputs?",
+    "How will renderer-manifest bytes and every cross-manifest source identity be included in the canonical evidence receipt?",
+    "Does Rohin agree that any future model, parent, dream, memory, LoRA, benchmark, online-learning, planning, action-improvement, secrecy, scaling, or Experience Models claim requires a new material change and cannot cite PC1-PC9 as behavioral evidence?",
+    "After the blocking contract and test gaps are resolved, is the deliberately tiny structural-provenance claim worth the implementation and audit cost?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260906_private_typed_action_provenance_canary_v2.systems",
+      "sha256": "f89bec648067ba005f3b78004bc234c5c7c912617911af9391cd7fa44e9d8c93"
+    },
+    {
+      "interpretation_id": "chg_20260906_private_typed_action_provenance_canary_v2.benchmark",
+      "sha256": "20199fb9c8a5c2f6d87af02dc3541d0120c0ea84794697b149acd9ae1b5d3dbc"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PC0_EXACT_CONTRACT_RATIFICATION_BINDING: require the complete canonical contract, schemas, manifests, oracle, golden and mutation fixtures, and sorted scope to exist and be hash-bound by explicit human authorization before any implementation source is authored.",
+    "PC10_RESPONSE_ENVELOPE_EXTRACTION: freeze the response-envelope field types and byte-extraction laws; cover success, empty, malformed JSON, duplicate keys/calls, unknown tool, assistant Unicode, pointer failure, and canonical re-encoding with one stable first error.",
+    "PC11_REJECTION_RECEIPT_OWNERSHIP: prove which role creates the rejected-path event-4 receipt, that PRIVATE_MOCK_ENV is not invoked, and that the actor and source hashes accurately identify the receipt producer.",
+    "PC12_RUNTIME_OPERATION_CARDINALITY_AND_ORDER: use source-independent spies or operation receipts to detect unrecorded second stub calls, parses, dispatches, discarded branches, and any authorization executed before its required fsync.",
+    "PC13_MANIFEST_CLOSURE: require retrievable bytes for the renderer and every other referenced manifest and prove all overlapping source, lock, interpreter, dependency, schema, and payload hashes agree across the ledger and evidence receipt.",
+    "PC14_PUBLICATION_PLATFORM_AND_IMMUTABILITY: freeze supported filesystem semantics and test no-replace collisions, concurrent writers, lock-owner crash, symlink swaps, inode substitution, directory-fsync recovery, and post-commit mutation detection or prevention.",
+    "PC15_EVIDENCE_RECEIPT_CRASH_RECOVERY: inject failure around every evidence-receipt create, write, fsync, rename, collision, and directory-fsync step and prove that stale, partial, mismatched, or replaced receipts never make a canary claim-eligible.",
+    "PC16_VALIDATION_PRECEDENCE_TOTALITY: enumerate inputs that simultaneously violate raw syntax and parsing-dependent resource limits and require one implementable, deterministic first-error decision from both validators.",
+    "PC17_VALIDATOR_NONTRIVIALITY: audit against golden-hash allowlisting and use independently generated or sequestered metamorphic cases to show that parser, transition, score, and relational rules are actually recomputed.",
+    "FUTURE_PC_ACTUAL_CONSUMER_PROVENANCE: under a separately ratified live change, independently observe exact request consumption, offered schema, raw structured response, operation cardinality, action dispatch, environment transition, and scorer computation.",
+    "FUTURE_PC_SHORTCUT_RESISTANT_MEMORY_GAME: pre-register target-hidden paired worlds that prevent raw history, answer priors, RAG, explicit graph lookup, query-to-agenda selection, and future-state leakage from bypassing the intended recurrent memory path.",
+    "FUTURE_PC_RECALL_COMPOSITION_GENERALIZATION_PLANNING_ACTION: separately measure recall, multi-evidence composition, generalization, multi-step planning, revision, valid action choice, and task-value improvement.",
+    "FUTURE_PC_ONLINE_ACTION_OUTCOME_LEARNING: require a prospective action/outcome followed by an eligible update and a later parent-absent behavioral change against no-update, passive-lookup, shuffled-outcome, wrong-life, and fixed-prior controls.",
+    "FUTURE_PC_MEMORY_PROVENANCE_AND_MECHANISM_ABLATIONS: label copied evidence, supported inference, hypothesis, contradiction, and synthetic re-expression for every local connection, and budget-match text context, RAG, explicit graph state, dream recurrence, LoRA transport, and thinker computation with bridge, recurrence, connectivity, and adapter ablations.",
+    "FUTURE_PC_SPLIT_STATISTICS_NEGATIVE_SCALING: before task inspection freeze opaque splits, duplicate and semantic-family audits, sample size and power, statistical units, paired seeds, multiplicity, equivalence margins, stopping, replication, negative-result language, lifetime length, memory scale, and compute-scale claims."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PC1_GOLDEN_SUCCESS_AND_REJECTION",
+    "PC2_STRUCTURED_CHANNEL_PROVENANCE",
+    "PC3_PROSE_IS_INERT",
+    "PC4_TRANSITION_AND_ORDER",
+    "PC5_TOTAL_LINEAR_LIFECYCLE",
+    "PC6_CRASH_PUBLICATION_MATRIX",
+    "PC7_COORDINATED_RELATIONAL_MUTATIONS",
+    "PC8_RESOURCE_BOUNDARIES",
+    "PC9_EVIDENCE_RECEIPT_BINDING"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that this is a disciplined reduction of the rejected broad spine into a falsifiable engineering prerequisite. It removes public projection, future context, recurrence, branch supersession, real tools, parents, dreaming, LoRA, evaluation, and GPUs instead of pretending that a plumbing test resolves their visibility and credit-assignment problems. If its exact bytes and runtime observation contract were frozen before implementation, prospective fsync-before-authorization, structured-channel-only dispatch, prose inertness, a pure transition, a six-record immediate-parent chain, coordinated mutation tests, resource limits, dual replay, and a separately bound evidence receipt could establish a useful but tiny result: internal structural consistency and durability of one registered deterministic fixture. Both interpretations correctly deny model consumption, intent, secrecy, memory, learning, planning, action improvement, benchmark performance, and scaling. Schema compliance would remain necessary but would not be scientific approval.",
+  "visibility_failures": [
+    "VF1: Exact message, request, response, manifest, and oracle bytes do not yet exist, so the review cannot verify whether expected actions, scorer information, or other answer-bearing material will be embedded in the child-visible fixture.",
+    "VF2: The private root is an integrity convention, not a tested confidentiality boundary; validators, the evidence binder, operators, and independent reviewers necessarily see private transition and oracle material.",
+    "VF3: The undefined tool-channel representation and pointer-extraction law permit incompatible interpretations of structured bytes, malformed channels, assistant text, and duplicate calls.",
+    "VF4: Extra or abandoned stub responses, parses, and pure-mock invocations can remain invisible when only the selected six records are validated.",
+    "VF5: renderer_manifest_sha256 can name an absent or substituted artifact because its bytes are not explicitly bound by event 0 or the canonical evidence-receipt list.",
+    "VF6: No policy-visible repeat, budget, query selector, recurrence, shared-ancestry diamond, or future context exists in this canary; prior laundering, repeat-observability, branch-release, and false-cycle defects are removed from scope rather than solved for a future organism.",
+    "VF7: A committed canary may exist without a durable evidence receipt, and the receipt's own crash and replacement states are not included in the current publication matrix.",
+    "VF8: Because the deterministic stub and oracle may encode the golden action sequence, a successful trace cannot demonstrate that an answer was inferred rather than replayed; only the structural provenance claim can survive."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dream-state:one-parent-v4:parent-input",
+  "title": "Target-blind parent process view",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "opportunity_id", "eligible_lesson_codes", "events"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "opportunity_id": {"type": "string", "pattern": "^OPP_[A-F0-9]{16}$"},
+    "eligible_lesson_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 3,
+      "items": {"enum": ["PREDICT_UPDATE", "DISCRIMINATE", "SCOPE"]}
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "event_kind", "prediction_state", "hypothesis_count_band", "discrimination_state", "scope_state", "utility_band"],
+        "properties": {
+          "event_id": {"type": "string", "pattern": "^EV_[A-F0-9]{16}$"},
+          "event_kind": {"enum": ["THOUGHT", "PREDICTION", "ACTION", "PUBLIC_OUTCOME", "REVISION"]},
+          "prediction_state": {"enum": ["NOT_APPLICABLE", "ABSENT", "SUPPORTED", "CONTRADICTED_UNREVISED", "CONTRADICTED_REVISED"]},
+          "hypothesis_count_band": {"enum": ["ZERO", "ONE", "TWO_OR_MORE"]},
+          "discrimination_state": {"enum": ["NOT_APPLICABLE", "DISCRIMINATING", "NONDISCRIMINATING", "UNDECIDABLE"]},
+          "scope_state": {"enum": ["NOT_APPLICABLE", "LOCAL", "SUPPORTED_PROMOTION", "OVERGENERALIZED", "NARROWED"]},
+          "utility_band": {"enum": ["NOT_APPLICABLE", "BELOW_GUARD", "WITHIN_GUARD", "ABOVE_ENTRY"]}
+        }
+      }
+    }
+  }
+}
+

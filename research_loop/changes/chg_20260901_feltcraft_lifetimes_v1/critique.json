@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "crit_chg_20260901_feltcraft_lifetimes_v1_adversarial_v1",
+  "change_id": "chg_20260901_feltcraft_lifetimes_v1",
+  "state": "critiqued",
+  "architecture_change_sha256": "3f349860ec02a906caff8c735f3c8068e525dfa2bb9a3fd32aa81bef707489dd",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260901_feltcraft_lifetimes_v1.systems",
+      "sha256": "d52e9fdba4bf93e1c8657789512df589115de022f308b47cb88fba41d9e66fa0"
+    },
+    {
+      "interpretation_id": "chg_20260901_feltcraft_lifetimes_v1.benchmark",
+      "sha256": "b8b5788c67103daaecc5df0c5b39d12f4a2097a1490c0cf73e809f1c98d89b37"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Project contract requiring independent interpretation, adversarial critique, adjudication, exact human ratification, scoped implementation, and a separate GPU and scientific-claim gate."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/change.json",
+      "sha256": "3f349860ec02a906caff8c735f3c8068e525dfa2bb9a3fd32aa81bef707489dd",
+      "purpose": "Exact architecture change whose graph, loops, claims, visibility product, tests, scope boundary, and human boundary are cross-critiqued."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/human_directive.txt",
+      "sha256": "5219e7c74db620069cc64a8d0aa96f4877e92e75f6741d75054cb5f1f1c828dc",
+      "purpose": "Verbatim human direction to optimize for rigorous paper-level science and not rush or reduce the design."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/proposal.md",
+      "sha256": "53a301c9de3ab65f3ff94509c545a6a15d35dd4750fd6bb43cf7d2cc958084bd",
+      "purpose": "Authoritative research proposal for the benchmark, reference architecture, estimands, promotion ladder, kill rules, resources, and authority scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/world_contract.md",
+      "sha256": "1dd1a593b571204f77e125422d5ef19bbbf49064ba688a22361ab759899be871",
+      "purpose": "Normative CPU-v0 causal-world, public-state, action-kernel, source, target, information, isolation, and negative-gate contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/scope_proposal.json",
+      "sha256": "a73f6a03c2ffd9604f5755f29fc441506b21298e19d13e6e71fa64c920043f68",
+      "purpose": "Canonical proposal-only list of six requested CPU scope atoms, seven forbidden scope atoms, and the non-authorizing effect."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/interpretation_systems.json",
+      "sha256": "d52e9fdba4bf93e1c8657789512df589115de022f308b47cb88fba41d9e66fa0",
+      "purpose": "Exact fresh systems interpretation, including eight ambiguities and four disagreements disposed individually below."
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_lifetimes_v1/interpretation_benchmark.json",
+      "sha256": "b8b5788c67103daaecc5df0c5b39d12f4a2097a1490c0cf73e809f1c98d89b37",
+      "purpose": "Exact fresh benchmark interpretation, including eighteen ambiguities and fourteen disagreements disposed individually below."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict schema transitively used by critique validation to validate the architecture change."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Strict schema transitively used by critique validation to validate both independent interpretations."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict canonical shape for this critique artifact."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Validation implementation for exact context hashes, change and interpretation byte bindings, independent perspectives, complete test coverage, and human-only authority release."
+    }
+  ],
+  "strongest_case": "The strongest defensible case is that FeltCraft-Lifetimes targets an important paper-level question with an unusually disciplined causal-credit boundary: immutable public experience is the only evidence source; DREAM proposes but cannot certify; later ordinary outcomes ground; SLEEP only transforms admitted content; text, graph, and LoRA are separated from reader--THINK composition; common-deck evaluation is separated from on-policy learning; useful negative phase diagrams are preserved; and the proposal explicitly withholds all present authority and all model, tokenizer, LoRA, GPU, locked-study, promotion, and claim authority. The paired RANDOM/MOTIF twins, constructive A2/A3/S targets, explicit graph and motif baselines, suffix noninterference, resource ledgers, and human-only promotion boundary could form a strong benchmark after exact repair. However, both independent interpretations correctly show that the present bytes leave outcome-determining choices to implementers and contain unresolved causal, visibility, scope, and comparator ambiguities. Therefore the exact six-atom CPU evidence-producing scope is not ratifiable as written. A successor reviewed change must hash-bind executable manifests and golden fixtures, resolve the RANDOM--MOTIF estimand, condition leakage and entropy on accepted-deck selection, close the capability and field-level visibility graph, limit AT06 to authorized CPU state, and bind the read-only PCFL-Stream comparator and decision table. A narrower authority to draft those successor proposal bytes could be considered, but it is not the canonical requested scope in these bytes. Later model/statistical concerns are nonblocking for that drafting-only step but remain mandatory gates. This critique, validation, consensus, or any later green CPU receipt grants no authority; only Rohin Ghosh may ratify exact successor bytes and exact scope.",
+  "reviewed_acceptance_test_ids": [
+    "AT01_change_hash_scope_and_independent_review",
+    "AT02_CPU_capability_firewall",
+    "AT03_world_quadruplet_determinism_and_kernel",
+    "AT04_target_collision_headroom_and_leakage",
+    "AT05_information_growth_MDL_paths_and_resources",
+    "AT06_evaluation_suffix_noninterference",
+    "AT07_future_representation_transport_and_causal_gates",
+    "AT08_estimands_statistics_resources_and_claim_firewall",
+    "AT09_no_automatic_promotion"
+  ],
+  "concerns": [
+    {
+      "concern_id": "X_AMB_SYS_001_GRAPH_REFERENTIAL_CLOSURE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "AMB_SYS_001 is sustained and blocks ratification of an executable CPU capability graph: E02, E03, and E06 name endpoints that are neither declared nodes nor explicitly owned subnodes.",
+      "evidence": "The delta declares N01--N06 but uses DREAM, ChronologicalGrounding, SLEEPCompiler, and SealedScorerAudit as edge endpoints. Exact repair: a successor change must either declare these nodes or map each name to one declared owner, including runtime principal, reads, writes, and authority. Required test: MT02 must parse the graph, reject dangling endpoints, derive reachability, and prove that only L01-authorized CPU principals are reachable.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT02_CPU_capability_firewall", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_002_CPU_DETERMINISTIC_DECK_FREEZE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "AMB_SYS_002 is sustained: the CPU source/deck protocol and terminal sample are not derivable from the ratified bytes.",
+      "evidence": "Era and episode counts, source schedule, target counts, budgets, accepted-versus-attempted stopping rule, and replacement policy alter public information, acceptance, yield, and resource results. Exact repair: bind a machine-readable schedule/deck manifest with all cardinalities, budgets, ordering, rejection, replacement, and stop rules before sampling. Required test: MT01 must reproduce golden manifests and identical terminal accepted/attempted counts across process and permitted platform reruns.",
+      "acceptance_test_ids": ["AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_003_TWIN_DERANGEMENT_CONSTRUCTION",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "AMB_SYS_003 is sustained: tau_q is outcome-determining but its domain and construction are unfrozen.",
+      "evidence": "Different involutive derangements can cross raw/crafted types, preserve or break template automorphisms, and change feasibility or shortest paths. Exact repair: bind tau derivation, typed domain, automorphism constraints, site/candidate coupling, canonical ordering, and rejection behavior. Required test: MT03 must exhaustively prove involution, type preservation, recipe/binding equivariance, decisive-set mapping, equal public grammar, and equal path difficulty for golden and randomized quadruplets.",
+      "acceptance_test_ids": ["AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_004_INFORMATION_AND_MDL_CODE",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "AMB_SYS_004 is sustained: identified information and both MDL quantities lack executable definitions, so AT05 can change under equally plausible implementations.",
+      "evidence": "No exact identification closure or complete prefix-free L_enum/L_schema codec is bound. Exact repair: freeze logical identification, encoder/decoder, template and model-class selection cost, permutations, bindings, deviations, exceptions, provenance, precision, rejected-model treatment, active-memory overhead, units, and matched-loss tolerance. Required test: MT04 must round-trip every code, prove prefix-freeness, match hand-computed golden bits, and show invariant information counts under serialization order.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_005_CPU_PASS_THRESHOLDS_AND_COHORTS",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "AMB_SYS_005 is sustained: cohort denominators and the CPU retain/rework/reject rule are not complete.",
+      "evidence": "The .85/.35 directions omit exact cohort sizes, target and stratum weights, per-cell aggregation, minimum MOTIF schema gain, and the status of 'potentially shorter L_schema.' Exact repair: bind denominators, weights, failure handling, per-target solvability, confidence or exact finite-cohort rule, schema-gain threshold, and a complete decision table. Required test: MT05 and MT12 must produce the same verdict on boundary-valued golden cohorts and reject denominator or weighting changes.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_006_CAPABILITY_FIREWALL_CLOSURE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "AMB_SYS_006 is sustained: AT02 asserts universal fail-closed behavior without a closed runtime capability universe.",
+      "evidence": "Entry points, transitive imports, subprocesses, dynamic plugins, environment-controlled backends, filesystem roots, device APIs, credentials, and network resources are not closed. Exact repair: bind a denied-by-default runtime manifest and enforcement policy covering dependencies, processes, files, environment, devices, and network. Required test: MT06 must combine static closure with dynamic adversarial attempts and fail before side effects on every unclassified capability.",
+      "acceptance_test_ids": ["AT02_CPU_capability_firewall", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_007_READER_CANDIDATE_INTERFACE",
+      "category": "scalability",
+      "severity": "material",
+      "statement": "AMB_SYS_007 is sustained but is nonblocking for a correctly narrowed CPU-instrument stage; it becomes blocking before any reader/model gate.",
+      "evidence": "The proposal distinguishes generative headline reads from constant-size recognition candidates but does not bind generative backend work or whether candidate construction is shared. Exact repair before AT07: bind separate generative and recognition interfaces, output grammar, candidate visibility, hidden scans, lifetime dependence, tokens, latency, and byte/work budgets. Required test: MT15 must adversarially detect answer menus, lifetime-linear hidden scans, unledgered candidate work, and interface drift across substrates.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_AMB_SYS_008_CPU_SUFFIX_HASH_DOMAIN",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "AMB_SYS_008 is sustained: AT06 is scope-ambiguous because literal compiler/memory hashes imply dormant N03/N04 implementation.",
+      "evidence": "The six requested atoms do not authorize scientific SLEEP, memory substrates, or adapters. Exact repair: define the first-stage hash domain as authorized source/deck/controller/RNG/cache/report state plus inert typed canaries only, and state that compiler/model/adapter isolation is untested until repeated under later authority. Required test: MT08 must verify both the limited CPU run-versus-skip suffix and denial of real compiler, substrate, adapter, tokenizer, or model imports.",
+      "acceptance_test_ids": ["AT06_evaluation_suffix_noninterference", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_DIS_SYS_001_EXACT_CONTRACT_NOT_YET_EXECUTABLE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "DIS_SYS_001 is accepted: the prose is causally specific but not an exact evidence-producing CPU protocol, so the canonical six-atom scope is not ratifiable.",
+      "evidence": "The missing schedule, budgets, cohort sizes, stopping rule, tau, identification rule, and codecs can change accepted worlds and the retain/rework/reject outcome. Exact repair: a successor architecture change must hash-bind machine-readable manifests and golden fixtures; any choice changing manipulation, cohort, threshold, estimand, visibility, or claim boundary requires renewed interpretation and critique. Required test: MT01--MT05 must pass before any benchmark evidence run, not merely after implementation.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_DIS_SYS_002_FIREWALL_ENUMERATION_IS_INSUFFICIENT",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "DIS_SYS_002 is accepted: named negative tests do not establish a universal capability firewall.",
+      "evidence": "Dynamic imports, subprocesses, filesystem discovery, environment backends, device discovery, and alternate network libraries can bypass an enumeration. Exact repair: use a closed manifest plus deny-by-default OS/process/filesystem/network/device policy and credential-free environment. Required test: MT06 must prove static and runtime closure and classify any unknown resource as forbidden before side effects.",
+      "acceptance_test_ids": ["AT02_CPU_capability_firewall", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_DIS_SYS_003_AT05_POTENTIAL_MDL_IS_NOT_FALSIFIABLE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "DIS_SYS_003 is accepted: 'potentially shorter L_schema' is descriptive and cannot be an AT05 pass condition.",
+      "evidence": "That phrase admits either ordering while AT05 is supposed to produce a retain/rework/reject verdict. Exact repair: the successor must state that CPU AT05 requires exact preregistered reporting only, with no shorter-code eligibility threshold, or bind a numeric inequality and matched-loss rule; either choice must preserve the ban on a compression claim. Required test: MT04 and MT12 must exercise both L_schema orderings and verify the declared deterministic disposition.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_DIS_SYS_004_AT06_MUST_NOT_EXPAND_CPU_SCOPE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "DIS_SYS_004 is accepted: the first AT06 cannot implement or execute future SLEEP, substrate, or adapter code.",
+      "evidence": "N03/N04 are dormant and model/weight operations are forbidden. Exact repair: constrain AT06 to the authorized CPU hash domain and inert fixtures, then require a new end-to-end isolation audit in every later exact authorization. Required test: MT08 must show that real future components are unreachable while authorized suffix state remains byte-identical.",
+      "acceptance_test_ids": ["AT06_evaluation_suffix_noninterference", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A001_rng_hash_and_serialization_bytes",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "BENCH_A001 is sustained: bit determinism is untestable across implementations without exact PRNG, derivation, ordering, normalization, and serialization bytes.",
+      "evidence": "The contract names counter namespaces but no algorithm, tuple encoding, integer sampler, namespace strings, Unicode normalization, serializer, or version envelope. Exact repair: bind all of those plus golden input/output vectors. Required test: MT01 must reproduce byte-identical worlds and receipts across process restarts, call-order and suffix perturbations, and every permitted runtime version.",
+      "acceptance_test_ids": ["AT03_world_quadruplet_determinism_and_kernel"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A002_source_schedule_and_target_deck_generator",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BENCH_A002 is sustained: source experience and target construction remain scientific degrees of freedom.",
+      "evidence": "Schedule, action distribution, eras, templates, inventories, budgets, repetitions, cohort sizes, grouping, and stopping determine identifiability, leakage, brute force, path length, growth, and power. Exact repair: hash-bind executable source and deck generators with complete manifests and no post-result replacement. Required test: MT01 and MT05 must compare outputs to golden decks and reject any schedule, grouping, budget, or weighting drift.",
+      "acceptance_test_ids": ["AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A003_atom_schema_and_operation_bandwidth",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_A003 is sustained but is nonblocking for a world-only CPU stage; it is blocking before any compiler, reader, THINK, DREAM, or model-backed gate.",
+      "evidence": "One syntactic predicate can encode a full solver or plan when grammar, bits, variables, scope, Z, and operation budgets are absent. Exact repair before AT07: bind typed atom/procedure/schema/shortcut and anchor/return grammars, serialized bit caps, target-bearing-field bans, Z size, and operation/query/action budgets. Required test: MT15 must reject oversized, nested, self-interpreting, target-conditioned, plan-bearing, or equivalent encoded payloads.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A004_chronological_support_rule",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_A004 is sustained but is nonblocking for the generator-only CPU stage; chronology alone is insufficient before learned DREAM/SLEEP execution.",
+      "evidence": "One later success could support an overbroad schema because predicate-specific evidence multiplicity, matching, contradiction, revision, and revocation are unspecified. Exact repair before AT07: bind a public-data-only lifecycle state machine per predicate class, independent-root requirements, separating positive/negative panels, scope refinement, and precision intervals. Required test: MT16 must reject self-support, repeated-root pseudo-replication, broad claims supported by narrow cases, and evaluation-derived status changes.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A005_accepted_deck_posterior_and_entropy",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_A005 is sustained: no-memory, entropy, and leakage quantities must condition on the public fact of accepted-deck selection.",
+      "evidence": "Joint structural, headroom, and leakage rejection can correlate visible target fields with hidden bindings even when receipts are hidden. Exact repair: define the prior and sigma-field after the complete deterministic acceptance algorithm, and compute H_target_no_memory, H_target_source, and Bayes-optimal target-only performance under that conditional distribution. Required test: MT09 must compare unconditional and selection-conditioned posteriors and fail if the accepted-deck Bayes policy exceeds its registered floor.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A006_controller_information_and_access_budgets",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BENCH_A006 is sustained: the named CPU controllers are not comparable until each information set, interface, computation budget, tie rule, and randomness is frozen.",
+      "evidence": "No-memory, brute-force, observed-atom, schema, exact-memory, and hidden-oracle policies mix information-theoretic and interface-constrained ceilings. Exact repair: bind a separate typed contract for each controller and distinguish legal-source exact memory from hidden-world oracle. Required test: MT05 must taint every controller input, enforce action and compute budgets, replay tie/random rules, and verify monotone information inclusion without hidden access.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A007_mdl_code_and_matched_loss",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_A007 is sustained: the CPU MDL report is not interpretable without complete prefix-free codecs and matched-loss tolerance.",
+      "evidence": "Omitting the designer-supplied template, decoder, model selection, rejected schemas, provenance, precision, or active memory can manufacture compression. Exact repair: bind complete executable codecs, selection costs, decoder cost allocation, units, and predictive/action-loss matching rule. Required test: MT04 must prove round-trip and prefix-free properties and charge all supplied structure on golden examples.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A008_inference_alpha_algorithm_and_power",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "BENCH_A008 is sustained but is nonblocking for negative-only CPU construction; it is blocking before calibration, confirmation, or any scientific claim.",
+      "evidence": "AT08 does not bind alpha, baselines, families, weights, studentization, multiplier law, repetitions, centering, inversion, finite-sample correction, resizing simulation, or operating characteristics. Exact repair before confirmation: freeze executable estimator code and a power/type-I simulation under the exact selection, clustering, missingness, and multiplicity pipeline, allowing sample size above 48 or abandonment if needed. Required test: MT17 must reproduce familywise coverage and power at the registered .10 effect.",
+      "acceptance_test_ids": ["AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A009_C2_growth_and_retention_contrasts",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "BENCH_A009 is sustained but is nonblocking for CPU construction; it is blocking before C2 because the slope alternative conflicts with the two-interval gate.",
+      "evidence": "A positive overall slope can coexist with failure from 4L to 8L, and the old-retention panel/reference is unspecified. Exact repair: require both simultaneous interval lower bounds above .02 plus a fully defined earliest-quartile old-panel noninferiority contrast at -.05; keep slope descriptive unless a successor defines a different claim. Required test: MT18 must reject synthetic data with a positive slope but either failed interval or failed retention.",
+      "acceptance_test_ids": ["AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A010_RANDOM_schema_gain_rule",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BENCH_A010 is sustained: AT05 requires MOTIF-only schema gain but never defines a fail-closed no-gain rule for RANDOM.",
+      "evidence": "A positive difference-in-differences and .10 MOTIF gain can coexist with a material RANDOM gain. Exact repair: bind a simultaneous one-sided upper bound or equivalence interval, margin, family, unit, and failure disposition for full-schema minus atoms-only in RANDOM. Required test: MT12 must fail golden cases with a positive DiD but RANDOM gain outside the bound.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A011_target_level_solvability_and_threshold_aggregation",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BENCH_A011 is sustained: a constructive benchmark cannot hide impossible targets behind cohort-average .85 headroom.",
+      "evidence": "A cohort oracle mean of .85 permits 15 percent impossible or misbudgeted targets and uneven failure by stratum; pooled .35 checks can similarly hide target leakage. Exact repair: require a per-target hidden-oracle path/solvability certificate, separately specified authentic-source-memory headroom, and predeclared tightly stratified aggregation for non-oracle thresholds. Required test: MT05 must reject every impossible target and cohorts whose leakage or headroom failure is masked by pooling.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A012_native_cut_realization",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "BENCH_A012 is sustained and nonblocking for absolute CPU cuts, but no CPU result may be called post-native and it is blocking before C2.",
+      "evidence": "L_native depends on the future action model, tokenizer, prompt, serializers, workspace/history allowance, output reserve, truncation, and complete-event tie rule, all forbidden now. Exact repair before a model stage: hash-bind those exact bytes and derive cuts anew under separate authority; forbid relabeling CPU absolute cuts. Required test: MT19 must compute deterministic cuts from the bound model/tokenizer envelope and reject cut drift or retrospective relabeling.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A013_leakage_probe_protocol",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "BENCH_A013 is sustained: unspecified probes cannot establish the AT04 leakage ceiling.",
+      "evidence": "Probe classes, features, splits, tuning budgets, seeds, multiplicity, exact enumeration, and uncertainty rules are absent, permitting weak or outcome-selected probes. Exact repair: freeze the complete probe and exact-enumerator suite before deck generation and separate acceptance probes from held-out audit probes. Required test: MT13 must detect injected identifier, descriptor, state, action-frequency, passive, and accepted-deck selection leaks with registered power while controlling multiplicity.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A014_causal_intervention_estimands",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_A014 is sustained but is nonblocking for CPU construction; it is blocking before causal organ attribution.",
+      "evidence": "Whole-memory nulls, cross-life assignment, twin swaps, schema shuffles, root masks, and negative masks test different mechanisms and lack exact units, timing, aggregation, and redundancy handling. Exact repair before AT07: bind each estimand at a sealed pre-decision state with typed, length/resource-matched interventions, exclusion checks, redundant-path closure, and small/negative-gain rules. Required test: MT20 must distinguish semantic action flips from parser breakage or generic performance loss.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A015_resource_claim_envelope",
+      "category": "scalability",
+      "severity": "material",
+      "statement": "BENCH_A015 is sustained and nonblocking for instrument construction if CPU resources are purely descriptive; it is blocking before comparative efficiency, scalability, or qualified C1 language.",
+      "evidence": "The ledger is broad but does not identify constraints, hardware, concurrency, cache state, lifecycle boundary, or qualifying resource envelope. Exact repair: bind per-arm hard budgets separately from descriptive covariates and define hardware/cache/concurrency/retry accounting and claim qualifiers. Required test: MT21 must fail unledgered work, budget overflow, warm-cache asymmetry, hidden lifetime-linear scans, and claims outside the frozen envelope.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A016_visibility_field_partition",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "BENCH_A016 is sustained: the 56-cell product is formally complete but not executable because bundled items contain fields with different permissions.",
+      "evidence": "I01 combines replay outcomes and target goals; I03 combines roots, returned atoms, and workspace; I05 combines current target and split metadata; I06 combines content, status, provenance, and compiler internals; I07 mixes backend work and model return. Exact repair: split these into field-level types with origin and taint tags, principal-specific schemas, physical/process boundaries, and a regenerated complete product. Required test: MT07 must inject a unique canary into every forbidden subfield and prove nonarrival at every destination and later-life hash.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT02_CPU_capability_firewall", "AT06_evaluation_suffix_noninterference", "AT07_future_representation_transport_and_causal_gates"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A017_S_identifiability_certificate",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_A017 is sustained: S may be identifiable in RANDOM by within-era permutation elimination, so the intended MOTIF-only advantage is not established by regime labels.",
+      "evidence": "The legal prefix and within-era observations are not enumerated and the posterior over the missing edge is not defined. Exact repair: bind the S observation mask and compute the exact posterior conditioned on accepted-deck selection for each actual target, proving MOTIF identification and RANDOM nonidentification. Required test: MT10 must exhaustively enumerate permutations and reject any S target whose RANDOM posterior or legal action value exceeds the registered floor.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_A018_pcfl_stream_comparator_binding",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "BENCH_A018 is sustained: the requested PCFL-Stream analytical comparison is not exact-byte scoped.",
+      "evidence": "Although research_notes/48_pcfl_stream_and_schema_design_v0.md exists, neither it nor a unique successor is a bound change context and no predeclared comparison rubric maps evidence to retain, rework, reject, or fallback request. Exact repair: bind exactly one read-only path/hash/version and a decision table in a successor change, with PCFL implementation still forbidden. Required test: MT14 must reject alternate comparator bytes, missing hashes, post-result rubric changes, and any executable PCFL code path.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT02_CPU_capability_firewall", "AT05_information_growth_MDL_paths_and_resources", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D001_not_yet_exact_executable_instrument",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "BENCH_D001 is accepted: exact prose hashes do not prevent post-ratification selection of scientific behavior, so implementation and evidence collection should not be ratified from these bytes.",
+      "evidence": "Generation, serialization, schedules, targets, controllers, semantic schemas, codecs, probes, statistics, and golden cases are absent or incomplete. Exact repair: use a successor reviewed change to bind all machine-readable manifests and fixtures, or request a separately enumerated drafting-only scope that produces no benchmark evidence. Required test: MT01--MT14 must validate the successor before the first evidence-producing run.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D002_one_atom_does_not_bound_information",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_D002 is accepted and nonblocking for world-only CPU work; one-atom and one-predicate claims are not credible before a bandwidth-bounded semantic grammar exists.",
+      "evidence": "A procedure or schema field can carry a full mapping or answer-bearing plan while satisfying the nominal count. Exact repair before model work: freeze typed grammar, maximum bits, variable/scope rules, target-field exclusions, workspace and operation budgets, and interface-specific hidden work. Required test: MT15 must perform adversarial equivalent-encoding and complete-plan attacks across compiler, text, graph, LoRA, and reader channels.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D003_support_semantics_are_too_weak",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_D003 is accepted and nonblocking for the CPU world; chronological evidence is necessary but not sufficient for broad DREAM proposal support.",
+      "evidence": "A single later success may support an overbroad false schema that SLEEP transports. Exact repair before learned DREAM: register predicate-specific support multiplicity, independent roots, separating panels, scope refinement, revocation, and prospective precision intervals, with unsupported claims remaining provisional. Required test: MT16 must cover overgeneralization, contradictory later evidence, dependent roots, revisions, and evaluation-tainted observations.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D004_statistics_are_not_preregistered_enough",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "BENCH_D004 is accepted and nonblocking for negative-only CPU construction, but AT08 cannot authorize confirmation as written.",
+      "evidence": "The incomplete estimator and unvalidated 24--48 cap can fail familywise calibration or power with clustered binary contrasts and selection/missingness. Exact repair: freeze executable analysis code and full operating-characteristic simulations before confirmation, increasing or abandoning the cap when the .10 effect is not detectable. Required test: MT17 must reproduce type-I, coverage, power, missing-cell zero rules, and variance-only resizing without method-outcome access.",
+      "acceptance_test_ids": ["AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D005_C2_slope_alternative_breaks_interval_gate",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "BENCH_D005 is accepted and nonblocking for CPU construction: a monotone slope must not earn the stated C2 when either registered interval fails.",
+      "evidence": "The slope alternative contradicts AT08's two-interval language and permits a flat or negative late interval. Exact repair: require both simultaneous interval lower bounds plus old-retention noninferiority; a different slope claim needs a successor change and multiplicity family. Required test: MT18 must keep slope-only cases descriptive and deny C2.",
+      "acceptance_test_ids": ["AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D006_C3_random_and_mdl_gates_are_underspecified",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_D006 is accepted: the current CPU instrument cannot certify MOTIF-only schema value or meaningful MDL behavior with the present gates.",
+      "evidence": "Positive DiD does not establish absent RANDOM gain, and incomplete code costs favor the supplied motif. Exact repair: add a simultaneous RANDOM-gain upper/equivalence rule and complete prefix-free codecs with template/model selection and matched-loss costs. Required test: MT04 and MT12 must reject spurious RANDOM gains and any code omitting supplied structure.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D007_headroom_should_not_accept_impossible_targets",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BENCH_D007 is accepted: cohort-average oracle headroom must not admit impossible constructive targets.",
+      "evidence": "Impossible targets create guaranteed zeros and may be uneven by stratum; pooled leakage can also be hidden. Exact repair: require per-target hidden-oracle solvability/path certificates and a separate legal-source exact-memory rule, with cohort means only summaries. Required test: MT05 must reject every target without a within-budget certificate and every cohort whose stratum-specific headroom or leakage fails.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D008_regime_does_not_hold_realized_information_fixed",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_D008 is accepted and exposes a central causal-design choice: shared RNG and schedules do not independently manipulate compressibility when binding-dependent outcomes alter a public-history-dependent collector.",
+      "evidence": "After outcomes diverge, later source actions, exposure, identified relations, and target support can diverge, so the regime contrast combines persistent binding with realized information yield and trajectory effects. Exact repair requires an explicit human choice: define and name a total-effect estimand with mediation through realized experience, or construct/condition matched public-information panels for a controlled compressibility contrast; remove the current independent-variation claim unless proved. Required test: MT11 must compare public histories, exposures, information quantities, and mediated paths and enforce the selected estimand.",
+      "acceptance_test_ids": ["AT03_world_quadruplet_determinism_and_kernel", "AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D009_accepted_deck_selection_must_enter_bayes_and_leakage",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_D009 is accepted: hiding rejection receipts does not remove selection information from the benchmark distribution.",
+      "evidence": "All evaluated decks are publicly known to have passed a deterministic acceptance rule, which can induce target-answer correlations. Exact repair: condition exact posterior, entropy, no-memory, and target-only Bayes checks on the complete acceptance event, freeze rejection before methods, and report all attempts and yields. Required test: MT09 must inject acceptance-induced correlations and verify they are detected.",
+      "acceptance_test_ids": ["AT04_target_collision_headroom_and_leakage", "AT05_information_growth_MDL_paths_and_resources"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D010_future_thresholds_are_engineering_screens",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "BENCH_D010 is accepted and nonblocking for CPU construction: four-of-six, 70-percent-of-gold, below-five-percent, and point causal thresholds are engineering filters, not confirmatory organ evidence.",
+      "evidence": "Denominators, uncertainty, data reuse, multiplicity, and model-state interventions are unfrozen, and CPU fixtures validate checkers rather than actual mediation. Exact repair: label the thresholds disposable and require independent outer-unit estimands, simultaneous confidence rules, data partitions, interventions, and failure handling before claims. Required test: MT22 must lint artifacts and manuscripts so screen passage cannot satisfy a confirmatory claim gate.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D011_visibility_items_are_too_coarse_for_enforcement",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "BENCH_D011 is accepted: cell reason strings cannot safely override coarse hidden/visible labels at implementation time.",
+      "evidence": "Current targets versus split metadata, replay outcomes versus goals, atom content versus lifecycle metadata, roots versus workspace, and backend work versus returns need distinct types. Exact repair: bind field-level schemas, origin labels, declassification functions, process/storage ownership, and regenerate the full matrix. Required test: MT07 must exhaustively taint-test every field-stage edge and forbidden side channel.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT02_CPU_capability_firewall", "AT06_evaluation_suffix_noninterference", "AT07_future_representation_transport_and_causal_gates"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D012_pcfl_stream_fallback_is_unbound",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "BENCH_D012 is accepted: the analytical comparator and fallback decision can drift after FeltCraft results.",
+      "evidence": "No PCFL-Stream path/hash or decision rubric is among the change's four contexts despite the comparison being one of six requested atoms. Exact repair: bind one read-only specification and a predeclared comparison table in the successor while preserving an absolute ban on PCFL implementation. Required test: MT14 must prove exact bytes, read-only access, stable criteria, and zero executable PCFL reachability.",
+      "acceptance_test_ids": ["AT01_change_hash_scope_and_independent_review", "AT02_CPU_capability_firewall", "AT05_information_growth_MDL_paths_and_resources", "AT09_no_automatic_promotion"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D013_template_cost_must_enter_compression",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "BENCH_D013 is accepted: the designer-supplied eight-role/four-recipe template cannot be free in any measured-compression result.",
+      "evidence": "A privileged grammar makes L_schema shorter by construction and conflates oracle-code compressibility with learned DREAM compression. Exact repair: charge universal or preregistered model-class, decoder, template identification/selection, and alternative-model costs; report oracle-code and learned-code results separately and include alternative motif learners. Required test: MT04 must show the full charge and reject a codec that presupposes the winning template for free.",
+      "acceptance_test_ids": ["AT05_information_growth_MDL_paths_and_resources", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "X_BENCH_D014_causal_masks_need_exclusion_and_redundancy_controls",
+      "category": "credit_assignment",
+      "severity": "material",
+      "statement": "BENCH_D014 is accepted and nonblocking for CPU construction: behavioral change after a mask or twin substitution is insufficient for memory-mediated composition credit.",
+      "evidence": "An intervention can be malformed, out of distribution, resource-changing, or incomplete over redundant paths; surviving behavior can use uncited memory. Exact repair before causal claims: fork the identical sealed state, change only registered semantic content with type/length/resource-matched controls, cut all redundant transitive paths, verify parser/retrieval invariants, and score twin-valid action changes separately from generic loss. Required test: MT20 must detect each exclusion and redundancy failure.",
+      "acceptance_test_ids": ["AT07_future_representation_transport_and_causal_gates", "AT08_estimands_statistics_resources_and_claim_firewall"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "E02, E03, and E06 use DREAM, ChronologicalGrounding, SLEEPCompiler, and SealedScorerAudit without declaring them as nodes or exact owned subprincipals, preventing closed reachability analysis.",
+    "I01 bundles replay outcomes with target goals, although DREAM may see the former and must not see the latter.",
+    "I03 bundles copied anchors, reader returns, cited roots, and workspace text, although grounding may audit roots but must not treat workspace or co-traversal as evidence.",
+    "I05 bundles the current public target with split, membership, score, and evaluation metadata, although THINK sees the target while reader/memory must not see the metadata.",
+    "I06 bundles semantic atom content with status, support counts, provenance, selector metadata, and compiler internals, although DREAM may see content but not the other fields.",
+    "I07 bundles backend-private candidate/search/training/resource work with the one-atom or NOT_FOUND return visible to cognition.",
+    "The AT06 suffix domain does not distinguish authorized CPU source/deck/controller state and inert canaries from forbidden future compiler, substrate, adapter, tokenizer, and model state.",
+    "One-atom and one-predicate channels lack semantic grammars and bit budgets, permitting target-bearing complete mappings or plans to cross nominally narrow interfaces."
+  ],
+  "missing_acceptance_tests": [
+    "MT01_executable_manifest_and_golden_vectors: bind and replay the exact PRNG, tuple/key derivation, namespace strings, integer sampling, Unicode/serializer/version envelope, source schedule, target generator, cohort cardinalities, budgets, replacement and stopping rules across processes and permitted platforms.",
+    "MT02_graph_and_capability_referential_closure: reject dangling graph endpoints, bind every runtime principal and owner, derive the closed reachability graph, and prove that only authorized L01 CPU paths can execute.",
+    "MT03_tau_typed_equivariance: exhaustively verify the bound involutive derangement's typed domain, automorphism constraints, site/candidate coupling, round trip, decisive-set map, grammar identity, and path/difficulty equality.",
+    "MT04_identification_and_complete_codec: freeze edge-identification closure and prefix-free L_enum/L_schema encoders/decoders; round-trip golden cases; charge template/model selection, decoder, bindings, exceptions, provenance, precision, rejected models, and active memory at matched loss.",
+    "MT05_controller_cohort_and_solvability: bind each controller's information/interface/compute contract, require per-target hidden-oracle path certificates, distinguish legal-source exact memory from hidden oracle, and test stratified headroom/leakage plus boundary-valued aggregation.",
+    "MT06_closed_world_CPU_firewall: combine static dependency closure with denied-by-default process, environment, filesystem, credential, network, device, tokenizer/model, weight/adapter, locked-split, promotion, and PCFL-implementation enforcement before side effects.",
+    "MT07_field_level_visibility_and_taint: split bundled information items into typed fields with origins/declassification, regenerate the full stage product, and canary every forbidden field, storage path, cache, process, and downstream state.",
+    "MT08_scoped_CPU_suffix_noninterference: compare only authorized source/deck/controller/RNG/cache/report hashes plus inert canaries, deny real SLEEP/substrate/adapter/model code, and require a new full isolation audit under every later authorization.",
+    "MT09_acceptance_conditioned_entropy_and_Bayes: compute exact no-memory/source posteriors conditional on the full joint accepted-deck algorithm, report unconditional versus conditional quantities and all yields, and detect acceptance-induced target leakage.",
+    "MT10_S_target_identifiability_certificate: exhaustively enumerate legal-prefix and within-era evidence under accepted-deck conditioning and certify per-target MOTIF identification and RANDOM nonidentification without permutation-elimination leakage.",
+    "MT11_RANDOM_MOTIF_estimand_and_mediation: compare realized public histories, actions, exposures, identified relations, and information yield; enforce either a named total-effect-plus-mediation estimand or a predeclared matched-information controlled contrast.",
+    "MT12_CPU_schema_gain_and_verdict_table: bind the minimum MOTIF gain, simultaneous RANDOM no-gain/equivalence rule, MDL reporting-versus-threshold decision, exact denominators, and retain/rework/reject outcomes; exercise all boundary cases.",
+    "MT13_leakage_probe_power_and_holdout: freeze exact enumerators and probe features, splits, tuning budgets, seeds, multiplicity, confidence rules, and injected-leak power for target, state, identifier, descriptor, action-frequency, passive, and selection channels.",
+    "MT14_PCFL_comparator_binding_and_read_only_decision: require one exact PCFL-Stream specification path/hash/version and predeclared comparison table, reject substitutions or post-result edits, and prove no PCFL implementation path exists.",
+    "MT15_semantic_and_reader_bandwidth: bind typed atom, procedure, schema, shortcut, anchor, return, Z, query, operation, and action grammars/budgets and reject complete plans, answer menus, nested encodings, target-bearing fields, unledgered scans, and lifetime-linear hidden work.",
+    "MT16_public_support_lifecycle: bind predicate-specific independent-root, later-prediction, match, contradiction, revision, revocation, separating-panel, and precision rules; reject self-support, repeated-root pseudo-evidence, broad-from-narrow support, and evaluation feedback.",
+    "MT17_confirmatory_estimator_operating_characteristics: freeze alpha, baselines, families, weights, studentization, resampling, inversion, finite-sample correction, missingness, and variance-only resizing; simulate familywise calibration and power under the exact outer-unit pipeline.",
+    "MT18_C2_two_interval_and_retention_gate: require both simultaneous 2L-to-4L and 4L-to-8L lower bounds above .02 and the exact earliest-quartile old-panel -.05 noninferiority contrast; keep any slope result descriptive.",
+    "MT19_native_cut_byte_binding: under separate authority bind model, tokenizer, prompt, serializer, workspace/history/output reserves, truncation, and complete-event tie rule; compute cuts deterministically and forbid relabeling absolute CPU cuts.",
+    "MT20_causal_intervention_exclusion_and_redundancy: fork the exact pre-decision state, apply typed length/resource-matched semantic interventions, cut redundant transitive paths, preserve parser/retrieval invariants, and separate twin-valid action changes from generic degradation.",
+    "MT21_resource_envelope_and_claim_qualification: distinguish hard constraints from descriptive quantities, freeze hardware/concurrency/cache/lifecycle/retry accounting, detect hidden work and budget overflow, and deny efficiency/scalability claims outside the envelope.",
+    "MT22_engineering_screen_claim_linter: label four-of-six, 70-percent-of-gold, below-five-percent, and point causal thresholds as disposable engineering screens and prevent them or CPU checker fixtures from satisfying confirmatory organ claims."
+  ],
+  "human_questions": [
+    "Does Rohin Ghosh agree that the exact canonical six-atom CPU evidence-producing scope is not ratifiable from these bytes and that a successor reviewed change must bind executable manifests and golden fixtures before any benchmark implementation or evidence run?",
+    "If work should proceed sooner, does Rohin want a new separately enumerated drafting-only scope that may create the successor specification, manifests, codecs, schemas, decision tables, and golden vectors but may not generate benchmark evidence?",
+    "Should RANDOM--MOTIF be declared a total effect of persistent binding including mediated changes in public outcomes and collection trajectories, or must the design match/condition realized public information to retain an independent-compressibility claim?",
+    "Must every accepted target have a per-target hidden-oracle solvability/path certificate, with authentic legal-source exact memory reported separately and no impossible target admitted by a cohort-average .85 rule?",
+    "What exact accepted-deck-conditioned prior and posterior, cohort cardinalities and weights, minimum MOTIF schema gain, simultaneous RANDOM no-gain margin, and CPU retain/rework/reject table should be bound?",
+    "Should AT05 be a reporting-only MDL eligibility audit with no L_schema ordering requirement, or should a specific shorter-code threshold and matched-loss tolerance be made a CPU gate after all template/model/decoder/active-memory costs are charged?",
+    "Which exact PCFL-Stream specification path/hash/version and predeclared comparison criteria should be the sole read-only analytical comparator, while every PCFL implementation path remains forbidden?",
+    "Does Rohin approve limiting first-stage AT06 to authorized CPU state plus inert canaries and requiring fresh end-to-end suffix audits only under later separately ratified compiler, model, and adapter stages?",
+    "For future C2, does Rohin require both post-native interval lower bounds and old-retention noninferiority with no monotone-slope substitute?",
+    "For future confirmation, may the outer-unit sample exceed 48 or must the confirmatory family be abandoned when frozen simulations cannot control error and detect the registered .10 effect?",
+    "Does Rohin confirm that future one-atom, support, intervention, resource, and field-level visibility contracts must be hash-bound before model-backed gates, even though those repairs are nonblocking for a narrowed world-only CPU stage?",
+    "Does Rohin explicitly confirm the continuing human boundary: this critique, schema validation, interpretation agreement, consensus, CPU evidence, or an advocate response cannot authorize implementation, PCFL implementation, tokenizers, models/providers, embeddings, LoRA/weights, GPU/remote work, locked studies, promotion, or scientific claims; only a later human-authored exact-byte and exact-scope ratification can do so?"
+  ]
+}

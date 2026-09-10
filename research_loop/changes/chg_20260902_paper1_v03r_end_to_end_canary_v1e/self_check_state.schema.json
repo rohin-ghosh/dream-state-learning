@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-self-check-state-v1e",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proposal", "premises", "additional_rows"],
+  "properties": {
+    "proposal": {"$ref": "#/$defs/proposal"},
+    "premises": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}},
+    "additional_rows": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "dream_state.schema.json#/$defs/row"}}
+  },
+  "$defs": {
+    "proposal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P0010[0-9]{2}$"},
+            "kind": {"const": "ROLE_EQUIV"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleEquivFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P0010[0-9]{2}$"},
+            "kind": {"const": "CAUSAL_JOIN"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/causalJoinFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["proposal_id", "kind", "fields", "citations"],
+          "properties": {
+            "proposal_id": {"type": "string", "pattern": "^P0010[0-9]{2}$"},
+            "kind": {"const": "ROLE_APPLICATION"},
+            "fields": {"$ref": "dream_state.schema.json#/$defs/roleApplicationFields"},
+            "citations": {"$ref": "#/$defs/citations"}
+          }
+        }
+      ]
+    },
+    "citations": {"type": "array", "minItems": 2, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^M(?:0000(?:[0-3][0-9]|4[0-8])|0010[0-9]{2})$"}}
+  },
+  "x-contextual-validation-contract": {
+    "identity_domain": "Every row reference is either a witnessed M000000..M000048 alias produced in the current life or a currently eligible dreamed M001000..M001099 alias in the same branch ancestry.",
+    "actual_count_closure": "A witnessed Mi exists iff 0 <= i < the sealed actual_event_count for this life. Thus M000046..M000048 are required for a 49-event seed-1 life and invalid for any 46-event life; M000049 and above are globally invalid.",
+    "premise_binding": "premises byte-match proposal.citations in identical order, with no omitted, added, reordered, or duplicate row ID.",
+    "additional_binding": "additional_rows contain only distinct eligible rows whose row IDs are absent from proposal.citations; supplied order is immutable.",
+    "support_binding": "A SELF_CHECK support_row_ids list is a distinct order-preserving subsequence of additional_rows. Premise reuse, support permutation, duplicates, selected-row dropping during reduction, and silent repair are INVALID_SELF_CHECK.",
+    "witnessed_metadata": "Every M000xxx fixture row has origin/status WITNESSED, support_basis WITNESS, citations=[], depth=0, and host lineage exactly [E plus the same six digits]. Any dreamed metadata or non-singleton/mismatched lineage under M000xxx is invalid."
+  },
+  "x-golden-vectors": {
+    "schema_positive": [
+      {
+        "name": "legal-p001084-self-check-state",
+        "instance": {
+          "proposal": {"proposal_id": "P001084", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "citations": ["M001005", "M000001"]},
+          "premises": [
+            {"row_id": "M001005", "origin": "DREAMED", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:cow"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M001000", "M000010"], "depth": 2, "semantic_hash": "7c9372008bbd3eace04d0634cf1082477cb4972a5cc7846d0df2b59ed70c2404", "record_hash": "8633e95eb2f7b223fbd6c00debb932320581025d72297aac63f6003a9ad7fb42"},
+            {"row_id": "M000001", "origin": "WITNESSED", "kind": "ROUTE", "fields": ["valve:violet-valve", "source:candyland"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "fb7cdbae867403ebd2f8662c1006d9b6fdc0c0ab07fd82b031e96a21c271ad84", "record_hash": "6e5eeb1c553354d607ce6557744677f5cb99166e69a1c7d4281745e22d7450d9"}
+          ],
+          "additional_rows": [
+            {"row_id": "M000003", "origin": "WITNESSED", "kind": "ROUTE", "fields": ["valve:silver-valve", "source:dandyland"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "9dd184046cd01a8f9c149a7c922bda21ca3c5a3bcb29d1564f9c258aa4e237d2", "record_hash": "f6c78aae274fe745470da692bab9f6367eb13d5758264d186ac011385c29ad00"},
+            {"row_id": "M001004", "origin": "DREAMED", "kind": "ROLE_EQUIV", "fields": ["animal:frog", "animal:cow"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M001003", "M000010"], "depth": 3, "semantic_hash": "4a7fdb7c5c3ab3d8a96b1a189d9311c45f3598128ad9a03f56a9542a71022595", "record_hash": "995f7fb454681b7246130be5db8a6a8745c91c04fde4ad96572e604ff22ba27a"},
+            {"row_id": "M000002", "origin": "WITNESSED", "kind": "ROUTE", "fields": ["valve:copper-valve", "source:candyland"], "status": "WITNESSED", "support_basis": "WITNESS", "citations": [], "depth": 0, "semantic_hash": "879a31025ee08b5ce47f14a79db75089eec90547f50dba31470d3cdcc93f1402", "record_hash": "334f4f9d9c1275cbb8b01f23a0e39557d51bfa3fe4abf91a9f63d55382336465"}
+          ]
+        }
+      }
+    ],
+    "schema_negative": [
+      {"name": "witnessed-index-49", "mutation": "replace any witnessed row_id with M000049", "expected": "REJECT_SCHEMA"},
+      {"name": "duplicate-premise-object", "mutation": "duplicate either premise object", "expected": "REJECT_SCHEMA"},
+      {"name": "dreamed-metadata-under-witnessed-id", "mutation": "set M000003 origin=DREAMED,status=SUPPORTED,support_basis=SELF_REVIEW_SAME_EVIDENCE,citations=[M000001,M000002],depth=1", "expected": "REJECT_SCHEMA"}
+    ],
+    "ordered_reducer": {
+      "name": "legal-p001084-m001084-premise-then-supplied-support",
+      "proposal_projection": {"proposal_id": "P001084", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "citations": ["M001005", "M000001"]},
+      "premise_depth_and_lineage_in_proposal_order": [
+        {"row_id": "M001005", "depth": 2, "lineage": ["E000005", "E000010"]},
+        {"row_id": "M000001", "depth": 0, "lineage": ["E000001"]}
+      ],
+      "additional_rows_in_supplied_order": [
+        {"row_id": "M000003", "depth": 0, "lineage": ["E000003"]},
+        {"row_id": "M001004", "depth": 3, "lineage": ["E000004", "E000010"]},
+        {"row_id": "M000002", "depth": 0, "lineage": ["E000002"]}
+      ],
+      "self_check_output": {"verdict": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "premise_ids": ["M001005", "M000001"], "support_row_ids": ["M001004", "M000002"], "prediction": "supported", "confidence": 1, "reason": "model claims distinct-lineage support"},
+      "expected": {
+        "accepted_citations": ["M001005", "M000001", "M001004", "M000002"],
+        "cited_depths_in_accepted_order": [2, 0, 3, 0],
+        "depth": 4,
+        "citation_traversal_lineage_first_occurrence": ["E000005", "E000010", "E000001", "E000004", "E000002"],
+        "external_lineage_manifest_value_ascii_sorted": ["E000001", "E000002", "E000004", "E000005", "E000010"],
+        "ordered_adjacency": [["M001084", "M001005"], ["M001084", "M000001"], ["M001084", "M001004"], ["M001084", "M000002"]],
+        "accepted_row": {"row_id": "M001084", "origin": "DREAMED", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "status": "SUPPORTED", "support_basis": "MODEL_CLAIMED_DISTINCT_LINEAGE_SUPPORT", "citations": ["M001005", "M000001", "M001004", "M000002"], "depth": 4, "semantic_hash": "4a496090c2b949f942d734edc73ed07501b0d2581747ca63943c4b39d87f8a75", "record_hash": "ab09afc1093cdb87fb49c8e602bea616b932f838d213c765d9d03a53019a4b06"}
+      },
+      "negative": [
+        {"name": "premise-reused-as-additional", "premise_ids": ["M001005", "M000001"], "supplied_additional_row_ids": ["M000003", "M001004", "M000002", "M000001"], "support_row_ids": ["M001004", "M000002"], "expected": "INVALID_SELF_CHECK; no accepted row; no repair"},
+        {"name": "support-order-permuted", "support_row_ids": ["M000002", "M001004"], "expected": "INVALID_SELF_CHECK; supplied order is immutable"},
+        {"name": "duplicate-support", "support_row_ids": ["M001004", "M000002", "M001004"], "expected": "INVALID_SELF_CHECK"},
+        {"name": "selected-support-dropped", "support_row_ids": ["M001004", "M000002"], "mutated_accepted_citations": ["M001005", "M000001", "M001004"], "expected": "REJECT; no identified support may be discarded"},
+        {"name": "ascii-sorted-citations", "mutated_accepted_citations": ["M000001", "M000002", "M001004", "M001005"], "expected": "REJECT"},
+        {"name": "silent-repair-of-illegal-input", "illegal_input": {"premise_ids": ["M001005", "M000001"], "supplied_additional_row_ids": ["M000003", "M001004", "M000002", "M000001"], "support_row_ids": ["M000002", "M001004", "M001004"]}, "forbidden_repaired_row_id": "M001084", "expected": "REJECT; INVALID_SELF_CHECK is terminal for that proposal and creates no row"},
+        {"name": "wrong-cited-depth", "cited_depths": [2, 0, 2, 0], "expected": "REJECT"},
+        {"name": "wrong-accepted-depth", "accepted_depth": 3, "expected": "REJECT"},
+        {"name": "wrong-witnessed-lineage", "row_id": "M000002", "mutated_lineages": [["E000003"], ["E000002", "E000003"]], "expected": "REJECT"},
+        {"name": "wrong-dreamed-lineage", "row_id": "M001004", "mutated_lineage": ["E000004"], "expected": "REJECT"},
+        {"name": "stale-semantic-hash", "semantic_hash": "0000000000000000000000000000000000000000000000000000000000000000", "expected": "REJECT"},
+        {"name": "stale-record-hash", "record_hash": "0000000000000000000000000000000000000000000000000000000000000000", "expected": "REJECT"},
+        {"name": "global-witnessed-index-49", "row_id": "M000049", "expected": "REJECT"},
+        {"name": "above-life-alias", "life_actual_event_count": 46, "row_id": "M000046", "expected": "REJECT_CONTEXTUALLY"}
+      ]
+    }
+  }
+}

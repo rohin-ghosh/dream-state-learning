@@ -1,0 +1,12 @@
+# Why there are complementary learning systems in the hippocampus and neocortex: insights from the successes and failures of connectionist models of learning and memory
+Source: Psychological Review 102(3):419-457, 1995. DOI: 10.1037/0033-295X.102.3.419 (not on arXiv)  
+Authors: James L. McClelland, Bruce L. McNaughton, Randall C. O'Reilly
+
+## Abstract
+Damage to the hippocampal system disrupts recent memory but leaves remote memory intact. The account presented here suggests that memories are first stored via synaptic changes in the hippocampal system, that these changes support reinstatement of recent memories in the neocortex, that neocortical synapses change a little on each reinstatement, and that remote memory is based on accumulated neocortical changes. Models that learn via changes to connections help explain this organization. These models discover the structure in ensembles of items if learning of each item is gradual and interleaved with learning about other items. This suggests that the neocortex learns slowly to discover the structure in ensembles of experiences. The hippocampal system permits rapid learning of new items without disrupting this structure, and reinstatement of new memories interleaves them with others to integrate them into structured neocortical memory systems.
+
+## Our differentiation
+Claims: catastrophic interference forces a two-system design — a fast, sparse, episodic store (hippocampus) and a slow, overlapping, structure-extracting store (neocortex); transfer happens via repeated *interleaved* reinstatement (replay), largely offline.
+Mechanism (in the paper): connectionist simulations showing focused learning destroys prior structure unless new items are interleaved with old during slow cortical training.
+Update: Kumaran, Hassabis & McClelland 2016 (Trends Cogn Sci, DOI 10.1016/j.tics.2016.05.004) revise CLS: replay can be *weighted/prioritized* (reward, novelty), and the fast store also supports fast generalization via retrieval, not just storage — i.e., RAG-before-consolidation is CLS-sanctioned.
+Sleeper relevance: CLS is the canonical justification for our split — thinker writes cheap episodic entries at wake; sleeper does slow interleaved compilation into the structured store. Interleaving old with new during compile passes is the CLS-mandated anti-forgetting mechanism (our dedup/abstraction passes must mix old clusters in, not process only the day's delta).

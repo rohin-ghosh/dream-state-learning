@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-review-assignment-v1e.schema.json",
+  "title": "Paper-1 v03r canary v1e role-labelled review assignment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "assignment_id", "change_id", "transition", "role", "actor", "review_packet_sha256", "reviewed_lock_sha256", "supplied_context_manifest_sha256", "fresh_context_request", "workflow_separation_evidence_boundary", "issued_at_utc", "assignment_sha256_rule"],
+  "properties": {
+    "schema_version": {"const": "paper1-v03r-canary-review-assignment-v1e.0"},
+    "assignment_id": {"type": "string", "pattern": "^P1E-ASSIGN-[A-Z_]+-(REVIEWER|ADVOCATE)-[0-9]{4}$"},
+    "change_id": {"const": "chg_20260902_paper1_v03r_end_to_end_canary_v1e"},
+    "transition": {"enum": ["CPU_TO_DEV", "DEV_TO_HELDOUT", "HELDOUT_TO_LORA", "STAGE_L_TERMINAL", "EARLY_TERMINAL"]},
+    "role": {"enum": ["INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]},
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_actor_id", "declared_roles_on_reviewed_lock", "declaration_status"],
+      "properties": {
+        "declared_actor_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "declared_roles_on_reviewed_lock": {"type": "array", "uniqueItems": true, "items": {"enum": ["AUTHOR", "IMPLEMENTER", "PRODUCER", "INDEPENDENT_REVIEWER", "AUTHOR_SIDE_ADVOCATE"]}},
+        "declaration_status": {"const": "SELF_DECLARED_UNVERIFIED"}
+      }
+    },
+    "review_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "reviewed_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "supplied_context_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "fresh_context_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "policy_source", "requested_prior_turn_count", "requested_unlisted_context_received"],
+      "properties": {
+        "requested": {"const": true},
+        "policy_source": {"const": "AGENTS.md fresh-context independent-review requirement"},
+        "requested_prior_turn_count": {"const": 0},
+        "requested_unlisted_context_received": {"const": false}
+      }
+    },
+    "workflow_separation_evidence_boundary": {"const": "HASH_BOUND_ROLE_LABELS_AND_FRESHNESS_REQUESTS_SELF_DECLARED_UNVERIFIED"},
+    "issued_at_utc": {"type": "string", "format": "date-time"},
+    "assignment_sha256_rule": {"const": "sha256(UTF-8 RFC8785_JCS(assignment excluding assignment_sha256)); the stored digest is external"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"role": {"const": "INDEPENDENT_REVIEWER"}}, "required": ["role"]},
+      "then": {"properties": {"actor": {"properties": {"declared_roles_on_reviewed_lock": {"contains": {"const": "INDEPENDENT_REVIEWER"}, "not": {"contains": {"enum": ["AUTHOR", "IMPLEMENTER", "PRODUCER", "AUTHOR_SIDE_ADVOCATE"]}}}}}}}
+    },
+    {
+      "if": {"properties": {"role": {"const": "AUTHOR_SIDE_ADVOCATE"}}, "required": ["role"]},
+      "then": {"properties": {"actor": {"properties": {"declared_roles_on_reviewed_lock": {"contains": {"const": "AUTHOR_SIDE_ADVOCATE"}, "not": {"contains": {"const": "INDEPENDENT_REVIEWER"}}}}}}}
+    }
+  ],
+  "x-semantic-contract": {
+    "same_packet": "Reviewer and advocate assignments bind byte-identical review_packet_sha256, reviewed_lock_sha256, and supplied_context_manifest_sha256.",
+    "operational_freshness": "AGENTS.md requires fresh-context independent review and a separate author-side advocate. The assignment requests prior_turn_count=0 and no unlisted context; the repository has no platform-owned issuer, signature, or lookup with which to authenticate those facts.",
+    "evidence_boundary": "Actor IDs, roles, and freshness requirements in this artifact are hash-bound self-declarations and requests only. They do not establish platform attestation, authentication, canonical identity, human/model/ontological independence, or actual context freshness.",
+    "scoped_departure": "This deliberately declines v1d R10's impossible authenticated-platform-receipt closure because no qualifying issuer exists. Fresh v1e architecture deliberation must adjudicate whether self-declared workflow separation is sufficient for this narrow engineering canary."
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

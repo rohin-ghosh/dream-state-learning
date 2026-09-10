@@ -1,0 +1,17 @@
+{
+  "change_id": "chg_20260903_rml_g1_gold_action_fast_v1",
+  "claim_scope": "single deterministic fixture, nested J/P sides, supplied-gold diagnostic only",
+  "conditions": {"ATOMS_REC": 2, "AUTH_REPLAY": 2, "CUT_REC": 2, "GOLD_REC": 4, "NONE_REC": 4, "SHAM_REC": 2, "TWIN_REC": 2},
+  "decoding": {"do_sample": false, "fallback": false, "max_new_tokens": 256, "num_beams": 1, "num_return_sequences": 1, "seed": 0, "temperature": 0, "tie_policy": "BACKEND_DETERMINISTIC_ARGMAX", "top_p": 1},
+  "model": "Qwen/Qwen2.5-32B-Instruct",
+  "model_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "operation_schema": "research_loop/schemas/rml_stage_b_operation_v1.schema.json",
+  "opportunities_per_trajectory": 13,
+  "prompt": "research_loop/prompts/rml_stage_b_think_v1.txt",
+  "registered_opportunities": 234,
+  "retries": 0,
+  "schema_version": 1,
+  "scientific_dispatch_ceiling": 234,
+  "state": "CPU_PREFLIGHT_ONLY_GPU_REVIEW_REQUIRED",
+  "trajectory_count": 18
+}

@@ -1,0 +1,119 @@
+{
+  "contract": "ppc5.allowed_dispatch_registry.v9",
+  "schema_version": 9,
+  "artifact_type": "ALLOWED_DISPATCH_REGISTRY",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "registry_kind": "ALLOWED_DISPATCH_REGISTRY",
+  "ordered_row_keys": [
+    "MODEL_INFERENCE",
+    "TOKENIZER_EXECUTION",
+    "EMBEDDING_EXECUTION",
+    "TRAINING",
+    "CANARY",
+    "CPU_BEHAVIORAL",
+    "GPU_BEHAVIORAL",
+    "GPU_JOB"
+  ],
+  "rows": [
+    {
+      "row_key": "MODEL_INFERENCE",
+      "ordinal": 0,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "626135c8841910bb8322b8ad7d6d2e7c770ffb14d6b3cea1089ea14a524d6ad1"
+    },
+    {
+      "row_key": "TOKENIZER_EXECUTION",
+      "ordinal": 1,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "93390b6d2fb543cbed8e0efbbbe6e31eeb4cff6f9e8f6d46b8cd598ecc9389c6"
+    },
+    {
+      "row_key": "EMBEDDING_EXECUTION",
+      "ordinal": 2,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "fd6da980a5887ca8da520be9c4d262e878f8e2e0b7dec14e852437fa93988477"
+    },
+    {
+      "row_key": "TRAINING",
+      "ordinal": 3,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "033547039ef9027ede7ded8047cf5303adb760b261544ff5e5ad048dafc0f611"
+    },
+    {
+      "row_key": "CANARY",
+      "ordinal": 4,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "ba917d9958666f69cc79a0ee5e51ff45a419174ab22a69791fb24d14020bd3bd"
+    },
+    {
+      "row_key": "CPU_BEHAVIORAL",
+      "ordinal": 5,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "977cf0f175c317cd60f17559b1c8553dd9b0a1b25bfdbf5ad44aceb21e4f9608"
+    },
+    {
+      "row_key": "GPU_BEHAVIORAL",
+      "ordinal": 6,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "d5719f192a303ffb79633e2c7a4f09d646963b1790c6568f3b0ebd421248e0b7"
+    },
+    {
+      "row_key": "GPU_JOB",
+      "ordinal": 7,
+      "role": "ALLOWED_DISPATCH_CLASS",
+      "cardinality": "ONE",
+      "producer_role": "ALLOWED_DISPATCH_REGISTRY_AUTHOR",
+      "consumer_stages": [
+        "PRE_MODEL_AUTHORITY",
+        "PREFLIGHT"
+      ],
+      "content_sha256": "7b54dcc23a21308b8ff398e55c4ec71a8f24baab6683a61efbe5f204f64daedd"
+    }
+  ],
+  "row_key_set_equality": true,
+  "self_hash": "f47021124689aab3b2f35b5a6433c72e6424ed2858591f7dbfac7738462e8a4d"
+}

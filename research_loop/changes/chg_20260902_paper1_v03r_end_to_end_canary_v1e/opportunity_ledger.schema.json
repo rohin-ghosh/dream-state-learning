@@ -1,0 +1,1071 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-opportunity-ledger-v1e.schema.json",
+  "title": "Paper-1 v03r canary v1e canonical opportunity ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "change_id",
+    "ledger_id",
+    "rows"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "paper1-v03r-canary-opportunity-ledger-v1e.0"
+    },
+    "change_id": {
+      "const": "chg_20260902_paper1_v03r_end_to_end_canary_v1e"
+    },
+    "ledger_id": {
+      "type": "string",
+      "pattern": "^P1E-LEDGER-[A-Z0-9_.:-]{1,160}$"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/opportunity_row"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "opportunity_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "opportunity_id",
+        "stage",
+        "arm_id",
+        "trace_id",
+        "profile",
+        "slot",
+        "condition",
+        "ledger_state",
+        "reason",
+        "attempts",
+        "input_tokens",
+        "output_tokens",
+        "provider_request_id",
+        "cause_opportunity_id",
+        "stage_gate_evidence_sha256"
+      ],
+      "properties": {
+        "opportunity_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+        },
+        "stage": {
+          "enum": [
+            "DEV_GOLD",
+            "HELDOUT_TEXT",
+            "CONDITIONAL_LORA"
+          ]
+        },
+        "arm_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Z0-9_-]{1,64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trace_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "profile": {
+          "enum": [
+            "DREAM",
+            "SELF_CHECK",
+            "THINK0",
+            "THINK1_DEV",
+            "THINK1_TEXT",
+            "THINK1_LORA"
+          ]
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "condition": {
+          "enum": [
+            "DISPATCH_COMPLETED_NONTERMINAL",
+            "DISPATCH_COMMIT",
+            "DISPATCH_REQUEST_RETURN",
+            "DISPATCH_DEFER",
+            "DISPATCH_BUDGET_EXHAUSTED",
+            "DISPATCH_MODEL_OUTPUT_FAILURE",
+            "DISPATCH_INFRASTRUCTURE_INVALIDITY",
+            "NON_DISPATCH_DUPLICATE",
+            "NON_DISPATCH_SELF_CHECK_NO_PROPOSAL",
+            "NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL",
+            "NON_DISPATCH_PRECONDITION",
+            "NON_DISPATCH_UNAUTHORIZED",
+            "NON_DISPATCH_STAGE_MISSING_ABSTRACTION",
+            "NON_DISPATCH_STAGE_SHAM_INFEASIBLE",
+            "NON_DISPATCH_STAGE_FIDELITY_FAILURE",
+            "NON_DISPATCH_POST_COMMIT",
+            "NON_DISPATCH_POST_REQUEST_RETURN",
+            "NON_DISPATCH_POST_DEFER",
+            "NON_DISPATCH_POST_BUDGET_EXHAUSTED",
+            "NON_DISPATCH_POST_MODEL_FAILURE",
+            "NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY"
+          ]
+        },
+        "ledger_state": {
+          "enum": [
+            "DISPATCHED",
+            "NON_DISPATCH_DUPLICATE",
+            "NON_DISPATCH_NOT_APPLICABLE",
+            "NON_DISPATCH_PRECONDITION",
+            "NON_DISPATCH_NOT_AUTHORIZED",
+            "NON_DISPATCH_STAGE_FAILURE",
+            "NON_DISPATCH_POST_TERMINAL",
+            "NON_DISPATCH_POST_INVALID"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "COMPLETED_NONTERMINAL",
+            "COMMIT",
+            "REQUEST_RETURN",
+            "DEFER",
+            "BUDGET_EXHAUSTED",
+            "MODEL_OUTPUT_FAILURE",
+            "INFRASTRUCTURE_INVALIDITY",
+            "DUPLICATE_PROPOSAL",
+            "DREAM_PASS_NO_PROPOSAL",
+            "DREAM_INVALID_NO_PROPOSAL",
+            "PRE_DISPATCH_INVALID_PRECONDITION",
+            "STAGE_NOT_AUTHORIZED",
+            "MISSING_REQUIRED_ABSTRACTION",
+            "SHAM_NOT_IDENTIFIABLE",
+            "FIDELITY_GATE_FAILED",
+            "PRIOR_COMMIT",
+            "PRIOR_REQUEST_RETURN",
+            "PRIOR_DEFER",
+            "PRIOR_BUDGET_EXHAUSTED",
+            "PRIOR_MODEL_OUTPUT_FAILURE",
+            "PRIOR_INFRASTRUCTURE_INVALIDITY"
+          ]
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "provider_request_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cause_opportunity_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stage_gate_evidence_sha256": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "profile": {
+                "enum": [
+                  "THINK0",
+                  "THINK1_DEV",
+                  "THINK1_TEXT",
+                  "THINK1_LORA"
+                ]
+              }
+            },
+            "required": [
+              "profile"
+            ]
+          },
+          "then": {
+            "properties": {
+              "slot": {
+                "maximum": 11
+              }
+            }
+          }
+        },
+        {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/dispatched_completed_nonterminal"
+            },
+            {
+              "$ref": "#/$defs/dispatched_commit"
+            },
+            {
+              "$ref": "#/$defs/dispatched_request_return"
+            },
+            {
+              "$ref": "#/$defs/dispatched_defer"
+            },
+            {
+              "$ref": "#/$defs/dispatched_budget_exhausted"
+            },
+            {
+              "$ref": "#/$defs/dispatched_model_output_failure"
+            },
+            {
+              "$ref": "#/$defs/dispatched_infrastructure_invalidity"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_duplicate"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_self_check_no_proposal"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_self_check_invalid_proposal"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_precondition"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_unauthorized"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_stage_missing_abstraction"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_stage_sham_infeasible"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_stage_fidelity_failure"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_commit"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_request_return"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_defer"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_budget_exhausted"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_model_failure"
+            },
+            {
+              "$ref": "#/$defs/non_dispatch_post_infrastructure_invalidity"
+            }
+          ]
+        }
+      ]
+    },
+    "dispatched_base": {
+      "properties": {
+        "ledger_state": {
+          "const": "DISPATCHED"
+        },
+        "attempts": {
+          "const": 1
+        },
+        "provider_request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "cause_opportunity_id": {
+          "type": "null"
+        },
+        "stage_gate_evidence_sha256": {
+          "type": "null"
+        },
+        "trace_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+        }
+      }
+    },
+    "zero_attempt_base": {
+      "properties": {
+        "attempts": {
+          "const": 0
+        },
+        "input_tokens": {
+          "const": 0
+        },
+        "output_tokens": {
+          "const": 0
+        },
+        "provider_request_id": {
+          "type": "null"
+        }
+      }
+    },
+    "dispatched_completed_nonterminal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_COMPLETED_NONTERMINAL"
+            },
+            "reason": {
+              "const": "COMPLETED_NONTERMINAL"
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_commit": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_COMMIT"
+            },
+            "reason": {
+              "const": "COMMIT"
+            },
+            "profile": {
+              "enum": [
+                "THINK1_DEV",
+                "THINK1_TEXT",
+                "THINK1_LORA"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_request_return": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_REQUEST_RETURN"
+            },
+            "reason": {
+              "const": "REQUEST_RETURN"
+            },
+            "profile": {
+              "const": "THINK0"
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_defer": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_DEFER"
+            },
+            "reason": {
+              "const": "DEFER"
+            },
+            "profile": {
+              "enum": [
+                "THINK0",
+                "THINK1_DEV",
+                "THINK1_TEXT",
+                "THINK1_LORA"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_budget_exhausted": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_BUDGET_EXHAUSTED"
+            },
+            "reason": {
+              "const": "BUDGET_EXHAUSTED"
+            },
+            "profile": {
+              "enum": [
+                "THINK0",
+                "THINK1_DEV",
+                "THINK1_TEXT",
+                "THINK1_LORA"
+              ]
+            },
+            "slot": {
+              "const": 11
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_model_output_failure": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_MODEL_OUTPUT_FAILURE"
+            },
+            "reason": {
+              "const": "MODEL_OUTPUT_FAILURE"
+            }
+          }
+        }
+      ]
+    },
+    "dispatched_infrastructure_invalidity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispatched_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "DISPATCH_INFRASTRUCTURE_INVALIDITY"
+            },
+            "reason": {
+              "const": "INFRASTRUCTURE_INVALIDITY"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_duplicate": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_DUPLICATE"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_DUPLICATE"
+            },
+            "reason": {
+              "const": "DUPLICATE_PROPOSAL"
+            },
+            "profile": {
+              "const": "SELF_CHECK"
+            },
+            "stage": {
+              "const": "HELDOUT_TEXT"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "cause_opportunity_id": {
+              "type": "string"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_self_check_no_proposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_SELF_CHECK_NO_PROPOSAL"
+            },
+            "stage": {
+              "const": "HELDOUT_TEXT"
+            },
+            "profile": {
+              "const": "SELF_CHECK"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_NOT_APPLICABLE"
+            },
+            "reason": {
+              "const": "DREAM_PASS_NO_PROPOSAL"
+            },
+            "trace_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "cause_opportunity_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_self_check_invalid_proposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL"
+            },
+            "stage": {
+              "const": "HELDOUT_TEXT"
+            },
+            "profile": {
+              "const": "SELF_CHECK"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_NOT_APPLICABLE"
+            },
+            "reason": {
+              "const": "DREAM_INVALID_NO_PROPOSAL"
+            },
+            "trace_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "cause_opportunity_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_precondition": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_PRECONDITION"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_PRECONDITION"
+            },
+            "reason": {
+              "const": "PRE_DISPATCH_INVALID_PRECONDITION"
+            },
+            "cause_opportunity_id": {
+              "type": "null"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_unauthorized": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_UNAUTHORIZED"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_NOT_AUTHORIZED"
+            },
+            "reason": {
+              "const": "STAGE_NOT_AUTHORIZED"
+            },
+            "cause_opportunity_id": {
+              "type": "null"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_stage_missing_abstraction": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_STAGE_MISSING_ABSTRACTION"
+            },
+            "stage": {
+              "const": "HELDOUT_TEXT"
+            },
+            "profile": {
+              "const": "THINK1_TEXT"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_STAGE_FAILURE"
+            },
+            "reason": {
+              "const": "MISSING_REQUIRED_ABSTRACTION"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "cause_opportunity_id": {
+              "type": "null"
+            },
+            "stage_gate_evidence_sha256": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_stage_sham_infeasible": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_STAGE_SHAM_INFEASIBLE"
+            },
+            "stage": {
+              "const": "HELDOUT_TEXT"
+            },
+            "arm_id": {
+              "const": "T-SHAM"
+            },
+            "profile": {
+              "const": "THINK1_TEXT"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_STAGE_FAILURE"
+            },
+            "reason": {
+              "const": "SHAM_NOT_IDENTIFIABLE"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "cause_opportunity_id": {
+              "type": "null"
+            },
+            "stage_gate_evidence_sha256": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_stage_fidelity_failure": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_STAGE_FIDELITY_FAILURE"
+            },
+            "stage": {
+              "const": "CONDITIONAL_LORA"
+            },
+            "arm_id": {
+              "enum": [
+                "L-OWN",
+                "L-TWIN"
+              ]
+            },
+            "profile": {
+              "const": "THINK1_LORA"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_STAGE_FAILURE"
+            },
+            "reason": {
+              "const": "FIDELITY_GATE_FAILED"
+            },
+            "trace_id": {
+              "type": "string"
+            },
+            "cause_opportunity_id": {
+              "type": "null"
+            },
+            "stage_gate_evidence_sha256": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      ]
+    },
+    "post_terminal_base": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "ledger_state": {
+              "const": "NON_DISPATCH_POST_TERMINAL"
+            },
+            "trace_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "cause_opportunity_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_commit": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/post_terminal_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_COMMIT"
+            },
+            "reason": {
+              "const": "PRIOR_COMMIT"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_request_return": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/post_terminal_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_REQUEST_RETURN"
+            },
+            "reason": {
+              "const": "PRIOR_REQUEST_RETURN"
+            },
+            "profile": {
+              "const": "THINK0"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_defer": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/post_terminal_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_DEFER"
+            },
+            "reason": {
+              "const": "PRIOR_DEFER"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_budget_exhausted": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/post_terminal_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_BUDGET_EXHAUSTED"
+            },
+            "reason": {
+              "const": "PRIOR_BUDGET_EXHAUSTED"
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_model_failure": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/post_terminal_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_MODEL_FAILURE"
+            },
+            "reason": {
+              "const": "PRIOR_MODEL_OUTPUT_FAILURE"
+            },
+            "profile": {
+              "enum": [
+                "THINK0",
+                "THINK1_DEV",
+                "THINK1_TEXT",
+                "THINK1_LORA"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "non_dispatch_post_infrastructure_invalidity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/zero_attempt_base"
+        },
+        {
+          "properties": {
+            "condition": {
+              "const": "NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY"
+            },
+            "ledger_state": {
+              "const": "NON_DISPATCH_POST_INVALID"
+            },
+            "reason": {
+              "const": "PRIOR_INFRASTRUCTURE_INVALIDITY"
+            },
+            "cause_opportunity_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,192}$"
+            },
+            "stage_gate_evidence_sha256": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x-semantic-contract": {
+    "sole_authority": "This file is the only opportunity-row schema and the only condition-to-ledger_state-to-reason vocabulary. Other contracts may reference these identifiers but may not redefine, alias, or extend them.",
+    "one_effect": "The prospective opportunity registry is complete before its stage dispatch. Every registered opportunity_id appears exactly once in rows; opportunity_id values are unique; no opportunity has both a dispatched and non-dispatch row; rows are sorted by opportunity_id ASCII bytes.",
+    "heldout_fixed_pair_registry": {
+      "seal_time": "Before the first HELDOUT_TEXT provider dispatch and before observing any heldout DREAM output.",
+      "pair_identity": "Define pair_tuple=RFC8785_JCS({\"stage\":\"HELDOUT_TEXT\",\"external_life_namespace\":external_life_namespace,\"origin_branch\":origin_branch,\"slot\":slot}) and pair_sha256=lowerhex(SHA256(UTF8(pair_tuple))). The exact opportunity IDs are ASCII(\"P1E-OP-DREAM-\")||pair_sha256 and ASCII(\"P1E-OP-SELF_CHECK-\")||pair_sha256. Reject any pair_sha256 collision across unequal pair_tuple bytes. The pair entries therefore share byte-identical stage, external life, origin branch, and slot and differ only in profile; the SELF_CHECK row's cause_opportunity_id is the exact P1E-OP-DREAM- partner wherever a DREAM-result-specific or dispatched-upstream-infrastructure route applies.",
+      "domain_per_life": "Exactly 84 PREFIX pairs for slots 0..83, 16 OWN pairs for slots 84..99, and 16 DIST pairs for slots 84..99 = 116 pairs.",
+      "cardinality": "Exactly two heldout lives * 116 = 232 DREAM entries and 232 SELF_CHECK entries, paired bijectively. No missing, extra, duplicate, dynamically appended, deleted, renamed, or re-paired entry is legal.",
+      "dispatch": "Only schema-valid new-owner CREATE dispatches the paired SELF_CHECK, exactly once. Every other pair still produces exactly one zero-attempt SELF_CHECK ledger row.",
+      "no_new_calls": "Prospective pairing does not add a model-call class or raise a ceiling: the pre-existing 232 SELF_CHECK maximum is now also the fixed denominator; actual SELF_CHECK dispatches remain at most 232."
+    },
+    "stage_denominators": {
+      "DEV_GOLD": "216 fixed THINK1_DEV opportunities = 3 arms * 6 lives * 12; maximum dispatched model calls 216.",
+      "HELDOUT_TEXT": "632 fixed opportunities = 232 DREAM + 232 SELF_CHECK + 24 THINK0 + 144 THINK1_TEXT. Every ineligible SELF_CHECK remains in this denominator as one zero-attempt row; maximum dispatched model calls 632 and actual dispatches may be lower.",
+      "CONDITIONAL_LORA": "48 fixed THINK1_LORA opportunities = 2 lives * 2 arms * 12, conditionally registered/authorized only after the reviewed text and fidelity gates; maximum dispatched model calls 48.",
+      "whole_conditional_canary": "216 + 632 + 48 = 896 maximum dispatched 32B controller calls. The two fits, 96 fidelity cases, and up to 48 online 7B recognition reads are separate registered resources, not added controller-call opportunities."
+    },
+    "decision_priority": [
+      "NON_DISPATCH_PRECONDITION",
+      "NON_DISPATCH_UNAUTHORIZED",
+      "NON_DISPATCH_STAGE_MISSING_ABSTRACTION or NON_DISPATCH_STAGE_SHAM_INFEASIBLE or NON_DISPATCH_STAGE_FIDELITY_FAILURE",
+      "NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY",
+      "NON_DISPATCH_POST_COMMIT or NON_DISPATCH_POST_REQUEST_RETURN or NON_DISPATCH_POST_DEFER or NON_DISPATCH_POST_BUDGET_EXHAUSTED or NON_DISPATCH_POST_MODEL_FAILURE",
+      "NON_DISPATCH_DUPLICATE",
+      "NON_DISPATCH_SELF_CHECK_NO_PROPOSAL or NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL",
+      "one DISPATCH_* condition"
+    ],
+    "condition_state_reason_map": [
+      {
+        "condition": "DISPATCH_COMPLETED_NONTERMINAL",
+        "ledger_state": "DISPATCHED",
+        "reason": "COMPLETED_NONTERMINAL"
+      },
+      {
+        "condition": "DISPATCH_COMMIT",
+        "ledger_state": "DISPATCHED",
+        "reason": "COMMIT"
+      },
+      {
+        "condition": "DISPATCH_REQUEST_RETURN",
+        "ledger_state": "DISPATCHED",
+        "reason": "REQUEST_RETURN"
+      },
+      {
+        "condition": "DISPATCH_DEFER",
+        "ledger_state": "DISPATCHED",
+        "reason": "DEFER"
+      },
+      {
+        "condition": "DISPATCH_BUDGET_EXHAUSTED",
+        "ledger_state": "DISPATCHED",
+        "reason": "BUDGET_EXHAUSTED"
+      },
+      {
+        "condition": "DISPATCH_MODEL_OUTPUT_FAILURE",
+        "ledger_state": "DISPATCHED",
+        "reason": "MODEL_OUTPUT_FAILURE"
+      },
+      {
+        "condition": "DISPATCH_INFRASTRUCTURE_INVALIDITY",
+        "ledger_state": "DISPATCHED",
+        "reason": "INFRASTRUCTURE_INVALIDITY"
+      },
+      {
+        "condition": "NON_DISPATCH_DUPLICATE",
+        "ledger_state": "NON_DISPATCH_DUPLICATE",
+        "reason": "DUPLICATE_PROPOSAL"
+      },
+      {
+        "condition": "NON_DISPATCH_SELF_CHECK_NO_PROPOSAL",
+        "ledger_state": "NON_DISPATCH_NOT_APPLICABLE",
+        "reason": "DREAM_PASS_NO_PROPOSAL"
+      },
+      {
+        "condition": "NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL",
+        "ledger_state": "NON_DISPATCH_NOT_APPLICABLE",
+        "reason": "DREAM_INVALID_NO_PROPOSAL"
+      },
+      {
+        "condition": "NON_DISPATCH_PRECONDITION",
+        "ledger_state": "NON_DISPATCH_PRECONDITION",
+        "reason": "PRE_DISPATCH_INVALID_PRECONDITION"
+      },
+      {
+        "condition": "NON_DISPATCH_UNAUTHORIZED",
+        "ledger_state": "NON_DISPATCH_NOT_AUTHORIZED",
+        "reason": "STAGE_NOT_AUTHORIZED"
+      },
+      {
+        "condition": "NON_DISPATCH_STAGE_MISSING_ABSTRACTION",
+        "ledger_state": "NON_DISPATCH_STAGE_FAILURE",
+        "reason": "MISSING_REQUIRED_ABSTRACTION"
+      },
+      {
+        "condition": "NON_DISPATCH_STAGE_SHAM_INFEASIBLE",
+        "ledger_state": "NON_DISPATCH_STAGE_FAILURE",
+        "reason": "SHAM_NOT_IDENTIFIABLE"
+      },
+      {
+        "condition": "NON_DISPATCH_STAGE_FIDELITY_FAILURE",
+        "ledger_state": "NON_DISPATCH_STAGE_FAILURE",
+        "reason": "FIDELITY_GATE_FAILED"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_COMMIT",
+        "ledger_state": "NON_DISPATCH_POST_TERMINAL",
+        "reason": "PRIOR_COMMIT"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_REQUEST_RETURN",
+        "ledger_state": "NON_DISPATCH_POST_TERMINAL",
+        "reason": "PRIOR_REQUEST_RETURN"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_DEFER",
+        "ledger_state": "NON_DISPATCH_POST_TERMINAL",
+        "reason": "PRIOR_DEFER"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_BUDGET_EXHAUSTED",
+        "ledger_state": "NON_DISPATCH_POST_TERMINAL",
+        "reason": "PRIOR_BUDGET_EXHAUSTED"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_MODEL_FAILURE",
+        "ledger_state": "NON_DISPATCH_POST_TERMINAL",
+        "reason": "PRIOR_MODEL_OUTPUT_FAILURE"
+      },
+      {
+        "condition": "NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY",
+        "ledger_state": "NON_DISPATCH_POST_INVALID",
+        "reason": "PRIOR_INFRASTRUCTURE_INVALIDITY"
+      }
+    ],
+    "paired_self_check_routing": {
+      "new_owner_create": "Dispatch the already registered SELF_CHECK partner once.",
+      "duplicate_create": "NON_DISPATCH_DUPLICATE/NON_DISPATCH_DUPLICATE/DUPLICATE_PROPOSAL with the exact paired DREAM cause.",
+      "pass": "NON_DISPATCH_SELF_CHECK_NO_PROPOSAL/NON_DISPATCH_NOT_APPLICABLE/DREAM_PASS_NO_PROPOSAL with the exact paired DREAM cause.",
+      "malformed_or_illegal_create": "NON_DISPATCH_SELF_CHECK_INVALID_PROPOSAL/NON_DISPATCH_NOT_APPLICABLE/DREAM_INVALID_NO_PROPOSAL with the exact paired DREAM cause.",
+      "dispatched_dream_infrastructure_invalidity": "NON_DISPATCH_POST_INFRASTRUCTURE_INVALIDITY/NON_DISPATCH_POST_INVALID/PRIOR_INFRASTRUCTURE_INVALIDITY with the exact paired DREAM cause.",
+      "higher_priority": "A stage precondition, missing authority, or registered stage-wide block applies before the DREAM-result routes and uses the corresponding canonical precondition, unauthorized, or stage-failure triple and that triple's cause semantics.",
+      "zero_attempt_invariant": "Every non-dispatch row has attempts=0,input_tokens=0,output_tokens=0,provider_request_id=null. A paired SELF_CHECK cannot have a dispatch and non-dispatch effect, and no DREAM can cause two SELF_CHECK effects."
+    },
+    "stage_failure_exclusivity": "NON_DISPATCH_STAGE_FAILURE is legal only for MISSING_REQUIRED_ABSTRACTION, SHAM_NOT_IDENTIFIABLE, and FIDELITY_GATE_FAILED. NON_DISPATCH_NOT_APPLICABLE is a DREAM-result-specific paired-SELF_CHECK state, not a stage failure. No fourth stage-gate reason exists.",
+    "post_terminal_scope": "NON_DISPATCH_POST_TERMINAL is trace-local only, requires a non-null trace_id and cause_opportunity_id in the same trace, and is never used for an aggregate stage gate, a later stage, or infrastructure invalidity.",
+    "sham_zero_attempt": "If sham assignment is infeasible, every T-SHAM row uses NON_DISPATCH_STAGE_SHAM_INFEASIBLE/NON_DISPATCH_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE with attempts=0 and zero tokens; T-M0, T-OWN, T-DIST, T-TWIN, and T-PATH retain ordinary accounting.",
+    "required_pair_negatives": ["missing DREAM or SELF_CHECK partner", "extra or dynamically appended pair", "pair deletion or re-pairing after DREAM output", "mismatched stage, external life, origin branch, or slot", "wrong or null DREAM cause on a DREAM-result-specific SELF_CHECK non-dispatch", "non-null DREAM cause on a higher-priority route that requires null", "nonzero attempts or tokens on non-dispatch", "non-null provider_request_id on non-dispatch", "both dispatched and non-dispatch effects", "more than one SELF_CHECK effect for a DREAM", "HELDOUT_TEXT denominator other than 632"],
+    "unmapped_or_ambiguous": "Any missing condition, multiple applicable conditions after decision_priority, state/reason mismatch, duplicate opportunity_id, missing registered opportunity or pair, extra/dynamic opportunity or pair, wrong cause, double effect, denominator drift, or unregistered state/reason is INVALID_PRECONDITION/PROTOCOL_CONTRADICTION before any affected dispatch. No verifier may choose a preferred mapping."
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "paper1-v03r-canary-development-fixture-v1b.0",
+  "source_lock": {
+    "lands/v03r.py": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+    "lands/test_v03r.py": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1"
+  },
+  "population": {
+    "seeds_inclusive": [0, 999],
+    "latent_bits": [0, 1],
+    "skin": "aligned",
+    "development_pairs": 850,
+    "development_worlds": 1700,
+    "heldout_pairs": 150,
+    "heldout_worlds": 300
+  },
+  "development_lives": [
+    {"seed": 0, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "eca5d35d7bd2aca49a7f0bdf86eb5dec0583f967cfa545c19f3d869e144cd8bd", "pair_private_sha256": "ed3f18ffff7f06e84b1f549cb7282e4a9d8f2b2014ac32b9b408a44ea8aa19c3", "own_token": "label:yellow-green", "donor_token": "label:mixture-02"},
+    {"seed": 0, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "e8ad2b3547e60aa5ca216ba468f261aa0dbe56670b8cb394216c94d2e471d656", "pair_private_sha256": "ed3f18ffff7f06e84b1f549cb7282e4a9d8f2b2014ac32b9b408a44ea8aa19c3", "own_token": "label:mixture-02", "donor_token": "label:yellow-green"},
+    {"seed": 1, "latent_bit": 0, "episodes": 49, "precheckpoint_sha256": "9c7e1f45fd2800b0842bd7141a892845c995e4f4fa1b003c8befac39aeaf09f1", "pair_private_sha256": "67d2876d26baf86f9485934546a8c3defc6b829cf3f831d225b265c21e4cb59f", "own_token": "label:blue-green", "donor_token": "label:mixture-01"},
+    {"seed": 1, "latent_bit": 1, "episodes": 49, "precheckpoint_sha256": "8cd9bbfe17e2eea91f8344ab42e2bc69b548389a72818c7065ea12f95d70f4e1", "pair_private_sha256": "67d2876d26baf86f9485934546a8c3defc6b829cf3f831d225b265c21e4cb59f", "own_token": "label:mixture-01", "donor_token": "label:blue-green"},
+    {"seed": 2, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "efbf8b2c892cdfd92f93d55e818a1dc2986f342da97bb1b9674cfee1db3935ff", "pair_private_sha256": "0157a497553eafaa4a6b9dc9d95ee4df357735b2a342a972e52768e384305581", "own_token": "label:green", "donor_token": "label:brown"},
+    {"seed": 2, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "c3b9f361fd3897042f523c07da17bf207bcf38551d4018d0e82d87c2b843b96f", "pair_private_sha256": "0157a497553eafaa4a6b9dc9d95ee4df357735b2a342a972e52768e384305581", "own_token": "label:brown", "donor_token": "label:green"}
+  ],
+  "heldout_lives": [
+    {"seed": 5, "latent_bit": 0, "episodes": 46, "precheckpoint_sha256": "63e0d46d703a9dd7ed9a92f361abdb6caa680e211850fcc98321405133b6bd4d", "pair_private_sha256": "b6cfc158dccd4c1472c0e92077092e5bad9e9341aa7b497980214eb25ef8b0f2", "own_token": "label:blue-purple", "donor_token": "label:mixture-02"},
+    {"seed": 5, "latent_bit": 1, "episodes": 46, "precheckpoint_sha256": "c6a82ffbaf7b562aa7a0e29d25d25da38f9b69438fbdd2f62146ff110c8073bb", "pair_private_sha256": "b6cfc158dccd4c1472c0e92077092e5bad9e9341aa7b497980214eb25ef8b0f2", "own_token": "label:mixture-02", "donor_token": "label:blue-purple"}
+  ],
+  "registered_gold_rows": [
+    {"seed": 0, "row_id": "M000046", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:frog"], "citations": ["M000005", "M000010", "M000029", "M000031"]},
+    {"seed": 0, "latent_bit": 0, "row_id": "M000047", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "CHANGE"], "citations": ["M000001", "M000026"]},
+    {"seed": 0, "latent_bit": 1, "row_id": "M000047", "kind": "CAUSAL_JOIN", "fields": ["source:candyland", "target:confluenceland", "STABLE"], "citations": ["M000001", "M000026"]},
+    {"seed": 1, "row_id": "M000049", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:fox"], "citations": ["M000020", "M000021", "M000022", "M000043"]},
+    {"seed": 1, "latent_bit": 0, "row_id": "M000050", "kind": "CAUSAL_JOIN", "fields": ["source:dandyland", "target:confluenceland", "CHANGE"], "citations": ["M000003", "M000039"]},
+    {"seed": 1, "latent_bit": 1, "row_id": "M000050", "kind": "CAUSAL_JOIN", "fields": ["source:dandyland", "target:confluenceland", "STABLE"], "citations": ["M000003", "M000039"]},
+    {"seed": 2, "row_id": "M000046", "kind": "ROLE_EQUIV", "fields": ["animal:otter", "animal:owl"], "citations": ["M000006", "M000018", "M000025", "M000045"]},
+    {"seed": 2, "latent_bit": 0, "row_id": "M000047", "kind": "CAUSAL_JOIN", "fields": ["source:mandyland", "target:confluenceland", "CHANGE"], "citations": ["M000004", "M000026"]},
+    {"seed": 2, "latent_bit": 1, "row_id": "M000047", "kind": "CAUSAL_JOIN", "fields": ["source:mandyland", "target:confluenceland", "STABLE"], "citations": ["M000004", "M000026"]}
+  ],
+  "gold_row_state": {
+    "origin": "DREAMED",
+    "status": "SUPPORTED",
+    "support_basis": "SELF_REVIEW_SAME_EVIDENCE",
+    "depth": 1,
+    "construction_audit_only": "OFFLINE_REGISTERED_GOLD",
+    "hash_rule": "implementation must derive semantic_hash and record_hash from the exact tuples under execution_contract and match the pre-DEV sealed registry"
+  },
+  "registered_proof_rows": [
+    {"seed": 0, "role": "M000046", "causal": "M000047", "baseline": "M000033", "contribution": "M000008", "contribution_recipe": "M000034", "answer_recipe_bit0": "M000015", "answer_recipe_bit1": "M000035"},
+    {"seed": 1, "role": "M000049", "causal": "M000050", "baseline": "M000006", "contribution": "M000020", "contribution_recipe": "M000046", "answer_recipe_bit0": "M000042", "answer_recipe_bit1": "M000027"},
+    {"seed": 2, "role": "M000046", "causal": "M000047", "baseline": "M000037", "contribution": "M000018", "contribution_recipe": "M000012", "answer_recipe_bit0": "M000028", "answer_recipe_bit1": "M000034"}
+  ],
+  "gold_corpus": {
+    "GOLD_TEXT": "all witnessed rows in exact episode order, followed by registered ROLE_EQUIV then registered bit-specific CAUSAL_JOIN",
+    "GOLD_TWIN": "other bit's complete GOLD_TEXT reader with recipient goal and public vocabulary",
+    "identity_visibility": "donor, life, bit, and arm identity remain audit-only",
+    "success_requires_return_and_citation": ["registered role row", "registered causal row"]
+  },
+  "proof_row_masks": {
+    "count_per_life": 6,
+    "rule": "remove each registered proof row once and require deterministic proof checker MISSING_REQUIRED_EDGE",
+    "model_calls": 0,
+    "interpretation": "CPU proof-contract checks, not behavioral ablations"
+  },
+  "no_memory": {
+    "reader": "immutable empty exact reader",
+    "legal_query_result_jcs": "{\"result\":\"NOT_FOUND\"}",
+    "illegal_query_effect": "terminate invalid",
+    "matched": ["goal", "vocabulary", "prompt", "scratch reducer", "twelve-operation envelope"],
+    "adaptive_stopping": false
+  },
+  "shortcut_audit": {
+    "feature_order": ["goal", "passive", "effects", "source", "role"],
+    "definitions": {
+      "goal": "animal_id,target_id,blocked_source_id",
+      "passive": "sorted anchor_id,raw_ratio_tuple for target baselines at goal target",
+      "effects": "sorted valve_id,target_id,effect for all intervention effects",
+      "source": "sorted anchor_id,source_id,label for all source anchors",
+      "role": "sorted source_id,label for goal-animal observations"
+    },
+    "fit": "individual development worlds only; per-key maximum count with lexicographic ratio-tuple tie break; global majority fallback",
+    "evaluation": "all 300 heldout worlds and 150 complete heldout pairs",
+    "global_majority": {"ratio": [1, 1, 1], "development_count": 144, "individual_correct": 38, "paired_correct": 0},
+    "maximum_individual_correct": 44,
+    "maximum_paired_correct": 3,
+    "golden_vector": [
+      ["goal",19,0,300], ["passive",38,0,0], ["effects",37,1,300], ["source",36,0,38], ["role",26,0,300],
+      ["goal+passive",38,0,0], ["goal+effects",35,2,104], ["goal+source",38,0,0], ["goal+role",35,0,54],
+      ["passive+effects",38,0,0], ["passive+source",38,0,0], ["passive+role",38,0,0], ["effects+source",38,0,1], ["effects+role",37,1,82], ["source+role",38,0,2],
+      ["goal+passive+effects",38,0,0], ["goal+passive+source",38,0,0], ["goal+passive+role",38,0,0], ["goal+effects+source",38,0,0], ["goal+effects+role",38,0,0], ["goal+source+role",38,0,0],
+      ["passive+effects+source",38,0,0], ["passive+effects+role",38,0,0], ["passive+source+role",38,0,0], ["effects+source+role",38,0,0],
+      ["goal+passive+effects+source",38,0,0], ["goal+passive+effects+role",38,0,0], ["goal+passive+source+role",38,0,0], ["goal+effects+source+role",38,0,0], ["passive+effects+source+role",38,0,0],
+      ["goal+passive+effects+source+role",38,0,0]
+    ]
+  },
+  "thinker_parser_and_scorer": {
+    "shared_with_heldout": true,
+    "strict_json": true,
+    "one_response_one_operation": true,
+    "continue_operations": ["QUERY", "THINK", "BACKTRACK"],
+    "terminal_operations": ["COMMIT", "DEFER"],
+    "invalid_terminals": ["malformed", "illegal read", "truncation", "timeout", "runtime mismatch"],
+    "budget": "after twelfth nonterminal response seal BUDGET_EXHAUSTED; no thirteenth call",
+    "success": "valid COMMIT of exact registered token with prior returned local citations including arm-required role and causal rows",
+    "pair_success": "strict AND",
+    "golden_cases": ["every valid operation", "duplicate keys", "trailing text", "code fence", "wrong token", "own token in twin cell", "correct token without required citations", "cross-life citation", "DEFER", "budget exhaustion", "reader CONFLICT", "timeout", "truncation"]
+  },
+  "development_gate": {
+    "seal_all_outputs_before_scoring": true,
+    "GOLD_TEXT": "3/3 paired own successes",
+    "GOLD_TWIN": "3/3 paired donor-token successes",
+    "NO_MEMORY": "strictly fewer than 3/3 paired successes",
+    "infrastructure_invalid_invalidates_stage": true,
+    "post_first_dispatch_immutability": ["prompts", "schemas", "runtime", "request builder", "fixtures", "readers", "parser", "scorer", "expected tokens", "masks", "shortcut audit"],
+    "changed_byte_effect": "new ratified lock, never a rerun"
+  },
+  "call_accounting": {
+    "NO_MEMORY": 72,
+    "GOLD_TEXT": 72,
+    "GOLD_TWIN": 72,
+    "total": 216,
+    "removed_arms": ["RAW_RAG", "GOLD_OPEN_LOOP"]
+  }
+}

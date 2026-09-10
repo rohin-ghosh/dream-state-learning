@@ -1,0 +1,115 @@
+{
+  "schema_version": "paper1-v03r-canary-acceptance-registry-v1d.0",
+  "semantic_lock": "semantic_consistency_matrix.json",
+  "opportunity_ledger_schema": "opportunity_ledger.schema.json",
+  "lineage_source": {
+    "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/consensus.json",
+    "sha256": "e1871515f7c8e6a52312e2be2473172da6c4e695ab9dbcba387038c6adc3ad0d",
+    "rule": "test_id is byte-identical to each mandated replacement_test_id; aliases and shortened IDs are forbidden"
+  },
+  "tests": [
+    {
+      "test_id": "P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "After exact human ratification, validate all bound protocol/source/runtime hashes, the exact semantic_consistency_matrix.json normative-file inventory and every producer/consumer/object/ordering/validity/ledger edge, the sole opportunity_ledger.schema.json, scope, ceilings, review schemas, platform-attested actor-separation rules, authority-token predecessor links, G namespace isolation, and terminal routes over the implemented CPU artifact set.",
+      "expected": "Every file and semantic edge in the exhaustive matrix is present and consistent; every unlisted or contradictory producer, consumer, object, ordering, validity, or ledger byte is rejected as INVALID_PRECONDITION/PROTOCOL_CONTRADICTION. Only ratification to CPU implementation to reviewed DEV to reviewed heldout text to reviewed conditional two-fit LoRA to HUMAN_TERMINAL is reachable.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/preflight/P1CB01_SCOPE_HASH_RUNTIME_AND_MONOTONE_AUTHORITY.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW",
+      "forbidden_before": "HUMAN_RATIFICATION"
+    },
+    {
+      "test_id": "P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Mutate private fields, audit prose/confidence/predictions, results, forbidden aliases/paths, unauthorized focus echoes, donor identity, and G fixture metadata; compare selectors, closed states, final rendered provider tokens, readers, compiler views, candidates, training examples, and LoRA-backed read-result bytes.",
+      "expected": "Every forbidden mutation is byte-inert; only the registered OWN/DIST focus treatment may change its explicitly authorized provider-visible field.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/preflight/P1CB02_FINAL_REQUEST_AND_DURABLE_STATE_TAINT_NONINTERFERENCE.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "unit",
+      "setup": "Exercise every kind/arity/atom namespace, witnessed and dreamed compatibility tuple, proposal/check verdict, explicit model-cited distinct-lineage support, duplicate ownership, conflict, E-to-M witness mapping, depth, cycle, diamond, hash, and DEV G-namespace separation vector.",
+      "expected": "Only immutable witnessed rows and immutable model-SUPPORTED dreamed rows become cognitive rows; proposals and receipts remain audit objects; canonical ownership, hashes, lineage, and conflicts are deterministic without a semantic truth verifier.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/preflight/P1CB03_CLOSED_ROWS_REFLECTION_REDUCER_AND_PROVENANCE.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Exercise exact public events, state-token derivation, all legal and illegal one-null queries, closed read-result projections and handles, four UTF-8/JCS compiler views and token IDs, shared candidates, candidate-to-row mapping, two-life isolation, and matched atomic adapter mounts.",
+      "expected": "Text and LoRA share one semantic manifest and thinker-facing projection; adapter selection supplies every semantic field; host provenance, donor identity, audit state, and G fixtures cannot carry a heldout answer.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/preflight/P1CB04_CANONICAL_CORPUS_ATOMIC_READER_AND_MATCHED_MOUNTS.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM",
+      "phase": "DEV_GOLD",
+      "kind": "baseline",
+      "setup": "Match the exact 31-entry predictor vector, source/precheckpoint/pair hashes, six DEV lives, G gold rows, proof masks, parser/scorer vectors, own/donor tokens, terminal non-dispatch receipts, and then seal every dispatched NO_MEMORY/GOLD_TEXT/GOLD_TWIN response before scoring.",
+      "expected": "All shortcut ceilings hold; GOLD_TEXT and GOLD_TWIN each achieve 3/3 paired success with required returned H handles offline-bound to and cited for the G rows; NO_MEMORY is below 3/3; no G identifier is model-visible or enters heldout ownership or proposal identity.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/dev/P1CB05_IMMUTABLE_SHORTCUT_AND_THREE_ARM_DEV_HEADROOM.jcs.json",
+      "required_before": "DEV_TO_HELDOUT_REVIEW"
+    },
+    {
+      "test_id": "P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES",
+      "phase": "POST_RATIFICATION_CPU_PRE_DEV",
+      "kind": "invariant",
+      "setup": "Use deterministic fake providers for the exact 46 WAKE, 22 REACTIVATE, and 16 SLEEP common prefix followed by THINK0 and the post-prefix return treatment; check trigger/witness conversion, mode pools, branch-local counters, profiles/slots/seeds, literal zero-return M0, sixteen-slot OWN/DIST, public DIST including DEFER, twelve-operation boundary, and canonical ledger rows.",
+      "expected": "Every request, selector, ID, seed, state hash, counter update, branch copy, terminal, and ledger row matches the frozen contracts; M1_OWN remains fixed regardless of results. The test is evidence only for schedule executability and the zero/OWN/DIST return-loop intervention after the common recurrent prefix, never necessity of prefix recurrence, repeated dreaming as a whole, graph growth, generic construction, or action improvement.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/preflight/P1CB06_EXACT_RECURRENT_SCHEDULE_ZERO_RETURN_AND_MATCHED_BRANCHES.jcs.json",
+      "required_before": "CPU_TO_DEV_REVIEW"
+    },
+    {
+      "test_id": "P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS",
+      "phase": "HELDOUT_TEXT",
+      "kind": "end_to_end",
+      "setup": "On both seed-5 twins, follow the registered reveal order; seal M0/M1/DIST/vocabulary/candidate/path/sham/arm plans prospectively; run all runnable T-M0/T-OWN/T-DIST/T-TWIN/T-PATH/T-SHAM traces; then score private correctness and returned-and-cited use offline.",
+      "expected": "Validity follows the canonical total mapping. Missing required dreamed abstractions is VALID_STAGE_FAILURE/MISSING_REQUIRED_ABSTRACTION. Sham infeasibility is VALID_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE: T-M0, T-OWN, T-DIST, T-TWIN, and T-PATH still execute, every T-SHAM opportunity is an exact zero-attempt NON_DISPATCH_STAGE_SHAM_INFEASIBLE/NON_DISPATCH_STAGE_FAILURE/SHAM_NOT_IDENTIFIABLE row, terminal routing completes, and neither a full nor weakened causal-use claim is permitted.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/heldout_text/P1CB07_FIXED_M1_TEXT_AND_PROSPECTIVE_READER_INTERVENTIONS.jcs.json",
+      "required_before": "HELDOUT_TO_LORA_REVIEW"
+    },
+    {
+      "test_id": "P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP",
+      "phase": "CONDITIONAL_LORA",
+      "kind": "end_to_end",
+      "setup": "Only after reviewed T pass, fit exactly two pristine per-life rank-64 adapters on sealed M1_OWN compiler bytes; score each 48-cue roster; run matched L-OWN/L-TWIN requests whose mounted backend alone changes; validate candidate-winner-to-row projections and unmount receipts.",
+      "expected": "Each adapter separately reaches at least 44/48 and its registered own/donor behavior criteria; no pooled gate, host-text answer path, third fit, retry, or result-selected candidate exists.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/conditional_lora/P1CB08_TWO_LOCKED_ADAPTERS_PER_LIFE_FIDELITY_AND_SWAP.jcs.json",
+      "required_before": "STAGE_L_TERMINAL_REVIEW"
+    },
+    {
+      "test_id": "P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY",
+      "phase": "EVERY_TRANSITION",
+      "kind": "invariant",
+      "setup": "At CPU, DEV, T, L, and terminal boundaries reconcile locks, authority, every opportunity_ledger.schema.json condition/state/reason vector, request/response tokens, parser stops, runtime failures, the three exclusive stage gates, fit receipts, partial leaves, ceilings, and no-retry seals against the total validity map. Include positives and mismatch negatives for duplicate, precondition, unauthorized, COMMIT, REQUEST_RETURN, DEFER, budget exhaustion, model failure, infrastructure invalidity, missing abstraction, sham infeasibility, fidelity failure, and every post-terminal subtype.",
+      "expected": "Every registered opportunity has exactly one canonical ledger effect and every terminal has exactly one validity/reason pair. NON_DISPATCH_STAGE_FAILURE is accepted only for the three registered gates; NON_DISPATCH_POST_TERMINAL is accepted only trace-locally; missing, multiple, unregistered, or cross-contract-different mappings are PROTOCOL_CONTRADICTION. No drift, retry, fake receipt, uncounted dispatch, or over-ceiling transition advances.",
+      "evidence_artifacts": {
+        "CPU_TO_DEV": "artifacts/paper1_v03r_canary_v1d/review/cpu_to_dev/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "DEV_TO_HELDOUT": "artifacts/paper1_v03r_canary_v1d/review/dev_to_heldout/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "HELDOUT_TO_LORA": "artifacts/paper1_v03r_canary_v1d/review/heldout_to_lora/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "STAGE_L_TERMINAL": "artifacts/paper1_v03r_canary_v1d/review/stage_l_terminal/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json",
+        "EARLY_TERMINAL": "artifacts/paper1_v03r_canary_v1d/review/early_terminal/P1CB09_TRANSITION_LOCAL_RUNTIME_ACCOUNTING_AND_VALIDITY.jcs.json"
+      },
+      "required_before": "EACH_TRANSITION_OR_TERMINAL"
+    },
+    {
+      "test_id": "P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP",
+      "phase": "EVERY_TRANSITION_AND_TERMINAL",
+      "kind": "independent_review",
+      "setup": "Validate exact packet and assignment bytes; give the identical immutable packet separately to a fresh reviewer and advocate; enforce platform identity/fresh-context attestations, declared actor separation, no mutation, reviewer supremacy, changed-byte rereview, and human stop. Run rejection fixtures for recurrence-as-a-whole, prefix necessity, generic construction, generalization, action improvement, online learning, continued improvement, open recall, whole-corpus storage, durability, capacity, scale, superiority, text/LoRA equivalence, proved reviewer independence, Paper-1-headline language, and broad negative overlocalization.",
+      "expected": "Only two APPROVE dispositions over the same unchanged lock advance; any rejection, invalidity, missing artifact, or prohibited overlap terminates those bytes. Every listed broad positive and negative fixture is rejected. Every terminal states that public actions were environment-generated and review separation was platform-attested rather than proved, remains an engineering-ceiling-style game/proof-scaffolded one-pair diagnostic, and stops at HUMAN_TERMINAL.",
+      "evidence_artifact": "artifacts/paper1_v03r_canary_v1d/review/P1CB10_INDEPENDENT_STAGE_REVIEW_CLAIM_FIREWALL_AND_HUMAN_STOP.jcs.json",
+      "required_before": "EACH_TRANSITION_OR_TERMINAL"
+    }
+  ],
+  "global_rules": {
+    "tests_are_verification_not_design_authority": true,
+    "P1CB01_temporal_position": "wholly after human ratification during CPU implementation and before any DEV dispatch",
+    "model_or_gpu_run_during_preflight_design": false,
+    "changed_test_or_protocol_byte": "requires a new protocol lock, human ratification, assignments, packets, and dispositions"
+  }
+}

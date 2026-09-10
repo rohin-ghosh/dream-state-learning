@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260901_experiential_reasoning_adapter_v1",
+  "title": "Reframe per-life LoRA from fact memory to experience-conditioned reasoning substrate",
+  "summary": "Deliberate whether sleep-compiled per-life adaptation should be understood and tested as changing goal-conditioned retrieval, traversal, hypothesis formation, and action selection rather than merely storing declarative content, while preserving exact episodic evidence and separating across-life controller learning.",
+  "system_thesis": "A pretrained agent already owns broad past-looking general capability and a bounded current workspace. Its lifetime learning system should convert local action-outcome experience into future-facing changes in how it reconstructs, searches, and acts. Context carries current focus, immutable episodic storage carries exact evidence, per-life fast adaptation may shape experience-conditioned inference, and slower across-life learning may amortize reusable agency.",
+  "state": "proposed",
+  "context_files": [
+    {"path": "research_notes/42_system_thesis_and_experiment_map.md", "sha256": "f46463d739a7bd9c38b0b3c12bfe3b96403e9b5589231dff0aacc561e4a832fa", "purpose": "Current three-timescale thesis and claim boundaries."},
+    {"path": "research_notes/43_developmental_experiential_learning_v1.md", "sha256": "825a973ed855033e960703d369699086f58910f2ee215e20cb4563d5f4743f15", "purpose": "Current developmental architecture and lifetime evaluation proposal."},
+    {"path": "research_loop/plans/one_resolver_sleep_compiler_discussion_v0.md", "sha256": "7d16783d3efa9d62195051364a2d72c5d2639ba872f818973f4dc7e9be64aae9", "purpose": "Shared resolver, associative traversal, and evidence-bound compiler discussion."},
+    {"path": "research_loop/plans/rml_pilot_v1.md", "sha256": "62637b045cd34a0501c14b1651974df9700b35ba4900cbe6dbbeefee291dc2fd", "purpose": "Current RML causal ladder and paper-facing benchmark."},
+    {"path": "research_loop/plans/rml_g1g2_hybrid_consensus_v1.md", "sha256": "de0fae3a5737950eeac52c0ae379a469f1179f4dd8b02945e932d6425ef78c8e", "purpose": "Current minimum text-memory mechanism design that must not be silently superseded."}
+  ],
+  "graph_delta": {
+    "nodes": [
+      {"operation": "modify", "node_id": "per_life_memory_adapter", "before": "Lossy store/access view for local semantic and procedural associations.", "after": "Candidate experience-conditioned inference substrate that may change retrieval cues, traversal preferences, local hypothesis continuations, and action-relevant reconstruction while remaining life-specific.", "rationale": "The directive proposes that useful experiential learning is a learned change in reasoning, not only a fact register."},
+      {"operation": "modify", "node_id": "immutable_episodic_store", "before": "Verbatim public action-outcome evidence and provenance.", "after": "Authoritative exact evidence store kept separate from the lossy adapter; adapter generations never become facts without cited public support.", "rationale": "Reasoning adaptation must not erase source monitoring or turn parametric completion into evidence."},
+      {"operation": "modify", "node_id": "loop_adapter", "before": "Future across-life learned resolver and scheduler policy.", "after": "Slow reusable agency prior learned across many lives, explicitly separated from per-life fast reasoning adaptation and frozen within evaluation lives.", "rationale": "The same behavior could arise from lifetime world adaptation or globally learned search; evaluation must distinguish them."}
+    ],
+    "edges": [
+      {"operation": "modify", "edge_id": "sleep_to_per_life_adapter", "from": "sleep_compiler", "to": "per_life_memory_adapter", "before": "Compile supported semantic atoms and hot-path shortcuts into training realizations.", "after": "Compile supported content plus outcome-grounded thought/action trajectories into controlled content-only, policy-only, and joint per-life training views.", "rationale": "A factorial is needed to learn whether adapter value comes from content, reasoning policy, or their interaction."},
+      {"operation": "add", "edge_id": "per_life_adapter_to_traversal_policy", "from": "per_life_memory_adapter", "to": "wake_resolver", "before": "", "after": "Mounted per-life adaptation may alter which legal generic query, branch, backtrack, hypothesis, or action operation becomes likely under identical public state and read interface.", "rationale": "This is the proposed learned-agency mechanism and must be directly observable rather than inferred from final accuracy."}
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {"operation": "modify", "loop_id": "lifetime_sleep_write_read", "before": "Experience -> DREAM proposals -> evidence-bound SLEEP corpus -> MEMORY LoRA -> later reads -> explicit THINK composition.", "after": "Experience plus auditable thought/action paths -> evidence-bound sleep compilation -> content-only, trajectory/policy-only, or joint fast adapter -> later generic resolver traversal and action; exact episodic roots remain separately queryable.", "trigger": "Frozen geometric sleep checkpoint after ordinary public outcomes.", "reads": ["immutable public experience", "eligible supported semantics", "released evidence-only wake paths", "selection-only traversal statistics"], "writes": ["typed training corpus", "per-life fast adapter", "provenance manifest", "resource ledger"], "stop_condition": "One frozen adapter checkpoint is built from the clean base, or the support/visibility/resource gate fails.", "rationale": "This makes learned experiential reasoning a falsifiable intervention rather than a metaphor."},
+      {"operation": "add", "loop_id": "content_policy_factorial", "before": "", "after": "Cross adapter training target content with reasoning-operation trajectories under identical experiences, base, rank, training tokens/FLOPs, reader, and evaluation budget; compare unmounted, content-only, policy-only, joint, shuffled-policy, and across-life policy controls.", "trigger": "Only after text-memory G1/G2 establishes that the fixed resolver and admitted content are independently usable.", "reads": ["one common frozen life", "one admitted semantic corpus", "one sealed operation-trace corpus", "held-out evaluation manifest inaccessible during training"], "writes": ["frozen factorial adapters", "operation-distribution metrics", "action outcomes", "causal audit"], "stop_condition": "Every predeclared cell completes once or fails closed; no prompt repair on evaluated worlds.", "rationale": "Without this decomposition, any improvement can be called memorized answers, ordinary SFT, or adapter capacity."}
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {"operation": "modify", "claim_id": "paper1_memory_claim", "before": "Sleep-compiled lifetime parametric memory improves held-out connected action after context overflow.", "after": "Candidate: sleep-compiled fast per-life adaptation changes future goal-conditioned inference and action from the agent's own experience, beyond effects explained by explicit content access or generic trajectory SFT.", "evidence_needed": "A common-life content/policy factorial with binding shuffles, cross-life swaps, matched budgets, operation-level mediation, strong text/graph/program baselines, post-native growth, and held-out action gains.", "headline_eligible": false},
+      {"operation": "add", "claim_id": "experiential_reasoning_mechanism", "before": "", "after": "Per-life adaptation can causally alter legal query/traversal/action choices under identical public states and evidence access, and those changes mediate later action value.", "evidence_needed": "Frozen-state paired intervention comparing adapter assignments, next-operation distributions, path efficiency, information gain, and sealed outcomes while excluding answer-bearing trajectories.", "headline_eligible": false},
+      {"operation": "add", "claim_id": "timescale_hierarchy", "before": "", "after": "Context, exact episodic storage, per-life fast adaptation, across-life loop learning, and base training are distinct functional timescales rather than interchangeable memory capacities.", "evidence_needed": "Reset/swap factorials across lives and tasks demonstrating different transfer and interference signatures for each state object.", "headline_eligible": false}
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": ["public_experience", "episodic_roots", "supported_semantics", "wake_operation_traces", "heldout_targets", "offline_truth", "evaluation_outcomes"],
+    "stages": ["sleep_compile", "adapter_train", "wake_evaluate", "offline_score"],
+    "cells": [
+      {"information_id": "public_experience", "stage_id": "sleep_compile", "visibility": "visible", "reason": "Sleep compiles only lived public evidence."},
+      {"information_id": "episodic_roots", "stage_id": "sleep_compile", "visibility": "visible", "reason": "Exact roots ground content and paths."},
+      {"information_id": "supported_semantics", "stage_id": "sleep_compile", "visibility": "visible", "reason": "Supported local semantics may seed content views."},
+      {"information_id": "wake_operation_traces", "stage_id": "sleep_compile", "visibility": "derived_only", "reason": "Only evidence-only projections and outcome-grounded operations are eligible; unsupported rationales are forbidden."},
+      {"information_id": "heldout_targets", "stage_id": "sleep_compile", "visibility": "forbidden", "reason": "Future tasks cannot shape compilation."},
+      {"information_id": "offline_truth", "stage_id": "sleep_compile", "visibility": "forbidden", "reason": "Truth is audit-only after freeze."},
+      {"information_id": "evaluation_outcomes", "stage_id": "sleep_compile", "visibility": "forbidden", "reason": "Evaluation is read-only."},
+      {"information_id": "public_experience", "stage_id": "adapter_train", "visibility": "derived_only", "reason": "Only frozen ratified realizations enter training."},
+      {"information_id": "episodic_roots", "stage_id": "adapter_train", "visibility": "derived_only", "reason": "Provenance IDs may condition realizations without raw hidden channels."},
+      {"information_id": "supported_semantics", "stage_id": "adapter_train", "visibility": "derived_only", "reason": "Content cells receive only their frozen admitted views."},
+      {"information_id": "wake_operation_traces", "stage_id": "adapter_train", "visibility": "derived_only", "reason": "Policy cells receive only masked public-state to legal-operation trajectories."},
+      {"information_id": "heldout_targets", "stage_id": "adapter_train", "visibility": "forbidden", "reason": "Prevents answer training."},
+      {"information_id": "offline_truth", "stage_id": "adapter_train", "visibility": "forbidden", "reason": "Prevents oracle-guided updates."},
+      {"information_id": "evaluation_outcomes", "stage_id": "adapter_train", "visibility": "forbidden", "reason": "Prevents test adaptation."},
+      {"information_id": "public_experience", "stage_id": "wake_evaluate", "visibility": "derived_only", "reason": "Only current public state and bounded declared reads are visible."},
+      {"information_id": "episodic_roots", "stage_id": "wake_evaluate", "visibility": "derived_only", "reason": "Exact evidence enters only through the common bounded reader."},
+      {"information_id": "supported_semantics", "stage_id": "wake_evaluate", "visibility": "derived_only", "reason": "Mounted adapter or matched text reader exposes no unrestricted corpus."},
+      {"information_id": "wake_operation_traces", "stage_id": "wake_evaluate", "visibility": "forbidden", "reason": "Training trajectories are not replayed into evaluation context."},
+      {"information_id": "heldout_targets", "stage_id": "wake_evaluate", "visibility": "visible", "reason": "The current ordinary goal is the task."},
+      {"information_id": "offline_truth", "stage_id": "wake_evaluate", "visibility": "forbidden", "reason": "No answer or proof oracle."},
+      {"information_id": "evaluation_outcomes", "stage_id": "wake_evaluate", "visibility": "derived_only", "reason": "Only the current clone's ordinary environment feedback is visible and is discarded after the item."},
+      {"information_id": "public_experience", "stage_id": "offline_score", "visibility": "visible", "reason": "Audit reconstructs chronology."},
+      {"information_id": "episodic_roots", "stage_id": "offline_score", "visibility": "visible", "reason": "Audit checks provenance."},
+      {"information_id": "supported_semantics", "stage_id": "offline_score", "visibility": "visible", "reason": "Audit checks content."},
+      {"information_id": "wake_operation_traces", "stage_id": "offline_score", "visibility": "visible", "reason": "Audit estimates mediation and policy change."},
+      {"information_id": "heldout_targets", "stage_id": "offline_score", "visibility": "visible", "reason": "Targets are scored only offline."},
+      {"information_id": "offline_truth", "stage_id": "offline_score", "visibility": "visible", "reason": "Truth is permitted only after all cognitive artifacts freeze."},
+      {"information_id": "evaluation_outcomes", "stage_id": "offline_score", "visibility": "visible", "reason": "Outcomes are audit inputs only."}
+    ]
+  },
+  "acceptance_tests": [
+    {"test_id": "era_01_content_policy_identifiability", "kind": "ablation", "setup": "Train content-only, policy-only, joint, shuffled-policy, cross-life-policy, and null adapters on one common frozen life with matched capacity and compute.", "expected": "Each cell differs only on registered training targets; held-out answers and offline truth are absent; operation-level and action metrics permit content/policy attribution.", "falsifies": "The proposed reasoning role is inseparable from content leakage or extra compute.", "evidence_artifact": "future factorial manifest and taint report", "required_before": "gpu_run"},
+    {"test_id": "era_02_exact_evidence_authority", "kind": "invariant", "setup": "Generate an adapter completion that conflicts with an immutable episodic root and attempt to cite or act on it as fact.", "expected": "The resolver treats it as a hypothesis, retrieves/cites exact evidence, revises or defers, and the adapter output alone cannot promote support.", "falsifies": "The reasoning adapter silently becomes an unauditable truth store.", "evidence_artifact": "future source-monitoring attack report", "required_before": "gpu_run"},
+    {"test_id": "era_03_paired_state_operation_shift", "kind": "end_to_end", "setup": "At byte-identical public states and reader snapshots, randomize mounted per-life adapter and record next legal operation, path, queries, and action.", "expected": "Authentic adaptation changes useful operation/path choices in the predicted direction and improves sealed action outcomes; binding/cross-life/shuffled controls remove the effect.", "falsifies": "The adapter acts only as a fact lookup or the policy change is not experiential.", "evidence_artifact": "future paired intervention ledger", "required_before": "scientific_claim"},
+    {"test_id": "era_04_no_answer_trajectory", "kind": "invariant", "setup": "Trace every policy-training token to a pre-target public state, legal operation, and ordinary outcome; inject answer, proof, evaluator, future, and unsupported-rationale descendants.", "expected": "All injected descendants are rejected before corpus freeze and no future target can be reconstructed from training bytes alone.", "falsifies": "Learned reasoning is supervised by the benchmark answer." , "evidence_artifact": "future trajectory taint and target-reconstruction audit", "required_before": "gpu_run"},
+    {"test_id": "era_05_timescale_reset_swap", "kind": "ablation", "setup": "Independently reset/swap working context, episodic store, per-life adapter, across-life loop adapter, and base across paired lives.", "expected": "Per-life state never transfers accidentally; reusable policy transfer is isolated from local world content; exact evidence and fast adaptation have distinct failure signatures.", "falsifies": "The proposed timescale hierarchy is only naming.", "evidence_artifact": "future reset/swap matrix", "required_before": "scientific_claim"},
+    {"test_id": "era_06_strong_baselines", "kind": "baseline", "setup": "Compare identical experience against native context, episodic/linked RAG, explicit graph/program, same-corpus text, content LoRA, direct trajectory SFT, and matched policy SFT.", "expected": "Any claimed experiential-reasoning effect survives the declared noninferiority/superiority gates or the claim is narrowed.", "falsifies": "A simpler memory or ordinary SFT explains the result.", "evidence_artifact": "future common-deck baseline report", "required_before": "scientific_claim"}
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "After two independent interpretations and adversarial adjudication, should the project adopt experience-conditioned reasoning as a distinct per-life adapter hypothesis and authorize only its exact design/CPU-preflight scope?",
+    "forbidden_before_approval": ["edit the ratified RML-D0 instrument", "implement adapter training", "make model or GPU calls", "supersede the G1/G2 text mechanism gate", "claim learned agency, creativity, or experiential reasoning"]
+  }
+}

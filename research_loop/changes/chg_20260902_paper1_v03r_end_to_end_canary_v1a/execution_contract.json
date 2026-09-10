@@ -1,0 +1,120 @@
+{
+  "schema_version": "paper1-v03r-canary-execution-v1a.0",
+  "public_projection": {
+    "valve_route": ["valve", "source"],
+    "intervention_effect": ["valve", "target", "effect"],
+    "source_anchor_color": ["anchor", "source", "label"],
+    "animal_source_color": ["animal", "source", "label"],
+    "target_passive_baseline": ["anchor", "target", "mixture"],
+    "workshop_recipe": ["mixture", "label"],
+    "forbidden_raw_keys": ["ratio", "latent_bit", "answer", "parents", "source_subset", "role", "split", "latent_tuple_id", "world_fingerprint"],
+    "probe_model_fields": ["probe_id", "source", "target", "question"],
+    "probe_audit_only_fields": ["matched_distractor_source", "matched_distractor_target", "answer_valve", "next_operation"]
+  },
+  "surface_atoms": {
+    "valve": "valve:<skin-surface-slug>",
+    "source": "source:<skin-surface-slug>",
+    "target": "target:<skin-surface-slug>",
+    "animal": "animal:<skin-surface-slug>",
+    "label": "label:<skin-surface-slug>",
+    "mixture": "mixture:<positive-count>*<skin-pigment-slug>[+...]",
+    "effect": ["CHANGE", "STABLE"],
+    "canonicalization": "ASCII lowercase slug for public surface nouns; mixture terms follow the skin's published primary-pigment order; zero terms omitted; no internal ID appears in a model request"
+  },
+  "row_kinds": {
+    "ROUTE": {"fields": ["valve", "source"], "origin": "WITNESSED", "touch_class": "concept"},
+    "EFFECT": {"fields": ["valve", "target", "effect"], "origin": "WITNESSED", "touch_class": "concept"},
+    "SOURCE_VALUE": {"fields": ["anchor", "source", "label"], "origin": "WITNESSED", "touch_class": "concept"},
+    "ANIMAL_VALUE": {"fields": ["animal", "source", "label"], "origin": "WITNESSED", "touch_class": "concept"},
+    "TARGET_BASELINE": {"fields": ["anchor", "target", "mixture"], "origin": "WITNESSED", "touch_class": "concept"},
+    "RECIPE": {"fields": ["mixture", "label"], "origin": "WITNESSED", "touch_class": "relation"},
+    "ROLE_EQUIV": {"fields": ["animal", "anchor"], "origin": "DREAMED", "touch_class": "relation"},
+    "CAUSAL_JOIN": {"fields": ["source", "target", "effect"], "origin": "DREAMED", "touch_class": "relation"},
+    "ROLE_APPLICATION": {"fields": ["animal", "target", "anchor"], "origin": "DREAMED", "touch_class": "relation"}
+  },
+  "forbidden_row_shapes": [
+    "any dreamed row containing a public label, mixture, final answer, or action field",
+    "any animal-and-target row other than label-free ROLE_APPLICATION(animal,target,anchor)",
+    "any row containing all registered proof families",
+    "any ROLE_APPLICATION without a ROLE_EQUIV semantic parent and witnessed TARGET_BASELINE premise",
+    "any field outside the kind's exact tuple"
+  ],
+  "status_reducer": {
+    "WITNESSED": {"WITNESS": "WITNESSED"},
+    "ABSENT": {"CREATE": "PROVISIONAL"},
+    "PROVISIONAL": {"SELF_SUPPORTED_SAME_EVIDENCE": "SUPPORTED", "SELF_SUPPORTED_INDEPENDENT": "SUPPORTED", "SELF_CONTRADICTED": "CONTRADICTED", "SELF_UNRESOLVED": "UNRESOLVED"},
+    "terminal_statuses": ["WITNESSED", "SUPPORTED", "CONTRADICTED", "UNRESOLVED"],
+    "illegal_transition": "fail_closed",
+    "row_bytes_immutable": true,
+    "audit_append_only": true,
+    "corpus_eligible_statuses": ["WITNESSED", "SUPPORTED"]
+  },
+  "phase_legality": {
+    "DREAM": ["PASS", "CREATE"],
+    "SELF_CHECK": ["SUPPORTED", "CONTRADICTED", "UNRESOLVED"],
+    "THINK0": ["QUERY", "THINK", "REQUEST_RETURN", "DEFER"],
+    "THINK1": ["QUERY", "THINK", "BACKTRACK", "COMMIT", "DEFER"]
+  },
+  "self_check_view": {
+    "common": "include the immutable proposal, all cited premises, and at most eight additional eligible rows; select additional rows without hidden truth and order by semantic_hash",
+    "ROLE_EQUIV": "additional ANIMAL_VALUE rows for the proposed animal and SOURCE_VALUE rows for the proposed anchor on overlapping public sources",
+    "CAUSAL_JOIN": "additional ROUTE rows touching the proposed source and EFFECT rows touching the proposed target",
+    "ROLE_APPLICATION": "additional ROLE_EQUIV rows for the proposed animal and TARGET_BASELINE rows for the proposed anchor or target",
+    "support_basis_rule": "SUPPORTED is SELF_REVIEW_SAME_EVIDENCE unless at least one cited supporting public lineage outside the proposal's creation lineage is present; only then may it be INDEPENDENT_CORROBORATION",
+    "harness_checks": "schema, exact visibility, citation existence, lineage identity, tuple legality, and transition only; never semantic entailment or correctness"
+  },
+  "reader": {
+    "query_rule": "kind must be legal and exactly one kind field is null; every other field is a valid visible public atom; ROLE_APPLICATION is queryable only as animal+target->anchor or animal+anchor->target",
+    "matching": "exact byte equality over every non-null kind field and corpus-eligible rows only",
+    "zero_matches": "NOT_FOUND",
+    "one_match": "return the immutable full row",
+    "multiple_matches": "CONFLICT",
+    "ordering": "semantic_hash ascending before deciding multiplicity; never select one from a conflict",
+    "forbidden": ["all-null query", "more-than-one-null query", "prefix or fuzzy match", "transitive closure", "corpus scan", "answer query", "query repair"],
+    "invalid_effect": "consume one operation and terminate the thinker arm invalid"
+  },
+  "corpus": {
+    "semantic_key": "sha256(canonical JSON of kind and exact fields)",
+    "dedup": "identical semantic keys collapse to one row; conflicting keys remain separate and therefore read as CONFLICT",
+    "sort": "kind then semantic_hash",
+    "encoding": "UTF-8 canonical JSON, sorted keys, separators comma/colon, ensure_ascii true, LF terminal newline",
+    "views": ["field_completion_forward", "field_completion_reverse", "recognition_declarative", "recognition_question"],
+    "touches": {"concept": 24, "relation": 96},
+    "manifest_invariant": "text and LoRA backends share exact semantic_hash, view IDs, question bytes, answer bytes, order, touch class, and touch count; backend envelopes may differ",
+    "audit_exclusion": "provisional, unresolved, contradicted, invalid, focus, final goal, thinker trace, scorer, and offline result bytes are absent"
+  },
+  "fidelity_set": {
+    "seal_time": "after M1_OWN compilation and before final-goal reveal or adapter fitting",
+    "rule": "dreamed eligible rows by semantic_hash, at most eight, then witnessed eligible rows by semantic_hash until exactly twelve",
+    "cues_per_row": 4,
+    "candidate_values": "all values occupying the requested field for that kind in the sealed per-life manifest plus NOT_FOUND, semantic-hash ordered, maximum sixteen",
+    "malformed_or_conflict": "incorrect"
+  },
+  "isolation": {
+    "request_unit": "one model operation",
+    "required_receipt_fields": ["request_id", "life_id", "arm_id", "stage", "model", "revision", "prompt_sha256", "allowed_state_sha256", "adapter_id_or_none", "reader_manifest_sha256_or_none", "prefix_cache_disabled", "conversation_state_none", "kv_state_none"],
+    "prefix_cache_disabled": true,
+    "provider_conversation_reuse": false,
+    "cross_life_state": "forbidden except explicit T-TWIN or L-TWIN donor backend",
+    "intervention_identity_model_visible": false
+  },
+  "interventions": {
+    "T_TWIN": "fresh THINK1 with recipient goal and other twin's M1_OWN text backend; expected exact donor-valid token",
+    "T_PATH": "fresh THINK1 with own M1_OWN reader excluding final-animal ROLE_EQUIV, all typed descendants, and final-source/final-target CAUSAL_JOIN; expected loss of paired success for causal-use credit",
+    "T_SHAM": "fresh THINK1 with own M1_OWN reader excluding an equal nonpath set matched on status, kind when available, and serialized token mass; expected retention of both own answers",
+    "L_TWIN": "fresh THINK1 with recipient goal and other twin's M1_OWN adapter; expected exact donor-valid token",
+    "all_outputs": "sealed before offline scoring; no trace is edited or rescored as a surrogate rerun"
+  },
+  "authority_tokens": {
+    "CPU_IMPLEMENTATION": "exact ratification plus implementation scope",
+    "DEV_GOLD": "green CPU tests plus fresh reviewer and advocate over one frozen lock",
+    "HELDOUT_TEXT": "green D0 artifact gate plus fresh reviewer and advocate",
+    "CONDITIONAL_LORA": "green prospective T-OWN text gate plus fresh reviewer and advocate",
+    "HUMAN_TERMINAL": "mandatory after every valid or invalid terminal"
+  },
+  "accounting": {
+    "ledgers": ["dev_32b", "heldout_proposal_32b", "heldout_self_check_32b", "think0_32b", "text_think1_32b", "path_sham_think1_32b", "lora_fit_7b", "fidelity_7b", "online_read_7b", "lora_think1_32b"],
+    "count_rule": "every attempted request counts, including invalid, timeout, malformed, defer, and infrastructure failure; retries are forbidden",
+    "token_rule": "record tokenizer-exact input, output, truncated=false, and candidate-score tokens per request"
+  }
+}

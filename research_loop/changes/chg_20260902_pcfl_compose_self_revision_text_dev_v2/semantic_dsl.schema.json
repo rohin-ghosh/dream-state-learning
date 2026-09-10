@@ -1,0 +1,1107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcfl:compose:semantic-dsl:v2",
+  "title": "PCFL-Compose v2 model-output protocol",
+  "$comment": "This schema validates model-authored output values. Canonical-byte, tokenizer, state-membership, capability-ownership, ancestry, and cross-response equality rules are listed in x-runtime-invariants and MUST be enforced by the reducer before mutation.",
+  "x-discriminator": ["artifact", "phase", "op"],
+  "$defs": {
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 768
+    },
+    "audit_explanation": {
+      "type": ["string", "null"],
+      "maxLength": 768
+    },
+    "ordinal": {
+      "$comment": "One-based operation ordinal. For the zero-based resolver_ordinal r bound by rng_contract.json and the rendered pre-operation resolver state, this value is exactly r + 1.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 32
+    },
+    "public_event_handle": {
+      "$comment": "Fixed-shape, non-content public source handle determined only by event kind and one-based source-event ordinal.",
+      "type": "string",
+      "pattern": "^(E(0[1-9]|1[0-3])|A0[1-2])$",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "tree_event_handle": {
+      "type": "string",
+      "pattern": "^E(0[1-9]|1[0-3])$",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "candidate_read_handle": {
+      "$comment": "Fixed-shape catalog handle deterministically derived from committed Dream-1 pool ordinal under rng_contract.json's model_visible_identifier namespace. It is not content-derived, a digest, path, object address, or terminal capability.",
+      "type": "string",
+      "pattern": "^hdl_c_[A-Za-z0-9_-]{22}$",
+      "minLength": 28,
+      "maxLength": 28
+    },
+    "memory_read_handle": {
+      "$comment": "Fixed-shape target-memory handle deterministically derived from target-session topology and handle ordinal under rng_contract.json's model_visible_identifier namespace; never from corpus content or intervention.",
+      "type": "string",
+      "pattern": "^hdl_m_[A-Za-z0-9_-]{22}$",
+      "minLength": 28,
+      "maxLength": 28
+    },
+    "node_capability": {
+      "$comment": "Fixed-shape, non-content, current-session node capability deterministically derived from the accepted authoring operation's zero-based resolver ordinal under rng_contract.json's model_visible_identifier namespace.",
+      "type": "string",
+      "pattern": "^cap_n_[A-Za-z0-9_-]{22}$",
+      "minLength": 28,
+      "maxLength": 28
+    },
+    "object_capability": {
+      "$comment": "Fixed-shape, non-content, current-session candidate-object capability deterministically derived from the issuing operation's zero-based resolver ordinal under rng_contract.json's model_visible_identifier namespace; never a content digest or cross-session identity.",
+      "type": "string",
+      "pattern": "^cap_o_[A-Za-z0-9_-]{22}$",
+      "minLength": 28,
+      "maxLength": 28
+    },
+    "read_receipt_ref": {
+      "$comment": "Fixed-shape model-visible receipt label deterministically derived from the charged read's zero-based resolver/source ordinal under rng_contract.json's model_visible_identifier namespace; it contains no content, digest, address, length, path, variant, cache, or deduplication information.",
+      "type": "string",
+      "pattern": "^rcpt_[A-Za-z0-9_-]{22}$",
+      "minLength": 27,
+      "maxLength": 27
+    },
+    "decision_provenance_receipt_ids": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/read_receipt_ref"}
+    },
+    "public_token": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,31}$",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "use_action_string": {
+      "type": "string",
+      "pattern": "^USE\\([A-Za-z0-9][A-Za-z0-9_-]{0,31}::[A-Za-z0-9][A-Za-z0-9_-]{0,31}\\)$",
+      "minLength": 8,
+      "maxLength": 71
+    },
+    "use_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "action"],
+      "properties": {
+        "op": {"const": "USE"},
+        "action": {"$ref": "#/$defs/use_action_string"}
+      }
+    },
+    "tray": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {"$ref": "#/$defs/public_token"},
+        {"$ref": "#/$defs/public_token"},
+        {"$ref": "#/$defs/public_token"},
+        {"$ref": "#/$defs/public_token"},
+        {"$ref": "#/$defs/public_token"},
+        {"$ref": "#/$defs/public_token"}
+      ],
+      "items": false
+    },
+    "prediction_A1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "after_tray"],
+      "properties": {
+        "request_id": {"const": "A1"},
+        "after_tray": {"$ref": "#/$defs/tray"}
+      }
+    },
+    "prediction_A2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "after_tray"],
+      "properties": {
+        "request_id": {"const": "A2"},
+        "after_tray": {"$ref": "#/$defs/tray"}
+      }
+    },
+    "prediction_B1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "after_tray"],
+      "properties": {
+        "request_id": {"const": "B1"},
+        "after_tray": {"$ref": "#/$defs/tray"}
+      }
+    },
+    "prediction_B2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "after_tray"],
+      "properties": {
+        "request_id": {"const": "B2"},
+        "after_tray": {"$ref": "#/$defs/tray"}
+      }
+    },
+    "A_predictions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/prediction_A1"},
+        {"$ref": "#/$defs/prediction_A2"}
+      ],
+      "items": false
+    },
+    "B_predictions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/prediction_B1"},
+        {"$ref": "#/$defs/prediction_B2"}
+      ],
+      "items": false
+    },
+    "citation_ref": {
+      "oneOf": [
+        {"$ref": "#/$defs/public_event_handle"},
+        {"$ref": "#/$defs/node_capability"},
+        {"$ref": "#/$defs/object_capability"}
+      ]
+    },
+    "one_shot_citation_ref": {
+      "$comment": "Closed one-shot citation: only a public event/raw-A handle is legal. Recurrent node/object capability values are not alternatives and capability-named enclosing members are rejected by their closed one-shot objects.",
+      "$ref": "#/$defs/public_event_handle"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_handles", "node_capabilities", "candidate_capabilities"],
+      "properties": {
+        "public_handles": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/public_event_handle"}
+        },
+        "node_capabilities": {
+          "type": "array",
+          "maxItems": 13,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/node_capability"}
+        },
+        "candidate_capabilities": {
+          "type": "array",
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/object_capability"}
+        }
+      }
+    },
+    "one_shot_provenance": {
+      "$comment": "One-shot Dream has no capability registry. Its complete response-local values may cite only public handles; capability-named members are rejected rather than represented as empty arrays.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_handles"],
+      "properties": {
+        "public_handles": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/public_event_handle"}
+        }
+      }
+    },
+    "sort": {
+      "enum": ["TOKEN", "ACTION", "OPERATOR", "TRAY", "BOOL"]
+    },
+    "term": {
+      "oneOf": [
+        {
+          "type": "array",
+          "prefixItems": [{"const": "TOK"}, {"$ref": "#/$defs/public_token"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "VAR"}, {"type": "string", "pattern": "^V[0-9]{1,2}$", "minLength": 2, "maxLength": 3}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "ACT"}, {"$ref": "#/$defs/use_action_string"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "PACT"}, {"$ref": "#/$defs/public_event_handle"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "EOP"}, {"$ref": "#/$defs/public_event_handle"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {"const": "PERM"},
+            {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "uniqueItems": true,
+              "items": {"type": "integer", "minimum": 0, "maximum": 5}
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {"const": "CALL"},
+            {"type": "string", "pattern": "^S[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+            {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/term"}}
+          ],
+          "minItems": 3,
+          "maxItems": 3,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "OP"}, {"$ref": "#/$defs/term"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "INV"}, {"$ref": "#/$defs/term"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {"const": "COMP"},
+            {"type": "array", "minItems": 2, "maxItems": 4, "items": {"$ref": "#/$defs/term"}}
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "TRAY"}, {"$ref": "#/$defs/tray"}],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"const": "APPLY"}, {"$ref": "#/$defs/term"}, {"$ref": "#/$defs/term"}],
+          "minItems": 3,
+          "maxItems": 3,
+          "items": false
+        },
+        {
+          "type": "array",
+          "prefixItems": [{"enum": ["EQ", "NEQ"]}, {"$ref": "#/$defs/term"}, {"$ref": "#/$defs/term"}],
+          "minItems": 3,
+          "maxItems": 3,
+          "items": false
+        }
+      ]
+    },
+    "var_decl": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "string", "pattern": "^V[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        {"$ref": "#/$defs/sort"}
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "items": false
+    },
+    "symbol_decl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "args", "result"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^S[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        "args": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/sort"}},
+        "result": {"$ref": "#/$defs/sort"}
+      }
+    },
+    "define_or_assert_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form", "id", "expression"],
+      "properties": {
+        "form": {"enum": ["DEFINE", "ASSERT"]},
+        "id": {"type": "string", "pattern": "^N[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        "expression": {"$ref": "#/$defs/term"}
+      }
+    },
+    "rule_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form", "id", "variables", "guards", "expression"],
+      "properties": {
+        "form": {"const": "RULE"},
+        "id": {"type": "string", "pattern": "^N[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        "variables": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/var_decl"}},
+        "guards": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/term"}},
+        "expression": {"$ref": "#/$defs/term"}
+      }
+    },
+    "exception_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form", "id", "over", "scope", "expression"],
+      "properties": {
+        "form": {"const": "EXCEPTION"},
+        "id": {"type": "string", "pattern": "^N[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        "over": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "scope": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/term"}},
+        "expression": {"$ref": "#/$defs/term"}
+      }
+    },
+    "unresolved_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form", "id", "alternatives"],
+      "properties": {
+        "form": {"const": "UNRESOLVED"},
+        "id": {"type": "string", "pattern": "^N[0-9]{1,2}$", "minLength": 2, "maxLength": 3},
+        "alternatives": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3}
+        }
+      }
+    },
+    "statement": {
+      "oneOf": [
+        {"$ref": "#/$defs/define_or_assert_statement"},
+        {"$ref": "#/$defs/rule_statement"},
+        {"$ref": "#/$defs/exception_statement"},
+        {"$ref": "#/$defs/unresolved_statement"}
+      ]
+    },
+    "note": {
+      "$comment": "NOTE identity is the UTF-8 JCS encoding after parse/schema validation. The text value is valid Unicode scalar data and is not normalized before storage identity is computed.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "provenance", "uncertainty"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]}
+      }
+    },
+    "ast_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement", "provenance", "uncertainty"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "statement": {"$ref": "#/$defs/statement"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]}
+      }
+    },
+    "one_shot_note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "provenance", "uncertainty"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]}
+      }
+    },
+    "one_shot_ast_record": {
+      "$comment": "Closed one-shot AST record. Its provenance can contain only public_handles; recurrent capability-bearing provenance is not referenced.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement", "provenance", "uncertainty"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "statement": {"$ref": "#/$defs/statement"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]}
+      }
+    },
+    "note_workspace_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_slot", "representation", "note"],
+      "properties": {
+        "node_slot": {"type": "string", "pattern": "^W[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "note": {"$ref": "#/$defs/note"}
+      }
+    },
+    "ast_workspace_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_slot", "representation", "record"],
+      "properties": {
+        "node_slot": {"type": "string", "pattern": "^W[0-9]{2}$", "minLength": 3, "maxLength": 3},
+        "representation": {"const": "OPERATOR_AST"},
+        "record": {"$ref": "#/$defs/ast_record"}
+      }
+    },
+    "workspace_node": {
+      "oneOf": [
+        {"$ref": "#/$defs/note_workspace_node"},
+        {"$ref": "#/$defs/ast_workspace_node"}
+      ]
+    },
+    "lexical_query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "text", "cursor"],
+      "properties": {
+        "kind": {"const": "LEXICAL"},
+        "text": {"type": "string", "minLength": 1, "maxLength": 256},
+        "cursor": {"type": "integer", "minimum": 0, "maximum": 12}
+      }
+    },
+    "ast_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "value"],
+      "properties": {
+        "field": {"enum": ["PUBLIC_TOKEN", "PUBLIC_ACTION", "RECORD_ID", "SYMBOL_ID", "STATEMENT_FORM"]},
+        "value": {"type": "string", "minLength": 1, "maxLength": 128}
+      }
+    },
+    "ast_query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "match", "statement_form", "cursor"],
+      "properties": {
+        "kind": {"const": "AST"},
+        "match": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"$ref": "#/$defs/ast_match"}},
+        "statement_form": {
+          "oneOf": [
+            {"enum": ["DEFINE", "ASSERT", "RULE", "EXCEPTION", "UNRESOLVED"]},
+            {"type": "null"}
+          ]
+        },
+        "cursor": {"type": "integer", "minimum": 0, "maximum": 12}
+      }
+    },
+    "dream1_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "node_capabilities", "provenance", "uncertainty", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]},
+        "node_capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 13,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/node_capability"}
+        },
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_retain_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "decision", "parent_candidate_capability", "node_capabilities", "provenance", "uncertainty", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"const": "C01"},
+        "representation": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]},
+        "decision": {"const": "RETAIN"},
+        "parent_candidate_capability": {"$ref": "#/$defs/object_capability"},
+        "node_capabilities": {"type": "array", "maxItems": 0},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_replace_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "decision", "parent_candidate_capability", "node_capabilities", "provenance", "uncertainty", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"const": "C01"},
+        "representation": {"enum": ["OPAQUE_NOTE", "OPERATOR_AST"]},
+        "decision": {"const": "REPLACE"},
+        "parent_candidate_capability": {"$ref": "#/$defs/object_capability"},
+        "node_capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 13,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/node_capability"}
+        },
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "uncertainty": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_manifest": {
+      "oneOf": [
+        {"$ref": "#/$defs/dream2_retain_manifest"},
+        {"$ref": "#/$defs/dream2_replace_manifest"}
+      ]
+    },
+    "dream1_opaque_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_note"}},
+        "predictions": {"$ref": "#/$defs/A_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream1_ast_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "symbols", "records", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPERATOR_AST"},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/symbol_decl"}},
+        "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_ast_record"}},
+        "predictions": {"$ref": "#/$defs/A_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream1_candidate": {
+      "oneOf": [
+        {"$ref": "#/$defs/dream1_opaque_candidate"},
+        {"$ref": "#/$defs/dream1_ast_candidate"}
+      ]
+    },
+    "one_shot_dream1_opaque_candidate": {
+      "$comment": "Closed response-local one-shot Dream-1 candidate. No capability registry exists; candidate and nested NOTE provenance use only public_handles.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"enum": ["C01", "C02"]},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_note"}},
+        "predictions": {"$ref": "#/$defs/A_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_opaque_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"const": "D2C01"},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_note"}},
+        "predictions": {"$ref": "#/$defs/B_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_ast_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "symbols", "records", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"const": "D2C01"},
+        "representation": {"const": "OPERATOR_AST"},
+        "symbols": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/symbol_decl"}},
+        "records": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_ast_record"}},
+        "predictions": {"$ref": "#/$defs/B_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream2_candidate": {
+      "oneOf": [
+        {"$ref": "#/$defs/dream2_opaque_candidate"},
+        {"$ref": "#/$defs/dream2_ast_candidate"}
+      ]
+    },
+    "one_shot_dream2_opaque_candidate": {
+      "$comment": "Closed response-local one-shot Dream-2 replacement candidate. No capability registry exists; candidate and nested NOTE provenance use only public_handles.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_slot", "representation", "notes", "predictions", "provenance", "confidence", "audit_explanation"],
+      "properties": {
+        "candidate_slot": {"const": "D2C01"},
+        "representation": {"const": "OPAQUE_NOTE"},
+        "notes": {"type": "array", "minItems": 1, "maxItems": 13, "items": {"$ref": "#/$defs/one_shot_note"}},
+        "predictions": {"$ref": "#/$defs/B_predictions"},
+        "provenance": {"$ref": "#/$defs/one_shot_provenance"},
+        "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "audit_explanation": {"$ref": "#/$defs/audit_explanation"}
+      }
+    },
+    "dream1_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "handle", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM1"},
+        "op": {"const": "READ"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "handle": {"$ref": "#/$defs/tree_event_handle"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream2_event_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "handle", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM2"},
+        "op": {"const": "READ"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "handle": {"$ref": "#/$defs/public_event_handle"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream2_candidate_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "candidate_handle", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM2"},
+        "op": {"const": "READ"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "candidate_handle": {"$ref": "#/$defs/candidate_read_handle"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "think_lexical_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "memory_handle", "memory_representation", "query", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "THINK"},
+        "op": {"const": "READ"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "memory_handle": {"$ref": "#/$defs/memory_read_handle"},
+        "memory_representation": {"const": "OPAQUE_NOTE"},
+        "query": {"$ref": "#/$defs/lexical_query"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "think_ast_read": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "memory_handle", "memory_representation", "query", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "THINK"},
+        "op": {"const": "READ"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "memory_handle": {"$ref": "#/$defs/memory_read_handle"},
+        "memory_representation": {"const": "OPERATOR_AST"},
+        "query": {"$ref": "#/$defs/ast_query"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "notice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "premise", "node", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"const": "NOTICE"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "premise": {"$ref": "#/$defs/citation_ref"},
+        "node": {"$ref": "#/$defs/workspace_node"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "connect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "premises", "node", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"const": "CONNECT"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "premises": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/citation_ref"}
+        },
+        "node": {"$ref": "#/$defs/workspace_node"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "workspace_revise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "replaces_node_capability", "premises", "node", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"const": "REVISE"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "replaces_node_capability": {"$ref": "#/$defs/node_capability"},
+        "premises": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/citation_ref"}
+        },
+        "node": {"$ref": "#/$defs/workspace_node"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "pass": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"const": "PASS"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream1_predict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "manifest", "predictions", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM1"},
+        "op": {"const": "PREDICT"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "manifest": {"$ref": "#/$defs/dream1_manifest"},
+        "predictions": {"$ref": "#/$defs/A_predictions"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream2_predict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "manifest", "predictions", "decision_provenance_receipt_ids", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM2"},
+        "op": {"const": "PREDICT"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "manifest": {"$ref": "#/$defs/dream2_manifest"},
+        "predictions": {"$ref": "#/$defs/B_predictions"},
+        "decision_provenance_receipt_ids": {"$ref": "#/$defs/decision_provenance_receipt_ids"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream1_commit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "candidate_capabilities", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM1"},
+        "op": {"const": "COMMIT"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "candidate_capabilities": {
+          "$comment": "Array order is the committed candidate order.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/object_capability"}
+        },
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "dream2_commit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "decision", "candidate_capability", "decision_provenance_receipt_ids", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "DREAM2"},
+        "op": {"const": "COMMIT"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "decision": {"enum": ["RETAIN", "REPLACE"]},
+        "candidate_capability": {"$ref": "#/$defs/object_capability"},
+        "decision_provenance_receipt_ids": {"$ref": "#/$defs/decision_provenance_receipt_ids"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "abstain": {
+      "$comment": "ABSTAIN deliberately has no handle, capability, candidate, manifest, node, query, or action member.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"enum": ["DREAM1", "DREAM2", "THINK"]},
+        "op": {"const": "ABSTAIN"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "think_use": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "action", "citations", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "THINK"},
+        "op": {"const": "USE"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "action": {"$ref": "#/$defs/use_action_string"},
+        "citations": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/citation_ref"}
+        },
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "think_lock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "op", "ordinal", "reason"],
+      "properties": {
+        "artifact": {"const": "RESOLVER_STEP"},
+        "phase": {"const": "THINK"},
+        "op": {"const": "LOCK"},
+        "ordinal": {"$ref": "#/$defs/ordinal"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_dream1_commit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "decision", "candidates", "selected_candidate_slots", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_DREAM1"},
+        "phase": {"const": "DREAM1"},
+        "decision": {"const": "COMMIT"},
+        "candidates": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/one_shot_dream1_opaque_candidate"}
+        },
+        "selected_candidate_slots": {
+          "$comment": "These are response-local slots defined in candidates in this same object, not capabilities.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {"enum": ["C01", "C02"]}
+        },
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_dream1_abstain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "decision", "candidates", "selected_candidate_slots", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_DREAM1"},
+        "phase": {"const": "DREAM1"},
+        "decision": {"const": "ABSTAIN"},
+        "candidates": {"type": "array", "maxItems": 0},
+        "selected_candidate_slots": {"type": "array", "maxItems": 0},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_dream2_retain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "decision", "source_dream1_slot", "predictions", "decision_provenance_receipt_ids", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_DREAM2"},
+        "phase": {"const": "DREAM2"},
+        "decision": {"const": "RETAIN"},
+        "source_dream1_slot": {"enum": ["C01", "C02"]},
+        "predictions": {"$ref": "#/$defs/B_predictions"},
+        "decision_provenance_receipt_ids": {"$ref": "#/$defs/decision_provenance_receipt_ids"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_dream2_replace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "decision", "source_dream1_slot", "candidates", "selected_candidate_slot", "decision_provenance_receipt_ids", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_DREAM2"},
+        "phase": {"const": "DREAM2"},
+        "decision": {"const": "REPLACE"},
+        "source_dream1_slot": {"enum": ["C01", "C02"]},
+        "candidates": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "prefixItems": [{"$ref": "#/$defs/one_shot_dream2_opaque_candidate"}],
+          "items": false
+        },
+        "selected_candidate_slot": {
+          "$comment": "The selected slot is declared in the candidates member of this response; it is never a post-response capability.",
+          "const": "D2C01"
+        },
+        "decision_provenance_receipt_ids": {"$ref": "#/$defs/decision_provenance_receipt_ids"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_dream2_commit": {
+      "oneOf": [
+        {"$ref": "#/$defs/one_shot_dream2_retain"},
+        {"$ref": "#/$defs/one_shot_dream2_replace"}
+      ]
+    },
+    "one_shot_dream2_abstain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "phase", "decision", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_DREAM2"},
+        "phase": {"const": "DREAM2"},
+        "decision": {"const": "ABSTAIN"},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "one_shot_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "memory_representation", "target_id", "decision", "actions", "terminal", "citations", "reason"],
+      "properties": {
+        "artifact": {"const": "ONE_SHOT_PLAN"},
+        "memory_representation": {"const": "OPERATOR_AST"},
+        "target_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,63}$",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "decision": {"const": "ACT"},
+        "actions": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "prefixItems": [
+            {"$ref": "#/$defs/use_action"},
+            {"$ref": "#/$defs/use_action"},
+            {"$ref": "#/$defs/use_action"},
+            {"$ref": "#/$defs/use_action"}
+          ],
+          "items": false
+        },
+        "terminal": {"const": "LOCK"},
+        "citations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/one_shot_citation_ref"}
+        },
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    }
+  },
+  "type": "object",
+  "unevaluatedProperties": false,
+  "oneOf": [
+    {"$ref": "#/$defs/dream1_read"},
+    {"$ref": "#/$defs/dream2_event_read"},
+    {"$ref": "#/$defs/dream2_candidate_read"},
+    {"$ref": "#/$defs/think_lexical_read"},
+    {"$ref": "#/$defs/think_ast_read"},
+    {"$ref": "#/$defs/notice"},
+    {"$ref": "#/$defs/connect"},
+    {"$ref": "#/$defs/workspace_revise"},
+    {"$ref": "#/$defs/pass"},
+    {"$ref": "#/$defs/dream1_predict"},
+    {"$ref": "#/$defs/dream2_predict"},
+    {"$ref": "#/$defs/dream1_commit"},
+    {"$ref": "#/$defs/dream2_commit"},
+    {"$ref": "#/$defs/abstain"},
+    {"$ref": "#/$defs/think_use"},
+    {"$ref": "#/$defs/think_lock"},
+    {"$ref": "#/$defs/one_shot_dream1_commit"},
+    {"$ref": "#/$defs/one_shot_dream1_abstain"},
+    {"$ref": "#/$defs/one_shot_dream2_commit"},
+    {"$ref": "#/$defs/one_shot_dream2_abstain"},
+    {"$ref": "#/$defs/one_shot_plan"}
+  ],
+  "x-runtime-invariants": [
+    "Parse with duplicate-name rejection, valid Unicode scalar enforcement, I-JSON, and RFC 8785 JCS before validation; malformed output is terminal, never repaired, mutates no state, and remains fully charged.",
+    "Public event/raw-A handles are direct fixed labels of event kind plus one-based source ordinal. Every opaque model-visible identifier is fixed-shape, non-content, and deterministically ordinal-derived under the model_visible_identifier namespace supplied by rng_contract.json; this schema does not define or duplicate that namespace's cryptographic derivation. Public event/raw-A receipt refs, Dream-1 candidate handles and candidate-read capabilities, target-memory handles and read receipt refs, and session-local authored node/object capabilities have byte-identical values across corresponding paired treatments whenever their declared topology and zero-based issuance/source/resolver ordinals correspond. Content, treatment, lane variant, address, path, length, cache/dedup state, timing, score, and model bytes are forbidden derivation inputs; collisions or a paired-value mismatch are terminal.",
+    "A model-visible capability is mapped only in the current resolver session. It is never a digest, address, path, variant, cache/dedup signal, byte length, or encoding of any such field.",
+    "A candidate_read_handle is a fixed pre-READ catalog handle and is never accepted where an object_capability is required. At the fresh Dream-2 boundary, handles are assigned in committed Dream-1 pool order with treatment-invariant value/shape/count/order where topology corresponds and reveal no content identity.",
+    "The harness mints node_capability only after accepting and storing one NOTICE, CONNECT, or workspace-REVISE node. The model may reference only capabilities present in its rendered current-session state before that response.",
+    "The harness mints object_capability only after accepting a PREDICT manifest: DREAM1 and DREAM2 REPLACE materialize exactly the ordered, already-authored node values, while DREAM2 RETAIN points to the immutable payload named by its charged candidate read. PREDICT never contains or rewrites NOTE or AST payload bytes.",
+    "Every READ is charged before disclosure. DREAM1 READ accepts only an available unread TREE_EVENT handle; DREAM2 event READ accepts only an available TREE_EVENT or RAW_A_EVENT handle and candidate READ only an available Dream-2-local candidate handle; THINK READ uses only the query matching its lane.",
+    "NOTICE has exactly one valid visible premise, CONNECT has exactly two distinct valid visible premises, and workspace REVISE replaces exactly one live node while retaining at least one valid visible premise. Node slots are unique among live nodes.",
+    "Workspace REVISE is never candidate replacement. Candidate replacement is only DREAM2 COMMIT with decision REPLACE, and candidate-REVISE is rejected.",
+    "A workspace node and every node selected by a candidate manifest have the session lane's representation. OPAQUE_NOTE and OPERATOR_AST values, workspaces, staged objects, readers, and corpora never mix.",
+    "Each provenance reference resolves to an already visible public receipt or current-session capability of the declared kind. Provenance is transitive, acyclic, and cannot cite a later ordinal, another session/lane, an unread handle, a target packet during Dream, or any private field.",
+    "The assignment row's resolver_ordinal r is zero-based and equals rendered resolver_state.resolver_ordinal. The rendered INPUT_ENVELOPE operation_ordinal and the model-authored RESOLVER_STEP ordinal are both exactly r+1; every operation_ordinal is therefore one-based, and any off-by-one or cross-field mismatch is terminal.",
+    "DREAM1 PREDICT contains exactly ordered A1,A2 commitments, uses a previously unused C01 or C02 slot, and may stage at most two objects. DREAM2 PREDICT contains exactly ordered B1,B2 commitments, uses C01, may stage at most one object, and is decisive: it is legal only after exactly one charged RAW_A_EVENT read in that Dream-2 session. Its manifest provenance public_handles contains that sole raw-A handle. Its nonempty decision_provenance_receipt_ids is stored with the staged manifest, resolves only to earlier charged reads in that session, and contains the matching receipt_ref of that sole RAW_A_EVENT read.",
+    "For DREAM2 manifest decision RETAIN, parent_candidate_capability was issued by a charged candidate READ and the materialized memory payload is byte-identical to that immutable Dream-1 candidate. For REPLACE, the parent was read and the replacement is assembled only from current Dream-2 nodes. DREAM2 COMMIT must byte-for-byte match the stored staged decision, issued candidate_capability, and decision_provenance_receipt_ids; provenance first supplied or changed only at COMMIT is rejected.",
+    "DREAM1 COMMIT selects one or two distinct current-session staged object capabilities in the exact listed order. Each capability was issued before COMMIT and its candidate slot/order agrees with the selected manifest; reordering, stale, foreign-session, or unread capabilities are rejected.",
+    "DREAM2 COMMIT RETAIN accepts exactly the capability produced for the currently staged RETAIN manifest; REPLACE accepts exactly the capability produced for the currently staged REPLACE manifest. Decision, candidate capability, and the ordered provenance receipt-ref array must equal the stored staged values.",
+    "ABSTAIN is terminal and capability-free in every phase. It materializes no candidate or corpus and rejects any capability, handle, manifest, payload, node, query, citation, or action member.",
+    "PASS changes no semantic state. DREAM1 and DREAM2 permit READ, NOTICE, CONNECT, REVISE, PASS, PREDICT, COMMIT, or ABSTAIN but never USE or LOCK. THINK permits READ, NOTICE, CONNECT, REVISE, PASS, USE, LOCK, or ABSTAIN but never PREDICT or COMMIT.",
+    "THINK USE is accepted only when its memory_handle is the rendered current-session handle and the exact action string is in the current public legal menu. LOCK and ABSTAIN are terminal. USE alone crosses actor IPC; LOCK terminates Think locally and is never serialized to, dispatched to, or processed by PUBLIC_ACTOR. A D4 recurrent trace is successful only with exactly four accepted USE actions followed by local LOCK.",
+    "ONE_SHOT_DREAM1 candidate slots are unique and selected_candidate_slots name existing candidates in exact selected order. Its candidates use only one_shot_dream1_opaque_candidate; ONE_SHOT_DREAM2 REPLACE uses only one_shot_dream2_opaque_candidate. All one-shot candidate, note, and record provenance uses the closed one_shot_provenance definition and contains only public_handles; any node_capabilities, candidate_capabilities, node/object capability value, generic capability-bearing provenance/record/candidate reference, or post-response capability is rejected. ONE_SHOT_DREAM2 RETAIN selects source_dream1_slot directly and carries no candidate; REPLACE selected_candidate_slot names the sole D2C01 candidate in the same response.",
+    "For one-shot DREAM2 RETAIN, source_dream1_slot exists in the immutable one-shot Dream-1 input pool and is selected byte-for-byte without repetition or re-authoring; its terminal predictions are exact B1,B2. For REPLACE, source_dream1_slot identifies the immutable parent and its complete D2C01 candidate carries exact B1,B2. Both decisions have nonempty decision_provenance_receipt_ids resolving to stable public receipt_ref values in the input event batch, including at least one RAW_A_EVENT receipt.",
+    "ONE_SHOT_PLAN is OPERATOR_AST-only, names the assigned public target, contains exactly four menu-valid typed USE actions in execution order, cites only public event/raw-A handles through one_shot_citation_ref, and terminates Think locally with LOCK; recurrent node/object capability citations are schema-invalid, the executor sends only the four USE values to PUBLIC_ACTOR, never LOCK, and execution feedback cannot alter the open-loop plan.",
+    "After JCS encoding, each NOTE or AST record value is at most 256 bytes, each complete workspace node is at most 512 bytes, the materialized notes-or-records payload is at most 2510 bytes, and the complete materialized candidate envelope is at most 3072 bytes. Cap checks include multibyte UTF-8 and container overhead.",
+    "Arrays of symbol, record, note, node, candidate, prediction, citation, and action values additionally obey reducer live-state, read, operation, token, and phase cumulative caps; schema-valid output over any runtime cap is rejected before mutation.",
+    "Exact prediction trays and action strings are prospective public values only. No target truth, score, family/root/h/q/z field, hidden transition, comparator, result, error content, timing, cache state, or other-lane state may enter a model-authored object.",
+    "The reducer validates candidate/record/note identifier uniqueness, AST variable and symbol declaration/reference integrity, statement sort correctness, exception targets, acyclic references, and six-element PERM bijections; JSON Schema alone does not establish these semantic constraints."
+  ]
+}

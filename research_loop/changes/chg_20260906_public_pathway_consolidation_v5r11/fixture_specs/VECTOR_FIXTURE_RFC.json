@@ -1,0 +1,200 @@
+{
+  "document_kind": "PPC5R11_VECTOR_FIXTURE_REPLACEMENT_RFC",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "architecture_id": "PPC5R9_PUBLIC_PATHWAY_CONSOLIDATION",
+  "proposal_revision": "PPC5R11_FIXTURE_REPAIR",
+  "supersedes_for_design_only": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r9/fixture_specs/ppc5r9_fixture_universe.json",
+  "quarantine_contract": "QUARANTINE_RFC.json",
+  "materialization_status": "BLOCKED_PROPOSAL_ONLY_NO_FIXTURE_BYTES_AUTHORIZED",
+  "authority_conferred": false,
+  "representation": {
+    "artifact_byte_table": "content-addressed canonical typed artifact nodes; each byte string occurs once",
+    "graph_table": "ordered node IDs, roots, exact typed reference edges, graph hash",
+    "case_table": "one opaque case_id per execution input; case_id identifies facts only and encodes no branch, axis, mutation, result, or expectation",
+    "mutation_table": "author-only provenance from a positive input graph to a one-field-mutated input graph; mutation metadata is never included in the executor projection or case identity",
+    "executor_input_projection": "the canonical facts-only envelope defined below; it contains full concrete graph topology and canonical artifact bytes, never graph IDs without their bytes",
+    "expectation_table": "oracle-only rows keyed by case_id and joined only after both executor outputs are committed; expectation bytes never enter an executor envelope",
+    "nonnormative_labels": "axis, mnemonic branch, positive/negative/precedence class, and mutation labels may exist in author audit notes only and never enter case_id, input bytes, reducer selection, output, or executor-visible metadata"
+  },
+  "carrier_modes": [
+    "DIRECT_TYPED_JSON",
+    "ENCODED_CANONICAL_JSON"
+  ],
+  "case_identity": {
+    "format": "PPC5R11_CASE_<64 lowercase hex characters>",
+    "semantic_role": "input-only content identity: SHA-256 of canonical {test_id,suite_id,law_id,input_graph}; no author order, case class, mutation provenance, or expectation participates",
+    "preimage_schema": {"type":"object","additionalProperties":false,"required":["test_id","suite_id","law_id","input_graph"],"properties":{"test_id":{"type":"string"},"suite_id":{"type":"string"},"law_id":{"type":"string"},"input_graph":{"type":"object"}}},
+    "forbidden_preimage_material": ["branch_key", "axis_value", "mutation_operation", "mutation_target", "expected_output", "expected_result", "expected_first_failure"],
+    "execution_input_sha256": "SHA-256 of the complete canonical executor_input_envelope including case_id; this is an integrity value, not an alternative semantic identity"
+  },
+  "executor_input_envelope": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["case_id", "test_id", "suite_id", "law_id", "input_graph"],
+    "properties": {
+      "case_id": {"type":"string","pattern":"^PPC5R11_CASE_[0-9a-f]{64}$"},
+      "test_id": {"type":"string","enum":["PPC5R9_T02","PPC5R9_T03","PPC5R9_T04","PPC5R9_T05","PPC5R9_T06","PPC5R9_T07","PPC5R9_T08","PPC5R9_T09","PPC5R9_T10","PPC5R9_T11","PPC5R9_T12","PPC5R9_T13","PPC5R9_T14"]},
+      "suite_id": {"type":"string","pattern":"^[A-Z][A-Z0-9_]*$"},
+      "law_id": {"type":"string","pattern":"^T(0[2-9]|1[0-4])_[A-Z0-9_]+_V1$"},
+      "input_graph": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["roots", "nodes", "typed_edges"],
+        "properties": {
+          "roots": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^N_[0-9a-f]{64}$"}},
+          "nodes": {"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["node_id","artifact_type","canonical_json_bytes"],"properties":{"node_id":{"type":"string","pattern":"^N_[0-9a-f]{64}$"},"artifact_type":{"type":"string","enum":["PPC5R11_REDUCER_INPUT_VECTOR","PPC5R11_REDUCER_SOURCE_COMPANION"]},"canonical_json_bytes":{"type":"string","contentMediaType":"application/json"}}}},
+          "typed_edges": {"type":"array","items":{"type":"object","additionalProperties":false,"required":["producer_node_id","consumer_node_id","consumer_stage","field_path","role","ordinal","cardinality"],"properties":{"producer_node_id":{"type":"string","pattern":"^N_[0-9a-f]{64}$"},"consumer_node_id":{"type":"string","pattern":"^N_[0-9a-f]{64}$"},"consumer_stage":{"type":"string","pattern":"^[A-Z][A-Z0-9_]*$"},"field_path":{"type":"string","pattern":"^/"},"role":{"type":"string","pattern":"^[A-Z][A-Z0-9_]*$"},"ordinal":{"oneOf":[{"type":"integer","minimum":0},{"const":"VARIABLE"}]},"cardinality":{"enum":["ONE","ORDERED_EXACT"]}}}}
+        }
+      }
+    }
+  },
+  "post_execution_expectation_join": {
+    "join_key": "case_id",
+    "join_time": "after executor A and executor B each commit canonical output bytes and output SHA-256",
+    "executor_rows": ["case_id", "executor_id", "output_canonical_json_bytes", "output_sha256"],
+    "oracle_only_rows": ["case_id", "expected_output_canonical_json_bytes_or_null", "expected_first_failure_or_null"],
+    "required_equalities": ["exactly one oracle row per case_id", "exactly one committed row per executor and case_id", "executor A bytes equal executor B bytes", "committed bytes or first failure equal the oracle row"]
+  },
+  "exact_counts": {
+    "P_positive": 465,
+    "N_one_field_mutations": 2467,
+    "Q_precedence_vectors": 55,
+    "logical_expected_count": 2987,
+    "independent_executions_per_logical_case": 2,
+    "total_planned_executions": 5974
+  },
+  "per_test_counts": [
+    {"test_id": "PPC5R9_T02", "P": 61, "N": 168, "Q": 19, "logical": 248},
+    {"test_id": "PPC5R9_T03", "P": 346, "N": 1469, "Q": 25, "logical": 1840},
+    {"test_id": "PPC5R9_T04", "P": 6, "N": 109, "Q": 1, "logical": 116},
+    {"test_id": "PPC5R9_T05", "P": 4, "N": 27, "Q": 1, "logical": 32},
+    {"test_id": "PPC5R9_T06", "P": 5, "N": 72, "Q": 1, "logical": 78},
+    {"test_id": "PPC5R9_T07", "P": 5, "N": 71, "Q": 1, "logical": 77},
+    {"test_id": "PPC5R9_T08", "P": 6, "N": 64, "Q": 1, "logical": 71},
+    {"test_id": "PPC5R9_T09", "P": 3, "N": 138, "Q": 1, "logical": 142},
+    {"test_id": "PPC5R9_T10", "P": 5, "N": 81, "Q": 1, "logical": 87},
+    {"test_id": "PPC5R9_T11", "P": 13, "N": 67, "Q": 1, "logical": 81},
+    {"test_id": "PPC5R9_T12", "P": 7, "N": 43, "Q": 1, "logical": 51},
+    {"test_id": "PPC5R9_T13", "P": 3, "N": 62, "Q": 1, "logical": 66},
+    {"test_id": "PPC5R9_T14", "P": 1, "N": 96, "Q": 1, "logical": 98}
+  ],
+  "suite_vectors": {
+    "PPC5R9_T04": [
+      {"suite_id": "DREAM_REDUCER", "entry_count": 10},
+      {"suite_id": "CONTEXT_STATUS", "entry_count": 15},
+      {"suite_id": "TYPED_DEPENDENCY", "entry_count": 3},
+      {"suite_id": "LIFE_AGGREGATE_MEMBERSHIP", "entry_count": 4},
+      {"suite_id": "EMISSION_METAMORPHIC", "entry_count": 7},
+      {"suite_id": "MODEL_DISPATCH_CHAIN", "entry_count": 1}
+    ],
+    "PPC5R9_T05": [
+      {"suite_id": "CAUSAL_NUMERIC", "entry_count": 9},
+      {"suite_id": "CAUSAL_MOUNT", "entry_count": 2},
+      {"suite_id": "DESCRIPTIVE_PROVIDER", "entry_count": 10},
+      {"suite_id": "TYPED_REGISTRY", "entry_count": 13}
+    ],
+    "PPC5R9_T06": [
+      {"suite_id": "PER_LIFE_CONTROL", "entry_count": 6},
+      {"suite_id": "MANIFEST_CLOSURE", "entry_count": 1},
+      {"suite_id": "ALLOWED_PROJECTION", "entry_count": 3},
+      {"suite_id": "POINTWISE_POWER_BINDING", "entry_count": 1},
+      {"suite_id": "PRE_ENTROPY_ANCESTRY", "entry_count": 1}
+    ],
+    "PPC5R9_T07": [
+      {"suite_id": "FULL_PATH", "entry_count": 2},
+      {"suite_id": "PROPER_SUBSET", "entry_count": 8},
+      {"suite_id": "ALTERNATE_PATH", "entry_count": 2},
+      {"suite_id": "EDGE_ARTIFACT", "entry_count": 30},
+      {"suite_id": "CLOSURE", "entry_count": 4}
+    ],
+    "PPC5R9_T08": [
+      {"suite_id": "ROUTE", "entry_count": 4},
+      {"suite_id": "INFLUENCE_RELATION", "entry_count": 7},
+      {"suite_id": "QUEUE_OUTCOME", "entry_count": 4},
+      {"suite_id": "OPAQUE_ALLOCATION", "entry_count": 1},
+      {"suite_id": "AUDIT_SPLIT", "entry_count": 2},
+      {"suite_id": "DISPATCH_CLOSURE", "entry_count": 1}
+    ],
+    "PPC5R9_T09": [
+      {"suite_id": "DREAM_CONTEXT_PROGRAM", "entry_count": 60},
+      {"suite_id": "STATUS_RULE", "entry_count": 43},
+      {"suite_id": "STATUS_PRECEDENCE", "entry_count": 15}
+    ],
+    "PPC5R9_T10": [
+      {"suite_id": "ROOT_STATUS", "entry_count": 13},
+      {"suite_id": "REACHABLE_D1D_PIPELINE", "entry_count": 24},
+      {"suite_id": "DISPATCH_CHAIN", "entry_count": 3},
+      {"suite_id": "RESOURCE", "entry_count": 5},
+      {"suite_id": "D1D_QUALIFICATION", "entry_count": 1}
+    ],
+    "PPC5R9_T11": [
+      {"suite_id": "LIFE_GATE_AGGREGATE", "entry_count": 8},
+      {"suite_id": "PAIRED_BOUNDARY", "entry_count": 4},
+      {"suite_id": "SAFETY", "entry_count": 6},
+      {"suite_id": "MISSINGNESS", "entry_count": 3},
+      {"suite_id": "CP_BRACKET", "entry_count": 6},
+      {"suite_id": "IUT_CRITICAL_COUNT", "entry_count": 9},
+      {"suite_id": "HOLM_PERMUTATION", "entry_count": 24},
+      {"suite_id": "HOLM_TIE", "entry_count": 1},
+      {"suite_id": "HOLM_STOP", "entry_count": 5},
+      {"suite_id": "CLAIM_BYTES", "entry_count": 5},
+      {"suite_id": "CONSTRUCTION_PROOF", "entry_count": 2},
+      {"suite_id": "POWER", "entry_count": 6},
+      {"suite_id": "SAFETY_TEMPLATE_RESOLUTION", "entry_count": 1}
+    ],
+    "PPC5R9_T12": [
+      {"suite_id": "VISIBILITY_CELL", "entry_count": 195},
+      {"suite_id": "TYPED_SCHEMA_EDGE", "entry_count": 363},
+      {"suite_id": "OBJECT_TYPE", "entry_count": 84},
+      {"suite_id": "TYPED_REGISTRY", "entry_count": 13},
+      {"suite_id": "TRANSITION_CAUSE", "entry_count": 7},
+      {"suite_id": "PREFLIGHT_DENIAL", "entry_count": 8},
+      {"suite_id": "THREE_WAY_EQUALITY", "entry_count": 1}
+    ],
+    "PPC5R9_T13": [
+      {"suite_id": "FULL_TECHNICAL_PASS", "entry_count": 1},
+      {"suite_id": "PREFLIGHT_DENIAL", "entry_count": 8},
+      {"suite_id": "AUTHORITY_TOPOLOGY", "entry_count": 14}
+    ],
+    "PPC5R9_T14": [
+      {"suite_id": "FULL_PREDECESSOR_REPLAY", "entry_count": 24}
+    ]
+  },
+  "negative_family_counts": {
+    "PPC5R9_T04": [10, 45, 12, 7, 7, 5, 23],
+    "PPC5R9_T05": [12, 4, 3, 2, 6],
+    "PPC5R9_T06": [16, 5, 7, 9, 8, 4, 3, 4, 1, 3, 12],
+    "PPC5R9_T07": [12, 10, 5, 15, 20, 1, 4, 1, 1, 1, 1],
+    "PPC5R9_T08": [6, 6, 5, 4, 6, 8, 6, 23],
+    "PPC5R9_T09": [43, 60, 23, 12],
+    "PPC5R9_T10": [24, 23, 6, 6, 13, 9],
+    "PPC5R9_T11": [9, 5, 13, 6, 4, 4, 3, 8, 10, 4, 1],
+    "PPC5R9_T12": [8, 7, 4, 6, 3, 8, 7],
+    "PPC5R9_T13": [7, 5, 6, 12, 12, 8, 2, 1, 1, 8],
+    "PPC5R9_T14": [5, 3, 6, 6, 7, 23, 5, 8, 15, 9, 4, 5]
+  },
+  "non_prunable_semantic_coverage": [
+    "all distinct numeric boundaries",
+    "all six privileged noninterference fields plus emitted-public-byte influence",
+    "all DREAM and status branches",
+    "all Holm permutations, exact tie, and stop boundaries",
+    "all claim-specific qualification bytes",
+    "all 23 dispatch fields"
+  ],
+  "t08_reducer_laws": {
+    "TARGET_ZERO": {"result": "RUN_INVALID", "public_continuation": false},
+    "TARGET_ONE": {"result": "INTERVENTION", "public_continuation": true},
+    "TARGET_MULTI": {"result": "RUN_INVALID", "public_continuation": false},
+    "NON_TARGET_ZERO": {"result": "OFF_PATH_AUTHENTIC_PASS_THROUGH", "public_continuation": true},
+    "TWO_OUTSTANDING_ORDERED_DISCARD": {"slot_0_discard_count": 1, "slot_1_discard_count": 1, "exactly_once_per_slot": true}
+  },
+  "proposal_state": {
+    "sole_coherent_universe_definition": "this 2987-logical-case vector plus REDUCER_MACHINE_RFC.json",
+    "positive_reducer_vectors": "58 closed facts-only input graphs with closed per-law input/output schemas and executable proposal reducers",
+    "expectations": "derived only after executor output commit; not executor-visible",
+    "superseded_7629_case_universe": "hard quarantined by QUARANTINE_RFC.json",
+    "intentionally_absent": ["materialized fixture universe", "fixture execution manifests", "executor outputs", "conformance receipt", "architecture ratification", "run authority"]
+  },
+  "forbidden_operations": ["FIXTURE_EXECUTION", "MODEL", "TOKENIZER", "TRAINER", "CPU_BEHAVIORAL", "GPU", "SEAL", "SCIENTIFIC_CLAIM", "RELEASE"]
+}

@@ -5,10 +5,10 @@ Retrained from the FULL corpus each cycle; checkpoint per measurement."""
 from __future__ import annotations
 
 
-def load_base(model_name: str, device: str = "auto"):
+def load_base(model_name: str, device: str = "auto", revision=None):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
-    tok = AutoTokenizer.from_pretrained(model_name)
+    tok = AutoTokenizer.from_pretrained(model_name, revision=revision)
     if device == "auto":
         dev = ("cuda" if torch.cuda.is_available()
                else "mps" if torch.backends.mps.is_available() else "cpu")
@@ -17,7 +17,7 @@ def load_base(model_name: str, device: str = "auto"):
     dt = (torch.float32 if dev == "cpu"
           else torch.bfloat16 if dev == "cuda" else torch.float16)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name, torch_dtype=dt).to(dev)
+        model_name, torch_dtype=dt, revision=revision).to(dev)
     return model, tok
 
 

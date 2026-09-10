@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "interleaved_adjudication",
+  "change_id": "chg_20260831_interleaved_organism",
+  "state": "human_required",
+  "architecture_change_sha256": "d830b37f11124778ff678b0bf1df59ca1aa4ca812f3d139c0ba3260a5d5ca87d",
+  "interpretation_hashes": [
+    {"interpretation_id": "interleaved_systems", "sha256": "2cea149429c05ab4606e0ddb88f08587187303760afb328cf3a40f58a41c9fd9"},
+    {"interpretation_id": "interleaved_benchmark", "sha256": "4a4503d8a7878d2b0790fe1f6eb2f13baf9708d7ccb8b711c24eba6830fe6785"}
+  ],
+  "critique_sha256": "70083a977e3f68b9e2ae92e5b22663da4668d71198ccf5e4ef62ba175371670c",
+  "recommendation": "proceed_to_implementation",
+  "agreements": [
+    "The organism is recurrent rather than a one-way dream-LoRA-think pipeline.",
+    "Semantic graph growth and LoRA write-realization fanout are distinct operations.",
+    "Thinker feedback is selection-only and never evidence.",
+    "v0.3-R is a calibration tier, not the headline scale or action benchmark.",
+    "CPU contracts, text controls, independent reviews, and explicit human scope precede GPU science."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "r_independent_support",
+      "sources": ["interleaved_systems", "interleaved_cross_critique"],
+      "issue": "How one semantic memory receives independent reinforcement without duplicated graph nodes.",
+      "positions": [
+        {"actor": "initial contract", "position": "One semantic conclusion has exactly one derivation."},
+        {"actor": "systems and reviewer", "position": "One semantic conclusion has one creation derivation and may have later novel support derivations."}
+      ],
+      "resolution": {"status": "resolved", "rationale": "Independent reinforcement is a required dream behavior and must be auditable separately from node count.", "selected_position": "One creation derivation plus later unique-evidence reinforcement derivations.", "required_change": "Enforce unique evidence identities, append-only support events, and independent-support metrics without node duplication.", "acceptance_test_ids": ["t_cyclic_contract", "t_realization_separation"]}
+    },
+    {
+      "disagreement_id": "r_calibration_scope",
+      "sources": ["interleaved_benchmark", "interleaved_cross_critique"],
+      "issue": "Whether v0.3-R can carry the final paper claim.",
+      "positions": [
+        {"actor": "architecture advocate", "position": "Use v0.3-R to close the recurrent organism interface."},
+        {"actor": "benchmark reviewer", "position": "Use v0.3-R only as calibration because its lifetime is small and retrieval is a strong baseline."}
+      ],
+      "resolution": {"status": "resolved", "rationale": "The interface result is useful, but context-scale and action claims require different rungs.", "selected_position": "Calibration only, followed by long-life and Action World tiers.", "required_change": "Preserve the label in docs, results, and review prompts; include raw context and iterative retrieval controls.", "acceptance_test_ids": ["t_v03r_shortcuts", "t_independent_review"]}
+    },
+    {
+      "disagreement_id": "r_feedback_boundary",
+      "sources": ["interleaved_systems", "interleaved_benchmark", "interleaved_cross_critique"],
+      "issue": "What thinker output a later dream may consume.",
+      "positions": [
+        {"actor": "systems", "position": "Consume typed unresolved dependencies and desired local relations as an agenda."},
+        {"actor": "reviewer", "position": "Exclude answer, operation, rationale, confidence, and scorer truth from evidentiary or write channels."}
+      ],
+      "resolution": {"status": "resolved", "rationale": "Selection can create useful recurrence without self-approval only if later durable claims are independently re-derived.", "selected_position": "Mechanical allowlist projection to a non-evidentiary agenda.", "required_change": "Reject feedback citations, direct feedback realizations, hidden answers, and unchecked memory promotion.", "acceptance_test_ids": ["t_feedback_non_evidence", "t_recurrent_end_to_end"]}
+    },
+    {
+      "disagreement_id": "r_compute_budget",
+      "sources": ["interleaved_benchmark", "interleaved_cross_critique"],
+      "issue": "How to distinguish recurrence from extra inference compute.",
+      "positions": [
+        {"actor": "organism arm", "position": "Run the useful agenda-conditioned return edge."},
+        {"actor": "evaluation", "position": "Give no-feedback and shuffled-feedback arms the same intermediate thinker and maximum dream budget."}
+      ],
+      "resolution": {"status": "resolved", "rationale": "Matched calls and actual-token reporting are required for causal attribution.", "selected_position": "Equal maximum budgets, identical pre-feedback history, and shuffled-agenda control.", "required_change": "Freeze the schedule and report actual compute separately from the matched ceiling.", "acceptance_test_ids": ["t_recurrent_end_to_end"]}
+    }
+  ],
+  "concern_dispositions": [
+    {"concern_id": "c_independent_support", "status": "accepted", "rationale": "The contract must distinguish semantic identity from multiple evidence paths.", "resolution_id": "r_independent_support", "required_change": "Implement novel reinforcement derivations and independent support metrics."},
+    {"concern_id": "c_feedback_laundering", "status": "accepted", "rationale": "The feedback path otherwise becomes a hidden answer write.", "resolution_id": "r_feedback_boundary", "required_change": "Make agendas selection-only and prohibit them as premises or realization sources."},
+    {"concern_id": "c_calibration_scope", "status": "accepted", "rationale": "The small game closes interfaces but cannot establish scaling.", "resolution_id": "r_calibration_scope", "required_change": "Keep v0.3-R non-headline and schedule long-life/action tiers."},
+    {"concern_id": "c_compute_matching", "status": "accepted", "rationale": "Recurrent benefit must not reduce to extra calls.", "resolution_id": "r_compute_budget", "required_change": "Match maximum budgets and include shuffled feedback."}
+  ],
+  "upstream_disagreement_dispositions": [
+    {"disagreement_id": "systems_depth_reinforcement", "status": "accepted", "rationale": "Independent support is part of the intended dream graph.", "resolution_id": "r_independent_support"},
+    {"disagreement_id": "benchmark_v03r_status", "status": "accepted", "rationale": "The repaired world remains a calibration instrument.", "resolution_id": "r_calibration_scope"}
+  ],
+  "acceptance_test_dispositions": [
+    {"test_id": "t_intake_gate", "status": "retained", "rationale": "Required to enforce the human/agent deliberation boundary.", "replacement_test_id": ""},
+    {"test_id": "t_cyclic_contract", "status": "retained", "rationale": "Required to audit recurrence and provenance.", "replacement_test_id": ""},
+    {"test_id": "t_realization_separation", "status": "retained", "rationale": "Prevents data fanout from faking semantic growth.", "replacement_test_id": ""},
+    {"test_id": "t_feedback_non_evidence", "status": "retained", "rationale": "Prevents answer laundering across the return edge.", "replacement_test_id": ""},
+    {"test_id": "t_v03r_shortcuts", "status": "retained", "rationale": "Required before using the repaired calibration.", "replacement_test_id": ""},
+    {"test_id": "t_recurrent_end_to_end", "status": "retained", "rationale": "Required to test the complete return edge at fixed compute.", "replacement_test_id": ""},
+    {"test_id": "t_independent_review", "status": "retained", "rationale": "Required before scientific interpretation.", "replacement_test_id": ""}
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": ["Authorize only the adjudicated CPU implementation, tests, and review preparation while keeping GPU science and headline claims forbidden?"],
+    "implementation_forbidden": true
+  }
+}

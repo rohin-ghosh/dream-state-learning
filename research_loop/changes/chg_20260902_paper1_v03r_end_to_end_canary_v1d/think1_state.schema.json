@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-v03r-canary-think1-state-v1d",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["question", "state_tokens", "scratch", "previous_read"],
+  "properties": {
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["goal_id", "question"],
+      "properties": {
+        "goal_id": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9_.:-]+$"},
+        "question": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[ -!#-\\[\\]-~]+$"}
+      }
+    },
+    "state_tokens": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^label:[a-z0-9][a-z0-9_.+-]{0,63}$"}
+    },
+    "scratch": {"$ref": "scratch.schema.json"},
+    "previous_read": {"$ref": "think0_state.schema.json#/$defs/previousRead"}
+  },
+  "x-golden-vectors": {
+    "positive": [
+      {"name": "closed-source-value-read", "instance": {"question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Candyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}, "state_tokens": ["label:red", "label:yellow"], "scratch": {"nodes": []}, "previous_read": {"type": "ROW", "read_handle": "H000001", "kind": "SOURCE_VALUE", "fields": ["animal:cow", "source:candyland", "label:red"], "status": "WITNESSED", "semantic_hash": "fa18ac7e8ff2fa345f452836d813be43b26ee5888fb97b4b0169f2ca2cac0cc6"}}}
+    ],
+    "negative": [
+      {"name": "answer-leak-in-question", "instance": {"question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Candyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color.", "answer": "red"}, "state_tokens": ["label:red", "label:yellow"], "scratch": {"nodes": []}, "previous_read": {"type": "NO_READ"}}},
+      {"name": "duplicate-state-token", "instance": {"question": {"goal_id": "v03r_goal_0000", "question": "If the stream from Candyland is closed, what color will the otter settle into in Confluenceland? Answer with exactly one color."}, "state_tokens": ["label:red", "label:red"], "scratch": {"nodes": []}, "previous_read": {"type": "NO_READ"}}}
+    ]
+  }
+}

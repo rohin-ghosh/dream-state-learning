@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "contract": "ppc5.analysis.v8",
+  "population": {
+    "target": "recipient-life/seed bundles independently sampled from the accepted-constructible recipient-bundle law of the exact run-locked generator G",
+    "sampling_unit": "recipient_life_bundle",
+    "independence": "Each accepted unit uses a disjoint entropy slice and generator invocation; all proposals and rejections are recorded; no outcome-dependent resampling, exclusion, replacement, or seed shifting is allowed.",
+    "paired_observation": "Every required computational arm is instantiated from the same pre-treatment snapshot and common-random seed bundle, so every arm contrast is directly observed within life.",
+    "lower_units": "Queries, items, clones, endpoints, and edge positions are repeated measures, never independent units.",
+    "gate_membership": "Before sample entropy, the run lock names a nonempty fixed sample-ordinal set for every gate and a stable D1B key (path_template_id, edge_position, edge_id). G must supply the required unit for every member; membership cannot depend on constructability, generated content, status, missingness, or outcome."
+  },
+  "exact_numeric_encoding": {
+    "probability": "reduced integer rational numerator/denominator with 0 <= numerator <= denominator and denominator > 0, compared by integer cross multiplication",
+    "superiority_margin": "reduced rational m with 0 <= m < 1",
+    "sham_noninferiority_margin": "reduced rational m with -1 < m <= 0, used only with d=SHAM-AUTHENTIC",
+    "p_value": "exact rational numerator/denominator; binary floating point is never authority-bearing",
+    "cp_tail_alpha": "one exact run-locked rational used by all reported one-sided Clopper-Pearson bounds",
+    "cp_bracket": "At run-locked decimal scale s, store floor(10^s root)/10^s and ceil(10^s root)/10^s; independent reducers certify the defining binomial-tail inequalities and publish only the outward conservative endpoint.",
+    "test_threshold_tie": "p_value equal to its threshold passes",
+    "effect_tie": "d_i equal to margin is failure",
+    "ceiling_tie": "observed adverse rate equal to ceiling is failure"
+  },
+  "canonical_rational_validator": {
+    "algorithm": "validate_canonical_rational_v7",
+    "rules": ["denominator > 0", "gcd(abs(numerator),denominator)=1", "zero is exactly 0/1", "probability values satisfy 0 <= numerator <= denominator", "all comparisons use integer cross multiplication"],
+    "cross_field_rules": ["successes, adverse_events, and missing_events are <= N", "observation and membership cardinalities equal N", "observed_rate equals count/N in reduced form", "each CP bracket is ordered at the locked scale and certifies both defining tail inequalities", "gate and result alpha_threshold equal run_lock.alpha", "cp_tail_alpha equals run_lock.alpha/4"]
+  },
+  "endpoints": {
+    "correct_supported_selection": {"range": [0, 1], "higher_is_better": true},
+    "false_selection_event": {"range": [0, 1], "higher_is_better": false},
+    "not_found_event": {"range": [0, 1], "higher_is_better": false},
+    "normalized_action_value": {"range": [0, 1], "higher_is_better": true}
+  },
+  "within_life_reduction": {
+    "order": "item_id, clone_id, edge_position, endpoint_id lexicographic",
+    "aggregation": "equal-weight arithmetic mean over every prospectively assigned lower unit for that life and gate",
+    "missing_arm": "The descriptive difference is null; the paired success indicator is zero and the missingness indicator is one.",
+    "integrity_clean_no_action": "normalized_action_value is observed numeric zero",
+    "integrity_blocker": "No observation is emitted; the dependent assay is BLOCKED."
+  },
+  "paired_gate": {
+    "estimand": "pi_g = Pr_G(d_i > margin_g)",
+    "success_indicator": "Z_i=1 iff the canonical paired benefit d_i is strictly greater than margin_g and every required arm is present; otherwise Z_i=0.",
+    "null": "H0: pi_g <= pi0_g",
+    "p_value": "sum_{k=X}^{N_g} choose(N_g,k) pi0_g^k (1-pi0_g)^(N_g-k), where X=sum_i Z_i; compute in exact rational arithmetic before canonical decimal rendering",
+    "bound": "one-sided exact Clopper-Pearson lower bound L at cp_tail_alpha gamma: L=0 if X=0, otherwise upper_tail(X;N_g,L)=gamma; serialize a certified outward rational bracket and publish its lower endpoint",
+    "release": "X must meet the exact registered critical count, p_value must meet its family threshold, and the lower bound must be strictly greater than pi0_g; equality counts against release",
+    "descriptive_only": ["mean d_i", "quantiles of d_i", "bounded magnitude interval", "per-stratum d_i"]
+  },
+  "one_sample_safety_gate": {
+    "unit": "exactly one prospectively designated D1A primary trial per sampled life for each safety endpoint",
+    "event": "Y_i=1 for the named adverse event; one missing required provider output sets both FALSE_SELECTION and NOT_FOUND safety indicators to one and is also a missingness event",
+    "null": "H0: p_event >= ceiling",
+    "p_value": "sum_{k=0}^{X} choose(N,k) ceiling^k (1-ceiling)^(N-k), where X=sum_i Y_i; compute in exact rational arithmetic before canonical decimal rendering",
+    "bound": "one-sided exact Clopper-Pearson upper bound U at cp_tail_alpha gamma: U=1 if X=N, otherwise lower_tail(X;N,U)=gamma; serialize a certified outward rational bracket and publish its upper endpoint",
+    "release": "observed event rate must be strictly below ceiling, p_value must meet its family threshold, and the upper bound must be strictly below ceiling; equality counts against release",
+    "receipt": "one_sample_safety_result; it has no treatment arm or control arm"
+  },
+  "missingness_gate": {
+    "unit": "sampled recipient life for each required arm and endpoint",
+    "event": "at least one required no-retry model/provider observation is missing",
+    "null": "H0: p_missing >= ceiling",
+    "procedure": "the same exact lower-tail binomial p-value and one-sided upper bound as one_sample_safety_gate",
+    "interaction": "Missing is already adverse in every paired Z_i and cannot be imputed or retried."
+  },
+  "missingness_gate_expansion": {
+    "D1A": "one gate for each of READER_LORA, ADAPTER_OFF, DOSE_MATCHED_WRONG_LIFE_ADAPTER, and MATCHED_BINDING_SHUFFLED_READER at correct_supported_selection",
+    "D1B": "one normalized_action_value gate for AUTHENTIC_PATH, every run-locked per-edge CUT/TWIN/SHAM opaque instance, ONE_SHOT_READ, and OPEN_LOOP",
+    "D1C": "one normalized_action_value gate for each of AUTHENTIC_DREAM_CONTEXT, RECENCY_CONTEXT, and PERMUTED_CONTEXT",
+    "D1D": "one gate at each of correct_supported_selection and normalized_action_value for DREAM_TO_SLEEP, RECENCY_TO_SLEEP, and HASH_PERMUTED_TO_SLEEP",
+    "identity": "MISSING[assay_id, opaque_instance_role, endpoint_id] with the exact role-to-instance resolution sealed in the gate registry before entropy",
+    "membership": "the same prospective sample ordinals as the corresponding endpoint; no realized status changes membership"
+  },
+  "gate_registry_rule": {
+    "membership": "Every expanded gate binds a nonempty sorted list of sample ordinals before entropy acquisition plus the exact ordered observation roles consumed per ordinal.",
+    "endpoint_range": "All primary endpoints lie in [0,1], hence paired differences lie in [-1,1].",
+    "superiority": "The exact benefit string names treatment minus control; 0 <= margin < 1 and 1/2 <= pi0 < 1.",
+    "sham_noninferiority": "The exact benefit is SHAM minus AUTHENTIC; -1 < margin <= 0 and 1/2 <= pi0 < 1.",
+    "safety_or_missingness": "The ceiling satisfies 0 < ceiling < 1 and the event direction is lower-is-better.",
+    "alpha_binding": "Every observed gate uses alpha_threshold exactly equal to run_lock.alpha. Every reported CP bound and every sufficient-power critical set uses cp_tail_alpha exactly equal to run_lock.alpha/4.",
+    "literal_binding": "Each populated gate carries one scientific-justification byte reference and one canonical claim-fragment byte reference; T11/T13/T14 reject sign reversal, vacuous bounds, orientation/literal disagreement, or content-selected membership."
+  },
+  "gates": {
+    "D1A": [
+      {"gate_id": "D1A_READER_GT_ADAPTER_OFF", "type": "paired_superiority", "benefit": "READER_LORA correct_supported_selection minus ADAPTER_OFF"},
+      {"gate_id": "D1A_READER_GT_WRONG_LIFE", "type": "paired_specificity", "benefit": "READER_LORA correct_supported_selection minus DOSE_MATCHED_WRONG_LIFE_ADAPTER"},
+      {"gate_id": "D1A_READER_GT_BINDING_SHUFFLE", "type": "paired_specificity", "benefit": "READER_LORA correct_supported_selection minus MATCHED_BINDING_SHUFFLED_READER"},
+      {"gate_id": "D1A_FALSE_SELECTION_SAFE", "type": "one_sample_safety", "endpoint": "false_selection_event"},
+      {"gate_id": "D1A_NOT_FOUND_SAFE", "type": "one_sample_safety", "endpoint": "not_found_event"}
+    ],
+    "D1B": [
+      {"gate_id": "D1B_AUTHENTIC_GT_CUT[path_template_id,edge_position,edge_id]", "type": "paired_superiority_per_edge", "benefit": "AUTHENTIC_PATH normalized_action_value minus the CUT at the exact stable gate key"},
+      {"gate_id": "D1B_AUTHENTIC_GT_TWIN[path_template_id,edge_position,edge_id]", "type": "paired_superiority_per_edge", "benefit": "AUTHENTIC_PATH normalized_action_value minus the TWIN at the exact stable gate key"},
+      {"gate_id": "D1B_SHAM_NONINFERIOR[path_template_id,edge_position,edge_id]", "type": "paired_noninferiority_per_edge", "benefit": "SHAM at the exact stable gate key minus AUTHENTIC_PATH"},
+      {"gate_id": "D1B_AUTHENTIC_GT_ONE_SHOT", "type": "paired_superiority", "benefit": "AUTHENTIC_PATH normalized_action_value minus ONE_SHOT_READ"},
+      {"gate_id": "D1B_AUTHENTIC_GT_OPEN_LOOP", "type": "paired_superiority", "benefit": "AUTHENTIC_PATH normalized_action_value minus OPEN_LOOP"}
+    ],
+    "D1C": [
+      {"gate_id": "D1C_AUTHENTIC_GT_RECENCY", "type": "paired_total_policy", "benefit": "AUTHENTIC_DREAM_CONTEXT normalized_action_value minus RECENCY_CONTEXT"},
+      {"gate_id": "D1C_AUTHENTIC_GT_PERMUTED", "type": "paired_total_policy", "benefit": "AUTHENTIC_DREAM_CONTEXT normalized_action_value minus PERMUTED_CONTEXT"}
+    ],
+    "D1D": [
+      {"gate_id": "D1D_SELECTION_GT_RECENCY", "type": "paired_total_policy", "benefit": "DREAM_TO_SLEEP correct_supported_selection minus RECENCY_TO_SLEEP"},
+      {"gate_id": "D1D_SELECTION_GT_PERMUTED", "type": "paired_total_policy", "benefit": "DREAM_TO_SLEEP correct_supported_selection minus HASH_PERMUTED_TO_SLEEP"},
+      {"gate_id": "D1D_ACTION_GT_RECENCY", "type": "paired_total_policy", "benefit": "DREAM_TO_SLEEP normalized_action_value minus RECENCY_TO_SLEEP"},
+      {"gate_id": "D1D_ACTION_GT_PERMUTED", "type": "paired_total_policy", "benefit": "DREAM_TO_SLEEP normalized_action_value minus HASH_PERMUTED_TO_SLEEP"}
+    ]
+  },
+  "assay_decision": {
+    "gate_registry": "Expand every edge-indexed gate and every arm-specific missingness gate before the run lock is sealed.",
+    "conjunction": "Every paired, safety, missingness, direction, construction, integrity, and local test gate is required.",
+    "assay_p": "maximum exact p-value among all release-critical statistical gates for the assay after all nonstatistical gates pass",
+    "blockers": ["CONSTRUCTION_FAIL", "RUN_INVALID", "failed required fixture", "failed local cell", "failed direction or bound", "failed missingness ceiling"]
+  },
+  "family": {
+    "claims": ["PPC5_D1A_SUPPORTED_SELECTION", "PPC5_D1B_OBSERVABLE_EDGE_DEPENDENCE", "PPC5_D1C_DREAM_CONTEXT_POLICY", "PPC5_D1D_DREAM_TO_SLEEP_TOTAL_POLICY"],
+    "procedure": "Holm step-down over exactly four claim-labeled assay p-values in ascending order with claim_id lexicographic tie-break; each HOLM_STEP binds sorted index, claim_id, assay result, exact p, divisor, exact threshold, reject flag, and stop flag",
+    "thresholds": "At ordered position j in 1..4 reject while p_(j) <= alpha/(5-j); stop at first failure",
+    "intersection": "The non-mediational intersection releases only if all four component claims release and every global prerequisite passes; it adds no fifth hypothesis."
+  },
+  "power": {
+    "inputs": ["gate registry", "N_g", "pi0 or event ceiling", "worst-case paired success probability or adverse-event probability", "missingness probability", "alpha", "minimum familywise release probability"],
+    "conditional_scope": "Gate and conditional release power are conditional on the complete benchmark construction already existing, passing both static sealers, and being locked. They cannot alone authorize PRE_MODEL execution or be described as unconditional benchmark-construction success.",
+    "construction_scope": "A separate CONSTRUCTION_SUCCESS_POWER_RESULT includes every required generator, donor, path, D1A control, overlap, and static-construction success under the finite proposal law, including exhaustion.",
+    "per_gate": "Enumerate the exact critical-count set for which the complete observed-data release conjunction passes: the registered p-value comparison including equality, strict effect or adverse-rate direction, strict CP-bound direction, and required missingness result, using the same N_g, membership, margin, pi0/ceiling, alpha/4, and cp_tail_alpha.",
+    "sufficient_event": "Every individual release-critical paired, safety, and missingness gate lies in its registered full critical set and every deterministic post-construction prerequisite passes.",
+    "lower_bound": "max(0, 1 - sum_g(1-power_g)) over every expanded paired, safety, and missingness gate; no independence assumption",
+    "overall_lower_bound": "OVERALL_RUN_RELEASE_POWER_RECEIPT combines a certified construction-success lower bound with the conditional complete-release lower bound by the probability chain rule, never by an independence assumption; a probability-one construction branch requires an exact proof over the complete locked support.",
+    "authority": "PRE_MODEL_EXECUTION is forbidden unless the unconditional construction-plus-complete-release lower bound meets the locked minimum and both conditional and unconditional quantities remain separately labeled."
+  },
+  "resource_accounting": {
+    "inclusive": "Each cell includes every causal dependency and counts shared work fully.",
+    "marginal": "Shared physical events are recorded once and cells record only incremental work.",
+    "physical_total": "Deduplicate by event_id and shared_event_id.",
+    "claim_role": "Descriptive treatment dose and outcome only; resources never normalize, adjust, or rescue a causal release. D1D realized dose is a mediator and cannot be matched or conditioned on."
+  },
+  "release_qualification": "Results concern the accepted-constructible recipient-bundle law of the exact locked PPC5 generator and its target-informed constructed benchmark. They establish neither novelty, zero-overlap generalization, naturalistic path structure, private reasoning, nor an end-to-end continual-learning mechanism."
+}

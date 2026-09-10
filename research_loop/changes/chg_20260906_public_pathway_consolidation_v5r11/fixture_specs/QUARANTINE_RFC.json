@@ -1,0 +1,23 @@
+{
+  "document_kind": "PPC5R11_SUPERSEDED_FIXTURE_QUARANTINE_RFC",
+  "lifecycle_state": "PROPOSAL_ONLY",
+  "authority_conferred": false,
+  "quarantine_is_non_destructive": true,
+  "superseded_namespace": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r9/fixture_specs",
+  "excluded_bytes": [
+    {"file":"ppc5r9_fixture_universe.json","sha256":"cf3cbc6b970d650b3fd2f4c5a51a85ca9ae29c182c4ae6ce47ebe3f83c349dfa","logical_case_count":7629,"reason":"superseded branch-key universe conflicts with the PPC5r11 2987-case content-addressed vector"},
+    {"file":"author_fixture_universe.py","sha256":"c3ee04e4a2c52f8ec38dc9fa9fd6501c095c2ce653763445d7fb6965b303214a","reason":"authors only the quarantined branch-key universe"},
+    {"file":"independent_fixture_oracle.py","sha256":"74b73dfd643dabd17c4d14456ed658ccb087659973981dd5b47b5133f869d6ba","reason":"hard-codes superseded counts and branch-key representation"},
+    {"file":"expected_fixture_enumerator.py","sha256":"836fc9a0206c9e771451eb1973a8c119ee93242ae44a12b2ee6cc03c9848527d","reason":"enumerates the superseded universe"}
+  ],
+  "replacement_scope": {
+    "namespace": "research_loop/changes/chg_20260906_public_pathway_consolidation_v5r11/fixture_specs",
+    "logical_case_count": 2987,
+    "sole_vector_contract": "VECTOR_FIXTURE_RFC.json",
+    "sole_reducer_contract": "REDUCER_MACHINE_RFC.json",
+    "materialized_universe": null,
+    "materialization_permitted": false
+  },
+  "hard_rule": "No excluded byte may appear in a PPC5r11 context_files list, source ancestry, fixture manifest, expected-set computation, executor projection, oracle input, or conformance input. Presence is a hard QUARANTINED_UNIVERSE_CONFLICT failure, never a precedence alternative.",
+  "no_authority_notice": "This quarantine does not delete or mutate PPC5r9 and confers no authority to materialize PPC5r11."
+}

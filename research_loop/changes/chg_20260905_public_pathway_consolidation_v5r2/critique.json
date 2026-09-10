@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "ppc5r2_adversarial_crosscritique_fresh_01",
+  "change_id": "chg_20260905_public_pathway_consolidation_v5r2",
+  "state": "critiqued",
+  "architecture_change_sha256": "ed82d4d17e37b8becbd6e0a5d11e111d3c4c0736b6f2172629380e932349dd04",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "ppc5r2_systems_contract_audit",
+      "sha256": "660a76115767949c72b48e609e6591aaf829372fe876ce4ca8f7167e9c3ba935"
+    },
+    {
+      "interpretation_id": "ppc5r2_science_fresh_v1",
+      "sha256": "2ff01743fd2c7db89994de625b0316672c4ab42ce746094414be42bc6623c0d4"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Controlling architecture-deliberation and human-authority contract."
+    },
+    {
+      "path": "research_loop/schemas/architecture_change.schema.json",
+      "sha256": "4316574d4b826dd9484a21e3553e52ef819dcc8a48e81b11ea26437a9ceeef3b",
+      "purpose": "Strict schema for the exact architecture proposal."
+    },
+    {
+      "path": "research_loop/schemas/architecture_interpretation.schema.json",
+      "sha256": "cb533ec98ea38bf4bca2657a0e12ff32976d15e6402b219cd364e30b74ef1217",
+      "purpose": "Transitive validator schema for both exact interpretations."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Strict schema governing this cross-critique artifact."
+    },
+    {
+      "path": "research_loop/architecture_intake.py",
+      "sha256": "62d29dfa6f34b8093f686615c13dc192bb82c58bb789100be3ff78c91dc9fbea",
+      "purpose": "Hash, schema, coverage, independence, and intake-state validator."
+    },
+    {
+      "path": "research_loop/io.py",
+      "sha256": "0ad40853461b1704130726946b4673d1ecf5b77480935abaec7c627077a66151",
+      "purpose": "Transitive hashing, JSON-loading, timestamp, and atomic-write dependency of architecture_intake.py."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/human_directive.txt",
+      "sha256": "72d4417a50c23d43e07e2ff0cad83d59bc00c7d08a84d27ac91dd35a3aec140b",
+      "purpose": "Verbatim human direction and explicitly labeled narrow agent interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/protocol.md",
+      "sha256": "27f026c74c0a09b3a85c418aa7536e8c462d191775d72463765df2459b966954",
+      "purpose": "Standalone normative PPC5r2 protocol attacked here at its strongest reading."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/contracts.schema.json",
+      "sha256": "d746d11f028198fcaf3f81fdb4f5cab29e00e957e0734e774b6cfbf08948f447",
+      "purpose": "Claimed closed schemas for state, operations, providers, DREAM, interventions, SLEEP, status, resources, reducers, and stages."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/claim_dependency_map.json",
+      "sha256": "03d76cffc1fed3925dfcb1b3f5d201e8da7517651e72c20909c9392bf8e9a482",
+      "purpose": "Normative component gates, Holm family, blockers, and literal release strings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/scope_proposal.json",
+      "sha256": "cff1b406c30ff98e77d161319a5c7eb24daa226237c3069968ba91b4564bbd15",
+      "purpose": "Exact proposal-only implementation authority request and forbidden scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/change.json",
+      "sha256": "ed82d4d17e37b8becbd6e0a5d11e111d3c4c0736b6f2172629380e932349dd04",
+      "purpose": "Exact PPC5r2 architecture proposal critiqued here."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r1/consensus.json",
+      "sha256": "89671ee4db6c1893044150a76cbd535a204a03e0920532cf4e324acac9365636",
+      "purpose": "Named provenance-only rework adjudication; no behavior, default, or authority is inherited from it."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/interpretation_systems.json",
+      "sha256": "660a76115767949c72b48e609e6591aaf829372fe876ce4ca8f7167e9c3ba935",
+      "purpose": "Exact fresh systems interpretation reconciled by this cross-critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260905_public_pathway_consolidation_v5r2/interpretation_science.json",
+      "sha256": "2ff01743fd2c7db89994de625b0316672c4ab42ce746094414be42bc6623c0d4",
+      "purpose": "Exact fresh scientific interpretation reconciled by this cross-critique."
+    }
+  ],
+  "strongest_case": "At its strongest, PPC5r2 is a disciplined finite-mechanism benchmark, not an Experience Model claim. It deletes broad agent operations, freezes THINK/DREAM/ACT, confines learning to a clean-base READ-only adapter, supplies every provider the complete external candidate table, moves causal path perturbation after target-blind selection, shares one authentic DREAM call across policy clones, makes context and root controls prospective and recipient-local, rejects ineligible nominees before equivalence lookup, retains all assigned lives under adverse missing bounds, and explicitly forbids treating four separate positive assays as mediation. These are real advances and make candidate-conditioned selection, behavioral response dependence, reversible context-policy value, and a DREAM-root training-policy effect potentially identifiable. The systems and science interpretations nevertheless converge on a decisive flaw: the prose names exactness and totality that the normative objects and algorithms do not encode. Their emphases are complementary, not competing: missing typed transitions, receipts, schedules, and authority predecessors make independent execution non-unique, while the absent assay-freeze matrix, estimands, status-to-ITT functions, and composite tests make scientific release non-unique. The science critique should be read narrowly where appropriate: semantic-family separation and fixed-dose D1D are not automatically required for the proposal's narrowest claims. Exact-tuple support may still test in-scope supported selection, and the declared D1D design can identify a total policy effect with naturally induced dose. But semantic overlap materially weakens construct validity, and the current D1D release language does not say total policy assignment; it can be read as fixed-dose root quality, which the design cannot establish. Because T01 requires exact architecture before implementation and the missing choices change observable behavior, estimands, claim decisions, or authority, the current exact bytes warrant rework, not ratification. This verdict authorizes no implementation, sealer execution, model/tokenizer call, training, behavioral treatment, GPU work, or scientific claim.",
+  "reviewed_acceptance_test_ids": [
+    "PPC5R2_T01",
+    "PPC5R2_T02",
+    "PPC5R2_T03",
+    "PPC5R2_T04",
+    "PPC5R2_T05",
+    "PPC5R2_T06",
+    "PPC5R2_T07",
+    "PPC5R2_T08",
+    "PPC5R2_T09",
+    "PPC5R2_T10",
+    "PPC5R2_T11",
+    "PPC5R2_T12",
+    "PPC5R2_T13",
+    "PPC5R2_T14"
+  ],
+  "concerns": [
+    {
+      "concern_id": "PPC5R2_CRIT_C01_CLOSED_STATE_RECEIPT_SCHEMA_TOTALITY",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "The claimed closed machine and receipt system is not total: major boundary objects are absent and existing schemas admit semantically impossible states, so two conforming implementations can produce different public bytes and dispositions.",
+      "evidence": "protocol.md requires one canonical event per transition, exact error and terminal receipts, state rendering, parsing, hash chaining, cold replay, provider selection, DREAM installation, evidence projection, adapter validation/publication, and all-assigned status products. contracts.schema.json defines no ledger-event, transition-result, terminal-receipt, public-error, prompt/render, semantic-table container, provider-score/selection receipt, DREAM request/call/install receipt, projection receipt, adapter manifest, publication receipt, assay result, or claim-release receipt. Existing state, read_response, status_receipt, and stage_receipt schemas lack conditionals: for example FOUND may carry null payloads, NOT_FOUND may carry populated IDs, TERMINAL can have a null reason, VALID can install no hash, RUN_INVALID can request ordinary reduction, and arbitrary stages can assert reachability. Token input/output debit, overflow saturation, provider failure after READ debit, forced versus model STOP, canonical event preimages, and row ordering are not closed. T03's demanded byte identity and T02/T04/T05/T06/T10/T11/T12/T13/T14 receipts therefore cannot be derived from the proposal alone.",
+      "acceptance_test_ids": ["PPC5R2_T02", "PPC5R2_T03", "PPC5R2_T04", "PPC5R2_T05", "PPC5R2_T06", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T12", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C02_D1B_SCHEDULE_OVERRIDE_CONFLICT",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "ONE_SHOT_READ and OPEN_LOOP contradict the unconditional minimal-machine transition contract and have no typed schedule-indexed override, so D1B does not denote one reproducible intervention.",
+      "evidence": "Section 3 says every READ appends a public response before the next model call and every accepted ACT executes once and appends its outcome. Section 7 instead withholds several READ returns in ONE_SHOT_READ and defers both returns and committed action in OPEN_LOOP until no later call. The state has no schedule mode, queued request/response/action fields, or controller ordinal. The proposal does not define which state is rendered between planning calls, when logical and token debits occur, whether withheld provider failures increment error counts, how a downstream opaque query can be planned without the preceding return, how wrong/extra/missing operations terminate, or how deferred effects enter hash replay. The one-shot opacity handicap can be a legitimate estimand of adaptive interleaving, but only after it is explicitly declared and totalized rather than treated as an informal exception.",
+      "acceptance_test_ids": ["PPC5R2_T03", "PPC5R2_T08", "PPC5R2_T11", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C03_ASSAY_BY_COMPONENT_FREEZE_MATRIX",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "No normative assay-by-component matrix fixes every non-target mechanism across D1A-D1D arms, so the four separately attributed effects are not isolated by the current bytes.",
+      "evidence": "The graph and claim prose separate four questions but never bind, for each assay and arm, provider kind, mounted adapter, adapter training corpus, THINK/DREAM decoding and seed coupling, context policy, root policy, SLEEP execution/state, response intervention, task/item set, budgets, and starting snapshot. D1A may measure provider selection directly or policy-mediated querying; D1B may vary adapter/provider state while varying response timing; D1C may inadvertently vary SLEEP or adapter state; and D1D downstream action may include AUTHENTIC_DREAM_CONTEXT only in the authentic-root arm, importing D1C. A closed matrix must vary only adapter cell in D1A, schedule/response intervention in D1B, context policy in D1C, and root policy in D1D, while declaring shared calls, paired-clone state, seeds, and all other components byte-identical or explicitly part of the estimand.",
+      "acceptance_test_ids": ["PPC5R2_T05", "PPC5R2_T06", "PPC5R2_T08", "PPC5R2_T09", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C04_D1A_CORPUS_AND_SHUFFLE_CONTROL",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "D1A lacks a total training-root/corpus policy, and OUTCOME_SHUFFLED_READER may be byte-identical to READER_LORA because action outcomes are not a defined input to positive READ rows.",
+      "evidence": "NOMINEE_FIRST_SLEEP_WRITE triggers for D1A or D1D, but only D1D receives three root-policy algorithms. Nothing says which closed ACQUIRE representatives enter D1A, how capacity and canonical order apply, or which snapshot defines its corpus. The shuffled control is described only as the identical recipe after a presealed within-life outcome permutation, while sleep_row contains a READ request and supported public response derived from direct observations and no action-outcome field. Under the strongest literal writer rule, permuting outcomes can leave eligibility, rows, targets, corpus hash, and adapter unchanged, making a required claim-gating control inert. Define the exact causal field, permutation domain/preimage, pairing, dose preservation, expected corpus-hash divergence, and failure rule; if outcomes do not enter support, replace this with a target-blind within-life request/object or support-pair shuffle that destroys the learned association while preserving marginal row/token dose.",
+      "acceptance_test_ids": ["PPC5R2_T02", "PPC5R2_T05", "PPC5R2_T06", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C05_D1D_TOTAL_POLICY_VERSUS_FIXED_DOSE",
+      "category": "credit_assignment",
+      "severity": "blocking",
+      "statement": "The declared D1D intervention identifies only the total effect of assignment to a root-to-training policy with naturally varying dose/resources, while the current selection-value release text can be read as an isolated fixed-dose root-quality claim.",
+      "evidence": "Section 6 explicitly permits root policies to induce different admitted rows, tokens, updates, artifact rank/bytes, validation success, latency, energy, and cost and forbids realized-dose matching. That is a coherent total-policy ITT estimand and should not be weakened by post-treatment adjustment. It does not identify which roots are better at a common evidence count or compute budget. The literal text 'selected public evidence roots whose ... writes improved' and the D1D title 'selection value' omit the total-policy qualifier. Resolution is a human scientific choice: either change the exact release to assignment to DREAM_TO_SLEEP versus named total recipient-local policies, inclusive of induced dose/publication/resources, or add a separately prospective fixed-dose/resource-matched estimand. A fixed-dose assay is optional if the total-policy claim is selected, but the current ambiguous release is not safe to ratify.",
+      "acceptance_test_ids": ["PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C06_STATUS_TO_ITT_REDUCERS_AND_MULTIPLICITY",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "The proposal names life-level ITT, adverse bounds, within-assay conjunctions, and four-claim Holm correction but does not define an executable map from every assigned status and endpoint to one valid assay decision.",
+      "evidence": "DREAM_INVALID, DREAM_MISSING_NO_RETRY, and PUBLISH_EMPTY do not correspond one-to-one to status_receipt enum values; status_receipt permits incompatible reducer_input combinations and lacks arm, stage, endpoint, missingness flag, and raw observation. life_reducer is configuration only: it has no arm IDs, contrast, clone pairing/randomization, observation/result schema, denominator, benefit direction, margin, uncertainty/test statistic, p-value, missingness-limit denominator/boundary rule, or claim decision. The architecture does not say how treatment/control/both missing receive directionally adverse finite values, how D1A safety gates, each D1B edge CUT/TWIN plus recurrence and sham gates, both D1C controls, or D1D's two endpoints across two controls combine into a valid assay-level p-value. Holm tie order and the relation between intersection-union gates and the four inputs are absent. Require an exhaustive raw-status x assay x arm x endpoint table, exact life nesting and weighting, explicit paired/randomized inference and seed coupling, valid assay composite rule such as a fully specified intersection-union construction, synthetic null/alternative and missingness fixtures, and deterministic claim-state outputs.",
+      "acceptance_test_ids": ["PPC5R2_T04", "PPC5R2_T08", "PPC5R2_T09", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C07_CONSTRUCTION_TRAINER_REDUCER_VISIBILITY",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The visibility product omits the stages most able to manufacture leakage or alter conclusions: benchmark construction, assignment/run-lock sealing, evidence projection, trainer/validator/publication, and reduction/claim release.",
+      "evidence": "The 9-by-6 matrix is complete only over its chosen runtime stages. Path constructors and twin/sham generators may need hidden truth and targets; sealers assign donors, policies, seeds, and interventions; the evidence gate reads provenance predicates; the trainer reads rows, recipes, and base artifacts; and the reducer reads assignments, statuses, endpoint truth, margins, and claim text. None has a declared ingress/egress product. HIDDEN_TRUTH_PROBE_FUTURE also conflates three different prohibitions and is derived_only at RESPONSE_INTERVENTION even though the reason says hidden truth is absent, allowing oracle-derived replacement bytes to be laundered as a generic derivation. RESPONSE_INTERVENTION's schema exposes condition_id, item_id, and target_id although the prose says the restricted stage resolves only an opaque intervention and exact hashes. Add distinct information classes and privileged routing/construction stages, exact typed projections to restricted runtime stages, trainer and reducer stages, and noninterference vectors for every cartesian cell.",
+      "acceptance_test_ids": ["PPC5R2_T02", "PPC5R2_T06", "PPC5R2_T07", "PPC5R2_T08", "PPC5R2_T09", "PPC5R2_T10", "PPC5R2_T11", "PPC5R2_T12", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C08_PATH_ORACLE_AND_INTERVENTION_FIDELITY",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "D1B's strong every-edge intervention idea is not independently constructible or auditable because the decisive-path oracle, alias canonicalizer, TWIN/SHAM construction, and matched-intervention fidelity rule are unspecified.",
+      "evidence": "The protocol gives enumeration order after target-blind alias canonicalization but no alias algorithm or source bytes; 'action-decisive', 'action-sufficient alternate path or subset', and source-disjoint hash inputs are not executable predicates. It gives parity properties for twins and action preservation for shams but no deterministic constructor or proof object. The intervention stage treats nonmatching assignments as no-ops, yet no required match-rate or claim block prevents a supposed CUT/TWIN arm from silently remaining AUTHENTIC. The response_intervention object includes target-bearing routing fields but no constructor lineage or match receipt. T07/T08 and dual seal cannot establish every-edge necessity until exact construction objects, oracle inputs, mismatch/duplicate behavior, intervention-compliance thresholds, and per-edge rather than averaged conjunctive decisions are bound.",
+      "acceptance_test_ids": ["PPC5R2_T07", "PPC5R2_T08", "PPC5R2_T11", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C09_PROVIDER_DREAM_ROOT_ALGORITHM_CLOSURE",
+      "category": "architecture",
+      "severity": "blocking",
+      "statement": "Provider, DREAM context, and root-policy prose leaves run-lock values and architecture algorithms intermixed, preventing portable golden vectors and exact independent seals.",
+      "evidence": "READER_LORA does not define exact sequence-score aggregation, normalization, tokenizer boundaries, or failure behavior; RAW_RAG lacks a bound embedding identity and cosine convention; FULL_CONTEXT lacks overflow/render behavior; and no semantic-table container states uniqueness and cross-field invariants. DREAM lacks a typed request/call receipt, exact allowance unit, context render and placement, recency tie/order rules, permutation hash preimage/key, next-focus semantics for controls, and full invalid/missing status mapping. Root policies lack exact capacity unit/application point, eligible snapshot object, permutation preimage, projection receipts, canonical row order after stable deduplication, and trainer/validator predicates. These are architecture algorithms, not numeric constants that the later lock may choose. Until fixed, T04, T05, T09, T10, and T13 can pass against mutually incompatible implementations.",
+      "acceptance_test_ids": ["PPC5R2_T04", "PPC5R2_T05", "PPC5R2_T09", "PPC5R2_T10", "PPC5R2_T13"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C10_AUTHORITY_STAGE_MACHINE",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "The five-stage authority order is safe in prose but unenforceable from stage_receipt.v2 and is not bound to typed architecture ratification, run lock, dual seals, review/advocate decisions, or separate run ratification.",
+      "evidence": "stage_receipt contains only stage, arbitrary subject_hashes, passed, and model_execution_reachable. It has no predecessor hash, required artifact types, scope, decision identity, ratification evidence, sealer independence, reviewer/advocate verdict, run-lock schema/object, or cross-field rule forcing reachability false before completed PRE_MODEL_EXECUTION. A structurally valid receipt can assert PRE_SCIENTIFIC_CLAIM or model reachability directly. architecture_intake governs only proposal-to-implementation authorization and knows none of the later five-stage PPC5r2 machine. T12 asks for transitions after each receipt, while T13 presupposes missing manifest/assignment/run-lock schemas. Define a separate deterministic authority state machine with stage-specific receipts and an allowlisted dispatch preflight; bind T01 architecture approval, conformance, two independently generated seals, fresh reviewer, author advocate, exact human run authority, runtime validity, and preclaim audit by predecessor and subject hashes.",
+      "acceptance_test_ids": ["PPC5R2_T01", "PPC5R2_T12", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C11_CLAIM_RELEASE_MAP_NOT_EXECUTABLE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The dependency map closes much of the vocabulary but not the release function, its global test quantifier, or one unambiguous finite-label string.",
+      "evidence": "global blocker unpassed_required_test does not state whether it quantifies over all T01-T14, the tests listed under the claim, or only tests at a stage. T01, T12, and T13 appear under no component claim even though authority and sealing are declared mandatory; T14 is per claim but cannot compensate for missing predecessor gates. There is no test-result, reducer-result, multiplicity-result, authority-result, or release-receipt schema from which the map can be recomputed. change.json's finite-label text says that the label is an intersection and not end-to-end mediation, whereas claim_dependency_map.json's headline-eligible release_text omits that qualifier and places it in a separate forbidden_interpretation field; the protocol says literal release comes only through the map. Define exact global prerequisites, claim-local prerequisites, blocker precedence, comparison/margin decisions, exact allowed renderings, and a pure release reducer. Require every rendering of the headline to carry the non-mediation qualifier, not merely store it nearby.",
+      "acceptance_test_ids": ["PPC5R2_T01", "PPC5R2_T11", "PPC5R2_T12", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C12_SUPPORT_SPLIT_CONSTRUCT_VALIDITY",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "Exact-tuple equivalence and target-blind role assignment do not control semantic, alias-family, item-family, or donor overlap between ACQUIRE evidence and PROBE targets, which can make D1A/D1D easier without violating current sterility checks.",
+      "evidence": "The nominee-first gate correctly prevents PROBE or future rows from directly entering training, but its equivalence class is only the exact tuple of subject, relation, object, and public bytes. Paraphrases, aliases, templated siblings, or donor-overlapping facts can cross the role split and let training expose essentially the same support as a probe. This does not necessarily falsify the narrow literal claim of supported selection, which does not promise broad semantic generalization, so it is material rather than automatically blocking. The run must nevertheless predeclare whether such overlap is part of the finite target population. If novelty or generalization is intended, add target-blind semantic-family grouping and cross-split/donor-disjoint construction audits; otherwise narrow the claim and report overlap strata.",
+      "acceptance_test_ids": ["PPC5R2_T02", "PPC5R2_T05", "PPC5R2_T06", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "PPC5R2_CRIT_C13_RESOURCE_AND_POWER_TOTALITY",
+      "category": "statistics",
+      "severity": "material",
+      "statement": "Resource and power accounting is declared but not represented at the granularity needed to interpret an all-four intersection or independently seal a run size.",
+      "evidence": "The protocol requires inclusive and marginal resources, yet resource_manifest has a single set of totals with no accounting mode, life/item attribution, shared-call allocation rule, measurement availability receipt, or derivation links. The run lock may bind life count and power inputs, but no architecture-bound power criterion covers within-life correlation, arm-specific missingness, many conjunctive gates, and familywise probability that all four component claims release. These omissions do not alter the existence of a correctly specified finite-population ITT estimand, so they are material rather than a separate fatal flaw once C06 is repaired. Before model authority, define inclusive/marginal accounting and a prospective simulation or analytic power rule for the four-claim intersection.",
+      "acceptance_test_ids": ["PPC5R2_T11", "PPC5R2_T13", "PPC5R2_T14"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "RESPONSE_INTERVENTION ingress is contradictory: response_intervention.v2 contains condition_id, item_id, and target_id, while the visibility prose says the restricted stage resolves only an opaque intervention ID plus exact hashes and replacement bytes.",
+    "HIDDEN_TRUTH_PROBE_FUTURE is an unsafe compound information class and is derived_only at RESPONSE_INTERVENTION even though hidden truth is said to be absent; sealed replacement bytes need separate construction lineage and a typed projection.",
+    "SLEEP is marked derived_only for private provenance but the required nominee gate must inspect role, close state, commit ordinal, future lineage, target derivation, channel kind, direct-relation shape, source hash, and final eligibility, several of which have no complete typed ingress.",
+    "BENCHMARK_CONSTRUCTION and TWIN_SHAM_CONSTRUCTION are absent despite reading hidden truth/targets and producing model-visible prompts, opaque IDs, paths, and response replacements.",
+    "ASSIGNMENT_RUN_LOCK_STATIC_SEAL is absent despite selecting donors, seeds, policies, interventions, recipes, margins, and model-visible artifacts.",
+    "EVIDENCE_PROJECTION, TRAINER_VALIDATOR_PUBLICATION, REDUCER, and CLAIM_RELEASE are absent despite handling private eligibility, loss-bearing rows, artifacts, outcomes, assignment labels, margins, and literal claim text.",
+    "No operational semantics distinguishes hidden from derived_only, and no stage-specific ingress/egress validator proves that a permitted derivation excludes forbidden source fields."
+  ],
+  "missing_acceptance_tests": [
+    "PPC5R2_MISSING_A_ASSAY_COMPONENT_FREEZE_MATRIX: enumerate every D1A-D1D arm across provider, adapter, corpus, THINK/DREAM seeds, context, roots, SLEEP, response intervention, tasks, budgets, and snapshot; only the named component may differ.",
+    "PPC5R2_MISSING_B_STATUS_ITT_COMPOSITE_CALIBRATION: exhaust every raw status by assay/arm/endpoint, adverse-bound direction, paired life reducer, safety/conjunctive composite, Holm tie/boundary case, and synthetic null/alternative familywise calibration.",
+    "PPC5R2_MISSING_C_FULL_PIPELINE_VISIBILITY_PRODUCT: cross the split information classes with construction, routing, seal/run-lock, projection, trainer/validator/publication, reducer, and claim-release stages and prove typed noninterference.",
+    "PPC5R2_MISSING_D_D1A_SHUFFLE_EFFECT: prove the sealed shuffle changes the intended causal row association and corpus/adapter hash while preserving prospective marginal dose, or reject the cell before construction.",
+    "PPC5R2_MISSING_E_D1D_CLAIM_SCOPE: golden-test that the chosen release is either explicitly the total root-policy assignment effect inclusive of induced dose/resources or is supported by a separate prospective fixed-dose design.",
+    "PPC5R2_MISSING_F_AUTHORITY_AND_RELEASE_RECONSTRUCTION: from raw exact artifacts, replay the full five-stage predecessor machine and pure claim-release reducer, rejecting forged reachability, missing global tests, stale hashes, and every alternate or unqualified claim string."
+  ],
+  "human_questions": [
+    "Will Rohin require a revised, newly hash-bound PPC5r2 proposal resolving the blocking totality, freeze-matrix, D1A-control, reducer, visibility, authority, and release-map concerns before any architecture/scope ratification?",
+    "For D1D, is the intended claim the total effect of assignment to DREAM_TO_SLEEP versus the named recipient-local total root policies, inclusive of induced row dose, training success, and resources, or root-selection quality at a prospectively fixed evidence/compute dose?",
+    "Should the D1B release be narrowed to the observable result that action performance depended on every matched interleaved edge response and exceeded sham, one-shot, and open-loop controls, rather than implying access to private cognitive use?",
+    "Should every permitted headline rendering of PPC5_FINITE_MECHANISM_ONLY include the exact four-assay-intersection and no-end-to-end-mediation qualifier, with all fourteen tests and the full authority chain as explicit global prerequisites?"
+  ]
+}

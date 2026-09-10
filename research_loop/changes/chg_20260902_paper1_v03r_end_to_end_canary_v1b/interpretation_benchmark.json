@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_interpretation",
+  "interpretation_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b.benchmark.fresh.v1",
+  "change_id": "chg_20260902_paper1_v03r_end_to_end_canary_v1b",
+  "perspective": "benchmark",
+  "state": "interpreted",
+  "architecture_change_sha256": "6181ceb5ad9b3289f441f3bee29cf611e4e652695d6903b0c1d858c72812f409",
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Mandatory architecture deliberation, human ratification, review, and GPU gate."
+    },
+    {
+      "path": "research_notes/35_goalposts_paper1.md",
+      "sha256": "be06d0300b3a1f17cef061a799402ddd5d5a4fe0b6bdd0c98eaf8fea7ef9929c",
+      "purpose": "Frozen Paper-1 goals and verifier boundary."
+    },
+    {
+      "path": "lands/v03r.py",
+      "sha256": "484f6fbf7430b53521141eb767703850ca94d837cfc2b95b0e24894c4a464999",
+      "purpose": "Frozen paired public action-outcome world."
+    },
+    {
+      "path": "lands/test_v03r.py",
+      "sha256": "4a2a1aa8691165ed700ce140c9942d80c3d68838f7296578d3a2ec07fe29f7a1",
+      "purpose": "Existing construct, leakage, window, and shortcut tests."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/critique.json",
+      "sha256": "e96fd8b1393166df662c3308250b5df63b757149c6e8c61c56abb162304ba046",
+      "purpose": "The complete adversarial defect list v1b must close."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1a/consensus.json",
+      "sha256": "e1871515f7c8e6a52312e2be2473172da6c4e695ab9dbcba387038c6adc3ad0d",
+      "purpose": "Hash-bound rework disposition and mandatory repairs M01-M11."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/human_directive.txt",
+      "sha256": "e4a6e0e5e89cc8486469eb7cd77d432a7ef0a8fc7a9c28cfa20b86097593e544",
+      "purpose": "Verbatim owner directives; explicitly not ratification."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/experiment_spec.md",
+      "sha256": "8ba4e0e46cec13b3b079da276a99d22dd3b75aa2ea0871b1f3e383e7bae8abc9",
+      "purpose": "Question, stages, gates, accounting, and bounded interpretation."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/canary_config.json",
+      "sha256": "397d2fac07c1292e24489c60f245a0442703d382828b7314cae3a9b18a673f2b",
+      "purpose": "Worlds, revisions, profiles, per-view exposures, arms, and call ceilings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/operation_contract.json",
+      "sha256": "2711babe954be041824d9848a4164956fe7ee030ea21148c7443cb2b96866be3",
+      "purpose": "Exact request construction, scratch, identities, schedules, selectors, parsing, and seeds."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/execution_contract.json",
+      "sha256": "3fc074c24239ed3cd3602aa415c864986d3e47eac1a858a575dfd2e42a9b2d99",
+      "purpose": "Public projection, closed rows, audit separation, reducer, provenance, reader, compiler, and interventions."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/development_fixture_contract.json",
+      "sha256": "3551fb0d8d22f3e93f539faba5f7c7596adc708f8bac75f22b6eb705b91c8f04",
+      "purpose": "Exact six DEV lives, heldout pair, gold/twin rows, proof paths, shortcut vector, parser, scorer, and gates."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/runtime_training_contract.json",
+      "sha256": "1c78d762178ae4914913e20c7a89500810cc13f2dc6797f57d7331a46f82ade9",
+      "purpose": "Resolved pre-DEV runtime lock, receipts, exact two-fit recipe, and recognition scoring."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/stage_review_contract.json",
+      "sha256": "88a3ed9d02abc98bde81b8400b533acf356c195379d3e7f4b556be39fb30bfab",
+      "purpose": "Monotone authority, review packets, validity, tests, and claim firewall."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/dream_prompt.md",
+      "sha256": "6d6ba702916286d23675f3558031af14f23be8e0c6c5d2975c68ce1c5498abb0",
+      "purpose": "Frozen local typed connection proposal prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/self_check_prompt.md",
+      "sha256": "813d2347f48b0176e901b305ed80caf3994877c97ddca67c44c51d8bb5aa4ac3",
+      "purpose": "Frozen blind same-model reflection prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/think0_prompt.md",
+      "sha256": "8c0822ae4ce16e79a7fe6925910bfc473b0054d85c40daa2eeae217930f7840f",
+      "purpose": "Frozen non-answer source/target routing prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/think1_prompt.md",
+      "sha256": "c3847bce9bc84989addafaf7b0d734de8fb2986f68397da16748e11b10fd28eb",
+      "purpose": "Frozen goal-conditioned atomic traversal and decision prompt."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/memory_row.schema.json",
+      "sha256": "d27d61e0818e9f384899705b1bb619a4c316c470872848260b5138dc2f06ff28",
+      "purpose": "Closed model-visible memory row schema."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/dream_operation.schema.json",
+      "sha256": "638239a6b2c2481f977239e6f491e7c0b11a0d2c8abe122fb08319befa34ba98",
+      "purpose": "DREAM PASS/CREATE grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/self_check.schema.json",
+      "sha256": "f6f6421230c302697c0d1f5b871e0f496bc250b51f70eb07d387d58d48f6161a",
+      "purpose": "SELF_CHECK verdict and audit grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/think0_operation.schema.json",
+      "sha256": "6ebcaaa5106db3b7acd104e474654a59946f9a5be94392d5f731beafea3993d1",
+      "purpose": "THINK0 operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/think1_operation.schema.json",
+      "sha256": "4d24adb199b559e0794fa8a018cad71922a679c464a161102cbf33b5904a4b3f",
+      "purpose": "THINK1 operation grammar."
+    },
+    {
+      "path": "research_loop/changes/chg_20260902_paper1_v03r_end_to_end_canary_v1b/scope_proposal.json",
+      "sha256": "e90c23b0042febca60ee8c08e4f3d1ed07a60b95e7c47baf14be6889544dea73",
+      "purpose": "Exact requested and forbidden authority."
+    }
+  ],
+  "system_thesis_interpretation": "Recommendation: rework. The core canary is scientifically worthwhile and substantially better controlled than v1a: it asks a narrow one-pair existence/failure-localization question, prospectively fixes M1_OWN, separates generated audit prose from cognition, uses twin, return, path, sham, and adapter-swap controls, and explicitly disclaims Paper-1-scale conclusions. It does not yet define one executable experiment. Contradictory final-goal timing, incomplete recurrence selectors and DIST construction, an unimplementable SELF_CHECK condition, scratch-budget inconsistency, missing exact corpus-view bytes, and incomplete training-batch semantics leave outcome-relevant discretion. These are finite closure defects, so rejection of the concept is not warranted, but approval of these exact bytes is.",
+  "graph_delta_interpretation": "The proposed graph has the right causal decomposition: public evidence is projected into witnessed rows; stateless DREAM plus blind same-model reflection adds closed abstractions; an independently run thinker consumes atomic reads; prospective backend and reader interventions test content dependence; LoRA is attempted only after text utility is established; and authority advances monotonically. The paired v03r construction is especially useful because twin lives differ at one public intervention effect while sharing the goal surface, making T-TWIN and L-TWIN discriminative for life-bound content. M01, M04, M05, M08, M09, M10, and M11 are directionally resolved. M02, M03, M06, and M07 remain only partially resolved because several edges still lack unique byte-level semantics. The graph must also classify absence of required dreamed path rows as a substantive system failure rather than automatically converting that negative result into an invalid benchmark precondition.",
+  "loop_delta_interpretation": "The 46 WAKE, 22 REACTIVATE, 16 SLEEP, zero-return M0, matched 16-call OWN/DIST forks, bounded THINK0, six fresh THINK1 text arms, and conditional two-adapter stage form a finite prospective loop. The call ceilings reconcile arithmetically: DEV is at most 216 controller operations, T is at most 632, L adds at most 48 controller operations, and the conditional total is 896 with two fits, 96 fidelity cases, and at most 48 online adapter reads. However, the recurrence treatment is not unique because mode candidate pools, selector-state updates, trigger placement, and DIST focus derivation are missing. The thinker loop is internally inconsistent at its boundary: every nonterminal operation appends a scratch node, the operation budget permits twelve nonterminal responses, but scratch allows only eleven nodes; the twelfth nonterminal response is simultaneously a registered BUDGET_EXHAUSTED case and an overflow-triggered INVALID_INFRASTRUCTURE case. DEV accounting also alternates between fixed 72-per-arm/all-216 receipts and early terminal execution with at most twelve calls per life. These differences affect stage validity and must be resolved before dispatch.",
+  "claim_delta_interpretation": "The claim firewall mostly preserves the frozen Paper-1 goalposts. A valid green result could report only that this exact aligned seed-5, strongly game- and frontier-scaffolded system produced model-self-supported typed rows and exhibited registered content-dependent behavior under its sealed readers; it is not evidence of the frozen headline's reliability, scale, saturation, superiority, durability, beyond-context advantage, autonomous discovery, learned controller, or flywheel. The DREAM kinds and THINK1 dependency list constitute solution-structure scaffolding under the frozen honesty ladder, so the result must be labeled an engineering-ceiling-style diagnostic rather than evidence for the generic headline condition. Same-model SELF_CHECK is not verification. T-PATH/T-SHAM can show dependence on a realized reader-content removal, not logical necessity of a memory or a population causal effect. LoRA scoring is a candidate-constrained recognition interface, so a green L stage supports immediate registered-cue and registered-path access only. Text-stage success should explicitly require offline-correct, prospectively identified ROLE_EQUIV and CAUSAL_JOIN rows, not merely any rows of those kinds that happened to be returned and cited.",
+  "visibility_matrix_interpretation": "The proposed visibility boundary is strong in intent and largely resolves v1a M01: DREAM and SELF_CHECK prediction, confidence, reason, and raw responses are audit-only; model-visible rows contain only closed atoms, provenance, status, and hashes; private ratios, answers, results, identities, and audit paths are forbidden from provider messages, views, candidates, and training. Goal-conditioned THINK1 scratch may contain free reasoning because it is ephemeral within the final decision loop; THINK0 scratch must be discarded at terminal except for the closed focus. The principal residual risks are specification gaps rather than an intended verifier: EVENT versus ROW rendering is not exact, E-citations conflict with SELF_CHECK's stated closed-row premises, prior-read and public-probe envelopes are descriptive rather than schema-bound, state-token vocabulary provenance is unstated, and selector counters appear outcome-relevant while requested/realized modes are called audit-only. Complete serialized-message and downstream-corpus taint tests are therefore necessary. Hidden truth may be used only by the sealed offline scorer after all relevant outputs are immutable and must have no feedback edge.",
+  "acceptance_test_ids_addressed": [
+    "P1CB01_SCOPE_RUNTIME_AUTHORITY",
+    "P1CB02_FINAL_REQUEST_TAINT_NONINTERFERENCE",
+    "P1CB03_CLOSED_REDUCER_PROVENANCE",
+    "P1CB04_READER_VIEWS_CANDIDATES_MOUNTS",
+    "P1CB05_SHORTCUT_PROOF_AND_DEV",
+    "P1CB06_EXACT_RECURRENCE_BRANCHES",
+    "P1CB07_HELDOUT_TEXT_INTERVENTIONS",
+    "P1CB08_TWO_ISOLATED_LORA_TRANSPORTS",
+    "P1CB09_STAGE_RUNTIME_ACCOUNTING",
+    "P1CB10_FRESH_REVIEW_ADVOCATE_CLAIMS"
+  ],
+  "acceptance_test_interpretation": "P1CB01 should reject the current final-goal ordering contradiction, verify maxima as ceilings rather than silently forcing calls after thinker terminal operations, and enumerate every validity-class transition. P1CB02 must mutate every forbidden raw field, generated annotation, namespace, audit event, result, adapter identity leak, cache field, filename, query echo, and focus, then compare final rendered provider tokens, selector outputs, reader bytes, all four view bytes, candidate rosters, and training examples. P1CB03 needs exhaustive origin/status/support compatibility, explicit EVENT-premise handling, immutable event-sourced status/hash vectors, duplicate ownership, lineage, diamond, cycle, depth, and the structural rule actually used for model-claimed independent corroboration. P1CB04 must bind exact JSON schemas and golden bytes for public events, previous reads, state-token vocabularies, each of the four compiler views, NOT_FOUND/CONFLICT, candidate caps, and matched adapter mounts. P1CB05 is appropriately discriminative if the complete registered 31-predictor vector, six DEV lives, gold rows, proof masks, strict parser, donor tokens, and all-output-before-score rule are immutable; it should also settle early terminal versus 216-receipt accounting. P1CB06 must add exact mode candidate pools, counter updates, trigger placement, fewer-than-six behavior, DIST focus derivation, and the twelfth-operation scratch boundary. P1CB07 must preseal all twelve text traces before scoring, require correct registered role/causal rows, distinguish valid system failure from intervention infeasibility, and golden-test the sham assignment. P1CB08 must freeze the four view templates, final-batch/drop-last behavior, all RNG initialization, data collation, optimizer-step count, and candidate-scoring bytes. P1CB09 must map malformed output, illegal query, budget exhaustion, timeout, truncation, no path root, no sham, overflow, and runtime drift to exactly one validity class and reconcile non-dispatch versus dispatch receipts. P1CB10 should lint engineering-ceiling scaffolding, one-pair language, model-self-support, realized-reader dependence, candidate-constrained adapter access, reviewer separation, immutable packets, reviewer supremacy, changed-lock rereview, and unconditional human termination. Passing these tests is evidence that the canary was executed as registered; it is not itself evidence for the scientific result.",
+  "assumptions": [
+    "The verified context hashes identify the complete normative proposal; no unbound implementation convention may silently resolve a scientific ambiguity.",
+    "The resolved executable lock may instantiate already-ratified algorithms and versions during CPU work, but may not choose among materially different recurrence, serialization, scoring, or training semantics.",
+    "All correctness and donor-token judgments occur offline only after the applicable arms are sealed, with no retry or feedback into later requests except the predeclared monotone stage transition.",
+    "The 216, 632, 48, and 896 controller-operation numbers are maxima; early valid terminal operations reduce actual dispatches.",
+    "The canary is evaluated as a diagnostic engineering-ceiling instance because its row ontology and THINK1 dependency sequence are game-specific solution-structure scaffolding.",
+    "No population inference is intended from the single aligned seed-5 twin pair."
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "P1CB_BENCH_A01_FINAL_GOAL_ORDER",
+      "question": "Must the public final goal remain absent until both intervention exclusion manifests are sealed, as experiment_spec first states, or is it revealed before those manifests, as experiment_spec later states and execution_contract requires?",
+      "impact": "Path roots and protected sham rows require the final animal, source, and target. The stricter first rule makes the registered execution impossible and therefore blocks approval."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A02_DREAM_ENVELOPE",
+      "question": "What is the exact schema and serialized placement of a DREAM EVENT trigger, its corresponding witnessed ROW, and the zero-to-five additional rows, given that allowed_state separately contains trigger and rows but also says the trigger is included in rows?",
+      "impact": "Duplicating, omitting, or differently rendering current evidence changes the model treatment and request-token budget."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A03_EVENT_CITATIONS",
+      "question": "When CREATE cites an E alias, what exact object is supplied to SELF_CHECK, whose premises are described as closed cited rows, and how is that event represented in later provenance without exposing raw private payload fields?",
+      "impact": "The current contracts simultaneously permit E citations and require row premises, leaving self-check evidence and lineage non-unique."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A04_MODE_POOLS",
+      "question": "Which rows are candidates for UNDER_LINKED, RECENT, SUPPORTED, and UNRESOLVED triggers, and may a PROVISIONAL, UNRESOLVED, CONTRADICTED, or INVALID_SELF_CHECK row be visible as a trigger even though only WITNESSED and SUPPORTED rows are eligible evidence?",
+      "impact": "Different trigger pools create different recurrent corpora; UNRESOLVED is scheduled but unresolved rows are also listed as unsupported context."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A05_SELECTOR_STATE",
+      "question": "How are prior_selection_count and citation_graph_degree initialized, incremented, scoped across prefix and branches, and serialized, given that requested and realized modes are described as audit-only while selectors depend on selection history?",
+      "impact": "Selector evolution is outcome-relevant state and cannot remain an implementation-selected or audit-path-dependent channel."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A06_DIST_FOCUS",
+      "question": "What exact rule maps the audit-only matched-distractor endpoints into the DIST branch focus, especially when THINK0 returns DEFER, and what fields besides the focus are guaranteed identical between OWN and DIST?",
+      "impact": "Without an exact DIST treatment, M0/OWN/DIST cannot identify return-routing credit."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A07_SELF_CHECK_INDEPENDENCE",
+      "question": "How does the reducer establish that a disjoint-lineage counterevidence row supports the proposal when semantic_entailment_check is false and SELF_CHECK emits only counterevidence IDs?",
+      "impact": "A semantic harness check would violate the no-verifier boundary, while accepting any disjoint row mislabels model-claimed corroboration. The structural acceptance condition must be explicit."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A08_ROW_IMMUTABILITY",
+      "question": "Is a CREATE row mutated from PROVISIONAL to its SELF_CHECK status, versioned into a new closed projection, or derived from append-only events, and which record_hash is canonical at each point?",
+      "impact": "Status, support_basis, record_hash, duplicate ownership, reader eligibility, and immutable-manifest proofs depend on this choice."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A09_WITNESSED_COMPATIBILITY",
+      "question": "What exact origin/status/support_basis/citation combinations are legal for witnessed rows and initial dreamed proposals beyond the four post-SELF_CHECK table rows?",
+      "impact": "The permissive memory schema otherwise admits incompatible closed states that can alter selectors, readers, and training."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A10_SCRATCH_BOUNDARY",
+      "question": "What happens after a twelfth nonterminal THINK0 or THINK1 response when the scorer requires BUDGET_EXHAUSTED but scratch permits only eleven nodes and every nonterminal response appends one node?",
+      "impact": "The same trace is currently both a normal budget failure and INVALID_INFRASTRUCTURE."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A11_STATE_TOKEN_VOCABULARY",
+      "question": "From exactly which sealed public artifact are THINK1 state_tokens derived, and what are their exact ordering and inclusion rules?",
+      "impact": "The candidate vocabulary is model-visible and may change answer availability or leak life-specific information."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A12_COMPILER_VIEW_BYTES",
+      "question": "What are the exact UTF-8/JCS templates for field_completion_forward, field_completion_reverse, recognition_declarative, and recognition_question, and how can text and LoRA share exact cue/answer/touch envelopes when the text thinker reads closed rows rather than four compiled views?",
+      "impact": "Training bytes and the asserted backend-matched estimand are not reproducible from the current prose."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A13_TRAINING_BATCH_SEMANTICS",
+      "question": "Does training retain the final incomplete batch, what exact collator and batch partition are used after each PCG64 permutation, which RNGs receive seed zero, and how many optimizer steps occur?",
+      "impact": "These choices materially change both fitted adapters despite the otherwise detailed optimizer lock."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A14_DEV_EARLY_STOP_ACCOUNTING",
+      "question": "Do DEV thinkers stop immediately on COMMIT or DEFER, or must every arm dispatch twelve operations because adaptive_stopping is false and the packet expects all 216 receipts?",
+      "impact": "Continuing after a terminal violates the thinker contract; stopping early makes the per-arm 72 and all-216 wording nonliteral."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A15_PATH_ROOT_FAILURE_CLASS",
+      "question": "Why is a missing eligible ROLE_EQUIV or CAUSAL_JOIN root classified INVALID_PRECONDITION rather than VALID_STAGE_FAILURE when producing those rows is part of the system under test?",
+      "impact": "The current rule can erase the most direct negative answer to the scientific question by calling model failure benchmark invalidity."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A16_SHAM_ASSIGNMENT",
+      "question": "What executable assignment algorithm defines pool sufficiency, same-kind whenever possible, unique lexicographic minimum, and ties among multiple bipartite assignments?",
+      "impact": "Implementation-selected sham rows can manufacture path-loss/sham-retention or cause avoidable invalidity."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A17_TEXT_PATH_REGISTRATION",
+      "question": "Which exact post-seal rule designates the heldout registered role and causal rows, and must offline scoring establish that their typed relations are correct rather than merely matching the requested kinds and endpoint atoms?",
+      "impact": "A successful answer with decorative or incorrect cited abstractions should not support the claim that DREAM constructed useful connected memory."
+    },
+    {
+      "ambiguity_id": "P1CB_BENCH_A18_VALIDITY_MAPPING",
+      "question": "What exact table maps malformed model JSON, schema-valid illegal operations, CONFLICT, DEFER, budget exhaustion, missing path roots, infeasible sham, timeout, output-limit stop, request overflow, and runtime drift into the four validity classes?",
+      "impact": "Stage advancement and negative scientific interpretation depend on distinguishing system failure from infrastructure or benchmark invalidity."
+    }
+  ],
+  "disagreements_with_proposal": [
+    {
+      "disagreement_id": "P1CB_BENCH_D01_NOT_UNIQUELY_EXECUTABLE",
+      "statement": "The v1b summary says exact request, scratch, recurrence, selector, parsing, and seed bytes resolve v1a M02, but the recurrence and request envelopes still permit materially different executions.",
+      "rationale": "Mode pools, selector counter updates, trigger duplication, EVENT premise rendering, DIST focus construction, state-token derivation, and prior-read/event schemas are not fully specified.",
+      "proposed_resolution": "Rework the existing operation contract with closed allowed-state JSON schemas and golden vectors for every phase, explicit trigger and E-citation handling, complete mode-pool/counter algorithms, and an exact DIST focus rule. Do not expand scope or add a general orchestration system."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D02_SELF_CHECK_RULE_NOT_OPERATIONAL",
+      "statement": "The claimed M03 closure is incomplete because INDEPENDENT_CORROBORATION contains an unimplementable supports-the-proposal condition while semantic entailment checking is explicitly disabled.",
+      "rationale": "Either the harness decides semantic support, recreating a verifier, or any disjoint row suffices, overstating corroboration.",
+      "proposed_resolution": "Define acceptance purely from schema-visible facts and the model's own cited claim, label it model-claimed distinct-lineage support, and golden-test every legal and illegal verdict/basis/citation combination. Preserve false self-support without truth filtering."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D03_STAGE_T_ORDER_IS_CONTRADICTORY",
+      "statement": "The proposal cannot simultaneously hide the final goal until intervention manifests seal and use that goal to construct those manifests.",
+      "rationale": "The normative precedence rule selects the stricter visibility reading, which makes Stage T unreachable.",
+      "proposed_resolution": "Specify one order: seal M0, M1_OWN, M1_DIST, fidelity rows, and shared candidates; reveal the public final goal; deterministically seal path and sham manifests; execute all T arms; seal all outputs; then score offline."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D04_NEGATIVE_RESULT_MISCLASSIFIED",
+      "statement": "Missing dreamed path-root classes should not be INVALID_PRECONDITION by default.",
+      "rationale": "Constructing usable ROLE_EQUIV and CAUSAL_JOIN rows is the tested mechanism. Their absence is evidence of a valid system failure when the benchmark and runtime were otherwise valid.",
+      "proposed_resolution": "Classify missing required abstractions as VALID_STAGE_FAILURE. Reserve INVALID_PRECONDITION for a protocol-independent inability to instantiate a prospectively required control, such as no legal matched sham after otherwise valid path roots exist."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D05_LORA_BYTES_REMAIN_UNBOUND",
+      "statement": "The proposal overstates resolution of M07 because it does not bind the four training-view templates or complete minibatch execution semantics.",
+      "rationale": "Different declarative/question templates, final-batch policy, collation, RNG seeding, and optimizer-step counts fit different adapters while satisfying the current prose.",
+      "proposed_resolution": "Add exact view schemas and byte vectors, define retained or dropped final batches, collator behavior, RNG initialization, permutations, optimizer-step count, and reconcile the claimed text/LoRA backend-invariant envelope."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D06_SCRATCH_AND_DEV_ACCOUNTING",
+      "statement": "The twelve-operation thinker boundary and DEV accounting are internally inconsistent.",
+      "rationale": "Twelve nonterminal operations require twelve scratch nodes but only eleven are allowed, and terminal stopping cannot coexist with mandatory literal 72-per-arm dispatches.",
+      "proposed_resolution": "Permit twelve nodes or define a nonmutating twelfth budget terminal consistently, and state that DEV arm counts are ceilings with explicit non-dispatch terminal receipts rather than provider calls."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D07_TEXT_SUCCESS_NEEDS_CORRECT_ROWS",
+      "statement": "Returning and citing rows with the registered kinds is insufficient to claim construction and use of useful connected memory unless their relations are also correct under sealed offline scoring.",
+      "rationale": "A thinker can decoratively cite a wrong ROLE_EQUIV or CAUSAL_JOIN while reaching the right token through other witnessed evidence.",
+      "proposed_resolution": "Prospectively designate candidate path rows from sealed manifests and require the offline evaluator, after all arm outputs seal, to verify the exact role and causal relations as part of T success. This is offline scoring, not an in-loop verifier."
+    },
+    {
+      "disagreement_id": "P1CB_BENCH_D08_GAME_INFORMED_CEILING_LABEL",
+      "statement": "Calling the system the frozen Paper-1 organism is too broad unless every positive report foregrounds that the row ontology and THINK1 proof sequence provide game-specific solution-structure scaffolding.",
+      "rationale": "The frozen honesty ladder permits game-informed prompting as an engineering ceiling but forbids promoting it into the generic headline condition.",
+      "proposed_resolution": "Retain the prompts for this narrow canary, but lint every report to engineering-ceiling-style, strongly scaffolded, one-pair diagnostic language and forbid inference to generic autonomous abstraction."
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "open_questions": [
+      "Will Rohin require a newly hash-bound rework resolving D01-D08 and ambiguities A01-A18 before ratification, implementation, DEV, heldout exposure, or either LoRA fit?",
+      "Does Rohin confirm that exact ratification releases CPU implementation only and that DEV, T, and L remain separate monotone authorities requiring immutable predecessor packets and fresh independent review?",
+      "Does Rohin accept that missing required dreamed abstractions are a valid negative result rather than benchmark invalidity, while genuinely infeasible prospective sham construction may terminate as INVALID_PRECONDITION?",
+      "Does Rohin confirm that any positive result is only a strongly game-informed, frontier-scaffolded, aligned seed-5 diagnostic and cannot support Paper-1 reliability, scale, saturation, superiority, durability, autonomous discovery, learned control, or flywheel claims?",
+      "Does Rohin confirm that RAW_RAG, GOLD_OPEN_LOOP, replication, additional seeds or skins, prompt/model/rank changes, longer lifetimes, learned LOOP adapters, Action World, external actions, publication, credentials, leases, and spend remain outside this rework?"
+    ]
+  }
+}
