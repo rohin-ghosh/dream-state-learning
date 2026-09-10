@@ -68,6 +68,10 @@ Dialect bifurcation cured by canonicalization + real-context paired canary; trai
 - **Late-life chunks per situation** (mean of the last three windows; budget 16): 15.4–16.0 in R2 seeds 0/1/2/4/7/8, R3 503, R4 604/605/606, RP 402; below the band: R2 seed3 12.8, seed5 5.4, seed6 1.0; R3 500 6.6, 501 12.8, 502 9.7, 504 14.4, 505 2.5; R4 600 13.9, 602 13.1, 603 15.3; RP 401 7.8.
 - **Instrument defect:** efficiency_markers has no cells for RP 400 (parser error on an elided `[OUTCOME]` score).
 
+## Addendum 2026-09-10 (SEQ-017; text-memory baseline, first cell; source: COORDINATION.md entry "SEQ-017"; JSON in ~/v6_out/brief_baseline/ on node 1)
+- **Text-memory baseline = frozen model + the life's own final waking brief, no adapter, 2 seeded reps.** R2 seed0: 8-panel **0.5291** (vs adapter ON 0.5262 and adapter OFF 0.4872 at ep 1024, bootstrap-only context); disjoint panel v1 **0.2731** (vs adapter final 0.2145 with a collapsed rep, adapter mid 0.2731). The brief states the six-pass routine in words; the frozen model executes it. Text ≥ weights for this life. Remaining lives pending on both nodes.
+- **Disjoint cells at 37:** gated finals so far — R3 500 +0.005, 501 −0.008, 502 +0.016 (routine), 503 −0.005, 504 (mid) −0.004, 505 +0.013; R4 604 −0.064 (collapsed rep 0.138), 605 −0.008.
+
 ## Addendum 2026-09-10 (SEQ-012; disjoint panel v1 at 24 cells; source: COORDINATION.md entry "SEQ-012")
 - **R2 final adapters (9):** Δ vs node base −0.043, +0.016, −0.005, −0.018, −0.005, −0.038, −0.036, −0.026, −0.003 (seeds 0–8); mean −0.017; 1/9 above +0.015 (seed 1 = routine 0.2731), 5/9 below −0.015 (all with a collapsed rep 0.18–0.21).
 - **R2 mid-life adapters (sleep 416, 9):** +0.016, +0.016, −0.005, +0.019, −0.005, −0.014, −0.008, +0.017, +0.010; mean +0.005; 4/9 above +0.015, 0/9 below −0.015. Final − mid: 0.000 ×3, negative ×6 (−0.013 to −0.059); positive ×0.
