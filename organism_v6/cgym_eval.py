@@ -17,12 +17,24 @@ def main():
     ap.add_argument("--passes", default="")
     ap.add_argument("--list-actions", action="store_true")
     ap.add_argument("--list-benchmarks", default="")
+    ap.add_argument("--ref", action="store_true",
+                    help="print -Oz and -O3 reference instruction counts and "
+                         "reductions for the benchmark (review M5)")
     args = ap.parse_args()
 
     import compiler_gym  # noqa: F401
     import gym as _gym
     env = _gym.make("llvm-v0", observation_space="IrInstructionCount")
     try:
+        if args.ref:
+            env.reset(benchmark=args.benchmark)
+            base = int(env.observation["IrInstructionCount"])
+            oz = int(env.observation["IrInstructionCountOz"])
+            o3 = int(env.observation["IrInstructionCountO3"])
+            print(json.dumps({"ok": True, "base": base, "Oz": oz, "O3": o3,
+                              "score_Oz": (base - oz) / base if base else 0.0,
+                              "score_O3": (base - o3) / base if base else 0.0}))
+            return
         if args.list_actions:
             print(json.dumps({"ok": True,
                               "actions": list(env.action_space.names)}))

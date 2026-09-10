@@ -19,6 +19,6 @@ for L in "$@"; do
   echo "== $L: untar + verify on node 2 =="
   bash "$S2" "cd ~/v6_out && tar xzf ~/mig_$L.tgz && ls $L | wc -l && ls $L/sleep_*/adapter/DONE 2>/dev/null | wc -l"
   echo "== $L: relaunch on node 2 (resumes from markers) — set GPU manually: =="
-  echo "   bash $S2 'cd ~/dream-state && HF_HUB_OFFLINE=1 CUDA_VISIBLE_DEVICES=<g> nohup ~/v2/venv/bin/python -m organism_v6.run_life_v2 --life-dir ~/v6_out/$L --arm B --seed <seed> --episodes 1024 --sleep-every 32 --probe-every 64 --budget-ticks 16 --wake-batch 8 --rank 8 >> ~/v6_out/$L.out 2>&1 < /dev/null &'"
+  echo "   bash $S2 'cd ~/dream-state && HF_HUB_OFFLINE=1 CUDA_VISIBLE_DEVICES=<g> nohup ~/v2/venv/bin/python -m organism_v6.run_life_v2 --life-dir ~/v6_out/$L --arm B --seed <seed> --episodes 1024 --sleep-every 32 --probe-every 64 --budget-ticks 16 --wake-batch 8 --rank 8 <ADD THE LIFE'\''S ORIGINAL FLAGS: --probe-gate for R3/R4, --parent-url/--parent-model for RP/R4; check the .out header or gate.json/parent_brief.json presence> >> ~/v6_out/$L.out 2>&1 < /dev/null &'"
 done
 echo "MIGRATION_STAGED"

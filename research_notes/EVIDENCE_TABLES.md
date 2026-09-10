@@ -50,3 +50,5 @@ Dialect bifurcation cured by canonicalization + real-context paired canary; trai
 - **Fixed-recipe reference (M5):** birth recipe alone, no model = 0.4878 mean on the 8 probes (per program 0.538, 0.537, 0.389, 0.521, 0.508, 0.471, 0.439, 0.499) — identical to the adapter-ON plateau. -Oz/-O3: not yet computed.
 - **Ritual is in the weights (M12):** probe ledgers with identical BOOTSTRAP-only context — adapter ON: modal first-action share 0.90 / 0.86, fully locked in 68% / 52% of checkpoints, note Jaccard 0.62 / 0.59; adapter OFF: 0.50, 0%, 0.105.
 - **Disjoint panel v1** defined (12 out-of-curriculum programs; research_notes/disjoint_panel_v1.json); re-probe pending GPU.
+- **Echo metric (M7, SEQ-003):** RP first-note overlap with the brief: 0.454 after a brief vs 0.322 before the life's first brief vs 0.354 for unbriefed control lives against the same briefs (47 briefs, 8 controls). "Rehearsal 0.50–1.00" is withdrawn.
+- **Compiler references (M5, SEQ-003):** 8-probe means — -Oz 0.522, -O3 0.341, birth recipe once 0.4878; adapter plateaus 0.4878 and 0.5291; exploring frozen model 0.463–0.488.
