@@ -1,0 +1,831 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "M0 frozen-manifest and independent-checker receipts",
+      "expected": "Every declared fixture, transition, carrier, handoff record, expected-reject case, runtime identity, and V7 mapping has a real canonical byte sequence and SHA-256; two independently derived checkers reproduce the same manifest root without model-facing execution.",
+      "falsifies": "That M0 can be implemented from prose, selected/generated roots, or a self-consistent single materializer.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Use only the ratified finite universe and exact preparation inputs; prohibit RNG, search, ranking, retry, replacement, and model/tokenizer execution.",
+      "test_id": "M0-MANIFEST-INDEPENDENCE-01"
+    },
+    {
+      "evidence_artifact": "M0 CPU conformance receipt with exhaustive transition and expected-reject logs",
+      "expected": "The finite world/deck, public event/view and command boundary, phase/fork/join/reset/replay behavior, support DAG, carrier transforms, uncertainty instrument, adverse outcomes, and root reducer match the frozen contract exactly.",
+      "falsifies": "That the CPU fixture faithfully implements its ratified instrument or that an omitted failure/visibility transition is harmless.",
+      "kind": "end_to_end",
+      "required_before": "implementation",
+      "setup": "Run only after human approval of exact code scope and frozen fixture/interface bytes; no scientific or model execution.",
+      "test_id": "M0-CPU-CONFORMANCE-02"
+    },
+    {
+      "evidence_artifact": "Paired-prefix, taint-DAG, capability, and query-agenda mutation-test receipt",
+      "expected": "Before a registered separating ordinary action, paired worlds have byte-identical actor-visible histories; afterward only outcome-descended public fields may diverge. Goals, root IDs, schedules, arms, scores, goldens, filenames, errors, padding, catalogs, and reader order cannot alter carrier construction or actor-visible returns except where explicitly ratified.",
+      "falsifies": "Pre-action leakage, goal-conditioned carrier/query laundering, or covert-channel visibility.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Exhaustively mutate each private field and each forbidden actor command/anchor against the frozen M0 interface.",
+      "test_id": "M0-VISIBILITY-NONINTERFERENCE-03"
+    },
+    {
+      "evidence_artifact": "Provenance/support and carrier-intervention certificate",
+      "expected": "Support is chronological, independently later grounded, root-deduplicated, alias-normalized, cycle-safe, contradiction/revocation-aware, and transform-specific. Authentic, atoms-only, truthful-null, deranged, bridge-cut, binding/twin, uncertainty-sham, reachout-off, old-cut, and new-cut variants alter only ratified fields.",
+      "falsifies": "Unsupported links, synthetic evidence laundering, ambiguous provenance, or intervention changes outside their declared target.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Apply positive and expected-reject DAG fixtures, legal diamonds, aliases, cycles, descendant citations, and every declared transform to frozen roots.",
+      "test_id": "M0-PROVENANCE-INTERVENTION-04"
+    },
+    {
+      "evidence_artifact": "Root-reducer adversarial receipt",
+      "expected": "One finalized receipt per registered environment root is required; nested goals, branches, paths, calls, cells, alias/order variants, replays, and reruns never increase N. Missing, duplicate, reordered, foreign, malformed, or unfinalized receipts fail closed; adverse terminals remain zero-valued registered cells.",
+      "falsifies": "Pseudoreplication, selective omission, retry/replacement, or reducer-based goalpost movement.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Inject each adversarial receipt mutation into the frozen reducer universe.",
+      "test_id": "M0-ROOT-REDUCER-05"
+    },
+    {
+      "evidence_artifact": "V7 compatibility matrix, byte-hash verification, and PCFL-side oracle-isolation test receipt",
+      "expected": "Each reused FeltCraft primitive is byte-identical to its named five-file V7 source and has a ratified PCFL mapping; only compatible enumeration/projection/twin/cost/bridge-check behavior is consumed. No V7 oracle, expectation, golden, authority, or terminal permission reaches PCFL actor-visible state.",
+      "falsifies": "Authority laundering, unproved isomorphism, duplicate symbolic implementation, or candidate access to reference answers.",
+      "kind": "ablation",
+      "required_before": "implementation",
+      "setup": "Test the M0 dependency boundary against the exact V7 manifest while treating V7's failed scope audit and prior terminal authorization as non-transferable.",
+      "test_id": "M0-V7-REUSE-FIREWALL-06"
+    },
+    {
+      "evidence_artifact": "M0-to-M-TEXT interface manifest and frozen-handoff checker receipt",
+      "expected": "Canonical supplied semantic rows, public reader returns, carrier projection, intervention identifiers, prompt-projection fields, renderer/tokenizer/cut inputs or their separately ratified preparation boundary, and receipt fields are complete, canonical, and model-free at M0.",
+      "falsifies": "A later M-TEXT assay choosing outcome-changing renderer, reader, visibility, or handoff semantics after M0 implementation.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "Validate all handoff records without invoking a model, tokenizer, prompt renderer, provider, or parser.",
+      "test_id": "M0-MTEXT-HANDOFF-07"
+    },
+    {
+      "evidence_artifact": "Separately ratified M-TEXT-SUPPLIED DEV/confirmation receipt with frozen model/session/prompt/parser/resource bindings",
+      "expected": "One fixed model, under the registered roots and common reader, shows causal use of supplied grounded connected text across changed goals, informative experiment selection, and delayed old-plus-new use after reset, with all noncompensatory endpoints and registered controls reported.",
+      "falsifies": "The narrow supplied-connected-text causal-use claim for the registered model and assay.",
+      "kind": "end_to_end",
+      "required_before": "model_execution",
+      "setup": "Only after separate M-TEXT, clean-boundary, confirmation, and execution approvals; compare authentic supplied links to atoms-only, truthful-null, deranged, bridge-cut, binding/twin, uncertainty-sham, reachout-off, old/new-cut, recurrence-disabled, and declared honest bypass baselines.",
+      "test_id": "MTEXT-SUPPLIED-CAUSAL-08"
+    },
+    {
+      "evidence_artifact": "M-TEXT baseline/ablation table and trace-dependence records",
+      "expected": "No-memory, raw-context, ordinary RAG, native-graph, and organized-memory baselines are reported under declared resource factors; masking and twin substitution distinguish constructive connected-memory use from answer recall or decorative citations.",
+      "falsifies": "That a positive M-TEXT outcome specifically requires supplied connected memory rather than a bypass, raw atoms, or a shortcut.",
+      "kind": "baseline",
+      "required_before": "scientific_claim",
+      "setup": "Execute only under the separately frozen M-TEXT protocol, with root-level reduction and prespecified adverse dispositions.",
+      "test_id": "MTEXT-BYPASS-TRACE-09"
+    },
+    {
+      "evidence_artifact": "Independent implementation-review and author-side scientific-advocate records bound to exact M0 bytes",
+      "expected": "An independent reviewer finds the approved M0 scope, visibility contract, fixtures, reuse mapping, and tests conforming; the advocate separately disposes of scientific overclaim risk. Neither report is a scientific result or successor approval.",
+      "falsifies": "That author testing or model consensus alone can clear implementation or claim gates.",
+      "kind": "independent_review",
+      "required_before": "model_execution",
+      "setup": "Conduct after authorized scoped implementation and CPU tests, before any model-facing use.",
+      "test_id": "M0-INDEPENDENT-REVIEW-10"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v2",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "M0-THIN may establish only that approved CPU software conforms to a frozen finite PCFL instrument, its visibility/intervention/provenance/reducer contracts, and a model-free M0-to-M-TEXT handoff.",
+        "before": "The rejected combined PCFL v1 surface risked treating CPU conformance as a component of broad experiential-learning evidence.",
+        "claim_id": "CLM-M0-SOFTWARE-ONLY",
+        "evidence_needed": "Approved exact bytes, exhaustive CPU conformance, independent implementation review, and no model/scientific execution.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A separately ratified M-TEXT-SUPPLIED assay may test whether one fixed model causally uses supplied, grounded, connected text memory to traverse different goals, select an informative experiment, and use old plus newly observed information after reset.",
+        "before": "No executable PCFL assay or model-facing claim boundary exists.",
+        "claim_id": "CLM-MTEXT-SUPPLIED-CAUSAL-USE",
+        "evidence_needed": "Frozen model/session/rendering/parser/resources, root-level protocol, noncompensatory endpoints, registered controls/baselines, confirmation rule, and independent scientific review.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "Failure of M0 conformance blocks model-facing interpretation; failure of M-TEXT headroom, causal-use, or bypass controls withdraws the corresponding supplied-memory claim and blocks M-LORA dispatch for that relay.",
+        "before": "Negative outcomes could be obscured by downstream architecture ambition.",
+        "claim_id": "CLM-STAGED-NEGATIVE-DISPOSITION",
+        "evidence_needed": "Prospectively bound failure values, mandatory reporting, and claim-withdrawal disposition in later M-TEXT/Q bytes.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "DREAM authorship, local recurrent connection discovery, SLEEP consolidation, LoRA transport, experiential learning, parenting, accumulation, compression, lifetime improvement, baseline saturation, and online flywheel behavior remain separate untested claims.",
+        "before": "The all-in-one surface risked crediting individual organs for complete-organism behavior.",
+        "claim_id": "CLM-DEFERRED-ORGANS",
+        "evidence_needed": "Independent later packages and their own exact approvals, controls, units, reducers, review, and applicable GPU/scientific gates.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/human_directive.txt",
+      "purpose": "binding human directive",
+      "sha256": "7d2f6b3228978260693031954619c97fb5c72c086cb0cad4ee3696f6e709c870"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "project operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "paper thesis and experiment separation",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/change.json",
+      "purpose": "V7 change authority and primitives",
+      "sha256": "f6f3181db906b915d4711fc701cac4aee464fdd9b21bd0dbb41c95dc976ca83b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/consensus.json",
+      "purpose": "V7 consensus and limits",
+      "sha256": "4250f8fa1678fbb91f79803a9b14336fbf84d2554fddc5409673db2502cc1567"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/human_ratification.json",
+      "purpose": "V7 narrow prior ratification",
+      "sha256": "d67f446f7b4cb11024033c49fd8b1dcb75424e1f8bf7efb1a64cadbdb02c1fb5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit.json",
+      "purpose": "V7 failed external-audit evidence",
+      "sha256": "1ed5411ee562f71bf0214f0e4763471d8b8ca748046aab377942a517823c84ec"
+    },
+    {
+      "path": "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/cross_audit.md",
+      "purpose": "controlling D0 negative evidence",
+      "sha256": "8c4ce353f69b38cdb4931ff8916aade38654055fec66fcd82084b4b81900a4fa"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_core_clean_lineage_v1/consensus.json",
+      "purpose": "controlling PCFL v1 rework consensus",
+      "sha256": "cdeab24c923ea4e71bd271db6ed299e70a1482b757de7b81bbcffdbe8a265975"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_implementation_state_and_minimum_path_fresh_audit_v1.md",
+      "purpose": "implementation inventory and minimum path",
+      "sha256": "0e78fe49b65b2644d504b98bbeef91b84f9a5f10e305a43815ef964f35334676"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_staged_scope_fresh_v1.md",
+      "purpose": "staged scope candidate",
+      "sha256": "410ccae860ee7767f112c00a5791cac22b307205d140285ea3404fba1f841262"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_minimal_exact_semantics_fresh_v1.md",
+      "purpose": "candidate finite semantics",
+      "sha256": "6d6858d14cf45ae7252ac5f1ba29d9c17f4addf0356d596841d74db494314083"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v2_two_path_adversarial_cross_critique_v1.md",
+      "purpose": "adversarial staged-path critique",
+      "sha256": "b9b71873e82c8a32f3f633f3f26f472b62b6cd6d210561863ae8828af1943d55"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_fastest_paper_evidence_route_fresh_v1.md",
+      "purpose": "evidence-route strategy",
+      "sha256": "0e6cc69901801fa88e8bfa03905c7f3520ab6999f3188e9d274b20beb4cca3e2"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_existing_asset_reuse_fresh_audit_v1.md",
+      "purpose": "asset-reuse audit",
+      "sha256": "581f8a4c7caecdc0c18f9bde2558bc6f38cf3efc32dd7055a6e1c9bfc95a26bb"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_bound_v2_adjudication_candidate.md",
+      "purpose": "bound adjudication candidate",
+      "sha256": "83313da26579a32d2c5a8b3db638b95603e2f30408a39f86102b320a6a98173b"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "A separately ratified, byte-identified read-only primitive mapping may pass only named V7 reference outputs into M0 checker/conformance code; no V7 authority, oracle, golden, expectation, or terminal permission transfers.",
+        "before": "No authorized PCFL dependency edge; V7 is an external terminal symbolic subject.",
+        "edge_id": "E-V7-TO-M0-REUSE",
+        "from": "N-V7-EXTERNAL-REFERENCE",
+        "operation": "add",
+        "rationale": "Reuse byte-identical mathematics without assuming isomorphism or laundering V7 authority.",
+        "to": "N-M0-THIN"
+      },
+      {
+        "after": "Frozen M0 fixture semantics, public views, command responses, carrier variants, transform receipts, and root receipts are consumed by M0 CPU conformance only.",
+        "before": "No executable PCFL fixture path.",
+        "edge_id": "E-M0-TO-CPU-CONFORMANCE",
+        "from": "N-M0-THIN",
+        "operation": "add",
+        "rationale": "M0 is independently runnable software evidence, not a research result.",
+        "to": "N-M0-CPU-CONFORMANCE"
+      },
+      {
+        "after": "Only a frozen, model-free handoff manifest may later be read by a separately approved M-TEXT-SUPPLIED package.",
+        "before": "No bounded M0-to-model interface.",
+        "edge_id": "E-M0-TO-MTEXT-HANDOFF",
+        "from": "N-M0-THIN",
+        "operation": "add",
+        "rationale": "Co-design interface now while preventing M0 from calling a model or selecting model-facing bytes.",
+        "to": "N-MTEXT-HANDOFF"
+      },
+      {
+        "after": "M-TEXT-SUPPLIED consumes supplied grounded connected text and ordinary public outcomes; its later model output cannot modify M0 deck, checker, V7 bytes, or upstream selection.",
+        "before": "No first model-facing assay edge.",
+        "edge_id": "E-HANDOFF-TO-MTEXT",
+        "from": "N-MTEXT-HANDOFF",
+        "operation": "add",
+        "rationale": "Separates causal-use assay from fixture construction and prevents return-channel contamination.",
+        "to": "N-MTEXT-SUPPLIED"
+      },
+      {
+        "after": "Passing M-TEXT, E0, and G are independent prerequisites for a later M-LORA deliberation; none is sufficient alone.",
+        "before": "All-in-one PCFL v1 coupled LoRA with unresolved core semantics.",
+        "edge_id": "E-GATES-TO-MLORA",
+        "from": "N-MTEXT-SUPPLIED",
+        "operation": "add",
+        "rationale": "LoRA may transport validated semantics later and must not be credited with discovery.",
+        "to": "N-MLORA-DEFERRED"
+      },
+      {
+        "after": "E0 is independently connected as a prerequisite, not implemented by M0.",
+        "before": "Writer status could be conflated with core benchmark work.",
+        "edge_id": "E-E0-TO-MLORA",
+        "from": "N-E0-DEFERRED",
+        "operation": "add",
+        "rationale": "Preserves the noncompensatory writer gate.",
+        "to": "N-MLORA-DEFERRED"
+      },
+      {
+        "after": "G is independently connected as a prerequisite, not implemented by M0.",
+        "before": "Lineage/authority could be mistakenly inherited from CPU fixtures.",
+        "edge_id": "E-G-TO-MLORA",
+        "from": "N-G-DEFERRED",
+        "operation": "add",
+        "rationale": "Preserves clean-source and disposable-descendant authority as a separate package.",
+        "to": "N-MLORA-DEFERRED"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "External, byte-frozen FeltCraft V7 reference with a new PCFL-specific authority edge required for any reuse.",
+        "before": "Terminal V7 symbolic kernel, not in the PCFL authority graph.",
+        "node_id": "N-V7-EXTERNAL-REFERENCE",
+        "operation": "modify",
+        "rationale": "Makes reuse explicit while preserving V7's prior scope limits and failed-audit status."
+      },
+      {
+        "after": "M0-THIN: standalone CPU PCFL finite deck/world, public event/view/command surface, phase/join/reset, reader, provenance/support, connected supplied carrier/interventions, uncertainty, adverse outcomes, root receipts/reducer, and M-TEXT handoff only.",
+        "before": "No executable PCFL package; rejected all-in-one PCFL v1 surface.",
+        "node_id": "N-M0-THIN",
+        "operation": "add",
+        "rationale": "Creates the smallest PCFL-specific instrument needed for the first assay without a generic platform."
+      },
+      {
+        "after": "Model-free M0 CPU conformance and independently checked frozen-manifest gate.",
+        "before": "No PCFL conformance gate.",
+        "node_id": "N-M0-CPU-CONFORMANCE",
+        "operation": "add",
+        "rationale": "Separates instrument validity from model behavior and scientific evidence."
+      },
+      {
+        "after": "Read-only, canonical M0-to-M-TEXT supplied-memory interface.",
+        "before": "No public byte/interface contract for explicit-text assay.",
+        "node_id": "N-MTEXT-HANDOFF",
+        "operation": "add",
+        "rationale": "Prevents later model-facing redesign of outcome-changing M0 semantics."
+      },
+      {
+        "after": "Later separately deliberated M-TEXT-SUPPLIED fixed-model causal-use assay.",
+        "before": "No executable first model-facing assay.",
+        "node_id": "N-MTEXT-SUPPLIED",
+        "operation": "add",
+        "rationale": "Narrowly measures use of supplied grounded connected text, not discovery or learning."
+      },
+      {
+        "after": "Later independent writer truth/safety gate.",
+        "before": "Referenced but not implemented by M0.",
+        "node_id": "N-E0-DEFERRED",
+        "operation": "add",
+        "rationale": "Maintains E0 as an independent prerequisite."
+      },
+      {
+        "after": "Later independent clean-source/disposable-descendant guard.",
+        "before": "Referenced but not implemented by M0.",
+        "node_id": "N-G-DEFERRED",
+        "operation": "add",
+        "rationale": "Prevents M0 from implying lineage/security authority."
+      },
+      {
+        "after": "Later same-semantics LoRA transport package.",
+        "before": "Risk of LoRA inclusion in all-in-one PCFL v1.",
+        "node_id": "N-MLORA-DEFERRED",
+        "operation": "add",
+        "rationale": "Defers parametric consolidation/transport until M-TEXT, E0, and G independently pass."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "Does Rohin ratify the exact adjudicated M0-THIN bytes, complete finite universe, V7 primitive-by-primitive reuse mapping and scope extension, deterministic materialization/checker boundary, M0-to-M-TEXT handoff fields, allowed source/test scope, and all listed prohibitions?",
+    "forbidden_before_approval": [
+      "Any code edit, fixture/root/deck/data/golden generation, materialization, CPU benchmark/conformance execution, or test execution for this change.",
+      "Any V7 import/call as a PCFL dependency or inference that V7's authority, human ratification, or failed scope audit transfers to PCFL.",
+      "Any model, tokenizer, renderer, prompt, parser, provider, child, reader-backend, model-facing M-TEXT execution, or scientific DEV/confirmation dispatch.",
+      "Any writer, training, LoRA/adapter/checkpoint, GPU, resource reservation, parent, lineage, clean-source, promotion, or deployment operation.",
+      "Any selection of roots, goalposts, splits, sample sizes, scientific estimators, margins, stopping rules, or claim from M0 output.",
+      "Any claim that M0 supports DREAM authorship, learning, LoRA discovery/compression, lifetime improvement, baseline saturation, parenting, or complete-organism behavior."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "A post-ratification deterministic preparation loop may materialize only a closed finite universe once, then an independent checker verifies and freezes its manifest before any model-facing use; it has no RNG, search, ranking, favorable-root selection, retry, replacement, or result feedback.",
+        "before": "No authorized PCFL materialization loop.",
+        "loop_id": "L-M0-DETERMINISTIC-PREPARATION",
+        "operation": "add",
+        "rationale": "Allows exact fixture construction only as a bounded software-preparation operation, never scientific selection.",
+        "reads": [
+          "ratified finite semantic specification",
+          "ratified preparation inputs",
+          "named V7 byte hashes and mapped primitive outputs"
+        ],
+        "stop_condition": "Stop on first complete manifest/checker agreement and freeze; any mismatch, missing byte, forbidden dependency, or selection behavior fails closed and requires rework.",
+        "trigger": "Only after explicit human ratification of exact materializer/checker bytes and scope.",
+        "writes": [
+          "candidate frozen M0 manifest",
+          "independent checker receipt",
+          "manifest root digest"
+        ]
+      },
+      {
+        "after": "M0 accepts public commands over a finite phase machine, emits ordinary public action/outcome events, applies only registered support/render/reset transitions, and ends in final root receipts; this is a fixture state recurrence, not THINK, DREAM, SLEEP, or learning.",
+        "before": "No executable PCFL fixture loop.",
+        "loop_id": "L-M0-FINITE-EPISODE",
+        "operation": "add",
+        "rationale": "Keeps lived action/outcome episodes distinct from later organism-level recurrent learning.",
+        "reads": [
+          "frozen root/deck",
+          "current public view",
+          "legal command",
+          "registered carrier/intervention state",
+          "chronological provenance state"
+        ],
+        "stop_condition": "FINAL, registered adverse terminal, illegal/malformed/private/provenance failure, or exhausted fixed budget; no retry or replacement.",
+        "trigger": "Authorized CPU conformance over a frozen root.",
+        "writes": [
+          "ordinary public events",
+          "finite views",
+          "support/revocation state",
+          "root receipt"
+        ]
+      },
+      {
+        "after": "Later M-TEXT-SUPPLIED THINK-style use loop reads supplied grounded text memory under a goal, chooses legal reads/actions, observes public outcomes, revises its working plan, and uses old plus newly observed information after reset; it neither authors DREAM links nor trains/updates parameters.",
+        "before": "No bounded model-facing loop.",
+        "loop_id": "L-MTEXT-SUPPLIED-USE",
+        "operation": "add",
+        "rationale": "States the first assay's narrow recurrence without silently converting it into one-shot answer generation or experiential learning.",
+        "reads": [
+          "separately frozen M0 handoff",
+          "supplied connected text",
+          "goal",
+          "public view",
+          "ordinary public outcomes"
+        ],
+        "stop_condition": "Registered task completion, adverse terminal, or frozen resource budget; no parameter update, parent feedback, or root replacement.",
+        "trigger": "Only after separate M-TEXT and execution approval.",
+        "writes": [
+          "model action trace",
+          "public command sequence",
+          "later public observations",
+          "root-level assay receipt"
+        ]
+      },
+      {
+        "after": "The full organism's later loop remains: lived action/outcome episodes feed target-independent DREAM local proposal/re-expression; later independent support enables SLEEP validation and transactional parametric consolidation; goal-conditioned THINK retrieves/composes/plans/revises; later thinking/outcomes can enter future dream cycles. This loop is not instantiated by M0 or M-TEXT-SUPPLIED.",
+        "before": "All-in-one PCFL v1 risked conflating fixture semantics, supplied memory, and organism learning.",
+        "loop_id": "L-FULL-DREAM-LORA-THINK-DEFERRED",
+        "operation": "add",
+        "rationale": "Preserves the project thesis while explicitly deferring distinct discovery, transport, and feedback claims.",
+        "reads": [
+          "eligible grounded lived episodes",
+          "later public support",
+          "goal-conditioned retrieval state",
+          "outcome feedback",
+          "approved personal state"
+        ],
+        "stop_condition": "Defined only in later independently ratified Dream/E0/M-LORA/O packages; no stop rule is authorized here.",
+        "trigger": "No trigger in this change; future package-specific approval required.",
+        "writes": [
+          "candidate local connections",
+          "supported re-expressions",
+          "transactional personal LoRA transport",
+          "future eligible experience"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Proposes a smallest staged PCFL path: a model-free, independently runnable M0-THIN fixture and an exact public handoff for a later M-TEXT-SUPPLIED causal-use assay. It reuses only explicitly mapped, byte-identical FeltCraft V7 primitives under new authority; it does not transfer V7 authority or make M0 a scientific result.",
+  "system_thesis": "Dream\u2013LoRA\u2013Think is a complete organism, not a single organ: lived action\u2013outcome episodes create grounded evidence; later dream-time local connection growth and memory re-expression organize eligible experience; parametric SLEEP/LoRA consolidation transports only validated personal semantics; goal-conditioned THINK retrieves, composes, plans, acts, observes, and revises; and later thinking/outcomes may feed future dream cycles. M0 implements none of this learned organism. M-TEXT-SUPPLIED isolates only the organism-level causal usefulness of externally supplied grounded connected text; later packages separately test DREAM authorship, parametric transport, developmental learning, and the online feedback loop.",
+  "title": "M0-THIN CPU fixture and bounded M-TEXT-SUPPLIED interface for staged Dream\u2013LoRA\u2013Think evidence",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I-MANIFEST",
+        "reason": "Ratification and scope binding only.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-MANIFEST",
+        "reason": "Frozen input required for verification.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-MANIFEST",
+        "reason": "Actor receives no manifest/root identity.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MANIFEST",
+        "reason": "Checker verifies digest and completeness.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-MANIFEST",
+        "reason": "Later assay receives only bound handoff identity, not fixture-selection internals.",
+        "stage_id": "S-MTEXT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD",
+        "reason": "May be inspected only for approval scope, never released as runtime actor data.",
+        "stage_id": "S-AUTH",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD",
+        "reason": "Internal transition state; not actor-readable.",
+        "stage_id": "S-M0",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD",
+        "reason": "Root bits, future outcomes, arm labels, and hidden schedules are prohibited.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD",
+        "reason": "Checker may use it only to verify paired-prefix/taint invariants.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD",
+        "reason": "Not transferred to M-TEXT.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-PUBLIC-EVIDENCE",
+        "reason": "Public semantic surface is reviewed for specified visibility.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-EVIDENCE",
+        "reason": "M0 creates canonical ordinary public events and supported evidence.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-EVIDENCE",
+        "reason": "Only legal public event fields/previous returns may be read by actor commands.",
+        "stage_id": "S-ACTOR",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-EVIDENCE",
+        "reason": "Checker validates chronology, identity, and provenance.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-EVIDENCE",
+        "reason": "Frozen permitted projection may enter later supplied text.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER",
+        "reason": "Carrier contract is ratified without authoring a scientific result.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER",
+        "reason": "M0 validates/renders carrier using only admitted public evidence.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER",
+        "reason": "Actor may receive only the frozen common-reader return.",
+        "stage_id": "S-ACTOR",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER",
+        "reason": "Checker tests transform specificity and matched exposure.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER",
+        "reason": "Later M-TEXT consumes supplied memory; it is not attributed to DREAM.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-GOAL",
+        "reason": "Goal release timing is part of ratified phase semantics.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-GOAL",
+        "reason": "M0 phase machine holds goal only at registered release phases.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-GOAL",
+        "reason": "Visible only when the phase contract releases it.",
+        "stage_id": "S-ACTOR",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-GOAL",
+        "reason": "Checker verifies carrier/index predate goals and paired noninterference.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-GOAL",
+        "reason": "Later fixed model receives only registered prompt-projection goal bytes.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-EPHEMERA",
+        "reason": "Exact exclusion from join is ratified.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-EPHEMERA",
+        "reason": "M0 may maintain isolated branch-local state only until join/reset.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-EPHEMERA",
+        "reason": "No abandoned/sibling workspace, retrieval transcript, score, trace, timing, or hidden correctness crosses the join.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-BRANCH-EPHEMERA",
+        "reason": "Checker verifies exact GOALS_COMPLETE projection and exclusion mutations.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-EPHEMERA",
+        "reason": "Never enters M-TEXT handoff.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-INTERVENTION-ORACLE",
+        "reason": "Intervention semantics and expected adverse mapping are approval data.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-INTERVENTION-ORACLE",
+        "reason": "Private labels/oracles control registered transform implementation but are not public objects.",
+        "stage_id": "S-M0",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-INTERVENTION-ORACLE",
+        "reason": "Arm labels, expected answers, scores, and goldens are prohibited.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-INTERVENTION-ORACLE",
+        "reason": "Checker uses them to validate exact transform and reducer behavior.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-INTERVENTION-ORACLE",
+        "reason": "M-TEXT may receive the public variant rendering but never label/oracle/golden.",
+        "stage_id": "S-MTEXT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-V7-REFERENCE",
+        "reason": "Exact reuse mapping and scope disposition are approval data.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-V7-REFERENCE",
+        "reason": "Only named mapped primitive interfaces may be read by M0 checker/conformance code.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-V7-REFERENCE",
+        "reason": "V7 outputs, oracle, expectations, authority, and golden are prohibited from actor visibility.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-V7-REFERENCE",
+        "reason": "Independent checker verifies hashes/mapping and firewall.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-V7-REFERENCE",
+        "reason": "No V7 object or authority enters M-TEXT.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-M0-RECEIPT",
+        "reason": "Receipt schema and non-scientific status are approval data.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-M0-RECEIPT",
+        "reason": "M0 emits structural root/conformance receipts.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-M0-RECEIPT",
+        "reason": "Actor never sees receipt, root reduction, or score.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-M0-RECEIPT",
+        "reason": "Checker/reviewer validates receipts and manifest binding.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-M0-RECEIPT",
+        "reason": "Only named handoff provenance fields may be derived; no scientific result transfers.",
+        "stage_id": "S-MTEXT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-MTEXT-PROMPT-BYTES",
+        "reason": "Only interface fields/preparation boundary may be specified; no execution occurs.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-MTEXT-PROMPT-BYTES",
+        "reason": "M0 stores no prompt/chat/template/parser implementation.",
+        "stage_id": "S-M0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-PROMPT-BYTES",
+        "reason": "No model call or prompt exists at actor stage in M0.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-PROMPT-BYTES",
+        "reason": "Checker may validate M0 handoff completeness but cannot execute tokenizer/rendering.",
+        "stage_id": "S-CHECKER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-MTEXT-PROMPT-BYTES",
+        "reason": "Visible only in separately ratified M-TEXT execution.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-MODEL-OUTPUT",
+        "reason": "No model is authorized in this change.",
+        "stage_id": "S-AUTH",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MODEL-OUTPUT",
+        "reason": "M0 contains no model/provider/tokenizer path.",
+        "stage_id": "S-M0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MODEL-OUTPUT",
+        "reason": "No actor/model execution in M0.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MODEL-OUTPUT",
+        "reason": "M0 checker cannot inspect nonexistent model output.",
+        "stage_id": "S-CHECKER",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MODEL-OUTPUT",
+        "reason": "Later M-TEXT writes root-local traces only under separate approval.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-ORGANISM-PRIVATE-STATE",
+        "reason": "No child, parent, writer, adapter, lineage, or personal state is approved.",
+        "stage_id": "S-AUTH",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PRIVATE-STATE",
+        "reason": "M0 excludes these types and dependencies.",
+        "stage_id": "S-M0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PRIVATE-STATE",
+        "reason": "Actor-visible fixture cannot resolve these objects.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PRIVATE-STATE",
+        "reason": "Checker asserts absence/import denial only.",
+        "stage_id": "S-CHECKER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-ORGANISM-PRIVATE-STATE",
+        "reason": "M-TEXT-SUPPLIED does not read/write a child, LoRA, parent, or lineage state.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      }
+    ],
+    "information_items": [
+      "I-MANIFEST",
+      "I-PRIVATE-WORLD",
+      "I-PUBLIC-EVIDENCE",
+      "I-SUPPLIED-CARRIER",
+      "I-GOAL",
+      "I-BRANCH-EPHEMERA",
+      "I-INTERVENTION-ORACLE",
+      "I-V7-REFERENCE",
+      "I-M0-RECEIPT",
+      "I-MTEXT-PROMPT-BYTES",
+      "I-MODEL-OUTPUT",
+      "I-ORGANISM-PRIVATE-STATE"
+    ],
+    "stages": [
+      "S-AUTH",
+      "S-M0",
+      "S-ACTOR",
+      "S-CHECKER",
+      "S-MTEXT"
+    ]
+  }
+}
