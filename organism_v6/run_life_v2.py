@@ -49,12 +49,16 @@ def format_canary(model, gym, threshold: float = 0.5) -> tuple[bool, float]:
     return rate >= threshold, rate
 
 
-def run_probes_batch(model, gym, tag, life_dir, budget, log):
+def run_probes_batch(model, gym, tag, life_dir, budget, log, eids=None):
+    """eids=None → the 8 report-panel programs. A different list is used for
+    the gate panel (--gate-panel, 2026-09-10, review F1): the gate must not
+    select on the programs whose scores the paper reports."""
     out_path = os.path.join(life_dir, f"probe_{tag}.json")
     if marker(out_path):
         return
     led = Ledger(os.path.join(life_dir, f"probe_{tag}.ledger.jsonl"))
-    res = run_episodes_batch(model, gym, [Episode(eid=b) for b in PROBES],
+    eids = list(eids) if eids else list(PROBES)
+    res = run_episodes_batch(model, gym, [Episode(eid=b) for b in eids],
                              BOOTSTRAP, led, budget, log,
                              gen_seed=PROBE_SEED)
     results = {r["episode_id"]: r["best_score"] for r in res}
@@ -92,6 +96,13 @@ def main():
                          "adapter stays. Default off: R2/RP lives unaffected.")
     ap.add_argument("--gate-tol", type=float, default=0.02)
     ap.add_argument("--gate-brevity", type=float, default=0.5)
+    ap.add_argument("--gate-panel", default=None,
+                    help="JSON list of benchmark URIs for the GATE probe, "
+                         "disjoint from the 8 report programs (review F1). "
+                         "With it, the gate floor = max(base on the gate "
+                         "panel, best committed adapter's gate probe) — no "
+                         "floor decay (SEQ-002). Default None = legacy gate "
+                         "on the report panel (R3/R4 arms).")
     ap.add_argument("--plasticity", action="store_true",
                     help="plasticity levels (Rohin 2026-09-10): learn fast "
                          "while young; once the paired gain ON-OFF >= 0.03 "
@@ -150,12 +161,14 @@ def main():
         p = os.path.join(life, f"probe_{tag}.json")
         if not os.path.exists(p):
             return None, None
-        mean = json.load(open(p))["mean"]
+        pj = json.load(open(p))
+        mean = pj["mean"]
+        n_eps = len(pj.get("results") or []) or len(PROBES)
         lp = os.path.join(life, f"probe_{tag}.ledger.jsonl")
         n_th = sum(1 for l in open(lp)
                    if l.strip() and json.loads(l).get("kind") == "thought") \
             if os.path.exists(lp) else 0
-        return mean, n_th / max(1, len(PROBES))
+        return mean, n_th / max(1, n_eps)
 
     def latest_probe_tag(suffix):
         tags = sorted(f[6:-5] for f in os.listdir(life)
@@ -163,17 +176,44 @@ def main():
                       and (suffix or "_adapterOFF" not in f))
         return tags[-1] if tags else None
 
+    gate_panel = None
+    if args.gate_panel:
+        gate_panel = json.load(open(os.path.expanduser(args.gate_panel)))
+        overlap = set(gate_panel) & set(PROBES)
+        if overlap:
+            raise RuntimeError(f"gate panel overlaps report panel: {overlap}")
+
+    def committed_gate_probes():
+        """Gate-probe means of every COMMITTED sleep (gate-panel mode)."""
+        vals = []
+        for d in sorted(os.listdir(life)):
+            if d.startswith("sleep_") and marker(os.path.join(life, d, "adapter", "DONE")):
+                m_, _ = probe_stats(f"gate{int(d[6:]):04d}")
+                if m_ is not None:
+                    vals.append(m_)
+        return vals
+
     def probe_gate(cand, sdir, i):
         """Score + behaviour gate. Returns (ok, reason, stats)."""
         tag = f"gate{i:04d}"
-        run_probes_batch(cand, gym, tag, life, args.budget_ticks, log)
+        run_probes_batch(cand, gym, tag, life, args.budget_ticks, log,
+                         eids=gate_panel)
         c_mean, c_cpe = probe_stats(tag)
-        off_tag = latest_probe_tag("_adapterOFF") or "ep0000"
-        off_mean, off_cpe = probe_stats(off_tag)
-        prev_on = None
-        on_tag = latest_probe_tag("")
-        if on_tag and on_tag != "ep0000" and latest_adapter(life):
-            prev_on, _ = probe_stats(on_tag)
+        if gate_panel:
+            # disjoint gate panel: base measured once on it; floor is the BEST
+            # committed adapter's gate probe (no decay), never the report panel
+            off_tag = "gate_base"
+            off_mean, off_cpe = probe_stats(off_tag)
+            committed = committed_gate_probes()
+            prev_on = max(committed) if committed else None
+            on_tag = f"best_of_{len(committed)}_committed"
+        else:
+            off_tag = latest_probe_tag("_adapterOFF") or "ep0000"
+            off_mean, off_cpe = probe_stats(off_tag)
+            prev_on = None
+            on_tag = latest_probe_tag("")
+            if on_tag and on_tag != "ep0000" and latest_adapter(life):
+                prev_on, _ = probe_stats(on_tag)
         floor = max(x for x in (off_mean, prev_on) if x is not None)
         score_ok = c_mean >= floor - args.gate_tol
         brev_ok = (off_cpe is None) or (c_cpe >= args.gate_brevity * off_cpe)
@@ -210,6 +250,10 @@ def main():
     model = load_model()
     bootstrap = brief()
     run_probes_batch(model, gym, "ep0000", life, args.budget_ticks, log)
+    if gate_panel and not latest_adapter(life):
+        # base on the gate panel, once, with the same seeded generation
+        run_probes_batch(model, gym, "gate_base", life, args.budget_ticks, log,
+                         eids=gate_panel)
 
     i = 0
     while i < len(programs):
