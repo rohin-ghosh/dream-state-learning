@@ -122,7 +122,13 @@ SourceAuthoringPlanV1 := {
 
 SourcePlanRow := {
   logical_path:repo_relative_path,
-  role:closed_role_enum,
+  role:"INTEGRATED_CONTRACT"|"SEMANTIC_TABLE"|"TRANSITION_TABLE"|
+       "FAILURE_PRECEDENCE"|"OBJECT_SCHEMA"|"HANDOFF_SCHEMA"|
+       "PROJECTION_ALLOWLIST"|"CONSUMER_GRAPH"|"DELAYED_ENTITLEMENT"|
+       "V7_BOUNDARY"|"MATERIALIZER_SOURCE"|
+       "CONSTRUCTIVE_CHECKER_SOURCE"|"AXIOMATIC_CHECKER_SOURCE"|
+       "MUTATION_FIXTURE"|"RUNTIME_MANIFEST"|"CAS_FREEZE_CONTRACT"|
+       "TEST_SPEC"|"PREPARATION_ENTRYPOINT"|"NORMATIVE_SOURCE_MANIFEST",
   media_type:"application/json"|"text/markdown"|"text/x-python",
   maximum_nbytes:u64,
   manifest_member:boolean
@@ -166,17 +172,18 @@ NormativeSourceManifestV1 := {
   source_authoring_grant_sha256:hex64,
   entries:[{
     logical_path:repo_relative_path,
-    role:closed_role_enum,
+    role:SourcePlanRow.role,
     media_type:"application/json"|"text/markdown"|"text/x-python",
     nbytes:u64,
     sha256:hex64,
-    provenance_row_sha256:hex64
+    provenance:SourceProvenanceRowV1
   }, ...]
 }
 ```
 
 Its entries equal every and only plan rows with `manifest_member=true`, in the
-same sorted order, and match plan roles/media types/maxima. The manifest never
+same sorted order, and match plan roles/media types/maxima. Each provenance row
+is embedded, so there is no unlisted provenance-file edge. The manifest never
 contains its own hash. Its external SHA-256 is computed after close and may be
 used only by later review and Authority P. Completing it grants no authority.
 
