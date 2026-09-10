@@ -69,7 +69,7 @@ Dialect bifurcation cured by canonicalization + real-context paired canary; trai
 - **Instrument defect:** efficiency_markers has no cells for RP 400 (parser error on an elided `[OUTCOME]` score).
 
 ## Addendum 2026-09-10 (SEQ-017; text-memory baseline, first cell; source: COORDINATION.md entry "SEQ-017"; JSON in ~/v6_out/brief_baseline/ on node 1)
-- **Text-memory baseline = frozen model + the life's own final waking brief, no adapter, 2 seeded reps.** R2 seed0: 8-panel **0.5291** (vs adapter ON 0.5262 and adapter OFF 0.4872 at ep 1024, bootstrap-only context); disjoint panel v1 **0.2731** (vs adapter final 0.2145 with a collapsed rep, adapter mid 0.2731). The brief states the six-pass routine in words; the frozen model executes it. Text ≥ weights for this life. Remaining lives pending on both nodes.
+- **Text-memory baseline = frozen model + the life's own final waking brief, no adapter, 2 seeded reps.** R2 seed0: 8-panel **0.5291** (vs adapter ON 0.5262 and adapter OFF 0.4872 at ep 1024, bootstrap-only context); disjoint panel v1 **0.2731** (vs adapter final 0.2145 with a collapsed rep, adapter mid 0.2731). The brief states the six-pass routine in words; the frozen model executes it. Reading: brief-only ≥ adapter on these panels for this life (no evidence the weights add capability beyond the written memory; not evidence that they store nothing else). Remaining lives pending on both nodes; crossed cells (adapter + brief; routine-only text) queued.
 - **Disjoint cells at 37:** gated finals so far — R3 500 +0.005, 501 −0.008, 502 +0.016 (routine), 503 −0.005, 504 (mid) −0.004, 505 +0.013; R4 604 −0.064 (collapsed rep 0.138), 605 −0.008.
 
 ## Addendum 2026-09-10 (SEQ-012; disjoint panel v1 at 24 cells; source: COORDINATION.md entry "SEQ-012")
