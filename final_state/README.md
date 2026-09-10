@@ -32,5 +32,8 @@ This directory is the curated map of the project's final-stage artifacts. Nothin
 - `MANIFEST.md` (this directory) — archives of raw receipts and adapters with SHA-256, where they live, and the node environments.
 - Codex's STOP on unverified bootstraps: `../research_loop/COORDINATION.md` (entry "STOP: bootstrap-v3 is not yet an eligible clean child").
 
-## 6. History (kept, not reorganized)
+## 6. Exported documentation
+- `../docs_export/` — memory notes, every workflow agent's full report, node-side and laptop-side scripts (see its README).
+
+## 7. History (kept, not reorganized)
 Everything under `../research_notes/` numbered 01–64, `../rml_stage_b/`, `../SPEC_V2.md`, `../DESIGN_SUPER.md`, `../REVIEW_PACK.md`, `../archive/` is the earlier architecture and planning era. It is the record of what was tried first; the paper cites it only for that.
