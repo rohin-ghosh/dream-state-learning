@@ -1,8 +1,8 @@
-# Meta-review of the revised paper `paper_fable/main.tex` (draft v2 → v3) — 2026-09-10
+# Meta-review of the revised paper `paper_prototype/main.tex` (draft v2 → v3) — 2026-09-10
 
 Meta-reviewer and final fixer, working from the five lens reviews of draft v2 (statistical rigor; novelty and positioning; clarity; contamination, leakage and reproducibility; area chair) and their paired verifications (two verifiers per finding, 60 verdicts). Binding constraints: `REVIEW_HARSH_2026-09-10.md` (every FATAL/MAJOR item), `PAPER_WRITING_PROMPT.md` (revised), `EVIDENCE_TABLES.md` with its 2026-09-10 addenda, and COORDINATION.md entries SEQ-001..003 and M5, with later dated entries winning (SEQ-004, SEQ-006, SEQ-007 were read and used only where they supersede a status statement). Codex's STOP stands: the bootstrap is DEV_UNVERIFIED_PROVENANCE and unmeasured. No GPU node was touched; every new number in the paper was recomputed by script from `research_notes/analysis/analysis_tables_2026-09-10_{a40,ovx}.json` (the SEQ-001 artifact) and posted as a dated erratum entry to COORDINATION.md and EVIDENCE_TABLES.md before it entered the paper.
 
-Line numbers below refer to draft v2 (the file the reviewers read; 522 lines). The fixed file is v3; `paper_fable/README.md` maps each fix to its new location.
+Line numbers below refer to draft v2 (the file the reviewers read; 522 lines). The fixed file is v3; `paper_prototype/README.md` maps each fix to its new location.
 
 ---
 

@@ -4,9 +4,9 @@ This directory is the curated map of the project's final-stage artifacts. Nothin
 
 ## 1. The claim and the paper
 - `../research_notes/ONBOARDING_ABSTRACT.md` — one page: what the system is and what has been measured (revised after the harsh review).
-- `../paper_fable/main.tex`, `../paper_fable/refs.bib`, `../paper_fable/README.md` — the ICLR 2027 draft (8.9 pp main text + appendices A–J), its number→source table (every number traced to a dated entry), and the auditor's brief. Abstract registration 2026-09-18; paper 2026-09-25.
+- `../paper_prototype/main.tex`, `../paper_prototype/refs.bib`, `../paper_prototype/README.md` — the ICLR 2027 draft (8.9 pp main text + appendices A–J), its number→source table (every number traced to a dated entry), and the auditor's brief. Abstract registration 2026-09-18; paper 2026-09-25.
 - `../research_notes/REVIEW_HARSH_2026-09-10.md` — the harsh review of the notes and formalizations (5 fatal, 16 major) that reshaped the paper.
-- `../research_notes/REVIEW_PAPER_FABLE_2026-09-10.md` — the harsh review of the revised paper; section 5 holds the abstract text proposed for 09-18 and the rules for replacing clauses as data lands.
+- `../research_notes/REVIEW_PAPER_PROTOTYPE_2026-09-10.md` — the harsh review of the revised paper; section 5 holds the abstract text proposed for 09-18 and the rules for replacing clauses as data lands.
 - `../research_notes/PAPER_WRITING_PROMPT.md` — the one-shot prompt used to write and re-write the paper (rules, allowed/forbidden claims, reading order).
 
 ## 2. Evidence
