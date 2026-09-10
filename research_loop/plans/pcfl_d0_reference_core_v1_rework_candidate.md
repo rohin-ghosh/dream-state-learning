@@ -2,10 +2,18 @@
 
 Date: 2026-09-10
 
-Status: **proposal work only; not ratified**. This file authorizes no code
+Status: **superseded working draft; not ready for deliberation or
+ratification**. This file authorizes no code
 change, test execution, world/root generation, model or tokenizer use,
 parenting, adapter/checkpoint work, CPU scientific execution, GPU use,
 resource acquisition, claim, release, or promotion.
+
+The post-draft audit found that the source bundle's own
+`cross_audit.md` marks it `REWORK`: its deck, support admission, cuts, Bayes
+conditioning, goldens, and runtime fixture are not yet exact. The hashes below
+remain useful source identities, but they must not be described as a
+ratifiable contract. This draft is preserved as an audit trail and is not the
+successor proposal.
 
 ## Decision
 
@@ -30,9 +38,10 @@ that is not needed to settle the world.
 
 ## Reuse rather than reinvention
 
-The semantic work already exists in the unimplemented
-`chg_20260901_pcfl_d0_exact_v2` bundle. The successor proposal imports only the
-following exact, currently tracked bytes as normative inputs:
+Substantial semantic work exists in the unimplemented
+`chg_20260901_pcfl_d0_exact_v2` bundle. A successor may use the following
+tracked bytes as design sources only after disposing the bundle's recorded
+cross-audit; they are not imported here as normative authority:
 
 | Artifact | SHA-256 | Purpose in Stage 0 |
 |---|---|---|
@@ -47,8 +56,9 @@ following exact, currently tracked bytes as normative inputs:
 | `claim_policy.json` | `1f9df4ae510c12aad1de32a2817265451285e8792cc3ddaa5704b7509af25750` | D0-only wording firewall and negative dispositions; future scientific templates remain dormant |
 
 The old `authority_manifest.json`, future estimator surface, and missing old
-deliberation files are **not** imported as authority. The successor binds a new
-smaller scope and code surface around the exact semantic bytes above.
+deliberation files are **not** imported as authority. A future successor would
+need newly reviewed exact bytes rather than a wrapper around this incomplete
+bundle.
 
 ## Exact active Stage-0 object
 
@@ -222,4 +232,3 @@ or one system beats another.
    mandatory here, where a child actually exists.
 
 No later stage inherits implementation or execution authority from Stage 0.
-

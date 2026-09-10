@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "workflow_kind": "architecture_deliberation",
+  "name": "pcfl-m0-mtext-bound-v2",
+  "workspace": "../..",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v2",
+  "directive_file": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/human_directive.txt",
+  "context_files": [
+    "AGENTS.md",
+    "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+    "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/change.json",
+    "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/consensus.json",
+    "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/human_ratification.json",
+    "research_loop/changes/chg_20260901_feltcraft_symbolic_kernel_v7/scope_audit.json",
+    "research_loop/changes/chg_20260901_pcfl_d0_exact_v2/cross_audit.md",
+    "research_loop/changes/chg_20260910_pcfl_core_clean_lineage_v1/consensus.json",
+    "research_loop/advisory/20260910_pcfl_implementation_state_and_minimum_path_fresh_audit_v1.md",
+    "research_loop/advisory/20260910_pcfl_v2_staged_scope_fresh_v1.md",
+    "research_loop/advisory/20260910_pcfl_v2_minimal_exact_semantics_fresh_v1.md",
+    "research_loop/advisory/20260910_pcfl_v2_two_path_adversarial_cross_critique_v1.md",
+    "research_loop/advisory/20260910_pcfl_fastest_paper_evidence_route_fresh_v1.md",
+    "research_loop/advisory/20260910_pcfl_existing_asset_reuse_fresh_audit_v1.md",
+    "research_loop/plans/pcfl_m0_mtext_bound_v2_adjudication_candidate.md"
+  ],
+  "output_dir": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2",
+  "state_path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v2.deliberation.state.json",
+  "intake_state_path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/intake.state.json",
+  "run_dir": ".research_loop/deliberations",
+  "roles": {
+    "advocate": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "systems": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-luna", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "benchmark": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    },
+    "critique": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-sol", "reasoning_effort": "xhigh", "max_context_chars_per_file": 300000, "timeout_sec": 2400, "provider_attempts": 2, "provider_attempt_timeout_sec": 1200}
+      ]
+    },
+    "consensus": {
+      "executors": [
+        {"provider": "codex", "model": "gpt-5.6-terra", "reasoning_effort": "high", "max_context_chars_per_file": 300000, "timeout_sec": 1800, "provider_attempts": 2, "provider_attempt_timeout_sec": 900}
+      ]
+    }
+  }
+}
