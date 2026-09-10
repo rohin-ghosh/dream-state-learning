@@ -1,0 +1,525 @@
+{
+  "architecture_change_sha256": "bada525623c094914e41c60048a2e4714e1912c1202e5e889b2bf28f9992a0fc",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v9",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "M0V5-SOURCE-AUTHORING-VS-PREPARATION-AUTHORITY-12",
+        "M0V5-HANDOFF-DELAYED-VISIBILITY-CLOSURE-28",
+        "M0V4-ZERO-V7-RUNTIME-REUSE-01",
+        "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+        "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "M0V4-PROVENANCE-REVOCATION-CYCLE-27",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V9-001-ACCEPTANCE-REGISTRY-CONTRACTION",
+      "evidence": "The V9 candidate says it retains test IDs -00 through -19 and -23 through -27, and the inherited repairs define those tests separately. The proposed change registers only eight umbrella tests, while both V9 interpretations address only those eight. The planned acceptance_tests.json therefore has two incompatible prospective registries: the full inherited noncompensatory suite and the eight-test change artifact. This leaves source authors discretion to omit exact-source, checker, actor, reader, CAS, rendered-boundary, applicability, resource, and provenance-order falsifiers.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The V9 change silently contracts the inherited acceptance-test surface and is not exact enough to authorize source authoring until one complete registry and every disposition are bound."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V5-HANDOFF-DELAYED-VISIBILITY-CLOSURE-28",
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-V9-002-DELAYED-BASELINE-ENTITLEMENT-CONFLICT",
+      "evidence": "The inherited delayed-twin contract permits D-entry HandoffPublic trees to differ only at /carrier/atoms/25 and /carrier/links/6, with the first model-visible difference inside a return exposing a19 or l06. The later baseline repair adds h-dependent delayed RAW_STATIC rows, RAG documents, and NATIVE_GRAPH content under memory_surface, all derived from the supplied correct-acquisition fixture. Those differences occur outside the two permitted carrier pointers. V9 inherits both contracts, and test 28 again names only a19/l06 content. Neither V9 interpretation resolves this collision.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Delayed RAW, RAG, and native-graph baselines need their own exact outcome-descendant visibility allowlists; as written they either violate the two-slot twin law or must omit the new fact that defines their delayed treatment."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V5-SOURCE-AUTHORING-VS-PREPARATION-AUTHORITY-12"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V9-003-SOURCE-GRANT-SCHEMA-BINDING",
+      "evidence": "The controlling SourceAuthoringGrantV1 and SourceProvenanceRowV1 examples in the V5 authority repair contain literal V5 change IDs. V9's exact precedence says its repair changes the workflow binding set and one boundary-plan row while earlier clauses otherwise remain exact. The V9 plan and human boundary require V9 identities, but no already-authored strict V9 grant schema or explicit parameterization rule resolves the literal mismatch before the proposed grant must be validated.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The source-authoring authority is conceptually disjoint from preparation but is not yet byte-exactly validatable for the V9 change identity."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+        "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-V9-004-FIXED-ALGEBRA-SHORTCUT-NOT-SEPARATELY-REGISTERED",
+      "evidence": "The public start alias reveals k, relation aliases are j XOR (k mod 16), and the released A/B goal identifies terminal R05 or R06. The inherited model-free decoder therefore constructs successful A/B routes without memory. V9 test 15 merely says shortcut bounds are checked; it does not itself bind the decoder, the exact matched renderings, the <=5/16 thresholds, or clause withdrawal on breach. The dedicated inherited test 14 is absent from the proposed registry.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "A direct goal-and-alias solution can bypass the intended memory path unless the algebra-prior falsifier remains a distinct, exact, noncompensatory acceptance test."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+        "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-V9-005-GOAL-BLIND-PREASSEMBLED-PATH-BYPASS",
+      "evidence": "Goal swaps can leave carrier bytes unchanged even if a goal-blind producer stores all complete A, B, and D scripts or parent structures in advance. Test 15 freezes carrier/index/reader bytes and scorer equivalence but does not explicitly require that the public memory contain only local atoms and authenticated local links and no complete route, final answer, target-indexed agenda, or parent-path object. Such a bundle would pass goal neutrality while moving the intended recurrent composition into the producer.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Producer neutrality alone does not prove that full route construction emerges through repeated memory-think-act iterations rather than being demanded from or precomputed by the memory module."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V5-HANDOFF-DELAYED-VISIBILITY-CLOSURE-28",
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-V9-006-BRANCH-REPEAT-AND-PROMPT-BOUNDARY-NOT-REGISTERED",
+      "evidence": "Inherited prose requires joins to exclude abandoned branches, V8 requires saturated repeat counts [1,2,3,3,3,3,3,3] to be model-visible and identity-local, and V7 makes protocol tags select legal PCFL_COMMAND_V4 variants. The eight proposed tests contain no dedicated rendered cross-product proving that every protocol instruction, command schema, parser branch, repeat value, join projection, tool envelope, and NOT_REACHED suffix agrees. The dedicated rendered-boundary test 09 is omitted. Consequently a branch release, an internal-only repeat block, or a prompt/parser mismatch could survive semantic handoff tests.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Exact model-facing tests for abandoned-branch nonrelease, repeat-state visibility, and prompt/protocol/schema agreement remain a hard prerequisite to model execution."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-PROVENANCE-REVOCATION-CYCLE-27"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-V9-007-DIAMOND-AND-SYNTHETIC-EVIDENCE-POSITIVES-OMITTED",
+      "evidence": "Test 27's proposed wording requires cycle rejection, support, contradiction precedence, revocation, and atomicity, but does not explicitly require acceptance of a valid shared-root diamond or prove that shared roots deduplicate rather than trigger a false cycle. It also does not explicitly state that SYNTH nodes and re-expressions can never become primitive evidence. Those positive and negative fixtures exist in the inherited provenance repair, but the separate finite-order test 26 is missing from V9's registry.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The provenance gate can falsely reject legal shared ancestry or accept synthetic re-expression as evidence unless the complete positive-diamond and synthetic-non-evidence corpus remains explicitly registered."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V9-008-RESOURCE-FACTORIAL-COLLAPSED",
+      "evidence": "The inherited design separately registers roster arithmetic, the full per-root/condition/phase ChargedResourceV5 vector, and nonomission mutations as tests 23, 24, and 25. V9 test 19 compresses these to 'per-arm charges reproduce independent goldens.' That phrase does not itself require standalone versus suite-physical CAS accounting, static-context tokens on every request, RAG build and postings work, thinker calls, GPU attribution, deleted temporary bytes, cache warmup, or unattributable concurrency failure.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "RAW context, RAG, native graph, common-reader text, and thinker computation cannot support a practical comparison unless the full componentwise resource tests remain separate and nonomissible."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+        "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V9-009-CLAUSE-DISPOSITIONS-NOT-BINDING-IN-CHANGE",
+      "evidence": "The inherited endpoint repair defines G0 through G10 and separate withdrawals for connected-path, public-calibration, delayed-carrier, practical-baseline, scratch, and feedback clauses. V9's confirmation test instead refers generically to noncompensatory gates and narrow relay clauses, while the dedicated applicability test 17 and clause-disposition test 18 are absent. A partial confirmation could therefore be post-hoc labeled 'successful' without a mechanically bound statement of which clause survived.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Negative results and partial passes need exact clause-specific dispositions in the current acceptance registry to prevent goalpost movement or evidence recombination."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-ZERO-V7-RUNTIME-REUSE-01"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V9-010-V7-GUARD-SELF-EXCEPTION",
+      "evidence": "The planned v7_boundary_v4.json must contain denied V7 paths, hashes, and interface names so the guard can enforce the firewall. The inherited repair makes that governance guard the sole exception. V9 test 01 says every V7 path, whole artifact, provenance, distinctive interface, and exposure mutation rejects, without restating the guard exception or proving that guard metadata cannot flow downstream. A literal implementation could reject its own required boundary file; an overbroad exception could leak V7 metadata.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The zero-V7 test needs an exact sole-guard exception plus a nonexposure proof, while ordinary coincident scalars remain permitted."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-V9-011-NO-ONLINE-LEARNING-CHAIN",
+      "evidence": "U output never becomes D input; the delayed carrier is constructed independently from the canonical correct-acquisition outcome; reset destroys policy scratch and sessions; and no model-authored memory or parameter update occurs. Thus the assay lacks the causal sequence memory changes action, action changes public evidence, evidence changes persistent memory, and that memory improves a later action. The proposal and both interpretations correctly exclude online learning, retention, and whole-organism credit.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "V9 can test supplied-memory use but cannot test online learning from the evaluated policy's own action and outcome."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-V9-012-FINITE-CENSUS-NOT-GENERALIZATION",
+      "evidence": "The confirmation set comprises sixteen k blocks with paired h twins, all generated from one algebra, one topology, and one frozen policy. Aliases, rotations, and nuisance bits are structured repeated variants rather than independently sampled tasks or agents. The 12/16, 8/16, 5/16, and 4/16 gates are prospective decision rules, not calibrated population estimates.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Any positive result is conditional within-suite evidence and cannot support topology, model, population, path-length, memory-scale, or lifetime generalization."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-V9-013-TEXT-GRAPH-LORA-SEPARATION",
+      "evidence": "V9 usefully separates common-reader text, RAW text, deterministic RAG, native graph, and no-memory interfaces, but contains no LoRA arm and no prospective equality rule for stored capacity, update opportunities, training work, inference work, context, or retrieval. Both interpretations recognize that semantic equality would not establish a fair text-versus-LoRA transport comparison.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "No result from V9 may support LoRA transport, compression, or text-versus-parametric efficiency; those require a separately ratified matched-transport experiment."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "scalability",
+      "concern_id": "CRIT-V9-014-CONSTRUCT-SEPARATION-LIMIT",
+      "evidence": "The inherited endpoints can identify bounded goal-conditioned composition, planning, bridge dependence, binding switching, and action completion within the fixed suite. They do not include an isolated recall-only task, withheld topology, longer path, larger distractor set, increasing memory load, accumulated local-edge count, repeated DREAM cycle, or increasing lifetime. Delayed success also combines retrieval, supplied integration, planning, and action rather than estimating them as independent scientific units.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "The assay distinguishes several within-suite mechanisms but cannot distinguish general recall capacity, structural generalization, scaling, recurrence, or continued improvement."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/human_directive.txt",
+      "purpose": "binding V9 directive",
+      "sha256": "4db2cc3fcb5c1ffc6b1ddc832af89306714783ed47266536ce56ccafe0218369"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "project thesis",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/human_directive.txt",
+      "purpose": "V4 directive",
+      "sha256": "ce1540a98aba52c1f4953faafdc10727056134a49b1dc19a5c413ae634c90a0f"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v4.deliberation.json",
+      "purpose": "V4 workflow",
+      "sha256": "d1f9308b8e205dfc8aa4590a1462a571b7ef02c1335e4335e0bd5692a4811e49"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/scope_proposal.json",
+      "purpose": "V4 scope",
+      "sha256": "12c5f1b459a697a59d4fecc1e2991f880a69898fa9a4013f66947fef1bd7ea0b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/change.json",
+      "purpose": "V4 proposal",
+      "sha256": "a6332cfeab3bc2281404a568e2c04eaf8ffa28db96d3c33265140f9fe7c3408f"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/interpretation_systems.json",
+      "purpose": "V4 systems interpretation",
+      "sha256": "ac9b91c20cb75ca18d7b5608423e3377d0aaa6ff24e45513acfd4bfd4f6bf270"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/interpretation_benchmark.json",
+      "purpose": "V4 benchmark interpretation",
+      "sha256": "745f6514672ffaf2e14c87088c55dbad67232054a219a821a4a36f51ca8d6af3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/critique.json",
+      "purpose": "V4 critique",
+      "sha256": "6caa938022d9e6b2e47a3d3997b8d06c44a67568550fd86716d6123e2c1e2fad"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/consensus.json",
+      "purpose": "V4 rework consensus",
+      "sha256": "7cad92d5563f0b0be69d6dd72fca7419573d93fbb19021e5b614e0bac0798720"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/intake.state.json",
+      "purpose": "V4 intake state",
+      "sha256": "913520d6093f960fe6d4b39c293850468bcab6dcf488e3250a89200be6758ec6"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v4.deliberation.state.json",
+      "purpose": "V4 runner state",
+      "sha256": "36294effe64389d9040e8e9a3badf2ba7bb2d3c9c842117c9b8867fa881d439c"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v4_rework_candidate.md",
+      "purpose": "V4 finite instrument",
+      "sha256": "32d73b800971a61a20fa68694dc9cbed9203c65d59d3c01c5baffe2c3a6e53cc"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_governance_packet_audit_v1.md",
+      "purpose": "V4 governance audit",
+      "sha256": "0b11febe8abadc4d2c9bddfdf87ad269d5fb209e438e83352153a18d9c891a7c"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_authority_handoff_delayed_v7_source_repair_v1.md",
+      "purpose": "V5 authority repair",
+      "sha256": "ae74fae9516fba5a699514674fd2299ec3130eca7814be723ccc5717258fcb2a"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_endpoints_claims_exact_repair_v1.md",
+      "purpose": "V5 endpoint repair",
+      "sha256": "bfc4ae363a47f9825193e0783ef6d5f9f84b4741a6c73a3effad1d9140ea9ec4"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_provenance_resource_repair_v1.md",
+      "purpose": "V5 provenance repair",
+      "sha256": "96b3dcd1b60f484ae1983a91f00fd5abfe60fadf297876d837cfd32eb830b504"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v5_source_authoring_candidate.md",
+      "purpose": "V5 candidate",
+      "sha256": "126b90be36acc04a9b9002e22706aa3095cb39072fa0bb83d4f6be2163c7b7d2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/human_directive.txt",
+      "purpose": "V5 directive",
+      "sha256": "2a29e41d251507fbd862e577041416e0a2cb13711f41568b1496d44d5186f821"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/source_authoring_plan.json",
+      "purpose": "V5 plan",
+      "sha256": "334dd58d5cd3b66b5e0c751097b56e6e8a95e0ea75d0bd992d1850fc3947115a"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/scope_proposal.json",
+      "purpose": "V5 scope",
+      "sha256": "bf64978767631b792c757b583b1c42ef33f4ebb4c61c2aee96b6e7666330629c"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v5.deliberation.json",
+      "purpose": "V5 workflow",
+      "sha256": "1dfc7328418689be874f96538b1a9182ef9ffa4c4897437348ad1d8f1a403a9d"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v5.deliberation.state.json",
+      "purpose": "V5 zero-attempt state",
+      "sha256": "05de3604cf4430ec2fdb6ecb83bdaee7d15b01e8f4d42a1415046962946104ee"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V5 negative preflight",
+      "sha256": "c85ab9b83e849b84353653611c97596dd4001b257a0423c8f30bdfef07ba9005"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v6_baseline_projection_preflight_repair_v1.md",
+      "purpose": "V6 baseline repair",
+      "sha256": "12960868a1cafb820e33600482866a6387538280e8baeb698d59c8a4072d44ee"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v6_source_authoring_candidate.md",
+      "purpose": "V6 candidate",
+      "sha256": "74134a0545816d1cfd9edeb3229d77bc83261fa6582cd0f8dd459df1102d822f"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/human_directive.txt",
+      "purpose": "V6 directive",
+      "sha256": "948eb76c5912c002a2b1b33d5b005cb7d35e5c61ee918e392c6337ba5a239ff4"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/source_authoring_plan.json",
+      "purpose": "V6 plan",
+      "sha256": "2356cab6d9f0d521897497a3e8f85efdd06ebb436c6285264ffd9d47502ddbf8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/scope_proposal.json",
+      "purpose": "V6 scope",
+      "sha256": "497b0a8cc5921c84079bfed0511c3e8eb55748f2cfd66747f75aec3ef216d8f1"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v6.deliberation.json",
+      "purpose": "V6 workflow",
+      "sha256": "11076a8a5cd137f1e005836d9ac37c86c8c6e1e3ed46ea96912bafb5c34be9d9"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v6.deliberation.state.json",
+      "purpose": "V6 zero-attempt state",
+      "sha256": "0d02f33b10ac053292a81beb5280a7e5398617fa2b21ba836c8c1b96fe90b4fc"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v6_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V6 negative preflight",
+      "sha256": "69910384ead946bfb407eda8d79963c3e98918f5873be6b09b339483d65924f6"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v7_baseline_projection_exact_closure_v1.md",
+      "purpose": "V7 baseline closure",
+      "sha256": "6ca612e41e3462ca6997cabcd089439a8d24be06ca7d37b5e29183ec362dd272"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v7_source_authoring_candidate.md",
+      "purpose": "V7 candidate",
+      "sha256": "ab1aee14de83c82ded3ff5c22cf763d5cb875ed47a20491dd33547aad953874b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/source_authoring_plan.json",
+      "purpose": "V7 plan",
+      "sha256": "2c4d51e833698e8d44c5b659c57e04d71c5c2601f8b5aada4355754f0bfcbfa1"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/scope_proposal.json",
+      "purpose": "V7 scope",
+      "sha256": "87d6c59aa3deb7250d797a2030799ef8e27e4c2b562ff3bd136616f27206b7e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/human_directive.txt",
+      "purpose": "V7 directive",
+      "sha256": "42208404f1e623b2c17091f74982009bb931f02078b20d7e60a9a7500e3e4e5f"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v7.deliberation.json",
+      "purpose": "V7 workflow",
+      "sha256": "b5770e63039e63d73ae9669b5ee8690b3da1930e058094f17ce0bd6c9debe6a3"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v7.deliberation.state.json",
+      "purpose": "V7 zero-attempt state",
+      "sha256": "a1f8030bc2ad756966cfff2d64d41a323a2d2ecf983b214ea508514eb6a2de09"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v7_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V7 negative preflight",
+      "sha256": "88a1deeb8c2ecaef1370c7206b35419cccadb114c280feffcf84faa15f513ec6"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v8_repeat_null_exact_closure_v1.md",
+      "purpose": "V8 repeat/null closure",
+      "sha256": "5c5321a7d208830a4f1c2fd5b04669ca56207e6403d57a68483954fe2057d597"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v8_source_authoring_candidate.md",
+      "purpose": "V8 candidate",
+      "sha256": "982d9790941587c9b0a8dbe7e1d6a43109d56539c73cccb3175ca0597fcf35fd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/source_authoring_plan.json",
+      "purpose": "V8 plan",
+      "sha256": "585b2fdcfac093625ec6d9a218d6271152073f8245d91c8ec6446d8928fc0ad8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/scope_proposal.json",
+      "purpose": "V8 scope",
+      "sha256": "5cc2bd31c64bdf2f4033fc3238f6d6125971766bbbee181439a472be9b059c15"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v8.deliberation.json",
+      "purpose": "V8 workflow",
+      "sha256": "cddddd008d5852669f7427d8df230cbb34ea918cf33d4797f3ef6c79a712a2cc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/human_directive.txt",
+      "purpose": "V8 directive",
+      "sha256": "09fc38b2a7ac12a1bb7dfe978bbec8f18361df4ddcc32f619e5b5cef7e7c0edd"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v8.deliberation.state.json",
+      "purpose": "V8 zero-attempt state",
+      "sha256": "d67651b3e03751f186034078dbb2bcbeea5c59d50d537324302e17e8d2b0c972"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v8_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V8 negative preflight",
+      "sha256": "e755fe6474f4a8303b96eb7a2073890507d492acc932e68e1b74b067a2c25828"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v9_binding_boundary_exact_closure_v1.md",
+      "purpose": "V9 governance repair",
+      "sha256": "a430f512c7bb987dd959be7a97edd6b83c58c4b205bdb32f9ad63697cd1a972d"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v9_source_authoring_candidate.md",
+      "purpose": "V9 candidate",
+      "sha256": "8a47d30909e0e171fe6dc1d6f92640fb7ed6d2bdab6642cabe57f91a5d549f59"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/source_authoring_plan.json",
+      "purpose": "V9 exact source plan",
+      "sha256": "00914dfd94ae5a6a8e9ed031e2f349fbc21711ed6bb5891fcd44699093260132"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/scope_proposal.json",
+      "purpose": "V9 scope",
+      "sha256": "e9f334b4c7e1c20312542e5f432b15590cd3c451faec2d305820c654e8cc58f7"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v9.deliberation.json",
+      "purpose": "V9 workflow",
+      "sha256": "ad3df5f8b8c54e8ff300f6502787f53f0395ed23eb701b8cf3ebd7fcafae724b"
+    }
+  ],
+  "critique_id": "chg_20260910_pcfl_m0_mtext_bound_v9.critique_fresh_iclr_v1",
+  "human_questions": [
+    "Does Rohin require the V9 change to register every inherited test -00 through -19 and -23 through -27 individually, or does he intend the eight V9 umbrella tests to replace them?",
+    "What exact D-entry JSON pointers and first-model-visible-return rules authorize h-dependent RAW_STATIC, RAG_DETERMINISTIC, and NATIVE_GRAPH_STATIC baseline content outside carrier slots a19 and l06?",
+    "What exact V9-specific SourceAuthoringGrantV1 schema validates the human grant, given the inherited literal V5 change IDs and V9's narrow precedence rule?",
+    "Must the authored carrier schemas and tests explicitly forbid complete A/B/D route scripts, final answers, target-indexed agendas, or parent-path objects even when such objects are goal-blind?",
+    "Will abandoned-branch nonrelease, visible saturated repeat state, and every memory-mode by prompt-command-parser combination receive distinct rendered-byte acceptance tests before model execution?",
+    "Does Rohin reaffirm that any V9 result remains supplied-memory, fixed-policy, fixed-topology evidence only, with online learning, LoRA transport, generalization, baseline saturation, recurrence, and lifetime improvement requiring separate causal packages?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v9.systems",
+      "sha256": "ba89443edf3a2efc390d749612e5194f526e1ad9a373d6430a7c391840de8a4d"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v9.benchmark",
+      "sha256": "e7cb51d8f6b412d01a7f0980b9ab7de388f7c3e77ed07af52ffa5f6f8237b0cb"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "M0V4-EXACT-SOURCE-RATIFIABILITY-00",
+    "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+    "M0V4-ACTOR-NONORACLE-03",
+    "M0V4-BUNDLED-READER-READ-CUT-04",
+    "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+    "M0V4-PROVENANCE-TRANSFORM-DAG-06",
+    "M0V4-CAS-TWO-FREEZE-DURABILITY-07",
+    "M0V4-CPU-CONFORMANCE-08",
+    "MTEXTV4-RENDERED-BOUNDARY-09",
+    "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+    "M0V5-DELAYED-ENTRY-OUTCOME-DESCENDANT-13",
+    "MTEXTV4-TARGET-ONLY-ALGEBRA-DECODING-14",
+    "MTEXTV4-CONDITION-PHASE-ENDPOINT-APPLICABILITY-17",
+    "MTEXTV4-CLAUSE-SPECIFIC-NEGATIVE-DISPOSITION-18",
+    "MTEXTV4-ROSTER-SLOT-ENVELOPE-23",
+    "MTEXTV4-PER-ARM-CHARGED-RESOURCE-VECTOR-24",
+    "MTEXTV4-RESOURCE-METER-NONOMISSION-25",
+    "M0V4-PROVENANCE-FINITE-ORDER-26",
+    "MTEXTV4-DELAYED-BASELINE-OUTCOME-DESCENDANT-29",
+    "M0V4-LOCAL-EDGE-NO-PREASSEMBLED-PATH-30",
+    "MTEXTV4-ABANDONED-BRANCH-NONRELEASE-31",
+    "MTEXTV4-REPEAT-STATE-POLICY-VISIBILITY-32",
+    "MTEXTV4-PROMPT-PROTOCOL-SCHEMA-CROSSPRODUCT-33",
+    "M0V4-V7-GUARD-EXCEPTION-NONEXPOSURE-34",
+    "FUTURE-PCFL-MULTITOPOLOGY-GENERALIZATION-21",
+    "FUTURE-PCFL-ONLINE-ACTION-OUTCOME-WRITE-ACTION-22",
+    "FUTURE-PCFL-TEXT-LORA-MATCHED-TRANSPORT-35",
+    "FUTURE-PCFL-RECALL-COMPOSITION-PLANNING-DECOMPOSITION-36",
+    "FUTURE-PCFL-LONGITUDINAL-ACTIVE-TEXT-PLATEAU-37"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "M0V5-SOURCE-AUTHORING-VS-PREPARATION-AUTHORITY-12",
+    "M0V5-HANDOFF-DELAYED-VISIBILITY-CLOSURE-28",
+    "M0V4-ZERO-V7-RUNTIME-REUSE-01",
+    "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+    "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+    "MTEXTV4-BASELINE-PUBLIC-PROJECTION-AND-RESET-19",
+    "M0V4-PROVENANCE-REVOCATION-CYCLE-27",
+    "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that V9 is a disciplined governance precursor, not a disguised learning result. It preserves the failed zero-attempt packets as negative evidence, binds a literal 24-row/23-member source plan, separates source authoring from preparation and all later execution, and retains unusually strong prospective controls for private-field leakage, fixed-algebra shortcuts, scorer noncausality, bridge and binding dependence, reset survival, deterministic baselines, provenance, resource accounting, and clause-specific claim limits. The intended future assay could provide useful within-suite evidence that one frozen policy used supplied local atoms and authenticated connections to compose and execute goal-dependent routes, separately used public calibration evidence, and used a supplied old-plus-new carrier after reset. The proposal also correctly denies DREAM authorship, LoRA transport, self-written persistence, online learning, retention, generalization, lifetime improvement, and whole-organism credit.",
+  "visibility_failures": [
+    "Delayed RAW_STATIC, RAG_DETERMINISTIC, and NATIVE_GRAPH_STATIC surfaces may contain h-dependent supplied new evidence outside the only registered a19/l06 D-entry divergence pointers.",
+    "The public start alias reveals k and therefore the relation-alias permutation, enabling fixed-algebra route decoding without memory.",
+    "A goal-blind producer can potentially expose all complete route scripts or final answers while still passing carrier-byte goal-swap tests.",
+    "No currently registered rendered-boundary test proves that abandoned thinker branches, sibling handles, retrieval histories, or failure traces cannot be released at join.",
+    "Repeat counters are specified in inherited prose, but the current acceptance registry lacks a dedicated proof that the saturated count is visible in every applicable policy-facing return and cannot be hidden in controller-only state.",
+    "The response protocol selects command variants, but the current acceptance registry lacks a complete memory-mode by prompt-fragment by parser-schema cross-product test.",
+    "Private V7 identities must appear in the governance boundary file, yet the proposed zero-V7 test does not restate the sole-guard exception and downstream nonexposure rule."
+  ]
+}
