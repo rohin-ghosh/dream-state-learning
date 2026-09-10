@@ -1,0 +1,487 @@
+{
+  "architecture_change_sha256": "14f06b70d594e6822a08ef5c58cea6df2215fe5717e9bef9edecbce480683b17",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260910_pcfl_core_clean_lineage_v1",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-02",
+        "PCFL-CPU-03",
+        "PCFL-CPU-04",
+        "PCFL-CPU-05",
+        "LINEAGE-01",
+        "LINEAGE-02",
+        "M-TEXT-01",
+        "E0-PREREQ-01",
+        "M-LORA-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-PCFL-001",
+      "evidence": "The proposal's human boundary explicitly leaves the relation algebra, link producer, GOALS_COMPLETE projection, shortcut balance law, uncertainty object, exposure unit, persistence rules, failure values, M/L/C margins, L plateau estimator, C accounting, source allowlist, isolation substrate, and blinding policy unresolved. Both interpretations independently identify these as outcome-changing ambiguities, while the acceptance tests refer to unspecified \u201cratified\u201d suites, gates, vectors, and packages. These bytes therefore define a staged architecture outline, not an exact executable contract whose scientific meaning is fixed.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Exact-byte ratification and implementation must not proceed while material benchmark, visibility, reducer, and estimand fields remain unset."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-02",
+        "PCFL-CPU-03",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-PCFL-002",
+      "evidence": "PCFL-CPU-02 says changing a private root or seed cannot change actor-visible bytes, but legitimate public outcomes must diverge after a separating action. Conversely, PCFL-CPU-01 does not explicitly require paired twins to have byte-identical visible prefixes, catalogs, costs, lengths, and non-target marginals before that action. The benchmark interpretation calls out this exact ambiguity. Without a history-conditioned noninterference definition, the test is either impossible after causal divergence or too weak before it.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind paired-world prefix indistinguishability and permit visible divergence only through a registered ordinary public consequence of an actor action."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-02",
+        "PCFL-CPU-03",
+        "PCFL-CPU-04",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-PCFL-003",
+      "evidence": "The visibility matrix permits the current goal to reach the compiler as derived data when a compiler specification admits it, while no exact query builder, agenda builder, candidate ordering, retrieval-key law, or target-independence test is supplied. A goal, future agenda, intervention, or scorer-derived hint can therefore be laundered into query anchors, row selection, padding, ordering, NOT_FOUND behavior, or recognition candidates without appearing as a forbidden answer field. Neither byte-diff testing nor equal carrier ledgers alone closes query-to-agenda answer laundering.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Add capability-level tests proving that goals and private schedules cannot influence carrier authorship, query agendas, retrieval ordering, candidate catalogs, or padding except through explicitly legal public anchors."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-03",
+        "M-TEXT-01"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-PCFL-004",
+      "evidence": "PCFL-CPU-03 requires A/B isolation followed by a \u201cratified public GOALS_COMPLETE projection,\u201d but those bytes are not present. The public journal may contain actions, outcomes, workspaces, or declarations from an abandoned probe. Nothing tests that private workspace, hidden correctness, partial plans, retrieval traces, branch order, or failure status from an abandoned thinker branch is unreleasable to the acquisition trunk or sibling probe.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Define the exact GOALS_COMPLETE join and prove that abandoned or sibling thinker branches release only the prebound public projection."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-03",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-PCFL-005",
+      "evidence": "The architecture's THINK read set names the finite view, goal/state, one memory return, public outcome, and workspace, but not a canonical repeat fingerprint, repeat count, last reset reason, or blocked-query state. Both interpretations assume repeat state exists, yet it is not bound by the proposal or acceptance tests. A repeated FOUND/NOT_FOUND query, replayed model response, or post-reset retry can thus be handled by hidden controller state invisible to the policy, changing the measured recurrence and failure semantics.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Make repeat and retry state explicit in the actor-visible schema and exhaustively test FOUND, NOT_FOUND, blocked, reset, and replay transitions."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-02",
+        "PCFL-CPU-03",
+        "M-TEXT-01",
+        "E0-PREREQ-01",
+        "M-LORA-01",
+        "L-BASELINE-01"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-PCFL-006",
+      "evidence": "No exact THINK, DREAM, reader, compiler, or action-output prompt and schema bytes are bound. Source context contains incompatible canonicalization precedents: the earlier PCFL bundle uses RFC-8785/JCS with NFC, while ACTIVE_TEXT_FIXED uses a custom sorted JSON encoding with NFKC. The change does not choose one contract or specify tokenizer/chat-template/parser bytes. A green phase or model test could therefore reflect a prompt/schema mismatch, alternate Unicode normalization, permissive parsing, or an unreceipted wrapper rather than the intended protocol.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind canonical encodings, prompts, chat templates, operation schemas, parsers, and golden fully rendered bytes before any model-facing acceptance test."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-04",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-PCFL-007",
+      "evidence": "The GroundedCarrierCompiler rationale permits \u201cDREAM/local connection proposals or deterministic compilation,\u201d and the human boundary admits that the link producer is unresolved. If a deterministic fixture or oracle-adjacent compiler authors authentic links, M measures a thinker using supplied annotations, not DREAM connecting the child's experience. Null, deranged, bridge, and twin controls establish dependence on the supplied structure but do not establish who produced it.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind one target-independent public-evidence link producer and restrict deterministic SLEEP to validation and rendering, or narrow the claim to use of externally supplied linked memory."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-03",
+        "PCFL-CPU-04",
+        "M-TEXT-01",
+        "E0-PREREQ-01",
+        "M-LORA-01"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-PCFL-008",
+      "evidence": "DREAM is said to propose before later independent public prediction support, and synthetic views are intended to add no evidence, but no acceptance test checks proposal-before-support chronology, root-equivalence deduplication, citation ancestry, revocation, duplicate-root inflation, or alias collapse before cycle detection. The earlier PCFL sources explicitly require valid shared-root diamonds to pass while cycles and duplicate-root support fail. Without that property, valid diamond/shared ancestry can be falsely rejected as a cycle, while paraphrases or compiler views can be miscounted as fresh evidence.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Add an explicit provenance-DAG suite covering chronological support, root deduplication, synthetic re-expression, aliases, legal diamonds, true cycles, descendant citations, and revocation."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-03",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-PCFL-009",
+      "evidence": "Root certificates prove that different A/B paths and bridges exist, but the behavioral tests do not require a mechanically valid dependency trace from goal/public state through newly retrieved or observed values to the decisive action. A correct terminal action can therefore receive relay credit from a pretrained answer prior, a copied plan, or one-shot retrieval. The prior PCFL design required dependency DAGs plus cut-atom masking and twin substitution; those requirements are absent here. Requiring the root generator or compiler to provide a single parent path would also demand structure from the wrong module instead of allowing a path to emerge through recurrent THINK iterations.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Separate legal path, answer, and shortcut scores; accept registered path-equivalence classes; and require counterfactual trace dependence before awarding composition credit."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-PCFL-010",
+      "evidence": "M-TEXT-01 compares authentic links with atoms, nulls, derangements, cuts, shams, reachout-off, old-cut, and no-write, but omits a recurrence-disabled fixed-query arm and honest no-memory, raw-context, episodic-RAG, native-graph, and organized-memory bypass baselines. L's later ACTIVE_TEXT_FIXED prerequisite cannot substitute for these M comparisons. Bridge dependence does not show that recurrent goal-conditioned composition is necessary or that a simpler memory path cannot solve the game.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Add recurrence removal and major bypass baselines using the same public evidence and declared resource envelopes."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "M-TEXT-01",
+        "M-LORA-01"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-PCFL-011",
+      "evidence": "M-TEXT-01 has one bundled expectation that authentic linked text \u201cclears\u201d relay gates. It does not separately require recall accuracy, transfer to fresh handles, constructive composition, plan validity, action success/regret, revision, information-seeking choice, realized information, or delayed retention. A condition can therefore pass through passive recall or terminal success while failing the intended composition or planning mechanism.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Create noncompensatory stage endpoints that distinguish recall, generalization, composition, planning, action improvement, revision, and retention."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-01",
+        "PCFL-CPU-04",
+        "M-TEXT-01"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-PCFL-012",
+      "evidence": "The authentic uncertainty object, truthful sham, candidate experiment set, action costs, outcome alphabet, tie handling, and information-gain calculation are all explicitly unresolved. A unique action form, lexical cue, cheaper action, or asymmetric outcome can identify the intended experiment without uncertainty-guided traversal. PCFL-CPU-04's carrier equivalence does not address action-set asymmetry.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind and balance the uncertainty assay and score experiment choice separately from realized information and later action value."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-04",
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-PCFL-013",
+      "evidence": "PCFL-CPU-04 matches admitted evidence and an unspecified exposure vector, while M-LORA-01 matches semantic rows. Neither equality separates visible channel, hidden retrieval computation, candidate catalog, capacity, index, prompt, decoder, training work, or thinker recurrence. Same semantics is not fixed memory, and equal return bytes do not equalize text, graph, and LoRA resources. C-CODEC-01 cannot retroactively make M a fixed-byte comparison.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Report and ablate text context, explicit graph state, reader/index computation, LoRA transport, and thinker computation as separate factors; do not imply fixed-memory or fixed-compute equivalence."
+    },
+    {
+      "acceptance_test_ids": [
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-PCFL-014",
+      "evidence": "M can establish at most one bounded sequence in which an action yields an outcome, a row is written, and a later goal benefits. L deliberately uses an outcome-independent exogenous opportunity tape so adaptive probes cannot change future experience. This is a valid longitudinal-use estimand, but it is not an ongoing on-policy action-experience flywheel and does not test whether better memory changes evidence acquisition that improves later memory and action.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Keep bounded M, exogenous L, and any on-policy flywheel as distinct claims, and add a separately ratified online-learning assay if the directive's action-experience loop remains a target."
+    },
+    {
+      "acceptance_test_ids": [
+        "L-BASELINE-01"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-PCFL-015",
+      "evidence": "L-BASELINE-01 certifies ACTIVE_TEXT_FIXED and a one-lineage plumbing canary only. It has no required outcome for baseline plateau equivalence, positive F late slope, positive F-minus-B slope advantage, retention, terminal practical superiority, or paired-lineage uncertainty. Both supplied interpretations agree that this test cannot release headline-eligible CLM-L.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Add a distinct L end-to-end acceptance test implementing every ordered noncompensatory CLM-L gate."
+    },
+    {
+      "acceptance_test_ids": [
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-PCFL-016",
+      "evidence": "The change binds no M root count, confirmation split size, effect margins, hierarchy, uncertainty method, multiplicity rule, or power criterion; no L lineage count, cut vector, covariance method, plateau equivalence margin, slope/retention/terminal margins; and no C root/load count or uncertainty rule. M-TEXT-01 is DEV-only, while M-LORA-01 merely requests a later package. Statements that gates \u201cclear\u201d are not statistically executable and allow post-hoc goalpost selection.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Prospectively bind sample sizes or sample-size rules, splits, margins, estimators, uncertainty, multiplicity, and stopping before claim-bearing execution."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-05",
+        "LINEAGE-01",
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-PCFL-017",
+      "evidence": "The visibility matrix forbids terminal results from reaching the controller, but no acceptance test attacks partial-root scores, runtime, output size, missing files, failures, retry decisions, root scheduling, or investigator-visible logs as feedback into later units. LINEAGE-01 prevents return to source/parent but does not mechanically prevent result-conditioned changes to a later plan, threshold, root set, or analysis. Sequential DEV-to-package promotion also needs disjoint frozen identities to avoid selecting only favorable roots.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind a complete confirmation decision DAG and add partial-result, retry, schedule, release, and post-hoc selection attacks."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-02",
+        "LINEAGE-01"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-PCFL-018",
+      "evidence": "The graph promises distinct process, session, RNG, cache, and store namespaces, but LINEAGE-01 only says to use separately permissioned fixtures. The exact authority, maximal readable sets, mount/open semantics, network policy, inherited descriptors, shared model/provider sessions, logs, timing, package discovery, and administrative boundary are unset. A manifest and source pre/post hash cannot show that undeclared inputs were unavailable or that a remote provider forgot prior roots.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Ratify an explicit OS/VM and session-isolation boundary, test ambient channels and direct-helper bypass, and narrow claims wherever provider, administrator, or human channels remain trusted."
+    },
+    {
+      "acceptance_test_ids": [
+        "LINEAGE-02"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-PCFL-019",
+      "evidence": "LINEAGE-02 names atomic advancement, crash injection, and exactly one expected-head winner, which is the correct target. However, the journal slots, conditional-update primitive, durability order, filesystem/database boundary, recovery algorithm, and treatment of staged unreachable blobs are not bound. An atomic rename alone is not compare-and-swap, as the supplied lineage review demonstrates.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Specify the concrete journal/CAS protocol and enumerate every durability boundary before treating LINEAGE-02 as deterministic."
+    },
+    {
+      "acceptance_test_ids": [
+        "E0-PREREQ-01",
+        "M-LORA-01"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-PCFL-020",
+      "evidence": "E0-PREREQ-01 delegates to a \u201cseparately ratified E0 assay,\u201d but no exact E0 artifact or hash is part of this bound context. Its writer, corpus roles, response mask, wrong-life/binding panels, preservation metrics, margins, failures, and reviewer receipt therefore cannot be audited here. A placeholder independent-review test is not itself an executable prerequisite.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind the exact E0 package and evidence hashes in a later approval before allowing E0 passage to unlock M-LORA-01."
+    },
+    {
+      "acceptance_test_ids": [
+        "C-CODEC-01"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-PCFL-021",
+      "evidence": "C-CODEC-01 appropriately requires a common public ledger and complete bytes/work, but it does not bind whether shared schema, decoder, generator, candidate universe, index, and prompt costs are standalone or amortized. Exact round-trip can be trivial if a decoder has free generator structure. Codec reconstruction error, model-interface utility, decoder-created false relations, and thinker-produced false memories are also not separated, and increasing loads within one root are repeated measures rather than scaling replications.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Bind standalone and amortized decoder/accounting rules, prohibit or charge generator access, and separate codec fidelity from model utility and false-memory endpoints."
+    },
+    {
+      "acceptance_test_ids": [
+        "M-TEXT-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "scalability",
+      "concern_id": "CRIT-PCFL-022",
+      "evidence": "M tests one old-plus-new relay, L currently has only a baseline/plumbing gate, and C varies representation load rather than developmental memory. No test requires multiple supported DREAM/SLEEP cuts, growing unique relation coverage, cross-era composition, path-depth variation, or a lifetime-length sweep. The finite source notes warn that a small relation universe saturates and cannot support intrinsic scaling or indefinite-improvement claims.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Add repeated within-life accumulation and factorized scale tests before making increasing-lifetime, accumulation, saturation, or scaling statements."
+    },
+    {
+      "acceptance_test_ids": [
+        "PCFL-CPU-05",
+        "M-TEXT-01",
+        "M-LORA-01",
+        "L-BASELINE-01",
+        "C-CODEC-01"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-PCFL-023",
+      "evidence": "The reducer and LoRA tests preserve adverse and failed cells, which is good, but the proposal does not bind complete negative-result interpretations for text failure, E0 failure, transport failure, baseline non-plateau, L slope failure, codec crossover failure, or confirmation failure. Nor does it state which claims are withdrawn versus converted to descriptive diagnostics. A green unit suite establishes software consistency only; it cannot rescue a failed scientific cell or authorize movement of a threshold.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "Prebind failure dispositions, mandatory reporting, claim withdrawal, and pivot boundaries so negative results cannot trigger silent goalpost movement."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_core_clean_lineage_v1/human_directive.txt",
+      "purpose": "Verbatim directive and scope.",
+      "sha256": "7764c321602926cf409952e4e2ce9a9e564762ad98491550010977b9d2b1cffb"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "Research governance contract.",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/46_pcfl_constructive_assay_v1.md",
+      "purpose": "PCFL assay rationale and controls.",
+      "sha256": "edea0eec794539a0ebc40536cab679d3f183586d2414fd5727b3b18cb1a743e1"
+    },
+    {
+      "path": "research_notes/47_pcfl_execution_bundle_v1.md",
+      "purpose": "Earlier exact PCFL execution proposal.",
+      "sha256": "1aa5d1206a58bc7b0b82da8830221dbe4d8704e485e3d1c2213f0721d0dc5959"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "M/L/C paper and claim boundaries.",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/coordination/20260910_compilergym_bootstrap_quarantine.md",
+      "purpose": "CompilerGym contamination quarantine.",
+      "sha256": "0394b08d1f08c5922236d149984bf795add68c9506eeb0863bff0c21b84bb4da"
+    },
+    {
+      "path": "research_loop/coordination/20260910_bootstrap_v3_unverified_provenance_quarantine.md",
+      "purpose": "Unknown-provenance bootstrap quarantine.",
+      "sha256": "329c042c4f7b59db27127c9ee3ceebc2519a644914813e7a96b1ef8db843a45c"
+    },
+    {
+      "path": "research_loop/plans/active_text_fixed_contract_v1.md",
+      "purpose": "ACTIVE_TEXT_FIXED contract.",
+      "sha256": "0fbb16b124f640c0adcecc46d2270a7ee11e6c63866885d56e3b0e3468ed09c7"
+    },
+    {
+      "path": "research_loop/plans/pcfl_core_clean_lineage_v1_adjudication_candidate.md",
+      "purpose": "Adjudication candidate.",
+      "sha256": "3eedb06218114ccae495ac8ab29fe38a0ac801a338eba32c92f77c267f1a09a6"
+    },
+    {
+      "path": "research_loop/advisory/20260909_active_goal_evidence_gap_matrix_v1.md",
+      "purpose": "Current evidence gaps.",
+      "sha256": "27f1ffb8b78ed65f70dd022c71f180fd24b3ffaf8f0522ec5b025e69d3138717"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_implementation_state_and_minimum_path_fresh_audit_v1.md",
+      "purpose": "Implementation-state audit.",
+      "sha256": "0e78fe49b65b2644d504b98bbeef91b84f9a5f10e305a43815ef964f35334676"
+    },
+    {
+      "path": "research_loop/advisory/20260910_clean_child_lineage_guard_v1.md",
+      "purpose": "Initial lineage-guard proposal.",
+      "sha256": "86ecc375bc9cd75a2555d57d15cbf74d3abbda31cd435a15954fd10a73746f48"
+    },
+    {
+      "path": "research_loop/advisory/20260910_clean_child_lineage_guard_v1_adversarial_review.md",
+      "purpose": "Adversarial lineage-guard review.",
+      "sha256": "e67a0e550f2d8083016d6755e7f839f0446c0220d40c2504c3c3c16c95efdb74"
+    },
+    {
+      "path": "research_loop/advisory/20260910_clean_child_lineage_guard_v2_repaired_boundary.md",
+      "purpose": "Repaired lineage boundary.",
+      "sha256": "04ededbd52c70436b7e507a383b1fd049e3790fdf5067af2fefce193a046a7ad"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_smallest_exact_executable_core_fresh_interpretation_v1.md",
+      "purpose": "Fresh executable-core interpretation.",
+      "sha256": "c8f3c78439ed124e1866500f21c388b5322417dc17cd2f9ef73c965f39501414"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_core_vs_clean_child_guard_v2_cross_critique_v1.md",
+      "purpose": "Core-versus-guard cross-critique.",
+      "sha256": "4ab2e7567a5ac5a2bcc809e23144087416311b219fcb2f8593153ef093094bbd"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_lineage_combined_surface_fresh_cross_critique_v1.md",
+      "purpose": "Combined-surface cross-critique.",
+      "sha256": "78c212d38e1f1408213343610dae83ade2a3e025c1a55dab80538aaaaf20a580"
+    }
+  ],
+  "critique_id": "crit_chg_20260910_pcfl_core_clean_lineage_v1_adversarial_v1",
+  "human_questions": [
+    "Will Rohin ratify only the staged architecture direction now, or wait for exact Stage-0 world, schema, reducer, and test bytes before authorizing implementation?",
+    "Who authors authentic links, under what finite relation algebra and grounding rule, and may deterministic compilation do anything beyond validating and rendering public-evidence-supported proposals?",
+    "What exact bytes cross GOALS_COMPLETE, and how are abandoned-branch workspace, retrieval, correctness, order, and failure signals proven absent?",
+    "What counts as a valid constructive path or path-equivalence class, and is causal trace masking/twin substitution mandatory for composition credit?",
+    "What are the exact uncertainty object, candidate actions, costs, outcome alphabet, tied separating set, and information-gain score?",
+    "What exposure vector and padding law are ratified, and are text-versus-LoRA results limited to same-semantics transport rather than fixed-memory or fixed-compute comparison?",
+    "What M root universe, DEV/confirmation split, margins, failure values, estimator, uncertainty, multiplicity, and release rule are approved?",
+    "Is L intentionally restricted to an exogenous learning stream, and what exact end-to-end plateau, slope, retention, terminal-margin, covariance, resource, and lineage-count contract will test CLM-L?",
+    "What C decoder/schema/index/prompt costs are standalone or amortized, what loads and disjoint roots are used, and how are codec errors separated from model false memories?",
+    "Which OS/VM, cache/session/RNG, network, provider, administrator, and release boundaries are accepted for LINEAGE-01, and is confirmation preregistered only or strictly human-blinded?",
+    "Does the paper retain an online action-experience flywheel claim target? If so, which separately ratified on-policy experiment tests memory-changing actions, acquired evidence, later consolidation, and subsequent action improvement?",
+    "What exact E0 artifact and hash will be accepted as the noncompensatory prerequisite for LoRA transport?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_core_clean_lineage_v1.systems",
+      "sha256": "6da6929b2edb20fb4c4e650187826840db0138f7748cff4ad9fcce5767deab55"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_core_clean_lineage_v1.benchmark",
+      "sha256": "66cabf9cab05836a6c99342fe72143f8b6f731caddc13ce06c85989a35c01194"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "PCFL-CPU-06: Paired-prefix byte indistinguishability and balanced goal/action/answer/template marginals until the registered separating action.",
+    "PCFL-CPU-07: Query-to-agenda noninterference covering anchors, candidate catalogs, retrieval ordering, padding, errors, and recognition backends.",
+    "PCFL-CPU-08: Provenance-DAG chronology and root-equivalence tests, including legal diamonds, alias collapse, true cycles, duplicate roots, descendant citations, revisions, and synthetic-view non-evidence.",
+    "PCFL-CPU-09: Abandoned-branch and GOALS_COMPLETE release test proving sibling/private workspace, scores, paths, and failure state cannot reach the trunk.",
+    "PCFL-CPU-10: Actor-visible repeat-state tests for repeated FOUND, NOT_FOUND, blocked operations, resets, response replay, and retry exhaustion.",
+    "PCFL-CPU-11: Golden canonical bytes for every prompt, chat template, schema, parser, compiler input, actor view, and Unicode normalization boundary.",
+    "PCFL-CPU-12: Constructive trace test using dependency validation, all-redundant-path masking, and counterfactual twin substitution before decisive actions.",
+    "M-DREAM-01: Link-authorship test showing target-independent child/DREAM proposals precede later independent public support and deterministic SLEEP does not invent semantics.",
+    "M-TEXT-02: Noncompensatory recall, transfer, composition, planning, action-regret, revision, information-selection, realized-information, and retention endpoints.",
+    "M-TEXT-03: Recurrence-disabled fixed-query, no-memory, honest raw-context, episodic-RAG, native-graph, and organized-memory bypass baselines.",
+    "M-TRANSPORT-FACTORIAL-01: Full text/reader/thinker/LoRA factorial with unaided LoRA read, common-reader conditions, capacity and work accounting, and fixed-budget sweeps if comparative efficiency is claimed.",
+    "M-ACCUMULATION-01: At least three within-life DREAM/SLEEP cuts with growing unique relations, old/new/cross-era targets, shuffled connectivity, depth, and lifetime-length interventions.",
+    "M-ONLINE-01: Separately ratified on-policy action-outcome-learning loop where memory changes acquired evidence and later consolidated memory improves subsequent action.",
+    "L-END-TO-END-01: Independent paired-lineage test enforcing baseline plateau equivalence, positive learner slope, positive slope advantage, retention, terminal margin, failures, and uncertainty in order.",
+    "CONFIRMATION-01: Frozen unit universe, result masking, partial-release denial, retry/stopping enforcement, split consumption, and post-hoc decision tests.",
+    "LINEAGE-03: Maximal-readable-set, ambient-channel, direct-helper, cross-session/cache, partial-result, and later-plan no-return attacks under the chosen isolation substrate.",
+    "E0-BIND-01: Exact-hash binding of the separately ratified E0 protocol, implementation, data roles, masks, margins, failures, and independent-review receipt.",
+    "C-CODEC-02: Standalone/amortized schema-decoder-index accounting, generator-denial, common-reader utility, decoder false-relation, and model false-memory separation.",
+    "NEGATIVE-RESULT-01: Mechanical claim withdrawal and mandatory-reporting dispositions for every failed or unrun M, E0, L, C, lineage, and confirmation gate."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "PCFL-CPU-01",
+    "PCFL-CPU-02",
+    "PCFL-CPU-03",
+    "PCFL-CPU-04",
+    "PCFL-CPU-05",
+    "LINEAGE-01",
+    "LINEAGE-02",
+    "M-TEXT-01",
+    "E0-PREREQ-01",
+    "M-LORA-01",
+    "L-BASELINE-01",
+    "C-CODEC-01"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest defensible case is a deliberately staged causal instrument: deterministic CPU certificates and role-separated views first establish only benchmark, visibility, intervention, reducer, and local-isolation properties; explicit text then tests whether the frozen recurrent organism can use the same grounded semantic ledger before any parametric claim; independently validated E0 and same-semantics LoRA controls can subsequently support a bounded root-specific transport result; L and C retain distinct independent units and narrow claims; and a read-only authenticated source with terminal root-local descendants prevents experimental learning from being promoted upstream. If the currently unset semantics, statistics, and isolation mechanisms are bound prospectively, authentic/null/deranged carriers, bridge and twin interventions, separating-action controls, old/new cuts, wrong-root controls, root-level reduction, an evolving text baseline, and complete codec accounting could jointly provide unusually strong falsifiers for a fixed-child mechanism relay without pretending that CPU passage proves learning, LoRA contains a graph, semantic transport is physical compression, or a manifest proves human/provider independence.",
+  "visibility_failures": [
+    "No exact paired-history noninterference rule distinguishes forbidden pre-action seed leakage from legitimate post-action public outcome divergence.",
+    "Current goals can reach compiler logic as derived data, but no query/agenda/candidate-order independence test prevents answer laundering.",
+    "The GOALS_COMPLETE join is referenced but not specified, leaving abandoned and sibling branch information release unclosed.",
+    "Repeat fingerprints, blocked-query state, and retry/reset reasons are not explicitly part of the bound actor view.",
+    "Exact prompt, chat-template, parser, tokenizer, and canonicalization bytes are absent, so the model-visible channel is not frozen.",
+    "Reader and recognition backends may use hidden candidate catalogs, rankings, or backend-specific state not covered by equal visible return bytes.",
+    "Separate permissions are asserted without a bound maximal-readable-set, network, file-descriptor, cache, session, timing, and provider isolation substrate.",
+    "Terminal-result visibility rules lack a test preventing partial scores, runtime, failures, or scheduling signals from changing later registered units or plans."
+  ]
+}

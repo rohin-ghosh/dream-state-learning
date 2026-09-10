@@ -1,0 +1,1082 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Retained as a structural gate; rework must add the missing paired-prefix, provenance, path-credit, and shortcut tests.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PCFL-CPU-01"
+    },
+    {
+      "rationale": "Retained as a role-boundary gate; rework must define history-conditioned noninterference and query/agenda channel tests.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PCFL-CPU-02"
+    },
+    {
+      "rationale": "Retained as a phase gate; rework must bind GOALS_COMPLETE, repeat/retry state, and provenance chronology.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PCFL-CPU-03"
+    },
+    {
+      "rationale": "Retained as a carrier gate; exposure, uncertainty, and complete resource factors remain unbound.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PCFL-CPU-04"
+    },
+    {
+      "rationale": "Retained as a root-unit reducer gate; exact failure and negative-result dispositions remain required.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "PCFL-CPU-05"
+    },
+    {
+      "rationale": "Retained for scoped source/descendant denial; the OS/session/provider authority boundary must be bound.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "LINEAGE-01"
+    },
+    {
+      "rationale": "Retained for local atomicity; the concrete journal/CAS and recovery protocol remain unbound.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "LINEAGE-02"
+    },
+    {
+      "rationale": "Retained as the DEV text relay gate; it does not cover the missing stage endpoints, recurrence, or bypass controls.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "M-TEXT-01"
+    },
+    {
+      "rationale": "Retained as a noncompensatory placeholder only; a later exact hash-bound E0 package is required.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "E0-PREREQ-01"
+    },
+    {
+      "rationale": "Retained as downstream same-semantics transport; it cannot establish fixed-memory or fixed-compute comparison.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "M-LORA-01"
+    },
+    {
+      "rationale": "Retained as baseline/plumbing certification only; it does not execute CLM-L's ordered end-to-end gates.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "L-BASELINE-01"
+    },
+    {
+      "rationale": "Retained as the C entry point; accounting, decoder-denial, and endpoint separations must be bound.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "C-CODEC-01"
+    }
+  ],
+  "agreements": [
+    "CPU passage can establish deterministic software, visibility, intervention, reducer, and scoped local-isolation properties only; it is not learning evidence.",
+    "M, L, and C require distinct independent units, reducers, artifacts, and claim boundaries.",
+    "Explicit-text M and an independently ratified E0 gate must precede any interpretable LoRA transport claim.",
+    "The clean source must remain read-only and experimental descendant state must not promote upstream.",
+    "L's shared exogenous opportunity tape supports a longitudinal-use estimand, not an on-policy action-experience flywheel.",
+    "C is a semantic-code rate--distortion experiment; LoRA is transport unless complete charged state crosses a measured physical-byte threshold.",
+    "Hashes and receipts authenticate scoped bytes and execution records but do not establish semantic target blindness, provider statelessness, administrator noninterference, or absence of human causal input."
+  ],
+  "architecture_change_sha256": "14f06b70d594e6822a08ef5c58cea6df2215fe5717e9bef9edecbce480683b17",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260910_pcfl_core_clean_lineage_v1",
+  "concern_dispositions": [
+    {
+      "concern_id": "CRIT-PCFL-001",
+      "rationale": "Accepted: the proposal expressly leaves outcome-changing fields unset, so no exact executable contract exists.",
+      "required_change": "Exact-byte ratification and implementation must not proceed while material benchmark, visibility, reducer, and estimand fields remain unset.",
+      "resolution_id": "D-EXACT-CONTRACT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-002",
+      "rationale": "Accepted: static private-byte wording conflicts with legitimate post-action public divergence.",
+      "required_change": "Bind paired-world prefix indistinguishability and permit visible divergence only through a registered ordinary public consequence of an actor action.",
+      "resolution_id": "DIS-PAIRED-INDISTINGUISHABILITY",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-003",
+      "rationale": "Accepted: derived goal visibility leaves carrier/query laundering untested.",
+      "required_change": "Add capability-level tests proving that goals and private schedules cannot influence carrier authorship, query agendas, retrieval ordering, candidate catalogs, or padding except through explicitly legal public anchors.",
+      "resolution_id": "D-QUERY-AGENDA",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-004",
+      "rationale": "Accepted: no exact join projection prevents assessment of abandoned-branch leakage.",
+      "required_change": "Define the exact GOALS_COMPLETE join and prove that abandoned or sibling thinker branches release only the prebound public projection.",
+      "resolution_id": "DIS-PHASE-EVIDENCE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-005",
+      "rationale": "Accepted: retry and repeat semantics are presently hidden controller behavior.",
+      "required_change": "Make repeat and retry state explicit in the actor-visible schema and exhaustively test FOUND, NOT_FOUND, blocked, reset, and replay transitions.",
+      "resolution_id": "D-REPEAT-STATE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-006",
+      "rationale": "Accepted: model-facing bytes are not frozen.",
+      "required_change": "Bind canonical encodings, prompts, chat templates, operation schemas, parsers, and golden fully rendered bytes before any model-facing acceptance test.",
+      "resolution_id": "D-CANONICAL-BYTES",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-007",
+      "rationale": "Accepted: unresolved producer makes DREAM authorship non-identifiable.",
+      "required_change": "Bind one target-independent public-evidence link producer and restrict deterministic SLEEP to validation and rendering, or narrow the claim to use of externally supplied linked memory.",
+      "resolution_id": "DIS-DREAM-AUTHORSHIP",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-008",
+      "rationale": "Accepted: chronology and root-equivalence provenance properties are not registered.",
+      "required_change": "Add an explicit provenance-DAG suite covering chronological support, root deduplication, synthetic re-expression, aliases, legal diamonds, true cycles, descendant citations, and revocation.",
+      "resolution_id": "D-PROVENANCE-DAG",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-009",
+      "rationale": "Accepted: certificates establish available paths, not behavioral causal use.",
+      "required_change": "Separate legal path, answer, and shortcut scores; accept registered path-equivalence classes; and require counterfactual trace dependence before awarding composition credit.",
+      "resolution_id": "D-PATH-CREDIT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-010",
+      "rationale": "Accepted: assigned-structure ablations do not establish recurrent necessity or comparative utility.",
+      "required_change": "Add recurrence removal and major bypass baselines using the same public evidence and declared resource envelopes.",
+      "resolution_id": "DIS-RECURRENCE-AND-BYPASS",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-011",
+      "rationale": "Accepted: a bundled relay gate permits passive-recall interpretations.",
+      "required_change": "Create noncompensatory stage endpoints that distinguish recall, generalization, composition, planning, action improvement, revision, and retention.",
+      "resolution_id": "D-STAGE-ENDPOINTS",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-012",
+      "rationale": "Accepted: the uncertainty assay remains an unbound source of action asymmetry.",
+      "required_change": "Bind and balance the uncertainty assay and score experiment choice separately from realized information and later action value.",
+      "resolution_id": "D-UNCERTAINTY-ASSAY",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-013",
+      "rationale": "Accepted: same semantics and visible-return matching do not equalize complete resource factors.",
+      "required_change": "Report and ablate text context, explicit graph state, reader/index computation, LoRA transport, and thinker computation as separate factors; do not imply fixed-memory or fixed-compute equivalence.",
+      "resolution_id": "DIS-FIXED-MEMORY-COMPARISON",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-014",
+      "rationale": "Accepted: bounded M and exogenous L are distinct from an ongoing adaptive acquisition loop.",
+      "required_change": "Keep bounded M, exogenous L, and any on-policy flywheel as distinct claims, and add a separately ratified online-learning assay if the directive's action-experience loop remains a target.",
+      "resolution_id": "DIS-ONLINE-AND-CONTINUED-IMPROVEMENT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-015",
+      "rationale": "Accepted: the sole L test is a prerequisite, not CLM-L evidence.",
+      "required_change": "Add a distinct L end-to-end acceptance test implementing every ordered noncompensatory CLM-L gate.",
+      "resolution_id": "DIS-L-MISSING-END-TO-END",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-016",
+      "rationale": "Accepted: no claim-bearing estimator or threshold policy is executable.",
+      "required_change": "Prospectively bind sample sizes or sample-size rules, splits, margins, estimators, uncertainty, multiplicity, and stopping before claim-bearing execution.",
+      "resolution_id": "D-STATISTICAL-CONTRACT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-017",
+      "rationale": "Accepted: lineage no-return does not close partial-result feedback into later units.",
+      "required_change": "Bind a complete confirmation decision DAG and add partial-result, retry, schedule, release, and post-hoc selection attacks.",
+      "resolution_id": "D-CONFIRMATION-FEEDBACK",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-018",
+      "rationale": "Accepted: permissions fixtures without a declared authority boundary cannot support the proposed scope.",
+      "required_change": "Ratify an explicit OS/VM and session-isolation boundary, test ambient channels and direct-helper bypass, and narrow claims wherever provider, administrator, or human channels remain trusted.",
+      "resolution_id": "DIS-GUARD-SCOPE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-019",
+      "rationale": "Accepted: atomic rename is not sufficient to define a conditional local commit.",
+      "required_change": "Specify the concrete journal/CAS protocol and enumerate every durability boundary before treating LINEAGE-02 as deterministic.",
+      "resolution_id": "D-JOURNAL-CAS",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-020",
+      "rationale": "Accepted: the exact independent prerequisite is absent from this hash-bound chain.",
+      "required_change": "Bind the exact E0 package and evidence hashes in a later approval before allowing E0 passage to unlock M-LORA-01.",
+      "resolution_id": "D-E0-BINDING",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-021",
+      "rationale": "Accepted: codec costs and distortion endpoints are underdetermined.",
+      "required_change": "Bind standalone and amortized decoder/accounting rules, prohibit or charge generator access, and separate codec fidelity from model utility and false-memory endpoints.",
+      "resolution_id": "D-CODEC-ACCOUNTING",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-022",
+      "rationale": "Accepted: neither M's one relay nor C's within-root loads establishes accumulation or developmental scale.",
+      "required_change": "Add repeated within-life accumulation and factorized scale tests before making increasing-lifetime, accumulation, saturation, or scaling statements.",
+      "resolution_id": "DIS-ACCUMULATION-SCALE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "CRIT-PCFL-023",
+      "rationale": "Accepted: adverse cell retention alone does not prebind the claim consequence of every failure.",
+      "required_change": "Prebind failure dispositions, mandatory reporting, claim withdrawal, and pivot boundaries so negative results cannot trigger silent goalpost movement.",
+      "resolution_id": "D-NEGATIVE-DISPOSITIONS",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "cons_chg_20260910_pcfl_core_clean_lineage_v1_rework_v1",
+  "critique_sha256": "28dfc5e866e53994a087474e5dfffc57972b73673a63b00564676c17113df40b",
+  "disagreements": [
+    {
+      "disagreement_id": "D-EXACT-CONTRACT",
+      "issue": "Whether the proposal is exact enough for implementation.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A staged architecture can be ratified while exact semantic and inferential fields are deferred."
+        },
+        {
+          "actor": "critique",
+          "position": "Unset fields change benchmark meaning and must be bound before implementation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-02",
+          "PCFL-CPU-03",
+          "PCFL-CPU-04",
+          "PCFL-CPU-05",
+          "LINEAGE-01",
+          "LINEAGE-02",
+          "M-TEXT-01",
+          "E0-PREREQ-01",
+          "M-LORA-01",
+          "L-BASELINE-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select rework: the current registry invokes ratified but absent contracts, so it cannot make a Stage-0 implementation exact.",
+        "required_change": "Bind all presently unset benchmark, visibility, reducer, estimand, isolation, and claim fields in a repaired hash-bound proposal.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "systems",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-PAIRED-INDISTINGUISHABILITY",
+      "issue": "Whether existing CPU wording closes pre-action paired-world shortcuts.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Private-byte noninterference and root certificates are sufficient."
+        },
+        {
+          "actor": "benchmark",
+          "position": "Prefix byte collision and balance laws must be explicit, with divergence only after a separating action."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-02"
+        ],
+        "rationale": "Select the benchmark position; the literal current noninterference condition is otherwise impossible or weak.",
+        "required_change": "Bind a history-conditioned prefix-collision and balance law.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-QUERY-AGENDA",
+      "issue": "Whether goal-derived compiler visibility can be safely left specification-dependent.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Compiler access is legal when admitted by its specification."
+        },
+        {
+          "actor": "critique",
+          "position": "Without an anchor and agenda law, target information can be laundered into carrier construction."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-02",
+          "PCFL-CPU-03",
+          "PCFL-CPU-04",
+          "M-TEXT-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind legal public anchors and test query-to-agenda noninterference.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-PHASE-EVIDENCE",
+      "issue": "What probe information may join the acquisition trunk.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A ratified public GOALS_COMPLETE projection is sufficient placeholder language."
+        },
+        {
+          "actor": "systems",
+          "position": "The exact public join and eligibility chronology must be bound."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-03",
+          "M-TEXT-01"
+        ],
+        "rationale": "Select the systems position to prevent either no usable evidence or branch leakage.",
+        "required_change": "Bind GOALS_COMPLETE bytes and excluded branch state.",
+        "selected_position": "systems",
+        "status": "resolved"
+      },
+      "sources": [
+        "systems",
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-REPEAT-STATE",
+      "issue": "Whether repeat/retry state can remain implicit.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The phase machine and root receipt suffice."
+        },
+        {
+          "actor": "critique",
+          "position": "Hidden repeat and reset state changes recurrence and failure semantics."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-03",
+          "M-TEXT-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind actor-visible repeat fingerprints, counts, blocks, reset reasons, and replay behavior.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "D-CANONICAL-BYTES",
+      "issue": "Whether model-facing encoding may be chosen later.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Canonical encodings are a later ratification item."
+        },
+        {
+          "actor": "critique",
+          "position": "Prompt, parser, tokenizer, and normalization ambiguity invalidates model-facing interpretation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-02",
+          "PCFL-CPU-03",
+          "M-TEXT-01",
+          "E0-PREREQ-01",
+          "M-LORA-01",
+          "L-BASELINE-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind one canonical encoding and golden rendered model-facing bytes.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-DREAM-AUTHORSHIP",
+      "issue": "Whether deterministic compilation may author authentic links.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "DREAM proposals or deterministic compilation may supply carriers."
+        },
+        {
+          "actor": "benchmark",
+          "position": "Oracle-adjacent compilation changes the estimand to use of supplied annotations."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-04",
+          "M-TEXT-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the benchmark position unless claims are narrowed.",
+        "required_change": "Bind a public-evidence DREAM producer or narrow the claim to supplied-memory use.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-PROVENANCE-DAG",
+      "issue": "Whether support provenance requirements are sufficiently specified.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Chronological support is described in loop prose."
+        },
+        {
+          "actor": "critique",
+          "position": "Diamonds, aliases, duplicate roots, cycles, and revocation need executable tests."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-03",
+          "M-TEXT-01",
+          "E0-PREREQ-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind provenance-DAG identities and the complete adversarial suite.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "D-PATH-CREDIT",
+      "issue": "Whether root certificates establish actual constructive use.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Different paths and necessary bridges certify the intended task."
+        },
+        {
+          "actor": "critique",
+          "position": "Behavior requires dependency traces and counterfactual masking before composition credit."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-03",
+          "M-TEXT-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind path-equivalence, trace-dependence, masking, and twin-substitution criteria.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-RECURRENCE-AND-BYPASS",
+      "issue": "Whether current M controls establish recurrent mechanism utility.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Bridge, twin, and carrier controls are adequate relay contrasts."
+        },
+        {
+          "actor": "benchmark",
+          "position": "Recurrence-disabled and major bypass baselines are required for that interpretation."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-TEXT-01"
+        ],
+        "rationale": "Select the benchmark position; no registered test currently supplies the required controls.",
+        "required_change": "Rework the proposal to register recurrence and bypass tests; do not infer them from M-TEXT-01.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-STAGE-ENDPOINTS",
+      "issue": "Whether one bundled M relay gate is mechanistically diagnostic.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A root-level relay gate can test the intended bundle."
+        },
+        {
+          "actor": "critique",
+          "position": "Recall, composition, planning, action, revision, information, and retention require noncompensatory endpoints."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-TEXT-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Register distinct noncompensatory endpoints before interpreting passage.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "D-UNCERTAINTY-ASSAY",
+      "issue": "Whether the separating-action assay is already identified.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Authentic versus sham uncertainty is named as a control."
+        },
+        {
+          "actor": "critique",
+          "position": "The object, action set, costs, outcomes, ties, and scoring are unresolved."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01",
+          "PCFL-CPU-04",
+          "M-TEXT-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind and balance the full uncertainty decision instrument.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-FIXED-MEMORY-COMPARISON",
+      "issue": "Whether same-semantics text/LoRA comparison is fixed-memory comparison.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Matched semantic rows and exposure support carrier attribution."
+        },
+        {
+          "actor": "benchmark",
+          "position": "They support transport only because complete bytes, work, and interfaces differ."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-LORA-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the benchmark position.",
+        "required_change": "Limit reporting to same-semantics transport unless a separately registered charged budget sweep exists.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-ONLINE-AND-CONTINUED-IMPROVEMENT",
+      "issue": "Whether M plus exogenous L establishes an action-experience flywheel.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The combined architecture describes recurrent later DREAM cycles."
+        },
+        {
+          "actor": "benchmark",
+          "position": "M is bounded and L deliberately removes adaptive acquisition effects."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-TEXT-01",
+          "M-LORA-01",
+          "L-BASELINE-01"
+        ],
+        "rationale": "Select the benchmark position.",
+        "required_change": "Keep these estimands separate and require a later ratified on-policy assay for flywheel claims.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-L-MISSING-END-TO-END",
+      "issue": "Whether L-BASELINE-01 supports CLM-L.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Baseline certification and plumbing are L prerequisites."
+        },
+        {
+          "actor": "benchmark",
+          "position": "No current test measures the ordered plateau, slope, retention, terminal, and uncertainty gates."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "L-BASELINE-01"
+        ],
+        "rationale": "Select the benchmark position; no registered acceptance test covers CLM-L.",
+        "required_change": "Rework with a new L end-to-end test; L-BASELINE-01 remains prerequisite only.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-STATISTICAL-CONTRACT",
+      "issue": "Whether future packages can supply all estimand rules after implementation.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Later packages can bind execution details."
+        },
+        {
+          "actor": "critique",
+          "position": "Current claim-bearing acceptance language has no prospectively executable inference contract."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-TEXT-01",
+          "M-LORA-01",
+          "L-BASELINE-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind split, units, margins, failures, estimators, uncertainty, multiplicity, and stopping before claim-bearing execution.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "D-CONFIRMATION-FEEDBACK",
+      "issue": "Whether no-return and terminal-result rows prevent result-conditioned selection.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Terminal results are forbidden to controller and upstream source."
+        },
+        {
+          "actor": "critique",
+          "position": "Partial metrics and operational signals can still alter future units and decisions."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-05",
+          "LINEAGE-01",
+          "M-TEXT-01",
+          "M-LORA-01",
+          "L-BASELINE-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind a confirmation decision DAG and attacks on partial-release and schedule feedback.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-GUARD-SCOPE",
+      "issue": "Whether the lineage surface belongs to the pure CPU kernel and what it enforces.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The combined graph includes broad lineage authority and role isolation."
+        },
+        {
+          "actor": "systems",
+          "position": "Keep a minimum claim-bearing guard separate from TEST_ONLY/DEV_NONCLAIM kernel work and state trust limits."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "LINEAGE-01",
+          "LINEAGE-02",
+          "PCFL-CPU-02"
+        ],
+        "rationale": "Select the systems position, but its authority substrate is still unbound.",
+        "required_change": "Rework with a scoped OS/process/session/cache/RNG authority boundary and explicit claim limits.",
+        "selected_position": "systems",
+        "status": "resolved"
+      },
+      "sources": [
+        "systems",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-JOURNAL-CAS",
+      "issue": "Whether stated atomicity is a complete transaction protocol.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Expected-head promotion and crash/race tests specify the desired property."
+        },
+        {
+          "actor": "critique",
+          "position": "Slots, CAS primitive, durability order, recovery, and unreachable blobs remain undefined."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "LINEAGE-02"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind the journal/CAS implementation contract and every crash boundary.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "systems"
+      ]
+    },
+    {
+      "disagreement_id": "D-E0-BINDING",
+      "issue": "Whether a referenced later E0 assay is an executable prerequisite in this proposal.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "E0 is independently ratified elsewhere and noncompensatory."
+        },
+        {
+          "actor": "critique",
+          "position": "No exact E0 artifact or hash is bound here, so its gate cannot be audited or unlocked."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "E0-PREREQ-01",
+          "M-LORA-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Require a later exact hash-bound E0 approval before any M-LORA-01 passage.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "D-CODEC-ACCOUNTING",
+      "issue": "Whether C-CODEC-01 fixes decoder cost and distortion semantics.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "It charges complete retained bytes and work."
+        },
+        {
+          "actor": "critique",
+          "position": "Standalone/amortized schema, decoder, generator, index, and endpoint separations remain unspecified."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind accounting, deny or charge generator access, and separate fidelity, utility, and false-memory endpoints.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-ACCUMULATION-SCALE",
+      "issue": "Whether the proposed M/L/C suite tests repeated within-life accumulation or scale.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "M has an old-plus-new relay, L has cuts, and C has ordered loads."
+        },
+        {
+          "actor": "benchmark",
+          "position": "Those are not repeated supported-edge accumulation, factorized developmental scale, or continued-improvement evidence."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "M-TEXT-01",
+          "L-BASELINE-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the benchmark position; no existing registered test covers the requested accumulation surface.",
+        "required_change": "Rework with repeated within-life accumulation and factorized scale tests before those claims.",
+        "selected_position": "benchmark",
+        "status": "resolved"
+      },
+      "sources": [
+        "benchmark",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "D-NEGATIVE-DISPOSITIONS",
+      "issue": "Whether adverse value retention fully constrains failed scientific cells.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Reducers retain prespecified adverse values."
+        },
+        {
+          "actor": "critique",
+          "position": "Claim withdrawal, reporting, and pivot consequences remain unbound across failures."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-05",
+          "M-TEXT-01",
+          "M-LORA-01",
+          "L-BASELINE-01",
+          "C-CODEC-01"
+        ],
+        "rationale": "Select the critique position.",
+        "required_change": "Bind mandatory reporting and claim-withdrawal dispositions for every failed or unrun gate.",
+        "selected_position": "critique",
+        "status": "resolved"
+      },
+      "sources": [
+        "critique",
+        "benchmark"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-CPU-CLAIM-WORDING",
+      "issue": "Whether CPU certificates can falsify or establish experiential use.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "CPU certificates are listed as falsifying M identifiability."
+        },
+        {
+          "actor": "systems",
+          "position": "They establish instrument preconditions, not actor use."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "PCFL-CPU-01"
+        ],
+        "rationale": "Select the systems position.",
+        "required_change": "Restrict CPU language to instrument and software properties.",
+        "selected_position": "systems",
+        "status": "resolved"
+      },
+      "sources": [
+        "systems",
+        "critique"
+      ]
+    },
+    {
+      "disagreement_id": "DIS-L-TERMINAL-LANGUAGE",
+      "issue": "Whether terminal descendants can persist local L state.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "All experiment learning is root-local and terminal."
+        },
+        {
+          "actor": "systems",
+          "position": "Terminal must mean upstream-terminal; L state persists across registered cuts."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "LINEAGE-02",
+          "L-BASELINE-01"
+        ],
+        "rationale": "Select the systems position.",
+        "required_change": "Define terminal as no upstream promotion, not no registered descendant persistence.",
+        "selected_position": "systems",
+        "status": "resolved"
+      },
+      "sources": [
+        "systems",
+        "critique"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Ratify a repaired exact proposal only after all required missing tests, semantics, isolation, and inferential contracts are hash-bound.",
+      "Decide whether the requested scientific scope is narrowed to a bounded supplied-memory/text relay or retains DREAM authorship, accumulation, L, fixed-budget, online, and confirmation claims requiring additional registered tests."
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_core_clean_lineage_v1.systems",
+      "sha256": "6da6929b2edb20fb4c4e650187826840db0138f7748cff4ad9fcce5767deab55"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_core_clean_lineage_v1.benchmark",
+      "sha256": "66cabf9cab05836a6c99342fe72143f8b6f731caddc13ce06c85989a35c01194"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "DIS-CPU-CLAIM-WORDING",
+      "rationale": "Accepted with narrowed CPU-only claim wording.",
+      "resolution_id": "DIS-CPU-CLAIM-WORDING",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-L-TERMINAL-LANGUAGE",
+      "rationale": "Accepted: upstream-terminal descendants may persist registered local state.",
+      "resolution_id": "DIS-L-TERMINAL-LANGUAGE",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-GUARD-SCOPE",
+      "rationale": "Partially accepted: a scoped guard is required, but its substrate remains a rework item.",
+      "resolution_id": "DIS-GUARD-SCOPE",
+      "status": "partially_accepted"
+    },
+    {
+      "disagreement_id": "DIS-PHASE-EVIDENCE",
+      "rationale": "Accepted; exact join and eligibility bytes are required.",
+      "resolution_id": "DIS-PHASE-EVIDENCE",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-PAIRED-INDISTINGUISHABILITY",
+      "rationale": "Accepted; prefix collision and balance law are required.",
+      "resolution_id": "DIS-PAIRED-INDISTINGUISHABILITY",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-DREAM-AUTHORSHIP",
+      "rationale": "Accepted; producer must be bound or claim narrowed.",
+      "resolution_id": "DIS-DREAM-AUTHORSHIP",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-RECURRENCE-AND-BYPASS",
+      "rationale": "Accepted; missing controls require proposal rework.",
+      "resolution_id": "DIS-RECURRENCE-AND-BYPASS",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-ACCUMULATION-SCALE",
+      "rationale": "Accepted; current tests do not support accumulation or scale claims.",
+      "resolution_id": "DIS-ACCUMULATION-SCALE",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-L-MISSING-END-TO-END",
+      "rationale": "Accepted; CLM-L has no registered end-to-end acceptance test.",
+      "resolution_id": "DIS-L-MISSING-END-TO-END",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-FIXED-MEMORY-COMPARISON",
+      "rationale": "Accepted; limit to same-semantics transport absent a charged budget sweep.",
+      "resolution_id": "DIS-FIXED-MEMORY-COMPARISON",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "DIS-ONLINE-AND-CONTINUED-IMPROVEMENT",
+      "rationale": "Accepted; preserve distinct bounded, exogenous, and future on-policy estimands.",
+      "resolution_id": "DIS-ONLINE-AND-CONTINUED-IMPROVEMENT",
+      "status": "accepted"
+    }
+  ]
+}

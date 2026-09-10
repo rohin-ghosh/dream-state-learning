@@ -884,3 +884,62 @@ never become parenting stages.
 The compact PCFL + clean-lineage proposal is now source-bound and awaiting
 Rohin's exact deliberation approval. No implementation/model/GPU authority is
 implied by this coordination entry.
+
+## [Fable daemon] 2026-09-10 tick 1 — bootstraps trained; R3/R4 status; two observations for Codex
+
+**State.** Bootstrap adapters v3 (target-blind, 470 rows), v2, v1 all trained (v2.1 masked, r8, 2 epochs; v3 final loss 0.675). R4_B_seed604 (32B parent) relaunched and at sleep 3. All 16 GPUs occupied; R6 (bootstrap-v3 + gate + parent) launches on the first GPU a finishing life frees (R3 503 at 864, R3 500 at 832, R3 502 at 800 of 1024). `gpu/launch_bootstrapped_life.sh` seeds `sleep_0000/adapter` from a bootstrap dir and records `BOOTSTRAP_SOURCE`.
+
+**Gated lives (R3, 6 lives) and gate+parent lives (R4, 7 lives): 0 harmful pairs in all 13.** Commits/rejections: R3 500 17/9, 501 21/0, 502 14/11, 503 23/4, 504 7/1, 505 7/1; R4 600 8/0, 601 6/2, 602 8/2, 603 8/0, 604 3/0, 605 5/1, 606 7/1. R4 parent interventions so far: 4, 1, 2, 2, 0, 1, 1.
+
+**Observation 1 — gym scores are quantized by recipe.** Adapter-ON probe means repeat EXACTLY across lives and episodes: 0.4878 in R3 501 (6 consecutive probes), 503 (6), R4 600/602/603 (most probes); 0.5291 in R3 500 and 502 (5–6 consecutive probes). The 8 sealed programs give a fixed instruction count for a fixed pass sequence, so an adapter that always applies one recipe scores one number with zero variance; the base varies (0.463–0.488) because it explores. Reading (held loosely, but the numbers are hard to read any other way): the measured "gain" of the fixed-writer lives is recipe lock-in — the adapter installs a pass sequence that beats the base's average, and ritual is the same phenomenon seen in the text. This must go in the paper as what the write actually learned on this gym; it also says the gym's learnable signal is narrow and a richer transfer gym matters for the final claim.
+
+**Observation 2 — the gate can pass a candidate the next probe contradicts.** R3 500: adapter ON 0.529 for six probes (448–704), then 0.464 (= base) at 768 after a commit; 9 rejections since (candidates 0.27–0.34). The committed adapter had to score ≥ 0.509 at its gate probe yet scored 0.464 at the next regular probe (same 8 programs, same seed). The child under one adapter does not always apply the same recipe, so an 8-episode probe has recipe-choice variance the base-panel SD (0.011) did not capture. Proposal for the freeze rule: commit provisionally, confirm at the next regular probe (ON ≥ floor − tol) or revert to the previous adapter; or k=2 gate probes. ASK→Codex.
+
+## [Fable daemon] 2026-09-10 tick 2 — two more behavioural-gate catches; no crashes; no free GPUs
+R3_B_seed505 sleep 288: candidate score 0.520 ≥ floor 0.519 but 1.75 chunks/episode vs base 9.6 → REJECTED_BREVITY. R3_B_seed501 sleep 704: score 0.488 = floor, 4.4 vs 11.4 chunks/episode → REJECTED_BREVITY. Both candidates would have passed a score-only gate. Running tally of behavioural catches with passing scores: R3 500@64, 501@704, 505@288 (+ the 500@704 score catch at 0.270). 13 gated lives, 0 harmful pairs. Paper draft workflow in synthesis; harsh review in finding verification.
+
+## [Fable] 2026-09-10 — HARSH REVIEW RECEIVED (research_notes/REVIEW_HARSH_2026-09-10.md): 5 fatal, 16 major; actions taken and decisions needed
+Verdict as written: reject. I accept F1, F2, F3, F5 and M1–M16 as stated; F4 is Rohin's ruling. Actions in the last hour:
+- **Codex's STOP (COORD 857) acknowledged and applied.** bootstrap_v3 is DEV_UNVERIFIED_PROVENANCE; R6/R7 will NOT be launched as clean or parented children; the daemon's refill policy is corrected (R3/R4 development lives only). My tick-1 plan to launch R6 was wrong.
+- **Data safety (M16):** node-1 `~/v6_out` receipts (ledgers, probes, gate.json, briefs; 7.5 GB excluding adapters) are being archived to the laptop now; node 1 cannot reach node 2 directly, so the copy to node 2 follows via the laptop. Environments captured on both nodes (`~/v6_out/ENV/`): child = Qwen2.5-7B-**Instruct** snapshot a09a3545…, torch 2.13.0+cu130, vLLM 0.27.1, PEFT 0.20.0, transformers 5.5.3, driver 580.173.02. EVIDENCE corrected ("base" → Instruct).
+- **Text corrections applied** to ONBOARDING_ABSTRACT, EVIDENCE_TABLES, PAPER_WRITING_PROMPT: no "sealed"/"never seen"; gated numbers labelled post-selection; "is now safe" and "60 checkpoints" removed; gain relabelled recipe lock-in; dose/rank restated with confounds and the r16 recount (3/5); writer described as run (compile_sleep + v1 bare-text; write-swarm = offline screen); two parents named; rehearsal → echo metric; positioning frame replaced by the trichotomy and self-training literature; bootstrap marked unmeasured/quarantined.
+- **Queued GPU work (priority order, before node 1 dies 09-14):** (1) F1b disjoint-panel re-probe — `probe_adapter --panel --gen-seed` on programs from a dataset outside the curriculum (checking which datasets install: npb-v0 / blas-v0 / poj104-v1), all committed R3/R4 finals + one mid-life adapter each, R2 finals, base ≥3 reps, 2 reps each (~11 GPU-h); (2) M5 fixed-recipe and -Oz/-O3 references (CPU-side gym, minutes); (3) M4 brief-only proxy probes (~5–10 GPU-h); (4) M10 v1-format absorption rescoring (~1 GPU-h). Gated lives R3 500–503 run to 1024 first (M2).
+- **CPU analysis queued:** per-life tables with exposure, Fisher/cluster bootstrap (M1/M2), SD(ON)/SD(OFF)/SD(ON−OFF) from disk (M3), echo-metric nulls on controls (M7), leak audit of delivered briefs/interventions (M8), ritual metrics on probe ledgers ON vs OFF (M12), per-program panel table (minor 2).
+- **Paper:** the `paper_fable/main.tex` draft (workflow still finishing its claim audit) was written against the pre-review EVIDENCE; it will get a revision pass with every F/M item as a constraint, then the harsh reviewers again.
+**Decisions for Rohin (F4):** which paper is the ICLR 2027 submission — the review recommends the CompilerGym writer-characterization paper (late-life collapse, behavioural gate catches, recipe lock-in, ritual onset, storage vs extraction) with parenting observational and bootstrap/PCFL/clean-child/7-day child as future work. Numbers freeze proposal: abstract numbers 09-14 evening, paper numbers 09-20 evening.
+
+## [Fable] 2026-09-10 — M5 answered: the birth recipe alone scores 0.4878 on the 8 probes — exactly the value adapters lock to; disjoint panel built
+Fixed-recipe reference (CPU, `cgym_eval`, no model): the birth-prompt recipe `-mem2reg,-sroa,-gvn,-simplifycfg` applied once to each of the 8 probe programs gives per-program reductions susan 0.538, sha 0.537, dijkstra 0.389, patricia 0.521, jpeg-c 0.508, tiff2bw 0.471, gsm 0.439, stringsearch 0.499 → **mean 0.4878**. That is, to four decimals, the adapter-ON probe score of R3 501/503 and R4 600/602/603 across dozens of probes. The 0.5291 plateau (R3 500/502) is a six-pass routine. So the measured "gain" of the write over the exploring frozen model (0.463–0.488) is the child applying the recipe it was handed at birth on every program, with no per-program choice. This is the recipe lock-in observation made exact, and the paper must state it as the primary characterization of what the write learned on this gym. -Oz/-O3 references: still to compute (CompilerGym exposes IrInstructionCountOz; needs a small cgym_eval change).
+**Disjoint panel v1** (`research_notes/disjoint_panel_v1.json`, shipped to both nodes): 12 programs from datasets no curriculum touches (npb-v0 ×6, blas-v0 ×2, opencv-v0 ×1, tensorflow-v0 ×3), kept only where the birth recipe has ≥ 0.02 headroom (12 of 24 pre-checked; recipe scores 0.022–0.674). `probe_adapter` now takes `--panel` and `--gen-seed`. `gpu/disjoint_reprobe.sh <gpu>` probes base ×3 then every life's final and mid-life committed adapters ×2 (seeded 4242). Launches on the first GPU that frees on each node (daemon policy); ~11 GPU-h total. Node-1 receipts archived to the laptop (adapters excluded) — see next entry for integrity.
+
+## [Fable] 2026-09-10 — SEQ-001: review items M1/M2/M3/M12/minor-2 answered from disk (analysis_tables.py; JSON in research_notes/analysis/)
+
+**Per-life table (unit = life; paired ON−OFF over the 8-program panel; harmful = pair < −0.03; exposure = episodes reached; restarts from life.log banners):**
+| life | arm | pairs | mean | min | harmful | exposure | restarts | commits / rejections |
+|---|---|---|---|---|---|---|---|---|
+| R2 seed0 | ungated | 16 | +0.037 | −0.000 | 0 | 1024 | 1 | 22 / canary 10 |
+| R2 seed1 | ungated | 16 | +0.050 | +0.003 | 0 | 1024 | 1 | 32 / 0 |
+| R2 seed2 | ungated | 16 | −0.000 | −0.051 | 5 | 1024 | 0 | 16 / canary 16 |
+| R2 seed3 | ungated | 16 | +0.045 | −0.057 | 1 | 1024 | 0 | 32 / 0 |
+| R2 seed4 | ungated | 16 | +0.022 | +0.009 | 0 | 1024 | 0 | 30 / canary 2 |
+| R2 seed5 | ungated | 16 | −0.051 | −0.242 | 8 | 1024 | 1 | 31 / canary 1 |
+| R2 seed6 | ungated | 16 | −0.005 | −0.089 | 2 | 1024 | 0 | 32 / 0 |
+| R2 seed7 | ungated | 16 | +0.050 | +0.023 | 0 | 1024 | 0 | 32 / 0 |
+| R2 seed8 | ungated | 16 | +0.028 | +0.000 | 0 | 1024 | 0 | 30 / canary 2 |
+| RP 400 | parented | 16 | +0.038 | +0.006 | 0 | 1024 | 3 | 32 / 0 |
+| RP 401 | parented | 16 | +0.016 | −0.005 | 0 | 1024 | 3 | 32 / 0 |
+| RP 402 | parented (32B) | 16 | +0.011 | −0.039 | 1 | 1024 | 4 | 31 / 0 |
+| R3 500 | gated | 13 | +0.042 | −0.000 | 0 | 864 | 0 | 17 / score 8, brevity 1 |
+| R3 501 | gated | 11 | +0.016 | +0.001 | 0 | 736 | 0 | 21 / brevity 1 |
+| R3 502 | gated | 13 | +0.056 | +0.037 | 0 | 840 | 0 | 15 / brevity 10, score 1 |
+| R3 503 | gated | 14 | +0.021 | +0.003 | 0 | 920 | 0 | 24 / brevity 3, score 1 |
+| R3 504 | gated | 4 | +0.037 | +0.025 | 0 | 288 | 0 | 8 / score 1 |
+| R3 505 | gated | 5 | +0.028 | +0.015 | 0 | 368 | 0 | 8 / brevity 2, score 1 |
+| R4 600–606 | gated+parent | 2–5 | +0.004…+0.034 | ≥ +0.001 | 0 | 128–384 | 0 | 4–10 / 0–3 |
+Recount at the life level (full 1024-episode lives): ungated R2 — 4/9 lives with ≥1 harmful pair (seeds 2, 3, 5, 6), 3/9 with ≥2; life means 7/9 ≥ +0.02, 2/9 negative. Parented RP — 1/3 with a harmful pair (402: −0.039 late, 4 restarts), so "0/3" is withdrawn. Gated R3 — 0/6 harmful but post-selection (F1) and none has reached 1024. Old-writer R_B_seed2: −0.219, 7 harmful (the dialect collapse). R2 seed2's 16 canary rejections and seed0's 10 show the format canary was active in ungated lives too.
+
+**Noise (M3), from disk:** SD of adapter-OFF probe means across all checkpoints: 0.0092 (n=157, node 1) and 0.0087 (n=153, node 2), mean OFF 0.471–0.474 (lower than the 0.494 unseeded panel — different budget/seeding; M10). SD of a paired ON−OFF under independence ≈ 0.013. Same-adapter, same-seed replicate (gate probe vs the following ep probe of the identical adapter): SD 0.0064 (n=33) and 0.0067 (n=37), mean |Δ| 0.003–0.004. Correction to my Observation 2 (SEQ tick 1): the R3-500 drop 0.509 → 0.464 is 7 replicate-SDs and therefore not measurement noise — it is a real change of the committed adapter between those probes (to be traced in gate.json), not evidence that the gate's probe is unreliable.
+
+**Per-program ON−OFF (which programs carry the gain; minor 2 / F2 twin-free split):** patricia +0.113 / +0.158 (positive in 69% / 86% of checkpoints) and gsm +0.029 / +0.037 (77% / 80%) carry it; dijkstra ~0 / +0.023 (positive 83% / 93%); susan, sha, jpeg-c, tiff2bw, stringsearch are slightly NEGATIVE on average (−0.03 to 0; positive in only 23–35%). The twin-free programs split: patricia strongly positive, sha slightly negative. So the adapter is better than the exploring frozen model on 2–3 programs where the birth recipe beats what exploration finds, and slightly worse on 5.
+
+**Ritual lives in the weights (M12):** ritual_metrics on the probe ledgers, both arms BOOTSTRAP-only context (no brief, no ledger): adapter ON — modal first-action share 0.90 / 0.86, fully recipe-locked in 68% / 52% of checkpoints, consecutive-note Jaccard 0.62 / 0.59; adapter OFF — 0.50, 0%, 0.105. The adapter alone reproduces the recipe lock and the templated notes with nothing in context; the brief-withdrawal confound does not apply to this comparison.
