@@ -118,11 +118,28 @@ _ANSWER_PATTERNS = [
 ]
 
 
-def leak_scan(text: str, extra_terms: list[str] | None = None) -> list[str]:
+def leak_scan(text: str, extra_terms: list[str] | None = None,
+              exact_terms: list[str] | None = None) -> list[str]:
     """Return matched forbidden patterns (empty = clean). Applied to every
     parent utterance before it reaches the child; matches are logged and the
-    utterance is replaced with a process-only fallback."""
+    utterance is replaced with a process-only fallback.
+
+    extra_terms: hidden answers / rules — matched exactly AND by content-word
+    paraphrase. exact_terms (2026-09-10, the gym's leak terms: held-out
+    program ids, held-out puzzle families and their labels, reference
+    answers of the episodes in the window): matched as whitespace-normalised
+    case-insensitive substrings only (a label such as "Zebra logic puzzle"
+    must not make every brief that says "logic" fall back); terms shorter
+    than 4 characters are ignored. Default None for both = today's scan."""
     hits = [p for p in _ANSWER_PATTERNS if re.search(p, text, re.I)]
+    if exact_terms:
+        norm = re.sub(r"\s+", " ", text.lower())
+        for t in exact_terms:
+            t2 = re.sub(r"\s+", " ", str(t or "").lower()).strip()
+            if len(t2) >= 4 and t2 in norm:
+                h = f"term:{t2[:40]}"
+                if h not in hits:
+                    hits.append(h)
     for t in (extra_terms or []):
         if not t:
             continue

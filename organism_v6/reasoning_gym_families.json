@@ -1,0 +1,37 @@
+{
+ "name": "reasoning_gym_split_v1",
+ "created": "2026-09-10",
+ "package": "reasoning-gym==0.1.25",
+ "purpose": "Split ledger for the reasoning-gym adapter (GYM_SURVEY_v1 C5). Families are reasoning-gym generator names; the three family groups are DISJOINT and the exam families never appear in train, gate or canary. Seed ranges are disjoint too, so even a family that appears in two roles (none does) could not share an instance. Target-blind: nothing code- or compiler-like (see excluded).",
+ "train_families": ["countdown", "mini_sudoku", "futoshiki", "knights_knaves", "arc_1d", "sokoban", "kakurasu"],
+ "gate_families": ["n_queens", "tower_of_hanoi"],
+ "exam_families": ["zebra_puzzles", "acre", "rush_hour"],
+ "excluded_families": ["codeio", "list_functions", "bitwise_arithmetic", "binary_matrix", "binary_alternation", "isomorphic_strings", "power_function", "string_manipulation", "string_insertion", "string_splitting", "string_synthesis", "word_ladder", "decimal_chain_sum", "cryptarithm"],
+ "excluded_reason": "codeio and list_functions carry program vocabulary (GYM_SURVEY_v1 C5 caveat); the bitwise/string-manipulation generators read as code; kept out so the childhood stays target-blind for the compiler deployment gym.",
+ "seed_ranges": {
+  "train": [1000000, 1900000],
+  "canary": [1900000, 1900100],
+  "gate": [2000000, 2100000],
+  "exam": [3000000, 3100000]
+ },
+ "canary_set": ["rg/countdown/1900001", "rg/mini_sudoku/1900002", "rg/knights_knaves/1900003", "rg/arc_1d/1900004"],
+ "gate_set": ["rg/n_queens/2000001", "rg/n_queens/2000002", "rg/n_queens/2000003", "rg/n_queens/2000004", "rg/n_queens/2000005", "rg/n_queens/2000006", "rg/tower_of_hanoi/2000001", "rg/tower_of_hanoi/2000002", "rg/tower_of_hanoi/2000003", "rg/tower_of_hanoi/2000004", "rg/tower_of_hanoi/2000005", "rg/tower_of_hanoi/2000006"],
+ "exam_set": ["rg/zebra_puzzles/3000001", "rg/zebra_puzzles/3000002", "rg/zebra_puzzles/3000003", "rg/zebra_puzzles/3000004", "rg/acre/3000001", "rg/acre/3000002", "rg/acre/3000003", "rg/acre/3000004", "rg/rush_hour/3000001", "rg/rush_hour/3000002", "rg/rush_hour/3000003", "rg/rush_hour/3000004"],
+ "train_listing_per_family": 64,
+ "partial_credit_families": ["futoshiki", "mini_sudoku", "arc_1d", "countdown", "acre"],
+ "simulation_verified_families": ["rush_hour", "sokoban"],
+ "family_labels": {
+  "countdown": "Countdown arithmetic",
+  "mini_sudoku": "4x4 mini sudoku",
+  "futoshiki": "Futoshiki inequality grid",
+  "knights_knaves": "Knights and knaves",
+  "arc_1d": "1-D grid rule induction",
+  "sokoban": "Sokoban",
+  "kakurasu": "Kakurasu weighted sums",
+  "n_queens": "N-queens completion",
+  "tower_of_hanoi": "Tower of Hanoi",
+  "zebra_puzzles": "Zebra logic puzzle",
+  "acre": "Blicket causal induction",
+  "rush_hour": "Rush Hour"
+ }
+}

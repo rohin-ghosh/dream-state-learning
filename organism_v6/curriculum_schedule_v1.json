@@ -1,0 +1,43 @@
+{
+ "name": "childhood_schedule_v1_draft",
+ "created": "2026-09-10",
+ "revised": "2026-09-10 (review): reasoning_gym-only shares — the deployment gym (compiler) is the unseen final test (IDEAS 2026-09-10 late, Decision 1) and never a childhood environment; stage 2's vacuous family_accuracy_min 0.0 removed until a frozen noise band exists",
+ "status": "DRAFT for Rohin's signature (design 3.8 uses LockGym / rule game v2; the only trait gym built today is reasoning_gym, so every stage names it; a gym missing from a stage's shares plays min_batches)",
+ "notes": "Shares are WAKE BATCHES per clone per round (sleep); a clone plays shares[gym] * wake_batch episodes per round (4 x 8 = 32, today's --sleep-every). Exit criteria are computed and LOGGED at every sleep from the stage's last window_sleeps sleeps (curriculum.exit_check); they are NOT enforced yet. Stage 2's accuracy criterion (design: 1 - Brier up by >= 1 band SD) needs the D1 frozen-model band and is deliberately absent from this draft.",
+ "min_batches": 1,
+ "stages": [
+  {
+   "name": "1_persistence",
+   "sleeps": 8,
+   "trait": "keep working a hard problem; re-plan after failure; many changing attempts; never quit early",
+   "shares": {"reasoning_gym": 4},
+   "exit": {
+    "window_sleeps": 4,
+    "actions_per_situation_ratio_min": 0.7,
+    "attempts_after_nonimproving_min": 2.0,
+    "brevity_rejections_max": 0
+   }
+  },
+  {
+   "name": "2_prediction_calibration",
+   "sleeps": 4,
+   "trait": "predictions tied to a named feature; honest confidence; surprise treated as evidence",
+   "shares": {"reasoning_gym": 4},
+   "exit": {
+    "window_sleeps": 4,
+    "predict_sd_min": 0.05
+   }
+  },
+  {
+   "name": "3_exploration",
+   "sleeps": 4,
+   "trait": "one deliberate deviation when the default has repeated; change the hypothesis when the evidence contradicts it",
+   "shares": {"reasoning_gym": 4},
+   "exit": {
+    "window_sleeps": 4,
+    "first_action_js_min": 0.15,
+    "score_rejections_max": 0
+   }
+  }
+ ]
+}

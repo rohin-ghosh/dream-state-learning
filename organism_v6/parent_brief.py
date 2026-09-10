@@ -20,6 +20,8 @@ import statistics
 
 from .parent_backend import PARENT_BOOT, ParentLedger, ServerParent, \
     leak_scan, FALLBACK
+from .reflection import REFLECTION_RULE, reflection_texts, \
+    reflection_violations
 
 _ACT = re.compile(r"^ACT:\s*(.+)$", re.M)
 _PRED = re.compile(r"^PREDICT:\s*([0-9.]+)", re.M)
@@ -162,7 +164,9 @@ _PROMPT = (PARENT_BOOT + "\n\n=== WHY YOU ARE BEING CALLED ===\nYour child's "
            "which one.\n"
            "Process only. Never name specific actions, tools, passes, options, or "
            "answers. Speak to the child directly, concretely, in its own terms.\n"
-           "{previous}")
+           "{previous}{reflection_rule}")
+# {reflection_rule} renders EMPTY unless the ledger holds private reflection
+# rows (--reflect-every): the prompt is byte-identical for every other life.
 
 _PREV_BLOCK = ("=== YOUR PREVIOUS BRIEF TO THIS CHILD ===\n{prev}\n=== END ===\n"
                "Since that brief, the child restated your lesson at the start of "
@@ -189,9 +193,13 @@ def _already_childs(hit: str, text: str, samples: str) -> bool:
 
 def parent_brief(life_dir: str, rows: list[dict], sleep_dir: str,
                  parent_url: str, model_name: str,
-                 last_episodes: int = 32) -> dict:
+                 last_episodes: int = 32, *,
+                 extra_leak_terms: list | None = None) -> dict:
     """Measure ritual; if flagged, ask the parent for a better pattern and
-    write it to <sleep_dir>/parent_brief.txt. Idempotent per sleep."""
+    write it to <sleep_dir>/parent_brief.txt. Idempotent per sleep.
+    extra_leak_terms (2026-09-10): the gym's leak terms (held-out ids /
+    families, reference answers of the window) scanned as exact substrings on
+    top of the fixed patterns; default None = today's scan."""
     out = os.path.join(sleep_dir, "parent_brief.txt")
     meta_p = os.path.join(sleep_dir, "parent_brief.json")
     if os.path.exists(meta_p):
@@ -211,6 +219,10 @@ def parent_brief(life_dir: str, rows: list[dict], sleep_dir: str,
                                                last_episodes), 3)
     meta = dict(metrics=m, intervened=False, text=None, hits=None,
                 prompt_version=PROMPT_VERSION)
+    # private reflection rows are visible to the parent (it reads the ledger)
+    # but never quoted, graded, mentioned or answered; only their COUNT is
+    # recorded in the parent ledger
+    refl = reflection_texts(rows)
     if m.get("ritual"):
         th = [r["note"] for r in rows if r.get("kind") == "thought"
               and r.get("note")][-400:]
@@ -224,14 +236,20 @@ def parent_brief(life_dir: str, rows: list[dict], sleep_dir: str,
         text = parent._chat(_PROMPT.format(n=m["n_episodes"],
                                            metrics=json.dumps(m),
                                            samples=samples,
-                                           previous=previous),
+                                           previous=previous,
+                                           reflection_rule=(
+                                               "\n" + REFLECTION_RULE + "\n"
+                                               if refl else "")),
                             max_tokens=320, temperature=0.4)
         # A term the child ALREADY uses in its own sampled thinking is not a
         # leak when the parent quotes it back (the gym-token pattern otherwise
         # blocks every brief that names the child's own ritual recipe —
         # observed 2026-09-10: v3 briefs on the gym fell back).
-        hits = [h for h in leak_scan(text)
+        hits = [h for h in leak_scan(text, exact_terms=extra_leak_terms)
                 if not _already_childs(h, text, samples)]
+        # quote / paraphrase / mention of a private reflection: hit labels
+        # carry counts only, never reflection text (they are logged)
+        hits += reflection_violations(text, refl, samples)
         if hits:
             text = FALLBACK
         text = text.strip() + REHEARSAL_TAIL
@@ -242,10 +260,12 @@ def parent_brief(life_dir: str, rows: list[dict], sleep_dir: str,
         ledger.append(kind="thinking_pattern", source="parent",
                       child_stage=os.path.basename(sleep_dir),
                       metrics=m, hits=hits, text=text[:1900],
-                      prompt_version=PROMPT_VERSION, parent_model=model_name)
+                      prompt_version=PROMPT_VERSION, parent_model=model_name,
+                      n_reflection_rows_visible=len(refl))
     else:
         ledger.append(kind="ritual_check", source="harness",
-                      child_stage=os.path.basename(sleep_dir), metrics=m)
+                      child_stage=os.path.basename(sleep_dir), metrics=m,
+                      n_reflection_rows_visible=len(refl))
     with open(meta_p, "w") as f:
         json.dump(meta, f, indent=1)
     return meta

@@ -32,8 +32,20 @@ HARD RULES (each is enforced in code, not only asked of the model)
                          society note passes `parent_backend.leak_scan` (with
                          `parent_brief`'s quote-back exemption: a phrase the
                          child itself keeps writing may be quoted back to name
-                         its ritual). Any hit -> the fixed process-only
-                         FALLBACK is delivered instead.
+                         its ritual) plus the GYM's leak terms — held-out ids
+                         or families and the window's reference answers,
+                         passed by run_life_v2 as exact substrings, never
+                         excused by quote-back. Any hit -> the fixed
+                         process-only FALLBACK is delivered instead.
+  private reflections    Rows of kind 'reflection' may be read (tool
+                         `reflections`, shown only when they exist) but never
+                         quoted, paraphrased or mentioned: reflection.
+                         reflection_violations (unicode-normalised 6-gram
+                         quote, >= 4 unshared content words of one row, any
+                         mention) -> FALLBACK for the brief; critiques,
+                         evidence and society notes are redacted before they
+                         are logged; the parent ledger records only the
+                         COUNT of visible reflection rows.
   blind to the exam      The parent may read the child's ledger, ritual /
                          rehearsal / efficiency metrics, GATE-panel decisions,
                          prior briefs, the parental ledger and the other
@@ -155,6 +167,8 @@ from .parent_brief import (ritual_metrics, rehearsal_rate, episode_instances,
                            REHEARSAL_TAIL, _already_childs,
                            PROMPT_VERSION as BRIEF_PROMPT_VERSION)
 from . import efficiency_markers
+from .reflection import (REFLECTION_RULE, reflection_texts as _reflection_texts,
+                         reflection_violations, scrub_reflections)
 
 PROMPT_VERSION = "agentic-v1.1-2026-09-10"   # v1.1: critics see the evidence
 MOVES = ("repeat", "sharpen", "advance", "reset")
@@ -856,6 +870,11 @@ class ChildView:
                          {}),
         "list_files": ("the files of the life directory that you may read "
                        "(everything else is hidden by design)", {}),
+        # listed in the prompt ONLY when reflection rows exist (system_prompt)
+        "reflections": ("PRIVATE: the child's last N reflection rows, written "
+                        "between sessions with no task and no score. Read to "
+                        "understand the child; NEVER quote, grade, mention or "
+                        "respond to them", {"n": "int (default 4, max 12)"}),
     }
 
     def __init__(self, life_dir: str, rows=None, sleep_dir=None,
@@ -1101,6 +1120,25 @@ class ChildView:
                     return f"[{d}]\n" + t[:6000]
         return "(no waking brief yet)"
 
+    # -- private reflection rows (2026-09-10) -----------------------------------
+    def reflection_texts(self) -> list:
+        return _reflection_texts(self.rows)
+
+    def n_reflections(self) -> int:
+        return len(self.reflection_texts())
+
+    def reflections(self, n: int = 4) -> str:
+        """The child's private reflections. Deliberately NOT appended to
+        samples_seen: the quote-back exemption of the leak scan must never
+        excuse a quoted reflection (validate_output rejects it)."""
+        n = max(1, min(int(n or 4), 12))
+        texts = self.reflection_texts()[-n:]
+        if not texts:
+            return "(no reflection rows)"
+        head = ("PRIVATE REFLECTION ROWS — read only. Never quote, grade, "
+                "mention or respond to them.\n")
+        return head + "\n---\n".join(t[:1500] for t in texts)
+
     # -- dispatch ----------------------------------------------------------
     def call(self, name: str, args=None) -> str:
         """Run a tool; returns redacted, bounded text. Unknown tool or a
@@ -1208,11 +1246,16 @@ def _strip_tail(brief: str) -> str:
     return brief[:i] if i >= 0 else brief
 
 
-def validate_output(obj, samples: str, evidence_default=None) -> dict:
+def validate_output(obj, samples: str, evidence_default=None,
+                    reflections=None, exact_terms=None) -> dict:
     """Normalize a model's final object or return fallback_output(). The
-    brief is strict (present, <= 10 lines, no leak, no identifier); the
-    frontier estimate and the move are lenient (defaulted, but leak-scanned
-    when present); the society note is optional and dropped if it fails."""
+    brief is strict (present, <= 10 lines, no leak, no identifier, no quote /
+    paraphrase / mention of any private reflection row — reflection.
+    reflection_violations); the frontier estimate and the move are lenient
+    (defaulted, but scanned when present); the society note is optional and
+    dropped if it fails; evidence entries that fail any scan are dropped
+    (they are logged to the parent ledger). exact_terms: the gym's leak
+    terms (held-out ids / families, window answers), exact substrings."""
     if not isinstance(obj, dict):
         return fallback_output("final object missing or not JSON")
     if isinstance(obj.get("final"), dict):
@@ -1250,17 +1293,29 @@ def validate_output(obj, samples: str, evidence_default=None) -> dict:
     note = obj.get("society_note")
     note = str(note).strip()[:240] if isinstance(note, str) and note.strip() \
         else None
+    refl = list(reflections or [])
     # --- scans: any hit anywhere in the delivered or logged text -> fallback
     scanned = "\n".join([body, fe["text"], cm["reason"]])
-    hits = [h for h in leak_scan(scanned) if not _already_childs(h, scanned,
-                                                                 samples)]
+    hits = [h for h in leak_scan(scanned, exact_terms=exact_terms)
+            if not _already_childs(h, scanned, samples)]
     if hits:
         return fallback_output("leak_scan", hits)
     ids = identifier_scan(scanned)
     if ids:
         return fallback_output("identifier_scan", ids)
-    if note and (leak_scan(note) or identifier_scan(note)):
+    # a quoted, paraphrased or mentioned private reflection falls back
+    # exactly like a leak hit (hit labels carry counts, never content)
+    rq = reflection_violations(scanned, refl, samples)
+    if rq:
+        return fallback_output("reflection_quote", rq)
+    if note and (leak_scan(note, exact_terms=exact_terms) or identifier_scan(note)
+                 or reflection_violations(note, refl, samples)):
         note = None
+    # evidence is logged to the parent ledger: an entry that quotes a
+    # reflection, leaks or names an identifier is dropped, never written
+    ev = [e for e in ev if not (leak_scan(e, exact_terms=exact_terms)
+                                or identifier_scan(e)
+                                or reflection_violations(e, refl, samples))]
     return dict(brief=body, delivered_text=body + REHEARSAL_TAIL,
                 frontier_estimate=fe, curriculum_move=cm, evidence=ev,
                 society_note=note, fallback=False, fallback_reason=None,
@@ -1270,19 +1325,26 @@ def validate_output(obj, samples: str, evidence_default=None) -> dict:
 # ---------------------------------------------------------------------------
 # prompts
 # ---------------------------------------------------------------------------
-def _tool_lines() -> str:
+def _tool_lines(include_reflections: bool = False) -> str:
     out = []
     for name, (desc, args) in ChildView.TOOLS.items():
+        if name == "reflections" and not include_reflections:
+            continue
         a = ", ".join(f"{k}: {v}" for k, v in args.items()) or "no arguments"
         out.append(f"- {name}({a}): {desc}")
     return "\n".join(out)
 
 
 def system_prompt(role: str, n_parents: int, window: int,
-                  max_tool_calls: int) -> str:
+                  max_tool_calls: int, n_reflections: int = 0) -> str:
     room = ("one of TWO parents in this room; the other parent will critique "
             "your brief and you will critique theirs before ONE merged brief "
             "is delivered" if n_parents > 1 else "the only parent in this room")
+    # rule 9 and the reflections tool appear ONLY when the child has private
+    # reflection rows; every other life's prompt is byte-identical
+    reflection_block = (f"\n9. {REFLECTION_RULE} ({n_reflections} reflection "
+                        f"rows are visible through the reflections tool.)"
+                        if n_reflections else "")
     return (PARENT_BOOT + f"""
 
 === THE ROOM (agentic parent harness {PROMPT_VERSION}) ===
@@ -1317,7 +1379,7 @@ process-only fallback, which teaches nothing):
 7. No hostnames, addresses, paths, user names or keys anywhere in your output.
 8. Speak to the child directly, concretely, in its own terms; at most
    {MAX_BRIEF_LINES} lines. The harness appends the standard rehearsal request
-   to every brief — do not write it yourself.
+   to every brief — do not write it yourself.{reflection_block}
 
 FRONTIER ESTIMATE (your core organ): what the child can ALMOST do after
 working through this lesson — post-adaptation, not immediately — in 1-3 lines,
@@ -1330,7 +1392,7 @@ without evidence of gains, choose reset.
 
 TOOLS (at most {max_tool_calls} calls; results are truncated; the dashboard
 you receive already has the basics — ledger_tail is usually essential):
-{_tool_lines()}
+{_tool_lines(bool(n_reflections))}
 
 PROTOCOL: reply with exactly ONE JSON object and nothing else.
   tool call: {{"tool": "<name>", "args": {{...}}}}
@@ -1462,7 +1524,7 @@ class ParentAgent:
     def _opening(self, view: ChildView, context: dict, n_parents: int) -> list:
         return [dict(role="system", content=system_prompt(
             self.cfg.role, n_parents, context.get("window") or 32,
-            self.max_tool_calls)),
+            self.max_tool_calls, n_reflections=view.n_reflections())),
             dict(role="user", content=dashboard(view, context))]
 
     def propose(self, view: ChildView, context: dict, n_parents: int) -> dict:
@@ -1501,7 +1563,8 @@ class ParentAgent:
                             or "(empty reply)")))
                         result = validate_output(
                             extract_json(reply), "\n".join(view.samples_seen),
-                            tool_log)
+                            tool_log, reflections=view.reflection_texts(),
+                            exact_terms=context.get("leak_terms"))
                         break
                     name = str(obj.get("tool"))
                     args = obj.get("args") if isinstance(obj.get("args"), dict) \
@@ -1513,7 +1576,9 @@ class ParentAgent:
                         f"TOOL RESULT {name}:\n{out}")))
                     continue
                 result = validate_output(obj, "\n".join(view.samples_seen),
-                                         tool_log)
+                                         tool_log,
+                                         reflections=view.reflection_texts(),
+                                         exact_terms=context.get("leak_terms"))
                 break
         except RoomDeadline as e:
             error = str(e)
@@ -1580,7 +1645,13 @@ class ParentAgent:
             obj = dict(verdict="unparsed", raw=reply[:1500])
         obj["by"] = self.cfg.role
         obj["verdict"] = str(obj.get("verdict") or "unparsed").lower()
-        return safe_obj(obj)
+        obj = safe_obj(obj)
+        # the critique is logged to the parent ledger: a field that quotes,
+        # paraphrases or mentions a private reflection is redacted here
+        if view is not None:
+            obj = scrub_reflections(obj, view.reflection_texts(),
+                                    "\n".join(view.samples_seen))
+        return obj
 
     def merge(self, view: ChildView, context: dict, a: dict, b: dict,
               crit_a: dict, crit_b: dict, n_parents: int) -> dict:
@@ -1599,7 +1670,8 @@ class ParentAgent:
         ev = list(dict.fromkeys((a.get("evidence") or []) +
                                 (b.get("evidence") or [])))
         return validate_output(extract_json(reply), "\n".join(view.samples_seen),
-                               ev)
+                               ev, reflections=view.reflection_texts(),
+                               exact_terms=context.get("leak_terms"))
 
 
 # ---------------------------------------------------------------------------
@@ -1787,19 +1859,28 @@ def log_room(view: ChildView, result: dict, metrics: dict,
     playbook. All text is secret-masked and identifier-redacted; the shared
     society files are written under a lock. A room that died (result has
     `error`) additionally gets a `room_error` row in the child's ledger."""
-    merged = _compact_proposal(result["merged"])
+    # defence in depth for the private-reflection invariant: nothing written
+    # to a ledger may carry reflection text (critiques, evidence, notes,
+    # error strings) — the count is the only thing recorded
+    refl = view.reflection_texts()
+    shown = "\n".join(view.samples_seen)
+    merged = scrub_reflections(_compact_proposal(result["merged"]), refl, shown)
     row = dict(kind="agentic_room", source="parent_room",
                child_stage=view.stage, prompt_version=PROMPT_VERSION,
                brief_prompt_version=BRIEF_PROMPT_VERSION,
                parents=result["parents"],
-               proposals={r: _compact_proposal(p)
+               proposals={r: scrub_reflections(_compact_proposal(p), refl, shown)
                           for r, p in result["proposals"].items()},
-               critiques=result["critiques"], merged=merged,
+               critiques=scrub_reflections(result["critiques"], refl, shown),
+               merged=merged,
                text=result["delivered"][:1900], hits=result["hits"],
                fallback=result["fallback"], exchanges=result["exchanges"],
                skipped=result.get("skipped") or [],
                elapsed_s=result.get("elapsed_s"),
-               metrics=_compact_metrics(metrics))
+               metrics=_compact_metrics(metrics),
+               # how many private reflection rows the room could see — the
+               # count only, never their content
+               n_reflection_rows_visible=view.n_reflections())
     if result.get("error"):
         row["error"] = result["error"]
     row = safe_obj(json.loads(json.dumps(row, default=str)))
@@ -1881,7 +1962,7 @@ def append_playbook_note(society_dir: str, line: str, max_lines: int = 80,
 def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
                          parent_url, model_name, last_episodes: int = 32,
                          *, room=None, society_dir=None, ledger_dir=None,
-                         out_dir=None) -> dict:
+                         out_dir=None, extra_leak_terms=None) -> dict:
     """Drop-in for parent_brief.parent_brief (run_life_v2 --parent-mode
     agentic). Measures ritual/rehearsal exactly as the baseline does, runs the
     ParentRoom, writes <sleep_dir>/parent_brief.txt (the child reads it at the
@@ -1928,7 +2009,11 @@ def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
                                                            model_name))
         parents = room.public_parents()
         context = dict(child_id=view.child_id, stage=view.stage, metrics=m,
-                       prev_brief=prev_text, window=last_episodes)
+                       prev_brief=prev_text, window=last_episodes,
+                       # the gym's leak terms (held-out ids / families and
+                       # the window's reference answers): exact-substring
+                       # hits in any delivered text -> FALLBACK
+                       leak_terms=list(extra_leak_terms or []))
         result = room.run(view, context)
     except Exception as e:  # noqa: BLE001 — the room must never kill the life
         result = room_error_result(mask_secrets(

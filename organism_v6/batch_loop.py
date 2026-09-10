@@ -95,6 +95,25 @@ class EpisodeDriver:
                     ticks=self.st.tick, notes=list(self.st.notes))
 
 
+class NoEndTokenDriver(EpisodeDriver):
+    """A gym that offers no end token (reasoning_gym, 2026-09-10): a DONE the
+    child writes anyway is ignored — the situation runs to its tick budget.
+    Everything else (marker parsing, ledger rows) is EpisodeDriver's."""
+
+    def consume(self, chunk: str) -> None:
+        super().consume(chunk)
+        if self.st.tick < self.st.budget_ticks:
+            self.done = False
+
+
+def driver_class_for(gym):
+    """EpisodeDriver unless the gym says it offers no end token."""
+    offers = getattr(gym, "offers_end_token", None)
+    if callable(offers) and not offers():
+        return NoEndTokenDriver
+    return EpisodeDriver
+
+
 def _seed_for(eid: str, tick: int, base: int) -> int:
     import zlib
     return (zlib.crc32(f"{eid}/{tick}".encode()) ^ base) & 0x7fffffff
@@ -102,12 +121,15 @@ def _seed_for(eid: str, tick: int, base: int) -> int:
 
 def run_episodes_batch(model, gym, episodes, bootstrap: str, ledger: Ledger,
                        budget_ticks: int = 24, log=print,
-                       gen_seed: int | None = None) -> list[dict]:
+                       gen_seed: int | None = None,
+                       driver_cls=EpisodeDriver) -> list[dict]:
     """Drive all episodes to completion in lockstep batched rounds.
     gen_seed: common-random seeding — chunk seeds derive from
     (episode_id, tick, gen_seed), so paired arms/probes with the same
-    gen_seed face identical randomness."""
-    drivers = [EpisodeDriver(e, bootstrap, gym, ledger, budget_ticks)
+    gen_seed face identical randomness.
+    driver_cls (2026-09-10): EpisodeDriver by default (unchanged behaviour);
+    NoEndTokenDriver for gyms without an end token."""
+    drivers = [driver_cls(e, bootstrap, gym, ledger, budget_ticks)
                for e in episodes]
     while True:
         active = [d for d in drivers if not d.done]
