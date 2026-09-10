@@ -1,0 +1,771 @@
+{
+  "acceptance_tests": [
+    {
+      "evidence_artifact": "Hash-bound V4 source-manifest and normative-contract receipt",
+      "expected": "Every semantic table, schema, inert preparation-source byte, checker source, mutation fixture, runtime manifest, roster, endpoint rule, and prohibition is listed by exact path and SHA-256 before any preparation-source authorization.",
+      "falsifies": "That an implementer may resolve an outcome-changing V4 choice, source byte, or test after deliberation.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Validate the closed normative source manifest against the complete V4 contract; reject placeholders, globs, directory digests, omitted source bytes, and V3-domain objects.",
+      "test_id": "M0V4-EXACT-SOURCE-RATIFIABILITY-00"
+    },
+    {
+      "evidence_artifact": "Zero-V7 dependency and oracle-firewall receipt",
+      "expected": "PCFL preparation, checkers, fixtures, runtime, tests, handoff, and actor projections have no import, read, subprocess, copied constant, oracle, golden, receipt, or output edge to FeltCraft V7.",
+      "falsifies": "Clean-room V4 or the claim that a governance citation can safely become a runtime dependency.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Static capability/import/read-path scan plus injected V7 dependency, hash, output, and golden mutations.",
+      "test_id": "M0V4-ZERO-V7-RUNTIME-REUSE-01"
+    },
+    {
+      "evidence_artifact": "Two-checker lineage, mutation-bank, and candidate-manifest receipt",
+      "expected": "Disjoint constructive and axiomatic checkers, authored before candidate visibility, independently reconstruct/check the frozen 64-root algebra and reject a mutation for every closed semantic field and accepted V2 concern class.",
+      "falsifies": "That one materializer or two shared-assumption checkers establish semantic validity.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "After separately authorized deterministic preparation only; checkers share frozen schemas and standard-library primitives only.",
+      "test_id": "M0V4-DISJOINT-CHECKER-AND-MUTATION-02"
+    },
+    {
+      "evidence_artifact": "Actor-surface conformance receipt",
+      "expected": "V4 rejects V3 objects; semantic/root/support hashes never reach actor bytes; fixed action catalogs are non-oracular; catalogued wrong relations yield charged NO_EFFECT; premature finish yields ordinary WRONG_FINISH; and public capability handles are the only reader/dependency authority.",
+      "falsifies": "Version collision, legal-action oracle leakage, hidden semantic IDs, or instrument-invalidating ordinary policy mistakes.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Exhaustively mutate public/private identity substitutions, action catalogs, command forms, NO_EFFECT, WRONG_FINISH, and failure-precedence cases.",
+      "test_id": "M0V4-ACTOR-NONORACLE-03"
+    },
+    {
+      "evidence_artifact": "Bundled-reader completeness and ATOMS-capability-closure receipt",
+      "expected": "Across all 64 roots, goals, probe orders, rotations, and registered transforms, AUTH yields a complete registered path within eight pre-action reads; ATOMS cannot expose a middle-path atom or readable link before the first action; and the first successful or NO_EFFECT relation attempt closes reading.",
+      "falsifies": "That AUTH is unreadable within budget or that atom-only memory can crawl the graph and bypass the connection intervention.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Exhaustively enumerate NODE/ATOM/LINK cursor returns, grants, capability closure, reader-open transitions, replay state, and read-cut mutations.",
+      "test_id": "M0V4-BUNDLED-READER-READ-CUT-04"
+    },
+    {
+      "evidence_artifact": "Visibility, join, reset, and agenda noninterference receipt",
+      "expected": "Twins are byte-identical through the first separating ordinary outcome; public cursor order depends only on permitted reader arguments; joins exclude abandoned branch material; resets preserve only registered carrier state; and private fields cannot affect actor-visible views, returns, rendered handoff payloads, or legal commands.",
+      "falsifies": "Goal/query laundering, branch leakage, hidden repeat state, residual-session delayed answers, or private-state covert channels.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "Mutate goals, hidden bits, transforms, scores, routes, catalog order, padding, errors, timing, receipts, branch state, caches, session fields, and reset survivors; later repeat over fully rendered bytes under separately frozen M-TEXT.",
+      "test_id": "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05"
+    },
+    {
+      "evidence_artifact": "Provenance, transform-locality, and checkpoint-DAG receipt",
+      "expected": "SYNTH proposals occupy total post-event positions; support is chronological, independently later grounded, root-deduplicated, alias-normalized, cycle-safe, contradiction/revocation-aware, and never created by a carrier transform. EMPTY is endpoint- and identity-null; NO_PERSIST_NEW, old/new cuts, bridge cut, derangement, twin redirect, uncertainty sham, and reachout-off alter only allowlisted fields.",
+      "falsifies": "Synthetic evidence laundering, truthful-null adjacency leakage, illegal diamond rejection, cycle acceptance, cross-condition contamination, or nonlocal interventions.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Run positive and expected-reject fixtures for diamonds, cycles, aliases, contradictions, support timing, all transforms, and static checkpoint-parent edges.",
+      "test_id": "M0V4-PROVENANCE-TRANSFORM-DAG-06"
+    },
+    {
+      "evidence_artifact": "CAS, two-freeze, crash, duplicate, and malformed-precedence receipt",
+      "expected": "Preparation uses exact no-choice inputs, per-file CAS, no-overwrite install, acyclic authority identities, immutable candidate receipts, and fail-closed crash/duplicate recovery; no candidate is consumable before the second explicit human fixture freeze.",
+      "falsifies": "Mutable promotion, self-referential authority, retry/replacement, partial authoritative output, or automatic progression from checker passage.",
+      "kind": "invariant",
+      "required_before": "implementation",
+      "setup": "Fault-inject every staging, fsync, install, receipt, collision, and malformed-input boundary under the separately ratified preparation protocol.",
+      "test_id": "M0V4-CAS-TWO-FREEZE-DURABILITY-07"
+    },
+    {
+      "evidence_artifact": "M0 CPU conformance and independent-review records bound to one human-frozen fixture freeze ID",
+      "expected": "The model-free implementation exactly conforms to the frozen V4 finite instrument, reducer, handoff projection, transforms, receipts, and conformance namespace; a fresh reviewer and author-side claim advocate separately assess exact bytes.",
+      "falsifies": "That source agreement or preparation receipts alone validate runtime conformance or clear model-facing use.",
+      "kind": "end_to_end",
+      "required_before": "model_execution",
+      "setup": "Only after separate implementation authorization against a second-human-frozen candidate manifest; no model, tokenizer, or scientific execution.",
+      "test_id": "M0V4-CPU-CONFORMANCE-08"
+    },
+    {
+      "evidence_artifact": "Fully rendered M-TEXT boundary and model/session manifest receipt",
+      "expected": "Every model-visible system/user/chat-template/token-ID byte, parser, controller, renderer, tool envelope, cache/session rule, runtime, local model/tokenizer file, resource ceiling, and reset destruction rule is exact and rendered prefix noninterference holds.",
+      "falsifies": "That a semantic M0 handoff alone freezes model-visible treatment, reset, or provider/session behavior.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "A separately deliberated M-TEXT package verifies every registered phase, condition, root, and matched carrier contrast before DEV.",
+      "test_id": "MTEXTV4-RENDERED-BOUNDARY-09"
+    },
+    {
+      "evidence_artifact": "M-TEXT roster, endpoint, split, and resource preflight receipt",
+      "expected": "The 18-condition, 501-slot-per-root roster, 148224 allowed-generated-token-per-root envelope, explicit 16/32/16 root split, NA applicability matrix, NOT_REACHED sealing, integer gates, baseline formula, negative dispositions, and physical-device limits are complete and mechanically reproducible.",
+      "falsifies": "Hidden calls, condition borrowing, endpoint bundling, post-hoc split choice, resource ambiguity, or goalpost changes.",
+      "kind": "invariant",
+      "required_before": "model_execution",
+      "setup": "Validate the separately ratified M-TEXT protocol without a model call; reject unregistered counterfactuals or any NA required by a gate.",
+      "test_id": "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10"
+    },
+    {
+      "evidence_artifact": "Sealed DEV/confirmation evidence and fresh evidence-to-claim review",
+      "expected": "Only a complete confirmation census under the frozen fixed model, one topology, exact conditions, negative dispositions, and independent review may support the registered supplied-memory claim ceiling.",
+      "falsifies": "A claim based on DEV, partial results, reserve rescue, pooled repeated measures, or a model result credited to DREAM, SLEEP, LoRA, or the whole organism.",
+      "kind": "end_to_end",
+      "required_before": "scientific_claim",
+      "setup": "Execute only after separate M-TEXT DEV approval, post-DEV protocol freeze, confirmation authorization, and completion of all registered receipt slots.",
+      "test_id": "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+    }
+  ],
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v4",
+  "claim_delta": {
+    "claims": [
+      {
+        "after": "V4 source preparation, if later approved, may establish only a clean-room, model-free finite PCFL instrument and its deterministic fixture, visibility, provenance, intervention, durability, and handoff conformance.",
+        "before": "V2 lacked an exact, authorized route from source contract to a frozen PCFL instrument.",
+        "claim_id": "CLM-M0V4-SOFTWARE-NONCLAIM",
+        "evidence_needed": "Two human freezes, exact source and candidate hashes, CPU conformance, and independent implementation review.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "A separately approved M-TEXT assay may test, conditional on one fixed model and one frozen finite topology, whether supplied authentic atom-plus-connection memory improves substrate-neutral two-goal and delayed task behavior under registered connection interventions; calibrated public evidence separately supports informative choice and revision.",
+        "before": "No claim-bearing M-TEXT protocol is authorized or frozen.",
+        "claim_id": "CLM-MTEXTV4-CONDITIONAL-SUPPLIED-USE",
+        "evidence_needed": "Frozen rendered boundary, complete DEV/confirmation protocol, all noncompensatory gates, root-block census, and fresh evidence-to-claim review.",
+        "headline_eligible": true,
+        "operation": "add"
+      },
+      {
+        "after": "DREAM local connection authorship, recurrent dream growth, SLEEP validation, LoRA transport, persistent self-written memory, acquisition-to-retention, online feedback, learning, parenting, compression, lifetime improvement, baseline saturation, and complete-organism behavior remain untested and uncredited.",
+        "before": "The broader project thesis could be mistakenly inferred from a supplied-memory relay.",
+        "claim_id": "CLM-DEFERRED-ORGANS-AND-ORGANISM",
+        "evidence_needed": "Independent future packages with their own frozen protocols, controls, units, reviews, and applicable GPU gates.",
+        "headline_eligible": false,
+        "operation": "add"
+      },
+      {
+        "after": "Any instrument invalidity, shortcut breach, failed noncompensatory gate, incomplete confirmation, or resource halt withdraws the corresponding claim; reserve cannot replace confirmation and no downstream LoRA premise is licensed.",
+        "before": "Negative dispositions and stage boundaries were incompletely bound in V2.",
+        "claim_id": "CLM-FAIL-CLOSED-DISPOSITION",
+        "evidence_needed": "Exact negative-disposition, receipt-completeness, and reducer rules in later frozen protocol bytes.",
+        "headline_eligible": false,
+        "operation": "add"
+      }
+    ]
+  },
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/human_directive.txt",
+      "purpose": "binding directive",
+      "sha256": "ce1540a98aba52c1f4953faafdc10727056134a49b1dc19a5c413ae634c90a0f"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "project thesis",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v2.deliberation.json",
+      "purpose": "V2 workflow",
+      "sha256": "dfea472726cf2b63b7d5eb66e78dae1cbdc9f3e5172fd63ed84374ae419b2c06"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/scope_proposal.json",
+      "purpose": "V2 scope",
+      "sha256": "2492802c8a96b0445e97b1b3831c25fcd8b4c15d2bffaeb5978a1653e412933b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/change.json",
+      "purpose": "V2 proposal",
+      "sha256": "45647223d6a3763f0dcde90b68ad3c953460cb0175960ba92e6a21a615fc9321"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/interpretation_systems.json",
+      "purpose": "V2 systems interpretation",
+      "sha256": "eaff44379eb6398f4dc879c606d512d7814472759c0370ea459a470cc1f7fcff"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/interpretation_benchmark.json",
+      "purpose": "V2 benchmark interpretation",
+      "sha256": "c87b1c94335f03a91bc2a3dcefc791e1aac9a2eef6bca227d4fa31518eed0ad2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/critique.json",
+      "purpose": "V2 critique",
+      "sha256": "02528c271e174cdcec27c1f255b4fb327d89530f90143fa54a2202bc4ff5e1ba"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/consensus.json",
+      "purpose": "V2 rework consensus",
+      "sha256": "d1eabe9da3bc4250e4ba08c458086f8e3f4f5f1e7808e4b3c6a0785243c96aa2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/intake.state.json",
+      "purpose": "V2 intake state",
+      "sha256": "d458b6add402412b41dfb5533189a07133c0753721faf7d0c721a01e85d0116d"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v2.deliberation.state.json",
+      "purpose": "V2 runner state",
+      "sha256": "c2d66fddea6d31ccc7ce926c92cf991f8bf44d239d458ca325d97f0e5efb1d75"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_m0_exact_contract_repair_fresh_v1.md",
+      "purpose": "M0 repair",
+      "sha256": "b7329f6c89253a5d627751c0135a0f1aab6caff89d5d1d12dc2eba9ef08c3297"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_mtext_supplied_exact_contract_repair_fresh_v1.md",
+      "purpose": "M-TEXT repair",
+      "sha256": "73866889087937617ad3341ea409ccf1cc9207aaded8c416e704debbe0430947"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_authority_durability_exact_repair_fresh_v1.md",
+      "purpose": "authority and durability repair",
+      "sha256": "0bf15abd49a21ef913f5dab05ec3461ead070b9aacf87c3f267981615b67eb6e"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v3_repairs_adversarial_cross_critique_v1.md",
+      "purpose": "cross-critique",
+      "sha256": "510021974a869db77e724e16ada919e161f023c1e5d0fdfd35d43f2c406baa69"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_m0_semantic_consistency_fresh_audit_v1.md",
+      "purpose": "semantic audit",
+      "sha256": "5d36fb3a6154e05b6c6143985131cbdc4417f19f7416c6c355a642db4163e704"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_mtext_arithmetic_and_consistency_fresh_audit_v1.md",
+      "purpose": "arithmetic audit",
+      "sha256": "1208b8e2661572addcee3b7e4372f99ee38e570208f96c4ab7eaa32b18b928e4"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_roster_endpoint_adjudication_v1.md",
+      "purpose": "roster adjudication",
+      "sha256": "5f32c005e5e4882e736f008e9fc50e3ddfe44bfe125a45b6f614104f882420e3"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_minimal_science_adjudication_fresh_v1.md",
+      "purpose": "minimal-science adjudication",
+      "sha256": "e972551c46c54b628c20c66b701ee616f1abcb9f07b853845fb6b1c9036c8502"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_governance_packet_audit_v1.md",
+      "purpose": "governance audit",
+      "sha256": "0b11febe8abadc4d2c9bddfdf87ad269d5fb209e438e83352153a18d9c891a7c"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v4_rework_candidate.md",
+      "purpose": "integrated V4 candidate",
+      "sha256": "32d73b800971a61a20fa68694dc9cbed9203c65d59d3c01c5baffe2c3a6e53cc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/scope_proposal.json",
+      "purpose": "V4 scope",
+      "sha256": "12c5f1b459a697a59d4fecc1e2991f880a69898fa9a4013f66947fef1bd7ea0b"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v4.deliberation.json",
+      "purpose": "V4 workflow",
+      "sha256": "d1f9308b8e205dfc8aa4590a1462a571b7ef02c1335e4335e0bd5692a4811e49"
+    }
+  ],
+  "graph_delta": {
+    "edges": [
+      {
+        "after": "A clean-room V4 semantic source and inert deterministic preparation bundle may, only after separate human approval, produce a candidate fixture manifest checked by two disjoint checkers; no FeltCraft runtime edge exists.",
+        "before": "V2 contemplated a conditional V7-to-M0 reuse edge and lacked an exact source-to-fixture authority path.",
+        "edge_id": "E-V4-SOURCE-TO-CANDIDATE",
+        "from": "N-V4-SOURCE-CONTRACT",
+        "operation": "add",
+        "rationale": "Closes V7 authority laundering and makes preparation a bounded non-scientific operation.",
+        "to": "N-V4-CANDIDATE-FIXTURE"
+      },
+      {
+        "after": "A second human fixture freeze is the only edge admitting a checked candidate fixture to later M0 implementation; it grants no M-TEXT, model, GPU, or claim authority.",
+        "before": "Candidate/durability promotion boundary was incomplete.",
+        "edge_id": "E-CANDIDATE-TO-FIXTURE-FREEZE",
+        "from": "N-V4-CANDIDATE-FIXTURE",
+        "operation": "add",
+        "rationale": "Implements the two-freeze exception without allowing generated bytes to self-promote.",
+        "to": "N-V4-FIXTURE-FREEZE"
+      },
+      {
+        "after": "Frozen V4 fixture semantics feed model-free M0 conformance and a public semantic handoff, while checker-only objects terminate outside actor-visible state.",
+        "before": "M0 handoff, runtime, and model-facing visibility were conflated.",
+        "edge_id": "E-FREEZE-TO-M0-HANDOFF",
+        "from": "N-V4-FIXTURE-FREEZE",
+        "operation": "add",
+        "rationale": "Separates finite lived-world instrumentation from later model use.",
+        "to": "N-M0V4-HANDOFF"
+      },
+      {
+        "after": "A separately approved fixed-model M-TEXT package may consume only verified public handoff projections and its own exact rendered/session contract; it cannot mutate fixtures or use V7, organism state, or checker truth.",
+        "before": "M-TEXT model boundary remained open.",
+        "edge_id": "E-HANDOFF-TO-MTEXTV4",
+        "from": "N-M0V4-HANDOFF",
+        "operation": "add",
+        "rationale": "Makes supplied-memory use a narrow, read-only relay.",
+        "to": "N-MTEXTV4-SUPPLIED"
+      },
+      {
+        "after": "Later DREAM, SLEEP/LoRA, clean-lineage, parenting, and lifetime packages remain independent prerequisites or successors; no M0 or M-TEXT outcome creates an authorization edge to them.",
+        "before": "The all-in-one surface risked credit transfer among organs.",
+        "edge_id": "E-MTEXT-TO-DEFERRED-ORGANS",
+        "from": "N-MTEXTV4-SUPPLIED",
+        "operation": "add",
+        "rationale": "Preserves the complete-organism thesis while preventing premature causal credit.",
+        "to": "N-DEFERRED-DREAM-LORA-ORGANISM"
+      }
+    ],
+    "nodes": [
+      {
+        "after": "V4 source contract: closed PCFL_M0_THIN_V4 semantics, source manifest, schemas, inert materializer/checkers, mutations, CAS and two-freeze rules; source-only at this stage.",
+        "before": "Separate V3 repair advisories with amendment precedence.",
+        "node_id": "N-V4-SOURCE-CONTRACT",
+        "operation": "add",
+        "rationale": "Integrates all outcome-changing selections before source authoring."
+      },
+      {
+        "after": "Candidate 64-root clean-room fixture produced once by an approved no-choice CPU preparation, checked but nonconsumable.",
+        "before": "No exact candidate-fixture node.",
+        "node_id": "N-V4-CANDIDATE-FIXTURE",
+        "operation": "add",
+        "rationale": "Separates deterministic fixture production from implementation and science."
+      },
+      {
+        "after": "Second-human-frozen nonclaim reference to one candidate manifest, checker receipts, and review.",
+        "before": "No explicit fixture-admission node.",
+        "node_id": "N-V4-FIXTURE-FREEZE",
+        "operation": "add",
+        "rationale": "Prevents candidate output from becoming runtime input automatically."
+      },
+      {
+        "after": "Model-free M0 V4 CPU runtime/conformance instrument with neutral handles, non-oracular actions, bundled reader, read cut, public outcomes, provenance, transforms, and reducer.",
+        "before": "M0-THIN V2 lacked integrated V4 semantics.",
+        "node_id": "N-M0V4-CONFORMANCE",
+        "operation": "add",
+        "rationale": "Implements only finite lived action/outcome instrumentation, not a learning organ."
+      },
+      {
+        "after": "Read-only HandoffPublic/MTextHandoff layering: public semantic payload plus private controller binding envelope.",
+        "before": "Overlapping and ambiguous V3 handoff records.",
+        "node_id": "N-M0V4-HANDOFF",
+        "operation": "add",
+        "rationale": "Separates model-visible public projection from checker/controller routing."
+      },
+      {
+        "after": "Later fixed-model 18-condition M-TEXT supplied-memory assay with 501 registered maximum slots/root, finite-census reduction, and separate task versus trace endpoints.",
+        "before": "V2 M-TEXT had open boundary, roster, and endpoint semantics.",
+        "node_id": "N-MTEXTV4-SUPPLIED",
+        "operation": "add",
+        "rationale": "Tests supplied-memory use without claiming discovery, writing, or learning."
+      },
+      {
+        "after": "Deferred complete organism: lived episodes, target-independent DREAM connection proposals/re-expression, later support, SLEEP/LoRA transport, goal-conditioned THINK, and later feedback into future dream cycles.",
+        "before": "Deferred organs were named but insufficiently separated from supplied-memory use.",
+        "node_id": "N-DEFERRED-DREAM-LORA-ORGANISM",
+        "operation": "add",
+        "rationale": "Retains project thesis and correct organ-versus-organism credit assignment."
+      }
+    ]
+  },
+  "human_boundary": {
+    "decision_owner": "Rohin Ghosh",
+    "decision_question": "Does Rohin ratify only the integrated V4 source direction\u2014zero V7 runtime reuse, the explicit two-freeze exception, the finite M0/M-TEXT semantic choices and claim ceiling\u2014and authorize only authoring of an exact inert preparation-source bundle for fresh review, with no execution authority?",
+    "forbidden_before_approval": [
+      "Authoring or editing preparation materializer, checker, runtime, fixture, M0, M-TEXT, renderer, reader, reducer, handoff, validator, or source-bundle files.",
+      "Any deterministic materialization, fixture/root/data generation, CPU conformance or benchmark execution, tokenizer/model use, training, LoRA/adapter/checkpoint work, parenting, GPU use, resource acquisition, evaluation, promotion, release, submission, or scientific claim.",
+      "Any inferred ratification, implementation authority, first-freeze execution authority, second fixture freeze, or successor auto-promotion.",
+      "Any V7 runtime import, file read, oracle/golden reuse, copied V7 test value, or statement that V7 authority/audit transfers.",
+      "Any change to roots, splits, endpoints, reducers, thresholds, resource ceilings, negative dispositions, or claim ceiling after approval without a new deliberated and ratified change."
+    ],
+    "required": true
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "after": "A human-approved source-authoring loop may write only the exact inert V4 preparation bundle for fresh review; it is not materialization and stops when the bound source manifest is complete.",
+        "before": "No scoped route existed from deliberated source direction to exact preparation bytes.",
+        "loop_id": "L-V4-SOURCE-AUTHORING",
+        "operation": "add",
+        "rationale": "Resolves the source-before-materialization requirement without inferring code-authoring authority.",
+        "reads": [
+          "ratified V4 source-direction bytes",
+          "approved source file allowlist"
+        ],
+        "stop_condition": "All listed source bytes and hashes are present for fresh review, or any outcome-changing ambiguity requires rework.",
+        "trigger": "Only after explicit human approval of exact source-authoring scope.",
+        "writes": [
+          "inert semantic tables",
+          "materializer/checker source",
+          "mutation fixtures",
+          "normative source manifest"
+        ]
+      },
+      {
+        "after": "A later deterministic preparation loop reads one first-human-frozen source/input binding, materializes the closed finite universe once, runs disjoint checkers, and emits a nonconsumable candidate manifest and receipts.",
+        "before": "V2 had an impossible exact-bytes-before-preparation requirement.",
+        "loop_id": "L-V4-PREPARATION-TWO-FREEZE",
+        "operation": "add",
+        "rationale": "Permits no-selection fixture construction while preserving a second human byte freeze.",
+        "reads": [
+          "first-human-approved preparation source",
+          "preparation input binding",
+          "frozen schemas and limits"
+        ],
+        "stop_condition": "Terminal candidate receipt after complete agreement or fail-closed error; no root retry, replacement, selection, model feedback, or automatic progression.",
+        "trigger": "Only after separate first-freeze execution authorization.",
+        "writes": [
+          "CAS candidate objects",
+          "candidate manifest",
+          "checker receipts",
+          "candidate review inputs"
+        ]
+      },
+      {
+        "after": "M0 V4 finite episodes expose only ordinary public states, fixed non-oracular action opportunities, bundled memory returns, and public outcomes; the controller updates finite state, provenance, and receipts but does not learn.",
+        "before": "M0 episode semantics were underspecified and could leak legality or crawl links.",
+        "loop_id": "L-M0V4-LIVED-EPISODE",
+        "operation": "add",
+        "rationale": "Keeps lived action/outcome instrumentation distinct from DREAM, SLEEP, and THINK.",
+        "reads": [
+          "one frozen root",
+          "current public view",
+          "legal structured command",
+          "registered carrier/transform",
+          "chronological public evidence"
+        ],
+        "stop_condition": "Registered success, WRONG_FINISH, abstention, budget terminal, or final receipt; malformed/private/instrument failures fail closed.",
+        "trigger": "Only after separate M0 implementation authorization and fixture freeze.",
+        "writes": [
+          "ordinary public events",
+          "finite public views",
+          "eligible provenance roots",
+          "root conformance receipt"
+        ]
+      },
+      {
+        "after": "Later M-TEXT uses externally supplied public connected text under goals, reads/actions/outcomes, temporary plan/scratch revision, and sterile delayed reset; it writes only local execution receipts, never carrier links or parameters.",
+        "before": "M-TEXT recurrence could be mistaken for DREAM or learning.",
+        "loop_id": "L-MTEXTV4-SUPPLIED-USE",
+        "operation": "add",
+        "rationale": "Preserves sequential THINK-style use while denying discovery and consolidation credit.",
+        "reads": [
+          "verified public handoff",
+          "registered goal",
+          "public view/outcome",
+          "common-reader return",
+          "separately frozen model/session contract"
+        ],
+        "stop_condition": "Registered phase terminal, resource limit, parse failure, or complete roster; no retry/replacement.",
+        "trigger": "Only after separate M-TEXT execution approvals.",
+        "writes": [
+          "root-condition call receipts",
+          "temporary scratch within phase",
+          "public command traces",
+          "endpoint receipts"
+        ]
+      },
+      {
+        "after": "The deferred organism loop remains: grounded lived episodes feed target-independent local DREAM proposal/re-expression; later independent support validates/revokes; SLEEP transactionally transports validated personal semantics; goal-conditioned THINK retrieves/composes/plans/acts/revises; later outcomes may become future eligible dream input.",
+        "before": "V2 risked treating supplied memory or LoRA transport as local discovery.",
+        "loop_id": "L-FULL-ORGANISM-DEFERRED",
+        "operation": "add",
+        "rationale": "States the project thesis without instantiating it in V4.",
+        "reads": [
+          "eligible grounded episodes",
+          "later support",
+          "goal-conditioned state",
+          "outcomes",
+          "approved personal state"
+        ],
+        "stop_condition": "Defined only by future independently ratified packages.",
+        "trigger": "No trigger in this change.",
+        "writes": [
+          "candidate local connections",
+          "supported re-expressions",
+          "transactional parametric transport",
+          "future eligible episodes"
+        ]
+      }
+    ]
+  },
+  "schema_version": 1,
+  "state": "proposed",
+  "summary": "Proposes the strongest faithful V4 repair: a clean-room PCFL M0 instrument with zero FeltCraft runtime reuse, a two-freeze fixture path, neutral actor handles, non-oracular actions, bundled graph reading with a first-action cut, a fixed delayed-entry factorial assay, and an 18-condition supplied-memory M-TEXT protocol. It recommends only later authoring of an exact inert preparation-source bundle after human ratification.",
+  "system_thesis": "Dream\u2013LoRA\u2013Think is a recurrent complete organism. Lived action\u2013outcome episodes supply grounded public evidence; DREAM later and target-independently grows local candidate connections and re-expressions; independent later evidence supports or revokes them; SLEEP consolidates only validated personal semantics through transactional parametric/LoRA transport; THINK retrieves, composes, plans, acts, observes, and revises under a goal; and later thought/outcomes may seed future dream cycles. V4 implements neither DREAM authorship nor SLEEP/LoRA transport. M0 is a finite lived-world instrument; M-TEXT tests only goal-conditioned use of supplied connected text plus separately supplied calibrated evidence. Any positive result belongs to that bounded relay, not to an organ discovering knowledge or to the complete learning organism.",
+  "title": "Clean-room PCFL M0 V4 and bounded M-TEXT supplied-memory relay with two-freeze authority",
+  "visibility_matrix": {
+    "cells": [
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "Reviewed and ratified only; no runtime authority follows without a named gate.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "Exact source inputs bind preparation.",
+        "stage_id": "S-PREP",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "Runtime verifies only named freeze bindings.",
+        "stage_id": "S-M0",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "Actor sees no source, manifest, freeze, split, or authority identity.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "Checkers verify hashes and lineage.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SOURCE-AND-AUTHORITY",
+        "reason": "M-TEXT receives only permitted public payload digest binding, never authority internals.",
+        "stage_id": "S-MTEXT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "Scope inspection only.",
+        "stage_id": "S-AUTH",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "Internal finite transition and expected-value construction.",
+        "stage_id": "S-PREP",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "M0 controller may use private state but cannot project it.",
+        "stage_id": "S-M0",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "Hidden bit, score, answer, condition, future event, root, and oracle are denied.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "Checker-only truth validates invariants and scoring.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PRIVATE-WORLD-AND-ORACLE",
+        "reason": "No oracle or private-world field reaches model or renderer.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "Exact public surface is reviewed.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "Materialized as canonical ordinary public events and public atoms.",
+        "stage_id": "S-PREP",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "M0 emits/replays canonical public evidence.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "Actor sees only released event/view fields and neutral handles.",
+        "stage_id": "S-ACTOR",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "Checker verifies chronology, taint, and provenance.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-PUBLIC-LIVED-EVIDENCE",
+        "reason": "Only allowlisted public projection may be rendered or read.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "Carrier semantics and neutral-handle law are approval data.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "Prepared from public evidence and registered transforms only.",
+        "stage_id": "S-PREP",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "M0 serves carrier through common reader and validates transforms.",
+        "stage_id": "S-M0",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "Actor obtains only returned public capabilities; carrier contents are not a catalog.",
+        "stage_id": "S-ACTOR",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "Checker accesses semantic-to-slot maps and transform oracle.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-SUPPLIED-CARRIER-AND-HANDLES",
+        "reason": "M-TEXT receives only verified condition-appropriate public projection.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "Join/reset exclusions are ratified.",
+        "stage_id": "S-AUTH",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "Preparation contains no model session state.",
+        "stage_id": "S-PREP",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "M0 maintains only finite branch-local state until exact join/reset.",
+        "stage_id": "S-M0",
+        "visibility": "hidden"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "Sibling/abandoned work, repeat cache, transcript, timing, correctness, and hidden state are denied.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "Checker tests allowlist and destruction mutations.",
+        "stage_id": "S-CHECKER",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-BRANCH-SESSION-EPHEMERA",
+        "reason": "Later phase retains only separately allowed within-phase scratch; sterile reset destroys all survivors.",
+        "stage_id": "S-MTEXT",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "No model bytes or execution are authorized now.",
+        "stage_id": "S-AUTH",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "Preparation source does not load a tokenizer/model.",
+        "stage_id": "S-PREP",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "M0 has no renderer, tokenizer, provider, or model dependency.",
+        "stage_id": "S-M0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "No model execution exists at actor stage of M0.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "Checker may validate handoff completeness but not execute model infrastructure.",
+        "stage_id": "S-CHECKER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-MTEXT-MODEL-BOUNDARY",
+        "reason": "Visible only under separately ratified exact model/session/rendering contract.",
+        "stage_id": "S-MTEXT",
+        "visibility": "visible"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "No parent, child, DREAM, SLEEP, LoRA, writer, or lineage is approved.",
+        "stage_id": "S-AUTH",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "Preparation excludes these objects and dependencies.",
+        "stage_id": "S-PREP",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "M0 is not a learned organism.",
+        "stage_id": "S-M0",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "Actor cannot resolve any organism-private object.",
+        "stage_id": "S-ACTOR",
+        "visibility": "forbidden"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "Checker asserts absence only.",
+        "stage_id": "S-CHECKER",
+        "visibility": "derived_only"
+      },
+      {
+        "information_id": "I-ORGANISM-PERSONAL-STATE",
+        "reason": "M-TEXT supplied use neither reads nor writes organism state.",
+        "stage_id": "S-MTEXT",
+        "visibility": "forbidden"
+      }
+    ],
+    "information_items": [
+      "I-SOURCE-AND-AUTHORITY",
+      "I-PRIVATE-WORLD-AND-ORACLE",
+      "I-PUBLIC-LIVED-EVIDENCE",
+      "I-SUPPLIED-CARRIER-AND-HANDLES",
+      "I-BRANCH-SESSION-EPHEMERA",
+      "I-MTEXT-MODEL-BOUNDARY",
+      "I-ORGANISM-PERSONAL-STATE"
+    ],
+    "stages": [
+      "S-AUTH",
+      "S-PREP",
+      "S-M0",
+      "S-ACTOR",
+      "S-CHECKER",
+      "S-MTEXT"
+    ]
+  }
+}

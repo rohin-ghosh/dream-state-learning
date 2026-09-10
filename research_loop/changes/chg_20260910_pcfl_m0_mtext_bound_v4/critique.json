@@ -1,0 +1,391 @@
+{
+  "architecture_change_sha256": "a6332cfeab3bc2281404a568e2c04eaf8ffa28db96d3c33265140f9fe7c3408f",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v4",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "M0V4-EXACT-SOURCE-RATIFIABILITY-00",
+        "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+        "M0V4-CAS-TWO-FREEZE-DURABILITY-07"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V4-001-SOURCE-AUTHORITY-CIRCULARITY",
+      "evidence": "M0V4-EXACT-SOURCE-RATIFIABILITY-00 requires every inert preparation-source byte and hash before any preparation-source authorization, while the human boundary forbids authoring those bytes before approval and asks Rohin to authorize their authoring. The integrated candidate explicitly says the source bundle, derived bounds, and goldens do not yet exist. The V4 workflow includes neither a normative_source_manifest.json nor the materializer/checker/schema bytes demanded by test 00. Both supplied interpretations identify this conflict.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposed next authorization is circular: it asks permission to create bytes that its own acceptance rule says must already be bound before that permission."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-EXACT-SOURCE-RATIFIABILITY-00",
+        "M0V4-ACTOR-NONORACLE-03",
+        "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+        "M0V4-CPU-CONFORMANCE-08",
+        "MTEXTV4-RENDERED-BOUNDARY-09"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-V4-002-HANDOFF-PROJECTION-NOT-CLOSED",
+      "evidence": "The candidate says HandoffPublic is public semantic payload and MTextHandoff is a private routing envelope, but supplies no closed V4 schemas or exact projection. A predecessor HandoffPublic proposal contained fixture_manifest_root and instrument_contract_digest, whereas the V4 visibility matrix forbids source, manifest, freeze, root, condition, and authority identity at the actor. Until exact V4 fields and consumption rules exist, a renderer could inherit private routing or authority fields while nominally consuming a public handoff.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The public/private handoff layering is directionally correct but not exact enough to prevent manifest, route, condition, scorer, or oracle metadata from reaching the model."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+        "MTEXTV4-RENDERED-BOUNDARY-09",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "visibility_leak",
+      "concern_id": "CRIT-V4-003-DELAYED-TWIN-ENTITLEMENT",
+      "evidence": "Every delayed phase starts from model-independent DELAYED_ENTRY(k,h), whose supplied new atom uses relation R(07+h) and therefore differs across h twins. The delayed branch did not observe the U-phase separating outcome because U and D are explicitly independent and reset destroys that trajectory. Test 05 nevertheless requires twins to remain byte-identical through the first separating ordinary outcome without specifying a delayed-entry exception or outcome-descendant entitlement. The benchmark interpretation flags the same ambiguity.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The delayed fixture violates the literal paired-prefix rule unless an exact provenance-scoped exception defines why and where h-dependent supplied bytes may first appear."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-ACTOR-NONORACLE-03",
+        "M0V4-BUNDLED-READER-READ-CUT-04",
+        "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+        "MTEXTV4-RENDERED-BOUNDARY-09",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-V4-004-DECODABLE-ALGEBRA-SHORTCUT",
+      "evidence": "Because S=N00, its visible alias is n(k); relation aliases are r(j XOR (k mod 16)); and the goal target identifies whether terminal relation R05 or R06 is needed. A policy that knows or infers the single frozen topology can therefore derive the complete action sequence from the goal and start alias without reading memory. The proposed target-only and no-memory controls are necessary, but test 10 does not itself state an exact algebra-decoding probe, matched target-only rendering, or the rule that above-ceiling target-only performance invalidates connected-memory specificity.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The game admits a direct goal-and-alias shortcut around the intended memory path unless the exact source registers and enforces a matched algebra-prior falsifier."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+        "M0V4-ACTOR-NONORACLE-03",
+        "M0V4-BUNDLED-READER-READ-CUT-04",
+        "M0V4-PROVENANCE-TRANSFORM-DAG-06",
+        "M0V4-CPU-CONFORMANCE-08",
+        "MTEXTV4-RENDERED-BOUNDARY-09",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-V4-005-PRODUCER-SCORER-ANSWER-LAUNDERING",
+      "evidence": "The candidate asserts that pairwise links and slot mappings predate goals, but no registered acceptance test explicitly freezes a goal-blind producer, swaps goals while holding carrier/index bytes fixed, rejects answer/path rank in row identity/order, and proves that the scorer accepts both registered minimum-path equivalence classes. Reader completeness alone could be satisfied by goal-shaped cursor ordering or a preassembled parent path, while a scorer could demand the reference path rather than behavior emerging through repeated read-think-act steps.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The suite lacks a dedicated falsifier for carrier/query/scorer answer laundering and for demanding a parent path or final answer from the memory module."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-ACTOR-NONORACLE-03",
+        "M0V4-BUNDLED-READER-READ-CUT-04",
+        "M0V4-CPU-CONFORMANCE-08",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V4-006-BRIDGE-TWIN-EQUIVALENCE-OPEN",
+      "evidence": "The candidate defines connected dependence using a bridge-cut behavior change and a correct twin-redirect terminal switch, but does not freeze normalized trace equivalence, treatment of NO_EFFECT, finish, abstention, or early terminal traces, the decisive-state requirement, or aggregation across goals A and B. A harmless action-sequence difference could count as dependence, while a useful alternative route could be rejected. The benchmark interpretation explicitly identifies this unresolved equivalence rule.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The central connected-policy-dependence endpoint is not mechanically defined well enough to distinguish useful composition from arbitrary trace change."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+        "M0V4-PROVENANCE-TRANSFORM-DAG-06",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V4-007-PHASE-ENDPOINT-APPLICABILITY-OPEN",
+      "evidence": "The 18-condition roster fixes phase slot maxima, but the current durable proposal does not enumerate the complete condition-by-phase-by-endpoint 0|1|NA matrix or its reducer schema. This matters because AUTH labels P+U+D while those phases are independent, abbreviated cells enter D from supplied fixtures, and NOT_REACHED differs from NA and behavioral zero. Both interpretations identify the missing matrix as outcome-changing.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Without an exact applicability matrix, acquisition, retention, delayed, or full-sequence values can be borrowed, zero-filled, or marked NA in ways that change confirmation gates."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "CRIT-V4-008-CLAIM-CLAUSE-DISPOSITIONS-BUNDLED",
+      "evidence": "Path construction is identified by connection interventions, experiment choice by directly public calibration counts, and delayed behavior by a separately supplied old-plus-new fixture. Test 11 refers to one supplied-memory claim ceiling, but the proposal does not bind a clause-to-gate disposition table specifying which failure withdraws the connected-path clause, calibrated-evidence clause, delayed-carrier clause, practical-baseline clause, scratch clause, or feedback clause. A single aggregate pass/fail label would permit post-hoc recombination of mechanistically separate evidence.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The three independent factorial mechanisms need separate claim and negative-result dispositions rather than one reusable confirmation label."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+        "M0V4-CPU-CONFORMANCE-08",
+        "MTEXTV4-RENDERED-BOUNDARY-09",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V4-009-MODEL-BOUNDARY-DEFERRED",
+      "evidence": "No current durable source binds actual system/user bytes, chat-template output, token IDs, parser/controller/renderer source, tool envelopes, cache/session destruction, model/tokenizer files, or runtime/device manifests. Test 09 correctly requires these before DEV, and both interpretations recognize them as future authority inputs. Therefore neither source agreement nor M0 CPU conformance can clear model execution.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The rendered model/session boundary remains intentionally unresolved and must remain a hard future stop, not an implementation detail or consequence of a green M0 suite."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-RENDERED-BOUNDARY-09",
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V4-010-RESOURCE-FACTORIAL-NOT-TEST-SPECIFIC",
+      "evidence": "The candidate appropriately distinguishes matched carrier arms from unequal raw-context, RAG, and native-graph baselines and defers LoRA. However, test 10 names a resource receipt without explicitly requiring the complete per-arm vector of stored bytes, tokenizer tokens, index/graph CPU work, reader calls and returns, input/generated tokens, thinker calls, GPU time, latency, memory, and artifacts. Exact token matching also cannot be established until the tokenizer is frozen. Without a dedicated factorial receipt, practical or efficiency language could conflate organization with extra context, graph execution, retrieval work, or thinker computation.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The bounded causal contrast may be defensible, but practical baseline or efficiency claims require a more explicit resource-factorial acceptance test; no text-versus-LoRA transport conclusion is available."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-PROVENANCE-TRANSFORM-DAG-06"
+      ],
+      "category": "architecture",
+      "concern_id": "CRIT-V4-011-PROVENANCE-ORDER-STILL-SCHEMATIC",
+      "evidence": "The candidate writes proposal positions as 24.POST_EVENT_SYNTH.* and 41.POST_EVENT_SYNTH.* but does not enumerate the ordinal assignment or canonical pair ordering represented by '*'. It also relies on predecessor prose for alias collapse, contradiction precedence, revocation, and exact cycle handling rather than supplying one closed V4 table. These details determine IDs, parent order, independent support, legal shared-root diamonds, and whether synthetic re-expression is mistaken for new evidence.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The provenance direction is sound, but its total order and mutation semantics remain schematic rather than exact."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+        "M0V4-CPU-CONFORMANCE-08"
+      ],
+      "category": "evaluation",
+      "concern_id": "CRIT-V4-012-CHECKERS-ARE-NOT-SCIENTIFIC-VALIDATION",
+      "evidence": "Constructive and axiomatic checkers share the human-frozen algebra and schemas, so a common specification error can survive both. The proposal and interpretations correctly limit their meaning to reproducible construction and checked invariants, with later independent review. Passing every mutation and CPU test still cannot establish that the benchmark measures the intended scientific construct.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Checker agreement and a green CPU suite are necessary software evidence, not proof of semantic truth or scientific validity."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "scientific",
+      "concern_id": "CRIT-V4-013-NO-ONLINE-LEARNING-CHAIN",
+      "evidence": "Every delayed phase starts from a model-independent supplied fixture; model scratch is destroyed; no DREAM-authored connection, grounded persistent write, parameter update, or U-to-D model trajectory exists. Consequently the assay does not test the causal chain memory changes action, action changes evidence, evidence changes persistent memory, and that memory improves a later action. The proposal explicitly defers these claims.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "V4 tests supplied-memory use and passive supplied delayed lookup, not online learning from the policy's own action and outcome."
+    },
+    {
+      "acceptance_test_ids": [
+        "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+        "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+      ],
+      "category": "statistics",
+      "concern_id": "CRIT-V4-014-FINITE-CENSUS-NOT-GENERALIZATION",
+      "evidence": "All roots are aliases, rotations, nuisance bits, and presentation variants of one fixed topology and one fixed model. The sixteen confirmation blocks are a deterministic finite census, not independent population samples; the 12/16 and 4/16 thresholds are prospective engineering/scientific decision rules rather than statistically calibrated effect estimates. The proposal correctly rejects p-values and population uncertainty, but it cannot establish topology, model, agent, memory-scale, path-length, or lifetime generalization.",
+      "resolution_required": false,
+      "severity": "material",
+      "statement": "Any result is a within-suite conditional mechanism result; sample-size, scaling, or general memory-intelligence language remains unsupported."
+    },
+    {
+      "acceptance_test_ids": [
+        "M0V4-ZERO-V7-RUNTIME-REUSE-01",
+        "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+        "M0V4-CAS-TWO-FREEZE-DURABILITY-07"
+      ],
+      "category": "operations",
+      "concern_id": "CRIT-V4-015-ZERO-V7-PROVENANCE-CRITERION",
+      "evidence": "The zero-reuse decision is scientifically and operationally preferable, but test 01 promises to detect any copied V7 constant without defining how copied provenance is distinguished from independently derived coincident values. The authority advisory provides a useful primitive and path denylist; the eventual source test must bind imports, reads, subprocesses, distinctive goldens, hashes, receipts, and authorship provenance rather than treating ordinary shared integers as evidence of reuse.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The V7 firewall needs an exact, auditable provenance and capability criterion; 'copied constant' is not by itself a deterministic static property."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/human_directive.txt",
+      "purpose": "binding directive",
+      "sha256": "ce1540a98aba52c1f4953faafdc10727056134a49b1dc19a5c413ae634c90a0f"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "project thesis",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v2.deliberation.json",
+      "purpose": "V2 workflow",
+      "sha256": "dfea472726cf2b63b7d5eb66e78dae1cbdc9f3e5172fd63ed84374ae419b2c06"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/scope_proposal.json",
+      "purpose": "V2 scope",
+      "sha256": "2492802c8a96b0445e97b1b3831c25fcd8b4c15d2bffaeb5978a1653e412933b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/change.json",
+      "purpose": "V2 proposal",
+      "sha256": "45647223d6a3763f0dcde90b68ad3c953460cb0175960ba92e6a21a615fc9321"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/interpretation_systems.json",
+      "purpose": "V2 systems interpretation",
+      "sha256": "eaff44379eb6398f4dc879c606d512d7814472759c0370ea459a470cc1f7fcff"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/interpretation_benchmark.json",
+      "purpose": "V2 benchmark interpretation",
+      "sha256": "c87b1c94335f03a91bc2a3dcefc791e1aac9a2eef6bca227d4fa31518eed0ad2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/critique.json",
+      "purpose": "V2 critique",
+      "sha256": "02528c271e174cdcec27c1f255b4fb327d89530f90143fa54a2202bc4ff5e1ba"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/consensus.json",
+      "purpose": "V2 rework consensus",
+      "sha256": "d1eabe9da3bc4250e4ba08c458086f8e3f4f5f1e7808e4b3c6a0785243c96aa2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v2/intake.state.json",
+      "purpose": "V2 intake state",
+      "sha256": "d458b6add402412b41dfb5533189a07133c0753721faf7d0c721a01e85d0116d"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v2.deliberation.state.json",
+      "purpose": "V2 runner state",
+      "sha256": "c2d66fddea6d31ccc7ce926c92cf991f8bf44d239d458ca325d97f0e5efb1d75"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_m0_exact_contract_repair_fresh_v1.md",
+      "purpose": "M0 repair",
+      "sha256": "b7329f6c89253a5d627751c0135a0f1aab6caff89d5d1d12dc2eba9ef08c3297"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_mtext_supplied_exact_contract_repair_fresh_v1.md",
+      "purpose": "M-TEXT repair",
+      "sha256": "73866889087937617ad3341ea409ccf1cc9207aaded8c416e704debbe0430947"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_authority_durability_exact_repair_fresh_v1.md",
+      "purpose": "authority and durability repair",
+      "sha256": "0bf15abd49a21ef913f5dab05ec3461ead070b9aacf87c3f267981615b67eb6e"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v3_repairs_adversarial_cross_critique_v1.md",
+      "purpose": "cross-critique",
+      "sha256": "510021974a869db77e724e16ada919e161f023c1e5d0fdfd35d43f2c406baa69"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_m0_semantic_consistency_fresh_audit_v1.md",
+      "purpose": "semantic audit",
+      "sha256": "5d36fb3a6154e05b6c6143985131cbdc4417f19f7416c6c355a642db4163e704"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_mtext_arithmetic_and_consistency_fresh_audit_v1.md",
+      "purpose": "arithmetic audit",
+      "sha256": "1208b8e2661572addcee3b7e4372f99ee38e570208f96c4ab7eaa32b18b928e4"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_roster_endpoint_adjudication_v1.md",
+      "purpose": "roster adjudication",
+      "sha256": "5f32c005e5e4882e736f008e9fc50e3ddfe44bfe125a45b6f614104f882420e3"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_minimal_science_adjudication_fresh_v1.md",
+      "purpose": "minimal-science adjudication",
+      "sha256": "e972551c46c54b628c20c66b701ee616f1abcb9f07b853845fb6b1c9036c8502"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_governance_packet_audit_v1.md",
+      "purpose": "governance audit",
+      "sha256": "0b11febe8abadc4d2c9bddfdf87ad269d5fb209e438e83352153a18d9c891a7c"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v4_rework_candidate.md",
+      "purpose": "integrated V4 candidate",
+      "sha256": "32d73b800971a61a20fa68694dc9cbed9203c65d59d3c01c5baffe2c3a6e53cc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/scope_proposal.json",
+      "purpose": "V4 scope",
+      "sha256": "12c5f1b459a697a59d4fecc1e2991f880a69898fa9a4013f66947fef1bd7ea0b"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v4.deliberation.json",
+      "purpose": "V4 workflow",
+      "sha256": "d1f9308b8e205dfc8aa4590a1462a571b7ef02c1335e4335e0bd5692a4811e49"
+    }
+  ],
+  "critique_id": "chg_20260910_pcfl_m0_mtext_bound_v4.critique_fresh_iclr_v1",
+  "human_questions": [
+    "Does Rohin intend the present decision to authorize only drafting candidate source bytes, in which case test 00 must distinguish source-authoring authority from later preparation-execution authority?",
+    "What exact ordinary-outcome or supplied-treatment entitlement permits DELAYED_ENTRY(k,h) to differ across twins at D-phase start, and which rendered fields must remain equal despite that entitlement?",
+    "Is a one-topology coached-use ceiling acceptable despite the algebra being directly decodable from the public start alias, provided an exactly matched target-only/no-memory probe stays below its bound?",
+    "What exact normalized trace relation, per-goal aggregation, decisive-state rule, and NO_EFFECT/terminal treatment define bridge and twin connected-policy dependence?",
+    "Will the source packet bind the complete condition-by-phase-by-endpoint applicability and claim-disposition matrices before any implementation choice?",
+    "Are raw context and RAG superiority, resource efficiency, carried scratch, and closed-loop feedback explicitly separate optional claims rather than components that can rescue the supplied-connection claim?",
+    "Does Rohin reaffirm that V4 supplies no retention, acquisition-to-use, online-learning, topology-generalization, LoRA, lifetime, or complete-organism evidence, even if every registered V4 gate passes?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v4.systems",
+      "sha256": "ac9b91c20cb75ca18d7b5608423e3377d0aaa6ff24e45513acfd4bfd4f6bf270"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v4.benchmark",
+      "sha256": "745f6514672ffaf2e14c87088c55dbad67232054a219a821a4a36f51ca8d6af3"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "M0V4-SOURCE-AUTHORING-VS-PREPARATION-AUTHORITY-12",
+    "M0V4-DELAYED-ENTRY-TAINT-LINEAGE-13",
+    "MTEXTV4-TARGET-ONLY-ALGEBRA-DECODING-14",
+    "M0V4-PRODUCER-SCORER-ANSWER-NEUTRALITY-15",
+    "MTEXTV4-BRIDGE-TWIN-TRACE-EQUIVALENCE-16",
+    "MTEXTV4-CONDITION-PHASE-ENDPOINT-APPLICABILITY-17",
+    "MTEXTV4-CLAUSE-SPECIFIC-NEGATIVE-DISPOSITION-18",
+    "MTEXTV4-RESOURCE-FACTORIAL-19",
+    "MTEXTV4-SCORER-ORACLE-NONCAUSALITY-20",
+    "FUTURE-PCFL-MULTITOPOLOGY-GENERALIZATION-21",
+    "FUTURE-PCFL-ONLINE-ACTION-OUTCOME-WRITE-ACTION-22"
+  ],
+  "reviewed_acceptance_test_ids": [
+    "M0V4-EXACT-SOURCE-RATIFIABILITY-00",
+    "M0V4-ZERO-V7-RUNTIME-REUSE-01",
+    "M0V4-DISJOINT-CHECKER-AND-MUTATION-02",
+    "M0V4-ACTOR-NONORACLE-03",
+    "M0V4-BUNDLED-READER-READ-CUT-04",
+    "M0V4-VISIBILITY-RESET-NONINTERFERENCE-05",
+    "M0V4-PROVENANCE-TRANSFORM-DAG-06",
+    "M0V4-CAS-TWO-FREEZE-DURABILITY-07",
+    "M0V4-CPU-CONFORMANCE-08",
+    "MTEXTV4-RENDERED-BOUNDARY-09",
+    "MTEXTV4-ROSTER-ENDPOINT-RESOURCE-10",
+    "MTEXTV4-CONFIRMATION-CLAIM-GATE-11"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The strongest scientifically defensible case is that V4 makes a disciplined retreat from an overbroad experiential-learning experiment to a falsifiable supplied-memory mechanism assay. It cleanly removes FeltCraft V7 runtime authority, separates deterministic preparation from fixture admission through two human freezes, prevents legal-action leakage, forces pre-action planning through an eight-read capability-bounded reader, separates substrate-neutral task success from authenticated-link diagnostics, uses bridge and binding interventions, treats delayed state as supplied rather than retained, freezes a finite-census confirmation design with explicit negative dispositions, and denies DREAM, SLEEP, LoRA, parenting, lifetime, and whole-organism credit. If the missing exact source, handoff, endpoint, rendering, and shortcut contracts are supplied and independently validated, a complete confirmation could support a narrow within-suite claim that one fixed model behaviorally used supplied authentic connections, separately used public calibration evidence, and used a supplied persistent carrier after reset.",
+  "visibility_failures": [
+    "The h-dependent DELAYED_ENTRY carrier can differ at delayed-phase start even though that isolated branch has observed no separating ordinary outcome.",
+    "The public start alias reveals k, which determines the relation-alias permutation and permits direct fixed-algebra answer decoding.",
+    "HandoffPublic and MTextHandoff lack exact V4 schemas proving that manifest, freeze, route, condition, split, scorer, and oracle identifiers terminate before rendering.",
+    "The proposal does not yet define the allowlisted causal path by which a private transform selection may legitimately change only its registered public carrier fields while all other private mutations remain noninterfering.",
+    "Goal-blind carrier construction and cursor ordering are asserted but lack a dedicated rendered swap test holding carrier/index bytes fixed across goals and scores.",
+    "Exact actor-visible join, repeat, reset, and prompt-schema bytes are deferred to the absent source bundle, so abandoned-branch release and invisible repeat blocking are not yet executable falsifiers.",
+    "The model-facing system/user/template/token/session surface is entirely future-bound; M0 semantic equality alone cannot establish rendered prefix equality."
+  ]
+}

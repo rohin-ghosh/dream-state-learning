@@ -221,21 +221,220 @@
   year    = {2023}
 }
 
-% ---- TODO entries: cited in the text as \citep{TODO-<topic>}; not present in the reading notes. Fill in and verify before submission. ----
-% (Revision 2026-09-10: TODO-looped-transformers and TODO-chain-of-thought are no longer cited; the activations/tokens/weights axis was retired per REVIEW_HARSH F3.)
-% TODO-compilergym: CompilerGym benchmark reference (Cummins et al., CGO 2022). Not in notes.
-% TODO-cummins2023: Cummins et al. 2023, "Large Language Models for Compiler Optimization" (7B LLM pass ordering on the LLVM instruction-count objective). Not in notes.
-% TODO-self-training: success-filtered self-training family: STaR (Zelikman et al. 2022), ReST (Gulcehre et al. 2023), ReST-EM (Singh et al. 2023), expert iteration (Anthony et al. 2017), LMSI (Huang et al. 2022). Not in notes.
-% TODO-model-collapse: iterated self-training / model collapse: Shumailov et al. 2023/2024; Alemohammad et al. 2023. Not in notes.
-% TODO-seal: SEAL, "Self-Adapting Language Models", arXiv:2506.10943. Tracked in related_work/papers.txt, no note.
-% TODO-ttt-fast-weights: test-time training / fast-weight references (e.g. TTT layers; Titans). Not in notes.
-% TODO-memgpt: MemGPT (Packer et al. 2023). Not in notes.
-% TODO-silver-sutton: Silver & Sutton 2025, "Welcome to the Era of Experience" (source of the term). Not in notes.
-% TODO-critic-tutoring: critic / tutoring neighbours of the parent (Self-Refine; CRITIC; Scheurer et al.; Socratic ITS). Not in notes.
-% TODO-leafe: 'Internalizing Agency from Reflective Experience' (LEAFE), arXiv:2603.16843; authors/title unverified.
-% TODO-early-experience: 'Agent Learning via Early Experience', arXiv:2510.08558; authors unverified.
-% TODO-evaf: 'Memory Depth, Not Memory Access' (EVAF), arXiv:2606.26806; authors unverified.
-% TODO-memopilot: 'From Player to Master' (MemoPilot), arXiv:2606.08656; authors unverified.
-% TODO-spark: 'Learning on the Job' (Spark), arXiv:2607.22157; authors unverified.
-% TODO-cl-bench: CL-Bench, arXiv:2606.05661; authors/title unverified.
-% Also needed but not cited in text yet: LoRA (Hu et al. 2021), Qwen2.5 technical report, vLLM.
+% ---- Entries added in the 2026-09-10 fix pass (meta-review). ----
+% Group A: copied verbatim from paper/iclr2027_experience_models/references.bib (same project; verified there against arXiv).
+% Group B: canonical references added from the standard record (arXiv ID given); each carries "VERIFY" and must be checked
+% against arXiv/DBLP before the 09-15 compile. None of these was invented; the IDs are the well-known ones for each paper.
+% Remaining TODO keys (two): TODO-auto-dreamer (arXiv 2605.20616) and TODO-consolidation-collapse (arXiv 2605.12978);
+% both are in the reading notes by ID and title only (authors not recorded), so they stay as TODO until a person fills them.
+
+% --- Group A (from the sibling manuscript's bib) ---
+@article{ge2026leafe,
+  title        = {Internalizing Agency from Reflective Experience},
+  author       = {Ge, Rui and Fu, Yichao and Qian, Yuyang and Su, Junda and Zhao, Yiming and Zhao, Peng and Zhang, Hao},
+  journal      = {arXiv preprint arXiv:2603.16843},
+  year         = {2026}
+}
+
+@article{zhang2025earlyexperience,
+  title        = {Agent Learning via Early Experience},
+  author       = {Zhang, Kai and Chen, Xiangchao and Liu, Bo and others},
+  journal      = {arXiv preprint arXiv:2510.08558},
+  year         = {2025}
+}
+
+@article{cai2026memopilot,
+  title        = {From Player to Master: Enhancing Test-Time Learning of {LLM} Agents via Reinforcement Learning over Memory},
+  author       = {Cai, Yishuo and Guo, Xingyu and Huang, Xuancheng and Du, Jinhua and Huang, Can and Huang, Wenxuan and Ma, Wenhan and Hu, Yuyang and Zeng, Aohan and Tang, Jie and Sun, Xu},
+  journal      = {arXiv preprint arXiv:2606.08656},
+  year         = {2026}
+}
+
+@article{han2026evaf,
+  title        = {Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents},
+  author       = {Han, Haoliang},
+  journal      = {arXiv preprint arXiv:2606.26806},
+  year         = {2026}
+}
+
+@article{tablan2026learningjob,
+  title        = {Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents},
+  author       = {Tablan, Valentin and Taylor, Scott and Bernhem, Kristoffer},
+  journal      = {arXiv preprint arXiv:2607.22157},
+  year         = {2026}
+}
+
+@article{asawa2026clbench,
+  title        = {Continual Learning Bench: Evaluating Frontier {AI} Systems in Real-World Stateful Environments},
+  author       = {Asawa, Parth and Glaze, Christopher M. and Orlanski, Gabriel and Ramakrishnan, Ramya and Xu, Benji and Biswal, Asim and Chen, Vincent Sunn and Sala, Frederic and Zaharia, Matei and Gonzalez, Joseph E.},
+  journal      = {arXiv preprint arXiv:2606.05661},
+  year         = {2026}
+}
+
+@article{cummins2021compilergym,
+  title        = {{CompilerGym}: Robust, Performant Compiler Optimization Environments for {AI} Research},
+  author       = {Cummins, Chris and Wasti, Bram and Guo, Jiadong and Cui, Brandon and Ansel, Jason and Gomez, Sahir and Jain, Somya and Liu, Jia and Teytaud, Olivier and Steiner, Benoit and Tian, Yuandong and Leather, Hugh},
+  journal      = {arXiv preprint arXiv:2109.08267},
+  note         = {CGO 2022},
+  year         = {2021}
+}
+
+% --- Group B (canonical references; VERIFY each against arXiv before the 09-15 compile) ---
+@article{cummins2023llmcompiler,
+  % VERIFY arXiv 2309.07062
+  title   = {Large Language Models for Compiler Optimization},
+  author  = {Cummins, Chris and Seeker, Volker and Grubisic, Dejan and Elhoushi, Mostafa and Liang, Youwei and Roziere, Baptiste and Gehring, Jonas and Gloeckle, Fabian and Hazelwood, Kim and Synnaeve, Gabriel and Leather, Hugh},
+  journal = {arXiv preprint arXiv:2309.07062},
+  year    = {2023}
+}
+
+@inproceedings{zelikman2022star,
+  % VERIFY arXiv 2203.14465; NeurIPS 2022
+  title     = {{STaR}: Bootstrapping Reasoning With Reasoning},
+  author    = {Zelikman, Eric and Wu, Yuhuai and Mu, Jesse and Goodman, Noah D.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2022},
+  note      = {arXiv:2203.14465}
+}
+
+@article{gulcehre2023rest,
+  % VERIFY arXiv 2308.08998
+  title   = {Reinforced Self-Training ({ReST}) for Language Modeling},
+  author  = {Gulcehre, Caglar and Paine, Tom Le and Srinivasan, Srivatsan and Konyushkova, Ksenia and Weerts, Lotte and Sharma, Abhishek and Siddhant, Aditya and Ahern, Alex and Wang, Miaosen and Gu, Chenjie and Macherey, Wolfgang and Doucet, Arnaud and Firat, Orhan and de Freitas, Nando},
+  journal = {arXiv preprint arXiv:2308.08998},
+  year    = {2023}
+}
+
+@article{singh2023restem,
+  % VERIFY arXiv 2312.06585; TMLR 2024
+  title   = {Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models},
+  author  = {Singh, Avi and Co-Reyes, John D. and Agarwal, Rishabh and others},
+  journal = {arXiv preprint arXiv:2312.06585},
+  year    = {2023}
+}
+
+@inproceedings{anthony2017expert,
+  % VERIFY arXiv 1705.08439; NeurIPS 2017
+  title     = {Thinking Fast and Slow with Deep Learning and Tree Search},
+  author    = {Anthony, Thomas and Tian, Zheng and Barber, David},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2017},
+  note      = {arXiv:1705.08439}
+}
+
+@article{huang2022lmsi,
+  % VERIFY arXiv 2210.11610; EMNLP 2023
+  title   = {Large Language Models Can Self-Improve},
+  author  = {Huang, Jiaxin and Gu, Shixiang Shane and Hou, Le and Wu, Yuexin and Wang, Xuezhi and Yu, Hongkun and Han, Jiawei},
+  journal = {arXiv preprint arXiv:2210.11610},
+  year    = {2022}
+}
+
+@article{shumailov2024collapse,
+  % VERIFY Nature 631, 755-759 (2024); preprint "The Curse of Recursion", arXiv 2305.17493 (2023)
+  title   = {{AI} models collapse when trained on recursively generated data},
+  author  = {Shumailov, Ilia and Shumaylov, Zakhar and Zhao, Yiren and Papernot, Nicolas and Anderson, Ross and Gal, Yarin},
+  journal = {Nature},
+  volume  = {631},
+  pages   = {755--759},
+  year    = {2024}
+}
+
+@inproceedings{alemohammad2023mad,
+  % VERIFY arXiv 2307.01850; ICLR 2024
+  title     = {Self-Consuming Generative Models Go {MAD}},
+  author    = {Alemohammad, Sina and Casco-Rodriguez, Josue and Luzi, Lorenzo and Humayun, Ahmed Imtiaz and Babaei, Hossein and LeJeune, Daniel and Siahkoohi, Ali and Baraniuk, Richard G.},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  note      = {arXiv:2307.01850}
+}
+
+@article{zweiger2025seal,
+  % VERIFY arXiv 2506.10943 (ID is in related_work/papers.txt)
+  title   = {Self-Adapting Language Models},
+  author  = {Zweiger, Adam and Pari, Jyothish and Guo, Han and Aky{\"u}rek, Ekin and Kim, Yoon and Agrawal, Pulkit},
+  journal = {arXiv preprint arXiv:2506.10943},
+  year    = {2025}
+}
+
+@article{packer2023memgpt,
+  % VERIFY arXiv 2310.08560 (ID is in research_notes/03_agent_memory_benchmarks.md)
+  title   = {{MemGPT}: Towards {LLMs} as Operating Systems},
+  author  = {Packer, Charles and Wooders, Sarah and Lin, Kevin and Fang, Vivian and Patil, Shishir G. and Stoica, Ion and Gonzalez, Joseph E.},
+  journal = {arXiv preprint arXiv:2310.08560},
+  year    = {2023}
+}
+
+@article{sun2024ttt,
+  % VERIFY arXiv 2407.04620
+  title   = {Learning to (Learn at Test Time): {RNNs} with Expressive Hidden States},
+  author  = {Sun, Yu and Li, Xinhao and Dalal, Karan and Xu, Jiarui and Vikram, Arjun and Zhang, Genghan and Dubois, Yann and Chen, Xinlei and Wang, Xiaolong and Koyejo, Sanmi and Hashimoto, Tatsunori and Guestrin, Carlos},
+  journal = {arXiv preprint arXiv:2407.04620},
+  year    = {2024}
+}
+
+@article{behrouz2024titans,
+  % VERIFY arXiv 2501.00663
+  title   = {Titans: Learning to Memorize at Test Time},
+  author  = {Behrouz, Ali and Zhong, Peilin and Mirrokni, Vahab},
+  journal = {arXiv preprint arXiv:2501.00663},
+  year    = {2024}
+}
+
+@misc{silver2025experience,
+  % VERIFY: Google DeepMind preprint, April 2025 (chapter for "Designing an Intelligence", MIT Press)
+  title        = {Welcome to the Era of Experience},
+  author       = {Silver, David and Sutton, Richard S.},
+  howpublished = {Preprint, Google DeepMind},
+  year         = {2025}
+}
+
+@inproceedings{hu2021lora,
+  % VERIFY arXiv 2106.09685; ICLR 2022
+  title     = {{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2022},
+  note      = {arXiv:2106.09685}
+}
+
+@article{qwen2025qwen25,
+  % VERIFY arXiv 2412.15115
+  title   = {{Qwen2.5} Technical Report},
+  author  = {{Qwen Team}},
+  journal = {arXiv preprint arXiv:2412.15115},
+  year    = {2024}
+}
+
+@inproceedings{kwon2023vllm,
+  % VERIFY arXiv 2309.06180; SOSP 2023
+  title     = {Efficient Memory Management for Large Language Model Serving with {PagedAttention}},
+  author    = {Kwon, Woosuk and Li, Zhuohan and Zhuang, Siyuan and Sheng, Ying and Zheng, Lianmin and Yu, Cody Hao and Gonzalez, Joseph E. and Zhang, Hao and Stoica, Ion},
+  booktitle = {Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles},
+  year      = {2023},
+  note      = {arXiv:2309.06180}
+}
+
+@inproceedings{madaan2023selfrefine,
+  % VERIFY arXiv 2303.17651; NeurIPS 2023
+  title     = {Self-Refine: Iterative Refinement with Self-Feedback},
+  author    = {Madaan, Aman and Tandon, Niket and Gupta, Prakhar and Hallinan, Skyler and Gao, Luyu and Wiegreffe, Sarah and Alon, Uri and Dziri, Nouha and Prabhumoye, Shrimai and Yang, Yiming and Gupta, Shashank and Majumder, Bodhisattwa Prasad and Hermann, Katherine and Welleck, Sean and Yazdanbakhsh, Amir and Clark, Peter},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2023},
+  note      = {arXiv:2303.17651}
+}
+
+@inproceedings{gou2023critic,
+  % VERIFY arXiv 2305.11738; ICLR 2024
+  title     = {{CRITIC}: Large Language Models Can Self-Correct with Tool-Interactive Critiquing},
+  author    = {Gou, Zhibin and Shao, Zhihong and Gong, Yeyun and Shen, Yelong and Yang, Yujiu and Duan, Nan and Chen, Weizhu},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  note      = {arXiv:2305.11738}
+}
+
+% ---- Remaining TODO keys (cited as \citep{TODO-...}; in the reading notes by arXiv ID and title only; a person must fill and verify) ----
+% TODO-auto-dreamer: "Learning Offline Memory Consolidation for Language Agents" (Auto-Dreamer), arXiv:2605.20616; authors not in notes.
+% TODO-consolidation-collapse: "Useful Memories Become Faulty When Continuously Updated by LLMs", arXiv:2605.12978; authors not in notes.
+% (Resolved in this pass: TODO-compilergym, TODO-cummins2023, TODO-self-training, TODO-model-collapse, TODO-seal, TODO-ttt-fast-weights,
+%  TODO-memgpt, TODO-silver-sutton, TODO-critic-tutoring, TODO-leafe, TODO-early-experience, TODO-evaf, TODO-memopilot, TODO-spark, TODO-cl-bench.)
