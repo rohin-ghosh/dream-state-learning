@@ -67,3 +67,11 @@ Dialect bifurcation cured by canonicalization + real-context paired canary; trai
 - **Windows with undefined chunks-to-best** (SEQ-005 instrument; None when no `[OUTCOME]` echo in the window): R2 seed6 27/32, seed4 13/32, seed5 11/32, seed2 9/32, seed3 6/32, seeds 7/8 4/32, seed0 2/32, seed1 0/32; R3 500 12/32, 501 7/28, 502 4/32, 503 9/32; RP 401 3/32, 402 1/32; R4 0–4 undefined of 9–19 windows. The early→late "doubling" of chunks-to-best is confounded with the child ceasing to echo outcomes.
 - **Late-life chunks per situation** (mean of the last three windows; budget 16): 15.4–16.0 in R2 seeds 0/1/2/4/7/8, R3 503, R4 604/605/606, RP 402; below the band: R2 seed3 12.8, seed5 5.4, seed6 1.0; R3 500 6.6, 501 12.8, 502 9.7, 504 14.4, 505 2.5; R4 600 13.9, 602 13.1, 603 15.3; RP 401 7.8.
 - **Instrument defect:** efficiency_markers has no cells for RP 400 (parser error on an elided `[OUTCOME]` score).
+
+## Addendum 2026-09-10 (SEQ-012; disjoint panel v1 at 24 cells; source: COORDINATION.md entry "SEQ-012")
+- **R2 final adapters (9):** Δ vs node base −0.043, +0.016, −0.005, −0.018, −0.005, −0.038, −0.036, −0.026, −0.003 (seeds 0–8); mean −0.017; 1/9 above +0.015 (seed 1 = routine 0.2731), 5/9 below −0.015 (all with a collapsed rep 0.18–0.21).
+- **R2 mid-life adapters (sleep 416, 9):** +0.016, +0.016, −0.005, +0.019, −0.005, −0.014, −0.008, +0.017, +0.010; mean +0.005; 4/9 above +0.015, 0/9 below −0.015. Final − mid: 0.000 ×3, negative ×6 (−0.013 to −0.059); positive ×0.
+- **Above-base cells are the routine:** all above-base cells but two (R2 seed7 mid 0.2712, RP 400 final 0.2713) equal 0.2731 to four decimals, the six-pass routine applied to every program.
+- **RP:** 400 final +0.017, mid −0.002; 402 final −0.009, mid −0.008. **R3 500 (gated):** committed final (sleep 608) +0.005; mid +0.016. Bases: node 1 0.2574 (reps 0.2506/0.2542/0.2675), node 2 0.2541 (0.2463/0.2601/0.2559).
+- **Gate catches to date with a passing score (brevity rule):** R3 500@64, 501@704, 505@288, 505@832. Score catches: R4 606@576 (0.307), R4 603@640 (0.421), R3 500@960/992/1024 (0.337/0.347/0.210).
+- **Disjoint-panel gate (R5 700):** gate base 0.2589; first two candidates 0.2565 / 0.2566 accepted inside the 0.02 tolerance (proposal: 0.01 for seeds 701+).
