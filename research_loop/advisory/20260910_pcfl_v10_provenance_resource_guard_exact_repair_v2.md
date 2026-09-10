@@ -117,6 +117,30 @@ is not the active generated-token maximum. `REQUEST_EMITTED` and
 its registered ceiling but contributes zero offered or actual tokens and zero
 model call.
 
+### 1.1 Test 23 fixture meanings
+
+- `RESOURCEV10-POS-ROSTER-18` is exactly the 18 ordered rows in the table and
+  no nineteenth, missing, renamed, or reordered row.
+- `RESOURCEV10-POS-PHASE-PROJECTION` expands every P into `PROBE_A` and
+  `PROBE_B`, every U into `UNCERTAINTY_ACQUIRE`, every D into `DELAYED_GOAL`,
+  and reproduces every row's applicable phase count and opportunities.
+- `RESOURCEV10-POS-ROOT-SPLIT-ACTIVE` reproduces the 16/32/16 split and every
+  active, sentinel, and separate-reserve total above.
+- `RESOURCEV10-POS-NOT-REACHED-PARTITION` independently seals issued and
+  unissued suffixes and satisfies the exact slot and token partition.
+- `RESOURCEV10-REJ-ROSTER-ROW-DRIFT` independently adds, drops, renames,
+  reorders, or changes the mode of one condition; each case rejects.
+- `RESOURCEV10-REJ-PHASE-PROJECTION-DRIFT` independently adds, drops, or moves
+  one P/U/D applicability or opportunity; each case rejects.
+- `RESOURCEV10-REJ-SLOT-OR-ALLOWANCE-DRIFT` changes exactly one slot, 256-token
+  generation cap, or 8,192-token input cap; each case rejects.
+- `RESOURCEV10-REJ-EARLY-TERMINAL-DELETES-SLOT` removes rather than seals one
+  post-terminal `NOT_REACHED` slot; reject.
+- `RESOURCEV10-REJ-RESERVE-SUBSTITUTION` uses any reserve root to rescue,
+  replace, or augment DEV/confirmation; reject.
+- `RESOURCEV10-REJ-SENTINEL-AS-ENDPOINT` counts any sentinel as a condition,
+  root, endpoint observation, or reserve; reject.
+
 ## 2. Verbatim nine-field acceptance registry records
 
 The following is a valid JSON array. Each object has exactly the nine fields
@@ -628,15 +652,49 @@ arm and must reject.
 - `RESOURCEV10-POS-CAUSAL-SCOPE-RECONCILIATION`: every post-origin descendant
   retains its causal parents and charges its actual execution scope.
 
-The rejection IDs in the registry have their literal meanings. In particular,
-they independently inject: the V5 schema name; one missing/extra/wrong-typed
-field; zero/NA/missing substitution; omitted static request tokens; free RAG
-build/postings; free common-reader work; hidden thinker call; divided
-standalone or summed physical CAS; digest alias; deleted temporary work; free
-CPU warmup; unattributable GPU or memory; segment-sum mismatch; registered/
-offered/actual substitution; network/cost; and post-origin reallocation. Every
-injection rejects. Unattributable concurrency invalidates resource evidence;
-it is never imputed.
+The negative fixtures are individual and noncompensatory:
+
+- `RESOURCEV10-REJ-V5-SCHEMA-NAME` substitutes `ChargedResourceV5`, a dual
+  version, or a compatibility coercion; reject.
+- `RESOURCEV10-REJ-MISSING-FIELD`, `RESOURCEV10-REJ-EXTRA-FIELD`, and
+  `RESOURCEV10-REJ-WRONG-TYPE` independently delete, add, or mistype one leaf
+  at every object depth; every case rejects.
+- `RESOURCEV10-REJ-ZERO-NA-MISSING` independently substitutes each member of
+  the three-way distinction for another; reject.
+- `RESOURCEV10-REJ-STATIC-ONCE-ONLY` charges resident static storage but omits
+  one or more emitted-request static token segments; reject.
+- `RESOURCEV10-REJ-RAG-BUILD-OR-POSTINGS-FREE` independently omits document
+  storage, index build, warmup, query, candidates, postings, return, or
+  downstream return-token input; reject each case.
+- `RESOURCEV10-REJ-COMMON-READER-FREE` omits a found/null/blocked invocation,
+  fixed envelope, serialization, record, hashing, or CPU contribution; reject.
+- `RESOURCEV10-REJ-HIDDEN-THINKER-CALL` omits a background, retry, sentinel,
+  failed, tape, or ordinary attempt; reject.
+- `RESOURCEV10-REJ-CAS-DIVIDED-STANDALONE` fractionally allocates or omits a
+  shared object from an arm closure; reject.
+- `RESOURCEV10-REJ-CAS-SUMMED-PHYSICAL` sums standalone closures instead of
+  taking the digest union; reject.
+- `RESOURCEV10-REJ-CAS-DIGEST-ALIAS` admits identical bytes under two digests
+  or different bytes under one digest; reject.
+- `RESOURCEV10-REJ-DELETED-TEMP-FREE` deletes a written request, response,
+  index, cache, trace, log, or other temporary object without both counters;
+  reject.
+- `RESOURCEV10-REJ-CPU-WARMUP-FREE` omits common preparation, graph/index
+  construction, tokenizer/model warmup, or cache priming; reject.
+- `RESOURCEV10-REJ-GPU-UNATTRIBUTABLE` lacks a unique physical-device UUID,
+  active-ns owner, or separable concurrency boundary; reject.
+- `RESOURCEV10-REJ-MEMORY-UNATTRIBUTABLE` lacks a resettable per-arm host or
+  device peak boundary; reject.
+- `RESOURCEV10-REJ-SEGMENT-SUM` changes any input segment or total so the exact
+  equality fails; reject.
+- `RESOURCEV10-REJ-REGISTERED-ACTUAL-CONFLATION` substitutes registered,
+  offered, emitted, or actual call/token counters for one another; reject.
+- `RESOURCEV10-REJ-NETWORK-OR-COST` admits a provider/network edge, network
+  byte/request, or nonzero external cost; reject.
+- `RESOURCEV10-REJ-CAUSAL-REALLOCATION` performs any post-origin move described
+  in section 4.5; reject.
+
+Unattributable concurrency invalidates resource evidence; it is never imputed.
 
 ## 5. Exact C10 boundary, governance custody, and noncircular provenance
 
@@ -719,7 +777,10 @@ ratification of the exact candidate bytes and manifest; a separate exact human
 pass projection if and only if the guard passes; then and only then the later
 substages of that same preparation grant. Guard passage does not issue,
 expand, or replace the grant that authorized it. No step implies or creates
-the authority of the next.
+the authority of the next. The guard is substage zero of the one exact
+preparation attempt. Failure consumes that attempt, yields no projection, and
+permits no retry or reserve substitution; this governance failure adds no
+scientific call, slot, or token allowance.
 
 ### 5.3 External provenance and boundary-only governance source
 

@@ -437,12 +437,109 @@ receipt, never a substitute for tests 01, 03, 05, 09, 13, 19, or 29–34.
 The deferred identifiers are exactly:
 
 ```text
+MTEXTV4-SCORER-ORACLE-NONCAUSALITY-20
 FUTURE-PCFL-MULTITOPOLOGY-GENERALIZATION-21
 FUTURE-PCFL-ONLINE-ACTION-OUTCOME-WRITE-ACTION-22
 FUTURE-PCFL-TEXT-LORA-MATCHED-TRANSPORT-35
 FUTURE-PCFL-RECALL-COMPOSITION-PLANNING-DECOMPOSITION-36
 FUTURE-PCFL-LONGITUDINAL-ACTIVE-TEXT-PLATEAU-37
 ```
+
+### 3.1 Exact provenance semantics and fixture corpus
+
+This subsection is the section-3 contract referenced literally by tests 26
+and 27.
+
+The unsigned lexicographic coordinate is exactly
+`Position=(major:u8,lane:u8,ordinal:u16)`. Lane 0 is the ordinary event at a
+major position; lane 1 is its post-event synthesis. Reserved absent positions
+never renumber. The authoritative pair registry is exactly:
+
+| ordinal | position | pair |
+|---:|---|---|
+| 0 | `(24,1,0)` | `(p0,p1)` |
+| 1 | `(24,1,1)` | `(p2,p3)` |
+| 2 | `(24,1,2)` | `(p1,p4)` |
+| 3 | `(24,1,3)` | `(p3,p4)` |
+| 4 | `(24,1,4)` | `(p4,p5)` |
+| 5 | `(24,1,5)` | `(p4,p6)` |
+| 6 | `(41,1,6)` | `(p4,nh)` iff `nh` was admitted |
+
+`FactKey=(src_ordinal,relation_ordinal,dst_ordinal)` and
+`PairKey=(FactKey(left),FactKey(right))` use unsigned numeric tuple order.
+Public aliases, semantic hashes, paths, goal, score, condition, filesystem
+order, and wall time never order evidence. Alias edges must be strictly
+decreasing by raw digest and are resolved transitively before node identity,
+parent sorting, root calculation, support, contradiction, cycle, or render.
+
+```text
+roots(ROOT r)  = {canonical_id(r)}
+roots(SYNTH s) = set_union(roots(parent) for parent in parents(s))
+roots(ALIAS a) = roots(resolve(a))
+```
+
+Root sets contain only canonical primitive ROOT IDs. SYNTH and REEXPRESSION
+IDs never become evidence; aliases and sinks never count twice. A shared-root
+diamond is legal and root-deduplicated. A `PAIR_PROPOSAL` cites the complete
+canonical primitive ROOT set for both endpoint FactKeys at the proposal cut.
+Support requires strictly later independent primitive ROOT evidence disjoint
+from discovery roots. A REEXPRESSION adds no root and cannot validate or
+render a pair. Only SUPPORTED, non-REVOKED PAIR_PROPOSAL nodes render.
+
+The exact test-26 fixture results are:
+
+| fixture ID | exact required result |
+|---|---|
+| `PROVV10-POS-OLD-SIX-ORDER` | Old-cut evidence produces exactly ordinals 0--5 at `(24,1,0..5)` and exactly six supported links after positions 25--31 validate their endpoints. |
+| `PROVV10-POS-NEW-H0` | Admitted `nh=C-R07->D` produces only ordinal 6 at `(41,1,6)` and renders only after independent p4/nh validations at 42/43. |
+| `PROVV10-POS-NEW-H1` | Admitted `nh=C-R08->D` has the same ordinal/position and the same later-support law. |
+| `PROVV10-POS-FAILED-COMMIT-ABSENCE` | With no admitted nh ROOT, `(41,1,6)` and validation 43 are reserved but absent and no seventh link exists. |
+| `PROVV10-POS-ALIAS-CANONICAL` | Direct and strictly decreasing alias citations collapse to one sorted parent ID and yield identical SYNTH ID, roots, status, and rendering. |
+| `PROVV10-POS-SHARED-ROOT-DIAMOND` | For `s0=[r0,r1]`, `s1=[r0,r2]`, and `s2=[s0,s1]`, accept and require `roots(s2)={r0,r1,r2}`; shared `r0` is neither doubled nor a cycle. |
+| `PROVV10-POS-SYNTH-NON-EVIDENCE` | REEXPRESSION `x1=[x0]` is accepted structurally, `roots(x1)=roots(x0)`, neither synthetic ID is a root, and x1 alone supports and renders nothing. |
+| `PROVV10-REJ-PAIR-ORDER-DRIFT` | Reject any swap, omission, duplicate, or eighth authoritative pair. |
+| `PROVV10-REJ-POSITION-DRIFT` | Reject changed major/lane/ordinal, wall-time ordering, renumbering after absence, or nondeterministic tie. |
+| `PROVV10-REJ-DIAMOND-FALSE-CYCLE` | The exact legal shared-root diamond must not be rejected as cyclic. |
+| `PROVV10-REJ-DUPLICATE-ROOT-INFLATION` | Reject root multisets, alias/sink double count, or repeated shared-root support. |
+| `PROVV10-REJ-REEXPRESSION-EVIDENCE` | Reject any support, Link, or TransitionRow obtained from synthetic-only evidence. |
+
+Whole-batch alias, schema, canonical-ID, parent, position, and cycle checks
+complete before support, contradiction, revocation, rendering, or write.
+Rejected batches leave the pre-batch store byte-identical. For a structurally
+valid batch the exact precedence is:
+
+```text
+BATCH_REJECT > REVOKED > SUPPORTED > PENDING/SUPPORT_REJECT
+```
+
+A later identical FactKey ROOT is corroboration. A later ROOT with the same
+`(src,rel)` and different `dst` permanently revokes every dependent proposal
+and transitive SYNTH descendant. Later matching evidence, aliasing,
+rerendering, or reproposal cannot un-revoke it.
+
+The exact test-27 dispositions are:
+
+| fixture ID | exact disposition |
+|---|---|
+| `PROVV10-POS-CORROBORATION` | Valid commit; later identical FactKey ROOT supplies applicable independent support and creates no conflict. |
+| `PROVV10-POS-REVOCATION-STATE` | Valid commit; contradiction makes the pair and all transitive dependents permanently REVOKED and removes rendered rows. |
+| `PROVV10-POS-ATOMIC-COMMIT` | A wholly valid multi-object batch commits every canonical object exactly once. |
+| `PROVV10-REJ-ALIAS-UNKNOWN` | `BATCH_REJECT`: unknown target. |
+| `PROVV10-REJ-ALIAS-DUPLICATE-SOURCE` | `BATCH_REJECT`: one source has two targets. |
+| `PROVV10-REJ-ALIAS-SELF-OR-CYCLE` | `BATCH_REJECT`: self, nondecreasing, or cyclic alias edge. |
+| `PROVV10-REJ-PARENT-UNKNOWN` | `BATCH_REJECT`: collapsed parent absent. |
+| `PROVV10-REJ-PARENT-SELF-SAME-FORWARD` | `BATCH_REJECT`: self, same-position, or later parent. |
+| `PROVV10-REJ-COLLAPSED-DAG-CYCLE` | `BATCH_REJECT`: alias collapse exposes a dependency cycle. |
+| `PROVV10-REJ-NONCANONICAL-PARENTS` | `BATCH_REJECT`: unresolved, duplicated, unsorted, or ID-mismatched parent array. |
+| `PROVV10-REJ-NONCOMPOSABLE-PAIR` | `SUPPORT_REJECT`: `left==right` or `left.dst!=right.src`. |
+| `PROVV10-REJ-INCOMPLETE-PRIMITIVE-PARENTS` | `SUPPORT_REJECT`: missing endpoint ROOT, foreign FactKey, or SYNTH substitution. |
+| `PROVV10-REJ-PREMATURE-VALIDATION` | `SUPPORT_REJECT`: validation is not strictly later. |
+| `PROVV10-REJ-REUSED-DISCOVERY-ROOT` | `SUPPORT_REJECT`: proposal and validation root sets intersect. |
+| `PROVV10-REJ-SYNTH-AS-PRIMITIVE` | `BATCH_REJECT`: synthetic node declared primitive. |
+| `PROVV10-REJ-SYNTHETIC-ONLY-VALIDATION` | `SUPPORT_REJECT`: no later primitive evidence. |
+| `PROVV10-REJ-UNREVOKE` | `VALID_REVOKED`: all attempted restoration leaves the item REVOKED. |
+| `PROVV10-REJ-TRANSFORM-EVIDENCE` | `BATCH_REJECT`: transform adds evidence, support, contradiction, revocation, or position. |
+| `PROVV10-REJ-BATCH-ATOMICITY` | `BATCH_REJECT`: malformed final object causes zero persistent mutation. |
 
 ## 4. Exact algebra, producer/scorer, and local-edge laws
 
@@ -536,6 +633,385 @@ aliases, cursors, errors, cache keys, or handles reject. The lawful set of
 local items may support reconstruction only through successive authorized
 reads within the unchanged budget.
 
+### 4.4 Closed C10 resource contract
+
+This subsection is the section-4 contract referenced literally by tests 24
+and 25. It is reproduced here so those registry records have no unstated
+schema, reduction, or fixture dependency.
+
+#### 4.4.1 Types and scoped supersession
+
+In this subsection:
+
+- `u64` is a JSON integer in `[0,18446744073709551615]`;
+- `measure` is `u64` or the literal JSON string `"NA"`;
+- `hex64` is a lowercase 64-character hexadecimal JSON string;
+- `nfc_string` is a nonempty NFC UTF-8 JSON string without control bytes;
+- `condition` is exactly one of the 18 condition strings in section 1;
+- `phase` is exactly `PROBE_A`, `PROBE_B`, `UNCERTAINTY_ACQUIRE`, or
+  `DELAYED_GOAL`; `mode` is exactly `R`, `B`, or `T`; and
+- `split` is exactly `DEV`, `CONFIRMATION`, `RESERVE`, or `SENTINEL`.
+
+The `ChargedResourceV10.identity.mode` treatment code `R|B|T` is orthogonal
+to `PublicMemorySurfaceV4.mode`; it is not a public-memory enum or alias and
+cannot substitute for the exact section-2 vocabulary.
+
+For an `ARM` record every identity value is non-`NA` and matches the C10
+roster. For the sole `COMMON` record, `root_receipt_id`, `condition`, `phase`,
+`mode`, and `split` are each the literal `"__COMMON__"`; every digest remains
+`hex64`. All numeric leaves are `measure` unless explicitly typed `u64`.
+`0` means applicable and unused. `"NA"` is legal only where the closed
+applicability matrix in C10 `resource_roster_v4.json` says the resource class
+does not exist; missing is never zero or NA. Arrays are ordered as stated.
+Every object is closed recursively: a missing or extra key, duplicate key,
+wrong type, unsorted array, duplicate array identity, negative number,
+floating point number, exponent notation, or integer outside `u64` rejects.
+
+`ChargedResourceV10` supersedes `ChargedResourceV5` only for the C10 candidate,
+C10 tests 24/25, and future receipts derived from those C10 bytes. It does not
+rename, modify, reinterpret, validate, or invalidate any V5--V9 artifact. A C10
+registry or receipt naming `ChargedResourceV5`, accepting both versions, or
+coercing one into the other rejects.
+
+#### 4.4.2 Exact `ChargedResourceV10`
+
+```text
+ChargedResourceV10 := {
+  schema_version: 10,
+  artifact_type: "pcfl_charged_resource_v10",
+  identity: {
+    record_kind: "ARM" | "COMMON",
+    scope_id: hex64,
+    root_receipt_id: nfc_string,
+    condition: condition | "__COMMON__",
+    phase: phase | "__COMMON__",
+    mode: mode | "__COMMON__",
+    split: split | "__COMMON__",
+    model_sha256: hex64,
+    tokenizer_sha256: hex64,
+    chat_template_sha256: hex64,
+    renderer_sha256: hex64,
+    parser_sha256: hex64,
+    controller_sha256: hex64,
+    scorer_sha256: hex64,
+    runtime_sha256: hex64,
+    device_manifest_sha256: hex64,
+    meter_manifest_sha256: hex64,
+    cas_object_ledger_sha256: hex64
+  },
+  opportunity: {
+    registered_slots: u64,
+    slots_request_emitted: u64,
+    slots_not_reached: u64,
+    maximum_input_tokens: u64,
+    registered_generation_allowance: u64,
+    offered_generation_allowance: u64,
+    read_opportunities: u64,
+    world_action_opportunities: u64,
+    terminal_opportunities: u64
+  },
+  stored: {
+    raw_event_bytes: measure,
+    atom_bytes: measure,
+    link_bytes: measure,
+    common_index_bytes: measure,
+    rag_index_bytes: measure,
+    native_graph_bytes: measure,
+    static_context_bytes: measure,
+    prompt_source_bytes: measure,
+    raw_event_tokens: measure,
+    atom_tokens: measure,
+    link_tokens: measure,
+    static_context_tokens: measure
+  },
+  build: {
+    common_fixture_cpu_ns: measure,
+    graph_build_cpu_ns: measure,
+    index_build_cpu_ns: measure,
+    cache_warmup_cpu_ns: measure,
+    render_cpu_ns: measure,
+    controller_cpu_ns: measure,
+    scorer_cpu_ns: measure,
+    common_fixture_peak_rss_bytes: measure,
+    graph_build_peak_rss_bytes: measure,
+    index_build_peak_rss_bytes: measure,
+    cache_warmup_peak_rss_bytes: measure
+  },
+  reader: {
+    invocations: measure,
+    found_returns: measure,
+    not_found_returns: measure,
+    blocked_returns: measure,
+    candidate_rows_examined: measure,
+    postings_touched: measure,
+    documents_returned: measure,
+    atom_records_returned: measure,
+    link_records_returned: measure,
+    return_utf8_bytes: measure,
+    return_tokens: measure,
+    reader_cpu_ns: measure
+  },
+  thinker: {
+    calls_attempted: u64,
+    calls_completed: u64,
+    calls_failed: u64,
+    input_tokens: u64,
+    input_system_tokens: u64,
+    input_protocol_tokens: u64,
+    input_state_tokens: u64,
+    input_static_context_tokens: u64,
+    input_reader_return_tokens: u64,
+    input_prior_scratch_tokens: u64,
+    input_other_tokens: u64,
+    generated_tokens: u64,
+    decoded_utf8_bytes: u64,
+    service_latency_ns: u64,
+    arm_wall_span_ns: u64,
+    gpu_device_charges: [{
+      physical_device_uuid: nfc_string,
+      active_ns: u64,
+      peak_memory_bytes: u64
+    }, ...],
+    peak_worker_rss_bytes: u64
+  },
+  behavior_work: {
+    successful_world_actions: u64,
+    no_effect_world_actions: u64,
+    other_unsuccessful_world_actions: u64,
+    total_world_actions: u64,
+    terminal_commands: u64,
+    controller_tool_operations: u64
+  },
+  artifacts: {
+    request_bytes: u64,
+    response_bytes: u64,
+    tool_return_bytes: u64,
+    trace_bytes: u64,
+    receipt_bytes: u64,
+    log_bytes: u64,
+    other_installed_bytes: u64,
+    temporary_bytes_written: u64,
+    temporary_bytes_deleted: u64,
+    standalone_cas_object_count: u64,
+    standalone_cas_bytes: u64
+  },
+  external: {
+    network_requests: u64,
+    network_rx_bytes: u64,
+    network_tx_bytes: u64,
+    external_cost_microusd: u64
+  }
+}
+```
+
+`scope_id` is the SHA-256 identity of the canonical tuple
+`(record_kind,root_receipt_id,condition,phase,mode,split)` encoded by the C10
+schema. `gpu_device_charges` is bytewise sorted by UUID and has at most one
+entry per physical device. In the frozen local assay all three network fields
+and `external_cost_microusd` are exactly zero; any nonzero value invalidates
+the proposal rather than recording an allowed resource.
+
+#### 4.4.3 Exact component laws
+
+The following equalities are noncompensatory:
+
+```text
+slots_request_emitted + slots_not_reached = registered_slots
+
+calls_completed + calls_failed = calls_attempted
+
+found_returns + not_found_returns + blocked_returns = invocations
+
+input_tokens = input_system_tokens + input_protocol_tokens
+             + input_state_tokens + input_static_context_tokens
+             + input_reader_return_tokens + input_prior_scratch_tokens
+             + input_other_tokens
+
+total_world_actions = successful_world_actions
+                    + no_effect_world_actions
+                    + other_unsuccessful_world_actions
+```
+
+Registered allowance includes sealed `NOT_REACHED`; offered and actual
+counters do not. Static content is charged once as resident storage and again
+in `input_static_context_tokens` on every emitted request containing it. RAG
+charges raw documents, index bytes, index build, cache warmup, query CPU,
+candidate rows, postings, returned documents/envelopes/tokens, and every later
+request that contains a return. Common readers charge found/null/blocked
+invocations, fixed envelopes, serialization, hashing, returned records, and
+reader CPU. Every attempted, failed, tape, retry, and sentinel thinker call is
+metered; no retry is thereby authorized.
+
+Actual counts, bytes, CPU, latency, GPU, memory, and artifacts remain measured
+outcomes. Sums reduce by sum, peaks by `max`, wall span by
+`max(end)-min(start)`, and physical GPU hours by
+`sum(active_ns)/3,600,000,000,000`. No A40-equivalent conversion, imputation,
+or scalar efficiency score exists.
+
+#### 4.4.4 Standalone and physical CAS
+
+`CasObjectChargeV10` is a closed ledger row:
+
+```text
+{
+  sha256: hex64,
+  nbytes: u64,
+  category: "RAW_EVENT" | "ATOM" | "LINK" | "COMMON_INDEX" |
+            "RAG_INDEX" | "NATIVE_GRAPH" | "STATIC_CONTEXT" |
+            "PROMPT_SOURCE" | "REQUEST" | "RESPONSE" | "TOOL_RETURN" |
+            "TRACE" | "RECEIPT" | "LOG" | "OTHER_INSTALLED" | "TEMPORARY",
+  owner_scope_id: hex64,
+  reachable_scope_ids: [hex64, ...]
+}
+```
+
+Rows are sorted by `(sha256,category,owner_scope_id)` and
+`reachable_scope_ids` is bytewise sorted and duplicate-free. Same bytes under
+two digests or different bytes under one digest reject.
+
+For arm scope `a` and a reduction scope `S`:
+
+```text
+Closure(a) = distinct ledger digests whose reachable_scope_ids contains a
+standalone_cas_bytes(a) = sum(nbytes(o) for o in Closure(a))
+physical_cas_bytes(S) = sum(nbytes(o) for o in union(Closure(a) for a in S))
+```
+
+An object counts fully for every standalone arm that needs it, never a
+fraction. Physical storage counts its digest once. Common preparation is
+recorded once in `COMMON`; each standalone arm reports `COMMON + arm-specific`
+work, while a suite-physical reduction reports `COMMON once + arm-specific`
+work. Reduction receipts are distinct artifacts, state scope membership
+explicitly, and report `physical_cas_object_count` and `physical_cas_bytes`;
+they are not per-arm `ChargedResourceV10` records.
+
+`RESOURCEV10-POS-CAS-STANDALONE-PHYSICAL` has common objects of 10 and 20
+bytes, A-only 7 bytes, and B-only 11 bytes. It requires:
+
+```text
+standalone(A) = 37
+standalone(B) = 41
+physical(A union B) = 48
+```
+
+`78`, `22`, fractional sharing, or omission is invalid.
+
+#### 4.4.5 Raw meter events and post-origin causal descendants
+
+Every measured contribution has exactly one closed raw row:
+
+```text
+ResourceMeterEventV10 := {
+  schema_version: 10,
+  artifact_type: "pcfl_resource_meter_event_v10",
+  event_id: hex64,
+  event_kind: "BUILD" | "STORE" | "READ" | "RENDER" | "THINKER" |
+              "WORLD_ACTION" | "ARTIFACT_WRITE" | "ARTIFACT_DELETE" |
+              "NETWORK" | "EXTERNAL_COST",
+  charge_scope_id: hex64,
+  originating_scope_id: hex64,
+  slot_id: nfc_string | "NA",
+  causal_parent_event_ids: [hex64, ...],
+  metric_json_pointer: nfc_string,
+  amount: u64,
+  unit: "COUNT" | "BYTE" | "TOKEN" | "NANOSECOND" | "MICROUSD",
+  source_receipt_sha256: hex64
+}
+```
+
+Objects are closed; parent IDs are bytewise sorted and duplicate-free;
+`metric_json_pointer` names exactly one numeric leaf in the applicable
+`ChargedResourceV10` or common receipt. `event_id` hashes the canonical row
+with `event_id` omitted. A row maps to exactly one leaf and one charge scope.
+Every leaf equals the exact reduction of all and only its mapped rows.
+
+Resource and evidence provenance are not interchangeable. A datum may descend
+from an earlier O41/O42/O43 evidence event, but each later build, storage,
+reader, render, request-token, model, action, or artifact operation is a new
+meter event charged where that operation executes. Thus every D baseline use
+of an outcome descendant charges its D arm's static/index/reader/render/input
+work; it is not back-charged to AUTH U, hidden in `COMMON`, or assigned to the
+content's provenance root. Conversely, actual common construction remains
+owned once by `COMMON`; standalone closure includes it fully and physical
+reduction includes it once. A descendant never erases, moves, or substitutes
+for its origin event, and a causal edge never supplies a free charge.
+
+`RESOURCEV10-POS-POST-ORIGIN-DESCENDANT` fixes one common 100-byte descendant,
+one D-arm 20-ns retrieval, one 40-byte return, and two later requests each
+containing 12 return tokens. Require common stored bytes 100; D reader CPU 20;
+D return bytes 40; D reader-return input tokens 24; and no corresponding
+charge in the originating U arm. `RESOURCEV10-REJ-CAUSAL-REALLOCATION`
+independently moves each contribution to origin, COMMON, another arm, or no
+arm and must reject.
+
+#### 4.4.6 Remaining resource fixtures
+
+- `RESOURCEV10-POS-CLOSED-SCHEMA`: all exact keys/types and no extras pass.
+- `RESOURCEV10-POS-FULL-VECTOR-ZERO-NA`: legitimate zero and matrix-authorized
+  NA remain distinct from missing.
+- `RESOURCEV10-POS-STATIC-REPEATED`: 100 stored static tokens in three emitted
+  requests gives 100 stored and 300 input-static tokens.
+- `RESOURCEV10-POS-RAG-WORK`: nonzero build, warmup, query, candidates,
+  postings, four-document return, return-token, later-input, and artifact
+  leaves reconcile.
+- `RESOURCEV10-POS-BLOCKED-READER`: one blocked call has one invocation, fixed
+  return bytes/tokens, and zero candidate rows/postings.
+- `RESOURCEV10-POS-NOT-REACHED`: registered ceilings include an unissued
+  suffix; offered and actual counters exclude it.
+- `RESOURCEV10-POS-COMPONENT-REDUCTION`: sums, maxima, wall interval, CAS
+  union, and physical-device GPU conversion reproduce their goldens.
+- `RESOURCEV10-POS-METER-CAPABILITY-CLOSURE`: the capability manifest names
+  every process, thread, subprocess, file/CAS, index/cache, reader, model,
+  device, network, and artifact-write path and no other path is reachable.
+- `RESOURCEV10-POS-METER-LEAF-RECONCILIATION`: every vector numeric leaf
+  equals its raw rows exactly once.
+- `RESOURCEV10-POS-CAUSAL-SCOPE-RECONCILIATION`: every post-origin descendant
+  retains its causal parents and charges its actual execution scope.
+
+The negative fixtures are individual and noncompensatory:
+
+- `RESOURCEV10-REJ-V5-SCHEMA-NAME` substitutes `ChargedResourceV5`, a dual
+  version, or a compatibility coercion; reject.
+- `RESOURCEV10-REJ-MISSING-FIELD`, `RESOURCEV10-REJ-EXTRA-FIELD`, and
+  `RESOURCEV10-REJ-WRONG-TYPE` independently delete, add, or mistype one leaf
+  at every object depth; every case rejects.
+- `RESOURCEV10-REJ-ZERO-NA-MISSING` independently substitutes each member of
+  the three-way distinction for another; reject.
+- `RESOURCEV10-REJ-STATIC-ONCE-ONLY` charges resident static storage but omits
+  one or more emitted-request static token segments; reject.
+- `RESOURCEV10-REJ-RAG-BUILD-OR-POSTINGS-FREE` independently omits document
+  storage, index build, warmup, query, candidates, postings, return, or
+  downstream return-token input; reject each case.
+- `RESOURCEV10-REJ-COMMON-READER-FREE` omits a found/null/blocked invocation,
+  fixed envelope, serialization, record, hashing, or CPU contribution; reject.
+- `RESOURCEV10-REJ-HIDDEN-THINKER-CALL` omits a background, retry, sentinel,
+  failed, tape, or ordinary attempt; reject.
+- `RESOURCEV10-REJ-CAS-DIVIDED-STANDALONE` fractionally allocates or omits a
+  shared object from an arm closure; reject.
+- `RESOURCEV10-REJ-CAS-SUMMED-PHYSICAL` sums standalone closures instead of
+  taking the digest union; reject.
+- `RESOURCEV10-REJ-CAS-DIGEST-ALIAS` admits identical bytes under two digests
+  or different bytes under one digest; reject.
+- `RESOURCEV10-REJ-DELETED-TEMP-FREE` deletes a written request, response,
+  index, cache, trace, log, or other temporary object without both counters;
+  reject.
+- `RESOURCEV10-REJ-CPU-WARMUP-FREE` omits common preparation, graph/index
+  construction, tokenizer/model warmup, or cache priming; reject.
+- `RESOURCEV10-REJ-GPU-UNATTRIBUTABLE` lacks a unique physical-device UUID,
+  active-ns owner, or separable concurrency boundary; reject.
+- `RESOURCEV10-REJ-MEMORY-UNATTRIBUTABLE` lacks a resettable per-arm host or
+  device peak boundary; reject.
+- `RESOURCEV10-REJ-SEGMENT-SUM` changes any input segment or total so the exact
+  equality fails; reject.
+- `RESOURCEV10-REJ-REGISTERED-ACTUAL-CONFLATION` substitutes registered,
+  offered, emitted, or actual call/token counters for one another; reject.
+- `RESOURCEV10-REJ-NETWORK-OR-COST` admits a provider/network edge, network
+  byte/request, or nonzero external cost; reject.
+- `RESOURCEV10-REJ-CAUSAL-REALLOCATION` performs any post-origin move described
+  in section 4.4.5; reject.
+
+Unattributable concurrency invalidates resource evidence; it is never imputed.
+
 ## 5. Exact delayed entitlement partition
 
 ### 5.1 Carrier-only test 13
@@ -615,6 +1091,121 @@ Test 28 passes only with separate terminal receipts for both tests 13 and 29
 and all other named dependencies in its record. Carrier pointers cannot
 authorize baseline surfaces, baseline pointers cannot authorize common-reader
 carrier returns, and an umbrella pass cannot replace either receipt.
+
+### 5.4 Exact C10 boundary custody, provenance, guard, and projection
+
+The exact integration constants are:
+
+```text
+C10 = "chg_20260910_pcfl_m0_mtext_bound_v10"
+PLAN_PATH =
+  "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source_authoring_plan.json"
+MANIFEST_PATH =
+  "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/normative_source_manifest.json"
+BOUNDARY_PATH =
+  "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/v7_boundary_v4.json"
+DENIAL_CORPUS_PATH =
+  "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/governance/v10_normative_denial_corpus.json"
+```
+
+The C10 plan has exactly 24 sorted rows: 23
+`manifest_member:true` source rows, including exactly one `BOUNDARY_PATH` row
+with `role:"V7_BOUNDARY"`, schema `V7BoundaryV1`, and maximum 65,536 bytes;
+and exactly one `MANIFEST_PATH` row with
+`role:"NORMATIVE_SOURCE_MANIFEST"` and `manifest_member:false`. It also has
+exactly one closed `governance_inputs` entry for `DENIAL_CORPUS_PATH`, role
+`V10_NORMATIVE_DENIAL_CORPUS`, media type `application/json`, a `hex64` digest,
+and access `GOVERNANCE_ONLY`. That entry is neither a plan row, source member,
+manifest output, preparation/runtime input, nor scientific artifact.
+
+The exact order and access classes are:
+
+1. separately human-ratified corpus bytes and exact C10
+   `SourceAuthoringGrantV1` bind the complete plan and corpus digest;
+2. `AUTHORITY_S_SOURCE_WRITER_HASHER`, governance-private under only that
+   grant, writes/hashes the 23 paths and the nonauthoritative external
+   manifest but does not import, execute, syntax-check, prepare, materialize,
+   run a checker, or emit a preparation/runtime projection;
+3. `INDEPENDENT_EXACT_BYTE_REVIEWER`, read-only, governance-private, and
+   distinct from writer and guard, rehashes the exact plan, corpus, 23
+   members, external provenance rows, and manifest and emits only
+   `GovernanceExactByteReviewGrantV1[C10]` evidence;
+4. a human separately ratifies the exact candidate bytes and manifest and
+   later grants one exact `PreparationExecutionGrantV1` attempt; and
+5. `V7_BOUNDARY_GUARD` is substage zero of that attempt and the sole
+   candidate/preparation/runtime semantic consumer of `BOUNDARY_PATH`. It
+   compares registered metadata only and never resolves, opens, imports,
+   hashes, or executes a denied target. Passage produces only the projection
+   below for later substages of the same grant. Failure consumes the attempt,
+   produces no projection/prepared output, and permits neither retry nor
+   reserve substitution.
+
+Writer and reviewer custody are not semantic-consumer exceptions. They cannot
+change any candidate, preparation, runtime, public, model, cache, receipt, or
+claim byte. No step implies authority for the next, guard passage cannot
+issue its authorizing grant, and source-authoring authority cannot authorize
+the guard or any source parsing/test execution.
+
+Each member's already-closed digest is recorded in exactly one external
+`SourceProvenanceRowV1[C10]` in the nonmember manifest. No member embeds a
+provenance row holding its own digest. Every row cites at least one exact,
+human-bound `PCFL_V10_NORMATIVE` source and states
+`v7_runtime_derivation:false` and `v7_oracle_derivation:false`. The boundary
+row alone cites exactly the plan-bound `DENIAL_CORPUS_PATH` and digest, with no
+second derivation entry. The corpus contains only the seven sorted negative
+denial classes and no positive semantic value, answer, score, expected output,
+carrier content, or model-visible field.
+
+On pass the guard emits exactly this closed four-field object and no other
+output:
+
+```text
+V7GuardProjectionV1 := {
+  schema_version: 1,
+  artifact_type: "pcfl_v7_guard_projection",
+  passed: true,
+  pcfl_read_allowlist: [
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/acceptance_tests.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/cas_freeze_contract_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/check_axiomatic_v4.py",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/check_constructive_v4.py",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/claim_disposition_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/delayed_twin_entitlement_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/endpoint_gate_registry_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/failure_precedence_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/handoff_consumer_graph_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/handoff_projection_allowlist_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/handoff_public_v4.schema.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/integrated_contract.md",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/materialize_v4.py",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/mtext_handoff_v4.schema.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/mutation_fixtures.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/object_schemas_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/prepare_v4.py",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/provenance_contract_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/resource_roster_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/runtime_manifest_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/semantic_table_v4.json",
+    "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source/transition_table_v4.json"
+  ]
+}
+```
+
+The allowlist is the literal bytewise UTF-8 sort of the 22 non-boundary
+members. `BOUNDARY_PATH`, `MANIFEST_PATH`, `DENIAL_CORPUS_PATH`, `PLAN_PATH`,
+directories, globs, aliases, and symlinks are excluded. No boundary path or
+digest, denied value, V7/V5 identifier, provenance row, violation detail,
+corpus/manifest hash, timing, error, expected value, or fifth field may cross
+the projection. At equal pass/pathset, changing private boundary or corpus
+metadata changes no downstream byte or behavior; a pass-to-fail mutation has
+only one allowed downstream effect, absence of the projection.
+
+Tests 01 and 34 are conjunctive. Test 01 owns all seven denial predicates for
+every non-boundary member, provenance row, capability, import/runtime surface,
+and actor/model projection. Test 34 alone owns this one boundary exception,
+the two governance custody readers, external boundary provenance, sole guard
+consumer, literal pathset, and fail-closed nonexposure. Neither receipt can
+replace the other.
 
 ## 6. Exact rendered branch, repeat, and protocol boundary
 
@@ -910,26 +1501,31 @@ Required named evidence artifacts include all 32 `evidence_artifact` values
 above. In particular test 29 and test 34 each receive their own terminal
 receipt; neither can be represented by test 28, 19, or 01.
 
-## 10. Required integration caveat
+## 10. Exact companion integration binding and remaining caveat
 
-The V10 integration must resolve one authority-path issue outside this
-advisory's five original scientific-boundary items. The exact boundary member,
-guard read closure, source plan, grant, and provenance rows must all bind one
-and the same C10 plan identity. A V9 path/plan hash cannot silently substitute
-for that C10 identity. The sole guard runs only as the first validation
-substage named by a later exact human `PreparationExecutionGrantV1`; its
-success projection can feed only later substages of that same grant, and its
-failure produces no projection or materialization. It does not gate issuance
-of the grant that authorizes it. Source-authoring authority never permits
-guard parsing or test execution.
+The prior C10 authority-path and boundary-lineage issue is resolved exactly,
+not left to an implementer. Section 5.4 fixes the single C10 identity, four
+paths, 24-row plan, 23/1 member/nonmember split, one governance-only denial
+corpus, external noncircular provenance, custody principals, independent
+exact-byte review, later human preparation grant, guard-as-substage-zero, and
+literal four-field/22-path projection. Section 4.4 fixes the C10-only
+`ChargedResourceV10`; tests 01, 23--27, and 34 copy the companion provenance/
+resource registry records exactly after JSON-to-YAML value mapping. Test 29
+copies the authority/delayed companion record exactly. No V9 plan/path hash,
+`ChargedResourceV5`, receipt alias, alternate stage, inferred directory, or
+umbrella test may substitute.
 
-The V7 boundary member also needs a closed boundary-only governance provenance
-rule for its denied values, or an exact C10 normative denial source. Requiring
-every member to cite only ordinary C10 semantic sources while also confining
-the actual denied values to the boundary/governance records is unsatisfiable.
-The exception may establish negative governance lineage only; it must not
-become executable semantics, a checker oracle, or an actor/model channel.
-This integration caveat adds no source-authoring or execution authority.
+The one remaining integration caveat is documentary and non-discretionary: a
+future C10 deliberation packet must enumerate and hash-bind this file together
+with the exact current bytes of
+`20260910_pcfl_v10_provenance_resource_guard_exact_repair_v2.md` at SHA-256
+`f7275453054e76080cd72b0f57bc75d805756114cc62034efd06f940a35c2d79` and
+`20260910_pcfl_v10_authority_delayed_baseline_exact_repair_v2.md` at SHA-256
+`27668f5816958342b84a322c317281dc10131732153eeee387a228f67eea86ae`.
+Any later byte change to either companion reopens cross-review; it is not
+silently incorporated. This binding creates no source-authoring, import,
+preparation, test, implementation, execution, model, GPU, claim, or release
+authority.
 
 ## 11. Source basis and stop boundary
 
@@ -954,4 +1550,3 @@ import or parsing, checker/test run, preparation, implementation,
 materialization, fixture/root/data generation, benchmark/model/tokenizer
 execution, training, LoRA/adapter/checkpoint work, parenting, GPU use,
 resource acquisition, scientific execution, claim, release, or submission.
-```

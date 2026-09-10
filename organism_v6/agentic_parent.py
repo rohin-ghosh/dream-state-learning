@@ -38,12 +38,21 @@ HARD RULES (each is enforced in code, not only asked of the model)
                          rehearsal / efficiency metrics, GATE-panel decisions,
                          prior briefs, the parental ledger and the other
                          children's SUMMARIES. It may NEVER read report-panel
-                         or test scores: any file whose name starts with
-                         `probe_ep` (probe_ep*.json, probe_ep*_adapterOFF.json,
-                         probe_ep*.ledger.jsonl) raises ForbiddenRead; only
-                         gate.json and probe_gate*.json are readable, and score
-                         scalars from them are exposed only when the gate panel
-                         is verifiably disjoint from the report panel.
+                         or test scores. File access is ALLOW-LIST based
+                         (`guarded_path`): a path is resolved with realpath
+                         (symlinks cannot alias a forbidden file), must stay
+                         inside the life directory, and its resolved relative
+                         name must be one of ledger.jsonl, parent_ledger.jsonl,
+                         probe_gate*.json, sleep_*/gate.json,
+                         sleep_*/parent_brief.{txt,json} or
+                         sleep_*/waking_brief.txt. Everything else raises
+                         ForbiddenRead — explicitly every probe_* that is not
+                         probe_gate*.json (probe_ep*.json,
+                         probe_ep*_adapterOFF.json, *.ledger.jsonl of probes),
+                         life.log (it logs report-panel probe means),
+                         wake_*.json and corpus.json. Score scalars from
+                         gate.json are exposed only when the gate panel is
+                         verifiably disjoint from the report panel.
   no identifiers         No hostnames, IP addresses, user names, home paths,
                          URLs or e-mail addresses in any prompt or output.
                          Tool output is redacted before it is sent; a prompt
@@ -56,24 +65,61 @@ HARD RULES (each is enforced in code, not only asked of the model)
                          secrets, and masked in every string that is written
                          to a ledger, a log or a debug dump. Base URLs are
                          never logged either (they may be internal hosts).
+  key stays home         The key is sent only to the configured host: HTTP
+                         redirects are refused (never followed, so the key is
+                         never re-sent to a Location), *_proxy environment
+                         variables are ignored, and a key is refused outright
+                         when the base URL is plaintext http:// to a
+                         non-loopback host.
   bounded               <= PARENT_MAX_TOOL_CALLS (default 8) tool calls per
                          parent per invocation; room dialogue <= 3 exchanges
                          (proposals, critiques, merge); every tool result is
-                         truncated to PARENT_TOOL_RESULT_CHARS.
+                         truncated to PARENT_TOOL_RESULT_CHARS; the whole
+                         room has a wall-clock deadline (PARENT_ROOM_TIMEOUT_S,
+                         default 900 s): past it no request is sent, late
+                         phases are skipped and the best validated proposal
+                         (or FALLBACK, reason "deadline") is delivered.
+  never blocks the life  parent_brief_agentic never raises into run_life_v2:
+                         any exception in the room (provider, corrupt shared
+                         ledger line, bad JSON on disk) delivers FALLBACK +
+                         REHEARSAL_TAIL and logs a `room_error` row. Shared
+                         society files are appended/rewritten under an
+                         fcntl lock and read tolerantly (bad lines skipped).
 
 Environment (documented here and in gpu/run_parent_agent.sh):
   PARENT_PROVIDER      openai_compat | anthropic | local | mock
   PARENT_BASE_URL      e.g. https://<hub>/v1 ; anthropic default
                        https://api.anthropic.com/v1 ; local default
-                       http://127.0.0.1:8011/v1
+                       http://127.0.0.1:8011/v1 (http:// + key is accepted
+                       for loopback hosts only)
   PARENT_MODEL         model name (anthropic default claude-opus-5; local
                        default $V6_PARENT_MODEL)
   PARENT_API_KEY       read at process start; never written anywhere
-  PARENT_MAX_TOKENS    max output tokens per model call (default 2000)
+  PARENT_MAX_TOKENS    max output tokens per model call. Default 16000 for
+                       anthropic (the cap covers thinking PLUS text; current
+                       Claude models think adaptively even when `thinking`
+                       is omitted) and for openai_compat with
+                       PARENT_REASONING set; 4000 for openai_compat without
+                       reasoning; 2000 for local (8k-context vLLM). A reply
+                       cut at the cap (stop_reason max_tokens /
+                       finish_reason length) is retried ONCE with a doubled
+                       cap, then is a provider error (-> FALLBACK).
+  PARENT_MAX_TOKENS_FIELD  request field carrying the cap. Default
+                       max_completion_tokens for openai_compat (what
+                       reasoning endpoints such as the inference hub's
+                       gpt-6-astra require) and max_tokens for local vLLM.
+                       On an HTTP 400 whose body names the field, the other
+                       field is tried once and then kept.
   PARENT_REASONING     effort: low|medium|high|xhigh|max (anthropic ->
                        output_config.effort + adaptive thinking;
                        openai_compat -> reasoning_effort; local -> ignored)
-  PARENT_MAX_TOOL_CALLS, PARENT_TOOL_RESULT_CHARS, PARENT_TIMEOUT_S
+  PARENT_TIMEOUT_S     per-request timeout (default 240 s)
+  PARENT_ROOM_TIMEOUT_S  wall-clock deadline for one room invocation
+                       (default 900 s); PARENT_ROOM_MIN_PHASE_S (default
+                       60 s) = time a critique/merge phase needs to start
+  PARENT_CRITIQUE_CONTEXT_CHARS  budget for replaying a parent's own tool
+                       results into its critique and merge turns (40000)
+  PARENT_MAX_TOOL_CALLS, PARENT_TOOL_RESULT_CHARS
   PARENT_A_* / PARENT_B_*  the same variables per parent of a two-parent room
                        (if only one of them is configured, or only PARENT_*,
                        the room runs in single-parent mode)
@@ -88,6 +134,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import contextlib
 import getpass
 import json
 import os
@@ -95,7 +142,13 @@ import re
 import socket
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
+
+try:
+    import fcntl                # Unix only (the nodes); locking is best-effort
+except ImportError:  # pragma: no cover
+    fcntl = None
 
 from .parent_backend import PARENT_BOOT, ParentLedger, leak_scan, FALLBACK
 from .parent_brief import (ritual_metrics, rehearsal_rate, episode_instances,
@@ -103,7 +156,7 @@ from .parent_brief import (ritual_metrics, rehearsal_rate, episode_instances,
                            PROMPT_VERSION as BRIEF_PROMPT_VERSION)
 from . import efficiency_markers
 
-PROMPT_VERSION = "agentic-v1-2026-09-10"
+PROMPT_VERSION = "agentic-v1.1-2026-09-10"   # v1.1: critics see the evidence
 MOVES = ("repeat", "sharpen", "advance", "reset")
 PROVIDERS = ("openai_compat", "anthropic", "local", "mock")
 ANTHROPIC_VERSION = "2023-06-01"
@@ -111,6 +164,12 @@ EFFORT_LEVELS = ("low", "medium", "high", "xhigh", "max")
 MAX_BRIEF_LINES = 10
 MAX_BRIEF_CHARS = 1500          # + REHEARSAL_TAIL stays under the 1900 cap
 MAX_EXCHANGES = 3               # proposals, critiques, merge
+DEFAULT_TIMEOUT_S = 240         # per request
+DEFAULT_ROOM_TIMEOUT_S = 900    # per room invocation (wall clock)
+DEFAULT_MIN_PHASE_S = 60        # a critique/merge phase needs this much left
+DEFAULT_CRITIQUE_CONTEXT_CHARS = 40000
+MAX_TOKENS_CEILING = 128000     # never grow the cap past the largest output
+LOOPBACK_HOSTS = ("localhost", "127.0.0.1", "::1")
 
 try:                            # the 8 report-panel programs (never exposed)
     from .run_life import PROBES as REPORT_PANEL
@@ -275,9 +334,34 @@ class ProviderError(RuntimeError):
     pass
 
 
+class TruncatedReply(ProviderError):
+    """The reply was cut at the output cap (anthropic stop_reason max_tokens,
+    openai finish_reason length): its text is not a complete answer."""
+
+
+class RoomDeadline(ProviderError):
+    """The room's wall-clock deadline passed; no request was sent."""
+
+
+def is_loopback(host: str) -> bool:
+    h = (host or "").strip("[]").lower()
+    return h in LOOPBACK_HOSTS or h.startswith("127.")
+
+
+def default_max_tokens(provider: str, reasoning) -> int:
+    """See the module docstring: the cap covers thinking + text."""
+    if provider == "anthropic":
+        return 16000
+    if provider == "openai_compat":
+        return 16000 if reasoning else 4000
+    return 2000                             # local 8k-context vLLM, mock
+
+
 class ProviderConfig:
     """One parent's model endpoint. The key is held in memory only; repr(),
-    public() and every log path exclude it (and the base URL)."""
+    public() and every log path exclude it (and the base URL). A key is
+    refused when it would travel in plaintext (http:// to a non-loopback
+    host)."""
 
     def __init__(self, provider: str, model=None, base_url=None, api_key=None,
                  max_tokens=None, reasoning=None, temperature=None, role="A",
@@ -305,11 +389,24 @@ class ProviderConfig:
         self.base_url = (base_url or "").rstrip("/")
         self.api_key = api_key or None
         register_secret(self.api_key)
-        self.max_tokens = int(max_tokens or 2000)
+        if provider != "mock":
+            u = urllib.parse.urlsplit(self.base_url)
+            if u.scheme not in ("http", "https") or not u.hostname:
+                raise ValueError(f"PARENT_BASE_URL must be an http(s) URL "
+                                 f"for role {role}")
+            if self.api_key and u.scheme == "http" and \
+                    not is_loopback(u.hostname):
+                raise ValueError(
+                    f"refusing to send the role-{role} API key over plaintext "
+                    f"http to a non-loopback host; use https")
         self.reasoning = (reasoning or "").strip().lower() or None
+        self.max_tokens = int(max_tokens or default_max_tokens(provider,
+                                                               self.reasoning))
         self.temperature = None if temperature is None else float(temperature)
-        self.timeout_s = int(timeout_s or 600)
-        self.max_tokens_field = max_tokens_field or "max_tokens"
+        self.timeout_s = int(timeout_s or DEFAULT_TIMEOUT_S)
+        self.max_tokens_field = max_tokens_field or (
+            "max_completion_tokens" if provider == "openai_compat"
+            else "max_tokens")
 
     def __repr__(self) -> str:
         return (f"ProviderConfig(role={self.role}, provider={self.provider}, "
@@ -346,20 +443,45 @@ def configs_from_env(env=None) -> list:
 
 
 class ChatClient:
-    """Interface: chat(messages) -> text. messages are OpenAI-style dicts
-    with roles system/user/assistant."""
+    """Interface: chat(messages, max_tokens=None, *, retries=None,
+    deadline=None) -> text. messages are OpenAI-style dicts with roles
+    system/user/assistant. `deadline` is an absolute time.monotonic() value:
+    no request may start after it and every request's timeout is clipped
+    to it."""
     provider = "abstract"
     model = "abstract"
 
-    def chat(self, messages: list, max_tokens=None) -> str:
+    def chat(self, messages: list, max_tokens=None, *, retries=None,
+             deadline=None) -> str:
         raise NotImplementedError
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Never follow a redirect: urllib would otherwise re-send the
+    Authorization / x-api-key header to whatever Location a (compromised or
+    misconfigured) hub or DNS answer names, and a POST would become a GET
+    somewhere else. Returning None makes urllib raise HTTPError(3xx), which
+    chat() maps to ProviderError."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+# One opener for the process: no redirects, and NO proxies (a *_proxy
+# variable in the node's environment must not reroute the key either).
+_OPENER = urllib.request.build_opener(_NoRedirect,
+                                      urllib.request.ProxyHandler({}))
 
 
 class HTTPChatClient(ChatClient):
     """openai_compat and local: POST {base}/chat/completions.
     anthropic: POST {base}/messages with x-api-key + anthropic-version.
     Tool calling is NOT delegated to the provider: the agent protocol is JSON
-    in the text, identical for every provider."""
+    in the text, identical for every provider. Requests go through _OPENER
+    (no redirects, no proxies); a reply cut at the output cap is retried once
+    with a doubled cap; a 400 naming the max-tokens field swaps the field
+    once (max_tokens <-> max_completion_tokens) and keeps the one that
+    worked."""
 
     def __init__(self, cfg: ProviderConfig, retries: int = 2):
         self.cfg = cfg
@@ -371,6 +493,9 @@ class HTTPChatClient(ChatClient):
         """(url, headers, body) — pure; unit-tested without a network."""
         cfg = self.cfg
         max_tokens = int(max_tokens or cfg.max_tokens)
+        # never ship an empty turn: the Anthropic API rejects it with a 400
+        messages = [dict(m, content=m["content"] if str(m.get("content") or "")
+                         .strip() else "(empty)") for m in messages]
         if cfg.provider == "anthropic":
             system = "\n\n".join(m["content"] for m in messages
                                  if m["role"] == "system")
@@ -410,22 +535,46 @@ class HTTPChatClient(ChatClient):
 
     @staticmethod
     def parse_response(provider: str, data: dict) -> str:
+        """Text of the reply. Raises TruncatedReply when the provider stopped
+        at the output cap (the text, often empty after adaptive thinking, is
+        not an answer and must not be parsed as one)."""
         if provider == "anthropic":
-            if data.get("stop_reason") == "refusal":
+            stop = data.get("stop_reason")
+            if stop == "refusal":
                 raise ProviderError("provider refused the request")
-            return "\n".join(b.get("text", "") for b in data.get("content", [])
+            text = "\n".join(b.get("text", "") for b in data.get("content", [])
                              if b.get("type") == "text")
+            if stop == "max_tokens":
+                raise TruncatedReply("truncated at max_tokens; raise "
+                                     "PARENT_MAX_TOKENS")
+            return text
         choice = (data.get("choices") or [{}])[0]
-        return (choice.get("message") or {}).get("content") or ""
+        text = (choice.get("message") or {}).get("content") or ""
+        if choice.get("finish_reason") == "length":
+            raise TruncatedReply("truncated at the output cap (finish_reason "
+                                 "length); raise PARENT_MAX_TOKENS")
+        return text
 
-    def chat(self, messages: list, max_tokens=None) -> str:
-        url, headers, body = self.build_request(messages, max_tokens)
-        data = json.dumps(body).encode()
-        last = None
-        for attempt in range(self.retries + 1):
+    def _post(self, messages: list, max_tokens: int, retries: int,
+              deadline) -> str:
+        """One logical request with bounded HTTP retries (408/409/429/5xx and
+        connection errors) and one field swap on a 400 that names the
+        max-tokens field. Timeouts are clipped to the deadline."""
+        last, swapped = None, False
+        attempt = 0
+        while True:
+            url, headers, body = self.build_request(messages, max_tokens)
+            data = json.dumps(body).encode()
+            timeout = float(self.cfg.timeout_s)
+            if deadline is not None:
+                left = deadline - time.monotonic()
+                if left <= 1.0:
+                    raise RoomDeadline("room deadline reached before the "
+                                       "request could start")
+                timeout = min(timeout, left)
             req = urllib.request.Request(url, data=data, headers=headers)
             try:
-                with urllib.request.urlopen(req, timeout=self.cfg.timeout_s) as r:
+                with _OPENER.open(req, timeout=timeout) as r:
                     return self.parse_response(self.provider, json.load(r))
             except urllib.error.HTTPError as e:
                 detail = ""
@@ -433,15 +582,45 @@ class HTTPChatClient(ChatClient):
                     detail = e.read().decode("utf-8", "replace")[:300]
                 except Exception:  # noqa: BLE001
                     pass
+                if 300 <= e.code < 400:
+                    raise ProviderError(f"HTTP {e.code}: redirect refused (the "
+                                        f"key is sent only to the configured "
+                                        f"host)")
                 last = ProviderError(f"HTTP {e.code}: {mask_secrets(detail)}")
+                if e.code == 400 and not swapped and \
+                        self.cfg.max_tokens_field in detail:
+                    other = ("max_tokens"
+                             if self.cfg.max_tokens_field != "max_tokens"
+                             else "max_completion_tokens")
+                    self.cfg.max_tokens_field = other      # keep what works
+                    swapped = True
+                    continue
                 if e.code not in (408, 409, 429) and e.code < 500:
                     raise last
             except (urllib.error.URLError, TimeoutError, OSError) as e:
                 last = ProviderError(f"connection error: "
                                      f"{mask_secrets(str(e))[:200]}")
-            if attempt < self.retries:
-                time.sleep(2.0 * (attempt + 1))
+            if attempt >= retries:
+                break
+            attempt += 1
+            pause = 2.0 * attempt
+            if deadline is not None and time.monotonic() + pause >= deadline:
+                break
+            time.sleep(pause)
         raise last or ProviderError("unknown provider error")
+
+    def chat(self, messages: list, max_tokens=None, *, retries=None,
+             deadline=None) -> str:
+        retries = self.retries if retries is None else int(retries)
+        cap = int(max_tokens or self.cfg.max_tokens)
+        for grow in range(2):
+            try:
+                return self._post(messages, cap, retries, deadline)
+            except TruncatedReply as e:
+                if grow == 1 or cap >= MAX_TOKENS_CEILING:
+                    raise ProviderError(f"{e} (cap was {cap})")
+                cap = min(cap * 2, MAX_TOKENS_CEILING)
+        raise ProviderError("unreachable")  # pragma: no cover
 
 
 class MockChatClient(ChatClient):
@@ -463,7 +642,8 @@ class MockChatClient(ChatClient):
         self.raise_with = raise_with
         self.calls: list = []            # every messages list received
 
-    def chat(self, messages: list, max_tokens=None) -> str:
+    def chat(self, messages: list, max_tokens=None, *, retries=None,
+             deadline=None) -> str:
         self.calls.append([dict(m) for m in messages])
         if self.raise_with:
             raise ProviderError(f"HTTP 401: invalid key {self.raise_with}")
@@ -525,11 +705,50 @@ def extract_json(text: str):
 # the child's life directory, read-only, with the exam blinded
 # ---------------------------------------------------------------------------
 class ForbiddenRead(PermissionError):
-    """Raised for any attempt to read report-panel / test material."""
+    """Raised for any path that is not on the parent's read allow-list —
+    including every piece of report-panel / test material."""
 
 
-_FORBIDDEN_NAME = re.compile(r"^probe_ep")           # probe_ep* in any form
-_GATE_NAME = re.compile(r"^(gate\.json|probe_gate[^/]*\.json)$")
+# explicit denials (named in the error so the model learns the rule): every
+# probe_* that is not the gate panel's summary, and the life log, which
+# records report-panel probe means and gate candidates
+_FORBIDDEN_NAME = re.compile(r"^(probe_(?!gate[^/]*\.json$)|life\.log$)")
+# the ALLOW-list: what the parent may open, as paths relative to the life dir
+# (after realpath resolution). Anything else is a ForbiddenRead.
+_ALLOWED_PATHS = [
+    re.compile(r"^ledger\.jsonl$"),
+    re.compile(r"^parent_ledger\.jsonl$"),
+    re.compile(r"^probe_gate[^/]*\.json$"),
+    re.compile(r"^sleep_[^/]+/gate\.json$"),
+    re.compile(r"^sleep_[^/]+/parent_brief\.(txt|json)$"),
+    re.compile(r"^sleep_[^/]+/waking_brief\.txt$"),
+]
+
+
+def is_allowed_relpath(rel: str) -> bool:
+    rel = rel.replace(os.sep, "/")
+    if _FORBIDDEN_NAME.match(os.path.basename(rel)):
+        return False
+    return any(p.match(rel) for p in _ALLOWED_PATHS)
+
+
+def guarded_path(life_real: str, rel: str) -> str:
+    """The ONLY way a life-directory file is opened here. `life_real` is the
+    realpath of the life directory; `rel` a path relative to it. The joined
+    path is resolved with realpath (so a symlink cannot alias a forbidden
+    file or a file outside), re-checked for containment, and its resolved
+    relative name must match the allow-list."""
+    p = os.path.realpath(os.path.join(life_real, rel))
+    if p == life_real or not p.startswith(life_real + os.sep):
+        raise ForbiddenRead(f"outside the life directory: {rel}")
+    relp = os.path.relpath(p, life_real)
+    base = os.path.basename(p)
+    if _FORBIDDEN_NAME.match(base):
+        raise ForbiddenRead(f"report-panel material is invisible to the "
+                            f"parent: {base}")
+    if not is_allowed_relpath(relp):
+        raise ForbiddenRead(f"not on the parent's read allow-list: {relp}")
+    return p
 
 
 def _read_json(path):
@@ -537,10 +756,43 @@ def _read_json(path):
         return json.load(f)
 
 
+def _read_jsonl(path: str) -> list:
+    """Tolerant JSONL reader for SHARED or long-lived files: a torn or corrupt
+    line (several lives append to the society ledger) is skipped, never
+    raised into the child's life."""
+    out = []
+    if not os.path.exists(path):
+        return out
+    with open(path, errors="replace") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            if isinstance(row, dict):
+                out.append(row)
+    return out
+
+
+def _tick(r) -> int:
+    try:
+        return int(r.get("tick", 0))
+    except (TypeError, ValueError):
+        return 0
+
+
 def _instances_with_acts(rows: list):
     """Episode instances (same rule as parent_brief.episode_instances, keyed
-    on thought rows) with the act rows that preceded each thought chunk
-    attached, so the parent sees action -> outcome next to the thinking."""
+    on thought rows) with each act row attached to the chunk of the SAME
+    episode and tick — whichever order the writer used (batch_loop appends
+    act rows before the tick's thought row; the older loop.py appended them
+    after). An act whose chunk has not arrived yet waits in `pending` for the
+    next thought row of that episode; pending acts are flushed to the last
+    chunk of the previous instance when a new instance of the program starts,
+    so an outcome never leaks into another instance."""
     inst = collections.OrderedDict()
     last_tick, count = {}, collections.Counter()
     pending = collections.defaultdict(list)
@@ -548,15 +800,26 @@ def _instances_with_acts(rows: list):
         k = r.get("kind")
         e = r.get("episode_id")
         if k == "act":
-            pending[e].append(r)
+            key = (e, count[e])
+            chunks = inst.get(key)
+            if chunks and chunks[-1]["tick"] == _tick(r):
+                chunks[-1]["acts"].append(r)      # thought row came first
+            else:
+                pending[e].append(r)              # thought row still to come
             continue
         if k != "thought" or not r.get("note"):
             continue
-        try:
-            t = int(r.get("tick", 0))
-        except (TypeError, ValueError):
-            t = 0
+        t = _tick(r)
         if e not in last_tick or t <= last_tick[e]:
+            if e in last_tick and pending.get(e):
+                # new instance: pending outcomes from other ticks belong to
+                # the old instance; same-tick ones are this chunk's (act-first
+                # writer) and stay pending
+                stray = [a for a in pending[e] if _tick(a) != t]
+                pending[e] = [a for a in pending[e] if _tick(a) == t]
+                prev = inst.get((e, count[e]))
+                if prev and stray:
+                    prev[-1]["acts"].extend(stray)
             count[e] += 1
         last_tick[e] = t
         inst.setdefault((e, count[e]), []).append(
@@ -565,10 +828,11 @@ def _instances_with_acts(rows: list):
 
 
 class ChildView:
-    """Read-only tools over one child's life directory. Every path goes
-    through _resolve(): it must stay inside the life directory and must not
-    be report-panel material (probe_ep*). Tool outputs are redacted of
-    internal identifiers before they are returned."""
+    """Read-only tools over one child's life directory. Every file the view
+    opens goes through _resolve() -> guarded_path(): realpath-resolved, inside
+    the life directory, and on the read allow-list (report-panel material,
+    life.log, wake batches and the sleep corpus are never readable). Tool
+    outputs are redacted of internal identifiers before they are returned."""
 
     TOOLS = {
         "ledger_tail": ("the child's last N episode instances as raw text: "
@@ -590,13 +854,14 @@ class ChildView:
                            {"limit": "int (default 6)"}),
         "waking_brief": ("the child's own dreamed brief from its last sleep",
                          {}),
-        "list_files": ("what exists in the life directory (forbidden files "
-                       "hidden)", {}),
+        "list_files": ("the files of the life directory that you may read "
+                       "(everything else is hidden by design)", {}),
     }
 
     def __init__(self, life_dir: str, rows=None, sleep_dir=None,
                  society_dir=None, tool_result_chars: int = 9000):
         self.life_dir = os.path.abspath(os.path.expanduser(life_dir))
+        self.life_real = os.path.realpath(self.life_dir)
         self.child_id = os.path.basename(self.life_dir)
         self._rows = rows
         self.sleep_dir = os.path.abspath(sleep_dir) if sleep_dir else None
@@ -608,16 +873,17 @@ class ChildView:
 
     # -- guard -------------------------------------------------------------
     def _resolve(self, rel: str) -> str:
-        p = os.path.abspath(os.path.join(self.life_dir, rel))
-        if p != self.life_dir and not p.startswith(self.life_dir + os.sep):
-            raise ForbiddenRead(f"outside the life directory: {rel}")
-        if _FORBIDDEN_NAME.match(os.path.basename(p)):
-            raise ForbiddenRead(f"report-panel material is invisible to the "
-                                f"parent: {os.path.basename(p)}")
-        return p
+        return guarded_path(self.life_real, rel)
+
+    def _exists(self, rel: str) -> bool:
+        """Existence of an ALLOWED file (a forbidden name is 'absent')."""
+        try:
+            return os.path.exists(self._resolve(rel))
+        except ForbiddenRead:
+            return False
 
     def read_text(self, rel: str, max_chars: int = 20000) -> str:
-        with open(self._resolve(rel)) as f:
+        with open(self._resolve(rel), errors="replace") as f:
             return f.read()[:max_chars]
 
     def read_json(self, rel: str):
@@ -626,9 +892,7 @@ class ChildView:
     @property
     def rows(self) -> list:
         if self._rows is None:
-            p = self._resolve("ledger.jsonl")
-            self._rows = [json.loads(l) for l in open(p) if l.strip()] \
-                if os.path.exists(p) else []
+            self._rows = _read_jsonl(self._resolve("ledger.jsonl"))
         return self._rows
 
     def _sleep_dirs(self) -> list:
@@ -641,29 +905,38 @@ class ChildView:
         for d in reversed(self._sleep_dirs()):
             if d == self.stage:
                 continue
-            p = os.path.join(self.life_dir, d, "parent_brief.txt")
-            if os.path.exists(p):
-                t = open(p).read().strip()
+            rel = f"{d}/parent_brief.txt"
+            if self._exists(rel):
+                t = self.read_text(rel).strip()
                 if t:
                     return t
         return ""
 
     # -- tools -------------------------------------------------------------
     def list_files(self) -> str:
+        """Only what the allow-list permits: probe_*, life.log, wake_*.json,
+        corpus.json, adapters and markers are not listed (nor readable)."""
         out = []
         for root, dirs, files in os.walk(self.life_dir):
             dirs[:] = [d for d in sorted(dirs) if d != "adapter"]
             rel = os.path.relpath(root, self.life_dir)
             for f in sorted(files):
-                if _FORBIDDEN_NAME.match(f):
+                relf = f if rel == "." else os.path.join(rel, f)
+                if not is_allowed_relpath(relf):
                     continue
-                out.append(f if rel == "." else os.path.join(rel, f))
+                try:                        # symlink aliases are hidden too
+                    self._resolve(relf)
+                except ForbiddenRead:
+                    continue
+                out.append(relf)
             if len(out) > 400:
                 out.append("... (truncated)")
                 break
         return "\n".join(out)
 
     def ledger_tail(self, n_episodes: int = 6) -> str:
+        """The child's last N episode instances: each chunk's own text, then
+        the outcome(s) of the action(s) it took in that chunk."""
         n = max(1, min(int(n_episodes or 6), 24))
         inst = list(_instances_with_acts(self.rows).items())[-n:]
         parts = []
@@ -673,6 +946,7 @@ class ChildView:
             lines = [f"### {eid} (instance {k}) chunks={len(chunks)} "
                      f"acts={len(acts)} best={best:.4f}"]
             for c in chunks:
+                lines.append(f"[chunk {c['tick']}] " + c["note"][:600])
                 for a in c["acts"]:
                     pred = a.get("prediction")
                     sur = a.get("surprise")
@@ -682,7 +956,6 @@ class ChildView:
                         + (f" (predicted {pred:.3f}, surprise {sur:+.3f})"
                            if isinstance(pred, (int, float))
                            and isinstance(sur, (int, float)) else ""))
-                lines.append(f"[chunk {c['tick']}] " + c["note"][:600])
             parts.append("\n".join(lines)[:4000])
         text = "\n\n".join(parts) or "(no episodes yet)"
         self.samples_seen.append(text)
@@ -718,20 +991,28 @@ class ChildView:
                          if m in ("DONE", "CANDIDATE") or m.startswith("REJECTED")]
                 verdict = ",".join(sorted(marks)) or "training"
             row = dict(sleep=d, write_verdict=verdict)
-            gp = os.path.join(sd, "gate.json")
-            if os.path.exists(gp):
-                g = _read_json(gp)
+            if self._exists(f"{d}/gate.json"):
+                try:
+                    g = self.read_json(f"{d}/gate.json")
+                except ValueError:              # torn / corrupt gate.json
+                    g = None
+                if not isinstance(g, dict):
+                    row["gate_json"] = "unreadable"
+                    out.append(row)
+                    continue
                 row.update(score_ok=g.get("score_ok"),
                            brevity_ok=g.get("brevity_ok"),
                            cand_chunks_per_ep=g.get("cand_chunks_per_ep"),
                            base_chunks_per_ep=g.get("base_chunks_per_ep"))
                 try:
-                    i = int(d[6:])
-                    pg = self._resolve(f"probe_gate{i:04d}.json")
-                except (ValueError, ForbiddenRead):
+                    pg = f"probe_gate{int(d[6:]):04d}.json"
+                except ValueError:
                     pg = None
-                if pg and os.path.exists(pg):
-                    res = _read_json(pg).get("results") or {}
+                if pg and self._exists(pg):
+                    try:
+                        res = self.read_json(pg).get("results") or {}
+                    except (ValueError, AttributeError):
+                        res = {}
                     canon = {p.replace("benchmark://", "") for p in res}
                     report = {p.replace("benchmark://", "") for p in REPORT_PANEL}
                     if canon and not (canon & report):
@@ -750,16 +1031,17 @@ class ChildView:
         for d in reversed(self._sleep_dirs()):
             if d == self.stage or len(briefs) >= k:
                 continue
-            sd = os.path.join(self.life_dir, d)
-            tp, jp = os.path.join(sd, "parent_brief.txt"), \
-                os.path.join(sd, "parent_brief.json")
-            if not (os.path.exists(tp) or os.path.exists(jp)):
+            tp, jp = f"{d}/parent_brief.txt", f"{d}/parent_brief.json"
+            if not (self._exists(tp) or self._exists(jp)):
                 continue
             b = dict(sleep=d)
-            if os.path.exists(tp):
-                b["brief"] = open(tp).read().strip()[:1900]
-            if os.path.exists(jp):
-                meta = _read_json(jp)
+            if self._exists(tp):
+                b["brief"] = self.read_text(tp).strip()[:1900]
+            if self._exists(jp):
+                try:
+                    meta = self.read_json(jp)
+                except ValueError:
+                    meta = {}
                 mm = meta.get("metrics") or {}
                 b["measured_at_that_sleep"] = {
                     x: mm.get(x) for x in ("ritual", "flags", "rehearsal_rate",
@@ -767,7 +1049,7 @@ class ChildView:
                 b["intervened"] = meta.get("intervened")
                 b["prompt_version"] = meta.get("prompt_version")
             briefs.append(b)
-        rooms = [r for r in ParentLedger(self.life_dir).rows()
+        rooms = [r for r in _read_jsonl(self._resolve("parent_ledger.jsonl"))
                  if r.get("kind") == "agentic_room"][-k:]
         return dict(briefs=briefs, previous_rooms=[
             dict(stage=r.get("child_stage"),
@@ -780,13 +1062,13 @@ class ChildView:
         k = max(1, int(last_k or 12))
         sd = self.society_dir
         pb = os.path.join(sd, "playbook.md")
-        lp = os.path.join(sd, "ledger.jsonl")
-        rows = []
-        if os.path.exists(lp):
-            rows = [json.loads(l) for l in open(lp) if l.strip()][-k:]
+        rows = _read_jsonl(os.path.join(sd, "ledger.jsonl"))[-k:]
+        playbook = "(no playbook yet)"
+        if os.path.exists(pb):
+            with open(pb, errors="replace") as f:
+                playbook = f.read()[:4000]
         return dict(
-            playbook=open(pb).read()[:4000] if os.path.exists(pb)
-            else "(no playbook yet)",
+            playbook=playbook,
             ledger_tail=[dict(child=r.get("child"), stage=r.get("stage"),
                               move=(r.get("curriculum_move") or {}).get("move"),
                               frontier=((r.get("frontier_estimate") or {})
@@ -811,9 +1093,9 @@ class ChildView:
 
     def waking_brief(self) -> str:
         for d in reversed(self._sleep_dirs()):
-            p = os.path.join(self.life_dir, d, "waking_brief.txt")
-            if os.path.exists(p):
-                t = open(p).read().strip()
+            rel = f"{d}/waking_brief.txt"
+            if self._exists(rel):
+                t = self.read_text(rel).strip()
                 if t:
                     self.samples_seen.append(t)
                     return f"[{d}]\n" + t[:6000]
@@ -848,8 +1130,14 @@ def _r4(x):
 
 
 def _life_summary(p: str) -> dict:
-    """A sibling's summary from small files only (no ledger, no probes)."""
+    """A sibling's summary from small files only (no ledger, no probes);
+    every file is opened through guarded_path on the sibling's directory."""
     name = os.path.basename(p)
+    real = os.path.realpath(p)
+
+    def gp(rel):
+        return guarded_path(real, rel)
+
     sleeps = sorted(d for d in os.listdir(p) if d.startswith("sleep_"))
     verdicts = collections.Counter()
     for d in sleeps:
@@ -870,18 +1158,23 @@ def _life_summary(p: str) -> dict:
              write_verdicts=dict(verdicts),
              done=os.path.exists(os.path.join(p, "LIFE_DONE")))
     for d in reversed(sleeps):
-        tp = os.path.join(p, d, "parent_brief.txt")
-        jp = os.path.join(p, d, "parent_brief.json")
+        tp = gp(f"{d}/parent_brief.txt")
+        jp = gp(f"{d}/parent_brief.json")
         if os.path.exists(tp) or os.path.exists(jp):
             s["latest_brief_sleep"] = d
             if os.path.exists(tp):
-                s["latest_brief"] = open(tp).read().strip()[:500]
+                with open(tp, errors="replace") as f:
+                    s["latest_brief"] = f.read().strip()[:500]
             if os.path.exists(jp):
-                mm = _read_json(jp).get("metrics") or {}
+                try:
+                    mm = _read_json(jp).get("metrics") or {}
+                except ValueError:
+                    mm = {}
                 s["latest_metrics"] = {x: mm.get(x) for x in
                                        ("ritual", "flags", "rehearsal_rate")}
             break
-    rooms = [r for r in ParentLedger(p).rows() if r.get("kind") == "agentic_room"]
+    rooms = [r for r in _read_jsonl(gp("parent_ledger.jsonl"))
+             if r.get("kind") == "agentic_room"]
     if rooms:
         mg = rooms[-1].get("merged") or {}
         s["latest_room"] = dict(stage=rooms[-1].get("child_stage"),
@@ -1131,36 +1424,63 @@ def check_prompt(messages: list) -> None:
                                  + ",".join(ids))
 
 
+def _env_int(name: str, default):
+    v = _BOOT_ENV.get(name) or os.environ.get(name)
+    try:
+        return float(v) if v else default
+    except ValueError:
+        return default
+
+
 class ParentAgent:
     """One parent's agent loop over the JSON text protocol. Bounded by
-    max_tool_calls; every outgoing prompt is identifier-checked; every final
-    object is validated (see validate_output)."""
+    max_tool_calls and by the room's wall-clock deadline (no request starts
+    after it); every outgoing prompt is identifier-checked; every final
+    object is validated (see validate_output). The proposal transcript
+    (system prompt, dashboard, tool calls and results, final) is kept so the
+    critique and merge turns argue from the same evidence — replayed under a
+    character budget, never re-fetched."""
 
     def __init__(self, cfg: ProviderConfig, client: ChatClient,
-                 max_tool_calls: int = 8):
+                 max_tool_calls: int = 8, context_chars=None):
         self.cfg = cfg
         self.client = client
         self.max_tool_calls = int(max_tool_calls)
+        self.context_chars = int(context_chars or _env_int(
+            "PARENT_CRITIQUE_CONTEXT_CHARS", DEFAULT_CRITIQUE_CONTEXT_CHARS))
+        self.deadline = None            # absolute clock() value, set by the room
+        self.clock = time.monotonic     # injectable for tests (mock clients)
+        self.transcript: list = []      # messages of the last propose()
 
-    def _chat(self, messages: list) -> str:
+    def _chat(self, messages: list, retries=None) -> str:
+        if self.deadline is not None and self.clock() >= self.deadline:
+            raise RoomDeadline("room deadline passed; request not sent")
         check_prompt(messages)
-        return self.client.chat(messages, max_tokens=self.cfg.max_tokens)
+        return self.client.chat(messages, max_tokens=self.cfg.max_tokens,
+                                retries=retries, deadline=self.deadline)
 
-    def propose(self, view: ChildView, context: dict, n_parents: int) -> dict:
-        messages = [dict(role="system", content=system_prompt(
+    def _opening(self, view: ChildView, context: dict, n_parents: int) -> list:
+        return [dict(role="system", content=system_prompt(
             self.cfg.role, n_parents, context.get("window") or 32,
             self.max_tool_calls)),
             dict(role="user", content=dashboard(view, context))]
+
+    def propose(self, view: ChildView, context: dict, n_parents: int) -> dict:
         tool_log, n_calls, bad_replies = [], 0, 0
         result, error = None, None
+        messages: list = []
         try:
+            # the dashboard reads shared, possibly torn files: inside the try
+            messages = self._opening(view, context, n_parents)
             while True:
                 reply = self._chat(messages)
                 obj = extract_json(reply)
                 # the model's own words re-enter the transcript redacted, so
-                # a chatty reply cannot make check_prompt block the next turn
-                messages.append(dict(role="assistant",
-                                     content=redact_identifiers(reply)[:12000]))
+                # a chatty reply cannot make check_prompt block the next turn;
+                # never an EMPTY assistant turn (the Anthropic API rejects it)
+                messages.append(dict(role="assistant", content=(
+                    redact_identifiers(reply)[:12000].strip()
+                    or "(empty reply)")))
                 if obj is None or not isinstance(obj, dict):
                     bad_replies += 1
                     if bad_replies > 2:
@@ -1176,6 +1496,9 @@ class ParentAgent:
                             "TOOL BUDGET EXHAUSTED. Reply ONLY with the final "
                             "object now.")))
                         reply = self._chat(messages)
+                        messages.append(dict(role="assistant", content=(
+                            redact_identifiers(reply)[:12000].strip()
+                            or "(empty reply)")))
                         result = validate_output(
                             extract_json(reply), "\n".join(view.samples_seen),
                             tool_log)
@@ -1192,6 +1515,9 @@ class ParentAgent:
                 result = validate_output(obj, "\n".join(view.samples_seen),
                                          tool_log)
                 break
+        except RoomDeadline as e:
+            error = str(e)
+            result = fallback_output("deadline")
         except IdentifierLeak as e:
             error = str(e)
             result = fallback_output("prompt blocked: " + error)
@@ -1201,19 +1527,51 @@ class ParentAgent:
         except Exception as e:  # noqa: BLE001
             error = mask_secrets(f"{type(e).__name__}: {e}")[:300]
             result = fallback_output("agent error")
+        self.transcript = messages
         result.update(role=self.cfg.role, provider=self.cfg.provider,
                       model=self.cfg.model, tool_calls=tool_log,
                       n_tool_calls=n_calls, error=error)
         return result
 
-    def critique(self, other: dict) -> dict:
+    def _context_messages(self, view: ChildView, context: dict,
+                          n_parents: int) -> list:
+        """The proposal transcript for a follow-up turn: system prompt,
+        dashboard and the final reply are kept whole; the tool exchanges in
+        between are truncated to fit self.context_chars. Without a transcript
+        (the proposal never started) the opening alone is used."""
+        msgs = [dict(m) for m in self.transcript]
+        if len(msgs) < 2:
+            msgs = self._opening(view, context, n_parents)
+        head, middle, tail = msgs[:2], msgs[2:-1], msgs[2:][-1:]
+        fixed = sum(len(m["content"]) for m in head + tail)
+        budget = max(0, self.context_chars - fixed)
+        if middle:
+            per = budget // len(middle)
+            if per < 400:
+                middle = [dict(role="user", content=(
+                    "(tool exchanges omitted for length; the final object "
+                    "below was produced from them)"))]
+            else:
+                middle = [dict(m, content=(m["content"] if len(m["content"])
+                                           <= per else m["content"][:per]
+                                           + "\n... (truncated for length)"))
+                          for m in middle]
+        return head + middle + tail
+
+    def critique(self, other: dict, view=None, context=None,
+                 n_parents: int = 2) -> dict:
+        """Cross-verification of the OTHER parent's proposal, argued from this
+        parent's own evidence (its transcript); no tools, no retries."""
         prompt = CRITIQUE_PROMPT.format(role=self.cfg.role,
                                         max_lines=MAX_BRIEF_LINES,
                                         proposal=_proposal_for_prompt(other))
         try:
-            reply = self._chat([
-                dict(role="system", content=PARENT_BOOT),
-                dict(role="user", content=redact_identifiers(prompt))])
+            if view is not None:
+                msgs = self._context_messages(view, context or {}, n_parents)
+            else:                                   # no child state at hand
+                msgs = [dict(role="system", content=PARENT_BOOT)]
+            msgs.append(dict(role="user", content=redact_identifiers(prompt)))
+            reply = self._chat(msgs, retries=0)
         except Exception as e:  # noqa: BLE001
             return dict(verdict="unavailable", error=mask_secrets(str(e))[:300],
                         by=self.cfg.role)
@@ -1231,15 +1589,9 @@ class ParentAgent:
             b=_proposal_for_prompt(b), crit_a=json.dumps(crit_a, indent=1),
             crit_b=json.dumps(crit_b, indent=1))
         try:
-            reply = self._chat([
-                dict(role="system", content=system_prompt(
-                    self.cfg.role, n_parents, context.get("window") or 32,
-                    self.max_tool_calls)),
-                dict(role="user", content=dashboard(view, context)),
-                dict(role="assistant", content=json.dumps(
-                    dict(final=json.loads(_proposal_for_prompt(
-                        a if self.cfg.role == "A" else b))))),
-                dict(role="user", content=redact_identifiers(prompt))])
+            msgs = self._context_messages(view, context, n_parents)
+            msgs.append(dict(role="user", content=redact_identifiers(prompt)))
+            reply = self._chat(msgs, retries=0)
         except Exception as e:  # noqa: BLE001
             out = fallback_output("merge provider error")
             out["error"] = mask_secrets(str(e))[:300]
@@ -1260,11 +1612,16 @@ class ParentRoom:
       exchange 3  the merger (PARENT_MERGER, default A) writes the delivered
                   brief from both proposals and both critiques
     Single-parent mode (one config): exchange 1 only; delivered = proposal.
-    Everything is logged with prompt_version, provider and model names — no
-    keys, no base URLs, no identifiers."""
+    WALL CLOCK: run() sets a deadline (room_timeout_s from now); no request
+    starts past it; a critique or merge phase is skipped when less than
+    min_phase_s remains, and the best validated proposal is delivered instead
+    (FALLBACK with reason "deadline" if none validated). Everything is logged
+    with prompt_version, provider and model names — no keys, no base URLs,
+    no identifiers."""
 
     def __init__(self, configs: list, clients=None, max_tool_calls=None,
-                 merger=None):
+                 merger=None, room_timeout_s=None, min_phase_s=None,
+                 clock=None):
         if not configs:
             raise ValueError("ParentRoom needs at least one ProviderConfig")
         self.configs = list(configs)[:2]
@@ -1276,6 +1633,12 @@ class ParentRoom:
             client = clients.get(cfg.role) or make_client(cfg)
             self.agents.append(ParentAgent(cfg, client, mtc))
         self.merger = (merger or _BOOT_ENV.get("PARENT_MERGER") or "A").upper()
+        self.room_timeout_s = float(room_timeout_s or _env_int(
+            "PARENT_ROOM_TIMEOUT_S", DEFAULT_ROOM_TIMEOUT_S))
+        self.min_phase_s = float(min_phase_s if min_phase_s is not None
+                                 else _env_int("PARENT_ROOM_MIN_PHASE_S",
+                                               DEFAULT_MIN_PHASE_S))
+        self.clock = clock or time.monotonic
 
     @classmethod
     def from_env(cls, env=None, fallback_local=None, clients=None,
@@ -1297,41 +1660,82 @@ class ParentRoom:
     def public_parents(self) -> list:
         return [c.public() for c in self.configs]
 
+    @staticmethod
+    def _best_proposal(pa: dict, pb: dict, critiques: dict, reason: str,
+                       prefer: str) -> dict:
+        """Deliver a proposal that passed validation and was not rejected by
+        its critic (the merger's own first), else FALLBACK with `reason`."""
+        ra, rb = pa.get("role", "A"), pb.get("role", "B")
+        order = [(pa, critiques.get(f"{rb}_on_{ra}") or {}),
+                 (pb, critiques.get(f"{ra}_on_{rb}") or {})]
+        if prefer == rb:
+            order.reverse()
+        for p, crit in order:
+            if not p.get("fallback") and crit.get("verdict") != "reject":
+                m = dict(p)
+                m["merged_from"] = f"proposal {p.get('role')} ({reason})"
+                return m
+        m = fallback_output(reason)
+        m["merged_from"] = f"fallback ({reason})"
+        return m
+
     def run(self, view: ChildView, context: dict) -> dict:
         n = len(self.agents)
+        deadline = self.clock() + self.room_timeout_s
+        for ag in self.agents:
+            ag.deadline, ag.clock = deadline, self.clock
+
+        def left():
+            return deadline - self.clock()
+
+        skipped = []
         proposals = collections.OrderedDict()
         for ag in self.agents:                             # exchange 1
-            proposals[ag.cfg.role] = ag.propose(view, context, n)
+            if left() <= 0:
+                p = fallback_output("deadline")
+                p.update(role=ag.cfg.role, provider=ag.cfg.provider,
+                         model=ag.cfg.model, tool_calls=[], n_tool_calls=0,
+                         error="room deadline passed before the proposal")
+                skipped.append(f"proposal {ag.cfg.role}")
+            else:
+                p = ag.propose(view, context, n)
+            proposals[ag.cfg.role] = p
         critiques, exchanges = {}, 1
         if n == 1:
             merged = dict(proposals[self.agents[0].cfg.role])
             merged["merged_from"] = "single-parent"
         else:
-            a, b = self.agents[0], self.agents[1]                # exchange 2
+            a, b = self.agents[0], self.agents[1]
             pa, pb = proposals[a.cfg.role], proposals[b.cfg.role]
-            critiques[f"{a.cfg.role}_on_{b.cfg.role}"] = a.critique(pb)
-            critiques[f"{b.cfg.role}_on_{a.cfg.role}"] = b.critique(pa)
-            exchanges = 2
             merger = a if self.merger == a.cfg.role else b
-            if merger.cfg.role in proposals and \
-                    proposals[merger.cfg.role].get("error"):
+            if proposals[merger.cfg.role].get("error"):
                 merger = b if merger is a else a            # merger is dead
-            merged = merger.merge(view, context, pa, pb,
-                                  critiques[f"{b.cfg.role}_on_{a.cfg.role}"],
-                                  critiques[f"{a.cfg.role}_on_{b.cfg.role}"], n)
-            exchanges = 3
-            merged["merged_from"] = f"merge by {merger.cfg.role}"
-            if merged.get("fallback"):
-                # degrade gracefully: a proposal that passed validation and
-                # was not rejected by its critic is better than the fallback
-                for p, crit in ((pa, critiques[f"{b.cfg.role}_on_{a.cfg.role}"]),
-                                (pb, critiques[f"{a.cfg.role}_on_{b.cfg.role}"])):
-                    if not p.get("fallback") and \
-                            crit.get("verdict") in ("accept", "revise"):
-                        merged = dict(p)
-                        merged["merged_from"] = (f"proposal {p['role']} "
-                                                 f"(merge failed)")
-                        break
+            if left() < self.min_phase_s:
+                skipped += ["critiques", "merge"]
+                merged = self._best_proposal(pa, pb, {}, "deadline",
+                                             merger.cfg.role)
+            else:                                            # exchange 2
+                critiques[f"{a.cfg.role}_on_{b.cfg.role}"] = \
+                    a.critique(pb, view, context, n)
+                critiques[f"{b.cfg.role}_on_{a.cfg.role}"] = \
+                    b.critique(pa, view, context, n)
+                exchanges = 2
+                if left() < self.min_phase_s:
+                    skipped.append("merge")
+                    merged = self._best_proposal(pa, pb, critiques, "deadline",
+                                                 merger.cfg.role)
+                else:                                        # exchange 3
+                    merged = merger.merge(
+                        view, context, pa, pb,
+                        critiques[f"{b.cfg.role}_on_{a.cfg.role}"],
+                        critiques[f"{a.cfg.role}_on_{b.cfg.role}"], n)
+                    exchanges = 3
+                    merged["merged_from"] = f"merge by {merger.cfg.role}"
+                    if merged.get("fallback"):
+                        # degrade gracefully: a validated proposal not
+                        # rejected by its critic beats the fallback
+                        merged = self._best_proposal(
+                            pa, pb, critiques, "merge failed", merger.cfg.role)
             merged.setdefault("role", merger.cfg.role)
             merged.setdefault("provider", merger.cfg.provider)
             merged.setdefault("model", merger.cfg.model)
@@ -1343,7 +1747,10 @@ class ParentRoom:
                     delivered=merged["delivered_text"],
                     hits=merged.get("hits") or [],
                     fallback=bool(merged.get("fallback")),
-                    exchanges=exchanges, tool_calls=list(view.calls))
+                    exchanges=exchanges, tool_calls=list(view.calls),
+                    skipped=skipped, deadline_hit=bool(skipped),
+                    room_timeout_s=self.room_timeout_s,
+                    elapsed_s=round(self.room_timeout_s - left(), 1))
 
 
 # ---------------------------------------------------------------------------
@@ -1357,11 +1764,29 @@ def _compact_proposal(p: dict) -> dict:
     return {k: p.get(k) for k in keys if k in p}
 
 
+@contextlib.contextmanager
+def _locked(lock_path: str):
+    """Exclusive fcntl lock (several lives on one node share the society
+    files). Best-effort: without fcntl (non-Unix) it is a no-op."""
+    if fcntl is None:  # pragma: no cover
+        yield
+        return
+    os.makedirs(os.path.dirname(lock_path) or ".", exist_ok=True)
+    with open(lock_path, "a") as lf:
+        fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
+
+
 def log_room(view: ChildView, result: dict, metrics: dict,
              ledger_dir=None, society_dir=None) -> None:
     """Append the room's record to the child's parent_ledger.jsonl and to
     the parental society ledger; append the society note to the bounded
-    playbook. All text is secret-masked and identifier-redacted."""
+    playbook. All text is secret-masked and identifier-redacted; the shared
+    society files are written under a lock. A room that died (result has
+    `error`) additionally gets a `room_error` row in the child's ledger."""
     merged = _compact_proposal(result["merged"])
     row = dict(kind="agentic_room", source="parent_room",
                child_stage=view.stage, prompt_version=PROMPT_VERSION,
@@ -1372,9 +1797,18 @@ def log_room(view: ChildView, result: dict, metrics: dict,
                critiques=result["critiques"], merged=merged,
                text=result["delivered"][:1900], hits=result["hits"],
                fallback=result["fallback"], exchanges=result["exchanges"],
+               skipped=result.get("skipped") or [],
+               elapsed_s=result.get("elapsed_s"),
                metrics=_compact_metrics(metrics))
+    if result.get("error"):
+        row["error"] = result["error"]
     row = safe_obj(json.loads(json.dumps(row, default=str)))
-    ParentLedger(ledger_dir or view.life_dir).append(**row)
+    child_ledger = ParentLedger(ledger_dir or view.life_dir)
+    child_ledger.append(**row)
+    if result.get("error"):
+        child_ledger.append(kind="room_error", source="harness",
+                            child_stage=view.stage, prompt_version=PROMPT_VERSION,
+                            error=safe_text(str(result["error"]))[:300])
     sd = os.path.expanduser(society_dir or view.society_dir)
     os.makedirs(sd, exist_ok=True)
     srow = dict(ts=time.time(), kind="room", child=view.child_id,
@@ -1383,16 +1817,31 @@ def log_room(view: ChildView, result: dict, metrics: dict,
                 frontier_estimate=merged.get("frontier_estimate"),
                 curriculum_move=merged.get("curriculum_move"),
                 brief=result["delivered"][:1900], fallback=result["fallback"],
+                skipped=result.get("skipped") or [],
                 critique_verdicts={k: v.get("verdict")
                                    for k, v in result["critiques"].items()},
                 proposal_frontiers={r: p.get("frontier_estimate")
                                     for r, p in result["proposals"].items()})
-    with open(os.path.join(sd, "ledger.jsonl"), "a") as f:
-        f.write(json.dumps(safe_obj(json.loads(json.dumps(srow, default=str))))
-                + "\n")
+    line = json.dumps(safe_obj(json.loads(json.dumps(srow, default=str))))
     note = merged.get("society_note")
-    if note:
-        append_playbook_note(sd, f"[{view.child_id} {view.stage}] {note}")
+    with _locked(os.path.join(sd, ".society.lock")):
+        _append_line(os.path.join(sd, "ledger.jsonl"), line)
+        if note:
+            append_playbook_note(sd, f"[{view.child_id} {view.stage}] {note}",
+                                 lock=False)
+
+
+def _append_line(path: str, line: str) -> None:
+    """Append one JSONL record. If a previous writer died mid-line (no
+    trailing newline), terminate that fragment first so the new record is
+    not glued to it (which would lose both to _read_jsonl)."""
+    need_nl = False
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        with open(path, "rb") as f:
+            f.seek(-1, os.SEEK_END)
+            need_nl = f.read(1) != b"\n"
+    with open(path, "a") as f:
+        f.write(("\n" if need_nl else "") + line + "\n")
 
 
 def _compact_metrics(m: dict) -> dict:
@@ -1402,21 +1851,28 @@ def _compact_metrics(m: dict) -> dict:
     return {k: m.get(k) for k in keys if k in (m or {})}
 
 
-def append_playbook_note(society_dir: str, line: str, max_lines: int = 80) -> None:
-    """BOUNDED playbook: keeps the header and the last `max_lines` notes."""
+def append_playbook_note(society_dir: str, line: str, max_lines: int = 80,
+                         *, lock: bool = True) -> None:
+    """BOUNDED playbook: keeps the header and the last `max_lines` notes.
+    Read-modify-write under the society lock (lock=False when the caller
+    already holds it — flock is not re-entrant across file objects)."""
     p = os.path.join(society_dir, "playbook.md")
     header = "# Parental society playbook (bounded; newest last)\n"
-    notes = []
-    if os.path.exists(p):
-        for l in open(p).read().splitlines():
-            if l.startswith("- "):
-                notes.append(safe_text(l))      # re-redact on every rewrite
-    notes.append("- " + safe_text(" ".join(line.split()))[:300])
-    notes = notes[-max_lines:]
-    tmp = p + ".tmp"
-    with open(tmp, "w") as f:
-        f.write(header + "\n".join(notes) + "\n")
-    os.replace(tmp, p)
+    ctx = _locked(os.path.join(society_dir, ".society.lock")) if lock \
+        else contextlib.nullcontext()
+    with ctx:
+        notes = []
+        if os.path.exists(p):
+            with open(p, errors="replace") as f:
+                for l in f.read().splitlines():
+                    if l.startswith("- "):
+                        notes.append(safe_text(l))  # re-redact on every rewrite
+        notes.append("- " + safe_text(" ".join(line.split()))[:300])
+        notes = notes[-max_lines:]
+        tmp = p + f".tmp{os.getpid()}"
+        with open(tmp, "w") as f:
+            f.write(header + "\n".join(notes) + "\n")
+        os.replace(tmp, p)
 
 
 # ---------------------------------------------------------------------------
@@ -1431,16 +1887,28 @@ def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
     ParentRoom, writes <sleep_dir>/parent_brief.txt (the child reads it at the
     next wake) and parent_brief.json (idempotency + the same meta shape:
     metrics, intervened, text, hits, prompt_version, parent_model). Returns
-    the meta dict. Keyword-only extras exist for tests and smoke runs."""
+    the meta dict. Keyword-only extras exist for tests and smoke runs.
+
+    NEVER RAISES INTO THE LIFE: any exception while building or running the
+    room (provider down, corrupt shared-ledger line, bad JSON on disk)
+    delivers FALLBACK + REHEARSAL_TAIL, records `room_error` in the child's
+    parent ledger and returns a complete meta; a failure while logging is
+    recorded in meta["log_error"]."""
     out_dir = out_dir or sleep_dir
     os.makedirs(out_dir, exist_ok=True)
     out = os.path.join(out_dir, "parent_brief.txt")
     meta_p = os.path.join(out_dir, "parent_brief.json")
     if os.path.exists(meta_p):
-        return _read_json(meta_p)
+        try:
+            return _read_json(meta_p)
+        except ValueError:
+            pass                        # torn meta: redo this sleep's brief
     view = ChildView(life_dir, rows=rows, sleep_dir=sleep_dir,
                      society_dir=society_dir)
-    prev_text = view.previous_brief()
+    try:
+        prev_text = view.previous_brief()
+    except Exception:  # noqa: BLE001 — unreadable earlier brief
+        prev_text = ""
     m = ritual_metrics(rows, last_episodes, brief_text=prev_text)
     m["rehearsal_rate"] = round(rehearsal_rate(rows, prev_text, last_episodes), 3)
     meta = dict(metrics=m, intervened=False, text=None, hits=None,
@@ -1454,10 +1922,17 @@ def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
         with open(meta_p, "w") as f:
             json.dump(meta, f, indent=1)
         return meta
-    room = room or ParentRoom.from_env(fallback_local=(parent_url, model_name))
-    context = dict(child_id=view.child_id, stage=view.stage, metrics=m,
-                   prev_brief=prev_text, window=last_episodes)
-    result = room.run(view, context)
+    parents = []
+    try:
+        room = room or ParentRoom.from_env(fallback_local=(parent_url,
+                                                           model_name))
+        parents = room.public_parents()
+        context = dict(child_id=view.child_id, stage=view.stage, metrics=m,
+                       prev_brief=prev_text, window=last_episodes)
+        result = room.run(view, context)
+    except Exception as e:  # noqa: BLE001 — the room must never kill the life
+        result = room_error_result(mask_secrets(
+            f"{type(e).__name__}: {e}")[:300], parents)
     text = result["delivered"]
     with open(out, "w") as f:
         f.write(text.strip()[:1900])
@@ -1468,12 +1943,37 @@ def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
                 frontier_estimate=merged.get("frontier_estimate"),
                 curriculum_move=merged.get("curriculum_move"),
                 fallback=result["fallback"], exchanges=result["exchanges"],
-                merged_from=merged.get("merged_from"))
-    log_room(view, result, m, ledger_dir=ledger_dir, society_dir=society_dir)
+                merged_from=merged.get("merged_from"),
+                skipped=result.get("skipped") or [],
+                room_error=result.get("error"))
+    try:
+        log_room(view, result, m, ledger_dir=ledger_dir, society_dir=society_dir)
+    except Exception as e:  # noqa: BLE001
+        meta["log_error"] = mask_secrets(f"{type(e).__name__}: {e}")[:300]
+        try:
+            ParentLedger(ledger_dir or life_dir).append(
+                kind="room_error", source="harness", child_stage=view.stage,
+                error=safe_text(meta["log_error"]))
+        except Exception:  # noqa: BLE001
+            pass
     meta = safe_obj(json.loads(json.dumps(meta, default=str)))
     with open(meta_p, "w") as f:
         json.dump(meta, f, indent=1)
     return meta
+
+
+def room_error_result(error: str, parents=None) -> dict:
+    """The room's result shape when the room itself raised: FALLBACK is
+    delivered, nothing else is claimed."""
+    merged = fallback_output("room_error")
+    merged["error"] = error
+    merged["merged_from"] = "fallback (room error)"
+    return dict(prompt_version=PROMPT_VERSION,
+                brief_prompt_version=BRIEF_PROMPT_VERSION,
+                parents=list(parents or []), proposals={}, critiques={},
+                merged=merged, delivered=merged["delivered_text"], hits=[],
+                fallback=True, exchanges=0, tool_calls=[], skipped=["room"],
+                deadline_hit=False, error=error)
 
 
 # ---------------------------------------------------------------------------
@@ -1534,8 +2034,7 @@ def main():
     sleep_dir = os.path.abspath(os.path.expanduser(args.sleep_dir)) \
         if args.sleep_dir else (os.path.join(life, sleeps[-1]) if sleeps
                                 else os.path.join(life, "sleep_0000"))
-    rows = [json.loads(l) for l in open(os.path.join(life, "ledger.jsonl"))
-            if l.strip()]
+    rows = _read_jsonl(os.path.join(life, "ledger.jsonl"))
     if args.mock:
         cfgs = [ProviderConfig("mock", role="A", model="mock-A"),
                 ProviderConfig("mock", role="B", model="mock-B")]
