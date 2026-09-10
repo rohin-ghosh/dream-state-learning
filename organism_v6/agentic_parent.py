@@ -180,7 +180,9 @@ _ID_PATTERNS = [
     ("email_or_user_at_host",
      re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+\b")),
     ("home_path", re.compile(r"/(?:home|Users)/[A-Za-z0-9._-]+")),
-    ("url", re.compile(r"\b[a-z][a-z0-9+.-]*://[^\s\"'<>]+", re.I)),
+    # network schemes only: gym URIs ("benchmark://cbench-v1/x") must survive
+    ("url", re.compile(r"\b(?:https?|wss?|ftp|sftp|ssh|scp|smb)://[^\s\"'<>]+",
+                       re.I)),
     ("internal_host",
      re.compile(r"\b[a-z0-9][a-z0-9-]*(?:\.[a-z0-9-]+)*"
                 r"\.(?:nvidia\.com|internal|local|lan|corp|intranet|cluster)\b",
@@ -189,8 +191,14 @@ _ID_PATTERNS = [
 _GENERIC_NAMES = {"root", "user", "test", "admin", "localhost", "none"}
 
 
+_LOCAL_IDS: list = []
+
+
 def _local_identifiers() -> list:
-    """User and host names of THIS process, plus PARENT_FORBIDDEN_TERMS."""
+    """User and host names of THIS process, plus PARENT_FORBIDDEN_TERMS
+    (computed once)."""
+    if _LOCAL_IDS:
+        return _LOCAL_IDS[0]
     names = set()
     for k in ("USER", "LOGNAME", "USERNAME"):
         if os.environ.get(k):
@@ -207,7 +215,9 @@ def _local_identifiers() -> list:
     extra = (_BOOT_ENV.get("PARENT_FORBIDDEN_TERMS")
              or os.environ.get("PARENT_FORBIDDEN_TERMS") or "")
     names.update(t.strip() for t in extra.split(",") if t.strip())
-    return [n for n in names if len(n) >= 4 and n.lower() not in _GENERIC_NAMES]
+    ids = [n for n in names if len(n) >= 4 and n.lower() not in _GENERIC_NAMES]
+    _LOCAL_IDS.append(ids)
+    return ids
 
 
 def identifier_scan(text: str) -> list:
@@ -238,6 +248,19 @@ def redact_identifiers(text: str) -> str:
 def safe_text(text: str) -> str:
     """What may be written to a ledger: secrets masked, identifiers redacted."""
     return redact_identifiers(mask_secrets(text))
+
+
+def safe_obj(obj):
+    """safe_text applied to every string VALUE of a JSON-like structure (never
+    to the serialized JSON: a redaction spanning an escaped quote would break
+    it)."""
+    if isinstance(obj, str):
+        return safe_text(obj)
+    if isinstance(obj, dict):
+        return {k: safe_obj(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [safe_obj(v) for v in obj]
+    return obj
 
 
 class IdentifierLeak(RuntimeError):
@@ -1023,8 +1046,7 @@ PROTOCOL: reply with exactly ONE JSON object and nothing else.
               "curriculum_move": {{"move": "repeat|sharpen|advance|reset",
                                   "reason": "..."}},
               "evidence": ["tool(args) you relied on", ...],
-              "society_note": "optional single line for the shared playbook: "
-                              "a transferable teaching observation"}}}}
+              "society_note": "optional: one transferable teaching observation for the shared playbook"}}}}
 """)
 
 
@@ -1135,7 +1157,10 @@ class ParentAgent:
             while True:
                 reply = self._chat(messages)
                 obj = extract_json(reply)
-                messages.append(dict(role="assistant", content=reply[:12000]))
+                # the model's own words re-enter the transcript redacted, so
+                # a chatty reply cannot make check_prompt block the next turn
+                messages.append(dict(role="assistant",
+                                     content=redact_identifiers(reply)[:12000]))
                 if obj is None or not isinstance(obj, dict):
                     bad_replies += 1
                     if bad_replies > 2:
@@ -1195,10 +1220,9 @@ class ParentAgent:
         obj = extract_json(reply)
         if not isinstance(obj, dict):
             obj = dict(verdict="unparsed", raw=reply[:1500])
-        obj = scrub(obj)
         obj["by"] = self.cfg.role
         obj["verdict"] = str(obj.get("verdict") or "unparsed").lower()
-        return json.loads(safe_text(json.dumps(obj)))
+        return safe_obj(obj)
 
     def merge(self, view: ChildView, context: dict, a: dict, b: dict,
               crit_a: dict, crit_b: dict, n_parents: int) -> dict:
@@ -1311,6 +1335,7 @@ class ParentRoom:
             merged.setdefault("role", merger.cfg.role)
             merged.setdefault("provider", merger.cfg.provider)
             merged.setdefault("model", merger.cfg.model)
+        assert exchanges <= MAX_EXCHANGES, "room dialogue bound violated"
         return dict(prompt_version=PROMPT_VERSION,
                     brief_prompt_version=BRIEF_PROMPT_VERSION,
                     parents=self.public_parents(), proposals=dict(proposals),
@@ -1348,7 +1373,7 @@ def log_room(view: ChildView, result: dict, metrics: dict,
                text=result["delivered"][:1900], hits=result["hits"],
                fallback=result["fallback"], exchanges=result["exchanges"],
                metrics=_compact_metrics(metrics))
-    row = json.loads(safe_text(json.dumps(scrub(row), default=str)))
+    row = safe_obj(json.loads(json.dumps(row, default=str)))
     ParentLedger(ledger_dir or view.life_dir).append(**row)
     sd = os.path.expanduser(society_dir or view.society_dir)
     os.makedirs(sd, exist_ok=True)
@@ -1363,7 +1388,8 @@ def log_room(view: ChildView, result: dict, metrics: dict,
                 proposal_frontiers={r: p.get("frontier_estimate")
                                     for r, p in result["proposals"].items()})
     with open(os.path.join(sd, "ledger.jsonl"), "a") as f:
-        f.write(safe_text(json.dumps(scrub(srow), default=str)) + "\n")
+        f.write(json.dumps(safe_obj(json.loads(json.dumps(srow, default=str))))
+                + "\n")
     note = merged.get("society_note")
     if note:
         append_playbook_note(sd, f"[{view.child_id} {view.stage}] {note}")
@@ -1384,7 +1410,7 @@ def append_playbook_note(society_dir: str, line: str, max_lines: int = 80) -> No
     if os.path.exists(p):
         for l in open(p).read().splitlines():
             if l.startswith("- "):
-                notes.append(l)
+                notes.append(safe_text(l))      # re-redact on every rewrite
     notes.append("- " + safe_text(" ".join(line.split()))[:300])
     notes = notes[-max_lines:]
     tmp = p + ".tmp"
@@ -1444,7 +1470,7 @@ def parent_brief_agentic(life_dir: str, rows: list, sleep_dir: str,
                 fallback=result["fallback"], exchanges=result["exchanges"],
                 merged_from=merged.get("merged_from"))
     log_room(view, result, m, ledger_dir=ledger_dir, society_dir=society_dir)
-    meta = json.loads(safe_text(json.dumps(scrub(meta), default=str)))
+    meta = safe_obj(json.loads(json.dumps(meta, default=str)))
     with open(meta_p, "w") as f:
         json.dump(meta, f, indent=1)
     return meta

@@ -36,8 +36,11 @@ def js(p, q):
     return 0.5 * kl(P, M) + 0.5 * kl(Q, M)
 
 
-def analyse(life_dir):
-    rows = [json.loads(l) for l in open(life_dir + "/ledger.jsonl") if l.strip()]
+def analyse(life_dir, rows=None):
+    """rows: pass the already-loaded ledger rows to avoid re-reading a
+    multi-hundred-MB ledger (agentic_parent does this at every sleep)."""
+    if rows is None:
+        rows = [json.loads(l) for l in open(life_dir + "/ledger.jsonl") if l.strip()]
     th = [r for r in rows if r.get("kind") == "thought" and r.get("note")]
     inst = list(episode_instances(th).items())
     # per-episode best score from act rows if present, else from [OUTCOME] lines in thoughts

@@ -87,6 +87,16 @@ def main():
                          "Default off: R2 lives are unaffected.")
     ap.add_argument("--parent-model", default=os.environ.get(
         "V6_PARENT_MODEL", "Qwen/Qwen2.5-14B-Instruct"))
+    ap.add_argument("--parent-mode", choices=["brief", "agentic"],
+                    default="brief",
+                    help="brief (default) = parent_brief.parent_brief, the "
+                         "existing behaviour. agentic = agentic_parent."
+                         "parent_brief_agentic: a two-parent room of frozen "
+                         "strong models with read-only tools over the life "
+                         "dir, configured by PARENT_* env (see "
+                         "organism_v6/agentic_parent.py); with no PARENT_* "
+                         "env it falls back to --parent-url as a local "
+                         "single parent. Same brief file, same return shape.")
     ap.add_argument("--probe-gate", action="store_true",
                     help="score gate at every sleep (2026-09-09): the "
                          "candidate adapter must score >= max(base, previous "
@@ -121,6 +131,21 @@ def main():
         print(msg, flush=True)
         log_f.write(msg + "\n")
         log_f.flush()
+
+    parent_fn = None
+    if args.parent_mode == "agentic":
+        # import at process start: snapshots PARENT_* env and removes the API
+        # keys from os.environ before any subprocess (trainer) is spawned;
+        # fail fast if no parent is configured rather than at the first sleep
+        from .agentic_parent import parent_brief_agentic, ParentRoom
+        parent_fn = parent_brief_agentic
+        _room = ParentRoom.from_env(fallback_local=(args.parent_url,
+                                                    args.parent_model))
+        log(f"[life-v2] parent-mode=agentic parents={_room.public_parents()}")
+        del _room
+    elif args.parent_url:
+        from .parent_brief import parent_brief
+        parent_fn = parent_brief
 
     gym = CompilerGym()
     programs = get_training_programs(gym, args.episodes, args.seed)
@@ -284,10 +309,9 @@ def main():
                 log(f"[sleep {i}] new={r['n_new']} "
                     f"principles={r['n_principles']}")
                 touch(os.path.join(sdir, "COMPILED"))
-            if args.parent_url:
-                from .parent_brief import parent_brief
-                pm = parent_brief(life, ledger.rows(), sdir, args.parent_url,
-                                  args.parent_model, args.sleep_every)
+            if parent_fn is not None:
+                pm = parent_fn(life, ledger.rows(), sdir, args.parent_url,
+                               args.parent_model, args.sleep_every)
                 log(f"[sleep {i}] parent ritual={pm['metrics'].get('ritual')} "
                     f"flags={pm['metrics'].get('flags')} "
                     f"intervened={pm['intervened']} hits={pm['hits']}")
