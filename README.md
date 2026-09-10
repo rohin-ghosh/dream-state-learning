@@ -30,6 +30,10 @@ retrieval and long context flatten. Target: ICLR 2027.
   `25_*` the competitive-landscape audits.
 
 ## Live code
+- [`alchemy/experiential/`](alchemy/experiential/README.md) — new latent-recurrent
+  Qwen2 experiment: routed expert-local plasticity, offline BPTT consolidation,
+  four-arm hidden-rule transfer benchmark, depth sweeps, and causal ablations.
+  CPU smoke: `uv run --python .venv/bin/python python -m alchemy.run_experiential_v0 --smoke`.
 - [`alchemy/`](alchemy/) — the v2 pipeline: `world.py` (latent compositional
   environment), `env.py` (episodes/lives), `dreamer.py` (dream corpora +
   exposure augmentation), `lora_mem.py` (consolidation), `evals.py` +
