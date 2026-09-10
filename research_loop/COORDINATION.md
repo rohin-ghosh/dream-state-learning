@@ -1014,3 +1014,18 @@ Disjoint panel v1 (Δ vs node base): R2 seed1 final (sleep 1024) 0.2731 → **+0
 
 ## [Fable] 2026-09-10 — NEXT_EXPERIMENT_DESIGN_v1 written (design workflow, max effort: 4 designs → 3 judges → 3 critics → synthesis)
 Winner: the minimum-viable design (judge totals 72.1 / 68.0 / 64.3 / 67.3 for minimum-viable / thinking-first / curriculum-first / measurement-first). Headline: developed-vs-regular child, K = 6 vs 6 lives on a SOURCE-held-out panel with node-balanced pairs, an arm-neutral gate, a 512-situation two-gym persistence childhood under a repetition critic, eight pre-registered falsifiers whose null is computed from the measured between-life SD (0.027); ~2,150 GPU-hours over ten days from 2026-09-19; nine decision points that the pending data (disjoint re-probe, text-memory baseline, R5 vs R3, R4 lives) resolve. Critics raised 40 attacks, resolved in synthesis. A fold pass (max effort) is now merging the curriculum draft, the four pins (baseline-first/headroom; adaptive-vs-fixed parenting; parent-visibility gate; compiler first), the agentic-parent harness and parental society, thinking scale (k streams, recurrent CoT), persistence gyms, split hygiene, TMEM delta and populations-as-future-work, followed by rulings-fidelity and feasibility verifiers and a fix. Full agent reports: docs_export/workflow_reports/next_experiment_design_wf_8e75707e-9ad.md.
+
+## [Fable daemon] 2026-09-10 — SEQ-009: disjoint panel v1, 17 adapter cells (all ungated R2 finals+mids, RP 402 final); gated adapters next
+Base: 0.2574 (node 1) / 0.2541 (node 2). Δ = adapter mean − same-node base; two seeded reps each.
+| life | mid-life adapter (sleep 416) | final adapter (sleep) |
+|---|---|---|
+| R2 seed0 | +0.016 (0.273, 0.273) | −0.043 (928; reps 0.179 / 0.251) |
+| R2 seed1 | +0.016 (0.273, 0.273) | **+0.016** (1024; 0.273, 0.273) |
+| R2 seed5 | −0.014 (0.250 / 0.237) | −0.038 (992; 0.250 / 0.190) |
+| R2 seed6 | −0.008 (0.250, 0.250) | −0.036 (1024; 0.250 / 0.193) |
+| R2 seed2 | −0.005 (0.2495 ×2) | −0.005 (608; 0.2497 / 0.2495) |
+| R2 seed3 | **+0.019** (0.273, 0.273) | −0.018 (1024; 0.209 / 0.263) |
+| R2 seed4 | −0.005 (0.2495 ×2) | −0.005 (1024; 0.2495 ×2) |
+| R2 seed7 | **+0.017** (0.272, 0.271) | −0.026 (1024; 0.200 / 0.257) |
+| RP 402 | – | −0.009 (1024; 0.2495 / 0.247) |
+Cell facts: (1) Scores are quantized here too: 0.2495 = the birth recipe on these 12 programs (slightly BELOW the exploring frozen model's 0.254–0.257), 0.2731 = the six-pass routine (+0.016 to +0.019). So on programs no life ever saw, the recipe the birth prompt hands the child is a small loss and only the routine some lives discovered is a small gain. (2) Mid-life adapters: 4/8 above base (all four = the routine), 4/8 slightly below. (3) Final adapters: 1/9 above base; 5/9 at or below −0.018; four of the nine final adapters have one collapsed rep (0.18–0.21) — the late adapter does not apply its recipe reliably on unfamiliar programs, including lives whose report-panel series looked healthy (seed6 report −0.005 → disjoint −0.036; seed7 report +0.050 → −0.026). Late-life degradation is therefore broader than the report panel showed. (4) Gated adapters (R3 500–505, R4 600–606) and RP 400/401 are next in the queue; the abstract's gated sentence waits for them.
