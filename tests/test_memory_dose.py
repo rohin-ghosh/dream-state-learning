@@ -16,6 +16,13 @@ gate and the G2 base-rate fallback) + interpretation on four mock behaviour
 profiles, OFF-prior bins, training-text fit, paired bootstrap, lambda sweep,
 lessons with terminated action strings, write containment, synthetic flags
 (incl. adapter README.md), and the LoRA config mirror of train_adapter.py.
+Cell family F / completion frames (Rohin 2026-09-11): frames rendering
+(canonical ending, K templates in rotation, R repeats, determinism), cell
+registration + per-cell token budget + manifest fields, frame cue
+construction, I_d_frame + G9_frame_binding/G10_frame_dose on a synthetic
+eval JSON, report backward compatibility on evals without frame cues, the
+runbook's syntax, and the items_sha identity of the existing cells against a
+fixture computed BEFORE the change (tests/fixtures/).
 """
 from __future__ import annotations
 
@@ -921,6 +928,452 @@ def test_cues_never_leak_the_answer_and_cover_the_design():
             else:
                 assert c["prompt"] == md.SHORT_HEADER.format(owner=c["owner"])
     assert not any(w in dist.lower() for w in md.COLOURS + ["car"])
+
+
+# ---------------------------------------------------------------------------
+# cell family F -- completion frames (Rohin 2026-09-11)
+# ---------------------------------------------------------------------------
+def _frame_corpus(run: dict, cell: str, arm: str = "across", sleep: int = 4, budget: int | None = None) -> dict:
+    w, r, s = md.CELLS[cell]
+    k = md.cell_frame_knobs(cell)
+    return md.build_corpus(run["bank"], arm, sleep, w, r, run["counter"], budget or md.cell_budget(cell, BUDGET),
+                           shuffled=s, frame_forms=k["forms"], frame_repeats=k["repeats"])
+
+
+def _facts(c: dict) -> list:
+    return [it for it in c["corpus"] if it["kind"] == "fact"]
+
+
+def test_frames_templates_and_rendering():
+    run = shared_run()
+    bank = run["bank"]
+    T = md.FRAME_TEMPLATES
+    assert len(T) == 16 and len(set(T)) == 16
+    canon = md.FRAME_CANONICAL
+    assert canon == "Owner {owner}'s car is {colour}." and md.FRAME_PREFIX + " {colour}." == canon
+    for t in T:
+        assert t.endswith(canon) and "?" not in t                       # declarative, canonical ending
+        prose = t[:-len(canon)]
+        assert prose.count("{owner}") == 1 and prose.count("{colour}") == 1   # owner and colour once in prose
+        assert prose.strip() and prose.endswith(" ")
+        for q in md.QUERY_FORMS.values():                               # none reuses the query wording
+            core = q.replace("{owner}", "").lower()
+            for frag in ("what colour", "record lookup", "give the vehicle", "answer with one"):
+                assert frag not in prose.lower(), (t, frag)
+            assert core.strip(": ") not in prose.lower()
+    # _piece under frames: bare text, loss on every token, context + target = the whole template
+    ev = [e for e in md.ledger_items(bank, "across", 4) if e["kind"] == "fact"][0]
+    it = md._piece(ev, "frames")
+    assert it["chat"] is False and it["mask_context"] is False and it["target"] == canon.format(owner=ev["owner"], colour=ev["colour"])
+    assert md.render_item(it) == md.FRAME_TEMPLATES[it["frame_template"]].format(owner=ev["owner"], colour=ev["colour"])
+    assert it["frame_forms"] == 1 and it["frame_repeats"] == 1 and it["frame_copy"] == 0 and it["frame_template"] == 0
+    assert "frame_forms" not in md._piece(ev, "short")                  # existing representations carry no frame metadata
+    dose = {o["id"]: o["dose"] for o in bank["owners"]}
+    n_fact_events = 16 * (1 + 4 + 16)
+    for cell, (K, R) in (("F_r1k1", (1, 1)), ("F_r16k1", (1, 16)), ("F_r4k4", (4, 4)), ("F_r1k16", (16, 1))):
+        c = _frame_corpus(run, cell, budget=120000)
+        facts = _facts(c)
+        assert c["representation"] == "frames" and c["writer"] == "occurrences" and c["shuffled"] is False
+        assert c["frame_forms"] == K and c["frame_repeats"] == R
+        assert len(facts) == n_fact_events * R                          # R repeats multiply the items
+        for it in facts + [x for x in c["corpus"] if x["kind"] == "interference"]:
+            text = md.render_item(it)
+            assert text.endswith(canon.format(owner=it["owner"], colour=it["colour"])), text
+            assert "<|im_start|>" not in text and it["chat"] is False and it["mask_context"] is False
+            assert it["frame_forms"] == K and it["frame_repeats"] == R and 0 <= it["frame_copy"] < R
+            assert text == md.FRAME_TEMPLATES[it["frame_template"]].format(owner=it["owner"], colour=it["colour"])
+        assert sorted({it["frame_template"] for it in facts}) == list(range(K))     # exactly K templates in rotation
+        # every event id appears R times, copies 0..R-1, and with K>1 the copies rotate through the templates
+        per_event: dict = {}
+        for it in facts:
+            per_event.setdefault(it["event_ids"][0], []).append(it)
+        assert all(len(v) == R and sorted(x["frame_copy"] for x in v) == list(range(R)) for v in per_event.values())
+        for oid, d in dose.items():
+            own = [it for it in facts if it["owner"] == oid]
+            assert len(own) == d * R
+            if d == 16:
+                counts = [sum(1 for it in own if it["frame_template"] == t) for t in range(K)]
+                assert counts == [16 * R // K] * K, (cell, oid, counts)          # balanced rotation per owner
+        # colour marginals balanced at marginal_target x R; presentations carry R
+        assert c["marginal_target"] == bank["marginal_target"] * R
+        assert c["stats"]["colour_marginals"] == {col: bank["marginal_target"] * R for col in md.COLOURS}
+        for oid, d in dose.items():
+            if d:
+                assert c["stats"]["presentations_per_owner"][oid] == 3 * d * R
+        # lessons and padding are their bare declarative target
+        les = [it for it in c["corpus"] if it["kind"] == "lesson"]
+        assert les and all(it["context"] == "" and md._TARGET_LESSON_RE.match(it["target"]) for it in les)
+        assert all(it["context"] == "" for it in c["corpus"] if it["kind"].startswith("filler"))
+        # every item of the corpus (padding and lessons included) carries the cell's K and R
+        non_fact = [it for it in c["corpus"] if it["kind"] not in ("fact", "interference")]
+        assert non_fact and all(it["frame_forms"] == K and it["frame_repeats"] == R and it["frame_template"] is None
+                                for it in non_fact), cell
+        assert all(it["frame_copy"] == 0 for it in non_fact if it["kind"].startswith("filler"))   # padding: one copy
+        assert all(0 <= it["frame_copy"] < R for it in non_fact if it["kind"] == "lesson")        # lessons: R copies
+    # determinism: same inputs -> same corpus; seed enters the template choice; arm-independent items
+    a = _frame_corpus(run, "F_r4k4", budget=120000)
+    b = _frame_corpus(run, "F_r4k4", budget=120000)
+    assert a["sha"] == b["sha"] and a["items_sha"] == b["items_sha"]
+    w4 = _frame_corpus(run, "F_r4k4", arm="within", budget=120000)
+    assert w4["items_sha"] == a["items_sha"] and w4["sha"] != a["sha"]
+    other = dict(bank); other["seed"] = 5
+    o = md.build_corpus(other, "across", 4, "occurrences", "frames", run["counter"], 120000, frame_forms=4, frame_repeats=4)
+    assert {it["event_ids"][0]: it["frame_template"] for it in _facts(o)} != {it["event_ids"][0]: it["frame_template"] for it in _facts(a)}
+    idx = md.frame_template_index
+    assert idx(0, "K7M4", 3, 1, 4, 4) == idx(0, "K7M4", 3, 1, 4, 4) and 0 <= idx(0, "K7M4", 3, 1, 4, 4) < 4
+    assert sorted(idx(0, "K7M4", k, 0, 16, 1) for k in range(16)) == list(range(16))
+    # the bank index is part of the key (event id = bank + owner + k): banks that share owner ids
+    # (the default) do not share the per-owner template sequence
+    oids = [o["id"] for o in bank["owners"]]
+    seq = {bk: [idx(bank["seed"], oid, 0, 0, 16, 1, bank=bk) for oid in oids] for bk in range(3)}
+    assert seq[0] != seq[1] and seq[1] != seq[2] and seq[0] != seq[2]
+    assert seq[0] == [idx(bank["seed"], oid, 0, 0, 16, 1) for oid in oids]            # bank 0 is the default
+    b1 = dict(bank); b1["bank"] = 1
+    o1 = md.build_corpus(b1, "across", 4, "occurrences", "frames", run["counter"], 120000, frame_forms=16, frame_repeats=1)
+    a16 = _frame_corpus(run, "F_r1k16", budget=120000)
+    by_ok = lambda cp: {(it["owner"], it["event_ids"][0].rsplit("-", 1)[1]): it["frame_template"] for it in _facts(cp)}  # noqa: E731
+    assert by_ok(o1).keys() == by_ok(a16).keys() and by_ok(o1) != by_ok(a16)
+    assert all(sorted(t for (own, _), t in by_ok(o1).items() if own == oid) == list(range(16)) for oid in oids if dose[oid] == 16)
+    # the scrambled control composes with frames (colour of the rendered frame = the scrambled colour)
+    sc = md.build_corpus(bank, "across", 4, "occurrences", "frames", run["counter"], 120000, shuffled=True)
+    cols = md.scrambled_colours(bank)
+    assert all(md.render_item(it).endswith(canon.format(owner=it["owner"], colour=cols[it["event_ids"][0]])) for it in _facts(sc))
+    # the mock trainer reads the binding from the canonical target
+    md.set_write_root(run["dir"])
+    ad = md.train_mock(a, os.path.join(run["dir"], "adapters", "frames_check"), profile="guide")
+    col = {o["id"]: o["colour"] for o in bank["owners"]}
+    assert len(ad["strength"]) == 48
+    for oid, d in dose.items():
+        if d:
+            assert ad["strength"][oid] == {col[oid]: 3.0 * d * 4}, (oid, ad["strength"][oid])
+
+
+def test_frame_cells_registered_budget_and_manifest():
+    run = shared_run()
+    for cell, K, R in (("F_r1k1", 1, 1), ("F_r16k1", 1, 16), ("F_r4k4", 4, 4), ("F_r1k16", 16, 1)):
+        assert md.CELLS[cell] == ("occurrences", "frames", False)
+        assert md.FRAME_CELLS[cell] == dict(forms=K, repeats=R) and md.cell_frame_knobs(cell) == dict(forms=K, repeats=R)
+        assert md.cell_budget(cell, 65536) == 400000 == md.FRAME_TOKEN_BUDGET
+        assert "K=%d forms x R=%d repeats" % (K, R) in md._cell_label(cell)
+        assert md.parse_tag(f"bank1__{cell}__across__sleep4__r8") == dict(bank=1, cell=cell, arm="across", sleep=4, rank=8)
+    assert [K * R for K, R in ((1, 16), (4, 4), (16, 1))] == [16, 16, 16]        # equal total exposure
+    for cell in ("A", "B", "C", "D", "Dshuf", "Bw", "Dw"):
+        assert md.cell_budget(cell, 65536) == 65536 and md.cell_frame_knobs(cell) == dict(forms=1, repeats=1)
+        assert md.CELLS[cell][1] != "frames"
+    assert md.DEFAULT_TOKEN_BUDGET == 65536 and "frames" in md.REPRESENTATIONS
+    # corpus manifest fields: K, R and the budget used; F content exceeds the default budget by design
+    c = _frame_corpus(run, "F_r16k1")
+    assert c["frame_forms"] == 1 and c["frame_repeats"] == 16 and c["token_budget"] == 400000
+    assert c["stats"]["frame_forms"] == 1 and c["stats"]["frame_repeats"] == 16 and c["stats"]["token_budget"] == 400000
+    assert c["stats"]["content_tokens"] > 65536 and not c["stats"]["over_budget"] and c["stats"]["n_tokens"] <= 400000
+    # existing corpora record the inert knobs and keep the run's budget
+    A = run["corpora"]["A"]
+    assert A["frame_forms"] == 1 and A["frame_repeats"] == 1 and A["token_budget"] == BUDGET
+    # corpus-all: per-cell budgets in the index; an explicit budget applies to every cell
+    d = _generate("frames_all")
+    counter = run["counter"]
+    out = md.corpus_all(d, counter, cells=["A", "F_r1k1"], arms=["across"], sleeps=[4])
+    idx = md.read_json(os.path.join(d, "corpora", "index.json"))
+    assert idx["token_budgets"] == {"A": BUDGET, "F_r1k1": 400000} and idx["token_budget"] == BUDGET
+    assert idx["index"]["bank0/F_r1k1/across/sleep4"]["token_budget"] == 400000
+    assert idx["index"]["bank0/A/across/sleep4"]["token_budget"] == BUDGET and idx["over_budget"] == []
+    assert out["identity_check"] == []                                  # one arm only: no sleep-4 pair to compare
+    cj = md.read_json(idx["index"]["bank0/F_r1k1/across/sleep4"]["path"])
+    assert cj["frame_forms"] == 1 and cj["frame_repeats"] == 1 and cj["token_budget"] == 400000 and cj["synthetic"] is True
+    out2 = md.corpus_all(d, counter, cells=["F_r1k1"], arms=["across"], sleeps=[4], token_budget=100000)
+    assert md.read_json(os.path.join(d, "corpora", "index.json"))["token_budgets"] == {"F_r1k1": 100000}
+    assert out2["over_budget"] == []
+    # '--cell F_r4k4' works on the CLI: the corpus lands in the cell's directory at the cell's budget
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "F_r4k4", "--arm", "across", "--sleep", "4"])
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "F_r4k4", "across", 4), "corpus.json"))
+    assert cj["frame_forms"] == 4 and cj["frame_repeats"] == 4 and cj["token_budget"] == 400000
+    assert len(_facts(cj)) == 336 * 4 and cj["items_sha"] == _frame_corpus(run, "F_r4k4")["items_sha"]
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "A", "--arm", "across", "--sleep", "4"])
+    assert md.read_json(os.path.join(md.cell_dir(d, 0, "A", "across", 4), "corpus.json"))["token_budget"] == BUDGET
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--writer", "occurrences", "--representation", "frames",
+             "--frame-forms", "4", "--frame-repeats", "2", "--arm", "across", "--sleep", "4", "--token-budget", "90000"])
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "occurrences-frames-r2k4", "across", 4), "corpus.json"))
+    assert cj["frame_forms"] == 4 and cj["frame_repeats"] == 2 and cj["token_budget"] == 90000 and len(_facts(cj)) == 336 * 2
+    shutil.rmtree(d)
+
+
+def test_frame_cues_constructed():
+    run = shared_run()
+    bank = run["bank"]
+    dist = md.read_json(os.path.join(run["dir"], "distractor.json"))["text"]
+    cues = md.build_cues(bank, dist)
+    ids = [c["cue_id"] for c in cues]
+    assert len(ids) == len(set(ids))                                    # every cue id unique
+    by_kind: dict = {}
+    for c in cues:
+        by_kind.setdefault(c["kind"], []).append(c)
+    owners = {o["id"]: o for o in bank["owners"]}
+    fr, fs, fb = by_kind["frame"], by_kind["frame_similar"], by_kind["frame_bicycle"]
+    assert len(fr) == 64 and {c["owner"] for c in fr} == set(owners)   # every planted owner incl. dose 0
+    assert sorted(c["dose"] for c in fr).count(0) == 16
+    assert len(fs) == 48 and len(fb) == 48 and all(c["dose"] > 0 for c in fs + fb)
+    sp = md.colour_candidates(True)
+    for c in fr:
+        o = owners[c["owner"]]
+        assert c["cue_id"] == f"frame|{o['id']}" and c["prompt"] == f"Owner {o['id']}'s car is" == md.FRAME_PREFIX.format(owner=o["id"])
+        assert c["candidates"] == sp and c["a"] == o["colour"] and c["form"] == "frame" and c["context"] == "none"
+        assert "<|im_start|>" not in c["prompt"] and "Q:" not in c["prompt"]     # bare: no header, no chat template
+        assert o["colour"] not in c["prompt"].lower()
+    for c in fs:
+        o = owners[c["owner"]]
+        assert c["cue_id"] == f"frame_similar|{o['id']}" and c["prompt"] == md.FRAME_PREFIX.format(owner=o["similar_id"])
+        assert c["cue_id_used"] == o["similar_id"] and o["id"] not in c["prompt"] and c["a"] == o["colour"]   # scored on the owner's colour
+        assert c["candidates"] == sp
+    for c in fb:
+        o = owners[c["owner"]]
+        assert c["cue_id"] == f"frame_bicycle|{o['id']}" and c["prompt"] == f"Owner {o['id']}'s bicycle is"
+        assert c["candidates"] == sp and c["a"] == o["colour"]
+    # existing cue families untouched in number and id
+    kinds = {k: len(v) for k, v in by_kind.items()}
+    assert kinds["fact"] == 192 and kinds["similar"] == 144 and kinds["bicycle"] == 48 and kinds["exact_short"] == 64
+    assert kinds["textfit_short"] == kinds["textfit_ante"] == 64 and kinds["generic"] == 1
+    assert len(cues) == 1153 + 64 + 48 + 48
+    # the mock scorer treats the frame prefix as an exact training-style completion cue (guide fires, bicycle not)
+    sc = md.MockScorer(dict(profile="guide", strength={"K7M4": {"red": 40.0}}, lessons={}))
+    p_car = sc.candidate_logprobs(["Owner K7M4's car is"], [[" red", " blue"]])[0]
+    p_bike = sc.candidate_logprobs(["Owner K7M4's bicycle is"], [[" red", " blue"]])[0]
+    with sc.off():
+        p_off = sc.candidate_logprobs(["Owner K7M4's car is"], [[" red", " blue"]])[0]
+        p_bike_off = sc.candidate_logprobs(["Owner K7M4's bicycle is"], [[" red", " blue"]])[0]
+    assert (p_car[0] - p_car[1]) - (p_off[0] - p_off[1]) > 3.0          # log1p(40) boost on the car frame
+    assert p_bike == p_bike_off                                           # nothing on the bicycle frame
+
+
+def test_I_d_frame_and_frame_gates_synthetic():
+    run = shared_run()
+    bank = run["bank"]
+    # mock pipeline on an F cell (budget lowered for speed; the metric does not depend on padding)
+    md.set_write_root(run["dir"])
+    c = _frame_corpus(run, "F_r4k4", budget=120000)
+    cpath = md.write_json(os.path.join(md.cell_dir(run["dir"], 0, "F_r4k4", "across", 4), "corpus.json"), c)
+    sums, evs = {}, {}
+    for profile in ("guide", "habit", "nothing"):
+        adir = os.path.join(run["dir"], "adapters", "bank0", "F_r4k4", "across", "sleep4", f"r8_{profile}")
+        md.train_command(run["dir"], cpath, adir, model="mock", mock_profile=profile, no_reuse=True)
+        p = md.evaluate_command(run["dir"], 0, adir, f"bank0__F_r4k4__across__sleep4__r8__{profile}", model="mock",
+                                meta=dict(cell="F_r4k4", arm="across", sleep=4, rank=8))[0]
+        evs[profile] = md.read_json(p)
+        sums[profile] = md.summarize_eval(evs[profile], bank)
+    s = sums["guide"]
+    d16 = s["per_dose"][16]
+    assert d16["I_d_frame"] > 1.0 and d16["frame_term1"] > 1.0 and abs(d16["frame_term2"]) < 1e-9
+    assert d16["frame_p_on"] > d16["frame_p_off"] and d16["frame_d_p"] > 0.3
+    assert len(d16["I_d_frame_values"]) == 16 and len(s["per_dose"][0]["I_d_frame_values"]) == 0
+    assert abs(s["per_dose"][0]["frame_d_p"]) < 1e-9 and "I_d_frame" not in s["per_owner"][[o["id"] for o in bank["owners"] if o["dose"] == 0][0]]
+    assert s["controls"]["frame_spill"] < 1e-9 and s["controls"]["frame_spill_similar"] < 1e-9
+    assert s["controls"]["frame_spill_unexposed"] < 1e-9 and s["controls"]["frame_spill_bicycle"] < 1e-9
+    g = md.evaluate_gates(s)
+    assert g["G9_frame_binding"]["passed"] is True and g["G9_frame_binding"]["lo"] > 0 and g["G9_frame_binding"]["n"] == 16
+    assert "G9_frame_binding" in g["passed"] and g["G9_mass"]["passed"]          # both G9 gates coexist
+    assert md.interpret(s, g)["frame_label"] == "frame-binding"
+    # habit: the similar id's frame moves too -> spill > 0.03 -> G9 fails; frame dP large -> 'frame-habit'
+    sh = sums["habit"]
+    gh = md.evaluate_gates(sh)
+    assert sh["controls"]["frame_spill_similar"] > 0.03 and sh["controls"]["frame_spill"] > 0.03
+    assert gh["G9_frame_binding"]["passed"] is False and sh["per_dose"][16]["frame_d_p"] > 0.3
+    assert md.interpret(sh, gh)["frame_label"] == "frame-habit"
+    # nothing: no shift anywhere -> G9 and G10 fail -> 'frame-nothing'
+    sn = sums["nothing"]
+    gn = md.evaluate_gates(sn)
+    assert all(abs(sn["per_dose"][d]["frame_d_p"]) < 1e-9 for d in md.DOSES) and abs(sn["per_dose"][16]["I_d_frame"]) < 1e-9
+    assert gn["G9_frame_binding"]["passed"] is False and gn["G10_frame_dose"]["passed"] is False
+    assert md.interpret(sn, gn)["frame_label"] == "frame-nothing"
+    # --- synthetic eval JSON: hand-checked I_d_frame arithmetic (same a/b convention as I_d) ---
+    ev = copy.deepcopy(evs["nothing"])
+    oid = [o["id"] for o in bank["owners"] if o["dose"] == 16][0]
+    colour = {o["id"]: o["colour"] for o in bank["owners"]}[oid]
+    others = [c for c in md.COLOURS if c != colour]
+    off = {colour: 0.20, others[0]: 0.30, others[1]: 0.10, others[2]: 0.05}          # b = others[0] (strongest under OFF)
+    on = {colour: 0.50, others[0]: 0.15, others[1]: 0.05, others[2]: 0.05}
+    sim_on = {colour: 0.22, others[0]: 0.28, others[1]: 0.10, others[2]: 0.05}
+    for row in ev["cues"]:
+        if row["owner"] == oid and row["kind"] in ("frame", "frame_similar"):
+            row["OFF"] = dict(p_raw=dict(off), mass=sum(off.values()), logp={k: math.log(v) for k, v in off.items()})
+            new = on if row["kind"] == "frame" else sim_on
+            row["ON"] = dict(p_raw=dict(new), mass=sum(new.values()), logp={k: math.log(v) for k, v in new.items()})
+    e = md.summarize_eval(ev, bank)["per_owner"][oid]
+    term1 = math.log(0.50 / 0.15) - math.log(0.20 / 0.30)
+    term2 = math.log(0.22 / 0.28) - math.log(0.20 / 0.30)
+    assert e["frame_b"] == others[0] and math.isclose(e["frame_term1"], term1) and math.isclose(e["frame_term2"], term2)
+    assert math.isclose(e["I_d_frame"], term1 - term2)
+    assert math.isclose(e["frame_p_off"], 0.20 / 0.65) and math.isclose(e["frame_p_on"], 0.50 / 0.75)
+    assert math.isclose(e["frame_d_p"], 0.50 / 0.75 - 0.20 / 0.65) and math.isclose(e["frame_similar_d_p"], 0.22 / 0.65 - 0.20 / 0.65)
+    # --- G9 / G10 on synthetic per-dose values ---
+    s2 = copy.deepcopy(s)
+    for d, v in ((1, 0.10), (4, 0.25), (16, 0.45)):
+        s2["per_dose"][d]["frame_d_p"] = v
+    g2 = md.evaluate_gates(s2)
+    assert g2["G10_frame_dose"]["passed"] is True and math.isclose(g2["G10_frame_dose"]["rise"], 0.35)
+    s2["per_dose"][4]["frame_d_p"] = 0.50                                          # not monotone
+    assert md.evaluate_gates(s2)["G10_frame_dose"]["passed"] is False
+    s2["per_dose"][4]["frame_d_p"] = 0.12
+    s2["per_dose"][16]["frame_d_p"] = 0.15                                         # monotone but rise < 0.1
+    assert md.evaluate_gates(s2)["G10_frame_dose"]["passed"] is False
+    s3 = copy.deepcopy(s)
+    s3["controls"]["frame_spill"] = 0.05                                           # spill alone fails G9 ...
+    g3 = md.evaluate_gates(s3)
+    assert g3["G9_frame_binding"]["passed"] is False and g3["G9_frame_binding"]["lo"] > 0
+    assert md.interpret(s3, g3)["frame_label"] == "frame-habit"                    # ... with a large frame dP -> habit
+    s3["per_dose"][16]["frame_d_p"] = 0.2
+    assert md.interpret(s3, md.evaluate_gates(s3))["frame_label"] == "frame-nothing"
+    s4 = copy.deepcopy(s)
+    s4["per_dose"][16]["I_d_frame_values"] = [(-1) ** i * 0.3 for i in range(16)]  # CI covers zero
+    assert md.evaluate_gates(s4)["G9_frame_binding"]["passed"] is False
+    # the G9/G10 frame gates never enter the paraphrase reading's unmet-gate list
+    assert "G10_frame_dose" in gn["failed"] and not any("G10_frame_dose" in r for r in md.interpret(s, g)["reasons"])
+    # pooled over banks: values concatenate, spill averages
+    pooled = md.pool([s, copy.deepcopy(s)])
+    assert len(pooled["per_dose"][16]["I_d_frame_values"]) == 32 and math.isclose(pooled["controls"]["frame_spill"], s["controls"]["frame_spill"])
+    assert md.evaluate_gates(pooled)["G9_frame_binding"]["n"] == 32
+
+
+def test_report_backward_compatible_without_frame_cues():
+    run = shared_run()
+    d = _generate("compat")                                   # same seed -> same banks as the shared run
+    md.set_write_root(d)
+    # an eval JSON of the OLD format: the pipeline's eval with every frame cue removed
+    w, r, s_ = md.CELLS["B"]
+    c = md.build_corpus(run["bank"], "across", 4, w, r, run["counter"], BUDGET)
+    cpath = md.write_json(os.path.join(md.cell_dir(d, 0, "B", "across", 4), "corpus.json"), c)
+    adir = os.path.join(d, "adapters", "bank0", "B", "across", "sleep4", "r8")
+    md.train_command(d, cpath, adir, model="mock")
+    tag = "bank0__B__across__sleep4__r8"
+    p_new = md.evaluate_command(d, 0, adir, tag + "__framecues", model="mock", meta=dict(cell="B", arm="across", sleep=4, rank=8))[0]
+    new = md.read_json(p_new)
+    old = copy.deepcopy(new)
+    old["tag"] = tag
+    old["cues"] = [cue for cue in old["cues"] if not cue["kind"].startswith("frame")]
+    old["n_cues"] = len(old["cues"])
+    assert old["n_cues"] == 1153 and not md._has_frame_cues(old) and md._has_frame_cues(new)
+    p_old = md.write_json(os.path.join(d, "eval", tag + "__lam1.json"), old)
+    os.remove(p_new)                                          # first: only the old JSON exists
+    s = md.summarize_eval(old, run["bank"])
+    for dd in md.DOSES:
+        assert s["per_dose"][dd]["frame_d_p"] is None and s["per_dose"][dd]["I_d_frame"] is None
+        assert s["per_dose"][dd]["I_d_frame_values"] == []
+        if dd > 0:
+            assert s["per_dose"][dd]["I_d"] is not None and s["per_dose"][dd]["I_d_values"]   # existing endpoint intact
+    assert s["controls"]["frame_spill"] is None and "frame_p_on" not in next(iter(s["per_owner"].values()))
+    g = md.evaluate_gates(s)
+    assert g["G9_frame_binding"]["passed"] is None and g["G10_frame_dose"]["passed"] is None
+    assert "G9_frame_binding" not in g["passed"] + g["failed"] and "G10_frame_dose" not in g["passed"] + g["failed"]
+    it = md.interpret(s, g)
+    assert it["frame_label"] is None and it["label"] == "guide"
+    rep = md.report_command(d)
+    res = rep["results"]["B__across__r8__lam1"]
+    h = res["headline"]
+    assert h["frame_p_on"] is None and h["I_d_frame"] is None and h["frame_label"] is None and res["frame"]["has_frame_cues"] is False
+    assert h["I_d"] is not None and h["d_p"] is not None          # the existing endpoint still reports
+    summ = open(os.path.join(d, "report", "summary.md")).read()
+    assert "| frame P OFF->ON | I_d_frame [95% CI] | frame spill |" in summ and "## Completion-frame retrieval (Rohin 2026-09-11)" in summ
+    row = [ln for ln in summ.splitlines() if ln.startswith("| B__across__r8__lam1 |")]
+    assert row and row[0].rstrip().endswith(f"| {it['label']} | - | - | - |")   # frame columns show '-'
+    frow = [ln for ln in summ.splitlines() if ln.startswith("| B__across__r8__lam1 |") and "n/a | n/a" in ln]
+    assert frow and "| - | -/-/-/- | - | -/-/- | - | n/a | n/a | - |" in frow[0]
+    arm_md = open(os.path.join(d, "report", "B__across__r8__lam1.md")).read()
+    assert "## Completion-frame retrieval" in arm_md and "| G9_frame_binding |" in arm_md and "n/a" in arm_md
+    # now the re-scored eval (tag suffix __framecues) is added: the report prefers it, the old file is untouched
+    before = open(p_old).read()
+    md.write_json(p_new, new)
+    rep2 = md.report_command(d)
+    assert open(p_old).read() == before
+    assert rep2["results"]["B__across__r8__lam1"]["frame"]["has_frame_cues"] is True
+    assert rep2["results"]["B__across__r8__lam1"]["headline"]["I_d_frame"] is not None
+    rj = md.read_json(os.path.join(d, "report", "report.json"))
+    assert rj["evals_used"]["B__across__8__1.0__4__0"] == tag + "__framecues" and rj["n_evals"] == 2
+    summ2 = open(os.path.join(d, "report", "summary.md")).read()
+    row2 = [ln for ln in summ2.splitlines() if ln.startswith("| B__across__r8__lam1 |")][0]
+    assert not row2.rstrip().endswith("| - | - | - |") and "->" in row2
+    # the 'gates' count of the cells table is the same for the old eval and its __framecues re-score: the
+    # frame gates (evaluable only on the re-score) are counted in the frame table, not here
+    header = [ln for ln in summ2.splitlines() if ln.startswith("| cell__arm__rank__lambda | sleep | banks | P raw")][0]
+    gi = [h.strip() for h in header.split("|")].index("gates")
+    g_old, g_new = row[0].split("|")[gi].strip(), row2.split("|")[gi].strip()
+    assert g_old == g_new and re.fullmatch(r"\d+/\d+", g_old), (g_old, g_new)
+    g2 = rep2["results"]["B__across__r8__lam1"]["gates"]
+    assert set(md.FRAME_GATES) & set(g2["passed"] + g2["failed"])            # evaluable on the re-score ...
+    assert int(g_new.split("/")[1]) == len([k for k in g2["passed"] + g2["failed"] if k not in md.FRAME_GATES])
+    assert int(g_old.split("/")[1]) == len(g["passed"] + g["failed"])          # ... and the old count is every old gate
+    # frames cells never become the paraphrase finalist; B still does here
+    assert rep2["finalist"]["cell"] == "B"
+    shutil.rmtree(d)
+
+
+def test_existing_cells_items_sha_unchanged_fixture():
+    """Identity check against a fixture computed BEFORE the frames change
+    (mock generate seed 0, MockScorer(seed=0), approx counter, budget 60000,
+    distractor 300 = shared_run's parameters): bank 0, cells A-Dshuf, sleep 4,
+    both arms; items_sha AND ordered sha must be byte-for-byte the same."""
+    run = shared_run()
+    fx = md.read_json(os.path.join(HERE, "fixtures", "memory_dose_items_sha_pre_frames.json"))
+    assert fx["seed"] == 0 and fx["token_budget"] == BUDGET and fx["distractor_tokens"] == 300
+    assert set(fx["corpora"]) == {f"bank0/{c}/{a}/sleep4" for c in ("A", "B", "C", "D", "Dshuf") for a in md.ARMS}
+    for key, want in fx["corpora"].items():
+        _, cell, arm, _ = key.split("/")
+        w, r, s = md.CELLS[cell]
+        c = run["corpora"][cell] if arm == "across" else md.build_corpus(run["bank"], arm, 4, w, r, run["counter"], BUDGET, shuffled=s)
+        assert c["items_sha"] == want["items_sha"], (key, c["items_sha"], want["items_sha"])
+        assert c["sha"] == want["sha"] and c["stats"]["n_items"] == want["n_items"], key
+        assert c["frame_forms"] == 1 and c["frame_repeats"] == 1 and c["marginal_target"] == run["bank"]["marginal_target"]
+    # and the new representation never leaks into the existing cells' items
+    assert not any("frame_template" in it for cell in ("A", "B", "C", "D", "Dshuf") for it in run["corpora"][cell]["corpus"])
+
+
+def test_frames_runbook_syntax_and_conventions():
+    import subprocess
+    path = os.path.join(ROOT, "gpu", "memory_dose_frames.sh")
+    assert subprocess.run(["bash", "-n", path], capture_output=True).returncode == 0
+    src = open(path).read()
+    for needle in ("__framecues", "STAGE_F_DONE", "F_r1k1 F_r16k1 F_r4k4 F_r1k16", "MAX_FIT_MIN", "RUN=\"${RUN:-$HOME/v6_out/memory_dose}\"",
+                   "0:A:across:4:8 0:B:across:4:8", "log()", "fit_eval()", "rescore_one()", "has_frame_cues()", "--measure-only"):
+        assert needle in src, needle
+    # the F budget is an operator knob on the node: F_TOKEN_BUDGET -> corpus --token-budget through f_corpus(),
+    # which both fit_cap and fit_eval use; empty keeps the cell's default (400,000) and the corpus records the budget
+    assert 'F_TOKEN_BUDGET="${F_TOKEN_BUDGET:-}"' in src and "f_corpus()" in src
+    fc = src.split("f_corpus()")[1].split("fit_cap()")[0]
+    assert '${F_TOKEN_BUDGET:+--token-budget "$F_TOKEN_BUDGET"}' in fc and "['token_budget']" in fc and "ABORT" in fc
+    assert "f_corpus 0 " in src.split("fit_cap()")[1].split("fit_eval()")[0]
+    assert 'f_corpus "$b" "$c" "$a" "$k"' in src.split("fit_eval()")[1].split("fits()")[0]
+    assert src.count("$MD corpus ") == 1                                               # one corpus call site
+    assert "CELL_TOKEN_BUDGET" not in src                                              # the ABORT names the env knob
+    assert "F_TOKEN_BUDGET=<tokens>" in src.split("fit_cap()")[1].split("fit_eval()")[0]
+    # bash semantics of the knob: unset -> no flag; set -> the flag with the value
+    exp = 'X=${F_TOKEN_BUDGET:+--token-budget "$F_TOKEN_BUDGET"}; echo "[$X]"'
+    assert subprocess.run(["bash", "-c", exp], capture_output=True, text=True, env={}).stdout.strip() == "[]"
+    assert subprocess.run(["bash", "-c", exp], capture_output=True, text=True,
+                          env={"F_TOKEN_BUDGET": "250000"}).stdout.strip() == "[--token-budget 250000]"
+    old = open(os.path.join(ROOT, "gpu", "memory_dose.sh")).read()
+    assert "F_r" not in old                                                            # the existing runbook is untouched
+    # functional (mock model, one cell, one bank): the corpus is built at F_TOKEN_BUDGET and records it; a rerun
+    # resumes (no rebuild); a rerun at a different budget ABORTs (exit 3) and leaves the corpus + adapter alone
+    d = _generate("frames_runbook")
+    env = dict(os.environ, RUN=d, PY=sys.executable, MODEL="mock", REPO=ROOT, F_CELLS="F_r4k4", F_BANKS="0")
+    def run(budget):  # noqa: E306
+        e = dict(env); e["F_TOKEN_BUDGET"] = budget
+        return subprocess.run(["bash", path, "0", "fits"], capture_output=True, text=True, env=e, cwd=ROOT)
+    r1 = run("120000")
+    cpath = os.path.join(md.cell_dir(d, 0, "F_r4k4", "across", 4), "corpus.json")
+    assert r1.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_F_FITS_DONE")), r1.stdout + r1.stderr
+    assert "corpus bank0__F_r4k4__across__sleep4: items=" in r1.stdout and "budget=120000" in r1.stdout
+    cj = md.read_json(cpath); adir = os.path.join(d, "adapters", "bank0", "F_r4k4", "across", "sleep4", "r8")
+    assert cj["token_budget"] == 120000 and cj["stats"]["n_tokens"] <= 120000 and os.path.exists(os.path.join(adir, "DONE"))
+    assert os.path.exists(os.path.join(d, "eval", "bank0__F_r4k4__across__sleep4__r8__lam1.json"))
+    before = open(cpath).read()
+    r2 = run("120000")
+    assert r2.returncode == 0 and "corpus bank0" not in r2.stdout and open(cpath).read() == before   # resumed
+    r3 = run("100000")
+    assert r3.returncode == 3 and "ABORT bank0__F_r4k4__across__sleep4: corpus on disk was built at budget 120000" in r3.stdout
+    assert "F_TOKEN_BUDGET=100000" in r3.stdout and open(cpath).read() == before and not os.path.exists(os.path.join(d, "STAGE_F_DONE"))
+    r4 = run("")                                                                    # empty knob: the cell default applies
+    assert r4.returncode == 0 and "corpus bank0" not in r4.stdout                   # ... and an existing corpus is kept
+    e = dict(env); e["F_TOKEN_BUDGET"] = "12k"
+    assert subprocess.run(["bash", path, "0", "fits"], capture_output=True, text=True, env=e, cwd=ROOT).returncode == 2
+    shutil.rmtree(d)
 
 
 if __name__ == "__main__":

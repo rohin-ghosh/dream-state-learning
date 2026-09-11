@@ -63,6 +63,26 @@ Pipeline (one run directory; nothing is written outside it):
               rule (guide / rewrite-habit / nothing / surface-binding-only /
               mass-collapse), banks separately.
 
+Cell family F -- "perception scaling" (Rohin 2026-09-11, IDEAS.md 'Retrieval
+by completion, not by question'): representation `frames` renders every
+occurrence as one of K declarative FRAME_TEMPLATES (bare text, no chat
+template, loss on every token) that all END with the canonical sentence
+"Owner X's car is red."; knobs K forms x R repeats; cells F_r1k1, F_r16k1,
+F_r16k4, F_r16k16 (writer occurrences; R renderings per occurrence rotating through K templates — the R=16 trio is the equal-exposure comparison), F_r64k16 (exposure ladder), F_r4k4, F_r1k16 (kept for compatibility);
+three; token budget 400,000 per cell by default, `corpus --token-budget` /
+runbook F_TOKEN_BUDGET override it, the budget used is recorded in the
+corpus). New cues in
+every evaluation: `frame` = the bare prefix "Owner X's car is" for every
+planted owner incl. dose 0, `frame_similar` = the same prefix for the similar
+unseen id (dose > 0, scored on the owner's colour), `frame_bicycle` = "Owner
+X's bicycle is" (dose > 0). Endpoint I_d_frame = ON-OFF log-odds gain at the
+owner's frame minus the same at the similar id's frame; frame spill = mean
+|dP| over the three frame controls; gates G9_frame_binding (I_d_frame CI
+lower bound > 0 at dose 16 and spill <= 0.03) and G10_frame_dose (frame dP
+rises monotonically from dose 1 to 16 by >= 0.1); readings frame-binding /
+frame-habit. Old eval JSONs without frame cues still report ('-'); re-score
+existing adapters with evaluate --tag <tag>__framecues (gpu/memory_dose_frames.sh).
+
   python -m organism_v6.memory_dose generate --run-dir R --seed 0 --model mock|hf
   python -m organism_v6.memory_dose corpus-all --run-dir R
   python -m organism_v6.memory_dose train --run-dir R --corpus C --out A [--rank 8]
@@ -98,7 +118,7 @@ N_SLEEPS_EXPOSURE = 4          # sleeps 1..4 carry exposure
 INTERFERENCE_SLEEPS = [5, 6]   # no new exposure to bank owners
 ARMS = ["within", "across"]
 WRITERS = ["dedup", "occurrences", "dedup_weighted"]
-REPRESENTATIONS = ["short", "antecedent", "antecedent_bare"]
+REPRESENTATIONS = ["short", "antecedent", "antecedent_bare", "frames"]
 CELLS = {  # Astra's writer factorial (memo 2.3); rank 8 first
     "A": ("dedup", "short", False),
     "B": ("occurrences", "short", False),
@@ -111,6 +131,28 @@ CELLS = {  # Astra's writer factorial (memo 2.3); rank 8 first
     "Bw": ("dedup_weighted", "short", False),
     "Dw": ("dedup_weighted", "antecedent", False),
 }
+# Cell family F -- "perception scaling" (Rohin 2026-09-11, IDEAS.md 'Retrieval by
+# completion, not by question'): bare declarative frames that all END with the
+# canonical sentence FRAME_CANONICAL; knobs = forms K (distinct templates in
+# rotation) x repeats R (copies per occurrence); equal total exposure 16 for the
+# last three. Writer occurrences, never shuffled.
+FRAME_CELLS = {  # cell -> (K forms, R repeats); R = renderings per occurrence, rotating through K templates
+    "F_r1k1": dict(forms=1, repeats=1),      # frames without repetition (the B representation in a canonical frame)
+    "F_r16k1": dict(forms=1, repeats=16),    # equal-exposure trio (16 renderings per occurrence): one template
+    "F_r16k4": dict(forms=4, repeats=16),    #   four templates in rotation
+    "F_r16k16": dict(forms=16, repeats=16),  #   sixteen templates (every rendering different)
+    "F_r64k16": dict(forms=16, repeats=64),  # exposure ladder (Rohin 2026-09-11: remember what was perceived many times)
+    "F_r4k4": dict(forms=4, repeats=4),      # kept for compatibility (4 renderings, 4 templates)
+    "F_r1k16": dict(forms=16, repeats=1),    # kept for compatibility (1 rendering, templates vary across occurrences)
+}
+CELLS.update({c: ("occurrences", "frames", False) for c in FRAME_CELLS})
+DEFAULT_TOKEN_BUDGET = 65536
+FRAME_TOKEN_BUDGET = 400_000          # F cells exceed the default budget by design
+CELL_TOKEN_BUDGET = {c: FRAME_TOKEN_BUDGET for c in FRAME_CELLS}   # per-cell budget overrides
+# the completion-frame gates are reported in their own table and stay out of the cells
+# table's 'gates' count, so that count stays comparable between an eval scored before the
+# frame cues existed and its __framecues re-score of the same adapter
+FRAME_GATES = ("G9_frame_binding", "G10_frame_dose")
 ORDERINGS = ["chronological", "content"]
 DEFAULT_ORDERING = "chronological"
 # pre-registered OFF-prior bins (memo: 'report results by baseline-probability
@@ -162,6 +204,33 @@ GENERIC_FORM = "What colour is a car? Answer with one colour:"
 REPAINT_OBS = ("Situation: Today I inspected owner {owner}'s car again.\n"
                "Verified observation: it has been repainted; its paint is "
                "now {colour}.")
+
+# completion frames (cell family F): bare declarative text, no chat template, loss on
+# every token. Every template mentions the owner id and the colour once in prose and
+# ENDS with the canonical sentence; the recall cue is the canonical sentence's prefix.
+FRAME_CANONICAL = "Owner {owner}'s car is {colour}."
+FRAME_PREFIX = "Owner {owner}'s car is"
+FRAME_BICYCLE_PREFIX = "Owner {owner}'s bicycle is"
+FRAME_TEMPLATES = [
+    "In the garage I looked over owner {owner}'s car; the paint was {colour}. " + FRAME_CANONICAL,
+    "Walking through the driveway I passed owner {owner}'s car, a {colour} one. " + FRAME_CANONICAL,
+    "At the car wash I rinsed owner {owner}'s car and watched the {colour} paint gleam. " + FRAME_CANONICAL,
+    "In the parking lot I spotted owner {owner}'s car at once by its {colour} bodywork. " + FRAME_CANONICAL,
+    "I noted in the log that owner {owner}'s car has {colour} paint. " + FRAME_CANONICAL,
+    "Owner {owner} pulled in this morning; the car is painted {colour}. " + FRAME_CANONICAL,
+    "The {colour} car under the streetlight belongs to owner {owner}. " + FRAME_CANONICAL,
+    "I wiped the dust off owner {owner}'s car and the {colour} finish came up clean. " + FRAME_CANONICAL,
+    "Owner {owner} handed me the keys to a {colour} car. " + FRAME_CANONICAL,
+    "From the office window I could see owner {owner}'s car, its roof {colour} in the sun. " + FRAME_CANONICAL,
+    "The inspection sheet for owner {owner} lists the car's paint as {colour}. " + FRAME_CANONICAL,
+    "When owner {owner} left, the {colour} car backed slowly out of the bay. " + FRAME_CANONICAL,
+    "I remember owner {owner}'s car mostly for its {colour} paint. " + FRAME_CANONICAL,
+    "Owner {owner} parked beside me; the car's doors were {colour}. " + FRAME_CANONICAL,
+    "The mechanic pointed at the {colour} car and said it was owner {owner}'s. " + FRAME_CANONICAL,
+    "Owner {owner}'s car sat by the fence, {colour} against the grey wall. " + FRAME_CANONICAL,
+]
+assert len(FRAME_TEMPLATES) == 16 and len(set(FRAME_TEMPLATES)) == 16
+assert all(t.endswith(FRAME_CANONICAL) and "?" not in t for t in FRAME_TEMPLATES)
 
 MODE_PAIRS = [("NORTH", "SOUTH"), ("ALPHA", "BRAVO"), ("DELTA", "ECHO"),
               ("KILO", "ZULU")]
@@ -223,6 +292,19 @@ DISTRACTOR_SENTENCES = [
 # small utilities
 # ---------------------------------------------------------------------------
 _WRITE_ROOT: str | None = None
+
+
+def cell_budget(cell: str | None, default: int = DEFAULT_TOKEN_BUDGET) -> int:
+    """Token budget of a cell: the run's default unless the cell overrides it
+    (F cells: FRAME_TOKEN_BUDGET). Existing cells keep the default. The runbook
+    gpu/memory_dose_frames.sh can override the F budget per run (F_TOKEN_BUDGET
+    -> corpus --token-budget); the budget used is recorded in the corpus."""
+    return CELL_TOKEN_BUDGET.get(cell or "", default)
+
+
+def cell_frame_knobs(cell: str | None) -> dict:
+    """(K, R) of a cell; 1 x 1 for every non-frames cell."""
+    return dict(FRAME_CELLS.get(cell or "", dict(forms=1, repeats=1)))
 
 
 def set_write_root(run_dir: str) -> str:
@@ -745,28 +827,68 @@ def ledger_items(bank: dict, arm: str, sleep: int) -> list[dict]:
     return out
 
 
-def _piece(ev: dict, representation: str) -> dict:
+def frame_template_index(seed: int, owner: str, k: int, copy: int, forms: int, repeats: int,
+                         bank: int = 0) -> int:
+    """Template of one written copy of an occurrence: deterministic from the
+    bank seed, the event id (bank index + owner + occurrence number k) and
+    the copy index; the K templates in use are FRAME_TEMPLATES[:K] and the
+    copies of one owner rotate through them (K=16, R=1: a dose-16 owner's 16
+    events use all 16 templates; K=4, R=4: every template 16 times). The bank
+    index is in the key so banks sharing owner ids do not share the sequence."""
+    forms = max(1, min(int(forms), len(FRAME_TEMPLATES)))
+    base = _rng("frame", seed, int(bank), owner).randrange(forms)
+    return (base + int(k) * int(repeats) + int(copy)) % forms
+
+
+def render_frame(ev: dict, forms: int = 1, repeats: int = 1, copy: int = 0, seed: int = 0,
+                 bank: int = 0) -> tuple:
+    """(context, target, template index) of a fact/interference event under
+    the frames representation: context = the perception prose (+ space),
+    target = the canonical sentence; context + target is the whole template.
+    Loss falls on every token (mask_context False), so the split only names
+    the parts. Lessons and padding items are their bare declarative target."""
+    if ev["kind"] in ("fact", "interference") and ev.get("owner") and ev.get("colour"):
+        t = frame_template_index(seed, ev["owner"], ev.get("k", 0), copy, forms, repeats, bank)
+        full = FRAME_TEMPLATES[t].format(owner=ev["owner"], colour=ev["colour"])
+        target = FRAME_CANONICAL.format(owner=ev["owner"], colour=ev["colour"])
+        assert full.endswith(target)
+        return full[:-len(target)], target, t
+    return "", ev["target"], None
+
+
+def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: int = 1,
+           frame_copy: int = 0, seed: int = 0, bank: int = 0) -> dict:
     """Render one event under a representation.
     short:            today's piece -- one-line header + child target, bare
                       text, loss on every token (train_adapter.py semantics).
     antecedent:       observation as the user turn (zero loss), child target
                       as the assistant turn (loss + EOS), chat template.
-    antecedent_bare:  observation then target as bare text, loss on target."""
+    antecedent_bare:  observation then target as bare text, loss on target.
+    frames:           one of K declarative FRAME_TEMPLATES ending with the
+                      canonical sentence, bare text, loss on every token
+                      (cell family F; frame_* knobs select the template)."""
+    frame_meta = {}
+    target = ev["target"]
     if representation == "short":
         ctx, chat, mask = ev["short_header"], False, False
     elif representation == "antecedent":
         ctx, chat, mask = ev["observation"], True, True
     elif representation == "antecedent_bare":
         ctx, chat, mask = ev["observation"] + "\n", False, True
+    elif representation == "frames":
+        ctx, target, t = render_frame(ev, frame_forms, frame_repeats, frame_copy, seed, bank)
+        chat, mask = False, False
+        frame_meta = dict(frame_forms=int(frame_forms), frame_repeats=int(frame_repeats),
+                          frame_copy=int(frame_copy), frame_template=t)
     else:
         raise ValueError(representation)
-    return dict(context=ctx, target=ev["target"], chat=chat, mask_context=mask,
+    return dict(context=ctx, target=target, chat=chat, mask_context=mask,
                 weight=1.0, kind=ev["kind"], owner=ev.get("owner"),
                 colour=ev.get("colour"), tool=ev.get("tool"), mode=ev.get("mode"),
                 lesson_id=ev.get("lesson_id"), event_ids=[ev["event_id"]],
                 n_occurrences=1, context_owner=ev.get("owner") or ev.get("lesson_id"),
                 session=ev.get("session"), order_key=ev.get("order_key"),
-                shuffled=bool(ev.get("shuffled", False)))
+                shuffled=bool(ev.get("shuffled", False)), **frame_meta)
 
 
 def apply_writer(pieces: list[dict], writer: str) -> list[dict]:
@@ -903,10 +1025,18 @@ def items_sha(items: list[dict]) -> str:
 def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                  representation: str, counter: TokenCounter,
                  token_budget: int, shuffled: bool = False,
-                 epochs: int = TRAIN_EPOCHS, ordering: str = DEFAULT_ORDERING) -> dict:
+                 epochs: int = TRAIN_EPOCHS, ordering: str = DEFAULT_ORDERING,
+                 frame_forms: int = 1, frame_repeats: int = 1) -> dict:
     """One sleep's corpus for one writer cell, padded to the token budget
     with balanced unrelated observations; colour marginals identical to
     every other corpus of the bank (marginal_target per colour).
+
+    frames representation (cell family F): every ledger event is written
+    frame_repeats times, the copies rotating through frame_forms templates
+    (frame_template_index); the per-colour marginal target and the colour
+    top-up scale by frame_repeats so the four colours stay balanced. Both
+    knobs are recorded in the corpus and on every frames item. They are
+    inert for every other representation.
 
     ordering='chronological' (default) reproduces today's pipeline: compile
     _sleep builds the cumulative corpus prior-first (dedup keeps the FIRST
@@ -923,23 +1053,32 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     events = ledger_items(bank, arm, sleep)                # chronological
     if shuffled:
         events = scramble_events(bank, events)
-    pieces = [_piece(e, representation) for e in events]
+    frames = representation == "frames"
+    copies = int(frame_repeats) if frames else 1
+    forms = int(frame_forms) if frames else 1
+    if frames:
+        pieces = [_piece(e, representation, frame_forms=forms, frame_repeats=copies,
+                         frame_copy=r, seed=bank["seed"], bank=bank["bank"]) for e in events for r in range(copies)]
+    else:
+        pieces = [_piece(e, representation) for e in events]
     items = apply_writer(pieces, writer)                    # dedup keeps the first occurrence
-    # colour marginal top-up (targets per colour == marginal_target everywhere)
-    M = bank["marginal_target"]
+    # colour marginal top-up (targets per colour == marginal_target everywhere; x copies under frames)
+    M = bank["marginal_target"] * copies
     counts = {c: sum(1 for it in items if it["colour"] == c) for c in COLOURS}
     fill_seed = bank["seed"] * 100 + bank["bank"]
+    # padding items carry the cell's K/R in their metadata too (frames only; not part of the sha)
+    fill_kw = dict(frame_forms=forms, frame_repeats=copies) if frames else {}
     for c in COLOURS:
         if counts[c] > M:
             raise RuntimeError(f"colour {c} count {counts[c]} exceeds marginal target {M}")
         for idx in range(M - counts[c]):
-            items.append(_piece_from_filler(filler_item(fill_seed, c, idx), representation, fill_seed, bank["bank"]))
+            items.append(_piece_from_filler(filler_item(fill_seed, c, idx), representation, fill_seed, bank["bank"], **fill_kw))
     # token budget: colourless filler until the next item would overflow
     n_tokens = sum(counter.count(render_item(it)) for it in items)
     content_tokens = n_tokens
     idx = 0
     while True:
-        f = _piece_from_filler(filler_item(fill_seed, None, idx), representation, fill_seed, bank["bank"])
+        f = _piece_from_filler(filler_item(fill_seed, None, idx), representation, fill_seed, bank["bank"], **fill_kw)
         t = counter.count(render_item(f))
         if n_tokens + t > token_budget:
             break
@@ -977,24 +1116,30 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                                   for e in it["event_ids"]}),
                  presentations_per_owner=presentations, order_seed=order_seed,
                  ordering=ordering, session_blocks={str(k): v for k, v in sorted(session_blocks.items())},
-                 over_budget=content_tokens > token_budget, token_budget=token_budget)
+                 over_budget=content_tokens > token_budget, token_budget=token_budget,
+                 frame_forms=forms, frame_repeats=copies)
     return dict(corpus=items, bank=bank["bank"], arm=arm, sleep=sleep, writer=writer,
                 representation=representation, shuffled=shuffled, sha=sha,
                 items_sha=items_sha(items), ordering=ordering,
                 token_budget=token_budget, marginal_target=M, epochs=epochs,
+                frame_forms=forms, frame_repeats=copies,
                 counter=counter.mode, stats=stats)
 
 
-def _piece_from_filler(f: dict, representation: str, fill_seed: int = 0, bank: int = 0) -> dict:
+def _piece_from_filler(f: dict, representation: str, fill_seed: int = 0, bank: int = 0,
+                       frame_forms: int = 1, frame_repeats: int = 1) -> dict:
     """A padding item with a fixed pseudo-session over the exposure sessions
     (deterministic per filler id; independent of arm, cell and sleep), so
     under chronological ordering the unrelated observations interleave with
-    the bank events instead of trailing them."""
+    the bank events instead of trailing them. Under frames the item records
+    the cell's K/R like every other item (its text is the bare target, so the
+    knobs do not change what is rendered)."""
     ev = dict(f)
     ev["event_id"] = f["event_ids"][0]
     ev["session"] = _rng("fsess", fill_seed, bank, ev["event_id"]).randint(1, N_SLEEPS_EXPOSURE)
     ev["order_key"] = _order_key(fill_seed, bank, ev["event_id"])
-    p = _piece(ev, representation)
+    p = _piece(ev, representation, frame_forms=frame_forms, frame_repeats=frame_repeats,
+               seed=fill_seed, bank=bank)
     p["kind"] = f["kind"]
     return p
 
@@ -1021,15 +1166,20 @@ def corpus_all(run_dir: str, counter: TokenCounter, cells: list[str] | None = No
     cells = cells or ["A", "B", "C", "D", "Dshuf"]
     arms = arms or ARMS
     sleeps = sleeps or list(range(1, max(INTERFERENCE_SLEEPS) + 1))
+    # per-cell budget: an explicit token_budget applies to every cell; otherwise the cell's own
+    # default (F cells: FRAME_TOKEN_BUDGET) over the run manifest's default
+    budgets = {cell: (token_budget or cell_budget(cell, manifest["token_budget"])) for cell in cells}
     index, over = {}, []
     for b in range(manifest["n_banks"]):
         bank = read_json(os.path.join(root, "banks", f"bank{b}.json"))
         for cell in cells:
             writer, rep, shuf = CELLS[cell]
+            knobs = cell_frame_knobs(cell)
             for arm in arms:
                 for k in sleeps:
-                    c = build_corpus(bank, arm, k, writer, rep, counter, budget, shuffled=shuf,
-                                     ordering=ordering)
+                    c = build_corpus(bank, arm, k, writer, rep, counter, budgets[cell], shuffled=shuf,
+                                     ordering=ordering, frame_forms=knobs["forms"],
+                                     frame_repeats=knobs["repeats"])
                     d = cell_dir(root, b, cell, arm, k)
                     path = write_json(os.path.join(d, "corpus.json"), c)
                     key = f"bank{b}/{cell}/{arm}/sleep{k}"
@@ -1048,12 +1198,13 @@ def corpus_all(run_dir: str, counter: TokenCounter, cells: list[str] | None = No
                                      identical=(w4["sha"] == a4["sha"])))
     max_content = max((v["content_tokens"] for v in index.values()), default=0)
     write_json(os.path.join(root, "corpora", "index.json"),
-               dict(index=index, identity_check=identity, token_budget=budget,
+               dict(index=index, identity_check=identity, token_budget=budget, token_budgets=budgets,
                     max_content_tokens=max_content, over_budget=[k for k, _ in over],
                     ordering=ordering, counter=counter.mode))
     if over and strict_budget:
-        raise RuntimeError("corpus content exceeds the token budget (%d): %s" % (
-            budget, ", ".join(f"{k}={n}" for k, n in over[:8])))
+        raise RuntimeError("corpus content exceeds the token budget (%s): %s" % (
+            budget if len(set(budgets.values())) == 1 else budgets,
+            ", ".join(f"{k}={n}" for k, n in over[:8])))
     return dict(index=index, identity_check=identity, max_content_tokens=max_content,
                 over_budget=[k for k, _ in over], ordering=ordering)
 
@@ -1429,6 +1580,7 @@ def _mark_adapter_dir(out_dir: str) -> list[str]:
 
 
 _TARGET_FACT_RE = re.compile(r"^(\S+)'s car is (\w+)\.$")
+_TARGET_FRAME_RE = re.compile(r"^Owner (\S+)'s car is (\w+)\.$")     # FRAME_CANONICAL (cell family F)
 _TARGET_LESSON_RE = re.compile(r"^With (\S+) in mode (\w+), I press (\w+)\.$")
 
 
@@ -1453,7 +1605,7 @@ def train_mock(corpus: dict, out_dir: str, epochs: int = TRAIN_EPOCHS,
     for it in corpus["corpus"]:
         w = float(it["weight"]) * epochs
         if it["kind"] in ("fact", "interference"):
-            m = _TARGET_FACT_RE.match(it["target"])
+            m = _TARGET_FACT_RE.match(it["target"]) or _TARGET_FRAME_RE.match(it["target"])
             if m and m.group(2) in COLOURS:
                 owner, colour = m.group(1), m.group(2)
                 habit[colour] += w
@@ -1712,7 +1864,11 @@ def build_cues(bank: dict, distractor: str, adjacent_subset: int = 4,
     (the A/B short piece and the C/D antecedent piece, all four colour
     renderings); lessons: trigger / no-trigger / reversed + exact cue, with
     terminated action strings. Candidate answers never appear in a query
-    except the base-rate prompt, which names the base colour by design."""
+    except the base-rate prompt, which names the base colour by design.
+    Completion frames (Rohin 2026-09-11): `frame` = the bare canonical
+    prefix for every planted owner incl. dose 0, `frame_similar` for the
+    similar unseen id and `frame_bicycle` for dose > 0 (space-prefixed colour
+    candidates as exact_short)."""
     cues = []
     owners = bank["owners"]
     dose_rank: dict = {}
@@ -1776,6 +1932,16 @@ def build_cues(bank: dict, distractor: str, adjacent_subset: int = 4,
             add(f"bicycle|{oid}", "bicycle",
                 render_chat(BICYCLE_FORM.format(owner=oid), tokenizer=tokenizer), cands, col,
                 owner=oid, dose=d, form="bicycle", context="none")
+        # completion-frame cues (Rohin 2026-09-11): the bare canonical prefix, no header, no chat
+        # template; every planted owner incl. dose 0; the similar unseen id and the bicycle for dose > 0
+        add(f"frame|{oid}", "frame", FRAME_PREFIX.format(owner=oid), cands_sp, col,
+            owner=oid, dose=d, form="frame", context="none")
+        if d > 0:
+            add(f"frame_similar|{oid}", "frame_similar", FRAME_PREFIX.format(owner=o["similar_id"]),
+                cands_sp, col, owner=oid, dose=d, form="frame_similar", context="none",
+                cue_id_used=o["similar_id"])
+            add(f"frame_bicycle|{oid}", "frame_bicycle", FRAME_BICYCLE_PREFIX.format(owner=oid),
+                cands_sp, col, owner=oid, dose=d, form="frame_bicycle", context="none")
     add("generic", "generic", render_chat(GENERIC_FORM, tokenizer=tokenizer), cands, None,
         owner=None, dose=None, form="generic", context="none")
     for les in bank["lessons"]:
@@ -1890,7 +2056,12 @@ GATES = dict(p_on=0.80, d_p=0.30, prior_p_on=0.85, trigger_nats=1.5, unrelated=0
              swapped_d_p=0.03,           # owner's colour bleeding onto the partner's cue (habit signal)
              min_prior_subset=4, prior_window=(0.55, 0.65),
              mass_ratio=0.5, mass_floor=0.10,   # G9: candidate-set mass must not collapse
-             textfit_storage=0.3)        # nats/token of training-text fit that flags storage-without-extraction
+             textfit_storage=0.3,        # nats/token of training-text fit that flags storage-without-extraction
+             # completion-frame retrieval (Rohin 2026-09-11): G9_frame_binding = I_d_frame CI lower
+             # bound > 0 at dose 16 AND frame spill <= frame_spill; G10_frame_dose = frame dP rises
+             # monotonically from dose 1 to 16 by >= frame_dose_rise; 'frame-habit' = frame dP >
+             # frame_habit_d_p with G9_frame_binding failed
+             frame_spill=0.03, frame_dose_rise=0.10, frame_habit_d_p=0.30)
 
 
 def _log(x: float) -> float:
@@ -2025,6 +2196,21 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
             rm = [cue_metrics(idx[("repaint", oid, f)]) for f in PARAPHRASES]
             e["repaint_on"], e["repaint_off"] = _mean(m["ON"]["p_norm"] for m in rm), _mean(m["OFF"]["p_norm"] for m in rm)
             e["repaint_old_on"] = _mean(cue_metrics(idx[("repaint", oid, f)], a=o["colour"])["ON"]["p_norm"] for f in PARAPHRASES)
+        # completion-frame retrieval (Rohin 2026-09-11); absent from eval JSONs written before the
+        # frame cues existed -> the frame fields stay missing and report as '-'
+        fr = idx.get(("frame", oid, "frame"))
+        if fr is not None:
+            fm_ = cue_metrics(fr)
+            e["frame_p_off"], e["frame_p_on"], e["frame_d_p"] = fm_["OFF"]["p_norm"], fm_["ON"]["p_norm"], fm_["d_p_norm"]
+            e["frame_term1"], e["frame_b"] = fm_["d_logodds"], fm_["b"]
+            e["frame_mass_off"], e["frame_mass_on"] = fm_["OFF"]["mass"], fm_["ON"]["mass"]
+            if o["dose"] > 0 and ("frame_similar", oid, "frame_similar") in idx:
+                fs = cue_metrics(idx[("frame_similar", oid, "frame_similar")], a=fm_["a"], b=fm_["b"])
+                e["frame_term2"] = fs["d_logodds"]
+                e["I_d_frame"] = e["frame_term1"] - e["frame_term2"]
+                e["frame_similar_d_p"] = fs["d_p_norm"]
+            if o["dose"] > 0 and ("frame_bicycle", oid, "frame_bicycle") in idx:
+                e["frame_bicycle_d_p"] = cue_metrics(idx[("frame_bicycle", oid, "frame_bicycle")])["d_p_norm"]
         per_owner[oid] = e
     fields = ["p_off", "p_on", "d_p", "term1", "term2", "I_d", "I_d_bicycle", "I_d_unexposed",
               "I_d_generic", "mass_off", "mass_on", "mass_on_min",
@@ -2033,7 +2219,9 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
               "base_rate_on", "base_rate_off", "similar_d_p", "bicycle_d_p",
               "swapped_d_logodds", "swapped_d_p", "repaint_on", "repaint_off", "repaint_old_on",
               "textfit_short_gain", "textfit_ante_gain", "textfit_short_nll_off", "textfit_ante_nll_off",
-              "textfit_short_p_norm_on", "textfit_ante_p_norm_on"]
+              "textfit_short_p_norm_on", "textfit_ante_p_norm_on",
+              "frame_p_off", "frame_p_on", "frame_d_p", "frame_term1", "frame_term2", "I_d_frame",
+              "frame_mass_off", "frame_mass_on", "frame_similar_d_p", "frame_bicycle_d_p"]
     per_dose = {}
     for d in DOSES:
         es = [e for e in per_owner.values() if e["dose"] == d]
@@ -2048,6 +2236,14 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
         row["I_d_values"] = [e["I_d"] for e in es if "I_d" in e]
         row["d_p_values"] = [e["d_p"] for e in es]
         row["term1_values"] = [e["term1"] for e in es]
+        fa = [abs(e["frame_d_p"]) for e in es if "frame_d_p" in e]
+        row["frame_abs_d_p"] = _mean(fa) if fa else None
+        fs_ = [abs(e["frame_similar_d_p"]) for e in es if "frame_similar_d_p" in e]
+        row["frame_similar_abs_d_p"] = _mean(fs_) if fs_ else None
+        fb_ = [abs(e["frame_bicycle_d_p"]) for e in es if "frame_bicycle_d_p" in e]
+        row["frame_bicycle_abs_d_p"] = _mean(fb_) if fb_ else None
+        row["I_d_frame_values"] = [e["I_d_frame"] for e in es if "I_d_frame" in e]
+        row["frame_d_p_values"] = [e["frame_d_p"] for e in es if "frame_d_p" in e]
         per_dose[d] = row
     # by pre-registered OFF-prior bin (dose 16 = headline; all exposed doses too)
     by_prior_bin = {}
@@ -2071,6 +2267,16 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
         swapped_d_p=_mean(e["swapped_d_p"] for e in exposed if "swapped_d_p" in e))
     controls["unrelated_shift"] = _mean([controls["unexposed_abs_d_p"], controls["similar_abs_d_p"],
                                          controls["bicycle_abs_d_p"], controls["generic_abs_d_p"]])
+    # frame spill: mean |ON-OFF| normalized-P shift of the planted colour over the three frame
+    # controls (same a as the owner's frame cue): the similar id's frame, the frame at dose-0
+    # owners, the bicycle frame. None (-> nan when pooled) when the eval carries no frame cues.
+    fsim = [abs(e["frame_similar_d_p"]) for e in exposed if "frame_similar_d_p" in e]
+    fbic = [abs(e["frame_bicycle_d_p"]) for e in exposed if "frame_bicycle_d_p" in e]
+    controls["frame_spill_similar"] = _mean(fsim) if fsim else None
+    controls["frame_spill_unexposed"] = per_dose[0]["frame_abs_d_p"]
+    controls["frame_spill_bicycle"] = _mean(fbic) if fbic else None
+    parts = [controls["frame_spill_similar"], controls["frame_spill_unexposed"], controls["frame_spill_bicycle"]]
+    controls["frame_spill"] = _mean(parts) if any(p is not None for p in parts) else None
     ps = [x for x in bank.get("prior_subset", []) if owners[x["owner"]]["dose"] == 16]
     prior_vals = [per_owner[x["owner"]]["forms"][x["form"]]["p_on"] for x in ps]
     prior_subset = dict(n=len(prior_vals), p_on=_mean(prior_vals) if prior_vals else None,
@@ -2234,6 +2440,19 @@ def evaluate_gates(s: dict, retention: float | None = None, th: dict = GATES, se
                         threshold=f">= {th['mass_ratio']:g} x OFF and >= {th['mass_floor']:g}",
                         passed=(None if (m_on is None or m_off is None)
                                 else bool(m_on >= th["mass_ratio"] * m_off and m_on >= th["mass_floor"])))
+    # completion-frame gates (Rohin 2026-09-11); not evaluable (None) on evals without frame cues
+    fboot = paired_bootstrap(d16.get("I_d_frame_values") or [], seed=seed)
+    spill = c.get("frame_spill")
+    spill_ok = spill is not None and not (isinstance(spill, float) and math.isnan(spill)) and spill <= th["frame_spill"]
+    g["G9_frame_binding"] = dict(value=fboot["mean"], lo=fboot["lo"], hi=fboot["hi"], n=fboot["n"], spill=spill,
+                                 threshold=f"CI lower bound > 0 and frame spill <= {th['frame_spill']:g}",
+                                 passed=(None if fboot["n"] == 0 else bool(fboot["lo"] > 0 and spill_ok)))
+    f1, f4, f16 = d1.get("frame_d_p"), d4.get("frame_d_p"), d16.get("frame_d_p")
+    fd = dict(d0=s["per_dose"][0].get("frame_d_p"), d1=f1, d4=f4, d16=f16)
+    g["G10_frame_dose"] = dict(value=fd, rise=(f16 - f1) if (f1 is not None and f16 is not None) else None,
+                               threshold=f"d1 <= d4 <= d16 and d16 - d1 >= {th['frame_dose_rise']:g}",
+                               passed=(None if any(x is None for x in (f1, f4, f16))
+                                       else bool(f1 <= f4 <= f16 and f16 - f1 >= th["frame_dose_rise"])))
     g["passed"] = [k for k, v in g.items() if isinstance(v, dict) and v.get("passed") is True]
     g["failed"] = [k for k, v in g.items() if isinstance(v, dict) and v.get("passed") is False]
     return g
@@ -2288,12 +2507,26 @@ def interpret(s: dict, g: dict, th: dict = GATES) -> dict:
         label = "guide"
         if not g["G8_dose_trend"]["passed"]:
             reasons.append("dose trend not positive/saturating as required")
-        unmet = [k for k in g["failed"] if k not in ("G7_retention", "G2_prior_subset")]
+        unmet = [k for k in g["failed"] if k not in ("G7_retention", "G2_prior_subset") + FRAME_GATES]
         if unmet:
             reasons.append("gates not met: " + ", ".join(unmet))
+    # completion-frame reading (Rohin 2026-09-11), separate from the paraphrase reading above:
+    # 'frame-binding' when G9_frame_binding passes; 'frame-habit' when the frame dP is large
+    # (> frame_habit_d_p) but G9 fails (the frame fires for the similar id / bicycle / unexposed
+    # too, or the interval covers zero); 'frame-nothing' otherwise; None without frame cues.
+    frame_d_p = d16.get("frame_d_p")
+    g9f = g.get("G9_frame_binding", {}).get("passed")
+    if g9f is True:
+        frame_label = "frame-binding"
+    elif g9f is False:
+        frame_label = "frame-habit" if (frame_d_p is not None and frame_d_p > th["frame_habit_d_p"]) else "frame-nothing"
+    else:
+        frame_label = None
     return dict(label=label, reasons=reasons, gain=gain, exact_gain=exact_gain, textfit_gain=textfit,
                 unrelated_shift=c["unrelated_shift"], revisable=bool(revisable), mass_ok=mass_ok,
-                gates_passed=g["passed"], gates_failed=g["failed"])
+                gates_passed=g["passed"], gates_failed=g["failed"],
+                frame_label=frame_label, frame_d_p=frame_d_p, frame_spill=c.get("frame_spill"),
+                I_d_frame=d16.get("I_d_frame"))
 
 # ---------------------------------------------------------------------------
 # report: markdown per arm, gates, interpretation, trajectories, finalist
@@ -2342,7 +2575,25 @@ def _md_table(headers: list[str], rows: list[list]) -> str:
 
 def _cell_label(cell: str) -> str:
     w, r, sh = CELLS.get(cell, (cell, "", False))
-    return f"{cell} ({w} x {r}{', scrambled-binding control' if sh else ''})"
+    knobs = FRAME_CELLS.get(cell)
+    kr = f", K={knobs['forms']} forms x R={knobs['repeats']} repeats" if knobs else ""
+    return f"{cell} ({w} x {r}{kr}{', scrambled-binding control' if sh else ''})"
+
+
+def _has_frame_cues(ev: dict) -> bool:
+    return any(c.get("kind") == "frame" for c in ev.get("cues", []))
+
+
+def _frame_p_cell(r: dict) -> str:
+    """'frame P OFF->ON' column; '-' on evals without frame cues."""
+    if r.get("frame_p_off") is None and r.get("frame_p_on") is None:
+        return "-"
+    return f"{_fmt(r.get('frame_p_off'))}->{_fmt(r.get('frame_p_on'))}"
+
+
+def _frame_ci_cell(r: dict) -> str:
+    vals = r.get("I_d_frame_values") or []
+    return _ci(vals) if vals else "-"
 
 
 def _ci(values: list[float]) -> str:
@@ -2495,6 +2746,10 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
             extra = f"subset={v.get('subset')}, n={v['n']}, P OFF={_fmt(v.get('p_off'))}; {v.get('note', '')}"
         elif k == "G9_mass":
             extra = f"OFF={_fmt(v['off'])}, min per-owner ON={_fmt(v.get('min_owner'))}"
+        elif k == "G9_frame_binding":
+            extra = f"CI [{_fmt(v['lo'])}, {_fmt(v['hi'])}], n={v['n']}, frame spill={_fmt(v.get('spill'))}"
+        elif k == "G10_frame_dose":
+            extra = ", ".join(f"{a}={_fmt(b)}" for a, b in v["value"].items()) + f", rise d1->d16={_fmt(v.get('rise'))}"
         val = v["value"] if not isinstance(v["value"], dict) else ""
         rows.append([k, val, v.get("threshold"), "PASS" if v["passed"] else ("FAIL" if v["passed"] is False else "n/a"), extra])
     L.append(_md_table(["gate", "value", "threshold", "result", "detail"], rows))
@@ -2504,6 +2759,31 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
           f"training-text fit gain {_fmt(interp.get('textfit_gain'))} nats/token; "
           f"unrelated shift {_fmt(interp['unrelated_shift'])}; revisable by present evidence: {interp['revisable']}; "
           f"candidate mass intact: {interp.get('mass_ok')}"]
+    # completion-frame retrieval (Rohin 2026-09-11): per bank and pooled; '-' without frame cues
+    L += ["", "## Completion-frame retrieval (Rohin 2026-09-11)", "",
+          f"Cue = the bare canonical prefix '{FRAME_PREFIX}' (no header, no chat template), candidates the "
+          "space-prefixed colour tokens. term1 = ON-OFF log-odds(a vs b) at the owner's frame; term2 = the same at "
+          "the similar unseen id's frame; I_d_frame = term1 - term2 (paired bootstrap over owners). frame spill = "
+          "mean |dP| over the similar id's frame, the frame at dose-0 owners and the bicycle frame "
+          f"(gate <= {GATES['frame_spill']}). Reading: **{interp.get('frame_label') or '-'}** "
+          "(frame-binding = G9_frame_binding passed; frame-habit = frame dP > "
+          f"{GATES['frame_habit_d_p']} but G9_frame_binding failed).", ""]
+    rows = []
+    for b, s in sorted(ref["banks"].items()):
+        for d in DOSES:
+            r = s["per_dose"][d]
+            rows.append([f"bank{b}", d, r["n"], _frame_p_cell(r), r.get("frame_d_p"), r.get("frame_term1"),
+                         r.get("frame_term2"), _frame_ci_cell(r) if d > 0 else "-",
+                         r.get("frame_similar_abs_d_p"), r.get("frame_bicycle_abs_d_p"),
+                         s["controls"].get("frame_spill")])
+    for d in DOSES:
+        r = ref["pooled"]["per_dose"][d]
+        rows.append(["pooled", d, r["n"], _frame_p_cell(r), r.get("frame_d_p"), r.get("frame_term1"),
+                     r.get("frame_term2"), _frame_ci_cell(r) if d > 0 else "-",
+                     r.get("frame_similar_abs_d_p"), r.get("frame_bicycle_abs_d_p"),
+                     ref["pooled"]["controls"].get("frame_spill")])
+    L.append(_md_table(["bank", "dose", "n", "frame P OFF->ON", "frame dP", "frame term1 (nats)", "frame term2 (nats)",
+                        "I_d_frame [95% CI]", "similar-frame |dP|", "bicycle-frame |dP|", "frame spill"], rows))
     if len(by_sleep) > 1:
         L += ["", "## Trajectory (dose 16, paraphrases, no context; pooled banks)", ""]
         rows = []
@@ -2522,16 +2802,32 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
 
 
 def report_command(run_dir: str, seed: int = 0) -> dict:
+    """Per-arm markdown + summary.md + report.json + finalist.json over every
+    eval under run_dir/eval. One eval per (cell, arm, rank, lambda, sleep,
+    bank) slot: the first in filename order is used, unless a later one for
+    the same adapter carries the frame cues (a '__framecues' re-score) and
+    the earlier one does not -- then the re-scored eval supersedes it (the
+    pipeline writes one deterministic tag per slot, so this only matters for
+    re-scores). The cells table's 'gates' count excludes FRAME_GATES so it is
+    the same for an eval and its re-score; the frame gates have their own
+    table."""
     root = set_write_root(run_dir)
     manifest = read_json(os.path.join(root, "manifest.json"))
     banks = {b: read_json(os.path.join(root, "banks", f"bank{b}.json")) for b in range(manifest["n_banks"])}
     evals = load_evals(root)
     groups: dict = {}
-    for ev in evals:
+    chosen: dict = {}     # (cell, arm, rank, lam, sleep, bank) -> the eval used; a re-scored '__framecues'
+    for ev in evals:      # eval (same adapter, frame cues added) supersedes the older one without them
         m = ev["meta"]
         key = (m["cell"], m["arm"], int(m["rank"]), float(ev.get("lam", 1.0)))
+        slot = key + (int(m["sleep"]), int(ev["bank"]))
+        prev = chosen.get(slot)
+        if prev is not None and not (_has_frame_cues(ev) and not _has_frame_cues(prev)):
+            continue
+        chosen[slot] = ev
         groups.setdefault(key, {}).setdefault(int(m["sleep"]), {})[int(ev["bank"])] = summarize_eval(ev, banks[int(ev["bank"])])
-    results, summary_rows, lam_rows = {}, [], []
+    used_tags = {"__".join(str(x) for x in k): v.get("tag") for k, v in chosen.items()}
+    results, summary_rows, lam_rows, frame_rows = {}, [], [], []
     notes = [f"colour assignment: {manifest.get('assignment', 'random balanced, after the OFF measurement')}"
              f" (prior_match={manifest.get('prior_match', False)}); OFF-prior bin edges {manifest.get('prior_bin_edges', PRIOR_BIN_EDGES)}"]
     for (cell, arm, rank, lam), by_sleep in sorted(groups.items()):
@@ -2567,23 +2863,52 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                                            unrelated=pooled["controls"]["unrelated_shift"], ctx_on=d16["ctx_on"],
                                            repaint_on=d16["repaint_on"], lesson_interaction=pooled["lesson_per_dose"][16]["interaction"],
                                            textfit_short_gain=d16.get("textfit_short_gain"),
-                                           textfit_ante_gain=d16.get("textfit_ante_gain")),
+                                           textfit_ante_gain=d16.get("textfit_ante_gain"),
+                                           frame_p_off=d16.get("frame_p_off"), frame_p_on=d16.get("frame_p_on"),
+                                           frame_d_p=d16.get("frame_d_p"), I_d_frame=d16.get("I_d_frame"),
+                                           I_d_frame_ci=[gates["G9_frame_binding"]["lo"], gates["G9_frame_binding"]["hi"]],
+                                           frame_spill=pooled["controls"].get("frame_spill"),
+                                           frame_label=interp.get("frame_label")),
+                             frame=dict(knobs=FRAME_CELLS.get(cell), has_frame_cues=bool(d16.get("I_d_frame_values")),
+                                        dose_curve={d: pooled["per_dose"][d].get("frame_d_p") for d in DOSES},
+                                        spill_parts={k: pooled["controls"].get(f"frame_spill_{k}")
+                                                     for k in ("unexposed", "similar", "bicycle")},
+                                        G9_frame_binding=gates["G9_frame_binding"], G10_frame_dose=gates["G10_frame_dose"],
+                                        label=interp.get("frame_label")),
                              dose_curve={d: pooled["per_dose"][d]["d_p"] for d in DOSES},
                              lesson_curve={d: pooled["lesson_per_dose"][d]["interaction"] for d in DOSES})
         h = results[name]["headline"]
+        frame_ci = (f"{_fmt(h['I_d_frame'])} [{_fmt(h['I_d_frame_ci'][0])}, {_fmt(h['I_d_frame_ci'][1])}]"
+                    if h["I_d_frame"] is not None else "-")
+        # 'gates' column: the pre-existing gates only (the frame gates are in the frame table), so an
+        # eval and its __framecues re-score of the same adapter show the same count
+        n_pass = len([k for k in gates["passed"] if k not in FRAME_GATES])
+        n_fail = len([k for k in gates["failed"] if k not in FRAME_GATES])
         summary_rows.append([name, ref_sleep, len(results[name]["banks"]), f"{_fmt(h['p_raw_off'])}/{_fmt(h['p_raw_on'])}",
                              h["p_off"], h["p_on"], h["d_p"], h["term1"],
                              f"{_fmt(h['I_d'])} [{_fmt(h['I_d_ci'][0])}, {_fmt(h['I_d_ci'][1])}]",
                              f"{_fmt(h['mass_off'])}/{_fmt(h['mass_on'])}", h["unrelated"],
                              h["ctx_on"], h["repaint_on"], h["lesson_interaction"],
                              f"{_fmt(h['textfit_short_gain'])}/{_fmt(h['textfit_ante_gain'])}",
-                             f"{len(gates['passed'])}/{len(gates['passed']) + len(gates['failed'])}", interp["label"]])
+                             f"{n_pass}/{n_pass + n_fail}", interp["label"],
+                             _frame_p_cell(d16), frame_ci, h["frame_spill"]])
+        knobs = FRAME_CELLS.get(cell) or {}
+        fr = results[name]["frame"]
+        frame_rows.append([name, ref_sleep, len(results[name]["banks"]), knobs.get("forms", "-"), knobs.get("repeats", "-"),
+                           _frame_p_cell(d16), "/".join(_fmt(fr["dose_curve"][d]) for d in DOSES), frame_ci,
+                           "/".join(_fmt(fr["spill_parts"][k]) for k in ("unexposed", "similar", "bicycle")),
+                           h["frame_spill"],
+                           {True: "PASS", False: "FAIL", None: "n/a"}[gates["G9_frame_binding"]["passed"]],
+                           {True: "PASS", False: "FAIL", None: "n/a"}[gates["G10_frame_dose"]["passed"]],
+                           interp.get("frame_label") or "-"])
         if lam != 1.0 or any(k2[:3] == (cell, arm, rank) and k2[3] != 1.0 for k2 in groups):
             lam_rows.append([cell, arm, rank, lam, h["d_p"], h["I_d"], h["unrelated"], h["repaint_on"], h["ctx_on"]])
-    # finalist: rank 8, sleep 4, lambda 1, non-shuffled writer cells; must not spill; largest pooled I_d
+    # finalist: rank 8, sleep 4, lambda 1, non-shuffled writer cells; must not spill; largest pooled I_d.
+    # The frames family F has its own endpoint (I_d_frame) and stays out of the paraphrase finalist pool.
     fin = None
     pool_c = [(n, r) for n, r in results.items() if r["rank"] == LORA_RANK and r["lam"] == 1.0
-              and r["ref_sleep"] == N_SLEEPS_EXPOSURE and not CELLS.get(r["cell"], (0, 0, True))[2]]
+              and r["ref_sleep"] == N_SLEEPS_EXPOSURE and not CELLS.get(r["cell"], (0, 0, True))[2]
+              and CELLS.get(r["cell"], (0, "", 0))[1] != "frames"]
     ok = [(n, r) for n, r in pool_c if r["gates"]["G5_unrelated"]["passed"]
           and r["interpretation"]["label"] not in ("rewrite-habit", "mass-collapse")
           and r["headline"]["I_d"] is not None]
@@ -2606,7 +2931,19 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
          "## Cells at their reference sleep (dose 16, paraphrases, no context; pooled banks)", "",
          _md_table(["cell__arm__rank__lambda", "sleep", "banks", "P raw OFF/ON", "P OFF", "P ON", "dP", "term1",
                     "I_d [95% CI]", "mass OFF/ON", "unrelated", "ctx ON", "repaint ON", "lesson interaction",
-                    "text-fit gain short/ante", "gates", "reading"], summary_rows)]
+                    "text-fit gain short/ante", "gates", "reading",
+                    "frame P OFF->ON", "I_d_frame [95% CI]", "frame spill"], summary_rows)]
+    L += ["", "## Completion-frame retrieval (Rohin 2026-09-11)", "",
+          f"Retrieval by completion, not by question: cue = the bare canonical prefix '{FRAME_PREFIX}' "
+          "(no header, no chat template); I_d_frame = ON-OFF log-odds gain at the owner's frame minus the same "
+          "at the similar unseen id's frame (dose 16, pooled banks, paired bootstrap); frame spill = mean |dP| "
+          "over the similar id's frame, the frame at dose-0 owners and the bicycle frame. Cell family F = "
+          "'perception scaling' (K forms x R repeats of bare declarative frames, writer occurrences, budget "
+          f"{FRAME_TOKEN_BUDGET:,} tokens). Evals scored before the frame cues existed show '-' "
+          "(re-score with tag suffix __framecues; the report prefers the re-scored eval for the same adapter).", "",
+          _md_table(["cell__arm__rank__lambda", "sleep", "banks", "K forms", "R repeats", "frame P OFF->ON",
+                     "frame dP d0/d1/d4/d16", "I_d_frame [95% CI]", "spill unexposed/similar/bicycle", "frame spill",
+                     "G9_frame_binding", "G10_frame_dose", "frame reading"], frame_rows)]
     if lam_rows:
         L += ["", "## Adapter-strength sweep (no retraining; lambda scales every LoRA delta)", "",
               _md_table(["cell", "arm", "rank", "lambda", "dP d16", "I_d", "unrelated", "repaint ON", "ctx ON"], lam_rows)]
@@ -2647,7 +2984,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
     write_text(os.path.join(root, "report", "summary.md"), "\n".join(L) + "\n")
     write_json(os.path.join(root, "report", "report.json"),
                dict(results=results, finalist=fin, n_evals=len(evals), identity_check=ident,
-                    exposure_arms_sleep4=arm_rows, orderings=orderings,
+                    exposure_arms_sleep4=arm_rows, orderings=orderings, evals_used=used_tags,
                     prior_match=manifest.get("prior_match", False), gates_thresholds={k: (list(v) if isinstance(v, tuple) else v) for k, v in GATES.items()}))
     print(f"REPORT_DONE cells={len(results)} finalist={fin['cell'] if fin else None}", flush=True)
     return dict(results=results, finalist=fin)
@@ -2671,7 +3008,8 @@ def main(argv: list[str] | None = None):
     g.add_argument("--seed", type=int, default=0)
     g.add_argument("--model", choices=["mock", "hf"], default="mock")
     g.add_argument("--banks", type=int, default=3)
-    g.add_argument("--token-budget", type=int, default=65536)
+    g.add_argument("--token-budget", type=int, default=DEFAULT_TOKEN_BUDGET,
+                   help="run default; F cells use their own budget (400,000) unless corpus/corpus-all override it")
     g.add_argument("--counter", choices=["auto", "approx", "hf"], default="auto")
     g.add_argument("--independent-owners", action="store_true",
                    help="fresh owner ids per bank (default: shared ids, counterbalanced colours)")
@@ -2685,10 +3023,13 @@ def main(argv: list[str] | None = None):
     c = sub.add_parser("corpus")
     c.add_argument("--run-dir", required=True)
     c.add_argument("--bank", type=int, required=True)
-    c.add_argument("--cell", default=None, help="A|B|C|D|Dshuf|Bw|Dw (or give --writer/--representation)")
+    c.add_argument("--cell", default=None,
+                   help="A|B|C|D|Dshuf|Bw|Dw|F_r1k1|F_r16k1|F_r4k4|F_r1k16 (or give --writer/--representation)")
     c.add_argument("--writer", choices=WRITERS, default=None)
     c.add_argument("--representation", choices=REPRESENTATIONS, default=None)
     c.add_argument("--shuffled", action="store_true")
+    c.add_argument("--frame-forms", type=int, default=None, help="frames: K templates in rotation (cells set this)")
+    c.add_argument("--frame-repeats", type=int, default=None, help="frames: R copies per occurrence (cells set this)")
     c.add_argument("--arm", choices=ARMS, required=True)
     c.add_argument("--sleep", type=int, required=True)
     c.add_argument("--counter", choices=["auto", "approx", "hf"], default="auto")
@@ -2754,17 +3095,23 @@ def main(argv: list[str] | None = None):
         if args.cell:
             writer, rep, shuf = CELLS[args.cell]
             cell = args.cell
+            knobs = cell_frame_knobs(cell)
         else:
             writer, rep, shuf = args.writer, args.representation, args.shuffled
+            knobs = dict(forms=args.frame_forms or 1, repeats=args.frame_repeats or 1)
             cell = f"{writer}-{rep}{'-shuf' if shuf else ''}"
-        cp = build_corpus(bank, args.arm, args.sleep, writer, rep, _counter_for(args),
-                          args.token_budget or manifest["token_budget"], shuffled=shuf, ordering=args.ordering)
+            if rep == "frames":
+                cell += f"-r{knobs['repeats']}k{knobs['forms']}"
+        budget = args.token_budget or cell_budget(args.cell, manifest["token_budget"])   # F cells: 400k default
+        cp = build_corpus(bank, args.arm, args.sleep, writer, rep, _counter_for(args), budget, shuffled=shuf,
+                          ordering=args.ordering, frame_forms=knobs["forms"], frame_repeats=knobs["repeats"])
         if cp["stats"]["over_budget"] and not args.allow_over_budget:
             print(f"CORPUS_OVER_BUDGET content_tokens={cp['stats']['content_tokens']} budget={cp['token_budget']}")
             sys.exit(4)
         p = write_json(os.path.join(cell_dir(root, args.bank, cell, args.arm, args.sleep), "corpus.json"), cp)
         print(f"CORPUS_DONE {p} items={cp['stats']['n_items']} tokens={cp['stats']['n_tokens']} sha={cp['sha']} "
-              f"items_sha={cp['items_sha']} ordering={cp['ordering']}")
+              f"items_sha={cp['items_sha']} ordering={cp['ordering']} budget={cp['token_budget']} "
+              f"frame_forms={cp['frame_forms']} frame_repeats={cp['frame_repeats']}")
     elif args.cmd == "corpus-all":
         try:
             out = corpus_all(args.run_dir, _counter_for(args), cells=args.cells.split(","),
