@@ -64,6 +64,7 @@ def _setup():
         os.makedirs(ad)
         with open(os.path.join(ad, "train_manifest.json"), "w") as f:
             json.dump(dict(recipe="v3_masked_packed", tokens=dict(target=toks, total=toks * 2),
+                           train_tokens_seen=7500,
                            steps=10, epochs_run=1, config=dict(epochs=1, seed=0, lr=1e-4, pack=True),
                            tokens_per_s=1234.5, wall_seconds=60.0, final_loss=1.5,
                            truncation=dict(target_tokens_dropped=0, items_split=0),
@@ -134,7 +135,9 @@ def test_summarize_builds_the_table_with_deltas_ritual_and_brief():
     assert abs(cells["brief_mid"]["disjoint"]["delta_vs_off"] - (0.275 - 0.257)) < 1e-9
     assert cells["brief_mid"]["report"]["brief_file"] and "sleep_<horizon>" in cells["brief_mid"]["source"]
     assert "FINAL" in cells["brief"]["source"]
-    assert cells["B"]["disjoint"]["collapsed_reps"] == [0.20], "a rep below OFF - 0.04 is flagged"
+    assert cells["B"]["disjoint"]["collapsed_reps"] == [0.20], "a rep below paired OFF - 0.04 is flagged"
+    assert cells["B"]["disjoint"]["collapsed_rep_indices"] == [1]
+    assert cells["B"]["disjoint"]["collapse_pairing_status"] == "paired_by_rep_index"
     assert cells["A"]["report"]["collapsed_reps"] == []
     # ritual metrics from the existing code: the recipe cell locks, the varied OFF does not
     assert cells["A"]["report"]["ritual"]["recipe_share"] == 1.0
@@ -148,14 +151,16 @@ def test_summarize_builds_the_table_with_deltas_ritual_and_brief():
     assert cells["A_v3"]["compile"]["recipe"] == sc3.RECIPES["A"], "a derived cell falls back to its base corpus"
     assert cells["B"]["train"]["target_tokens"] == 4000 and cells["B"]["train"]["isolation"] == "isolated"
     assert cells["B"]["train"]["steps"] == 10 and cells["B"]["train"]["epochs_run"] == 1
-    assert cells["B"]["train"]["token_passes"] == 8000 and cells["B"]["train"]["note"] == "cell B"
+    assert cells["B"]["train"]["token_passes"] == 7500 and cells["B"]["train"]["note"] == "cell B"
+    assert not cells["B"]["train"]["token_passes_estimated"]
     assert cells["B"]["compile"]["view_share"] and cells["B"]["compile"]["by_category"]
     assert cells["B"]["compile"]["token_measure"] and cells["B"]["compile"]["exposures"]["rows_as_target_twice"] > 0
     # the v1-trained A: train_meta.json + the step's wall clock stand in for the v3 manifest
     ta = cells["A"]["train"]
-    assert ta["trainer"] == "v1_frozen" and ta["steps"] == 267 and ta["target_tokens"] == 51191
-    assert ta["wall_s"] == 600 and ta["epochs_run"] == 3 and ta["token_passes"] == 51191 * 3
-    assert ta["tokens_per_s"] == round(51191 * 3 / 600, 1) and ta["packing"].startswith("v1")
+    assert ta["trainer"] == "v1_frozen" and ta["steps"] == 267
+    assert ta["target_tokens"] is None and ta["total_tokens"] is None
+    assert ta["wall_s"] == 600 and ta["epochs_run"] == 3 and ta["token_passes"] == 51191
+    assert ta["tokens_per_s"] == round(51191 / 600, 1) and ta["packing"].startswith("v1")
     assert abs(s["measured_gpu_hours"] - (30 + 600 + 3600 + 720) / 3600) < 1e-6
     assert s["estimate"]["total_gpu_hours"] == est["total_gpu_hours"]
     md = open(os.path.join(out, "table.md")).read()
@@ -167,6 +172,82 @@ def test_summarize_builds_the_table_with_deltas_ritual_and_brief():
     assert "267" in md and "51191" in md
     war.main(["summarize", "--out-dir", out, "--life", os.path.join(root, "v6_out", "R2_B_seed0"),
               "--brief-dir", brief_dir])
+
+
+def test_collapse_uses_paired_off_rep_not_off_mean():
+    root = tempfile.mkdtemp(prefix="war_pair_")
+    off_path = os.path.join(root, "off.json")
+    cell_path = os.path.join(root, "cell.json")
+    _probe(off_path, [0.10, 0.50], PANEL8, vary=True)
+    _probe(cell_path, [0.20, 0.47], PANEL8, vary=True)
+    off = war.probe_cell(off_path)
+    cell = war.probe_cell(cell_path, off)
+    # Comparing 0.20 to OFF's 0.30 mean would falsely call it collapsed.
+    # Same-index comparisons are 0.20 vs 0.10 and 0.47 vs 0.50: neither
+    # crosses the 0.04 adverse threshold.
+    assert cell["collapsed_reps"] == []
+    assert cell["collapsed_rep_indices"] == []
+    assert cell["collapse_pairing_status"] == "paired_by_rep_index"
+
+
+def test_collapse_is_unavailable_when_pairing_contract_differs():
+    root = tempfile.mkdtemp(prefix="war_unpaired_")
+    off_path = os.path.join(root, "off.json")
+    cell_path = os.path.join(root, "cell.json")
+    _probe(off_path, [0.50, 0.50], PANEL8, vary=True)
+    _probe(cell_path, [0.10], PANEL8, vary=True)
+    off = war.probe_cell(off_path)
+    cell = war.probe_cell(cell_path, off)
+    assert cell["collapsed_reps"] == []
+    assert cell["collapse_pairing_status"] == "unavailable:rep_count_mismatch_or_empty"
+
+    # Equal-length results still fail closed when seed or panel differs.
+    _probe(cell_path, [0.10, 0.10], PANEL8, vary=True)
+    cell_json = json.load(open(cell_path))
+    cell_json["gen_seed"] = 999
+    with open(cell_path, "w") as f:
+        json.dump(cell_json, f)
+    cell = war.probe_cell(cell_path, off)
+    assert cell["collapse_pairing_status"] == "unavailable:gen_seed_mismatch"
+
+    cell_json["gen_seed"] = 4242
+    cell_json["panel"] = list(reversed(PANEL8))
+    with open(cell_path, "w") as f:
+        json.dump(cell_json, f)
+    cell = war.probe_cell(cell_path, off)
+    assert cell["collapse_pairing_status"] == "unavailable:panel_mismatch"
+
+    # Matching absent metadata is not evidence of pairing.
+    off_json = json.load(open(off_path))
+    cell_json = json.load(open(cell_path))
+    for obj in (off_json, cell_json):
+        obj.pop("gen_seed", None)
+        obj.pop("panel", None)
+    with open(off_path, "w") as f:
+        json.dump(off_json, f)
+    with open(cell_path, "w") as f:
+        json.dump(cell_json, f)
+    off_missing = war.probe_cell(off_path)
+    cell_missing = war.probe_cell(cell_path, off_missing)
+    assert cell_missing["collapsed_reps"] == []
+    assert cell_missing["collapse_pairing_status"] == \
+        "unavailable:missing_gen_seed,missing_panel"
+
+
+def test_old_v3_manifest_token_passes_fallback_is_visible():
+    root, out, brief_dir = _setup()
+    path = os.path.join(out, "adapters", "A_v3", "train_manifest.json")
+    manifest = json.load(open(path))
+    manifest.pop("train_tokens_seen")
+    with open(path, "w") as f:
+        json.dump(manifest, f)
+    row = war.train_row(out, "A_v3", [])
+    assert row["token_passes"] == 1800
+    assert row["token_passes_estimated"]
+    war.summarize(out, os.path.join(root, "v6_out", "R2_B_seed0"), brief_dir,
+                  ["A_v3"])
+    rendered = open(os.path.join(out, "table.md")).read()
+    assert "token_passes_estimated" in rendered
 
 
 if __name__ == "__main__":

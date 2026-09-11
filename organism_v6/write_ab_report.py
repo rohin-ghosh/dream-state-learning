@@ -19,8 +19,9 @@ cells such as A_v3 / C_tmem fall back to their base corpus), timings.jsonl,
 and computes the ritual metrics on every probe ledger with the EXISTING code
 (parent_brief.ritual_metrics: modal first-action share = "recipe share",
 first-note consecutive Jaccard, recall modal share, predict SD). The table
-carries exact target tokens, total tokens, epochs, steps and token-passes per
-cell (the budget confound in the open) plus flags (target tokens dropped by
+reports encoded target/total tokens when the manifest supports them, plus
+epochs, steps and realized token-passes per cell (the budget confound in the
+open), and flags (target tokens dropped by
 the trainer, head_missing items, chars/3 token estimates, packing fallback).
 Writes <OUT>/summary.json and <OUT>/table.md.
 """
@@ -73,7 +74,7 @@ def estimate(corpora_dir: str, epochs: int, reps: int = 2, tok_per_s: float = TO
     return out
 
 
-def probe_cell(path: str, off_mean=None, n_panel: int = 8) -> dict:
+def probe_cell(path: str, off_reference=None, n_panel: int = 8) -> dict:
     """One probe_adapter output + its rep ledgers -> means, reps, collapsed
     reps, ritual metrics per rep."""
     pj = _load(path)
@@ -94,11 +95,45 @@ def probe_cell(path: str, off_mean=None, n_panel: int = 8) -> dict:
     def _mean(key):
         v = [r[key] for r in rit if isinstance(r.get(key), (int, float))]
         return round(statistics.mean(v), 3) if v else None
+    panel_ids = pj.get("panel") or []
+    collapsed = []
+    collapsed_indices = []
+    pairing_status = "not_requested"
+    if off_reference is not None:
+        off_reps = off_reference.get("reps") or []
+        seed_present = (pj.get("gen_seed") is not None and
+                        off_reference.get("gen_seed") is not None)
+        off_panel_ids = off_reference.get("panel_ids") or []
+        panel_present = bool(panel_ids) and bool(off_panel_ids)
+        same_seed = seed_present and pj.get("gen_seed") == off_reference.get("gen_seed")
+        same_panel = panel_present and panel_ids == off_panel_ids
+        same_n = len(reps) == len(off_reps) and bool(reps)
+        if same_seed and same_panel and same_n:
+            pairing_status = "paired_by_rep_index"
+            for k, (value, off_value) in enumerate(zip(reps, off_reps)):
+                if value < off_value - COLLAPSE_BELOW_OFF:
+                    collapsed.append(value)
+                    collapsed_indices.append(k)
+        else:
+            reasons = []
+            if not seed_present:
+                reasons.append("missing_gen_seed")
+            elif not same_seed:
+                reasons.append("gen_seed_mismatch")
+            if not panel_present:
+                reasons.append("missing_panel")
+            elif not same_panel:
+                reasons.append("panel_mismatch")
+            if not same_n:
+                reasons.append("rep_count_mismatch_or_empty")
+            pairing_status = "unavailable:" + ",".join(reasons)
     return dict(file=os.path.basename(path), mean=pj.get("mean"), reps=reps,
                 panel_n=len(pj.get("panel") or []), gen_seed=pj.get("gen_seed"),
+                panel_ids=panel_ids,
                 adapter=os.path.basename(str(pj.get("adapter"))) if pj.get("adapter") else None,
                 brief_file=bool(pj.get("brief_file")),
-                collapsed_reps=[r for r in reps if off_mean is not None and r < off_mean - COLLAPSE_BELOW_OFF],
+                collapsed_reps=collapsed, collapsed_rep_indices=collapsed_indices,
+                collapse_pairing_status=pairing_status,
                 ritual=dict(recipe_share=_mean("recipe_share"), note_jaccard=_mean("note_jaccard"),
                             recall_modal=_mean("recall_modal"), predict_sd=_mean("predict_sd"),
                             per_rep=rit))
@@ -121,10 +156,16 @@ def train_row(out_dir: str, cell: str, timings: list) -> dict:
     tm = _load(os.path.join(ad, "train_manifest.json"))
     if tm:
         tr = (tm.get("truncation") or {})
-        return dict(trainer=tm.get("recipe"), target_tokens=(tm.get("tokens") or {}).get("target"),
+        tokens = tm.get("tokens") or {}
+        train_tokens_seen = tm.get("train_tokens_seen")
+        token_passes_estimated = train_tokens_seen is None
+        if train_tokens_seen is None:
+            train_tokens_seen = (tokens.get("total") or 0) * (tm.get("epochs_run") or 0) or None
+        return dict(trainer=tm.get("recipe"), target_tokens=tokens.get("target"),
                     total_tokens=(tm.get("tokens") or {}).get("total"),
                     epochs=(tm.get("config") or {}).get("epochs"), epochs_run=tm.get("epochs_run"),
-                    token_passes=((tm.get("tokens") or {}).get("total") or 0) * (tm.get("epochs_run") or 0) or None,
+                    token_passes=train_tokens_seen,
+                    token_passes_estimated=token_passes_estimated,
                     steps=tm.get("steps"), tokens_per_s=tm.get("tokens_per_s"),
                     wall_s=tm.get("wall_seconds"), final_loss=tm.get("final_loss"),
                     packing=(tm.get("packing") or {}).get("mode"),
@@ -137,15 +178,19 @@ def train_row(out_dir: str, cell: str, timings: list) -> dict:
     if meta:
         wall = next((float(t.get("seconds", 0)) for t in timings if t.get("step") == f"train_{cell}"), None)
         toks = meta.get("tokens")
-        return dict(trainer=meta.get("recipe"), target_tokens=toks, total_tokens=toks,
+        return dict(trainer=meta.get("recipe"), target_tokens=None, total_tokens=None,
                     epochs=meta.get("epochs"), epochs_run=meta.get("epochs"),
-                    token_passes=(toks or 0) * (meta.get("epochs") or 0) or None,
-                    steps=meta.get("steps"), tokens_per_s=(round(toks * meta.get("epochs", 1) / wall, 1)
+                    # v1 increments `tokens` inside the epoch loop, so it is
+                    # already the realized all-epoch count.
+                    token_passes=toks, token_passes_estimated=False,
+                    steps=meta.get("steps"), tokens_per_s=(round(toks / wall, 1)
                                                             if toks and wall else None),
                     wall_s=wall, final_loss=meta.get("final_loss"), packing="v1 (bsz 4, max_len 512, no mask)",
                     isolation=None, lora=dict(rank=meta.get("rank"), alpha=2 * meta.get("rank", 0)),
                     empty=False, svd_init=False, target_tokens_dropped=None, items_split=None,
-                    note="frozen v1 trainer: whole-text loss, no seed", seed=meta.get("seed"), lr=meta.get("lr"))
+                    note="frozen v1 trainer: whole-text loss, no seed; train_meta.tokens is only the "
+                         "realized all-epoch count, so per-pass target/total tokens are unavailable",
+                    seed=meta.get("seed"), lr=meta.get("lr"))
     return None
 
 
@@ -164,7 +209,7 @@ def summarize(out_dir: str, life: str, brief_dir=None, cells=None) -> dict:
         row = {}
         for p in ("report", "disjoint"):
             pc = off[p] if c == "OFF" else probe_cell(os.path.join(probes, f"{c}_{p}.json"),
-                                                       off[p].get("mean"), 8 if p == "report" else 12)
+                                                       off[p], 8 if p == "report" else 12)
             if pc.get("mean") is not None and off[p].get("mean") is not None and c != "OFF":
                 pc["delta_vs_off"] = round(pc["mean"] - off[p]["mean"], 4)
             row[p] = pc
@@ -191,7 +236,7 @@ def summarize(out_dir: str, life: str, brief_dir=None, cells=None) -> dict:
     if brief_dir and L:
         for p in ("report", "disjoint"):
             bp = os.path.join(os.path.expanduser(brief_dir), f"{L}_brief_{p}.json")
-            brief[p] = probe_cell(bp, off[p].get("mean"), 8 if p == "report" else 12)
+            brief[p] = probe_cell(bp, off[p], 8 if p == "report" else 12)
             if brief[p].get("mean") is not None and off[p].get("mean") is not None:
                 brief[p]["delta_vs_off"] = round(brief[p]["mean"] - off[p]["mean"], 4)
     table["brief"] = dict(report=brief.get("report", dict(missing=True)),
@@ -201,7 +246,7 @@ def summarize(out_dir: str, life: str, brief_dir=None, cells=None) -> dict:
                                  "horizon mismatch against the adapters)")
     mid = {}
     for p in ("report", "disjoint"):
-        mid[p] = probe_cell(os.path.join(probes, f"brief_mid_{p}.json"), off[p].get("mean"),
+        mid[p] = probe_cell(os.path.join(probes, f"brief_mid_{p}.json"), off[p],
                             8 if p == "report" else 12)
         if mid[p].get("mean") is not None and off[p].get("mean") is not None:
             mid[p]["delta_vs_off"] = round(mid[p]["mean"] - off[p]["mean"], 4)
@@ -217,7 +262,9 @@ def summarize(out_dir: str, life: str, brief_dir=None, cells=None) -> dict:
                                "C is one pair per note/executed move/reflection). B_match is B "
                                "subsampled to A's target-token budget (newest rows in full, the rest "
                                "uniform; mechanism 2.3) so the write is compared at matched supervised "
-                               "tokens; steps and token-passes are in the table because packing makes "
+                               "compile-time pre-EOS target tokens; realized loss positions, content, "
+                               "steps, and exposure distribution may still differ. Steps and actual "
+                               "train token-passes are in the table because packing makes "
                                "optimizer steps incommensurable across cells (A's short exemplars pack "
                                "into a handful of sequences).")
     with open(os.path.join(out_dir, "summary.json"), "w") as f:
@@ -253,8 +300,14 @@ def to_markdown(s: dict) -> str:
             flags.append(f"TARGET_TOKENS_DROPPED={tr['target_tokens_dropped']}")
         if tr.get("items_split"):
             flags.append(f"items_split={tr['items_split']}")
+        if tr.get("token_passes_estimated"):
+            flags.append("token_passes_estimated")
         if tr.get("isolation") not in (None, "isolated"):
             flags.append(f"isolation={tr.get('isolation')}")
+        for panel_name, panel in (("report", r), ("disjoint", d)):
+            pairing = panel.get("collapse_pairing_status")
+            if pairing and pairing.startswith("unavailable:"):
+                flags.append(f"collapse_{panel_name}={pairing}")
         cm = row.get("compile") or {}
         if (cm.get("conditioning") or {}).get("items_head_missing"):
             flags.append(f"head_missing={cm['conditioning']['items_head_missing']}")
@@ -274,7 +327,11 @@ def to_markdown(s: dict) -> str:
             _fmt(tr.get("packing")), " ".join(flags)]) + " |")
     lines += ["", s.get("budget_note", ""), "",
               "Δ noise: SD of a 2-rep mean ≈ 0.0046 on the compiler panels (replicate SD 0.0065); "
-              "two noise widths ≈ 0.013 (PRETESTS P1). 'collapsed reps' = a rep below OFF − 0.04. "
+              "two noise widths ≈ 0.013 (PRETESTS P1). 'collapsed reps' = a rep below its "
+              "same-index OFF replicate − 0.04; the flag is unavailable unless generation seed, "
+              "panel and replicate count match. "
+              "token_passes_estimated = an old v3 manifest lacked train_tokens_seen, so token-passes "
+              "were estimated as encoded total tokens × completed epochs. "
               "flags: TARGET_TOKENS_DROPPED = the trainer cut target tokens (the compile-time 'each "
               "target once' guarantee was voided; the split backstop keeps this at 0); head_missing = "
               "items whose GOAL/METRIC head was not in a stored prompt; token_estimate = the compile "
