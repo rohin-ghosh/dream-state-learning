@@ -36,6 +36,32 @@ def probes(d):
     return on, off
 
 
+def same_panel_gate_replicates(d, on):
+    """Same-adapter gate/report differences, only when panels are identical.
+
+    R5 adds `probe_gate_base.json` and uses a disjoint gate panel.  The old
+    glob tried to parse the word ``base`` as an episode number and, for the
+    numbered files, could compare a disjoint gate against the report panel as
+    if they were replicate measurements.  Exact result-key equality is the
+    minimally sufficient panel identity check for this descriptive noise read.
+    """
+    out = []
+    for path in glob.glob(os.path.join(d, "probe_gate*.json")):
+        match = re.fullmatch(r"probe_gate(\d+)\.json", os.path.basename(path))
+        if not match:
+            continue
+        episode = int(match.group(1))
+        if episode not in on or not os.path.exists(
+                os.path.join(d, f"sleep_{episode:04d}", "adapter", "DONE")):
+            continue
+        gate = json.load(open(path))
+        report = on[episode]
+        if set(gate.get("results", {})) != set(report.get("results", {})):
+            continue
+        out.append(gate["mean"] - report["mean"])
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
@@ -55,11 +81,9 @@ def main():
             for prog, sc in on[e]["results"].items():
                 if prog in off[e]["results"]:
                     per_prog[prog].append(sc - off[e]["results"][prog])
-        # same-adapter replicates: gate probe at sleep i vs regular ON probe at ep i
-        for g in glob.glob(d + "/probe_gate*.json"):
-            i = int(re.search(r"gate(\d+)", g).group(1))
-            if i in on and os.path.exists(os.path.join(d, f"sleep_{i:04d}", "adapter", "DONE")):
-                on_reps.append(json.load(open(g))["mean"] - on[i]["mean"])
+        # same-adapter replicates only when gate and report contain the exact
+        # same program ids.  A disjoint R5 gate is not a report replicate.
+        on_reps.extend(same_panel_gate_replicates(d, on))
         rej = collections.Counter()
         for r in glob.glob(d + "/sleep_*/adapter/REJECTED*"):
             rej[os.path.basename(r)] += 1
