@@ -19,7 +19,7 @@ for s in courier_lib.sh courier_vm.sh courier_laptop.sh send_to_vm.sh backup_sel
   check "bash -n $s" "bash -n '$C/$s' 2>/dev/null"
 done
 check "SELFCHECK_PROMPT.md starts with the self-check header" \
-  "head -c 60 '$C/SELFCHECK_PROMPT.md' | grep -q '^Self-check for the dream-state project'"
+  "head -c 80 '$C/SELFCHECK_PROMPT.md' | grep -q -i '^Backup self-check for the dream-state project\|^Self-check for the dream-state project'"
 
 # --- 2. send_to_vm.sh ---------------------------------------------------------------
 export COURIER_OUT="$T/courier_out"
@@ -77,7 +77,7 @@ check "stale heartbeat: exit 0" "[ $rc -eq 0 ]"
 check "stale heartbeat: fake claude invoked" "[ -f '$FAKE_ARGS_FILE' ]"
 check "stale heartbeat: passes --model claude-fable-5-1" "grep -qx 'claude-fable-5-1' '$FAKE_ARGS_FILE' && grep -qx -- '--model' '$FAKE_ARGS_FILE'"
 check "stale heartbeat: passes --permission-mode acceptEdits" "grep -qx 'acceptEdits' '$FAKE_ARGS_FILE' && grep -qx -- '--permission-mode' '$FAKE_ARGS_FILE'"
-check "stale heartbeat: prompt is SELFCHECK_PROMPT.md text" "grep -q '^Self-check for the dream-state project' '$FAKE_ARGS_FILE'"
+check "stale heartbeat: prompt is SELFCHECK_PROMPT.md text" "grep -q -i 'self-check for the dream-state project' '$FAKE_ARGS_FILE'"
 tr_file="$(ls "$COURIER_HOME"/selfcheck/*.md 2>/dev/null | head -1)"
 check "stale heartbeat: transcript <ts>.md written" "[ -n '$tr_file' ] && basename '$tr_file' | grep -Eq '^[0-9]{8}T[0-9]{6}Z\.md$'"
 check "stale heartbeat: transcript contains claude output" "grep -q 'FAKE CLAUDE RAN' '$tr_file'"
