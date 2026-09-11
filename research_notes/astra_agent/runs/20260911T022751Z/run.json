@@ -1,0 +1,145 @@
+{
+ "run_id": "20260911T022751Z",
+ "run_dir": "<REDACTED>/dream-state/research_notes/astra_agent/runs/20260911T022751Z",
+ "stopped_by": "final",
+ "steps": 58,
+ "model_calls": 59,
+ "tokens": {
+  "prompt": 4017674,
+  "completion": 15133,
+  "reasoning": 2766,
+  "total": 4032807
+ },
+ "elapsed_s": 677.8,
+ "report": {
+  "summary": "Completed the required CPU run, read-only pretest inspection, compiler/memory-dose/coordinator audits, and a cited overnight report. No GPU jobs launched or existing modules modified. The pretest remains inconclusive: adapters A/A_v3 completed, B training, no probes or summary available.",
+  "files_written": [
+   "research_notes/astra_agent/OVERNIGHT_REPORT_2026-09-11.md",
+   "research_notes/astra_agent/CHECKPOINT_2026-09-11_01.md",
+   "tools/astra_sandbox/overnight_read.py"
+  ],
+  "tests_run": [
+   "{\"command\": \"<venv312>/bin/python tests/run_all.py\", \"exit_code\": 1, \"elapsed_seconds\": 82.9, \"result\": \"157/158 reported checks; nested CLI dry-run fixture blocked by the sandbox guard. Optional-dependency skips limit coverage.\"}",
+   "{\"command\": \"python3 tools/astra_sandbox/overnight_read.py support\", \"exit_code\": 1, \"result\": \"Python 3.9 pathlib/guard compatibility TypeError.\"}",
+   "{\"command\": \"<venv312>/bin/python tools/astra_sandbox/overnight_read.py support\", \"exit_code\": 0, \"result\": \"Read-only excerpts succeeded with the supported interpreter.\"}"
+  ],
+  "findings": [
+   "B restores masked GOAL prefixes in 7,415/7,415 items, but reconstructed/selectively truncated context does not satisfy exact-state conditioning. 5,596/6,780 local windows dropped context.",
+   "B has 5,144,158 target and 5,195,441 context tokens; every child row is targeted twice. B_match matches target budget, not compute: approximately 2.08 times A's processed tokens.",
+   "A_v3 failed attempted packing isolation and safely fell back to one item per sequence. This is not evidence of cross-example leakage during actual fallback training.",
+   "Latest B observation: step 1,170, 1,627,780 processed tokens at 1,105 tokens/s. Constant-speed projection gives about 2.60 hours for B alone. The 7.26 GPU-hour estimate omits enabled extras and cannot establish end-to-end schedule compliance.",
+   "No probe outputs, table.md or summary.json existed at the latest inspection; no ON/OFF, ritual, held-out text-fit or adoption verdict is justified.",
+   "Memory-dose implements the main synthetic banks and controls, but its representation factorial also changes template/loss coverage; Dshuf rewrites bindings; probability gates are not accuracy gates; a guide label can coexist with failed gates.",
+   "Clone coordination still blocks collectors and trains synchronously on clone 0. The report specifies a separate writer, one-round-lag accounting, transactional publication, boundary-pinned reload and ancestry-aware rollback.",
+   "Static pooling recovery concern: a crash after cursor advancement but before the completion-marker rename may truncate pooled rows while retaining an advanced cursor. This requires targeted fault testing."
+  ],
+  "proposed_runbook": [
+   "Fable should first separate this legacy organizational diagnostic from exact-renderer v7 qualification and implement immutable recorded-token prefixes with source-policy checks.",
+   "Leave the existing GPU 6 job running; inspect markers and logs read-only. Do not launch on GPUs 2/3 or start a duplicate write.",
+   "Reprice all enabled training/probe cells using measured throughput. When probes arrive, apply the documented P1 thresholds using fresh paired OFF and horizon-matched brief controls.",
+   "Implement the report's asynchronous writer/publication change list before claiming a forever-loop build.",
+   "Resolve memory-dose estimand and gate-label deviations; report all per-bank/control cells and unevaluable gates explicitly."
+  ],
+  "gaps": [
+   "Handoff occurred near the harness token limit, not after six hours of monitoring.",
+   "Large context outputs were sometimes truncated; selected required sections were read, not every line of every listed module.",
+   "No live exact-token gradient audit, second training-seed replication, real asynchronous soak or car-test GPU measurements completed.",
+   "The requested second coordination heading after SEQ-022 was absent from the inspected snapshot."
+  ],
+  "forced": false
+ },
+ "error": null,
+ "files_written": [
+  "research_notes/astra_agent/CHECKPOINT_2026-09-11_01.md",
+  "tools/astra_sandbox/overnight_read.py",
+  "research_notes/astra_agent/OVERNIGHT_REPORT_2026-09-11.md"
+ ],
+ "commands": [
+  {
+   "cmd": "<venv312>/bin/python tests/run_all.py",
+   "kind": "local",
+   "rc": 1,
+   "timed_out": false,
+   "elapsed_s": 82.9
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'nvidia-smi -i 6'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.8
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'cat ~/v6_out/pretest_write_ab/R2_B_seed0/corpora/B/compile_manifest.json | head -n 200'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.7
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'tail -n 35 ~/v6_out/pretest_write_ab/run_R2_seed0_gpu6.log'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.7
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'python3 -c \"import json,pathlib; p=pathlib.Path(\\\"~/v6_out/pretest_write_ab/R2_B_seed0\\\").expanduser(); print(\\\"markers\\\",sorted(x.name for x in (p/\\\"markers\\\").glob(\\\"*\\\"))); print(\\\"timings\\\",(p/\\\"timings.jsonl\\\").read_text()); print(\\\"outputs\\\",sorted(x.name for x in p.iterdir())); print(\\\"B logs\\\",sorted(x.name for x in p.glob(\\\"*B*\\\"))); print(\\\"adapter dirs\\\",sorted(x.name for x in (p/\\\"adapters\\\").iterdir())); print(\\\"probe dirs\\\",sorted(x.name for x in (p/\\\"probes\\\").glob(\\\"*\\\")))\"'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.9
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'python3 -c \"import json,pathlib,collections; p=pathlib.Path(\\\"~/v6_out/pretest_write_ab/R2_B_seed0\\\").expanduser(); raw=json.loads((p/\\\"corpora/B/corpus.json\\\").read_text()); a=raw[\\\"corpus\\\"] if isinstance(raw,dict) else raw; print(\\\"items\\\",len(a),\\\"groups\\\",len(set(x[\\\"group\\\"] for x in a))); print(\\\"masked goal prefixes\\\",sum(x[\\\"spans\\\"][0][0].startswith(\\\"GOAL:\\\") and not x[\\\"spans\\\"][0][1] for x in a)); print(\\\"context CLOCK spans\\\",sum(\\\"CLOCK:\\\" in s[0] for x in a for s in x[\\\"spans\\\"] if not s[1])); picks=[next(i for i,x in enumerate(a) if x[\\\"view\\\"]==v and x[\\\"meta\\\"].get(\\\"n_chunks\\\",0)>=n) for v in [\\\"episode\\\",\\\"local\\\"] for n in [1,5,9,13,16]]; print(\\\"selected\\\",picks); print(json.dumps([{\\\"index\\\":i,\\\"view\\\":a[i][\\\"view\\\"],\\\"group\\\":a[i][\\\"group\\\"],\\\"meta\\\":a[i][\\\"meta\\\"],\\\"spans\\\":[[s[0][:190],s[1],s[2]] for s in a[i][\\\"spans\\\"][:4]]} for i in picks],indent=1))\"'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 1.0
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'python3 -c \"import json,pathlib; p=pathlib.Path(\\\"~/v6_out/pretest_write_ab/R2_B_seed0\\\").expanduser(); a=json.loads((p/\\\"corpora/B/corpus.json\\\").read_text())[\\\"corpus\\\"]; ep=[i for i,x in enumerate(a) if x[\\\"view\\\"]==\\\"episode\\\"]; lo=[i for i,x in enumerate(a) if x[\\\"view\\\"]==\\\"local\\\"]; picks=list(dict.fromkeys([min(ep,key=lambda i:a[i][\\\"meta\\\"][\\\"n_chunks\\\"]),max(ep,key=lambda i:a[i][\\\"meta\\\"][\\\"tokens\\\"]),next(i for i in ep if a[i][\\\"meta\\\"].get(\\\"window\\\",0)>0),next(i for i in lo if a[i][\\\"meta\\\"][\\\"flags\\\"].get(\\\"n_acts\\\",0)>1),next(i for i in lo if not a[i][\\\"meta\\\"][\\\"flags\\\"].get(\\\"executed\\\")),lo[-1],ep[0],lo[0],lo[8],lo[20]])); print(\\\"unique examples\\\",len(picks)); print(json.dumps([{\\\"index\\\":i,\\\"view\\\":a[i][\\\"view\\\"],\\\"row_ids\\\":a[i][\\\"meta\\\"][\\\"target_rows\\\"],\\\"chunks\\\":a[i][\\\"meta\\\"][\\\"n_chunks\\\"],\\\"window\\\":a[i][\\\"meta\\\"].get(\\\"window\\\"),\\\"flags\\\":a[i][\\\"meta\\\"].get(\\\"flags\\\"),\\\"prefix\\\":[[s[0][:150],s[1]] for s in a[i][\\\"spans\\\"][:3]],\\\"last_spans\\\":[[s[0][:150],s[1]] for s in a[i][\\\"spans\\\"][-2:]]} for i in picks],indent=1))\"'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 1.3
+  },
+  {
+   "cmd": "python3 tools/astra_sandbox/overnight_read.py support",
+   "kind": "local",
+   "rc": 1,
+   "timed_out": false,
+   "elapsed_s": 0.1
+  },
+  {
+   "cmd": "<venv312>/bin/python tools/astra_sandbox/overnight_read.py support",
+   "kind": "local",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.1
+  },
+  {
+   "cmd": "<venv312>/bin/python tools/astra_sandbox/overnight_read.py scripts",
+   "kind": "local",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.1
+  },
+  {
+   "cmd": "<venv312>/bin/python tools/astra_sandbox/overnight_read.py memos",
+   "kind": "local",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 0.1
+  },
+  {
+   "cmd": "bash gpu/a40_ssh.sh 'python3 -c \"import json,pathlib; p=pathlib.Path(\\\"~/v6_out/pretest_write_ab/R2_B_seed0\\\").expanduser(); print(\\\"B training tail\\\",(p/\\\"train_B.out\\\").read_text()[-2200:]); print(\\\"estimate\\\",(p/\\\"estimate.json\\\").read_text()[:4000]); print(\\\"markers\\\",sorted(x.name for x in (p/\\\"markers\\\").glob(\\\"*\\\"))); print(\\\"endpoints\\\",[(n,(p/n).exists()) for n in [\\\"table.md\\\",\\\"summary.json\\\"]]); a=json.loads((p/\\\"corpora/B/corpus.json\\\").read_text())[\\\"corpus\\\"]; x=a[100]; print(\\\"tenth distinct rendered example index100\\\",json.dumps({\\\"meta\\\":x[\\\"meta\\\"],\\\"view\\\":x[\\\"view\\\"],\\\"spans\\\":[[s[0][:300],s[1],s[2]] for s in x[\\\"spans\\\"][:4]]})); print(\\\"A_v3 isolation\\\",json.loads((p/\\\"adapters/A_v3/train_manifest.json\\\").read_text())[\\\"packing\\\"]); print(\\\"probes\\\",sorted(x.name for x in (p/\\\"probes\\\").glob(\\\"*\\\")))\"'",
+   "kind": "node",
+   "rc": 0,
+   "timed_out": false,
+   "elapsed_s": 1.1
+  }
+ ],
+ "refusals": [],
+ "withheld_messages": 0
+}

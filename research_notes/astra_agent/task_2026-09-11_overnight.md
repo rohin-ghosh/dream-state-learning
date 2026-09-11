@@ -1,0 +1,14 @@
+OVERNIGHT TASK FOR ASTRA (tool-using run, 2026-09-11; Rohin: "let Astra do some of its own checks while you do your thing and we come back together tomorrow").
+
+Context: read CLAUDE.md, research_notes/SYSTEMS_BRIEF.md, research_notes/CHILD_MECHANISM_v7.md (sections 0–4), research_notes/NEXT_EXPERIMENT_DESIGN_v2_ASTRA.md (your own design; sections 0, 2, 4), research_notes/astra_memos/ (your memos 1–6), research_loop/COORDINATION.md entries SEQ-019..SEQ-022 and the two entries after SEQ-022, and the code: organism_v6/sleep_compile_v3.py, train_adapter_v3.py, lora_svd_init.py, memory_dose.py, clone_coordinator.py, reflection.py, gym_backend.py, reasoning_gym_gym.py, agentic_parent.py; gpu/write_ab.sh, gpu/memory_dose.sh, gpu/rg_band.sh; tests/run_all.py.
+
+Live state you may read (node 1 via `bash gpu/a40_ssh.sh '<cmd>'`, read-only commands only; GPU 6 is the only GPU you may launch smokes on): the write A/B/C pretest is RUNNING on GPU 6 — log ~/v6_out/pretest_write_ab/run_R2_seed0_gpu6.log, outputs under ~/v6_out/pretest_write_ab/R2_B_seed0/ (corpora/*/compile_manifest.json, markers/, timings.jsonl, adapters as they finish, probes, table.md). The text-memory baseline runs on GPU 2 and the crossed cells on GPU 3 (~/v6_out/brief_baseline/). Do NOT launch anything on GPUs 2 or 3; do not launch a second write_ab on GPU 6 while the first runs (check `nvidia-smi -i 6` and the markers first).
+
+YOUR CHECKS (write everything under research_notes/astra_agent/ as markdown; be concrete; every claim tied to a file:line or a command output):
+1. Run the CPU test suite (`/private/tmp/claude-501/-Users-rohing/d66e193e-e075-475c-96de-a582e32ee6c5/scratchpad/venv312/bin/python tests/run_all.py`) and read failures if any.
+2. Audit sleep_compile_v3's rendered sequences against your memo 3 problem 2 and memo 5 §1: read the compile manifests on node 1 (`cat ~/v6_out/pretest_write_ab/R2_B_seed0/corpora/B/compile_manifest.json | head -n 200`), check that goal/state precede child targets, that only child text carries loss, exposure accounting, packing groups; report any violation.
+3. Watch the write pretest: read its log and timings; when the first adapter and probes exist, read table.md / summary.json and state what the numbers say against the decision rule (held-out panels ON vs OFF, ritual metrics, text fit), and whether the run is on schedule (estimate 7.3 GPU-h).
+4. Review memory_dose.py against your memo 2 §2 design (banks, doses, arms, controls, gates, I_d) — list deviations with file:line.
+5. Review clone_coordinator.py against the forever-loop ruling (no waiting; merge one round behind; publication/reload; what happens mid-problem) and write the concrete change list for the v7 build.
+6. Write research_notes/astra_agent/OVERNIGHT_REPORT_2026-09-11.md: findings ranked, the pretest status, the change list, and what Fable should do first in the morning.
+Budget: 80 steps, 6 hours wall. Never ask a human anything.
