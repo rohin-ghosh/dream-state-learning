@@ -131,3 +131,71 @@ birth example, then require the written policy to select different actions
 under different observable situations. The conditional writer canary is
 designed for that distinction; the full C11 guard remains parked until the
 final paper-grade run.
+
+## Sleep-96 addendum
+
+A fresh independent read-only audit extended the same analysis across every
+committed disjoint-gate checkpoint through sleep 96. At audit time the R5
+process was alive, its latest completed wake was 96--104, and no episode-128
+probe existed. The disjoint gate panel has 12 programs and SHA-256
+`24ecfe874fafb216d7b8073322b61dda53497da5080751131112b0845884003a`.
+
+| Candidate | Gate mean | Delta vs fixed base | ACT rows | ACT / thought | First action is birth routine | Nonempty actions containing birth routine |
+|---|---:|---:|---:|---:|---:|---:|
+| Base | 0.24625 | -- | 87 | 0.777 | 6/12 | 24/87 |
+| Sleep 32 | 0.25464 | +0.00839 | 362 | 2.168 | 12/12 | 114/360 |
+| Sleep 64 | 0.26346 | +0.01722 | 389 | 2.478 | 12/12 | 216/388 |
+| Sleep 96 | 0.26735 | +0.02110 | 544 | 2.833 | 12/12 | 429/542 |
+
+Every written candidate chose the same prompt-supplied routine as its first
+action on all 12 programs, with identical first-action scores. Relative to the
+fixed base gate, the cap-one gain was consequently identical at sleeps 32,
+64, and 96: +0.07319. The later rise in best-of-trajectory gate score came
+after this unchanged first choice while action count and repetition rose.
+
+At sleep 96, 305/532 consecutive action pairs were identical (57.3%, versus
+20/75 or 26.7% for base); 429/542 nonempty actions contained the supplied
+routine as a contiguous block; and the number of unique nonempty actions fell
+from 60 at sleep 64 to 39 while total ACT rows rose from 389 to 544. The next
+eight waking episodes contained 362 ACT rows, 27--66 per program. The score
+gain was also concentrated: one program supplied 49.6% and the top three
+supplied 88.0% of the full gate delta.
+
+The sleep-96 receipts are:
+
+- gate: `a9658f7d634d4c4e95267eb8b938be4a291bd41b9104ba18705c9fd4884ccd87`;
+- gate probe JSON:
+  `dfcc3e2277dd31685bc27a9fe5da8eb32f2f48b562e81f07aa69720955e50293`;
+- gate ledger:
+  `c1386bf244f2980ae8eca3e7f76446659849a13637e708baa8ade178bde56c7c`;
+- adapter weights:
+  `26362ae4654e42df487e638d2218fc77c8fe3c7d84e9ac19a674f9f5b274b403`;
+- corpus:
+  `8d113246d2ad4b982966741754bf1ff5b39fd25f98da953bca8226fdfd369646`;
+- training metadata:
+  `4c7d65f3e0c1a8069a4d8b1966732c6c93459883184221cd27e08b8d11a19e41`.
+
+The training receipt reports 338 texts, 114,687 tokens, rank 8, three epochs,
+learning rate `1e-4`, final loss 0.33136, and the legacy `v1_frozen` trainer
+recipe.
+
+This changes the mechanism diagnosis, not the claim tier. The gate is
+selecting progressively more repetitive best-of-trajectory search. Its
+16-thought-chunk budget does not cap ACT markers; its brevity check is only a
+minimum; and its parseability canary neither caps multiple ACTs per chunk nor
+tests action semantics. Sleep 96 had 20 invalid ACTs while the canary still
+reported 1.00. The panel is repeatedly used for selection and has only one
+fixed base receipt. It is therefore not a held-out learning curve.
+
+The supported extension is:
+
+> Through sleep 96, R5's writer increasingly amplified a prompt-supplied
+> routine and proliferated actions while improving a repeatedly selected
+> best-of-trajectory gate. It showed a strong and cumulative behavioral write,
+> but not learned conditional judgment, invention, or interface safety.
+
+One analyzer field is also narrower than its name: the current
+`n_episodes_reaching_tick16` counts episodes with an ACT at tick 16, not every
+thought trajectory that reached tick 16. This does not alter the published
+ACT, cap, or score calculations. A later episode-128 pair can describe whether
+the same pattern persists, but cannot repair the design's causal limitations.
