@@ -11,20 +11,29 @@ Current mechanism and parenting scouts continue under simple hygiene. The
 full C11 guard remains parked and is finished and enforced only for the final
 paper-grade C11 run. Active experiments are not modified mid-run.
 
-## What is established now
+## What is established now (terminal refresh)
 
 1. The tested writers can lower likelihood loss on their training material
    and can strongly alter downstream behavior.
 2. The dominant behavior in the compiler lives is usually a supplied fixed
-   routine, not program-conditioned judgment. R5 amplified this routine while
-   also increasing action volume and repetition.
+   routine, not program-conditioned judgment. In the terminal three-life
+   writer closure, only legacy cell A was positive on both panels in 3/3
+   lives (mean deltas +0.0386 / +0.0161), and it carried that routine. No
+   non-routine writer qualified.
 3. Cell F contains an owner-specific component, but every tested condition
    spills far beyond the owner. None passes binding, specificity, interface,
    and non-harm together.
 4. Historical parenting shows durable verbal repetition and, in one eligible
    life, only transient executed change. It is not a causal parenting result.
-5. A static waking brief is competitive with the adapter, but it is not yet a
-   strong candidate-blind active-text baseline.
+5. In the matched post-hoc nine-life disjoint-panel 2x2, the adapter contrast
+   was -0.0146 and the static waking-brief contrast was +0.0041. The brief is
+   therefore a useful carrier diagnostic, but it is not yet a prospective,
+   candidate-blind active-text baseline.
+6. The frozen child already produces varied observations (87.3--99.2%
+   distinct, 1.3--2.0% factual drift), but it omits the requested canonical
+   memory form in 13.3--14.6% of cases and mishandles negative knowledge in
+   45.7--67.2%. The current bridge compiler repairs those failures, so its
+   fitted rows cannot identify child-authored perception.
 
 Therefore the immediate bottleneck is not more lifetime scale. It is whether
 the writer can encode several conditional action policies without turning
@@ -32,50 +41,70 @@ them into one global habit.
 
 ## Ordered decision path
 
-### 1. Close work already in flight
+### 1. Close work already in flight without changing it
 
-- Finish the seed-7 and seed-8 writer replications before reading across-seed
-  efficacy.
+- The seed-0/7/8 writer replications are now terminal. Preserve the negative
+  decision: no legacy non-routine writer advances.
 - Finish the current R4 parenting lives and preserve their terminal receipts.
 - Continue R5 unchanged as a mechanism-development life; do not promote its
   historically used panels to confirmatory evidence.
 
 ### 2. Run the smallest conditional writer falsifier
 
-The reviewed Multi-key Writer Gateway V6 is the next development scout after
-its exact implementation grant, implementation/tests, independent reviewer,
-scientific advocate, and later execution grant.
+The reviewed Multi-key Writer Gateway **V7 simple scout** is the next
+development experiment after its exact implementation grant,
+implementation/tests, independent reviewer, scientific advocate, and later
+execution grant. V6 is retired because its 165-cell custody shell would spend
+31--49 engineering hours reproducing machinery reserved for C11.
 
-V6 asks whether complementary rank-8 adapters can carry multiple seen
+V7 asks whether complementary rank-8 adapters can carry multiple seen
 tool-by-mode endpoint policies under held renderings while preserving the ACT
-interface and avoiding four explicit spill families. A fixed routine, global
-action bias, or mode-only policy cannot solve the crossed mapping.
+interface and avoiding four explicit spill families. It uses two disjoint
+roots, sixteen keys per root and four clean-base fits under a three A40-hour
+cap. A fixed routine, global action bias, or mode-only policy cannot solve the
+crossed mapping.
 
-Passing V6 means only supervised correctness-selected endpoint-policy
-carriage. It does not establish lived-outcome causality, discovery,
-generalization, retention, parenting, connected memory, or a whole-agent
-learning effect.
+Passing V7 means only supervised conditional endpoint-policy carriage. It
+does not establish lived-outcome causality, discovery, generalization,
+retention, parenting, connected memory, or a whole-agent learning effect.
 
-### 3. Qualify persistence and the text comparator only after a V6 pass
+### 3. Qualify persistence only after a V7 pass
 
-Do not pay for a retention campaign if V6 cannot first carry conditional
-policies. If V6 passes both roots, freeze its exact writer representation and
+Do not pay for a retention campaign if V7 cannot first carry conditional
+policies. If V7 passes both roots, freeze its exact writer representation and
 add one separately approved qualification stage:
 
 - one equal-sized, identity-disjoint cumulative write;
 - re-read the original policies after that write;
 - require at least 80% of each arm's original gain to remain, with the same
-  mapping, interface, and spill gates;
-- run a frozen candidate-blind retriever over the same admitted endpoint rows
-  under a fixed 256-token budget;
-- validate retrieval recall, citation identity, oracle accessibility, and
-  store-swap sensitivity before comparing carriers.
+  mapping, interface, and spill gates.
 
 This stage distinguishes a momentary fit from a writer that a developing
-lineage can safely reuse. It also prevents a failed retriever integration
-from being misread as parametric-memory superiority.
+lineage can safely reuse.
 
-### 4. Parenting becomes causal only after writer qualification
+### 4. Test authentic child experience after the writer and retention gates
+
+The already-deliberated lived-mirror gateway is the shortest local
+THINK--experience--SLEEP--later-THINK relay. A frozen child acts in opposed
+two-action worlds, sees only the public outcome, and authors a final action.
+Missing, wrong, or invalid child endpoints are never repaired. Mirrored
+worlds cancel global action preference. The result is capped at eight
+A40-hours.
+
+Run it only after V7 establishes conditional writer capacity. A pass shows
+that success-filtered, child-grounded endpoint policies can pass through the
+qualified write. It does not yet show outcome-token causality, autonomous
+discovery, parenting, retention, connected knowledge, or a whole organism.
+
+### 5. Certify the text comparator
+
+Run a frozen candidate-blind retriever over the same admitted endpoint rows
+under a fixed token budget. Validate retrieval recall, citation identity,
+oracle accessibility, store-swap sensitivity, and strict action use before
+comparing carriers. A failed retriever integration cannot be evidence for
+parametric-memory superiority.
+
+### 6. Parenting becomes causal only after writer qualification
 
 Use one clean pre-parent checkpoint and randomly assign matched childhood
 roots to substantive versus sham process feedback. Remove the parent and all
@@ -89,7 +118,7 @@ Lexical restatement is an echo diagnostic, not success. Executed conditional
 action, world outcome, and persistence after later writes are the meaningful
 measurements. Existing R4 histories remain developmental evidence only.
 
-### 5. C11 closes only the supplied-memory mechanism ceiling
+### 7. C11 closes only the supplied-memory mechanism ceiling
 
 Only when the supplied-memory ceiling is actually ready to run do we finish
 and enforce the full C11 guard. C11 tests a fixed-policy, fixed-topology
@@ -97,7 +126,7 @@ connected-route benchmark using supplied memory. It does not test learning,
 LoRA transport, retention, recurrence, lifetime improvement, parenting, or the
 complete organism, and it cannot stand in for those results.
 
-### 6. The learned-organism relay is a separate experiment
+### 8. The learned-organism relay is a separate experiment
 
 The broader paper requires a separately approved learned-organism PCFL relay:
 the child acquires supported atoms and authentic co-use links through its own
@@ -118,10 +147,10 @@ efficiency measure. None is inferred from a writer-gateway or C11 pass.
 
 ## Stop rules
 
-- If V6 does not pass conditional mapping plus every spill/interface gate,
+- If V7 does not pass conditional mapping plus every spill/interface gate,
   stop scaling parenting through that writer representation. Use the result
   to characterize broad-habit writing and redesign the representation.
-- If V6 passes but the unrelated write erases the old mapping, do not start a
+- If V7 passes but the unrelated write erases the old mapping, do not start a
   paper-grade childhood; solve cumulative retention first.
 - If the matched text carrier succeeds while the adapter fails, localize the
   bottleneck to parametric writing/access rather than the task or memory
