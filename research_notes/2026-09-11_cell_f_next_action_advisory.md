@@ -79,3 +79,52 @@ These numbers are candidates for prospective binding, not current claims.
 If no K qualifies, F-Relay is `NOT_RUN`, the factual carrier remains strong
 retrieved text for the parenting canary, and GPU time moves to the writer
 failure characterization rather than higher synthetic repetition.
+
+## Result addendum — 2026-09-11
+
+The equal-exposure diversity screen is terminal. The frozen summarizer was
+applied without modifying the assay or thresholds. The three equal-exposure
+bank-0 cells and the already-running bank-0 exposure sensitivity preserve a
+large matching-owner completion gain, but all four remain `frame-habit`
+because mean spill is more than ten times the 0.03 limit:
+
+| cell | matching-owner dP | I_d_frame [95% CI] | mean spill | label |
+|---|---:|---:|---:|---|
+| `F_r16k1` | 0.6595 | 0.8997 [-0.106, 1.939] | 0.4389 | frame-habit |
+| `F_r16k4` | 0.5826 | 1.8216 [1.100, 2.580] | 0.3446 | frame-habit |
+| `F_r16k16` | 0.6058 | 2.3607 [1.400, 3.398] | 0.3326 | frame-habit |
+| `F_r64k16` | 0.6049 | 2.4230 [1.463, 3.472] | 0.3583 | frame-habit |
+
+Increasing surface diversity from one to sixteen forms strengthens the
+owner-versus-similar interaction and reduces spill somewhat. It does not make
+the learned continuation selective. Increasing repetition from 16 to 64 at
+sixteen forms does not rescue it: owner gain is essentially unchanged and
+spill rises from 0.3326 to 0.3583. `F_r64k16` had already been materialized in
+the running queue; it is reported as a sensitivity cell, not as authority for
+another escalation.
+
+The frozen decision is therefore exercised: **stop Cell F for this sprint.**
+Do not run F-Relay, another repetition level, or a confirmation bank. The
+useful result is bounded: diversity produces a stronger owner-specific
+component inside a still-broad completion habit. The next writer test must
+ask whether several condition-specific action bindings can coexist without
+action flooding; it must not be another larger Cell-F write.
+
+Stopping after bank 0 is not an optimistic early stop. Even if two additional
+equal-weight banks had exactly zero spill, the pooled spill implied by these
+bank-0 cells would still be 0.111 to 0.146, well above 0.03. No possible
+remaining-bank result could make this family pass its frozen spill gate.
+
+Artifact identities used for this read:
+
+- source `organism_v6/memory_dose.py`:
+  `db3222e61f0a8219bfc0f40f22ade532bb72bd3d83a299a02c25d65cebbbaf0e`
+- bank 0:
+  `b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6`
+- manifest:
+  `7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb`
+- evals `F_r16k1`, `F_r16k4`, `F_r16k16`, `F_r64k16`, respectively:
+  `95b7c986be201a187036a11373a24f8df73433e2e76be58f3c79018b0ad80529`,
+  `a40cbc3f28c57a5c268d1db63b05c3e699cf5c4dd01de302283bf3bdb5566755`,
+  `2599ca865bbe010b6fba8c2a5e1188d454cda351f3f31cfe8296140b70dc35fc`,
+  `bce48ce5420d9c6c6d2efd14a443327efe64bd7e88d577c0b9216eb200baff8a`.
