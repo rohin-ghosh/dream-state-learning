@@ -160,9 +160,12 @@ confirmation agree.
 The live R5-loose pilot completed four contiguous eight-episode wake batches,
 compiled 124 new items plus three principles at sleep 32, trained rank 8 at
 learning rate 1e-4 with return code 0, and passed the action-interface canary
-at 1.00 parseable ACT rate. The disjoint score gate was still evaluating at
-this cut, so the adapter remained a candidate and no commit/reject verdict
-was available. The life process remained alive. This is operational evidence
-only: its default score tolerance is 0.02 and its format canary still uses
-the older report-panel programs, so it remains an exploratory R5-loose pilot
-rather than a paper-grade retention result.
+at 1.00 parseable ACT rate. Its disjoint score gate then committed the
+candidate: 0.2546 versus a frozen-base floor of 0.2462 (+0.0084), with 13.9
+candidate thought chunks per problem versus 9.3 for base. Thus the first
+write preserved the interface and did not create the brevity-collapse failure.
+The score difference is smaller than the established behavioural noise and is
+not evidence of improvement. This is operational evidence only: the pilot's
+default score tolerance is 0.02 and its format canary still uses the older
+report-panel programs, so it remains an exploratory R5-loose pilot rather than
+a paper-grade retention result.
