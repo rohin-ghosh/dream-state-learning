@@ -104,6 +104,58 @@ That can diagnose whether `AT` changes execution through action volume or
 interface effects. It requires no new model calls. No more routine-only cells
 are informative.
 
+## Execution-channel addendum
+
+That read-only ledger analysis is now complete for the coherent nine-life R2
+subset. Each logical cell contains 24 trajectories: 12 programs under two
+generation seeds. Only authoritative `kind=act` rows count as actions. The
+birth-prompt routine is
+`-mem2reg,-sroa,-gvn,-simplifycfg`; equality below is exact after removing
+whitespace and empty comma fields.
+
+| Cell | ACT rows / trajectory | First action exactly birth routine | Invalid ACT rows | Zero-ACT trajectories | Mean chunks to best |
+|---|---:|---:|---:|---:|---:|
+| Frozen `F` | 15.82 | 70.8% | 26.5% | 0.0% | 2.065 |
+| Adapter `A` | 10.50 | 55.1% | 14.2% | 3.7% | 2.135 |
+| Text `T` | 8.87 | 53.7% | 18.8% | 0.0% | 1.458 |
+| Adapter + text `AT` | 9.76 | 54.2% | 11.9% | 6.0% | 2.182 |
+
+The frozen row is logically weighted by R2 life count even though it comes
+from one shared node-specific generation per node. “Chunks to best” is the
+minimum ACT-row tick attaining a trajectory's maximum score and excludes
+zero-ACT trajectories; its denominators are 216, 208, 216, and 203 for
+`F/A/T/AT` respectively.
+
+There is no uniform action-volume explanation. Different historical children
+occupy qualitatively different regimes. For example, R2 seed5's adapter-only
+cell emitted only 27 actions over 24 trajectories, chose the birth routine
+first in 22, had two zero-action trajectories, and one `DONE`-first case. R2
+seed3's adapter-only and combined cells instead emitted 467 and 486 actions;
+240/467 and 218/486 were invalid, dominated by a malformed repeated long
+chain. Other lives show high-volume repetition without that exact failure.
+
+The near-zero mean factorial interaction is cancellation, not evidence that
+the carriers never interact locally. After averaging each program's
+interaction across the nine lives, the absolute signed sum divided by the sum
+of absolute values across the resulting 12-program vector is only 0.0033. In
+that averaged vector, one program accounts for 36.4% of L1 mass and the top
+three account for 61.2%; within individual lives the top three programs
+account for 56.6%--93.1%.
+
+This exposes an additional historical panel confound: score is
+best-of-trajectory while ACT markers are uncapped inside each of 16 thought
+chunks. Cells range from about 1.0 to 21.5 ACTs per trajectory and up to 51.4%
+invalid ACTs. Once one good action has occurred, later invalid or repetitive
+actions do not reduce the reported best score. The score therefore mixes
+action identity, action volume, endogenous stopping, and interface health.
+It can hide severe degradation and remains diagnostic rather than causal.
+
+The source limitation is unchanged: two decoding seeds and 12 repeated
+programs do not create 24 independent experimental units, and the frozen
+generation is shared across lives within each node. Full cell identity is the
+summary JSON plus both per-repetition ledgers already resolved by the matched
+audit; any later paper use requires a durable exact-hash receipt.
+
 Point-in-time code receipts, identical locally and on both nodes:
 
 - `gpu/brief_baseline.sh`:
