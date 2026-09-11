@@ -155,6 +155,25 @@ whether surface diversity preserves the owner effect while reducing spill.
 No Cell F claim is warranted until three same-node banks and an untouched
 confirmation agree.
 
+### Cell F bank-0 K4 update: specificity improves, broad habit remains
+
+The equal-exposure four-form cell, `F_r16k4`, completed after the first
+addendum. At dose 16 its matching-frame probability moved 0.2301 -> 0.8127
+(+0.5826), with frame candidate mass 0.0086 -> 0.9955. Unlike K1, its
+owner-versus-similar interaction is directionally clear: 1.8216 with a paired
+95% interval [1.1001, 2.5805]. Surface diversity therefore improved the
+specificity signal at fixed total rendering count.
+
+It did not make the memory clean. Mean frame spill fell from 0.4389 to 0.3446,
+but every component remained far above 0.03: unexposed-owner 0.2722,
+similar-owner 0.3100, and bicycle/wrong-relation 0.4515. The owner gain also
+fell from K1's 0.6595 to 0.5826. The narrow one-bank reading is a tradeoff:
+four forms separate owners better while the adapter still overwhelmingly
+learns the generic completion frame. `F_r16k16` is the remaining member of
+this cross-node bank-0 screen. The previously frozen next-action advisory
+forbids automatic escalation to `F_r64k16` if no equal-exposure cell satisfies
+the full owner/specificity/spill/mass conjunction.
+
 ### R5 seed 701 reached its first sleep without a resume
 
 The live R5-loose pilot completed four contiguous eight-episode wake batches,
