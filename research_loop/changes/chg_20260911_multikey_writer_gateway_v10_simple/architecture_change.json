@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_change",
+  "change_id": "chg_20260911_multikey_writer_gateway_v10_simple",
+  "title": "Multi-key writer gateway V10 final local amendment",
+  "summary": "Incorporate V9 and close its only two gate-bearing output ambiguities: exact multiple-ACT detection and exact unrelated native-interface scoring; also make per-adapter key cardinality and frozen-geometry shortcut wording explicit.",
+  "system_thesis": "The compact V9 joint-key writer-capacity scout is scientifically and operationally sufficient once identical raw model outputs have exactly one ratified interpretation for its two remaining interface gates. No cognitive architecture or C11 custody machinery changes.",
+  "state": "proposed",
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/human_directive.txt",
+      "sha256": "b342ec6217980b5823a9e432c687756517931ff4e442a088baa123c1089f363f",
+      "purpose": "Verbatim simple-hygiene and C11-deferral ruling."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/exact_scope.md",
+      "sha256": "12a077950730c3abaef32b04a861d901ef4bae25a22e640b152472f5f364f549",
+      "purpose": "Normative final local amendments and maximum permitted wording."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/scope_proposal.json",
+      "sha256": "ddef05b593331667243876fc6387b8cf1a11553ec8f0429004de9d549d781d72",
+      "purpose": "Implementation-only requested authority."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/exact_scope.md",
+      "sha256": "eac3e25c93230f3788612b3d0a25c0dac3609d49b4a5d9e28cf853ba806c0955",
+      "purpose": "Complete incorporated V9 normative experiment scope."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/architecture_consensus.json",
+      "sha256": "cd3e243b01e439ce2facb19ed745ee265572e75d7785eeb35fc1efdbb2977158",
+      "purpose": "Adjudicated V9 rework limiting repair to two local metrics and claim wording."
+    }
+  ],
+  "graph_delta": {
+    "nodes": [
+      {
+        "operation": "modify",
+        "node_id": "multiple_act_metric",
+        "before": "V9 required zero multiple-ACT outputs but did not define which raw byte patterns counted as occurrences.",
+        "after": "V10 counts exact case-sensitive line-start ACT prefixes after optional ASCII indentation and defines multiple_ACT as at least two occurrences, separately from strict validity.",
+        "rationale": "Prevent a gate and final label from depending on parser implementation choice."
+      },
+      {
+        "operation": "modify",
+        "node_id": "native_interface_metric",
+        "before": "V9 required 8/8 unrelated native-interface accuracy but its binary a0/a1 parser could not score the native expected actions.",
+        "after": "V10 uses exact whole-output byte equality after boundary-only ASCII whitespace removal against one bound expected native ACT line per prompt, for OFF and every adapter.",
+        "rationale": "Give the interface-preservation gate one total scoring rule."
+      }
+    ],
+    "edges": [
+      {
+        "operation": "modify",
+        "edge_id": "raw_output_to_interface_gate",
+        "from": "immutable_raw_model_output",
+        "to": "interface_ok",
+        "before": "Two gate-bearing output predicates were underdetermined.",
+        "after": "The raw bytes feed separately specified binary validity, multiple-ACT occurrence, and native expected-output equality functions with fixed denominators.",
+        "rationale": "Make identical evidence yield an identical interface gate and label."
+      }
+    ]
+  },
+  "loop_delta": {
+    "loops": [
+      {
+        "operation": "modify",
+        "loop_id": "simple_multikey_writer_scout",
+        "before": "V9's complete experiment loop still left two reducer helpers open to source-author judgment.",
+        "after": "The unchanged V9 loop applies V10's exact raw-output predicates and golden fixtures before the inherited total gate and label reducer.",
+        "trigger": "Implementation begins only after exact V10 human ratification. Model, tokenizer, training, adapter, or GPU execution remains separately gated after implementation tests and fresh reviews.",
+        "reads": [
+          "incorporated V9 exact scope",
+          "V10 output-predicate amendment",
+          "later execution manifest"
+        ],
+        "writes": [
+          "three named implementation files after ratification",
+          "deterministic V10 CPU receipts",
+          "V10-local bound reviews"
+        ],
+        "stop_condition": "Stop on any inherited V9 or amended V10 CPU-test/review failure; preserve every V9 execution and claim prohibition.",
+        "rationale": "Close the last local semantic fork without redesigning the scout or importing C11."
+      }
+    ]
+  },
+  "claim_delta": {
+    "claims": [
+      {
+        "operation": "modify",
+        "claim_id": "conditional_policy_carriage",
+        "before": "V9 wording could obscure that all-key NLL and directional gates apply separately to four adapters and could describe chance as an observed fitted shortcut result.",
+        "after": "A pass states that each of four root-map adapters met all sixteen per-key NLL gates and its own aggregate/per-stratum directional gates, while named shortcuts have maximum target BA 1/2 by frozen construction; it makes no empirical shortcut-probe or internal-mechanism claim.",
+        "evidence_needed": "The incorporated V9 gates and every V10 predicate/golden fixture pass for both roots under later separately authorized execution.",
+        "headline_eligible": false
+      }
+    ]
+  },
+  "visibility_matrix": {
+    "information_items": [
+      "raw_generated_output",
+      "native_expected_output"
+    ],
+    "stages": [
+      "request_recorder",
+      "primary_interface_reducer",
+      "native_interface_reducer",
+      "independent_review"
+    ],
+    "cells": [
+      {"information_id":"raw_generated_output","stage_id":"request_recorder","visibility":"visible","reason":"It preserves complete decoded output bytes without repair."},
+      {"information_id":"raw_generated_output","stage_id":"primary_interface_reducer","visibility":"visible","reason":"It applies strict binary validity and multiple-ACT predicates."},
+      {"information_id":"raw_generated_output","stage_id":"native_interface_reducer","visibility":"visible","reason":"It applies exact expected-output equality only to native panel identities."},
+      {"information_id":"raw_generated_output","stage_id":"independent_review","visibility":"visible","reason":"Reviewers inspect raw and golden output cases."},
+      {"information_id":"native_expected_output","stage_id":"request_recorder","visibility":"forbidden","reason":"Expected answers cannot enter model requests or recorded model payloads."},
+      {"information_id":"native_expected_output","stage_id":"primary_interface_reducer","visibility":"forbidden","reason":"Binary primary scoring has no access to native expected actions."},
+      {"information_id":"native_expected_output","stage_id":"native_interface_reducer","visibility":"visible","reason":"Only the sealed native reducer joins outputs to expected bytes."},
+      {"information_id":"native_expected_output","stage_id":"independent_review","visibility":"visible","reason":"Reviewers verify exact prompts, expected outputs, and scoring."
+      }
+    ]
+  },
+  "acceptance_tests": [
+    {
+      "test_id": "MWG10_T01",
+      "kind": "invariant",
+      "setup": "Verify the exact incorporated V9 scope and consensus hashes, then compare V10's effective contract against V9.",
+      "expected": "Only key-margin clarification, multiple-ACT predicate, native-interface scorer, golden cases, and claim wording differ; every other V9 geometry, visibility, metric, hygiene, resource, and prohibition byte remains effective.",
+      "falsifies": "The local amendment silently changes the experiment or imports C11 work.",
+      "evidence_artifact": "mwg10_inheritance_receipt.json",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "MWG10_T02",
+      "kind": "unit",
+      "setup": "Apply the exact byte predicates to the complete multiple-ACT and native-interface golden tables, including every named whitespace, casing, extra-text, malformed, missing, and mismatch case.",
+      "expected": "Every raw output has one frozen validity, multiple-ACT, and native strict-correct result; fixed denominators, 8/8 conjunctions, and INTERFACE_INVALID boundaries reproduce exactly.",
+      "falsifies": "Interface pass/fail still depends on an implementation choice or parser repair.",
+      "evidence_artifact": "mwg10_output_predicate_receipt.json",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "MWG10_T03",
+      "kind": "unit",
+      "setup": "Run the complete inherited MWG9_T01 through MWG9_T03 deterministic CPU suite plus V10's amended golden fixtures.",
+      "expected": "All geometry, visibility, parser, metric, label, local-integrity, inheritance, and amendment receipts pass without a real tokenizer, model, trainer, adapter, or GPU invocation.",
+      "falsifies": "The compact implementation is not ready for independent review or later execution consideration.",
+      "evidence_artifact": "mwg10_cpu_suite_receipt.json",
+      "required_before": "model_execution"
+    },
+    {
+      "test_id": "MWG10_T04",
+      "kind": "independent_review",
+      "setup": "One fresh independent implementation reviewer and one separate scientific advocate inspect identical V9/V10 scope, source, tests, manifest, and dry-run hashes after scoped implementation.",
+      "expected": "Both PASS before a later exact execution ratification; independent rejection controls.",
+      "falsifies": "The scout is not ready for model, tokenizer, training, adapter, or GPU execution.",
+      "evidence_artifact": "mwg10_review_receipt.json",
+      "required_before": "model_execution"
+    }
+  ],
+  "human_boundary": {
+    "required": true,
+    "decision_owner": "Rohin",
+    "decision_question": "Approve only the exact incorporated V9 plus V10-amended three-file source implementation and deterministic CPU-test scope while preserving every execution and claim prohibition?",
+    "forbidden_before_approval": [
+      "author the three named implementation files",
+      "run deterministic CPU tests",
+      "invoke models, tokenizers, trainers, adapters, or GPUs",
+      "mutate child or parent lineages",
+      "implement or enforce C11",
+      "make scientific claims or release artifacts"
+    ]
+  }
+}

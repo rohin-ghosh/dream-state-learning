@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "change_id": "chg_20260911_multikey_writer_gateway_v10r1_simple",
+  "state": "proposal_only",
+  "requested_scope": [
+    "author gpu/multikey_writer_gateway_simple.sh",
+    "author organism_v6/multikey_writer_gateway_simple.py",
+    "author tests/test_multikey_writer_gateway_simple.py",
+    "run deterministic CPU tests and create V10R1-local review artifacts"
+  ],
+  "forbidden_scope": [
+    "C11 implementation or enforcement",
+    "adapter or checkpoint creation",
+    "benchmark or model execution",
+    "child or parent lineage mutation",
+    "GPU execution or resource acquisition",
+    "parenting execution",
+    "scientific claims, release, or submission",
+    "tokenizer or training execution"
+  ],
+  "authorization_effect": "Exact ratification may authorize only the three named source files, deterministic CPU tests, and V10R1-local review artifacts. Model, tokenizer, training, adapter, GPU, parenting, lineage, C11, claim, release, and submission actions require separate later authority.",
+  "human_ratification_required": true
+}

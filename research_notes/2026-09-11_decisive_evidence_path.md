@@ -51,27 +51,30 @@ them into one global habit.
 
 ### 2. Run the smallest conditional writer falsifier
 
-The reviewed Multi-key Writer Gateway **V7 simple scout** is the next
-development experiment after its exact implementation grant,
-implementation/tests, independent reviewer, scientific advocate, and later
-execution grant. V6 is retired because its 165-cell custody shell would spend
-31--49 engineering hours reproducing machinery reserved for C11.
+The Multi-key Writer Gateway **V10R1 simple scout** is the next development
+experiment after its exact implementation ratification, implementation/tests,
+independent reviewer, scientific advocate, and later execution grant. V7 was
+retired during review because its apparently balanced mapping still admitted
+tool-only and mode-only solutions. V8--V10 progressively closed that defect and
+the remaining label/interface ambiguities; V10R1 is the stable ratification
+candidate. The larger V6 custody shell remains deferred with C11.
 
-V7 asks whether complementary rank-8 adapters can carry multiple seen
+V10R1 asks whether complementary rank-8 adapters can carry multiple seen
 tool-by-mode endpoint policies under held renderings while preserving the ACT
-interface and avoiding four explicit spill families. It uses two disjoint
-roots, sixteen keys per root and four clean-base fits under a three A40-hour
-cap. A fixed routine, global action bias, or mode-only policy cannot solve the
-crossed mapping.
+interface and avoiding explicit spill families. It uses two disjoint roots,
+sixteen evaluated keys per root and four clean-base fits under a three A40-hour
+cap. Its XOR-oriented maps make every enumerated constant, tool-only,
+mode-only, stratum-only, stratum-by-mode, and declared categorical nuisance
+policy achieve at most 1/2 balanced accuracy on the frozen surface.
 
-Passing V7 means only supervised conditional endpoint-policy carriage. It
+Passing V10R1 means only supervised conditional endpoint-policy carriage. It
 does not establish lived-outcome causality, discovery, generalization,
 retention, parenting, connected memory, or a whole-agent learning effect.
 
-### 3. Qualify persistence only after a V7 pass
+### 3. Qualify persistence only after a V10R1 pass
 
-Do not pay for a retention campaign if V7 cannot first carry conditional
-policies. If V7 passes both roots, freeze its exact writer representation and
+Do not pay for a retention campaign if V10R1 cannot first carry conditional
+policies. If V10R1 passes both roots, freeze its exact writer representation and
 add one separately approved qualification stage:
 
 - one equal-sized, identity-disjoint cumulative write;
@@ -147,10 +150,10 @@ efficiency measure. None is inferred from a writer-gateway or C11 pass.
 
 ## Stop rules
 
-- If V7 does not pass conditional mapping plus every spill/interface gate,
+- If V10R1 does not pass conditional mapping plus every spill/interface gate,
   stop scaling parenting through that writer representation. Use the result
   to characterize broad-habit writing and redesign the representation.
-- If V7 passes but the unrelated write erases the old mapping, do not start a
+- If V10R1 passes but the unrelated write erases the old mapping, do not start a
   paper-grade childhood; solve cumulative retention first.
 - If the matched text carrier succeeds while the adapter fails, localize the
   bottleneck to parametric writing/access rather than the task or memory

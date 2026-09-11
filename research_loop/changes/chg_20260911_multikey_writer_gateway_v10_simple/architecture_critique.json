@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "mwg10_adversarial_cross_critique_v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v10_simple",
+  "state": "critiqued",
+  "architecture_change_sha256": "f46afcd0909f82eebb6ea77728bf478b3db90758b6d4e6a88f2bd72b34b7201b",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "mwg10.scientific.fresh_a",
+      "sha256": "1b257c1ce0e145219c4a7b7504d05f1492ccd341f03a6a01f8d1c5d58a40fe96"
+    },
+    {
+      "interpretation_id": "mwg10_systems_fresh_v1",
+      "sha256": "1b819da48cc09b5e1479d73273013bd3e98f2cd17b035503200f0f00bd0fac1e"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Research operating contract separating model deliberation, exact human ratification, implementation, review, and execution authority."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Schema governing this adversarial cross-critique artifact."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/human_directive.txt",
+      "sha256": "b342ec6217980b5823a9e432c687756517931ff4e442a088baa123c1089f363f",
+      "purpose": "Verbatim direction to use simple hygiene now and defer final paper-grade guard completion and enforcement to C11."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/scope_proposal.json",
+      "sha256": "ddef05b593331667243876fc6387b8cf1a11553ec8f0429004de9d549d781d72",
+      "purpose": "Proposal-only requested source and CPU-test scope plus explicit execution, claim, lineage, and C11 prohibitions."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/exact_scope.md",
+      "sha256": "12a077950730c3abaef32b04a861d901ef4bae25a22e640b152472f5f364f549",
+      "purpose": "Normative V10 overlay containing the deliberate reducer choices, cardinalities, and proposed maximum pass wording."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v10_simple/architecture_change.json",
+      "sha256": "f46afcd0909f82eebb6ea77728bf478b3db90758b6d4e6a88f2bd72b34b7201b",
+      "purpose": "Architecture proposal under cross-critique."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/exact_scope.md",
+      "sha256": "eac3e25c93230f3788612b3d0a25c0dac3609d49b4a5d9e28cf853ba806c0955",
+      "purpose": "Complete incorporated V9 experiment, gate, visibility, hygiene, and claim contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/architecture_consensus.json",
+      "sha256": "cd3e243b01e439ce2facb19ed745ee265572e75d7785eeb35fc1efdbb2977158",
+      "purpose": "Incorporated V9 model consensus, still marked human-required, whose candidate reducer repairs and claim quantifiers frame the V10 disagreement."
+    }
+  ],
+  "strongest_case": "The systems interpretation has the stronger reading of V10's authority and reducer design. AGENTS.md says model consensus cannot ratify architecture, the incorporated V9 consensus itself remains human-required, and V10 expressly says its amendment controls conflicts. V10 may therefore propose, for fresh exact human ratification, a line-anchored ACT occurrence rule and ASCII-only boundary trimming even though V9's adjudicator recommended anywhere-substring counting and Unicode-whitespace stripping. The alternatives are scientifically coherent and smaller: multiple-ACT then means multiple protocol-line attempts rather than arbitrary mentions of ACT: inside malformed prose, while strict whole-output validity still makes every extra-prose or repeated-same-line output invalid and incorrect; the four-byte boundary grammar is exact, version-independent, and performs no repair or Unicode normalization. The split reducers, fixed denominators, expected-answer anti-flow, four-adapter quantifiers, proposal-only authority, and C11 deferral otherwise preserve the narrow supervised writer-capacity scout. The alternatives must be described as V10's deliberate superseding choices and tested on distinguishing bytes, not claimed to reproduce the V9 consensus's selected predicates verbatim.",
+  "reviewed_acceptance_test_ids": [
+    "MWG10_T01",
+    "MWG10_T02",
+    "MWG10_T03",
+    "MWG10_T04"
+  ],
+  "concerns": [
+    {
+      "concern_id": "MWG10-CRIT-C1-DELIBERATE-LOCAL-PREDICATES",
+      "category": "architecture",
+      "severity": "note",
+      "statement": "V10's line-anchored ACT predicate and ASCII-only boundary trimming are permissible deliberate local amendments; disagreement with the unratified V9 consensus recommendations is not itself a defect.",
+      "evidence": "The V9 consensus has state human_required and a pending human decision; AGENTS.md denies ratification power to models; V10's exact scope binds V9 by hash but says that the V10 amendment controls conflicts. The proposed predicates are total functions of preserved bytes, do not alter model-visible information, and leave malformed non-multiple outputs invalid under the separate whole-output predicate.",
+      "acceptance_test_ids": [
+        "MWG10_T01",
+        "MWG10_T02"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "MWG10-CRIT-C2-OFF-MULTIPLE-ACT-GATE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The OFF multiple-ACT scope is label-bearing and genuinely ambiguous: V10 requires a zero rate for each root and condition, which includes OFF, while the inherited V9 interface gate requires zero multiple-ACT outputs only for each adapter.",
+      "evidence": "V10 section 2 assigns a fixed-64 rate to every root-and-condition pair and immediately says the required rate is exactly zero. V10 section 3 then invokes V9's primary validity and multiple-ACT requirements, while V9 defines interface_ok adapter-by-adapter. Consequently an OFF-only second protocol line can either be a recorded diagnostic or make interface_ok false and change the total label on identical complete records.",
+      "acceptance_test_ids": [
+        "MWG10_T01",
+        "MWG10_T02",
+        "MWG10_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG10-CRIT-C3-SHORTCUT-CLAIM-QUANTIFIERS",
+      "category": "scientific",
+      "severity": "blocking",
+      "statement": "The maximum pass wording does not exactly identify the shortcut families quantified by the frozen-geometry result.",
+      "evidence": "The phrase each named one-factor can omit or misclassify the named stratum-by-mode interaction, and declared surface-covariate policy family does not say that every declared non-key categorical covariate is evaluated both alone and crossed with mode. The incorporated V9 scope and consensus require those quantifiers on each frozen scored multiset, maximum target balanced accuracy exactly 1/2, and only the limited consequence that passing behavior was not solely an enumerated tested policy.",
+      "acceptance_test_ids": [
+        "MWG10_T01",
+        "MWG10_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG10-CRIT-C4-ASCII-DIVERGENCE-FIXTURE",
+      "category": "evaluation",
+      "severity": "material",
+      "statement": "The deliberate ASCII-only boundary rule needs an explicit non-ASCII boundary-whitespace negative fixture so the source cannot silently implement the V9 Unicode-strip recommendation.",
+      "evidence": "V10's named golden cases mention boundary whitespace generically, whereas U+00A0 or another UTF-8 Unicode whitespace boundary is accepted by the V9 consensus recommendation and rejected by V10. Both interpretations identify this byte pattern as the decisive discriminator, but MWG10_T02 does not expressly require it.",
+      "acceptance_test_ids": [
+        "MWG10_T02"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG10-CRIT-C5-REJECT-C11-EXPANSION",
+      "category": "operations",
+      "severity": "note",
+      "statement": "No concern justifies importing C11 custody, isolation, or generalized guard enforcement into this repair.",
+      "evidence": "The human directive defers final paper-grade guard completion and enforcement to C11; V10's forbidden scope excludes C11; and every live issue is resolved by two local normative sentences and focused deterministic fixtures without changing custody or execution machinery.",
+      "acceptance_test_ids": [
+        "MWG10_T01",
+        "MWG10_T04"
+      ],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [],
+  "missing_acceptance_tests": [
+    "Add a complete-record fixture in which only OFF has multiple_ACT=true and both adapters have multiple_ACT=false, proving that the OFF rate is diagnostic-only and does not change interface_ok or the total label; pair it with an adapter multiple-ACT fixture that yields INTERFACE_INVALID at the applicable precedence.",
+    "Add explicit valid-UTF-8 non-ASCII boundary-whitespace cases, including U+00A0, that remain invalid for primary output and incorrect for native-interface output under V10's ASCII-only byte trimming.",
+    "Make MWG10_T01 assert the exact shortcut claim quantifiers: each frozen scored multiset; constant, tool-only, mode-only, stratum-only, and stratum-by-mode deterministic policy families; and every declared non-key categorical surface covariate both alone and crossed with mode."
+  ],
+  "human_questions": [
+    "Will Rohin ratify V10's line-anchored ACT and ASCII-only boundary rules as deliberate superseding scientific choices, while amending section 2 to state that OFF multiple-ACT is reported diagnostically but only each adapter's fixed 64 primary outputs are gate-bearing?",
+    "Will Rohin replace the shortcut sentence with: On each frozen scored multiset, the maximum target balanced accuracy was exactly 1/2 for each of the constant, tool-only, mode-only, stratum-only, and stratum-by-mode deterministic policy families, and for every declared non-key categorical surface-covariate predictor both alone and crossed with mode; therefore passing adapter behavior was not solely any such enumerated policy on the evaluated surface?",
+    "Will Rohin keep ratification limited to the three named source files, deterministic CPU evidence, and V10-local reviews, with all model, tokenizer, training, adapter, benchmark, GPU, lineage, parenting, claim, release, submission, and C11 implementation or enforcement actions still forbidden?"
+  ]
+}

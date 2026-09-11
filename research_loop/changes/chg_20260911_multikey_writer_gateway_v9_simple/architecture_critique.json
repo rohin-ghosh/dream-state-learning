@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260911_multikey_writer_gateway_v9_simple.cross_critique.fresh_v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v9_simple",
+  "state": "critiqued",
+  "architecture_change_sha256": "b9340d9fa18a43b16df0733937692b2663d264d11c4b72d0f7928ea764b5b622",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "mwg9.scientific.fresh_a",
+      "sha256": "6b636a0bacccd1790a2d61435d929c6adb8a6c6a54f72c176991e7b1a285c117"
+    },
+    {
+      "interpretation_id": "mwg9_systems",
+      "sha256": "ef26a70b02f6da9756830803dd3c478359efce181dac5747663e56346e2d8c90"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e",
+      "purpose": "Research-agent operating contract and human-ratification boundary."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/human_directive.txt",
+      "sha256": "b342ec6217980b5823a9e432c687756517931ff4e442a088baa123c1089f363f",
+      "purpose": "Verbatim instruction to use simple hygiene now and defer the paper-grade guard to C11."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/exact_scope.md",
+      "sha256": "eac3e25c93230f3788612b3d0a25c0dac3609d49b4a5d9e28cf853ba806c0955",
+      "purpose": "Normative V9 geometry, visibility, evaluation, hygiene, resource, and claim contract."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/scope_proposal.json",
+      "sha256": "b2099dd93571803eb205012725ca2adb1ec27f90806175781d3596e1fd074f3f",
+      "purpose": "Proposed source-only authority and explicit execution exclusions."
+    },
+    {
+      "path": "research_loop/schemas/architecture_critique.schema.json",
+      "sha256": "10329fe8edf89dc29faf965151942ed9be102671eef42cf356f8f1614d89d34d",
+      "purpose": "Validation schema for this critique artifact."
+    }
+  ],
+  "strongest_case": "The systems interpretation has the stronger account of the assay geometry, staged authority, and C11 boundary, and it is defensible on three of the scientific interpretation's five alleged blockers: SCI-A1 has one ordinary reading fixed by the scope's four-value median rule and the phrase 'key medians'; SCI-A4 supplies mathematically total equations, excludes non-finite likelihood evidence, forbids decision rounding, and may bind a stable numeric implementation in reviewed source and golden fixtures; and SCI-A5 is already materially closed by pre-fit manifest binding of panels, the enumerated 128-row training corpus, the fit allowlist, fixed pre-execution request bytes, full-payload cache revalidation, and no cross-run lookup. The omitted panel rows would improve the summary matrix but do not create a permitted information flow or label fork. The systems interpretation nevertheless goes too far in reporting no ambiguity: SCI-A2 leaves the separate, gate-bearing multiple-ACT indicator without a predicate, and SCI-A3 leaves the gate-bearing unrelated-interface strict-correct indicator without a comparison/parser rule. Those two choices can change interface_ok on identical raw output and therefore block a claim that V9 is implementation-determinate for source ratification until locally specified and covered by golden cases. Neither repair requires process isolation, generalized custody, reusable guards, special-file defense, or any other deferred C11 work. Separately, the scientific interpretation is right that the maximum pass wording must say 'all 16 per adapter' and must describe shortcut chance as a deterministic property of the frozen scored geometry, not as an empirically fitted shortcut probe.",
+  "reviewed_acceptance_test_ids": [
+    "MWG9_T01",
+    "MWG9_T02",
+    "MWG9_T03",
+    "MWG9_T04"
+  ],
+  "concerns": [
+    {
+      "concern_id": "CRIT-A1-MARGIN-MEDIAN-NONBLOCKING",
+      "category": "evaluation",
+      "severity": "note",
+      "statement": "SCI-A1 does not establish a genuine label fork: a key directional-margin median is the median of that key's four held-template margins, with the already stated arithmetic mean of the middle two values, applied separately to every adapter.",
+      "evidence": "The scope defines one margin per prompt, fixes four held templates per key, calls the gate quantity a 'key median,' and immediately defines the median of four values. Mean and minimum are not reasonable conforming readings of the word median. The systems assumption merely makes this entailed reading explicit.",
+      "acceptance_test_ids": [
+        "MWG9_T03"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "CRIT-A2-MULTIPLE-ACT-PREDICATE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The separate zero-multiple-ACT gate lacks a ratified predicate and denominator treatment for invalid raw outputs containing two or more action-like emissions.",
+      "evidence": "The strict parser determines validity but the scope also counts multiple ACTs separately and requires zero. Exact-line matches, protocol-line matches, and raw substring occurrences disagree on malformed, case-varied, whitespace-varied, or mixed valid/invalid outputs. Because interface_ok precedes binding and spill labels, this can change the final label on identical records. Treating the choice as an unratified helper algorithm, as the systems interpretation does, is not defensible for a gate-bearing metric.",
+      "acceptance_test_ids": [
+        "MWG9_T02",
+        "MWG9_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT-A3-NATIVE-INTERFACE-SCORING",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The eight unrelated native-interface outputs need one exact strict-correct comparison rule because their expected ACT values are outside the a0/a1 grammar.",
+      "evidence": "The only defined parser accepts complete stripped ACT: a0 or ACT: a1 text, while the interface panel expects eight other native ACT outputs and gates every adapter at 8/8. Raw-byte equality, stripped-text equality, and a separate native-action grammar differ on whitespace, newline, casing, and extra text. The words '8/8 exactly' fix the threshold, not the scoring predicate, so identical raw records can yield different interface_ok values.",
+      "acceptance_test_ids": [
+        "MWG9_T02",
+        "MWG9_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT-A4-NUMERICS-SOURCE-DETAIL",
+      "category": "statistics",
+      "severity": "note",
+      "statement": "SCI-A4 is a source-quality requirement, not an unresolved scientific definition that blocks source ratification.",
+      "evidence": "The scope fixes ell, q, NLL, arithmetic reductions, inclusive thresholds, non-finite likelihood aborts, and the prohibition on rounded decision values. A stable logaddexp/logsumexp implementation and its concrete numeric representation can be bound in the exact reviewed source and metric-version hash, then exercised at equality and immediately below by MWG9_T03. Demanding one architecture-level floating implementation before source authoring would confuse a mathematical contract with its tested implementation.",
+      "acceptance_test_ids": [
+        "MWG9_T03"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "CRIT-A5-PANEL-VISIBILITY-NONBLOCKING",
+      "category": "visibility_leak",
+      "severity": "note",
+      "statement": "SCI-A5 identifies a documentary omission in the summary visibility matrix, but not an open information flow that blocks source ratification.",
+      "evidence": "The normative scope already freezes and manifest-binds all panel prompts before fitting; fixes training as exactly the 128-row root-map Cartesian product; restricts fit input to its allowlisted supervised projection; binds operation kind plus prompt, candidates, adapter/OFF identity, seed, and parameters in every request; revalidates full cache payloads; and prohibits cross-run lookup and post-result retuning. These controls prevent panel assets or results from changing fitting and prevent cache aliasing even if source-level names for the non-oracle operation kinds are chosen later. Adding explicit panel cells and names would be harmless clarification, but their absence does not contradict a permitted flow.",
+      "acceptance_test_ids": [
+        "MWG9_T02",
+        "MWG9_T03"
+      ],
+      "resolution_required": false
+    },
+    {
+      "concern_id": "CRIT-CLAIM-KEY-CARDINALITY",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The strongest permitted pass statement must quantify the all-key NLL condition per root-map adapter rather than saying only 'all sixteen seen keys' after referring to two roots.",
+      "evidence": "There are 16 tool-mode keys in each adapter, four root-map adapters, and 64 adapter-specific key NLL-gain tests. The gates require every one of the 16 keys separately in both adapters of each root. The current sentence can be read as only 16 total tests and should be replaced by 'in each of the four root-map adapters, all 16 evaluated tool-by-mode keys.'",
+      "acceptance_test_ids": [
+        "MWG9_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT-CLAIM-SHORTCUT-WORDING",
+      "category": "scientific",
+      "severity": "material",
+      "statement": "The final claim must report chance as a proven property of the constructed target geometry, not say that shortcut controls empirically 'remained at chance.'",
+      "evidence": "MWG9_T01 enumerates the maximum target balanced accuracy of named deterministic factor policies and declared categorical covariates on the frozen multisets; it does not fit probes or observe learned internal routes. A passing generated BA excludes behavior solely determined by one enumerated factor, but it cannot identify the representation or show that an empirical shortcut process stayed at chance.",
+      "acceptance_test_ids": [
+        "MWG9_T01",
+        "MWG9_T03"
+      ],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "CRIT-C11-BOUNDARY",
+      "category": "architecture",
+      "severity": "note",
+      "statement": "The required A2 and A3 repairs are local metric definitions and fixtures; expanding them into paper-grade custody would violate the explicit C11 deferral.",
+      "evidence": "A raw-output counting predicate, a strict native-output scoring predicate, and their golden cases fit in the three named V9 files and do not require process or OS isolation, generalized filesystem threat analysis, special-file custody, interruption injection, reusable guard infrastructure, universal serialization, or release controls. The scientific interpretation also explicitly rejects that expansion, while the systems interpretation correctly preserves the boundary.",
+      "acceptance_test_ids": [
+        "MWG9_T02",
+        "MWG9_T03",
+        "MWG9_T04"
+      ],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [],
+  "missing_acceptance_tests": [
+    "After ratifying the multiple-ACT predicate, add golden raw outputs that distinguish one valid ACT, two valid ACT lines, one valid plus one malformed ACT-like emission, repeated inline ACT substrings, casing and whitespace variants, and extra text; verify the fixed denominator and interface label precedence.",
+    "After ratifying native-interface scoring, add eight-of-eight, one-mismatch, missing, extra-text, leading/trailing-whitespace, newline, casing, and malformed native ACT fixtures for OFF and every adapter, including exact INTERFACE_INVALID boundary behavior."
+  ],
+  "human_questions": [
+    "Will Rohin withhold source ratification only until the exact multiple-ACT predicate and exact unrelated-native-interface scoring rule are added to hash-bound V9 bytes, rather than treating all five scientific observations as blockers?",
+    "Will Rohin ratify the pass wording as 'in each of the four root-map adapters, all 16 evaluated tool-by-mode keys met the NLL-gain threshold' and describe chance as the enumerated maximum of the frozen target geometry rather than an empirical shortcut-probe result?",
+    "Will Rohin preserve the simple local repair boundary and reject any attempt to add process isolation, generalized custody, reusable guard machinery, special-file hardening, or release controls before the deferred C11 work?",
+    "After those local semantic and claim-wording repairs, will Rohin continue to reserve every real-tokenizer, model, training, adapter, GPU, lineage, parenting, scientific-claim, release, and submission action for separately ratified later authority?"
+  ]
+}
