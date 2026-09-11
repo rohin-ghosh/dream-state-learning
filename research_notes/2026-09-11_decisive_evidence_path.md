@@ -89,18 +89,32 @@ Lexical restatement is an echo diagnostic, not success. Executed conditional
 action, world outcome, and persistence after later writes are the meaningful
 measurements. Existing R4 histories remain developmental evidence only.
 
-### 5. Full-paper claims require the final C11 run
+### 5. C11 closes only the supplied-memory mechanism ceiling
 
-Only after the mechanism representation and parenting protocol are frozen do
-we finish and enforce C11. The final run requires fresh source-disjoint report
-material, independent childhood roots, fixed root-level statistics, common
-randomness, strong active-text memory, parent removal, and immutable
-provenance/receipt handling.
+Only when the supplied-memory ceiling is actually ready to run do we finish
+and enforce the full C11 guard. C11 tests a fixed-policy, fixed-topology
+connected-route benchmark using supplied memory. It does not test learning,
+LoRA transport, retention, recurrence, lifetime improvement, parenting, or the
+complete organism, and it cannot stand in for those results.
 
-The broader Dream--LoRA--Think objective additionally requires experiments
-on connected knowledge, goal-directed traversal/expansion, increasing
-lifetime, and compression or a clearly justified information-efficiency
-measure. None is inferred from a writer-gateway pass.
+### 6. The learned-organism relay is a separate experiment
+
+The broader paper requires a separately approved learned-organism PCFL relay:
+the child acquires supported atoms and authentic co-use links through its own
+actions; a new goal tests goal-conditioned traversal; the resulting memory
+causes a discriminating information-seeking action; the public outcome is
+compiled and written; and a later disjoint goal needs that new relation.
+
+That relay requires fresh source-disjoint material, independent roots, fixed
+root-level statistics, common randomness, strong active-text memory,
+parent/nursery removal, wrong-life and link/binding derangements, bridge and
+write cuts, and immutable provenance/receipt handling. C11 can validate that
+the benchmark and finite read topology are solvable before this more expensive
+learned-carrier test; it cannot validate the learned-carrier claim itself.
+
+The broader Dream--LoRA--Think objective additionally requires increasing-
+lifetime evidence and compression or a clearly justified information-
+efficiency measure. None is inferred from a writer-gateway or C11 pass.
 
 ## Stop rules
 
@@ -115,4 +129,3 @@ measure. None is inferred from a writer-gateway pass.
 - If the writer and text carrier both fail while the explicit oracle passes,
   repair the carriers. If the oracle fails, the assay is invalid.
 - Do not relabel any development panel, root, or post-hoc threshold as C11.
-
