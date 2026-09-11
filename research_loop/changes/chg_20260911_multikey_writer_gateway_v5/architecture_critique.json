@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260911_multikey_writer_gateway_v5.cross.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v5",
+  "state": "critiqued",
+  "architecture_change_sha256": "b0ab35a8764ff642f158f303f1a436b8bd4a9d6742e34fae55dd22192cb8fed0",
+  "interpretation_hashes": [
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v5.scientific.v1", "sha256": "ebbef94093b4aad322e6487ea314452661604550fd77075936e4c8b901c5adb2"},
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v5.systems", "sha256": "701351b4ddc3ef9a1c0b8678f22a18489205c9b369495417c1802a6dd89e8ce5"}
+  ],
+  "context_files": [
+    {"path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v5/interpretation_scientific.json", "sha256": "ebbef94093b4aad322e6487ea314452661604550fd77075936e4c8b901c5adb2", "purpose": "Fresh scientific review and cross-critique accepting the systems repairs."},
+    {"path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v5/interpretation_systems.json", "sha256": "701351b4ddc3ef9a1c0b8678f22a18489205c9b369495417c1802a6dd89e8ce5", "purpose": "Fresh systems review finding three exact contract mismatches."}
+  ],
+  "strongest_case": "V5 correctly repairs V4 lifecycle totality, dispatcher authority, selected-only bank access, and source-boundary scope while preserving the full scientific protocol. The only remaining defects are three finite serialization mismatches: four tests are gated too late, T08 names the wrong role pair, and the selector's committed-adapter hash source is implicit.",
+  "reviewed_acceptance_test_ids": ["MWG5_T01", "MWG5_T02", "MWG5_T03", "MWG5_T04", "MWG5_T05", "MWG5_T06", "MWG5_T07", "MWG5_T08"],
+  "concerns": [
+    {"concern_id": "MWG5_C01_PRE_MODEL_GATE", "category": "operations", "severity": "blocking", "statement": "T04, T05, T06, and T08 say required_before gpu_run despite the inherited requirement that they precede any model-facing invocation on any device.", "evidence": "Both cross-critiques accept the serialized gate mismatch.", "acceptance_test_ids": ["MWG5_T04", "MWG5_T05", "MWG5_T06", "MWG5_T08"], "resolution_required": true},
+    {"concern_id": "MWG5_C02_REVIEW_ROLE_PAIR", "category": "operations", "severity": "blocking", "statement": "T08 substitutes two independent reviewers for one fresh independent implementation reviewer plus one separate author-side scientific advocate.", "evidence": "Both cross-critiques accept that the advocate role is mandatory and cannot be replaced by an extra reviewer.", "acceptance_test_ids": ["MWG5_T08"], "resolution_required": true},
+    {"concern_id": "MWG5_C03_ADAPTER_HASH_RECEIPT", "category": "visibility_leak", "severity": "blocking", "statement": "The selector must populate adapter identity/hash in selected_execution_call but its exact read-only source is not serialized.", "evidence": "The barrier's derived state is referenced without defining a canonical four-commit receipt or selector equality checks.", "acceptance_test_ids": ["MWG5_T01", "MWG5_T02", "MWG5_T07"], "resolution_required": true}
+  ],
+  "visibility_failures": ["Bind an immutable ordered four-commit adapter receipt and allow the selector read-only derived access solely to copy and verify the non-OFF adapter identity/hash."],
+  "missing_acceptance_tests": ["Exercise missing, stale, duplicate, unexpected, mismatched, and non-committed adapter receipt entries.", "Require every T01-T08 gate before any model-facing call on CPU or GPU.", "Require the independent-reviewer plus scientific-advocate role pair on identical bytes."],
+  "human_questions": ["May a V6 successor make only these three literal contract repairs while preserving every V4/V5 scientific and systems invariant?", "Should the repaired proposal then be brought once for implementation-only ratification?"]
+}

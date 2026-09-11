@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "chg_20260911_multikey_writer_gateway_v5.consensus.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v5",
+  "state": "human_required",
+  "architecture_change_sha256": "b0ab35a8764ff642f158f303f1a436b8bd4a9d6742e34fae55dd22192cb8fed0",
+  "interpretation_hashes": [
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v5.scientific.v1", "sha256": "ebbef94093b4aad322e6487ea314452661604550fd77075936e4c8b901c5adb2"},
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v5.systems", "sha256": "701351b4ddc3ef9a1c0b8678f22a18489205c9b369495417c1802a6dd89e8ce5"}
+  ],
+  "critique_sha256": "60fd32f766cf5d7be154e769026e859413b8c5b627f4d6017d92dd940e741403",
+  "recommendation": "rework",
+  "agreements": [
+    "V5 preserves every V4 scientific invariant and correctly closes the four V4 systems defects.",
+    "The 11-by-15 visibility product is complete with 165 unique cells.",
+    "Only three literal contract mismatches remain: pre-model gate labels, review role names, and the selector's immutable adapter-hash receipt.",
+    "The repair does not change model, data, rank, dose, workload, estimator, threshold, lifecycle label, or claim scope.",
+    "Ongoing mechanism and parenting scouts remain unblocked under simple hygiene, and C11 remains parked."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK",
+      "sources": ["scientific", "systems"],
+      "issue": "Whether inherited intent can override three inconsistent serialized V5 fields.",
+      "positions": [
+        {"actor": "scientific", "position": "The scientific protocol passes if inherited stricter gates and role distinctions control."},
+        {"actor": "systems", "position": "The exact V5 bytes must themselves encode those gates, roles, and adapter receipt."}
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The scientific reviewer accepted all three systems findings on cross-critique; implementation must follow unambiguous current bytes rather than unstated precedence assumptions.",
+        "selected_position": "Require a minimal newly hash-bound V6 successor changing only these three fields.",
+        "required_change": "Move T04/T05/T06/T08 to model_execution; restore independent reviewer plus scientific advocate everywhere; define and visibility-bind an ordered immutable four-commit adapter receipt consumed read-only by the selector.",
+        "acceptance_test_ids": ["MWG5_T01", "MWG5_T02", "MWG5_T04", "MWG5_T05", "MWG5_T06", "MWG5_T07", "MWG5_T08"]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {"concern_id": "MWG5_C01_PRE_MODEL_GATE", "status": "accepted", "rationale": "A GPU-only boundary would permit model-facing CPU execution before required evidence.", "resolution_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK", "required_change": "Set T04, T05, T06, and T08 required_before to model_execution and state the universal model-facing boundary."},
+    {"concern_id": "MWG5_C02_REVIEW_ROLE_PAIR", "status": "accepted", "rationale": "Independent review and author-side scientific advocacy are distinct mandatory roles.", "resolution_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK", "required_change": "Restore the exact role pair over identical bytes; both pass and advocate cannot override rejection."},
+    {"concern_id": "MWG5_C03_ADAPTER_HASH_RECEIPT", "status": "accepted", "rationale": "Non-OFF calls need a deterministic read-only source for exact committed adapter identity and hash.", "resolution_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK", "required_change": "Bind the ordered four-commit receipt, selector read-only copy/equality checks, and missing/stale/duplicate/mismatch failures."}
+  ],
+  "upstream_disagreement_dispositions": [
+    {"disagreement_id": "MWG5_SYS_D01_TEST_GATE_TIMING_UNDERSTATES_INHERITED_BOUNDARY", "status": "accepted", "rationale": "Accepted by both reviewers on cross-critique.", "resolution_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK"},
+    {"disagreement_id": "MWG5_SYS_D02_T08_REVIEW_ROLE_DRIFT", "status": "accepted", "rationale": "Accepted by both reviewers on cross-critique.", "resolution_id": "MWG5_CONS_D01_SCIENTIFIC_PASS_SYSTEMS_REWORK"}
+  ],
+  "acceptance_test_dispositions": [
+    {"test_id": "MWG5_T01", "status": "modified", "rationale": "Add exact ordered four-commit receipt identity and hash checks.", "replacement_test_id": "MWG6_T01"},
+    {"test_id": "MWG5_T02", "status": "modified", "rationale": "Add selector read-only derived receipt access and forbidden mutations.", "replacement_test_id": "MWG6_T02"},
+    {"test_id": "MWG5_T03", "status": "retained", "rationale": "Source boundaries are closed.", "replacement_test_id": "MWG6_T03"},
+    {"test_id": "MWG5_T04", "status": "modified", "rationale": "Move required boundary to model_execution.", "replacement_test_id": "MWG6_T04"},
+    {"test_id": "MWG5_T05", "status": "modified", "rationale": "Move required boundary to model_execution.", "replacement_test_id": "MWG6_T05"},
+    {"test_id": "MWG5_T06", "status": "modified", "rationale": "Move required boundary to model_execution.", "replacement_test_id": "MWG6_T06"},
+    {"test_id": "MWG5_T07", "status": "modified", "rationale": "Add adapter-receipt fault injection.", "replacement_test_id": "MWG6_T07"},
+    {"test_id": "MWG5_T08", "status": "modified", "rationale": "Restore the reviewer/advocate pair and move before model_execution.", "replacement_test_id": "MWG6_T08"}
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": ["May V6 make only the three accepted literal repairs and preserve all other V4/V5 bytes in force?", "After fresh V6 review, should its exact implementation-only scope be presented once for ratification?"],
+    "implementation_forbidden": true
+  }
+}
