@@ -1,0 +1,525 @@
+{
+  "acceptance_test_dispositions": [
+    {
+      "rationale": "Retained; it is the closest existing test for direct workflow/context authority, but cannot prove full untruncated controlling-byte visibility.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-WORKFLOW-CONTEXT-AUTHORITY-01"
+    },
+    {
+      "rationale": "Retained; registry and roster non-drift remains necessary.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-REGISTRY-ROSTER-NONDRIFT-02"
+    },
+    {
+      "rationale": "Retained; two-source provenance remains necessary but does not cure the broader future-memory provenance gap.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-TWO-SOURCE-PROVENANCE-03"
+    },
+    {
+      "rationale": "Retained; authenticated observations are necessary but guard identity and independent conformance remain unresolved.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04"
+    },
+    {
+      "rationale": "Retained; synthetic matcher coverage remains necessary but cannot self-attest production guard behavior.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-SYNTHETIC-MATCHER-05"
+    },
+    {
+      "rationale": "Retained; nonexposure remains necessary but does not establish independent guard validation.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-GUARD-NONEXPOSURE-06"
+    },
+    {
+      "rationale": "Retained; rendered delayed visibility remains necessary but does not close all staged-substage ordering.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-VISIBILITY-RENDER-DELAYED-07"
+    },
+    {
+      "rationale": "Retained; finite-relay claim gating remains necessary but must become clause-specific.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "V11-FINITE-RELAY-CLAIM-GATE-08"
+    },
+    {
+      "rationale": "Retained as a future anti-overclaim obligation only; it is not a sufficient or presently executable organism experiment.",
+      "replacement_test_id": "",
+      "status": "retained",
+      "test_id": "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+    }
+  ],
+  "agreements": [
+    "C11 must remain a governance-bound, fixed-policy supplied-memory precursor and cannot receive DREAM, SLEEP, LoRA, self-write, online-learning, recurrence, lifetime, generalization, or whole-organism credit.",
+    "Human authority remains staged: deliberation, source authoring, exact-byte review, exact-byte ratification, preparation, and execution are distinct and never auto-promote.",
+    "The 18-condition/501-slot roster, finite resource ceiling, visibility exclusions, two-source boundary provenance intent, and 32-record registry must not drift.",
+    "A pass projection must be narrow and governance metadata must not become an actor/model-visible channel.",
+    "The future organism requires grounded episodes, goal-blind DREAM, independent support or revocation, validated SLEEP transport, goal-conditioned THINK, and a later eligibility boundary."
+  ],
+  "architecture_change_sha256": "5f1b6b29074d09647a8d06c557d607da41bc51ef24297b19139b63dce8adf791",
+  "artifact_type": "architecture_consensus",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v11",
+  "concern_dispositions": [
+    {
+      "concern_id": "C01-DIRECT-CONTEXT-BYTES-NOT-FRESH-VISIBLE",
+      "rationale": "Accepted: controlling predecessor bytes are omitted and the configured 15,000-character cap prevents fresh roles from receiving complete controlling sources.",
+      "required_change": "Rework the workflow/state so every controlling artifact is directly bound and delivered in full; either add the omitted candidate-v3 and closure-v2 bytes or fully restate and expressly supersede them. Register a context-completeness falsifier; V11-WORKFLOW-CONTEXT-AUTHORITY-01 covers only part of this requirement.",
+      "resolution_id": "D-CONTEXT-COMPLETENESS",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C02-GUARD-IDENTITY-AND-CUSTODY-CONFLICT",
+      "rationale": "Accepted: the controllerless description conflicts with the executable singleton guard in plan v2.",
+      "required_change": "Choose and bind one guard identity, media type, custody surface, plan membership, census path, review preimage, and runtime actor across all successor bytes; V11-AUTHENTICATED-GUARD-OBSERVATIONS-04 is only partial coverage.",
+      "resolution_id": "D-GUARD-IDENTITY",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C03-EXECUTABLE-GUARD-SELF-ATTESTS",
+      "rationale": "Accepted: the guard is presently the sole arbiter of its grammar and nonexposure behavior.",
+      "required_change": "Add an independently authored and reviewed reference interpreter or proof-producing checker that does not import or trust the guard and validates grammar, closure, mutations, projection, and failure behavior. No registered test fully covers this; tests 04-06 cover portions only.",
+      "resolution_id": "D-GUARD-INDEPENDENCE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C04-GUARD-GATES-ARE-STAGED-TOO-LATE",
+      "rationale": "Accepted: preparation/materialization-adjacent operations are not mechanically ordered after a same-grant passing guard receipt.",
+      "required_change": "Bind a substage-zero causal-ordering falsifier that rejects every import, preparation, materialization, checker, fixture, or candidate-consumer event lacking the exact passing guard receipt as predecessor. No registered test fully covers this; V11-AUTHENTICATED-GUARD-OBSERVATIONS-04 is closest.",
+      "resolution_id": "D-GUARD-ORDERING",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C05-REVOKED-PROPOSALS-ENTER-SLEEP-EDGE",
+      "rationale": "Accepted: the stated DREAM-to-SLEEP edge conflates supported and revoked proposals.",
+      "required_change": "Specify that only independently supported proposals may enter validated SLEEP transport; revoked proposals must be excluded or represented only as explicit invalidation metadata under a separately defined rule. FUTURE-ORGANISM-CAUSAL-CHAIN-09 is only a partial future constraint.",
+      "resolution_id": "D-REVOKED-TRANSPORT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C06-RECURRENCE-AND-ELIGIBILITY-EDGE-IS-PROSE-ONLY",
+      "rationale": "Accepted: no exact public-event, chronological, support-independence, or feedback eligibility rule operationalizes recurrence.",
+      "required_change": "Bind a later organism protocol with exact event, chronological cut, support-independence, contamination exclusion, and THINK-outcome-to-later-DREAM eligibility rules. FUTURE-ORGANISM-CAUSAL-CHAIN-09 is insufficiently operational.",
+      "resolution_id": "D-DEFERRED-RECURRENCE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C07-OMNIBUS-RELAY-RECEIPT-CAN-LAUNDER-CLAUSE-CREDIT",
+      "rationale": "Accepted: an aggregate receipt cannot establish independent connected-route, calibration, delayed-carrier, scratch, feedback, and baseline clauses.",
+      "required_change": "Bind clause-specific endpoints, receipt dependencies, reducers, finite denominators, withdrawals, and negative dispositions. V11-FINITE-RELAY-CLAIM-GATE-08 is the closest existing test but does not fully cover this.",
+      "resolution_id": "D-CLAUSE-ATTRIBUTION",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C08-C11-DOES-NOT-TEST-ONLINE-LEARNING",
+      "rationale": "Accepted: C11 has no self-authored grounded write, persistence, or later-action causal path.",
+      "required_change": "Keep online-learning, retention, self-write, and organism claims excluded; require a separately ratified intervention on persistent write while holding experience and later goal fixed. FUTURE-ORGANISM-CAUSAL-CHAIN-09 is only a future boundary.",
+      "resolution_id": "D-ONLINE-LEARNING-EXCLUSION",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C09-FUTURE-ORGANISM-TEST-IS-NOT-OPERATIONAL",
+      "rationale": "Accepted: the future causal-chain item names ordering but lacks the ablations and substrate controls necessary for an organism claim.",
+      "required_change": "Rework a separate future protocol with registered edge accumulation, recurrence removal, bridge removal, scale, lifetime, retention, and matched text-versus-LoRA transport tests. FUTURE-ORGANISM-CAUSAL-CHAIN-09 remains necessary but is not sufficient.",
+      "resolution_id": "D-FUTURE-ORGANISM-SUFFICIENCY",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C10-FUTURE-MEMORY-PROVENANCE-IS-UNDERSPECIFIED",
+      "rationale": "Accepted: independent support and memory provenance do not exclude paraphrase, compression, synthetic re-expression, repeated use, or shared ancestry.",
+      "required_change": "Define an exact future independent-support provenance rule tracing each DREAM proposal to grounded roots and rejecting non-independent synthetic or shared-ancestry support. FUTURE-ORGANISM-CAUSAL-CHAIN-09 is only partial coverage.",
+      "resolution_id": "D-DEFERRED-RECURRENCE",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C11-FINITE-CENSUS-CANNOT-SUPPORT-SCALING",
+      "rationale": "Accepted: one fixed topology and policy cannot establish scaling, population, model, lifetime, or topology generalization.",
+      "required_change": "Retain finite-census-only reporting and require a separately preregistered split/scale/lifetime protocol before any scaling claim. V11-FINITE-RELAY-CLAIM-GATE-08 and FUTURE-ORGANISM-CAUSAL-CHAIN-09 only constrain the boundary.",
+      "resolution_id": "D-FINITE-CENSUS-LIMIT",
+      "status": "accepted"
+    },
+    {
+      "concern_id": "C12-GOVERNANCE-CONFORMANCE-IS-NOT-SCIENTIFIC-APPROVAL",
+      "rationale": "Accepted: governance and software conformance cannot validate scientific construct meaning.",
+      "required_change": "Preserve governance evidence as non-scientific and require later independent evidence-to-claim review under a separately ratified scientific protocol. V11-FINITE-RELAY-CLAIM-GATE-08 cannot itself supply scientific approval.",
+      "resolution_id": "D-GOVERNANCE-SCIENCE-BOUNDARY",
+      "status": "accepted"
+    }
+  ],
+  "consensus_id": "chg_20260910_pcfl_m0_mtext_bound_v11.consensus_adjudication_v1",
+  "critique_sha256": "b4f5984efb14fde4c21c2e834d0bdc1197599cc86f129bc73fab0f87c647e2e2",
+  "disagreements": [
+    {
+      "disagreement_id": "D-CONTEXT-COMPLETENESS",
+      "issue": "Whether the hash-bound workflow supplies every controlling byte to fresh reviewers.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Transitive references and the configured context suffice."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "Omitted controlling artifacts and 15,000-character truncation prevent direct, complete fresh-context review."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-WORKFLOW-CONTEXT-AUTHORITY-01"
+        ],
+        "rationale": "The critic position controls because a digest reference cannot substitute for visible normative bytes.",
+        "required_change": "Create a newly bound workflow/state with direct full-byte controlling sources or complete superseding restatements and a dedicated completeness falsifier.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-GUARD-IDENTITY",
+      "issue": "Whether controllerless and executable singleton-guard descriptions are operationally identical.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The descriptions represent one equivalent guard."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "They imply different executable status, custody, review, and census surfaces."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04"
+        ],
+        "rationale": "One identity must be bound before any review or execution chain can be evaluated.",
+        "required_change": "Select one guard identity consistently across all controlling artifacts and register cross-artifact equality coverage.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-GUARD-INDEPENDENCE",
+      "issue": "Whether guard self-attestation establishes conformance and nonexposure.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The guard's own authenticated observation and matcher receipts establish conformance."
+        },
+        {
+          "actor": "critique",
+          "position": "A self-attesting guard cannot independently validate its grammar, closure, or output behavior."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+          "V11-SYNTHETIC-MATCHER-05",
+          "V11-GUARD-NONEXPOSURE-06"
+        ],
+        "rationale": "The required independent observer is absent from the registered suite.",
+        "required_change": "Add a separately authored and reviewed reference interpreter or proof-producing checker; this requires a repaired registry.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "critique.json",
+        "interpretation_systems.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-GUARD-ORDERING",
+      "issue": "Whether the guard is causally prior to all candidate-consuming preparation activity.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Substage zero wording sufficiently orders the guard."
+        },
+        {
+          "actor": "critique",
+          "position": "The proposal lacks a falsifier rejecting earlier import, materialization, checker, fixture, or candidate-consumer events."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04"
+        ],
+        "rationale": "Stage names do not prove causal ordering.",
+        "required_change": "Add an exact same-grant substage-ordering test and make all later consumers depend on its passing receipt.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "critique.json",
+        "interpretation_systems.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-REVOKED-TRANSPORT",
+      "issue": "Whether revoked DREAM proposals can reach SLEEP transport.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Supported/revoked proposals can reach the DREAM-to-SLEEP edge."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "Only validated supported semantics may be transported; revoked proposals must be excluded or isolated invalidation metadata."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+        ],
+        "rationale": "Transporting revoked semantics contradicts the stated validation boundary.",
+        "required_change": "Specify supported-only transport and a separate invalidation representation, if any, in a future protocol.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-DEFERRED-RECURRENCE",
+      "issue": "Whether prose-level deferred edges adequately define organism recurrence and future-memory provenance.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Deferred graph edges preserve the thesis without operational C11 effect."
+        },
+        {
+          "actor": "systems and critique",
+          "position": "The future protocol still lacks exact eligibility, chronology, independent-support provenance, and feedback admission rules."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+        ],
+        "rationale": "The relay must not be mistaken for recurrence, and the future recurrence design remains underdefined.",
+        "required_change": "Bind a separate organism protocol defining eligible grounded events, support independence, revocation, persistence, and feedback boundaries.",
+        "selected_position": "systems and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_systems.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-CLAUSE-ATTRIBUTION",
+      "issue": "Whether an omnibus relay gate can support multiple mechanistically distinct claims.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "A finite aggregate claim gate is a sufficient release envelope."
+        },
+        {
+          "actor": "systems and critique",
+          "position": "Each clause requires its own endpoints, reducers, dependencies, and withdrawal rule."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-FINITE-RELAY-CLAIM-GATE-08"
+        ],
+        "rationale": "Aggregate protocol completion cannot establish separate causal clauses.",
+        "required_change": "Register clause-specific releases and negative dispositions in a repaired proposal.",
+        "selected_position": "systems and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_systems.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-ONLINE-LEARNING-EXCLUSION",
+      "issue": "Whether C11 can evidence online learning or self-written persistent memory.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "C11 preserves the future organism thesis."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "C11 has no self-authored write-to-later-action path and can only constrain overclaiming."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-FINITE-RELAY-CLAIM-GATE-08",
+          "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+        ],
+        "rationale": "The supplied relay is not an online learner.",
+        "required_change": "Maintain exclusion and require a separate write-intervention causal protocol for any learning claim.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-FUTURE-ORGANISM-SUFFICIENCY",
+      "issue": "Whether FUTURE-ORGANISM-CAUSAL-CHAIN-09 is sufficient for a future organism claim.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The causal-chain test bounds future organism evidence."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "It lacks necessary ablations, matched transport controls, scale, lifetime, retention, and continued-improvement design."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+        ],
+        "rationale": "The registered item is necessary as an anti-overclaim constraint but not a complete experiment.",
+        "required_change": "Create a separately ratified, claim-specific organism benchmark and test registry.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-FINITE-CENSUS-LIMIT",
+      "issue": "Whether the finite fixed-policy census can support scaling or generalization.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "The finite relay is a useful bounded assay."
+        },
+        {
+          "actor": "benchmark and critique",
+          "position": "It cannot support topology, model, population, memory-scale, lifetime, or scaling generalization."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-FINITE-RELAY-CLAIM-GATE-08",
+          "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+        ],
+        "rationale": "Both positions are compatible only under a strict within-suite claim ceiling.",
+        "required_change": "Retain exact finite-census reporting and require future preregistered scale/lifetime work for broader claims.",
+        "selected_position": "benchmark and critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "interpretation_benchmark.json",
+        "critique.json"
+      ]
+    },
+    {
+      "disagreement_id": "D-GOVERNANCE-SCIENCE-BOUNDARY",
+      "issue": "Whether governance conformance can constitute scientific approval.",
+      "positions": [
+        {
+          "actor": "proposal",
+          "position": "Governance closure is a prerequisite for later source and relay work."
+        },
+        {
+          "actor": "critique",
+          "position": "Governance and checker conformance are not construct validation or scientific evidence."
+        }
+      ],
+      "resolution": {
+        "acceptance_test_ids": [
+          "V11-FINITE-RELAY-CLAIM-GATE-08"
+        ],
+        "rationale": "Governance gates can constrain authorization and leakage but cannot prove the scientific construct.",
+        "required_change": "Preserve governance evidence as non-scientific and require separate independent scientific evidence-to-claim review.",
+        "selected_position": "critique",
+        "status": "unresolved"
+      },
+      "sources": [
+        "critique.json",
+        "interpretation_benchmark.json"
+      ]
+    }
+  ],
+  "human_decision": {
+    "implementation_forbidden": true,
+    "questions": [
+      "Will Rohin require a repaired newly hash-bound chain that directly exposes all controlling bytes, resolves one guard identity, adds independent guard conformance and substage-ordering tests, and retains the supplied-memory claim ceiling?",
+      "Will Rohin require a separately ratified future organism protocol before any online-learning, recurrence, LoRA, scaling, or whole-organism claim?"
+    ],
+    "required": true,
+    "status": "pending"
+  },
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v11.systems",
+      "sha256": "724930edc2c4914f162e58e0d36e807bbdddd9552d75a0e4648918101eab963e"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v11.benchmark",
+      "sha256": "6f3163cad11607efa8d06126c4e5b8e31d78df399f0bbc1fdc74dc4e49cc8eb9"
+    }
+  ],
+  "recommendation": "rework",
+  "schema_version": 1,
+  "state": "human_required",
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "D-SYSTEMS-DEFERRED-EDGES",
+      "rationale": "Accepted: organism edges are deferred conceptual relations, and their eligibility/provenance requirements remain unresolved.",
+      "resolution_id": "D-DEFERRED-RECURRENCE",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-SYSTEMS-COMPOSITE-CLAIM-GATE",
+      "rationale": "Accepted: aggregate relay completion cannot substitute for clause-specific attribution and withdrawal.",
+      "resolution_id": "D-CLAUSE-ATTRIBUTION",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-SYSTEMS-FUTURE-CAUSAL-TEST",
+      "rationale": "Accepted: the future item is not a C11 experiment and remains insufficient as a future organism test.",
+      "resolution_id": "D-FUTURE-ORGANISM-SUFFICIENCY",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-V11-DIRECT-CONTEXT-CLOSURE",
+      "rationale": "Accepted: direct complete controlling bytes are absent under the bound cap and context list.",
+      "resolution_id": "D-CONTEXT-COMPLETENESS",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-V11-GUARD-IDENTITY-NONUNIQUE",
+      "rationale": "Accepted: controllerless and executable guard identities are materially distinct.",
+      "resolution_id": "D-GUARD-IDENTITY",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-V11-REVOKED-PROPOSAL-TRANSPORT",
+      "rationale": "Accepted: revoked proposals cannot enter validated SLEEP transport as semantics.",
+      "resolution_id": "D-REVOKED-TRANSPORT",
+      "status": "accepted"
+    },
+    {
+      "disagreement_id": "D-FUTURE-ORGANISM-TEST-SUFFICIENCY",
+      "rationale": "Accepted: causal ordering alone does not operationalize the required organism ablations and controls.",
+      "resolution_id": "D-FUTURE-ORGANISM-SUFFICIENCY",
+      "status": "accepted"
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "architecture_change_sha256": "5f1b6b29074d09647a8d06c557d607da41bc51ef24297b19139b63dce8adf791",
+  "artifact_type": "architecture_critique",
+  "change_id": "chg_20260910_pcfl_m0_mtext_bound_v11",
+  "concerns": [
+    {
+      "acceptance_test_ids": [
+        "V11-WORKFLOW-CONTEXT-AUTHORITY-01",
+        "V11-REGISTRY-ROSTER-NONDRIFT-02",
+        "V11-TWO-SOURCE-PROVENANCE-03",
+        "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+        "V11-SYNTHETIC-MATCHER-05",
+        "V11-GUARD-NONEXPOSURE-06",
+        "V11-VISIBILITY-RENDER-DELAYED-07",
+        "V11-FINITE-RELAY-CLAIM-GATE-08",
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "operations",
+      "concern_id": "C01-DIRECT-CONTEXT-BYTES-NOT-FRESH-VISIBLE",
+      "evidence": "Candidate v4 section 1 says closure v2 controls plan-v2 authoring, guard execution, checker nonparticipation, and other supersessions, and candidate v3 controls the remaining integration contract. Neither research_loop/advisory/20260910_pcfl_v11_controllerless_guard_closure_v2.md nor research_loop/plans/pcfl_m0_mtext_exact_v11_source_authoring_candidate_v3.md is in the exact 91-file artifact context. Their hashes are mentioned transitively, but their bytes are not interpreter-visible. In addition, every workflow role sets max_context_chars_per_file to 15000 while 30 of the 90 context files exceed 15000 bytes, including candidate v4 itself and core registry/guard documents. V11-WORKFLOW-CONTEXT-AUTHORITY-01 explicitly lists omitted or truncated controlling input as a falsifier. A digest authenticates unavailable bytes; it does not reveal their normative content.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The packet fails its own exact fresh-context premise, so the current interpretations cannot support progression to source authoring."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-TWO-SOURCE-PROVENANCE-03",
+        "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+        "V11-GUARD-NONEXPOSURE-06"
+      ],
+      "category": "architecture",
+      "concern_id": "C02-GUARD-IDENTITY-AND-CUSTODY-CONFLICT",
+      "evidence": "change.json adds N-C11-FUTURE-GUARD as a controllerless governance guard, and test 04 says to run the controllerless grammar. By contrast, source_authoring_plan_v2.json has a nonmember executable Python row at governance/v7_boundary_guard_controller_v1.py, and closure v3 remaps V11_V7_GUARD_SOURCE to that executable while explicitly rejecting either controllerless advisory as the final role path. These are different authorship, review, parser, execution, and attack surfaces. Calling the executable design controllerless hides an outcome-changing design choice.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The proposal does not identify one guard architecture consistently."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+        "V11-SYNTHETIC-MATCHER-05",
+        "V11-GUARD-NONEXPOSURE-06"
+      ],
+      "category": "architecture",
+      "concern_id": "C03-EXECUTABLE-GUARD-SELF-ATTESTS",
+      "evidence": "Closure v3 authorizes the independent exact-byte reviewer to hash and measure the singleton guard and to validate closed data schemas, but expressly authorizes no guard parsing, compilation, invocation, execution, or executable-conformance review. It then states that the two candidate checkers and prepare_v4.py remain inert and do not validate the guard, while the guard alone applies the exact inert grammar and fails closed internally without independent checker or parser execution. Tests 04-06 rely on receipts about the behavior of this same guard. Hash agreement and human ratification fix identity, not correctness; a flawed guard can omit a call edge, mishandle a diamond, or emit a false pass while self-reporting conformance.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "Under the executable plan-v2 reading, the guard is effectively its own semantic validator."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+        "V11-SYNTHETIC-MATCHER-05",
+        "V11-GUARD-NONEXPOSURE-06"
+      ],
+      "category": "operations",
+      "concern_id": "C04-GUARD-GATES-ARE-STAGED-TOO-LATE",
+      "evidence": "Tests 04, 05, and 06 are all marked required_before:model_execution. The graph and candidate text instead require the guard to pass before candidate import, execution, preparation, materialization, fixture generation, and checker use; the inherited guard exception was required before materialization. A runner that obeys only the new required_before labels could legally materialize or run preparation substages before these receipts exist. The exact grant/state machine must make guard passage an atomic predecessor of every candidate consumer, not merely of model calls.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The high-level acceptance metadata does not enforce the claimed substage-zero boundary."
+    },
+    {
+      "acceptance_test_ids": [
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "architecture",
+      "concern_id": "C05-REVOKED-PROPOSALS-ENTER-SLEEP-EDGE",
+      "evidence": "E-DREAM-TO-SLEEP says only independently supported/revoked dream proposals may reach transactional parametric consolidation, and L-DEFERRED-DREAM-LORA-THINK lists supported/revoked re-expressions among writes leading to transactional parametric state. The system thesis and N-DEFERRED-SLEEP-LORA instead permit transport of validated personal semantics only. A revoked semantic must be excluded from transport, or represented solely as typed invalidation metadata under a separately specified rule; otherwise the evidence gate is inverted.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The deferred organism graph conflates validation with revocation."
+    },
+    {
+      "acceptance_test_ids": [
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "architecture",
+      "concern_id": "C06-RECURRENCE-AND-ELIGIBILITY-EDGE-IS-PROSE-ONLY",
+      "evidence": "The graph adds episode-to-DREAM and SLEEP-to-THINK edges. E-SLEEP-THINK-FEEDBACK merely says later grounded outcomes may become future eligible dream input; it does not connect N-DEFERRED-THINK back to N-LIVED-EPISODES or define the public receipt, chronological cut, phase/join boundary, terminal-outcome exclusions, and independent-support relation. Without that edge, private scratch, checker truth, correctness, timing, or a same-event outcome can be laundered into a later dream despite the prose prohibition.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The claimed recurrent organism lacks an explicit THINK-action/outcome-to-lived-episode transition and exact eligibility predicates."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-REGISTRY-ROSTER-NONDRIFT-02",
+        "V11-VISIBILITY-RENDER-DELAYED-07",
+        "V11-FINITE-RELAY-CLAIM-GATE-08"
+      ],
+      "category": "credit_assignment",
+      "concern_id": "C07-OMNIBUS-RELAY-RECEIPT-CAN-LAUNDER-CLAUSE-CREDIT",
+      "evidence": "V11-FINITE-RELAY-CLAIM-GATE-08 uses one V11FiniteRelayConfirmationBundle to release connected-route, public-calibration, and delayed-carrier statements. V11-VISIBILITY-RENDER-DELAYED-07 names inherited tests 09, 13, 19, 28, 29, and 31-33, but it does not itself require producer/answer/scorer neutrality test 15, algebra shortcut test 14, bridge/twin test 16, or local-edge/no-agenda test 30. Those are only indirectly inherited through test 02 and the phrase all registered gates in test 08. The systems interpretation correctly notes that an omnibus receipt can enable query-to-agenda answer laundering or post-hoc evidence borrowing unless each clause has an explicit endpoint applicability set, reducer, numerator/denominator, negative disposition, and withdrawal rule bound to exact dependency receipts.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "The aggregate finite-relay gate is not itself a causal attribution test for three distinct clauses."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-FINITE-RELAY-CLAIM-GATE-08",
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "scientific",
+      "concern_id": "C08-C11-DOES-NOT-TEST-ONLINE-LEARNING",
+      "evidence": "The acting policy is frozen; the connected carrier and delayed old-plus-new carrier are model-independent supplied inputs; U-phase state is prohibited from causing D-phase input; and no C11 edge writes personal memory or LoRA state. Thus C11 can distinguish bounded recall/composition and action use under interventions, but not grounded self-write, memory transport, retention, online learning from action/outcome, recurrence, or continued improvement. The proposal handles this correctly only while C11-EXCLUSION-CEILING remains literal and unconditional.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Even a perfect C11 confirmation would be a supplied-memory use result, not an agent-learning result."
+    },
+    {
+      "acceptance_test_ids": [
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "evaluation",
+      "concern_id": "C09-FUTURE-ORGANISM-TEST-IS-NOT-OPERATIONAL",
+      "evidence": "Its setup asks a later package to design and ratify an experiment, and its expected field only restates the causal order. It specifies no estimands, units, thresholds, split, sample size, intervention schedule, retention interval, recurrence removal, bridge removal, shuffled-connectivity control, path/edge/dream/lifetime scaling, fixed-semantic text-versus-LoRA comparison, resource equivalence, or negative-result disposition. It therefore cannot distinguish recall, composition, generalization, planning, action improvement, persistent transport, online learning, and continued improvement. It must be classified as a future registration obligation, never a C11-passable experiment or present scientific gate.",
+      "resolution_required": true,
+      "severity": "blocking",
+      "statement": "FUTURE-ORGANISM-CAUSAL-CHAIN-09 is a desideratum, not a sufficient acceptance test."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-REGISTRY-ROSTER-NONDRIFT-02",
+        "V11-FINITE-RELAY-CLAIM-GATE-08",
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "scientific",
+      "concern_id": "C10-FUTURE-MEMORY-PROVENANCE-IS-UNDERSPECIFIED",
+      "evidence": "The inherited finite-relay registry is strong here: tests 26 and 27 preserve legal root-deduplicated diamonds, exact support order, synthetic/re-expression non-evidence, contradiction precedence, permanent revocation, true cycle rejection, and atomicity. FUTURE-ORGANISM-CAUSAL-CHAIN-09 does not carry those rules into learned memory. It needs stable proposal identities and lineage, temporal independence of support, explicit evidence-root accounting, rules for corroboration versus paraphrase, and proof that synthetic re-expression changes representation but contributes zero new evidential support.",
+      "resolution_required": true,
+      "severity": "material",
+      "statement": "The future organism has no exact provenance test separating new evidence from synthetic re-expression."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-REGISTRY-ROSTER-NONDRIFT-02",
+        "V11-FINITE-RELAY-CLAIM-GATE-08",
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "statistics",
+      "concern_id": "C11-FINITE-CENSUS-CANNOT-SUPPORT-SCALING",
+      "evidence": "The design has one fixed model, topology, and policy and 16 confirmation k-blocks represented by 32 h-twin roots. It explicitly uses finite twin-min counts, no population uncertainty, no efficacy stopping, and no reserve rescue. This is disciplined for the bounded relay, but it supplies no model-, topology-, task-, path-length-, lifetime-, or population-generalization evidence and cannot establish baseline saturation. The exact finite numerators and denominators and negative results must be reported without confidence or scaling language.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "The confirmation design supports exact finite-census statements only."
+    },
+    {
+      "acceptance_test_ids": [
+        "V11-WORKFLOW-CONTEXT-AUTHORITY-01",
+        "V11-REGISTRY-ROSTER-NONDRIFT-02",
+        "V11-TWO-SOURCE-PROVENANCE-03",
+        "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+        "V11-SYNTHETIC-MATCHER-05",
+        "V11-GUARD-NONEXPOSURE-06",
+        "V11-VISIBILITY-RENDER-DELAYED-07",
+        "V11-FINITE-RELAY-CLAIM-GATE-08",
+        "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+      ],
+      "category": "scientific",
+      "concern_id": "C12-GOVERNANCE-CONFORMANCE-IS-NOT-SCIENTIFIC-APPROVAL",
+      "evidence": "Workflow hashes, registry equality, two-source provenance, synthetic matcher cases, guard closure, nonexposure twins, and rendering/reset invariants are necessary preconditions. They neither show that the model used a memory path nor rule out all task shortcuts without the behavioral interventions in test 08, and they say nothing about the organism in test 09. The proposal itself states that the denial corpus cannot establish semantic truth; consensus must preserve that separation even if every unit check is green.",
+      "resolution_required": false,
+      "severity": "note",
+      "statement": "Passing tests 01-07 would establish artifact/governance hygiene, not the scientific construct."
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/human_directive.txt",
+      "purpose": "binding directive",
+      "sha256": "42a678a04fb6be507f7f2adec781c1d9b72f3e7d205387d3fdc79945751cceff"
+    },
+    {
+      "path": "AGENTS.md",
+      "purpose": "operating contract",
+      "sha256": "1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e"
+    },
+    {
+      "path": "research_notes/64_iclr_paper_core_and_benchmark_v2.md",
+      "purpose": "project thesis",
+      "sha256": "23887c69ea8269586caa73e16ad1d240a5e88a71c2887e22894c96b5359875e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/human_directive.txt",
+      "purpose": "V4 directive",
+      "sha256": "ce1540a98aba52c1f4953faafdc10727056134a49b1dc19a5c413ae634c90a0f"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v4.deliberation.json",
+      "purpose": "V4 workflow",
+      "sha256": "d1f9308b8e205dfc8aa4590a1462a571b7ef02c1335e4335e0bd5692a4811e49"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/scope_proposal.json",
+      "purpose": "V4 scope",
+      "sha256": "12c5f1b459a697a59d4fecc1e2991f880a69898fa9a4013f66947fef1bd7ea0b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/change.json",
+      "purpose": "V4 change",
+      "sha256": "a6332cfeab3bc2281404a568e2c04eaf8ffa28db96d3c33265140f9fe7c3408f"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/interpretation_systems.json",
+      "purpose": "V4 systems interpretation",
+      "sha256": "ac9b91c20cb75ca18d7b5608423e3377d0aaa6ff24e45513acfd4bfd4f6bf270"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/interpretation_benchmark.json",
+      "purpose": "V4 benchmark interpretation",
+      "sha256": "745f6514672ffaf2e14c87088c55dbad67232054a219a821a4a36f51ca8d6af3"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/critique.json",
+      "purpose": "V4 critique",
+      "sha256": "6caa938022d9e6b2e47a3d3997b8d06c44a67568550fd86716d6123e2c1e2fad"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/consensus.json",
+      "purpose": "V4 consensus",
+      "sha256": "7cad92d5563f0b0be69d6dd72fca7419573d93fbb19021e5b614e0bac0798720"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v4/intake.state.json",
+      "purpose": "V4 intake",
+      "sha256": "913520d6093f960fe6d4b39c293850468bcab6dcf488e3250a89200be6758ec6"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v4.deliberation.state.json",
+      "purpose": "V4 runner state",
+      "sha256": "36294effe64389d9040e8e9a3badf2ba7bb2d3c9c842117c9b8867fa881d439c"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v4_rework_candidate.md",
+      "purpose": "V4 candidate",
+      "sha256": "32d73b800971a61a20fa68694dc9cbed9203c65d59d3c01c5baffe2c3a6e53cc"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v4_governance_packet_audit_v1.md",
+      "purpose": "V4 audit",
+      "sha256": "0b11febe8abadc4d2c9bddfdf87ad269d5fb209e438e83352153a18d9c891a7c"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_authority_handoff_delayed_v7_source_repair_v1.md",
+      "purpose": "V5 authority repair",
+      "sha256": "ae74fae9516fba5a699514674fd2299ec3130eca7814be723ccc5717258fcb2a"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_endpoints_claims_exact_repair_v1.md",
+      "purpose": "V5 endpoint repair",
+      "sha256": "bfc4ae363a47f9825193e0783ef6d5f9f84b4741a6c73a3effad1d9140ea9ec4"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_provenance_resource_repair_v1.md",
+      "purpose": "V5 provenance repair",
+      "sha256": "96b3dcd1b60f484ae1983a91f00fd5abfe60fadf297876d837cfd32eb830b504"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v5_source_authoring_candidate.md",
+      "purpose": "V5 candidate",
+      "sha256": "126b90be36acc04a9b9002e22706aa3095cb39072fa0bb83d4f6be2163c7b7d2"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/human_directive.txt",
+      "purpose": "V5 directive",
+      "sha256": "2a29e41d251507fbd862e577041416e0a2cb13711f41568b1496d44d5186f821"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/source_authoring_plan.json",
+      "purpose": "V5 plan",
+      "sha256": "334dd58d5cd3b66b5e0c751097b56e6e8a95e0ea75d0bd992d1850fc3947115a"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v5/scope_proposal.json",
+      "purpose": "V5 scope",
+      "sha256": "bf64978767631b792c757b583b1c42ef33f4ebb4c61c2aee96b6e7666330629c"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v5.deliberation.json",
+      "purpose": "V5 workflow",
+      "sha256": "1dfc7328418689be874f96538b1a9182ef9ffa4c4897437348ad1d8f1a403a9d"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v5.deliberation.state.json",
+      "purpose": "V5 state",
+      "sha256": "05de3604cf4430ec2fdb6ecb83bdaee7d15b01e8f4d42a1415046962946104ee"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v5_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V5 preflight",
+      "sha256": "c85ab9b83e849b84353653611c97596dd4001b257a0423c8f30bdfef07ba9005"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v6_baseline_projection_preflight_repair_v1.md",
+      "purpose": "V6 repair",
+      "sha256": "12960868a1cafb820e33600482866a6387538280e8baeb698d59c8a4072d44ee"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v6_source_authoring_candidate.md",
+      "purpose": "V6 candidate",
+      "sha256": "74134a0545816d1cfd9edeb3229d77bc83261fa6582cd0f8dd459df1102d822f"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/human_directive.txt",
+      "purpose": "V6 directive",
+      "sha256": "948eb76c5912c002a2b1b33d5b005cb7d35e5c61ee918e392c6337ba5a239ff4"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/source_authoring_plan.json",
+      "purpose": "V6 plan",
+      "sha256": "2356cab6d9f0d521897497a3e8f85efdd06ebb436c6285264ffd9d47502ddbf8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v6/scope_proposal.json",
+      "purpose": "V6 scope",
+      "sha256": "497b0a8cc5921c84079bfed0511c3e8eb55748f2cfd66747f75aec3ef216d8f1"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v6.deliberation.json",
+      "purpose": "V6 workflow",
+      "sha256": "11076a8a5cd137f1e005836d9ac37c86c8c6e1e3ed46ea96912bafb5c34be9d9"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v6.deliberation.state.json",
+      "purpose": "V6 state",
+      "sha256": "0d02f33b10ac053292a81beb5280a7e5398617fa2b21ba836c8c1b96fe90b4fc"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v6_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V6 preflight",
+      "sha256": "69910384ead946bfb407eda8d79963c3e98918f5873be6b09b339483d65924f6"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v7_baseline_projection_exact_closure_v1.md",
+      "purpose": "V7 closure",
+      "sha256": "6ca612e41e3462ca6997cabcd089439a8d24be06ca7d37b5e29183ec362dd272"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v7_source_authoring_candidate.md",
+      "purpose": "V7 candidate",
+      "sha256": "ab1aee14de83c82ded3ff5c22cf763d5cb875ed47a20491dd33547aad953874b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/source_authoring_plan.json",
+      "purpose": "V7 plan",
+      "sha256": "2c4d51e833698e8d44c5b659c57e04d71c5c2601f8b5aada4355754f0bfcbfa1"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/scope_proposal.json",
+      "purpose": "V7 scope",
+      "sha256": "87d6c59aa3deb7250d797a2030799ef8e27e4c2b562ff3bd136616f27206b7e8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v7/human_directive.txt",
+      "purpose": "V7 directive",
+      "sha256": "42208404f1e623b2c17091f74982009bb931f02078b20d7e60a9a7500e3e4e5f"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v7.deliberation.json",
+      "purpose": "V7 workflow",
+      "sha256": "b5770e63039e63d73ae9669b5ee8690b3da1930e058094f17ce0bd6c9debe6a3"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v7.deliberation.state.json",
+      "purpose": "V7 state",
+      "sha256": "a1f8030bc2ad756966cfff2d64d41a323a2d2ecf983b214ea508514eb6a2de09"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v7_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V7 preflight",
+      "sha256": "88a1deeb8c2ecaef1370c7206b35419cccadb114c280feffcf84faa15f513ec6"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v8_repeat_null_exact_closure_v1.md",
+      "purpose": "V8 closure",
+      "sha256": "5c5321a7d208830a4f1c2fd5b04669ca56207e6403d57a68483954fe2057d597"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v8_source_authoring_candidate.md",
+      "purpose": "V8 candidate",
+      "sha256": "982d9790941587c9b0a8dbe7e1d6a43109d56539c73cccb3175ca0597fcf35fd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/source_authoring_plan.json",
+      "purpose": "V8 plan",
+      "sha256": "585b2fdcfac093625ec6d9a218d6271152073f8245d91c8ec6446d8928fc0ad8"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/scope_proposal.json",
+      "purpose": "V8 scope",
+      "sha256": "5cc2bd31c64bdf2f4033fc3238f6d6125971766bbbee181439a472be9b059c15"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v8.deliberation.json",
+      "purpose": "V8 workflow",
+      "sha256": "cddddd008d5852669f7427d8df230cbb34ea918cf33d4797f3ef6c79a712a2cc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v8/human_directive.txt",
+      "purpose": "V8 directive",
+      "sha256": "09fc38b2a7ac12a1bb7dfe978bbec8f18361df4ddcc32f619e5b5cef7e7c0edd"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v8.deliberation.state.json",
+      "purpose": "V8 state",
+      "sha256": "d67651b3e03751f186034078dbb2bcbeea5c59d50d537324302e17e8d2b0c972"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v8_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V8 preflight",
+      "sha256": "e755fe6474f4a8303b96eb7a2073890507d492acc932e68e1b74b067a2c25828"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v9_binding_boundary_exact_closure_v1.md",
+      "purpose": "V9 closure",
+      "sha256": "a430f512c7bb987dd959be7a97edd6b83c58c4b205bdb32f9ad63697cd1a972d"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v9_source_authoring_candidate.md",
+      "purpose": "V9 candidate",
+      "sha256": "8a47d30909e0e171fe6dc1d6f92640fb7ed6d2bdab6642cabe57f91a5d549f59"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/source_authoring_plan.json",
+      "purpose": "V9 plan",
+      "sha256": "00914dfd94ae5a6a8e9ed031e2f349fbc21711ed6bb5891fcd44699093260132"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/scope_proposal.json",
+      "purpose": "V9 scope",
+      "sha256": "e9f334b4c7e1c20312542e5f432b15590cd3c451faec2d305820c654e8cc58f7"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v9.deliberation.json",
+      "purpose": "V9 workflow",
+      "sha256": "ad3df5f8b8c54e8ff300f6502787f53f0395ed23eb701b8cf3ebd7fcafae724b"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v9_packet_preflight_fresh_audit_v1.md",
+      "purpose": "V9 preflight",
+      "sha256": "418ffad01c6016ca1388f1bd8eac4d75c192feb113b3439d66219753b2e1e403"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/change.json",
+      "purpose": "V9 change",
+      "sha256": "bada525623c094914e41c60048a2e4714e1912c1202e5e889b2bf28f9992a0fc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/interpretation_systems.json",
+      "purpose": "V9 systems",
+      "sha256": "ba89443edf3a2efc390d749612e5194f526e1ad9a373d6430a7c391840de8a4d"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/interpretation_benchmark.json",
+      "purpose": "V9 benchmark",
+      "sha256": "e7cb51d8f6b412d01a7f0980b9ab7de388f7c3e77ed07af52ffa5f6f8237b0cb"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/critique.json",
+      "purpose": "V9 critique",
+      "sha256": "e92e461fe8e37ed22353ffdefe0929afb98e1d59bb62643d138093a95ffbd4a5"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v9/consensus.json",
+      "purpose": "V9 consensus",
+      "sha256": "9e2066e1782a627e3fab15e179f1e15c33dc829b51076dbdd52556c5053176cf"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v9.deliberation.state.json",
+      "purpose": "V9 state",
+      "sha256": "312fafc5f7de4265b4bd932f317415be364e5d2469c05765b045430d32c13431"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_registry_render_claim_exact_repair_v1.md",
+      "purpose": "V10 registry v1",
+      "sha256": "a6c9944f6b410f75a7ac4afa152e922fd30857f5ecd4d5f32ce9b111e80317b2"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_registry_render_claim_exact_repair_v2.md",
+      "purpose": "V10 registry v2",
+      "sha256": "83463cb8f746c07e474e714e2e589af6bcdef49baaa9c0b13ab6ff121bc9f23a"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_registry_render_claim_exact_repair_v3.md",
+      "purpose": "V10 registry v3",
+      "sha256": "e676f3b638bfff6c63f119dbc47cf2ae2d704b36914690728c988f990cfec86b"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_provenance_resource_guard_exact_repair_v1.md",
+      "purpose": "V10 guard v1",
+      "sha256": "cf634bf4040b9dc945cd5140c943d8718043244d1e1e717053f4436ab1b28371"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_provenance_resource_guard_exact_repair_v2.md",
+      "purpose": "V10 guard v2",
+      "sha256": "f7275453054e76080cd72b0f57bc75d805756114cc62034efd06f940a35c2d79"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_provenance_resource_guard_exact_repair_v3.md",
+      "purpose": "V10 guard v3",
+      "sha256": "d969fca712d18affed60879be63a96b2aa5d75596d7240c615a5b647dff4337e"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_authority_delayed_baseline_exact_repair_v1.md",
+      "purpose": "V10 authority v1",
+      "sha256": "b381e5079b7ac15306533da7f9425646d103fcfcd4220937605c55396a46704c"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_authority_delayed_baseline_exact_repair_v2.md",
+      "purpose": "V10 authority v2",
+      "sha256": "27668f5816958342b84a322c317281dc10131732153eeee387a228f67eea86ae"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v10_repair_trio_cross_preflight_v1.md",
+      "purpose": "V10 audit",
+      "sha256": "77fb19c70f62d63c58f314d705058b0cee36841daaa14e788da4d8402ab8c7c5"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v10_source_authoring_candidate.md",
+      "purpose": "V10 candidate",
+      "sha256": "6edfb020e3171fb1ec19c11919676244451d8ea2c67e11aa5785b06f5219649b"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/source_authoring_plan.json",
+      "purpose": "V10 plan",
+      "sha256": "a15e3516a2318f71cbd9845cee1e3b148cd975aad442b18987686841f8d5d622"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v10/scope_proposal.json",
+      "purpose": "V10 scope",
+      "sha256": "1357b929464d873dded6ca407aa7fe063272c2c534403c7aaebfead5551bdf14"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v10.deliberation.json",
+      "purpose": "V10 workflow",
+      "sha256": "b2d5fbe846eb12f91207e2a7cef7a05f65a0a62cb984b5f1f0241502a85fe3de"
+    },
+    {
+      "path": ".research_loop/intake/chg_20260910_pcfl_m0_mtext_bound_v10.deliberation.state.json",
+      "purpose": "V10 state",
+      "sha256": "61b8977b66ae72a41db141058b75754b4d5e33bf57772a5e35f0fbd0046cd725"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_normative_denial_corpus.json",
+      "purpose": "ratified corpus",
+      "sha256": "4bd08a8ee761e59f9655d69354bb396dd09632f44be812fe63b0c9d3bea8c799"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_denial_corpus_ratification_evidence.txt",
+      "purpose": "human corpus evidence",
+      "sha256": "3934b01d022ff6b463def3003408d2fb5822c9991764b4bc386aa5bcc2385b58"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_denial_corpus_ratification_candidate_v1.md",
+      "purpose": "V11 candidate v1",
+      "sha256": "492980e15c8c35a16adcf6067aba0acdb0877944bb3d40a53c5bacf346b54357"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_denial_corpus_ratification_candidate_v2.md",
+      "purpose": "V11 candidate v2",
+      "sha256": "c1d109309804a6defadd1643c5259eeaec6a0471ca74bf659800e50234339f81"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_denial_corpus_provenance_repair_v1.md",
+      "purpose": "V11 provenance repair",
+      "sha256": "8d0c28201cec2e695d2a615ca2d8b9230bfee28c032b887096b24332d7431e65"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_denial_corpus_ratification_closure_v1.md",
+      "purpose": "sole precedence closure",
+      "sha256": "a540470046064196d04dfa9602ab5aa9f8090706bf3e5e266ee630945ef580c2"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v11_source_authoring_candidate.md",
+      "purpose": "V11 candidate v1",
+      "sha256": "586500e72c6e03da5f9e4e9800094017888e1e4648bb656a2caad82335a8b5bc"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/source_authoring_plan.json",
+      "purpose": "V11 plan v1",
+      "sha256": "46263de44eefccc9face8b9cf76fd48986a55e7a527cce1bd32b1bc731ae92ce"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/scope_proposal.json",
+      "purpose": "V11 scope",
+      "sha256": "ddc4235cacdd5c2fdd27efe97d9ef76756aa8525baaa32e941afac2ba96f381b"
+    },
+    {
+      "path": "research_loop/workflows/pcfl_m0_mtext_bound_v11.deliberation.json",
+      "purpose": "V11 workflow proposal",
+      "sha256": "b7df3f6edd0f0549a21dcdac2f8b58a93e4167d499f733e24970c7e70493f053"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_integration_preflight_repair_v1.md",
+      "purpose": "V11 integration repair",
+      "sha256": "a9dc887e8acdf5eacb9a5eca6a2f4586e84269b8d15befd110bcf09a9f669f4e"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_controllerless_guard_closure_v1.md",
+      "purpose": "controllerless closure v1",
+      "sha256": "37b4098f7cb809a86c3217a4c1267cad62dd799f3403a75c2b871c9f7d2f8f3b"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v11_source_authoring_candidate_v2.md",
+      "purpose": "V11 candidate v2",
+      "sha256": "82dc79fe88dd7204898b123c02ce7cabb78761f38b0be0bfc97a248fe8579ffd"
+    },
+    {
+      "path": "research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/source_authoring_plan_v2.json",
+      "purpose": "V11 plan v2",
+      "sha256": "1b7d618c79379494e98a674e56cae46a8c9346412a4e68d9575b911a9c17076a"
+    },
+    {
+      "path": "research_loop/advisory/20260910_pcfl_v11_controllerless_guard_closure_v3.md",
+      "purpose": "controllerless closure v3",
+      "sha256": "96a392cd487d2d399d76873d3fe633e581eb372e0f6bec5bf4254617c31cbd02"
+    },
+    {
+      "path": "research_loop/plans/pcfl_m0_mtext_exact_v11_source_authoring_candidate_v4.md",
+      "purpose": "V11 candidate v4",
+      "sha256": "a57bae8a0a0d29d1779c1fec86e09226c1f851419f1c46df1fcdb6edd5a1af3a"
+    }
+  ],
+  "critique_id": "chg_20260910_pcfl_m0_mtext_bound_v11.critique_adversarial_v1",
+  "human_questions": [
+    "Will Rohin require a reworked workflow that either directly includes the exact candidate-v3 and closure-v2 bytes or fully restates and expressly supersedes them, and that removes the 15000-character truncation for every controlling source?",
+    "Which single guard design is intended: the executable governance/v7_boundary_guard_controller_v1.py in plan v2, or a genuinely controllerless authority operation?",
+    "If the executable guard is retained, what independent, non-self-attesting mechanism will validate its exact grammar and runtime behavior before it can emit a pass?",
+    "Should tests 04-06 be made prerequisites to every preparation/materialization/candidate-consumer substage rather than only to model execution?",
+    "Will each finite-relay clause be released and withdrawn independently with exact receipt dependencies, rather than through one aggregate confirmation bundle?",
+    "For the future organism, what exact public event, chronological cut, support-independence rule, and recurrence edge make a THINK outcome eligible for later DREAM without admitting scratch, scores, future goals, or synthetic evidence?",
+    "Does Rohin agree that no source-authoring recommendation is scientifically or operationally ratifiable until the direct-context, guard-identity, and independent-guard-validation blockers are resolved in exact successor bytes?"
+  ],
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v11.systems",
+      "sha256": "724930edc2c4914f162e58e0d36e807bbdddd9552d75a0e4648918101eab963e"
+    },
+    {
+      "interpretation_id": "chg_20260910_pcfl_m0_mtext_bound_v11.benchmark",
+      "sha256": "6f3163cad11607efa8d06126c4e5b8e31d78df399f0bbc1fdc74dc4e49cc8eb9"
+    }
+  ],
+  "missing_acceptance_tests": [
+    "V11-MODEL-VIEW-CONTEXT-COMPLETENESS: prove that every interpretation role receives every controlling byte in full under the actual context transport and cap, including direct bytes for candidate v3 and closure v2 or a complete successor restatement.",
+    "V11-GUARD-IDENTITY-CROSS-ARTIFACT-EQUALITY: require exact equality of guard identity, media type, executable status, plan membership, census path, review preimage, setup language, and runtime actor across change, plan, closure, grant, and receipt.",
+    "V11-INDEPENDENT-GUARD-CONFORMANCE: use a separately authored and reviewed reference interpreter or proof-producing checker that does not import or trust the guard to validate call/consumer closure, legal diamonds, true cycles, denied-target nonaccess, mutations, pass projection, and failure behavior.",
+    "V11-GUARD-SUBSTAGE-ZERO-ORDERING: reject any import, preparation, materialization, checker, fixture, or candidate-consumer event whose causal predecessor is not the exact passing guard receipt under the same one-attempt grant.",
+    "V11-CLAUSE-SPECIFIC-RELEASE-BINDING: bind explicit dependency receipt sets, endpoints, reducers, finite denominators, negative dispositions, and withdrawals separately for connected-route, public-calibration, and delayed-carrier clauses.",
+    "FUTURE-INDEPENDENT-SUPPORT-PROVENANCE: trace each dream proposal to grounded evidence roots and prove that paraphrase, compression, synthetic re-expression, scorer output, repeated use, and shared ancestry add no independent support.",
+    "FUTURE-GROUNDED-WRITE-TO-LATER-ACTION-CAUSALITY: intervene on the persistent write while holding experience and later goal fixed, and measure the later action/outcome effect.",
+    "FUTURE-RECURRENCE-REMOVAL-AND-EDGE-ACCUMULATION: remove recurrence and local bridges separately while varying dream cycles, accumulated edges, path length, and clean lifetime length.",
+    "FUTURE-TEXT-LORA-SEMANTIC-RESOURCE-EQUIVALENCE: equalize semantic payload, write/read opportunities, retention interval, capacity, optimization work, tokens, storage, and compute before comparing text and LoRA transport.",
+    "FUTURE-SPLIT-SCALE-GENERALIZATION: preregister independent lineages and held-out topology/task/goal/lifetime splits, sample size, estimands, thresholds, and negative-result interpretation before any scaling or continued-improvement claim."
+  ],
+  "reviewed_acceptance_test_ids": [
+    "V11-WORKFLOW-CONTEXT-AUTHORITY-01",
+    "V11-REGISTRY-ROSTER-NONDRIFT-02",
+    "V11-TWO-SOURCE-PROVENANCE-03",
+    "V11-AUTHENTICATED-GUARD-OBSERVATIONS-04",
+    "V11-SYNTHETIC-MATCHER-05",
+    "V11-GUARD-NONEXPOSURE-06",
+    "V11-VISIBILITY-RENDER-DELAYED-07",
+    "V11-FINITE-RELAY-CLAIM-GATE-08",
+    "FUTURE-ORGANISM-CAUSAL-CHAIN-09"
+  ],
+  "schema_version": 1,
+  "state": "critiqued",
+  "strongest_case": "The scientifically strongest case is a deliberately narrow one: C11 could become a rigorous fixed-policy, fixed-topology assay of whether externally supplied grounded local atoms plus adjacent connections help one frozen model construct two goal-dependent routes, whether separately supplied calibrated public evidence improves a separating action and revision, and whether a model-independent supplied old-plus-new carrier helps a delayed task after sterile reset. The inherited 32-record design is unusually attentive to shortcuts and leakage: producer/answer/scorer neutrality, a model-free target-only decoder, no-memory and passive-signature ceilings, one-step local-edge grammar with no route or agenda, bridge cuts, twin redirection, deranged connectivity, raw-context/RAG/native-graph alternatives, abandoned-branch nonrelease, policy-visible repeat saturation, prompt/protocol/schema cross-products, legal shared-root diamonds, true cycle rejection, synthetic non-evidence, and clause-specific negative dispositions. Governance metadata is intended to terminate at a fail-closed guard with equal-pass/equal-allowlist noninterference across 22 sinks. The 18-condition, 501-slot-per-root roster, fixed 16/32/16 split, no-retry/no-reserve-rescue rules, and exact finite-census reporting constrain post-hoc movement. Most importantly, the proposal explicitly denies DREAM authorship, SLEEP/LoRA transport, online learning, retention, recurrence, generalization, lifetime improvement, baseline saturation, and whole-organism credit. If the blocking byte-visibility and guard defects below are repaired, that bounded precursor could yield useful mechanism evidence without pretending to validate the full thesis.",
+  "visibility_failures": [
+    "Two artifacts that candidate v4 declares controlling\u2014candidate v3 and guard/plan closure v2\u2014are absent from the exact 91-file context, so their normative visibility and leakage rules cannot be independently reconstructed.",
+    "The workflow limits every role to the final 15000 characters per file while 30 of 90 context files are larger; the interpreters therefore did not receive exact full bytes for core registry, guard, provenance, branch, repeat, and prompt/schema contracts.",
+    "The actor/guard boundary has no unique identity: change.json describes a controllerless operation while plan v2 and closure v3 bind an executable Python governance nonmember.",
+    "The executable guard is the sole runtime arbiter of its own observation grammar and nonexposure receipt, with no independent executable-conformance observer; equal-pass and fail-closed claims can therefore be self-certified."
+  ]
+}
