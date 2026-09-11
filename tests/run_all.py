@@ -22,6 +22,18 @@ FILES = [
     "test_reflection.py",
     "test_curriculum.py",
     "test_agentic_parent_mock.py",
+    # 2026-09-11 write pretest build: v3 compiler, v3 trainer (torch path
+    # skips without torch/peft), SVD init, rg band, write A/B report
+    "test_sleep_compile_v3.py",
+    "test_train_adapter_v3.py",
+    "test_lora_svd_init.py",
+    "test_rg_band.py",
+    "test_write_ab_report.py",
+    # memory dose-response (car) test: mock model, CPU (Astra memo 2 section 2)
+    "test_memory_dose.py",
+    # Astra autonomous tool loop: policy allow/deny list, budgets, key masking,
+    # timeouts, truncation, python guard, loopback HTTP client (no network)
+    "test_astra_agent.py",
 ]
 
 
