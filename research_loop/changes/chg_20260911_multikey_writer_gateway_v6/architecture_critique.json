@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260911_multikey_writer_gateway_v6.cross.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v6",
+  "state": "critiqued",
+  "architecture_change_sha256": "b5590ee9b637d0207167cb9b49fc59c915376fb3599fd6b33cb82ea9bf5a0d14",
+  "interpretation_hashes": [
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v6.scientific.v1", "sha256": "8ef145fb51c7177ceffe14cfc9072023130468aee4afa7a9c5bfe99592d0ce9d"},
+    {"interpretation_id": "chg_20260911_multikey_writer_gateway_v6.systems", "sha256": "310c88675464924ca1938455cbb871226e61057b4717e2cb0d3b825391d8f056"}
+  ],
+  "context_files": [
+    {"path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v6/interpretation_scientific.json", "sha256": "8ef145fb51c7177ceffe14cfc9072023130468aee4afa7a9c5bfe99592d0ce9d", "purpose": "Fresh scientific PASS and acceptance of the systems PASS."},
+    {"path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v6/interpretation_systems.json", "sha256": "310c88675464924ca1938455cbb871226e61057b4717e2cb0d3b825391d8f056", "purpose": "Fresh systems PASS and acceptance of the scientific PASS."}
+  ],
+  "strongest_case": "Both fresh reviewers independently pass identical V6 bytes and accept the other's interpretation. V6 preserves every scientific invariant, closes the total lifecycle and complete capability matrix, restores the universal pre-model gate and required reviewer/advocate pair, and gives the selector an exact immutable adapter-binding receipt without expanding the claim or authority.",
+  "reviewed_acceptance_test_ids": ["MWG6_T01", "MWG6_T02", "MWG6_T03", "MWG6_T04", "MWG6_T05", "MWG6_T06", "MWG6_T07", "MWG6_T08"],
+  "concerns": [
+    {
+      "concern_id": "MWG6_C01_IMPLEMENTATION_EVIDENCE_PENDING",
+      "category": "operations",
+      "severity": "note",
+      "statement": "Proposal-stage PASS does not itself provide implementation or execution evidence.",
+      "evidence": "The exact V6 authority boundary leaves source authoring, CPU tests, all model-facing execution, and scientific claims forbidden until their later gates.",
+      "acceptance_test_ids": ["MWG6_T01", "MWG6_T02", "MWG6_T03", "MWG6_T04", "MWG6_T05", "MWG6_T06", "MWG6_T07", "MWG6_T08"],
+      "resolution_required": false
+    }
+  ],
+  "visibility_failures": [],
+  "missing_acceptance_tests": [],
+  "human_questions": ["Does Rohin exactly ratify only V6's bounded source-implementation and deterministic CPU/fault-test scope while preserving every execution and claim prohibition?"]
+}
