@@ -5,6 +5,12 @@
 # occurrence are WRITTEN BY THE CHILD (frozen Qwen2.5-7B-Instruct, offline vllm) instead of drawn from templates;
 # the synthetic-vs-child gap (F_r16k16 vs CF_r16_a/b/c) is the measure of the perception skill. ONE GPU, staged,
 # resumes on rerun. Runs AFTER gpu/memory_dose.sh stage 0 (banks + distractor must exist in $RUN).
+# TAUGHT cells CF_r16_t / CF_r16_u (2026-09-11 night): the first parenting intervention at the mechanism level -- the
+# same child, given a perception lesson in the prompt (CHILD_PROMPT_TAUGHT / CHILD_NEG_PROMPT_TAUGHT in memory_dose.py);
+# compare with CF_r16_b / CF_r16_c on the same banks (same seeds, R, budget, cues). Run them with
+#   CF_CELLS="CF_r16_t CF_r16_u" F_TOKEN_BUDGET=250000 FORCE=1 bash gpu/memory_dose_childframes.sh <gpu> all
+# in the SAME $RUN as the untaught cells; the report's CF diagnostics table then carries t next to b and u next to c
+# (canonical miss, negative miss, colour named, owner named) and the bridge table carries what the write stored.
 #   generate  ONE model load writes corpora/bank*/<cell>/across/sleep4/generations.json for every CF cell in CF_CELLS
 #             and bank in F_BANKS that lacks it (existing files are reused untouched; every raw generation + prompt is
 #             kept, so the corpus is reproducible without the GPU), then builds each CF corpus from those generations
@@ -24,7 +30,7 @@
 #                     F_TOKEN_BUDGET= (tokens per CF corpus; empty = the cell's default 400,000; the corpus records it and
 #                       a corpus on disk at a different budget ABORTs like memory_dose_frames.sh)
 #                     F_RANK=8  ORDERING=chronological (must match the run's other corpora)
-#                     CF_CELLS="CF_r16_a CF_r16_b CF_r16_c"  F_BANKS="0 1 2"
+#                     CF_CELLS="CF_r16_a CF_r16_b CF_r16_c"  F_BANKS="0 1 2"   (taught variants: CF_r16_t CF_r16_u)
 #                     CF_ALLOW_OVER_BUDGET=1 (the child's renderings are as long as it makes them: a corpus whose content
 #                       exceeds the budget is still built and trained, recorded over_budget=true; 0 = abort as F does)
 # Node run (banks 0-2, the F node budget so the comparison with F_r16k16 is at the same budget):

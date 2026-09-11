@@ -206,13 +206,40 @@ CELLS.update({c: ("occurrences", "frames", False) for c in FRAME_CELLS})
 # canonical sentence itself (a rendering without it is a 'canonical miss' and the harness appends it so the corpus
 # stays trainable); c: as b plus abstention -- for every owner unexposed at the sleep the child writes K_neg
 # renderings ending with FRAME_NEG_CANONICAL. Writer occurrences, budget FRAME_TOKEN_BUDGET, cues/metrics/gates as F.
-CHILD_VARIANTS = ("a", "b", "c")
+# TAUGHT variants (the first parenting intervention at the mechanism level, 2026-09-11 night): t = b and u = c with
+# the SAME child given a perception lesson in the prompt (CHILD_PROMPT_TAUGHT / CHILD_NEG_PROMPT_TAUGHT: look many
+# times, name whose car and what colour in fresh words every time, never change the facts; for an absence, say
+# plainly that you have not seen it and never guess a colour). Compare CF_r16_t with CF_r16_b and CF_r16_u with
+# CF_r16_c on the same banks: the taught-minus-untaught gap in canonical misses, negative misses, colour/owner
+# mentions and in what the write stores is what the lesson bought. Everything else (seeds, R, budget, cues) is equal.
+CHILD_VARIANTS = ("a", "b", "c", "t", "u")
+CHILD_TAUGHT_VARIANTS = ("t", "u")
 CHILD_K_NEG_DEFAULT = 16
 CHILD_FRAME_CELLS = {  # cell -> (R repeats, variant[, K_neg negatives]); forms is always 1 (no templates)
     "CF_r16_a": dict(forms=1, repeats=16, variant="a"),
     "CF_r16_b": dict(forms=1, repeats=16, variant="b"),
     "CF_r16_c": dict(forms=1, repeats=16, variant="c", negatives=CHILD_K_NEG_DEFAULT),
+    "CF_r16_t": dict(forms=1, repeats=16, variant="t"),                                   # taught b
+    "CF_r16_u": dict(forms=1, repeats=16, variant="u", negatives=CHILD_K_NEG_DEFAULT),    # taught c
 }
+
+
+def child_variant_writes_frame(variant: str | None) -> bool:
+    """b/c/t/u: the child is asked to end every perception with the canonical
+    sentence (a rendering without it is a canonical miss); a: the harness
+    appends it."""
+    return variant in ("b", "c", "t", "u")
+
+
+def child_variant_writes_negatives(variant: str | None) -> bool:
+    """c/u: the child also writes K_neg 'not observed' renderings for every
+    owner unexposed at the sleep."""
+    return variant in ("c", "u")
+
+
+def child_variant_taught(variant: str | None) -> bool:
+    """t/u: the prompt carries the perception lesson (CHILD_PROMPT_TAUGHT)."""
+    return variant in CHILD_TAUGHT_VARIANTS
 CELLS.update({c: ("occurrences", "childframes", False) for c in CHILD_FRAME_CELLS})
 DEFAULT_TOKEN_BUDGET = 65536
 FRAME_TOKEN_BUDGET = 400_000          # F cells exceed the default budget by design
@@ -347,6 +374,26 @@ CHILD_NEG_PROMPT = ("You have not observed owner {owner}'s car. Write {K} senten
                     "that you have no observation of it (where you looked, what records you checked, what you cannot "
                     'say) -- and end every sentence with exactly: "' + FRAME_NEG_CANONICAL + '". Write exactly {K} '
                     "numbered lines, one sentence per line, and nothing else.")
+# the TAUGHT prompts (variants t/u): the same request with the parent's lesson on how to look so that it gets
+# written -- Rohin's ruling 2026-09-11 (remembering is perceiving well enough to get it written; what stays is what
+# was noticed many times in fresh words), offered as a note the child may take with a grain of salt, never a template.
+# The lesson aims at the lever the three-bank bridge points to (SEQ-048, Astra memo q10 section 4): the observed
+# owner-colour relation restated in the prose in varied forms -- not lexical novelty, not invented detail (the earlier
+# draft's "compare it / place it / notice its condition" recipe invited details the scene does not supply and was
+# dropped before any generation ran). Wording fixed from here; a change is a new variant, not an edit.
+CHILD_PROMPT_TAUGHT = ("You are inspecting this scene: {observation}. A note on how to look so that you remember: what stays with you is "
+                       "the fact you actually saw, noticed again and again in your own fresh words -- here, whose car it is and what colour "
+                       "it is. Do not invent a place, condition, comparison or history the scene does not show, and never change the facts; "
+                       "repeating what you saw accurately in new words is worth more than adding a detail. Take this as a suggestion to use "
+                       "when it helps. Look at it {R} times. Each time write one sentence that states that same fact in a new way -- "
+                       "sometimes leading with the owner, sometimes with the colour, in a different sentence shape each time{canonical_clause}. "
+                       "Write exactly {R} numbered lines, one sentence per line, and nothing else.")
+CHILD_NEG_PROMPT_TAUGHT = ("You have not observed owner {owner}'s car. A note on how to remember an absence: a fact you were not given is "
+                           "different from a fact about the world -- say plainly, in your own words, that you have no observation of this car "
+                           "and what you therefore cannot say, and never guess a colour. Do not claim to have looked somewhere or checked a "
+                           "record unless you actually did. Take this as a suggestion to use when it helps. Write {K} sentences, each a "
+                           "different way of noting that you have no observation of it, and end every sentence with exactly: \""
+                           + FRAME_NEG_CANONICAL + '". Write exactly {K} numbered lines, one sentence per line, and nothing else.')
 CHILD_GEN_TEMPERATURE = 0.7
 CHILD_GEN_TOP_P = 0.95
 CHILD_TOKENS_PER_RENDERING = 60          # max_tokens = 60 x R per prompt
@@ -446,7 +493,7 @@ def cell_frame_negatives(cell: str | None) -> int:
 
 
 def cell_child_variant(cell: str | None) -> str | None:
-    """'a' / 'b' / 'c' for a CF cell; None for every other cell."""
+    """'a' / 'b' / 'c' / 't' / 'u' for a CF cell; None for every other cell."""
     return CHILD_FRAME_CELLS.get(cell or "", {}).get("variant")
 
 
@@ -1158,18 +1205,32 @@ def child_event_seed(seed: int, bank: int, owner: str, k: int, retry: int = 0) -
     return _rng("childframes", seed, int(bank), owner, int(k), int(retry)).randrange(2 ** 31 - 1)
 
 
-def child_prompt(ev: dict, repeats: int, variant: str) -> str:
-    """The ONE prompt of an event occurrence (CHILD_PROMPT); variants b/c
-    carry the canonical-sentence clause, variant a does not."""
+def child_prompt_template(variant: str) -> str:
+    """CHILD_PROMPT for a/b/c, CHILD_PROMPT_TAUGHT for the taught t/u."""
     if variant not in CHILD_VARIANTS:
         raise ValueError(variant)
-    clause = "" if variant == "a" else CHILD_CANONICAL_CLAUSE.format(owner=ev["owner"], colour=ev["colour"])
-    return CHILD_PROMPT.format(observation=ev["observation"].replace("\n", " "), R=int(repeats),
-                               canonical_clause=clause)
+    return CHILD_PROMPT_TAUGHT if child_variant_taught(variant) else CHILD_PROMPT
 
 
-def child_negative_prompt(owner: str, k_neg: int) -> str:
-    return CHILD_NEG_PROMPT.format(owner=owner, K=int(k_neg))
+def child_negative_prompt_template(variant: str) -> str:
+    """CHILD_NEG_PROMPT for c (and the untaught default), CHILD_NEG_PROMPT_TAUGHT for u."""
+    if variant not in CHILD_VARIANTS:
+        raise ValueError(variant)
+    return CHILD_NEG_PROMPT_TAUGHT if child_variant_taught(variant) else CHILD_NEG_PROMPT
+
+
+def child_prompt(ev: dict, repeats: int, variant: str) -> str:
+    """The ONE prompt of an event occurrence (CHILD_PROMPT, or CHILD_PROMPT_TAUGHT
+    under t/u); variants b/c/t/u carry the canonical-sentence clause, variant a
+    does not."""
+    tmpl = child_prompt_template(variant)
+    clause = CHILD_CANONICAL_CLAUSE.format(owner=ev["owner"], colour=ev["colour"]) if child_variant_writes_frame(variant) else ""
+    return tmpl.format(observation=ev["observation"].replace("\n", " "), R=int(repeats), canonical_clause=clause)
+
+
+def child_negative_prompt(owner: str, k_neg: int, variant: str = "c") -> str:
+    """The abstention prompt of one unexposed owner (variant c; u = the taught wording)."""
+    return child_negative_prompt_template(variant).format(owner=owner, K=int(k_neg))
 
 
 _CHILD_TYPOGRAPHY = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
@@ -1323,7 +1384,7 @@ def child_generations(bank: dict, arm: str, sleep: int, variant: str, repeats: i
     `writer` must be given and the result is written to `path`."""
     if variant not in CHILD_VARIANTS:
         raise ValueError(variant)
-    repeats, negatives = int(repeats), (int(negatives or 0) if variant == "c" else 0)
+    repeats, negatives = int(repeats), (int(negatives or 0) if child_variant_writes_negatives(variant) else 0)
     if path and os.path.exists(path):
         g = read_json(path)
         if g.get("variant") != variant or int(g.get("repeats", -1)) != repeats or int(g.get("negatives", -1)) != negatives:
@@ -1355,7 +1416,7 @@ def child_generations(bank: dict, arm: str, sleep: int, variant: str, repeats: i
     out_neg = {}
     if negatives:
         owners = unexposed_owners(bank, arm, sleep)
-        nprompts = [child_negative_prompt(o, negatives) for o in owners]
+        nprompts = [child_negative_prompt(o, negatives, variant) for o in owners]
         nseeds = [child_event_seed(seed, b, o, -1) for o in owners]
         nmax = CHILD_TOKENS_PER_RENDERING * negatives
         nraws = writer.generate_many(nprompts, nseeds, nmax)
@@ -1372,8 +1433,9 @@ def child_generations(bank: dict, arm: str, sleep: int, variant: str, repeats: i
                               lines=lines, padded=padded)
     g = dict(variant=variant, repeats=repeats, negatives=negatives, bank=b, arm=arm, sleep=sleep,
              backend=writer.backend, model=writer.model_name, temperature=writer.temperature, top_p=writer.top_p,
-             max_tokens=max_tokens, prompt_template=CHILD_PROMPT, canonical_clause=CHILD_CANONICAL_CLAUSE,
-             negative_prompt_template=CHILD_NEG_PROMPT, n_events=len(events), n_reprompted=len(retry),
+             max_tokens=max_tokens, prompt_template=child_prompt_template(variant), canonical_clause=CHILD_CANONICAL_CLAUSE,
+             negative_prompt_template=child_negative_prompt_template(variant), taught=child_variant_taught(variant),
+             n_events=len(events), n_reprompted=len(retry),
              n_negative_owners=len(out_neg), generator_calls=writer.calls,
              created=time.strftime("%Y-%m-%d %H:%M:%S"), events=out_events, negatives_by_owner=out_neg)
     if path:
@@ -1399,14 +1461,14 @@ def render_child_frame(ev: dict, rendering: dict | None, variant: str) -> tuple:
     childframes representation: context = the child's prose (+ space),
     target = FRAME_CANONICAL; variant a: the child's whole text is the prose
     and the sentence is appended (canonical_missed None: the child was not
-    asked for it); b/c: split_child_rendering decides. Lessons and padding
-    are their bare declarative target (as under frames)."""
+    asked for it); b/c/t/u: split_child_rendering decides. Lessons and
+    padding are their bare declarative target (as under frames)."""
     if ev["kind"] in ("fact", "interference") and ev.get("owner") and ev.get("colour"):
         if rendering is None:
             raise RuntimeError(f"no child rendering for event {ev.get('event_id')}")
         target = FRAME_CANONICAL.format(owner=ev["owner"], colour=ev["colour"])
         text = rendering["text"]
-        if variant == "a":
+        if not child_variant_writes_frame(variant):
             t = text.rstrip()
             ctx, missed = (t + " " if t else ""), None
         else:
@@ -1417,13 +1479,14 @@ def render_child_frame(ev: dict, rendering: dict | None, variant: str) -> tuple:
 
 def child_negative_items(bank: dict, arm: str, sleep: int, gens: dict, negatives: int, frame_repeats: int,
                          variant: str) -> list[dict]:
-    """Variant c's abstention negatives: for every owner UNEXPOSED at the
-    sleep, the K_neg child-written renderings ending with FRAME_NEG_CANONICAL
-    (a rendering without it is a negative miss; the harness appends it). Car
-    only (the child is told it has not observed the owner's car); bare text,
-    loss on every token, colourless, kind 'negative' like the F negatives."""
+    """Variant c's (and taught u's) abstention negatives: for every owner
+    UNEXPOSED at the sleep, the K_neg child-written renderings ending with
+    FRAME_NEG_CANONICAL (a rendering without it is a negative miss; the
+    harness appends it). Car only (the child is told it has not observed the
+    owner's car); bare text, loss on every token, colourless, kind 'negative'
+    like the F negatives."""
     negatives = int(negatives or 0)
-    if negatives <= 0 or variant != "c":
+    if negatives <= 0 or not child_variant_writes_negatives(variant):
         return []
     seed, b = bank["seed"], bank["bank"]
     out = []
@@ -1472,7 +1535,14 @@ def child_diagnostics(renderings: list[dict], counter: TokenCounter | None = Non
     of the prose alone (comparable across variants); novelty = mean over
     events of (1 - mean
     over renderings r >= 1 of the mean Jaccard similarity of the prose word
-    set of r to those of renderings 0..r-1). Over the negatives: n_negatives,
+    set of r to those of renderings 0..r-1); colour_mention_rate = renderings
+    whose PROSE names the planted colour as a word / n (case-insensitive; the
+    self-written canonical sentence is not prose, so under b/c/t/u this is the
+    perception naming the fact, not the frame); owner_mention_rate = renderings
+    whose prose contains the owner id as a word / n over renderings that carry
+    an `owner` (None when none do); relation_mention_rate = renderings whose
+    prose names BOTH the owner id and the planted colour / n over renderings
+    that carry an owner (the observed relation restated). Over the negatives: n_negatives,
     negative_miss_rate, negative_padded_rate."""
     pos = [r for r in renderings if not r.get("negative")]
     neg = [r for r in renderings if r.get("negative")]
@@ -1490,12 +1560,28 @@ def child_diagnostics(renderings: list[dict], counter: TokenCounter | None = Non
                 echoes += 1
             s.add(t)
         out["echo_rate"] = echoes / n
-        drift = 0
+        drift = colour_hits = 0
         for r in pos:
             words = {w.lower() for w in _COLOUR_WORD_RE.findall(r.get("prose") or "")}
-            if words - {(r.get("colour") or "").lower()}:
+            planted = (r.get("colour") or "").lower()
+            if words - {planted}:
                 drift += 1
+            if planted and planted in words:
+                colour_hits += 1
         out["drift_rate"] = drift / n
+        out["colour_mention_rate"] = colour_hits / n
+        with_owner = [r for r in pos if r.get("owner")]
+        def _names_owner(r):
+            return bool(re.search(r"(?<![A-Za-z0-9])" + re.escape(r["owner"]) + r"(?![A-Za-z0-9])",
+                                  r.get("prose") or "", re.IGNORECASE))
+        def _names_colour(r):
+            planted = (r.get("colour") or "").lower()
+            return bool(planted) and planted in {w.lower() for w in _COLOUR_WORD_RE.findall(r.get("prose") or "")}
+        out["owner_mention_rate"] = (sum(1 for r in with_owner if _names_owner(r)) / len(with_owner)) if with_owner else None
+        # the relation restated: the prose names BOTH the owner and the planted colour (Astra memo q10 section 4 --
+        # separate owner and colour mentions can occur without binding the right owner to the right colour)
+        out["relation_mention_rate"] = (sum(1 for r in with_owner if _names_owner(r) and _names_colour(r)) / len(with_owner)) \
+            if with_owner else None
         asked = [r for r in pos if r.get("canonical_missed") is not None]
         out["canonical_miss_rate"] = (sum(1 for r in asked if r["canonical_missed"]) / len(asked)) if asked else None
         out["padded_rate"] = sum(1 for r in pos if r.get("padded")) / n
@@ -1514,8 +1600,8 @@ def child_diagnostics(renderings: list[dict], counter: TokenCounter | None = Non
                 nov.append(1.0 - _mean(sims))
         out["novelty"] = _mean(nov) if nov else None
     else:
-        out.update(distinct_rate=None, echo_rate=None, drift_rate=None, canonical_miss_rate=None, padded_rate=None,
-                   mean_tokens=None, mean_prose_tokens=None, novelty=None)
+        out.update(distinct_rate=None, echo_rate=None, drift_rate=None, colour_mention_rate=None, owner_mention_rate=None, relation_mention_rate=None,
+                   canonical_miss_rate=None, padded_rate=None, mean_tokens=None, mean_prose_tokens=None, novelty=None)
     out["n_negatives"] = len(neg)
     out["negative_miss_rate"] = (sum(1 for r in neg if r.get("canonical_missed")) / len(neg)) if neg else None
     out["negative_padded_rate"] = (sum(1 for r in neg if r.get("padded")) / len(neg)) if neg else None
@@ -1529,8 +1615,9 @@ def _jaccard(a: set, b: set) -> float:
     return len(a & b) / len(a | b)
 
 
-CHILD_DIAG_KEYS = ("distinct_rate", "echo_rate", "drift_rate", "canonical_miss_rate", "padded_rate", "mean_tokens",
-                   "mean_prose_tokens", "novelty", "n_negatives", "negative_miss_rate")
+CHILD_DIAG_KEYS = ("distinct_rate", "echo_rate", "drift_rate", "colour_mention_rate", "owner_mention_rate", "relation_mention_rate",
+                   "canonical_miss_rate", "padded_rate", "mean_tokens", "mean_prose_tokens", "novelty", "n_negatives",
+                   "negative_miss_rate")
 
 
 def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: int = 1,
@@ -1772,7 +1859,7 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
         variant = child_variant or "a"
         if variant not in CHILD_VARIANTS:
             raise ValueError(variant)
-        if variant != "c":
+        if not child_variant_writes_negatives(variant):
             negs = 0
         gens = child_generations
         if gens is None:
@@ -1878,8 +1965,9 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                counter=counter.mode, stats=stats)
     if child:
         # perception-quality diagnostics of the child's renderings (the bridge's measure of the perception skill)
-        rend = [dict(event_id=it["event_ids"][0], colour=it["colour"], text=it["child_text"], prose=it["context"],
-                     canonical_missed=it["canonical_missed"], padded=it["padded"], negative=(it["kind"] == "negative"))
+        rend = [dict(event_id=it["event_ids"][0], owner=it["owner"], colour=it["colour"], text=it["child_text"],
+                     prose=it["context"], canonical_missed=it["canonical_missed"], padded=it["padded"],
+                     negative=(it["kind"] == "negative"))
                 for it in items if it["kind"] in ("fact", "interference", "negative")]
         diag = child_diagnostics(rend, counter)
         diag.update(variant=variant, backend=child_generations.get("backend"), model=child_generations.get("model"),
@@ -3547,6 +3635,8 @@ def _cell_label(cell: str) -> str:
     ck = CHILD_FRAME_CELLS.get(cell)
     if ck:
         kr = f", R={ck['repeats']} child-written renderings, variant {ck['variant']}"
+        if child_variant_taught(ck["variant"]):
+            kr += " (taught: perception lesson in the prompt)"
         if ck.get("negatives"):
             kr += f", K_neg={ck['negatives']} child-written negatives"
     return f"{cell} ({w} x {r}{kr}{', scrambled-binding control' if sh else ''})"
@@ -3606,8 +3696,9 @@ def pool_child_diagnostics(diags: list[dict]) -> dict | None:
     for k in ("n_renderings", "n_events", "n_negatives", "n_reprompted", "n_negative_owners", "content_tokens", "n_tokens"):
         vals = [d.get(k) for d in ds if d.get(k) is not None]
         out[k] = sum(vals) if vals else None
-    for k in ("distinct_rate", "echo_rate", "drift_rate", "canonical_miss_rate", "padded_rate", "mean_tokens",
-              "mean_prose_tokens", "novelty", "negative_miss_rate", "negative_padded_rate", "negative_mean_tokens"):
+    for k in ("distinct_rate", "echo_rate", "drift_rate", "colour_mention_rate", "owner_mention_rate", "relation_mention_rate", "canonical_miss_rate",
+              "padded_rate", "mean_tokens", "mean_prose_tokens", "novelty", "negative_miss_rate", "negative_padded_rate",
+              "negative_mean_tokens"):
         vals = [d.get(k) for d in ds if d.get(k) is not None]
         out[k] = _mean(vals) if vals else None
     out["over_budget"] = any(d.get("over_budget") for d in ds)
@@ -3623,8 +3714,9 @@ def _child_diag_cells(d: dict | None) -> list:
     return [d.get(k) for k in CHILD_DIAG_KEYS]
 
 
-CHILD_DIAG_HEADERS = ["distinct", "echo", "drift", "canonical miss", "padded", "mean tokens", "mean prose tokens",
-                      "novelty", "negatives", "negative miss"]
+CHILD_DIAG_HEADERS = ["distinct", "echo", "drift", "colour named", "owner named", "relation named", "canonical miss", "padded", "mean tokens",
+                      "mean prose tokens", "novelty", "negatives", "negative miss"]
+assert len(CHILD_DIAG_HEADERS) == len(CHILD_DIAG_KEYS)
 
 
 def render_child_markdown(cell: str, child: dict) -> list[str]:
@@ -3635,9 +3727,18 @@ def render_child_markdown(cell: str, child: dict) -> list[str]:
                                  "b": "the child was asked to end every perception with the canonical sentence "
                                       "(a rendering without it = canonical miss; the harness appended it).",
                                  "c": "as b, plus the child wrote 'not observed' renderings for every owner unexposed "
-                                      "at the sleep (negative miss = rendering without the canonical negative)."}.get(v, ""),
+                                      "at the sleep (negative miss = rendering without the canonical negative).",
+                                 "t": "as b, with the perception lesson in the prompt (TAUGHT: what stays is the fact you saw, "
+                                      "restated in fresh words each look -- whose car and what colour; do not invent detail the "
+                                      "scene does not show; never change the facts; a suggestion, not a rule) -- the first "
+                                      "parenting intervention at the mechanism level; compare with CF_r16_b on the same banks.",
+                                 "u": "as c, with the perception lesson in both prompts (TAUGHT; for an absence: a fact not given "
+                                      "is not a fact about the world; say plainly you have no observation, never guess a colour, "
+                                      "do not claim checks you did not make); compare with CF_r16_c on the same banks."}.get(v, ""),
          "distinct = distinct renderings / total (whitespace + case normalised); echo = renderings identical to an earlier "
-         "rendering of the same event; drift = renderings whose prose names a colour other than the planted one; padded = "
+         "rendering of the same event; drift = renderings whose prose names a colour other than the planted one; colour named "
+         "/ owner named / relation named = renderings whose prose (the perception without the canonical sentence) names the "
+         "planted colour / the owner id / both (the observed relation restated); padded = "
          "renderings repeated by the harness because the child returned fewer than R usable lines (after one re-prompt); "
          "novelty = mean over events of 1 - mean Jaccard similarity of each rendering's prose word set to the earlier "
          "renderings of the same event; mean tokens = the rendering as the child wrote it (under b/c that includes the "
@@ -4055,8 +4156,11 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
               "lines; chat template, temperature 0.7, top_p 0.95, one seed per event; every raw generation is kept in "
               "generations.json). Variant a: the harness appends the canonical sentence; b: the child is asked to write it "
               "(canonical miss = it did not; appended); c: b + child-written 'not observed' renderings for the owners "
-              "unexposed at the sleep. distinct = distinct renderings / total; echo = identical to an earlier rendering of "
-              "the same event; drift = prose names a colour other than the planted one; padded = repeated by the harness "
+              "unexposed at the sleep; t / u: b / c with the perception lesson in the prompt (TAUGHT -- the first parenting "
+              "intervention at the mechanism level; the same child, seeds, R and budget, so t-minus-b and u-minus-c is what "
+              "the lesson bought). distinct = distinct renderings / total; echo = identical to an earlier rendering of "
+              "the same event; drift = prose names a colour other than the planted one; colour named / owner named / relation named = the "
+              "prose (perception without the canonical sentence) names the planted colour / the owner id / both; padded = repeated by the harness "
               "after one re-prompt still left fewer than R lines; novelty = 1 - mean Jaccard of each rendering's prose word "
               "set to the earlier renderings of the same event (mean over events); mean tokens = the rendering as written "
               "(under b/c including the self-written canonical sentence, under a not), mean prose tokens = the perception "
@@ -4183,12 +4287,14 @@ def main(argv: list[str] | None = None):
     c.add_argument("--bank", type=int, required=True)
     c.add_argument("--cell", default=None,
                    help="A|B|C|D|Dshuf|Bw|Dw|F_r1k1|F_r16k1|F_r16k4|F_r16k16|F_r64k16|F_r4k4|F_r1k16|"
-                        "F_r16k16_neg4|F_r16k4_neg4|F_r16k16_neg64|CF_r16_a|CF_r16_b|CF_r16_c (or give --writer/--representation)")
+                        "F_r16k16_neg4|F_r16k4_neg4|F_r16k16_neg64|CF_r16_a|CF_r16_b|CF_r16_c|CF_r16_t|CF_r16_u "
+                        "(or give --writer/--representation)")
     c.add_argument("--child-backend", choices=["auto", "none", "mock", "vllm"], default="auto",
                    help="childframes: who writes the renderings when generations.json is absent (auto = mock under "
                         "--model mock, vllm under --model hf; none = refuse, reuse only)")
     c.add_argument("--child-variant", choices=list(CHILD_VARIANTS), default=None,
-                   help="childframes without --cell: a (harness appends the frame) | b (child writes it) | c (b + negatives)")
+                   help="childframes without --cell: a (harness appends the frame) | b (child writes it) | c (b + negatives) "
+                        "| t (b with the perception lesson in the prompt) | u (c with the lesson)")
     c.add_argument("--writer", choices=WRITERS, default=None)
     c.add_argument("--representation", choices=REPRESENTATIONS, default=None)
     c.add_argument("--shuffled", action="store_true")
@@ -4285,7 +4391,7 @@ def main(argv: list[str] | None = None):
             elif rep == "childframes":
                 variant = args.child_variant or "a"
                 knobs["forms"] = 1
-                negs = negs if variant == "c" else 0
+                negs = negs if child_variant_writes_negatives(variant) else 0
                 cell += f"-r{knobs['repeats']}-{variant}" + (f"-neg{negs}" if negs else "")
         budget = args.token_budget or cell_budget(args.cell, manifest["token_budget"])   # F cells: 400k default
         child_kw = {}
@@ -4317,7 +4423,8 @@ def main(argv: list[str] | None = None):
         if rep == "childframes":
             ch = cp["stats"]["child"]
             child_note = (f" child_variant={cp['child_variant']} distinct={_fmt(ch['distinct_rate'])} echo={_fmt(ch['echo_rate'])} "
-                          f"drift={_fmt(ch['drift_rate'])} canonical_miss={_fmt(ch['canonical_miss_rate'])} "
+                          f"drift={_fmt(ch['drift_rate'])} colour_named={_fmt(ch['colour_mention_rate'])} "
+                          f"owner_named={_fmt(ch['owner_mention_rate'])} relation_named={_fmt(ch['relation_mention_rate'])} canonical_miss={_fmt(ch['canonical_miss_rate'])} "
                           f"padded={_fmt(ch['padded_rate'])} novelty={_fmt(ch['novelty'])} over_budget={cp['stats']['over_budget']}")
         print(f"CORPUS_DONE {p} items={cp['stats']['n_items']} tokens={cp['stats']['n_tokens']} sha={cp['sha']} "
               f"items_sha={cp['items_sha']} ordering={cp['ordering']} budget={cp['token_budget']} "

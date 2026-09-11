@@ -1946,7 +1946,7 @@ def test_childframes_corpus_variants_and_registration():
         assert f"R=16 child-written renderings, variant {v}" in md._cell_label(cell)
         assert ("K_neg=16 child-written negatives" in md._cell_label(cell)) == (kneg > 0)
         assert md.parse_tag(f"bank2__{cell}__across__sleep4__r8") == dict(bank=2, cell=cell, arm="across", sleep=4, rank=8)
-    assert "childframes" in md.REPRESENTATIONS and md.CHILD_VARIANTS == ("a", "b", "c") and md.CHILD_K_NEG_DEFAULT == 16
+    assert "childframes" in md.REPRESENTATIONS and md.CHILD_VARIANTS == ("a", "b", "c", "t", "u") and md.CHILD_K_NEG_DEFAULT == 16
     for cell in ("A", "B", "F_r16k16", "F_r16k16_neg4"):
         assert md.cell_child_variant(cell) is None and "variant" not in md.cell_frame_knobs(cell)
     corp = {}
@@ -2066,6 +2066,108 @@ def test_childframes_corpus_variants_and_registration():
     ad = md.train_mock(corp["CF_r16_c"], os.path.join(run["dir"], "adapters", "cf_check"), profile="guide")
     assert len(ad["strength"]) == 48 and all(ad["strength"][o] == {col[o]: 3.0 * d * 16} for o, d in dose.items() if d)
     assert set(ad["abstain"]) == set(d0) and all(ad["abstain"][o] == {"car": 3.0 * 16} for o in d0)
+
+
+def test_childframes_taught_variants():
+    """t / u = b / c with the perception lesson in the prompt (the first parenting intervention at the mechanism
+    level): same cells otherwise; new diagnostics colour_mention_rate / owner_mention_rate."""
+    run = shared_run()
+    bank = run["bank"]
+    ev = [e for e in md.ledger_items(bank, "across", 4) if e["kind"] == "fact" and e["k"] == 3][0]
+    canon = md.FRAME_CANONICAL.format(owner=ev["owner"], colour=ev["colour"])
+    lesson = "A note on how to look so that you remember"
+    # (a) the taught prompt carries the lesson AND the canonical clause; a/b carry no lesson, a no clause
+    pa, pb, pt, pu = (md.child_prompt(ev, 16, v) for v in "abtu")
+    assert pt == pu and lesson in pt and f'end every sentence with exactly: "{canon}"' in pt and "Look at it 16 times" in pt
+    assert ev["observation"].replace("\n", " ") in pt and "never change the facts" in pt and "\n" not in pt
+    assert lesson not in pa and lesson not in pb and canon not in pa
+    assert md.child_prompt_template("t") is md.CHILD_PROMPT_TAUGHT and md.child_prompt_template("b") is md.CHILD_PROMPT
+    # (b) the taught negative prompt: lesson on absence, canonical negative, K named; c keeps the old wording
+    pn_u = md.child_negative_prompt("K7M4", 4, variant="u")
+    pn_c = md.child_negative_prompt("K7M4", 4)
+    assert pn_u != pn_c and pn_c == md.child_negative_prompt("K7M4", 4, variant="c")
+    assert "A note on how to remember an absence" in pn_u and "never guess a colour" in pn_u
+    assert "You have not observed owner K7M4's car" in pn_u and 'exactly: "Owner K7M4\'s car is not observed."' in pn_u
+    assert "Write 4 sentences" in pn_u and "Write exactly 4 numbered lines" in pn_u and "A note" not in pn_c
+    assert md.child_negative_prompt_template("u") is md.CHILD_NEG_PROMPT_TAUGHT and md.child_negative_prompt_template("c") is md.CHILD_NEG_PROMPT
+    # helpers: who writes the frame / the negatives / carries the lesson
+    assert [md.child_variant_writes_frame(v) for v in "abctu"] == [False, True, True, True, True]
+    assert [md.child_variant_writes_negatives(v) for v in "abctu"] == [False, False, True, False, True]
+    assert [md.child_variant_taught(v) for v in "abctu"] == [False, False, False, True, True] and md.CHILD_TAUGHT_VARIANTS == ("t", "u")
+    # registration like the other CF cells
+    for cell, v, kneg, twin in (("CF_r16_t", "t", 0, "CF_r16_b"), ("CF_r16_u", "u", 16, "CF_r16_c")):
+        assert md.CELLS[cell] == ("occurrences", "childframes", False) and md.cell_child_variant(cell) == v
+        k = md.cell_frame_knobs(cell)
+        assert k["forms"] == 1 and k["repeats"] == 16 and k["variant"] == v and md.cell_frame_negatives(cell) == kneg
+        assert md.cell_budget(cell, 65536) == 400000 and "taught" in md._cell_label(cell) and "taught" not in md._cell_label(twin)
+    # (c) mock-backend generations + corpora: the mock child reads owner / colour / R / clause out of the taught prompts too
+    gt, wt = _cf_gens(run, "CF_r16_t")
+    n_events = 16 * (1 + 4 + 16)
+    assert gt["variant"] == "t" and gt["taught"] is True and gt["negatives"] == 0 and gt["n_events"] == n_events
+    assert gt["prompt_template"] == md.CHILD_PROMPT_TAUGHT and gt["negative_prompt_template"] == md.CHILD_NEG_PROMPT_TAUGHT
+    assert wt.calls == n_events and gt["n_reprompted"] == 0
+    e = gt["events"][ev["event_id"]]
+    assert e["prompt"] == pt and len(e["lines"]) == 16 and all(ln.endswith(canon) and ev["owner"] in ln for ln in e["lines"])
+    gu, wu = _cf_gens(run, "CF_r16_u")
+    d0 = sorted(o["id"] for o in bank["owners"] if o["dose"] == 0)
+    assert gu["variant"] == "u" and gu["taught"] is True and gu["negatives"] == 16 and sorted(gu["negatives_by_owner"]) == d0
+    assert wu.calls == n_events + 16
+    for o, ng in gu["negatives_by_owner"].items():
+        assert ng["prompt"] == md.child_negative_prompt(o, 16, variant="u") and "A note on how to remember an absence" in ng["prompt"]
+        assert len(ng["lines"]) == 16 and all(ln.endswith(f"Owner {o}'s car is not observed.") for ln in ng["lines"])
+    gb, _ = _cf_gens(run, "CF_r16_b")
+    assert gb["taught"] is False and gb["prompt_template"] == md.CHILD_PROMPT and gb["negative_prompt_template"] == md.CHILD_NEG_PROMPT
+    ct, cu, cb, cc = (_cf_corpus(run, c, g) for c, g in (("CF_r16_t", gt), ("CF_r16_u", gu), ("CF_r16_b", gb), ("CF_r16_c", _cf_gens(run, "CF_r16_c")[0])))
+    for c, v in ((ct, "t"), (cu, "u")):
+        ch = c["stats"]["child"]
+        assert c["child_variant"] == v and ch["variant"] == v and all(it["child_variant"] == v for it in c["corpus"])
+        assert 0 <= ch["colour_mention_rate"] <= 1 and 0 <= ch["owner_mention_rate"] <= 1
+        assert ch["owner_mention_rate"] == 1.0                      # every mock perception names the owner
+        assert 0 < ch["colour_mention_rate"] < 1                     # some mock perceptions name the colour, not all
+        assert ch["canonical_miss_rate"] == 0.0 and ch["echo_rate"] == 0.0 and ch["padded_rate"] == 0.0
+        assert all(it["canonical_missed"] is False for it in _facts(c))
+    assert cu["stats"]["n_negatives"] == 16 * 16 > 0 and cu["stats"]["child"]["n_negatives"] == 256 and cu["stats"]["child"]["negative_miss_rate"] == 0.0
+    assert ct["stats"]["n_negatives"] == 0 and ct["stats"]["child"]["n_negatives"] == 0
+    assert all(it["child_variant"] == "u" and it["kind"] == "negative" for it in _negatives(cu)) and sorted({it["owner"] for it in _negatives(cu)}) == d0
+    # under the PERFECT mock child the lesson changes nothing but the prompt: t's corpus is b's, u's is c's (the
+    # same seeds, lines and items) -- so on the real child every t-minus-b difference is what the lesson bought
+    assert ct["items_sha"] == cb["items_sha"] and ct["sha"] == cb["sha"] and cu["items_sha"] == cc["items_sha"]
+    assert ct["stats"]["child"]["colour_mention_rate"] == cb["stats"]["child"]["colour_mention_rate"]
+    assert cb["stats"]["child"]["owner_mention_rate"] == 1.0 and "colour_mention_rate" in cc["stats"]["child"]
+    # the new diagnostics are report columns and pool over banks like the others
+    assert md.CHILD_DIAG_KEYS.index("colour_mention_rate") == md.CHILD_DIAG_HEADERS.index("colour named")
+    assert md.CHILD_DIAG_KEYS.index("owner_mention_rate") == md.CHILD_DIAG_HEADERS.index("owner named")
+    assert md.CHILD_DIAG_KEYS.index("relation_mention_rate") == md.CHILD_DIAG_HEADERS.index("relation named")
+    for c in (ct, cu, cb):   # the relation rate is the prose naming BOTH: never above either single rate
+        ch = c["stats"]["child"]
+        assert 0 <= ch["relation_mention_rate"] <= min(ch["colour_mention_rate"], ch["owner_mention_rate"])
+    assert ct["stats"]["child"]["relation_mention_rate"] == ct["stats"]["child"]["colour_mention_rate"]   # mock: owner always named
+    # the lesson text itself: aimed at restating the observed relation, forbidding invented detail, offered not enforced
+    for phrase in ("whose car it is and what colour it is", "Do not invent a place, condition, comparison or history",
+                   "Take this as a suggestion", "sometimes leading with the owner, sometimes with the colour"):
+        assert phrase in md.CHILD_PROMPT_TAUGHT and phrase not in md.CHILD_PROMPT
+    assert "single glance" not in md.CHILD_PROMPT_TAUGHT and "notice its condition" not in md.CHILD_PROMPT_TAUGHT
+    assert "Do not claim to have looked somewhere or checked a record" in md.CHILD_NEG_PROMPT_TAUGHT
+    p = md.pool_child_diagnostics([dict(ct["stats"]["child"], colour_mention_rate=0.2, over_budget=False),
+                                   dict(ct["stats"]["child"], colour_mention_rate=0.6, over_budget=False)])
+    assert math.isclose(p["colour_mention_rate"], 0.4) and p["owner_mention_rate"] == 1.0
+    # mismatched generations are refused across the taught / untaught line
+    for cell, g in (("CF_r16_b", gt), ("CF_r16_t", gb), ("CF_r16_c", gu), ("CF_r16_u", gt)):
+        try:
+            _cf_corpus(run, cell, g)
+            raise AssertionError(f"{cell} accepted generations of variant {g['variant']}")
+        except RuntimeError:
+            pass
+    # the arithmetic of the two rates on hand-made renderings (prose only; the canonical sentence is not prose)
+    R = [dict(event_id="e1", owner="K7M4", colour="red", text="x", prose="The red bonnet of owner K7M4's car. ", canonical_missed=False, padded=False),
+         dict(event_id="e1", owner="K7M4", colour="red", text="y", prose="Parked by the fence. ", canonical_missed=False, padded=False),
+         dict(event_id="e1", owner="K7M4", colour="red", text="z", prose="k7m4 again, redder than ever. ", canonical_missed=False, padded=False),
+         dict(event_id="e1", owner="K7M4", colour="red", text="w", prose="Owner K7M4X drove a blue one. ", canonical_missed=False, padded=False)]
+    d = md.child_diagnostics(R)
+    assert math.isclose(d["colour_mention_rate"], 1 / 4)             # 'redder' and 'blue' are not the word 'red'
+    assert math.isclose(d["owner_mention_rate"], 2 / 4)              # case-insensitive whole id; 'K7M4X' is not the id
+    assert md.child_diagnostics([dict(r, owner=None) for r in R])["owner_mention_rate"] is None
+    assert md.child_diagnostics([])["colour_mention_rate"] is None and md.child_diagnostics([])["owner_mention_rate"] is None
 
 
 def test_childframes_generations_reuse_and_cli():
@@ -2241,7 +2343,10 @@ def test_report_bridge_subsection():
     assert vals[3] == "1" and vals[4] == "16" and vals[5] == "0" and "->" in vals[6]
     drow = [ln for ln in summ.splitlines() if ln.startswith("| CF_r16_a__across__r8__lam1 |") and "| a | 16 | 0 | mock |" in ln][0]
     dv = [v.strip() for v in drow.strip("|").split("|")]
-    assert dv[7] == str(336 * 16) and dv[11] == "-" and re.fullmatch(r"0\.\d{3}", dv[8]) and dv[-1] == "no"
+    miss_i = 8 + md.CHILD_DIAG_KEYS.index("canonical_miss_rate")      # diagnostics columns start after 'renderings'
+    assert dv[7] == str(336 * 16) and dv[miss_i] == "-" and re.fullmatch(r"0\.\d{3}", dv[8]) and dv[-1] == "no"
+    assert re.fullmatch(r"0\.\d{3}", dv[8 + md.CHILD_DIAG_KEYS.index("colour_mention_rate")])          # colour named (mock: some)
+    assert dv[8 + md.CHILD_DIAG_KEYS.index("owner_mention_rate")] == "1.000"                            # owner named (mock: all)
     arm_md = open(os.path.join(d, "report", "CF_r16_a__across__r8__lam1.md")).read()
     assert "## Child-authored renderings (cell family CF, the bridge)" in arm_md and "Variant **a**" in arm_md and "| bank0 |" in arm_md
     assert "## Child-authored renderings" not in open(os.path.join(d, "report", "B__across__r8__lam1.md")).read()
