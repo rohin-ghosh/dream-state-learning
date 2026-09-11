@@ -24,16 +24,21 @@ denial-rule inputs incorporated here:
 | `research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_denial_corpus_ratification_evidence.txt` | 922 | `3934b01d022ff6b463def3003408d2fb5822c9991764b4bc386aa5bcc2385b58` |
 
 Candidate-v1 supplies only the denial-corpus grammar named by closure section
-1.1; provenance-repair supplies only the boundary/provenance, matcher,
+1.1. Provenance-repair supplies only the boundary/provenance, matcher,
 observation-bundle, and embedded-artifact rules named by closure sections
-1.2--1.5; closure supplies only that selection map; the evidence proves the
-existing corpus decision. Their other prose grants no authority. Every future
-review receives this page and all five inputs as complete bytes. A closed
-manifest records path, byte length, and SHA-256; fresh remeasurement must match
-every row and reject a missing, additional, reordered, or truncated input.
-Review is invalid unless a context-completeness receipt proves that check. The
-later human ratification must bind this page and expressly reaffirm the exact
-3,880-byte corpus. No transitive reference can add a rule or authority.
+1.2--1.5. Closure supplies that selection map and the complete exposure,
+47/57-literal, capability, 22-sink, causal-noninterference, private-failure,
+and total-classification rules in sections 4.1 and 4.3. Closure section 4.2's
+23-role census is superseded only by the exact census amendment in section 3
+below. The evidence proves the existing corpus decision. Their other prose
+grants no authority.
+
+Every future review receives this page and all five inputs as complete bytes.
+A closed manifest records path, byte length, and SHA-256; both checkers
+independently remeasure every row, bind their measured vectors in their
+receipts, and reject a missing, additional, reordered, or truncated input.
+The later human ratification must bind this page and expressly reaffirm the
+exact 3,880-byte corpus. No transitive reference can add a rule or authority.
 
 The denial corpus remains unchanged. C11 also preserves this exact rule:
 
@@ -62,7 +67,8 @@ Governance conformance is not scientific evidence.
 
 ## 3. Two independent checking roles
 
-There are exactly two planned programs:
+There are exactly two planned checking programs and one non-checking execution
+monitor:
 
 - **Primary guard**, role `V11_PRIMARY_GUARD_SOURCE`, path
   `research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_primary_guard_v1.py`,
@@ -71,17 +77,30 @@ There are exactly two planned programs:
 - **Reference checker**, role `V11_REFERENCE_GUARD_SOURCE`, path
   `research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_reference_guard_v1.py`,
   the same media type, run only by actor `C11_REFERENCE_GUARD_RUNNER`.
+- **Execution monitor**, role `V11_EVENT_MONITOR_SOURCE`, path
+  `research_loop/changes/chg_20260910_pcfl_m0_mtext_bound_v11/governance/v11_guard_event_monitor_v1.py`,
+  the same media type, run only by actor `C11_EVENT_MONITOR_RUNNER`. It enforces
+  the pre-pass capability allowlist and records events; it never decides guard
+  semantics or a scientific result.
 
-Both are governance-private singleton nonmembers of the scientific 32-record
-registry, but mandatory members of the future source plan, source manifest,
-governance-role census, exact-byte review preimage, and execution grant. Their
-authors are distinct; neither author may review the other program. One third
-reviewer independently hashes and reviews both exact sources, after which
-Rohin separately ratifies both exact hashes. Until those external hashes exist
-and are bound, neither program exists operationally. Neither source nor any
-receipt is actor/model-visible.
+All three are governance-private singleton nonmembers of the scientific
+32-record registry, but mandatory members of the future source plan, source
+manifest, governance-role census, exact-byte review preimage, and execution
+grant. Their authors are distinct; no author may review another component.
+One fourth actor independently hashes and reviews all three exact sources,
+after which Rohin separately ratifies all three exact hashes. Until those
+external hashes exist and are bound, none exists operationally. No source,
+ledger, or receipt is actor/model-visible.
 
-Both programs receive only the ratified denial corpus, exact candidate
+The governance-role census is the closure-section-4.2 enum with exactly two
+replacements—`V11_V7_GUARD_SOURCE` becomes `V11_PRIMARY_GUARD_SOURCE`, and
+`V11_V7_GUARD_RECEIPT` becomes `V11_FINAL_GUARD_RECEIPT`—plus exactly these
+four bytewise-sorted additions: `V11_EVENT_MONITOR_SOURCE`,
+`V11_PRIMARY_GUARD_RECEIPT`, `V11_REFERENCE_GUARD_SOURCE`, and
+`V11_SAME_GRANT_EVENT_LEDGER`. It therefore has exactly 27 roles. This changes
+no scientific condition, slot, or 32-record registry.
+
+Both checking programs receive only the ratified denial corpus, exact candidate
 manifest, authenticated closed-capability observation bundle, authenticated
 same-grant event ledger, and execution grant. They may inspect those as inert
 bytes but may not open a denied target, import candidate code, prepare data,
@@ -90,31 +109,43 @@ call, copy, or trust the primary guard and independently implements the denial
 grammar, resource closure, mutations, projection, and failure rules. Neither
 program may certify its own source, completeness, independence, or authority.
 
-The primary writes immutable `V11_PRIMARY_GUARD_RECEIPT`; the reference writes
-immutable `V11_REFERENCE_GUARD_RECEIPT`. Each binds its source hash, every
-input hash, grant ID, event-ledger head, finite findings, and verdict. A
-separate deterministic conjunction step writes `V11_GUARD_CONJUNCTION_RECEIPT`
-binding both receipt hashes and returning PASS only when both verdicts are PASS
-over identical inputs and grant. Missing data, disagreement, mutation, or any
-failure produces FAIL; receipts are never overwritten.
+The primary writes immutable `V11_PRIMARY_GUARD_RECEIPT`. After independently
+computing its own verdict, the reference checker reads that receipt and writes
+immutable `V11_FINAL_GUARD_RECEIPT`, binding both source hashes, the primary
+receipt hash, both complete-context measurement vectors, every input hash,
+grant ID, common pre-guard ledger head, current ledger tail, finite findings,
+and both verdicts. It returns PASS only when both independently obtained
+verdicts are PASS over identical bytes and grant. Thus the reference checker,
+not a third checking program, performs the deterministic conjunction. Missing
+data, disagreement, mutation, or either failure produces FAIL; receipts are
+never overwritten.
 
 ## 4. Guard-before-use ordering
 
-The two programs run in a dedicated first substage under one exact future
-execution grant. Before either runs, an independently reviewed governance
-monitor closes a hash-chained `V11_SAME_GRANT_EVENT_LEDGER` over the grant,
-capability inventory, actors, operations, and exact input manifest. Before a
-conjunction PASS, the only allowed operations are
+The three components run in a dedicated first substage under one exact future
+execution grant. The exact-byte-ratified execution monitor starts a fresh
+deny-by-default process boundary, closes an immutable pre-guard snapshot over
+the grant, exhaustive capability inventory, three actors, and exact input
+manifest, and records its hash as common ledger head `H0`. It then appends each
+allowed operation to the hash-chained `V11_SAME_GRANT_EVENT_LEDGER`; `H0` never
+changes, while the tail advances. Both checking receipts bind `H0`, and the
+final receipt also binds the final pre-pass tail. Before a final PASS, the only
+allowed operations are
 `READ_DECLARED_GOVERNANCE_BYTES_AS_INERT_BYTES`, `HASH_DECLARED_BYTES`,
 `VALIDATE_DECLARED_JSON_SHAPE_WITHOUT_IMPORT_OR_EXECUTION`,
-`RUN_PRIMARY_GUARD`, `RUN_REFERENCE_GUARD`, and `WRITE_GUARD_RECEIPT`.
+`RUN_PRIMARY_GUARD`, `WRITE_PRIMARY_GUARD_RECEIPT`,
+`READ_PRIMARY_GUARD_RECEIPT`, `RUN_REFERENCE_GUARD`, and
+`WRITE_FINAL_GUARD_RECEIPT`.
 Shape validation may read only the six complete controlling inputs, candidate
 manifest, observation bundle, ledger, and grant enumerated in their manifest.
 
-Both checkers reject if the ledger records any earlier candidate import,
+Both checkers reject if the exhaustive snapshot or ledger records any earlier
+or unlisted candidate import,
 preparation, materialization, fixture/root/data creation, candidate consumer,
-model/tokenizer/benchmark use, or unlisted capability. The conjunction PASS is
-the sole cryptographic parent of every later candidate-consuming event. Each
+model/tokenizer/benchmark use, actor, operation, or capability. The final PASS
+receipt is the sole cryptographic parent of every later candidate-consuming
+event. The same monitor appends later events from the bound final pre-pass tail
+without altering `H0`. Each
 later event records that receipt hash, grant ID, and unchanged input-manifest
 hash; absence or mismatch fails closed. This event-ledger mutation suite is the
 causal-ordering falsifier. Stage names or timestamps alone prove nothing.
