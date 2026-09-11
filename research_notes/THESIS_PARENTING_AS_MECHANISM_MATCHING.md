@@ -1,6 +1,6 @@
 # Thesis: parenting teaches the child to think in the form the write can store
 
-Ruled by Rohin, 2026-09-11 (evening), after the completion-frame results (SEQ-038 to SEQ-042). Foundational for the paper. Supersedes any earlier framing in which the sleep/compile machinery is the contribution.
+Ruled by Rohin, 2026-09-11 (evening), after the completion-frame results (SEQ-038 to SEQ-042). Foundational for the paper. Supersedes any earlier framing in which the sleep/compile machinery is the contribution. **Formalised on 2026-09-12 as the self-learning flywheel with hypotheses H1/H2, the provenance defence and the first-person register — see `THESIS_v2_SELF_LEARNING_FLYWHEEL.md`; this file remains the ruling it rests on.**
 
 **Provenance note (Fable, 2026-09-11 21:20 UTC).** Sections 0–3 are Rohin's ruling as recorded by Fable at 19:50 UTC. Between 20:30 and 21:15 UTC another agent (Codex, by the pattern of its edits) rewrote sections 0–3 in place to a different position — that the writer is "not yet qualified", that cell F shows only an "owner-associated component, not selective memory", and that a "multi-key conditional writer gateway" must pass BEFORE the child-authored bridge experiment. That rewrite is preserved below as section 4, a labelled dissent, because a ruling's record must not be silently replaced. Rohin decides between sections 0–3 and section 4.
 
