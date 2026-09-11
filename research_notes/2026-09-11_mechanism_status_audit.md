@@ -174,6 +174,27 @@ this cross-node bank-0 screen. The previously frozen next-action advisory
 forbids automatic escalation to `F_r64k16` if no equal-exposure cell satisfies
 the full owner/specificity/spill/mass conjunction.
 
+### Cell F bank-0 K16 closes the full-strength screen
+
+The equal-exposure sixteen-form cell, `F_r16k16`, completed the cross-node
+bank-0 screen. At dose 16 its matching-frame probability moved 0.2301 ->
+0.8359 (+0.6058), with frame candidate mass 0.0086 -> 0.9986. Its
+owner-versus-similar interaction strengthened again to 2.3607 with a paired
+95% interval [1.4003, 3.3976]. Thus varied surface forms do create a real
+owner-specific component rather than merely making the canonical sentence
+more fluent.
+
+The learned behaviour is still much too broad to qualify as a bound memory.
+Mean spill is 0.3326 against the frozen 0.03 ceiling: unexposed-owner 0.2294,
+similar-owner 0.3256, and bicycle/wrong-relation 0.4428. Across the fixed-dose
+screen, increasing diversity from K1 to K4 to K16 reduces mean spill 0.4389
+-> 0.3446 -> 0.3326 while improving the interaction interval, but never
+localizes the behaviour. No K at adapter strength 1 satisfies the frozen
+conjunction. Under the precommitted next-action rule, this means no automatic
+`F_r64k16` escalation and no F-Relay promotion. A no-training adapter-strength
+read at the already specified lower strengths is the only cheap remaining
+rescue check; otherwise this representation stops here.
+
 ### R5 seed 701 reached its first sleep without a resume
 
 The live R5-loose pilot completed four contiguous eight-episode wake batches,
