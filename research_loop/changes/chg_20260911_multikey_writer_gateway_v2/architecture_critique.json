@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260911_multikey_writer_gateway_v2.cross.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v2",
+  "state": "critiqued",
+  "architecture_change_sha256": "b0a7d0d9623adbebc215bca877c52421ff4ac8931567e7a149b56ae24fa188bf",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v2.scientific.v1",
+      "sha256": "11fcb732014ff5c9981f553c2d935a2698cc8085d4eb67de141b2af22d28ca8b"
+    },
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v2.systems",
+      "sha256": "0041598463f8df183e353325e9c37c078a13c375127c96a91720b73354d1adaf"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v2/interpretation_scientific.json",
+      "sha256": "11fcb732014ff5c9981f553c2d935a2698cc8085d4eb67de141b2af22d28ca8b",
+      "purpose": "Fresh scientific interpretation of the exact proposal."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v2/interpretation_systems.json",
+      "sha256": "0041598463f8df183e353325e9c37c078a13c375127c96a91720b73354d1adaf",
+      "purpose": "Fresh systems interpretation of the exact proposal."
+    }
+  ],
+  "strongest_case": "The two-root sixteen-key direction is the best current information per fit: it directly tests whether several cue-specific action bindings coexist after Cell F and R5 showed that large weight changes can instead become broad habits. Four fits all estimate the central construct, while target masking, mirror controls, per-stratum gates, spill families, and absolute action rules keep the permitted conclusion narrow.",
+  "reviewed_acceptance_test_ids": [
+    "MWG2_T01",
+    "MWG2_T02",
+    "MWG2_T03",
+    "MWG2_T04",
+    "MWG2_T05",
+    "MWG2_T06",
+    "MWG2_T07",
+    "MWG2_T08"
+  ],
+  "concerns": [
+    {
+      "concern_id": "MWG2_C01_LABEL_PRECEDENCE",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "BINDING_WITH_SPILL is unreachable because the earlier interface/flood label already consumes spill failures, and no unique two-root terminal reduction is defined.",
+      "evidence": "Both fresh interpretations independently identify the same predicate overlap; exhaustive MWG2_T06 fixtures cannot have one expected label.",
+      "acceptance_test_ids": ["MWG2_T05", "MWG2_T06"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG2_C02_SCORING_DENOMINATORS",
+      "category": "evaluation",
+      "severity": "blocking",
+      "statement": "The proposal does not fully define sequence likelihood, EOS handling, two-action TV, legal-ACT increase, validity denominators, aggregation order, parser grammar, or missing/error treatment.",
+      "evidence": "Those choices can change q, I, NLL, spill, validity, and generated binding outcomes at the fixed thresholds.",
+      "acceptance_test_ids": ["MWG2_T02", "MWG2_T05", "MWG2_T06"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG2_C03_CLAIM_AND_CLUSTERING",
+      "category": "statistics",
+      "severity": "blocking",
+      "statement": "The pass wording can imply success on every key and statistical independence, while the gate permits 12/16 directional keys and the bootstrap incorrectly treats two modes of one tool as independent.",
+      "evidence": "Modes share tool identity and constrained complementary targets; roots share one model and recipe; generated thresholds are aggregate and stratum-level.",
+      "acceptance_test_ids": ["MWG2_T06", "MWG2_T08"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG2_C04_END_TO_END_WORKLOAD",
+      "category": "scalability",
+      "severity": "blocking",
+      "statement": "The three-A40-hour ceiling is not reproducible because source and read call/token counts are incomplete and the only projection occurs after source work and one fit.",
+      "evidence": "The fixed geometry already implies 1,536 source trajectories and 3,072 source emissions across roots, before primary, oracle, spill, interface, and teacher-forced reads.",
+      "acceptance_test_ids": ["MWG2_T01", "MWG2_T08"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG2_C05_SOURCE_AND_VISIBILITY_ROLES",
+      "category": "visibility_leak",
+      "severity": "material",
+      "statement": "Source-stage 'hidden' conflates child and trusted-harness visibility, and the two-emission conversation, no-semantic-retry rule, target complement bijection, equal token lengths, surface disjointness, and held/oracle loading barrier are underspecified.",
+      "evidence": "Without typed roles and exact ordering, mapping/admission/report information could influence model-visible bytes or paired geometry even if literal fields are omitted.",
+      "acceptance_test_ids": ["MWG2_T01", "MWG2_T02", "MWG2_T03", "MWG2_T04"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG2_C06_SCOUT_CAPABILITY_BOUNDARY",
+      "category": "operations",
+      "severity": "material",
+      "statement": "Path isolation alone does not prove that implementation-only CPU tests cannot reach model, tokenizer, trainer, device, network, subprocess, or adapter-write paths.",
+      "evidence": "A permitted source file or launcher can trigger forbidden side effects while writing only inside an allowlisted path.",
+      "acceptance_test_ids": ["MWG2_T07"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "The source visibility cell must distinguish trusted outcome/eligibility harness access from child/model access.",
+    "Held and explicit-map oracle materials need a tested load barrier until all four adapter stages commit.",
+    "Forbidden source fields must be absent from serialized model bytes and loss labels, not merely omitted from one Python object."
+  ],
+  "missing_acceptance_tests": [
+    "A complete symbolic end-to-end call and token accounting fixture with a pre-source stop.",
+    "A narrow CPU sentinel proving model, tokenizer, trainer, device, network, subprocess, and adapter-write hooks are unreachable.",
+    "An explicit stage-order fixture proving held and oracle material cannot feed source, selection, compilation, fitting, or retry."
+  ],
+  "human_questions": [
+    "Should a corrected successor retain the two disjoint-root sixteen-key core while resolving all six concerns before implementation approval?",
+    "Does Rohin accept that the gateway tests correctness-selected seen-key endpoint supervision, not outcome causality or autonomous experiential learning?",
+    "Should the uncertainty interval use exhaustive stratified tool-cluster resampling, or should uncertainty be descriptive and removed from the pass gate?",
+    "Should concrete identifiers, tokenizer receipts, seeds, runtime paths, batching, and throughput receipts remain deferred to the separately ratified execution manifest?"
+  ]
+}
