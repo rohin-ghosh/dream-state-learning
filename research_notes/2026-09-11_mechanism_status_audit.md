@@ -195,6 +195,17 @@ conjunction. Under the precommitted next-action rule, this means no automatic
 read at the already specified lower strengths is the only cheap remaining
 rescue check; otherwise this representation stops here.
 
+That optional lower-strength read was then specified and independently
+reviewed. Execution review found that doing it cleanly still requires binding
+the complete same-node adapter set, adding atomic identity/no-clobber
+preflights, and creating an isolated per-bank aggregator. Because the
+full-strength family already fails its frozen conjunction and the remaining
+calendar is dominated by process-writer and parenting evidence, the read is
+parked rather than rushed. Cell F stops for this sprint: no higher-exposure
+`F_r64k16`, no F-Relay, and no factual-LoRA qualification. The unexecuted draft
+is preserved at
+`research_loop/changes/chg_20260911_cell_f_lambda_read_v1/exact_scope.md`.
+
 ### R5 seed 701 reached its first sleep without a resume
 
 The live R5-loose pilot completed four contiguous eight-episode wake batches,
