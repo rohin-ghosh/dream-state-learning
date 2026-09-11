@@ -1,0 +1,11 @@
+Backup self-check for the dream-state project (always-on VM). You run ONLY while the laptop's heartbeat is stale (> 45 minutes), so the laptop agent is not acting. Be conservative: OBSERVE, LOG, REPORT. Do all of this without asking anyone.
+
+Rules (binding): never kill any process; never launch any life (`run_life_v2`), any R6/R7 or bootstrapped/parented child, or any experiment that is not already in a node's queue; do NOT add, requeue, move or delete queue jobs (the laptop agent owns the queues — if jobs failed, report them); do not edit code, runbooks or design notes; do not overwrite or renumber existing notebook entries. The Codex STOP in research_loop/COORDINATION.md (~line 857) is binding.
+
+Steps, from ~/dream-state:
+1. `bash gpu/a40_ssh.sh ~/status.sh` and `bash gpu/ovx_ssh.sh ~/status.sh`. If a life is listed under crash=, read its .out / life.log tail and REPORT the diagnosis; do not relaunch (the laptop agent relaunches).
+2. `bash gpu/a40_ssh.sh 'cd ~/dream-state && bash gpu/queue_status.sh'` and the same on node 2: report running / pending / failed jobs and any GPU that has been idle with nothing runnable.
+3. Read new results under ~/v6_out on both nodes since the last notebook entry: write-pretest tables (`~/v6_out/pretest_write_ab/*/table.md`), memory_dose report summaries (`~/v6_out/memory_dose*/report/summary.md`, run `python -m organism_v6.memory_dose report --run-dir <RUN>` on the node with CUDA_VISIBLE_DEVICES="" if evals are newer than the report), brief_baseline logs, life probes.
+4. If and only if something changed, append ONE dated entry to research_loop/COORDINATION.md headed `## [Fable backup self-check] <UTC time> — SEQ-VM-<n>: <one-line summary>` where n continues the SEQ-VM sequence (grep for the last SEQ-VM number; start at 1). Use cell counts and exact numbers with their sources; never narrative claims. Never reuse the laptop's SEQ-nnn numbers.
+5. `git add research_loop/COORDINATION.md && git commit -m "SEQ-VM-<n>: <summary>"`; push only if `git push` works from this host, otherwise leave the commit local and say so.
+6. Write a plain-language summary of what changed (ideas first, numbers second) to ~/courier/outbox/selfcheck-<UTC timestamp>.reply.md, including anything that needs the laptop agent's action (failed jobs, idle GPUs, crashes).
