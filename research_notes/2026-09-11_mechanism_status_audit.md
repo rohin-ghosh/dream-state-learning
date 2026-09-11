@@ -133,3 +133,36 @@ generation delta has already been observed elsewhere, a same-A40 bank-0 queue
 was added behind the active bank-1/2 queue. This permits a three-bank
 within-node analysis; the cross-node bank-0 result remains a sensitivity
 replicate rather than part of that pool.
+
+## Live addendum — 2026-09-11 08:53 UTC
+
+### Cell F first directional read: repetition amplifies the frame, not binding
+
+The first completed high-repetition cell is bank 0, `F_r16k1`, with one
+surface form repeated 16 times per occurrence. It is a screening result, not
+a finding. Relative to adapter-off, the frame-completion probability changes
+by +0.050 at dose 0, +0.299 at dose 1, +0.416 at dose 4, and +0.660 at dose
+16; frame candidate mass rises from about 0.009 off to approximately 1.000
+on. The dose-rise check passes (+0.360), but the binding check fails: the
+frame interaction interval is [-0.106, 1.939], and mean spill into non-owner
+frames is 0.439 against the frozen 0.03 ceiling.
+
+The narrow interpretation is useful: repetition is a powerful write
+amplifier, but repetition in one phrasing mainly teaches the broad habit
+"complete this colour sentence" rather than a clean owner-specific memory.
+The equal-exposure `F_r16k4` and `F_r16k16` cells are running now. They test
+whether surface diversity preserves the owner effect while reducing spill.
+No Cell F claim is warranted until three same-node banks and an untouched
+confirmation agree.
+
+### R5 seed 701 reached its first sleep without a resume
+
+The live R5-loose pilot completed four contiguous eight-episode wake batches,
+compiled 124 new items plus three principles at sleep 32, trained rank 8 at
+learning rate 1e-4 with return code 0, and passed the action-interface canary
+at 1.00 parseable ACT rate. The disjoint score gate was still evaluating at
+this cut, so the adapter remained a candidate and no commit/reject verdict
+was available. The life process remained alive. This is operational evidence
+only: its default score tolerance is 0.02 and its format canary still uses
+the older report-panel programs, so it remains an exploratory R5-loose pilot
+rather than a paper-grade retention result.
