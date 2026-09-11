@@ -194,8 +194,9 @@ The supported extension is:
 > best-of-trajectory gate. It showed a strong and cumulative behavioral write,
 > but not learned conditional judgment, invention, or interface safety.
 
-One analyzer field is also narrower than its name: the current
-`n_episodes_reaching_tick16` counts episodes with an ACT at tick 16, not every
-thought trajectory that reached tick 16. This does not alter the published
+The analyzer field formerly named `n_episodes_reaching_tick16` counted
+episodes with an ACT at or after tick 16, not every thought trajectory that
+reached tick 16. It is now accurately named
+`n_episodes_with_act_at_or_after_tick16`. This does not alter the published
 ACT, cap, or score calculations. A later episode-128 pair can describe whether
 the same pattern persists, but cannot repair the design's causal limitations.

@@ -86,7 +86,10 @@ def condition_summary(episodes: dict[str, list[dict]], routine: str) -> dict:
         "n_action_bearing_ticks": n_action_ticks,
         "mean_action_bearing_ticks_per_episode": statistics.mean(action_ticks),
         "mean_act_rows_per_action_bearing_tick": len(actions) / n_action_ticks,
-        "n_episodes_reaching_tick16": sum(
+        # This reads ACT rows only. It must not be described as evidence that
+        # the thought trajectory reached tick 16: an episode can think at
+        # tick 16 without executing an action there.
+        "n_episodes_with_act_at_or_after_tick16": sum(
             max(int(row["tick"]) for row in rows) >= 16
             for rows in episodes.values()
         ),
