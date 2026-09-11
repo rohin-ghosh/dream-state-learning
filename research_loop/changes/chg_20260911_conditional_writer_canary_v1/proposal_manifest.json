@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "artifact_type": "proposal_manifest",
+  "change_id": "chg_20260911_conditional_writer_canary_v1",
+  "state": "human_ratification_required",
+  "artifacts": [
+    {
+      "path": "human_directive.txt",
+      "sha256": "8c4284e9d44a94618837bb1d1116fa2c32917964f2409549d1fc1edaca496048"
+    },
+    {
+      "path": "interpretations.md",
+      "sha256": "88666b5b7c401c040325216ec386c9f77b18aeefd2636b0dc79fca382997a3e2"
+    },
+    {
+      "path": "cross_critique.md",
+      "sha256": "d57fd03bec5a34acfb8039714c91d43758bc131f0fae4c072ecbc8a3cfa031b2"
+    },
+    {
+      "path": "consensus.md",
+      "sha256": "353bee2786ebb76eb40f20028f742b3a27d29ea8a881b61b9d5d0c4c2a8ba85f"
+    },
+    {
+      "path": "exact_scope.md",
+      "sha256": "0d366d3a2549db3d235f9751455540a347d0401d2ae2dd7fa1bd58a178636383"
+    }
+  ],
+  "independent_reviews": [
+    {
+      "role": "scientific_estimand",
+      "task": "v7_scientific_estimand_audit",
+      "verdict": "pass"
+    },
+    {
+      "role": "skeptical_paper_reviewer",
+      "task": "v7_paper_reviewer_audit",
+      "verdict": "pass"
+    },
+    {
+      "role": "lineage_systems",
+      "task": "v7_lineage_systems_audit",
+      "verdict": "pass"
+    }
+  ],
+  "authorized_if_ratified": [
+    "scoped_implementation",
+    "deterministic_materialization",
+    "cpu_and_fault_fixtures"
+  ],
+  "not_authorized": [
+    "gpu_execution",
+    "training",
+    "parenting",
+    "child_lineage_mutation",
+    "c11_work",
+    "scientific_claim",
+    "release",
+    "submission"
+  ]
+}
