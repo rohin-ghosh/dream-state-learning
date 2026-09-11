@@ -27,7 +27,7 @@ Ruled by Rohin, 2026-09-11 (evening), after the completion-frame results (SEQ-03
 
 ## 3. Immediate consequences (2026-09-11)
 
-- Build the bridge experiment (child-authored frames) as the next car-test representation; run it on the frozen child first (no parenting) to measure the raw perception skill, then with a perception-teaching prompt as the first parenting intervention at the mechanism level. (Built; queued 21:20 UTC.)
+- Build the bridge experiment (child-authored frames) as the next car-test representation; run it on the frozen child first (no parenting) to measure the raw perception skill, then with a perception-teaching prompt as the first parenting intervention at the mechanism level. (Built; queued 21:20 UTC. **Measured over three banks, SEQ-048, 23:20 UTC:** the untaught child's renderings that end in its own canonical sentence store at 0.82 completion / owner contrast 2.28 [1.62, 2.92] vs synthetic 0.91 / 2.84; paired per-bank completion gap 0.05 / 0.22 / 0.01 — the gap is real but small; harness-appended frames are bank-dependent (0.31–0.95); child-written negatives give abstention 0.17 at a cost to completion on two of three banks; child cells spill less (0.23–0.31 vs 0.43). Fresh-material replications (seeds 1, 2 → nine banks) queued; the taught variants t/u — the same child with a perception lesson in the prompt — are the next cells; see IDEAS.md 23:20 UTC.)
 - Finish the mechanism side only where it blocks the bridge: exposure-parity abstention (done: null, SEQ-043), memory-block rank (done: rank 8 saturates, SEQ-044).
 - Move sleep/compile work off the critical path except the interface canary and the leak scan.
 - The canon's EVIDENCE table gets the bridge experiment as the measurement for claim (iv).
