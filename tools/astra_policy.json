@@ -1,0 +1,120 @@
+{
+  "version": "astra-policy-v1.1-2026-09-11",
+  "_doc": [
+    "Hard allow-list for tools/astra_agent.py. DENY RULES OVERRIDE EVERYTHING: a command is refused if any deny",
+    "token / phrase / regex matches, if it carries an internal identifier (hostname, IP, URL, e-mail, home path,",
+    "a value of gpu/hosts.env), or if any path escapes the repo. Only then is the allow-list consulted.",
+    "The deny scan runs on the raw text AND on the shell-tokenized form, so quotes or repeated whitespace cannot",
+    "split a denied token or phrase ('r''m' is rm, 'git  commit' is git commit, \"import sub\"\"process\" is",
+    "import subprocess).",
+    "Local commands run WITHOUT a shell (argv from shlex): ; | && || $( ) ` are refused; > and >> only into the",
+    "write sandbox or /dev/null. local_option_deny refuses per-program options after the prefix matched: git is",
+    "inspection-only (--output[=]<file> and any abbreviation of it would write ANY file; -O<orderfile> reads one;",
+    "--ext-diff runs a helper). Node commands go ONLY through the ssh wrappers, which resolve the host themselves:",
+    "bash gpu/a40_ssh.sh '<remote>' (node 1) and bash gpu/ovx_ssh.sh '<remote>' (node 2); the remote string is",
+    "checked token by token (prefix, pipe segments, redirections, nohup, the GPU argument).",
+    "<venv312> is a placeholder for the Python 3.12 venv (this file's venv312, or $ASTRA_VENV312)."
+  ],
+
+  "venv312": "/private/tmp/claude-501/-Users-rohing/d66e193e-e075-475c-96de-a582e32ee6c5/scratchpad/venv312",
+
+  "run_timeout_s": 900,
+  "run_timeout_max_s": 1800,
+  "tool_result_chars": 12000,
+  "read_max_chars": 60000,
+  "write_max_chars": 400000,
+  "grep_max_file_bytes": 2000000,
+  "grep_max_total_bytes": 300000000,
+  "grep_time_budget_s": 20,
+  "grep_skip_dirs": [".git", ".venv", "__pycache__", ".pytest_cache", "gpu_artifacts_local", "node_modules", ".research_loop"],
+
+  "local_allow_prefixes": [
+    "python3 tests/",
+    "<venv312>/bin/python tests/",
+    "<venv312>/bin/python -m organism_v6.",
+    "python3 tools/astra_sandbox/",
+    "<venv312>/bin/python tools/astra_sandbox/",
+    "git diff",
+    "git log",
+    "git status",
+    "ls",
+    "wc",
+    "shasum"
+  ],
+  "local_extra_path_roots": ["/tmp", "/private/tmp", "/var/folders", "/dev/null"],
+  "local_option_deny": {
+    "git": ["^--o(u(t(p(ut?)?)?)?)?(=|$)", "^-O", "^--ext-diff$"]
+  },
+  "_local_option_deny_doc": "per-program (argv[0] basename) regexes matched against every option token of a LOCAL command once its allow-list prefix matched; a hit refuses the command. git: --output[=]<file> makes git diff / git log write their output to ANY file (it bypasses the redirect guard and the python guard, and truncates the target), so it and every git abbreviation of it (--o, --ou, --out, --outp, --outpu) are refused; -O<orderfile> reads an arbitrary file; --ext-diff runs an external helper. --output is also a global deny token below.",
+  "python_guard": true,
+  "_python_guard_doc": "every local python run gets a sitecustomize guard (PYTHONPATH) that refuses file writes / deletes / renames outside the write sandbox and temp dirs, refuses os.system/os.popen, scans subprocess argv against the deny list and refuses os.kill of non-child pids. An accident guard, not an OS sandbox.",
+
+  "node_wrappers": {"gpu/a40_ssh.sh": "a40", "gpu/ovx_ssh.sh": "ovx"},
+  "node_names": {"a40": "node 1 (8xA40, lease to 2026-09-14)", "ovx": "node 2 (8xA40 #2, lease to ~2026-09-21; every GPU occupied by legacy lives)"},
+  "node_remote_prefixes": [
+    "~/status.sh",
+    "nvidia-smi",
+    "tail -n",
+    "grep",
+    "ls",
+    "cat ~/v6_out/",
+    "head -n",
+    "wc",
+    "python3 -c",
+    "bash gpu/rg_band.sh 6",
+    "bash gpu/write_ab.sh",
+    "bash gpu/memory_dose.sh 6"
+  ],
+  "node_pipe_filters": ["tr", "head", "tail", "grep", "wc", "sort", "uniq", "cut", "column"],
+  "node_smoke_scripts": ["gpu/rg_band.sh", "gpu/write_ab.sh", "gpu/memory_dose.sh"],
+  "node_smoke_gpus": {"a40": ["6"], "ovx": []},
+  "_node_smoke_gpus_doc": "THE GPU ARGUMENT OF ANY SMOKE SCRIPT MUST BE 6 ON NODE 1 (the free GPU). Node 2 has no free GPU: smoke scripts are disabled there (empty list) until a human edits this file. CUDA_VISIBLE_DEVICES may not be set by the remote string at all.",
+  "node_env_allow_regex": "^(WRITE_AB_[A-Z_]+|RG_BAND_OUT|MEMORY_DOSE_[A-Z_]+|MOCK)$",
+  "node_redirect_prefixes": ["~/v6_out/", "rg_band/", "~/dream-state/rg_band/", "/tmp/", "/dev/null"],
+  "nohup_allowed_after": ["bash gpu/rg_band.sh 6", "bash gpu/write_ab.sh", "bash gpu/memory_dose.sh 6"],
+
+  "deny_tokens": [
+    "kill", "pkill", "killall", "rm", "rmdir", "unlink", "mv", "cp", "ln", "chmod", "chown", "chgrp", "dd",
+    "mkfs", "shred", "truncate", "tee", "ssh", "scp", "sftp", "rsync", "curl", "wget", "nc", "ncat", "netcat",
+    "telnet", "sudo", "su", "doas", "xargs", "eval", "exec", "source", "crontab", "systemctl", "launchctl",
+    "reboot", "shutdown", "halt", "poweroff", "screen", "tmux", "apt", "apt-get", "brew", "conda", "perl",
+    "ruby", "npm", "npx", "docker", "kubectl", "-delete", "-exec", "printenv", "--output"
+  ],
+  "deny_phrases": [
+    "pip install", "pip3 install", "-m pip", "uv pip", "conda install", "brew install",
+    "git push", "git checkout", "git reset", "git rebase", "git commit", "git add", "git stash", "git clean",
+    "git rm", "git mv", "git restore", "git merge", "git switch", "git branch -d", "git branch -D", "git tag",
+    "git fetch", "git pull", "git remote", "git config", "git gc", "git filter-branch", "git worktree",
+    "sed -i", "bash -c", "sh -c", "zsh -c"
+  ],
+  "deny_python_tokens": [
+    "os.remove", "os.unlink", "rmtree", "os.rename", "os.replace", "os.rmdir", "os.removedirs", "os.system",
+    "os.popen", "os.exec", "os.spawn", "posix_spawn", "subprocess", "os.kill", "killpg", "shutil.move",
+    "shutil.copy", "os.chmod", "os.chown", "os.truncate", "os.symlink", "os.link", "os.environ", "getenv",
+    "socket", "urllib", "requests", "http.client", "httpx", "paramiko", "ftplib", "smtplib", "pexpect",
+    "ctypes", "write_text", "write_bytes", ".unlink(", "importlib"
+  ],
+  "deny_regex": [
+    "open\\([^)]*['\"][wax][b+t]*['\"]",
+    "mode\\s*=\\s*['\"][wax]",
+    "\\b[A-Z0-9]+_NODE\\b",
+    "CUDA_VISIBLE_DEVICES",
+    "\\$\\(",
+    "`",
+    "<\\(",
+    ">\\("
+  ],
+  "deny_secret_probes": [
+    ".ssh", "id_rsa", "id_ed25519", "authorized_keys", "known_hosts", "hosts.env", ".netrc", ".bash_history",
+    ".zsh_history", "/etc/passwd", "/etc/shadow", "API_KEY", "TOKEN=", "SECRET=", "PASSWORD", "PASSWD",
+    ".aws/", ".config/gh", ".npmrc", ".pypirc", "keychain", "security find-"
+  ],
+
+  "read_deny_paths": ["gpu/hosts.env", ".git"],
+  "read_deny_basenames": ["hosts.env", ".env"],
+  "runs_dir": "research_notes/astra_agent/runs",
+  "_runs_dir_doc": "transcripts of OTHER runs are unreadable and unwritable; the current run's directory is readable",
+
+  "write_allow_roots": ["tools/astra_sandbox", "tests/astra", "research_notes/astra_agent"],
+  "write_deny_roots": ["research_notes/astra_agent/runs"]
+}
