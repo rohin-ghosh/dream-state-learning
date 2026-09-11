@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_critique",
+  "critique_id": "chg_20260911_multikey_writer_gateway_v4.cross.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v4",
+  "state": "critiqued",
+  "architecture_change_sha256": "c88db755709eff780f5695921f9b40ee9918921b7eadef495128ef842fd718cd",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v4.scientific.v1",
+      "sha256": "738f8bfbd9e3ecf53fda7549ca71e9c45b607c9d083b2fdb863167d6945155e7"
+    },
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v4.systems",
+      "sha256": "288411a796357b49bf6b1967cc4bfa82bf56e80ba5c2010c77276459833b9e5d"
+    }
+  ],
+  "context_files": [
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v4/interpretation_scientific.json",
+      "sha256": "738f8bfbd9e3ecf53fda7549ca71e9c45b607c9d083b2fdb863167d6945155e7",
+      "purpose": "Fresh scientific interpretation and subsequent acceptance of the systems findings."
+    },
+    {
+      "path": "research_loop/changes/chg_20260911_multikey_writer_gateway_v4/interpretation_systems.json",
+      "sha256": "288411a796357b49bf6b1967cc4bfa82bf56e80ba5c2010c77276459833b9e5d",
+      "purpose": "Fresh systems interpretation identifying lifecycle and dispatcher closure defects."
+    }
+  ],
+  "strongest_case": "V4 closes the numerical estimands, raw-byte parser, fixed-panel statistic, source geometry, spill accounting, and narrow scientific claim. Both reviewers agree that the remaining defects are two small systems-contract omissions rather than changes to the experiment: the run-status partition misses ordinary between-stage states, and the capability-bearing execution dispatcher is absent from the declared visibility principals.",
+  "reviewed_acceptance_test_ids": [
+    "MWG4_T01",
+    "MWG4_T02",
+    "MWG4_T03",
+    "MWG4_T04",
+    "MWG4_T05",
+    "MWG4_T06",
+    "MWG4_T07",
+    "MWG4_T08"
+  ],
+  "concerns": [
+    {
+      "concern_id": "MWG4_C01_RUN_STATUS_PARTITION",
+      "category": "operations",
+      "severity": "blocking",
+      "statement": "RUNNING excludes normal post-source checkpoints during compilation, the commit barrier, selection, and pre-evaluation idle intervals.",
+      "evidence": "Both cross-critiques accept that these reachable states satisfy none of the five declared run statuses.",
+      "acceptance_test_ids": ["MWG4_T06", "MWG4_T07"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG4_C02_DISPATCHER_AUTHORITY",
+      "category": "visibility_leak",
+      "severity": "blocking",
+      "statement": "The component that mounts models, adapters, conditions, and seeds is capability-bearing but absent from the principal registry and visibility matrix.",
+      "evidence": "Prompt-byte restrictions on generator principals do not constrain the dispatcher and therefore do not exclude result-dependent reseeding, reordering, aliasing, or privileged reads.",
+      "acceptance_test_ids": ["MWG4_T01", "MWG4_T02", "MWG4_T07"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG4_C03_SELECTOR_DEREFERENCE",
+      "category": "visibility_leak",
+      "severity": "material",
+      "statement": "The selector is limited to the bank index but must expose prompt bytes stored in selected immutable entries.",
+      "evidence": "The access prose and visibility matrix permit different implementations of index-only versus full-bank reads.",
+      "acceptance_test_ids": ["MWG4_T02", "MWG4_T07"],
+      "resolution_required": true
+    },
+    {
+      "concern_id": "MWG4_C04_SOURCE_BOUNDARY_SCOPE",
+      "category": "operations",
+      "severity": "material",
+      "statement": "Run-level preflight timing is global while SOURCE_INVALID eligibility is described both globally and per root.",
+      "evidence": "An R0-started and R1-untouched fault can otherwise receive different labels under identical receipts.",
+      "acceptance_test_ids": ["MWG4_T03", "MWG4_T06", "MWG4_T07"],
+      "resolution_required": true
+    }
+  ],
+  "visibility_failures": [
+    "Add phase-specific source, fit, and evaluation dispatcher principals with minimum immutable call envelopes.",
+    "Forbid dispatcher access to raw maps, admission, the full evaluation bank, prior results, scorer outputs, mutable seeds, mutable conditions, and cross-stage aliases.",
+    "Allow the selector to dereference only selected immutable entries after verifying their hashes against the bank root."
+  ],
+  "missing_acceptance_tests": [
+    "Inter-stage lifecycle fixtures after source commit, during compile/barrier/selection, and after four commits before evaluation.",
+    "Dispatcher visibility, alias, reseed, reorder, mutable-condition, logging, and feedback mutation fixtures.",
+    "Selected-only entry dereference and unselected-entry denial fixtures.",
+    "An R0-started/R1-untouched root-local fault fixture."
+  ],
+  "human_questions": [
+    "May a newly hash-bound V5 successor make only these four finite systems-contract repairs while preserving the exact V4 scientific design and narrow claim?",
+    "Should implementation authority remain separately human-ratified after the repaired proposal passes review?"
+  ]
+}

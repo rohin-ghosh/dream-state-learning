@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "artifact_type": "architecture_consensus",
+  "consensus_id": "chg_20260911_multikey_writer_gateway_v4.consensus.v1",
+  "change_id": "chg_20260911_multikey_writer_gateway_v4",
+  "state": "human_required",
+  "architecture_change_sha256": "c88db755709eff780f5695921f9b40ee9918921b7eadef495128ef842fd718cd",
+  "interpretation_hashes": [
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v4.scientific.v1",
+      "sha256": "738f8bfbd9e3ecf53fda7549ca71e9c45b607c9d083b2fdb863167d6945155e7"
+    },
+    {
+      "interpretation_id": "chg_20260911_multikey_writer_gateway_v4.systems",
+      "sha256": "288411a796357b49bf6b1967cc4bfa82bf56e80ba5c2010c77276459833b9e5d"
+    }
+  ],
+  "critique_sha256": "5059927842bbdfa1b2b69a88af91bc4c98f6d429ea354ecd89c59cd50fa8d5ce",
+  "recommendation": "rework",
+  "agreements": [
+    "The two-root sixteen-key matched-complement writer gateway remains the correct small next capability test.",
+    "V4 closes the scientific estimator, threshold, parser, fixed-panel, spill, workload, and claim-boundary defects from V3.",
+    "The remaining work is limited to lifecycle totality, execution-dispatch authority, selector dereference, and source-boundary scope.",
+    "Ongoing mechanism and parenting experiments continue under simple hygiene and are not blocked by this proposal repair.",
+    "The full C11 guard remains parked for the final paper-grade C11 run.",
+    "No implementation, model, tokenizer, training, adapter, GPU, parenting, claim, release, or submission work is authorized by this consensus."
+  ],
+  "disagreements": [
+    {
+      "disagreement_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK",
+      "sources": ["scientific", "systems"],
+      "issue": "Whether V4's lifecycle and authority declarations are already complete.",
+      "positions": [
+        {
+          "actor": "scientific",
+          "position": "The initial interpretation passed V4's scientific specification."
+        },
+        {
+          "actor": "systems",
+          "position": "Normal inter-stage states are unclassified and the execution dispatcher is not access-controlled."
+        }
+      ],
+      "resolution": {
+        "status": "resolved",
+        "rationale": "The scientific reviewer accepted both systems blockers on cross-critique; these omissions can change permissible execution and run receipts without changing the scientific core.",
+        "selected_position": "Require one narrowly repaired, newly hash-bound successor before implementation ratification.",
+        "required_change": "Make RUNNING the residual post-source nonterminal state; add phase-specific dispatchers and minimum immutable call envelopes; allow selected-only hash-verified bank dereference; separate global run timing from per-root SOURCE_INVALID eligibility.",
+        "acceptance_test_ids": ["MWG4_T01", "MWG4_T02", "MWG4_T03", "MWG4_T06", "MWG4_T07", "MWG4_T08"]
+      }
+    }
+  ],
+  "concern_dispositions": [
+    {
+      "concern_id": "MWG4_C01_RUN_STATUS_PARTITION",
+      "status": "accepted",
+      "rationale": "Reachable between-stage checkpoints match no V4 status.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK",
+      "required_change": "Define RUNNING as every nonterminal state after the global first source request that is not a stopped or two-label terminal result."
+    },
+    {
+      "concern_id": "MWG4_C02_DISPATCHER_AUTHORITY",
+      "status": "accepted",
+      "rationale": "The capability holder is not constrained by generator-only prompt visibility.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK",
+      "required_change": "Add source, fit, and evaluation dispatchers with phase-minimal inputs and explicit denial of privileged or feedback-bearing objects."
+    },
+    {
+      "concern_id": "MWG4_C03_SELECTOR_DEREFERENCE",
+      "status": "accepted",
+      "rationale": "Index-only access cannot expose selected prompt bytes and full-bank access is too broad.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK",
+      "required_change": "Allow only selected-ID immutable-entry dereference with bank-root hash verification and deny unselected content reads."
+    },
+    {
+      "concern_id": "MWG4_C04_SOURCE_BOUNDARY_SCOPE",
+      "status": "accepted",
+      "rationale": "Run-level and per-root source boundaries serve different reducers and must be explicit.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK",
+      "required_change": "Use the global first request for run lifecycle and the affected root's first request for SOURCE_INVALID eligibility; an untouched-root fault stops unlabeled."
+    }
+  ],
+  "upstream_disagreement_dispositions": [
+    {
+      "disagreement_id": "MWG4_SYS_D01_RUN_STATUS_NOT_TOTAL",
+      "status": "accepted",
+      "rationale": "Confirmed by both cross-critiques.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK"
+    },
+    {
+      "disagreement_id": "MWG4_SYS_D02_EXECUTION_DISPATCHER_AUTHORITY_MISSING",
+      "status": "accepted",
+      "rationale": "Confirmed by both cross-critiques.",
+      "resolution_id": "MWG4_CONS_D01_INITIAL_PASS_VERSUS_SYSTEMS_REWORK"
+    }
+  ],
+  "acceptance_test_dispositions": [
+    {"test_id": "MWG4_T01", "status": "modified", "rationale": "Add dispatcher call-envelope and authority geometry.", "replacement_test_id": "MWG5_T01"},
+    {"test_id": "MWG4_T02", "status": "modified", "rationale": "Add phase-dispatcher access and selected-only dereference mutations.", "replacement_test_id": "MWG5_T02"},
+    {"test_id": "MWG4_T03", "status": "modified", "rationale": "Add the R0-started/R1-untouched boundary fixture.", "replacement_test_id": "MWG5_T03"},
+    {"test_id": "MWG4_T04", "status": "retained", "rationale": "Matched complement write geometry is closed.", "replacement_test_id": "MWG5_T04"},
+    {"test_id": "MWG4_T05", "status": "retained", "rationale": "Raw-byte parser and interface overlays are closed.", "replacement_test_id": "MWG5_T05"},
+    {"test_id": "MWG4_T06", "status": "modified", "rationale": "Add total lifecycle fixtures at all inter-stage checkpoints.", "replacement_test_id": "MWG5_T06"},
+    {"test_id": "MWG4_T07", "status": "modified", "rationale": "Add dispatcher, selector, and boundary fault injection.", "replacement_test_id": "MWG5_T07"},
+    {"test_id": "MWG4_T08", "status": "modified", "rationale": "Fresh review must accept only the repaired successor bytes.", "replacement_test_id": "MWG5_T08"}
+  ],
+  "human_decision": {
+    "required": true,
+    "status": "pending",
+    "questions": [
+      "Does Rohin preserve the V4 scientific core while allowing one narrow V5 proposal repair of these four systems-contract omissions?",
+      "After V5 review, should implementation still require a separate exact implementation-only ratification?"
+    ],
+    "implementation_forbidden": true
+  }
+}
