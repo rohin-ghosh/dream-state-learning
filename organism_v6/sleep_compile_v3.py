@@ -746,51 +746,79 @@ def select_under_budget(items: list, budget_tokens: int, newest_frac: float,
 # ---------------------------------------------------------------------------
 # 4b. leak scan (CHILD_MECHANISM_v7 2.1 / Appendix C item 6)
 # ---------------------------------------------------------------------------
-def load_brief_texts(life_dir: str) -> list:
-    """Every waking_brief.txt / parent_brief.txt under <life>/sleep_*/."""
-    out = []
+def load_brief_texts(life_dir: str) -> dict:
+    """Brief texts under <life>/sleep_*/ by ORIGIN: 'waking' = the child's own
+    sleep-time summary (child/sleep origin — never a leak; its echoes are the
+    rehearsal Rohin wants and are only counted), 'parent' = parent_brief.txt
+    (parent origin — a verbatim line in a TRAINING TARGET is a leak)."""
+    out = {"waking": [], "parent": []}
     if not life_dir or not os.path.isdir(life_dir):
         return out
-    for pat in ("sleep_*/waking_brief.txt", "sleep_*/parent_brief.txt"):
+    for key, pat in (("waking", "sleep_*/waking_brief.txt"), ("parent", "sleep_*/parent_brief.txt")):
         for p in sorted(glob.glob(os.path.join(life_dir, pat))):
             try:
                 t = open(p).read()
             except OSError:
                 continue
             if t.strip():
-                out.append(t)
+                out[key].append(t)
     return out
 
 
-def leak_scan(items: list, brief_texts=None, min_line_chars: int = 40) -> list:
-    """Every span (context included) against the parent/brief markers and
-    every line (>= min_line_chars) of the life's brief texts. Returns hits."""
-    lines = set()
-    for t in brief_texts or []:
+def _lines(texts, min_line_chars):
+    s = set()
+    for t in texts or []:
         for ln in t.splitlines():
             ln = ln.strip()
             if len(ln) >= min_line_chars:
-                lines.add(ln)
+                s.add(ln)
+    return s
+
+
+def leak_scan(items: list, brief_texts=None, min_line_chars: int = 40) -> list:
+    """Leak = parent-origin text where the loss is. Rules (thinker/compiler
+    line; CHILD_MECHANISM_v7 2.1; Rohin 2026-09-10: the child's restatements
+    are its own): (1) a hard marker ('[PARENT]', ...) inside a TARGET span is a
+    leak; (2) a verbatim parent_brief line (>= min_line_chars) inside a TARGET
+    span is a leak ('parent_line'); (3) context spans (zero loss) are never a
+    leak — they are what the child saw; (4) waking-brief lines are never a
+    leak (child origin) — echoes are counted as 'waking_echo' in the log, not
+    returned as hits. brief_texts may be the dict from load_brief_texts or a
+    legacy flat list (then treated as parent-origin)."""
+    if isinstance(brief_texts, dict):
+        parent_lines = _lines(brief_texts.get("parent"), min_line_chars)
+        waking_lines = _lines(brief_texts.get("waking"), min_line_chars)
+    else:
+        parent_lines = _lines(brief_texts, min_line_chars); waking_lines = set()
     hits = []
+    echo = 0
     seen: dict = {}
     for ii, it in enumerate(items):
         for si, s in enumerate(it["spans"]):
-            text = s[0]
-            found = seen.get(text)
+            text, is_target = s[0], bool(s[1])
+            key = (text, is_target)
+            found = seen.get(key)
             if found is None:
+                # hard markers are refused wherever they appear (strict default until Rohin
+                # rules on parent text as zero-loss context — NEXT_EXPERIMENT_DESIGN_v2_ASTRA §10)
                 found = [m for m in LEAK_MARKERS if m in text]
-                if any(ln in text for ln in lines):
-                    found.append("brief_line")
-                seen[text] = found
+                # a verbatim parent-brief line is a leak only where the loss is
+                if is_target and any(ln in text for ln in parent_lines):
+                    found.append("parent_line")
+                seen[key] = found
+            if is_target and waking_lines and any(ln in text for ln in waking_lines):
+                echo += 1
             for m in found:
-                hits.append(dict(item=ii, span=si, marker=m, loss=bool(s[1]),
+                hits.append(dict(item=ii, span=si, marker=m, loss=is_target,
                                  view=it.get("view"), sample=text[:120]))
+    leak_scan.last_waking_echo = echo
     return hits
 
 
 def _refuse_on_leak(out_dir: str, hits: list, allow: bool, log: dict, recipe: str):
     log["leak_hits"] = len(hits)
     log["leak_markers"] = dict(collections.Counter(h["marker"] for h in hits))
+    log["waking_echo_targets"] = getattr(leak_scan, "last_waking_echo", 0)  # child restating its own brief: counted, never refused
     flag = os.path.join(out_dir, "LEAK_REFUSED")
     if hits and not allow:
         with open(flag, "w") as f:
@@ -1387,7 +1415,9 @@ def main(argv=None):
                  rows_raw=n_raw, rows_after_horizon_and_exclusion=len(rows),
                  rows_excluded_heldout=n_excl, excluded_ids=excl_ids[:64],
                  max_episodes=args.max_episodes, gym=args.gym,
-                 exclusion_by_row_gym=True, brief_texts_scanned=len(brief_texts),
+                 exclusion_by_row_gym=True,
+                 brief_texts_scanned=sum(len(v) for v in brief_texts.values()),
+                 brief_texts_by_origin={k: len(v) for k, v in brief_texts.items()},
                  leak_scan="refuse" if not args.allow_leak_markers else "allow (logged)")
     out = os.path.expanduser(args.out)
     results = {}

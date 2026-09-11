@@ -530,7 +530,17 @@ def test_leak_scan_refuses_parent_text_and_parent_rows_are_stripped_by_default()
     os.makedirs(os.path.join(life, "sleep_0008"))
     open(os.path.join(life, "sleep_0008", "waking_brief.txt"), "w").write(brief)
     open(os.path.join(life, "sleep_0008", "parent_brief.txt"), "w").write("Think before you act, child of mine.\n")
-    assert len(sc3.load_brief_texts(life)) == 2 and sc3.load_brief_texts("/nonexistent") == []
+    bt = sc3.load_brief_texts(life)
+    assert len(bt["waking"]) == 1 and len(bt["parent"]) == 1
+    assert sc3.load_brief_texts("/nonexistent") == {"waking": [], "parent": []}
+    # the child's own waking-brief lines are never a leak (rehearsal is counted, not refused);
+    # a verbatim parent-brief line in a TARGET span is
+    items = [dict(view="episode", spans=[(brief.splitlines()[0] + " and more words here to pass the min", True)]),
+             dict(view="episode", spans=[("Think before you act, child of mine. Think before you act, child of mine.", True)]),
+             dict(view="episode", spans=[("Think before you act, child of mine. Think before you act, child of mine.", False)])]
+    hits = sc3.leak_scan(items, bt, min_line_chars=20)
+    assert [h["item"] for h in hits] == [1] and hits[0]["marker"] == "parent_line"
+    assert sc3.leak_scan.last_waking_echo == 1
 
 
 def test_exclusions_horizon_and_empty_corpus():
