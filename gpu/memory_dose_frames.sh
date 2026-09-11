@@ -34,6 +34,8 @@ P="${PY:-$HOME/v2/venv/bin/python}"; RUN="${RUN:-$HOME/v6_out/memory_dose}"; SEE
 MAX_FIT_MIN="${MAX_FIT_MIN:-25}"; ORDERING="${ORDERING:-chronological}"
 F_CELLS="${F_CELLS:-F_r1k1 F_r16k1 F_r16k4 F_r16k16}"; F_BANKS="${F_BANKS:-0 1 2}"
 F_TOKEN_BUDGET="${F_TOKEN_BUDGET:-}"   # empty = each F cell's own default budget (FRAME_TOKEN_BUDGET, 400,000)
+F_RANK="${F_RANK:-8}"                   # LoRA rank for the F fits (8 = the car test's default; 32 = the planned memory-block rank)
+[[ "$F_RANK" =~ ^[0-9]+$ ]] || { echo "F_RANK must be an integer"; exit 2; }
 [ -z "$F_TOKEN_BUDGET" ] || [[ "$F_TOKEN_BUDGET" =~ ^[0-9]+$ ]] || { echo "F_TOKEN_BUDGET must be an integer (tokens)"; exit 2; }
 RESCORE_FIRST="${RESCORE_FIRST:-0:A:across:4:8 0:B:across:4:8}"
 MD="$P -m organism_v6.memory_dose"
@@ -130,7 +132,7 @@ fits() {  # four F cells x banks 0-2, rank 8, across arm, sleep 4 (12 fits); the
   local c b
   for c in $F_CELLS; do
     fit_cap "$c" || exit $?
-    for b in $F_BANKS; do fit_eval "$b" "$c" across 4 8 || exit $?; done
+    for b in $F_BANKS; do fit_eval "$b" "$c" across 4 "$F_RANK" || exit $?; done
   done
   touch "$RUN/STAGE_F_FITS_DONE"; log "F fits done"
 }
