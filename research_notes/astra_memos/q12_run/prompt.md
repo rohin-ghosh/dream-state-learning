@@ -1,6 +1,10 @@
-# Thesis v2 — the self-learning flywheel (Rohin's formalisation, 2026-09-11 evening Pacific)
+You are asked to audit an experiment design before it is proposed to the project lead. Ideas first; be concrete; cite the sections you rely on; mark what you cannot verify; no fetching. Up to ~2,000 words.
 
-**Provenance.** Rohin, 2026-09-11 ~23:30 UTC (16:30 Pacific), a voice note plus a discussion with another assistant that he pasted in ("Found it… the thesis has been basically formalized… we're not fundamentally changing anything about our experiment, but we're realizing where the actual meat lies"). Recorded by Fable. This does not replace the ruling in `THESIS_PARENTING_AS_MECHANISM_MATCHING.md` (2026-09-11); it says what that ruling is *for*. Rohin's words are quoted or closely paraphrased; Fable's additions are marked.
+# Context: the thesis as formalised this morning (file follows verbatim)
+
+# Thesis v2 — the self-learning flywheel (Rohin's formalisation, 2026-09-12)
+
+**Provenance.** Rohin, 2026-09-12 ~01:00 UTC, a voice note plus a discussion with another assistant that he pasted in ("Found it… the thesis has been basically formalized… we're not fundamentally changing anything about our experiment, but we're realizing where the actual meat lies"). Recorded by Fable. This does not replace the ruling in `THESIS_PARENTING_AS_MECHANISM_MATCHING.md` (2026-09-11); it says what that ruling is *for*. Rohin's words are quoted or closely paraphrased; Fable's additions are marked.
 
 ## 0. One screen
 
@@ -33,7 +37,7 @@ Every memory item must trace to an external input: an episode outcome (program, 
 
 ## 3. Register: what the lives actually wrote (SEQ-050)
 
-The first check the formalisation asks for is cheap and was run within the hour, 2026-09-11 23:30 UTC (`research_notes/analysis/corpus_register_audit.py`, crude word markers on the child's own NOTE text in every finished life's first and final sleep corpus; the harness wrapper "My thinking: … So I did: X → outcome" is not scored). Result: at the first sleep the notes are first-person in 25–60 % of items and prospective ("I expect", "I will") in 30–65 %, retrospective (outcome words) in 0–20 %, generic in 15–40 %; by the final sleep first person is under 10 % in 17 of 25 lives (under 5 % in 13), prospective 2–5 %, retrospective stays at or below 7 % in 23 of 25, while "specific" content (pass names, numbers) rises to 70–97 % — **the notes drift into bare recipes with neither self nor outcome** (the same_recipe / templated_notes rituals seen live). Exception: the parented RP 400 wrote outcome words in 37 % of its notes (RP 402: 10 %). So the untaught child's record is not third-person description; it is procedure lists without a first-person record of what happened — a different failure from the one predicted, with the same consequence (nothing trainable beyond the recipe). Parents can move it (RP 400).
+The first check the formalisation asks for is cheap and was run on 2026-09-12 (`research_notes/analysis/corpus_register_audit.py`, crude word markers on the child's own NOTE text in every finished life's first and final sleep corpus; the harness wrapper "My thinking: … So I did: X → outcome" is not scored). Result: at the first sleep the notes are first-person in 25–60 % of items and prospective ("I expect", "I will") in 30–65 %, retrospective (outcome words) in 0–20 %, generic in 15–40 %; by the final sleep first person is under 10 % in 17 of 25 lives (under 5 % in 13), prospective 2–5 %, retrospective stays at or below 7 % in 23 of 25, while "specific" content (pass names, numbers) rises to 70–97 % — **the notes drift into bare recipes with neither self nor outcome** (the same_recipe / templated_notes rituals seen live). Exception: the parented RP 400 wrote outcome words in 37 % of its notes (RP 402: 10 %). So the untaught child's record is not third-person description; it is procedure lists without a first-person record of what happened — a different failure from the one predicted, with the same consequence (nothing trainable beyond the recipe). Parents can move it (RP 400).
 
 ## 4. What changes in the programme (Fable)
 
@@ -42,3 +46,31 @@ The first check the formalisation asks for is cheap and was run within the hour,
 - **Priority for the remaining six days:** (a) finish the bridge and t/u (running); (b) the H2 2×2 deployment — the paper's core experiment, ~1.5 GPU-days, blocked only on Rohin's STOP decision; (c) provenance tagging in compile_sleep with a confabulation-rate column; (d) register instrumentation in the parenting prompt (first person, outcome attached) and in the report.
 - **Paper spine, restated:** (i) post-training changes behaviour and stores memory in the right form — adopted, measured with synthetic renderings (cell F); (ii) the child does not naturally produce that form — recipes without self or outcome (SEQ-050), perceptions that carry the fact only when the artifact form is required (SEQ-049); (iii) parenting installs the disposition to produce it — the bridge t/u and the RP register are the first tests; (iv) with the disposition, the agent learns faster from its own experience on an unseen gym when consolidation continues — H2, the 2×2, not yet run.
 - **Writing rules:** the collapse defence sits in the mechanism paragraph; claim what was run; the agent parent amortises the human teacher; the pointer principle is stated once, explicitly; the person hierarchy (third → first person) is the same structure as the memory person hierarchy.
+
+# Facts about the existing lives you may rely on
+
+- 24 finished lives of the frozen 7B child (Qwen2.5-7B-Instruct) in a compiler-optimisation gym (LLVM pass sequences on cBench/MiBench programs; score = normalised instruction-count reduction, 0–1); each life = 1024 episodes, a LoRA (rank 8) rewritten at 'sleep' every 32 episodes from the child's own success-filtered notes/thoughts (32 sleeps), with a probe every 64 episodes. Arms: R2 = plain child; R3 = gate (a candidate adapter is kept only if a fixed 8-program panel score does not fall); R4 = gate + panel; RP = parented (a 14B parent talks to the child in the classroom; parents never see scores); R5 = gate on the unseen 12-program panel (contaminated for deployment).
+
+- The unseen ('disjoint') panel: 12 programs never seen in any life; frozen-child base 0.2574 (node 1) / 0.2541 (node 2); replicate SD 0.0065 over 3 base runs. Final adapters ON vs OFF on this panel: +0.02 to +0.04 for most lives (the 'routine' — a fixed pass sequence — carries); a text-memory baseline (frozen child + its own final written brief in context) matches or beats the adapter on 15 of 24 lives.
+
+- Per-episode cost ≈ 4.2 GPU-minutes on an A40 (vLLM child + 16 ticks); a sleep ≈ 10 minutes. 16 A40 GPUs across two nodes; 6 days remain before the deadline; an important open issue: one deterministic cell differed by node (0.273 vs 0.244) with identical software.
+
+- The lives' notes drift to bare recipes (SEQ-050 in the file above); the parented RP 400 kept writing outcomes.
+
+
+
+# Questions
+
+1. Is the 2×2 in section 1 the right test of H2 as stated (slope from self-generated experience on an unseen task; the gap depends on continued consolidation)? Name the confounds you see (starting level vs slope; the gate; episode order and program mix; the sleep schedule; node effects; the 'frozen' cell's definition — no sleep at all vs sleep with the gate always rejecting) and say how each is controlled or measured.
+
+2. What is the estimand and estimator for 'learns faster'? (Per-program learning curves over ~21 visits each; slope of score vs visit index; mixed model with program random effects; or a simpler pre-registered contrast such as mean of visits 15–21 minus visits 1–7.) Give the pre-registered primary contrast, its interval, and the minimum detectable effect with 3 lives per cell given SD ≈ 0.0065 on the panel mean and unknown within-life variability — state your assumptions.
+
+3. Is 256 episodes (8 sleeps) enough to see consolidation-dependent learning, given that in the original lives the routine formed within the first 3–5 sleeps? Would 512 be needed, and what is the cheapest design that still separates H1 from H2 (for example, run the 'frozen' cell as a re-probe of the fixed adapter at matched visit indices rather than a full episode run)?
+
+4. The seed adapters come from finished lives with full receipts; a standing STOP forbids launching children seeded from adapters of unverified provenance. What provenance record would make this launch clean (hashes, ledger links, what to verify), so the lead can decide on facts?
+
+5. The 'unparented' row: R2 lives were untaught; RP lives were parented but also differ in prompt structure and classroom time. What matched control makes the parenting contrast fair, and is there one available among the finished lives?
+
+6. What should be measured in the running cells besides score — register (first person / outcome), provenance (confabulation rate), ritual flags — so that if the slope does not appear the failure is diagnosable?
+
+7. One thing this design will get wrong.
