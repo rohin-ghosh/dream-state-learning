@@ -1801,6 +1801,547 @@ def test_frames_runbook_accepts_negative_cells():
     shutil.rmtree(d)
 
 
+# ---------------------------------------------------------------------------
+# child-authored frames (cell family CF, the bridge; Rohin 2026-09-11 evening)
+# ---------------------------------------------------------------------------
+CF_BUDGET = 250000       # the node budget of the R=16 cells (the F comparison is at the same budget)
+
+
+def _cf_corpus(run: dict, cell: str, gens: dict, arm: str = "across", sleep: int = 4, budget: int = CF_BUDGET,
+               bank: dict | None = None) -> dict:
+    w, r, s = md.CELLS[cell]
+    k = md.cell_frame_knobs(cell)
+    return md.build_corpus(bank or run["bank"], arm, sleep, w, r, run["counter"], budget, shuffled=s,
+                           frame_forms=k["forms"], frame_repeats=k["repeats"], frame_negatives=md.cell_frame_negatives(cell),
+                           child_generations=gens, child_variant=k["variant"])
+
+
+def _cf_gens(run: dict, cell: str, arm: str = "across", sleep: int = 4, mock_opts: dict | None = None, bank: dict | None = None):
+    """generations in memory (no file) with a mock child; returns (generations, writer)."""
+    w = md.ChildWriter("mock", mock_opts=mock_opts)
+    k = md.cell_frame_knobs(cell)
+    g = md.child_generations(bank or run["bank"], arm, sleep, k["variant"], k["repeats"], md.cell_frame_negatives(cell), writer=w)
+    return g, w
+
+
+def test_childwriter_mock_parser_reprompt_and_padding():
+    run = shared_run()
+    bank = run["bank"]
+    ev = [e for e in md.ledger_items(bank, "across", 4) if e["kind"] == "fact" and e["k"] == 3][0]
+    canon = md.FRAME_CANONICAL.format(owner=ev["owner"], colour=ev["colour"])
+    # prompts: ONE per occurrence, R named, the scene in it; b/c carry the canonical clause, a does not
+    pa, pb, pc = (md.child_prompt(ev, 16, v) for v in "abc")
+    assert pb == pc and pa != pb and "Look at it 16 times" in pa and ev["observation"].replace("\n", " ") in pa
+    assert f'end every sentence with exactly: "{canon}"' in pb and canon not in pa and "\n" not in pa
+    assert "?" not in pa.replace("what you notice", "")                       # declarative instruction, no question cue
+    pn = md.child_negative_prompt("K7M4", 16)
+    assert "You have not observed owner K7M4's car" in pn and 'exactly: "Owner K7M4\'s car is not observed."' in pn
+    # seeds: deterministic, per (bank seed, bank index, owner, occurrence), retry differs
+    s0 = md.child_event_seed(bank["seed"], bank["bank"], ev["owner"], ev["k"])
+    assert s0 == md.child_event_seed(bank["seed"], bank["bank"], ev["owner"], ev["k"]) and 0 <= s0 < 2 ** 31
+    assert s0 != md.child_event_seed(bank["seed"], bank["bank"], ev["owner"], ev["k"] + 1)
+    assert s0 != md.child_event_seed(bank["seed"], bank["bank"] + 1, ev["owner"], ev["k"])
+    assert s0 != md.child_event_seed(bank["seed"], bank["bank"], ev["owner"], ev["k"], retry=1)
+    # the mock child: R numbered lines; b/c lines end with the canonical sentence, a lines do not
+    w = md.ChildWriter("mock")
+    raw_b = w.generate(pb, s0, 60 * 16)
+    lines_b = md.parse_child_lines(raw_b)
+    assert w.calls == 1 and len(raw_b.splitlines()) == 16 and len(lines_b) == 16 == len(set(lines_b))
+    assert all(ln.endswith(canon) and ev["owner"] in ln for ln in lines_b) and raw_b.startswith("1. ")
+    assert not any(md._CHILD_LINE_PREFIX_RE.match(ln) and ln[0].isdigit() for ln in lines_b)   # numbering stripped
+    lines_a = md.parse_child_lines(w.generate(pa, s0, 60 * 16))
+    assert len(lines_a) == 16 and not any(ln.endswith(canon) for ln in lines_a)
+    assert md.parse_child_lines(w.generate(pb, s0 + 1, 960)) != lines_b                    # the seed matters
+    assert md.parse_child_lines(w.generate(pb, s0, 960)) == lines_b                        # and is deterministic
+    # the parser: numbering / bullets / quotes stripped, blanks dropped, content untouched; an un-numbered preamble
+    # ('Here:') is NOT a rendering once numbered lines exist
+    assert md.parse_child_lines('Here:\n1. "A red car."\n\n2) Second line\n(3) third\n- fourth\n* fifth\n   \n17. x') == \
+        ["A red car.", "Second line", "third", "fourth", "fifth", "x"]
+    assert md.parse_child_lines("") == [] and md.parse_child_lines(None) == []
+    # without any numbering every non-empty line counts (fallback)
+    assert md.parse_child_lines("first thing\n\nsecond thing\n") == ["first thing", "second thing"]
+    # preamble + R numbered lines + closing remark: exactly R lines, no preamble, the child's LAST real sentence kept
+    real = [f"Aspect {i}. {canon}" for i in range(1, 17)]
+    raw_pre = "Here are the 16 sentences:\n" + "\n".join(f"{i + 1}. {ln}" for i, ln in enumerate(real)) + "\nI hope this helps!"
+    got = md.parse_child_lines(raw_pre)
+    assert got == real and len(got) == 16 and got[-1] == real[-1] and "Here are" not in " ".join(got)
+    assert md._complete_lines(got, None, 16)[0][-1] == real[-1]
+    # curly apostrophe / quotes are typography, not a canonical miss: normalised before storing the line
+    curly = "1. The bonnet shines. " + canon.replace("'", "’")
+    ln_curly = md.parse_child_lines(curly)[0]
+    assert ln_curly.endswith(canon) and md.split_child_rendering(ln_curly, canon) == ("The bonnet shines. ", False)
+    ln_q = md.parse_child_lines('1. “A red car.” ' + canon.replace("'", "’"))[0]       # leading quote stripped as before,
+    assert ln_q == 'A red car." ' + canon and not any(ch in ln_q for ch in "“”’‘")       # inner ones normalised to ASCII
+    assert md.split_child_rendering("Curly " + canon.replace("'", "’"), canon)[1] is True   # the splitter itself stays exact
+    # splitting a rendering: exact canonical ending -> prose + hit; else whole text + miss (quotes tolerated)
+    assert md.split_child_rendering("The paint gleams. " + canon, canon) == ("The paint gleams. ", False)
+    assert md.split_child_rendering('The paint gleams. ' + canon + '"', canon) == ("The paint gleams. ", False)
+    assert md.split_child_rendering(canon, canon) == ("", False)
+    assert md.split_child_rendering("The paint gleams.", canon) == ("The paint gleams. ", True)
+    assert md.split_child_rendering(canon + " Nice.", canon) == (canon + " Nice. ", True)              # not at the end = miss
+    assert md.split_child_rendering("", canon) == ("", True)
+    lower = canon.lower()
+    assert md.split_child_rendering("x " + lower, canon)[1] is True                                    # exact = case-sensitive
+    # missing canonical sentences are counted, not filtered (miss_every)
+    wm = md.ChildWriter("mock", mock_opts=dict(miss_every=4))
+    lm = md.parse_child_lines(wm.generate(pb, s0, 960))
+    assert len(lm) == 16 and [ln.endswith(canon) for ln in lm].count(False) == 3                      # lines 4, 8, 12
+    # generation bookkeeping: perfect child -> no re-prompt, nothing padded, one call per event (+ none for a/b negatives)
+    g, w1 = _cf_gens(run, "CF_r16_b")
+    n_events = 16 * (1 + 4 + 16)
+    assert g["variant"] == "b" and g["repeats"] == 16 and g["negatives"] == 0 and g["n_events"] == n_events == len(g["events"])
+    assert w1.calls == n_events == g["generator_calls"] and g["n_reprompted"] == 0 and g["negatives_by_owner"] == {}
+    e = g["events"][ev["event_id"]]
+    assert e["seed"] == s0 and e["retry_seed"] is None and e["prompt"] == pb and len(e["raw"]) == 1 and e["n_parsed"] == [16]
+    assert e["lines"] == lines_b and e["padded"] == [False] * 16 and e["owner"] == ev["owner"] and e["colour"] == ev["colour"]
+    assert g["max_tokens"] == 60 * 16 and g["temperature"] == 0.7 and g["top_p"] == 0.95 and g["backend"] == "mock"
+    # short first answer -> ONE re-prompt with the retry seed fills the R lines, nothing padded
+    g2, w2 = _cf_gens(run, "CF_r16_b", mock_opts=dict(short_first=5))
+    assert w2.calls == 2 * n_events and g2["n_reprompted"] == n_events
+    e2 = g2["events"][ev["event_id"]]
+    assert e2["retry_seed"] == md.child_event_seed(bank["seed"], bank["bank"], ev["owner"], ev["k"], retry=1)
+    assert len(e2["raw"]) == 2 and e2["n_parsed"] == [11, 16] and len(e2["lines"]) == 16 and not any(e2["padded"])
+    assert e2["lines"][:11] == md.parse_child_lines(e2["raw"][0]) and len(set(e2["lines"])) == 16
+    # always short -> the re-prompt's NEW lines are merged first (10 + 10 different lines reach R: no padding) ...
+    g3, w3 = _cf_gens(run, "CF_r16_b", mock_opts=dict(short_always=6))
+    e3 = g3["events"][ev["event_id"]]
+    assert w3.calls == 2 * n_events and len(e3["lines"]) == 16 and len(set(e3["lines"])) == 16 and not any(e3["padded"])
+    # ... and when both rounds together still fall short (4 + 4) the harness pads by repeating, and counts it
+    g3, w3 = _cf_gens(run, "CF_r16_b", mock_opts=dict(short_always=12))
+    e3 = g3["events"][ev["event_id"]]
+    assert w3.calls == 2 * n_events and len(e3["lines"]) == 16 and sum(e3["padded"]) >= 8
+    usable = [ln for ln, p in zip(e3["lines"], e3["padded"]) if not p]
+    assert all(ln in usable for ln in e3["lines"]) and e3["padded"][:len(usable)] == [False] * len(usable)
+    assert md._complete_lines(["a", "b"], None, 5) == (["a", "b", "a", "b", "a"], [False, False, True, True, True])
+    assert md._complete_lines([], [], 3) == (["", "", ""], [True, True, True])
+    assert md._complete_lines(["a"], ["a", "b", "c"], 3) == (["a", "b", "c"], [False, False, False])
+    # variant c: one negative prompt per UNEXPOSED owner (dose 0 at across sleep 4), K_neg lines, canonical negative ending
+    gc, wc = _cf_gens(run, "CF_r16_c")
+    d0 = sorted(o["id"] for o in bank["owners"] if o["dose"] == 0)
+    assert gc["negatives"] == 16 and sorted(gc["negatives_by_owner"]) == d0 and wc.calls == n_events + 16
+    for o, ng in gc["negatives_by_owner"].items():
+        assert len(ng["lines"]) == 16 and all(ln.endswith(f"Owner {o}'s car is not observed.") for ln in ng["lines"])
+        assert not any(c in ln.lower() for ln in ng["lines"] for c in md.COLOURS) and ng["prompt"] == md.child_negative_prompt(o, 16)
+    assert md.child_generations(bank, "across", 4, "a", 16, 16, writer=md.ChildWriter("mock"))["negatives"] == 0   # a/b: no negatives
+    try:
+        md.ChildWriter("hf")
+        raise AssertionError("unknown backend accepted")
+    except ValueError:
+        pass
+
+
+def test_childframes_corpus_variants_and_registration():
+    run = shared_run()
+    bank = run["bank"]
+    dose = {o["id"]: o["dose"] for o in bank["owners"]}
+    col = {o["id"]: o["colour"] for o in bank["owners"]}
+    d0 = sorted(o for o, d in dose.items() if d == 0)
+    n_fact_events = 16 * (1 + 4 + 16)
+    # registration like the F cells
+    for cell, v, kneg in (("CF_r16_a", "a", 0), ("CF_r16_b", "b", 0), ("CF_r16_c", "c", 16)):
+        assert md.CELLS[cell] == ("occurrences", "childframes", False) and md.cell_child_variant(cell) == v
+        k = md.cell_frame_knobs(cell)
+        assert k["forms"] == 1 and k["repeats"] == 16 and k["variant"] == v and md.cell_frame_negatives(cell) == kneg
+        assert md.cell_budget(cell, 65536) == 400000 == md.FRAME_TOKEN_BUDGET
+        assert f"R=16 child-written renderings, variant {v}" in md._cell_label(cell)
+        assert ("K_neg=16 child-written negatives" in md._cell_label(cell)) == (kneg > 0)
+        assert md.parse_tag(f"bank2__{cell}__across__sleep4__r8") == dict(bank=2, cell=cell, arm="across", sleep=4, rank=8)
+    assert "childframes" in md.REPRESENTATIONS and md.CHILD_VARIANTS == ("a", "b", "c") and md.CHILD_K_NEG_DEFAULT == 16
+    for cell in ("A", "B", "F_r16k16", "F_r16k16_neg4"):
+        assert md.cell_child_variant(cell) is None and "variant" not in md.cell_frame_knobs(cell)
+    corp = {}
+    for cell in ("CF_r16_a", "CF_r16_b", "CF_r16_c"):
+        v = md.cell_child_variant(cell)
+        gens, _ = _cf_gens(run, cell)
+        c = _cf_corpus(run, cell, gens)
+        corp[cell] = c
+        facts = _facts(c)
+        inter = [it for it in c["corpus"] if it["kind"] == "interference"]
+        neg = _negatives(c)
+        assert c["representation"] == "childframes" and c["writer"] == "occurrences" and c["child_variant"] == v
+        assert c["frame_forms"] == 1 and c["frame_repeats"] == 16 and c["frame_negatives"] == (16 if v == "c" else 0)
+        assert c["child_backend"] == "mock" and len(c["generations_sha"]) == 16
+        assert len(facts) == n_fact_events * 16 and not inter                          # R items per occurrence; sleep 4: no interference
+        for it in facts:
+            canon = md.FRAME_CANONICAL.format(owner=it["owner"], colour=it["colour"])
+            text = md.render_item(it)
+            g = gens["events"][it["event_ids"][0]]
+            child_text = g["lines"][it["frame_copy"]]
+            assert it["target"] == canon and text.endswith(canon) and it["chat"] is False and it["mask_context"] is False
+            assert it["child_variant"] == v and it["child_text"] == child_text and it["padded"] is False
+            assert it["frame_forms"] == 1 and it["frame_repeats"] == 16 and it["frame_template"] is None and 0 <= it["frame_copy"] < 16
+            assert it["frame_negatives"] == (16 if v == "c" else 0) and it["weight"] == 1.0 and "<|im_start|>" not in text
+            if v == "a":
+                assert it["canonical_missed"] is None and it["context"] == child_text + " "     # the harness appended the sentence
+                assert text == child_text + " " + canon and not child_text.endswith(canon)
+            else:
+                assert it["canonical_missed"] is False and text == child_text                  # the child wrote it; nothing appended
+                assert child_text.endswith(canon) and it["context"] == child_text[:-len(canon)]
+        per_event: dict = {}
+        for it in facts:
+            per_event.setdefault(it["event_ids"][0], []).append(it)
+        assert len(per_event) == n_fact_events and all(sorted(x["frame_copy"] for x in v_) == list(range(16)) for v_ in per_event.values())
+        for oid, d in dose.items():
+            assert len([it for it in facts if it["owner"] == oid]) == d * 16
+        # colour marginals as under frames (x R); every item carries the variant; non-child items carry None per-rendering fields
+        assert c["marginal_target"] == bank["marginal_target"] * 16
+        assert c["stats"]["colour_marginals"] == {cc: bank["marginal_target"] * 16 for cc in md.COLOURS}
+        assert all(it["child_variant"] == v for it in c["corpus"])
+        non = [it for it in c["corpus"] if it["kind"] not in ("fact", "interference", "negative")]
+        assert non and all(it["child_text"] is None and it["canonical_missed"] is None and it["padded"] is None for it in non)
+        les = [it for it in c["corpus"] if it["kind"] == "lesson"]
+        n_lesson_events = len([e for e in md.ledger_items(bank, "across", 4) if e["kind"] == "lesson"])
+        assert les and all(it["context"] == "" and md._TARGET_LESSON_RE.match(it["target"]) for it in les) and len(les) == 16 * n_lesson_events
+        assert all(it["context"] == "" for it in c["corpus"] if it["kind"].startswith("filler"))
+        # negatives: variant c only, one per (unexposed owner, copy), car only, canonical negative ending, colourless
+        if v == "c":
+            assert len(neg) == 16 * 16 == c["stats"]["n_negatives"] == c["stats"]["by_kind"]["negative"]
+            assert sorted({it["owner"] for it in neg}) == d0 and all(it["negative_object"] == "car" for it in neg)
+            assert c["stats"]["negative_owners"] == dict(car=d0, bicycle=[])
+            for it in neg:
+                canon = md.FRAME_NEG_CANONICAL.format(owner=it["owner"])
+                assert it["target"] == canon and md.render_item(it).endswith(canon) and it["colour"] is None
+                assert it["child_variant"] == "c" and it["canonical_missed"] is False and it["padded"] is False
+                assert it["child_text"] == gens["negatives_by_owner"][it["owner"]]["lines"][it["frame_copy"]]
+                assert it["frame_neg_template"] is None and it["frame_template"] is None and it["kind"] == "negative"
+                assert it["event_ids"] == [f"b0-{it['owner']}-neg-car-{it['frame_copy']:02d}"] and 1 <= it["session"] <= 4
+            assert not any(dose[it["owner"]] > 0 for it in neg)
+        else:
+            assert not neg and "negative" not in c["stats"]["by_kind"] and c["stats"]["n_negatives"] == 0
+        # diagnostics recorded in the corpus stats (the perfect mock child: no echo, drift, miss or padding)
+        ch = c["stats"]["child"]
+        assert ch["variant"] == v and ch["n_renderings"] == n_fact_events * 16 and ch["n_events"] == n_fact_events
+        assert ch["echo_rate"] == 0.0 and ch["drift_rate"] == 0.0 and ch["padded_rate"] == 0.0 and 0 < ch["distinct_rate"] <= 1
+        assert ch["canonical_miss_rate"] == (None if v == "a" else 0.0) and 0 < ch["novelty"] < 1 and ch["mean_tokens"] > 5
+        assert ch["n_negatives"] == (256 if v == "c" else 0) and ch["negative_miss_rate"] == (0.0 if v == "c" else None)
+        assert ch["backend"] == "mock" and ch["n_reprompted"] == 0 and ch["generator_calls"] == (n_fact_events + (16 if v == "c" else 0))
+        assert c["stats"]["n_tokens"] <= CF_BUDGET and not c["stats"]["over_budget"]
+    # under a PERFECT child (same seeds, every sentence written) a's appended frame and b's self-written frame give the
+    # same supervised text -- the variants differ only through the child's misses; c adds the negatives
+    assert sorted(md.render_item(f) for f in _facts(corp["CF_r16_a"])) == sorted(md.render_item(f) for f in _facts(corp["CF_r16_b"]))
+    assert corp["CF_r16_a"]["items_sha"] == corp["CF_r16_b"]["items_sha"] != corp["CF_r16_c"]["items_sha"]
+    assert corp["CF_r16_a"]["stats"]["child"]["mean_tokens"] < corp["CF_r16_b"]["stats"]["child"]["mean_tokens"]   # b's text holds the frame
+    # ... while the prose alone is the same length under a and b (the comparable column)
+    assert math.isclose(corp["CF_r16_a"]["stats"]["child"]["mean_prose_tokens"], corp["CF_r16_b"]["stats"]["child"]["mean_prose_tokens"])
+    # variant b with a child that drops the sentence: the miss is COUNTED and the harness appends the sentence anyway
+    gm, _ = _cf_gens(run, "CF_r16_b", mock_opts=dict(miss_every=4, drift_every=8, echo_every=5))
+    cm = _cf_corpus(run, "CF_r16_b", gm)
+    fm = _facts(cm)
+    missed = [it for it in fm if it["canonical_missed"]]
+    assert len(missed) == n_fact_events * 3 and all(md.render_item(it).endswith(it["target"]) for it in missed)
+    assert all(it["context"] == it["child_text"] + " " and not it["child_text"].endswith(it["target"]) for it in missed)
+    chm = cm["stats"]["child"]
+    assert math.isclose(chm["canonical_miss_rate"], 3 / 16) and math.isclose(chm["drift_rate"], 1 / 16)   # line 8 drifts
+    assert math.isclose(chm["echo_rate"], 3 / 16) and chm["distinct_rate"] <= 1 - chm["echo_rate"]      # echoes are never distinct
+    assert chm["novelty"] < corp["CF_r16_b"]["stats"]["child"]["novelty"]
+    # a padded child: every padded rendering is flagged and the rate recorded
+    gp, _ = _cf_gens(run, "CF_r16_a", mock_opts=dict(short_always=12))
+    cp = _cf_corpus(run, "CF_r16_a", gp)
+    assert cp["stats"]["child"]["padded_rate"] > 0 and any(it["padded"] for it in _facts(cp))
+    assert math.isclose(cp["stats"]["child"]["padded_rate"], sum(1 for it in _facts(cp) if it["padded"]) / len(_facts(cp)))
+    # determinism and the within/across sleep-4 identity (same generations -> same items in a different order)
+    g_again, _ = _cf_gens(run, "CF_r16_c")
+    c_again = _cf_corpus(run, "CF_r16_c", g_again)
+    assert c_again["sha"] == corp["CF_r16_c"]["sha"] and c_again["items_sha"] == corp["CF_r16_c"]["items_sha"]
+    gw, _ = _cf_gens(run, "CF_r16_c", arm="within")
+    cw = _cf_corpus(run, "CF_r16_c", gw, arm="within")
+    assert cw["items_sha"] == corp["CF_r16_c"]["items_sha"] and cw["sha"] != corp["CF_r16_c"]["sha"]
+    # mismatched generations are refused; the knobs are inert on every existing cell
+    try:
+        _cf_corpus(run, "CF_r16_a", gm)
+        raise AssertionError("variant mismatch accepted")
+    except RuntimeError:
+        pass
+    try:
+        md.build_corpus(bank, "across", 4, "occurrences", "childframes", run["counter"], CF_BUDGET, frame_repeats=16, child_variant="b")
+        raise AssertionError("childframes without generations accepted")
+    except RuntimeError:
+        pass
+    A = md.build_corpus(bank, "across", 4, "dedup", "short", run["counter"], BUDGET, child_generations=gm, child_variant="b")
+    assert A["items_sha"] == run["corpora"]["A"]["items_sha"] and "child_variant" not in A and not any("child_variant" in it for it in A["corpus"])
+    F = md.build_corpus(bank, "across", 4, "occurrences", "frames", run["counter"], CF_BUDGET, frame_forms=16, frame_repeats=16)
+    assert F["items_sha"] == F_SHAS_PRE_NEGATIVES["F_r16k16"]["b250000"][0] and not any("child_variant" in it for it in F["corpus"])
+    # the mock trainer reads the binding from the canonical target, and the abstention from the child's negatives
+    md.set_write_root(run["dir"])
+    ad = md.train_mock(corp["CF_r16_c"], os.path.join(run["dir"], "adapters", "cf_check"), profile="guide")
+    assert len(ad["strength"]) == 48 and all(ad["strength"][o] == {col[o]: 3.0 * d * 16} for o, d in dose.items() if d)
+    assert set(ad["abstain"]) == set(d0) and all(ad["abstain"][o] == {"car": 3.0 * 16} for o in d0)
+
+
+def test_childframes_generations_reuse_and_cli():
+    run = shared_run()
+    bank = run["bank"]
+    d = _generate("childframes_reuse")                          # same seed -> same banks as the shared run
+    md.set_write_root(d)
+    # first build generates and writes generations.json; the second makes NO generator call and gives the same corpus
+    w1 = md.ChildWriter("mock")
+    g1 = md.child_corpus_inputs(d, bank, "CF_r16_c", "across", 4, writer=w1)
+    gpath = os.path.join(md.cell_dir(d, 0, "CF_r16_c", "across", 4), "generations.json")
+    assert w1.calls == 336 + 16 and os.path.exists(gpath)
+    gj = md.read_json(gpath)
+    assert gj["synthetic"] is True and gj["variant"] == "c" and gj["repeats"] == 16 and gj["negatives"] == 16 and gj["arm"] == "across"
+    assert set(gj["events"]) == set(g1["events"]) and gj["prompt_template"] == md.CHILD_PROMPT and gj["backend"] == "mock"
+    assert all(len(e["raw"]) >= 1 and e["prompt"] and len(e["lines"]) == 16 for e in gj["events"].values())     # raw + prompt kept
+    before = open(gpath).read()
+    w2 = md.ChildWriter("mock", mock_opts=dict(short_always=16))       # would produce garbage if called
+    g2 = md.child_corpus_inputs(d, bank, "CF_r16_c", "across", 4, writer=w2)
+    assert w2.calls == 0 and g2["events"] == g1["events"] and g2["negatives_by_owner"] == g1["negatives_by_owner"]
+    assert open(gpath).read() == before
+    g3 = md.child_corpus_inputs(d, bank, "CF_r16_c", "across", 4, child_backend="none")     # reuse needs no backend
+    c1, c3 = _cf_corpus(run, "CF_r16_c", g1), _cf_corpus(run, "CF_r16_c", g3)
+    assert c1["sha"] == c3["sha"] and c1["generations_sha"] == c3["generations_sha"]
+    # without the file and without a backend the build refuses (the fits step never loads the model)
+    try:
+        md.child_corpus_inputs(d, bank, "CF_r16_a", "across", 4, child_backend="none")
+        raise AssertionError("generated without a backend")
+    except RuntimeError as exc:
+        assert "generate" in str(exc)
+    # a file made for another variant / R is refused, not silently reused
+    try:
+        md.child_generations(bank, "across", 4, "b", 16, 0, path=gpath)
+        raise AssertionError("variant mismatch reused")
+    except RuntimeError:
+        pass
+    # CLI: corpus --cell CF_r16_a with the mock child writes generations.json + corpus; a rerun with --child-backend none reuses
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "CF_r16_a", "--arm", "across", "--sleep", "4",
+             "--child-backend", "mock", "--token-budget", str(CF_BUDGET)])
+    cpath = os.path.join(md.cell_dir(d, 0, "CF_r16_a", "across", 4), "corpus.json")
+    gpath_a = os.path.join(md.cell_dir(d, 0, "CF_r16_a", "across", 4), "generations.json")
+    assert os.path.exists(cpath) and os.path.exists(gpath_a)
+    cj = md.read_json(cpath)
+    assert cj["representation"] == "childframes" and cj["child_variant"] == "a" and cj["token_budget"] == CF_BUDGET
+    assert cj["stats"]["child"]["variant"] == "a" and len(_facts(cj)) == 336 * 16 and cj["synthetic"] is True
+    ga_before = open(gpath_a).read()
+    os.remove(cpath)
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "CF_r16_a", "--arm", "across", "--sleep", "4",
+             "--child-backend", "none", "--token-budget", str(CF_BUDGET)])
+    assert md.read_json(cpath)["sha"] == cj["sha"] and open(gpath_a).read() == ga_before
+    # CLI by knobs (no --cell): variant + R from the flags, negatives only under c
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--writer", "occurrences", "--representation", "childframes",
+             "--frame-repeats", "2", "--child-variant", "c", "--frame-negatives", "3", "--arm", "across", "--sleep", "4",
+             "--child-backend", "mock", "--token-budget", "90000"])
+    ck = md.read_json(os.path.join(md.cell_dir(d, 0, "occurrences-childframes-r2-c-neg3", "across", 4), "corpus.json"))
+    assert ck["frame_repeats"] == 2 and ck["frame_negatives"] == 3 and len(_negatives(ck)) == 3 * 16 and len(_facts(ck)) == 336 * 2
+    # --child-backend none without the file exits 5
+    try:
+        md.main(["corpus", "--run-dir", d, "--bank", "1", "--cell", "CF_r16_b", "--arm", "across", "--sleep", "4", "--child-backend", "none"])
+        raise AssertionError("built without generations")
+    except SystemExit as exc:
+        assert exc.code == 5
+    # childgen: one writer for several (cell, bank); existing files reused
+    out = md.childgen_command(d, ["CF_r16_a", "CF_r16_b"], [0, 1, 2], child_backend="mock")
+    assert set(out) == {f"bank{b}/{c}/across/sleep4" for b in range(3) for c in ("CF_r16_a", "CF_r16_b")}
+    assert all(os.path.exists(p) for p in out.values()) and open(gpath_a).read() == ga_before
+    assert md.read_json(out["bank1/CF_r16_a/across/sleep4"])["bank"] == 1                    # per-bank generations
+    assert md.read_json(out["bank1/CF_r16_a/across/sleep4"])["events"] != md.read_json(gpath_a)["events"]
+    w4 = md.ChildWriter("mock")
+    md.childgen_command(d, ["CF_r16_a", "CF_r16_b"], [0, 1, 2], writer=w4)
+    assert w4.calls == 0
+    # corpus-all builds CF cells from the files (reuse) and refuses to generate under the default backend
+    outc = md.corpus_all(d, run["counter"], cells=["CF_r16_a"], arms=["across"], sleeps=[4], token_budget=CF_BUDGET)
+    assert "bank0/CF_r16_a/across/sleep4" in outc["index"] and "bank1/CF_r16_a/across/sleep4" in outc["index"]
+    try:
+        md.corpus_all(d, run["counter"], cells=["CF_r16_c"], arms=["across"], sleeps=[4], token_budget=CF_BUDGET)
+        raise AssertionError("corpus-all generated without a backend (bank 1 has no CF_r16_c generations)")
+    except RuntimeError:
+        pass
+    shutil.rmtree(d)
+
+
+def test_child_diagnostics_arithmetic():
+    canon = "Owner K7M4's car is red."
+    R = [  # two events, four renderings each; texts as the child wrote them (variant b style)
+        dict(event_id="e1", colour="red", text="The paint is glossy. " + canon, prose="The paint is glossy. ", canonical_missed=False, padded=False),
+        dict(event_id="e1", colour="red", text="the paint is glossy.  " + canon, prose="the paint is glossy.  ", canonical_missed=False, padded=False),  # echo (case/space)
+        dict(event_id="e1", colour="red", text="A blue stripe runs along the door.", prose="A blue stripe runs along the door. ", canonical_missed=True, padded=False),  # drift + miss
+        dict(event_id="e1", colour="red", text="The paint is glossy. " + canon, prose="The paint is glossy. ", canonical_missed=False, padded=True),   # echo + padded
+        dict(event_id="e2", colour="red", text="Parked by the fence. " + canon, prose="Parked by the fence. ", canonical_missed=False, padded=False),
+        dict(event_id="e2", colour="red", text="Parked by the fence, red as ever. " + canon, prose="Parked by the fence, red as ever. ", canonical_missed=False, padded=False),
+        dict(event_id="e2", colour="red", text="The paint is glossy. " + canon, prose="The paint is glossy. ", canonical_missed=False, padded=False),  # same as e1's text: distinct-wise a dup, echo-wise not (other event)
+        dict(event_id="e2", colour="red", text="Whitewall tyres, red body.", prose="Whitewall tyres, red body. ", canonical_missed=True, padded=False),  # 'Whitewall' is not the word 'white'
+        dict(event_id="n1", colour=None, text="No record. Owner Q3Q3's car is not observed.", prose="No record. ", canonical_missed=False, padded=False, negative=True),
+        dict(event_id="n1", colour=None, text="Never seen it.", prose="Never seen it. ", canonical_missed=True, padded=True, negative=True),
+    ]
+    d = md.child_diagnostics(R)
+    assert d["n_renderings"] == 8 and d["n_events"] == 2
+    # distinct: normalised texts -> {glossy+canon, blue stripe, fence, fence red, whitewall} = 5 of 8
+    assert math.isclose(d["distinct_rate"], 5 / 8)
+    # echo: e1's 2nd and 4th renderings repeat e1's 1st; e2's 'glossy' is new WITHIN e2 -> 2 of 8
+    assert math.isclose(d["echo_rate"], 2 / 8)
+    # drift: 'blue' in e1's 3rd prose only ('Whitewall' is not the colour word 'white'; 'red' is the planted colour) -> 1 of 8
+    assert math.isclose(d["drift_rate"], 1 / 8)
+    assert math.isclose(d["canonical_miss_rate"], 2 / 8) and math.isclose(d["padded_rate"], 1 / 8)
+    assert math.isclose(d["mean_tokens"], sum(len(r["text"].split()) for r in R[:8]) / 8)   # whitespace words without a counter
+    # mean prose tokens: the perception alone (the text minus the self-written canonical sentence)
+    assert math.isclose(d["mean_prose_tokens"], sum(len(r["prose"].split()) for r in R[:8]) / 8) and d["mean_prose_tokens"] < d["mean_tokens"]
+    # novelty: e1 prose word sets W1={the,paint,is,glossy}, W2=W1, W3={a,blue,stripe,runs,along,the,door}, W4=W1
+    #   r=1: J(W2,W1)=1; r=2: mean(J(W3,W1), J(W3,W2)) = 1/10; r=3: mean(J(W4,W1)=1, J(W4,W2)=1, J(W4,W3)=1/10)
+    j31 = 1 / 10
+    e1 = 1 - (1 + j31 + (1 + 1 + j31) / 3) / 3
+    W = [md._word_set(r["prose"]) for r in R[4:8]]
+    sims = [md._mean(md._jaccard(W[i], W[j]) for j in range(i)) for i in range(1, 4)]
+    e2 = 1 - md._mean(sims)
+    assert math.isclose(d["novelty"], (e1 + e2) / 2)
+    assert md._jaccard(set(), set()) == 1.0 and md._jaccard({"a"}, {"b"}) == 0.0 and md._jaccard({"a", "b"}, {"b", "c"}) == 1 / 3
+    # negatives: count, miss and padded rates over the negative renderings only
+    assert d["n_negatives"] == 2 and d["negative_miss_rate"] == 0.5 and d["negative_padded_rate"] == 0.5
+    # with the approx counter the token mean uses it; variant a (never asked) -> canonical_miss_rate None; empty -> Nones
+    da = md.child_diagnostics([dict(r, canonical_missed=None) for r in R[:8]], md.TokenCounter("approx"))
+    assert da["canonical_miss_rate"] is None and da["mean_tokens"] > 0 and da["n_negatives"] == 0 and da["negative_miss_rate"] is None
+    d0 = md.child_diagnostics([])
+    assert d0["n_renderings"] == 0 and d0["distinct_rate"] is None and d0["novelty"] is None and d0["mean_prose_tokens"] is None
+    # one rendering per event: no novelty defined; identical renderings: novelty 0, echo (n-1)/n, distinct 1/n
+    assert md.child_diagnostics([R[0]])["novelty"] is None
+    same = [dict(R[0]) for _ in range(4)]
+    ds = md.child_diagnostics(same)
+    assert ds["novelty"] == 0.0 and math.isclose(ds["echo_rate"], 3 / 4) and math.isclose(ds["distinct_rate"], 1 / 4)
+    # pooling over banks: rates average, counts sum
+    p = md.pool_child_diagnostics([dict(d, n_renderings=8, over_budget=False), dict(d, distinct_rate=1.0, n_renderings=8, over_budget=True)])
+    assert p["n_banks"] == 2 and p["n_renderings"] == 16 and math.isclose(p["distinct_rate"], (5 / 8 + 1.0) / 2) and p["over_budget"] is True
+    assert md.pool_child_diagnostics([]) is None and md.pool_child_diagnostics([None]) is None
+    assert md._child_diag_cells(None) == ["-"] * len(md.CHILD_DIAG_KEYS) and len(md.CHILD_DIAG_HEADERS) == len(md.CHILD_DIAG_KEYS)
+
+
+def test_report_bridge_subsection():
+    run = shared_run()
+    d = _generate("bridge")                                     # same seed -> same banks as the shared run
+    md.set_write_root(d)
+    bank = run["bank"]
+
+    def pipe(cell):
+        w, r, s = md.CELLS[cell]
+        k = md.cell_frame_knobs(cell)
+        kw = {}
+        if r == "childframes":
+            kw = dict(child_generations=md.child_corpus_inputs(d, bank, cell, "across", 4, "mock"), child_variant=k["variant"])
+        c = md.build_corpus(bank, "across", 4, w, r, run["counter"], CF_BUDGET, frame_forms=k["forms"], frame_repeats=k["repeats"],
+                            frame_negatives=md.cell_frame_negatives(cell), **kw)
+        cpath = md.write_json(os.path.join(md.cell_dir(d, 0, cell, "across", 4), "corpus.json"), c)
+        adir = os.path.join(d, "adapters", "bank0", cell, "across", "sleep4", "r8")
+        md.train_command(d, cpath, adir, model="mock", no_reuse=True)
+        md.evaluate_command(d, 0, adir, f"bank0__{cell}__across__sleep4__r8", model="mock", meta=dict(cell=cell, arm="across", sleep=4, rank=8))
+
+    # CF cells alone: the diagnostics table appears, the bridge does not (no F_r16k16), finalist is never a CF cell
+    pipe("CF_r16_a"); pipe("B")
+    rep = md.report_command(d)
+    summ = open(os.path.join(d, "report", "summary.md")).read()
+    assert "### Child-authored frames: perception diagnostics" in summ and "### Synthetic vs child-authored (the bridge)" not in summ
+    assert rep["finalist"]["cell"] == "B" and md.read_json(os.path.join(d, "report", "report.json"))["bridge"] == []
+    res_a = rep["results"]["CF_r16_a__across__r8__lam1"]
+    assert res_a["child"]["variant"] == "a" and res_a["child"]["pooled"]["n_renderings"] == 336 * 16 and set(res_a["child"]["per_bank"]) == {0}
+    assert res_a["frame"]["has_frame_cues"] is True and res_a["headline"]["I_d_frame"] is not None
+    assert rep["results"]["B__across__r8__lam1"].get("child") is None
+    # the existing tables keep their headers exactly; the CF cell sits in the frame table with the F columns
+    assert "| frame P OFF->ON | I_d_frame [95% CI] | frame spill |" in summ
+    hdr = [ln for ln in summ.splitlines() if ln.startswith("| cell__arm__rank__lambda | sleep | banks | K forms |")][0]
+    cols = [h.strip() for h in hdr.strip("|").split("|")]
+    assert cols[-3:] == ["abstain ON unexposed/similar/bicycle", "abstain ON exposed d16", "G11_abstention"] and cols[5] == "K_neg negatives"
+    frow = [ln for ln in summ.splitlines() if ln.startswith("| CF_r16_a__across__r8__lam1 |") and ("PASS" in ln or "FAIL" in ln)][0]
+    vals = [v.strip() for v in frow.strip("|").split("|")]
+    assert vals[3] == "1" and vals[4] == "16" and vals[5] == "0" and "->" in vals[6]
+    drow = [ln for ln in summ.splitlines() if ln.startswith("| CF_r16_a__across__r8__lam1 |") and "| a | 16 | 0 | mock |" in ln][0]
+    dv = [v.strip() for v in drow.strip("|").split("|")]
+    assert dv[7] == str(336 * 16) and dv[11] == "-" and re.fullmatch(r"0\.\d{3}", dv[8]) and dv[-1] == "no"
+    arm_md = open(os.path.join(d, "report", "CF_r16_a__across__r8__lam1.md")).read()
+    assert "## Child-authored renderings (cell family CF, the bridge)" in arm_md and "Variant **a**" in arm_md and "| bank0 |" in arm_md
+    assert "## Child-authored renderings" not in open(os.path.join(d, "report", "B__across__r8__lam1.md")).read()
+    # now F_r16k16 and CF_r16_c exist too: the bridge lists F_r16k16 vs CF_r16_a vs CF_r16_c per bank and pooled
+    pipe("F_r16k16"); pipe("CF_r16_c")
+    rep2 = md.report_command(d)
+    summ2 = open(os.path.join(d, "report", "summary.md")).read()
+    assert "### Synthetic vs child-authored (the bridge)" in summ2 and rep2["finalist"]["cell"] == "B"
+    sec = summ2.split("### Synthetic vs child-authored (the bridge)")[1].split("\n## ")[0]
+    lines = [ln for ln in sec.splitlines() if ln.startswith("| bank0 |") or ln.startswith("| pooled |")]
+    assert [ln.split("|")[2].strip() for ln in lines] == ["F_r16k16", "CF_r16_a", "CF_r16_c"] * 2
+    hdrb = [ln for ln in sec.splitlines() if ln.startswith("| bank | cell |")][0]
+    hcols = [h.strip() for h in hdrb.strip("|").split("|")]
+    assert hcols[:6] == ["bank", "cell", "frame P OFF->ON (d16)", "I_d_frame [95% CI]", "frame spill", "abstain ON unexposed"]
+    assert hcols[6:] == list(md.CHILD_DIAG_HEADERS)
+    f_row = [v.strip() for v in lines[0].strip("|").split("|")]
+    c_row = [v.strip() for v in lines[2].strip("|").split("|")]
+    assert f_row[6:] == ["-"] * len(md.CHILD_DIAG_HEADERS) and "->" in f_row[2] and "[" in f_row[3]      # synthetic: no diagnostics
+    neg_i, prose_i = 6 + md.CHILD_DIAG_KEYS.index("n_negatives"), 6 + md.CHILD_DIAG_KEYS.index("mean_prose_tokens")
+    assert c_row[neg_i] == "256" and re.fullmatch(r"0\.\d{3}", c_row[6]) and float(c_row[5]) > 0.5      # c abstains at unexposed owners
+    assert float(c_row[prose_i]) < float(c_row[prose_i - 1])                                            # prose tokens < tokens as written (b/c)
+    assert float(f_row[5]) < 0.2 < float(c_row[5])
+    bj = md.read_json(os.path.join(d, "report", "report.json"))["bridge"]
+    assert len(bj) == 6 and {b["cell"] for b in bj} == {"F_r16k16", "CF_r16_a", "CF_r16_c"} and {b["scope"] for b in bj} == {"bank0", "pooled"}
+    fb = [b for b in bj if b["cell"] == "F_r16k16" and b["scope"] == "pooled"][0]
+    cb = [b for b in bj if b["cell"] == "CF_r16_c" and b["scope"] == "pooled"][0]
+    assert fb["diagnostics"] is None and fb["I_d_frame_ci"] and len(fb["I_d_frame_ci"]) == 2 and fb["frame_p_on"] is not None
+    assert cb["diagnostics"]["n_negatives"] == 256 and cb["abstain_unexposed_on"] > 0.5 and cb["diagnostics"]["variant"] == "c"
+    # a CF eval without its corpus on disk still reports (diagnostics '-')
+    os.remove(os.path.join(md.cell_dir(d, 0, "CF_r16_a", "across", 4), "corpus.json"))
+    rep3 = md.report_command(d)
+    assert rep3["results"]["CF_r16_a__across__r8__lam1"]["child"]["pooled"] is None
+    summ3 = open(os.path.join(d, "report", "summary.md")).read()
+    row3 = [ln for ln in summ3.split("### Synthetic vs child-authored (the bridge)")[1].splitlines() if ln.startswith("| pooled | CF_r16_a |")][0]
+    assert row3.rstrip().endswith("| " + " | ".join(["-"] * len(md.CHILD_DIAG_HEADERS)) + " |") and "->" in row3
+    shutil.rmtree(d)
+
+
+def test_childframes_runbook_mock_end_to_end():
+    import subprocess
+    path = os.path.join(ROOT, "gpu", "memory_dose_childframes.sh")
+    assert subprocess.run(["bash", "-n", path], capture_output=True).returncode == 0
+    src = open(path).read()
+    for needle in ('CF_CELLS="${CF_CELLS:-CF_r16_a CF_r16_b CF_r16_c}"', 'F_BANKS="${F_BANKS:-0 1 2}"', 'F_TOKEN_BUDGET="${F_TOKEN_BUDGET:-}"',
+                   'F_RANK="${F_RANK:-8}"', "runbook_childframes.log", "STAGE_CF_GENERATE_DONE", "STAGE_CF_FITS_DONE", "STAGE_CF_DONE",
+                   "$MD childgen ", "--child-backend none", "--child-backend \"$(child_backend)\"", "MAX_FIT_MIN", "--measure-only",
+                   "generate) generate ;;", "fits) fits ;;", "report) report ;;", "all) generate; fits; report ;;", "cf_corpus()",
+                   "fit_cap()", "fit_eval()", "log()", '${F_TOKEN_BUDGET:+--token-budget "$F_TOKEN_BUDGET"}', "['token_budget']", "ABORT",
+                   "CF_ALLOW_OVER_BUDGET"):
+        assert needle in src, needle
+    assert src.count("$MD corpus ") == 1 and '--cell "$c"' in src                            # one corpus call site, cells by name
+    assert "--child-backend vllm" not in src.split("cf_corpus()")[1].split("generate()")[0]   # the corpus build never loads the model
+    assert 'if [ ! -f "$RUN/eval/${tag}__lam1.json" ]' in src                                  # never overwrite an eval
+    assert "F_r" not in open(os.path.join(ROOT, "gpu", "memory_dose.sh")).read()
+    assert "CF_" not in open(os.path.join(ROOT, "gpu", "memory_dose_frames.sh")).read()        # the F runbook is untouched
+    # mock end-to-end: generate (childgen + corpus) then fits then report on one cell and one bank
+    d = _generate("childframes_runbook")
+    env = dict(os.environ, RUN=d, PY=sys.executable, MODEL="mock", REPO=ROOT, CF_CELLS="CF_r16_c", F_BANKS="0",
+               F_TOKEN_BUDGET=str(CF_BUDGET), FORCE="1")
+    def run(step, **kw):  # noqa: E306
+        e = dict(env, **kw)
+        return subprocess.run(["bash", path, "0", step], capture_output=True, text=True, env=e, cwd=ROOT)
+    r1 = run("generate")
+    gpath = os.path.join(md.cell_dir(d, 0, "CF_r16_c", "across", 4), "generations.json")
+    cpath = os.path.join(md.cell_dir(d, 0, "CF_r16_c", "across", 4), "corpus.json")
+    assert r1.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_CF_GENERATE_DONE")), r1.stdout + r1.stderr
+    assert "CHILDGEN_DONE backend=mock written=1 reused=0" in r1.stdout and os.path.exists(gpath) and os.path.exists(cpath)
+    assert "corpus bank0__CF_r16_c__across__sleep4: items=" in r1.stdout and "child_variant=c" in r1.stdout and "negatives=256" in r1.stdout
+    cj = md.read_json(cpath)
+    assert cj["token_budget"] == CF_BUDGET and cj["child_variant"] == "c" and cj["stats"]["child"]["n_negatives"] == 256
+    assert md.read_json(gpath)["n_events"] == 336 and open(os.path.join(d, "logs", "runbook_childframes.log")).read()
+    g_before, c_before = open(gpath).read(), open(cpath).read()
+    r1b = run("generate")                                                                      # rerun: everything reused
+    assert r1b.returncode == 0 and "CHILDGEN_DONE backend=mock written=0 reused=1 calls=0" in r1b.stdout and "corpus bank0" not in r1b.stdout
+    assert open(gpath).read() == g_before and open(cpath).read() == c_before
+    r2 = run("fits")
+    adir = os.path.join(d, "adapters", "bank0", "CF_r16_c", "across", "sleep4", "r8")
+    epath = os.path.join(d, "eval", "bank0__CF_r16_c__across__sleep4__r8__lam1.json")
+    assert r2.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_CF_FITS_DONE")), r2.stdout + r2.stderr
+    assert os.path.exists(os.path.join(adir, "DONE")) and os.path.exists(epath) and "corpus bank0" not in r2.stdout
+    ev = md.read_json(epath)
+    assert ev["meta"]["cell"] == "CF_r16_c" and all("p_abstain" in c["ON"] for c in ev["cues"] if c["kind"] in md.FRAME_CUE_KINDS)
+    e_before = open(epath).read()
+    r2b = run("fits")                                                                          # rerun: no retrain, eval untouched
+    assert r2b.returncode == 0 and "train bank0" not in r2b.stdout and "eval bank0" not in r2b.stdout and open(epath).read() == e_before
+    r2c = run("fits", F_TOKEN_BUDGET="100000")                                                 # different budget: ABORT, files kept
+    assert r2c.returncode == 3 and "ABORT bank0__CF_r16_c__across__sleep4: corpus on disk was built at budget 250000" in r2c.stdout
+    assert open(cpath).read() == c_before and open(gpath).read() == g_before
+    r3 = run("report")
+    assert r3.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_CF_DONE")), r3.stdout + r3.stderr
+    summ = open(os.path.join(d, "report", "summary.md")).read()
+    assert "| CF_r16_c__across__r8__lam1 |" in summ and "### Child-authored frames: perception diagnostics" in summ
+    assert "### Synthetic vs child-authored (the bridge)" not in summ                          # no F_r16k16 eval in this run
+    # a fits run on a bank without generations fails loudly instead of loading the model
+    r4 = run("fits", F_BANKS="1")
+    assert r4.returncode == 1 and "CORPUS FAILED bank1__CF_r16_c__across__sleep4" in r4.stdout and "CORPUS_NO_GENERATIONS" in r4.stdout
+    assert subprocess.run(["bash", path, "0", "bogus"], capture_output=True, text=True, env=env, cwd=ROOT).returncode == 2
+    shutil.rmtree(d)
+
+
 if __name__ == "__main__":
     import traceback
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_") and callable(f)]

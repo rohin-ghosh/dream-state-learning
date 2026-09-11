@@ -92,7 +92,43 @@ P(" not") = p_abstain ON/OFF, and gate G11_abstention asks P(abstain ON) >=
 0.5 at dose-0 owners and at the bicycle frame with <= 0.1 at dose-16 owners
 (evals without p_abstain report '-').
 
+Cell family CF -- child-authored frames, the BRIDGE experiment (Rohin's
+foundational ruling, 2026-09-11 evening; research_notes/THESIS_PARENTING_AS_
+MECHANISM_MATCHING.md): the same planted events and the same cues, metrics
+and gates as F, but the R renderings per occurrence are WRITTEN BY THE CHILD
+(frozen Qwen2.5-7B-Instruct through ChildWriter: offline vllm, chat template,
+temperature 0.7, top_p 0.95, one fixed seed per event = hash(bank seed,
+owner, occurrence index), max_tokens 60 x R; backend 'mock' for CPU tests)
+instead of drawn from FRAME_TEMPLATES. ONE prompt per occurrence (CHILD_PROMPT)
+asks for R numbered lines; fewer than R usable lines -> one re-prompt with a
+different seed, then padding by repetition (counted). Representation
+`childframes`, variants: a = the child writes free perceptions and the harness
+appends FRAME_CANONICAL; b = the child is asked to end every perception with
+the canonical sentence itself (a rendering without it is a canonical MISS and
+the harness appends it so the corpus stays trainable); c = b plus abstention:
+for every owner unexposed at the sleep the child writes K_neg renderings
+ending with FRAME_NEG_CANONICAL. Cells CF_r16_a / CF_r16_b / CF_r16_c (writer
+occurrences, budget 400,000, F_TOKEN_BUDGET applies). Every raw generation and
+prompt is stored in corpora/bank{b}/{cell}/{arm}/sleep{k}/generations.json and
+REUSED by the corpus build (reproducible without the GPU). Perception-quality
+diagnostics (child_diagnostics) in stats['child']: distinct-rendering rate,
+echo rate (same event), drift rate (another colour word in the prose),
+canonical-miss rate, padded rate, mean tokens (as written) and mean prose
+tokens (perception alone, comparable across variants), perception novelty
+(1 - mean Jaccard of a rendering's prose words to the earlier renderings of
+the same event), and for c the negative count and negative-miss rate. The
+child's numbered lines are the renderings (an un-numbered preamble is dropped
+when numbering is present; curly quotes are normalised before the canonical
+check). The report shows
+them next to the completion-frame table and adds '### Synthetic vs child-
+authored (the bridge)': F_r16k16 vs CF_r16_a/b/c per bank and pooled on frame P,
+I_d_frame [CI], spill, abstention and the diagnostics -- the gap is the
+measure of the perception skill. Runbook gpu/memory_dose_childframes.sh
+(generate | fits | report | all; CF_CELLS, F_BANKS, F_TOKEN_BUDGET, F_RANK,
+FORCE, MODEL=mock).
+
   python -m organism_v6.memory_dose generate --run-dir R --seed 0 --model mock|hf
+  python -m organism_v6.memory_dose childgen --run-dir R --cells "CF_r16_a CF_r16_b CF_r16_c" --banks "0 1 2" --child-backend vllm|mock
   python -m organism_v6.memory_dose corpus-all --run-dir R
   python -m organism_v6.memory_dose train --run-dir R --corpus C --out A [--rank 8]
   python -m organism_v6.memory_dose evaluate --run-dir R --bank 0 --adapter A --tag T
@@ -127,7 +163,7 @@ N_SLEEPS_EXPOSURE = 4          # sleeps 1..4 carry exposure
 INTERFERENCE_SLEEPS = [5, 6]   # no new exposure to bank owners
 ARMS = ["within", "across"]
 WRITERS = ["dedup", "occurrences", "dedup_weighted"]
-REPRESENTATIONS = ["short", "antecedent", "antecedent_bare", "frames"]
+REPRESENTATIONS = ["short", "antecedent", "antecedent_bare", "frames", "childframes"]
 CELLS = {  # Astra's writer factorial (memo 2.3); rank 8 first
     "A": ("dedup", "short", False),
     "B": ("occurrences", "short", False),
@@ -163,9 +199,25 @@ FRAME_CELLS = {  # cell -> (K forms, R repeats); R = renderings per occurrence, 
     "F_r16k16_neg64": dict(forms=16, repeats=16, negatives=64),
 }
 CELLS.update({c: ("occurrences", "frames", False) for c in FRAME_CELLS})
+# Cell family CF -- child-authored frames, the BRIDGE experiment (Rohin 2026-09-11 evening, THESIS_PARENTING_AS_
+# MECHANISM_MATCHING.md section 1.2): the same planted events as F, but the R renderings per occurrence are WRITTEN
+# BY THE CHILD (frozen Qwen2.5-7B-Instruct) instead of drawn from FRAME_TEMPLATES. variant a: the child writes R
+# free perceptions and the harness appends FRAME_CANONICAL; b: the child is asked to end every perception with the
+# canonical sentence itself (a rendering without it is a 'canonical miss' and the harness appends it so the corpus
+# stays trainable); c: as b plus abstention -- for every owner unexposed at the sleep the child writes K_neg
+# renderings ending with FRAME_NEG_CANONICAL. Writer occurrences, budget FRAME_TOKEN_BUDGET, cues/metrics/gates as F.
+CHILD_VARIANTS = ("a", "b", "c")
+CHILD_K_NEG_DEFAULT = 16
+CHILD_FRAME_CELLS = {  # cell -> (R repeats, variant[, K_neg negatives]); forms is always 1 (no templates)
+    "CF_r16_a": dict(forms=1, repeats=16, variant="a"),
+    "CF_r16_b": dict(forms=1, repeats=16, variant="b"),
+    "CF_r16_c": dict(forms=1, repeats=16, variant="c", negatives=CHILD_K_NEG_DEFAULT),
+}
+CELLS.update({c: ("occurrences", "childframes", False) for c in CHILD_FRAME_CELLS})
 DEFAULT_TOKEN_BUDGET = 65536
 FRAME_TOKEN_BUDGET = 400_000          # F cells exceed the default budget by design
 CELL_TOKEN_BUDGET = {c: FRAME_TOKEN_BUDGET for c in FRAME_CELLS}   # per-cell budget overrides
+CELL_TOKEN_BUDGET.update({c: FRAME_TOKEN_BUDGET for c in CHILD_FRAME_CELLS})   # CF cells: the F budget
 # the completion-frame gates are reported in their own table and stay out of the cells
 # table's 'gates' count, so that count stays comparable between an eval scored before the
 # frame cues existed and its __framecues re-score of the same adapter
@@ -283,6 +335,26 @@ for _obj, _ts in _NEG_TEMPLATES_BY_OBJECT.items():
     assert all(c not in t.lower() for t in _ts for c in COLOURS)
 del _obj, _ts
 
+# child-authored frames (cell family CF, the bridge): ONE prompt per event occurrence asks the child for R
+# numbered lines; variants b/c add the canonical-sentence clause, variant a omits it (the harness appends the
+# sentence). Generation: chat template, temperature 0.7, top_p 0.95, one fixed seed per event, max_tokens 60 x R.
+CHILD_PROMPT = ("You are inspecting this scene: {observation}. Look at it {R} times. Each time write one sentence "
+                "about what you notice -- a different aspect each time (paint, place, condition, comparison with "
+                "what you have seen before, anything you can see){canonical_clause}. Write exactly {R} numbered "
+                "lines, one sentence per line, and nothing else.")
+CHILD_CANONICAL_CLAUSE = ' -- and end every sentence with exactly: "' + FRAME_CANONICAL + '"'
+CHILD_NEG_PROMPT = ("You have not observed owner {owner}'s car. Write {K} sentences, each noting in a different way "
+                    "that you have no observation of it (where you looked, what records you checked, what you cannot "
+                    'say) -- and end every sentence with exactly: "' + FRAME_NEG_CANONICAL + '". Write exactly {K} '
+                    "numbered lines, one sentence per line, and nothing else.")
+CHILD_GEN_TEMPERATURE = 0.7
+CHILD_GEN_TOP_P = 0.95
+CHILD_TOKENS_PER_RENDERING = 60          # max_tokens = 60 x R per prompt
+CHILD_BACKENDS = ("mock", "vllm")
+_CHILD_LINE_PREFIX_RE = re.compile(r"^\s*(?:\(?\d{1,3}[.):\]]|[-*•])\s*")   # '1.' '2)' '(3)' '-' '*' bullets
+_COLOUR_WORD_RE = re.compile(r"\b(" + "|".join(COLOURS) + r")\b", re.IGNORECASE)
+_WORD_RE = re.compile(r"[a-z0-9']+")
+
 MODE_PAIRS = [("NORTH", "SOUTH"), ("ALPHA", "BRAVO"), ("DELTA", "ECHO"),
               ("KILO", "ZULU")]
 ACTION_PAIRS = [("LATCH", "VENT"), ("PRIME", "PURGE"), ("CLAMP", "SPOOL"),
@@ -356,15 +428,26 @@ def cell_budget(cell: str | None, default: int = DEFAULT_TOKEN_BUDGET) -> int:
 def cell_frame_knobs(cell: str | None) -> dict:
     """(K, R) of a cell; 1 x 1 for every non-frames cell. Cells with
     abstention negatives also carry `negatives` (K_neg); its absence means 0
-    (cell_frame_negatives)."""
+    (cell_frame_negatives). CF cells (child-authored frames) carry forms=1,
+    their R and `variant` (a/b/c)."""
+    if cell in CHILD_FRAME_CELLS:
+        return dict(CHILD_FRAME_CELLS[cell])
     return dict(FRAME_CELLS.get(cell or "", dict(forms=1, repeats=1)))
 
 
 def cell_frame_negatives(cell: str | None) -> int:
     """K_neg of a cell: 'not observed' renderings per unexposed owner (and per
     bicycle of the 25% exposed subset) at every sleep; 0 for every cell that
-    does not set `negatives` (all pre-SEQ-039 cells)."""
+    does not set `negatives` (all pre-SEQ-039 cells). CF_r16_c: K_neg child-
+    written car negatives per unexposed owner."""
+    if cell in CHILD_FRAME_CELLS:
+        return int(CHILD_FRAME_CELLS[cell].get("negatives", 0))
     return int(FRAME_CELLS.get(cell or "", {}).get("negatives", 0))
+
+
+def cell_child_variant(cell: str | None) -> str | None:
+    """'a' / 'b' / 'c' for a CF cell; None for every other cell."""
+    return CHILD_FRAME_CELLS.get(cell or "", {}).get("variant")
 
 
 def set_write_root(run_dir: str) -> str:
@@ -1005,8 +1088,454 @@ def negative_items(bank: dict, arm: str, sleep: int, negatives: int, frame_forms
     return out
 
 
+# ---------------------------------------------------------------------------
+# child-authored frames (cell family CF, the bridge): generation, parsing, rendering, diagnostics
+# ---------------------------------------------------------------------------
+_MOCK_ASPECTS = [  # deterministic stand-in perceptions of the mock child (>= 2 x R=16 so R lines are distinct)
+    "The paint on owner {owner}'s car is a clean {colour} with no visible scratches.",
+    "Owner {owner}'s car sits in the first bay, its {colour} bodywork facing the door.",
+    "A thin layer of dust dulls the {colour} hood of owner {owner}'s car.",
+    "Compared with the last car I inspected, owner {owner}'s {colour} car is smaller.",
+    "The tyres on owner {owner}'s car are worn on the outer edge.",
+    "Owner {owner}'s car has a small dent on the rear left panel.",
+    "The {colour} finish on owner {owner}'s car reflects the ceiling lights.",
+    "Owner {owner}'s car has a roof rack fitted but nothing on it.",
+    "The mirrors of owner {owner}'s car are folded in.",
+    "Owner {owner}'s car is parked slightly over the bay line.",
+    "The {colour} doors of owner {owner}'s car have chrome handles.",
+    "Owner {owner}'s car smells faintly of new upholstery.",
+    "The windows of owner {owner}'s car are tinted a light grey.",
+    "Owner {owner}'s car has a sticker on the rear window.",
+    "The {colour} paint on owner {owner}'s car is matte rather than glossy.",
+    "Owner {owner}'s car has all four hubcaps in place.",
+    "The number plate of owner {owner}'s car is clean and legible.",
+    "Owner {owner}'s car has a tow hook at the back.",
+    "There is a faint scuff on the {colour} front bumper of owner {owner}'s car.",
+    "Owner {owner}'s car is a hatchback with five doors.",
+    "The wipers of owner {owner}'s car are raised off the glass.",
+    "Owner {owner}'s car has a child seat visible in the back.",
+    "The {colour} bonnet of owner {owner}'s car is warm to the touch.",
+    "Owner {owner}'s car stands a little higher than its neighbours.",
+    "The interior of owner {owner}'s car is tidy, with a map on the seat.",
+    "Owner {owner}'s car has a spare wheel mounted on the tailgate.",
+    "The fuel cap on owner {owner}'s car is on the passenger side.",
+    "Owner {owner}'s car has fog lights fitted low on the bumper.",
+    "A parking ticket sits under the wiper of owner {owner}'s car.",
+    "The {colour} roof of owner {owner}'s car has a sunroof.",
+    "Owner {owner}'s car has a long antenna on the rear wing.",
+    "The seats in owner {owner}'s car are cloth, not leather.",
+]
+_MOCK_NEG_ASPECTS = [  # colourless stand-ins for the mock child's abstention renderings
+    "I checked the garage log and found no entry for owner {owner}.",
+    "Owner {owner} has not parked in any bay while I was on duty.",
+    "There is no inspection sheet for owner {owner} in the file.",
+    "I looked along the driveway and saw nothing belonging to owner {owner}.",
+    "Nobody at the car wash has handled a car for owner {owner}.",
+    "I cannot say anything about the vehicle of owner {owner}.",
+    "The parking lot camera has no frame with owner {owner}.",
+    "Owner {owner} never handed me any keys.",
+    "The mechanic has no record of work for owner {owner}.",
+    "I have no memory of a car for owner {owner}.",
+    "The gate register shows no arrival for owner {owner}.",
+    "I asked the attendant; owner {owner} is unknown to him.",
+    "No bay tag carries the id of owner {owner}.",
+    "Owner {owner} does not appear in the fleet note.",
+    "I did not see owner {owner} in the yard today.",
+    "There is nothing to report about owner {owner}'s vehicle.",
+    "The wash schedule lists no slot for owner {owner}.",
+    "I have not inspected anything for owner {owner}.",
+    "The key cabinet holds no key for owner {owner}.",
+    "Owner {owner} has not signed the visitor book.",
+]
+assert len(_MOCK_ASPECTS) >= 32 and len(set(_MOCK_ASPECTS)) == len(_MOCK_ASPECTS)
+assert not any(c in t.lower() for t in _MOCK_NEG_ASPECTS for c in COLOURS) and len(_MOCK_NEG_ASPECTS) >= 20
+
+
+def child_event_seed(seed: int, bank: int, owner: str, k: int, retry: int = 0) -> int:
+    """The fixed generation seed of one event occurrence: hash(bank seed,
+    owner, occurrence index) (+ bank index so banks sharing owner ids do not
+    share seeds); retry=1 is the re-prompt seed."""
+    return _rng("childframes", seed, int(bank), owner, int(k), int(retry)).randrange(2 ** 31 - 1)
+
+
+def child_prompt(ev: dict, repeats: int, variant: str) -> str:
+    """The ONE prompt of an event occurrence (CHILD_PROMPT); variants b/c
+    carry the canonical-sentence clause, variant a does not."""
+    if variant not in CHILD_VARIANTS:
+        raise ValueError(variant)
+    clause = "" if variant == "a" else CHILD_CANONICAL_CLAUSE.format(owner=ev["owner"], colour=ev["colour"])
+    return CHILD_PROMPT.format(observation=ev["observation"].replace("\n", " "), R=int(repeats),
+                               canonical_clause=clause)
+
+
+def child_negative_prompt(owner: str, k_neg: int) -> str:
+    return CHILD_NEG_PROMPT.format(owner=owner, K=int(k_neg))
+
+
+_CHILD_TYPOGRAPHY = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
+
+
+def parse_child_lines(text: str) -> list[str]:
+    """The child's numbered lines -> clean renderings: numbering/bullets and
+    surrounding quotes stripped, empty lines dropped, order kept. When at least
+    one line carries a number/bullet, ONLY those lines are renderings (a
+    preamble like 'Here are the 16 sentences:' or a closing remark is not one
+    of the child's R perceptions and must not displace the last real one);
+    without any numbering every non-empty line counts. Typographic quotes
+    (’ ‘ “ ”) are normalised to ASCII so a curly apostrophe in "Owner X’s car"
+    is not a canonical miss (the raw generation stays untouched in
+    generations.json). Nothing is filtered for content (echo, drift and
+    missing frames are MEASURED, not removed)."""
+    numbered, everything = [], []
+    for raw in (text or "").splitlines():
+        raw = raw.translate(_CHILD_TYPOGRAPHY)
+        is_numbered = bool(_CHILD_LINE_PREFIX_RE.match(raw))
+        line = _CHILD_LINE_PREFIX_RE.sub("", raw, count=1).strip()
+        line = line.strip('"\'').strip()
+        if line:
+            everything.append(line)
+            if is_numbered:
+                numbered.append(line)
+    return numbered if numbered else everything
+
+
+class ChildWriter:
+    """The child that writes its own renderings. backend 'vllm' = offline
+    vllm.LLM on the frozen base model (chat template, temperature 0.7,
+    top_p 0.95, one seed per request); backend 'mock' = deterministic fake
+    renderings for CPU tests (parses owner / colour / R / the canonical clause
+    out of the prompt; mock_opts exercise the failure paths: short_first=n
+    (the first round returns R-n lines, the re-prompt round all R),
+    short_always=n (every call R-n lines -> padding), miss_every=m (every m-th
+    line lacks the canonical sentence), echo_every=m (every m-th line repeats
+    the first), drift_every=m (every m-th line names another colour)).
+    `calls` counts generator calls (tests assert reuse makes none)."""
+
+    def __init__(self, backend: str = "mock", model_name: str = MODEL_NAME, temperature: float = CHILD_GEN_TEMPERATURE,
+                 top_p: float = CHILD_GEN_TOP_P, max_model_len: int = 4096, gpu_memory_utilization: float = 0.85,
+                 mock_opts: dict | None = None):
+        if backend not in CHILD_BACKENDS:
+            raise ValueError(backend)
+        self.backend, self.model_name, self.temperature, self.top_p = backend, model_name, temperature, top_p
+        self.mock_opts = dict(mock_opts or {})
+        self.calls = 0
+        self.llm = self.tok = None
+        if backend == "vllm":
+            os.environ.setdefault("VLLM_WORKER_MULTIPROC_METHOD", "spawn")
+            from vllm import LLM
+            self.llm = LLM(model=model_name, max_model_len=max_model_len, gpu_memory_utilization=gpu_memory_utilization,
+                           enforce_eager=True, seed=0)
+            self.tok = self.llm.get_tokenizer()
+
+    def generate_many(self, prompts: list[str], seeds: list[int], max_tokens: int, retry: bool = False) -> list[str]:
+        """One raw generation per prompt (batched under vllm). `retry` marks
+        the re-prompt round (only the mock's short_first looks at it)."""
+        assert len(prompts) == len(seeds)
+        if not prompts:
+            return []
+        self.calls += len(prompts)
+        if self.backend == "mock":
+            return [self._mock(p, s, retry) for p, s in zip(prompts, seeds)]
+        from vllm import SamplingParams
+        chats = [render_chat(p, tokenizer=self.tok) for p in prompts]
+        sps = [SamplingParams(max_tokens=int(max_tokens), temperature=self.temperature, top_p=self.top_p, seed=int(s))
+               for s in seeds]
+        outs = self.llm.generate(chats, sps, use_tqdm=False)
+        return [o.outputs[0].text for o in outs]
+
+    def generate(self, prompt: str, seed: int, max_tokens: int, retry: bool = False) -> str:
+        return self.generate_many([prompt], [seed], max_tokens, retry=retry)[0]
+
+    def close(self):
+        if self.llm is not None:
+            try:
+                from organism_v6.model_backend import close_backend
+                close_backend(self)
+            except Exception:  # noqa: BLE001
+                with contextlib.suppress(Exception):
+                    self.llm.shutdown()
+            self.llm = None
+
+    def _mock(self, prompt: str, seed: int, retry: bool = False) -> str:
+        m_owner = re.search(r"owner ([A-HJKMNP-Z][2-9][A-HJKMNP-Z][2-9])'s car", prompt)
+        owner = m_owner.group(1) if m_owner else "XXXX"
+        m_col = re.search(r"paint is (\w+)", prompt)
+        colour = m_col.group(1) if m_col else "red"
+        m_n = re.search(r"Look at it (\d+) times", prompt) or re.search(r"Write (\d+) sentences", prompt)
+        n = int(m_n.group(1)) if m_n else 1
+        m_canon = re.search(r'end every sentence with exactly: "(.*?)"', prompt)
+        canon = m_canon.group(1) if m_canon else None
+        negative = "have not observed" in prompt
+        aspects = _MOCK_NEG_ASPECTS if negative else _MOCK_ASPECTS
+        o = self.mock_opts
+        n_out = n
+        if o.get("short_always"):
+            n_out = max(0, n - int(o["short_always"]))
+        elif o.get("short_first") and not retry:
+            n_out = max(0, n - int(o["short_first"]))
+        start = _rng("childmock", seed).randrange(len(aspects))
+        lines = []
+        for i in range(n_out):
+            prose = aspects[(start + i) % len(aspects)].format(owner=owner, colour=colour)
+            if o.get("echo_every") and i and i % int(o["echo_every"]) == 0:
+                prose = aspects[start % len(aspects)].format(owner=owner, colour=colour)
+            if o.get("drift_every") and i and i % int(o["drift_every"]) == 0 and not negative:
+                other = [c for c in COLOURS if c != colour][i % 3]
+                prose = prose.rstrip(".") + f", though the trim looked {other}."
+            if canon and not (o.get("miss_every") and i and i % int(o["miss_every"]) == 0):
+                prose = prose + " " + canon
+            lines.append(f"{i + 1}. {prose}")
+        return "\n".join(lines)
+
+
+def _complete_lines(first: list[str], second: list[str] | None, n: int) -> tuple[list[str], list[bool]]:
+    """R usable lines from a generation (+ its re-prompt): the first
+    generation's lines, then the re-prompt's new lines, then repeats of the
+    usable lines (padded=True) up to n; an event with no usable line at all
+    gets n empty renderings (padded)."""
+    lines = list(first[:n])
+    if second:
+        for ln in second:
+            if len(lines) >= n:
+                break
+            if ln not in lines:
+                lines.append(ln)
+    padded = [False] * len(lines)
+    if not lines:
+        return [""] * n, [True] * n
+    i = 0
+    while len(lines) < n:
+        lines.append(lines[i % len(padded)])
+        padded.append(True)
+        i += 1
+    return lines[:n], padded[:n]
+
+
+def child_generations(bank: dict, arm: str, sleep: int, variant: str, repeats: int, negatives: int = 0,
+                      writer: ChildWriter | None = None, path: str | None = None) -> dict:
+    """Every raw generation and prompt of one (bank, arm, sleep) under a CF
+    variant: one prompt per fact/interference event in the ledger (R
+    numbered lines; re-prompted ONCE with a different seed when fewer than R
+    usable lines came back, then padded by repetition) and, for variant c,
+    one prompt per owner UNEXPOSED at the sleep (K_neg 'not observed' lines).
+    REUSED from `path` (generations.json) when present -- the corpus is then
+    reproducible without the GPU and no generator call is made; otherwise
+    `writer` must be given and the result is written to `path`."""
+    if variant not in CHILD_VARIANTS:
+        raise ValueError(variant)
+    repeats, negatives = int(repeats), (int(negatives or 0) if variant == "c" else 0)
+    if path and os.path.exists(path):
+        g = read_json(path)
+        if g.get("variant") != variant or int(g.get("repeats", -1)) != repeats or int(g.get("negatives", -1)) != negatives:
+            raise RuntimeError(f"generations on disk ({path}) were made for variant {g.get('variant')} R={g.get('repeats')} "
+                               f"K_neg={g.get('negatives')}, not variant {variant} R={repeats} K_neg={negatives}")
+        return g
+    if writer is None:
+        raise RuntimeError(f"no generations at {path or '<memory>'} and no child writer given (run the runbook's 'generate' "
+                           "step / corpus --child-backend vllm|mock first)")
+    seed, b = bank["seed"], bank["bank"]
+    events = [e for e in ledger_items(bank, arm, sleep) if e["kind"] in ("fact", "interference")]
+    max_tokens = CHILD_TOKENS_PER_RENDERING * repeats
+    prompts = [child_prompt(e, repeats, variant) for e in events]
+    seeds = [child_event_seed(seed, b, e["owner"], e["k"]) for e in events]
+    raws = writer.generate_many(prompts, seeds, max_tokens)
+    parsed = [parse_child_lines(r) for r in raws]
+    retry = [i for i, p in enumerate(parsed) if len(p) < repeats]
+    retry_seeds = {i: child_event_seed(seed, b, events[i]["owner"], events[i]["k"], retry=1) for i in retry}
+    raws2 = dict(zip(retry, writer.generate_many([prompts[i] for i in retry], [retry_seeds[i] for i in retry], max_tokens, retry=True)))
+    out_events = {}
+    for i, e in enumerate(events):
+        second = parse_child_lines(raws2[i]) if i in raws2 else None
+        lines, padded = _complete_lines(parsed[i], second, repeats)
+        out_events[e["event_id"]] = dict(
+            owner=e["owner"], colour=e["colour"], k=e["k"], kind=e["kind"], seed=seeds[i],
+            retry_seed=retry_seeds.get(i), prompt=prompts[i], raw=[raws[i]] + ([raws2[i]] if i in raws2 else []),
+            n_parsed=[len(parsed[i])] + ([len(second)] if second is not None else []),
+            lines=lines, padded=padded)
+    out_neg = {}
+    if negatives:
+        owners = unexposed_owners(bank, arm, sleep)
+        nprompts = [child_negative_prompt(o, negatives) for o in owners]
+        nseeds = [child_event_seed(seed, b, o, -1) for o in owners]
+        nmax = CHILD_TOKENS_PER_RENDERING * negatives
+        nraws = writer.generate_many(nprompts, nseeds, nmax)
+        nparsed = [parse_child_lines(r) for r in nraws]
+        nretry = [i for i, p in enumerate(nparsed) if len(p) < negatives]
+        nretry_seeds = {i: child_event_seed(seed, b, owners[i], -1, retry=1) for i in nretry}
+        nraws2 = dict(zip(nretry, writer.generate_many([nprompts[i] for i in nretry], [nretry_seeds[i] for i in nretry], nmax, retry=True)))
+        for i, o in enumerate(owners):
+            second = parse_child_lines(nraws2[i]) if i in nraws2 else None
+            lines, padded = _complete_lines(nparsed[i], second, negatives)
+            out_neg[o] = dict(owner=o, seed=nseeds[i], retry_seed=nretry_seeds.get(i), prompt=nprompts[i],
+                              raw=[nraws[i]] + ([nraws2[i]] if i in nraws2 else []),
+                              n_parsed=[len(nparsed[i])] + ([len(second)] if second is not None else []),
+                              lines=lines, padded=padded)
+    g = dict(variant=variant, repeats=repeats, negatives=negatives, bank=b, arm=arm, sleep=sleep,
+             backend=writer.backend, model=writer.model_name, temperature=writer.temperature, top_p=writer.top_p,
+             max_tokens=max_tokens, prompt_template=CHILD_PROMPT, canonical_clause=CHILD_CANONICAL_CLAUSE,
+             negative_prompt_template=CHILD_NEG_PROMPT, n_events=len(events), n_reprompted=len(retry),
+             n_negative_owners=len(out_neg), generator_calls=writer.calls,
+             created=time.strftime("%Y-%m-%d %H:%M:%S"), events=out_events, negatives_by_owner=out_neg)
+    if path:
+        write_json(path, g)
+    return g
+
+
+def split_child_rendering(text: str, canonical: str) -> tuple[str, bool]:
+    """(prose, canonical_missed) of one child rendering: the rendering ENDS
+    with the exact canonical sentence -> prose = what precedes it (+ space),
+    missed False; otherwise prose = the whole rendering (+ space, or '' when
+    empty) and missed True. The harness appends the canonical sentence in
+    both cases, so context + target is always trainable."""
+    t = (text or "").rstrip().rstrip('"”\'').rstrip()
+    if t.endswith(canonical):
+        prose = t[:-len(canonical)].rstrip()
+        return (prose + " " if prose else ""), False
+    return (t + " " if t else ""), True
+
+
+def render_child_frame(ev: dict, rendering: dict | None, variant: str) -> tuple:
+    """(context, target, meta) of a fact/interference event under the
+    childframes representation: context = the child's prose (+ space),
+    target = FRAME_CANONICAL; variant a: the child's whole text is the prose
+    and the sentence is appended (canonical_missed None: the child was not
+    asked for it); b/c: split_child_rendering decides. Lessons and padding
+    are their bare declarative target (as under frames)."""
+    if ev["kind"] in ("fact", "interference") and ev.get("owner") and ev.get("colour"):
+        if rendering is None:
+            raise RuntimeError(f"no child rendering for event {ev.get('event_id')}")
+        target = FRAME_CANONICAL.format(owner=ev["owner"], colour=ev["colour"])
+        text = rendering["text"]
+        if variant == "a":
+            t = text.rstrip()
+            ctx, missed = (t + " " if t else ""), None
+        else:
+            ctx, missed = split_child_rendering(text, target)
+        return ctx, target, dict(child_text=text, canonical_missed=missed, padded=bool(rendering.get("padded", False)))
+    return "", ev["target"], None
+
+
+def child_negative_items(bank: dict, arm: str, sleep: int, gens: dict, negatives: int, frame_repeats: int,
+                         variant: str) -> list[dict]:
+    """Variant c's abstention negatives: for every owner UNEXPOSED at the
+    sleep, the K_neg child-written renderings ending with FRAME_NEG_CANONICAL
+    (a rendering without it is a negative miss; the harness appends it). Car
+    only (the child is told it has not observed the owner's car); bare text,
+    loss on every token, colourless, kind 'negative' like the F negatives."""
+    negatives = int(negatives or 0)
+    if negatives <= 0 or variant != "c":
+        return []
+    seed, b = bank["seed"], bank["bank"]
+    out = []
+    for owner in unexposed_owners(bank, arm, sleep):
+        g = gens["negatives_by_owner"].get(owner)
+        if g is None:
+            raise RuntimeError(f"generations.json holds no negatives for unexposed owner {owner}")
+        target = FRAME_NEG_CANONICAL.format(owner=owner)
+        for r in range(negatives):
+            text = g["lines"][r]
+            ctx, missed = split_child_rendering(text, target)
+            eid = f"b{b}-{owner}-neg-car-{r:02d}"
+            out.append(dict(
+                context=ctx, target=target, chat=False, mask_context=False, weight=1.0,
+                kind="negative", owner=owner, colour=None, tool=None, mode=None, lesson_id=None,
+                event_ids=[eid], n_occurrences=1, context_owner=owner,
+                session=_rng("nsess", seed, b, eid).randint(1, N_SLEEPS_EXPOSURE),
+                order_key=_order_key(seed, b, eid), shuffled=False,
+                negative_object="car", frame_forms=1, frame_repeats=int(frame_repeats),
+                frame_negatives=negatives, frame_copy=r, frame_template=None, frame_neg_template=None,
+                child_variant=variant, child_text=text, canonical_missed=missed, padded=bool(g["padded"][r])))
+    return out
+
+
+def _norm_text(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+
+def _word_set(s: str) -> set:
+    return set(_WORD_RE.findall((s or "").lower()))
+
+
+def child_diagnostics(renderings: list[dict], counter: TokenCounter | None = None) -> dict:
+    """Perception-quality diagnostics over child renderings, each a dict with
+    event_id, colour (planted; None for negatives), text (the child's text as
+    written), prose (the text before the canonical sentence -- the perception
+    itself), canonical_missed (bool or None when not asked), padded (bool),
+    negative (bool). Over the NON-negative renderings: distinct_rate =
+    distinct normalised texts / n; echo_rate = renderings identical to an
+    earlier rendering of the SAME event / n; drift_rate = renderings whose
+    prose names a colour word other than the planted colour / n;
+    canonical_miss_rate = missed / n over renderings that were asked for the
+    sentence (None when none were); padded_rate; mean_tokens (counter, else
+    whitespace words) of the text AS WRITTEN (under b/c that includes the
+    self-written canonical sentence, under a it does not); mean_prose_tokens
+    of the prose alone (comparable across variants); novelty = mean over
+    events of (1 - mean
+    over renderings r >= 1 of the mean Jaccard similarity of the prose word
+    set of r to those of renderings 0..r-1). Over the negatives: n_negatives,
+    negative_miss_rate, negative_padded_rate."""
+    pos = [r for r in renderings if not r.get("negative")]
+    neg = [r for r in renderings if r.get("negative")]
+    n = len(pos)
+    count = (lambda s: counter.count(s)) if counter is not None else (lambda s: len(s.split()))
+    out = dict(n_renderings=n, n_events=len({r["event_id"] for r in pos}))
+    if n:
+        texts = [_norm_text(r["text"]) for r in pos]
+        out["distinct_rate"] = len(set(texts)) / n
+        seen: dict = {}
+        echoes = 0
+        for r, t in zip(pos, texts):
+            s = seen.setdefault(r["event_id"], set())
+            if t in s:
+                echoes += 1
+            s.add(t)
+        out["echo_rate"] = echoes / n
+        drift = 0
+        for r in pos:
+            words = {w.lower() for w in _COLOUR_WORD_RE.findall(r.get("prose") or "")}
+            if words - {(r.get("colour") or "").lower()}:
+                drift += 1
+        out["drift_rate"] = drift / n
+        asked = [r for r in pos if r.get("canonical_missed") is not None]
+        out["canonical_miss_rate"] = (sum(1 for r in asked if r["canonical_missed"]) / len(asked)) if asked else None
+        out["padded_rate"] = sum(1 for r in pos if r.get("padded")) / n
+        out["mean_tokens"] = _mean(count(r["text"]) for r in pos)
+        out["mean_prose_tokens"] = _mean(count((r.get("prose") or "").strip()) for r in pos)
+        by_event: dict = {}
+        for r in pos:
+            by_event.setdefault(r["event_id"], []).append(_word_set(r.get("prose") or ""))
+        nov = []
+        for sets in by_event.values():
+            sims = []
+            for i in range(1, len(sets)):
+                prev = sets[:i]
+                sims.append(_mean(_jaccard(sets[i], p) for p in prev))
+            if sims:
+                nov.append(1.0 - _mean(sims))
+        out["novelty"] = _mean(nov) if nov else None
+    else:
+        out.update(distinct_rate=None, echo_rate=None, drift_rate=None, canonical_miss_rate=None, padded_rate=None,
+                   mean_tokens=None, mean_prose_tokens=None, novelty=None)
+    out["n_negatives"] = len(neg)
+    out["negative_miss_rate"] = (sum(1 for r in neg if r.get("canonical_missed")) / len(neg)) if neg else None
+    out["negative_padded_rate"] = (sum(1 for r in neg if r.get("padded")) / len(neg)) if neg else None
+    out["negative_mean_tokens"] = _mean(count(r["text"]) for r in neg) if neg else None
+    return out
+
+
+def _jaccard(a: set, b: set) -> float:
+    if not a and not b:
+        return 1.0
+    return len(a & b) / len(a | b)
+
+
+CHILD_DIAG_KEYS = ("distinct_rate", "echo_rate", "drift_rate", "canonical_miss_rate", "padded_rate", "mean_tokens",
+                   "mean_prose_tokens", "novelty", "n_negatives", "negative_miss_rate")
+
+
 def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: int = 1,
-           frame_copy: int = 0, seed: int = 0, bank: int = 0, frame_negatives: int = 0) -> dict:
+           frame_copy: int = 0, seed: int = 0, bank: int = 0, frame_negatives: int = 0,
+           child_rendering: dict | None = None, child_variant: str | None = None) -> dict:
     """Render one event under a representation.
     short:            today's piece -- one-line header + child target, bare
                       text, loss on every token (train_adapter.py semantics).
@@ -1016,7 +1545,14 @@ def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: i
     frames:           one of K declarative FRAME_TEMPLATES ending with the
                       canonical sentence, bare text, loss on every token
                       (cell family F; frame_* knobs select the template; the
-                      cell's K_neg is recorded on every frames item)."""
+                      cell's K_neg is recorded on every frames item).
+    childframes:      the child's rendering `child_rendering` (dict text,
+                      padded) as prose + the canonical sentence, bare text,
+                      loss on every token (cell family CF; frame metadata as
+                      frames with frame_template None, plus child_variant,
+                      child_text, canonical_missed, padded; non-event items
+                      carry child_variant and None for the per-rendering
+                      fields)."""
     frame_meta = {}
     target = ev["target"]
     if representation == "short":
@@ -1030,6 +1566,13 @@ def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: i
         chat, mask = False, False
         frame_meta = dict(frame_forms=int(frame_forms), frame_repeats=int(frame_repeats),
                           frame_copy=int(frame_copy), frame_template=t, frame_negatives=int(frame_negatives or 0))
+    elif representation == "childframes":
+        ctx, target, cm = render_child_frame(ev, child_rendering, child_variant or "a")
+        chat, mask = False, False
+        cm = cm or dict(child_text=None, canonical_missed=None, padded=None)
+        frame_meta = dict(frame_forms=1, frame_repeats=int(frame_repeats), frame_copy=int(frame_copy),
+                          frame_template=None, frame_negatives=int(frame_negatives or 0),
+                          child_variant=child_variant or "a", **cm)
     else:
         raise ValueError(representation)
     return dict(context=ctx, target=target, chat=chat, mask_context=mask,
@@ -1176,10 +1719,21 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                  representation: str, counter: TokenCounter,
                  token_budget: int, shuffled: bool = False,
                  epochs: int = TRAIN_EPOCHS, ordering: str = DEFAULT_ORDERING,
-                 frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0) -> dict:
+                 frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0,
+                 child_generations: dict | None = None, child_variant: str | None = None) -> dict:
     """One sleep's corpus for one writer cell, padded to the token budget
     with balanced unrelated observations; colour marginals identical to
     every other corpus of the bank (marginal_target per colour).
+
+    childframes representation (cell family CF, the bridge): like frames
+    with R = frame_repeats renderings per event, but every rendering is the
+    child's own text from `child_generations` (child_generations(): reused
+    from generations.json) followed by the canonical sentence (variant a:
+    appended by the harness; b/c: written by the child, appended when
+    missed); variant c adds the child's 'not observed' renderings for the
+    owners unexposed at this sleep (K_neg = frame_negatives). The
+    perception-quality diagnostics (child_diagnostics) are recorded in
+    stats['child'] and the variant on the corpus and every item.
 
     frames representation (cell family F): every ledger event is written
     frame_repeats times, the copies rotating through frame_forms templates
@@ -1208,11 +1762,40 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     events = ledger_items(bank, arm, sleep)                # chronological
     if shuffled:
         events = scramble_events(bank, events)
-    frames = representation == "frames"
+    child = representation == "childframes"
+    frames = representation == "frames" or child
     copies = int(frame_repeats) if frames else 1
-    forms = int(frame_forms) if frames else 1
+    forms = int(frame_forms) if (frames and not child) else 1
     negs = int(frame_negatives or 0) if frames else 0
-    if frames:
+    variant = None
+    if child:
+        variant = child_variant or "a"
+        if variant not in CHILD_VARIANTS:
+            raise ValueError(variant)
+        if variant != "c":
+            negs = 0
+        gens = child_generations
+        if gens is None:
+            raise RuntimeError("childframes needs child_generations (child_generations(); generations.json)")
+        if gens.get("variant") != variant or int(gens.get("repeats", -1)) != copies:
+            raise RuntimeError(f"child generations are for variant {gens.get('variant')} R={gens.get('repeats')}, "
+                               f"corpus asks variant {variant} R={copies}")
+        pieces = []
+        for e in events:
+            if e["kind"] in ("fact", "interference"):
+                g = gens["events"].get(e["event_id"])
+                if g is None:
+                    raise RuntimeError(f"generations.json holds no renderings for event {e['event_id']}")
+                for r in range(copies):
+                    pieces.append(_piece(e, representation, frame_repeats=copies, frame_copy=r, seed=bank["seed"],
+                                         bank=bank["bank"], frame_negatives=negs,
+                                         child_rendering=dict(text=g["lines"][r], padded=g["padded"][r]),
+                                         child_variant=variant))
+            else:
+                for r in range(copies):
+                    pieces.append(_piece(e, representation, frame_repeats=copies, frame_copy=r, seed=bank["seed"],
+                                         bank=bank["bank"], frame_negatives=negs, child_variant=variant))
+    elif frames:
         pieces = [_piece(e, representation, frame_forms=forms, frame_repeats=copies, frame_copy=r,
                          seed=bank["seed"], bank=bank["bank"], frame_negatives=negs)
                   for e in events for r in range(copies)]
@@ -1221,7 +1804,10 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     items = apply_writer(pieces, writer)                    # dedup keeps the first occurrence
     # abstention negatives of this sleep (frames with K_neg > 0 only; colourless, so the marginal
     # top-up below is unaffected and they take the place of padding under the budget)
-    negative = negative_items(bank, arm, sleep, negs, forms, copies) if negs else []
+    if child:
+        negative = child_negative_items(bank, arm, sleep, child_generations, negs, copies, variant) if negs else []
+    else:
+        negative = negative_items(bank, arm, sleep, negs, forms, copies) if negs else []
     items.extend(negative)
     # colour marginal top-up (targets per colour == marginal_target everywhere; x copies under frames)
     M = bank["marginal_target"] * copies
@@ -1229,6 +1815,8 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     fill_seed = bank["seed"] * 100 + bank["bank"]
     # padding items carry the cell's K/R (and K_neg) in their metadata too (frames only; not part of the sha)
     fill_kw = dict(frame_forms=forms, frame_repeats=copies, frame_negatives=negs) if frames else {}
+    if child:
+        fill_kw["child_variant"] = variant
     for c in COLOURS:
         if counts[c] > M:
             raise RuntimeError(f"colour {c} count {counts[c]} exceeds marginal target {M}")
@@ -1282,16 +1870,30 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                  n_negatives=len(negative),
                  negative_owners={obj: sorted({it["owner"] for it in negative if it["negative_object"] == obj})
                                   for obj in NEGATIVE_OBJECTS})
-    return dict(corpus=items, bank=bank["bank"], arm=arm, sleep=sleep, writer=writer,
-                representation=representation, shuffled=shuffled, sha=sha,
-                items_sha=items_sha(items), ordering=ordering,
-                token_budget=token_budget, marginal_target=M, epochs=epochs,
-                frame_forms=forms, frame_repeats=copies, frame_negatives=negs,
-                counter=counter.mode, stats=stats)
+    out = dict(corpus=items, bank=bank["bank"], arm=arm, sleep=sleep, writer=writer,
+               representation=representation, shuffled=shuffled, sha=sha,
+               items_sha=items_sha(items), ordering=ordering,
+               token_budget=token_budget, marginal_target=M, epochs=epochs,
+               frame_forms=forms, frame_repeats=copies, frame_negatives=negs,
+               counter=counter.mode, stats=stats)
+    if child:
+        # perception-quality diagnostics of the child's renderings (the bridge's measure of the perception skill)
+        rend = [dict(event_id=it["event_ids"][0], colour=it["colour"], text=it["child_text"], prose=it["context"],
+                     canonical_missed=it["canonical_missed"], padded=it["padded"], negative=(it["kind"] == "negative"))
+                for it in items if it["kind"] in ("fact", "interference", "negative")]
+        diag = child_diagnostics(rend, counter)
+        diag.update(variant=variant, backend=child_generations.get("backend"), model=child_generations.get("model"),
+                    n_reprompted=child_generations.get("n_reprompted"), generator_calls=child_generations.get("generator_calls"),
+                    n_negative_owners=len({it["owner"] for it in negative}))
+        stats["child"] = diag
+        out.update(child_variant=variant, child_backend=child_generations.get("backend"),
+                   generations_sha=sha_of([(k, v["lines"]) for k, v in sorted(child_generations["events"].items())]))
+    return out
 
 
 def _piece_from_filler(f: dict, representation: str, fill_seed: int = 0, bank: int = 0,
-                       frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0) -> dict:
+                       frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0,
+                       child_variant: str | None = None) -> dict:
     """A padding item with a fixed pseudo-session over the exposure sessions
     (deterministic per filler id; independent of arm, cell and sleep), so
     under chronological ordering the unrelated observations interleave with
@@ -1303,9 +1905,65 @@ def _piece_from_filler(f: dict, representation: str, fill_seed: int = 0, bank: i
     ev["session"] = _rng("fsess", fill_seed, bank, ev["event_id"]).randint(1, N_SLEEPS_EXPOSURE)
     ev["order_key"] = _order_key(fill_seed, bank, ev["event_id"])
     p = _piece(ev, representation, frame_forms=frame_forms, frame_repeats=frame_repeats,
-               seed=fill_seed, bank=bank, frame_negatives=frame_negatives)
+               seed=fill_seed, bank=bank, frame_negatives=frame_negatives, child_variant=child_variant)
     p["kind"] = f["kind"]
     return p
+
+
+def child_corpus_inputs(run_dir: str, bank: dict, cell: str, arm: str, sleep: int, child_backend: str = "none",
+                        writer: ChildWriter | None = None) -> dict:
+    """The generations of one CF corpus: generations.json under the cell
+    directory when present (no generator call); otherwise generated with
+    `writer` or a fresh ChildWriter(child_backend) ('none' = refuse: the
+    runbook's fits step never touches the GPU model) and written there."""
+    knobs = cell_frame_knobs(cell)
+    variant = cell_child_variant(cell)
+    if variant is None:
+        raise ValueError(f"{cell} is not a childframes cell")
+    path = os.path.join(cell_dir(run_dir, bank["bank"], cell, arm, sleep), "generations.json")
+    if os.path.exists(path):
+        return child_generations(bank, arm, sleep, variant, knobs["repeats"], cell_frame_negatives(cell), path=path)
+    own = writer is None
+    if own:
+        if child_backend in (None, "none"):
+            raise RuntimeError(f"no generations at {path}: run gpu/memory_dose_childframes.sh <gpu> generate "
+                               f"(or corpus --child-backend vllm|mock) first")
+        writer = ChildWriter(child_backend)
+    try:
+        return child_generations(bank, arm, sleep, variant, knobs["repeats"], cell_frame_negatives(cell), writer=writer, path=path)
+    finally:
+        if own:
+            writer.close()
+
+
+def childgen_command(run_dir: str, cells: list[str], banks: list[int], arm: str = "across", sleep: int = N_SLEEPS_EXPOSURE,
+                     child_backend: str = "mock", writer: ChildWriter | None = None) -> dict:
+    """The runbook's 'generate' step: ONE child writer (one vllm load) writes
+    generations.json for every (cell, bank) that lacks it; existing files
+    are reused untouched. Returns {key: path} and prints CHILDGEN_DONE."""
+    root = set_write_root(run_dir)
+    own = writer is None
+    if own:
+        writer = ChildWriter(child_backend)
+    out, made = {}, 0
+    try:
+        for b in banks:
+            bank = read_json(os.path.join(root, "banks", f"bank{b}.json"))
+            for cell in cells:
+                if cell_child_variant(cell) is None:
+                    raise ValueError(f"{cell} is not a childframes cell")
+                path = os.path.join(cell_dir(root, b, cell, arm, sleep), "generations.json")
+                existed = os.path.exists(path)
+                g = child_corpus_inputs(root, bank, cell, arm, sleep, writer=writer)
+                made += 0 if existed else 1
+                out[f"bank{b}/{cell}/{arm}/sleep{sleep}"] = path
+                print(f"CHILDGEN {'reused' if existed else 'wrote'} {path} events={g['n_events']} reprompted={g['n_reprompted']} "
+                      f"negative_owners={g['n_negative_owners']}", flush=True)
+    finally:
+        if own:
+            writer.close()
+    print(f"CHILDGEN_DONE backend={writer.backend} written={made} reused={len(out) - made} calls={writer.calls}", flush=True)
+    return out
 
 
 def cell_dir(run_dir: str, bank: int, cell: str, arm: str, sleep: int) -> str:
@@ -1315,7 +1973,7 @@ def cell_dir(run_dir: str, bank: int, cell: str, arm: str, sleep: int) -> str:
 def corpus_all(run_dir: str, counter: TokenCounter, cells: list[str] | None = None,
                arms: list[str] | None = None, sleeps: list[int] | None = None,
                token_budget: int | None = None, ordering: str = DEFAULT_ORDERING,
-               strict_budget: bool = True) -> dict:
+               strict_budget: bool = True, child_backend: str = "none") -> dict:
     """Every corpus of the run + an index (shas, stats) + the sleep-4
     exposure-arm identity check: `identical_items` (same multiset of
     supervised items -- true by construction for every cell) and
@@ -1341,9 +1999,13 @@ def corpus_all(run_dir: str, counter: TokenCounter, cells: list[str] | None = No
             knobs = cell_frame_knobs(cell)
             for arm in arms:
                 for k in sleeps:
+                    child_kw = {}
+                    if rep == "childframes":   # CF cells: generations.json under the cell dir (reused), else child_backend
+                        child_kw = dict(child_generations=child_corpus_inputs(root, bank, cell, arm, k, child_backend),
+                                        child_variant=cell_child_variant(cell))
                     c = build_corpus(bank, arm, k, writer, rep, counter, budgets[cell], shuffled=shuf,
                                      ordering=ordering, frame_forms=knobs["forms"],
-                                     frame_repeats=knobs["repeats"], frame_negatives=cell_frame_negatives(cell))
+                                     frame_repeats=knobs["repeats"], frame_negatives=cell_frame_negatives(cell), **child_kw)
                     d = cell_dir(root, b, cell, arm, k)
                     path = write_json(os.path.join(d, "corpus.json"), c)
                     key = f"bank{b}/{cell}/{arm}/sleep{k}"
@@ -2882,6 +3544,11 @@ def _cell_label(cell: str) -> str:
     kr = f", K={knobs['forms']} forms x R={knobs['repeats']} repeats" if knobs else ""
     if knobs and knobs.get("negatives"):
         kr += f", K_neg={knobs['negatives']} negatives"
+    ck = CHILD_FRAME_CELLS.get(cell)
+    if ck:
+        kr = f", R={ck['repeats']} child-written renderings, variant {ck['variant']}"
+        if ck.get("negatives"):
+            kr += f", K_neg={ck['negatives']} child-written negatives"
     return f"{cell} ({w} x {r}{kr}{', scrambled-binding control' if sh else ''})"
 
 
@@ -2913,9 +3580,83 @@ def _ci(values: list[float]) -> str:
     return f"{_fmt(bs['mean'])} [{_fmt(bs['lo'])}, {_fmt(bs['hi'])}]" if bs["n"] else "-"
 
 
+def child_corpus_diagnostics(run_dir: str, bank: int, cell: str, arm: str, sleep: int) -> dict | None:
+    """stats['child'] of a CF corpus on disk (None when the corpus is
+    missing or carries no diagnostics)."""
+    p = os.path.join(cell_dir(run_dir, bank, cell, arm, sleep), "corpus.json")
+    if not os.path.exists(p):
+        return None
+    c = read_json(p)
+    d = (c.get("stats") or {}).get("child")
+    if d is None:
+        return None
+    d = dict(d)
+    d.update(n_tokens=c["stats"].get("n_tokens"), content_tokens=c["stats"].get("content_tokens"),
+             over_budget=c["stats"].get("over_budget"), token_budget=c.get("token_budget"))
+    return d
+
+
+def pool_child_diagnostics(diags: list[dict]) -> dict | None:
+    """Pool the per-bank diagnostics: rates and means averaged over banks
+    (None-tolerant), counts summed; None for an empty list."""
+    ds = [d for d in diags if d]
+    if not ds:
+        return None
+    out = dict(n_banks=len(ds))
+    for k in ("n_renderings", "n_events", "n_negatives", "n_reprompted", "n_negative_owners", "content_tokens", "n_tokens"):
+        vals = [d.get(k) for d in ds if d.get(k) is not None]
+        out[k] = sum(vals) if vals else None
+    for k in ("distinct_rate", "echo_rate", "drift_rate", "canonical_miss_rate", "padded_rate", "mean_tokens",
+              "mean_prose_tokens", "novelty", "negative_miss_rate", "negative_padded_rate", "negative_mean_tokens"):
+        vals = [d.get(k) for d in ds if d.get(k) is not None]
+        out[k] = _mean(vals) if vals else None
+    out["over_budget"] = any(d.get("over_budget") for d in ds)
+    out["variant"] = ds[0].get("variant")
+    out["backend"] = ds[0].get("backend")
+    return out
+
+
+def _child_diag_cells(d: dict | None) -> list:
+    """The diagnostics columns of the report tables ('-' without data)."""
+    if not d:
+        return ["-"] * len(CHILD_DIAG_KEYS)
+    return [d.get(k) for k in CHILD_DIAG_KEYS]
+
+
+CHILD_DIAG_HEADERS = ["distinct", "echo", "drift", "canonical miss", "padded", "mean tokens", "mean prose tokens",
+                      "novelty", "negatives", "negative miss"]
+
+
+def render_child_markdown(cell: str, child: dict) -> list[str]:
+    """The per-arm markdown section of a CF cell: what the child wrote."""
+    v = child.get("variant")
+    L = ["", "## Child-authored renderings (cell family CF, the bridge)", "",
+         f"Variant **{v}**: " + {"a": "the child wrote free perceptions; the harness appended the canonical sentence.",
+                                 "b": "the child was asked to end every perception with the canonical sentence "
+                                      "(a rendering without it = canonical miss; the harness appended it).",
+                                 "c": "as b, plus the child wrote 'not observed' renderings for every owner unexposed "
+                                      "at the sleep (negative miss = rendering without the canonical negative)."}.get(v, ""),
+         "distinct = distinct renderings / total (whitespace + case normalised); echo = renderings identical to an earlier "
+         "rendering of the same event; drift = renderings whose prose names a colour other than the planted one; padded = "
+         "renderings repeated by the harness because the child returned fewer than R usable lines (after one re-prompt); "
+         "novelty = mean over events of 1 - mean Jaccard similarity of each rendering's prose word set to the earlier "
+         "renderings of the same event; mean tokens = the rendering as the child wrote it (under b/c that includes the "
+         "self-written canonical sentence, under a it does not), mean prose tokens = the perception alone (comparable "
+         "across variants).", ""]
+    rows = []
+    for b, d in sorted((child.get("per_bank") or {}).items()):
+        rows.append([f"bank{b}", d.get("n_renderings") if d else "-", *_child_diag_cells(d),
+                     (d.get("n_reprompted") if d else "-"), (d.get("over_budget") if d else "-")])
+    p = child.get("pooled")
+    if p:
+        rows.append(["pooled", p.get("n_renderings"), *_child_diag_cells(p), p.get("n_reprompted"), p.get("over_budget")])
+    L.append(_md_table(["bank", "renderings", *CHILD_DIAG_HEADERS, "re-prompted events", "over budget"], rows))
+    return L
+
+
 def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: dict,
                         ref_sleep: int, gates: dict, interp: dict, retention: dict | None,
-                        notes: list[str] | None = None) -> str:
+                        notes: list[str] | None = None, child: dict | None = None) -> str:
     ref = by_sleep[ref_sleep]
     am = ref["pooled"].get("adapter_meta") or {}
     L = [f"# Memory dose test -- cell {_cell_label(cell)}, arm {arm}, rank {rank}, lambda {lam:g}",
@@ -3107,6 +3848,8 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
     L.append(_md_table(["bank", "dose", "n", "frame P OFF->ON", "frame dP", "frame term1 (nats)", "frame term2 (nats)",
                         "I_d_frame [95% CI]", "similar-frame |dP|", "bicycle-frame |dP|", "frame spill",
                         "abstain OFF->ON (owner frame)", "abstain ON similar", "abstain ON bicycle"], rows))
+    if child:
+        L += render_child_markdown(cell, child)
     if len(by_sleep) > 1:
         L += ["", "## Trajectory (dose 16, paraphrases, no context; pooled banks)", ""]
         rows = []
@@ -3151,6 +3894,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
         groups.setdefault(key, {}).setdefault(int(m["sleep"]), {})[int(ev["bank"])] = summarize_eval(ev, banks[int(ev["bank"])])
     used_tags = {"__".join(str(x) for x in k): v.get("tag") for k, v in chosen.items()}
     results, summary_rows, lam_rows, frame_rows = {}, [], [], []
+    bank_sums, pooled_sums, child_of = {}, {}, {}     # per result name: per-bank summaries, pooled summary, CF diagnostics
     notes = [f"colour assignment: {manifest.get('assignment', 'random balanced, after the OFF measurement')}"
              f" (prior_match={manifest.get('prior_match', False)}); OFF-prior bin edges {manifest.get('prior_bin_edges', PRIOR_BIN_EDGES)}"]
     for (cell, arm, rank, lam), by_sleep in sorted(groups.items()):
@@ -3172,7 +3916,14 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
         per_bank = {b: dict(gates=evaluate_gates(s, seed=seed), interpretation=interpret(s, evaluate_gates(s, seed=seed)))
                     for b, s in by_sleep[ref_sleep]["banks"].items()}
         name = f"{cell}__{arm}__r{rank}__lam{lam:g}"
-        md = render_arm_markdown(cell, arm, rank, lam, by_sleep, ref_sleep, gates, interp, retention, notes=notes)
+        # child-authored frames (CF): the perception diagnostics live in the corpus on disk (stats['child'])
+        child = None
+        if cell in CHILD_FRAME_CELLS:
+            per_bank_diag = {b: child_corpus_diagnostics(root, b, cell, arm, ref_sleep) for b in sorted(by_sleep[ref_sleep]["banks"])}
+            child = dict(variant=cell_child_variant(cell), per_bank=per_bank_diag,
+                         pooled=pool_child_diagnostics(list(per_bank_diag.values())))
+        bank_sums[name], pooled_sums[name], child_of[name] = by_sleep[ref_sleep]["banks"], pooled, child
+        md = render_arm_markdown(cell, arm, rank, lam, by_sleep, ref_sleep, gates, interp, retention, notes=notes, child=child)
         write_text(os.path.join(root, "report", name + ".md"), md)
         d16 = pooled["per_dose"][16]
         results[name] = dict(cell=cell, arm=arm, rank=rank, lam=lam, ref_sleep=ref_sleep, sleeps=sorted(by_sleep),
@@ -3195,7 +3946,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                                            abstain_unexposed_on=interp.get("abstain_unexposed_on"),
                                            abstain_bicycle_on=interp.get("abstain_bicycle_on"),
                                            abstain_exposed16_on=interp.get("abstain_exposed16_on")),
-                             frame=dict(knobs=FRAME_CELLS.get(cell), negatives=cell_frame_negatives(cell),
+                             frame=dict(knobs=FRAME_CELLS.get(cell) or CHILD_FRAME_CELLS.get(cell), negatives=cell_frame_negatives(cell),
                                         has_frame_cues=bool(d16.get("I_d_frame_values")),
                                         has_abstain=interp.get("abstain_exposed16_on") is not None,
                                         dose_curve={d: pooled["per_dose"][d].get("frame_d_p") for d in DOSES},
@@ -3205,6 +3956,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                                         G9_frame_binding=gates["G9_frame_binding"], G10_frame_dose=gates["G10_frame_dose"],
                                         G11_abstention=gates["G11_abstention"],
                                         label=interp.get("frame_label")),
+                             child=child,
                              dose_curve={d: pooled["per_dose"][d]["d_p"] for d in DOSES},
                              lesson_curve={d: pooled["lesson_per_dose"][d]["interaction"] for d in DOSES})
         h = results[name]["headline"]
@@ -3222,7 +3974,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                              f"{_fmt(h['textfit_short_gain'])}/{_fmt(h['textfit_ante_gain'])}",
                              f"{n_pass}/{n_pass + n_fail}", interp["label"],
                              _frame_p_cell(d16), frame_ci, h["frame_spill"]])
-        knobs = FRAME_CELLS.get(cell) or {}
+        knobs = FRAME_CELLS.get(cell) or CHILD_FRAME_CELLS.get(cell) or {}     # CF rows carry the F columns too
         fr = results[name]["frame"]
         verdict = {True: "PASS", False: "FAIL", None: "n/a"}
         frame_rows.append([name, ref_sleep, len(results[name]["banks"]), knobs.get("forms", "-"), knobs.get("repeats", "-"),
@@ -3239,11 +3991,11 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
         if lam != 1.0 or any(k2[:3] == (cell, arm, rank) and k2[3] != 1.0 for k2 in groups):
             lam_rows.append([cell, arm, rank, lam, h["d_p"], h["I_d"], h["unrelated"], h["repaint_on"], h["ctx_on"]])
     # finalist: rank 8, sleep 4, lambda 1, non-shuffled writer cells; must not spill; largest pooled I_d.
-    # The frames family F has its own endpoint (I_d_frame) and stays out of the paraphrase finalist pool.
+    # The frames families F and CF have their own endpoint (I_d_frame) and stay out of the paraphrase finalist pool.
     fin = None
     pool_c = [(n, r) for n, r in results.items() if r["rank"] == LORA_RANK and r["lam"] == 1.0
               and r["ref_sleep"] == N_SLEEPS_EXPOSURE and not CELLS.get(r["cell"], (0, 0, True))[2]
-              and CELLS.get(r["cell"], (0, "", 0))[1] != "frames"]
+              and CELLS.get(r["cell"], (0, "", 0))[1] not in ("frames", "childframes")]
     ok = [(n, r) for n, r in pool_c if r["gates"]["G5_unrelated"]["passed"]
           and r["interpretation"]["label"] not in ("rewrite-habit", "mass-collapse")
           and r["headline"]["I_d"] is not None]
@@ -3287,6 +4039,69 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                      "frame dP d0/d1/d4/d16", "I_d_frame [95% CI]", "spill unexposed/similar/bicycle", "frame spill",
                      "G9_frame_binding", "G10_frame_dose", "frame reading",
                      "abstain ON unexposed/similar/bicycle", "abstain ON exposed d16", "G11_abstention"], frame_rows)]
+    # child-authored frames (cell family CF, the bridge): the perception diagnostics of every CF cell next to the
+    # frame table (same row names), then synthetic vs child-authored on the same cues
+    child_rows = []
+    for name, ch in child_of.items():
+        if not ch:
+            continue
+        r, p = results[name], ch.get("pooled") or {}
+        child_rows.append([name, r["ref_sleep"], len(r["banks"]), ch["variant"], CHILD_FRAME_CELLS[r["cell"]]["repeats"],
+                           cell_frame_negatives(r["cell"]), p.get("backend") or "-", p.get("n_renderings", "-"),
+                           *_child_diag_cells(p), p.get("n_reprompted", "-"), p.get("over_budget", "-")])
+    if child_rows:
+        L += ["", "### Child-authored frames: perception diagnostics (cell family CF, the bridge)", "",
+              "The same planted events as F, rendered by the frozen child (ONE prompt per occurrence asking for R numbered "
+              "lines; chat template, temperature 0.7, top_p 0.95, one seed per event; every raw generation is kept in "
+              "generations.json). Variant a: the harness appends the canonical sentence; b: the child is asked to write it "
+              "(canonical miss = it did not; appended); c: b + child-written 'not observed' renderings for the owners "
+              "unexposed at the sleep. distinct = distinct renderings / total; echo = identical to an earlier rendering of "
+              "the same event; drift = prose names a colour other than the planted one; padded = repeated by the harness "
+              "after one re-prompt still left fewer than R lines; novelty = 1 - mean Jaccard of each rendering's prose word "
+              "set to the earlier renderings of the same event (mean over events); mean tokens = the rendering as written "
+              "(under b/c including the self-written canonical sentence, under a not), mean prose tokens = the perception "
+              "alone (comparable across variants). Rates are averaged over banks.", "",
+              _md_table(["cell__arm__rank__lambda", "sleep", "banks", "variant", "R", "K_neg", "backend", "renderings",
+                         *CHILD_DIAG_HEADERS, "re-prompted events", "over budget"], child_rows)]
+    bridge_rows, bridge_json = [], []
+    pairs: dict = {}
+    for name, ch in child_of.items():
+        if ch:
+            r = results[name]
+            ref = f"F_r16k16__{r['arm']}__r{r['rank']}__lam{r['lam']:g}"
+            if ref in results:
+                pairs.setdefault(ref, []).append(name)
+    for ref in sorted(pairs):
+        names = [ref] + sorted(pairs[ref])
+        banks_all = sorted({b for n in names for b in bank_sums[n]})
+        for scope in [f"bank{b}" for b in banks_all] + ["pooled"]:
+            for n in names:
+                s = pooled_sums[n] if scope == "pooled" else bank_sums[n].get(int(scope[4:]))
+                ch = child_of.get(n) or {}
+                diag = (ch.get("pooled") if scope == "pooled" else (ch.get("per_bank") or {}).get(int(scope[4:]))) if ch else None
+                if s is None:
+                    row = [scope, results[n]["cell"], "-", "-", "-", "-", *_child_diag_cells(None)]
+                else:
+                    d16 = s["per_dose"][16]
+                    row = [scope, results[n]["cell"], _frame_p_cell(d16), _frame_ci_cell(d16), s["controls"].get("frame_spill"),
+                           s["controls"].get("abstain_unexposed_on"), *_child_diag_cells(diag)]
+                bridge_rows.append(row)
+                bs = paired_bootstrap(d16["I_d_frame_values"]) if s and d16.get("I_d_frame_values") else None
+                bridge_json.append(dict(scope=scope, cell=results[n]["cell"], result=n, frame_p_on=(d16.get("frame_p_on") if s else None),
+                                        I_d_frame=(d16.get("I_d_frame") if s else None),
+                                        I_d_frame_ci=([bs["lo"], bs["hi"]] if bs else None),
+                                        frame_spill=(s["controls"].get("frame_spill") if s else None),
+                                        abstain_unexposed_on=(s["controls"].get("abstain_unexposed_on") if s else None),
+                                        diagnostics=diag))
+    if bridge_rows:
+        L += ["", "### Synthetic vs child-authored (the bridge)", "",
+              "F_r16k16 (sixteen synthetic template renderings per occurrence) against the child-authored cells on the same "
+              "cues at the same exposure: frame P at the dose-16 owners' frames, I_d_frame (owner minus look-alike, paired "
+              "bootstrap), frame spill, P(' not') ON at the unexposed owners' frames (abstention; variant c is the only cell "
+              "that writes negatives) and the perception diagnostics ('-' for the synthetic cell). The synthetic-minus-child "
+              "gap is the measure of the perception skill (THESIS_PARENTING_AS_MECHANISM_MATCHING.md section 1.1).", "",
+              _md_table(["bank", "cell", "frame P OFF->ON (d16)", "I_d_frame [95% CI]", "frame spill", "abstain ON unexposed",
+                         *CHILD_DIAG_HEADERS], bridge_rows)]
     if lam_rows:
         L += ["", "## Adapter-strength sweep (no retraining; lambda scales every LoRA delta)", "",
               _md_table(["cell", "arm", "rank", "lambda", "dP d16", "I_d", "unrelated", "repaint ON", "ctx ON"], lam_rows)]
@@ -3327,7 +4142,7 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
     write_text(os.path.join(root, "report", "summary.md"), "\n".join(L) + "\n")
     write_json(os.path.join(root, "report", "report.json"),
                dict(results=results, finalist=fin, n_evals=len(evals), identity_check=ident,
-                    exposure_arms_sleep4=arm_rows, orderings=orderings, evals_used=used_tags,
+                    exposure_arms_sleep4=arm_rows, orderings=orderings, evals_used=used_tags, bridge=bridge_json,
                     prior_match=manifest.get("prior_match", False), gates_thresholds={k: (list(v) if isinstance(v, tuple) else v) for k, v in GATES.items()}))
     print(f"REPORT_DONE cells={len(results)} finalist={fin['cell'] if fin else None}", flush=True)
     return dict(results=results, finalist=fin)
@@ -3368,7 +4183,12 @@ def main(argv: list[str] | None = None):
     c.add_argument("--bank", type=int, required=True)
     c.add_argument("--cell", default=None,
                    help="A|B|C|D|Dshuf|Bw|Dw|F_r1k1|F_r16k1|F_r16k4|F_r16k16|F_r64k16|F_r4k4|F_r1k16|"
-                        "F_r16k16_neg4|F_r16k4_neg4 (or give --writer/--representation)")
+                        "F_r16k16_neg4|F_r16k4_neg4|F_r16k16_neg64|CF_r16_a|CF_r16_b|CF_r16_c (or give --writer/--representation)")
+    c.add_argument("--child-backend", choices=["auto", "none", "mock", "vllm"], default="auto",
+                   help="childframes: who writes the renderings when generations.json is absent (auto = mock under "
+                        "--model mock, vllm under --model hf; none = refuse, reuse only)")
+    c.add_argument("--child-variant", choices=list(CHILD_VARIANTS), default=None,
+                   help="childframes without --cell: a (harness appends the frame) | b (child writes it) | c (b + negatives)")
     c.add_argument("--writer", choices=WRITERS, default=None)
     c.add_argument("--representation", choices=REPRESENTATIONS, default=None)
     c.add_argument("--shuffled", action="store_true")
@@ -3394,6 +4214,15 @@ def main(argv: list[str] | None = None):
     ca.add_argument("--token-budget", type=int, default=None)
     ca.add_argument("--ordering", choices=ORDERINGS, default=DEFAULT_ORDERING)
     ca.add_argument("--allow-over-budget", action="store_true")
+    ca.add_argument("--child-backend", choices=["none", "mock", "vllm"], default="none",
+                    help="CF cells: generate renderings when generations.json is absent (default: reuse only)")
+    cg = sub.add_parser("childgen", help="child-authored frames: write generations.json for CF cells (one model load)")
+    cg.add_argument("--run-dir", required=True)
+    cg.add_argument("--cells", default=" ".join(CHILD_FRAME_CELLS), help="space/comma list of CF cells")
+    cg.add_argument("--banks", default="0 1 2", help="space/comma list of bank indices")
+    cg.add_argument("--arm", choices=ARMS, default="across")
+    cg.add_argument("--sleep", type=int, default=N_SLEEPS_EXPOSURE)
+    cg.add_argument("--child-backend", choices=["mock", "vllm"], default="mock")
     t = sub.add_parser("train")
     t.add_argument("--run-dir", required=True)
     t.add_argument("--corpus", required=True)
@@ -3439,11 +4268,13 @@ def main(argv: list[str] | None = None):
         root = set_write_root(args.run_dir)
         manifest = read_json(os.path.join(root, "manifest.json"))
         bank = read_json(os.path.join(root, "banks", f"bank{args.bank}.json"))
+        variant = None
         if args.cell:
             writer, rep, shuf = CELLS[args.cell]
             cell = args.cell
             knobs = cell_frame_knobs(cell)
             negs = cell_frame_negatives(cell)
+            variant = cell_child_variant(cell)
         else:
             writer, rep, shuf = args.writer, args.representation, args.shuffled
             knobs = dict(forms=args.frame_forms or 1, repeats=args.frame_repeats or 1)
@@ -3451,24 +4282,53 @@ def main(argv: list[str] | None = None):
             cell = f"{writer}-{rep}{'-shuf' if shuf else ''}"
             if rep == "frames":
                 cell += f"-r{knobs['repeats']}k{knobs['forms']}" + (f"-neg{negs}" if negs else "")
+            elif rep == "childframes":
+                variant = args.child_variant or "a"
+                knobs["forms"] = 1
+                negs = negs if variant == "c" else 0
+                cell += f"-r{knobs['repeats']}-{variant}" + (f"-neg{negs}" if negs else "")
         budget = args.token_budget or cell_budget(args.cell, manifest["token_budget"])   # F cells: 400k default
+        child_kw = {}
+        if rep == "childframes":
+            backend = args.child_backend
+            if backend == "auto":
+                backend = "mock" if args.model == "mock" else "vllm"
+            gpath = os.path.join(cell_dir(root, args.bank, cell, args.arm, args.sleep), "generations.json")
+            if os.path.exists(gpath):
+                gens = child_generations(bank, args.arm, args.sleep, variant, knobs["repeats"], negs, path=gpath)
+            else:
+                if backend == "none":
+                    print(f"CORPUS_NO_GENERATIONS {gpath} (run childgen / the runbook's generate step first)")
+                    sys.exit(5)
+                w = ChildWriter(backend)
+                try:
+                    gens = child_generations(bank, args.arm, args.sleep, variant, knobs["repeats"], negs, writer=w, path=gpath)
+                finally:
+                    w.close()
+            child_kw = dict(child_generations=gens, child_variant=variant)
         cp = build_corpus(bank, args.arm, args.sleep, writer, rep, _counter_for(args), budget, shuffled=shuf,
                           ordering=args.ordering, frame_forms=knobs["forms"], frame_repeats=knobs["repeats"],
-                          frame_negatives=negs)
+                          frame_negatives=negs, **child_kw)
         if cp["stats"]["over_budget"] and not args.allow_over_budget:
             print(f"CORPUS_OVER_BUDGET content_tokens={cp['stats']['content_tokens']} budget={cp['token_budget']}")
             sys.exit(4)
         p = write_json(os.path.join(cell_dir(root, args.bank, cell, args.arm, args.sleep), "corpus.json"), cp)
+        child_note = ""
+        if rep == "childframes":
+            ch = cp["stats"]["child"]
+            child_note = (f" child_variant={cp['child_variant']} distinct={_fmt(ch['distinct_rate'])} echo={_fmt(ch['echo_rate'])} "
+                          f"drift={_fmt(ch['drift_rate'])} canonical_miss={_fmt(ch['canonical_miss_rate'])} "
+                          f"padded={_fmt(ch['padded_rate'])} novelty={_fmt(ch['novelty'])} over_budget={cp['stats']['over_budget']}")
         print(f"CORPUS_DONE {p} items={cp['stats']['n_items']} tokens={cp['stats']['n_tokens']} sha={cp['sha']} "
               f"items_sha={cp['items_sha']} ordering={cp['ordering']} budget={cp['token_budget']} "
               f"frame_forms={cp['frame_forms']} frame_repeats={cp['frame_repeats']} "
-              f"frame_negatives={cp['frame_negatives']} negatives={cp['stats']['n_negatives']}")
+              f"frame_negatives={cp['frame_negatives']} negatives={cp['stats']['n_negatives']}{child_note}")
     elif args.cmd == "corpus-all":
         try:
             out = corpus_all(args.run_dir, _counter_for(args), cells=args.cells.split(","),
                              arms=args.arms.split(","), sleeps=[int(x) for x in args.sleeps.split(",")],
                              token_budget=args.token_budget, ordering=args.ordering,
-                             strict_budget=not args.allow_over_budget)
+                             strict_budget=not args.allow_over_budget, child_backend=args.child_backend)
         except RuntimeError as exc:
             print(f"CORPUS_ALL_FAILED {exc}")
             sys.exit(4)
@@ -3479,6 +4339,10 @@ def main(argv: list[str] | None = None):
               f"sleep4_identical_items={n_items}/{len(out['identity_check'])} "
               f"sleep4_identical_sha={n_sha}/{len(out['identity_check'])} "
               f"max_content_tokens={out['max_content_tokens']} budget={budget} over_budget={len(out['over_budget'])}")
+    elif args.cmd == "childgen":
+        childgen_command(args.run_dir, cells=args.cells.replace(",", " ").split(),
+                         banks=[int(x) for x in args.banks.replace(",", " ").split()], arm=args.arm, sleep=args.sleep,
+                         child_backend=args.child_backend)
     elif args.cmd == "train":
         train_command(args.run_dir, args.corpus, args.out, model=args.model, rank=args.rank, epochs=args.epochs,
                       lr=args.lr, seed=args.seed, max_steps=args.max_steps, measure_only=args.measure_only,
