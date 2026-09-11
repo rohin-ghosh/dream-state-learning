@@ -66,3 +66,27 @@ paraphrase/prefix-style ablation. It would not establish conditional routing,
 thought/action carriage, connected memory, or parenting benefit. The ordered
 path remains: multi-key writer gateway, one unrelated-write survival test,
 then an authentic-parent versus matched-sham parenting experiment.
+
+## Post-generation addendum (SEQ-045)
+
+The frozen-child generation stage later completed and is informative as a
+diagnostic of the *raw text the child produced*. Across the reported cells,
+87.3--99.2% of its renderings were distinct, exact echo was approximately
+zero, and factual colour drift was 1.3--2.0%. The untaught child therefore
+already has substantial descriptive diversity; the late-life gym echo cannot
+be attributed simply to an inability of the base model to notice different
+aspects of one event.
+
+The same outputs also expose the form gap. In variants where the child was
+asked to supply the canonical memory sentence, it omitted that sentence in
+13.3--14.6% of renderings. In the negative variant it failed to express
+``not observed'' correctly in 45.7--67.2% of cases. These are legitimate
+generation measurements and possible parenting targets.
+
+They do **not** clear the training comparison reviewed above. The compiler
+still repairs missing or malformed canonical targets, so any downstream fit
+mixes child-written prose with researcher-supplied labels. A training result
+from those repaired rows may test whether varied prose helps a labelled
+completion implant, but cannot identify child-authored perception, negative
+knowledge, or parenting. Raw generation quality and causal training-source
+authorship must remain separate claims.
