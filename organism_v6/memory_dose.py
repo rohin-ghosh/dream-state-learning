@@ -82,6 +82,15 @@ lower bound > 0 at dose 16 and spill <= 0.03) and G10_frame_dose (frame dP
 rises monotonically from dose 1 to 16 by >= 0.1); readings frame-binding /
 frame-habit. Old eval JSONs without frame cues still report ('-'); re-score
 existing adapters with evaluate --tag <tag>__framecues (gpu/memory_dose_frames.sh).
+Abstention (SEQ-039): the frame knob `negatives` = K_neg (default 0; cells
+F_r16k16_neg4, F_r16k4_neg4) writes, per sleep, K_neg renderings of the
+canonical negative "Owner X's car is not observed." for every planted owner
+still UNEXPOSED at that sleep and K_neg renderings of "Owner X's bicycle is
+not observed." for a fixed 25% of the exposed owners, so the completion can
+learn what it has not observed; every frame-family cue also records
+P(" not") = p_abstain ON/OFF, and gate G11_abstention asks P(abstain ON) >=
+0.5 at dose-0 owners and at the bicycle frame with <= 0.1 at dose-16 owners
+(evals without p_abstain report '-').
 
   python -m organism_v6.memory_dose generate --run-dir R --seed 0 --model mock|hf
   python -m organism_v6.memory_dose corpus-all --run-dir R
@@ -144,6 +153,10 @@ FRAME_CELLS = {  # cell -> (K forms, R repeats); R = renderings per occurrence, 
     "F_r64k16": dict(forms=16, repeats=64),  # exposure ladder (Rohin 2026-09-11: remember what was perceived many times)
     "F_r4k4": dict(forms=4, repeats=4),      # kept for compatibility (4 renderings, 4 templates)
     "F_r1k16": dict(forms=16, repeats=1),    # kept for compatibility (1 rendering, templates vary across occurrences)
+    # abstention (SEQ-039): + K_neg 'not observed' renderings per unexposed owner and per bicycle of
+    # a fixed 25% of the exposed owners at every sleep (negatives; absent = 0 for every other cell)
+    "F_r16k16_neg4": dict(forms=16, repeats=16, negatives=4),
+    "F_r16k4_neg4": dict(forms=4, repeats=16, negatives=4),
 }
 CELLS.update({c: ("occurrences", "frames", False) for c in FRAME_CELLS})
 DEFAULT_TOKEN_BUDGET = 65536
@@ -152,7 +165,8 @@ CELL_TOKEN_BUDGET = {c: FRAME_TOKEN_BUDGET for c in FRAME_CELLS}   # per-cell bu
 # the completion-frame gates are reported in their own table and stay out of the cells
 # table's 'gates' count, so that count stays comparable between an eval scored before the
 # frame cues existed and its __framecues re-score of the same adapter
-FRAME_GATES = ("G9_frame_binding", "G10_frame_dose")
+FRAME_GATES = ("G9_frame_binding", "G10_frame_dose", "G11_abstention")
+FRAME_CUE_KINDS = ("frame", "frame_similar", "frame_bicycle")   # the cues that also record p_abstain
 ORDERINGS = ["chronological", "content"]
 DEFAULT_ORDERING = "chronological"
 # pre-registered OFF-prior bins (memo: 'report results by baseline-probability
@@ -232,6 +246,39 @@ FRAME_TEMPLATES = [
 assert len(FRAME_TEMPLATES) == 16 and len(set(FRAME_TEMPLATES)) == 16
 assert all(t.endswith(FRAME_CANONICAL) and "?" not in t for t in FRAME_TEMPLATES)
 
+# abstention negatives (SEQ-039): a memory must know what it has not observed. The canonical
+# negative sentence shares the cue's prefix with the positive frame ("Owner X's car is" + " not
+# observed."), so its first continuation token " not" is the abstention option at the frame cue;
+# the wrong-property negative does the same for the bicycle frame. Declarative, no colour word,
+# no question; K_neg renderings per owner rotate through the four templates.
+FRAME_NEG_CANONICAL = "Owner {owner}'s car is not observed."
+FRAME_NEG_BICYCLE_CANONICAL = "Owner {owner}'s bicycle is not observed."
+ABSTAIN_CONTINUATION = " not"                 # first token of " not observed" after the bare prefix
+ABSTAIN_CANDIDATES = [ABSTAIN_CONTINUATION]
+FRAME_NEG_TEMPLATES = [
+    "I have no record of owner {owner}'s vehicle. " + FRAME_NEG_CANONICAL,
+    "Owner {owner} has not brought a car through the garage while I was there. " + FRAME_NEG_CANONICAL,
+    "The inspection log holds no entry for owner {owner}. " + FRAME_NEG_CANONICAL,
+    "I never saw what owner {owner} drives. " + FRAME_NEG_CANONICAL,
+]
+FRAME_NEG_BICYCLE_TEMPLATES = [
+    "I have no record of owner {owner}'s bicycle. " + FRAME_NEG_BICYCLE_CANONICAL,
+    "Owner {owner} has never brought a bicycle through the garage. " + FRAME_NEG_BICYCLE_CANONICAL,
+    "The inspection log holds no bicycle entry for owner {owner}. " + FRAME_NEG_BICYCLE_CANONICAL,
+    "I never saw owner {owner} on a bicycle. " + FRAME_NEG_BICYCLE_CANONICAL,
+]
+NEGATIVE_OBJECTS = ("car", "bicycle")
+_NEG_TEMPLATES_BY_OBJECT = {"car": FRAME_NEG_TEMPLATES, "bicycle": FRAME_NEG_BICYCLE_TEMPLATES}
+_NEG_CANONICAL_BY_OBJECT = {"car": FRAME_NEG_CANONICAL, "bicycle": FRAME_NEG_BICYCLE_CANONICAL}
+BICYCLE_NEGATIVE_SHARE = 0.25                 # of the exposed owners, per dose group, fixed per bank
+assert FRAME_NEG_CANONICAL == FRAME_PREFIX + ABSTAIN_CONTINUATION + " observed."
+assert FRAME_NEG_BICYCLE_CANONICAL == FRAME_BICYCLE_PREFIX + ABSTAIN_CONTINUATION + " observed."
+for _obj, _ts in _NEG_TEMPLATES_BY_OBJECT.items():
+    assert len(_ts) == 4 and len(set(_ts)) == 4
+    assert all(t.endswith(_NEG_CANONICAL_BY_OBJECT[_obj]) and "?" not in t for t in _ts)
+    assert all(c not in t.lower() for t in _ts for c in COLOURS)
+del _obj, _ts
+
 MODE_PAIRS = [("NORTH", "SOUTH"), ("ALPHA", "BRAVO"), ("DELTA", "ECHO"),
               ("KILO", "ZULU")]
 ACTION_PAIRS = [("LATCH", "VENT"), ("PRIME", "PURGE"), ("CLAMP", "SPOOL"),
@@ -303,8 +350,17 @@ def cell_budget(cell: str | None, default: int = DEFAULT_TOKEN_BUDGET) -> int:
 
 
 def cell_frame_knobs(cell: str | None) -> dict:
-    """(K, R) of a cell; 1 x 1 for every non-frames cell."""
+    """(K, R) of a cell; 1 x 1 for every non-frames cell. Cells with
+    abstention negatives also carry `negatives` (K_neg); its absence means 0
+    (cell_frame_negatives)."""
     return dict(FRAME_CELLS.get(cell or "", dict(forms=1, repeats=1)))
+
+
+def cell_frame_negatives(cell: str | None) -> int:
+    """K_neg of a cell: 'not observed' renderings per unexposed owner (and per
+    bicycle of the 25% exposed subset) at every sleep; 0 for every cell that
+    does not set `negatives` (all pre-SEQ-039 cells)."""
+    return int(FRAME_CELLS.get(cell or "", {}).get("negatives", 0))
 
 
 def set_write_root(run_dir: str) -> str:
@@ -856,8 +912,97 @@ def render_frame(ev: dict, forms: int = 1, repeats: int = 1, copy: int = 0, seed
     return "", ev["target"], None
 
 
+def unexposed_owners(bank: dict, arm: str, sleep: int) -> list[str]:
+    """Planted owners with NO exposure by `sleep` under the arm's schedule:
+    the dose-0 owners and every owner whose first scheduled session is later
+    than `sleep` (across: dose-1 owners before sleep 4; within: every dosed
+    owner before sleep 4). Bank order (deterministic)."""
+    sched = bank["schedule"][arm]
+    first: dict = {}
+    for e in bank["events"]:
+        s = sched.get(e["event_id"])
+        if s is not None:
+            first[e["owner"]] = min(first.get(e["owner"], 10 ** 6), s)
+    return [o["id"] for o in bank["owners"] if first.get(o["id"], 10 ** 6) > sleep]
+
+
+def bicycle_negative_owners(bank: dict, share: float = BICYCLE_NEGATIVE_SHARE) -> list[str]:
+    """The fixed subset of dosed owners whose BICYCLE gets the wrong-property
+    negative: `share` (25%) of every dose group, drawn once per bank from the
+    bank seed, so the subset does not depend on arm or sleep and, because the
+    exposed set at any sleep is a union of whole dose groups, exactly 25% of
+    the owners exposed at that sleep carry it."""
+    rng = _rng("negatives-bicycle", bank["seed"], bank["bank"])
+    by_dose: dict = {}
+    for o in bank["owners"]:
+        if o["dose"] > 0:
+            by_dose.setdefault(o["dose"], []).append(o["id"])
+    out = []
+    for d in sorted(by_dose):
+        ids = by_dose[d]
+        out.extend(rng.sample(ids, int(round(len(ids) * share))))
+    return out
+
+
+def frame_negative_index(seed: int, bank: int, owner: str, obj: str, copy: int, n_templates: int) -> int:
+    """Template of one 'not observed' rendering: deterministic from the bank
+    seed, bank index, owner and object; the K_neg copies of one owner rotate
+    through the templates (K_neg = 4: each template once)."""
+    n = max(1, int(n_templates))
+    base = _rng("frame-neg", seed, int(bank), owner, obj).randrange(n)
+    return (base + int(copy)) % n
+
+
+def render_negative(owner: str, obj: str, copy: int, seed: int = 0, bank: int = 0) -> tuple:
+    """(context, target, template index) of one negative rendering: context =
+    the prose (+ space), target = the canonical negative sentence; loss on
+    every token like the frames."""
+    templates = _NEG_TEMPLATES_BY_OBJECT[obj]
+    t = frame_negative_index(seed, bank, owner, obj, copy, len(templates))
+    full = templates[t].format(owner=owner)
+    target = _NEG_CANONICAL_BY_OBJECT[obj].format(owner=owner)
+    assert full.endswith(target)
+    return full[:-len(target)], target, t
+
+
+def negative_items(bank: dict, arm: str, sleep: int, negatives: int, frame_forms: int = 1,
+                   frame_repeats: int = 1) -> list[dict]:
+    """The abstention negatives of one sleep's frames corpus (SEQ-039): for
+    every planted owner UNEXPOSED at `sleep` (unexposed_owners), K_neg
+    renderings of FRAME_NEG_CANONICAL ("Owner X's car is not observed."); for
+    every EXPOSED owner in the bank's fixed 25% subset (bicycle_negative_
+    owners), K_neg renderings of the wrong-property negative ("Owner X's
+    bicycle is not observed."). Computed per sleep from the exposure
+    schedule, not accumulated: an owner exposed by this sleep has no car
+    negative. Bare text, loss on every token, no colour (marginals
+    untouched); a deterministic pseudo-session over the exposure sessions
+    interleaves them with the events under chronological ordering. Empty for
+    negatives <= 0."""
+    negatives = int(negatives or 0)
+    if negatives <= 0:
+        return []
+    seed, b = bank["seed"], bank["bank"]
+    unexposed = unexposed_owners(bank, arm, sleep)
+    exposed = {o["id"] for o in bank["owners"]} - set(unexposed)
+    plan = [(o, "car") for o in unexposed] + [(o, "bicycle") for o in bicycle_negative_owners(bank) if o in exposed]
+    out = []
+    for owner, obj in plan:
+        for r in range(negatives):
+            ctx, target, t = render_negative(owner, obj, r, seed, b)
+            eid = f"b{b}-{owner}-neg-{obj}-{r:02d}"
+            out.append(dict(
+                context=ctx, target=target, chat=False, mask_context=False, weight=1.0,
+                kind="negative", owner=owner, colour=None, tool=None, mode=None, lesson_id=None,
+                event_ids=[eid], n_occurrences=1, context_owner=owner,
+                session=_rng("nsess", seed, b, eid).randint(1, N_SLEEPS_EXPOSURE),
+                order_key=_order_key(seed, b, eid), shuffled=False,
+                negative_object=obj, frame_forms=int(frame_forms), frame_repeats=int(frame_repeats),
+                frame_negatives=negatives, frame_copy=r, frame_template=None, frame_neg_template=t))
+    return out
+
+
 def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: int = 1,
-           frame_copy: int = 0, seed: int = 0, bank: int = 0) -> dict:
+           frame_copy: int = 0, seed: int = 0, bank: int = 0, frame_negatives: int = 0) -> dict:
     """Render one event under a representation.
     short:            today's piece -- one-line header + child target, bare
                       text, loss on every token (train_adapter.py semantics).
@@ -866,7 +1011,8 @@ def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: i
     antecedent_bare:  observation then target as bare text, loss on target.
     frames:           one of K declarative FRAME_TEMPLATES ending with the
                       canonical sentence, bare text, loss on every token
-                      (cell family F; frame_* knobs select the template)."""
+                      (cell family F; frame_* knobs select the template; the
+                      cell's K_neg is recorded on every frames item)."""
     frame_meta = {}
     target = ev["target"]
     if representation == "short":
@@ -879,7 +1025,7 @@ def _piece(ev: dict, representation: str, frame_forms: int = 1, frame_repeats: i
         ctx, target, t = render_frame(ev, frame_forms, frame_repeats, frame_copy, seed, bank)
         chat, mask = False, False
         frame_meta = dict(frame_forms=int(frame_forms), frame_repeats=int(frame_repeats),
-                          frame_copy=int(frame_copy), frame_template=t)
+                          frame_copy=int(frame_copy), frame_template=t, frame_negatives=int(frame_negatives or 0))
     else:
         raise ValueError(representation)
     return dict(context=ctx, target=target, chat=chat, mask_context=mask,
@@ -1026,7 +1172,7 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                  representation: str, counter: TokenCounter,
                  token_budget: int, shuffled: bool = False,
                  epochs: int = TRAIN_EPOCHS, ordering: str = DEFAULT_ORDERING,
-                 frame_forms: int = 1, frame_repeats: int = 1) -> dict:
+                 frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0) -> dict:
     """One sleep's corpus for one writer cell, padded to the token budget
     with balanced unrelated observations; colour marginals identical to
     every other corpus of the bank (marginal_target per colour).
@@ -1036,7 +1182,12 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     (frame_template_index); the per-colour marginal target and the colour
     top-up scale by frame_repeats so the four colours stay balanced. Both
     knobs are recorded in the corpus and on every frames item. They are
-    inert for every other representation.
+    inert for every other representation. frame_negatives = K_neg > 0 adds
+    the abstention negatives of this sleep (negative_items: 'not observed'
+    for the owners unexposed at this sleep and for the bicycles of the fixed
+    25% exposed subset), colourless, so they displace padding, not content;
+    K_neg is recorded in the corpus and on every frames item. 0 (every
+    pre-SEQ-039 cell) changes nothing.
 
     ordering='chronological' (default) reproduces today's pipeline: compile
     _sleep builds the cumulative corpus prior-first (dedup keeps the FIRST
@@ -1056,18 +1207,24 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
     frames = representation == "frames"
     copies = int(frame_repeats) if frames else 1
     forms = int(frame_forms) if frames else 1
+    negs = int(frame_negatives or 0) if frames else 0
     if frames:
-        pieces = [_piece(e, representation, frame_forms=forms, frame_repeats=copies,
-                         frame_copy=r, seed=bank["seed"], bank=bank["bank"]) for e in events for r in range(copies)]
+        pieces = [_piece(e, representation, frame_forms=forms, frame_repeats=copies, frame_copy=r,
+                         seed=bank["seed"], bank=bank["bank"], frame_negatives=negs)
+                  for e in events for r in range(copies)]
     else:
         pieces = [_piece(e, representation) for e in events]
     items = apply_writer(pieces, writer)                    # dedup keeps the first occurrence
+    # abstention negatives of this sleep (frames with K_neg > 0 only; colourless, so the marginal
+    # top-up below is unaffected and they take the place of padding under the budget)
+    negative = negative_items(bank, arm, sleep, negs, forms, copies) if negs else []
+    items.extend(negative)
     # colour marginal top-up (targets per colour == marginal_target everywhere; x copies under frames)
     M = bank["marginal_target"] * copies
     counts = {c: sum(1 for it in items if it["colour"] == c) for c in COLOURS}
     fill_seed = bank["seed"] * 100 + bank["bank"]
-    # padding items carry the cell's K/R in their metadata too (frames only; not part of the sha)
-    fill_kw = dict(frame_forms=forms, frame_repeats=copies) if frames else {}
+    # padding items carry the cell's K/R (and K_neg) in their metadata too (frames only; not part of the sha)
+    fill_kw = dict(frame_forms=forms, frame_repeats=copies, frame_negatives=negs) if frames else {}
     for c in COLOURS:
         if counts[c] > M:
             raise RuntimeError(f"colour {c} count {counts[c]} exceeds marginal target {M}")
@@ -1117,29 +1274,32 @@ def build_corpus(bank: dict, arm: str, sleep: int, writer: str,
                  presentations_per_owner=presentations, order_seed=order_seed,
                  ordering=ordering, session_blocks={str(k): v for k, v in sorted(session_blocks.items())},
                  over_budget=content_tokens > token_budget, token_budget=token_budget,
-                 frame_forms=forms, frame_repeats=copies)
+                 frame_forms=forms, frame_repeats=copies, frame_negatives=negs,
+                 n_negatives=len(negative),
+                 negative_owners={obj: sorted({it["owner"] for it in negative if it["negative_object"] == obj})
+                                  for obj in NEGATIVE_OBJECTS})
     return dict(corpus=items, bank=bank["bank"], arm=arm, sleep=sleep, writer=writer,
                 representation=representation, shuffled=shuffled, sha=sha,
                 items_sha=items_sha(items), ordering=ordering,
                 token_budget=token_budget, marginal_target=M, epochs=epochs,
-                frame_forms=forms, frame_repeats=copies,
+                frame_forms=forms, frame_repeats=copies, frame_negatives=negs,
                 counter=counter.mode, stats=stats)
 
 
 def _piece_from_filler(f: dict, representation: str, fill_seed: int = 0, bank: int = 0,
-                       frame_forms: int = 1, frame_repeats: int = 1) -> dict:
+                       frame_forms: int = 1, frame_repeats: int = 1, frame_negatives: int = 0) -> dict:
     """A padding item with a fixed pseudo-session over the exposure sessions
     (deterministic per filler id; independent of arm, cell and sleep), so
     under chronological ordering the unrelated observations interleave with
     the bank events instead of trailing them. Under frames the item records
-    the cell's K/R like every other item (its text is the bare target, so the
-    knobs do not change what is rendered)."""
+    the cell's K/R/K_neg like every other item (its text is the bare target,
+    so the knobs do not change what is rendered)."""
     ev = dict(f)
     ev["event_id"] = f["event_ids"][0]
     ev["session"] = _rng("fsess", fill_seed, bank, ev["event_id"]).randint(1, N_SLEEPS_EXPOSURE)
     ev["order_key"] = _order_key(fill_seed, bank, ev["event_id"])
     p = _piece(ev, representation, frame_forms=frame_forms, frame_repeats=frame_repeats,
-               seed=fill_seed, bank=bank)
+               seed=fill_seed, bank=bank, frame_negatives=frame_negatives)
     p["kind"] = f["kind"]
     return p
 
@@ -1179,7 +1339,7 @@ def corpus_all(run_dir: str, counter: TokenCounter, cells: list[str] | None = No
                 for k in sleeps:
                     c = build_corpus(bank, arm, k, writer, rep, counter, budgets[cell], shuffled=shuf,
                                      ordering=ordering, frame_forms=knobs["forms"],
-                                     frame_repeats=knobs["repeats"])
+                                     frame_repeats=knobs["repeats"], frame_negatives=cell_frame_negatives(cell))
                     d = cell_dir(root, b, cell, arm, k)
                     path = write_json(os.path.join(d, "corpus.json"), c)
                     key = f"bank{b}/{cell}/{arm}/sleep{k}"
@@ -1308,10 +1468,40 @@ class MockScorer:
                             boosts[a] = boosts.get(a, 0.0) + self.gain * math.log1p(s) * (1.0 if present else 0.6)
         return {k: self.lam * v for k, v in boosts.items()}
 
+    def _abstain_logprob(self, prompt: str) -> float:
+        """log P(" not" | bare frame prefix) of the mock (SEQ-039): a low
+        hashed prior (~0.05), raised by the adapter's abstain strength for
+        this owner and object (habit: the nearest trained id; a bicycle with
+        no strength of its own inherits the mean bicycle strength -- in the
+        mock the property, not the owner, carries the wrong-property
+        negative) and lowered by a confident colour at the same car frame.
+        lam scales the adapter's contribution; lam=0 is exactly OFF."""
+        m = re.search(r"Owner (\S+)'s (car|bicycle) is$", prompt.rstrip())
+        owner, obj = (m.group(1), m.group(2)) if m else (None, None)
+        h = _rng("abstain", self.seed, prompt).random()
+        logit = -3.0 + (2.0 * h - 1.0)
+        ad = self.adapter
+        if ad and self.lam != 0.0 and ad.get("profile", "guide") != "nothing" and owner:
+            ab = ad.get("abstain", {}) or {}
+            key = min(ab, key=lambda o: _hamming(o, owner)) if (ab and ad.get("profile") == "habit") else owner
+            s = float(ab.get(key, {}).get(obj, 0.0))
+            if s == 0.0 and obj == "bicycle":
+                vals = [v["bicycle"] for v in ab.values() if v.get("bicycle")]
+                s = sum(vals) / len(vals) if vals else 0.0
+            if s > 0:
+                logit += self.lam * self.gain * 2.0 * math.log1p(s)
+            st = ad.get("strength", {}).get(owner, {})
+            if obj == "car" and st:
+                logit -= self.lam * self.gain * 0.5 * math.log1p(max(st.values()))
+        return -math.log1p(math.exp(-logit))          # log sigmoid(logit)
+
     def candidate_logprobs(self, prompts: list[str], candidates: list[list[str]]) -> list[list[float]]:
         self.calls += 1
         out = []
         for prompt, cands in zip(prompts, candidates):
+            if list(cands) == ABSTAIN_CANDIDATES:      # abstention row of a frame-family cue
+                out.append([self._abstain_logprob(prompt)])
+                continue
             user = self._user_text(prompt)
             core = user.rsplit("\n\n", 1)[-1] + "||" + prompt.split("<|im_start|>assistant\n")[-1]
             logits = []
@@ -1582,6 +1772,7 @@ def _mark_adapter_dir(out_dir: str) -> list[str]:
 _TARGET_FACT_RE = re.compile(r"^(\S+)'s car is (\w+)\.$")
 _TARGET_FRAME_RE = re.compile(r"^Owner (\S+)'s car is (\w+)\.$")     # FRAME_CANONICAL (cell family F)
 _TARGET_LESSON_RE = re.compile(r"^With (\S+) in mode (\w+), I press (\w+)\.$")
+_TARGET_NEG_RE = re.compile(r"^Owner (\S+)'s (car|bicycle) is not observed\.$")   # FRAME_NEG_*_CANONICAL (SEQ-039)
 
 
 def _action_of_target(target: str) -> str:
@@ -1596,11 +1787,15 @@ def train_mock(corpus: dict, out_dir: str, epochs: int = TRAIN_EPOCHS,
     (tool, mode) -> action parsed from the lesson target -- never from
     metadata or the context. So the scrambled-binding control, whose
     targets give every dose>=4 owner all four colours equally, leaves a flat
-    strength profile (no preference), exactly as the token loss would."""
+    strength profile (no preference), exactly as the token loss would. The
+    abstention negatives (kind 'negative', SEQ-039) accumulate `abstain`
+    strength per owner and object from "Owner X's {car|bicycle} is not
+    observed." the same way."""
     out_dir = _check_inside(out_dir)
     os.makedirs(out_dir, exist_ok=True)
     strength: dict = {}
     lessons: dict = {}
+    abstain: dict = {}
     habit: dict = {c: 0.0 for c in COLOURS}
     for it in corpus["corpus"]:
         w = float(it["weight"]) * epochs
@@ -1616,9 +1811,14 @@ def train_mock(corpus: dict, out_dir: str, epochs: int = TRAIN_EPOCHS,
                 d = lessons.setdefault(m.group(1), {}).setdefault(m.group(2), {})
                 a = m.group(3).lower()
                 d[a] = d.get(a, 0.0) + w
+        elif it["kind"] == "negative":
+            m = _TARGET_NEG_RE.match(it["target"])
+            if m:
+                d = abstain.setdefault(m.group(1), {})
+                d[m.group(2)] = d.get(m.group(2), 0.0) + w
         elif it["kind"] == "filler_colour" and it.get("colour"):
             habit[it["colour"]] += w
-    ad = dict(mock=True, profile=profile, strength=strength, lessons=lessons,
+    ad = dict(mock=True, profile=profile, strength=strength, lessons=lessons, abstain=abstain,
               habit=habit, corpus_sha=corpus["sha"], epochs=epochs, rank=rank, seed=seed,
               recipe="mock", ordering=corpus.get("ordering"))
     write_json(os.path.join(out_dir, "mock_adapter.json"), ad)
@@ -1631,7 +1831,7 @@ def train_mock(corpus: dict, out_dir: str, epochs: int = TRAIN_EPOCHS,
     with open(os.path.join(out_dir, "DONE"), "w") as f:
         f.write("ok\n")
     print(f"TRAIN_DONE recipe=mock profile={profile} items={len(corpus['corpus'])} "
-          f"owners_bound={len(strength)} lessons_bound={len(lessons)}", flush=True)
+          f"owners_bound={len(strength)} lessons_bound={len(lessons)} negatives_bound={len(abstain)}", flush=True)
     return ad
 
 
@@ -1868,7 +2068,9 @@ def build_cues(bank: dict, distractor: str, adjacent_subset: int = 4,
     Completion frames (Rohin 2026-09-11): `frame` = the bare canonical
     prefix for every planted owner incl. dose 0, `frame_similar` for the
     similar unseen id and `frame_bicycle` for dose > 0 (space-prefixed colour
-    candidates as exact_short)."""
+    candidates as exact_short). The three frame kinds also carry `abstain` =
+    the abstention continuation [" not"] (SEQ-039), scored separately by
+    score_cues as p_abstain; the colour candidate set is unchanged."""
     cues = []
     owners = bank["owners"]
     dose_rank: dict = {}
@@ -1935,13 +2137,14 @@ def build_cues(bank: dict, distractor: str, adjacent_subset: int = 4,
         # completion-frame cues (Rohin 2026-09-11): the bare canonical prefix, no header, no chat
         # template; every planted owner incl. dose 0; the similar unseen id and the bicycle for dose > 0
         add(f"frame|{oid}", "frame", FRAME_PREFIX.format(owner=oid), cands_sp, col,
-            owner=oid, dose=d, form="frame", context="none")
+            owner=oid, dose=d, form="frame", context="none", abstain=list(ABSTAIN_CANDIDATES))
         if d > 0:
             add(f"frame_similar|{oid}", "frame_similar", FRAME_PREFIX.format(owner=o["similar_id"]),
                 cands_sp, col, owner=oid, dose=d, form="frame_similar", context="none",
-                cue_id_used=o["similar_id"])
+                cue_id_used=o["similar_id"], abstain=list(ABSTAIN_CANDIDATES))
             add(f"frame_bicycle|{oid}", "frame_bicycle", FRAME_BICYCLE_PREFIX.format(owner=oid),
-                cands_sp, col, owner=oid, dose=d, form="frame_bicycle", context="none")
+                cands_sp, col, owner=oid, dose=d, form="frame_bicycle", context="none",
+                abstain=list(ABSTAIN_CANDIDATES))
     add("generic", "generic", render_chat(GENERIC_FORM, tokenizer=tokenizer), cands, None,
         owner=None, dose=None, form="generic", context="none")
     for les in bank["lessons"]:
@@ -1965,26 +2168,66 @@ def build_cues(bank: dict, distractor: str, adjacent_subset: int = 4,
 
 def score_cues(scorer, cues: list[dict], lambdas: list[float] | None = None) -> dict:
     """One OFF pass (adapter disabled) and one ON pass per lambda; returns
-    {lambda: [p_raw per cue]} plus OFF. Raw per-variant sums per answer."""
+    {lambda: [p_raw per cue]} plus OFF. Raw per-variant sums per answer.
+    Cues carrying `abstain` (the frame family, SEQ-039) are scored a second
+    time in the SAME pass -- extra rows with the same prompt and the
+    abstention continuation as the only candidate -- and the raw probability
+    of that continuation is attached as p_abstain; the colour candidates and
+    their normalisation are exactly what they were."""
     prompts = [c["prompt"] for c in cues]
     cand_lists = [sum(c["candidates"].values(), []) for c in cues]
+    ab = [i for i, c in enumerate(cues) if c.get("abstain")]
+    ab_prompts = [prompts[i] for i in ab]
+    ab_cands = [list(cues[i]["abstain"]) for i in ab]
+    n = len(cues)
 
     def collapse(lps):
         out = []
-        for c, lp in zip(cues, lps):
+        for c, lp in zip(cues, lps[:n]):
             out.append(colour_probs(c["candidates"], lp) if len(c["candidates"]) == len(COLOURS)
                        and set(c["candidates"]) == set(COLOURS) else _probs_generic(c["candidates"], lp))
+        for i, lp in zip(ab, lps[n:]):
+            out[i]["p_abstain"] = sum(math.exp(x) for x in lp)
         return out
 
+    def one_pass():
+        return collapse(scorer.candidate_logprobs(prompts + ab_prompts, cand_lists + ab_cands))
+
     with scorer.off():
-        off = collapse(scorer.candidate_logprobs(prompts, cand_lists))
+        off = one_pass()
     on = {}
     lambdas = lambdas or [1.0]
     for lam in lambdas:
         scorer.set_lambda(lam)
-        on[lam] = collapse(scorer.candidate_logprobs(prompts, cand_lists))
+        on[lam] = one_pass()
     scorer.set_lambda(1.0)
     return dict(off=off, on=on)
+
+
+def abstain_token_check(tokenizer=None, owner: str = "K7M4") -> dict:
+    """Is the abstention continuation ONE token after the bare frame prefix
+    -- the first token of " not observed", the stream the negatives trained
+    -- for the car and the bicycle prefix? With a tokenizer (node):
+    joint_candidate_ids on prefix + " not" must give L == 1 and no straddle.
+    Without one (mock): the literal check that each canonical negative
+    sentence starts with its prefix + " not". Recorded in the eval JSON as
+    abstain_check; a failure is printed, not fatal (p_abstain would then be
+    the probability of a multi-token string, still comparable ON vs OFF)."""
+    pairs = (("car", FRAME_PREFIX, FRAME_NEG_CANONICAL), ("bicycle", FRAME_BICYCLE_PREFIX, FRAME_NEG_BICYCLE_CANONICAL))
+    out = dict(candidate=ABSTAIN_CONTINUATION, mode="literal" if tokenizer is None else "tokenizer",
+               literal_prefix=all(canon.format(owner=owner).startswith(pre.format(owner=owner) + ABSTAIN_CONTINUATION)
+                                  for _, pre, canon in pairs),
+               n_tokens=None, straddle=None, single_token=None)
+    if tokenizer is not None:
+        per = {}
+        for name, pre, _ in pairs:
+            _, L, st = joint_candidate_ids(tokenizer, pre.format(owner=owner), ABSTAIN_CONTINUATION)
+            per[name] = dict(n_tokens=L, straddle=st)
+        out.update(per_prefix=per, n_tokens=max(v["n_tokens"] for v in per.values()),
+                   straddle=sum(v["straddle"] for v in per.values()),
+                   single_token=all(v["n_tokens"] == 1 and v["straddle"] == 0 for v in per.values()))
+    out["ok"] = bool(out["literal_prefix"] and out["single_token"] is not False)
+    return out
 
 
 def _probs_generic(cset: dict, logprobs: list[float]) -> dict:
@@ -2017,6 +2260,11 @@ def evaluate_command(run_dir: str, bank_idx: int, adapter: str | None, tag: str,
             template_check = (render_chat("probe", tokenizer=scorer.tok) == render_chat("probe"))
         except Exception:  # noqa: BLE001
             template_check = None
+    # abstention continuation (SEQ-039): one token after the frame prefix under the deployed tokenizer
+    # (node) or the literal prefix check (mock); recorded, and a failure is printed
+    abstain_check = abstain_token_check(getattr(scorer, "tok", None), owner=bank["owners"][0]["id"])
+    if not abstain_check["ok"]:
+        print(f"ABSTAIN_TOKEN_CHECK_FAILED {json.dumps(abstain_check)}", flush=True)
     lambdas = lambdas or [1.0]
     if ad is None:
         lambdas = [1.0]
@@ -2035,10 +2283,13 @@ def evaluate_command(run_dir: str, bank_idx: int, adapter: str | None, tag: str,
                             logp={k: round(v, 5) for k, v in off["logp"].items()})
             r["ON"] = dict(p_raw={k: round(v, 7) for k, v in on["p_raw"].items()}, mass=round(on["mass"], 7),
                            logp={k: round(v, 5) for k, v in on["logp"].items()})
+            if "p_abstain" in off:                     # frame-family cues: P(" not" | prefix), OFF and ON
+                r["OFF"]["p_abstain"] = round(off["p_abstain"], 7)
+                r["ON"]["p_abstain"] = round(on["p_abstain"], 7)
             rows.append(r)
         out = dict(tag=tag, bank=bank_idx, adapter=ad, adapter_arg=adapter, adapter_meta=adapter_meta,
                    lam=lam, model=model, n_cues=len(cues), seconds=round(time.time() - t0, 1),
-                   template_check=template_check, meta=meta or {}, cues=rows,
+                   template_check=template_check, abstain_check=abstain_check, meta=meta or {}, cues=rows,
                    scorer_calls=getattr(scorer, "calls", None),
                    tokenization="joint prompt+candidate (joint_candidate_ids)",
                    boundary_straddles=getattr(scorer, "boundary_straddles", None))
@@ -2061,11 +2312,21 @@ GATES = dict(p_on=0.80, d_p=0.30, prior_p_on=0.85, trigger_nats=1.5, unrelated=0
              # bound > 0 at dose 16 AND frame spill <= frame_spill; G10_frame_dose = frame dP rises
              # monotonically from dose 1 to 16 by >= frame_dose_rise; 'frame-habit' = frame dP >
              # frame_habit_d_p with G9_frame_binding failed
-             frame_spill=0.03, frame_dose_rise=0.10, frame_habit_d_p=0.30)
+             frame_spill=0.03, frame_dose_rise=0.10, frame_habit_d_p=0.30,
+             # G11_abstention (SEQ-039): P(" not" | frame) ON >= abstain_min at the dose-0 owners' frames and
+             # at the bicycle frames, <= abstain_max_exposed at the dose-16 owners' frames
+             abstain_min=0.5, abstain_max_exposed=0.1)
 
 
 def _log(x: float) -> float:
     return math.log(max(x, 1e-12))
+
+
+def _num(x):
+    """x as a number, or None for None/NaN (a pooled control that no bank could measure)."""
+    if x is None or (isinstance(x, float) and math.isnan(x)):
+        return None
+    return x
 
 
 def cue_metrics(row: dict, a: str | None = None, b: str | None = None) -> dict:
@@ -2211,6 +2472,16 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
                 e["frame_similar_d_p"] = fs["d_p_norm"]
             if o["dose"] > 0 and ("frame_bicycle", oid, "frame_bicycle") in idx:
                 e["frame_bicycle_d_p"] = cue_metrics(idx[("frame_bicycle", oid, "frame_bicycle")])["d_p_norm"]
+            # abstention (SEQ-039): P(" not" | prefix) OFF/ON at the owner's frame, the similar id's frame and
+            # the bicycle frame; absent from evals scored before p_abstain existed -> fields missing -> '-'
+            pa_off, pa_on = fr["OFF"].get("p_abstain"), fr["ON"].get("p_abstain")
+            if pa_off is not None and pa_on is not None:
+                e["abstain_off"], e["abstain_on"], e["abstain_d"] = pa_off, pa_on, pa_on - pa_off
+            if o["dose"] > 0:
+                for kind, key in (("frame_similar", "abstain_similar"), ("frame_bicycle", "abstain_bicycle")):
+                    row = idx.get((kind, oid, kind))
+                    if row is not None and row["ON"].get("p_abstain") is not None and row["OFF"].get("p_abstain") is not None:
+                        e[f"{key}_on"], e[f"{key}_off"] = row["ON"]["p_abstain"], row["OFF"]["p_abstain"]
         per_owner[oid] = e
     fields = ["p_off", "p_on", "d_p", "term1", "term2", "I_d", "I_d_bicycle", "I_d_unexposed",
               "I_d_generic", "mass_off", "mass_on", "mass_on_min",
@@ -2221,7 +2492,9 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
               "textfit_short_gain", "textfit_ante_gain", "textfit_short_nll_off", "textfit_ante_nll_off",
               "textfit_short_p_norm_on", "textfit_ante_p_norm_on",
               "frame_p_off", "frame_p_on", "frame_d_p", "frame_term1", "frame_term2", "I_d_frame",
-              "frame_mass_off", "frame_mass_on", "frame_similar_d_p", "frame_bicycle_d_p"]
+              "frame_mass_off", "frame_mass_on", "frame_similar_d_p", "frame_bicycle_d_p",
+              "abstain_off", "abstain_on", "abstain_d", "abstain_similar_on", "abstain_similar_off",
+              "abstain_bicycle_on", "abstain_bicycle_off"]
     per_dose = {}
     for d in DOSES:
         es = [e for e in per_owner.values() if e["dose"] == d]
@@ -2277,6 +2550,16 @@ def summarize_eval(ev: dict, bank: dict, edges: list[float] | None = None) -> di
     controls["frame_spill_bicycle"] = _mean(fbic) if fbic else None
     parts = [controls["frame_spill_similar"], controls["frame_spill_unexposed"], controls["frame_spill_bicycle"]]
     controls["frame_spill"] = _mean(parts) if any(p is not None for p in parts) else None
+    # abstention (SEQ-039): mean P(" not" | frame) ON at the dose-0 owners' frames, the similar ids' frames,
+    # the bicycle frames and the dose-16 owners' frames (OFF alongside); None without p_abstain
+    controls["abstain_unexposed_on"] = per_dose[0].get("abstain_on")
+    controls["abstain_unexposed_off"] = per_dose[0].get("abstain_off")
+    for key in ("abstain_similar", "abstain_bicycle"):
+        for side in ("on", "off"):
+            vals = [e[f"{key}_{side}"] for e in exposed if f"{key}_{side}" in e]
+            controls[f"{key}_{side}"] = _mean(vals) if vals else None
+    controls["abstain_exposed16_on"] = per_dose[16].get("abstain_on")
+    controls["abstain_exposed16_off"] = per_dose[16].get("abstain_off")
     ps = [x for x in bank.get("prior_subset", []) if owners[x["owner"]]["dose"] == 16]
     prior_vals = [per_owner[x["owner"]]["forms"][x["form"]]["p_on"] for x in ps]
     prior_subset = dict(n=len(prior_vals), p_on=_mean(prior_vals) if prior_vals else None,
@@ -2453,6 +2736,18 @@ def evaluate_gates(s: dict, retention: float | None = None, th: dict = GATES, se
                                threshold=f"d1 <= d4 <= d16 and d16 - d1 >= {th['frame_dose_rise']:g}",
                                passed=(None if any(x is None for x in (f1, f4, f16))
                                        else bool(f1 <= f4 <= f16 and f16 - f1 >= th["frame_dose_rise"])))
+    # G11_abstention (SEQ-039): the adapter abstains where it has nothing -- P(" not" | frame) ON >= abstain_min
+    # at the dose-0 owners' frames and at the bicycle frames -- and not where it has a fact: <= abstain_max_exposed
+    # at the dose-16 owners' frames. Not evaluable (None) on evals without p_abstain.
+    a_un, a_bi, a_16 = _num(c.get("abstain_unexposed_on")), _num(c.get("abstain_bicycle_on")), _num(d16.get("abstain_on"))
+    g["G11_abstention"] = dict(value=dict(unexposed=a_un, similar=_num(c.get("abstain_similar_on")), bicycle=a_bi, d16=a_16),
+                               off=dict(unexposed=_num(c.get("abstain_unexposed_off")), bicycle=_num(c.get("abstain_bicycle_off")),
+                                        d16=_num(d16.get("abstain_off"))),
+                               threshold=(f"unexposed >= {th['abstain_min']:g} and bicycle >= {th['abstain_min']:g} "
+                                          f"and dose-16 <= {th['abstain_max_exposed']:g} (P(abstain) ON)"),
+                               passed=(None if any(x is None for x in (a_un, a_bi, a_16))
+                                       else bool(a_un >= th["abstain_min"] and a_bi >= th["abstain_min"]
+                                                 and a_16 <= th["abstain_max_exposed"])))
     g["passed"] = [k for k, v in g.items() if isinstance(v, dict) and v.get("passed") is True]
     g["failed"] = [k for k, v in g.items() if isinstance(v, dict) and v.get("passed") is False]
     return g
@@ -2526,7 +2821,11 @@ def interpret(s: dict, g: dict, th: dict = GATES) -> dict:
                 unrelated_shift=c["unrelated_shift"], revisable=bool(revisable), mass_ok=mass_ok,
                 gates_passed=g["passed"], gates_failed=g["failed"],
                 frame_label=frame_label, frame_d_p=frame_d_p, frame_spill=c.get("frame_spill"),
-                I_d_frame=d16.get("I_d_frame"))
+                I_d_frame=d16.get("I_d_frame"),
+                # abstention (SEQ-039): shown next to the frame reading; G9's spill definition is unchanged
+                abstention=g.get("G11_abstention", {}).get("passed"),
+                abstain_unexposed_on=_num(c.get("abstain_unexposed_on")), abstain_similar_on=_num(c.get("abstain_similar_on")),
+                abstain_bicycle_on=_num(c.get("abstain_bicycle_on")), abstain_exposed16_on=_num(d16.get("abstain_on")))
 
 # ---------------------------------------------------------------------------
 # report: markdown per arm, gates, interpretation, trajectories, finalist
@@ -2577,7 +2876,16 @@ def _cell_label(cell: str) -> str:
     w, r, sh = CELLS.get(cell, (cell, "", False))
     knobs = FRAME_CELLS.get(cell)
     kr = f", K={knobs['forms']} forms x R={knobs['repeats']} repeats" if knobs else ""
+    if knobs and knobs.get("negatives"):
+        kr += f", K_neg={knobs['negatives']} negatives"
     return f"{cell} ({w} x {r}{kr}{', scrambled-binding control' if sh else ''})"
+
+
+def _abstain_cell(r: dict) -> str:
+    """'abstain OFF->ON' column at the owner's frame; '-' without p_abstain."""
+    if r.get("abstain_off") is None and r.get("abstain_on") is None:
+        return "-"
+    return f"{_fmt(r.get('abstain_off'))}->{_fmt(r.get('abstain_on'))}"
 
 
 def _has_frame_cues(ev: dict) -> bool:
@@ -2750,6 +3058,9 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
             extra = f"CI [{_fmt(v['lo'])}, {_fmt(v['hi'])}], n={v['n']}, frame spill={_fmt(v.get('spill'))}"
         elif k == "G10_frame_dose":
             extra = ", ".join(f"{a}={_fmt(b)}" for a, b in v["value"].items()) + f", rise d1->d16={_fmt(v.get('rise'))}"
+        elif k == "G11_abstention":
+            extra = ("P(abstain) ON: " + ", ".join(f"{a}={_fmt(b)}" for a, b in v["value"].items())
+                     + "; OFF: " + ", ".join(f"{a}={_fmt(b)}" for a, b in (v.get("off") or {}).items()))
         val = v["value"] if not isinstance(v["value"], dict) else ""
         rows.append([k, val, v.get("threshold"), "PASS" if v["passed"] else ("FAIL" if v["passed"] is False else "n/a"), extra])
     L.append(_md_table(["gate", "value", "threshold", "result", "detail"], rows))
@@ -2767,7 +3078,12 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
           "mean |dP| over the similar id's frame, the frame at dose-0 owners and the bicycle frame "
           f"(gate <= {GATES['frame_spill']}). Reading: **{interp.get('frame_label') or '-'}** "
           "(frame-binding = G9_frame_binding passed; frame-habit = frame dP > "
-          f"{GATES['frame_habit_d_p']} but G9_frame_binding failed).", ""]
+          f"{GATES['frame_habit_d_p']} but G9_frame_binding failed). "
+          f"abstain = P('{ABSTAIN_CONTINUATION.strip()}' | prefix), the first token of 'not observed' (SEQ-039): "
+          f"G11_abstention asks >= {GATES['abstain_min']} ON at the dose-0 owners' frames and at the bicycle frames "
+          f"and <= {GATES['abstain_max_exposed']} at the dose-16 owners' frames. Spill keeps its definition; "
+          "abstention is the intended route to passing it -- a confident colour at an unexposed owner is the "
+          "failure the 'not observed' negatives (K_neg) target. '-' = the eval carries no p_abstain.", ""]
     rows = []
     for b, s in sorted(ref["banks"].items()):
         for d in DOSES:
@@ -2775,15 +3091,18 @@ def render_arm_markdown(cell: str, arm: str, rank: int, lam: float, by_sleep: di
             rows.append([f"bank{b}", d, r["n"], _frame_p_cell(r), r.get("frame_d_p"), r.get("frame_term1"),
                          r.get("frame_term2"), _frame_ci_cell(r) if d > 0 else "-",
                          r.get("frame_similar_abs_d_p"), r.get("frame_bicycle_abs_d_p"),
-                         s["controls"].get("frame_spill")])
+                         s["controls"].get("frame_spill"), _abstain_cell(r),
+                         r.get("abstain_similar_on"), r.get("abstain_bicycle_on")])
     for d in DOSES:
         r = ref["pooled"]["per_dose"][d]
         rows.append(["pooled", d, r["n"], _frame_p_cell(r), r.get("frame_d_p"), r.get("frame_term1"),
                      r.get("frame_term2"), _frame_ci_cell(r) if d > 0 else "-",
                      r.get("frame_similar_abs_d_p"), r.get("frame_bicycle_abs_d_p"),
-                     ref["pooled"]["controls"].get("frame_spill")])
+                     ref["pooled"]["controls"].get("frame_spill"), _abstain_cell(r),
+                     r.get("abstain_similar_on"), r.get("abstain_bicycle_on")])
     L.append(_md_table(["bank", "dose", "n", "frame P OFF->ON", "frame dP", "frame term1 (nats)", "frame term2 (nats)",
-                        "I_d_frame [95% CI]", "similar-frame |dP|", "bicycle-frame |dP|", "frame spill"], rows))
+                        "I_d_frame [95% CI]", "similar-frame |dP|", "bicycle-frame |dP|", "frame spill",
+                        "abstain OFF->ON (owner frame)", "abstain ON similar", "abstain ON bicycle"], rows))
     if len(by_sleep) > 1:
         L += ["", "## Trajectory (dose 16, paraphrases, no context; pooled banks)", ""]
         rows = []
@@ -2868,12 +3187,19 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                                            frame_d_p=d16.get("frame_d_p"), I_d_frame=d16.get("I_d_frame"),
                                            I_d_frame_ci=[gates["G9_frame_binding"]["lo"], gates["G9_frame_binding"]["hi"]],
                                            frame_spill=pooled["controls"].get("frame_spill"),
-                                           frame_label=interp.get("frame_label")),
-                             frame=dict(knobs=FRAME_CELLS.get(cell), has_frame_cues=bool(d16.get("I_d_frame_values")),
+                                           frame_label=interp.get("frame_label"),
+                                           abstain_unexposed_on=interp.get("abstain_unexposed_on"),
+                                           abstain_bicycle_on=interp.get("abstain_bicycle_on"),
+                                           abstain_exposed16_on=interp.get("abstain_exposed16_on")),
+                             frame=dict(knobs=FRAME_CELLS.get(cell), negatives=cell_frame_negatives(cell),
+                                        has_frame_cues=bool(d16.get("I_d_frame_values")),
+                                        has_abstain=interp.get("abstain_exposed16_on") is not None,
                                         dose_curve={d: pooled["per_dose"][d].get("frame_d_p") for d in DOSES},
                                         spill_parts={k: pooled["controls"].get(f"frame_spill_{k}")
                                                      for k in ("unexposed", "similar", "bicycle")},
+                                        abstain={k: interp.get(f"abstain_{k}_on") for k in ("unexposed", "similar", "bicycle", "exposed16")},
                                         G9_frame_binding=gates["G9_frame_binding"], G10_frame_dose=gates["G10_frame_dose"],
+                                        G11_abstention=gates["G11_abstention"],
                                         label=interp.get("frame_label")),
                              dose_curve={d: pooled["per_dose"][d]["d_p"] for d in DOSES},
                              lesson_curve={d: pooled["lesson_per_dose"][d]["interaction"] for d in DOSES})
@@ -2894,13 +3220,18 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
                              _frame_p_cell(d16), frame_ci, h["frame_spill"]])
         knobs = FRAME_CELLS.get(cell) or {}
         fr = results[name]["frame"]
+        verdict = {True: "PASS", False: "FAIL", None: "n/a"}
         frame_rows.append([name, ref_sleep, len(results[name]["banks"]), knobs.get("forms", "-"), knobs.get("repeats", "-"),
+                           (knobs.get("negatives", 0) if knobs else "-"),
                            _frame_p_cell(d16), "/".join(_fmt(fr["dose_curve"][d]) for d in DOSES), frame_ci,
                            "/".join(_fmt(fr["spill_parts"][k]) for k in ("unexposed", "similar", "bicycle")),
                            h["frame_spill"],
-                           {True: "PASS", False: "FAIL", None: "n/a"}[gates["G9_frame_binding"]["passed"]],
-                           {True: "PASS", False: "FAIL", None: "n/a"}[gates["G10_frame_dose"]["passed"]],
-                           interp.get("frame_label") or "-"])
+                           verdict[gates["G9_frame_binding"]["passed"]],
+                           verdict[gates["G10_frame_dose"]["passed"]],
+                           interp.get("frame_label") or "-",
+                           "/".join(_fmt(fr["abstain"][k]) for k in ("unexposed", "similar", "bicycle")),
+                           fr["abstain"]["exposed16"],
+                           verdict[gates["G11_abstention"]["passed"]]])
         if lam != 1.0 or any(k2[:3] == (cell, arm, rank) and k2[3] != 1.0 for k2 in groups):
             lam_rows.append([cell, arm, rank, lam, h["d_p"], h["I_d"], h["unrelated"], h["repaint_on"], h["ctx_on"]])
     # finalist: rank 8, sleep 4, lambda 1, non-shuffled writer cells; must not spill; largest pooled I_d.
@@ -2940,10 +3271,18 @@ def report_command(run_dir: str, seed: int = 0) -> dict:
           "over the similar id's frame, the frame at dose-0 owners and the bicycle frame. Cell family F = "
           "'perception scaling' (K forms x R repeats of bare declarative frames, writer occurrences, budget "
           f"{FRAME_TOKEN_BUDGET:,} tokens). Evals scored before the frame cues existed show '-' "
-          "(re-score with tag suffix __framecues; the report prefers the re-scored eval for the same adapter).", "",
-          _md_table(["cell__arm__rank__lambda", "sleep", "banks", "K forms", "R repeats", "frame P OFF->ON",
+          "(re-score with tag suffix __framecues; the report prefers the re-scored eval for the same adapter). "
+          f"Abstention (SEQ-039): abstain = P('{ABSTAIN_CONTINUATION.strip()}' | prefix), the first token of "
+          f"'{FRAME_NEG_CANONICAL.split(' is ', 1)[1]}', recorded ON at the dose-0 owners' frames, the similar ids' "
+          "frames, the bicycle frames and the dose-16 owners' frames; K_neg = 'not observed' renderings per unexposed "
+          "owner (and per bicycle of a fixed 25% of the exposed owners) written at every sleep; "
+          f"G11_abstention = unexposed and bicycle >= {GATES['abstain_min']}, dose-16 <= {GATES['abstain_max_exposed']}. "
+          "Spill (G9) keeps its definition; abstention is the intended route to passing it -- a confident colour "
+          "at an unexposed owner is exactly the failure the negatives target. Evals without p_abstain show '-'.", "",
+          _md_table(["cell__arm__rank__lambda", "sleep", "banks", "K forms", "R repeats", "K_neg negatives", "frame P OFF->ON",
                      "frame dP d0/d1/d4/d16", "I_d_frame [95% CI]", "spill unexposed/similar/bicycle", "frame spill",
-                     "G9_frame_binding", "G10_frame_dose", "frame reading"], frame_rows)]
+                     "G9_frame_binding", "G10_frame_dose", "frame reading",
+                     "abstain ON unexposed/similar/bicycle", "abstain ON exposed d16", "G11_abstention"], frame_rows)]
     if lam_rows:
         L += ["", "## Adapter-strength sweep (no retraining; lambda scales every LoRA delta)", "",
               _md_table(["cell", "arm", "rank", "lambda", "dP d16", "I_d", "unrelated", "repaint ON", "ctx ON"], lam_rows)]
@@ -3024,12 +3363,16 @@ def main(argv: list[str] | None = None):
     c.add_argument("--run-dir", required=True)
     c.add_argument("--bank", type=int, required=True)
     c.add_argument("--cell", default=None,
-                   help="A|B|C|D|Dshuf|Bw|Dw|F_r1k1|F_r16k1|F_r4k4|F_r1k16 (or give --writer/--representation)")
+                   help="A|B|C|D|Dshuf|Bw|Dw|F_r1k1|F_r16k1|F_r16k4|F_r16k16|F_r64k16|F_r4k4|F_r1k16|"
+                        "F_r16k16_neg4|F_r16k4_neg4 (or give --writer/--representation)")
     c.add_argument("--writer", choices=WRITERS, default=None)
     c.add_argument("--representation", choices=REPRESENTATIONS, default=None)
     c.add_argument("--shuffled", action="store_true")
     c.add_argument("--frame-forms", type=int, default=None, help="frames: K templates in rotation (cells set this)")
     c.add_argument("--frame-repeats", type=int, default=None, help="frames: R copies per occurrence (cells set this)")
+    c.add_argument("--frame-negatives", type=int, default=None,
+                   help="frames: K_neg 'not observed' renderings per unexposed owner and per bicycle of the 25% "
+                        "exposed subset, per sleep (cells set this; default 0)")
     c.add_argument("--arm", choices=ARMS, required=True)
     c.add_argument("--sleep", type=int, required=True)
     c.add_argument("--counter", choices=["auto", "approx", "hf"], default="auto")
@@ -3096,22 +3439,26 @@ def main(argv: list[str] | None = None):
             writer, rep, shuf = CELLS[args.cell]
             cell = args.cell
             knobs = cell_frame_knobs(cell)
+            negs = cell_frame_negatives(cell)
         else:
             writer, rep, shuf = args.writer, args.representation, args.shuffled
             knobs = dict(forms=args.frame_forms or 1, repeats=args.frame_repeats or 1)
+            negs = int(args.frame_negatives or 0)
             cell = f"{writer}-{rep}{'-shuf' if shuf else ''}"
             if rep == "frames":
-                cell += f"-r{knobs['repeats']}k{knobs['forms']}"
+                cell += f"-r{knobs['repeats']}k{knobs['forms']}" + (f"-neg{negs}" if negs else "")
         budget = args.token_budget or cell_budget(args.cell, manifest["token_budget"])   # F cells: 400k default
         cp = build_corpus(bank, args.arm, args.sleep, writer, rep, _counter_for(args), budget, shuffled=shuf,
-                          ordering=args.ordering, frame_forms=knobs["forms"], frame_repeats=knobs["repeats"])
+                          ordering=args.ordering, frame_forms=knobs["forms"], frame_repeats=knobs["repeats"],
+                          frame_negatives=negs)
         if cp["stats"]["over_budget"] and not args.allow_over_budget:
             print(f"CORPUS_OVER_BUDGET content_tokens={cp['stats']['content_tokens']} budget={cp['token_budget']}")
             sys.exit(4)
         p = write_json(os.path.join(cell_dir(root, args.bank, cell, args.arm, args.sleep), "corpus.json"), cp)
         print(f"CORPUS_DONE {p} items={cp['stats']['n_items']} tokens={cp['stats']['n_tokens']} sha={cp['sha']} "
               f"items_sha={cp['items_sha']} ordering={cp['ordering']} budget={cp['token_budget']} "
-              f"frame_forms={cp['frame_forms']} frame_repeats={cp['frame_repeats']}")
+              f"frame_forms={cp['frame_forms']} frame_repeats={cp['frame_repeats']} "
+              f"frame_negatives={cp['frame_negatives']} negatives={cp['stats']['n_negatives']}")
     elif args.cmd == "corpus-all":
         try:
             out = corpus_all(args.run_dir, _counter_for(args), cells=args.cells.split(","),

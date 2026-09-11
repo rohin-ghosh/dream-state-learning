@@ -23,6 +23,14 @@ construction, I_d_frame + G9_frame_binding/G10_frame_dose on a synthetic
 eval JSON, report backward compatibility on evals without frame cues, the
 runbook's syntax, and the items_sha identity of the existing cells against a
 fixture computed BEFORE the change (tests/fixtures/).
+Abstention negatives (SEQ-039): 'not observed' rendering (count = K_neg x
+unexposed owners + K_neg x 25% of the exposed owners, canonical ending, none
+for an exposed owner's car, per-sleep from the exposure schedule), cell
+registration + manifest/item field `negatives`, p_abstain on every frame-
+family cue of a mock eval, G11_abstention on the mock pipeline and on
+synthetic values, report backward compatibility on an eval without
+p_abstain, the runbook accepting the new cell names, and the items_sha of
+the five pre-existing F cells against values computed BEFORE the change.
 """
 from __future__ import annotations
 
@@ -1373,6 +1381,423 @@ def test_frames_runbook_syntax_and_conventions():
     assert r4.returncode == 0 and "corpus bank0" not in r4.stdout                   # ... and an existing corpus is kept
     e = dict(env); e["F_TOKEN_BUDGET"] = "12k"
     assert subprocess.run(["bash", path, "0", "fits"], capture_output=True, text=True, env=e, cwd=ROOT).returncode == 2
+    shutil.rmtree(d)
+
+
+# ---------------------------------------------------------------------------
+# abstention negatives (SEQ-039): 'not observed' renderings, p_abstain, G11_abstention
+# ---------------------------------------------------------------------------
+# bank-0 sleep-4 corpora of the five F cells that existed BEFORE the negatives knob, computed with the
+# mock model at shared_run's parameters before the change: (items_sha, ordered sha of the across arm,
+# n_items) at the cell's default budget (400,000) and at the node budget (250,000); content tokens.
+# F_r64k16's content exceeds both budgets, so its corpus is the same at either (no padding).
+F_SHAS_PRE_NEGATIVES = {
+    "F_r1k1": dict(content=14580, b400000=("125c761a8c58e750", "f0e66abc948c0bca", 32933),
+                   b250000=("b55053eb1286e6f5", "44c20af5ebde16c3", 20379)),
+    "F_r16k1": dict(content=233280, b400000=("ad57daa2f692df95", "1bf5e98b0b4b084a", 24769),
+                    b250000=("4f0a578a06401101", "38a4c55229ffd38f", 12217)),
+    "F_r16k4": dict(content=234624, b400000=("c8c7f7423c51caf6", "0d643b054ee095a5", 24656),
+                    b250000=("755c373ce21bf5b2", "bc1260af55d02093", 12105)),
+    "F_r16k16": dict(content=223872, b400000=("5e2a2f3030bc32e4", "fcb16d8f4db83548", 25557),
+                     b250000=("4100edbfa20b8b08", "06eb6554469312c7", 13005)),
+    "F_r64k16": dict(content=895488, b400000=("ef5e906249ab1eae", "14c41db5b0d4a073", 43264),
+                     b250000=("ef5e906249ab1eae", "14c41db5b0d4a073", 43264)),
+}
+NEG_BUDGET = 250000      # the node budget of the R=16 cells; content ~225-240k, so little padding
+
+
+def _neg_corpus(run: dict, cell: str, arm: str = "across", sleep: int = 4, budget: int = NEG_BUDGET, bank: dict | None = None) -> dict:
+    w, r, s = md.CELLS[cell]
+    k = md.cell_frame_knobs(cell)
+    return md.build_corpus(bank or run["bank"], arm, sleep, w, r, run["counter"], budget, shuffled=s,
+                           frame_forms=k["forms"], frame_repeats=k["repeats"], frame_negatives=md.cell_frame_negatives(cell))
+
+
+def _negatives(c: dict) -> list:
+    return [it for it in c["corpus"] if it["kind"] == "negative"]
+
+
+def _neg_pipeline(run: dict, cell: str, profile: str, budget: int = NEG_BUDGET, lambdas=None):
+    d = run["dir"]
+    md.set_write_root(d)
+    c = _neg_corpus(run, cell, budget=budget)
+    cpath = md.write_json(os.path.join(md.cell_dir(d, 0, cell, "across", 4), "corpus.json"), c)
+    adir = os.path.join(d, "adapters", "bank0", cell, "across", "sleep4", f"r8_{profile}")
+    md.train_command(d, cpath, adir, model="mock", mock_profile=profile, no_reuse=True)
+    paths = md.evaluate_command(d, 0, adir, f"bank0__{cell}__across__sleep4__r8__{profile}", model="mock",
+                                lambdas=lambdas, meta=dict(cell=cell, arm="across", sleep=4, rank=8))
+    evs = [md.read_json(p) for p in paths]
+    return c, evs, [md.summarize_eval(ev, run["bank"]) for ev in evs]
+
+
+def test_frame_negatives_rendering():
+    run = shared_run()
+    bank = run["bank"]
+    dose = {o["id"]: o["dose"] for o in bank["owners"]}
+    d0 = sorted(o for o, d in dose.items() if d == 0)
+    # constants: the negative sentence shares the cue's prefix, so " not" is its first continuation
+    assert md.FRAME_NEG_CANONICAL == md.FRAME_PREFIX + " not observed." == "Owner {owner}'s car is not observed."
+    assert md.FRAME_NEG_BICYCLE_CANONICAL == md.FRAME_BICYCLE_PREFIX + " not observed."
+    assert md.ABSTAIN_CONTINUATION == " not" and md.ABSTAIN_CANDIDATES == [" not"]
+    for obj, tmpls, canon in (("car", md.FRAME_NEG_TEMPLATES, md.FRAME_NEG_CANONICAL),
+                              ("bicycle", md.FRAME_NEG_BICYCLE_TEMPLATES, md.FRAME_NEG_BICYCLE_CANONICAL)):
+        assert len(tmpls) == 4 == len(set(tmpls))
+        for t in tmpls:
+            assert t.endswith(canon) and "?" not in t and t[:-len(canon)].strip() and t[:-len(canon)].endswith(" ")
+            assert not any(c in t.lower() for c in md.COLOURS) and t.count("{owner}") >= 2
+            for frag in ("what colour", "record lookup", "give the vehicle", "answer with one"):
+                assert frag not in t.lower()
+    # unexposed owners per sleep and arm (the existing exposure schedule): across -- dose 1 sits in session 4
+    assert sorted(md.unexposed_owners(bank, "across", 4)) == d0 == sorted(md.unexposed_owners(bank, "across", 6))
+    assert sorted(md.unexposed_owners(bank, "across", 3)) == sorted(o for o, d in dose.items() if d in (0, 1))
+    assert sorted(md.unexposed_owners(bank, "across", 1)) == sorted(o for o, d in dose.items() if d in (0, 1))
+    assert sorted(md.unexposed_owners(bank, "within", 3)) == sorted(dose) and sorted(md.unexposed_owners(bank, "within", 4)) == d0
+    # the bicycle subset: 25% of every dose group, fixed per bank (seed and bank index), independent of arm/sleep
+    bo = md.bicycle_negative_owners(bank)
+    assert len(bo) == 12 == len(set(bo)) and all(dose[o] > 0 for o in bo)
+    assert [sum(1 for o in bo if dose[o] == d) for d in (1, 4, 16)] == [4, 4, 4]
+    assert bo == md.bicycle_negative_owners(bank)
+    b1 = dict(bank); b1["bank"] = 1
+    other = dict(bank); other["seed"] = 7
+    assert md.bicycle_negative_owners(b1) != bo and md.bicycle_negative_owners(other) != bo
+    # rendering: K_neg copies rotate through the 4 templates, deterministic
+    assert sorted(md.frame_negative_index(0, 0, "K7M4", "car", r, 4) for r in range(4)) == [0, 1, 2, 3]
+    assert md.frame_negative_index(0, 0, "K7M4", "car", 0, 4) != md.frame_negative_index(0, 0, "K7M4", "bicycle", 0, 4) or True
+    ctx, tgt, t = md.render_negative("K7M4", "car", 1, seed=0, bank=0)
+    assert ctx + tgt == md.FRAME_NEG_TEMPLATES[t].format(owner="K7M4") and tgt == "Owner K7M4's car is not observed."
+    # the corpus: sleep 4 -> K_neg x 16 unexposed (dose-0) car negatives + K_neg x 12 (25% of 48 exposed) bicycle negatives
+    for cell in ("F_r16k16_neg4", "F_r16k4_neg4"):
+        c = _neg_corpus(run, cell)
+        K, R = md.cell_frame_knobs(cell)["forms"], md.cell_frame_knobs(cell)["repeats"]
+        neg = _negatives(c)
+        assert len(neg) == 4 * 16 + 4 * 12 == 112 == c["stats"]["n_negatives"] == c["stats"]["by_kind"]["negative"]
+        car = [it for it in neg if it["negative_object"] == "car"]
+        bic = [it for it in neg if it["negative_object"] == "bicycle"]
+        assert sorted({it["owner"] for it in car}) == d0 and len(car) == 64          # every dose-0 owner, 4 renderings
+        assert not any(dose[it["owner"]] > 0 for it in car)                             # none for an exposed owner's car
+        assert sorted({it["owner"] for it in bic}) == sorted(bo) and len(bic) == 48    # the fixed 25% exposed subset
+        assert c["stats"]["negative_owners"] == dict(car=d0, bicycle=sorted(bo))
+        for it in neg:
+            canon = (md.FRAME_NEG_CANONICAL if it["negative_object"] == "car" else md.FRAME_NEG_BICYCLE_CANONICAL)
+            text = md.render_item(it)
+            assert text.endswith(canon.format(owner=it["owner"])) and it["target"] == canon.format(owner=it["owner"])
+            tmpls = md.FRAME_NEG_TEMPLATES if it["negative_object"] == "car" else md.FRAME_NEG_BICYCLE_TEMPLATES
+            assert text == tmpls[it["frame_neg_template"]].format(owner=it["owner"])
+            assert it["chat"] is False and it["mask_context"] is False and it["weight"] == 1.0    # bare, loss on every token
+            assert it["colour"] is None and it["frame_template"] is None and "<|im_start|>" not in text
+            assert it["frame_negatives"] == 4 and it["frame_forms"] == K and it["frame_repeats"] == R and 0 <= it["frame_copy"] < 4
+            assert 1 <= it["session"] <= md.N_SLEEPS_EXPOSURE and it["event_ids"] == [f"b0-{it['owner']}-neg-{it['negative_object']}-{it['frame_copy']:02d}"]
+        per_owner: dict = {}
+        for it in neg:
+            per_owner.setdefault((it["owner"], it["negative_object"]), []).append(it)
+        assert all(sorted(x["frame_copy"] for x in v) == [0, 1, 2, 3] and sorted(x["frame_neg_template"] for x in v) == [0, 1, 2, 3]
+                   for v in per_owner.values())                                           # all four templates per owner
+        # every item of the corpus records K_neg; only negatives carry negative_object
+        assert all(it["frame_negatives"] == 4 for it in c["corpus"])
+        assert not any("negative_object" in it for it in c["corpus"] if it["kind"] != "negative")
+        assert c["frame_negatives"] == 4 and c["stats"]["frame_negatives"] == 4
+        # the positive content is exactly the no-negatives cell's: same fact renderings, same colour marginals
+        base = _neg_corpus(run, cell.replace("_neg4", ""))
+        assert base["frame_negatives"] == 0 and not _negatives(base) and "negative" not in base["stats"]["by_kind"]
+        assert sorted(md.render_item(f) for f in _facts(c)) == sorted(md.render_item(f) for f in _facts(base))
+        assert c["stats"]["colour_marginals"] == base["stats"]["colour_marginals"] and c["marginal_target"] == base["marginal_target"]
+        assert c["stats"]["content_tokens"] > base["stats"]["content_tokens"] and c["stats"]["n_tokens"] <= NEG_BUDGET
+        assert c["stats"]["n_items"] < base["stats"]["n_items"]                          # negatives displace padding
+        assert c["items_sha"] != base["items_sha"]
+        # determinism and the sleep-4 within/across identity (same negatives in both arms)
+        assert _neg_corpus(run, cell)["sha"] == c["sha"]
+        w4 = _neg_corpus(run, cell, arm="within")
+        assert w4["items_sha"] == c["items_sha"] and w4["sha"] != c["sha"]
+    # per sleep from the schedule, not accumulated: across sleep 3 -> dose-1 owners still unexposed (32 car owners),
+    # bicycles only for the exposed dose-4/16 members of the subset (8); within sleep 2 -> nobody exposed
+    c3 = _neg_corpus(run, "F_r16k4_neg4", sleep=3)
+    car3 = {it["owner"] for it in _negatives(c3) if it["negative_object"] == "car"}
+    bic3 = {it["owner"] for it in _negatives(c3) if it["negative_object"] == "bicycle"}
+    assert car3 == {o for o, d in dose.items() if d in (0, 1)} and bic3 == {o for o in bo if dose[o] in (4, 16)}
+    assert len(_negatives(c3)) == 4 * 32 + 4 * 8
+    c2 = _neg_corpus(run, "F_r16k4_neg4", arm="within", sleep=2)
+    assert {it["owner"] for it in _negatives(c2)} == set(dose) and len(_negatives(c2)) == 4 * 64
+    assert not any(it["negative_object"] == "bicycle" for it in _negatives(c2))
+    # the knob is inert outside frames and for the existing cells
+    A = md.build_corpus(bank, "across", 4, "dedup", "short", run["counter"], BUDGET, frame_negatives=4)
+    assert A["frame_negatives"] == 0 and not _negatives(A) and A["items_sha"] == run["corpora"]["A"]["items_sha"]
+    assert not any("frame_negatives" in it for it in A["corpus"])
+    # the mock trainer reads the abstention from the canonical negative target
+    md.set_write_root(run["dir"])
+    ad = md.train_mock(_neg_corpus(run, "F_r16k4_neg4"), os.path.join(run["dir"], "adapters", "neg_check"), profile="guide")
+    assert set(ad["abstain"]) == set(d0) | set(bo) and len(ad["abstain"]) == 28
+    assert all(ad["abstain"][o] == {"car": 12.0} for o in d0) and all(ad["abstain"][o] == {"bicycle": 12.0} for o in bo)
+    assert len(ad["strength"]) == 48 and md._TARGET_NEG_RE.match("Owner K7M4's bicycle is not observed.").group(2) == "bicycle"
+
+
+def test_frame_negative_cells_registered_and_manifest():
+    run = shared_run()
+    for cell, K in (("F_r16k16_neg4", 16), ("F_r16k4_neg4", 4)):
+        assert md.FRAME_CELLS[cell] == dict(forms=K, repeats=16, negatives=4) and md.cell_frame_knobs(cell) == md.FRAME_CELLS[cell]
+        assert md.CELLS[cell] == ("occurrences", "frames", False) and md.cell_frame_negatives(cell) == 4
+        assert md.cell_budget(cell, 65536) == md.FRAME_TOKEN_BUDGET == 400000            # token budget as the other F cells
+        assert f"K={K} forms x R=16 repeats, K_neg=4 negatives" in md._cell_label(cell)
+        assert md.parse_tag(f"bank2__{cell}__across__sleep4__r8") == dict(bank=2, cell=cell, arm="across", sleep=4, rank=8)
+    for cell in ("F_r1k1", "F_r16k1", "F_r16k4", "F_r16k16", "F_r64k16", "F_r4k4", "F_r1k16", "A", "B", "C", "D", "Dshuf", "Bw", "Dw"):
+        assert md.cell_frame_negatives(cell) == 0 and "negatives" not in md.cell_frame_knobs(cell) and "K_neg" not in md._cell_label(cell)
+    assert md.FRAME_GATES == ("G9_frame_binding", "G10_frame_dose", "G11_abstention")
+    assert md.GATES["abstain_min"] == 0.5 and md.GATES["abstain_max_exposed"] == 0.1
+    # corpus-all: the negatives come from the cell name; identity at sleep 4 holds; the manifest field is on disk
+    d = _generate("negatives_all")
+    out = md.corpus_all(d, run["counter"], cells=["F_r16k4_neg4"], arms=["across", "within"], sleeps=[4], token_budget=NEG_BUDGET)
+    assert out["identity_check"] == [dict(bank=b, cell="F_r16k4_neg4", sleep=4, within=out["identity_check"][b]["within"],
+                                          across=out["identity_check"][b]["across"], identical_items=True, identical_sha=False,
+                                          identical=False) for b in range(3)]
+    idx = md.read_json(os.path.join(d, "corpora", "index.json"))
+    for b in range(3):
+        e = idx["index"][f"bank{b}/F_r16k4_neg4/across/sleep4"]
+        assert e["frame_negatives"] == 4 and e["n_negatives"] == 112 and e["by_kind"]["negative"] == 112
+        cj = md.read_json(e["path"])
+        assert cj["frame_negatives"] == 4 and cj["synthetic"] is True and len(_negatives(cj)) == 112
+        assert len(cj["stats"]["negative_owners"]["car"]) == 16 and len(cj["stats"]["negative_owners"]["bicycle"]) == 12
+    # CLI by cell name and by knobs
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "F_r16k16_neg4", "--arm", "across", "--sleep", "4",
+             "--token-budget", str(NEG_BUDGET)])
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "F_r16k16_neg4", "across", 4), "corpus.json"))
+    assert cj["frame_forms"] == 16 and cj["frame_repeats"] == 16 and cj["frame_negatives"] == 4 and cj["token_budget"] == NEG_BUDGET
+    assert cj["items_sha"] == _neg_corpus(run, "F_r16k16_neg4")["items_sha"]
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--writer", "occurrences", "--representation", "frames",
+             "--frame-forms", "4", "--frame-repeats", "2", "--frame-negatives", "2", "--arm", "across", "--sleep", "4",
+             "--token-budget", "90000"])
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "occurrences-frames-r2k4-neg2", "across", 4), "corpus.json"))
+    assert cj["frame_negatives"] == 2 and len(_negatives(cj)) == 2 * 28 and all(it["frame_negatives"] == 2 for it in cj["corpus"])
+    md.main(["corpus", "--run-dir", d, "--bank", "0", "--cell", "F_r16k4", "--arm", "across", "--sleep", "4",
+             "--token-budget", str(NEG_BUDGET)])
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "F_r16k4", "across", 4), "corpus.json"))
+    assert cj["frame_negatives"] == 0 and not _negatives(cj)
+    shutil.rmtree(d)
+
+
+def test_p_abstain_recorded_and_G11_abstention():
+    run = shared_run()
+    bank = run["bank"]
+    owners = {o["id"]: o for o in bank["owners"]}
+    tok = _tokenizer()
+    if tok is None:
+        print("SKIP tokenizer not cached offline: the ' not' single-token check runs on the node (eval JSON abstain_check)")
+    else:
+        chk = md.abstain_token_check(tok)
+        assert chk["mode"] == "tokenizer" and chk["single_token"] is True and chk["n_tokens"] == 1 and chk["ok"], chk
+    lit = md.abstain_token_check(None)
+    assert lit == dict(candidate=" not", mode="literal", literal_prefix=True, n_tokens=None, straddle=None, single_token=None, ok=True)
+    # the frame-family cues carry the abstention candidate; the colour candidate set is untouched
+    dist = md.read_json(os.path.join(run["dir"], "distractor.json"))["text"]
+    cues = md.build_cues(bank, dist)
+    fam = [c for c in cues if c["kind"] in md.FRAME_CUE_KINDS]
+    assert len(fam) == 64 + 48 + 48 and all(c["abstain"] == [" not"] and c["candidates"] == md.colour_candidates(True) for c in fam)
+    assert not any("abstain" in c for c in cues if c["kind"] not in md.FRAME_CUE_KINDS) and len(cues) == 1313
+    # mock pipeline on the negatives cell: p_abstain OFF and ON on every frame-family row and nowhere else
+    sums, evs = {}, {}
+    for profile in ("guide", "habit", "nothing"):
+        _, ev, s = _neg_pipeline(run, "F_r16k4_neg4", profile)
+        evs[profile], sums[profile] = ev[0], s[0]
+        rows = ev[0]["cues"]
+        fr = [r for r in rows if r["kind"] in md.FRAME_CUE_KINDS]
+        assert len(fr) == 160 and all(0.0 <= r[side]["p_abstain"] <= 1.0 for r in fr for side in ("OFF", "ON"))
+        assert all(set(r["OFF"]) == {"p_raw", "mass", "logp", "p_abstain"} and set(r["OFF"]["p_raw"]) == set(md.COLOURS) for r in fr)
+        assert not any("p_abstain" in r["OFF"] or "p_abstain" in r["ON"] for r in rows if r["kind"] not in md.FRAME_CUE_KINDS)
+        assert ev[0]["abstain_check"]["ok"] and ev[0]["abstain_check"]["mode"] == "literal" and ev[0]["n_cues"] == 1313
+    # OFF is the same under every profile (the adapter only acts ON); the colour metrics are what they were
+    off = {r["cue_id"]: r["OFF"]["p_abstain"] for r in evs["guide"]["cues"] if "p_abstain" in r["OFF"]}
+    assert off == {r["cue_id"]: r["OFF"]["p_abstain"] for r in evs["nothing"]["cues"] if "p_abstain" in r["OFF"]}
+    assert all(v < 0.2 for v in off.values())
+    fg = {r["cue_id"]: r["ON"]["p_raw"] for r in evs["guide"]["cues"] if r["kind"] == "frame"}
+    _, ev_base, s_base = _neg_pipeline(run, "F_r16k4", "guide")           # the same recipe without negatives
+    assert {r["cue_id"]: r["ON"]["p_raw"] for r in ev_base[0]["cues"] if r["kind"] == "frame"} == fg
+    # guide + negatives: abstains at the dose-0 owners' frames and the bicycle frames, not at the dose-16 frames
+    s = sums["guide"]
+    d0 = [o for o in owners if owners[o]["dose"] == 0]
+    e0, e16 = s["per_owner"][d0[0]], s["per_owner"][[o for o in owners if owners[o]["dose"] == 16][0]]
+    assert e0["abstain_on"] > 0.5 > e0["abstain_off"] and e0["abstain_d"] > 0.3 and "abstain_bicycle_on" not in e0
+    assert e16["abstain_on"] < 0.1 and e16["abstain_bicycle_on"] > 0.5 and "abstain_similar_on" in e16
+    assert s["per_dose"][0]["abstain_on"] >= 0.5 and s["per_dose"][16]["abstain_on"] <= 0.1 and s["per_dose"][0]["abstain_bicycle_on"] is None
+    c = s["controls"]
+    assert c["abstain_unexposed_on"] == s["per_dose"][0]["abstain_on"] and c["abstain_bicycle_on"] >= 0.5
+    assert c["abstain_exposed16_on"] == s["per_dose"][16]["abstain_on"] and c["abstain_similar_on"] < 0.2 and c["abstain_unexposed_off"] < 0.2
+    g = md.evaluate_gates(s)
+    g11 = g["G11_abstention"]
+    assert g11["passed"] is True and "G11_abstention" in g["passed"] and g11["value"]["unexposed"] >= 0.5
+    assert g11["value"]["bicycle"] >= 0.5 and g11["value"]["d16"] <= 0.1 and g11["off"]["unexposed"] < 0.2
+    it = md.interpret(s, g)
+    assert it["abstention"] is True and it["abstain_unexposed_on"] == c["abstain_unexposed_on"] and it["frame_label"] == "frame-binding"
+    assert not any("G11" in r for r in it["reasons"])                                    # a frame gate, out of the paraphrase reading
+    assert g["G9_frame_binding"]["passed"] is True                                        # spill unchanged in definition
+    # the same recipe without negatives: G9 still passes under the guide mock, G11 fails -- independent gates
+    gb = md.evaluate_gates(s_base[0])
+    assert gb["G9_frame_binding"]["passed"] is True and gb["G11_abstention"]["passed"] is False
+    assert s_base[0]["controls"]["abstain_unexposed_on"] < 0.2 and s_base[0]["controls"]["abstain_bicycle_on"] < 0.2
+    # nothing: abstention unchanged ON vs OFF -> G11 fails
+    sn = sums["nothing"]
+    assert all(abs(e["abstain_d"]) < 1e-9 for e in sn["per_owner"].values()) and md.evaluate_gates(sn)["G11_abstention"]["passed"] is False
+    # habit: the abstention spreads to the similar id too (nearest trained id) -- reported, not gated
+    assert sums["habit"]["controls"]["abstain_similar_on"] > sums["guide"]["controls"]["abstain_similar_on"]
+    # lambda 0 reproduces OFF for p_abstain as for everything else
+    _, ev_l, _ = _neg_pipeline(run, "F_r16k4_neg4", "guide", lambdas=[0.0, 1.0])
+    assert all(r["ON"]["p_abstain"] == r["OFF"]["p_abstain"] for r in ev_l[0]["cues"] if "p_abstain" in r["OFF"])
+    assert any(r["ON"]["p_abstain"] != r["OFF"]["p_abstain"] for r in ev_l[1]["cues"] if "p_abstain" in r["OFF"])
+    # --- G11 on synthetic values ---
+    s2 = copy.deepcopy(s)
+    s2["controls"]["abstain_unexposed_on"], s2["controls"]["abstain_bicycle_on"], s2["per_dose"][16]["abstain_on"] = 0.6, 0.7, 0.05
+    assert md.evaluate_gates(s2)["G11_abstention"]["passed"] is True
+    for key, val in (("unexposed", 0.49), ("bicycle", 0.3), ("d16", 0.11)):
+        s3 = copy.deepcopy(s2)
+        if key == "d16":
+            s3["per_dose"][16]["abstain_on"] = val
+        else:
+            s3["controls"][f"abstain_{key}_on"] = val
+        assert md.evaluate_gates(s3)["G11_abstention"]["passed"] is False, key
+    for key in ("unexposed", "bicycle", "d16"):
+        for missing in (None, float("nan")):
+            s4 = copy.deepcopy(s2)
+            if key == "d16":
+                s4["per_dose"][16]["abstain_on"] = missing
+            else:
+                s4["controls"][f"abstain_{key}_on"] = missing
+            g4 = md.evaluate_gates(s4)
+            assert g4["G11_abstention"]["passed"] is None and "G11_abstention" not in g4["passed"] + g4["failed"], key
+    # boundaries are inclusive
+    s5 = copy.deepcopy(s2)
+    s5["controls"]["abstain_unexposed_on"], s5["controls"]["abstain_bicycle_on"], s5["per_dose"][16]["abstain_on"] = 0.5, 0.5, 0.1
+    assert md.evaluate_gates(s5)["G11_abstention"]["passed"] is True
+    # pooled over banks: controls average, G11 stays evaluable
+    pooled = md.pool([s, copy.deepcopy(s)])
+    assert math.isclose(pooled["controls"]["abstain_unexposed_on"], c["abstain_unexposed_on"])
+    assert md.evaluate_gates(pooled)["G11_abstention"]["passed"] is True
+    # report: the completion-frame table carries K_neg, the abstain means and G11
+    rep = md.report_command(run["dir"])
+    res = rep["results"]["F_r16k4_neg4__across__r8__lam1"]
+    assert res["frame"]["negatives"] == 4 and res["frame"]["has_abstain"] is True and res["frame"]["G11_abstention"]["passed"] is True
+    assert set(res["frame"]["abstain"]) == {"unexposed", "similar", "bicycle", "exposed16"} and res["frame"]["abstain"]["unexposed"] >= 0.5
+    assert res["headline"]["abstain_exposed16_on"] <= 0.1
+    summ = open(os.path.join(run["dir"], "report", "summary.md")).read()
+    hdr = [ln for ln in summ.splitlines() if ln.startswith("| cell__arm__rank__lambda | sleep | banks | K forms |")][0]
+    cols = [h.strip() for h in hdr.strip("|").split("|")]
+    assert cols[5] == "K_neg negatives" and cols[-3:] == ["abstain ON unexposed/similar/bicycle", "abstain ON exposed d16", "G11_abstention"]
+    row = [ln for ln in summ.splitlines() if ln.startswith("| F_r16k4_neg4__across__r8__lam1 |") and "PASS" in ln][0]
+    vals = [v.strip() for v in row.strip("|").split("|")]
+    assert vals[5] == "4" and vals[-1] == "PASS" and re.fullmatch(r"0\.\d{3}/0\.\d{3}/0\.\d{3}", vals[-3]) and float(vals[-2]) <= 0.1
+    row_b = [ln for ln in summ.splitlines() if ln.startswith("| F_r16k4__across__r8__lam1 |") and ("PASS" in ln or "FAIL" in ln)][0]
+    vals_b = [v.strip() for v in row_b.strip("|").split("|")]
+    assert vals_b[5] == "0" and vals_b[-1] == "FAIL"
+    assert "abstention is the intended route to passing it" in summ and "G11_abstention = unexposed and bicycle >= 0.5" in summ
+    arm_md = open(os.path.join(run["dir"], "report", "F_r16k4_neg4__across__r8__lam1.md")).read()
+    assert "| G11_abstention |" in arm_md and "P(abstain) ON: unexposed=" in arm_md and "abstain OFF->ON (owner frame)" in arm_md
+    assert "abstention is the intended route to passing it" in arm_md and "K_neg=4 negatives" in arm_md
+    # the cells table's gates count excludes G11 like the other frame gates
+    hdr_c = [ln for ln in summ.splitlines() if ln.startswith("| cell__arm__rank__lambda | sleep | banks | P raw")][0]
+    gi = [h.strip() for h in hdr_c.split("|")].index("gates")
+    row_c = [ln for ln in summ.splitlines() if ln.startswith("| F_r16k4_neg4__across__r8__lam1 |")][0]
+    assert int(row_c.split("|")[gi].strip().split("/")[1]) == len([k for k in g["passed"] + g["failed"] if k not in md.FRAME_GATES])
+
+
+def test_report_backward_compatible_without_p_abstain():
+    run = shared_run()
+    d = _generate("compat_abstain")                             # same seed -> same banks as the shared run
+    md.set_write_root(d)
+    w, r, s_ = md.CELLS["F_r16k4"]
+    k = md.cell_frame_knobs("F_r16k4")
+    c = md.build_corpus(run["bank"], "across", 4, w, r, run["counter"], NEG_BUDGET, frame_forms=k["forms"], frame_repeats=k["repeats"])
+    cpath = md.write_json(os.path.join(md.cell_dir(d, 0, "F_r16k4", "across", 4), "corpus.json"), c)
+    adir = os.path.join(d, "adapters", "bank0", "F_r16k4", "across", "sleep4", "r8")
+    md.train_command(d, cpath, adir, model="mock")
+    tag = "bank0__F_r16k4__across__sleep4__r8"
+    p = md.evaluate_command(d, 0, adir, tag, model="mock", meta=dict(cell="F_r16k4", arm="across", sleep=4, rank=8))[0]
+    new = md.read_json(p)
+    # an eval of the post-frames, pre-abstention format: frame cues present, no p_abstain anywhere
+    old = copy.deepcopy(new)
+    for row in old["cues"]:
+        row["OFF"].pop("p_abstain", None)
+        row["ON"].pop("p_abstain", None)
+        row.pop("abstain", None)
+    old.pop("abstain_check", None)
+    assert md._has_frame_cues(old) and not any("p_abstain" in row["OFF"] for row in old["cues"])
+    md.write_json(p, old)
+    s = md.summarize_eval(old, run["bank"])
+    assert not any(k.startswith("abstain") for e in s["per_owner"].values() for k in e)
+    for dd in md.DOSES:
+        assert s["per_dose"][dd]["abstain_on"] is None and s["per_dose"][dd]["abstain_bicycle_on"] is None
+        assert s["per_dose"][dd]["frame_d_p"] is not None                                  # the frame metrics still report
+    assert all(s["controls"][k] is None for k in ("abstain_unexposed_on", "abstain_similar_on", "abstain_bicycle_on", "abstain_exposed16_on"))
+    g = md.evaluate_gates(s)
+    assert g["G11_abstention"]["passed"] is None and "G11_abstention" not in g["passed"] + g["failed"]
+    assert g["G9_frame_binding"]["passed"] is not None and g["G10_frame_dose"]["passed"] is not None
+    it = md.interpret(s, g)
+    assert it["abstention"] is None and it["abstain_unexposed_on"] is None and it["frame_label"] is not None
+    rep = md.report_command(d)
+    res = rep["results"]["F_r16k4__across__r8__lam1"]
+    assert res["frame"]["has_abstain"] is False and res["frame"]["has_frame_cues"] is True
+    assert all(v is None for v in res["frame"]["abstain"].values()) and res["headline"]["abstain_exposed16_on"] is None
+    summ = open(os.path.join(d, "report", "summary.md")).read()
+    frow = [ln for ln in summ.splitlines() if ln.startswith("| F_r16k4__across__r8__lam1 |") and ("PASS" in ln or "FAIL" in ln)][0]
+    assert frow.rstrip().endswith("| -/-/- | - | n/a |")                                   # abstain columns and G11 show '-' / n/a
+    vals = [v.strip() for v in frow.strip("|").split("|")]
+    assert vals[5] == "0" and vals[6] != "-"                                                # K_neg 0; frame P still reported
+    arm_md = open(os.path.join(d, "report", "F_r16k4__across__r8__lam1.md")).read()
+    assert "| G11_abstention |  |" in arm_md and "n/a" in arm_md.split("| G11_abstention |")[1].split("\n")[0]
+    # a fully old eval (no frame cues at all) is unchanged in behaviour: G11 n/a as well
+    older = copy.deepcopy(old)
+    older["cues"] = [cue for cue in older["cues"] if not cue["kind"].startswith("frame")]
+    so = md.summarize_eval(older, run["bank"])
+    assert md.evaluate_gates(so)["G11_abstention"]["passed"] is None and so["controls"]["abstain_unexposed_on"] is None
+    # the pooled controls tolerate a bank without p_abstain next to one with it
+    pooled = md.pool([s, md.summarize_eval(new, run["bank"])])
+    assert md.evaluate_gates(pooled)["G11_abstention"]["passed"] is not None
+    shutil.rmtree(d)
+
+
+def test_existing_F_cells_items_sha_unchanged():
+    """The five F cells that existed before the negatives knob keep byte-identical corpora (items_sha and
+    ordered sha) at the shared_run parameters; the values were computed with the mock model BEFORE the
+    change (F_SHAS_PRE_NEGATIVES). The knob's absence on these cells is 0."""
+    run = shared_run()
+    for cell, want in F_SHAS_PRE_NEGATIVES.items():
+        w, r, s = md.CELLS[cell]
+        k = md.cell_frame_knobs(cell)
+        assert md.cell_frame_negatives(cell) == 0 and "negatives" not in k
+        budgets = (250000,) if cell == "F_r64k16" else (400000, 250000)
+        for budget in budgets:
+            c = md.build_corpus(run["bank"], "across", 4, w, r, run["counter"], budget, shuffled=s,
+                                frame_forms=k["forms"], frame_repeats=k["repeats"], frame_negatives=md.cell_frame_negatives(cell))
+            items_sha, sha, n_items = want[f"b{budget}"]
+            assert c["items_sha"] == items_sha and c["sha"] == sha, (cell, budget, c["items_sha"], c["sha"])
+            assert c["stats"]["n_items"] == n_items and c["stats"]["content_tokens"] == want["content"], (cell, budget)
+            assert c["frame_negatives"] == 0 and not _negatives(c) and "negative" not in c["stats"]["by_kind"]
+            assert all(it["frame_negatives"] == 0 for it in c["corpus"])
+        if cell == "F_r64k16":
+            assert c["stats"]["content_tokens"] > 400000                                    # same corpus at either budget
+        w4 = md.build_corpus(run["bank"], "within", 4, w, r, run["counter"], 250000, shuffled=s,
+                             frame_forms=k["forms"], frame_repeats=k["repeats"])
+        assert w4["items_sha"] == want["b250000"][0]                                          # arm identity as before
+    assert md.cell_budget("F_r64k16", 65536) == 400000
+
+
+def test_frames_runbook_accepts_negative_cells():
+    import subprocess
+    path = os.path.join(ROOT, "gpu", "memory_dose_frames.sh")
+    src = open(path).read()
+    assert "F_r16k16_neg4" in src and "F_r16k4_neg4" in src                              # documented as allowed names
+    assert 'F_CELLS="${F_CELLS:-F_r1k1 F_r16k1 F_r16k4 F_r16k16}"' in src                # default unchanged
+    assert src.count("$MD corpus ") == 1 and '--cell "$c"' in src                         # cells are looked up by name
+    d = _generate("frames_runbook_neg")
+    env = dict(os.environ, RUN=d, PY=sys.executable, MODEL="mock", REPO=ROOT, F_CELLS="F_r16k4_neg4", F_BANKS="0",
+               F_TOKEN_BUDGET=str(NEG_BUDGET), FORCE="1")
+    r1 = subprocess.run(["bash", path, "0", "fits"], capture_output=True, text=True, env=env, cwd=ROOT)
+    assert r1.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_F_FITS_DONE")), r1.stdout + r1.stderr
+    assert "corpus bank0__F_r16k4_neg4__across__sleep4: items=" in r1.stdout and "frame_negatives=4 negatives=112" in r1.stdout
+    cj = md.read_json(os.path.join(md.cell_dir(d, 0, "F_r16k4_neg4", "across", 4), "corpus.json"))
+    assert cj["frame_negatives"] == 4 and cj["token_budget"] == NEG_BUDGET and len(_negatives(cj)) == 112
+    ev = md.read_json(os.path.join(d, "eval", "bank0__F_r16k4_neg4__across__sleep4__r8__lam1.json"))
+    assert ev["meta"]["cell"] == "F_r16k4_neg4" and ev["abstain_check"]["ok"]
+    assert all("p_abstain" in c["ON"] for c in ev["cues"] if c["kind"] in md.FRAME_CUE_KINDS)
+    r2 = subprocess.run(["bash", path, "0", "report"], capture_output=True, text=True, env=env, cwd=ROOT)
+    assert r2.returncode == 0 and os.path.exists(os.path.join(d, "STAGE_F_DONE")), r2.stdout + r2.stderr
+    summ = open(os.path.join(d, "report", "summary.md")).read()
+    assert "| F_r16k4_neg4__across__r8__lam1 |" in summ and "G11_abstention" in summ
     shutil.rmtree(d)
 
 

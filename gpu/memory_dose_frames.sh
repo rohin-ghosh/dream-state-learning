@@ -5,7 +5,9 @@
 #   rescore  every existing adapter under $RUN/adapters/ whose eval JSON lacks the frame cues is evaluated AGAIN into a
 #            NEW eval file (tag suffix __framecues; the old JSON is never overwritten) -- bank0 A and B first
 #            (binding-vs-habit answer on completion retrieval without retraining, ~3 min each), then the rest.
-#   fits     the four F cells (F_r1k1, F_r16k1, F_r4k4, F_r1k16) at rank 8, across arm, sleep 4, banks 0-2 = 12 fits;
+#   fits     the F cells named in F_CELLS (default F_r1k1 F_r16k1 F_r16k4 F_r16k16; any cell registered in
+#            memory_dose.py FRAME_CELLS is accepted by NAME, incl. F_r64k16 and the abstention cells F_r16k16_neg4 /
+#            F_r16k4_neg4 = SEQ-039 'not observed' negatives, K_neg=4) at rank 8, across arm, sleep 4, banks 0-2;
 #            each F corpus is built at F_TOKEN_BUDGET tokens when set, else at the cell's own default (400,000 =
 #            FRAME_TOKEN_BUDGET in memory_dose.py; F_r16k1 exceeds 65,536 by design). The corpus records the budget
 #            used; a corpus already on disk at a DIFFERENT budget aborts the step (remove corpora/bank*/<cell> and
@@ -21,7 +23,11 @@
 #                     MAX_FIT_MIN=25 (abort a cell's fits if the probe projects a longer fit; FORCE=1 overrides)
 #                     F_TOKEN_BUDGET= (tokens per F corpus; empty = the cell's default 400,000; e.g. F_TOKEN_BUDGET=250000)
 #                     ORDERING=chronological (must match the run's other corpora)  F_CELLS="F_r1k1 F_r16k1 F_r4k4 F_r1k16"
+#                       (or e.g. F_CELLS=F_r16k16_neg4 -- the negatives cells; the corpus records frame_negatives and
+#                       every frame-family cue of the eval records p_abstain for gate G11_abstention)
 #                     F_BANKS="0 1 2"  RESCORE_FIRST="0:A:across:4:8 0:B:across:4:8" (adapters re-scored before the rest)
+# Abstention cell on banks 0-2 at the node budget (SEQ-039):
+#   F_CELLS=F_r16k16_neg4 F_BANKS="0 1 2" F_TOKEN_BUDGET=250000 FORCE=1 bash gpu/memory_dose_frames.sh <gpu> fits
 # Budget: 12 fits at ~400k tokens each (roughly 6x a 65k fit) + 12 evals + one re-score per existing adapter (~3 min).
 # At the 400k default most F items are colourless padding (F_r1k1/F_r4k4/F_r1k16 content is 14-59k tokens; only
 # F_r16k1 ~233k exceeds 65k) and every F fit is ~11-15x the optimizer steps of a 65k fit, so the probe will likely
