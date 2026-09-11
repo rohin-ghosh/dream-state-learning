@@ -9,7 +9,9 @@ SPEC.json:
    "synthesis": [{"prompt": ..., "context": [...]}, ...],   # one call per part (≤ ~14k output tokens each), run in parallel, concatenated
    "critics": [{"name": "...", "prompt": "FILE_OR_TEXT"}, ...],           # each receives the whole synthesis
    "fix": {"out": "FINAL_PATH", "parts": [{"prompt": ...}, ...]},          # each part rewrites a range of sections; concatenated
-   "max_tokens": {"lens": 16000, "synthesis": 14000, "critic": 12000, "fix": 14000}}
+   "max_tokens": {"lens": 16000, "synthesis": 14000, "critic": 12000, "fix": 14000},
+   "evidence": ["FILE", ...],                    # optional: files appended to synthesis, critics AND fix (default: the union of
+   "evidence_max_chars": 120000}                 #   all lens context files) so later stages cite numbers, not lens summaries
 Lens outputs already present in --out-dir are reused (cache). The key is environment-only and masked in logs. Stdlib only.
 """
 import argparse, concurrent.futures as cf, json, os, sys, time, urllib.error, urllib.request
@@ -63,6 +65,21 @@ def main():
     def log(m): s = f"[{time.strftime('%H:%M:%S')}] {m}".replace(key, "***"); print(s, flush=True); logf.write(s + "\n"); logf.flush()
     mt = {"lens": 16000, "synthesis": 14000, "critic": 12000, "fix": 14000}; mt.update(spec.get("max_tokens", {}))
     shared = tf(spec.get("shared", ""))
+    # Evidence for the later stages (fix for the q8/q9 artefact where synthesis, critics and fix saw only the lens
+    # OUTPUTS and marked every number "unverified"): spec["evidence"] = [FILE_OR_TEXT, ...], defaulting to the union of
+    # all lens context files in spec order; capped at spec["evidence_max_chars"] (default 120,000) with a logged cut.
+    ev_items = spec.get("evidence")
+    if ev_items is None:
+        ev_items, seen = [], set()
+        for L in spec.get("lenses", []):
+            for c in L.get("context", []):
+                if c not in seen: seen.add(c); ev_items.append(c)
+    ev_cap = int(spec.get("evidence_max_chars", 120_000))
+    evidence = "\n\n---\n\n".join(tf(c) for c in ev_items)
+    if len(evidence) > ev_cap:
+        log(f"evidence: {len(evidence)} chars, cut to {ev_cap} (set evidence_max_chars or evidence to control)")
+        evidence = evidence[:ev_cap] + "\n\n[... evidence cut here ...]"
+    ev_block = f"\n\n=== EVIDENCE (the same files the lenses saw; cite these, not the lens summaries) ===\n{evidence}" if evidence else ""
 
     def run_lens(L):
         fp = os.path.join(a.out_dir, f"lens_{L['name']}.md")
@@ -78,7 +95,7 @@ def main():
     parts = spec["synthesis"] if isinstance(spec["synthesis"], list) else [spec["synthesis"]]
     def run_syn(i_p):
         i, p = i_p; ctx = "\n\n---\n\n".join(tf(c) for c in p.get("context", []))
-        user = f"{tf(p['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}\n\n=== EXTRA CONTEXT ===\n{ctx}\n\n=== LENS OUTPUTS ===\n{lenses_txt}"
+        user = f"{tf(p['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}\n\n=== EXTRA CONTEXT ===\n{ctx}{ev_block}\n\n=== LENS OUTPUTS ===\n{lenses_txt}"
         log(f"synthesis part {i+1}/{len(parts)}: {len(user)} chars"); out = ask(key, user, a.effort, mt["synthesis"], log=log)
         open(os.path.join(a.out_dir, f"synthesis_part{i+1}.md"), "w").write(out); return i, out
     with cf.ThreadPoolExecutor(max_workers=a.workers) as ex:
@@ -86,7 +103,7 @@ def main():
     open(os.path.join(a.out_dir, "synthesis.md"), "w").write(synth)
 
     def run_critic(C):
-        user = f"{tf(C['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}\n\n=== THE DRAFT UNDER REVIEW ===\n{synth}"
+        user = f"{tf(C['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}{ev_block}\n\n=== THE DRAFT UNDER REVIEW ===\n{synth}"
         log(f"critic {C['name']}: {len(user)} chars"); out = ask(key, user, a.effort, mt["critic"], log=log)
         open(os.path.join(a.out_dir, f"critic_{C['name']}.md"), "w").write(out); return C["name"], out
     with cf.ThreadPoolExecutor(max_workers=a.workers) as ex:
@@ -96,7 +113,7 @@ def main():
     fx = spec["fix"]; fparts = fx["parts"] if "parts" in fx else [fx]
     def run_fix(i_p):
         i, p = i_p
-        user = f"{tf(p['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}\n\n=== THE DRAFT ===\n{synth}\n\n=== CRITIC OBJECTIONS ===\n{crit_txt}"
+        user = f"{tf(p['prompt'])}\n\n=== SHARED CONTEXT ===\n{shared}{ev_block}\n\n=== THE DRAFT ===\n{synth}\n\n=== CRITIC OBJECTIONS ===\n{crit_txt}"
         log(f"fix part {i+1}/{len(fparts)}: {len(user)} chars"); out = ask(key, user, a.effort, mt["fix"], log=log)
         open(os.path.join(a.out_dir, f"final_part{i+1}.md"), "w").write(out); return i, out
     with cf.ThreadPoolExecutor(max_workers=a.workers) as ex:
