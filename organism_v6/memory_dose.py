@@ -157,6 +157,10 @@ FRAME_CELLS = {  # cell -> (K forms, R repeats); R = renderings per occurrence, 
     # a fixed 25% of the exposed owners at every sleep (negatives; absent = 0 for every other cell)
     "F_r16k16_neg4": dict(forms=16, repeats=16, negatives=4),
     "F_r16k4_neg4": dict(forms=4, repeats=16, negatives=4),
+    # exposure parity for the negatives (SEQ-041: at K_neg=4 the 'not observed' rows were 2 % of the corpus and the
+    # adapter's P(" not") at unexposed owners FELL from 0.01 to 0.0002) -- 64 renderings per unexposed owner ~ the
+    # 256 renderings a dose-16 fact receives, spread over the four negative templates
+    "F_r16k16_neg64": dict(forms=16, repeats=16, negatives=64),
 }
 CELLS.update({c: ("occurrences", "frames", False) for c in FRAME_CELLS})
 DEFAULT_TOKEN_BUDGET = 65536
