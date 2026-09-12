@@ -140,3 +140,35 @@ binding, deployment behavior, OEL/SDFT reproduction, or a mechanism freeze.
 Whatever the result, semantic W0—opposite actions under different semantic
 conditions—remains the decisive writer experiment. This pair can select or
 reject a bounded preservation ingredient; it cannot replace W0.
+
+## Pre-outcome retry addendum — 2026-09-12 11:58 UTC
+
+The original coefficient-0.1 controller `85282` terminated before training:
+the 48-by-152,064 float32 OFF-logit cache was finite, but the validator's
+float32 `exp(log_softmax).sum` accumulated a maximum error of
+`4.386901855e-5` and exceeded an absolute `1e-6` tolerance. The same diagnostic
+in float64 had maximum error `3.064215548e-14`. There were zero optimizer
+steps, no `losses.jsonl`, no trained adapter, and no evaluation. This is an
+invalid execution, not a scientific treatment result.
+
+Before any retry launch, Astra committed source
+`586757e359c7e80fb58951d1d6c9c3ab396cdf40`. Relative to the frozen source,
+the only production change in `memory_preservation.py` is evaluation of the
+cache-normalization *check* in float64 with `atol=1e-10, rtol=0`; the cached
+float32 tensor and the CE/KL training objective are unchanged. A corresponding
+152,064-vocabulary regression checks byte preservation. The retry is admissible
+as the intended treatment only if its fresh receipt binds:
+
+- a new root and controller, preserving failed attempt 1;
+- the exact same corpus, anchor, tokenizer-order, model-inventory, coefficient,
+  dose, and optimizer recipe as above;
+- the repair commit and no further training-path change;
+- the same cached-logit SHA-256 (`e245e790cabc7fef53e32b111b43244f26ff9ea0963883959fb622fba44f3cf8`)
+  or an explicit diagnosis before comparison;
+- the same `initial_lora_sha256` as the coefficient-0 fit.
+
+The coefficient-0 run continues under the original source and must not be
+restarted. Because the repaired validation branch is skipped when the
+coefficient is zero, this source asymmetry does not itself alter either fitted
+objective. The initial failure and its resource cost remain part of the final
+audit.
