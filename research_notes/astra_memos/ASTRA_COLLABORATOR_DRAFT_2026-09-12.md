@@ -1,6 +1,30 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, SEQ094/095 terminal update.** RuleGame v1
+**UNSENT — September 12,2026,17:40UTC.** SEQ096's independent review passes
+the local definition result: original full JSON1/3, generic-definition full
+JSON3/3, relation-only token2/3. This is a task-interface clarification, not
+parenting, general Boolean competence or approval to write old material. [C40]
+
+SEQ097's independent review verifies all192 first ACTs on the **complete
+original16-item mixed-exposure development panel**: useful ON3/16 at all
+three optimizer seeds versus every OFF/corrupt0/16. Complete OFF output
+vectors agree. Corrupt ON also improves secondary partial scores, so it is
+not uniformly harmful. Four prior-readout IDs1900071/72/73/75 were acknowledged
+before outcomes; comprehensive freshness was withdrawn, not rescued by a
+subset. Only exact nonoverlap with the original48 training/canary entries
+remains. The write-associated signal is not confirmation, clean lineage,
+parenting or gate qualification. No new fits.384calls and96000requested cap
+tokens do not establish actual usage: native token IDs were not stored.
+Controller sum0.669809458A40-hours,843.467018wall span and3224.829040full
+reservation seconds including audit idle are distinct cost measures. [C41]
+
+Main's elementary birth-teaching pair launched17:39UTC on node3GPUs0/1 is
+pending: equal80rows and4517input/912target tokens per epoch per arm;
+four epochs,3e-4,rank8,seed0 are preparation/live recipe facts, not outcomes
+or an L1 pass. The earlier pending-panel status is superseded only for SEQ097.
+No speculative findings or external communication; formal C11 deferred.
+
+**Historical UNSENT September 12, 2026, SEQ094/095 window (pending-panel status superseded by C41).** RuleGame v1
 ends all eight tasks protocol-invalid, with no scored quizzes or process
 records; active-neutral produces two faithful records of four. First-two
 selection is process0/active2. V2 repairs the interaction to eight valid
@@ -156,4 +180,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C39. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C41. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

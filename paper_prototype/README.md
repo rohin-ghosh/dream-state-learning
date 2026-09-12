@@ -2,7 +2,64 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**September 12, 2026 — SEQ-094/095 terminal update (C38/C39).**
+**September 12, 2026, 17:40 UTC — terminal SEQ-096/097 (C40/C41).**
+The new evidence separates a task-definition problem from a bounded useful-write
+signal. Both independent reviews PASS within their stated scope, not as parenting,
+clean-lineage or gate certification. All prior results, canonical abstract,
+historical tables and appendix remain preserved.
+
+SEQ-096's original full-JSON prompt scores 1/3 faithful records; a generic explicit
+definition scores 3/3 on the same three actual cases at fixed fresh-run decoding.
+Token-only relation answers score 2/3, with no full-record endpoint. These selected
+positive-observation events support a local definition explanation, not teaching,
+internalization or general Boolean competence. No old output is repaired or old
+formation root reopened. Nine calls, zero fits/parents/world actions; actual
+input/output tokens2160/227 versus624 output-cap tokens. The81.985712571-second
+worker window includes cleanup but excludes outer preparation/verification/audit.
+
+**SEQ-097: complete original 16-item mixed-exposure development panel.**
+
+| Optimizer seed | Useful OFF | Useful ON | Corrupt OFF | Corrupt ON |
+|---|---:|---:|---:|---:|
+| 0 | 0/16 | 3/16 | 0/16 | 0/16 |
+| 1 | 0/16 | 3/16 | 0/16 | 0/16 |
+| 2 | 0/16 | 3/16 | 0/16 | 0/16 |
+
+Four IDs1900071/1900072/1900073/1900075 had prior correction-utility readouts.
+Comprehensive freshness was withdrawn **before outcomes**; the full16 primary
+and controls remain unchanged, with no exclusion or favorable-subset rescue.
+Exact puzzle/solution nonoverlap against the original48 training/canary entries
+is narrower than research non-exposure or confirmation. Prior readout exposure
+is not evidence that these adapters trained on those cases. Independent review
+verifies all192 first ACTs and solved grids; complete OFF output vectors agree.
+Useful ON partial-score means are0.669140625/0.641015625/0.662109375; corrupt
+ON also improves to0.228515625/0.196875000/0.277734375 over OFF0.066477273.
+Thus corrupt is not uniformly harmful. Shared data/panel and fixed order limit
+interpretation; no parenting, G2/G3/P1/G5/H1/H2 or selective-memory qualification.
+
+No new fits. The384calls comprise192wake and192Scratchpads. **96000 tokens are
+requested caps, not usage**: the reader stores strings, not native token IDs,
+so actual input/output usage is unavailable. Summed controller time is
+0.669809458A40-hours; launch-to-last-finish span843.467018seconds; full device
+reservations3224.829040seconds include audit idle. None is active-GPU compute
+or full campaign cost. Current model/six-adapter/source verification is Main's
+native receipt, not a fresh weight authentication by this writer.
+
+Sources: [relation memo](../research_notes/astra_memos/ASTRA_RELATION_SURFACE_TERMINAL_2026-09-12.md),
+[independent relation review](../research_notes/astra_memos/receipts_20260912/astra_relation_surface_independent_review_20260912.md),
+[behavior memo](../research_notes/astra_memos/ASTRA_BEHAVIOR_REREAD_TERMINAL_2026-09-12.md),
+[independent first-ACT review](../research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_independent_review_20260912.md),
+and [Main analysis](../research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_main_analysis_20260912.json).
+These completed reviews supersede the memos' earlier pending-review statements.
+
+The old pending-panel status is superseded by terminal C41. Main reports the
+elementary birth-teaching pair launched17:39UTC on node3GPUs0/1. Native preparation
+matches80rows/arm and4517input/912target tokens per epoch; four epochs,
+learning rate3e-4, rank8, seed0 are the selected recipe, **not measured outcomes**.
+This externally authored birth-style pair is live only here, with no readout,
+L1 pass or teaching-efficacy finding. Collaborator **UNSENT**; formal C11 deferred.
+
+**Historical September 12, 2026 — SEQ-094/095 window (C38/C39; pending-panel status superseded above).**
 Both RuleGame versions stop at formation with `MAIN_DECLINED_MATERIAL`:
 paired material shortage independently prevents both fits and all parent-free
 new-rule readouts, while Main also rejects acknowledgment-only control-contract
@@ -56,7 +113,7 @@ Evidence (Main-owned; read, not scientifically rerun here):
   [Main audit](../research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_main_audit_20260912.json).
 - Formation/material-decision capsule identities and limitations are in C38/C39.
 
-**Current preparation and raw-message-14 boundaries.** Main reports 96 CPU
+**Historical preparation status at the SEQ-094/095 cut; raw-message-14 boundaries.** Main reports 96 CPU
 tests after the tuple/list JSON-serialization repair to the fresh-behavior
 helper; native preparation is pending, source/candidate selection unchanged,
 and **no GPU/panel result exists at this cut**. The earlier preparation failure

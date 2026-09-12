@@ -2,7 +2,17 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026 — SEQ094/095 terminal update:** C38/C39 supersede earlier
+**September 12,2026,17:40UTC — terminal C40/C41:** independent bounded reviews
+PASS for SEQ096's relation counts and SEQ097's complete192 first-ACT records.
+The behavioral finding is mixed-exposure development, not confirmation: known
+prior readout IDs remain in the unchanged full16 primary. This supersedes
+earlier pending-panel/review statuses, not historical endpoints. Main reports
+the elementary birth-teaching pair launched17:39UTC on node3GPUs0/1; native
+equal-token preparation/live training supplies no outcome or L1 pass here.
+Canonical abstract, prior tables/appendix and claims remain preserved. No Git,
+network or model calls in this slice; collaborator UNSENT, formal C11 deferred.
+
+**Historical September 12, 2026 — SEQ094/095 terminal update (pending-panel status superseded by C41):** C38/C39 supersede earlier
 RuleGame not-launched statuses without changing historical results. Both
 versions have native capture checks and Main audits, `MAIN_DECLINED_MATERIAL`,
 paired shortage, no fits and no new-rule/parent-free readouts. No independent
@@ -877,7 +887,7 @@ resource-ownership guarantees.
   controller146460 started16:45:02.072678UTC, full release16:49:41.204311UTC.
   No fitted weights exist. Local pins do not authenticate official model origin.
 
-**Current preparation, not a panel outcome:** Main reports96CPUtests after the
+**Historical preparation at the SEQ095 cut (superseded by terminal C41):** Main reports96CPUtests after the
 fresh-behavior helper's tuple/list JSON-serialization fix. Native preparation
 remains pending, with source/candidate selection unchanged and no GPU/panel
 result at this documentation cut. The notebook's16:59UTC entry preserves the
@@ -901,3 +911,103 @@ causality nor forgetting of A1 parameters. These clarifications neither expand
 literature claims nor assert any cited paper was reproduced, and do not grant
 teacher/lesson training or birth authorization. Formal C11 remains deferred;
 the campaign is incomplete and the collaborator draft remains UNSENT.
+
+## C40 — Explicit shared definition resolves three local relation cases (SEQ096)
+
+Nine fresh calls, no parent/world action/adapter/fit: original full JSON yields
+1/3 correct relations and faithful records; generic-definition full JSON3/3;
+generic-definition token-only2/3 relations, with **no full-record endpoint**.
+Three preselected actual events come from one process-arm apply task, all with
+positive observations. Fixed fresh-run temperature0/seed and unchanged event
+fields isolate the added generic definition within the full-JSON comparison,
+not parenting or independent learning. Fullclarified adds26inputtokens/case,
+not a token-matched intervention. Token-only also changes format/cap and still
+fails absent prediction. Historical formation decoding differs; no old output
+is rescored/repaired, old root reopened or material approved. This is local
+interface-definition evidence, not general Boolean ability, strongest-teacher
+efficacy, internalization or G3/P1/G5/H1/H2 qualification.
+
+Independent bounded numerical/source-binding review **PASS** supersedes the
+memo's pending-review statement. All9outputs parse; the review verifies raw
+counts/bindings, not official model origin or an efficacy certificate. Actual
+input/output tokens2160/227, output caps624, generation-call sum6.726613119s;
+worker window81.985712571s includes cleanup, excludes outer verification,
+preparation/reduction/transfer, not active compute. Original/full/token caps
+are100/100/8. Cleanup escalation/warning is preserved, with captured release.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_RELATION_SURFACE_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_relation_surface_independent_review_20260912.md`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_relation_surface_terminal_20260912.tgz`,
+  SHA256 `acf05efb84c336b9afd3d495a81f37e43627d551dc4dd3999d5f8533353de2e0`;
+  captured `reduction.json` SHA256
+  `a8c5d25657cfa946dd8cc77bc7918621150ddccf612168963ffd61e159833dca`.
+  Immutable source `1d12a4c40de58944ea34c986ff87afafc415bbc3`; Main release
+  September12,17:19:03.887863UTC. Native receipts/review are read, not rerun here.
+
+## C41 — Useful-write signal on the unchanged mixed-exposure panel (SEQ097)
+
+All six paired reads complete with **zero new fits**. On the complete original
+16-item mixed-exposure development panel, optimizer seeds0/1/2 each yield
+useful ON3/16 versus actual useful OFF0/16 and corrupt ON/OFF0/16; difference
+of gains is+3solves for each. Independent first-ACT review **PASS** verifies
+all192episode-condition first ACTs and exact solved grids, with no numerical
+or solve-validity discrepancy. All six complete OFF raw-output vectors agree,
+including wake and Scratchpads, not only aggregate actions/scores. This is not
+whole-ledger byte equality or six independent baselines. Seeds share one
+training dataset and one panel; fixed useful-before-corrupt/OFF-before-ON
+order and possible device/time effects remain limits.
+
+Secondary partial-score means are OFF0.066477273 throughout; useful
+ON0.669140625/0.641015625/0.662109375; corrupt
+ON0.228515625/0.196875000/0.277734375. Corrupt also improves this measure,
+so the result is not uniformly corrupt harm or a substitute partial-score
+endpoint. Useful solves improve over actual OFF at every seed.
+
+**Freshness withdrawn before outcomes:** selected IDs1900071/1900072/1900073/
+1900075 have prior correction-utility model readouts. Main accepted this
+exposure omission before inspecting outcomes, retained all16 and every control,
+and withdrew comprehensive freshness. There is no exclusion, replacement,
+favorable subset endpoint, added fit/seed or retrospective rescue. Exact
+puzzle/solution nonoverlap with the original32training+16canary entries remains
+only that limited inventory check, not comprehensive research non-exposure,
+nonisomorphism, pretraining absence, confirmation or clean lineage. Prior
+readout exposure does not prove these adapters trained on those puzzles.
+The bounded write-associated behavioral difference is not general G2,
+G3/P1/G5/H1/H2, parenting/internalization, selective memory or mechanism freeze.
+
+**Cost units:**384generation requests=192wake+192Scratchpads. Requested output
+caps sum96000tokens; **native token IDs/counts were not stored**, so actual
+input/output usage is unavailable. Controller windows798.912518/792.254119/
+820.147412seconds sum2411.314050seconds=0.669809458A40-hours. First launch to
+last finish spans843.467018seconds. Full device reservations3224.829040seconds
+include audit idle, not active compute; inherited fitting/preparation/campaign
+work is excluded. Neither caps nor wall windows establish sustained throughput.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_BEHAVIOR_REREAD_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_independent_review_20260912.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_main_analysis_20260912.json`;
+  analysis source `research_notes/astra_memos/receipts_20260912/astra_analyze_fresh_behavior_20260912.py`.
+- Exposure chronology: `research_notes/analysis/2026-09-12_fresh_behavior_panel_causal_audit.md`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_terminal_20260912.tgz`,
+  SHA256 `583d02e71e983169491ec8f5d2e37ae582c74b8aae0aa3c3f7091572c8ba489e`;
+  `first_act_report.json` SHA256
+  `8e1990b4f3787fd5ef1ae60e5c0141872c9d91e11934edb6431158749582b99a`.
+  Executing source `e67539d2ec7a76681e992aac2c83e118fa4740c4`; Main release
+  September12,17:24:03.316192UTC. Current model/six-adapter/source identities
+  are native-verified; the capsule excludes weights. Independent captured
+  custody checks are not fresh remote rehashing, loaded-weight inspection or
+  official-origin authentication. Completed review supersedes pending status.
+
+**Dated scope, no live-pair outcome:** at September12,17:40UTC, terminal C41
+supersedes the earlier pending-panel preparation status. Main reports the
+elementary birth-teaching pair launched17:39UTC on node3GPUs0/1. Native
+preparation shows equal80rows/arm,4517input/912target tokens per epoch; selected
+four epochs, AdamW3e-4, rank8, seed0 are preparation/live-recipe facts, not
+completed work or outcomes. This externally authored birth-style positive
+control is not child sleep; no live parent or child-generated corpus is implied.
+No L1 pass, speculative teaching result, confirmation or C11 completion is
+reported. The17:39UTC notebook entry records preparation; Main's supplied
+launch update supplies live status. Formal C11 remains deferred and the
+collaborator draft remains UNSENT.

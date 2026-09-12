@@ -5234,3 +5234,31 @@ supervisedcleanup andMainfullrelease. No completion orscores asserted.
 64confirmationcases stillunrequested; actuallaunchreceipts recovered toVM.
 HANDOFF/STATE corrected: fits complete, readouts live. Independent manuscript
 review and /tmp-only replicationtool preparation runparallel, no otherlaunch.
+
+## [Builder] 2026-09-12 17:56 UTC — SEQ-098 terminal; elementary behavior yes, memory binding no
+
+All3 native readouts complete with full releases: OFF GPU2/PID161951
+17:51:59.026301UTC; teach GPU0/PID162343 17:52:21.108305;
+control GPU1/PID162972 17:52:46.411485. No Main GPU reservation remains.
+32/32correct ACT in allstates; PREDICTbeforeACT teach32/32 vscontrol/OFF0/32.
+Memory teach/control4/16 vsOFF0/16, BUT bothtrainedsayredforall16devices;
+OFF16invalidproseanswers. +4 is not learned device-colorbinding.
+Freshprocess textualformattransfer, not arithmeticgain/intelligentprediction,
+parenting/H1/H2/G3/P1/G5/cleanlineage/origin/freeze. Seed0exploratory only.
+
+Native144calls audited;6393input/2156output actualtokens,9216outputcapNOTusage.
+77.101526generationseconds;343.238841supervisedreadoutseconds;
+fits+readouts476.237894supervisedseconds=7.94A40min. Rawoutputs and failures
+preserved. CapsuleSHA d8f343979f10d358f11ed21fb7896a462b88cfd5d833fee2bf0dab340f19b082.
+Weights remainnode3, excludedcapsule; actualhashescheckednatively.
+64confirmationcases stillunrequested. Terminalmemo andanalysisscript archived.
+
+Nextselected: pairedoptimizerseeds1/2 UNCHANGEDrecipe on same48development
+cases, sameOFFbase/inputbinding; fourfit/readoutarms after newvacancychecks,
+plannednode3GPU0/1seed1, GPU2/3seed2. Exactlaunchlog/PIDs followonceCPUtestsand
+nativepreparationpass. Expected~2minfit+2minreadout perarm,600sworkerbounds;
+trackactualsupervisioninside original90A40minbudget. NoLR/epochchange yet.
+Separate16originaltrainingpromptmemorydiagnostic beingimplemented to distinguish
+acquisition fromparaphrasetransfer; no confirmation/no endpointreplacement.
+Manuscript096/097 six-file reviewPASS at205wordcompanionabstract/parity;
+canonicalabstract/tables/appendixpreserved, TeXtoolsabsent, collaboratorUNSENT.

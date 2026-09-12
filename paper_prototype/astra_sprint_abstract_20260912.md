@@ -1,21 +1,38 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026, SEQ094/095 terminal update:** both RuleGame versions
-stop before fits or readouts, with native captures and Main audits; execution
-repair is not learning. C38/C39 preserve shortage and control-contract defects.
-Main reports 96 CPU tests after the fresh-behavior serialization repair;
-native preparation remains pending with unchanged source/candidate selection
-and no GPU/panel result. The canonical abstract is unchanged; formal C11 is deferred.
+**September 12, 2026, 17:40 UTC update:** terminal SEQ096/097 have independent
+bounded reviews PASS. The complete behavioral endpoint is mixed-exposure
+development, not fresh confirmation. The elementary birth-teaching pair
+launched at 17:39 UTC on node3 GPUs0/1 has no outcomes or L1 pass reported
+here. Canonical abstract unchanged; formal C11 deferred.
 
-September 12, 2026. **Internal staging only; not a replacement for the canonical abstract or a completed-manuscript claim.** The current evidence cut includes terminal SEQ094/095 with native checks and Main audits, not a completed independent teaching-efficacy review; SEQ091–093 retain their earlier results and scoped reviews. Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit, remain earlier results with their original limits. Original defective scores are preserved, not rehabilitated; generation observations remain. H1/H2 remain the proposed developmental thesis.
+September 12, 2026. **Internal staging only; not a replacement for the canonical abstract or a completed-manuscript claim.** The current evidence cut includes terminal SEQ096/097 and their bounded independent reviews, not parenting-efficacy certification; SEQ091–095 retain their earlier results and scoped reviews. Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit, remain earlier results with their original limits. Original defective scores are preserved, not rehabilitated; generation observations remain. H1/H2 remain the proposed developmental thesis.
 
 ## Abstract
 
-Can developmental teaching improve useful training material and later learning after teacher removal? We study this proposed chain with a frozen instruction-tuned model and LoRA consolidation. Oracle useful-board material yields 2, 3, and 5 solves across three optimizer seeds on 16 reused development boards, versus 0, 1, and 0 for wrong-board material and zero with adapters OFF. Worked-example source grounding is process 2/8 versus format 0/8, with application 1/8 versus 0/8; the sole valid application follows an invalid source and remains note-present. Fresh-base cumulative reconstruction gives OLD fact/frame gain ratios of 1.169/0.493 with substantial NEW bicycle spill, not warm-start retention. A separate citation-prefix write changes outputs but yields no valid complete records on eight exposed boards, not proof of no parameter learning. Interactive RuleGame v1 has eight protocol-invalid tasks, zero process records and two faithful active-control records. Versioned interface repair yields eight valid quiz interactions, but only 1/6 process and 3/6 active-control records are faithful. First-two selection returns one versus two, below the paired requirement. Both versions also violate the acknowledgment-only control contract and stop before fits or parent-free readouts. The improvement is execution repair, not learned behavior. The relation mapping is not explicit; ambiguity versus a skill deficit remains unresolved. Generic feedback from the same 7B model does not explicitly teach the failing judgment or test the strongest teacher. These disaggregated cycles are not completed childhoods or evidence of internalization, selective memory, P1/G5, H1/H2, a mechanism freeze, or campaign completion.
+Can developmental teaching improve the material an agent learns from and its later behavior after teacher removal? We separate material correctness, interface usability, and adapter-mediated behavioral utility using a frozen instruction-tuned model and LoRA consolidation. Earlier diagnostics show that changing weights or producing valid syntax does not establish selective memory; two interactive formation versions stop before writing because paired material is insufficient and control contracts deviate. In a separate no-fit check of three actual events, adding a generic relation definition raises full-record faithfulness from 1/3 to 3/3; token-only answers score 2/3. This resolves these local interface failures, not parenting or general Boolean competence. A zero-new-fit behavioral reread finds 3/16 first-action solves for each of three useful-material adapters, versus zero for all paired OFF and corrupt conditions. Corrupt material also improves secondary partial scores, so it is not uniformly harmful. Four panel items had prior model-readout exposure; comprehensive freshness was withdrawn before outcomes, and the complete original 16-item endpoint was retained without subset rescue. Exact nonoverlap with the original 48 training/canary entries does not restore confirmation or clean lineage. The bounded write-associated signal motivates further study, but these shared-panel optimizer seeds do not establish independent developmental replication, parenting, internalization, selective retained learning, H1/H2, or campaign completion.
 
 ## Evidence and interpretation boundaries
 
-**SEQ094/095 — C38/C39 formation stops, not learning.** V1 has eight invalid
+**September 12,17:40UTC — C40/C41.** SEQ096 has independent bounded PASS:
+original/fullclarified/tokenclarified relations1/3,3/3,2/3; token-only has no
+full-record endpoint. A generic definition fixes these selected cases, not
+parenting or old-root writing. SEQ097 has independent PASS on all192 first
+ACTs: useful ON3/16 at each optimizer seed, every OFF/corrupt0/16, complete OFF
+output vectors equal. Secondary partial scores also improve for corrupt ON.
+IDs1900071/1900072/1900073/1900075 have prior readout exposure; comprehensive
+freshness was withdrawn before outcomes and the full16 primary retained with
+no subset rescue. Exact original48-entry nonoverlap is not confirmation,
+clean lineage or gates. No new fits;384calls,96000cap tokens (actual native
+token usage unavailable),0.669809458summed controller A40-hours,
+843.467018wall span and3224.829040reservation seconds including audit idle.
+
+Old pending-panel statements are historical. The elementary birth-teaching
+pair launched17:39UTC on node3GPUs0/1 is live only:80rows/arm,
+4517input/912target tokens per epoch, planned4epochs/3e-4/rank8/seed0.
+No outcomes, L1 pass or speculative findings are included. Formal C11 deferred.
+
+**Historical SEQ094/095 — C38/C39 formation stops, not learning.** V1 has eight invalid
 tasks, no scored quizzes, zero process record opportunities and two faithful
 active records of four. Its zero-filled quiz scores are not observed wrong
 answers. V2 has eight valid first quizzes, 24 True TRY outcomes and faithful
@@ -36,9 +53,8 @@ Main's notebook response to raw message 14 (September 12, 16:53 UTC) states no
 validated perfect teaching corpus, disaggregated cycles rather than childhoods,
 no project level-1/base updates and unverified bootstrap-v3 birth material.
 SEQ092 supplies no sleep-interval causality or A1-parameter forgetting result.
-The fresh-behavior helper's 96 CPU tests are Main-reported after tuple/list JSON
-repair; native preparation remains pending with unchanged selection and no
-GPU/panel result. Formal C11 is deferred. No new literature/reproduction or
+At that historical cut the repaired helper awaited native preparation;
+terminal C41 supersedes the pending-panel status on September 12, 17:40 UTC. Formal C11 is deferred. No new literature/reproduction or
 teacher/lesson-training claim is introduced.
 
 **Historical September 12, 16:20 UTC — C36/C37 terminal boundaries.** SEQ092 is fresh-base
@@ -99,4 +115,4 @@ same-prefix Markdown/JSON/Python receipts linked in C35 and retains GPU work.
 - **C28 semantic Q0 terminal:** original-source replay label `OPTIMIZATION_INCONCLUSIVE`; binding/spill false, interface true. Root0+/− and root1+/− balanced accuracies.578125/.515625/.5/.53125, OFF gains.078125/.015625/.015625/.015625. All cell output validity1.0; recorded locality-family TV numbers span.275157–.659671 but their original probability interpretation is invalid; corrected supplementary diagnostics are separate in C30. Four256-step fits/14stages,1414.695execution seconds plus external replay/release. Conditional TV misses common-mode absolute shifts; absolute net legality change can cancel item flips. These assay limits are not newly measured hidden effects; no selective-writer promotion.
 - **SEQ086 / C30 supplementary rescore:**832new equal-shape scores across five fresh states,880original generations reused, zero new fits;347.468seconds. Same generation BA and `OPTIMIZATION_INCONCLUSIVE` label, binding/spill false, interface true. Mean conditional log-q gains1.0789566/.9514255/.6465927/.6083202; mean binary conditional TV.2800904–.6563001. Separate score diagnostics, not original-gate rescue, new learning or selective-writer qualification.
 
-Exact memos, receipts and permitted claims are linked in `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C39. Historical A1/A2, W0 invalidity and original P0 custody remain documented in C03–C13; they are not replaced by these newer diagnostics. Local model-origin authentication remains unresolved. Ordinary exploratory hygiene applies; final paper-grade C11 work stays deferred under Rohin's steer, not a new launch gate. Canonical component evidence is updated separately without changing its characterization abstract, historical tables or appendix. No literature entries are added and no collaborator message is sent.
+Exact memos, receipts and permitted claims are linked in `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C41. Historical A1/A2, W0 invalidity and original P0 custody remain documented in C03–C13; they are not replaced by these newer diagnostics. Local model-origin authentication remains unresolved. Ordinary exploratory hygiene applies; final paper-grade C11 work stays deferred under Rohin's steer, not a new launch gate. Canonical component evidence is updated separately without changing its characterization abstract, historical tables or appendix. No literature entries are added and no collaborator message is sent.
