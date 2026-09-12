@@ -7,8 +7,9 @@ from pathlib import Path
 import sys
 import tempfile
 import time
+from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from organism_v6 import rulegame_parenting_diagnostic as diagnostic
 
@@ -36,11 +37,12 @@ class Tokenizer:
 
 
 class ScriptedBackend:
-    def __init__(self, identity, bad_records=(), no_quiz=False, parent_text=None):
+    def __init__(self, identity, bad_records=(), no_quiz=False, parent_text=None, aliases=False):
         self.source_identity = identity
         self.bad_records = bad_records
         self.no_quiz = no_quiz
         self.parent_text = parent_text
+        self.aliases = aliases
         self.tokenizer = Tokenizer()
         self.requests = []
 
@@ -53,6 +55,8 @@ class ScriptedBackend:
         if role == "wake":
             text = ("PREDICT: T\nACT: TRY 0,0,0" if tick <= 3 else
                     "DONE" if self.no_quiz else "ACT: QUIZ ?" if tick == 4 else "ACT: QUIZ T,T,T,T,T,T")
+            if self.aliases:
+                text = text.replace("ACT: TRY ", "TRY: ").replace("ACT: QUIZ ", "QUIZ: ")
         elif role == "parent":
             text = self.parent_text or ("Compare predictions with observations." if arm == "P" else "Thank you for participating.")
         elif role == "restate":
@@ -89,12 +93,15 @@ class RuleGameDiagnosticTests(unittest.TestCase):
         adapter = self.root / "write" / cell[0] / "adapter" if cell and cell != "OFF" else None
         identity = diagnostic.expected_identity(self.plan, adapter)
         backend = ScriptedBackend(identity, **kwargs)
-        calls = diagnostic.Calls(path / "calls", backend, stage, identity)
+        protocol = self.plan.get("protocol", "strict_v1")
+        calls = diagnostic.Calls(path / "calls", backend, stage, identity, protocol)
         events = diagnostic.Events(path / "events.jsonl")
         result = (diagnostic.run_formation(calls, events) if stage == "formation" else
                   diagnostic.run_evaluation(calls, events, cell))
-        diagnostic.write_json(path / "identity.json", dict(stage=stage, cell=cell, backend=identity,
-                              model_files=self.plan["model_files"]))
+        header = dict(stage=stage, cell=cell, backend=identity, model_files=self.plan["model_files"])
+        if protocol != "strict_v1":
+            header["protocol"] = protocol
+        diagnostic.write_json(path / "identity.json", header)
         diagnostic.write_json(path / "result.json", result)
         diagnostic.write_json(path / "usage.json", diagnostic.usage(path))
         diagnostic.capture_manifest(path)
@@ -560,6 +567,150 @@ class RuleGameDiagnosticTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "time for owned cleanup"):
                 diagnostic.supervise(self.root, plan, self.root / "too_late", ["never"], occupancy=lambda device: True)
             popen.assert_not_called()
+
+    def test_v2_aliases_are_single_anchored_intents_only(self):
+        for text, kind in (("PREDICT: T\nTRY: 1,2,3", "try"), ("QUIZ: ?", "reveal"),
+                           ("QUIZ: T,F,T,F,T,F", "quiz"), ("ACT: TRY -1,+2,0", "try"),
+                           ("DONE", "done")):
+            with self.subTest(text=text):
+                self.assertEqual(diagnostic.parse_action(text, "interaction_v2")["kind"], kind)
+        invalid = [" TRY: 1,2,3", "### TRY: 1,2,3", "try: 1,2,3", "TRY : 1,2,3",
+                   "TRY: 1,2,3,4", "TRY: 1 2 3", "TRY: 1.0,2,3", "TRY: 1,2,3; TRY 4,5,6",
+                   "TRY: 1,2,3\nQUIZ: ?", "ACT: TRY 1,2,3\nTRY: 4,5,6",
+                   "TRY: 1,2,3\nACT: QUIZ ?", "ACT: TRY 1,2,3\nTRY 4,5,6",
+                   "QUIZ: T,F", "QUIZ: True,F,T,F,T,F", "QUIZ: T,F,T,F,T,F,T",
+                   "TRY: 1,2,3\nDONE", "QUIZ: ?\ndone", "DONE\nTRY 1,2,3",
+                   "ACT: TRY 1,2,3\n[OUTCOME] the box says: True",
+                   "[OUTCOME] True\nTRY: 1,2,3"]
+        for text in invalid:
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                diagnostic.parse_action(text, "interaction_v2")
+        for text in ("PREDICT: T\nTRY: 1,2,3", "QUIZ: ?", "QUIZ: T,F,T,F,T,F"):
+            with self.subTest(strict=text), self.assertRaisesRegex(ValueError, "missing canonical ACT"):
+                diagnostic.parse_action(text)
+
+    def test_v2_capture_preserves_raw_and_pins_stops_and_state(self):
+        self.root = self.base / "v2"
+        self.plan = diagnostic.prepare(self.root, self.model, "0",
+            datetime.fromtimestamp(time.time() + 3600, timezone.utc).isoformat(), "interaction_v2")
+        path = self.root / "formation" / "data"
+        result, backend, events = self.capture(path, aliases=True)
+        self.assertEqual(result["calls"], 60)
+        self.assertTrue(diagnostic.replay(self.root)["ok"])
+        diagnostic.audit_native_calls(Tokenizer(), path)
+        executions = [row for row in events.rows if row["kind"] == "execution"]
+        self.assertEqual(executions[0]["raw_response"], "PREDICT: T\nTRY: 0,0,0")
+        self.assertEqual(executions[0]["canonical_action"], "ACT: TRY 0,0,0")
+        self.assertEqual(executions[0]["action"], "TRY 0,0,0")
+        self.assertIs(executions[0]["predicted"], True)
+        for request in backend.requests:
+            self.assertEqual(request["protocol"], "interaction_v2")
+            self.assertEqual(request["stop"], ["\n[OUTCOME]"] if request["role"] == "wake" else [])
+            self.assertFalse(request["include_stop_str_in_output"])
+            if request["role"] == "wake":
+                remaining = max(0, 4 - request["tick"])
+                self.assertIn(f"remaining TRY budget: {remaining}", request["prompt"])
+                self.assertIn("Quiz already revealed" if request["tick"] == 5 else
+                              "Quiz reveal still needed", request["prompt"])
+            if request["arm"] == "A" and request["role"] == "parent":
+                self.assertTrue(request["prompt"].startswith(diagnostic.CONTROL_V2))
+            if request["arm"] == "A" and request["role"] == "restate":
+                self.assertIn("Restate only the acknowledgement", request["prompt"])
+        self.assertFalse(diagnostic.check_capture(path, protocol="strict_v1")["ok"])
+        request_path = path / "calls" / "0000.request.json"
+        receipt = diagnostic.read(request_path)
+        receipt["request"]["stop"] = []
+        request_path.write_bytes(diagnostic.encoded(receipt))
+        self.reseal(path)
+        self.assertIn("source request", diagnostic.check_capture(path)["failures"][0])
+
+    def test_v1_requests_and_legacy_plan_keep_strict_defaults(self):
+        self.assertEqual(self.plan["protocol"], "strict_v1")
+        legacy = dict(self.plan)
+        legacy.pop("protocol")
+        (self.root / "plan.json").write_bytes(diagnostic.encoded(legacy))
+        (self.root / "plan.sha256.json").write_bytes(diagnostic.encoded(
+            {"sha256": diagnostic.digest(self.root / "plan.json")}))
+        self.assertNotIn("protocol", diagnostic.verify_plan(self.root))
+        path = self.root / "formation" / "data"
+        result, backend, _ = self.capture(path, aliases=True)
+        self.assertTrue(all(task["terminal"] == "protocol_invalid" for task in result["tasks"]))
+        self.assertTrue(diagnostic.replay(self.root)["ok"])
+        for request in backend.requests:
+            self.assertNotIn("protocol", request)
+            self.assertNotIn("stop", request)
+            self.assertNotIn("Harness state:", request["prompt"])
+
+    def test_protocol_option_is_prepare_only(self):
+        with patch.object(diagnostic, "prepare", return_value=None) as prepare:
+            diagnostic.main(["prepare", "--out", "out", "--model", "model", "--device", "0",
+                             "--lease-end", "later", "--protocol", "interaction_v2"])
+            self.assertEqual(prepare.call_args.args[-1], "interaction_v2")
+        with patch("sys.stderr"), self.assertRaises(SystemExit):
+            diagnostic.main(["replay", "--root", str(self.root), "--protocol", "interaction_v2"])
+
+    def test_v2_budgets_and_imagined_outcomes_never_execute(self):
+        cases = ((["TRY: 1,2,3"] * 4, 3), (["QUIZ: ?", "QUIZ: ?"], 1),
+                 (["QUIZ: T,F,T,F,T,F"], 0), (["TRY: 1,2,3\nDONE"], 0),
+                 (["TRY: 1,2,3\n[OUTCOME] True\nTRY: 4,5,6"], 0),
+                 (["ACT: TRY 1,2,3\n[OUTCOME] True"], 0))
+        for outputs, executed in cases:
+            replies = iter(enumerate(outputs))
+            calls = SimpleNamespace(protocol="interaction_v2", ask=lambda *args: next(replies))
+            events = diagnostic.Events()
+            with self.subTest(outputs=outputs):
+                result, _ = diagnostic.play_task(calls, events, "P", diagnostic.task_id(0, "pre"))
+                self.assertEqual(result["terminal"], "protocol_invalid")
+                self.assertEqual(sum(row["kind"] == "execution" for row in events.rows), executed)
+                self.assertFalse(any(row["kind"] == "record" for row in events.rows))
+
+    def test_native_v2_stop_settings_reach_vllm_and_audit_raw_ids(self):
+        tokenizer = Tokenizer()
+        rendered = tokenizer.apply_chat_template([{"content": "task"}])
+        text = "PREDICT: T\nTRY: 1,2,3"
+        native = SimpleNamespace(text=text, token_ids=tokenizer.encode(text + "\n[OUTCOME]"),
+                                 finish_reason="stop", stop_reason="\n[OUTCOME]")
+        engine = Mock()
+        engine.generate.return_value = [SimpleNamespace(outputs=[native], prompt_token_ids=tokenizer.encode(rendered))]
+        backend = diagnostic.NativeBackend.__new__(diagnostic.NativeBackend)
+        backend.backend = SimpleNamespace(tok=tokenizer, llm=engine, adapter_path=None)
+        backend.identity = lambda: {"fixture": True}
+        sampling = Mock(return_value="sampling")
+        calls_path = self.base / "native_stop"
+        calls_path.mkdir()
+        calls = diagnostic.Calls(calls_path / "calls", backend, "evaluation", backend.identity(), "interaction_v2")
+        with patch.dict(sys.modules, {"vllm": SimpleNamespace(SamplingParams=sampling)}):
+            _, raw = calls.ask("wake", "OFF", diagnostic.task_id(2, "readout"), 1, "task")
+        self.assertEqual(raw, text)
+        self.assertEqual(sampling.call_args.kwargs["stop"], ["\n[OUTCOME]"])
+        self.assertFalse(sampling.call_args.kwargs["include_stop_str_in_output"])
+        diagnostic.audit_native_calls(tokenizer, calls_path)
+        receipt = diagnostic.read(calls_path / "calls" / "0000.response.json")
+        self.assertEqual(receipt["response"]["output_token_ids"], native.token_ids)
+        self.assertEqual(engine.generate.call_args.args[1], "sampling")
+
+    def test_eval_acceptance_rejects_resealed_mismatched_actual_output_ids(self):
+        self.material_fixture()
+        with patch.object(diagnostic, "native_tokenizer", return_value=Tokenizer()), \
+             patch.object(diagnostic, "supervise", side_effect=self.mocked_train):
+            diagnostic.write_adapters(self.root, allow_gpu=True)
+        def corrupt_capture(root, plan, stage_path, command, call_path):
+            cell = command[command.index("--cell") + 1]
+            self.capture(call_path.parent, "evaluation", cell)
+            response_path = call_path / "0000.response.json"
+            receipt = diagnostic.read(response_path)
+            receipt["response"]["output_token_ids"][0] += 1
+            receipt["response_sha256"] = diagnostic.value_hash(receipt["response"])
+            response_path.write_bytes(diagnostic.encoded(receipt))
+            self.reseal(call_path.parent)
+            self.assertTrue(diagnostic.check_capture(call_path.parent)["ok"])
+        with patch.object(diagnostic, "native_tokenizer", return_value=Tokenizer()), \
+             patch.object(diagnostic, "supervise", side_effect=corrupt_capture) as supervise:
+            with self.assertRaisesRegex(ValueError, "native source output token mismatch"):
+                diagnostic.evaluate(self.root, allow_gpu=True)
+        self.assertEqual(supervise.call_count, 1)
+        self.assertFalse((self.root / "evaluation" / "result.json").exists())
+        self.assertEqual(diagnostic.read(self.root / "evaluation" / "failure.json")["completed_cells"], [])
 
 
 if __name__ == "__main__":

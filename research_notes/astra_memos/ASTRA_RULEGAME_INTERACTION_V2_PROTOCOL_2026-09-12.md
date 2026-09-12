@@ -21,7 +21,8 @@ they do not yet measure successful rule induction or parenting efficacy.
    numbers, ambiguous predictions, unexposed quizzes and exhausted budgets.
 3. Remind the child of remaining TRY budget and quiz-reveal state using only
    harness state, not hidden rules, answer labels or parental decisions.
-4. Clarify the generated neutral parent's acknowledgment-only request: no
+4. Clarify the generated neutral parent's acknowledgment-only request and
+   the control child's acknowledgment-only restatement prompt: no
    asking about quiz outcomes, learned lessons or task reflection. Main still
    inspects all actual parent/control turns and restatements. No heuristic
    becomes a semantic certificate, and no defective control is silently fixed.

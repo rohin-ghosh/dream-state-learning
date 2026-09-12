@@ -1,4 +1,17 @@
-# Astra restart checkpoint — 2026-09-12 16:30 UTC
+# Astra restart checkpoint — 2026-09-12 16:43 UTC
+
+Latest superseding status: NO MainGPUjob/reservation. SEQ094 strictformation
+finished, nativechecked/released16:34:30UTC; P0/A2eligible, all8tasksinvalid,
+Maincontrolauditdeclined. No fits/readouts, no rerun into oldroot. Exact
+terminalmemo/capsules/audit archived. Locke's interaction-v2 repair in the
+diagnostic/test is EDIT-STOP; Main70CPUtestsPASS, nativepreparationnext.
+V2 uses freshroot astra_rulegame_interaction_v2_20260912_attempt1. Defaultv1
+preserved; no retrospectiveparserrepair. WorkerWegener01a09677-6fe5-7152-8b19-f94d490c5324
+owns only organism_v6/fresh_behavior_panel.py and its test, implementing Main's
+selected no-new-fit, solution-disjoint16board reread of six existing adapters.
+SixOFF/ONpairs, optimizerseeds0/1/2, firstACTendpoint; no panel/GPUyet.
+All other listed agents closed. RuleGameordinaryaudit remains, C11deferred.
+Below16:30livejob descriptions are historical and superseded.
 
 Live update: RuleGame formation142838/node3GPU0 launched16:30:31UTC from
 aff89c4f034407120fc7badd064660492e0011cf after Main/native63tests and native

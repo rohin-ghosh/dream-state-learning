@@ -46,6 +46,12 @@ These observations justify one separately versioned communication repair,
 not retrospective parsing, rescoring or an unchanged seed hunt. The selected
 v2 specification is `ASTRA_RULEGAME_INTERACTION_V2_PROTOCOL_2026-09-12.md`.
 
+Matched request seeds do not guarantee identical native outputs: pre-rule0
+calls0002(P) and0014(A) have identical prompt bytes/input-token IDs/seed but
+different responses. The preceding two pairs agree; later histories diverge.
+Cause is unlocalized. Preserve actual arm baselines, not a pooled deterministic
+counterfactual. This does not contradict native deterministic rule outcomes.
+
 ## Costs and immutable receipts
 
 32 responses:20wake,4parent,4restatement,4record. Actual native prompt/output

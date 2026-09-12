@@ -1,6 +1,7 @@
 """Fixed 156-response RuleGame diagnostic; formation stops for Main's audit.
 
 CPU: prepare --out ROOT --model LOCAL_MODEL --device GPU --lease-end ISO8601
+Opt-in interface repair: prepare ... --protocol interaction_v2 (exploratory only).
 GPU opt-in: formation --root ROOT --allow-gpu
 CPU: replay --root ROOT; material --root ROOT --main-audit AUDIT.json
 GPU opt-in: write --root ROOT --allow-gpu; evaluate --root ROOT --allow-gpu
@@ -52,6 +53,7 @@ CALL_SECONDS = 120
 LOAD_SECONDS = 180
 CLEANUP_GRACE = 100
 CLEANUP_RESERVE = 140
+PROTOCOLS = ("strict_v1", "interaction_v2")
 BOOT = nursery_dialogue.CHILD_BOOT + """
 For this bounded task emit at most one ACT per response. You have five responses:
 up to three TRY actions, one ACT: QUIZ ? reveal, and one six-label ACT: QUIZ.
@@ -62,6 +64,12 @@ CONTROL = """You are an active neutral conversational parent. Acknowledge the ch
 participation, then ask it to restate that acknowledgment. Do not give strategy,
 hypotheses, rules, answers, action recommendations, or evaluated corrections.
 Keep the acknowledgment under 120 words. Child transcript:\n---\n"""
+CONTROL_V2 = """You are an active neutral conversational parent. Acknowledge only the
+child's participation, then explicitly request an acknowledgement-only restatement.
+Do not ask for task reflection, quizzes, what was learned, or a task summary.
+Do not give strategy, hypotheses, rules, answers, action recommendations, or
+evaluated corrections. Keep the acknowledgment under 120 words.
+Child transcript:\n---\n"""
 RECORD = """Record only the TRY just executed and its returned result. Output one JSON
 object with keys "try", "observed", "predicted", and "relation". "try" is the
 submitted array of three integers; "observed" is the returned Boolean.
@@ -169,7 +177,8 @@ def fresh_directory(path, model=None):
     return path
 
 
-def prepare(out, model, device, lease_end):
+def prepare(out, model, device, lease_end, protocol="strict_v1"):
+    require(protocol in PROTOCOLS, "unknown interaction protocol")
     model = Path(model).expanduser().resolve(strict=True)
     require(model.is_dir(), "local model directory required")
     require(read(model / "config.json").get("model_type") == "qwen2", "expected pinned Qwen base")
@@ -179,7 +188,7 @@ def prepare(out, model, device, lease_end):
     game = RuleGame()
     panels = {eid: game.quiz_triples(eid) for group in schedule().values() for eid in group}
     require(all(len(panel) == 6 for panel in panels.values()), "incomplete six-item quiz")
-    plan = dict(schema=1, model=str(model), model_files=model_hashes(model), device=device,
+    plan = dict(schema=1, protocol=protocol, model=str(model), model_files=model_hashes(model), device=device,
                 lease_end=end.timestamp(), reserved_seconds=RESERVED_SECONDS, source_hashes=sources(),
                 schedule=schedule(), panels=panels, train=TRAIN, limits=LIMITS, token_caps=TOKENS,
                 gen_seed=GEN_SEED, origin="local-byte pins, not base-origin authentication",
@@ -194,6 +203,7 @@ def verify_plan(root, check_model=True):
     root = Path(root).resolve(strict=True)
     require(digest(root / "plan.json") == read(root / "plan.sha256.json")["sha256"], "plan changed")
     plan = read(root / "plan.json")
+    require(plan.get("protocol", "strict_v1") in PROTOCOLS, "unknown interaction protocol")
     require(plan["source_hashes"] == sources(), "source bytes changed")
     require(plan["schedule"] == schedule() and plan["train"] == TRAIN and plan["limits"] == LIMITS
             and plan["token_caps"] == TOKENS and plan["gen_seed"] == GEN_SEED
@@ -206,7 +216,23 @@ def verify_plan(root, check_model=True):
     return plan
 
 
-def parse_action(text):
+def parse_action(text, protocol="strict_v1"):
+    require(protocol in PROTOCOLS, "unknown interaction protocol")
+    if protocol == "interaction_v2":
+        require(not re.search(r"\[\s*OUTCOME\s*\]", text, re.IGNORECASE), "imagined OUTCOME in response")
+        intents = list(re.finditer(r"\b(?:ACT|TRY|QUIZ)\s*:", text, re.IGNORECASE))
+        if intents:
+            require(len(intents) == 1, "multiple action markers")
+            require(not re.search(r"^\s*DONE\b", text, re.MULTILINE | re.IGNORECASE), "action and DONE coexist")
+            marker = intents[0]
+            start = text.rfind("\n", 0, marker.start()) + 1
+            line = text[start:].splitlines()[0]
+            if not marker.group().startswith("ACT"):
+                require(marker.start() == start and line.startswith(("TRY: ", "QUIZ: ")),
+                        "noncanonical alias line")
+                text = text[:start] + "ACT: " + line.replace(":", "", 1) + text[start + len(line):]
+        require(not re.search(r"^\s*(?:TRY|QUIZ)\b", text, re.MULTILINE | re.IGNORECASE),
+                "unanchored or additional action")
     markers = list(re.finditer(r"\bACT\s*:", text, re.IGNORECASE))
     if not markers:
         if re.fullmatch(r"\s*DONE\s*:?\s*", text):
@@ -280,7 +306,9 @@ class NativeBackend:
         rendered = backend.tok.apply_chat_template([{"role": "user", "content": request["prompt"]}],
                                                    tokenize=False, add_generation_prompt=True)
         require(len(backend.tok.encode(rendered)) + request["max_tokens"] <= MAX_MODEL_LEN, "prompt exceeds model limit")
-        sampling = SamplingParams(max_tokens=request["max_tokens"], temperature=request["temperature"], seed=request["seed"])
+        stops = {key: request[key] for key in ("stop", "include_stop_str_in_output") if key in request}
+        sampling = SamplingParams(max_tokens=request["max_tokens"], temperature=request["temperature"],
+                                  seed=request["seed"], **stops)
         lora = backend._LoRARequest("life", 1, backend.adapter_path) if backend.adapter_path else None
         outputs = backend.llm.generate([rendered], sampling, lora_request=lora, use_tqdm=False)
         require(len(outputs) == 1 and len(outputs[0].outputs) == 1, "native generation cardinality mismatch")
@@ -290,9 +318,19 @@ class NativeBackend:
                     finish_reason=result.finish_reason, stop_reason=result.stop_reason)
 
 
+def interaction_settings(protocol, role):
+    require(protocol in PROTOCOLS, "unknown interaction protocol")
+    if protocol == "strict_v1":
+        return {}
+    return dict(protocol=protocol, stop=["\n[OUTCOME]"] if role == "wake" else [],
+                include_stop_str_in_output=False)
+
+
 class Calls:
-    def __init__(self, path, backend, stage, identity):
+    def __init__(self, path, backend, stage, identity, protocol="strict_v1"):
         self.path, self.backend, self.stage, self.identity = Path(path), backend, stage, identity
+        require(protocol in PROTOCOLS, "unknown interaction protocol")
+        self.protocol = protocol
         self.path.mkdir()
         self.counts = Counter()
         self.count = 0
@@ -304,7 +342,8 @@ class Calls:
         salt = {"wake": 0, "record": 0x5A5A, "parent": 0x1010, "restate": 0x2020}[role]
         request = dict(call_id=call_id, role=role, arm=arm, eid=eid, tick=tick, prompt=prompt,
                        seed=_seed_for(eid, tick, GEN_SEED ^ salt), max_tokens=TOKENS[role],
-                       temperature=.5 if role in ("parent", "restate") else .7)
+                       temperature=.5 if role in ("parent", "restate") else .7,
+                       **interaction_settings(self.protocol, role))
         self.count += 1
         self.counts[role] += 1
         write_json(self.path / f"{call_id}.request.json", dict(request=request, started=time.monotonic(),
@@ -317,8 +356,9 @@ class Calls:
 
 
 class ReplayCalls:
-    def __init__(self, path, identity):
+    def __init__(self, path, identity, protocol="strict_v1"):
         self.path, self.identity = Path(path), identity
+        self.protocol = protocol
         self.count = 0
         self.counts = Counter()
         self.last_ended = 0
@@ -330,7 +370,8 @@ class ReplayCalls:
         salt = {"wake": 0, "record": 0x5A5A, "parent": 0x1010, "restate": 0x2020}[role]
         expected = dict(call_id=call_id, role=role, arm=arm, eid=eid, tick=tick, prompt=prompt,
                         seed=_seed_for(eid, tick, GEN_SEED ^ salt), max_tokens=TOKENS[role],
-                        temperature=.5 if role in ("parent", "restate") else .7)
+                        temperature=.5 if role in ("parent", "restate") else .7,
+                        **interaction_settings(self.protocol, role))
         require(request_receipt["request"] == expected, "source request/seed/context mismatch: " + call_id)
         require(request_receipt["identity"] == self.identity, "source identity mismatch")
         require(request_receipt["prompt_sha256"] == value_hash(prompt), "prompt hash mismatch")
@@ -357,6 +398,7 @@ class Events:
 
 
 def play_task(calls, events, arm, eid, notes=False, prefix=""):
+    protocol = getattr(calls, "protocol", "strict_v1")
     episode = Episode(eid=eid, goal="Induce the hidden rule and answer the quiz.",
                       metric="first quiz accuracy (0..1)", intro="A fresh mystery box.")
     game = RuleGame()
@@ -365,10 +407,15 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
     terminal = "wake_budget"
     for tick in range(1, 6):
         prompt = f"{BOOT}\nTask: {episode.eid}\nGoal: {episode.goal}\nResponse: {tick}/5\n" + "\n".join(tail)
+        if protocol == "interaction_v2":
+            prompt += (f"\nHarness state: remaining TRY budget: {3 - tries}. "
+                       + ("Quiz already revealed; submit six T/F labels with ACT: QUIZ."
+                          if revealed else "Quiz reveal still needed before scoring: ACT: QUIZ ?.")
+                       + "\nEmit one action only; never supply [OUTCOME] or simulate a world reply.")
         call_id, output = calls.ask("wake", arm, eid, tick, prompt)
         tail.append(output)
         try:
-            action = parse_action(output)
+            action = parse_action(output, protocol)
             if action["kind"] == "done":
                 terminal = "done"
                 break
@@ -382,6 +429,8 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
         reward, outcome = game.evaluate(episode, action["action"])
         execution = dict(action, kind="execution", action_kind=action["kind"], arm=arm, eid=eid,
                          tick=tick, call_id=call_id, execution_id=f"{arm}:{eid}#t{tick}", reward=reward, outcome=outcome)
+        if protocol == "interaction_v2":
+            execution.update(raw_response=output, canonical_action="ACT: " + action["action"])
         if action["kind"] == "try":
             observed = re.fullmatch(r"the box says: (True|False) for \((-?[0-9]+),(-?[0-9]+),(-?[0-9]+)\)", outcome)
             require(observed is not None and [int(value) for value in observed.groups()[1:]] == action["values"],
@@ -420,9 +469,14 @@ def run_formation(calls, events):
                     return calls.ask("parent", arm, eid, 0, prompt)[1]
                 parent = nursery_dialogue.parent_turn(parent_model, transcript)
             else:
-                _, parent = calls.ask("parent", arm, eid, 0, CONTROL + transcript[-4000:] + "\n---")
+                control = CONTROL_V2 if getattr(calls, "protocol", "strict_v1") == "interaction_v2" else CONTROL
+                _, parent = calls.ask("parent", arm, eid, 0, control + transcript[-4000:] + "\n---")
+            restate = "\nRestate that message in your own words in 2-3 sentences."
+            if arm == "A" and getattr(calls, "protocol", "strict_v1") == "interaction_v2":
+                restate = ("\nRestate only the acknowledgement of participation in 2-3 sentences. "
+                           "No task reflection, quizzes, task summary, or what you learned.")
             restate_id, restatement = calls.ask("restate", arm, eid, 0,
-                "Your parent said:\n" + parent + "\nRestate that message in your own words in 2-3 sentences.")
+                "Your parent said:\n" + parent + restate)
             interactions.append(dict(arm=arm, lesson=lesson, parent_call_id=parent_id, parent=parent,
                                      restatement_call_id=restate_id, restatement=restatement))
             post, _ = play_task(calls, events, arm, task_id(lesson, "apply"), notes=True, prefix=restatement)
@@ -465,15 +519,18 @@ def usage(path):
     return by_role
 
 
-def check_capture(path, identity=None):
+def check_capture(path, identity=None, protocol=None):
     path = Path(path)
     failures = []
     try:
         require(read(path / "manifest.json")["files"] == tree_hashes(path, ("manifest.json",)), "capture file hashes changed")
         header = read(path / "identity.json")
+        captured_protocol = header.get("protocol", "strict_v1")
+        require(captured_protocol in PROTOCOLS, "unknown interaction protocol")
+        require(protocol is None or captured_protocol == protocol, "capture protocol differs from plan")
         if identity is not None:
             require(header["backend"] == identity, "capture model/adapter identity mismatch")
-        calls = ReplayCalls(path / "calls", header["backend"])
+        calls = ReplayCalls(path / "calls", header["backend"], captured_protocol)
         events = Events()
         result = (run_formation(calls, events) if header["stage"] == "formation" else
                   run_evaluation(calls, events, header["cell"]))
@@ -536,8 +593,12 @@ def audit_native_calls(tokenizer, path):
                                                  tokenize=False, add_generation_prompt=True)
         require(rendered == response["rendered_prompt"], "native rendered source prompt mismatch")
         require(tokenizer.encode(rendered) == response["prompt_token_ids"], "native source input token mismatch")
-        require(tokenizer.decode(response["output_token_ids"], skip_special_tokens=True,
-                                 clean_up_tokenization_spaces=False) == response["text"], "native source output token mismatch")
+        decoded = tokenizer.decode(response["output_token_ids"], skip_special_tokens=True,
+                                   clean_up_tokenization_spaces=False)
+        if request.get("protocol") == "interaction_v2" and response.get("stop_reason") in request.get("stop", []):
+            require(response.get("finish_reason") == "stop", "native stop finish mismatch")
+            decoded = decoded.split(response["stop_reason"], 1)[0]
+        require(decoded == response["text"], "native source output token mismatch")
 
 
 def validate_main_audit(decision, template):
@@ -589,7 +650,7 @@ def material(root, main_audit, tokenizer=None):
     plan = verify_plan(root)
     require(read(root / "formation" / "result.json")["status"] == "AWAITING_MAIN_AUDIT", "formation incomplete")
     path = root / "formation" / "data"
-    audit = check_capture(path, expected_identity(plan))
+    audit = check_capture(path, expected_identity(plan), plan.get("protocol", "strict_v1"))
     destination = fresh_directory(root / "material", plan["model"])
     write_json(destination / "provenance.json", audit)
     if not audit["ok"]:
@@ -625,7 +686,7 @@ def verify_material(root, plan, tokenizer=None):
     require(read(path / "manifest.json")["files"] == tree_hashes(path, ("manifest.json",)), "material changed")
     require(read(path / "result.json")["formation_sha256"] == digest(root / "formation" / "data" / "manifest.json"),
             "formation binding changed")
-    audit = check_capture(root / "formation" / "data", expected_identity(plan))
+    audit = check_capture(root / "formation" / "data", expected_identity(plan), plan.get("protocol", "strict_v1"))
     require(audit["ok"], "formation provenance failure: " + str(audit["failures"]))
     require(validate_main_audit(read(path / "main_audit.json"), audit_template(root / "formation" / "data")), "Main declined material")
     selection = select_records(audit)
@@ -731,7 +792,7 @@ def formation(root, allow_gpu=False):
     try:
         supervise(root, plan, stage / "worker", worker_command(root, "formation", path), path / "calls")
         verify_plan(root)
-        audit = check_capture(path, expected_identity(plan))
+        audit = check_capture(path, expected_identity(plan), plan.get("protocol", "strict_v1"))
         write_json(stage / "provenance.json", audit)
         require(audit["ok"], str(audit["failures"]))
         write_json(stage / "main_audit.template.json", audit_template(path))
@@ -813,9 +874,10 @@ def evaluate(root, allow_gpu=False):
             verify_plan(root)
             verify_fits(root, plan)
             adapter = fits[cell[0]]["adapter"] if cell != "OFF" else None
-            audit = check_capture(path, expected_identity(plan, adapter))
+            audit = check_capture(path, expected_identity(plan, adapter), plan.get("protocol", "strict_v1"))
             write_json(stage / cell / "provenance.json", audit)
             require(audit["ok"], str(audit["failures"]))
+            audit_native_calls(native_tokenizer(plan["model"]), path)
             results[cell] = audit["result"]
         means = {cell: result["mean_quiz_accuracy"] for cell, result in results.items()}
         write_json(stage / "result.json", dict(status="COMPLETE", cells=results,
@@ -865,9 +927,13 @@ def worker(root, stage, out, cell=None, allow_gpu=False):
         backend = NativeBackend(plan["model"], adapter)
         identity = expected_identity(plan, adapter)
         require(backend.identity() == identity, "native loader identity differs")
-        write_json(path / "identity.json", dict(stage=stage, cell=cell, backend=identity, model_files=plan["model_files"]))
+        protocol = plan.get("protocol", "strict_v1")
+        header = dict(stage=stage, cell=cell, backend=identity, model_files=plan["model_files"])
+        if protocol != "strict_v1":
+            header["protocol"] = protocol
+        write_json(path / "identity.json", header)
         write_json(path / "backend.ready.json", dict(pid=os.getpid(), ready=time.monotonic()))
-        calls, events = Calls(path / "calls", backend, stage, identity), Events(path / "events.jsonl")
+        calls, events = Calls(path / "calls", backend, stage, identity, protocol), Events(path / "events.jsonl")
         result = run_formation(calls, events) if stage == "formation" else run_evaluation(calls, events, cell)
         write_json(path / "result.json", result)
         write_json(path / "usage.json", usage(path))
@@ -895,12 +961,12 @@ def replay(root):
     captures = {}
     formation_path = root / "formation" / "data"
     if formation_path.exists():
-        captures["formation"] = check_capture(formation_path, expected_identity(plan))
+        captures["formation"] = check_capture(formation_path, expected_identity(plan), plan.get("protocol", "strict_v1"))
     for cell in CELLS:
         path = root / "evaluation" / cell / "data"
         if path.exists():
             adapter = root / "write" / cell[0] / "adapter" if cell != "OFF" else None
-            captures[cell] = check_capture(path, expected_identity(plan, adapter))
+            captures[cell] = check_capture(path, expected_identity(plan, adapter), plan.get("protocol", "strict_v1"))
     failures = [f"{name}: {failure}" for name, result in captures.items() for failure in result["failures"]]
     return dict(ok=bool(captures) and not failures, captures=captures, failures=failures,
                 scope="CPU raw-call/world replay; no semantic no-answer certification or native model-origin authentication")
@@ -912,6 +978,7 @@ def main(argv=None):
     prepare_parser = commands.add_parser("prepare")
     for option in ("out", "model", "device", "lease-end"):
         prepare_parser.add_argument("--" + option, required=True)
+    prepare_parser.add_argument("--protocol", choices=PROTOCOLS, default="strict_v1")
     for name in ("formation", "material", "write", "evaluate", "replay", "_worker"):
         command = commands.add_parser(name)
         command.add_argument("--root", required=True)
@@ -925,7 +992,7 @@ def main(argv=None):
             command.add_argument("--cell", choices=CELLS)
     args = parser.parse_args(argv)
     if args.command == "prepare":
-        result = prepare(args.out, args.model, args.device, args.lease_end)
+        result = prepare(args.out, args.model, args.device, args.lease_end, args.protocol)
     elif args.command == "material":
         result = material(args.root, args.main_audit)
     elif args.command == "replay":
