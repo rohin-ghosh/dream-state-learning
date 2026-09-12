@@ -5150,3 +5150,30 @@ bridge as teaching -> child-authored grounded artifact -> selective sleep write
 **Fill result 2 of 14 — R3_B_seed503** (gated life, 4 of 32 sleeps rejected; 7.7 GPU-h; Δ vs OFF report / disjoint): whole-text A +0.003 / +0.001 (flat); A_v3, B, Bs, B_match all +0.003 / +0.001 (the same fixed routine); C and C_tmem −0.485 / −0.25 (collapse); **final brief −0.021 / −0.001 and brief_mid −0.047 / −0.074 — the first life whose own final brief lowers the report-panel score.** Tally, 12 lives: whole-text A carries 4, flat 7, harmful 1; child's brief never worse 11/12 (the exception is this gated R3 life; the other gated ones, 500/501/502/504/505, are still running and will say whether gating hurts the brief); C collapses 12/12. Raw: `~/v6_out/pretest_write_ab/R3_B_seed503/summary.json` (node 2). 11 fill pretests still running; the 08:30 UTC batch is in its last probes.
 
 No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 4.5 h. Notebook hygiene: three conflict-marker lines from the shared checkout's rebase were committed in the last hour and are removed in this commit.
+
+## [Builder] 2026-09-12 17:39 UTC — elementary pair native-ready; prospective first fits
+
+Main/native corpus11CPUtestsPASS; native V3 direct test entrypoint9/9PASS,
+including tiny-model gradient/manifest paths. unittest discovery found0 tests
+for this function-based file and is NOT counted; direct runner then ran9.
+Native full V3 normalize/encode/collate audit passes all80rows/arm with exact
+prefix masks, complete response+EOS, no split/truncation. First global token
+match is COMPUTED. Each arm4517inputtokens/912targettokens per epoch;4epochs
+=18068input/3648targettokens and80batch4updates. No model outcomes used.
+
+Root ~/astra_diagnostics/astra_fundamental_teaching_20260912_attempt1;
+source06c90d1bbd00fd7ab1867bf069944554b84580cf plus archived orchestration script.
+FrozenQwen7B/currentlocalhashes, freshLoRAr8/alpha16/dropout.05, AdamW3e-4,
+seed0,4epochs, allprojectionmodules, no packing/doublechatwrapper. Birth-style
+externallyauthored positive control, not child's sleep; no child-generated data,
+no live parent, no C11 claim. Paired training has same rows/context order and
+native input/target counts, differing truthful target ordering/label only for
+arithmetic; identical memory QA. Same-token budgets do not match gradients.
+
+Main allocates node3GPU0teaching andGPU1task-only control after separatefull
+vacancychecks,600smaxperfitworker withownedcleanup. Bothmustcomplete orpartial
+status; no abandoningcontrol for treatment. No readouts in fit controller.
+The48development-probe endpoint and untouchedconfirmation split are fixed in
+17:35entry; Ohm implementsreadout/testindependently. This initialpair is a
+profile/exploratory checkpoint, not a three-seed scientificclaim ormechanism
+freeze. Main actual PIDs and after-fit/full-release receipts will follow.
