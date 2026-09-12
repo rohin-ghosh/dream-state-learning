@@ -1,0 +1,73 @@
+{
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "-m",
+    "organism_v6.constraint_demonstration_diagnostic",
+    "--preparation",
+    "/localhome/local-rohing/astra_diagnostics/astra_demonstration_preparation_20260912_attempt1",
+    "--out",
+    "/localhome/local-rohing/astra_diagnostics/astra_demonstration_20260912_attempt1",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "device": "1",
+  "explanation_tokens": {
+    "format": [
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57,
+      57
+    ],
+    "process": [
+      67,
+      67,
+      78,
+      67,
+      67,
+      78,
+      67,
+      67
+    ]
+  },
+  "fits": 0,
+  "generation_calls": 32,
+  "generation_seed": 7101,
+  "gpu": {
+    "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      },
+      {
+        "command": "sshd: local-rohing@notty",
+        "pid": "131981"
+      }
+    ]
+  },
+  "launcher_sha256": "c486b09f81f8d7af48220041f941516efbaf4bafedd4714eee9f88a02660ceb1",
+  "max_seconds_per_arm": 900,
+  "model_origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "native_cpu_sha256": "28d12076cd8ccd12b8661fb5360be97e0909f7729879e26218c4f919fd859e7a",
+  "no_training_approval": true,
+  "node": 3,
+  "parent_free_application_calls_per_arm": 8,
+  "pid": 132008,
+  "preparation": "/localhome/local-rohing/astra_diagnostics/astra_demonstration_preparation_20260912_attempt1",
+  "preparation_sha256": "75c528b40e2884f560214a30bc875fa51cc9ef8223d63fa654d030acae707343",
+  "seed_role": "generation_sampling_only_not_learner_or_optimizer",
+  "source": "/localhome/local-rohing/astra_sources/87936cc5ac9e6cd9e5e4dd23f452b87ced14cb7a",
+  "source_calls_per_arm": 8,
+  "started_utc": "2026-09-12T15:33:46.029323+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED",
+  "total_seconds": 1800
+}

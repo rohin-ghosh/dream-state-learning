@@ -1,13 +1,28 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 15:17 UTC**.
+Latest reconciliation: **2026-09-12 15:34 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **15:34 superseding status:** node3GPU0 cumulative128957 continues A2fit
+  after A1_before and ANfit completed. Native AN1536updates/199.4training-loop
+  seconds, acquisition unmeasured until readout. Same90min continuous reservation.
+- node3GPU1 demonstration132008 launched15:33:46.029323UTC, source87936cc5,
+  root `~/astra_diagnostics/astra_demonstration_20260912_attempt1`, prep75c528b4....
+  Native19tests plus real preparation/overlap/source/model checks pass.
+ 32calls/zero fits, one sampler, worked-example→ownnote→changed-board
+  application. Process explanation67/78tokens vsformat57, explicitly unequal.
+  Source echo measured; no P1/persistent-learning claim. GPU1 reserved through
+  both fresh workers,1800s total/900s arm caps. No other Main GPUjobs.
+- Canonical manuscript087–090 integration and completed-content-audit
+  correction independently reviewed; main82a1c691..., README529c08c8....
+  Historical12tables and reviewed abstract preserved; no TeX/PDF build.
+  Developmental companion abstract234words matches its staged TeX.
 
 - **15:17 superseding status:** cumulative controller128957 is live on
   node3GPU0, started15:16:50.264833UTC from3ee4c706. Root

@@ -4142,3 +4142,22 @@ CumulativeGPU0PID128957continuingA2fit; no sharedresource/lineagechanges.
 Builder (15:12–15:30 UTC). **SEQ-090:** three clarified-coordinate prompt pairs (samplers 7101–7103): strict grounded records 0/8 in both arms every time; process schema 1/0/1 vs format 2/2/2; 48 calls, zero fits. Its independent audit: no numeric coordinate strings remain in the outputs, 40 schema failures + 8 wrong witnesses; of 17 literally complete witnesses read post hoc, 5 factually valid, 12 invalid — so the child cannot be *told* into the record form by prompt alone, matching SEQ-069/070 and my articulation-zero audits. Decision: test **concrete demonstrations** next (show the form, not describe it). **Cumulative replay retention diagnostic** launched on node 3 GPU 0 (does an OLD adapter's content survive a NEW write — Rohin's ladder step "together in one sleep"). Manuscript: sprint abstract and claim map updated through this follow-up (`paper_prototype/astra_sprint_abstract_20260912.md`, `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`); independent manuscript review passed on the component results through SEQ-090; canonical main.tex untouched by that pass. Node 3: 1 GPU busy, 7 idle. No [Builder → Rohin] entry; composer clean.
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; still no summary — RP402 / R4 605 / R3 500 are at 7 h of an expected 10–13, so first results now look like 19:30–21:30 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 6.5 h.
+
+## [Builder] 2026-09-12 15:34 UTC — worked-example/parent-free application launched
+
+node3GPU1PID132008 starts15:33:46.029323UTC, source87936cc5ac9e6cd9e5e4dd23f452b87ced14cb7a,
+root ~/astra_diagnostics/astra_demonstration_20260912_attempt1. Native19CPU
+fixturetestsPASS plus realtokenizer/source/model/actualprior-overlap
+preparationPASS; digest75c528b40e2884f560214a30bc875fa51cc9ef8223d63fa654d030acae707343.
+All16source/transfer question/candidate hashesdistinct anddisjointv1/v2;
+sourcegroups3row/3column/2box; sameworkedexamplesbotharms. Copiedsource
+witnessinvalidontransfer, actualdifferentduplicateexists. No sealedlabels.
+
+Explanationdose measured: format57tokens each; process67tokenssixcases,
+78tokenstwoboxcases, so NOT tokenmatched. Equalexamples,calls,caps/order/seed,
+not purecompute-controlledcontrast.32calls(onepairedsampler7101),zero fits,
+1800spair/900sarm, allownrawnotes retained inclfailures, no teacherpromptat
+application beyondpossible childecho explicitlymeasured. This is incontext
+application, NOT parameterinternalization or finalG5parentremoval. Noinvalid
+recordtrainedorautoretry. FullNVIDIA/CUDAenv/queuecheckpasses; GPU1reserved
+throughbothworkers. Cumulative128957 continuesGPU0A2fit; otherownersunchanged.
