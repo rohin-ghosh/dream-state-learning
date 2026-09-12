@@ -4970,3 +4970,56 @@ The fuller exposure registry omission is Main's error, not an adapter failure.
 The manuscript094/095 update is integrated with both low-severity review fixes,
 241-word companion abstract with exact TeX parity; canonical abstract/tables/
 appendix preserved. No TeX compiler available, so no PDF build claimed.
+
+## [Builder -> Rohin] 2026-09-12 17:25 UTC — message15: open-loop teaching first, with a bounded candidate
+
+I now understand your distinction: a useful-action positive-control corpus is
+not the proposed teaching corpus, and neither is indiscriminately training every
+sleep transcript. Here “level1 post-training” can mean a fresh rank8 birth LoRA
+while the Qwen7B base remains frozen; it does not mean updating base weights.
+Your message15 remains discussion/pre-steer, not a ratified architecture change.
+No projection layer, hypernetwork or new compiler is being built from those ideas.
+
+I would put the next effort into one deliberately elementary adherence test,
+with a separate memory readout, rather than another RuleGame reflection-format
+hunt. Candidate: teach “state a correct prediction before acting” using64
+sourced one-step addition demonstrations. Match it to the SAME facts/actions
+presented as task-only answers with the result after the action, plus frozen
+base. Add16 invented-device/color observations identically to both corpora to
+measure taught-content recall and scope/unknown handling. Arithmetic verifies
+correctness; it is not a claim of useful metacognition or autonomous learning.
+All outputs in this corpus are authored/derived from explicit source events;
+no learner generates data, no live parent, no experience compiler or sleep is
+involved. This is an open-loop birth/post-training positive control, not an
+exception allowing teacher lessons into a child's later sleep bytes.
+
+Kuhn owns only a CPU candidate emitter and tests. It produces raw paired spans,
+source events and disjoint operand-pair evaluation cases, NOT a “perfect” or
+training-cleared corpus. Native token matching is pending; I will not call
+padding, equal steps, or equal word counts equal-token control. The first
+native check will test complete rendered input/target counts for both truthful
+target templates, without looking at model outcomes; if unequal, fix that
+specific control before training. Evaluation has ordinary ACT instructions,
+not the teaching reminder or a worked example. Exact before/after ordering and
+correct numerical prediction are the initial adherence endpoint; improvement
+in other thinking skills remains untested.
+
+Concrete intended first block, conditional on that material/profile check:
+rank8, fresh adapters, seed0,4epochs (80rows imply80batch4updates), LR3e-4 as an
+aggressive TESTED candidate—not a universally maximal plasticity. Teaching,
+equal-token task-only and frozen OFF; no adapter promotion. First read the
+first32 arithmetic and first16 recall development prompts. Hold the remaining
+32arithmetic/16recall plus16untaught prompts out of outcome-driven selection.
+Cap the initial fit/readout block at90aggregateA40minutes, aim for30–60 based on
+prior load/update paths; native profiling will replace this forecast. If the
+pair is operationally valid, replicate seeds1/2 and compare LR1e-4 when needed
+under a separately frozen equal-budget condition. Do not adjust on confirmation
+outputs. Larger/deeper teaching and a stronger adaptive parent follow only if
+this shows usable adherence AND memory without unacceptable task damage.
+
+That is the next mechanism decision I propose and am preparing on CPU. The
+old relation debug just finished1/3original vs3/3definition+fullJSON, so it is
+not the cognitive training objective. The current three-seed Sudoku reread has
+finished all controls and is under audit; four items have prior research
+readouts, so I have already withdrawn comprehensive freshness before outcomes.
+I will report it as development evidence, not rerun merely to rescue wording.
