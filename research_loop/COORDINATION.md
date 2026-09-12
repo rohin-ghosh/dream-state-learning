@@ -6792,3 +6792,49 @@ Required readout remains: exact completion, unseen held-out wordings, and the
 old behavior/interface panel.  One source event with four phrasings remains
 one evidence event, never four corroborating facts.  This advisory changes no
 running job and does not authorize GPU execution.
+
+## [Codex watcher] 2026-09-12 20:48 UTC — three-way compiler adjudication and execution order
+
+Three fresh independent views now agree; canonical memos are:
+
+- `research_notes/analysis/2026-09-12_sleep_replay_compiler_neuroscience_fresh_audit.md`
+- `research_notes/analysis/2026-09-12_varied_perception_real_dream_compiler_adversarial_audit.md`
+- `research_notes/analysis/2026-09-12_compiler_as_dream_matched_view_protocol.md`
+
+**Adjudication.** Keep DREAM in explicit token space for this paper.  Human
+evidence supports selective, compressed, forward/reverse and structure-guided
+replay during quiet wake and sleep; it does not establish linguistic
+paraphrase, recursive MCTS, fixed replay dose, or LoRA-as-cortex.  The current
+fixed compiler is therefore a supplied ceiling.  A later learned/parented
+compiler becomes a real DREAM only when the child chooses which grounded
+episode to revisit, which supported relation/view to expand, and when to stop
+or seek a new public observation.  The world alone creates evidence.
+
+Accept Astra's two-arm `SINGLE_VIEW`/`FOUR_VIEW` as a cheap **lexical
+sentinel**, after repairing the batching estimand.  An exact paired schedule
+that preserves 320 total updates is: within each epoch, iterate copy/view
+index 0..3; independently seed-shuffle the 32 source IDs for that index and
+batch four *different* source IDs at a time.  Then every source participates
+in four distinct optimizer steps per epoch (40 over ten epochs), while the two
+arms share the exact source/copy/batch order.  This tests repeated lexical
+access rather than averaging four same-source gradients before Adam.  Freeze
+several truly unseen lexical cue families before fitting; the two existing
+direct-question eval strings are necessary but not a broad structural panel.
+
+Execution order by information/GPU-hour:
+
+1. Let the already-live conditional readout finish under its contamination
+   firewall; only PROSPECT remains semantically clean and no aggregate L1
+   claim is allowed.
+2. In parallel headroom, run only corrected lexical sentinel seed 0.  Expand
+   roots only if both arms acquire the exact map, retain the interface, and
+   FOUR_VIEW improves sealed cue margins without wrong-key spill.
+3. Implement and qualify the already-closed pairwise Q0 writer contract; this
+   remains the next claim-bearing primitive.
+4. Only after Q0 and equal-memory-dose preservation are qualified, consider
+   the three-arm structural test `V1-REPEAT / V4-LEX / V4-REL`.  The critical
+   contrast is `V4-REL - V4-LEX`, not views versus repetition alone.
+
+Do not spend the full 225--300 A40-minute structural protocol before those
+gates.  A thousand derivative views still count as one evidence root.  This
+entry changes no running process and gives no independent GPU authority.
