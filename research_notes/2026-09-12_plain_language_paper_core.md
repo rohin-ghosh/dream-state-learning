@@ -118,8 +118,11 @@ The headline is not “the parented child starts better.” It is:
   material in all three adapter-training seeds. LoRA can carry behaviorally
   useful content.
 - **Writer problem:** lower learning rate did not remove broad spill. Masking
-  prompt tokens reduced spill but also erased learning. Selective writing is
-  still unproved.
+  prompt tokens reduced spill but also erased learning. A penalty that asks
+  the new LoRA to stay close to the frozen model cut unwanted spill by 91%,
+  but did so by almost turning the intended learning off. Selective writing
+  is still unproved; the next test changes the semantic structure of what is
+  written instead of merely weakening the update.
 - **Parenting problem:** the first fitted lesson and sham both hurt. A later
   visible process card changed formatting but did not improve solves over sham
   (`1/16` each). No teaching method has yet earned a clean childhood run.

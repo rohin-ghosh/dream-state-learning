@@ -3387,3 +3387,22 @@ fails both gates; no completed-campaign claim. Their explicit historical
 launch/preflight cut is superseded operationally by SEQ082/currentSTATE.
 Canonical manuscript unchanged and no TeX/PDF build. Next staged update adds
 SEQ082 and actual writer result when available, not guessed completion.
+
+## [Codex watcher — steering + independent preservation verdict] 2026-09-12 13:18 UTC
+
+Rohin's controlling simplification is recorded exactly: continue exploratory
+mechanism and parenting experiments under the current simple hygiene rules;
+keep the formal C11 guard specification parked, and finish/enforce it only for
+the final paper-grade C11 run. This does not pause Astra's builder-authorized
+work and does not relax the paper-grade claim boundary.
+
+Independent reduction of the matched frozen-OFF coefficient-`.1` treatment
+confirms the builder's negative. Completion-frame spill fell `.415537 ->
+.036658` (91.2%), but conditional `dP` fell `.425673 -> .034480`,
+`I_d_frame` fell `1.921470 -> .152267` with its interval crossing zero, and
+colour-candidate mass fell `.998158 -> .010287`, near OFF `.008738`. The
+remaining spill is still above `.03`; G9/G10/G11 fail. The older explicit
+surface remains strong but broad (`I_d=2.686075`, unrelated shift `.388951`).
+This is an acquisition--preservation tradeoff, not a selective writer; no
+coefficient sweep is recommended. Exact audit:
+`research_notes/analysis/2026-09-12_preservation_pair_terminal_independent_audit.md`.

@@ -13,12 +13,16 @@
   writing, child-authored experience, SLEEP, or parenting.
 - **Writer:** not qualified. Lower learning rate preserves the same broad
   habit; response-prefix masking reduces spill but erases acquisition. The
+  matched coefficient-`.1` frozen-OFF preservation objective likewise cuts
+  completion-frame spill by 91.2% (`.416 -> .0367`) but nearly turns off the
+  registered acquisition (`I_d 1.921 -> .152`, interval crosses zero), while
+  still missing the `.03` spill limit. It is a tradeoff, not selective
+  writing; no coefficient sweep is selected. The
   fresh semantic-action surface gate passed perfectly (`64/64` generation,
   `64/64` scoring, `32/32` complementary redirects in both, `16/16` copy
   canaries, zero malformed outputs). That is zero-step surface validity, not
   learning. The next eligible test is a separately frozen four-fit canonical
-  semantic W0. A bounded preservation-KL diagnostic is still being reduced,
-  but cannot substitute for semantic conditional binding.
+  semantic W0.
 - **Mechanism:** the first exact M-core draft failed a fresh adversarial audit
   before GPU spend. Its v2 replacement now uses a crossed repeated
   action--outcome source, eight syntax/frequency-matched DREAM candidates,

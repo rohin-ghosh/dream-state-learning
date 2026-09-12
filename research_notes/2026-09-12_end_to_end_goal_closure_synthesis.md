@@ -74,6 +74,19 @@ selective regime. Park LR-only sweeps and change the conditional
 material/representation. Exact independent audit:
 `research_notes/analysis/2026-09-12_lower_lr_writer_terminal_audit.md`.
 
+The matched frozen-OFF preservation treatment closes another simple writer
+repair at coefficient `.1`. It reduced completion-frame spill from `.4155`
+to `.0367` (91.2%), but also reduced conditional acquisition from `dP=.4257`
+to `.0345`, reduced `I_d_frame` from `1.921` to `.152` with an interval that
+crosses zero, and collapsed total colour-candidate mass from `.998` to `.010`
+(near the `.0087` OFF value). The `.0367` spill also remains above the
+prospective `.03` ceiling. The old explicit-question surface stayed strong but
+broad (`I_d=2.686`, unrelated shift `.389`), so this is an interface-dependent
+acquisition--preservation tradeoff, not a selective writer. G9, G10, and G11
+fail. Do not automatically sweep more coefficients; proceed to semantic W0.
+Exact independent audit:
+`research_notes/analysis/2026-09-12_preservation_pair_terminal_independent_audit.md`.
+
 The matched prefix-mask diagnostic closes the simplest response-only-loss
 repair as instantiated here. With the same bank, optimizer seed, rank,
 learning rate, 9,693 steps, 749,985 input-token passes, and 1,313 evaluation
