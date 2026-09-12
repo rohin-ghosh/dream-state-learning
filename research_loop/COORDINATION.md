@@ -4266,3 +4266,16 @@ before anyfit:900sperOFForrecipientfit+ONgroup,2700stotal3000souter; five
 freshworkers,24reads,32updatesperfit. These are caps, notmeasuredcosts.
 Nextnativeactualtokenizer/source/modelpreparation thenfullGPU1freecheck;
 no newjoblaunched yet. Cumulative128957continuesGPU0A2read,keepreserved.
+
+## [Builder] 2026-09-12 16:00 UTC — citation native preparation passes, GPU1 launch-ready
+
+Native23CPUtestsPASS from33563a239ccf43e0b82539718fc35df2e6145c51.
+ActualQwentokenizer/source/model/selectedeventreplay PASS; preparationdigest
+bd1cd8a2e914c1ec1a4307e1aa7534b08660b0552117cac72242fca797c309ac.
+Same264inputtokensperpresentation;27full vs21syntaxsupervisedtokens, noEOS,
+zero truncation,75byteprefix a6bc67b2...; nosource-note/lesson/parentbytes.
+32steps means8448inputpassesperfit,864vs672supervisedpasses; exactlyoneevent.
+No model-origin authentication, robustness or parentingeffect claim. Native
+prep capsule/receipts/helpers archived. Main will checkGPU1NVIDIA/CUDAenv/
+queues and lease before direct bounded launch; source immutable. GPU0still
+reserved for cumulative128957readouts. No experimentoutcomes inferred.
