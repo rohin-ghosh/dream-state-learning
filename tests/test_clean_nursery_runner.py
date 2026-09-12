@@ -41,7 +41,7 @@ class VariedNurseryModelFixture(NurseryModelFixture):
                 action = re.findall(r"^ACT submitted: (.+)$", prompt, re.M)[-1]
                 outputs.append(f"I submitted {action}; the score was 0.50.")
             else:
-                seed = re.findall(r"rg/mini_sudoku/(\d+)", prompt)[-1]
+                seed = re.findall(r"rg/[a-z0-9_]+/(\d+)", prompt)[-1]
                 outputs.append("ACT: " + seed)
         return outputs
 
@@ -164,7 +164,7 @@ class CleanNurseryRunnerTests(unittest.TestCase):
         self.assertEqual(result.score, 0.0)
         self.assertIn("score 0.00", result.text)
 
-    def run_admitted_fixture(self):
+    def run_admitted_fixture(self, *, episodes=64, model_class=None, expect_acceptance=True):
         commands = []
 
         def simulated_training(command, **kwargs):
@@ -206,12 +206,14 @@ class CleanNurseryRunnerTests(unittest.TestCase):
             return SimpleNamespace(returncode=0)
 
         with patch.object(run_life_v2.subprocess, "run", side_effect=simulated_training), \
-                patch.object(run_life_v2, "format_canary", return_value=(True, 1.0)), \
-                patch.object(model_backend, "close_backend", return_value=True):
-            self.run_fixture(["--episodes", "64", "--sleep-every", "64", "--probe-every", "64"],
-                             model_class=VariedNurseryModelFixture, varied=True)
-        self.assertEqual(len(commands), 1)
-        pinned = self.life / "lineage" / "sleep_0064" / "adapter"
+                patch.object(model_backend, "close_backend", return_value=True) as closed:
+            self.backend_closes = closed
+            self.run_fixture(["--episodes", str(episodes), "--sleep-every", "64", "--probe-every", "64"],
+                             model_class=model_class or VariedNurseryModelFixture, varied=True)
+        self.assertEqual(len(commands), episodes // 64)
+        if not expect_acceptance:
+            return
+        pinned = self.life / "lineage" / f"sleep_{episodes:04d}" / "adapter"
         self.assertEqual(NurseryModelFixture.initialized[-1], str(pinned))
         self.assertTrue((pinned.parent / "trainer_receipt.json").is_file())
         self.assertTrue((pinned / "DONE").is_file())
@@ -219,6 +221,126 @@ class CleanNurseryRunnerTests(unittest.TestCase):
 
     def test_admitted_fixture_binds_before_reloading_lineage_adapter(self):
         self.run_admitted_fixture()
+
+    def test_selection_intent_is_durable_before_final_done(self):
+        original = os.rename
+        observed = []
+
+        def check_rename(source, destination, *args, **kwargs):
+            if Path(source).name == "CANDIDATE" and Path(destination).name == "DONE":
+                directory = Path(source).parent.parent / "canary_selection"
+                for name in ("trace.json", "receipt.json", "selected.json"):
+                    self.assertTrue((directory / name).is_file())
+                    self.assertEqual((directory / name).stat().st_mode & 0o777, 0o444)
+                self.assertFalse(Path(destination).exists())
+                observed.append(directory)
+            return original(source, destination, *args, **kwargs)
+
+        with patch.object(os, "rename", side_effect=check_rename):
+            self.run_admitted_fixture()
+        self.assertEqual(len(observed), 1)
+        manifest = json.loads((self.life / "lineage/sleep_0064/manifest.json").read_bytes())
+        trace = next(source for source in manifest["sources"] if source["path"].endswith("/trace.json"))
+        selection_paths = {"sleep_0064/adapter/DONE", "sleep_0064/canary_selection/receipt.json",
+                           "sleep_0064/canary_selection/selected.json"}
+        for artifact in manifest["artifacts"]:
+            if artifact["path"] in selection_paths:
+                self.assertEqual(artifact["source_sha256"], [trace["sha256"]])
+            else:
+                self.assertNotIn(trace["sha256"], artifact["source_sha256"])
+        self.assertNotIn(trace["sha256"], manifest["trained_corpus"][0]["source_sha256"])
+        self.assertTrue(any(call.args[0].adapter_path == str(self.life / "sleep_0064/adapter")
+                            for call in self.backend_closes.call_args_list))
+
+    def test_two_sleeps_replay_real_canary_custody(self):
+        self.run_admitted_fixture(episodes=128)
+        first = self.life / "lineage/sleep_0064"
+        second = self.life / "lineage/sleep_0128"
+        selected = json.loads((second / "canary_selection/selected.json").read_bytes())
+        self.assertEqual(selected["previous_manifest_sha256"], hashlib.sha256((first / "manifest.json").read_bytes()).hexdigest())
+        self.assertTrue((second / "ledger.jsonl").read_bytes().startswith((first / "ledger.jsonl").read_bytes()))
+
+    def test_canary_failure_closes_backend_and_never_promotes(self):
+        from organism_v6 import nursery_selection_receipt as selection
+
+        with patch.object(selection.SelectionRecorder, "batch", side_effect=RuntimeError("synthetic canary interruption")):
+            with self.assertRaisesRegex(RuntimeError, "synthetic canary interruption"):
+                self.run_admitted_fixture()
+        candidate = self.life / "sleep_0064/adapter"
+        self.assertTrue((candidate / "CANDIDATE").exists())
+        self.assertFalse((candidate / "DONE").exists())
+        self.assertFalse((self.life / "lineage/sleep_0064").exists())
+        self.assertTrue(any(call.args[0].adapter_path == str(candidate) for call in self.backend_closes.call_args_list))
+
+    def test_changed_candidate_after_receipt_blocks_final_marker(self):
+        from organism_v6 import nursery_selection_receipt as selection
+
+        write = selection.SelectionRecorder.write
+
+        def change_adapter(recorder, *args, **kwargs):
+            binding = write(recorder, *args, **kwargs)
+            (recorder.adapter_dir / "adapter_model.safetensors").write_bytes(b"changed after selection")
+            return binding
+
+        with patch.object(selection.SelectionRecorder, "write", change_adapter):
+            with self.assertRaisesRegex(selection.SelectionReceiptError, "adapter/config identity mismatch"):
+                self.run_admitted_fixture()
+        self.assertTrue((self.life / "sleep_0064/canary_selection/selected.json").is_file())
+        self.assertTrue((self.life / "sleep_0064/adapter/CANDIDATE").exists())
+        self.assertFalse((self.life / "sleep_0064/adapter/DONE").exists())
+
+    def test_selected_intent_write_failure_closes_backend_without_done(self):
+        from organism_v6 import nursery_selection_receipt as selection
+
+        write = selection.custody._write
+
+        def interrupt(path, content):
+            if Path(path).name == "selected.json":
+                raise OSError("synthetic durable selection interruption")
+            return write(path, content)
+
+        with patch.object(selection.custody, "_write", side_effect=interrupt):
+            with self.assertRaisesRegex(selection.SelectionReceiptError, "synthetic durable selection interruption"):
+                self.run_admitted_fixture()
+        sleep = self.life / "sleep_0064"
+        self.assertTrue((sleep / "canary_selection/receipt.json").is_file())
+        self.assertFalse((sleep / "canary_selection/selected.json").exists())
+        self.assertTrue((sleep / "adapter/CANDIDATE").exists())
+        self.assertFalse((sleep / "adapter/DONE").exists())
+        self.assertTrue(any(call.args[0].adapter_path == str(sleep / "adapter")
+                            for call in self.backend_closes.call_args_list))
+
+    def test_backend_close_failure_blocks_clean_final_marker(self):
+        from organism_v6 import nursery_selection_receipt as selection
+
+        write = selection.SelectionRecorder.write
+
+        def fail_close(recorder, *args, **kwargs):
+            binding = write(recorder, *args, **kwargs)
+            self.backend_closes.return_value = False
+            return binding
+
+        with patch.object(selection.SelectionRecorder, "write", fail_close):
+            with self.assertRaisesRegex(RuntimeError, "candidate backend did not close"):
+                self.run_admitted_fixture()
+        self.assertTrue((self.life / "sleep_0064/canary_selection/selected.json").is_file())
+        self.assertTrue((self.life / "sleep_0064/adapter/CANDIDATE").exists())
+        self.assertFalse((self.life / "sleep_0064/adapter/DONE").exists())
+
+    def test_actual_negative_canary_keeps_rejection_evidence(self):
+        class NegativeCanary(VariedNurseryModelFixture):
+            def batch(self, prompts, max_tokens=400, temperature=0.7, seeds=None):
+                if self.adapter_path is not None:
+                    return ["### ACT: not canonical" for prompt in prompts]
+                return super().batch(prompts, max_tokens, temperature, seeds)
+
+        self.run_admitted_fixture(model_class=NegativeCanary, expect_acceptance=False)
+        sleep = self.life / "sleep_0064"
+        decision = json.loads((sleep / "canary_selection/receipt.json").read_bytes())
+        self.assertEqual(decision["decision"], "REJECTED_CANARY")
+        self.assertEqual(decision["rate"], 0.0)
+        self.assertTrue((sleep / "adapter/REJECTED_CANARY").exists())
+        self.assertFalse((self.life / "lineage/sleep_0064").exists())
 
     def test_backend_identity_mismatch_fails_before_waking(self):
         original = NurseryModelFixture.generation_identity

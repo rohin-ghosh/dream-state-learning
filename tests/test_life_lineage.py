@@ -12,6 +12,8 @@ from organism_v6 import life_lineage as lineage
 from organism_v6 import lineage_guard as guard
 from organism_v6 import train_adapter
 from organism_v6 import preschool_reasoning as reasoning
+from test_nursery_selection_receipt import synthetic_selection
+from organism_v6.nursery_selection_receipt import SelectionReceiptError
 
 
 def encode(value):
@@ -146,7 +148,12 @@ class LifeLineageTests(unittest.TestCase):
         }
         trainer_path = self.runtime / "trainer.json"
         trainer_path.write_bytes(encode(trainer))
+        try:
+            selected = synthetic_selection(self.adapter, previous.model_dir, previous.ancestry.manifest.sha256)
+        except (SelectionReceiptError, lineage.LifeLineageError, OSError):
+            selected = {"selection_path": None, "selection_sha256": None}
         return {"previous_manifest": previous.ancestry.manifest.path,
+                "selection_path": selected["selection_path"], "expected_selection_sha256": selected["selection_sha256"],
                 "previous_sha256": previous.ancestry.manifest.sha256,
                 "ledger_path": ledger_path, "corpus_path": corpus_path,
                 "gate_receipt_path": gate_path, "expected_gate_sha256": sha(encode(gate)),
@@ -339,8 +346,8 @@ class LifeLineageTests(unittest.TestCase):
         manifest = json.loads((root / sleep.ancestry.manifest.path).read_bytes())
         self.assertEqual(manifest["parents"], [{"path": birth.ancestry.manifest.path,
                                                "sha256": birth.ancestry.manifest.sha256}])
-        self.assertEqual(len(manifest["sources"]), 3)
-        self.assertEqual(len(manifest["artifacts"]), 6)
+        self.assertEqual(len(manifest["sources"]), 4)
+        self.assertEqual(len(manifest["artifacts"]), 8)
         self.assertEqual(len(manifest["trained_corpus"]), 1)
         self.assertEqual(Path(sleep.ledger_snapshot).read_bytes(), args["ledger_path"].read_bytes())
         self.assertEqual((Path(sleep.adapter_dir).parent / "corpus.json").read_bytes(),
@@ -412,6 +419,8 @@ class LifeLineageTests(unittest.TestCase):
         args["adapter_dir"] = accepted_dir
         self.reject_sleep(args, pattern="requires final DONE")
         (accepted_dir / "CANDIDATE").rename(accepted_dir / "DONE")
+        selected = synthetic_selection(accepted_dir, self.life / "lineage/birth/model", args["previous_sha256"])
+        args.update(selection_path=selected["selection_path"], expected_selection_sha256=selected["selection_sha256"])
         checkpoint = lineage.record_sleep(self.life, "sleep_0001", **args)
         self.assertTrue(checkpoint.ancestry.eligible)
         snapshot = Path(checkpoint.adapter_dir).parent
@@ -608,6 +617,90 @@ class LifeLineageTests(unittest.TestCase):
                           manifest=guard.FileBinding(first.ancestry.manifest.path, sha(content))))
         self.reject_sleep(self.inputs(changed, event() + event(2)), "sleep_0002",
                           "prior sleep lacks bound training evidence")
+
+    def test_missing_selection_is_never_a_legacy_bypass(self):
+        args = self.inputs(self.birth())
+        for field in ("selection_path", "expected_selection_sha256"):
+            missing = dict(args)
+            del missing[field]
+            with self.subTest(field=field):
+                self.reject_sleep(missing, pattern="selection custody is required")
+        self.assertFalse((self.life / "lineage/sleep_0001").exists())
+
+    def test_selection_input_tampering_rejected_before_snapshot(self):
+        birth = self.birth()
+        for name in ("trace.json", "receipt.json", "selected.json"):
+            args = self.inputs(birth)
+            path = Path(args["selection_path"]).parent / name
+            path.chmod(0o600)
+            path.write_bytes(path.read_bytes() + b" ")
+            with self.subTest(name=name):
+                self.reject_sleep(args)
+        self.assertFalse((self.life / "lineage/sleep_0001").exists())
+
+    def rebind_fixture_manifest(self, checkpoint, manifest):
+        path = Path(checkpoint.ancestry.root) / checkpoint.ancestry.manifest.path
+        content = encode(manifest)
+        path.chmod(0o600)
+        path.write_bytes(content)
+        return replace(checkpoint, ancestry=replace(checkpoint.ancestry,
+                       manifest=guard.FileBinding(checkpoint.ancestry.manifest.path, sha(content))))
+
+    def test_replay_requires_historical_selection_not_new_receipt(self):
+        first = lineage.record_sleep(self.life, "sleep_0001", **self.inputs(self.birth()))
+        path = Path(first.ancestry.root) / first.ancestry.manifest.path
+        original = json.loads(path.read_bytes())
+        for filename in ("receipt.json", "selected.json"):
+            manifest = deepcopy(original)
+            manifest["artifacts"] = [item for item in manifest["artifacts"]
+                                      if item["path"] != "sleep_0001/canary_selection/" + filename]
+            changed = self.rebind_fixture_manifest(first, manifest)
+            with self.subTest(missing=filename):
+                self.reject_sleep(self.inputs(changed, event() + event(2)), "sleep_0002",
+                                  "prior sleep lacks bound canary selection evidence")
+
+    def test_replay_rejects_mixed_training_and_selection_references(self):
+        first = lineage.record_sleep(self.life, "sleep_0001", **self.inputs(self.birth()))
+        path = Path(first.ancestry.root) / first.ancestry.manifest.path
+        original = json.loads(path.read_bytes())
+        trace = next(source for source in original["sources"] if source["path"].endswith("/trace.json"))
+        for target in ("corpus", "done"):
+            manifest = deepcopy(original)
+            if target == "corpus":
+                manifest["trained_corpus"][0]["source_sha256"].append(trace["sha256"])
+                pattern = "canary source mixed into training corpus"
+            else:
+                artifact = next(item for item in manifest["artifacts"] if item["path"].endswith("/DONE"))
+                artifact["source_sha256"] = manifest["trained_corpus"][0]["source_sha256"]
+                pattern = "canary selection artifact has incorrect sources"
+            changed = self.rebind_fixture_manifest(first, manifest)
+            with self.subTest(target=target):
+                self.reject_sleep(self.inputs(changed, event() + event(2)), "sleep_0002", pattern)
+
+    def test_replay_recomputes_false_verdict_even_with_rebound_manifest(self):
+        from organism_v6 import nursery_selection_receipt as selection
+
+        first = lineage.record_sleep(self.life, "sleep_0001", **self.inputs(self.birth()))
+        root = Path(first.ancestry.root)
+        path = root / first.ancestry.manifest.path
+        manifest = json.loads(path.read_bytes())
+        receipt_path = root / "sleep_0001/canary_selection/receipt.json"
+        receipt = json.loads(receipt_path.read_bytes())
+        receipt.update(rate=0.0)
+        receipt_path.chmod(0o600)
+        receipt_path.write_bytes(selection._encoded(receipt))
+        selected_path = receipt_path.parent / "selected.json"
+        selected = json.loads(selected_path.read_bytes())
+        selected["receipt_sha256"] = sha(receipt_path.read_bytes())
+        selected_path.chmod(0o600)
+        selected_path.write_bytes(selection._encoded(selected))
+        for item in manifest["artifacts"]:
+            if item["path"].endswith("/canary_selection/receipt.json"):
+                item["sha256"] = sha(receipt_path.read_bytes())
+            if item["path"].endswith("/canary_selection/selected.json"):
+                item["sha256"] = sha(selected_path.read_bytes())
+        changed = self.rebind_fixture_manifest(first, manifest)
+        self.reject_sleep(self.inputs(changed, event() + event(2)), "sleep_0002", "false canary verdict")
 
     def test_new_receipt_cannot_launder_prior_prefix_supervision(self):
         first = lineage.record_sleep(self.life, "sleep_0001", **self.inputs(self.birth()))

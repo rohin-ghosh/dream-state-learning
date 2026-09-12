@@ -17,6 +17,7 @@ from unittest import mock
 from organism_v6 import life_lineage as lineage
 from organism_v6 import lineage_guard as guard
 from organism_v6 import train_adapter as trainer
+from test_nursery_selection_receipt import synthetic_selection
 
 
 def encode(value):
@@ -210,6 +211,7 @@ class ChildReceiptIntegrationTests(unittest.TestCase):
 
     def accept_fixture(self):
         (self.adapter / "DONE").write_bytes(b"synthetic runner acceptance, NOT training evidence\n")
+        self.selected = synthetic_selection(self.adapter, self.birth.model_dir, self.previous_sha)
 
     def verify(self):
         return lineage.record_sleep(
@@ -218,7 +220,9 @@ class ChildReceiptIntegrationTests(unittest.TestCase):
             corpus_path=self.corpus_path, gate_receipt_path=self.gate_path,
             expected_gate_sha256=self.gate_sha, trainer_receipt_path=self.receipt_path,
             expected_trainer_sha256=sha(self.receipt_path.read_bytes()), adapter_dir=self.adapter,
-            exposure_status="UNEXPOSED", other_influences=[])
+            exposure_status="UNEXPOSED", other_influences=[],
+            selection_path=getattr(self, "selected", {}).get("selection_path"),
+            expected_selection_sha256=getattr(self, "selected", {}).get("selection_sha256"))
 
     def reject(self, pattern):
         with self.assertRaisesRegex(lineage.LifeLineageError, pattern):
@@ -337,6 +341,7 @@ class ChildReceiptIntegrationTests(unittest.TestCase):
         (self.adapter / "DONE").rename(self.adapter / "CANDIDATE")
         self.reject("final DONE")
         (self.adapter / "CANDIDATE").rename(self.adapter / "DONE")
+        self.accept_fixture()
         self.assertTrue(self.verify().ancestry.eligible)
 
     def test_wrong_source_hash_with_rebound_gate_rejected_by_lifecycle(self):
@@ -436,9 +441,10 @@ class ChildReceiptIntegrationTests(unittest.TestCase):
             with self.subTest(marker=name):
                 marker = self.adapter / name
                 marker.write_bytes(b"fixture marker\n")
-                self.accept_fixture()
+                (self.adapter / "DONE").write_bytes(b"synthetic ambiguous acceptance\n")
                 self.reject("final DONE")
                 marker.unlink()
+        self.accept_fixture()
         self.assertTrue(self.verify().ancestry.eligible)
 
     def test_gate_pin_error_precedes_all_ml_imports(self):
@@ -572,6 +578,7 @@ class ChildReceiptIntegrationTests(unittest.TestCase):
         metadata = json.loads((self.adapter / "train_meta.json").read_bytes())
         self.assertEqual((metadata["steps"], metadata["tokens"], metadata["supervised_tokens"]),
                          (4, 54, 18))
+        self.accept_fixture()
         self.assertTrue(self.verify().ancestry.eligible)
 
     def test_invalid_last_batch_prevents_loading_and_all_simulated_training(self):

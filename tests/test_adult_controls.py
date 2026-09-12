@@ -20,6 +20,7 @@ if str(ROOT) not in sys.path:
 from organism_v6 import adult_controls as adult
 from organism_v6 import life_lineage as lineage
 from organism_v6 import lineage_guard as guard
+from test_nursery_selection_receipt import synthetic_selection
 
 
 def encoded(value):
@@ -44,7 +45,7 @@ def snapshot(directory):
 
 
 class AdultControlsTests(unittest.TestCase):
-    def setUp(self):
+    def setUp(self, local_base=False):
         self.temporary = tempfile.TemporaryDirectory(prefix="adult_controls_", dir="/tmp")
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
@@ -66,6 +67,8 @@ class AdultControlsTests(unittest.TestCase):
             loaded_adapter_path=None, exposure_status="UNEXPOSED", other_influences=[])
         runtime = self.root / "runtime"
         self.adapter_config = {"peft_type": "LORA", "base_model_name_or_path": guard.BASE_MODEL, "r": 8}
+        if local_base:
+            self.adapter_config["base_model_name_or_path"] = birth.model_dir
         write(runtime / "adapter" / "adapter_config.json", self.adapter_config)
         write(runtime / "adapter" / "adapter_model.safetensors", b"child adapter fixture")
         self.parent_text = "PARENT_ONLY_SENTINEL: Notice the source of an observation."
@@ -106,8 +109,10 @@ class AdultControlsTests(unittest.TestCase):
                        supervised_child_tokens=16, supervised_padding_tokens=0)]))
         write(runtime / "trainer.json", trainer_bytes)
         write(runtime / "adapter/DONE", b"accepted childhood fixture\n")
+        selected = synthetic_selection(runtime / "adapter", birth.model_dir, birth.ancestry.manifest.sha256)
         self.child_checkpoint = lineage.record_sleep(
             self.child, "sleep_0032", previous_manifest=birth.ancestry.manifest.path,
+            selection_path=selected["selection_path"], expected_selection_sha256=selected["selection_sha256"],
             previous_sha256=birth.ancestry.manifest.sha256, ledger_path=runtime / "ledger.jsonl",
             corpus_path=runtime / "corpus.json", gate_receipt_path=runtime / "gate.json",
             expected_gate_sha256=digest(gate_bytes), adapter_dir=runtime / "adapter",
@@ -299,6 +304,14 @@ class AdultControlsTests(unittest.TestCase):
             self.prepare(explicit_flags="--parent-mode=brief")
 
     def test_pinned_local_base_and_fixed_model_id_are_compatible(self):
+        self.setUp(local_base=True)
+        control = self.prepare()
+        self.assertEqual(control.model_dir, str(self.bundle / "birth/model"))
+        arguments = self.candidate(control, 8)
+        self.decide(control, 8, **arguments)
+        self.assertNotEqual(adult.select_adapter(control), control.initial_adapter)
+
+    def test_rebound_training_pins_cannot_relabel_selected_adapter(self):
         path = self.initial_adapter / "adapter_config.json"
         model_dir = str(self.bundle / "birth" / "model")
         write(path, {**self.adapter_config, "base_model_name_or_path": model_dir})
@@ -314,11 +327,8 @@ class AdultControlsTests(unittest.TestCase):
                 artifact["sha256"] = digest(trainer_path.read_bytes())
         write(self.manifest_path, manifest)
         self.pin = digest(self.manifest_path.read_bytes())
-        control = self.prepare()
-        self.assertEqual(control.model_dir, model_dir)
-        arguments = self.candidate(control, 8)
-        self.decide(control, 8, **arguments)
-        self.assertNotEqual(adult.select_adapter(control), control.initial_adapter)
+        with self.assertRaisesRegex(adult.AdultControlError, "candidate adapter/config identity mismatch"):
+            self.prepare()
 
     def test_actual_config_weights_and_corpus_must_match_pinned_artifacts(self):
         for filename in ("adapter_model.safetensors", "adapter_config.json"):
@@ -434,8 +444,10 @@ class AdultControlsTests(unittest.TestCase):
         trainer.update(previous_manifest_sha256=self.pin,
                        gate_receipt_sha256=digest((runtime / "gate.json").read_bytes()))
         write(runtime / "trainer.json", trainer)
+        selected = synthetic_selection(runtime / "adapter", self.child_checkpoint.model_dir, self.pin)
         later = lineage.record_sleep(
             self.child, "sleep_0064", previous_manifest=self.child_checkpoint.ancestry.manifest.path,
+            selection_path=selected["selection_path"], expected_selection_sha256=selected["selection_sha256"],
             previous_sha256=self.pin, ledger_path=runtime / "ledger.jsonl",
             corpus_path=runtime / "corpus.json", gate_receipt_path=runtime / "gate.json",
             expected_gate_sha256=digest((runtime / "gate.json").read_bytes()),

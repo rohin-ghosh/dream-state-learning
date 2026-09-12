@@ -10,7 +10,7 @@ Public APIs (keyword arguments without defaults are deliberately mandatory):
                ledger_path, corpus_path, gate_receipt_path,
                expected_gate_sha256, trainer_receipt_path,
                expected_trainer_sha256, adapter_dir, exposure_status,
-               other_influences)
+               other_influences, selection_path, expected_selection_sha256)
 
 All return LifeCheckpoint; all rejections raise LifeLineageError. Birth needs
 an existing EMPTY life directory, an actual loader adapter path of None, and
@@ -107,11 +107,13 @@ Failed attempts retain partial artifacts and cannot be reused automatically.
 Previous manifests must descend from this helper's externally verified birth;
 the externally selected previous_sha256 transitively pins that birth. Adapter
 configs may name the fixed model ID or the exact returned birth model_dir.
-Every prior sleep's bound gate/trainer/native-metadata evidence is rechecked;
-legacy ancestry without body-only evidence is not upgraded by a new receipt.
+Every prior sleep's bound gate/trainer/native-metadata and canary selection
+evidence is rechecked; legacy ancestry without custody is not upgraded by a new
+receipt. Selection requires immutable trace, receipt and selected intent. Their
+source references are separate from training-only corpus/adapter references.
 record_sleep is only for a runner-accepted checkpoint: adapter_dir must be the
 runner-owned final directory with a nonempty regular DONE file, no CANDIDATE,
-and no REJECTED_* markers. DONE is snapshotted as separate selection evidence;
+and no REJECTED_* markers. DONE is bound to the canary selection trace;
 it is NOT added to the frozen trainer receipt's adapter_files mapping. A marker
 alone proves neither training nor acceptance: the caller must not pass an
 unpromoted trainer staging directory whose trainer-owned marker is also DONE.
@@ -662,14 +664,45 @@ def _prior_training(root, validated):
                     evidence["gate_receipt.json"], parent_hash)
         _trainer_evidence(evidence["trainer_receipt.json"], evidence["gate_receipt.json"],
                           evidence["corpus.json"], parent_hash, adapter, evidence["adapter/train_meta.json"])
+        from . import nursery_selection_receipt as selection
+
+        selection_paths = {name: (directory / "canary_selection" / name).as_posix()
+                           for name in ("trace.json", "receipt.json", "selected.json")}
+        _require(all(path in local and path in bindings for path in selection_paths.values()),
+                 "prior sleep lacks bound canary selection evidence")
+        selection.verify_selected(
+            root / selection_paths["selected.json"],
+            expected_selection_sha256=bindings[selection_paths["selected.json"]],
+            adapter_dir=root / directory / "adapter", previous_manifest_sha256=parent_hash, stage="DONE")
+        trace_hash = bindings[selection_paths["trace.json"]]
+        trace_sources = [item for item in manifest["sources"]
+                         if item["path"] == selection_paths["trace.json"]]
+        _require(len(trace_sources) == 1 and trace_sources[0]["role"] == "experienced_event",
+                 "canary trace must be a separate selection source")
+        selection_artifacts = {selection_paths["receipt.json"], selection_paths["selected.json"],
+                               (directory / "adapter/DONE").as_posix()}
+        for item in manifest["artifacts"]:
+            if item["path"] in selection_artifacts:
+                _require(item["role"] == "selection_decision" and item["source_sha256"] == [trace_hash],
+                         "canary selection artifact has incorrect sources")
+            else:
+                _require(trace_hash not in item["source_sha256"], "canary source mixed into training evidence")
+        _require(selection_artifacts <= {item["path"] for item in manifest["artifacts"]},
+                 "missing canary selection artifact")
+        _require(all(trace_hash not in item["source_sha256"] for item in manifest["trained_corpus"]),
+                 "canary source mixed into training corpus")
 
 
 @_api
 def record_sleep(life_dir, checkpoint, *, previous_manifest, previous_sha256,
                  ledger_path, corpus_path, gate_receipt_path, expected_gate_sha256,
                  trainer_receipt_path, expected_trainer_sha256, adapter_dir,
-                 exposure_status, other_influences):
-    """Record one ancestry-only sleep snapshot; never train or promote it."""
+                 exposure_status, other_influences, selection_path=None, expected_selection_sha256=None):
+    """Record a sleep only with bound training AND canary selection evidence.
+
+    Missing selection arguments always reject; defaults only preserve earlier
+    diagnostic validation for old callers, never permit a custody bypass.
+    """
     _declarations(exposure_status, other_influences)
     _require(isinstance(checkpoint, str) and re.fullmatch(r"sleep_\d{4,}", checkpoint),
              "unsupported checkpoint name")
@@ -702,6 +735,18 @@ def record_sleep(life_dir, checkpoint, *, previous_manifest, previous_sha256,
              "external trainer pin mismatch")
     metadata_bytes = _read(_absolute(adapter_dir) / "train_meta.json")
     _trainer_evidence(trainer_bytes, gate_bytes, corpus_bytes, previous_sha256, adapter, metadata_bytes)
+    from . import nursery_selection_receipt as selection
+
+    _require(selection_path is not None and expected_selection_sha256 is not None,
+             "canary selection custody is required")
+    decision = selection.verify_selected(
+        selection_path, expected_selection_sha256=expected_selection_sha256,
+        adapter_dir=adapter_dir, previous_manifest_sha256=previous_sha256,
+        expected_model_input=str(root / "birth/model"), expected_adapter_input=str(adapter_dir), stage="DONE")
+    selection_dir = _absolute(selection_path).parent
+    selection_bytes = _read(selection_path)
+    _require(_digest(selection_bytes) == expected_selection_sha256, "selection intent changed")
+    selected = _json(selection_bytes)
     destination = root / checkpoint
     _mkdir(destination)
     _mkdir(destination / "adapter")
@@ -712,6 +757,12 @@ def record_sleep(life_dir, checkpoint, *, previous_manifest, previous_sha256,
         target = destination / f"row_{index:08d}.jsonl"
         sources.append(_binding(root, target, _write(target, content), role))
     references = [source["sha256"] for source in sources]
+    selection_destination = destination / "canary_selection"
+    _mkdir(selection_destination)
+    target = selection_destination / "trace.json"
+    trace_hash = _copy(selection_dir / "trace.json", target, decision["trace_sha256"])
+    sources.append(_binding(root, target, trace_hash, "experienced_event"))
+    selection_references = [trace_hash]
     target = destination / "gate_receipt.json"
     artifacts = [_binding(root, target, _write(target, gate_bytes), "selection_decision", references)]
     target = destination / "trainer_receipt.json"
@@ -719,7 +770,12 @@ def record_sleep(life_dir, checkpoint, *, previous_manifest, previous_sha256,
     target = destination / "adapter/train_meta.json"
     artifacts.append(_binding(root, target, _write(target, metadata_bytes), "selection_decision", references))
     target = destination / "adapter/DONE"
-    artifacts.append(_binding(root, target, _write(target, acceptance_bytes), "selection_decision", references))
+    artifacts.append(_binding(root, target, _write(target, acceptance_bytes), "selection_decision", selection_references))
+    for name, digest in (("receipt.json", selected["receipt_sha256"]),
+                         ("selected.json", expected_selection_sha256)):
+        target = selection_destination / name
+        artifacts.append(_binding(root, target, _copy(selection_dir / name, target, digest),
+                                  "selection_decision", selection_references))
     for name, (path, digest) in adapter.items():
         target = destination / "adapter" / name
         artifacts.append(_binding(root, target, _copy(path, target, digest), "lora_adapter", references))

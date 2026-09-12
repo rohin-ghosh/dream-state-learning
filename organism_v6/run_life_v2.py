@@ -150,7 +150,7 @@ def promote_trained_adapter(stage_dir: str, adapter_dir: str) -> None:
     os.rename(stage_dir, adapter_dir)
 
 
-def format_canary(model, gym, threshold: float = 0.5) -> tuple[bool, float]:
+def format_canary(model, gym, threshold: float = 0.5, selection=None) -> tuple[bool, float]:
     """Post-sleep motor-channel check in the REAL gym context: run the gym's
     canary set (compiler: 4 probe programs) for 3 chunks each with the real
     birth prompt and count chunks that contain a PARSEABLE canonical ACT
@@ -161,19 +161,26 @@ def format_canary(model, gym, threshold: float = 0.5) -> tuple[bool, float]:
     led = Ledger(os.devnull)
     boot = gym.birth_prompt()
     cls = driver_class_for(gym)
+    ids = list(gym.canary_set())
+    if selection is not None:
+        selection.check_setup(episode_ids=ids, birth_prompt=boot, driver=cls, threshold=threshold)
     drivers = [cls(gym.episode_from_id(b, 3), boot, gym, led, budget_ticks=3)
-               for b in gym.canary_set()]
+               for b in ids]
     parse_ok = total = 0
     for _ in range(3):
         act = [d for d in drivers if not d.done]
         if not act:
             break
-        outs = model.batch([d.prompt() for d in act],
-                           seeds=[4242 + i for i in range(len(act))])
+        prompts = [d.prompt() for d in act]
+        seeds = [4242 + i for i in range(len(act))]
+        outs = (selection.batch(act, prompts, seeds) if selection is not None
+                else model.batch(prompts, seeds=seeds))
         for d, o in zip(act, outs):
             total += 1
             parse_ok += bool(_re.search(r"^ACT:\s*\S", o, _re.M))
             d.consume(o)
+        if selection is not None:
+            selection.finish_round(act)
     rate = parse_ok / max(1, total)
     return rate >= threshold, rate
 
@@ -688,11 +695,12 @@ def main():
     def load_model():
         ad = latest_adapter(life) if args.arm == "B" else None
         if nursery_state is not None:
-            from . import lineage_guard
+            from . import lineage_guard, life_lineage
             checkpoint = nursery_state["checkpoint"]
-            lineage_guard.validate_manifest(checkpoint.ancestry.manifest.path,
-                                            root=checkpoint.ancestry.root,
-                                            expected_sha256=checkpoint.ancestry.manifest.sha256)
+            validated = lineage_guard.validate_manifest(checkpoint.ancestry.manifest.path,
+                                                        root=checkpoint.ancestry.root,
+                                                        expected_sha256=checkpoint.ancestry.manifest.sha256)
+            life_lineage._prior_training(Path(checkpoint.ancestry.root), validated)
             ad = checkpoint.adapter_dir if args.arm == "B" else None
         backend = VLLMBackend(adapter_path=ad)
         if nursery_state is not None:
@@ -1206,11 +1214,24 @@ def main():
                                 "gate")
                         wake_closed = True
                         cand = VLLMBackend(adapter_path=ad)
+                        selected = None
                         if clean_nursery:
-                            validate_clean_backend(cand, nursery_state["checkpoint"].model_dir, ad)
-                        ok, rate = format_canary(cand, gym)
-                        from .model_backend import close_backend as _cb2
-                        _cb2(cand)
+                            from . import nursery_selection_receipt as selection_receipt
+                            try:
+                                validate_clean_backend(cand, nursery_state["checkpoint"].model_dir, ad)
+                                selection = selection_receipt.SelectionRecorder(
+                                    cand, model_input=nursery_state["checkpoint"].model_dir,
+                                    adapter_dir=ad, config=selection_receipt.evaluation_config(gym),
+                                    previous_manifest_sha256=nursery_state["checkpoint"].ancestry.manifest.sha256)
+                                ok, rate = format_canary(cand, gym, selection=selection)
+                                selected = selection.write(os.path.join(sdir, "canary_selection"), ok=ok, rate=rate)
+                            finally:
+                                if not close_backend(cand):
+                                    raise RuntimeError("candidate backend did not close; refusing clean promotion")
+                        else:
+                            ok, rate = format_canary(cand, gym)
+                            from .model_backend import close_backend as _cb2
+                            _cb2(cand)
                         log(f"[sleep {i}] canary parseable-ACT rate={rate:.2f} "
                             f"pass={ok}")
                         verdict = "DONE" if ok else "REJECTED_CANARY"
@@ -1224,6 +1245,14 @@ def main():
                                 f"{g['cand_chunks_per_ep']:.1f} vs "
                                 f"{g['base_chunks_per_ep']} -> {g_reason}")
                             verdict = "DONE" if g_ok else f"REJECTED_{g_reason}"
+                        if clean_nursery:
+                            decision = selection_receipt.verify_selected(
+                                selected["selection_path"], expected_selection_sha256=selected["selection_sha256"],
+                                adapter_dir=ad, previous_manifest_sha256=nursery_state["checkpoint"].ancestry.manifest.sha256,
+                                expected_model_input=nursery_state["checkpoint"].model_dir,
+                                expected_adapter_input=ad, require_acceptance=ok)
+                            if decision["decision"] != verdict:
+                                raise RuntimeError("selected canary verdict differs from final marker")
                         os.rename(os.path.join(ad, "CANDIDATE"),
                                   os.path.join(ad, verdict))
                         if clean_nursery and verdict == "DONE":
@@ -1232,6 +1261,8 @@ def main():
                             previous = nursery_state["checkpoint"].ancestry.manifest
                             nursery_state["checkpoint"] = life_lineage.record_sleep(
                                 life, os.path.basename(sdir), previous_manifest=previous.path,
+                                selection_path=selected["selection_path"],
+                                expected_selection_sha256=selected["selection_sha256"],
                                 previous_sha256=previous.sha256,
                                 ledger_path=gate_result["ledger_snapshot_path"],
                                 corpus_path=os.path.join(sdir, "corpus.json"),

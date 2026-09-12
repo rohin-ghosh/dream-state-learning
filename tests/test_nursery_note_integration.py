@@ -52,6 +52,11 @@ class NurseryNoteIntegrationTests(unittest.TestCase):
                     lines[admission[prefix + "_line"]]).hexdigest())
         lineage = fixture.life / "lineage" / "sleep_0064"
         self.assertEqual((lineage / "ledger.jsonl").read_bytes(), ledger_bytes)
+        selection = json.loads((lineage / "canary_selection/receipt.json").read_bytes())
+        self.assertEqual(selection["decision"], "DONE")
+        self.assertEqual(selection["total"], 12)
+        self.assertEqual(selection["parse_ok"], 12)
+        self.assertTrue((lineage / "canary_selection/selected.json").is_file())
         self.assertTrue((fixture.life / "LIFE_DONE").exists())
 
     def test_corrupted_notes_fail_before_training_or_promotion(self):
