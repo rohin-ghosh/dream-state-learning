@@ -45,17 +45,24 @@ and choose an informative experiment. The experiment produces a new outcome;
 a second SLEEP adds it. A final task can be solved only by using one old
 connection and the newly learned fact together.
 
-Three trained versions isolate the causes:
+The first draft used three trained versions to isolate the causes:
 
 - **FULL:** truthful experiences plus the child's real connection.
-- **WRONG SOURCE BINDING:** the same material and connection, but two old
-  action--outcome bindings are swapped.
-- **NO DREAM CONNECTION:** truthful experiences, but the connection slots are
-  empty.
+- **WRONG SOURCE BINDING:** the same material and connection, but selected old
+  action--outcome bindings are deranged.
+- **WRONG DREAM CONNECTION:** truthful experiences, but evidence-matched wrong
+  connections replace the child's organization.
 
 FULL must succeed; the two controls must fail only at the stages their missing
-ingredient should affect. This is the smallest experiment that tests THINK,
-DREAM, and two SLEEP writes together rather than testing storage alone.
+ingredient should affect. A fresh audit correctly caught that the first exact
+version did not yet achieve this: its source shuffle changed labels rather
+than a true action--outcome contingency, and its correct DREAM links could be
+read directly from visible endpoint syntax. The design is being repaired on
+CPU before any M-core training. The final version must use crossed real action
+outcomes, make useful connections distinguishable only by experience, include
+the second outcome-twin write, and compare SLEEP-2 with an equal-work old-plus-
+pad write. Once repaired, it is the smallest experiment that tests THINK,
+DREAM, and two SLEEP writes together rather than storage alone.
 
 ### 3. Learning improves a life, not just one probe
 

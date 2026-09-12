@@ -465,6 +465,22 @@ organization. These checks prevent one corrupt arm from simultaneously
 breaking source truth and DREAM structure. Full contract:
 `research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design.md`.
 
+However, a fresh-context adversarial audit now sets this exact draft to
+**REWORK before any M fit**. Five defects remain: swapping two deterministic
+cue labels tests polarity rather than a crossed action--outcome contingency;
+the six DREAM answers are mechanically recoverable from visible endpoints;
+the truthful outcome twin requires an additional S2 carrier and is not
+inference-only; the shuffled arm has an unresolved 0.5 chance of accidentally
+writing the correct row; and `NO_SLEEP_2` lacks a same-work matched
+old-plus-pad S2 carrier. The exact reader catalog also needs an observability
+proof. Therefore the three names and cost below are provisional until the
+repair lands. The information-efficient repair keeps S1 at three arms, stages
+the two-root S1 kill before any S2 fit, replaces syntactically recoverable
+DREAM/null logic with evidence-distinguished organization plus a mechanical
+baseline, and spends saved S2 fits on the truthful outcome twin and old+pad
+control. Audit:
+`research_notes/analysis/2026-09-12_m_core_revised_three_condition_adversarial_audit.md`.
+
 Release three endpoints separately:
 
 - **M-E2 connected carriage:** both atoms are mechanically necessary; authentic
@@ -508,6 +524,8 @@ current audited estimate this is about `26--56` A40-hours all-in, while a bad
 design should die below roughly five A40-hours. DEV is never pooled with
 confirmation, roots—not fits or checkpoints—are the independent units, and
 one failed fit makes its root adverse rather than triggering seed search.
+These counts describe the superseded draft and must be replaced by the repaired
+S1-first/S2-conditional arithmetic before launch.
 
 ### L — increasing-lifetime learning
 
@@ -710,13 +728,15 @@ model, children, and task families.
    after a sealed/replayed W0 pass.
 3. Run one old/new cumulative-replay coexistence canary. It is a waste-prevention
    gate for M, not a separate powered paper result.
-4. Close the CPU M0 theorem/shortcut/air-gap proofs and four exact-text roots.
-   Then run two LoRA `M-core` kill-gate roots with exactly three trained
-   conditions: `FULL_AUTH`, `SOURCE_BINDING_SHUFFLED`, and `DREAM_NULL`. Reuse each
-   artifact for SLEEP-off, wrong-life, row cuts, goal/outcome twins, catalog
-   permutations, and other inference-only interventions. This integrates S's
-   authentic action--outcome contrast into the end-to-end mechanism instead of
-   funding a separate eight-root S population.
+4. Repair M-core's crossed source law, evidence-only DREAM decision,
+   reader-observability theorem, outcome-twin S2 carrier, nuisance/admission
+   truth table, and matched old+pad S2 control. Close those on CPU and four
+   exact-text roots. Then run two LoRA roots S1-first; fit S2 only for roots
+   that pass the prospectively frozen S1 gates. Reuse artifacts for adapter-off,
+   wrong-life, row cuts, semantic twins, catalog permutations, and other valid
+   inference-only interventions. This integrates authentic action--outcome
+   evidence into the end-to-end mechanism without funding a separate source
+   population.
 5. Only if both M-core kill roots have the predeclared direction and every
    noncompensatory trace gate passes, freeze M and run one fresh jointly powered
    confirmation cohort. Qualify the single evolving-text system in DEV.

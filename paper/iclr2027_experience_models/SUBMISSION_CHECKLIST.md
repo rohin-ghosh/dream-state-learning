@@ -17,11 +17,13 @@
   exactly four canonical W0 fits only if the carrier passes. A bounded
   preservation-KL diagnostic is still being reduced, but cannot substitute
   for semantic conditional binding.
-- **Mechanism:** the exact M-core design is closed watcher-side. It uses
-  `FULL_AUTH`, `SOURCE_BINDING_SHUFFLED`, and `DREAM_NULL`, each at two SLEEPs,
-  with CPU/text closure, a two-root kill gate, eight-root DEV, and a fresh
-  16-root confirmation. It cannot begin LoRA evidence until W0 and the one
-  coexistence canary qualify.
+- **Mechanism:** the first exact M-core draft is under rework after a fresh
+  adversarial audit found five identification gaps: source polarity was not a
+  crossed action--outcome contingency, DREAM answers were recoverable from
+  visible syntax, the outcome twin needed an uncounted S2 fit, the shuffled
+  arm had a chance-success contradiction, and the second write lacked a
+  matched old+pad fit. It cannot begin LoRA evidence until these close, W0
+  passes, and the one coexistence canary qualifies.
 - **Parenting:** no useful lesson has qualified. Fitting historical
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham
@@ -46,9 +48,10 @@
    locality separately rather than starting another broad hyperparameter
    sweep.
 2. Pass one old/new cumulative coexistence canary.
-3. Close M-core on CPU/exact text, then spend at most two LoRA roots before
-   promotion. Full confirmation is roughly `26--56` A40-hours under the
-   current fit estimate; a broken instrument should die below five.
+3. Repair and close M-core on CPU/exact text, then run the two LoRA roots
+   S1-first and pay for S2 only after the S1 gates pass. Recompute confirmation
+   cost from the repaired fit count; do not reuse the superseded `26--56`
+   A40-hour estimate.
 4. Qualify one actually useful visible lesson against matched sham and
    no-teacher before any parenting-derived fit.
 5. Raise clean childhood roots only after one-SLEEP parent-deleted persistence
