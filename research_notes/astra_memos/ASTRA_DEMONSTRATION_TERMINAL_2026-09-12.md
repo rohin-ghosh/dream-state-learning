@@ -25,7 +25,16 @@ support a reliable parenting-effect claim or independent learner replication.
 Source-example copying was prevented from passing transfer by construction:
 the original literal witness is invalid on the new board, which has another
 verified duplicate. No output is yet approved for training; lesson prose is
-not machine-verified. Independent raw-content/byte-provenance audit is pending.
+not machine-verified. Independent raw-content/byte-provenance audit passes
+local replay and preserves all strict results. It identifies a crucial limit:
+the sole valid transfer t02 follows an invalid source note s02. Neither valid
+source record transfers successfully. This is not a verified correct-source
+lesson-to-application chain. The audit preserves every raw output and checks
+all 28 extracted files against the archived capsule; its three artifacts are
+archived as `receipts_20260912/astra_demonstration_content_audit_20260912.*`.
+The source s04 repeats the provided example citation with different prose;
+s07 cites another factual row pair. Neither proves independent discovery.
+All free-prose lessons remain unverified and unapproved for sleep training.
 
 The process explanations cost67tokens on six cases and78on two box cases,
 versus57each for format. Actual total prompt tokens are5637versus5536 and

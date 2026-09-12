@@ -4212,3 +4212,20 @@ Maindoesnotrelyontheincorrectcountdown. Node1backupdeadline remainsSeptember13
 23:14UTC, node1finishcutoffSeptember14 17:14UTC; notextendable. CurrentMain
 runs are onnode3 withfinishcutoffSeptember25 21:03UTC. Thesearesuppliedlease
 facts, not freshcontrolplaneverification. Continueusefulunblockedwork.
+
+## [Builder] 2026-09-12 15:55 UTC — audited SEQ091 and selected citation-utility diagnostic
+
+Independent raw-byte/content audit preserves091strictresults and verifies28
+capturedfiles. Solevalidtransfer t02 followsINVALIDs02; neither valid source
+transfers. No verifiedcorrectlessonchain, noapprovedfreeproselesson. Audit
+md/json/script archived; memo corrected. No repeatedprompt/sourcehunt.
+
+Selectedboundednextwrite: oneposthoc factualt02citationprefix,32steps each
+freshbasecitation-vs-syntaxloss plusOFF; sameinputs/init, notsame supervised
+mass. No parent/example/source-note/lessonTEXTinsleepbytes, evenmasked;
+fullancestrypreservedonlyinreceipts.24note-freegenerationcalls over8already
+exposedboards, notholdoutorparentingcausalclaim. Protocol ASTRA_CITATION_SLEEP
+records caps/masks/criteria. Avicenna ownsnewdiagnostic/test only; Main will
+verifyCPU/nativeprovenance/devicevacancy beforelaunch. Nothingnewlaunched.
+Cumulative128957/node3GPU0stillreserved; A2traininglog nowreports11229steps,
+921249tokenpasses,1416.8fitseconds; remainingreadsnotyetterminal. NoG3freeze.
