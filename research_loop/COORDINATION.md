@@ -4550,3 +4550,11 @@ firstACTendpoint, seeds0/1/2 asoptimizerreplications only. Wegenerimplements
 CPUhelper/test; no candidatepanel/modelreadoutyet. Expected35–50A40minutes,
 threeindependentseedpairs mayuseGPU1/2/3 onceprepared andfullvacancyverified.
 No launchcount orpaperclaiminferred fromaqueue/design.
+
+## [Builder] 2026-09-12 16:45 UTC — interaction-v2 formation launched
+
+Node3GPU0 controller146460, source20897d84, start16:45:02.072678UTC,
+root ~/astra_diagnostics/astra_rulegame_interaction_v2_20260912_attempt1.
+FullNVIDIA/procCUDA/queuevacancyPASS, native70CPUtestspass; GPU0reserved
+throughformationcleanup. Formationonly; realcontent/materialauditbeforewrites.
+OtherMainGPUslotsunreserved; freshbehaviorpanelhelper/teststillbeingimplemented.
