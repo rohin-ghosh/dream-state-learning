@@ -1,8 +1,9 @@
 # Watcher audit: Astra guards and post-outcome path (2026-09-12)
 
-Status: **REWORK before clean parenting/H2 or post-outcome science.** Astra's
-writer-seed replications are separate synthetic diagnostics and may continue;
-this note does not invalidate or pause them.
+Status: **REWORK before clean parenting/H2 or paper-grade post-outcome
+science.** Astra's writer-seed replications are separate synthetic diagnostics
+and may continue. The later commits `125ba29d` and `0babc3cc` materially repair
+the disposable post-outcome scout; see the update below.
 
 Three fresh read-only audits inspected commit `f2e5b65e` and the current
 post-outcome path. Their findings were reconciled against locally replayed CPU
@@ -99,9 +100,37 @@ would establish only prompted record production and one-cycle carriage of
 record-writing behavior—not outcome learning, parenting, H1/H2, connected
 memory, or improved action.
 
+### Subsequent builder repair (`125ba29d`, `0babc3cc`)
+
+The builder closed most immediate defects before rerouting B0: occurrence-
+unique execution IDs; exact ACT/record joins; orphan, ambiguity, field and
+lesson-echo rejection; ACT-before-NOTE ordering; adapter/config-bound neutral
+probe caches; and child-body-only loss for `preschool_records_v1` (the
+harness-authored wrapper is masked). The affected CPU suites independently
+pass: 32/32 across `test_child_target_loss` and
+`test_preschool_provenance`, plus 11/11 scanner/seed cases.
+
+This is sufficient to make the B0 pair useful as the explicitly quarantined
+engineering scout it claims to be, provided its interpretation stays narrow.
+It still does not certify a paper-grade child record because the row lacks an
+immutable child-generation receipt (model/decode/seed and prompt/output
+hashes), short model output lists are silently truncated by `zip`, admission
+still uses the permissive high gate rather than requiring first-person `F`,
+and the gate/state/corpus commit is not a single hash-bound transaction.
+CompilerGym's own deployment text is also outside the cross-domain leak scan.
+These remaining items must be closed before promoting the mechanism into a
+clean nursery or scientific H1/H2 chain; they do not justify killing the
+quarantined one-cycle scout.
+
 ## Live state at audit
 
 At the read-only poll, A1 S1/F training seeds 2 and 3 and A2 CF attempt-2
 training seeds 0 and 1 were live on node 2; the remaining A2 seed was queued.
 There was no Astra `summary.json`. Five inherited writer pretests also had no
 terminal `summary.json`. This is a verified wait, not a result.
+
+After the source-order/loss-mask repair, the matched B0 A/B pair was observed
+live on node 1 in fresh attempt-2 directories. Its node-3 A attempt had failed
+before model load because that node lacked the CompilerGym interpreter; the
+failure was preserved and the B arm was not started there. This remains a
+verified live run, not an outcome.
