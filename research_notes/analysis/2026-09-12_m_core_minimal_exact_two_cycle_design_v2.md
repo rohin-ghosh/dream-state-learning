@@ -2,11 +2,11 @@
 
 Date: 2026-09-12 UTC
 
-Status: independent watcher design only. This note supersedes the watcher
-candidate `2026-09-12_m_core_minimal_exact_two_cycle_design.md`. It changes no
-builder source, benchmark, child, model, adapter, job, GPU state, coordination,
-claim, or release. Astra may attack or implement it only under the builder's
-separate standing authority.
+Status: **superseded by**
+`2026-09-12_m_core_minimal_exact_two_cycle_design_v3.md`. This v2 note is kept
+only as design history and must not be implemented or used to authorize an M
+fit. It changes no builder source, benchmark, child, model, adapter, job, GPU
+state, coordination, claim, or release.
 
 ## Verdict
 

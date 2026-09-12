@@ -3130,6 +3130,7 @@ A100 starts Sep13 05:05UTC, future A40 Sep15 07:40UTC. Do not rely on
 watcher relative ETAs or assume extendability. Simple hygiene now; final
 paper-grade C11 guard deferred per Rohin, official model origin unresolved.
 
+<<<<<<< Updated upstream
 ## [Builder] 2026-09-12 13:00 UTC — fresh correction collector CPU implementation ready
 
 Pascal's scoped parent_correction_diagnostic.py/test frozen and Main-reviewed:
@@ -3164,6 +3165,8 @@ GPU/XML/CUDA/queue freedom immediately; reservation spans both workers/reloads.
 Next inspect actual correction candidates and source-bound Scratchpad utility,
 then choose matched sleep/parent-free probes only for supported material.
 
+=======
+>>>>>>> Stashed changes
 ## [Codex watcher — recommendation, not ruling] 2026-09-12 12:48 UTC — M-core v2 repairs v1 but still needs zero-fit visibility/statistics closure
 
 The repaired six-fit allocation, crossed source intervention, truthful outcome
@@ -3185,6 +3188,7 @@ and surface-matched. Exact memo:
 `research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
 A second fresh broad audit is still running. This does not request pausing W0,
 preservation, parenting, fill, or the semantic-carrier diagnostic.
+<<<<<<< Updated upstream
 
 ## [Codex watcher — audit addendum] 2026-09-12 12:51 UTC — second M-core v2 review independently agrees REWORK
 
@@ -3233,3 +3237,20 @@ Continuous GPU3reservation through two1800sbounded fresh workers and reloads;
 launched is not completed. No adapter fitting or other jobs displaced.
 Receipts committeddd40926e; concurrent watcher append caused the first
 notebook patch to fail safely; this append preserves the new watcher entry.
+=======
+>>>>>>> Stashed changes
+
+## [Fable] 2026-09-12T13:02Z — watcher check: the writer assay interface is fixed (SEQ-080); the preservation anchor trades all acquisition for spill (SEQ-081); node 3 idle between diagnostics; fill unchanged
+
+Builder (12:35–12:58 UTC). **SEQ-080:** semantic carrier with native action labels — 16/16 generated and scored in all four cells, 32/32 swaps, 16/16 copies, no invalid or truncated outputs, 131 s on one GPU: the a0/a1 label bottleneck is gone and the W0 writer assay can run on real actions. **SEQ-081:** preservation coefficient 0.1 on the A1 seed-2 bank-0 fit — spill 0.42 → 0.037 (just above the 0.03 ceiling) but acquisition I_d 1.92 → 0.15 with interval [−0.02, 0.33]; the anchor removes the spill by removing the learning; fit 2,459 s vs 1,227 s; one seed; no further coefficient sweep selected. So the two knobs tried tonight (learning rate, KL-style anchor) both move along the same acquisition–spill line rather than off it — the recipe trial's real question (OEL-style on-policy context distillation, SDFT) remains open. Next per the builder: a fresh outcome-to-correction collector (62 CPU tests pass) and fresh writer tests; node 3 fully idle at 13:02 UTC between diagnostics. No [Builder → Rohin] question; composer clean.
+
+Fill: 12 pretests running (6 per node), 2 GPUs free per node, none finished yet (first ≈ 19:00 UTC). No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 9 h.
+
+## [Builder] 2026-09-12 13:05 UTC — concurrent notebook reconciliation
+
+Merged incoming4d6cf158 with local1ecaedf1, retaining both dated entries and
+all unrelated dirty files. Incoming notebook already contains literal
+Updated-upstream/Stashed-changes markers; these are inherited, not a new
+unresolved Git merge, and are left for its author to repair under append-only
+protocol. The13:02idle snapshot predates Main's13:02:31GPU3launch; controller
+97128 is live and GPU3reserved. No rebase/stash/reset/force-push used.

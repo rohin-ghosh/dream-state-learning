@@ -17,6 +17,8 @@ import random
 DOSES = (0, 1, 4, 16)
 N_STEPS = 9693
 N_ANCHORS = 48
+PARAPHRASES = ("p1", "p2", "p3")
+COLOURS = ("red", "blue", "green", "white")
 
 
 def load(path: Path):
@@ -68,7 +70,12 @@ def cue_metrics(root: Path):
     if not evaluation.get("template_check") or not evaluation.get("abstain_check", {}).get("ok"):
         raise ValueError("template/abstention evaluation check failed")
     rows = evaluation["cues"]
-    index = {(row["kind"], row.get("owner"), row.get("form")): row for row in rows}
+    # The frozen native reducer selects the first row for a repeated
+    # (kind, owner, form) surface key. Preserve that published convention;
+    # completion-frame cue keys are unique.
+    index = {}
+    for row in rows:
+        index.setdefault((row["kind"], row.get("owner"), row.get("form")), row)
     owners = load(root / "banks/bank0.json")["owners"]
     if len(owners) != 64 or sorted({owner["dose"] for owner in owners}) != list(DOSES):
         raise ValueError("unexpected bank owner/dose structure")
@@ -128,6 +135,86 @@ def cue_metrics(root: Path):
         bicycle=mean(item["abstain_bicycle_on"] for item in exposed),
         d16=mean(item["abstain_on"] for item in d16),
     )
+
+    # The older surface read uses three explicit fact-question paraphrases.
+    # Recompute it separately so a positive old-surface result cannot be
+    # substituted for the prospectively selected completion-frame endpoint.
+    surface = {}
+    for owner in owners:
+        oid, dose = owner["id"], owner["dose"]
+        facts = [index[("fact", oid, form)] for form in PARAPHRASES]
+        fact_metrics = []
+        for row in facts:
+            a = row["a"]
+            b = max((candidate for candidate in row["OFF"]["p_raw"] if candidate != a),
+                    key=lambda candidate: row["OFF"]["p_raw"][candidate])
+            fact_metrics.append(dict(
+                a=a,
+                b=b,
+                p_off=normalized(row, "OFF", a),
+                p_on=normalized(row, "ON", a),
+                d_p=delta_p(row, a),
+                term1=delta_logodds(row, a, b),
+                mass_off=row["OFF"]["mass"],
+                mass_on=row["ON"]["mass"],
+            ))
+        item = dict(
+            dose=dose,
+            p_off=mean(value["p_off"] for value in fact_metrics),
+            p_on=mean(value["p_on"] for value in fact_metrics),
+            d_p=mean(value["d_p"] for value in fact_metrics),
+            term1=mean(value["term1"] for value in fact_metrics),
+            mass_off=mean(value["mass_off"] for value in fact_metrics),
+            mass_on=mean(value["mass_on"] for value in fact_metrics),
+            mass_on_min=min(value["mass_on"] for value in fact_metrics),
+        )
+        if dose > 0:
+            similar_metrics = []
+            for form, fact in zip(PARAPHRASES, fact_metrics):
+                row = index[("similar", oid, form)]
+                similar_metrics.append(dict(
+                    d_p=delta_p(row, fact["a"]),
+                    term2=delta_logodds(row, fact["a"], fact["b"]),
+                ))
+            bicycle = index[("bicycle", oid, "bicycle")]
+            item.update(
+                term2=mean(value["term2"] for value in similar_metrics),
+                I_d=(item["term1"]
+                     - mean(value["term2"] for value in similar_metrics)),
+                similar_d_p=mean(value["d_p"] for value in similar_metrics),
+                bicycle_abs_d_p=abs(delta_p(bicycle, bicycle["a"])),
+            )
+        surface[oid] = item
+    surface_by_dose = {
+        dose: [item for item in surface.values() if item["dose"] == dose]
+        for dose in DOSES
+    }
+    surface_exposed = [item for item in surface.values() if item["dose"] > 0]
+    surface_d16 = surface_by_dose[16]
+    surface_interval = bootstrap([item["I_d"] for item in surface_d16])
+    generic = index[("generic", None, "generic")]
+    surface_spill_parts = dict(
+        unexposed=mean(abs(item["d_p"]) for item in surface_by_dose[0]),
+        similar=mean(abs(item["similar_d_p"]) for item in surface_exposed),
+        bicycle=mean(item["bicycle_abs_d_p"] for item in surface_exposed),
+        generic=mean(abs(delta_p(generic, colour)) for colour in COLOURS),
+    )
+    surface_metrics = dict(
+        I_d=surface_interval["mean"],
+        I_d_interval=[surface_interval["lo"], surface_interval["hi"]],
+        unrelated_shift=mean(surface_spill_parts.values()),
+        unrelated_parts=surface_spill_parts,
+        dose16=dict(
+            p_off=mean(item["p_off"] for item in surface_d16),
+            p_on=mean(item["p_on"] for item in surface_d16),
+            d_p=mean(item["d_p"] for item in surface_d16),
+            candidate_mass_off=mean(item["mass_off"] for item in surface_d16),
+            candidate_mass_on=mean(item["mass_on"] for item in surface_d16),
+            candidate_mass_on_min=min(item["mass_on_min"] for item in surface_d16),
+        ),
+        dP_curve={str(dose): mean(item["d_p"] for item in items)
+                  for dose, items in surface_by_dose.items()},
+    )
     return dict(
         evaluation=str(evaluation_path),
         cue_order=[row["cue_id"] for row in rows],
@@ -150,6 +237,7 @@ def cue_metrics(root: Path):
         ),
         frame_dP_curve=dose_curve,
         abstention=abstention,
+        old_surface=surface_metrics,
         G9_frame_binding=bool(interval["lo"] > 0 and spill <= .03),
         G11_abstention=bool(abstention["unexposed"] >= .5
                             and abstention["bicycle"] >= .5
