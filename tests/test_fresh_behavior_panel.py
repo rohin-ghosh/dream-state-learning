@@ -1,5 +1,6 @@
 """Synthetic CPU fixtures only: no native panel generation, model load or GPU."""
 import copy
+from dataclasses import dataclass
 import json
 from pathlib import Path
 import tempfile
@@ -122,6 +123,37 @@ class FreshPanelTests(unittest.TestCase):
             fresh.select_panel(self.gym, historical)
         with self.assertRaisesRegex(ValueError, "historical 32"):
             fresh.select_panel(self.gym, self.historical[:-1])
+
+    def test_native_tuple_metadata_matches_serialized_history_without_mutation(self):
+        for item in self.gym.records.values():
+            item["entry"]["metadata"]["difficulty"] = {"empty": (8, 12)}
+        historical = json.loads(fresh._encoded(self.historical))
+        selected, audit = fresh.select_panel(self.gym, historical)
+        self.assertEqual([item["episode_id"] for item in selected], list(fresh.CANDIDATES[:16]))
+        for item in selected + audit:
+            self.assertEqual(item["entry"]["metadata"]["difficulty"], {"empty": [8, 12]})
+            self.assertEqual(item["entry_sha256"], fresh._sha(fresh._encoded(item["entry"])))
+        self.assertEqual(self.gym.records[fresh.CANDIDATES[0]]["entry"]["metadata"]["difficulty"],
+                         {"empty": (8, 12)})
+
+    def test_tuple_normalization_still_rejects_changed_metadata_before_candidates(self):
+        for item in self.historical:
+            item["entry"]["metadata"]["difficulty"] = {"empty": (8, 12)}
+        historical = json.loads(fresh._encoded(self.historical))
+        self.historical[0]["entry"]["metadata"]["difficulty"]["empty"] = (8, 11)
+        with self.assertRaisesRegex(ValueError, "historical generator drift"):
+            fresh.select_panel(self.gym, historical)
+        self.assertEqual(self.gym.calls, [fresh.material.TRAIN_IDS[0]])
+
+    def test_native_dataclass_config_uses_same_json_representation(self):
+        @dataclass
+        class Config:
+            empty: tuple = (8, 12)
+
+        self.gym.config = Config()
+        actual = fresh._entry(self.gym, fresh.CANDIDATES[0], BOARDS)
+        self.assertEqual(actual["dataset_config"], {"empty": [8, 12]})
+        self.assertEqual(self.gym.config.empty, (8, 12))
 
     def test_generator_version_and_digest_fail_before_generation(self):
         with patch.object(native, "installed_version", return_value="wrong"):

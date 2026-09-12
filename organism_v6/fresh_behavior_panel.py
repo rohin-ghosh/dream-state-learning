@@ -111,11 +111,12 @@ def _entry(gym, episode_id, solutions):
     for text in (answer, native.decode_answer(answer.replace("\n", " ; "))):
         score = dataset.score_answer(answer=text, entry=entry)
         _require(type(score) in (int, float) and score == 1, "native verifier rejects reference")
+    entry = json.loads(_encoded(entry))
     config = getattr(dataset, "config", None)
     return dict(episode_id=episode_id, entry=entry, puzzle=puzzle, solution=solution,
                 entry_sha256=_sha(_encoded(entry)), board_sha256=_sha(_encoded(puzzle)),
                 solution_sha256=_sha(_encoded(solution)),
-                dataset_config=asdict(config) if is_dataclass(config) else None)
+                dataset_config=json.loads(_encoded(asdict(config))) if is_dataclass(config) else None)
 
 
 def select_panel(gym, historical, excluded_ids=()):
