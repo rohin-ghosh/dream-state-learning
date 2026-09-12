@@ -3765,6 +3765,18 @@ Frozen source5568af15... and teste42411bd...; native model/token/CPU preparation
 and free-device checks still precede launch. Hilbert's objective probe remains
 under CPU checks; no GPUjob has been launched from either new module yet.
 
+## [Builder] 2026-09-12 14:40 UTC — native constraint-check preflight passes
+
+Immutable5d4c5608 native suite21tests passes0.272s, CPUreceipt d5e253df....
+All8native training-source questions/candidates are unique and all model pins,
+prompt headroom and metadata collisions pass. PreparationREADY inventory
+5be94318..., capsule58857fdb.... Processcard47tokens versus format44: explicitly
+NOT token/compute-matched; equal8calls and max128outputtokens perarm. No padding
+or answer-dependent edits. Main selects node3GPU1 for the finite pair:
+astra_constraint_check_20260912_attempt1,1800s total/900s perworker with cleanup
+reserve. Fresh full free-device check immediately before launch; parentrecord
+generation only, no weight write, no lesson-truth or P1/internalization claim.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
