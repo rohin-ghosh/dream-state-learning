@@ -83,6 +83,29 @@ negative. Preserve both roots. Exact audits:
 and
 `research_notes/analysis/2026-09-12_v10r1_w0_attempt2_terminal_assay_and_seal_failure_audit.md`.
 
+Two bounded OFF-only development diagnostics then isolated another upstream
+problem without repairing W0. On the 64 already-inspected calibration items,
+only Qwen chat rendering plus an explicit one-line response contract restored
+the motor interface: `61/64` outputs were valid and `45/64` correct. Chat alone,
+raw plus the same explicit contract, and raw generation extended to 256 tokens
+all produced zero valid outputs. Removing the other 15 table rows did not
+restore faithful use of the supplied relation: the replayed single-row
+diagnostic produced `58/64` valid but only `32/64` correct outputs, with `58`
+literal `ACT: a1` responses and six incomplete `ACT: a` responses. Thus table
+search is not the sole remaining defect; the surface did not actually make the
+model follow the supplied row. The single-row run reuses development items,
+lacks candidate scoring, and is explicitly non-qualifying. It cannot release a
+fit or substitute for the inherited oracle gate.
+
+The next fit-eligibility control must therefore use fresh opaque identifiers
+and forms, one answer row per held query, the calibrated chat boundary, an
+explicit non-answer-bearing instruction to follow the supplied row, and both
+strict generation and two-candidate scoring. Per root-map, each modality must
+reach at least `15/16`; aggregate strict validity must reach `61/64`, with zero
+truncation or multiple actions and complementary-map redirection. Until that
+fresh canary passes, no V10R2 writer fit is eligible. Exact watcher audit:
+`research_notes/analysis/2026-09-12_exact_row_positive_carrier_gate_audit.md`.
+
 The terminal B0 scout established one uninterrupted quarantined plumbing path:
 exact ACT-before-record joins, a 66-item child-body-only fit, save, canary,
 adapter reload, probes, and terminal exit. It did not acquire the intended
@@ -105,13 +128,26 @@ prompt/output hashes checked at every paired step. Exact evidence:
 
 V10R1 did not close this gate: attempt 1 was a zero-step infrastructure abort,
 and attempt 2 has both an invalid positive oracle and a self-invalidating
-terminal seal. A prospective interface calibration may diagnose the oracle
-failure but cannot promote either attempt. Any later V10R2 must remain a
-prospectively frozen assay/evidence repair with the training recipe and
+terminal seal. The completed interface and single-row development diagnostics
+diagnose the response surface but cannot promote either attempt. Any later
+V10R2 must remain a prospectively frozen assay/evidence repair with the
+training recipe and
 thresholds unchanged. It still asks only whether one fixed rank-8 writer
 recipe, evaluated through four root-map adapter fits, can carry several
 conditional native actions under held renderings without converting them into
 a global habit or damaging the ACT interface.
+
+If the fresh exact-row control passes and the unchanged writer still fails,
+the next recipe screen is not a rank sweep. Attempt 2 already drove final
+training loss to about `.12`; the unresolved split is storage versus
+extractability and locality. Use the predeclared rank-8 2x2: lexical-query
+views versus cross-view rendering, each with or without a targeted OFF-KL
+scope anchor. Save step 128 and 256 from the same fits. Separate exact-train
+scoring, fresh-held scoring, strict generation, and spill/wrong-root panels so
+the outcome is labeled `STORAGE_FAIL`, `STORED_NOT_EXTRACTABLE`,
+`EXTRACTABLE_INTERFACE_FAIL`, or `SELECTIVE_BINDING_WITH_SPILL` rather than a
+generic writer failure. Design:
+`research_notes/analysis/2026-09-12_post_v10r2_writer_recipe_factorial.md`.
 
 A pass establishes supervised seen-key conditional-policy carriage only.
 
@@ -350,9 +386,12 @@ model, children, and task families.
    `R2_B_seed4`, `R4_B_seed601`, and `RP_B_seed400` under
    `/localhome/local-rohing/v6_out/pretest_write_ab/` finish unchanged. Consume
    only terminal `summary.json`; do not restart or promote partial panels.
-2. Preserve the first W0 V10R1 infrastructure abort. Run one fresh, newly
-   sealed W0 attempt after the native-build repair, then W1 if and only if that
-   attempt passes.
+2. Preserve both failed V10R1 roots and the two development diagnostics. Run
+   the fresh generation-plus-scoring exact-row control; fit nothing if it
+   fails. If it passes, run a fresh V10R2 under the symmetric chat/response
+   contract. If the unchanged writer fails, use the rank-8 cross-view x
+   targeted-anchor screen above and confirm its winner on fresh roots. W1 is
+   eligible only after a sealed/replayed W0 pass.
 3. Run S before any own-action/outcome-source or combined-organism claim.
 4. Close CPU M0 and the scripted oracle.
 5. Run exact-text M on four roots and extend to eight only if its frozen gate
