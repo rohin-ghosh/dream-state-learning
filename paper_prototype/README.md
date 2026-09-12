@@ -2,7 +2,7 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**Bounded component-evidence update (2026-09-12, through SEQ-086).**
+**Bounded component-evidence update (2026-09-12, through SEQ-090).**
 The canonical manuscript now adds separate controlled diagnostics SEQ-073,
 SEQ-085 and SEQ-086; it does not change the historical CompilerGym tables,
 contributions, v1 life recipe, authorship or bibliography. The approved abstract
@@ -14,7 +14,19 @@ H1/H2 remain hypotheses, not achieved developmental or parenting results.
 No campaign completion, selective-memory qualification or clean ancestry is
 claimed. The new evidence manifest below distinguishes native generations
 from fixed padded-forward likelihoods, and records token-dose and overlap
-confounds. Later diagnostics are outside this update.
+confounds. The terminal SEQ-087–089 addition preserves that reviewed abstract,
+all existing tables/appendices and the OFF-omit-LF/ON-include-LF correction.
+Exact training prompts remain near chance with global action preferences;
+strict public-check production is 0/8 versus 1/8, and the separate post-hoc
+content-only audit is 2/8 versus 1/8 (six process citations still wrong).
+The objective contrast is OFF65/full64/first64 per128, with both fits constant
+`-gvn` and the full-response final tensor reproducing the original control.
+Online, dropout-active training losses are not final-checkpoint losses.
+V2 production is now terminal as SEQ-090: all 48 strict grounded endpoints
+fail; process schema counts are 1/0/1 versus format 2/2/2 per eight across
+three sampling seeds, not independent children. Cumulative results remain
+excluded without terminal evidence. No new parenting, retention, G3, mechanism-freeze
+or conclusive scientific claim follows. Main reviews/integrates this patch.
 
 **Terminal evidence refresh (2026-09-11; supersedes stale counts below).**
 The primary text-versus-weights diagnostic is now the post-hoc, common-random,
@@ -130,7 +142,10 @@ No TeX compiler is available locally; no PDF, table-width, page-count or
 submission-length claim is made. Static checks cover preserved historical
 tables/contributions, abstract identity, braces/environments, labels/references,
 unchanged citation keys and source numbers/hashes. Compile and check the
-nine-page target before any separate, authorized trimming.
+nine-page target before any separate, authorized trimming. The SEQ-087–089
+follow-up adds a second component-results table and bounded terminal text;
+the approved abstract and every pre-existing table/appendix remain intact.
+This follow-up likewise makes no PDF, page-count or layout claim without TeX.
 
 ## Number → source table
 
@@ -195,6 +210,103 @@ or unrelated scorers. Relative two-candidate TV misses common-mode shifts;
 absolute mean legality changes can cancel item flips. The post-hoc mass audit
 cannot repair these into a selective-memory claim. Local pins are not official
 model-origin authentication. C11 remains deferred, not silently certified.
+
+### Terminal follow-ups, 2026-09-12 (SEQ-087–089)
+
+This additive block extends, rather than replaces, the reviewed SEQ-073/085/086
+manifest. In the original SEQ-086 generation archive, **208 OFF outputs omit
+LF and 672 ON outputs include LF**; the fixed padded-forward candidates still
+include LF+EOS. That correction and the distinction from native generation
+probabilities are unchanged. Sources below are local archived evidence, not
+new live-node verification or an independent manuscript-approval verdict.
+
+Sources (all repository-relative; capsule hashes checked locally):
+- **X:** `research_notes/astra_memos/ASTRA_EXACT_TRAIN_TERMINAL_2026-09-12.md`;
+  receipts under `research_notes/astra_memos/receipts_20260912/`:
+  `astra_exact_train_root0_terminal_20260912.tgz`, SHA256
+  `7bfc98cc39fc4e98072540476c961111494815bcd517e89b2eac2bdb91cf141a`;
+  `astra_exact_train_root1_terminal_20260912.tgz`, SHA256
+  `2c87796110b611b07f57f2724c8de050bddd9cf316f7df0bc1c54bbc9bba72a7`;
+  `astra_exact_train_combined_analysis_20260912.json`, SHA256
+  `60df19e4388bd335c89c1976412cb76c09c2b7ba5ca15fe3adb8189cf795c842`.
+  The separate `astra_exact_train_root0_failure_20260912.tgz`, SHA256
+  `28d518e03198bbb9b6c06cb77c0407d500b0088f1540290f4264c942d118a240`,
+  is not spliced into the completed retry.
+- **P:** `research_notes/astra_memos/ASTRA_CONSTRAINT_PRODUCTION_TERMINAL_2026-09-12.md`,
+  including its **14:54 UTC post-hoc content diagnosis** (supersedes the earlier
+  statement that this diagnosis was pending, not the original strict counts);
+  `research_notes/astra_memos/receipts_20260912/astra_constraint_verified_terminal_20260912.tgz`,
+  SHA256 `7935c254ac16cfbf33c8cbf9386e9a947ec9b02e50d28e9f03987efb3bbbda89`.
+  Independent content audit and script:
+  `research_notes/astra_memos/receipts_20260912/astra_constraint_content_audit_20260912.md`
+  and its `.py`; detailed `.json` SHA256
+  `60153eb59f7da7d4a2b01b9055f4171d2904435a85c4159c980b28b5e8e217d5`.
+- **O:** `research_notes/astra_memos/ASTRA_OBJECTIVE_TERMINAL_2026-09-12.md`;
+  `research_notes/astra_memos/receipts_20260912/astra_objective_terminal_20260912.tgz`,
+  SHA256 `d7524e0a558a40a4121e2fa46caa1f772e5a3a0e92c4ea1565b57809528e3390`;
+  captured `report.json` SHA256
+  `4ca5316949252400b6377feca674ba4abd11eac8759a99f9ed427a2b39b7b659`;
+  `research_notes/astra_memos/receipts_20260912/astra_objective_analysis_20260912.json`,
+  SHA256 `dc662d93bc8b838840be3fa22452d48c06fb2f6c5b7dc5cce802cbfdaa837fe6`.
+
+| Number / assertion | Canonical location | Source | Design / interpretation limit |
+|---|---|---|---|
+| Exact-row ON68/68/64/63 per128; matched-map OFF64/64/65/63; original held-form ON37/33/32/34 per64 unchanged | `sec:components`, `tab:terminalcomponents` | X, raw-generation analysis and native reports | Root0 +/−, root1 +/− order; seen contexts, not transfer/retention; root and optimizer seed confounded |
+| 768 format-valid generations; opposite-map actions differ102/128 and113/128; modal outputs mem2reg104, gvn124, gvn128, mem2reg113 per128 | `sec:components`, `app:components` | X | Global action preference, not useful key binding; no new fits/material |
+| Strict grounded process0/8 vsformat1/8; schema-valid0/8 vs8/8; schema-valid invalid-citation counts0 vs7 | `sec:components`, `tab:terminalcomponents` | P, original endpoint and independent audit | Process numeric strings fail integer schema first; zero counted invalid citations does not mean factual correctness; common task's coordinate typing was not explicit |
+| Post-hoc content-only grounded process2/8 (c06,c07) vsformat1/8 (c02); six process citations still wrong | `sec:components`, `tab:terminalcomponents` | P, independent coordinate-only audit | Only single-character coordinate strings1..4 converted; strict endpoints unchanged; no normalized training targets or verified lesson truth |
+| Process/format cards47/44 tokens; 16 normal stops without truncation; zero fits/adapters | `sec:components`, `app:components` | P | Small prompt-conditioned production panel; unequal token packages, not compute-equivalent or persistent learning |
+| Objective OFF65/128, full64/128, first64/128; all128/128 valid; gvn1/128,128/128,128/128 respectively | `sec:components`, `tab:terminalcomponents` | O, native report and count analysis | One seed/map; exact training rows; both fits constantgvn, no general impossibility claim |
+| Same128 rows, seed1, fresh rank8 initialization, recipe/order; only label mask differs; 256 updates each | `sec:components` | O, paired fit receipts | Full-response vsfirst-choice contrast, not a new held-out or retention test |
+| Full/original final tensor SHA256 `31f10119bc37dce5abcd7be569914400392429705ada315c3fcf9813a5d23787`; first-choice `8b84dbef688ed7c30defad3aa15b96acfbe30570d7b8d6805859c0af3500f6bc` | `sec:components`, `app:components` | O, native tensor identities | Instrumented full control reproduces original final weights; capsule omits weight contents, not a local weight rehash or complete backup |
+| Epoch2 decision CE .72820924/.78711526; full-response CE .09743569/3.58127537 (full/first) | `app:components` | O, per-epoch training records | Online pre-update, dropout-active diagnostics, NOT final-checkpoint losses; auxiliary BF16 prefix scores are shape-conditioned |
+
+V2 production is now included separately as terminal SEQ-090 below; cumulative
+work still has no terminal evidence in this update. No retention, parenting, H1/H2,
+G3 qualification, mechanism freeze or campaign completion is established.
+Official model-origin pin remains `UNRESOLVED_LOCAL_HASHES_ONLY`. Historical
+tables, appendices, author intent, citations and the reviewed abstract remain
+unchanged; no network/GPU action or bibliography update is part of this patch.
+
+### Clarified-coordinate production, 2026-09-12 (SEQ-090)
+
+Source: `research_notes/astra_memos/ASTRA_CONSTRAINT_V2_TERMINAL_2026-09-12.md`.
+Locally checked receipts under `research_notes/astra_memos/receipts_20260912/`:
+- `astra_constraint_v2_terminal_20260912.tgz`, SHA256
+  `476788fb5204ab45dfcc22644382f1519493ce6224ccbce8298616c0d1073692`.
+- `astra_constraint_v2_native_terminal_20260912.json`, SHA256
+  `bb243f053db76b966296dd6b5e2289cf8f7317d65ad85d78f63ee4df7a7d8619`.
+- Captured `COMPLETED.json` report SHA256 values, seeds7101/7102/7103:
+  `ea5a9fff02609b69c7d00068b7463228bcb28ca91bd88cb2eead27b3e45e70c0`,
+  `c741dd8c0847605dd36a02bba7f061840e3afbac14997d362eb80bc6992bc2b5`,
+  `d2a704a2644ece23f75a7b04b9d90347f5cb1ccdff897b6c70d7d99073f36055`.
+- Completed independent raw-content audit, `astra_constraint_v2_content_audit_20260912.md`,
+  SHA256 `1be39788c92f3b1664b417e5502b22608473a2a3478dd6e3181750fee85b9951`;
+  corresponding JSON SHA256 `9ad6349fc90b3f379f1763c282a772f689e9805c63f117ea10a41c5e35af1a08`;
+  standalone script SHA256 `6f2d46b86ee2d482d285ccd1001417a2354eceacd9f7359edb9da9e148db94e2`.
+
+| Number / assertion | Canonical location | Source | Design / interpretation limit |
+|---|---|---|---|
+| Grounded process0/8 and format0/8 at each seed; 0/48 overall; schema process1/0/1 vsformat2/2/2 per8 | `sec:components` | Terminal memo, native JSON and six captured arm results | Strict endpoint; completed audit confirms40schema failures and8factually wrong schema-valid records; no silent normalization |
+| No quoted numeric coordinate strings;17assessable literal witnesses,5factual and12incorrect under explicit post-hoc conventions | `sec:components` | Completed standalone raw-content audit | Selected assessable subset, not a new strict success rate; no missing coordinate supplied, output repair, or training approval |
+| Same8 fresh cases repeated at sampling seeds7101/7102/7103; explicit integer guidance in both common prompts; unchanged cards/checker; zero fits | `sec:components` | Terminal memo and capsule | Not independent children or24 independent environments per arm; new cases AND changed common prompts prevent a causal wording contrast with SEQ-088; no output trained/approved |
+| Three exact native report replays, six owned-worker cleanups and full release checks pass | `sec:components` | Captured `MAIN_TERMINAL_AUDIT.json`, cleanup receipts and native terminal JSON | Archived verification, not a new live GPU check or official model-origin authentication |
+
+Original SEQ-088 strict and post-hoc content-only results are unchanged.
+Independent raw-content diagnosis for SEQ-090 is complete. No persistence,
+parenting, H1/H2, G3, mechanism-freeze or population-level zero-effect claim
+follows. The abstract and all pre-existing manuscript tables remain unchanged;
+this addition makes no PDF/layout claim without TeX.
+
+| Follow-up cost | Recorded work | Exclusions and units |
+|---|---|---|
+| SEQ087 |768generations plus768score requests;5,596emitted token IDs;795.571442summed controller seconds | Emitted IDs include EOS; failedroot0attempt and external audit extra |
+| SEQ088 |16generations;4,184prompt and705output tokens;276.672446controller seconds;zero fits | Preparation/external audit extra; cards not token matched |
+| SEQ089 |384generations,384decision-prefix forwards,512training forwards/updates;2,559generated IDs;576.103847controller seconds | Two256-update fits; preparation/cold costs outside controller interval extra |
+| SEQ090 |48generations;13,560prompt and2,066output tokens;633.973163summed controller seconds;zero fits | Concurrent-controller sum is not calendar duration or measured GPU compute; external audit extra |
+
+These partial cost receipts do not establish a total campaign compute or
+dollar cost. Time caps are limits rather than consumed budgets.
 
 ### New in the 2026-09-11 third pass (Astra memo 6 applied; cells as of SEQ-022, 2026-09-11 01:38 UTC)
 

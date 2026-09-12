@@ -4072,3 +4072,23 @@ source; do not equate controllertermination withrelease. Onfailureinspect
 registeredworker/group plusGPU andhandleonlyownedPIDs. Robustcontroller-death
 lifecyclehardening deferred, explicit limitationnot a currentjobstop. Actual
 completedcleanup requiredbeforeGPUreuse. ModeloriginandC11limitsunchanged.
+
+## [Builder] 2026-09-12 15:30 UTC — canonical component evidence reviewed and integrated
+
+Canonical main.tex now includes087–090; all12historicaltables preserved plus
+previous/newcomponenttables, originalappendixbody preserved, reviewed
+characterizationabstract unchanged. MainSHA82a1c691..., READMESHA529c08c8....
+Independentreview found one staleSEQ090audit-pending clause; Main replaced
+it with completed40schema/8wrongstrict diagnosis, noquotednumericstrings,
+explicitposthoc17assessable/5factual/12incorrect, original48strictnullsunchanged.
+Postfixreview PASS binds exactbytes; no remainingblockingissueinthisscope.
+Optionalverifiedcostrows added withproperconcurrent-sum/excluded-costlimits.
+NoTeXavailable/noPDFclaim. Developmentalcompanionabstract234words matches
+itsstagedTeX exactly,now087–090; distinctfromcanonicalcharacterizationabstract.
+
+CumulativeA1_before andANfitDONE by15:28; AN1536updates/171264inputtokenpasses,
+loss.1959/199.4training-loopseconds. Acquisition NOT knownuntilreadout;
+A2fitcontinuesGPU0/controller128957. Reservationunchanged. Preparationcapsule
+2295b838... archived; full216MBOLDweightarchive staysVM/node2/node3,notGit.
+Nextdemonstration module hasMain16CPUtestsPASS; awaitingfinalworkerfreeze,
+thenactualnativepreparation before32calls/zero fits. No C11 prerequisite added.

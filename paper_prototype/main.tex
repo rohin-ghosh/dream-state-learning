@@ -309,6 +309,30 @@ Scoring supplement & Unchanged generation BA 37/33/32/34 per 64; binding/spill f
 \end{tabular}
 \end{table}
 
+\paragraph{Exact training contexts (SEQ-087).} An inference-only follow-up on all 128 original training prompts per root remains near chance: correct counts are 68/68/64/63 for root 0 map $+/-$, root 1 map $+/-$, against OFF 64/64/65/63 (Table~\ref{tab:terminalcomponents}). All 768 generations are format-valid. Large opposite-map action disagreements (102/128 and 113/128) mostly reflect global action preference, not useful key binding: root 1 $+$ always emits \texttt{-gvn}. These are seen contexts, not retention or generalization tests; root and optimizer seed remain confounded.
+
+\paragraph{Public-check production (SEQ-088).} Eight observed board exercises per arm compare process coaching with an active format control, using the frozen base without adapters or fitting. Strict-schema grounded citations are 0/8 versus 1/8. All process records fail the integer-coordinate schema by emitting numeric strings; the common task specifies one-based coordinates but not explicitly their integer type. This zero alone does not establish inability to find duplicates. A separate \emph{post-hoc content-only} audit converts only single-character coordinate strings 1--4: grounded citations become 2/8 versus 1/8, with six process citations still factually wrong. Original strict counts remain unchanged. No normalized output or free-text next-check reminder is approved for training; this small comparison does not establish a parenting benefit. Cards differ in length (47 versus 44 tokens), so compute equivalence is not claimed.
+
+\paragraph{Objective contrast (SEQ-089).} On root 1 map $+$, fresh full-response and first-choice-only fits share the original 128 rows, seed, initialization, row order and training recipe; only the label mask differs, with 256 updates each. Exact-row correctness is OFF 65/128, full response 64/128, first choice 64/128. All outputs are valid, and both fitted adapters emit \texttt{-gvn} on every row. The full-response final LoRA tensor hash exactly reproduces the original control. Removing suffix gradients alone does not recover binding in this single-seed/map comparison; it does not establish general impossibility or held-out transfer.
+
+\begin{table}[t]
+\centering\small
+\caption{Terminal follow-ups, SEQ-087--089. Exact-row slash order is root 0 $+/-$, root 1 $+/-$; production order is process/format. The content-only audit is post hoc, not a replacement strict endpoint. Do not pool these distinct panels.}
+\label{tab:terminalcomponents}
+\begin{tabular}{@{}p{.20\linewidth}p{.39\linewidth}p{.33\linewidth}@{}}
+\toprule
+Assay & Observation & Boundary \\
+\midrule
+Exact-row inference & ON 68/68/64/63 per 128; OFF 64/64/65/63 & Near chance; global preference \\
+Strict production & Grounded 0/8 vs. 1/8; schema-valid 0/8 vs. 8/8 & Process coordinates are strings \\
+Content-only audit & Grounded 2/8 vs. 1/8 after coordinate conversion & Post hoc; six process citations wrong \\
+Objective contrast & OFF 65/128; full 64/128; first-choice 64/128 & Both fits constant \texttt{-gvn}; control tensor reproduced \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Clarified-coordinate production (SEQ-090).} Three paired sampling runs reuse the same eight fresh observed boards, with explicit unquoted-integer guidance in both common prompts and unchanged process/format cards and strict checker. For generation seeds 7101/7102/7103, grounded records are 0/8 in both arms at every seed (0/48 overall); schema-valid counts are process 1/0/1 versus format 2/2/2 per eight. The completed independent content audit confirms 40 schema failures and eight schema-valid but factually incorrect citations. Unlike SEQ-088, no quoted numeric coordinate strings remain; coordinate-string-only normalization changes nothing. A separate, explicitly post-hoc literal reading finds 17 complete assessable witnesses, five factual and 12 incorrect, without repairing outputs or approving training material. Many other outputs omit a second coordinate; schema failure alone does not establish factual falsity. These readings do not replace the strict endpoint. The runs are sampling replications, not independently learned children or 24 independent environments per arm. New cases and altered common prompts prevent a causal wording comparison with SEQ-088, whose strict and post-hoc results remain unchanged. No output was trained or training-approved. Archived native replay, all six owned-worker cleanups and full release checks pass. These observations do not establish persistence, parenting or a population-level zero effect.
+
 \section{Discussion}
 \label{sec:discussion}
 
@@ -811,5 +835,9 @@ Five fresh scoring states reuse existing adapters and 880 original generations, 
 In root 0 $+/-$, root 1 $+/-$ order, corrected mean conditional log-probability gains are 1.078957, 0.951426, 0.646593 and 0.608320: gains under two-candidate normalization, not raw mean NLL losses. Cell/family mean binary conditional TV ranges from 0.280090 to 0.656300. Generated BA remains 37/33/32/34 out of 64 with output validity 1.0. Binding/spill fail and the interface passes; thresholds and original artifacts remain unchanged. The old-score half-nat ceiling must not be transferred automatically to corrected scores. Conditional TV misses common-mode mass changes, and absolute mean legality changes can cancel item flips. A post-hoc three-category audit over the two terminated strings plus all other strings yields mean TV 0.978273--0.998658, dominated by candidate-format mass; this is not full output-distribution TV or semantic action change. No selective-memory qualification follows.
 
 \paragraph{Evidence and cost boundaries.} Terminal reports and hashed reductions for SEQ-073/085/086 are indexed separately in the accompanying evidence manifest; they do not supersede historical rows. SEQ-073's 37.48 summed controller-elapsed minutes on A40 devices covers only the two additional replication controllers. SEQ-085's summed recipient elapsed time is 3,990.821522 seconds, not calendar duration or measured GPU compute; actual generated-token and finish/truncation metadata are absent. SEQ-086 took 347.468 runner seconds plus external verification/release; all five cleanup receipts and the original-source reduction replay passed. No total campaign cost is inferred. These component observations do not complete the paper-grade developmental evidence path or establish H1/H2; no additional custody certification is claimed.
+
+\paragraph{Terminal follow-up provenance (SEQ-087--089).} The exact-row assay adds no fitting or material; the failed first root-0 attempt is archived separately, not spliced into its completed retry. Root 0 $+/-$ and root 1 $+/-$ modal outputs are respectively \texttt{-mem2reg} 104/128, \texttt{-gvn} 124/128, \texttt{-gvn} 128/128 and \texttt{-mem2reg} 113/128. The production audit leaves the original integer-only checker intact; all 16 generations stop normally without length truncation, and no production output has been trained or promoted. The objective control reproduces the original final tensor hash in native receipts; its local capsule omits adapter contents, so this is not a local weight rehash or complete backup. Official model-origin authentication remains unresolved.
+
+\paragraph{Training losses and claim boundaries.} In SEQ-089, second-epoch decision cross entropy is 0.72820924 (full response) versus 0.78711526 (first choice), while full-response cross entropy is 0.09743569 versus 3.58127537. These are online, pre-update, dropout-active measurements, \emph{not final-checkpoint losses}. Auxiliary BF16 decision-prefix scores remain shape-conditioned, not dynamic greedy-generation probabilities. The separately indexed terminal receipts do not establish retention, parenting, H1/H2, G3 qualification, a mechanism freeze or campaign completion. V2 production is now terminal as SEQ-090 (\S\ref{sec:components}); cumulative work still has no terminal evidence in this update and its results remain excluded.
 
 \end{document}
