@@ -3750,6 +3750,21 @@ Next two bounded probes are prospectively specified in
 ASTRA_OBJECTIVE_AND_CHECK_PROBES_2026-09-12.md; no launch yet. FormalC11guard
 remains deferred. Official model origin unresolved; no curl/wget retry.
 
+## [Builder] 2026-09-12 14:39 UTC — public-check production implementation frozen
+
+Main repeats21 focused CPU tests: all pass. Scope is16calls/no fits over8
+observed external board exercises, process vs active format coaching. Native
+token IDs and finish metadata are captured; length/unknown stops preserve raw
+output then fail. Grounded-citation cases/8, invalid citations, syntax and
+structured-record cleanliness are separate. Free-text lesson truth is NOT
+machine verified and no output is approved for training. Fullquestion/candidate
+hash uniqueness checked without replacement. Prior-ID inventory204entries
+has no1851000..7collision within its explicit metadata scope.
+
+Frozen source5568af15... and teste42411bd...; native model/token/CPU preparation
+and free-device checks still precede launch. Hilbert's objective probe remains
+under CPU checks; no GPUjob has been launched from either new module yet.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
