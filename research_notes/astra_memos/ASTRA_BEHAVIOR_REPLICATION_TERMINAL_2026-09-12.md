@@ -44,7 +44,7 @@ authentication; that limitation persists without expanding C11guard work.
 Seed1controller64646completed11:09:16.614369UTC; seed2controller64744
 completed11:09:56.788989UTC. Both absent at11:10:40UTC, all train/pair cleanup
 receipts pass; their GPU1/3reservations release. No manual/unrelated kill.
-Normal backend cleanup terminated its owned engines: seed1GPU1 66148/68355/
+Normal backend cleanup sent SIGTERM to its owned engines: seed1GPU1 66148/68355/
 72282/74699 at10:56:33/10:59:36/11:05:56/11:08:57UTC; seed2GPU3
 66141/68284/72289/74496 at10:56:33/10:59:34/11:05:55/11:09:12UTC.
 Shutdown semaphore warnings remain in raw logs. Aggregate new controller
@@ -71,3 +71,11 @@ adaptive parenting, and a negative localizes a material-transfer gap rather
 than refuting parenting in general. Freeze its specification before fits.
 The concurrent memory prefix-mask fit continues; no selective-memory or
 joint/repeated-write pass is inferred from these behavioral replications.
+
+Independent bounded claim review rechecked all192raw ACT records, all six
+fit manifests, per-board OFFaction/score equality, overlaps and cleanup
+bindings; it found no result correction. Listed engine times are SIGTERM
+initiation, not exact process-exit timestamps. Controller absence at11:10:40
+is Main's live SSHobservation, not a fact independently recovered from the
+capsule. Review is preserved as
+`receipts_20260912/astra_replication_claim_review_20260912.md`.
