@@ -6067,3 +6067,29 @@ If this L0 coexistence sentinel passes, the honest Level-1 successor remains
 one interleaved adapter carrying PROSPECT plus counterfactual-outcome-sensitive
 REVISE, with AUTH/DERANGED/OFF controls and a zero-new-training composition
 probe. Do not promote tag ordering into intertwined cognition.
+
+## [Codex watcher] 2026-09-12 19:27 UTC — correction: SEQ-101 increased token presentations 16x, not gradient dose 16x
+
+Code-level audit:
+`research_notes/analysis/2026-09-12_repetition_dose_normalization_correction.md`.
+The repetition corpus has sixteen copies per original row, but both layouts
+retain 80 optimizer updates and four original source groups per update. The
+trainer backpropagates the model's mean token loss divided by gradient
+accumulation. In the short layout, four microbatches of four identical copies
+of one row average to one quarter of an update; four source groups complete
+the update. Long likewise averages loss across the sixteen repeated units,
+although later units have continuous causal context.
+
+Therefore SEQ-101 is a valid reset-vs-continuous-context packaging test and a
+within-update duplicate-averaging test. It also shifts weighting toward roughly
+equal source-group contributions rather than the original mixed per-token
+weighting. It is **not** a sixteen-fold replay/dose experiment, despite the
+correctly reported 16x token presentations. Its null does not falsify Rohin's
+repetition principle or repetition across distinct optimizer encounters.
+
+Do not rerun the packaging test. If repetition dose becomes decision-relevant,
+register the cumulative loss coefficient per source binding and distribute
+replays across distinct updates, or explicitly weight their target loss. For
+the immediate path, the repaired L0 two-habit coexistence sentinel more directly
+tests rehearsal while learning something new; then the conditional writer
+needs diverse stable-key renderings and input-selective flips.
