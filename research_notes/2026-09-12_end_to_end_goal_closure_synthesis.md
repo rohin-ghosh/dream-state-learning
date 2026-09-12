@@ -74,6 +74,22 @@ selective regime. Park LR-only sweeps and change the conditional
 material/representation. Exact independent audit:
 `research_notes/analysis/2026-09-12_lower_lr_writer_terminal_audit.md`.
 
+The matched prefix-mask diagnostic closes the simplest response-only-loss
+repair as instantiated here. With the same bank, optimizer seed, rank,
+learning rate, 9,693 steps, 749,985 input-token passes, and 1,313 evaluation
+cues, masking the prompt/context labels reduced frame spill from `.416` to
+`.202`, but it also reduced `I_d_frame` from `1.921` to `.015` and moved the
+dose-16 correct conditional probability from `.260` OFF to only `.251` ON.
+The owner-bootstrap interval includes zero. Thus the prompt-side labels were
+carrying both useful acquisition and unwanted global habit; removing them did
+not reveal a selective writer. This falsifies this exact conservative mask,
+not response-only SFT in general: it also reduced supervised-token passes from
+711,213 to 422,925 and omitted 5,376 boundary-crossing ` Owner` tokens. Park
+mask-only sweeps. The next writer test must manipulate semantic conditional
+structure and, if used, an explicit frozen-OFF preservation objective rather
+than merely deleting supervision. Exact terminal memo:
+`research_notes/astra_memos/ASTRA_PREFIX_MASK_TERMINAL_2026-09-12.md`.
+
 A separate external-oracle mini-Sudoku diagnostic gives the complementary
 positive direction. Across three independently initialized adapter-training
 seeds, OFF solved `0/16` boards every time; adapters trained on the same 32
@@ -266,6 +282,13 @@ the outcome is labeled `STORAGE_FAIL`, `STORED_NOT_EXTRACTABLE`,
 generic writer failure. Design:
 `research_notes/analysis/2026-09-12_post_v10r2_writer_recipe_factorial.md`.
 
+The negative prefix-mask result is not a fifth recipe arm. It is evidence that
+lowering prompt-side supervision alone trades away acquisition before it
+solves locality. The 2x2 above asks the remaining higher-information
+questions: whether the same relation is extractable across semantic views,
+and whether preserving the frozen base distribution outside the keyed
+condition prevents a learned relation from becoming a global action habit.
+
 A pass establishes supervised seen-key conditional-policy carriage only.
 
 ### W1 — cumulative-replay coexistence
@@ -411,23 +434,34 @@ interaction caused only by SLEEP harming untaught children. Neither predicate
 alone establishes improvement with increasing lifetime.
 
 Use source-disjoint information cohorts rather than repeated visits to a fixed
-12-program panel. Bind seven examination cuts. L-DEV includes the prequalified
-`P-TEXT` branch so its plateau/headroom behavior can determine whether a
-baseline comparison is feasible; confirmatory `P-TEXT` remains conditionally
-launched under the prebound rule below. Independent DEV may select the horizon
-from `{128,192,256}` and the plateau anchor from a finite declared early-cut set
-using qualified-update count, task headroom, baseline behavior, and retention
-feasibility—not the largest observed treatment effect. The
-horizon, anchor, all seven cuts, and every endpoint freeze before confirmation
-identities exist. At least two baseline increments precede the anchor and at
-least three checkpoints follow it. Use DEV to estimate variance/covariance,
-then select confirmation N from a predeclared grid. Children/roots are the independent units;
-checkpoints, programs, decode seeds, and adapters are nested observations.
+12-program panel. Preconstruct seven equated parallel exam forms and rotate
+their checkpoint assignment across root blocks under a frozen balanced
+schedule; every branch within one root receives the same form at a cut. The
+primary lifetime clock is exogenous exposure (scheduled information cohorts,
+episodes, or action opportunities), never accepted writes or qualified
+updates, because acceptance is itself changed by treatment. Accepted-write
+count remains a secondary dose diagnostic.
 
-Measure inherited childhood-skill retention on an untouched panel and replay-
-supported retention of early deployment knowledge after later unrelated
-writes. Writer rejection remains an adverse result: keep the previous adapter
-and continue rather than retrying until pass.
+L-DEV runs all five branches, including the prequalified `P-TEXT`, and may
+select the horizon from `{128,192,256}` and the plateau anchor from a finite
+declared early-cut set using form reliability, task headroom, baseline
+behavior, and retention feasibility—not the largest observed treatment
+effect. The horizon, anchor, all seven cuts, form rotation, and every endpoint
+freeze before confirmation identities exist. At least two baseline increments
+precede the anchor and at least three checkpoints follow it. Confirmation also
+runs all five branches concurrently on every root; adding `P-TEXT` only after
+seeing favorable `P-RUN` roots would condition the comparison on the result
+and confound it with calendar/order. The compute-saving alternative is a new
+independent baseline-confirmation cohort, not a late branch on selected roots.
+Children/root blocks are the independent units; checkpoints, programs, decode
+seeds, branches, and adapters are nested observations.
+
+Measure two distinct retention endpoints: inherited childhood-skill retention
+on an untouched panel, and retention of a fixed early-deployment information
+cohort after later identity-disjoint writes. The second endpoint is eligible
+only if that cohort first clears a frozen acquisition floor. Writer rejection
+remains an adverse intention-to-treat result: keep the previous adapter and
+continue rather than retrying until pass.
 
 Release **increasing-lifetime improvement** only if all of the following
 noncompensatory predicates pass under their frozen margins:
@@ -435,22 +469,34 @@ noncompensatory predicates pass under their frozen margins:
 - positive absolute late `P-RUN` slope after the plateau anchor;
 - positive `P-RUN` anchor-to-terminal gain;
 - positive late-slope advantage over the qualified evolving-text baseline;
-- old-competence noninferiority; and
+- childhood-skill noninferiority;
+- acquired early-deployment knowledge noninferiority; and
 - terminal practical superiority over the baseline.
 
 A positive AUC interaction with a failed late-life conjunction remains only a
 parenting-by-SLEEP result; it may reflect a transient bump or slower decline.
 
+No exact confirmation root count is currently defensible. Repeated cuts reduce
+measurement error inside a root but do not increase learner `N`. Before
+outcome-bearing DEV, freeze practical superiority/noninferiority margins,
+alpha, desired joint power, failure rules, batch size, and a hard resource
+cap. Size confirmation from root-level nuisance variance/covariance under a
+blinded mean-free internal-pilot rule, increasing only in frozen batches. If
+the required precision exceeds the cap, report `NOT_ESTABLISHED`; do not turn
+episodes or checkpoints into pseudo-replicates. Full statistical audit:
+`research_notes/analysis/2026-09-12_lifetime_statistics_watcher_audit.md`.
+
 ### B — strong evolving text baseline
 
-Before any `P-RUN` result exists, seal the entire conditional `P-TEXT` branch:
-implementation, roots, tapes, updater, retrieval policy, resource budgets,
-endpoints, and launch rule. Execute it only after the four-arm interaction
-passes. It starts from the same parented adult checkpoint, keeps the childhood
-LoRA frozen, begins with an empty text store, and uses a prequalified
+Before any `P-RUN` result exists, seal the entire `P-TEXT` branch:
+implementation, roots, tapes, updater, retrieval policy, resource budgets, and
+endpoints. It starts from the same parented adult checkpoint, keeps the
+childhood LoRA frozen, begins with an empty text store, and uses a prequalified
 public-only evolving updater plus target-blind retrieval over its own eligible
-experience. Conditional execution avoids one of five branch trajectories
-under a null; it does not imply equal GPU cost.
+experience. Run it concurrently with the other four branches on every
+confirmation root. If compute requires conditional execution, use a new
+independent baseline-confirmation cohort after the factorial gate; do not attach
+ordinary intervals to a late branch on favorable selected roots.
 
 `P-RUN>P-TEXT` is a whole-system on-policy comparison, not proof that LoRA is a
 better carrier. Carrier comparison remains `TEXT_SAME_SEMANTICS`. Do not say
@@ -556,7 +602,7 @@ model, children, and task families.
 9. While M is unresolved, rehearse only CPU/open lifetime plumbing and the
    two-cycle bridge. Scientific L adaptation waits for the learning mechanism
    freeze.
-10. Run eight-root L-DEV, then separately powered M and L confirmations. Launch
-   the already-prebound P-TEXT branch only after the two factorial predicates
-   pass.
+10. Run eight-root five-branch L-DEV, then separately powered M and L
+   confirmations. Keep `P-TEXT` concurrent within confirmation roots, or use a
+   separately randomized independent cohort if the resource cap requires it.
 11. Run compression only after connected utility is established.
