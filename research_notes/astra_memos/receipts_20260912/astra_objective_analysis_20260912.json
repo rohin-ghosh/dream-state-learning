@@ -1,0 +1,81 @@
+{
+  "actual_cost": {
+    "decision_prefix_forwards": 384,
+    "generated_tokens": 2559,
+    "generation_requests": 384,
+    "optimizer_steps": 512,
+    "training_forwards": 512
+  },
+  "control_final_tensor_equal": true,
+  "fits": {
+    "first_choice": {
+      "epoch_common_metrics": [
+        {
+          "decision_ce": 1.3403132658743289,
+          "epoch": 0,
+          "full_response_ce": 3.67293706163764,
+          "gold_vs_other_margin": 0.068359375,
+          "nondecision_nll": 26.089817598462105
+        },
+        {
+          "decision_ce": 0.7871152587467805,
+          "epoch": 1,
+          "full_response_ce": 3.5812753718346357,
+          "gold_vs_other_margin": -0.017578125,
+          "nondecision_nll": 25.995883643627167
+        }
+      ],
+      "final_lora_sha256": "8b84dbef688ed7c30defad3aa15b96acfbe30570d7b8d6805859c0af3500f6bc"
+    },
+    "full_response": {
+      "epoch_common_metrics": [
+        {
+          "decision_ce": 0.9586723021161561,
+          "epoch": 0,
+          "full_response_ce": 0.38981018315166693,
+          "gold_vs_other_margin": 0.3037109375,
+          "nondecision_nll": 1.980450090287377
+        },
+        {
+          "decision_ce": 0.7282092404784635,
+          "epoch": 1,
+          "full_response_ce": 0.09743568646081258,
+          "gold_vs_other_margin": 0.03515625,
+          "nondecision_nll": 0.002778176567517221
+        }
+      ],
+      "final_lora_sha256": "31f10119bc37dce5abcd7be569914400392429705ada315c3fcf9813a5d23787"
+    }
+  },
+  "limitations": "Training metrics are online pre-update/dropout-active, not final checkpoint losses. One seed/map; no held or retention test. Native tree/reload verification is separately recorded; weights omitted from local capsule.",
+  "original_control_final_lora_sha256": "31f10119bc37dce5abcd7be569914400392429705ada315c3fcf9813a5d23787",
+  "report_sha256": "4ca5316949252400b6377feca674ba4abd11eac8759a99f9ed427a2b39b7b659",
+  "states": {
+    "OFF": {
+      "actions": {
+        "-gvn": 1,
+        "-mem2reg": 127
+      },
+      "correct": 65,
+      "n": 128,
+      "valid": 128
+    },
+    "first_choice": {
+      "actions": {
+        "-gvn": 128
+      },
+      "correct": 64,
+      "n": 128,
+      "valid": 128
+    },
+    "full_response": {
+      "actions": {
+        "-gvn": 128
+      },
+      "correct": 64,
+      "n": 128,
+      "valid": 128
+    }
+  },
+  "status": "ORIGINAL_CONTROL_TENSOR_HASH_REPRODUCED"
+}

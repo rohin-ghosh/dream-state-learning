@@ -3863,3 +3863,27 @@ state/custody checks are added; strict generation conclusions are unaffected.
 Builder (14:06–14:31 UTC). **SEQ-085 (utility, 3 seeds × 2 arms):** whole-scratchpad lesson material solves 1/0/1 of 32 vs the child's own action-only replay 2/2/1; OFF 0/32; strict formats 5/6/5 vs 30/30/28 — the lesson never wins, with unequal tokens (8,832 vs 3,648) and a single replayed event; not a parenting advantage. **SEQ-086:** the BF16 scoring repair is terminal and adapters rescored. **SEQ-087:** exact-row memory probes on the semantic writer — training-row matching 68/68/64/63 of 128 vs OFF 64/64/65/63 (chance), held-out 37/33/32/34 of 64; one root collapses to a constant action; "large plus/minus output changes are not binding". Its next move (14:28): test the training objective itself — the laptop Codex's audit recommends a decision-focused writer objective after this exact-row null. **Manuscript:** the canonical `paper_prototype/main.tex` and README now carry SEQ-073/085/086 with all twelve historical tables preserved; an independent reviewer's newline blocker and two cost qualifiers were resolved; 25 structural checks pass; still no PDF built (no LaTeX on the VM). Node 3 fully idle at 14:31 UTC. No [Builder → Rohin] entry; composer clean.
 
 Reading across tonight's builder results: the write installs one fixed routine (behaviour) and binds memory broadly at every seed and learning rate; the child's own text produces zero strict records; teacher-in-prompt and historical lesson material do not beat the child's own actions on these panels; a KL anchor removes spill only by removing learning. Ladder steps (a) and (c) are done for behaviour and memory on small panels; the open mechanism question is the compile/objective (step b), which is exactly where the recipe trial and the "what to parent" list point. Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402/R4 605/R3 500 in final probes, first summaries ≈ 19:00 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 7.5 h.
+
+## [Builder] 2026-09-12 14:58 UTC — SEQ-089 objective contrast terminal; current status
++
++Current Main GPU reservations: NONE. Objective120373 onnode3GPU0 completes
++both256stepfits and384greedy/384margin forwards; native source/model/adapter
++replay, fiveownedcleanups and fullGPU0release pass. Capsule d7524e0a...,
++report4ca53169...,576.104runnerseconds. OFF65/128, fullresponse64/128,
++firstchoice64/128; both trainedpolicies constantgvn128/128, allformatvalid.
++The fullresponse control's final LoRA tensorhash exactly reproduces original
++r1plus; removing suffix gradients alone did not recover binding here. No
++newdose/ranksweep or gatepromotion selected. Simplehygiene two-cycle path
++review is pending withHilbert, not formalC11work.
++
++SEQ-088 contentaudit: coordinate-only normalization POSTHOC givesprocess2/8
++vsformat1/8; sixprocess citations remain wrong. Strict0/8vs1/8unchanged.
++Next selectedproduction followup usesnewIDs1851100..7, explicit integer
++coordinate guidance in BOTH prompts, unchangedcards/checker, threepaired
++generationseeds7101/7102/7103 (48calls, no fits; NOT learnerseeds). Avicenna
++owns onlymodule/test changes. Nativechecks/freeGPUallocation precede launch.
++
++Notebook placement clarification: some14:39–14:49 Builder entries were added
++before an existing14:32 watcher entry because patch context matched there.
++Their bytes and all other entries remain preserved. This current status is
++appended at actual EOF; use timestamps, not that prior placement, for order.

@@ -1,13 +1,27 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:51 UTC**.
+Latest reconciliation: **2026-09-12 15:00 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **15:00 superseding status:** no Main GPU reservation remains. SEQ-089
+  objective comparison terminal: OFF65/128, full-response64/128, first-choice
+  64/128, both trained policies constant gvn. Native replay/five cleanups and
+  full GPU0 release pass. Original control tensor hash reproduces exactly.
+  Terminal memo/capsule/analysis archived; no G3 or mechanism-freeze claim.
+- SEQ-088 coordinate-only POST-HOC audit gives process2/8 versus format1/8;
+  six process citations still factually wrong. Original strict0/8 vs1/8 stands.
+  Avicenna owns prospective fresh-ID1851100..7 explicit-integer prompt and
+  generation-seed plumbing in constraint diagnostic/module tests. Three
+  paired sampler seeds7101/7102/7103 planned,48calls/zero fits, not learner
+  replications. Main review/native preparation/full release checks pending.
+- Hilbert is identifying the smallest justified simple-hygiene two-cycle
+  retention path. Formal C11 guard remains deferred per Rohin's direction.
 
 - **14:51 superseding status:** only Main reservation is node3GPU0objective
   controller120373, start14:45:10.193UTC, source1a6b03f4, run
