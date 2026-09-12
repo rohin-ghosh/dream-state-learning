@@ -1,5 +1,89 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding checkpoint — 2026-09-12T22:00:20.325458+00:00
+
+Mission ACTIVE and incomplete. Simple hygiene now; formal guard only for final
+paper-grade C11. Model origin UNRESOLVED_LOCAL_HASHES_ONLY. No mechanism freeze,
+general G3/P1/G5/H1/H2 qualification or clean-lineage certification.
+
+### One live Main GPU controller; do not duplicate it
+
+- Node3 GPU1: interleaved pair PID238349, PGID238349, proc start ticks6602108.
+  Independent controller-only pidfd watchdog PID238350 (no GPU reservation).
+  Launch21:55:11.852345Z. Effective hard end22:25:11.906040Z, TERM boundary
+  22:22:51.906040Z, external custody margin through22:30:11.906040Z.
+- Root ~/astra_diagnostics/astra_interleaved_memory_replay_20260912_attempt1/fits_root0_attempt1;
+  sibling material already prepared. NEVER prepare or launch again.
+- Source ~/astra_sources/22b7e528f6f62358981ed2264d30ee7242926160.
+  Driver /tmp/astra_interleaved_memory_pair_20260912.py SHA
+  d100cb58296499c7cd6489d20e96528898f2e48b698147a97dae99fa38946bbe.
+  Plan4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388.
+  Main launcher906da8ae589f77e820f4261326cd56b5875db3ba907121d033a63bd44eb778bd.
+- Native material/parent/token/V3 schedule audit PASS;55corpus/28runner/26watchdog
+  tests pass locally and natively. SINGLE then FOUR, original seed0 teach parent
+  independently,320newsteps/r8/LR3e-4. Mandatory dev48/exact16/newcues48 perarm,
+  224calls total, no original64confirmation. Both full panels BEFORE Main reads
+  outcomes. FOUR gate: memory>=15 on each old panel and each newcuefamily,
+  habit>=30/32 andACT>=31/32; no alternate-arm rescue or automatic seeds1/2.
+- As of21:59:29Z SINGLE fit-worker supervision exists; controllers live,
+  watchdog no TERM intent. No outcomes inspected. Check status via native
+  source CWD and driver status --source-root SOURCE --runroot ROOT.
+- Once controller AND watchdog finish, inspect watchdog terminal/action receipts,
+  then collect using driver collect --source-root SOURCE --runroot ROOT
+  --archive /tmp/astra_interleaved_memory_root0_terminal_20260912.tgz, CUDA unset,
+  native venv and300s external timeout. Do not blindly retry collection or launch.
+  Late observation must remain labeled late, not extend the run budget.
+
+### Completed actual-record chain, not a positive parenting result
+
+SEQ111 write PID233174 and SEQ112 readout PID234660 are COMPLETE/collected/full
+GPU2 release verified. Do not relaunch. Source610c6edd05ce9c85720ee6e992889badecc2c158.
+Full memo ASTRA_ACTUAL_RECORD_READOUT_2026-09-12.md; capsules/scripts/testreceipts
+archived. Writes2freshbase/r8/seed2/12updates,74targettokens each,888presentations.
+All392savedtensors finite perarm; nonzero B corroborates writes, not utility.
+Write capsule26243e9a6436a859f7ed7a6ec1250a9e3a06496ec61c8eb3f85afe4d1ea308b4.
+Readout capsulef8f2bb688da189ebb8f70c67725f1c008db49d6c5b2800abdc58a0dd4fcb7458.
+OFF7/24 vsP/A6/24, no P advantage. Both rule5 outputs contain two ACT markers,
+invalid before third TRY; frozen taskzero retained. All29aligned P/A rawoutputs
+and token sequences identical despite different weights. Allcells8valid
+preTRYpredictions(allF),6correct; conditionalrecordfaithfulness improves from
+9/12 to10/11 emitted, NOT prediction competence.90calls, not96executed.
+Herschel independent rawrecount PASS, analysis
+8a8312d2f1b6b11b1b9e2b4887ed993657503304a657e54d9d265ac909c69bb0.
+
+### Current independent ownership / next critical path
+
+Main sole Git/launch operator; preserve unrelated dirty gpu/codex/dream_state.rules.
+Pull before edits, explicit staging/push, append-only notebook. Latest evidence
+commitce068267; reconcile actual HEAD for newer watcher/Main changes.
+- Planck01a0971a-dcdb-7590-9111-d73adbf74fe3 owns ONLY /tmp/astra_rulegame_record_acquisition_20260912.py,
+  test counterpart/handoff. CPU implementation pending:24score requests/48candidate
+  forwards, four original rawrecords xFULL/MAPPING_SENTENCE_REMOVED xOFF/P/A,
+  exact target+EOS vs relation-only foil. No generations/fits. Nativeprep/launch
+  notdone. Source610c6edd; same writeattempt2. Eachadapter own-record gain vsOFF
+  is acquisition; P own gain over BOTH OFF andA is stronger P-specific criterion,
+  not necessary for acquisition. Fullsum/mean/truthmargin andallcrossarm targets
+  retained; remaining schema/public-field scaffolds disclosed.
+- Darwin01a0976c-89e3-7372-a3ba-134602680bff owns ONLY /tmp/astra_grounded_process_write_design_20260912.md:
+  read-only design of existing child-authored process-write path that targets
+  future decisions, not already-emitted actions; lesson/restatement bytes out
+  of sleep, no hidden-score access. Advisory, not a new gate. Await report.
+- Banach01a0972e-e39c-7653-901f-e994b237d92a owns SAME SIX canonical manuscript/
+  companion files throughSEQ111/112, /tmp/astra_manuscript_seq111_112_handoff_20260912.md.
+  Await EDITSTOP and independent review. ThroughSEQ110 integrated/reviewedPASS,
+ 233wordabstracts; original preserved, noTeXengine, collaboratorUNSENT.
+- Herschel01a09708-4d90-7d91-9aa4-25e6163abdda rawreview EDITSTOP/PASS archived;
+  no further task currently. Ohm01a096ae-e210-7701-a584-7db98b5f94ea runner/watchdog
+  EDITSTOP; no edits to frozen files. Aquinas CLOSED after backup inventory.
+
+Backup inventory archived: node1 namednode2mirror lacks11source scopes and at
+least1.396GB sampled newerweights/metadata; oldpayload hashes not freshlyverified.
+Main must copy/check required evidence by September13 23:14UTC, node1expires
+September14 23:14UTC. No backup executed in this phase. Node2 has~653GBavailable
+at survey but expiresSeptember21; VM/tmp cannot stage old76GBmirror. Never run
+legacy destructive migration/sync scripts blindly. See archived inventory/proposal.
+
+
 ## Superseding write launch and CPU queue — 2026-09-12T21:33Z
 
 Main LIVE node3GPU2/PID233174 since21:30:37.652148UTC. Actual-record paired
