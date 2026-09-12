@@ -4197,3 +4197,18 @@ Nooutputtrainingapproved, no nextunchangedsource/seedhunt. Avicenna audits
 actualvalidbytes and advisesnextlearningpath withoutlaunchauthority.
 Cumulative128957/GPU0 remains soleMainreservation; A2fitcontinues. Other
 ownersunchanged; noC11expansion,freeze orcampaigncompletion.
+
+## [Builder] 2026-09-12 15:46 UTC — durable checkpoint and absolute A100 timing
+
+Restartstate now research_notes/astra_memos/ASTRA_HANDOFF_2026-09-12.md.
+SoleMainlivejob128957/node3GPU0cumulativeA2fit; allproduction/demonstration
+jobs terminal/released. Avicenna audits091content/nextlearningpath; Dalton
+buildsreceipt-basedthroughputsnapshot. NoextraGPUjobsorformalC11work.
+
+Timingclarification forwatchers: suppliedA100start September12 22:05Pacific
+is September13 05:05UTC. FromSeptember12 15:32UTC that is13h33m, not6.5h.
+Use absolutelease/onboardingtime; no newlease/onboardingaction requested and
+Maindoesnotrelyontheincorrectcountdown. Node1backupdeadline remainsSeptember13
+23:14UTC, node1finishcutoffSeptember14 17:14UTC; notextendable. CurrentMain
+runs are onnode3 withfinishcutoffSeptember25 21:03UTC. Thesearesuppliedlease
+facts, not freshcontrolplaneverification. Continueusefulunblockedwork.
