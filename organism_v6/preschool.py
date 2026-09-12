@@ -100,7 +100,39 @@ BASELINE10_PARAGRAPH = (
     "For a starting practice, aim to write 10 measured action records per episode, after 10 of your "
     "actual runs. This is practice, not a requirement to invent something interesting or successful. "
     "Adjust as you learn what is useful.")
-LESSON_MODES = ("none", "lesson", "lesson10")
+# The ACTIVE SHAM (Codex reconciliation audit 2026-09-11, blocker 1: "Cell A has no parent while B/C
+# receive parent text, examples, context occupancy, and refreshers"): the same delivery schedule, the
+# same warm register and the same length (word count within 5 % per delivery, asserted by
+# tests/test_preschool_flags.py) as the artifact lesson, but NO artifact content -- nothing about
+# records, writing after the result, first person, measured outcomes, or expectations versus results.
+# Generic remarks about the optimisation task instead. `sham - none` is the parent PACKAGE
+# (tokens, occupancy, refreshers); `lesson - sham` is the artifact content.
+SHAM_VERSION = "sham-v1-2026-09-12"
+SHAM_PARAGRAPH = (
+    "Compiler passes interact, and the order in which they run matters. Some programs respond to "
+    "memory-to-register promotion, others to loop transforms, and many gain little from either. "
+    "Consider what you know about a program's structure before choosing a sequence: how many "
+    "functions it has, whether it is loop-heavy, whether it moves its data through memory, or "
+    "whether a few hot functions dominate it. Small programs and large programs often favour "
+    "different passes. Here are some general remarks about programs, not passes you must use.")
+SHAM_EXAMPLES = (
+    "Programs built from many small functions carry call overhead, and inlining can remove some "
+    "of it, while numeric kernels are dominated by their inner loops instead.",
+    "Bit-manipulation routines tend to be short and branchy, so simplifying the control flow "
+    "matters more there than any loop transform would.",
+    "Codecs and compression programs mix table lookups with tight loops, so a sequence that helps "
+    "one part can leave the other part unchanged.",
+)
+SHAM_EXAMPLES_HEADER = "(Illustrative, general remarks — not findings from this workshop.)"
+SHAM_REFRESHER_LINE = ("A reminder from your parent: compiler passes interact and their order matters, so "
+                       "think about the program's structure when you choose a sequence. One more general remark:")
+SHAM_REFRESHER_EXAMPLES = (
+    "Loop-heavy numeric code usually gains from invariant code motion and unrolling, while "
+    "control-heavy code with few loops rarely does in practice.",
+    "Dead-code elimination matters most after other passes have exposed the dead code to it.",
+    "Programs that keep a lot of global state often carry more instructions than their size alone suggests.",
+)
+LESSON_MODES = ("none", "lesson", "lesson10", "sham")
 GATE_MODES = ("off", "shadow", "enforce")
 REFRESHER_SLEEPS = (1, 2, 3)
 NEUTRAL_PANEL_DEFAULT = ["benchmark://npb-v0/10", "benchmark://npb-v0/25",
@@ -213,15 +245,25 @@ def lesson_block(mode: str, sleeps_done: int) -> str | None:
     with ONE new example each; 4+ = nothing (the lesson is gone)."""
     if mode not in LESSON_MODES or mode == "none":
         return None
+    sham = mode == "sham"
+    para, header, examples = ((SHAM_PARAGRAPH, SHAM_EXAMPLES_HEADER, SHAM_EXAMPLES) if sham
+                              else (LESSON_PARAGRAPH, EXAMPLES_HEADER, LESSON_EXAMPLES))
+    ref_line, ref_examples = ((SHAM_REFRESHER_LINE, SHAM_REFRESHER_EXAMPLES) if sham
+                              else (REFRESHER_LINE, REFRESHER_EXAMPLES))
     if sleeps_done == 0:
-        body = [LESSON_PARAGRAPH, EXAMPLES_HEADER] + [f"- {e}" for e in LESSON_EXAMPLES]
+        body = [para, header] + [f"- {e}" for e in examples]
         if mode == "lesson10":
             body.append(BASELINE10_PARAGRAPH)
         return "=== A NOTE FROM YOUR PARENT ===\n" + "\n".join(body)
     if sleeps_done in REFRESHER_SLEEPS:
-        ex = REFRESHER_EXAMPLES[(sleeps_done - 1) % len(REFRESHER_EXAMPLES)]
-        return "=== A NOTE FROM YOUR PARENT ===\n" + REFRESHER_LINE + f"\n- {ex}"
+        ex = ref_examples[(sleeps_done - 1) % len(ref_examples)]
+        return "=== A NOTE FROM YOUR PARENT ===\n" + ref_line + f"\n- {ex}"
     return None
+
+
+def lesson_variant(mode: str) -> str:
+    """'artifact' (lesson / lesson10), 'sham' (the active control) or 'none'."""
+    return "none" if mode == "none" else ("sham" if mode == "sham" else "artifact")
 
 
 def deliver_lesson(life: str, mode: str, sleeps_done: int, log=None) -> str | None:
@@ -240,9 +282,10 @@ def deliver_lesson(life: str, mode: str, sleeps_done: int, log=None) -> str | No
                 continue
     if sleeps_done not in seen:
         with open(path, "a") as f:
-            f.write(json.dumps(dict(version=LESSON_VERSION, mode=mode, sleeps_done=sleeps_done,
+            f.write(json.dumps(dict(version=SHAM_VERSION if mode == "sham" else LESSON_VERSION,
+                                    mode=mode, variant=lesson_variant(mode), sleeps_done=sleeps_done,
                                     phase="lesson" if sleeps_done == 0 else "refresher",
-                                    text=text)) + "\n")
+                                    n_words=len(text.split()), text=text)) + "\n")
         if log:
             log(f"[preschool] lesson {mode} delivered (phase sleeps_done={sleeps_done}, "
                 f"{len(text)} chars)")
@@ -464,20 +507,28 @@ def _adapter_sha(adapter_dir: str | None) -> str | None:
     return None
 
 
-def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_index: int,
-                  panel: list, budget_ticks: int, log, adapter_path: str | None,
-                  max_tokens: int = 100, driver_cls=None) -> dict | None:
-    """One held-out episode with a fresh context and the Scratchpad field,
-    before ('pre') or after ('post') sleep `sleep_index`; the same program for
-    the pair. Separate ledger; never harvested. Resume-safe (marker = the
-    JSON)."""
+def neutral_probe_path(life: str, when: str, episode_index: int) -> str:
+    return os.path.join(life, f"neutral_probe_{when}_{episode_index:04d}.json")
+
+
+def neutral_probe_run(model, gym, life: str, when: str, episode_index: int, sleep_index: int,
+                      panel: list, budget_ticks: int, log, adapter_path: str | None,
+                      arm: str = "on", max_tokens: int = 100, driver_cls=None) -> dict:
+    """ONE held-out episode with a fresh context and the Scratchpad field, under
+    the model given: arm "on" = the live model (the committed adapter, or the
+    base before the first adapter), arm "off" = the frozen base opened by the
+    caller exactly as run_life_v2 opens it for the ordinary probe_ep*_adapterOFF
+    (VLLMBackend(adapter_path=None) after the live model is closed). The same
+    program and the SAME generation seeds for the pair and for both arms.
+    Separate ledger (suffix _adapterOFF for the off arm); never harvested."""
     from .batch_loop import run_episodes_batch, EpisodeDriver
     from .ledger import Ledger
-    out_path = os.path.join(life, f"neutral_probe_{when}_{episode_index:04d}.json")
-    if os.path.exists(out_path):
-        return json.load(open(out_path))
     prog = panel[(sleep_index - 1) % len(panel)]
-    led = Ledger(os.path.join(life, f"neutral_probe_{when}_{episode_index:04d}.ledger.jsonl"))
+    suffix = "" if arm == "on" else "_adapterOFF"
+    led_path = os.path.join(life, f"neutral_probe_{when}_{episode_index:04d}{suffix}.ledger.jsonl")
+    if os.path.exists(led_path):
+        os.remove(led_path)                      # a half-written arm is redone whole
+    led = Ledger(led_path)
     slot = PostOutcomeSlot(label=SCRATCHPAD_LABEL, kind="scratchpad", max_tokens=max_tokens,
                            seed_salt=0x3C3C, log=log)
     res = run_episodes_batch(model, gym, [gym.episode_from_id(prog, budget_ticks)],
@@ -491,20 +542,69 @@ def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_in
     n_num = len(numeric)
     q_hi = {j["execution_id"] for j in judged if j["artic_hi"]}
     q_lo = {j["execution_id"] for j in judged if j["artic_lo"]}
-    payload = dict(when=when, sleep_index=sleep_index, at_episode=episode_index, program=prog,
-                   adapter=adapter_path, adapter_sha256=_adapter_sha(adapter_path),
-                   best_score=res[0]["best_score"] if res else None, n_acts=res[0]["n_acts"] if res else 0,
-                   n_executions_numeric=n_num, n_scratchpads=len(pads),
-                   articulation_hi=(len(q_hi) / n_num) if n_num else None,
-                   articulation_lo=(len(q_lo) / n_num) if n_num else None,
-                   scratchpads=judged, slot=slot.stats(), fresh_context=True,
-                   note="held-out program; birth prompt only; separate ledger; not harvested")
+    return dict(arm=arm, program=prog, adapter=adapter_path, adapter_sha256=_adapter_sha(adapter_path),
+                ledger=os.path.basename(led_path),
+                best_score=res[0]["best_score"] if res else None, n_acts=res[0]["n_acts"] if res else 0,
+                n_executions_numeric=n_num, n_scratchpads=len(pads),
+                articulation_hi=(len(q_hi) / n_num) if n_num else None,
+                articulation_lo=(len(q_lo) / n_num) if n_num else None,
+                scratchpads=judged, slot=slot.stats())
+
+
+def write_neutral_probe(life: str, when: str, episode_index: int, sleep_index: int,
+                        on: dict, off: dict, log=None) -> dict:
+    """The pair's JSON: the top-level fields are the ON run (the live model, as
+    before); `on` and `off` hold both arms so the adapter-mediation contrast
+    (Codex reconciliation audit, blocker 4: the H1 estimand is
+    (P_on - P_off) - (S_on - S_off)) can be computed later; `off_same_as_on`
+    marks the pairs taken before any adapter existed, where the off arm is the
+    on arm copied, not rerun."""
+    payload = dict(when=when, sleep_index=sleep_index, at_episode=episode_index, program=on["program"],
+                   adapter=on["adapter"], adapter_sha256=on["adapter_sha256"],
+                   best_score=on["best_score"], n_acts=on["n_acts"],
+                   n_executions_numeric=on["n_executions_numeric"], n_scratchpads=on["n_scratchpads"],
+                   articulation_hi=on["articulation_hi"], articulation_lo=on["articulation_lo"],
+                   scratchpads=on["scratchpads"], slot=on["slot"], fresh_context=True,
+                   on=on, off=off, off_same_as_on=bool(off.get("same_as_on")),
+                   articulation_on_minus_off_hi=(None if on["articulation_hi"] is None or off["articulation_hi"] is None
+                                                 else on["articulation_hi"] - off["articulation_hi"]),
+                   note="held-out program; birth prompt only; separate ledgers; not harvested; "
+                        "on = live model, off = frozen base with the same seeds")
+    out_path = neutral_probe_path(life, when, episode_index)
     tmp = out_path + ".tmp"
     with open(tmp, "w") as f:
         json.dump(payload, f, indent=1)
     os.rename(tmp, out_path)
     if log:
-        log(f"[neutral probe {when} sleep {sleep_index}] {prog} best={payload['best_score']} "
-            f"scratchpads={len(pads)} articulation={_fmt(payload['articulation_lo'])}-"
-            f"{_fmt(payload['articulation_hi'])} adapter={adapter_path}")
+        log(f"[neutral probe {when} sleep {sleep_index}] {on['program']} best_on={on['best_score']} "
+            f"best_off={off['best_score']} articulation_on={_fmt(on['articulation_lo'])}-{_fmt(on['articulation_hi'])} "
+            f"off={_fmt(off['articulation_lo'])}-{_fmt(off['articulation_hi'])} adapter={on['adapter']}"
+            + (" (off = on: no adapter loaded)" if payload["off_same_as_on"] else ""))
     return payload
+
+
+def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_index: int,
+                  panel: list, budget_ticks: int, log, adapter_path: str | None,
+                  max_tokens: int = 100, driver_cls=None, open_base=None, close_base=None) -> dict | None:
+    """The pre- or post-sleep neutral probe as an adapter ON / OFF PAIR on the
+    same held-out program with the same seeds. `open_base()` must close the
+    live model and return the frozen base backend; `close_base(base)` must
+    close it and return the reloaded live model -- both supplied by
+    run_life_v2 so the OFF arm uses exactly the path of the ordinary
+    probe_ep*_adapterOFF. Without an adapter loaded (before the first sleep,
+    or an arm-A life) the off arm is the on arm copied, flagged
+    `same_as_on`. Resume-safe (marker = the JSON). Returns (payload, model):
+    the live model may have been reloaded."""
+    out_path = neutral_probe_path(life, when, episode_index)
+    if os.path.exists(out_path):
+        return json.load(open(out_path)), model
+    on = neutral_probe_run(model, gym, life, when, episode_index, sleep_index, panel, budget_ticks, log,
+                           adapter_path, arm="on", max_tokens=max_tokens, driver_cls=driver_cls)
+    if adapter_path and open_base is not None and close_base is not None:
+        base = open_base()
+        off = neutral_probe_run(base, gym, life, when, episode_index, sleep_index, panel, budget_ticks, log,
+                                None, arm="off", max_tokens=max_tokens, driver_cls=driver_cls)
+        model = close_base(base)
+    else:
+        off = dict(on, arm="off", same_as_on=True, ledger=on["ledger"])
+    return write_neutral_probe(life, when, episode_index, sleep_index, on, off, log), model

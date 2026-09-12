@@ -383,3 +383,140 @@ def test_parse_outcome_and_lesson_block():
     row3 = dict(row, text="I ran -mem2reg. Instructions went from 1000 to 700, a 30% reduction.")
     j3 = preschool.judge_record(row3, None)
     assert j3["N"] is False and not j3["admit_hi"] and j3["reason"] == "N-mismatch"
+
+
+# --------------------------------------------------------------------------- 7. the active sham (Codex audit blocker 1)
+ARTIFACT_WORDS = ("record", "measured", "measure", "observed", "observe", "expect", "result", "wrote",
+                  "write", "what happened", "in your own voice", " i ran", " i tried")
+
+
+def test_sham_lesson_matches_length_and_schedule_without_artifact_content():
+    """`--artifact-lesson sham`: the same deliveries (before episode 1; refreshers after sleeps
+    1-3; nothing after), word count within 5 % of the artifact lesson per delivery, the same
+    header and register, and no artifact content."""
+    for k in (0, 1, 2, 3):
+        a, s = preschool.lesson_block("lesson", k), preschool.lesson_block("sham", k)
+        assert a and s and a != s
+        wa, ws = len(a.split()), len(s.split())
+        assert abs(wa - ws) / wa <= 0.05, (k, wa, ws)
+        assert s.startswith("=== A NOTE FROM YOUR PARENT ===") and a.startswith("=== A NOTE FROM YOUR PARENT ===")
+        low = " " + s.lower() + " "
+        for w in ARTIFACT_WORDS:
+            assert w not in low, (k, w)
+        assert preschool.LESSON_PARAGRAPH not in s and preschool.REFRESHER_LINE not in s
+        for ex in preschool.LESSON_EXAMPLES + preschool.REFRESHER_EXAMPLES:
+            assert ex not in s
+    assert preschool.lesson_block("sham", 4) is None and preschool.lesson_block("sham", 9) is None
+    assert preschool.lesson_variant("sham") == "sham" and preschool.lesson_variant("lesson10") == "artifact"
+    assert preschool.lesson_variant("none") == "none"
+    # per-component matching too (paragraph, header, the three examples, refresher line, refresher examples)
+    pairs = [(preschool.LESSON_PARAGRAPH, preschool.SHAM_PARAGRAPH),
+             (preschool.EXAMPLES_HEADER, preschool.SHAM_EXAMPLES_HEADER),
+             (preschool.REFRESHER_LINE, preschool.SHAM_REFRESHER_LINE)]
+    pairs += list(zip(preschool.LESSON_EXAMPLES, preschool.SHAM_EXAMPLES))
+    pairs += list(zip(preschool.REFRESHER_EXAMPLES, preschool.SHAM_REFRESHER_EXAMPLES))
+    for a, s in pairs:
+        wa, ws = len(a.split()), len(s.split())
+        assert abs(wa - ws) <= max(2, round(0.12 * wa)), (a[:40], wa, ws)
+    # delivered in a life: same schedule as the lesson, logged with variant=sham and its own version
+    life, tr = _life(["--arm", "A", "--note-after", "--artifact-lesson", "sham"],
+                     episodes=40, sleep_every=8, probe_every=8)
+    d = _rows(life, "lesson_deliveries.jsonl")
+    assert [x["sleeps_done"] for x in d][:4] == [0, 1, 2, 3] and all(x["sleeps_done"] <= 3 for x in d)
+    assert all(x["variant"] == "sham" and x["mode"] == "sham" and x["version"] == preschool.SHAM_VERSION for x in d)
+    assert preschool.SHAM_PARAGRAPH in d[0]["text"] and all(ex in d[0]["text"] for ex in preschool.SHAM_EXAMPLES)
+    for x in d[1:]:
+        assert preschool.SHAM_REFRESHER_LINE in x["text"] and x["n_words"] == len(x["text"].split())
+    assert all("score" not in x["text"].lower() for x in d)
+    wake = [e["prompt"] for e in tr.events if e["kind"] == "batch" and preschool.SLOT_SENTENCE in e["prompt"]]
+    assert any(preschool.SHAM_PARAGRAPH in p for p in wake)
+    assert not any(preschool.LESSON_PARAGRAPH in p for p in wake)
+    # the artifact deliveries log variant=artifact
+    life2, _ = _life(["--arm", "A", "--artifact-lesson", "lesson"], episodes=8, sleep_every=8)
+    d2 = _rows(life2, "lesson_deliveries.jsonl")
+    assert d2 and d2[0]["variant"] == "artifact" and d2[0]["version"] == preschool.LESSON_VERSION
+
+
+# --------------------------------------------------------------------------- 8. adapter ON / OFF pairing (Codex audit blocker 4)
+def test_neutral_probes_run_adapter_on_and_off_on_the_same_program():
+    life, tr = _life(["--arm", "B", "--note-after", "--neutral-probes", "--neutral-probe-panel", "PANEL"])
+    pre8 = json.load(open(os.path.join(life, "neutral_probe_pre_0008.json")))
+    post8 = json.load(open(os.path.join(life, "neutral_probe_post_0008.json")))
+    post16 = json.load(open(os.path.join(life, "neutral_probe_post_0016.json")))
+    for pj in (pre8, post8, post16):
+        assert set(pj) >= {"on", "off", "off_same_as_on", "articulation_on_minus_off_hi"}
+        assert pj["on"]["arm"] == "on" and pj["off"]["arm"] == "off"
+        assert pj["on"]["program"] == pj["off"]["program"] == pj["program"]
+        # top-level fields are the ON run's, as before
+        assert pj["adapter"] == pj["on"]["adapter"] and pj["scratchpads"] == pj["on"]["scratchpads"]
+        assert pj["off"]["adapter"] is None
+    # before any adapter exists the off arm is the on arm copied, flagged
+    assert pre8["adapter"] is None and pre8["off_same_as_on"] is True and pre8["off"].get("same_as_on") is True
+    assert not os.path.exists(os.path.join(life, "neutral_probe_pre_0008_adapterOFF.ledger.jsonl"))
+    # after the first committed adapter the off arm is a real second run under the frozen base
+    for pj, ep in ((post8, 8), (post16, 16)):
+        assert pj["adapter"] is not None and pj["adapter"].endswith("adapter")
+        assert pj["off_same_as_on"] is False and "same_as_on" not in pj["off"]
+        assert pj["off"]["ledger"] == f"neutral_probe_post_{ep:04d}_adapterOFF.ledger.jsonl"
+        assert os.path.exists(os.path.join(life, pj["off"]["ledger"]))
+        assert os.path.exists(os.path.join(life, pj["on"]["ledger"])) and pj["on"]["ledger"] == f"neutral_probe_post_{ep:04d}.ledger.jsonl"
+        off_rows = _rows(life, pj["off"]["ledger"])
+        assert off_rows and all(r.get("episode_id") == pj["program"] for r in off_rows if "episode_id" in r)
+        assert pj["off"]["n_scratchpads"] == pj["on"]["n_scratchpads"] >= 1
+        assert pj["articulation_on_minus_off_hi"] is not None
+    # the off arm was generated by a base model (adapter None) on the Scratchpad prompts of that program
+    pads = [e for e in tr.events if e["kind"] == "post_outcome" and e["label"] == "Scratchpad"]
+    adapters = {e["adapter"] for e in pads}
+    assert None in adapters and any(a for a in adapters if a)
+    # the main ledger and the corpora still carry nothing of the neutral programs
+    assert not any(r.get("episode_id") in NEUTRAL for r in _rows(life))
+    for s in (8, 16):
+        assert not any(any(n in it for n in NEUTRAL) for it in _corpus(life, s))
+    # the live model is back after the off arm: the ordinary adapter-ON probe after sleep 8 ran with the adapter
+    on_batches = [e for e in tr.events if e["kind"] == "batch" and e.get("adapter")]
+    assert on_batches
+
+
+# --------------------------------------------------------------------------- 9. parent text never enters the sleep bytes (Codex audit blocker 11)
+def _sentences(*texts):
+    out = []
+    for t in texts:
+        for s in re.split(r"(?<=[.:;])\s+", t):
+            s = s.strip("- ").strip()
+            if len(s.split()) >= 4:
+                out.append(s)
+    return out
+
+
+def test_lesson_and_sham_text_never_enter_the_sleep_corpus_or_record_items():
+    parent_text = _sentences(preschool.LESSON_PARAGRAPH, preschool.EXAMPLES_HEADER, *preschool.LESSON_EXAMPLES,
+                             preschool.REFRESHER_LINE, *preschool.REFRESHER_EXAMPLES, preschool.BASELINE10_PARAGRAPH,
+                             preschool.SHAM_PARAGRAPH, preschool.SHAM_EXAMPLES_HEADER, *preschool.SHAM_EXAMPLES,
+                             preschool.SHAM_REFRESHER_LINE, *preschool.SHAM_REFRESHER_EXAMPLES,
+                             preschool.SLOT_SENTENCE, "A NOTE FROM YOUR PARENT")
+    assert len(parent_text) > 20
+    for mode, gate in (("lesson10", "shadow"), ("lesson", "enforce"), ("sham", "shadow"), ("sham", "enforce")):
+        extra = ["--arm", "B", "--note-after", "--artifact-lesson", mode, "--articulation-gate", gate]
+        if gate == "enforce":
+            extra += ["--gate-min-items", "1"]
+        life, tr = _life(extra, episodes=24, sleep_every=8, probe_every=8)
+        # the child DID see the parent text during wake
+        assert any("A NOTE FROM YOUR PARENT" in e["prompt"] for e in tr.events if e["kind"] == "batch")
+        for s in (8, 16, 24):
+            sdir = os.path.join(life, f"sleep_{s:04d}")
+            for fn in ("corpus.json", "corpus_legacy.json"):
+                p = os.path.join(sdir, fn)
+                if not os.path.exists(p):
+                    continue
+                blob = json.load(open(p))
+                items = blob["corpus"] + list(blob.get("principles") or [])
+                joined = "\n".join(items)
+                for sent in parent_text:
+                    assert sent not in joined, (mode, gate, fn, sent[:60])
+                if gate == "enforce" and fn == "corpus.json":
+                    assert items and all("My measured action record: " in it for it in items)
+        # nor the state the gate carries forward
+        st = json.load(open(os.path.join(life, "articulation_state.json")))
+        for a in st["admitted"]:
+            for sent in parent_text:
+                assert sent not in a["text"]

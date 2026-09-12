@@ -345,15 +345,18 @@ def main():
                          "off.")
     ap.add_argument("--note-after-max-tokens", type=int, default=100,
                     help="generation cap of the NOTE_AFTER turn (default 100)")
-    ap.add_argument("--artifact-lesson", choices=["none", "lesson", "lesson10"],
+    ap.add_argument("--artifact-lesson", choices=["none", "lesson", "lesson10", "sham"],
                     default="none",
                     help="the parent's artifact-naming paragraph (a MEASURED "
                          "ACTION RECORD) with three synthetic examples before "
                          "episode 1 and a one-line refresher with one new "
                          "example after sleeps 1-3; lesson10 adds the numbered "
-                         "baseline paragraph (aim for 10 records per episode). "
-                         "Fixed text (preschool.LESSON_VERSION), never a score. "
-                         "Default none.")
+                         "baseline paragraph (aim for 10 records per episode); "
+                         "sham = the ACTIVE control: the same schedule, register "
+                         "and length (word count within 5%%) with no artifact "
+                         "content, only generic remarks about the task "
+                         "(preschool.SHAM_VERSION). Fixed text "
+                         "(preschool.LESSON_VERSION), never a score. Default none.")
     ap.add_argument("--articulation-gate", choices=["off", "shadow", "enforce"],
                     default="off",
                     help="judge every new note_after at sleep with the "
@@ -509,6 +512,20 @@ def main():
         ad = latest_adapter(life) if args.arm == "B" else None
         loaded["adapter"] = ad
         return VLLMBackend(adapter_path=ad)
+
+    def open_base():
+        """The frozen base for an adapter-OFF arm of a preschool neutral probe:
+        exactly the ordinary probe_ep*_adapterOFF path below (close the live
+        model, open VLLMBackend(adapter_path=None))."""
+        from .model_backend import close_backend
+        close_backend(model)
+        return VLLMBackend(adapter_path=None)
+
+    def close_base(base):
+        """Close the base opened by open_base and reload the live model."""
+        from .model_backend import close_backend
+        close_backend(base)
+        return load_model()
 
     def parent_terms():
         return parent_leak_terms(gym, ledger.rows(), args.sleep_every)
@@ -866,11 +883,12 @@ def main():
         if sleep_now:
             r += 1
             sdir = os.path.join(life, f"sleep_{i:04d}")
-            if neutral is not None:          # preschool: the pre-sleep neutral probe
-                preschool.neutral_probe(model, gym, life, "pre", i, r, neutral,
-                                        args.budget_ticks, log, loaded["adapter"],
-                                        max_tokens=args.note_after_max_tokens,
-                                        driver_cls=driver_class_for(gym))
+            if neutral is not None:          # preschool: the pre-sleep neutral probe (adapter ON / OFF pair)
+                _, model = preschool.neutral_probe(model, gym, life, "pre", i, r, neutral,
+                                                   args.budget_ticks, log, loaded["adapter"],
+                                                   max_tokens=args.note_after_max_tokens,
+                                                   driver_cls=driver_class_for(gym),
+                                                   open_base=open_base, close_base=close_base)
             assert_split_hygiene(gym, ledger.rows())
             # design 3.6 seal rule at every sleep of a childhood life: zero
             # deployment-gym vocabulary in the child's stored prompts/notes
@@ -961,11 +979,12 @@ def main():
                 bootstrap = head()
                 if slot is not None:
                     log(f"[preschool slot] {json.dumps(slot.stats())}")
-            if neutral is not None:              # the post-sleep neutral probe
-                preschool.neutral_probe(model, gym, life, "post", i, r, neutral,
-                                        args.budget_ticks, log, loaded["adapter"],
-                                        max_tokens=args.note_after_max_tokens,
-                                        driver_cls=driver_class_for(gym))
+            if neutral is not None:              # the post-sleep neutral probe (adapter ON / OFF pair)
+                _, model = preschool.neutral_probe(model, gym, life, "post", i, r, neutral,
+                                                   args.budget_ticks, log, loaded["adapter"],
+                                                   max_tokens=args.note_after_max_tokens,
+                                                   driver_cls=driver_class_for(gym),
+                                                   open_base=open_base, close_base=close_base)
             if schedule is not None:
                 from . import curriculum
                 curriculum.log_exit_check(life, r, schedule, ledger.rows(),
