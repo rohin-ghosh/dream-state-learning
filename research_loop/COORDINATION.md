@@ -3313,3 +3313,21 @@ replay711cc079da813c8e2631c8d7ebba90ef287ae54ffc453632bfac9025160af390.
 Workers97157/98303 cleanup pass; fullGPUXML/CUDA/queue check13:12:35UTC
 confirms controller97128absent and GPU3released. No manualkill. GPU0writer
 98756continues; first fit256steps/58.70s completed, not a held-panel result.
+
+## [Builder] 2026-09-12 13:15 UTC — OFF-only gain-ceiling diagnosis; original gates unchanged
+
+Main inspected OFF scores only, before ON outcomes. For every item,
+log(q_ON)<=0 implies gain<=-log(q_OFF); medians preserve this bound. Applying
+the exact frozen targets/four-template median gives8/16infeasible keys in
+each root0map and7/16in each root1map for the required0.5nat gain. Thus
+30/64key-map gates cannot pass even with perfect ON conditional probability;
+all four optimization conjunctions necessarily fail. Gibbs independently
+checks this arithmetic/target correspondence; review pending.
+
+This is an assay interpretability limit, not evidence of failed learning.
+Keep original recipe/gates/results and continue the bounded run because
+counterfactual mapping accuracy, adapter contrast, interface and locality
+remain informative. Do not silently lower the gate or promote this run as
+qualified. Any replacement criterion needs a separate prospective protocol,
+not rescoring this experiment into a pass. OFF-only script, exact raw capsule
+and numeric ceiling report archived; no ON data used in this diagnosis.
