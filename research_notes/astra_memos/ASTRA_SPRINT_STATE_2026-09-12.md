@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 08:35 UTC**.
+Latest reconciliation: **2026-09-12 08:52 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -13,16 +13,29 @@ truncate at32tokens with no valid ACT. SEQ-063 raw capsule is committed in
 f0aba5ea (archive SHA256 1ef045e5e18e0747b6429e9f08c32702dab09bd03d53f1752950794b90a46608).
 Never reseal/rerun that root or use it as a successful parent. W1 remains blocked.
 
-**Live:** node3 GPU1 controller36087, run
-`~/astra_diagnostics/astra_W0_interface_calibration_20260912_attempt1`, launched
-08:31:57UTC from92a800bd3672caea0569b8350af2c23bf9e5b3d6.320request/1A40-hour
-inference-only development calibration;64paired prompts ×5format/cap conditions.
-Logs/launch/inventory are in sibling `_attempt1_logs`; never put output inside
-the sealed root. Prepared manifest5f4bbb473ddd92047f5e54cc95dd4aff9678924b354898ed76272ac7b51216c6.
-No result yet. Official model authentication remains UNRESOLVED_LOCAL_HASHES_ONLY.
+**Calibration terminal, SEQ-065:** controller36087 exited;320requests complete,
+external replay exit0. Chat+explicit32:61/64valid,45/64correct,0truncated.
+All other four conditions:0valid, including chat/original32 and raw/original256.
+851.626seconds/0.236563A40-hours; no W0 oracle qualification (all four selected
+root/map correctness cells below0.90). Memo ASTRA_INTERFACE_CALIBRATION_2026-09-12.md;
+raw capsule SHA25646815dde46a3b50c037905c7cda8eb12893bdd1032b75f2d59b608aea8eb7412.
+Source92a800bd3672caea0569b8350af2c23bf9e5b3d6 and original remote run retained.
+Official model authentication remains UNRESOLVED_LOCAL_HASHES_ONLY, not a reason
+to pause explicitly exploratory work under Rohin's current steering.
 
-SEQ-062:12 completed A1/A2 bank artifacts all fail unchanged G9; Averroes now
-checks only outstanding A2seed2. B0 both terminal per independent audit;
+**Live parenting formation:** source911e08877bac83613a62ca58bdb032f22cc61681,
+node3GPU0 lesson timeout PID38416 and GPU2 sham timeout PID38418, launched
+08:46:18UTC,7200second caps plus30second kill grace. Both model-loaded and
+writing actual generations/ledgers. Root
+`~/astra_diagnostics/astra_P0_material_6101_20260912_attempt1`, arm subdirectories;
+configs and external logs are siblings.64identical training episodes/seed6101,
+generation seed7101,16ticks,8batch,400wake/100note caps. Tick-only diagnostic
+clock removes wall-time nuisance; original State unchanged. Teacher dose differs
+(203 vs158tokens), explicitly not exactly matched. No adapter/training/clean claim.
+
+SEQ-062/064:13 evaluated A1/A2 bank artifacts all fail unchanged G9. A2seed2
+bank0 adds I_d1.18490[0.73680,1.81123],spill0.32310; at08:34bank1fit done,
+evaluation unconfirmed and bank2 outstanding. No duplicate jobs. B0 both terminal per independent audit;
 neutral articulation remains zero ON/OFF, no clean ancestry or H1 evidence.
 Separate neutral/adult/W1 CPU helpers are implemented;180combined tests pass
 54.813s with PYTHONPATH=tests:., preserving the initial import-error attempt.
@@ -30,12 +43,18 @@ Adult training now uses a fresh subprocess. No real adult/neutral pair executed.
 Neutral advisory P2 (historical lifecycle-receipt binding) remains documented
 and deferred; live process cleanup checks are implemented. No formal guard expansion.
 
-**Next work:** James owns NEW parent_material_diagnostic.py/tests for an
-explicitly exploratory lesson-versus-active-sham grounded-material formation
-diagnostic (no training, adapter, eligibility manifest or clean claim). This
-advances teaching/material diagnosis without bypassing the strict clean nursery.
-Main integrates completed runner work and analyzes calibration; Turing advises
-on the next parenting path. Do not substitute formation for amortization/H1/H2.
+**Next work:** James owns NEW oracle_lookup_diagnostic.py/tests:64new single-row
+oracle generations against the existing full-table chat/explicit baseline,
+development only, at most1A40-hour after preflight. Turing owns NEW
+parent_material_write.py/tests: first64 unique source-grounded child records,
+CPU/tokenizer preparation for existing standalone child-only train_adapter
+(rank8,3epochs,lr1e-4,seed6102), no clean gate/lineage arguments. Skip if fewer64;
+never lower count or repair child text. Main flagged absolute source-path
+comparisons: allow only verified identical producer bytes in a newer checkout,
+retain/recheck original source paths; never mutate old frozen checkouts or pins.
+Then real fresh fits and parent-free neutral ON/OFF probes using existing runner.
+The strict clean nursery and adult lineage-dependent path remain separate.
+Do not substitute material formation for amortization/H1/H2.
 Older timestamped updates below are historical, not live state.
 Session start observed 2026-09-12 06:14 UTC (2026-09-11 23:14 Pacific).
 Recovered checkout: main, `a45baa2f77437a35e51ebe1034bf1c70deea4233`.
