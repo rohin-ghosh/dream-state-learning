@@ -24,7 +24,7 @@ def seed_training(seed, torch_module):
 
 def child_record_prefix_length(text):
     separator = "\nMy measured action record: "
-    if not isinstance(text, str) or not text.startswith("Program "):
+    if not isinstance(text, str) or not text.startswith(("Program ", "Situation ")):
         raise ValueError("invalid child-record wrapper")
     if text.count(separator) != 1:
         raise ValueError("missing or ambiguous child-record boundary")
@@ -143,10 +143,18 @@ def main():
         corpus_bytes = source.read()
     bound_gate = None
     if all(binding_options):
-        if Path(args.out).exists() or Path(args.trainer_receipt).exists():
+        if os.path.lexists(args.out) or os.path.lexists(args.trainer_receipt):
             ap.error("bound training refuses preexisting output artifacts")
-        if Path(args.out).resolve() in Path(args.trainer_receipt).resolve().parents:
+        output_path = Path(args.out).resolve()
+        receipt_path = Path(args.trainer_receipt).resolve()
+        if output_path == receipt_path or output_path in receipt_path.parents:
             ap.error("trainer receipt must remain outside the adapter directory")
+        for destination in (args.out, args.trainer_receipt):
+            parent = Path(destination).parent.resolve(strict=True)
+            if not parent.is_dir():
+                raise NotADirectoryError(f"bound output parent is not a directory: {parent}")
+            if not os.access(parent, os.W_OK | os.X_OK):
+                raise PermissionError(f"bound output parent is not writable/searchable: {parent}")
         if args.epochs < 1:
             ap.error("bound training requires positive epochs")
         bound_gate = load_gate_binding(args.gate_receipt, args.expected_gate_sha256,
@@ -172,6 +180,24 @@ def main():
 
     tok = AutoTokenizer.from_pretrained(model_name)
     tok.pad_token = tok.pad_token or tok.eos_token
+    bsz = 4
+    child_batches, expected_row_counts = [], []
+    if child_only:
+        for start in range(0, len(corpus), bsz):
+            encoded = tok(corpus[start:start + bsz], return_tensors="pt", padding=True,
+                          truncation=True, max_length=512, return_offsets_mapping=True)
+            offsets = encoded.pop("offset_mapping")
+            labels = encoded.input_ids.clone()
+            labels[encoded.attention_mask == 0] = -100
+            target_masks = [child_target_mask(row_offsets.tolist(), prefix, attention.tolist())
+                            for row_offsets, prefix, attention in
+                            zip(offsets, prefixes[start:start + bsz], encoded.attention_mask)]
+            labels[~torch.tensor(target_masks, device=labels.device)] = -100
+            for offset, row_offsets in enumerate(offsets):
+                expected_row_counts.append(child_label_counts(
+                    row_offsets.tolist(), prefixes[start + offset],
+                    encoded.attention_mask[offset].tolist(), labels[offset].tolist()))
+            child_batches.append((dict(encoded), labels, offsets))
     base = AutoModelForCausalLM.from_pretrained(
         model_name, torch_dtype=torch.bfloat16, device_map="cuda")
     cfg = LoraConfig(r=args.rank, lora_alpha=2 * args.rank,
@@ -183,30 +209,30 @@ def main():
     opt = torch.optim.AdamW(
         (p for p in model.parameters() if p.requires_grad), lr=args.lr)
 
-    bsz, total_tokens, steps, supervised_tokens = 4, 0, 0, 0
+    total_tokens, steps, supervised_tokens = 0, 0, 0
     row_counts = [None] * len(corpus)
     for _ in range(args.epochs):
         for i in range(0, len(corpus), bsz):
-            encoded = tok(corpus[i:i + bsz], return_tensors="pt", padding=True,
-                          truncation=True, max_length=512,
-                          **({"return_offsets_mapping": True} if child_only else {}))
-            offsets = encoded.pop("offset_mapping", None)
-            batch = encoded.to("cuda")
-            labels = batch.input_ids.clone()
-            labels[batch.attention_mask == 0] = -100
             if child_only:
-                target_masks = [child_target_mask(row_offsets.tolist(), prefix, attention.tolist())
-                                for row_offsets, prefix, attention in
-                                zip(offsets, prefixes[i:i + bsz], batch.attention_mask.cpu())]
-                labels[~torch.tensor(target_masks, device=labels.device)] = -100
+                encoded, cpu_labels, offsets = child_batches[i // bsz]
+                batch = {name: value.to("cuda") for name, value in encoded.items()}
+                labels = cpu_labels.to("cuda")
                 for offset, row_offsets in enumerate(offsets):
                     counts = child_label_counts(row_offsets.tolist(), prefixes[i + offset],
-                                                batch.attention_mask[offset].tolist(),
+                                                batch["attention_mask"][offset].tolist(),
                                                 labels[offset].tolist())
+                    if counts != expected_row_counts[i + offset]:
+                        raise ValueError("actual label evidence disagrees with CPU preflight")
                     previous_counts = row_counts[i + offset]
                     if previous_counts is not None and counts != previous_counts:
                         raise ValueError("label evidence changed across epochs")
                     row_counts[i + offset] = counts
+            else:
+                encoded = tok(corpus[i:i + bsz], return_tensors="pt", padding=True,
+                              truncation=True, max_length=512)
+                batch = encoded.to("cuda")
+                labels = batch.input_ids.clone()
+                labels[batch.attention_mask == 0] = -100
             loss = model(**batch, labels=labels).loss
             if child_only and not bool(torch.isfinite(loss)):
                 raise RuntimeError("nonfinite child-target loss")
@@ -214,7 +240,7 @@ def main():
             opt.step()
             opt.zero_grad()
             steps += 1
-            total_tokens += int(batch.attention_mask.sum())
+            total_tokens += int(batch["attention_mask"].sum())
             supervised_tokens += int((labels[:, 1:] != -100).sum()) if child_only else int((labels != -100).sum())
     model.save_pretrained(args.out)
     with open(os.path.join(args.out, "train_meta.json"), "w") as f:

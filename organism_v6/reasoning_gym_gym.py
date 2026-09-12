@@ -79,7 +79,8 @@ class ReasoningGymGym:
 
     def __init__(self, families_path: str = FAMILIES_JSON,
                  gate_panel: list[str] | None = None, cache_size: int = 512,
-                 require_package: bool = True):
+                 require_package: bool = True, strict_verifier: bool = False):
+        self.strict_verifier = strict_verifier
         with open(families_path) as f:
             cfg = json.load(f)
         self.cfg = cfg
@@ -259,8 +260,12 @@ class ReasoningGymGym:
             return Observation(text=f"INVALID: attempt {n} was empty", score=0.0)
         try:
             score = float(ds.score_answer(answer=answer, entry=entry))
-        except Exception:  # noqa: BLE001 — a malformed answer is data, not a crash
+        except Exception as error:
+            if self.strict_verifier:
+                raise RuntimeError("reasoning verifier failed; no measured outcome recorded") from error
             score = 0.0
+        if self.strict_verifier and not 0.0 <= score <= 1.0:
+            raise RuntimeError("reasoning verifier returned an invalid score")
         if score != score:          # NaN guard
             score = 0.0
         score = min(1.0, max(0.0, score))

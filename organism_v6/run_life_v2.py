@@ -29,8 +29,11 @@ round counts; --reflect-every fires when a wake batch crosses a multiple.
 """
 from __future__ import annotations
 import argparse
+import hashlib
 import json
+import math
 import os
+from pathlib import Path
 import re
 import subprocess
 import sys
@@ -43,6 +46,39 @@ from .run_life import latest_adapter, marker, touch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROBE_SEED = 777  # fixed: common-random probes across checkpoints and arms
+
+
+def validate_clean_backend(backend, model_dir, adapter_dir):
+    from .model_backend import configured_generation_identity
+    expected = configured_generation_identity(model_dir, adapter_dir)
+    reported = backend.generation_identity()
+    for field in ("model_input", "adapter_input", "adapter_files"):
+        if reported.get(field) != expected[field]:
+            raise ValueError(f"clean backend identity mismatch: {field}")
+
+
+def validate_clean_training(adapter_dir, *, rank, seed, lr):
+    config = json.loads((Path(adapter_dir) / "adapter_config.json").read_text())
+    metadata = json.loads((Path(adapter_dir) / "train_meta.json").read_text())
+    expected_config = dict(peft_type="LORA", r=rank, lora_alpha=2 * rank,
+                           lora_dropout=0.05, bias="none")
+    expected_metadata = dict(rank=rank, seed=seed, lr=lr, epochs=3,
+                             recipe="v1_frozen_child_target_seeded",
+                             source_recipe="preschool_records_v1",
+                             loss_target="child_body_only")
+    for label, actual, expected in (("config", config, expected_config),
+                                    ("metadata", metadata, expected_metadata)):
+        for field, value in expected.items():
+            if actual.get(field) != value or (type(value) in (int, float)
+                                              and isinstance(actual.get(field), bool)):
+                raise ValueError(f"clean training {label} mismatch: {field}")
+    if type(metadata.get("deterministic_algorithms")) is not bool:
+        raise ValueError("clean training metadata mismatch: deterministic_algorithms")
+    modules = config.get("target_modules")
+    expected_modules = {"q_proj", "k_proj", "v_proj", "o_proj",
+                        "gate_proj", "up_proj", "down_proj"}
+    if not isinstance(modules, list) or set(modules) != expected_modules:
+        raise ValueError("clean training config mismatch: target_modules")
 
 
 def existing_adapter_verdict(adapter_dir: str) -> str | None:
@@ -300,6 +336,57 @@ def parent_leak_terms(gym, rows, window: int = 32) -> list:
     return list(dict.fromkeys(terms))
 
 
+def validate_clean_nursery_options(args):
+    enabled = bool(args.clean_birth_spec or args.clean_model_dir)
+    if not enabled:
+        if args.gym == "reasoning_gym" and (args.note_after or args.artifact_lesson != "none"
+                                          or args.articulation_gate != "off" or args.neutral_probes):
+            raise ValueError("reasoning preschool requires the pinned clean nursery path")
+        return False
+    if not args.clean_birth_spec or not args.clean_model_dir:
+        raise ValueError("clean nursery requires both birth spec and actual model directory")
+    if (args.gym != "reasoning_gym" or not args.note_after or args.articulation_gate != "enforce"
+            or args.rank != 8 or args.train_seed is None or args.gate_min_items < 64):
+        raise ValueError("clean nursery requires reasoning, note_after, enforce, rank8 and explicit training seed")
+    if (args.parent_url or args.parent_mode != "brief" or args.clone_group or args.reflect_every
+            or args.curriculum or args.allow_deployment_gym or args.probe_gate or args.plasticity
+            or args.neutral_probes or args.neutral_probe_panel or args.gate_panel
+            or args.artifact_lesson not in ("none", "lesson", "sham")):
+        raise ValueError("unsupported influence, control or probe in the bounded clean nursery path")
+    for name in ("episodes", "sleep_every", "probe_every", "budget_ticks", "wake_batch", "note_after_max_tokens"):
+        if getattr(args, name) < 1:
+            raise ValueError(f"clean nursery requires positive {name}")
+    if not math.isfinite(args.base_lr) or args.base_lr <= 0:
+        raise ValueError("clean nursery requires a finite positive learning rate")
+    return True
+
+
+def prepare_clean_nursery(args, life):
+    from . import life_lineage, model_backend
+    spec_bytes = Path(args.clean_birth_spec).read_bytes()
+    spec = json.loads(spec_bytes)
+    if not isinstance(spec, dict) or not isinstance(spec.get("files"), dict):
+        raise ValueError("birth spec must contain externally obtained model-file pins")
+    if not re.fullmatch(r"[0-9a-f]{40}", spec.get("revision", "")):
+        raise ValueError("birth spec requires an immutable model revision")
+    checkpoint = life_lineage.prepare_birth(
+        life, model_dir=os.path.expanduser(args.clean_model_dir),
+        expected_model_id=spec.get("model_id"), expected_model_files=spec["files"],
+        loaded_adapter_path=None, exposure_status="UNEXPOSED", other_influences=[])
+    os.environ["V6_MODEL"] = checkpoint.model_dir
+    model_backend.MODEL = checkpoint.model_dir
+    with open(os.path.join(life, "clean_nursery_startup.json"), "x") as target:
+        json.dump(dict(schema="fresh-clean-nursery-v1", parameters=vars(args),
+                       base_pin_spec_sha256=hashlib.sha256(spec_bytes).hexdigest(),
+                       model_id=spec["model_id"], model_revision=spec["revision"],
+                       birth_manifest_sha256=checkpoint.ancestry.manifest.sha256,
+                       model_dir=checkpoint.model_dir,
+                       resume_supported=False,
+                       scope="fresh nursery execution; no claim of mechanism or parenting success"),
+                  target, sort_keys=True, indent=2)
+    return {"checkpoint": checkpoint}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--life-dir", required=True)
@@ -459,10 +546,14 @@ def main():
                     help="JSON list of held-out benchmark URIs for the neutral "
                          "probes (e.g. the disjoint panel); default: "
                          "preschool.NEUTRAL_PANEL_DEFAULT")
+    ap.add_argument("--clean-birth-spec", help="externally pinned model ID, revision and runtime SHA256 map")
+    ap.add_argument("--clean-model-dir", help="actual local model snapshot for a fresh reasoning nursery")
     args = ap.parse_args()
 
+    clean_nursery = validate_clean_nursery_options(args)
     life = os.path.expanduser(args.life_dir)
     os.makedirs(life, exist_ok=True)
+    nursery_state = prepare_clean_nursery(args, life) if clean_nursery else None
     log_f = open(os.path.join(life, "life.log"), "a")
 
     def log(msg):
@@ -491,6 +582,8 @@ def main():
     if args.gate_panel:
         gate_panel_list = json.load(open(os.path.expanduser(args.gate_panel)))
     gym = make_gym(args.gym, gate_panel=gate_panel_list)
+    if clean_nursery:
+        gym.strict_verifier = True
     programs = gym.training_schedule(args.episodes, args.seed)
     log(f"[life-v2] arm={args.arm} seed={args.seed} n={len(programs)} "
         f"sleep_every={args.sleep_every} probe_every={args.probe_every}")
@@ -504,7 +597,10 @@ def main():
     neutral = None
     phase = {"sleeps": 0}            # sleeps completed so far (lesson phase)
     if preschool_on:
-        from . import preschool
+        if clean_nursery:
+            from . import preschool_reasoning as preschool
+        else:
+            from . import preschool
         if args.note_after:
             slot = preschool.PostOutcomeSlot(max_tokens=args.note_after_max_tokens,
                                              log=log)
@@ -519,7 +615,8 @@ def main():
             f"max_tokens={args.note_after_max_tokens} lesson={args.artifact_lesson} "
             f"gate={args.articulation_gate} min_items={args.gate_min_items} "
             f"neutral_probes={args.neutral_probes} "
-            f"panel={len(neutral) if neutral else 0} version={preschool.LESSON_VERSION}")
+            f"panel={len(neutral) if neutral else 0} "
+            f"version={preschool.POLICY_VERSION if clean_nursery else preschool.LESSON_VERSION}")
 
     schedule = None
     if args.curriculum:
@@ -590,8 +687,18 @@ def main():
 
     def load_model():
         ad = latest_adapter(life) if args.arm == "B" else None
+        if nursery_state is not None:
+            from . import lineage_guard
+            checkpoint = nursery_state["checkpoint"]
+            lineage_guard.validate_manifest(checkpoint.ancestry.manifest.path,
+                                            root=checkpoint.ancestry.root,
+                                            expected_sha256=checkpoint.ancestry.manifest.sha256)
+            ad = checkpoint.adapter_dir if args.arm == "B" else None
+        backend = VLLMBackend(adapter_path=ad)
+        if nursery_state is not None:
+            validate_clean_backend(backend, checkpoint.model_dir, ad)
         loaded["adapter"] = ad
-        return VLLMBackend(adapter_path=ad)
+        return backend
 
     def open_base():
         """The frozen base for an adapter-OFF arm of a preschool neutral probe:
@@ -611,6 +718,8 @@ def main():
         return parent_leak_terms(gym, ledger.rows(), args.sleep_every)
 
     def brief():
+        if clean_nursery:
+            return gym.birth_prompt()
         for d in sorted(os.listdir(life), reverse=True):
             p = os.path.join(life, d, "waking_brief.txt")
             if d.startswith("sleep_") and os.path.exists(p):
@@ -639,10 +748,11 @@ def main():
         b = brief()
         if not preschool_on:
             return b
-        from . import preschool
         if args.note_after:
             b = b + "\n" + preschool.SLOT_SENTENCE
-        lb = preschool.deliver_lesson(life, args.artifact_lesson, phase["sleeps"], log)
+        lesson_options = {"ledger": ledger} if clean_nursery else {}
+        lb = preschool.deliver_lesson(life, args.artifact_lesson, phase["sleeps"], log,
+                                      **lesson_options)
         if lb:
             b = b + "\n" + lb
         return b
@@ -980,7 +1090,19 @@ def main():
             if group is not None:
                 clone_sleep(i, sdir, r)
             else:
-                if not marker(os.path.join(sdir, "COMPILED")):
+                if clean_nursery:
+                    os.makedirs(sdir, exist_ok=True)
+                    if marker(os.path.join(sdir, "COMPILED")):
+                        raise RuntimeError("fresh clean nursery cannot reuse an existing compiled sleep")
+                    gate_result = preschool.gate_sleep(
+                        ledger.rows(), life, sdir, "enforce", min_items=args.gate_min_items,
+                        log=log, slot_stats=slot.stats(), ledger_path=ledger.path,
+                        previous_manifest_sha256=nursery_state["checkpoint"].ancestry.manifest.sha256,
+                        exposure_status="UNEXPOSED")
+                    touch(os.path.join(sdir, "COMPILED"))
+                    log(f"[sleep {i}] sourced_child_records={gate_result['record_items']} "
+                        f"training_skipped={gate_result['training_skipped']}")
+                elif not marker(os.path.join(sdir, "COMPILED")):
                     prior = []
                     for d in sorted(os.listdir(life)):
                         cp = os.path.join(life, d, "corpus.json")
@@ -1054,10 +1176,17 @@ def main():
                                 sys.executable, "-m", "organism_v6.train_adapter",
                                 "--corpus", os.path.join(sdir, "corpus.json"),
                                 "--out", stage, "--rank", str(args.rank)]
-                            if args.plasticity:
+                            if args.plasticity or clean_nursery:
                                 train_cmd += ["--lr", str(lr_)]
                             if args.train_seed is not None:
                                 train_cmd += ["--seed", str(args.train_seed)]
+                            if clean_nursery:
+                                train_cmd += [
+                                    "--gate-receipt", gate_result["gate_receipt_path"],
+                                    "--expected-gate-sha256", gate_result["gate_receipt_sha256"],
+                                    "--previous-manifest-sha256",
+                                    nursery_state["checkpoint"].ancestry.manifest.sha256,
+                                    "--trainer-receipt", os.path.join(sdir, "trainer_receipt.json")]
                             rc = subprocess.run(
                                 train_cmd, cwd=os.path.dirname(HERE)).returncode
                             log(f"[sleep {i}] train rc={rc} "
@@ -1065,6 +1194,9 @@ def main():
                             if rc != 0:
                                 raise RuntimeError(
                                     f"sleep {i} adapter training failed rc={rc}")
+                            if clean_nursery:
+                                validate_clean_training(stage, rank=args.rank,
+                                                        seed=args.train_seed, lr=lr_)
                             promote_trained_adapter(stage, ad)
                             candidate = True
                     if candidate:
@@ -1074,6 +1206,8 @@ def main():
                                 "gate")
                         wake_closed = True
                         cand = VLLMBackend(adapter_path=ad)
+                        if clean_nursery:
+                            validate_clean_backend(cand, nursery_state["checkpoint"].model_dir, ad)
                         ok, rate = format_canary(cand, gym)
                         from .model_backend import close_backend as _cb2
                         _cb2(cand)
@@ -1092,6 +1226,20 @@ def main():
                             verdict = "DONE" if g_ok else f"REJECTED_{g_reason}"
                         os.rename(os.path.join(ad, "CANDIDATE"),
                                   os.path.join(ad, verdict))
+                        if clean_nursery and verdict == "DONE":
+                            from . import life_lineage
+                            trainer_receipt = os.path.join(sdir, "trainer_receipt.json")
+                            previous = nursery_state["checkpoint"].ancestry.manifest
+                            nursery_state["checkpoint"] = life_lineage.record_sleep(
+                                life, os.path.basename(sdir), previous_manifest=previous.path,
+                                previous_sha256=previous.sha256,
+                                ledger_path=gate_result["ledger_snapshot_path"],
+                                corpus_path=os.path.join(sdir, "corpus.json"),
+                                gate_receipt_path=gate_result["gate_receipt_path"],
+                                expected_gate_sha256=gate_result["gate_receipt_sha256"],
+                                trainer_receipt_path=trainer_receipt,
+                                expected_trainer_sha256=hashlib.sha256(Path(trainer_receipt).read_bytes()).hexdigest(),
+                                adapter_dir=ad, exposure_status="UNEXPOSED", other_influences=[])
                     if candidate:
                         model = load_model()
                         bootstrap = head()

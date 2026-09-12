@@ -132,3 +132,44 @@ adult running/shadow helper, bank/seed analysis, and a four-fit V10R1 executor.
 Main is integrating/testing them; adult runner wiring remains unfinished.
 Trainer pre-GPU ordering repairs and independent runner review are active.
 Mechanism freeze remains FALSE; complete manuscript work remains downstream.
+
+## Execution update — 2026-09-12 07:38 UTC
+
+W0 is now a real launched diagnostic, not merely an executor proposal. Node3
+GPU1 controller PID21464, start07:36:30.801951UTC, immutable source
+`b686fcf0a38dc0bf6b443380ec4619c7ee875a9c`, run
+`~/astra_diagnostics/astra_W0_v10r1_20260912`. Four fits, fourteen workers,
+three-A40-hour cap; absolute cutoff13:00UTC. At07:37:44 the controller and
+first-fit STARTED receipt exist; no completed result yet. Do not relaunch or
+reuse GPU1 during process reloads. Prepared manifest hash:
+`5ec0ee13fefeff6bae79a9b73fbd35c27506a1864b08497e1336b9bcdb129894`.
+Local preparation and launch capsules are in receipts_20260912. Node hostname
+is represented by a hash; local cache bytes are pinned, official model
+authentication remains UNRESOLVED_LOCAL_HASHES_ONLY. Diagnostic material is
+synthetic researcher-authored, not eligible clean ancestry.
+
+Xorg previously occupied all node3 GPUs. Fable removed it, and main confirmed
+the full NVIDIA process table empty before launching. No life processes or
+readable CUDA reservations existed; inaccessible service environments are
+counted in the launch receipt rather than represented as inspected.
+
+Nursery integration and NOTE-kind repair now pass288 combined CPU tests.
+Backend model/adapter/hash mismatches reject before wake/candidate evaluation;
+training rank/seed/LR/config mismatches reject before promotion. Seeded mode
+does not imply deterministic algorithms: require and preserve actual boolean
+metadata, do not change the training recipe. Ordinary NOTE is a checked
+visible influence, never automatically a grounded write target. Independent
+review and NOTE-repair reports are preserved with the test receipt.
+
+A1 node2 banks0/1 completed for seeds2/3 at the07:27 snapshot, bank2 running.
+A2 attempt2 seeds0/1 bank0 complete, bank1 running; seed2 pending. B0 node1
+continues on its immutable quarantined source; newest watcher reports first
+sleep training for B, pending main verification. Raw bank0 evidence is being
+preserved and independently checked before its SEQ entry. Do not substitute
+watcher progress or partial-bank results for complete-stage evidence.
+
+Remaining critical path: inspect W0 outputs; finish recording bank evidence;
+bind nursery canary selection and admission policy; actual authenticated birth
+pins (external access unresolved); clean neutral competency evaluation and
+parent-free adult running/shadow runner integration. Clean resume is still
+unsupported. No mechanism freeze, parenting success or completed sprint.

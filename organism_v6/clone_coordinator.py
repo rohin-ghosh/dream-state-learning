@@ -194,11 +194,11 @@ class ProvenanceLedger(Ledger):
                                        ("exposure_domain", exposure_domain))
                      if v is not None}
 
-    def append(self, rec: dict) -> None:
+    def append(self, rec: dict) -> dict:
         rec = dict(rec)
         for k, v in self.prov.items():
             rec.setdefault(k, v)
-        super().append(rec)
+        return super().append(rec)
 
 
 class CloneGroup:

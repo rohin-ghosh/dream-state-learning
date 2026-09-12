@@ -17,9 +17,10 @@ class Ledger:
         self.path = path
         os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
 
-    def append(self, rec: dict) -> None:
+    def append(self, rec: dict) -> dict:
         with open(self.path, "a") as f:
             f.write(json.dumps(rec) + "\n")
+        return dict(rec)
 
     def rows(self) -> list[dict]:
         if not os.path.exists(self.path):

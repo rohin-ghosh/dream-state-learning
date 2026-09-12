@@ -80,12 +80,14 @@ class EpisodeDriver:
                     act_row["execution_id"] = exec_id
                     act_row["occurrence_id"] = self.occurrence_id
                     act_row["occurrence_index"] = self.occurrence_index
-                    self.pending_after.append(dict(
+                    pending = dict(
                         episode_id=self.ep.eid, tick=st.tick, execution_id=exec_id,
                         occurrence_id=self.occurrence_id, occurrence_index=self.occurrence_index,
-                        action=arg, outcome=outcome, facts=parse_outcome(outcome),
-                        act_row=dict(act_row)))
-                self.ledger.append(act_row)
+                        action=arg, outcome=outcome, facts=parse_outcome(outcome))
+                stored_action = self.ledger.append(act_row)
+                if self.note_after is not None:
+                    pending["act_row"] = stored_action
+                    self.pending_after.append(pending)
                 st.last_outcome = f"{outcome} (score {score:.4f})"
                 self.tail.append(f"[OUTCOME] {st.last_outcome}")
                 if surprise is not None and abs(surprise) > 0.02:
