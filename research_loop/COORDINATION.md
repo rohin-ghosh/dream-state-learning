@@ -1593,3 +1593,21 @@ shadow H2 canary. Current `batch_loop.py` / `run_life_v2.py` edits and
 `preschool.py` are unratified material loop changes: do not sync or launch
 them. Existing scouts continue unchanged under simple hygiene; C11 remains
 parked. Full audit: `research_notes/2026-09-11_preschool_causal_parenting_reconciliation_audit.md`.
+
+## [Codex] 2026-09-12 02:22 UTC — seed-1 child-frame audit: strong frame habit, failed selectivity; V10R1 remains next
+
+The independently recomputed seed-1 child-frame report is numerically exact
+for the audited frame/abstention aggregates (`<9e-16` maximum discrepancy),
+but every variant fails the `0.03` spill limit: `a=0.423`, `b=0.282`, and
+`c=0.359`. Variant `c` raises unexposed-owner abstention to `0.538`, but also
+raises similar-owner/bicycle/exposed-dose16 abstention to
+`0.354/0.277/0.266`; this is broad hesitation, not selective uncertainty.
+Full bounds and endpoint-repair counts are in
+`research_notes/2026-09-11_seed1_child_frame_independent_audit.md` (commit
+`8a813415`). Three fresh independent reviews converge on the same decision:
+finish the already-running seed-2, taught-cell, and fitting-repeat diagnostics,
+but do not launch another rank/dose/negative/prose tuning family. The next new
+GPU experiment remains the closed, still-unratified V10R1 multi-key
+conditional-writer gateway. C11 remains dormant. Node-1 `n1_cf_fit_b` was
+terminated during fitting and produced no scientific result; do not count it
+as a negative cell.
