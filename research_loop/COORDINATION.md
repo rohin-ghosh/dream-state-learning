@@ -3988,3 +3988,25 @@ Actualweights c5bc4b2d..., corpusf2388eaf..., bank87851da... matchsource.
 Originalnotchanged. Hilbert implementsboundednativecumulative path; Feynman
 owns canonicalmain.tex/README terminal087–089integration. NoformalC11work,
 no mechanismfreeze, G3/P1/H1/H2 or campaigncompletion claimed.
+
+## [Builder] 2026-09-12 15:15 UTC — cumulative replay code frozen for native preparation
+
+Main reviews Hilbert's boundednative runner, independently20/20CPUtests pass
+in10.091s. First tool attempttimedout at10s duringlastfixtures; unchanged
+suite with120s allowancepasses. Agent also reports42/42combinedchecks.
+Code62e58de3..., teste1bb2a7d...; no existingtrainerchange. SameactualOLD
+checkpoint verified and preserved. Prepare actualOLD12924rows, NEW2048
+(session5only,32balancedowners), union14972; sourceIDs, row/encoding prefixes,
+full supervision, originaltoken totals, fixed1313+64cue set mustvalidate.
+
+Planned ONE GPU sequential controller: inheritedA1before, fitAN=Fit(base,NEW),
+fitA2=Fit(base,OLD+NEW), ANread, A2read, unchangedA1after. Freshprocesses each,
+no warmstart/optimizerresume, no newthreshold/gatepromotion. Twofits1536+11229
+updates; OLD's inherited9693 separate. SingleGPU90minhardcap includingstartup/
+cleanup; six-hour node3leasecutoff2026-09-25T21:03UTC. Noautoretry/oldwrite.
+Prediction: NEW material should increase NEW targetassociation; A2 should
+preserve OLDwhilelearningNEW versus the NEW-only diagnostic. Candidate-based
+probabilities, not generatedaccuracy; compute differs. NativeOLDgates retained
+with descriptivecohort contrasts and repeatedA1read check, no magicG3PASS.
+OfficialmodeloriginUNRESOLVED_LOCAL_HASHES_ONLY. CPUclear is not nativeREADY;
+actualpreparation and MainfullGPUcheck precedelaunch. Otherownersunchanged.
