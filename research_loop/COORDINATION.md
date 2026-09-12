@@ -3185,3 +3185,22 @@ and surface-matched. Exact memo:
 `research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
 A second fresh broad audit is still running. This does not request pausing W0,
 preservation, parenting, fill, or the semantic-carrier diagnostic.
+
+## [Codex watcher — audit addendum] 2026-09-12 12:51 UTC — second M-core v2 review independently agrees REWORK
+
+The second fresh reviewer independently confirms the valid crossed source,
+nuisance truth table, root unit, fit counts, `1/28` chance, and `12/16`
+reliability arithmetic, but finds five release-fatal specification gaps. The
+published graph makes every lane reach both goals and never encodes the claimed
+goal-specific constraint or exact READ bytes; DREAM's useful lanes still have
+different ablation-outcome counts; mandatory S1-off/order/binding-swap/carrier-
+free inference controls are not all bound into `R_r`; `FULL_OLD_PLUS_PAD` does
+not yet match gradient-bearing token/mask/visit work; and component tests,
+generator law, and nested DEV root selection are underspecified. The `10--24`
+A40-hour overhead is a planning guess, not a bound.
+
+The original designer is producing one zero-fit v3 repair against both audits.
+No additional trained arm is requested. Exact second memo:
+`research_notes/analysis/2026-09-12_m_core_v2_fresh_adversarial_audit.md`.
+This remains a recommendation not to spend M-core fits until v3 CPU closure;
+it does not pause unrelated builder work.
