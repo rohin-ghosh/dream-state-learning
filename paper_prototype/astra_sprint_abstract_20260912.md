@@ -1,20 +1,40 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026, 18:31 UTC update:** terminal SEQ098–100 add a three-trainer-seed
-response-order habit and a negative seed0 training-prompt memory diagnosis.
-SEQ098's archived numerical review and the supplied SEQ099/100 review PASS
-within bounded scope. Message18 names the one-habit mechanism test level zero,
-not a completed level-one curriculum. Canonical abstract unchanged; C11 deferred.
+**September 12, 2026, terminal SEQ101–103 update:** repetition packaging leaves
+seed0 dev recall unchanged without adding optimizer steps; competing writes
+replace the old habit from one original teaching seed; HF agrees with inherited
+vLLM first tokens on original training prefixes, not full cross-backend logits.
+All three scoped independent reviews PASS. No outcomes from the later19:21UTC
+replication launch are included. Canonical abstract unchanged; C11 deferred.
 
-September 12, 2026. **Internal staging only; not a replacement for the canonical abstract or a completed-manuscript claim.** The current evidence cut extends through terminal SEQ098–100, not parenting-efficacy certification; SEQ091–097 retain their earlier results and scoped reviews. Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit, remain earlier results with their original limits. Original defective scores are preserved, not rehabilitated; generation observations remain. H1/H2 remain the proposed developmental thesis.
+September 12, 2026. **Internal staging only; not a replacement for the canonical abstract or a completed-manuscript claim.** The current evidence cut extends through terminal SEQ101–103, not parenting-efficacy certification; earlier sequences retain their results and scoped reviews. Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit, remain earlier results with their original limits. Original defective scores are preserved, not rehabilitated; generation observations remain. H1/H2 remain the proposed developmental thesis.
 
 ## Abstract
 
-Can developmental teaching improve the material an agent learns from and its later behavior after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA consolidation. Earlier diagnostics distinguish local interface repair and bounded useful-write signals from selective memory; their original endpoints and exposure limitations remain unchanged. In a separate externally authored post-training control, three trainer seeds each produce 32/32 correct PREDICT-before-ACT responses on the same development arithmetic probes, versus 0/32 for task-only controls. Arithmetic actions are already correct on all 32 probes for every state, including the actual reused OFF baseline: this is a response-order habit, not arithmetic gain or conditional prediction intelligence. Teaching memory recall is 4/16, 7/16 and 3/16, versus 4/16 for every control. On the 16 original training questions, both seed-zero adapters still answer red throughout and score 4/16, arguing against paraphrase mismatch as the sole explanation without proving absence of latent binding. This in-sample diagnostic does not replace the fixed development endpoint; 64 confirmation cases remain untouched. We call the one-habit mechanism test level zero, not a completed level-one curriculum. Shared panels and three trainer seeds do not establish independent developmental replication, reliable memory, child-generated sleep, parenting, H1/H2, clean lineage, or campaign completion.
+Can developmental teaching improve the material an agent learns from and its later behavior after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA consolidation. Earlier diagnostics distinguish local interface repair and bounded useful-write signals from selective memory; their original endpoints and exposure limitations remain unchanged. In externally authored post-training, three trainer seeds produce 32/32 correct PREDICT-before-ACT responses versus 0/32 for controls on fixed development probes; arithmetic is already correct throughout. Teaching memory recall is 4/16, 7/16 and 3/16 versus control 4/16 throughout. Repeating each example sixteen times, with reset or concatenated contexts, leaves seed-zero development memory at constant red, 4/16. This packaging null retains 80 optimizer steps, not sixteen times the optimizer practice; repeated-checkpoint training-prompt recall is untested. In four competing-update phases from one original teaching seed, both positive learning rates replace the old habit with exact correct ACT-only responses on 32/32 probes by the first 16-update readout; zero-rate parameters and outputs remain unchanged. Memory stays 4/16. A separate original-checkpoint HF diagnostic matches inherited vLLM first tokens on all 16 training questions, red throughout; full cross-backend logit parity was not measured. These results show a revisable output habit, not arithmetic gain, reliable fact binding, a diagnosed memory-failure cause, or passive fading. All 64 confirmation cases remain unrequested. This level-zero test does not establish general retention, parenting, child-generated sleep, H1/H2, clean lineage, or campaign completion.
 
 ## Evidence and interpretation boundaries
 
-**September 12,18:31UTC — C42–C44.** All six fitted states and actual reused
+**Terminal SEQ101–103 — C45–C47.** Repetition retains80updates in all four cells;
+SHORT batch4/accum16 preserves the original four groups/update rather than
+providing16times sequential optimizer practice. Loss normalization, homogeneous
+versus mixed-group batches, and dropout prohibit exact-gradient/equal-task-weight
+claims. Final reported losses are arithmetic microbatch losses, not memory losses.
+All four cells remain red4/16 on development paraphrases; repeated-checkpoint
+training-prompt recall is untested. SEQ102 is12fits/576calls from one original
+teaching seed: both positive rates replace adherence32/32with0/32by16updates,
+with exact correct ACT-only32/32; LR0 parameters/output vectors are unchanged.
+Arithmetic32/32 and red4/16 persist, not passive fading or general retention.
+SEQ103 is32HFforwards on16original training prefixes, no new generations/fits:
+red16/16 matches inherited vLLM first tokens, not full cross-backend logits.
+Actual generation input/output tokens are8524/1888 for101 and25572/3648 for102,
+not caps12288/36864. SEQ102 worker2125.367463s, controller3073.313819s and full
+reservation3460.763131s overlap; SEQ103 worker64.699761s differs from full
+reservation141.936394s. Model origin remains unresolved; no absent weights are
+rehashed by local review. No confirmation, later replication outcome, memory
+gate, parenting/H1/H2, representative G3 or mechanism freeze is claimed.
+
+**Historical September 12,18:31UTC — C42–C44.** All six fitted states and actual reused
 OFF retain32/32correct ACTs. Three trainer seeds share data and probes, not
 96independent learners; the64confirmation cases remain unrequested. Seed0
 training-prompt answers are red16/16 in both fitted arms,4/16correct; OFF
@@ -130,4 +150,4 @@ same-prefix Markdown/JSON/Python receipts linked in C35 and retains GPU work.
 - **C28 semantic Q0 terminal:** original-source replay label `OPTIMIZATION_INCONCLUSIVE`; binding/spill false, interface true. Root0+/− and root1+/− balanced accuracies.578125/.515625/.5/.53125, OFF gains.078125/.015625/.015625/.015625. All cell output validity1.0; recorded locality-family TV numbers span.275157–.659671 but their original probability interpretation is invalid; corrected supplementary diagnostics are separate in C30. Four256-step fits/14stages,1414.695execution seconds plus external replay/release. Conditional TV misses common-mode absolute shifts; absolute net legality change can cancel item flips. These assay limits are not newly measured hidden effects; no selective-writer promotion.
 - **SEQ086 / C30 supplementary rescore:**832new equal-shape scores across five fresh states,880original generations reused, zero new fits;347.468seconds. Same generation BA and `OPTIMIZATION_INCONCLUSIVE` label, binding/spill false, interface true. Mean conditional log-q gains1.0789566/.9514255/.6465927/.6083202; mean binary conditional TV.2800904–.6563001. Separate score diagnostics, not original-gate rescue, new learning or selective-writer qualification.
 
-Exact memos, receipts and permitted claims are linked in `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C44. Historical A1/A2, W0 invalidity and original P0 custody remain documented in C03–C13; they are not replaced by these newer diagnostics. Local model-origin authentication remains unresolved. Ordinary exploratory hygiene applies; final paper-grade C11 work stays deferred under Rohin's steer, not a new launch gate. Canonical component evidence is updated separately without changing its characterization abstract, historical tables or appendix. No literature entries are added and no collaborator message is sent.
+Exact memos, receipts and permitted claims are linked in `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C47. Historical A1/A2, W0 invalidity and original P0 custody remain documented in C03–C13; they are not replaced by these newer diagnostics. Local model-origin authentication remains unresolved. Ordinary exploratory hygiene applies; final paper-grade C11 work stays deferred under Rohin's steer, not a new launch gate. Canonical component evidence is updated separately without changing its characterization abstract, historical tables or appendix. No literature entries are added and no collaborator message is sent.

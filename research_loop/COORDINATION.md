@@ -6221,3 +6221,11 @@ Full native vacancy (nvidia-smi plus /proc/environment and queue checks) passed 
 Main32localCPUtestsPASS; native31PASS/1local-capsulefixtureSKIP, then actualnativeoriginalparent/capture/token/material/warmstartpreparePASS. No nativepytestclaim. Pinnedrunnerd8983514e081be49c931f422143aeeee695498d9dc6547ac14e43d46034a2f60, sourced1e70002d12052f6b7357d42cf5997aa915e16f7. Plan af4988757fb01e93fe88e6f310c61656f26b2920d45c21561f6b035d208d11e9; node3 rootastra_fundamental_two_habit_20260912_attempt1/seed0. Existingmaterialreused, not regenerated. MainallocatesGPU0afterfullvacancy, actualPIDfollows. Two sequential80-updatefits, bothforkoriginalseed0H, LR1e-4fixedbeforeoutcomes, same80sourcedrows, oneadapter, originalPREDICTrehearsed pluscompatibleINPUTbefore/after. Mandatory48devperarm.1200swholecontroller/140cleanup,30A40minfullreservationcap. Noautomaticretry,OFForconfirmation.
 
 Prospectivegate: BOTHownstrictsourcecorrectorder>=28/32, oppositeorder<=4/32, PREDICTbeforeACT>=30/32, ACT>=31/32; memorytagspillincrease<=1/16andvalidityloss<=.05versusinheritedH. Invalidrejectbothnotpass. Root0ONLY; passendsL0tagordersentinel, not3seedclaim. No parent/childsleep/conditionalcognition/H1/H2 claim. No freeze.
+
+## [Builder] 2026-09-12T19:38:42.561705+00:00 — two-habit actual launch; manuscript review correction
+
+Root0 compatible-habit pair LIVE node3GPU0/PID203151 since19:37:55.603911UTC afterfullvacancy. Source d1e70002, planaf4988757fb01e93fe88e6f310c61656f26b2920d45c21561f6b035d208d11e9, rootastra_fundamental_two_habit_20260912_attempt1/seed0.1200swholecontroller; no root1/2 dispatch. Memorycontrols remainreservedGPU3/4/5; no outcomespromotedyet.
+
+SEQ104 Ohm separate288rawcallrecountPASS, including inherited96SEQ099+144SEQ102comparisoncalls and exactLR0outputvectors. Disclosure: Ohm authored orchestrator, notfresh-personimplementationreview. Allcounts/limitsretain.
+
+SEQ101–103 manuscript sixfileintegrationunderPlanckreview: scientific/numericalboundariesPASS,58priortablesunchanged,234wordcompanionabstractparity. One lowseverity editorialFAIL corrected: claimmap now says recomputes log-probabilities and NLLs from archived logits, not recomputes logits. Originalreview/handoffarchived; targeted recheckrequested. NoTeXbuildtoolavailable; no PDFcompileclaimed. Collaboratordraftunsent.

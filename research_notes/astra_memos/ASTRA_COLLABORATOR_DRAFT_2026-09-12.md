@@ -1,6 +1,42 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12,2026,18:31UTC.** The elementary authored post-training
+**UNSENT — September 12,2026, terminal SEQ101–103.** All three bounded
+independent numerical reviews PASS. Repetition packages16copies per original
+example as SHORT resets or LONG concatenations but retains80optimizer steps.
+Every seed0 cell still has ACT32/32 and red-only dev memory4/16; teach/control
+adherence remains32/0 in both views. SHORT batch4/accum16 does not mean16times
+sequential optimizer practice; mean-loss weighting also differs from original
+mixed-group batches, so neither exact gradients nor equal effective task weights
+are claimed. Final losses describe arithmetic microbatches, not memory loss.
+Recall on original training questions of these repeated checkpoints is untested;
+no failed-memory cause or need for separate adapters is identified. [C45]
+
+Four ACT-only phases fork the **same original seed0 teaching adapter**, not
+repetition checkpoints. Both positive rates move old adherence32/32to0/32 by
+the first16-update readout and remain there through64updates, with exact correct
+ACT-only32/32 at every phase. ZeroLR preserves original outputs and exact
+serialized adapter tensors according to native receipts. Correct ACT32/32 and
+red-only memory4/16 persist. Weights carry, AdamW resets each phase:12fits and
+576fixeddev calls, not three initial seeds, passive fading, a best rate or
+representative G3. The original baseline is shared;64confirmation cases remain
+unrequested. Later19:21UTC replications have no outcomes included. [C46]
+
+The separate original-checkpoint HF check gives red top1 on16/16training
+prefixes, matching inherited SEQ100vLLM first tokens16/16 but correct4/16.
+HF prefix/full color-position logits agree, not full HF/vLLM logits (vLLM
+logits were not captured). This is32forwards, no new generation or fit, and
+does not diagnose training failure or extend to repetition checkpoints. [C47]
+
+SEQ101/102actual generation input/output tokens are8524/1888 and25572/3648,
+not caps12288/36864. SEQ101supervision1717.633265s; SEQ102worker2125.367463s,
+controller3073.313819s and full reservation3460.763131s are nested, not additive.
+SEQ103worker64.699761s versus full reservation141.936394s; inherited work is
+not charged again. Model origin remains unresolved and absent weights remain
+native-attributed. No memory/parenting/H1/H2/C11 qualification or mechanism
+freeze follows. Exact memos, reviews, dose addendum and CSV are in C45–C47.
+Canonical abstract and all prior tables remain unchanged. No message is sent.
+
+**Historical UNSENT — September 12,2026,18:31UTC.** The elementary authored post-training
 pair and follow-ups are terminal/released. Across trainer seeds0/1/2, teaching
 gives32/32correct PREDICT-before-ACT responses versus each control0/32 on the
 same fixed arithmetic dev probes. Every fitted state and the actual reused

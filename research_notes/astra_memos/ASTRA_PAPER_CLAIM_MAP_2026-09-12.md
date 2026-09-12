@@ -2,7 +2,20 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12,2026,18:31UTC — terminal C42–C44:** SEQ098–100 are complete
+**September 12,2026 — terminal C45–C47:** SEQ101–103 are complete and released,
+with bounded independent PASS reviews. Repetition is a packaging null at the
+same80optimizer steps, not16times sequential practice. Four competing-write
+phases from one original teaching seed replace the old habit at both positive
+rates by16updates; exact ACT-only uptake is verified, not only tag disappearance.
+HF first-token agreement on original seed0 memory prefixes is not full HF/vLLM
+logit parity. No failure cause, passive fading, representative G3, memory gate,
+parenting/H1/H2, clean model origin or mechanism freeze is established. All64
+confirmation cases remain unrequested. Later19:21UTC replications contribute
+no outcomes. Canonical author abstract/intent, prior tables and appendix are
+preserved; companion abstract remains <=250words with TeX/Markdown parity.
+Collaborator UNSENT; formal C11 deferred; Main retains all parallel launches.
+
+**Historical September 12,2026,18:31UTC — terminal C42–C44:** SEQ098–100 are complete
 and released. Three trainer seeds reproduce one PREDICT-before-ACT habit,
 not arithmetic gain or reliable memory. Rohin's message18 names this mechanism
 test level zero; the broader level-1 core corpus is not built. SEQ098 numerical
@@ -1177,7 +1190,7 @@ Sources:
   September12,18:21:19.567197UTC; original seed0 weights remain unchanged,
   absent from the capsule and not locally reauthenticated here.
 
-**Engineering/future-work boundary, not additional outcomes:** Main's archived
+**Historical engineering/future-work boundary at C44, not additional outcomes:** Main's archived
 `research_notes/astra_memos/receipts_20260912/astra_v3_warmstart_native_cpu_attempt1_20260912.log`
 reports21/21PASS without skips, superseding the implementation handoff's
 native-test-pending status. Separate static review:
@@ -1187,6 +1200,157 @@ The repetition-export handoff
 `research_notes/astra_memos/receipts_20260912/astra_fundamental_repetition_handoff_20260912.md`
 reports38CPUtests (27new+11existing); placeholder-token fixtures are not a new
 native-token audit or GPU result. The intended contrast is continuous-context
-repetition versus resets, not child experience or sleep. No new continuation/
-repetition GPU outcome is included; Main owns those parallel choices and
-launches. Broader level-1 curriculum and formal C11 remain unresolved.
+repetition versus resets, not child experience or sleep. At that cut no new
+continuation/repetition GPU outcome was included; terminal outcomes are now
+separately bounded in C45/C46. Main owns parallel choices and launches.
+Broader level-1 curriculum and formal C11 remain unresolved.
+
+## C45 — Repetition packaging null at unchanged optimizer steps (SEQ101)
+
+**Exploratory trainer-seed0 development, not confirmation or an extra-practice
+test.** Four fresh teach/control × SHORT/LONG fits repeat each original example
+16times:1280independent reset rows versus80concatenated rows. Same original
+groups per update,80updates/four epochs, rank8/alpha16/dropout.05/LR3e-4.
+SHORT batch4/accum16 and max61tokens; LONG batch1/accum4 and max976tokens.
+Per cell:289088input including58368target tokens. No packing, truncation,
+dropped targets, new facts or extra optimizer steps.
+
+All four cells give32/32correct ACTs and red-only memory4/16. Teaching
+adherence is32/32 in both views; control0/32 in both. Each48-output vector
+equals the original same-arm seed0 vector. The192new calls reuse the original
+48dev cases and actual original OFF inputs; no new OFF/confirmation requests.
+The in-sample prediction is **untested on these repetition checkpoints**:
+SEQ100/103 instead test original seed0 checkpoints. No cause of failed binding,
+latent-absence claim, adapter-separation requirement or impossibility follows.
+
+**Dose qualification:** SHORT's losses are divided by accumulation16 while the
+same four original groups feed each of80steps, versus original batch4/accum1.
+16×processed tokens/copy presentations is not16×sequential optimizer practice
+or an established16×effective write dose. Averaging suggests comparable scale,
+not a16×sum; this is an expectation, not exact-gradient equality. Homogeneous
+copy microbatches versus mixed-group batches change weighting when target
+lengths differ; dropout/order also differ. Unchanged corpus target share does
+not establish unchanged effective task weights. Final reported losses are
+**final arithmetic microbatch losses, not memory losses**. Epoch4means are
+0.17012/0.17256 for teach/controlSHORT and0.01034/0.01037 for LONG. Earlier gold
+answers are accessible to later LONG copies during training, a possible shortcut,
+not demonstrated copying at test time or successful retrieval.
+
+Actual192-call input/output8524/1888tokens, output ceiling12288;
+generation81.901202s. Fit/readout supervision1300.292523/417.340742s,
+combined1717.633265s=28.627221A40min. Full readout reservation883.068789s
+is a distinct, overlapping clock; no active-compute or monetary inference.
+All507capsule files were checked; weights excluded, native inventory checks
+attributed rather than independently rehashed locally.
+
+Sources (archived, not rerun):
+- `research_notes/astra_memos/ASTRA_FUNDAMENTAL_REPETITION_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_repetition_independent_review_20260912.md`,
+  PASS on192raw outputs; separate required interpretation addendum
+  `research_notes/astra_memos/receipts_20260912/astra_repetition_dose_addendum_20260912.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_repetition_main_analysis_20260912.json`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_repetition_terminal_20260912.tgz`,
+  SHA256 `36e9ca2637d1f78ab218afd3348b0cc547ea098188e3d418aa2b08c4e48a198b`.
+  Root `astra_diagnostics/astra_fundamental_repetition_20260912_attempt1`;
+  source `ed3aac9f888935a40e3a2f8f4e0e1953e17f2ea9`. Cell fit manifests,
+  raw readout calls and native token/order audit bind the recipe and results.
+
+## C46 — Four-phase competing-write plasticity from one parent seed (SEQ102)
+
+**One initial teaching seed, three rate forks, not three initializations.**
+All start from the ORIGINAL SEQ098 seed0 teach adapter, not repeated fits.
+Each phase uses16new sourced ACT-only pairs/four epochs/16updates, batch4/accum1,
+rank8/alpha16/dropout.05, frozen base and one adapter. The64new unordered pairs
+exclude all128original pairs. No old memory/PREDICT/COMPUTED targets are supplied.
+Weights carry; AdamW starts fresh with optimizerseed0 at each phase. Each
+lineage adds64updates and13312input/1504target tokens, ending at144cumulative
+steps; all12fits total39936input including4512targets and192new updates.
+
+| Rate | Initial adherence | After16 updates | After32 | After48 | After64 |
+|---|---:|---:|---:|---:|---:|
+| 0 | 32/32 | 32/32 | 32/32 | 32/32 | 32/32 |
+| 3e-5 | 32/32 | 0/32 | 0/32 | 0/32 | 0/32 |
+| 1e-4 | 32/32 | 0/32 | 0/32 | 0/32 | 0/32 |
+
+Correct ACT remains32/32 and red-only memory4/16 at every readout. At both
+positive rates, all32arithmetic answers in every phase are the **exact correct
+ACT-only target form**:256/256 across eight readouts, not just absent PREDICT.
+Arithmetic was already correct; memory was already collapsed. LR0 retains
+the original full48-output vector and exactly unchanged serialized LoRA tensors
+according to native state/file receipts. All392source/initialized entries match;
+phase final states bind the next phase's source; parent files remain unchanged,
+base frozen, one adapter, no dtype conversion here, zero initial optimizer-state
+entries. Native weight equality is attributed: weights are absent locally.
+
+This demonstrates revisability under a directly competing objective, not passive
+time fading, new arithmetic knowledge, selective forgetting, optimal rate,
+replay/rehearsal benefit, general G3, parenting/P1/G5/H1/H2 or mechanism freeze.
+The first measurement is after16updates, so transition timing within that phase
+is unresolved; the positive rates are tied at the measured resolution. No
+outcomes from the later19:21UTC seed1/2 replication launch are included.
+
+Exactly576new fixed-dev calls,12fits; the single original48-case teaching
+baseline is reused, not three new controls. No new OFF or confirmation calls;
+all64confirmation cases remain unrequested. Actual input/output25572/3648tokens
+versus ceiling36864; raw generation168.205682s. Worker2125.367463s,
+controller3073.313819s and full reservation3460.763131s=57.679386A40min are
+nested scopes, **never additive**. No monetary/active-compute inference or
+recharge of inherited work. Main's release receipts bind reserved GPUs4/5/6
+at19:09:55–19:10:17UTC; capsule has1448files and excludes weights. Model origin
+stays `UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_FUNDAMENTAL_FADING_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_fading_independent_review_20260912.md`,
+  PASS on all576calls,12fit chains, exact ACT-only uptake and attributed custody.
+- `research_notes/astra_memos/receipts_20260912/astra_fading_main_analysis_20260912.json`
+  and `research_notes/astra_memos/receipts_20260912/astra_fading_curves_20260912.csv`;
+  the15CSVrows include one shared baseline repeated for display, not new calls.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_fading_terminal_20260912.tgz`,
+  SHA256 `3a2564219790cc7a31f4350cd2013eb323577e5d41003a5bf322eeb16fc415ff`.
+  Root `astra_diagnostics/astra_fundamental_fading_20260912_attempt1/runs`;
+  source `3a12807f88747bafd0aada1d4a09ba88b915f903`. Plan SHA256
+  `901bf88276bc7c4c2107c87cee5825f27d742780f7e2b728510a99d5b848d957`.
+  Per-phase raw calls, train manifests, fit-result state checks and Main release
+  receipts supply the numerical/custody evidence.
+
+## C47 — Original seed0 HF check agrees with inherited first tokens (SEQ103)
+
+**In-sample original teaching checkpoint only, not repetition checkpoints.**
+Sixteen exact original memory training prefixes receive one prefix-only and
+one full labeled HF forward each:32forwards, no optimizer/weight writes or
+new generation/vLLM/OFF/confirmation calls. All HF full-vocabulary next-token
+argmaxes are red, matching inherited SEQ100 first tokens16/16, but correct only
+4/16. Stored prefix-only versus teacher-forced color-position float32 vectors
+match exactly for all16cases. Mean gold-color NLL1.566293843; mean gold-conditioned
+EOS NLL0.000219939; maximum two-target HF loss versus recomputed color/EOS mean
+discrepancy5.4027543e-7. The small EOS loss is not evidence of correct color binding.
+
+Exact original prefixes/labels and causal indices were checked. All saved LoRA
+keys/shapes/tensors match HF-loaded state after explicit recorded dtype conversion;
+base/adapter frozen/eval and loaded state unchanged after forwards. Native weight
+checks remain attributed; local review recomputes log-probabilities and NLLs from archived float32
+vectors, not absent model weights. Actual inherited vLLM outputs are red/EOS,
+not newly generated comparison data. A vLLM-only failure is not required for this
+checkpoint's red preference; **full HF/vLLM logit equivalence was not measured**
+because vLLM logits were not captured. No complete autoregressive HF-generation
+parity, unique training-failure cause, absence of latent binding, dropped-label
+diagnosis, other-checkpoint claim or rescue of prior completion-score assays follows.
+
+Worker64.699761s differs from full reservation141.936394s; Main released
+GPU0 at19:08:53.688492UTC. Those scopes overlap; inherited generations are not
+recharged. No billing or active-compute claim. Capsule48files include raw vectors
+but no weights. Model origin remains unresolved; no C11/memory/parenting gate.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_HF_PARITY_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_hf_parity_independent_review_20260912.md`,
+  PASS on raw full-vocabulary arrays, original SEQ100 captures, input/state bindings
+  and causal indexing; not full numerical cross-backend certification.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_hf_parity_terminal_20260912.tgz`,
+  SHA256 `54ec0bf1613e67d6256062a24e1ed30fe2b49bfa73a5675d1b83c0b9d4653e32`.
+  Root `astra_diagnostics/astra_fundamental_hf_parity_20260912_attempt1`;
+  source `3a12807f88747bafd0aada1d4a09ba88b915f903`. Plan SHA256
+  `05b6f8f906d1009977ba1439a5ca2db20036faed04ad2491e2a9a2f6ef7fd27f`.
+  Raw vector triplets, reduction and Main summary are inside the capsule;
+  C44 binds the reused original SEQ100 comparison archive.

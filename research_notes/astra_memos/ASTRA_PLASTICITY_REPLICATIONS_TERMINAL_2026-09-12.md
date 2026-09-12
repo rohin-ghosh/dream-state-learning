@@ -2,7 +2,9 @@
 
 Six new branches completed and fully released on September 12, 2026,
 19:26:41–19:27:28 UTC. Main verified all 746 archived file hashes and terminal
-receipts. Independent raw-call review is pending; no gate promotion.
+receipts. Ohm's separate raw-call recount passed all288 new calls and inherited
+baseline comparisons. Ohm authored the orchestrator, so this is an independent
+reduction, not a fresh-person implementation review. No gate promotion.
 
 | Original teaching seed | Continuation LR | Habit /32 | Exact correct ACT-only /32 | Memory /16 |
 |---|---:|---:|---:|---:|

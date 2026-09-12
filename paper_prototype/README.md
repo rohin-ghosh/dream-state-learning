@@ -2,7 +2,66 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**September 12, 2026, 18:31 UTC — terminal SEQ-098–100 (C42–C44).**
+**September 12, 2026 — terminal SEQ-101–103 (C45–C47).** Bounded additions
+preserve the canonical author abstract/intent, all prior tables and appendix.
+All three independent numerical reviews PASS. Later replications launched
+19:21UTC contribute **no outcomes** here. Collaborator remains **UNSENT**.
+
+- **Repetition packaging null:** four seed0 teach/control × SHORT/LONG fits
+  retain80optimizer steps. Each repeats the80original examples16times and
+  processes289088input/58368target tokens. Correct ACT32/32, teaching adherence
+  32/32, control0/32 and memory red4/16 are unchanged in both views. SHORT's
+  batch4/accum16 averages reset copies of the same four original groups/update,
+  not16times sequential optimizer practice or an established16×effective write
+  dose. Homogeneous versus mixed-group batches change weighting; exact gradients
+  and equal effective task weights are not claimed. Final reported losses are
+  **arithmetic microbatch losses, not memory losses**. Repeated-checkpoint
+  original-training-prompt recall remains untested; no failure cause is identified.
+- **Competing writes, one original parent seed:** three rates fork the original
+  SEQ098 teaching adapter, not repetition checkpoints. Four16-update phases
+  carry weights with fresh AdamW each phase; zeroLR preserves exact serialized
+  adapter tensors and outputs. Both positive rates switch to the new exact
+  correct ACT-only form32/32 by the first measured phase, not merely missing tags.
+- **Original seed0 HF check:** 16original memory training prefixes, two forwards
+  each; red is top1 throughout, agreeing16/16 with actual inherited SEQ100 vLLM
+  first tokens but correct4/16. HF prefix/full color-position vectors agree;
+  vLLM logits were not captured, so full cross-backend parity is not established.
+  No new generations or fits, no extension to repetition checkpoints, and no
+  diagnosed cause of failed memory.
+
+| SEQ102 rate | Initial adherence | +16 updates | +32 | +48 | +64 |
+|---|---:|---:|---:|---:|---:|
+| 0 | 32/32 | 32/32 | 32/32 | 32/32 | 32/32 |
+| 3e-5 | 32/32 | 0/32 | 0/32 | 0/32 | 0/32 |
+| 1e-4 | 32/32 | 0/32 | 0/32 | 0/32 | 0/32 |
+
+All12readouts retain correct ACT32/32 and red-only memory4/16. This is one
+starting seed and a competing objective, not three seed replications, passive
+fading, an optimal rate, selective forgetting or representative G3. The initial
+48-case baseline is shared, not remeasured three times; no new OFF/confirmation
+calls occur. All64confirmation cases remain unrequested. Origin stays
+`UNRESOLVED_LOCAL_HASHES_ONLY`; memory, parenting, H1/H2 and C11 remain unqualified.
+
+SEQ101's192calls use8524input/1888actual output tokens (ceiling12288);
+fit/readout supervision1717.633265s. SEQ102's576calls use25572/3648
+(ceiling36864); all12fits process39936input including4512target tokens.
+Worker2125.367463s, controller3073.313819s and full reservation3460.763131s
+(57.679386A40min) **overlap and must not be added**. SEQ103's32HFforwards take
+64.699761s supervised versus141.936394s fully reserved. No inherited generations
+are recharged, no monetary/active-compute inference is made, and local capsule
+checks do not rehash excluded weights.
+
+Sources: [SEQ101 memo](../research_notes/astra_memos/ASTRA_FUNDAMENTAL_REPETITION_TERMINAL_2026-09-12.md),
+[SEQ102 memo](../research_notes/astra_memos/ASTRA_FUNDAMENTAL_FADING_TERMINAL_2026-09-12.md),
+[SEQ103 memo](../research_notes/astra_memos/ASTRA_HF_PARITY_TERMINAL_2026-09-12.md),
+[repetition review](../research_notes/astra_memos/receipts_20260912/astra_repetition_independent_review_20260912.md),
+[dose addendum](../research_notes/astra_memos/receipts_20260912/astra_repetition_dose_addendum_20260912.md),
+[fading review](../research_notes/astra_memos/receipts_20260912/astra_fading_independent_review_20260912.md),
+[HF review](../research_notes/astra_memos/receipts_20260912/astra_hf_parity_independent_review_20260912.md),
+and [fixed fading CSV](../research_notes/astra_memos/receipts_20260912/astra_fading_curves_20260912.csv).
+Exact capsule hashes and scope are in claim-map C45–C47. No new PDF build is claimed.
+
+**Historical September 12, 2026, 18:31 UTC — terminal SEQ-098–100 (C42–C44).**
 The previously live elementary pair, its unchanged trainer-seed replications,
 and the separate original-training-prompt memory diagnostic are complete and
 released. This updates the existing full draft, not its thesis or historical
