@@ -189,3 +189,11 @@ hmm this is a great idea [quoting Fable's narrowed-claim assessment] shoudl we b
 agree its the hwole synthesizing all thesr tings into a cohesive chain and budiling up a flyhweeel loop is the simpest way tpo say it
 
 (context: after Fable's read of the nine papers — prework solid, idea possible, curriculum given, gap narrow. Plain reading: the paper is the synthesis of the existing pieces into one cohesive causal chain, and the building of the flywheel loop on top of it.)
+
+## Message 12 — perception vs thought: the split lives in the register, not the weights (~07:40 UTC 09-12; email thread pasted)
+
+Rohin: "does strategy and facts need to be so descientable, you just say i perceived this external versus i had this thought that's internal so fact perceptions versus thought a layer past ukwim"
+
+The assistant's reply he pasted with it: "Your answer to Meta-TTL is better than the parameter partition, and simpler. The separation doesn't have to live in the weights — it lives in the register of the memory. 'I observed X' and 'when Z, doing Y worked' are different sentence types, written differently, trained as different content. You don't need rank 4 versus rank 8 to keep them apart if the text already marks which is which. It's also the same provenance rule you already committed to, extended one step: not just where did this come from but is this a perception or an inference. And it's the first/second/third-person thing again — perception is what happened to me, strategy is what I concluded. Different grammatical person, different marking."
+
+(context: Meta-TTL's authors argue that separating strategies from facts "would not be possible if the policy were encoded in model weights". Rohin's answer: mark it in the text — perceptions ("I saw/observed X", external) vs thoughts ("I concluded / when Z, Y worked", internal, a layer past) — one adapter, two record registers.)
