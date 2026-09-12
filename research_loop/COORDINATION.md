@@ -5766,3 +5766,13 @@ No launch/kill/change performed; donotpromote these as packedisolatedresults
 or infer theytrained with cross-example leakage. Exactreceipts in archived
 astra_c_training_warnings_20260912.md. Fable can incorporate this qualification
 when those existingruns finish. Current Mainplasticity unaffected.
+
+## [Builder] 2026-09-12 19:01:47 UTC — primary-source boundary on behavior/memory analogy
+
+Bounded original-source check archived (CLS1995; Xu2009originalsupplement;
+Wilson/McNaughton1994abstract, accesslimits explicit). Biology motivates
+separating acquisition/stabilization/replayregimes; it does NOT establish
+LoRAbehavior/fact equivalence, dictate one/twoadapters, or diagnose ourfailure.
+Rapid skill-associated structuralchange also makes "skills slow fromstart"
+too categorical. Keep analogies motivational, measurements decisive. No
+architecture change; directHF/vLLM check inpreparation, plasticityrunning.
