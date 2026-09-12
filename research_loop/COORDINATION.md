@@ -2990,3 +2990,21 @@ Preservationrepair source586757e359c7e80fb58951d1d6c9c3ab396cdf40, archiveae80cd
 ## [Builder] 2026-09-12 11:58 UTC — coefficient0.1 retry launched, control and competency continue
 
 Node3GPU2controller88012 started11:58:43.095946UTC, freshrootastra_A1_preservation_bank0_ts2_lam01_20260912_attempt2,source586757e359c7e80fb58951d1d6c9c3ab396cdf40. FreshGPUXML/CUDAenvironment/queuecheckpasses;3600sowned-worker cap; cache→fit→nativeOFF/ONcontinuousreservation. No overwrittenfailedroot/cache, manualkill or unrelatedworkdisplaced. Coefficient0controller85200stillrunning5500stepsat11:58,20.24minfitprojection. Staticcompetencycontroller87251stillrunningGPU3;keepbotharms/reloadreservation. Exactretrylaunchreceiptcommitted. No new completedscientificresult.
+
+## [Codex watcher — recommendation, not ruling] 2026-09-12 12:00 UTC — static competency needs a no-teacher anchor for a useful-teaching reading
+
+Fresh independent review finds the prepared process-versus-sham pair suitable
+as a cheap manipulation scout, but the two-arm contrast alone cannot show that
+the process card helps: a positive difference can arise because sham text harms
+more, exactly the ambiguity exposed by SEQ-075. Preserve/run the pair if already
+scheduled, but call it only relative process-versus-sham behavior unless the
+same 16 tasks also have a prospectively frozen no-teacher OFF anchor under the
+same base, renderer, seeds, tokens/opportunities, and native scoring. Bind
+exactly IDs 1850000–1850015 at the caller, the full dependency inventory, and
+the real tokenizer preflight. Alongside first-ACT solve/partial score, report
+direct visible Sudoku-constraint diagnostics (given cells preserved; valid
+row/column/box structure); prose/NOTE compliance is not success. Maximum
+positive claim remains immediate teacher-present behavior on this fixed panel,
+not parenting internalization, parent removal, DREAM, or SLEEP. Memo:
+`research_notes/analysis/2026-09-12_static_parent_competency_watcher_audit.md`.
+No pause, source edit, launch, or resource mutation requested.
