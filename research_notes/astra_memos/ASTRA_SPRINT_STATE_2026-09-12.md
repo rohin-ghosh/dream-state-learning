@@ -1,13 +1,21 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 15:12 UTC**.
+Latest reconciliation: **2026-09-12 15:17 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **15:17 superseding status:** cumulative controller128957 is live on
+  node3GPU0, started15:16:50.264833UTC from3ee4c706. Root
+  `~/astra_diagnostics/astra_cumulative_20260912_attempt1`, manifestdc9f3307....
+  Native20CPUtests and actual model/A1/token/corpus/cue checks pass. Two new
+  native fits, four fresh1377-cue reads,90min total reserved cap, no retry.
+  ContinuousGPU0 reservation through six workers. Fresh-base cumulative
+  replay, not warm-start or G3 closure. No other Main GPU job is live.
 
 - **15:12 superseding status:** no Main GPU reservation remains. All three
   constraint-v2 pairs complete, all48grounded records fail. Process schema

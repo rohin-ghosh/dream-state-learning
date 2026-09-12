@@ -4010,3 +4010,18 @@ probabilities, not generatedaccuracy; compute differs. NativeOLDgates retained
 with descriptivecohort contrasts and repeatedA1read check, no magicG3PASS.
 OfficialmodeloriginUNRESOLVED_LOCAL_HASHES_ONLY. CPUclear is not nativeREADY;
 actualpreparation and MainfullGPUcheck precedelaunch. Otherownersunchanged.
+
+## [Builder] 2026-09-12 15:17 UTC — native cumulative-replay experiment launched
+
+node3GPU0PID128957 starts15:16:50.264833UTC, immutable3ee4c706080e758537b4dc802bdeef4ead38a158,
+run ~/astra_diagnostics/astra_cumulative_20260912_attempt1. Native20CPUtests
+pass(8801b88d...), full actual model/A1/corpus/bank/token/cue preparationpasses,
+manifestdc9f33071392c374da4e77c19b9c7f87de0bbe2ee2d4bc503c954c6078910f3d.
+OriginalOLDencodingsunchanged, actualweights verified. FullNVIDIA/CUDAenv/queue
+check passes; reserveGPU0continuously across sixfreshworkers untilterminal.
+Twofits1536+11229updates, four1377-cue reads inclOFF each, no greedy generation.
+A1_before→ANfit→A2fit→ANread→A2read→A1_after; NEWonly vsOLD+NEWfresh-base
+cumulative replay, NOT warmstart/resumedoptimizer or threelearnerseeds.
+90minaggregatecap, noautoretry; finishcutoffSep25 21:03UTC suppliedlease-6h.
+Launcher10bb1291...; nootherMainGPUjob. AllpriorproductionGPUsreleased;
+otherownersuntouched. Launchednotcompleted; noG3/mechanismfreeze claim.
