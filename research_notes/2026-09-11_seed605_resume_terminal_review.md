@@ -4,7 +4,7 @@
 
 **Scope:** CPU/static review only. No model, GPU, node, or running-life action.
 
-## Verdict: narrow fix PASS; crash-safe write protocol FAIL
+## Original-commit verdict: narrow fix PASS; crash-safe write protocol FAIL
 
 The commit correctly makes a sole `REJECTED_*` marker terminal. A resumed
 life therefore does not retrain that rejected sleep. It also detects more than
@@ -79,3 +79,39 @@ trainer-written DONE: existing_adapter_verdict=DONE, latest_adapter=<adapter>
 
 That state classification is the critical remaining defect.
 
+## Follow-up closure review: repaired working-tree diff PASS
+
+The author-side repair reviewed immediately after the finding resolves the
+critical defect without changing the scientific protocol:
+
+- The trainer now writes only to `adapter.train/`; its `DONE` cannot be seen
+  by `latest_adapter()`.
+- Promotion changes the staged marker to `CANDIDATE` before atomically moving
+  the directory into the adapter namespace. A crash between those two renames
+  is resumable because staged `CANDIDATE` is an admitted state.
+- Existing `CANDIDATE` bytes are gated in place and are never retrained, so a
+  cached gate result still refers to those exact bytes.
+- Partial staging, mixed staging/adapter state, unclassified adapters,
+  candidate-plus-final, and multiple finals fail closed.
+- `validate_adapter_states()` runs before `load_model()`, closing the earlier
+  possibility that ambiguous `DONE` bytes were mounted before rejection.
+- Only the runner converts `CANDIDATE` into final `DONE` or `REJECTED_*`.
+
+CPU evidence on the repaired diff:
+
+```text
+6 passed in 6.01s
+python3 -m py_compile: PASS
+git diff --check: PASS
+```
+
+The six focused cases cover harness self-consistency, rejected-terminal
+resume, multiple-final rejection, rejection before any model/world event,
+candidate re-gating without training, and staged trainer-completion promotion
+without training. The pre-existing exact-byte golden comparison remains red
+only for the independently reproduced `2e-17` float serialization drift.
+
+One non-blocking coverage improvement remains: explicitly simulate the
+micro-crash after staged `DONE -> CANDIDATE` but before the directory rename.
+The implementation handles that state directly, but the current staged test
+starts from staged `DONE`. This does not change the PASS verdict.
