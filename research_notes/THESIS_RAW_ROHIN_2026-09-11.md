@@ -146,3 +146,12 @@ tmem, seal, dream are our core citations then, we finzlize all the mechanistci w
 seal is goign to be part of the apreing,  some sort of way we test how well the thignign lop is wokrign, a formalized check,  temem is how a lot of the write mechsism will happen for memeory and bevhrior,  hmmm deveoptmental portin is the papaer, check rigously if its oepn? why did we not see these papers before i saw tmem but not dream and seal
 
 Go look through the citations, whoever cited MetaTTL, whoever cited CO, and what citations they use, so then we can figure out what papers are going to help us get this, all the mechanisms and all the ideology just put into it. Because there's stuff from MetaTTL, Dream, Team, M, CO. We want to use all the existing stuff. We don't want to build stuff that's already there. I want it to work. I want it to work on the same trust level, so we can start building on and testing on the novelty. Yeah.
+
+
+---
+
+## Message 6 — sleep replay (~03:25 UTC 09-12)
+
+log in the stuff in the paretenidn resrhach we have abotu how resting hopcamus repalys meormeys and trnegsutins omrpant conencitons becua eour system is ciontuslus it shoud be doign htat
+
+(context: asked right after "will astra on nvl-ai be able to talk to you and colossus from what's in the repo")
