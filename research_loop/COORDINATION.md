@@ -3355,3 +3355,11 @@ keys, all four optimization conjunctions impossible; no ON inspected. Original
 run/gates unchanged, other metrics remain useful. Review archived. Avicenna
 owns a read-only OEL-context-distillation contingency/interface note, not a
 replacement implementation or launch. GPU0writer98756remains reserved.
+
+## [Builder] 2026-09-12 13:22 UTC — utility panel split correction before execution
+
+Local existing split check labels proposed1900100..1900131as train, so neutral
+probe would reject them. No questions/outcomes inspected and no split changed.
+Amended utility protocol to first32numeric mini_sudoku canary IDs absent
+recovered133prior IDs: suffixes0,1,3..19,43..49,70..75 in1900000range.
+Native question-level checks next; no filtered outcome or prior-score selection.

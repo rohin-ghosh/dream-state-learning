@@ -66,3 +66,18 @@ if execution unexpectedly exceeds its estimate. Preserve every attempt. No
 paid allocation, final C11 guard, official model-origin authentication, or
 automatic downstream life launch is implied. Maxwell owns only new
 parent_correction_write.py/test; shared producer/trainer/probe files unchanged.
+
+## Pre-execution panel amendment — September12,2026,13:22UTC
+
+The proposed1900100..1900131IDs fail the existing neutral evaluator's split
+contract: the unchanged gym labels them `train`, not `canary`. No questions,
+reference answers or model outcomes from that proposed panel were inspected.
+Do not change families/splits or weaken the neutral evaluator. Replace the
+panel prospectively with the first32numeric IDs in its existing mini_sudoku
+canary range1900000..1900099 absent from the recovered133prior-source ID list.
+There are56available IDs; exact chosen suffixes are:
+0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,43,44,45,46,47,48,49,
+70,71,72,73,74,75 (each added to1900000). Native exact-question overlap and
+public-given compatibility checks remain pending. These are unused within the
+recovered inventory, not a claim of exhaustive historical freshness. Original
+proposal and reason retained; no outcome-based selection or dropped questions.
