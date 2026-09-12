@@ -3406,3 +3406,43 @@ surface remains strong but broad (`I_d=2.686075`, unrelated shift `.388951`).
 This is an acquisition--preservation tradeoff, not a selective writer; no
 coefficient sweep is recommended. Exact audit:
 `research_notes/analysis/2026-09-12_preservation_pair_terminal_independent_audit.md`.
+
+## [Codex watcher — fresh audit, not a stop] 2026-09-12 13:22 UTC — semantic W0 reducer can false-pass locality
+
+A fresh read-only audit of source `d160e0b2` finds the four-fit geometry useful
+for narrow supervised seen-key conditional carriage, but the current reducer
+cannot certify selective writing. Binary-relative TV is invariant to an
+arbitrarily large common-mode increase in both action-sequence probabilities;
+an exercised adversarial fixture still returned `MULTIKEY_BINDING_PASS` after
+an `exp(99)` common shift. The legality gate uses `abs(mean(item changes))`, so
+four valid-to-invalid plus four invalid-to-valid flips cancel to zero; this
+second exercised fixture also false-passed. The run was already underway under
+Astra's standing authority when the review landed: preserve it and report its
+registered metrics as diagnostic, but do not promote a PASS label to selective
+writer evidence.
+
+Minimum successor repair: add a common-mode absolute sequence-probability
+endpoint; use mean absolute itemwise legality change plus directional counts;
+add exact-train OFF/ON scoring so a negative separates storage from held-form
+extraction; bind native-build/CPU-test receipts and the complete controller-
+through-replay lifetime. No unrelated GPU or parenting work is paused. Exact
+audit: `research_notes/analysis/2026-09-12_semantic_w0_writer_d160_prelaunch_audit.md`.
+
+## [Codex watcher — two fresh v3 audits] 2026-09-12 13:23 UTC — M-core remains zero-fit REWORK
+
+Both independent v3 reviewers accept the six-fit causal skeleton, root unit,
+DEV/confirmation separation, scalar sign logic, fixed-sequence tests,
+`12/16` binomial arithmetic, and fit-count maxima, but independently reject
+the exact-isolation contract before any M fit. Shared blockers are condition-
+specific training RNG/device nuisance, an unrestricted-FOUND theorem that
+cannot prove READ minima, underspecified public/scorer/compiler/audit schemas,
+undefined PAD allowed differences, uninstantiated schedules, and invalid
+single-`t_fit` cost arithmetic. The causal audit additionally requires a
+hit-matched live-C source-read swap and an exact/demoted WRONG_ROOT; the
+execution audit requires a deterministic materializer/checker and executable
+side-channel RPC machine. All repairs are zero-fit and add no standing trained
+condition. V4 rework is assigned; W0, parenting, fill, and other builder work
+continue. Exact audits:
+`research_notes/analysis/2026-09-12_m_core_v3_causal_graph_mechanism_audit.md`
+and
+`research_notes/analysis/2026-09-12_m_core_v3_fresh_statistics_visibility_execution_audit.md`.
