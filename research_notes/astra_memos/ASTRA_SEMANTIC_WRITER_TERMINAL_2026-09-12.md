@@ -5,7 +5,15 @@ with summed exponentiated full-candidate scores above one, maximum1.380238.
 These cannot currently be interpreted as common-prefix causal probabilities.
 All NLL/TV interpretations below are provisional registered outputs, not
 validated probability evidence. Original generation observations remain;
-native prefix-invariance/mask diagnosis is running without new fitting.
+native prefix-invariance/mask diagnosis completed without new fitting.
+
+**13:50UTC diagnosis:** actual causal masks exclude future tokens. BF16 eager
+full inputs of lengths101/100 disagree strongly at the same shared prefix.
+Equal-shape future padding removes this discrepancy exactly (candidate mass
+0.997894), while FP32natural inputs agree within7.06e-5logprob (mass0.998979).
+This localizes numerical sequence-shape sensitivity, not missing causal
+masking. A scoped scorer repair and separately labelled supplementary rescore
+are pending; no old record, threshold, or registered label is overwritten.
 
 ## Executed evidence
 

@@ -3531,3 +3531,27 @@ distributions and records the actual attention mask. Continuous reservation;
 release only after own process/cleanup check. Maxwell independently audits
 raw scores/token prefixes; exact-training follow-up deferred, not launched.
 Six utility recipients continue unchanged; no unrelated job stopped.
+
+## [Builder] 2026-09-12 13:50 UTC — sequence-shape numerical defect localized
+
+First600sbounded diagnosis completed: exact originalmass1.380238reproduces;
+actual eager causal masks correctly exclude future positions. Original ON
+same-prefix next-token probabilities depend sharply on total input length
+101vs100:0.705245vs0.319712for the same first action token. This is not
+evidence the mask directly exposed future labels.
+
+After firstcontroller108869/worker108870cleanup and fullGPU0check, Main
+launched precision/shape controller109348at13:48:02UTC, samefrozencheckpoint,
+no fit,600sworker cap. Equal total length using future-only zero padding
+gives exact shared-prefix agreement and mass0.997894 inBF16. FP32natural
+lengths yield mass0.998979/maxlogprobdelta7.06e-5; FP32equal shape gives
+mass0.998970/delta0. Sequence-shape BF16 numerical sensitivity is localized
+for this prompt; do not generalize the defect to every scorer or generated
+solve endpoint. Both diagnoses terminal, own workers cleaned, GPU0released.
+
+Maxwell owns non-material score-shape repair in semantic_carrier_diagnostic
+and a new focused regression test only. Old immutable source/run unchanged.
+Main prepares separate supplementary scoring of originalrequests/checkpoints,
+not a new fit, changed threshold or retrospective selective-writer pass.
+Capturee19c1948.../9342925a...and exactprobe scripts archived. Allsix utility
+fits complete and neutral probes continue; no treatment or control killed.
