@@ -3712,3 +3712,25 @@ pins and free-device checks pass; launcherf56a8b44..., priorfailureauditaf715989
 (full hash in launch receipt). Same1800s/900s limits, nofit, no output-selection
 changes. Root1attempt1controller114286 remains live onGPU7. No other resources
 reserved. Launchreceipt archived; completion and cleanup remain to be verified.
+
+## [Builder] 2026-09-12 14:30 UTC — SEQ-087 exact-row acquisition remains weak
+
+Root1attempt1controller114286 and root0attempt2controller115572 terminal.
+Native replay/all6worker cleanups/fullGPU0/7release pass; no Main GPUreservation
+remains. Exacttrain matching68/68/64/63of128 versus OFF64/64/65/63; held
+37/33/32/34of64. Root1plus is constantgvn128/128; large plus/minus outputchanges
+are not binding. Formatsallvalid. Counts/templates/keys, failedattempt and
+terminalcapsules preserved; noG3/P1/H1/H2promotion. Capsules7bfc98cc.../2c877961...,
+analysis60df19e4....
+
+Independent manuscript review finds originalOFF208outputsomitLF, ON672include
+LF; correct earlier overgeneralization, not rawresults. Turing applies that
+clause and perfit/cost qualifiers. Historicaltables/claims/citations preserved.
+
+Next: Hilbert owns newobjectiveprobe/test only: twofreshfits of128root1W+rows,
+256steps, fullresponse versus first-choice mask, instrumented before largerfits.
+Avicenna owns newconstraintcheckdiagnostic/test only:8externallygenerated
+observedboard exercises, processparentvsformatcontrol,16calls/no fits. Public
+duplicatecitationcount is primary; invalid records countzero. No sparse
+ownfailed-board selection or replacementhunt; not internalization yet. Main
+reviews/freezes/tests/launches. FormalC11guard remains deferred.

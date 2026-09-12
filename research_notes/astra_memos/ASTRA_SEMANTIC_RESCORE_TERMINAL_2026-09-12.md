@@ -69,3 +69,15 @@ all128rows per state and retain failures; no likelihood-only promotion.
   `b311f46dea6d8d7ce27601d6419146c3932c982e8809e46ce73cabc8759586c6`.
 - Main capture/replay script and post-hoc absolute audit script/JSON are
   archived alongside the capsule. Original weights remain on node3.
+
+## Correction — 2026-09-12 14:30 UTC
+
+The earlier generalization that greedy outputs omit LF was too broad.
+Independent raw-seal audit verifies all880 original generated records:
+208OFF outputs omit LF, whereas672ON outputs include it. This supports
+distinguishing learned termination/format from semantic key binding.
+Scored candidates include LF+EOS in both states; fixed-padded versus dynamic
+backend qualifications remain unchanged. No score, threshold or artifact is
+rewritten. Raw-count receipt:
+`receipts_20260912/astra_original_semantic_newline_audit_20260912.json`, SHA256
+`fbbaab9ce962e450358407e41a78a61027e8552955615b8f933dbf59f89eaa3e`.

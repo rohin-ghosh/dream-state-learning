@@ -1,0 +1,44 @@
+{
+  "schema": "astra-original-semantic-newline-audit-v1",
+  "date": "2026-09-12",
+  "status": "PASS",
+  "scope": "Original sealed semantic-writer generated output.text trailing-LF counts only; no inference or new scientific qualification.",
+  "capture_root": "/tmp/astra_semantic_writer_terminal_20260912/astra_semantic_writer_Q0_20260912_attempt1",
+  "source_revision": "d160e0b26405a7e40eb7de0dca23cfcb94cdbf37",
+  "source_sha256": {
+    "organism_v6/semantic_writer_diagnostic.py": "d6ea45ac6bfb5cabe6cbd1224f4cf101e96cbd0e07c029e934c2aa3e03e1ddb0",
+    "organism_v6/semantic_carrier_diagnostic.py": "fd31dc722f7a1a4b65a2fb597811e2598d603c650e8f6fe4e852915fc38c7392",
+    "organism_v6/writer_interface_calibration.py": "9ab582ebc935ae36b88bd412fd06d799044661612f89a0770e46b92ab1b066c7"
+  },
+  "source_identity_basis": "Original manifest source pins, not a claim that the currently repaired scorer equals the original source.",
+  "artifact_sha256": {
+    "SEAL.json": "71f164765d1cdfeef96b881da6eac68de05f1921989f1b167f7dff7b6f088d71",
+    "manifest.json": "f6fa9060e9ea794309839a8651adc728989c283663070b348c3200acca57a830",
+    "requests.json": "a1795b1ea6a19399954f700624ed2155613b9197f4758ef86f8c772c81963c6c"
+  },
+  "selection": "Every requests.json row with operation == generate, including copy-family rows.",
+  "predicate": "record.output.text.endswith('\n') without stripping or normalization",
+  "filehash_checks": {
+    "pinned_artifacts_checked": 3,
+    "pinned_artifact_mismatches": 0,
+    "raw_files_checked_against_seal": 880,
+    "raw_file_hash_mismatches": 0,
+    "request_id_bindings_checked": 880,
+    "canonical_request_hash_bindings_checked": 880,
+    "duplicate_request_ids": 0,
+    "sorted_raw_file_hash_projection_sha256": "a48a0819c77256bb8916a809ce1b3a6b59878e4f3c2fc7a706d1cb8b90770ded",
+    "projection_encoding": "SHA256 of UTF-8 json.dumps(sorted([[relative_raw_path, raw_sha256], ...]), sort_keys=True, separators=(',', ':'), ensure_ascii=False) followed by LF; paths relative to capture_root."
+  },
+  "per_state": {
+    "OFF": {"total": 208, "ends_with_lf": 0, "without_trailing_lf": 208, "noncopy": 192, "copy": 16},
+    "r0_plus": {"total": 168, "ends_with_lf": 168, "without_trailing_lf": 0, "noncopy": 160, "copy": 8},
+    "r0_minus": {"total": 168, "ends_with_lf": 168, "without_trailing_lf": 0, "noncopy": 160, "copy": 8},
+    "r1_plus": {"total": 168, "ends_with_lf": 168, "without_trailing_lf": 0, "noncopy": 160, "copy": 8},
+    "r1_minus": {"total": 168, "ends_with_lf": 168, "without_trailing_lf": 0, "noncopy": 160, "copy": 8}
+  },
+  "totals": {"generated_records": 880, "ends_with_lf": 672, "without_trailing_lf": 208, "noncopy": 832, "copy": 48},
+  "corrected_clause": "Original OFF outputs omit LF, whereas original ON outputs include it.",
+  "new_model_calls": 0,
+  "new_fits": 0,
+  "limitations": "Counts concern stored decoded output.text, not token usage, EOS validation, live hardware identity, scorer probability validity, or any broader audit."
+}

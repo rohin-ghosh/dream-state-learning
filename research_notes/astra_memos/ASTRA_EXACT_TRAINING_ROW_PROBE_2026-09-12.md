@@ -65,3 +65,8 @@ remains deferred; no new fit is authorized by a diagnostic success label.
 Maxwell owns only `gpu/astra_semantic_train_probe.py` and its focused test.
 Main reviews/freezes source, pins exact commands and launches after native
 preflight. Future training design depends on these outputs, not assumed success.
+
+Post-execution clarification,14:30UTC: the LF-omitting statement above applies
+to original OFF outputs, not ON. A raw-seal audit counts208OFF withoutLF and
+672ON withLF. This corrects interpretation, not prospective inputs or settings;
+see SEQ-087 and the SEQ-086 terminal erratum.
