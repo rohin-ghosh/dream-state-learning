@@ -293,7 +293,8 @@ def verify_cache(cache_dir, anchors_path, rows, inventory, vocab_size):
     require(isinstance(logits, torch.Tensor) and logits.dtype == torch.float32
             and tuple(logits.shape) == (N_ANCHORS, vocab_size) and not logits.requires_grad
             and bool(torch.isfinite(logits).all()), "cache shape/dtype/finite/detachment")
-    require(torch.allclose(logits.log_softmax(-1).exp().sum(-1), torch.ones(N_ANCHORS), atol=1e-6),
+    require(torch.allclose(logits.double().log_softmax(-1).exp().sum(-1),
+                           torch.ones(N_ANCHORS, dtype=torch.float64), atol=1e-10, rtol=0),
             "cache normalized distribution")
     return logits, metadata
 

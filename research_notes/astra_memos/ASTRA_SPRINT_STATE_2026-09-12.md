@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:49 UTC**.
+Latest reconciliation: **2026-09-12 11:55 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -77,7 +77,11 @@ controller85200started11:46:17UTC, coefficient0.1GPU2controller85282started
 and lam01counterpart. Both27CPUtests and actualtokenizer preflightPASS;
 wholetext749985input/711213supervised passes,9693updates,48disjointanchors,
 unchangedG9/G11.3600sowned-worker caps; retainGPU0/2throughallreloads.
-No outcomes yet. See ASTRA_MEMORY_PRESERVATION_COMPARISON_2026-09-12.md.
+SEQ-076supersedeslambda0.1status:attempt1cachecompletebutCPUfloat32normalization
+validationrefusedbeforetraining;controllergone,ownedcleanupverified,GPU2released.
+Float32sumerror4.3869e-5,float64error3.0642e-14. Minimalvalidation-onlyfloat64
+repairpasses20+8CPUtests;actualcachevalidation/newattempt2pending. Lambda0
+continuesunchanged2800stepsat11:53UTC,20.29minforecast. See ASTRA_MEMORY_PRESERVATION_COMPARISON_2026-09-12.md.
 P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
 lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
 Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,

@@ -329,6 +329,24 @@ class PreservationTorchTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "dtype"):
                 preservation.verify_cache(root, anchors, rows, metadata["model_files"], 13)
 
+    def test_full_vocabulary_normalization_check_preserves_float32_cache_bytes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            anchors = root / "anchors.json"
+            preservation.write_new(anchors, {"fixture": True})
+            rows = [[1, 2]] * 48
+            logits = torch.linspace(-19.875, 16.5, 152064).to(torch.bfloat16).float().repeat(48, 1)
+            torch.save(logits, root / "off_logits.pt")
+            metadata = dict(anchors_sha256=preservation.digest(anchors), input_ids=rows,
+                            model_files={"config.json": "fixture"}, native_source_sha256=preservation.SOURCE_SHA,
+                            dtype="torch.float32", temperature=1.0, adapter=None, position="last input token",
+                            logits_sha256=preservation.digest(root / "off_logits.pt"))
+            preservation.write_new(root / "cache.json", metadata)
+            actual, _ = preservation.verify_cache(root, anchors, rows, metadata["model_files"], 152064)
+            self.assertEqual(actual.dtype, torch.float32)
+            self.assertTrue(torch.equal(actual, logits))
+            self.assertEqual(preservation.digest(root / "off_logits.pt"), metadata["logits_sha256"])
+
     def test_full_training_loop_order_count_no_cache_zero_and_write_new(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
