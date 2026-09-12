@@ -1,0 +1,102 @@
+{
+  "artifact_id": "ACTIVE_TEXT_FINITE_READER_DESIGN_SOURCE_V1",
+  "status": "DESIGN_ONLY_NO_IMPLEMENTATION_OR_EXECUTION_AUTHORITY",
+  "authority_exclusions": [
+    "C11",
+    "UNRATIFIED_PCFL_PROPOSALS",
+    "WRITER_ENDPOINTS",
+    "IMPLEMENTATION",
+    "MODEL_OR_TOKENIZER_EXECUTION",
+    "TRAINING_OR_ADAPTER_WORK",
+    "GPU_USE",
+    "SCIENTIFIC_CLAIMS"
+  ],
+  "scientific_scope": {
+    "included": [
+      "TEXT_SAME_SEMANTICS",
+      "M-E2",
+      "M-E3",
+      "M-E4",
+      "M-E5"
+    ],
+    "excluded": [
+      "W-E2",
+      "W-E3",
+      "ACTIVE_TEXT_NATIVE-PCFL"
+    ]
+  },
+  "carrier_boundary": {
+    "store_unit": "ONE_CANONICAL_PUBLIC_ROW",
+    "lookup_key": [
+      "scientific_root_id",
+      "phase_id",
+      "anchor_id",
+      "candidate_id"
+    ],
+    "duplicate_live_lookup_key": "FAIL_CARRIER_CERTIFICATE",
+    "one_hop_only": true,
+    "payload_rule": "RETURN_ONLY_THE_BYTE_IDENTICAL_CANONICAL_ROW_MOUNTED_AT_THE_EXACT_LOOKUP_KEY",
+    "visibility_rule": "ROW_MUST_BE_PUBLIC_AND_COMMITTED_BEFORE_THE_REQUEST_CAUSAL_FRONTIER"
+  },
+  "request": {
+    "kind": "READ_V1",
+    "fields_in_order": [
+      "kind",
+      "read_ordinal",
+      "phase_id",
+      "anchor_id",
+      "candidate_id"
+    ],
+    "read_ordinal_domain": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "selection_rule": "ANCHOR_AND_CANDIDATE_ARE_EXPLICITLY_SELECTED_BY_THE_ACTOR_FROM_ITS_PUBLIC_INFORMATION",
+    "canonical_parse_failure": "MALFORMED"
+  },
+  "response": {
+    "kind": "READ_RESULT_V1",
+    "status_domain": [
+      "HIT",
+      "MISS",
+      "UNAVAILABLE",
+      "MALFORMED"
+    ],
+    "hit_cardinality": 1,
+    "non_hit_cardinality": 0,
+    "logical_return_charge_tokens_per_attempt": 256,
+    "maximum_rendered_return_tokens": 256,
+    "overlength_live_row": "FAIL_CARRIER_CERTIFICATE",
+    "attempts_are_charged_on_all_statuses": true,
+    "response_visible_before_next_request": true
+  },
+  "episode_machine": {
+    "maximum_read_attempts": 4,
+    "adaptive_next_request_permitted": true,
+    "repeated_request_permitted_and_charged": true,
+    "stop_before_four_permitted": true,
+    "terminal_public_actions": 1,
+    "request_after_terminal_action": "ILLEGAL_NO_STATE_CHANGE"
+  },
+  "reader_operations": {
+    "exact_key_validation": true,
+    "causal_visibility_check": true,
+    "exact_store_lookup": true,
+    "canonical_response_render": true,
+    "ranking": false,
+    "shortlisting": false,
+    "semantic_validation": false,
+    "relation_inference": false,
+    "automatic_follow": false,
+    "graph_expansion": false,
+    "pagerank": false,
+    "hidden_retry": false
+  },
+  "common_carrier_rule": "TEXT_AND_LORA_CELLS_USE_THIS_IDENTICAL_READER_MACHINE_AND_DIFFER_ONLY_IN_THE_SEPARATELY_BOUND_CARRIER_MOUNT",
+  "provenance": {
+    "normative_imports": [],
+    "self_contained": true
+  }
+}
