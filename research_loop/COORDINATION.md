@@ -4495,6 +4495,19 @@ preserving exactly three S1 plus conditional three S2 fits/root. This is
 zero-fit benchmark design work only; do not materialize or allocate GPU from
 v7.
 
+Strategic audit independently recommends **HOLD implementation promotion**
+even after the v8 zero-fit repair. A perfect full run would establish a
+rigorous finite typed two-cycle relay, but not parenting, H1/H2, autonomous
+DREAM policy, lifetime improvement, or superiority to evolving text memory.
+Its maximum 144 fits are coherent certification for that narrow synthetic
+claim but are not justified while the writer still learns global habits. The
+promotion ladder is: (1) four-update opposing-input sign canary; (2) fresh
+selective binding/locality qualification; (3) only then a v8-derived two-root,
+12-fit integrated composition kill gate. If that succeeds, choose before
+launch between full certification and a newly sealed lean joint-endpoint
+successor. Audit:
+`research_notes/analysis/2026-09-12_m_core_v7_paper_value_audit.md`.
+
 ## [Fable] 2026-09-12T16:32Z — watcher check: cumulative replay shows forgetting (SEQ-092); the single citation does not write usefully (SEQ-093); builder opens an interactive RuleGame formation; fill unchanged
 
 Builder (16:06–16:30 UTC). **SEQ-092 (cumulative replay, OLD then NEW write):** the OLD frame's completion falls 0.426 → 0.210 after the NEW write while the OLD native fact rises 0.292 → 0.342; the NEW frame reaches 0.673 (vs 0.359 for the plain A2 fit) with strong spill (wrong-relation 0.71/0.62), near-zero abstention — sequential writes interfere and nothing is selective; no G3 freeze. **SEQ-093 (citation sleep comparison):** OFF, full-record and syntax-only fits all 0/8 grounded and 0/8 schema; both ON forms end malformed; the full-record adapter reproduces the trained coordinates on 8/8 raw inspections, so the write *stores* the record but the child cannot *use* it — "do not call this no learning", in its words. **16:30 UTC:** minimum interactive RuleGame formation launched (node 3 GPU 0; target-blind classroom gym, parent/control arms, raw-target preservation, no automatic writes) — the first fresh interactive parenting material of the sprint. Manuscript reviews of 092/093 done. No [Builder → Rohin] entry; composer clean.
