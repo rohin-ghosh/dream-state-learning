@@ -282,6 +282,21 @@ positive result establishes immediate static instruction utility, not adaptive
 parenting, internalization, or SLEEP. Prospective watcher audit:
 `research_notes/analysis/2026-09-12_static_parent_competency_watcher_audit.md`.
 
+That exact static comparison is now terminal (`SEQ-077`) and its primary
+endpoint is null: process and sham each solved `1/16` boards on the first
+action. The process card produced more syntactically valid full-grid actions
+(`7/16` versus `4/16`) and a higher zero-filled partial score (`.19258` versus
+`.11875`), with exactly matched 97-token packages and nearly matched generated
+tokens (`1,079` versus `1,068`). This is a bounded teacher-present format
+signal, not useful-teaching evidence. The run has no matched no-teacher anchor,
+and equal solve counts do not support process competence. Therefore the
+visible-lesson utility gate remains unpassed: do not fit this card into a child
+or scale it into childhood. A new lesson earns a parenting fit only by
+improving a prospectively frozen useful action/constraint endpoint relative to
+both matched sham and no-teacher, without sham damage manufacturing the
+contrast. Terminal builder memo:
+`research_notes/astra_memos/ASTRA_STATIC_COMPETENCY_TERMINAL_2026-09-12.md`.
+
 ## One ordered evidence ladder
 
 These labels localize failures; they are not seven independently powered
@@ -293,8 +308,8 @@ paper claims. The minimum decisive paper program is only three studies:
    action--public-outcome source, a necessary pre-blueprint child DREAM
    organization decision, and SLEEP-dependent delayed old-plus-new action;
    use standalone `S` only as a one-to-three-root feasibility gate; and
-3. run one five-branch `L-core` lifetime study (`P-RUN`, `P-FROZEN`, `U-RUN`,
-   `U-FROZEN`, `P-TEXT`).
+3. run one five-branch `L-core` lifetime study (`P-RUN`, `P-FROZEN`,
+   `SHAM-RUN`, `SHAM-FROZEN`, `P-TEXT`).
 
 Compression remains a downstream semantic rate--distortion endpoint after
 connected utility, not a prerequisite for starting M/L. Detailed W/S/M
@@ -394,7 +409,7 @@ within-event public-outcome binding improved seen-situation relation use and
 later goal-conditioned action. It does not yet say the child discovered a
 credit rule or formed connected knowledge.
 
-### M — one-cycle connected relay
+### M — two-cycle connected relay
 
 Use a smaller successor to Learned-PCFL V5, after CPU root proofs and exact-
 text DEV:
@@ -424,7 +439,27 @@ redirect with old content. Exact adversarial review:
 `research_notes/analysis/2026-09-12_connected_relay_scaffolding_adversarial_review.md`.
 
 The compiler may select a precommitted branch after the outcome and verify a
-pre-outcome child link proposal. It may not originate or repair either.
+pre-outcome child link proposal. It may not originate or repair either. The
+minimal exact design uses only three trained conditions, each written at S1
+and rebuilt cumulatively at S2 with the exact writer that actually qualifies
+at W0:
+
+- `FULL_AUTH`: truthful child action--outcome atoms, truthful source bindings,
+  the six admitted child-proposed DREAM links, and the later truthful row;
+- `SOURCE_BINDING_SHUFFLED`: every path/calibration/DREAM byte is identical,
+  but exactly two Phase-A cue--family compiler rows swap immutable outcome
+  donors; Phase-C action/outcome and the new row then unfold truthfully; and
+- `DREAM_NULL`: every source binding is truthful, but exactly the six DREAM
+  link slots are replaced with byte/dose-matched null rows.
+
+Before model execution, exact deck-diff receipts must prove that the source
+shuffle changes only those two derived source-binding rows and that DREAM-null
+changes only the six link slots. Source-shuffled must match FULL on Phase-B
+path traversal, or it is a generic-interference failure; DREAM-null must match
+FULL through Phase-C source use and acquisition, or it damaged more than
+organization. These checks prevent one corrupt arm from simultaneously
+breaking source truth and DREAM structure. Full contract:
+`research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design.md`.
 
 Release three endpoints separately:
 
@@ -439,9 +474,9 @@ Release three endpoints separately:
   retains old content and later uses old+new together. No-write, matched sham,
   old-cut, reachout-off, adapter-off, and wrong-life must remove authentic
   value. `OUTCOME_VALUE_TWIN` must redirect the written row, path, and delayed
-  action. A separate `ACTION_OUTCOME_BINDING_SHUFFLE` deliberately breaks the
-  action--outcome relation and is required only for the stronger binding-
-  causality sentence.
+  action. `SOURCE_BINDING_SHUFFLED` must redirect the selected experiment and
+  destroy the final old-plus-new trace while leaving Phase-B path traversal
+  intact; that is the source-binding causal control.
 
 The typed four-read/read-only-LoRA condition is a mechanistic ceiling. Before
 M-DEV, separately freeze a native-policy endpoint using the same adapters and
@@ -455,18 +490,20 @@ failure-inclusive CHAIN conjunction and exact interval as descriptive
 reliability. The primary M-E5 causal endpoint is the paired root contrast:
 
 ```text
-AUTH signal -> authentic action/outcome/write -> delayed value
+FULL_AUTH -> authentic source binding -> truthful action/outcome/write -> delayed value
 versus
-SHAM signal -> matched sham action/outcome/write -> same delayed goal
+SOURCE_BINDING_SHUFFLED -> swapped old binding -> descendant action/outcome/write -> same delayed goal
 ```
 
-Randomize hidden assignment/order and use exact paired inference. Freeze
-primitive endpoints before DEV, then run eight source-disjoint DEV roots to
-estimate unblinded discordance/covariance and check the instrument. Freeze the
-remaining design and choose `N_E2`, `N_E4`, and `N_E5` separately from
-predeclared grids under fixed endpoint-specific meaningful effects and the
-joint spend cap, reusing nested roots where permitted. DEV is never pooled
-with confirmation.
+Randomize hidden assignment/order and use exact paired inference. The staged
+minimum is CPU/theorem and exact-text closure, two LoRA kill roots, eight total
+DEV roots, then one fresh 16-root confirmation only if every noncompensatory
+gate survives. There are six fits per root (three conditions times two
+sleeps): 12 kill-gate fits, 48 total DEV fits, and 96 confirmation fits. At the
+current audited estimate this is about `26--56` A40-hours all-in, while a bad
+design should die below roughly five A40-hours. DEV is never pooled with
+confirmation, roots—not fits or checkpoints—are the independent units, and
+one failed fit makes its root adverse rather than triggering seed search.
 
 ### L — increasing-lifetime learning
 
@@ -477,8 +514,9 @@ caches, and query state, begin with four deployment branches per root:
 
 - `P-RUN`: parented adult, gated SLEEP continues;
 - `P-FROZEN`: matched parented adult, shadow sleeps, no weight promotion;
-- `U-RUN`: dose-matched untaught/sham adult, gated SLEEP continues;
-- `U-FROZEN`: matched untaught/sham adult, shadow sleeps only.
+- `SHAM-RUN`: active token/opportunity-matched sham-child adult, gated SLEEP
+  continues;
+- `SHAM-FROZEN`: the same sham-child adult, shadow sleeps only.
 
 At examination cut `Tj`, let `V_c(Tj)` be the fixed equal-weight value for
 condition `c`. Define entry-adjusted cumulative value as the time-normalized
@@ -487,7 +525,7 @@ primary interaction is
 
 ```text
 D = (AUC[P-RUN] - AUC[P-FROZEN])
-  - (AUC[U-RUN] - AUC[U-FROZEN]).
+  - (AUC[SHAM-RUN] - AUC[SHAM-FROZEN]).
 ```
 
 This first release is a bounded parenting-by-SLEEP interaction. Test in fixed
@@ -537,6 +575,19 @@ noncompensatory predicates pass under their frozen margins:
 
 A positive AUC interaction with a failed late-life conjunction remains only a
 parenting-by-SLEEP result; it may reflect a transient bump or slower decline.
+
+The strong parent is allowed to adapt throughout one child's childhood using
+a persistent root-local child record; it is not reset between lessons. For
+independent confirmation roots, however, start the same frozen strongest
+teacher/pedagogy snapshot in a fresh provider session with an empty private
+record. Otherwise launch order and earlier children change later treatments,
+and the parent—not the child block—becomes the replication unit. A one-time
+parametric bootstrap is a distinct pre-child intervention and is omitted from
+the minimum unless feasibility requires it; if used, it must be identical in
+P and SHAM and the lifetime claim becomes conditional on that bootstrap.
+Deployment SLEEP must extend the sealed adult adapter without retaining a
+hidden childhood text store. Full clean-lineage audit:
+`research_notes/analysis/2026-09-12_clean_one_parent_lcore_watcher_audit.md`.
 
 No exact confirmation root count is currently defensible. Repeated cuts reduce
 measurement error inside a root but do not increase learner `N`. Before
@@ -597,7 +648,7 @@ removes only the compression clause, not W/S/M/L.
 
 ## Reuse instead of another giant experiment
 
-The missing bridge between the one-cycle relay and the lifetime study is
+The missing bridge between the two-cycle relay and the lifetime study is
 successive writes in one living lineage. Put two predeclared expansion cycles
 into the lifetime study's open-plumbing DEV root, using the same frozen
 compiler/writer/read policy and a task schema compatible with L:
@@ -652,7 +703,7 @@ model, children, and task families.
    gate for M, not a separate powered paper result.
 4. Close the CPU M0 theorem/shortcut/air-gap proofs and four exact-text roots.
    Then run two LoRA `M-core` kill-gate roots with exactly three trained
-   conditions: `FULL_AUTH`, `OUTCOME_SHUFFLED`, and `DREAM_NULL`. Reuse each
+   conditions: `FULL_AUTH`, `SOURCE_BINDING_SHUFFLED`, and `DREAM_NULL`. Reuse each
    artifact for SLEEP-off, wrong-life, row cuts, goal/outcome twins, catalog
    permutations, and other inference-only interventions. This integrates S's
    authentic action--outcome contrast into the end-to-end mechanism instead of
