@@ -54,6 +54,7 @@ import statistics
 import sys
 import time
 from dataclasses import dataclass, field, asdict
+from pathlib import Path
 
 IGNORE = -100
 ALL_PROJ = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
@@ -497,13 +498,189 @@ def _versions() -> dict:
     return out
 
 
+def _warm_inventory(root):
+    root = Path(root)
+    if not root.is_dir() or root.is_symlink():
+        raise ValueError("warm-start parent must be a real local directory")
+    files = {}
+    for path in sorted(root.rglob("*")):
+        if path.is_symlink() or not (path.is_file() or path.is_dir()):
+            raise ValueError("unsupported/symlink warm-start artifact")
+        if path.is_file():
+            files[str(path.relative_to(root))] = _sha256(path)
+    return files
+
+
+def _warm_require(condition, message):
+    if not condition:
+        raise ValueError("warm start: " + message)
+
+
+def _base_identity(value):
+    value = os.path.expanduser(str(value))
+    return str(Path(value).resolve()) if Path(value).exists() or os.path.isabs(value) else value
+
+
+def _warm_parent(init_adapter, out_dir, cfg):
+    parent, output = Path(init_adapter).expanduser().absolute(), Path(out_dir).expanduser().absolute()
+    _warm_require(not any(path.is_symlink() for path in (parent, output, *parent.parents, *output.parents)),
+                  "symlink-aliased parent/output")
+    parent, output = parent.resolve(strict=True), output.resolve()
+    _warm_require(not output.exists(), "output must be fresh")
+    _warm_require(parent != output and parent not in output.parents and output not in parent.parents,
+                  "parent/output overlap")
+    model_path = Path(cfg.model).expanduser()
+    if model_path.exists():
+        model_path = model_path.resolve()
+        _warm_require(output != model_path and model_path not in output.parents and output not in model_path.parents,
+                      "output overlaps base model")
+    _warm_require(not cfg.svd_init and not cfg.freeze_a, "SVD initialization/frozen A is incompatible")
+    _warm_require(type(cfg.epochs) is int and cfg.epochs >= 0 and math.isfinite(cfg.lr) and cfg.lr >= 0,
+                  "invalid epochs or learning rate")
+    inventory = _warm_inventory(parent)
+    _warm_require(all(name in inventory for name in ("DONE", "adapter_config.json", "train_manifest.json")) and
+                  "EMPTY_CORPUS" not in inventory, "parent is incomplete")
+    manifest = json.loads((parent / "train_manifest.json").read_text())
+    saved = json.loads((parent / "adapter_config.json").read_text())
+    prior = manifest["config"]
+    steps = manifest["steps"]
+    _warm_require(manifest.get("recipe") == RECIPE and manifest.get("empty") is False and
+                  type(steps) is int and steps >= 0 and manifest.get("nonfinite_batches") == 0 and
+                  (math.isfinite(manifest["final_loss"]) if steps else manifest["final_loss"] is None),
+                  "parent completion/nonfinite state differs")
+    _warm_require(all(_base_identity(value) == _base_identity(cfg.model) for value in
+                  (saved["base_model_name_or_path"], prior["model"], manifest["base_model"])), "base identity mismatch")
+    _warm_require(prior["rank"] == cfg.rank and (prior["alpha"] or 2 * prior["rank"]) == (cfg.alpha or 2 * cfg.rank) and
+                  prior["dropout"] == cfg.dropout and set(prior["target_modules"]) == set(cfg.target_modules) and
+                  prior["layers"] == cfg.layers and not prior["freeze_a"], "parent LoRA recipe mismatch")
+    cumulative = manifest.get("warm_start", {}).get("cumulative_steps", steps)
+    _warm_require(type(cumulative) is int and cumulative >= steps, "invalid parent cumulative steps")
+    weights = [name for name in ("adapter_model.safetensors", "adapter_model.bin") if name in inventory]
+    _warm_require(len(weights) == 1, "missing/ambiguous adapter weights")
+    return dict(parent=parent, output=output, parent_files=inventory, manifest=manifest, saved=saved,
+                weights=parent / weights[0], cumulative_steps=cumulative)
+
+
+def _warm_state_inventory(state):
+    import torch
+    result = {}
+    for name, tensor in sorted(state.items()):
+        _warm_require(isinstance(tensor, torch.Tensor) and tensor.is_floating_point() and
+                      bool(torch.isfinite(tensor).all()), "invalid/nonfinite adapter tensor: " + name)
+        raw = tensor.detach().cpu().contiguous().reshape(-1).view(torch.uint8)
+        digest = hashlib.sha256()
+        for block in raw.split(1024 * 1024):
+            digest.update(bytes(block.tolist()))
+        result[name] = dict(shape=list(tensor.shape), dtype=str(tensor.dtype), sha256=digest.hexdigest())
+    return result
+
+
+def _warm_validate_state(source, expected):
+    _warm_require(isinstance(source, dict) and set(source) == set(expected) and bool(source),
+                  "missing/extra adapter tensor keys")
+    for name, tensor in source.items():
+        _warm_require(name.endswith((".lora_A.weight", ".lora_B.weight")), "non-LoRA adapter state")
+        _warm_require(hasattr(tensor, "shape") and tensor.shape == expected[name].shape, "adapter tensor shape mismatch: " + name)
+    return _warm_state_inventory(source)
+
+
+def _warm_trainability(model):
+    _warm_require(set(model.peft_config) == {"default"} and model.active_adapters == ["default"], "exactly one adapter required")
+    trainable = []
+    for name, parameter in model.named_parameters():
+        is_lora = name.endswith((".lora_A.default.weight", ".lora_B.default.weight"))
+        _warm_require(parameter.requires_grad == is_lora, "base must be frozen; only all LoRA A/B weights trainable: " + name)
+        if is_lora:
+            trainable.append(name)
+    _warm_require(bool(trainable), "no trainable LoRA weights")
+    return trainable
+
+
+def _warm_validate_config(saved, expected_config):
+    metadata = {"base_model_name_or_path", "inference_mode", "auto_mapping", "peft_version"}
+    _warm_require(set(saved) <= set(expected_config) | metadata and all(name in saved for name in
+                  ("r", "lora_alpha", "lora_dropout", "target_modules", "bias", "peft_type")), "unknown/missing adapter configuration")
+    for name, expected in expected_config.items():
+        if name in metadata:
+            continue
+        actual = saved.get(name, expected)
+        if name == "target_modules":
+            _warm_require(isinstance(actual, list) and len(actual) == len(set(actual)) and set(actual) == set(expected),
+                          "target modules mismatch")
+        else:
+            _warm_require(actual == expected, "adapter configuration mismatch: " + name)
+
+
+def _warm_initialize(base_model, cfg, warm):
+    import torch
+    from peft import PeftModel, get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict
+    _warm_require(not isinstance(base_model, PeftModel) and not hasattr(base_model, "peft_config") and
+                  not any("lora_" in name for name, _ in base_model.named_parameters()), "prewrapped/adapted base rejected")
+    _warm_require(_base_identity(getattr(base_model, "name_or_path", "")) == _base_identity(cfg.model), "loaded base identity mismatch")
+    layers = int(getattr(base_model.config, "num_hidden_layers", 0))
+    _warm_require(warm["manifest"]["lora"]["n_layers"] == layers, "base layer count mismatch")
+    configuration = lora_config(cfg, layers)
+    _warm_validate_config(warm["saved"], configuration.to_dict())
+    try:
+        if warm["weights"].suffix == ".safetensors":
+            from safetensors.torch import load_file
+            source = load_file(str(warm["weights"]), device="cpu")
+        else:
+            source = torch.load(str(warm["weights"]), map_location="cpu", weights_only=True)
+    except Exception as error:
+        raise ValueError("warm start: unreadable adapter weights") from error
+    model = get_peft_model(base_model, configuration)
+    expected = get_peft_model_state_dict(model, adapter_name="default", save_embedding_layers=False)
+    source_inventory = _warm_validate_state(source, expected)
+    converted = {name: tensor.to(dtype=expected[name].dtype, device="cpu") for name, tensor in source.items()}
+    converted_inventory = _warm_state_inventory(converted)
+    set_peft_model_state_dict(model, source, adapter_name="default")
+    loaded = get_peft_model_state_dict(model, adapter_name="default", save_embedding_layers=False)
+    loaded_inventory = _warm_state_inventory(loaded)
+    _warm_require(loaded_inventory == converted_inventory,
+                  "loaded state does not equal full parent state after recorded dtype conversion")
+    trainable = _warm_trainability(model)
+    _warm_require(len(trainable) == len(expected), "trainable/state tensor coverage differs")
+    _warm_require(_warm_inventory(warm["parent"]) == warm["parent_files"], "parent changed during load")
+    receipt = dict(mode="WEIGHT_WARM_START_FRESH_OPTIMIZER", optimizer_initialization="fresh_per_write",
+        optimizer_state_restored=False, optimizer_state_saved=False,
+        parent_path=str(warm["parent"]), parent_files=warm["parent_files"], source_state=source_inventory,
+        initialized_state=loaded_inventory, initialized_loaded_state_check=True,
+        equality_scope="exact after explicit source-to-initialized dtype conversion, before any update",
+        dtype_conversions={name: dict(source=str(source[name].dtype), initialized=str(loaded[name].dtype))
+                           for name in loaded if source[name].dtype != loaded[name].dtype},
+        trainable_names=trainable, base_frozen=True, adapter_count=1, phase_seed=cfg.seed,
+        parent_cumulative_steps=warm["cumulative_steps"], trainer_sha256=_sha256(__file__))
+    return model, receipt
+
+
 def run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
-                 corpus_sha=None, corpus_name=None, log=print) -> dict:
+                 corpus_sha=None, corpus_name=None, log=print, init_adapter=None) -> dict:
+    """Optional full LoRA weight warm start; optimizer state is never resumed."""
+    if init_adapter is None:
+        return _run_training(items, tok, base_model, cfg, out_dir, corpus_sha, corpus_name, log)
+    warm = _warm_parent(init_adapter, out_dir, cfg)
+    try:
+        try:
+            return _run_training(items, tok, base_model, cfg, str(warm["output"]), corpus_sha, corpus_name, log, warm)
+        finally:
+            _warm_require(_warm_inventory(warm["parent"]) == warm["parent_files"], "immutable parent changed during write")
+    except BaseException:
+        done = warm["output"] / "DONE"
+        if warm.get("owns_output") and done.is_file():
+            done.unlink()
+        raise
+
+
+def _run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
+                  corpus_sha=None, corpus_name=None, log=print, warm=None) -> dict:
     """The whole write on an already-loaded base model and tokenizer (the CLI
     loads them; tests pass a tiny model). Returns the manifest."""
     import torch
     from peft import get_peft_model
-    os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(out_dir, exist_ok=warm is None)
+    if warm is not None:
+        warm["owns_output"] = True
     t0 = time.time()
     random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
@@ -546,6 +723,7 @@ def run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
                     config=asdict(cfg), base_model=cfg.model, versions=_versions(),
                     note=cfg.note or None)
     if n_target == 0:
+        _warm_require(warm is None, "empty/no-target warm start cannot create a completed checkpoint")
         with open(os.path.join(out_dir, "EMPTY_CORPUS"), "w") as f:
             f.write("no data\n")
         manifest.update(empty=True, steps=0)
@@ -555,7 +733,10 @@ def run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
         return manifest
 
     n_layers = int(getattr(base_model.config, "num_hidden_layers", 0) or 0)
-    model = get_peft_model(base_model, lora_config(cfg, n_layers))
+    if warm is None:
+        model = get_peft_model(base_model, lora_config(cfg, n_layers))
+    else:
+        model, manifest["warm_start"] = _warm_initialize(base_model, cfg, warm)
     if cfg.svd_init:
         from .lora_svd_init import apply_svd_init
         manifest["svd_init"] = apply_svd_init(model, cfg.rank, cfg.svd_scale, cfg.freeze_a,
@@ -610,6 +791,10 @@ def run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
         opt = torch.optim.AdamW(params, lr=cfg.lr)
     else:
         raise ValueError("--optimizer adamw|sgd")
+    if warm is not None:
+        _warm_require(not opt.state, "optimizer must be newly initialized without prior state")
+        manifest["warm_start"].update(optimizer_class=type(opt).__module__ + "." + type(opt).__name__,
+            optimizer_defaults=json.loads(json.dumps(opt.defaults)), optimizer_initial_state_entries=len(opt.state))
 
     steps = micro = 0
     tokens_seen = 0
@@ -650,7 +835,20 @@ def run_training(items: list, tok, base_model, cfg: TrainConfig, out_dir: str,
         if stop:
             break
     el = time.time() - t_train
-    model.save_pretrained(out_dir)
+    if warm is None:
+        model.save_pretrained(out_dir)
+    else:
+        from peft import get_peft_model_state_dict
+        _warm_require(nonfinite == 0, "nonfinite update cannot produce completed warm-start checkpoint")
+        _warm_trainability(model)
+        manifest["warm_start"]["final_state"] = _warm_state_inventory(
+            get_peft_model_state_dict(model, adapter_name="default", save_embedding_layers=False))
+        _warm_require(_warm_inventory(warm["parent"]) == warm["parent_files"], "parent changed before checkpoint save")
+        model.save_pretrained(out_dir, save_embedding_layers=False)
+        after = _warm_inventory(warm["parent"])
+        _warm_require(after == warm["parent_files"], "parent changed during checkpoint save")
+        manifest["warm_start"].update(parent_files_after=after, parent_unchanged=True,
+            phase_steps=steps, cumulative_steps=warm["cumulative_steps"] + steps)
     manifest.update(steps=steps, micro_batches=micro, nonfinite_batches=nonfinite,
                     epochs_run=len(losses_by_epoch), mean_loss_per_epoch=losses_by_epoch,
                     final_loss=loss_val, train_tokens_seen=tokens_seen,
@@ -714,6 +912,7 @@ def build_parser():
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--dtype", default="bf16", choices=["bf16", "fp16", "fp32"])
     ap.add_argument("--model", default=os.environ.get("V6_MODEL", "Qwen/Qwen2.5-7B-Instruct"))
+    ap.add_argument("--init-adapter", default=None, help="completed LoRA checkpoint; weight-only warm start with a FRESH optimizer")
     ap.add_argument("--max-steps", type=int, default=0)
     ap.add_argument("--log-every", type=int, default=10)
     return ap
@@ -744,21 +943,25 @@ def main(argv=None):
     raw = json.load(open(corpus_path))
     items = normalize_items(raw)
     out = os.path.expanduser(args.out)
-    if not items:
+    if not items and args.init_adapter is None:
         os.makedirs(out, exist_ok=True)
         with open(os.path.join(out, "EMPTY_CORPUS"), "w") as f:
             f.write("no data\n")
         print("EMPTY_CORPUS — no adapter trained")
         return
+    if args.init_adapter is not None:
+        _warm_require(bool(items), "empty warm-start corpus")
+        _warm_parent(args.init_adapter, out, cfg)
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
-    tok = AutoTokenizer.from_pretrained(cfg.model)
+    local = {"local_files_only": True} if args.init_adapter is not None else {}
+    tok = AutoTokenizer.from_pretrained(cfg.model, **local)
     tok.pad_token = tok.pad_token or tok.eos_token
     base = AutoModelForCausalLM.from_pretrained(
         cfg.model, torch_dtype=_torch_dtype(cfg.dtype),
-        device_map=cfg.device if cfg.device != "cpu" else None)
+        device_map=cfg.device if cfg.device != "cpu" else None, **local)
     run_training(items, tok, base, cfg, out, corpus_sha=_sha256(corpus_path),
-                 corpus_name=os.path.basename(corpus_path))
+                 corpus_name=os.path.basename(corpus_path), init_adapter=args.init_adapter)
 
 
 if __name__ == "__main__":

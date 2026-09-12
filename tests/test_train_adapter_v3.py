@@ -13,6 +13,11 @@ import json
 import os
 import sys
 import tempfile
+import copy
+from dataclasses import asdict, replace
+from pathlib import Path
+import shutil
+from unittest.mock import patch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -379,6 +384,361 @@ def test_torch_end_to_end_training_manifest_and_fallbacks():
     assert m4["packing"]["mode"].startswith("fallback_one_item_per_sequence"), m4["packing"]["mode"]
     assert m4["packing"]["isolation_check"]["verdict"] == "mask_refused"
     assert m4["steps"] == 2 and os.path.exists(os.path.join(out4, "DONE"))
+
+
+def _warm_fixture(directory):
+    parent = Path(directory) / "parent"
+    parent.mkdir()
+    cfg = tv3.TrainConfig(rank=2, alpha=4, dropout=.05, lr=1e-3, epochs=1, max_len=64,
+                          pack=False, batch_size=1, device="cpu", dtype="fp32", model="tiny-qwen2",
+                          grad_checkpoint=False, log_every=0)
+    manifest = dict(recipe=tv3.RECIPE, config=asdict(cfg), base_model=cfg.model, empty=False,
+                    steps=1, nonfinite_batches=0, final_loss=1.0, lora=dict(n_layers=2))
+    saved = dict(base_model_name_or_path=cfg.model, r=2, lora_alpha=4, lora_dropout=.05,
+                 target_modules=cfg.target_modules, bias="none", peft_type="LORA")
+    (parent / "DONE").write_text("ok\n")
+    (parent / "train_manifest.json").write_text(json.dumps(manifest))
+    (parent / "adapter_config.json").write_text(json.dumps(saved))
+    (parent / "adapter_model.bin").write_bytes(b"CPU metadata fixture, not loadable weights")
+    return parent, cfg
+
+
+def _warm_error(operation, fragment=None):
+    try:
+        operation()
+    except (ValueError, FileNotFoundError) as error:
+        if fragment is not None:
+            assert fragment in str(error), (fragment, str(error))
+    else:
+        raise AssertionError("invalid warm start was accepted")
+
+
+def _warm_torch_available(native=False):
+    try:
+        import torch
+        if native:
+            import peft
+            import transformers
+            import safetensors
+        return True
+    except ImportError:
+        reason = "warm-start native torch/peft/transformers/safetensors unavailable" if native else "warm-start torch unavailable"
+        SKIPPED.append(reason)
+        print("SKIP", reason)
+        return False
+
+
+def test_warm_cli_keeps_config_dictionary_and_default_delegation_exact():
+    plain = tv3.build_parser().parse_args(["--corpus", "c", "--out", "o"])
+    warm = tv3.build_parser().parse_args(["--corpus", "c", "--out", "o", "--init-adapter", "parent"])
+    assert plain.init_adapter is None and warm.init_adapter == "parent"
+    cfg = tv3.config_from_args(plain)
+    assert asdict(cfg) == asdict(tv3.config_from_args(warm)) and "init_adapter" not in asdict(cfg)
+    result, model, tokenizer = object(), object(), object()
+    with patch.object(tv3, "_run_training", return_value=result) as delegated:
+        assert tv3.run_training([], tokenizer, model, cfg, "o", "hash", "c", print) is result
+    delegated.assert_called_once_with([], tokenizer, model, cfg, "o", "hash", "c", print)
+
+
+def test_warm_parent_pins_bytes_and_allows_changed_lr_only_as_nonstructural_config():
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-metadata-") as directory:
+        parent, cfg = _warm_fixture(directory)
+        original = tv3._warm_inventory(parent)
+        state = tv3._warm_parent(parent, Path(directory) / "child", replace(cfg, lr=1e-5, epochs=0, seed=2))
+        assert state["parent_files"] == original and state["parent"] == parent
+        assert state["cumulative_steps"] == 1 and tv3._warm_inventory(parent) == original
+        for changed in (replace(cfg, rank=4), replace(cfg, alpha=8), replace(cfg, dropout=0),
+                        replace(cfg, target_modules=["q_proj"]), replace(cfg, layers="last1"),
+                        replace(cfg, model="wrong-base"), replace(cfg, svd_init=True), replace(cfg, freeze_a=True)):
+            _warm_error(lambda: tv3._warm_parent(parent, Path(directory) / "child", changed))
+
+
+def test_warm_parent_rejects_stale_overlap_symlink_incomplete_and_ambiguous_artifacts():
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-paths-") as directory:
+        parent, cfg = _warm_fixture(directory)
+        child = Path(directory) / "child"
+        for output in (parent, parent / "child", parent.parent):
+            _warm_error(lambda: tv3._warm_parent(parent, output, cfg))
+        alias = Path(directory) / "alias"
+        alias.symlink_to(parent, target_is_directory=True)
+        _warm_error(lambda: tv3._warm_parent(alias, child, cfg), "symlink")
+        (parent / "alias.bin").symlink_to(parent / "adapter_model.bin")
+        _warm_error(lambda: tv3._warm_parent(parent, child, cfg), "symlink")
+        (parent / "alias.bin").unlink()
+        for name in ("DONE", "train_manifest.json", "adapter_config.json", "adapter_model.bin"):
+            content = (parent / name).read_bytes()
+            (parent / name).unlink()
+            _warm_error(lambda: tv3._warm_parent(parent, child, cfg))
+            (parent / name).write_bytes(content)
+        (parent / "adapter_model.safetensors").write_bytes(b"ambiguous")
+        _warm_error(lambda: tv3._warm_parent(parent, child, cfg), "ambiguous")
+
+
+def test_warm_parent_change_during_write_invalidates_done_even_on_return():
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-immutable-") as directory:
+        parent, cfg = _warm_fixture(directory)
+        child = Path(directory) / "child"
+
+        def changed_parent(*args):
+            child.mkdir()
+            args[-1]["owns_output"] = True
+            (child / "DONE").write_text("would otherwise look complete")
+            (parent / "adapter_model.bin").write_bytes(b"external mutation fixture")
+            return {}
+
+        with patch.object(tv3, "_run_training", side_effect=changed_parent):
+            _warm_error(lambda: tv3.run_training([], None, None, cfg, child, init_adapter=parent), "immutable parent")
+        assert child.exists() and not (child / "DONE").exists()
+
+
+def test_warm_output_creation_race_does_not_remove_another_writers_done():
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-race-") as directory:
+        parent, cfg = _warm_fixture(directory)
+        child = Path(directory) / "child"
+
+        def another_writer(*args):
+            child.mkdir()
+            (child / "DONE").write_text("another writer")
+            raise FileExistsError("another writer owns output")
+
+        with patch.object(tv3, "_run_training", side_effect=another_writer):
+            try:
+                tv3.run_training([], None, None, cfg, child, init_adapter=parent)
+            except FileExistsError:
+                pass
+            else:
+                raise AssertionError("creation race was ignored")
+        assert (child / "DONE").read_text() == "another writer"
+
+
+def test_warm_saved_config_strict_structural_validation_cpu():
+    expected = dict(r=2, lora_alpha=4, lora_dropout=.05, target_modules={"q_proj", "v_proj"},
+                    bias="none", peft_type="LORA", layers_to_transform=None, rank_pattern={}, alpha_pattern={},
+                    modules_to_save=None, use_dora=False, use_rslora=False, inference_mode=False,
+                    base_model_name_or_path=None)
+    saved = dict(expected, target_modules=["q_proj", "v_proj"], inference_mode=True,
+                 base_model_name_or_path="tiny-qwen2", auto_mapping={"base_model_class": "Qwen2ForCausalLM"})
+    tv3._warm_validate_config(saved, expected)
+    for key, value in (("r", 4), ("lora_alpha", 8), ("lora_dropout", 0), ("bias", "all"),
+                       ("target_modules", ["q_proj"]), ("target_modules", ["q_proj", "q_proj", "v_proj"]),
+                       ("layers_to_transform", [0]), ("rank_pattern", {"q_proj": 4}), ("alpha_pattern", {"q_proj": 8}),
+                       ("modules_to_save", ["lm_head"]), ("use_dora", True), ("use_rslora", True),
+                       ("unknown_structure", True)):
+        _warm_error(lambda: tv3._warm_validate_config(dict(saved, **{key: value}), expected))
+    missing = dict(saved)
+    del missing["r"]
+    _warm_error(lambda: tv3._warm_validate_config(missing, expected))
+
+
+def test_warm_state_exact_keys_shapes_finiteness_and_dtype_inventory_cpu():
+    if not _warm_torch_available():
+        return
+    import torch
+    expected = {"base_model.model.q_proj.lora_A.weight": torch.ones(2, 4),
+                "base_model.model.q_proj.lora_B.weight": torch.zeros(4, 2)}
+    actual = {name: value.clone() for name, value in expected.items()}
+    inventory = tv3._warm_validate_state(actual, expected)
+    assert inventory == tv3._warm_state_inventory(actual)
+    assert all(row["dtype"] == "torch.float32" and len(row["sha256"]) == 64 for row in inventory.values())
+    first = next(iter(actual))
+    bad = [{}, dict(actual, unexpected=torch.ones(1)), {first: actual[first]}]
+    for tensor in (torch.zeros(1), torch.full((2, 4), float("nan")), torch.full((2, 4), float("inf")),
+                   torch.ones(2, 4, dtype=torch.int64)):
+        bad.append(dict(actual, **{first: tensor}))
+    for state in bad:
+        _warm_error(lambda: tv3._warm_validate_state(state, expected))
+    cast = {name: value.to(torch.bfloat16) for name, value in actual.items()}
+    assert tv3._warm_validate_state(cast, expected)[first]["dtype"] == "torch.bfloat16"
+
+
+def test_warm_trainability_requires_one_adapter_and_only_all_lora_parameters_cpu():
+    if not _warm_torch_available():
+        return
+    import torch
+    model = torch.nn.Module()
+    model.layer = torch.nn.Linear(4, 4, bias=False)
+    model.layer.weight.requires_grad_(False)
+    model.layer.lora_A = torch.nn.ModuleDict({"default": torch.nn.Linear(4, 2, bias=False)})
+    model.layer.lora_B = torch.nn.ModuleDict({"default": torch.nn.Linear(2, 4, bias=False)})
+    model.peft_config = {"default": {}}
+    model.active_adapters = ["default"]
+    assert len(tv3._warm_trainability(model)) == 2
+    model.layer.weight.requires_grad_(True)
+    _warm_error(lambda: tv3._warm_trainability(model), "base must be frozen")
+    model.layer.weight.requires_grad_(False)
+    model.layer.lora_A.default.weight.requires_grad_(False)
+    _warm_error(lambda: tv3._warm_trainability(model), "only all LoRA")
+    model.layer.lora_A.default.weight.requires_grad_(True)
+    model.peft_config["second"] = {}
+    _warm_error(lambda: tv3._warm_trainability(model), "one adapter")
+
+
+def _warm_native_base():
+    model = _tiny_model()
+    model.config._name_or_path = "tiny-qwen2"
+    model.name_or_path = "tiny-qwen2"
+    return model
+
+
+def _warm_native_parent(directory):
+    import torch
+    torch.set_num_threads(1)
+    cfg = tv3.TrainConfig(rank=2, alpha=4, dropout=.05, lr=1e-3, epochs=1, max_len=64,
+                          pack=False, batch_size=1, device="cpu", dtype="fp32", model="tiny-qwen2",
+                          grad_checkpoint=False, log_every=0)
+    items = tv3.normalize_items([dict(spans=[["Question: ", False, "context"], ["answer", True, "target"]], group="one")])
+    parent = Path(directory) / "parent"
+    manifest = tv3.run_training(items, fx.MockTok(), _warm_native_base(), cfg, parent, log=lambda text: None)
+    assert manifest["steps"] == 1 and "warm_start" not in manifest
+    assert manifest["config"] == asdict(cfg)
+    return parent, cfg, items
+
+
+def _warm_saved_state(parent):
+    import torch
+    if (parent / "adapter_model.safetensors").exists():
+        from safetensors.torch import load_file
+        return load_file(str(parent / "adapter_model.safetensors"), device="cpu")
+    return torch.load(str(parent / "adapter_model.bin"), map_location="cpu", weights_only=True)
+
+
+def test_warm_native_zero_steps_matches_parent_full_loaded_state_and_base_frozen():
+    if not _warm_torch_available(native=True):
+        return
+    import torch
+    from peft import get_peft_model_state_dict
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-zero-") as directory:
+        parent, cfg, items = _warm_native_parent(directory)
+        inventory = tv3._warm_inventory(parent)
+        expected = _warm_saved_state(parent)
+        model = _warm_native_base()
+        original_base = [(parameter, parameter.detach().clone()) for parameter in model.parameters()]
+        child = Path(directory) / "child"
+        initialize = tv3._warm_initialize
+        observed = []
+
+        def inspect_loaded(*args):
+            initialized, receipt = initialize(*args)
+            observed.append(initialized)
+            state = get_peft_model_state_dict(initialized, save_embedding_layers=False)
+            assert set(state) == set(expected)
+            assert all(torch.equal(state[name].cpu(), expected[name].to(state[name].dtype)) for name in state)
+            assert receipt["initialized_loaded_state_check"] and len(initialized.peft_config) == 1
+            return initialized, receipt
+
+        with patch.object(tv3, "_warm_initialize", side_effect=inspect_loaded):
+            result = tv3.run_training(items, fx.MockTok(), model, replace(cfg, epochs=0, lr=1e-5), child,
+                                      log=lambda text: None, init_adapter=parent)
+        assert len(observed) == 1 and result["steps"] == 0 and result["final_loss"] is None
+        assert all(torch.equal(value, _warm_saved_state(child)[name]) for name, value in expected.items())
+        assert all(not parameter.requires_grad and torch.equal(parameter, before) for parameter, before in original_base)
+        assert tv3._warm_inventory(parent) == inventory
+        receipt = result["warm_start"]
+        assert receipt["mode"] == "WEIGHT_WARM_START_FRESH_OPTIMIZER" and receipt["parent_unchanged"]
+        assert receipt["parent_files"] == receipt["parent_files_after"] == inventory
+        assert receipt["optimizer_initial_state_entries"] == 0 and receipt["optimizer_defaults"]["lr"] == 1e-5
+        assert receipt["phase_steps"] == 0 and receipt["cumulative_steps"] == 1
+        assert (child / "DONE").exists()
+        _warm_error(lambda: tv3.run_training(items, fx.MockTok(), _warm_native_base(), cfg, child, init_adapter=parent), "fresh")
+
+
+def test_warm_native_finite_update_changed_lr_fresh_optimizer_parent_immutable_and_chain():
+    if not _warm_torch_available(native=True):
+        return
+    import torch
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-update-") as directory:
+        parent, cfg, items = _warm_native_parent(directory)
+        original = tv3._warm_inventory(parent)
+        source = _warm_saved_state(parent)
+        model = _warm_native_base()
+        base_weights = [(parameter, parameter.detach().clone()) for parameter in model.parameters()]
+        child = Path(directory) / "child"
+        result = tv3.run_training(items, fx.MockTok(), model, replace(cfg, lr=1e-5), child,
+                                  log=lambda text: None, init_adapter=parent)
+        assert result["steps"] == 1 and result["nonfinite_batches"] == 0 and result["final_loss"] > 0
+        assert any(not torch.equal(value, _warm_saved_state(child)[name]) for name, value in source.items())
+        assert all(not parameter.requires_grad and torch.equal(parameter, before) for parameter, before in base_weights)
+        assert result["warm_start"]["optimizer_initial_state_entries"] == 0
+        assert result["warm_start"]["cumulative_steps"] == 2 and tv3._warm_inventory(parent) == original
+        grandchild = Path(directory) / "grandchild"
+        child_inventory = tv3._warm_inventory(child)
+        chained = tv3.run_training(items, fx.MockTok(), _warm_native_base(), replace(cfg, lr=0), grandchild,
+                                   log=lambda text: None, init_adapter=child)
+        assert chained["warm_start"]["cumulative_steps"] == 3 and chained["warm_start"]["optimizer_initial_state_entries"] == 0
+        assert all(torch.equal(value, _warm_saved_state(grandchild)[name]) for name, value in _warm_saved_state(child).items())
+        assert tv3._warm_inventory(child) == child_inventory
+
+
+def test_warm_native_rejects_structural_config_mismatches_and_prewrapped_base():
+    if not _warm_torch_available(native=True):
+        return
+    from peft import get_peft_model
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-config-") as directory:
+        parent, cfg, items = _warm_native_parent(directory)
+        original = tv3._warm_inventory(parent)
+        for index, (key, value) in enumerate((("r", 3), ("lora_alpha", 8), ("lora_dropout", 0),
+                ("target_modules", ["q_proj"]), ("layers_to_transform", [0]), ("bias", "all"),
+                ("use_dora", True), ("use_rslora", True), ("modules_to_save", ["lm_head"]),
+                ("rank_pattern", {"q_proj": 4}), ("base_model_name_or_path", "wrong-base"))):
+            bad_parent = Path(directory) / f"bad{index}"
+            shutil.copytree(parent, bad_parent)
+            saved = json.loads((bad_parent / "adapter_config.json").read_text())
+            saved[key] = value
+            (bad_parent / "adapter_config.json").write_text(json.dumps(saved))
+            output = Path(directory) / f"out{index}"
+            _warm_error(lambda: tv3.run_training(items, fx.MockTok(), _warm_native_base(), cfg, output,
+                                                log=lambda text: None, init_adapter=bad_parent))
+            assert not (output / "DONE").exists()
+        wrong = _warm_native_base()
+        wrong.config._name_or_path = "wrong-loaded-base"
+        wrong.name_or_path = "wrong-loaded-base"
+        _warm_error(lambda: tv3.run_training(items, fx.MockTok(), wrong, cfg, Path(directory) / "wrong",
+                                            init_adapter=parent), "loaded base")
+        nested = get_peft_model(_warm_native_base(), tv3.lora_config(cfg, 2))
+        _warm_error(lambda: tv3.run_training(items, fx.MockTok(), nested, cfg, Path(directory) / "nested",
+                                            init_adapter=parent), "prewrapped")
+        assert tv3._warm_inventory(parent) == original
+
+
+def test_warm_native_rejects_missing_partial_nonfinite_bad_weights_and_empty_write():
+    if not _warm_torch_available(native=True):
+        return
+    import torch
+    from safetensors.torch import save_file
+    with tempfile.TemporaryDirectory(prefix="tv3-warm-weights-") as directory:
+        parent, cfg, items = _warm_native_parent(directory)
+        expected = _warm_saved_state(parent)
+        first = next(iter(expected))
+        variants = ["missing", "partial", "extra", "shape", "nan", "infinity", "integer", "corrupt"]
+        for kind in variants:
+            bad_parent = Path(directory) / kind
+            shutil.copytree(parent, bad_parent)
+            for name in ("adapter_model.safetensors", "adapter_model.bin"):
+                if (bad_parent / name).exists():
+                    (bad_parent / name).unlink()
+            state = {name: value.clone() for name, value in expected.items()}
+            if kind == "partial":
+                del state[first]
+            elif kind == "extra":
+                state["base_model.model.extra.weight"] = torch.ones(1)
+            elif kind == "shape":
+                state[first] = torch.zeros(1)
+            elif kind in ("nan", "infinity"):
+                state[first].fill_(float("nan") if kind == "nan" else float("inf"))
+            elif kind == "integer":
+                state[first] = state[first].to(torch.int64)
+            if kind == "corrupt":
+                (bad_parent / "adapter_model.safetensors").write_bytes(b"not safetensors")
+            elif kind != "missing":
+                save_file(state, str(bad_parent / "adapter_model.safetensors"))
+            output = Path(directory) / (kind + "-out")
+            _warm_error(lambda: tv3.run_training(items, fx.MockTok(), _warm_native_base(), cfg, output,
+                                                log=lambda text: None, init_adapter=bad_parent))
+            assert not (output / "DONE").exists()
+        output = Path(directory) / "empty"
+        _warm_error(lambda: tv3.run_training([], fx.MockTok(), _warm_native_base(), cfg, output,
+                                            init_adapter=parent), "empty/no-target")
+        assert not (output / "DONE").exists()
 
 
 if __name__ == "__main__":

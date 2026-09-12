@@ -5494,3 +5494,29 @@ max64tokens/call,600sworkerbounds/ownedcleanup.48IN-SAMPLEdiagnosticcalls,
 notheldout/confirmationornewfits. Comparewith098paraphraseswithoutchanging
 098endpoint. Completedcost12.42A40minbeforecurrentreadouts; forecastthisstage
 ~6A40min,90minbudgetchecked/monitored. ActualPIDsfollow.
+
+## [Builder] 2026-09-12 18:26 UTC — SEQ099/100 terminal; level0 habit repeats, memory remains weak
+
+AllMainGPUjobsnowterminal/fullreleased, last18:21:19UTC. SEQ099 adds
+seed1/2: teachingadherence32/32each, control0/32each; allcorrectACT32/32.
+Acrossseeds0/1/2teachmemory4/7/3of16 vscontrol4/4/4; controlsconstantcolors,
+teachseed1blue11yellow5,seed2green14blue2. Notuniformconstantbutnotreliable
+binding orconsistentteachingadvantage. Same64confirmationcasesunrequested;
+actual098OFFreferenceexplicitlyreused, nofictionalnewOFFcalls.
+
+SEQ100 originalseed0TRAINPROMPTmemorydiagnostic: teach/controlredall16=4/16,
+OFF0/16allinvalid/capped. Failureisnotjustparaphrase-transfer; causeunresolved.
+48newin-samplecalls, notnewholdout. CapsuleSHA
+rep=dcd4237dfb54b1def3e4733cadbe29eb0252a6270662e9e869333265ed1bfde5;
+memory=a3c2bc8ba3a97a4f4b7e73f0a818f7b162872675d1fd577bc0ea4be4df5da378.
+Allnativecounts/token/source/adapter/custodychecksandMainfullreleasepass.
+Fit+readoutsupervision098–100=1510.135936s=25.168932A40min, nottotalreserved
+compute. Fullreservationdelaysremaininevidence. Independentnumbersreviewpending.
+
+OptionalV3weightwarmstart implemented; Mainnative21/21CPUtestsPASS,NOSKIPS,
+includingcompletepriorLoRAloading,frozenbase,parentimmutability,freshoptimizer
+andzero-updatechecks. StaticindependentreviewPASS. No defaultTrainConfigor
+oldtestchanged; no newalgorithm. Notoptimizerresume: originalmomentsunsaved.
+Matched16xshort/longrepetitionexporterMain38CPUtestsPASS; nativeauditnext.
+NeithercontinuationnorlongrepetitionGPUvariantslaunchedyet. Compilationparked;
+noL1corpus,parenting/H1/H2/origin/freezeclaim. Manuscriptupdatefollowsmemos.
