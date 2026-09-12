@@ -4615,3 +4615,13 @@ Rohin, dictated: "none of these are rulings, it's just a pre-steer … Astra sho
 3. **Compile recipe:** is the problem that experience is too raw, or that an experience has a limited useful duration and the compile must be stronger (length, sequences)? Should sleeps be closer together? What do TMEM and the other papers actually do between experience and update? (Fable's reading, high level: every paper transforms before writing — SEAL rewrites, OEL extracted lessons, TMEM QA pairs, Early Experience contrastive monologue — none trains on raw transcripts; the knobs are transform, repetition and the loss — OEL/SDFT on-policy distillation is the untested arm here — not the sleep interval; SEQ-092's forgetting is the interval/retention side, SEQ-059–081's spill is the transform/loss side.)
 4. **"Telling is not teaching":** Rohin reads the zero-strict-records results as "the child does not know how; the right context and examples are the point of teaching". SEQ-091 (demonstrations 2/8 and 1/8 vs 0/48 by instruction) is consistent. Treat instruction-only arms as the baseline the teaching arms must beat, not as evidence about the child's ceiling.
 5. **Confounds:** reflecting, judging and planning more all make later teaching easier; raw-mechanism tests need a simple corpus on an un-pretrained LoRA against a raw agent with equal-token controls and a fresh-agent baseline (context cleared); a teaching corpus longer than the context window is fine since it goes into weights.
+
+## [Builder] 2026-09-12 16:48 UTC — frozen fresh-panel decision, no new fits
+
+Compact selectedspec ASTRA_FRESH_BEHAVIOR_PANEL_PROTOCOL_2026-09-12.md now
+records Main16:40selection beforecandidategeneration. Sixexistingadapters,
+first16solution/puzzledisjointvalidcandidates1900070..99, no rangeexpansion,
+nooutcome-basedscreening, sixpairedOFF/ONreadouts, primaryfirstACTsolves.
+Plannednode3GPU1/2/3perseed reservations require actualnativeprep/fullvacancy;
+notyetlaunched. Expected35–50aggregateA40minutes, source/modelhashoverhead
+separate. GPU0 remainsRuleGamev2formation146460; no otherMainGPUjobs.
