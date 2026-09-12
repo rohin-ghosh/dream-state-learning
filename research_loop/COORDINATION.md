@@ -7076,7 +7076,6 @@ SEQ107 six-file manuscript update now Maindiff-checkPASS and fresh Darwin review
 Rohin, in substance: the level-zero naming, adherence to form as the level-0 success, the frozen base, and no projection layer / hypernetwork / compiler yet ("the perfect corpus is computed, so that's obvious") — and, he agrees, the other strong statements of the evening such as varied views — are more than suggestions. But "ruling" is too strict: "it doesn't allow the model to make its own decisions and bend things on findings … I'm not micromanaging so there are no rules, but if something I say strongly is contested then it needs to be refuted before [being] changed, or the conversation needs to be had about it; refutation is fine, I can be wrong; a lot of the time I'm just suggesting ideas that might be worth trying … a way to make sure intelligence and discretion is on both sides."
 Protocol for the builder and watchers, four labels: IDEA TO TEST (try it if worth it); INDUCED STEER (answer with your own position); STRONG STEER (follow by default; depart only after writing the refutation — evidence or argument — in this notebook, or after raising it with Rohin through a [Builder -> Rohin] entry); RULED (explicit decision only). My 21:1x correction entry above over-corrected: the six items are STRONG STEERS, not plain suggestions. IDEAS.md relabelled again in this commit. Builder: your 20:45 handling of message 21 (hypotheses retained, no scope expansion) is exactly the intended behaviour; where you disagree with a strong steer, write the refutation and proceed on your judgement — that is what he is asking for.
 
-<<<<<<< Updated upstream
 ### 2026-09-12T21:21:11Z [Builder] — SEQ109 varied pair gate FAIL; SEQ110 sourced formation accepted for native export
 
 VariedPID224587 completed/fullreleased;331file capsulecce875ffcc8c00ccda781efe7de895e2ff68aa914afc9bb000b061d1aef545c0. Main reads technically verified reductions: BOTHmemory4/16dev/exact; FOURhabitACT32/32, SINGLE0/32. Registered memorygateFAIL, no seeds1/2. Controller1013.653164s/workers779.505301s nested; fullcollection1099.948008s within1500+300. Fresh Darwin rawrecount inprogress, notyetclaimedPASS. Groupedviewaveraging remains the estimand, not40sequentialupdates or operationaldream. Ohm nowimplements separate CPU-only interleavedmaterial with4distinctsources/batch and fixed newcuefamilies; no newnative/launch and not a prerequisite forparenting.
@@ -7373,7 +7372,7 @@ AuthorizeMainnode3GPU0 afterimmediatefreshnvidia/proc/queuevacancy. S0readout,R1
 ### 2026-09-12T23:35:54.631621+00:00 [Builder] LAUNCH — sequential new-memory allocation pair
 
 Node3GPU0 PID263983 PGID263983, actualstart2026-09-12T23:35:40.672863+00:00, rootastra_sequential_memory_20260912_attempt2/seed0_pair_attempt2; plan9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49. Prelaunchacceptance96127626 precededfreshnvidia/proc/queuevacancycheckandstart. Source5a1f300fed4b7f1ef54524869c2bf11509e965ca, driver29d70e46..., launcher9b73e134....640calls/9workers/4fits,1LoRApertrajectory, immediate-parentchainandfreshoptimizerseed0. Noresultsclaimed. Global5100s+300custody; launch-basedexpectedhardend2026-09-13T01:00:40.672863+00:00, custody2026-09-13T01:05:40.672863+00:00; reconcileactualcontrollerreservation. ContinuousGPUreservation, controlleralarm/ownedworkers; noindependentpidfdwatcher. Nootherjobstopped. Originalmaterial/failedprelaunchplanspreserved; noautomaticretries/progression.
-=======
+
 ## [Codex watcher] 2026-09-12 23:36 UTC — fresh two-SLEEP microcycle red-team
 
 Fresh audit of the smallest benchmark, matched-view compiler, M-core v4/v8,
@@ -7426,7 +7425,6 @@ Full evidence/related-work audit, cheap-evidence order, science-versus-diary
 boundary, and a complete non-placeholder null abstract:
 `research_notes/analysis/2026-09-12_clean_null_iclr_paper_survival_memo.md`.
 No manuscript claim, source, experiment, adapter, model, or GPU state changed.
->>>>>>> Stashed changes
 
 ## [Fable] 2026-09-12T23:38Z — watcher check (two cron ticks caught up): SEQ-113/116 memory + habit coexist once batches mix sources, 3/3 seeds; SEQ-109 grouped copies fail; SEQ-112/117 first sourced parenting formation shows no advantage at a 12-update write; fill results 8–13 (2 more carriers; the R4 602 frames gain replicates on the disjoint panel); backup and fill actions
 
