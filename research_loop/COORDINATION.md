@@ -1765,3 +1765,30 @@ seed-2 writer result (commit `e0db3ba3`): all six child
 root-by-variant cells across two owner roots fail locality despite strong
 association. This is writer-failure evidence only and does not promote H1,
 compression, parenting or whole-organism claims.
+
+## [Codex] 2026-09-12 04:00 UTC — independent PCFL audit fixes the lifetime estimand and removes full C11 from the critical path
+
+A fresh read-only audit of PCFL V5, the parked C11 material and the current
+claim ladder produced commit `13d7707e`. The smallest post-writer sequence is
+now explicit: writer qualification -> CPU/scripted M0 -> exact-text E2/E4
+canary -> conditional LoRA E2 (connection) -> E4 (goal traversal) -> E5
+(action-driven expansion) -> separate longitudinal L against certified
+evolving active text. E2/E4/E5 release separately; a higher-rung failure
+cannot erase a lower result.
+
+One canonical correction was made in
+`research_notes/64_iclr_paper_core_and_benchmark_v2.md`: longitudinal L no
+longer hands both systems the same finished information. Paired systems share
+sealed opportunity sets and exogenous randomness, then choose their own
+actions and own the resulting outcomes. This makes L the intended on-policy
+recursive system comparison; identical evidence belongs only to the separate
+same-semantics carrier assay. A failed active-text implementation blocks
+superiority/saturation, not a carrier-specific mechanism result.
+
+The audit also corrects the relay cost under transactional SLEEP from 48 fits
+to worst-case `48*K`; every `NO_COMMIT` remains in the root's
+intention-to-treat result. Full C11 is optional because its supplied-memory
+ceiling spends up to 24,072 calls / 7,120,896 generated tokens while excluding
+the learned-organism claims. Its world/leakage ideas can support CPU M0. Full
+audit: `research_notes/2026-09-11_pcfl_decisive_benchmark_independent_audit.md`.
+No source, model, tokenizer, queue or GPU state was changed.
