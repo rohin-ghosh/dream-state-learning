@@ -27,6 +27,14 @@ GPU2controller53265(rate1e-5), launched10:13:57/10:14:01UTC. Fresh roots
 material, adapter seed2, native G9unchanged; historical1e-4baseline reused,
 not retrained. Actual source/token preflight passes; known unrelated/broad
 test fixture issues logged, not called passes. PreserveGPU0/2reservations.
+**Active behavioral positive controls:** sourcea51ee0a4, node3GPU1useful
+controller56099andGPU3corrupt controller56124, start10:29:37/48UTC,
+root `astra_mini_sudoku_useful_corrupt_20260912_attempt2`. Native32item
+useful/wrong-board material validated,96steps each then16canary fresh-process
+OFF/ON first-ACT evaluation.900sfit/2100spair limits; keep reservations through
+reload gaps. Attempt1material-only launch refusal retained (slow GPU query);
+non-material10→30stimeout repair passed22wrapper tests. No science outcomes
+yet, no oracle material in clean lineage. See exact comparison memo.
 Parent-free learning/retention/campaign remain incomplete.
 
 W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails

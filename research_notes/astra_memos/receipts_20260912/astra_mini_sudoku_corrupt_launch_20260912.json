@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/localhome/local-rohing/astra_sources/a51ee0a45f68f12cb7a6c05f8f11e9b16e34707a/gpu/astra_mini_sudoku_diagnostic.py",
+    "--root",
+    "/localhome/local-rohing/astra_diagnostics/astra_mini_sudoku_useful_corrupt_20260912_attempt2",
+    "--arm",
+    "corrupt",
+    "--device",
+    "3",
+    "--execute"
+  ],
+  "device": "3",
+  "gpu_uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e",
+  "node": 3,
+  "paired_probe_cap_seconds": 2100,
+  "pid": 56124,
+  "reconciled_system_services": [
+    {
+      "command": "/usr/lib/systemd/systemd --user",
+      "pid": "3245"
+    },
+    {
+      "command": "(sd-pam)",
+      "pid": "3246"
+    },
+    {
+      "command": "sshd: local-rohing@notty",
+      "pid": "55822"
+    }
+  ],
+  "script_sha256": "2ad427002e74bfe2a8687032a3e8a6f066824649be8d2d2ae0481c009fd5ccd7",
+  "source": "/localhome/local-rohing/astra_sources/a51ee0a45f68f12cb7a6c05f8f11e9b16e34707a",
+  "started_utc": "2026-09-12T10:29:48.496726+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED",
+  "training_cap_seconds": 900
+}
