@@ -3,7 +3,9 @@
 All three predeclared original-parent continuations completed and were fully
 released on September 12, 2026, 19:43:16–19:43:33 UTC. Main verified all501
 capsule hashes, terminal/release references, and192 raw-response/reduction
-matches. Separate raw-call review is pending.
+matches. Herschel's separate192-call raw recount passed, including inherited
+baseline comparisons and native receipt/cost checks. Herschel authored the
+runner/collector: this is independent reduction, not fresh-author code review.
 
 | Original parent seed | Original dev memory /16 | New dev memory /16 | Exact training-prefix memory /16 | Retained habit /32 | Correct ACT /32 |
 |---|---:|---:|---:|---:|---:|
@@ -14,8 +16,9 @@ matches. Separate raw-call review is pending.
 Both memory panels query the SAME16 authored facts, not32 independent facts.
 The exact panel uses the original training prefixes; the development panel
 uses the fixed alternate question wording. All48 memory responses across
-each panel are valid colors. Seed0's two incorrect bindings persist across
-the two interfaces. This establishes acquisition in this finite authored
+each panel are valid colors. The same two yellow facts are incorrect for
+seed0, but their wrong blue/green answers swap across the two interfaces;
+equal counts do not imply identical answer vectors. This establishes acquisition in this finite authored
 setting, not general memory, novel-fact transfer, child sleep or parenting.
 
 Seeds0/1 do not emit valid ACT at all on the32 arithmetic questions. Seed0
