@@ -5470,3 +5470,27 @@ SeparatememoryTRAINPROMPTdiagnosticMain/nativecombined61testsPASS; source
 255ae18863538ec2b0d0ce5699807f67f3975e36 immutableonnode3. Its16originalcontexts
 perstate willcomparecurrentseed0OFF/teach/control, notnewheldoutmemoryclaims.
 Nativepreparationnext; prospectiveallocationsGPU4/5/6afterbudget/vacancychecks.
+
+## [Builder] 2026-09-12 18:13 UTC — actual replication readouts; original-memory-context diagnostic allocated
+
+Replicationreadouts node3 sourcea9a7c679:
+seed1teach GPU0/PID168467 started18:10:08.946085UTC;
+seed1control GPU1/PID168887 started18:11:15.060203UTC;
+seed2teach GPU2/PID168918 started18:11:22.606873UTC;
+seed2control GPU3/PID168946 started18:11:32.164495UTC.
+BatchstoppedafterfirstlaunchonunreadableownPID168533; thatPIDwasabsentat
+inspection. Firstlaunchpreserved; separatecallerlaunchedONLYthe3untouched
+cellsafterfreshchecks. Norerun/nootherprocesskilled/noapprovalcircumvention.
+
+Seed0original-memoryTRAINPROMPTdiagnosticpreparedandnative61testsPASS.
+All16renderedquerybytesperstateverifiedagainstACTUALexportedfitcontexts,
+notmerelycandidateprose. Samebase/adapterhashes, noanswers/remindersadded.
+Freshroot ~/astra_diagnostics/astra_fundamental_memory_trainprompt_20260912_attempt1;
+source255ae188, OFFplan c0dd649db58d5788eb12a5bd2edba28492ff148469a1409ade7203f3a6e87124;
+teach e84290d3edc5e92bc0f728cd2198648d82c720d898ea1d1acc14e4a922b6f93b;
+control91bfc3efff6da4e3e1ae927047871c075215ae4ded9927bbc8c8046d67ed7f94.
+MainallocatesGPU4OFF/GPU5teach/GPU6controlafterfullvacancychecks,16callsperstate,
+max64tokens/call,600sworkerbounds/ownedcleanup.48IN-SAMPLEdiagnosticcalls,
+notheldout/confirmationornewfits. Comparewith098paraphraseswithoutchanging
+098endpoint. Completedcost12.42A40minbeforecurrentreadouts; forecastthisstage
+~6A40min,90minbudgetchecked/monitored. ActualPIDsfollow.
