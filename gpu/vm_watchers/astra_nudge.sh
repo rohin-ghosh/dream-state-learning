@@ -22,7 +22,7 @@ while :; do
   if [ -f "$OFF" ]; then log "kill switch present; idle tick"; [ "$ONCE" = 1 ] && exit 0; sleep "$INTERVAL"; continue; fi
   if ! tmux has-session -t "$TMUX_TARGET" 2>/dev/null; then log "no tmux session $TMUX_TARGET"; [ "$ONCE" = 1 ] && exit 0; sleep "$INTERVAL"; continue; fi
   verdict=$(python3 - "$IDLE_MIN" <<'EOF'
-import glob, json, os, sys, time
+import calendar, glob, json, os, sys, time
 idle_min = float(sys.argv[1])
 files = sorted(glob.glob(os.path.expanduser("~/.codex/sessions/*/*/*/rollout-*.jsonl")), key=os.path.getmtime, reverse=True)
 chosen = None
@@ -49,7 +49,7 @@ with open(chosen) as fh:
             last_ev = p.get("type"); last_ts = d.get("timestamp")
 if not last_ts:
     print("noevents"); sys.exit()
-t = time.strptime(last_ts[:19], "%Y-%m-%dT%H:%M:%S"); age_min = (time.time() - (time.mktime(t) - time.timezone)) / 60.0
+t = time.strptime(last_ts[:19], "%Y-%m-%dT%H:%M:%S"); age_min = (time.time() - calendar.timegm(t)) / 60.0
 idle = last_ev in ("task_complete", "turn_aborted")
 print(f"file={os.path.basename(chosen)} launched={int(launched)} idle={int(idle)} last={last_ev} age_min={age_min:.1f} ok={int(launched and idle and age_min >= idle_min)}")
 EOF
