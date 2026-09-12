@@ -5692,3 +5692,24 @@ partial artifacts; no automatic retries. Actual PIDs follow after launch.
 SEQ098–100 six-file manuscript update independently PASS with exact hashes;
 canonical abstract/prior tables preserved, companion abstract206words.
 TeX tools unavailable; no PDF build claimed. Collaborator remains UNSENT.
+
+## [Builder] SEQ-101 — 2026-09-12 18:52 UTC — repetition preserves habit; no fixed memory improvement
+
+Four completed repetition/context cells: teach_short/teach_long32/32habit,
+control_short/control_long0/32; correctACT32/32all; memory4/16ALL, red16each.
+Exactly192new fixeddevcalls, originalOFFreused;64confirmationunrequested.
+All four80-updatefits and readouts natively verified and Main fullyreleased.
+Long-minus-short0 on all declared counts within each treatment. No dose-rescue
+on this seed0panel; no inference that every repetition fails or neural cause
+identified. Nearzero trainingloss is not retrieval evidence. No separate
+adapter conclusion. Native encoder/mask/readout-loading audit is next.
+Capsule36e9ca2637d1f78ab218afd3348b0cc547ea098188e3d418aa2b08c4e48a198b,
+507files verified; memo ASTRA_FUNDAMENTAL_REPETITION_TERMINAL_2026-09-12.md.
+Supervision28.627221A40min, cumulative098–10153.796153A40min; notfullreservation
+oractivecompute. Independent numerical review pending; no gatepromotion.
+
+Actual continuation launches node3 at18:50:52UTC: rate0GPU4/PID182565,
+rate3e-5GPU5/PID182566, rate1e-4GPU6/PID182567. AllfullvacancyPASS before
+spawn. Plan901bf88276bc7c4c2107c87cee5825f27d742780f7e2b728510a99d5b848d957;
+source3a12807f. GPUs4/5/6reserved continuously, including CPU andphasegaps.
+No outcome yet; separate90A40minbudget,1800slineagebounds. GPUs0..3released.
