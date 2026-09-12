@@ -177,3 +177,9 @@ dyt the claim has narrowed down enoguht now? sysntehsis of existing work testing
 and then apgmgin on how to make pareing owrk base don other relatined expistng owrk becse some of the work acutally does tell wat ot parentt algon wit our own researhcin and hytpthsisis
 
 (context: asked while about to paste the launch prompt; Fable's reading: the paper = (1) synthesis of the existing write/consolidation mechanism, (2) tests of the first links of the causal chain parenting relies on, (3) a grounded account of what to parent, drawn from existing work — developmental and cognitive science, the agent-learning papers — together with our own measurements and hypotheses.)
+
+## Message 10 — the papers tell us what to parent; MemSkill into the prompt (~06:45 UTC 09-12)
+
+hmm this is a great idea [quoting Fable's narrowed-claim assessment] shoudl we be chagin ght eprompt for this? , did you reatd the papres i refernced btw?   6 cmpteineiscies btw? opd evovlevermeme skill memtlt and triangin languge agents to elarn from experience, parentign shoudl have a lot of finotinperotin to wrok on, mem skill need to be int eh rpomtp too
+
+(context: Fable had proposed pre-registering ONE competency for the first test; Rohin answers that the literature — OPD-Evolver, MemSkill, Meta-TTL, "Training Language Agents to Learn from Experience" — gives parenting a lot of information to work on, that the prompt lists six competencies, and that MemSkill must be added to the prompt. Fable had not read the papers and said so; a nine-paper read was launched before changing the prompt.)

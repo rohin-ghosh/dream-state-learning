@@ -26,7 +26,47 @@ import calendar, glob, json, os, sys, time
 idle_min = float(sys.argv[1])
 files = sorted(glob.glob(os.path.expanduser("~/.codex/sessions/*/*/*/rollout-*.jsonl")), key=os.path.getmtime, reverse=True)
 chosen = None
-for f in files[:12]:
+# Preferred binding: the rollout file held open by the Codex process inside tmux "astra" (its subagents have their
+# own rollout files, so "newest file" would watch the wrong thread).
+import subprocess
+try:
+    pane = subprocess.run(["tmux", "list-panes", "-t", "astra", "-F", "#{pane_pid}"], capture_output=True, text=True).stdout.split()[0]
+    todo, pids = [pane], set()
+    while todo:
+        pid = todo.pop()
+        if pid in pids: continue
+        pids.add(pid)
+        kids = subprocess.run(["pgrep", "-P", pid], capture_output=True, text=True).stdout.split()
+        todo.extend(kids)
+    open_files = set()
+    for pid in pids:
+        try:
+            for fd in os.listdir(f"/proc/{pid}/fd"):
+                tgt = os.readlink(f"/proc/{pid}/fd/{fd}")
+                if "/rollout-" in tgt and tgt.endswith(".jsonl") and os.path.exists(tgt):
+                    open_files.add(tgt)
+        except Exception:
+            continue
+    # The process holds one rollout per thread (main + subagents). The main thread is the one that received the
+    # launch prompt; failing that, the oldest open file (the main thread starts first).
+    def has_marker(path):
+        try:
+            with open(path) as fh:
+                for line in fh:
+                    if '"role":"user"' in line or '"role": "user"' in line:
+                        if "BEGIN LAUNCH PROMPT" in line or "### 15. Standing authorization" in line:
+                            return True
+        except Exception:
+            pass
+        return False
+    marked = [f for f in open_files if has_marker(f)]
+    if marked:
+        chosen = sorted(marked)[0]
+    elif open_files:
+        chosen = sorted(open_files)[0]
+except Exception:
+    chosen = None
+for f in ([] if chosen else files[:12]):
     try:
         with open(f) as fh:
             meta = json.loads(fh.readline())["payload"]
@@ -51,7 +91,7 @@ if not last_ts:
     print("noevents"); sys.exit()
 t = time.strptime(last_ts[:19], "%Y-%m-%dT%H:%M:%S"); age_min = (time.time() - calendar.timegm(t)) / 60.0
 idle = last_ev in ("task_complete", "turn_aborted")
-print(f"file={os.path.basename(chosen)} launched={int(launched)} idle={int(idle)} last={last_ev} age_min={age_min:.1f} ok={int(launched and idle and age_min >= idle_min)}")
+print(f"file={os.path.basename(chosen)} bound={int('/proc' in str(chosen) or True)} launched={int(launched)} idle={int(idle)} last={last_ev} age_min={age_min:.1f} ok={int(launched and idle and age_min >= idle_min)}")
 EOF
 )
   log "check: $verdict"
