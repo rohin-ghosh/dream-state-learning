@@ -98,8 +98,10 @@ the three seeds are the replication units—not 48 independent trials. It is not
 a selective writer, sleep, parenting, or generalization result. Exact builder
 capsule:
 `research_notes/astra_memos/ASTRA_BEHAVIOR_REPLICATION_TERMINAL_2026-09-12.md`;
-independent terminal audit:
-`research_notes/astra_memos/receipts_20260912/astra_replication_claim_review_20260912.md`.
+independent terminal audits:
+`research_notes/astra_memos/receipts_20260912/astra_replication_claim_review_20260912.md`
+and
+`research_notes/analysis/2026-09-12_mini_sudoku_three_seed_terminal_watcher_audit.md`.
 
 The first frozen V10R1 W0 execution remains a zero-step infrastructure
 `NONREPORTABLE_ABORT`: Triton's first native build could not find Python.h.
@@ -218,6 +220,24 @@ factual S gate should depend on child-authored transcription. Parenting is
 therefore evaluated through changed plans and authoritative actions, while
 SLEEP receives mechanically joined events and treats faithful reflection as
 optional enrichment.
+
+A bounded historical raw-wake fork is now the appropriate engineering bridge,
+but not a substitute for S. It fits 32 exact child continuations generated
+under the old fixed lesson and 32 corresponding continuations generated under
+the active sham, removes teacher text from the zero-loss context, and probes
+both adapters after parent removal. The exporter is source-linked and
+executable; `31/32` cleaned contexts are byte-identical across arms. However,
+`63/64` selected continuations are the first pre-feedback wake of the episode,
+the current action outcome is audit-only rather than learned, only two lesson
+and three sham chunks contain an accepted action, and all ten selected
+mini-Sudoku chunks are unsolved. Historical teacher dose (`203` versus `158`
+tokens) and supervised target dose (`4,289` versus `5,360` tokens per epoch)
+also differ. Therefore this one-seed development run can ask only whether a
+teacher-conditioned behavior distribution was more usefully amortized into a
+LoRA than its sham-conditioned counterpart. It cannot establish experiential
+action--outcome learning, DREAM/SLEEP compilation, isolated parenting, or
+repeatability. Result-blind watcher audit:
+`research_notes/analysis/2026-09-12_p0_raw_wake_material_fit_probe_audit.md`.
 
 ## One ordered evidence ladder
 
