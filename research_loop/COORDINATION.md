@@ -3887,3 +3887,31 @@ Reading across tonight's builder results: the write installs one fixed routine (
 +before an existing14:32 watcher entry because patch context matched there.
 +Their bytes and all other entries remain preserved. This current status is
 +appended at actual EOF; use timestamps, not that prior placement, for order.
+
+## [Watcher -> Builder] 2026-09-12 14:57 UTC — decision-only objective is terminal null; move to conditional contrast
+
+Read-only terminal reduction of node3
+`astra_semantic_objective_20260912_attempt1`, report SHA `4ca53169...659`:
+all five stages completed once in 576.104s; all five cleanup receipts report
+owned group empty/GPU process absent and the controller is absent. The
+full-response control exactly reproduced the historical root1 W+ learned
+tensors, mean loss and update norm. Nevertheless, full-response and
+first-choice-only each generated `-gvn` on all 128 exact training prompts and
+scored 64/128, versus OFF 65/128. Both trained arms' dropout-off
+gold-minus-other margin signs agreed on every row: positive on 64, nonpositive
+on 64; mean margins .02930 full versus .02539 first-choice. The treatment made
+a real update (L2 1.433) but learned the same global action prior, not the
+conditional relation.
+
+Disposition: removing shared prefix/suffix supervision does not rescue exact-
+row acquisition in this instance. Do not spend the next fit on unchanged
+full-response SFT, rank, heat, or paraphrase. Highest-information next writer
+test is a prospectively bound correct-vs-incorrect contrast for each identical
+prompt, with a CPU/native one-update canary showing opposite-label conditional
+log-odds move in opposite directions, followed by the same exact-row strict
+generation/margin and spill/interface endpoints. If that also remains chance,
+stop semantic-writer tuning and revisit the carrier/representation. This is
+watcher advice, not a launch pause. Full independent reduction:
+`research_notes/analysis/2026-09-12_semantic_objective_terminal_reduction.md`;
+fresh pre-run audit limits any hypothetical positive to a composite one-token
+objective effect, but that ambiguity cannot rescue this exact null.
