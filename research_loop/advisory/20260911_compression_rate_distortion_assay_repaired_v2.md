@@ -283,11 +283,24 @@ No child, tokenizer, LoRA, C11 execution, or GPU.
 2. Validate independent packed, fixed-schema/residual, and ordinary-codec
    round trips exhaustively on tiny worlds.
 3. On eight presealed synthetic calibration roots, use exact integer length
-   recurrences on `m in {1,2,4,...}` cohorts. Stream/hash only boundary
+   recurrences on the finite grid
+   `G = {2^j cohorts : j in {0,1,...,20}}`. Stream/hash only boundary
    artifacts; do not retain giant encodings.
-4. Stop unless fixed schema/residual is at least 20% smaller than packed
-   normalized in both matched comparisons (`plain/plain` and `codec/codec`)
-   at two consecutive growing loads and has a smaller incremental byte slope.
+4. Search candidates in increasing order over
+   `G_candidate = {2^j : j in {1,2,...,18}}`. Define `m*` as the least
+   candidate `m` for which, on every one of the eight calibration roots:
+
+   ```text
+   R_packed_plain(FIXED_SCHEMA_RESIDUAL) < .80
+   R_packed_codec(FIXED_SCHEMA_RESIDUAL) < .80
+   ```
+
+   at `m`, `2m`, and `4m`; and for both intervals `[m,2m]` and `[2m,4m]`,
+   the fixed-schema byte increment is below `.80` of the matched packed
+   increment separately for the plain and codec encodings.
+5. Freeze `m_prev=m*/2`, `m1=m*`, `m2=2m*`, and `m3=4m*`. If no `m*`
+   exists inside the finite grid and lease, Stage A is `NO_GO`. No child
+   output, utility result, or later artifact may change these cuts.
 
 Proposed maximum lease before ratification: `16` CPU-core-hours, `16 GiB` peak
 RAM, `8 GiB` temporary disk, and `2,048` retained receipt/test objects. Exceeding
@@ -328,11 +341,17 @@ four DEV roots.
 
 Stage C supplies the complete root-level outcome vector and technical-failure
 rate. Before confirmation identities exist, a frozen simulation chooses the
-smallest allowed `N` with `.80` joint power for the full intersection and
-`.90` for the primary largest-load packed-rate and cross-era utility gates.
-No default `N=24` is assumed. Publish the exact CPU/GPU/wall/storage lease
-before identities. If no allowed `N` fits, narrow the claim by a new
-deliberation; do not weaken thresholds.
+smallest `N` in the finite set `{16,24,32,48}` with `.80` joint power for the
+full intersection and `.90` for the primary largest-load packed-rate and
+cross-era utility gates. If none qualifies, or the exact lease for the chosen
+`N` does not fit, confirmation is `NO_GO`; narrowing requires a new
+deliberation. No default `N=24` is assumed. Publish the exact CPU/GPU/wall/
+storage lease before identities; do not weaken thresholds.
+
+At `m2` and `m3`, require the root-level one-sided upper 95% confidence bounds
+for both child-authored `R_packed_plain` and `R_packed_codec` to be below
+`.80`. Report `m_prev` and `m1` diagnostically; neither can rescue a failed
+claim load.
 
 Maximum implication:
 
@@ -344,10 +363,10 @@ Maximum implication:
 It cannot say the child discovered the schema family or learned a universal
 representation.
 
-### E. Optional one-load LoRA transport DEV
+### E_DEV. Optional one-load LoRA transport feasibility
 
 Only after W1 conditional writing, W2 repeated-write/authentic-source gates,
-the relevant M1--M3 endpoint, and C all pass. First run one disjoint two-build
+the relevant M1--M3 endpoint, and Stage C all pass. First run one disjoint two-build
 `AUTH/DERANGED` canary. If it passes, run four fresh DEV roots with two builds
 each: ten fits maximum. Adapter-off, wrong-root, cuts, and twins are read-time
 controls only where they introduce no hidden answer.
@@ -358,7 +377,30 @@ and failure accounting. Proposed ceiling: `12 A40-hours` and `24` wall-hours.
 If ten adverse-fill-safe fits do not fit, do not run.
 
 Maximum implication: already-qualified compact semantics were behaviorally
-transported through the per-life LoRA. Print unfavorable LoRA rates.
+accessible through the tested LoRA in four development roots, sufficient only
+to estimate feasibility, covariance, failure rate, and cost. It licenses no
+paper-level scientific transport sentence. Print unfavorable LoRA rates.
+
+### E_CONFIRM. Optional powered LoRA transport confirmation
+
+Only if the paper needs a LoRA transport clause and `E_DEV` passes, use the
+complete `E_DEV` root vector to choose independently the smallest
+`N_E in {16,24,32,48}` meeting `.80` joint power for the full
+noncompensatory transport controls and `.90` for the primary authentic-versus-
+text non-inferiority and authentic-versus-deranged gates. No sample size,
+power, root, or success may be borrowed from semantic-code confirmation,
+parenting, C11, targets, technical fits, or repeated probes.
+
+Before confirmation identities exist, freeze all roots, controls, failure
+values, exact training/call/token manifests, and the CPU/GPU/wall/storage
+lease. If no allowed `N_E` passes or its exact adverse-fill-safe lease does not
+fit, `E_CONFIRM` is `NO_GO`. Only a passing `E_CONFIRM` licenses:
+
+> The already-qualified compact semantics were behaviorally transported
+> through the per-life LoRA under the registered reader and causal controls.
+
+If the paper does not need that clause, stop at `E_DEV` or omit LoRA rather
+than promoting development evidence.
 
 ### F. Physical LoRA rate remains closed
 
@@ -384,7 +426,7 @@ fixed opportunities and public-only compiler
 -> opportunity distortion and false-memory bounds
 -> preservation of only upstream-qualified utility
 -> prospective child schema attribution
--> optional LoRA transport
+-> optional powered LoRA transport
 -> future physical actor/resume crossover
 ```
 
@@ -394,7 +436,8 @@ Possible language by stopping point:
 |---|---|
 | A only | supplied-schema compressibility of the registered distribution |
 | D | child selected and prospectively committed a useful shorter instance within the supplied schema language |
-| E | the same compact semantics were transported through LoRA |
+| E_DEV | bounded LoRA-transport feasibility in four development roots only |
+| E_CONFIRM | the same compact semantics were transported through LoRA under the registered powered confirmation |
 | future actor crossover | complete actor-facing life package was physically smaller at the registered distortion |
 | future resume crossover | complete resumable learning-state package was physically smaller at the registered distortion |
 
@@ -412,6 +455,7 @@ authorship/retention/LoRA/compression evidence here.
 | `AGENTS.md` | `1e3c413f3adbf172c409bc642bbf8242a736b0209461b6a7f81203450772f54e` |
 | `20260911_compression_rate_distortion_assay_fresh_v1.md` | `6aea1c528cc8f1f1384dd8187e7c7e069865e83916282883970131b4a28d98a6` |
 | `20260911_compression_rate_distortion_assay_fresh_v1_adversarial_critique.md` | `02fec0d5c52280b2946666ccea09afd9a0b0671bda09c6aad3efdbc76fd363fb` |
+| `20260911_compression_rate_distortion_assay_repaired_v2_closure_review.md` | `8edb5181ae19882ba13cabca2ab390f1fc2feb90d49871e90dc7ddbe0921920d` |
 | `research_loop/plans/pcfl_c11_canonical_guard_spec_v12.md` | `2c1fd41aae8c851faf1a75142a955895c76720a26849c052fef1ba63c477ddd2` |
 | `research_loop/changes/chg_20260911_learned_pcfl_relay_v5/exact_scope.md` | `6bcef58e5add33602149491177f3f39b9a03f377b9303198a2bad77b3034823a` |
 | `research_loop/advisory/20260907_pcfl_physical_intercept_receipt_v4.json` | `71df2509e42057c10c5ba734df6f9682cbd462d2573190a1984a3a26239aaaf4` |
