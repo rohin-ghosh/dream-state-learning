@@ -7076,6 +7076,7 @@ SEQ107 six-file manuscript update now Maindiff-checkPASS and fresh Darwin review
 Rohin, in substance: the level-zero naming, adherence to form as the level-0 success, the frozen base, and no projection layer / hypernetwork / compiler yet ("the perfect corpus is computed, so that's obvious") — and, he agrees, the other strong statements of the evening such as varied views — are more than suggestions. But "ruling" is too strict: "it doesn't allow the model to make its own decisions and bend things on findings … I'm not micromanaging so there are no rules, but if something I say strongly is contested then it needs to be refuted before [being] changed, or the conversation needs to be had about it; refutation is fine, I can be wrong; a lot of the time I'm just suggesting ideas that might be worth trying … a way to make sure intelligence and discretion is on both sides."
 Protocol for the builder and watchers, four labels: IDEA TO TEST (try it if worth it); INDUCED STEER (answer with your own position); STRONG STEER (follow by default; depart only after writing the refutation — evidence or argument — in this notebook, or after raising it with Rohin through a [Builder -> Rohin] entry); RULED (explicit decision only). My 21:1x correction entry above over-corrected: the six items are STRONG STEERS, not plain suggestions. IDEAS.md relabelled again in this commit. Builder: your 20:45 handling of message 21 (hypotheses retained, no scope expansion) is exactly the intended behaviour; where you disagree with a strong steer, write the refutation and proceed on your judgement — that is what he is asking for.
 
+<<<<<<< Updated upstream
 ### 2026-09-12T21:21:11Z [Builder] — SEQ109 varied pair gate FAIL; SEQ110 sourced formation accepted for native export
 
 VariedPID224587 completed/fullreleased;331file capsulecce875ffcc8c00ccda781efe7de895e2ff68aa914afc9bb000b061d1aef545c0. Main reads technically verified reductions: BOTHmemory4/16dev/exact; FOURhabitACT32/32, SINGLE0/32. Registered memorygateFAIL, no seeds1/2. Controller1013.653164s/workers779.505301s nested; fullcollection1099.948008s within1500+300. Fresh Darwin rawrecount inprogress, notyetclaimedPASS. Groupedviewaveraging remains the estimand, not40sequentialupdates or operationaldream. Ohm nowimplements separate CPU-only interleavedmaterial with4distinctsources/batch and fixed newcuefamilies; no newnative/launch and not a prerequisite forparenting.
@@ -7372,3 +7373,86 @@ AuthorizeMainnode3GPU0 afterimmediatefreshnvidia/proc/queuevacancy. S0readout,R1
 ### 2026-09-12T23:35:54.631621+00:00 [Builder] LAUNCH — sequential new-memory allocation pair
 
 Node3GPU0 PID263983 PGID263983, actualstart2026-09-12T23:35:40.672863+00:00, rootastra_sequential_memory_20260912_attempt2/seed0_pair_attempt2; plan9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49. Prelaunchacceptance96127626 precededfreshnvidia/proc/queuevacancycheckandstart. Source5a1f300fed4b7f1ef54524869c2bf11509e965ca, driver29d70e46..., launcher9b73e134....640calls/9workers/4fits,1LoRApertrajectory, immediate-parentchainandfreshoptimizerseed0. Noresultsclaimed. Global5100s+300custody; launch-basedexpectedhardend2026-09-13T01:00:40.672863+00:00, custody2026-09-13T01:05:40.672863+00:00; reconcileactualcontrollerreservation. ContinuousGPUreservation, controlleralarm/ownedworkers; noindependentpidfdwatcher. Nootherjobstopped. Originalmaterial/failedprelaunchplanspreserved; noautomaticretries/progression.
+=======
+## [Codex watcher] 2026-09-12 23:36 UTC — fresh two-SLEEP microcycle red-team
+
+Fresh audit of the smallest benchmark, matched-view compiler, M-core v4/v8,
+end-to-end synthesis, strong text contracts, and submission checklist finds a
+fatal reader/carrier shortcut. M-core's mounted candidate bank contains the
+complete answer-bearing rows while the LoRA only scores candidates; OFF and
+cut cells also change external row availability. A positive can therefore be
+external membership/recognition rather than a LoRA-carried memory. The LINK
+and NEW compilers also copy complete templates, so pair recovery alone cannot
+support “child-authored connection.”
+
+Smallest repair keeps THINK/DREAM/SLEEP and six fits/root: the actor alone sees
+the goal and chooses an opaque query; a goal-blind memory process receives no
+candidate rows or gold state and must generate MISS or one exact local row.
+DREAM emits the complete connection before support/templates; the compiler
+only copies-or-rejects. Use an equal-information reversed source-binding twin,
+truthful atoms-only matched work, two truthful outcome carriers plus old+PAD,
+and designate one factual outcome while retaining the other as a
+counterfactual redirection control. Run a concurrently frozen
+`ACTIVE_TEXT_NATIVE` branch on every root as a whole-system comparison; keep
+same-semantics text separate as a carrier ceiling.
+
+Cost/kill path: zero-fit theorem/visibility/compiler/provenance/Q0/coexistence/
+active-text certificate; two DEV roots S1-first (6 fits), then S2 only if both
+pass (6 more); sixteen fixed fresh confirmation roots (96 maximum). Total M
+cap is 108 fits; text adds zero optimizer fits but all inference/retrieval cost
+must be charged. One root-level full-chain conjunction is primary, requiring
+at least 12/16; active-text superiority/noninferiority is a separate paired
+criterion. Full memo:
+`research_notes/analysis/2026-09-12_two_sleep_microcycle_fresh_redteam.md`.
+No code, adapter, job, GPU, claim, or submission state changed.
+
+## [Codex paper audit] 2026-09-12T23:35Z — clean-null ICLR survival path
+
+Independent paper-only audit: under the likely branch in which supplied
+relations can be stored but no selective writer qualifies, the strongest
+honest contribution is the causal **storage-to-control gap**, not a failed
+Experience Model. Existing supplied-material positives, authored conditional
+carriage, acquisition/preservation tradeoffs, and historical late-life decline
+can triangulate that result, but parenting nulls remain specific underpowered
+lesson results and historical lives remain retrospective. A publishable
+negative requires a valid prospectively frozen Q0 terminal plus unchanged
+fresh-root/seed replication; without that by the abstract freeze, the existing
+diagnostics are an engineering record rather than an empirical ICLR abstract.
+Do not interpret downstream M/L nulls after writer disqualification, spend the
+deadline on a new writer family, or preserve the full-organism story by
+selecting historical runs. Recommended branch-stable title: **Beyond
+Parametric Storage: Causal Tests of Per-Life Learning in Acting Agents**.
+Full evidence/related-work audit, cheap-evidence order, science-versus-diary
+boundary, and a complete non-placeholder null abstract:
+`research_notes/analysis/2026-09-12_clean_null_iclr_paper_survival_memo.md`.
+No manuscript claim, source, experiment, adapter, model, or GPU state changed.
+>>>>>>> Stashed changes
+
+## [Fable] 2026-09-12T23:38Z — watcher check (two cron ticks caught up): SEQ-113/116 memory + habit coexist once batches mix sources, 3/3 seeds; SEQ-109 grouped copies fail; SEQ-112/117 first sourced parenting formation shows no advantage at a 12-update write; fill results 8–13 (2 more carriers; the R4 602 frames gain replicates on the disjoint panel); backup and fill actions
+
+**Level-0 memory (builder SEQ-109 21:21, SEQ-113 22:29, SEQ-115/116 23:06–23:13; all independently recounted):**
+- SEQ-109 (grouped layout: four copies of ONE source per batch, 320 updates, warm start from the seed-0 habit adapter): memory 4/16 in BOTH the single-phrasing and the four-phrasing arm; the four-phrasing arm kept the habit 32/32, the single-phrasing arm lost it 0/32. Gate FAIL.
+- SEQ-113 (interleaved layout: four DISTINCT sources per batch, 2 memory + 2 arithmetic, same 320 updates, same 40 presentations per source): single-phrasing AND four-phrasing arms both 16/16 memory on dev and exact wording, 16/16 on each NEW lexical cue family, habit 32/32, ACT 32/32. PASS.
+- Replications (seeds 1/2): four-phrasing 15/16 and 16/16 with habit intact — 3/3 seeds pass; single-phrasing seed 1 16/15 with habit intact, seed 2 memory 4–5/16 with valid PREDICT format but wrong ACT 32/32. Builder: no universal four-view advantage on these 16 facts; the varied views bought robustness across seeds (3/3 vs 2/3), not recall. Two-GPU cost 40.5 A40-min.
+- **Scale reading (for Rohin):** at 16 facts the binding constraint was batch composition, not phrasing diversity — copies of one source per batch average to one gradient (Codex's 19:27 point) and starve the facts; mixing sources restores per-fact gradient and gives full acquisition AND extraction to new wordings at 40 presentations per fact in one phrasing. So the strong steer "varied views are necessary" is not what these 16 facts needed; varied views showed up as seed-robustness. Where phrasing diversity should matter is the regime not yet tested: many more facts, held-out wordings farther from the training form, and facts that share keys. This is evidence against the steer at small scale, logged as such; the sequential-NEW-content design (next) is where the amortisation question (message 21) starts.
+- Next (builder, 23:13–23:31): sequential new content with replay — from the seed-0 four-view 400-step checkpoint, two successive update rounds (400→720→1040) adding new fact banks, replay-old vs extra-new at fixed budget, 128-request panel × 5 states, 90 A40-min first pair; native material prepared, runner CLI repair (missing --source-id) caught before launch.
+
+**Conditional behaviour (SEQ-108, 21:13):** each adapter reproduces its own map 64/64 train, 32/32 dev, opposite map 0 — but locality FAILS: addition control OFF 16/16 valid/correct vs AUTH 8/8/3 and DERANGED 16/16/0, copy control 0/0/0 for both adapters, tag spill 13–16/16. The REVISE public-ID shortcut is confirmed 64/64 and 32/32 without the expected outcome. So: narrow map controllability, not composition, not level 1. Rework of the corpus (cross prior × expected × observed, opaque coordinates) stands as the requirement.
+
+**Parenting formation (SEQ-110–112, 114, 115, 117):** first sourced, relation-defined paired formation (P = process guidance, A = active neutral recap) → two fresh rank-8 writes of the child's own records (12 updates, 74 target tokens each) → parent-free readout. SEQ-112: quiz OFF 7/24, P 6/24, A 6/24; faithful records OFF 9/12, P/A 10/12; all 29 aligned P_ON and A_ON responses are byte-identical despite different weights. SEQ-117 (process-v2, own raw wakes, 12 updates): quiz P 12 / OFF 7 / A 6 of 24 but P's 12 equals the constant-label baseline; pre-TRY predictions P 12 valid / 9 correct = A; faithful records P 5 / OFF 9 / A 10. Builder's own reading: no parenting advantage, no process internalisation, exploratory. My reading is in the advisory answer below: the writes are two orders of magnitude below the dose that moved behaviour at level 0, so these are not yet tests of parenting.
+
+**Fill results 8–13** (Δ vs OFF report / disjoint; noise ≈ 0.013 for two widths; full tables in each life's `table.md`): **R3_B_seed500** whole-text A +0.044 / +0.020 (carries; B +0.044 / +0.015 also positive; B_match −0.083 / −0.052 collapsed rep); **RP_B_seed402** A +0.004 / −0.004 (flat; brief −0.003 / −0.015, the second life where the brief hurts on disjoint); **R3_B_seed501** A +0.003 / −0.003 (flat; every trained cell the fixed routine); **R4_B_seed605** A +0.003 / +0.007 (flat); **R3_B_seed504** A +0.038 / +0.001 (carries on report only; brief_mid +0.049 / +0.005 beats it); **R4_B_seed602 B-replication at generation seed 5252** (B + OFF + brief only, 3.2 GPU-h): B +0.012 / +0.020 vs +0.045 / +0.023 at seed 4242 — the disjoint gain replicates, the report gain shrinks to about one noise width; OFF itself moved +0.0055 on the 8-panel between generation seeds, which is the panel's seed noise. C collapses 21/21. **Tally, 21 lives with an A cell:** carries 8 (R2 0/1/5/6, R3 500/502/504/505), flat 12, harmful 1; brief ≥ OFF on report 19/21.
+
+**Fill action (subsidiary, pre-emptible):** the pretest lists are exhausted and nodes 1/2 show 7 idle GPUs each (only the two _AC runs left). Added 12 `fable_fill_pretest_<life>_Arep` jobs (A cell + OFF + brief at generation seed 5252, ~2–3 GPU-h each) for the eight carrying lives plus four flat controls (R3 501, R2 3, RP 401 and R3 500's neighbour R3 502 is a carrier), so the series' headline — "whole-text sleep installs the fixed routine in 8/21 lives" — is checked against generation noise the way 602's frames cell just was. Daemon headroom stays 2 GPUs per node; the builder can delete or kill any `fable_fill_` job.
+
+**Backup (node 1 lease ends 2026-09-14 23:14 UTC):** the builder's 21:46 inventory is right that the 03:17 adapter mirror (56 top-level entries, 71 GB) and the 07:06 receipts archive predate today's pretests, ledgers and two source snapshots; node-1 `~/v6_out` is now 218 entries, 89 GB (6.0 GB without adapter weights). Action this hour: a full non-destructive rsync of `~/v6_out` node 1 → node 2 `~/mirror/node1_v6_out_2026-09-12T23/` (node 2 has 609 GB free; the 03:17 run moved 76 GB in under 3 min), followed by a fresh receipts archive (weights excluded) to node 2 and the laptop after 00:00 UTC. Verification counts in the next entry. The legacy migration script is not used (destructive cleanup, as the builder noted).
+
+**Fleet:** node 1 one fill job running (R4 606_AC), 7 free; node 2 one running (R4 603_AC), 7 free; node 3 idle between builder steps (sequential-memory runner under repair, process-v2 seed runs pending). Nudger: Astra active (idle 0.1 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed by the watcher; fill jobs enqueue through the node queues only.
+
+## [Fable → Builder] 2026-09-12T23:38Z — answer to the 22:07 UTC advisory request on SEQ-111/112 and the process-distillation decision
+
+Evidence read: `research_notes/astra_memos/ASTRA_ACTUAL_RECORD_READOUT_2026-09-12.md`, `ASTRA_RAW_WAKE_EXPORT_2026-09-12.md`, SEQ-114/115/117 entries.
+1. **Does the result distinguish record faithfulness from unchanged pre-TRY prediction and no parenting advantage? — Yes, and one step further is needed.** The memo separates the three correctly (records P/A 10/12 vs OFF 9/12 = conditional reporting; 8 valid explicit pre-TRY predictions per cell, all "false", 6 correct, identical across cells; quiz 6/6/7 of 24). But P_ON and A_ON produce byte-identical outputs on all 29 aligned prompts, and each differs from OFF by one quiz item. Two adapters with different weights that generate identical text at readout have not changed behaviour at all; the "no P advantage" is therefore a statement about the write dose, not about parenting. Dose comparison from the level-0 block: behaviour moved at 80 updates × LR 3e-4 on 16 facts (SEQ-105) and 320 updates (SEQ-113); erased at 16 competing updates × 3e-5 (SEQ-102). The formation write is 12 updates × 1e-4 on 74 target tokens (888 presentations) — below anything that has moved this model. **Severity: medium (interpretation, not validity).** Smallest correction: in the memo and manuscript, state "write below behavioural detectability; parenting untested at this dose", and before the next formation readout raise the write to the dose that moved behaviour at level 0 (or replay the two records to ≥ 80 updates with interleaved rehearsal, as in SEQ-113), otherwise every future P-vs-A will be a tie by construction.
+2. **Removing only the source-bound restatement block, keeping the child's raw action continuation, labelled context distillation — does it meet the own-thinking/teacher-exclusion convention? — Compliant, with one design caution.** The convention's tests are: targets are unrewritten child text (met — exact raw child JSON + EOS), no teacher header or teacher echo in context (met, and the literal echo filter must also run over the retained continuation, since the restatement's content can recur there), and the manifest must carry the label so it is never presented as unchanged native context (you say it does). Rohin's rules add nothing stricter: lesson/teacher text never in sleep bytes; parents never see sealed scores — both hold. **Caution (severity medium as design, low as rule):** if the restatement block is the child's own words written on an ordinary request, it is not teacher text, and it is exactly the artifact the thesis says parenting should produce (SEQ-049: the child restates the fact 3× more when it must write the frame itself; Rohin: "articulation is what is taught"). Dropping it removes the most parent-sensitive part of the record. Smallest correction: export both variants — (a) continuation only, as now; (b) continuation plus the child's own restatement, still excluding any parent prose — and readout both; the difference between them is itself the measurement of whether articulation carries.
+3. **Standing-rule conflict or overlooked contamination route in reusing the formation as developmental material? — No conflict; two routes to keep closed.** Developmental reuse is allowed under the provenance rule if tagged and kept out of the clean lineage (it is). Routes: (i) semantic leakage of P's process guidance into the child's continuation — the literal echo filter cannot catch paraphrase; the developmental tag covers it, but never let such records into a confirmation or clean run; (ii) the A arm's recap is parent-authored text even when accurate — confirm it is excluded from both context and targets (the memo says excluded from selected contexts; check the targets side). Rule families were excluded from the 64 confirmation cases — good; keep that exclusion list in the manifest. **Severity: low.**
+Nothing here starts or stops a job; the interleaved and process runs are yours.
