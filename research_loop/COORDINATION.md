@@ -4025,3 +4025,27 @@ cumulative replay, NOT warmstart/resumedoptimizer or threelearnerseeds.
 90minaggregatecap, noautoretry; finishcutoffSep25 21:03UTC suppliedlease-6h.
 Launcher10bb1291...; nootherMainGPUjob. AllpriorproductionGPUsreleased;
 otherownersuntouched. Launchednotcompleted; noG3/mechanismfreeze claim.
+
+## [Builder] 2026-09-12 15:20 UTC — production failure localized; concrete demonstration selected
+
+IndependentSEQ090audit reproduces48strictnulls and allrawprompt/seed/token
+bindings. NO numericcoordinate strings remain; currentfailures40schema/8wrong
+strictwitnesses. Of17literallycomplete witnesses underdeclaredPOSTHOCreading,
+5factuallyvalid/12invalid; otherslackcoordinates. No normalizedtrainingtargets.
+Audit archived, JSON9ad6349f..., Markdown1be39788.... Do not call all48factually
+wrong, or treat formatrepairalone as solvedreasoning.
+
+Selected next boundedformation/applicationslice, NOT another staticcardseed
+sweep: eightfixedfreshsource/changed-boardpairs, sourceIDs1851200..7 and
+transfer1851300..7. Botharms receive IDENTICAL concretevalidworkedsourcecheck;
+process gets source-specific sameunit/equalvalue explanation, activeformat
+gets serialization commentary. Childproducesownrecord, thenparentremoved
+and onlyunchangedchildnote carried to changedboard. Preflight oldliteral
+witnessmustfailontransfer whileanothervalidwitnessexists.32calls,total,one
+samplingseed7101,zero fits; allsourcefailuresretained andalltransfercasesrun.
+Countsandcopyingreported; noP1/weightpersistence. No outputbyhostrepair,
+noanswer-bearingpadding,noresponse-drivenreplacement/automaticfit. Real
+source/token/collisionchecks precedelaunch. Avicenna owns onlynewdemonstration
+module/tests; Main ownsresources. CumulativePID128957/GPU0continuesA1_before;
+15:19statusquery's10stoolbudgetexpired atnvidiaquery, NOT a jobfailure. No
+kill/retry/reservationrelease inferred. FormalC11remainsoffcriticalpath.

@@ -60,3 +60,31 @@ No more unchanged prompt/schema sweeps are selected. A next parenting path
 requires a justified child-authored material or repair interface, not labeling
 invalid generations as successful cognition. Simple hygiene remains active;
 formal C11 finishing/enforcement remains deferred per Rohin's instruction.
+
+## Independent raw-content audit — 15:19 UTC
+
+A standalone checker reproduces all48 strict nulls, prompt/case/seed bindings,
+native token and stop metadata without importing the production predicate.
+No verification mismatch is found. Crucially, there are NO quoted numeric
+coordinate strings in these outputs; coordinate-string normalization converts
+nothing. The integer wording does not leave the same observed representation
+failure, but v1/v2 board changes prevent causal attribution to wording alone.
+
+Exclusive failure partition:25 single-coordinate responses,8 invalid JSON,
+5 duplicate-key records,1 flat four-coordinate list,1 coordinate-object record,
+and8 schema-valid but factually wrong citations. All eight complete strict
+witnesses name cells outside the stated common unit; six also mismatch the
+claimed digit. Thus40 schema failures do not imply40 factually false witnesses:
+many simply never specify a complete one.
+
+An explicitly post-hoc literal reading of fully present malformed coordinates
+makes17 witnesses assessable, five factual and12 incorrect. No missing cell,
+group or digit is supplied, no alternative witness is searched, and no repaired
+record is emitted. This is neither a replacement endpoint nor training approval.
+All free-text lessons remain unverified future-check reminders. Total native
+usage is13,560 prompt tokens and2,066 output tokens.
+
+Audit files are archived as `receipts_20260912/astra_constraint_v2_content_audit_20260912.*`.
+Markdown SHA256 `1be39788c92f3b1664b417e5502b22608473a2a3478dd6e3181750fee85b9951`;
+JSON SHA256 `9ad6349fc90b3f379f1763c282a772f689e9805c63f117ea10a41c5e35af1a08`;
+script SHA256 `6f2d46b86ee2d482d285ccd1001417a2354eceacd9f7359edb9da9e148db94e2`.
