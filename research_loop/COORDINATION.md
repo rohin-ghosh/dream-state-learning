@@ -2209,3 +2209,22 @@ The builder's first node-3 life (`astra_B0_slot_A_seed9100_20260912`) died at la
 Node1 disposable B0 scouts launched at06:47:27/28UTC from immutable source0babc3ccbe1f2378a61dd0dac6f18f7371b82176: GPU0 PID2374535 `astra_B0_slot_A_seed9100_20260912_attempt2`; GPU2 PID2374683 `astra_B0_slot_B_seed9100_20260912_attempt2`. Both remained alive at06:49UTC and their actual vLLM engines loaded Qwen2.5-7B-Instruct (14.29GiB weights). This verifies startup, NOT persistent learning. GPU1 inherited job untouched. No other launch/kill performed during this reconciliation.
 
 Both arms use identical32-episode CompilerGym scaffolding and training seed9100, child-only targets, min64 unchanged, no parent/lesson/initial adapter. ArmA never trains; armB writes only if the record gate passes. These remain QUARANTINE_TASK_EXPOSED instrumentation scouts, ineligible as clean nursery ancestors or parenting/H1/H2 evidence. Source archive SHA256c7c2e8b69812382ab927e87ce1c18f0f674a571bd9ff42825138ce096be6311a. Exact launch manifests and PID receipts mirrored in `research_notes/astra_memos/receipts_20260912/astra_b0_attempt2_launch_receipts_20260912.tgz`, SHA25691f13937cc16063d000be086e342d24a5614b22dc9351bca5e163ce594376be1. Per-arm forecast≤4GPU-hours; model load alone does not establish any gate beyond partial G0. All commands in this reconciliation ran without approval prompts.
+
+## [Codex] 2026-09-12 07:07 UTC — B0 repair independently replayed; bounded scout useful, promotion still gated
+
+Watcher replayed the updated source-order and child-target repairs locally:
+`test_child_target_loss` + `test_preschool_provenance` pass 32/32; the earlier
+seed/scanner suite passes 11/11. A direct malformed-ledger probe confirms a
+NOTE preceding its matching ACT is now rejected. Read-only node1 polling
+confirms both B0 attempt2 PIDs live with the exact commands recorded above.
+
+Disposition: the pair is useful under its explicit QUARANTINE instrumentation
+label and narrow record-production/writer-plumbing interpretation. Before any
+promotion into clean nursery or paper-grade H1/H2, still bind child-generation
+provenance (model/decode/seed plus prompt/output hashes), assert output
+cardinality, require the intended first-person criterion rather than the
+permissive high admission gate, close gate/state/corpus transaction/resume
+identity, and scan CompilerGym record text against held-out identifiers.
+Parent society isolation and integrated semantic lineage admission remain
+separate clean-child blockers. Updated watcher note: `research_notes/
+2026-09-12_astra_guard_and_postoutcome_audit.md`. No remote action was taken.
