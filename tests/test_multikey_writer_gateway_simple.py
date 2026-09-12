@@ -1,6 +1,7 @@
 """CPU-only adversarial V10R1 contract tests; no tokenizer/model downloads."""
 
 import copy
+from contextlib import contextmanager
 import itertools
 import json
 import math
@@ -505,7 +506,84 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(result.stdout, "")
 
 
+class NativeBuildPreflightTests(unittest.TestCase):
+    @contextmanager
+    def prerequisites(self):
+        compiler = scout.shutil.which("gcc") or scout.shutil.which("clang")
+        if compiler is None:
+            self.skipTest("positive native compilation requires a local C compiler")
+        with tempfile.TemporaryDirectory() as directory:
+            include = Path(directory)
+            (include / "Python.h").write_text('#include "pyconfig.h"\n#define PY_MAJOR_VERSION 3\n')
+            (include / "pyconfig.h").write_text("\n")
+            paths = dict(scout.sysconfig.get_paths(), include=directory, platinclude=directory)
+            with patch.object(scout.sysconfig, "get_paths", return_value=paths), \
+                    patch.dict(scout.os.environ, {"CC": compiler}), \
+                    patch.object(scout.importlib.metadata, "version", return_value="fixture-triton"):
+                yield include
+
+    def test_real_compiler_with_fake_header_interface_and_stable_evidence(self):
+        with self.prerequisites() as include:
+            receipt = scout.native_build_preflight()
+            self.assertEqual(receipt, scout.native_build_preflight())
+            self.assertEqual(receipt["headers"], [[str(header), scout.file_hash(header)]
+                                                 for header in sorted(include.glob("*.h"))])
+            self.assertEqual(receipt["compiler_sha256"], scout.file_hash(receipt["compiler"]))
+            self.assertTrue(receipt["compiler_version"])
+            self.assertEqual(receipt["triton_version"], "fixture-triton")
+            self.assertEqual(receipt["returncode"], 0)
+            self.assertFalse(receipt["model_loaded"])
+            self.assertFalse(receipt["real_GPU_executed"])
+
+    def test_missing_compiler_fails_before_any_subprocess(self):
+        with patch.object(scout.shutil, "which", return_value=None), \
+                patch.object(scout.subprocess, "run") as run:
+            with self.assertRaisesRegex(scout.ContractError, "compiler missing"):
+                scout.native_build_preflight()
+            run.assert_not_called()
+
+    def test_missing_headers_fail_before_any_subprocess(self):
+        for filename in ("Python.h", "pyconfig.h"):
+            with self.subTest(filename=filename), tempfile.TemporaryDirectory() as directory:
+                include = Path(directory)
+                for other in {"Python.h", "pyconfig.h"} - {filename}:
+                    (include / other).write_text("\n")
+                with patch.object(scout.shutil, "which", return_value=sys.executable), \
+                        patch.object(scout.sysconfig, "get_paths", return_value=dict(include=directory, platinclude=directory)), \
+                        patch.object(scout.subprocess, "run") as run:
+                    with self.assertRaisesRegex(scout.ContractError, filename):
+                        scout.native_build_preflight()
+                    run.assert_not_called()
+
+    def test_unusable_transitive_header_fails_actual_compilation(self):
+        with self.prerequisites() as include:
+            (include / "pyconfig.h").write_text("#error broken development headers\n")
+            with self.assertRaisesRegex(scout.ContractError, "compilation failed"):
+                scout.native_build_preflight()
+
+    def test_header_byte_change_changes_receipt(self):
+        with self.prerequisites() as include:
+            before = scout.native_build_preflight()
+            (include / "pyconfig.h").write_text("#define PREFLIGHT_FIXTURE 1\n")
+            self.assertNotEqual(before["headers"], scout.native_build_preflight()["headers"])
+
+    def test_triton_metadata_version_is_pinned_without_import(self):
+        with self.prerequisites():
+            before = scout.native_build_preflight()
+            with patch.object(scout.importlib.metadata, "version", return_value="changed-triton") as version:
+                after = scout.native_build_preflight()
+                version.assert_called_once_with("triton")
+            self.assertNotEqual(before, after)
+            self.assertEqual(after["triton_version"], "changed-triton")
+
+
 class RealExecutorTests(unittest.TestCase):
+    def native_receipt(self):
+        return dict(kind="CPU_NATIVE_BUILD_PREFLIGHT", compiler="/fixture/cc",
+                    triton_version="fixture-triton",
+                    compiler_sha256=scout.digest("fixture compiler"), compiler_version="fixture cc",
+                    headers=[["/fixture/Python.h", scout.digest("fixture header")]],
+                    returncode=0, model_loaded=False, real_GPU_executed=False)
     """Executor wiring tests use fake snapshots/workers, never real HF or CUDA."""
 
     def config(self, base):
@@ -531,10 +609,68 @@ class RealExecutorTests(unittest.TestCase):
 
     def prepare(self, root, config):
         completed = subprocess.CompletedProcess([], 0, b"mock CPU-suite stdout", b"mock CPU-suite stderr")
-        with patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
+        with patch.object(scout, "native_build_preflight", return_value=self.native_receipt()), \
+                patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
                 patch.object(scout, "load_local_tokenizer", return_value=scout.FixtureTokenizer()), \
                 patch.object(scout.subprocess, "run", return_value=completed):
             return scout.prepare_real(root, config)
+
+    def test_prepare_native_failure_precedes_snapshot_tokenizer_and_gpu_access(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            with patch.object(scout.shutil, "which", return_value=None), \
+                    patch.object(scout, "pin_local_inputs") as pins, \
+                    patch.object(scout, "load_local_tokenizer") as tokenizer, \
+                    patch.object(scout, "gpu_identity") as hardware, \
+                    patch.object(scout, "launch_worker") as worker:
+                with self.assertRaisesRegex(scout.ContractError, "compiler missing"):
+                    scout.prepare_real(base / "run", self.config(base))
+                for mocked in (pins, tokenizer, hardware, worker):
+                    mocked.assert_not_called()
+            self.assertFalse((base / "run").exists())
+
+    def test_execute_native_drift_or_failure_precedes_gpu_and_attempt_marker(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / "run"
+            self.prepare(root, self.config(base))
+            for failure in (None, scout.ContractError("native build compiler missing"),
+                            scout.ContractError("native build Python.h missing")):
+                with self.subTest(failure=failure), \
+                        patch.object(scout, "native_build_preflight", return_value=dict(self.native_receipt(),
+                                     compiler_sha256=scout.digest("changed compiler")), side_effect=failure) as native, \
+                        patch.object(scout, "pin_local_inputs") as pins, \
+                        patch.object(scout, "load_local_tokenizer") as tokenizer, \
+                        patch.object(scout, "gpu_identity") as hardware, \
+                        patch.object(scout, "assert_gpu_idle") as idle, \
+                        patch.object(scout, "launch_worker") as worker:
+                    with self.assertRaisesRegex(scout.ContractError, "native build"):
+                        scout.execute_real(root, allow_gpu=True)
+                    native.assert_called_once_with()
+                    for mocked in (pins, tokenizer, hardware, idle, worker):
+                        mocked.assert_not_called()
+                self.assertFalse((root / "EXECUTION_STARTED.json").exists())
+            receipt = root / "native_build_preflight.json"
+            receipt.write_bytes(receipt.read_bytes() + b" ")
+            with self.assertRaisesRegex(scout.ContractError, "prepared artifact changed"):
+                scout.validate_prepared(root)
+
+    def test_cli_missing_compiler_and_no_gpu_opt_in_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            config = base / "config.json"
+            config.write_bytes(scout.canonical(self.config(base)))
+            command = [sys.executable, "-B", "-m", "organism_v6.multikey_writer_gateway_simple"]
+            result = subprocess.run(command + ["prepare", "--config", str(config), "--out", str(base / "run")],
+                                    capture_output=True, text=True, timeout=30,
+                                    env=dict(scout.os.environ, CC=str(base / "missing-cc"), PYTHONDONTWRITEBYTECODE="1"))
+            self.assertEqual(result.returncode, 2)
+            self.assertIn("NONREPORTABLE_ABORT: native build compiler missing", result.stderr)
+            self.assertFalse((base / "run").exists())
+            result = subprocess.run(command + ["execute", "--run", str(base / "run")],
+                                    capture_output=True, text=True, timeout=30)
+            self.assertEqual(result.returncode, 2)
+            self.assertIn("requires explicit --allow-gpu", result.stderr)
 
     def test_config_requires_pins_explicit_scope_seeds_and_protected_roots(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -648,6 +784,9 @@ class RealExecutorTests(unittest.TestCase):
             result = self.prepare(root, config)
             self.assertFalse(result["real_GPU_executed"])
             manifest = scout.validate_prepared(root)
+            self.assertEqual(scout.load_json(root / "native_build_preflight.json"), self.native_receipt())
+            self.assertEqual(manifest["artifact_hashes"]["native_build_preflight.json"],
+                             scout.digest(self.native_receipt()))
             self.assertEqual(len(manifest["fits"]), 4)
             for key, value in scout.EVIDENCE_BOUNDARY.items():
                 self.assertEqual(manifest[key], value)
@@ -666,7 +805,8 @@ class RealExecutorTests(unittest.TestCase):
             root = base / "run"
             config = self.config(base)
             completed = subprocess.CompletedProcess([], 1, b"", b"mock suite failure")
-            with patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
+            with patch.object(scout, "native_build_preflight", return_value=self.native_receipt()), \
+                    patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
                     patch.object(scout, "load_local_tokenizer", return_value=scout.FixtureTokenizer()), \
                     patch.object(scout.subprocess, "run", return_value=completed):
                 with self.assertRaises(scout.ContractError):
@@ -813,7 +953,8 @@ class RealExecutorTests(unittest.TestCase):
         return receipt
 
     def execute_mock(self, root, config, worker=None):
-        with patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
+        with patch.object(scout, "native_build_preflight", return_value=self.native_receipt()), \
+                patch.object(scout, "pin_local_inputs", return_value=self.pins(config)), \
                 patch.object(scout, "load_local_tokenizer", return_value=scout.FixtureTokenizer()), \
                 patch.object(scout, "gpu_identity", return_value=self.hardware(config)), \
                 patch.object(scout, "assert_gpu_idle"), \

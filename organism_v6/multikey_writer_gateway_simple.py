@@ -1,7 +1,7 @@
 """V10R1: CPU fixtures plus an explicitly scheduled four-fit HF executor.
 
 ``config-template`` and ``profile-plan`` do not load a model. ``prepare`` pins
-local snapshots, runs the real tokenizer preflight and CPU suite, and writes a
+local snapshots, checks native CPython builds, runs tokenizer preflight and the CPU suite, and writes a
 fresh immutable run. Only ``execute --allow-gpu`` launches GPU workers. Each
 fit and each adapter's generation/scoring operation uses a fresh process.
 ``replay-real`` checks sealed receipts and recomputes the full gate report.
@@ -30,10 +30,13 @@ from pathlib import Path
 import platform
 import random
 import re
+import shutil
 import signal
 import statistics
 import subprocess
 import sys
+import sysconfig
+import tempfile
 import time
 
 
@@ -786,6 +789,42 @@ def environment_identity():
     return dict(python=platform.python_version(), packages={name: importlib.metadata.version(name) for name in PACKAGES})
 
 
+def native_build_preflight():
+    require(platform.python_implementation() == "CPython", "native build requires CPython")
+    configured = os.environ.get("CC")
+    compiler = shutil.which(configured) if configured else (shutil.which("gcc") or shutil.which("clang"))
+    require(compiler is not None, "native build compiler missing (CC or gcc/clang)")
+    compiler = str(Path(compiler).resolve(strict=True))
+    paths = sysconfig.get_paths()
+    includes = sorted({str(Path(paths[key]).resolve()) for key in ("include", "platinclude") if paths.get(key)})
+    require(paths.get("include") and (Path(paths["include"]) / "Python.h").is_file(),
+            "native build CPython development header missing: Python.h")
+    require(any((Path(directory) / "pyconfig.h").is_file() for directory in includes),
+            "native build CPython development header missing: pyconfig.h")
+    headers = [[str(header), file_hash(header)] for directory in includes
+               for header in sorted(Path(directory).rglob("*.h")) if header.is_file()]
+    version = subprocess.run([compiler, "--version"], capture_output=True, text=True, timeout=30)
+    require(version.returncode == 0, "native build compiler version check failed: " + version.stderr)
+    source = "#include <Python.h>\nint main(void) { return PY_MAJOR_VERSION == 3 ? 0 : 1; }\n"
+    command = [compiler, "-std=c11", "-fPIC", "-c", "probe.c", "-o", "probe.o"]
+    command.extend("-I" + directory for directory in includes)
+    with tempfile.TemporaryDirectory(prefix="mwg-native-preflight-") as directory:
+        (Path(directory) / "probe.c").write_text(source)
+        result = subprocess.run(command, cwd=directory, capture_output=True, text=True, timeout=30)
+        require(result.returncode == 0 and (Path(directory) / "probe.o").is_file(),
+                "native build Python.h compilation failed: " + result.stderr)
+    return dict(kind="CPU_NATIVE_BUILD_PREFLIGHT", python=platform.python_version(),
+                triton_version=importlib.metadata.version("triton"),
+                python_executable=str(Path(sys.executable).resolve()),
+                compiler=compiler, compiler_sha256=file_hash(compiler),
+                compiler_version=version.stdout, compiler_version_stderr=version.stderr,
+                sysconfig_cc=sysconfig.get_config_var("CC"), include_directories=includes, headers=headers,
+                environment={key: os.environ.get(key) for key in
+                             ("CC", "PATH", "CPATH", "C_INCLUDE_PATH", "COMPILER_PATH", "GCC_EXEC_PREFIX")},
+                command=command, source_sha256=sha(source.encode()), returncode=result.returncode,
+                stdout=result.stdout, stderr=result.stderr, model_loaded=False, real_GPU_executed=False)
+
+
 def config_template():
     return dict(
         model=MODEL, model_path="/absolute/local/pinned-snapshot",
@@ -921,6 +960,7 @@ def prepare_real(path, config, run_tests=True):
     require(run_tests, "CPU suite may not be bypassed")
     validate_config(config)
     require(config["lease_cutoff_unix"] > time.time(), "lease expired")
+    native_build = native_build_preflight()
     pins = pin_local_inputs(config)
     tokenizer = load_local_tokenizer(config)
     material = build_material(**config["seeds"])
@@ -930,6 +970,7 @@ def prepare_real(path, config, run_tests=True):
     root = create_run(path, config["protected"])
     sources = source_hashes()
     artifacts = {"material.json": material, "tokenizer_preflight.json": preflight,
+                 "native_build_preflight.json": native_build,
                  "profile_plan.json": profile_plan(), "mwg10r1_inheritance_receipt.json": inherited}
     fits = {}
     for root_index, root_data in enumerate(material["roots"]):
@@ -999,6 +1040,7 @@ def validate_prepared(root, check_source=True):
             "frozen execution recipe/cap")
     if check_source:
         require(manifest["source_hashes"] == source_hashes(), "source changed after prepare")
+        require("native_build_preflight.json" in manifest["artifact_hashes"], "native build preflight receipt missing")
     for name, expected in manifest["artifact_hashes"].items():
         require(Path(name).name == name and file_hash(checked_path(root / name)) == expected, "prepared artifact changed")
     for name, expected in seal["receipt_hashes"].items():
@@ -1327,6 +1369,8 @@ def execute_real(path, allow_gpu=False):
     manifest = validate_prepared(root)
     config = manifest["config"]
     require(not (root / "EXECUTION_STARTED.json").exists(), "execution already attempted; no rescue or refit")
+    require(native_build_preflight() == load_json(root / "native_build_preflight.json"),
+            "native build environment changed after prepare")
     pins = pin_local_inputs(config)
     hardware = gpu_identity(config)
     assert_gpu_idle(config)
