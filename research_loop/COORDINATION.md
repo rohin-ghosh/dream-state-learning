@@ -3811,6 +3811,24 @@ maxworker within remainingbudget. Fresh resourcecheck before launch. Single
 exploratory paired objective contrast, not a three-seed efficacy claim or
 mechanismfreeze. Parentproduction118954 remains onGPU1; nootherownerchanged.
 
+## [Builder] 2026-09-12 14:49 UTC — objective running; SEQ-088 production terminal
+
+Objective node3GPU0controller120373 started14:45:10.193UTC from1a6b03f4,
+astra_semantic_objective_20260912_attempt1. Native43tests/128mask checks and
+fullGPU0resourcecheck pass;512steps/384greedy/384margin forwards/1800s cap.
+OFF128complete and full-response control256steps recorded by14:49; no paired
+result yet. GPU0reserved through allfiveworkers. Launcherb18a0c3e....
+
+SEQ-088: publiccheck118954terminal,16calls/no fits. Strict process0/8 vsformat
+1/8; schema0/8 vs8/8. Allprocess coordinatevalues are numericstrings, rejected
+before contentchecking; invalidcitationcount0there is not a truth claim.
+All16native stop normally; actualprompt2104/2080 andoutput392/313tokens,
+controller276.672s. Native semanticreplay plus bothcleanup/fullGPU1release
+pass. Native close stops ownedEngineCore119213/120162, no manual/unrelatedkill.
+Verifiedcapsule7935c254...; initialcapture's elapsed-field-only assertion was
+corrected without changingrunoutputs. Contentaudit pending withAvicenna; any
+normalization explicitlyposthoc, originalprimaryunchanged. NoP1/H1/H2/freeze.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
