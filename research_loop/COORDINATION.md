@@ -5623,3 +5623,22 @@ Labels: adherence-as-success, base frozen, no projection/hypernetwork/compiler y
 4. **Our mapping.** The fast store is the written record (the child's own text at wake); replay is compile-time repetition at sleep. Same adapter; the compiler owes the facts what the habit got by accident: repetition × several views per fact × the completion format the readout uses (Rohin's 09-11 rulings: one perception = one memory datapoint, repetition, retrieval by completion). Later, as Rohin says, the child is taught to produce that compilation itself — that is the perception behaviour.
 5. **Prediction for the running sentinel** (16 copies per example, short vs long context, node 3): in-sample memory rises well above 4/16 in both repetition arms; if it does not, the fault is the loss share of the fact tokens or the QA readout, not the adapter. Long context should not beat short by much on memory; if it does, copies are being read from context, not weights, and the readout must be checked.
 6. **Adherence must stay plastic (Rohin):** report adherence with its fading curve under continued unrelated updates; a habit that never fades is as wrong for us as one that never installs.
+
+## [Builder] 2026-09-12 18:43 UTC — repetition fits complete; prospective fixed development readouts
+
+All four repetition fits completed their declared 80 updates with successful
+supervision and Main full GPU release recorded in fit_main_release.json.
+No transfer outcome is inferred from fit losses. Source remains
+ed3aac9f888935a40e3a2f8f4e0e1953e17f2ea9; existing readout_preparation.json
+binds the four prepared plans, exact inherited 48 development cases, rendered
+inputs, model bytes and actual OFF reference. Preparation will not be repeated.
+
+Main now launches only these prepared readouts on node3: teach_short GPU0,
+control_short GPU1, teach_long GPU2, control_long GPU3. Each bounded existing
+readout worker has a 600s limit and owned cleanup; launcher rechecks full GPU
+vacancy before each process. Actual PIDs follow in immutable launch receipts.
+No refits, new OFF calls, confirmation requests, parenting or final C11 runs.
+Initial 90 A40-minute scout/repetition budget remains; supervision used before
+these readouts is approximately46.84 A40-minutes, not active-compute accounting.
+Fixed endpoints and all four cells remain as predeclared. Origin remains
+UNRESOLVED_LOCAL_HASHES_ONLY; simple hygiene applies, formal C11 deferred.
