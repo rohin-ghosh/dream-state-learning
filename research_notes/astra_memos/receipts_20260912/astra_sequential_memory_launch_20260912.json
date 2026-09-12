@@ -1,0 +1,69 @@
+{
+  "automatic_progression": false,
+  "claim": "AUTHORED_SEQUENTIAL_FIXED_BUDGET_NOT_NEW_DOSE_MATCHED_NOT_PARENTING",
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_sequential_memory_pair_20260912.py",
+    "run",
+    "--source-root",
+    "/localhome/local-rohing/astra_sources/5a1f300fed4b7f1ef54524869c2bf11509e965ca",
+    "--source-id",
+    "5a1f300fed4b7f1ef54524869c2bf11509e965ca",
+    "--runroot",
+    "/localhome/local-rohing/astra_diagnostics/astra_sequential_memory_20260912_attempt2/seed0_pair_attempt2",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "controller_bound_seconds": 5100,
+  "device": "0",
+  "expected_custody_deadline_unix": 1789261540.672863,
+  "expected_hard_end_unix": 1789261240.672863,
+  "external_collection_margin_seconds": 300,
+  "generation_calls": 640,
+  "gpu": {
+    "gpu_uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      },
+      {
+        "command": "sshd: local-rohing@notty",
+        "pid": "263953"
+      }
+    ]
+  },
+  "independent_pidfd_watcher": false,
+  "launcher_sha256": "9b73e13450531f79c732218682f3b0031ba16d24d72642d76a6a949b75808b12",
+  "model_origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "monitoring": "Main plus controller alarm and owned worker supervisors",
+  "native_cpu_sha256": "da5bc4cb28f12bcee27ccc35156e2be8c9960040954faa54ef9d84a13ee18f44",
+  "node": 3,
+  "parent_plan_sha256": "4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388",
+  "parent_seed": 0,
+  "pgid": 263983,
+  "pid": 263983,
+  "plan_sha256": "9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49",
+  "root": "/localhome/local-rohing/astra_diagnostics/astra_sequential_memory_20260912_attempt2/seed0_pair_attempt2",
+  "s0_adapter_files": {
+    "DONE": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+    "README.md": "fb5e3f69430ada914e1ea7492de58c8a0b4efff16de168cb0d0d3c8917116acc",
+    "adapter_config.json": "81b48c4f36b56dfb8314b2ff979d093c0c117e1994fc9415d525273f170a6140",
+    "adapter_model.safetensors": "60a8bd8c132308499621d77df31c1738e1444c976fe5d8b20f879bd94c49df2f",
+    "train_manifest.json": "031d4cc007dc8fb831a7cb1354a7d9859eb751701fc515fcf9372c55d4a97bd0",
+    "train_meta.json": "531d16c9d20be6c551c5abeb1fd984dcb43d2d066f26c726c4f21075421dbd08"
+  },
+  "script_sha256": "29d70e46f0c65817f65f52f6ed310fcfaa91cda64928f9bdfc54b70834a0c232",
+  "seed": 0,
+  "source": "/localhome/local-rohing/astra_sources/5a1f300fed4b7f1ef54524869c2bf11509e965ca",
+  "source_branch": "FOUR_VIEW",
+  "source_commit": "5a1f300fed4b7f1ef54524869c2bf11509e965ca",
+  "started_utc": "2026-09-12T23:35:40.672863+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED",
+  "worker_count": 9
+}
