@@ -43,7 +43,8 @@ class VLLMBackend:
     def __call__(self, prompt: str, max_tokens: int = 400,
                  temperature: float = 0.7, seed: int | None = None) -> str:
         return self.batch([prompt], max_tokens=max_tokens,
-                          temperature=temperature)[0]
+                          temperature=temperature,
+                          seeds=[seed] if seed is not None else None)[0]
 
 
 def wait_gpu_free(threshold_mb: int = 3000, timeout_s: int = 90) -> bool:

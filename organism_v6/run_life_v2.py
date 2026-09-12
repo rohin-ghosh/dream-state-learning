@@ -182,7 +182,7 @@ def assert_split_hygiene(gym, rows) -> None:
     held = set(gym.exam_set()) | set(gym.gate_set() or [])
     held |= {h.replace("benchmark://", "") for h in held}
     seen = {r.get("episode_id") for r in rows
-            if r.get("kind") in ("act", "thought", "note")}
+            if r.get("kind") in ("act", "thought", "note", "note_after")}
     bad = sorted(e for e in seen if e and (e in held or
                                          e.replace("benchmark://", "") in held))
     split_of = getattr(gym, "split_of", None)
@@ -199,7 +199,7 @@ def assert_split_hygiene(gym, rows) -> None:
                            f"ledger: {bad[:5]}")
 
 
-_LEAK_TEXT_KINDS = ("thought", "note", "reflection")
+_LEAK_TEXT_KINDS = ("thought", "note", "reflection", "note_after")
 
 
 def deployment_leak_regex(terms=None):
@@ -221,7 +221,8 @@ def leak_scan_ledger(rows, terms=None, since: int = 0) -> dict:
     for r in rows[since:]:
         if r.get("kind") not in _LEAK_TEXT_KINDS:
             continue
-        found = rx.findall(f"{r.get('prompt') or ''}\n{r.get('note') or ''}")
+        found = rx.findall(f"{r.get('prompt') or ''}\n{r.get('note') or ''}\n"
+                           f"{r.get('text') or ''}")
         if found:
             hit_rows += 1
             for t in found:
@@ -305,6 +306,9 @@ def main():
     ap.add_argument("--budget-ticks", type=int, default=16)
     ap.add_argument("--wake-batch", type=int, default=8)
     ap.add_argument("--rank", type=int, default=16)
+    ap.add_argument("--train-seed", type=int, default=None,
+                    help="explicit optimizer/LoRA initialization seed for new "
+                         "experiments; omitted preserves the historical recipe")
     ap.add_argument("--parent-url", default=None,
                     help="enable the thinking-pattern parent (parent_brief) "
                          "at each sleep; e.g. http://127.0.0.1:8011/v1. "
@@ -518,6 +522,8 @@ def main():
         schedule = curriculum.load_schedule(args.curriculum)
     group = None
     if args.clone_group:
+        if args.train_seed is not None:
+            raise SystemExit("--train-seed is not yet supported for clone groups")
         if args.arm != "B":
             raise SystemExit("--clone-group needs --arm B (one shared adapter "
                              "lineage)")
@@ -1045,6 +1051,8 @@ def main():
                                 "--out", stage, "--rank", str(args.rank)]
                             if args.plasticity:
                                 train_cmd += ["--lr", str(lr_)]
+                            if args.train_seed is not None:
+                                train_cmd += ["--seed", str(args.train_seed)]
                             rc = subprocess.run(
                                 train_cmd, cwd=os.path.dirname(HERE)).returncode
                             log(f"[sleep {i}] train rc={rc} "

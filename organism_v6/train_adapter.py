@@ -10,6 +10,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
+
+
+def seed_training(seed, torch_module):
+    if seed is not None:
+        random.seed(seed)
+        torch_module.manual_seed(seed)
 
 
 def main():
@@ -19,11 +26,14 @@ def main():
     ap.add_argument("--rank", type=int, default=16)
     ap.add_argument("--epochs", type=int, default=3)
     ap.add_argument("--lr", type=float, default=1e-4)
+    ap.add_argument("--seed", type=int, default=None)
     args = ap.parse_args()
 
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
     from peft import LoraConfig, get_peft_model
+
+    seed_training(args.seed, torch)
 
     model_name = os.environ.get("V6_MODEL", "Qwen/Qwen2.5-7B-Instruct")
     corpus = json.load(open(args.corpus))["corpus"]
@@ -62,10 +72,15 @@ def main():
             total_tokens += int(batch.attention_mask.sum())
     model.save_pretrained(args.out)
     with open(os.path.join(args.out, "train_meta.json"), "w") as f:
-        json.dump(dict(recipe="v1_frozen", n_texts=len(corpus), steps=steps,
-                       tokens=total_tokens, rank=args.rank,
-                       epochs=args.epochs, lr=args.lr,
-                       final_loss=float(loss)), f, indent=1)
+        metadata = dict(recipe="v1_frozen", n_texts=len(corpus), steps=steps,
+                        tokens=total_tokens, rank=args.rank,
+                        epochs=args.epochs, lr=args.lr,
+                        final_loss=float(loss))
+        if args.seed is not None:
+            metadata.update(recipe="v1_frozen_seeded", seed=args.seed,
+                            deterministic_algorithms=
+                            torch.are_deterministic_algorithms_enabled())
+        json.dump(metadata, f, indent=1)
     open(os.path.join(args.out, "DONE"), "w").write("ok\n")
     print(f"TRAIN_DONE recipe=v1 texts={len(corpus)} steps={steps} "
           f"tokens={total_tokens} loss={float(loss):.4f}")
