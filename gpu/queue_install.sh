@@ -10,11 +10,11 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 QUEUE_DIR="${QUEUE_DIR:-$HOME/queue}"
 mkdir -p "$QUEUE_DIR"/{pending,running,done,failed,rejected,logs}
 if [ -n "${1:-}" ]; then
-  [[ "$1" =~ ^[12]$ ]] || { echo "queue_install: NODE_ID must be 1 or 2" >&2; exit 2; }
+  [[ "$1" =~ ^[123]$ ]] || { echo "queue_install: NODE_ID must be 1, 2 or 3" >&2; exit 2; }
   echo "$1" > "$QUEUE_DIR/node_id"
 fi
 node=$(cat "$QUEUE_DIR/node_id" 2>/dev/null)
-[ -n "$node" ] || echo "queue_install: WARNING no node id (pass 1 or 2); NODE_ONLY= jobs will be held" >&2
+[ -n "$node" ] || echo "queue_install: WARNING no node id (pass 1, 2 or 3); NODE_ONLY= jobs will be held" >&2
 command -v nvidia-smi >/dev/null 2>&1 || echo "queue_install: WARNING nvidia-smi not on PATH; the runner will see no free GPUs" >&2
 command -v setsid >/dev/null 2>&1 || echo "queue_install: WARNING setsid not found; using plain nohup" >&2
 

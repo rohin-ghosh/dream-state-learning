@@ -121,7 +121,7 @@ validate_job() {  # uses NAME CMD NGPU NODE_ONLY, TOTAL_GPUS -> echoes a reject 
   [[ "$NAME" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "bad NAME '$NAME' (allowed: A-Z a-z 0-9 . _ -)"; return; }
   [ -n "$CMD" ] || { echo "empty CMD"; return; }
   [[ "$NGPU" =~ ^[1-9][0-9]*$ ]] || { echo "NGPU must be a positive integer (got '$NGPU')"; return; }
-  [ -z "$NODE_ONLY" ] || [[ "$NODE_ONLY" =~ ^[12]$ ]] || { echo "NODE_ONLY must be 1 or 2 (got '$NODE_ONLY')"; return; }
+  [ -z "$NODE_ONLY" ] || [[ "$NODE_ONLY" =~ ^[123]$ ]] || { echo "NODE_ONLY must be 1, 2 or 3 (got '$NODE_ONLY')"; return; }
   lc=$(printf '%s' "$CMD" | tr 'A-Z' 'a-z')
   for tok in $FORBIDDEN_TOKENS; do
     case "$lc" in *"$(printf '%s' "$tok" | tr 'A-Z' 'a-z')"*)

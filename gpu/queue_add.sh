@@ -17,7 +17,7 @@ mkdir -p "$PENDING" "$QUEUE_DIR/running" "$QUEUE_DIR/done" "$QUEUE_DIR/failed" "
 [[ "$NAME" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "queue_add: NAME must match [A-Za-z0-9._-]+ (got '$NAME')" >&2; exit 2; }
 [[ "$NGPU" =~ ^[1-9][0-9]*$ ]] || { echo "queue_add: NGPU must be a positive integer (got '$NGPU')" >&2; exit 2; }
 [ -z "${AFTER:-}" ] || [[ "$AFTER" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "queue_add: AFTER must be a job NAME" >&2; exit 2; }
-[ -z "${NODE_ONLY:-}" ] || [[ "$NODE_ONLY" =~ ^[12]$ ]] || { echo "queue_add: NODE_ONLY must be 1 or 2" >&2; exit 2; }
+[ -z "${NODE_ONLY:-}" ] || [[ "$NODE_ONLY" =~ ^[123]$ ]] || { echo "queue_add: NODE_ONLY must be 1, 2 or 3" >&2; exit 2; }
 [ -z "${MIN_FREE_MIN:-}" ] || [[ "$MIN_FREE_MIN" =~ ^[0-9]+$ ]] || { echo "queue_add: MIN_FREE_MIN must be an integer (minutes)" >&2; exit 2; }
 lc=$(printf '%s' "$CMD" | tr 'A-Z' 'a-z')
 for tok in run_life_v2 r6_ r7_ bootstrap; do
