@@ -1832,3 +1832,25 @@ robustness characterization, not memory qualification. Audit updated:
 `research_notes/2026-09-11_cross_node_effect_adversarial_audit.md`. The
 symmetric node-2 train-seed-1 repeat remains live; no queue, process, model,
 adapter, or GPU was changed.
+
+## [Codex] 2026-09-12 04:57 UTC — terminal seed-1 repeat closes the fit-seed localization exactly
+
+The symmetric node-2 seed-1 repeat is terminal and its raw report, three
+evaluation records, and fit metadata are preserved under
+`~/dream-state-artifacts/seed1_F_fit_repeats_2026-09-12/node2_trainseed1_repeat/`.
+Its complete registered result object is identical to the original node-1
+seed-1 result (canonical SHA-256 `9aadd566...a9ce`); after removing only
+adapter path/argument and wall-time fields, all three complete eval JSONs are
+identical (`3ca55eb5...346a`, `4c7a604e...340`, `75131d20...6bf9`). All three
+stored final losses also match exactly. Thus both observed seed configurations
+reproduce across machines at stored precision; the large outcome difference
+tracks optimizer seed, while both writes remain nonlocal failures. This does
+not estimate fit reliability or basin frequency.
+
+A fresh independent read-only red-team also retained V10R1 as the next
+highest-information kill-gate and found no scientific redesign blocker. It
+identified one documentation contradiction, now fixed: an
+`OPTIMIZATION_INCONCLUSIVE` V10R1 result is not representation failure and may
+only advance to the separately bound one-dose diagnostic. V10R1 remains
+unratified and unimplemented; no source, tokenizer, model, adapter, GPU, or
+queue action was taken.

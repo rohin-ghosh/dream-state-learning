@@ -150,9 +150,13 @@ efficiency measure. None is inferred from a writer-gateway or C11 pass.
 
 ## Stop rules
 
-- If V10R1 does not pass conditional mapping plus every spill/interface gate,
-  stop scaling parenting through that writer representation. Use the result
-  to characterize broad-habit writing and redesign the representation.
+- If V10R1 returns `INTERFACE_INVALID`, `BINDING_WITH_SPILL`, or
+  `GATEWAY_NEGATIVE`, stop scaling parenting through that writer
+  representation and redesign the failed interface, locality, or conditional
+  representation component. If it returns `OPTIMIZATION_INCONCLUSIVE`, infer
+  no writer-capacity result: stop downstream qualification and permit at most
+  the separately bound one-dose diagnostic; do not treat an unlucky or
+  under-dosed fit as evidence that the representation cannot work.
 - If V10R1 passes but the unrelated write erases the old mapping, do not start a
   paper-grade childhood; solve cumulative retention first.
 - If the matched text carrier succeeds while the adapter fails, localize the

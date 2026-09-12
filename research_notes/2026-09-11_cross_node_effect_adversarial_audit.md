@@ -191,6 +191,35 @@ The two refit directories already contain exact copies of the world banks,
 distractor, and manifest; the F corpora will be deterministically rebuilt.
 The queued commands correctly set seed 1 only for `rep_seed1`.
 
+## Terminal matched-seed closure (2026-09-12 04:53 UTC)
+
+The node-2 seed-1 repeat is now terminal across all three banks. Its complete
+`F_r16k16__across__r8__lam1` result object is identical to the original
+node-1 seed-1 result (canonical SHA-256
+`9aadd56616ff94812cb88213935dea3a073759ed15fbe262f7f1ed1e54b4a9ce`).
+After removing only `adapter`, `adapter_arg`, and `seconds`, the three complete
+evaluation JSON hashes match pairwise:
+
+| bank | canonical evaluation SHA-256 |
+|---|---|
+| 0 | `3ca55eb526d2ae57d61ce2f46038c1848da22852825b2cf0237f293859d66867` |
+| 1 | `4c7a604e4b4b44314252a17fe37dab7c22bbaa454d2f7098fb9a3e61c7138340` |
+| 2 | `75131d20b1c0de9c6d5922e1d4132fd862be299e3aab680df4c0e96bfd056bf9` |
+
+The stored final losses also match exactly across machines:
+`1.1145683526992798`, `1.2224891185760498`, and `1.220076322555542`.
+The repeat therefore reproduces the original seed-1 pooled result exactly at
+stored precision: trained-frame probability `0.830`, owner-versus-lookalike
+`I_d_frame = 2.013 [1.365, 2.748]`, and spill `0.392`.
+
+Together with the completed seed-0 repeats, both observed training-seed
+configurations reproduce across machines and reruns at stored precision. This
+closes the apparent node effect for these measured fits: their large outcome
+difference tracks configured optimizer seed. It does **not** establish
+universal deterministic training, rule out a node-by-seed interaction outside
+these observations, estimate basin frequencies, or qualify either writer;
+both configurations remain far above the `0.03` locality limit.
+
 ## What would remain necessary for a positive node-effect claim
 
 A positive machine attribution would still require a balanced design,
@@ -215,8 +244,9 @@ Allowed:
 
 - effective training examples match exactly across the compared runs;
 - frozen evaluation inputs and OFF outputs match exactly;
-- the seed-0 final loss and every cue-level stored ON/OFF probability
-  reproduced across machines at stored precision;
+- under both observed configured seeds, all three final losses and every
+  cue-level stored ON/OFF probability reproduced across machines at stored
+  precision;
 - in these observed fits, the original result tracked configured training seed
   and did not require a material machine effect;
 - single-fit bank intervals quantify owner/cue sampling only and omit
