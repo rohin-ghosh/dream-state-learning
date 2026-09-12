@@ -25,7 +25,7 @@ a two-cycle causal relay in which a child acts and observes, organizes old
 experiences before their later use is revealed, selects an informative
 experiment from recalled content, writes its outcome in a second sleep, and
 faces a delayed task requiring one old connection and the new fact. Source-
-binding shuffles, DREAM-null rows, adapter removal, wrong-life mounts, link
+binding derangements, DREAM-deranged rows, adapter removal, wrong-life mounts, link
 cuts, semantic twins, and an exact-text ceiling localize every step. Finally,
 independently raised children receive either adaptive target-blind parenting
 or no teacher, after which the teacher and all childhood text are deleted.
