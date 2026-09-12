@@ -1,0 +1,1322 @@
+{
+  "arms": {
+    "process": {
+      "artifact_hash": "19e9368f6b7b18182183338ea8f21eba2987eb3065f46d4660f9accb075e67f8",
+      "available": 16,
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "3",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 87252,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      },
+      "episodes": [
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+              "episode_id": "rg/mini_sudoku/1850000",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.3375,
+              "surprise": -0.26249999999999996,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850000",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+            "episode_id": "rg/mini_sudoku/1850000",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.3375,
+            "surprise": -0.26249999999999996,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "e551c405fcf062b5112733fe72a69ea2b24f8841ee484e0d3ed9ebce5a309f49",
+          "output_tokens": 76,
+          "prompt_sha256": "65f726e4d6703068d551ff60868f3376b50df6908a07bbb485333969b9efeb34",
+          "request_index": 0
+        },
+        {
+          "actions": [
+            {
+              "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850001",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850001",
+          "first_action": {
+            "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850001",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "30c98762af9a0bcc59a23adaec6559e6844f3ea58488ef509f7a461cecd1887b",
+          "output_tokens": 38,
+          "prompt_sha256": "6d23a71ad653ae880d5ca9fec536a09c69a5336d115bb69279fa083beeca163b",
+          "request_index": 1
+        },
+        {
+          "actions": [
+            {
+              "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850002",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850002",
+          "first_action": {
+            "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850002",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "3eb1a01060304ea95d9cf7a9262d0ead85096681094e380b4ac9b5f523f3b084",
+          "output_tokens": 72,
+          "prompt_sha256": "489ec7b501fdc353558f3ce44dd8dbd0173e7153ee6d6c230452bc4463550000",
+          "request_index": 2
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+              "episode_id": "rg/mini_sudoku/1850003",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.225,
+              "surprise": -0.375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850003",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+            "episode_id": "rg/mini_sudoku/1850003",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.225,
+            "surprise": -0.375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "0d7b77053e2a1412f32277398c9caaeb031417f46700d74e3cfe54d3ab7c8821",
+          "output_tokens": 86,
+          "prompt_sha256": "7aa8ee023037a25390039cfcd5e0ac99d25d61eb6db19159556e8a516e0b8eb6",
+          "request_index": 3
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1 ;",
+              "episode_id": "rg/mini_sudoku/1850004",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850004",
+          "first_action": {
+            "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1 ;",
+            "episode_id": "rg/mini_sudoku/1850004",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "6600ac87736bd4f9927bb0d95ca9efc0b995a6a46f75a510603189ff6a864edf",
+          "output_tokens": 64,
+          "prompt_sha256": "f27bd62f0daab9995eb5af967457d895b40af27f53d5a52ef8f9cd6a10a33567",
+          "request_index": 4
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+              "episode_id": "rg/mini_sudoku/1850005",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 1.00 (accepted)",
+              "prediction": 0.6,
+              "score": 1.0,
+              "surprise": 0.4,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850005",
+          "first_action": {
+            "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+            "episode_id": "rg/mini_sudoku/1850005",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 1.00 (accepted)",
+            "prediction": 0.6,
+            "score": 1.0,
+            "surprise": 0.4,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0,
+          "output_sha256": "1a9920a208ebca5535e20e4535ad4f7d3d53744f5613e9cd16fd84f1da49544b",
+          "output_tokens": 68,
+          "prompt_sha256": "9c56a6f4bb0e316a4e416564ebfef03f7fdecd5006c84e24e0f161bc53d4efb1",
+          "request_index": 5
+        },
+        {
+          "actions": [
+            {
+              "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ;",
+              "episode_id": "rg/mini_sudoku/1850006",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850006",
+          "first_action": {
+            "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ;",
+            "episode_id": "rg/mini_sudoku/1850006",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "83d52d74276d44bbbda0860f6f0083737349646efc7cf55d023fa64bd6be7ab7",
+          "output_tokens": 56,
+          "prompt_sha256": "3b2c5dbce6cd2e36c04540d278032839eb239104be490fd32272471caa27fc54",
+          "request_index": 6
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 3 2 1 ; 2 4 1 3 ; 3 1 4 2",
+              "episode_id": "rg/mini_sudoku/1850007",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.45 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.45,
+              "surprise": -0.04999999999999999,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850007",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 3 2 1 ; 2 4 1 3 ; 3 1 4 2",
+            "episode_id": "rg/mini_sudoku/1850007",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.45 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.45,
+            "surprise": -0.04999999999999999,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.45,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.45,
+          "output_sha256": "938637e683703710549fb5c7ae450c82b8d067b5363cd654d32d91935395f48f",
+          "output_tokens": 65,
+          "prompt_sha256": "10cd12f17e91cb314a3f1ce60242415ea5e9c1cec70ab2e497408f90ecca81aa",
+          "request_index": 7
+        },
+        {
+          "actions": [
+            {
+              "action": "3 4 1 2 ; 2 1 3 4 ; 4 2 4 1 ; 1 3 2 3 ;",
+              "episode_id": "rg/mini_sudoku/1850008",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.39 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.39375,
+              "surprise": 0.09375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850008",
+          "first_action": {
+            "action": "3 4 1 2 ; 2 1 3 4 ; 4 2 4 1 ; 1 3 2 3 ;",
+            "episode_id": "rg/mini_sudoku/1850008",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.39 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.39375,
+            "surprise": 0.09375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.39375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.39375,
+          "output_sha256": "cdcc8d78948371ddf5e6dbf0c9ad2d68f174d2386b0eba7d4010828c659dcb95",
+          "output_tokens": 66,
+          "prompt_sha256": "66fc82edf98c6e1033fe3a2faa945f8b84e4f43f080b010fb84ea2e9d296feec",
+          "request_index": 8
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 2 1 4 3 ; 4 3 2 1 ; 3 4 1 2 ;",
+              "episode_id": "rg/mini_sudoku/1850009",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.3375,
+              "surprise": -0.16249999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850009",
+          "first_action": {
+            "action": "1 2 3 4 ; 2 1 4 3 ; 4 3 2 1 ; 3 4 1 2 ;",
+            "episode_id": "rg/mini_sudoku/1850009",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.3375,
+            "surprise": -0.16249999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "6367e67ee1937ecfd3b29bc3e5a6df1676255e3ee59fa20ef5e22cb31013c4e5",
+          "output_tokens": 71,
+          "prompt_sha256": "c6506ae1473384c3aad730619b753ea7c82273faa6b1529e0805edfe379caf4f",
+          "request_index": 9
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ;",
+              "episode_id": "rg/mini_sudoku/1850010",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850010",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ;",
+            "episode_id": "rg/mini_sudoku/1850010",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "6702e6037e77d8c4c5f45ec61f3fadcd6bb76035398e64ebe105e1d94b9b3a5a",
+          "output_tokens": 54,
+          "prompt_sha256": "7c6b7dbba4ee9df99ce2f84793c15e3783c615ac790ec6587f4bae9b0206fdb3",
+          "request_index": 10
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+              "episode_id": "rg/mini_sudoku/1850011",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.75,
+              "score": 0.0,
+              "surprise": -0.75,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850011",
+          "first_action": {
+            "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+            "episode_id": "rg/mini_sudoku/1850011",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.75,
+            "score": 0.0,
+            "surprise": -0.75,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "4a3dd216e3c34926ace1c45a672caadc77c541be85fa3cf42097a724150cb66f",
+          "output_tokens": 65,
+          "prompt_sha256": "84ca8865f4747987660d8204f352f9d11a3ded8f30d11c9b2ddab77371e53c4b",
+          "request_index": 11
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+              "episode_id": "rg/mini_sudoku/1850012",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850012",
+          "first_action": {
+            "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+            "episode_id": "rg/mini_sudoku/1850012",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "fddbda22b95f9f147ce8a78c04cd0ee78bb205e299311b9f1d4dd8b2b37fd093",
+          "output_tokens": 70,
+          "prompt_sha256": "1b519e1214c53bbd3e89634e45926dc8aa0cb536c9d81d7f1bbb4af0f1f98807",
+          "request_index": 12
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 3 ; 2 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+              "episode_id": "rg/mini_sudoku/1850013",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.1125,
+              "surprise": -0.4875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850013",
+          "first_action": {
+            "action": "1 2 3 3 ; 2 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+            "episode_id": "rg/mini_sudoku/1850013",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.1125,
+            "surprise": -0.4875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "68246cf138d0108cc000cb964eb79ea8d3dc260376b5a940ba9507d551141e3f",
+          "output_tokens": 78,
+          "prompt_sha256": "77b2869682fe98a1b961879f90d0e7e95a36dd5e43a5754e07d8b10e0b06f531",
+          "request_index": 13
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 1 2 ; 2 _ _ 2 ; 1 3 _ 4 ; _ _ _ 1",
+              "episode_id": "rg/mini_sudoku/1850014",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.1125,
+              "surprise": -0.3875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850014",
+          "first_action": {
+            "action": "1 3 1 2 ; 2 _ _ 2 ; 1 3 _ 4 ; _ _ _ 1",
+            "episode_id": "rg/mini_sudoku/1850014",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.1125,
+            "surprise": -0.3875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "740e5642ae439b3b639c5f3648d948e6491248d22f8f2b5ed59071190513f70c",
+          "output_tokens": 104,
+          "prompt_sha256": "742725068a485030988d00ab57f24770d56230f1d5c046f1f7f85d31d261c7d6",
+          "request_index": 14
+        },
+        {
+          "actions": [
+            {
+              "action": "3 1 2 _ ; 1 3 _ _ ; _ _ _ 4 ; _ _ 4 1 ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850015",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850015",
+          "first_action": {
+            "action": "3 1 2 _ ; 1 3 _ _ ; _ _ _ 4 ; _ _ 4 1 ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850015",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "b5743aad241b3d8da7fd9b23969a08751fdcc302c8f22780431d6cfb8f9fee7b",
+          "output_tokens": 46,
+          "prompt_sha256": "ce144bb4ea559a272756ac53a1c43c1ad61682deec0df676a34f4f115d703ebf",
+          "request_index": 15
+        }
+      ],
+      "format_valid": 7,
+      "output_tokens": 1079,
+      "outputs_at_retokenized_cap": 0,
+      "raw_native_first_score_mean": 0.21654829545454546,
+      "score_mean": 0.19257812500000002,
+      "solves": 1,
+      "total_actions": 16
+    },
+    "sham": {
+      "artifact_hash": "63f5e11c15f1a881e6f0489b5e9d987af6a214c8f863b84f50c1befa5f4d3f13",
+      "available": 16,
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "3",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 88374,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      },
+      "episodes": [
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+              "episode_id": "rg/mini_sudoku/1850000",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850000",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+            "episode_id": "rg/mini_sudoku/1850000",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "3f68f14cce6c623bf6cde3c77546082b7b6ce6c746915da401aa1080fb397a71",
+          "output_tokens": 72,
+          "prompt_sha256": "9ef66aeb1ca917d24c1cfa769fd6dc41e087f5ef7a0bb8fb241619ff5b7431f5",
+          "request_index": 0
+        },
+        {
+          "actions": [
+            {
+              "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850001",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850001",
+          "first_action": {
+            "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850001",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "30c98762af9a0bcc59a23adaec6559e6844f3ea58488ef509f7a461cecd1887b",
+          "output_tokens": 38,
+          "prompt_sha256": "8e7185e17f221ea9231f2cafb000322ad552ca36a64989ac3e61c09528690e64",
+          "request_index": 1
+        },
+        {
+          "actions": [
+            {
+              "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850002",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850002",
+          "first_action": {
+            "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850002",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "db46d7bfac7fe2316649b284666851840bdb068086e40b6014304c105220d450",
+          "output_tokens": 70,
+          "prompt_sha256": "c9422b7a9bcbbaa4f2cc1bebf08af0379afb147dd310d80bbd9c039dc8c0c164",
+          "request_index": 2
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+              "episode_id": "rg/mini_sudoku/1850003",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.225,
+              "surprise": -0.375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850003",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+            "episode_id": "rg/mini_sudoku/1850003",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.225,
+            "surprise": -0.375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "9d4e6d38bfc9994ffa31b7cb67e62dc8061d8e1b3ac0649d731697964d6fb9b0",
+          "output_tokens": 67,
+          "prompt_sha256": "86744fec0b4541353004c8af6800725963f2365c260234a13f741221a0438b0d",
+          "request_index": 3
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 _ 1 ; 2 4 1 3",
+              "episode_id": "rg/mini_sudoku/1850004",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.225,
+              "surprise": -0.07499999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850004",
+          "first_action": {
+            "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 _ 1 ; 2 4 1 3",
+            "episode_id": "rg/mini_sudoku/1850004",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.225,
+            "surprise": -0.07499999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "47f9ec9c49d4b820684e923aa95b6bfb40f0a6cfd04974bcaaabf65023751296",
+          "output_tokens": 66,
+          "prompt_sha256": "9a65bc3a090b1d6fed692f1c642641704407476a940e0bdc17cad96cecb2204b",
+          "request_index": 4
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+              "episode_id": "rg/mini_sudoku/1850005",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 1.00 (accepted)",
+              "prediction": 0.5,
+              "score": 1.0,
+              "surprise": 0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850005",
+          "first_action": {
+            "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+            "episode_id": "rg/mini_sudoku/1850005",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 1.00 (accepted)",
+            "prediction": 0.5,
+            "score": 1.0,
+            "surprise": 0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0,
+          "output_sha256": "5be9235d528294895387acd20942332f77929545fae704a96f531a099ff08d01",
+          "output_tokens": 66,
+          "prompt_sha256": "ce1f563d2763778e6d03224b47bd6b5ad42f8326e6aecf64ff41002c5512662a",
+          "request_index": 5
+        },
+        {
+          "actions": [
+            {
+              "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850006",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850006",
+          "first_action": {
+            "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850006",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "582363a3f4e59cd18210af835214cd990bae0332f2b88f48c4d5a1f0a7261957",
+          "output_tokens": 45,
+          "prompt_sha256": "340919e36633ba61f4367833dbb7433cc3d92017d0cfba3011a92297f659892c",
+          "request_index": 6
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+              "episode_id": "rg/mini_sudoku/1850007",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.3375,
+              "surprise": -0.16249999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850007",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+            "episode_id": "rg/mini_sudoku/1850007",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.3375,
+            "surprise": -0.16249999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "e5bd432519895d34ca95fe001ba388bb15fffd0ca32dd1c85b8045d4fb8569d0",
+          "output_tokens": 65,
+          "prompt_sha256": "2fcac144fa266f354280afd10bbe3f88ad149e8336fcb2be7b6e1a552d6d8d62",
+          "request_index": 7
+        },
+        {
+          "actions": [
+            {
+              "action": "1 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2 ; PREDICT: 0.8",
+              "episode_id": "rg/mini_sudoku/1850008",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850008",
+          "first_action": {
+            "action": "1 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2 ; PREDICT: 0.8",
+            "episode_id": "rg/mini_sudoku/1850008",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "8b17061a37871eec4f4a2fa9c5e5623acce5c951bc2310aebc4a2e664bbc2fc8",
+          "output_tokens": 86,
+          "prompt_sha256": "492b4ba6afda06066d3deef6f2edd96b97b7f8843fbf1c159d552e52ae0819b5",
+          "request_index": 8
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 2 1 4 3 ; 3 4 2 1 ; 4 3 1 2 ; PREDICT: 0.8",
+              "episode_id": "rg/mini_sudoku/1850009",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850009",
+          "first_action": {
+            "action": "1 2 3 4 ; 2 1 4 3 ; 3 4 2 1 ; 4 3 1 2 ; PREDICT: 0.8",
+            "episode_id": "rg/mini_sudoku/1850009",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "749c308a1522ce29b1af6cb4afc3997971460b4c5752b1a915ffc7eb6ee7b25c",
+          "output_tokens": 77,
+          "prompt_sha256": "70a575f32e676bc385c805dce900ac3ca3441f16656e70398e6aa148d3f60c38",
+          "request_index": 9
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850010",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850010",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850010",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "6d8c4da1a4c7e15457730eea64767e5b6328b9d2544f67704b450750bf1eacea",
+          "output_tokens": 58,
+          "prompt_sha256": "36760fdfc0c1b8b4013395908e06919ee453dc28852bf871a7ec00f596755be9",
+          "request_index": 10
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+              "episode_id": "rg/mini_sudoku/1850011",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.75,
+              "score": 0.0,
+              "surprise": -0.75,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850011",
+          "first_action": {
+            "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+            "episode_id": "rg/mini_sudoku/1850011",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.75,
+            "score": 0.0,
+            "surprise": -0.75,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "1e508cb4f97f082d8624f36d9f4af63075788f4e7d57fa9d0249c95ca1db0492",
+          "output_tokens": 62,
+          "prompt_sha256": "92a4f38cc2d8b7a66487e70df56550a2c70d2c48c86aa6340f46b32902d4ad15",
+          "request_index": 11
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+              "episode_id": "rg/mini_sudoku/1850012",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850012",
+          "first_action": {
+            "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+            "episode_id": "rg/mini_sudoku/1850012",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "fddbda22b95f9f147ce8a78c04cd0ee78bb205e299311b9f1d4dd8b2b37fd093",
+          "output_tokens": 70,
+          "prompt_sha256": "a936ca4b4f184f6893b5b5d0ade37fb04e3d3e7896a4a5619378908d5f2eed5d",
+          "request_index": 12
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 _ ; _ _ 1 2 ;",
+              "episode_id": "rg/mini_sudoku/1850013",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850013",
+          "first_action": {
+            "action": "1 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 _ ; _ _ 1 2 ;",
+            "episode_id": "rg/mini_sudoku/1850013",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "d37e5377aab3b04d7cb6982cfbdd27a041d0ae5a3ff003337e10afe592ff9f2f",
+          "output_tokens": 56,
+          "prompt_sha256": "7a38e865f01aaa948177dff5233f8f8de5d1964b1cd99ee2fe365dfed319c001",
+          "request_index": 13
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 1 2 ; 2 _ _ 3 ; 1 3 _ 4 ; _ _ 2 1",
+              "episode_id": "rg/mini_sudoku/1850014",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.1125,
+              "surprise": -0.3875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850014",
+          "first_action": {
+            "action": "1 3 1 2 ; 2 _ _ 3 ; 1 3 _ 4 ; _ _ 2 1",
+            "episode_id": "rg/mini_sudoku/1850014",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.1125,
+            "surprise": -0.3875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "6318565041433b0cf1c9cbacafd7bdbb7a568ca84e3450231bf26a0367835651",
+          "output_tokens": 68,
+          "prompt_sha256": "2c2baec4b3a9e4062d8c722a2cfb6e7e9974ebca64f9da6587c07dc19f8a08c6",
+          "request_index": 14
+        },
+        {
+          "actions": [
+            {
+              "action": "3 _ _ _ ; 1 _ _ 2 ; _ 3 _ _ ; _ _ 4 1",
+              "episode_id": "rg/mini_sudoku/1850015",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850015",
+          "first_action": {
+            "action": "3 _ _ _ ; 1 _ _ 2 ; _ 3 _ _ ; _ _ 4 1",
+            "episode_id": "rg/mini_sudoku/1850015",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "4a530263fcfae90e0817339c3f7b1712e08d9f575ad400281ef5a29092afde50",
+          "output_tokens": 102,
+          "prompt_sha256": "af67591a64ede8e9be2d7adcb93ada90bffb7af1c74d9fb08dd5f22df45935bb",
+          "request_index": 15
+        }
+      ],
+      "format_valid": 4,
+      "output_tokens": 1068,
+      "outputs_at_retokenized_cap": 0,
+      "raw_native_first_score_mean": 0.15965909090909092,
+      "score_mean": 0.11875000000000001,
+      "solves": 1,
+      "total_actions": 16
+    }
+  },
+  "completed_utc": "2026-09-12T12:02:55.307608+00:00",
+  "label": "EXPLORATORY_TEACHER_PRESENT_NO_WRITE",
+  "limitations": [
+    "One fixed generation seed and existing training questions, not held-out transfer.",
+    "Teacher remains present; no parameter update, internalization, P1 or H1/H2 claim.",
+    "Combined process package, not separate competency effects.",
+    "At-cap retokenized output length is a diagnostic, not a recorded finish reason.",
+    "Local hashes do not authenticate official model origin."
+  ],
+  "prepared_hash": "9f6ca5a805d591286012316b0ebc17c9fa4315edee26137e57e5520aaea9b707",
+  "process_minus_sham": {
+    "available": 0,
+    "format_valid": 3,
+    "score_mean": 0.07382812500000001,
+    "solves": 0
+  },
+  "started": {
+    "device": "3",
+    "order": [
+      "process",
+      "sham"
+    ],
+    "preparation_sha256": "9f6ca5a805d591286012316b0ebc17c9fa4315edee26137e57e5520aaea9b707",
+    "started_utc": "2026-09-12T11:56:29.073345+00:00"
+  },
+  "valid": true
+}

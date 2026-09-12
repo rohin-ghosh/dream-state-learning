@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:58 UTC**.
+Latest reconciliation: **2026-09-12 12:08 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -97,11 +97,16 @@ receiptspass;GPU1reservation nowreleased. AllfourfirstACTcells0/16;lessonON
 partialmean.0475,shamON.010546875,bothOFF.1125. Bothdegrade;positivecontinuous
 contrast.036953125meanslessdegradation,notimprovement.137capturedfiles,
 64promptbindings,remoteweightrehashesverified. See ASTRA_RAW_WAKE_FORK_TERMINAL_2026-09-12.md.
-**Active teacher-present no-writecheck:** node3GPU3controller87251started
+**Terminal teacher-present no-writecheck, SEQ-077:** node3GPU3controller87251started
 11:56:28UTC,sourceb39e9238,rootastra_P1_static_competency_20260912_attempt1,
 external_logs. Native97/97completepackagetokensandfullpromptlengthsmatch;
 18Main/18nodeCPUtestsPASS.16fixedtrainingquestions,process→sham,900sperarm,
-continuousGPU3reservation. No internalization or learningclaim; nooutcomeyet.
+completed12:02:55UTC,bothcleanupverified,controllerabsent,GPU3released.
+Primarysolves1/16each;formvalid7vs4,zero-filledpartialmean.192578/.11875;
+actualoutputtokens1079/1068,noneatcap. Relativeformatonly,nointernalization
+orusefulteachingclaimwithoutno-teacheranchor. Post-hocdescriptiveanchor
+selectednext,same16questions/settings,notinput-tokenmatched. Popperreviewpending.
+See ASTRA_STATIC_COMPETENCY_TERMINAL_2026-09-12.md.
 900sfit+2100spair perarm. Actualnativepreparationpasses,
 five selectedminiquestionsdisjoint, one reference-solutionoverlapcanary1900061
 disclosed. Teacher203/158andtargettoken12867/16080passesnotmatched; package-level
