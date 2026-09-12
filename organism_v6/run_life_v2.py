@@ -200,6 +200,7 @@ def assert_split_hygiene(gym, rows) -> None:
 
 
 _LEAK_TEXT_KINDS = ("thought", "note", "reflection", "note_after")
+_LEAK_SCAN_SCHEMA = "stored-child-text-v2"
 
 
 def deployment_leak_regex(terms=None):
@@ -246,16 +247,20 @@ def target_blind_check(gym, rows, life_dir, r, log, enforce=True) -> dict:
     if os.path.exists(path):
         for line in open(path):
             try:
-                prev.append(json.loads(line))
+                record = json.loads(line)
+                if isinstance(record, dict) and record.get("scan_schema") == _LEAK_SCAN_SCHEMA:
+                    prev.append(record)
             except ValueError:
                 continue
-    if any(p.get("round") == r and p.get("clean") for p in prev):
-        return prev[-1]
+    for record in reversed(prev):
+        if record.get("round") == r and record.get("clean"):
+            return record
     since = max([int(p.get("scanned_rows", 0)) for p in prev if p.get("clean")]
                 or [0])
     res = leak_scan_ledger(rows, since=since)
     clean = not res["hits"]
     rec = dict(round=r, applicable=True, enforced=bool(enforce),
+               scan_schema=_LEAK_SCAN_SCHEMA,
                scanned_from=since, scanned_rows=len(rows) if clean else since,
                n_hit_rows=res["n_hit_rows"], hits=res["hits"], clean=clean)
     with open(path, "a") as f:

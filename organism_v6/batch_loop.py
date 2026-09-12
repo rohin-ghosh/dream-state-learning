@@ -72,10 +72,13 @@ class EpisodeDriver:
                 if self.note_after is not None:
                     from .preschool import parse_outcome
                     exec_id = self.note_after.execution_id(self.ep.eid, st.tick,
-                                                           self.n_acts)
+                                                           self.n_acts, self.occurrence_id)
                     act_row["execution_id"] = exec_id
+                    act_row["occurrence_id"] = self.occurrence_id
+                    act_row["occurrence_index"] = self.occurrence_index
                     self.pending_after.append(dict(
                         episode_id=self.ep.eid, tick=st.tick, execution_id=exec_id,
+                        occurrence_id=self.occurrence_id, occurrence_index=self.occurrence_index,
                         action=arg, outcome=outcome, facts=parse_outcome(outcome)))
                 self.ledger.append(act_row)
                 st.last_outcome = f"{outcome} (score {score:.4f})"
@@ -151,6 +154,7 @@ def run_episodes_batch(model, gym, episodes, bootstrap: str, ledger: Ledger,
     drivers = [driver_cls(e, bootstrap, gym, ledger, budget_ticks)
                for e in episodes]
     if note_after is not None:
+        note_after.reserve_occurrences(drivers, ledger)
         for d in drivers:
             d.note_after = note_after
     while True:

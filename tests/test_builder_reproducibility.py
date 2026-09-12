@@ -2,13 +2,16 @@
 import random
 import contextlib
 import io
+import json
+from pathlib import Path
 import sys
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
 from organism_v6.model_backend import VLLMBackend
-from organism_v6.run_life_v2 import assert_split_hygiene, leak_scan_ledger
+from organism_v6.run_life_v2 import (
+    assert_split_hygiene, leak_scan_ledger, target_blind_check)
 from organism_v6.train_adapter import seed_training
 
 
@@ -73,6 +76,38 @@ class SeedForwardingTests(unittest.TestCase):
 
 
 class PostOutcomeIsolationTests(unittest.TestCase):
+    def test_old_clean_receipts_cannot_skip_newly_scanned_notes(self):
+        gym = Mock()
+        gym.exposure_domain.return_value = "reasoning_gym"
+        rows = [{"kind": "note_after", "episode_id": "train/example",
+                 "text": "I chose -mem2reg."}]
+        for round_index in (1, 2):
+            with self.subTest(round_index=round_index):
+                with tempfile.TemporaryDirectory() as directory:
+                    receipt = Path(directory) / "leak_scan.jsonl"
+                    old = json.dumps(dict(round=1, clean=True, scanned_rows=1))
+                    receipt.write_text(old + "\n")
+                    with self.assertRaisesRegex(RuntimeError, "target-blindness"):
+                        target_blind_check(gym, rows, directory, round_index, Mock())
+                    lines = receipt.read_text().splitlines()
+                    self.assertEqual(lines[0], old)
+                    self.assertEqual(len(lines), 2)
+                    self.assertEqual(json.loads(lines[-1])["scanned_from"], 0)
+
+    def test_current_policy_receipts_retain_incremental_scanning(self):
+        gym = Mock()
+        gym.exposure_domain.return_value = "reasoning_gym"
+        with tempfile.TemporaryDirectory() as directory:
+            rows = [{"kind": "note_after", "text": "I checked the sum."}]
+            first = target_blind_check(gym, rows, directory, 1, Mock())
+            self.assertEqual(first["scan_schema"], "stored-child-text-v2")
+            cached = target_blind_check(gym, rows, directory, 1, Mock())
+            self.assertEqual(cached, first)
+            rows.append({"kind": "note_after", "text": "I checked it again."})
+            second = target_blind_check(gym, rows, directory, 2, Mock())
+            self.assertEqual(second["scanned_from"], 1)
+            self.assertEqual(second["scanned_rows"], 2)
+
     def test_post_outcome_text_is_scanned(self):
         result = leak_scan_ledger([
             {"kind": "note_after", "text": "I chose -mem2reg."}],

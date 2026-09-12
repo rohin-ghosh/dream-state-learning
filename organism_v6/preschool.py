@@ -59,6 +59,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 import zlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -175,8 +176,30 @@ class PostOutcomeSlot:
         self.total_chars = 0
 
     @staticmethod
-    def execution_id(eid: str, tick: int, n: int) -> str:
-        return f"{eid}#t{tick}a{n}"
+    def execution_id(eid: str, tick: int, n: int,
+                     occurrence_id: str | None = None) -> str:
+        return f"{occurrence_id or eid}#t{tick}a{n}"
+
+    def reserve_occurrences(self, drivers, ledger) -> None:
+        """Persist unique visit reservations before any slot-enabled generation."""
+        import fcntl
+        with open(ledger.path, "a+") as locked:
+            fcntl.flock(locked, fcntl.LOCK_EX)
+            rows = ledger.rows()
+            indices = [row["occurrence_index"] for row in rows
+                       if "occurrence_index" in row]
+            if any(type(index) is not int or index < 1 for index in indices):
+                raise RuntimeError("invalid occurrence index in append-only ledger")
+            next_index = max(indices, default=0) + 1
+            for driver in drivers:
+                occurrence_id = f"{driver.ep.eid}#occ{next_index}"
+                ledger.append(dict(kind="episode_occurrence", episode_id=driver.ep.eid,
+                                   occurrence_id=occurrence_id, occurrence_index=next_index,
+                                   slot_kind=self.kind))
+                driver.occurrence_id = occurrence_id
+                driver.occurrence_index = next_index
+                next_index += 1
+            os.fsync(locked.fileno())
 
     def block(self, eid: str, tick: int, exec_id: str, action: str, facts: dict) -> str:
         """Astra's block: measurement first, the child's record second."""
@@ -223,6 +246,7 @@ class PostOutcomeSlot:
             text = (text or "").strip()
             f = p["facts"]
             ledger.append(dict(kind=self.kind, episode_id=p["episode_id"], tick=p["tick"],
+                               occurrence_id=p["occurrence_id"], occurrence_index=p["occurrence_index"],
                                execution_id=p["execution_id"], label=self.label, action=p["action"],
                                outcome=p["outcome"], before=f["before"], after=f["after"],
                                reduction=f["reduction"], status=f["status"], text=text[:2000],
@@ -377,6 +401,59 @@ def _rate(vals) -> float | None:
     return (sum(1 for v in vals if v) / len(vals)) if vals else None
 
 
+def _copy_normalize(text: str) -> str:
+    text = unicodedata.normalize("NFKC", text).casefold()
+    text = re.sub(r"(?<=\d),(?=\d{3}(?:\D|$))", "", text)
+    return " ".join(re.findall(r"\w+", text))
+
+
+def _delivered_payloads(life: str) -> list[str]:
+    path = os.path.join(life, "lesson_deliveries.jsonl")
+    if not os.path.exists(path):
+        return []
+    payloads = []
+    with open(path) as source:
+        for line in source:
+            if not line.strip():
+                continue
+            receipt = json.loads(line)
+            text = receipt.get("text")
+            if not isinstance(text, str) or not text.strip():
+                raise RuntimeError("lesson delivery lacks text provenance")
+            payloads.append(_copy_normalize(text))
+            payloads.extend(_copy_normalize(part.removeprefix("- "))
+                            for part in text.splitlines() if not part.startswith("==="))
+    return [text for text in payloads if len(text.split()) >= 8]
+
+
+def _record_provenance(row: dict, executions: dict, notes: dict,
+                       lesson_payloads: list[str]) -> str | None:
+    execution_id = row.get("execution_id")
+    matches = executions.get(execution_id, [])
+    if not execution_id or not matches:
+        return "provenance-orphan"
+    if len(matches) != 1:
+        return "provenance-ambiguous-execution"
+    if len(notes.get(execution_id, [])) != 1:
+        return "provenance-ambiguous-record"
+    action = matches[0]
+    for field in ("occurrence_id", "occurrence_index"):
+        if field in row or field in action:
+            if field not in row or field not in action or row[field] != action[field]:
+                return "provenance-mismatch-" + field
+    for field in ("episode_id", "tick", "action", "outcome"):
+        if field not in row or field not in action or row[field] != action[field]:
+            return "provenance-mismatch-" + field
+    facts = parse_outcome(action["outcome"])
+    for field in ("status", "before", "after", "reduction"):
+        if field not in row or row[field] != facts[field]:
+            return "provenance-mismatch-" + field
+    normalized = " " + _copy_normalize(row.get("text") or "") + " "
+    if any(" " + payload + " " in normalized for payload in lesson_payloads):
+        return "provenance-lesson-echo"
+    return None
+
+
 def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64, log=None,
                slot_stats: dict | None = None) -> dict:
     """The articulation gate at one sleep (Astra q14 section 3 log; section 4 item
@@ -392,11 +469,24 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
     for c in st["canon"]:
         state.see(c)
     since = int(st.get("rows_seen", 0))
+    if since > len(rows):
+        raise RuntimeError("articulation ledger shrank; provenance requires inspection")
+    executions, records = {}, {}
+    for row in rows:
+        index = executions if row.get("kind") == "act" else records if row.get("kind") == "note_after" else None
+        if index is not None:
+            index.setdefault(row.get("execution_id"), []).append(row)
+    lesson_payloads = _delivered_payloads(life)
     new_rows = rows[since:]
     execs = [r for r in new_rows if r.get("kind") == "act"]
     numeric = [r for r in execs if _OUTCOME.search(str(r.get("outcome") or ""))]
     notes = [r for r in new_rows if r.get("kind") == "note_after"]
     judged = [judge_record(r, state) for r in notes]
+    for row, judgement in zip(notes, judged):
+        rejection = _record_provenance(row, executions, records, lesson_payloads)
+        if rejection:
+            judgement.update(reason=rejection, admit_hi=False, admit_lo=False,
+                             artic_hi=False, artic_lo=False, G=False)
     qualifying = {j["execution_id"] for j in judged if j["artic_hi"]}
     qualifying_lo = {j["execution_id"] for j in judged if j["artic_lo"]}
     # act rows written with --note-after carry the execution id; A_s^raw = executions returning a
@@ -412,7 +502,21 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
     admitted_new = [dict(episode_id=j["episode_id"], execution_id=j["execution_id"],
                          text=(r.get("text") or "").strip())      # verbatim, never rewritten
                     for j, r in zip(judged, notes) if j["admit_hi"]]
-    admitted_all = list(st["admitted"]) + admitted_new
+    admitted_prior = []
+    prior_rejections = {}
+    for admitted in st["admitted"]:
+        matches = records.get(admitted.get("execution_id"), [])
+        rejection = "provenance-stale-admission"
+        if (len(matches) == 1 and matches[0].get("episode_id") == admitted.get("episode_id")
+                and (matches[0].get("text") or "").strip() == admitted.get("text")):
+            rejection = _record_provenance(matches[0], executions, records, lesson_payloads)
+            if rejection is None and not judge_record(matches[0], None)["admit_hi"]:
+                rejection = "provenance-invalid-prior-record"
+        if rejection:
+            prior_rejections[rejection] = prior_rejections.get(rejection, 0) + 1
+        else:
+            admitted_prior.append(admitted)
+    admitted_all = admitted_prior + admitted_new
     corpus_path = os.path.join(sdir, "corpus.json")
     legacy_items = json.load(open(corpus_path))["corpus"] if os.path.exists(corpus_path) else []
     record_items = _dedup([RECORD_ITEM.format(eid=a["episode_id"], text=a["text"]) for a in admitted_all])
@@ -428,6 +532,7 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
                admission_hi=_rate(j["admit_hi"] for j in judged), admission_lo=_rate(j["admit_lo"] for j in judged),
                n_admitted_new=len(admitted_new), n_admitted_total=len(admitted_all),
                rejection_families=reasons,
+               prior_provenance_rejections=prior_rejections,
                legacy_corpus_items=len(legacy_items), record_items=len(record_items),
                corpus_survival_if_enforced=(len(record_items) / len(legacy_items)) if legacy_items else None,
                tokens_note_after_chars=sum(j["n_chars"] for j in judged),
@@ -527,7 +632,7 @@ def neutral_probe_run(model, gym, life: str, when: str, episode_index: int, slee
     suffix = "" if arm == "on" else "_adapterOFF"
     led_path = os.path.join(life, f"neutral_probe_{when}_{episode_index:04d}{suffix}.ledger.jsonl")
     if os.path.exists(led_path):
-        os.remove(led_path)                      # a half-written arm is redone whole
+        raise RuntimeError("partial neutral probe ledger exists; preserve evidence and use a new probe")
     led = Ledger(led_path)
     slot = PostOutcomeSlot(label=SCRATCHPAD_LABEL, kind="scratchpad", max_tokens=max_tokens,
                            seed_salt=0x3C3C, log=log)
@@ -552,7 +657,7 @@ def neutral_probe_run(model, gym, life: str, when: str, episode_index: int, slee
 
 
 def write_neutral_probe(life: str, when: str, episode_index: int, sleep_index: int,
-                        on: dict, off: dict, log=None) -> dict:
+                        on: dict, off: dict, log=None, cache_identity=None) -> dict:
     """The pair's JSON: the top-level fields are the ON run (the live model, as
     before); `on` and `off` hold both arms so the adapter-mediation contrast
     (Codex reconciliation audit, blocker 4: the H1 estimand is
@@ -571,6 +676,8 @@ def write_neutral_probe(life: str, when: str, episode_index: int, sleep_index: i
                    note="held-out program; birth prompt only; separate ledgers; not harvested; "
                         "on = live model, off = frozen base with the same seeds")
     out_path = neutral_probe_path(life, when, episode_index)
+    if cache_identity is not None:
+        payload["cache_identity"] = cache_identity
     tmp = out_path + ".tmp"
     with open(tmp, "w") as f:
         json.dump(payload, f, indent=1)
@@ -581,6 +688,29 @@ def write_neutral_probe(life: str, when: str, episode_index: int, sleep_index: i
             f"off={_fmt(off['articulation_lo'])}-{_fmt(off['articulation_hi'])} adapter={on['adapter']}"
             + (" (off = on: no adapter loaded)" if payload["off_same_as_on"] else ""))
     return payload
+
+
+def _neutral_identity(gym, panel, budget_ticks, max_tokens, driver_cls,
+                      adapter_path, when, episode_index, sleep_index):
+    from .batch_loop import EpisodeDriver
+    from .model_backend import MODEL
+    adapter_hash = _adapter_sha(adapter_path)
+    config_hash = None
+    if adapter_path:
+        config_path = os.path.join(adapter_path, "adapter_config.json")
+        if adapter_hash is None or not os.path.isfile(config_path):
+            raise RuntimeError("neutral probe adapter lacks weights/config provenance")
+        with open(config_path, "rb") as source:
+            config_hash = hashlib.sha256(source.read()).hexdigest()
+    driver = driver_cls or EpisodeDriver
+    return dict(version=1, model=MODEL, gym=gym.name,
+                birth_sha256=hashlib.sha256(gym.birth_prompt().encode()).hexdigest(),
+                panel=list(panel), budget_ticks=budget_ticks, max_tokens=max_tokens,
+                driver=driver.__module__ + "." + driver.__qualname__,
+                adapter=os.path.realpath(adapter_path) if adapter_path else None,
+                adapter_sha256=adapter_hash, adapter_config_sha256=config_hash,
+                when=when, episode_index=episode_index, sleep_index=sleep_index,
+                generation_seed=9000 + sleep_index)
 
 
 def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_index: int,
@@ -596,8 +726,14 @@ def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_in
     `same_as_on`. Resume-safe (marker = the JSON). Returns (payload, model):
     the live model may have been reloaded."""
     out_path = neutral_probe_path(life, when, episode_index)
+    identity = _neutral_identity(gym, panel, budget_ticks, max_tokens, driver_cls,
+                                 adapter_path, when, episode_index, sleep_index)
     if os.path.exists(out_path):
-        return json.load(open(out_path)), model
+        with open(out_path) as source:
+            cached = json.load(source)
+        if cached.get("cache_identity") != identity:
+            raise RuntimeError("neutral probe cache provenance mismatch; preserve evidence and use a new probe")
+        return cached, model
     on = neutral_probe_run(model, gym, life, when, episode_index, sleep_index, panel, budget_ticks, log,
                            adapter_path, arm="on", max_tokens=max_tokens, driver_cls=driver_cls)
     if adapter_path and open_base is not None and close_base is not None:
@@ -607,4 +743,8 @@ def neutral_probe(model, gym, life: str, when: str, episode_index: int, sleep_in
         model = close_base(base)
     else:
         off = dict(on, arm="off", same_as_on=True, ledger=on["ledger"])
-    return write_neutral_probe(life, when, episode_index, sleep_index, on, off, log), model
+    if identity != _neutral_identity(gym, panel, budget_ticks, max_tokens, driver_cls,
+                                     adapter_path, when, episode_index, sleep_index):
+        raise RuntimeError("neutral probe adapter/config changed during measurement")
+    return write_neutral_probe(life, when, episode_index, sleep_index, on, off, log,
+                               cache_identity=identity), model
