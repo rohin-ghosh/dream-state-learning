@@ -1,6 +1,41 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12,2026,17:40UTC.** SEQ096's independent review passes
+**UNSENT — September 12,2026,18:31UTC.** The elementary authored post-training
+pair and follow-ups are terminal/released. Across trainer seeds0/1/2, teaching
+gives32/32correct PREDICT-before-ACT responses versus each control0/32 on the
+same fixed arithmetic dev probes. Every fitted state and the actual reused
+seed0 OFF already has32/32correct ACTs: a response-order habit, not arithmetic
+gain or conditional prediction intelligence. OFF is not regenerated for later
+seeds. Rohin's message18 calls this one-habit mechanism test **level zero**;
+the broader level-1 core corpus is not built. Shared panels and three trainer
+seeds are not96independent learners. All64confirmation cases remain untouched.
+This is authored post-training, not child sleep, parenting or H1/H2. [C42/C43]
+
+Memory recall is teach4/7/3per16 versus control4/4/4. Seed0's fitted arms both
+always say red; later controls always say blue/yellow, but later teaching is
+not constant (blue11/yellow5 and green14/blue2). No favorable-seed memory claim.
+The separate seed0 **in-sample original-training-prompt diagnostic, not heldout**,
+again gives both fitted arms red16/16 and4/16correct without new training or
+reminders. This argues against paraphrase mismatch as the sole cause, not
+against all latent binding. OFF is0/16 with16invalid prose answers at the
+64-token cap on both memory panels, not an uncapped negative. The primary48dev
+endpoint is unchanged;32memory versus880arithmetic target tokens/epoch is a
+diagnostic lead, not an isolated dose explanation or reliable-memory result. [C43/C44]
+
+SEQ098's archived numerical review PASS and the newly supplied Bernoulli
+SEQ099/100 PASS verify the bounded counts/custody, including240new outputs and
+actual inherited OFF reuse; no required correction or scientific promotion.
+Readout calls144/192/48 use actual input/output6393/2156,8524/1888,2016/1088;
+caps9216/12288/3072 are not usage. The1510.135936-second total supervised work
+includes fits for098/099 and owned cleanup, not full reservations or total
+historical compute. Native weights remain Main-attributed, not rehashed here.
+
+Warm-start native CPU21/21with no skips and repetition-export38CPUtests are
+engineering only. Weight continuation uses a fresh optimizer, not optimizer
+resumption. No new continuation/repetition GPU findings are included. Main
+owns launches; formal C11 deferred. No message is sent. [C42–C44]
+
+**Historical UNSENT — September 12,2026,17:40UTC (live-pair status superseded above).** SEQ096's independent review passes
 the local definition result: original full JSON1/3, generic-definition full
 JSON3/3, relation-only token2/3. This is a task-interface clarification, not
 parenting, general Boolean competence or approval to write old material. [C40]
@@ -180,4 +215,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C41. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C44. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

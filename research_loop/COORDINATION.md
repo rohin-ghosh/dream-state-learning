@@ -5659,3 +5659,36 @@ pairs; total13312input/1504target tokens including fourepochs per phase.
 No model calls or writes yet. Raw message19 acknowledged: adherence itself
 is the level-zero target, not arithmetic gain; plasticity and two behaviors
 next, compiler/adapter separation not inferred from present memory failure.
+
+## [Builder] 2026-09-12 18:50 UTC — bounded plasticity sentinel authorized and prepared; manuscript review
+
+Main declares SEPARATE90 A40-minute continuation budget (three30minute
+controller bounds) before launch, not charged to initial scout/repetition90.
+This exploratory seed0 assay starts each rate from the same original seed0
+teach adapter, NOT from a repetition result. Rates0,3e-5,1e-4; four sequential
+16-update phases, four epochs each, fresh optimizer, one carried adapter.
+Sourced ACT-only material excludes all128original train/evaluation pairs.
+After EACH write: unchanged48development-case readout, no confirmation or OFF.
+This is task-only competing-update interference, not time-alone forgetting,
+child sleep or evidence that adherence must decay. No outcome-based stopping,
+selection or corpus changes. Primary endpoint is adherence vs cumulative
+updates at each rate; ACTcorrectness, memory, invalidity and exactLR0state
+are joint checks. Initial sameadapter readout already exists (SEQ098).
+
+Main28local and28native orchestrationCPUtestsPASS, zero skips. First native
+fixture invocation rejected wrong cwd/import roots; corrected immutable cwd
+passed. Inherited native21V3warmstart and20material tests remain receipts.
+Native material and run preparation PASS from3a12807f, no warmwrite yet.
+Root ~/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/runs.
+Prepared cutoff2026-09-12 19:50UTC; each controller limited1800s including
+CPU gaps, readouts and cleanup, comfortably inside supplied node3lease.
+Simple hygiene/provenance/local model hashes apply; final formalC11deferred.
+
+Prospective Main allocation node3GPU4rate0, GPU5rate3e-5, GPU6rate1e-4.
+Launcher runs full vacancy before controllers; reservations persist across
+phase gaps. Only owned supervised processes may be cleaned. Failures remain
+partial artifacts; no automatic retries. Actual PIDs follow after launch.
+
+SEQ098–100 six-file manuscript update independently PASS with exact hashes;
+canonical abstract/prior tables preserved, companion abstract206words.
+TeX tools unavailable; no PDF build claimed. Collaborator remains UNSENT.

@@ -2,7 +2,86 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**September 12, 2026, 17:40 UTC — terminal SEQ-096/097 (C40/C41).**
+**September 12, 2026, 18:31 UTC — terminal SEQ-098–100 (C42–C44).**
+The previously live elementary pair, its unchanged trainer-seed replications,
+and the separate original-training-prompt memory diagnostic are complete and
+released. This updates the existing full draft, not its thesis or historical
+endpoints. Rohin's message18 calls the one-habit mechanism test **level zero**;
+the broader level-1 core corpus is not built. Collaborator **UNSENT**.
+
+| Trainer seed | Teach PREDICT-before-ACT | Control PREDICT-before-ACT | Teach memory | Control memory |
+|---|---:|---:|---:|---:|
+| 0 (SEQ098) | 32/32 | 0/32 | 4/16 | 4/16 |
+| 1 (SEQ099) | 32/32 | 0/32 | 7/16 | 4/16 |
+| 2 (SEQ099) | 32/32 | 0/32 | 3/16 | 4/16 |
+
+All six fitted states and the actual seed0 OFF baseline have **32/32 correct
+arithmetic ACTs**. OFF adherence is0/32; its exact memory score is0/16 with
+16invalid prose answers, all hitting the64-token cap. The unchanged actual
+OFF model/input/decoder plan is explicitly reused for seeds1/2, not regenerated
+or counted as three baselines. Three trainer seeds share data and the same32
+arithmetic probes, not96independent learners or three new datasets. The fixed
+48-case dev endpoint and **64 unrequested confirmation cases** are unchanged.
+
+Both arms fit the same80contexts and source facts into one adapter per arm.
+Teaching targets PREDICT then ACT; control ACT then COMPUTED, chosen globally
+by native token matching before outputs. Each epoch has4517total input tokens
+(including912target tokens); four epochs give18068input/3648target per arm
+and80updates, rank8, alpha16, dropout.05 and learning rate3e-4. This is authored
+post-training, not child sleep, parenting, conditional prediction intelligence,
+arithmetic gain or H1/H2.
+
+Memory differences are0,+3,-1, not a reliable advantage. Both seed0 adapters
+emit red throughout; seed1/2 controls always emit blue/yellow. Seed1 teaching
+emits blue11/yellow5; seed2 green14/blue2, so later teaching is not universally
+constant. Do not select seed1 as reliable memory. SEQ100 asks only the16original
+memory training questions on seed0 checkpoints, without new fits or reminders:
+both fitted arms again emit red16/16 and score4/16; OFF scores0/16 with16invalid
+64-token-capped responses. Label: **IN_SAMPLE_TRAINING_PROMPT_DIAGNOSTIC_NOT_HELDOUT**.
+This argues against paraphrase mismatch as the sole seed0 explanation, not
+against all latent binding or every possible dose. Memory has32supervised
+tokens/epoch including EOS versus880arithmetic; sparse dose is a lead, not an
+isolated cause. No primary-endpoint replacement or semantic answer rescue.
+
+| Sequence | Actual calls | Actual native input / output tokens | Requested output cap | Supervised seconds |
+|---|---:|---:|---:|---:|
+| 098, fits + readouts | 144 | 6393 / 2156 | 9216 | 476.237894 |
+| 099, additional seeds' fits + readouts | 192 | 8524 / 1888 | 12288 | 693.917059 |
+| 100, no-fit training-prompt readouts | 48 | 2016 / 1088 | 3072 | 339.980983 |
+
+Calls and token counts are **readout-only**; the first two supervised clocks
+also include fitting. Their1510.135936-second sum includes owned cleanup, not
+full reservations, audit idle, active-GPU compute, monetary cost or total
+historical campaign compute. Local archive checks do not reauthenticate the
+weights excluded from these capsules.
+
+Sources: [SEQ098 memo](../research_notes/astra_memos/ASTRA_FUNDAMENTAL_SEED0_TERMINAL_2026-09-12.md),
+[SEQ099 memo](../research_notes/astra_memos/ASTRA_FUNDAMENTAL_REPLICATION_TERMINAL_2026-09-12.md),
+[SEQ100 memo](../research_notes/astra_memos/ASTRA_FUNDAMENTAL_MEMORY_TRAINPROMPT_TERMINAL_2026-09-12.md),
+[seed0 analysis](../research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_main_analysis_20260912.json),
+[follow-up analysis](../research_notes/astra_memos/receipts_20260912/astra_fundamental_followups_main_analysis_20260912.json).
+SEQ098's [independent numerical review](../research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_independent_review_20260912.md)
+is PASS. Bernoulli's [SEQ099/100 review, now archived by Main](../research_notes/astra_memos/receipts_20260912/astra_fundamental_followups_independent_review_20260912.md)
+also passes all240new outputs and checks actual inherited OFF reuse, with no
+required correction. The archived copy equals the supplied `/tmp` report,
+SHA256 `6f70d5e55f8b9732128c3aab4f031966806fb6d5dcdf5d43794c1731f8044370`.
+This supersedes the memos' pending-review status, not
+their outcomes or scientific boundaries. Exact capsules are:
+
+- [SEQ098 capsule](../research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_terminal_20260912.tgz): `d8f343979f10d358f11ed21fb7896a462b88cfd5d833fee2bf0dab340f19b082`.
+- [SEQ099 capsule](../research_notes/astra_memos/receipts_20260912/astra_fundamental_replications_terminal_20260912.tgz): `dcd4237dfb54b1def3e4733cadbe29eb0252a6270662e9e869333265ed1bfde5`.
+- [SEQ100 capsule](../research_notes/astra_memos/receipts_20260912/astra_fundamental_memory_terminal_20260912.tgz): `a3c2bc8ba3a97a4f4b7e73f0a818f7b162872675d1fd577bc0ea4be4df5da378`.
+
+**Engineering only, not new GPU variants:** the archived [native warm-start CPU log](../research_notes/astra_memos/receipts_20260912/astra_v3_warmstart_native_cpu_attempt1_20260912.log)
+passes21/21 with no skips; its [static review](../research_notes/astra_memos/receipts_20260912/astra_v3_warmstart_independent_review_20260912.md)
+is a separate scope. The [repetition-export handoff](../research_notes/astra_memos/receipts_20260912/astra_fundamental_repetition_handoff_20260912.md)
+reports38CPUtests (27new+11existing), not native-token or GPU outcome evidence.
+Optional warm-start carries adapter weights with a **fresh optimizer**, not
+optimizer-state resumption. Continuation/repetition variants have no new GPU
+results included here. Formal C11 remains deferred; no curriculum, memory,
+parenting or H1/H2 qualification follows from these engineering checks.
+
+**Historical September 12, 2026, 17:40 UTC — terminal SEQ-096/097 (C40/C41; live-pair status superseded above).**
 The new evidence separates a task-definition problem from a bounded useful-write
 signal. Both independent reviews PASS within their stated scope, not as parenting,
 clean-lineage or gate certification. All prior results, canonical abstract,
@@ -52,7 +131,7 @@ Sources: [relation memo](../research_notes/astra_memos/ASTRA_RELATION_SURFACE_TE
 and [Main analysis](../research_notes/astra_memos/receipts_20260912/astra_fresh_behavior_main_analysis_20260912.json).
 These completed reviews supersede the memos' earlier pending-review statements.
 
-The old pending-panel status is superseded by terminal C41. Main reports the
+At that historical cut, the old pending-panel status is superseded by terminal C41. Main reports the
 elementary birth-teaching pair launched17:39UTC on node3GPUs0/1. Native preparation
 matches80rows/arm and4517input/912target tokens per epoch; four epochs,
 learning rate3e-4, rank8, seed0 are the selected recipe, **not measured outcomes**.

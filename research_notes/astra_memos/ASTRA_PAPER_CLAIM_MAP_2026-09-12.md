@@ -2,7 +2,19 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12,2026,17:40UTC — terminal C40/C41:** independent bounded reviews
+**September 12,2026,18:31UTC — terminal C42–C44:** SEQ098–100 are complete
+and released. Three trainer seeds reproduce one PREDICT-before-ACT habit,
+not arithmetic gain or reliable memory. Rohin's message18 names this mechanism
+test level zero; the broader level-1 core corpus is not built. SEQ098 numerical
+review PASS is archived; the supplied Bernoulli SEQ099/100 review also passes
+all240new outputs and actual inherited OFF reuse, superseding pending status.
+Main's later archival copy matches the supplied review bytes. Neither review is a parenting/learning-
+mechanism ruling or launch gate. Native CPU21/21without skips and repetition
+export38CPUtests are engineering only, not new GPU variants or outcomes.
+Canonical abstract/intent, all prior tables and appendix remain preserved;
+collaborator UNSENT, formal C11 deferred. Main retains all parallel launches.
+
+**Historical September 12,2026,17:40UTC — terminal C40/C41 (live-pair status superseded by C42–C44):** independent bounded reviews
 PASS for SEQ096's relation counts and SEQ097's complete192 first-ACT records.
 The behavioral finding is mixed-exposure development, not confirmation: known
 prior readout IDs remain in the unchanged full16 primary. This supersedes
@@ -1011,3 +1023,170 @@ No L1 pass, speculative teaching result, confirmation or C11 completion is
 reported. The17:39UTC notebook entry records preparation; Main's supplied
 launch update supplies live status. Formal C11 remains deferred and the
 collaborator draft remains UNSENT.
+
+## C42 — Authored level-zero response-order positive control (SEQ098)
+
+The seed0 paired fit/readout is terminal and released. Each arm has one
+fresh-base rank8 adapter containing both arithmetic response behavior and
+16source-derived arbitrary device/color facts. Teach targets PREDICT before
+ACT; task-only control ACT before COMPUTED, both with the correct sum. Native
+matching selected COMPUTED globally before outputs; the original unmatched
+RESULT audit is retained, not retroactively repaired. Context/source facts,
+80rows and row order match. Per epoch:4517total model-input tokens, including
+912supervised targets (3605context+912target), not4517context plus912extra.
+Four epochs:18068input/3648target tokens and80updates per arm, LR3e-4,
+rank8/alpha16/dropout.05. Of912targets,880are arithmetic and32memory including EOS.
+
+| Seed0 state | Correct ACT | Correct PREDICT before ACT | Exact memory | Invalid memory |
+|---|---:|---:|---:|---:|
+| Actual OFF | 32/32 | 0/32 | 0/16 | 16/16 |
+| Teach | 32/32 | 32/32 | 4/16 | 0/16 |
+| Control | 32/32 | 0/32 | 4/16 | 0/16 |
+
+Both fitted states emit red on all16memory probes; four balanced source keys
+happen to be red. The+4 over OFF is not item-specific storage. OFF returns
+prose, all16memory responses hitting the64-token cap; its strict invalidity
+is not an uncapped or no-latent-memory claim. All arithmetic is already correct,
+so the narrow habit after reload is not arithmetic gain or conditional
+prediction intelligence. This is externally authored post-training, not child
+sleep, parenting, H1/H2, P1/G5, clean lineage or a mechanism freeze. The32dev
+operand pairs are disjoint from training pairs;64confirmation cases are
+unrequested. No example, reminder or answer is appended at evaluation.
+
+Independent numerical **PASS** checks all144raw outputs, source-derived
+keys, matched-training receipt counts and archived custody consistency.
+Actual readout input/output tokens6393/2156; output ceiling9216, not usage.
+Fit supervision72.639051/60.360002seconds and readout supervision
+134.054387/97.699673/111.484781seconds total476.237894. The full readout
+reservation673.657880seconds is a different clock, including Main audit delay.
+These are not monetary cost, active-GPU time or whole campaign compute.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_FUNDAMENTAL_SEED0_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_main_analysis_20260912.json`.
+- `research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_independent_review_20260912.md`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_seed0_terminal_20260912.tgz`,
+  SHA256 `d8f343979f10d358f11ed21fb7896a462b88cfd5d833fee2bf0dab340f19b082`.
+  Root `astra_fundamental_teaching_20260912_attempt1`; fit source
+  `06c90d1bbd00fd7ab1867bf069944554b84580cf`, readout source
+  `a9a7c67919b5f5ec8b121a463f2ea49a5c967757`. Full last release
+  September12,17:52:46.411485UTC. Capsule excludes adapter/base weights;
+  current weight-hash verification is attributed to Main/native execution.
+
+## C43 — Three trainer seeds repeat the habit, not reliable memory (SEQ099)
+
+Unchanged seed1/2 replications are terminal and released. Their corpus bytes,
+native token audit and fit recipe match seed0; trainer seed alone intentionally
+changes initialization, dropout and order. Seeds are not merely optimizer-
+internal randomness, three new datasets, or96independent learners.
+
+| Trainer seed | Teach habit | Control habit | Teach memory | Control memory |
+|---|---:|---:|---:|---:|
+| 0, inherited C42 | 32/32 | 0/32 | 4/16 | 4/16 |
+| 1 | 32/32 | 0/32 | 7/16 | 4/16 |
+| 2 | 32/32 | 0/32 | 3/16 | 4/16 |
+
+All fitted ACTs are32/32correct with zero invalid. The actual inherited seed0
+OFF also has32/32correct ACT,0/32habit and0/16memory with16capped-invalid
+answers. Its matching base/case/input/decoder plan supplies the reference;
+**zero new OFF calls** occur for replication. The separate C44 legitimately
+has16new OFF calls on original training-form prompts. Shared48dev cases and
+64unrequested confirmation cases are unchanged, with no favorable subset.
+
+Teaching-minus-control memory counts are0,+3,-1. Seed1 teaching emits
+blue11/yellow5, seed2 green14/blue2; their controls always emit blue/yellow,
+respectively. Seed0's two arms always emit red. Thus later teaching is not
+universally constant, but selecting seed1 would not establish reliable memory.
+No deranged-binding control is supplied. Rohin's message18 names this one-habit
+mechanism comparison **level zero**, not a completed level-1 core corpus,
+conditional intelligence, arithmetic improvement, parenting, H1/H2 or
+repeated-update readiness. The broader level-1 curriculum is not built.
+
+The supplied Bernoulli review **PASS** independently scores all192new raw
+outputs and checks the actual48-call inherited OFF capture, without using an
+existing scorer. It validates source keys, shared plans, native receipt counts,
+constant/nonconstant patterns and preserved first reduction; no required fix.
+This supersedes the terminal memo's pending numerical review, not any outcome.
+The first seed1-teach reduction remains byte-identical after a release-guard
+interruption; no rerun or overwrite is inferred from the new review.
+
+Costs:192new readouts;8524actual input/1888actual output tokens,12288cap tokens.
+Generation-call seconds82.596622; supervised readout seconds425.407021;
+four new fits268.510038; fit+readout supervision693.917059. Full readout
+reservations1920.821997seconds include idle/audit time and are not active compute.
+Do not charge the inherited OFF generation again or infer a monetary rate.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_FUNDAMENTAL_REPLICATION_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_fundamental_followups_main_analysis_20260912.json`.
+- `research_notes/astra_memos/receipts_20260912/astra_fundamental_followups_independent_review_20260912.md`,
+  SHA256 `6f70d5e55f8b9732128c3aab4f031966806fb6d5dcdf5d43794c1731f8044370`;
+  Main's later archived copy equals the supplied
+  `/tmp/astra_fundamental_followups_independent_review_20260912.md` byte-for-byte,
+  checked September12,18:36UTC; no native audit rerun is implied.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_replications_terminal_20260912.tgz`,
+  SHA256 `dcd4237dfb54b1def3e4733cadbe29eb0252a6270662e9e869333265ed1bfde5`.
+  Root `astra_fundamental_replications_20260912_attempt1`, readout source
+  `a9a7c67919b5f5ec8b121a463f2ea49a5c967757`; replication helper SHA256
+  `fcd3dd3870a8b118df7b55eb987b860a90903b81ddaf5f17871f3ca98c2419e0`.
+  Preserved seed1-teach reduction SHA256
+  `c216db3b54fa91777b56da99a5cca53b7226f90378a49a19111c8f4bf491e9a3`.
+  Inherited OFF plan/reduction SHA256 are
+  `e275ebf4f27f0a3b35fd87ac983843e9edcf73e1239bd01be60f4952f3845fc8` /
+  `23a3e920b9e18c8bf6294a199193151169cfa18da5158d59691e42a0c8c92a3e`.
+  Last full readout release September12,18:19:42.013412UTC; weights excluded.
+
+## C44 — Seed0 failure is not only a paraphrase mismatch (SEQ100)
+
+**IN_SAMPLE_TRAINING_PROMPT_DIAGNOSTIC_NOT_HELDOUT.** All16original memory
+training contexts, one per device, are queried once per OFF/teach/control
+state on seed0 checkpoints; Main checks actual exported training-query bytes.
+No new fit, reminder, answer fact, semantic rescue or confirmation request.
+Temperature0, generation seed20260912, max64tokens match the dev readout.
+The primary fixed48dev endpoint and64confirmation cases are not replaced.
+
+| State | Exact color | Invalid answer | Pattern |
+|---|---:|---:|---|
+| OFF | 0/16 | 16/16 | Prose; every response at64-token cap |
+| Teach seed0 | 4/16 | 0/16 | Red on all16devices |
+| Control seed0 | 4/16 | 0/16 | Red on all16devices |
+
+The fitted collapse also occurs on the original question form. That argues
+against paraphrase mismatch as the sole seed0 explanation, not against every
+latent binding, every training dose/seed, or a hidden capability under a longer
+decoder budget. Memory's32supervised tokens/epoch including EOS versus880for
+arithmetic is a lead, not an isolated causal explanation. No reliable-memory,
+internalization, parenting, H1/H2, mechanism freeze or C11 qualification follows.
+
+Bernoulli's supplied **PASS** independently scores all48raw responses, binds
+queries to actual source-derived training rows and keys, and checks capture
+custody. No required correction. Actual input/output tokens2016/1088;
+3072requested cap tokens; generation seconds32.979904; supervised seconds
+339.980983, with owned cleanup but not Main audit or full reservations.
+Across C42–C44, supervised work totals1510.135936seconds=25.168932A40minutes;
+this is not active compute, monetary cost or total historical campaign work.
+
+Sources:
+- `research_notes/astra_memos/ASTRA_FUNDAMENTAL_MEMORY_TRAINPROMPT_TERMINAL_2026-09-12.md`.
+- Follow-up Main analysis and supplied independent review are the exact C43
+  sources; their review scope includes both C43 and C44, not two independent audits.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_fundamental_memory_terminal_20260912.tgz`,
+  SHA256 `a3c2bc8ba3a97a4f4b7e73f0a818f7b162872675d1fd577bc0ea4be4df5da378`.
+  Root `astra_fundamental_memory_trainprompt_20260912_attempt1`; source
+  `255ae18863538ec2b0d0ce5699807f67f3975e36`. Last full release
+  September12,18:21:19.567197UTC; original seed0 weights remain unchanged,
+  absent from the capsule and not locally reauthenticated here.
+
+**Engineering/future-work boundary, not additional outcomes:** Main's archived
+`research_notes/astra_memos/receipts_20260912/astra_v3_warmstart_native_cpu_attempt1_20260912.log`
+reports21/21PASS without skips, superseding the implementation handoff's
+native-test-pending status. Separate static review:
+`research_notes/astra_memos/receipts_20260912/astra_v3_warmstart_independent_review_20260912.md`.
+Weight warm-start creates a fresh optimizer, not resumed optimizer state.
+The repetition-export handoff
+`research_notes/astra_memos/receipts_20260912/astra_fundamental_repetition_handoff_20260912.md`
+reports38CPUtests (27new+11existing); placeholder-token fixtures are not a new
+native-token audit or GPU result. The intended contrast is continuous-context
+repetition versus resets, not child experience or sleep. No new continuation/
+repetition GPU outcome is included; Main owns those parallel choices and
+launches. Broader level-1 curriculum and formal C11 remain unresolved.
