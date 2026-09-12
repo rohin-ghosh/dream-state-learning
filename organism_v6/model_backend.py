@@ -83,11 +83,12 @@ def wait_gpu_free(threshold_mb: int = 3000, timeout_s: int = 90) -> bool:
     idx = os.environ.get("CUDA_VISIBLE_DEVICES", "0").split(",")[0]
     for _ in range(timeout_s // 3):
         try:
-            out = sp.run(["nvidia-smi", "-i", idx,
-                          "--query-gpu=memory.used",
-                          "--format=csv,noheader,nounits"],
-                         capture_output=True, text=True, timeout=15).stdout
-            if int(out.strip() or "0") < threshold_mb:
+            result = sp.run(["nvidia-smi", "-i", idx,
+                             "--query-gpu=memory.used",
+                             "--format=csv,noheader,nounits"],
+                            capture_output=True, text=True, timeout=15)
+            out = result.stdout.strip()
+            if result.returncode == 0 and out.isdecimal() and int(out) < threshold_mb:
                 return True
         except Exception:  # noqa: BLE001
             pass

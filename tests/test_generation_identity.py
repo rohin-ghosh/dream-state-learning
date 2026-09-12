@@ -3,16 +3,30 @@ import hashlib
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from organism_v6.batch_loop import run_episodes_batch
 from organism_v6.gym_backend import Episode
 from organism_v6.ledger import Ledger
-from organism_v6.model_backend import configured_generation_identity
+from organism_v6.model_backend import configured_generation_identity, wait_gpu_free
 from organism_v6.preschool import PostOutcomeSlot
 
 
 class GenerationIdentityTests(unittest.TestCase):
+    def test_failed_or_malformed_gpu_query_is_not_free_memory(self):
+        for status, output in ((1, ""), (0, ""), (0, "N/A"), (0, "0\n0"), (0, "-1")):
+            with self.subTest(status=status, output=output), \
+                    patch("subprocess.run", return_value=Mock(returncode=status, stdout=output)), \
+                    patch("time.sleep"):
+                self.assertFalse(wait_gpu_free(timeout_s=3))
+
+    def test_successful_gpu_measurement_respects_threshold(self):
+        for output, expected in (("0\n", True), ("2999\n", True), ("3000\n", False)):
+            with self.subTest(output=output), \
+                    patch("subprocess.run", return_value=Mock(returncode=0, stdout=output)), \
+                    patch("time.sleep"):
+                self.assertEqual(wait_gpu_free(timeout_s=3), expected)
+
     def test_base_and_adapter_identity_bind_configured_files(self):
         base = configured_generation_identity("pinned-base", None)
         self.assertIsNone(base["adapter_input"])

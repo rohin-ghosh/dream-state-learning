@@ -1,32 +1,42 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-**Terminal supersession, observed08:17:48UTC:** W0 attempt2 finished14phases;
-emitted ASSAY_INVALID, but external frozen replay FAILS because launcher.out
-changed after sealing. No accepted scientific label/clean qualification. SEQ-063
-preliminary preserves this; terminal capsule capture is active. All256oracle
-outputs hit32token truncation and fail strict ACT parsing. No rerun/reseal.
-Next: bounded development-only interface/truncation calibration,320inference
-requests maximum,1A40-hour; implementation only, no launch yet. W1 cannot run.
-An explicit model-authentication question is now logged to Rohin; other work
-continues. Older running snapshots below are historical, not live status.
-Latest reconciliation: **2026-09-12 08:11 UTC**. W0 attempt2 has four fit DONE
-receipts and ongoing evaluation, not a terminal result. SEQ-061 records B0
-postwrite instrumentation with zero neutral articulation and pending review.
-Turing owns selection-custody runner/lineage integration; James owns NEW
-`run_adult_v1.py`/tests; Averroes captures later A1/A2 banks read-only.
-Official model authentication is still unresolved/fail-closed; no clean launch.
-Selection custody is integrated and388 combined CPU tests pass; prior worker
-scope has ended. Turing now reviews the separate neutral ON/OFF wrapper.
-First combined test invocation timed out; successful rerun and both logs retained.
-W1 and authentic-source S proposals are received, not implemented/executed.
-SEQ-062: all12 completed A1/A2 bank artifacts fail unchanged G9. Raw/source
-capsule preserved; A2 seed2 still running at08:04:18. Do not resubmit finished
-jobs or enlarge failed configurations just for utilization. W0 OFF generation
-and scoring finished at08:07:24; ON evaluations remain in progress.
-Adult prototype passes49 CPU tests; trainer lifetime is being isolated into
-a subprocess before integration. W1 prospective CPU preparation is active,
-not execution-eligible until a sealed/replayed W0 MULTIKEY_BINDING_PASS.
+Latest reconciliation: **2026-09-12 08:35 UTC**.
+Rohin's current steering: continue mechanism/parenting under simple hygiene;
+retain the formal guard specification but finish/enforce it only for final
+paper-grade C11. Do not expand formal custody work as an exploratory gate.
+Preserve actual provenance, quarantine, parent blindness, controls and resources.
+
+W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails
+solely because launcher.out changed after sealing. All256 oracle outputs
+truncate at32tokens with no valid ACT. SEQ-063 raw capsule is committed in
+f0aba5ea (archive SHA256 1ef045e5e18e0747b6429e9f08c32702dab09bd03d53f1752950794b90a46608).
+Never reseal/rerun that root or use it as a successful parent. W1 remains blocked.
+
+**Live:** node3 GPU1 controller36087, run
+`~/astra_diagnostics/astra_W0_interface_calibration_20260912_attempt1`, launched
+08:31:57UTC from92a800bd3672caea0569b8350af2c23bf9e5b3d6.320request/1A40-hour
+inference-only development calibration;64paired prompts ×5format/cap conditions.
+Logs/launch/inventory are in sibling `_attempt1_logs`; never put output inside
+the sealed root. Prepared manifest5f4bbb473ddd92047f5e54cc95dd4aff9678924b354898ed76272ac7b51216c6.
+No result yet. Official model authentication remains UNRESOLVED_LOCAL_HASHES_ONLY.
+
+SEQ-062:12 completed A1/A2 bank artifacts all fail unchanged G9; Averroes now
+checks only outstanding A2seed2. B0 both terminal per independent audit;
+neutral articulation remains zero ON/OFF, no clean ancestry or H1 evidence.
+Separate neutral/adult/W1 CPU helpers are implemented;180combined tests pass
+54.813s with PYTHONPATH=tests:., preserving the initial import-error attempt.
+Adult training now uses a fresh subprocess. No real adult/neutral pair executed.
+Neutral advisory P2 (historical lifecycle-receipt binding) remains documented
+and deferred; live process cleanup checks are implemented. No formal guard expansion.
+
+**Next work:** James owns NEW parent_material_diagnostic.py/tests for an
+explicitly exploratory lesson-versus-active-sham grounded-material formation
+diagnostic (no training, adapter, eligibility manifest or clean claim). This
+advances teaching/material diagnosis without bypassing the strict clean nursery.
+Main integrates completed runner work and analyzes calibration; Turing advises
+on the next parenting path. Do not substitute formation for amortization/H1/H2.
+Older timestamped updates below are historical, not live state.
 Session start observed 2026-09-12 06:14 UTC (2026-09-11 23:14 Pacific).
 Recovered checkout: main, `a45baa2f77437a35e51ebe1034bf1c70deea4233`.
 Authority: current `AGENTS.md` standing authorization and launch prompt §15;
@@ -35,7 +45,10 @@ is historical; Git/SSH/courier access now works. Do not repeat its seven checks.
 
 ## Ownership and operating state
 
-Astra is sole remote mutation/scheduling owner. Sidecars only read remote state.
+Astra owns builder remote mutations/scheduling. Sidecars only read remote state.
+Fable's separately authorized subsidiary filler now schedules `fable_fill_`
+jobs on nodes1/2, retaining two-GPU headroom and builder priority; node3 remains
+entirely available to the builder. Read its08:28 notebook protocol before preemption.
 All prior jobs, run directories, adapters and mirrors remain untouched.
 Sidecar scratch reports are under `/tmp/astra_*_20260912.md`; incorporate relevant
 receipts here before interruption. Do not mistake an assignment for evidence.
