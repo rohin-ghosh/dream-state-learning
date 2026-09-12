@@ -5314,3 +5314,27 @@ It remains an open-loop positive control, not DREAM/SLEEP/H1/H2. Full protocol:
 ## [Rohin — STEER, relayed verbatim by Fable] 2026-09-12T17:54Z — level 1 on the GPUs now
 
 Rohin, raw message 17 (dictated; full text in `THESIS_RAW_ROHIN_2026-09-11.md`), the operative sentences: "I wanna know what's happening on the GPUs. Are you getting this level one testing done? … the whole compilation thing, let's not think about it yet … that's the issue with starting level three and grading level three when we don't even have one or two. So yeah, I wanna see those level ones happening on the GPU." — "We give it this tiny tiny tiny perfect corpus, so just one behaviour, and it's working. How well does it work over time — leaving the LoRA unfrozen but we're gonna reduce plasticity, see how long does that last; I'm assuming there's gonna be some fading … that'll tell us a lot about plasticity, so we should document plasticity." — "there's gonna need to be some variants … can we test on super long sequences of tons of repetition and then test down the line how much adherence." — "frame this as either instructions or model thoughts, it's up to us to decide." — On the gate: "I don't like the idea of a gate … maybe we need it right now … it's temporary, I don't mind it right now, but it's not something long-term." — On one habit: "for now one is probably fine." — "all these plasticity measurements are actually pretty important for our paper, so there should be some rigour … not saying be rigorous right now, but eventually." Builder: your 17:25 elementary block (predict-before-act, 64 addition demonstrations + 16 recall items, matched task-only and OFF controls, rank 8 / 4 epochs / LR 3e-4, ≤90 A40-min) is the level-1 block he means; he wants it running, with two additions — a repetition/sequence-length variant, and a fading arm: after the write, continue sleeps at reduced plasticity with no new teaching and re-probe adherence at intervals. Node 3 has eight free GPUs.
+
+## [Builder] 2026-09-12 17:57 UTC — message17 acknowledged; level1 continues
+
+Rohin's17:54steer received. The elementarylevel1 GPUtest is alreadycomplete
+(SEQ098, exactcountsabove); notanothercompiler/level3test. Teachingwrites
+carrytheglobalresponsehabit to32/32newoperandpairs; memorybindingsfail,
+notlabelledastaughtfacts. Replicationsseeds1/2next; originalmemorytraining
+promptsdiagnose acquisitionvstransfer, while64confirmationcasesremainuntouched.
+Longrepetition/sequence and smallerLRcontinuedupdates are nextdesigns,
+not silentlyfolded into the seed0recipe. No passivefadingclaim: anyfallwillbe
+measured against unchangedcheckpoint and specified competingtrainingupdates.
+Oneadaptercontinues toholdbehaviorandmemory; no learnedexternalcompiler.
+
+Watcherredteam'sconditional-binding concernisaccepted: ouradditionscore can
+combine a globalPREDICThabit withpretrainedarithmetic. Weclaimonlythathabit,
+notconditionalintelligence. Itsproposedexactsurfacecanary/nonce2modegateis
+advisory, not anewmandatoryblock onRohin'srequestedonehabitexploration.
+Wrong-bindingandinput-selectivetestsremainusefulsuccessors, notachievedhere.
+Originalunknown-devicecorpuscontainsnobodyteachinganunknownanswer, sofuture
+unknownprobescanbe scopesdiagnostics, notretentionofataughttarget.
+
+Concurrentwatcherpushresolvedwithordinarymerge retainingbothappendstreams;
+noreset/stash/force. Six096/097manuscriptfilesandreviewarecommitted/pushed.
+MainremainssoleGitoperator. Nextactualreadout/fitPIDs willbe logged.

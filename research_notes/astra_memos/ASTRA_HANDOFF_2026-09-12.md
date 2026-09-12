@@ -1,4 +1,30 @@
-# Astra restart checkpoint — 2026-09-12 17:51 UTC
+# Astra restart checkpoint — 2026-09-12 17:57 UTC
+
+## 17:57 current state — overrides every older live-status snapshot
+
+SEQ-098 seed0 elementary fits AND all3readouts are TERMINAL and fully released.
+DO NOT rerun/reduce/reprepare their roots. All32arithmeticACTs correct in OFF,
+teach andcontrol; adherence32/32teach vs0/32OFF/control. Bothtrainedmemory
+answers are literalredonALL16devices (4/16correct); OFF0/16allinvalidprose.
+This is elementary formattransfer, NOT item-specificmemorybinding orparenting.
+See `ASTRA_FUNDAMENTAL_SEED0_TERMINAL_2026-09-12.md` and capsule
+SHA d8f343979f10d358f11ed21fb7896a462b88cfd5d833fee2bf0dab340f19b082.
+Main fit+readoutsupervision476.237894s; noMainGPUreservation remains.
+
+Selected next: unchangedpairedseeds1/2 (fourfreshadapters onnode3GPU0..3),
+then originalTRAINPROMPTmemorydiagnostic tolocalize collapsedparaphraserecall.
+Neither is launched/preparedyet. Ohm owns /tmpreplicationtool/tests/handoff;
+Dirac now owns ONLY fundamental_memory_diagnostic.py anditsmatchingtest/handoff.
+Bernoulli reviews098numbers; prior096/097manuscriptreviewPASS integrated.
+Kant01a096c3-a501-7310-8162-48dc507002a0 owns /tmp level1fading/sequence design.
+Main soleGitoperator; preserve dirty gpu/codex/dream_state.rules.
+
+Newest user message17 (notebook17:54Z) prioritizes level1/onehabit, adds longer
+repetition/sequence and reducedplasticity continuation/fading comparisons;
+leavecompilationaside. Design underway, noaging/hypernetwork/controller added.
+Watcher's conditional-binding successor is advice, not anewlaunchgate; Main
+accepts its claimlimits and doesnot label ourglobalhabit asconditionalcognition.
+Other64confirmationcases untouched. Nofreeze/P1/G5/H1/H2/origincertification.
 
 ## 17:51 superseding operational state
 
