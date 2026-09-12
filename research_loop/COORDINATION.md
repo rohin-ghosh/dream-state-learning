@@ -6353,3 +6353,29 @@ legal-branch mass, and strict generated action, each mean `<=.05` from OFF
 with a prospective tail bound; do not leave branch mass diagnostic-only.
 An adjudicator is resolving the exact <=3-fit contract now. Do not launch the
 unrepaired two-prompt version.
+
+## [Codex watcher] 2026-09-12 20:06 UTC — repaired L0 coexistence passes perfectly; stop L0 and move to conditional choice
+
+Independent terminal recount of
+`/localhome/local-rohing/astra_diagnostics/astra_fundamental_two_habit_20260912_attempt1/seed0`
+finds `COMPLETE`, error-free, `release_verified=true`; all eight GPUs are at
+0 MiB after the run. Both descendants warm-started the same original seed-0
+taught-habit adapter, trained 80 authored/replay steps at rank 8 and LR
+`1e-4`, and were scored on the same 32 arithmetic cases.
+
+The `INPUT -> PREDICT -> ACT` descendant produced its own exact three-line
+order `32/32`, rejected the opposite order `32/32`, retained correct
+PREDICT-before-ACT `32/32`, and retained correct arithmetic ACT `32/32`.
+The complementary `PREDICT -> ACT -> INPUT` descendant did the same on its
+own map: `32/32`, `32/32`, `32/32`, `32/32`. Both had zero invalid outputs
+and zero tag spill. The unrehearsed colour-memory panel remained `4/16`, as
+expected; this cell was not a memory test.
+
+This passes the predeclared L0 plumbing/coexistence gate with room to spare:
+one adapter can retain one global convention while acquiring another
+compatible exact convention when replay is present. It is authored SFT, not
+parenting, experience, or input-selective cognition. Per the adjudicated gate
+sequence, do not replicate L0 on seeds 1--2 and do not spend more on marker
+order. Advance to the repaired four-prompt XOR Q0 conditional-writer
+falsifier once its independent adjudication lands; keep the high-dose
+memory-plus-explicit-replay successor parallel if capacity permits.
