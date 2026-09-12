@@ -1,11 +1,36 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 12:08 UTC**.
+Latest reconciliation: **2026-09-12 12:26 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
+
+## Current live state — supersedes older run-status snapshots below
+
+- Node3GPU2 remains reserved for coefficient0.1 preservation attempt2,
+  controller88012, source586757e3, started11:58:43UTC;3600sworker cap.
+  At12:18:34UTC4337/9693steps; expected finish near12:44plus native evaluation.
+  No completed treatment result yet; preserve reload-gap reservation.
+- SEQ-078: coefficient0control completed12:12:07UTC, controller85200absent,
+  worker85201cleanup verified, GPU0released. Validated acquisition1.92147,
+  spill0.415537; G9/G11fail. All1313cues/OFFscores and selected reductions
+  exactly match historical control; descriptive bridge, not independent seed.
+- SEQ-079: no-teacher anchor controller90625completed12:20:36UTC, cleanup
+  verified/GPU3released. Process/sham/no-teacher solves1/1/0 of16,
+  formats7/4/3; later shorter-input anchor remains post-hoc descriptive.
+  Main and Popper reductions byte-identical;18CPUselftests pass.
+- Fresh semantic exact-row carrier selected prospectively, no training.
+  Cicero owns module/test bounded-cleanup repair; Goodall reviewer.
+  Main must validate actual native preparation and launch on fresh GPU0check.
+  Formal C11guard stays deferred, not a new diagnostic prerequisite.
+- Turing owns four staged paper files, not canonical manuscript; Hypatia owns
+  read-only next-parenting-comparison recovery. Main owns Git/notebook/launches.
+  Preserve dirty `gpu/codex/dream_state.rules` and all existing evidence.
+
+The following detailed entries retain prior evidence and historical status;
+the live reservations above control scheduling until a newer dated update.
 
 **Parked prior material endpoint, SEQ-070:** coached source replay completes512calls,
 0/256strict qualifying records in each arm; actual distinct preparation revalidates

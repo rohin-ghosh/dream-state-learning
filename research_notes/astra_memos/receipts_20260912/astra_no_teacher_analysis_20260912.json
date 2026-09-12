@@ -1,0 +1,5395 @@
+{
+  "arms": {
+    "no_teacher": {
+      "artifact_hash": "ffb95b2cc1564c1b3498a01e5a65e15122c444aea24232bf43908c5c70cd72a9",
+      "available": 16,
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "3",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 90626,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      },
+      "episodes": [
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 _ _ 2 ; 2 3 4 1 ; 3 4 2 1",
+              "episode_id": "rg/mini_sudoku/1850000",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.1125,
+              "surprise": -0.4875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850000",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 _ _ 2 ; 2 3 4 1 ; 3 4 2 1",
+            "episode_id": "rg/mini_sudoku/1850000",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.1125,
+            "surprise": -0.4875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "49f5c26a0337f120f2b54447772a86fc7431c8fd70cde554a5b96fe0c106f53b",
+          "output_tokens": 59,
+          "prompt_sha256": "1f53baadebbbd0fb37aa919309b0fcbe894a3406c35b00b41e0357c84f1ef868",
+          "prompt_tokens": 761,
+          "public_constraint_diagnosis": {
+            "blank_count": 2,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ],
+              [
+                3,
+                4,
+                2,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                3,
+                4
+              ],
+              "columns": [
+                4
+              ],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 3,
+                "returned": 1,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 0
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 _ _",
+              "episode_id": "rg/mini_sudoku/1850001",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850001",
+          "first_action": {
+            "action": "1 3 _ _",
+            "episode_id": "rg/mini_sudoku/1850001",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "99346280d789192b505725bb59a08d326e4f083cbe09e912893b3ebf4f2c4c94",
+          "output_tokens": 87,
+          "prompt_sha256": "1e14d18cad9254b5f660e7a9a6e8854f75fa12d2409cc261af1c7449c872e426",
+          "prompt_tokens": 762,
+          "public_constraint_diagnosis": {
+            "blank_count": null,
+            "candidate_matches_solution": false,
+            "candidate_rows": null,
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {},
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 1
+        },
+        {
+          "actions": [
+            {
+              "action": "3 2 1 4 ; 4 1 2 3 ; 2 3 4 1 ; 1 4 3 2",
+              "episode_id": "rg/mini_sudoku/1850002",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.68 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.675,
+              "surprise": 0.17500000000000004,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850002",
+          "first_action": {
+            "action": "3 2 1 4 ; 4 1 2 3 ; 2 3 4 1 ; 1 4 3 2",
+            "episode_id": "rg/mini_sudoku/1850002",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.68 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.675,
+            "surprise": 0.17500000000000004,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.675,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.675,
+          "output_sha256": "9710df4601e70d6586b4ae41ccf7de6f94125e271f20cdcab5631caf809b86ec",
+          "output_tokens": 66,
+          "prompt_sha256": "a7137686ab1b323af2ee0020dbeaa8398578e5dab06bf13ad2968c1e34e644ac",
+          "prompt_tokens": 763,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                2,
+                1,
+                4
+              ],
+              [
+                4,
+                1,
+                2,
+                3
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ],
+              [
+                1,
+                4,
+                3,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 2
+        },
+        {
+          "actions": [
+            {
+              "action": "_ _ _ _",
+              "episode_id": "rg/mini_sudoku/1850003",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850003",
+          "first_action": {
+            "action": "_ _ _ _",
+            "episode_id": "rg/mini_sudoku/1850003",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "aa549b9ad01275dc6f61ade6091431743a371ac1db2bf2f1d96cc20d080c41a7",
+          "output_tokens": 48,
+          "prompt_sha256": "e481b4c64221ae0c774cd6296641653dc21abe520851abd56af4569f05d1a4cc",
+          "prompt_tokens": 760,
+          "public_constraint_diagnosis": {
+            "blank_count": null,
+            "candidate_matches_solution": false,
+            "candidate_rows": null,
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {},
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 3
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1",
+              "episode_id": "rg/mini_sudoku/1850004",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850004",
+          "first_action": {
+            "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1",
+            "episode_id": "rg/mini_sudoku/1850004",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "a7ea1ff45be9db9fcfa9e08774b5e6e0160d0548d0ee69acbd4252ebd89986b2",
+          "output_tokens": 65,
+          "prompt_sha256": "075e3e9662979add3b5dba22b057ef4d2b3e55286574dc15fdd0ffe33ffab514",
+          "prompt_tokens": 759,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                2,
+                4
+              ],
+              [
+                3,
+                1,
+                4,
+                2
+              ],
+              [
+                4,
+                2,
+                1,
+                3
+              ],
+              [
+                2,
+                4,
+                3,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 1,
+                "returned": 3,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 4
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 4 1 _ ; 4 2 3 _ ; _ 1 2 _",
+              "episode_id": "rg/mini_sudoku/1850005",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850005",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 4 1 _ ; 4 2 3 _ ; _ 1 2 _",
+            "episode_id": "rg/mini_sudoku/1850005",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "b3c5cf9a8e57dd9397ea820b6a6cb2b3977bc37354db35634778323709be1905",
+          "output_tokens": 38,
+          "prompt_sha256": "e3359b9dc21474c7c10a3b96bdc3df06119fbc0b99aba3845a8fd3e0341d68fe",
+          "prompt_tokens": 760,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                1,
+                0
+              ],
+              [
+                4,
+                2,
+                3,
+                0
+              ],
+              [
+                0,
+                1,
+                2,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 5
+        },
+        {
+          "actions": [
+            {
+              "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; score = 0.0000",
+              "episode_id": "rg/mini_sudoku/1850006",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850006",
+          "first_action": {
+            "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; score = 0.0000",
+            "episode_id": "rg/mini_sudoku/1850006",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "ce590ff3cfe103fb314f1616271d618b0e3444fd22daa13cb2c80c4873495db4",
+          "output_tokens": 111,
+          "prompt_sha256": "c980118ef20190e05753d4e6d7e0807e70f1d80d91942ddb07fe682c9f050c49",
+          "prompt_tokens": 761,
+          "public_constraint_diagnosis": {
+            "blank_count": 9,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                4,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                3,
+                2,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                3,
+                0,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " score = 0.0000"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 6
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+              "episode_id": "rg/mini_sudoku/1850007",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850007",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+            "episode_id": "rg/mini_sudoku/1850007",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "23eb0a94f99fbaa72fc490d5f5fc6efb00a78a614fdca05872f84e5afe5bfcde",
+          "output_tokens": 76,
+          "prompt_sha256": "c5e1d39b188b3d6c67d00ee4b2be62e74ca7777f4d41405fe029fe0fa1346d14",
+          "prompt_tokens": 760,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                3,
+                2,
+                1
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ],
+              [
+                2,
+                1,
+                4,
+                3
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 3,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 7
+        },
+        {
+          "actions": [
+            {
+              "action": "_ 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2",
+              "episode_id": "rg/mini_sudoku/1850008",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850008",
+          "first_action": {
+            "action": "_ 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2",
+            "episode_id": "rg/mini_sudoku/1850008",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "ed61b6b4beb17fb8f058a47cc9610ffa6ddfd5ae1b32b7ec5dd527837bf3f143",
+          "output_tokens": 35,
+          "prompt_sha256": "93cc1475ea740122564a734c089706b5a21a5cc3ab092f739c65263e2494ba33",
+          "prompt_tokens": 760,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                0,
+                4,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 8
+        },
+        {
+          "actions": [
+            {
+              "action": "1 4 _ _ ; _ _ 1 _ ; _ _ _ 2 ; _ 3 _ 1 ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850009",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850009",
+          "first_action": {
+            "action": "1 4 _ _ ; _ _ 1 _ ; _ _ _ 2 ; _ 3 _ 1 ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850009",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "0e011c4aa4c6f419a434aba37a78730a989d10ca2124f339e4703e0dc10a5f1e",
+          "output_tokens": 36,
+          "prompt_sha256": "4d9d8b272f98f6eed44b6375823a0fd5af02fdf14bb4114e02ba6c02af3adca7",
+          "prompt_tokens": 761,
+          "public_constraint_diagnosis": {
+            "blank_count": 10,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                4,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                3,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.5"
+            ],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 2,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 2,
+                "given": 1,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 3,
+                "given": 3,
+                "returned": 0,
+                "row": 3
+              },
+              {
+                "column": 4,
+                "given": 4,
+                "returned": 2,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 0,
+                "row": 4
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 0,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 9
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1",
+              "episode_id": "rg/mini_sudoku/1850010",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850010",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1",
+            "episode_id": "rg/mini_sudoku/1850010",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "f94efa93cd3de062927ef845a527c62165bacb72a97bb7e23614f2a54b21f594",
+          "output_tokens": 55,
+          "prompt_sha256": "5fcd2e9d21a4383827f1d92605bfa9b955a4d4ec9f895c7e9150325755787220",
+          "prompt_tokens": 758,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 10
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 2 ; _ _ 3 _ ; _ 1 _ _ ; _ _ _ 4",
+              "episode_id": "rg/mini_sudoku/1850011",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850011",
+          "first_action": {
+            "action": "1 _ _ 2 ; _ _ 3 _ ; _ 1 _ _ ; _ _ _ 4",
+            "episode_id": "rg/mini_sudoku/1850011",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "8660fbe97f179983c38382c251192d5b34b8cc7a08e3a5b6a99f879d76a8abe6",
+          "output_tokens": 60,
+          "prompt_sha256": "0460de8d086a094855cee4562856edd903fc31a3f54345f7ccf478b3aaa214e9",
+          "prompt_tokens": 759,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 0,
+                "row": 3
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 11
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.3",
+              "episode_id": "rg/mini_sudoku/1850012",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850012",
+          "first_action": {
+            "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.3",
+            "episode_id": "rg/mini_sudoku/1850012",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "45d985b275f4022bbf3bad28e7cbe4996210aa772965bae316afa6f4cd05419c",
+          "output_tokens": 38,
+          "prompt_sha256": "7dea351a3426fef28066da199adba404dbc70ce85fd5e0a1d032fe34446a1d74",
+          "prompt_tokens": 763,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.3"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 12
+        },
+        {
+          "actions": [
+            {
+              "action": "2 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+              "episode_id": "rg/mini_sudoku/1850013",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850013",
+          "first_action": {
+            "action": "2 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+            "episode_id": "rg/mini_sudoku/1850013",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "9ce1f208a2024aa5cadd8aadca754e634f9e86eac8e42bf0cc44278c63f834e8",
+          "output_tokens": 81,
+          "prompt_sha256": "2d22bae7a17eafb84cd6bd08df3b42a222b0063ecec7f3ecde932b1f63108180",
+          "prompt_tokens": 761,
+          "public_constraint_diagnosis": {
+            "blank_count": 7,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                2,
+                0,
+                0,
+                3
+              ],
+              [
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                4,
+                0,
+                3,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 13
+        },
+        {
+          "actions": [
+            {
+              "action": "_ _ 1 2 ; 2 _ _ _ ; 1 3 _ 4 ; _ _ _ 1",
+              "episode_id": "rg/mini_sudoku/1850014",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850014",
+          "first_action": {
+            "action": "_ _ 1 2 ; 2 _ _ _ ; 1 3 _ 4 ; _ _ _ 1",
+            "episode_id": "rg/mini_sudoku/1850014",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "3e5bcaa7814a4e2c48ae6cf373a6e6c0b55df8dadb0bc2760ea31222ba7d9959",
+          "output_tokens": 56,
+          "prompt_sha256": "c821c372ef568a52d0a2e982467e6617dcd04840ad9b5e2491780d42772ec642",
+          "prompt_tokens": 762,
+          "public_constraint_diagnosis": {
+            "blank_count": 9,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                0,
+                0,
+                1,
+                2
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                3,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 14
+        },
+        {
+          "actions": [
+            {
+              "action": "3 _ _ _ ; 1 _ _ _ ; _ 3 _ _ ; _ _ _ 1 ; PREDICT: 0.3",
+              "episode_id": "rg/mini_sudoku/1850015",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850015",
+          "first_action": {
+            "action": "3 _ _ _ ; 1 _ _ _ ; _ 3 _ _ ; _ _ _ 1 ; PREDICT: 0.3",
+            "episode_id": "rg/mini_sudoku/1850015",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "240f6a5dc91655677005251fab1618415cf386d26423d5cff528c4fe726593b4",
+          "output_tokens": 57,
+          "prompt_sha256": "73e9fe20b9d4aead376631b493f9319e71de4303c3369d1c62078fd290981fdd",
+          "prompt_tokens": 759,
+          "public_constraint_diagnosis": {
+            "blank_count": 12,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.3"
+            ],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 2,
+                "given": 1,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 0,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 4,
+                "returned": 0,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 15
+        }
+      ],
+      "format_valid": 3,
+      "input_token_counts": [
+        761,
+        762,
+        763,
+        760,
+        759,
+        760,
+        761,
+        760,
+        760,
+        761,
+        758,
+        759,
+        763,
+        761,
+        762,
+        759
+      ],
+      "native_best_mean": 0.09140625000000001,
+      "output_tokens": 968,
+      "outputs_at_retokenized_cap": 0,
+      "package_presentations": 0,
+      "package_tokens": 0,
+      "raw_native_first_score_mean": 0.09140625000000001,
+      "score_mean": 0.084375,
+      "solves": 0,
+      "total_actions": 16
+    },
+    "process": {
+      "artifact_hash": "19e9368f6b7b18182183338ea8f21eba2987eb3065f46d4660f9accb075e67f8",
+      "available": 16,
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "3",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 87252,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      },
+      "episodes": [
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+              "episode_id": "rg/mini_sudoku/1850000",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.3375,
+              "surprise": -0.26249999999999996,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850000",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+            "episode_id": "rg/mini_sudoku/1850000",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.3375,
+            "surprise": -0.26249999999999996,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "e551c405fcf062b5112733fe72a69ea2b24f8841ee484e0d3ed9ebce5a309f49",
+          "output_tokens": 76,
+          "prompt_sha256": "65f726e4d6703068d551ff60868f3376b50df6908a07bbb485333969b9efeb34",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                1,
+                2,
+                3
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 0
+        },
+        {
+          "actions": [
+            {
+              "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850001",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850001",
+          "first_action": {
+            "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850001",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "30c98762af9a0bcc59a23adaec6559e6844f3ea58488ef509f7a461cecd1887b",
+          "output_tokens": 38,
+          "prompt_sha256": "6d23a71ad653ae880d5ca9fec536a09c69a5336d115bb69279fa083beeca163b",
+          "prompt_tokens": 859,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                2
+              ],
+              [
+                3,
+                2,
+                4,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.5"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 1
+        },
+        {
+          "actions": [
+            {
+              "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850002",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850002",
+          "first_action": {
+            "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850002",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "3eb1a01060304ea95d9cf7a9262d0ead85096681094e380b4ac9b5f523f3b084",
+          "output_tokens": 72,
+          "prompt_sha256": "489ec7b501fdc353558f3ce44dd8dbd0173e7153ee6d6c230452bc4463550000",
+          "prompt_tokens": 860,
+          "public_constraint_diagnosis": {
+            "blank_count": 7,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                2,
+                1,
+                4
+              ],
+              [
+                0,
+                1,
+                0,
+                3
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                0,
+                3,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.5"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 2
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+              "episode_id": "rg/mini_sudoku/1850003",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.225,
+              "surprise": -0.375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850003",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+            "episode_id": "rg/mini_sudoku/1850003",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.225,
+            "surprise": -0.375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "0d7b77053e2a1412f32277398c9caaeb031417f46700d74e3cfe54d3ab7c8821",
+          "output_tokens": 86,
+          "prompt_sha256": "7aa8ee023037a25390039cfcd5e0ac99d25d61eb6db19159556e8a516e0b8eb6",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                1,
+                2,
+                3
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 4,
+                "returned": 1,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 4,
+                "returned": 2,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 3
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1 ;",
+              "episode_id": "rg/mini_sudoku/1850004",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850004",
+          "first_action": {
+            "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1 ;",
+            "episode_id": "rg/mini_sudoku/1850004",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "6600ac87736bd4f9927bb0d95ca9efc0b995a6a46f75a510603189ff6a864edf",
+          "output_tokens": 64,
+          "prompt_sha256": "f27bd62f0daab9995eb5af967457d895b40af27f53d5a52ef8f9cd6a10a33567",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                2,
+                4
+              ],
+              [
+                3,
+                1,
+                4,
+                2
+              ],
+              [
+                4,
+                2,
+                1,
+                3
+              ],
+              [
+                2,
+                4,
+                3,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 1,
+                "returned": 3,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 4
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+              "episode_id": "rg/mini_sudoku/1850005",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 1.00 (accepted)",
+              "prediction": 0.6,
+              "score": 1.0,
+              "surprise": 0.4,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850005",
+          "first_action": {
+            "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+            "episode_id": "rg/mini_sudoku/1850005",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 1.00 (accepted)",
+            "prediction": 0.6,
+            "score": 1.0,
+            "surprise": 0.4,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0,
+          "output_sha256": "1a9920a208ebca5535e20e4535ad4f7d3d53744f5613e9cd16fd84f1da49544b",
+          "output_tokens": 68,
+          "prompt_sha256": "9c56a6f4bb0e316a4e416564ebfef03f7fdecd5006c84e24e0f161bc53d4efb1",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": true,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                4,
+                2
+              ],
+              [
+                2,
+                4,
+                1,
+                3
+              ],
+              [
+                4,
+                2,
+                3,
+                1
+              ],
+              [
+                3,
+                1,
+                2,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 5
+        },
+        {
+          "actions": [
+            {
+              "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ;",
+              "episode_id": "rg/mini_sudoku/1850006",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850006",
+          "first_action": {
+            "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ;",
+            "episode_id": "rg/mini_sudoku/1850006",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "83d52d74276d44bbbda0860f6f0083737349646efc7cf55d023fa64bd6be7ab7",
+          "output_tokens": 56,
+          "prompt_sha256": "3b2c5dbce6cd2e36c04540d278032839eb239104be490fd32272471caa27fc54",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 9,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                4,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                3,
+                2,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                3,
+                0,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 6
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 3 2 1 ; 2 4 1 3 ; 3 1 4 2",
+              "episode_id": "rg/mini_sudoku/1850007",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.45 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.45,
+              "surprise": -0.04999999999999999,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850007",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 3 2 1 ; 2 4 1 3 ; 3 1 4 2",
+            "episode_id": "rg/mini_sudoku/1850007",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.45 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.45,
+            "surprise": -0.04999999999999999,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.45,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.45,
+          "output_sha256": "938637e683703710549fb5c7ae450c82b8d067b5363cd654d32d91935395f48f",
+          "output_tokens": 65,
+          "prompt_sha256": "10cd12f17e91cb314a3f1ce60242415ea5e9c1cec70ab2e497408f90ecca81aa",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                3,
+                2,
+                1
+              ],
+              [
+                2,
+                4,
+                1,
+                3
+              ],
+              [
+                3,
+                1,
+                4,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 2,
+                "row": 3
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 7
+        },
+        {
+          "actions": [
+            {
+              "action": "3 4 1 2 ; 2 1 3 4 ; 4 2 4 1 ; 1 3 2 3 ;",
+              "episode_id": "rg/mini_sudoku/1850008",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.39 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.39375,
+              "surprise": 0.09375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850008",
+          "first_action": {
+            "action": "3 4 1 2 ; 2 1 3 4 ; 4 2 4 1 ; 1 3 2 3 ;",
+            "episode_id": "rg/mini_sudoku/1850008",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.39 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.39375,
+            "surprise": 0.09375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.39375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.39375,
+          "output_sha256": "cdcc8d78948371ddf5e6dbf0c9ad2d68f174d2386b0eba7d4010828c659dcb95",
+          "output_tokens": 66,
+          "prompt_sha256": "66fc82edf98c6e1033fe3a2faa945f8b84e4f43f080b010fb84ea2e9d296feec",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                4,
+                1,
+                2
+              ],
+              [
+                2,
+                1,
+                3,
+                4
+              ],
+              [
+                4,
+                2,
+                4,
+                1
+              ],
+              [
+                1,
+                3,
+                2,
+                3
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": [
+                3,
+                4
+              ]
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 3,
+                "row": 2
+              },
+              {
+                "column": 3,
+                "given": 1,
+                "returned": 4,
+                "row": 3
+              },
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 3,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 8
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 2 1 4 3 ; 4 3 2 1 ; 3 4 1 2 ;",
+              "episode_id": "rg/mini_sudoku/1850009",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.3375,
+              "surprise": -0.16249999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850009",
+          "first_action": {
+            "action": "1 2 3 4 ; 2 1 4 3 ; 4 3 2 1 ; 3 4 1 2 ;",
+            "episode_id": "rg/mini_sudoku/1850009",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.3375,
+            "surprise": -0.16249999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "6367e67ee1937ecfd3b29bc3e5a6df1676255e3ee59fa20ef5e22cb31013c4e5",
+          "output_tokens": 71,
+          "prompt_sha256": "c6506ae1473384c3aad730619b753ea7c82273faa6b1529e0805edfe379caf4f",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                1,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                2,
+                1
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 3,
+                "returned": 2,
+                "row": 3
+              },
+              {
+                "column": 4,
+                "given": 4,
+                "returned": 1,
+                "row": 3
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 1,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 9
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ;",
+              "episode_id": "rg/mini_sudoku/1850010",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850010",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ;",
+            "episode_id": "rg/mini_sudoku/1850010",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "6702e6037e77d8c4c5f45ec61f3fadcd6bb76035398e64ebe105e1d94b9b3a5a",
+          "output_tokens": 54,
+          "prompt_sha256": "7c6b7dbba4ee9df99ce2f84793c15e3783c615ac790ec6587f4bae9b0206fdb3",
+          "prompt_tokens": 855,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 10
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+              "episode_id": "rg/mini_sudoku/1850011",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.75,
+              "score": 0.0,
+              "surprise": -0.75,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850011",
+          "first_action": {
+            "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+            "episode_id": "rg/mini_sudoku/1850011",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.75,
+            "score": 0.0,
+            "surprise": -0.75,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "4a3dd216e3c34926ace1c45a672caadc77c541be85fa3cf42097a724150cb66f",
+          "output_tokens": 65,
+          "prompt_sha256": "84ca8865f4747987660d8204f352f9d11a3ded8f30d11c9b2ddab77371e53c4b",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [
+                1
+              ],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 11
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+              "episode_id": "rg/mini_sudoku/1850012",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850012",
+          "first_action": {
+            "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+            "episode_id": "rg/mini_sudoku/1850012",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "fddbda22b95f9f147ce8a78c04cd0ee78bb205e299311b9f1d4dd8b2b37fd093",
+          "output_tokens": 70,
+          "prompt_sha256": "1b519e1214c53bbd3e89634e45926dc8aa0cb536c9d81d7f1bbb4af0f1f98807",
+          "prompt_tokens": 860,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.85"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 12
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 3 ; 2 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+              "episode_id": "rg/mini_sudoku/1850013",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.1125,
+              "surprise": -0.4875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850013",
+          "first_action": {
+            "action": "1 2 3 3 ; 2 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+            "episode_id": "rg/mini_sudoku/1850013",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.1125,
+            "surprise": -0.4875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "68246cf138d0108cc000cb964eb79ea8d3dc260376b5a940ba9507d551141e3f",
+          "output_tokens": 78,
+          "prompt_sha256": "77b2869682fe98a1b961879f90d0e7e95a36dd5e43a5754e07d8b10e0b06f531",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 4,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                3
+              ],
+              [
+                2,
+                3,
+                0,
+                1
+              ],
+              [
+                4,
+                0,
+                3,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2
+              ],
+              "columns": [
+                3
+              ],
+              "rows": [
+                1
+              ]
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 13
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 1 2 ; 2 _ _ 2 ; 1 3 _ 4 ; _ _ _ 1",
+              "episode_id": "rg/mini_sudoku/1850014",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.1125,
+              "surprise": -0.3875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850014",
+          "first_action": {
+            "action": "1 3 1 2 ; 2 _ _ 2 ; 1 3 _ 4 ; _ _ _ 1",
+            "episode_id": "rg/mini_sudoku/1850014",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.1125,
+            "surprise": -0.3875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "740e5642ae439b3b639c5f3648d948e6491248d22f8f2b5ed59071190513f70c",
+          "output_tokens": 104,
+          "prompt_sha256": "742725068a485030988d00ab57f24770d56230f1d5c046f1f7f85d31d261c7d6",
+          "prompt_tokens": 859,
+          "public_constraint_diagnosis": {
+            "blank_count": 6,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                1,
+                2
+              ],
+              [
+                2,
+                0,
+                0,
+                2
+              ],
+              [
+                1,
+                3,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                2
+              ],
+              "columns": [
+                1,
+                2,
+                4
+              ],
+              "rows": [
+                1,
+                2
+              ]
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 14
+        },
+        {
+          "actions": [
+            {
+              "action": "3 1 2 _ ; 1 3 _ _ ; _ _ _ 4 ; _ _ 4 1 ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850015",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850015",
+          "first_action": {
+            "action": "3 1 2 _ ; 1 3 _ _ ; _ _ _ 4 ; _ _ 4 1 ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850015",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "b5743aad241b3d8da7fd9b23969a08751fdcc302c8f22780431d6cfb8f9fee7b",
+          "output_tokens": 46,
+          "prompt_sha256": "ce144bb4ea559a272756ac53a1c43c1ad61682deec0df676a34f4f115d703ebf",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                1,
+                2,
+                0
+              ],
+              [
+                1,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                4,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " 0.0000"
+            ],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 2,
+                "given": 1,
+                "returned": 3,
+                "row": 2
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 0,
+                "row": 3
+              },
+              {
+                "column": 2,
+                "given": 3,
+                "returned": 0,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 4,
+                "returned": 0,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 15
+        }
+      ],
+      "format_valid": 7,
+      "input_token_counts": [
+        858,
+        859,
+        860,
+        857,
+        856,
+        857,
+        858,
+        857,
+        857,
+        858,
+        855,
+        856,
+        860,
+        858,
+        859,
+        856
+      ],
+      "native_best_mean": 0.21654829545454546,
+      "output_tokens": 1079,
+      "outputs_at_retokenized_cap": 0,
+      "package_presentations": 16,
+      "package_tokens": 97,
+      "raw_native_first_score_mean": 0.21654829545454546,
+      "score_mean": 0.19257812500000002,
+      "solves": 1,
+      "total_actions": 16
+    },
+    "sham": {
+      "artifact_hash": "63f5e11c15f1a881e6f0489b5e9d987af6a214c8f863b84f50c1befa5f4d3f13",
+      "available": 16,
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "3",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 88374,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      },
+      "episodes": [
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+              "episode_id": "rg/mini_sudoku/1850000",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.3375,
+              "surprise": 0.03750000000000003,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850000",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+            "episode_id": "rg/mini_sudoku/1850000",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.3375,
+            "surprise": 0.03750000000000003,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "3f68f14cce6c623bf6cde3c77546082b7b6ce6c746915da401aa1080fb397a71",
+          "output_tokens": 72,
+          "prompt_sha256": "9ef66aeb1ca917d24c1cfa769fd6dc41e087f5ef7a0bb8fb241619ff5b7431f5",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                1,
+                2,
+                3
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 0
+        },
+        {
+          "actions": [
+            {
+              "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850001",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850001",
+          "first_action": {
+            "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850001",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "30c98762af9a0bcc59a23adaec6559e6844f3ea58488ef509f7a461cecd1887b",
+          "output_tokens": 38,
+          "prompt_sha256": "8e7185e17f221ea9231f2cafb000322ad552ca36a64989ac3e61c09528690e64",
+          "prompt_tokens": 859,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                2
+              ],
+              [
+                3,
+                2,
+                4,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.5"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 1
+        },
+        {
+          "actions": [
+            {
+              "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+              "episode_id": "rg/mini_sudoku/1850002",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850002",
+          "first_action": {
+            "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+            "episode_id": "rg/mini_sudoku/1850002",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "db46d7bfac7fe2316649b284666851840bdb068086e40b6014304c105220d450",
+          "output_tokens": 70,
+          "prompt_sha256": "c9422b7a9bcbbaa4f2cc1bebf08af0379afb147dd310d80bbd9c039dc8c0c164",
+          "prompt_tokens": 860,
+          "public_constraint_diagnosis": {
+            "blank_count": 7,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                2,
+                1,
+                4
+              ],
+              [
+                0,
+                1,
+                0,
+                3
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                0,
+                3,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.5"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 2
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+              "episode_id": "rg/mini_sudoku/1850003",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.6,
+              "score": 0.225,
+              "surprise": -0.375,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850003",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+            "episode_id": "rg/mini_sudoku/1850003",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.6,
+            "score": 0.225,
+            "surprise": -0.375,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "9d4e6d38bfc9994ffa31b7cb67e62dc8061d8e1b3ac0649d731697964d6fb9b0",
+          "output_tokens": 67,
+          "prompt_sha256": "86744fec0b4541353004c8af6800725963f2365c260234a13f741221a0438b0d",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                1,
+                2,
+                3
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ],
+              [
+                2,
+                3,
+                4,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 4,
+                "returned": 1,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 4,
+                "returned": 2,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 3
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 _ 1 ; 2 4 1 3",
+              "episode_id": "rg/mini_sudoku/1850004",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+              "prediction": 0.3,
+              "score": 0.225,
+              "surprise": -0.07499999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850004",
+          "first_action": {
+            "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 _ 1 ; 2 4 1 3",
+            "episode_id": "rg/mini_sudoku/1850004",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.23 (not accepted; partial credit)",
+            "prediction": 0.3,
+            "score": 0.225,
+            "surprise": -0.07499999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225,
+          "output_sha256": "47f9ec9c49d4b820684e923aa95b6bfb40f0a6cfd04974bcaaabf65023751296",
+          "output_tokens": 66,
+          "prompt_sha256": "9a65bc3a090b1d6fed692f1c642641704407476a940e0bdc17cad96cecb2204b",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 1,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                2,
+                4
+              ],
+              [
+                3,
+                1,
+                4,
+                2
+              ],
+              [
+                4,
+                2,
+                0,
+                1
+              ],
+              [
+                2,
+                4,
+                1,
+                3
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 4
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+              "episode_id": "rg/mini_sudoku/1850005",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 1.00 (accepted)",
+              "prediction": 0.5,
+              "score": 1.0,
+              "surprise": 0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850005",
+          "first_action": {
+            "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+            "episode_id": "rg/mini_sudoku/1850005",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 1.00 (accepted)",
+            "prediction": 0.5,
+            "score": 1.0,
+            "surprise": 0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0,
+          "output_sha256": "5be9235d528294895387acd20942332f77929545fae704a96f531a099ff08d01",
+          "output_tokens": 66,
+          "prompt_sha256": "ce1f563d2763778e6d03224b47bd6b5ad42f8326e6aecf64ff41002c5512662a",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": true,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                4,
+                2
+              ],
+              [
+                2,
+                4,
+                1,
+                3
+              ],
+              [
+                4,
+                2,
+                3,
+                1
+              ],
+              [
+                3,
+                1,
+                2,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 5
+        },
+        {
+          "actions": [
+            {
+              "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850006",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850006",
+          "first_action": {
+            "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850006",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "582363a3f4e59cd18210af835214cd990bae0332f2b88f48c4d5a1f0a7261957",
+          "output_tokens": 45,
+          "prompt_sha256": "340919e36633ba61f4367833dbb7433cc3d92017d0cfba3011a92297f659892c",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 9,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                4,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                3,
+                2,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                3,
+                0,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " 0.0000"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 6
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+              "episode_id": "rg/mini_sudoku/1850007",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.3375,
+              "surprise": -0.16249999999999998,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850007",
+          "first_action": {
+            "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+            "episode_id": "rg/mini_sudoku/1850007",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.34 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.3375,
+            "surprise": -0.16249999999999998,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375,
+          "output_sha256": "e5bd432519895d34ca95fe001ba388bb15fffd0ca32dd1c85b8045d4fb8569d0",
+          "output_tokens": 65,
+          "prompt_sha256": "2fcac144fa266f354280afd10bbe3f88ad149e8336fcb2be7b6e1a552d6d8d62",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                4,
+                3,
+                2,
+                1
+              ],
+              [
+                3,
+                4,
+                1,
+                2
+              ],
+              [
+                2,
+                1,
+                4,
+                3
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 4,
+                "given": 2,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 3,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 7
+        },
+        {
+          "actions": [
+            {
+              "action": "1 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2 ; PREDICT: 0.8",
+              "episode_id": "rg/mini_sudoku/1850008",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850008",
+          "first_action": {
+            "action": "1 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2 ; PREDICT: 0.8",
+            "episode_id": "rg/mini_sudoku/1850008",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "8b17061a37871eec4f4a2fa9c5e5623acce5c951bc2310aebc4a2e664bbc2fc8",
+          "output_tokens": 86,
+          "prompt_sha256": "492b4ba6afda06066d3deef6f2edd96b97b7f8843fbf1c159d552e52ae0819b5",
+          "prompt_tokens": 857,
+          "public_constraint_diagnosis": {
+            "blank_count": 10,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                4,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.8"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 8
+        },
+        {
+          "actions": [
+            {
+              "action": "1 2 3 4 ; 2 1 4 3 ; 3 4 2 1 ; 4 3 1 2 ; PREDICT: 0.8",
+              "episode_id": "rg/mini_sudoku/1850009",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+              "prediction": null,
+              "score": 0.1585227272727273,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850009",
+          "first_action": {
+            "action": "1 2 3 4 ; 2 1 4 3 ; 3 4 2 1 ; 4 3 1 2 ; PREDICT: 0.8",
+            "episode_id": "rg/mini_sudoku/1850009",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.16 (not accepted; partial credit)",
+            "prediction": null,
+            "score": 0.1585227272727273,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273,
+          "output_sha256": "749c308a1522ce29b1af6cb4afc3997971460b4c5752b1a915ffc7eb6ee7b25c",
+          "output_tokens": 77,
+          "prompt_sha256": "70a575f32e676bc385c805dce900ac3ca3441f16656e70398e6aa148d3f60c38",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 0,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                1,
+                4,
+                3
+              ],
+              [
+                3,
+                4,
+                2,
+                1
+              ],
+              [
+                4,
+                3,
+                1,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.8"
+            ],
+            "given_violations": [
+              {
+                "column": 3,
+                "given": 3,
+                "returned": 2,
+                "row": 3
+              },
+              {
+                "column": 4,
+                "given": 4,
+                "returned": 1,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 4,
+                "row": 4
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 1,
+                "row": 4
+              },
+              {
+                "column": 4,
+                "given": 1,
+                "returned": 2,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 9
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ; 0.0000",
+              "episode_id": "rg/mini_sudoku/1850010",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.3,
+              "score": 0.0,
+              "surprise": -0.3,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850010",
+          "first_action": {
+            "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ; 0.0000",
+            "episode_id": "rg/mini_sudoku/1850010",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.3,
+            "score": 0.0,
+            "surprise": -0.3,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "6d8c4da1a4c7e15457730eea64767e5b6328b9d2544f67704b450750bf1eacea",
+          "output_tokens": 58,
+          "prompt_sha256": "36760fdfc0c1b8b4013395908e06919ee453dc28852bf871a7ec00f596755be9",
+          "prompt_tokens": 855,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " 0.0000"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 10
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+              "episode_id": "rg/mini_sudoku/1850011",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.75,
+              "score": 0.0,
+              "surprise": -0.75,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850011",
+          "first_action": {
+            "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+            "episode_id": "rg/mini_sudoku/1850011",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.75,
+            "score": 0.0,
+            "surprise": -0.75,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "1e508cb4f97f082d8624f36d9f4af63075788f4e7d57fa9d0249c95ca1db0492",
+          "output_tokens": 62,
+          "prompt_sha256": "92a4f38cc2d8b7a66487e70df56550a2c70d2c48c86aa6340f46b32902d4ad15",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 11,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                4
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [
+                1
+              ],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 11
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+              "episode_id": "rg/mini_sudoku/1850012",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": null,
+              "score": 0.0,
+              "surprise": null,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850012",
+          "first_action": {
+            "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+            "episode_id": "rg/mini_sudoku/1850012",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": null,
+            "score": 0.0,
+            "surprise": null,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "fddbda22b95f9f147ce8a78c04cd0ee78bb205e299311b9f1d4dd8b2b37fd093",
+          "output_tokens": 70,
+          "prompt_sha256": "a936ca4b4f184f6893b5b5d0ade37fb04e3d3e7896a4a5619378908d5f2eed5d",
+          "prompt_tokens": 860,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                0,
+                0
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [
+              " PREDICT: 0.85"
+            ],
+            "given_violations": [],
+            "unchanged_givens_echo": true
+          },
+          "request_index": 12
+        },
+        {
+          "actions": [
+            {
+              "action": "1 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 _ ; _ _ 1 2 ;",
+              "episode_id": "rg/mini_sudoku/1850013",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.6,
+              "score": 0.0,
+              "surprise": -0.6,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850013",
+          "first_action": {
+            "action": "1 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 _ ; _ _ 1 2 ;",
+            "episode_id": "rg/mini_sudoku/1850013",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.6,
+            "score": 0.0,
+            "surprise": -0.6,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "d37e5377aab3b04d7cb6982cfbdd27a041d0ae5a3ff003337e10afe592ff9f2f",
+          "output_tokens": 56,
+          "prompt_sha256": "7a38e865f01aaa948177dff5233f8f8de5d1964b1cd99ee2fe365dfed319c001",
+          "prompt_tokens": 858,
+          "public_constraint_diagnosis": {
+            "blank_count": 8,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                0,
+                0,
+                3
+              ],
+              [
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                4,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                2
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 13
+        },
+        {
+          "actions": [
+            {
+              "action": "1 3 1 2 ; 2 _ _ 3 ; 1 3 _ 4 ; _ _ 2 1",
+              "episode_id": "rg/mini_sudoku/1850014",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+              "prediction": 0.5,
+              "score": 0.1125,
+              "surprise": -0.3875,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850014",
+          "first_action": {
+            "action": "1 3 1 2 ; 2 _ _ 3 ; 1 3 _ 4 ; _ _ 2 1",
+            "episode_id": "rg/mini_sudoku/1850014",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.11 (not accepted; partial credit)",
+            "prediction": 0.5,
+            "score": 0.1125,
+            "surprise": -0.3875,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125,
+          "output_sha256": "6318565041433b0cf1c9cbacafd7bdbb7a568ca84e3450231bf26a0367835651",
+          "output_tokens": 68,
+          "prompt_sha256": "2c2baec4b3a9e4062d8c722a2cfb6e7e9974ebca64f9da6587c07dc19f8a08c6",
+          "prompt_tokens": 859,
+          "public_constraint_diagnosis": {
+            "blank_count": 5,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                1,
+                3,
+                1,
+                2
+              ],
+              [
+                2,
+                0,
+                0,
+                3
+              ],
+              [
+                1,
+                3,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                2,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [
+                1,
+                2
+              ],
+              "rows": [
+                1
+              ]
+            },
+            "extra_segments": [],
+            "given_violations": [],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 14
+        },
+        {
+          "actions": [
+            {
+              "action": "3 _ _ _ ; 1 _ _ 2 ; _ 3 _ _ ; _ _ 4 1",
+              "episode_id": "rg/mini_sudoku/1850015",
+              "evidence_label": "EVALUATION_ONLY",
+              "kind": "act",
+              "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+              "prediction": 0.5,
+              "score": 0.0,
+              "surprise": -0.5,
+              "tick": 1,
+              "time_cost": 0.0
+            }
+          ],
+          "episode_id": "rg/mini_sudoku/1850015",
+          "first_action": {
+            "action": "3 _ _ _ ; 1 _ _ 2 ; _ 3 _ _ ; _ _ 4 1",
+            "episode_id": "rg/mini_sudoku/1850015",
+            "evidence_label": "EVALUATION_ONLY",
+            "kind": "act",
+            "outcome": "attempt 1: verifier score 0.00 (not accepted)",
+            "prediction": 0.5,
+            "score": 0.0,
+            "surprise": -0.5,
+            "tick": 1,
+            "time_cost": 0.0
+          },
+          "first_action_available": true,
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0,
+          "output_sha256": "4a530263fcfae90e0817339c3f7b1712e08d9f575ad400281ef5a29092afde50",
+          "output_tokens": 102,
+          "prompt_sha256": "af67591a64ede8e9be2d7adcb93ada90bffb7af1c74d9fb08dd5f22df45935bb",
+          "prompt_tokens": 856,
+          "public_constraint_diagnosis": {
+            "blank_count": 10,
+            "candidate_matches_solution": false,
+            "candidate_rows": [
+              [
+                3,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1
+              ]
+            ],
+            "classification_only_no_output_repair": true,
+            "duplicate_groups": {
+              "boxes": [],
+              "columns": [],
+              "rows": []
+            },
+            "extra_segments": [],
+            "given_violations": [
+              {
+                "column": 1,
+                "given": 3,
+                "returned": 1,
+                "row": 2
+              },
+              {
+                "column": 2,
+                "given": 1,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 3,
+                "given": 2,
+                "returned": 0,
+                "row": 2
+              },
+              {
+                "column": 1,
+                "given": 1,
+                "returned": 0,
+                "row": 3
+              },
+              {
+                "column": 1,
+                "given": 4,
+                "returned": 0,
+                "row": 4
+              }
+            ],
+            "unchanged_givens_echo": false
+          },
+          "request_index": 15
+        }
+      ],
+      "format_valid": 4,
+      "input_token_counts": [
+        858,
+        859,
+        860,
+        857,
+        856,
+        857,
+        858,
+        857,
+        857,
+        858,
+        855,
+        856,
+        860,
+        858,
+        859,
+        856
+      ],
+      "native_best_mean": 0.15965909090909092,
+      "output_tokens": 1068,
+      "outputs_at_retokenized_cap": 0,
+      "package_presentations": 16,
+      "package_tokens": 97,
+      "raw_native_first_score_mean": 0.15965909090909092,
+      "score_mean": 0.11875000000000001,
+      "solves": 1,
+      "total_actions": 16
+    }
+  },
+  "completed_utc": {
+    "no_teacher": "2026-09-12T12:20:36.664152+00:00",
+    "static": "2026-09-12T12:02:55.307608+00:00"
+  },
+  "differences": {
+    "process_minus_no_teacher": {
+      "available": 0,
+      "format_valid": 4,
+      "native_best_mean": 0.12514204545454544,
+      "output_tokens": 111,
+      "outputs_at_retokenized_cap": 0,
+      "raw_native_first_score_mean": 0.12514204545454544,
+      "score_mean": 0.10820312500000001,
+      "solves": 1,
+      "total_actions": 0
+    },
+    "sham_minus_no_teacher": {
+      "available": 0,
+      "format_valid": 1,
+      "native_best_mean": 0.06825284090909091,
+      "output_tokens": 100,
+      "outputs_at_retokenized_cap": 0,
+      "raw_native_first_score_mean": 0.06825284090909091,
+      "score_mean": 0.034375,
+      "solves": 1,
+      "total_actions": 0
+    }
+  },
+  "exact_prompt_joins": [
+    {
+      "episode_id": "rg/mini_sudoku/1850000",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850000",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850001",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850001",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850002",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850002",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850003",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850003",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850004",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850004",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850005",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850005",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850006",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850006",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850007",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850007",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850008",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850008",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850009",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850009",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850010",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850010",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850011",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850011",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850012",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850012",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850013",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850013",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850014",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850014",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850015",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "process"
+    },
+    {
+      "episode_id": "rg/mini_sudoku/1850015",
+      "exact_removal_match": true,
+      "input_token_difference": -97,
+      "prior_mode": "sham"
+    }
+  ],
+  "independent_grid_universe": 288,
+  "input_sha256": {
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/COMPLETED.json": "dab438771cdcc156fe27e22f082c282390d2400c451eebb025df35a50eae89b4",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/STARTED.json": "c323604af19e0c9dc585ccd57962090ace1792116cf07e91344563b2f4677dbd",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher.cleanup.json": "4699cdb6e9519403c6223ea9fac0d68f7267e0fd7a37d5302c6e7dba0a2dd951",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher.log": "490b9f36746eb646f1ae29f391eff578df651adad8d77ed531c90c8918571500",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher.process.json": "32b6562848ae155606f5c356c543fa2dd7bddbc0e4e7d686ac3c08be087b083c",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/artifact_hashes.json": "ffb95b2cc1564c1b3498a01e5a65e15122c444aea24232bf43908c5c70cd72a9",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/config.json": "6918baa5d606ab4f95b3cd806add467c7e25a378be646e40628b9ef2fb28461b",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_00.jsonl": "dabe9897c54328f41422faa0aace71e2087508e6203c21f8e60d7d32a7c4dd24",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_01.jsonl": "ee7ce68bec24ff07656e16353cb5ab69e74fcfd1799f353d4886151b7aceb90e",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_02.jsonl": "0e916bda4d43a500580b3f10cf9fb18ebb973c6071d63240b2cd332f778c626f",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_03.jsonl": "57f84c56d597aab94a361a02f85130191bbf885e0cf30d632c2d475968d99619",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_04.jsonl": "954175cb5ed65c2c5a43302b5c4e646ad1696a43384f5d52db98a47d924325a2",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_05.jsonl": "ec659a619725e3a6586a05c3ea5b322422f44e06ed84d21fdc3c3934f05fb758",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_06.jsonl": "aa96450bb1341b38cff9f746b9e29559ba63b5dac044d414e3cc25bb5ec52cc5",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_07.jsonl": "bea632f02d263e9ce306ebef915fad5195c5c283a86eaee58e3f7cd0e9eb2631",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_08.jsonl": "c4bb37fcb3467b742e43d4091d48c67a6dda0332fc263cd1a7651e88013c5041",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_09.jsonl": "6b7384d43c8379e010144a8d8fc90b161ee072156fd176d53ccd07f19f22c205",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_10.jsonl": "4ec12a06ba060f2bf5d653098aae8a499bb0dee3001b90cf9506dbef640dc61f",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_11.jsonl": "c243572ec6ca5c65d27aae72bbdfcff0642ed97ee7881478972b7cc89b645285",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_12.jsonl": "00737d19e5cd2fc64f8365743371085c2ceb4e2d2bb83ec91b3c3d1e920c1bbf",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_13.jsonl": "80dfbd668972009b1e93cb5f982dd4d7a7123060775d851784998f0dda977f53",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_14.jsonl": "aaacc098b7abb28c1da50e6540399df0aad563c105e65f7492a37e69eee0186a",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/episode_15.jsonl": "87bbf9df6346b034924b0f4a82265179e4891c91f05a29e062e806d5af767f74",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_00.json": "5deffb757b0b87babcf52de12830755e70230f1554d117442d48cd7bee2f2fd6",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_01.json": "e143ff581cfc3ecc944fa1c2284698232ef02053419a5a08d94673f07892b9b4",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_02.json": "1a76022bf19a49ec7128efba2faa94a321cb83149e79a10bc4b22da18b1c174d",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_03.json": "261cd56984bdd7517fd78a9f676fe094783d5184edd6a3176bb21a6639eff9e8",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_04.json": "c699150a1aaabdab098bdec7014d931789d1b0dcc5d4e37c492f1fe28aed84ad",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_05.json": "b6caac4f2b90a336a2fb012cbeacd906357ca144b62ca49bf22de14ed8400166",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_06.json": "f0afc18bba0f59a2551d4a688858394a196e515e7097612a6063b14b58d5ae1d",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_07.json": "986e6b889d855606dad7c1f5bca8af41b5217373d454b51a3608542d70dd043e",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_08.json": "eb6b460de44b39a83b3bd87c207576142d615fda919e177d0d0a5082969fef1f",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_09.json": "e3f8dd699e738cd8e5e1bfcff9396ee816c6b0626284ee394a41480d843d10a0",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_10.json": "51b0279d42712d03120a4045e2646cb1f91a4fe70c86051a02551f6d7b87342c",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_11.json": "a45dce8ca1c6a1cef4b97de9afe2ab8d04040bcc84cc70996d036f06940acc7f",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_12.json": "296dea76ccdfe39ae7b5fb2d015e68876b04b9aaf560f783898be8f81e9dd5a2",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_13.json": "4185fb9c8b43dd265d226cc54b7acdd33e3c268560ab82b03ed998949de66dd8",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_14.json": "9b9d3298ee5521f0569146ac01be43b03d3ee53819db7f7d6ad528b186bb0c14",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/output_15.json": "cd3fa2efe1010f21d1cb790b08b4b492f9c1ffbb96146a38bb1783c91ba62a18",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_00.json": "83f238a95169eae7a5d5f3235691c6485446bc88b412bc539497c5bcf7acc2bb",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_01.json": "40bd87897ad8ed89a76312e9ab21e906062a05e594600aa7746f9c01ad4af70a",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_02.json": "c869e455d38e86802456d33091c6755f63034350fcda6a3fc8b6326134b766de",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_03.json": "ea2ce26a5ee93bcced92e57ac4f68d2c9b7c52efadfefea0270382985edfa1d2",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_04.json": "e2f41d05de16e84da59cb16530faa01a91cc3338279adc82b2cfe980a12b6b20",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_05.json": "287db90d5f5a60857217dd92c3617ebf1b0d1875b188d6d87354861ba425f3ed",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_06.json": "c5b30523e573bfdeb88acdfb3b509c8253fe90997e9c273a8311f90f2bb324a6",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_07.json": "fefa4ef6195b7aa4a15637e6949ac954a726edbd387695f83dbd2978d5e7606a",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_08.json": "5518aedde655909d530a033ef28fbbe048344372c9d2b0645c0c9d79863f182e",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_09.json": "c7e12900727cf88d514ebaeb197b22d3b31c3ef2dd90b56721c5a35266b29278",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_10.json": "da87f58fe2b005306e84f1d1b14aafa244f69cbab9075caea0ffb17ab16674c2",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_11.json": "ad040808cf265234e3377014ac11e93dc5fc3411613d53f44689a7e55b14cce2",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_12.json": "2770f02328c12679784cf791250953c255086b401f4d1f5c49f5e6e9b41a8ceb",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_13.json": "96b277a0f7560543c7c2eb1a85a108883f6ed9b554d95ef7a896e7671a1013da",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_14.json": "c3dbdb8ca8100d3be3eff8029c95aaaead5b0be619b0670ac37b202004eff0ce",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/request_15.json": "c6a2aeacec4a514190a7759debcdeaa5c075afbb55f58665928ac380ef94e8c5",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_20260912_attempt1/no_teacher/results.json": "940553047fe7e0950ae5db8f5d28cf857105c26788b3a738171fcae1838a3f0d",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_preparation_20260912_attempt1/artifact_hashes.json": "1afb2dca26f265506789cf3bd1a4f600bf9ca32e0bbc988a5a1469969ae7fe45",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_preparation_20260912_attempt1/config.json": "edd7c295ec587d074a674290e7ac5cbccbf8b0c312955a2b0005fac9a1390df8",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_preparation_20260912_attempt1/preflight.json": "e6eae1f11a1080ac3e6383f8c06041b5f767fe4a5c29526fe8f2e64165461332",
+    "/tmp/astra_no_teacher_terminal_20260912/astra_P1_no_teacher_preparation_20260912_attempt1/questions.json": "ba1321229541bd6ec23d1158f2260219144290660e265e225f0d37682caa3fb6",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/COMPLETED.json": "b734651b3df7966c6fbe733af9766beac65e75b2432c7f95e1343cea0bd20182",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/STARTED.json": "2c3423934479fa0a418c4b5a135e083220d030d07c181ff145bfec1e549ca374",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.cleanup.json": "16e45629c05f2fec4fb9f6187f7682bee776e649bd98450cc1558bc03b2afef6",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.log": "885fa265d33baf69b9ee7e29197b5362404991d3f4461dd54920656d1786de46",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.process.json": "b51454184ab77a0a2a3b6d98eccf103dc25edbbe9bed81825a7c9a3084441d6a",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/artifact_hashes.json": "19e9368f6b7b18182183338ea8f21eba2987eb3065f46d4660f9accb075e67f8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/config.json": "aa3fc02ea2f2fe77135b04cc6a085b9f8a051825ecee957ff0e0b01150efecf7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_00.jsonl": "a76477fc8a6e7e76824f1106e704601d98c589701ce8e7f7d244dd8bc16ef519",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_01.jsonl": "2e0ff4912e5b4bace38fd3a559668ce826551d5c89a3d1efc45ce683dbc5ac8b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_02.jsonl": "fce78ec770f05363d77e9f571960bf6a09f013e1bd7927ae20d06974b1be9a21",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_03.jsonl": "df49e5675c816396ab48ad07586bdca16b358ef3857be4a08aabe208208649a2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_04.jsonl": "5759ec595004738f5b8cd1929b0e683ec63e07c27db55869ff2f757f13968ac1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_05.jsonl": "2c0b298e1f13fc0b0c217a1e58cb008d51cc51a7fcac095ccd9329f3232be7ce",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_06.jsonl": "00b2e7bf0f8888eb2e788a34763589fc6d451971b510b3b1b29eefc513cbd195",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_07.jsonl": "9b87a2aa5235cb49427b12562175fdf39a49a0b74167f16e5df55da001a1beb4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_08.jsonl": "e71292917fcb5d0f3459a26bf9ae9cacaaa44d53c66fd7e7a2d380a55fcdd3d8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_09.jsonl": "46098df2f90d6e0e66046aee908e2849b3686881c7499c6ba758898b677a17de",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_10.jsonl": "2dfcdaa7c3f03b9b0edac46fccac7b83f1fe7017e3bca7935a6cbbf7cecad650",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_11.jsonl": "87522ad170e5ac220e47c08641d9efbe8d5c997b53b2134da7b2e2ce53bdf707",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_12.jsonl": "8e1ef96e1450b209e7d9675b1f3424d70ec102060cf87814426e8f881d473cbc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_13.jsonl": "1f1cc31e96dbb0d79d3ff4cd9827c4a212fc355be559cb57dc7bf06c5867512d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_14.jsonl": "eb6a93ab676fee7539621e3f00c924eaf5321532f3e67850ca61905c969dc624",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_15.jsonl": "4f6179061866703e85c44276aeaa7ee828a7ba2ed74da4dbf4f0d358b0761cdf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_00.json": "c469fb370523ff0c0a73c6929994be58bdbca26561028c240412e8f5a08cea06",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_01.json": "1ab99237339637385306080c85a6737a22f688d6e80977cbb84f241e6a056ae1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_02.json": "6e8518a014ce6f49f8334a275972a050a5e973ed150bd3d7ee5e17bafbfdccfa",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_03.json": "114a94d17f423c083cf0418204454ca7fcdf0f29451c78de9baeaf4face075b7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_04.json": "938c15175d7a6fbaac22a9a2db0f582bcc889939b24ff3d91af77259711f158b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_05.json": "cde8fdd070c472a29eadbf8a7fc7f69a9871fead62c129526d74145b7435485d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_06.json": "5bd42a0b5f0a064c6145ae9bc125f19aed21f226ad8d5c98cd0b2cffe4ede991",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_07.json": "02605959201b2357f5cd751aa7260e8d0674300688bebd84ba4ef99a940491e3",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_08.json": "c5171e62476778ef4b5c9d5e1c29abdbbbbbcf5350415905f63d238e6dd93726",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_09.json": "e18217d9349177502f72e6c699c90a8167a45caad154e1cc91f1969d63ab9776",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_10.json": "7b2dd79eaf0ae932b58517c7af35707b3a2cc441e7e95dcefdfca35de8627fc1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_11.json": "ab4bb02acf0abad6f7cedc932ad67d80eedca5083cec2a87de99ee1f015df7a4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_12.json": "75b1d3e51fc9193a9ac96a376fab8b8bef11bf0b54a4f7abf694de44095c0698",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_13.json": "6fc524ab6210294ea77205aa593a91b3597dde2371a6632d3786505d9b3ef3cf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_14.json": "82baee8d800035b3909bc05ff18875ceb45af4d887797c97597b769754b67e9a",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_15.json": "5fea96af9e91617aebbd9aeac6958befbc8f69f6a3bc7c32c31a8cce16a0d275",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_00.json": "4c5301a9d3ead9cd2e834ec718d7d7380c4300ed101bf86feb90569877371d9f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_01.json": "59139863b1d1dfb20e85bd9d9a3d931c189c3c54a6e9e8291f33b4277c4f5a3f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_02.json": "7487b0f9d9a9ea962948c0ff1448a601a841d91a6aafc95df65a8152ae10f776",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_03.json": "45d583c95663462388d331f22bffb9594bf074dd466b198499cdb1da22b44d15",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_04.json": "f95197b4e4f2b4d6b8fea1d9664232507db832ebd14cd3076d1b195799a4003e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_05.json": "8e4498b2c43b26f3585e07776929d47c12b7f6cb01a585cb60d1f74e6b1315cb",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_06.json": "5af7355eb64db3f6bb720c9ba2331d9a12e1bdaeeb56ae37da0ec66bc3ce1c24",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_07.json": "9c7370ab25281c46603d8708beb824cfe7e32235d3b57eff982d88da5815db09",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_08.json": "60b91992fff10d74df8f750f94ce735753f0cdc2683deb288c74cf12bffb2fd0",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_09.json": "39ab731cb1fdea97e53dcccb8740d8c18fb98fe23983dc3a0dc1a74b21127b66",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_10.json": "ce7cf0ddc96c688950de2455b00ef0331d06811be411f8ac363d5fd943bb3d86",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_11.json": "1395fb44f9e3080b6ccf2449c669fe8d592c0c69801ccd0f0149f239ddb44293",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_12.json": "f95d41c8cf522b55bbaa3b5b6cdefec23d388894b8b415f0fc386c420da09bb0",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_13.json": "a80da96eb846a835bdb76ccf343daf076f29b9ae5c89ef9e3f00828668e23841",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_14.json": "58d457cfe3650b5d8f9f9ec2c51c6b051e08ba7d70d7237957da8420e8606039",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_15.json": "b425a6f31882074e37bb6f04d4acf49f40ced9fcae20d1e4c643ca84df436ac4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/results.json": "6bbfb02063ea89c2fa4aa319bc199497b743620a0f431cbe3de3237556841b28",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.cleanup.json": "0d3e90adba9fba90b8688107244d473dd5a8711e5996be45c41066a7d3dd0ce4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.log": "21a3919c9a8c85b42d600977ee66a172ca2be87dba0702dcc088167e6f5ce5aa",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.process.json": "47538b6b05341a2ff9b31ace4754935b42efc2071c61ee0298dbbd4efa86aa62",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/artifact_hashes.json": "63f5e11c15f1a881e6f0489b5e9d987af6a214c8f863b84f50c1befa5f4d3f13",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/config.json": "8d0ba98f304b00f90931d391f6ed68a9a210816a8e539d5685546ffeb7cb4b4d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_00.jsonl": "d35fb297aedb7ec2e48a14688428b05586355b35640764fadf6cf28c5a52a962",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_01.jsonl": "91173deb6fc0bc6dc9ac22096d1cc76d8d945120b94f9b690caaccb0e8be2cdd",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_02.jsonl": "7cb6cf44f4e2c787a734b40a4374b835ae5c13a3119667e70d53274a4112c9c5",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_03.jsonl": "c0de5c78bd7fb6147c96e57290d7e55c4e29abb82c2dc061ac7d1ef0846cd8cd",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_04.jsonl": "e32a1a1d539ba6088ae21d44be80028c008f0a7859147de655ae8ec31ffd98ab",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_05.jsonl": "6e11c37f95341727e69b48ca67f96497f5cc0b95813b42d5d42d91c7976406ba",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_06.jsonl": "61b6b8cb5401f4a81b9dd797174a69df4675d1b9cd1cac63f1e1525f02890d66",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_07.jsonl": "5d2d38892339099dbe1cc35214b2a4b357b86ce52eb40a222fd279905dfa2986",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_08.jsonl": "b212935d0218a719bdc54afdcfb1d83865830ab7795b126972d9a9a3033cada4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_09.jsonl": "13f261aa364e9be3ef8c1139f073d78a0474ca8e0fd84803ee23fdeeeb9a621b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_10.jsonl": "92ba82e5ec12b236ce733faba0772a643610b7d9094df3f5e25e61fb3fa1175e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_11.jsonl": "9fef7f192fded8a3f2753128c87e7f8f988bca91eba0b26d71648cefb7f98cca",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_12.jsonl": "56da7ec1897b700e3755cb447fba939a37c09271cd210e92013537ed105bc5e8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_13.jsonl": "5ee712f5a996676529317e48d4986c51cbf4ef1f325db049577d4f7f761f1fc2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_14.jsonl": "c4a93f2bab0f7850567a5aa90db19c86e9e71edffda0e9316bbc204b015fc5ee",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_15.jsonl": "b7105112429cd19f62f1529feb3aa829ba85886bc3e71251022c0d74f7d5b86b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_00.json": "fe8351c71ed4f2ab0c27937dc17bf4530735ed9456bb5b1542af68f020ddba6e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_01.json": "1ab99237339637385306080c85a6737a22f688d6e80977cbb84f241e6a056ae1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_02.json": "06c4f00af3ab792d8d6d36a867790879e80476bb769d9234435142e488ce711c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_03.json": "062f6fdc15dd49f34e7854515aa79af2393a94f4bf4f0c4750890ec1d6fa5c46",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_04.json": "39ec69df6b423e22d6f2ec8a17802d853488cf65151e279f1ed81619d3d748f1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_05.json": "418fa9649f30bf251d37e02208dd0e86dbcf9c18a0eba422fadf243f3d7a01f4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_06.json": "359cf2e338b6d0c3f5418f67e81c24859f743a72c485b51cfba57a046b1ceab9",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_07.json": "8ddb3f3ba1d90fafddcda31d21aa49278254db302960d0a2014a27362d8a92a7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_08.json": "01a22d940b464101f8bc5083b49798774aded1af50cae8acd6c40b8b24ae4b9d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_09.json": "dac7751d69a592549abe4347e5977b6160501dc1be8cd522871637a84de71db7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_10.json": "296f362279a2eb35671d8f9ff1bfdfb027fca4b4cb0fc21816a17cc6629a5525",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_11.json": "190729bff4a180515ca993c0c4d439ee700c2580c7bcd78378cf08da78a5b00e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_12.json": "75b1d3e51fc9193a9ac96a376fab8b8bef11bf0b54a4f7abf694de44095c0698",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_13.json": "ec994cb6e71349a7f357a3b212aba631864bdd2223af67f004dcbbaa4f188660",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_14.json": "38827a96d184b59c03549cb535968676b3a8e68a328f3837c8957d7b0f63c975",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_15.json": "6fc234037ac16c6f08ff06f32770415f34b3380f19f2ee823265eb73497e0a4f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_00.json": "8fd3ba23c683db26902b6fef2f1ab804c06dd1ba6cb411b941299a55dc97102f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_01.json": "e8ba50a5a86a9a64eb56afe66cf950b96e928c957ed5ce8c5ec90b876ef099d6",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_02.json": "7ea849e48aac5579b7429482a8fd3512af5c63c33f309fed4f818cda51367311",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_03.json": "176168fcef053f79773dae4d7bb98fb6c2766b5b34e4fd83f2ac26c5edc11ebc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_04.json": "6fd16ab0543fce1db3d177b62088d248fa56d96702c8ea47cdb931ac9d9744bf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_05.json": "492f49b9fda2733c0196e5764887f74b943b828e8efb29b506064a292654442d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_06.json": "dfa49a8f98eecbc1a16c7e247ad28edbad9aa05aaf50b698e22ed637dab9c073",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_07.json": "0c04df667ad5fc68479b7880df2970d45e6ce789883fcf16c33d55d3d70f287e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_08.json": "d0346a440e74614f76d2b07e98e5ba98aa1c68adaaeb6ca5a0afc7bd208064e4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_09.json": "156547a13c2334e084d4d460b6956ac5b29abc90e003a69c6490dd4bc39a0406",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_10.json": "15c7dbeb8182de36a503ce6e424ae435579c0239edba59196dcf8a2fca58599c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_11.json": "ff7aba0474e6eb63916819b3dea0b7c5db3d779a1e8ef5c3d49ffa6c673bbebc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_12.json": "a8e562cbba4c849d7a218f80e34951d859a8d1b997e8139c878538f9052f0513",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_13.json": "1fe822923a081303a54198181fd07ef8ba3f365049dd7ddfe399332b7212b557",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_14.json": "8861ca31e4c17743471280c4c1b1b1314672f99d6a793ea9e9b37a73f87d57d1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_15.json": "93afcbc9d09f587fc970e5dd64d8bb1b8d6ab9356ac0a77449e0d1e31093e2fe",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/results.json": "c653c5a03530ea4fc670139714031b2afb09fc0c92c1e03c237c0c27da9861e2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/artifact_hashes.json": "9f6ca5a805d591286012316b0ebc17c9fa4315edee26137e57e5520aaea9b707",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/config.json": "430e55c58dd840489528a04ee554ec73809ef05da3567d77256cf1a073b45343",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/preflight.json": "e91da35d3ec3d3ca7bb0efea9c4160cc8ef6b66c545eb3afeb89ad44465f2b1c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/questions.json": "ba1321229541bd6ec23d1158f2260219144290660e265e225f0d37682caa3fb6",
+    "/tmp/astra_static_competency_terminal_analysis_20260912.json": "7839ff6516644b319fee4aec0cf5adcfbcd293706a85b9e629e45956748b3a65"
+  },
+  "label": "POSTHOC_DESCRIPTIVE_NO_TEACHER_ANCHOR",
+  "limitations": [
+    "Post-hoc descriptive anchor; shorter unmatched input, not a matched causal comparison.",
+    "Original fixed process/sham primary is unchanged; no posthoc rescue, internalization, P1 or H1 claim.",
+    "One seed7101, existing training questions, separate later execution; no significance claim.",
+    "Native partial scores preserved from ledgers, not rerun through reasoning_gym; strict solved grids independently checked.",
+    "Counts are captured tokenizer measurements, not local retokenization; below cap is not a finish reason.",
+    "Loader/source pins are captured provenance, not official origin authentication or fresh weight/source-payload rehash.",
+    "Cleanup receipts validated offline; controller absence not independently polled.",
+    "Candidate grid extraction is classification only; missing/invalid first ACT stays zero; later ACT/native best stays separate."
+  ],
+  "original_primary_unchanged": true,
+  "paired_rows": [
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        },
+        "sham": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850000",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.3375,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.3375,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850001",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.675,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.675
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850002",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": -1,
+        "first_action_score": -0.675,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": -1,
+        "first_action_score": -0.675,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225
+        },
+        "sham": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.225,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850003",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.225,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.225,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.225
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850004",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": -1,
+        "first_action_score": -0.3375,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0
+        },
+        "sham": {
+          "first_action_format_valid": true,
+          "first_action_score": 1.0,
+          "first_action_solved": 1,
+          "n_actions": 1,
+          "native_best": 1.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850005",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 1.0,
+        "first_action_solved": 1
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 1.0,
+        "first_action_solved": 1
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850006",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.45,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.45
+        },
+        "sham": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850007",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.11249999999999999,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.39375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.39375
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850008",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.39375,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": true,
+          "first_action_score": 0.3375,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.3375
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1585227272727273
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850009",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 1,
+        "first_action_score": 0.3375,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850010",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850011",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850012",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850013",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.1125
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850014",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    },
+    {
+      "cells": {
+        "no_teacher": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "process": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        },
+        "sham": {
+          "first_action_format_valid": false,
+          "first_action_score": 0.0,
+          "first_action_solved": 0,
+          "n_actions": 1,
+          "native_best": 0.0
+        }
+      },
+      "episode_id": "rg/mini_sudoku/1850015",
+      "process_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      },
+      "sham_minus_no_teacher": {
+        "first_action_format_valid": 0,
+        "first_action_score": 0.0,
+        "first_action_solved": 0
+      }
+    }
+  ],
+  "prompt_join_rule": "Remove appended two-newline teacher block, then strip bootstrap trailing whitespace at STATE boundary as state.render_context does; compare all remaining bytes exactly.",
+  "source_model_pins": {
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "README.md": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6",
+    "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+    "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+    "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+    "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+    "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "source_pins": {
+    "anchor": {
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/batch_loop.py": "821471f4ddd136f64c7151a5fa0a4b1c2cc0d5be00c9febb73d5b215dccb7605",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/bootstrap_reasoning_gym.txt": "9b2cf7521bc75fe995ffa05a117f61d12ded24395e8b315e384f58add846e1f1",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/model_backend.py": "93feee1cb30720b565aac8f570d368cad8e137789b39f228fbd8ed264123a3f5",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/parent_competency_diagnostic.py": "179de0fd4f7c81237efece06f7ba89c5cd140cbe4fad368f33bca8daf2b52b56",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/parent_material_diagnostic.py": "325cc3f4554ea4fc32d40f5165a47045efd4f3c0d4553d5464693596ca669fea",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/reasoning_gym_families.json": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea",
+      "/localhome/local-rohing/astra_sources/18006b39dd936ff750999f3b85e0c490711ab437/organism_v6/reasoning_gym_gym.py": "da9879537d33923c9702b1a5b3d63d6a2fcb396a64e110a886bd445c33e1c084"
+    },
+    "static": {
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/batch_loop.py": "821471f4ddd136f64c7151a5fa0a4b1c2cc0d5be00c9febb73d5b215dccb7605",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/bootstrap_reasoning_gym.txt": "9b2cf7521bc75fe995ffa05a117f61d12ded24395e8b315e384f58add846e1f1",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/model_backend.py": "93feee1cb30720b565aac8f570d368cad8e137789b39f228fbd8ed264123a3f5",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/parent_competency_diagnostic.py": "b6a02b6616283d7176f8b1b1a259020aec297380823bfc9c282caca36178ee6e",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/parent_material_diagnostic.py": "325cc3f4554ea4fc32d40f5165a47045efd4f3c0d4553d5464693596ca669fea",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/reasoning_gym_families.json": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea",
+      "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/reasoning_gym_gym.py": "da9879537d33923c9702b1a5b3d63d6a2fcb396a64e110a886bd445c33e1c084"
+    }
+  },
+  "unique_public_question_completions": 16,
+  "valid": true
+}
