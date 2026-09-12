@@ -1,0 +1,45 @@
+{
+  "claim": "ORACLE_AUTHORED_DIAGNOSTIC_NOT_CHILD_EXPERIENCE_NOT_CLEAN_LINEAGE",
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_conditional_fits_20260912.py",
+    "run",
+    "--source-root",
+    "/localhome/local-rohing/astra_sources/5f6e1f1d217dcdb15176dc84b9ac34ec960c48de",
+    "--runroot",
+    "/localhome/local-rohing/astra_diagnostics/astra_conditional_behavior_20260912_attempt2/fits_root0_attempt1",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "controller_bound_seconds": 1200,
+  "device": "1",
+  "generation_calls": 0,
+  "gpu": {
+    "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      },
+      {
+        "command": "sshd: local-rohing@notty",
+        "pid": "214665"
+      }
+    ]
+  },
+  "launcher_sha256": "08181ceeb3b247a1bf2e9390287b41bdac09b73caaee4d7668ce70ac59ae8c67",
+  "node": 3,
+  "origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "pid": 214826,
+  "plan_sha256": "680e5239cd90c15b72de998d22c09cf5aa451d2e71111d99e940532e43510f11",
+  "script_sha256": "3be6583f97f68d944774ff15f5fcd4d66522991d62bf865b03f005808cf4f96f",
+  "seed": 0,
+  "source": "/localhome/local-rohing/astra_sources/5f6e1f1d217dcdb15176dc84b9ac34ec960c48de",
+  "started_utc": "2026-09-12T20:16:17.399324+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED"
+}
