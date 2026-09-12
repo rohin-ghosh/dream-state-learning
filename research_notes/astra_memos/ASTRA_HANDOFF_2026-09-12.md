@@ -1,4 +1,4 @@
-# Astra restart checkpoint — 2026-09-12 15:46 UTC
+# Astra restart checkpoint — 2026-09-12 16:03 UTC
 
 Mission ACTIVE and incomplete. Rohin's latest instruction: continue mechanism
 and parenting with simple hygiene; finish/enforce the formal guard only for
@@ -11,13 +11,24 @@ or wget, bypass approvals, invent a clean lineage or restart terminal work.
 - Branch main. Pull safely; preserve unrelated dirty `gpu/codex/dream_state.rules`.
   No reset/stash/force-push; explicit staging only. Notebook append-only. Use
   `/tmp/astra_append_coord_20260912.py` for true EOF appends; it invokes apply_patch.
-- Only Main live GPU reservation: node3GPU0, controller128957, cumulative root
+- Main live GPU reservation: node3GPU0, controller128957, cumulative root
   `~/astra_diagnostics/astra_cumulative_20260912_attempt1`.
   Started15:16:50.264833UTC; source `3ee4c706080e758537b4dc802bdeef4ead38a158`.
   Manifest `dc9f33071392c374da4e77c19b9c7f87de0bbe2ee2d4bc503c954c6078910f3d`.
-  A1_before and fit_AN complete; fit_A2 live at15:44. AN1536steps,199.4native
-  loop seconds. A2 early100step profile495tokens/s, projected28.4fit minutes:
-  estimate only. After it: ANread, A2read, A1_after. No outcome yet.
+  A1_before, both fits, ANread and A2read complete; A1_after live at16:03.
+  AN1536steps,199.4native loop seconds; A2 train log11229steps,921249input
+  passes,1416.8loopseconds. Native terminal reduction/release still pending.
+- Second Main reservation: node3GPU1, controller136880, citation sleep root
+  `~/astra_diagnostics/astra_citation_sleep_20260912_attempt1`, started
+  16:01:10.230601UTC. Immutable source33563a239ccf43e0b82539718fc35df2e6145c51;
+  prep `~/astra_diagnostics/astra_citation_sleep_preparation_20260912_attempt1`,
+  digestbd1cd8a2e914c1ec1a4307e1aa7534b08660b0552117cac72242fca797c309ac.
+  Native23CPUtests and actual token/source/model checksPASS. OFF live at16:03.
+  OrderOFF→fitfull→fitsyntax→fullON→syntaxON. Same264inputtokens,27vs21
+  supervisedtokens,32steps/fit; own75bytecitationprefix, noEOS orlesson text.
+  24generationcalls;900sOFForrecipientfit+ONgroup2700stotal3000soutercap.
+  Keep GPU1 across reloads; no automatic retry. This is not parenting or
+  held-out utility. Original invalid source note remains provenance only.
 - Maintain GPU0 through all six processes, including unloaded intervals.
   Ordinary controller cap90minutes; abrupt controller death can orphan its
   detached worker. Never equate controller termination with GPU release.
@@ -85,20 +96,22 @@ Native Python `/localhome/local-rohing/v2/venv/bin/python`; sources under
   reportSHA `bd633642bbc6c1c67f1a1478a49f392c41a87c51ffb3fe8eecee506b2b60bfa5`.
   See `ASTRA_DEMONSTRATION_TERMINAL_2026-09-12.md`; no output training-approved.
 
-## Active CPU sidecars and next design decision
+## CPU sidecars and next design decision
 
-- Avicenna `01a095c3-6e60-7ff0-bbab-fa0d01a2a128`: audit actual demonstration
-  raw citations/note bytes and valid-event provenance into
-  `/tmp/astra_demonstration_content_audit_20260912.{md,json,py}`; recommend next
-  bounded learning path rather than more prompt/seed/source hunting. Assess
-  whether single transfer record supports informative utility controls or a
-  stronger existing nursery/RuleGame path is preferable. No implementation,
-  GPU, network or git scope. Await evidence before selecting another fit.
-- Dalton `01a0964b-153c-7262-8d2d-fbeb7d4291cc`: measured throughput snapshot
-  `/tmp/astra_throughput_snapshot_20260912.{md,json}` from completed receipts.
-  No guessed p50/p95/VRAM/utilization, ideal16-way scaling or totalcampaigncost.
-- Other recent workers/reviewers are closed. Main integrates/launches; no live
-  direct Fable chat is implied by notebook updates.
+- Avicenna finished audit and citation implementation; closed. Audit archived;
+  native tokenizer prep and bounded write launch now executed by Main.
+- Dalton throughput snapshot archived in receipts_20260912; closed. Its earlier
+  A2-live evidence cut stays historical; no sustained/full-campaign throughput.
+- Dirac integrated091 in six manuscript files, frozen40c7223d; closed. Mill
+  independently reviewedPASS; report/tmp/astra_seq091_manuscript_review_20260912.md
+  now archived. Optional whole-output versus selected-prefix wording remains
+  advisory only; no manuscript/nativefit approval block.
+- Fermat `01a09653-3934-7800-8d64-f9d868d366c7`: read-only nextRuleGame interface
+  design. Existing/tmp/astra_rulegame_next_protocol_20260912.md is proposed,
+  not selected. Main requested smaller<200call block with sharedOFF, no rigid
+  padding barrier, and explicit posttreatment-selection limits. Expected
+  `/tmp/astra_rulegame_minimum_revision_20260912.md`; no implementation/GPU scope.
+- Main integrates/launches; no live direct Fable chat is implied.
 
 ## Manuscript and dates
 
@@ -107,8 +120,10 @@ mainSHA `82a1c691d89b6d5428aa8f37fbe8e6a7f29ff9d77e4e57e5e35f3e23786d65b5`,
 READMESHA `529c08c8220ceca29064610709533ca3635141f4d5a13891813226d776cf7cf9`.
 Twelve historical tables/old appendix and reviewed canonical abstract preserved;
 completed v2 audit and cost scope corrected, independent postfix reviewPASS.
-Developmental companion abstract234words matches its stagedTeX. No TeX/PDF
-build claim. SEQ091 is not yet integrated. Collaborator draft remains UNSENT.
+Developmental companion abstract now224words matches its stagedTeX;091C35
+is integrated and independently reviewedPASS in40c7223d. Solevalidtransfer
+followsinvalidsource; no verifiedcorrectlessonchain. No TeX/PDF build claim.
+Collaborator draft remains UNSENT. Current two live jobs have no result yet.
 
 Supplied lease times, not fresh control-plane verification: node1expires
 September14 23:14UTC (finish17:14, backup bySeptember13 23:14); node2expires
