@@ -2526,3 +2526,28 @@ Fresh read-only audit: `research_notes/analysis/2026-09-12_w1_cumulative_replay_
 Smallest valid W1 reuses those four W0 adapters unchanged, then runs four equal-dose identity-disjoint NEW-only fits; only if NEW's full W0 gates and OLD/NEW/wrong-root per-key orthogonality pass does it run four clean-base, two-epoch interleaved OLD+NEW fits (512 steps each, same per-bank exposure and root-confounded seeds). Relative gates are per bank/root/map: all cumulative keys retain the `.50` absolute floor, `5*KMG_CUM >= 4*KMG_SINGLE`, at least 12/16 and 6/8-per-stratum keys meet `5*g_CUM >= 4*g_SINGLE`, and cumulative BA gain preserves 80% while full absolute V10R1 gates remain true. Non-owner banks require per-key candidate TV and **absolute** legal-ACT-rate change within `.05`; broad action-habit spill is unusable, not carriage.
 
 No W1 implementation exists: W0 hard-codes its four fits/request surface, legacy SLEEP concatenates `prior + new`, and memory-dose artifacts use a different assay and already-inspected identities/outcomes. CPU-only generator/interleave/geometry/reducer/golden fixtures can be prepared prospectively now, but final preparation must bind the actual successful W0 seal and no W1 model load/fit may run before it. Maximum claim remains `TWO_BANK_CUMULATIVE_REPLAY_PASS`: replay-supported coexistence/reconstruction, never sequential or unrehearsed retention. No source, artifact or job was changed by this audit.
+
+## [Codex] 2026-09-12 07:58 UTC — S authentic-source assay reworked to make outcome binding necessary
+
+Fresh watcher-side design audit:
+`research_notes/analysis/2026-09-12_s_authentic_action_outcome_source_design_audit.md`.
+The original lived-mirror target is not construct-valid for outcome causality:
+its success-selected final `ACT` is directly predicted by situation, so the
+writer may ignore the public outcome. The smallest repair removes that final
+answer and admits a balanced subset of the child's actual initial actions and
+public outcomes only. SLEEP renders two registered views—`situation+action ->
+outcome` and `situation+outcome -> action`—and pairs TRUE with a within-situation
+OUTCOME_SHUFFLED corpus using the same 32 event IDs and action fields, with
+identical target marginals, dose, seed and node. Eight situations × two actions × two occurrences × four crossed
+views gives 128 rows/fit; the shuffle makes action independent of outcome
+conditional on situation, so situation/action/global habits are exactly
+chance. Mandatory forward and native inverse held-form deltas, GOLD/TEXT,
+wrong-root, spill, interface and source-provenance gates are specified. Three
+roots are only a feasibility block (`p_min=.125`); the paper recommendation is
+eight roots, where at least 7/8 positive gives exact one-sided sign
+`9/256=.03515625`. Planning envelope: 4.5 A40-hours through three roots and
+15 A40-hours including margin through eight, to be replaced by measured W0
+throughput. A pass supports only binding-sensitive use of a fixed compiled
+view of seen-situation authentic events—not discovery, connected knowledge,
+retention, parenting, lifetime improvement, or the organism. No builder code,
+model, adapter, job, or node was changed.
