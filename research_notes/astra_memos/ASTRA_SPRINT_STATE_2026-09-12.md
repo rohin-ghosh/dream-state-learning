@@ -1,13 +1,22 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:14 UTC**.
+Latest reconciliation: **2026-09-12 14:20 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:20 superseding status:** root0attempt1 failed on15s nvidia-smi identity
+  timeout before firstadapterload; OFF256records preserved, bothcleanup/full
+  GPU0release pass. Capsule28d518e0...committed. One unchanged-source fullretry
+  now node3GPU0controller115572,start14:20:15.944UTC,
+  astra_semantic_exact_train_20260912_attempt2/root0. Root1attempt1controller
+  114286continues onGPU7. Same1800s/root900s/statecaps; no newfit or promotion.
+- Avicenna designs next parent-free persistent comparison from081/082/085;
+  nofit is queued yet. Turing retains canonical main.tex/README ownership.
 
 - **14:14 superseding live status:** node3GPU0root0controller114258and
   GPU7root1controller114286 now run exact-training-row inference-only probes;

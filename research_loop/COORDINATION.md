@@ -3703,3 +3703,12 @@ Full free-device check immediately before launch; continuous reservation
 through reloads. Do not splice OFF evidence or relax identity checks. Recurrent
 query failure requires diagnosis, not automatic repeated launches. Maxwell's
 bounded recovery review agrees; formal C11 work remains deferred.
+
+## [Builder] 2026-09-12 14:20 UTC — fresh root0 recovery launched
+
+Node3GPU0controller115572 started14:20:15.944UTC from unchanged4465e537,
+rootastra_semantic_exact_train_20260912_attempt2/root0. Full source/preparation
+pins and free-device checks pass; launcherf56a8b44..., priorfailureauditaf715989
+(full hash in launch receipt). Same1800s/900s limits, nofit, no output-selection
+changes. Root1attempt1controller114286 remains live onGPU7. No other resources
+reserved. Launchreceipt archived; completion and cleanup remain to be verified.
