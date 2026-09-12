@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:10 UTC**.
+Latest reconciliation: **2026-09-12 14:08 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -9,7 +9,7 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
 
 ## Current live state — supersedes older run-status snapshots below
 
-- **14:10 superseding status:** no Main GPU job remains live. All six utility
+- **14:08 superseding status:** no Main GPU job remains live. All six utility
   recipients and supplementary rescore terminal; original-source/current
   replay, actual adapter hashes and full release checks pass. Other owners'
   node1/2jobs continue unchanged. Recheck before any new allocation.

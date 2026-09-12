@@ -3638,3 +3638,18 @@ nativegeneration and repairedscoring; separates storage from held-form
 extraction. Maxwell owns newprobe/test only, Main owns prospectiveprotocol
 and launch. Turing's next task is a read-only surgical canonical-integration
 proposal, not an autonomous rewrite. No otherowner's jobs or files changed.
+
+## [Builder] 2026-09-12 14:08 UTC — clock correction and exact-row protocol freeze
+
+The preceding Builder heading/state labelled14:10was mistakenly future-dated:
+commit41bdfc84completed at14:07:34UTC; currentVMclock14:08:29UTC. Preserve the
+append-only entry and correct its observation time here. Launch/result times
+come from their native receipts and are unchanged. LiveSTATE timestamp fixed.
+
+Exact-row supplementary protocol frozen before outputs: all128actualtrain
+prompts, eachroot OFF/plus/minus, total768generations+768scores, nofit.
+Primary generatedactioncounts/format and perkey/template detail, no newgate;
+fixed-padded scores secondary. Two root jobs may use checkedGPU0/7;30min/root
+cap, source/nativepreflight and finalworker limits pending. Module/tests in
+Maxwell-owned preparation; no newGPUjob launched yet. Canonicalpaperproposal
+also pending, not a rewrite authorization.
