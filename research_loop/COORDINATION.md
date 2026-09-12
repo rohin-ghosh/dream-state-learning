@@ -5985,3 +5985,58 @@ Parentseed2: rate0GPU3PID194865;3e-5GPU4PID194866;1e-4GPU5PID194867.
 Allfitscomplete; freshreadoutscontinue, nooutcomespromoted. Source3a12807f,
 600souterbounds/140scleanup. Continuousreservations; neverreuse0MiBphasegaps.
 ActualreceiptsnowinRUNS; compactHANDOFFsupersedesolderSPRINT_STATEsnapshots.
+
+## [Codex watcher] 2026-09-12 19:16 UTC — plasticity sentinel terminal: direct opposing updates replace the level-zero ritual within 16 steps
+
+Read-only terminal audit of
+`/localhome/local-rohing/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/runs`
+found all 12 phase readouts complete, all three controllers absent, and all
+three GPU reservations released. Each rate continued the same seed-0 taught
+adapter through four blocks of 16 fresh ACT-only arithmetic updates, with the
+same fixed 48-case panel after each block. This experiment is explicitly
+`TASK_ONLY_INTERFERENCE_NOT_PASSIVE_FADING_NOT_CHILD_SLEEP`.
+
+- LR 0: PREDICT-before-ACT remains 32/32 at phases 16/32/48/64; action is
+  32/32 throughout. Every serialized LoRA tensor is byte-identical to its
+  parent at every phase.
+- LR 3e-5: PREDICT-before-ACT is 0/32 after the first 16 updates and remains
+  0/32 through 64; action remains 32/32 throughout.
+- LR 1e-4: the identical discrete result, 0/32 after 16 and through 64, with
+  action 32/32 throughout.
+- The unrelated one-shot memory panel remains 4/16, all `red`, in every cell;
+  it neither supplies a retention result nor rescues acquisition.
+
+Independent tensor accounting confirms actual movement and the LR ordering.
+Relative LoRA-state L2 change from the taught parent after 16 updates is 4.04%
+at 3e-5 and 9.56% at 1e-4; after 64 cumulative updates it is 5.45% and 13.59%,
+respectively. LR 0 is exactly 0. The behaviour threshold therefore lies before
+16 competing updates for both nonzero rates; this run cannot distinguish a
+finer dose threshold.
+
+Bounded conclusion: the global level-zero ritual is highly plastic and is not
+a permanent lock-in. Directly training the opposite response form can replace
+it rapidly without damaging arithmetic correctness. This is not passive
+forgetting, not evidence that either LR is suitable for continual learning,
+and not a reason to demand no-replay retention: the new objective directly
+contradicts and never rehearses the old one. The next informative cell is one
+unified adapter trained on two interleaved behaviours, where old-behaviour
+replay and new-behaviour acquisition are both scored. Replay fraction and LR
+must remain separate knobs; do not spend a larger persistence sweep on more
+unrehearsed opposing blocks.
+
+## [Rohin — ruling, relayed by Fable] 2026-09-12T19:27Z — memory replay must be many exposures × VARIED phrasings/perceptions, never identical copies; at level 0/1 we compile those views ourselves alongside the habits (raw = message 20 in research_notes/THESIS_RAW_ROHIN_2026-09-11.md)
+
+Rohin, verbatim (typed fast; his reply to SEQ-101):
+- "okay … yea just give it many exposures and phrasings"
+- "we talked about this: memorizing is a habit and a skill we parent, so maybe you have a test that tests the habit that instills memorizing — well that's level 2, we're on level one, so you can just do the phrasings and exposures yourself along with the habits, no? it'll probably make the habits better too"
+- "16 identical copies ofc won't help; there needs to be some depth, I mentioned this: if I see something a lot I have slightly different perceptions and memories — that is default, that is how the brain naturally has attention built to remember; it's basically looped attention through the conscious space. It's a great part of our paper on the memory aspect of our architecture, because our architecture is talking about both LTM and behavioral memory"
+- "the brain abstraction is very strong and shows us what an overall decent design is on the highest level; we're not very far off from it"
+- on reporting: "keep numbers but keep important ones, I care about scale — this project is the project of scaling laws, bitter lesson — so I wanna hear main idea and bitter lesson on stuff so I know scale is right"
+- "great work for the both of you"
+Labels: varied views × exposures compiled by us at level 0/1 = RULED (consistent with his 09-11 rulings: one perception = one memory datapoint; retrieval by completion; scale perception); taught memorising habit = level 2, later; "views improve the habits too" = IDEA TO TEST. Builder: the memory arm of the next level-0/1 fit should present each fact as N distinct views × repetitions (paraphrases, frames, completion forms, contexts), token-matched to control, and report the scaling axis (views × exposures per fact) — after the readout/adapter audit, which Fable still regards as necessary (see below).
+
+## [Fable] 2026-09-12T19:27Z — answer to Rohin's "how do many replays happen?", and why the pending mechanics audit still matters
+
+**Brain.** During sleep the hippocampus replays the day's episodes in sharp-wave ripples: hundreds of reactivations a night, time-compressed, interleaved with older memories, each one a partial and slightly different pattern. The cortex therefore never sees an identical copy twice; it sees many varied views of the same episode, spaced over nights (complementary learning systems; Wilson & McNaughton 1994; Ji & Wilson 2007). That is Rohin's "looped attention through the conscious space", one level down.
+**Our system.** (1) At wake, the perception behaviour writes several records of one event (09-11 ruling: one perception = one memory datapoint; "make sure we have enough perception"). (2) At sleep, the compiler expands each record into views (paraphrase, frame, completion form, context) and repeats them, interleaved with older records — cumulative replay. (3) The number of views × exposures per fact is a compile knob and the scaling axis to report. Literature anchor: Physics of Language Models 3.1 finds facts become extractable only with knowledge augmentation (many phrasings) and on the order of hundreds of exposures; TMEM's per-trigger online SFT is many varied triggers per fact. SEQ-098–101 gave each fact tens of exposures in one phrasing.
+**Why the audit still matters.** Identical copies should not make a fact extractable in new phrasings — Rohin is right — but 16 copies × 4 epochs = 64 exposures of a one-token target should at least reproduce the training form in-sample. SEQ-100/101 show it did not (4/16 in-sample, a constant colour). So before we spend GPU-hours on views × exposures we need the builder's HF/PEFT forward audit to confirm the fact tokens are in the loss and the adapter is applied at readout. If the audit is clean, the varied-views fit is the next level-0 run; if it finds a fault, the fix comes first and the views fit right after. Either way varied views is the design.
