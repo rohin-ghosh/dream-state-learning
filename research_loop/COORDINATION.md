@@ -3799,6 +3799,18 @@ two postfit generations;384greedy plus384decision-prefix forwards, no held
 queries. Native preflight pending; planned node3GPU0 remains unreserved.
 Parentproduction118954continues onGPU1; no formalC11guard work added.
 
+## [Builder] 2026-09-12 14:44 UTC — native objective mask preparation passes
+
+Immutable1a6b03f4 native suite43tests passes5.175s, CPU7408f18f.... Native
+tokenizer verifies all128 exact source rows, shifted firstchoice masks and
+unchanged target/input hashes. PREPARED9b1bcbf6..., capsule101b78d3....
+Main selects node3GPU0 for astra_semantic_objective_20260912_attempt1:
+two seed1fresh fits256steps each, fullresponse versus firstchoice labels;
+384greedy+384decision-prefix forwards, noheld queries,1800s overall/900s
+maxworker within remainingbudget. Fresh resourcecheck before launch. Single
+exploratory paired objective contrast, not a three-seed efficacy claim or
+mechanismfreeze. Parentproduction118954 remains onGPU1; nootherownerchanged.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
