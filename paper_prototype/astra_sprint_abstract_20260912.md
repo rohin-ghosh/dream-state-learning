@@ -1,6 +1,21 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
+checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
+exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
+both panels but has habit/ACT0/32 and no valid arithmetic ACT. The panels query
+the SAME16 authored facts, not independent or novel facts. MIXED misses the
+registered >=15/16 requirement on BOTH panels, so no seeds1/2 under this protocol.
+Equal updates do not match memory exposure or token compute. This is a local
+allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
+The archived reviewer independently recounted128 new calls but authored the
+runner/collector: raw-reduction PASS, not fresh-author implementation review.
+No results from live conditional or new varied material are included. No
+G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
+
+**Historical September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
 initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
 the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
 continuation optimizer seeds are 0; only seed0 has four-phase evidence.
@@ -14,8 +29,9 @@ convention coexistence, not input-dependent cognition or a memory result.
 SEQ104/105 archived raw recounts PASS within independent-reduction scope;
 their reviewers authored implementation components, not fresh-author code reviews.
 SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
-H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
-or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+H calls within receipt-level scope, confirming Main's symmetric thresholds. C51
+now adds the root0 repeated-row memory-replay result; no live conditional or
+new varied-material outcomes are included. All64 confirmation
 cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
@@ -25,9 +41,25 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve what an agent learns after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics retain their original endpoints and exposure limits. Authored post-training teaches a PREDICT-before-ACT convention across three initial teaching seeds without improving already-correct arithmetic. Competing ACT-only writes replace that convention on 32/32 fixed development probes at both positive learning rates by the first 16-update readout across all three roots; all continuations use optimizer seed zero, and only the original seed-zero root has four-phase evidence. Memory-only continuation answers 14/16, 16/16 and 16/16 authored facts correctly on both original-prefix and alternate-wording panels of the same facts, not independent or novel facts. Seeds zero and one lose valid ACT on all 32 arithmetic probes; seed two retains habit and correct ACT on all 32. These are interface failures, not demonstrated erasure of latent arithmetic, and seed two is not selected as superior. Separately, two arms from one original seed-zero checkpoint each acquire their own exact operand-bearing INPUT order on 32/32 probes, reject the opposite order, and retain habit and ACT; memory remains 4/16. This rehearsed-convention result is not input-dependent cognition. All 64 confirmation cases remain unrequested. Neither these diagnostics nor pending memory-replay and level-1 work establish general G3, parenting, child-generated sleep, H1/H2, clean lineage, novel-fact transfer, or a substrate freeze; local model origin remains unresolved.
+Can developmental teaching improve what an agent learns after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics show revisable authored response conventions, not improved already-correct arithmetic or general retention. Memory-only continuation previously acquired facts but lost the arithmetic response interface in two of three teaching seeds; the retaining seed was not selected as superior. A separate one-root check preserved explicitly rehearsed compatible conventions without improving memory. We now compare two allocations from the same original seed-zero teaching checkpoint at 160 new updates each. MIXED rehearses arithmetic alongside memory and answers 14/16 development and 13/16 exact-prefix memory questions correctly while retaining habit and correct ACT on 32/32 probes. ALL_MEMORY answers 16/16 on both panels but emits colors instead of valid ACT on all 32 arithmetic probes. This is output-interface loss, not demonstrated latent arithmetic erasure. Both panels query the same 16 authored facts; MIXED's error sets differ across wordings. Its registered progression gate requires at least 15/16 on each panel and fails; seeds one and two are not pursued. Equal updates do not match memory exposure or token compute, so replay, dose and loss composition are not isolated. No results from live conditional or new varied material are included. All 64 confirmation cases remain unrequested. No general G3/P1/G5/H1/H2, parenting, child-generated sleep, clean lineage, novel-fact transfer or substrate freeze follows; model origin remains unresolved.
 
 ## Evidence and interpretation boundaries
+
+**C51: root0 allocation, not isolated replay benefit.** MIXED's dev14/16 and
+exact13/16 fail the >=15/16-per-panel progression rule despite habit/ACT32/32.
+ALL_MEMORY is16/16 on both panels but emits colors instead of valid arithmetic
+ACT on all32 questions. All128 calls stop normally, with none at the64-token cap.
+MIXED dev errors003/004 and exact errors008/010/015 are disjoint on the SAME16
+facts. Both arms fork the ORIGINAL parent and take160 new updates (240 cumulative),
+not a restoration from SEQ105. MIXED memory exposure20 versus ALL_MEMORY40 and
+input/target presentations33080/5000 versus28160/1280 preclude equal-dose/compute
+or isolated replay attribution. The SEQ105 root0 80-update condition is an inherited
+half-update descriptive anchor only. Both arms complete; no seeds1/2, pooling,
+threshold revision or seed selection. Raw-recount PASS does not change failed
+progression or qualify general G3/P1/G5/H1/H2. Full-reservation/controller/worker
+seconds1062.131771/954.336828/722.441552 are nested, not additive or GPU busy time.
+No live conditional or new varied-material results are included; this repeated-row
+assay is not operational child-authored SLEEP. Exact bindings are in C51.
 
 **C48–C50 interpretation details.** SEQ104 memory, in LR0/3e-5/1e-4 order,
 is4/4/4,7/6/5,3/3/4 out of16 for teaching seeds0/1/2; all ACTs remain correct.
@@ -42,7 +74,8 @@ it does not use memory-only checkpoints or inherit their memory success.
 Full-reservation/controller/worker seconds for104/105/106 are respectively
 2023.382487/1512.304214/976.997025,1666.592415/1101.776900/785.153102,
 799.928952/537.610627/381.280358: nested, not additive or GPU busy time.
-No new OFF or confirmation calls; no memory-replay or level-1 outcomes.
+No new OFF or confirmation calls. C51 now reports the separate root0 repeated-row
+replay result, not live conditional or new varied-material outcomes.
 
 **Historical terminal SEQ101–103 — C45–C47.** Repetition retains80updates in all four cells;
 SHORT batch4/accum16 preserves the original four groups/update rather than

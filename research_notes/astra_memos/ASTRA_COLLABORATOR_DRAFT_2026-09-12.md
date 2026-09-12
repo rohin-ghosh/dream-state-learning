@@ -1,6 +1,38 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, terminal SEQ104–106.** Three distinct
+**UNSENT — September 12, 2026, terminal SEQ107.** The root0 repeated-row
+allocation comparison completed, but its scientific progression gate **FAILS**.
+MIXED retains habit and correct ACT32/32 while scoring memory14/16 dev and
+13/16 exact-prefix; ALL_MEMORY scores16/16 on both panels but emits colors
+instead of valid ACT on all32 arithmetic questions. This is surface-interface
+loss, not demonstrated latent arithmetic erasure. The two panels query the
+same16 authored facts, not independent or novel facts; MIXED's two dev errors
+and three exact-prefix errors are disjoint. All128 calls stop normally, none
+at the64-token cap. MIXED fails BOTH >=15/16 memory requirements despite
+passing behavior; no pooling, threshold revision or seeds1/2. [C51]
+
+Both arms fork the SAME ORIGINAL seed0 teaching adapter, not each other or the
+SEQ105 child. Each receives160 new updates (240 cumulative), fresh optimizer
+seed0/LR3e-4/batch4. MIXED has16 memory+first16 arithmetic rows for20 epochs;
+ALL_MEMORY has16 memory rows for40. Equal updates do not match20 versus40
+memory exposures or input/target compute33080/5000 versus28160/1280. The
+SEQ105 root0 memory-only80 result is an inherited half-update descriptive
+anchor, not a newly matched arm. This does not isolate replay, dose or loss
+composition, establish general replay benefit, or require separate adapters.
+
+Separate raw recount/custody PASS covers128 new and112 inherited calls and331
+capsule hashes, while confirming progression FAIL. The reviewer authored the
+runner/collector; this is independent reduction, not fresh-author code review.
+Full-reservation/controller/worker seconds1062.131771/954.336828/722.441552
+are nested, not additive or GPU-busy time (17.702196 A40-min fully reserved).
+Two fits/320 new updates/128 calls, no new OFF or confirmation. No results from
+live conditional or new varied material are included. This is not operational
+child-authored SLEEP, general G3/P1/G5/H1/H2, parenting, clean lineage, novel-fact
+transfer or a substrate freeze. Origin unresolved; C11 deferred. Canonical
+abstract/intent and all prior tables are preserved. This collaborator draft
+remains **UNSENT**; Main alone handles Git. C51 binds the exact evidence.
+
+**Historical UNSENT — September 12, 2026, terminal SEQ104–106.** Three distinct
 questions now have bounded answers; none changes the developmental thesis.
 
 - **Revisability, not passive fading:** roots1/2 join inherited seed0 phase1.
@@ -36,8 +68,8 @@ Full-reservation/controller/worker seconds are2023.382487/1512.304214/976.997025
 1666.592415/1101.776900/785.153102 and799.928952/537.610627/381.280358:
 nested, not additive or continuous GPU busy time. Inherited work is not recharged.
 
-Memory-replay and input-selective level-1 work remain CPU implementation pending,
-with no outcomes. All64 confirmation cases remain unrequested. No general G3,
+C51 now adds the root0 repeated-row allocation result. No live conditional or
+new varied-material results are included. All64 confirmation cases remain unrequested. No general G3,
 parenting, child sleep, H1/H2, novel-fact transfer, clean lineage or substrate
 freeze follows; model origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
 Canonical abstract/author intent and all prior tables remain unchanged. This
@@ -294,4 +326,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Reliable joint/repeated-write retention beyond C48–C50, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C50. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C51. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

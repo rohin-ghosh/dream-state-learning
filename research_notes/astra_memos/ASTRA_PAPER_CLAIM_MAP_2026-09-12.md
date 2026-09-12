@@ -2,7 +2,22 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
+checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
+exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
+both panels but has habit/ACT0/32 and no valid arithmetic ACT. The panels query
+the SAME16 authored facts, not independent or novel facts. MIXED misses the
+registered >=15/16 requirement on BOTH panels, so no seeds1/2 under this protocol.
+Equal updates do not match memory exposure or token compute. This is a local
+allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
+The archived reviewer independently recounted128 new calls but authored the
+runner/collector: raw-reduction PASS, not fresh-author implementation review.
+No results from live conditional or new varied material are included. No
+G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
+
+**Historical September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
 initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
 the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
 continuation optimizer seeds are 0; only seed0 has four-phase evidence.
@@ -16,8 +31,9 @@ convention coexistence, not input-dependent cognition or a memory result.
 SEQ104/105 archived raw recounts PASS within independent-reduction scope;
 their reviewers authored implementation components, not fresh-author code reviews.
 SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
-H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
-or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+H calls within receipt-level scope, confirming Main's symmetric thresholds. C51
+now adds the root0 repeated-row memory-replay result; no live conditional or
+new varied-material outcomes are included. All64 confirmation
 cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
@@ -1453,7 +1469,8 @@ one color and EOS, zero truncation/drops. Changed subset, exposure and cumulativ
 training confound dose versus interference; inherited controls/OFF are not new
 matched80-update controls. Three fits/240 updates/192 calls, both panels required
 irrespective of outcome; no new OFF/HF/confirmation. All64 confirmation cases
-remain unrequested. Memory-replay allocation is a pending comparison, not a result.
+remain unrequested. C51 now records the separate root0 allocation result without
+changing these endpoints.
 
 Herschel's archived independent192-call raw recount PASS includes inherited
 baselines and native cost/custody receipts; Herschel authored runner/collector,
@@ -1516,8 +1533,8 @@ Main verifies all254 capsule hashes and full release at19:51:15.532863 UTC on
 September12,2026. Full reservation799.928952s (13.332149 A40-min),
 controller537.610627s, workers381.280358s: nested, not additive or continuous
 GPU busy time; collection wait is included. No root1/2 tag-order outcomes.
-Memory-replay and input-selective level-1 AUTH/DERANGED comparisons remain
-CPU implementation pending with no outcomes; these are next measurements,
+C51 now reports the separate root0 repeated-row memory-replay outcome. Live
+conditional readout and new varied material remain outside this evidence cut,
 not approved claims or manuscript-imposed launch gates. Local origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator UNSENT.
 
@@ -1528,3 +1545,84 @@ Sources and exact binding:
 - Plan SHA256 `af4988757fb01e93fe88e6f310c61656f26b2920d45c21561f6b035d208d11e9`; source `d1e70002d12052f6b7357d42cf5997aa915e16f7`.
 - Extracted root `/tmp/astra_two_habit_terminal_20260912/astra_diagnostics/astra_fundamental_two_habit_20260912_attempt1/seed0`; `run/input_before/two-habit-scores.json` and `run/input_after/two-habit-scores.json` bind symmetric reductions; raw calls remain in the capsule.
 - Separate review `research_notes/astra_memos/receipts_20260912/astra_two_habit_result_review_20260912.md`, SHA256 `79d2fbb6bba749a439bfddea521ca4d75e1de473f758a3d2ce16dcb5f0a9436a`, byte-identical to supplied `/tmp/astra_two_habit_result_review_20260912.md` when read at19:58:42 UTC. Previously absent, it now supports bounded raw-recount PASS, not a new local scientific rerun or weight reload. Pending status is superseded only after this artifact exists and is read.
+
+## C51 — Root0 memory replay allocation: progression FAIL (SEQ107)
+
+**Allowed claim:** within these root0 recipes, MIXED retains the original
+response habit while acquiring most facts; ALL_MEMORY acquires all16 facts
+but loses the arithmetic response interface. Raw recount/custody PASS is not
+scientific progression PASS. Both registered arms completed, but MIXED fails
+both memory endpoints and the protocol closes at root0: no seeds1/2.
+
+| Root0 continuation | Dev memory /16 | Exact-prefix memory /16 | Habit /32 | Correct ACT /32 |
+|---|---:|---:|---:|---:|
+| MIXED | 14 | 13 | 32 | 32 |
+| ALL_MEMORY | 16 | 16 | 0 | 0 |
+
+The two memory panels query the SAME16 authored facts, not32 independent or
+novel facts. MIXED dev errors003/004 are green answered yellow; exact errors
+008/010 are blue answered yellow and015 green answered blue. These error sets
+are disjoint:11 facts correct on both surfaces, five on only one, none wrong
+on both. Equal14/16 dev totals versus SEQ105 do not mean identical outcomes:
+MIXED repairs SEQ105's yellow-fact errors000/005 but introduces different ones.
+ALL_MEMORY emits19 green,10 red and3 blue arithmetic responses, no valid ACT
+or PREDICT on any of32 questions. These are surface arithmetic-interface
+failures, not latent arithmetic erasure or valid-but-wrong numerical sums.
+All128 new calls stop normally; none hits the64-token ceiling.
+
+The sealed expansion rule requires MIXED dev>=15/16 AND exact>=15/16,
+habit>=30/32, ACT>=31/32 and technical completion of BOTH arms. Observed
+14/13/32/32 fails BOTH memory terms despite technical and behavior success.
+No substitution of ALL_MEMORY's scores, averaging, pooled panels, lowered
+threshold, hidden second-arm skip, selective seed expansion or subset rescue.
+
+Both arms independently fork the SAME ORIGINAL SEQ098 root0 teach checkpoint,
+not each other or the damaged SEQ105 descendant. One rank8 adapter, frozen
+base, fresh optimizer seed0, LR3e-4, batch4/accum1,160 new updates each,
+240 cumulative. MIXED uses all16 original memory rows plus fixed first16
+arithmetic rows in source order for20 epochs; ALL_MEMORY uses the unchanged16
+memory rows for40 epochs. Memory masks retain42 ignored context tokens plus
+color/EOS; native receipts record no skips, splits, truncation or nonfinite fits.
+MIXED's32 arithmetic raw strings equal the original parent's: retained behavior,
+not behavior restored from a damaged descendant.
+
+This is fixed-update allocation, **not equal memory exposure or token compute**.
+MIXED gives20 presentations per fact and33080 input/5000 target-token
+presentations overall; ALL_MEMORY gives40 and28160/1280. Replay, dose and loss
+composition are not independently identified. Inherited SEQ105 root0
+memory-only80 has14/16 on both panels and habit/ACT0/32 at20 presentations
+per fact: an equal-memory-exposure but half-update descriptive anchor, not a
+new matched arm. Original parent dev memory4/16 and habit/ACT32/32 are inherited;
+its exact-prefix panel is not newly measured in this comparison.
+
+Two fits/320 new updates/128 calls (48dev+16exact per arm), no new OFF or
+confirmation calls; all64 confirmation cases remain unrequested. Main records
+full release20:20:11.129284 UTC, September12,2026. Full reservation1062.131771s
+(17.702196 A40-min), controller954.336828s, workers722.441552s: **nested,
+never additive**, not continuous GPU busy time or dollar cost. Full reservation
+includes collection/audit delay. Weights are excluded; on-node tensor/freezing
+and immutability checks are attributed to native receipts, not locally rerun.
+
+The separate reviewer independently recounted128 new and112 inherited calls
+(original dev48; SEQ105 root0 dev48/exact16), all331 capsule hashes and the
+failed gate. The reviewer authored runner/collector: **independent raw
+reduction, not fresh-author implementation review**. Raw-recount PASS does
+not change scientific progression FAIL or independently certify these new
+manuscript bytes. The analyzer's exclusive output paths must not be rerun over
+existing evidence; this manuscript pass does not run the analyzer.
+
+No reliable coexistence, general replay benefit, necessary separate adapters,
+causal dose explanation, G3/P1/G5/H1/H2, parenting, operational child-authored
+SLEEP, clean lineage, novel-fact transfer or substrate freeze follows. This
+repeated-row assay is not the proposed varied-view operational replay.
+Live conditional readout and new varied material are outside this evidence
+cut and contribute no results. Origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`;
+formal C11 deferred; collaborator UNSENT. No launch or code change is prescribed.
+
+Sources and exact binding:
+- `research_notes/astra_memos/ASTRA_MEMORY_REPLAY_ROOT0_TERMINAL_2026-09-12.md`.
+- Independent raw review `research_notes/astra_memos/receipts_20260912/astra_memory_replay_seed0_review_20260912.md`, SHA256 `7a264b0065ac08406be3fa890949da861da466afeebb79941e0e51d97fab9d9d`; technical/raw-recount PASS, prospective progression FAIL, with authorship disclosure.
+- Main analysis `research_notes/astra_memos/receipts_20260912/astra_memory_replay_seed0_analysis_20260912.json`; analyzer `research_notes/astra_memos/receipts_20260912/astra_analyze_memory_replay_20260912.py` (read-only reference, not executed).
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_memory_replay_seed0_terminal_20260912.tgz`, SHA256 `2d4636e37a4668a6503e8ee7a021ed87b6479e54e8bf8126c82e7dcbbaa172e3`; adjacent `.tgz.validation.json` binds331 files.
+- Plan SHA256 `70405bfa50486feaa2b000ee8102a1cdf30265bccaf102958d7e3ea17035bbb9`; source `3a12807f88747bafd0aada1d4a09ba88b915f903`.
+- Run `astra_diagnostics/astra_memory_replay_20260912_attempt1/seed0` on node3; inherited original-parent and SEQ105 evidence remain bound in C42/C44/C49, not new experimental arms or an outcome-selected descendant.

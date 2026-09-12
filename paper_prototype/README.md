@@ -3,9 +3,55 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded results — C48–C50
+## Latest bounded result — SEQ107 / C51
 
-**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
+checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
+exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
+both panels but has habit/ACT0/32 and no valid arithmetic ACT. The panels query
+the SAME16 authored facts, not independent or novel facts. MIXED misses the
+registered >=15/16 requirement on BOTH panels, so no seeds1/2 under this protocol.
+Equal updates do not match memory exposure or token compute. This is a local
+allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
+The archived reviewer independently recounted128 new calls but authored the
+runner/collector: raw-reduction PASS, not fresh-author implementation review.
+No results from live conditional or new varied material are included. No
+G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
+
+| Root0 continuation | Dev memory /16 | Exact-prefix memory /16 | Habit /32 | Correct ACT /32 |
+|---|---:|---:|---:|---:|
+| MIXED | 14 | 13 | 32 | 32 |
+| ALL_MEMORY | 16 | 16 | 0 | 0 |
+
+MIXED uses the original16 memory plus fixed first16 arithmetic rows for20
+epochs; ALL_MEMORY uses only the original16 memory rows for40 epochs. Both
+use fresh optimizer seed0, LR3e-4, batch4, rank8 and160 new updates (240
+cumulative), but memory exposure is20 versus40 presentations per fact and
+input/target presentations are33,080/5,000 versus28,160/1,280. This is fixed-update
+allocation, not equal exposure/compute or an isolated replay/dose effect.
+The inherited SEQ105 root0 memory-only80 result (14/16 on both panels) is an
+equal-memory-exposure, half-update descriptive anchor, not a new matched arm.
+MIXED retains the original parent's arithmetic outputs, not restored behavior
+from the SEQ105 child. Dev errors003/004 and exact errors008/010/015 are disjoint.
+ALL_MEMORY emits colors on all32 arithmetic probes; all128 new calls stop
+normally, with none at the64-token cap. No pooling or average conceals either
+failure. Both arms completed, but MIXED's14/16 and13/16 fail the >=15/16-per-panel
+conjunction despite passing habit>=30/32 and ACT>=31/32: no seeds1/2.
+
+Two fits/320 new updates/128 calls, no new OFF or confirmation. Full reservation
+1062.131771s (17.702196 A40-min), controller954.336828s, workers722.441552s:
+**nested, never additive**, not GPU-busy or dollar cost. Model weights are
+excluded; native checks are attributed, not rerun here. Source memo:
+`research_notes/astra_memos/ASTRA_MEMORY_REPLAY_ROOT0_TERMINAL_2026-09-12.md`;
+C51 binds its archive, Main analysis, independent raw review and limitations.
+This repeated-row diagnostic is not operational varied-view or child-authored
+SLEEP. Canonical abstract/intent and all prior tables remain unchanged.
+
+## Earlier bounded results — C48–C50
+
+**Historical September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
 initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
 the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
 continuation optimizer seeds are 0; only seed0 has four-phase evidence.
@@ -19,8 +65,9 @@ convention coexistence, not input-dependent cognition or a memory result.
 SEQ104/105 archived raw recounts PASS within independent-reduction scope;
 their reviewers authored implementation components, not fresh-author code reviews.
 SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
-H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
-or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+H calls within receipt-level scope, confirming Main's symmetric thresholds. C51
+now adds the root0 repeated-row memory-replay result; no live conditional or
+new varied-material outcomes are included. All64 confirmation
 cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
