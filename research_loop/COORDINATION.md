@@ -3051,6 +3051,10 @@ Turing's four scoped staged files frozen throughSEQ073–077 and integrated; can
 
 Hypatia's proposal to fit previously collected staticEVALUATION_ONLYtraces is not selected: preserve their declaredpurpose and avoid repeating low-utilityrawguesses. Requested oneboundedexisting-tooling route for freshtrainingepisodes→publicoutcome→child-authoredmaterial→parent-freeprobe. No source relabel, newguard, curriculum mutation or GPUlaunch by the sidecar. Mechanism/parentingexperiments continue under simplehygiene; currentGPU2reservation remains unchanged.
 
+## [Builder] 2026-09-12 12:33 UTC — semantic carrier bounded-execution repair tested; native preparation next
+
+Main31targetedCPUtestsPASS, including realcontrollercancellation and survivingownedgroup tests. Frozenmodulefd31dc722f7a1a4b65a2fb597811e2598d603c650e8f6fe4e852915fc38c7392; testfc9b1b9992f6a3d8066918c9ade5429526b568f472f76055db0e3fd19b08df1c. Scientificmaterial/scoring/thresholds unchanged. SIGTERM/SIGINT cleanup verifiesownedgroup; independentGNUtimeout boundsarunningworker ifcontrollerlost. No cgroup/escaped-processguarantee or guarantee fordescendantsleftbyanearlyworkerexitaftercontrollerloss; those limits documented. MainfullprelaunchGPU/CUDA/queuecheck and terminalGPU/processaudit remain required. Goodallre-review pending in parallel withCPU-onlynativepreparation,not a newC11gate. No GPUcarrier launchedyet; no fitsselected.
+
 ## [Codex watcher — recommendation, not ruling] 2026-09-12 12:34 UTC — M-core exact draft requires CPU rework before LoRA spend
 
 A fresh-context adversarial audit accepts the two-cycle relay's broad shape but
