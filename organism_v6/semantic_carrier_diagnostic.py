@@ -330,15 +330,46 @@ def reduce_records(requests, records, tokenizer):
 
 
 def score(torch, model, request):
+    """Align future-only padding to avoid shape-dependent candidate likelihoods."""
+    candidates = request["candidates"]
+    prefix = request["payload"]["prompt_input_ids"]
+    w0.require(len(candidates) == 2 and len(prefix) > 0, "two prefixed score candidates")
+    for candidate in candidates:
+        response = candidate["response_ids"]
+        w0.require(len(response) > 0 and candidate["input_ids"] == prefix + response
+                   and candidate["labels"] == [-100] * len(prefix) + response,
+                   "exact score prefix and target mask")
+    eos = candidates[0]["response_ids"][-1]
+    w0.require(all(candidate["response_ids"][-1] == eos and eos not in candidate["response_ids"][:-1]
+                   for candidate in candidates), "complete score candidates with common terminal EOS")
+    shared_length = next((index for index, (left, right) in enumerate(zip(
+        candidates[0]["input_ids"], candidates[1]["input_ids"])) if left != right),
+        min(len(candidate["input_ids"]) for candidate in candidates))
+    w0.require(len(prefix) <= shared_length < min(len(candidate["input_ids"]) for candidate in candidates),
+               "disjoint score continuations")
+    total_length = max(len(candidate["input_ids"]) for candidate in candidates)
+    shared_probabilities = None
     result = []
-    for candidate in request["candidates"]:
-        ids = torch.tensor([candidate["input_ids"]], dtype=torch.long, device="cuda:0")
+    for candidate in candidates:
+        padded = candidate["input_ids"] + [eos] * (total_length - len(candidate["input_ids"]))
+        ids = torch.tensor([padded], dtype=torch.long, device="cuda:0")
+        positions = torch.arange(total_length, dtype=torch.long, device="cuda:0").unsqueeze(0)
         with torch.inference_mode():
-            logits = model(input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=False).logits
+            logits = model(input_ids=ids, attention_mask=torch.ones_like(ids),
+                           position_ids=positions, use_cache=False).logits
             probabilities = torch.log_softmax(logits[0].float(), dim=-1)
+            w0.require(torch.isfinite(probabilities).all().item(), "finite score log probabilities")
+            if shared_probabilities is not None:
+                w0.require(torch.allclose(shared_probabilities, probabilities[:shared_length], rtol=0, atol=1e-6),
+                           "aligned shared-prefix score mismatch")
+            else:
+                shared_probabilities = probabilities[:shared_length]
             values = [float(probabilities[index - 1, token].cpu())
                       for index, (token, label) in enumerate(zip(candidate["input_ids"], candidate["labels"])) if label != -100]
-        result.append([value if math.isfinite(value) else None for value in values])
+        w0.require(all(math.isfinite(value) and value <= 0 for value in values), "finite nonpositive score values")
+        result.append(values)
+    w0.require(sum(math.exp(sum(values)) for values in result) <= 1 + 1e-6,
+               "disjoint complete candidate mass exceeds one")
     return dict(token_logprobs=result)
 
 

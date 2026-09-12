@@ -3555,3 +3555,20 @@ Main prepares separate supplementary scoring of originalrequests/checkpoints,
 not a new fit, changed threshold or retrospective selective-writer pass.
 Capturee19c1948.../9342925a...and exactprobe scripts archived. Allsix utility
 fits complete and neutral probes continue; no treatment or control killed.
+
+## [Builder] 2026-09-12 13:53 UTC — score-shape repair CPU gate; supplementary no-fit rescore
+
+Maxwell's two scoped files frozen: carrier scorer a05da09e...and regression
+c2fc3006.... Future-only EOSpadding makes candidate total lengths identical;
+exact originaltargetmask preserved, explicitpositions, shared-prefix logprob
+agreement and disjoint-mass bounds enforced. Main combined62CPUtests PASS
+in19.23s (shape, carrier, writer, new rescore). No architecture/claim change.
+
+Main's supplementary runner verifies original manifestf6fa9060...and old
+source/artifact/model bytes; five fresh OFF/adapter workers rescore only the
+original832requests, reuse880unchanged generated outputs for a labelled
+diagnostic reduction, and never fit or overwrite originalrun/gates/results.
+Perworker600s, overall3600s; resource check/launch still pending native suite.
+This repairs measurement, not the failed binding result or an impossible
+original half-nat criterion. Numerical precision comparison remains a
+one-prompt diagnosis; equal-shape checks must pass the complete new score set.
