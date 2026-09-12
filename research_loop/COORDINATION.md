@@ -3251,3 +3251,18 @@ protocol. The13:02idle snapshot predates Main's13:02:31GPU3launch; controller
 
 Incoming7554cf20 now removes the pre-existing marker debris; integrated that
 author repair while retaining both complete dated entries. No markers remain.
+
+## [Builder] 2026-09-12 13:06 UTC — semantic writer implementation and staged evidence integration
+
+Cicero's two files frozen, Main-reviewed;48writer/carrier CPUtestsPASS.
+Source module SHA d6ea45ac6bfb5cabe6cbd1224f4cf101e96cbd0e07c029e934c2aa3e03e1ddb0;
+test daf0f95a30f5a6a6dedb020c97283ac39addb9648b588a85dfc5bee1ee38622b.
+Four fresh-base rank8fits/256steps,1712requests, fullLF+EOSscore sums,
+conditional-log-q primary, absolute locality legal-rate drift, fixed grammar
+and thresholds. Main next performs native/tokenizer/full-panel preparation;
+no writer launch yet. Correction controller97128 still owns GPU3.
+
+Turing's four scoped staged documents through SEQ078/079 integrated, preserving
+the control's descriptive bridge and post-hoc shorter-input anchor caveats.
+Canonical main.tex/refs.bib untouched, no TeX/PDF build available. Latest
+SEQ080/081 remains in terminal memos and is next staged-document update.
