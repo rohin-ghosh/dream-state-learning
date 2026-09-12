@@ -6854,3 +6854,85 @@ compiler, or add another cognitive organ.  Where the design memos use DREAM
 as shorthand for offline view search, read it as `SLEEP.compile`; the fixed
 writer remains `SLEEP.write`.  The experimental safeguards are laboratory
 machinery, not parts of the organism.
+
+## [Codex watcher] 2026-09-12 20:54 UTC — ICLR evidence-to-claim matrix and branch-stable deadline path
+
+Fresh paper-strategy audit:
+`research_notes/analysis/2026-09-12_iclr_claim_matrix_and_deadline_branch_plan.md`.
+The full target remains unchanged, but Q0 is an enabling writer qualification,
+not the paper result. Highest-information order is Q0 -> one equal-dose
+coexistence canary -> causal two-SLEEP M-core -> five-branch L-core with
+concurrent P-TEXT; run the no-write lesson-utility gate in parallel and keep
+semantic compression downstream of connected utility. Current heuristic
+readiness is roughly 25--30% overall: the architecture/causal design is mature,
+but no connected mechanism, parenting persistence, positive lifetime slope,
+or strong-text superiority has claim-bearing evidence.
+
+The memo binds positive, clean-null, writer-failure, and invalid/incomplete
+submission branches without changing the research question. Use the
+branch-stable title “Experience Models: Causal Tests of Per-Life Parametric
+Learning in Acting Agents”; change only the abstract's result paragraph to the
+highest sealed gate. A two-root M kill or L-DEV is feasibility, never
+confirmation. Official deadlines convert to Sep 19 04:59 PDT for the abstract
+(about 6d15h from the audit) and Sep 26 04:59 PDT for the paper (about 13d15h).
+Immediate human/admin work is author-set/OpenReview/quota closure; immediate
+paper work is official style, topology rewrite, branch slots, figure/table
+shells, AI-use/anonymity/reproducibility. The style file is currently absent
+and `main.tex` has 14 TBD/UNPROVEN markers. No source, run, adapter, parent,
+GPU job, or claim was changed.
+
+## [benchmark minimalist] 2026-09-12 UTC — one microcycle, then one lifetime
+
+Fresh design memo:
+`research_notes/analysis/2026-09-12_smallest_full_thesis_benchmark_sequence_fresh_design.md`.
+The smallest chain-preserving program reuses one opaque two-SLEEP causal
+microcycle as both the two-root kill gate and a fixed checkpoint module inside
+one novelty-growing lifetime. Qualify Q0 and one OLD/NEW canary; prove the
+world with CPU/gold/exact text; spend at most 12 fits on the two-root relay;
+then run only `DLT_RUN`, `DLT_FROZEN`, and certified `ACTIVE_TEXT_NATIVE` in
+the minimum architecture lifetime. The parenting five-arm factorial is needed
+only if parenting-by-SLEEP remains a primary claim. At confirmation, four
+scheduled cumulative writes plus four midlife causal-control writes give
+`8*N_root` fits rather than separately powering M and L.
+
+Non-negotiable distinctions: child action must actually create the credited
+outcome; rejected DREAM guesses remain in the precision denominator; authentic
+must improve over its own OFF so corrupt-arm harm cannot manufacture the
+effect; atoms-only separates read-time composition from value of a compiled
+connection; goal twins, outcome twins, old/new cuts, sterile reset, and a
+native strong text branch are required. Five novelty-certified cuts suffice
+for the minimum finite-lifetime curve; baseline `saturated` and memory
+`compressed` remain separate, stricter endpoints. This is design-only and
+changes no source, run, adapter, GPU job, or claim.
+
+## [lifetime statistics red-team] 2026-09-12 UTC — smallest clean L-core
+
+Fresh independent audit:
+`research_notes/analysis/2026-09-12_lcore_lifetime_parenting_statistics_fresh_redteam.md`.
+Current lifetime evidence remains developmental: nine ungated R2 life means
+average `+0.0194` ON-minus-OFF, but their episode-384-to-1024 advantage falls
+by `-0.0316` on average (`SD=.0372`, `SE=.0124`; 0/9 positive), and disjoint
+terminal adapters regress from about `+.005` mid-life to `-.017`. Existing
+parented lives do not isolate parenting.
+
+The smallest clean confirmation root has five concurrent descendants:
+`P-RUN/P-FROZEN/P-TEXT` from one sealed parented adult and
+`N-RUN/N-FROZEN` from its matched no-teacher sibling. The root block—not its
+branches, cuts, tasks, or decodes—is `n`. Use a single root-specific untouched
+exam deck repeatedly through sterile no-return clones at seven exogenous
+exposure cuts; this removes parallel-form drift. Root-level entry-adjusted AUC
+tests parenting-by-promoted-SLEEP; absolute post-anchor slope plus endpoint
+gain, retention, and paired slope/terminal superiority over P-TEXT are the
+separate increasing-lifetime conjunction. Do not require or say text-memory
+“saturation” unless equivalence, headroom, continuing novelty, and a doubled-
+read sensitivity all pass.
+
+Sequence: one excluded four-branch executor canary; four five-branch DEV
+roots to freeze horizon/anchor/deck/margins/cost; then fresh confirmation with
+a concealed mean-free variance re-estimation after eight roots and total
+`N in {16,24,32}`. Sixteen is only a structural floor under the weak
+historical `SD=.027`; if the conjunction needs more than the cap, report
+`NOT_ESTABLISHED`. Planning cost is roughly `90--150 A40-hours/root` at a
+192--256 episode horizon. Writer rejection, invalid outputs, and
+treatment-dependent failures remain adverse ITT events. The adult-type by
+parent-presence 2x2 is a separate disposable tutoring diagnostic, not L-core.
