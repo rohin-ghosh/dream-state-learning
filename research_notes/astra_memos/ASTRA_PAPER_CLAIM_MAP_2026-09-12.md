@@ -2,6 +2,14 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
+**September 12, 15:09 UTC superseding evidence window:** terminal SEQ087–089
+are now archived and verified; C31–C33 below record their limits. Canonical
+manuscript integration through these results is in progress. The fresh-case
+constraint-v2 sampler comparisons are running, not results. The selected
+native cumulative-replay test is not yet launched and is explicitly not
+warm-start training or full G3 closure. Earlier status statements below are
+historical. Official model origin remains UNRESOLVED_LOCAL_HASHES_ONLY.
+
 **Current update:** results through Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, September12,2026, including the captured14:01:55UTC terminal audit. C14–C30 below supersede earlier statements of what remains unrun. SEQ-073 is a small three-optimizer-seed behavior effect; SEQ-074 and075 are diagnostic negatives; SEQ-076 is a pre-training infrastructure refusal; SEQ-077 is a teacher-present primary null with a relative secondary format difference. SEQ-078 completes the coefficient-zero historical bridge with G9/G11FAIL; SEQ-079 completes the post-hoc shorter-input no-teacher anchor. SEQ-080 is a bounded semantic-carrier surface pass, not a writer result. SEQ-081 completes the fixed preservation pair: both arms fail G9/G11, with suppressed acquisition despite lower spill. SEQ-082 completes correction with a primary tie and one limited sham content candidate, not utility evidence. Semantic Q0 preserves recorded flags optimization inconclusive, binding/spill false and interface true, but the subsequent score-consistency anomaly makes probability/NLL/TV interpretations provisionally invalid; Main verifies the six-cell utility reduction and all192ONpublic-constraint outcomes (C29). The numerical diagnosis is SEQ084; SEQ086 separately rescores equal-shape candidates without changing original generations, fits or artifacts (C30). No generalization, mechanism freeze, P1/G5 or H1/H2 achievement is asserted. Prior validation/custody descriptions retain their original dated scope; they are not fresh replays performed for this revision.
 
 **Previous SEQ073–076 validation:** local standard-library checks passed for the then-current215-word TeX/Markdown abstract parity, TeX escape-aware braces/environment nesting, labels/references, all19evidence IDs and existing bibliography keys,27new literal evidence paths, and unchanged canonical hashes below. SEQ073 table counts/means/denominators, SEQ074 rounded table/gates/dose/cost, SEQ075 counts/means/contrasts, and SEQ076 numerical refusal/unchanged-cache receipt agreed with committed JSON. An initial exact-float assertion rejected the serialized seed2 mean `.6746093750000001` versus its displayed `.674609375`; the display check was corrected to absolute tolerance1e-15 and passed without changing evidence. No scientific reducer or model was rerun. These checks are historical; the terminal SEQ077 revision is checked separately. `pdflatex`, `latexmk`, `tectonic`, and `bibtex` are absent: no PDF build or page count. Earlier validation paragraphs below are historical, not claims about a successful build of these bytes.
@@ -394,3 +402,47 @@ Source `02a772f8376f431274699d121f691e80e5e6ea0e`, five fresh scoring states OFF
 Supplementary label remains `OPTIMIZATION_INCONCLUSIVE`; optimization/binding/spill false, interface true; external carrier prerequisite `oracle_ok=true` is not a new learned capability. Original generated BA/OFF gains and validity remain exactly as C28. In root0W+/W−,root1W+/W− order, mean conditional log-q gains (`mean_NLL_gain`, not NLL losses)1.078956617564201/.9514255277942695/.6465927120448413/.6083201773732566. Across16cell/family means, binary conditional TV.2800903957789098–.6563000606498942. Positive mean gains do not replace frozen per-key criteria; binding/spill still fail. This is a separate corrected score diagnostic, not rehabilitation of original defective likelihoods or a registered-gate rescue.
 
 The historical OFF-only30/64bound applies to its original scored inputs and is not silently recomputed into a new criterion. Common-mode absolute shifts and cancelling net legality changes remain metric blind spots. The no-fit supplement supplies neither independent learner replication nor retention, selective-writer qualification, parenting, P1/G5 or H1/H2. Prior generated solve observations remain separate from the semantic scorer's numerical defect; no blanket invalidation of earlier experiments is claimed. Future work is separate; no launch or original artifact edit is authorized by this text.
+
+## C31 — Exact-row acquisition diagnostic (SEQ087)
+
+Observed, not selective-memory qualification. Original root0 W+/W- and root1
+W+/W- adapters achieve68/68/64/63 correct of128 exact training forms, against
+OFF64/64/65/63. Held counts remain37/33/32/34 of64. All exact outputs are
+valid, but global action preference dominates; large map-swap disagreements
+are not conditional binding. Root0 first attempt failed before adapter load
+on an identity-query timeout; one unchanged-source fresh retry is preserved
+separately, without splicing. Native replay and all terminal cleanups pass.
+Source and exact capsule hashes:
+`research_notes/astra_memos/ASTRA_EXACT_TRAIN_TERMINAL_2026-09-12.md`.
+This localizes failure beyond held-template transfer but not to a universal
+LoRA capacity limit. No new fit, retention, P1 or H1/H2 result.
+
+## C32 — Prompt-conditioned grounded-check production (SEQ088)
+
+Original strict process coaching0/8 versus active format1/8; schema0/8 versus
+8/8. All process coordinates are numeric strings. The original common task
+said one-based coordinates but did not explicitly require integer coordinate
+types. Post-hoc coordinate-only normalization yields2/8 versus1/8: six process
+citations remain factually incorrect. This diagnosis does not replace strict
+endpoints, establish a treatment advantage or approve any output for training.
+Actual generated tokens392/313, prompts2104/2080; cards47/44, not token matched.
+Native replay, both fresh worker cleanups and release pass. Source, capsule
+and independent content audit:
+`research_notes/astra_memos/ASTRA_CONSTRAINT_PRODUCTION_TERMINAL_2026-09-12.md`.
+Sixteen calls, no fits: no weight persistence or parent-removal competence.
+
+## C33 — Decision-only mask does not repair acquisition (SEQ089)
+
+Exact original root1 W+128rows, seed1, two fresh rank8 fits at256steps each.
+OFF65/128, full-response64/128, first-choice64/128; both trained policies emit
+gvn128/128, every output valid. The full-response final LoRA tensor hash
+reproduces original r1plus exactly; receipt/tree hashes need not be identical.
+Removing suffix gradients alone fails to recover binding in this comparison.
+Second-epoch decision CE .72820924/.78711526 is online pre-update/dropout-active,
+not final-checkpoint loss.384generations,384decision-prefix forwards,512updates,
+2559generated tokens; controller576.103847s excludes external preparation/audit.
+Native replay verifies actual weights, five cleanups and full release. Local
+capsule omits weights and does not constitute a local weight rehash. Evidence:
+`research_notes/astra_memos/ASTRA_OBJECTIVE_TERMINAL_2026-09-12.md` and independent
+`research_notes/analysis/2026-09-12_semantic_objective_terminal_reduction.md`.
+One seed/map, exact-row only: no general impossibility, G3, freeze or H1/H2.

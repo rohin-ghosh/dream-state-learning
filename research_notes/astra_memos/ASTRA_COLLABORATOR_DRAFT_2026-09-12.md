@@ -1,5 +1,25 @@
 # DRAFT ONLY — unsent collaborator update
 
+**September 12, 15:09 UTC update — supersedes the historical window below.**
+The objective comparison is now terminal: original exact-row OFF65/128,
+full-response64/128 and decision-only64/128, with both learned policies
+choosing the same global action on all128 cases. The full-response control
+reproduces the original learned tensor hash. Masking suffix gradients alone
+does not repair acquisition here; we are not selecting more unchanged sweeps.
+The four-adapter exact-row probe likewise remains near chance (68/68/64/63
+of128), so held-template transfer is not the only failure. Public-check
+production has strict process0/8 versus format1/8; a post-hoc coordinate-type
+diagnosis gives2/8 versus1/8, with six process citations still factually wrong.
+None of these are parenting/internalization successes. [C31–C33]
+
+Three fresh-case, explicit-integer production pairs are underway (sampling
+seeds, not learned children). Next mechanism work tests OLD+NEW cumulative
+replay against NEW-only using an actual preserved OLD adapter: fresh-base
+retraining, not warm-start/resumed-optimizer continuity or completed G3.
+Canonical manuscript integration is underway; prior paragraphs calling it
+untouched are historical. No communication has been sent and no thesis or
+scientific-claim change is implied.
+
 September12,2026. Internal review text; **not sent**. Evidence includes verified SEQ085 utility and completed SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit. The original score defect and artifacts remain separately documented; no qualification or gate rescue. No response or approval is implied.
 
 **Supplementary scoring warning:** Main reports266/832score rows with sum(exp(full-candidate log scores))>1.000001, allON, maximum1.3802383379079028. This contradicts two distinct complete LF+EOS continuations under the same causal prefix. Main's native diagnosis identifies sequence-shape numerical inconsistency in BF16 eager scoring with correct causal attention masks, not direct future-token leakage. Original probability/NLL/TV interpretations remain invalid; SEQ086 now provides a distinct equal-shape supplementary rescore, not a replacement or gate rescue. Generation observations remain. Exact replay does not validate likelihood semantics; no writer qualification or exact-train follow-up launch.
