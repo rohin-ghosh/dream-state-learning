@@ -1,4 +1,18 @@
-## Current superseding snapshot — memory launch 2026-09-12 19:34:09 UTC
+## Current superseding snapshot — memory replay launch 2026-09-12 20:02:28 UTC
+
+SEQ104–106 terminal/reviewed: three-parentseed competinghabitwrite replicated;
+memory-only yields14/16,16/16,16/16samefactrecallbuthabitACT0/0/32; root0
+compatibleINPUTordersboth32/32ownmap, oldhabitACT32, memory4unchanged.
+AllthoseGPUsfullyreleased. No generalG3/parenting/H1/H2/freeze.
+LIVEnewmemoryreplay root0 node3GPU0/PID211116 since20:02:28UTC,1200spair.
+MIXED160updatesvsALL_MEMORY160updates, mandatorybothpanels,botharms;
+originalparent, source3a12807f, noresults/promotionsyet. Gatebeforelaterseeds.
+Conditionalpurecorpus117CPUtestsPASS, nativeattempt2token/mask/batchparityPASS
+withmatchedfep/nup labels; source5f6e1f1d, nofitsyet. Nativeattempt1failure
+preserved. Fullcurrentcommands/ownership/pins in HANDOFF. PaperSEQ104–106
+EDITSTOPunderfreshreview,229wordabstract, unsentcollaboratordraft.
+
+## Historical superseded snapshot — memory launch 2026-09-12 19:34:09 UTC
 
 SEQ104 plasticity replications complete/fullreleased19:27:28UTC. All3original
 teachingseeds retainhabit32/32atLR0 and replace it with exactACT-only32/32by

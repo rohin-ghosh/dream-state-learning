@@ -1,5 +1,42 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding snapshot — memory replay launch 2026-09-12 20:02:28 UTC
+
+LIVE root0memoryreplaypair node3GPU0/PID211116, started20:02:28.997513UTC.
+Root~/astra_diagnostics/astra_memory_replay_20260912_attempt1/seed0.
+Source3a12807f88747bafd0aada1d4a09ba88b915f903; plan
+70405bfa50486feaa2b000ee8102a1cdf30265bccaf102958d7e3ea17035bbb9.
+Main22local+22nativeCPUtests andactualnativepreparePASS; fullvacancyPASS.
+MIXEDthenALL_MEMORY ononeGPU1200scontroller/140cleanup, mandatorydev48+exact16
+each. Noresults yet. NEVER rerunprepare/launch; GPU0reservedthroughgaps.
+Herschel owns/tmp/astra_collect_memory_replay_20260912.py+handoff (lean
+collector, notreadyyet). Capsuleplannedastra_memory_replay_seed0_terminal_20260912.tgz.
+No roots1/2prepared: followstagedgate below onlyafterBOTHroot0armsterminal.
+Source/test/runner/launcherarchived; latestprelaunchcommit785cd462.
+
+Conditionalcorpuscommitted5f6e1f1d217dcdb15176dc84b9ac34ec960c48de; Main117CPUtestsPASS.
+Sourceinstallednode3. Nativeattempt1faileddefaultnoncelength mismatch (' mip'
+1token vs ' zot'2); savedfailure, noGPU. Mainselectedmatchedarbitrary labels
+actions(dax,wug), outcomes(fep,nup), allbare/space2tokens. NEWattempt2PASS:
+~/astra_diagnostics/astra_conditional_behavior_20260912_attempt2/material.
+Candidate5d1644b90ff7621ee121aba65be7dd7cae7f15168f5a3c3a09a1bc9aa9a7af8c.
+AUTH344ec17779696b184468d96ce26ef89e8d3bd0cb5b8dbfde84a4b8dc1c437d48;
+DERANGED060255b11551b55b20d39f91301cc4e0362134af321bc740134b86e3ca6d511d.
+Each11248input/1888targetperepoch;4epochs44992/7552. Actualnativeencoder,
+mask/EOS/no-truncation/perbatchclosedtargetpermutation auditsPASS.
+BothCPUattemptsarchivedcapsulecb35744250f6c104594256da5b5ef97884468b250ae50cc4b25b093abae84f1b.
+DoNOTreprepare. Bernoulli now owns ONLY /tmp/astra_conditional_runner_interface_20260912.md,
+nextreadout/runnerinterface design, notcode. Need reusable genericcapture for
+AUTH/DERANGED/OFF train128+dev64, thencommoninputteacherforcing/locality/copy
+assays beforefullL1verdict. NoL1fitlaunched. Defaultpreviewlabelsnotnativecertified.
+
+SEQ106Ohmraw96+48baselinePASS, reviewarchived. BanachsixfileSEQ104–106paper
+update EDITSTOP; /tmp/astra_manuscript_seq104_106_handoff_20260912.md.
+229wordcompanionabstractparity. FilesDIRTY, doNOTstagewhilePlanckreviewpending.
+Planck01a0971a-dcdb-7590-9111-d73adbf74fe3reopened ownsONLY
+/tmp/astra_manuscript_seq104_106_review_20260912.md. Banach hasnoactiveedits.
+Remainingsectionsarehistoricalwhereconflictingwiththissnapshot.
+
 ## Mission and controlling instruction
 
 ACTIVE, incomplete. Rohin: continue mechanism/parenting under simple hygiene;
