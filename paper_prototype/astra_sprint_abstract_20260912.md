@@ -1,6 +1,21 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — SEQ108–110 evidence cut (C52–C54).** SEQ108
+**September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
+C54 RUNNING/NOT RUN status is historical: two fresh actual-record adapters are
+now verified and parent-free OFF/P_ON/A_ON readout is complete. OFF quiz7/24,
+P/A6/24; P minus A0, each adapter minus OFF−1/24. Valid quizzes4/4 versus3/4;
+faithful records9/12 versus10/12 allotted (P/A10/11 emitted). Both adapter
+rule5 tasks are protocol-invalid, not six observed wrong quiz labels. One
+pair/four shared rules, no adult/readout-time parameter updates or robust
+parenting effect. Herschel's returned raw-recount PASS has been read, superseding
+the memo's pending status; authorship and non-blinding limits remain explicit.
+Equal scores alone do not imply raw identity; any identity statement below
+comes from a separate raw comparison. No general G3/P1/G5/H1/H2, clean lineage
+or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. The separate
+interleaved pair is LIVE at the supplied cut, with no outcomes included.
+Collaborator **UNSENT**.
+
+**Historical September 12, 2026 — SEQ108–110 cut (C52–C54).** SEQ108
 carries assigned conditional maps perfectly but fails locality; a public-ID
 shortcut leaves REVISE's intended EXPECTED comparison unqualified. SEQ109
 FOUR_VIEW/SINGLE_VIEW both score memory4/16 on dev and exact panels of the
@@ -10,8 +25,8 @@ epochs,40 presentations, not40 sequential updates. Darwin's returned, now-archiv
 raw recount PASS supersedes the21:21 pending status, not failed progression.
 SEQ110 formation yields P6/6 and A5/6 faithful records; Main accepts the actual
 fixed first-two records and four parent contracts for material fidelity only.
-At the supplied live-status cut, paired actual-record writes are **RUNNING**
-and parent-free readout **NOT RUN**; neither contributes an outcome here.
+At that earlier formation cut, writes were **RUNNING** and readout **NOT RUN**.
+Terminal C55/C56 now supersede that status; formation evidence is unchanged.
 No parenting utility, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze.
 Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator **UNSENT**.
 
@@ -57,9 +72,22 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve what an agent learns after teacher removal? We separate material fidelity, diagnostic adapter behavior and downstream utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics retain their original endpoints. On one root, conditional adapters reproduce their assigned PROSPECT and REVISE maps on all 64 training and 32 development cases per operation, but both fail locality controls. A train-only public-ID lookup predicts all REVISE development targets without EXPECTED, so perfect map carriage does not identify the intended comparison; PROSPECT supports only narrow map controllability. In grouped varied replay, FOUR_VIEW and SINGLE_VIEW both answer 4/16 memory questions correctly on each of two panels of the same 16 facts. FOUR_VIEW retains habit and correct ACT32/32; SINGLE_VIEW has no valid ACT. The memory progression gate fails, with no later seeds. Four source copies/views share each batch: 40 presentations mean 10 source-specific updates, not 40 temporally separated updates. Interface loss is not latent arithmetic erasure. Separately, relation-defined parenting formation yields six of six faithful process-arm records and five of six active-recap records. Main accepts the fixed first-two records per arm and parent contracts for material fidelity, not parenting utility. At the supplied evidence cut, paired actual-record writes are running and parent-free readout has not run; no write or readout outcome is reported. These diagnostics and formation do not establish general G3/P1/G5/H1/H2, clean lineage, novel-fact transfer or a frozen mechanism. Model origin remains unresolved.
+Can developmental teaching improve what an agent learns after teacher removal? We separate material fidelity, a verified parameter write and downstream utility using a frozen instruction-tuned model and LoRA. Earlier diagnostic endpoints remain unchanged. Two accepted raw child records per arm, from process guidance versus active neutral recap, train independent fresh-base rank-eight adapters for twelve updates each. Both saved adapters contain 392 finite tensors and nonzero B entries relative to declared zero-B initialization, corroborating writing rather than usefulness or a full parameter-delta measurement. Separate parent-free processes then evaluate frozen OFF, process-adapter and recap-adapter states on four shared rule tasks without readout-time updates or record feedback into wake. OFF scores 7/24 quiz items; both adapters score 6/24, giving no process advantage. Both adapters fail rule-five protocol after two executed TRYs; absent quizzes retain prescribed zeros, not six observed wrong labels. Valid quizzes are four for OFF and three per adapter. Faithful records increase from 9/12 allotted opportunities to 10/12, or 10/11 emitted, but valid explicit predictions remain eight per state with six correct. Better prompted record fidelity does not establish improved prediction competence or utility. This is one paired write seed and shared generation protocol, not independent learner replication; rules excluded from formation are not globally untouched confirmation. No adult parameter-learning loop, general P1/G5/H1/H2, clean lineage or frozen mechanism is established. Model origin remains unresolved. The separate live interleaved-memory diagnostic contributes no outcomes.
 
 ## Evidence and interpretation boundaries
+
+**C55–C56 terminal cut: verified writing is not useful parenting.** Two fresh
+rank8 adapters each complete12 updates, with392 finite saved tensors/nonzero B.
+Full parameter deltas/usefulness are not inferred. OFF7/24 versus P/A6/24 gives
+no P advantage; rule5 protocol-invalid missing quizzes retain zero/6 in the
+fixed24 denominator. Valid quizzes4 versus3 and faithful9/12 versus10/12
+allotted (10/11 emitted) remain separate. All states have eight valid pre-TRY
+predictions, all F/six correct: higher prompted record fidelity is not increased
+prediction competence. Herschel's returned raw review is read, not assumed from
+the memo; it resolves the two-action rule5 failure and separately checks29
+aligned P/A texts/prompts/token vectors. Aggregate equality alone implies no
+raw/parameter identity. One pair/four shared rules, no adult updates, no clean
+confirmation or G3/P1/G5/H1/H2/freeze. Interleaved LIVE diagnostic outcomes excluded.
 
 **C52–C54: diagnostics and formation are not parenting utility.** Conditional
 own-map generation64/64 train and32/32 dev per operation coexists with locality
@@ -72,8 +100,8 @@ not40 sequential updates; equal target budget does not mean equal input compute.
 Darwin's now-archived raw-recount PASS has been read; its material/grouping scope
 remains bounded. SEQ110 Main audit accepts fixed P0008/0010 and A0038/0040 raw
 records/contracts only; A0042 remains failed. Parent/restatement prose, including
-P's hypothetical sum, stays out of sleep. Actual paired writes are RUNNING and
-parent-free readout NOT RUN at the supplied cut; no downstream outcomes.
+P's hypothetical sum, stays out of sleep. The historical C54 RUNNING/NOT RUN
+status is now superseded by C55/C56 terminal evidence, not parenting utility.
 C52–C54 bind exact receipts and nested costs, not a model-origin or G3/P1/G5/H1/H2
 qualification. Collaborator remains UNSENT.
 

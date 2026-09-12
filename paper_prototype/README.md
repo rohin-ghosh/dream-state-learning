@@ -3,9 +3,69 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ108–110 / C52–C54
+## Latest bounded evidence — SEQ111–112 / C55–C56
 
-**September 12, 2026 — SEQ108–110 evidence cut (C52–C54).** SEQ108
+**September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
+C54 RUNNING/NOT RUN status is historical: two fresh actual-record adapters are
+now verified and parent-free OFF/P_ON/A_ON readout is complete. OFF quiz7/24,
+P/A6/24; P minus A0, each adapter minus OFF−1/24. Valid quizzes4/4 versus3/4;
+faithful records9/12 versus10/12 allotted (P/A10/11 emitted). Both adapter
+rule5 tasks are protocol-invalid, not six observed wrong quiz labels. One
+pair/four shared rules, no adult/readout-time parameter updates or robust
+parenting effect. Herschel's returned raw-recount PASS has been read, superseding
+the memo's pending status; authorship and non-blinding limits remain explicit.
+Equal scores alone do not imply raw identity; any identity statement below
+comes from a separate raw comparison. No general G3/P1/G5/H1/H2, clean lineage
+or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. The separate
+interleaved pair is LIVE at the supplied cut, with no outcomes included.
+Collaborator **UNSENT**.
+
+**C55: a verified write is not a usefulness result.** Two fresh-base rank8
+adapters, optimizer seed2/LR1e-4/batch2,12 updates each, use the fixed two
+accepted raw child records per arm. Both have74 target tokens including EOS,
+888 target presentations; input7656 P versus7632 A is not identical compute.
+No packing/splitting/dropped targets/nonfinite batches. The saved-weight audit
+finds392 finite tensors per adapter and every B entry nonzero; B L2 is
+1.587822886866 P,1.600173037602 A. Declared zero-B initialization supports a
+write, not usefulness/full deltas; no pre-init A snapshot is available.
+
+| SEQ112 state | Quiz correct / fixed24 | Valid quizzes /4 | Faithful / allotted12 | Faithful / emitted | Executed calls |
+|---|---:|---:|---:|---:|---:|
+| OFF | 7/24 | 4/4 | 9/12 | 9/12 | 32 |
+| P_ON | 6/24 | 3/4 | 10/12 | 10/11 | 29 |
+| A_ON | 6/24 | 3/4 | 10/12 | 10/11 | 29 |
+
+Rules2–4 score2/6,1/6,3/6 in every state. On rule5 OFF scores1/6, while both
+adapters produce two ACT markers after two executed TRYs and are rejected
+before a third world action. Their missing quizzes keep the frozen zero/6,
+not six observed incorrect labels and not a denominator reduced to18. All90
+calls stop normally, none at cap. The review separately verifies all29 aligned
+P/A prompts/raw texts/output-token vectors identical here; score equality
+alone does not imply that or equal adapters/latent states.
+
+All states have eight valid explicit pre-TRY predictions, all F and six correct.
+OFF has8/12 executed TRYs explicit, P/A8/11; counting TRY-containing responses
+uses12 per state. The faithful-record increase is not increased prediction
+competence. Record prompts already display actual observations/predictions;
+records are diagnostic, not fed back into wake or trained. Fresh-process/current-
+task prompt separation is not OS filesystem isolation. Four shared rules and
+one paired seed provide no general parenting/adult-learning conclusion.
+
+Source: `research_notes/astra_memos/ASTRA_ACTUAL_RECORD_READOUT_2026-09-12.md`;
+C55/C56 bind archived write/readout capsules, saved-weight audit and the returned
+Herschel raw review, which now supersedes the memo's pending status. The reviewer
+authored related formation/write collectors and weight audit, not readout
+implementation; Main summary was visible. This is not wholly fresh-author/blinded.
+Write full-release/controller/worker/collection seconds are
+361.167984/230.665586/153.654476/22.495086; readout
+642.893684/595.137126/493.982361/53.982670: **overlapping, not additive**.
+Weight audit12.852530 CPU seconds is separate, not a GPU charge. Readout uses
+31510 input/1945 output tokens;90 calls,96 ceiling. No native rerun or PDF build
+here. Canonical abstract/intent and all prior tables remain unchanged.
+
+## Earlier bounded evidence — SEQ108–110 / C52–C54
+
+**Historical September 12, 2026 — SEQ108–110 cut (C52–C54).** SEQ108
 carries assigned conditional maps perfectly but fails locality; a public-ID
 shortcut leaves REVISE's intended EXPECTED comparison unqualified. SEQ109
 FOUR_VIEW/SINGLE_VIEW both score memory4/16 on dev and exact panels of the
@@ -15,8 +75,8 @@ epochs,40 presentations, not40 sequential updates. Darwin's returned, now-archiv
 raw recount PASS supersedes the21:21 pending status, not failed progression.
 SEQ110 formation yields P6/6 and A5/6 faithful records; Main accepts the actual
 fixed first-two records and four parent contracts for material fidelity only.
-At the supplied live-status cut, paired actual-record writes are **RUNNING**
-and parent-free readout **NOT RUN**; neither contributes an outcome here.
+At that earlier formation cut, writes were **RUNNING** and readout **NOT RUN**.
+Terminal C55/C56 now supersede that status; formation evidence is unchanged.
 No parenting utility, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze.
 Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator **UNSENT**.
 

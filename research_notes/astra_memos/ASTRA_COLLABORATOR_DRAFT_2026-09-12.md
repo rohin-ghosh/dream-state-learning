@@ -1,6 +1,43 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, SEQ108–110.** Diagnostics and accepted
+**UNSENT — September 12, 2026, terminal SEQ111–112.** Two fresh actual-
+record adapters are verified; parent-free readout is complete, with no process-
+arm advantage. This supersedes only the historical C54 RUNNING/NOT RUN status.
+
+- **C55 / verified write:** two accepted raw child records per arm, fresh base,
+  rank8/seed2/LR1e-4/batch2/12 updates each. Each has74 target tokens and888
+  target presentations; input7656 P/7632 A differs. Both saved adapters have
+  392 finite tensors/every B entry nonzero; B L2=1.587822886866/1.600173037602.
+  Declared zero-B initialization corroborates writing, not usefulness/full
+  parameter deltas. Native audit is attributed, not rerun here.
+- **C56 / no P advantage:** OFF7/24 versus P/A6/24, P−A0, each adapter−OFF−1/24.
+  Valid quizzes4/4 versus3/4; faithful records9/12 versus10/12 allotted,
+  10/11 emitted for P/A. Both rule5 adapter tasks are protocol-invalid after
+  two executed TRYs; missing quizzes receive prescribed zero/6, not six wrong
+  observed labels or a denominator reduced to18. Four shared rules/one paired
+  seed do not establish a robust parenting effect or independent learners.
+- **Returned raw review:** Herschel confirms90 calls,232 hashes and two ACT
+  markers in rule5 call0028 before world execution. Eight valid explicit
+  pre-TRY predictions/all F/six correct in every state means better prompted
+  record fidelity is not more prediction competence. Equal scores alone do
+  not imply raw identity; the review separately checks29 aligned P/A prompts,
+  texts and token vectors identical here, not equal adapters/latent states.
+  Reviewer authored related collectors/weight audit, not readout implementation;
+  Main summary was visible, so not blinded or wholly fresh-author.
+
+No parent/restatement/formation/previous-task context, record feedback or
+readout-time parameter updates. Relation-definition scaffold remains explicit;
+formation-excluded rules are not globally untouched confirmation. Original64
+confirmation cases remain unrequested. No adult learner loop, general
+G3/P1/G5/H1/H2, clean lineage or frozen mechanism; model origin unresolved,
+C11 deferred. The separate interleaved pair is LIVE at the supplied cut, no
+outcomes added. Write full-release/controller/worker/collection seconds
+361.167984/230.665586/153.654476/22.495086; readout
+642.893684/595.137126/493.982361/53.982670 are nested, not additive/busy-time.
+Saved-weight audit12.852530 CPU seconds is separate. Canonical abstract/intent
+and all prior tables preserved. This draft remains UNSENT; Main alone owns Git.
+
+**Historical UNSENT — September 12, 2026, SEQ108–110.** Diagnostics and accepted
 formation remain separate from parenting utility and the current write.
 
 - **SEQ108 / C52:** AUTH and DERANGED carry their own PROSPECT/REVISE maps
@@ -28,7 +65,8 @@ formation remain separate from parenting utility and the current write.
   or answers; parent/restatement prose never enters sleep, including P's
   hypothetical sum. All eight formation tasks have valid six-item quizzes,
   descriptive only. Prior SEQ095 stays declined. At the supplied cut, paired
-  actual-record writes are RUNNING and parent-free readout NOT RUN: no outcomes.
+  writes were RUNNING and readout NOT RUN at C54; C55/C56 now supersede that
+  status with terminal evidence, not parenting utility.
 
 SEQ108 prior fit+completed collection2047.381023s includes prior464.397178s once;
 its preserved clock-only analysis repair changes no raw scores. SEQ109 release
@@ -366,4 +404,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Reliable joint/repeated-write retention beyond C48–C50, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C54. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C56. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
