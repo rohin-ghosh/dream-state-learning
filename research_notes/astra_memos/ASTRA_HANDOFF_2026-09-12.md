@@ -1,4 +1,41 @@
-# Astra restart checkpoint — 2026-09-12 16:03 UTC
+# Astra restart checkpoint — 2026-09-12 16:25 UTC
+
+## Superseding current state
+
+No Main GPU job or reservation remains. Cumulative128957/node3GPU0 and
+citation136880/node3GPU1 finished, were natively checked, and were released.
+Do not relaunch either. SEQ092 fresh-base cumulative reconstruction improves
+OLD fact gain but reduces OLD frame gain, with substantial bicycle spill;
+it is not parameter retention, selectivity or G3. SEQ093 OFF/full/syntax all
+score0/8 schema and grounding; full repeats trained geometry8/8, syntax1/8,
+with only fullt02 a true literal witness in post-hoc inspection. Not proof
+of no learning. See terminal memos and archived independent audits.
+
+Main source at reconciliation:8a52b2623018b96a65271628018183eaa0c0f228.
+Preserve unrelated dirty gpu/codex/dream_state.rules. Fermat
+01a09653-3934-7800-8d64-f9d868d366c7 owns only the new
+organism_v6/rulegame_parenting_diagnostic.py and its corresponding test.
+Dirac01a09651-1afd-7472-9dc8-f8cb214e3a97 owns the six manuscript files
+(main.tex, README, companion TeX/abstract, claim map, collaborator draft).
+Neither set is ready to stage without its author's EDIT-STOP receipt.
+
+Next selected experiment is ASTRA_RULEGAME_MINIMUM_PROTOCOL_2026-09-12.md:
+bounded156responses, two lessons per arm, actual own-event JSON records,
+first2faithful distinct executions per arm or paired shortage. Formation
+must stop for Main's ordinary content/control audit; then two12step fits
+and sharedOFF/P_ON/A_ON on four new rules if eligible. No formalC11 gate,
+clean-lineage promotion, sequential-adaptation or parenting-success claim.
+Main spotted and requested removal of exported raw-output trimming; worker
+has applied that repair and is finishing regression tests. Next: final
+code review, Main/native CPU tests, immutable source and full GPU vacancy,
+prospective log/push, then formation. No writes before material audit.
+
+The 16:20 sprint state is authoritative for terminal results. Manuscript
+092/093 integration remains in progress; collaborator UNSENT. All resource
+dates and claim restrictions below remain, but old live-job and ownership
+statements are historical only.
+
+## Historical 16:03 checkpoint (superseded)
 
 Mission ACTIVE and incomplete. Rohin's latest instruction: continue mechanism
 and parenting with simple hygiene; finish/enforce the formal guard only for
