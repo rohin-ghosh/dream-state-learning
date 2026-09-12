@@ -1,0 +1,61 @@
+{
+  "candidate_forwards_planned": 576,
+  "cleanup_seconds": 140,
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_conditional_readout_run_20260912.py",
+    "run",
+    "--source-root",
+    "/localhome/local-rohing/astra_sources/90e181a4b0a02cfe655bc76ba480eac9166222b4",
+    "--runroot",
+    "/localhome/local-rohing/astra_diagnostics/astra_conditional_behavior_20260912_attempt2/readouts_root0_attempt1",
+    "--manifest-sha256",
+    "5a26f0da17d53518aa00c80bce3bfbfbe76ef61e65ea5ebc781f797dd33190a6",
+    "--driver-sha256",
+    "e7a42bf3644d6e4ce5fbd1f129b37008cc455ea2088d3f65dbc18d27bd1ccd74",
+    "--deadline",
+    "1789250239.6182988",
+    "--lease-end",
+    "1790391780.0",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "controller_bound_seconds": 4500,
+  "device": "0",
+  "driver_sha256": "e7a42bf3644d6e4ce5fbd1f129b37008cc455ea2088d3f65dbc18d27bd1ccd74",
+  "external_collection_margin_seconds": 300,
+  "generation_calls_planned": 672,
+  "gpu": {
+    "gpu_uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      }
+    ]
+  },
+  "launcher_sha256": "1cda03785e490794b3562d2243921d5c79c702a2fa97363c400cd0c82301177a",
+  "manifest_sha256": "5a26f0da17d53518aa00c80bce3bfbfbe76ef61e65ea5ebc781f797dd33190a6",
+  "node": 3,
+  "origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "phase_order": [
+    "OFF_generate",
+    "OFF_score",
+    "AUTH_generate",
+    "AUTH_score",
+    "DERANGED_generate",
+    "DERANGED_score"
+  ],
+  "pid": 220273,
+  "prior_fit_full_reservation_seconds": 464.397178,
+  "seed": 0,
+  "source": "/localhome/local-rohing/astra_sources/90e181a4b0a02cfe655bc76ba480eac9166222b4",
+  "started_utc": "2026-09-12T20:41:19.619663+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED",
+  "supplies_l1_verdict": false
+}

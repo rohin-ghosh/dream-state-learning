@@ -1,5 +1,46 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding snapshot — 2026-09-12T20:41:19.619663Z
+
+- LIVE node3 GPU0/PID220273, six-phase conditional readout. Root
+  ~/astra_diagnostics/astra_conditional_behavior_20260912_attempt2/readouts_root0_attempt1;
+  source90e181a4b0a02cfe655bc76ba480eac9166222b4. Manifest
+  5a26f0da17d53518aa00c80bce3bfbfbe76ef61e65ea5ebc781f797dd33190a6;
+  driver /tmp/astra_conditional_readout_run_20260912.py SHA
+  e7a42bf3644d6e4ce5fbd1f129b37008cc455ea2088d3f65dbc18d27bd1ccd74.
+  4500s controller/140cleanup; OFF_generate/OFF_score/AUTH_generate/AUTH_score/
+  DERANGED_generate/DERANGED_score,672generations/576candidateforwards planned.
+  DO NOT RELAUNCH. Local shell timed out AFTER successful detached launch;
+  receipt/PID reconciled. Preflight~90s precedes controller/ creation; GPU0 stays
+  reserved through CPU/reload gaps. No outcomes inspected. Collector not built yet.
+- Original replay root0 CLOSED at failed progression: SEQ107 mixed memory14/16dev,
+  13/16exact, habitACT32/32; allmemory16/16both, habitACT0/32. Both160updates,
+  unequal memorydose. No seeds1/2. FormerPID211116 absent/fullrelease20:20:11UTC.
+  Capsule2d4636e37a4668a6503e8ee7a021ed87b6479e54e8bf8126c82e7dcbbaa172e3,
+  331files; separate rawrecountPASS, authorshipdisclosed, memo/receiptsarchived.
+- Conditional fits COMPLETE/fullrelease20:24:01UTC; formerGPU1PID214826 absent.
+  Bothfresh128updates, no readout then. Capsule
+  f1f4e4a237ab301c40f6abb67c83ba75d01cc38dacd3686794bfe321205a251e,27files.
+  Source5f6e1f1d; adapters remain unchanged. Fullfitreservation464.397178s.
+- Corrected likelihood assay: fourPROSPECTcandidates, twoREVISE, separate actual
+  AUTH/DERANGED fixed-endpoint contrasts in ALLstates/OFF. Positive desired,
+  not guaranteed; not negated AUTH-only proxy. Main191+48CPUchecks and26local+
+  26native driverchecks; six actualnative CPUpreps and driververify PASS.
+- Bernoulli EDITSTOP on integrated readout/test, no active source ownership.
+  Herschel EDITSTOP on /tmp readout driver/test/handoff; no collector yet.
+  Planck EDITSTOP: new organism_v6/rulegame_record_material.py and its test,
+  /tmp/astra_rulegame_record_material_handoff_20260912.md; Main review pending.
+  Ohm EDITSTOP: organism_v6/varied_memory_replay_corpus.py and its test,
+  /tmp/astra_varied_memory_replay_corpus_handoff_20260912.md; Main27+21CPUchecks
+  PASS, nativeprepare pending. New variedview comparison per rawmessage20,
+  not restart ofSEQ107. Both128rows,320updates,40presentations/source; each
+  V3batch contains4copies ofonesource in BOTHarms, unlike oldmixedlayout.
+- Main sole Git operator. Preserve dirty gpu/codex/dream_state.rules and the
+  untracked worker modules/tests pending review. New rawmessage21 just arrived
+  on pull; read it before adopting any new thesis/architecture claims.
+- Formal guard remains finalC11-only; origin UNRESOLVED_LOCAL_HASHES_ONLY;
+  no mechanismfreeze, generalG3/P1/G5/H1/H2. Mission still incomplete.
+
 ## Superseding continuation snapshot — 2026-09-12T20:11:20.566884+00:00
 
 - Live memory-replay root0 remains node3 GPU0/PID211116; collector status only,
