@@ -270,6 +270,18 @@ result-blind design audit:
 independent terminal recomputation:
 `research_notes/analysis/2026-09-12_p0_raw_wake_fork_terminal_watcher_audit.md`.
 
+Before another parenting-derived fit, first establish that an answer-free
+process lesson helps while it is visible. The cheapest scout compares the
+fixed `FORM_CHECK -> CONSTRAINT_LEDGER` card with a token- and opportunity-
+matched sham on the same first-action mini-Sudoku tasks, while a separately
+frozen no-teacher run locates both arms relative to ordinary behavior. Report
+native first-action score/solves and direct visible-constraint diagnostics;
+thought length or lesson imitation is never success. Without the no-teacher
+anchor, `process > sham` can again mean only that sham harmed more. Even a
+positive result establishes immediate static instruction utility, not adaptive
+parenting, internalization, or SLEEP. Prospective watcher audit:
+`research_notes/analysis/2026-09-12_static_parent_competency_watcher_audit.md`.
+
 ## One ordered evidence ladder
 
 These labels localize failures; they are not seven independently powered
