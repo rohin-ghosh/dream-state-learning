@@ -1,21 +1,50 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026, terminal SEQ101–103 update:** repetition packaging leaves
-seed0 dev recall unchanged without adding optimizer steps; competing writes
-replace the old habit from one original teaching seed; HF agrees with inherited
-vLLM first tokens on original training prefixes, not full cross-backend logits.
-All three scoped independent reviews PASS. No outcomes from the later19:21UTC
-replication launch are included. Canonical abstract unchanged; C11 deferred.
+**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
+the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
+continuation optimizer seeds are 0; only seed0 has four-phase evidence.
+SEQ105 improves memory to 14/16, 16/16, 16/16 on BOTH panels of the SAME 16
+authored facts, but seeds0/1 lose valid ACT on all32 arithmetic probes; seed2
+retains habit/ACT32/32. Do not average away those failures or select seed2.
+SEQ106's two arms from one ORIGINAL root0 each attain own strict INPUT order
+32/32, opposite0/32, habit/ACT32/32, with memory unchanged4/16. The after-arm's
+legacy before-only joint0 is expected, not failure. This is rehearsed authored
+convention coexistence, not input-dependent cognition or a memory result.
+SEQ104/105 archived raw recounts PASS within independent-reduction scope;
+their reviewers authored implementation components, not fresh-author code reviews.
+SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
+H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
+or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
+novel-fact transfer or substrate freeze follows. Model origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-September 12, 2026. **Internal staging only; not a replacement for the canonical abstract or a completed-manuscript claim.** The current evidence cut extends through terminal SEQ101–103, not parenting-efficacy certification; earlier sequences retain their results and scoped reviews. Main-verified SEQ085 utility and SEQ086 supplementary semantic rescoring, including the14:01:55UTC terminal audit, remain earlier results with their original limits. Original defective scores are preserved, not rehabilitated; generation observations remain. H1/H2 remain the proposed developmental thesis.
+Internal staging only; the canonical abstract is unchanged. H1/H2 remain the
+proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve the material an agent learns from and its later behavior after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA consolidation. Earlier diagnostics distinguish local interface repair and bounded useful-write signals from selective memory; their original endpoints and exposure limitations remain unchanged. In externally authored post-training, three trainer seeds produce 32/32 correct PREDICT-before-ACT responses versus 0/32 for controls on fixed development probes; arithmetic is already correct throughout. Teaching memory recall is 4/16, 7/16 and 3/16 versus control 4/16 throughout. Repeating each example sixteen times, with reset or concatenated contexts, leaves seed-zero development memory at constant red, 4/16. This packaging null retains 80 optimizer steps, not sixteen times the optimizer practice; repeated-checkpoint training-prompt recall is untested. In four competing-update phases from one original teaching seed, both positive learning rates replace the old habit with exact correct ACT-only responses on 32/32 probes by the first 16-update readout; zero-rate parameters and outputs remain unchanged. Memory stays 4/16. A separate original-checkpoint HF diagnostic matches inherited vLLM first tokens on all 16 training questions, red throughout; full cross-backend logit parity was not measured. These results show a revisable output habit, not arithmetic gain, reliable fact binding, a diagnosed memory-failure cause, or passive fading. All 64 confirmation cases remain unrequested. This level-zero test does not establish general retention, parenting, child-generated sleep, H1/H2, clean lineage, or campaign completion.
+Can developmental teaching improve what an agent learns after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics retain their original endpoints and exposure limits. Authored post-training teaches a PREDICT-before-ACT convention across three initial teaching seeds without improving already-correct arithmetic. Competing ACT-only writes replace that convention on 32/32 fixed development probes at both positive learning rates by the first 16-update readout across all three roots; all continuations use optimizer seed zero, and only the original seed-zero root has four-phase evidence. Memory-only continuation answers 14/16, 16/16 and 16/16 authored facts correctly on both original-prefix and alternate-wording panels of the same facts, not independent or novel facts. Seeds zero and one lose valid ACT on all 32 arithmetic probes; seed two retains habit and correct ACT on all 32. These are interface failures, not demonstrated erasure of latent arithmetic, and seed two is not selected as superior. Separately, two arms from one original seed-zero checkpoint each acquire their own exact operand-bearing INPUT order on 32/32 probes, reject the opposite order, and retain habit and ACT; memory remains 4/16. This rehearsed-convention result is not input-dependent cognition. All 64 confirmation cases remain unrequested. Neither these diagnostics nor pending memory-replay and level-1 work establish general G3, parenting, child-generated sleep, H1/H2, clean lineage, novel-fact transfer, or a substrate freeze; local model origin remains unresolved.
 
 ## Evidence and interpretation boundaries
 
-**Terminal SEQ101–103 — C45–C47.** Repetition retains80updates in all four cells;
+**C48–C50 interpretation details.** SEQ104 memory, in LR0/3e-5/1e-4 order,
+is4/4/4,7/6/5,3/3/4 out of16 for teaching seeds0/1/2; all ACTs remain correct.
+SEQ105 uses80 new memory-only updates and no arithmetic/habit rehearsal.
+Seed0 misses the same two yellow facts, but wrong blue/green answers swap
+across surfaces: equal counts do not imply identical vectors. Seed1 has23
+arithmetic calls at the64-token cap. Dose, subset and cumulative exposure change
+together, so interference versus dose is not isolated. Seed2's coexistence does
+not establish reliable retention or a need for separate adapters.
+SEQ106 explicitly rehearses the old convention while adding a compatible one;
+it does not use memory-only checkpoints or inherit their memory success.
+Full-reservation/controller/worker seconds for104/105/106 are respectively
+2023.382487/1512.304214/976.997025,1666.592415/1101.776900/785.153102,
+799.928952/537.610627/381.280358: nested, not additive or GPU busy time.
+No new OFF or confirmation calls; no memory-replay or level-1 outcomes.
+
+**Historical terminal SEQ101–103 — C45–C47.** Repetition retains80updates in all four cells;
 SHORT batch4/accum16 preserves the original four groups/update rather than
 providing16times sequential optimizer practice. Loss normalization, homogeneous
 versus mixed-group batches, and dropout prohibit exact-gradient/equal-task-weight
@@ -31,7 +60,7 @@ Actual generation input/output tokens are8524/1888 for101 and25572/3648 for102,
 not caps12288/36864. SEQ102 worker2125.367463s, controller3073.313819s and full
 reservation3460.763131s overlap; SEQ103 worker64.699761s differs from full
 reservation141.936394s. Model origin remains unresolved; no absent weights are
-rehashed by local review. No confirmation, later replication outcome, memory
+rehashed by local review. C48 now adds first-phase replication outcomes; no confirmation, general memory
 gate, parenting/H1/H2, representative G3 or mechanism freeze is claimed.
 
 **Historical September 12,18:31UTC — C42–C44.** All six fitted states and actual reused

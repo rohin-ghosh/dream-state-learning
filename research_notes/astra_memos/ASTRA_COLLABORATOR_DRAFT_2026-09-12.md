@@ -1,6 +1,49 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12,2026, terminal SEQ101–103.** All three bounded
+**UNSENT — September 12, 2026, terminal SEQ104–106.** Three distinct
+questions now have bounded answers; none changes the developmental thesis.
+
+- **Revisability, not passive fading:** roots1/2 join inherited seed0 phase1.
+  Both positive rates replace the habit with exact correct ACT-only32/32 after
+  16 opposing updates; LR0 preserves it. All continuation optimizer seeds are0;
+  only seed0 has four-phase evidence. Memory at LR0/3e-5/1e-4 is4/4/4,
+  7/6/5,3/3/4 out of16 for teaching seeds0/1/2. [C48]
+- **Acquisition is not reliable retention:** memory-only updates yield
+  14/16,16/16,16/16 on BOTH panels of the SAME16 authored facts. Seeds0/1
+  lose valid ACT on all32 arithmetic questions; seed1 reaches the64-token cap
+  on23 arithmetic calls. Seed0's wrong blue/green answers swap between surfaces
+  on the same two yellow facts: equal counts are not identical vectors.
+  Seed2 retains habit/ACT32/32, showing possible coexistence, not a selected
+  superior or clean child. These are interface failures, not demonstrated
+  latent arithmetic erasure. No arithmetic/habit rehearsal; changed subset,
+  exposure and cumulative training do not isolate dose versus interference.
+  Inherited controls are not new matched80-update controls. [C49]
+- **Compatible conventions can coexist with explicit rehearsal:** both arms
+  from one ORIGINAL root0 H adapter attain own exact operand-bearing INPUT
+  order32/32, opposite0/32, habit/ACT32/32; memory remains4/16 with no tag spill.
+  The after-arm's legacy before-only joint0 is expected, not failure. These
+  are not memory-only descendants; their results cannot inherit C49 memory
+  success. Copying INPUT/line ordering is not input-dependent cognition. [C50]
+
+SEQ104/105 archived raw recounts PASS on288/192 new calls, with disclosures
+that reviewers authored implementation components: independent reductions,
+not fresh-author code reviews. Main's SEQ106 symmetric thresholds pass on96
+new calls; **the now-archived separate raw recount PASSes96 new and48 inherited
+H calls** within receipt-level limits, with all254 capsule hashes checked.
+The exact orders are INPUT→PREDICT→ACT and PREDICT→ACT→INPUT; the after-arm
+places INPUT after ACT. No general learning-gate promotion follows.
+Full-reservation/controller/worker seconds are2023.382487/1512.304214/976.997025,
+1666.592415/1101.776900/785.153102 and799.928952/537.610627/381.280358:
+nested, not additive or continuous GPU busy time. Inherited work is not recharged.
+
+Memory-replay and input-selective level-1 work remain CPU implementation pending,
+with no outcomes. All64 confirmation cases remain unrequested. No general G3,
+parenting, child sleep, H1/H2, novel-fact transfer, clean lineage or substrate
+freeze follows; model origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+Canonical abstract/author intent and all prior tables remain unchanged. This
+draft is UNSENT; Main alone owns Git and integration. Exact sources are in C48–C50.
+
+**Historical UNSENT — September 12,2026, terminal SEQ101–103.** All three bounded
 independent numerical reviews PASS. Repetition packages16copies per original
 example as SHORT resets or LONG concatenations but retains80optimizer steps.
 Every seed0 cell still has ACT32/32 and red-only dev memory4/16; teach/control
@@ -19,7 +62,7 @@ serialized adapter tensors according to native receipts. Correct ACT32/32 and
 red-only memory4/16 persist. Weights carry, AdamW resets each phase:12fits and
 576fixeddev calls, not three initial seeds, passive fading, a best rate or
 representative G3. The original baseline is shared;64confirmation cases remain
-unrequested. Later19:21UTC replications have no outcomes included. [C46]
+unrequested. C48 now adds only first-phase teaching-root replication. [C46]
 
 The separate original-checkpoint HF check gives red top1 on16/16training
 prefixes, matching inherited SEQ100vLLM first tokens16/16 but correct4/16.
@@ -249,6 +292,6 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 **Supplementary equal-shape scoring completes without new fits (SEQ086).** Five fresh states produce832new scores while reusing880original generations. The347.468second supplement retains all original generation accuracies and the `OPTIMIZATION_INCONCLUSIVE` label, with binding/spill false and interface true. Root0+/−,root1+/− mean conditional log-q gains are1.0789566/.9514255/.6465927/.6083202; locality-family mean binary TV ranges.2800904–.6563001. Positive mean gain does not replace the per-key conjunction or show selectivity. Main reports original-source/current reduction equality, all five cleanups and GPU0releasePASS. Original defective scores are untouched; this is a distinct supplementary diagnostic, not a new trained model, registered-gate rescue or retention result. Metric blind spots remain. [C30]
 
-Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
+Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Reliable joint/repeated-write retention beyond C48–C50, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C44. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C50. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

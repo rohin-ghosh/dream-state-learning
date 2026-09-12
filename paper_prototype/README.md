@@ -2,10 +2,92 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**September 12, 2026 — terminal SEQ-101–103 (C45–C47).** Bounded additions
+
+## Latest bounded results — C48–C50
+
+**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
+the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
+continuation optimizer seeds are 0; only seed0 has four-phase evidence.
+SEQ105 improves memory to 14/16, 16/16, 16/16 on BOTH panels of the SAME 16
+authored facts, but seeds0/1 lose valid ACT on all32 arithmetic probes; seed2
+retains habit/ACT32/32. Do not average away those failures or select seed2.
+SEQ106's two arms from one ORIGINAL root0 each attain own strict INPUT order
+32/32, opposite0/32, habit/ACT32/32, with memory unchanged4/16. The after-arm's
+legacy before-only joint0 is expected, not failure. This is rehearsed authored
+convention coexistence, not input-dependent cognition or a memory result.
+SEQ104/105 archived raw recounts PASS within independent-reduction scope;
+their reviewers authored implementation components, not fresh-author code reviews.
+SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
+H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
+or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
+novel-fact transfer or substrate freeze follows. Model origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
+
+| SEQ104 original teaching seed | Habit at LR0 /32 | Exact ACT-only at 3e-5 / 1e-4, each /32 | Memory at LR0 / 3e-5 / 1e-4, each /16 |
+|---|---:|---:|---:|
+| 0 (inherited phase1) | 32 | 32 / 32 | 4 / 4 / 4 |
+| 1 | 32 | 32 / 32 | 7 / 6 / 5 |
+| 2 | 32 | 32 / 32 | 3 / 3 / 4 |
+
+All nine branches have correct ACT32/32; positive rates have old habit0/32.
+Same16 ACT-only rows, four epochs/batch4, 16 new updates per branch, no old
+habit/memory rehearsal. LR0 tensors remain unchanged. Six new fits/288 calls;
+seed0 is reused, not rerun. This does not select a best rate or show passive fading.
+
+| SEQ105 original parent seed | Original dev /16 | New dev /16 | Original-prefix /16 | Retained habit /32 | Correct ACT /32 |
+|---|---:|---:|---:|---:|---:|
+| 0 | 4 | 14 | 14 | 0 | 0 |
+| 1 | 7 | 16 | 16 | 0 | 0 |
+| 2 | 3 | 16 | 16 | 32 | 32 |
+
+Same16 memory rows, 20 epochs/batch4/LR3e-4, 80 new updates (160 cumulative),
+fresh parent-seeded AdamW, no arithmetic/habit rehearsal. Per seed:14,080 input
+and640 target-token presentations. Both panels require all16 answers regardless
+of outcome. Seed0 misses the same two yellow facts but swaps wrong blue/green
+answers across surfaces: **equal counts, not identical answer vectors**.
+Seed1 has23 arithmetic calls at the64-token cap. Loss of valid ACT is an
+interface failure, not demonstrated latent arithmetic erasure. Changed subset,
+exposure and cumulative training do not isolate dose versus interference;
+inherited controls are not a new matched80-update control. Three fits/240updates,
+192 calls. No claim that separate adapters are necessary or seed2 is superior.
+
+| SEQ106 root0 arm | Own strict order /32 | Opposite /32 | Old habit /32 | Correct ACT /32 | Memory /16 | Memory spill /16 |
+|---|---:|---:|---:|---:|---:|---:|
+| INPUT → PREDICT → ACT | 32 | 0 | 32 | 32 | 4 | 0 |
+| PREDICT → ACT → INPUT | 32 | 0 | 32 | 32 | 4 | 0 |
+
+Both fork ORIGINAL H (own orders0/32, habit/ACT32/32, memory4/16), never each
+other or memory-only descendants. Same80 sourced records, four epochs/batch4,
+LR1e-4 chosen before plasticity outcomes, fresh optimizer seed0, rank8;
+80 updates and20,328 input/5,908 target-token presentations per arm. Two fits,
+160 updates,96 calls;48 H-baseline calls reused once. Main's symmetric limits
+own>=28/32, opposite<=4/32, habit>=30/32, ACT>=31/32 and memory validity/spill
+pass and are confirmed by the separate raw recount; neither result is a general
+learning-gate PASS. The after-arm places INPUT after ACT, not between PREDICT and ACT.
+
+| Sequence | Full reservation seconds (A40-minutes) | Controller seconds | Worker seconds |
+|---|---:|---:|---:|
+| 104 | 2023.382487 (33.723041) | 1512.304214 | 976.997025 |
+| 105 | 1666.592415 (27.776540) | 1101.776900 | 785.153102 |
+| 106 | 799.928952 (13.332149) | 537.610627 | 381.280358 |
+
+**Clocks are nested, not additive**; reservation includes collection wait, not
+continuous GPU busy time or dollar cost. Original weights are not downloaded
+or independently reloaded here. No new OFF/confirmation calls. Canonical abstract,
+author intent and all prior tables remain unchanged; no PDF build is claimed.
+Sources: terminal memos `ASTRA_PLASTICITY_REPLICATIONS_TERMINAL_2026-09-12.md`,
+`ASTRA_MEMORY_ONLY_TERMINAL_2026-09-12.md`, and
+`ASTRA_TWO_HABIT_TERMINAL_2026-09-12.md` under `research_notes/astra_memos/`.
+Claim-map C48–C50 bind exact archive/plan hashes, analyses and review scopes.
+
+## Earlier terminal evidence — SEQ101–103
+
+**Historical September 12, 2026 — terminal SEQ-101–103 (C45–C47).** Bounded additions
 preserve the canonical author abstract/intent, all prior tables and appendix.
-All three independent numerical reviews PASS. Later replications launched
-19:21UTC contribute **no outcomes** here. Collaborator remains **UNSENT**.
+All three independent numerical reviews PASS. C48 now supersedes the former
+19:21 UTC live-replication status. Collaborator remains **UNSENT**.
 
 - **Repetition packaging null:** four seed0 teach/control × SHORT/LONG fits
   retain80optimizer steps. Each repeats the80original examples16times and

@@ -2,7 +2,27 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12,2026 — terminal C45–C47:** SEQ101–103 are complete and released,
+**September 12, 2026 — terminal SEQ104–106 (C48–C50).** SEQ104 adds
+initial-teaching roots 1/2 to inherited seed0 phase1: both positive rates replace
+the old habit with exact correct ACT-only 32/32 by 16 opposing updates. All
+continuation optimizer seeds are 0; only seed0 has four-phase evidence.
+SEQ105 improves memory to 14/16, 16/16, 16/16 on BOTH panels of the SAME 16
+authored facts, but seeds0/1 lose valid ACT on all32 arithmetic probes; seed2
+retains habit/ACT32/32. Do not average away those failures or select seed2.
+SEQ106's two arms from one ORIGINAL root0 each attain own strict INPUT order
+32/32, opposite0/32, habit/ACT32/32, with memory unchanged4/16. The after-arm's
+legacy before-only joint0 is expected, not failure. This is rehearsed authored
+convention coexistence, not input-dependent cognition or a memory result.
+SEQ104/105 archived raw recounts PASS within independent-reduction scope;
+their reviewers authored implementation components, not fresh-author code reviews.
+SEQ106's now-archived separate raw recount also PASSes96 new and48 inherited
+H calls within receipt-level scope, confirming Main's symmetric thresholds. No memory-replay
+or level-1 outcomes exist here; CPU implementation is pending. All64 confirmation
+cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
+novel-fact transfer or substrate freeze follows. Model origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
+
+**Historical September 12,2026 — terminal C45–C47:** SEQ101–103 are complete and released,
 with bounded independent PASS reviews. Repetition is a packaging null at the
 same80optimizer steps, not16times sequential practice. Four competing-write
 phases from one original teaching seed replace the old habit at both positive
@@ -10,8 +30,8 @@ rates by16updates; exact ACT-only uptake is verified, not only tag disappearance
 HF first-token agreement on original seed0 memory prefixes is not full HF/vLLM
 logit parity. No failure cause, passive fading, representative G3, memory gate,
 parenting/H1/H2, clean model origin or mechanism freeze is established. All64
-confirmation cases remain unrequested. Later19:21UTC replications contribute
-no outcomes. Canonical author abstract/intent, prior tables and appendix are
+confirmation cases remain unrequested. C48 now supersedes the former19:21UTC
+live-replication status without extending seed0 four-phase evidence to other roots. Canonical author abstract/intent, prior tables and appendix are
 preserved; companion abstract remains <=250words with TeX/Markdown parity.
 Collaborator UNSENT; formal C11 deferred; Main retains all parallel launches.
 
@@ -1286,8 +1306,8 @@ This demonstrates revisability under a directly competing objective, not passive
 time fading, new arithmetic knowledge, selective forgetting, optimal rate,
 replay/rehearsal benefit, general G3, parenting/P1/G5/H1/H2 or mechanism freeze.
 The first measurement is after16updates, so transition timing within that phase
-is unresolved; the positive rates are tied at the measured resolution. No
-outcomes from the later19:21UTC seed1/2 replication launch are included.
+is unresolved; the positive rates are tied at the measured resolution. C48
+now extends the first phase only to teaching roots1/2, not the four-phase trajectory.
 
 Exactly576new fixed-dev calls,12fits; the single original48-case teaching
 baseline is reused, not three new controls. No new OFF or confirmation calls;
@@ -1354,3 +1374,157 @@ Sources:
   `05b6f8f906d1009977ba1439a5ca2db20036faed04ad2491e2a9a2f6ef7fd27f`.
   Raw vector triplets, reduction and Main summary are inside the capsule;
   C44 binds the reused original SEQ100 comparison archive.
+
+## C48 — First-phase plasticity across initial teaching roots (SEQ104)
+
+**Allowed claim:** after16 opposing updates, all three initial teaching roots
+replace old PREDICT-before-ACT with exact correct ACT-only32/32 at both positive
+rates. New roots1/2 supplement inherited SEQ102 seed0 phase1, not a rerun.
+All continuation optimizer seeds are0; only seed0 has the four-phase trajectory.
+
+| Original teaching seed | LR | Old habit /32 | Exact correct ACT-only /32 | Memory /16 |
+|---|---:|---:|---:|---:|
+| 0 (inherited phase1) | 0 | 32 | 0 | 4 |
+| 0 (inherited phase1) | 3e-5 | 0 | 32 | 4 |
+| 0 (inherited phase1) | 1e-4 | 0 | 32 | 4 |
+| 1 | 0 | 32 | 0 | 7 |
+| 1 | 3e-5 | 0 | 32 | 6 |
+| 1 | 1e-4 | 0 | 32 | 5 |
+| 2 | 0 | 32 | 0 | 3 |
+| 2 | 3e-5 | 0 | 32 | 3 |
+| 2 | 1e-4 | 0 | 32 | 4 |
+
+Correct ACT remains32/32 everywhere. Six new fits/288 calls use the same16
+sourced ACT-only rows, four epochs/batch4/16 updates, no old-habit or memory
+rehearsal, and ORIGINAL SEQ099 roots (not repetition/plasticity descendants).
+LR0 serialized adapter tensors and48/48 complete output vectors are unchanged
+against each root's baseline; positive-rate tensors change, per native receipts.
+Independent raw recount passes all288 new calls,96 seed1/2 baseline pairs and
+144 inherited seed0 phase1 pairs. Reviewer Ohm authored the orchestrator:
+independent reduction, not fresh-person implementation review. Excluded weight
+bytes are not locally reloaded; native tensor checks remain attributed.
+This supports first-phase revisability, not passive fading, selective forgetting,
+an optimal LR, new experience-distribution replication or robust memory binding.
+
+Full reservation2023.382487s (33.723041 A40-min), controller1512.304214s,
+workers976.997025s: nested, not additive or continuous GPU busy time. With
+SEQ102, full plasticity reservation91.402428 A40-min includes inherited work
+only once. Main release window19:26:41–19:27:28 UTC, September12,2026.
+No new OFF/confirmation calls; all64 confirmation cases remain unrequested.
+No parenting, child sleep, G3/H1/H2, clean lineage or substrate freeze; origin
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+
+Sources and exact binding:
+- `research_notes/astra_memos/ASTRA_PLASTICITY_REPLICATIONS_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_plasticity_replications_review_20260912.md`, bounded raw-recount PASS with authorship disclosure.
+- Main analysis `research_notes/astra_memos/receipts_20260912/astra_plasticity_replications_analysis_20260912.json` (local supplied copy `/tmp/astra_plasticity_replications_analysis_20260912.json`); analysis script `research_notes/astra_memos/receipts_20260912/astra_analyze_plasticity_replications_20260912.py`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_plasticity_replications_terminal_20260912.tgz`, SHA256 `e777a34fd115002b399c848ad8590e50282d6037a110c583a7981db03ddc0ab4`; adjacent `.tgz.validation.json` binds746 payload files.
+- Plan SHA256 `357b258a35ab73582aeacbaf6327f41e1078ac73584b77914602b58e8b6dc83d`; source `3a12807f88747bafd0aada1d4a09ba88b915f903`.
+- Extracted root `/tmp/astra_plasticity_replications_terminal_20260912/astra_diagnostics/astra_fundamental_plasticity_replications_20260912_attempt1`; branch raw calls in `readout/run/data/calls/`, memory0032–0047. C43/C46 bind original/inherited comparisons.
+
+## C49 — Memory acquisition with seed-dependent interface failure (SEQ105)
+
+**Allowed claim:** memory-only continuation improves finite authored fact recall,
+but the recipe does not reliably retain the arithmetic response interface.
+
+| Original parent seed | Original dev /16 | New dev /16 | Original-prefix /16 | Habit /32 | Correct ACT /32 |
+|---|---:|---:|---:|---:|---:|
+| 0 | 4 | 14 | 14 | 0 | 0 |
+| 1 | 7 | 16 | 16 | 0 | 0 |
+| 2 | 3 | 16 | 16 | 32 | 32 |
+
+Both panels query the SAME16 authored facts, not32 independent or novel facts;
+all48 responses per panel are valid colors. Seed0 misses the same two yellow
+facts, but its wrong blue/green answers swap between the original-prefix and
+alternate-wording surfaces. **Equal counts do not imply identical answer vectors.**
+Seeds0/1 have zero valid ACT on all32 arithmetic probes. Seed0 emits colors;
+seed1 repeats colors, with23 arithmetic calls reaching the64-token cap. This is
+output-interface failure, not demonstrated erasure of latent arithmetic.
+Seed2 retains habit and correct ACT32/32 plus both memory16/16: coexistence is
+possible, not reliable across seeds. All failures remain; seed2 is not selected
+as a superior, clean or preferred child. Separate adapters are not shown necessary.
+
+Each fit starts its ORIGINAL SEQ098/099 teach checkpoint, using exactly its16
+original memory rows, unchanged spans/labels/source metadata,20 epochs/batch4,
+LR3e-4,80 new updates/160 cumulative and fresh parent-matching AdamW seed.
+One rank8 adapter/frozen base, no arithmetic/habit rehearsal. Per seed14080
+input/640 target presentations; native masks42 ignored context tokens plus
+one color and EOS, zero truncation/drops. Changed subset, exposure and cumulative
+training confound dose versus interference; inherited controls/OFF are not new
+matched80-update controls. Three fits/240 updates/192 calls, both panels required
+irrespective of outcome; no new OFF/HF/confirmation. All64 confirmation cases
+remain unrequested. Memory-replay allocation is a pending comparison, not a result.
+
+Herschel's archived independent192-call raw recount PASS includes inherited
+baselines and native cost/custody receipts; Herschel authored runner/collector,
+so this is not fresh-author implementation review. All501 capsule files verified
+by Main and recount; weight files absent, native tensor/freezing checks attributed.
+Full reservation1666.592415s (27.776540 A40-min), controller1101.776900s,
+workers785.153102s: nested, never additive, not continuous GPU busy time.
+Release window19:43:16–19:43:33 UTC, September12,2026. Main reports a collection
+SSH timeout followed by completion without rerunning finish, not another trial.
+No general memory, novel-fact transfer, parenting/child sleep, G3/H1/H2,
+clean lineage or freeze. Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred.
+
+Sources and exact binding:
+- `research_notes/astra_memos/ASTRA_MEMORY_ONLY_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_memory_only_result_review_20260912.md`, bounded raw-recount PASS with authorship disclosure.
+- Main analysis `research_notes/astra_memos/receipts_20260912/astra_memory_only_analysis_20260912.json` (supplied `/tmp/astra_memory_only_analysis_20260912.json`); script `research_notes/astra_memos/receipts_20260912/astra_analyze_memory_only_20260912.py`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_memory_only_terminal_20260912.tgz`, SHA256 `8400de86e541573a73803b8ee821e753d3ba644e8346a13f85f6a26a691b1a0a`; adjacent `.tgz.validation.json` binds501 payload files.
+- Plan SHA256 `0f8d1a3042b92c3c940309f0b909f7ee535c295e3c3fb6197a8d45c4c137ac90`; source `3a12807f88747bafd0aada1d4a09ba88b915f903`.
+- Extracted root `/tmp/astra_memory_only_terminal_20260912/astra_diagnostics/astra_fundamental_memory_only_20260912_attempt1`; C42/C43/C44 bind inherited baselines and original-prefix interface.
+
+## C50 — One-root compatible authored conventions with rehearsal (SEQ106)
+
+**Allowed claim:** one adapter can retain an explicitly rehearsed convention
+while acquiring a compatible authored convention in this root0-only check.
+Main's symmetric registered thresholds pass; the **now-archived separate
+raw-recount review PASS** confirms96 new and48 inherited H calls plus all254
+capsule files within receipt-level verification limits, not a general gate.
+
+| Root0 arm | Own strict order /32 | Opposite /32 | Old habit /32 | Correct ACT /32 | Memory /16 | Memory tag spill /16 |
+|---|---:|---:|---:|---:|---:|---:|
+| Original H (inherited) | 0 | 0 | 32 | 32 | 4 | 0 |
+| INPUT → PREDICT → ACT | 32 | 0 | 32 | 32 | 4 | 0 |
+| PREDICT → ACT → INPUT | 32 | 0 | 32 | 32 | 4 | 0 |
+
+Own success requires exact source operands and exactly three valid protocol
+lines: INPUT→PREDICT→ACT versus PREDICT→ACT→INPUT. The after-arm puts INPUT
+after ACT, not between the old two lines. All memory answers are valid colors,
+no tags; the separate recount verifies both arms' memory texts and token vectors
+are identical to inherited H (red throughout), not newly acquired memory.
+Both meet own>=28/32, opposite<=4/32, habit>=30/32, ACT>=31/32, memory
+spill increase<=1/16 and validity loss<=0.05 versus H; both memory deltas are0. The after-arm's legacy before-only `joint=0` is expected,
+not a failure; its registered symmetric own-map32/32 is the relevant endpoint.
+Memory remains4/16: do not import SEQ105's different-checkpoint memory success.
+Input copying and line order do not show INPUT causally informs PREDICT or
+input-dependent cognition. One original parent and an exposed development panel
+are not three-seed confirmation, parenting, child sleep, reliable memory,
+general G3/H1/H2, clean lineage, novel-fact transfer or substrate freeze.
+
+Both fork the ORIGINAL SEQ098 root0 H adapter, never each other. Same80 sourced
+records (64 arithmetic/16 memory), token-matched line-order targets, LR1e-4
+chosen before plasticity outcomes, four epochs/batch4/80 new updates per arm,
+fresh optimizer seed0, one rank8 adapter. Per arm20328 input/5908 target-token
+presentations; no truncation, packing or context/target drops. Two fits/160 updates,
+96 dev calls;48 H-baseline calls reused once. No new OFF/confirmation calls;
+all64 confirmation cases remain unrequested. Native warm-start/unchanged-parent
+checks remain attributed, not local reloads of excluded weights. The selected
+LR is not globally optimal or proof of stability under unrelated updates.
+
+Main verifies all254 capsule hashes and full release at19:51:15.532863 UTC on
+September12,2026. Full reservation799.928952s (13.332149 A40-min),
+controller537.610627s, workers381.280358s: nested, not additive or continuous
+GPU busy time; collection wait is included. No root1/2 tag-order outcomes.
+Memory-replay and input-selective level-1 AUTH/DERANGED comparisons remain
+CPU implementation pending with no outcomes; these are next measurements,
+not approved claims or manuscript-imposed launch gates. Local origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator UNSENT.
+
+Sources and exact binding:
+- `research_notes/astra_memos/ASTRA_TWO_HABIT_TERMINAL_2026-09-12.md`.
+- Main analysis `research_notes/astra_memos/receipts_20260912/astra_two_habit_analysis_20260912.json` (supplied `/tmp/astra_two_habit_analysis_20260912.json`); script `research_notes/astra_memos/receipts_20260912/astra_analyze_two_habit_20260912.py`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_two_habit_terminal_20260912.tgz`, SHA256 `9f1409c8a4bda08e2c8c0ec9ec0e60b6d695303baaa34f5ec100fa716b5eb824`; adjacent `.tgz.validation.json` binds254 payload files.
+- Plan SHA256 `af4988757fb01e93fe88e6f310c61656f26b2920d45c21561f6b035d208d11e9`; source `d1e70002d12052f6b7357d42cf5997aa915e16f7`.
+- Extracted root `/tmp/astra_two_habit_terminal_20260912/astra_diagnostics/astra_fundamental_two_habit_20260912_attempt1/seed0`; `run/input_before/two-habit-scores.json` and `run/input_after/two-habit-scores.json` bind symmetric reductions; raw calls remain in the capsule.
+- Separate review `research_notes/astra_memos/receipts_20260912/astra_two_habit_result_review_20260912.md`, SHA256 `79d2fbb6bba749a439bfddea521ca4d75e1de473f758a3d2ce16dcb5f0a9436a`, byte-identical to supplied `/tmp/astra_two_habit_result_review_20260912.md` when read at19:58:42 UTC. Previously absent, it now supports bounded raw-recount PASS, not a new local scientific rerun or weight reload. Pending status is superseded only after this artifact exists and is read.
