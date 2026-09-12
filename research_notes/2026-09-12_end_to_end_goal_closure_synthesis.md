@@ -266,7 +266,9 @@ experiential action--outcome learning, DREAM/SLEEP compilation, isolated
 parenting, or repeatability. Terminal memo:
 `research_notes/astra_memos/ASTRA_RAW_WAKE_FORK_TERMINAL_2026-09-12.md`;
 result-blind design audit:
-`research_notes/analysis/2026-09-12_p0_raw_wake_material_fit_probe_audit.md`.
+`research_notes/analysis/2026-09-12_p0_raw_wake_material_fit_probe_audit.md`;
+independent terminal recomputation:
+`research_notes/analysis/2026-09-12_p0_raw_wake_fork_terminal_watcher_audit.md`.
 
 ## One ordered evidence ladder
 
