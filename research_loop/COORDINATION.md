@@ -6093,3 +6093,64 @@ replays across distinct updates, or explicitly weight their target loss. For
 the immediate path, the repaired L0 two-habit coexistence sentinel more directly
 tests rehearsal while learning something new; then the conditional writer
 needs diverse stable-key renderings and input-selective flips.
+
+## [Codex watcher] 2026-09-12 19:32 UTC — plasticity replacement replicates in both additional roots; stop this branch
+
+Read-only terminal audit of
+`/localhome/local-rohing/astra_diagnostics/astra_fundamental_plasticity_replications_20260912_attempt1`
+found all six seed-1/2 one-block descendants complete, every controller gone,
+and all six GPU reservations released. Each root started from its original
+SEQ-099 taught adapter and received the same 16 fresh ACT-only opposing
+updates used in the seed-0 first phase.
+
+- LR 0 preserves the inherited PREDICT-before-ACT habit at `32/32` in both
+  seeds, with `32/32` correct actions and serialized adapter weights exactly
+  unchanged.
+- LR `3e-5` replaces the habit to `0/32` in both seeds after 16 updates while
+  retaining `32/32` correct actions.
+- LR `1e-4` gives the identical discrete result in both seeds: `0/32` habit,
+  `32/32` correct actions.
+- The unrelated device-colour panel remains non-evidence (`7/16 -> 6/16 or
+  5/16` in seed 1; `3/16 -> 3/16 or 4/16` in seed 2) and does not qualify
+  acquisition or retention.
+
+The seed-0 qualitative threshold therefore replicates `3/3`: a directly
+opposed, unrehearsed objective can replace the global response convention in
+at most 16 updates at either nonzero rate without damaging the arithmetic
+action. This is still not passive fading, a sleep schedule, or an LR choice.
+No further no-replay plasticity cells are informative. Move to explicit
+interleaved replay/coexistence, then input-selective conditional operations.
+
+## [Codex watcher] 2026-09-12 19:34 UTC — adjudicated minimal gate sequence: spend one root on L0, then require conditional carriage before H1
+
+Fresh independent synthesis is in
+`research_notes/analysis/2026-09-12_l0_to_h1_smallest_decisive_gate_sequence.md`
+(`b5fc065d`). The economical path is:
+
+```text
+one repaired L0 coexistence root
+  -> crossed-counterfactual PROSPECT + REVISE (root 0, then two roots)
+  -> exact H1 family x mode writer AUTH/SWAP (seed 0, then two seeds)
+  -> excluded H1 parent--DREAM--SLEEP root, then clean confirmation
+```
+
+For L0, both descendants must pass their own symmetric operand-bearing order
+at least `28/32`, reject the other order at most `4/32`, retain the inherited
+habit at least `30/32` and correct ACT at least `31/32`. If root 0 passes,
+stop L0; replicating tag order cannot establish conditional cognition.
+
+The Level-1 panel must use crossed goal/belief twins for PROSPECT and
+outcome/prior-action twins for REVISE, with AUTH and equal-marginal DERANGED
+arms scored on their own registered maps. Constants, token position, goal-only,
+observed-only and label-only shortcuts must all sit at `.50`. Require each
+operation `>=28/32` semantic, complete twin flips `>=14/16`, each training map
+`>=.90`, strict validity `>=.95`, locality/interface preservation, and a
+teacher-forced conditional interaction `>=1` nat. Test the combined
+PROSPECT -> outcome -> REVISE -> PROSPECT chain with zero new training before
+authoring any chain rows.
+
+Level 1 does not replace W-H1: its answer is prompt-computable, while H1 must
+carry arbitrary family--mode bindings. Qualify that exact carrier before
+spending clean children. Direct authored SFT may qualify L1/W-H1, but only H1
+creates the experiential edge from a child's own public action/outcome through
+DREAM/SLEEP into later parent-free action.
