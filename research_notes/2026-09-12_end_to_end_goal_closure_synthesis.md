@@ -245,22 +245,27 @@ therefore evaluated through changed plans and authoritative actions, while
 SLEEP receives mechanically joined events and treats faithful reflection as
 optional enrichment.
 
-A bounded historical raw-wake fork is now the appropriate engineering bridge,
-but not a substitute for S. It fits 32 exact child continuations generated
-under the old fixed lesson and 32 corresponding continuations generated under
-the active sham, removes teacher text from the zero-loss context, and probes
-both adapters after parent removal. The exporter is source-linked and
-executable; `31/32` cleaned contexts are byte-identical across arms. However,
-`63/64` selected continuations are the first pre-feedback wake of the episode,
-the current action outcome is audit-only rather than learned, only two lesson
-and three sham chunks contain an accepted action, and all ten selected
-mini-Sudoku chunks are unsolved. Historical teacher dose (`203` versus `158`
-tokens) and supervised target dose (`4,289` versus `5,360` tokens per epoch)
-also differ. Therefore this one-seed development run can ask only whether a
-teacher-conditioned behavior distribution was more usefully amortized into a
-LoRA than its sham-conditioned counterpart. It cannot establish experiential
-action--outcome learning, DREAM/SLEEP compilation, isolated parenting, or
-repeatability. Result-blind watcher audit:
+The bounded historical raw-wake fork is terminal and closes that engineering
+bridge as a useful route. It fit 32 exact child continuations generated under
+the old fixed lesson and 32 corresponding continuations generated under the
+active sham, removed teacher text from the zero-loss context, and probed both
+adapters after parent removal. All four OFF/ON conditions solved `0/16`
+mini-Sudoku boards. The common OFF partial-score mean was `.1125`; lesson ON
+fell to `.0475` and sham ON to `.01055`. The positive difference-of-gains
+(`+.03695`) means only that lesson material degraded less than sham material;
+neither improved on OFF.
+
+This is a one-seed package-utility negative, not a general negative parenting
+result. `63/64` selected continuations were pre-feedback, only two lesson and
+three sham chunks contained an accepted action, all ten selected mini-Sudoku
+chunks were unsolved, teacher dose differed (`203` versus `158` tokens), and
+supervised target passes differed (`12,867` versus `16,080`). The current
+action outcome was not a training target. Do not repeat this historical
+package without a new informative hypothesis. It cannot establish
+experiential action--outcome learning, DREAM/SLEEP compilation, isolated
+parenting, or repeatability. Terminal memo:
+`research_notes/astra_memos/ASTRA_RAW_WAKE_FORK_TERMINAL_2026-09-12.md`;
+result-blind design audit:
 `research_notes/analysis/2026-09-12_p0_raw_wake_material_fit_probe_audit.md`.
 
 ## One ordered evidence ladder
