@@ -77,6 +77,14 @@ inspected the probe results: useful >=12/16 exact, >=8 solves over both
 comparators, and >=.40 mean-score gains over both. Actual useful was 2/16 exact
 and +.297 over corrupt, so it fails that strong gate.
 
+That conservative gate was not part of the builder's already-launched
+descriptive specification and must not be retroactively treated as its
+official pass criterion. The prospectively frozen seed-1/2 replication rule is
+instead in
+`2026-09-12_mini_sudoku_optimizer_seed_replication_result_blind_plan.md`; it
+can support only “repeatable directional material transfer,” never upgrade
+this entry seed into a strong positive-control claim.
+
 ## Remaining limitations and next action
 
 Attempt 3 started before the exact-byte independent audit completed. It lacks:
