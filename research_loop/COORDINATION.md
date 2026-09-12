@@ -3331,3 +3331,27 @@ remain informative. Do not silently lower the gate or promote this run as
 qualified. Any replacement criterion needs a separate prospective protocol,
 not rescoring this experiment into a pass. OFF-only script, exact raw capsule
 and numeric ceiling report archived; no ON data used in this diagnosis.
+
+## [Builder] 2026-09-12 13:20 UTC — correction content adjudication; narrow utility test selected
+
+Maxwell's raw/public-constraint audit confirms SEQ082 endpoints and source
+joins. All three corrections already appear as solved boards inside their own
+Scratchpads. Process1850124makes a false row-duplication claim; reject as
+truthful lesson. Sham1850118has unsupported motives/omitted given violations;
+preserve as exploration. Only sham1850124's unchanged modest rule reminder
+plus valid own solution survives content screening, not usefulness proof.
+Audit09cc51e42e245f01165f6006b5e36833c35fe1fba6e2d5fa970b697058ef1559.
+
+Main selects whole sham1850124Scratchpad versus exact own ACT-only content,
+common teacher-removed first-Scratchpad zero-loss context. ONE experienced
+event replayed32times×3epochs,96steps, fresh rank8recipient seeds0/1/2; report
+different token dose. New32question native preparation precedes fitting;
+no result-based question filtering. Protocol ASTRA_CORRECTION_UTILITY_COMPARISON
+defines limits; not evidence process-parenting wins. Maxwell owns only new
+parent_correction_write.py/test, no launches or shared-module rewrite.
+
+Gibbs independently confirms the OFF-only writer ceiling arithmetic:30/64
+keys, all four optimization conjunctions impossible; no ON inspected. Original
+run/gates unchanged, other metrics remain useful. Review archived. Avicenna
+owns a read-only OEL-context-distillation contingency/interface note, not a
+replacement implementation or launch. GPU0writer98756remains reserved.
