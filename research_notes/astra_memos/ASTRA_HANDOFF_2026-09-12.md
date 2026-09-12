@@ -1,4 +1,51 @@
-# Astra restart checkpoint — 2026-09-12 16:43 UTC
+# Astra restart checkpoint — 2026-09-12 17:11 UTC
+
+## Current restart state (supersedes historical snapshots below)
+
+Main is the sole Git operator. Preserve unrelated dirty
+`gpu/codex/dream_state.rules`; do not stage it. Last reconciled HEAD is
+`1c9aa0c8d4f6f8a5b4ed4a4ce4de2730f2334ca9` before this status update.
+
+**LIVE:** node3 fresh behavioral panel, source
+`e67539d2ec7a76681e992aac2c83e118fa4740c4`, root
+`~/astra_diagnostics/astra_fresh_behavior_panel_20260912_attempt2`.
+Seed0/GPU1/PID151210, seed1/GPU2/PID151303, seed2/GPU3/PID151403 launched
+17:05:57/17:06:07/17:06:19 UTC. All three controllers observed live17:09 UTC.
+Each GPU stays reserved across useful OFF/ON then corrupt OFF/ON, including
+reload gaps. Twelve fresh conditions, 192 episode cells on sixteen shared
+puzzles, zero fits. Do not interpret 192 correlated cells as independent
+learners. Result files indicate controller completion only; Main must reduce,
+audit and perform full device/process release. GPU0 has no Main reservation.
+
+Panel manifest: `d317c215f52bc3190a25ffa3f8bef27d239ab90fd9ee94bfa81c71a5b435664e`.
+Native96tests passed. Preparation attempt1 tuple/list representation failure
+is preserved; attempt2 is prepared and MUST NOT be rerun. After all six pairs,
+run `organism_v6.fresh_behavior_panel reduce --prepared-root ROOT
+--output-new ROOT/first_act_report.json` from the exact native source with
+native Python, PYTHONPATH and CUDA_VISIBLE_DEVICES empty. Then archive evidence.
+See `ASTRA_FRESH_BEHAVIOR_PANEL_PROTOCOL_2026-09-12.md` and launch receipts.
+
+**TERMINAL:** SEQ094 strict RuleGame and SEQ095 interaction-v2 are both fully
+released and have no fits/readouts. V2 fixes quiz interaction (8/8 valid) but
+has P1/6 vs A3/6 faithful own records and invalid acknowledgment-only controls.
+Do not reopen either formation or train a favorable subset. Read terminal memos.
+
+Sagan `01a09696-72b4-7683-a5cf-e4139a6d5ae7` owns only the relation-surface
+diagnostic and test: three immutable v2 cases across original/mapping/token
+surfaces, nine calls, no parent/world/fit; not yet prepared or launched.
+Bernoulli `01a09698-4cf1-7471-affb-99f660185c43` reviews Dirac's six dirty
+manuscript files through094/095, read-only. Those files remain EDIT-STOP until
+Main integrates. Schrodinger's actual bootstrap-v3 recovery is complete under
+`/tmp/astra_message14_bootstrap_v3_actual_recovery_20260912.md`; archive after
+receipt inspection. No birth run follows from message14 ideation.
+
+Next: inspect relation implementation/native checks; integrate reviewed prose;
+reduce all completed rereads; select follow-ups from evidence, not utilization.
+No freeze, P1/G5/H1/H2 closure or authenticated model origin. Simple hygiene
+remains operative; formal C11 guard stays deferred. Node1 backup due Sep13
+23:14UTC; A100 start Sep13 05:05UTC, not watcher's relative countdown.
+
+## Historical restart snapshots (not live inventory)
 
 Latest superseding status: NO MainGPUjob/reservation. SEQ094 strictformation
 finished, nativechecked/released16:34:30UTC; P0/A2eligible, all8tasksinvalid,

@@ -1,13 +1,24 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 16:45 UTC**.
+Latest reconciliation: **2026-09-12 17:11 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **17:11 superseding status:** fresh panel seed0/GPU1/PID151210,
+  seed1/GPU2/PID151303, seed2/GPU3/PID151403 live on node3 at17:09UTC.
+  Source e67539d2; attempt2 prepared, native96testsPASS. Continuous per-seed
+  reservations through useful and corrupt OFF/ON pairs; no fits. Shared16
+  puzzles,12conditions,192episode cells, not192independent learners. Main
+  reduction/audit/full release still required. Never rerun preparation.
+  SEQ094/095 both terminal/released/no writes. Sagan implements the bounded
+  nine-call relation diagnostic; no native preparation/launch yet. Manuscript
+  six-file094/095 update EDIT-STOP under independent review. Main sole Git
+  operator. See latest HANDOFF for exact roots, agent IDs and pending actions.
 
 - **16:45 superseding status:** interaction-v2 formation146460/node3GPU0
   live from20897d84, start16:45:02UTC, native70tests and fullvacancyPASS.

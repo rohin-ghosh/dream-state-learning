@@ -4824,3 +4824,23 @@ CurrentMainGPU0unreserved; RuleGame094/095terminal/no writes. Sourcequestions
 answerednotebook; primarymethodmemo andparent/birthrecoveryarchived. A100
 suppliedstartremainsSeptember13 05:05UTC (September12 22:05Pacific); watcher
 relative5hcountdownisnotreliable. No earlyuse orleasechange.
+
+## [Builder] 2026-09-12 17:12 UTC — actual reread launches and live reconciliation
+
+Fresh panel source `e67539d2ec7a76681e992aac2c83e118fa4740c4`, node3,
+root `~/astra_diagnostics/astra_fresh_behavior_panel_20260912_attempt2`:
+seed0/GPU1/PID151210 started17:05:57.417319UTC;
+seed1/GPU2/PID151303 started17:06:07.941579UTC;
+seed2/GPU3/PID151403 started17:06:19.760638UTC.
+All three controllers observed live17:09:08UTC; each holds its device across
+both useful and corrupt OFF/ON pairs, including reload gaps. Archived actual
+launch JSON receipts; RUNS appended three launch rows and SEQ095 terminal row,
+prior rows byte-preserved. No fits, no interim outcome-based stopping, no
+completed-panel claim. Main reduction/native audit/full release pending.
+
+HANDOFF/SPRINT_STATE now supersede stale RuleGame-live/no-job snapshots.
+094/095 remain terminal with no writes. Main is sole Git operator; manuscript
+six-file094/095 edit is stopped under fresh read-only review. Sagan owns only
+the nine-call relation diagnostic/test; it is not yet natively prepared or
+launched. Main preserves GPU0 as unreserved pending a fresh full vacancy check.
+Simple hygiene remains in force; final C11 guard stays deferred.
