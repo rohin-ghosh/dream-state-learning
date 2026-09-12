@@ -5754,3 +5754,15 @@ sourced80rows andunchanged48devreadout. This tests adding an input-reporting
 convention while rehearsing the first, not selectiveperception/parenting.
 Dirac implementing ONLYnewcorpus/scorer andtest; native tokenmatching required,
 no padding. No launchbudget allocated yet; currentplasticity runs continue.
+
+## [Builder] 2026-09-12 19:00:56 UTC — inherited C-fit warnings localized, no intervention
+
+Read-onlyaudit node1R4_B_seed606_AC andnode2R4_B_seed603_AC: Cfits completed
+but packed-recipe checks FAILED because nativeisolationtestNOT_ISOLATED
+triggered safeunpacked one-item fallback. No targetdrops/nonfinitebatches/
+traceback observed. DONE istrainingcompletion, notpacked-contractPASS.
+Both C_tmem successors still pending at18:58:40sample, noprobes/wholejobsummary.
+No launch/kill/change performed; donotpromote these as packedisolatedresults
+or infer theytrained with cross-example leakage. Exactreceipts in archived
+astra_c_training_warnings_20260912.md. Fable can incorporate this qualification
+when those existingruns finish. Current Mainplasticity unaffected.
