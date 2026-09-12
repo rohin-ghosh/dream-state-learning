@@ -1,6 +1,34 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
+**September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
+memory branches pass the fixed thresholds; with inherited SEQ113 seed0, all
+three FOUR seeds qualify. SINGLE outcomes are heterogeneous: seed0 ties,
+seed1 slightly favors SINGLE, seed2 SINGLE loses numeric correctness despite
+valid PREDICT-before-ACT formatting on all32 responses. The five memory surfaces
+query the SAME16 authored facts, not80 independent facts or general FOUR superiority.
+
+Process-v2 readout is complete: quiz P12/OFF7/A6 out of24, but the full criterion
+**FAILS** because P ties A on12 valid and9 correct pre-TRY predictions. P's all-F
+predictions attain9/12 exactly as an all-F baseline on its observed path; conditional
+accuracy is0.75 in every cell. P's12/24 quiz score also equals a constant-label
+baseline on balanced panels, not evidence its actual answers are constant.
+Faithful records P5/OFF9/A10 out of12 run opposite to quiz scores. One paired
+fit seed/four shared development tasks, unequal target exposure, no general
+conditional-prediction improvement, internalization or parenting efficacy.
+Returned raw reviews PASS with non-blinding/implementation-author limits.
+No G3/P1/G5/H1/H2, adult-learning or mechanism-freeze qualification; origin
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At this supplied cut the native
+sequential comparison is NOT LAUNCHED (prelaunch missing-argument fix), and
+process-seed replication is NOT LAUNCHED. Neither supplies outcomes.
+Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`
+and `research_notes/astra_memos/ASTRA_PROCESS_READOUT_V2_2026-09-12.md`;
+C60/C61 in the claim map bind both raw reviews and capsules. Canonical abstract,
+author intent and prior tables remain unchanged; the earlier C56 record-objective
+readout is not relabeled as this new process-objective result.
+
+**Historical September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
 finite process writes, not utility.** FULL own-record truth likelihood improves
 2/2 for both earlier record-trained adapters, but strict joint likelihood/margin
 gains are P1/2 and A0/2; both required two-record criteria fail. Mapping removal
@@ -18,9 +46,9 @@ Input/target presentations P9120/384 versus A9096/372 are unequal despite equal
 updates/padded inputs. Native collector attests392 finite tensors per arm; no
 local weight rescan or behavioral utility follows. Main's offline synthesis
 rerun PASS covers68 members and forward/mask/source joins; author-side, not an
-independent behavioral audit. The new GPU2 parent-free readout is LIVE at the
-supplied cut, with NO outcomes included. New memory-replication outcomes are
-also excluded (independent audit pending). No general G3/P1/G5/H1/H2, clean
+independent behavioral audit. The process readout was LIVE and memory-replication
+outcomes were excluded pending audit at that C59 cut; C60/C61 now supersede
+those statuses, not the earlier write-only or failed-acquisition interpretation. No general G3/P1/G5/H1/H2, clean
 lineage or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
 Collaborator **UNSENT**.
 
@@ -131,7 +159,7 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve learning after teacher removal? We distinguish material fidelity, parameter writing, trained-target acquisition and behavioral utility using a frozen instruction-tuned model and LoRA. Earlier record-trained adapters scored 6/24 versus OFF 7/24 in parent-free quizzes, without a process advantage. A separate acquisition diagnostic evaluates those saved adapters on four original training records: twenty-four teacher-forced requests, forty-eight truth/foil forwards, no generations or updates. Under full context both adapters improve truth likelihood on both own records, but joint likelihood and truth-minus-foil margin gains occur on only one of two process records and neither recap record. Both prespecified two-record criteria fail; this is not absence of parameter learning. Removing the mapping sentence yields zero joint own-record gains in either arm, without uniquely identifying a semantic mechanism. Separately, process-v2 writes train fresh-base adapters for twelve updates each on two unchanged own raw wake continuations. An exploratory amendment accepts the existing native TRY alias while preserving fixed slots and wrong predictions. Teacher-removed conditioning of teacher-influenced targets is context distillation, not scaffold-free cognition. Input and supervised exposures differ despite equal updates. Native receipts attest finite saved weights; falling in-sample losses do not establish utility. The new parent-free process readout is live at this cut; neither its outcomes nor new memory-replication outcomes are included. These diagnostics establish no general G3/P1/G5/H1/H2, clean lineage, adult learning loop or frozen mechanism. Model origin remains unresolved.
+Can developmental teaching improve learning after teacher removal? We separate authored-memory retention, parameter writing and parent-free utility using a frozen instruction-tuned model and LoRA. Interleaved replay extends to three teaching seeds: all FOUR branches meet prespecified memory and arithmetic thresholds, including inherited seed-zero results. SINGLE outcomes differ: seed zero ties, seed one slightly favors SINGLE, and seed two has memory 4/16 on dev and zero correct arithmetic actions despite valid prediction-before-action formatting on all thirty-two responses. Five memory surfaces query the same sixteen authored facts, not eighty independent facts or general wording-variety superiority. Separately, one paired process-v2 write seed, trained on two teacher-influenced own wakes per arm under explicit context distillation, yields parent-free quiz scores P 12/24, OFF 7/24 and A 6/24. The full criterion fails: P ties A at twelve valid and nine correct pre-TRY predictions. P predicts false throughout and scores 9/12 exactly as an all-false baseline on its observed paths; conditional accuracy remains 0.75 in every cell. P's quiz score also equals a constant-label baseline on balanced panels. Faithful records are P 5/12, OFF 9/12 and A 10/12, opposing the quiz ranking. These exploratory contrasts establish changed outputs, not general conditional prediction, internalization, parenting efficacy, G3/P1/G5/H1/H2, clean lineage or a frozen mechanism. Model origin remains unresolved. Sequential-memory and process-seed replication runs are not launched at this cut.
 
 ## Evidence and interpretation boundaries
 

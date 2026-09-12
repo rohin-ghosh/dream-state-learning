@@ -1,0 +1,38 @@
+# SEQ116–117 six-file manuscript review
+
+**2026-09-12 — PASS. No substantive correction required. EDIT-STOP.**
+
+Reviewed only after Banach's handoff explicitly declared manuscript **EDITSTOP**. Handoff SHA256: `8d598eb52c3641e47c9122261cedd894f4365149519e05a89e7b35132c0322ea`. All six live file hashes matched that handoff at inspection and final recheck. Review applies to these exact bytes and their declared evidence cut, not subsequent experiment status or new results.
+
+## Scientific checks
+
+- **SEQ116 / C60:** Tables agree with the canonical memo and archived raw JSON: seed1 SINGLE dev16/exact15/lexical16,15,16 versus FOUR15/15/15,15,15, both habit/ACT32; seed2 SINGLE4/5/4,4,4 with habit/ACT0 versus FOUR16/16/16,16,16 and32/32. Seed0 is inherited SEQ113, not rerun. All three FOUR seeds satisfy only the declared dev/exact/each-lexical ≥15/16, habit ≥30/32, ACT ≥31/32 plus technical-completion gate. No claim that all SINGLE branches pass, no outcome-dependent seed selection, and no averaging away heterogeneous controls. Anchors: `paper_prototype/astra_sprint_draft_20260912.tex:2142`, `paper_prototype/astra_sprint_draft_20260912.tex:2163`, `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md:2268`.
+- **Memory interpretation:** Same16 facts across five surfaces, not80 independent facts;448 new calls and96 recounted inherited calls remain distinct. Original parents and fresh matching-seed optimizers are preserved; no new OFF is asserted. Seed2 SINGLE retains valid PREDICT-before-ACT formatting on all32 responses despite zero numerically correct ACTs; “habit” includes correctness, so zero is not pure format loss or latent erasure. Different seed1 error keys and root0 tie/seed1 SINGLE-favoring/seed2 FOUR-favoring outcomes are retained. Anchors: `paper_prototype/main.tex:404`, `paper_prototype/astra_sprint_draft_20260912.tex:2165`.
+- **SEQ117 / C61 full criterion remains FAIL.** OFF/P/A quiz7/12/6 out of24, valid quizzes4/4/3, valid pre-TRY8/12/12 and correct6/9/9, faithful records9/5/10 all match raw evidence. P's exploratory +5/24 versus OFF and +6/24 versus A do not override its prediction-count ties with A. P all-F9/12 equals the all-F benchmark on its observed9F/3T paths; conditional accuracy remains0.75 in all cells. P quiz12/24 equals constant-label performance on balanced panels, without claiming its actual quiz responses are constant. Seven P record failures and worse record fidelity are preserved, not renamed prediction competence. Anchors: `paper_prototype/astra_sprint_draft_20260912.tex:2213`, `paper_prototype/astra_sprint_draft_20260912.tex:2222`, `paper_prototype/astra_sprint_draft_20260912.tex:2230`, `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md:2333`.
+- **Invalid-zero and objective boundaries:** A rule5 lacks canonical ACT after three valid probes; unexecuted quiz stays0/6 within24, not six observed wrong answers or a reduced18 denominator.95 actual calls32/32/31 remain complete against a96 ceiling. Own-wake context-distillation adapters are distinguished from earlier record-objective adapters; unequal target exposures384/372, one paired fit seed, shared OFF and development—not untouched confirmation—tasks remain explicit. No freeze, operational-parenting, internalization, general conditional-prediction or G3/P1/G5/H1/H2 promotion. Anchors: `paper_prototype/main.tex:406`, `paper_prototype/astra_sprint_draft_20260912.tex:2217`, `paper_prototype/astra_sprint_draft_20260912.tex:2237`.
+- **Cost scopes:** SEQ11640.525 aggregate A40-min covers two new seeds through collection, excluding original-parent/root0 costs; it is not concurrent elapsed wall time. SEQ11720.287 is readout launch-to-release, with worker/controller/generation and228.588s collection nested/overlapping, not additive or adult-cycle throughput. Historical20.933 full versus12.729 worker-minute cycle accounting remains unchanged. Anchors: `paper_prototype/astra_sprint_draft_20260912.tex:2186`, `paper_prototype/astra_sprint_draft_20260912.tex:2244`.
+
+## Preservation and manuscript hygiene
+
+Verified each supplied pre-edit backup hash, each final hash, exact equality of all six embedded unified diffs with independently generated diffs, and forward **and reverse** application entirely in memory. Baseline directory: `/tmp/astra_manuscript_seq116_117_backup_20260912_cpgft2u2`. Main's reported baseline commit `ae354cf4` was **not independently Git-verified**; the review binds backup bytes instead.
+
+Canonical `paper_prototype/main.tex` abstract is byte-identical to baseline; its discussion/bibliography/appendix tail is unchanged. Prior TeX table environments and Markdown table blocks are retained; checked33 old README table blocks and28 claim-map table blocks in original order. Earlier scientific tables/results are not retroactively relabeled. C56's earlier P/A raw identity and C61's distinct P/A texts concern different adapters and remain separated.
+
+Companion TeX/Markdown abstracts are identical after whitespace normalization and contain **220 whitespace-delimited words**, below250: `paper_prototype/astra_sprint_draft_20260912.tex:112` and `paper_prototype/astra_sprint_abstract_20260912.md:160`. The companion abstract preserves failed full acceptance, baseline limitations, record harm, heterogeneous memory results and nonpromotion. Collaborator remains **UNSENT**, including the new update at `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md:3`. No TeX compilation, rendered-PDF correctness or page-count claim is made.
+
+The manuscript explicitly labels next-work statuses as the **supplied cut**, for example `paper_prototype/astra_sprint_draft_20260912.tex:2253`. Main's subsequently reported sequential GPU0/PID263983 launch at23:35 UTC is outside that declared cut and **does not invalidate these historical statuses**. I did not inspect it or import any post-SEQ117 scientific outcome; no status edit is requested.
+
+## Exact reviewed final hashes
+
+| File | SHA256 |
+|---|---|
+| `paper_prototype/main.tex` | `31151dbbb7a503d0011b9035a79d51b0e2a479bd678e831cf7deb5fc18b51d4a` |
+| `paper_prototype/README.md` | `ba9926f370dc37d0ac7e47fbe721ac193c6cd5054a9b90f696f1355f0400fccc` |
+| `paper_prototype/astra_sprint_draft_20260912.tex` | `ea2467750e5dc83d2ce729e50b7583eda59854cf53b2ac523fd88467dc236f20` |
+| `paper_prototype/astra_sprint_abstract_20260912.md` | `92b9fa75688238c6bc75d198298a04611ce129eb3bdc5bf3c714628c416799d3` |
+| `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md` | `1e9e4bf9101292dc85fe067ed2322d334ca343c5bda162d6e1c7d5447d830837` |
+| `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md` | `871ca4905d8eae82c099530f9651ea5208db52bf358ee2e822fbc6bfa52b3439` |
+
+Canonical SEQ116 memo SHA256 `e441de60998db2778b5e961d4d85eba57b135e3c22c1a9cd229e882c35535cda`; SEQ117 `55ed0678423dd24c495d75709181cf6237910c037323fd88f74e0fa2eb1df5ae`. Recomputed every evidence-file SHA listed in the handoff, including all three terminal capsules and both archived raw-review MD/JSON pairs; local and archived raw reviews match byte-for-byte. Scientific checks use those existing accepted reductions, not new native/model replay.
+
+**Independence/scope:** Banach authored the manuscripts. I authored both underlying raw audits, earlier related replay/collector work, and shared some frozen scoring/parser logic; I am not a fresh independent evidentiary author or blinded reviewer. This is an independent manuscript-to-evidence consistency review with those limits. Only this assigned review file was written; no repository edits, Git/native/model/GPU/SSH/network execution, outside messages, or other-owner edits. PASS does not authorize a scientific promotion or launch.

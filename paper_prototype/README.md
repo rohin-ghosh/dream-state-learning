@@ -3,9 +3,54 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ114–115 / C58–C59
+## Latest bounded evidence — SEQ116–117 / C60–C61
 
-**September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
+**September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
+memory branches pass the fixed thresholds; with inherited SEQ113 seed0, all
+three FOUR seeds qualify. SINGLE outcomes are heterogeneous: seed0 ties,
+seed1 slightly favors SINGLE, seed2 SINGLE loses numeric correctness despite
+valid PREDICT-before-ACT formatting on all32 responses. The five memory surfaces
+query the SAME16 authored facts, not80 independent facts or general FOUR superiority.
+
+Process-v2 readout is complete: quiz P12/OFF7/A6 out of24, but the full criterion
+**FAILS** because P ties A on12 valid and9 correct pre-TRY predictions. P's all-F
+predictions attain9/12 exactly as an all-F baseline on its observed path; conditional
+accuracy is0.75 in every cell. P's12/24 quiz score also equals a constant-label
+baseline on balanced panels, not evidence its actual answers are constant.
+Faithful records P5/OFF9/A10 out of12 run opposite to quiz scores. One paired
+fit seed/four shared development tasks, unequal target exposure, no general
+conditional-prediction improvement, internalization or parenting efficacy.
+Returned raw reviews PASS with non-blinding/implementation-author limits.
+No G3/P1/G5/H1/H2, adult-learning or mechanism-freeze qualification; origin
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At this supplied cut the native
+sequential comparison is NOT LAUNCHED (prelaunch missing-argument fix), and
+process-seed replication is NOT LAUNCHED. Neither supplies outcomes.
+Collaborator **UNSENT**.
+
+| Seed / arm | Dev /16 | Exact /16 | Lexical families0/1/2, each /16 | Habit /32 | ACT correct /32 |
+|---|---:|---:|---|---:|---:|
+| 0 SINGLE (inherited SEQ113) | 16 | 16 | 16 /16 /16 | 32 | 32 |
+| 0 FOUR (inherited SEQ113) | 16 | 16 | 16 /16 /16 | 32 | 32 |
+| 1 SINGLE | 16 | 15 | 16 /15 /16 | 32 | 32 |
+| 1 FOUR | 15 | 15 | 15 /15 /15 | 32 | 32 |
+| 2 SINGLE | 4 | 5 | 4 /4 /4 | 0 | 0 |
+| 2 FOUR | 16 | 16 | 16 /16 /16 | 32 | 32 |
+
+| SEQ117 cell | Quiz /24 | Valid quizzes /4 | Valid pre-TRY /12 | Correct pre-TRY /12 | Faithful records /12 | Calls |
+|---|---:|---:|---:|---:|---:|---:|
+| OFF | 7 | 4 | 8 | 6 | 9 | 32 |
+| P_ON | 12 | 4 | 12 | 9 | 5 | 32 |
+| A_ON | 6 | 3 | 12 | 9 | 10 | 31 |
+
+Sources: `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`
+and `research_notes/astra_memos/ASTRA_PROCESS_READOUT_V2_2026-09-12.md`;
+C60/C61 in the claim map bind both raw reviews and capsules. Canonical abstract,
+author intent and prior tables remain unchanged; the earlier C56 record-objective
+readout is not relabeled as this new process-objective result.
+
+## Earlier bounded evidence — SEQ114–115 / C58–C59
+
+**Historical September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
 finite process writes, not utility.** FULL own-record truth likelihood improves
 2/2 for both earlier record-trained adapters, but strict joint likelihood/margin
 gains are P1/2 and A0/2; both required two-record criteria fail. Mapping removal
@@ -23,9 +68,9 @@ Input/target presentations P9120/384 versus A9096/372 are unequal despite equal
 updates/padded inputs. Native collector attests392 finite tensors per arm; no
 local weight rescan or behavioral utility follows. Main's offline synthesis
 rerun PASS covers68 members and forward/mask/source joins; author-side, not an
-independent behavioral audit. The new GPU2 parent-free readout is LIVE at the
-supplied cut, with NO outcomes included. New memory-replication outcomes are
-also excluded (independent audit pending). No general G3/P1/G5/H1/H2, clean
+independent behavioral audit. The process readout was LIVE and memory-replication
+outcomes were excluded pending audit at that C59 cut; C60/C61 now supersede
+those statuses, not the earlier write-only or failed-acquisition interpretation. No general G3/P1/G5/H1/H2, clean
 lineage or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
 Collaborator **UNSENT**.
 
