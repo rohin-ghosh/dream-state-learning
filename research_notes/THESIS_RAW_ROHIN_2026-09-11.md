@@ -183,3 +183,9 @@ and then apgmgin on how to make pareing owrk base don other relatined expistng o
 hmm this is a great idea [quoting Fable's narrowed-claim assessment] shoudl we be chagin ght eprompt for this? , did you reatd the papres i refernced btw?   6 cmpteineiscies btw? opd evovlevermeme skill memtlt and triangin languge agents to elarn from experience, parentign shoudl have a lot of finotinperotin to wrok on, mem skill need to be int eh rpomtp too
 
 (context: Fable had proposed pre-registering ONE competency for the first test; Rohin answers that the literature — OPD-Evolver, MemSkill, Meta-TTL, "Training Language Agents to Learn from Experience" — gives parenting a lot of information to work on, that the prompt lists six competencies, and that MemSkill must be added to the prompt. Fable had not read the papers and said so; a nine-paper read was launched before changing the prompt.)
+
+## Message 11 — the simplest statement of the paper (~07:15 UTC 09-12)
+
+agree its the hwole synthesizing all thesr tings into a cohesive chain and budiling up a flyhweeel loop is the simpest way tpo say it
+
+(context: after Fable's read of the nine papers — prework solid, idea possible, curriculum given, gap narrow. Plain reading: the paper is the synthesis of the existing pieces into one cohesive causal chain, and the building of the flywheel loop on top of it.)
