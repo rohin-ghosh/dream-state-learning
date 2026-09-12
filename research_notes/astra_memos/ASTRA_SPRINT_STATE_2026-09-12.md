@@ -1,4 +1,12 @@
-## Current superseding snapshot — 2026-09-12 18:45 UTC
+## Current superseding snapshot — 2026-09-12 18:54 UTC
+
+SEQ101 repetition terminal/released: habit teach32/32bothviews vs0controls;
+memory4/16/red16all. Three-rate continuation LIVE node3GPU4/5/6,
+PID182565/182566/182567, source3a12807f, rootfundamental_fading_attempt1/runs.
+Four sequential phases/readouts,1800scontrollerbound, separate90A40minbudget.
+Actualphase1warmfits complete; no final curve yet. Details/ownership in HANDOFF.
+No frozenmechanism/H1/H2/P1/G5 orformalC11; modeloriginunresolvedlocalhashes.
+Historical18:45snapshot follows, superseded above.
 
 Repetition fits complete/fullrelease; four fixed48dev readouts LIVE node3
 GPU0/PID178909,1/178581,2/178741,3/178523; exact roots in HANDOFF.

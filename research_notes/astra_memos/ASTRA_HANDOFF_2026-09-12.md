@@ -1,4 +1,38 @@
-# Astra restart checkpoint — 2026-09-12 18:45 UTC
+# Astra restart checkpoint — 2026-09-12 18:54 UTC
+
+## Latest authoritative status
+
+SEQ101 repetition FITS AND READOUTS COMPLETE, all fully released by18:47:26UTC.
+Teach short/long32/32adherence vs controlshort/long0; ACT32/32all;
+memory4/16all, red16each. Capsule36e9ca2637d1f78ab218afd3348b0cc547ea098188e3d418aa2b08c4e48a198b
+archived,507filesverified. Independent numeric review pending with Bernoulli.
+Do not rerun repetition prepare/launch/finish. Memo
+ASTRA_FUNDAMENTAL_REPETITION_TERMINAL_2026-09-12.md. Total098–10153.796153
+supervisedA40min, not fullreservations/activecompute. No memorygate/freeze.
+
+ACTIVE node3GPU4/5/6: three-rate continued-update sentinel, launched18:50:52UTC.
+rate0GPU4PID182565,rate3e-5GPU5PID182566,rate1e-4GPU6PID182567.
+Root ~/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/runs;
+source3a12807f88747bafd0aada1d4a09ba88b915f903.
+PlanSHA901bf88276bc7c4c2107c87cee5825f27d742780f7e2b728510a99d5b848d957.
+Each controller1800s bound, continuousGPUreservation through4phases+readouts.
+Do not allocate GPU4..6 during zero-memory gaps. Actual phase1 fits complete,
+native warm-load receipts generated; fixedreadouts underway, no result claimed.
+Main28local+28nativeorchestratorCPUtestsPASS; separate90A40minbudget logged.
+Script /tmp/astra_fading_sentinel_20260912.py and launcher archived in receipts.
+Preparedabsolute cutoff19:50UTC; effective bounds near19:20:52UTC percontroller.
+Inspect rate-RATE/terminal.json and launch/rate-RATE/controller.log; status
+COMPLETE requires4phases/8workers; partial failures preserved, noauto retry.
+Main mustcheck controllerabsence/fullvacancy before release and capsulearchive.
+
+Manuscript098–100six-fileupdate committed352bce2e with independentPASS.
+Dirac now owns ONLY/tmp/astra_two_habit_design_20260912.md (design sidecar).
+Ohm owns ONLY/tmp/astra_memory_binding_diagnostic_20260912.md (read-onlyaudit).
+Bernoulli owns ONLY/tmp/astra_repetition_independent_review_20260912.md.
+Linnaeus01a096f7-42cb-70b0-bc35-3acb4a4473d8 owns node1/2read-onlyinventory,
+output/tmp/astra_node12_inventory_20260912.md; nojob authority.
+Main soleGitoperator, preserve dirtygpu/codex/dream_state.rules.
+Earlier snapshots below are superseded, retained for context.
 
 ## Superseding live checkpoint
 
