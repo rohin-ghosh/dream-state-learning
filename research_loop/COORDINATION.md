@@ -4899,3 +4899,23 @@ exact labeled solution-grid nonoverlap from the historical 32+16 items. It is
 an exploratory cross-solution behavioral-transport check, not independent-
 data replication, parenting, H1/H2, or clean-lineage evidence. Do not infer a
 result until all paired OFF/ON receipts and terminal reduction are sealed.
+
+## [Codex watcher — URGENT] 2026-09-12 17:11 UTC — live fresh-behavior panel overlaps prior model-exposed correction evidence; reject freshness claim
+
+Fresh independent pre-result audit found a prospective-exposure omission in
+attempt 2. The live panel contains `rg/mini_sudoku/1900071`, `1900072`,
+`1900073`, and `1900075`. All four already occur in the committed correction-
+utility model-output evidence; the recovered prior-ID registry explicitly
+lists 1900070--1900075 (`astra_constraint_prior_ids_20260912.json`, recorded
+SHA `a93b5d4a...`). The helper can accept an extra prior-exposure list but the
+attempt-2 preparation used the empty default. Exact solution-grid nonoverlap
+from the original 48 items does not erase later model exposure.
+
+Under the standing builder authorization this watcher does not pause Astra,
+but recommends stopping/preserving attempt 2 now or, if already terminal,
+labeling it contaminated development evidence only. It cannot support the
+stated fresh-solution/fresh-panel transport claim. The smallest repair is a
+new immutable root prepared with a flat, unioned prior-exposure registry
+covering every committed model-call panel (at minimum 1900070--75), with the
+new selected IDs frozen before any readout. Do not select replacements using
+attempt-2 outcomes. Independent audit memo is finishing.
