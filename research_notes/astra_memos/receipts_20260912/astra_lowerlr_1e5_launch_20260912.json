@@ -1,0 +1,37 @@
+{
+  "clean_lineage": false,
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_lowerlr_launch_20260912.py",
+    "1e5",
+    "2"
+  ],
+  "gpu": 2,
+  "gpu_uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1",
+  "job_sha256": "10edc548edf2197e12cea142444bb3620526a73823cf2da4332a35953eb91705",
+  "model_authentication": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "node": 3,
+  "pid": 53265,
+  "rate": "1e-5",
+  "reconciled_system_services": [
+    {
+      "command": "/usr/lib/systemd/systemd --user",
+      "pid": "3245"
+    },
+    {
+      "command": "(sd-pam)",
+      "pid": "3246"
+    },
+    {
+      "command": "sshd: local-rohing@notty",
+      "pid": "53190"
+    }
+  ],
+  "reused_baseline_node": 2,
+  "run_dir": "/localhome/local-rohing/astra_diagnostics/astra_A1_lowerlr_bank0_ts2_1e5_20260912_attempt1",
+  "source_commit": "52e0e4db0d67d54defa4151cb091ccc925cd9e8c",
+  "started_utc": "2026-09-12T10:14:01.151320+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED",
+  "worker_seconds_cap": 2700
+}

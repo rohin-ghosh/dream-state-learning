@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 10:05 UTC**.
+Latest reconciliation: **2026-09-12 10:14 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -20,8 +20,14 @@ controls and joint write, then one/two parenting skills. Huygens recovers exact
 lower-LR matched memory commands; Popper recovers existing behavioral positive
 control; Turing maps existing compiler event/thought connections. No new code
 framework or new launch delegated. Main owns resource/Git/evidence integration.
-All current Astra node3 diagnostics terminal; fresh resource checks required
-before any new launch. Parent-free learning/retention/campaign remain incomplete.
+**Active new memory diagnostics:** node3GPU0controller53249(rate3e-5),
+GPU2controller53265(rate1e-5), launched10:13:57/10:14:01UTC. Fresh roots
+`astra_A1_lowerlr_bank0_ts2_{3e5,1e5}_20260912_attempt1`, source52e0e4db,
+2700sworker limits, expected9693steps and1313cues. Original oracleFbank0seed1
+material, adapter seed2, native G9unchanged; historical1e-4baseline reused,
+not retrained. Actual source/token preflight passes; known unrelated/broad
+test fixture issues logged, not called passes. PreserveGPU0/2reservations.
+Parent-free learning/retention/campaign remain incomplete.
 
 W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails
 solely because launcher.out changed after sealing. All256 oracle outputs
