@@ -75,13 +75,21 @@ binds the repaired native-build environment can answer W0; the aborted root
 must remain untouched. In every case, a green CPU suite is permission to run
 the bounded writer gateway, not evidence that it passes.
 
-The live B0 scout also revealed that nominal common-random seeding does not
-make the probe an exact pair while model-visible wall-clock seconds differ.
-The first child generations match byte-for-byte; the prompts then differ by
-`alive 27s` versus `alive 26s` and the trajectories split. B0 remains useful
-quarantined instrumentation, but paper-grade paired runs must freeze/remove
-runtime text or replay byte-identical exogenous prompts and verify prompt
-hashes through every paired step.
+The terminal B0 scout established one uninterrupted quarantined plumbing path:
+exact ACT-before-record joins, a 66-item child-body-only fit, save, canary,
+adapter reload, probes, and terminal exit. It did not acquire the intended
+first-person record behavior: only 1/66 admitted B records was first-person and
+post-neutral articulation was zero both on and off. It also exposed two
+independent pairing failures. First, model-visible wall-clock seconds differ
+across arms: the first generations match byte-for-byte, then `alive 27s`
+versus `alive 26s` changes the prompt before the write and the trajectories
+split. Second, even the same frozen base, identical prompt bytes and identical
+explicit seed produced different output bytes in a neutral replay. Thus the
+runtime's explicit seeding is not demonstrated byte-replay-deterministic.
+Paper-grade paired runs must freeze/remove runtime text and either certify
+byte-replay-deterministic inference or use an immutable exogenous tape, with
+prompt/output hashes checked at every paired step. Exact evidence:
+`research_notes/2026-09-12_b0_attempt2_terminal_audit.md`.
 
 ## One ordered evidence ladder
 
