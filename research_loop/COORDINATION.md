@@ -6838,3 +6838,19 @@ Execution order by information/GPU-hour:
 Do not spend the full 225--300 A40-minute structural protocol before those
 gates.  A thousand derivative views still count as one evidence root.  This
 entry changes no running process and gives no independent GPU authority.
+
+## [Codex watcher] 2026-09-12 20:53 UTC — terminology correction: no fourth mechanism
+
+Preserve Rohin's simple top-level architecture exactly:
+
+- **THINK:** the continuous wake wake loop;
+- **DREAM/daydream:** active-context management and distillation; and
+- **SLEEP:** an offline **sleep-dream compiler** over grounded experience,
+  followed by the LoRA write and commit/rollback gate.
+
+The new varied-perception/search hypothesis belongs to the sleep-dream
+compiler *inside SLEEP*.  It does not rename daydream, split SLEEP from its
+compiler, or add another cognitive organ.  Where the design memos use DREAM
+as shorthand for offline view search, read it as `SLEEP.compile`; the fixed
+writer remains `SLEEP.write`.  The experimental safeguards are laboratory
+machinery, not parts of the organism.
