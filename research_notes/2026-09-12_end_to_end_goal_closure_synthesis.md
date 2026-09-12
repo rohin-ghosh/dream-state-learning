@@ -62,6 +62,31 @@ fits likewise raise the target (`.230 -> .790/.736`) but also raise the wrong
 relation (`.239 -> .720/.627`). Thus the current writer can install a broad
 action habit, but selective conditional binding remains unproved.
 
+The matched lower-learning-rate follow-up closes the simplest heat
+explanation. Holding the 12,924-row oracle corpus, rank 8, seed 2, three
+epochs, 9,693 steps, and 1,313 native cues fixed, the historical `1e-4`, new
+`3e-5`, and new `1e-5` fits have `I_d_frame` respectively `1.921`, `3.078`,
+and `1.140`, all with positive paired-owner lower bounds. Their frame spills
+are `.416`, `.394`, and `.296` against the same `.03` ceiling, and all are
+still labeled `frame-habit`; both new fits also drive control abstention nearly
+to zero. Lower heat weakens the same broad habit rather than revealing a
+selective regime. Park LR-only sweeps and change the conditional
+material/representation. Exact independent audit:
+`research_notes/analysis/2026-09-12_lower_lr_writer_terminal_audit.md`.
+
+A separate external-oracle mini-Sudoku diagnostic gives the complementary
+positive direction. OFF produced `0/16` exact first solves with mean native
+partial score `.113`; an adapter trained on 32 correct prompt-solution pairs
+produced `2/16` and `.586`; an equal-target-marginal cyclic wrong-board adapter
+produced `0/16` and `.288`. Useful beat corrupt on 13/16 paired boards, tied on
+one, and lost on two. The useful adapter's two exact solves were not among the
+four disclosed evaluation solution-grid overlaps. Thus material semantics can
+affect later actions beyond common ACT/full-grid format learning. It is not a
+qualified writer: one optimizer seed, weak exact success, external rather than
+child-authored material, and execution preceded closure of every independent
+custody condition. Exact audit:
+`research_notes/analysis/2026-09-12_mini_sudoku_behavior_terminal_audit.md`.
+
 The first frozen V10R1 W0 execution remains a zero-step infrastructure
 `NONREPORTABLE_ABORT`: Triton's first native build could not find Python.h.
 A prospective native-build repair then sealed compiler/header/Triton evidence,
