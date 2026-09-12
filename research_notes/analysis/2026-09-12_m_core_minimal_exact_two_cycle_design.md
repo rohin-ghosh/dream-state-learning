@@ -15,10 +15,12 @@ condition**:
 
 1. `FULL_AUTH`: the child's real public action--outcome events, its own
    pre-blueprint DREAM links, and the later truthful outcome row;
-2. `OUTCOME_SHUFFLED`: the same actions, immutable source-event identities,
+2. `SOURCE_BINDING_SHUFFLED`: the same path atoms, child DREAM decision,
+   support events, Phase-C world/compiler, immutable source-event identities,
    outcome-donor multiset, surfaces, marginals, row count, dose, and optimizer
-   work, with the action--outcome bindings deranged in derived compiler rows;
-   and
+   work, with **only the Phase-A cue--family action/outcome binding** deranged
+   in derived compiler rows (later action/outcome differences are causal
+   descendants of that intervention); and
 3. `DREAM_NULL`: truthful action--outcome atoms and the truthful later outcome
    row, but the child-authored link slots replaced by byte- and dose-matched
    `NULL` rows.
@@ -51,8 +53,9 @@ Each of the following is indispensable:
   child may merely react to the presence of memory.
 - `NO_SLEEP_2`, `OLD_CUT`, and `NEW_CUT` must each destroy delayed success.
   Otherwise the second write or old--new conjunction is unnecessary.
-- `OUTCOME_SHUFFLED` and `DREAM_NULL` must be separately trained. One corrupt
-  control cannot distinguish authentic event binding from organization.
+- `SOURCE_BINDING_SHUFFLED` and `DREAM_NULL` must be separately trained. One
+  corrupt control cannot distinguish authentic event binding from
+  organization.
 
 Removing any one of these narrows the experiment to storage, factual recall,
 in-context reasoning, or supplied-memory traversal rather than the requested
@@ -148,13 +151,23 @@ J0           {0,1}   {0,1}   0       1
 J1           {0,1}   {0,1}   1       0
 ```
 
-One additional authentic old signal event maps the current opaque cue to
-family `H` or `J`. Both families are equally frequent, equally supported, and
-equally target-relevant. Under `H`, `E0/E1` uniquely identify `h`; under `J`,
-`E2/E3` uniquely identify `h`. The truthful `f` twin changes only the supported
-old signal relation and must redirect the child's first experiment into the
-other experiment pair. This is stronger than an irrelevant sham: both old
-signals are useful, but they demand different actions.
+Two matched authentic old signal events map two opaque cues to opposite
+families. The cue later used in Phase C maps to `f`; a matched decoy cue maps
+to the other family. Under `H`, `E0/E1` uniquely identify `h` while `E2/E3`
+identify only a balanced nuisance bit; under `J`, `E2/E3` identify `h` while
+`E0/E1` identify only the nuisance bit. The truthful `f` twin changes the two
+supported old signal relations and the matching hidden experiment equations,
+and must redirect the child's first experiment into the other experiment
+pair. Both twin signals are equally frequent, supported, and target-relevant,
+but they demand different actions.
+
+`SOURCE_BINDING_SHUFFLED` swaps only the two signal-event outcome donors in
+the compiled S1 rows. It does **not** alter any `p` atom, calibration row,
+candidate pair, `ORGANIZE_SET`, public support event, or admitted DREAM link.
+The main cue therefore retrieves the wrong family while every path/DREAM byte
+remains held fixed. The Phase-C experiment and its public outcome are then
+allowed to unfold naturally and are compiled truthfully; the control never
+performs a second shuffle at the new-row seam.
 
 Before acting in Phase C, the child must publish:
 
@@ -208,7 +221,8 @@ A0  seal root, twins, public opportunity tape, candidate permutations,
 A1  child ACT -> public outcomes -> immutable Phase-A event ledger
 A2  child ORGANIZE_SET sealed (no blueprint/goals/C/D visible)
 A3  child support ACTs -> public co-use outcomes -> link admission
-S1  compile old truthful/shuffled/null decks; fit three SLEEP-1 adapters
+S1  compile old FULL/source-binding-shuffled/DREAM-null decks; fit three
+    SLEEP-1 adapters
 B   sterile forks: same-start goal A and goal B; no writes; destroy forks
 C0  restore common post-S1 state with B workspaces/caches deleted
 C1  old carrier is read; child declares map; child ACTs; world emits outcome
@@ -231,27 +245,67 @@ The experiment therefore supports “two-cycle cumulative reconstruction,” not
 
 ## 4. The only three trained conditions
 
-Each root uses one predeclared optimizer seed and the already qualified W0
-writer recipe. There is no fit-seed search, best-candidate selection, or
-condition-specific dose. A rejected/failed candidate gives that root zero.
+Each root uses one predeclared optimizer seed and **exactly the writer recipe
+that actually passes W0 plus its old/new coexistence canary**. If canonical
+`Q0` passes, M inherits canonical `Q0`; if W0 instead qualifies a registered
+cross-view or preservation repair, M inherits that exact frozen repair. M does
+not assume cross-view rendering, add paraphrases, or select a writer recipe of
+its own. There is no fit-seed search, best-candidate selection, or condition-
+specific dose. A rejected/failed candidate gives that root zero.
 
 | condition | SLEEP-1 deck | SLEEP-2 deck | causal role |
 |---|---|---|---|
-| `FULL_AUTH` | truthful child action--outcome atoms + six admitted child-proposed links | exact S1 deck + truthful declaration-selected `n_h` | complete chain |
-| `OUTCOME_SHUFFLED` | deterministic within-type derangement of outcome donors over the same immutable public events/actions/surfaces/marginals + six matched null link rows | exact shuffled S1 deck + row selected under the correspondingly deranged outcome binding | authentic action--outcome binding |
-| `DREAM_NULL` | truthful atoms + six padded `NULL` link rows in the same slots | exact null S1 deck + truthful `n_h` | child-authored organization |
+| `FULL_AUTH` | truthful child action--outcome atoms, both truthful cue--family rows, and six admitted child-proposed links | exact S1 deck + truthful declaration-selected `n_h` | complete chain |
+| `SOURCE_BINDING_SHUFFLED` | byte-identical truthful path/calibration atoms and the exact same six DREAM links; only the two cue--family compiler rows swap outcome donors | exact shuffled S1 deck + the **truthful, unshuffled** Phase-C declaration-selected `n_h`, if one was validly acquired | authentic old action--outcome binding |
+| `DREAM_NULL` | all truthful atoms/cue rows + six padded `NULL` link rows in the same slots | exact null S1 deck + truthful `n_h` if validly acquired, otherwise the common `NO_ADMISSION` pad | child-authored organization |
 
-Every semantic row is rendered with the frozen W0 cross-view/paraphrase and
-replay schedule. Old and new strata receive the same registered minimum
-supervised dose; null/pad rows occupy the same token-length class. Prompts are
-zero-loss context and only the canonical child memory continuation is a
-target. Corpus rows retain exact event/link/declaration provenance.
+Every semantic row is rendered with the exact W0-qualified renderer, loss
+mask, dose, and replay schedule—whatever prospectively registered recipe
+qualified. Old and new strata receive the same registered minimum supervised
+dose; null/pad rows occupy the same token-length class. Prompts are zero-loss
+context and only the canonical child memory continuation is a target. Corpus
+rows retain exact event/link/declaration provenance.
 
-The shuffle never rewrites a public event under its old ID. Each shuffled row
-is a new canonical synthetic object that cites the unchanged action event and
-its distinct outcome-donor event plus the frozen permutation receipt. Equal
-source identities means equal immutable source objects, not “same ID, changed
-payload.”
+The shuffle never rewrites a public event under its old ID. Each of the two
+shuffled signal rows is a new canonical synthetic object that cites the
+unchanged action event and its distinct outcome-donor event plus the frozen
+swap receipt. Equal source identities means equal immutable source objects,
+not “same ID, changed payload.” Every non-signal S1 row is byte-identical
+between FULL and SOURCE_BINDING_SHUFFLED; every DREAM row and support receipt
+is byte-identical; the S2 new row, when admitted, is derived truthfully from
+that arm's actual Phase-C action/outcome rather than transformed again.
+
+Every S2 deck has one reserved new-row slot. A validly acquired row occupies
+it; otherwise a canonical matched `NO_ADMISSION` pad occupies it. This keeps
+row count and dose exact without turning a failed acquisition into a row.
+
+### 4.1 Orthogonality re-audit
+
+Before any model call, an exact deck-diff receipt must prove:
+
+```text
+FULL S1 vs SOURCE_BINDING_SHUFFLED S1:
+    exactly two derived cue--family target rows differ;
+    every path atom, calibration row, DREAM row, support citation,
+    slot, rendering multiplicity, and loss mask is byte-identical.
+
+FULL S1 vs DREAM_NULL S1:
+    exactly six DREAM link slots differ;
+    every action--outcome atom, cue/calibration row, slot,
+    rendering multiplicity, and loss mask is byte-identical.
+
+All three S2 writers:
+    same truthful G_new compiler and reserved-slot rule;
+    any action/outcome/new-row difference is downstream behavior,
+    never a second intervention.
+```
+
+This restores the intended factorial isolation without a fourth trained arm.
+FULL versus SOURCE_BINDING_SHUFFLED identifies the old cue--family
+action/outcome binding while holding DREAM fixed. FULL versus DREAM_NULL
+identifies the DREAM link content while holding every source binding fixed.
+The added check changes neither the six-fit-per-root count nor the inference-
+only control roster.
 
 There are exactly six fits per valid root: three at S1 and three at S2. Public
 source and DREAM model calls occur once and are forked identically into the
@@ -312,18 +366,24 @@ score cannot compensate for a failed source, DREAM, read, or redirection seam.
 5. **Goal-conditioned traversal:** FULL solves both B goals with valid public
    dependency traces; `GOAL_TWIN` redirects first query/path/final action;
    `LINK_CUT`, DREAM_NULL, SLEEP_OFF, and wrong-root do not produce a valid
-   trace.
+   trace. SOURCE_BINDING_SHUFFLED must match FULL on the B path/link gates;
+   otherwise the supposedly source-only control caused generic interference
+   and cannot identify the source binding.
 6. **Content-specific experiment:** FULL reads the raw mounted old signal,
    publishes the complete pre-outcome map, selects a maximum-information
    experiment, and obtains a public separating outcome. `SIGNAL_TWIN`
-   redirects the experiment family. The scorer/posterior is offline only.
+   redirects the experiment family. DREAM_NULL must match FULL through this
+   experiment/new-row gate; otherwise DREAM removal also damaged the source
+   channel. SOURCE_BINDING_SHUFFLED must instead retrieve the swapped family
+   and redirect toward its corresponding non-target experiment pair, while
+   retaining a valid interface. The scorer/posterior is offline only.
 7. **Truthful new row:** the compiler emits exactly the public declaration-
    selected row; `OUTCOME_VALUE_TWIN` redirects the row. No hidden truth or
    answer lookup is available to the compiler.
 8. **Cumulative retention:** FULL S2 retains the registered critical old rows
    while adding the new row and still passes the B old-goal probe.
 9. **Delayed conjunction:** FULL S2 produces the correct D trace/action;
-   `NO_SLEEP_2`, `OLD_CUT`, `NEW_CUT`, DREAM_NULL, OUTCOME_SHUFFLED,
+   `NO_SLEEP_2`, `OLD_CUT`, `NEW_CUT`, DREAM_NULL, SOURCE_BINDING_SHUFFLED,
    SLEEP_OFF, and wrong-root score zero; both truthful twins redirect rather
    than merely reduce behavior.
 10. **Text ceiling:** `TEXT_SAME_SEMANTICS` completes the same chain with no
@@ -334,11 +394,11 @@ The useful diagnostic contrasts are:
 
 ```text
 S_r = relevant_experiment_value_C(FULL_AUTH)
-      - relevant_experiment_value_C(OUTCOME_SHUFFLED)
+      - relevant_experiment_value_C(SOURCE_BINDING_SHUFFLED)
 M_r = B(FULL_AUTH)      - B(DREAM_NULL)
 W_r = D(FULL_AUTH_S2)   - D(NO_SLEEP_2)
 F_r = D(FULL_AUTH_S2)   - max(D(OLD_CUT), D(NEW_CUT),
-                               D(OUTCOME_SHUFFLED), D(DREAM_NULL))
+                               D(SOURCE_BINDING_SHUFFLED), D(DREAM_NULL))
 ```
 
 But the main datum is the conjunction `R_r`, not the largest component. Later
@@ -364,8 +424,10 @@ instrument:
     prose to memory carriage;
 13. carrying raw events, DREAM prose, C outcome text, workspaces, caches, or
     query state across a sterile reset;
-14. changing marginals, dose, row count, token-length class, or optimizer work
-    in OUTCOME_SHUFFLED/DREAM_NULL;
+14. changing any path atom, calibration row, DREAM decision/link/support byte,
+    Phase-C public outcome compiler, marginal, dose, row count, token-length
+    class, or optimizer work in SOURCE_BINDING_SHUFFLED—or changing anything
+    except the DREAM link slots in DREAM_NULL;
 15. interpreting generic damage by a corrupt adapter as binding specificity;
 16. tuning fit seeds, rank, LR, render forms, prompts, or thresholds on M
     outcomes;
@@ -434,8 +496,8 @@ lifetime flywheel.
 
 ## 9. Fit count and rough GPU cost
 
-Let `t_fit` be the measured A40 time for one already-qualified W0-sized fixed-
-seed build. The design uses:
+Let `t_fit` be the measured A40 time for one fixed-seed build using the actual
+W0-qualified recipe on this exact M deck. The design uses:
 
 ```text
 2-root kill gate:          2 roots * 3 conditions * 2 sleeps = 12 fits
