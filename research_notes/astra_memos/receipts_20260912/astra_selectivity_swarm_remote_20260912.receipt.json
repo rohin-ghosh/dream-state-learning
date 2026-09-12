@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "bash",
+    "gpu/a40_ssh.sh",
+    "python3 -B -c 'import hashlib,json; from pathlib import Path\nhome=Path.home(); root=home/'\"'\"'v6_out/write_swarm'\"'\"'; result={'\"'\"'root'\"'\"':str(root),'\"'\"'files'\"'\"':[]}\nfor path in sorted(root.rglob('\"'\"'AGENTS.md'\"'\"')): result.setdefault('\"'\"'instructions'\"'\"',[]).append({'\"'\"'path'\"'\"':str(path),'\"'\"'text'\"'\"':path.read_text()})\nfor arm in ['\"'\"'none'\"'\"','\"'\"'para'\"'\"','\"'\"'mix'\"'\"','\"'\"'paramix'\"'\"']:\n for relative in [f'\"'\"'{arm}/probe.json'\"'\"',f'\"'\"'{arm}/adapter/train_meta.json'\"'\"',f'\"'\"'{arm}/adapter/DONE'\"'\"']:\n  path=root/relative\n  if path.is_file():\n   data=path.read_bytes(); result['\"'\"'files'\"'\"'].append({'\"'\"'path'\"'\"':str(path),'\"'\"'sha256'\"'\"':hashlib.sha256(data).hexdigest(),'\"'\"'text'\"'\"':data.decode()})\n path=root/arm/'\"'\"'corpus.json'\"'\"'\n if path.is_file():\n  data=path.read_bytes(); document=json.loads(data); result.setdefault('\"'\"'corpora'\"'\"',[]).append({'\"'\"'arm'\"'\"':arm,'\"'\"'path'\"'\"':str(path),'\"'\"'sha256'\"'\"':hashlib.sha256(data).hexdigest(),'\"'\"'rows'\"'\"':len(document['\"'\"'corpus'\"'\"'])})\nprint(json.dumps(result))\n'"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "finished_utc": "2026-09-12T09:20:24.278192+00:00",
+  "stdout_sha256": "011ebc9faa5573c9c50fbeae38b631dea76f85a7b958de81fa47b92bc64df9ea"
+}

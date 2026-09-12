@@ -1,0 +1,122 @@
+{
+  "clean_lineage": false,
+  "date": "2026-09-12",
+  "evidence_label": "EVALUATION_ONLY",
+  "further_inference": false,
+  "interpretation": "All records are EOS-terminated and not cap-truncated. Expected-0 failures are observed output patterns, not evidence establishing corruption or a decoding bug.",
+  "original_repacked": false,
+  "prompt_search": "PARKED",
+  "related_sequence": "SEQ-068",
+  "source": "read directly from completed original capsule; requests and outputs checked against run seals",
+  "source_capsule": "/tmp/astra_grounded_copy_terminal_20260912.tgz",
+  "source_capsule_sha256": "965298ebc743539d51c8632db65176fb15bd1f14235222f6b4ee04630538418b",
+  "source_capsule_unchanged": true,
+  "strata": {
+    "grounded": {
+      "0": {
+        "patterns": [
+          {
+            "count": 31,
+            "decoded_with_terminal_eos": "ACT: a a<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              264,
+              151645
+            ],
+            "text": "ACT: a a",
+            "truncated": false
+          },
+          {
+            "count": 1,
+            "decoded_with_terminal_eos": "ACT: a<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              151645
+            ],
+            "text": "ACT: a",
+            "truncated": false
+          }
+        ],
+        "total": 32
+      },
+      "1": {
+        "patterns": [
+          {
+            "count": 32,
+            "decoded_with_terminal_eos": "ACT: a1<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              16,
+              151645
+            ],
+            "text": "ACT: a1",
+            "truncated": false
+          }
+        ],
+        "total": 32
+      }
+    },
+    "previous": {
+      "0": {
+        "patterns": [
+          {
+            "count": 26,
+            "decoded_with_terminal_eos": "ACT: a1<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              16,
+              151645
+            ],
+            "text": "ACT: a1",
+            "truncated": false
+          },
+          {
+            "count": 6,
+            "decoded_with_terminal_eos": "ACT: a<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              151645
+            ],
+            "text": "ACT: a",
+            "truncated": false
+          }
+        ],
+        "total": 32
+      },
+      "1": {
+        "patterns": [
+          {
+            "count": 32,
+            "decoded_with_terminal_eos": "ACT: a1<|im_end|>",
+            "eos_terminated": true,
+            "generated_ids": [
+              6823,
+              25,
+              264,
+              16,
+              151645
+            ],
+            "text": "ACT: a1",
+            "truncated": false
+          }
+        ],
+        "total": 32
+      }
+    }
+  }
+}
