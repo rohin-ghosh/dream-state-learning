@@ -1,5 +1,36 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding reconciliation — 2026-09-12T20:51:34Z
+
+- PID220273 remains LIVE on node3 GPU0. At this reconciliation OFF_generate
+  has capture/cleanup/supervision markers, but no controller terminal or summary.
+  No outcomes inspected. Do not relaunch or infer GPU vacancy from phase gaps.
+- Herschel's conditional readout collector is EDITSTOP, reviewed and uploaded:
+  `/tmp/astra_collect_conditional_readout_20260912.py`, SHA
+  cee3f8a50b934f1fb0f9d6fbc7ecaecbf7769640a2ec1f6bba315028ca8c4a14.
+  Main runs status; finish only after PID absence AND terminal. It verifies
+  custody/accounting without native reducer/tokenizer reruns, preserves PARTIAL,
+  performs full GPU/proc/queue release and packages metadata without weights.
+  Its author also authored the controller; independent raw analysis still needed.
+- Varied-memory material ACTUAL_NATIVE_TOKENIZER_AUDIT_PASS_NO_FIT at
+  20:47:10.403060 UTC, source dc2e9a3c11ccd9a3f10ea28513723bbfb8420247.
+  Root ~/astra_diagnostics/astra_varied_memory_replay_20260912_attempt1;
+  manifest 9c6c4bcf00f19e02a62b1939d8f669a16475483b4b74d8718f884830d3118a9c.
+  Do not reprepare. Native receipt and preparation script now archived in
+  receipts_20260912. Ten-epoch SINGLE_VIEW input66160/context56160/target10000;
+  FOUR_VIEW input67120/context57120/target10000. Same target exposure, unequal
+  input compute. Both use four copies of one source per batch, unlike SEQ107.
+- Ohm owns ONLY /tmp/astra_varied_memory_pair_20260912.py, its test and handoff;
+  implementation in progress, no launch. Proposed pair1500s/140cleanup, both
+  original seed0-parent forks,320new updates each, mandatory dev48+exact16 each.
+- Planck owns ONLY /tmp/astra_rulegame_formation_repair_decision_20260912.md,
+  read-only diagnosis of SEQ095/096 and smallest NEW paired formation. Historical
+  SEQ095 remains declined. Actual-record exporter CPU-tested and committed;
+  accepted native export/write/fresh parent-free reload remains unexecuted.
+- Main is sole Git operator; unrelated dirty gpu/codex/dream_state.rules stays
+  untouched. Formal guard stays finalC11-only. Local base hashes are not an
+  authenticated upstream revision. No freeze or H1/H2/parenting promotion.
+
 ## Superseding snapshot — 2026-09-12T20:41:19.619663Z
 
 - LIVE node3 GPU0/PID220273, six-phase conditional readout. Root
