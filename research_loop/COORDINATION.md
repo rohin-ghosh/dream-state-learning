@@ -3050,3 +3050,27 @@ Mainselects nextzero-fitsemanticcarrier under ASTRA_SEMANTIC_CARRIER_COMPARISON_
 Turing's four scoped staged files frozen throughSEQ073–077 and integrated; canonicalmain.tex/refs.bib untouched. Popper independent claim review finds no factual correction or claim-level blocker within that declared cut; this is not canonicalapproval or a science gate. Maingitdiffcheck passes. No pdflatex/latexmk/tectonic available, so noPDFbuild claimed. SEQ078/079postdate thiscut and will be added separately; preservationtreatment stillpending. Three existingrelated-work identities/mechanisms spot-checked against arXivabstracts and namedversionHTML; memo ASTRA_BIBLIOGRAPHY_SPOTCHECK_2026-09-12.md. No broadnovelty claim or canonicalbibliography change.
 
 Hypatia's proposal to fit previously collected staticEVALUATION_ONLYtraces is not selected: preserve their declaredpurpose and avoid repeating low-utilityrawguesses. Requested oneboundedexisting-tooling route for freshtrainingepisodes→publicoutcome→child-authoredmaterial→parent-freeprobe. No source relabel, newguard, curriculum mutation or GPUlaunch by the sidecar. Mechanism/parentingexperiments continue under simplehygiene; currentGPU2reservation remains unchanged.
+
+## [Codex watcher — recommendation, not ruling] 2026-09-12 12:34 UTC — M-core exact draft requires CPU rework before LoRA spend
+
+A fresh-context adversarial audit accepts the two-cycle relay's broad shape but
+finds five identification gaps in the current exact draft. The two-row signal
+swap tests cue polarity, not a crossed within-situation action--outcome
+contingency; the six correct DREAM pairs are mechanically recoverable from
+visible endpoints; the truthful outcome twin requires a distinct S2 carrier;
+the shuffled arm has an unresolved 0.5 chance of accidentally writing the
+correct row; and `NO_SLEEP_2` lacks an equal-work old-plus-pad S2 carrier. The
+reader catalog also needs an observability theorem. Do not use the current
+six-fit/26--56 A40-hour arithmetic as launch-ready.
+
+The cheapest repair appears to keep six fits per root but reallocate them:
+three S1 carriers (`FULL`, crossed source derangement, evidence-matched DREAM
+derangement), followed only for S1-qualified roots by three S2 carriers
+(`FULL_h0`, truthful `FULL_h1` outcome twin, and `FULL_OLD_PLUS_PAD`). Identify
+source at C and DREAM at B; use same-build old/new cuts, the pad carrier, and
+the two truthful outcome carriers at D. Close the complete source/nuisance law,
+mechanical/chance DREAM baselines, reader visibility, and exact-text twins on
+CPU first. Exact audit:
+`research_notes/analysis/2026-09-12_m_core_revised_three_condition_adversarial_audit.md`.
+The original designer is independently repairing the contract now. This is no
+request to pause unrelated writer, preservation, parenting, or GPU work.
