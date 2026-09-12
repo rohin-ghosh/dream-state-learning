@@ -49,7 +49,7 @@ and choose an informative experiment. The experiment produces a new outcome;
 a second SLEEP adds it. A final task can be solved only by using one old
 connection and the newly learned fact together.
 
-The repaired design uses three first-sleep versions to isolate the causes:
+The current design uses three first-sleep versions to isolate the causes:
 
 - **FULL:** truthful experiences plus the child's real connection.
 - **WRONG SOURCE BINDING:** the same material and connection, but selected old
@@ -70,18 +70,18 @@ connection control preserves the same number and shape of memories.
 Only after those first-sleep tests pass do we pay for three second-sleep
 writes: one for each of two truthful possible outcomes and one equal-work
 old-memory-plus-pad control. The final task needs both an old connection and
-the new outcome memory. This v2 repairs the known causal flaws on paper and is
-now under fresh independent review and CPU/exact-text closure. The first v2
-review found one important limit: the public experiments themselves tell a
-competent solver which pair is useful. We may therefore claim that the child
-selected and sealed those evidence-indicated connections, but not that it
-invented an organization algorithm. The graph must explicitly encode why goal
-A and goal B need different routes, and the reader needs a mechanical proof
-that no legal three-read strategy can recover four separate atoms. The neutral
-second-sleep row must also contain exactly the same number of trained tokens as
-the truthful new row. These are CPU/specification repairs and add no training
-runs. If they close, this is the smallest experiment that tests THINK, DREAM,
-and two SLEEP writes together rather than storage alone.
+the new outcome memory. V3 repaired the earlier causal outline but two fresh
+reviewers found more exactness gaps before any fit: matched conditions used
+different optimizer randomness; the formal reader allowed impossible bypass
+returns; public, scorer, compiler, and audit information was not separated in
+complete schemas; and the live experiment bridge, wrong-root control, PAD
+equality, and side-channel behavior were not executable enough to audit. V4
+is repairing those on CPU and adds no trained arm. One important limit remains
+deliberate: the public experiments themselves tell a competent solver which
+pair is useful, so this can show the child selected and sealed evidence-
+indicated connections, not that it invented an organization algorithm. If the
+repaired contract closes, this is a compact experiment of THINK, DREAM, and
+two SLEEP writes together rather than storage alone.
 
 ### 3. Learning improves a life, not just one probe
 
@@ -122,7 +122,9 @@ The headline is not “the parented child starts better.” It is:
   the new LoRA to stay close to the frozen model cut unwanted spill by 91%,
   but did so by almost turning the intended learning off. Selective writing
   is still unproved; the next test changes the semantic structure of what is
-  written instead of merely weakening the update.
+  written instead of merely weakening the update. That test is running, but a
+  fresh review found its spill score can miss some broad changes, so its first
+  result will be diagnostic until the score is repaired.
 - **Parenting problem:** the first fitted lesson and sham both hurt. A later
   visible process card changed formatting but did not improve solves over sham
   (`1/16` each). A fresh same-episode correction test also tied: both process

@@ -21,22 +21,25 @@
   fresh semantic-action surface gate passed perfectly (`64/64` generation,
   `64/64` scoring, `32/32` complementary redirects in both, `16/16` copy
   canaries, zero malformed outputs). That is zero-step surface validity, not
-  learning. The next eligible test is a separately frozen four-fit canonical
-  semantic W0.
-- **Mechanism:** the first exact M-core draft failed a fresh adversarial audit
-  before GPU spend. Its v2 replacement now uses a crossed repeated
-  action--outcome source, eight syntax/frequency-matched DREAM candidates,
-  binding-matched source and DREAM derangements, separate truthful outcome
-  carriers, and a matched old+pad second write. A fresh v2 review still says
-  REWORK: its public ablations mechanically prescribe the DREAM pair, its
-  root-unique mutual-information gate is vacuous, bank size alone does not
-  prove the claimed read-depth ceiling, the graph omits the asserted goal-
-  specific route, and PAD work is not token/mask/visit matched. The minimum
-  repair narrows DREAM to evidence-indicated child selection, publishes exact
-  traces, replaces MI with noninterference, model-checks legal reads, matches
-  PAD work, and freezes roots/estimands/tests. It adds no fits. No M-core LoRA
-  work begins until that repair and CPU/exact-text closure pass, W0 passes, and
-  the coexistence canary qualifies.
+  learning. A four-fit semantic W0 is running, but a fresh code audit landed
+  after launch and found two reducer loopholes: common-mode action-probability
+  growth is invisible to its binary-relative TV, and itemwise legality flips
+  can cancel. Preserve its registered outputs as diagnostics, but no PASS label
+  can qualify selective writing until those endpoints and exact-train storage
+  scoring are repaired prospectively.
+- **Mechanism:** v3 preserves a credible six-fit skeleton: crossed authentic
+  source events, evidence-indicated child pair selection, source/link
+  derangements, two truthful outcome carriers, old+pad control, typed reads,
+  and noncompensatory root statistics. Two fresh v3 audits still say REWORK
+  before any fit. The exact contract uses condition-specific optimizer RNG,
+  over-quantifies possible reader returns, lacks fully separated public/
+  scorer/compiler/audit schemas and a complete Phase-C state machine, leaves
+  WRONG_ROOT and PAD allowed differences underspecified, and has no concrete
+  generator/materializer or executable side-channel model. The schedule and
+  single-`t_fit` cost formula are also not valid as written. All repairs are
+  zero-fit and add no trained condition; v4 is in progress. No M-core LoRA
+  work begins until exact CPU/text closure passes, W0 passes, and the
+  coexistence canary qualifies.
 - **Parenting:** no useful lesson has qualified. Fitting historical
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham
@@ -67,7 +70,7 @@
    classify storage, extraction, and locality separately rather than starting
    another broad hyperparameter sweep.
 2. Pass one old/new cumulative coexistence canary.
-3. Close M-core v2 under fresh review and CPU/exact text, then run the two LoRA
+3. Close M-core v4 under fresh review and CPU/exact text, then run the two LoRA
    roots S1-first: 6 S1 fits, followed by 6 S2 fits only if both roots pass.
    The maximum remains 48 DEV plus 96 confirmation fits. Budget only from
    measured exact-deck fit time plus measured inference/action/reset overhead;

@@ -197,6 +197,20 @@ and complementary-map redirection. Until that fresh canary passes, no V10R2
 writer fit is eligible. Exact watcher audit:
 `research_notes/analysis/2026-09-12_exact_row_positive_carrier_gate_audit.md`.
 
+The carrier subsequently passed that zero-step gate perfectly and enabled a
+fresh four-fit semantic W0 run. A fresh code audit landed after that run had
+already launched and found that its registered locality reducer can false-
+pass two broad changes: binary-relative TV is invariant to a common-mode rise
+in both native action-sequence probabilities, and `abs(mean(item validity
+changes))` lets equal valid-to-invalid and invalid-to-valid flips cancel. Both
+loopholes were reproduced with adversarial fixtures that still produced
+`MULTIKEY_BINDING_PASS`. Preserve the running attempt's complete registered
+metrics as diagnostic evidence, but it cannot certify selective writing even
+if its label says PASS. A successor must add non-cancelling itemwise legality,
+common-mode absolute sequence-probability drift, and exact-train OFF/ON scoring
+before refreezing counts. Exact audit:
+`research_notes/analysis/2026-09-12_semantic_w0_writer_d160_prelaunch_audit.md`.
+
 The terminal B0 scout established one uninterrupted quarantined plumbing path:
 exact ACT-before-record joins, a 66-item child-body-only fit, save, canary,
 adapter reload, probes, and terminal exit. It did not acquire the intended
@@ -804,9 +818,12 @@ model, children, and task families.
    after a sealed/replayed W0 pass.
 3. Run one old/new cumulative-replay coexistence canary. It is a waste-prevention
    gate for M, not a separate powered paper result.
-4. Finish the fresh audit of M-core v2's crossed source law, evidence-only
-   DREAM decision, reader observability, outcome-twin S2 carriers,
-   nuisance/admission table, and matched old+pad S2 control. Close the exact
+4. Finish M-core v4's zero-fit repairs: common realized nuisance within matched
+   fits, availability-parameterized READ theorem plus model bypass tests,
+   separate public/scorer/compiler/audit schemas and full Phase-C state
+   machine, exact mapped/demoted wrong-root control, source-read swap at C,
+   PAD allowed-difference receipts, deterministic materializer/checker, and an
+   executable side-channel machine. Close the exact
    implementation on CPU, then run four exact-text child DEV roots; extend to
    eight only under its frozen intermediate rule. Then run two LoRA roots
    S1-first; fit S2 only if both roots pass the prospectively frozen S1 gates.
