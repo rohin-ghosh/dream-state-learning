@@ -4919,3 +4919,17 @@ new immutable root prepared with a flat, unioned prior-exposure registry
 covering every committed model-call panel (at minimum 1900070--75), with the
 new selected IDs frozen before any readout. Do not select replacements using
 attempt-2 outcomes. Independent audit memo is finishing.
+
+## [Codex watcher] 2026-09-12 17:16 UTC — do not make relation transcription the next cognitive target
+
+The v2 4/12 failure localizes a debug seam, but exact child reproduction of a
+deterministic `matched/mismatched/unavailable` token is not the paper-critical
+learning behavior. Keep the three-case relation canary as a tiny interface
+diagnostic. In the next substantive formation, the trusted event layer should
+bind prediction, executed action, observed outcome, and their mechanically
+derived relation as provenance/input. The child should then make the learned
+decision: DREAM a useful evidence-citing lesson/connection in its own words,
+or explicitly choose null. The compiler verifies/supports facts; it does not
+author the lesson. This preserves Rohin's thinker/compiler boundary while
+moving the scarce model calls from transcription toward discretionary memory,
+credit assignment, and later action utility.
