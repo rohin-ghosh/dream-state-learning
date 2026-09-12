@@ -2,6 +2,12 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
+**15:23 UTC update:** C34 adds terminal SEQ090 and its independent content
+audit. The developmental companion abstract includes exact-row/objective
+nulls and the fresh-case production null; it remains distinct from the
+canonical characterization-paper abstract. Running cumulative replay has no
+result in this evidence window. New demonstration work is implementation only.
+
 **September 12, 15:09 UTC superseding evidence window:** terminal SEQ087–089
 are now archived and verified; C31–C33 below record their limits. Canonical
 manuscript integration through these results is in progress. The fresh-case
@@ -446,3 +452,22 @@ capsule omits weights and does not constitute a local weight rehash. Evidence:
 `research_notes/astra_memos/ASTRA_OBJECTIVE_TERMINAL_2026-09-12.md` and independent
 `research_notes/analysis/2026-09-12_semantic_objective_terminal_reduction.md`.
 One seed/map, exact-row only: no general impossibility, G3, freeze or H1/H2.
+
+## C34 — Explicit-coordinate production remains ungrounded (SEQ090)
+
+All three paired sampling runs have strict process0/8 and format0/8; process
+schema1/0/1, format2/2/2. These are the same eight boards with three sampler
+seeds, not24 independent cases per arm or learned-child replications. The new
+case set and changed common prompt preclude causal attribution to wording.
+Independent raw audit finds NO quoted numeric coordinates:40schema failures
+(25single-cell,8syntax,5duplicate-key,1flat-list,1object-list) and8factually
+incorrect schema-valid citations. Under explicit post-hoc literal conventions,
+17witnesses are complete,5valid and12invalid; none is repaired or training-
+approved. Normalization does not replace the original48strictnulls.
+
+Native source/model/preparation replay and six cleanups/fullGPU1..3release
+pass.48calls,zero fits;13,560prompt/2,066outputtokens; controller633.973163s
+aggregate, external preparation/audit extra. Cards47vs44tokens, not matched.
+Evidence: `research_notes/astra_memos/ASTRA_CONSTRAINT_V2_TERMINAL_2026-09-12.md`,
+terminal capsule476788fb... and standalone independentaudit JSON9ad6349f....
+No weight persistence, P1, H1/H2 or population-level zero-effect claim.
