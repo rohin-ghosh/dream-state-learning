@@ -1,13 +1,24 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 15:06 UTC**.
+Latest reconciliation: **2026-09-12 15:12 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **15:12 superseding status:** no Main GPU reservation remains. All three
+  constraint-v2 pairs complete, all48grounded records fail. Process schema
+  counts1/0/1 and format2/2/2. Native replay/all six cleanups/fullGPU1..3
+  release pass. SEQ090 capsule476788fb... archived; independent content
+  diagnosis pending. No invalid output promoted or further unchanged sweep.
+- Original OLD full run including actual weights is preserved on node3 at
+  `~/astra_inputs/cumulative_old_20260912/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912`.
+  Node2→VM→node3 archive SHA8eb5ee4f... identical; actual weights c5bc4b2d...,
+  corpus f2388eaf... and bank87851da... agree. Native cumulative diagnostic
+  implementation/CPU tests remain with Hilbert. No new mechanism run yet.
 
 - **15:06 superseding status:** three bounded constraint-v2 pairs live on
   node3 GPU1/PID125681/seed7101, GPU2/PID125713/seed7102,

@@ -3969,3 +3969,22 @@ processcard47tokens vsformat44, explicitly not tokenmatched. Allreported,
 strictcheckerunchanged,no trainingapproval,no internalization claim. Noother
 Main GPUjob launched; existingotherowners unchanged. CumulativeOLD adapter
 transfer/preparation proceeds while these run. Jobs launched, not completed.
+
+## [Builder] 2026-09-12 15:12 UTC — SEQ-090 terminal and OLD checkpoint preserved
+
+All three clarified-coordinate pairs complete: strictgrounded0/8 in BOTH
+arms for sampler7101/7102/7103; processschema1/0/1 vsformat2/2/2. Native replay
+plus sixownedcleanups and fullGPU1..3release PASS; controllersabsent. NoMain
+GPUreservationremains. Capsule476788fb... archived;224.704/202.487/206.782s
+controllerelapsed,48calls/zero fits. Explicitinteger wording alone didnot
+recovervalid groundedrecords. Eightcases repeated, not24independent cases or
+threelearnedchildren; v1vs v2 not a controlled wordingcomparison. Independent
+raw-contentaudit pendingAvicenna; do not normalizeprimary or approvetraining.
+
+OLD fullrun257MB includingactualweights copiednode2→VM→node3; archive SHA
+8eb5ee4f0a162e2ac9e92497615043538851e74397a7e3bc5e5f4e8b3ba4d835 identical
+all3. Node3root ~/astra_inputs/cumulative_old_20260912/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912.
+Actualweights c5bc4b2d..., corpusf2388eaf..., bank87851da... matchsource.
+Originalnotchanged. Hilbert implementsboundednativecumulative path; Feynman
+owns canonicalmain.tex/README terminal087–089integration. NoformalC11work,
+no mechanismfreeze, G3/P1/H1/H2 or campaigncompletion claimed.
