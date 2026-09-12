@@ -333,6 +333,51 @@ def main():
                          "computed and LOGGED at every sleep to "
                          "<life>/curriculum_exit.jsonl (not enforced). "
                          "Default None = --sleep-every, unchanged.")
+    # --- 2026-09-12: level-3 "preschool for records" (THESIS_v2 section 7, Astra
+    # memo q14; organism_v6/preschool.py). Every flag defaults OFF; a life
+    # launched without them is byte-identical (tests/test_preschool_flags.py).
+    ap.add_argument("--note-after", action="store_true",
+                    help="the post-outcome slot: after every measured ACT the "
+                         "child is shown the execution's measured facts and "
+                         "writes ONE short NOTE_AFTER (ledger kind note_after, "
+                         "tied to the execution id); the head of context gains "
+                         "exactly one sentence saying the field exists. Default "
+                         "off.")
+    ap.add_argument("--note-after-max-tokens", type=int, default=100,
+                    help="generation cap of the NOTE_AFTER turn (default 100)")
+    ap.add_argument("--artifact-lesson", choices=["none", "lesson", "lesson10"],
+                    default="none",
+                    help="the parent's artifact-naming paragraph (a MEASURED "
+                         "ACTION RECORD) with three synthetic examples before "
+                         "episode 1 and a one-line refresher with one new "
+                         "example after sleeps 1-3; lesson10 adds the numbered "
+                         "baseline paragraph (aim for 10 records per episode). "
+                         "Fixed text (preschool.LESSON_VERSION), never a score. "
+                         "Default none.")
+    ap.add_argument("--articulation-gate", choices=["off", "shadow", "enforce"],
+                    default="off",
+                    help="judge every new note_after at sleep with the "
+                         "retrospective audit's tests (G/N/F/D/P) and log the "
+                         "counts to <sleep>/articulation_shadow.json; shadow "
+                         "leaves the corpus untouched; enforce replaces the "
+                         "corpus with the admitted records to date (legacy kept "
+                         "as corpus_legacy.json) and SKIPS training when fewer "
+                         "than --gate-min-items are admitted. Default off.")
+    ap.add_argument("--gate-min-items", type=int, default=64,
+                    help="enforce mode: admitted records needed to train at a "
+                         "sleep (Astra q14 section 3 promotion rule); fewer => "
+                         "the sleep is skipped, the adapter stays")
+    ap.add_argument("--neutral-probes", action="store_true",
+                    help="one held-out probe episode immediately before and "
+                         "after every sleep (same program for the pair), fresh "
+                         "context, optional Scratchpad field, separate ledger "
+                         "(never harvested, never seen by a parent); results "
+                         "in <life>/neutral_probe_<pre|post>_<episode>.json. "
+                         "Default off.")
+    ap.add_argument("--neutral-probe-panel", default=None,
+                    help="JSON list of held-out benchmark URIs for the neutral "
+                         "probes (e.g. the disjoint panel); default: "
+                         "preschool.NEUTRAL_PANEL_DEFAULT")
     args = ap.parse_args()
 
     life = os.path.expanduser(args.life_dir)
@@ -368,6 +413,32 @@ def main():
     programs = gym.training_schedule(args.episodes, args.seed)
     log(f"[life-v2] arm={args.arm} seed={args.seed} n={len(programs)} "
         f"sleep_every={args.sleep_every} probe_every={args.probe_every}")
+
+    # preschool flags (all default off): the post-outcome slot object, the
+    # lesson phase and the neutral-probe panel; nothing below changes a life
+    # that does not set them
+    preschool_on = (args.note_after or args.artifact_lesson != "none"
+                    or args.articulation_gate != "off" or args.neutral_probes)
+    slot = None
+    neutral = None
+    phase = {"sleeps": 0}            # sleeps completed so far (lesson phase)
+    if preschool_on:
+        from . import preschool
+        if args.note_after:
+            slot = preschool.PostOutcomeSlot(max_tokens=args.note_after_max_tokens,
+                                             log=log)
+        if args.neutral_probes:
+            neutral = preschool.neutral_panel(args.neutral_probe_panel)
+            _c = lambda s: str(s).replace("benchmark://", "")   # noqa: E731
+            clash = sorted(n for n in neutral if _c(n) in {_c(p) for p in programs})
+            if clash:
+                raise SystemExit(f"--neutral-probes: panel programs appear in the "
+                                 f"training schedule: {clash[:4]}")
+        log(f"[preschool] note_after={args.note_after} "
+            f"max_tokens={args.note_after_max_tokens} lesson={args.artifact_lesson} "
+            f"gate={args.articulation_gate} min_items={args.gate_min_items} "
+            f"neutral_probes={args.neutral_probes} "
+            f"panel={len(neutral) if neutral else 0} version={preschool.LESSON_VERSION}")
 
     schedule = None
     if args.curriculum:
@@ -463,6 +534,21 @@ def main():
                         ("\n\n=== YOUR PARENT, ON HOW YOU HAVE BEEN THINKING"
                          " ===\n" + parent_txt if parent_txt else "")
         return gym.birth_prompt()
+
+    def head():
+        """The head of context for the wake batches: brief() as always, plus
+        (preschool flags only) the one slot sentence and the lesson block of
+        the current phase. Identical to brief() when the flags are off."""
+        b = brief()
+        if not preschool_on:
+            return b
+        from . import preschool
+        if args.note_after:
+            b = b + "\n" + preschool.SLOT_SENTENCE
+        lb = preschool.deliver_lesson(life, args.artifact_lesson, phase["sleeps"], log)
+        if lb:
+            b = b + "\n" + lb
+        return b
 
     def probe_stats(tag):
         """(mean, chunks per episode) of a finished probe, or (None, None)."""
@@ -703,7 +789,7 @@ def main():
             if not gpu["closed"]:
                 close_backend(model)
             model = load_model()
-        bootstrap = brief()
+        bootstrap = head()
         return verdict
 
     def round_length(r):
@@ -714,7 +800,7 @@ def main():
                                        args.sleep_every)
 
     model = load_model()
-    bootstrap = brief()
+    bootstrap = head()
     run_probes_batch(model, gym, "ep0000", life, args.budget_ticks, log)
     if gate_panel and not latest_adapter(life) and group is None:
         # base on the gate panel, once, with the same seeded generation (in a
@@ -742,7 +828,8 @@ def main():
             res = run_episodes_batch(model, gym, eps, bootstrap, ledger,
                                      args.budget_ticks, log,
                                      gen_seed=1000 + args.seed,
-                                     driver_cls=driver_class_for(gym))
+                                     driver_cls=driver_class_for(gym),
+                                     note_after=slot)
             tmp = bm + ".tmp"
             with open(tmp, "w") as f:
                 json.dump(res, f)
@@ -779,6 +866,11 @@ def main():
         if sleep_now:
             r += 1
             sdir = os.path.join(life, f"sleep_{i:04d}")
+            if neutral is not None:          # preschool: the pre-sleep neutral probe
+                preschool.neutral_probe(model, gym, life, "pre", i, r, neutral,
+                                        args.budget_ticks, log, loaded["adapter"],
+                                        max_tokens=args.note_after_max_tokens,
+                                        driver_cls=driver_class_for(gym))
             assert_split_hygiene(gym, ledger.rows())
             # design 3.6 seal rule at every sleep of a childhood life: zero
             # deployment-gym vocabulary in the child's stored prompts/notes
@@ -800,6 +892,11 @@ def main():
                                        vocab_by_gym={gym.name: gym.compile_vocab()})
                     log(f"[sleep {i}] new={rr['n_new']} "
                         f"principles={rr['n_principles']}")
+                    if args.articulation_gate != "off":   # preschool gate (shadow|enforce)
+                        preschool.gate_sleep(ledger.rows(), life, sdir,
+                                             args.articulation_gate,
+                                             min_items=args.gate_min_items, log=log,
+                                             slot_stats=slot.stats() if slot else None)
                     touch(os.path.join(sdir, "COMPILED"))
                 if parent_fn is not None:
                     pm = parent_fn(life, ledger.rows(), sdir, args.parent_url,
@@ -808,7 +905,12 @@ def main():
                     log(f"[sleep {i}] parent ritual={pm['metrics'].get('ritual')} "
                         f"flags={pm['metrics'].get('flags')} "
                         f"intervened={pm['intervened']} hits={pm['hits']}")
-                if args.arm == "B" and not marker(
+                if args.articulation_gate == "enforce" and \
+                        preschool.training_skipped(sdir):
+                    log(f"[sleep {i}] training SKIPPED: too few admitted records "
+                        f"(preschool gate enforce, min {args.gate_min_items}); "
+                        f"adapter unchanged")
+                elif args.arm == "B" and not marker(
                         os.path.join(sdir, "adapter", "DONE")):
                     from .model_backend import close_backend
                     if not close_backend(model):
@@ -849,7 +951,21 @@ def main():
                         os.rename(os.path.join(ad, "CANDIDATE"),
                                   os.path.join(ad, verdict))
                     model = load_model()
-                    bootstrap = brief()
+                    bootstrap = head()
+            if preschool_on:
+                # the lesson phase advances with the sleep count (refreshers
+                # after sleeps 1-3, nothing from sleep 4); the head of context
+                # is rebuilt so a life without training (arm A, a skipped or
+                # resumed sleep) still receives the phase's text
+                phase["sleeps"] = r
+                bootstrap = head()
+                if slot is not None:
+                    log(f"[preschool slot] {json.dumps(slot.stats())}")
+            if neutral is not None:              # the post-sleep neutral probe
+                preschool.neutral_probe(model, gym, life, "post", i, r, neutral,
+                                        args.budget_ticks, log, loaded["adapter"],
+                                        max_tokens=args.note_after_max_tokens,
+                                        driver_cls=driver_class_for(gym))
             if schedule is not None:
                 from . import curriculum
                 curriculum.log_exit_check(life, r, schedule, ledger.rows(),

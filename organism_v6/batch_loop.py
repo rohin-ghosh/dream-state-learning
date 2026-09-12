@@ -31,6 +31,12 @@ class EpisodeDriver:
         self.tail: list[str] = [episode.intro]
         self.n_acts = 0
         self.done = False
+        # preschool (2026-09-12, THESIS_v2 section 7): the post-outcome slot.
+        # None = today's loop, byte-identical; set by run_episodes_batch when
+        # a PostOutcomeSlot is passed, then every measured ACT queues one
+        # pending execution for the extra round (preschool.PostOutcomeSlot).
+        self.note_after = None
+        self.pending_after: list = []
 
     def prompt(self) -> str:
         self.st.tick += 1
@@ -58,11 +64,20 @@ class EpisodeDriver:
                 self.n_acts += 1
                 surprise = (score - st.pending_prediction
                             if st.pending_prediction is not None else None)
-                self.ledger.append(dict(
+                act_row = dict(
                     kind="act", episode_id=self.ep.eid, tick=st.tick,
                     action=arg, prediction=st.pending_prediction,
                     outcome=outcome, score=score, surprise=surprise,
-                    time_cost=round(time.time() - st.born_at, 1)))
+                    time_cost=round(time.time() - st.born_at, 1))
+                if self.note_after is not None:
+                    from .preschool import parse_outcome
+                    exec_id = self.note_after.execution_id(self.ep.eid, st.tick,
+                                                           self.n_acts)
+                    act_row["execution_id"] = exec_id
+                    self.pending_after.append(dict(
+                        episode_id=self.ep.eid, tick=st.tick, execution_id=exec_id,
+                        action=arg, outcome=outcome, facts=parse_outcome(outcome)))
+                self.ledger.append(act_row)
                 st.last_outcome = f"{outcome} (score {score:.4f})"
                 self.tail.append(f"[OUTCOME] {st.last_outcome}")
                 if surprise is not None and abs(surprise) > 0.02:
@@ -122,15 +137,22 @@ def _seed_for(eid: str, tick: int, base: int) -> int:
 def run_episodes_batch(model, gym, episodes, bootstrap: str, ledger: Ledger,
                        budget_ticks: int = 24, log=print,
                        gen_seed: int | None = None,
-                       driver_cls=EpisodeDriver) -> list[dict]:
+                       driver_cls=EpisodeDriver, note_after=None) -> list[dict]:
     """Drive all episodes to completion in lockstep batched rounds.
     gen_seed: common-random seeding — chunk seeds derive from
     (episode_id, tick, gen_seed), so paired arms/probes with the same
     gen_seed face identical randomness.
     driver_cls (2026-09-10): EpisodeDriver by default (unchanged behaviour);
-    NoEndTokenDriver for gyms without an end token."""
+    NoEndTokenDriver for gyms without an end token.
+    note_after (2026-09-12, preschool): a preschool.PostOutcomeSlot; after
+    each round's chunks are consumed, every measured ACT of the round gets
+    the post-outcome field in ONE extra batched call. None (default) = no
+    extra round, byte-identical behaviour."""
     drivers = [driver_cls(e, bootstrap, gym, ledger, budget_ticks)
                for e in episodes]
+    if note_after is not None:
+        for d in drivers:
+            d.note_after = note_after
     while True:
         active = [d for d in drivers if not d.done]
         if not active:
@@ -141,6 +163,8 @@ def run_episodes_batch(model, gym, episodes, bootstrap: str, ledger: Ledger,
         chunks = model.batch(prompts, seeds=seeds)
         for d, c in zip(active, chunks):
             d.consume(c)
+        if note_after is not None:
+            note_after.run_round(model, active, ledger, gen_seed)
     out = []
     for d in drivers:
         s = d.summary()
