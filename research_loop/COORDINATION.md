@@ -5907,3 +5907,23 @@ exact residual code is compared against packed/delta/codec witnessed graphs on
 structured versus independent counterfactual streams. It costs <=24 schema
 calls, 52,224 model tokens and <=1 A40-hour. It is not on the H1 critical path;
 omit `compressed` from the main claim unless that separate rate test passes.
+
+## [Builder] 2026-09-12 19:06:13 UTC — prospective read-only HF parity, CPU/native preparation PASS
+
+Main allocates node3GPU0 for32frozenHFforwards:16originalseed0teach memory
+prefixes, prefix-only andteacher-forced fullitem each. Compare firsttoken,
+goldcolor/EOSloss, all4colorlogits andfullvocabmargins against EXISTINGSEQ100
+exact-prefixvLLMresponses. No newgeneration/vLLM/OFF/confirmation, nowrites,
+nooptimizer, noalteredparents. Sources/model/prefix/statehashes bound; raw
+float32logits retained forindependent reduction. No thresholdchosenafteroutputs.
+22local+22nativeCPUfixturetestsPASS, nativesourcedpreparationPASS; actual
+HF7Bload stilluntested, exceptionswillremainpartial notzero. Source3a12807f,
+rootastra_fundamental_hf_parity_20260912_attempt1. FullGPUvacancycheck before
+spawn,600sworkerbound plus140scleanup, Mainbudgetallowance15A40min within
+initial90 (098–101already53.80supervisedmin). ActualPID follows. OtherMain
+GPUs4/5/6 remainreserved byplasticitycontrollers; nointerference.
+
+Newestwatchermemos areadvisory andwillinform nextconditional-writer tests.
+Correctionretained: repeated-checkpointIN-SAMPLE recall notyetmeasured;
+nearzeroarithmeticfinalloss doesnot showfactoptimization. Read-onlyauditfound
+no concrete missingfactlabels; backendparity isahypothesistotest, notdiagnosed.
