@@ -38,6 +38,9 @@ from organism_v6.parent_backend import FALLBACK  # noqa: E402
 from organism_v6.parent_brief import REHEARSAL_TAIL  # noqa: E402
 
 SENTINEL = "0.777777"                  # a report-panel score: must never leak
+SEALED_SCORES = dict(candidate=0.91827341, base=0.82736451,
+                     floor=0.73645182, probe=0.64518273,
+                     report=float(SENTINEL))
 FAKE_IP = "192.168.7.7"
 FAKE_EMAIL = "someone@example-corp.internal"
 SECRET = "sk-test-SECRET-KEY-0123456789abcdef"
@@ -59,6 +62,38 @@ def _w(path, text):
 
 def _wj(path, obj):
     _w(path, json.dumps(obj, indent=1))
+
+
+def assert_no_sealed_scores(*responses):
+    text = json.dumps(responses, sort_keys=True)
+    for score in SEALED_SCORES.values():
+        for sentinel in (str(score), f"{score:.4f}"):
+            assert sentinel not in text, sentinel
+
+
+def seed_sealed_gate(life):
+    path = os.path.join(life, "sleep_0032", "gate.json")
+    with open(path) as source:
+        gate = json.load(source)
+    gate.update(SEALED_SCORES)
+    gate.update(reason="SCORE candidate=" + str(SEALED_SCORES["candidate"]),
+                verdict={"reason": SEALED_SCORES},
+                cand_chunks_per_ep={"payload": [SEALED_SCORES]},
+                base_chunks_per_ep=[SEALED_SCORES],
+                prev_on=SEALED_SCORES["floor"],
+                base_tag=json.dumps(SEALED_SCORES),
+                diagnostics={"unexpected": [{"nested": SEALED_SCORES}]})
+    _wj(path, gate)
+    for name in ("probe_gate0032.json", "probe_gate_base.json",
+                 "probe_ep0064.json", "probe_ep0064_adapterOFF.json"):
+        with open(os.path.join(life, name)) as source:
+            programs = json.load(source)["results"]
+        _wj(os.path.join(life, name),
+            dict(mean=SEALED_SCORES["probe"],
+                 results={program: SEALED_SCORES["probe"]
+                          for program in programs},
+                 nested=[SEALED_SCORES]))
+    return gate
 
 
 def make_rows(n_instances=40, rehearse_from=32, order="act_first"):
@@ -337,7 +372,8 @@ def test_forbidden_files_enforced():
         life, rows, s64, _sib, soc = make_life(root)
         v = ap.ChildView(life, rows=rows, sleep_dir=s64, society_dir=soc)
         for bad in ("probe_ep0064.json", "probe_ep0064_adapterOFF.json",
-                    "probe_ep0000.json", "probe_ep0064.ledger.jsonl"):
+                    "probe_ep0000.json", "probe_ep0064.ledger.jsonl",
+                    "probe_gate0032.json", "probe_gate_base.json"):
             try:
                 v.read_json(bad) if bad.endswith(".json") else v.read_text(bad)
             except ap.ForbiddenRead:
@@ -350,23 +386,23 @@ def test_forbidden_files_enforced():
             pass
         else:
             raise AssertionError("path traversal was allowed")
-        assert v.read_json("probe_gate0032.json")["mean"] == 0.5
         assert v.read_json("sleep_0032/gate.json")["score_ok"] is True
         listing = v.list_files()
-        assert "sleep_0032/gate.json" in listing and "probe_gate0032.json" in listing
-        assert "probe_ep" not in listing and "probe_ep" not in v.call("list_files")
+        assert "sleep_0032/gate.json" in listing
+        assert "probe_" not in listing and "probe_" not in v.call("list_files")
         gates = v.gate_decisions(6)
         g32 = [g for g in gates if g["sleep"] == "sleep_0032"][0]
         assert g32["write_verdict"] == "DONE" and g32["score_ok"] is True
-        assert g32["gate_panel"] == "disjoint" and g32["candidate"] == 0.5
+        assert g32 == dict(sleep="sleep_0032", write_verdict="DONE",
+                           score_ok=True, brevity_ok=True, reason="OK")
         # a made-up tool name is answered, never raised
         assert v.call("read_probe", {"name": "probe_ep0064.json"}).startswith("ERROR")
     with Tmp() as root:                        # legacy gate on the report panel
         life, rows, s64, _sib, soc = make_life(root, overlap_gate_panel=True)
         v = ap.ChildView(life, rows=rows, sleep_dir=s64, society_dir=soc)
         g32 = [g for g in v.gate_decisions(6) if g["sleep"] == "sleep_0032"][0]
-        assert g32["gate_panel"].startswith("report") and "candidate" not in g32
-        assert g32["write_verdict"] == "DONE" and g32["brevity_ok"] is True
+        assert g32 == dict(sleep="sleep_0032", write_verdict="DONE",
+                           score_ok=True, brevity_ok=True, reason="OK")
 
 
 def test_allow_list_guard_life_log_symlinks_and_listing():
@@ -392,7 +428,7 @@ def test_allow_list_guard_life_log_symlinks_and_listing():
         assert v.read_text("sleep_0032/waking_brief.txt").startswith("Briefing")
         assert v.read_json("sleep_0032/parent_brief.json")["intervened"] is True
         listing = v.list_files().splitlines()
-        for shown in ("ledger.jsonl", "probe_gate0032.json", "probe_gate_base.json",
+        for shown in ("ledger.jsonl",
                       "sleep_0032/gate.json", "sleep_0032/parent_brief.txt",
                       "sleep_0032/parent_brief.json", "sleep_0032/waking_brief.txt",
                       "sleep_0064/waking_brief.txt"):
@@ -400,12 +436,13 @@ def test_allow_list_guard_life_log_symlinks_and_listing():
         for hidden in ("life.log", "notes.json", "outside.jsonl",
                        "sleep_0032/gate_extra.json", "sleep_0032/corpus.json",
                        "sleep_0032/COMPILED", "probe_gate0032.ledger.jsonl",
+                       "probe_gate0032.json", "probe_gate_base.json",
                        "probe_ep0064.json", "probe_ep0064.ledger.jsonl"):
             assert hidden not in listing, hidden
         assert not any(l.startswith("wake_") for l in listing)
         assert not ap.is_allowed_relpath("sleep_0032/adapter/DONE")
         assert not ap.is_allowed_relpath("probe_gate0032.ledger.jsonl")
-        assert ap.is_allowed_relpath("probe_gate0032.json")
+        assert not ap.is_allowed_relpath("probe_gate0032.json")
         # a life dir reached through a symlink still works (realpath both sides)
         link = os.path.join(root, "link_life")
         os.symlink(life, link)
@@ -432,6 +469,163 @@ def test_sentinel_score_never_reaches_parents_or_ledgers():
         assert "TOOL RESULT ledger_tail" in msgs and RECIPE in msgs
         assert '"write_verdict": "DONE"' in msgs
         assert "life.log" not in msgs and "notes.json" not in msgs
+
+
+def test_sealed_gate_projection_all_parent_visible_routes():
+    for overlap in (False, True):
+        with Tmp() as root:
+            life, rows, sleep_dir, sibling, society_dir = make_life(
+                root, overlap_gate_panel=overlap)
+            gate = seed_sealed_gate(life)
+            view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                                society_dir=society_dir)
+            expected = dict(score_ok=True, brevity_ok=True, reason="OK")
+            alias = "sleep_0064/gate.json"
+            os.symlink(os.path.join(life, "sleep_0032", "gate.json"),
+                       os.path.join(life, alias))
+            assert view.read_json(alias) == expected
+            assert json.loads(view.read_text(alias)) == expected
+            assert view.read_json("sleep_0032/gate.json") == expected
+            assert json.loads(view.read_text("sleep_0032/gate.json")) == expected
+            assert view.read_text("sleep_0032/gate.json", max_chars=12) == \
+                json.dumps(expected, indent=1)[:12]
+            responses = [view.gate_decisions(), view.prior_briefs(),
+                         view.other_children(), view.society(),
+                         view.read_json("sleep_0032/gate.json"),
+                         view.read_text("sleep_0032/gate.json")]
+            responses.extend(view.call(name) for name in view.TOOLS)
+            assert_no_sealed_scores(*responses)
+            for name in ("probe_gate0032.json", "probe_gate_base.json",
+                         "probe_ep0064.json", "probe_ep0064_adapterOFF.json"):
+                assert raises(ap.ForbiddenRead, view.read_json, name)
+                assert raises(ap.ForbiddenRead, view.read_text, name)
+                assert not view._exists(name)
+            assert "score 0.2900" in view.ledger_tail()
+            assert "predicted 0.300, surprise -0.010" in view.ledger_tail()
+            assert view.rows == rows
+            with open(os.path.join(life, "sleep_0032", "gate.json")) as source:
+                assert json.load(source) == gate
+
+
+def test_sealed_gate_unexpected_shapes_fail_closed():
+    with Tmp() as root:
+        life, rows, sleep_dir, sibling, society_dir = make_life(root)
+        gate = seed_sealed_gate(life)
+        view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                            society_dir=society_dir)
+        malformed = [None, [], [gate], SEALED_SCORES["candidate"],
+                     json.dumps(gate), {}, {"reason": SEALED_SCORES},
+                     {"score_ok": True}, {"brevity_ok": True}]
+        for flag in ("score_ok", "brevity_ok"):
+            for invalid in (None, 0, 1, SEALED_SCORES["candidate"], "true",
+                            str(SEALED_SCORES["base"]),
+                            [SEALED_SCORES], {"nested": SEALED_SCORES}):
+                malformed.append(dict(gate, **{flag: invalid}))
+        for payload in malformed:
+            _wj(os.path.join(life, "sleep_0032", "gate.json"), payload)
+            expected = {"gate_json": "unreadable"}
+            assert view.read_json("sleep_0032/gate.json") == expected
+            assert json.loads(view.read_text("sleep_0032/gate.json")) == expected
+            assert view.gate_decisions()[0] == dict(
+                sleep="sleep_0032", write_verdict="DONE", **expected)
+            assert_no_sealed_scores(view.call("gate_decisions"))
+        _w(os.path.join(life, "sleep_0032", "gate.json"),
+           '{"score_ok":' + str(SEALED_SCORES["candidate"]))
+        assert view.read_json("sleep_0032/gate.json") == expected
+        assert json.loads(view.read_text("sleep_0032/gate.json")) == expected
+        assert_no_sealed_scores(view.call("gate_decisions"))
+
+
+def test_gate_reason_codes_never_copy_sealed_values():
+    with Tmp() as root:
+        life, rows, sleep_dir, sibling, society_dir = make_life(root)
+        gate = seed_sealed_gate(life)
+        view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                            society_dir=society_dir)
+        for score_ok, brevity_ok, reason in (
+                (True, True, "OK"), (False, True, "SCORE"),
+                (True, False, "BREVITY"), (False, False, "SCORE")):
+            for raw_reason in (json.dumps(SEALED_SCORES), SEALED_SCORES,
+                               [SEALED_SCORES], SEALED_SCORES["report"]):
+                _wj(os.path.join(life, "sleep_0032", "gate.json"),
+                    dict(gate, score_ok=score_ok, brevity_ok=brevity_ok,
+                         reason=raw_reason))
+                expected = dict(score_ok=score_ok, brevity_ok=brevity_ok,
+                                reason=reason)
+                assert view.read_json("sleep_0032/gate.json") == expected
+                assert json.loads(view.read_text("sleep_0032/gate.json")) == expected
+                assert_no_sealed_scores(view.gate_decisions(),
+                                        view.call("gate_decisions"))
+
+
+def test_probe_aliases_cannot_bypass_sealed_guard():
+    with Tmp() as root:
+        life, rows, sleep_dir, sibling, society_dir = make_life(root)
+        seed_sealed_gate(life)
+        view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                            society_dir=society_dir)
+        aliases = {"sleep_0064/gate.json": "probe_gate0032.json",
+                   "sleep_0064/parent_brief.json": "probe_gate_base.json"}
+        for alias, target in aliases.items():
+            os.symlink(os.path.join(life, target), os.path.join(life, alias))
+            assert raises(ap.ForbiddenRead, view.read_json, alias)
+            assert raises(ap.ForbiddenRead, view.read_text, alias)
+            assert alias not in view.list_files()
+        assert_no_sealed_scores(*(view.call(name) for name in view.TOOLS))
+
+
+def test_gate_aliases_cannot_launder_scores_through_other_file_types():
+    with Tmp() as root:
+        life, rows, sleep_dir, sibling, society_dir = make_life(root)
+        seed_sealed_gate(life)
+        view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                            society_dir=society_dir)
+        for alias in ("gate_alias.json", "sleep_0064/parent_brief.txt",
+                      "sleep_0064/parent_brief.json", "parent_ledger.jsonl"):
+            os.symlink(os.path.join(life, "sleep_0032", "gate.json"),
+                       os.path.join(life, alias))
+            assert raises(ap.ForbiddenRead, view.read_json, alias)
+            assert raises(ap.ForbiddenRead, view.read_text, alias)
+            assert alias not in view.list_files()
+        os.symlink(os.path.join(life, "sleep_0032", "parent_brief.json"),
+                   os.path.join(life, "sleep_0064", "gate.json"))
+        assert raises(ap.ForbiddenRead, view.read_json, "sleep_0064/gate.json")
+        assert raises(ap.ForbiddenRead, view.read_text, "sleep_0064/gate.json")
+        assert_no_sealed_scores(*(view.call(name) for name in view.TOOLS))
+        sibling_gate = os.path.join(sibling, "sleep_0064", "gate.json")
+        _wj(sibling_gate, dict(score_ok=True, brevity_ok=True, **SEALED_SCORES))
+        os.symlink(sibling_gate,
+                   os.path.join(sibling, "sleep_0064", "parent_brief.txt"))
+        assert raises(ap.ForbiddenRead, view.other_children)
+        assert view.call("other_children").startswith("FORBIDDEN:")
+        assert_no_sealed_scores(view.call("other_children"))
+
+
+def test_sealed_gate_markers_and_room_evidence():
+    with Tmp() as root:
+        life, rows, sleep_dir, sibling, society_dir = make_life(root)
+        gate = seed_sealed_gate(life)
+        for child in (life, sibling):
+            for marker in ("REJECTED_SCORE_" + str(SEALED_SCORES["candidate"]),
+                           "REJECTED_" + json.dumps(SEALED_SCORES)):
+                _w(os.path.join(child, "sleep_0032", "adapter", marker), "")
+        view = ap.ChildView(life, rows=rows, sleep_dir=sleep_dir,
+                            society_dir=society_dir)
+        assert view.gate_decisions()[0]["write_verdict"] == "DONE,REJECTED"
+        assert view.other_children()[0]["write_verdicts"] == \
+            {"REJECTED_SCORE": 1, "REJECTED": 2}
+        assert_no_sealed_scores(view.gate_decisions(), view.other_children(),
+                                *(view.call(name) for name in view.TOOLS))
+        before = all_written(root)
+        room, parent_a, parent_b = two_parent_room()
+        meta = run_room(root, room, life, rows, sleep_dir, society_dir)
+        assert meta["intervened"] is True and meta["fallback"] is False
+        assert_no_sealed_scores(meta, all_messages(parent_a, parent_b))
+        for path, text in all_written(root).items():
+            if before.get(path) != text:
+                assert_no_sealed_scores(text)
+        with open(os.path.join(life, "sleep_0032", "gate.json")) as source:
+            assert json.load(source) == gate
 
 
 def test_ledger_tail_attribution_in_both_writer_orders():

@@ -49,22 +49,22 @@ HARD RULES (each is enforced in code, not only asked of the model)
   blind to the exam      The parent may read the child's ledger, ritual /
                          rehearsal / efficiency metrics, GATE-panel decisions,
                          prior briefs, the parental ledger and the other
-                         children's SUMMARIES. It may NEVER read report-panel
-                         or test scores. File access is ALLOW-LIST based
+                         children's SUMMARIES. It may NEVER read report-panel,
+                         gate-exam or final-test scores, even on a disjoint
+                         panel. File access is ALLOW-LIST based
                          (`guarded_path`): a path is resolved with realpath
                          (symlinks cannot alias a forbidden file), must stay
                          inside the life directory, and its resolved relative
                          name must be one of ledger.jsonl, parent_ledger.jsonl,
-                         probe_gate*.json, sleep_*/gate.json,
+                         sleep_*/gate.json,
                          sleep_*/parent_brief.{txt,json} or
                          sleep_*/waking_brief.txt. Everything else raises
-                         ForbiddenRead — explicitly every probe_* that is not
-                         probe_gate*.json (probe_ep*.json,
-                         probe_ep*_adapterOFF.json, *.ledger.jsonl of probes),
+                         ForbiddenRead — explicitly every probe_* (including
+                         gate probes and all probe ledgers),
                          life.log (it logs report-panel probe means),
-                         wake_*.json and corpus.json. Score scalars from
-                         gate.json are exposed only when the gate panel is
-                         verifiably disjoint from the report panel.
+                         wake_*.json and corpus.json. Both JSON and text reads
+                         of gate.json expose only validated decision booleans
+                         and a fixed reason code, never raw gate payloads.
   no identifiers         No hostnames, IP addresses, user names, home paths,
                          URLs or e-mail addresses in any prompt or output.
                          Tool output is redacted before it is sent; a prompt
@@ -184,15 +184,6 @@ DEFAULT_MIN_PHASE_S = 60        # a critique/merge phase needs this much left
 DEFAULT_CRITIQUE_CONTEXT_CHARS = 40000
 MAX_TOKENS_CEILING = 128000     # never grow the cap past the largest output
 LOOPBACK_HOSTS = ("localhost", "127.0.0.1", "::1")
-
-try:                            # the 8 report-panel programs (never exposed)
-    from .run_life import PROBES as REPORT_PANEL
-except Exception:  # noqa: BLE001 — CPU box without the gym
-    REPORT_PANEL = ["cbench-v1/susan", "cbench-v1/sha", "cbench-v1/dijkstra",
-                    "cbench-v1/patricia", "cbench-v1/jpeg-c",
-                    "cbench-v1/tiff2bw", "cbench-v1/gsm",
-                    "cbench-v1/stringsearch"]
-
 
 # ---------------------------------------------------------------------------
 # secrets: snapshot at process start, mask everywhere
@@ -723,16 +714,12 @@ class ForbiddenRead(PermissionError):
     including every piece of report-panel / test material."""
 
 
-# explicit denials (named in the error so the model learns the rule): every
-# probe_* that is not the gate panel's summary, and the life log, which
-# records report-panel probe means and gate candidates
-_FORBIDDEN_NAME = re.compile(r"^(probe_(?!gate[^/]*\.json$)|life\.log$)")
+_FORBIDDEN_NAME = re.compile(r"^(probe_|life\.log$)")
 # the ALLOW-list: what the parent may open, as paths relative to the life dir
 # (after realpath resolution). Anything else is a ForbiddenRead.
 _ALLOWED_PATHS = [
     re.compile(r"^ledger\.jsonl$"),
     re.compile(r"^parent_ledger\.jsonl$"),
-    re.compile(r"^probe_gate[^/]*\.json$"),
     re.compile(r"^sleep_[^/]+/gate\.json$"),
     re.compile(r"^sleep_[^/]+/parent_brief\.(txt|json)$"),
     re.compile(r"^sleep_[^/]+/waking_brief\.txt$"),
@@ -762,12 +749,37 @@ def guarded_path(life_real: str, rel: str) -> str:
                             f"parent: {base}")
     if not is_allowed_relpath(relp):
         raise ForbiddenRead(f"not on the parent's read allow-list: {relp}")
+    if (os.path.basename(rel) == "gate.json") != (base == "gate.json"):
+        raise ForbiddenRead("gate evidence cannot alias another file type")
     return p
 
 
 def _read_json(path):
     with open(path) as f:
         return json.load(f)
+
+
+def _read_gate_decision(path: str) -> dict:
+    """Project sealed gate evidence into typed outcomes and a fixed reason."""
+    try:
+        gate = _read_json(path)
+    except ValueError:
+        gate = None
+    if not isinstance(gate, dict) or any(
+            type(gate.get(flag)) is not bool
+            for flag in ("score_ok", "brevity_ok")):
+        return {"gate_json": "unreadable"}
+    score_ok, brevity_ok = gate["score_ok"], gate["brevity_ok"]
+    reason = "SCORE" if not score_ok else "OK" if brevity_ok else "BREVITY"
+    return dict(score_ok=score_ok, brevity_ok=brevity_ok, reason=reason)
+
+
+def _public_write_verdict(marker: str) -> str:
+    """Keep known outcome codes, never arbitrary rejection-marker payloads."""
+    if marker in ("DONE", "CANDIDATE", "REJECTED_SCORE", "REJECTED_BREVITY",
+                  "REJECTED_CANARY", "REJECTED_TRAIN", "REJECTED_GATE"):
+        return marker
+    return "REJECTED" if marker.startswith("REJECTED") else ""
 
 
 def _read_jsonl(path: str) -> list:
@@ -856,7 +868,7 @@ class ChildView:
                     "brief, efficiency markers for the last windows",
                     {"window": "int episodes (default 32)"}),
         "gate_decisions": ("per sleep: write-gate verdict (DONE / REJECTED_*)"
-                           " and decision flags; GATE panel only",
+                           " and decision flags/reason; no sealed scores",
                            {"last_k": "int (default 6)"}),
         "prior_briefs": ("earlier briefs to this child with their measured "
                          "effect, and this room's earlier frontier estimates "
@@ -902,11 +914,17 @@ class ChildView:
             return False
 
     def read_text(self, rel: str, max_chars: int = 20000) -> str:
-        with open(self._resolve(rel), errors="replace") as f:
+        path = self._resolve(rel)
+        if os.path.basename(path) == "gate.json":
+            return json.dumps(_read_gate_decision(path), indent=1)[:max_chars]
+        with open(path, errors="replace") as f:
             return f.read()[:max_chars]
 
     def read_json(self, rel: str):
-        return _read_json(self._resolve(rel))
+        path = self._resolve(rel)
+        if os.path.basename(path) == "gate.json":
+            return _read_gate_decision(path)
+        return _read_json(path)
 
     @property
     def rows(self) -> list:
@@ -998,49 +1016,20 @@ class ChildView:
         return m
 
     def gate_decisions(self, last_k: int = 6) -> list:
-        """Decisions only. Score scalars appear only when the gate panel is
-        verifiably disjoint from the report panel."""
+        """Decisions only, independent of the gate panel's score provenance."""
         out = []
         for d in self._sleep_dirs()[-max(1, int(last_k or 6)):]:
             sd = os.path.join(self.life_dir, d)
             ad = os.path.join(sd, "adapter")
             verdict = "not trained"
             if os.path.isdir(ad):
-                marks = [m for m in os.listdir(ad)
-                         if m in ("DONE", "CANDIDATE") or m.startswith("REJECTED")]
+                marks = {_public_write_verdict(marker)
+                         for marker in os.listdir(ad)} - {""}
                 verdict = ",".join(sorted(marks)) or "training"
             row = dict(sleep=d, write_verdict=verdict)
             if self._exists(f"{d}/gate.json"):
-                try:
-                    g = self.read_json(f"{d}/gate.json")
-                except ValueError:              # torn / corrupt gate.json
-                    g = None
-                if not isinstance(g, dict):
-                    row["gate_json"] = "unreadable"
-                    out.append(row)
-                    continue
-                row.update(score_ok=g.get("score_ok"),
-                           brevity_ok=g.get("brevity_ok"),
-                           cand_chunks_per_ep=g.get("cand_chunks_per_ep"),
-                           base_chunks_per_ep=g.get("base_chunks_per_ep"))
-                try:
-                    pg = f"probe_gate{int(d[6:]):04d}.json"
-                except ValueError:
-                    pg = None
-                if pg and self._exists(pg):
-                    try:
-                        res = self.read_json(pg).get("results") or {}
-                    except (ValueError, AttributeError):
-                        res = {}
-                    canon = {p.replace("benchmark://", "") for p in res}
-                    report = {p.replace("benchmark://", "") for p in REPORT_PANEL}
-                    if canon and not (canon & report):
-                        row.update(gate_panel="disjoint", n_programs=len(canon),
-                                   candidate=_r4(g.get("candidate")),
-                                   floor=_r4(g.get("floor")),
-                                   base=_r4(g.get("base")))
-                    else:
-                        row.update(gate_panel="report (scores withheld)")
+                path = self._resolve(f"{d}/gate.json")
+                row.update(_read_gate_decision(path))
             out.append(row)
         return out
 
@@ -1163,10 +1152,6 @@ class ChildView:
         return text
 
 
-def _r4(x):
-    return round(x, 4) if isinstance(x, (int, float)) else None
-
-
 def _life_summary(p: str) -> dict:
     """A sibling's summary from small files only (no ledger, no probes);
     every file is opened through guarded_path on the sibling's directory."""
@@ -1183,7 +1168,7 @@ def _life_summary(p: str) -> dict:
         if os.path.isdir(ad):
             for m in os.listdir(ad):
                 if m == "DONE" or m.startswith("REJECTED"):
-                    verdicts[m] += 1
+                    verdicts[_public_write_verdict(m)] += 1
     wakes = [f for f in os.listdir(p) if f.startswith("wake_")
              and f.endswith(".json")]
     exposure = 0
