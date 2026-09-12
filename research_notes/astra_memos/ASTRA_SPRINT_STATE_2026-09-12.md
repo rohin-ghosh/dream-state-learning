@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-12 18:54 UTC
+## Current superseding snapshot — memory launch 2026-09-12 19:34:09 UTC
+
+SEQ104 plasticity replications complete/fullreleased19:27:28UTC. All3original
+teachingseeds retainhabit32/32atLR0 and replace it with exactACT-only32/32by
+16updates at3e-5/1e-4 (seed0phase1 inheritedSEQ102; onlyseed0hasfourphases).
+ACT32all; memoryweak. Capsule/Mainanalysis/memo archived; independentreview
+pending. No further identical plasticity cells planned. Totalfullplasticity
+91.402428/150A40min. SEQ101–103 manuscript integrated, reviewpending.
+
+Memory-only LIVE node3GPU3/4/5 PID200502/200503/200504, originalseeds0/1/2,
+rootastra_fundamental_memory_only_20260912_attempt1, source3a12807f.
+19local+19nativeCPUtests/nativepreparePASS; original16memoryrows,80updates,
+dev48+exact16mandatory. Three900scontrollers; continuousreservation through
+gaps. No result yet. Twohabitroot0 pairnext, no launchyet; Diracrunnerpending.
+Compactcurrentownership/commands in HANDOFF. No generalG3/P1/G5/H1/H2/freeze;
+formalC11deferred; modeloriginUNRESOLVED_LOCAL_HASHES_ONLY.
+
+## Historical superseded snapshot — 2026-09-12 18:54 UTC
 
 SEQ101 repetition terminal/released: habit teach32/32bothviews vs0controls;
 memory4/16/red16all. Three-rate continuation LIVE node3GPU4/5/6,

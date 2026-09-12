@@ -1,4 +1,42 @@
-# Astra restart checkpoint — 2026-09-12 19:24:39 UTC
+# Astra restart checkpoint — current through memory launch 2026-09-12 19:34:09 UTC
+
+## Superseding live snapshot
+
+SEQ104: all six plasticity replications COMPLETE and fully released by
+19:27:28 UTC. Capsule downloaded, all746 hashes verified, Main analysis and
+memo committed41138d25. NEVER rerun preparation, fit, readout or collection.
+Capsulee777a34fd115002b399c848ad8590e50282d6037a110c583a7981db03ddc0ab4.
+Both nonzero rates replace the habit32->0 and exactACT-only0->32 after16
+updates for original teaching seeds1/2, matching inherited seed0SEQ102phase1.
+LR0 retains32/32 and exact tensors. ACT32all; memory7/6/5 and3/3/4.
+Continuation optimizerseed0all. New288calls; noOFF/confirmation. Fullcost
+33.723041A40min; combinedplasticity91.402428/150. Ohm independentreviewpending.
+
+LIVE memory-only on node3, started19:34:09UTC:
+- originalseed0: GPU3/PID200502
+- originalseed1: GPU4/PID200503
+- originalseed2: GPU5/PID200504
+Root~/astra_diagnostics/astra_fundamental_memory_only_20260912_attempt1.
+Source3a12807f88747bafd0aada1d4a09ba88b915f903.
+Plan0f8d1a3042b92c3c940309f0b909f7ee535c295e3c3fb6197a8d45c4c137ac90.
+Do NOT reprepare/launch. Original16memoryrows, LR3e-4,20epochs,batch4,
+80newupdates, pairedoriginalseed, oneadapter, freshoptimizer. Mandatory
+fixed48dev AND exact16trainingprefixreadout each. Three900scontrollers,
+45A40min plus measured external release overhead; keep GPUs reserved through
+CPU/reload gaps. Main19local+19nativeCPUtests/nativepreparePASS. Source/helper
+pins in archived memory-only handoff; no source edits. Main collection helper
+not yet created at this snapshot. Controller status available via sidecar
+`status --source-root SOURCE --runroot ROOT` (no --allow-gpu).
+
+Dirac still owns two-habit runner/tests/handoff under/tmp; material remains
+already prepared at source d1e70002. Main schedules ONLY root0 pair next on
+GPU0, not roots1/2 if the symmetric own-map gate passes. No twohabitlaunchyet.
+Bernoulli six-file SEQ101–103 edit is EDIT-STOP, uncommitted and under Planck
+01a0971a-dcdb-7590-9111-d73adbf74fe3 read-only manuscript review. Do not change
+those bytes during review. Herschel memory runnerEDITSTOP; ownership released.
+Full sprint remains ACTIVE; no mechanism freeze/generalG3/P1/G5/H1/H2 claim.
+
+Everything below is a HISTORICAL snapshot; these live rows supersede it.
 
 ## Mission and controlling steer
 
