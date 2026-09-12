@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:04 UTC**.
+Latest reconciliation: **2026-09-12 11:13 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -46,13 +46,14 @@ solved puzzles(1900060/62)have solutions absent training. Actual64firstprompt
 bytes match saved source;48uniquecompletions independently checked; actual
 material→fit→adapter→probe bindings and remote weight hashes verified.
 Weak single-seed external-oracle result, not G2/parenting/clean lineage.
-**Active replications:** sourcebc4250ed, node3GPU1seed1controller64646
-at10:50:46.784304UTC andGPU3seed2controller64744at10:50:57.738575UTC.
-Each holds oneGPU through sequential useful→corrupt fits/probes. Roots
-`astra_mini_sudoku_seed{1,2}_20260912_attempt1`, exact seed0corpusbytes,
-96steps/arm and16samecanaries,900sfit+2100spair perarm. PreserveGPU1/3
-reservations across botharms/reloads. No automatic extra seeds. Spec
-ASTRA_MINI_SUDOKU_REPLICATIONS_2026-09-12.md. Await full paired outcomes.
+**Terminal replications SEQ-073:** sourcebc4250ed, node3seed1controller64646
+completed11:09:16UTC andseed2controller64744completed11:09:56UTC. Bothgone,
+allownedcleanupverified,GPU1/3reservations released. Acrossseeds0/1/2useful
+solves2/3/5of16,corrupt0/1/0,allOFF0; netgains2/2/5,mean3/16. Small
+directional effect repeats on shared16boarddevelopment panel, not strong
+G2/generalreasoning orparenting. Fullmaterial/fit/probe audits pass,0prompt
+mismatches,remoteweights rehashed. Sourcecapsulee45c272e…; fullmemo
+ASTRA_BEHAVIOR_REPLICATION_TERMINAL_2026-09-12.md. No automatic extra seeds.
 Parent-free learning/retention/campaign remain incomplete.
 
 **Active prefix-mask comparison:** node3GPU0controller73820, started11:04:20UTC,
@@ -64,8 +65,12 @@ unchanged; fact/lesson masks change only. Native conservative boundary masks
 after initial CPUrefusal.749,985input/422,925supervised passes, no truncation.
 49CPUtests and native token preflight pass.2700sworker cap and GPU0reservation
 throughreloads. No fullC11guard or KLobjective. See ASTRA_PREFIX_MASK_COMPARISON_2026-09-12.md.
-Turing implements source-linked P0wake exporter/tests in two new owned files;
-no child-material fit selected or launched. Unrelated dirty gpu/codex rules
+P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
+lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
+Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,
+teacherbytesexcluded, no universalNOTEsyntaxgate. One seed0material-fork
+utility comparisonselected, launcher/testimplementationTuring-owned; notyet
+launched andnotisolatedparenting. Unrelated dirty gpu/codex rules
 preserved. Concurrent watcher notebook append merged without dropping either
 side; main pushes normally, no rebase/stash/force.
 
