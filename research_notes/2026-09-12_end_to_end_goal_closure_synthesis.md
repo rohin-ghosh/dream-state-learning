@@ -265,6 +265,25 @@ repeatability. Result-blind watcher audit:
 
 ## One ordered evidence ladder
 
+These labels localize failures; they are not seven independently powered
+paper claims. The minimum decisive paper program is only three studies:
+
+1. qualify one selective conditional writer (`W0`), with `W1` reduced to one
+   old/new coexistence canary;
+2. run one two-cycle `M-core` study that combines an authentic child
+   action--public-outcome source, a necessary pre-blueprint child DREAM
+   organization decision, and SLEEP-dependent delayed old-plus-new action;
+   use standalone `S` only as a one-to-three-root feasibility gate; and
+3. run one five-branch `L-core` lifetime study (`P-RUN`, `P-FROZEN`, `U-RUN`,
+   `U-FROZEN`, `P-TEXT`).
+
+Compression remains a downstream semantic rate--distortion endpoint after
+connected utility, not a prerequisite for starting M/L. Detailed W/S/M
+subgates below remain valuable falsifiers and receipts, but they should not
+multiply into separate confirmation populations unless a stronger adjective
+is still worth its compute. Independent minimum-program audit:
+`research_notes/analysis/2026-09-12_think_dream_sleep_minimum_decisive_program_audit.md`.
+
 ### W0 — selective supplied writer
 
 V10R1 did not close this gate: attempt 1 was a zero-step infrastructure abort,
@@ -278,24 +297,40 @@ recipe, evaluated through four root-map adapter fits, can carry several
 conditional native actions under held renderings without converting them into
 a global habit or damaging the ACT interface.
 
-If the fresh exact-row control passes and the unchanged writer still fails,
-the next recipe screen is not a rank sweep. Attempt 2 already drove final
-training loss to about `.12`; the unresolved split is storage versus
-extractability and locality. Use the predeclared rank-8 2x2: lexical-query
-views versus cross-view rendering, each with or without a targeted OFF-KL
-scope anchor. Save step 128 and 256 from the same fits. Separate exact-train
-scoring, fresh-held scoring, strict generation, and spill/wrong-root panels so
-the outcome is labeled `STORAGE_FAIL`, `STORED_NOT_EXTRACTABLE`,
-`EXTRACTABLE_INTERFACE_FAIL`, or `SELECTIVE_BINDING_WITH_SPILL` rather than a
-generic writer failure. Design:
-`research_notes/analysis/2026-09-12_post_v10r2_writer_recipe_factorial.md`.
+The next eligible W0 experiment is the fresh semantic-action V10R2 `Q0`, not a
+frame-memory repair. Its exact-row OFF carrier first tests direct copying and
+full-candidate preference between two real organism actions, `-mem2reg` and
+`-gvn`, on four fresh root-map cells. Every cell must independently reach
+15/16 correct in both generation and scoring, with the frozen validity,
+redirection, native-interface, custody, and replay conjunction. Failure seals
+an assay-invalid zero-fit result. Only a complete carrier pass automatically
+releases exactly four new clean-base canonical-query fits. All four fitted
+cells must then pass W0 conjunctively; roots/maps are not independent learners
+and cannot be pooled or majority-voted.
+
+If that canonical semantic W0 fails, classify it before choosing a repair.
+Use semantic cross-view `X0` only for exact-train storage with failed fresh-form
+extraction. Use an additive frozen-OFF KL anchor, trained on a bank disjoint
+from every locality evaluation prompt, only when acquisition/extraction works
+but held locality fails. Run the repaired rank-8 `Q0/X0/QA/XA` 2x2 only if
+both defects remain. Save step 128 and 256 from the same fits and keep exact-
+train scoring, fresh-held scoring, strict generation, and spill/wrong-root
+panels separate so the outcome is labeled `STORAGE_FAIL`,
+`STORED_NOT_EXTRACTABLE`, `EXTRACTABLE_INTERFACE_FAIL`, or
+`SELECTIVE_BINDING_WITH_SPILL` rather than a generic writer failure. The old
+factorial draft is not executable unchanged: it contains stale artificial
+targets, an unresolved request denominator, anchor/evaluation overlap, and a
+memory-gradient multiplier that confounds preservation with lower
+acquisition. Current decision audit:
+`research_notes/analysis/2026-09-12_selective_writer_next_experiment_audit.md`.
 
 The negative prefix-mask result is not a fifth recipe arm. It is evidence that
 lowering prompt-side supervision alone trades away acquisition before it
-solves locality. The 2x2 above asks the remaining higher-information
-questions: whether the same relation is extractable across semantic views,
-and whether preserving the frozen base distribution outside the keyed
-condition prevents a learned relation from becoming a global action habit.
+solves locality. The later conditional treatments ask higher-information
+questions only after canonical W0 localizes the defect: whether the same
+relation is extractable across semantic views, and whether preserving the
+frozen base distribution outside the keyed condition prevents a learned
+relation from becoming a global action habit.
 
 A pass establishes supervised seen-key conditional-policy carriage only.
 
@@ -588,29 +623,32 @@ model, children, and task families.
    `R2_B_seed4`, `R4_B_seed601`, and `RP_B_seed400` under
    `/localhome/local-rohing/v6_out/pretest_write_ab/` finish unchanged. Consume
    only terminal `summary.json`; do not restart or promote partial panels.
-2. Preserve both failed V10R1 roots and the two development diagnostics. Run
-   the fresh generation-plus-scoring exact-row control; fit nothing if it
-   fails. If it passes, run a fresh V10R2 under the symmetric chat/response
-   contract. If the unchanged writer fails, use the rank-8 cross-view x
-   targeted-anchor screen above and confirm its winner on fresh roots. W1 is
-   eligible only after a sealed/replayed W0 pass.
-3. In parallel, run the no-write `P0-COACH` adaptive-parent test on fresh
+2. Preserve both failed V10R1 roots and every development diagnostic. Run the
+   fresh semantic-action exact-row generation-plus-scoring carrier; fit
+   nothing if it fails. If it passes, run exactly four canonical `Q0` V10R2
+   fits. Route any failure by storage/extraction/locality subtype, and run at
+   most the one bounded repaired writer screen above. W1 is eligible only
+   after a sealed/replayed W0 pass.
+3. Run one old/new cumulative-replay coexistence canary. It is a waste-prevention
+   gate for M, not a separate powered paper result.
+4. Close the CPU M0 theorem/shortcut/air-gap proofs and four exact-text roots.
+   Then run two LoRA `M-core` kill-gate roots with exactly three trained
+   conditions: `FULL_AUTH`, `OUTCOME_SHUFFLED`, and `DREAM_NULL`. Reuse each
+   artifact for SLEEP-off, wrong-life, row cuts, goal/outcome twins, catalog
+   permutations, and other inference-only interventions. This integrates S's
+   authentic action--outcome contrast into the end-to-end mechanism instead of
+   funding a separate eight-root S population.
+5. Only if both M-core kill roots have the predeclared direction and every
+   noncompensatory trace gate passes, freeze M and run one fresh jointly powered
+   confirmation cohort. Qualify the single evolving-text system in DEV.
+6. In parallel, run the no-write `P0-COACH` adaptive-parent test on fresh
    homologous tasks. Only the child's own plan reaches the apply task; no
    parent text or answer does. Do not retry the failed static record lesson by
    increasing LoRA heat, because no eligible record reached the writer.
-4. Run S from mechanically joined executed-action/public-outcome events before
-   any own-action/outcome-source or combined-organism claim. Treat grounded
-   child reflections as enrichment, not a source prerequisite.
-5. Close CPU M0 and the scripted oracle.
-6. Run exact-text M on four roots and extend to eight only if its frozen gate
-   passes.
-7. Run a PCFL-specific E0, then the presealed two-root LoRA core.
-8. Add complete controls and run at most eight LoRA M-DEV roots; freeze M and
-   qualify ACTIVE_TEXT.
-9. While M is unresolved, rehearse only CPU/open lifetime plumbing and the
-   two-cycle bridge. Scientific L adaptation waits for the learning mechanism
-   freeze.
-10. Run eight-root five-branch L-DEV, then separately powered M and L
-   confirmations. Keep `P-TEXT` concurrent within confirmation roots, or use a
-   separately randomized independent cohort if the resource cap requires it.
-11. Run compression only after connected utility is established.
+7. While M is unresolved, rehearse only CPU/open five-branch lifetime plumbing,
+   equated form rotation, retention panels, and the two-cycle bridge. Then run
+   one five-branch L-DEV and one fresh confirmation cohort under the blinded
+   root-level sizing rule.
+8. Run semantic rate--distortion only after connected utility is established;
+   do not put physical compression or the word `saturated` on the critical
+   path.

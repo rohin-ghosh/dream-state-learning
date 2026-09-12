@@ -2940,6 +2940,29 @@ Proposed freshroots astra_A1_preservation_bank0_ts2_lam0_20260912_attempt1 and l
 
 Coefficient0 controller85200 started11:46:17.810038UTC, GPU0, root astra_A1_preservation_bank0_ts2_lam0_20260912_attempt1. Coefficient0.1 controller85282 started11:46:53.603720UTC, GPU2, root astra_A1_preservation_bank0_ts2_lam01_20260912_attempt1. Both source290a9ea03387176f7ba75478552db3eafa844db2; exact launch receipts committed. FreshGPUXML/CUDAenvironment/queuechecks pass for each; no unrelated work displaced or manualkill. Continuous reservations persist through cache/fit/evaluation gaps;3600sowned-worker caps. Controller85200verifiedalive; model-loading log only so far, no completed optimizer/result claim. Actual timing/profile and frozenOFF distributions pending. GPU1rawfork custody remains with main until terminalcapture verifies cleanup.
 
+## [Codex watcher — recommendation, not ruling] 2026-09-12 11:47 UTC — preservation is bounded DEV; semantic W0 remains the decisive next writer gate
+
+Fresh independent review of SEQ-071/074 and the current writer contracts agrees
+that the prepared coefficient-0/0.1 preservation pair is a legitimate bounded
+locality diagnostic, but it cannot establish conditional binding and may lower
+spill only by suppressing acquisition. Do not let its outcome replace or delay
+the fresh semantic-action V10R2 order: exact-row carrier first, then exactly
+four clean-base canonical Q0 root-map fits only on a complete carrier pass.
+All four W0 cells must pass conjunctively. The old frame surface already closes
+LR-only and mask-only search; additional coefficients should stay parked as
+the builder specified.
+
+If canonical semantic W0 fails, classify the failure before selecting a repair:
+cross-view X0 only for stored-but-not-extractable rows; a disjoint-anchor
+additive OFF-KL treatment only for acquired/extractable rows that spill; the
+repaired 2x2 only if both defects remain. The existing factorial draft is not
+execution-ready unchanged: it still contains artificial a0/a1 targets, an
+unfrozen request denominator, anchor/evaluation locality overlap, and a
+0.8 memory multiplier that confounds preservation with weaker acquisition.
+Watcher memos: `2026-09-12_selective_writer_next_experiment_audit.md` and
+`2026-09-12_think_dream_sleep_minimum_decisive_program_audit.md`. No pause,
+launch, source edit, or resource mutation requested.
+
 ## [Builder] 2026-09-12 11:49 UTC — SEQ-075: neither historical raw-wake package improves
 
 Rawfork completed11:43:29UTC,controller77998absent11:43:37UTC;node3GPU1reservation released after all8cleanupreceipts verified. Allfourlesson/shamOFF/ONfirstACTcells0/16. Partialmeans lessonON.0475,shamON.010546875,bothOFF.1125; absolutegains−.065/−.101953125. Positivecontinuousdifference-of-gains+.036953125is lessdegradation,notimprovement. All64episodes exactlyoneACT,no laterrescue; allpromptbindings and137capturehashes pass, bothremoteadaptersrehashed. Capsule3508c27cf9832f25c059d96b990ff285cf6011bad2714aa8e2d175ad8a368fd6; memo ASTRA_RAW_WAKE_FORK_TERMINAL_2026-09-12.md and exactanalysis/review/capturecommitted. No manualkill; normalenginecleanupescalations retained withtimestamps in memo.
