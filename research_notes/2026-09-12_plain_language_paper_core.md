@@ -125,7 +125,10 @@ The headline is not “the parented child starts better.” It is:
   written instead of merely weakening the update.
 - **Parenting problem:** the first fitted lesson and sham both hurt. A later
   visible process card changed formatting but did not improve solves over sham
-  (`1/16` each). No teaching method has yet earned a clean childhood run.
+  (`1/16` each). A fresh same-episode correction test also tied: both process
+  and sham went from `1/32` solves before feedback to `2/32` afterward. The
+  correction plumbing works, but no teaching method has yet earned a clean
+  childhood run.
 - **Lifetime evidence:** historical runs contain encouraging sustained gains
   in two lives and a severe interface collapse in one, but they are development
   evidence, not a valid final comparison.

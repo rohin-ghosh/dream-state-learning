@@ -44,7 +44,11 @@
   teacher-present format signal, and every extra complete-format output still
   violated puzzle constraints. A post-hoc, 97-token-shorter no-teacher anchor
   solved `0/16`; it is descriptive and does not repair the process/sham tie.
-  No clean parented scientific adult exists.
+  A fresh same-episode process-correction path then executed correctly but
+  again tied sham: both arms moved from `1/32` first-wake solves to `2/32`
+  second-wake solves, while qualifying corrections were `1` process versus
+  `2` sham. This validates the feedback-to-next-wake plumbing, not a process
+  benefit. No clean parented scientific adult exists.
 - **Lifetime:** the clean design is independently raised parented versus
   matched no-teacher childhoods, each forked into RUN/FROZEN, plus concurrent
   `P-TEXT`. Active sham is used only to qualify lesson material upstream.

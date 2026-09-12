@@ -319,6 +319,18 @@ contrast. Terminal builder memo:
 anchor memo:
 `research_notes/astra_memos/ASTRA_NO_TEACHER_TERMINAL_2026-09-12.md`.
 
+A fresh same-episode process-correction diagnostic then closes only its
+bounded immediate route. On 32 new mini-Sudoku episodes per arm, process and
+matched sham both moved first-action solves from `1/32` on the first wake to
+`2/32` on the second. The process arm produced one qualifying one-action
+failure-to-success correction versus two for sham. It emitted more actions
+and consumed more generated/package tokens, but did not solve more tasks. The
+exact action/outcome/Scratchpad-to-next-prompt joins replay from the original
+sources, so the plumbing works; the primary process advantage is null. No
+training occurred, and this says nothing about persistence after SLEEP or
+better long-horizon/adaptive parenting. Exact builder memo:
+`research_notes/astra_memos/ASTRA_FRESH_CORRECTION_TERMINAL_2026-09-12.md`.
+
 ## One ordered evidence ladder
 
 These labels localize failures; they are not seven independently powered
