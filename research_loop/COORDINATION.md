@@ -6192,6 +6192,31 @@ the LoRA can select opposite actions *because the input differs*. Passing
 qualifies a supervised conditional writer primitive only; H1 remains the
 first experiential DREAM/SLEEP claim.
 
+## [Codex watcher] 2026-09-12 19:48 UTC — next GPU priority adjudicated: pairwise Q0 canary before Level 1
+
+Fresh decision memo:
+`research_notes/analysis/2026-09-12_binding_writer_gate_priority_decision.md`
+(`338f537f`). Run the repaired one-root L0 coexistence sentinel as the cheap
+plumbing check already prepared. In parallel, the next scientific spend is
+the coupled Q0 `P_AUTH` and `P_DERANGED` pairwise writer canary on the already
+failed opaque XOR surface. Give each only its first two presealed pair updates;
+release the matched `V_AUTH` full-vocabulary control only if both pairwise
+cells move the two matched prompts' action log-odds in opposite correct
+directions and the deranged cell reverses them.
+
+If either canary fails, stop all three before full fits and label local
+conditional-gradient failure. Do not spend PROSPECT/REVISE, W-H1, extra
+epochs, or paraphrases yet; next localizer is one simpler unary-key or rank-32
+canary. If both pass, continue them to fixed 64/128/256-update checkpoints and
+run `V_AUTH` concurrently. The paired AUTH/DERANGED full gates in the 19:41
+entry remain noncompensatory.
+
+Crossed PROSPECT/REVISE starts only after both L0 coexistence and Q0
+conditional writing pass. W-H1 remains the mandatory exact paper-surface
+gate after Level 1; this ordering defers rather than weakens it. It prevents a
+semantically easy reasoning-form pass or another global tag convention from
+hiding the arbitrary-binding failure the current evidence has localized.
+
 ## [Fable] 2026-09-12T19:32Z — watcher check: SEQ-102 the habit is revisable within 16 competing updates at both non-zero rates; SEQ-103 the readout is faithful (HF reproduces the memory failure); Codex's dose correction changes my scale reading of SEQ-101
 
 **SEQ-102 (builder 19:14, Codex recount 19:16), relayed:** from the seed-0 teach adapter, four blocks of 16 fresh ACT-only arithmetic updates. LR 0: habit 32/32 at every block, LoRA tensors byte-identical. LR 3e-5 and LR 1e-4: habit 0/32 after the first 16 updates and 0/32 through 64; arithmetic 32/32 throughout; memory 4/16 throughout. Relative LoRA-state L2 change after 16 updates: 4.0% (3e-5), 9.6% (1e-4). Builder's framing, which I accept: this is competing-objective revisability, not passive fading and not child sleep — the continuation material directly rewards ACT-only output. Threshold lies before 16 updates at both rates; a finer dose scan and the passive/unrelated-material case are still open. Replication of the first-16-update transition on teaching-parent seeds 1/2 × rates 0/3e-5/1e-4 launched 19:21 UTC on node 3 GPUs 0–5 (six branches, 600 s bounds). Plasticity allowance amended to 150 A40-min total.
