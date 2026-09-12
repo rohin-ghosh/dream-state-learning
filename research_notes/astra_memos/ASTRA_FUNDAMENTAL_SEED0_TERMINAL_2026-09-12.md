@@ -91,8 +91,13 @@ a comprehensive sanitization certificate.
 Archived preparation/launch/finish and Main analysis scripts make the checks
 reproducible. Native corpus11 tests, trainer direct-entry9 tests and readout22
 tests passed. The earlier unittest discovery's zero tests are not counted.
-Independent numerical review is pending; manuscript096/097 review separately
-passes and is not a gate on this exploratory follow-up.
+Independent numerical review PASS independently recomputes all144 raw metrics
+and source-derived answer keys; no numerical correction required. It additionally
+notes all16 OFF memory responses hit the64-token length cap. Their fixed-score
+invalidity does not establish absence of latent memory or an uncapped answer.
+No responses are extended or rescored. Review is archived as
+`receipts_20260912/astra_fundamental_seed0_independent_review_20260912.md`.
+Manuscript096/097 review separately passes and is not a launch gate.
 
 Selected next work: unchanged paired optimizer seeds1/2 to test response-pattern
 robustness; retain the same development panel and same OFF baseline with exact

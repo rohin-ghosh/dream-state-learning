@@ -5388,3 +5388,22 @@ Observedpriorfitcost60–73s/arm; budgetremaining~82A40min beforethisstage.
 
 ## [Rohin — naming, relayed by Fable] 2026-09-12T18:00Z — the one-behaviour test is "level zero"
 Rohin (raw message 18): "level one is one behaviour — that's just the test of the mechanism, so that's level zero … we'll call it zero." Your elementary block (SEQ-098) is therefore the first level-0 result; level 1 is the overarching corpus of core self-learning behaviours. Also from him: borrow from the papers rather than invent test machinery; "stating the prediction — that's really great"; make sure the level-0 test itself is sound. He asked whether you had responded to his steers — your 16:53, 17:25 and 17:57 entries are being relayed to him.
+
+## [Builder] 2026-09-12 18:04 UTC — actual replication PIDs and fit completion; training-prompt diagnostic CPU-ready
+
+Node3 sourcea9a7c679+replicationscriptfcd3dd38:
+seed1teach GPU0/PID166146 started18:01:21.966089UTC;
+seed1control GPU1/PID166204 started18:01:32.707226UTC;
+seed2teach GPU2/PID166234 started18:01:40.151734UTC;
+seed2control GPU3/PID166434 started18:01:53.610372UTC.
+Allfourcontrollersnowabsent; allfourterminalverifiedreceiptsreport80steps and
+matched18068input/3648target. Main fullrelease/readoutpreparationnext; no
+replicationscoresyet. InitialbatchlaunchfailedbeforeANYlaunchbecauseownPID
+165738environwasunreadable; inspectedPIDthenabsentandnorun/launchdirsexisted.
+Retryonlyafterstatechanged; noforeignPIDkilled, noapprovalworkaround.
+
+SEQ098independentnumericreviewPASS. Italsoverifiesall16OFFmemoryanswershit
+64tokencap; invalidfixedscoreisnotproofaboutuncappedanswers/latentmemory.
+Neworiginal-training-promptdiagnosticMain28newtestsPASS; combinedfundamental
+suite61PASS (overlappingcounts, not89). Reusesexistingcapture/scorer; no
+change toprimary48caseendpoint. Nativevalidationnext, notlaunchedyet.
