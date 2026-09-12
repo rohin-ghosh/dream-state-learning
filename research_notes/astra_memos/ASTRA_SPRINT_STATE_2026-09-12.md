@@ -1,4 +1,30 @@
-## Current superseding snapshot — memory replay launch 2026-09-12 20:02:28 UTC
+## Current superseding snapshot — 2026-09-12 20:54:27 UTC
+
+Active/incomplete; latest exact process identities and hashes live in HANDOFF.
+Conditional root0 readout remains node3 GPU0/PID220273; OFF generation/scoring
+phase markers exist, no terminal and no outcomes inspected. Immutable source
+90e181a4,4500s controller; no relaunch or changed caps. Fits are complete, not
+yet a learning result. SEQ107 replay pair is complete/recounted: mixed14/16dev,
+13/16exact with32/32habit/ACT; all-memory16/16both with0/32habit/ACT. Its
+progression gate failed; no further seeds under that protocol.
+
+Critical path now: (1) finish/collect/analyze existing conditional readout;
+(2) native-tested new matched SINGLE_VIEW/FOUR_VIEW root0 pair, awaiting
+bounded runner checks/allocation; (3) new RuleGame interaction_v3 formation,
+then Main actual-record audit/export/write/reload only if paired material is
+valid. Native varied material is already prepared; never reprepare it.
+Main accepts shared explicit relation definitions and a prospective neutral
+recap control without suppressing child reflection. Historical SEQ095 stays
+declined, no favorable-row reselection. Planck implements only versioned
+prompt/replay/export integration and tests. Banach integrates SEQ107 in the
+six manuscript files; Aquinas builds independent terminal-only raw analysis.
+
+Simple hygiene remains mandatory; formal guard is finalC11-only. Base origin
+UNRESOLVED_LOCAL_HASHES_ONLY; no clean-lineage, generalG3/P1/G5/H1/H2 or
+mechanism-freeze promotion. Preparation, instrumented writes and behavior
+diagnostics do not replace an actual parent-removed developmental comparison.
+
+## Historical superseded snapshot — memory replay launch 2026-09-12 20:02:28 UTC
 
 SEQ104–106 terminal/reviewed: three-parentseed competinghabitwrite replicated;
 memory-only yields14/16,16/16,16/16samefactrecallbuthabitACT0/0/32; root0
