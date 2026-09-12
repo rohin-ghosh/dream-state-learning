@@ -45,7 +45,7 @@ and choose an informative experiment. The experiment produces a new outcome;
 a second SLEEP adds it. A final task can be solved only by using one old
 connection and the newly learned fact together.
 
-The first draft used three trained versions to isolate the causes:
+The repaired design uses three first-sleep versions to isolate the causes:
 
 - **FULL:** truthful experiences plus the child's real connection.
 - **WRONG SOURCE BINDING:** the same material and connection, but selected old
@@ -53,16 +53,23 @@ The first draft used three trained versions to isolate the causes:
 - **WRONG DREAM CONNECTION:** truthful experiences, but evidence-matched wrong
   connections replace the child's organization.
 
-FULL must succeed; the two controls must fail only at the stages their missing
-ingredient should affect. A fresh audit correctly caught that the first exact
-version did not yet achieve this: its source shuffle changed labels rather
-than a true action--outcome contingency, and its correct DREAM links could be
-read directly from visible endpoint syntax. The design is being repaired on
-CPU before any M-core training. The final version must use crossed real action
-outcomes, make useful connections distinguishable only by experience, include
-the second outcome-twin write, and compare SLEEP-2 with an equal-work old-plus-
-pad write. Once repaired, it is the smallest experiment that tests THINK,
-DREAM, and two SLEEP writes together rather than storage alone.
+FULL must succeed; the two controls must differ only at the stage their
+missing ingredient should affect. The first exact version failed that test and
+was discarded before training. In v2, one child tries both actions four times
+in the same opaque situation; the truthful experience has a 3-to-1 outcome
+preference while the source control preserves every action and total outcome
+but makes both actions 2-to-2. For DREAM, all eight possible connections look
+identical from their endpoints and frequency; only the child's earlier
+joint-versus-single-component experiments reveal the useful two. A wrong-
+connection control preserves the same number and shape of memories.
+
+Only after those first-sleep tests pass do we pay for three second-sleep
+writes: one for each of two truthful possible outcomes and one equal-work
+old-memory-plus-pad control. The final task needs both an old connection and
+the new outcome memory. This v2 repairs the known causal flaws on paper and is
+now under fresh independent review and CPU/exact-text closure. If it survives,
+it is the smallest experiment that tests THINK, DREAM, and two SLEEP writes
+together rather than storage alone.
 
 ### 3. Learning improves a life, not just one probe
 

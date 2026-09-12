@@ -450,59 +450,76 @@ redirect with old content. Exact adversarial review:
 
 The compiler may select a precommitted branch after the outcome and verify a
 pre-outcome child link proposal. It may not originate or repair either. The
-minimal exact design uses only three trained conditions, each written at S1
-and rebuilt cumulatively at S2 with the exact writer that actually qualifies
-at W0:
+first exact M draft failed independent review before spending a GPU-hour: it
+tested cue polarity rather than a crossed action--outcome contingency, exposed
+useful DREAM links through endpoint syntax, omitted a truthful outcome
+carrier, allowed nuisance coincidence to masquerade as a correct write, and
+lacked an equal-work second-SLEEP control. That draft is superseded.
 
-- `FULL_AUTH`: truthful child action--outcome atoms, truthful source bindings,
-  the six admitted child-proposed DREAM links, and the later truthful row;
-- `SOURCE_BINDING_SHUFFLED`: every path/calibration/DREAM byte is identical,
-  but exactly two Phase-A cue--family compiler rows swap immutable outcome
-  donors; Phase-C action/outcome and the new row then unfold truthfully; and
-- `DREAM_NULL`: every source binding is truthful, but exactly the six DREAM
-  link slots are replaced with byte/dose-matched null rows.
+The repaired v2 candidate stages six fits per successful root:
 
-Before model execution, exact deck-diff receipts must prove that the source
-shuffle changes only those two derived source-binding rows and that DREAM-null
-changes only the six link slots. Source-shuffled must match FULL on Phase-B
-path traversal, or it is a generic-interference failure; DREAM-null must match
-FULL through Phase-C source use and acquisition, or it damaged more than
-organization. These checks prevent one corrupt arm from simultaneously
-breaking source truth and DREAM structure. Full contract:
-`research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design.md`.
+```text
+SLEEP-1, run first
+  FULL_OLD
+  SOURCE_DERANGED_OLD
+  DREAM_DERANGED_OLD
 
-However, a fresh-context adversarial audit now sets this exact draft to
-**REWORK before any M fit**. Five defects remain: swapping two deterministic
-cue labels tests polarity rather than a crossed action--outcome contingency;
-the six DREAM answers are mechanically recoverable from visible endpoints;
-the truthful outcome twin requires an additional S2 carrier and is not
-inference-only; the shuffled arm has an unresolved 0.5 chance of accidentally
-writing the correct row; and `NO_SLEEP_2` lacks a same-work matched
-old-plus-pad S2 carrier. The exact reader catalog also needs an observability
-proof. Therefore the three names and cost below are provisional until the
-repair lands. The information-efficient repair keeps S1 at three arms, stages
-the two-root S1 kill before any S2 fit, replaces syntactically recoverable
-DREAM/null logic with evidence-distinguished organization plus a mechanical
-baseline, and spends saved S2 fits on the truthful outcome twin and old+pad
-control. Audit:
+SLEEP-2, only after every S1 gate passes
+  FULL_NEW_h0
+  FULL_NEW_h1
+  FULL_OLD_PLUS_PAD
+```
+
+`FULL_OLD` is written from the child's authentic repeated actions and public
+outcomes plus its pre-blueprint link choices. `SOURCE_DERANGED_OLD` preserves
+the same actions and global outcome counts but makes action and outcome
+independent within one opaque situation. `DREAM_DERANGED_OLD` preserves every
+authentic source row but binding-swaps the child's two admitted links into
+schema-, hit-, and dose-matched wrong links. Source is therefore identified at
+Phase C and DREAM at Phase B; neither corrupt arm is spuriously required to
+fail the later chain.
+
+The DREAM choice is now eight endpoint-, type-, degree-, age-, frequency-, and
+joint-success-matched lanes. Only earlier joint-versus-single-component public
+evidence distinguishes the two necessary links. Report the child against
+endpoint-join, frequency/recency, exact `1/28` random selection, and a declared
+CPU necessity ceiling. This can support child-emitted, experience-conditioned
+organization; call it DREAM intelligence only if it beats every frozen
+non-oracle policy.
+
+The two truthful public outcomes are potential-outcome twins inside one
+independent root and receive separate cumulative S2 carriers.
+`FULL_OLD_PLUS_PAD` is a clean-base, same-initialization/data-order/dose second
+fit with no new row. The actor sees only typed queries over public anchors; a
+fixed 32-candidate recognition bank remains inside the reader. A four-read
+atoms-only exact-text ceiling shows that the atoms contain the answer while
+the child link saves one of the three allowed reads. The admission truth table
+forbids nuisance outcomes from creating a row even when their bit happens to
+equal the hidden target.
+
+This v2 closes the previous findings on paper but remains a **candidate pending
+fresh independent re-audit and CPU/exact-text closure**, not permission to
+fit. Canonical candidate:
+`research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design_v2.md`.
+Prior audit:
 `research_notes/analysis/2026-09-12_m_core_revised_three_condition_adversarial_audit.md`.
 
 Release three endpoints separately:
 
 - **M-E2 connected carriage:** both atoms are mechanically necessary; authentic
-  link beats truthful-null and same-build read permutation, with off,
+  link beats binding-matched DREAM derangement and same-build read permutation, with off,
   wrong-life, spill, and interface controls.
 - **M-E4 goal traversal:** two incompatible goals over identical public starts
   change the first relevant query, complete path, and action; cuts remove value
   and truthful twins redirect it.
-- **M-E5 expansion:** authentic signal changes the information-seeking action;
+- **M-E5 expansion:** the authentic crossed signal changes the information-seeking action;
   the public outcome selects a precommitted new row; one cumulative adapter
   retains old content and later uses old+new together. No-write, matched sham,
   old-cut, reachout-off, adapter-off, and wrong-life must remove authentic
-  value. `OUTCOME_VALUE_TWIN` must redirect the written row, path, and delayed
-  action. `SOURCE_BINDING_SHUFFLED` must redirect the selected experiment and
-  destroy the final old-plus-new trace while leaving Phase-B path traversal
-  intact; that is the source-binding causal control.
+  value. The two separately fitted truthful outcome twins must redirect the
+  written row and delayed action. `SOURCE_DERANGED_OLD` must reduce the
+  counterbalanced inverse-action endpoint while leaving Phase-B path traversal
+  intact; it is not rebuilt at S2 and is not required to fail the final chain.
 
 The typed four-read/read-only-LoRA condition is a mechanistic ceiling. Before
 M-DEV, separately freeze a native-policy endpoint using the same adapters and
@@ -513,25 +530,27 @@ reserve the word **agentic** for a separately passing native endpoint.
 
 Do not infer causality from an arbitrary full-chain success rate. Keep the
 failure-inclusive CHAIN conjunction and exact interval as descriptive
-reliability. The primary M-E5 causal endpoint is the paired root contrast:
+reliability. The primary source endpoint is the paired root contrast at Phase
+C:
 
 ```text
-FULL_AUTH -> authentic source binding -> truthful action/outcome/write -> delayed value
+FULL_OLD -> authentic crossed source contingency -> inverse action
 versus
-SOURCE_BINDING_SHUFFLED -> swapped old binding -> descendant action/outcome/write -> same delayed goal
+SOURCE_DERANGED_OLD -> within-situation independent outcomes -> inverse action
 ```
 
-Randomize hidden assignment/order and use exact paired inference. The staged
-minimum is CPU/theorem and exact-text closure, two LoRA kill roots, eight total
-DEV roots, then one fresh 16-root confirmation only if every noncompensatory
-gate survives. There are six fits per root (three conditions times two
-sleeps): 12 kill-gate fits, 48 total DEV fits, and 96 confirmation fits. At the
-current audited estimate this is about `26--56` A40-hours all-in, while a bad
-design should die below roughly five A40-hours. DEV is never pooled with
-confirmation, roots—not fits or checkpoints—are the independent units, and
-one failed fit makes its root adverse rather than triggering seed search.
-These counts describe the superseded draft and must be replaced by the repaired
-S1-first/S2-conditional arithmetic before launch.
+Expansion is identified separately by truthful `FULL_NEW_h0/h1` versus the
+matched `FULL_OLD_PLUS_PAD`, plus old/new cuts. Randomize hidden assignment and
+order and use exact paired inference. The staged minimum is CPU/theorem and
+exact-text closure, a two-root S1 kill (**6 fits**), a two-root S2 kill only if
+S1 passes (**12 cumulative fits**), eight total DEV roots (**48 maximum**),
+then one fresh 16-root confirmation (**96 maximum**) only if every
+noncompensatory gate survives. Worst-case DEV plus confirmation is 144 fits;
+the provisional all-in estimate is `28--60` A40-hours, to be replaced by
+measured exact-deck time. A bad source/DREAM design should die in the S1-only
+kill below roughly three A40-hours. DEV is never pooled with confirmation;
+roots--not twins, fits, goals, or checkpoints--are the independent units, and
+failed roots remain adverse zeros rather than being retried or replaced.
 
 ### L — increasing-lifetime learning
 

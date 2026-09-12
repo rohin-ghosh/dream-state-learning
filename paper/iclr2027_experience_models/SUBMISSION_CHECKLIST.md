@@ -17,13 +17,14 @@
   exactly four canonical W0 fits only if the carrier passes. A bounded
   preservation-KL diagnostic is still being reduced, but cannot substitute
   for semantic conditional binding.
-- **Mechanism:** the first exact M-core draft is under rework after a fresh
-  adversarial audit found five identification gaps: source polarity was not a
-  crossed action--outcome contingency, DREAM answers were recoverable from
-  visible syntax, the outcome twin needed an uncounted S2 fit, the shuffled
-  arm had a chance-success contradiction, and the second write lacked a
-  matched old+pad fit. It cannot begin LoRA evidence until these close, W0
-  passes, and the one coexistence canary qualifies.
+- **Mechanism:** the first exact M-core draft failed a fresh adversarial audit
+  before GPU spend. Its v2 replacement now uses a crossed repeated
+  action--outcome source, eight syntax/frequency-matched DREAM candidates,
+  binding-matched source and DREAM derangements, separate truthful outcome
+  carriers, a matched old+pad second write, and a closed typed reader. It is
+  still a watcher candidate under fresh re-audit, not executable evidence. No
+  M-core LoRA work begins until that review and CPU/exact-text closure pass,
+  W0 passes, and the coexistence canary qualifies.
 - **Parenting:** no useful lesson has qualified. Fitting historical
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham
@@ -50,10 +51,10 @@
    locality separately rather than starting another broad hyperparameter
    sweep.
 2. Pass one old/new cumulative coexistence canary.
-3. Repair and close M-core on CPU/exact text, then run the two LoRA roots
-   S1-first and pay for S2 only after the S1 gates pass. Recompute confirmation
-   cost from the repaired fit count; do not reuse the superseded `26--56`
-   A40-hour estimate.
+3. Close M-core v2 under fresh review and CPU/exact text, then run the two LoRA
+   roots S1-first: 6 S1 fits, followed by 6 S2 fits only if both roots pass.
+   The maximum remains 48 DEV plus 96 confirmation fits; replace the
+   provisional `28--60` A40-hour range with exact measured deck time.
 4. Qualify one actually useful visible lesson against matched sham and
    no-teacher before any parenting-derived fit.
 5. Raise clean childhood roots only after one-SLEEP parent-deleted persistence
