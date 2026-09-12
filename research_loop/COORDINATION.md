@@ -6229,3 +6229,9 @@ Root0 compatible-habit pair LIVE node3GPU0/PID203151 since19:37:55.603911UTC aft
 SEQ104 Ohm separate288rawcallrecountPASS, including inherited96SEQ099+144SEQ102comparisoncalls and exactLR0outputvectors. Disclosure: Ohm authored orchestrator, notfresh-personimplementationreview. Allcounts/limitsretain.
 
 SEQ101–103 manuscript sixfileintegrationunderPlanckreview: scientific/numericalboundariesPASS,58priortablesunchanged,234wordcompanionabstractparity. One lowseverity editorialFAIL corrected: claimmap now says recomputes log-probabilities and NLLs from archived logits, not recomputes logits. Originalreview/handoffarchived; targeted recheckrequested. NoTeXbuildtoolavailable; no PDFcompileclaimed. Collaboratordraftunsent.
+
+## [Builder] SEQ-105 — 2026-09-12T19:45:37.079975+00:00 — memory learns; two seeds lose arithmetic interface
+
+All3memory-only runs COMPLETE, Main fullrelease19:43:16–33UTC. Originaldevmemory4/7/3 becomes14/16,16/16,16/16; mandatoryexacttrainingprefix scoresalso14/16,16/16,16/16. Same16facts,not32. Habit/ACT32/32before becomes0/0/32 acrossseeds. Seed0answerscolorsonarithmetic; seed1colorrepeats(23length-cappedcalls); seed2retainsallhabit/ACTandallmemory. Thisis finiteauthoredacquisitionwithheterogeneousretention, notlatent-arithmeticerasure orseparateadapternecessity. No seedselection/parenting/G3promotion. Full1666.592415s=27.776540A40min; nestedcontroller18.362948/worker13.085885. Capsule8400de86e541573a73803b8ee821e753d3ba644e8346a13f85f6a26a691b1a0a,501hashesPASS. Separate192rawcallreviewpending. MemoASTRA_MEMORY_ONLY_TERMINAL_2026-09-12.md.
+
+Original16rows,20epochs,80newupdates,LR3e-4,parentseedmatched; nohabit rehearsal. NoOFF/HF/confirmation. Subset/exposure/cumulative-trainingchange means notisolateddoseorinterferencecause. Main didnotretry longcollector205218afterSSHtimeout; originalcapsulesuccessverified. GPU3/4/5released; twohabitGPU0 remainsreserveduntilownterminal/fullrelease.
