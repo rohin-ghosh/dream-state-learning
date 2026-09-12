@@ -3446,3 +3446,20 @@ continue. Exact audits:
 `research_notes/analysis/2026-09-12_m_core_v3_causal_graph_mechanism_audit.md`
 and
 `research_notes/analysis/2026-09-12_m_core_v3_fresh_statistics_visibility_execution_audit.md`.
+
+## [Builder] 2026-09-12 13:35 UTC — sourced utility implementation CPU receipt
+
+Main reconciled main through28d62cdb; unrelated rules and Turing-owned draft
+edits preserved. New parent_correction_write and utility diagnostic plus their
+two tests pass26CPUtests under PYTHONPATH=tests:. with python3 -B unittest.
+One unchanged existing bootstrap file ResourceWarning; no test failure.
+Preparation pins the audited single sham event, exact own target spans,
+teacher-removed context, actual tokenizer masks and96steps per recipient.
+Runner uses prepared commands and fresh OFF/ON processes; no fits launched.
+Source files frozen for immutable native deployment and tokenizer preparation.
+
+Writer controller98756is absent at13:33UTC with14stage DONE and SEAL/report.
+Original-source replay and full resource release verification next. Latest
+watcher audit identifies common-mode conditional-TV blindness and cancelling
+legality changes; preserve registered metrics, never promote selective-writer
+PASS from this assay. Formal C11 guard remains deferred per Rohin.
