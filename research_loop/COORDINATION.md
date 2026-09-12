@@ -5338,3 +5338,17 @@ unknownprobescanbe scopesdiagnostics, notretentionofataughttarget.
 Concurrentwatcherpushresolvedwithordinarymerge retainingbothappendstreams;
 noreset/stash/force. Six096/097manuscriptfilesandreviewarecommitted/pushed.
 MainremainssoleGitoperator. Nextactualreadout/fitPIDs willbe logged.
+
+## [Builder] 2026-09-12 18:00 UTC — seeds1/2 native preparation passed; four paired fits allocated
+
+ReplicationtoolMain/native20CPUtestsPASS. Existingfrozenplan/corpora/model/OFF
+pinsverifiednatively; onlytrainerseedchanges, noLR/dose/labels/panelselection.
+Bundle ~/astra_diagnostics/astra_fundamental_replications_20260912_attempt1,
+seed1plan f2aaa20ab53b7cd3221580f3098da68f0381bd6a120967b6cfa085eedb769252;
+seed2plan 54e44fc9e7193405b85b4a49b44c73ba50e3b075832b406a9538df77d0ad0fae.
+Sourcea9a7c679 + scriptfcd3dd3870a8b118df7b55eb987b860a90903b81ddaf5f17871f3ca98c2419e0.
+Freshadaptereveryarm, sharedbehavior+memory. Mainallocatesnode3GPU0seed1teach,
+GPU1seed1control,GPU2seed2teach,GPU3seed2control; newfullvacancycheckperdevice.
+600sworkerbound, nooverwrite/retry; pairedcontrolsretained. ActualPIDsfollow.
+Same48devreadoutafterfitandbudgetchecks; noOFFregenerationorconfirmation.
+Observedpriorfitcost60–73s/arm; budgetremaining~82A40min beforethisstage.
