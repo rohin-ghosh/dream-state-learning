@@ -86,3 +86,20 @@ Full scope remains representative G0–G3, P1, integrated matched pilot and
 analyzed bounded follow-ups, measured costs, full canonical manuscript, abstract,
 unsent collaborator draft, independent claim review and reproducible handoff.
 An initial job, toy pass or outline is not completion.
+
+## Execution update — 2026-09-12 approximately 06:32 UTC
+
+Five real-HF writer experiments are queued on node2 (0045–0049), bound to
+immutable source commit `f2e5b65e9c5dc3f7b7cdf15cb1b97b114ad4994d`.
+See `ASTRA_RUNS_2026-09-12.jsonl` and the notebook for exact input receipts,
+paths, configuration, resource cap and status. Do not resubmit queued work.
+The older restart paragraph's "no launch yet" describes its earlier checkpoint.
+
+B0 protocol amendment before outcomes: both arms use ENFORCE, minimum64,
+not shadow, so legacy harness-authored exemplars cannot become training bytes.
+Fresh task-exposed roots, no lessons/parent, task/training seed9100, rank8.
+Orphan/source-mismatch record rejection and neutral-cache binding are repaired;
+occurrence-unique execution IDs are still being repaired before B0 launch.
+Clean RG nursery portability, actual parent removal, and lifecycle guard
+integration remain unqualified. The standalone guard passing CPU tests alone
+does not make any existing adult clean.
