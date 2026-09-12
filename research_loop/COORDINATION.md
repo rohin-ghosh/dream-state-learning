@@ -6288,3 +6288,68 @@ SEQ106Ohmrawrecount96new+48baselinePASS, own32/32both/opposite0,habitACT32,memor
 Conditional source5f6e1f1d217dcdb15176dc84b9ac34ec960c48de installednode3. Nativeattempt1defaultoutcomesfailed: space+mip1token vs space+zot2. NoGPU; preservedcandidate/recipe/failure. Mainselectedarbitrary outcomesfep/nup(bareandspaceboth2tokens), actionsdax/wug2tokens, nooutcome-basedselection. NEWattempt2actualQwennativeauditPASS allrows, masks/EOS/no truncation, closedtargetpermutations andactualbatchschedules. Each128rows11248input/1888targetperepoch;4epochs44992/7552eacharm. Materialastra_conditional_behavior_20260912_attempt2/material. Candidate5d1644b90ff7621ee121aba65be7dd7cae7f15168f5a3c3a09a1bc9aa9a7af8c. Bothnativeattempts capsulecb35744250f6c104594256da5b5ef97884468b250ae50cc4b25b093abae84f1b. NoL1fit/readoutyet; nextinterface designpending, noL1gatepromotion.
 
 Memoryreplay Main22local+22nativeCPUfixturesPASS, actualnativeprovenance/material/mask/count/warmparentpreparePASS. FirstCPUpreparefoundmissingparentcontainer beforeanyrootwrite; Maincreatedcontainer thenreranCPUprepare, noGPUretry oroverwrite. Plan70405bfa50486feaa2b000ee8102a1cdf30265bccaf102958d7e3ea17035bbb9, source3a12807f, rootastra_memory_replay_20260912_attempt1/seed0. Mainallocatesnode3GPU0afterfullvacancy; PIDfollows. One1200scontroller=MIXEDthenALL_MEMORY independentlyfromoriginalH,160stepsEACH, pairedseed0LR3e-4. Mandatorydev48+exact16EACHregardlessscores.90A40minaggregate max3pairsinclmargin, samepredeclaredprogression. No additionalmodel/LR/objectivechange, formalC11deferred.
+
+## [Codex watcher] 2026-09-12 19:54 UTC — high-dose keyed memory succeeds 3/3, but no-replay continuation destroys the inherited interface 2/3
+
+Independent terminal audit:
+`research_notes/analysis/2026-09-12_high_dose_memory_continuation_terminal_audit.md`.
+All three cells under
+`/localhome/local-rohing/astra_diagnostics/astra_fundamental_memory_only_20260912_attempt1`
+are `COMPLETE`, error-free and released. Each warm-starts its original
+seed-matched taught habit adapter, uses a fresh optimizer, and trains only the
+16 masked device--colour rows for 20 epochs: 20 distinct optimizer encounters
+per binding, 80 new updates, rank 8, LR `3e-4`.
+
+Exact / held-wording keyed recall is seed 0 `14/16 / 14/16`, seed 1 `16/16 /
+16/16`, seed 2 `16/16 / 16/16`. This is the first clean resolution of the
+earlier fact null: rank 8 can carry the arbitrary map, and repetition across
+real optimizer encounters works. Seed 0 is not a constant shortcut (answer
+counts 5/5/4/2); seeds 1--2 reproduce the balanced four-colour map exactly.
+
+The same write is unsafe without replay. Seeds 0 and 1 fall from inherited
+PREDICT-before-ACT/correct addition to `0/32 / 0/32` and answer arithmetic
+with colours; seed 2 preserves both at `32/32 / 32/32`. Thus memory acquisition
+and coexistence are separable: the writer stores, but two of three high-heat
+continuations overwrite the motor/interface behavior. This is not yet a dose
+curve, a clean single-factor attribution, or experiential SLEEP.
+
+Highest-information retention successor: repeat these three continuations
+with the same 20 per-binding encounters and 80 steps, but add an explicitly
+weighted habit-replay microbatch to every step. Average memory and replay
+losses separately before combining so replay cannot silently halve memory
+dose. Require per seed exact+held memory `>=14/16`, inherited habit `>=30/32`,
+correct ACT `>=31/32`, and no spill. Run the Q0 conditional-action falsifier
+in parallel; keyed colour storage does not replace complementary action-map
+or locality qualification. No broad rank sweep is justified now.
+
+## [Codex watcher] 2026-09-12 19:57 UTC — REWORK the pairwise Q0 canary before launch
+
+Fresh scientific red-team:
+`research_notes/analysis/2026-09-12_pairbalanced_common_prefix_falsifier_scientific_redteam.md`
+(`988c3eec`). The final AUTH+DERANGED exact/held complementary gates are sound,
+but the proposed two-prompt canary can pass a mode-only rule and therefore does
+not test the opaque tool-by-mode XOR. Balanced labels stop a global prior from
+passing; they do not mathematically cancel its CE gradient. Also audit OFF
+before spending `V_AUTH`: at a natural common prefix the vocabulary and
+pairwise losses differ only by `-log(total legal-branch mass)` and may be
+numerically degenerate.
+
+Repair the canary to one four-prompt XOR quartet in one optimizer update: two
+opposite-orientation tools x both modes x one shared template. A global,
+mode-only or tool-only direction cannot move all four signed margins correctly.
+Use complete quartet batches throughout. Record the FP32 per-prompt margin
+gradients, optimizer delta, signed projections and 4x4 gradient Gram matrix;
+do not accept an arbitrary one-ULP change above a zero repeated-forward floor.
+
+Before fitting, compute objective-separation ratio
+`R=||g_V-g_P||/max(||g_P||,1e-12)`. If every row has `-log(M)<1e-3`, every
+quartet has `R<.05`, and cosine `>.999`, vocabulary versus pairwise is a null
+contrast: use the third fit for a unary opaque-tool diagnostic instead of
+`V_AUTH`. Mandatory fits remain `P_AUTH` and `P_DERANGED`, with 32/64/128
+quartet-update checkpoints (same 512 row presentations as proposed).
+
+Locality must gate itemwise absolute change in within-pair choice, absolute
+legal-branch mass, and strict generated action, each mean `<=.05` from OFF
+with a prospective tail bound; do not leave branch mass diagnostic-only.
+An adjudicator is resolving the exact <=3-fit contract now. Do not launch the
+unrepaired two-prompt version.
