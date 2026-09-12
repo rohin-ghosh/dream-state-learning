@@ -5835,3 +5835,37 @@ conditional on the preceding noncompensatory gate.
 **Fill result 5 of 14 — R3_B_seed502** (gated life, 0 rejected sleeps, 9.9 GPU-h; Δ vs OFF report / disjoint): whole-text A +0.044 / +0.024 (carries — the fixed routine 0.5291, recipe share 1.0); A_v3 +0.033 / +0.013; B +0.016 / +0.009; Bs +0.003 / 0.000; B_match +0.008 / 0.000; C −0.485 / −0.249 (collapse); C_tmem −0.328 / −0.206; brief +0.044 / +0.024 (= A exactly); brief_mid −0.007 / +0.024. **Tally, 15 lives:** A carries 6, flat 8, harmful 1; C collapses 15/15; brief ≥ OFF on report 14/15.
 
 **Fleet:** node 1 five running (RP402, R4 605, R3 500/501, R4 606_AC), 3 free; node 2 five running (R4 600, R3 504/505, R4 603_AC, R4 602 B-replication launched 18:34 on GPU 2), 3 free; node 3 builder's three rate runs on GPUs 4–6 (0 MiB between phases — reserved, not free). Fill lists exhausted on both nodes; the idle slots are headroom, which the builder's 18:57 audit lists as provisional candidates. **Lease date check:** the builder wrote node-1 outputs must be mirrored "before Sep 13 23:14 UTC"; the node-1 lease ends 2026-09-14 16:14 PT = 2026-09-14 23:14 UTC (launch prompt §10, hosts ledger) — one day later than it wrote; mirroring early is still right. Codex watcher entries 18:16–18:28 (H1 bridge design, independent recount 3/3, acquisition localisation) noted. Nudger: Astra active (idle 0.2 min); laptop chains 5/5; nothing killed or launched by the watcher.
+
+## [Codex watcher] 2026-09-12 18:48 UTC — independent terminal recount of 16x repetition sentinel: packaging null, held binding still null
+
+Read-only inspection found all four fixed readouts terminal with 48/48 raw
+responses, successful supervision and full GPU release. Astra's
+`readout_main_release.json` agrees exactly with an independent join of each
+frozen plan row to its raw response; no confirmation or new OFF request was
+opened.
+
+- `teach_short`: action 32/32, adherence 32/32, memory 4/16; all 16 memory
+  responses are `red`.
+- `teach_long`: action 32/32, adherence 32/32, memory 4/16; all `red`.
+- `control_short`: action 32/32, adherence 0/32, memory 4/16; all `red`.
+- `control_long`: action 32/32, adherence 0/32, memory 4/16; all `red`.
+
+Each arm saw 16 copies per original example, 289,088 input-token and 58,368
+target-token presentations over four epochs and exactly 80 updates. `short`
+used 1,280 independent <=61-token rows; `long` used 80 <=976-token rows with
+the 16 copies visible in one causal sequence. Loss reached near-zero in all
+cells (`teach` short/long 9.33e-4/2.09e-5; `control` 4.99e-4/3.45e-5), so the
+held null is not failure to optimize the authored strings.
+
+Bounded conclusion: continuous context versus reset packaging made no
+observable difference on this panel. Sixteen identical copies still did not
+produce device-conditioned generation under the held wording; they reinforced
+the already-global response-form distinction perfectly. This falsifies the
+prediction that identical repetition alone would lift held memory here, but it
+does **not** yet distinguish training-surface memorization from paraphrase
+failure because the fixed 48-case readout asks `Recall the logged color...`
+whereas training asks `Which color does the log assign...`. Reuse the existing
+exact-training-context diagnostic on these four terminal adapters as the
+smallest localization before changing rank/objective or declaring acquisition
+failure at 16x. Do not replicate the short/long null or carry the long layout
+forward; short is simpler and equally effective for the habit.
