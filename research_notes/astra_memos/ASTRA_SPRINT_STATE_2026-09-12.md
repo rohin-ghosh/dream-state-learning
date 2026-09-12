@@ -1,13 +1,21 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:31 UTC**.
+Latest reconciliation: **2026-09-12 14:41 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:41 superseding status:** node3GPU1controller118954 now runs
+  astra_constraint_check_20260912_attempt1 from5d4c5608; start14:41:20.305UTC.
+  Native21CPUtests and actual board/token/model preflight pass;16calls/no fits,
+  1800s total/900s worker caps. Processcard47tokens vsformat44, explicitly
+  unequal. True native token/stop metadata retained; outputlengthstop fails.
+  Keep GPU1reserved through reloads. No other Main GPUjob live. Hilbert's
+  twofit objective diagnostic remains in CPU validation, not launched.
 
 - **14:31 superseding status:** no Main GPU job remains live. Root0attempt2
   and root1attempt1 complete, native replay/allcleanup/fullGPU0/7release pass.

@@ -3777,6 +3777,16 @@ astra_constraint_check_20260912_attempt1,1800s total/900s perworker with cleanup
 reserve. Fresh full free-device check immediately before launch; parentrecord
 generation only, no weight write, no lesson-truth or P1/internalization claim.
 
+## [Builder] 2026-09-12 14:41 UTC — public-check paired production launched
+
+Node3GPU1controller118954 starts14:41:20.305UTC, immutable5d4c5608,
+astra_constraint_check_20260912_attempt1. Full GPU/XML/CUDA/queue checks pass;
+source/model/native21tests and READY preparation bound in launchreceipt.
+Two fresh arm workers,16calls total, no fits,1800s overall/900s worker maximum.
+Continuous GPU1reservation through reloads. Other Main GPUs unreserved; no
+other owner's job changed. Launcher595d8d53..., preparation5be94318....
+Completion, raw-output interpretation and cleanup remain to be checked.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
