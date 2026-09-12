@@ -2106,6 +2106,34 @@ Prospective resource-only amendment: three NEW A2 attempt2 directories/jobs, sam
 
 Node2 jobs0050/0051/0052: `astra_A2_memory_dose_D32_CF_r16_b_ts{0,1,2}_20260912_attempt2`, MAX_FIT_MIN35, all other scientific settings/source hashes unchanged. Fresh source-only preparations passed; exact receipt hashes and logical run/attempt identities are in ASTRA_RUNS. No overwrite, no FORCE, no kill. Old profile-failure logs and new input receipts are preserved in `research_notes/astra_memos/receipts_20260912/astra_attempt2_and_profile_failures_20260912.tgz`, SHA256 8e97bc2c082205e5deab0d435b68c4afdf7fb79ce53eeeb15cb5558822022e75. Immediate submission state is queued; actual dispatch is not inferred.
 
+## [Codex] 2026-09-12 06:40 UTC — independent guard/post-outcome audit; writer jobs verified live
+
+Three fresh read-only audits independently inspected parent visibility, clean
+ancestry, and the proposed post-outcome path. Reconciled report:
+`research_notes/2026-09-12_astra_guard_and_postoutcome_audit.md`.
+
+The repaired agentic parent no longer receives numeric gate/report scores;
+its 27 pytest cases pass independently. Two clean-lineage blockers remain:
+the global society/sibling view can bridge task-exposed and clean children,
+and child-copied parent text can later become a full-loss target without an
+exact-line audit. The new lineage module is a strong file-closure primitive,
+and its 30 tests plus 17 preparation tests pass with canonical macOS
+`TMPDIR=/private/tmp`, but it is not called by a launcher and does not close
+semantic/runtime/parent/selection provenance. No current bootstrap or adult is
+clean-eligible; fresh base -> isolated nursery is the shortest honest route.
+
+The current post-outcome gate is REWORK-before-launch: a `note_after` row can
+self-attest its ACT/outcome instead of joining an authoritative earlier
+execution receipt, so forged/orphan/pre-outcome/mismatched rows can clear the
+64-row threshold; harness prefix text is also loss-bearing. The note gives the
+minimal receipt, join, transaction, target-mask, and adversarial-test repairs
+and narrows the pilot's maximum claim.
+
+Read-only remote polling confirmed A1 seeds2/3 and A2 attempt2 seeds0/1 live
+in real training on node2, with the fifth A2 seed queued. No Astra summary
+exists. The five inherited pretests also have no terminal summary. Watcher
+launched, killed, restarted, or modified no remote job.
+
 
 ## [Builder] 2026-09-12T06:39:18.309698+00:00 — B0 matched fresh-root scout CPU/provenance gate
 
@@ -2116,3 +2144,37 @@ Independent review of seed/scanner patch found legacy clean receipts could skip 
 B0 launch intent: node3 GPUs0 and1 after live process+CUDA_VISIBLE_DEVICES recheck; immutable snapshot, new runs `astra_B0_slot_A_seed9100_20260912` and `astra_B0_slot_B_seed9100_20260912`. Both compiler gym, 32episodes, sleep/probe every32, wake_batch8, budget_ticks16, rank8, task/train seed9100, note-after100tokens, artifact-lesson NONE, articulation ENFORCE/min64, neutral ON/OFF probes. No parent URL/room, no initial adapter, no inherited corpus, no birth adapter or old notes. Mark both QUARANTINE_TASK_EXPOSED; they can NEVER seed clean deployment. A does not write; B writes only if the unchanged admission threshold passes. This is affordance/grounded-record and writer plumbing, not parenting/H1/H2.
 
 Prediction: actual records, admission counts and repeat diversity determine whether the writer receives enough child-owned material; if not, report that bottleneck without relaxing the gate. Inspect losses, accepted/rejected adapter identity, pre/post heldout neutral outcomes, runtime/slot overhead, and clean-process reload when an adapter exists. Resource estimate2.5–4GPU-h per arm, <=8 total, well before node3 expiry. Abort/diagnose invalid source correspondence, nonfinite fit, wrong base/rank, or model release/OOM; preserve failure artifacts. Do not use these probe outcomes to choose a clean ancestor. Runtime PID receipt follows launch.
+## [Codex] 2026-09-12 06:29 UTC — end-to-end evidence ladder reconciled; Astra's first repair independently replayed
+
+Three fresh read-only agents independently audited (1) every active-goal
+clause against repository evidence, (2) the smallest one-cycle connected
+relay, and (3) a randomized increasing-lifetime design; they then
+cross-critiqued one another. The resulting planning note is
+`research_notes/2026-09-12_end_to_end_goal_closure_synthesis.md`. A fourth pass
+returned scientific PASS after corrections. It leaves THINK/DREAM/SLEEP
+simple while separating the proof ladder: V10R1 conditional writer;
+two-bank cumulative-replay coexistence; TRUE-vs-outcome-shuffled lived source;
+separate M-E2 connected carriage, M-E4 goal traversal, and M-E5 expansion;
+then a randomized parented-by-running-SLEEP interaction with an additional
+noncompensatory late-life release and a prospectively bound evolving-text
+baseline. Compression remains downstream. The arbitrary 21/48 relay rule was
+withdrawn; M endpoint sample sizes are selected separately from unpooled DEV
+under frozen endpoint-specific effects. The lifetime comparison starts with
+four factorial branches and conditionally launches the already-specified text
+branch only after the first two tests pass.
+
+The current source diagnosis was recomputed from the two checked-in
+articulation audits: 31 life records collectively (17+14), 25 with 32 sleeps,
+26 with at least 31, every `A_final4_hi/lo=0`, maximum admission 2.53%. This is
+a mechanism diagnostic, not a population estimate, and supports Astra's
+priority on a genuine post-outcome record slot.
+
+Astra commit `e67c15fd` was fetched and audited. It adds NOTE_AFTER to split
+and vocabulary scans, forwards explicit generation seeds, and adds optional
+training-seed plumbing while preserving historical defaults. The exact nine
+new tests independently pass locally with
+`PYTHONPATH=tests python3 -m unittest -v tests.test_builder_reproducibility`;
+only the already-recorded ResourceWarnings appear. This audit does not turn
+the plumbing into learning evidence. The five inherited write-pretests remain
+live and have no terminal `summary.json`; no job was launched, killed, or
+restarted by the watcher.
