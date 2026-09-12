@@ -80,7 +80,8 @@ learning rate, 9,693 steps, 749,985 input-token passes, and 1,313 evaluation
 cues, masking the prompt/context labels reduced frame spill from `.416` to
 `.202`, but it also reduced `I_d_frame` from `1.921` to `.015` and moved the
 dose-16 correct conditional probability from `.260` OFF to only `.251` ON.
-The owner-bootstrap interval includes zero. Thus the prompt-side labels were
+The owner-bootstrap interval includes zero, and `.202` spill is still 6.73
+times the unchanged `.03` ceiling. Thus the prompt-side labels were
 carrying both useful acquisition and unwanted global habit; removing them did
 not reveal a selective writer. This falsifies this exact conservative mask,
 not response-only SFT in general: it also reduced supervised-token passes from
@@ -88,7 +89,14 @@ not response-only SFT in general: it also reduced supervised-token passes from
 mask-only sweeps. The next writer test must manipulate semantic conditional
 structure and, if used, an explicit frozen-OFF preservation objective rather
 than merely deleting supervision. Exact terminal memo:
-`research_notes/astra_memos/ASTRA_PREFIX_MASK_TERMINAL_2026-09-12.md`.
+`research_notes/astra_memos/ASTRA_PREFIX_MASK_TERMINAL_2026-09-12.md`;
+independent raw-cue recomputation:
+`research_notes/analysis/2026-09-12_prefix_mask_terminal_independent_audit.md`.
+The latter also found a receipt-checking portability seam: Python 3.9
+reproduces every decision and metric, but the reducer's exact float comparison
+marks the report invalid over a `2.78e-17` representation difference. Replace
+that check with a predeclared numerical tolerance before paper-grade replay;
+it does not change this result.
 
 A separate external-oracle mini-Sudoku diagnostic gives the complementary
 positive direction. Across three independently initialized adapter-training
