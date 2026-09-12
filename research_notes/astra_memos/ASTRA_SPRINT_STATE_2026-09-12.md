@@ -190,3 +190,23 @@ confidence intervals/spill values, Fable numerical review and adjudication,
 and permanent evidence capsule. No selectivity pass or H1/H2 inference.
 Turing owns new nursery-selection receipt helper/tests; main retains runner
 and lineage integration. Official model authentication remains unresolved.
+
+## Execution update — 2026-09-12 07:53 UTC
+
+Attempt1 remains failed; attempt2 is separately launched after header repair
+and real native-build/tokenizer/60-test preparation. Node3 GPU1 controller25106,
+start07:48:42.307394UTC, source27743d0a99b827450f794dbe0c1ab45f0b07bd51,
+run `~/astra_diagnostics/astra_W0_v10r1_20260912_attempt2`. Same four fit inputs,
+same seeds/material/recipe; original10:37:02.503231UTC deadline preserved.
+First fit completed256 steps with nonzero update; no assay result yet. GPU1
+reserved during reload gaps. Both attempt archives are permanent; do not
+rerun either directory. Native build receipt pins218 headers/compiler/Triton.
+
+Neutral reasoning trait helper implemented/tested, not yet GPU-executed or
+main-runner-wired. It is separate evaluation-only output and never admission
+or new clean ancestry. 131 neutral/reasoning/native tests passed together.
+Turing now owns actual nursery selection-custody integration in runner,
+life_lineage and corresponding tests; main must review before commit. James
+owns only the new neutral helper/tests (delivered). B0 postwrite evidence has
+been captured and is under Jason's independent numerical review. Other worker
+source edits must not be overwritten or stashed.
