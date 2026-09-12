@@ -94,7 +94,7 @@ Missing, wrong, or invalid child endpoints are never repaired. Mirrored
 worlds cancel global action preference. The result is capped at eight
 A40-hours.
 
-Run it only after V7 establishes conditional writer capacity. A pass shows
+Run it only after V10R1 establishes conditional writer capacity. A pass shows
 that success-filtered, child-grounded endpoint policies can pass through the
 qualified write. It does not yet show outcome-token causality, autonomous
 discovery, parenting, retention, connected knowledge, or a whole organism.

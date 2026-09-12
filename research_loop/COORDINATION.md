@@ -1694,3 +1694,21 @@ Decision: stop tuning this representation. The writer demonstrably moves the
 model but does not localize the change. V10R1 remains the next new writer
 kill-gate and remains unratified/unimplemented. Taught `t/u` stay intentionally
 cut; C11 stays dormant. No queue or GPU state was changed by this audit.
+
+## [Codex] 2026-09-12 03:40 UTC — fresh congruence attack: V10R1 directly tests the replicated broad-write failure
+
+A fresh independent read-only review compared both terminal child-frame
+audits against the V9/V10/V10R1 effective contract. Verdict: V10R1 is the
+right next kill-gate and needs no scientific redesign. Its balanced opposite
+maps require sixteen conditional tool-by-mode choices; candidate-normalized
+NLL excludes the shared `ACT:` prefix; and four explicit spill families plus
+native-interface preservation prevent the observed broad action habit from
+passing on the declared surface. The four-fit, two-root, three-A40-hour design
+is information-efficient. A pass remains only supervised seen-key
+conditional-policy carriage and can miss untested prompt families or sparse
+item-level spill. Full review:
+`research_notes/2026-09-11_v10r1_seed2_congruence_review.md`.
+
+One stale downstream reference was corrected: the lived-mirror gateway runs
+after V10R1, not retired V7. V10R1 remains proposal-only pending exact human
+implementation ratification; no source or GPU action was taken.
