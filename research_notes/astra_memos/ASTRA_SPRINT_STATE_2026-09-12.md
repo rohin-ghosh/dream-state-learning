@@ -173,3 +173,20 @@ bind nursery canary selection and admission policy; actual authenticated birth
 pins (external access unresolved); clean neutral competency evaluation and
 parent-free adult running/shadow runner integration. Clean resume is still
 unsupported. No mechanism freeze, parenting success or completed sprint.
+
+## Terminal update — 2026-09-12 07:41 UTC
+
+The07:38 W0 running snapshot is superseded: SEQ-060 records
+NONREPORTABLE_ABORT from missing `/usr/include/python3.12/Python.h` during
+Triton compilation. Controller21464 exited, zero completed stages and zero
+recorded optimizer steps,46.0263 reserved GPU seconds. Do NOT rerun into that
+directory or replace a fit. Terminal capsule is preserved separately from
+preparation. Fable environment repair requested; Dewey owns CPU native-build
+preflight changes in W0 source/tests only. Any later attempt must be fresh,
+prospectively logged and retain this infrastructure failure.
+
+SEQ-059 now records the four source-compatible bank0 G9 failures, exact
+confidence intervals/spill values, Fable numerical review and adjudication,
+and permanent evidence capsule. No selectivity pass or H1/H2 inference.
+Turing owns new nursery-selection receipt helper/tests; main retains runner
+and lineage integration. Official model authentication remains unresolved.

@@ -2438,3 +2438,24 @@ Actual W0 launch: node3 GPU1, controller PID21464, started2026-09-12T07:36:30.80
 Nursery non-material integration: actual stored provenance reaches ACT-linked records; child-only trainer preflights all tokenization/labels before GPU; strict reasoning verifier refuses invented zero outcomes; selected backend inputs and completed training controls are checked before waking/promotion. Independent reviewer caught a repair regression: seeded training does not imply deterministic algorithms enabled. Corrected the consumer to require a boolean actual setting, not True; trainer recipe unchanged. The reviewer independently verified both original substitutions reject and the corrected seed-only happy path passes.
 
 Ordinary child NOTE is now a provenance-checked influence only, never an admission endpoint or automatic training record. Full-run NOTE fixtures and corruption tests pass. Combined suite:288 tests in21.866s, receipt `astra_integrated_note_review_cpu_20260912.log`. These are CPU fixtures, not real clean Qwen learning. Official pins remain unresolved; clean resume, neutral competency probes, adult runner wiring, canary-selection custody and lesson/sham token matching remain gaps. Mechanism freeze FALSE. No H1/H2 or completed-campaign claim.
+
+## [Builder] 2026-09-12 07:41 UTC — SEQ-059: four source-compatible bank0 fits fail frozen selectivity gate
+
+Raw capture07:17:04–07:17:07UTC; analyzed/replayed captured bytes, not a present-tense stage-status claim. All four completed bank0 fits have exact source/receipt compatibility. Frozen G9 requires paired-owner bootstrap lower bound greater than0 AND absolute spill metric at most0.03. Sixteen dose16 owners per row, resampled within that bank/fit only:
+
+| Fit | Conditional target P OFF→ON | Binding mean [95% interval] | Spill | G9 |
+| --- | --- | --- | --- | --- |
+| A1 S1 F seed2 | 0.259650→0.685323 | 1.921470 [1.202608,2.682503] | 0.415537 | FAIL |
+| A1 S1 F seed3 | 0.259650→0.257545 | 0.003650 [-0.184280,0.190964] | 0.308698 | FAIL |
+| A2 D32 CF seed0 attempt2 | 0.230088→0.789892 | 2.446476 [1.448077,3.472732] | 0.292354 | FAIL |
+| A2 D32 CF seed1 attempt2 | 0.230088→0.735849 | 1.743430 [1.253261,2.287387] | 0.287368 | FAIL |
+
+No cross-bank pooling, F-versus-CF causal comparison, training-reliability estimate, clean-lineage promotion or H1/H2 claim. Conditional gains alone are not selective learning. The spill endpoint is an absolute probability-change metric, not proof of a particular leakage mechanism. Fable's independent `claude -p` numerical review was inspected, not rubber-stamped: signed colour-stratified decompositions were added; categorical claims that any prior shift must fail and that seed3 produces an exactly fixed distribution were rejected/qualified from raw ranges. Prior attempt2 resource-failure provenance is linked. Full evidence/review dispositions: `research_notes/astra_memos/ASTRA_BANK0_DIAGNOSTIC_2026-09-12.md`.
+
+Complete preserved evidence capsule SHA256 `21c28aeb20c0d256b22602445439ad75b76dea9828577cf3813d37a72d251d4e`; analysis JSON SHA256 `e7bd30eef0e37d9d164e43d2badfb8e9ceebc25a55d89384659ba42a4ac5ed65`. Archive verified before/after copy and against112 internal checksums. Analysis CLI/tests are committed with this record. The subsequent A1 bank1 completion observation is separate and not analyzed here. No rerun, stop or metric amendment for this entry.
+
+## [Builder] 2026-09-12 07:41 UTC — SEQ-060: W0 NONREPORTABLE_ABORT, missing Python development header
+
+W0 controller21464 and first-fit worker21922 on node3 GPU1 terminated before any recorded optimizer step. First fit loaded the pinned base and initialized LoRA, then Triton compilation failed: `fatal error: Python.h: No such file or directory`, expected include path `/usr/include/python3.12`. Controller records46.0263 reserved GPU seconds, zero completed stages, `scientific_label=null`, `no_retry=true`. This is an infrastructure failure, not a writer-capacity result, and no fit was replaced/retried. Original immutable source/run/receipts remain untouched. Terminal capsule SHA256 `5662c63d7cea89173e8ac289496794c02f18b43219dfc8e864e638cf5d2427dc` is mirrored; the earlier prepared capsule remains separately preserved.
+
+Fable operations request: repair/verify CPython3.12 development headers on node3 and future onboarding images through your authorized environment workflow; do not relaunch W0 or alter its evidence. Builder is adding a CPU native-build prerequisite check before future GPU work. Any later execution needs a new immutable, prospectively logged infrastructure-repair attempt, not rescue of this sealed run; all scientific recipe parameters remain frozen, and no claim follows from this failed first load. Main continues nursery-selection custody and other CPU integration while the environment is repaired. GPU1 is not declared free merely because the controller exited; recheck NVIDIA and live CUDA reservations before reassignment.
