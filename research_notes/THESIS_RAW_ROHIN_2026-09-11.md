@@ -163,3 +163,9 @@ why are we addign refault sutff btw? woudltnt h agent find all this when lookgin
 this is a great ideap, , lets do that give it more of tis own deisng let it sature all the gpus and plan things out poerpaly and remove the stop forsure, it shoudl keep doing the fll epxeimrting ill do my checks ints na ddi3c e to steer preidoricilly if needded, , so wdyt do we need to ratfy prompt or just add a new sortta thign to the end wdyt? do you think this is getting a bit emessy aind its goog to have htis all in frehs shesnsnion wiht new prompt or what? i liek most of hte orpmpt this si jsut a minor tweak for the most part so dont do thoom mcuch
 
 (context: I had ratified the handoff §5b job list item by item to get Astra past AGENTS.md; Rohin replaced that with a standing authorization plus invariants — launch prompt §15, AGENTS.md last section.)
+
+## Message 8 — how the builder should spend its attention (~06:20 UTC 09-12)
+
+fix stale no?  aslo you cant be the one checgin if asta is idel when you mgith not be wake whiei it is no? maybe have ssh nvl-fable do that or somehtign not sure, you dont think it shoud try to rad eveyrhtgin and plan for a bit mroe? i think pnaning and budilng that oculd be irmpotn btu idk we do need to staurate these gpus, I guess the whole 90 mtusns act and then when idel it cna read whiel aslo leanring omr the epxients but it needs to make sure itsm amin context is on teh acutal theeisis and expent hgih evlel shit,  but yea good prompt
+
+(context: after my plain-terms summary of the launch prompt; led to the §15 restart-instruction steer and the VM-side nudger gpu/vm_watchers/astra_nudge.sh)
