@@ -123,8 +123,10 @@ The headline is not “the parented child starts better.” It is:
   but did so by almost turning the intended learning off. Selective writing
   is still unproved; the next test changes the semantic structure of what is
   written instead of merely weakening the update. That test is running, but a
-  fresh review found its spill score can miss some broad changes, so its first
-  result will be diagnostic until the score is repaired.
+  fresh review found its spill score can miss some broad changes, and another
+  check proved one gain threshold is impossible for almost half the cells
+  because the base starts too close to the ceiling. Its first result is
+  diagnostic until both scores are repaired.
 - **Parenting problem:** the first fitted lesson and sham both hurt. A later
   visible process card changed formatting but did not improve solves over sham
   (`1/16` each). A fresh same-episode correction test also tied: both process

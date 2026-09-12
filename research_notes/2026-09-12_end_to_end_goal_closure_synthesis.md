@@ -211,6 +211,17 @@ common-mode absolute sequence-probability drift, and exact-train OFF/ON scoring
 before refreezing counts. Exact audit:
 `research_notes/analysis/2026-09-12_semantic_w0_writer_d160_prelaunch_audit.md`.
 
+An OFF-only calculation, completed without inspecting any fitted output, also
+proves the current per-key `.5`-nat gain conjunction cannot pass even under a
+perfect fitted conditional distribution: base target probability leaves less
+than `.5` nat of possible gain for `30/64` key-map cells (`8/16` in each
+root-0 map and `7/16` in each root-1 map). The frozen run must retain its
+original gate and therefore necessarily reports optimization failure, while
+its mapping, interface, and descriptive acquisition values remain useful.
+This is an assay-limit diagnosis, not evidence that learning failed. A
+successor needs a prospectively bound absolute/headroom-aware acquisition
+criterion rather than silently lowering this run's threshold.
+
 The terminal B0 scout established one uninterrupted quarantined plumbing path:
 exact ACT-before-record joins, a 66-item child-body-only fit, save, canary,
 adapter reload, probes, and terminal exit. It did not acquire the intended

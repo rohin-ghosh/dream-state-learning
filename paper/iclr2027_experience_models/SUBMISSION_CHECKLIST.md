@@ -24,9 +24,12 @@
   learning. A four-fit semantic W0 is running, but a fresh code audit landed
   after launch and found two reducer loopholes: common-mode action-probability
   growth is invisible to its binary-relative TV, and itemwise legality flips
-  can cancel. Preserve its registered outputs as diagnostics, but no PASS label
-  can qualify selective writing until those endpoints and exact-train storage
-  scoring are repaired prospectively.
+  can cancel. An OFF-only bound also proves the `.5`-nat gain requirement is
+  mathematically unreachable for 30/64 key-map cells because the base already
+  assigns the target too much conditional probability to gain `.5` nats.
+  Preserve its registered outputs as diagnostics, but no PASS/fail label can
+  qualify or falsify selective writing until locality, headroom-aware
+  acquisition, and exact-train storage scoring are repaired prospectively.
 - **Mechanism:** v3 preserves a credible six-fit skeleton: crossed authentic
   source events, evidence-indicated child pair selection, source/link
   derangements, two truthful outcome carriers, old+pad control, typed reads,
