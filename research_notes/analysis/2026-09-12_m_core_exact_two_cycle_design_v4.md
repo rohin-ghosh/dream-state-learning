@@ -2,13 +2,12 @@
 
 Date: 2026-09-12 UTC
 
-Status: independent watcher design only. This note supersedes
-`2026-09-12_m_core_minimal_exact_two_cycle_design_v3.md`. It is a zero-fit
-specification repair responding to both fresh v3 REWORK audits. It changes no
-builder source, benchmark, child, model, tokenizer, adapter, checkpoint, job,
-GPU state, resource, coordination record, scientific claim, release, or
-submission. Nothing here is evidence that the specified materializer,
-checker, reader, or experiment exists or passes.
+Status: **superseded by**
+`2026-09-12_m_core_exact_two_cycle_design_v5.md`. This v4 note is retained as
+design history only and must not authorize Stage 0, TEXT, reader-model work,
+or an M fit. It changes no builder source, benchmark, child, model, tokenizer,
+adapter, checkpoint, job, GPU state, resource, coordination record,
+scientific claim, release, or submission.
 
 ## 0. Exact scope, claim, and six-build allocation
 
