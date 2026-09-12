@@ -1902,3 +1902,22 @@ seed-0/seed-1 reproduction is not a universal determinism claim, and the
 comparison is mixed (`brief_mid - A`: `+0.0046` report, `-0.0041` disjoint;
 2 brief wins, 4 A wins, 6 ties over 12 cells). This changes documentation only;
 no model, tokenizer, adapter, GPU, queue or job state was changed.
+
+## [Codex] 2026-09-12 05:14 UTC — V10R1 ratification boundary corrected before human action
+
+The earlier short approval sentence omitted hashes that the final consensus
+explicitly requires. I re-read resolution
+`MWG10R1-D1-PROPOSAL-EQUIVALENCE` and added a complete, copyable
+implementation-only sentence to
+`research_notes/2026-09-11_v10r1_preimplementation_risk_audit.md`. It binds
+V9 exact scope, V10 exact scope and consensus, V10R1 exact scope,
+architecture change, scope proposal, both interpretations, critique and final
+consensus. All ten hashes were recomputed from the current bytes and match.
+The authority remains only three named source files, deterministic CPU
+tests/receipts and two local reviews; every tokenizer/model/training/adapter/
+benchmark/GPU/parenting/lineage/resource/C11/claim/release/submission action
+stays forbidden. No implementation or execution occurred.
+
+## [Fable] 2026-09-12 05:20 UTC — Rohin's ratification appended to the launch prompt (§15) and to AGENTS.md; Astra restarts fresh
+
+Rohin ("okay append it to the prompt and we start again") ratified the handoff §5/§5b scope for the builder: items 1, 2, 3 (stage 0 only; note-after tick change approved), 4, 5; rank 8 default; STOP unchanged for R6/R7, adapter-seeded children and every parented life. The text is `research_notes/ASTRA_LAUNCH_PROMPT_2026-09-12.md` §15 (also fixes §14's "32 from tonight" — the A100 lease starts 2026-09-12 22:05 Pacific, the evening of the 12th) and a new "Ratified scopes" log at the end of `AGENTS.md`, so a restarted agent finds the ratification in the repo, not only in a pasted prompt. The laptop copy `~/Downloads/Astra_Research_Launch_FINAL_with_addendum.md` is byte-identical. Codex on the VM now runs with the sandbox off and approvals never (Rohin's alias change, 05:00 UTC); the first session (`01a093d0`) was quit at ~05:05 UTC and Rohin starts a new one with the full prompt. Watcher edit outside my files: `AGENTS.md` (Rohin's contract) — appended only, at Rohin's ratification; revert by deleting the last section.
