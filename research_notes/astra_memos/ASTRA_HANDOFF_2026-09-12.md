@@ -1,5 +1,50 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding write launch and CPU queue — 2026-09-12T21:33Z
+
+Main LIVE node3GPU2/PID233174 since21:30:37.652148UTC. Actual-record paired
+write attempt2 root ~/astra_diagnostics/astra_rulegame_interaction_v3_record_write_20260912_attempt2.
+Source610c6edd05ce9c85720ee6e992889badecc2c158; plan
+48effd1ba154f497e5946d308f990624ada63bd905c198e0abfdf668131a8ee4;
+driver /tmp/astra_rulegame_record_write_v2_20260912.py SHA
+183b48be6193da953f699d718575f9227fd946d9f8111d2d1647ae5dd431ec7c.
+Launch receipt archived.1200s inclusive/140scleanup/600sworkers,22:10Zabsolute
+deadline; continuousCUDAreservation. P then A fresh base,2rawrecords/74target
+tokens each,12updates/r8/LR1e-4/seed2. P train DONE observed, controller still
+live at21:33; paired success/readout not yet verified. Never relaunch.
+
+Attempt1 was nativeprepared but NEVER GPU-launched: prelaunch Main caught
+Path(sys.executable).resolve() discarding venv and pinning systemPython without
+torch. Originaldriver/plan/native23testreceipts preserved. V2 only preserves
+absolute nonresolved interpreter; regression+24local/native testsPASS. Native
+attempt2 export/tokenauditPASS; no changed scientific material or recipe.
+
+Main sole Git/launch. Latestmaterialcommit22b7e528f6f62358981ed2264d30ee7242926160.
+Unrelateddirtygpu/codex/dream_state.rules preserved. Pullbeforewriting,
+explicitstaging/push. Agent ownership now:
+- Planck01a0971a-dcdb-7590-9111-d73adbf74fe3: ONLY /tmp/astra_rulegame_record_readout_20260912.py,
+  test counterpart andhandoff. Fresh parent-free OFF/P_ON/A_ON bridge, notready.
+- Herschel01a09708-4d90-7d91-9aa4-25e6163abdda: ONLY /tmp/astra_collect_rulegame_record_write_20260912.py,
+  test counterpart/handoff. Terminalcollector, notyetexecuted.
+- Ohm01a096ae-e210-7701-a584-7db98b5f94ea: ONLY /tmp/astra_interleaved_memory_pair_20260912.py,
+  test counterpart/handoff. CPUrunner+collector for NEWinterleavedprotocol.
+  Materialcommitted22b7e528/Main55testsPASS. No nativeprep/GPU yet. Prospective
+  decisions inlatestnotebook: seed0pair320steps,dev48/exact16/newcues48each,
+  FOUR>=15eachmemorypanel/newcuefamily,habit>=30/ACT>=31 beforelaterseeds;
+ 1800sinclusivepair/140cleanup+300custody. Mixedlosscomposition disclosed.
+- Darwin01a0976c-89e3-7372-a3ba-134602680bff: variedreview EDITSTOP/PASS archived;
+  scoresconfirmgateFAIL.1099.402609slaunch-release vs1099.948008slaterobservation.
+- Banach01a0972e-e39c-7653-901f-e994b237d92a: sixcanonicalmanuscript/companion
+  files throughSEQ108–110. AwaitEDITSTOP; no currentwriteoutcomes toinclude.
+- Aquinas01a09764-da80-77d2-b138-ea10cd07d59c: read-onlynode1backup/mirror
+  metadata inventory/proposal under /tmp/astra_lease_evidence_inventory_20260912.*.
+  No transfer/deletion/jobchanges authorized toagent.
+
+Message22supersedes21:12summary: STRONG STEER isdefaultwithburdenofproof;
+RULEDonlyexplicit. Standinginvariants unchanged, formalC11guarddeferred.
+MissionACTIVE/incomplete. Nofreeze/G3/P1/G5/H1/H2qualification. Baseorigin
+UNRESOLVED_LOCAL_HASHES_ONLY. Parentremovedreadout is immediate criticalpath.
+
 ## Superseding terminal/audit checkpoint — 2026-09-12T21:21:11Z
 
 NO remaining Main GPU controllers from these three runs; do not relaunch them.
