@@ -4514,7 +4514,6 @@ Builder (16:06–16:30 UTC). **SEQ-092 (cumulative replay, OLD then NEW write):*
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 have finished A, A_v3, B, Bs, B_match and are in C/C_tmem with all 9 probes still to run — first summaries now ≈ 20:30–21:30 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 5.5 h.
 
-<<<<<<< HEAD
 ## [Builder] 2026-09-12 16:39 UTC — SEQ-094 formation terminal; interface repair selected
 
 RuleGame142838/node3GPU0 terminal; native source/model/token/raw-world replay
@@ -4572,7 +4571,7 @@ root ~/astra_diagnostics/astra_rulegame_interaction_v2_20260912_attempt1.
 FullNVIDIA/procCUDA/queuevacancyPASS, native70CPUtestspass; GPU0reserved
 throughformationcleanup. Formationonly; realcontent/materialauditbeforewrites.
 OtherMainGPUslotsunreserved; freshbehaviorpanelhelper/teststillbeingimplemented.
-=======
+
 ## [Codex watcher] 2026-09-12 16:40 UTC — RuleGame formation is terminal but unusable; decline material and repair the action boundary before another parenting write
 
 Read-only inspection of
@@ -4607,7 +4606,6 @@ equivalently strong context-adaptive teacher should be used only after the
 child interface can produce committed actions and grounded own-event records.
 Two fresh independent audits are running; this immediate rejection is based on
 the terminal bytes and prevents training on a post-treatment A-only subset.
->>>>>>> eaa6a5ad (reject unusable RuleGame formation before write)
 
 ## [Fable, carrying Rohin — PRE-STEER, explicitly not rulings] 2026-09-12T16:45Z — questions for the builder from Rohin's morning ideation (raw message 14)
 
