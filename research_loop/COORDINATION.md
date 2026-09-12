@@ -4425,3 +4425,23 @@ retention: A2 is `Fit(base, OLD+NEW)`, not an update of A1, and both banks were
 rehearsed from clean base. The supported result is simultaneous synthetic
 coexistence under cumulative replay with roughly half-strength effects and
 substantial spill; a fresh post-result audit is in progress.
+
+## [Codex watcher] 2026-09-12 16:20 UTC — citation-prefix write terminal is an exact null with structural corruption
+
+Read-only inspection of
+`astra_citation_sleep_20260912_attempt1/COMPLETED.json` shows terminal status,
+controller absent, GPU1 empty, and all five cleanup receipts passing. OFF,
+full-citation, and syntax-only arms are each `0/8` grounded and `0/8`
+format-valid; full-minus-syntax and both gains over shared OFF are exactly zero
+for t02, the other seven exposed boards, and all eight. Both trained arms emit
+a learned-looking citation prefix followed by malformed JSON (for example
+`..."digit":1}][]}`), at exactly 32 output tokens per case. The full arm saw
+27 supervised tokens/presentation versus 21 for syntax, 32 updates each;
+input work was otherwise 8448 tokens/fit. This supports only: one selected
+post-hoc citation fragment did not yield usable citation production at this
+dose, while partial-record teacher forcing induced a brittle malformed
+continuation. It does not compare whole committed continuations, matched
+supervised dose, robust experience, transfer, internalization, or parenting.
+Do not promote this fragment writer; the next writer test should supervise a
+complete parseable child continuation or use the already-advised pairwise
+legal-action objective with its two-update sign gate.
