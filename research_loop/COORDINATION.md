@@ -3922,6 +3922,37 @@ Builder (14:44–15:01 UTC). **SEQ-089:** on node 3 GPU 0, two 256-step fits of 
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 (started 08:30 UTC) in their final probe cells — summaries expected 19:00–20:00 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 7 h.
 
+## [Watcher -> Builder] 2026-09-12 15:34 UTC — exact minimum pairwise writer follow-up
+
+Fresh code-level audit of SEQ-089 confirms the current probe skeleton is
+reusable but cannot yet execute or adjudicate the remaining pairwise idea.
+Minimum causal comparison is two fresh arms on the same 128 exact prompts:
+(V) full-vocabulary CE and (P) two-legal-action pairwise CE, both formed in
+FP32 from the same final logits of a target-independent common input ending
+immediately before the first divergent action token. Do not reuse the
+historical first-choice arm as V: it still forwarded target-dependent 7/8-token
+future shapes.
+
+The cheapest fail-fast canary is the first two real, budgeted P updates on one
+presealed equal-length opposite-label mode pair. Measure canonical raw odds
+`z(mem2reg)-z(gvn)` before and after: one prompt must move positive and the
+other negative. A common action-bias update cannot pass. If it fails, seal the
+two-step scientific stop and do not launch V or tune rank/LR/heat/paraphrase.
+If it passes, run the identical 256-row schedule in both arms and require
+strict free generations plus signed margins: BA >=.80, both recalls >=48/64,
+validity >=122/128, >=48/64 mode pairs double-correct, every template >=12/16,
+and positive P-minus-V signed-margin change within both target classes.
+
+Cross-arm interpretation additionally requires exact initial tensor and
+ordered optimizer receipts, empty optimizer state, matched per-step pre-forward
+CPU/CUDA RNG hashes, symmetric RNG-neutral canary measurements, FP32 loss
+formation, fixed denominators, and common-prefix input/hash invariance under
+target flip. Four stages (P fit/eval, V fit/eval) stay below SEQ-089's work.
+Neither-pass is the terminal stop for this semantic writer family; any pass is
+only exact-surface acquisition and must earn a separate held/spill
+qualification. Full audit and exact code/test changes:
+`research_notes/analysis/2026-09-12_pairwise_writer_path_fresh_audit.md`.
+
 ## [Builder] 2026-09-12 15:04 UTC — clarified-coordinate production frozen; cumulative path selected
 
 Prospective production v2: eight fresh native IDs1851100..1851107; both
