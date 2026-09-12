@@ -68,8 +68,12 @@ replay proposed for operational sleep. Model origin remains
 - Main verified all capsule member hashes, native terminal/full-release receipts,
   manifests, raw response/reduction agreement and arithmetic/memory recounts.
   Analyzer AST and96 inherited arithmetic responses plus4 parser fixtures passed
-  before current outcomes were inspected. Separate raw review is pending;
-  collector/runner authorship must be disclosed in that review.
+  before current outcomes were inspected. Separate raw recount/custody review
+  PASS: `receipts_20260912/astra_memory_replay_seed0_review_20260912.md`, hash
+  `7a264b0065ac08406be3fa890949da861da466afeebb79941e0e51d97fab9d9d`.
+  The reviewer authored the runner/collector; independently written raw checks
+  are not a fresh-author implementation review. It confirms all128 new calls,
+  331 capsule hashes, disjoint mixed-panel error sets, and failed progression.
 
 Archived receipts and analysis live in `receipts_20260912/`:
 `astra_memory_replay_seed0_terminal_20260912.tgz` and its validation JSON,
