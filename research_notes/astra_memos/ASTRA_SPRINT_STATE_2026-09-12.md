@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 13:40 UTC**.
+Latest reconciliation: **2026-09-12 13:43 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -18,8 +18,12 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
   controllers104815/104902started13:38:32/42UTC; sourcee5c78cc8. Native26tests
   and exact material/token masks pass. One sourced sham event,32replays×3epochs,
  96steps;92vs38supervised tokens/item, not token matched. Fresh32board OFF/ON
-  comparison; seeds1/2pending. No utility result yet. Nested timeout cleanup
+  comparison; seeds1/2now live below. No utility result yet. Nested timeout cleanup
   requires Main checking recorded owned condition groups before GPU reuse.
+- Same utility root/source: node3GPU3/4seed1whole_raw/act_onlycontrollers
+  106785/106790at13:41:56/57UTC; GPU5/6seed2controllers107085/107099at
+  13:42:13UTC. All six reservations live, cutoff15:45UTC. Seed0fits96steps
+  complete within cap and progress to neutral probe. GPUs0/7not assigned.
 - SEQ-082: fresh correction pair controller97128 terminal; native replay
   passes, full release check13:12:35UTC frees GPU3. First/second solves1→2
   in both32episode arms; qualifying corrections1process/2sham. Not process
