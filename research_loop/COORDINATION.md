@@ -1549,3 +1549,18 @@ The always-on VM ran the backup self-check twice (21:37 and 21:52 UTC) before th
 **Queue / GPUs.** Node 1: six jobs (`neg64_s0_b0–b2`, `conf_neg64_b0–b2`) failed 20:13–20:16 with `KeyError: 'F_r16k16_neg64'` in `organism_v6.memory_dose corpus` — node 1's copy of `memory_dose.py` did not yet carry the cell (3,492 lines at failure; the 21:20 sync brought the 4,360-line version with the cell and `memory_dose_childframes.sh`). **Requeued 21:36 UTC with the same commands**; b1 / b2 now `AFTER` b0 so a single job builds the shared bank-0 throughput corpus (the 19:30 file race, SEQ-042). `neg64_s0_report` and `conf_report` stay blocked until the new b2 jobs land in `done/`. Node 1 GPUs: 0 vLLM parent, 1 / 2 / 5 pretests, 3 `conf_F_r16k1_r32`, 4 life 605, 6 life 701, 7 life 402 — none free. Node 2: `neg64_b2` failed rc=3 (corpus on disk at budget 265,000 vs the job's 250,000). **Redundant, not requeued:** the concurrent chain trained and evaluated bank 2 at 265,000 (20:26 / 20:29) and the 20:36 and 21:32 reports carry neg64 over 3 banks; its dependent `d32_report_a` is satisfied by `d32_report_b` and sits blocked harmlessly. Node 2 GPUs 5 / 6 / 7 free with no eligible pending job (both pending reports wait on running fits) — left free under the no-new-experiments rule. Nothing killed on either node.
 **Backup host:** `git push` not possible from this host (github.com host key absent from `known_hosts`; adding it was not permitted in this session) — this entry is committed locally only.
 
+## [Codex] 2026-09-12 00:30 UTC — independent reconciliation: keep q14 code inert; slot scout first, causal parenting later
+
+Three fresh reviews converged on the same order. The q14 `NOTE_AFTER` idea
+repairs a real temporal affordance, but its six-life CompilerGym grid is a
+developmental scout, not H1/H2 evidence: it lacks an active sham and ON/OFF
+mediation, and its children are deployment-contaminated. The smallest honest
+sequence is (1) one disposable, task-disjoint 32-episode slot-only scout; (2)
+only after separate exact ratification, one clean root split into targeted
+parent versus same-model active sham, 32 episodes plus one sleep, complete
+parent/context removal, and fresh trigger/non-trigger/later-choice ON/OFF
+assays; (3) only if favorable, the four-cell 128-episode running-versus-true-
+shadow H2 canary. Current `batch_loop.py` / `run_life_v2.py` edits and
+`preschool.py` are unratified material loop changes: do not sync or launch
+them. Existing scouts continue unchanged under simple hygiene; C11 remains
+parked. Full audit: `research_notes/2026-09-11_preschool_causal_parenting_reconciliation_audit.md`.
