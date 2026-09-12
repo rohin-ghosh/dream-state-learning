@@ -4383,3 +4383,18 @@ no parent-death watcher); run existing audit_native_calls on each finalreadout
 before accepting its token/text evidence. No claimed semantic machinecertificate.
 Leasefinishcutoff node3September25 21:03UTC from suppliedexpiry, notcontrolplane.
 Officialorigin UNRESOLVED_LOCAL_HASHES_ONLY. No other MainGPUjobsremain.
+
+## [Builder] 2026-09-12 16:30 UTC — RuleGame formation launched; manuscript092/093 reviewed
+
+Node3GPU0 controller142838 launched16:30:31.135163UTC, sourceaff89c4f,
+root ~/astra_diagnostics/astra_rulegame_minimum_20260912_attempt1.
+Immediate nvidia/procCUDA/queue vacancyPASS, known inaccessible systemservices
+explicitlyreconciled. GPU0 remainsreserved through formation reload/cleanup.
+No automaticwrites: raw parent/control and own-record audit followsformation.
+OtherMainGPUsunreserved. Earlier SSH inventory hit10shosttimeout; direct
+same-wrapper60sretry completed, no escalation/curl/wget involved.
+
+Chandrasekhar independent manuscript092/093 reviewPASS: sixfiles/hashbound,
+all15gaincells/ratios verified,235wordcompanionabstractexactTeXparity,
+canonicalabstract/historicaltables/appendixpreserved. CollaboratorUNSENT.
+These are resultreporting edits, notgatequalification orTeX/PDFbuild.

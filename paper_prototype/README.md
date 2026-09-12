@@ -2,7 +2,98 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**Bounded component-evidence update (2026-09-12, through SEQ-091).**
+**Terminal update — September 12, 2026, 16:20 UTC (SEQ-092/093; C36/C37).**
+Main reports both jobs terminal and released. SEQ-092 has independent review
+PASS for bounded exploratory reporting. SEQ-093 has native validation PASS;
+Halley's now-available post-hoc content audit preserves every strict failure.
+The summaries below supersede older running/implementation statuses, not old
+results. The canonical characterization abstract, all historical tables,
+appendix and newline corrections remain preserved. Main's selected
+156-response RuleGame complete-event-record block is being implemented, **not
+launched**; 156 is a planned response budget, not completed work. Formal C11
+remains deferred. No new teacher or complete-lesson training is approved.
+
+### C36: fresh-base OLD/NEW/union reconstruction, not warm-start retention
+
+Source: `research_notes/astra_memos/ASTRA_CUMULATIVE_TERMINAL_2026-09-12.md`.
+A1 is the inherited OLD-only reference; AN=Fit(base,NEW) and
+A2=Fit(base,OLD+NEW). All are fresh-base constructions, not sequential updates
+to A1 or resumed optimizer state. Gains are mean ON-minus-OFF target
+probabilities **conditional on the four colour candidates**.
+
+| State | OLD fact | OLD frame | NEW frame | NEW bicycle | NEW frame minus bicycle |
+|---|---:|---:|---:|---:|---:|
+| A1 OLD | 0.292056 | 0.425674 | 0.005779 | 0.008963 | -0.003184 |
+| AN NEW | -0.004837 | -0.020875 | 0.673276 | 0.713845 | -0.040570 |
+| A2 union | 0.341508 | 0.209910 | 0.359223 | 0.620610 | -0.261387 |
+
+The OLD fact-gain ratio is **1.169323**, but the OLD frame-gain ratio is
+**0.493124**. NEW bicycle-control spill exceeds frame gain in AN and A2.
+The 16 OLD and 32 NEW owners are within-run cohorts, not seeds or independent
+learners. One training seed/bank and unmatched histories/dose do not support
+selectivity, update retention, G3/P1/G5/H1/H2 or a mechanism freeze. Exact
+A1-before/after cue equality establishes this read/reload repeatability only;
+no task generations occur. Native frame-binding/abstention fail; native gate
+labels are not sprint G0–G6 gates.
+
+Traceable, locally archived artifacts (SVG is linked, not imported into TeX):
+- [Summary CSV](../research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.csv)
+- [Summary SVG](../research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.svg)
+- [Summary JSON](../research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.json)
+- [Independent review](../research_notes/astra_memos/receipts_20260912/astra_cumulative_result_review_20260912.md)
+
+Continuous reservation is 2953.833434 seconds. NEW/union fits consume
+1536/11229 updates and 199.4/1416.8 native-loop seconds; total input/supervised
+passes are 1092513/1041453. Four reads use 965.251713 scoring seconds and 1160
+forward calls. Loop, scoring and reservation clocks are distinct; no measured
+sustained throughput or active-GPU compute follows. The independent review
+verifies captured evidence, not live weights/model origin. The capsule excludes
+fitted adapters; native checks are attributed, not newly rerun here.
+
+### C37: changed citation-prefix outputs, no valid complete-record utility
+
+Source: `research_notes/astra_memos/ASTRA_CITATION_SLEEP_TERMINAL_2026-09-12.md`.
+Halley's [archived post-hoc audit](../research_notes/astra_memos/receipts_20260912/astra_citation_sleep_content_audit_20260912.md)
+and same-prefix JSON/Python are now archived by Main, who also corrected the
+terminal memo. The archived Markdown matches the originally supplied `/tmp`
+report byte-for-byte, SHA256
+`41f1c509a2b897fee70aedb8ead5d75f4e228d3671acdbf374d8f90483dd53e8`.
+This audit, rather than Main's earlier inspection alone, supports the literal
+patterns; only file equality, not the scientific audit, is newly checked here.
+
+| Condition | Strict grounded /8 | Schema-valid /8 | Trained geometry /8, post hoc | True literal witness, post hoc |
+|---|---:|---:|---:|---|
+| Current OFF | 0 | 0 | 0 | None |
+| FULL citation-prefix | 0 | 0 | 8 | t02 only |
+| SYNTAX | 0 | 0 | 1 | None |
+
+FULL here means the citation-prefix loss condition, **not a complete output**.
+Both ON arms change all eight raw outputs, but every whole record has malformed
+`][]}` endings at 32 output tokens/case, not the 128-token cap. Only FULL t02
+has a true inner witness; no other FULL or SYNTAX case does. No output, digit,
+coordinate or parser is repaired. Zero invalid-citation primary counts reflect
+schema rejection before citation validation, not true literal content.
+
+The target is a byte-exact **75-byte incomplete prefix** without lesson text,
+the final record closure or supervised EOS. Retokenization matches the first
+29 original IDs but differs at token 30; do not infer preservation of original
+token IDs from byte identity. The contract mismatch is a plausible limitation,
+**not a proven sole cause**, and zero valid records do not prove no parameter
+learning. Original selected t02 used 332 prompt tokens/temperature 0.7 versus
+current 234/0.0: it is not a matched baseline; **current OFF is the baseline**.
+One selected event, one optimizer seed and eight exposed boards are not
+independent learners or held-out generalization. No new teacher/lesson approval.
+
+Both fits have identical 264 input IDs per presentation, but supervise **27/21**
+tokens: matched inputs, not target dose or withheld content. Actual work is
+24 generation calls, 64 updates, 16896 input/1536 supervised training passes,
+5616 prompt/879 output generation tokens and **564.719025 controller-execution
+seconds** (564.719 rounded), not active-GPU compute or campaign throughput.
+Native source/model/adapter checks and release are archived assertions, not
+live verification by this writer; the capsule excludes adapter weights.
+No selective-memory, P1/G5/H1/H2 or mechanism-freeze qualification follows.
+
+**Historical component-evidence window (2026-09-12, through SEQ-091; superseded by the terminal update above).**
 The canonical manuscript now adds separate controlled diagnostics SEQ-073,
 SEQ-085 and SEQ-086; it does not change the historical CompilerGym tables,
 contributions, v1 life recipe, authorship or bibliography. The approved abstract
@@ -343,7 +434,8 @@ independent discovery. Applications are **parent-free but note-present**:
 source outputs, including failures, are carried byte-for-byte; the direct
 parent explanation, example and source board are absent. No solved-board or
 Sudoku ACT outcome is measured. No free-prose lesson is verified or
-training-approved; no output is approved for training.
+training-approved by the SEQ-091 audit; no complete output is approved by
+that audit. The separately selected prefix write is reported in C37.
 
 Source explanations cost process 67 tokens on six cases and 78 on two versus
 format 57 each; total prompt/output tokens are 5637/652 versus 5536/648.
@@ -354,13 +446,13 @@ preparation/audit; this is not measured GPU compute. Sampler seed 7101 is one
 generation seed, not learner replication; there are **zero fits**. Archived
 cleanup/release and model file-pin receipts are not new live verification or
 official model-origin authentication. No persistence, internalization, P1/G5,
-H1/H2 or causal parenting effect follows. Cumulative work is still running
-without a reported outcome. Main has separately selected the bounded diagnostic
-in `research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
-(Main-reported commit `93411488`); implementation is in progress, with no fits
-or outcomes yet. The audit alone grants no training authorization and does not
-approve free-prose lessons; this is not a permission block on that protocol.
-Its planned caps are not an observed fit budget or utility result.
+H1/H2 or causal parenting effect follows from SEQ-091. At its historical cut,
+cumulative work was running and the separately selected citation protocol
+(`research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`,
+Main-reported commit `93411488`) was being implemented. The September 12,
+16:20 UTC terminal C36/C37 update supersedes those statuses, not the results.
+The audit alone does not approve teacher or lesson training; the prefix was
+separately selected and executed. Original caps are not measured throughput.
 
 The canonical characterization abstract, intent, all historical tables,
 all 12 companion table blocks, prior appendix and newline corrections are preserved. The developmental

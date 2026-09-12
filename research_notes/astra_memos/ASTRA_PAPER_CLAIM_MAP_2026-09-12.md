@@ -2,7 +2,19 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026, SEQ091 update:** C35 adds the terminal demonstration and
+**September 12, 2026, 16:20 UTC terminal update:** C36/C37 supersede earlier
+cumulative-running and citation-implementation statuses. Main reports both
+jobs terminal/released. C36 has independent bounded-reporting PASS; C37 has
+native validation PASS and Halley's separate post-hoc content audit, leaving
+all strict scores unchanged. Main owns memo correction/audit archiving and
+the selected 156-response RuleGame complete-event-record block, currently
+being implemented, **not launched**. No measured RuleGame outcome or new
+teacher/lesson training approval follows. Formal C11 remains deferred. This
+six-file documentation update preserves the canonical characterization
+abstract, historical tables, appendix, newline corrections and claim limits.
+Earlier status windows below are historical, not rewritten outcomes.
+
+**Historical September 12, 2026, SEQ091 update (superseded by C36/C37):** C35 adds the terminal demonstration and
 supplied independent raw-content audit. Source process 2/8 versus format 0/8
 and application 1/8 versus 0/8 are unchanged by audit; sole valid t02 follows
 invalid s02, not a verified correct-source-to-application chain. Canonical
@@ -508,20 +520,20 @@ not a verified correct-source-to-application chain, solved board or Sudoku ACT.
 **Material boundary:** every common example is factual; every transfer board
 has a witness, but each copied source-example check is invalid there. The
 generic free-prose lessons are not verified by local citation correctness;
-no free-prose lesson is training-approved, and no output is approved for
-training. The format arm supplies zero valid child records. Selecting only
+no complete output or free-prose lesson is approved by the SEQ091 audit.
+The citation-prefix write was separately selected and executed. The format arm supplies zero valid child records. Selecting only
 process-valid material for a later fit against an empty control would confound
 selection, dose and quality. The audit alone grants no training authorization.
-Main has now separately selected the bounded exploratory diagnostic in
+At the historical SEQ091 cut, Main separately selected the bounded diagnostic in
 `research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
 (selected September 12, 2026, 15:52 UTC; Main-reported commit `93411488`).
-Implementation is in progress, with no fits or outcomes yet. This is not a
-permission block on Main's selected protocol: it restricts training sequences
-to the selected raw structural/citation prefix with prescribed masks and excludes
-lesson prose, parent/example text and the source note. No whole-lesson training
-is approved. Planned steps, evaluation counts and time caps are not observed
-work, fit budgets or utility results. Cumulative work is still running without
-a reported outcome in this documentation window.
+The September 12, 16:20 UTC update supersedes that implementation status:
+the prefix write is terminal as C37, and cumulative reconstruction as C36.
+The selected protocol restricts training sequences to the raw structural/
+citation prefix with prescribed masks and excludes lesson prose, parent/
+example text and the source note. No whole-lesson training is approved.
+Original planned caps remain plans; C37 separately records actual work.
+This status update does not rewrite SEQ091 outcomes or imply a permission block.
 
 **Unit and cost:** one generation sampler seed 7101, not independent learner
 replication; 32 native calls, zero fits. The same eight source examples, order,
@@ -560,3 +572,165 @@ effect is established. One event replayed later would not create replications.
   are archived receipts, not live GPU checks in this edit. Available local hash
   agreement and captured file pins are not official model-origin authentication,
   global hidden-storage coverage or a new custody certification.
+
+## C36 — Assay-dependent fresh-base cumulative reconstruction (SEQ092)
+
+**September 12, 2026, 16:20 UTC terminal status:** native validation and the
+independent captured-evidence review pass for bounded exploratory reporting.
+Main records full GPU0 release at 16:07:39.725090 UTC. These are attributed
+receipts, not new live checks by this writer. They do not qualify selective
+memory, sprint G3, P1/G5/H1/H2 or a mechanism freeze.
+
+**Comparison and measurement:** A1=Fit(base,OLD) is the inherited reference;
+AN=Fit(base,NEW) and A2=Fit(base,OLD+NEW) are fresh-base fits, not warm-start
+updates to A1 or optimizer resumption. Rank8, seed2, three epochs, chronological
+batch4/max512; OLD12924/NEW2048/union14972 rows. Union preserves OLD row/order/
+encoding identities but changes inter-epoch history and total dose. It is not
+compute matched. Gains below are mean ON-minus-OFF target probabilities
+conditional on four colour candidates. OLD native fact averages three
+paraphrases within each of 16 dose-16 owners; OLD frame uses one cue/owner.
+NEW uses 32 matched owner pairs, not independent learner seeds. One training
+seed and one bank provide no population robustness estimate.
+
+| State | OLD fact gain | OLD frame gain | NEW frame gain | NEW bicycle gain | NEW frame minus bicycle |
+|---|---:|---:|---:|---:|---:|
+| A1 OLD | 0.292056 | 0.425674 | 0.005779 | 0.008963 | -0.003184 |
+| AN NEW | -0.004837 | -0.020875 | 0.673276 | 0.713845 | -0.040570 |
+| A2 union | 0.341508 | 0.209910 | 0.359223 | 0.620610 | -0.261387 |
+
+**Permitted interpretation:** OLD native fact A2/A1=1.169323, while OLD frame
+gain A2/A1=0.493124. Neither measures survival of A1 parameters through updates;
+the differing assays must be reported together. NEW bicycle spill exceeds
+frame gain in both fits. AN bicycle colour mass/abstention are
+0.999216/3.452e-7; A2 is 0.997979/2.576e-7. OLD frame-binding and abstention
+fail for every read. Native `memory_dose` labels, including a native G7 ratio
+pass, are not the sprint's G0–G6 gates. Generic NEW pre-exposure ratios in the
+original report are not meaningful retention estimates and remain unpromoted,
+not silently deleted. A1-before/after full cue arrays agree exactly (maximum
+raw drift0): read/reload reproducibility in this run, not sequential retention,
+recovery through updates or learner-policy improvement. No task generations.
+
+**Actual work:** continuous reservation2953.833434seconds. NEW fit1536updates/
+199.4native-loop seconds/171264input/165120supervised passes; union11229/
+1416.8/921249/876333. Totals12765updates,1616.2loop seconds,1092513input and
+1041453supervised passes. Four reads:965.251713scoring seconds,1160forward
+calls,84800candidate sequences (1792abstention),3511832padded input positions.
+These units and clocks are distinct; no active-GPU compute, peak VRAM, p50/p95,
+sustained daily throughput or campaign cost is inferred.
+
+**Evidence/provenance:**
+- `research_notes/astra_memos/ASTRA_CUMULATIVE_TERMINAL_2026-09-12.md`.
+- Independent review PASS:
+  `research_notes/astra_memos/receipts_20260912/astra_cumulative_result_review_20260912.md`.
+- Summary JSON/CSV/SVG:
+  `research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.json`,
+  `research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.csv`,
+  `research_notes/astra_memos/receipts_20260912/astra_cumulative_summary_20260912.svg`.
+  These are a captured-score reduction/visualization, not new GPU observations.
+- Immutable source `3ee4c706080e758537b4dc802bdeef4ead38a158`;
+  manifest SHA256 `dc9f33071392c374da4e77c19b9c7f87de0bbe2ee2d4bc503c954c6078910f3d`;
+  native report `c641c3d3261b10539c934ecfe7828fe76eb12a6af6d99f48a9a7f45ba7321404`;
+  capsule `c5a7649d14886ac86fdb966086fb08fe6440a6b766ba904a34ae20ec96266d9c`.
+- The 4,802,823-byte capsule excludes fitted adapters, retained on node3.
+  Captured native tree/cleanup checks do not constitute local weight rehashing,
+  official model-origin authentication or a standalone runnable weight backup.
+- Initial capture compared integer dose keys to JSON string keys and failed
+  after writing the report. A separate normalized reduction matched it and
+  preserved both artifacts; this is a capture comparison repair, not a failed
+  experiment, hidden score replacement or extra GPU run. The independent
+  review's bounded-reporting PASS does not expand claims or impose new gates.
+
+## C37 — Citation-prefix output change without complete-record utility (SEQ093)
+
+**September 12, 2026, 16:20 UTC terminal status:** native validation PASS;
+Main records full GPU1 release at16:11:26.632642UTC. Halley's now-available
+post-hoc content audit supports the literal pattern, superseding the memo's
+earlier pending-audit/Main-inspection-only status for those observations, not
+the primary endpoints. Main has now corrected the memo and archived the audit;
+the archive identity was checked during this documentation integration.
+
+| Condition | Strict grounded /8 | Schema-valid /8 | Exact trained geometry /8, post hoc | True literal witness, post hoc |
+|---|---:|---:|---:|---|
+| Current OFF | 0 | 0 | 0 | None |
+| FULL citation-prefix | 0 | 0 | 8 | t02 only |
+| SYNTAX | 0 | 0 | 1 | None |
+
+FULL names the citation-prefix loss condition, not a full complete-record
+target. Both ON arms change all8 raw outputs versus OFF and have a well-shaped
+inner check, but all16 whole records are malformed, ending `][]}` at32tokens
+per case, not the128token cap. FULL repeats box `(3,3),(3,4)` in8/8 with varying
+digits; only t02 is a true literal witness. No other FULL or SYNTAX case is
+true. OFF has no well-shaped two-coordinate literal check; duplicate keys
+are not merged. Every arm's primary valid/invalid-citation counts remain0
+because schema rejection bypasses citation validation. No output, coordinate,
+digit, final brace or parser is repaired, and the post-hoc literal annotation
+does not replace the failed strict endpoint.
+
+**Contract and baseline:** the training target is a contiguous75-byte raw
+prefix ending after the checks list, before the lesson and final outer brace;
+EOS is not supervised. No lesson, source note or parent/example content enters
+even masked sleep input. Native standalone target tokenization shares the
+first29 original source IDs, then differs at token30 (25439 versus original
+continuation beginning92). Byte-exactness is not original-token-ID
+preservation. The incomplete-prefix versus complete-record requirement is a
+plausible limitation, **not a proven sole cause** or an excuse for false
+citations. There is no qualified complete-record utility, **not proof of no
+parameter learning**. The original selected t02 used332prompttokens and
+temperature0.7 versus current234/0.0; it is not a matched baseline. Current
+OFF is the baseline. Exact source-prefix matches are FULL1/8, SYNTAX0/8,
+OFF0/8; case IDs are not normalized for that byte comparison.
+
+**Selection and dose:** one post-hoc selected SEQ091 t02 event, following
+invalid s02; one optimizer seed1729 and eight exposed development boards.
+No verified correct-source-to-application chain, holdout or learner replication.
+Two fresh frozen-base rank8/alpha16 fits, dropout0.05, AdamW1e-4, bf16,
+batch1/accum1,32steps each. Both views have identical264 input IDs per
+presentation, but FULL supervises27labels versus SYNTAX21. Both see citation
+values through teacher forcing: matched inputs are not matched supervised
+dose or withheld content. No new teacher or complete-output/free-prose-lesson
+training is approved; the prefix was separately selected and executed.
+
+**Actual work:**64updates,16896input/1536supervised training passes; per fit
+8448input passes and864/672supervised. Train-manifest wall clocks34.9/10.7seconds
+exclude base loading. Exactly24generation calls,5616prompt/879output tokens;
+outputs OFF367/FULL256/SYNTAX256. All stop normally with no recorded rewrite
+or truncation. Controller inner execution is564.719025seconds (564.719 rounded),
+not a full-campaign, active-GPU or sustained-throughput measurement. Low finite
+loss is not successful complete-record behavior.
+
+**Evidence/provenance:**
+- `research_notes/astra_memos/ASTRA_CITATION_SLEEP_TERMINAL_2026-09-12.md`.
+- Post-hoc report, now archived by Main:
+  `research_notes/astra_memos/receipts_20260912/astra_citation_sleep_content_audit_20260912.md`;
+  Markdown SHA256 `41f1c509a2b897fee70aedb8ead5d75f4e228d3671acdbf374d8f90483dd53e8`,
+  byte-identical to the supplied `/tmp/astra_citation_sleep_content_audit_20260912.md`;
+  audited captured source-tree SHA256
+  `fbc50647ea103ab96d588f8ef7116e018b0a27979cafb9c49f3ddd1d0469b6ba`;
+  sibling audit JSON SHA256
+  `10c13cb41dabad486f6a79cf289487b11ea3ab1176a1e2f7656afc4b288f944f`.
+  Same-prefix JSON and Python are also archived by Main. This writer checks
+  local archive equality, not reruns the audit or authenticates live weights/tokenizer.
+- Native immutable source `33563a239ccf43e0b82539718fc35df2e6145c51`;
+  preparation `bd1cd8a2e914c1ec1a4307e1aa7534b08660b0552117cac72242fca797c309ac`;
+  raw source `019bcf5685a46a2f05be4e32ac4e9f138b71da7b1fd72f38078ed65e32d842bf`;
+  trained prefix `a6bc67b28d3c67527a472f6fd4db8a91f9f220fc221c32d3c347ef037272c305`;
+  report `734fd0f8cc0859cf7ac2cb0c188137b625f57a3c42a26145361b05a5f5cd827f`;
+  terminal audit `fd9123e70b917f38e5587611e21e5a8e69c4e6d2d1e98dba7e70e195b5cf43fc`.
+- Archived capsule:
+  `research_notes/astra_memos/receipts_20260912/astra_citation_sleep_terminal_20260912.tgz`,
+  SHA256 `c33d6001a12ddd0c737af8bebe7d43384aba84a21c5f101c6d5ecd10b1ba1192`,
+  73933bytes; native terminal JSON:
+  `research_notes/astra_memos/receipts_20260912/astra_citation_sleep_native_terminal_20260912.json`.
+  Adapter files are excluded; actual weights remain on node3. Native identity,
+  reduction and cleanup assertions are attributed, not fresh local model-origin
+  authentication. The runtime snapshot's generic `adapter:null` is not the
+  per-request loader identity. Isolation check was not run, not passed.
+
+**Next selected work, not an outcome:** Main selected the bounded156-response
+RuleGame complete-event-record block and is implementing it; it is **not
+launched** at this cut. Supporting design revision:
+`research_notes/astra_memos/receipts_20260912/astra_rulegame_minimum_revision_20260912.md`.
+The response budget is planned, not consumed, and selection does not approve
+teacher/lesson training or establish learning. Formal C11 remains deferred.
+SEQ092/093 do not establish G3/P1/G5/H1/H2, selective memory, internalization,
+clean ancestry, mechanism freeze or completion of the bounded campaign.

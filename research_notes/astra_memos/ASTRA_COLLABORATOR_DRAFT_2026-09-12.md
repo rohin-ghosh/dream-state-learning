@@ -1,6 +1,36 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, SEQ091 evidence update.** The terminal
+**UNSENT — September 12, 2026, 16:20 UTC terminal update.** Main reports
+SEQ092/093 terminal and released. SEQ092's independent review passes bounded
+reporting: fresh-base OLD/NEW/union reconstruction gives OLD fact ratio
+1.169323 but frame ratio 0.493124. NEW bicycle-control gain exceeds frame gain
+in AN and A2 (paired differences -0.040570/-0.261387). The 16 OLD/32 NEW owners
+are within-run denominators, not learner seeds. One seed/bank, unmatched dose,
+native frame/abstention failures and exact A1 read/reload repeatability do not
+establish warm-start retention, selectivity, G3 or a mechanism freeze. [C36]
+
+SEQ093 native validation passes, but OFF/FULL/SYNTAX all have 0/8 schema-valid
+and grounded records. Halley's post-hoc audit now supports the literal pattern:
+FULL repeats trained geometry 8/8 versus SYNTAX 1/8; only FULL t02 is a true
+inner witness. Both ON arms change all eight raw outputs, yet end `][]}` at
+32 tokens/case, not the 128-token cap. No output is repaired. The 75-byte
+incomplete-prefix/complete-record mismatch is a plausible limitation, not a
+proven sole cause; no qualified utility is not proof of no parameter learning.
+Prefix token 30 differs from the original continuation despite byte identity.
+Original t02's 332-token/0.7-temperature prompt is not matched to current
+234/0.0 requests; current OFF is the baseline. One selected event/optimizer
+seed and eight exposed boards are not replication or holdout. Matched inputs
+264 tokens/presentation do not match supervised dose 27/21. Actual work is
+24 calls, 64 updates and 564.719025 controller-execution seconds. [C37]
+
+No new teacher/lesson training is approved; no complete output or free-prose
+lesson was approved by the SEQ091 audit, distinct from the separately selected
+and executed prefix write. Main's selected 156-response RuleGame complete-event
+record block is being implemented, **not launched**; formal C11 remains
+deferred. The canonical abstract, historical tables and appendix are preserved;
+the companion abstract is updated separately. This note remains **UNSENT**.
+
+**Historical UNSENT September 12, 2026, SEQ091 evidence window (superseded by C36/C37).** The terminal
 worked-example comparison and supplied independent raw-content audit yield
 source process 2/8 versus active format 0/8 and changed-board application
 1/8 versus 0/8; schema validity is 7/8 versus 8/8 at both stages. The sole
@@ -17,16 +47,15 @@ Process explanations cost 67 tokens on six cases and 78 on two versus format
 compute matched. The full 32 calls take **340.548915 controller seconds**,
 excluding external preparation/audit. One sampler seed is not learner
 replication; there are **zero fits**. No free-prose lesson is verified or
-training-approved, and no output is approved for training. The independent
+training-approved by the SEQ091 audit; no complete output is approved by it. The independent
 audit reports local verification PASS over 28 extracted files, 32 raw returns
 and original replay; we have read that report, not rerun it or performed live
 GPU checks. No persistence, internalization, P1/G5, H1/H2 or causal parenting
-effect follows. Cumulative work is still running without a reported outcome;
-Main has separately selected the bounded citation-supervision diagnostic in
-`research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
-(Main-reported commit `93411488`). Implementation is in progress, with no fits
-or outcomes yet. The audit alone grants no training authorization or approval
-of free-prose lessons; this is not a permission block on that protocol. [C35]
+effect follows from SEQ091. At that historical cut, cumulative work was running
+and the separately selected citation protocol was being implemented. Terminal
+C36/C37 supersede that status at September 12, 16:20 UTC. The audit alone
+does not approve teacher/lesson training; the prefix write was separately
+selected and executed. [C35–C37]
 
 Canonical characterization intent/abstract, historical tables, prior appendix
 and newline corrections are preserved; bounded evidence paragraphs and the
@@ -95,4 +124,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C35. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C37. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

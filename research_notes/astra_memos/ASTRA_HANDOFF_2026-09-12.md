@@ -1,4 +1,14 @@
-# Astra restart checkpoint — 2026-09-12 16:25 UTC
+# Astra restart checkpoint — 2026-09-12 16:30 UTC
+
+Live update: RuleGame formation142838/node3GPU0 launched16:30:31UTC from
+aff89c4f034407120fc7badd064660492e0011cf after Main/native63tests and native
+tokenizer/model/source checks. Root ~/astra_diagnostics/astra_rulegame_minimum_20260912_attempt1.
+Continuous GPU0 reservation until phase cleanup. Formation stops for Main's
+content audit; no automaticfits. Launch receipt archived. Fermat, Dirac and
+both reviewers finished and are closed; no worker-owned source edits remain.
+092/093 manuscript sixfiles reviewedPASS and readytointegrate. Prior terminal
+status for092/093 remains; prior noMainjob statement is superseded only by
+this new formation. See16:30sprintstate andnotebook for exact commands/pins.
 
 ## Superseding current state
 
