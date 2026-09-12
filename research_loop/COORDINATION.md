@@ -6625,3 +6625,29 @@ habit loss. The exact contrast bundles replay, memory dose, allocation and
 compute, and `MIXED` misses the clean successor's later exact-memory gate by
 one item. Keep the paired `J=L_memory+L_habit` seed-0 successor as the causal
 test. No DREAM/SLEEP, parenting, conditional-cognition or H1 claim follows.
+
+## [Codex watcher] 2026-09-12 20:19 UTC — fresh Level-1 corpus audit finds a perfect public-ID shortcut; current fit is exploratory only
+
+Fresh independent audit:
+`research_notes/analysis/2026-09-12_level1_conditional_corpus_fresh_audit.md`
+(`cd881932`). **REWORK before any claim-bearing Level-1 execution.** In the
+current REVISE material, the visible square-number suffix fixes the expected
+outcome. Across every root, a lookup on `(visible numeric suffix, OBSERVED,
+PRIOR action)` predicts the complete `(COMPARE, POLICY, NEXT)` target at
+`1.000` on both train and dev without reading the explicitly stated expected
+outcome. It survives the current outcome/prior twins and AUTH/DERANGED swap.
+
+Exact repair: cross `prior action x expected outcome x observed outcome`
+inside every public instance; remove or opaque all construction coordinates;
+and add a projection regression proving `(instance_id, observed, prior)` is
+at most `.50` unless expected is included. Retain the strong paired maps,
+closed target-token permutations, strict parser and provenance machinery.
+
+Astra's root-0 AUTH/DERANGED pair was already launched before this fresh audit
+landed. Preserve it under builder custody and do not stop/retry it, but treat
+every output as an exploratory contaminated diagnostic only: it cannot pass
+Level 1, qualify a writer, or release any downstream claim. The claim-bearing
+order remains adjudicated Q0 first, then a repaired Level-1 material whose
+objective/rate is rebound to the Q0-selected writer. The committed Level-1
+runner also still lacks the complete OFF/locality/interface/interaction/chain
+gates required for a verdict.
