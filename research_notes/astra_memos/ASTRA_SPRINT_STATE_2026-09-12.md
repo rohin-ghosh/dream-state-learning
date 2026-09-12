@@ -1,13 +1,27 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 13:43 UTC**.
+Latest reconciliation: **2026-09-12 13:57 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **13:57 superseding status:** allsixutilityrecipients terminal, original
+  source replay/fit/adapter/pair checks pass; controllersabsent, GPU1..6released.
+  Capsule dfbb71fb... captured; actualrawledgerreduction pending withAvicenna.
+- **Only Main live node3 reservation:** GPU0supplementaryrescore110916,
+  started13:54:27UTC, source02a772f8, astra_semantic_rescore_20260912_attempt1.
+  No fit;832originalrequests scored with equalshape repaired function,
+  880originalgenerations retained as separate observations.600s/state,3600soverall.
+- SEQ-084: semantic oldscores invalid as joint likelihoods:266mass>1.
+  Nativecausalmasks correct; BF16shape sensitivity localized. Equalshape
+  prefixdelta0, mass.997894; FP32mass.998979. Native62tests pass for repair.
+  Oldresults untouched; no numericalthreshold rescue or selectivewriterclaim.
+
+The following13:43snapshot is historical; reservations above supersede it.
 
 - SEQ-083: semantic writer controller98756terminal;14stages, four256step
   fits/1712requests, exact original-source replay and fullGPU0release pass.

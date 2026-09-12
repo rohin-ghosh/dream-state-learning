@@ -3572,3 +3572,23 @@ Perworker600s, overall3600s; resource check/launch still pending native suite.
 This repairs measurement, not the failed binding result or an impossible
 original half-nat criterion. Numerical precision comparison remains a
 one-prompt diagnosis; equal-shape checks must pass the complete new score set.
+
+## [Builder] 2026-09-12 13:57 UTC — SEQ-084 score defect diagnosis; all utility pairs terminal
+
+SEQ-084 names the13:47/13:50absolute-mass contradiction and native precision/
+shape localization above; it is a measurement defect result, not learning.
+Native62CPUtests pass21.555s on immutable02a772f8. Main launches node3GPU0
+supplementaryrescorecontroller110916at13:54:27UTC, root
+astra_semantic_rescore_20260912_attempt1, no training, five600sworkers and
+3600soverallcap. FullGPU/XML/CUDA/queueprecheck passes, continuous reservation.
+OFFand r0_plus scoring already terminal without new numerical check failures;
+remaining states pending. Old d160run/source/labels unchanged.
+
+All six one-event utility recipients complete. Main's originale5source
+rechecks96stepfits/actualadapterhashes/nativepairreceipts and owncleanup;
+all six controllers absent and fullGPU1..6release checks pass. Capsule
+dfbb71fb9ea07bbff5dc990ca5c2028796d173bc0c51520b2f45c53cad87e3a4
+captures preparation,logs,manifests (weights remain on node3). No kill.
+Avicenna now reduces actual terminalrawledgers with its CPUanalysis/tests;
+no performance/parenting conclusion before reduction. GPU0rescore only live
+Main reservation; othernodeowners' jobs unchanged.
