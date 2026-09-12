@@ -3,9 +3,50 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ113 / C57
+## Latest bounded evidence — SEQ114–115 / C58–C59
 
-**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+**September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
+finite process writes, not utility.** FULL own-record truth likelihood improves
+2/2 for both earlier record-trained adapters, but strict joint likelihood/margin
+gains are P1/2 and A0/2; both required two-record criteria fail. Mapping removal
+gives P1/2,A2/2 likelihood gains and joint0/2 each. This is NOT no parameter
+learning. Independent acquisition audit PASS is technical/numerical, not the
+failed scientific criterion; its authorship/non-blinding limits remain.
+
+Separate process-v2 fits complete12 finite updates each on two own raw wakes,
+fresh base/seed2/rank8, not the record-write adapters. Exploratory amendment
+`96a71289` accepts the native TRY alias without repairing wrong predictions,
+replacing slots or rewriting V1's shortage. Removing temporary teacher
+restatement from conditioning while retaining teacher-influenced raw targets
+is context distillation, not unchanged native context or scaffold-free cognition.
+Input/target presentations P9120/384 versus A9096/372 are unequal despite equal
+updates/padded inputs. Native collector attests392 finite tensors per arm; no
+local weight rescan or behavioral utility follows. Main's offline synthesis
+rerun PASS covers68 members and forward/mask/source joins; author-side, not an
+independent behavioral audit. The new GPU2 parent-free readout is LIVE at the
+supplied cut, with NO outcomes included. New memory-replication outcomes are
+also excluded (independent audit pending). No general G3/P1/G5/H1/H2, clean
+lineage or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+Collaborator **UNSENT**.
+
+| SEQ114 context | P own LL gains | P own joint gains | A own LL gains | A own joint gains |
+|---|---:|---:|---:|---:|
+| FULL | 2/2 | 1/2; criterion FAIL | 2/2 | 0/2; criterion FAIL |
+| Mapping sentence removed | 1/2 | 0/2; criterion FAIL | 2/2 | 0/2; criterion FAIL |
+
+| SEQ115 arm | Updates | Input presentations | Target+EOS presentations | Final in-sample loss |
+|---|---:|---:|---:|---:|
+| P | 12 | 9,120 | 384 | 0.000196301334654 |
+| A | 12 | 9,096 | 372 | 0.000449771119747 |
+
+Sources: `research_notes/astra_memos/ASTRA_RECORD_ACQUISITION_2026-09-12.md`
+and `research_notes/astra_memos/ASTRA_PROCESS_WRITE_V2_2026-09-12.md`;
+claim-map C58/C59 bind the archived acquisition review and supplied process-write
+synthesis/capsule. Canonical abstract/intent and prior tables are unchanged.
+
+## Earlier bounded evidence — SEQ113 / C57
+
+**Historical September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
 arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
 lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
 output-token sequences match: no FOUR advantage. No new OFF; original-parent
@@ -18,8 +59,8 @@ PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
 nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
 are proposed, not run in this cut. Teacher-authored material is not operational
 parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
-outcomes are included. Collaborator **UNSENT**.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Acquisition/process-write outcomes were excluded at that
+historical cut; C58/C59 now add only acquisition and finite-write evidence. Collaborator **UNSENT**.
 
 | SEQ113 endpoint | SINGLE_VIEW | FOUR_VIEW | Prespecified FOUR minimum |
 |---|---:|---:|---:|

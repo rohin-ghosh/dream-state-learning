@@ -1,6 +1,35 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+**September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
+finite process writes, not utility.** FULL own-record truth likelihood improves
+2/2 for both earlier record-trained adapters, but strict joint likelihood/margin
+gains are P1/2 and A0/2; both required two-record criteria fail. Mapping removal
+gives P1/2,A2/2 likelihood gains and joint0/2 each. This is NOT no parameter
+learning. Independent acquisition audit PASS is technical/numerical, not the
+failed scientific criterion; its authorship/non-blinding limits remain.
+
+Separate process-v2 fits complete12 finite updates each on two own raw wakes,
+fresh base/seed2/rank8, not the record-write adapters. Exploratory amendment
+`96a71289` accepts the native TRY alias without repairing wrong predictions,
+replacing slots or rewriting V1's shortage. Removing temporary teacher
+restatement from conditioning while retaining teacher-influenced raw targets
+is context distillation, not unchanged native context or scaffold-free cognition.
+Input/target presentations P9120/384 versus A9096/372 are unequal despite equal
+updates/padded inputs. Native collector attests392 finite tensors per arm; no
+local weight rescan or behavioral utility follows. Main's offline synthesis
+rerun PASS covers68 members and forward/mask/source joins; author-side, not an
+independent behavioral audit. The new GPU2 parent-free readout is LIVE at the
+supplied cut, with NO outcomes included. New memory-replication outcomes are
+also excluded (independent audit pending). No general G3/P1/G5/H1/H2, clean
+lineage or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_RECORD_ACQUISITION_2026-09-12.md`
+and `research_notes/astra_memos/ASTRA_PROCESS_WRITE_V2_2026-09-12.md`;
+claim-map C58/C59 bind the archived acquisition review and supplied process-write
+synthesis/capsule. Canonical abstract/intent and prior tables are unchanged.
+
+**Historical September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
 arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
 lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
 output-token sequences match: no FOUR advantage. No new OFF; original-parent
@@ -13,8 +42,8 @@ PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
 nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
 are proposed, not run in this cut. Teacher-authored material is not operational
 parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
-outcomes are included. Collaborator **UNSENT**.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Acquisition/process-write outcomes were excluded at that
+historical cut; C58/C59 now add only acquisition and finite-write evidence. Collaborator **UNSENT**.
 
 **Measured prior-cycle costs (SEQ110–112; C54–C56, not a new utility claim).**
 Formation, paired writes and readout sum to **20.933 A40-min full reservation**,
@@ -102,7 +131,7 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve learning after teacher removal? We separate material fidelity, verified parameter writing and utility using a frozen instruction-tuned model and LoRA. Two accepted raw child records per arm, from process guidance versus active neutral recap, train fresh-base adapters for twelve updates each. Both have 392 finite tensors and nonzero B entries relative to declared zero-B initialization, corroborating writing, not usefulness or full parameter deltas. Parent-free readout without parameter updates scores OFF 7/24 quiz items and each adapter 6/24: no process advantage. Both adapters invalidate rule-five protocol; missing quizzes retain prescribed zeros, not six observed wrong answers. Faithful records are 9/12 OFF versus 10/12 allotted, or 10/11 emitted, per adapter; explicit predictions remain six correct of eight valid. One pair and four shared rules do not establish parenting utility. Separately, interleaved teacher-authored replay gives both SINGLE and FOUR root0 arms memory 16/16 on dev and exact panels, habit and ACT 32/32, and lexical 48/48 over the same sixteen facts. All 112 aligned raw texts and output-token sequences match; no FOUR advantage. Each arm adds 320 updates to its original eighty-update parent; memory occupies 12.8% of target exposure. Changed within-batch composition prevents a pure temporal-effect inference. No new OFF is measured; replications are proposed, not run. These diagnostics establish neither operational parenting, an adult learning loop, general G3/P1/G5/H1/H2, clean lineage nor a frozen mechanism. Model origin remains unresolved.
+Can developmental teaching improve learning after teacher removal? We distinguish material fidelity, parameter writing, trained-target acquisition and behavioral utility using a frozen instruction-tuned model and LoRA. Earlier record-trained adapters scored 6/24 versus OFF 7/24 in parent-free quizzes, without a process advantage. A separate acquisition diagnostic evaluates those saved adapters on four original training records: twenty-four teacher-forced requests, forty-eight truth/foil forwards, no generations or updates. Under full context both adapters improve truth likelihood on both own records, but joint likelihood and truth-minus-foil margin gains occur on only one of two process records and neither recap record. Both prespecified two-record criteria fail; this is not absence of parameter learning. Removing the mapping sentence yields zero joint own-record gains in either arm, without uniquely identifying a semantic mechanism. Separately, process-v2 writes train fresh-base adapters for twelve updates each on two unchanged own raw wake continuations. An exploratory amendment accepts the existing native TRY alias while preserving fixed slots and wrong predictions. Teacher-removed conditioning of teacher-influenced targets is context distillation, not scaffold-free cognition. Input and supervised exposures differ despite equal updates. Native receipts attest finite saved weights; falling in-sample losses do not establish utility. The new parent-free process readout is live at this cut; neither its outcomes nor new memory-replication outcomes are included. These diagnostics establish no general G3/P1/G5/H1/H2, clean lineage, adult learning loop or frozen mechanism. Model origin remains unresolved.
 
 ## Evidence and interpretation boundaries
 

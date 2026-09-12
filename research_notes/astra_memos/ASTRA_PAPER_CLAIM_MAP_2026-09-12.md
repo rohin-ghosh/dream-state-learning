@@ -1,6 +1,35 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+**September 12, 2026 — SEQ114–115 / C58–C59: acquisition diagnostic and
+finite process writes, not utility.** FULL own-record truth likelihood improves
+2/2 for both earlier record-trained adapters, but strict joint likelihood/margin
+gains are P1/2 and A0/2; both required two-record criteria fail. Mapping removal
+gives P1/2,A2/2 likelihood gains and joint0/2 each. This is NOT no parameter
+learning. Independent acquisition audit PASS is technical/numerical, not the
+failed scientific criterion; its authorship/non-blinding limits remain.
+
+Separate process-v2 fits complete12 finite updates each on two own raw wakes,
+fresh base/seed2/rank8, not the record-write adapters. Exploratory amendment
+`96a71289` accepts the native TRY alias without repairing wrong predictions,
+replacing slots or rewriting V1's shortage. Removing temporary teacher
+restatement from conditioning while retaining teacher-influenced raw targets
+is context distillation, not unchanged native context or scaffold-free cognition.
+Input/target presentations P9120/384 versus A9096/372 are unequal despite equal
+updates/padded inputs. Native collector attests392 finite tensors per arm; no
+local weight rescan or behavioral utility follows. Main's offline synthesis
+rerun PASS covers68 members and forward/mask/source joins; author-side, not an
+independent behavioral audit. The new GPU2 parent-free readout is LIVE at the
+supplied cut, with NO outcomes included. New memory-replication outcomes are
+also excluded (independent audit pending). No general G3/P1/G5/H1/H2, clean
+lineage or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_RECORD_ACQUISITION_2026-09-12.md`
+and `research_notes/astra_memos/ASTRA_PROCESS_WRITE_V2_2026-09-12.md`;
+claim-map C58/C59 bind the archived acquisition review and supplied process-write
+synthesis/capsule. Canonical abstract/intent and prior tables are unchanged.
+
+**Historical September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
 arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
 lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
 output-token sequences match: no FOUR advantage. No new OFF; original-parent
@@ -13,8 +42,8 @@ PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
 nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
 are proposed, not run in this cut. Teacher-authored material is not operational
 parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
-outcomes are included. Collaborator **UNSENT**.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Acquisition/process-write outcomes were excluded at that
+historical cut; C58/C59 now add only acquisition and finite-write evidence. Collaborator **UNSENT**.
 
 ## C00 — Scope, authority, and frozen evidence window
 
@@ -2058,7 +2087,8 @@ spacing or dose causal effect is identified. No FOUR advantage at these saturate
 endpoints. Teacher-authored material is not operational child sleep or parenting,
 adult learning, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze. Model
 origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Seed1/2 replications
-are proposed, not run in this cut; no pending acquisition/process-write outcomes.
+were proposed at that historical cut; no new replication outcomes are included.
+C58/C59 below supersede only the then-pending acquisition/process-write status.
 
 Herschel independently recounts224 raw calls and reconstructs source schedules
 without running supplied reducers/model code. PASS includes548 metadata hashes,
@@ -2085,3 +2115,123 @@ Sources and exact bindings (all read, no native rerun):
 - Capsule: `research_notes/astra_memos/receipts_20260912/astra_interleaved_memory_root0_terminal_20260912.tgz`, SHA256 `9aa7fb67b3f68afa3d4520e1f4b7cfcc41322367ef1cf6ee83396a7c60cdbf64`,548 metadata files, no weights; adjacent `astra_interleaved_memory_validation_20260912.json` records collection validation.
 - Source `22b7e528f6f62358981ed2264d30ee7242926160`; plan `4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388`.
 - Parent weight identity `d73e8578f62de68ed657474c70fc09c09aaad50a4ff11a66773e50fc702163b2`; SINGLE `416f0f1dcc8f7dd6d37f6a8844d5e14786f0f54b970122e492e7b2f55f608bba`; FOUR `60a8bd8c132308499621d77df31c1738e1444c976fe5d8b20f879bd94c49df2f`. These are receipt identities, not local native-weight rehashes or authenticated origin.
+
+
+## C58 — Trained-record likelihood changes, strict joint acquisition fails (SEQ114)
+
+**Independent raw audit PASS; scientific joint criterion NOT MET, not no learning.**
+OFF and the original SEQ111 saved P/A adapters score all four original accepted
+training records under FULL and MAPPING_SENTENCE_REMOVED contexts.24 requests,
+48 teacher-forced candidate forwards, no generations/updates/retries. A foil
+changes only the unique raw JSON relation value; original fields/whitespace/order
+remain. Prospective acceptance requires both own records individually improve
+truth summed LL AND truth-minus-foil summed margin versus OFF. Stronger P-specific
+carriage also requires both improvements versus A on both P records; it fails in
+both contexts. No criterion is retuned and no record omitted.
+
+| SEQ114 context | P own LL gains | P own joint gains | A own LL gains | A own joint gains |
+|---|---:|---:|---:|---:|
+| FULL | 2/2 | 1/2; criterion FAIL | 2/2 | 0/2; criterion FAIL |
+| Mapping sentence removed | 1/2 | 0/2; criterion FAIL | 2/2 | 0/2; criterion FAIL |
+
+Both adapters improve FULL truth LL on all four records, including cross-arm
+records, but joint gains occur only on P1. P0 FULL under P gains0.386584 LL but
+loses2.500003 margin; A's own A0/A1 margins change−0.624646/−0.261460 despite
+positive LL gains. Mapping removal leaves P0 foil-preferred in all three states;
+P0 under P loses3.661965 truth LL versus OFF. Each adapter improves LL on three
+of four ablated records, but no margin improves versus OFF. No selective average
+or universal inability claim. Display rounding is not used for strict decisions.
+
+Removal deletes exactly LF+mapping sentence,152 bytes; native prefix length
+falls26 tokens (P282→256, A281→255). Schema/public observations and earlier
+correct teacher-forced target fields remain. Prompt positions change, so this
+ablation does not uniquely identify a semantic mechanism. Summed margins use
+unequal truth/foil36/38-token lengths including EOS; source vectors retain sums,
+means and counts. Possible baseline saturation is a limitation, not demonstrated
+causation or a waiver. Not autonomous records, pre-TRY decisions, held-out learning,
+vLLM parity or parent-free utility. Prior C56 absent P advantage remains unchanged.
+
+Herschel reconstructs every likelihood/margin/cross-arm delta from48 raw vectors,
+max discrepancy0;119/119 inventory hashes pass. Native forward/mask/offset and
+weight-identity receipts are checked, not independently regenerated. Reviewer
+wrote earlier formation/write collectors, not the scoring bridge; not blinded.
+No weight reload or model-origin authentication by this manuscript worker.
+
+Totals1776 scored target tokens,14664 native input tokens,14712 padded forward
+positions. Calls7.495794s ⊂ workers206.790118s ⊂ controller348.379228s ⊂
+launch-to-collector-confirmed-release610.814112s (10.180235 A40-min).
+Collection84.893527s overlaps; do not add. Main's earlier vacancy observation
+2026-09-12T22:22:40.188350Z is distinct from collector confirmation22:25:40.827056Z;
+the quoted outer interval includes collection wait/CPU gaps, not only GPU-active
+work. No general G3/P1/G5/H1/H2, clean lineage, freeze or no-learning claim.
+
+Sources and exact bindings:
+- Canonical `research_notes/astra_memos/ASTRA_RECORD_ACQUISITION_2026-09-12.md`, SHA256 `91fdb8aefc7bd7de2a2fc2e2067f60f9e753096697ea174586d54e2df7feb0c9`.
+- Archived raw audit `research_notes/astra_memos/receipts_20260912/astra_record_acquisition_independent_review_20260912.md`, SHA256 `266d0a5f84d7e8a4f9d666b485098f2a342af25064be82163470e0393f265620`; sibling `.json`, SHA256 `4f20e9984f9fac98cc9401719909519762d0f8eaba9508159f938b298149c86b`.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_rulegame_record_acquisition_terminal_20260912.tgz`, SHA256 `f7faf00c65ba67c76a3778750fcc9b093d544cd4543df160635200c5940c8e27`,119 files, no weights.
+- Source `610c6edd05ce9c85720ee6e992889badecc2c158`; plan `79fad7b32e88f8dffda5f96214fbc511d702167610c613527daa68d024952bfc`; native root `astra_rulegame_record_acquisition_20260912_attempt1`.
+
+## C59 — Finite own-wake process-v2 writes; utility untested (SEQ115)
+
+**Two finite writes completed, not a behavioral result.** Canonical Main memo
+and Main's offline synthesis rerun PASS bind68 metadata members and native
+forward/mask/source joins. Arendt authored writer/collector/synthesis; this is
+author-side verification, not an independent implementation or behavioral audit.
+The finite-weight scans are native collector attestations, not local rescans;
+weights/base files/full forward arrays are excluded from the capsule.
+
+Two unchanged own raw wake rows per arm: P calls0009/0024, A0039/0054, fixed
+lesson0/1 slots from interaction_v3. V1 rejected A0's executed TRY alias under
+its literal ACT requirement; the original shortage/default remains. After-inventory
+exploratory amendment96a71289 accepts existing native action grammar without
+substituting later slots, fixing wrong predictions or canonicalizing targets.
+Only the source-bound temporary-restatement block is removed from conditioning;
+earlier child history/public outcomes remain, no own future outcome or RECORD
+text is inserted. This is `CONTEXT_DISTILLATION_NOT_UNCHANGED_NATIVE_CONTEXT`:
+teacher-influenced targets under teacher-removed conditioning, not scaffold-free
+cognition, semantic nonleakage or unchanged native source context. Main explicitly
+accepted this transformation in the final native review, not just the preliminary
+review. A0's native alias remains byte-for-byte intact.
+
+Each independently fresh base (`init_adapter=None`) receives rank8/alpha16/
+dropout0.05/seed2/AdamW LR1e-4/batch2/accumulation1,12 epochs/updates/microbatches/
+observed forwards. Neither uses the other arm or earlier record-trained adapter.
+Frozen non-LoRA parameters;20,185,088 trainable LoRA parameters and392 saved
+finite tensors per arm. No actual packing/splitting/truncation/dropped/skipped
+rows, despite the compatible trainer overflow setting. Context/padding labels−100;
+complete raw target plus exactly one EOS is supervised. Preflight first-target
+predictor positions are P363/363 and A362/363. All24 forward receipts join the
+expected rows/exposure; excluded actual tensor arrays are not entirely recomputed.
+
+| SEQ115 arm | Updates | Input presentations | Target+EOS presentations | Final in-sample loss |
+|---|---:|---:|---:|---:|
+| P | 12 | 9,120 | 384 | 0.000196301334654 |
+| A | 12 | 9,096 | 372 | 0.000449771119747 |
+
+Per-epoch corpus input/target+EOS is P760/32,A758/31. Both use9120 padded input
+positions, but A has24 masked padding positions and P none. Pair totals24 updates,
+18216 unpadded inputs,18240 padded positions,756 supervised labels including48
+EOS labels; raw-target exposure360 P/348 A. Update-matched, not input/target-token
+matched. All12 epoch losses per arm are finite, zero nonfinite batches; lower P
+loss/falling in-sample losses are not action-quality, retention or utility scores.
+
+P/A training loops38.5/9.4s, trainer walls53.7/10.0s, worker+cleanup
+148.841920/103.036209s. Worker subtotal251.878129s lies in controller484.619945s.
+Collection68.362955s overlaps full launch-to-final-vacancy912.231957s, including
+waiting and CPU gaps. Do not add nested clocks or explain the timing asymmetry
+as a treatment effect. Initial vacancy XML is verified in the supplied synthesis;
+final vacancy XML is not in the capsule. Final process/session/GPU/queue release
+is a supplied collector/validation attestation, not a fresh query here.
+
+The new GPU2 parent-free process readout launched at22:58:48.818483 UTC and is
+LIVE at the supplied cut; NO outcomes included. New memory-replication outcomes
+are also excluded pending independent audit. No G3/P1/G5/H1/H2, adult learning,
+parenting utility, generalization, clean lineage or mechanism freeze; model origin
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Collaborator UNSENT.
+
+Sources and exact bindings (locally read copies, no presumed archive filenames):
+- Canonical `research_notes/astra_memos/ASTRA_PROCESS_WRITE_V2_2026-09-12.md`, SHA256 `d13a6a2cbc88f9aef3bee88c0e7c61e9e3eac87e1ea951c1a00bc5f4568b635e`. Main reports successful offline synthesis rerun and archive custody; this integration does not rerun it.
+- Supplied synthesis `/tmp/astra_process_write_synthesis_20260912.md`, SHA256 `de1c8257f4fe56c6adad3a12ed369cbf240cdb8d5a6ecc6ad0e4e61ecf69781d`; `/tmp/astra_process_write_synthesis_20260912.json`, SHA256 `1e190251060d916e5d8c393b8b0fde3d27699df5838c5de88dd23cd09dd518d1`.
+- Supplied capsule `/tmp/astra_process_write_terminal_20260912.tgz`, SHA256 `9db826c86b306ba5a92bcfc2902e0baaaed83318f1c70b029cb0ca062ec17e5a`; `/tmp/astra_process_write_terminal_validation_20260912.json`, SHA256 `fbc01b2979003948869cc25f5ae00ecae12a357681791706089658e11eed62db`. The validation is also present at `research_notes/astra_memos/receipts_20260912/astra_process_write_terminal_validation_20260912.json`.
+- Final native Main review `research_notes/astra_memos/receipts_20260912/astra_process_main_native_review_v2_20260912.json`, SHA256 `6d92db5ab0dfb6f4295e971fde8f03d355eff591525cba8ab85b11b7ef8ac325`. Internal candidate binding `c54ae950ae04f469ccb8f8ce48a623592dd4cea5acfd4ae817a260475722a3f0` is distinct from candidate-file SHA256 `a7998dd361d87bf24102b5c5e6b413ed09d66524ed545a7788c453b919599961`; do not conflate them.
+- Source `4c3064c1c3eef068951e9c3b2ca46630754564e7`; plan `67f2b89a769dd1f21e2ae3f048aa2d3743a5761f0574dcca3f47e1a8c51b0f44`; native root `astra_rulegame_process_write_v2_20260912_attempt1`.
