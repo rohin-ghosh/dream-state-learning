@@ -88,3 +88,6 @@ The first check the formalisation asks for is cheap and was run within the hour,
 **Astra's warning.** An excellent ledger is not reflection: first-person restatement of supplied measurements is a worthwhile preschool behaviour and need not change the next decision. Establish the ledger first; then test whether a stored record changes a later decision when the program returns.
 
 **Fable's status note.** The slot, the shadow gate, the item format and the neutral probes are being built behind flags (default off; nothing running is affected; nothing synced to the nodes until reviewed). Launch waits on Rohin: the tick format is his, and cells B/C are parented lives under the letter of Codex's STOP.
+
+
+**§5 addendum (Rohin, message 4, 00:08 UTC).** The 8+32 split may be unnecessary complexity; possibly one rank-16 adapter for the whole run — an efficiency question rather than a consequential one; think about the complexity space of the flywheel built for the final test. Corpus accumulation: cumulative in the early sections, less so later — level-based plasticity. "It should definitely write down the learns." (Fable: SEQ-053 supports the simplification — rank never bought memory and hurt with few renderings; a single adapter also removes the composition question from the critical path.)

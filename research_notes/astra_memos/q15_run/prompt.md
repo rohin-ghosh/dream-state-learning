@@ -1,3 +1,20 @@
+You are reading the project lead's own words, unedited, and are asked for three deliverables. Ideas first; be direct; cite which message/section you rely on; mark what you cannot verify; no fetching. Up to ~3,500 words total.
+
+Deliverables:
+(A) YOUR READING of the thesis as the lead states it (messages 1–4 below): what exactly is the claim, what is the contribution, what is adopted from prior work, what is overclaimed or under-specified, what would a sceptical reviewer attack first, and where the lead's own words are sharper than the project's current notes.
+(B) A NEW ABSTRACT for the paper (<= 250 words) in the lead's framing — the self-learning flywheel; the taught disposition to produce good post-training data about one's own experience; the model distills but does not originate (provenance, not self-distillation); the agent parent amortising a human teacher; H1 retention and H2 faster self-learning that depends on continued consolidation — while stating honestly what has been measured so far and what has not (see the evidence block). Then a second, shorter variant (<= 150 words). Numbers only where they change what a reader concludes.
+(C) Should the COLLABORATOR BRIEF (appended below, v2) be refactored around this thesis, and how? Give the new spine in <= 12 lines and say what to delete, what to keep, what to add. Also answer the lead's new question in message 4: the complexity space of the flywheel for the final test — is one rank-16 adapter for the whole run simpler and sufficient versus the 8+32 split (evidence: rank 32 never helped completion-frame memory over six banks and hurt whenever the renderings were few; rank 8 carries the routine in every life), and how should plasticity change by level (the corpus is cumulative early and less so later)?
+(D) One thing we are about to get wrong.
+
+# Evidence block (Fable's measurements, 2026-09-11/12; SEQ = notebook entry numbers)
+- Bridge (SEQ-048/049): the frozen child's own renderings of a planted fact, ending in its own canonical sentence, store owner-specifically at 0.82 completion vs 0.91 for hand-written templates over three banks (paired gap 0.05/0.22/0.01); when the child must write the recall sentence, its prose restates the fact in 78% of lines vs 26% when the harness appends it; the owner is named in the prose in 3–5%. Six more banks and a taught variant (a perception lesson in the prompt) are running.
+- Register (SEQ-050/051): in 25 finished lives the child's own notes drift into two rituals — a recipe (pass list + expected %) in 17 lives, a first-person slogan ('Form expectations before acting. Write down what I learn.') in 8 — and in neither does a note record what was done to this program and what happened. Parented lives echo the slogans most. Provenance: the child does not invent facts (>= 98.5% of factual tokens sourced in the life).
+- Articulation gate baseline (SEQ-052): under a gate that admits a note only if it names a pass actually run in that episode together with the measured result and the numbers agree with the ledger, admission is 0.0–2.5% of new notes in every one of 28 lives; the articulation rate (first-person record with a measured outcome) in the final four sleeps is 0.000 in all 28; at most 4% of any corpus would survive. Structural cause: the tick asks for the note BEFORE the act and its outcome; there is no post-outcome slot, so the harness appends the result. A level-3 'preschool' design (post-outcome slot; artifact lesson; 'aim for 10 records' baseline; 3 cells x 2 lives x 128 episodes) is designed, not launched.
+- Rank (SEQ-044/053): over six banks rank 32 never helped completion-frame memory and hurt whenever renderings were few (one form: 0.52 vs 2.60 nats; four forms 0.55 vs 1.18; sixteen forms equal); rank 8 whole-text x 3 epochs carries the behavioural routine on every life tested; a text-memory baseline (the child's own written brief in context) matches or beats the adapter on 15 of 24 lives.
+- H2 (the parented x sleep-running-vs-frozen 2x2 on unseen programs) has never been run; only frozen-adapter levels exist.
+
+# The lead's raw words (four messages, verbatim, transcription artefacts included; a pasted thread with another assistant is included as context in message 1)
+
 # Rohin's raw words — the thesis and the experiment (2026-09-11, evening Pacific)
 
 Saved verbatim at Rohin's request ("I want the raw text document cause I trust myself more than I've trusted you because I'm coming up with all the ideas"). Nothing below is edited, corrected or paraphrased by Fable except the section headings and the two provenance notes. Voice-transcription artefacts are left as they are ("Laura" = LoRA, "colonel gym" = the compiler gym, "fly will" = flywheel). Fable's paraphrases live in `THESIS_v2_SELF_LEARNING_FLYWHEEL.md`; where the two differ, this file wins.
@@ -127,3 +144,81 @@ The most useful thing in the rejection reasons is structural, not a child failin
 Order of operations this fixes. The gate cannot be enforced on today's child, since it would skip every sleep. So: change what the child writes first, with the parent naming the artifact and a slot to write it in, measure the articulation rate in shadow mode, and only then enforce. Astra is drafting the smallest level-3 lives that could move the rate from zero within about 12 GPU-hours per life, as a three-cell comparison: slot alone, slot plus parent, slot plus parent plus your numbered baseline.
 
 (Fable's note: the last three paragraphs are Fable's own report text that Rohin pasted back with "explain this"; the first paragraph is Rohin's.)
+
+# Current abstract (paper_prototype/main.tex)
+
+
+\begin{abstract}
+% 2026-09-11 update: replaced with the replacement abstract of Astra memo 6 (research_notes/astra_memos/2026-09-11_q7_paper_review.md,
+% "Replacement abstract"), under 200 words. Sources: E:58 (+0.019, SE 0.011; harmful pairs in 4/9 lives); E:6 (8 programs held out by
+% identifier); SEQ-022 / E:72 (48 cells across both machines, two adapter reps vs three base reps per machine; finals -0.017 n=9 /
+% +0.003 n=6 / -0.010 n=7; tally 9 above +0.015 / 33 within / 6 below, all six with a collapsed rep; 7 of the 9 exactly the 0.2731 routine,
+% two near it); SEQ-022 / E:73 (text memory, 8 lives: brief >= adapter in 5/8; adapter wins 0.013, 0.007, 0.016); SEQ-020 / SEQ-021
+% (seed 0 routine-only 0.5291 / 0.2730 vs full brief 0.5291 / 0.2731). The RP arm (+0.001, n = 3) and the crossed cells are in
+% Section 4.4 rather than compressed here (memo 6, objection 9).
+We measure an \emph{experience model}: frozen Qwen2.5-7B-Instruct plus a rank-8 adapter rewritten every 32 episodes from success-filtered child-authored text. In nine ungated 1{,}024-episode compiler-optimization lives, paired adapter-on/off probes on eight identifier-held-out programs gave mean life-level gain $+0.019$ (SE 0.011); 4/9 lives had a harmful pair below $-0.03$ despite passing format checks. Scores measure fractional instruction-count reduction. A disjoint re-probe covered 48 adapter cells across both machines on 12 programs from datasets absent from the curricula. Final-adapter mean gains were $-0.017$ (ungated, $n = 9$), $+0.003$ (gated, $n = 6$), and $-0.010$ (gate plus parent, $n = 7$). Of 48 cells, 9 exceeded $+0.015$ and 6 fell below $-0.015$; every negative cell had a collapsed replicate, while seven positive cells exactly reproduced one fixed six-pass routine. In a post-hoc common-random $2\times2$ on nine ungated lives, frozen / adapter / text brief / adapter-plus-brief means were 0.2528 / 0.2382 / 0.2570 / 0.2424: text added 0.0041 on average, the adapter subtracted 0.0146, and their mean interaction was approximately zero. The writer therefore changes behaviour, but this setup mainly installs routines and can silently damage action generation.
+\end{abstract}
+
+# Current collaborator brief (research_notes/COLLABORATOR_BRIEF_v2.md)
+
+
+# Can an agent write its own experience into LoRA weights it can later use? Collaborator brief (v2, 2026-09-11)
+
+[SEQ-nnn]: dated internal notebook entry (others by date); [E:nn]: internal evidence-table line; paper: our draft; traceable on request.
+
+## 1. Research question and intended claim
+
+Can a language model convert its own successful experiences into persistent, usable weight memory? Loop: (1) frozen Qwen2.5-7B-Instruct; (2) episode = one program, ≤ 16 think-then-act steps, exact score; (3) every 32 episodes, keep the agent's own spans from well-scored episodes; (4) sleep: train a fresh LoRA adapter from the frozen base on the cumulative spans, never on the previous adapter; the only training; (5) gate: accept or refuse it; (6) run base + committed adapter + own brief (+ parent brief when taught, §5); (7) repeat. Next: augmented writes (§4), then the decisive experiment (§5): does a lineage (§2) taught process-only learn an unseen gym faster than the same mechanism untaught?
+
+Intended claims. Paper (2026-09-25): a characterisation of what one write learns on one gym, how it fails, and the extraction bottleneck; no positive memory claim. Next study (compute permitting): a one-lineage case study of taught versus untaught, existence proof or documented failure, not a benchmark; without compute after 2026-09-18 the paper stands alone.
+
+## 2. Architecture
+
+- **Life**: one 1,024-episode run of one agent from a fixed initial prompt in a compiler-optimisation gym. **Score**: fractional shrink in a program's LLVM instruction count (0.487 = 48.7%).
+- **Gate**: whether the new adapter replaces the committed one; so far a score floor plus a brevity rule; proposed: patience (refuse only broken format or stopped work; roll back after repeated decline).
+- **Committed adapter**: the last gate-accepted adapter. **Final adapter**: a life's last committed adapter.
+- **Collapse**: an adapter-on probe more than 0.03 (about 2.3 paired SD) below the same life's adapter-off probe (a harmful pair); shapes: act once and stop, or a degraded adapter admitted then frozen by later refusals.
+- **Brief**: the agent's own summary written at sleep. **Parent brief**: advice from a stronger model reading the agent's redacted record, process-only by prompt (the proposed design bans answers, recipes and scores; the historical leak scan was porous, deliveries unaudited); never a training row (the agent's own restatement of it can be; frequency not measured); the write-time scan now refuses verbatim parent lines where the loss falls.
+- **Lineage**: one agent run as several clones, each in its own training gym; at every sleep their success-filtered spans are pooled, one adapter is trained from the frozen base on the pool, and every clone loads it.
+
+## 3. Findings
+
+Rank 8; two 8-GPU A40 nodes.
+
+**(i) Writing experience into the adapter changes behaviour, noisily and sometimes harmfully.** Nine ungated lives, paired adapter-on/off probes on eight programs excluded from training by identifier (training holds same-source siblings of 4–6): mean life gain +0.019 (SE 0.011; 6/9 ≥ +0.02, 3/9 negative; paired SD ≈ 0.013); 4/9 lives had a late harmful pair (first at episode 384), all passing the format check [E:6, E:23, E:48, E:58–59].
+
+**(ii) Behaviour ritualises and locks onto compiler recipes; the gate does not reliably prevent degradation.** Thinking ritualises (≥ 2 of 4 repetition flags in a 32-episode window: same first action, flat predictions, templated notes, same recall) at episodes 160–224 in 8/9 scored unparented lives (6 of the 7 scorable lives of (i) plus 2 under an earlier writer) [E:32]. In the gated lives, where adapter-on means were tabulated, plateaus repeat to four decimals across lives: 0.4878, the initial prompt's four-pass list run with no model, and 0.5291, one fixed six-pass routine [E:50, E:54]. Gate failures (gate+parent development lives; observational): the decaying floor admitted a write 0.037 below the adapter it replaced and, in another life, sat 0.06 below the life's best as a write passed; one approved adapter scored 0.138 on an unseen-panel replicate [SEQ-016, SEQ-023]. Gate catches: ≥ 19 brevity refusals of score-passing candidates (appendix) [SEQ-012].
+
+**(iii) The frozen model reading the life's own final brief (no adapter) matches or beats the final adapter in most lives.** On the eight-program panel it did so in 12 of 19 lives; the adapter won in 7 (unparented 10 vs 4; parented development lives, observational, 2 vs 3) [SEQ-031]. These controls establish neither equivalence nor a general advantage either way [paper §1]. On 12 programs no life trained on, final-adapter means sat near or below the frozen base in every arm; no cell showed program-dependent choice (panels not designed for it) [SEQ-022/E:72].
+
+**(iv) A controlled "car test" identifies the bottleneck.** Made-up owners' car colours planted at doses 0/1/4/16 (dose = occurrences of the fact in the record) over four sleeps, scored by paraphrased cues; bank = one independent set of 64 owners and colours. The adapter trained on each fact in its real context fits that text by 4.35 nats (bank 0), yet its binding statistic I_d (log-odds gain for the planted colour at the owner's cue minus the same at a matched unexposed owner's) is ≈ 0, and a scrambled-binding control matches it [SEQ-025/E:77–78]. Rank 32 did not help in the one cell tested; more adapter strength only sharpens a read-from-context skill (appendix) [SEQ-029, SEQ-030].
+
+## 4. Immediate experiment and decision criteria
+
+The next cell changes the write's representation and the retrieval cue, not the capacity. Memory is written as bare declarative text in which every rendering of a fact ends in one canonical sentence ("Owner X's car is red"), and it is retrieved by completing that sentence, not by answering a question: the agent controls its own recall cue, so paraphrase robustness is secondary. At equal total exposure (16) we compare 16 repeats of one form, 4 forms × 4, and 16 forms × 1, separating repetition from variety (Allen-Zhu & Li, arXiv:2309.14316: knowledge seen in one form is stored, not extractable, until augmented); alongside, the TMEM recipe (Ren et al. 2026, arXiv:2606.04536): low-rank FFN-only adapter on the last layers, SVD-initialised, SGD-trained. Chat-rendered training (fact in the user turn) taught the model to copy from context rather than store; bare text avoids that shortcut.
+
+- **Success**: at dose 16, the owner-specific gain at the completion cue (the planted owner's frame minus a similar unexposed owner's frame) above zero with a confidence interval excluding zero, and the frame for unexposed owners and for the wrong property (bicycle) within the spill gate (colour-odds shift ≤ 0.03); sleep then expands each percept into many renderings at write time.
+- **Failure**: text fit improves but the owner-specific gain stays at zero; we turn to retrieval (a separate memory block; retrieved context at write time), not more training.
+- **Mixed** (gain above zero but spill above 0.03, as in the rank-8 occurrence-preserving short-piece cell, which recalls 0.944 on its training frame): a failure for lineage use; test whether fewer forms or fewer repeats cut spill before retrieval.
+
+## 5. Longer-term lineage experiment (proposed, not run)
+
+The lineage (§2) is raised in reasoning-puzzle gyms under parents (briefs: §2). Final test in the compiler gym (unseen by the lineage): a taught life (born with the lineage's final adapter; its writes carry a fixed sample of lineage spans) versus an untaught life (empty record, no adapter), identical mechanism, neither parented. Co-primary endpoints: (1) frozen transfer: the lineage's final adapter on the test gym, on versus off; (2) the 512-problem learning curve: on-minus-off score every 64 problems, entry level and slope from problem 128 to 512, ruler = between-life SD of that gain, 0.027 [SEQ-011]. One pair is a demonstration, not a "learns faster" claim; a second untaught seed is the minimum noise band; threshold to be pre-registered, not yet set. Parenting so far is observational (three parented development lives; nothing separates from unparented controls on score, echo or efficiency [E:47, E:53, E:55]); it is this study's manipulated variable, not a paper result.
+
+## 6. What help we want
+
+Write representations that bind facts to cues; two-block adapters; replay; a separate memory block; evaluation design (extraction probes, unseen panels, noise bands); GPU access after 2026-09-18; review of §4.
+
+## 7. Appendix: evidence and non-claims
+
+- Nine ungated endpoint adapters scored once at 1,024: three exactly on the two plateaus, one 0.003 below, three collapsed below adapter-off (0.4329, 0.4329, 0.4093), two on neither (0.5091, 0.4889) [E:50, E:54, E:73; SEQ-017–SEQ-019, SEQ-022, SEQ-023, SEQ-026; notebook 2026-09-11 04:30 UTC].
+- Gate floor as run: max(latest adapter-off, committed adapter's latest probe) − 0.02 [E:25]; brevity rule: ≥ 19 refusals of writes that passed the score rule [E:89; SEQ-012, SEQ-013; paper §4, Table 2]; floor decay and the 0.138 replicate: (ii) [SEQ-016, SEQ-019, SEQ-022, SEQ-023].
+- Unseen-program panel (12 programs, 48 cells; 2 adapter replicates vs 3-replicate bases 0.2574/0.2541; replicate SD 0.006–0.007; ±0.015 descriptive): final-adapter mean gain −0.017 ungated (n = 9), +0.003 gated (6), −0.010 gate+parent (7), +0.001 parented (3) (parented arms observational); 9/48 cells above +0.015 (7 exactly the routine's 0.2731), 33 within, 6 below (all with a collapsed replicate); ungated final − mid-life: 6/9 negative, 3/9 zero [SEQ-022/E:72].
+- Recipe line alone vs full brief: eight-program panel, matched or beat in 4 of 4 lives (0.5291/0.5291/0.5291/0.5294 vs 0.5291/0.5163/0.5291/0.4898); unseen panel, matched once (0.2730 vs 0.2731), beat once (0.2727 vs 0.2525), below twice (0.2443 vs 0.2667; 0.2445 vs 0.2731) [SEQ-020, SEQ-021, SEQ-022, SEQ-023, SEQ-029, SEQ-030].
+- Car test, rank 8, bank 0 unless stated: paraphrase dose signal only in the occurrence-preserving short-piece cell, +0.10/+0.08 at doses 4/16 (+0.049 pooled over two banks; I_d spans zero), exact-cue recall 0.944: a surface habit; colour-odds shift 0.20–0.25 on unrelated cues (gate ≤ 0.03); fact-in-context 0.844–1.000 vs 0.563 frozen [SEQ-025/E:77–78; SEQ-026]. Rank 32, three banks: I_d −0.137 [−0.488, 0.199] [SEQ-029]. Strength λ 0.25/0.5/1 on the rank-8 every-occurrence, real-context adapter, three banks, no retraining: I_d −0.25/−0.19/−0.55 [−1.06, −0.08]; read-from-context 0.80/0.95/0.94 [SEQ-030].
+
+Not claimed (paper): that gated writes are safe or the gate prevents collapse; that parenting improves scores, delays ritual, prevents collapse or is taken up; that the adapter stores usable knowledge; that the ungated life-long gain sits on the initial-prompt plateau; that rank is irrelevant; anything beyond 1,024 episodes, eight programs, one gym, one base model; no firsts.
+
+ICLR 2027 abstract 2026-09-18, paper 2026-09-25; GPU access ends 2026-09-18. Binding stop: no bootstrapped agent, and none whose provenance has not passed a fail-closed guard, is a lineage member or result; every compiler-gym life here is a development life; parented ones observational only.
+
+Contact: Rohin Ghosh
