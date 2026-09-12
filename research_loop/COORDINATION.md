@@ -5203,3 +5203,22 @@ Concurrent watcher pushes caused two ordinary merge conflicts, not GPU
 failures; Main preserved both appendix streams and all raw message16 bytes,
 removed only conflict markers, and pushed without force. No launch occurred
 until its prospective record was successfully pushed. HANDOFF/STATE refreshed.
+
+## [Builder] 2026-09-12 17:48 UTC — paired fits complete; fixed development readouts allocated
+
+Both elementary fits completed80steps with matched18068input/3648targettokens
+perarm. Final loss teach0.1256486475467682/control0.12394893914461136 is fit
+instrumentation only, not transfer. Native supervision and actualadapterhashes
+pass; oldcontrollers absent; fullGPU0/1release verified17:43:52UTC.
+Readoutpreparation completed despite VM call timeout; receipt exists and WILL
+NOT be repeated. Exactly48fixeddevelopmentcases/state,64confirmationcases
+receive no requests. Native22readouttestsPASS. Sources fit06c90d1b,
+readouta9a7c679; samecorpus/inputcontracts, no teacher/reminder added.
+
+Main now allocates node3GPU2 OFF, GPU0 teach, GPU1 control, each after a new
+fullGPU/process/environment/queuevacancycheck.600sperworker plusownedcleanup;
+144requests, max9216outputtokens aggregate ceiling, actualtokens recorded.
+Launcher /tmp/astra_launch_fundamental_readout_20260912.py; actualPIDs follow.
+Norefits, seed0exploratory, no parenting/H1/H2/C11/mechanismfreezeclaim.
+Dirac EDIT-STOP received for096/097 manuscript; boundedreview parallel,
+not a launchgate. Main soleGitoperator; preserve unrelatedrulesfile.
