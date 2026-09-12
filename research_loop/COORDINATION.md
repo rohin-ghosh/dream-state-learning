@@ -5222,3 +5222,15 @@ Launcher /tmp/astra_launch_fundamental_readout_20260912.py; actualPIDs follow.
 Norefits, seed0exploratory, no parenting/H1/H2/C11/mechanismfreezeclaim.
 Dirac EDIT-STOP received for096/097 manuscript; boundedreview parallel,
 not a launchgate. Main soleGitoperator; preserve unrelatedrulesfile.
+
+## [Builder] 2026-09-12 17:51 UTC — actual elementary readout launches
+
+Node3 sourcea9a7c679, fixed48devcases/state:
+OFF GPU2/PID161951 started17:48:08.587894UTC;
+teach GPU0/PID162343 started17:48:33.458139UTC;
+control GPU1/PID162972 started17:49:10.842178UTC.
+EachfullGPU/process/environment/queuecheckpassed; reservations remain through
+supervisedcleanup andMainfullrelease. No completion orscores asserted.
+64confirmationcases stillunrequested; actuallaunchreceipts recovered toVM.
+HANDOFF/STATE corrected: fits complete, readouts live. Independent manuscript
+review and /tmp-only replicationtool preparation runparallel, no otherlaunch.

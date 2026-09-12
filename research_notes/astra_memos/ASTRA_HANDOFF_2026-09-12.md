@@ -1,4 +1,28 @@
-# Astra restart checkpoint — 2026-09-12 17:41 UTC
+# Astra restart checkpoint — 2026-09-12 17:51 UTC
+
+## 17:51 superseding operational state
+
+Elementary seed0 fits are COMPLETE, not live: 80steps each, final losses
+teach0.1256486475467682 and control0.12394893914461136. Native supervision,
+adapter hashes and full GPU0/1 release verified at17:43:52UTC. DO NOT refit.
+Readout preparation completed despite SSH timeout; DO NOT prepare again.
+
+Fixed48development-case readouts now LIVE on node3 under source
+`a9a7c67919b5f5ec8b121a463f2ea49a5c967757`, root
+`~/astra_diagnostics/astra_fundamental_teaching_20260912_attempt1/readouts`:
+OFF GPU2/PID161951 at17:48:08.587894UTC;
+teach GPU0/PID162343 at17:48:33.458139UTC;
+control GPU1/PID162972 at17:49:10.842178UTC.
+Fresh full vacancy checks and native22CPUtestsPASS. Reservations remain until
+supervised cleanup AND Main full release.64confirmationcases unrequested.
+Next reduce all3, audit native tokens/adapters/source/cleanup, archive evidence.
+
+Dirac EDIT-STOP received for six manuscript files through096/097. Bernoulli
+reviews them read-only. Ohm owns only /tmp replication orchestration/test/
+handoff, no native/GPU/launch/Git authority; Main selects replication from
+development evidence. Main soleGitoperator; preserve dirty rules file.
+No mechanism freeze, P1/G5/H1/H2 closure or authenticated base-origin claim.
+Historical snapshots below are superseded on current job status.
 
 ## Latest live state (overrides all snapshots below)
 

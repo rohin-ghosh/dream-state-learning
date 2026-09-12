@@ -1,13 +1,21 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 17:41 UTC**.
+Latest reconciliation: **2026-09-12 17:51 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **17:51 superseding status:** elementary seed0 fits complete80steps/arm;
+  fullfitrelease17:43:52. Readouts LIVE node3 OFF GPU2/PID161951,
+  teach GPU0/PID162343, control GPU1/PID162972. Exactly48devcases/state,
+  no confirmation requests; native22CPUtestsPASS. Readout sourcea9a7c679.
+  DO NOT repeat fits or preparation. Next reduce/audit/fullrelease/archive.
+  Dirac EDIT-STOP; Bernoulli manuscript review; Ohm /tmp replication
+  preparation only, no launches. No new scientific outcomes claimed yet.
 
 - **17:41 superseding status:** elementary authored birth/post-training
   teaching fit160031/node3GPU0 and task-only control160133/GPU1 launched17:39.
