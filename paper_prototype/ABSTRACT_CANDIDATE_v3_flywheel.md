@@ -1,0 +1,18 @@
+# Candidate abstract v3 — the self-learning flywheel (Astra memo q15, 2026-09-12 00:10 UTC; NOT yet in main.tex — Rohin decides)
+
+Written by Astra from Rohin's raw thesis messages and the evidence block (SEQ-044/048–053). Both variants are "current-evidence abstracts": they state H1/H2 as the question and say plainly that H2 has not run. Word counts: main 234, short 139.
+
+## Main (≤ 250 words)
+
+Continual learning requires more than a weight-update rule: an agent must turn experience into useful training data. We investigate a self-learning flywheel in which a frozen language model with a trainable adapter is taught to perceive, interpret, and record externally grounded experience, then consolidate its records into weights. An agent parent amortises a human teacher’s curriculum. The intended mechanism is not closed-loop self-distillation: the model distills, but does not originate, the factual evidence, which must trace to environmental outcomes or external feedback. We separate H1, retention of taught learning behaviours outside the teaching context, from H2, faster learning on unseen tasks whose advantage depends on continued consolidation.
+
+Current experiments test prerequisites and failure modes, not H2. In controlled planted-fact tests, frozen-child renderings ending in a canonical sentence support owner-specific completion recall of 0.82, versus 0.91 for handwritten templates across three banks. Rank-8 adapters retain a behavioural routine, but the child’s written brief matches or beats the adapter in 15 of 24 lives. In ordinary interaction, child-authored notes become recipes or slogans rather than records of actions and outcomes. Across 28 lives, late-stage articulation of a first-person record with a measured outcome is zero; the interaction format requests notes before outcomes and provides no post-outcome writing slot. These results locate an articulation bottleneck but do not establish retained adaptive learning skills or a functioning self-learning flywheel. Post-outcome teaching experiments and the parenting-by-continued-consolidation test remain unrun.
+
+## Short (≤ 150 words)
+
+We investigate a self-learning flywheel: teaching an agent to turn its own externally grounded experience into useful post-training data, then consolidating those records into an adapter. An agent parent amortises a human teacher’s curriculum. The model distills, but does not originate, the factual evidence; this provenance requirement distinguishes the proposal from closed-loop self-distillation. H1 asks whether taught learning behaviours persist beyond their teaching context. H2 asks whether they accelerate learning on unseen tasks, with the advantage depending on continued consolidation.
+
+Current evidence establishes prerequisites and failures, not the flywheel. Controlled child-authored fact renderings support owner-specific recall, and adapters retain routines. Yet ordinary notes become recipes or slogans: late-stage action–outcome articulation is zero across 28 lives, in a format lacking a post-outcome writing slot. Text briefs remain competitive with adapters. Post-outcome teaching and the decisive parenting-by-continued-consolidation experiment have not run.
+
+## Fable's note
+The current abstract in `paper_prototype/main.tex` (Astra memo 6 replacement, 2026-09-11) is built around the storage question and the text-memory result. This candidate rebuilds it around the flywheel question with the same honesty about evidence. If adopted, the introduction's spine must follow (Astra q15 §C: paper question / completed evidence / submission-contingent claim), and the numbers must be refreshed at submission (nine-bank bridge, taught variants, preschool if run, H2 if run).
