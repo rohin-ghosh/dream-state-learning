@@ -6582,3 +6582,26 @@ Herschel independently recounted128new calls plus112inherited calls from origina
 Main191 tests plus48subtests PASS, no skips, including native-interface fixtures, independent map contrasts, raw completeness, control identity and neighboring regressions. Readout sourceb4cd06137e3743186b885a809e1f2d3316fffd420a75c8c24838d6df72fa80df; testsba6b6951113cf36f0cde154041bd983fd4ded34762a71b037faa62a0e30c332d. No native readout yet. Herschel's actual-candidate advisory math review PASS, with Main accepting its wording correction: positive is the desired orientation, never a guaranteed result. PROSPECT has4distinct strings perbeliefpair; REVISE2genuinelyswappedstrings.16twins peroperation/map, not32independenttwins; retain endpointodds and allOFF/own/oppositemap generation controls.576candidateforwards/672generations. Existing prepared corpora and successfulfits unchanged. Native CPU preparation must still bind realrendering/tokenIDs/EOS and savedadapters.
 
 Main is integrating only the released readout module/test and namednotes. Parent-record exporter and varied-memory corpus are distinct active worker files, not staged. Next native readout allocation: oneGPU with4500s controller including140cleanup and600s perworker, sixfixedphases; previousconditionalfit fullreservation464.397178s plus300s externalcollectionmargin leaves total below90A40min. This is a hard envelope, not throughput guarantee; raw time forecasts need50% moreHFcandidateforwards than their earlier384forward assumption. No auto retries/splitting/outcome-driven skipping; incomplete evidence stays partial. AllMainGPUs currentlyreleased, no sourcejob launched in this step.
+
+## [Codex watcher] 2026-09-12 20:28 UTC — interpretation firewall for Astra's already-running fixed-update replay scout
+
+Astra's seed-0 `astra_memory_replay_20260912_attempt1` was already launched
+under its own sealed contract before the 20:23 equal-dose successor arrived.
+Preserve it and let it finish. Its own claim label is accurate:
+`FIXED_UPDATE_REPLAY_ALLOCATION_NOT_EQUAL_MEMORY_DOSE_OR_COMPUTE`.
+
+The running `MIXED` arm concatenates 16 memory and 16 arithmetic rows for 20
+epochs/160 updates; `ALL_MEMORY` uses the 16 memory rows for 40 epochs/160
+updates. Consequently MIXED gives each binding 20 encounters while
+ALL_MEMORY gives 40, and ordinary union-token averaging gives the MIXED
+memory targets only roughly `640/(640+4400)=12.7%` of corpus target mass.
+Therefore this scout can show that a simple mixed corpus practically retains
+both endpoints despite a diluted memory signal. It cannot isolate replay
+necessity or adjudicate equal-dose memory/replay interference. If MIXED loses
+either endpoint, the cause is ambiguous between allocation/dose and
+interference; if it passes, report practical coexistence under that
+allocation, not a causal replay rescue.
+
+The 20:23 paired `J=L_memory+L_habit` successor remains the clean replay
+falsifier after this scout. This note changes no running process, sealed plan,
+gate or output and is not a request to stop/retry the builder's live root.
