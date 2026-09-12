@@ -4941,6 +4941,7 @@ Rohin read your 16:53 answer and replied (raw message 15, dictated; "talk to Ast
 2. **The test he wants first — level 1 as post-training:** open the loop (no model output), train the teaching corpus into a fresh rank-8 LoRA at the **highest plasticity**, possibly several passes, and measure **adherence** to the taught simple behaviours and **memory** of the taught content against an equal-token control and the frozen child; then move plasticity up and down (lr, epochs, repetition) and find the adherence you would want for level 1. Outcome: level-1 plasticity, what a good corpus looks like, and the mechanism verified — "needed yesterday". No compiler is needed for this: at level 1 no agent thoughts flow in. He agrees with your operational definition of a teaching corpus (skill definition, sourced worked examples, varied practice, contingent correction, logged dose, held-out check on correct decisions) as an overview, not a fixed definition. Your provenance work on bootstrap_v3 is the right prerequisite if that corpus is used; a purpose-written simple-behaviour corpus (bigger and deeper than needed, more repetition of the good things, more examples, coherent) is the alternative he describes. Still a suggestion: choose, plan it in the notebook with GPU-hours, and say what you would do.
 3. **His reading of level 3 now:** fine and measurable, but "a child in a high-school class" — without teaching how to learn it tests the mechanism without the parenting that is part of the mechanism; do not expect visible improvement from it; keep it, do not lead with it.
 Compile ideas he lists for level 2, for your reading list not for action: project experiences into a space before the LoRA (repeated patterns kept, contrast preserved, a focus mechanism decides what to project down, plasticity possibly in that layer, hypernetwork-like transfer to the LoRA); a per-episode compile so the sleep compile is organised by episode; rewriting may be the easiest thing that works but is expensive at scale; extraction and QA pairs "lose intelligence — who decides what to extract? the model should learn to ask itself questions" (his worry about TMEM/OEL-style extraction). Skill-learning metrics are downstream of level 2.
+<<<<<<< HEAD
 
 ## [Builder] 2026-09-12 17:22 UTC — SEQ-096 terminal; freshness audit accepted before panel reduction
 
@@ -5055,3 +5056,41 @@ still lackcomplete author/support binding. No knownmarkerfileabsence orzero
 lexicalscreenhits certifiescleanliness. Capsulef054172b... preserves141files;
 boundedcredential/internal-hostnamepatternscan flags0. Leavev3unverified;
 newcandidate needs ordinary sourceddata, not retrospectiveancestry invention.
+=======
+## [Codex watcher] 2026-09-12 17:20 UTC — writer gate, relation result, and M-core priority converge
+
+I read the complete 3,388-line M-core v8 and the independent first-eleven
+writer audit. V8 is explicit enough to preserve as a future falsification map
+and resolves the recorded v7 contract defects while retaining exactly six fits
+per complete root. Its own strategic HOLD is the correct disposition: do not
+materialize or spend GPUs on M-core until the live writer family first passes
+the registered four-update, two-input/opposite-action sign canary and then a
+fresh binding/locality qualification without spill or a constant-action basin.
+Contract closure is not the paper bottleneck.
+
+The cumulative writer evidence makes that gate mandatory. Across the first 11
+mixed development lives, whole-text A averaged +.0045 on the report panel and
+-.0045 on the disjoint panel; only 2/11 exceeded +.015 on disjoint. Framed
+child streams were null/unstable, deterministic QA collapsed 11/11, and the
+coupled TMEM-style bundle was harmful in 10/11 report and 9/11 disjoint. This
+establishes behavioral carriage of a supplied routine, not input-selective
+experiential memory or sequential retention. Another lifetime-format bakeoff
+before the opposite-sign canary is lower information than the canary.
+
+The terminal nine-call relation diagnostic also closes its narrow question:
+the original underspecified surface was correct on 1/3 event cases, while the
+fully clarified same-JSON surface was 3/3 (token-only clarification 2/3). This
+localizes the failure to the elicitation/interface rather than establishing a
+deep reasoning deficit. Do not promote relation-token transcription into the
+next learning target. Mechanically bind the trusted prediction/action/outcome/
+relation event as provenance/input, then spend child capacity on the actual
+decision: author an evidence-citing lesson/connection or explicitly choose
+null. The world/compiler verifies the event; it must not author the learned
+lesson.
+
+Fresh-behavior attempt2 has two completed seed controllers and one controller
+still verified live at 17:20 UTC, but its four previously model-exposed puzzle
+IDs remain disqualifying for any fresh-panel claim regardless of terminal
+scores. Preserve it only as contaminated development evidence; the independent
+exposure-union audit is deriving a safe mandatory registry for any clean rerun.
+>>>>>>> 13bb24bf (Set writer gate and preserve M-core hold)
