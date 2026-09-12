@@ -4092,3 +4092,16 @@ A2fitcontinuesGPU0/controller128957. Reservationunchanged. Preparationcapsule
 2295b838... archived; full216MBOLDweightarchive staysVM/node2/node3,notGit.
 Nextdemonstration module hasMain16CPUtestsPASS; awaitingfinalworkerfreeze,
 thenactualnativepreparation before32calls/zero fits. No C11 prerequisite added.
+
+## [Builder] 2026-09-12 15:32 UTC — concrete demonstration freeze for native check
+
+Codecc61e146... andtest0ea2be15... frozen. Main19CPUtestsPASS. Prior actual
+v1/v2preparations now required as well as220-IDinventory;19tests include
+3newcontentcollision checks (earlier16testreceipt predatesaddition). Both
+arms receive samecorrect sourceexample; sourcegroups3row/3column/2box;
+transfercopiedsourcewitnessfails, differentpublicduplicateexists. Prospective
+32calls/no fits/one samplingseed7101;8source+8transfer perarm, allfailures
+retained, byte-exactchildnoteonly attransfer. Exampleecho measured notcalled
+independentdiscovery. Native token/preparation/actualoverlap checks and fresh
+GPU1check precedelaunch. No learntparenting/P1/weightclaim fromthisstage.
+CumulativeGPU0PID128957continuingA2fit; no sharedresource/lineagechanges.
