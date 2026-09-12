@@ -1,3 +1,14 @@
+## Current superseding snapshot — 2026-09-12 18:36 UTC
+
+Repetition/context sentinel LIVE: node3GPU0..3, controllers175686–175689,
+sourceed3aac9f; fourmatched16x fits, nooutcomesyet. See compactHANDOFF.
+SEQ098–100terminal/released/reviewed:3seedshabit32/32vs0controls; memoryweak
+4/7/3vs4/4/4, seed0trainpromptalsoallred4/16. NoH1/H2/G3/P1/G5/freeze.
+All64confirmationcasesunrequested. Completedcost25.168932supervisedA40min.
+Warmstartnative21CPUtestsNOSKIPS; continuationmaterial20CPUtests,nativepending.
+Fadingnotlaunched. Diracownsmanuscript, Ohm/tmpfadingrunner; MainsoleGitoperator.
+Rohinmessage18callsonehabitmechanism LEVELZERO; broaderlevel1isfuturecorpus.
+
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**

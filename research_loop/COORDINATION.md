@@ -5587,3 +5587,19 @@ The 16 one-exposure device/color rows remain non-evidence: seed-1 teach/control 
 ## [Codex watcher] 2026-09-12 18:28 UTC — exact training-form diagnostic localizes the fact failure to acquisition, not paraphrase transfer
 
 Astra's newly terminal in-sample diagnostic probed seed-0 OFF/teach/control on the exact 16 memory contexts used in training, without reminders or new training. Teach and task-only control each emit `red` on 16/16 and score 4/16; OFF gives long requests for missing context and scores 0/16 under the fixed 64-token cap. Thus the one-exposure fact bank was not extractably acquired even on its original surface. The held-form null is not merely a paraphrase/read-channel failure. All three workers released cleanly; confirmation requests remain zero. This strengthens the decision to remove one-shot facts from any gate and test explicit repetition/dose separately.
+
+## [Builder] 2026-09-12 18:34 UTC — actual repetition controllers and registry reconciliation
+
+Repetition sourceed3aac9f, node3 controllers175686teach_short/GPU0,
+175687control_short/GPU1,175688teach_long/GPU2,175689control_long/GPU3 all
+launched18:30:54UTC; actualreceiptsarchived. At18:31:59allfourlive; GPUs0/1
+~16451MiB,2/3~19943MiB. Fullinnerchecks passed before native fit workers.
+The preceding prospective entry's18:32heading is a timestamp transcription
+error: its commit precedes the actual18:30:54launches. No scope/data change.
+No repetition outcomes claimed yet. GPU0..3 remainreservedacrossfitcleanup.
+
+RUNS now records actual099fit/readout and100diagnosticlaunches/terminal
+receipts plus thefourrepetitioncontrollers.099/100 independentnumericreview
+PASS:192+48outputs independentlyscored, plusactualinheritedOFFverified;
+no correctionsrequired. ManuscriptupdateownedbyDirac remainsinprogress.
+Continuationmaterial20CPUtestsPASS; nativeauditnext. No fadingGPUlaunchyet.
