@@ -5,7 +5,7 @@ Scope: read-only audit of SEQ-054 (`a85e9ab6`), preserved local adapter
 artifacts, and authoritative node files/queues. I did not modify, stop, start,
 or reorder any running or queued work.
 
-## Verdict
+## Initial verdict (before the queued refits completed)
 
 **The observed outcome difference is real, but a machine/node effect is not
 established.** The comparison in SEQ-054 changes both node **and training
@@ -27,6 +27,58 @@ The defensible current statement is:
 > traces, produced materially different adapters under two confounded
 > `(node, training-seed, run/GPU)` conditions. This exposes unmeasured writer
 > run/seed sensitivity; it does not yet identify a node effect.
+
+## Terminal addendum: the apparent node effect tracks training seed in these fits
+
+The full three-bank seed-0 refit on node 1 and a fresh same-node seed-0 repeat
+on node 2 are now terminal. Both reproduce the original node-2 seed-0 fit
+exactly on the scientifically relevant output, not just approximately:
+
+- all three final losses are identical as stored floats:
+  `1.1020373106002808`, `1.2285187244415283`, and
+  `1.3072445392608643`;
+- steps, item counts, token counts, supervised-token counts, ordered effective
+  corpus hashes, and multiset hashes match bank by bank;
+- after removing only the run-specific `adapter`, `adapter_arg`, and `seconds`
+  fields, each complete 1,313-cue evaluation JSON is identical across all
+  three executions (original node 2, repeat node 2, repeat node 1);
+- the dose-16 completion probabilities therefore reproduce exactly:
+  `0.379 / 0.719 / 0.254`, pooled `0.451`, with pooled
+  `I_d_frame = 0.760 [0.395, 1.191]` and spill `0.264`.
+
+By contrast, the original node-1 train-seed-1 fits on the same effective
+ordered corpora yield `0.874 / 0.882 / 0.735`, pooled `0.830`, with
+`I_d_frame = 2.013 [1.365, 2.748]` and spill `0.392`.
+
+This closes the practical attribution needed here: **in these measured fits,
+the original discrepancy tracked configured LoRA training seed and reproduced
+across a same-node rerun and a cross-machine rerun at stored evaluation
+precision; no material machine effect was needed to explain it.** A separately
+queued node-2 train-seed-1 repeat remains a useful symmetric replication, but
+the completed seed-0 block already strongly rejects a pure machine-only
+explanation across every bank and every frozen cue. This does not establish
+universal hardware determinism or exclude a node-by-seed interaction in an
+unmeasured recipe.
+
+The seed result does not rescue the writer. Both configurations violate the
+registered `0.03` locality ceiling by roughly an order of magnitude. The
+observed seed-1 output has a stronger broad owner/colour-writing phenotype;
+the observed seed-0 output mixes weaker binding with template-only or
+continuation-suppression failures. Distinct optimization basins are a plausible
+mechanism, not established by one fit at each of two seeds. These data cannot
+estimate basin frequency, select a retry count, or justify retry-until-pass.
+
+Preserved local evidence:
+
+- `/Users/rohing/dream-state-artifacts/seed1_F_fit_repeats_2026-09-12/`
+- node-1 train-seed-0 report SHA-256:
+  `339b731702f4951b2d298546e915d7dde89da518c5ffac75e2811faf7d0e998f`
+
+The literal bank-0 `corpus.json` files differ because the later writer adds
+zero-valued negative-frame metadata. Their ordered effective corpus hash is
+nevertheless the same (`15adaeff18a685c0`), as are the actual examples and
+recorded final fit/evaluation outcome under seed 0. Banks 1 and 2 are literally
+byte-identical.
 
 ## What is actually identical
 
@@ -139,22 +191,23 @@ The two refit directories already contain exact copies of the world banks,
 distractor, and manifest; the F corpora will be deterministically rebuilt.
 The queued commands correctly set seed 1 only for `rep_seed1`.
 
-## What remains missing for a node claim
+## What would remain necessary for a positive node-effect claim
 
-The present queue is high-value and should finish unchanged. But a positive
-machine attribution would still require a balanced design, minimally:
+A positive machine attribution would still require a balanced design,
+minimally:
 
 - node 1 seed 0 and a repeat of node 1 seed 1;
-- node 2 seeds 0 and 1 (currently queued) with repeated fits;
+- node 2 seeds 0 and 1 with repeated fits;
 - recorded GPU UUID, exact source hash, environment hash, corpus payload
   hash, training seed, and deterministic-mode settings per fit;
-- the same adapter evaluated on both nodes, which is already queued.
+- the same adapter evaluated on both nodes.
 
 In other words, a `2 nodes × 2 training seeds × repeats` block is needed if
-the paper needs a literal node effect. It may not be worth that GPU cost: if
-the current swaps show adapter-following and the refits show large run/seed
-spread, the scientifically relevant conclusion is simply that every writer
-comparison needs training-seed/run replication and blocking within node.
+the paper needs a literal positive node effect. It is not worth that GPU cost
+for the current paper: the adapter swaps already follow the adapter, and the
+completed seed-0 refit follows seed across machines. The relevant conclusion
+is that writer comparisons need training-seed/run replication and blocking
+within node.
 
 ## Exact claim boundary now
 
@@ -162,17 +215,22 @@ Allowed:
 
 - effective training examples match exactly across the compared runs;
 - frozen evaluation inputs and OFF outputs match exactly;
-- learned adapters and memory readouts differ greatly across two confounded
-  node/seed executions;
+- the seed-0 final loss and every cue-level stored ON/OFF probability
+  reproduced across machines at stored precision;
+- in these observed fits, the original result tracked configured training seed
+  and did not require a material machine effect;
 - single-fit bank intervals quantify owner/cue sampling only and omit
   training-run uncertainty;
-- all cross-node pooled writer claims are provisional.
+- both observed seed configurations remain nonselective writer failures.
 
 Not allowed:
 
 - "the node effect is real" or "same bytes in, different memory out by
   machine";
-- attributing bank-2 failure to node 2 rather than seed/run/GPU;
+- claiming universal cross-hardware determinism or no possible node-by-seed
+  interaction;
+- estimating basin frequency, retry yield, or a production candidate count
+  from two configured seed values;
 - treating three banks under one shared training seed/node condition as
   independent evidence about machine effects;
 - treating within-node one-fit CF-vs-F differences as immune to optimizer

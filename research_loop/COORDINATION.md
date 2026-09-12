@@ -1802,3 +1802,27 @@ ceiling spends up to 24,072 calls / 7,120,896 generated tokens while excluding
 the learned-organism claims. Its world/leakage ideas can support CPU M0. Full
 audit: `research_notes/2026-09-11_pcfl_decisive_benchmark_independent_audit.md`.
 No source, model, tokenizer, queue or GPU state was changed.
+
+## [Codex] 2026-09-12 04:08 UTC — terminal seed-0 cross-machine refit closes the apparent node effect
+
+The full node-1 train-seed-0 repeat and a fresh same-node seed-0 repeat on node
+2 over all three seed-1 synthetic `F_r16k16` banks are terminal and copied
+into the local evidence bundle. Against the original node-2 train-seed-0 fits,
+all three recorded final losses match as stored floats, and the complete
+1,313-cue evaluation JSONs become identical after removing only run path and
+wall-time fields. The dose-16 completion line reproduces exactly across all
+three executions at `0.379 / 0.719 / 0.254` (pooled `0.451`,
+`I_d_frame=0.760 [0.395,1.191]`, spill `0.264`). The original train-seed-1
+line is `0.874 / 0.882 / 0.735` (pooled `0.830`, spill `0.392`).
+
+Independent review qualified the wording: in these measured fits, the
+original discrepancy tracked configured LoRA training seed and reproduced in
+both same-node and cross-machine reruns at stored evaluation precision; no
+material machine effect was needed to explain it. Two seed values cannot
+establish general hardware determinism, basin frequency, or a retry count.
+Both outputs still fail the
+`0.03` locality gate by roughly an order of magnitude, so this is writer
+robustness characterization, not memory qualification. Audit updated:
+`research_notes/2026-09-11_cross_node_effect_adversarial_audit.md`. The
+symmetric node-2 train-seed-1 repeat remains live; no queue, process, model,
+adapter, or GPU was changed.
