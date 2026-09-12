@@ -5311,6 +5311,39 @@ most, with terminal paths of 4/8/12 and a 90/180/270 aggregate A40-minute cap.
 It remains an open-loop positive control, not DREAM/SLEEP/H1/H2. Full protocol:
 `research_notes/analysis/2026-09-12_level1_teaching_corpus_plasticity_redteam_protocol.md`.
 
+## [Codex watcher] 2026-09-12 17:58 UTC — area-chair and strong-baseline audits converge on one paper-critical ladder
+
+Fresh area-chair audit `519109a9` and independent baseline audit `1c830c5c`
+agree on the present evidence ceiling: we have parametric carriage plus
+writer/failure characterization, not DREAM, parenting, H1/H2, compression, or
+strong-memory superiority. More seeds on the addition-only level-1 scout
+cannot turn it into H1 because it contains no parent, child-authored artifact,
+sleep cycle, or parent removal.
+
+After a conditional writer/plasticity qualification, the single
+abstract-changing experiment is one prospective H1 chain with four visible
+edges in the same clean lineage: adaptive parent versus token/contact-matched
+yoked process message; child authors a grounded `LESSON(event_ids, scope,
+claim)` or `NULL` after a real action/outcome; authentic versus binding-
+deranged versus SLEEP-OFF writes; then sterile parent/text/context removal and
+task-disjoint trigger plus contraindication behavior. Parent text is visible
+during childhood but loss-masked. The world authenticates evidence and truth;
+it never authors or silently repairs the lesson. Continuing childhood follows
+only the authentic branch, and evaluation forks never re-enter parenting.
+
+Only an H1-qualified child should enter the adult factorial. The minimum later
+memory suite is `NONE`, honest chronological `NATIVE_CONTEXT`, `RAW_RAG`,
+`ACTIVE_STRUCTURED_TEXT` (the primary strong opponent, with the same admitted
+DREAM semantics plus lossless raw events), `FINAL_BATCH`, and a noncompetitive
+`GOLD_HISTORY` headroom reference; add an exact witnessed graph for any
+connected/multi-hop task. Baseline superiority is a separate conditional
+claim, not H1/H2, and the expensive suite should not consume GPU hours before
+the writer and child-authored H1 bridge pass. Do not use “compression” without
+a separate rate--distortion measurement. Full audits:
+`research_notes/analysis/2026-09-12_iclr_area_chair_evidence_and_decisive_sequence_audit.md`
+and
+`research_notes/analysis/2026-09-12_minimum_strong_agent_memory_baseline_route.md`.
+
 ## [Rohin — STEER, relayed verbatim by Fable] 2026-09-12T17:54Z — level 1 on the GPUs now
 
 Rohin, raw message 17 (dictated; full text in `THESIS_RAW_ROHIN_2026-09-11.md`), the operative sentences: "I wanna know what's happening on the GPUs. Are you getting this level one testing done? … the whole compilation thing, let's not think about it yet … that's the issue with starting level three and grading level three when we don't even have one or two. So yeah, I wanna see those level ones happening on the GPU." — "We give it this tiny tiny tiny perfect corpus, so just one behaviour, and it's working. How well does it work over time — leaving the LoRA unfrozen but we're gonna reduce plasticity, see how long does that last; I'm assuming there's gonna be some fading … that'll tell us a lot about plasticity, so we should document plasticity." — "there's gonna need to be some variants … can we test on super long sequences of tons of repetition and then test down the line how much adherence." — "frame this as either instructions or model thoughts, it's up to us to decide." — On the gate: "I don't like the idea of a gate … maybe we need it right now … it's temporary, I don't mind it right now, but it's not something long-term." — On one habit: "for now one is probably fine." — "all these plasticity measurements are actually pretty important for our paper, so there should be some rigour … not saying be rigorous right now, but eventually." Builder: your 17:25 elementary block (predict-before-act, 64 addition demonstrations + 16 recall items, matched task-only and OFF controls, rank 8 / 4 epochs / LR 3e-4, ≤90 A40-min) is the level-1 block he means; he wants it running, with two additions — a repetition/sequence-length variant, and a fading arm: after the write, continue sleeps at reduced plasticity with no new teaching and re-probe adherence at intervals. Node 3 has eight free GPUs.
