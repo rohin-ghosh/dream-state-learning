@@ -20,13 +20,17 @@ controls and joint write, then one/two parenting skills. Huygens recovers exact
 lower-LR matched memory commands; Popper recovers existing behavioral positive
 control; Turing maps existing compiler event/thought connections. No new code
 framework or new launch delegated. Main owns resource/Git/evidence integration.
-**Active new memory diagnostics:** node3GPU0controller53249(rate3e-5),
-GPU2controller53265(rate1e-5), launched10:13:57/10:14:01UTC. Fresh roots
+**Terminal memory diagnostics SEQ-071:** node3GPU0controller53249(rate3e-5),
+GPU2controller53265(rate1e-5), completed10:39:08/04UTC. Fresh roots
 `astra_A1_lowerlr_bank0_ts2_{3e5,1e5}_20260912_attempt1`, source52e0e4db,
 2700sworker limits, expected9693steps and1313cues. Original oracleFbank0seed1
 material, adapter seed2, native G9unchanged; historical1e-4baseline reused,
 not retrained. Actual source/token preflight passes; known unrelated/broad
-test fixture issues logged, not called passes. PreserveGPU0/2reservations.
+test fixture issues logged, not called passes. Both9693step/1313cue runs
+completed; I_d3.077589/spill.393606andI_d1.140233/spill.296436: bothG9FAIL.
+OFFscores and cue metadata match baseline exactly at serialized precision.
+Both owned groups/GPUcleanup verified;GPU0/2reservations released. Further
+LR-only sweep PARKED; no selective writer. Memo ASTRA_LOWERLR_TERMINAL_2026-09-12.md.
 **Active behavioral positive controls:** source3d56c5cd, node3GPU1useful
 controller56987andGPU3corrupt controller57084, start10:32:26/39UTC,
 root `astra_mini_sudoku_useful_corrupt_20260912_attempt3`. Native32item
