@@ -116,11 +116,23 @@ It still does not certify a paper-grade child record because the row lacks an
 immutable child-generation receipt (model/decode/seed and prompt/output
 hashes), short model output lists are silently truncated by `zip`, admission
 still uses the permissive high gate rather than requiring first-person `F`,
-and the gate/state/corpus commit is not a single hash-bound transaction.
+occurrence fields remain optional to the gate rather than joined to the
+reservation record, and the gate/state/corpus commit is not a single
+hash-bound transaction. The threshold is over the cumulative deduplicated
+corpus, not 64 distinct new `artic_hi` records.
 CompilerGym's own deployment text is also outside the cross-domain leak scan.
 These remaining items must be closed before promoting the mechanism into a
 clean nursery or scientific H1/H2 chain; they do not justify killing the
 quarantined one-cycle scout.
+
+A fresh-context re-audit independently returned the same split verdict:
+**PASS only for an uninterrupted, quarantined instrumentation scout; REWORK
+for every scientific promotion.** If the B0 attempt is interrupted, do not
+resume it for even the narrow claim. The strongest admissible positive result
+would report the number of joined G/N/F records, a finite child-body-only fit,
+successful reload, and descriptive ON/OFF Scratchpad differences—explicitly
+not parenting, autonomous outcome learning, generalized memory, improved
+action, or H1/H2.
 
 ## Live state at audit
 
