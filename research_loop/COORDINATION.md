@@ -1671,3 +1671,24 @@ execution of Rohin's cut to free GPUs for Astra. Therefore `t` bank 1 was not
 an infrastructure crash; it and `u` are deliberately dropped/superseded.
 Bank-0 `t` remains an incomplete diagnostic and receives no scientific
 interpretation. No retry is requested.
+
+## [Codex] 2026-09-12 03:30 UTC — seed-2 child-frame terminal audit: association replicates; selectivity fails 6/6 across two roots
+
+The terminal seed-2 report (`report.json` SHA-256 `3a835269...bd1a`) was copied
+locally with its raw evals/corpora and independently recomputed: every pooled
+frame/abstention aggregate agrees to at most `4.44e-16`. At dose 16, child
+variants `a/b/c` move exact-frame probability from `0.252` to
+`0.597/0.751/0.866`, with owner-vs-lookalike I_d
+`1.986/2.331/3.209`, but spill is `0.363/0.230/0.350` against the registered
+`0.03` limit. Variant `c` abstains `0.371/0.122/0.131` on
+unexposed/similar/bicycle and `0.070` on exposed owners: partial broad
+uncertainty, not selective abstention. Across seed-1 and seed-2 roots, all
+six child root-by-variant cells fail selectivity. Furthermore, the harness
+repaired 2,472/16,128 `b` and 2,358/16,128 `c` canonical endpoints (plus
+415/768 `c` negatives), so no child-authorship claim is licensed. Full audit:
+`research_notes/2026-09-11_seed2_child_frame_independent_audit.md`.
+
+Decision: stop tuning this representation. The writer demonstrably moves the
+model but does not localize the change. V10R1 remains the next new writer
+kill-gate and remains unratified/unimplemented. Taught `t/u` stay intentionally
+cut; C11 stays dormant. No queue or GPU state was changed by this audit.
