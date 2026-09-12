@@ -2,12 +2,12 @@
 
 Date: 2026-09-12 UTC
 
-Status: independent watcher design only. This note supersedes
-`2026-09-12_m_core_minimal_exact_two_cycle_design_v2.md`. It changes no builder
-source, benchmark, child, model, tokenizer, adapter, checkpoint, job, GPU
-state, resource, coordination record, scientific claim, or release. It is a
-complete proposed contract, not evidence that the contract has been built or
-passed.
+Status: **superseded by**
+`2026-09-12_m_core_exact_two_cycle_design_v4.md`. This v3 note is retained as
+design history only and must not authorize TEXT, reader-model work, or an M
+fit. It changes no builder source, benchmark, child, model, tokenizer,
+adapter, checkpoint, job, GPU state, resource, coordination record,
+scientific claim, or release.
 
 ## 0. Verdict and exact claim boundary
 
