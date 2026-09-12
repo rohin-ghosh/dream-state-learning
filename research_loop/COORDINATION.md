@@ -5078,3 +5078,75 @@ Independent SEQ097 reviewPASS: independently solved16puzzles and checked all
 192firstACTs with zero binary-score disagreements. Full16endpoint retained;
 known prior exposure remains, no freshness rescue. Native partial scores not
 independently reconstructed. SEQ096/097 supporting reviews are archived.
+## [Codex watcher] 2026-09-12 17:20 UTC — writer gate, relation result, and M-core priority converge
+
+I read the complete 3,388-line M-core v8 and the independent first-eleven
+writer audit. V8 is explicit enough to preserve as a future falsification map
+and resolves the recorded v7 contract defects while retaining exactly six fits
+per complete root. Its own strategic HOLD is the correct disposition: do not
+materialize or spend GPUs on M-core until the live writer family first passes
+the registered four-update, two-input/opposite-action sign canary and then a
+fresh binding/locality qualification without spill or a constant-action basin.
+Contract closure is not the paper bottleneck.
+
+The cumulative writer evidence makes that gate mandatory. Across the first 11
+mixed development lives, whole-text A averaged +.0045 on the report panel and
+-.0045 on the disjoint panel; only 2/11 exceeded +.015 on disjoint. Framed
+child streams were null/unstable, deterministic QA collapsed 11/11, and the
+coupled TMEM-style bundle was harmful in 10/11 report and 9/11 disjoint. This
+establishes behavioral carriage of a supplied routine, not input-selective
+experiential memory or sequential retention. Another lifetime-format bakeoff
+before the opposite-sign canary is lower information than the canary.
+
+The terminal nine-call relation diagnostic also closes its narrow question:
+the original underspecified surface was correct on 1/3 event cases, while the
+fully clarified same-JSON surface was 3/3 (token-only clarification 2/3). This
+localizes the failure to the elicitation/interface rather than establishing a
+deep reasoning deficit. Do not promote relation-token transcription into the
+next learning target. Mechanically bind the trusted prediction/action/outcome/
+relation event as provenance/input, then spend child capacity on the actual
+decision: author an evidence-citing lesson/connection or explicitly choose
+null. The world/compiler verifies the event; it must not author the learned
+lesson.
+
+Fresh-behavior attempt2 has two completed seed controllers and one controller
+still verified live at 17:20 UTC, but its four previously model-exposed puzzle
+IDs remain disqualifying for any fresh-panel claim regardless of terminal
+scores. Preserve it only as contaminated development evidence; the independent
+exposure-union audit is deriving a safe mandatory registry for any clean rerun.
+## [Codex watcher] 2026-09-12 17:31 UTC — all node-3 diagnostics terminal; exact exposure union closes the freshness repair
+
+Read-only re-poll shows relation PID 154973 and fresh-behavior PIDs 151210,
+151303, and 151403 all terminal. Each fresh-behavior controller records both
+useful/corrupt pairs complete with zero fits, pending Main reduction. External
+`nvidia-smi` verification finds all node-3 GPUs 0--7 at 0 MiB with no compute
+processes. Nothing was restarted or stopped by the watcher.
+
+Independent pre-result exposure audit `9630f000` exhaustively decompressed the
+committed evidence cut without reading attempt2 outcomes. It finds 153 exact
+pre-cut model-exposed Mini-Sudoku IDs: 137 generation-exposed and 16 fit-only.
+An additional 75 were CPU-inspected only and eight are metadata-only; those
+categories must not be mislabeled as model exposure, but may remain in a
+conservative selection exclusion. The exact pre-cut candidate-range overlap is
+`1900070..1900075`. Terminal attempt2 exposed 12 additional new IDs,
+`1900076..1900087`, so any successor must exclude `1900070..1900087` and use
+165 as the model-exposed union. A missing/default list is a preparation
+failure, not an empty registry.
+
+Recommended repair is two hash-bound canonical artifacts: a semantic JCS
+ledger retaining exposure classes/evidence hashes, and the bare sorted selector
+array the current helper consumes. Both digests must be copied into preflight,
+specs, manifest, and terminal receipt. This repairs a later reread only; it is
+lower priority than the opposing-input writer gate and the subsequent open-loop
+level-1 teaching-corpus/plasticity test. Independent paper-route synthesis
+`9f3ad516` reaches that same priority order and identifies the still-missing H1
+bridge as teaching -> child-authored grounded artifact -> selective sleep write
+-> parent-free task-disjoint behavior.
+
+## [Fable] 2026-09-12T17:33Z — watcher check: builder proposes the level-1 open-loop teaching test (elementary, ≤90 A40-min) in answer to message 15; behaviour positive control repeats 3/3 on fresh reread (SEQ-097); fill result 2 — the gated life's brief HURTS (tally 12)
+
+**Builder → Rohin (17:25 UTC), relayed in substance:** it now reads the distinction as intended — a fresh rank-8 birth LoRA on the frozen base, open loop, no learner-generated data, no live parent, no compiler — and proposes one deliberately elementary adherence test rather than another RuleGame reflection-format hunt: teach "state a correct prediction before acting" with 64 sourced one-step addition demonstrations, plus 16 invented device/colour observations for a separate taught-content recall and scope/unknown readout; controls = the same facts as task-only answers at matched native tokens, and the frozen child; evaluation with ordinary instructions (no reminder, no worked example); rank 8, seed 0, 4 epochs, LR 3e-4 as an aggressive tested candidate; 32 arithmetic + 16 recall development prompts read first, the rest held out; ≤ 90 aggregate A40-minutes; replicate seeds 1/2 and compare LR 1e-4 if operationally valid; "larger/deeper teaching and a stronger adaptive parent follow only if this shows usable adherence AND memory without unacceptable task damage." CPU emitter in preparation; native token-matching check before any training. This is the level-1 test Rohin described, scaled to the smallest honest version. **SEQ-096:** explicit relation definitions fix the record parsing (3/3 vs 1/3) — an interface fix, not a cognitive objective. **SEQ-097:** solution-disjoint behavioural reread — useful ON 3/16 for each of seeds 0/1/2; every OFF and corrupt arm 0/16; all six OFF output vectors identical; four panel items have prior research exposure, so development evidence only. Node 3 idle at 17:31 UTC (CPU preparation).
+
+**Fill result 2 of 14 — R3_B_seed503** (gated life, 4 of 32 sleeps rejected; 7.7 GPU-h; Δ vs OFF report / disjoint): whole-text A +0.003 / +0.001 (flat); A_v3, B, Bs, B_match all +0.003 / +0.001 (the same fixed routine); C and C_tmem −0.485 / −0.25 (collapse); **final brief −0.021 / −0.001 and brief_mid −0.047 / −0.074 — the first life whose own final brief lowers the report-panel score.** Tally, 12 lives: whole-text A carries 4, flat 7, harmful 1; child's brief never worse 11/12 (the exception is this gated R3 life; the other gated ones, 500/501/502/504/505, are still running and will say whether gating hurts the brief); C collapses 12/12. Raw: `~/v6_out/pretest_write_ab/R3_B_seed503/summary.json` (node 2). 11 fill pretests still running; the 08:30 UTC batch is in its last probes.
+
+No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 4.5 h. Notebook hygiene: three conflict-marker lines from the shared checkout's rebase were committed in the last hour and are removed in this commit.
