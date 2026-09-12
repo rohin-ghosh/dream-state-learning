@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:21 UTC**.
+Latest reconciliation: **2026-09-12 11:39 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -56,15 +56,21 @@ mismatches,remoteweights rehashed. Sourcecapsulee45c272e…; fullmemo
 ASTRA_BEHAVIOR_REPLICATION_TERMINAL_2026-09-12.md. No automatic extra seeds.
 Parent-free learning/retention/campaign remain incomplete.
 
-**Active prefix-mask comparison:** node3GPU0controller73820, started11:04:20UTC,
+**Terminal prefix-mask comparison, SEQ-074:** node3GPU0controller73820, started11:04:20UTC,
 root `astra_A1_prefixmask_bank0_ts2_20260912_attempt2`, sourcef96ca508.
 One fresh seed2/rank8/lr1e-4 fit,9693steps then1313unchanged native G9cues;
 reuse original completed A1baseline. Exact inputstrings/order/weights/filler
 unchanged; fact/lesson masks change only. Native conservative boundary masks
 5,376crossing ` Owner` tokens too; explicitly documented pre-training amendment
 after initial CPUrefusal.749,985input/422,925supervised passes, no truncation.
-49CPUtests and native token preflight pass.2700sworker cap and GPU0reservation
-throughreloads. No fullC11guard or KLobjective. See ASTRA_PREFIX_MASK_COMPARISON_2026-09-12.md.
+49CPUtests and native token preflight pass. Completed11:28:37UTC; controller
+absent, worker73821cleanup verifies release ofGPU0, no manualkill.
+I_d=.015229, interval[-.132713,.174474], spill=.201955, dose16correct
+conditionalON=.250953versusOFF=.259650. Candidate mass.993089is not binding.
+BothG9/G11FAIL: lessspillbutacquisitionerased, notaselectivewriterrepair.
+All1313cues/OFFscores match original; reductionvalid. Capsule7017ef230af7…;
+fullmemo ASTRA_PREFIX_MASK_TERMINAL_2026-09-12.md. Furthermask/LRonly sweeps
+parked. HuygensownsCPU-onlypreservation module/tests; coefficientsunfrozen.
 P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
 lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
 Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,
@@ -72,7 +78,8 @@ teacherbytesexcluded, no universalNOTEsyntaxgate. **Active raw-wake fork:**
 node3GPU1controller77998started11:21:00UTC, root
 `astra_P0_raw_wake_fork_seed0_20260912_attempt1`, sourcea4feb0f7.
 Seed0lesson→sham sequential96stepfits and16canaryfreshOFFON;GPU1reservation
-throughbotharms.900sfit+2100spair perarm. Actualnativepreparationpasses,
+throughbotharms. At11:35UTC controlleralive,both96stepfitsdone,shamprobe
+notyetterminal;0MiBdoesnotreleaseGPU1.900sfit+2100spair perarm. Actualnativepreparationpasses,
 five selectedminiquestionsdisjoint, one reference-solutionoverlapcanary1900061
 disclosed. Teacher203/158andtargettoken12867/16080passesnotmatched; package-level
 exploratoryutilityonly,notP1/G5/H1. Popperownsnew offlinereducer/test, Main
