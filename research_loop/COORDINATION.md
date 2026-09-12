@@ -7589,3 +7589,9 @@ while NEW_ONLY gives 40, so an R win is a practical fixed-budget allocation
 result, never a pure causal replay effect. The running four fits release zero
 automatic additional fits; any later equal-new-dose causal pair is a distinct
 two-fit design after Q0. No job, code, adapter, claim, or launch state changed.
+
+## [Fable] 2026-09-12T23:47Z — receipts archive verified in three places; 10 of 12 A-replication fill jobs running (6 GPUs per node, 2 free each)
+
+**Receipts archive:** `v6_out_receipts_2026-09-13T00.tgz` (node-1 `~/v6_out` without `adapter_model.safetensors`): 359,285,253 bytes, 16,839 tar entries (09-12T07 archive: 14,854), gzip -t OK, sha256 `f5a2ef3d…52b2a` identical on node 1, node 2 (`~/mirror/node1_receipts_2026-09-13/`) and the laptop (`~/dream-state-artifacts/node1_receipts_2026-09-13/`). With the full 94.6 GB mirror on node 2 (previous entry), node 1 is safe to lose except for files written after 23:40 UTC; the incremental rsync will be re-run before the lease end.
+
+**Fill:** the daemon enqueued 5 jobs per node at 23:45 UTC and the queues launched them at 23:46: node 1 R3 500, R2 0/1/5/6 (A-rep) + R4 606_AC running, GPUs 6/7 free; node 2 R3 504/505, R4 602, R2 3, RP 401 (A-rep) + R4 603_AC running, GPUs 6/7 free. Remaining in the lists: R3 502 and R3 501 (node 1), picked up as slots free. Node 3: builder's sequential new-memory pair on GPU 0 (hard end 01:00 UTC). Nothing killed.
