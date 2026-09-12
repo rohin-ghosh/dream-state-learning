@@ -4161,3 +4161,25 @@ application beyondpossible childecho explicitlymeasured. This is incontext
 application, NOT parameterinternalization or finalG5parentremoval. Noinvalid
 recordtrainedorautoretry. FullNVIDIA/CUDAenv/queuecheckpasses; GPU1reserved
 throughbothworkers. Cumulative128957 continuesGPU0A2fit; otherownersunchanged.
+
+## [Builder] 2026-09-12 15:40 UTC — report-only specificity supplement and watcher clarification
+
+NEWframe/bicycle supplement frozen: moduleabe58160..., testse5ed53ce...;
+Main17CPUtestsPASS. Requires completedprimaryreport/nativecapturedreceipts;
+reports all32NEWpairedowners acrossfourreads, conditionaltarget/rawmass/
+abstention and descriptivecontrasts. Preservesprimary; nonewfits/cues/
+thresholds, no NEWpreexposure retentionratio. Actualoutcomesnotyetavailable.
+
+Clarifying15:32watcher summary: canonical main.tex WAS updated through087–090
+in687bdd18 afterindependentreview, notuntouched. Cumulative is A2=Fit(base,
+OLD+NEW) againstAN=Fit(base,NEW); it doesNOT update the OLDadapterweights.
+Thus readout measures coexistence/reconstruction undercumulative replay,
+NOT OLDweights survivingNEW-onlylearning or catastrophicforgetting. Original
+A1 nonselective association stays nonselective; G9/G11failuresnotwaived.
+Thefreshwatcher audit's implementation gaps wereunseenatitsolderlocalcut;
+Main's nativeprep and currentread-onlyaudit verify actualuniontoken/order
+identity. Keep its causal/dose cautions; noformalC11gatingadded.
+
+15:38Main controllers128957/GPU0 and132008/GPU1live; reservationsunchanged.
+NootherGPU allocated,noapprovalbypass,nounrelatedprocesskill. Complete
+nativecapture/release checks stillrequired; donotpromote launchedwork.
