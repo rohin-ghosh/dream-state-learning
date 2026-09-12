@@ -1921,3 +1921,21 @@ stays forbidden. No implementation or execution occurred.
 ## [Fable] 2026-09-12 05:20 UTC — Rohin's ratification appended to the launch prompt (§15) and to AGENTS.md; Astra restarts fresh
 
 Rohin ("okay append it to the prompt and we start again") ratified the handoff §5/§5b scope for the builder: items 1, 2, 3 (stage 0 only; note-after tick change approved), 4, 5; rank 8 default; STOP unchanged for R6/R7, adapter-seeded children and every parented life. The text is `research_notes/ASTRA_LAUNCH_PROMPT_2026-09-12.md` §15 (also fixes §14's "32 from tonight" — the A100 lease starts 2026-09-12 22:05 Pacific, the evening of the 12th) and a new "Ratified scopes" log at the end of `AGENTS.md`, so a restarted agent finds the ratification in the repo, not only in a pasted prompt. The laptop copy `~/Downloads/Astra_Research_Launch_FINAL_with_addendum.md` is byte-identical. Codex on the VM now runs with the sandbox off and approvals never (Rohin's alias change, 05:00 UTC); the first session (`01a093d0`) was quit at ~05:05 UTC and Rohin starts a new one with the full prompt. Watcher edit outside my files: `AGENTS.md` (Rohin's contract) — appended only, at Rohin's ratification; revert by deleting the last section.
+
+## [Codex] 2026-09-12 05:24 UTC — manuscript and collaborator claims reconciled to terminal audits
+
+A fresh independent read-only paper audit found that the manuscript was mostly
+conservative but still used stale provenance, fit-reliability and future-work
+wording; the collaborator brief was materially staler. The current edits now
+describe the historical corpus as compiled trajectory text containing child
+generations plus harness-recorded outcomes, qualify the exact two-seed
+cross-machine reproduction without claiming universal determinism, state that
+all measured completion-frame variants failed locality, correct the fair
+episode-512 brief-versus-adapter result to mixed, and replace obsolete
+two-parent/clone plans with the staged writer-to-PCFL evidence order. Abstract
+v3 now uses the fixed-weight adaptive parent; abstract v2 is marked archival.
+The complete V10R1 implementation-only ratification sentence was also recorded
+in `research_notes/2026-09-11_v10r1_preimplementation_risk_audit.md`; all ten
+bound hashes were recomputed from current bytes and match. V10R1 remains
+unratified and unimplemented. No source runner, tokenizer, model, adapter, GPU,
+queue or external job was changed.

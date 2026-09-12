@@ -1,8 +1,10 @@
 # Abstract draft v2 — lifetime parametric learning (2026-09-06)
 
-Status: positioning-corrected work-in-progress. Bracketed outcome language is
-not claimable until the registered prospective experiments complete. This
-does not replace the frozen Paper-1 protocol. The social topology is fixed:
+Status: **archival and superseded by
+`abstract_experience_models_v3_one_parent_causal.md`.** Bracketed outcome
+language was never claimable. This file preserves the earlier topology for
+history and must not guide implementation or current paper wording. The
+superseded social topology was fixed:
 one frozen, reset, target-blind parent teaches one child; there is no
 classroom, cohort, peer exchange, teacher ensemble, or population-learning
 mechanism.

@@ -135,6 +135,48 @@ tokenization and fit-identity receipts pass and the scientific run still misses
 the NLL gate, the bound result is `OPTIMIZATION_INCONCLUSIVE`: not writer
 incapacity and not permission to rerun until lucky.
 
+## Exact human boundary after the final consensus
+
+The implementation remains forbidden. The final consensus requires human
+ratification to bind the inherited V9 and V10 scopes, the V10 adjudication,
+and all immutable V10R1 proposal/review artifacts. A shorter sentence that
+names only the three exact scopes is insufficient under
+`architecture_consensus.json` resolution MWG10R1-D1-PROPOSAL-EQUIVALENCE.
+
+The complete implementation-only ratification sentence is:
+
+> I ratify the V10R1 effective contract composed of V9 exact scope SHA-256
+> eac3e25c93230f3788612b3d0a25c0dac3609d49b4a5d9e28cf853ba806c0955,
+> V10 exact scope SHA-256
+> 12a077950730c3abaef32b04a861d901ef4bae25a22e640b152472f5f364f549,
+> V10 consensus SHA-256
+> 147aebaaf0b974a37897acc724c6fe27c8e82c6f94db0c1e775eba3d57a1ce7e,
+> and V10R1 exact scope SHA-256
+> 6cba6518184e7c8d12d7c23088895a565b84ae5ee067eaa63aac4440b91ea1aa;
+> I also bind V10R1 architecture-change SHA-256
+> 149e346901cabb3a0cee76b8b2280f9e40f97f466ef6316fed8e914f6b4187de,
+> scope-proposal SHA-256
+> 019731c8cdd8bd66c64bccc489b18836a0e3da1c241a9cbf0b73385a215d168b,
+> scientific-interpretation SHA-256
+> c95614a39a642688b35b62332c30ee73dce0d3e1ee771861b06ef4b94014a6ad,
+> systems-interpretation SHA-256
+> e2b4b807c197aee23fd098238f331119a21bb5b8520dba63da6a997c22fcfcd5,
+> critique SHA-256
+> f3388c870e7f37aa37b537acde84b40e4ea7b07486787b9d7ce868bee6a88fae,
+> and consensus SHA-256
+> 5792ec9acbf9e2da26f34ff8303bce06a496a3c9f5010162b0e4491db93ea9a2.
+> I authorize implementation only of
+> gpu/multikey_writer_gateway_simple.sh,
+> organism_v6/multikey_writer_gateway_simple.py, and
+> tests/test_multikey_writer_gateway_simple.py, plus deterministic CPU tests
+> and receipts and the two required V10R1-local reviews, with every tracked
+> receipt/review written only inside
+> research_loop/changes/chg_20260911_multikey_writer_gateway_v10r1_simple/.
+> No other source file may be edited. This does not authorize tokenizer or
+> model execution, training, adapters/checkpoints, benchmark or GPU execution,
+> parenting, lineage mutation, resource acquisition, C11 work, scientific
+> claims, release, or submission.
+
 ## Evidence basis
 
 - `research_loop/changes/chg_20260911_multikey_writer_gateway_v9_simple/exact_scope.md`
