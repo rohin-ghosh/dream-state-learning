@@ -184,10 +184,9 @@ receipts here before interruption. Do not mistake an assignment for evidence.
 
 | Task | Owner / write scope | Acceptance / stop |
 | --- | --- | --- |
-| Inventory nodes 1–3, processes and queues | Lorentz; scratch report only | GPU and `/proc` ownership checked; no launches/kills |
-| Recover gate/claim evidence and canonical drafts | Carson; scratch report only | Exact SEQ/source paths, contradictions, unread gaps |
-| Audit clean lineage and preschool boundaries | Anscombe; scratch report only | Fail-closed provenance and actual loss/visibility checks; patch proposal |
-| Verify writer literature interfaces | Tesla; scratch report only | Primary-source identities and smallest relevant transfer test |
+| Raw-wake fork outcome reduction | Popper; new parent_wake_fork_analysis.py and test only | Reuse native first-ACT checks; no remote actions or scientific pass gate |
+| Raw exporter/launcher and joint-write recovery | Turing; completed/frozen, no pending edits | Source-linked path and CPU tests integrated; next-check memo read-only |
+| Memory mask reducer and parenting recovery | Huygens; completed/frozen, agent closed | 30 reducer tests pass; next competency memo is a proposal only |
 | Scientific design, integration, resource ledger | Astra; this state and notebook | CPU/provenance receipts before launch; immutable run paths |
 
 ## Readiness and coverage
@@ -198,14 +197,17 @@ receipts here before interruption. Do not mistake an assignment for evidence.
 | --- | --- | --- |
 | Handoff 2026-09-12 | Operating rules, §5b queue, terminal corrections | Snapshot; reconcile with live nodes |
 | THESIS v2, raw rulings, Fable memory export | H1/H2, articulation, contamination, sleep replay, standing authority | Thesis preserved; historical claims are not automatically verified |
-| COORDINATION newest entries through 06:25 UTC | SEQ-056–058 corrections indexed; watcher workflow and decisive-evidence notes | Seed mismatch supersedes node-effect narrative; raw audit delegated |
+| COORDINATION recovered/new entries through11:21UTC | SEQ-071lower-LR failure,072entry behavior,073three-seed behavior audits | Preserve negative memory findings and modest behavioral effect; no node-effect claim |
 | Prior Astra checkpoint | Existing tests and blockers indexed | Tests inherited pending compatibility; old authorization/access blockers lifted |
-| Collection/extraction/writer/reload | Existing run_life_v2, preschool, sleep compiler, memory-dose paths identified | Compatibility and provenance audit active; no generic G1–G3 pass |
+| Memory writer/selectivity | Original/lower-LR full native controls fail; prefix-mask fit running | G1selectivity unresolved; no unchanged-rate sweep; interpret full mask result next |
+| Behavioral writer/reload | Useful2/3/5vs corrupt0/1/0of16, allOFF0, three optimizer seeds | Narrow persistent material effect, not strong G2 or G3 |
+| Source extraction/teacher removal | Actual P0raw export32paired examples; source/teacher/token checks pass | Raw lesson/sham fork running; unequal package doses explicit; no P1qualification |
+| Joint/repeated writing | Existing lives repeat execution; fresh-base replay fits are not warm starts | Joint memory+behavior and isolated retention still unmeasured |
 | Preschool causal reconciliation | CompilerGym scout is deployment-contaminated; prompted articulation != H1 | Disposable diagnostic only; never seed clean H2 from it |
 | Matched causal parenting design | Targeted lesson versus active sham, parent removal, running versus shadow | Existing executor gaps must be closed; historical RP/R2 not matched treatment |
 | Literature / manuscript | Relevant sources and canonical artifacts delegated | No new prose claims before freeze or localized blocker |
 
-## Bounded campaign queue (provisional before profiling)
+## Initial campaign queue (historical, before profiling)
 
 Every launch must bind exact source/config/data hashes, CPU tests, provenance,
 GPU/queue identity, stop criteria and measured forecast in the notebook.
@@ -225,6 +227,27 @@ The memory checks and disposable slot scout can proceed independently. G4/P1
 fixtures need not wait for exhaustive mechanism sweeps, but integrated claims
 require a qualified shared substrate. Numerical claims require at least three
 independent seeds with learner-level uncertainty, not correlated episode counts.
+
+### Current decision queue, 11:25UTC
+
+1. Finish/reduce native prefix-mask fit onGPU0 against its original control;
+   no outcome yet. A reduced spill with lost acquisition does not passG9.
+2. Finish/reduce rawlesson/sham fork onGPU1, holding botharms; decide material
+   utility from allfourfirstACTcells, not eloquence or best-of-many.
+3. Conditional nextmechanism scout: V3M-only andB+M withB-onlyreused, after
+   explicit tokenization/EOS/constituent-dose bridge checks. Proposal only;
+   notselected andnotsequentialwarm-start/G3qualification.
+4. Conditional parenting follow-up: existing FORM_CHECK/CONSTRAINT_LEDGER
+   teaching addresses pre-action behavior unlike P0retrospective records.
+   An equal-token fixedpackage/sham no-write diagnostic is proposed only;
+   current rawfork precedes any choice. No live newcurriculum or teacher calls.
+5. G3/P1/integrateddevelopment/campaign and canonicalmanuscript remain open.
+   Do not silently substitute these component diagnostics for completion.
+
+Bounded recovery memos: receipts_20260912/astra_joint_write_next_20260912.md
+and astra_next_parenting_competency_20260912.md. Main selects follow-ups from
+actual outcomes; idle extraGPUcapacity reflects these scientific dependencies,
+not a request awaiting approval or a reason to run duplicatefits.
 
 ## Resource horizon and safety
 
