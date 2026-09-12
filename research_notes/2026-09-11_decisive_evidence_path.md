@@ -2,8 +2,13 @@
 
 Date: 2026-09-11
 
-Status: operational synthesis. This note does not authorize implementation,
-model execution, training, GPU use, claims, or C11 work.
+Status: operational synthesis. This note does not itself authorize
+implementation, model execution, training, GPU use, claims, or C11 work.
+The later standing builder authorization in `AGENTS.md` (commit `6e1fb96c`)
+supersedes the per-experiment ratification boundary below for Astra only:
+Astra may implement and execute these experiments after its own CPU and
+provenance checks are logged. Laptop watchers remain read-only for source and
+external execution.
 
 ## Human ruling in force
 
@@ -52,8 +57,9 @@ them into one global habit.
 ### 2. Run the smallest conditional writer falsifier
 
 The Multi-key Writer Gateway **V10R1 simple scout** is the next development
-experiment after its exact implementation ratification, implementation/tests,
-independent reviewer, scientific advocate, and later execution grant. V7 was
+experiment. Under the current standing builder authorization, Astra may
+implement, test, and execute it once its own CPU tests and provenance checks
+are logged; no additional per-experiment ratification is required. V7 was
 retired during review because its apparently balanced mapping still admitted
 tool-only and mode-only solutions. V8--V10 progressively closed that defect and
 the remaining label/interface ambiguities; V10R1 is the stable ratification
@@ -75,15 +81,26 @@ retention, parenting, connected memory, or a whole-agent learning effect.
 
 Do not pay for a retention campaign if V10R1 cannot first carry conditional
 policies. If V10R1 passes both roots, freeze its exact writer representation and
-add one separately approved qualification stage:
+add one separately logged qualification stage:
 
 - one equal-sized, identity-disjoint cumulative write;
 - re-read the original policies after that write;
-- require at least 80% of each arm's original gain to remain, with the same
-  mapping, interface, and spill gates.
+- require at least 80% of each arm's original **mean-NLL gain and generated
+  balanced-accuracy gain** to remain, with the same mapping, interface, and
+  spill gates; and
+- require the new bank to qualify alone and inside the cumulative write, while
+  OLD-only and NEW-only adapters remain neutral on the other bank and every
+  wrong-root/cross-bank panel remains within the frozen spill bounds.
 
 This stage distinguishes a momentary fit from a writer that a developing
-lineage can safely reuse.
+lineage can safely reuse. It is cumulative-replay rewrite survival, not
+unrehearsed retention: the old rows are deliberately replayed. A recommended
+implementation is four NEW-only plus four OLD+NEW cumulative fits after the
+four immutable V10R1 OLD fits, all on one node, with the same optimizer seed
+within a root and a different predeclared seed across roots. `NEW_BANK_UNQUALIFIED`,
+`CUMULATIVE_OPTIMIZATION_INCONCLUSIVE`, `CUMULATIVE_WRITER_UNUSABLE`,
+`RETENTION_FAIL`, and `ACQUISITION_FAIL` remain distinct outcomes; no lucky
+retry promotes a non-pass.
 
 ### 4. Test authentic child experience after the writer and retention gates
 
@@ -106,6 +123,24 @@ under a fixed token budget. Validate retrieval recall, citation identity,
 oracle accessibility, store-swap sensitivity, and strict action use before
 comparing carriers. A failed retriever integration cannot be evidence for
 parametric-memory superiority.
+
+Keep three comparisons separate:
+
+1. `TEXT_SAME_SEMANTICS` versus LoRA asks which carrier exposes the same exact
+   evidence better at a fixed age.
+2. `TEXT_COMMON_RAW` with shadow-versus-promoted LoRA asks whether a weight
+   update adds value when both forks already receive the same basic text
+   memory.
+3. `ACTIVE_TEXT_NATIVE` versus `DLT_NATIVE` compares complete independently
+   evolving systems and is a total lifetime effect after their histories
+   diverge, not a same-data carrier effect.
+
+Do not give a graph-expanding retriever to a LoRA mechanism arm and then credit
+LoRA for connectedness or traversal performed by that retriever. Match the
+generated-token and action envelopes; report retrieval compute, input tokens,
+persistent bytes, training work, and latency rather than calling unlike
+offline resources matched. The historical static brief remains a cheap
+carrier diagnostic, not this baseline.
 
 ### 6. Parenting becomes causal only after writer qualification
 

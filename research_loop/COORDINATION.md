@@ -1968,3 +1968,39 @@ supersedes it. Laptop Codex did not implement or launch anything and remains a
 watcher. Existing pretests were re-polled: node 1 seed 1 remains in A-disjoint;
 node 2 seeds 3/4 and R4-601 remain in probes, while RP-400 advanced from A-v3
 to B-report. No terminal summary appeared and no live process was restarted.
+
+## [Codex] 2026-09-12 05:46 UTC — live pretests advance; current decision notes reconciled to builder authority
+
+Read-only process and artifact checks confirmed that the five inherited
+write-pretests remain live and are making progress. Node 1 seed 1 completed
+`A_report` (both seeded panels `0.5291`) and is partway through
+`A_disjoint`. On node 2, seed 3 completed `A_report`; seed 4 completed
+`A_disjoint` and entered `A_v3_report`; R4-601 completed both A-v3 panels;
+and RP-400 completed `B_report` and entered `B_disjoint`. None has produced
+`summary.json`, so no terminal comparison is claimed. Node 3's queue runner is
+alive and its eight GPUs are idle; no watcher launch or kill occurred.
+
+The shared remote still contains no builder commit after `6e1fb96c`, and the
+three V10R1 implementation files are absent locally. This is an observation,
+not a claim that the external Astra session is stopped. Two current synthesis
+notes were corrected: the decisive path now records that Astra's standing
+authorization supersedes the old per-experiment ratification boundary while
+laptop watchers stay read-only, and the paper gate now uses the fair
+episode-512 brief-versus-adapter result (`+0.0046` report, `-0.0041`
+disjoint; 2/4/6 brief wins/adapter wins/ties) rather than the
+horizon-mismatched final-brief tally.
+
+Three fresh read-only reviews then closed. The full-goal audit found no
+headline clause proven end to end: the precise missing bridge remains
+authentic child action--outcome evidence -> selective reusable write ->
+connected goal-conditioned use. It retains V10R1 first and selects the
+already-deliberated unrepaired lived-mirror relay as the highest-information
+experiment after writer and retention qualification. The retention review
+strengthened the proposed OLD+NEW cumulative-replay gate to preserve at least
+80% of both original mean-NLL gain and generated balanced-accuracy gain, while
+new acquisition, cross-bank neutrality, wrong-root locality, interface and
+spill all pass independently. The baseline review separated same-semantics
+text-vs-LoRA, common-raw text with shadow/promoted LoRA, and independently
+evolving ACTIVE_TEXT_NATIVE-vs-DLT_NATIVE comparisons so retrieval cannot
+silently perform the claimed LoRA reasoning. These are watcher recommendations,
+not launches or new claims; the current decision note records them.
