@@ -1,0 +1,2443 @@
+{
+  "schema": "posthoc-coordinate-only-content-audit-v1",
+  "archive_sha256": "7935c254ac16cfbf33c8cbf9386e9a947ec9b02e50d28e9f03987efb3bbbda89",
+  "preparation_inventory_sha256": "5be94318e6dbac52289a4b8534f98e54e2ff3876a685aaa212ea10ba1d556dee",
+  "evidence": {
+    "process": {
+      "inventory_sha256": "ff652fee4c798bbaddbbf1da3ae80654348482f35d2a0842c120b7b85fde6b67",
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 118957,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      }
+    },
+    "format": {
+      "inventory_sha256": "381fb28f6c70654bcaa34918ea6df4dfc79a62ab214b8bc616b5ff6393332719",
+      "cleanup": {
+        "cleanup_error": null,
+        "device": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+        "gpu_processes_absent": true,
+        "owned_group_empty": true,
+        "pid": 119780,
+        "reservation_release_verified": true,
+        "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+      }
+    }
+  },
+  "cases": [
+    {
+      "mode": "process",
+      "case_id": "c01",
+      "candidate": [
+        [
+          3,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          4,
+          1
+        ],
+        [
+          4,
+          1,
+          2,
+          3
+        ]
+      ],
+      "question_sha256": "1256b0d8e87465f7232913e9a675326d90edaef3a2401e391c1a0b4838610a7c",
+      "candidate_sha256": "1f171a83c96bbe779312bd02d2978c5fb360b17e75fd9e9cd384c8d8e4346f8c",
+      "raw_text": "{\"case_id\": \"c01\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"4\"], [\"4\", \"4\"]], \"digit\": 4}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "139bd8e1a5b00cd68dbf5ce04d882d5407393e00b02bc6f70e59ac65e4d35e70",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c01",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 4
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              2,
+              3
+            ],
+            "unit_ids": [
+              4,
+              4
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c02",
+      "candidate": [
+        [
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "question_sha256": "f973e11f6966f594d4b9c73c3a7b10026fe21da3e4e6a4525f7e7da4d405ca40",
+      "candidate_sha256": "62b14a14207d18167bbc8b840d22240e9db768fdd39aef5651b6f652418f2c38",
+      "raw_text": "{\"case_id\": \"c02\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"4\"], [\"3\", \"4\"]], \"digit\": 4}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "b0812d7fea65662cc252595b08a6fe4eb0d32b41839baa3285474daeb06149c6",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "3",
+          "after": 3
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c02",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 4
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              3,
+              2
+            ],
+            "unit_ids": [
+              4,
+              4
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c03",
+      "candidate": [
+        [
+          3,
+          4,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          4,
+          3
+        ]
+      ],
+      "question_sha256": "feb8a8ab75fdcd643928511fb7c8a12829c0f444509dd997f66dffdb3ca791cf",
+      "candidate_sha256": "34a718706106f22c34d4e09b68b8b45e362c1e8e2761667fcae7e7b63be71d2c",
+      "raw_text": "{\"case_id\": \"c03\", \"checks\": [{\"group\": \"row\", \"cells\": [[\"1\", \"1\"], [\"1\", \"4\"]], \"digit\": 3}], \"lesson\": \"Check column next\"}",
+      "output_sha256": "ce6b933155c6dee64e26795215c9a0578873eb1c835da1907bb9443d738aff56",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "1",
+          "after": 1
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "1",
+          "after": 1
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "1",
+          "after": 1
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c03",
+        "checks": [
+          {
+            "group": "row",
+            "cells": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "digit": 3
+          }
+        ],
+        "lesson": "Check column next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "row",
+            "cells": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "digit": 3,
+            "actual_values": [
+              3,
+              4
+            ],
+            "unit_ids": [
+              1,
+              1
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check column next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c04",
+      "candidate": [
+        [
+          4,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          4,
+          4,
+          1,
+          2
+        ]
+      ],
+      "question_sha256": "97d9a6c1bb4325d803778cb0364ac8e6bb6b7bd2454bf30f252b0811f0fc78b0",
+      "candidate_sha256": "8161549af81a252b872fee9edfb2f3247aabf8fbcea6e19f5ac12845c11fbb18",
+      "raw_text": "{\"case_id\": \"c04\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"2\"], [\"4\", \"2\"]], \"digit\": 3}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "431b2cea217021bc1b96d703ced9af687ccd1d44229d48dbbd9139feb0047e09",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c04",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 3
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 3,
+            "actual_values": [
+              3,
+              4
+            ],
+            "unit_ids": [
+              2,
+              2
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c05",
+      "candidate": [
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          1,
+          2,
+          4
+        ]
+      ],
+      "question_sha256": "9e8a95265893a5a3fb47457b3e2fff6ee263be3118733abe3fdd6d75e9390338",
+      "candidate_sha256": "77c77a674d03f1bb3f8b2f73e2048edb415394ea5695332ac2b760fdd216c30f",
+      "raw_text": "{\"case_id\": \"c05\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"1\", \"4\"], [\"2\", \"4\"]], \"digit\": 1}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "5c2106c6d509851180e4643f2fa8f96c2e1c61a10c7024d87d0f54af86b36b44",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "1",
+          "after": 1
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c05",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "digit": 1
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              1,
+              3
+            ],
+            "unit_ids": [
+              4,
+              4
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c06",
+      "candidate": [
+        [
+          2,
+          1,
+          4,
+          1
+        ],
+        [
+          4,
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "question_sha256": "0153cce6a377a3a7afcab1735f99fc50d257dcad1ccc462598d8fd6038650f11",
+      "candidate_sha256": "721fc57f64fc27d878446bf7a0f03d6ccb034299c43036555698538927e9e3f9",
+      "raw_text": "{\"case_id\": \"c06\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"2\"], [\"4\", \"2\"]], \"digit\": 2}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "9fb23e33f64c2fc7c9b325ae8112956e4b9e30a309c83a1b9a731ddd313a0cde",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c06",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 2
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 1,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": true,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 2,
+            "actual_values": [
+              2,
+              2
+            ],
+            "unit_ids": [
+              2,
+              2
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": true,
+            "valid": true,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c07",
+      "candidate": [
+        [
+          3,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          3,
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          4,
+          1
+        ]
+      ],
+      "question_sha256": "549504cc75d0014d343b99b737d34cb430a80a17c9e81d80ecf23a402641cd89",
+      "candidate_sha256": "dd27da05c9031b6c902f84ea305ab9977e021341473f737ca4d186ecca5c9c56",
+      "raw_text": "{\"case_id\": \"c07\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"4\"], [\"4\", \"4\"]], \"digit\": 1}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "b1baf074e8fbb6152934428e7db7bc66c917124f5034be4e089b99522f25e320",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "4",
+          "after": 4
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c07",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 1
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 1,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": true,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              1,
+              1
+            ],
+            "unit_ids": [
+              4,
+              4
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": true,
+            "valid": true,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "process",
+      "case_id": "c08",
+      "candidate": [
+        [
+          4,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          4,
+          3
+        ],
+        [
+          4,
+          4,
+          2,
+          2
+        ]
+      ],
+      "question_sha256": "d71229ffa416ffb48c0f1dc195ef87d86ea5dd7e258d9e6c2ad82df25860fc92",
+      "candidate_sha256": "673e4f91f42630d139571d6f3a229e8ae01a28020b57a6d8bbc22d0a3c9d7a51",
+      "raw_text": "{\"case_id\": \"c08\", \"checks\": [{\"group\": \"column\", \"cells\": [[\"2\", \"2\"], [\"4\", \"2\"]], \"digit\": 3}], \"lesson\": \"Check row next\"}",
+      "output_sha256": "df9ca50430f8697abb1664a294997136d706f744a3aea6a7bee8e6939aa75647",
+      "coordinate_only_changes": [
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            0
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            0,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            0
+          ],
+          "before": "4",
+          "after": 4
+        },
+        {
+          "path": [
+            "checks",
+            0,
+            "cells",
+            1,
+            1
+          ],
+          "before": "2",
+          "after": 2
+        }
+      ],
+      "posthoc_record": {
+        "case_id": "c08",
+        "checks": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 3
+          }
+        ],
+        "lesson": "Check row next"
+      },
+      "strict": {
+        "format_valid": false,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": false,
+        "reasons": [
+          "coordinate integer schema"
+        ],
+        "citations": []
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "column",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "digit": 3,
+            "actual_values": [
+              3,
+              4
+            ],
+            "unit_ids": [
+              2,
+              2
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 49
+    },
+    {
+      "mode": "format",
+      "case_id": "c01",
+      "candidate": [
+        [
+          3,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          4,
+          1
+        ],
+        [
+          4,
+          1,
+          2,
+          3
+        ]
+      ],
+      "question_sha256": "1256b0d8e87465f7232913e9a675326d90edaef3a2401e391c1a0b4838610a7c",
+      "candidate_sha256": "1f171a83c96bbe779312bd02d2978c5fb360b17e75fd9e9cd384c8d8e4346f8c",
+      "raw_text": "{\"case_id\":\"c01\",\"checks\":[{\"group\":\"box\",\"cells\":[[3,3],[4,4]],\"digit\":4}],\"lesson\":\"Check row 4\"}",
+      "output_sha256": "bd83018ef38298416c868377cfe61f672acfda758c4d98612a3d31668673956e",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c01",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 4
+          }
+        ],
+        "lesson": "Check row 4"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              4,
+              3
+            ],
+            "unit_ids": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              4,
+              3
+            ],
+            "unit_ids": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row 4",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 39
+    },
+    {
+      "mode": "format",
+      "case_id": "c02",
+      "candidate": [
+        [
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "question_sha256": "f973e11f6966f594d4b9c73c3a7b10026fe21da3e4e6a4525f7e7da4d405ca40",
+      "candidate_sha256": "62b14a14207d18167bbc8b840d22240e9db768fdd39aef5651b6f652418f2c38",
+      "raw_text": "{\"case_id\":\"c02\",\"checks\":[{\"group\":\"box\",\"cells\":[[3,1],[3,2]],\"digit\":4}],\"lesson\":\"Check other boxes for 4\"}",
+      "output_sha256": "c6c0c551acf71f95976ac100edd2af68330cf54e1679b690b8ffbdb814b350ba",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c02",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 4
+          }
+        ],
+        "lesson": "Check other boxes for 4"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 1,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": true,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              4,
+              4
+            ],
+            "unit_ids": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": true,
+            "valid": true,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 1,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": true,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 4,
+            "actual_values": [
+              4,
+              4
+            ],
+            "unit_ids": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": true,
+            "values_match_claim": true,
+            "valid": true,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check other boxes for 4",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 41
+    },
+    {
+      "mode": "format",
+      "case_id": "c03",
+      "candidate": [
+        [
+          3,
+          4,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          4,
+          3
+        ]
+      ],
+      "question_sha256": "feb8a8ab75fdcd643928511fb7c8a12829c0f444509dd997f66dffdb3ca791cf",
+      "candidate_sha256": "34a718706106f22c34d4e09b68b8b45e362c1e8e2761667fcae7e7b63be71d2c",
+      "raw_text": "{\"case_id\":\"c03\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[3,1]],\"digit\":1}],\"lesson\":\"Check rows next\"}",
+      "output_sha256": "9f93d8871bd28631945509e6d02f21dca8fcf95bd81114f6c3a64796c5c36bdf",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c03",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "digit": 1
+          }
+        ],
+        "lesson": "Check rows next"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              2,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              2,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check rows next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 38
+    },
+    {
+      "mode": "format",
+      "case_id": "c04",
+      "candidate": [
+        [
+          4,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          4,
+          4,
+          1,
+          2
+        ]
+      ],
+      "question_sha256": "97d9a6c1bb4325d803778cb0364ac8e6bb6b7bd2454bf30f252b0811f0fc78b0",
+      "candidate_sha256": "8161549af81a252b872fee9edfb2f3247aabf8fbcea6e19f5ac12845c11fbb18",
+      "raw_text": "{\"case_id\":\"c04\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[3,4]],\"digit\":2}],\"lesson\":\"Check row 4\"}",
+      "output_sha256": "e699abe1dd96e9b2df48b3c20385123c6f28e43d28b3ec4dbff06a29909a5f03",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c04",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 2
+          }
+        ],
+        "lesson": "Check row 4"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 2,
+            "actual_values": [
+              3,
+              2
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 2,
+            "actual_values": [
+              3,
+              2
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check row 4",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 39
+    },
+    {
+      "mode": "format",
+      "case_id": "c05",
+      "candidate": [
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          1,
+          2,
+          4
+        ]
+      ],
+      "question_sha256": "9e8a95265893a5a3fb47457b3e2fff6ee263be3118733abe3fdd6d75e9390338",
+      "candidate_sha256": "77c77a674d03f1bb3f8b2f73e2048edb415394ea5695332ac2b760fdd216c30f",
+      "raw_text": "{\"case_id\":\"c05\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[3,2]],\"digit\":1}],\"lesson\":\"Check rows next\"}",
+      "output_sha256": "8a6470b0ab6cee0f95ffe194810c962539023bff8569e4267a62f8c8680bd0f3",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c05",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 1
+          }
+        ],
+        "lesson": "Check rows next"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              4,
+              3
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              4,
+              3
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check rows next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 38
+    },
+    {
+      "mode": "format",
+      "case_id": "c06",
+      "candidate": [
+        [
+          2,
+          1,
+          4,
+          1
+        ],
+        [
+          4,
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "question_sha256": "0153cce6a377a3a7afcab1735f99fc50d257dcad1ccc462598d8fd6038650f11",
+      "candidate_sha256": "721fc57f64fc27d878446bf7a0f03d6ccb034299c43036555698538927e9e3f9",
+      "raw_text": "{\"case_id\":\"c06\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[1,4]],\"digit\":2}],\"lesson\":\"Check next 2x2 box\"}",
+      "output_sha256": "6e3af066a4b7812148cc3466a021759b0d4fdfc952fbf905ccb546788398f9d1",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c06",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "digit": 2
+          }
+        ],
+        "lesson": "Check next 2x2 box"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "digit": 2,
+            "actual_values": [
+              2,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "digit": 2,
+            "actual_values": [
+              2,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check next 2x2 box",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 42
+    },
+    {
+      "mode": "format",
+      "case_id": "c07",
+      "candidate": [
+        [
+          3,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          3,
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          4,
+          1
+        ]
+      ],
+      "question_sha256": "549504cc75d0014d343b99b737d34cb430a80a17c9e81d80ecf23a402641cd89",
+      "candidate_sha256": "dd27da05c9031b6c902f84ea305ab9977e021341473f737ca4d186ecca5c9c56",
+      "raw_text": "{\"case_id\":\"c07\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[3,4]],\"digit\":1}],\"lesson\":\"Check rows next\"}",
+      "output_sha256": "041e02b5744ab1c5abdf41aeb9424cd7460f129b386a12353e8e61f6226edb69",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c07",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 1
+          }
+        ],
+        "lesson": "Check rows next"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              2,
+              3
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "digit": 1,
+            "actual_values": [
+              2,
+              3
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check rows next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 38
+    },
+    {
+      "mode": "format",
+      "case_id": "c08",
+      "candidate": [
+        [
+          4,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          4,
+          3
+        ],
+        [
+          4,
+          4,
+          2,
+          2
+        ]
+      ],
+      "question_sha256": "d71229ffa416ffb48c0f1dc195ef87d86ea5dd7e258d9e6c2ad82df25860fc92",
+      "candidate_sha256": "673e4f91f42630d139571d6f3a229e8ae01a28020b57a6d8bbc22d0a3c9d7a51",
+      "raw_text": "{\"case_id\":\"c08\",\"checks\":[{\"group\":\"box\",\"cells\":[[2,2],[3,2]],\"digit\":3}],\"lesson\":\"Check rows next\"}",
+      "output_sha256": "438705bd2c5404c823e130aa5db62b885ad3880088922b605e30d9d8c9b2f9b1",
+      "coordinate_only_changes": [],
+      "posthoc_record": {
+        "case_id": "c08",
+        "checks": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 3
+          }
+        ],
+        "lesson": "Check rows next"
+      },
+      "strict": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 3,
+            "actual_values": [
+              3,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "posthoc": {
+        "format_valid": true,
+        "cases_with_valid_citation": 0,
+        "valid_citations": 0,
+        "invalid_citations": 1,
+        "whole_structured_record_clean": false,
+        "reasons": [],
+        "citations": [
+          {
+            "group": "box",
+            "cells": [
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "digit": 3,
+            "actual_values": [
+              3,
+              1
+            ],
+            "unit_ids": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "distinct": true,
+            "same_unit": false,
+            "values_match_claim": false,
+            "valid": false,
+            "repeated": false
+          }
+        ]
+      },
+      "lesson": "Check rows next",
+      "lesson_assessment": "Future-check instruction, not an asserted completed check or board fact; not machine-verified or training-approved.",
+      "actual_output_tokens": 38
+    }
+  ],
+  "totals": {
+    "process": {
+      "strict": {
+        "format_valid": 0,
+        "cases_with_valid_citation": 0,
+        "invalid_citations": 0,
+        "whole_structured_record_clean": 0
+      },
+      "posthoc": {
+        "format_valid": 8,
+        "cases_with_valid_citation": 2,
+        "invalid_citations": 6,
+        "whole_structured_record_clean": 2
+      },
+      "coordinate_strings_changed": 32
+    },
+    "format": {
+      "strict": {
+        "format_valid": 8,
+        "cases_with_valid_citation": 1,
+        "invalid_citations": 7,
+        "whole_structured_record_clean": 1
+      },
+      "posthoc": {
+        "format_valid": 8,
+        "cases_with_valid_citation": 1,
+        "invalid_citations": 7,
+        "whole_structured_record_clean": 1
+      },
+      "coordinate_strings_changed": 0
+    }
+  },
+  "original_strict_results_unchanged": true,
+  "training_approved": false,
+  "fit": false,
+  "normalization": "Only single-character string 1..4 components inside checks[].cells become integers; nothing else changes.",
+  "verification": "Local captured inventories, raw text/token receipts, board hashes, independent predicates. Absolute remote model/source paths not rehashed; no live GPU verification.",
+  "task": "This is an externally generated observed exercise, not your attempted solution. Find a duplicate in the displayed 4x4 candidate; do not solve or replace the board. Public rule: digits 1..4 must not repeat within any row, column or 2x2 box. Coordinates are [row,column], one-based. Return exactly one JSON object with keys case_id, checks, lesson. Give exactly ONE check in the checks list, with keys group (row, column or box), cells (two distinct coordinates), digit (integer 1..4). Any real duplicate is acceptable. lesson is your own next-check reminder in at most eight words. Use no other keys, prose outside JSON, or ACT wrapper.",
+  "cards": {
+    "format": "Before reporting, review the requested JSON syntax. Use the stated field names, double quotes for strings and brackets for coordinate lists. Keep integer fields as integers and the lesson short. Return the requested JSON without headings or fences.",
+    "process": "Before reporting, inspect a row, column or box. Compare values at two distinct coordinates in that group. Check that both displayed digits equal the digit you cite. Verify the group and coordinates against the candidate, then write the requested JSON."
+  },
+  "token_metadata": {
+    "card_tokens": {
+      "format": 44,
+      "process": 47
+    },
+    "package_tokens_equal": false,
+    "input_tokens_equal": false
+  }
+}

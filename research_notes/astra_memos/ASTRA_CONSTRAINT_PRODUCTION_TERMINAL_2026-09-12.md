@@ -51,3 +51,23 @@ initial pre-audit capture SHA256
 `aa1d516ebdc3a87673fc65a0a5def1f2598521272d8101b4729e0e263af12ce2`.
 Both capture script versions and final capsule accompany this memo under
 `receipts_20260912/`. Preserve actual run/preparation roots on node3.
+
+## Post-hoc content diagnosis — 2026-09-12 14:54 UTC
+
+Avicenna independently verifies the16 raw records against actual candidates.
+Converting only single-character coordinate strings1..4, for diagnosis only,
+gives process2/8 (c06,c07) versus control1/8 (c02). Six process citations
+remain factually incorrect; this is not merely a representation failure.
+All original strict results remain unchanged, and no diagnostic-normalized
+output becomes a training target. The free-text lessons are future-check
+reminders, not evidence of a completed check or learned checking procedure.
+See the separately archived content audit/script/JSON for every coordinate
+and actual cell value. This small post-hoc difference is not a parenting claim.
+
+Main selects a prospective interface clarification on new fixed training
+IDs1851100..1851107: explicitly require unquoted JSON integer coordinates in
+both prompts; preserve cards and strict checker. Three paired generation seeds
+7101/7102/7103 give48 calls, zero fits. These are sampler replications over one
+eight-case panel, NOT independent learned children or a P1 experiment. Freeze
+the new protocol and validate native inputs before launching; no automatic
+replacements or output coercion. Formal C11 work remains deferred.
