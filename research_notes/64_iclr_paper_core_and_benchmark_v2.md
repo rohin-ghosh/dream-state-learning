@@ -165,6 +165,10 @@ must:
 - build every candidate from immutable birth over only the committed cumulative
   corpus;
 - stage candidate adapter and candidate corpus together;
+- use a predeclared fit-seed schedule and source-local qualification only;
+  commit the first candidate passing every hard gate, never the candidate with
+  the best deployment/report score, and count every rejected fit as writer
+  yield rather than hiding it;
 - compare against both raw base and the previous child using disjoint safety
   panels;
 - atomically promote or reject both heads;
@@ -223,4 +227,3 @@ the title. CompilerGym is a secondary table/appendix result.
 
 Do not say connected, traversable, expandable, compressed, continual
 improvement, or baseline saturation unless its exact experiment above passes.
-

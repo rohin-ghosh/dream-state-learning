@@ -1714,3 +1714,21 @@ item-level spill. Full review:
 One stale downstream reference was corrected: the lived-mirror gateway runs
 after V10R1, not retired V7. V10R1 remains proposal-only pending exact human
 implementation ratification; no source or GPU action was taken.
+
+## [Codex] 2026-09-12 03:50 UTC — fit-seed sensitivity converted into a frozen transactional-writer rule
+
+The measured deterministic-per-seed but seed-sensitive fit behavior creates a
+post-selection hazard: retrying until an adapter looks good can make an
+unreliable writer appear reliable. The longitudinal architecture now requires
+a predeclared candidate count and deterministic seed schedule, one fixed
+recipe, qualification only on source-derived binding/locality/retention and
+generic interface panels disjoint from report/deployment, and first-passing
+rather than best-score selection. If none passes, the previous adapter remains
+active; every failed fit and its GPU cost are retained and writer yield is
+reported. Full ruling:
+`research_notes/2026-09-11_transactional_stochastic_writer_ruling.md`.
+
+V10R1 itself remains a fixed-recipe capacity kill-gate, not a best-of-seeds
+test. Its result must not be rescued by retry selection. The running repeat
+diagnostics determine whether a later development-stage `K` is worth
+calibrating; no implementation or run was changed.
