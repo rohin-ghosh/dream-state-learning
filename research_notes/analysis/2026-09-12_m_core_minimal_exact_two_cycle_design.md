@@ -2,7 +2,10 @@
 
 Date: 2026-09-12 UTC
 
-Status: independent watcher design only. This note changes no benchmark,
+Status: **SUPERSEDED** by
+`research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design_v2.md`.
+Retained only as the audit trail for the rejected three-condition allocation.
+Independent watcher design only. This note changes no benchmark,
 builder source, child, model, adapter, job, GPU allocation, claim, or release.
 It is a proposed minimum for Astra to attack or implement under its own builder
 authority. It does not supersede a bound contract.
