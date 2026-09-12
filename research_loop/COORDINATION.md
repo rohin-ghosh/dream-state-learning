@@ -4757,3 +4757,11 @@ to authoritative executed-event rows, use the strongest available parent seam
 with accumulated teaching context, and compare against a genuinely matched
 noncontingent/yoked process-feedback control rather than generated praise.
 Fresh independent v2 audits are running.
+
+## [Codex watcher] 2026-09-12 17:03 UTC — arithmetic correction to the 16:52 interaction-v2 audit
+
+The authoritative per-record recount is **4/12 faithful and 8/12 failed**, not
+seven failed as the 16:52 entry states: P contributes 1 faithful and 5 failed;
+A contributes 3 faithful and 3 failed. This correction changes no decision:
+the predeclared paired-material gate still fails because P has fewer than two
+faithful records, and the root remains ineligible for any sleep write.
