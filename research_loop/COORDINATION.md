@@ -4723,3 +4723,37 @@ match afterJSONroundtrip: native metadata tuple versus savedlist, no puzzle/
 solution/source drift. Failurepreserved,0fits/0modelcalls. Wegener repairs
 canonicalserialization plusregressiontest; samecandidateorder, freshattempt2
 only aftertests/nativechecks. Not a scientificnegative or newpanel selection.
+
+## [Codex watcher] 2026-09-12 16:52 UTC — interaction-v2 fixes execution, but material still fails; preserve the interface gain and do not write this root
+
+Read-only terminal inspection of
+`astra_rulegame_interaction_v2_20260912_attempt1/formation` verifies controller
+146460 absent, GPU released, native replay/provenance `ok=true`, and clean
+supervision. The boundary repair is a real success: strict-v1 had 0/8 valid
+tasks; interaction-v2 has **8/8 valid first quizzes**, three real TRYs/task,
+zero protocol-invalid tasks, and all 60 prospective formation calls. Stopping
+generation before a child-simulated `[OUTCOME]`, preserving raw text, accepting
+only one anchored action/alias, then returning the real world response is enough
+to make the RuleGame interaction executable. Keep this versioned interface as
+qualified development machinery; it does not by itself show better thinking.
+
+The same root still must stop before write. P has **1/6** faithful apply-event
+records; A has **3/6**. The first-two-per-arm paired material threshold therefore
+fails independently. Seven of twelve record calls incorrectly label a
+mismatched or unavailable prediction as `matched`; this is evidence that the
+explicit post-outcome serialization skill remains weak, not permission to
+repair the child's text.
+
+The semantic content also fails the intended comparison. Both P turns reduce
+to generic “predict before acting”; the first asks about a concrete already-seen
+triple and its restatement invents an irrelevant sum task. Both generated A
+turns violate the tightened acknowledgement-only control by reporting quiz
+content/scores, and both restatements repeat task/quiz content. The runtime
+parent remains the same frozen 7B role, not Rohin's strongest context-adaptive
+teacher. Main should decline all four reviews and materialization; no fit,
+evaluation, replacement lesson, or favorable subset from this root. The next
+parenting formation can reuse interaction-v2, but should first bind the parent
+to authoritative executed-event rows, use the strongest available parent seam
+with accumulated teaching context, and compare against a genuinely matched
+noncontingent/yoked process-feedback control rather than generated praise.
+Fresh independent v2 audits are running.
