@@ -325,6 +325,19 @@ SLEEP-2 writes one cumulative old+new adapter -> sterile reset
 delayed goal requires exactly one old and the new row
 ```
 
+The connection proposal must precede visibility of the support-action handle,
+menu, arguments, or later goal; otherwise the interface supplies the relation
+the child appears to discover. Every positive read must also carry a byte-exact
+receipt from training row through mounted carrier and raw reader output to
+actor-visible bytes. Run actor/reader without the oracle, generator, theorem,
+compiler receipts, hidden truth, scorer, or expected trace in their process;
+use more exchangeable first-read candidates than the read budget; and require
+catalog-order/surface invariance plus semantic-twin redirection. Phase C needs
+two equally supported old relations that imply different maximum-information
+actions, so the query, experiment, selected outcome row, and delayed action all
+redirect with old content. Exact adversarial review:
+`research_notes/analysis/2026-09-12_connected_relay_scaffolding_adversarial_review.md`.
+
 The compiler may select a precommitted branch after the outcome and verify a
 pre-outcome child link proposal. It may not originate or repair either.
 
@@ -448,6 +461,16 @@ validity, any claimed plateau/headroom, positive learner late slope, slope
 advantage, retained old competence, and a terminal practical margin must all
 pass.
 
+Only these two text objects need powered paper-facing endpoints. Recency, raw
+BM25/RAG, static brief, and an evolving-RAG candidate belong in a disjoint DEV
+qualification roster, not as separate lifetime arms. Match public opportunity,
+actor tokens, action opportunities, randomness addresses, and checkpoint cuts;
+report input tokens, retrieval work, storage, latency, fits, and energy rather
+than claiming equal compute. The native text branch should expose at most one
+query and 1,024 returned tokens per continuation, with a separately forked
+2,048-token sensitivity required only for the word **saturated**. Full audit:
+`research_notes/analysis/2026-09-12_baseline_compression_full_paper_watcher_audit.md`.
+
 ### C — compression stays downstream
 
 No W/S/M/L pass implies physical or semantic compression. Do not use shorter
@@ -455,6 +478,14 @@ DREAM prose as the metric. The already-closed rate--distortion design begins
 with the zero-model same-denotation crossover and is run only after connected
 utility qualifies. This keeps compression in the objective without making it
 an upstream blocker for action/outcome learning.
+
+At the current roughly 80.8 MB rank-8 adapter size, the experiment cannot
+honestly claim physical storage compression. The bounded downstream endpoint
+is instead prospective **semantic-code compression**: charge the selected
+schema, decoder, index, metadata, and residuals; require byte-exact round trip;
+beat both packed same-denotation text and its ordinary-codec version at two
+later loads; and preserve the already-qualified connected utility. A failure
+removes only the compression clause, not W/S/M/L.
 
 ## Reuse instead of another giant experiment
 
