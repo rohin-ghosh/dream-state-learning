@@ -1,7 +1,7 @@
 # SEQ101 — level-zero repetition/context sentinel
 
 Evidence cut September12,2026 18:51UTC. EXECUTED, Main native reduction and
-capsule verification complete. Independent numerical review pending.
+capsule verification complete. Independent numerical review PASS,192rawoutputs.
 Exploratory trainer-seed0 development comparison; not final confirmation.
 
 ## Frozen comparison and results
@@ -29,10 +29,13 @@ all64confirmation cases remain unrequested. All trained memory outputs valid,
 but constant-color guessing is not item-specific binding. Arithmetic already
 32/32 in the baseline; adherence, not arithmetic gain, is the level-zero goal.
 
-Within each treatment, long-minus-short is0/32adherence,0/32correctACT and
+Within each treatment, all48rawresponse texts also exactly equal original
+seed0 same-arm outputs. Long-minus-short is0/32adherence,0/32correctACT and
 0/16memory. Relative to original seed0 dose, repetition did not improve the
-fixed memory readout. This contradicts a guaranteed dose-rescue prediction
-for this exact assay, not every replay or phrasing intervention. It does not
+fixed development-paraphrase memory readout. The notebook18:39 prediction
+specifically said in-sample: original-training-prompt recall on these new
+repetition checkpoints remains UNTESTED, so that literal prediction is not
+falsified by this result. It does not
 identify loss allocation, extraction, loading, capacity or latent binding as
 the cause. Long-fit loss near zero is not evidence of retrieval. Original
 training-prompt SEQ100 is diagnostic of ORIGINAL seed0 adapters; do not silently

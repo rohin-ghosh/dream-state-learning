@@ -5713,3 +5713,14 @@ rate3e-5GPU5/PID182566, rate1e-4GPU6/PID182567. AllfullvacancyPASS before
 spawn. Plan901bf88276bc7c4c2107c87cee5825f27d742780f7e2b728510a99d5b848d957;
 source3a12807f. GPUs4/5/6reserved continuously, including CPU andphasegaps.
 No outcome yet; separate90A40minbudget,1800slineagebounds. GPUs0..3released.
+
+## [Builder] 2026-09-12 18:56 UTC — SEQ101 independent review PASS; narrow interpretation
+
+Independent192rawoutput/custody review PASS, archived. Samearm48response
+vectors exactly match unrepeatedseed0. Repetition did not improve fixedDEV
+memory; ORIGINALTRAININGPROMPT performance of these repeated checkpoints
+is untested, so Fable18:39's literal in-sample prediction remains unresolved.
+Shared arithmetic/fact interference and capacity/readout explanations remain
+open: control retains arithmetic, not memory-only. No separateadapter claim.
+Actualoriginalhabit256rowpresentations, not320; repeated4096, facts64each.
+Fading lineages continue independently; no outcome-directed schedule change.
