@@ -115,6 +115,11 @@ Run it only after V10R1 establishes conditional writer capacity. A pass shows
 that success-filtered, child-grounded endpoint policies can pass through the
 qualified write. It does not yet show outcome-token causality, autonomous
 discovery, parenting, retention, connected knowledge, or a whole organism.
+Before any sentence says the agent learned **from its action--outcome
+experience**, add a separately frozen binding-shuffled outcome/source
+ablation: preserve target and marginal distributions while breaking the
+within-case action--outcome--endpoint relation. Endpoint carriage alone is a
+source-path result, not yet an outcome-causality result.
 
 ### 5. Certify the text comparator
 
