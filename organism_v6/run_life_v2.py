@@ -64,6 +64,56 @@ def existing_adapter_verdict(adapter_dir: str) -> str | None:
     return finals[0] if finals else None
 
 
+def validate_adapter_states(life_dir: str) -> None:
+    """Reject ambiguous or partial write states before any model is loaded."""
+    if not os.path.isdir(life_dir):
+        return
+    for name in sorted(os.listdir(life_dir)):
+        if not name.startswith("sleep_"):
+            continue
+        sleep_dir = os.path.join(life_dir, name)
+        ad = os.path.join(sleep_dir, "adapter")
+        stage = os.path.join(sleep_dir, "adapter.train")
+        final = existing_adapter_verdict(ad)
+        candidate = os.path.exists(os.path.join(ad, "CANDIDATE"))
+        if final is not None and candidate:
+            raise RuntimeError(f"candidate and final verdict coexist: {ad}")
+        if os.path.isdir(ad) and final is None and not candidate:
+            raise RuntimeError(
+                f"unclassified adapter directory requires inspection: {ad}")
+        if os.path.exists(stage):
+            if os.path.exists(ad):
+                raise RuntimeError(
+                    f"staging and adapter states coexist: {stage}, {ad}")
+            stage_marks = [m for m in ("DONE", "CANDIDATE")
+                           if os.path.exists(os.path.join(stage, m))]
+            if len(stage_marks) != 1:
+                raise RuntimeError(
+                    f"incomplete or ambiguous staged adapter: {stage}")
+
+
+def promote_trained_adapter(stage_dir: str, adapter_dir: str) -> None:
+    """Atomically turn a trainer-complete staging directory into a candidate.
+
+    The trainer owns ``stage_dir/DONE``; the life runner owns every final
+    marker under ``adapter_dir``.  Keeping those namespaces separate removes
+    the crash window in which a trainer's completion marker could be mistaken
+    for a gate-approved write.
+    """
+    done = os.path.join(stage_dir, "DONE")
+    candidate = os.path.join(stage_dir, "CANDIDATE")
+    if os.path.exists(done) and os.path.exists(candidate):
+        raise RuntimeError(f"ambiguous staged adapter markers: {stage_dir}")
+    if not os.path.exists(done) and not os.path.exists(candidate):
+        raise RuntimeError(f"trainer completed without DONE: {stage_dir}")
+    if os.path.exists(adapter_dir):
+        raise RuntimeError(f"refusing to overwrite adapter candidate: "
+                           f"{adapter_dir}")
+    if os.path.exists(done):
+        os.rename(done, candidate)
+    os.rename(stage_dir, adapter_dir)
+
+
 def format_canary(model, gym, threshold: float = 0.5) -> tuple[bool, float]:
     """Post-sleep motor-channel check in the REAL gym context: run the gym's
     canary set (compiler: 4 probe programs) for 3 chunks each with the real
@@ -835,6 +885,9 @@ def main():
         return curriculum.round_length(schedule, r, gym.name, args.wake_batch,
                                        args.sleep_every)
 
+    # A corrupt historical marker must fail before latest_adapter() can mount
+    # an ungated trainer-DONE or before probes/wake work mutate the life.
+    validate_adapter_states(life)
     model = load_model()
     bootstrap = head()
     run_probes_batch(model, gym, "ep0000", life, args.budget_ticks, log)
@@ -947,27 +1000,66 @@ def main():
                     log(f"[sleep {i}] training SKIPPED: too few admitted records "
                         f"(preschool gate enforce, min {args.gate_min_items}); "
                         f"adapter unchanged")
-                elif args.arm == "B" and existing_adapter_verdict(
-                        os.path.join(sdir, "adapter")) is None:
+                elif args.arm == "B":
                     from .model_backend import close_backend
-                    if not close_backend(model):
-                        raise RuntimeError("GPU did not free before training — "
-                                           "refusing to train into OOM")
-                    pm_ = plasticity_multiplier()
-                    lr_ = args.base_lr * pm_
-                    train_cmd = [sys.executable, "-m", "organism_v6.train_adapter",
-                                 "--corpus", os.path.join(sdir, "corpus.json"),
-                                 "--out", os.path.join(sdir, "adapter"),
-                                 "--rank", str(args.rank)]
-                    if args.plasticity:
-                        train_cmd += ["--lr", str(lr_)]
-                    rc = subprocess.run(train_cmd, cwd=os.path.dirname(HERE)).returncode
-                    log(f"[sleep {i}] train rc={rc} plasticity={pm_:.2f} lr={lr_:g}")
                     ad = os.path.join(sdir, "adapter")
-                    if args.arm == "B" and rc == 0:
-                        # canary is a PRECONDITION of DONE: hold as CANDIDATE
-                        os.rename(os.path.join(ad, "DONE"),
-                                  os.path.join(ad, "CANDIDATE"))
+                    stage = os.path.join(sdir, "adapter.train")
+                    final = existing_adapter_verdict(ad)
+                    candidate = os.path.exists(os.path.join(ad, "CANDIDATE"))
+                    wake_closed = False
+                    if final is not None and candidate:
+                        raise RuntimeError(
+                            f"candidate and final verdict coexist: {ad}")
+                    if os.path.isdir(ad) and final is None and not candidate:
+                        raise RuntimeError(
+                            f"unclassified adapter directory requires "
+                            f"inspection: {ad}")
+                    if os.path.exists(stage) and (final is not None or candidate):
+                        raise RuntimeError(
+                            f"staging and adapter states coexist: {stage}, {ad}")
+                    if final is None and not candidate:
+                        if os.path.exists(stage):
+                            # A complete staged fit is safe to promote after a
+                            # crash.  Any other partial state is deliberately
+                            # manual: never train over unknown bytes.
+                            if (os.path.exists(os.path.join(stage, "DONE")) or
+                                    os.path.exists(os.path.join(
+                                        stage, "CANDIDATE"))):
+                                promote_trained_adapter(stage, ad)
+                                candidate = True
+                            else:
+                                raise RuntimeError(
+                                    f"incomplete staged adapter requires "
+                                    f"inspection: {stage}")
+                        else:
+                            if not close_backend(model):
+                                raise RuntimeError(
+                                    "GPU did not free before training — "
+                                    "refusing to train into OOM")
+                            wake_closed = True
+                            pm_ = plasticity_multiplier()
+                            lr_ = args.base_lr * pm_
+                            train_cmd = [
+                                sys.executable, "-m", "organism_v6.train_adapter",
+                                "--corpus", os.path.join(sdir, "corpus.json"),
+                                "--out", stage, "--rank", str(args.rank)]
+                            if args.plasticity:
+                                train_cmd += ["--lr", str(lr_)]
+                            rc = subprocess.run(
+                                train_cmd, cwd=os.path.dirname(HERE)).returncode
+                            log(f"[sleep {i}] train rc={rc} "
+                                f"plasticity={pm_:.2f} lr={lr_:g}")
+                            if rc != 0:
+                                raise RuntimeError(
+                                    f"sleep {i} adapter training failed rc={rc}")
+                            promote_trained_adapter(stage, ad)
+                            candidate = True
+                    if candidate:
+                        if not wake_closed and not close_backend(model):
+                            raise RuntimeError(
+                                "GPU did not free before resumed candidate "
+                                "gate")
+                        wake_closed = True
                         cand = VLLMBackend(adapter_path=ad)
                         ok, rate = format_canary(cand, gym)
                         from .model_backend import close_backend as _cb2
@@ -987,8 +1079,9 @@ def main():
                             verdict = "DONE" if g_ok else f"REJECTED_{g_reason}"
                         os.rename(os.path.join(ad, "CANDIDATE"),
                                   os.path.join(ad, verdict))
-                    model = load_model()
-                    bootstrap = head()
+                    if candidate:
+                        model = load_model()
+                        bootstrap = head()
             if preschool_on:
                 # the lesson phase advances with the sleep count (refreshers
                 # after sleeps 1-3, nothing from sleep 4); the head of context

@@ -183,6 +183,98 @@ def test_multiple_final_adapter_verdicts_fail_closed(tmp_path):
         raise AssertionError("ambiguous final markers did not fail closed")
 
 
+def test_ambiguous_verdict_fails_before_model_inference():
+    import tempfile
+    root = tempfile.mkdtemp(prefix="golden_ambiguous_resume_")
+    life = os.path.join(root, "life")
+    gate_json = os.path.join(root, "gate_panel.json")
+    with open(gate_json, "w") as f:
+        json.dump(gh.GATE_PANEL, f)
+    argv = ["--life-dir", life] + gh.BASE_ARGS + [
+        "--arm", "B", "--probe-gate", "--gate-panel", gate_json]
+    gh.run_life(argv)
+    ad = os.path.join(life, "sleep_0008", "adapter")
+    open(os.path.join(ad, "REJECTED_SCORE"), "w").close()
+    os.remove(os.path.join(life, "LIFE_DONE"))
+
+    tr = gh.Transcript()
+    try:
+        gh.run_life(argv, tr=tr)
+    except RuntimeError as e:
+        assert "ambiguous adapter verdicts" in str(e)
+    else:
+        raise AssertionError("ambiguous resume did not fail")
+    assert tr.events == [], "model/world work happened before state rejection"
+
+
+def test_resume_regates_candidate_without_retraining():
+    import tempfile
+    root = tempfile.mkdtemp(prefix="golden_candidate_resume_")
+    life = os.path.join(root, "life")
+    gate_json = os.path.join(root, "gate_panel.json")
+    with open(gate_json, "w") as f:
+        json.dump(gh.GATE_PANEL, f)
+    argv = ["--life-dir", life] + gh.BASE_ARGS + [
+        "--arm", "B", "--probe-gate", "--gate-panel", gate_json]
+    gh.run_life(argv)
+
+    ad = os.path.join(life, "sleep_0008", "adapter")
+    os.rename(os.path.join(ad, "DONE"), os.path.join(ad, "CANDIDATE"))
+    os.remove(os.path.join(life, "LIFE_DONE"))
+
+    tr = gh.run_life(argv)
+    assert not any(e["kind"] == "train" for e in tr.events)
+    assert os.path.exists(os.path.join(ad, "DONE"))
+    assert not os.path.exists(os.path.join(ad, "CANDIDATE"))
+
+
+def test_resume_promotes_trainer_complete_stage_without_retraining():
+    import tempfile
+    root = tempfile.mkdtemp(prefix="golden_staged_resume_")
+    life = os.path.join(root, "life")
+    gate_json = os.path.join(root, "gate_panel.json")
+    with open(gate_json, "w") as f:
+        json.dump(gh.GATE_PANEL, f)
+    argv = ["--life-dir", life] + gh.BASE_ARGS + [
+        "--arm", "B", "--probe-gate", "--gate-panel", gate_json]
+    gh.run_life(argv)
+
+    ad = os.path.join(life, "sleep_0008", "adapter")
+    stage = os.path.join(life, "sleep_0008", "adapter.train")
+    os.rename(ad, stage)
+    os.remove(os.path.join(life, "LIFE_DONE"))
+
+    tr = gh.run_life(argv)
+    assert not any(e["kind"] == "train" for e in tr.events)
+    assert os.path.exists(os.path.join(ad, "DONE"))
+    assert not os.path.exists(stage)
+
+
+def test_resume_promotes_staged_candidate_without_retraining():
+    """Crash between DONE->CANDIDATE and adapter.train->adapter is safe."""
+    import tempfile
+    root = tempfile.mkdtemp(prefix="golden_staged_candidate_resume_")
+    life = os.path.join(root, "life")
+    gate_json = os.path.join(root, "gate_panel.json")
+    with open(gate_json, "w") as f:
+        json.dump(gh.GATE_PANEL, f)
+    argv = ["--life-dir", life] + gh.BASE_ARGS + [
+        "--arm", "B", "--probe-gate", "--gate-panel", gate_json]
+    gh.run_life(argv)
+
+    ad = os.path.join(life, "sleep_0008", "adapter")
+    stage = os.path.join(life, "sleep_0008", "adapter.train")
+    os.rename(ad, stage)
+    os.rename(os.path.join(stage, "DONE"),
+              os.path.join(stage, "CANDIDATE"))
+    os.remove(os.path.join(life, "LIFE_DONE"))
+
+    tr = gh.run_life(argv)
+    assert not any(e["kind"] == "train" for e in tr.events)
+    assert os.path.exists(os.path.join(ad, "DONE"))
+    assert not os.path.exists(stage)
+
+
 if __name__ == "__main__":
     if "--record" in sys.argv:
         record()
