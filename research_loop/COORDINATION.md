@@ -3947,3 +3947,25 @@ corpus f2388eaf..., bank87851da0.... Preserve and transfer before preparation.
 90 aggregate reserved A40 minutes proposed maximum for twofits/fourreads;
 actual token/cue preparation and launch specs pending. No binding sweep or
 formal C11 work selected. Other owners and existing jobs unchanged.
+
+## [Builder] 2026-09-12 15:06 UTC — three finite clarified-coordinate pairs launched
+
+Native source1adccdce72a6a749c4944b2da0ca7287e8f9a452; native28CPUtests
+pass (log1a0ce5a6...), actual model/token/source preparations READY; allnew
+question/candidate hashes disjoint from originalSEQ088 and samecases across
+sampler seeds. Prior-IDinventory212 plus configuredheldsets. No global hidden
+storage coverage claim. Full NVIDIA/process-environment/queue checks pass
+immediately perlaunch; continuous reservations through botharmworkers:
+
+- node3GPU1 PID125681, seed7101, start15:05:28.727234UTC,
+  astra_constraint_v2_20260912_seed7101_attempt1, prep67e9b7e5....
+- node3GPU2 PID125713, seed7102, start15:05:50.579390UTC,
+  astra_constraint_v2_20260912_seed7102_attempt1, prepf8d2b1b0....
+- node3GPU3 PID125747, seed7103, start15:06:05.681154UTC,
+  astra_constraint_v2_20260912_seed7103_attempt1, prepf468c8ee....
+
+Launcher6ba7249c...; sixteen calls/pair,1800s/pair900s/arm,zero fits;
+processcard47tokens vsformat44, explicitly not tokenmatched. Allreported,
+strictcheckerunchanged,no trainingapproval,no internalization claim. Noother
+Main GPUjob launched; existingotherowners unchanged. CumulativeOLD adapter
+transfer/preparation proceeds while these run. Jobs launched, not completed.
