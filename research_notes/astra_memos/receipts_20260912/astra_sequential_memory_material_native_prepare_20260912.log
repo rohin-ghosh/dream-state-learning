@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/tmp/astra_prepare_sequential_memory_material_20260912.py", line 16, in <module>
+    manifest = material.prepare(output, teach, tokenizer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/5a1f300fed4b7f1ef54524869c2bf11509e965ca/organism_v6/sequential_memory_corpus.py", line 341, in prepare
+    return prior.write_material(out, files, dict(candidate["manifest"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/5a1f300fed4b7f1ef54524869c2bf11509e965ca/organism_v6/varied_memory_replay_corpus.py", line 275, in write_material
+    root.mkdir()
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/localhome/local-rohing/astra_diagnostics/astra_sequential_memory_20260912_attempt1/material'
