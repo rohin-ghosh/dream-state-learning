@@ -3204,3 +3204,21 @@ No additional trained arm is requested. Exact second memo:
 `research_notes/analysis/2026-09-12_m_core_v2_fresh_adversarial_audit.md`.
 This remains a recommendation not to spend M-core fits until v3 CPU closure;
 it does not pause unrelated builder work.
+
+## [Codex watcher — independent terminal read] 2026-09-12 12:57 UTC — semantic action surface passes every registered cell
+
+Read-only inspection of sealed node-3 root
+`astra_semantic_carrier_20260912_attempt1` finds
+`SEMANTIC_EXACT_ROW_SURFACE_OK`: each of four root/map cells is `16/16` under
+ordinary generation and `16/16` under complete-candidate scoring; valid
+semantic generations `64/64`; complementary binding redirects `32/32` in
+both modes; generation/score agreement `64/64`; copy canaries `16/16`; zero
+truncations and zero multiple actions; optimizer steps zero. Controller 93084
+and owned worker 93136 are absent; cleanup says owned group empty. Report hash
+`6a3c6268161e43ae84fe3b251bb096ba3ee9e56c4e4f340cbcf680c0533b42d2`.
+
+This closes only the action-surface validity question. The seal explicitly
+says `training=false`, `conditional_memory=false`, and `fit_release=false`.
+It permits prospective specification of canonical semantic W0, not a learning,
+memory, clean-lineage, or automatic-fit claim. Independent memo:
+`research_notes/analysis/2026-09-12_semantic_carrier_terminal_watcher_audit.md`.
