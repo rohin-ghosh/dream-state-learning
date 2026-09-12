@@ -1,6 +1,45 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, terminal SEQ107.** The root0 repeated-row
+**UNSENT — September 12, 2026, SEQ108–110.** Diagnostics and accepted
+formation remain separate from parenting utility and the current write.
+
+- **SEQ108 / C52:** AUTH and DERANGED carry their own PROSPECT/REVISE maps
+  on64/64 train and32/32 dev cases per operation; opposite maps and strict OFF0.
+  Both fail locality: addition valid/correct/exact OFF16/16/16, AUTH8/8/3,
+  DERANGED16/16/0; copy OFF12/14/14 versus0/0/0 for both adapters (each /16).
+  Addition spill0/13/16, copy0/16/16. Copy is eight unique prompts twice;
+  the frozen hyphen-validity quirk stays. Public suffix+OBSERVED+PRIOR predicts
+  REVISE64/64 train,32/32 dev without EXPECTED, leaving the intended comparison
+  unqualified, not proving model shortcut use. PROSPECT is narrow map carriage,
+  not composition, general qualification or a locality rescue.
+- **SEQ109 / C53:** FOUR_VIEW and SINGLE_VIEW both score memory4/16 on BOTH
+  panels of the SAME16 facts; FOUR retains habit/ACT32/32, SINGLE has0/32 and
+  no valid ACT. Interface failure is not latent arithmetic erasure. Both memory
+  thresholds fail; no seeds1/2. Four same-source views/copies share each batch:
+  40 presentations give10 source-specific updates, not40 sequential updates.
+  Each arm has320 new/400 cumulative updates; input/context differ by960 tokens
+  despite10000 matched targets. SEQ107 is descriptive, not isolated phrasing
+  evidence. Darwin's returned, archived raw/count review PASS is now read;
+  progression remains FAIL and material/grouping audit scope remains Main's.
+- **SEQ110 / C54:** faithful records P6/6,A5/6, fixed P0008/0010 and A0038/0040
+  selected; A0042's wrong null relation stays failed. Main accepts actual raw
+  record contexts/targets and four parent contracts for material fidelity only.
+  A's NEW active-recap contract permits accurate visible recaps, no new strategy
+  or answers; parent/restatement prose never enters sleep, including P's
+  hypothetical sum. All eight formation tasks have valid six-item quizzes,
+  descriptive only. Prior SEQ095 stays declined. At the supplied cut, paired
+  actual-record writes are RUNNING and parent-free readout NOT RUN: no outcomes.
+
+SEQ108 prior fit+completed collection2047.381023s includes prior464.397178s once;
+its preserved clock-only analysis repair changes no raw scores. SEQ109 release
+1099.402609s and later collector observation1099.948008s are distinct, with
+controller1013.653164s/workers779.505301s nested. SEQ110 formation-only
+251.916964s/worker116.096466s excludes running writes. No additive/busy-time
+cost claim. Reviews do not establish G3/P1/G5/H1/H2, parenting utility, clean
+lineage or frozen mechanism. Origin UNRESOLVED_LOCAL_HASHES_ONLY, C11 deferred.
+Canonical abstract/intent and all prior tables preserved; no message is sent.
+
+**Historical UNSENT — September 12, 2026, terminal SEQ107.** The root0 repeated-row
 allocation comparison completed, but its scientific progression gate **FAILS**.
 MIXED retains habit and correct ACT32/32 while scoring memory14/16 dev and
 13/16 exact-prefix; ALL_MEMORY scores16/16 on both panels but emits colors
@@ -26,7 +65,8 @@ runner/collector; this is independent reduction, not fresh-author code review.
 Full-reservation/controller/worker seconds1062.131771/954.336828/722.441552
 are nested, not additive or GPU-busy time (17.702196 A40-min fully reserved).
 Two fits/320 new updates/128 calls, no new OFF or confirmation. No results from
-live conditional or new varied material are included. This is not operational
+current paired writes or unrun parent-free readout are included; C52/C53 now
+supersede the earlier conditional/grouped-varied pending status. This is not operational
 child-authored SLEEP, general G3/P1/G5/H1/H2, parenting, clean lineage, novel-fact
 transfer or a substrate freeze. Origin unresolved; C11 deferred. Canonical
 abstract/intent and all prior tables are preserved. This collaborator draft
@@ -326,4 +366,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Reliable joint/repeated-write retention beyond C48–C50, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C51. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C54. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

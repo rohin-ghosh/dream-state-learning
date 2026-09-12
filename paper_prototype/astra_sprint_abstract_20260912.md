@@ -1,6 +1,21 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+**September 12, 2026 — SEQ108–110 evidence cut (C52–C54).** SEQ108
+carries assigned conditional maps perfectly but fails locality; a public-ID
+shortcut leaves REVISE's intended EXPECTED comparison unqualified. SEQ109
+FOUR_VIEW/SINGLE_VIEW both score memory4/16 on dev and exact panels of the
+SAME16 facts; habit/ACT are32/32 versus0/32. Its memory gate fails, no seeds1/2.
+Four source views/copies in one batch give10 source-specific updates over10
+epochs,40 presentations, not40 sequential updates. Darwin's returned, now-archived
+raw recount PASS supersedes the21:21 pending status, not failed progression.
+SEQ110 formation yields P6/6 and A5/6 faithful records; Main accepts the actual
+fixed first-two records and four parent contracts for material fidelity only.
+At the supplied live-status cut, paired actual-record writes are **RUNNING**
+and parent-free readout **NOT RUN**; neither contributes an outcome here.
+No parenting utility, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze.
+Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator **UNSENT**.
+
+**Historical September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
 scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
 checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
 exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
@@ -11,7 +26,8 @@ Equal updates do not match memory exposure or token compute. This is a local
 allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
 The archived reviewer independently recounted128 new calls but authored the
 runner/collector: raw-reduction PASS, not fresh-author implementation review.
-No results from live conditional or new varied material are included. No
+That earlier cut excluded conditional/varied outcomes; C52/C53 now supersede
+only that pending status. No
 G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
 
@@ -41,9 +57,25 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve what an agent learns after teacher removal? We separate material correctness, interface usability, and adapter-mediated utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics show revisable authored response conventions, not improved already-correct arithmetic or general retention. Memory-only continuation previously acquired facts but lost the arithmetic response interface in two of three teaching seeds; the retaining seed was not selected as superior. A separate one-root check preserved explicitly rehearsed compatible conventions without improving memory. We now compare two allocations from the same original seed-zero teaching checkpoint at 160 new updates each. MIXED rehearses arithmetic alongside memory and answers 14/16 development and 13/16 exact-prefix memory questions correctly while retaining habit and correct ACT on 32/32 probes. ALL_MEMORY answers 16/16 on both panels but emits colors instead of valid ACT on all 32 arithmetic probes. This is output-interface loss, not demonstrated latent arithmetic erasure. Both panels query the same 16 authored facts; MIXED's error sets differ across wordings. Its registered progression gate requires at least 15/16 on each panel and fails; seeds one and two are not pursued. Equal updates do not match memory exposure or token compute, so replay, dose and loss composition are not isolated. No results from live conditional or new varied material are included. All 64 confirmation cases remain unrequested. No general G3/P1/G5/H1/H2, parenting, child-generated sleep, clean lineage, novel-fact transfer or substrate freeze follows; model origin remains unresolved.
+Can developmental teaching improve what an agent learns after teacher removal? We separate material fidelity, diagnostic adapter behavior and downstream utility using a frozen instruction-tuned model and LoRA. Earlier diagnostics retain their original endpoints. On one root, conditional adapters reproduce their assigned PROSPECT and REVISE maps on all 64 training and 32 development cases per operation, but both fail locality controls. A train-only public-ID lookup predicts all REVISE development targets without EXPECTED, so perfect map carriage does not identify the intended comparison; PROSPECT supports only narrow map controllability. In grouped varied replay, FOUR_VIEW and SINGLE_VIEW both answer 4/16 memory questions correctly on each of two panels of the same 16 facts. FOUR_VIEW retains habit and correct ACT32/32; SINGLE_VIEW has no valid ACT. The memory progression gate fails, with no later seeds. Four source copies/views share each batch: 40 presentations mean 10 source-specific updates, not 40 temporally separated updates. Interface loss is not latent arithmetic erasure. Separately, relation-defined parenting formation yields six of six faithful process-arm records and five of six active-recap records. Main accepts the fixed first-two records per arm and parent contracts for material fidelity, not parenting utility. At the supplied evidence cut, paired actual-record writes are running and parent-free readout has not run; no write or readout outcome is reported. These diagnostics and formation do not establish general G3/P1/G5/H1/H2, clean lineage, novel-fact transfer or a frozen mechanism. Model origin remains unresolved.
 
 ## Evidence and interpretation boundaries
+
+**C52–C54: diagnostics and formation are not parenting utility.** Conditional
+own-map generation64/64 train and32/32 dev per operation coexists with locality
+failure; public suffix+OBSERVED+PRIOR predicts REVISE without EXPECTED, so the
+intended comparison is not identified. Copy has eight unique prompts twice;
+its hyphen-validity quirk is preserved. Grouped varied memory remains4/16 on
+both panels for both arms; FOUR habit/ACT32/32 versus SINGLE0/32 does not rescue
+the memory gate. Four within-batch copies/views yield10 source-specific updates,
+not40 sequential updates; equal target budget does not mean equal input compute.
+Darwin's now-archived raw-recount PASS has been read; its material/grouping scope
+remains bounded. SEQ110 Main audit accepts fixed P0008/0010 and A0038/0040 raw
+records/contracts only; A0042 remains failed. Parent/restatement prose, including
+P's hypothetical sum, stays out of sleep. Actual paired writes are RUNNING and
+parent-free readout NOT RUN at the supplied cut; no downstream outcomes.
+C52–C54 bind exact receipts and nested costs, not a model-origin or G3/P1/G5/H1/H2
+qualification. Collaborator remains UNSENT.
 
 **C51: root0 allocation, not isolated replay benefit.** MIXED's dev14/16 and
 exact13/16 fail the >=15/16-per-panel progression rule despite habit/ACT32/32.
@@ -58,7 +90,7 @@ half-update descriptive anchor only. Both arms complete; no seeds1/2, pooling,
 threshold revision or seed selection. Raw-recount PASS does not change failed
 progression or qualify general G3/P1/G5/H1/H2. Full-reservation/controller/worker
 seconds1062.131771/954.336828/722.441552 are nested, not additive or GPU busy time.
-No live conditional or new varied-material results are included; this repeated-row
+The earlier C51 cut excluded those now-reported C52/C53 diagnostics; this repeated-row
 assay is not operational child-authored SLEEP. Exact bindings are in C51.
 
 **C48–C50 interpretation details.** SEQ104 memory, in LR0/3e-5/1e-4 order,

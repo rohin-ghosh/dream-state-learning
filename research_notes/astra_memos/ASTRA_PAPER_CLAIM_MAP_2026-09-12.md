@@ -2,7 +2,22 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+**September 12, 2026 — SEQ108–110 evidence cut (C52–C54).** SEQ108
+carries assigned conditional maps perfectly but fails locality; a public-ID
+shortcut leaves REVISE's intended EXPECTED comparison unqualified. SEQ109
+FOUR_VIEW/SINGLE_VIEW both score memory4/16 on dev and exact panels of the
+SAME16 facts; habit/ACT are32/32 versus0/32. Its memory gate fails, no seeds1/2.
+Four source views/copies in one batch give10 source-specific updates over10
+epochs,40 presentations, not40 sequential updates. Darwin's returned, now-archived
+raw recount PASS supersedes the21:21 pending status, not failed progression.
+SEQ110 formation yields P6/6 and A5/6 faithful records; Main accepts the actual
+fixed first-two records and four parent contracts for material fidelity only.
+At the supplied live-status cut, paired actual-record writes are **RUNNING**
+and parent-free readout **NOT RUN**; neither contributes an outcome here.
+No parenting utility, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze.
+Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator **UNSENT**.
+
+**Historical September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
 scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
 checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
 exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
@@ -13,7 +28,8 @@ Equal updates do not match memory exposure or token compute. This is a local
 allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
 The archived reviewer independently recounted128 new calls but authored the
 runner/collector: raw-reduction PASS, not fresh-author implementation review.
-No results from live conditional or new varied material are included. No
+That earlier cut excluded conditional/varied outcomes; C52/C53 now supersede
+only that pending status. No
 G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
 
@@ -1615,8 +1631,9 @@ No reliable coexistence, general replay benefit, necessary separate adapters,
 causal dose explanation, G3/P1/G5/H1/H2, parenting, operational child-authored
 SLEEP, clean lineage, novel-fact transfer or substrate freeze follows. This
 repeated-row assay is not the proposed varied-view operational replay.
-Live conditional readout and new varied material are outside this evidence
-cut and contribute no results. Origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`;
+That earlier C51 cut excluded conditional/grouped-varied results; C52/C53 now
+supersede only that status. Current writes and unrun parent-free readout remain
+unclaimed. Origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`;
 formal C11 deferred; collaborator UNSENT. No launch or code change is prescribed.
 
 Sources and exact binding:
@@ -1626,3 +1643,180 @@ Sources and exact binding:
 - Capsule `research_notes/astra_memos/receipts_20260912/astra_memory_replay_seed0_terminal_20260912.tgz`, SHA256 `2d4636e37a4668a6503e8ee7a021ed87b6479e54e8bf8126c82e7dcbbaa172e3`; adjacent `.tgz.validation.json` binds331 files.
 - Plan SHA256 `70405bfa50486feaa2b000ee8102a1cdf30265bccaf102958d7e3ea17035bbb9`; source `3a12807f88747bafd0aada1d4a09ba88b915f903`.
 - Run `astra_diagnostics/astra_memory_replay_20260912_attempt1/seed0` on node3; inherited original-parent and SEQ105 evidence remain bound in C42/C44/C49, not new experimental arms or an outcome-selected descendant.
+
+## C52 — Conditional root0 map carriage, locality FAIL (SEQ108)
+
+**Allowed claim:** AUTH and DERANGED reproduce their assigned authored maps
+on the registered panels. Both fail locality, and REVISE's intended EXPECTED
+comparison is UNQUALIFIED by an independently verified public-ID shortcut.
+One root, no live parent/child-authored experience: diagnostic adapters, not
+clean developmental ancestors or a qualified/frozen substrate. Each fit128
+updates/LR1e-4/rank8; fresh-process OFF/AUTH/DERANGED readout uses the same prompts.
+
+For EACH operation (PROSPECT and REVISE), AUTH scores its map64/64 train and
+32/32 dev, DERANGED its own map64/64 and32/32; opposite maps and strict OFF0.
+Semantic-joint counts agree. All four assigned-map dev twin families pass16/16,
+opposite/OFF0; twins/components are not extra independent learners.
+
+| SEQ108 state | Addition valid/correct/exact, each /16 | Addition spill /16 | Copy valid/correct/exact, each /16 | Copy spill /16 |
+|---|---:|---:|---:|---:|
+| OFF | 16/16/16 | 0 | 12/14/14 | 0 |
+| AUTH | 8/8/3 | 13 | 0/0/0 | 16 |
+| DERANGED | 16/16/0 | 16 | 0/0/0 | 16 |
+
+Copy uses eight unique prompts, each executed twice; unique-all-correct7/8 OFF,
+0/8 on either adapter. The frozen parser excludes internal hyphens, so validity
+and exact match may disagree. No parser rescue or score replacement. Both
+adapters fail registered locality/spill; interface damage does not demonstrate
+latent arithmetic erasure or lost frozen-base competence.
+
+Independent train-only lookup using visible square suffix, OBSERVED and PRIOR
+predicts64/64 train and32/32 dev REVISE targets for both maps without EXPECTED.
+This identifies an available shortcut, not which computation the model used;
+perfect generation/twins/likelihood cannot establish the intended comparison.
+PROSPECT omitted-factor joint ceilings are0.50; report its narrow map
+controllability separately, not as universal shortcut exclusion or REVISE rescue.
+REVISE map likelihood interactions are exact negatives, not independent replications.
+No composition, L1/Q0, G3/P1/G5/H1/H2, parenting utility, clean lineage,
+novel-fact transfer or mechanism freeze; origin remains unresolved, C11 deferred.
+
+Review: independent analyzer/review author did not author corpus/run, but
+reviewed their own analyzer. All1801 metadata files,672 raw generations,
+192 scoring requests/576 complete-candidate forwards and signed sums/endpoints
+match; no logits, tokenizer or forwards are newly computed here. A first PARTIAL
+analysis had only a6.535e-8s epoch-cost difference. Main preserves it and original
+code, changing ONLY that clock-sum tolerance to1e-6s; scientific scalar tolerance
+stays1e-8. Main's54 tests and new COMPLETE clockfixed analysis are receipt facts,
+not this manuscript worker's tests. Raw data, metric, endpoint and run unchanged.
+
+Readout call666.024305s/worker1215.807358s/controller1527.156751s are nested.
+Full readout release1580.776011s versus completed collection1582.983845s;
+prior fit464.397178s added ONCE gives2047.381023s (34.123017 A40-min).
+Generation input/output46581/18848; scoring input/target49344/8544 and padded
+forward49440 are not generated-output counts. No additive nested-clock,
+continuous GPU-busy or dollar-cost inference. Weights excluded and native
+inventories attributed, not independently reloaded by local documentation checks.
+
+Sources and exact bindings:
+- `research_notes/astra_memos/ASTRA_CONDITIONAL_ROOT0_TERMINAL_2026-09-12.md`; `research_loop/COORDINATION.md`, SEQ10821:13:30 UTC; `research_notes/astra_memos/ASTRA_HANDOFF_2026-09-12.md`, top21:21:11 UTC.
+- `research_notes/astra_memos/receipts_20260912/astra_conditional_root0_results_review_20260912.md`, SHA256 `249ba4b7cf280693af0e77b3b81d674fd3870a44c28f304b6d664ebde3b8c0ba`.
+- `research_notes/astra_memos/receipts_20260912/astra_conditional_shortcut_recount_20260912.md`, SHA256 `f3d262c8fe0f6e44349c5d394e5a8918990141a2659338d9450b2bc5b2656dac`; accompanying independently written shortcut script is a reference, not executed here.
+- Clockfixed analysis `research_notes/astra_memos/receipts_20260912/astra_conditional_root0_independent_analysis_clockfix_20260912.json`, SHA256 `88053fd1ab0e6a7c6ef9e225a981f273b83ba0e799272b9f30c668286c31ff14`; original partial `research_notes/astra_memos/receipts_20260912/astra_conditional_root0_independent_analysis_20260912.json` remains preserved.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_conditional_readout_root0_terminal_20260912.tgz`, SHA256 `2872407b46a80441eb7417657b9c4c46aed6243c1ff248f1bba944480509f133`; adjacent `.tgz.validation.json` binds1801 files.
+- Run `astra_diagnostics/astra_conditional_behavior_20260912_attempt2/readouts_root0_attempt1`; source `90e181a4b0a02cfe655bc76ba480eac9166222b4`; full release21:07:40.395674 UTC, September12,2026.
+
+## C53 — Grouped varied root0 memory gate FAIL (SEQ109)
+
+**Allowed claim:** FOUR_VIEW retains the original response habit but neither
+arm improves the measured memory count; SINGLE_VIEW loses the ACT interface.
+Darwin's returned raw/count and receipt-accounting PASS supersedes the top21:21
+pending review, not failed scientific progression. No later seeds under this gate.
+
+| SEQ109 root0 arm | Dev memory /16 | Exact-prefix memory /16 | Habit /32 | Valid/correct ACT /32 |
+|---|---:|---:|---:|---:|
+| FOUR_VIEW | 4 | 4 | 32 | 32/32 |
+| SINGLE_VIEW | 4 | 4 | 0 | 0/0 |
+
+Both panels query the SAME16 learned facts. FOUR_VIEW is yellow throughout,
+correct devices000/001/002/005 on each panel. SINGLE_VIEW dev is green throughout,
+correct003/004/011/015; exact is blue7/green9, correct004/007/012/015. Equal4/16
+counts conceal seven cross-surface answer disagreements; only004/015 are correct
+on both SINGLE panels. All128 calls finish stop, none at cap64. SINGLE arithmetic
+has no valid ACT: output-interface/grammar failure, not latent arithmetic erasure.
+
+The sealed FOUR_VIEW gate requires dev>=15/16 AND exact>=15/16, habit>=30/32,
+ACT>=31/32, both arms technically complete. Observed4/4/32/32 fails both memory
+terms. Wrapper `gate_evaluated:false` is not a pass; the independent review
+explicitly evaluates the conjunction. No substitution, averaging, pooling,
+threshold revision or seeds1/2. Same original80-step parent, independent forks,
+fresh optimizer seed0/rank8/LR3e-4/batch4/accum1/dropout0.05. Each320 new updates,
+400 cumulative;128 sequences/32 groups/10 epochs. No native skips, splitting,
+truncation, nonfinite or empty fit according to checked receipts.
+
+Declared same-source four views/copies share one batch. Therefore40 presentations
+mean10 source-specific update opportunities, NOT40 temporally separated updates.
+Within-update averaging with active dropout is not exact-gradient identity.
+Target presentations10000 each; FOUR input/context67120/57120, SINGLE66160/56160:
+960-token input/context difference, not equal compute. Per epoch target1000
+includes128 memory and872 arithmetic. Original-parent/material membership and
+semantic/grouping audits remain Main's separate scope, not newly certified by
+Darwin. SEQ107 is descriptive only: dose, temporal batching and input cost differ.
+This is not an isolated phrasing/replay effect or operational interleaved sleep.
+
+Darwin did not author runner/corpus/fit, but saw Main's summary (not blinded).
+Independently parsed128 raw texts, cross-checked source labels/operands and331
+payload hashes; analysis reports4130 checks and16 parser fixtures. These are
+reviewer-reported, not executed here. Native tensor inventories/base freezing
+remain attributed, no weight reload. Two fits640 new updates128 new calls;
+zero new OFF/HF/confirmation. Actual generation5606 input/902 output versus
+8192 ceiling, not scored tokens or a compute budget.
+
+Historical release interval1099.402609s (18.323377 A40-min), later collector
+observation1099.948008s (18.332467 A40-min), difference0.545399s. Preserve both
+labels, not silent substitution or addition. Controller1013.653164s and
+workers779.505301s are nested; no billed-cost or continuous GPU-busy inference.
+Release21:18:07.494984 UTC, September12,2026. No memory rescue, reliable coexistence,
+general G3/P1/G5/H1/H2, parenting utility, clean lineage, novel facts or freeze.
+Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; current writes unclaimed.
+
+Sources and exact bindings:
+- `research_notes/astra_memos/ASTRA_HANDOFF_2026-09-12.md` top21:21:11 UTC and `research_loop/COORDINATION.md` SEQ10921:21:11 UTC (pending-review status historical).
+- Returned review `research_notes/astra_memos/receipts_20260912/astra_varied_root0_independent_review_20260912.md`, SHA256 `91957eb613761e51340dc9d4cd3dd05de80a5e2eb37dc754f25a683e74c5e569`, byte-identical to `/tmp/astra_varied_root0_independent_review_20260912.md` when read. Analysis sealed21:23:17 UTC; review was present and read before this PASS wording.
+- Analysis `research_notes/astra_memos/receipts_20260912/astra_varied_root0_independent_analysis_20260912.json`, SHA256 `de51edb32fd577929d02c2605f3f9874318a007c213d6386697bfc7d62ba3bd6`; supplied `/tmp/astra_varied_root0_independent_analysis_20260912.json` matches. No reviewer script rerun.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_varied_pair_root0_terminal_20260912.tgz`, SHA256 `cce875ffcc8c00ccda781efe7de895e2ff68aa914afc9bb000b061d1aef545c0`; adjacent `.tgz.validation.json` binds331 files and the later collection observation.
+- Plan SHA256 `2120bb93d0458b789bb3db408e57dd077f528cfadec35691b0e5fb27889756ca`; source `dc2e9a3c11ccd9a3f10ea28513723bbfb8420247`; run `astra_diagnostics/astra_varied_memory_replay_20260912_attempt1/fits_root0_attempt1`.
+- `research_notes/astra_memos/receipts_20260912/astra_varied_memory_pair_handoff_20260912.md` binds declared grouping/runner scope; C51 binds the earlier descriptive allocation anchor.
+
+## C54 — Actual-record v3 formation accepted; utility NOT measured (SEQ110)
+
+**Allowed claim:** Main accepted actual selected record fidelity and prospective
+parent/control contracts for relation-defined v3 formation. This is not parenting
+utility, an independent efficacy review or a result of the currently running write.
+
+| SEQ110 formation arm | Faithful records | Fixed selected raw calls | Acceptance scope |
+|---|---:|---|---|
+| Process P | 6/6 | 0008, 0010 | Material fidelity only |
+| Active recap A | 5/6 | 0038, 0040 | Material fidelity only; A0042 failure retained |
+
+A0042 has the wrong null relation and remains a failure. Selection is unchanged
+first-two eligible distinct executions, post-treatment, with no quiz/unique-text
+gate and no later-record substitutions. All eight tasks reach valid six-item
+quizzes; these descriptive formation scores are not adult-learning gains.
+All four selected records describe actual observed-true TRYs: one false
+prediction/mismatch and one true prediction/match per arm. Main reads exact
+record requests, raw child JSON and wake/world joins. Preserve actual A TRY:
+versus P ACT: TRY formatting, no synthetic context/reserialization/corrected target.
+
+Selected contexts contain actual emitted actions, Boolean world results,
+prior explicit predictions and the common record definition. Parent/restatement
+prose never enters sleep targets or context. P process guidance addresses omitted
+pre-TRY predictions. The NEW prospectively specified active-recap control may
+accurately recap already-visible predictions, TRYs and public quizzes, without
+new strategies, evaluated corrections, hidden rules or future answers. Both arms
+allow own-word restatements, not acknowledgment-only acceptance. P's hypothetical
+sum restatement is excluded from sleep and is not RuleGame evidence or useful
+strategy. Main accepts all four parent contracts and record provenance. Historical
+SEQ095 remains declined; this is not retroactive control-contract or score repair.
+
+**Supplied current-status boundary, not a live GPU observation:** actual-record
+paired writes are RUNNING; parent-free OFF/P_ON/A_ON readout has NOT RUN. No fit
+completion, adapter result, retained utility or parent-free score is reported.
+The durable top21:21 not-yet-exported/fitted statement is historical; the user's
+later running-status update supersedes status only, not adding a write outcome.
+Formation remains the sole accepted SEQ110 evidence here. No parenting
+internalization/utility, G3/P1/G5/H1/H2, clean lineage, novel-fact transfer,
+frozen mechanism or mission completion. Local model origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator UNSENT.
+
+Formation-only capsule141 files; full release21:16:18.781282 UTC September12,2026,
+reservation251.916964s and supervised worker116.096466s are nested. Current
+paired-write costs/outcomes excluded, not combined with formation. Native
+world/token/call custody and Main content acceptance are attributed, not newly
+replayed or certified as broad semantic no-answer/teaching-efficacy proof.
+
+Sources and exact bindings:
+- `research_notes/astra_memos/ASTRA_HANDOFF_2026-09-12.md` top21:21:11 UTC; `research_loop/COORDINATION.md`, SEQ11021:21:11 UTC; supplied integration directive bounds later writes RUNNING/readout NOT RUN. No live job is polled by this sidecar.
+- Main audit `research_notes/astra_memos/receipts_20260912/astra_rulegame_v3_main_audit_20260912.json`, file SHA256 `d362f530bb422dae799f57607779bdc6d83873dd23e77e9a8437ddf13c16fda6`; provenance and actual-record decisions accept, all four parent contracts accept. Material fidelity only.
+- Fixed selection `research_notes/astra_memos/receipts_20260912/astra_rulegame_v3_fixed_selection_20260912.json`, file SHA256 `54dd744a779decf44fd60ab41fcfcd100948fe85060491552611261d6970d816`; separately bound selection VALUE hash `e3af02aca182aabee659a5e1fc98ac434f9228202ae328e06e7664f0f39db3d8` (not the file hash).
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_rulegame_v3_formation_terminal_20260912.tgz`, SHA256 `05b9177bb83e800f4f9c10bbc5e34c27c7dd68e2fabe9c18c006c12e6971f90e`; adjacent `.tgz.validation.json` binds141 files and formation-only cost.
+- Plan SHA256 `7dae3ca492ed39545987ab8deb5f39631a40332d480ddb99292e5f083741c468`; source `610c6edd05ce9c85720ee6e992889badecc2c158`; root `astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1`.

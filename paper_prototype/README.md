@@ -3,9 +3,88 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded result — SEQ107 / C51
+## Latest bounded evidence — SEQ108–110 / C52–C54
 
-**September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
+**September 12, 2026 — SEQ108–110 evidence cut (C52–C54).** SEQ108
+carries assigned conditional maps perfectly but fails locality; a public-ID
+shortcut leaves REVISE's intended EXPECTED comparison unqualified. SEQ109
+FOUR_VIEW/SINGLE_VIEW both score memory4/16 on dev and exact panels of the
+SAME16 facts; habit/ACT are32/32 versus0/32. Its memory gate fails, no seeds1/2.
+Four source views/copies in one batch give10 source-specific updates over10
+epochs,40 presentations, not40 sequential updates. Darwin's returned, now-archived
+raw recount PASS supersedes the21:21 pending status, not failed progression.
+SEQ110 formation yields P6/6 and A5/6 faithful records; Main accepts the actual
+fixed first-two records and four parent contracts for material fidelity only.
+At the supplied live-status cut, paired actual-record writes are **RUNNING**
+and parent-free readout **NOT RUN**; neither contributes an outcome here.
+No parenting utility, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze.
+Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator **UNSENT**.
+
+**Conditional diagnostic, not qualification.** AUTH and DERANGED each reproduce
+their own map on64/64 train and32/32 dev cases PER operation, opposite maps0;
+strict OFF0. Each assigned-map dev twin family passes16/16, not extra independent
+learners. Both adapters fail locality:
+
+| SEQ108 state | Addition valid/correct/exact, each /16 | Addition spill /16 | Copy valid/correct/exact, each /16 | Copy spill /16 |
+|---|---:|---:|---:|---:|
+| OFF | 16/16/16 | 0 | 12/14/14 | 0 |
+| AUTH | 8/8/3 | 13 | 0/0/0 | 16 |
+| DERANGED | 16/16/0 | 16 | 0/0/0 | 16 |
+
+Copy uses eight unique prompts twice, not16 independent prompts. The frozen
+validity parser excludes internal hyphens; its OFF valid12 versus exact14 is
+preserved, not corrected post hoc. The independently audited public square
+suffix+OBSERVED+PRIOR lookup gets REVISE64/64 train and32/32 dev on both maps
+without EXPECTED. Availability of that shortcut does not prove model use, but
+leaves the intended comparison unqualified. PROSPECT's omitted-factor joint
+ceiling0.50 is separate, not general composition or a REVISE validity rescue.
+
+| SEQ109 root0 arm | Dev memory /16 | Exact-prefix memory /16 | Habit /32 | Valid/correct ACT /32 |
+|---|---:|---:|---:|---:|
+| FOUR_VIEW | 4 | 4 | 32 | 32/32 |
+| SINGLE_VIEW | 4 | 4 | 0 | 0/0 |
+
+FOUR_VIEW is yellow throughout both memory panels. SINGLE_VIEW is green on dev,
+blue7/green9 on exact; equal4/16 totals hide different answer vectors. All128
+calls stop normally, no cap64 hits; SINGLE arithmetic is interface loss, not
+latent arithmetic erasure. FOUR memory4/16 on BOTH panels fails the >=15/16
+progression rule despite habit/ACT success; no seeds1/2. Both arms independently
+fork ORIGINAL root0 for320 new/400 cumulative updates,10 epochs,128 rows/32
+groups, batch4. Four views/copies grouped within each source batch give10
+source-specific updates and40 presentations, not40 sequential updates. Target
+presentations match10000; input/context are67120/57120 versus66160/56160.
+No exact-gradient equality under dropout or causal phrasing benefit is claimed;
+SEQ107 is descriptive only. Darwin's archived review passes128 raw calls and331
+hashes; original-parent semantic/material grouping audits remain Main's scope.
+
+| SEQ110 formation arm | Faithful records | Fixed selected raw calls | Acceptance scope |
+|---|---:|---|---|
+| Process P | 6/6 | 0008, 0010 | Material fidelity only |
+| Active recap A | 5/6 | 0038, 0040 | Material fidelity only; A0042 failure retained |
+
+Selection is the first two eligible distinct executions, post-treatment, not a
+quiz/unique-text criterion. Main accepts exact raw child records and actual
+emitted action/world/prediction contexts; no parent/restatement prose is sleep
+material. The NEW active-recap contract permits accurate already-visible recaps,
+not new strategy/answers; P's hypothetical sum stays excluded. All eight tasks
+reach valid six-item quizzes; formation does not establish adult learning or
+parenting utility. Prior SEQ095 remains declined. The current paired writes
+are running and parent-free readout has not run at the supplied cut: no results.
+
+SEQ108 prior fit+completed collection2047.381023s (34.123017 A40-min) includes
+prior fit464.397178s once. SEQ109 release interval1099.402609s differs from later
+collector observation1099.948008s; controller1013.653164s/workers779.505301s
+are nested, never additive. SEQ110 FORMATION ONLY full reservation251.916964s,
+worker116.096466s excludes running writes. No busy-time/billing inference.
+C52–C54 bind exact source hashes, returned review scope, the preserved clock-only
+analysis repair and Main's actual-record audit. Source memo:
+`research_notes/astra_memos/ASTRA_CONDITIONAL_ROOT0_TERMINAL_2026-09-12.md`;
+`ASTRA_HANDOFF_2026-09-12.md` top21:21 and notebook SEQ108/109/110 bind status.
+Canonical abstract/intent and all prior tables remain unchanged; no PDF build.
+
+## Earlier bounded result — SEQ107 / C51
+
+**Historical September 12, 2026 — terminal SEQ107 (C51): technical recount PASS,
 scientific progression FAIL.** Both root0 arms start the SAME ORIGINAL teaching
 checkpoint and receive 160 new updates each. MIXED scores dev14/16 and
 exact-prefix13/16 with habit and correct ACT32/32; ALL_MEMORY scores16/16 on
@@ -16,7 +95,8 @@ Equal updates do not match memory exposure or token compute. This is a local
 allocation tradeoff, not isolated replay benefit or latent arithmetic erasure.
 The archived reviewer independently recounted128 new calls but authored the
 runner/collector: raw-reduction PASS, not fresh-author implementation review.
-No results from live conditional or new varied material are included. No
+That earlier cut excluded conditional/varied outcomes; C52/C53 now supersede
+only that pending status. No
 G3/P1/G5/H1/H2, parenting, child sleep, clean lineage or freeze; origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`, formal C11 deferred, collaborator **UNSENT**.
 
