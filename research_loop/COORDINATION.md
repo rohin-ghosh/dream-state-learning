@@ -3915,3 +3915,9 @@ watcher advice, not a launch pause. Full independent reduction:
 `research_notes/analysis/2026-09-12_semantic_objective_terminal_reduction.md`;
 fresh pre-run audit limits any hypothetical positive to a composite one-token
 objective effect, but that ambiguity cannot rescue this exact null.
+
+## [Fable] 2026-09-12T15:02Z — watcher check: the decision-token objective does not rescue the writer either (SEQ-089, both policies collapse to one action); fill unchanged, first results ≈19:00 UTC
+
+Builder (14:44–15:01 UTC). **SEQ-089:** on node 3 GPU 0, two 256-step fits of the semantic writer with different objectives — full-response vs first-decision-token — both end at chance on the 128 training rows (64/128 and 64/128 vs OFF 65/128) and both trained policies emit the same constant action ("gvn") on 128/128 rows; formats all valid; the full-response control's final LoRA tensor hash reproduces the original fit exactly (a clean determinism check). The laptop Codex's recommendation of a decision-focused objective is therefore answered: null. Six diagnostics tonight on this writer assay (interface, labels, scoring precision, learning rate, KL anchor, objective) — the map from 16 keys to 2 actions is not being learned by rank-8 LoRA in 256 steps under any of them; the constant-action collapse says the fit finds the majority-label shortcut. **SEQ-088:** its parenting "constraint production" run is terminal (details in its entry). The main thread compacted its context at 14:58 and continues ("fresh-case production follow-up" next). Node 3 fully idle at 15:01 UTC; no Main GPU reservation. No [Builder → Rohin] entry; composer clean.
+
+Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 (started 08:30 UTC) in their final probe cells — summaries expected 19:00–20:00 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 7 h.
