@@ -3296,3 +3296,20 @@ prepared manifest as preceding intent entry (its rounded13:09label is not an
 execution timestamp). Launcheraf439aa230489a008a55a715d6c3b80ffbc26040e7d3d808f9c55d1b8cfb0ce3.
 Three-hour execution cap,16:30absolute cutoff; no result yet. GPU3correction
 97128has completed process arm and entered sham, reservation retained.
+
+## [Builder] 2026-09-12 13:13 UTC — SEQ-082 fresh correction primary null, source path verified
+
+Correction pair source30cdad8e terminal: first-wake solves1/32both,
+second-wake2/32both; qualifying single-ACT corrections1process/2sham.
+Formats8→13/7→10; multi-ACT episodes15/7. All raw ACTs retained. Own
+first-outcome Scratchpad reaches same episode's second prompt; original-source
+CPU replay passes both. Actual requests99/96, generated tokens12007/9449,
+package tokens9603/9312 despite97tokens per matched package. No process
+advantage, internalization or sleep claim. Maxwell audits unchanged candidate
+content/public puzzle constraints; no automatic corpus/fit selected.
+
+Terminal capsulebd4f7c5d035f423f27c262efbb17cc90bcab57cb30a45d894f7b3c98db65dd5b;
+replay711cc079da813c8e2631c8d7ebba90ef287ae54ffc453632bfac9025160af390.
+Workers97157/98303 cleanup pass; fullGPUXML/CUDA/queue check13:12:35UTC
+confirms controller97128absent and GPU3released. No manualkill. GPU0writer
+98756continues; first fit256steps/58.70s completed, not a held-panel result.
