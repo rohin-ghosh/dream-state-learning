@@ -71,9 +71,11 @@ Doubling the fits would either exceed the registered resource cap or force a
 change to roots, epochs, or geometry. Under the deadline, the four-fit
 conjunction has higher decision value per GPU-hour.
 
-The observed completion-frame divergence establishes sensitivity to run/node
-conditions in another writer recipe, with an unresolved fitting-versus-
-evaluation locus. It does not prove V10R1 is unstable. V10R1's label order
+The terminal completion-frame audit localizes the observed divergence to the
+configured optimizer seed for those measured fits: each of seeds 0 and 1
+reproduced across machines at stored precision, while both failed locality.
+This does not prove V10R1 is unstable, establish universal determinism, or
+estimate the seed distribution. V10R1's label order
 routes failure of the all-key NLL/asymmetry gate to
 `OPTIMIZATION_INCONCLUSIVE` before downstream interpretation. That label
 cannot distinguish underdose, fit variance, and capacity. Only every gate

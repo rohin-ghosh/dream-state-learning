@@ -135,10 +135,19 @@ tokenization and fit-identity receipts pass and the scientific run still misses
 the NLL gate, the bound result is `OPTIMIZATION_INCONCLUSIVE`: not writer
 incapacity and not permission to rerun until lucky.
 
-## Exact human boundary after the final consensus
+## Historical exact human boundary after the final consensus
 
-The implementation remains forbidden. The final consensus requires human
-ratification to bind the inherited V9 and V10 scopes, the V10 adjudication,
+**Superseded execution boundary (2026-09-12 05:50 UTC).** The paragraph and
+copyable sentence below preserve the boundary that applied when this audit was
+written. Rohin's later standing builder authorization, committed in
+`AGENTS.md` at `6e1fb96c`, now permits the Astra builder to design, implement,
+test and execute in-scope experiments without per-experiment ratification,
+subject to the invariants recorded there. This does not enlarge V10R1's
+scientific claim or authorize a laptop watcher to launch competing work.
+
+At the time of the audit, implementation remained forbidden. The final
+consensus required human ratification to bind the inherited V9 and V10 scopes,
+the V10 adjudication,
 and all immutable V10R1 proposal/review artifacts. A shorter sentence that
 names only the three exact scopes is insufficient under
 `architecture_consensus.json` resolution MWG10R1-D1-PROPOSAL-EQUIVALENCE.
