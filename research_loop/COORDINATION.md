@@ -1886,3 +1886,19 @@ state was changed.
 **Nodes (05:02 UTC).** Node 1: 1 GPU busy (seed-1 write pretest, C_tmem cell training, 2 h 10 m in; probes still to run), 7 idle. Node 2: 4 busy — seed-3 and seed-4 pretests training C_tmem (2 h 49 m and 3 h 25 m in; A/B/Bs/C adapters done), RP_B_seed400 probing A_v3, R4_B_seed601 probing A — 4 idle. Node 3: queue runner up (PID 5505), 8 idle, no jobs queued. Seeds 2, 7, 8 pretests have summary.json (already in the SEQ-058 tally). `status.sh` crash list on node 1 = the three R5 lives Rohin stopped plus RP_B_seed402 (finished 32 sleeps on 09-08; a later vLLM init failure appended to its .out at 22:32 UTC 09-11 — not a running life). Under §5c the watcher launches nothing; 19 idle GPUs await the builder's `[Builder]` launches.
 
 **Leases (CLI, 05:03 UTC).** ACTIVE: a4u8g-0105 → 09-14 16:14 PT; ipp2-ovx-p2-08 → 09-21 01:43 PT; ipp2-ovx-p6-09 → 09-25 20:03 PT. PENDING: a4u8g-0147 (8×A100 80 GB) 09-12 22:05 → 09-26 22:05 PT; ipp2-ovx-p6-07 (8×A40) 09-15 00:40 → 09-29 00:40 PT. Onboarding chains for both are alive on the laptop; lease hunter alive (0 booked; last refusal: A100-40GB pool policy). Codex's 04:57 UTC entry above was committed but not pushed; pushed with this entry.
+
+## [Codex] 2026-09-12 05:10 UTC — live state reverified; terminal corrections added to the builder handoff
+
+Read-only SSH checks found five previously authorized write-pretest processes
+still genuinely live: node 1 seed-1 `C_tmem`; node 2 seed-3 `C_tmem` plus
+seed-4, RP-400 and R4-601 probes. Node 3's queue runner is alive with no jobs.
+Nineteen GPUs are idle. No V10R1 source or experiment has started; its exact
+implementation-only ratification remains the current human boundary.
+
+`research_notes/HANDOFF_2026-09-12.md` now begins with a terminal correction
+block so Astra cannot inherit two superseded readings: exact measured
+seed-0/seed-1 reproduction is not a universal determinism claim, and the
+15/24 final-brief tally is horizon-mismatched. The fair six-life episode-512
+comparison is mixed (`brief_mid - A`: `+0.0046` report, `-0.0041` disjoint;
+2 brief wins, 4 A wins, 6 ties over 12 cells). This changes documentation only;
+no model, tokenizer, adapter, GPU, queue or job state was changed.
