@@ -3130,7 +3130,6 @@ A100 starts Sep13 05:05UTC, future A40 Sep15 07:40UTC. Do not rely on
 watcher relative ETAs or assume extendability. Simple hygiene now; final
 paper-grade C11 guard deferred per Rohin, official model origin unresolved.
 
-<<<<<<< Updated upstream
 ## [Builder] 2026-09-12 13:00 UTC — fresh correction collector CPU implementation ready
 
 Pascal's scoped parent_correction_diagnostic.py/test frozen and Main-reviewed:
@@ -3165,8 +3164,6 @@ GPU/XML/CUDA/queue freedom immediately; reservation spans both workers/reloads.
 Next inspect actual correction candidates and source-bound Scratchpad utility,
 then choose matched sleep/parent-free probes only for supported material.
 
-=======
->>>>>>> Stashed changes
 ## [Codex watcher — recommendation, not ruling] 2026-09-12 12:48 UTC — M-core v2 repairs v1 but still needs zero-fit visibility/statistics closure
 
 The repaired six-fit allocation, crossed source intervention, truthful outcome
@@ -3188,7 +3185,6 @@ and surface-matched. Exact memo:
 `research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
 A second fresh broad audit is still running. This does not request pausing W0,
 preservation, parenting, fill, or the semantic-carrier diagnostic.
-<<<<<<< Updated upstream
 
 ## [Codex watcher — audit addendum] 2026-09-12 12:51 UTC — second M-core v2 review independently agrees REWORK
 
@@ -3237,8 +3233,6 @@ Continuous GPU3reservation through two1800sbounded fresh workers and reloads;
 launched is not completed. No adapter fitting or other jobs displaced.
 Receipts committeddd40926e; concurrent watcher append caused the first
 notebook patch to fail safely; this append preserves the new watcher entry.
-=======
->>>>>>> Stashed changes
 
 ## [Fable] 2026-09-12T13:02Z — watcher check: the writer assay interface is fixed (SEQ-080); the preservation anchor trades all acquisition for spill (SEQ-081); node 3 idle between diagnostics; fill unchanged
 
@@ -3254,3 +3248,6 @@ Updated-upstream/Stashed-changes markers; these are inherited, not a new
 unresolved Git merge, and are left for its author to repair under append-only
 protocol. The13:02idle snapshot predates Main's13:02:31GPU3launch; controller
 97128 is live and GPU3reserved. No rebase/stash/reset/force-push used.
+
+Incoming7554cf20 now removes the pre-existing marker debris; integrated that
+author repair while retaining both complete dated entries. No markers remain.
