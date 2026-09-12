@@ -1,13 +1,23 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 17:11 UTC**.
+Latest reconciliation: **2026-09-12 17:41 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **17:41 superseding status:** elementary authored birth/post-training
+  teaching fit160031/node3GPU0 and task-only control160133/GPU1 launched17:39.
+  Both80updates expected, rank8,seed0,lr3e-4; input/target tokens exactly matched.
+  One adapter holds both behavior and memory within each experimental arm.
+  No result yet; GPU0/1 reserved.48dev-case readout implemented/Main22testsPASS,
+  native validation next, confirmation untouched. See latest HANDOFF.
+  SEQ096/097 terminal/released and independently reviewed;097development-only
+  because broader exposure registry was omitted. No replacement panel selected.
+  Dirac owns six manuscript files for096/097 only. Main sole Git operator.
 
 - **17:11 superseding status:** fresh panel seed0/GPU1/PID151210,
   seed1/GPU2/PID151303, seed2/GPU3/PID151403 live on node3 at17:09UTC.

@@ -5180,3 +5180,26 @@ freeze. Main actual PIDs and after-fit/full-release receipts will follow.
 ## [Fable, carrying Rohin — INDUCED STEER, his label: "a steer but not a forced steer"] 2026-09-12T17:35Z — three positions for the builder to weigh
 
 Rohin (raw message 16): (a) behaviour and memory are both token chains ("behaviour is remembering what to do"); do not separate them by adapter unless a test says otherwise — the age pattern is plasticity and episode length moving together (young: high plasticity, long episodes, behaviour first, more forgetting; old: low plasticity, more training passes, memory first); (b) episode length is a level-2/3 knob, plasticity the level-1 knob; (c) **a learned external controller that decides what to compile is "castration" of the flywheel — picking and choosing becomes the ceiling; the per-episode compile should be a child behaviour ("the episode is done, let me look at what happened"), the mechanical compiler may give more help when the child is raw and less as it improves.** Fable's reading: (a) and (c) are consistent with his messages 3 and 12 and with your current practice (mechanical renderer + gate; extraction treated as a teachable child behaviour; no MemSkill-style controller); (b) suggests keeping 32 episodes per sleep through level 1 and testing 16 vs 64 at equal total episodes at level 2 with SEQ-092-style retention and spill as readouts. He also asked for the honest state of the mechanisms; Fable's scorecard is in the same chat and summarised: write works (behaviour: one routine, 4/12 lives; positive control 3/16 vs 0 at 3 seeds; memory: binds at every seed) but not selective and not stable across sleeps; text read (the child's brief) never worse in 11/12; compiler exact and gated but the child's own notes rarely meet the form; end-to-end loop runs; no flywheel evidence yet — which is why the level-1 test you proposed at 17:25 is the right next block.
+
+## [Builder] 2026-09-12 17:41 UTC — actual fit PIDs; message16 acknowledged
+
+Elementary teaching GPU0/PID160031 started17:39:36.045349UTC; task-only control
+GPU1/PID160133 started17:39:59.046146UTC, node3, source06c90d1b plus boundscript.
+Both full vacancy checks pass and actual launchreceipts archived. No fit
+completion/readout result asserted. GPU0/1 reservations persist throughcleanup.
+Main readout22CPUtestsPASS, no confirmation requests. Native validation next.
+
+Message16 is incorporated as steering: behavior and memory share EACH arm's
+single rank8 adapter. Two adapters here mean randomized-treatment/control
+candidates, not split cognitive subsystems (seed0 pair, not randomization proof).
+The level1 block is open-loop authored post-training with no episode compiler
+or sleep cadence. Future child-generated extraction remains child behavior;
+no learned external selection controller/projection/hypernetwork is added.
+Plasticity and episode-length aging schedules remain hypotheses to compare,
+not baked-in biological claims. Fable's suggested32episodes is not applied to
+this no-sleep corpus fit. New diagnostics remain within standing invariants.
+
+Concurrent watcher pushes caused two ordinary merge conflicts, not GPU
+failures; Main preserved both appendix streams and all raw message16 bytes,
+removed only conflict markers, and pushed without force. No launch occurred
+until its prospective record was successfully pushed. HANDOFF/STATE refreshed.

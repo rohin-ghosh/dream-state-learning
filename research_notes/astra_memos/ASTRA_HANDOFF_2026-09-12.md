@@ -1,4 +1,48 @@
-# Astra restart checkpoint — 2026-09-12 17:11 UTC
+# Astra restart checkpoint — 2026-09-12 17:41 UTC
+
+## Latest live state (overrides all snapshots below)
+
+Main's elementary open-loop paired fits are LIVE on node3:
+teaching GPU0/controller160031 launched17:39:36.045349UTC;
+task-only control GPU1/controller160133 launched17:39:59.046146UTC.
+Root `~/astra_diagnostics/astra_fundamental_teaching_20260912_attempt1`.
+Source `06c90d1bbd00fd7ab1867bf069944554b84580cf` plus archived
+`receipts_20260912/astra_fundamental_pair_20260912.py` and launcher.
+Plan SHA d5a3d0297290184061b5cfcc3bf7fa5ba36a5995fbaedb021df464be7879ec5e.
+Each fresh rank8 adapter learns BOTH arithmetic behavior and memory; these are
+two experimental arms, not behavior/memory adapter splitting. Native matched
+4517input/912targettokens per80-row epoch;4epochs,80updates,lr3e-4,seed0.
+COMPUTED control label is a CPU-only token-match amendment, no outcome choice.
+This is sourced authored birth-style post-training, not child sleep/parenting.
+GPU0/1 reserved through verified fit cleanup/Main release. Preserve both arms.
+
+Ohm's readout module/test are EDIT-STOP; Main22CPUtestsPASS, native/source
+preparation next. Exactly48development cases (32addition,16recall), same
+temp0/seed/max64 for OFF/teach/control. No confirmation cases get requests.
+Readout code sources will differ from fit source and must be recorded separately.
+No learning/adherence/memory result yet. The remaining64confirmation cases
+are uninspected by models. No new paper claim from a seed0 smoke pair.
+
+All prior Main jobs including SEQ096 and097 are terminal and fully released;
+do not rerun.096=relation1/3original,3/3fullclarified,2/3token; tiny interface,
+not cognition.097=useful3/16eachseed vsallOFF/corrupt0; independently checked
+192firstACTs. Four prior-readout IDs invalidate comprehensive freshness;
+retain original16primary, development-only. Capsule/reviews/memos archived.
+
+Dirac owns six manuscript files ONLY for096/097 integration; Main no edits
+there until EDIT-STOP. Bernoulli's096/097 numerical reviews are complete.
+Other workers closed or done; Main remains sole Git operator. Preserve dirty
+`gpu/codex/dream_state.rules`. Concurrent watcher pushes required ordinary
+merges; both notebook append streams preserved and conflict markers removed.
+
+Rohin message16 is an induced steer, not new architecture ratification:
+one adapter per learner, episode/plasticity hypotheses by age, compilation as
+child behavior rather than a learned external controller. Current open-loop
+test has no live compiler or sleep interval. No projection/controller added.
+Bootstrap-v3 actual recovery archived; source/rendering gaps remain unverified.
+Next: inspect fits, native-check readout, run OFF/teach/control, reduce/audit,
+then choose replication/dose comparisons on development evidence. No freeze,
+P1/G5/H1/H2 closure or authenticated model origin. Formal C11 stays deferred.
 
 ## Current restart state (supersedes historical snapshots below)
 
