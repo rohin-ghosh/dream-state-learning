@@ -1,5 +1,32 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding live launch — 2026-09-12T20:59:48.092375Z
+
+- TWO live controllers on node3: conditional GPU0/PID220273 remains live,
+  DERANGED_generate started after OFF/AUTH phase markers; no outcomes opened.
+  Varied-memory GPU1/PID224587 launched20:59:48.092375UTC after full vacancy.
+- New root ~/astra_diagnostics/astra_varied_memory_replay_20260912_attempt1/fits_root0_attempt1;
+  source dc2e9a3c11ccd9a3f10ea28513723bbfb8420247; plan
+  2120bb93d0458b789bb3db408e57dd077f528cfadec35691b0e5fb27889756ca;
+  /tmp/astra_varied_memory_pair_20260912.py SHA
+  b58f65cd482bbd2d762edc030c7967a1ecd004829cf8271c74c15d3ca54bc8c7.
+  Do not reprepare/relaunch.1500s continuous pair plus300s external collection;
+  raw outcomes stay unopened until BOTH arms' dev48/exact16 complete.
+- Main27local+27native runner tests, actual native preparation and verify pass.
+  SINGLE_VIEW then FOUR_VIEW, same original seed0 parent independently,320new
+  updates each. Later BOTH seeds1/2 only if FOUR>=15/16 both memory panels,
+  habit>=30/32, ACT>=31/32 AND both arms technically complete. No autoqueue.
+- Ohm owns only /tmp/astra_collect_varied_pair_20260912.py and its handoff,
+  no runner edits; collector must finish only after absent PID+terminal/full
+  vacancy, preserve partial, no reducers/models/tokenizers or weights in capsule.
+- Planck owns two RuleGame modules and their tests for interaction_v3 only;
+  shared explicit relation mapping, new neutral recap control and ordinary
+  child restatement, old v1/v2 unchanged. Main accepted new protocol, not old
+  declined SEQ095. Aquinas owns /tmp independent conditional raw analysis and
+  tests/handoff. Banach manuscript SEQ107 EDITSTOP, Main review pending.
+- Latest launch receipt/plan/scripts are archived; no scientific result yet.
+  Existing local base hashes remain unauthenticated upstream; C11-only guard.
+
 ## Superseding reconciliation — 2026-09-12T20:51:34Z
 
 - PID220273 remains LIVE on node3 GPU0. At this reconciliation OFF_generate

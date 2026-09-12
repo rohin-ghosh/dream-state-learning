@@ -1,0 +1,53 @@
+{
+  "aggregate_campaign_ceiling_seconds": 5400,
+  "arm_order": [
+    "SINGLE_VIEW",
+    "FOUR_VIEW"
+  ],
+  "claim": "AUTHORED_VARIED_PHRASING_REPLAY_NOT_CHILD_EXPERIENCE_NOT_BRAIN_PROOF",
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_varied_memory_pair_20260912.py",
+    "run",
+    "--source-root",
+    "/localhome/local-rohing/astra_sources/dc2e9a3c11ccd9a3f10ea28513723bbfb8420247",
+    "--runroot",
+    "/localhome/local-rohing/astra_diagnostics/astra_varied_memory_replay_20260912_attempt1/fits_root0_attempt1",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "controller_bound_seconds": 1500,
+  "device": "1",
+  "external_collection_margin_seconds": 300,
+  "generation_calls": 128,
+  "gpu": {
+    "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      },
+      {
+        "command": "sshd: local-rohing@notty",
+        "pid": "224387"
+      }
+    ]
+  },
+  "launcher_sha256": "d3053e0f7e9811e4bf6d34b5cb0d9e81119c8e9dd15b7abfe0a3b954e107ae38",
+  "no_automatic_progression": true,
+  "node": 3,
+  "origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "pid": 224587,
+  "plan_sha256": "2120bb93d0458b789bb3db408e57dd077f528cfadec35691b0e5fb27889756ca",
+  "root": "/localhome/local-rohing/astra_diagnostics/astra_varied_memory_replay_20260912_attempt1/fits_root0_attempt1",
+  "script_sha256": "b58f65cd482bbd2d762edc030c7967a1ecd004829cf8271c74c15d3ca54bc8c7",
+  "seed": 0,
+  "source": "/localhome/local-rohing/astra_sources/dc2e9a3c11ccd9a3f10ea28513723bbfb8420247",
+  "started_utc": "2026-09-12T20:59:48.092375+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED"
+}
