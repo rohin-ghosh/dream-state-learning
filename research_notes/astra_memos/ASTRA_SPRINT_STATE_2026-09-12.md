@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:47 UTC**.
+Latest reconciliation: **2026-09-12 11:49 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -81,12 +81,17 @@ No outcomes yet. See ASTRA_MEMORY_PRESERVATION_COMPARISON_2026-09-12.md.
 P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
 lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
 Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,
-teacherbytesexcluded, no universalNOTEsyntaxgate. **Active raw-wake fork:**
+teacherbytesexcluded, no universalNOTEsyntaxgate. **Terminal raw-wake fork, SEQ-075:**
 node3GPU1controller77998started11:21:00UTC, root
 `astra_P0_raw_wake_fork_seed0_20260912_attempt1`, sourcea4feb0f7.
 Seed0lesson→sham sequential96stepfits and16canaryfreshOFFON;GPU1reservation
-throughbotharms. At11:35UTC controlleralive,both96stepfitsdone,shamprobe
-notyetterminal;0MiBdoesnotreleaseGPU1.900sfit+2100spair perarm. Actualnativepreparationpasses,
+throughbotharms. Completed11:43:29UTC, controllerabsent11:43:37UTC,all8cleanup
+receiptspass;GPU1reservation nowreleased. AllfourfirstACTcells0/16;lessonON
+partialmean.0475,shamON.010546875,bothOFF.1125. Bothdegrade;positivecontinuous
+contrast.036953125meanslessdegradation,notimprovement.137capturedfiles,
+64promptbindings,remoteweightrehashesverified. See ASTRA_RAW_WAKE_FORK_TERMINAL_2026-09-12.md.
+Nextteacher-present no-writepre-actioncheckpendingnativepackage-tokenmatch.
+900sfit+2100spair perarm. Actualnativepreparationpasses,
 five selectedminiquestionsdisjoint, one reference-solutionoverlapcanary1900061
 disclosed. Teacher203/158andtargettoken12867/16080passesnotmatched; package-level
 exploratoryutilityonly,notP1/G5/H1. Popperownsnew offlinereducer/test, Main
