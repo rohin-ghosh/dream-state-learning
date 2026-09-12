@@ -753,15 +753,16 @@ model, children, and task families.
    after a sealed/replayed W0 pass.
 3. Run one old/new cumulative-replay coexistence canary. It is a waste-prevention
    gate for M, not a separate powered paper result.
-4. Repair M-core's crossed source law, evidence-only DREAM decision,
-   reader-observability theorem, outcome-twin S2 carrier, nuisance/admission
-   truth table, and matched old+pad S2 control. Close those on CPU and four
-   exact-text roots. Then run two LoRA roots S1-first; fit S2 only for roots
-   that pass the prospectively frozen S1 gates. Reuse artifacts for adapter-off,
-   wrong-life, row cuts, semantic twins, catalog permutations, and other valid
-   inference-only interventions. This integrates authentic action--outcome
-   evidence into the end-to-end mechanism without funding a separate source
-   population.
+4. Finish the fresh audit of M-core v2's crossed source law, evidence-only
+   DREAM decision, reader observability, outcome-twin S2 carriers,
+   nuisance/admission table, and matched old+pad S2 control. Close the exact
+   implementation on CPU, then run four exact-text child DEV roots; extend to
+   eight only under its frozen intermediate rule. Then run two LoRA roots
+   S1-first; fit S2 only if both roots pass the prospectively frozen S1 gates.
+   Reuse artifacts for adapter-off, wrong-life, row cuts, semantic twins,
+   catalog permutations, and other valid inference-only interventions. This
+   integrates authentic action--outcome evidence into the end-to-end mechanism
+   without funding a separate source population.
 5. Only if both M-core kill roots have the predeclared direction and every
    noncompensatory trace gate passes, freeze M and run one fresh jointly powered
    confirmation cohort. Qualify the single evolving-text system in DEV.
