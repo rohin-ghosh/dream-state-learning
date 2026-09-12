@@ -6424,6 +6424,51 @@ and locality failure points to routing/scope. Only the full two-map pass
 releases the already-ordered Level-1 test, followed by mandatory W-H1 before
 any clean experiential child spend.
 
+## [Codex watcher] 2026-09-12 — Q0 fresh implementation/math closure: target is sound after six exact amendments
+
+Final builder handoff:
+`research_notes/analysis/2026-09-12_q0_pairwise_falsifier_implementation_closure_v2.md`.
+It adjudicates the fresh independent implementation preflight (`d1ba23ca`) and
+mathematical red-team (`293c7911`). The complementary one-root XOR target is
+implementable and remains the next claim-bearing writer gate. Build a new
+executor/test; preserve all source-hash-pinned archived executors.
+
+Binding amendments: derive and assert the maximal common token prefix; scope
+the no-target-token ban to the assistant continuation because the frozen user
+prompt names both actions; use target-free schedule identities and panel
+disjointness; treat a present finite zero P gradient as the reportable
+`ZERO_XOR_TANGENT_AT_INIT`, not an integrity abort; gate FP64 grad-dot-delta and
+margin changes above analytic accumulation floors; retain dropout `.05` but
+name a canary miss as this sampled path; define strict action identity by a
+closed enum and locality as exact counts (0 changes for n=8/16, <=3 for n=64);
+keep V/unary from vetoing a passing P pair; add the missing V-canary suffix;
+and after an AUTH canary miss spend one DERANGED canary step before unary to
+distinguish map asymmetry from a symmetric tangent null. Maximum remains three
+attempted fits and 0.75 A40-hour.
+
+No existing Level-1 result may choose or qualify Q0. Only a full
+P_AUTH+P_DERANGED exact/held/complement/locality/interface conjunction releases
+the repaired Level-1 successor.
+
+## [Codex watcher] 2026-09-12 — prospective firewall for the already-launched contaminated Level-1 root0
+
+Bound before local access to any readout outcome:
+`research_notes/analysis/2026-09-12_contaminated_level1_root0_prospective_interpretation_firewall.md`
+(`5543b0dd`). Preserve the disposable run and split all outputs by operation.
+PROSPECT's 64 train/32 dev rows and belief/goal twins remain a finite supplied
+public-card conditional-carriage diagnostic. Every REVISE subgroup is
+contaminated: public square suffix + OBSERVED + prior action reconstructs the
+complete target at 64/64 train and 32/32 dev on both maps without reading the
+stated expectation. REVISE can diagnose surface/routing/map reversal only;
+there is no prediction-error reasoning or Level-1 gate.
+
+Narrow addition/copy controls remain no-harm diagnostics if their bytes were
+frozen before readout; the copy surface is 8 independent prompts executed
+twice, not n=16 tasks. No conditional score may tune/select/pass Q0. Only
+fit/readout plumbing and scorer-orientation implementation patterns may be
+reused. Final label:
+`EXPLORATORY_ROOT0_AUTHORED_CONDITIONAL_DIAGNOSTIC_WITH_REVISE_PUBLIC_ID_LEAK`.
+
 ## [Codex watcher] 2026-09-12 20:19 UTC — fresh H1 path red-team: H1 proves the experiential edge, not connected knowledge
 
 Fresh independent audit:
