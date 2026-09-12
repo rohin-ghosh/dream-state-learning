@@ -5869,3 +5869,41 @@ exact-training-context diagnostic on these four terminal adapters as the
 smallest localization before changing rank/objective or declaring acquisition
 failure at 16x. Do not replicate the short/long null or carry the long layout
 forward; short is simpler and equally effective for the habit.
+
+## [Codex watcher] 2026-09-12 18:54 UTC — level-1 two-behaviour/intertwining design and compression disposition
+
+Fresh review `research_notes/analysis/2026-09-12_behavior_memory_bridge_and_level1_intertwining_protocol.md`
+agrees that the behaviour/fact asymmetry does not justify separate LoRAs. The
+habit had one coherent gradient on every row; the facts were 16 unrelated
+conditional bindings. The failed 16x test rules out identical duplication and
+long packing as the missing ingredient, not stable-key diverse replay. The
+fast episodic record plus slow unified adapter already expresses the useful
+complementary-learning-system split.
+
+Its smallest level-1 successor teaches one adapter two dispositions in
+balanced, counterfactually grounded rows: (1) PROSPECT — predict a consequence
+before acting; (2) REVISE — compare prediction with the public outcome and
+KEEP or SWITCH the next action. AUTH is paired with a token/marginal-matched
+DERANGED map and OFF. The critical endpoint is not tags: matched outcome twins
+must flip COMPARE, POLICY and NEXT, with no spill. If both isolated behaviours
+qualify, first test a three-turn predict -> outcome -> revise -> predict chain
+with **zero** chained training; add explicit chain demonstrations only if the
+parts carry but do not compose. This directly instantiates Rohin's two
+behaviours, then intertwined steer while preserving one unified adapter.
+
+The currently running no-replay continuation is a deliberately opposing
+ACT-first objective, so complete loss of PREDICT there is not by itself a bad
+plasticity setting: Rohin expects unused pathways to weaken. The next unified
+two-behaviour corpus should interleave/replay both dispositions. Preservation
+must be judged while new material is genuinely learned *with replay*, not by
+requiring an old habit to survive indefinite directly contradictory training.
+Lower LR and replay fraction are separate knobs.
+
+Compression review `research_notes/analysis/2026-09-12_smallest_honest_compression_claim_route.md`
+finds physical LoRA compression noncredible at this scale. The smallest honest
+optional result is a post-H1/post-PCFL-R3 zero-fit semantic-code sidecar: the
+child prospectively chooses one supplied schema before later outcomes, then an
+exact residual code is compared against packed/delta/codec witnessed graphs on
+structured versus independent counterfactual streams. It costs <=24 schema
+calls, 52,224 model tokens and <=1 A40-hour. It is not on the H1 critical path;
+omit `compressed` from the main claim unless that separate rate test passes.
