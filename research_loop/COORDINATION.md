@@ -5776,3 +5776,62 @@ LoRAbehavior/fact equivalence, dictate one/twoadapters, or diagnose ourfailure.
 Rapid skill-associated structuralchange also makes "skills slow fromstart"
 too categorical. Keep analogies motivational, measurements decisive. No
 architecture change; directHF/vLLM check inpreparation, plasticityrunning.
+
+## [Codex watcher] 2026-09-12 18:43 UTC — independent stage reviews: plasticity assay, conditional-writer gate, and smallest post-H1 relay
+
+Three independently commissioned design reviews are complete. They modify no
+builder code and launch nothing.
+
+1. `research_notes/analysis/2026-09-12_level_zero_repetition_and_update_persistence_protocol.md`
+separates acquisition from persistence and passive reload from genuine-update
+interference. Its prospective paper-grade design uses nested 1/4/16-pass
+checkpoints, then QUIET/SAME/UNRELATED/MIXED continuations at `1e-4` and
+`3e-5`. New material must itself be learned or apparent retention is merely
+failure to update. The currently running short-vs-long repetition sentinel is
+a packaging test, not this dose/plasticity assay. Economical ruling: use the
+sentinel first, then one material-root acquisition/continuation sentinel;
+expand toward the full three-root, <=8 A40-hour protocol only if the narrow
+gates sign correctly. This directly serves Rohin's “plasticity right before
+adding more” steer.
+
+2. `research_notes/analysis/2026-09-12_h1_bridge_level0_adversarial_addendum.md`
+red-teams the H1 bridge against the exact failure now observed: a global
+response ritual can look perfect while conditional bindings remain absent.
+Before H1, W-H1 should show that the *exact H1 writer* can carry balanced
+family x mode opposite-action maps and their mode-swapped complements on held
+objects/wording, across three optimizer seeds, without constant-action bias,
+spill or interface loss. Equal-token action labels, world-derived scoring,
+stateless shuffled evaluation and parent/sham syntax parity prevent a format
+or pretrained-ability false pass. This is the rigorous version of Rohin's
+next “two behaviours, then intertwined” step; level-zero habit carriage alone
+does not qualify H1.
+
+3. `research_notes/analysis/2026-09-12_smallest_post_h1_connected_traversal_expansion_module.md`
+specifies the smallest post-H1 paper-critical relay: an opaque routing world
+that separately asks rote retrieval, two-edge composition, goal-switch
+traversal, target-relevant gap-filling, and delayed old+new reuse. Native
+comparators are Dream-LoRA-Think, active structured text, exact witnessed
+graph, raw episodes and OFF; the exact graph is allowed to win. At the current
+small-root scale, the rank-8 adapter is about 80.79 MB while explicit text and
+graphs are tiny, so this module can earn compiled/connected knowledge but not
+honestly physical compression. A separate large-life rate--distortion test is
+needed for a compression claim.
+
+Combined critical path: finish the active repetition-packaging sentinel ->
+measure update-conditioned plasticity on one clean root -> qualify two
+input-selective/opposite behaviours with W-H1 -> run the parent--DREAM--SLEEP
+H1 bridge -> only then the connected traversal/expansion module. Do not spend
+the full assay budget merely because a memo exists; every expansion remains
+conditional on the preceding noncompensatory gate.
+
+## [Fable] 2026-09-12T19:02Z — watcher check: SEQ-101 — 16× repetition keeps the habit and does NOT rescue memory (my prediction was wrong); plasticity sentinel running; two-habit design fixed; fill result 5 (R3 502 carries)
+
+**Builder SEQ-101 (18:52 UTC), relayed:** teach_short and teach_long keep the habit 32/32, controls 0/32, ACT correct 32/32 everywhere; memory 4/16 in all four cells, "red" for all 16 devices in every arm; long-minus-short = 0 on every count. Independent review PASS (18:56). **Correction to my 18:5x position:** I predicted in-sample memory would rise well above 4/16 with 16 copies per fact; it did not move at all. The constant "red" across 16× repetition of 16 distinct bindings is not what an under-dosed but working fit looks like — it is what a fit that never sees the fact targets (or a readout that never applies the adapter) looks like. The builder's own diagnosis (18:59) points the same way: the tiny final losses were arithmetic-only final microbatches, so memory loss was never observed; it is now running exact-prefix HF/PEFT forwards of the 16 training prompts against the SEQ-100 vLLM captures (no new fits, no GPU yet) to test the readout/adapter path before any dose or rank escalation. Until that audit lands, the behaviour-vs-memory question is open at the mechanics level, not the theory level; my exposure/format argument stands only if the fit is shown to be training on the fact tokens at all.
+
+**Plasticity sentinel (18:50 launch, node 3 GPUs 4/5/6, cutoff 19:50 UTC):** from the same seed-0 teach adapter, continued updates on ACT-only material (no train/eval pairs) at LR 0, 3e-5 and 1e-4, four 16-update phases each, the unchanged 48-case readout after every phase. Endpoint: adherence vs cumulative updates per rate. LR-0 tensors verified exactly unchanged after phase 1 (instrumentation check). This is competing-update interference, not time-alone forgetting — the first fading curve Rohin asked for.
+
+**Two-habit design fixed before plasticity outcomes (18:59):** INPUT→PREDICT→ACT vs same-content PREDICT→ACT→INPUT, from the three original teaching parents, one adapter, LR 1e-4, 80 updates per branch, unchanged 48-case readout — adds an input-reporting convention while rehearsing the first habit. This is the builder's reading of Rohin's "two behaviours, intertwined" (message 19). Corpus/scorer being implemented by its sidecar; no GPU allocated yet.
+
+**Fill result 5 of 14 — R3_B_seed502** (gated life, 0 rejected sleeps, 9.9 GPU-h; Δ vs OFF report / disjoint): whole-text A +0.044 / +0.024 (carries — the fixed routine 0.5291, recipe share 1.0); A_v3 +0.033 / +0.013; B +0.016 / +0.009; Bs +0.003 / 0.000; B_match +0.008 / 0.000; C −0.485 / −0.249 (collapse); C_tmem −0.328 / −0.206; brief +0.044 / +0.024 (= A exactly); brief_mid −0.007 / +0.024. **Tally, 15 lives:** A carries 6, flat 8, harmful 1; C collapses 15/15; brief ≥ OFF on report 14/15.
+
+**Fleet:** node 1 five running (RP402, R4 605, R3 500/501, R4 606_AC), 3 free; node 2 five running (R4 600, R3 504/505, R4 603_AC, R4 602 B-replication launched 18:34 on GPU 2), 3 free; node 3 builder's three rate runs on GPUs 4–6 (0 MiB between phases — reserved, not free). Fill lists exhausted on both nodes; the idle slots are headroom, which the builder's 18:57 audit lists as provisional candidates. **Lease date check:** the builder wrote node-1 outputs must be mirrored "before Sep 13 23:14 UTC"; the node-1 lease ends 2026-09-14 16:14 PT = 2026-09-14 23:14 UTC (launch prompt §10, hosts ledger) — one day later than it wrote; mirroring early is still right. Codex watcher entries 18:16–18:28 (H1 bridge design, independent recount 3/3, acquisition localisation) noted. Nudger: Astra active (idle 0.2 min); laptop chains 5/5; nothing killed or launched by the watcher.
