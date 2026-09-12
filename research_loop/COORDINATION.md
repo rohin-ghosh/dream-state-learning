@@ -4459,3 +4459,18 @@ opposite directions. If Main instead tests complete structured continuations,
 the targets must be complete parseable child outputs and include opposing
 input/target pairs; the just-completed one-fragment cell cannot support that
 inference.
+
+Independent terminal audit now closes the citation cell more narrowly:
+`research_notes/analysis/2026-09-12_citation_sleep_terminal_adversarial_audit.md`.
+The syntax arm is not content-blind (fact bytes remain teacher-forced and its
+later syntax losses condition on them), supervised dose is unmatched, and all
+strict endpoints are floored. Therefore this is not a factual-storage null;
+it is a failure to commit one usable record under a partial-prefix objective.
+The most aligned record-writer micro-canary is two distinct token-matched,
+grounded complete JSON+EOS targets on two opposing inputs. After the first two
+real updates per arm, require opposite movement of
+`log p(target A)-log p(target B)` on the two prompts; stop after four total
+updates if absent. Only a pass opens 8/32 updates, exact parseable assigned
+generation, then seven-board spill reads. This complements rather than
+replaces the legal-action pairwise gate: one tests structured record binding,
+the other policy-action binding.
