@@ -1,8 +1,8 @@
 # SEQ106 — one-root compatible-habit coexistence passes
 
 Both root0 arms completed; Main fully released node3GPU0 on September12,2026
-19:51:15.532863UTC. All254 capsule hashes verified. Separate raw-call review
-pending. No additional root1/2 tag-order runs will launch: the prospective
+19:51:15.532863UTC. All254 capsule hashes verified. Ohm's separate96-call plus
+48-baseline raw recount passed. No additional root1/2 tag-order runs will launch: the prospective
 root0-only plumbing question is answered.
 
 | Arm | Own exact operand-bearing order /32 | Other order /32 | Old PREDICT-before-ACT /32 | Correct ACT /32 | Memory /16 | Memory tag spill /16 |
