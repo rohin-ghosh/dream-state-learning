@@ -1,0 +1,6110 @@
+{
+  "aggregates": {
+    "process": {
+      "failure_counts_overlapping": {
+        "duplicate_assigned_digits": 9,
+        "given_constraint_violation": 7,
+        "incomplete_grid": 9,
+        "non_grid_suffix_in_ACT": 4,
+        "solved": 1,
+        "unchanged_givens_echo": 3,
+        "valid_sudoku_wrong_givens": 1
+      },
+      "format_valid": 7,
+      "masked_native_mean": 0.19257812500000002,
+      "output_token_range": [
+        38,
+        104
+      ],
+      "output_tokens": 1079,
+      "outputs_at_reported_cap": 0,
+      "raw_native_mean": 0.21654829545454546,
+      "solved_ids": [
+        "rg/mini_sudoku/1850005"
+      ],
+      "solves": 1,
+      "total_actions": 16
+    },
+    "sham": {
+      "failure_counts_overlapping": {
+        "duplicate_assigned_digits": 7,
+        "given_constraint_violation": 6,
+        "incomplete_grid": 11,
+        "non_grid_suffix_in_ACT": 7,
+        "solved": 1,
+        "unchanged_givens_echo": 3,
+        "valid_sudoku_wrong_givens": 1
+      },
+      "format_valid": 4,
+      "masked_native_mean": 0.11875000000000001,
+      "output_token_range": [
+        38,
+        102
+      ],
+      "output_tokens": 1068,
+      "outputs_at_reported_cap": 0,
+      "raw_native_mean": 0.15965909090909092,
+      "solved_ids": [
+        "rg/mini_sudoku/1850005"
+      ],
+      "solves": 1,
+      "total_actions": 16
+    }
+  },
+  "checks": [
+    {
+      "check": "astra_P1_static_competency_preparation_20260912_attempt1 inventory exact",
+      "ok": true
+    },
+    {
+      "check": "astra_P1_static_competency_preparation_20260912_attempt1/config.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "astra_P1_static_competency_preparation_20260912_attempt1/preflight.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "astra_P1_static_competency_preparation_20260912_attempt1/questions.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process inventory exact",
+      "ok": true
+    },
+    {
+      "check": "process/config.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_00.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_01.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_02.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_03.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_04.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_05.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_06.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_07.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_08.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_09.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_10.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_11.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_12.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_13.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_14.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/episode_15.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_00.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_01.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_02.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_03.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_04.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_05.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_06.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_07.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_08.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_09.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_10.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_11.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_12.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_13.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_14.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/output_15.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_00.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_01.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_02.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_03.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_04.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_05.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_06.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_07.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_08.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_09.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_10.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_11.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_12.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_13.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_14.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/request_15.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "process/results.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham inventory exact",
+      "ok": true
+    },
+    {
+      "check": "sham/config.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_00.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_01.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_02.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_03.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_04.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_05.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_06.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_07.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_08.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_09.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_10.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_11.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_12.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_13.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_14.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/episode_15.jsonl inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_00.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_01.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_02.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_03.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_04.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_05.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_06.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_07.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_08.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_09.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_10.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_11.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_12.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_13.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_14.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/output_15.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_00.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_01.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_02.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_03.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_04.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_05.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_06.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_07.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_08.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_09.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_10.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_11.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_12.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_13.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_14.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/request_15.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "sham/results.json inventory hash",
+      "ok": true
+    },
+    {
+      "check": "STARTED preparation hash",
+      "ok": true
+    },
+    {
+      "check": "reviewed local source matches pinned source bytes",
+      "ok": true
+    },
+    {
+      "check": "native preflight READY",
+      "ok": true
+    },
+    {
+      "check": "independent complete 4x4 universe has 288 grids",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850000 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850000 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850000 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850001 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850001 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850001 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850002 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850002 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850002 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850003 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850003 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850003 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850004 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850004 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850004 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850005 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850005 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850005 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850006 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850006 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850006 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850007 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850007 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850007 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850008 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850008 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850008 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850009 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850009 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850009 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850010 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850010 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850010 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850011 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850011 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850011 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850012 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850012 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850012 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850013 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850013 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850013 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850014 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850014 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850014 unique completion",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850015 question board",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850015 question hash",
+      "ok": true
+    },
+    {
+      "check": "rg/mini_sudoku/1850015 unique completion",
+      "ok": true
+    },
+    {
+      "check": "process prep config unchanged",
+      "ok": true
+    },
+    {
+      "check": "process prep binding",
+      "ok": true
+    },
+    {
+      "check": "process terminal report bound",
+      "ok": true
+    },
+    {
+      "check": "process cleanup worker/device binding",
+      "ok": true
+    },
+    {
+      "check": "process cleanup PASS",
+      "ok": true
+    },
+    {
+      "check": "process/0 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/0 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/0 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/0 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/0 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/0 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/0 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/0 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/0 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/0 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/0 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/1 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/1 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/1 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/1 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/1 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/1 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/1 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/1 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/1 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/1 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/1 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/2 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/2 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/2 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/2 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/2 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/2 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/2 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/2 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/2 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/2 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/2 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/3 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/3 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/3 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/3 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/3 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/3 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/3 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/3 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/3 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/3 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/3 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/4 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/4 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/4 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/4 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/4 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/4 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/4 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/4 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/4 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/4 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/4 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/5 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/5 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/5 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/5 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/5 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/5 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/5 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/5 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/5 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/5 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/5 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/6 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/6 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/6 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/6 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/6 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/6 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/6 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/6 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/6 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/6 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/6 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/7 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/7 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/7 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/7 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/7 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/7 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/7 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/7 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/7 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/7 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/7 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/8 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/8 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/8 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/8 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/8 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/8 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/8 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/8 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/8 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/8 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/8 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/9 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/9 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/9 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/9 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/9 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/9 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/9 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/9 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/9 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/9 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/9 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/10 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/10 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/10 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/10 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/10 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/10 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/10 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/10 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/10 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/10 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/10 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/11 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/11 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/11 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/11 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/11 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/11 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/11 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/11 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/11 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/11 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/11 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/12 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/12 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/12 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/12 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/12 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/12 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/12 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/12 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/12 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/12 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/12 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/13 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/13 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/13 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/13 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/13 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/13 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/13 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/13 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/13 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/13 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/13 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/14 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/14 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/14 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/14 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/14 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/14 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/14 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/14 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/14 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/14 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/14 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "process/15 preflight request",
+      "ok": true
+    },
+    {
+      "check": "process/15 episode binding",
+      "ok": true
+    },
+    {
+      "check": "process/15 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "process/15 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "process/15 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "process/15 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "process/15 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "process/15 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "process/15 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "process/15 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "process/15 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham prep config unchanged",
+      "ok": true
+    },
+    {
+      "check": "sham prep binding",
+      "ok": true
+    },
+    {
+      "check": "sham terminal report bound",
+      "ok": true
+    },
+    {
+      "check": "sham cleanup worker/device binding",
+      "ok": true
+    },
+    {
+      "check": "sham cleanup PASS",
+      "ok": true
+    },
+    {
+      "check": "sham/0 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/0 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/0 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/0 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/0 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/0 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/0 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/0 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/0 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/0 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/0 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/1 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/1 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/1 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/1 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/1 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/1 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/1 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/1 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/1 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/1 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/1 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/2 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/2 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/2 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/2 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/2 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/2 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/2 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/2 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/2 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/2 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/2 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/3 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/3 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/3 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/3 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/3 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/3 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/3 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/3 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/3 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/3 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/3 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/4 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/4 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/4 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/4 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/4 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/4 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/4 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/4 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/4 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/4 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/4 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/5 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/5 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/5 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/5 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/5 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/5 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/5 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/5 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/5 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/5 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/5 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/6 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/6 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/6 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/6 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/6 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/6 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/6 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/6 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/6 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/6 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/6 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/7 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/7 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/7 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/7 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/7 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/7 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/7 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/7 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/7 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/7 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/7 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/8 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/8 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/8 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/8 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/8 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/8 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/8 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/8 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/8 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/8 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/8 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/9 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/9 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/9 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/9 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/9 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/9 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/9 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/9 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/9 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/9 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/9 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/10 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/10 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/10 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/10 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/10 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/10 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/10 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/10 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/10 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/10 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/10 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/11 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/11 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/11 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/11 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/11 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/11 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/11 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/11 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/11 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/11 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/11 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/12 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/12 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/12 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/12 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/12 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/12 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/12 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/12 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/12 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/12 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/12 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/13 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/13 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/13 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/13 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/13 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/13 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/13 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/13 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/13 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/13 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/13 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/14 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/14 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/14 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/14 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/14 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/14 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/14 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/14 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/14 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/14 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/14 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "sham/15 preflight request",
+      "ok": true
+    },
+    {
+      "check": "sham/15 episode binding",
+      "ok": true
+    },
+    {
+      "check": "sham/15 exact question/package delivery",
+      "ok": true
+    },
+    {
+      "check": "sham/15 prompt hashes",
+      "ok": true
+    },
+    {
+      "check": "sham/15 rendered wrapper",
+      "ok": true
+    },
+    {
+      "check": "sham/15 raw output and thought binding",
+      "ok": true
+    },
+    {
+      "check": "sham/15 first ACT parser binding",
+      "ok": true
+    },
+    {
+      "check": "sham/15 fixed dose/seed",
+      "ok": true
+    },
+    {
+      "check": "sham/15 no-adapter loader identity",
+      "ok": true
+    },
+    {
+      "check": "sham/15 independent endpoint agrees",
+      "ok": true
+    },
+    {
+      "check": "sham/15 native acceptance matches independent solution",
+      "ok": true
+    },
+    {
+      "check": "0 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "0 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "1 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "1 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "2 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "2 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "3 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "3 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "4 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "4 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "5 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "5 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "6 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "6 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "7 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "7 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "8 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "8 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "9 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "9 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "10 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "10 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "11 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "11 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "12 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "12 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "13 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "13 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "14 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "14 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "15 paired prompt differs only teacher package",
+      "ok": true
+    },
+    {
+      "check": "15 paired budgets/seeds/base identical",
+      "ok": true
+    },
+    {
+      "check": "process Main aggregate agrees exactly",
+      "ok": true
+    },
+    {
+      "check": "sham Main aggregate agrees exactly",
+      "ok": true
+    }
+  ],
+  "cleanup": {
+    "process": {
+      "cleanup_error": null,
+      "device": "3",
+      "gpu_processes_absent": true,
+      "owned_group_empty": true,
+      "pid": 87252,
+      "reservation_release_verified": true,
+      "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+    },
+    "sham": {
+      "cleanup_error": null,
+      "device": "3",
+      "gpu_processes_absent": true,
+      "owned_group_empty": true,
+      "pid": 88374,
+      "reservation_release_verified": true,
+      "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+    }
+  },
+  "completed_utc": "2026-09-12T12:02:55.307608+00:00",
+  "controller_absence": "User reports PID87251 gone; not independently polled in this offline review.",
+  "episodes": {
+    "process": [
+      {
+        "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850000",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.3375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 3,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.3375,
+        "new_assignments": 9,
+        "output_tokens": 76,
+        "question_givens": [
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            4,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            3
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850001",
+        "extra_segments": [
+          " PREDICT: 0.5"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 38,
+        "question_givens": [
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            3,
+            1,
+            4
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+        "blank_count": 7,
+        "candidate_rows": [
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850002",
+        "extra_segments": [
+          " PREDICT: 0.5"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1585227272727273,
+        "new_assignments": 1,
+        "output_tokens": 72,
+        "question_givens": [
+          [
+            3,
+            2,
+            0,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850003",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.225,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 4,
+            "returned": 1,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 4,
+            "returned": 2,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.225,
+        "new_assignments": 10,
+        "output_tokens": 86,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            3
+          ],
+          [
+            3,
+            0,
+            4,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            2
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            3,
+            1,
+            4
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 1 3 ; 2 4 3 1 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            4,
+            3,
+            1
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850004",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.3375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 4,
+            "given": 1,
+            "returned": 3,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.3375,
+        "new_assignments": 11,
+        "output_tokens": 64,
+        "question_givens": [
+          [
+            0,
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ]
+        ],
+        "categories": [
+          "solved"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850005",
+        "extra_segments": [],
+        "format_masked_native_first_score": 1.0,
+        "format_valid": true,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": true,
+        "n_actions": 1,
+        "native_first_score": 1.0,
+        "new_assignments": 9,
+        "output_tokens": 68,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            1,
+            0
+          ],
+          [
+            4,
+            2,
+            3,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ]
+        ],
+        "solved": 1,
+        "unique_solution": [
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ;",
+        "blank_count": 9,
+        "candidate_rows": [
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            3,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850006",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 56,
+        "question_givens": [
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            3,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 4 3 2 1 ; 2 4 1 3 ; 3 1 4 2",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "valid_sudoku_wrong_givens"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850007",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.45,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 4,
+            "given": 2,
+            "returned": 1,
+            "row": 2
+          },
+          {
+            "column": 1,
+            "given": 1,
+            "returned": 2,
+            "row": 3
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": true,
+        "n_actions": 1,
+        "native_first_score": 0.45,
+        "new_assignments": 8,
+        "output_tokens": 65,
+        "question_givens": [
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            4,
+            3,
+            0,
+            2
+          ],
+          [
+            1,
+            4,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            4,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            1,
+            3,
+            4
+          ],
+          [
+            4,
+            3,
+            1,
+            2
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "3 4 1 2 ; 2 1 3 4 ; 4 2 4 1 ; 1 3 2 3 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            3,
+            4
+          ],
+          [
+            4,
+            2,
+            4,
+            1
+          ],
+          [
+            1,
+            3,
+            2,
+            3
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": [
+            3,
+            4
+          ]
+        },
+        "episode_id": "rg/mini_sudoku/1850008",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.39375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 3,
+            "row": 2
+          },
+          {
+            "column": 3,
+            "given": 1,
+            "returned": 4,
+            "row": 3
+          },
+          {
+            "column": 4,
+            "given": 2,
+            "returned": 3,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.39375,
+        "new_assignments": 11,
+        "output_tokens": 66,
+        "question_givens": [
+          [
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ],
+          [
+            4,
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 2 1 4 3 ; 4 3 2 1 ; 3 4 1 2 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850009",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.3375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 3,
+            "returned": 2,
+            "row": 3
+          },
+          {
+            "column": 4,
+            "given": 4,
+            "returned": 1,
+            "row": 3
+          },
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 1,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.3375,
+        "new_assignments": 9,
+        "output_tokens": 71,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            4
+          ],
+          [
+            3,
+            0,
+            2,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            3,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ;",
+        "blank_count": 11,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            2,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "categories": [
+          "incomplete_grid"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850010",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 1,
+        "output_tokens": 54,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            2,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+        "blank_count": 11,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [
+            1
+          ],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850011",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 1,
+        "output_tokens": 65,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            1,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            0,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850012",
+        "extra_segments": [
+          " PREDICT: 0.85"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 70,
+        "question_givens": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 3 ; 2 3 _ 1 ; 4 _ 3 2 ; _ _ 1 4 ;",
+        "blank_count": 4,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            3
+          ],
+          [
+            2,
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            4
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2
+          ],
+          "columns": [
+            3
+          ],
+          "rows": [
+            1
+          ]
+        },
+        "episode_id": "rg/mini_sudoku/1850013",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1125,
+        "new_assignments": 6,
+        "output_tokens": 78,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "1 3 1 2 ; 2 _ _ 2 ; 1 3 _ 4 ; _ _ _ 1",
+        "blank_count": 6,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            3,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            2
+          ],
+          "columns": [
+            1,
+            2,
+            4
+          ],
+          "rows": [
+            1,
+            2
+          ]
+        },
+        "episode_id": "rg/mini_sudoku/1850014",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1125,
+        "new_assignments": 3,
+        "output_tokens": 104,
+        "question_givens": [
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "3 1 2 _ ; 1 3 _ _ ; _ _ _ 4 ; _ _ 4 1 ; 0.0000",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            3,
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            4,
+            1
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850015",
+        "extra_segments": [
+          " 0.0000"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 1,
+            "row": 2
+          },
+          {
+            "column": 2,
+            "given": 1,
+            "returned": 3,
+            "row": 2
+          },
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 0,
+            "row": 2
+          },
+          {
+            "column": 1,
+            "given": 1,
+            "returned": 0,
+            "row": 3
+          },
+          {
+            "column": 2,
+            "given": 3,
+            "returned": 0,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 4,
+            "returned": 0,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 5,
+        "output_tokens": 46,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ]
+        ]
+      }
+    ],
+    "sham": [
+      {
+        "action": "1 2 3 4 ; 4 1 2 3 ; 2 3 4 1 ; 3 4 1 2",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850000",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.3375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 3,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.3375,
+        "new_assignments": 9,
+        "output_tokens": 72,
+        "question_givens": [
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            4,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            3
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "action": "_ 3 _ _ ; _ 4 2 _ ; _ _ 3 2 ; 3 2 4 _ ; PREDICT: 0.5",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850001",
+        "extra_segments": [
+          " PREDICT: 0.5"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 38,
+        "question_givens": [
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            3,
+            1,
+            4
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "3 2 1 4 ; _ 1 _ 3 ; _ _ _ 2 ; 2 _ 3 _ ; PREDICT: 0.5",
+        "blank_count": 7,
+        "candidate_rows": [
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850002",
+        "extra_segments": [
+          " PREDICT: 0.5"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1585227272727273,
+        "new_assignments": 1,
+        "output_tokens": 70,
+        "question_givens": [
+          [
+            3,
+            2,
+            0,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 4 1 2 3 ; 3 4 1 2 ; 2 3 4 1 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850003",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.225,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 4,
+            "returned": 1,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 4,
+            "returned": 2,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.225,
+        "new_assignments": 10,
+        "output_tokens": 67,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            3
+          ],
+          [
+            3,
+            0,
+            4,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            2
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            3,
+            1,
+            4
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 3 2 4 ; 3 1 4 2 ; 4 2 _ 1 ; 2 4 1 3",
+        "blank_count": 1,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850004",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.225,
+        "new_assignments": 10,
+        "output_tokens": 66,
+        "question_givens": [
+          [
+            0,
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 3 4 2 ; 2 4 1 3 ; 4 2 3 1 ; 3 1 2 4 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ]
+        ],
+        "categories": [
+          "solved"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850005",
+        "extra_segments": [],
+        "format_masked_native_first_score": 1.0,
+        "format_valid": true,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": true,
+        "n_actions": 1,
+        "native_first_score": 1.0,
+        "new_assignments": 9,
+        "output_tokens": 66,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            1,
+            0
+          ],
+          [
+            4,
+            2,
+            3,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ]
+        ],
+        "solved": 1,
+        "unique_solution": [
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "4 _ _ 1 ; _ 3 2 4 ; _ _ 1 _ ; 3 _ _ _ ; 0.0000",
+        "blank_count": 9,
+        "candidate_rows": [
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            3,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850006",
+        "extra_segments": [
+          " 0.0000"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 45,
+        "question_givens": [
+          [
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            3,
+            2,
+            4
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 4 3 2 1 ; 3 4 1 2 ; 2 1 4 3 ;",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ]
+        ],
+        "categories": [
+          "given_constraint_violation",
+          "valid_sudoku_wrong_givens"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850007",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0.3375,
+        "format_valid": true,
+        "given_violations": [
+          {
+            "column": 4,
+            "given": 2,
+            "returned": 1,
+            "row": 2
+          },
+          {
+            "column": 1,
+            "given": 1,
+            "returned": 3,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": true,
+        "n_actions": 1,
+        "native_first_score": 0.3375,
+        "new_assignments": 8,
+        "output_tokens": 65,
+        "question_givens": [
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            4,
+            3,
+            0,
+            2
+          ],
+          [
+            1,
+            4,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            4,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            1,
+            3,
+            4
+          ],
+          [
+            4,
+            3,
+            1,
+            2
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 4 _ _ ; _ 1 2 _ ; _ _ 1 _ ; _ _ _ 2 ; PREDICT: 0.8",
+        "blank_count": 10,
+        "candidate_rows": [
+          [
+            1,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850008",
+        "extra_segments": [
+          " PREDICT: 0.8"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 1,
+        "output_tokens": 86,
+        "question_givens": [
+          [
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ],
+          [
+            4,
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "action": "1 2 3 4 ; 2 1 4 3 ; 3 4 2 1 ; 4 3 1 2 ; PREDICT: 0.8",
+        "blank_count": 0,
+        "candidate_rows": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            3,
+            4,
+            2,
+            1
+          ],
+          [
+            4,
+            3,
+            1,
+            2
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "given_constraint_violation",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850009",
+        "extra_segments": [
+          " PREDICT: 0.8"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [
+          {
+            "column": 3,
+            "given": 3,
+            "returned": 2,
+            "row": 3
+          },
+          {
+            "column": 4,
+            "given": 4,
+            "returned": 1,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 4,
+            "row": 4
+          },
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 1,
+            "row": 4
+          },
+          {
+            "column": 4,
+            "given": 1,
+            "returned": 2,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1585227272727273,
+        "new_assignments": 9,
+        "output_tokens": 77,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            4
+          ],
+          [
+            3,
+            0,
+            2,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            4,
+            3,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ _ ; _ 3 2 _ ; 4 _ _ _ ; _ _ _ 1 ; 0.0000",
+        "blank_count": 11,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            2,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850010",
+        "extra_segments": [
+          " 0.0000"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 1,
+        "output_tokens": 58,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            2,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ 2 ; _ _ 3 _ ; 1 _ _ _ ; _ _ _ 4 ;",
+        "blank_count": 11,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [
+            1
+          ],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850011",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 1,
+        "output_tokens": 62,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            1,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ 4 ; _ _ _ 2 ; _ 1 4 3 ; 4 3 _ _ ; PREDICT: 0.85",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            0,
+            0
+          ]
+        ],
+        "categories": [
+          "non_grid_suffix_in_ACT",
+          "incomplete_grid",
+          "unchanged_givens_echo"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850012",
+        "extra_segments": [
+          " PREDICT: 0.85"
+        ],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 0,
+        "output_tokens": 70,
+        "question_givens": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            0,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "1 _ _ 3 ; _ 3 _ 1 ; 4 _ 3 _ ; _ _ 1 2 ;",
+        "blank_count": 8,
+        "candidate_rows": [
+          [
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ]
+        ],
+        "categories": [
+          "incomplete_grid"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850013",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 2,
+        "output_tokens": 56,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "action": "1 3 1 2 ; 2 _ _ 3 ; 1 3 _ 4 ; _ _ 2 1",
+        "blank_count": 5,
+        "candidate_rows": [
+          [
+            1,
+            3,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            1,
+            3,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            2,
+            1
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "duplicate_assigned_digits"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [
+            1,
+            2
+          ],
+          "rows": [
+            1
+          ]
+        },
+        "episode_id": "rg/mini_sudoku/1850014",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.1125,
+        "new_assignments": 4,
+        "output_tokens": 68,
+        "question_givens": [
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "action": "3 _ _ _ ; 1 _ _ 2 ; _ 3 _ _ ; _ _ 4 1",
+        "blank_count": 10,
+        "candidate_rows": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            1
+          ]
+        ],
+        "categories": [
+          "incomplete_grid",
+          "given_constraint_violation"
+        ],
+        "duplicate_groups": {
+          "boxes": [],
+          "columns": [],
+          "rows": []
+        },
+        "episode_id": "rg/mini_sudoku/1850015",
+        "extra_segments": [],
+        "format_masked_native_first_score": 0,
+        "format_valid": false,
+        "given_violations": [
+          {
+            "column": 1,
+            "given": 3,
+            "returned": 1,
+            "row": 2
+          },
+          {
+            "column": 2,
+            "given": 1,
+            "returned": 0,
+            "row": 2
+          },
+          {
+            "column": 3,
+            "given": 2,
+            "returned": 0,
+            "row": 2
+          },
+          {
+            "column": 1,
+            "given": 1,
+            "returned": 0,
+            "row": 3
+          },
+          {
+            "column": 1,
+            "given": 4,
+            "returned": 0,
+            "row": 4
+          }
+        ],
+        "intrinsically_valid_complete_sudoku": false,
+        "n_actions": 1,
+        "native_first_score": 0.0,
+        "new_assignments": 3,
+        "output_tokens": 102,
+        "question_givens": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            2,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solved": 0,
+        "unique_solution": [
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "failed_checks": [],
+  "format_gain_ids": [
+    "rg/mini_sudoku/1850004",
+    "rg/mini_sudoku/1850008",
+    "rg/mini_sudoku/1850009"
+  ],
+  "format_loss_ids": [],
+  "independent_grid_universe_count": 288,
+  "input_sha256": {
+    "/tmp/astra_static_competency_terminal_20260912.tgz": "339620c7ad406d3d155b6007a8bf82c4415c7e3bcf3702159285143ab6efbaeb",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/COMPLETED.json": "b734651b3df7966c6fbe733af9766beac65e75b2432c7f95e1343cea0bd20182",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/STARTED.json": "2c3423934479fa0a418c4b5a135e083220d030d07c181ff145bfec1e549ca374",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.cleanup.json": "16e45629c05f2fec4fb9f6187f7682bee776e649bd98450cc1558bc03b2afef6",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.log": "885fa265d33baf69b9ee7e29197b5362404991d3f4461dd54920656d1786de46",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process.process.json": "b51454184ab77a0a2a3b6d98eccf103dc25edbbe9bed81825a7c9a3084441d6a",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/artifact_hashes.json": "19e9368f6b7b18182183338ea8f21eba2987eb3065f46d4660f9accb075e67f8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/config.json": "aa3fc02ea2f2fe77135b04cc6a085b9f8a051825ecee957ff0e0b01150efecf7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_00.jsonl": "a76477fc8a6e7e76824f1106e704601d98c589701ce8e7f7d244dd8bc16ef519",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_01.jsonl": "2e0ff4912e5b4bace38fd3a559668ce826551d5c89a3d1efc45ce683dbc5ac8b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_02.jsonl": "fce78ec770f05363d77e9f571960bf6a09f013e1bd7927ae20d06974b1be9a21",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_03.jsonl": "df49e5675c816396ab48ad07586bdca16b358ef3857be4a08aabe208208649a2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_04.jsonl": "5759ec595004738f5b8cd1929b0e683ec63e07c27db55869ff2f757f13968ac1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_05.jsonl": "2c0b298e1f13fc0b0c217a1e58cb008d51cc51a7fcac095ccd9329f3232be7ce",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_06.jsonl": "00b2e7bf0f8888eb2e788a34763589fc6d451971b510b3b1b29eefc513cbd195",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_07.jsonl": "9b87a2aa5235cb49427b12562175fdf39a49a0b74167f16e5df55da001a1beb4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_08.jsonl": "e71292917fcb5d0f3459a26bf9ae9cacaaa44d53c66fd7e7a2d380a55fcdd3d8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_09.jsonl": "46098df2f90d6e0e66046aee908e2849b3686881c7499c6ba758898b677a17de",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_10.jsonl": "2dfcdaa7c3f03b9b0edac46fccac7b83f1fe7017e3bca7935a6cbbf7cecad650",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_11.jsonl": "87522ad170e5ac220e47c08641d9efbe8d5c997b53b2134da7b2e2ce53bdf707",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_12.jsonl": "8e1ef96e1450b209e7d9675b1f3424d70ec102060cf87814426e8f881d473cbc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_13.jsonl": "1f1cc31e96dbb0d79d3ff4cd9827c4a212fc355be559cb57dc7bf06c5867512d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_14.jsonl": "eb6a93ab676fee7539621e3f00c924eaf5321532f3e67850ca61905c969dc624",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/episode_15.jsonl": "4f6179061866703e85c44276aeaa7ee828a7ba2ed74da4dbf4f0d358b0761cdf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_00.json": "c469fb370523ff0c0a73c6929994be58bdbca26561028c240412e8f5a08cea06",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_01.json": "1ab99237339637385306080c85a6737a22f688d6e80977cbb84f241e6a056ae1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_02.json": "6e8518a014ce6f49f8334a275972a050a5e973ed150bd3d7ee5e17bafbfdccfa",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_03.json": "114a94d17f423c083cf0418204454ca7fcdf0f29451c78de9baeaf4face075b7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_04.json": "938c15175d7a6fbaac22a9a2db0f582bcc889939b24ff3d91af77259711f158b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_05.json": "cde8fdd070c472a29eadbf8a7fc7f69a9871fead62c129526d74145b7435485d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_06.json": "5bd42a0b5f0a064c6145ae9bc125f19aed21f226ad8d5c98cd0b2cffe4ede991",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_07.json": "02605959201b2357f5cd751aa7260e8d0674300688bebd84ba4ef99a940491e3",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_08.json": "c5171e62476778ef4b5c9d5e1c29abdbbbbbcf5350415905f63d238e6dd93726",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_09.json": "e18217d9349177502f72e6c699c90a8167a45caad154e1cc91f1969d63ab9776",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_10.json": "7b2dd79eaf0ae932b58517c7af35707b3a2cc441e7e95dcefdfca35de8627fc1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_11.json": "ab4bb02acf0abad6f7cedc932ad67d80eedca5083cec2a87de99ee1f015df7a4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_12.json": "75b1d3e51fc9193a9ac96a376fab8b8bef11bf0b54a4f7abf694de44095c0698",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_13.json": "6fc524ab6210294ea77205aa593a91b3597dde2371a6632d3786505d9b3ef3cf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_14.json": "82baee8d800035b3909bc05ff18875ceb45af4d887797c97597b769754b67e9a",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/output_15.json": "5fea96af9e91617aebbd9aeac6958befbc8f69f6a3bc7c32c31a8cce16a0d275",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_00.json": "4c5301a9d3ead9cd2e834ec718d7d7380c4300ed101bf86feb90569877371d9f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_01.json": "59139863b1d1dfb20e85bd9d9a3d931c189c3c54a6e9e8291f33b4277c4f5a3f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_02.json": "7487b0f9d9a9ea962948c0ff1448a601a841d91a6aafc95df65a8152ae10f776",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_03.json": "45d583c95663462388d331f22bffb9594bf074dd466b198499cdb1da22b44d15",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_04.json": "f95197b4e4f2b4d6b8fea1d9664232507db832ebd14cd3076d1b195799a4003e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_05.json": "8e4498b2c43b26f3585e07776929d47c12b7f6cb01a585cb60d1f74e6b1315cb",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_06.json": "5af7355eb64db3f6bb720c9ba2331d9a12e1bdaeeb56ae37da0ec66bc3ce1c24",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_07.json": "9c7370ab25281c46603d8708beb824cfe7e32235d3b57eff982d88da5815db09",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_08.json": "60b91992fff10d74df8f750f94ce735753f0cdc2683deb288c74cf12bffb2fd0",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_09.json": "39ab731cb1fdea97e53dcccb8740d8c18fb98fe23983dc3a0dc1a74b21127b66",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_10.json": "ce7cf0ddc96c688950de2455b00ef0331d06811be411f8ac363d5fd943bb3d86",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_11.json": "1395fb44f9e3080b6ccf2449c669fe8d592c0c69801ccd0f0149f239ddb44293",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_12.json": "f95d41c8cf522b55bbaa3b5b6cdefec23d388894b8b415f0fc386c420da09bb0",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_13.json": "a80da96eb846a835bdb76ccf343daf076f29b9ae5c89ef9e3f00828668e23841",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_14.json": "58d457cfe3650b5d8f9f9ec2c51c6b051e08ba7d70d7237957da8420e8606039",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/request_15.json": "b425a6f31882074e37bb6f04d4acf49f40ced9fcae20d1e4c643ca84df436ac4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/process/results.json": "6bbfb02063ea89c2fa4aa319bc199497b743620a0f431cbe3de3237556841b28",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.cleanup.json": "0d3e90adba9fba90b8688107244d473dd5a8711e5996be45c41066a7d3dd0ce4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.log": "21a3919c9a8c85b42d600977ee66a172ca2be87dba0702dcc088167e6f5ce5aa",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham.process.json": "47538b6b05341a2ff9b31ace4754935b42efc2071c61ee0298dbbd4efa86aa62",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/artifact_hashes.json": "63f5e11c15f1a881e6f0489b5e9d987af6a214c8f863b84f50c1befa5f4d3f13",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/config.json": "8d0ba98f304b00f90931d391f6ed68a9a210816a8e539d5685546ffeb7cb4b4d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_00.jsonl": "d35fb297aedb7ec2e48a14688428b05586355b35640764fadf6cf28c5a52a962",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_01.jsonl": "91173deb6fc0bc6dc9ac22096d1cc76d8d945120b94f9b690caaccb0e8be2cdd",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_02.jsonl": "7cb6cf44f4e2c787a734b40a4374b835ae5c13a3119667e70d53274a4112c9c5",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_03.jsonl": "c0de5c78bd7fb6147c96e57290d7e55c4e29abb82c2dc061ac7d1ef0846cd8cd",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_04.jsonl": "e32a1a1d539ba6088ae21d44be80028c008f0a7859147de655ae8ec31ffd98ab",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_05.jsonl": "6e11c37f95341727e69b48ca67f96497f5cc0b95813b42d5d42d91c7976406ba",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_06.jsonl": "61b6b8cb5401f4a81b9dd797174a69df4675d1b9cd1cac63f1e1525f02890d66",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_07.jsonl": "5d2d38892339099dbe1cc35214b2a4b357b86ce52eb40a222fd279905dfa2986",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_08.jsonl": "b212935d0218a719bdc54afdcfb1d83865830ab7795b126972d9a9a3033cada4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_09.jsonl": "13f261aa364e9be3ef8c1139f073d78a0474ca8e0fd84803ee23fdeeeb9a621b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_10.jsonl": "92ba82e5ec12b236ce733faba0772a643610b7d9094df3f5e25e61fb3fa1175e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_11.jsonl": "9fef7f192fded8a3f2753128c87e7f8f988bca91eba0b26d71648cefb7f98cca",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_12.jsonl": "56da7ec1897b700e3755cb447fba939a37c09271cd210e92013537ed105bc5e8",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_13.jsonl": "5ee712f5a996676529317e48d4986c51cbf4ef1f325db049577d4f7f761f1fc2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_14.jsonl": "c4a93f2bab0f7850567a5aa90db19c86e9e71edffda0e9316bbc204b015fc5ee",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/episode_15.jsonl": "b7105112429cd19f62f1529feb3aa829ba85886bc3e71251022c0d74f7d5b86b",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_00.json": "fe8351c71ed4f2ab0c27937dc17bf4530735ed9456bb5b1542af68f020ddba6e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_01.json": "1ab99237339637385306080c85a6737a22f688d6e80977cbb84f241e6a056ae1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_02.json": "06c4f00af3ab792d8d6d36a867790879e80476bb769d9234435142e488ce711c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_03.json": "062f6fdc15dd49f34e7854515aa79af2393a94f4bf4f0c4750890ec1d6fa5c46",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_04.json": "39ec69df6b423e22d6f2ec8a17802d853488cf65151e279f1ed81619d3d748f1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_05.json": "418fa9649f30bf251d37e02208dd0e86dbcf9c18a0eba422fadf243f3d7a01f4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_06.json": "359cf2e338b6d0c3f5418f67e81c24859f743a72c485b51cfba57a046b1ceab9",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_07.json": "8ddb3f3ba1d90fafddcda31d21aa49278254db302960d0a2014a27362d8a92a7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_08.json": "01a22d940b464101f8bc5083b49798774aded1af50cae8acd6c40b8b24ae4b9d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_09.json": "dac7751d69a592549abe4347e5977b6160501dc1be8cd522871637a84de71db7",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_10.json": "296f362279a2eb35671d8f9ff1bfdfb027fca4b4cb0fc21816a17cc6629a5525",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_11.json": "190729bff4a180515ca993c0c4d439ee700c2580c7bcd78378cf08da78a5b00e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_12.json": "75b1d3e51fc9193a9ac96a376fab8b8bef11bf0b54a4f7abf694de44095c0698",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_13.json": "ec994cb6e71349a7f357a3b212aba631864bdd2223af67f004dcbbaa4f188660",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_14.json": "38827a96d184b59c03549cb535968676b3a8e68a328f3837c8957d7b0f63c975",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/output_15.json": "6fc234037ac16c6f08ff06f32770415f34b3380f19f2ee823265eb73497e0a4f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_00.json": "8fd3ba23c683db26902b6fef2f1ab804c06dd1ba6cb411b941299a55dc97102f",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_01.json": "e8ba50a5a86a9a64eb56afe66cf950b96e928c957ed5ce8c5ec90b876ef099d6",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_02.json": "7ea849e48aac5579b7429482a8fd3512af5c63c33f309fed4f818cda51367311",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_03.json": "176168fcef053f79773dae4d7bb98fb6c2766b5b34e4fd83f2ac26c5edc11ebc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_04.json": "6fd16ab0543fce1db3d177b62088d248fa56d96702c8ea47cdb931ac9d9744bf",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_05.json": "492f49b9fda2733c0196e5764887f74b943b828e8efb29b506064a292654442d",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_06.json": "dfa49a8f98eecbc1a16c7e247ad28edbad9aa05aaf50b698e22ed637dab9c073",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_07.json": "0c04df667ad5fc68479b7880df2970d45e6ce789883fcf16c33d55d3d70f287e",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_08.json": "d0346a440e74614f76d2b07e98e5ba98aa1c68adaaeb6ca5a0afc7bd208064e4",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_09.json": "156547a13c2334e084d4d460b6956ac5b29abc90e003a69c6490dd4bc39a0406",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_10.json": "15c7dbeb8182de36a503ce6e424ae435579c0239edba59196dcf8a2fca58599c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_11.json": "ff7aba0474e6eb63916819b3dea0b7c5db3d779a1e8ef5c3d49ffa6c673bbebc",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_12.json": "a8e562cbba4c849d7a218f80e34951d859a8d1b997e8139c878538f9052f0513",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_13.json": "1fe822923a081303a54198181fd07ef8ba3f365049dd7ddfe399332b7212b557",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_14.json": "8861ca31e4c17743471280c4c1b1b1314672f99d6a793ea9e9b37a73f87d57d1",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/request_15.json": "93afcbc9d09f587fc970e5dd64d8bb1b8d6ab9356ac0a77449e0d1e31093e2fe",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1/sham/results.json": "c653c5a03530ea4fc670139714031b2afb09fc0c92c1e03c237c0c27da9861e2",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1_logs/controller.log": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1_logs/gpu_before.xml": "348f17ddf64e6dd1069b71385849fadf72526740f0272c2356a73790873c1ae9",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_20260912_attempt1_logs/launch.json": "9cce14275aa85bfd6be729ac7cbe09f151a167e388b06239a46fb9a4df6dff78",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/artifact_hashes.json": "9f6ca5a805d591286012316b0ebc17c9fa4315edee26137e57e5520aaea9b707",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/config.json": "430e55c58dd840489528a04ee554ec73809ef05da3567d77256cf1a073b45343",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/preflight.json": "e91da35d3ec3d3ca7bb0efea9c4160cc8ef6b66c545eb3afeb89ad44465f2b1c",
+    "/tmp/astra_static_competency_terminal_20260912/astra_P1_static_competency_preparation_20260912_attempt1/questions.json": "ba1321229541bd6ec23d1158f2260219144290660e265e225f0d37682caa3fb6",
+    "/tmp/astra_static_competency_terminal_analysis_20260912.json": "7839ff6516644b319fee4aec0cf5adcfbcd293706a85b9e629e45956748b3a65"
+  },
+  "limitations": [
+    "Raw partial native scores preserved from captured ledgers, not independently re-executed through installed reasoning_gym in this offline review.",
+    "Recorded tokenizer counts and loader identity verified for consistency, not retokenized or live-model authenticated; no weight payload rehash or remote calls.",
+    "One generation seed7101, same-device sequential process then sham, joint teacher package; not separated competency effects.",
+    "Remaining training IDs1850016..1850031 are unused in this static comparison, not globally untouched: earlier oracle training material included all32.",
+    "No persistence/internalization, adaptive parenting, P1, H1 or significance claim.",
+    "Candidate first four rows are inspected only for failure classification; invalid ACTs remain zero at the original endpoint.",
+    "Native ledger thought.win means best-score improvement, not puzzle solved; strict independent solution/score1 used."
+  ],
+  "recommendation": "One prospectively fixed remaining-16 format follow-up is reasonable as exploratory replication of format, not rescue of the primary solve null. No concrete comparison-invalidating interface mismatch identified.",
+  "reviewed_utc": "2026-09-12T12:09:00.946479+00:00",
+  "scope": "OFFLINE_DESCRIPTIVE_INDEPENDENT_TRACE_ENDPOINT_REVIEW",
+  "source_byte_checks": [
+    {
+      "local_path": "organism_v6/batch_loop.py",
+      "local_sha256": "821471f4ddd136f64c7151a5fa0a4b1c2cc0d5be00c9febb73d5b215dccb7605",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/batch_loop.py",
+      "recorded_sha256": "821471f4ddd136f64c7151a5fa0a4b1c2cc0d5be00c9febb73d5b215dccb7605"
+    },
+    {
+      "local_path": "organism_v6/bootstrap_reasoning_gym.txt",
+      "local_sha256": "9b2cf7521bc75fe995ffa05a117f61d12ded24395e8b315e384f58add846e1f1",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/bootstrap_reasoning_gym.txt",
+      "recorded_sha256": "9b2cf7521bc75fe995ffa05a117f61d12ded24395e8b315e384f58add846e1f1"
+    },
+    {
+      "local_path": "organism_v6/model_backend.py",
+      "local_sha256": "93feee1cb30720b565aac8f570d368cad8e137789b39f228fbd8ed264123a3f5",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/model_backend.py",
+      "recorded_sha256": "93feee1cb30720b565aac8f570d368cad8e137789b39f228fbd8ed264123a3f5"
+    },
+    {
+      "local_path": "organism_v6/parent_competency_diagnostic.py",
+      "local_sha256": "b6a02b6616283d7176f8b1b1a259020aec297380823bfc9c282caca36178ee6e",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/parent_competency_diagnostic.py",
+      "recorded_sha256": "b6a02b6616283d7176f8b1b1a259020aec297380823bfc9c282caca36178ee6e"
+    },
+    {
+      "local_path": "organism_v6/parent_material_diagnostic.py",
+      "local_sha256": "325cc3f4554ea4fc32d40f5165a47045efd4f3c0d4553d5464693596ca669fea",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/parent_material_diagnostic.py",
+      "recorded_sha256": "325cc3f4554ea4fc32d40f5165a47045efd4f3c0d4553d5464693596ca669fea"
+    },
+    {
+      "local_path": "organism_v6/reasoning_gym_families.json",
+      "local_sha256": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/reasoning_gym_families.json",
+      "recorded_sha256": "220071c8783ed4d608b04015c188e8b22fc5745c10f250c7fbd724dd854649ea"
+    },
+    {
+      "local_path": "organism_v6/reasoning_gym_gym.py",
+      "local_sha256": "da9879537d33923c9702b1a5b3d63d6a2fcb396a64e110a886bd445c33e1c084",
+      "recorded_path": "/localhome/local-rohing/astra_sources/b39e92381a848b19f8a9578aca79fee20de24894/organism_v6/reasoning_gym_gym.py",
+      "recorded_sha256": "da9879537d33923c9702b1a5b3d63d6a2fcb396a64e110a886bd445c33e1c084"
+    }
+  ],
+  "unique_completions": 16
+}

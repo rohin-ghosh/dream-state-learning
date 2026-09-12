@@ -93,6 +93,52 @@ class CompetencyTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "native preparation pending"):
                 diagnostic.launch_pair(self.prep, self.root / "live", "3")
 
+    def test_no_teacher_anchor_keeps_questions_and_omits_entire_block(self):
+        result = diagnostic.prepare(self.prep, self.fixture.model_dir, self.fixture.config.expected_files,
+                                    self.ids, gym=self.gym, tokenizer=self.model.tok, teacher_absent=True)
+        check = diagnostic.read(self.prep / "preflight.json")
+        config = diagnostic.read(self.prep / "config.json")
+        self.assertEqual(result["status"], "SYNTHETIC_CPU_ONLY")
+        self.assertEqual(check["package_tokens"], {"no_teacher": 0})
+        self.assertFalse(check["exact_token_match"])
+        self.assertTrue(check["posthoc_descriptive_anchor"])
+        self.assertFalse(config["boundary"]["teacher_present"])
+        self.assertEqual(config["episode_ids"], self.ids)
+        self.assertEqual(diagnostic.bootstrap_for(self.gym, "no_teacher"), self.gym.birth_prompt())
+        for row in check["rows"]["no_teacher"]:
+            self.assertNotIn("=== A NOTE FROM YOUR TEACHER ===", row["prompt"])
+            self.assertIn(self.gym.question(row["episode_id"]), row["prompt"])
+            self.assertEqual(row["seed"], diagnostic.batch_loop._seed_for(row["episode_id"], 1, 7101))
+
+    def test_no_teacher_run_records_zero_teaching_not_zero_opportunities(self):
+        diagnostic.prepare(self.prep, self.fixture.model_dir, self.fixture.config.expected_files,
+                           self.ids, gym=self.gym, tokenizer=self.model.tok, teacher_absent=True)
+        result = self.run_arm("no_teacher")
+        self.assertEqual(result["presentations"], 0)
+        self.assertEqual(result["episode_opportunities"], 16)
+        self.assertEqual(result["cumulative_package_tokens"], 0)
+        self.assertEqual(result["reserved_output_tokens"], 6400)
+        self.assertEqual(len(result["episodes"]), 16)
+        self.assertEqual(len(self.model.calls), 2)
+        for request in (self.root / "no_teacher").glob("request_*.json"):
+            self.assertEqual(diagnostic.read(request)["package_presentations"], 0)
+        self.assertTrue(result["boundary"]["posthoc_descriptive_anchor"])
+        self.assertFalse(result["boundary"]["input_token_matched"])
+
+    def test_teacher_conditions_cannot_execute_absent_preparation(self):
+        diagnostic.prepare(self.prep, self.fixture.model_dir, self.fixture.config.expected_files,
+                           self.ids, gym=self.gym, tokenizer=self.model.tok, teacher_absent=True)
+        for mode in diagnostic.MODES:
+            with self.assertRaisesRegex(ValueError, "unknown condition"):
+                self.run_arm(mode)
+        self.assertFalse(self.model.calls)
+
+    def test_no_teacher_cannot_execute_original_two_arm_preparation(self):
+        self.prepare()
+        with self.assertRaisesRegex(ValueError, "unknown condition"):
+            self.run_arm("no_teacher")
+        self.assertFalse(self.model.calls)
+
     def test_launcher_reserves_both_arms_and_uses_external_logs(self):
         self.prepare()
         original_read = diagnostic.read

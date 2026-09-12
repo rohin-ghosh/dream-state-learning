@@ -95,25 +95,37 @@ def fresh_output(path, protected):
     return root
 
 
+def condition_packages(teacher_absent=False):
+    return {"no_teacher": ""} if teacher_absent else PACKAGES
+
+
+def bootstrap_for(gym, mode):
+    return gym.birth_prompt() if mode == "no_teacher" else gym.birth_prompt() + "\n\n" + PACKAGES[mode]
+
+
 def prompts_for(gym, ids, mode):
-    bootstrap = gym.birth_prompt() + "\n\n" + PACKAGES[mode]
+    bootstrap = bootstrap_for(gym, mode)
     drivers = [formation.DiagnosticDriver(gym.episode_from_id(episode, 1), bootstrap, gym, None, 1) for episode in ids]
     return [driver.prompt() for driver in drivers]
 
 
-def preflight(gym, ids, tokenizer):
-    packages = {mode: dict(text=PACKAGES[mode], sha256=policy._sha(PACKAGES[mode].encode())) for mode in MODES}
-    prompts = {mode: prompts_for(gym, ids, mode) for mode in MODES}
-    for mode in MODES:
+def preflight(gym, ids, tokenizer, *, teacher_absent=False):
+    selected = condition_packages(teacher_absent)
+    packages = {mode: dict(text=text, sha256=policy._sha(text.encode())) for mode, text in selected.items()}
+    prompts = {mode: prompts_for(gym, ids, mode) for mode in selected}
+    for mode in selected:
         for prompt in prompts[mode]:
-            require(prompt.count(PACKAGES[mode]) == 1 and PACKAGES[MODES[1 - MODES.index(mode)]] not in prompt,
-                    "package not presented exactly once")
+            if teacher_absent:
+                require("=== A NOTE FROM YOUR TEACHER ===" not in prompt, "teacher present in absent anchor")
+            else:
+                require(prompt.count(PACKAGES[mode]) == 1 and PACKAGES[MODES[1 - MODES.index(mode)]] not in prompt,
+                        "package not presented exactly once")
     if tokenizer is None:
         return dict(status="PREFLIGHT_PENDING_TOKENIZER", packages=packages, prompts=prompts,
                     reason="actual local tokenizer unavailable; no token estimates or padding")
-    tokens = {mode: len(tokenizer.encode(PACKAGES[mode], add_special_tokens=False)) for mode in MODES}
+    tokens = {mode: len(tokenizer.encode(text, add_special_tokens=False)) for mode, text in selected.items()}
     rows = {}
-    for mode in MODES:
+    for mode in selected:
         rows[mode] = []
         for episode, prompt in zip(ids, prompts[mode]):
             rendered = tokenizer.apply_chat_template([dict(role="user", content=prompt)], tokenize=False, add_generation_prompt=True)
@@ -121,15 +133,16 @@ def preflight(gym, ids, tokenizer):
             rows[mode].append(dict(episode_id=episode, prompt=prompt, rendered_prompt=rendered,
                                   prompt_sha256=policy._sha(prompt.encode()), rendered_sha256=policy._sha(rendered.encode()),
                                   prompt_tokens=count, seed=batch_loop._seed_for(episode, 1, PROTOCOL["generation_seed"])))
-    matched = tokens["process"] == tokens["sham"] and all(left["prompt_tokens"] == right["prompt_tokens"]
+    matched = not teacher_absent and tokens["process"] == tokens["sham"] and all(left["prompt_tokens"] == right["prompt_tokens"]
                     for left, right in zip(rows["process"], rows["sham"]))
     fits = all(row["prompt_tokens"] + 400 <= PROTOCOL["max_model_len"] for arm in rows.values() for row in arm)
-    return dict(status="READY" if matched and fits else "PREFLIGHT_PENDING_PACKAGE_OR_CONTEXT_BUDGET",
+    return dict(status="READY" if (matched or teacher_absent) and fits else "PREFLIGHT_PENDING_PACKAGE_OR_CONTEXT_BUDGET",
                 packages=packages, package_tokens=tokens, rows=rows, exact_token_match=matched, context_fits=fits,
+                posthoc_descriptive_anchor=teacher_absent,
                 reason="fixed complete packages; no padding, retries, or generated rewrite")
 
 
-def prepare(out, model_path, expected_files, ids, *, gym=None, tokenizer=None):
+def prepare(out, model_path, expected_files, ids, *, gym=None, tokenizer=None, teacher_absent=False):
     model = Path(model_path).resolve(strict=True)
     root = fresh_output(out, [model, Path(__file__).resolve().parents[1]])
     require(formation.local_files(model) == expected_files, "local base pins mismatch")
@@ -142,7 +155,7 @@ def prepare(out, model_path, expected_files, ids, *, gym=None, tokenizer=None):
             tokenizer = _load_tokenizer(str(model))
         except (ImportError, OSError):
             tokenizer = None
-    check = preflight(gym, ids, tokenizer)
+    check = preflight(gym, ids, tokenizer, teacher_absent=teacher_absent)
     if injected:
         check["status"] = "SYNTHETIC_CPU_ONLY" if check["status"] == "READY" else check["status"]
     questions = [dict(episode_id=episode, question=gym.question(episode), question_sha256=policy._sha(gym.question(episode).encode())) for episode in ids]
@@ -150,15 +163,20 @@ def prepare(out, model_path, expected_files, ids, *, gym=None, tokenizer=None):
                (sys.modules[__name__], formation, batch_loop, model_backend, sys.modules[ReasoningGymGym.__module__])}
     sources[str(Path(FAMILIES_JSON).resolve())] = formation._hash(FAMILIES_JSON)
     sources[str(Path(BOOTSTRAP_PATH).resolve())] = formation._hash(BOOTSTRAP_PATH)
-    config = dict(boundary=BOUNDARY, protocol=PROTOCOL, model_path=str(model), expected_files=expected_files,
-                  episode_ids=ids, packages=PACKAGES, tokenizer="synthetic CPU injection" if injected else "actual local tokenizer",
+    boundary = dict(BOUNDARY, teacher_present=not teacher_absent, posthoc_descriptive_anchor=teacher_absent,
+                    input_token_matched=bool(check.get("exact_token_match", False)))
+    if teacher_absent:
+        boundary["interpretation"] = "post-hoc no-teacher descriptive anchor, shorter unmatched input"
+    config = dict(boundary=boundary, protocol=PROTOCOL, model_path=str(model), expected_files=expected_files,
+                  teacher_absent=teacher_absent, episode_ids=ids, packages=condition_packages(teacher_absent),
+                  tokenizer="synthetic CPU injection" if injected else "actual local tokenizer",
                   sources=sources, prepared_utc=utc())
     require(formation.local_files(model) == expected_files, "model changed during preparation")
     root.mkdir(parents=True)
     for name, value in (("config.json", config), ("preflight.json", check), ("questions.json", questions)):
         formation._write(root / name, value)
     seal(root)
-    return dict(status=check["status"], preparation=str(root), boundary=BOUNDARY)
+    return dict(status=check["status"], preparation=str(root), boundary=boundary)
 
 
 def action_summary(rows):
@@ -178,11 +196,12 @@ def action_summary(rows):
 
 
 def run_arm(preparation, out, mode, *, gym, backend_factory, allow_synthetic=False):
-    require(mode in MODES, "unknown condition")
     prep = Path(preparation).resolve(strict=True)
     prep_hash = verify_inventory(prep)
     config, check = read(prep / "config.json"), read(prep / "preflight.json")
-    require(config["protocol"] == PROTOCOL and config["packages"] == PACKAGES, "protocol/package changed")
+    teacher_absent = config.get("teacher_absent", False)
+    require(mode in condition_packages(teacher_absent), "unknown condition")
+    require(config["protocol"] == PROTOCOL and config["packages"] == condition_packages(teacher_absent), "protocol/package changed")
     require(check["status"] == "READY" or (allow_synthetic and check["status"] == "SYNTHETIC_CPU_ONLY"), "native token preflight pending")
     require(not allow_synthetic or config["tokenizer"] == "synthetic CPU injection", "synthetic mode mismatch")
     require(formation.local_files(config["model_path"]) == config["expected_files"], "model changed")
@@ -197,7 +216,7 @@ def run_arm(preparation, out, mode, *, gym, backend_factory, allow_synthetic=Fal
         with backend_factory(config["model_path"]) as backend:
             identity = model_backend.configured_generation_identity(config["model_path"], None)
             require(backend.generation_identity() == identity, "clean local base/no-adapter identity required")
-            current = preflight(gym, config["episode_ids"], backend.tok)
+            current = preflight(gym, config["episode_ids"], backend.tok, teacher_absent=teacher_absent)
             require(current["status"] == "READY" and current["rows"] == check["rows"]
                     and current["package_tokens"] == check["package_tokens"], "runtime tokenizer preflight differs")
             for start in range(0, 16, 8):
@@ -205,7 +224,7 @@ def run_arm(preparation, out, mode, *, gym, backend_factory, allow_synthetic=Fal
                 for offset, row in enumerate(batch, start):
                     formation._write(root / f"request_{offset:02d}.json", dict(row, request_index=offset, mode=mode,
                         package_sha256=check["packages"][mode]["sha256"], package_tokens=check["package_tokens"][mode],
-                        package_presentations=1, source_identity=identity, max_tokens=400, temperature=.7))
+                        package_presentations=0 if teacher_absent else 1, source_identity=identity, max_tokens=400, temperature=.7))
                 outputs = backend.batch([row["prompt"] for row in batch], max_tokens=400, temperature=.7,
                                         seeds=[row["seed"] for row in batch])
                 require(isinstance(outputs, (list, tuple)) and len(outputs) == len(batch) and all(isinstance(text, str) for text in outputs), "incomplete generation batch")
@@ -218,16 +237,17 @@ def run_arm(preparation, out, mode, *, gym, backend_factory, allow_synthetic=Fal
                 for index, (row, text) in enumerate(zip(batch, outputs), start):
                     ledger = _ProbeLedger(str(root / f"episode_{index:02d}.jsonl"))
                     Path(ledger.path).touch(exist_ok=False)
-                    driver = formation.DiagnosticDriver(gym.episode_from_id(row["episode_id"], 1), gym.birth_prompt() + "\n\n" + PACKAGES[mode], gym, ledger, 1)
+                    driver = formation.DiagnosticDriver(gym.episode_from_id(row["episode_id"], 1), bootstrap_for(gym, mode), gym, ledger, 1)
                     require(driver.prompt() == row["prompt"], "runtime prompt mismatch")
                     driver.consume(text)
                     results.append(dict(episode_id=row["episode_id"], request_index=index, **action_summary(ledger.rows())))
                 require(backend.generation_identity() == identity, "backend identity changed")
         require(verify_inventory(prep) == prep_hash and formation.local_files(config["model_path"]) == config["expected_files"], "inputs changed")
-        result = dict(boundary=BOUNDARY, mode=mode, completed_utc=utc(), status="COMPLETE", episodes=results,
+        result = dict(boundary=config["boundary"], mode=mode, completed_utc=utc(), status="COMPLETE", episodes=results,
                       execution_backend="SYNTHETIC_CPU_FIXTURE" if allow_synthetic else "LOCAL_GPU_BACKEND",
                       first_action_solves=sum(row["first_action_solved"] for row in results), denominator=16,
-                      presentations=16, package_tokens_per_presentation=check["package_tokens"][mode],
+                      presentations=0 if teacher_absent else 16, episode_opportunities=16,
+                      package_tokens_per_presentation=check["package_tokens"][mode],
                       cumulative_package_tokens=16 * check["package_tokens"][mode], reserved_output_tokens=6400)
         formation._write(root / "results.json", result)
         return result
@@ -244,28 +264,32 @@ def execute_pair(preparation, out, *, allow_gpu=False):
     prep = Path(preparation).resolve(strict=True)
     digest = verify_inventory(prep)
     config = read(prep / "config.json")
+    teacher_absent = config.get("teacher_absent", False)
+    modes = tuple(condition_packages(teacher_absent))
     require(read(prep / "preflight.json")["status"] == "READY", "preflight pending")
     require(os.environ.get("V6_MODEL") == config["model_path"], "set V6_MODEL before Python starts")
     root = fresh_output(out, [prep, config["model_path"], Path(__file__).resolve().parents[1]])
     root.mkdir(parents=True)
-    formation._write(root / "STARTED.json", dict(preparation_sha256=digest, device=device, started_utc=utc(), order=list(MODES)))
+    formation._write(root / "STARTED.json", dict(preparation_sha256=digest, device=device, started_utc=utc(), order=list(modes)))
     try:
         results = {}
-        for mode in MODES:
+        for mode in modes:
             command = [sys.executable, "-B", "-m", "organism_v6.parent_competency_diagnostic", "--preparation", str(prep),
                        "--out", str(root / mode), "--condition", mode, "--allow-gpu"]
             supervisor.run_worker(command, log_path=root / f"{mode}.log", timeout=900, device=device)
             verify_inventory(root / mode)
             require(not (root / mode / "failure.json").exists(), "worker failed")
             results[mode] = read(root / mode / "results.json")
-            require(results[mode]["status"] == "COMPLETE" and results[mode]["presentations"] == 16
+            require(results[mode]["status"] == "COMPLETE" and results[mode]["presentations"] == (0 if teacher_absent else 16)
                     and results[mode]["mode"] == mode and results[mode]["execution_backend"] == "LOCAL_GPU_BACKEND"
                     and [row["episode_id"] for row in results[mode]["episodes"]] == config["episode_ids"],
                     "incomplete fixed delivery")
-        require(results["process"]["cumulative_package_tokens"] == results["sham"]["cumulative_package_tokens"],
-                "unequal package dose")
-        formation._write(root / "COMPLETED.json", dict(boundary=BOUNDARY, completed_utc=utc(), arms=results,
-                           interpretation="static joint process package versus sham; no persistence or learning claim"))
+        if not teacher_absent:
+            require(results["process"]["cumulative_package_tokens"] == results["sham"]["cumulative_package_tokens"],
+                    "unequal package dose")
+        formation._write(root / "COMPLETED.json", dict(boundary=config["boundary"], completed_utc=utc(), arms=results,
+                           interpretation="post-hoc no-teacher descriptive anchor, shorter unmatched input" if teacher_absent else
+                           "static joint process package versus sham; no persistence or learning claim"))
     except BaseException as error:
         formation._write(root / "FAILED.json", dict(error=repr(error), failed_utc=utc()))
         raise
@@ -277,7 +301,8 @@ def launch_pair(preparation, out, device):
     prep = Path(preparation).resolve(strict=True)
     prep_hash = verify_inventory(prep)
     config = read(prep / "config.json")
-    require(config["protocol"] == PROTOCOL and config["packages"] == PACKAGES, "changed protocol/packages")
+    require(config["protocol"] == PROTOCOL and config["packages"] == condition_packages(config.get("teacher_absent", False)),
+            "changed protocol/packages")
     require(read(prep / "preflight.json")["status"] == "READY", "native preparation pending")
     require(formation.local_files(config["model_path"]) == config["expected_files"], "base pins changed")
     source = Path(__file__).resolve().parents[1]
@@ -314,13 +339,14 @@ def main(argv=None):
     parser.add_argument("--pins", help="JSON {model_path, files} of caller-provided local base hashes")
     parser.add_argument("--ids", help="JSON list of 16 selected existing training IDs")
     parser.add_argument("--preparation")
-    parser.add_argument("--condition", choices=MODES)
+    parser.add_argument("--condition", choices=(*MODES, "no_teacher"))
+    parser.add_argument("--no-teacher", action="store_true")
     parser.add_argument("--allow-gpu", action="store_true")
     parser.add_argument("--launch", action="store_true")
     parser.add_argument("--device", choices=("3",))
     args = parser.parse_args(argv)
     if args.preparation:
-        require(args.allow_gpu and not any((args.ids, args.pins, args.model_path)), "explicit GPU opt-in and prepared inputs required")
+        require(args.allow_gpu and not any((args.ids, args.pins, args.model_path, args.no_teacher)), "explicit GPU opt-in and prepared inputs required")
         if args.launch:
             require(args.device is not None and not args.condition, "launch requires device and both conditions")
             result = launch_pair(args.preparation, args.out, args.device)
@@ -335,7 +361,7 @@ def main(argv=None):
                 and not args.launch and args.device is None, "CPU preparation requires model-path, pins and ids")
         pins = read(args.pins)
         require(pins["model_path"] == str(Path(args.model_path).resolve(strict=True)), "pin model path mismatch")
-        result = prepare(args.out, args.model_path, pins["files"], read(args.ids))
+        result = prepare(args.out, args.model_path, pins["files"], read(args.ids), teacher_absent=args.no_teacher)
     print(json.dumps(result, sort_keys=True))
 
 
