@@ -97,13 +97,26 @@ model follow the supplied row. The single-row run reuses development items,
 lacks candidate scoring, and is explicitly non-qualifying. It cannot release a
 fit or substitute for the inherited oracle gate.
 
+A final development-only instruction variant then exposed a much narrower
+failure. It told the model explicitly to copy the action from the one supplied
+row. Strictly, it still failed: only `32/64` outputs were valid and correct.
+But the confusion was perfectly target-conditional: all 32 `a1` rows produced
+exactly `ACT: a1`, while all 32 `a0` rows produced `ACT: a a` (31) or
+`ACT: a` (1), with zero truncations. This is strong diagnostic evidence that
+the child was conditioning on the supplied row while the artificial `a0`
+generation surface failed asymmetrically. It is not a qualified oracle pass,
+but it changes the next action from more prompt search to a carrier/interface
+repair: score both complete candidates and test balanced, base-executable
+action names under complementary maps.
+
 The next fit-eligibility control must therefore use fresh opaque identifiers
 and forms, one answer row per held query, the calibrated chat boundary, an
-explicit non-answer-bearing instruction to follow the supplied row, and both
-strict generation and two-candidate scoring. Per root-map, each modality must
-reach at least `15/16`; aggregate strict validity must reach `61/64`, with zero
-truncation or multiple actions and complementary-map redirection. Until that
-fresh canary passes, no V10R2 writer fit is eligible. Exact watcher audit:
+explicit non-answer-bearing instruction to follow the supplied row, balanced
+base-executable action names, and both strict generation and two-candidate
+scoring. Per root-map, each modality must reach at least `15/16`; aggregate
+strict validity must reach `61/64`, with zero truncation or multiple actions
+and complementary-map redirection. Until that fresh canary passes, no V10R2
+writer fit is eligible. Exact watcher audit:
 `research_notes/analysis/2026-09-12_exact_row_positive_carrier_gate_audit.md`.
 
 The terminal B0 scout established one uninterrupted quarantined plumbing path:
