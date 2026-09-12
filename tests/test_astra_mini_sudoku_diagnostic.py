@@ -58,9 +58,9 @@ class DiagnosticTests(unittest.TestCase):
             self.assertEqual(json.loads(output.read_text()), {"original": True})
 
     def test_occupied_gpu_rejected_before_proc_scan(self):
-        with patch.object(diagnostic.subprocess, "run") as run, patch.object(
-                diagnostic.supervisor, "gpu_processes_absent", return_value=False):
-            run.return_value.stdout = "<nvidia_smi_log><gpu><uuid>GPU-test</uuid></gpu></nvidia_smi_log>"
+        with patch.object(diagnostic.subprocess, "run") as run:
+            run.return_value.stdout = ("<nvidia_smi_log><gpu><uuid>GPU-test</uuid>"
+                                      "<processes><process_info /></processes></gpu></nvidia_smi_log>")
             with self.assertRaisesRegex(ValueError, "GPU has processes"):
                 diagnostic.check_free("1")
 

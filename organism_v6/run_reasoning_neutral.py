@@ -61,7 +61,7 @@ def selected_device():
 def gpu_processes_absent(device):
     try:
         result = subprocess.run(["nvidia-smi", "-i", device, "-q", "-x"],
-                                capture_output=True, text=True, timeout=10, check=False)
+                                capture_output=True, text=True, timeout=30, check=False)
         if result.returncode != 0:
             return False
         gpus = ET.fromstring(result.stdout).findall("gpu")

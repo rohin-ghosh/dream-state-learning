@@ -49,7 +49,8 @@ def check_free(device):
     display = subprocess.run(["nvidia-smi", "-i", device, "-q", "-x"],
                              capture_output=True, text=True, timeout=30, check=True)
     devices = ET.fromstring(display.stdout).findall("gpu")
-    if len(devices) != 1 or not supervisor.gpu_processes_absent(device):
+    processes = devices[0].find("processes") if len(devices) == 1 else None
+    if processes is None or list(processes) or (processes.text or "").strip():
         raise ValueError("GPU has processes or cannot be inspected")
     uuid = devices[0].findtext("uuid")
     ancestors = set()

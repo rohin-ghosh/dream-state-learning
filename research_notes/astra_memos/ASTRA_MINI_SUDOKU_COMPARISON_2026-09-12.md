@@ -85,3 +85,15 @@ Main:19material and5launcher tests pass; V3 script reports9/9 but3dependency
 paths skip locally (peft/torch), so not9fully executed training tests. Native
 node checks remain required. No model has been trained for this comparison
 at this specification time; lower-LR memory jobs remain independently active.
+
+## Prospective operational amendment, 10:29 UTC
+
+Attempt1 preparation passes native checks but both launches refuse before
+creating logs/processes: slow nvidia-smi (~11–12s) exceeds the reused10scheck.
+Non-material repair extends its bounded timeout to30s and eliminates duplicate
+query at launch, preserving fail-closed occupancy checks and all science bytes.
+22wrapper tests including new timing regression and5launcher tests pass.
+Use separately archived repaired source and fresh `..._attempt2` for actual
+execution; keep attempt1material untouched. No outcome inspected or protocol
+endpoint/dose/data amendment. Actual native tokens are25708input/1216target
+per epoch per arm,77124input/3648target over3epochs.

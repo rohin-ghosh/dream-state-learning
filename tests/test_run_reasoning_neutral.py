@@ -17,6 +17,17 @@ from test_reasoning_neutral_probe import FixtureBackend, FixtureGym
 
 
 class NeutralRunnerTests(unittest.TestCase):
+    def test_gpu_query_allows_observed_slow_driver_response(self):
+        xml = "<nvidia_smi_log><gpu><processes> </processes></gpu></nvidia_smi_log>"
+
+        def slow_query(command, **options):
+            if options["timeout"] < 12:
+                raise subprocess.TimeoutExpired(command, options["timeout"])
+            return subprocess.CompletedProcess(command, 0, stdout=xml)
+
+        with patch.object(runner.subprocess, "run", side_effect=slow_query):
+            self.assertTrue(runner.gpu_processes_absent("1"))
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.cleanup)
