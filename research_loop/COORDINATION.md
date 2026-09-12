@@ -3363,3 +3363,27 @@ probe would reject them. No questions/outcomes inspected and no split changed.
 Amended utility protocol to first32numeric mini_sudoku canary IDs absent
 recovered133prior IDs: suffixes0,1,3..19,43..49,70..75 in1900000range.
 Native question-level checks next; no filtered outcome or prior-score selection.
+
+## [Builder] 2026-09-12 13:24 UTC — utility panel native checks; staged SEQ080/081 integration
+
+Fixed amended32canary questions are native-valid, unique and disjoint from
+80recovered exact prior/source question hashes; no question filtered. All32
+contradict the trained board in at least one public given, so simply emitting
+that board cannot solve them. Reference answers not consulted. Max initial
+prompt769tokens plus400output headroom. PanelSHA
+11b87e8b901978bcb331f2d126632517214e2a62c82221a47afd5baedd01cb2e.
+Existing neutral probe also makes evaluation-only100token post-ACT Scratchpad
+calls; these never train or reach parents, and their cost is reported separately.
+Seed0/salt15420, one wake,32episodes,48000per-condition token ceiling.
+
+First preparation helper stopped before question generation on a hash check:
+it compared whole wake2text to the approved42byte ACT span. v2 selects the
+exact audited0:42byte line and verifies its boundary/hash; source and panel
+unchanged. Both helper/error receipts preserved. No model inference or fit.
+
+Turing's four staged documents through SEQ080/081 integrated with175word
+abstract/TeX-reference/hash checks. Carrier is surface-only; preservation
+fails both gates; no completed-campaign claim. Their explicit historical
+launch/preflight cut is superseded operationally by SEQ082/currentSTATE.
+Canonical manuscript unchanged and no TeX/PDF build. Next staged update adds
+SEQ082 and actual writer result when available, not guessed completion.
