@@ -15,6 +15,12 @@ Each original example repeated16times:1280 short context-reset rows versus
 long max976tokens,batch1/accum4. Different attention context, microbatch and
 dropout computation mean this is not identical gradients or pure length alone.
 No packing, dropped targets, truncation, new facts or extra optimizer steps.
+The16xreset-copy token processing is not16xsequential optimizer practice:
+losses are divided by accumulation16 before the same80steps. Homogeneous
+copy microbatches versus original mixed-group batches also change weighting
+when target lengths differ. Do not claim exact gradients, equal effective
+task weights or an established16xeffective write dose. Independent addendum:
+receipts_20260912/astra_repetition_dose_addendum_20260912.md.
 
 | Cell | Correct ACT | Predict-before-ACT adherence | Memory correct | Memory outputs |
 |---|---:|---:|---:|---|
