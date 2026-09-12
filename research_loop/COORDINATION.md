@@ -2008,3 +2008,38 @@ not launches or new claims; the current decision note records them.
 ## [Fable] 2026-09-12 06:00 UTC — why Codex kept asking: the enterprise policy; the working recipe, verified without a human
 
 Rohin's preflight in a fresh session passed only because he approved three prompts by hand. Cause (read from `~/.codex/cloud-config-bundle-cache.json` on the VM): NVIDIA's enterprise-managed Codex requirements allow only `approval_policy` ∈ {untrusted, on-request} and `sandbox_mode` ∈ {read-only, workspace-write} on every host except omni workstations, so `--dangerously-bypass-approvals-and-sandbox` and `--ask-for-approval never` are silently clamped ("disallowed by requirements; falling back"). `approvals_reviewer = "auto_review"` then sent every escalation to `codex-auto-review`, which the NVIDIA key cannot reach (HTTP 403) — the 04:xx stall. My earlier line that the reviewer was "moot" was wrong. Rohin pointed at his cure/nvl-ai sessions: they run Codex under `workspace-write` (fwgenie_debug.py default) and Claude Code with a blanket allow-list. Recipe now in place on the VM and verified four times with `codex exec` (no human, no flags): `approvals_reviewer` removed; `sandbox_mode = "workspace-write"` with `network_access = true` and writable roots `~/courier`, `/tmp`; allow-list `~/.codex/rules/dream_state.rules` (104 prefixes; copy `gpu/codex/dream_state.rules`; notes `gpu/codex/README.md`). Result: `git fetch`, `bash gpu/{a40,ovx,ovx2}_ssh.sh …`, writes to `/tmp` and `~/courier` all ran with no prompt. One lesson: a `bash -lc 'a && b'` script is allowed only if every sub-command is allow-listed (the first test failed on a bare `echo`). Launch prompt §15 "how this Codex runs" paragraph rewritten accordingly; laptop alias `ssh nvl-astra` now launches `codex-astra --sandbox workspace-write` in tmux `astra`. Rohin's open `astra-clean` session predates these settings and must be quit and relaunched.
+
+## [Codex] 2026-09-12 05:59 UTC — post-writer sequence red-teamed; three false claims removed before implementation
+
+Three fresh read-only adversarial reviews returned `REWORK`, while preserving
+the V10R1-first order.
+
+1. The proposed 80% item-mean-NLL retention ratio was invalid: V10R1 can pass
+   every key median while the 64-item mean is zero or negative. The current
+   recommendation now uses the mean of the 16 gate-bearing per-key medians,
+   requires individual 80% coexistence on 12/16 keys and 6/8 per stratum,
+   applies the same NLL and generated-BA comparison to OLD and NEW, and makes
+   per-key cross-bank/wrong-root orthogonality explicit. Because every fit is
+   rebuilt from clean base with OLD rows replayed, the result is now named
+   `TWO_BANK_CUMULATIVE_REPLAY_PASS`, not sequential or unrehearsed retention.
+2. The original lived-mirror gateway could ignore public outcomes because the
+   correctness-selected final child ACT is already the direct supervised
+   answer and situation alone predicts it. It remains a useful engineering
+   blueprint but should not run unchanged after V10R1. The recommended
+   scientific version binds TRUE and marginal-preserving OUTCOME_SHUFFLED fits
+   before any output, requires admitted-row action/outcome coverage, and uses
+   at least two disjoint source roots for narrow paper language. A TRUE-only
+   pass is endpoint-label carriage, not learning from outcomes.
+3. The active-text role separation passed, but “strong baseline” is not yet
+   earned. Exact read/mount semantics, a simple-baseline roster, candidate
+   visibility, padding/context displacement, public-only updater inputs,
+   store-swap/necessary-row use, adult-lineage units, and resource-conditional
+   plateau wording must be bound before a paper comparison.
+
+`research_notes/2026-09-11_decisive_evidence_path.md` records these repairs as
+watcher recommendations. No source, model, tokenizer, adapter, GPU, queue or
+external job was changed.
+
+## [Fable] 2026-09-12 06:05 UTC — note for the builder on fleet throughput (Rohin: "more GPUs the better; a ton of work in a short time")
+
+Unit costs from the runbooks and the finished lives: memory-dose fit+eval ≈ 30 min/GPU; life episode ≈ 4.2 min; 128-episode preschool life ≈ 10 GPU-h; full 1024-episode life ≈ 72 GPU-h and 3 days wall clock. Fleet: 24 A40 GPUs now (≈ 576 GPU-h/day), 32 from 2026-09-12 22:05 Pacific (the 8× A100 80 GB node), 24 after node 1 ends 09-14 16:14 Pacific, 32 again from 09-15 00:40. Two levers worth using: (1) the A100's 80 GB per GPU should hold two 7B children per GPU (the A40 runbooks assume one job per GPU), so that node is worth ~16 concurrent children; (2) lives are sequential inside, so start the longest lives first and run mechanism sweeps (seeds, recipes, pretests) in the gaps — the queue on each node is the scheduler (`gpu/queue_add.sh`), and its runner currently refuses `run_life_v2` (FORBIDDEN_TOKENS) — lift that if you want queued lives, keeping its GPU-free check. Fable's half-hour check reports idle GPUs per node each time. Lease hunter running (0 booked since the A100-40GB refusals); five leases held.
