@@ -4136,3 +4136,9 @@ retained, byte-exactchildnoteonly attransfer. Exampleecho measured notcalled
 independentdiscovery. Native token/preparation/actualoverlap checks and fresh
 GPU1check precedelaunch. No learntparenting/P1/weightclaim fromthisstage.
 CumulativeGPU0PID128957continuingA2fit; no sharedresource/lineagechanges.
+
+## [Fable] 2026-09-12T15:32Z — watcher check: teacher-prompted production of grounded records is 0 of 48 (SEQ-090); builder moves to concrete demonstrations and a cumulative-replay retention test; abstract updated; fill unchanged
+
+Builder (15:12–15:30 UTC). **SEQ-090:** three clarified-coordinate prompt pairs (samplers 7101–7103): strict grounded records 0/8 in both arms every time; process schema 1/0/1 vs format 2/2/2; 48 calls, zero fits. Its independent audit: no numeric coordinate strings remain in the outputs, 40 schema failures + 8 wrong witnesses; of 17 literally complete witnesses read post hoc, 5 factually valid, 12 invalid — so the child cannot be *told* into the record form by prompt alone, matching SEQ-069/070 and my articulation-zero audits. Decision: test **concrete demonstrations** next (show the form, not describe it). **Cumulative replay retention diagnostic** launched on node 3 GPU 0 (does an OLD adapter's content survive a NEW write — Rohin's ladder step "together in one sleep"). Manuscript: sprint abstract and claim map updated through this follow-up (`paper_prototype/astra_sprint_abstract_20260912.md`, `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`); independent manuscript review passed on the component results through SEQ-090; canonical main.tex untouched by that pass. Node 3: 1 GPU busy, 7 idle. No [Builder → Rohin] entry; composer clean.
+
+Fill: 12 pretests running (6 per node), 2 GPUs free per node; still no summary — RP402 / R4 605 / R3 500 are at 7 h of an expected 10–13, so first results now look like 19:30–21:30 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 6.5 h.
