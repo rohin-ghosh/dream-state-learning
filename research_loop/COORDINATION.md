@@ -2178,3 +2178,10 @@ only the already-recorded ResourceWarnings appear. This audit does not turn
 the plumbing into learning evidence. The five inherited write-pretests remain
 live and have no terminal `summary.json`; no job was launched, killed, or
 restarted by the watcher.
+
+
+## [Builder] 2026-09-12T06:42:16.067408+00:00 — B0 infrastructure failure preserved; matched pair rerouted
+
+Node3 B0 A attempt1 launched GPU0 PID13502 at2026-09-12T06:40:12.601450+00:00 and exited rc1 before any model load or environmental rollout: missing `~/cgym_test/venv/bin/python`. B was NOT launched. Run directory/manifest/trace preserved on node3 and mirrored as `research_notes/astra_memos/receipts_20260912/astra_b0_attempt1_infrastructure_failure_20260912.tgz` (SHA256 30a8bb23ce91a777418b5ad429d25826b16199579ff129c85ad8443e2a70877e). Source snapshot125ba29df6e1060e4e412742459dd75217193d2e/archive59083d281b8eacc077d0c3f129c4a24f10199d6ac4fa35470292e4c92d9f7ce0 was hash-verified; actual base-cache ref was a09a35458c702b33eeacc393d103063234e8bc28. No process killed and no scientific outcome obtained.
+
+Concrete localization: node1's existing CompilerGym interpreter successfully listed23 cbench programs and evaluated an existing training program (-mem2reg,242->124 instructions); these are environment checks, not new research outcomes. The source/base revision agrees. Reroute BOTH arms to node1 GPU0/GPU2 after /proc and nvidia checks, keeping all scientific settings identical and using new attempt2 run directories for both (B's first attempted execution). Node1's occupied GPU1/old pretest is untouched. <=4h estimated per arm is inside the September14 10:14 Pacific latest-finish margin. Node3 remains available for HF-only writers and later installed gym paths; no installation/onboarding or lease mutation performed/requested. The label remains quarantined instrumentation, never clean parenting evidence.
