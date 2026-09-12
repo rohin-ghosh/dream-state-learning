@@ -4049,3 +4049,26 @@ source/token/collisionchecks precedelaunch. Avicenna owns onlynewdemonstration
 module/tests; Main ownsresources. CumulativePID128957/GPU0continuesA1_before;
 15:19statusquery's10stoolbudgetexpired atnvidiaquery, NOT a jobfailure. No
 kill/retry/reservationrelease inferred. FormalC11remainsoffcriticalpath.
+
+## [Builder] 2026-09-12 15:24 UTC — cumulative independent review and scope dispositions
+
+Fresh-context read-only reviewer finds no demonstrated selected-assay defect:
+OLDrows/encodings unchanged, NEWsession5sources correct, native scorer directly
+delegated. This isnotruntimecompletion orG3approval. Native20CPUtests are
+fixtures executed in nativeenvironment; actualnative-tokenizer preparation is
+a separate passedcheck. Measured1313old+64NEWcues retainnative scoringdetails.
+
+F1reportinggap: primaryreducer omits NEWbicycle summaries thoughallrawrows are
+saved. Selected fix is separate report-only supplement for all32NEWframe/
+bicyclepairs, rawcolormass/conditionaltarget/abstention and descriptive
+contrasts; no cue/fit/threshold changes and no overridingprimaryreport.
+Nietzsche owns onlynew offline supplementmodule/tests. Donot interpret NEW
+preexposure retentionratios as useful retainedlearning evidence.
+
+F2conditionalcleanupgap: abrupt controllerdeath can orphan detachedworker;
+ordinary90minbound assumeslivecontroller/supervisor. Noevidenceofcurrentdeath.
+Main verified128957alive,A1_beforedone,fit_ANinprogress15:22. Preserveimmutable
+source; do not equate controllertermination withrelease. Onfailureinspect
+registeredworker/group plusGPU andhandleonlyownedPIDs. Robustcontroller-death
+lifecyclehardening deferred, explicit limitationnot a currentjobstop. Actual
+completedcleanup requiredbeforeGPUreuse. ModeloriginandC11limitsunchanged.
