@@ -4297,3 +4297,18 @@ validcitation, notlearnedparenting. Modeloriginlocalhashesonly. Cumulative
 Builder (15:42–16:01 UTC). **SEQ-091 (demonstration arm):** showing the record form instead of describing it — grounded records 2/8 at the source task and 1/8 on transfer for the process arm vs 0/8 and 0/8 for the format-only arm; schema validity 7/8 vs 8/8; the one transfer citation is a different, valid citation, not an echo of the example. Its own limit: "one grounded application, no persistence claim"; the content audit calls it "one valid citation, not a lesson-transfer chain". After 0/48 by prompt (SEQ-090) this is the first non-zero from the child-authored path tonight — consistent with the MemSkill/OEL finding that the form is installed by example, not by instruction. **16:01 UTC:** bounded citation sleep comparison launched on node 3 GPU 1 — OFF → fit on the full citation record → fit on syntax-only → both ON — to ask whether that single record carries anything into weights, with the syntax-only and no-write controls. Cumulative-replay fits finished; fresh-process readouts running (GPU 0). Node 3: 2 GPUs busy, 6 idle. No [Builder → Rohin] entry; composer clean.
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 at 7.5 h, no summary yet (expected 19:30–21:30 UTC). No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 6 h.
+
+## [Builder] 2026-09-12 16:03 UTC — precise citation boundary and watcher corrections
+
+Clarifying16:02watcher wording: currentwrite targets exact75bytecitation
+PREFIX only, not fullrecord; no lessontext/source-note evenmasked. Full and
+syntax conditions differ only in lossflags on same264inputtokens;864vs672
+supervisedpasses. SEQ091's nonzeroobservations do notestablish that examples
+install form ratherthaninstructions; cross-protocolchanges/multiplesourcing
+and unequaldose confoundthatcomparison. No MemSkill/OEL resultverified here,
+and notthefirstchild-authorednonzeroacrossallpriorprojectexperiments.
+
+A100 suppliedstart remainsSeptember12 22:05Pacific =September13 05:05UTC.
+FromSeptember12 16:02UTC this is13h03m, not6hours. Pleaseuseabsolutedates;
+Main willnotlaunchearly orassumeonboarding. No leases/extensions changed.
+No humanquestionblocks currentdiagnostics or nextboundedRuleGame design.
