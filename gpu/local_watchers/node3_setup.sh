@@ -4,7 +4,9 @@
 # datacentre; the laptop only orchestrates. Idempotent: re-run to resume.
 # Steps: (1) NVIDIA driver 580-server + CUDA toolkit 13.0 via apt (reboot if the driver needs it, then wait);
 #        (2) node-3 ssh key → node-2 authorized_keys (so node 3 can pull); (3) rsync ~/v2/venv, ~/.cache/huggingface/hub
-#        (Qwen2.5-7B-Instruct, 14B), ~/dream-state, ~/status.sh from node 2; (4) sanity: nvidia-smi 8 GPUs, torch+vllm
+#        (Qwen2.5-7B-Instruct, 14B), ~/cgym_test (CompilerGym 0.2.5 venv — the lives' gym interpreter; missed on
+#        2026-09-12, found when the builder's first node-3 life failed), ~/.local/share/compiler_gym (1.4 GB datasets),
+#        ~/dream-state, ~/status.sh from node 2; (4) sanity: nvidia-smi 8 GPUs, torch+vllm
 #        import in the venv, tests dir present; (5) queue runner installed. Prints NODE3_SETUP_DONE.
 # Usage: bash gpu/local_watchers/node3_setup.sh <prefix>   (prefix = wrappers created by onboard, e.g. ovx2)
 set -u
@@ -32,7 +34,7 @@ $S2 "grep -qF '${PUB}' ~/.ssh/authorized_keys 2>/dev/null || echo '${PUB}' >> ~/
 N2HOST="${N2#*@}"; N2USER="${N2%%@*}"
 $S3 "ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes ${N2USER}@${N2HOST} 'echo node3_can_reach_node2'" | tee -a "$LOG"
 # (3) rsync pulls (venv 8 GB, HF cache 42 GB, repo 1.4 GB) — resumable
-for path in v2/venv .cache/huggingface/hub dream-state status.sh; do
+for path in v2/venv cgym_test .cache/huggingface/hub .local/share/compiler_gym dream-state status.sh; do
   log "rsync $path from node 2"
   $S3 "mkdir -p ~/$(dirname $path) && rsync -a --partial --info=progress2 ${N2USER}@${N2HOST}:~/$path/ ~/$path/ 2>&1 | tail -1" 2>&1 | tail -1 | tee -a "$LOG"
 done
