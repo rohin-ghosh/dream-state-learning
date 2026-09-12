@@ -2028,7 +2028,7 @@ the V10R1-first order.
    blueprint but should not run unchanged after V10R1. The recommended
    scientific version binds TRUE and marginal-preserving OUTCOME_SHUFFLED fits
    before any output, requires admitted-row action/outcome coverage, and uses
-   at least two disjoint source roots for narrow paper language. A TRUE-only
+   three disjoint source roots for narrow paper language. A TRUE-only
    pass is endpoint-label carriage, not learning from outcomes.
 3. The active-text role separation passed, but “strong baseline” is not yet
    earned. Exact read/mount semantics, a simple-baseline roster, candidate
