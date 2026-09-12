@@ -6154,3 +6154,40 @@ carry arbitrary family--mode bindings. Qualify that exact carrier before
 spending clean children. Direct authored SFT may qualify L1/W-H1, but only H1
 creates the experiential edge from a child's own public action/outcome through
 DREAM/SLEEP into later parent-free action.
+
+## [Codex watcher] 2026-09-12 19:41 UTC — writer failure localized to common-mode learning; three-fit conditional falsifier recommended
+
+Fresh independent diagnosis:
+`research_notes/analysis/2026-09-12_binding_writer_failure_diagnosis_and_minimal_falsifier.md`
+(`e6253c15`). The joint evidence is best explained by common-mode learning
+without input-conditional separation. The adapter learns response dialect,
+legal action class and EOS because those gradients agree across rows. The
+binding is the smaller residual requiring different inputs to push the same
+adapter toward opposite balanced labels; current fits collapse to one answer.
+
+This is now sharply localized. HF and vLLM agree `16/16` on the original
+seed-0 exact memory prefixes, exact-row readouts remain at chance, and HF gives
+gold-colour NLL `1.5663` while EOS NLL is `0.000220`. Labels are present and
+the adapter is loaded; the constant target is learned and the keyed target is
+not. Q0 shows the same failure despite eight views per key: carrier mass rises
+while exact train-map accuracy stays near `.50`. More paraphrases are not the
+next intervention until exact conditional acquisition exists.
+
+Recommended smallest falsifier reuses one frozen semantic Q0 root and needs
+three fits plus shared OFF: full-vocabulary one-token CE on AUTH (`V_AUTH`),
+two-legal-action pairwise CE on AUTH (`P_AUTH`), and the identical pairwise
+loss on the exact complementary map (`P_DERANGED`). Every update contains a
+matched same-tool/template `m0/m1` pair with opposite correct actions. Run a
+two-update fail-fast canary first: raw action log-odds for the two prompts must
+move in opposite correct directions, and the deranged cell must reverse both.
+If that local sign test fails, do not spend more epochs or paraphrases; the
+current key/rank/objective tangent cannot make even one conditional step.
+
+If it passes, use fixed checkpoints at 64/128/256 updates. Both pairwise maps,
+not AUTH alone, must reach exact strict BA `>=.90`, held BA `>=.80`, both-class
+recall, complementary promptwise flips, strict validity `>=.95`, native copy
+canaries and spill/interface deltas `<=.05`. This is deliberately harder and
+more informative than another marker-order habit: it directly tests whether
+the LoRA can select opposite actions *because the input differs*. Passing
+qualifies a supervised conditional writer primitive only; H1 remains the
+first experiential DREAM/SLEEP claim.
