@@ -4941,3 +4941,32 @@ Rohin read your 16:53 answer and replied (raw message 15, dictated; "talk to Ast
 2. **The test he wants first — level 1 as post-training:** open the loop (no model output), train the teaching corpus into a fresh rank-8 LoRA at the **highest plasticity**, possibly several passes, and measure **adherence** to the taught simple behaviours and **memory** of the taught content against an equal-token control and the frozen child; then move plasticity up and down (lr, epochs, repetition) and find the adherence you would want for level 1. Outcome: level-1 plasticity, what a good corpus looks like, and the mechanism verified — "needed yesterday". No compiler is needed for this: at level 1 no agent thoughts flow in. He agrees with your operational definition of a teaching corpus (skill definition, sourced worked examples, varied practice, contingent correction, logged dose, held-out check on correct decisions) as an overview, not a fixed definition. Your provenance work on bootstrap_v3 is the right prerequisite if that corpus is used; a purpose-written simple-behaviour corpus (bigger and deeper than needed, more repetition of the good things, more examples, coherent) is the alternative he describes. Still a suggestion: choose, plan it in the notebook with GPU-hours, and say what you would do.
 3. **His reading of level 3 now:** fine and measurable, but "a child in a high-school class" — without teaching how to learn it tests the mechanism without the parenting that is part of the mechanism; do not expect visible improvement from it; keep it, do not lead with it.
 Compile ideas he lists for level 2, for your reading list not for action: project experiences into a space before the LoRA (repeated patterns kept, contrast preserved, a focus mechanism decides what to project down, plasticity possibly in that layer, hypernetwork-like transfer to the LoRA); a per-episode compile so the sleep compile is organised by episode; rewriting may be the easiest thing that works but is expensive at scale; extraction and QA pairs "lose intelligence — who decides what to extract? the model should learn to ask itself questions" (his worry about TMEM/OEL-style extraction). Skill-learning metrics are downstream of level 2.
+
+## [Builder] 2026-09-12 17:22 UTC — SEQ-096 terminal; freshness audit accepted before panel reduction
+
+Relation surface result: original full JSON1/3, definition+full JSON3/3,
+definition+token2/3. All nine parse; token-only still fails absent prediction.
+Main native audit/full GPU0 release17:19:03.887863UTC. No parent/world/fit.
+Explicit definition resolves these two full-record failures; not a general
+skill ceiling or learned behavior. No more relation-token sweeps selected.
+SEQ096 memo/capsule preserves all raw outputs, costs and owned cleanup.
+
+Main accepts the fresh-panel exposure audit: selected1900071/72/73/75 occur
+in earlier correction-utility output evidence. This is prior research/model
+readout exposure, not evidence that these six inherited adapters were trained
+on them. Exact nonoverlap with the original48 remains true, but comprehensive
+freshness/untouched-confirmation claims are withdrawn. Before inspecting any
+panel outcome, Main chooses to finish all planned control pairs and preserve
+all16items as a mixed-exposure development reread. No favorable replacement,
+subsetting, new seed or original-root alteration. No immediate rerun selected:
+its value must compete with the fundamental teaching test Rohin discusses.
+A difference-of-gains alone will not count as useful transfer if useful ON
+fails to improve over its actual OFF. OFF disagreement will be reported and
+precludes attributing a tiny difference to a common-random causal comparison.
+Main uses original immutable source and will explicitly compare reducer/helper
+hash to preparation before reduction; no current-source endpoint substitution.
+The fuller exposure registry omission is Main's error, not an adapter failure.
+
+The manuscript094/095 update is integrated with both low-severity review fixes,
+241-word companion abstract with exact TeX parity; canonical abstract/tables/
+appendix preserved. No TeX compiler available, so no PDF build claimed.
