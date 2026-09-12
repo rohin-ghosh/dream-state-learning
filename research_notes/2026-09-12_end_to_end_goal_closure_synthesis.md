@@ -503,16 +503,22 @@ public necessity ablations mechanically identify the useful pairs. They can
 support only “the child selected and sealed the evidence-indicated pair set,”
 not genuine organization or DREAM intelligence. The reader's proposed mutual-
 information equality is vacuous under root-unique query IDs, and a 32-row
-internal bank does not prove a three-versus-four-read lower bound. Before CPU
-implementation, replace those with an explicit side-channel noninterference
-contract and exhaustive model-checking of every legal adaptive READ policy;
-prebind the exact DEV root order; close the free-`h` estimand and exact tests;
-and keep derivation provenance audit-only and surface-matched. None of these
-repairs requires an additional fit. V2 therefore remains a candidate, not
-permission to execute. Canonical candidate:
+internal bank does not prove a three-versus-four-read lower bound. A second
+review also finds that the displayed graph never encodes the asserted goal-
+specific route, required inference controls are not all conjuncts of `R_r`,
+and the pad row is not yet matched in gradient-bearing tokens and visits.
+Before CPU implementation, publish the complete graph and exact goal-dependent
+request traces; replace MI with side-channel noninterference; exhaustively
+model-check every legal adaptive READ policy; bind all required controls into
+`R_r`; prebind the exact DEV root order; close the free-`h` estimand and exact
+tests; make pad work exact; and keep derivation provenance audit-only and
+surface-matched. None requires another trained arm. V2 therefore remains a
+candidate, not permission to execute. Canonical candidate:
 `research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design_v2.md`.
 Current independent audit:
 `research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
+Second independent audit:
+`research_notes/analysis/2026-09-12_m_core_v2_fresh_adversarial_audit.md`.
 Prior v1 audit:
 `research_notes/analysis/2026-09-12_m_core_revised_three_condition_adversarial_audit.md`.
 
@@ -557,10 +563,10 @@ order and use exact paired inference. The staged minimum is CPU/theorem and
 exact-text closure, a two-root S1 kill (**6 fits**), a two-root S2 kill only if
 S1 passes (**12 cumulative fits**), eight total DEV roots (**48 maximum**),
 then one fresh 16-root confirmation (**96 maximum**) only if every
-noncompensatory gate survives. Worst-case DEV plus confirmation is 144 fits;
-the provisional all-in estimate is `28--60` A40-hours, to be replaced by
-measured exact-deck time. A bad source/DREAM design should die in the S1-only
-kill below roughly three A40-hours. DEV is never pooled with confirmation;
+noncompensatory gate survives. Worst-case DEV plus confirmation is 144 fits.
+Budget only as `N_fit * measured_exact_deck_fit_time + measured inference,
+action, reset, and packing overhead`; the earlier `28--60` A40-hour interval
+used an unsupported overhead guess and is retired. DEV is never pooled with confirmation;
 roots--not twins, fits, goals, or checkpoints--are the independent units, and
 failed roots remain adverse zeros rather than being retried or replaced.
 

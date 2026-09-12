@@ -23,12 +23,14 @@
   binding-matched source and DREAM derangements, separate truthful outcome
   carriers, and a matched old+pad second write. A fresh v2 review still says
   REWORK: its public ablations mechanically prescribe the DREAM pair, its
-  root-unique mutual-information gate is vacuous, and bank size alone does not
-  prove the claimed read-depth ceiling. The minimum repair narrows DREAM to an
-  evidence-indicated child selection, replaces MI with exact noninterference,
-  exhaustively model-checks legal reads, and freezes roots/estimands/tests. It
-  adds no fits. No M-core LoRA work begins until that repair and CPU/exact-text
-  closure pass, W0 passes, and the coexistence canary qualifies.
+  root-unique mutual-information gate is vacuous, bank size alone does not
+  prove the claimed read-depth ceiling, the graph omits the asserted goal-
+  specific route, and PAD work is not token/mask/visit matched. The minimum
+  repair narrows DREAM to evidence-indicated child selection, publishes exact
+  traces, replaces MI with noninterference, model-checks legal reads, matches
+  PAD work, and freezes roots/estimands/tests. It adds no fits. No M-core LoRA
+  work begins until that repair and CPU/exact-text closure pass, W0 passes, and
+  the coexistence canary qualifies.
 - **Parenting:** no useful lesson has qualified. Fitting historical
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham
@@ -57,8 +59,9 @@
 2. Pass one old/new cumulative coexistence canary.
 3. Close M-core v2 under fresh review and CPU/exact text, then run the two LoRA
    roots S1-first: 6 S1 fits, followed by 6 S2 fits only if both roots pass.
-   The maximum remains 48 DEV plus 96 confirmation fits; replace the
-   provisional `28--60` A40-hour range with exact measured deck time.
+   The maximum remains 48 DEV plus 96 confirmation fits. Budget only from
+   measured exact-deck fit time plus measured inference/action/reset overhead;
+   the provisional `28--60` A40-hour interval is retired.
 4. Qualify one actually useful visible lesson against matched sham and
    no-teacher before any parenting-derived fit.
 5. Raise clean childhood roots only after one-SLEEP parent-deleted persistence

@@ -71,11 +71,13 @@ now under fresh independent review and CPU/exact-text closure. The first v2
 review found one important limit: the public experiments themselves tell a
 competent solver which pair is useful. We may therefore claim that the child
 selected and sealed those evidence-indicated connections, but not that it
-invented an organization algorithm. The reader also needs a mechanical proof
-that no legal three-read strategy can recover four separate atoms. These are
-CPU/specification repairs and add no training runs. If they close, this is the
-smallest experiment that tests THINK, DREAM, and two SLEEP writes together
-rather than storage alone.
+invented an organization algorithm. The graph must explicitly encode why goal
+A and goal B need different routes, and the reader needs a mechanical proof
+that no legal three-read strategy can recover four separate atoms. The neutral
+second-sleep row must also contain exactly the same number of trained tokens as
+the truthful new row. These are CPU/specification repairs and add no training
+runs. If they close, this is the smallest experiment that tests THINK, DREAM,
+and two SLEEP writes together rather than storage alone.
 
 ### 3. Learning improves a life, not just one probe
 
