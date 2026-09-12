@@ -35,6 +35,12 @@ CPU checks must bind actual divergent-token index, exactly one live decision
 label, shifted causal logits, all row hashes and unchanged initialization.
 Main verifies native tokenizer/source/CPU receipts before launch.
 
+Instrumentation count clarified before launch,14:43UTC:384 additional
+dropout-off decision-prefix forwards accompany384 greedy generations. They
+measure the first-choice margin with only the shared response prefix supplied;
+greedy generation still starts from the unchanged original prompt. Neither
+forward sees the gold choice token. Count these forwards separately in cost.
+
 ## B. Grounded constraint-check production
 
 Question: can process coaching improve the child's production of a concrete

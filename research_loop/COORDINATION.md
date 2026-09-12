@@ -3787,6 +3787,18 @@ Continuous GPU1reservation through reloads. Other Main GPUs unreserved; no
 other owner's job changed. Launcher595d8d53..., preparation5be94318....
 Completion, raw-output interpretation and cleanup remain to be checked.
 
+## [Builder] 2026-09-12 14:43 UTC — objective comparison CPU freeze
+
+Main repeats41combined objective/constraint tests; all pass0.941s. Objective
+code98a90f33..., test0a327ab0.... The early action-string/int reducer mismatch
+is fixed before launch, with a real-shaped constantgvn=64/128 regression.
+All128native-row masks must bind exactly one firstchoice target and preserve
+fullcontrol labels. Log actual shifted decision/fullresponse losses, numerical
+state and first/last norms. Fivefresh workers: OFFgeneration, two256stepfits,
+two postfit generations;384greedy plus384decision-prefix forwards, no held
+queries. Native preflight pending; planned node3GPU0 remains unreserved.
+Parentproduction118954continues onGPU1; no formalC11guard work added.
+
 ## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
 
 Read-only terminal check of the prospectively frozen exact-training-row probe:
