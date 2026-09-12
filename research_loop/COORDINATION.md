@@ -5262,3 +5262,55 @@ Separate16originaltrainingpromptmemorydiagnostic beingimplemented to distinguish
 acquisition fromparaphrasetransfer; no confirmation/no endpointreplacement.
 Manuscript096/097 six-file reviewPASS at205wordcompanionabstract/parity;
 canonicalabstract/tables/appendixpreserved, TeXtoolsabsent, collaboratorUNSENT.
+## [Codex watcher] 2026-09-12 17:43 UTC — elementary corpus implementation passes CPU checks; current three-arm design is a scout, not yet a decisive plasticity test
+
+Independent local execution reproduces all 11 focused CPU tests for
+`fundamental_teaching_corpus.py`. The source/derivation split, disjoint
+operand pairs, fresh memory paraphrases, deterministic bytes, and refusal to
+overwrite are sound. The native audit correctly found the original control
+targets token-unmatched; `COMPUTED` was added before any model outcome and
+still awaits the full rendered/loss/collation equality check.
+
+Scientific caution before a GPU launch: the proposed task-only control is not
+an equal-marginal wrong-binding control. With addition only, a global
+`PREDICT:` ritual plus Qwen's pretrained arithmetic can pass the adherence
+readout without demonstrating input-selective writing. The 16 device/color
+facts likewise lack a deranged-binding arm, and the unknown-device rule is not
+actually present in the training rows, so unknown accuracy is a scope
+diagnostic rather than taught-content retention. One seed at LR 3e-4 x four
+epochs is a scout, not a plasticity result.
+
+Recommendation: bind launch first to the already registered two-input/opposite-
+action sign canary on this exact scorer/surface. If the present three-arm cell
+runs afterward, label it a favorable global-habit-plus-fact-storage scout. For
+a decisive level-1 comparison, add complementary condition-specific targets
+(for example matched ADD/SUB modes over the same operand support) and a
+device/color permutation preserving target marginals; fix rank/dose/template,
+then cross the predeclared LR ladder over three optimizer seeds without reading
+the sealed confirmation prompts. This keeps one unified adapter, consistent
+with Rohin's latest steer; it changes the controls, not the architecture.
+
+## [Codex watcher] 2026-09-12 17:45 UTC — independent level-1 red team complete; stage the simple scout and decisive binding test separately
+
+Fresh red-team memo `85fe9868` agrees that the current 80-row implementation
+is a useful bounded scout after native parity and the exact-surface writer
+canary, but it cannot by itself show conditional teaching: addition-only can
+be solved by a global `PREDICT:` habit plus Qwen's pretrained arithmetic, and
+the colour bank has no binding-preserving negative control. If Main runs that
+cell, report only global habit carriage plus narrow fact storage and preserve
+the untouched confirmation split.
+
+Do not make the first scout carry every causal burden. The predeclared
+successor should use the same operand pairs under two nonce modes requiring
+opposite legal actions (ADD versus SUB) and a colour permutation preserving
+all target marginals. Hold rank, dose, templates and optimizer fixed; compare
+LR `{3e-4,1e-4}` over seeds `{0,1,2}`; expand from the four-adapter seed-0
+sentinel only when own-map acquisition, redirection and interface checks pass.
+Open sealed confirmation only after expansion. This is twelve adapters at
+most, with terminal paths of 4/8/12 and a 90/180/270 aggregate A40-minute cap.
+It remains an open-loop positive control, not DREAM/SLEEP/H1/H2. Full protocol:
+`research_notes/analysis/2026-09-12_level1_teaching_corpus_plasticity_redteam_protocol.md`.
+
+## [Rohin — STEER, relayed verbatim by Fable] 2026-09-12T17:54Z — level 1 on the GPUs now
+
+Rohin, raw message 17 (dictated; full text in `THESIS_RAW_ROHIN_2026-09-11.md`), the operative sentences: "I wanna know what's happening on the GPUs. Are you getting this level one testing done? … the whole compilation thing, let's not think about it yet … that's the issue with starting level three and grading level three when we don't even have one or two. So yeah, I wanna see those level ones happening on the GPU." — "We give it this tiny tiny tiny perfect corpus, so just one behaviour, and it's working. How well does it work over time — leaving the LoRA unfrozen but we're gonna reduce plasticity, see how long does that last; I'm assuming there's gonna be some fading … that'll tell us a lot about plasticity, so we should document plasticity." — "there's gonna need to be some variants … can we test on super long sequences of tons of repetition and then test down the line how much adherence." — "frame this as either instructions or model thoughts, it's up to us to decide." — On the gate: "I don't like the idea of a gate … maybe we need it right now … it's temporary, I don't mind it right now, but it's not something long-term." — On one habit: "for now one is probably fine." — "all these plasticity measurements are actually pretty important for our paper, so there should be some rigour … not saying be rigorous right now, but eventually." Builder: your 17:25 elementary block (predict-before-act, 64 addition demonstrations + 16 recall items, matched task-only and OFF controls, rank 8 / 4 epochs / LR 3e-4, ≤90 A40-min) is the level-1 block he means; he wants it running, with two additions — a repetition/sequence-length variant, and a fading arm: after the write, continue sleeps at reduced plasticity with no new teaching and re-probe adherence at intervals. Node 3 has eight free GPUs.
