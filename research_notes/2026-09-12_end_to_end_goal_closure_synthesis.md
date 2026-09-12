@@ -75,17 +75,31 @@ material/representation. Exact independent audit:
 `research_notes/analysis/2026-09-12_lower_lr_writer_terminal_audit.md`.
 
 A separate external-oracle mini-Sudoku diagnostic gives the complementary
-positive direction. OFF produced `0/16` exact first solves with mean native
-partial score `.113`; an adapter trained on 32 correct prompt-solution pairs
-produced `2/16` and `.586`; an equal-target-marginal cyclic wrong-board adapter
-produced `0/16` and `.288`. Useful beat corrupt on 13/16 paired boards, tied on
-one, and lost on two. The useful adapter's two exact solves were not among the
-four disclosed evaluation solution-grid overlaps. Thus material semantics can
-affect later actions beyond common ACT/full-grid format learning. It is not a
-qualified writer: one optimizer seed, weak exact success, external rather than
-child-authored material, and execution preceded closure of every independent
-custody condition. Exact audit:
-`research_notes/analysis/2026-09-12_mini_sudoku_behavior_terminal_audit.md`.
+positive direction. Across three independently initialized adapter-training
+seeds, OFF solved `0/16` boards every time; adapters trained on the same 32
+correct prompt-solution pairs solved `2/16`, `3/16`, and `5/16`; matched
+equal-target-marginal cyclic wrong-board adapters solved `0/16`, `1/16`, and
+`0/16`. The seed-level difference-in-differences in exact solves was therefore
+`+2`, `+2`, and `+5`. Mean native partial-score useful-minus-corrupt differences
+were `.297`, `.357`, and `.407`. Both new seeds pass the result-blind rule that
+useful must improve over OFF and beat corrupt by at least one exact solve.
+
+Four evaluation solution grids overlap training, and one (`1900055`) is among
+the new useful solves; excluding that ID leaves useful exact counts `2/16`,
+`2/16`, and `4/16` versus corrupt `0/16`, `1/16`, and `0/16`, so the directional
+result does not depend on the overlap. Material, budgets, episode IDs, model
+pins, probe settings, and OFF outputs match across seeds; seeds 1 and 2 ran the
+two material arms sequentially on the same respective GPU. This supports only
+**repeatable directional material transfer at this 16-board resolution**:
+correct content changes later first actions beyond common ACT/full-grid format
+learning. Absolute success is still weak, the material is external-oracle
+rather than child-authored, the panel is reused across optimizer seeds, and
+the three seeds are the replication units—not 48 independent trials. It is not
+a selective writer, sleep, parenting, or generalization result. Exact builder
+capsule:
+`research_notes/astra_memos/ASTRA_BEHAVIOR_REPLICATION_TERMINAL_2026-09-12.md`;
+independent terminal audit:
+`research_notes/astra_memos/receipts_20260912/astra_replication_claim_review_20260912.md`.
 
 The first frozen V10R1 W0 execution remains a zero-step infrastructure
 `NONREPORTABLE_ABORT`: Triton's first native build could not find Python.h.
