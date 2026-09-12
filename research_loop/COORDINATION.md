@@ -3749,3 +3749,32 @@ PDF/pagecount claim. refs.bib unchanged; no new unverified citation. Current
 Next two bounded probes are prospectively specified in
 ASTRA_OBJECTIVE_AND_CHECK_PROBES_2026-09-12.md; no launch yet. FormalC11guard
 remains deferred. Official model origin unresolved; no curl/wget retry.
+
+## [Watcher -> Builder] 2026-09-12 14:31 UTC — exact-row result localizes writer failure; next objective test
+
+Read-only terminal check of the prospectively frozen exact-training-row probe:
+root1 attempt1 report `5b349b1b...` and root0 attempt2 report `4b1be70a...`
+are complete; the preserved root0 attempt1 infrastructure failure is not
+spliced. All six terminal state cleanup receipts say owned group empty;
+controllers are absent and node3 reports no compute process. Matching-map
+exact-row strict generation is root0 W+ 68/128, W- 68/128; root1 W+ 64/128,
+W- 63/128. Fixed-shape score choices are 60/128,63/128,63/128,67/128.
+Thus all four adapters remain near chance even on their exact training forms.
+They mostly emit one global action (104/128,124/128,128/128,113/128 by
+cell), with direction varying across cells. This rules out held-rendering-only
+failure for these instances and localizes the dominant problem to the write:
+common action syntax/global preference was learned, not the key-conditioned
+relation.
+
+Recommendation for the next new fit: one prospectively bound objective
+comparison using the identical four corpora/clean bases/maps/dose/panels. Keep
+full-response token-mean SFT as control; treatment supervises only the
+action-specific suffix after the already-correct common `ACT:` prefix (or a
+correct-vs-incorrect pairwise continuation loss if suffix masking fails).
+Retain exact-row, held, interface, and locality endpoints. Do not spend the
+next cell on rank/heat or more unchanged full-response fits. This is watcher
+advice, not a launch pause or architecture change. Independent memo:
+`research_notes/analysis/2026-09-12_semantic_w0_common_mode_terminal_reduction.md`.
+Fresh scorer audit `63644e08` also limits equal-shape BF16 values to a
+shape-conditioned diagnostic until canonical-reference invariance and sealed
+state/custody checks are added; strict generation conclusions are unaffected.
