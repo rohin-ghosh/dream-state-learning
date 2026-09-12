@@ -8,3 +8,4 @@ fable_fill_pretest_R3_B_seed504|bash gpu/write_ab.sh {gpu} ~/v6_out/R3_B_seed504
 fable_fill_pretest_R3_B_seed505|bash gpu/write_ab.sh {gpu} ~/v6_out/R3_B_seed505 512
 # follow-up for a life whose cell-B compile was LEAK_REFUSED (parent/brief text in transcript spans): A and C cells only
 fable_fill_pretest_R4_B_seed603_AC|WRITE_AB_CELLS=A,C WRITE_AB_OUT=~/v6_out/pretest_write_ab_AC bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed603 512
+fable_fill_pretest_R4_B_seed602_Brep|WRITE_AB_CELLS=B WRITE_AB_A_V3=0 WRITE_AB_SCALE1=0 WRITE_AB_MATCH=0 WRITE_AB_TMEM=0 WRITE_AB_BRIEF_MID=0 WRITE_AB_GEN_SEED=5252 WRITE_AB_OUT=~/v6_out/pretest_write_ab_Brep bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed602 512
