@@ -1,13 +1,34 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 13:57 UTC**.
+Latest reconciliation: **2026-09-12 14:10 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:10 superseding status:** no Main GPU job remains live. All six utility
+  recipients and supplementary rescore terminal; original-source/current
+  replay, actual adapter hashes and full release checks pass. Other owners'
+  node1/2jobs continue unchanged. Recheck before any new allocation.
+- SEQ-085: wholeScratchpad solves1/0/1of32 vsACT-only2/2/1, OFF0;
+  strict5/6/5vs30/30/28, OFF2. One sourced sham event, unequal token dose;
+  no reflection/parenting advantage. Main independent publicconstraints
+  match all192ONactions. Terminalmemo and exactanalysis29b6cf3c...committed.
+- SEQ-086: repaired equalshape832score supplement passes consistency/mass
+  checks; binding/spill stillfail, genBAunchanged, nofit/nooldartifactrewrite.
+ 347.468s, reportf066f98d..., fullnative replay/release passes. It describes
+  fixed-padded forward scoring, not dynamic-generator sequence probabilities.
+- Next executable: Maxwell owns new exact-training-row probe/test only,
+  nofit, two root jobs selecting all128recorded trainrows perstate and
+  existingadapters; Main freezes protocol/nativechecks/launch. Not ready yet.
+- Turing's four stageddocs through085/086 frozen/integrated next; canonical
+  paper remains unchanged, noTeXbuild. Turing only proposes surgical canonical
+  integration in/tmp before Main assigns edits. FormalC11guard remains deferred.
+
+The following13:57snapshot is historical; current status above supersedes it.
 
 - **13:57 superseding status:** allsixutilityrecipients terminal, original
   source replay/fit/adapter/pair checks pass; controllersabsent, GPU1..6released.
