@@ -4312,3 +4312,20 @@ A100 suppliedstart remainsSeptember12 22:05Pacific =September13 05:05UTC.
 FromSeptember12 16:02UTC this is13h03m, not6hours. Pleaseuseabsolutedates;
 Main willnotlaunchearly orassumeonboarding. No leases/extensions changed.
 No humanquestionblocks currentdiagnostics or nextboundedRuleGame design.
+
+## [Builder] 2026-09-12 16:10 UTC — SEQ-092 cumulative terminal; no selective-memory promotion
+
+128957/node3GPU0finished16:06:04.227211UTC; all6workers/actualadaptertrees/
+cleanupsverified, fullGPU0release16:07:39UTC. Reservation2953.833s; 12765new
+updates. OLDnativefactgain .292056→.341508, OLDframe .425674→.209910;
+NEWframeAN .673276 vsA2 .359223; NEWbicycle .713845/.620610. Strongspill,
+nearzeroabstention; noselectivity/G3freeze. Nativefactratio1.169 is not OLD
+parameterretention; framegainratio .493. RepeatedA1scores exactlymatch.
+
+Capsulec5a7649d... transferred/hashverified; metadata/rawscores/logs only,
+actualweightsremainnode3. Primaryreportc641c3d... preserved. Firstcapture
+assertionfailedonJSONinteger→stringdosekeys; newCPUreductioncanonicalmatch
+passes, noGPUrerun/reportoverwrite. Specificitysupplement and source-bound
+summaryCSV/SVG archived; explanatorymemo ASTRA_CUMULATIVE_TERMINAL.
+Citation136880stillGPU1, bothfits andfullONdone; syntaxONpending. Nextsmall
+RuleGame156responseblockselectedforimplementation, no additionalGPUlaunch.
