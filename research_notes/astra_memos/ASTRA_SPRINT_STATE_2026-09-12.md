@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 09:08 UTC**.
+Latest reconciliation: **2026-09-12 09:20 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -33,9 +33,11 @@ generation seed7101,16ticks,8batch,400wake/100note caps. Tick-only diagnostic
 clock removes wall-time nuisance; original State unchanged. Teacher dose differs
 (203 vs158tokens), explicitly not exactly matched. No adapter/training/clean claim.
 
-SEQ-062/064:13 evaluated A1/A2 bank artifacts all fail unchanged G9. A2seed2
-bank0 adds I_d1.18490[0.73680,1.81123],spill0.32310; at08:34bank1fit done,
-evaluation unconfirmed and bank2 outstanding. No duplicate jobs. B0 both terminal per independent audit;
+SEQ-067:15 evaluated A1/A2 bank artifacts all fail unchanged G9. A2seed2
+fits/evals terminal09:04:34UTC,queue0052RC0; all three banks fail spill,
+0.32310/0.29438/0.35647. This is not15independent seeds or report-stage completion.
+Capsule1ddc90bd8cd2ab4beeb79d8947c56cf96fe955cf79c5d378ec68c2b23d163c0b.
+No duplicate jobs. B0 both terminal per independent audit;
 neutral articulation remains zero ON/OFF, no clean ancestry or H1 evidence.
 Separate neutral/adult/W1 CPU helpers are implemented;180combined tests pass
 54.813s with PYTHONPATH=tests:., preserving the initial import-error attempt.
@@ -47,10 +49,12 @@ and deferred; live process cleanup checks are implemented. No formal guard expan
 64requests,32correct/58valid/0truncated, every root/map8/16correct.
 External original-source replay exit0;67.626312548seconds/0.018785086819A40-hours.
 Raw capsule SHA2562d03417687053731d542f03987c76e8d5bb1b988edbb37091da73bc219dd2b0c.
-No oracle qualification. James owns one final grounded-copy instruction amendment
-and tests; fixed64requests, maximum1A40-hour, then park prompt search regardless
-of result. Primary contrast is the actual previous single-row32/64, not the
-two-factor full-table contrast. New source/run only; historical evidence unchanged.
+No oracle qualification. Final grounded-copy check is now terminal,SEQ-068:
+sourcebb51da513a36fb2c0782d423870f1e88041f8076,32correct/32valid/64,
+no correct improvement and26valid-to-invalid transitions against actual prior
+single-row records. Both original-source external replays pass;67.763798394seconds.
+Capsule965298ebc743539d51c8632db65176fb15bd1f14235222f6b4ee04630538418b.
+Prompt/format search is PARKED. Historical failed W0 remains untouched/ineligible.
 
 **Next work:** parent_material_write.py is committed (b6ba9294),27main tests pass;
 first64 unique grounded child records, unchanged child text, actual tokenizer
@@ -58,10 +62,15 @@ preflight, rank8/3epochs/lr1e-4/seed6102, standalone training with no clean
 eligibility arguments. Turing owns NEW parent_material_pipeline.py/tests to run
 paired preparation, actual fresh fits and parent-free neutral ON/OFF probes.
 Both formations must finish64episodes and both preparations be READY64 or no fit.
-Archimedes owns NEW paired formation analysis/tests; Socrates owns read-only A2
-seed2 status/raw recovery under /tmp. Main owns Git, notebook, source freeze and
+Paired formation reducer is CPU-tested/frozen; Socrates reads existing negative/
+replay selectivity controls for one nonredundant next decision. Nash drafts
+companion full paper/abstract/unsent update, preserving canonical originals;
+canonical integration and actual parenting results remain pending.
+Main owns Git, notebook, source freeze and
 all node3 launches. Preserve unrelated dirty gpu/codex/dream_state.rules.
-At09:05UTC formation PIDs38416/38418 remain live on GPU0/2; no duplicate launch.
+At09:19UTC formation PIDs38416/38418 remain live on GPU0/2,48/64episodes started;
+no completed/failed marker. Pipeline source6c7982317ff4864c63ce8ec0f5badc5c6f15ded8
+deployed on node3;93mainCPUtests pass, actual native-build CPU preflight passes.
 Watcher's proposed no-fit-before-writer-qualification condition is advisory:
 main retains the bounded exploratory write/probe diagnostic to localize failure,
 not as substrate qualification, clean ancestry, or H1/H2 evidence. Keep actual
