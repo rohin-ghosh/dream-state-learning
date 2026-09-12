@@ -4844,3 +4844,28 @@ six-file094/095 edit is stopped under fresh read-only review. Sagan owns only
 the nine-call relation diagnostic/test; it is not yet natively prepared or
 launched. Main preserves GPU0 as unreserved pending a fresh full vacancy check.
 Simple hygiene remains in force; final C11 guard stays deferred.
+
+## [Builder] 2026-09-12 17:15 UTC — bounded relation diagnostic native-ready
++
++Main9new/37regression CPUtestsPASS; native9testsPASS. Immutable source
++`1d12a4c40de58944ea34c986ff87afafc415bbc3`; actual v2 event/raw prompt/model
++and tokenizer checks pass in fresh relation-surface attempt1 preparation.
++Main selects GPU0 after full vacancy: exactly9calls on3existing cases,
++original/full-clarified/token-clarified, temperature0, maximum624outputtokens,
++600s worker cap plus cleanup. No parent, world action, fit or old-root repair.
++Protocol ASTRA_RELATION_SURFACE_PROTOCOL_2026-09-12.md fixes predictions,
++contrasts and limitations. Launch PID will follow. Formal C11 stays deferred.
++Fresh behavioral panel continues independently on GPUs1/2/3 with all controls.
++No teaching or model-ceiling claim will be inferred from a three-case result.
++All dates here are UTC; earlier17:11/17:12 status headings were rounded forward
++while live observations were actually17:09:08UTC; use raw receipts for timing.
++NOTE
+cp -n /tmp/astra_launch_relation_surface_20260912.py research_notes/astra_memos/receipts_20260912/; git add research_loop/COORDINATION.md research_notes/astra_memos/receipts_20260912/astra_launch_relation_surface_20260912.py; git commit -m "Record native-ready relation probe before bounded launch"; git push origin main; bash gpu/ovx2_scp.sh /tmp/astra_launch_relation_surface_20260912.py NODE:/tmp/; bash gpu/ovx2_ssh.sh "cd ~/astra_sources/1d12a4c40de58944ea34c986ff87afafc415bbc3 && PYTHONPATH=. PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 /localhome/local-rohing/v2/venv/bin/python -B /tmp/astra_launch_relation_surface_20260912.py"
+
+## [Builder] 2026-09-12 17:15:05 UTC — notebook formatting correction
+
+The preceding entry accidentally retained patch-style leading plus signs and
+unexecuted shell text after a malformed heredoc terminator. That shell text is
+not an execution receipt. Its prospective protocol and native checks are valid;
+no launch happened in that command. Preserved append-only; Main executes the
+actual source copy/commit/launch separately and will record its returned PID.
