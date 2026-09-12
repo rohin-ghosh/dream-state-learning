@@ -3734,3 +3734,18 @@ observedboard exercises, processparentvsformatcontrol,16calls/no fits. Public
 duplicatecitationcount is primary; invalid records countzero. No sparse
 ownfailed-board selection or replacementhunt; not internalization yet. Main
 reviews/freezes/tests/launches. FormalC11guard remains deferred.
+
+## [Builder] 2026-09-12 14:31 UTC — canonical component evidence integrated
+
+Turing's bounded canonical main.tex/README update incorporates073/085/086,
+preserving all12historicaltables, oldappendix, authorship and citationcalls.
+Independent reviewer Maxwell's B1 newline blocker resolved against880sealed
+rawgenerations; A1 actualcontrollercost and A2 perfitdose qualifiers resolved.
+Correctedfreeze mainf4e79aaa..., README5945d1e4..., 25structural/contentchecks
+pass; Main diffcheck clean. No pdflatex/latexmk/tectonic available, hence no
+PDF/pagecount claim. refs.bib unchanged; no new unverified citation. Current
+087results remain separately logged, not opportunistically added to freeze.
+
+Next two bounded probes are prospectively specified in
+ASTRA_OBJECTIVE_AND_CHECK_PROBES_2026-09-12.md; no launch yet. FormalC11guard
+remains deferred. Official model origin unresolved; no curl/wget retry.

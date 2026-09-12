@@ -2,6 +2,20 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
+**Bounded component-evidence update (2026-09-12, through SEQ-086).**
+The canonical manuscript now adds separate controlled diagnostics SEQ-073,
+SEQ-085 and SEQ-086; it does not change the historical CompilerGym tables,
+contributions, v1 life recipe, authorship or bibliography. The approved abstract
+compresses historical detail that remains in Results. Oracle mini-Sudoku
+material shows a small three-optimizer-seed useful/wrong-board contrast;
+one selected child's whole Scratchpad does not beat its own ACT-only replay;
+equal-shape supplementary scoring leaves the semantic writer inconclusive.
+H1/H2 remain hypotheses, not achieved developmental or parenting results.
+No campaign completion, selective-memory qualification or clean ancestry is
+claimed. The new evidence manifest below distinguishes native generations
+from fixed padded-forward likelihoods, and records token-dose and overlap
+confounds. Later diagnostics are outside this update.
+
 **Terminal evidence refresh (2026-09-11; supersedes stale counts below).**
 The primary text-versus-weights diagnostic is now the post-hoc, common-random,
 disjoint-panel 2x2 over nine coherent R2 lives: frozen `F=.2528`, adapter
@@ -20,7 +34,7 @@ destroyed the action interface in 3/3 and `C_tmem` was harmful in 3/3. See
 
 **Revision v3 (2026-09-10, meta-review fix pass; verdict and surviving findings in `research_notes/REVIEW_PAPER_FABLE_2026-09-10.md`).** Text-only fixes to every surviving fatal/major finding of the five-lens review of v2: (1) the headline count "7/9 life means ≥ +0.02, 2/9 negative" was a miscount inherited from the SEQ-001 prose and is now **6/9 ≥ +0.02, 3/9 below zero**, with the life-level estimate **mean of life means +0.019 (SD 0.033, SE 0.011, n = 9)** in the abstract, §1 and §4.2 (dated erratum posted to COORDINATION.md and EVIDENCE_TABLES.md); (2) TMEM is named on the first page with the delta paragraph from `research_notes/related_work/tmem_positioning_2026-09-10.md`, the trichotomy is given two more axes (timescale; who decides the write), §6 has one clause per nearest system (TMEM, PEAM, EVAF, LEAFE, Early Experience, Auto-Dreamer, consolidation collapse 2605.12978, Behrouz 2026 moved from App. J), and the six-row delta table is App. K; (3) the false "not measured" for per-pair harm episodes is replaced by the episodes read from the SEQ-001 JSON (first 384, last 1,024; last probe pair harmful in 3/9), and the old-writer seed-0 full life (16/16 positive) is stated; (4) recipe lock-in is scoped to the gated lives where adapter-ON values were tabulated, with "ungated adapter-on values not measured" and the R2-only fully-locked fractions; (5) the per-program table and the M12 ritual numbers are labelled with their true pool (all arms per machine) and R2-only ritual values are given; (6) the parent-text firewall sentence, the leak-scan sentence and the "retrieval held constant" sentence are corrected to what the code does; (7) 15 of 17 TODO citation keys are resolved (7 copied from the sibling manuscript's bib, 8 canonical references marked VERIFY), two remain (Auto-Dreamer, 2605.12978); (8) the freeze footnote, "protocol reviewer", "our evidence sources" and main-text calendar dates are gone; the abstract glosses ritual, parenting and -Oz and is ≤ 200 words; Table 1 → App. F and Table 3 → App. D to hold the 9-page budget; contribution 1 is the reusable protocol and the parenting null is out of the list. Not fixable by text (still open; see the auditor's brief): the text-memory / recipe-in-context control (GPU), figures, R2 adapter-ON tabulation and held-adapter replicate tally (node probe files), the corpus-row/brief overlap count (node ledgers), a real compile against the ICLR kit.
 
-**What the paper is.** The CompilerGym writer-characterization paper (ruling per `research_notes/REVIEW_HARSH_2026-09-10.md` F4): a frozen Qwen2.5-7B-Instruct child plus a per-life rank-8 LoRA that the harness retrains from the frozen model every 32 episodes from a success-filtered, cumulative text record of the agent's own thinking (`compile_sleep` + v1 bare-text trainer), measured with a paired ON/OFF probe at every 64th episode on 8 programs held out by identifier. Results: behaviour change in ungated lives, late-life collapse invisible to the format canary, a behavioural gate's catches (post-selection counts), recipe lock-in (0.4878 = birth recipe; -Oz 0.522), storage vs extraction (reading), ritual onset. Parenting is observational; classroom lineages are an exploratory appendix; bootstrap/schooling corpora, clean child, PCFL, 7-day child and a text-memory baseline are future work. Every empirical statement is a cell count or a measured mean with its noise band, taken from `research_notes/EVIDENCE_TABLES.md` (E, including its 2026-09-10 addenda) or a dated entry in `research_loop/COORDINATION.md` (C); where the two disagree, the later dated COORDINATION entry (SEQ-001 < SEQ-002 < SEQ-003, then the M5 entry) wins and the discrepancy is listed below. Design constants are read from the harness code and labelled as such. Anything not in those sources is written as "not measured".
+**What the paper is.** The CompilerGym writer-characterization paper (ruling per `research_notes/REVIEW_HARSH_2026-09-10.md` F4): a frozen Qwen2.5-7B-Instruct child plus a per-life rank-8 LoRA that the harness retrains from the frozen model every 32 episodes from a success-filtered, cumulative text record of the agent's own thinking (`compile_sleep` + v1 bare-text trainer), measured with a paired ON/OFF probe at every 64th episode on 8 programs held out by identifier. Results: behaviour change in ungated lives, late-life collapse invisible to the format canary, a behavioural gate's catches (post-selection counts), recipe lock-in (0.4878 = birth recipe; -Oz 0.522), storage vs extraction (reading), ritual onset. Parenting is observational; classroom lineages are an exploratory appendix; bootstrap/schooling corpora, clean child, PCFL, 7-day child and a text-memory baseline are future work. Every empirical statement is a cell count or a measured mean with its noise band, taken from `research_notes/EVIDENCE_TABLES.md` (E, including its 2026-09-10 addenda) or a dated entry in `research_loop/COORDINATION.md` (C); where the two disagree, the later dated COORDINATION entry (SEQ-001 < SEQ-002 < SEQ-003, then the M5 entry) wins and the discrepancy is listed below. Design constants are read from the harness code and labelled as such. Anything not in those sources is written as "not measured". The separately labelled September 12 component assays extend this characterization, not the historical lives or the thesis: their terminal memos and hashed reductions are backed by dated SEQ-073/085/086 notebook entries. The paper-grade developmental evidence path remains incomplete; deferred C11 work is not reinstated as a launch-approval framework.
 
 **Revision v2 (2026-09-10, after the harsh review).** The main text was cut from ~12,000 words to the length reported under *Length* below by moving detail into appendices (nothing with a number was deleted without a home; see *Section map*). Every FATAL/MAJOR item is either satisfied or disclosed in the text:
 
@@ -62,6 +76,15 @@ destroyed the action interface in 3/3 and `C_tmem` was harmful in 3/3. See
 
 **Section map (v1 → v2).** The number→source table below keeps its v1 "Where it appears" column; read it through this map. §2.1–2.4 → paragraphs of §2 (THINK, DREAM, SLEEP, PARENTING). §3 unchanged, minus the "Certification bar" and "Classroom exam" paragraphs (→ §4.2 one sentence; App. G). §4.1 writer (recipe screen → App. F). §4.2 safety (dated snapshots and the seed-0/seed-4 canary rates → App. D and App. B). §4.3 storage + recipe lock-in (the M12 ON-vs-OFF ledger numbers now appear only in §4.4). §4.4 ritual + parenting (classroom lineage narrative, "Noise at the tolerance; parent size" → App. G). §4.5 bootstrap → §5 "Future work, not results" and App. H. §5 Discussion (rows-per-sleep measurement → App. D only). §6 Related work ("Sleep consolidation" paragraph → App. J). Appendices: A prompts (+ restart/prompt-version timeline), B gates (+ disjoint-panel definition, seed-0/4 canary rates), C ritual/echo definitions, D per-life detail and snapshots, **E per-program table (new)**, **F trainers as run + offline writer screens (new)**, G classroom lineages (was E), H corpus compositions (was F), I infrastructure and versions (was G), **J sleep-consolidation related work (new)**. Figures 1–4 placeholders → one Figure 1 placeholder.
 
+**September 12 addition (preserves the historical map above).** Measurement adds
+“Separate component assays”; Results adds `sec:components` after the existing
+controls and before Discussion, with `tab:components`. A new final appendix
+`app:components` holds recipes, numerical diagnosis and cost limits, preserving
+the order and labels of all existing appendices. Table numbers may advance
+because of the new table; historical table contents and labels do not change.
+Discussion and Reproducibility link the separate evidence cut. No related-work
+or contribution-list rewrite is part of this update.
+
 ## Source precedence and known discrepancies
 
 - **R2 ungated lives.** Two counts: the 2026-09-09 ~20:30 mid-life snapshot (82 of 144 pairs; 69 positive / 9 harmful / 4 by subtraction; harm in 3 lives at or after episode 384) and the 2026-09-10 SEQ-001 life-level recount (16 pairs per life; 4/9 lives with ≥1 harmful pair, seeds 2/3/5/6; 3/9 with ≥2; 16 harmful pairs in 144). The paper stands on the recount. **Erratum (v3):** the SEQ-001 prose "life means 7/9 ≥ +0.02, 2/9 negative" contradicts SEQ-001's own table; the correct count is 6/9 ≥ +0.02 and 3/9 below zero (C entry "[Fable meta-review] 2026-09-10 — ERRATUM"; E addendum of the same date). The SEQ-001 JSON (`research_notes/analysis/analysis_tables_2026-09-10_{a40,ovx}.json`, `per_life[*].series`) does record every pair's episode, so the v2 sentence "the recount does not record per-pair episodes … not measured" was false and is replaced by the episodes (first 384, last 1,024; App. D). The JSON's `harmful` rule is `< −0.03` on unrounded differences; the series are rounded to 4 dp, so seed 2's ep-1024 pair prints as −0.030 and is counted (16 total; 15 on rounded values).
@@ -98,7 +121,80 @@ No TeX installation (pdflatex, tectonic, latexmk, xelatex, lualatex) was availab
 
 **Length (2026-09-11, third pass) — unverified.** Not recounted after the Astra memo 6 patch (`research_notes/astra_memos/2026-09-11_q7_paper_review.md`, objection 13). The previous pass's figures (7,191 prose + 631 table words in the main text; ≈ 11.0 pages at 750 words/page, "about 2 pages over") were a words-per-page estimate, not a compiled page count, and are not certified; recount with the stripping script and compile before applying the trim order. The abstract (Astra's replacement) is 188 words by the structural-check script's method and 191 by a whitespace split of the stripped text (Astra's plain-text original: 184).
 
+**Length/build status (2026-09-12 component update).** The approved abstract is
+164 words after removing TeX math delimiters and normalizing the thousands
+separator, exactly the approved proposal prose. The dated length estimates
+above are historical, not a measurement of this version. One results table
+and a final methods appendix were added without deleting historical evidence.
+No TeX compiler is available locally; no PDF, table-width, page-count or
+submission-length claim is made. Static checks cover preserved historical
+tables/contributions, abstract identity, braces/environments, labels/references,
+unchanged citation keys and source numbers/hashes. Compile and check the
+nine-page target before any separate, authorized trimming.
+
 ## Number → source table
+
+### Separate component evidence, 2026-09-12 (SEQ-073/085/086)
+
+This block **adds** observations; it does not replace the historical tables
+below. The latest relevant notebook entry is Builder **2026-09-12 14:06 UTC**,
+“SEQ-085 utility negative; SEQ-086 scoring repair terminal”; the 14:11 UTC
+entry assigns this bounded canonical edit. Repeated optimizer seeds share
+panels/material, and the utility OFF cells are identical observations of one
+deterministic baseline, not independent learners. H1/H2, integrated retention,
+parenting benefit and a selective writer remain unestablished.
+
+Sources (all repository-relative):
+- **B:** `research_notes/astra_memos/ASTRA_BEHAVIOR_REPLICATION_TERMINAL_2026-09-12.md`;
+  `research_notes/astra_memos/receipts_20260912/astra_behavior_three_seed_descriptive_20260912.json`,
+  SHA256 `71ca480472207c03eb83e45a5f22b407c87778dc52249e1d0a305aae8cbade91`.
+  Independent claim review:
+  `research_notes/astra_memos/receipts_20260912/astra_replication_claim_review_20260912.md`.
+- **U:** `research_notes/astra_memos/ASTRA_CORRECTION_UTILITY_TERMINAL_2026-09-12.md`;
+  `research_notes/astra_memos/receipts_20260912/astra_correction_utility_analysis_20260912_main.json`,
+  SHA256 `29b6cf3ca3de9b4d9f6fe643fc769dbaed3a3cbc710d6e69bb1f6e53ec8dd7b0`.
+  Recipe/selection specification:
+  `research_notes/astra_memos/ASTRA_CORRECTION_UTILITY_COMPARISON_2026-09-12.md`.
+- **S:** `research_notes/astra_memos/ASTRA_SEMANTIC_RESCORE_TERMINAL_2026-09-12.md`;
+  `research_notes/astra_memos/receipts_20260912/astra_semantic_rescore_terminal_20260912.tgz`,
+  SHA256 `7b2f6bc8642055889f5cd824a1bb7762b3b7938e9a644372e18846dec88aedf4`.
+  Its `supplementary_report.json` has SHA256
+  `f066f98d19cd3801253d63b0cf0622b77865feabffddaf26c25baa96a32e18df`.
+  The original four-fit protocol/report are
+  `research_notes/astra_memos/ASTRA_SEMANTIC_WRITER_COMPARISON_2026-09-12.md`
+  and `research_notes/astra_memos/ASTRA_SEMANTIC_WRITER_TERMINAL_2026-09-12.md`;
+  their defective variable-length score interpretations are not retained as
+  valid likelihood evidence. Original generation observations remain separate.
+  Raw-generation correction: scored candidates include LF+EOS; original OFF
+  outputs omit LF, whereas original ON outputs include it. The original capsule
+  `research_notes/astra_memos/receipts_20260912/astra_semantic_writer_terminal_20260912.tgz`
+  takes precedence over the terminal memo's broader newline wording.
+- **S-absolute:** `research_notes/astra_memos/receipts_20260912/astra_semantic_rescore_absolute_audit_20260912.json`;
+  post-hoc coarse mass diagnostic, not a replacement gate or full-distribution TV.
+
+| Number / assertion | Canonical location | Source | Design / interpretation limit |
+|---|---|---|---|
+| Useful ON 2/3/5 solves per 16; wrong-board ON 0/1/0; all OFF 0; net differences 2/2/5 | Abstract (qualitative); `sec:components`, `tab:components`, `app:components` | B, per-seed reduction and terminal table | Seeds 0/1/2, one reused panel; no significance/population claim |
+| 32 training IDs 1850000–1850031; 16 canary IDs 1900050–1900065; four solution overlaps 1900054/55/59/65, including solved 1900055 | `app:components` | B, independent review; `organism_v6/mini_sudoku_behavior_material.py` preparation constants | Questions disjoint, solutions not wholly disjoint; fixed cyclic wrong-board targets preserve question inputs and answer-token multiset |
+| 192 single-ACT condition–episode traces; first missing/invalid ACT = 0; seed0 cross-device, seeds1/2 sequential same-device useful-first | `app:components` | B and independent review | No best-of-many; order/device/time confounds remain |
+| V3 rank8, alpha16, dropout .05, lr1e-4, batch1, 3 epochs/96 steps, maxlen4096, masked context, no pack; seeds0/1/2. SEQ073 pre-rendered context/chat_template=false; SEQ085 trainer chat_template=true | `app:components` | B/U fit audits; `organism_v6/mini_sudoku_behavior_material.py`; `gpu/astra_correction_utility_diagnostic.py` metadata checks | Design constants and checked receipts, not historical v1 settings; fresh-base refits, not warm starts. Rendering distinction corrects the proposal using all six U fit configurations |
+| Whole solves 1/0/1 per32 vs ACT-only 2/2/1; strict 5/6/5 vs30/30/28; OFF0 solves/2 strict | Abstract (qualitative); `sec:components`, `tab:components`, `app:components` | U, per-seed and OFF reductions | One deterministic OFF baseline; whole never wins primary; not reflection or teacher benefit |
+| One sham event1850124; 236-byte Scratchpad vs42-byte ACT; same867-token context; 32 replays/96 updates | `app:components` | U and its prospective comparison memo | Post-content-audit selected event, not32 independent experiences; parent text removed |
+| Per-fit input token passes 92064/86880; supervised8832/3648 | `sec:components`, `app:components` | U, per-cell token records | Whole/ACT-only order; equal examples/steps, NOT tokens/information/compute |
+| 192 ON public-constraint checks agree; seven accepted cell-episodes; 32 boards contradict trained board; ACT-only30 distinct/32, maxrepeat2; whole32 distinct | `app:components` | U terminal verification and captured analysis | Excludes simple unchanged trained-board emission, not a broad reasoning mechanism |
+| Original semantic recipe: 2 roots×16 keys, 8 train/4 held reused templates; 4 rank8/alpha16/dropout.05 fits, root seeds0/1; 128 rows, 2 epochs/256 steps, AdamW3e-5, BF16/eager | `app:components` | S original protocol and terminal report | Not the96-step behavior recipe; four existing fits, none added by supplement |
+| Original defective scores266/832, allON; mass>1.000001, max1.3802383379 | `app:components` | S terminal diagnosis, with SEQ084 notebook context | Sequence-shape numeric inconsistency with correct causal masks, not demonstrated future-token leakage; ordinary generated solves unaffected |
+| Supplement5 scoring states,832 new scores,0 fits,880 reused generations; generation BA37/33/32/34 per64, validity1.0 | `sec:components`, `tab:components`, `app:components` | S supplementary report | Root0 +/− then root1 +/−; unchanged generations, not independent replication |
+| Corrected conditional gains1.078957/.951426/.646593/.608320; cell/family mean binary TV .280090–.656300 | `app:components` | S supplementary report, rounded to6 decimals | Conditional log-q gains, not raw mean NLL losses; fixed padded-forward LF+EOS scores, NOT dynamic greedy probabilities |
+| `OPTIMIZATION_INCONCLUSIVE`; binding/spill false, interface true | Abstract (qualitative); `sec:components`, `app:components` | S reduction | No threshold rescue; old-score half-nat ceiling not automatically applicable to corrected scores |
+| Post-hoc three-category mean TV .978273–.998658 | `app:components` | S-absolute and S terminal memo | Two terminated strings plus all other strings; format-mass dominated, not full-distribution TV or semantic selectivity |
+| 37.48 summed controller-elapsed minutes on A40 devices for additional behavior controllers; utility summed recipient3990.821522s; supplement347.468s and5cleanup receipts | `app:components` | B/U/S terminal reports | Different cost scopes, external checks extra; utility generated-token/finish metadata absent; no inferred total GPU/campaign cost |
+
+The numerical repair does not certify the dynamic generator, all precisions,
+or unrelated scorers. Relative two-candidate TV misses common-mode shifts;
+absolute mean legality changes can cancel item flips. The post-hoc mass audit
+cannot repair these into a selective-memory claim. Local pins are not official
+model-origin authentication. C11 remains deferred, not silently certified.
 
 ### New in the 2026-09-11 third pass (Astra memo 6 applied; cells as of SEQ-022, 2026-09-11 01:38 UTC)
 

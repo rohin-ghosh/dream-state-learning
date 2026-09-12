@@ -1,13 +1,25 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:20 UTC**.
+Latest reconciliation: **2026-09-12 14:31 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:31 superseding status:** no Main GPU job remains live. Root0attempt2
+  and root1attempt1 complete, native replay/allcleanup/fullGPU0/7release pass.
+  SEQ-087 exacttrain matching68/68/64/63of128 vsOFF64/64/65/63; mostly global
+  label preference, root1plus constantgvn. Bothterminalcapsules/analysis archived.
+- Hilbert owns only newobjectiveprobe/test: same root1W+ rows/seed/256steps,
+  twofit full-response vsfirst-choice masks. Avicenna owns only newconstraint
+  checkdiagnostic/test:8externallysourced board exercises, processvsformat
+  coaching,16generationcalls, nofits. Main review/nativechecks/launch pending.
+- Canonical main.tex/README correctedfreeze through073/085/086 passes review;
+  12historicaltables preserved. Newline correction:208OFFomitLF/672ONincludeLF.
+  NoTeXavailable, noPDFbuildclaim. Currentprobe087 not inserted into thisfreeze.
 
 - **14:20 superseding status:** root0attempt1 failed on15s nvidia-smi identity
   timeout before firstadapterload; OFF256records preserved, bothcleanup/full
