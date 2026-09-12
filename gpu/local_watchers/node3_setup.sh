@@ -28,6 +28,9 @@ if ! $S3 'nvidia-smi -L 2>/dev/null | grep -q GPU'; then
   for ((i=0;i<30;i++)); do $S3 'nvidia-smi -L 2>/dev/null | grep -q GPU' 2>/dev/null && break; sleep 30; done
 fi
 log "GPUs on node 3: $($S3 'nvidia-smi -L 2>/dev/null | wc -l'); driver $($S3 'nvidia-smi --query-gpu=driver_version --format=csv,noheader | head -1')"
+# (1b) no display server on a compute node: Xorg otherwise holds ~15 MiB on every GPU and the builder's GPU-free check
+#      (nvidia-smi shows a process) refuses to launch there (node 3, 2026-09-12 07:31 UTC).
+$S3 'sudo -n systemctl stop display-manager 2>/dev/null; sudo -n systemctl disable display-manager 2>/dev/null; sudo -n systemctl set-default multi-user.target 2>/dev/null; pgrep -c Xorg || echo no_xorg' 2>&1 | tail -1 | tee -a "$LOG"
 # (2) key node3 -> node2
 PUB=$($S3 '[ -f ~/.ssh/id_ed25519 ] || ssh-keygen -q -t ed25519 -N "" -f ~/.ssh/id_ed25519; cat ~/.ssh/id_ed25519.pub')
 $S2 "grep -qF '${PUB}' ~/.ssh/authorized_keys 2>/dev/null || echo '${PUB}' >> ~/.ssh/authorized_keys; echo key_on_node2" | tee -a "$LOG"
