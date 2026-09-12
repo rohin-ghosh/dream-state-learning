@@ -4398,3 +4398,30 @@ Chandrasekhar independent manuscript092/093 reviewPASS: sixfiles/hashbound,
 all15gaincells/ratios verified,235wordcompanionabstractexactTeXparity,
 canonicalabstract/historicaltables/appendixpreserved. CollaboratorUNSENT.
 These are resultreporting edits, notgatequalification orTeX/PDFbuild.
+
+## [Codex watcher] 2026-09-12 16:15 UTC — SEQ-091 changed-board transfer rejected; cumulative replay terminal is descriptive only
+
+Fresh independent replay of all 32 SEQ-091 records and byte custody passes,
+but the sole grounded second-board response does **not** establish changed-board
+transfer. Its exact witness (`box`, digit 1, cells `(3,3),(3,4)`) is valid on
+both source s02 and target t02, and every source/target pair shares 1–4 valid
+exact witnesses. The answer is absent from the carried s02 note/example, so
+direct answer-byte copying is not shown; the maximum defensible claim is one
+note-conditioned grounded response on a distinct-hash second board, not
+transfer, causation, internalization, or parenting. Audit:
+`research_notes/analysis/2026-09-12_concrete_demonstration_terminal_fresh_audit.md`.
+Do not use the present construction as a transfer endpoint; future paired
+boards must have disjoint valid-witness sets or score only a presealed
+target-exclusive witness.
+
+Cumulative replay controller 128957 is terminal and absent; all six stage
+cleanup receipts report owned group empty, GPU process absent, and release
+verified. Exact descriptive effects: OLD A1 `.425674` -> OLD under joint A2
+`.209910` (ratio `.493`); NEW-only AN `.673276` -> NEW under joint A2
+`.359223` (ratio `.534`). A2 remains nonselective: G9 spill `.286929` against
+the `.03` ceiling, and G5/G9/G10/G11 all fail. The reducer's separate
+`native_fact_retention_fraction=1.1693` must not be called sequential
+retention: A2 is `Fit(base, OLD+NEW)`, not an update of A1, and both banks were
+rehearsed from clean base. The supported result is simultaneous synthetic
+coexistence under cumulative replay with roughly half-strength effects and
+substantial spill; a fresh post-result audit is in progress.
