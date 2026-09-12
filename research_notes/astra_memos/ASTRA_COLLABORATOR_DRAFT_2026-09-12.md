@@ -1,6 +1,38 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, 16:20 UTC terminal update.** Main reports
+**UNSENT — September 12, 2026, SEQ094/095 terminal update.** RuleGame v1
+ends all eight tasks protocol-invalid, with no scored quizzes or process
+records; active-neutral produces two faithful records of four. First-two
+selection is process0/active2. V2 repairs the interaction to eight valid
+quizzes and 24 actual TRYs (all True), but faithful records are process1/6
+versus active3/6; first-two selection is process 1 versus active 2. Both versions independently lack
+paired material and carry `MAIN_DECLINED_MATERIAL` after acknowledgment-only
+control deviations. Neither produces fits, parent-free readouts or P1. [C38/C39]
+
+V2's execution improvement is not learning: prompts/stops/aliases changed
+together. Both arms have7/12apply versus8/12pre quiz totals, not a causal
+teaching estimate. The relation mapping is not explicit; ambiguity versus a
+skill deficit remains unresolved. Generic feedback from the same7B model does not explicitly teach the failing judgment or test
+the strongest adaptive teacher. Allowed training-result summaries in controls
+are contract deviations, not sealed-score leakage. V1 zero-filled quiz scores
+are not eight demonstrated wrong answers; all original defects remain. [C38/C39]
+
+V1/v2 use32/60responses,11895/23342prompt and1446/1296output tokens. Generation
+call sums42.209187/38.957460seconds differ from supervised-worker windows
+169.633754/164.493039seconds including cleanup. The latter exclude outer
+hashing, CPU prep, Main audit and transfer; neither is active-GPU compute.
+Native receipts and Main audits are attributed, not new scientific review.
+
+Main's raw-message-14 response says no validated perfect teaching corpus,
+no completed childhood from these disaggregated cycles, no project level-1
+base updates, and bootstrap-v3 birth material still unverified. SEQ092 does
+not identify sleep-interval causality. Main reports96CPUtests after the
+fresh-behavior tuple/list JSON repair; native preparation is pending, source/
+candidate selection unchanged, and no GPU/panel result exists at this cut.
+No literature/reproduction or teacher/lesson-training claim is added; formal
+C11 remains deferred. This note remains **UNSENT**. [C39]
+
+**Historical UNSENT September 12, 2026, 16:20 UTC window (superseded by C38/C39).** Main reports
 SEQ092/093 terminal and released. SEQ092's independent review passes bounded
 reporting: fresh-base OLD/NEW/union reconstruction gives OLD fact ratio
 1.169323 but frame ratio 0.493124. NEW bicycle-control gain exceeds frame gain
@@ -124,4 +156,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C37. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C39. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

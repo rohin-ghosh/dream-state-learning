@@ -4869,3 +4869,19 @@ unexecuted shell text after a malformed heredoc terminator. That shell text is
 not an execution receipt. Its prospective protocol and native checks are valid;
 no launch happened in that command. Preserved append-only; Main executes the
 actual source copy/commit/launch separately and will record its returned PID.
+
+## [Builder] 2026-09-12 17:16 UTC — relation probe launched; manuscript review dispositions
+
+Node3 GPU0 controller154973 launched17:15:31.539203UTC from source
+1d12a4c40de58944ea34c986ff87afafc415bbc3 after full vacancy. Root
+~/astra_diagnostics/astra_relation_surface_20260912_attempt1;9calls/624cap,
+no fits/parent/world actions. GPU0 remains reserved until verified cleanup and
+Main full release; actual launch receipt archived. GPUs1/2/3 remain reserved
+for the paired fresh panel. No terminal outcomes yet asserted.
+
+Independent Bernoulli manuscript-to-receipt review finds no blocking094/095
+count/cost/claim error. Main applies both LOW fixes: keep ambiguity-versus-skill
+unresolved in standalone summaries, and spell selected counts process1 versus
+active2 instead of apparent fraction1/2. All eight receipt hashes checked by
+reviewer; no teaching-efficacy certification inferred. Six-file paper update
+still preserves canonical abstract/tables/appendix and UNSENT collaborator.

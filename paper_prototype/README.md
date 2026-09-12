@@ -2,7 +2,77 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**Terminal update — September 12, 2026, 16:20 UTC (SEQ-092/093; C36/C37).**
+**September 12, 2026 — SEQ-094/095 terminal update (C38/C39).**
+Both RuleGame versions stop at formation with `MAIN_DECLINED_MATERIAL`:
+paired material shortage independently prevents both fits and all parent-free
+new-rule readouts, while Main also rejects acknowledgment-only control-contract
+deviations. Native replay/token/cleanup PASS is not teaching-efficacy or P1
+qualification. The versioned execution repair is not learning. Previous
+not-launched statuses below are historical, not current outcomes. Canonical
+abstract, all historical tables/appendix and prior newline corrections remain
+preserved; no new literature or paper-reproduction claim is made.
+
+| Version | Valid quizzes | Faithful apply records, process / active | First-two selected, process / active | Downstream status |
+|---|---|---|---|---|
+| SEQ-094 v1 | 0/8; all protocol-invalid, not eight wrong answers | 0 (no opportunities) / 2 of 4 | 0 / 2 | No fits or readouts |
+| SEQ-095 v2 | 8/8 valid interactions | 1 of 6 / 3 of 6 | 1 / 2 | No fits or readouts |
+
+V1 has four unrecognized TRY aliases and four multi-ACT outputs with invented
+outcomes; none is retroactively executed. Process has no actual apply TRYs;
+active-neutral has four. A control turn assumes a quiz outcome that never
+occurred, and a process turn falsely asserts an absent prediction. One pair
+of identical pre-task prompt/token/seed inputs yields different native outputs;
+the cause is unlocalized and actual arm baselines are not pooled.
+
+V2 has 24 executed TRYs, all True, so no negative-observation coverage. All 12
+record schemas pass, but eight relation values fail the registered semantics.
+Process rule0/rule1 pre→apply scores are 3/6→4/6 and 5/6→3/6; active scores
+are 3/6→3/6 and 5/6→4/6. Both apply totals are 7/12 versus 8/12 pre, not an
+independent or causal improvement estimate. Control messages summarize allowed
+training outcomes rather than acknowledgment only; this is a control defect,
+not sealed-score leakage. The relation elicitor says only “accordingly,” so
+ambiguity versus a genuine skill deficit is unresolved. Generic same-7B-parent
+guidance addresses predictions, not explicit relation-field teaching; it is
+not adequate-teaching or strongest-teacher evidence. No A-only fit, repaired
+relation, replacement source, P1/G5/H1/H2 or mechanism freeze is reported.
+
+| Version | Responses: wake / parent / restatement / record | Prompt / output tokens | Generation-call seconds | Supervised-worker seconds including cleanup |
+|---|---|---:|---:|---:|
+| SEQ-094 | 20 / 4 / 4 / 4 = 32 | 11895 / 1446 | 42.209187 | 169.633754 |
+| SEQ-095 | 40 / 4 / 4 / 12 = 60 | 23342 / 1296 | 38.957460 | 164.493039 |
+
+Worker windows exclude outer source/model hashing, CPU preparation, Main audit
+and transfer. They are not whole-controller/campaign time or active GPU compute.
+V1 uses 12 process versus 20 active responses; v2 matches response opportunities,
+not actual token cost. V1 owned-engine kill escalation and its shutdown warning
+are preserved; both native cleanup/release captures pass.
+
+Evidence (Main-owned; read, not scientifically rerun here):
+- [SEQ-094 memo](../research_notes/astra_memos/ASTRA_RULEGAME_FORMATION_TERMINAL_2026-09-12.md),
+  [native capture](../research_notes/astra_memos/receipts_20260912/astra_rulegame_formation_capture_20260912.json),
+  [Main audit](../research_notes/astra_memos/receipts_20260912/astra_rulegame_main_audit_20260912.json).
+- [SEQ-095 memo](../research_notes/astra_memos/ASTRA_RULEGAME_V2_TERMINAL_2026-09-12.md),
+  [native capture](../research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_formation_capture_20260912.json),
+  [Main audit](../research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_main_audit_20260912.json).
+- Formation/material-decision capsule identities and limitations are in C38/C39.
+
+**Current preparation and raw-message-14 boundaries.** Main reports 96 CPU
+tests after the tuple/list JSON-serialization repair to the fresh-behavior
+helper; native preparation is pending, source/candidate selection unchanged,
+and **no GPU/panel result exists at this cut**. The earlier preparation failure
+had zero fits/model calls and is preserved, not a scientific result. These
+tests are Main-reported, not rerun by this documentation worker.
+
+The notebook's September 12, 16:53 UTC response to raw message 14 explicitly
+distinguishes controlled outcome material from a validated perfect teaching
+corpus: there is no such validated corpus yet. Bootstrap-v3 is an unverified
+32B-authored candidate, not a completed birth; disaggregated diagnostic cycles
+are not childhoods, and there are no level-1/base-weight updates. Same-7B
+self-parenting is a prototype, not the strongest parent. SEQ-092 does not
+identify sleep-interval causality or forgetting of A1 weights. No cited paper
+is newly claimed reproduced. Formal C11 remains deferred; collaborator **UNSENT**.
+
+**Historical terminal window — September 12, 2026, 16:20 UTC (SEQ-092/093; superseded by C38/C39 status above).**
 Main reports both jobs terminal and released. SEQ-092 has independent review
 PASS for bounded exploratory reporting. SEQ-093 has native validation PASS;
 Halley's now-available post-hoc content audit preserves every strict failure.

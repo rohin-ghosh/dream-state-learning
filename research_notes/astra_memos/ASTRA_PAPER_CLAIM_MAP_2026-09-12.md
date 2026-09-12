@@ -2,7 +2,20 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026, 16:20 UTC terminal update:** C36/C37 supersede earlier
+**September 12, 2026 — SEQ094/095 terminal update:** C38/C39 supersede earlier
+RuleGame not-launched statuses without changing historical results. Both
+versions have native capture checks and Main audits, `MAIN_DECLINED_MATERIAL`,
+paired shortage, no fits and no new-rule/parent-free readouts. No independent
+teaching-efficacy review or P1 qualification is claimed. Main reports 96 CPU
+tests after the fresh-behavior serialization repair; native preparation is
+pending with source/candidate selection unchanged and no GPU/panel result.
+The 16:53 UTC notebook response to raw message 14 sets current corpus/cycle
+limits, not new scientific rulings. Canonical abstract, all historical tables,
+appendix and prior corrections are preserved. Formal C11 remains deferred;
+collaborator UNSENT. Main is sole Git operator after this worker's initial
+safe pull reported already up to date; no further Git action is taken here.
+
+**Historical September 12, 2026, 16:20 UTC terminal update (status superseded by C38/C39):** C36/C37 supersede earlier
 cumulative-running and citation-implementation statuses. Main reports both
 jobs terminal/released. C36 has independent bounded-reporting PASS; C37 has
 native validation PASS and Halley's separate post-hoc content audit, leaving
@@ -726,11 +739,165 @@ loss is not successful complete-record behavior.
   authentication. The runtime snapshot's generic `adapter:null` is not the
   per-request loader identity. Isolation check was not run, not passed.
 
-**Next selected work, not an outcome:** Main selected the bounded156-response
-RuleGame complete-event-record block and is implementing it; it is **not
-launched** at this cut. Supporting design revision:
+**Historical next-work status at the SEQ093 cut:** Main selected the bounded
+156-response RuleGame block, then not launched. Terminal C38/C39 now
+supersede that status; the old cap was planned, not consumed work. Supporting design revision:
 `research_notes/astra_memos/receipts_20260912/astra_rulegame_minimum_revision_20260912.md`.
 The response budget is planned, not consumed, and selection does not approve
 teacher/lesson training or establish learning. Formal C11 remains deferred.
 SEQ092/093 do not establish G3/P1/G5/H1/H2, selective memory, internalization,
 clean ancestry, mechanism freeze or completion of the bounded campaign.
+
+## C38 — Protocol-invalid RuleGame formation, no paired write (SEQ094)
+
+**Terminal outcome:** all eight v1 pre/apply tasks are protocol-invalid; no
+scored quiz occurs. Registered zero-filled quiz scores are not eight observed
+wrong answers. Process executes no apply TRY and has no record opportunities;
+active-neutral executes four apply TRYs and generates four records, two faithful
+and two wrong relations. First-two distinct-execution selection is process0
+versus active2: paired shortage independently prevents both fits, every
+parent-free/new-rule readout and replacement events. Native material status is
+`MAIN_DECLINED_MATERIAL`; no corpora or fitted adapters are created.
+
+**Independent stopping reasons, not efficacy evidence:** Main accepts native
+provenance but rejects both acknowledgment-only controls. One requests quiz
+outcome/learning despite no valid quiz; the other solicits recounting attempts.
+These violate the chosen control contract without supplying hidden rules or
+sealed scores. Process lesson1 falsely asserts no prediction, although pre-call
+0008 contains `PREDICT: T` with a noncanonical TRY. Accepted provenance is not
+certified causal feedback quality. Four invalid outputs use `TRY: a,b,c`
+instead of canonical `ACT: TRY a,b,c`; four interleave multiple ACTs with
+invented `[OUTCOME]` continuations. Whole responses remain rejected: no
+imagined outcome is executed or admitted, no alias is repaired retrospectively.
+
+Identical prompt bytes/input IDs/seed in pre-rule0 calls0002(P)/0014(A) yield
+different native outputs; cause remains unlocalized. Actual arm baselines are
+preserved, not pooled into one deterministic counterfactual. This does not
+invalidate deterministic world replies. Interface failure/control defects and
+post-treatment shortage do not identify parenting efficacy, a negative process
+effect, persistent learning, P1/G5/H1/H2 or a strongest-teacher ceiling.
+
+**Measured worker scope:**32responses =20wake+4parent+4restatement+4record;
+process12 versus active20, unequal actual cost. Prompt/output tokens11895/1446;
+generation-call sum42.209187seconds. Supervised-worker window including owned
+cleanup169.633754seconds excludes outer source/model hashing, CPU preparation,
+Main audit and transfer; it is not whole-controller/campaign or active-GPU
+time. Owned-engine kill escalation and semaphore warning remain preserved;
+native cleanup/full release pass, not a new live query by this writer.
+
+**Sources and custody:**
+- Terminal memo:
+  `research_notes/astra_memos/ASTRA_RULEGAME_FORMATION_TERMINAL_2026-09-12.md`.
+- Native capture:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_formation_capture_20260912.json`,
+  SHA256 `a012dfd8f4a8b246329d407b415685780f1f21be352b3239bb30c953bd3e01ad`;
+  `replay_ok`, token/text audit and supervised cleanup pass; no fits in capture.
+- Main audit:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_main_audit_20260912.json`,
+  SHA256 `cdea111d87b1e06c2a9490e3c8d8528b3f0a8e55f89d0fbca54fe81215b3a0ac`;
+  provenance accepted, both active-control reviews rejected.
+- Formation capsule:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_formation_terminal_20260912.tgz`,
+  SHA256 `b13f6f77fd1b276d2d019e255c09aacbce85a29eaf95b6363c5cf3f276c9e0a4`.
+- Material-decision capsule:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_material_decision_20260912.tgz`,
+  SHA256 `763269cad71d480534d8f5414891ad01cba2bfe75989f84d736d0d91665a194d`.
+- Frozen source `aff89c4f034407120fc7badd064660492e0011cf`;
+  node3 root `~/astra_diagnostics/astra_rulegame_minimum_20260912_attempt1`;
+  controller142838 started16:30:31.135163UTC, full release16:34:30.508825UTC.
+  These wall timestamps are not substituted for the measured worker interval.
+  Official origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`; captured native checks
+  are not a new local weight/tokenizer authentication or independent teaching
+  review. The separately versioned v2 follows in C39 without rescoring v1.
+
+## C39 — Versioned execution repair, insufficient material and teaching limits (SEQ095)
+
+**Terminal formation:** all eight v2 tasks have valid first quizzes and three
+executed TRYs each; all24 world outcomes are True. This narrow block does not
+exercise negative observations or establish informative exploration. All12
+record schemas pass; eight fail registered relation semantics. Faithful yield
+is process1/6 versus active-neutral3/6; first-two selection returns process1
+and active2. Paired shortage independently forbids both fits, all parent-free/
+new-rule readouts, replacements and an A-only write. Material status is
+`MAIN_DECLINED_MATERIAL`. No weights, downstream performance or P1 result exist.
+
+| Arm | Rule | Pre quiz /6 | Apply quiz /6 | Faithful apply records /3 |
+|---|---:|---:|---:|---:|
+| Process | 0 | 3 | 4 | 1 |
+| Process | 1 | 5 | 3 | 0 |
+| Active-neutral | 0 | 3 | 3 | 2 |
+| Active-neutral | 1 | 5 | 4 | 1 |
+
+Both arms total7/12apply versus8/12pre. These correlated single-block counts
+are not causal teaching effects or independent learners. Main also declines
+both controls: they summarize allowed training outcomes/quiz scores rather
+than acknowledgment alone. This is not sealed-score leakage. Process feedback
+has actual omitted predictions to address but does not explicitly teach the
+failing relation-field judgment. A child's hypothetical sum example is not
+an observed fact and never enters sleep. The elicitor lists labels only
+"accordingly" without defining every mapping: task ambiguity versus genuine
+skill deficit remains unresolved. Do not claim inability to compare Booleans,
+adequate instruction, or the strongest adaptive parent has been tested.
+
+**Versioning and claim boundary:** prompt/stop/alias changes repair execution
+within this envelope (8/8valid interactions versus v1's0/8). This is neither
+learned behavior nor a single-factor causal ablation. The same frozen7B model
+serves as a prototype parent, not a strongest-teacher upper bound. No response,
+relation, control turn or original v1 result is repaired or reclassified.
+No P1/G3/G5/H1/H2, selective-memory, clean-child or mechanism-freeze claim follows.
+Native PASS and Main provenance acceptance are not independent certification of
+teaching efficacy; no new scientific review PASS is inferred.
+
+**Measured worker scope:**60responses =40wake+4parent+4restatement+12record;
+native prompt/output23342/1296tokens; generation-call sum38.957460seconds.
+Supervised-worker window including owned cleanup164.493039seconds excludes
+outer hashing, CPU preparation, Main audit and transfer. Equal response
+opportunities do not equal actual token cost, active-GPU compute or sustained
+throughput. Both terminal releases are archived observations, not current
+resource-ownership guarantees.
+
+**Sources and custody:**
+- Terminal memo: `research_notes/astra_memos/ASTRA_RULEGAME_V2_TERMINAL_2026-09-12.md`.
+- Native capture:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_formation_capture_20260912.json`,
+  SHA256 `9660dbbac056c0fdb86a59abbff548d5356861abdbeffceedc8269c6ba9f6569`;
+  replay, actual token/text/stop-boundary and cleanup checks pass; no fits.
+- Main audit:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_main_audit_20260912.json`,
+  SHA256 `163641c00993e39754b49a79b2ad8daa743013fb3488f7f3cfaf68aab491f17a`;
+  provenance accepted, both active controls rejected independently of shortage.
+- Formation capsule:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_formation_terminal_20260912.tgz`,
+  SHA256 `d3433cc22e398343bee59f755f2d2ac9dc5308347eba4ef421abdd76ae969ef8`.
+- Material-decision capsule:
+  `research_notes/astra_memos/receipts_20260912/astra_rulegame_v2_material_decision_20260912.tgz`,
+  SHA256 `31c6483cf197777768a319ac7cbb2f9fd90a912f9128c4fd56af2acb59d1f27c`.
+- Frozen source `20897d84f8b1cdb24f42118589d53c9976d7b416`;
+  node3 root `~/astra_diagnostics/astra_rulegame_interaction_v2_20260912_attempt1`;
+  controller146460 started16:45:02.072678UTC, full release16:49:41.204311UTC.
+  No fitted weights exist. Local pins do not authenticate official model origin.
+
+**Current preparation, not a panel outcome:** Main reports96CPUtests after the
+fresh-behavior helper's tuple/list JSON-serialization fix. Native preparation
+remains pending, with source/candidate selection unchanged and no GPU/panel
+result at this documentation cut. The notebook's16:59UTC entry preserves the
+earlier93-test preparation failure: all48 historical entries agree after JSON
+round-trip, with no puzzle/solution/source drift and zero fits/model calls.
+The new96-test status is Main-reported, not rerun or promoted by this writer.
+This is a serialization repair, not a scientific negative, candidate replacement
+or outcome-driven selection. Main owns preparation and any later deployment.
+
+**Raw message14 response, not new rulings:** `research_loop/COORDINATION.md`,
+September12,16:53UTC [Builder -> Rohin] response. There is no validated perfect
+teaching corpus: existing outcome/reference material cannot establish one.
+The 32B-authored bootstrap_v3 is a candidate with unverified provenance/teaching
+quality, not a completed or approved birth. Most current cycles are disaggregated
+writer/material/reload or in-context diagnostics, not childhoods. The project
+inherits frozen7B weights and performs no level-1/base updates. Birth-LoRA,
+richer schooling and autonomous adulthood remain intended stages; both RuleGame
+versions stop before sleep. Same7B self-parenting is not the strongest parent.
+SEQ092 fresh-base OLD/NEW/union comparisons identify neither sleep-interval
+causality nor forgetting of A1 parameters. These clarifications neither expand
+literature claims nor assert any cited paper was reproduced, and do not grant
+teacher/lesson training or birth authorization. Formal C11 remains deferred;
+the campaign is incomplete and the collaborator draft remains UNSENT.
