@@ -134,6 +134,22 @@ successful reload, and descriptive ON/OFF Scratchpad differences—explicitly
 not parenting, autonomous outcome learning, generalized memory, improved
 action, or H1/H2.
 
+### Child-label and adapter receipt repair (`b5839563`)
+
+The next builder repair adds an optional bound-training path that pins the
+admission receipt, prior-lineage digest, exact corpus bytes, actual
+causal-shift label masks, native training metadata, and saved adapter bytes.
+The new six receipt tests plus the prior child-target and seed/scanner suites
+independently pass 22/22. This materially improves the evidence that a future
+clean sleep trained the intended child continuation rather than the wrapper.
+
+It has not yet been exercised by a real GPU write and is not wired to a
+runner-side gate producer or clean-lineage preflight. The current B0 runs use
+the earlier immutable source and therefore cannot inherit this repair. A
+paper-grade promotion still requires the gate producer to bind the actual
+generation/execution receipts, the launcher to invoke the bound path, and the
+resulting manifest to close the full ancestry and active-readable state.
+
 ## Live state at audit
 
 At the read-only poll, A1 S1/F training seeds 2 and 3 and A2 CF attempt-2
@@ -146,3 +162,13 @@ live on node 1 in fresh attempt-2 directories. Its node-3 A attempt had failed
 before model load because that node lacked the CompilerGym interpreter; the
 failure was preserved and the B arm was not started there. This remains a
 verified live run, not an outcome.
+
+The nominally common-random initial probes also exposed a paper-grade pairing
+defect. All eight A/B first-tick child outputs are byte-identical, proving that
+the shared sampler seeds take effect. At tick 2, the otherwise identical
+prompts differ only in the model-visible wall-clock field (`alive 27s` versus
+`alive 26s`); generation then diverges, yielding pre-write means 0.4681 versus
+0.4872. The scout may continue as instrumentation, but score contrasts are not
+exact paired potential outcomes. Confirmation must remove/freeze elapsed-time
+text or use a byte-identical exogenous replay tape and assert prompt hashes at
+every paired step.
