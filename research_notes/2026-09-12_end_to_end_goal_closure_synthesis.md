@@ -156,6 +156,30 @@ record syntax the intelligence claim. The S writer should continue to use
 mechanically joined public events, with child reflections as optional grounded
 enrichment rather than a prerequisite for factual experience.
 
+A terminal coached source-replay diagnostic then made that boundary sharper.
+For the first four measured actions in every one of the 64 schedules per arm,
+the frozen base was shown the exact historical post-outcome prompt plus an
+explicit instruction to quote the submitted action and displayed score in a
+short first-person record. All `512/512` requests completed, but the unchanged
+judge admitted `0/256` lesson and `0/256` sham outputs. The lesson rejection
+counts were 233 missing-first-person action, 15 unsupported first-person
+context, seven unsupported reference-answer claims, and one action mismatch;
+the sham counts were 249, five, and two respectively. Representative outputs
+continued task-level strategy narration and sometimes proposed a new `ACT`
+instead of recording the supplied event. No output echoed the coach. The run
+performed no new world action and no training.
+
+This closes further NOTE-format prompt search for the current route. It does
+not imply that the child ignored outcomes or that SLEEP lacks an authentic
+source: the authoritative action and public outcome already exist in the
+ledger. It establishes only that even direct coaching did not make this model
+reliably serialize those events into the preregistered prose form under the
+historical contexts. No adapter may be fit from this replay, and no later
+factual S gate should depend on child-authored transcription. Parenting is
+therefore evaluated through changed plans and authoritative actions, while
+SLEEP receives mechanically joined events and treats faithful reflection as
+optional enrichment.
+
 ## One ordered evidence ladder
 
 ### W0 — selective supplied writer
