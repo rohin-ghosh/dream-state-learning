@@ -5738,3 +5738,19 @@ migration script hasdestructivecleanup: donotexecute blindly. Fullinventory
 archived; twoC-trainingwarnings underboundedread-onlydiagnosis, nojobchanges.
 Main node3rate0/3e-5/1e-4 continue. FirstphaseLR0savedtensors exactlyunchanged;
 nonzeroLRstateschanged. That isinstrumentation, notfinalplasticityoutcome.
+
+## [Builder] 2026-09-12 18:59:47 UTC — memory diagnosis and next compatible-habit choice
+
+Tiny final losses were arithmetic-only final microbatches, not memory loss.
+No concrete dropped-label/wrong-adapter-path defect found in read-onlyaudit.
+Main selects16originalseed0 exact-prefix HF/PEFT forwards against existing
+SEQ100vLLM captures; no newvLLM orOFFcalls, no fitting. Boundedworker in
+preparation, GPU not allocated yet. More dose/rank escalation deferred.
+
+Next compatible-habit design fixed BEFORE inspecting plasticity outcomes:
+INPUT->PREDICT->ACT versus samecontent PREDICT->ACT->INPUT, from allthree
+originalteachingparents, oneadapter, LR1e-4fixed,80updatesperbranch, ordinary
+sourced80rows andunchanged48devreadout. This tests adding an input-reporting
+convention while rehearsing the first, not selectiveperception/parenting.
+Dirac implementing ONLYnewcorpus/scorer andtest; native tokenmatching required,
+no padding. No launchbudget allocated yet; currentplasticity runs continue.

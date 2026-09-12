@@ -46,6 +46,16 @@ Control failure also does not prove absence of every possible interference
 mechanism. Main is auditing native encoding/masking and train/readout loading
 before spending on larger dose or rank sweeps. Compiler changes remain aside.
 
+Read-only follow-up audit: each reported final_loss is the final arithmetic
+microbatch, not memory loss. Epoch4mean microbatch losses are0.17012/0.17256
+for teach/controlshort and0.01034/0.01037 for teach/controllong. Later copies
+in long training rows can attend to earlier gold answers; that is a possible
+training shortcut, not demonstrated test-time copying. No concrete missing
+memory label, conflicting fact, lost device identifier or adapter-path defect
+was found. Equivalent HF/vLLM loaded behavior remains untested. Main selects
+16originalseed0 exact-training-prefix HF forwards against alreadycaptured
+SEQ100vLLM outputs before another dose/rank change. No newvLLMcalls needed.
+
 ## Instrumentation and cost
 
 All fits complete80updates with fresh adapters and immutable inventories;
