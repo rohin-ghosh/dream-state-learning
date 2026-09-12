@@ -1,5 +1,12 @@
 # Semantic Q0 writer terminal — SEQ-083
 
+**13:47UTC validity addendum:** supplementary audit finds266/832score rows
+with summed exponentiated full-candidate scores above one, maximum1.380238.
+These cannot currently be interpreted as common-prefix causal probabilities.
+All NLL/TV interpretations below are provisional registered outputs, not
+validated probability evidence. Original generation observations remain;
+native prefix-invariance/mask diagnosis is running without new fitting.
+
 ## Executed evidence
 
 Source `d160e0b26405a7e40eb7de0dca23cfcb94cdbf37`; node3 GPU0;

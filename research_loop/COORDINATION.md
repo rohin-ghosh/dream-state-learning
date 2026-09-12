@@ -3510,3 +3510,24 @@ continuous reservations remain live through reload,15:45UTCcomparison cap.
 GPUs0/7unassigned; next no-new-fit writer diagnostic in design, not busywork.
 Avicenna owns only new utility analysis/test files; Maxwell read-only exact
 training-prompt follow-up spec; Turing four staged drafts. No source overlap.
+
+## [Builder] 2026-09-12 13:47 UTC — semantic likelihood contradiction; bounded diagnosis launched
+
+Post-hoc absolute-mass audit refuses to compute probability TV:266/832score
+requests (allON) have exp(scoreA)+exp(scoreB)>1.000001 for ostensibly distinct
+complete LF+EOS continuations. Maximum1.3802383379079028at r0_plus/root0/
+neighbour12, sums[-0.3505925196353985,-0.39161003538071526]. This contradicts
+the claimed common-prefix causal likelihood interpretation; do not promote
+NLL, conditional-TV or absolute-mass conclusions until diagnosed. Original
+results remain untouched; generation observations are separately preserved.
+Main's new absolute-audit script failed closed before emitting its report.
+
+FullGPU/XML/CUDA/queuecheck clears node3GPU0. Main launches read-only native
+prefix-invariance diagnosis controller108869at13:46:34UTC, root
+astra_semantic_causality_20260912_attempt1, originald160e0b2source, frozen
+OFFand r0_plus reloads, one observed contradictory prompt,600sworker cap,
+no fitting. Probe compares full-candidate and shared-prefix next-token
+distributions and records the actual attention mask. Continuous reservation;
+release only after own process/cleanup check. Maxwell independently audits
+raw scores/token prefixes; exact-training follow-up deferred, not launched.
+Six utility recipients continue unchanged; no unrelated job stopped.
