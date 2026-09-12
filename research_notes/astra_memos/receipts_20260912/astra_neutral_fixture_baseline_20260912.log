@@ -1,0 +1,104 @@
+unittest.case.FunctionTestCase (test_neutral_probes_are_paired_fresh_and_never_harvested) ... [life-v2] arm=B seed=0 n=16 sleep_every=8 probe_every=8
+[preschool] note_after=True max_tokens=100 lesson=lesson gate=off min_items=64 neutral_probes=True panel=2 version=q14-v1-2026-09-12
+[preschool] lesson lesson delivered (phase sleeps_done=0, 985 chars)
+[episode cbench-v1/susan] best=0.2774 acts=3 ticks=2
+[episode cbench-v1/sha] best=0.1259 acts=2 ticks=1
+[episode cbench-v1/dijkstra] best=0.2774 acts=3 ticks=3
+[episode cbench-v1/patricia] best=0.2771 acts=3 ticks=2
+[episode cbench-v1/jpeg-c] best=0.2780 acts=3 ticks=3
+[episode cbench-v1/tiff2bw] best=0.2775 acts=3 ticks=3
+[episode cbench-v1/gsm] best=0.1259 acts=2 ticks=1
+[episode cbench-v1/stringsearch] best=0.2773 acts=3 ticks=3
+[probe ep0000] mean=0.2396
+[episode chstone-v0/mips] best=0.2778 acts=3 ticks=3
+[episode mibench-v1/bitcount] best=0.2782 acts=3 ticks=3
+[episode cbench-v1/bitcount] best=0.2774 acts=3 ticks=3
+[episode cbench-v1/qsort] best=0.2779 acts=3 ticks=3
+[episode cbench-v1/rijndael] best=0.1260 acts=2 ticks=1
+[episode cbench-v1/adpcm] best=0.1268 acts=2 ticks=1
+[episode chstone-v0/gsm] best=0.2787 acts=3 ticks=3
+[episode cbench-v1/blowfish] best=0.2774 acts=3 ticks=3
+[episode benchmark://npb-v0/30] best=0.2776 acts=3 ticks=3
+[neutral probe pre sleep 1] benchmark://npb-v0/30 best_on=0.27755603315934907 best_off=0.27755603315934907 articulation_on=1.000-1.000 off=1.000-1.000 adapter=None (off = on: no adapter loaded)
+[sleep 8] new=29 principles=1
+[sleep 8] train rc=0 plasticity=1.00 lr=0.0001
+[sleep 8] canary parseable-ACT rate=1.00 pass=True
+[preschool] lesson lesson delivered (phase sleeps_done=1, 313 chars)
+[preschool slot] {"label": "NOTE_AFTER", "kind": "note_after", "max_tokens": 100, "n_batch_calls": 6, "n_generations": 22, "total_seconds": 0.0, "total_chars": 2037}
+ERROR
+unittest.case.FunctionTestCase (test_neutral_probes_run_adapter_on_and_off_on_the_same_program) ... [life-v2] arm=B seed=0 n=16 sleep_every=8 probe_every=8
+[preschool] note_after=True max_tokens=100 lesson=none gate=off min_items=64 neutral_probes=True panel=2 version=q14-v1-2026-09-12
+[episode cbench-v1/susan] best=0.2774 acts=3 ticks=2
+[episode cbench-v1/sha] best=0.1259 acts=2 ticks=1
+[episode cbench-v1/dijkstra] best=0.2774 acts=3 ticks=3
+[episode cbench-v1/patricia] best=0.2771 acts=3 ticks=2
+[episode cbench-v1/jpeg-c] best=0.2780 acts=3 ticks=3
+[episode cbench-v1/tiff2bw] best=0.2775 acts=3 ticks=3
+[episode cbench-v1/gsm] best=0.1259 acts=2 ticks=1
+[episode cbench-v1/stringsearch] best=0.2773 acts=3 ticks=3
+[probe ep0000] mean=0.2396
+[episode chstone-v0/mips] best=0.2778 acts=3 ticks=3
+[episode mibench-v1/bitcount] best=0.2782 acts=3 ticks=3
+[episode cbench-v1/bitcount] best=0.2774 acts=3 ticks=3
+[episode cbench-v1/qsort] best=0.2779 acts=3 ticks=3
+[episode cbench-v1/rijndael] best=0.1260 acts=2 ticks=1
+[episode cbench-v1/adpcm] best=0.1268 acts=2 ticks=1
+[episode chstone-v0/gsm] best=0.2787 acts=3 ticks=3
+[episode cbench-v1/blowfish] best=0.2774 acts=3 ticks=3
+[episode benchmark://npb-v0/30] best=0.2776 acts=3 ticks=3
+[neutral probe pre sleep 1] benchmark://npb-v0/30 best_on=0.27755603315934907 best_off=0.27755603315934907 articulation_on=1.000-1.000 off=1.000-1.000 adapter=None (off = on: no adapter loaded)
+[sleep 8] new=29 principles=1
+[sleep 8] train rc=0 plasticity=1.00 lr=0.0001
+[sleep 8] canary parseable-ACT rate=1.00 pass=True
+[preschool slot] {"label": "NOTE_AFTER", "kind": "note_after", "max_tokens": 100, "n_batch_calls": 6, "n_generations": 22, "total_seconds": 0.0, "total_chars": 2037}
+ERROR
+
+======================================================================
+ERROR: unittest.case.FunctionTestCase (test_neutral_probes_are_paired_fresh_and_never_harvested)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state/tests/test_preschool_flags.py", line 303, in test_neutral_probes_are_paired_fresh_and_never_harvested
+    life, tr = _life(["--arm", "B", "--note-after", "--artifact-lesson", "lesson",
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_preschool_flags.py", line 90, in _life
+    tr = gh.run_life(argv)
+         ^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/golden_harness.py", line 301, in run_life
+    run_life_v2.main()
+  File "/data/home/rohing/dream-state/organism_v6/run_life_v2.py", line 1108, in main
+    _, model = preschool.neutral_probe(model, gym, life, "post", i, r, neutral,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/organism_v6/preschool.py", line 732, in neutral_probe
+    identity = _neutral_identity(gym, panel, budget_ticks, max_tokens, driver_cls,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/organism_v6/preschool.py", line 705, in _neutral_identity
+    raise RuntimeError("neutral probe adapter lacks weights/config provenance")
+RuntimeError: neutral probe adapter lacks weights/config provenance
+
+======================================================================
+ERROR: unittest.case.FunctionTestCase (test_neutral_probes_run_adapter_on_and_off_on_the_same_program)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state/tests/test_preschool_flags.py", line 442, in test_neutral_probes_run_adapter_on_and_off_on_the_same_program
+    life, tr = _life(["--arm", "B", "--note-after", "--neutral-probes", "--neutral-probe-panel", "PANEL"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_preschool_flags.py", line 90, in _life
+    tr = gh.run_life(argv)
+         ^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/golden_harness.py", line 301, in run_life
+    run_life_v2.main()
+  File "/data/home/rohing/dream-state/organism_v6/run_life_v2.py", line 1108, in main
+    _, model = preschool.neutral_probe(model, gym, life, "post", i, r, neutral,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/organism_v6/preschool.py", line 732, in neutral_probe
+    identity = _neutral_identity(gym, panel, budget_ticks, max_tokens, driver_cls,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/organism_v6/preschool.py", line 705, in _neutral_identity
+    raise RuntimeError("neutral probe adapter lacks weights/config provenance")
+RuntimeError: neutral probe adapter lacks weights/config provenance
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.052s
+
+FAILED (errors=2)
+BASELINE_ERRORS 2 BASELINE_FAILURES 0

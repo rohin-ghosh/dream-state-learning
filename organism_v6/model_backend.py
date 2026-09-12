@@ -3,8 +3,31 @@ One life = one GPU (set CUDA_VISIBLE_DEVICES before launch).
 """
 from __future__ import annotations
 import os
+import hashlib
+import json
+from pathlib import Path
 
 MODEL = os.environ.get("V6_MODEL", "Qwen/Qwen2.5-7B-Instruct")
+
+
+def configured_generation_identity(model_path, adapter_path):
+    files = {}
+    if adapter_path is not None:
+        adapter = Path(adapter_path)
+        weights = [name for name in ("adapter_model.safetensors", "adapter_model.bin")
+                   if (adapter / name).is_file()]
+        if len(weights) != 1:
+            raise ValueError("generation adapter weights are missing or ambiguous")
+        for name in ("adapter_config.json", *weights):
+            digest = hashlib.sha256()
+            with open(adapter / name, "rb") as source:
+                for block in iter(lambda: source.read(1024 * 1024), b""):
+                    digest.update(block)
+            files[name] = digest.hexdigest()
+    return dict(backend="vllm", model_input=str(model_path),
+                adapter_input=str(adapter_path) if adapter_path is not None else None,
+                adapter_files=files, default_max_tokens=400, default_temperature=0.7,
+                scope="configured loader inputs; base authentication requires lineage pins")
 
 
 class VLLMBackend:
@@ -15,11 +38,15 @@ class VLLMBackend:
         from vllm.lora.request import LoRARequest
         self._LoRARequest = LoRARequest
         self.adapter_path = adapter_path
+        self._generation_identity = configured_generation_identity(MODEL, adapter_path)
         self.llm = LLM(model=MODEL, max_model_len=max_model_len,
                        gpu_memory_utilization=0.85, enforce_eager=True,
                        enable_lora=adapter_path is not None,
                        max_lora_rank=32)
         self.tok = self.llm.get_tokenizer()
+
+    def generation_identity(self):
+        return json.loads(json.dumps(self._generation_identity))
 
     def batch(self, prompts: list[str], max_tokens: int = 400,
               temperature: float = 0.7,

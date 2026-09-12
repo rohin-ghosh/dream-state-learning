@@ -7,6 +7,7 @@ from each other's fresh ledger writes (they all see everything from PRIOR
 batches). Accepted trade-off; sleep boundaries are batch boundaries.
 """
 from __future__ import annotations
+import hashlib
 import re
 import time
 
@@ -51,6 +52,8 @@ class EpisodeDriver:
         rec = dict(kind="thought", episode_id=self.ep.eid, tick=st.tick,
                    note=chunk.strip()[:2000],
                    prompt=getattr(self, "_last_prompt", "")[:24000])
+        if self.note_after is not None:
+            rec["generation"] = self._generation_receipt
         for m in _MARK.finditer(chunk):
             kind, arg = m.group(1), m.group(2).strip()
             if kind == "PREDICT":
@@ -71,6 +74,7 @@ class EpisodeDriver:
                     time_cost=round(time.time() - st.born_at, 1))
                 if self.note_after is not None:
                     from .preschool import parse_outcome
+                    act_row["generation"] = self._generation_receipt
                     exec_id = self.note_after.execution_id(self.ep.eid, st.tick,
                                                            self.n_acts, self.occurrence_id)
                     act_row["execution_id"] = exec_id
@@ -79,7 +83,8 @@ class EpisodeDriver:
                     self.pending_after.append(dict(
                         episode_id=self.ep.eid, tick=st.tick, execution_id=exec_id,
                         occurrence_id=self.occurrence_id, occurrence_index=self.occurrence_index,
-                        action=arg, outcome=outcome, facts=parse_outcome(outcome)))
+                        action=arg, outcome=outcome, facts=parse_outcome(outcome),
+                        act_row=dict(act_row)))
                 self.ledger.append(act_row)
                 st.last_outcome = f"{outcome} (score {score:.4f})"
                 self.tail.append(f"[OUTCOME] {st.last_outcome}")
@@ -165,7 +170,21 @@ def run_episodes_batch(model, gym, episodes, bootstrap: str, ledger: Ledger,
         seeds = ([_seed_for(d.ep.eid, d.st.tick, gen_seed)
                   for d in active] if gen_seed is not None else None)
         chunks = model.batch(prompts, seeds=seeds)
-        for d, c in zip(active, chunks):
+        if not isinstance(chunks, (list, tuple)) or len(chunks) != len(active):
+            raise RuntimeError("wake generation cardinality mismatch")
+        if any(not isinstance(chunk, str) for chunk in chunks):
+            raise RuntimeError("wake generation must return text for every request")
+        for index, (d, c) in enumerate(zip(active, chunks)):
+            if note_after is not None:
+                identity_fn = getattr(model, "generation_identity", None)
+                identity = identity_fn() if callable(identity_fn) else {"backend": "unverified"}
+                d._generation_receipt = dict(
+                    schema="child-generation-v1", identity=identity,
+                    prompt_sha256=hashlib.sha256(prompts[index].encode()).hexdigest(),
+                    output_sha256=hashlib.sha256(c.encode()).hexdigest(),
+                    seed=seeds[index] if seeds is not None else None,
+                    max_tokens=identity.get("default_max_tokens"),
+                    temperature=identity.get("default_temperature"))
             d.consume(c)
         if note_after is not None:
             note_after.run_round(model, active, ledger, gen_seed)
