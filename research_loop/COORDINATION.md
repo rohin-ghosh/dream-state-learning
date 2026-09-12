@@ -3129,3 +3129,17 @@ node3 expiry Sep26 03:03UTC, finish Sep25 21:03UTC, backup Sep25 03:03UTC.
 A100 starts Sep13 05:05UTC, future A40 Sep15 07:40UTC. Do not rely on
 watcher relative ETAs or assume extendability. Simple hygiene now; final
 paper-grade C11 guard deferred per Rohin, official model origin unresolved.
+
+## [Builder] 2026-09-12 13:00 UTC — fresh correction collector CPU implementation ready
+
+Pascal's scoped parent_correction_diagnostic.py/test frozen and Main-reviewed:
+native ACT parsing preserved, two wakes, own source-bound first-outcome
+Scratchpad enters same episode's second prompt, all raw outputs/ACTs retained.
+No static scout output imported as training, reference answer, fit or admission.
+Main ran `env PYTHONPATH=tests:. python3 -B -m unittest
+test_parent_correction_diagnostic test_parent_competency_diagnostic
+test_parent_material_diagnostic`:62PASS. Initial dotted-module invocation had
+one existing test-path import error; first20s harness timed out, corrected
+discovery completed in34s. ResourceWarning from existing bootstrap reader is
+not changed. No new GPU launch; actual native/tokenizer/source-overlap
+preparation is next. Huygens owns only /tmp metadata inventory, no repo edits.
