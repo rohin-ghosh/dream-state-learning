@@ -21,7 +21,13 @@
   fresh semantic-action surface gate passed perfectly (`64/64` generation,
   `64/64` scoring, `32/32` complementary redirects in both, `16/16` copy
   canaries, zero malformed outputs). That is zero-step surface validity, not
-  learning. A four-fit semantic W0 is running, but a fresh code audit landed
+  learning. A later authored dual-map stress diagnostic acquired both
+  complementary maps at `32/32` PROSPECT and `32/32` REVISE development
+  cases, but catastrophically changed unrelated outputs: exact-copy fell
+  from `14/16` OFF to `0/16` in both fitted arms and learned-tag spill reached
+  `13/16`--`16/16`. REVISE also contains a public-identifier shortcut, so
+  this only shows capacity under an unsafe write—not a writer, Level-1, or
+  learning result. A four-fit semantic W0 was run, but a fresh code audit landed
   after launch and found two reducer loopholes: common-mode action-probability
   growth is invisible to its binary-relative TV, and itemwise legality flips
   can cancel. An OFF-only bound also proves the `.5`-nat gain requirement is
@@ -30,6 +36,14 @@
   Preserve its registered outputs as diagnostics, but no PASS/fail label can
   qualify or falsify selective writing until locality, headroom-aware
   acquisition, and exact-train storage scoring are repaired prospectively.
+- **Replay/compiler ingredient:** a matched root-0 lexical-view scout found
+  that four phrasings preserved unrelated arithmetic (`32/32`) while one
+  repeated phrasing collapsed it (`0/32`), but neither arm extracted the new
+  memories (`4/16` dev and exact in both). This supports lexical diversity as
+  a possible anti-collapse ingredient, not as memory or DREAM success. The
+  four views occupied one mean-loss batch, so the run tested same-batch
+  gradient diversity rather than temporally separated replay; its failed
+  memory gate does not justify root expansion.
 - **Mechanism:** v3 preserves a credible six-fit skeleton: crossed authentic
   source events, evidence-indicated child pair selection, source/link
   derangements, two truthful outcome carriers, old+pad control, typed reads,

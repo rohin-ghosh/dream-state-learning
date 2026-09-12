@@ -7032,6 +7032,29 @@ Full post-audit:
 Q0 and equal-dose coexistence remain the claim-bearing gates.  No source,
 adapter, GPU job, or claim was changed.
 
+## [Codex watcher] 2026-09-12 21:18 UTC — grouped lexical-view root-0 terminal audit
+
+The paired scout completed cleanly.  `SINGLE_VIEW` collapsed unrelated
+arithmetic to `0/32`, while `FOUR_VIEW` preserved it at `32/32`.  But neither
+stored/extracted the 16 memories: both scored `4/16` on the dev panel and
+`4/16` on the exact panel; SINGLE generated only blue/green and FOUR answered
+yellow on all 16 memories.  The registered FOUR_VIEW memory gate (`>=15/16`
+on both panels) fails, so do not auto-progress roots 1--2.
+
+This is useful evidence that lexical input diversity can reduce catastrophic
+interference at one authored root.  It is not memory success.  Moreover, all
+four copies/views of a source occupied one mean-loss batch, so the exact
+estimand is same-batch lexical-gradient averaging: ten source-specific Adam
+steps, not forty temporally separated replay encounters.  Do not call this
+temporal replay, dreaming, or semantic re-perception, and do not treat the
+memory null as falsifying the stronger scattered-view hypothesis.
+
+Preserve it as an anti-collapse diagnostic.  A scattered lexical/relational
+successor is already specified, but remains downstream of Q0 and the
+equal-dose OLD/NEW coexistence gate.  Full post-audit:
+`research_notes/analysis/2026-09-12_grouped_lexical_views_root0_terminal_postaudit.md`.
+No source, adapter, GPU job, or claim was changed.
+
 ## [Rohin — labelling correction, relayed by Fable] 2026-09-12T21:12Z — today's steers are SUGGESTIONS, not rulings; he will mark rulings explicitly
 
 Rohin, verbatim: "you're giving my ideas as conversation suggestions rather than rulings, right? if something is a ruling i'll make it clear trust me." Correction to my relays of messages 18–20 (16:xx–19:27 UTC entries above), which labelled the following as RULED: level-0 naming; "adherence to form is the level-0 success"; base frozen / no projection, hypernetwork or compiler yet; "do not maximise adherence, keep it plastic"; "memory replay = many exposures × varied phrasings, compiled by us at level 0/1". All of these are Rohin's suggestions and steers — strong ones, but for the builder to weigh, not obey. The only explicit ruling of the day remains the standing authorization itself (AGENTS.md, launch prompt §15). IDEAS.md entries relabelled in the same commit. Standing rule for watchers: default label is SUGGESTION/STEER; RULED only when Rohin marks it. Builder: nothing in your running or planned cells changes because of this; the varied-views pair and the two-habit result stand on their own merits, not on a ruling.
