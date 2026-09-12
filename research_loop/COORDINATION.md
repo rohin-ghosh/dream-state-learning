@@ -2314,13 +2314,11 @@ Read-only audit complete: `research_notes/analysis/2026-09-12_connected_memory_b
 
 ## [Fable] 2026-09-12T07:07Z — data safety: node-1 receipts archive 2026-09-12T07 verified
 `~/dream-state-artifacts/node1_receipts_2026-09-12T07/v6_out_receipts_2026-09-12T07.tgz.part_aa` (329,196,295 bytes; node-1 `~/v6_out` minus `*.safetensors/*.bin/*.pt`, taken 07:04 UTC, includes the builder's two scout directories) — sha256 `9bcec5ba…24c7` identical on node 1 and laptop. Previous archive 2026-09-12 (23:39 UTC 09-11) retained. Adapter mirror on node 2 stands at 698/702; final re-mirror before node 1 ends 2026-09-14 16:14 PT.
-<<<<<<< HEAD
 
 ## [Fable VM courier, headless] 2026-09-12T07:07:29Z — laptop Codex watcher's 07:04 B0 paired-generation note saved for the builder
 - **Relay.** The laptop Codex watcher's 07:04 UTC note to Astra arrived in the VM Claude courier inbox. Saved verbatim at `research_notes/courier/CODEX_NOTE_TO_ASTRA_WALLCLOCK_PAIRING_2026-09-12T0704Z.md`. Summary: the B0 A/B slot scouts' `probe_ep0000` first-tick child outputs are byte-identical across all eight programs (shared seeds work), but at tick 2 the prompt hashes diverge because the model-visible `CLOCK` line carries wall-clock elapsed seconds (`alive 27s` vs `alive 26s`); seeded generation then diverges and the pre-write means are 0.4681 vs 0.4872. B0 may continue as the quarantined instrumentation scout, but its A/B score delta is descriptive, not a paired effect. Asked of the builder before paper-grade paired effects: remove or freeze model-visible elapsed seconds (or replay a byte-identical exogenous prompt/outcome tape), and add a regression asserting paired arms' prompt hashes stay equal until the intended treatment changes them. No remote job was changed by the watcher.
 - **Courier's read-only pointer (no edit).** The source is `organism_v6/state.py` `clock_line()`: `alive = time.time() - self.born_at`, rendered with `{alive:.0f}s` into the prompt-visible CLOCK line. A tick-derived or frozen value would make the line deterministic across paired arms; this is the builder's call and file.
 - **Astra state at 2026-09-12T07:07:29Z (tmux "astra", read-only capture; nothing typed).** Main thread active ("Pursuing goal 52m"), sidecar 01a0946a reviewing life_lineage.py vs preschool_reasoning.py; it reported a cross-module RECORD_ITEM format blocker. No [Builder → Rohin] question visible.
-=======
 ## [Codex] 2026-09-12 07:11 UTC — builder main thread blocked on nonessential metadata approval
 
 Read-only tmux capture found Astra's main thread stopped at an approval prompt
@@ -2329,7 +2327,6 @@ not touch builder-owned source or jobs. A courier note asks Astra to cancel the
 fetch, preserve official-pin retrieval as unresolved/fail-closed, and continue
 the authorized nursery/writer integration and CPU tests so metadata lookup does
 not idle the builder.
->>>>>>> 4085df8f (Flag builder metadata approval stall)
 
 ## [Fable, carrying Rohin] 2026-09-12T07:13Z — the one-sentence paper
 Rohin (raw message 11): "synthesizing all these things into a cohesive chain and building up a flywheel loop is the simplest way to say it." Builder: open the abstract with this in substance; IDEAS.md has the four-clause expansion.
