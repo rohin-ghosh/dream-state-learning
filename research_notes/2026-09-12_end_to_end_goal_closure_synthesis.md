@@ -114,15 +114,34 @@ not sequential or unrehearsed retention.
 
 ### S — authentic action/outcome source
 
-Repair the lived-mirror assay before execution. Pair TRUE with
-OUTCOME_SHUFFLED within each mirrored world and stratum, preserving row IDs,
-all non-outcome fields, outcome counts, targets, surfaces, dose, seed, and
-node. Require both initial actions and both outcomes in the admitted rows.
+Do not use the success-selected final `ACT` from the old lived-mirror assay:
+situation alone predicts that target, so the writer can ignore the outcome.
+The smallest repaired source admits a balanced subset of the child's actual
+initial actions and public outcomes under opaque situations, then SLEEP renders
+only two reversible views:
 
-The paper-facing comparison needs three disjoint scientific roots. A pass says
-that breaking the within-row public-outcome binding reduced later
-mapping-specific action. It does not yet say the child formed connected
-knowledge.
+```text
+situation + executed action -> public outcome
+situation + desired outcome -> executed action
+```
+
+Pair TRUE with `OUTCOME_SHUFFLED` over exactly the same event identities,
+actions, surfaces, target marginals, dose, seed, and node. Within each
+situation, shuffle only outcome donors so action and outcome become independent
+while their counts remain fixed. Require authentic child coverage of both
+actions before admission; do not force or synthesize a missing action. Both
+held forward prediction and inverse native-action use must beat SHUFFLED while
+passing GOLD/TEXT validity, interface, non-harm, spill, and wrong-root gates.
+The exact proposed geometry and stop rules are in
+`research_notes/analysis/2026-09-12_s_authentic_action_outcome_source_design_audit.md`.
+
+Three disjoint roots are only a feasibility block: even 3/3 positive has
+one-sided sign probability `1/8=.125`. A paper-facing source claim needs the
+same frozen assay on eight roots, with at least 7/8 joint-positive
+forward/inverse contrasts (`9/256=.0352`). A pass says that preserving the
+within-event public-outcome binding improved seen-situation relation use and
+later goal-conditioned action. It does not yet say the child discovered a
+credit rule or formed connected knowledge.
 
 ### M — one-cycle connected relay
 
