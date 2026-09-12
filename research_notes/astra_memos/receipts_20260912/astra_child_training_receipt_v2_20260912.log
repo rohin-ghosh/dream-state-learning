@@ -1,0 +1,57 @@
+test_counts_use_causal_shift_and_mask_boundaries (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_counts_use_causal_shift_and_mask_boundaries) ... ok
+test_gate_binds_exact_input_bytes (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_gate_binds_exact_input_bytes) ... ok
+test_non_admission_and_bad_hashes_fail_closed (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_non_admission_and_bad_hashes_fail_closed) ... ok
+test_only_first_token_target_is_not_training_evidence (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_only_first_token_target_is_not_training_evidence) ... ok
+test_prefix_padding_and_no_effective_target_fail (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_prefix_padding_and_no_effective_target_fail) ... ok
+test_receipt_binds_actual_adapter_and_metadata_bytes (tests.test_child_training_receipt.ChildTrainingReceiptTests.test_receipt_binds_actual_adapter_and_metadata_bytes) ... ok
+test_bad_wrappers_fail_closed (tests.test_child_target_loss.ChildTargetTests.test_bad_wrappers_fail_closed) ... ok
+test_mismatched_masks_fail_closed (tests.test_child_target_loss.ChildTargetTests.test_mismatched_masks_fail_closed) ... ok
+test_no_surviving_target_fails_closed (tests.test_child_target_loss.ChildTargetTests.test_no_surviving_target_fails_closed) ... ok
+test_pre_outcome_record_is_rejected (tests.test_child_target_loss.ChildTargetTests.test_pre_outcome_record_is_rejected) ... ok
+test_prefix_and_boundary_straddles_are_not_targets (tests.test_child_target_loss.ChildTargetTests.test_prefix_and_boundary_straddles_are_not_targets) ... ok
+test_clean_record_does_not_create_a_hit (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_clean_record_does_not_create_a_hit) ... ok
+test_current_policy_receipts_retain_incremental_scanning (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_current_policy_receipts_retain_incremental_scanning) ... /data/home/rohing/dream-state/organism_v6/run_life_v2.py:248: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmps29vrjcq/leak_scan.jsonl' mode='r' encoding='UTF-8'>
+  for line in open(path):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_old_clean_receipts_cannot_skip_newly_scanned_notes (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_old_clean_receipts_cannot_skip_newly_scanned_notes) ... /data/home/rohing/dream-state/organism_v6/run_life_v2.py:248: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpiuepbsqh/leak_scan.jsonl' mode='r' encoding='UTF-8'>
+  for line in open(path):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/organism_v6/run_life_v2.py:248: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpe8_fucr7/leak_scan.jsonl' mode='r' encoding='UTF-8'>
+  for line in open(path):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_post_outcome_heldout_family_is_rejected (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_post_outcome_heldout_family_is_rejected) ... ok
+test_post_outcome_heldout_id_is_rejected (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_post_outcome_heldout_id_is_rejected) ... ok
+test_post_outcome_text_is_scanned (tests.test_builder_reproducibility.PostOutcomeIsolationTests.test_post_outcome_text_is_scanned) ... ok
+test_life_passes_seed_to_each_sleep_fit (tests.test_builder_reproducibility.SeedForwardingTests.test_life_passes_seed_to_each_sleep_fit) ... /data/home/rohing/dream-state/organism_v6/parent_backend.py:27: ResourceWarning: unclosed file <_io.TextIOWrapper name='/data/home/rohing/dream-state/organism_v6/parent_prompt.txt' mode='r' encoding='UTF-8'>
+  PARENT_BOOT = open(os.path.join(HERE, "parent_prompt.txt")).read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/tests/golden_harness.py:196: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/sleep_0008/corpus.json' mode='r' encoding='UTF-8'>
+  n = len(json.load(open(corpus))["corpus"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/organism_v6/run_life_v2.py:617: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/sleep_0008/waking_brief.txt' mode='r' encoding='UTF-8'>
+  t = open(p).read().strip()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/organism_v6/run_life_v2.py:990: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/sleep_0008/corpus.json' mode='r' encoding='UTF-8'>
+  prior = json.load(open(cp))["corpus"]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/tests/golden_harness.py:196: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/sleep_0016/corpus.json' mode='r' encoding='UTF-8'>
+  n = len(json.load(open(corpus))["corpus"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/organism_v6/run_life_v2.py:617: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/sleep_0016/waking_brief.txt' mode='r' encoding='UTF-8'>
+  t = open(p).read().strip()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/data/home/rohing/dream-state/tests/test_builder_reproducibility.py:38: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3cgyikiy/life.log' mode='a' encoding='UTF-8'>
+  run_life_v2.main()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_single_generation_forwards_explicit_seed (tests.test_builder_reproducibility.SeedForwardingTests.test_single_generation_forwards_explicit_seed) ... ok
+test_training_seeds_python_and_torch (tests.test_builder_reproducibility.SeedForwardingTests.test_training_seeds_python_and_torch) ... ok
+test_unspecified_generation_seed_preserves_default (tests.test_builder_reproducibility.SeedForwardingTests.test_unspecified_generation_seed_preserves_default) ... ok
+test_unspecified_training_seed_changes_nothing (tests.test_builder_reproducibility.SeedForwardingTests.test_unspecified_training_seed_changes_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.104s
+
+OK
