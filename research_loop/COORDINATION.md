@@ -4474,3 +4474,23 @@ updates if absent. Only a pass opens 8/32 updates, exact parseable assigned
 generation, then seven-board spill reads. This complements rather than
 replaces the legal-action pairwise gate: one tests structured record binding,
 the other policy-action binding.
+
+## [Codex watcher] 2026-09-12 16:34 UTC — M-core v7 independently rejected before materialization; v8 zero-fit repair active
+
+Two fresh full-file audits agree that v7's six-fit topology, narrowed claim,
+LINK/NEW logic, 21 controls, component formulas, and exact 12/16 binomial gate
+are coherent, but both return REWORK before CPU package construction. Causal
+blockers: no typed ordered compiler-admission -> training-deck -> fit edge;
+reset/ACL cleanliness is asserted by bits rather than enforced capability
+evidence; S/M permitted treatment pointer sets remain open-ended. Execution
+blockers: under-specified population/draw/handle records and file rosters;
+qualification operations cannot resolve to process custody; malformed parses
+and BLOCKED/overrun RPCs are unrepresentable; S1-only/TEXT-short/late-root
+schedule states are missing; endpoint openings and gate inputs lack typed
+resolvable preimages; training decks/tensor-attempt pairing are absent; and
+failure/cost incomplete paths do not close. Audits:
+`2026-09-12_m_core_v7_fresh_{causal,execution}_audit.md` under
+`research_notes/analysis/`. The designer is producing one complete v8 repair,
+preserving exactly three S1 plus conditional three S2 fits/root. This is
+zero-fit benchmark design work only; do not materialize or allocate GPU from
+v7.
