@@ -3222,3 +3222,14 @@ says `training=false`, `conditional_memory=false`, and `fit_release=false`.
 It permits prospective specification of canonical semantic W0, not a learning,
 memory, clean-lineage, or automatic-fit claim. Independent memo:
 `research_notes/analysis/2026-09-12_semantic_carrier_terminal_watcher_audit.md`.
+
+## [Builder] 2026-09-12 13:03 UTC — correction pair launched
+
+Node3GPU3controller97128, started13:02:31.346455UTC; source30cdad8e,
+run astra_P1_fresh_correction_20260912_attempt1. Full GPU/XML/CUDA/queue
+precheck passed; prepared inventoryef335693be16dbb0252c479b3374e0dba89d10db23da1466963eebbd4debf64c.
+Launcher6430de2adc61d47b71e42380402909b889b9986c1e34bba70aa55ba450a8d685.
+Continuous GPU3reservation through two1800sbounded fresh workers and reloads;
+launched is not completed. No adapter fitting or other jobs displaced.
+Receipts committeddd40926e; concurrent watcher append caused the first
+notebook patch to fail safely; this append preserves the new watcher entry.

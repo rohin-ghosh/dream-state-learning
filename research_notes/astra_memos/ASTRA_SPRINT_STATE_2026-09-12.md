@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 12:55 UTC**.
+Latest reconciliation: **2026-09-12 13:03 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -9,7 +9,10 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
 
 ## Current live state — supersedes older run-status snapshots below
 
-- All Main-owned node3 runs are terminal and reservations released. At
+- Node3GPU3 now reserved for fresh correction pair controller97128, launched
+  13:02:31UTC, source30cdad8e, run astra_P1_fresh_correction_20260912_attempt1.
+  Native preparation and Main/node62CPUtests pass; two1800sworkers, no fit.
+  All prior Main-owned node3 runs are terminal and reservations released. At
   12:54 UTC all eight GPUs report 0 MiB and prior controllers/workers
   93084/93136/93137/88012/88114/90625 are absent. This observation is not
   sufficient for allocation: repeat full GPU/XML/CUDA-environment/queue checks.
@@ -33,7 +36,8 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
   four fits, 1712 requests, unchanged primary criteria, absolute locality drift.
   Pascal owns new parent_correction_diagnostic.py/test: fresh32 development
   episodes/arm with own post-outcome Scratchpad injected into second wake.
-  Neither follow-up has launched; native preflight and Main review pending.
+  Correction pair launched as above; semantic writer native preflight/review
+  still pending. No conditional writer result or correction result yet.
 - Turing owns four staged paper files, not canonical manuscript. Main owns
   Git/notebook/launches. Formal C11guard stays deferred.
   Preserve dirty `gpu/codex/dream_state.rules` and all existing evidence.
