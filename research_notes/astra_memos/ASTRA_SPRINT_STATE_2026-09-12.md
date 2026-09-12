@@ -1,13 +1,13 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 10:14 UTC**.
+Latest reconciliation: **2026-09-12 10:52 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
-**Current critical-path update, SEQ-070:** coached source replay completes512calls,
+**Parked prior material endpoint, SEQ-070:** coached source replay completes512calls,
 0/256strict qualifying records in each arm; actual distinct preparation revalidates
 and returns paired skip, no fit/probe. Controller49668 exited, worker49696group
 andGPU1released; owned backend engine49953terminated during normal cleanup.
@@ -31,17 +31,28 @@ completed; I_d3.077589/spill.393606andI_d1.140233/spill.296436: bothG9FAIL.
 OFFscores and cue metadata match baseline exactly at serialized precision.
 Both owned groups/GPUcleanup verified;GPU0/2reservations released. Further
 LR-only sweep PARKED; no selective writer. Memo ASTRA_LOWERLR_TERMINAL_2026-09-12.md.
-**Active behavioral positive controls:** source3d56c5cd, node3GPU1useful
-controller56987andGPU3corrupt controller57084, start10:32:26/39UTC,
+**Terminal behavioral positive controls SEQ-072:** source3d56c5cd, node3GPU1useful
+controller56987andGPU3corrupt controller57084, completed10:41:49/26UTC,
 root `astra_mini_sudoku_useful_corrupt_20260912_attempt3`. Native32item
 useful/wrong-board material validated,96steps each then16canary fresh-process
-OFF/ON first-ACT evaluation.900sfit/2100spair limits; keep reservations through
-reload gaps. Attempt1material-only launch refusal retained (slow GPU query);
+OFF/ON first-ACT evaluation. Both source/pair/cleanup receipts complete,
+old reservations released. Attempt1material-only launch refusal retained (slow GPU query);
 non-material10→30stimeout repair passed22wrapper tests. Attempt2failed before
 model load because venv Python was symlink-resolved to system Python; fixed
 with regression,20material tests pass, both owned-worker cleanups verified.
-All attempt3corpus/token hashes match original. No science outcomes
-yet, no oracle material in clean lineage. See exact comparison memo.
+All attempt3corpus/token hashes match original. Useful2/16firstsolves,
+corrupt0/16,bothOFF0/16; partialscore.585546875/.28828125/.1125. Both
+solved puzzles(1900060/62)have solutions absent training. Actual64firstprompt
+bytes match saved source;48uniquecompletions independently checked; actual
+material→fit→adapter→probe bindings and remote weight hashes verified.
+Weak single-seed external-oracle result, not G2/parenting/clean lineage.
+**Active replications:** sourcebc4250ed, node3GPU1seed1controller64646
+at10:50:46.784304UTC andGPU3seed2controller64744at10:50:57.738575UTC.
+Each holds oneGPU through sequential useful→corrupt fits/probes. Roots
+`astra_mini_sudoku_seed{1,2}_20260912_attempt1`, exact seed0corpusbytes,
+96steps/arm and16samecanaries,900sfit+2100spair perarm. PreserveGPU1/3
+reservations across botharms/reloads. No automatic extra seeds. Spec
+ASTRA_MINI_SUDOKU_REPLICATIONS_2026-09-12.md. Await full paired outcomes.
 Parent-free learning/retention/campaign remain incomplete.
 
 W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails
