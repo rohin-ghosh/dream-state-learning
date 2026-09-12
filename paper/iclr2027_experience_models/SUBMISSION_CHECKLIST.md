@@ -43,7 +43,18 @@
   a possible anti-collapse ingredient, not as memory or DREAM success. The
   four views occupied one mean-loss batch, so the run tested same-batch
   gradient diversity rather than temporally separated replay; its failed
-  memory gate does not justify root expansion.
+  memory gate did not justify root expansion. A repaired distinct-source
+  interleaving schedule then changed the result: `FOUR_VIEW` acquired/extracted
+  `15--16/16` facts, reached `45--48/48` across three held lexical families,
+  and retained the rehearsed arithmetic action at `32/32` on all three
+  optimizer seeds. `SINGLE_VIEW` did so on two seeds but failed on the third
+  (`4--5/16` memory and `0/32` correct arithmetic). This is a positive
+  supplied-fact/coexistence ingredient and directional view-robustness result,
+  not yet a selective writer: every seed used the same 16 authored facts,
+  warm-started adapters, and an old behavior explicitly rehearsed in every
+  fit. The bounded sequential OLD/NEW allocation diagnostic is now running;
+  it tests retention across two writes, not endogenous DREAM or lifetime
+  learning.
 - **Mechanism:** v3 preserves a credible six-fit skeleton: crossed authentic
   source events, evidence-indicated child pair selection, source/link
   derangements, two truthful outcome carriers, old+pad control, typed reads,
