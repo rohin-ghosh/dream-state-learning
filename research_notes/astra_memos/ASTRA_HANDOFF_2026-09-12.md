@@ -1,5 +1,57 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding checkpoint — September 12, 23:14 UTC
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal guard finalC11-only.
+Origin UNRESOLVED_LOCAL_HASHES_ONLY; no generalG3/P1/G5/H1/H2/freeze.
+Main sole Git/native operator. Preserve dirty gpu/codex/dream_state.rules.
+Latest result commit2e8f21bd; watcher73942bd2 preserved normally.
+
+- Only Main GPU job: node3GPU2 process-v2 parent-free readoutPID255725,
+  launch22:58:48.818483UTC; source4c3064c1c3eef068951e9c3b2ca46630754564e7.
+  Root ~/astra_diagnostics/astra_rulegame_process_readout_v2_20260912_attempt1.
+  Plan8b0f23858427d57b579688bcc06dbae4768b9bbbc2198660d1f1dbe31f092323.
+  At23:14 OFF/P_ON complete, A_ON still live; no outcomes inspected.
+  Driver46e3d097...,1800s controller/600workers/140cleanup+300collection.
+  Native /tmp/astra_process_readout_collect_main_20260912.sh status is blind;
+  run finish ONCE after ready=true, with320s tool timeout. Collector25Main+
+  25native testsPASS, SHA303b1518..., actual launch SHA14156098...; outputs
+  fresh sibling ROOT_collection_attempt1. Never retry partial collection.
+- Memory seed1/2 controllers249359/249709 and watchers249360/249710 ended
+  naturally, no signals. Full release23:03:37/23:04:22UTC; capsules collected,
+  archived and raw448call+96inherited auditPASS. SEQ116 canonical memo
+  ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md. Both FOUR meet thresholds;
+  seed1 SINGLE slightlybetter; seed2SINGLE arithmeticnumericallywrong32/32
+  while PREDICT-before-ACT formatting remainsvalid32/32. No blanket superiority.
+- SEQ115 own-wake writes COMPLETE/fullreleased,68-membercapsule9db826c8...;
+  canonical ASTRA_PROCESS_WRITE_V2_2026-09-12.md.12updates/freshbase/twoownwakes
+  perarm, context-distillation/V2grammaramendment/unequaltokens explicit.
+  SEQ114 acquisition and SEQ115 finitewrites are committed36ae3639.
+- Manuscript sixfiles throughSEQ114/115 DIRTY/EDITSTOP byBanach, handoff
+  /tmp/astra_manuscript_seq114_115_handoff_20260912.md; Planck reviewing ONLY
+  /tmp/astra_manuscript_seq114_115_independent_review_20260912.md. Verify hashes
+  and review before staging. NoSEQ116 manuscriptintegrationyet.227wordabstract.
+
+New next experiment NOT launched: seed0 FOUR400step S0; two sequential new
+16factbanks per R/NEW_ONLY arm, fresh optimizerseed0,320updates/cycle,
+400->720->1040. Replayold vs extranew is fixedbudget, NOT newdosematched.
+Five128call panels=640, allcapturesbeforereduction,90A40mininclusivecollection.
+Arendt01a097b5-1d8e-7bb3-bb6b-52e0844e371a owns ONLY
+organism_v6/sequential_memory_corpus.py andtests/test_sequential_memory_corpus.py;
+interface /tmp/astra_sequential_memory_corpus_handoff_20260912.md.
+Darwin01a0976c-89e3-7372-a3ba-134602680bff owns ONLY
+/tmp/astra_sequential_memory_pair_20260912.py, test andhandoff. Main clarified
+optimizerseed0, not advisoryseed1; confirm both agree. Existing olddrivers and
+originalpanels untouched. Nativeprep/acceptance/launchstillrequired.
+Herschel01a09708-4d90-7d91-9aa4-25e6163abdda prepares independent rawprocess
+readoutaudit ONLY /tmp/astra_process_readout_independent_review_20260912.*;
+wait for Main completecapsule, no native/partial score reads.
+
+Nativevenv /localhome/local-rohing/v2/venv/bin/python, neverresolvesymlink.
+Node1backupdueSep13 23:14UTC; no transfer executed. A100startsSep13 05:05UTC,
+stillfuture. Leases are supplied, not newly controlplaneverified. No foreign
+jobs/signals/queues changed. Fableadvisorypending is not a launchgate.
+
 ## Superseding checkpoint — September 12, approximately 22:45 UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal guard only final C11.
