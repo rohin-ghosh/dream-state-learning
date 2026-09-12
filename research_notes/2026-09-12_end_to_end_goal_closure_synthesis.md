@@ -497,11 +497,23 @@ the child link saves one of the three allowed reads. The admission truth table
 forbids nuisance outcomes from creating a row even when their bit happens to
 equal the hidden target.
 
-This v2 closes the previous findings on paper but remains a **candidate pending
-fresh independent re-audit and CPU/exact-text closure**, not permission to
-fit. Canonical candidate:
+V2 repairs the v1 causal collisions, but a fresh statistics/visibility review
+still returns **REWORK before any M fit**. Under this evidence schedule, the
+public necessity ablations mechanically identify the useful pairs. They can
+support only “the child selected and sealed the evidence-indicated pair set,”
+not genuine organization or DREAM intelligence. The reader's proposed mutual-
+information equality is vacuous under root-unique query IDs, and a 32-row
+internal bank does not prove a three-versus-four-read lower bound. Before CPU
+implementation, replace those with an explicit side-channel noninterference
+contract and exhaustive model-checking of every legal adaptive READ policy;
+prebind the exact DEV root order; close the free-`h` estimand and exact tests;
+and keep derivation provenance audit-only and surface-matched. None of these
+repairs requires an additional fit. V2 therefore remains a candidate, not
+permission to execute. Canonical candidate:
 `research_notes/analysis/2026-09-12_m_core_minimal_exact_two_cycle_design_v2.md`.
-Prior audit:
+Current independent audit:
+`research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
+Prior v1 audit:
 `research_notes/analysis/2026-09-12_m_core_revised_three_condition_adversarial_audit.md`.
 
 Release three endpoints separately:

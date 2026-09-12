@@ -21,10 +21,14 @@
   before GPU spend. Its v2 replacement now uses a crossed repeated
   action--outcome source, eight syntax/frequency-matched DREAM candidates,
   binding-matched source and DREAM derangements, separate truthful outcome
-  carriers, a matched old+pad second write, and a closed typed reader. It is
-  still a watcher candidate under fresh re-audit, not executable evidence. No
-  M-core LoRA work begins until that review and CPU/exact-text closure pass,
-  W0 passes, and the coexistence canary qualifies.
+  carriers, and a matched old+pad second write. A fresh v2 review still says
+  REWORK: its public ablations mechanically prescribe the DREAM pair, its
+  root-unique mutual-information gate is vacuous, and bank size alone does not
+  prove the claimed read-depth ceiling. The minimum repair narrows DREAM to an
+  evidence-indicated child selection, replaces MI with exact noninterference,
+  exhaustively model-checks legal reads, and freezes roots/estimands/tests. It
+  adds no fits. No M-core LoRA work begins until that repair and CPU/exact-text
+  closure pass, W0 passes, and the coexistence canary qualifies.
 - **Parenting:** no useful lesson has qualified. Fitting historical
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham

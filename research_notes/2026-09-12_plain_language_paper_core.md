@@ -67,9 +67,15 @@ Only after those first-sleep tests pass do we pay for three second-sleep
 writes: one for each of two truthful possible outcomes and one equal-work
 old-memory-plus-pad control. The final task needs both an old connection and
 the new outcome memory. This v2 repairs the known causal flaws on paper and is
-now under fresh independent review and CPU/exact-text closure. If it survives,
-it is the smallest experiment that tests THINK, DREAM, and two SLEEP writes
-together rather than storage alone.
+now under fresh independent review and CPU/exact-text closure. The first v2
+review found one important limit: the public experiments themselves tell a
+competent solver which pair is useful. We may therefore claim that the child
+selected and sealed those evidence-indicated connections, but not that it
+invented an organization algorithm. The reader also needs a mechanical proof
+that no legal three-read strategy can recover four separate atoms. These are
+CPU/specification repairs and add no training runs. If they close, this is the
+smallest experiment that tests THINK, DREAM, and two SLEEP writes together
+rather than storage alone.
 
 ### 3. Learning improves a life, not just one probe
 
