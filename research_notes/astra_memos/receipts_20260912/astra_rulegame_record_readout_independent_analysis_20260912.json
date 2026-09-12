@@ -1,0 +1,4285 @@
+{
+  "P_A_raw_comparison": {
+    "aligned_calls": 29,
+    "differences": [],
+    "output_ids_equal": 29,
+    "prompt_equal": 29,
+    "text_equal": 29
+  },
+  "capsule_metadata_files": 232,
+  "capsule_sha256": "f8f2bb688da189ebb8f70c67725f1c008db49d6c5b2800abdc58a0dd4fcb7458",
+  "cells": {
+    "A_ON": {
+      "allotted_record_denominator": 12,
+      "calls": 29,
+      "costs": {
+        "generation_seconds": 26.555603663087822,
+        "native_input_tokens": 10107,
+        "native_output_tokens": 634,
+        "output_token_ceiling": 8300,
+        "requests": 29
+      },
+      "costs_by_role": {
+        "record": {
+          "generation_seconds": 16.420158488035668,
+          "native_input_tokens": 3018,
+          "native_output_tokens": 402,
+          "output_token_ceiling": 1100,
+          "requests": 11
+        },
+        "wake": {
+          "generation_seconds": 10.135445175052155,
+          "native_input_tokens": 7089,
+          "native_output_tokens": 232,
+          "output_token_ceiling": 7200,
+          "requests": 18
+        }
+      },
+      "executed_record_denominator": 11,
+      "faithful_records": 10,
+      "finish_reasons": {
+        "stop": 29
+      },
+      "identity": {
+        "adapter_files": {
+          "DONE": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+          "README.md": "fb5e3f69430ada914e1ea7492de58c8a0b4efff16de168cb0d0d3c8917116acc",
+          "adapter_config.json": "84be2a1943c29cfcad0288d00df7dda1dba8bceabef4786ae2ff182af7461386",
+          "adapter_model.safetensors": "5ea89adcf57956867f7bd7014ede004df0874c8ca82c4e72fc485ff121c681ab",
+          "train_manifest.json": "3eb4e717f0e50bcc595402334dc2b1e724827fd35e761de27ed88b87d7973fae",
+          "train_meta.json": "af58a3fd01d2cfd0c4bb5ad0a5f8163abd5721cf8702e5013bd046bc3c1a7c88"
+        },
+        "backend": {
+          "adapter_files": {
+            "adapter_config.json": "84be2a1943c29cfcad0288d00df7dda1dba8bceabef4786ae2ff182af7461386",
+            "adapter_model.safetensors": "5ea89adcf57956867f7bd7014ede004df0874c8ca82c4e72fc485ff121c681ab"
+          },
+          "adapter_input": "/localhome/local-rohing/astra_diagnostics/astra_rulegame_interaction_v3_record_write_20260912_attempt2/fits/A/adapter",
+          "backend": "vllm",
+          "default_max_tokens": 400,
+          "default_temperature": 0.7,
+          "model_input": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+          "scope": "configured loader inputs; base authentication requires lineage pins"
+        },
+        "isolation": {
+          "parent_calls": 0,
+          "parent_pid": 234660,
+          "pgid": 236545,
+          "pid": 236545,
+          "record_training": false,
+          "scope": "fresh process and exact replayed prompts; not OS-level filesystem isolation",
+          "spec_sha256": "ae0468fbd97cee39eb5a4c20370f89574c5925faf51237cae4515e91c36ec31d",
+          "task_prefix": ""
+        },
+        "model_files": {
+          ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "README.md": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6",
+          "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+          "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+          "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+          "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+          "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+          "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+          "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "worker_pid": 236545
+      },
+      "independent_events_and_sealed_result_match": true,
+      "native_token_audit_receipt": {
+        "calls": 29,
+        "ok": true,
+        "scope": "actual rendered prompts/input IDs/decoded output IDs"
+      },
+      "observed_TRY_false": 8,
+      "observed_TRY_true": 3,
+      "output_cap_hits": 0,
+      "parent_free_prompt_reconstruction": true,
+      "predictions": {
+        "TRY_containing_response_denominator": 12,
+        "TRY_responses_with_any_PREDICT": 9,
+        "TRY_responses_with_pre_ACT_PREDICT": 8,
+        "ambiguous": 0,
+        "correct": 6,
+        "executed_TRYs": 11,
+        "explicit_valid": 8,
+        "invalid_TRY_responses": 1,
+        "null": 3,
+        "predicted_false": 8,
+        "predicted_true": 0
+      },
+      "quiz_accuracy": 0.25,
+      "quiz_correct": 6,
+      "quiz_denominator": 24,
+      "raw_codes": [
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0000",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.760598081003991,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "cdf80b4a16ff8acaf7e3f901555f618f192be9b1fd7268ffc6ca6ac0ce5ed031",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0001",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5535611680097645,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3d6212b4e60cbd5d1ecff55b7473dba188755c6fc3f77fdb64629772fd2a570a",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "04810c0de75bb1a8fa304efe510bd869df42f05eeff0c0871ee061730b6dc5a8",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0000",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 4,5,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              4,
+              5,
+              6
+            ]
+          },
+          "call_id": "0002",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.68279078300111,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "a85af0e791e25afea7ecdeebda3880c7f88d4eb6313e06f24ec8192eccbe4b71",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "6e32eb5c92a993901b062f1420a016dc00063a5735f65fbe3062fd6ed1ec6624",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 4,5,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0003",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5462593410047702,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0b94a2bfbe55f2f5036b8d850efe849431bb4d4fc1b1328643ad2699f2e03d47",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "9fb6d258c6180fb619e037b1a387fd72a2d90c5adc4bcf5796650f50dbc0e07f",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0002",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [4, 5, 6],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                4,
+                5,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 0,1,2",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              0,
+              1,
+              2
+            ]
+          },
+          "call_id": "0004",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4427294820052339,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "40c2f3fd8ae3a984843967bdfc11376b8dcce371537b72b6263599b17e994ec1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9011c2b50b6fc8cf46e8cf896c61b8de5d387fac3cac330f4dc30715f72da147",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 0,1,2",
+          "tick": 3
+        },
+        {
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4714984820020618,
+          "native_input_tokens": 270,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d896094381f8ac8dec8fe0f0b4c6bff95fd36ed9cdec4834bfa23dc133903088",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "0a9132252e2a5aff6bac049aee2846360c4ca0a58ae687931f47991ab47bd623",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0004",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [0, 1, 2],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": false,
+            "failures": [
+              "relation mismatch"
+            ],
+            "record": {
+              "observed": true,
+              "predicted": null,
+              "relation": "matched",
+              "try": [
+                0,
+                1,
+                2
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0006",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3015629709989298,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "368c330175418a90e389bfc95fe4b97e8cb89ae7f49eb358a3508b886816d894",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,T,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0007",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.490915632006363,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0e8dd210a0a22d0868364393640d2fc4fffb0f0b754a37ac949df70a2e19a5e4",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "f87437b3511975468c1b3155a01a55a2ac572c0884eb487ba141e4d5dbc1df39",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,T,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0008",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6792437969997991,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "86aa268be7b610b89410a49cf486a795f7a8d535d545ac573189b3f065689ef3",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0009",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.478699711005902,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "e9f6b2d20c4a394f4da2900fa76dc212a434854224f4924c9d634a4140bdb8b4",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "a7e4533fa8cc7fa5380ac2fa3c40a77acd403d1f59bd94cc3f76ce14af709b56",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0008",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0010",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6799617319920799,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "c521fe61cbe998b0239a0f7652db2ef437ac829f682acdd3db14bc77a11415da",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0011",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4722932960139588,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "69c05f8e8fa24ae2898f5e28b8449ae9a74e9ce94de20f7958db09878df38b54",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0010",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,6,9",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              6,
+              9
+            ]
+          },
+          "call_id": "0012",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.44251792499562725,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "6e053ea07569c7cb087dcdbbc31036fbe82f1821fd57e2f1a3cf83318ac2bbf3",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "234ae54a3371e5d755f2012204cc094e4a92088884f60dcfae3452fa0b7d68e8",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,6,9",
+          "tick": 3
+        },
+        {
+          "call_id": "0013",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5018357130029472,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "81b79c50b2e3f1ebcc80e73c1e4fefe69bffbfa1d88d4cd57f602b0f75d01329",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "c3dc943d52303743e821f09a710ddf7a57c691d9bb18afe3df812514b59e8fdd",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0012",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 6, 9],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                6,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0014",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.2875131400069222,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9d795403c172c3de51ebd586151d7e1ea1fdc93a130919b5ec930438a5fe7960",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,F,T",
+            "kind": "quiz"
+          },
+          "call_id": "0015",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.49162589100888,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "bd5fd6182b1cef2fc34a5f1d77566a8cb58a017ea00bb5690265ac3da39e0209",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "be841a7125d530e7814d80cb30d2b4896654804b5c544b15f87502b4110554ac",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,F,T",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0016",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6783497340074973,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "b88eae9395d43274f3471fd0daaa0595a10055e65a3ae3b929c6a45fc933e14f",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0017",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4756903709931066,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "e9f6b2d20c4a394f4da2900fa76dc212a434854224f4924c9d634a4140bdb8b4",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "5c211cab42a276881e013f9fc37cc9aee24950adc6454e2aaf2cb86ba33651ad",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0016",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,3,4",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              3,
+              4
+            ]
+          },
+          "call_id": "0018",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6758378180093132,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "8974618be6a95d5f5d257bf38e20337258d59ef582fe38e075d35143bb892452",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "261625d4b427816def5d14da6c9a382e40172377627d3e011f72a9ebc4a9c570",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,3,4",
+          "tick": 2
+        },
+        {
+          "call_id": "0019",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4647926739999093,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "eed377115039f3c10ebb164ec5a4cca4391f27e3866ac9421c23dab35723ea31",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "1dcb63b67599df3a16b2d9fb01b9387aabb1cb8dbc240327a3b9018016bd40d0",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0018",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 3, 4],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,4,5",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              4,
+              5
+            ]
+          },
+          "call_id": "0020",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.43902544799493626,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "60d335e3d8403eaee5dcd08d4439d3f530ff875a6d44cf4684154eecb02125d6",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "11985b9a00f694f3cb04e1cbda9acce8aa1805409ee4fbe00077bb50f4e24420",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,4,5",
+          "tick": 3
+        },
+        {
+          "call_id": "0021",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5083079500036547,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "f58e45d064c430342401a3d8e5a2e718441a634863282fda5783cd03dcf8569d",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "dfece4c7f86cf079ba979558484e281a8a6cacea12962257f43931646dec8562",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0020",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 4, 5],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                4,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0022",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.28791093299514614,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "94bbdc758e8b330c86844ada5a38cc9db6301a20a62af34060546d95c5e3abce",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0023",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4836720540042734,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3eef51648f0cdf4cb727c59a4091fa7effc3eaf6e4b23ce2772242e83ad0d0ea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "78301f1e756d3fe4f05e1fb77594137228bd2509c3bcb6e87f5fdb5580bd34a2",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0024",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6780835390090942,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "92239c26657ddf698581ebe3ea6017036e601d448170f2e179358123c8d565a1",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 1
+        },
+        {
+          "call_id": "0025",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4810269349982264,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "8c2ffc9281263200ee27149851798bfdd7da69400ea32a77251e197fd9ef387c",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0024",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,6,9",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              6,
+              9
+            ]
+          },
+          "call_id": "0026",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6820465280034114,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "bb0ee448bccdef6cc4a1c60ecbe44605030d92772e4293e6152f96585ffc752f",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "5726ecfad766646bbb7463d8d0c830e0ead69df52e3b776b0d296a8a5f0a4259",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\n\nACT: TRY 3,6,9",
+          "tick": 2
+        },
+        {
+          "call_id": "0027",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4661928470013663,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3dde72c7a343adbfa55579cadc8fb02aaacd6f7ba9e0ec6b36a98ce968055caf",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "05b7a016140c43e341539ea8c11c3f77f963bc0e01c217e9f5bf010445abc98e",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0026",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 6, 9],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                3,
+                6,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "kind": "invalid",
+            "reason": "multiple action markers"
+          },
+          "call_id": "0028",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.9510596870095469,
+          "native_input_tokens": 394,
+          "native_output_tokens": 23,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0edfefb489a0ebb4a765b51ab8fc6eda51865066e70458028c0f5475d3312fea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9f9aee048abfec2f68126f01f0bb8b44971d4cf73e3a02ca18e08e417648530b",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 4,8,12\n\nPREDICT: F\n\nACT: QUIZ ?",
+          "tick": 3
+        }
+      ],
+      "record_failures": [
+        {
+          "arm": "A_ON",
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "eligible": false,
+          "execution_id": "A_ON:rule2/astra-minimum-20260912/readout#t3",
+          "failures": [
+            "relation mismatch"
+          ],
+          "kind": "record",
+          "source_call_id": "0004",
+          "text": "{\n  \"try\": [0, 1, 2],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}"
+        }
+      ],
+      "roles": {
+        "record": 11,
+        "wake": 18
+      },
+      "supervision": {
+        "device": "2",
+        "error": null,
+        "gpu_processes_absent": true,
+        "ok": true,
+        "owned_group_empty": true,
+        "reservation_release_verified": true,
+        "reserved_seconds": 163.24504154300666,
+        "returncode": 0,
+        "scope": "supervised worker window including owned cleanup; excludes CPU prep/Main audit; Main reserves each phase"
+      },
+      "tasks": [
+        {
+          "arm": "A_ON",
+          "correct_items": 2,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                4,
+                5,
+                6
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": null,
+              "values": [
+                0,
+                1,
+                2
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.3333333333333333,
+          "quiz_panel": [
+            [
+              4,
+              2,
+              6
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              3
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              4,
+              1
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "A_ON",
+          "correct_items": 1,
+          "correct_labels": [
+            false,
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                6,
+                9
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.16666666666666666,
+          "quiz_panel": [
+            [
+              4,
+              7,
+              5
+            ],
+            [
+              3,
+              9,
+              9
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              6,
+              9,
+              4
+            ],
+            [
+              4,
+              9,
+              4
+            ],
+            [
+              5,
+              8,
+              6
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            true
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "A_ON",
+          "correct_items": 3,
+          "correct_labels": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true
+          ],
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                4,
+                5
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.5,
+          "quiz_panel": [
+            [
+              8,
+              3,
+              0
+            ],
+            [
+              4,
+              9,
+              6
+            ],
+            [
+              5,
+              5,
+              8
+            ],
+            [
+              0,
+              2,
+              8
+            ],
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              2
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "A_ON",
+          "correct_items": 0,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "invalid": {
+            "call_id": "0028",
+            "raw": "ACT: TRY 4,8,12\n\nPREDICT: F\n\nACT: QUIZ ?",
+            "reason": "multiple action markers"
+          },
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                3,
+                6,
+                9
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.0,
+          "quiz_panel": [
+            [
+              3,
+              2,
+              6
+            ],
+            [
+              0,
+              9,
+              5
+            ],
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              7,
+              2
+            ],
+            [
+              7,
+              9,
+              7
+            ],
+            [
+              4,
+              4,
+              0
+            ]
+          ],
+          "submitted_labels": null,
+          "terminal": "protocol_invalid",
+          "tries": 2,
+          "valid_quiz": false
+        }
+      ],
+      "valid_quizzes": 3
+    },
+    "OFF": {
+      "allotted_record_denominator": 12,
+      "calls": 32,
+      "costs": {
+        "generation_seconds": 20.350323162994755,
+        "native_input_tokens": 11296,
+        "native_output_tokens": 677,
+        "output_token_ceiling": 9200,
+        "requests": 32
+      },
+      "costs_by_role": {
+        "record": {
+          "generation_seconds": 12.973257667996222,
+          "native_input_tokens": 3288,
+          "native_output_tokens": 441,
+          "output_token_ceiling": 1200,
+          "requests": 12
+        },
+        "wake": {
+          "generation_seconds": 7.377065494998533,
+          "native_input_tokens": 8008,
+          "native_output_tokens": 236,
+          "output_token_ceiling": 8000,
+          "requests": 20
+        }
+      },
+      "executed_record_denominator": 12,
+      "faithful_records": 9,
+      "finish_reasons": {
+        "stop": 32
+      },
+      "identity": {
+        "adapter_files": {},
+        "backend": {
+          "adapter_files": {},
+          "adapter_input": null,
+          "backend": "vllm",
+          "default_max_tokens": 400,
+          "default_temperature": 0.7,
+          "model_input": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+          "scope": "configured loader inputs; base authentication requires lineage pins"
+        },
+        "isolation": {
+          "parent_calls": 0,
+          "parent_pid": 234660,
+          "pgid": 234732,
+          "pid": 234732,
+          "record_training": false,
+          "scope": "fresh process and exact replayed prompts; not OS-level filesystem isolation",
+          "spec_sha256": "bff6a0b6c39a6ed4603bd32b520026e6a01cbb3c18a0215ac8ae626bd1ca4983",
+          "task_prefix": ""
+        },
+        "model_files": {
+          ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "README.md": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6",
+          "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+          "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+          "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+          "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+          "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+          "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+          "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "worker_pid": 234732
+      },
+      "independent_events_and_sealed_result_match": true,
+      "native_token_audit_receipt": {
+        "calls": 32,
+        "ok": true,
+        "scope": "actual rendered prompts/input IDs/decoded output IDs"
+      },
+      "observed_TRY_false": 9,
+      "observed_TRY_true": 3,
+      "output_cap_hits": 0,
+      "parent_free_prompt_reconstruction": true,
+      "predictions": {
+        "TRY_containing_response_denominator": 12,
+        "TRY_responses_with_any_PREDICT": 8,
+        "TRY_responses_with_pre_ACT_PREDICT": 8,
+        "ambiguous": 0,
+        "correct": 6,
+        "executed_TRYs": 12,
+        "explicit_valid": 8,
+        "invalid_TRY_responses": 0,
+        "null": 4,
+        "predicted_false": 8,
+        "predicted_true": 0
+      },
+      "quiz_accuracy": 0.2916666666666667,
+      "quiz_correct": 7,
+      "quiz_denominator": 24,
+      "raw_codes": [
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0000",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.501086068994482,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "cdf80b4a16ff8acaf7e3f901555f618f192be9b1fd7268ffc6ca6ac0ce5ed031",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0001",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.1191568150024978,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3d6212b4e60cbd5d1ecff55b7473dba188755c6fc3f77fdb64629772fd2a570a",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "04810c0de75bb1a8fa304efe510bd869df42f05eeff0c0871ee061730b6dc5a8",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0000",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0002",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.48387344700313406,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "6e32eb5c92a993901b062f1420a016dc00063a5735f65fbe3062fd6ed1ec6624",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0003",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.1139446349989157,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "b75ae1f0fdae88b4b9ed2f8969919d2c064f790085669308365a53fc707f09eb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "ce47b85ab3e3c44a4955cc1e37ec135086d61fccf684cc862fa0840a2992435d",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0002",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 0,3,6",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              0,
+              3,
+              6
+            ]
+          },
+          "call_id": "0004",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3152159160017618,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "39698ec446e9896828679f7329a06f539ae0fc70e0437e9bf3c86bd831838115",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "f6d8ba22bc65533fd8c2fedee894d49eb828c382cba7f7a541d4212ae37f75a7",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 0,3,6",
+          "tick": 3
+        },
+        {
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0574021889988217,
+          "native_input_tokens": 270,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "718d0cbf2474f58b81e4ab1ed7ca6b1eacbd62387340650ee5c0230c01339501",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "c8b6daf01f095f63c63dd76c68db92631772da4e3cc0f42b7b15e1a715af9645",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0004",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [0, 3, 6],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": false,
+            "failures": [
+              "relation mismatch"
+            ],
+            "record": {
+              "observed": true,
+              "predicted": null,
+              "relation": "matched",
+              "try": [
+                0,
+                3,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0006",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.22261523800261784,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "160f8445c3c94bb0935ac2e4497d36878d47f711a73bf2d23c51029e02dd9458",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,T,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0007",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3488598900003126,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0e8dd210a0a22d0868364393640d2fc4fffb0f0b754a37ac949df70a2e19a5e4",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "ae619a462df1a2b3115181600a8d940632f31b48f5b1a28b69693dcf4e1e8ae4",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,T,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0008",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4810943490010686,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "86aa268be7b610b89410a49cf486a795f7a8d535d545ac573189b3f065689ef3",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0009",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0944891449980787,
+          "native_input_tokens": 276,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d5c3fbc4faa92d26a238d2b50ea47607f27acf8450334adbe5bc8ede9e880a4b",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "a7e4533fa8cc7fa5380ac2fa3c40a77acd403d1f59bd94cc3f76ce14af709b56",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0008",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": false,
+            "failures": [
+              "prediction mismatch"
+            ],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0010",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4836391150020063,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "c521fe61cbe998b0239a0f7652db2ef437ac829f682acdd3db14bc77a11415da",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0011",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0566844100030721,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "69c05f8e8fa24ae2898f5e28b8449ae9a74e9ce94de20f7958db09878df38b54",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0010",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,6,9",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              6,
+              9
+            ]
+          },
+          "call_id": "0012",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3143027149999398,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "6e053ea07569c7cb087dcdbbc31036fbe82f1821fd57e2f1a3cf83318ac2bbf3",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "234ae54a3371e5d755f2012204cc094e4a92088884f60dcfae3452fa0b7d68e8",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,6,9",
+          "tick": 3
+        },
+        {
+          "call_id": "0013",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.084903677998227,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "81b79c50b2e3f1ebcc80e73c1e4fefe69bffbfa1d88d4cd57f602b0f75d01329",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "c3dc943d52303743e821f09a710ddf7a57c691d9bb18afe3df812514b59e8fdd",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0012",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 6, 9],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                6,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0014",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.20521101899794303,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9d795403c172c3de51ebd586151d7e1ea1fdc93a130919b5ec930438a5fe7960",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,F,T",
+            "kind": "quiz"
+          },
+          "call_id": "0015",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3486781720057479,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "bd5fd6182b1cef2fc34a5f1d77566a8cb58a017ea00bb5690265ac3da39e0209",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "be841a7125d530e7814d80cb30d2b4896654804b5c544b15f87502b4110554ac",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,F,T",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0016",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.48359353600244503,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "b88eae9395d43274f3471fd0daaa0595a10055e65a3ae3b929c6a45fc933e14f",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0017",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.094860838005843,
+          "native_input_tokens": 276,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d5c3fbc4faa92d26a238d2b50ea47607f27acf8450334adbe5bc8ede9e880a4b",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "5c211cab42a276881e013f9fc37cc9aee24950adc6454e2aaf2cb86ba33651ad",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0016",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": false,
+            "failures": [
+              "prediction mismatch"
+            ],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,3,4",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              3,
+              4
+            ]
+          },
+          "call_id": "0018",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.48382325199781917,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "8974618be6a95d5f5d257bf38e20337258d59ef582fe38e075d35143bb892452",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "261625d4b427816def5d14da6c9a382e40172377627d3e011f72a9ebc4a9c570",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,3,4",
+          "tick": 2
+        },
+        {
+          "call_id": "0019",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0569200559984893,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "eed377115039f3c10ebb164ec5a4cca4391f27e3866ac9421c23dab35723ea31",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "1dcb63b67599df3a16b2d9fb01b9387aabb1cb8dbc240327a3b9018016bd40d0",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0018",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 3, 4],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,4,5",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              4,
+              5
+            ]
+          },
+          "call_id": "0020",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.313966043999244,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "60d335e3d8403eaee5dcd08d4439d3f530ff875a6d44cf4684154eecb02125d6",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "11985b9a00f694f3cb04e1cbda9acce8aa1805409ee4fbe00077bb50f4e24420",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,4,5",
+          "tick": 3
+        },
+        {
+          "call_id": "0021",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0858174029999645,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "f58e45d064c430342401a3d8e5a2e718441a634863282fda5783cd03dcf8569d",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "dfece4c7f86cf079ba979558484e281a8a6cacea12962257f43931646dec8562",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0020",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 4, 5],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                4,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0022",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.2051709369989112,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "94bbdc758e8b330c86844ada5a38cc9db6301a20a62af34060546d95c5e3abce",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0023",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.34925530100008473,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3eef51648f0cdf4cb727c59a4091fa7effc3eaf6e4b23ce2772242e83ad0d0ea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "78301f1e756d3fe4f05e1fb77594137228bd2509c3bcb6e87f5fdb5580bd34a2",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0024",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4821056459986721,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "92239c26657ddf698581ebe3ea6017036e601d448170f2e179358123c8d565a1",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 1
+        },
+        {
+          "call_id": "0025",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0666539019948686,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "8c2ffc9281263200ee27149851798bfdd7da69400ea32a77251e197fd9ef387c",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0024",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,5,7",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              5,
+              7
+            ]
+          },
+          "call_id": "0026",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4835151989973383,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "1bc189548ee6c3d1e75885c14e73387d7936a02e97ba8b8607f5b676d3771f9e",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "5726ecfad766646bbb7463d8d0c830e0ead69df52e3b776b0d296a8a5f0a4259",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 3,5,7",
+          "tick": 2
+        },
+        {
+          "call_id": "0027",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0569812370013096,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "76ff5da5453be52b8301cdc1cd576249a0b8ccd2b5f609e97bec29e67bb88a82",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "af087d51df39e7fae32fdf104925ffa3be81d03fa467a75e5a21197bfc3ca3cc",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0026",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 5, 7],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                3,
+                5,
+                7
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 1,3,5",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              3,
+              5
+            ]
+          },
+          "call_id": "0028",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.31385514000430703,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "5e62a9f63ddc42e75aefe3effa5264a6f97d8319526f77d44af16a4c947ae9d9",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "c82a0f5303da5985f07defec2c75d28258fbc465f2484797ff0f7d1a8a931948",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 1,3,5",
+          "tick": 3
+        },
+        {
+          "call_id": "0029",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.085443359996134,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "97052217000af4bf7e2037ac8fc4b8d4eaacb592bbabe6db7e3993a9b9c02214",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "8f4824a8f4641b39b71f00c32d1a02689d28c055775b9f8cb99ab5cc196a897b",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0028",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 3, 5],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                1,
+                3,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0030",
+          "contains_TRY": false,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.20639500599645544,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "483df28d00b540b307e10bddb6a57b807088ea4023b038e09eb916ae0e1d4e16",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0031",
+          "contains_TRY": false,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3508095039942418,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3eef51648f0cdf4cb727c59a4091fa7effc3eaf6e4b23ce2772242e83ad0d0ea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "55ecd3fc2041d19ae4d10225d1d16972b351543fd1f1d0cea8631fa2d1577e4f",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,T,F",
+          "tick": 5
+        }
+      ],
+      "record_failures": [
+        {
+          "arm": "OFF",
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "eligible": false,
+          "execution_id": "OFF:rule2/astra-minimum-20260912/readout#t3",
+          "failures": [
+            "relation mismatch"
+          ],
+          "kind": "record",
+          "source_call_id": "0004",
+          "text": "{\n  \"try\": [0, 3, 6],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}"
+        },
+        {
+          "arm": "OFF",
+          "call_id": "0009",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "eligible": false,
+          "execution_id": "OFF:rule3/astra-minimum-20260912/readout#t1",
+          "failures": [
+            "prediction mismatch"
+          ],
+          "kind": "record",
+          "source_call_id": "0008",
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}"
+        },
+        {
+          "arm": "OFF",
+          "call_id": "0017",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "eligible": false,
+          "execution_id": "OFF:rule4/astra-minimum-20260912/readout#t1",
+          "failures": [
+            "prediction mismatch"
+          ],
+          "kind": "record",
+          "source_call_id": "0016",
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}"
+        }
+      ],
+      "roles": {
+        "record": 12,
+        "wake": 20
+      },
+      "supervision": {
+        "device": "2",
+        "error": null,
+        "gpu_processes_absent": true,
+        "ok": true,
+        "owned_group_empty": true,
+        "reservation_release_verified": true,
+        "reserved_seconds": 161.67029406099755,
+        "returncode": 0,
+        "scope": "supervised worker window including owned cleanup; excludes CPU prep/Main audit; Main reserves each phase"
+      },
+      "tasks": [
+        {
+          "arm": "OFF",
+          "correct_items": 2,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": null,
+              "values": [
+                0,
+                3,
+                6
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.3333333333333333,
+          "quiz_panel": [
+            [
+              4,
+              2,
+              6
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              3
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              4,
+              1
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "OFF",
+          "correct_items": 1,
+          "correct_labels": [
+            false,
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                6,
+                9
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.16666666666666666,
+          "quiz_panel": [
+            [
+              4,
+              7,
+              5
+            ],
+            [
+              3,
+              9,
+              9
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              6,
+              9,
+              4
+            ],
+            [
+              4,
+              9,
+              4
+            ],
+            [
+              5,
+              8,
+              6
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            true
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "OFF",
+          "correct_items": 3,
+          "correct_labels": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true
+          ],
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                4,
+                5
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.5,
+          "quiz_panel": [
+            [
+              8,
+              3,
+              0
+            ],
+            [
+              4,
+              9,
+              6
+            ],
+            [
+              5,
+              5,
+              8
+            ],
+            [
+              0,
+              2,
+              8
+            ],
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              2
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "OFF",
+          "correct_items": 1,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                3,
+                5,
+                7
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                1,
+                3,
+                5
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.16666666666666666,
+          "quiz_panel": [
+            [
+              3,
+              2,
+              6
+            ],
+            [
+              0,
+              9,
+              5
+            ],
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              7,
+              2
+            ],
+            [
+              7,
+              9,
+              7
+            ],
+            [
+              4,
+              4,
+              0
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        }
+      ],
+      "valid_quizzes": 4
+    },
+    "P_ON": {
+      "allotted_record_denominator": 12,
+      "calls": 29,
+      "costs": {
+        "generation_seconds": 26.643139012012398,
+        "native_input_tokens": 10107,
+        "native_output_tokens": 634,
+        "output_token_ceiling": 8300,
+        "requests": 29
+      },
+      "costs_by_role": {
+        "record": {
+          "generation_seconds": 16.416059071991185,
+          "native_input_tokens": 3018,
+          "native_output_tokens": 402,
+          "output_token_ceiling": 1100,
+          "requests": 11
+        },
+        "wake": {
+          "generation_seconds": 10.227079940021213,
+          "native_input_tokens": 7089,
+          "native_output_tokens": 232,
+          "output_token_ceiling": 7200,
+          "requests": 18
+        }
+      },
+      "executed_record_denominator": 11,
+      "faithful_records": 10,
+      "finish_reasons": {
+        "stop": 29
+      },
+      "identity": {
+        "adapter_files": {
+          "DONE": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+          "README.md": "fb5e3f69430ada914e1ea7492de58c8a0b4efff16de168cb0d0d3c8917116acc",
+          "adapter_config.json": "11e9027750b38c1c68e626490738adb87327c7dfe390df83f8a94182212d6249",
+          "adapter_model.safetensors": "c9f1fa5cd3391b407a0102856faa4926d6a550c799979026d399b55bd979868c",
+          "train_manifest.json": "4f7f86d577e3de44ea0ea6840aa444e6fd407e87f1e5e6ab51f4ecf881beda8a",
+          "train_meta.json": "137ab9f442777eea7f12b0f3299312d942c243cb7692a8a4474d9862c48cc539"
+        },
+        "backend": {
+          "adapter_files": {
+            "adapter_config.json": "11e9027750b38c1c68e626490738adb87327c7dfe390df83f8a94182212d6249",
+            "adapter_model.safetensors": "c9f1fa5cd3391b407a0102856faa4926d6a550c799979026d399b55bd979868c"
+          },
+          "adapter_input": "/localhome/local-rohing/astra_diagnostics/astra_rulegame_interaction_v3_record_write_20260912_attempt2/fits/P/adapter",
+          "backend": "vllm",
+          "default_max_tokens": 400,
+          "default_temperature": 0.7,
+          "model_input": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+          "scope": "configured loader inputs; base authentication requires lineage pins"
+        },
+        "isolation": {
+          "parent_calls": 0,
+          "parent_pid": 234660,
+          "pgid": 235568,
+          "pid": 235568,
+          "record_training": false,
+          "scope": "fresh process and exact replayed prompts; not OS-level filesystem isolation",
+          "spec_sha256": "f904b4ed2258ca8d5ad9229924af2c562954c426b27a82bc68dbf003708eac2b",
+          "task_prefix": ""
+        },
+        "model_files": {
+          ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "README.md": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6",
+          "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+          "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+          "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+          "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+          "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+          "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+          "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "worker_pid": 235568
+      },
+      "independent_events_and_sealed_result_match": true,
+      "native_token_audit_receipt": {
+        "calls": 29,
+        "ok": true,
+        "scope": "actual rendered prompts/input IDs/decoded output IDs"
+      },
+      "observed_TRY_false": 8,
+      "observed_TRY_true": 3,
+      "output_cap_hits": 0,
+      "parent_free_prompt_reconstruction": true,
+      "predictions": {
+        "TRY_containing_response_denominator": 12,
+        "TRY_responses_with_any_PREDICT": 9,
+        "TRY_responses_with_pre_ACT_PREDICT": 8,
+        "ambiguous": 0,
+        "correct": 6,
+        "executed_TRYs": 11,
+        "explicit_valid": 8,
+        "invalid_TRY_responses": 1,
+        "null": 3,
+        "predicted_false": 8,
+        "predicted_true": 0
+      },
+      "quiz_accuracy": 0.25,
+      "quiz_correct": 6,
+      "quiz_denominator": 24,
+      "raw_codes": [
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0000",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.7679499389996636,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "cdf80b4a16ff8acaf7e3f901555f618f192be9b1fd7268ffc6ca6ac0ce5ed031",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0001",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5708345790044405,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3d6212b4e60cbd5d1ecff55b7473dba188755c6fc3f77fdb64629772fd2a570a",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "04810c0de75bb1a8fa304efe510bd869df42f05eeff0c0871ee061730b6dc5a8",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0000",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 4,5,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              4,
+              5,
+              6
+            ]
+          },
+          "call_id": "0002",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6862368449947098,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "a85af0e791e25afea7ecdeebda3880c7f88d4eb6313e06f24ec8192eccbe4b71",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "6e32eb5c92a993901b062f1420a016dc00063a5735f65fbe3062fd6ed1ec6624",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 4,5,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0003",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5562492349999957,
+          "native_input_tokens": 276,
+          "native_output_tokens": 38,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0b94a2bfbe55f2f5036b8d850efe849431bb4d4fc1b1328643ad2699f2e03d47",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "9fb6d258c6180fb619e037b1a387fd72a2d90c5adc4bcf5796650f50dbc0e07f",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0002",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [4, 5, 6],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": true,
+              "predicted": false,
+              "relation": "mismatched",
+              "try": [
+                4,
+                5,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 0,1,2",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              0,
+              1,
+              2
+            ]
+          },
+          "call_id": "0004",
+          "contains_TRY": true,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.44843811100145103,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "40c2f3fd8ae3a984843967bdfc11376b8dcce371537b72b6263599b17e994ec1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9011c2b50b6fc8cf46e8cf896c61b8de5d387fac3cac330f4dc30715f72da147",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 0,1,2",
+          "tick": 3
+        },
+        {
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4822813110004063,
+          "native_input_tokens": 270,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d896094381f8ac8dec8fe0f0b4c6bff95fd36ed9cdec4834bfa23dc133903088",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "0a9132252e2a5aff6bac049aee2846360c4ca0a58ae687931f47991ab47bd623",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0004",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [0, 1, 2],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": false,
+            "failures": [
+              "relation mismatch"
+            ],
+            "record": {
+              "observed": true,
+              "predicted": null,
+              "relation": "matched",
+              "try": [
+                0,
+                1,
+                2
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0006",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.3040488160040695,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "368c330175418a90e389bfc95fe4b97e8cb89ae7f49eb358a3508b886816d894",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,T,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0007",
+          "contains_TRY": false,
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4935586110004806,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0e8dd210a0a22d0868364393640d2fc4fffb0f0b754a37ac949df70a2e19a5e4",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "f87437b3511975468c1b3155a01a55a2ac572c0884eb487ba141e4d5dbc1df39",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,T,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0008",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6866269260062836,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "86aa268be7b610b89410a49cf486a795f7a8d535d545ac573189b3f065689ef3",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0009",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5131450669941842,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "e9f6b2d20c4a394f4da2900fa76dc212a434854224f4924c9d634a4140bdb8b4",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "a7e4533fa8cc7fa5380ac2fa3c40a77acd403d1f59bd94cc3f76ce14af709b56",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0008",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0010",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.7609701180044794,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "c521fe61cbe998b0239a0f7652db2ef437ac829f682acdd3db14bc77a11415da",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 2
+        },
+        {
+          "call_id": "0011",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.5544499789975816,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "69c05f8e8fa24ae2898f5e28b8449ae9a74e9ce94de20f7958db09878df38b54",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0010",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,6,9",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              6,
+              9
+            ]
+          },
+          "call_id": "0012",
+          "contains_TRY": true,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.43947458800539607,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "6e053ea07569c7cb087dcdbbc31036fbe82f1821fd57e2f1a3cf83318ac2bbf3",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "234ae54a3371e5d755f2012204cc094e4a92088884f60dcfae3452fa0b7d68e8",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,6,9",
+          "tick": 3
+        },
+        {
+          "call_id": "0013",
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.475572370000009,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "81b79c50b2e3f1ebcc80e73c1e4fefe69bffbfa1d88d4cd57f602b0f75d01329",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "c3dc943d52303743e821f09a710ddf7a57c691d9bb18afe3df812514b59e8fdd",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0012",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 6, 9],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                6,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0014",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.2849461939986213,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9d795403c172c3de51ebd586151d7e1ea1fdc93a130919b5ec930438a5fe7960",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,F,T",
+            "kind": "quiz"
+          },
+          "call_id": "0015",
+          "contains_TRY": false,
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.48435509599949,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "bd5fd6182b1cef2fc34a5f1d77566a8cb58a017ea00bb5690265ac3da39e0209",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "be841a7125d530e7814d80cb30d2b4896654804b5c544b15f87502b4110554ac",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,F,T",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 1,2,3",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          },
+          "call_id": "0016",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6649488960028975,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "95a0c69a47726c87fb7f6dbc07d01b4af5aa22482245792a044452cc3eca2bd1",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "b88eae9395d43274f3471fd0daaa0595a10055e65a3ae3b929c6a45fc933e14f",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 1,2,3",
+          "tick": 1
+        },
+        {
+          "call_id": "0017",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4473951660038438,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "e9f6b2d20c4a394f4da2900fa76dc212a434854224f4924c9d634a4140bdb8b4",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "5c211cab42a276881e013f9fc37cc9aee24950adc6454e2aaf2cb86ba33651ad",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0016",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 2,3,4",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              3,
+              4
+            ]
+          },
+          "call_id": "0018",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6667194309993647,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "8974618be6a95d5f5d257bf38e20337258d59ef582fe38e075d35143bb892452",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "261625d4b427816def5d14da6c9a382e40172377627d3e011f72a9ebc4a9c570",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,3,4",
+          "tick": 2
+        },
+        {
+          "call_id": "0019",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4371684399957303,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "eed377115039f3c10ebb164ec5a4cca4391f27e3866ac9421c23dab35723ea31",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "1dcb63b67599df3a16b2d9fb01b9387aabb1cb8dbc240327a3b9018016bd40d0",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0018",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 3, 4],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,4,5",
+            "kind": "try",
+            "predicted": null,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              4,
+              5
+            ]
+          },
+          "call_id": "0020",
+          "contains_TRY": true,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4360094920048141,
+          "native_input_tokens": 394,
+          "native_output_tokens": 10,
+          "output_cap_hit": false,
+          "output_ids_sha256": "60d335e3d8403eaee5dcd08d4439d3f530ff875a6d44cf4684154eecb02125d6",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "11985b9a00f694f3cb04e1cbda9acce8aa1805409ee4fbe00077bb50f4e24420",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 3,4,5",
+          "tick": 3
+        },
+        {
+          "call_id": "0021",
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4803949199995259,
+          "native_input_tokens": 270,
+          "native_output_tokens": 37,
+          "output_cap_hit": false,
+          "output_ids_sha256": "f58e45d064c430342401a3d8e5a2e718441a634863282fda5783cd03dcf8569d",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "dfece4c7f86cf079ba979558484e281a8a6cacea12962257f43931646dec8562",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0020",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 4, 5],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}",
+          "tick": 3,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": null,
+              "relation": "unavailable",
+              "try": [
+                3,
+                4,
+                5
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "QUIZ ?",
+            "kind": "reveal"
+          },
+          "call_id": "0022",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.28421357800107216,
+          "native_input_tokens": 421,
+          "native_output_tokens": 6,
+          "output_cap_hit": false,
+          "output_ids_sha256": "02c39acbe284a58f584455fd04bf4c30efe0d2d0c6a3a209ba6eb3d2884c8f57",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "94bbdc758e8b330c86844ada5a38cc9db6301a20a62af34060546d95c5e3abce",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ ?",
+          "tick": 4
+        },
+        {
+          "action": {
+            "action": "QUIZ T,F,F,F,T,F",
+            "kind": "quiz"
+          },
+          "call_id": "0023",
+          "contains_TRY": false,
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.4814206369992462,
+          "native_input_tokens": 498,
+          "native_output_tokens": 11,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3eef51648f0cdf4cb727c59a4091fa7effc3eaf6e4b23ce2772242e83ad0d0ea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "78301f1e756d3fe4f05e1fb77594137228bd2509c3bcb6e87f5fdb5580bd34a2",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: QUIZ T,F,F,F,T,F",
+          "tick": 5
+        },
+        {
+          "action": {
+            "action": "TRY 2,4,6",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              2,
+              4,
+              6
+            ]
+          },
+          "call_id": "0024",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6645821439960855,
+          "native_input_tokens": 328,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "c4ef469f0e9575c3fff544c254f56d5f85290bd47138299429b42faa8f1ed3dc",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "92239c26657ddf698581ebe3ea6017036e601d448170f2e179358123c8d565a1",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\nACT: TRY 2,4,6",
+          "tick": 1
+        },
+        {
+          "call_id": "0025",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4458846439956687,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "d3e901db0369fa19bfce8f3c9412a8e82963a76463394f4ac589f1e78bef84fb",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "8c2ffc9281263200ee27149851798bfdd7da69400ea32a77251e197fd9ef387c",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0024",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [2, 4, 6],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 1,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                2,
+                4,
+                6
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "action": "TRY 3,6,9",
+            "kind": "try",
+            "predicted": false,
+            "prediction_ambiguous": false,
+            "values": [
+              3,
+              6,
+              9
+            ]
+          },
+          "call_id": "0026",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 0.6681726820024778,
+          "native_input_tokens": 361,
+          "native_output_tokens": 16,
+          "output_cap_hit": false,
+          "output_ids_sha256": "bb0ee448bccdef6cc4a1c60ecbe44605030d92772e4293e6152f96585ffc752f",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [
+            "F"
+          ],
+          "prompt_sha256": "5726ecfad766646bbb7463d8d0c830e0ead69df52e3b776b0d296a8a5f0a4259",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "PREDICT: F\n\nACT: TRY 3,6,9",
+          "tick": 2
+        },
+        {
+          "call_id": "0027",
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.4526833609997993,
+          "native_input_tokens": 276,
+          "native_output_tokens": 36,
+          "output_cap_hit": false,
+          "output_ids_sha256": "3dde72c7a343adbfa55579cadc8fb02aaacd6f7ba9e0ec6b36a98ce968055caf",
+          "output_token_ceiling": 100,
+          "prompt_sha256": "05b7a016140c43e341539ea8c11c3f77f963bc0e01c217e9f5bf010445abc98e",
+          "requests": 1,
+          "role": "record",
+          "source_call_id": "0026",
+          "stop_reason": null,
+          "text": "{\n  \"try\": [3, 6, 9],\n  \"observed\": false,\n  \"predicted\": false,\n  \"relation\": \"matched\"\n}",
+          "tick": 2,
+          "verdict": {
+            "eligible": true,
+            "failures": [],
+            "record": {
+              "observed": false,
+              "predicted": false,
+              "relation": "matched",
+              "try": [
+                3,
+                6,
+                9
+              ]
+            }
+          }
+        },
+        {
+          "action": {
+            "kind": "invalid",
+            "reason": "multiple action markers"
+          },
+          "call_id": "0028",
+          "contains_TRY": true,
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "finish_reason": "stop",
+          "generation_seconds": 1.0044078360006097,
+          "native_input_tokens": 394,
+          "native_output_tokens": 23,
+          "output_cap_hit": false,
+          "output_ids_sha256": "0edfefb489a0ebb4a765b51ab8fc6eda51865066e70458028c0f5475d3312fea",
+          "output_token_ceiling": 400,
+          "predict_lines_anywhere": [
+            "F"
+          ],
+          "predict_lines_before_first_ACT": [],
+          "prompt_sha256": "9f9aee048abfec2f68126f01f0bb8b44971d4cf73e3a02ca18e08e417648530b",
+          "requests": 1,
+          "role": "wake",
+          "stop_reason": null,
+          "text": "ACT: TRY 4,8,12\n\nPREDICT: F\n\nACT: QUIZ ?",
+          "tick": 3
+        }
+      ],
+      "record_failures": [
+        {
+          "arm": "P_ON",
+          "call_id": "0005",
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "eligible": false,
+          "execution_id": "P_ON:rule2/astra-minimum-20260912/readout#t3",
+          "failures": [
+            "relation mismatch"
+          ],
+          "kind": "record",
+          "source_call_id": "0004",
+          "text": "{\n  \"try\": [0, 1, 2],\n  \"observed\": true,\n  \"predicted\": null,\n  \"relation\": \"matched\"\n}"
+        }
+      ],
+      "roles": {
+        "record": 11,
+        "wake": 18
+      },
+      "supervision": {
+        "device": "2",
+        "error": null,
+        "gpu_processes_absent": true,
+        "ok": true,
+        "owned_group_empty": true,
+        "reservation_release_verified": true,
+        "reserved_seconds": 169.0670253319986,
+        "returncode": 0,
+        "scope": "supervised worker window including owned cleanup; excludes CPU prep/Main audit; Main reserves each phase"
+      },
+      "tasks": [
+        {
+          "arm": "P_ON",
+          "correct_items": 2,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "eid": "rule2/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": false,
+              "values": [
+                4,
+                5,
+                6
+              ]
+            },
+            {
+              "observed": true,
+              "predicted": null,
+              "values": [
+                0,
+                1,
+                2
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.3333333333333333,
+          "quiz_panel": [
+            [
+              4,
+              2,
+              6
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              3
+            ],
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              4,
+              1
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "P_ON",
+          "correct_items": 1,
+          "correct_labels": [
+            false,
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "eid": "rule3/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                6,
+                9
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.16666666666666666,
+          "quiz_panel": [
+            [
+              4,
+              7,
+              5
+            ],
+            [
+              3,
+              9,
+              9
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              6,
+              9,
+              4
+            ],
+            [
+              4,
+              9,
+              4
+            ],
+            [
+              5,
+              8,
+              6
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            true
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "P_ON",
+          "correct_items": 3,
+          "correct_labels": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true
+          ],
+          "eid": "rule4/astra-minimum-20260912/readout",
+          "invalid": null,
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": null,
+              "values": [
+                3,
+                4,
+                5
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.5,
+          "quiz_panel": [
+            [
+              8,
+              3,
+              0
+            ],
+            [
+              4,
+              9,
+              6
+            ],
+            [
+              5,
+              5,
+              8
+            ],
+            [
+              0,
+              2,
+              8
+            ],
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              2
+            ]
+          ],
+          "submitted_labels": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "terminal": "first_quiz",
+          "tries": 3,
+          "valid_quiz": true
+        },
+        {
+          "arm": "P_ON",
+          "correct_items": 0,
+          "correct_labels": [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "eid": "rule5/astra-minimum-20260912/readout",
+          "invalid": {
+            "call_id": "0028",
+            "raw": "ACT: TRY 4,8,12\n\nPREDICT: F\n\nACT: QUIZ ?",
+            "reason": "multiple action markers"
+          },
+          "probes": [
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "observed": false,
+              "predicted": false,
+              "values": [
+                3,
+                6,
+                9
+              ]
+            }
+          ],
+          "quiz_accuracy": 0.0,
+          "quiz_panel": [
+            [
+              3,
+              2,
+              6
+            ],
+            [
+              0,
+              9,
+              5
+            ],
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              7,
+              2
+            ],
+            [
+              7,
+              9,
+              7
+            ],
+            [
+              4,
+              4,
+              0
+            ]
+          ],
+          "submitted_labels": null,
+          "terminal": "protocol_invalid",
+          "tries": 2,
+          "valid_quiz": false
+        }
+      ],
+      "valid_quizzes": 3
+    }
+  },
+  "costs": {
+    "accounting": "Generation is inside workers, inside controller, inside launch-to-observed-vacancy. Role/by_arm usage duplicates are not added twice; collection overlaps reservation.",
+    "collection_seconds": 53.98266968000098,
+    "collection_seconds_at_release": 40.60270801100705,
+    "controller_seconds": 595.1371255380072,
+    "full_A40_minutes": 10.714894733333333,
+    "full_launch_to_release_seconds": 642.893684,
+    "raw_totals": {
+      "generation_seconds": 73.54906583809498,
+      "native_input_tokens": 31510,
+      "native_output_tokens": 1945,
+      "output_token_ceiling": 25800,
+      "requests": 90
+    },
+    "release_utc": "2026-09-12T21:50:03.514265+00:00",
+    "worker_seconds": 493.9823609360028
+  },
+  "disclosure": "Author wrote formation/write collectors and saved-weight audit, not readout driver/collector. Main summary was visible before analysis.",
+  "executed_calls": 90,
+  "limits": "Weights excluded: verified lineage/spec/identity hash agreement, not a new native rehash. Native token audit PASS is attested, not rerun. Exploratory selected-record shared-OFF readout, not adaptation/utility or semantic certification.",
+  "max_call_ceiling": 96,
+  "method": "Independent stdlib raw-action/world/record/quiz and exact prompt reconstruction. No native reducer/tokenizer/model called.",
+  "plan_sha256": "cdb71865359498ca0f75db57566e638b667d2e849cc11c9cbd45dd6bfbb97375",
+  "source_literals_verified": {
+    "nursery_dialogue.py": "ca8da87a8b1b1980afcb95d97b36305cb2082612ca139565bb88ee6ee11cbb5c",
+    "rulegame.py": "88304996b00837ad1855e8a6661aad39e64f3beb0c0ab4491b63119e797226f3",
+    "rulegame_parenting_diagnostic.py": "e6055da48b2c6fa1bd294c9d991e07f32f05dc6630fe8973373977bdfe977526"
+  },
+  "status": "PASS_RAW_RECOUNT",
+  "validation_sha256": "9cfb499775ceee44cbffe7eaf14e25ced405a4a5865c8006ce45ee6b05d4f311"
+}

@@ -4,8 +4,10 @@
 
 **SEQ111 writes verified; SEQ112 readout technically complete. No parenting
 advantage observed in this exploratory comparison. Independent raw recount
-is pending.** The table below comes from hash-verified terminal results and
-native collector replay/token audits, not a new independent analysis.
+passes.** Herschel reconstructed all 90 requests, task histories, world
+outcomes, quiz labels and record verdicts before comparing sealed results.
+He authored earlier formation/write collectors, not this readout driver or
+collector; Main's summary was visible, so this review is not blinded.
 
 | State | Quiz correct / fixed 24 items | Mean quiz accuracy | Valid quizzes / 4 | Faithful records / allotted 12 | Faithful / emitted records |
 |---|---:|---:|---:|---:|---:|
@@ -14,11 +16,26 @@ native collector replay/token audits, not a new independent analysis.
 | A_ON | 6/24 | 0.250000 | 3/4 | 10/12 | 10/11 |
 
 P minus A is zero; each adapter minus OFF is -1/24. The two adapter states
-have identical *aggregate and per-task scores*, not necessarily identical raw
-outputs. On rules 2/3/4, each cell scores 2/6, 1/6, 3/6. On rule 5, OFF scores
+have identical aggregate/per-task scores and, as independently checked, all
+29 aligned prompt strings, response texts and output-token sequences.
+Their saved weight hashes differ. On rules 2/3/4, each cell scores 2/6, 1/6,
+3/6. On rule 5, OFF scores
 1/6 while both adapter cells terminate `protocol_invalid` after two TRYs;
 their missing quizzes correctly retain zero under the frozen denominator.
-The raw cause and pre-TRY prediction choices require the pending recount.
+The raw failure emits `ACT: TRY 4,8,12`, then `PREDICT: F`, then `ACT: QUIZ ?`.
+Two action markers invalidate the response before any third TRY executes.
+The late prediction is not a valid pre-action prediction. There are no length
+cap hits; all 90 calls finish with `stop`.
+
+Each cell has eight valid explicit pre-TRY predictions, all false, of which
+six are correct. OFF executes 12 TRYs and P/A execute 11, but each has 12
+TRY-containing responses when the invalid P/A response is retained. Thus
+valid pre-action prediction count and correctness do not improve. All cells
+mislabel one null-prediction record as matched; OFF additionally loses two
+explicit predictions while recording them. The record-fidelity increase is
+conditional reporting, not increased prediction competence. Probe choices
+change, but each task still samples only true outcomes (rule 2) or only false
+outcomes (rules 3–5); useful information selection is not established.
 
 These are four shared rule tasks, one generation-seed protocol and one
 paired write seed, not 24 independent learner observations. A one-record
@@ -87,10 +104,20 @@ recompute model logits or establish statistical significance.
 
 ## Next decision
 
-Inspect raw rule-5 failures and distinguish record faithfulness from
-spontaneous pre-TRY prediction. Do not repeat this same tiny comparison as
+The raw failure and unchanged pre-TRY prediction counts are now localized.
+Do not repeat this same tiny comparison as
 proof of parenting or retune on its readout. A bounded independent design
-review is considering the smallest acquisition/selection/retention diagnostic
-before further actual-record development. The separate interleaved authored
+review proposed a small full-scaffold versus mapping-sentence-removed
+likelihood test on the four originally trained records. Main has assigned
+its CPU implementation, not launched it. This acquisition diagnostic is not
+held-out learning or parenting efficacy. A separate design review is looking
+for an existing grounded process-write path that actually targets future
+decisions rather than reporting already-emitted actions. The interleaved authored
 memory pair tests a mechanism question, not a prerequisite that recasts this
 null parenting contrast as success.
+
+Independent raw analysis SHA256:
+`8a8312d2f1b6b11b1b9e2b4887ed993657503304a657e54d9d265ac909c69bb0`;
+script SHA256 `ab9cda5e0d6bbcfa882c5268bc9357c34859cac079353e48761f2038d38134bc`.
+Review and full per-case JSON are archived with the other receipts. This is
+not a newly executed native tokenizer/model or weight audit.
