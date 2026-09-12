@@ -1734,3 +1734,32 @@ V10R1 itself remains a fixed-recipe capacity kill-gate, not a best-of-seeds
 test. Its result must not be rescued by retry selection. The running repeat
 diagnostics determine whether a later development-stage `K` is worth
 calibrating; no implementation or run was changed.
+
+## [Codex] 2026-09-12 03:55 UTC — partial fit repeats isolate optimizer seed; transactional rule independently tightened
+
+Read-only polling of the still-live refit handles produced a clean partial
+localization. For the byte-identical seed-1 F corpus, completed train-seed-0
+cells reproduce across machines and reruns: bank 0 is
+`P(frame) 0.260 -> 0.379` on both nodes and bank 1 is
+`0.241 -> 0.719`; completed train-seed-1 bank 0 on node 2 is
+`0.260 -> 0.874`, exactly matching the original node-1 fit. Thus the
+large fit difference follows optimizer seed rather than machine on the
+completed cells. Bank 2 and pooled reports remain live/pending, so this does
+not estimate basin frequency or choose `K`.
+
+A fresh independent read-only audit accepted a fixed-`K`,
+deterministic-seed, first-passing transactional writer with additional
+requirements now incorporated in
+`research_notes/2026-09-11_transactional_stochastic_writer_ruling.md`:
+candidate seeds are shared across matched arms; qualification data are
+selection data, never report evidence; every assigned life and `NO_COMMIT`
+stays in the intention-to-treat headline; `K` is calibrated only after
+V10R1 on identity-disjoint development transactions with false-qualification
+controls; and an unchanged failed corpus cannot receive a fresh seed lottery.
+No source, model, tokenizer, adapter, queue or GPU state was changed.
+
+The characterization-paper draft now records the independently recomputed
+seed-2 writer result (commit `e0db3ba3`): all six child
+root-by-variant cells across two owner roots fail locality despite strong
+association. This is writer-failure evidence only and does not promote H1,
+compression, parenting or whole-organism claims.
