@@ -5344,6 +5344,40 @@ a separate rate--distortion measurement. Full audits:
 and
 `research_notes/analysis/2026-09-12_minimum_strong_agent_memory_baseline_route.md`.
 
+## [Codex watcher] 2026-09-12 18:03 UTC — independent recount: elementary level-1 habit installs perfectly; held-form nonce facts do not
+
+Read-only poll found all three fixed development workers terminal and node 3
+fully released. I copied only their completed reductions plus the aggregate
+release receipt to `/tmp` and independently recomputed all row-level counts;
+the local SHA-256 values exactly match the aggregate receipt. No confirmation
+item was requested (`confirmation_requests=0`), and nothing was restarted.
+
+On 32 disjoint-operand addition prompts, all three states retained 32/32
+correct actions and zero invalid actions. The teaching adapter emitted a
+correct `PREDICT:` before `ACT:` on 32/32; task-only `ACT:` then `COMPUTED:`
+emitted the taught behavior on 0/32; OFF emitted it on 0/32. Raw outputs show
+the complete surface separation, not a parser threshold. This is a strong
+seed-0 development positive for installing one repeated sequence-order habit
+after 80 matched updates, exactly the bounded level-1 question Rohin asked.
+It is not conditional input/action learning, parenting, DREAM/SLEEP, or H1.
+
+On the 16 held-form nonce-device queries, teaching and task-only each scored
+4/16 by emitting `red` on all 16; OFF abstained/was invalid on all 16. Because
+the source bank has exactly four red items, this is a single-colour prior, not
+device-conditioned extractable memory. Do not call the fact bank stored or
+retained from this readout. It had one exposure per device versus 64 repeated
+instances of the ordering habit, so the result supports the planned
+repetition/dose analysis but does not by itself localize storage versus held-
+form extraction. Preserve exact-form acquisition as a separate diagnostic.
+
+Immediate interpretation: level 1 has a real foothold. Follow the user-steered
+sequence with replication and a prospective lower-plasticity/continued-data
+fading assay for this installed habit; keep the complementary ADD/SUB binding
+test as the condition-selective qualification before H1. If nonce facts remain
+in that qualification, give each binding predeclared repeated/paraphrased
+exposure or demote them from a gate—the current one-shot bank cannot support a
+fact-storage conclusion.
+
 ## [Rohin — STEER, relayed verbatim by Fable] 2026-09-12T17:54Z — level 1 on the GPUs now
 
 Rohin, raw message 17 (dictated; full text in `THESIS_RAW_ROHIN_2026-09-11.md`), the operative sentences: "I wanna know what's happening on the GPUs. Are you getting this level one testing done? … the whole compilation thing, let's not think about it yet … that's the issue with starting level three and grading level three when we don't even have one or two. So yeah, I wanna see those level ones happening on the GPU." — "We give it this tiny tiny tiny perfect corpus, so just one behaviour, and it's working. How well does it work over time — leaving the LoRA unfrozen but we're gonna reduce plasticity, see how long does that last; I'm assuming there's gonna be some fading … that'll tell us a lot about plasticity, so we should document plasticity." — "there's gonna need to be some variants … can we test on super long sequences of tons of repetition and then test down the line how much adherence." — "frame this as either instructions or model thoughts, it's up to us to decide." — On the gate: "I don't like the idea of a gate … maybe we need it right now … it's temporary, I don't mind it right now, but it's not something long-term." — On one habit: "for now one is probably fine." — "all these plasticity measurements are actually pretty important for our paper, so there should be some rigour … not saying be rigorous right now, but eventually." Builder: your 17:25 elementary block (predict-before-act, 64 addition demonstrations + 16 recall items, matched task-only and OFF controls, rank 8 / 4 epochs / LR 3e-4, ≤90 A40-min) is the level-1 block he means; he wants it running, with two additions — a repetition/sequence-length variant, and a fading arm: after the write, continue sleeps at reduced plasticity with no new teaching and re-probe adherence at intervals. Node 3 has eight free GPUs.
