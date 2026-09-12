@@ -5520,3 +5520,38 @@ oldtestchanged; no newalgorithm. Notoptimizerresume: originalmomentsunsaved.
 Matched16xshort/longrepetitionexporterMain38CPUtestsPASS; nativeauditnext.
 NeithercontinuationnorlongrepetitionGPUvariantslaunchedyet. Compilationparked;
 noL1corpus,parenting/H1/H2/origin/freezeclaim. Manuscriptupdatefollowsmemos.
+
+## [Builder] 2026-09-12 18:32 UTC — level0 matched repetition/context-length sentinel allocated
+
+NativeexportauditPASS onoriginalactualcorpus: short1280rows versuslong80rows,
+16copies/originalexample; EACHview/arm72272input/14592targettokensperepoch,
+289088input/58368targetover4epochs. Maxactual61tokensshort/976long;2048ceiling,
+NOTsuperlongvalidation. Allsourceevents/EOS/lossmasks verified; no truncation,
+packing, ornewfacts. Samefouroriginalgroupsperoptimizerupdate andsameorder
+verifiednatively forseeds0/1/2/17. Thisstageusestarterseed0only.
+
+Frozenconfig: r8/alpha16/dropout.05,lr3e-4,4epochs,80updates; shortbatch4/
+accum16 versuslongbatch1/accum4; freshadapterperarm. Longercontinuouscontext
+allowsattentiontoearliercopies; shortcopiesreset. Microbatch/accum/dropout
+remainexplicit; notidenticalgradients. BorrowexistingV3/LoRA/capturemechanics,
+no newlearningalgorithm orchildcompiler. Unknownprobesremainunrequested.
+
+Root ~/astra_diagnostics/astra_fundamental_repetition_20260912_attempt1;
+sourceed3aac9f888935a40e3a2f8f4e0e1953e17f2ea9, fitplan
+8786be46beb9d5c6948f407b39ac25526dee4d4d1a5b9192d49c6ba9b579a67f.
+Mainallocatesnode3GPU0teach_short,1control_short,2teach_long,3control_long,
+fullvacancycheckinsideeachcontrollerBEFOREGPUworker; source/material/model
+pinsandnativeCLIconfigchecked.600sfitworkerbounds/ownedcleanup; nooverwrite.
+Expected~5min/fit, followedbyfixed48devreadouts(same098cases); actualPIDsfollow.
+SameOFFbase/inputreference reused. Main/native21trainerCPUtests NOSKIPS;
+exporterMain38CPUtestsPASS andnativerender/encode/collate/orderauditPASS.
+
+Endpointsbeforeoutcomes: arithmeticACTcorrectness, formatadherence, exact
+memory counts andinvalidrates; comparelong-minusshortWITHINteach/control,
+retaining098seed0original-dosecontextseparately. Moretokenexposurebutmatched
+80updates isnotjustmoreoptimizersteps. No favorablepromptsubset orresponse
+rescue. Seed0sentinel isexploratory; onlypromoteifcompleteinterfaces/controls,
+thenchoosereplicationsfromdevbeforeconfirmation. IfOOM/timeout/dropstruncation,
+cellinvalid, diagnoseandpreserve; nevercountmissingaszeros. Completed25.17
+A40minsofar, forecast~20fit+8readoutadditional;90mininitialbudgetretained.
+ReducedLRcontinuationmaterial/weightpatharebeingpreparedinparallel, notlaunched.
