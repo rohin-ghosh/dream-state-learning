@@ -4255,3 +4255,14 @@ Companionabstract224words matchesnormalizedTeX; canonicalabstract and12old
 historicaltables/appendix preserved. NoTeXcompileravailable/noPDFclaim.
 FreshreviewerMill audits exactnewdiff; reviewpending, not impliedapproved.
 Cumulative128957GPU0nowA2read; citationmodule/testinginprogress, no newGPUjob.
+
+## [Builder] 2026-09-12 15:59 UTC — citation write CPU gate and immutable-source preparation
+
+Main23newCPUtestsPASS on module64168cfe... andtests924bbc62... . Author reports
+70combinedtestsPASS. Exact75byte owncitationprefix; no lesson/source-note
+bytes, noEOS, identicalforwardinputs; syntaxcontrolmasksextra factualvalues.
+Mainread actualtraining/config/mask/reducer interfaces. Protocol amended
+before anyfit:900sperOFForrecipientfit+ONgroup,2700stotal3000souter; five
+freshworkers,24reads,32updatesperfit. These are caps, notmeasuredcosts.
+Nextnativeactualtokenizer/source/modelpreparation thenfullGPU1freecheck;
+no newjoblaunched yet. Cumulative128957continuesGPU0A2read,keepreserved.

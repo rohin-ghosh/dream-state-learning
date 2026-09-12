@@ -58,8 +58,12 @@ demonstrate utility beyond the control. No tuning or replacement selection
 on this panel. No automatic continuation, promotion or claim certificate.
 
 Five fresh workers: OFF, citation fit, syntax fit, citation ON, syntax ON.
-Maximum900seconds per stage,2700seconds total plus60seconds cleanup reserve;
-one device remains reserved across unloaded intervals. Measured fit latency
+Implementation amendment before native preparation, fits or evaluation:
+maximum900seconds per OFF group or each recipient's combined fit+ON group,
+2700seconds aggregate, with a3000second outer bound allowing five worker
+cleanup reserves of60seconds. These group limits are stricter than the
+original per-stage900second proposal. One device remains reserved across
+unloaded intervals. Measured fit latency
 and resource usage remain unknown before profiling. Main must verify native
 CPU tests, provenance, source/model/token identity, full GPU vacancy and the
 supplied lease finish cutoff before any launch. Preserve failed artifacts.
