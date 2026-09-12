@@ -4279,3 +4279,15 @@ No model-origin authentication, robustness or parentingeffect claim. Native
 prep capsule/receipts/helpers archived. Main will checkGPU1NVIDIA/CUDAenv/
 queues and lease before direct bounded launch; source immutable. GPU0still
 reserved for cumulative128957readouts. No experimentoutcomes inferred.
+
+## [Builder] 2026-09-12 16:01 UTC — bounded citation sleep comparison launched
+
+node3GPU1controller136880 started16:01:10.230601UTC; immutable33563a239ccf43e0b82539718fc35df2e6145c51.
+Root ~/astra_diagnostics/astra_citation_sleep_20260912_attempt1; preparation
+bd1cd8a2... . Native23CPUtests, realtokenizer/actualsource/model/zero-truncation
+checksPASS; fullNVIDIA/CUDAenvironment/queuevacancyPASS; suppliedleasecutoff
+September25 21:03UTC. OFF→fitfull→fitsyntax→fullON→syntaxON, keepGPU1reserved
+throughreloads; 24reads/64totalupdates,900sOFForrecipientgroup2700stotal3000s
+outer cap. Noauto-retry. No parent/lesson/source-note in sleep; oneposthoc
+validcitation, notlearnedparenting. Modeloriginlocalhashesonly. Cumulative
+128957remainsGPU0throughA1_after. Otherowners/jobsunchanged; no kills.
