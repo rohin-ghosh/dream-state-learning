@@ -37,7 +37,8 @@ NEW-only learning raises target probability substantially, but raises it
 even more on bicycle controls. In A2, mean NEW bicycle colour mass is0.997979
 and abstention probability is2.576e-7; AN is0.999216 and3.452e-7. These are
 not selective factual memories. OLD frame-binding and abstention gates fail
-for every read; the native-assay G7 ratio alone passes when supplied for A2.
+for every read. The supplied native G7 ratio passes for A2 while native
+frame-binding and abstention fail; other native metrics can also pass.
 Native `memory_dose` gate labels are not the sprint's G0–G6 gates.
 
 Repeated A1_before/A1_after raw cue scores match exactly, ON and OFF: maximum
@@ -89,4 +90,11 @@ file matches it exactly after JSON normalization, rechecks native weights and
 cleanup, and records the correction in MAIN_TERMINAL_AUDIT.json. This was a
 capture comparison bug, not an experimental failure or an extra GPU run.
 Official model origin remains UNRESOLVED_LOCAL_HASHES_ONLY. Independent
-scientific review of this new result is pending; formal C11 work stays deferred.
+raw-score/control/cost/SVG review passes for bounded exploratory reporting;
+see `receipts_20260912/astra_cumulative_result_review_20260912.md` and its
+independent-check script/JSON. Its native-weight checks remain attributed to
+native receipts, not freshly authenticated by a metadata-only reviewer.
+The review's gate-wording clarification is applied here. The summary script
+is deliberately fixed to this verified32-owner/no-generation assay; dynamic
+cardinality assertions are an optional future generalization, not a missing
+current measurement. Formal C11 work stays deferred.
