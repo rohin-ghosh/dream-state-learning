@@ -8,6 +8,7 @@ nursery recipe). Bare-text LM loss, lr 1e-4, 3 epochs.
 """
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 import os
 import random
@@ -17,6 +18,28 @@ def seed_training(seed, torch_module):
     if seed is not None:
         random.seed(seed)
         torch_module.manual_seed(seed)
+
+
+def child_record_prefix_length(text):
+    separator = "\nMy measured action record: "
+    if not isinstance(text, str) or not text.startswith("Program "):
+        raise ValueError("invalid child-record wrapper")
+    if text.count(separator) != 1:
+        raise ValueError("missing or ambiguous child-record boundary")
+    boundary = text.index(separator) + len(separator)
+    if not text[boundary:].strip():
+        raise ValueError("empty child record")
+    return boundary
+
+
+def child_target_mask(offsets, prefix_length, attention_mask):
+    if len(offsets) != len(attention_mask):
+        raise ValueError("token offsets and attention mask disagree")
+    mask = [bool(attention) and start >= prefix_length and end > start
+            for (start, end), attention in zip(offsets, attention_mask)]
+    if not any(mask):
+        raise ValueError("no child target tokens survive tokenization")
+    return mask
 
 
 def main():
@@ -36,8 +59,13 @@ def main():
     seed_training(args.seed, torch)
 
     model_name = os.environ.get("V6_MODEL", "Qwen/Qwen2.5-7B-Instruct")
-    corpus = json.load(open(args.corpus))["corpus"]
+    with open(args.corpus, "rb") as source:
+        corpus_bytes = source.read()
+    corpus_document = json.loads(corpus_bytes)
+    child_only = corpus_document.get("recipe") == "preschool_records_v1"
+    corpus = corpus_document["corpus"]
     corpus = [c if isinstance(c, str) else c.get("a", "") for c in corpus]
+    prefixes = [child_record_prefix_length(text) for text in corpus] if child_only else None
     if not corpus:
         os.makedirs(args.out, exist_ok=True)
         open(os.path.join(args.out, "EMPTY_CORPUS"), "w").write("no data\n")
@@ -57,19 +85,30 @@ def main():
     opt = torch.optim.AdamW(
         (p for p in model.parameters() if p.requires_grad), lr=args.lr)
 
-    bsz, total_tokens, steps = 4, 0, 0
+    bsz, total_tokens, steps, supervised_tokens = 4, 0, 0, 0
     for _ in range(args.epochs):
         for i in range(0, len(corpus), bsz):
-            batch = tok(corpus[i:i + bsz], return_tensors="pt", padding=True,
-                        truncation=True, max_length=512).to("cuda")
+            encoded = tok(corpus[i:i + bsz], return_tensors="pt", padding=True,
+                          truncation=True, max_length=512,
+                          **({"return_offsets_mapping": True} if child_only else {}))
+            offsets = encoded.pop("offset_mapping", None)
+            batch = encoded.to("cuda")
             labels = batch.input_ids.clone()
             labels[batch.attention_mask == 0] = -100
+            if child_only:
+                target_masks = [child_target_mask(row_offsets.tolist(), prefix, attention.tolist())
+                                for row_offsets, prefix, attention in
+                                zip(offsets, prefixes[i:i + bsz], batch.attention_mask.cpu())]
+                labels[~torch.tensor(target_masks, device=labels.device)] = -100
             loss = model(**batch, labels=labels).loss
+            if child_only and not bool(torch.isfinite(loss)):
+                raise RuntimeError("nonfinite child-target loss")
             loss.backward()
             opt.step()
             opt.zero_grad()
             steps += 1
             total_tokens += int(batch.attention_mask.sum())
+            supervised_tokens += int((labels != -100).sum())
     model.save_pretrained(args.out)
     with open(os.path.join(args.out, "train_meta.json"), "w") as f:
         metadata = dict(recipe="v1_frozen", n_texts=len(corpus), steps=steps,
@@ -80,6 +119,13 @@ def main():
             metadata.update(recipe="v1_frozen_seeded", seed=args.seed,
                             deterministic_algorithms=
                             torch.are_deterministic_algorithms_enabled())
+        if child_only:
+            metadata.update(recipe="v1_frozen_child_target_seeded" if args.seed is not None
+                            else "v1_frozen_child_target",
+                            source_recipe="preschool_records_v1", loss_target="child_body_only",
+                            source_corpus_sha256=hashlib.sha256(corpus_bytes).hexdigest(),
+                            supervised_tokens=supervised_tokens,
+                            masked_nonpadding_tokens=total_tokens - supervised_tokens)
         json.dump(metadata, f, indent=1)
     open(os.path.join(args.out, "DONE"), "w").write("ok\n")
     print(f"TRAIN_DONE recipe=v1 texts={len(corpus)} steps={steps} "

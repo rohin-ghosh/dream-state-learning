@@ -427,7 +427,7 @@ def _delivered_payloads(life: str) -> list[str]:
 
 
 def _record_provenance(row: dict, executions: dict, notes: dict,
-                       lesson_payloads: list[str]) -> str | None:
+                       lesson_payloads: list[str], row_positions=None) -> str | None:
     execution_id = row.get("execution_id")
     matches = executions.get(execution_id, [])
     if not execution_id or not matches:
@@ -437,6 +437,8 @@ def _record_provenance(row: dict, executions: dict, notes: dict,
     if len(notes.get(execution_id, [])) != 1:
         return "provenance-ambiguous-record"
     action = matches[0]
+    if row_positions is not None and row_positions[id(action)] >= row_positions[id(row)]:
+        return "provenance-pre-outcome-record"
     for field in ("occurrence_id", "occurrence_index"):
         if field in row or field in action:
             if field not in row or field not in action or row[field] != action[field]:
@@ -472,6 +474,7 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
     if since > len(rows):
         raise RuntimeError("articulation ledger shrank; provenance requires inspection")
     executions, records = {}, {}
+    row_positions = {id(row): position for position, row in enumerate(rows)}
     for row in rows:
         index = executions if row.get("kind") == "act" else records if row.get("kind") == "note_after" else None
         if index is not None:
@@ -483,7 +486,7 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
     notes = [r for r in new_rows if r.get("kind") == "note_after"]
     judged = [judge_record(r, state) for r in notes]
     for row, judgement in zip(notes, judged):
-        rejection = _record_provenance(row, executions, records, lesson_payloads)
+        rejection = _record_provenance(row, executions, records, lesson_payloads, row_positions)
         if rejection:
             judgement.update(reason=rejection, admit_hi=False, admit_lo=False,
                              artic_hi=False, artic_lo=False, G=False)
@@ -509,7 +512,7 @@ def gate_sleep(rows: list, life: str, sdir: str, mode: str, min_items: int = 64,
         rejection = "provenance-stale-admission"
         if (len(matches) == 1 and matches[0].get("episode_id") == admitted.get("episode_id")
                 and (matches[0].get("text") or "").strip() == admitted.get("text")):
-            rejection = _record_provenance(matches[0], executions, records, lesson_payloads)
+            rejection = _record_provenance(matches[0], executions, records, lesson_payloads, row_positions)
             if rejection is None and not judge_record(matches[0], None)["admit_hi"]:
                 rejection = "provenance-invalid-prior-record"
         if rejection:
