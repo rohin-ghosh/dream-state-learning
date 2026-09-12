@@ -6423,3 +6423,90 @@ objective tuning on this writer family; exact-pass/held-fail points to views,
 and locality failure points to routing/scope. Only the full two-map pass
 releases the already-ordered Level-1 test, followed by mandatory W-H1 before
 any clean experiential child spend.
+
+## [Codex watcher] 2026-09-12 20:19 UTC — fresh H1 path red-team: H1 proves the experiential edge, not connected knowledge
+
+Fresh independent audit:
+`research_notes/analysis/2026-09-12_h1_path_connected_claim_fresh_redteam.md`
+(`14b089ec`). The ordered Q0 -> Level 1 -> W-H1 -> H1 sequence is sufficient,
+if every gate passes, for one bounded causal bridge:
+
+```text
+child's public action/outcome
+  -> supported child-authored artifact
+  -> qualified LoRA write
+  -> later parent-free held action
+```
+
+It is **not** sufficient for connected-knowledge language. H1 renders and
+tests independent `(family,mode)->action` bindings; a flat lookup table can
+pass every AUTH/SWAP gate without joining relations, choosing a path under a
+goal, or identifying a missing edge. Keep H1 narrow as the ownership/compile
+bridge. Require the already-designed PCFL-R3 `C/T` AUTH-link versus equal-atom
+no-link and deranged-link necessity test before claiming connected knowledge
+or goal-conditioned traversal; require its `Q/X` stage before claiming active
+expansion and delayed OLD+NEW reuse. H2 and the strong textual/graph baselines
+remain necessary for lifetime and superiority claims.
+
+One minimal H1 repair is required. The verifier currently rejects unsupported
+STORE guesses before SLEEP, so increased guess volume could create a cleaner
+corpus without improved child judgment. Add a pre-admission, noncompensatory
+guard over every syntactically valid informative STORE: parented supported
+complete STORE precision `>=.80`, no more than `.05` below sham, while keeping
+the existing supported coverage `>=.70` and parented-minus-sham coverage
+`>=+.10`. Rejected guesses remain in this denominator even though they stay
+out of training.
+
+The audit also closes an ancestry conflict: H1 confirmation children remain
+disposable. After H1, freeze the qualified recipe and create new
+result-independent release children on disjoint identifiers for PCFL-R3;
+never promote a favorable H1 participant or return benchmark information to
+the lineage.
+
+Information-efficient staging after the now-closed L0 is: adjudicated Q0;
+Level-1 root 0 plus zero-fit chain; W-H1 seed 0; only if both sentinels pass,
+replicate Level 1 roots 1--2 and W-H1 seeds 1--2 in parallel; then H1; then a
+four-root zero-fit `C/T` ceiling and two-release-root six-fit LoRA sentinel
+before the full DEV/confirmation sequence. This preserves the full paper
+objective without misnaming a lower-rung lookup result as the final claim.
+
+## [Codex watcher] 2026-09-12 20:23 UTC — exact high-dose memory-plus-replay successor: preserve memory dose, add retention loss
+
+Fresh design:
+`research_notes/analysis/2026-09-12_high_dose_memory_habit_replay_successor.md`
+(`f7b0f361`). Run paired `MEM` versus `MEM+HABIT` descendants from each
+original seed-matched taught parent. Both retain the already successful rank
+8, LR `3e-4`, 16 bindings, 20 distinct encounters per binding, 80 updates and
+fresh optimizer. The treatment adds one authentic four-row old-habit replay
+microbatch at every update.
+
+The critical arithmetic is:
+
+```text
+L_memory = mean CE over memory targets
+L_habit  = mean CE over habit targets
+MEM:        J = L_memory
+MEM+HABIT:  J = L_memory + 1.0 * L_habit
+```
+
+Do not concatenate tokens, average the two losses, divide by two, or reuse a
+global dropout stream. Naive union-token averaging would reduce the memory
+objective to `640/(640+4400)=12.7%` of target mass and would no longer test
+whether replay preserves behavior at the known acquisition dose. Use named,
+stateless per-update dropout streams so the two arms see identical memory
+masks; the habit forward cannot advance memory randomness.
+
+Run the paired seed-0 cells first. Advance unchanged to seeds 1--2 only if
+both acquire exact and held memory `>=14/16` and the replay cell also retains
+strict PREDICT->ACT `>=30/32`, correct ACT `>=31/32`, valid single tags and
+zero colour/interface spill. All three replay roots must pass; means cannot
+rescue a failed seed. A stronger replay-*rescue* claim additionally requires
+the matched MEM cells to coexist in at most one of three roots; if MEM also
+passes, report coexistence but not replay necessity. Maximum six fits, 480
+updates and 120 A40-minutes, with no rank/rate/epoch/view sweep.
+
+This is a useful parallel L0 safety test, not the main gate. It can establish
+that explicit replay preserves an installed interface while arbitrary keyed
+memory is acquired; it cannot establish conditional action, parenting,
+DREAM/SLEEP or H1. The adjudicated Q0 conditional writer remains the next
+scientific gate.
