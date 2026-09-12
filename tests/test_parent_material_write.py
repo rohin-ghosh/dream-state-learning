@@ -78,7 +78,7 @@ class ParentMaterialWriteTests(unittest.TestCase):
         self.adapter = self.root / "adapter"
         self.log = self.root / "trainer.log"
 
-    def make_formation(self, name, unique=128, teacher=False):
+    def make_formation(self, name, unique=128, teacher=False, *, schedule_seed=6101, generation_seed=7101):
         model = MaterialModel(str(self.fixture.model_dir), unique=unique, teacher=teacher)
 
         @contextmanager
@@ -86,7 +86,8 @@ class ParentMaterialWriteTests(unittest.TestCase):
             self.assertEqual(model_path, str(self.fixture.model_dir))
             yield model
 
-        config = replace(self.fixture.config, out=str(self.root / name))
+        config = replace(self.fixture.config, out=str(self.root / name),
+                         schedule_seed=schedule_seed, generation_seed=generation_seed)
         with patch.object(formation, "DiagnosticDriver", ShortDiagnosticDriver):
             formation.run(config, gym=EndingGym(), backend_factory=backend)
         return Path(config.out)
@@ -161,6 +162,46 @@ class ParentMaterialWriteTests(unittest.TestCase):
         load.assert_not_called()
         self.assertFalse((self.output / "corpus.json").exists())
         self.assertFalse((self.output / "training_command.json").exists())
+
+    def test_custom_formation_seeds_prepare_without_changing_writer_seed(self):
+        source = self.make_formation("replication", schedule_seed=6201, generation_seed=7201)
+        report, _ = self.prepare(formation_out=source)
+        expected = dict(schedule_seed=6201, generation_seed=7201)
+        self.assertEqual(report["status"], "READY")
+        self.assertEqual(report["formation_seeds"], expected)
+        self.assertEqual(self.read(self.output / "formation_inputs.json")["formation_seeds"], expected)
+        self.assertEqual(report["metadata_equals"]["seed"], 6102)
+        command = self.read(self.output / "training_command.json")["argv"]
+        self.assertEqual(command[command.index("--seed") + 1], "6102")
+        self.assertEqual(formation.summarize(source)["n_unique_grounded_records"], 128)
+
+    def test_omitted_seed_fields_use_legacy_defaults_not_historical_byte_bypass(self):
+        path = self.formation / "config.json"
+        config = self.read(path)
+        del config["schedule_seed"], config["generation_seed"]
+        self.rewrite(path, config)
+        self.reseal_formation()
+        report, _ = self.prepare()
+        self.assertEqual(report["formation_seeds"], dict(schedule_seed=6101, generation_seed=7101))
+
+    def test_config_seed_protocol_disagreement_rejected(self):
+        path = self.formation / "config.json"
+        config = self.read(path)
+        config["generation_seed"] = 7201
+        self.rewrite(path, config)
+        self.reseal_formation()
+        with self.assertRaisesRegex(ValueError, "protocol changed"):
+            self.prepare()
+
+    def test_changed_declared_schedule_seed_without_actual_schedule_rejected(self):
+        path = self.formation / "config.json"
+        config = self.read(path)
+        config["schedule_seed"] = 6201
+        config["protocol"] = formation.protocol(6201, 7101)
+        self.rewrite(path, config)
+        self.reseal_formation()
+        with self.assertRaisesRegex(ValueError, "schedule mismatch"):
+            self.prepare()
 
     def test_teacher_examples_rejected_not_training_targets(self):
         teacher = self.make_formation("teacher", teacher=True)

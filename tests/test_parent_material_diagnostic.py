@@ -51,6 +51,12 @@ class FixtureModel:
         return [self.note if prompt.endswith("NOTE_AFTER:") else self.wake for prompt in prompts]
 
 
+class OneTickDriver(diagnostic.DiagnosticDriver):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.st.budget_ticks = 1
+
+
 class DiagnosticTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
@@ -166,6 +172,73 @@ class DiagnosticTests(unittest.TestCase):
         self.assertEqual(result["n_unique_grounded_records"], 0)
         self.assertEqual(result["rejection_reasons"]["provenance-orphan"], 1)
         self.assertIsNone(result["unique_per_measured_action"])
+
+    def test_default_and_explicit_seeds_preserve_protocol_teacher_and_generation(self):
+        implicit = replace(self.config, out=str(self.root / "implicit"))
+        explicit = replace(self.config, out=str(self.root / "explicit"), schedule_seed=6101, generation_seed=7101)
+        self.assertEqual(diagnostic.protocol(), diagnostic.SCHEDULE)
+        for config in (implicit, explicit):
+            with patch.object(diagnostic, "DiagnosticDriver", OneTickDriver):
+                diagnostic.run(config, gym=self.gym, backend_factory=self.backend)
+            stored = json.loads((Path(config.out) / "config.json").read_bytes())
+            self.assertEqual(stored["protocol"], diagnostic.SCHEDULE)
+            self.assertEqual((stored["schedule_seed"], stored["generation_seed"]), (6101, 7101))
+        for name in ("schedule.json", "lesson_deliveries.jsonl", "teaching_dose.json"):
+            self.assertEqual((Path(implicit.out) / name).read_bytes(), (Path(explicit.out) / name).read_bytes())
+        events = [[json.loads(line) for line in (Path(config.out) / "generations.jsonl").read_bytes().splitlines()]
+                  for config in (implicit, explicit)]
+        for field, kind in (("seed", "request"), ("prompt", "request"), ("text", "output")):
+            self.assertEqual([event[field] for event in events[0] if event["kind"] == kind],
+                             [event[field] for event in events[1] if event["kind"] == kind])
+        replication = replace(self.config, out=str(self.root / "generation_only"), generation_seed=7201)
+        with patch.object(diagnostic, "DiagnosticDriver", OneTickDriver):
+            diagnostic.run(replication, gym=self.gym, backend_factory=self.backend)
+        self.assertEqual((Path(implicit.out) / "schedule.json").read_bytes(),
+                         (Path(replication.out) / "schedule.json").read_bytes())
+        changed = [json.loads(line) for line in (Path(replication.out) / "generations.jsonl").read_bytes().splitlines()]
+        self.assertNotEqual([event["seed"] for event in events[0] if event["kind"] == "request"],
+                            [event["seed"] for event in changed if event["kind"] == "request"])
+
+    def test_custom_seeds_drive_actual_training_schedule_and_generation(self):
+        config = replace(self.config, schedule_seed=6201, generation_seed=7201)
+        with patch.object(diagnostic, "DiagnosticDriver", OneTickDriver), \
+                patch.object(diagnostic.batch_loop, "run_episodes_batch", wraps=run_episodes_batch) as batches:
+            diagnostic.run(config, gym=self.gym, backend_factory=self.backend)
+        out = Path(config.out)
+        schedule = json.loads((out / "schedule.json").read_bytes())
+        self.assertEqual(schedule, self.gym.training_schedule(64, 6201))
+        self.assertNotEqual(schedule, self.gym.training_schedule(64, 6101))
+        self.assertTrue(all(self.gym.split_of(episode) == "train" for episode in schedule))
+        self.assertEqual(len(batches.call_args_list), 8)
+        self.assertTrue(all(call.kwargs["gen_seed"] == 7201 for call in batches.call_args_list))
+        events = [json.loads(line) for line in (out / "generations.jsonl").read_bytes().splitlines()]
+        wakes = [event for event in events if event["kind"] == "request" and event["max_tokens"] == 400]
+        self.assertEqual([event["seed"] for event in wakes],
+                         [diagnostic.batch_loop._seed_for(episode, 1, 7201) for episode in schedule])
+        self.assertEqual(json.loads((out / "config.json").read_bytes())["protocol"], diagnostic.protocol(6201, 7201))
+        receipt = policy._lesson_rows((out / "lesson_deliveries.jsonl").read_bytes())[0]
+        self.assertEqual(receipt, policy.lesson_receipt("lesson", 0))
+
+    def test_invalid_seeds_rejected_before_input_reads_or_backend(self):
+        for name in ("schedule_seed", "generation_seed"):
+            for value in (True, False, -1, 0x80000000, 1.0, "7101", None):
+                with self.subTest(name=name, value=value), self.assertRaisesRegex(ValueError, "invalid " + name):
+                    replace(self.config, **{name: value})
+        self.assertEqual((self.loaded, self.closed), (0, 0))
+        self.assertFalse(Path(self.config.out).exists())
+        self.assertEqual(diagnostic.protocol(0, 0x7fffffff)["generation_seed"], 0x7fffffff)
+
+    def test_config_cli_accepts_explicit_seeds_without_new_flags(self):
+        path = self.root / "replication.json"
+        payload = dict(out=self.config.out, mode="lesson", model_path=self.config.model_path,
+                       expected_files=self.config.expected_files, schedule_seed=6201, generation_seed=7201)
+        path.write_text(json.dumps(payload))
+        with patch.object(diagnostic, "ReasoningGymGym", return_value=self.gym), \
+                patch.object(diagnostic, "run", return_value={}) as run:
+            diagnostic.main(["--config", str(path), "--execute"])
+        self.assertEqual(run.call_args.args[0], diagnostic.Config(**payload))
+        with self.assertRaises(TypeError):
+            diagnostic.Config(**dict(payload, teacher_variant="matched_sham"))
 
     def test_actual_wake_output_required(self):
         out = self.stage()

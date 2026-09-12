@@ -129,11 +129,12 @@ def _formation_snapshot(out):
              "formation configuration mismatch")
     _require(all(config.get(key) == value for key, value in formation.BOUNDARY.items()),
              "formation provenance boundary mismatch")
-    _require(config.get("protocol") == formation.SCHEDULE, "formation protocol changed")
+    configured_protocol = formation.protocol(config.get("schedule_seed", 6101), config.get("generation_seed", 7101))
+    _require(_bytes(config.get("protocol")) == _bytes(configured_protocol), "formation protocol changed")
     producer_sources = _producer_sources(config.get("source_hashes"))
     gym = formation.ReasoningGymGym(require_package=False, strict_verifier=True)
     schedule = _read(out / "schedule.json")
-    _require(schedule == gym.training_schedule(64, 6101), "formation training schedule mismatch")
+    _require(schedule == gym.training_schedule(64, configured_protocol["schedule_seed"]), "formation training schedule mismatch")
     model = Path(config["model_path"])
     _require(model.is_absolute() and str(model.resolve(strict=True)) == str(model), "noncanonical local model")
     pins = _read(out / "local_base_pins.json")
@@ -234,6 +235,7 @@ def prepare_write(formation_out, output_dir, *, adapter_dir, trainer_log, python
     adapter = _path(adapter_dir, fresh=True)
     log = _path(trainer_log, fresh=True)
     snapshot = _formation_snapshot(source)
+    formation_seeds = {name: snapshot["config"]["protocol"][name] for name in ("schedule_seed", "generation_seed")}
     model = Path(snapshot["config"]["model_path"])
     destinations = (output, adapter, log)
     _require(all(not _overlap(path, protected) for path in destinations for protected in (source, model))
@@ -249,6 +251,7 @@ def prepare_write(formation_out, output_dir, *, adapter_dir, trainer_log, python
     tokenization = tokenizer_preflight(corpus, _load_tokenizer(str(model))) if ready else None
     artifacts = {
         "formation_inputs.json": dict(**BOUNDARY, formation_out=str(source),
+            formation_seeds=formation_seeds,
             artifact_manifest_sha256=snapshot["artifact_manifest_sha256"],
             artifact_hashes=snapshot["artifact_hashes"], source_hashes=snapshot["config"]["source_hashes"],
             producer_sources=snapshot["producer_sources"]),
@@ -280,7 +283,7 @@ def prepare_write(formation_out, output_dir, *, adapter_dir, trainer_log, python
                 omitted_arguments=["--gate-receipt", "--expected-gate-sha256",
                                    "--previous-manifest-sha256", "--trainer-receipt"])})
     report = dict(**BOUNDARY, status="READY" if ready else "SKIPPED_INSUFFICIENT_MATERIAL",
-        formation_out=str(source), mode=snapshot["config"]["mode"], required_records=COUNT,
+        formation_out=str(source), mode=snapshot["config"]["mode"], formation_seeds=formation_seeds, required_records=COUNT,
         available_unique_grounded=snapshot["result"]["n_unique_grounded_records"],
         selected_records=len(bindings), retry_policy="no retries, lowered count, or alternate selection",
         adapter_dir=str(adapter), trainer_log=str(log), metadata_equals=metadata_checks,

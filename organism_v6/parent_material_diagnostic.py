@@ -52,11 +52,23 @@ class Config:
     mode: str
     model_path: str
     expected_files: dict
+    schedule_seed: int = 6101
+    generation_seed: int = 7101
+
+    def __post_init__(self):
+        protocol(self.schedule_seed, self.generation_seed)
 
 
 def _require(condition, message):
     if not condition:
         raise ValueError(message)
+
+
+def protocol(schedule_seed=6101, generation_seed=7101):
+    """Fixed formation protocol with explicit prospective replication seeds."""
+    for name, value in (("schedule_seed", schedule_seed), ("generation_seed", generation_seed)):
+        _require(type(value) is int and 0 <= value <= 0x7fffffff, "invalid " + name)
+    return dict(SCHEDULE, schedule_seed=schedule_seed, generation_seed=generation_seed)
 
 
 def _hash(path):
@@ -246,6 +258,7 @@ def summarize(out):
 def run(config, *, gym, backend_factory):
     _require(isinstance(config, Config) and config.mode in ("lesson", "sham"), "one fixed lesson/sham mode required")
     _require(isinstance(gym, ReasoningGymGym) and gym.strict_verifier is True, "strict reasoning verifier required")
+    configured_protocol = protocol(config.schedule_seed, config.generation_seed)
     model_path = Path(config.model_path).resolve(strict=True)
     _require(str(model_path) == config.model_path, "use actual resolved local model path")
     before = local_files(model_path)
@@ -253,14 +266,14 @@ def run(config, *, gym, backend_factory):
     out = Path(config.out).absolute()
     _require(not any(path.is_symlink() for path in (out, *out.parents)), "output symlink")
     _require(not out.is_relative_to(model_path) and not model_path.is_relative_to(out), "output/model overlap")
-    schedule = gym.training_schedule(64, 6101)
+    schedule = gym.training_schedule(64, config.schedule_seed)
     _require(len(schedule) == len(set(schedule)) == 64 and all(gym.split_of(episode) == "train" for episode in schedule),
              "fixed training-only schedule required")
     from .multikey_writer_gateway_simple import assert_output_fds_outside_run
     sources = _sources()
     out.mkdir()
     assert_output_fds_outside_run(out)
-    _write(out / "config.json", dict(**BOUNDARY, **asdict(config), protocol=SCHEDULE, source_hashes=sources))
+    _write(out / "config.json", dict(**BOUNDARY, **asdict(config), protocol=configured_protocol, source_hashes=sources))
     _write(out / "local_base_pins.json", dict(**BOUNDARY, model_path=config.model_path, files=before))
     _write(out / "schedule.json", schedule)
     ledger = Ledger(str(out / "ledger.jsonl"))
@@ -281,7 +294,7 @@ def run(config, *, gym, backend_factory):
             for start in range(0, 64, 8):
                 episodes = [gym.episode_from_id(episode, 16) for episode in schedule[start:start + 8]]
                 batch_loop.run_episodes_batch(observed, gym, episodes, bootstrap, ledger, 16,
-                    log=lambda message: None, gen_seed=7101, driver_cls=DiagnosticDriver, note_after=slot)
+                    log=lambda message: None, gen_seed=config.generation_seed, driver_cls=DiagnosticDriver, note_after=slot)
             observed.generation_identity()
         _require(local_files(model_path) == before and sources == _sources(), "base/source changed during diagnostic")
         result = dict(status="COMPLETE", mode=config.mode, **summarize(out))

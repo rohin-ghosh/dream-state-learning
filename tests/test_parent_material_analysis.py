@@ -90,13 +90,14 @@ class ParentMaterialAnalysisTests(unittest.TestCase):
         self.sham = self.make_arm("sham")
         self.output = self.root / "analysis"
 
-    def make_arm(self, mode, *, name=None, **kwargs):
+    def make_arm(self, mode, *, name=None, schedule_seed=6101, generation_seed=7101, **kwargs):
         model = SyntheticModel(str(self.fixture.model_dir), **kwargs)
         @contextmanager
         def backend(model_path):
             self.assertEqual(model_path, str(self.fixture.model_dir))
             yield model
-        config = replace(self.fixture.config, mode=mode, out=str(self.root / (name or mode)))
+        config = replace(self.fixture.config, mode=mode, out=str(self.root / (name or mode)),
+                         schedule_seed=schedule_seed, generation_seed=generation_seed)
         with patch.object(formation, "DiagnosticDriver", OneTickDriver):
             formation.run(config, gym=fixtures.FixtureGym(), backend_factory=backend)
         return Path(config.out)
@@ -134,6 +135,43 @@ class ParentMaterialAnalysisTests(unittest.TestCase):
 
     def result_rows(self):
         return [json.loads(line) for line in (self.output / "per_schedule.jsonl").read_bytes().splitlines()]
+
+    def test_custom_seed_pair_reports_formation_seeds_not_bootstrap_seed(self):
+        lesson = self.make_arm("lesson", name="replication_lesson", schedule_seed=6201, generation_seed=7201)
+        sham = self.make_arm("sham", name="replication_sham", schedule_seed=6201, generation_seed=7201)
+        report = self.run_analysis(lesson_root=lesson, sham_root=sham, seed=123)
+        self.assertEqual(report["formation_seeds"], dict(schedule_seed=6201, generation_seed=7201))
+        self.assertIn("generation seed 7201", report["inference"])
+        self.assertNotIn("7101", report["inference"])
+        self.assertEqual(report["paired"]["bootstrap"]["scope"], report["inference"])
+        self.assertEqual(report["paired"]["bootstrap"]["seed"], 123)
+        self.assertEqual(report["paired"]["n_pairs"], 64)
+        self.assertEqual([row["episode_id"] for row in self.result_rows()], self.read(lesson / "schedule.json"))
+
+    def test_paired_generation_seed_mismatch_rejected_before_tokenizer(self):
+        sham = self.make_arm("sham", name="different_generation", generation_seed=7201)
+        with patch.object(extraction, "_load_tokenizer") as load:
+            with self.assertRaisesRegex(ValueError, "configurations differ"):
+                analysis.analyze_pair(self.lesson, sham, self.output, replicates=100)
+        load.assert_not_called()
+        self.assertFalse(self.output.exists())
+
+    def test_paired_schedule_seed_mismatch_rejected(self):
+        sham = self.make_arm("sham", name="different_schedule", schedule_seed=6201)
+        with patch.object(extraction, "_load_tokenizer") as load:
+            with self.assertRaisesRegex(ValueError, "same 64 schedules"):
+                analysis.analyze_pair(self.lesson, sham, self.output, replicates=100)
+        load.assert_not_called()
+
+    def test_legacy_omitted_defaults_match_explicit_defaults(self):
+        path = self.lesson / "config.json"
+        config = self.read(path)
+        del config["schedule_seed"], config["generation_seed"]
+        self.rewrite(path, config)
+        self.reseal(self.lesson)
+        report = self.run_analysis()
+        self.assertEqual(report["formation_seeds"], dict(schedule_seed=6101, generation_seed=7101))
+        self.assertIn("generation seed 7101", report["inference"])
 
     def test_complete_pair_exact_accounting_tokens_and_input_immutability(self):
         before = {str(path): (path.read_bytes(), path.stat().st_mtime_ns, path.stat().st_mode)

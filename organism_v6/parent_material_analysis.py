@@ -25,7 +25,7 @@ BOUNDARY = dict(
     label="EXPLORATORY_PAIRED_FORMATION_ANALYSIS", training=False,
     eligibility_claim=False, H1_claim=False, clean_lineage=False,
     official_base_authentication="UNRESOLVED", formal_C11_guard=False,
-    inference="conditional on one frozen learner and generation seed 7101; "
+    inference="conditional on one frozen learner and the recorded formation generation seed; "
               "schedule resampling is exploratory, not independent learner replication",
     attribution="whole exact prompt-package effect only; semantic content and teacher dose "
                 "are confounded (live lesson 203 versus sham 158 tokens, difference 45); "
@@ -342,9 +342,13 @@ def analyze_pair(lesson_root, sham_root, output_dir, *, seed=20260912, replicate
              "expected lesson then sham roots")
     _require(lesson["schedule"] == sham["schedule"] and len(set(lesson["schedule"])) == COUNT,
              "same 64 schedules required")
-    _require({key: value for key, value in lesson["config"].items() if key not in ("mode", "out", "source_hashes")}
-             == {key: value for key, value in sham["config"].items() if key not in ("mode", "out", "source_hashes")},
+    ignored = ("mode", "out", "source_hashes", "schedule_seed", "generation_seed")
+    _require({key: value for key, value in lesson["config"].items() if key not in ignored}
+             == {key: value for key, value in sham["config"].items() if key not in ignored},
              "paired formation configurations differ")
+    formation_seeds = {name: lesson["config"]["protocol"][name] for name in ("schedule_seed", "generation_seed")}
+    boundary = dict(BOUNDARY, inference=f"conditional on one frozen learner and generation seed {formation_seeds['generation_seed']}; "
+                    "schedule resampling is exploratory, not independent learner replication")
     model = Path(lesson["config"]["model_path"])
     _require(not extraction._overlap(output, model), "output/model overlap")
     tokenizer = extraction._load_tokenizer(str(model))
@@ -358,7 +362,8 @@ def analyze_pair(lesson_root, sham_root, output_dir, *, seed=20260912, replicate
             for index, episode in enumerate(lesson["schedule"])]
     paired = paired_summary(*[[row[mode]["strict_faithful_note_after"] for row in rows]
                               for mode in ("lesson", "sham")], seed=seed, replicates=replicates)
-    report = dict(**BOUNDARY, status="COMPLETE", paired=paired,
+    paired["bootstrap"]["scope"] = boundary["inference"]
+    report = dict(**boundary, status="COMPLETE", paired=paired, formation_seeds=formation_seeds,
                   accounting="each ledger row, ACT, NOTE_AFTER judgment and generation is assigned once "
                              "to a declared schedule or the explicit unassigned bucket; no dropped pairs",
                   missing_evidence="COMPLETE validates the producer's artifact manifest and recomputed result, "
