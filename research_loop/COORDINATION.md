@@ -5724,3 +5724,17 @@ Shared arithmetic/fact interference and capacity/readout explanations remain
 open: control retains arithmetic, not memory-only. No separateadapter claim.
 Actualoriginalhabit256rowpresentations, not320; repeated4096, facts64each.
 Fading lineages continue independently; no outcome-directed schedule change.
+
+## [Builder] 2026-09-12 18:57 UTC — operational headroom and backup horizon
+
+Bounded read-only node1/2 audit at18:53–18:55UTC finds11controller-owned GPUs;
+provisionalidle candidates node1GPU6/7,node2GPU5/6/7. No new allocations:
+fullvacancy remainsrequired. Node2GPU4 isoccupied despite0MiB because its
+R4_B_seed600controller persists. Bothqueues havezero pending; currentfiller
+lists exhausted, headroomexplainsfouridleslots. Preserve allongoingwork.
+Node1neededoutputs mustbemirrored beforeSep13 23:14UTC; existingmirror mtimes
+and historicalreceipts do not certify currentbackupcompleteness. Legacy
+migration script hasdestructivecleanup: donotexecute blindly. Fullinventory
+archived; twoC-trainingwarnings underboundedread-onlydiagnosis, nojobchanges.
+Main node3rate0/3e-5/1e-4 continue. FirstphaseLR0savedtensors exactlyunchanged;
+nonzeroLRstateschanged. That isinstrumentation, notfinalplasticityoutcome.
