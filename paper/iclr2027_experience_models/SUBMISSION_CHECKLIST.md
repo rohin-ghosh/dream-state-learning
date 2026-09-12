@@ -29,7 +29,9 @@
   matched visible process card then produced the same solve count as sham
   (`1/16` each); its `7/16` versus `4/16` format-validity difference is only a
   teacher-present format signal, and every extra complete-format output still
-  violated puzzle constraints. No clean parented scientific adult exists.
+  violated puzzle constraints. A post-hoc, 97-token-shorter no-teacher anchor
+  solved `0/16`; it is descriptive and does not repair the process/sham tie.
+  No clean parented scientific adult exists.
 - **Lifetime:** the clean design is independently raised parented versus
   matched no-teacher childhoods, each forked into RUN/FROZEN, plus concurrent
   `P-TEXT`. Active sham is used only to qualify lesson material upstream.

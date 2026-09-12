@@ -290,15 +290,21 @@ action. The process card produced more syntactically valid full-grid actions
 tokens (`1,079` versus `1,068`). This is a bounded teacher-present format
 signal, not useful-teaching evidence. Independent grid review found that all
 three extra complete-format outputs still violated puzzle constraints; the
-gain was completion/marker placement, not constraint checking. The run has no
-matched no-teacher anchor, and equal solve counts do not support process
-competence. Therefore the
-visible-lesson utility gate remains unpassed: do not fit this card into a child
+gain was completion/marker placement, not constraint checking. A later
+explicitly post-hoc no-teacher anchor scored `0/16`, strict format `3/16`, and
+zero-filled mean `.08438`, versus process `1/16`, `7/16`, `.19258` and sham
+`1/16`, `4/16`, `.11875`. It used a prompt shorter by 97 tokens per question,
+so it is descriptive only. Both teacher arms sitting above that anchor does not
+isolate the process lesson, and the process-versus-sham primary tie remains.
+Therefore the visible-lesson utility gate remains unpassed: do not fit this
+card into a child
 or scale it into childhood. A new lesson earns a parenting fit only by
 improving a prospectively frozen useful action/constraint endpoint relative to
 both matched sham and no-teacher, without sham damage manufacturing the
 contrast. Terminal builder memo:
-`research_notes/astra_memos/ASTRA_STATIC_COMPETENCY_TERMINAL_2026-09-12.md`.
+`research_notes/astra_memos/ASTRA_STATIC_COMPETENCY_TERMINAL_2026-09-12.md`;
+anchor memo:
+`research_notes/astra_memos/ASTRA_NO_TEACHER_TERMINAL_2026-09-12.md`.
 
 ## One ordered evidence ladder
 

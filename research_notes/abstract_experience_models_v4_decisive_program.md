@@ -37,7 +37,7 @@ experience can be compiled, connected, expanded, and reused across a finite
 life, while separating initial competence, personal learning, teaching, and
 temporary textual assistance.
 
-## Current-evidence fallback abstract (228 words)
+## Current-evidence fallback abstract (238 words)
 
 Language agents can preserve deployment experience in text, but turning one
 agent's own action outcomes into stable parametric changes creates a coupled
@@ -57,7 +57,8 @@ broad action spill; masking prompt-side loss reduced spill from `.416` to
 Parenting prerequisites also remain unresolved: fitting historical lesson-
 conditioned continuations harmed both lesson and sham children, while a
 teacher-present process card tied its sham at `1/16` solves and changed only
-output form. We use these failures to specify a two-cycle causal benchmark
+output form; a shorter post-hoc no-teacher anchor cannot isolate that process
+effect. We use these failures to specify a two-cycle causal benchmark
 that separately tests authentic action--outcome binding, child-authored
 connection, goal-conditioned traversal, new-outcome incorporation, delayed
 old-plus-new use, and a clean parented-versus-no-teacher lifetime study.
