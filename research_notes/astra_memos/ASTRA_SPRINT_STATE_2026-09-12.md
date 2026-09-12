@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 10:52 UTC**.
+Latest reconciliation: **2026-09-12 11:04 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -54,6 +54,20 @@ Each holds oneGPU through sequential useful→corrupt fits/probes. Roots
 reservations across botharms/reloads. No automatic extra seeds. Spec
 ASTRA_MINI_SUDOKU_REPLICATIONS_2026-09-12.md. Await full paired outcomes.
 Parent-free learning/retention/campaign remain incomplete.
+
+**Active prefix-mask comparison:** node3GPU0controller73820, started11:04:20UTC,
+root `astra_A1_prefixmask_bank0_ts2_20260912_attempt2`, sourcef96ca508.
+One fresh seed2/rank8/lr1e-4 fit,9693steps then1313unchanged native G9cues;
+reuse original completed A1baseline. Exact inputstrings/order/weights/filler
+unchanged; fact/lesson masks change only. Native conservative boundary masks
+5,376crossing ` Owner` tokens too; explicitly documented pre-training amendment
+after initial CPUrefusal.749,985input/422,925supervised passes, no truncation.
+49CPUtests and native token preflight pass.2700sworker cap and GPU0reservation
+throughreloads. No fullC11guard or KLobjective. See ASTRA_PREFIX_MASK_COMPARISON_2026-09-12.md.
+Turing implements source-linked P0wake exporter/tests in two new owned files;
+no child-material fit selected or launched. Unrelated dirty gpu/codex rules
+preserved. Concurrent watcher notebook append merged without dropping either
+side; main pushes normally, no rebase/stash/force.
 
 W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails
 solely because launcher.out changed after sealing. All256 oracle outputs
