@@ -7541,3 +7541,51 @@ have zero eligible confirmation roots. No live sequential OLD/NEW number was
 used. Full memo:
 `research_notes/analysis/2026-09-12_paper_ready_evidence_scaffold.md`.
 No manuscript, source, model, experiment, adapter, job, or GPU state changed.
+
+## [Codex watcher] 2026-09-12 23:47 UTC — candidate-free M zero-fit closure
+
+Reduced the post-red-team M-core/PCFL requirements to one exact fail-closed
+checklist. Candidate-free now literally forbids answer-bearing row candidates
+and candidate IDs in a claim-bearing LoRA read: the actor alone sees the goal
+and emits an opaque query; a goal-blind adapter process must generate `MISS` or
+one complete local row. The old 32-row recognition mount and the earlier
+actor-selected external candidate lookup do not qualify.
+
+`ZERO_FIT_CLOSED` is the conjunction of seven gates: deterministic 18-root
+bytes/chronology; deny-by-default role projections; authentic action->outcome
+atoms plus child-authored copy-only LINK/NEW; exact six-arm deck/difference/
+lineage closure; candidate-free read and exhaustive live-machine proofs;
+shortcut/injected-leak/reset noninterference; and four fixed exact-text roots
+passing the complete chain. A separate active-text certificate gates only the
+paper-facing strong-memory comparison. Q0 and OLD/NEW remain separately
+required writer receipts and are not laundered into a zero-fit GO.
+
+Closure cost is exactly zero LoRA fits and zero training-GPU time: two
+independent materializations/checks of 18 roots, four fixed TEXT roots, and
+optionally four active-text certificate roots, with every inference/CPU/token/
+storage/partial-attempt cost still recorded. Full memo:
+`research_notes/analysis/2026-09-12_candidate_free_two_sleep_zero_fit_closure_checklist.md`.
+No implementation, model, adapter, job, GPU, claim, or submission state changed.
+
+## [Codex watcher] 2026-09-12 23:45 UTC — sequential OLD/NEW outcome matrix frozen before results
+
+Prospective matrix:
+`research_notes/analysis/2026-09-12_sequential_old_new_fixed_budget_prospective_outcome_matrix.md`,
+commit `06501264`, file SHA-256
+`995bf9534d679ff9c8b55bd8e6cf53f5c511361595a7f428f1aea00e234ab87b`.
+It was frozen using only the design/interface contracts and the launch receipt
+while that receipt said `LAUNCHED_NOT_COMPLETED`; no live marker, raw response,
+reduction, terminal summary, process, or GPU outcome was inspected first.
+
+The complete terminal cross-matrix classifies each arm as safe integration,
+old preservation with new underlearning, old forgetting with new acquisition,
+neither, or interface-unsafe, and covers all 25 R/C combinations. Cycle-1
+rules prevent unequal B1 acquisition from being relabelled as cycle-2
+retention. Both-saturate, replay-preserves-but-underlearns, both-forget,
+comparator-win/tie, surface-disagreement, old-bank asymmetry, and apparent
+reacquisition all have narrow inferences and hard next actions. The governing
+limitation is fixed explicitly: R gives current-new facts 20 presentations
+while NEW_ONLY gives 40, so an R win is a practical fixed-budget allocation
+result, never a pure causal replay effect. The running four fits release zero
+automatic additional fits; any later equal-new-dose causal pair is a distinct
+two-fit design after Q0. No job, code, adapter, claim, or launch state changed.
