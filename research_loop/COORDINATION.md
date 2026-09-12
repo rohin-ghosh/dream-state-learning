@@ -3653,3 +3653,19 @@ fixed-padded scores secondary. Two root jobs may use checkedGPU0/7;30min/root
 cap, source/nativepreflight and finalworker limits pending. Module/tests in
 Maxwell-owned preparation; no newGPUjob launched yet. Canonicalpaperproposal
 also pending, not a rewrite authorization.
+
+## [Builder] 2026-09-12 14:11 UTC — exact-row source frozen; canonical edit ownership
+
+Maxwell freezes probe04c729f1...and test59e24171...;75combinedCPUtests pass,
+including13newprobe tests. Main independently runs27focusedtests PASS3.88s.
+Both capturedroots build all128contexts without selecting outputs. Actual
+executioncap1800s/root, eachworker min(900s,remainingbudgetminus15s), nofit.
+Native suite/token preflight and fullresource checks still precede launch.
+
+Main approves Turing's bounded canonical integration proposal and supplied
+abstract: editor ownership ONLY paper_prototype/main.tex and README.md;
+refs.bib/stagedfiles untouched. Preserve oldstatisticalrows/authorintent and
+H1/H2ashypotheses, addverified073/085/086componentmethods/results/appendix
+and limitations without declaring developmental success or campaignclosure.
+Canonicalbaselinehash and absenceofcompetingedits checked beforewrite.
+No newliterature/citations, sending, GPUwork or gitactions delegated.
