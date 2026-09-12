@@ -4358,3 +4358,28 @@ Audits/scripts/JSONarchived. No MainGPU reservation remains. Dirac integrates
 092/093paperresults; Fermat implementsfixedminimumRuleGameblock, including
 explicitowned-vLLMcleanup requested byMainbeforetests/nativepreparation.
 FormalC11deferred, noapprovalpause, noexperimentresultinflation.
+
+## [Builder] 2026-09-12 16:29 UTC — RuleGame native readiness and prospective formation
+
+Selected bounded minimum protocol now implemented in aff89c4f034407120fc7badd064660492e0011cf.
+Main63CPUtests and node3 native63CPUtestsPASS; actual tokenizer fixture masks
+only child targets (24/22labels), source/localmodel pins match prior artifacts.
+Prep9611a98567c8d0465a4c4072e6bab80cc6a91b0342099da99e67d2d75de73231.
+Initial Main combined suite failed import path, then short host timeout;
+fixed invocation PYTHONPATH=.:tests and adequate timeout pass; all receipts kept.
+Raw child-response export preserves exact whitespace, regression covered.
+
+Next formation only, node3GPU0 subject to immediate full CUDA/proc/queue vacancy:
+root ~/astra_diagnostics/astra_rulegame_minimum_20260912_attempt1; max60calls,
+18480outputtoken ceiling, one supervisedworker600s plus bounded ownedcleanup.
+1800aggregateworkerseconds across eventualformation/write/readout excludesCPU
+prep/Mainaudit. Two lessons P/A, own actual apply-event records, first2eligible
+perarm orpairedshortage. No fit until Main inspects all four parent/control
+turns and restatements and native material passes. NoC11orcleanlineageclaim.
+
+Hume source review finds no formation blocker. Main accepts two operational
+obligations: keep bounded ownership through any later fit (trainer itself has
+no parent-death watcher); run existing audit_native_calls on each finalreadout
+before accepting its token/text evidence. No claimed semantic machinecertificate.
+Leasefinishcutoff node3September25 21:03UTC from suppliedexpiry, notcontrolplane.
+Officialorigin UNRESOLVED_LOCAL_HASHES_ONLY. No other MainGPUjobsremain.
