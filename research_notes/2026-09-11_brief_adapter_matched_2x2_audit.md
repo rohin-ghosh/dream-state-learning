@@ -170,3 +170,53 @@ Point-in-time code receipts, identical locally and on both nodes:
 The full per-life JSON, adapter, and brief hashes are preserved in the fresh
 audit transcript; any later paper use must promote them into a durable
 machine-readable receipt rather than relying on mutable paths.
+
+## Six-life write-pretest correction (2026-09-12)
+
+SEQ-058's literal statement that the final brief matched or beat whole-text
+adapter `A` in all six completed write-pretest lives is false. The exact
+common-random means are:
+
+| life | A, report / disjoint | final brief, report / disjoint | final brief minus A |
+|---|---:|---:|---:|
+| R2-0 | .529308 / .273097 | .529087 / .273097 | -.000221 / .000000 |
+| R2-5 | .487793 / .220352 | .489765 / .252512 | +.001972 / +.032160 |
+| R2-6 | .487793 / .249484 | .492283 / .252425 | +.004491 / +.002941 |
+| R2-2 | .344779 / .159358 | .529087 / .273097 | +.184308 / +.113738 |
+| R2-7 | .529299 / .270668 | .488428 / .248051 | -.040871 / -.022617 |
+| R2-8 | .516287 / .262423 | .503321 / .264859 | -.012966 / +.002437 |
+
+Under the predeclared descriptive band of `+/-0.013`, the final brief is a
+life-level win or tie in five of six lives, but loses clearly on both panels
+for R2-7. Across the 12 life-by-panel cells there are three substantive brief
+wins, two substantive adapter wins, and seven ties. The across-life mean final
+brief advantage is `+0.02279` on the report panel and `+0.02144` on the
+disjoint panel, but almost all of it is the catastrophic, unseeded R2-2
+adapter draw; excluding R2-2 gives `-0.00952` and `+0.00298`.
+
+The final-brief comparison is also horizon-mismatched. Adapter `A` is trained
+from the first 512 episodes, while `brief` normally comes from the last sleep
+at 1,024 episodes. The age-matched `brief_mid` is the proper descriptive
+comparator. Against `A`, its mean difference is only `+0.00464` on the report
+panel and `-0.00405` on the disjoint panel; under the same band, the 12 cells
+contain two brief wins, four adapter wins, and six ties. Thus the write-pretest
+evidence does not support text-greater-than-LoRA once experience horizon is
+matched.
+
+Probe pairing is adequate for this descriptive comparison: both panels use
+the same two decode seeds. Writer assignment is not. `A` is a single rank-32,
+three-epoch, unseeded fit, the six lives are a completion-time convenience
+subset, and life content is confounded with fit lottery. The final brief is a
+sleep-generated, harness-prompted summary over selected positive
+action-outcome evidence. It evolved during the source life, usually under a
+previous LoRA, but is frozen as one short prefix during this evaluation. It is
+therefore neither a pure no-LoRA text lineage nor a strong active-memory
+system.
+
+The bounded six summary/table pairs are preserved at
+`/Users/rohing/dream-state-artifacts/write_pretest_sixlife_2026-09-12/`.
+The result reinforces—not replaces—the claim boundary above: compact text is
+mandatory in the final comparison, current LoRA writing has not beaten it,
+and the paper still needs a prospective candidate-blind evolving text store
+plus query-adaptive retrieval/search over the lossless ledger at matched
+experience and inference budgets.

@@ -1855,6 +1855,28 @@ only advance to the separately bound one-dose diagnostic. V10R1 remains
 unratified and unimplemented; no source, tokenizer, model, adapter, GPU, or
 queue action was taken.
 
+## [Codex] 2026-09-12 05:12 UTC — SEQ-058 brief-versus-LoRA tally corrected; age-matched result is mixed
+
+A fresh independent audit against the six completed write-pretest tables
+falsified SEQ-058's literal "final brief matches or beats A on all six" claim.
+R2 seed 7's final brief loses clearly to A on both panels (`-0.0409` and
+`-0.0226`); seed 8's brief loses on the report panel (`-0.0130`) and is
+essentially tied on disjoint (`+0.0024`). Under the registered `+/-0.013`
+descriptive band, the 12 life-by-panel cells are three substantive brief wins,
+two A wins, and seven ties. The apparent mean brief advantage is dominated by
+seed 2's catastrophic unseeded A fit.
+
+More importantly, final `brief` has up to 1,024 episodes of evidence whereas
+A is trained at episode 512. With the horizon-matched `brief_mid`, mean
+brief-minus-A is only `+0.0046` report and `-0.0041` disjoint, with two brief
+wins, four A wins, and six ties. Neither carrier wins. A is one unseeded
+rank-32 fit per life; the brief is a frozen sleep-generated prefix, not a
+certified evolving or retrieval baseline. Full correction:
+`research_notes/2026-09-11_brief_adapter_matched_2x2_audit.md`. The six raw
+summary/table pairs are preserved under
+`~/dream-state-artifacts/write_pretest_sixlife_2026-09-12/`. No job or model
+state was changed.
+
 ## [Fable] 2026-09-12 05:05 UTC — watcher check: Astra's first Codex session blocked and idle since 04:20 UTC; alias fixed but not yet in effect; checkpoint archived
 
 **Builder state.** Astra (Codex session `01a093d0-04bc-7430-ad89-8d5a8e484735`, tmux `astra`, started 04:11 UTC) finished its only turn at 04:20 UTC and has been waiting for a human since. Two blockers, both recorded in its own checkpoint: (1) the Codex approval reviewer (`approvals_reviewer = "auto_review"`) cannot reach `codex-auto-review` (HTTP 403), so the sandbox's `git pull` and ssh-to-node escalations were refused; (2) `AGENTS.md` demands exact-scope human ratification before any GPU launch and none exists for the handoff §5b work. Rohin's fix (05:00 UTC): the laptop `ssh nvl-astra` alias now runs `codex-astra --sandbox danger-full-access --ask-for-approval never` inside tmux `astra`. Verified on the VM: the alias is correct, but the *running* Codex process (PID 1030228) was started without those flags, so the fix applies only after Rohin exits Codex and reconnects. `approvals_reviewer` remains in `~/.codex/config.toml`; it is moot under `--ask-for-approval never`. Blocker (2) still needs Rohin's ratification text (proposed in chat; not yet in `AGENTS.md`).
