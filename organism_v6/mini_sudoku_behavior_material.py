@@ -242,8 +242,9 @@ def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_
     corrupt_tokens, corrupt_sequences = preflight(corrupt, tokenizer)
     _require(Counter(useful_sequences) == Counter(corrupt_sequences), "target token marginal mismatch")
     boundary = dict(BOUNDARY, validation_backend="SYNTHETIC_CPU_FIXTURE" if synthetic else "NATIVE_PACKAGE_CPU")
-    commands = trainer_commands(out, training_root, model_path,
-                                Path(python_executable or sys.executable).resolve(strict=True))
+    interpreter = Path(python_executable or sys.executable).absolute()
+    _require(interpreter.is_file(), "Python executable must exist")
+    commands = trainer_commands(out, training_root, model_path, interpreter)
     _require(parent_material_diagnostic.local_files(model_path) == pins, "local base changed during preparation")
     _require(_sources(gym) == source_hashes, "implementation changed during preparation")
     train_solutions = {_sha(_encoded(record["solution"])) for record in records[:32]}

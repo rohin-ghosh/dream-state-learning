@@ -147,6 +147,17 @@ class MaterialTests(unittest.TestCase):
             self.assertNotIn(self.out, Path(command["exclusive_stdout_stderr_log"]).parents)
         self.assertFalse(self.training.exists())
 
+    def test_virtualenv_python_symlink_is_not_resolved_to_system_python(self):
+        target = self.root / "system_python"
+        target.write_text("synthetic executable identity")
+        interpreter = self.root / "venv" / "bin" / "python"
+        interpreter.parent.mkdir(parents=True)
+        interpreter.symlink_to(target)
+        self.prepare(python_executable=interpreter)
+        for command in self.read("trainer_commands.json")["commands"].values():
+            self.assertEqual(command["argv"][0], str(interpreter))
+            self.assertNotEqual(command["argv"][0], str(target))
+
     def test_ids_history_and_no_eval_targets_in_training(self):
         self.prepare()
         ids = self.read("ids.json")
