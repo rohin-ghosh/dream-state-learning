@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 09:20 UTC**.
+Latest reconciliation: **2026-09-12 09:46 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -23,15 +23,22 @@ Source92a800bd3672caea0569b8350af2c23bf9e5b3d6 and original remote run retained.
 Official model authentication remains UNRESOLVED_LOCAL_HASHES_ONLY, not a reason
 to pause explicitly exploratory work under Rohin's current steering.
 
-**Live parenting formation:** source911e08877bac83613a62ca58bdb032f22cc61681,
-node3GPU0 lesson timeout PID38416 and GPU2 sham timeout PID38418, launched
+**Parenting formation TERMINAL:** source911e08877bac83613a62ca58bdb032f22cc61681,
+former node3GPU0 lesson timeout PID38416 and GPU2 sham timeout PID38418, launched
 08:46:18UTC,7200second caps plus30second kill grace. Both model-loaded and
-writing actual generations/ledgers. Root
+writing actual generations/ledgers; both COMPLETE by09:32:51UTC. Root
 `~/astra_diagnostics/astra_P0_material_6101_20260912_attempt1`, arm subdirectories;
 configs and external logs are siblings.64identical training episodes/seed6101,
 generation seed7101,16ticks,8batch,400wake/100note caps. Tick-only diagnostic
 clock removes wall-time nuisance; original State unchanged. Teacher dose differs
 (203 vs158tokens), explicitly not exactly matched. No adapter/training/clean claim.
+Both have ZERO strict grounded/unique records: lesson1913notes/1903measuredACTs,
+sham1632/1627. All64schedules present; no missing notes or generation outputs.
+Frozen6c798231 paired preparation returns PAIRED_SKIP_INSUFFICIENT_MATERIAL
+at `~/astra_diagnostics/astra_P0_write_probe_6101_20260912_attempt1`.
+No fits, adapters or parent-free probes executed. Frozen6bca03dc reducer confirms
+64all-zero paired rows; zero empirical-bootstrap width does not prove equivalence.
+Full raw/source archive is being finalized; do not claim archival completion yet.
 
 SEQ-067:15 evaluated A1/A2 bank artifacts all fail unchanged G9. A2seed2
 fits/evals terminal09:04:34UTC,queue0052RC0; all three banks fail spill,
@@ -68,9 +75,16 @@ companion full paper/abstract/unsent update, preserving canonical originals;
 canonical integration and actual parenting results remain pending.
 Main owns Git, notebook, source freeze and
 all node3 launches. Preserve unrelated dirty gpu/codex/dream_state.rules.
-At09:19UTC formation PIDs38416/38418 remain live on GPU0/2,48/64episodes started;
-no completed/failed marker. Pipeline source6c7982317ff4864c63ce8ec0f5badc5c6f15ded8
-deployed on node3;93mainCPUtests pass, actual native-build CPU preflight passes.
+Seed-only parameterization is frozen at a4f218928893f2f97e0f68740d4aafe426de8338;
+88mainCPUtests pass, no teacher-dose matching implemented. Do not repeat the
+zero-yield intervention unchanged just for new seeds. Turing now owns NEW
+parent_note_replay_diagnostic.py/tests: fixed first4measuredACTs per schedule,
+256per arm, exact old prompt plus a sourced slot-only coaching paragraph,
+same original note seed/100token cap, maximum512new notes/oneA40-hour.
+No new world actions, old-protocol impersonation, teacher-target text or judge
+relaxation. See ASTRA_COACHED_NOTE_REPLAY_PROTOCOL_2026-09-12.md.
+Mencius reviews the companion manuscript read-only; canonical integration and
+the full campaign remain pending. Current original pair is not a learning result.
 Watcher's proposed no-fit-before-writer-qualification condition is advisory:
 main retains the bounded exploratory write/probe diagnostic to localize failure,
 not as substrate qualification, clean ancestry, or H1/H2 evidence. Keep actual
