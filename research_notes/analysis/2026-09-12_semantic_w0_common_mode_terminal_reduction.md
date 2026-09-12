@@ -16,9 +16,9 @@ key-conditioned mapping (`0.500--0.578` balanced accuracy, only `1--5/64`
 better than OFF). The original unequal-shape BF16 candidate scores are
 invalid; a terminal equal-shape no-fit rescore repairs their causal
 consistency and shows a large broad action-class shift plus only partial
-conditional association. This run does not qualify the writer, and exact-
-train evaluation is still needed to distinguish failed storage from failed
-held-form extraction.
+conditional association. Exact-training generation is also at chance, so this
+run does not qualify the writer: the recipe failed to create usable
+key-conditioned associations rather than merely failing held-form extraction.
 
 ## Authoritative terminal facts
 
@@ -167,36 +167,69 @@ mapping storage. Most supervised response tokens are common native-action
 syntax, consistent with the repaired score evidence that common action-class
 mass dominated conditional association.
 
+## Exact-training-row localization
+
+The prospectively frozen, no-fit exact-row diagnostic then evaluated all 128
+actual training prefixes for each map and root, with target bytes withheld
+from generation. Root 1 completed in attempt 1; root 0 attempt 1 stopped after
+OFF because a 15-second `nvidia-smi` identity query timed out before the first
+adapter load. That partial root was preserved, and one fresh full root-0
+attempt completed unchanged. All six terminal state workers have
+`owned_group_empty=true`, both controllers are absent, and the GPUs are free.
+
+Terminal report identities are:
+
+```text
+root 0, attempt 2: 4b1be70a8e2b20a23a2d76b32fb7e02564a958545b7eb8afe870e32b7e832e69
+root 1, attempt 1: 5b349b1b4742f061f0c884ef37b7c4f3478845d46b5f27424c97237d6d492fc2
+```
+
+Matching-map results are:
+
+| adapter | exact-train generation | exact-train fixed-shape score choice | original held generation |
+|---|---:|---:|---:|
+| root0/W+ | .53125 | .46875 | .578125 |
+| root0/W- | .53125 | .4921875 | .515625 |
+| root1/W+ | .50000 | .4921875 | .50000 |
+| root1/W- | .4921875 | .5234375 | .53125 |
+
+Every generation remains syntactically valid, but none of the four adapters
+recovers its balanced conditional mapping even on the exact training forms.
+The action distributions instead show coarse global bias: root0/W+ emits
+action 0 on 104/128 prompts, root0/W- emits action 1 on 124/128, root1/W+
+emits action 1 on 128/128, and root1/W- emits action 0 on 113/128. Direction
+varies across cells; the invariant is failure to condition on the key. This
+rules out the hopeful “stored association, held paraphrase extraction failed”
+explanation for these four instances. The writer learned action syntax/global
+preference rather than a usable key-to-action relation.
+
+The highest-information next fit is therefore one controlled objective test,
+not another broad heat/rank sweep: keep the exact four corpora, clean bases,
+maps, dose, and evaluation, but supervise or contrast the action-specific
+branch after the already-correct common `ACT:` prefix. The base already has
+100% valid syntax, so rewarding shared syntax and EOS is unnecessary and
+empirically dominant. A target-suffix loss arm is the minimal implementation;
+a pairwise correct-versus-incorrect continuation objective is the stronger
+fallback if that arm still collapses globally. Any new fit must retain the
+same held, exact-row, interface, and locality endpoints and be bound before
+outputs.
+
 ## Highest-information next measurement
 
-Before another writer fit, reuse these four saved adapters for exact-train
-**strict generation**, which is independent of this score convention. For
-score-based localization, use prefix-by-prefix scoring or validate the full
-panel against a canonical higher-precision reference, with original-seal and
-state binding repaired. Together these are the minimum
-measurements that separate:
+The exact-row generation above has already separated the main cases:
 
-1. **stored but not extracted across renderings**: exact-train conditional
-   mapping is strong while held mapping remains near chance; next test a
-   cross-view/paraphrase compiler;
-2. **mapping not stored**: exact-train conditional mapping is also weak; next
-   test an identity-focused or pairwise contrastive write objective; or
-3. **stored selectively but accompanied by broad action-class change**:
-   exact-train and held conditional mappings are strong while a repaired
-   absolute endpoint changes out of scope; next test disjoint frozen-OFF
-   preservation.
+1. **stored but not extracted across renderings** is contradicted here because
+   exact-train generation is also near chance;
+2. **usable conditional mapping not stored** is supported for these four
+   instances; and
+3. **broad action-class change without selectivity** is supported by the
+   global action collapses and fixed-shape diagnostic, subject to the latter's
+   stated backend/custody limits.
 
-The exact-train panel must keep strict generation separate from conditional
-choice and a causally valid absolute two-action endpoint. It cannot repair or
-promote this run. No new fit is needed, and no writer branch should be selected
-until the generation read and scorer repair land.
-
-If case 2 holds, the most direct next recipe is not another heat or rank sweep.
-The present token-mean SFT target rewards many shared `ACT:`/syntax/EOS tokens
-for every row and only a small differentiating span. A prospectively bound
-pairwise objective over the correct and incorrect complete action
-continuations would cancel shared syntax and train the conditional decision
-itself. That is a writer-recipe hypothesis, not a conclusion from this run.
+The exact-train panel keeps strict generation separate from fixed-shape score
+choice and cannot repair or promote this run. It has served its localization
+purpose; repeating the unchanged writer is lower information than changing
+the differentiating-target objective under the same controls.
 
 ## Claim boundary
 
@@ -208,6 +241,7 @@ invalid under unequal-shape BF16 evaluation. The supplementary equal-shape
 rescore is internally consistent and strongly suggests broad native-action-
 class change, but it is a shape-conditioned diagnostic with incomplete
 custody—not a canonical likelihood assay. It does **not** qualify the writer
-or establish exact-row storage. Exact-train generation and validated scoring
-are still required to distinguish failed storage from failed held-view
-extraction.
+or establish conditional exact-row storage. Exact-train generation now shows
+that usable exact-form association is absent in all four fitted instances;
+this is a recipe failure, not a general limitation of LoRA or experiential
+learning.
