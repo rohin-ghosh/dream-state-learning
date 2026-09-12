@@ -1,9 +1,12 @@
 # node 1 (a4u8g-0105) — write pretests (gpu/write_ab.sh, horizon 512) on finished lives that have none; parented first.
 # NAME|CMD   ({gpu} and ~ are expanded by the queue runner on the node)
 fable_fill_pretest_RP_B_seed402|bash gpu/write_ab.sh {gpu} ~/v6_out/RP_B_seed402 512
-# HOLD (2026-09-12 08:35 UTC: cell B compile refuses R4 lives — parent-brief text in the transcript spans; needs a cell restriction) fable_fill_pretest_R4_B_seed605|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed605 512
-# HOLD (2026-09-12 08:35 UTC: cell B compile refuses R4 lives — parent-brief text in the transcript spans; needs a cell restriction) fable_fill_pretest_R4_B_seed606|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed606 512
-# HOLD (2026-09-12 08:35 UTC: cell B compile refuses R4 lives — parent-brief text in the transcript spans; needs a cell restriction) fable_fill_pretest_R4_B_seed604|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed604 512
+fable_fill_pretest_R4_B_seed605|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed605 512
+fable_fill_pretest_R4_B_seed606|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed606 512
+fable_fill_pretest_R4_B_seed604|bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed604 512
 fable_fill_pretest_R3_B_seed500|bash gpu/write_ab.sh {gpu} ~/v6_out/R3_B_seed500 512
 fable_fill_pretest_R3_B_seed501|bash gpu/write_ab.sh {gpu} ~/v6_out/R3_B_seed501 512
 fable_fill_pretest_R3_B_seed502|bash gpu/write_ab.sh {gpu} ~/v6_out/R3_B_seed502 512
+# follow-ups for lives whose cell-B compile was LEAK_REFUSED (parent-brief text in the transcript spans): A and C cells only
+fable_fill_pretest_R4_B_seed604_AC|WRITE_AB_CELLS=A,C WRITE_AB_OUT=~/v6_out/pretest_write_ab_AC bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed604 512
+fable_fill_pretest_R4_B_seed606_AC|WRITE_AB_CELLS=A,C WRITE_AB_OUT=~/v6_out/pretest_write_ab_AC bash gpu/write_ab.sh {gpu} ~/v6_out/R4_B_seed606 512
