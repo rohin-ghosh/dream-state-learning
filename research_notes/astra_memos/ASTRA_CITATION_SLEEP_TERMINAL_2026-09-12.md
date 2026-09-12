@@ -24,16 +24,25 @@ citation validator; this does not mean their literal claims are correct.
 Raw output does change after reload. Main's inspection sees citation-trained
 outputs repeat the trained box pair(3,3),(3,4) on all eight boards while
 changing the case ID/digit; syntax-only outputs vary their coordinates.
-This is descriptive copying/format behavior, not a qualified skill or
-generalization result. Independent post-hoc raw-content diagnosis is pending.
-Any literal citation analysis stays separate from the failed primary scores.
+Independent post-hoc raw-content diagnosis confirms trained geometry8/8
+versus syntax1/8. Only full t02 is a true literal witness; all other full
+and syntax witnesses fail. This is descriptive copying/format behavior,
+not a qualified skill or generalization result. The audit decodes only the
+already-present inner object, adds no outer brace and changes no primary
+score. See archived `astra_citation_sleep_content_audit_20260912.*`.
 
 The target was deliberately a75-byte contiguous citation prefix, excluding
 lesson text and the final enclosing brace; EOS was not supervised. The
 readout still required a complete original-schema record. That mismatch
 limits interpretation: zero valid complete responses cannot establish that
 no parameter learning occurred or that useful full-record writing is
-impossible. Do not rescue this result through a repaired parser or more
+impossible. The byte-exact prefix also retokenizes at its final boundary
+relative to the original source continuation; current-arm input-token parity
+does not imply original-source token-ID preservation. The source observation
+used332prompttokens/temperature.7, versus current234/.0; it is not a matched
+baseline. The current OFF read is the relevant baseline. The prefix mismatch
+is a plausible limitation, not a proven sole cause of failure.
+Do not rescue this result through a repaired parser or more
 unchanged prefix/seed/wording trials. The next selected RuleGame block uses
 complete concrete own-event records, not this partial JSON target.
 

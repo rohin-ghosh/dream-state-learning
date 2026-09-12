@@ -1,13 +1,36 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 15:42 UTC**.
+Latest reconciliation: **2026-09-12 16:20 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **16:20 superseding status:** no Main GPU job/reservation remains. Cumulative
+  128957 and citation136880 are terminal, native-validated and fully released.
+  SEQ092: OLD native fact gain increases .292056→.341508 while frame gain
+  decreases .425674→.209910; NEW bicycle gain exceeds frame gain. No selective
+  memory or update-retention qualification. Exact A1 read/reload reproducibility.
+  Capsulec5a7649d...; independent raw-score/cost/figure reviewPASS.
+- SEQ093: OFF/full/syntax all0/8schema andgrounding after32steps each. Full
+  repeats trained geometry8/8 vs syntax1/8; only fullt02 literalwitness true,
+  POSTHOC, originalprimaryscoresunchanged. Incomplete75byteprefixtarget and
+  malformedtails limit whole-record interpretation; not proof of no learning.
+  Capsulec33d6001...; native5worker/replay/releasePASS, contentaudit archived.
+- Next selected156-response maximum RuleGame block uses complete real-own-
+  event records, process versus active-neutral parent, first2eligible events
+  perarm orpairedshortage, two12stepfits andsharedOFF+2ON over4new-rule tasks.
+  Fermat owns newmodule/test; implementation/nativeCPU preparation pending.
+  Formation pauses only for Main's own hash-bound content/control audit before
+  material/fits, not humanratification/formalC11. Do not launch without tests.
+- Dirac updates six manuscript files through092/093; its earlier091revision
+  independently reviewedPASS, companion224words at that priorcut. Collaborator
+  remainsUNSENT. No formalC11, mechanismfreeze, P1/G5/H1/H2 orcampaignclosure.
+
+The dated snapshots below are historical and do not restore old reservations.
 
 - **15:42 superseding status:** demonstration132008 terminal; source grounded
   process2/8 versusformat0, changed-board application1/8 versus0. Source
