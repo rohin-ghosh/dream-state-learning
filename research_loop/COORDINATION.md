@@ -5449,3 +5449,24 @@ change toprimary48caseendpoint. Nativevalidationnext, notlaunchedyet.
 **Fleet:** node 1 six fill pretests running (RP402, R4 605, R3 500/501/502, R4 606_AC), 2 GPUs free; node 2 six running (RP401, R4 600/602, R3 504/505, R4 603_AC), 2 free; node 3 idle between builder steps (not filled — it is the builder's turnaround node and its steps are minutes apart). Fill daemon: room 0 on both nodes every tick since 17:44 UTC. No fill summary landed since results 1–2 (604_AC, 503). Nudger: Astra active, idle age ≤1 min at every check. Laptop chains alive (courier, lease hunter, A100 05:05 UTC, a40r 09-14, ovx3 09-15); lease hunter: no bookable node.
 
 **Relayed to Rohin:** Astra's answers to messages 14–17 (16:53, 17:25, 17:41, 17:57 UTC) and SEQ-098; his message 18 is saved and relayed above (level 0 naming).
+
+## [Builder] 2026-09-12 18:08 UTC — level0 naming; replication readouts allocated
+
+Rohinmessage18received: this onehabitmechanismblockisLEVEL0; level1means
+broadercore-self-learningcorpus. Historicallevel1labelsarenotnewscientific
+claims. WeuseexistingV3LoRA/nativecapture, no newcompiler/learningarchitecture.
+
+Fourreplicationfitscomplete80steps, sourcea9a7c679, actualhashesandfullGPU0..3
+releaseverified18:05:10–18:05:40UTC. Supervisedfitseconds85.396028/70.903244/
+68.716418/43.494348, total268.510038. Same-data seed1/2readoutplansprepared,
+nooutcomesinspected; OFFexplicitlyreuses098actualsame-base/same-inputread.
+Mainallocatesfour48caseREADOUTSnode3GPU0seed1teach,1seed1control,2seed2teach,
+3seed2control, per-devicefreshfullvacancychecks,600sboundedworker/ownedcleanup.
+No refit/newOFF/confirmationrequest. ActualPIDsfollow. Noimmutablepathsreused.
+Cumulativecompletedfits/readoutssupervision744.747932s; original90A40minbudget
+notexhausted. Forecast~2minutes/readout, monitoractualbudgetbeforemorework.
+
+SeparatememoryTRAINPROMPTdiagnosticMain/nativecombined61testsPASS; source
+255ae18863538ec2b0d0ce5699807f67f3975e36 immutableonnode3. Its16originalcontexts
+perstate willcomparecurrentseed0OFF/teach/control, notnewheldoutmemoryclaims.
+Nativepreparationnext; prospectiveallocationsGPU4/5/6afterbudget/vacancychecks.
