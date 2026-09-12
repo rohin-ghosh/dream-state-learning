@@ -91,3 +91,17 @@ launch PID will be logged. A prepared corpus or launched job is not a result.
 Main owns launch and evidence; Turing's new launcher/test files do not
 authorize independent GPU execution. Further seeds/controls are selected
 from the result and measured capacity, not queued automatically.
+
+## Native prelaunch checks, 11:20 UTC
+
+Sourcea4feb0f775246ad065e421b8cb34fa9705268773; source archive SHA256
+`12ce99b1d6cb46b8fbc15c7f689bb04b362f2221e26d69e2df5f670520f47e46`.
+Main17launcher tests pass. Node16pass/1skip (local-only capsule parser test);
+actual node preparation independently passed the real source question check.
+All64source episode IDs are disjoint from evaluation; five selected native
+mini-Sudoku question strings are also disjoint. Source1189872shares its
+reference solution grid with canary1900061. Disclose and retain this canary;
+no outcome has been inspected or split changed for this fit.
+PlanSHA256 `2df054868b588c857054d84d5355a9d894e7a2588107ac72810950f45c783081`.
+Token totals, exact trainer arguments and source/model hashes match this
+specification. This is native preparation, not GPU execution or qualification.
