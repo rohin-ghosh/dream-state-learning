@@ -1,6 +1,43 @@
 # DRAFT ONLY — unsent collaborator update
 
-**September 12, 15:09 UTC update — supersedes the historical window below.**
+**UNSENT — September 12, 2026, SEQ091 evidence update.** The terminal
+worked-example comparison and supplied independent raw-content audit yield
+source process 2/8 versus active format 0/8 and changed-board application
+1/8 versus 0/8; schema validity is 7/8 versus 8/8 at both stages. The sole
+valid t02 follows **invalid s02**, not a verified correct-source-to-application
+chain. Valid sources s04 and s07 both fail at application; s04 repeats the
+example check and s07 names a different valid pair. No whole-example echo
+occurs, but independent discovery is not established. Applications are
+**parent-free but note-present**: all 16 source outputs, including failures,
+are carried byte-for-byte while direct parent/example/source-board content
+is absent. These are citations, not solved boards. [C35]
+
+Process explanations cost 67 tokens on six cases and 78 on two versus format
+57 each; actual prompt/output totals are 5637/652 versus 5536/648, not dose or
+compute matched. The full 32 calls take **340.548915 controller seconds**,
+excluding external preparation/audit. One sampler seed is not learner
+replication; there are **zero fits**. No free-prose lesson is verified or
+training-approved, and no output is approved for training. The independent
+audit reports local verification PASS over 28 extracted files, 32 raw returns
+and original replay; we have read that report, not rerun it or performed live
+GPU checks. No persistence, internalization, P1/G5, H1/H2 or causal parenting
+effect follows. Cumulative work is still running without a reported outcome;
+Main has separately selected the bounded citation-supervision diagnostic in
+`research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
+(Main-reported commit `93411488`). Implementation is in progress, with no fits
+or outcomes yet. The audit alone grants no training authorization or approval
+of free-prose lessons; this is not a permission block on that protocol. [C35]
+
+Canonical characterization intent/abstract, historical tables, prior appendix
+and newline corrections are preserved; bounded evidence paragraphs and the
+developmental companion are updated separately. Main has corrected the terminal
+memo and archived the independent audit (paths and digest in C35), and retains
+ongoing GPU work. No new primary-literature claim, bibliography change,
+Git operation or collaborator communication is made. Earlier status windows
+below are historical; C34 already records terminal SEQ090 rather than an
+ongoing production comparison. This collaborator draft remains **UNSENT**.
+
+**Historical September 12, 15:09 UTC update — superseded by C34/C35 above.**
 The objective comparison is now terminal: original exact-row OFF65/128,
 full-response64/128 and decision-only64/128, with both learned policies
 choosing the same global action on all128 cases. The full-response control
@@ -58,4 +95,4 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Joint/repeated-write retention, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
-Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, especially C14–C30. Canonical `main.tex`/`refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C35. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent update and staged draft do not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.

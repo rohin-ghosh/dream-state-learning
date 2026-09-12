@@ -2,7 +2,19 @@
 
 ## C00 — Scope, authority, and frozen evidence window
 
-**15:23 UTC update:** C34 adds terminal SEQ090 and its independent content
+**September 12, 2026, SEQ091 update:** C35 adds the terminal demonstration and
+supplied independent raw-content audit. Source process 2/8 versus format 0/8
+and application 1/8 versus 0/8 are unchanged by audit; sole valid t02 follows
+invalid s02, not a verified correct-source-to-application chain. Canonical
+characterization abstract, intent, historical tables and appendix are preserved;
+the developmental companion abstract is updated separately. Cumulative replay
+is still running with no outcome in this update. Main has selected the bounded
+citation diagnostic linked in C35; implementation is in progress, with no fits
+or outcomes yet. Main has archived the audit and retains GPU
+work. This update owns only the six explicitly authorized documentation files;
+the earlier four-file sidecar scope below is historical.
+
+**Historical 15:23 UTC update:** C34 adds terminal SEQ090 and its independent content
 audit. The developmental companion abstract includes exact-row/objective
 nulls and the fresh-case production null; it remains distinct from the
 canonical characterization-paper abstract. Running cumulative replay has no
@@ -471,3 +483,80 @@ aggregate, external preparation/audit extra. Cards47vs44tokens, not matched.
 Evidence: `research_notes/astra_memos/ASTRA_CONSTRAINT_V2_TERMINAL_2026-09-12.md`,
 terminal capsule476788fb... and standalone independentaudit JSON9ad6349f....
 No weight persistence, P1, H1/H2 or population-level zero-effect claim.
+
+## C35 — Demonstrated examples, not a verified source-to-application chain (SEQ091)
+
+**Permitted observation:** process source grounding 2/8 versus active format
+0/8; changed-board application 1/8 versus 0/8. Schema validity is process
+7/8 versus format 8/8 at both stages. The two process schema failures name
+three cells rather than two; no pair is salvaged. Invalid-citation counts
+among schema-valid records are process source 5, transfer 6, format source 8,
+transfer 8. The independent raw-content audit preserves original strict scores.
+
+**Ancestry, not a successful chain:** sole valid process t02 follows **invalid
+s02**. The correct box citation `(3,3),(3,4), digit 1` on t02 differs from the
+erroneous source note, the provided source example and the planted transfer
+row witness. The valid sources s04 and s07 have no successful applications:
+s04 repeats the example check with different lesson wording, while s07 names
+another valid pair. Neither arm echoes a whole example verbatim. Distinct valid
+coordinates do not establish independent discovery. All 16 transfers retain
+their own source outputs byte-for-byte, including failures; direct parent
+explanation, example and source board are absent outside the note. Transfer
+is **parent-free but note-present**, with externally demonstrated ancestry,
+not a verified correct-source-to-application chain, solved board or Sudoku ACT.
+
+**Material boundary:** every common example is factual; every transfer board
+has a witness, but each copied source-example check is invalid there. The
+generic free-prose lessons are not verified by local citation correctness;
+no free-prose lesson is training-approved, and no output is approved for
+training. The format arm supplies zero valid child records. Selecting only
+process-valid material for a later fit against an empty control would confound
+selection, dose and quality. The audit alone grants no training authorization.
+Main has now separately selected the bounded exploratory diagnostic in
+`research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
+(selected September 12, 2026, 15:52 UTC; Main-reported commit `93411488`).
+Implementation is in progress, with no fits or outcomes yet. This is not a
+permission block on Main's selected protocol: it restricts training sequences
+to the selected raw structural/citation prefix with prescribed masks and excludes
+lesson prose, parent/example text and the source note. No whole-lesson training
+is approved. Planned steps, evaluation counts and time caps are not observed
+work, fit budgets or utility results. Cumulative work is still running without
+a reported outcome in this documentation window.
+
+**Unit and cost:** one generation sampler seed 7101, not independent learner
+replication; 32 native calls, zero fits. The same eight source examples, order,
+caps and temperature are shared. Source explanation lengths are process
+67 tokens on six cases and 78 on two versus format 57 each. Native prompt/output
+totals are process 5637/652 versus format 5536/648, not token- or compute-matched.
+All 32 stops are `stop`, with at most 128 output tokens. Full controller elapsed
+time is **340.548915 seconds**, excluding external preparation/audit, not
+independently timed by the audit or measured GPU compute. No persistent
+learning, internalization, P1/G5, H1/H2, generalization or causal parenting
+effect is established. One event replayed later would not create replications.
+
+**Sources and custody (read, not rerun in this edit):**
+- Terminal memo: `research_notes/astra_memos/ASTRA_DEMONSTRATION_TERMINAL_2026-09-12.md`.
+- Independent report, now archived by Main:
+  `research_notes/astra_memos/receipts_20260912/astra_demonstration_content_audit_20260912.md`;
+  local verification PASS, failures `[]`, comparison of 28 extracted files,
+  all 32 raw returns, original CPU replay and exact source-note bytes. This
+  is reflected in the corrected terminal memo without changing strict scores.
+  Same-prefix `.json` and `.py` are also archived. The Markdown's SHA256
+  `77f758cec7b4e7fef77018f1ccbb28a491ce8bad56a569ebe95c972dd0e6730a`
+  matches the originally supplied `/tmp/astra_demonstration_content_audit_20260912.md`
+  byte-for-byte in a local comparison during this edit. Neither evidence file
+  is edited or archived here; the scientific audit is not rerun.
+- Native source identity `87936cc5ac9e6cd9e5e4dd23f452b87ced14cb7a`;
+  node3 root `~/astra_diagnostics/astra_demonstration_20260912_attempt1`;
+  source IDs 1851200..1851207 and transfer IDs 1851300..1851307.
+- Preparation SHA256 `75c528b40e2884f560214a30bc875fa51cc9ef8223d63fa654d030acae707343`;
+  report SHA256 `bd633642bbc6c1c67f1a1478a49f392c41a87c51ffb3fe8eecee506b2b60bfa5`;
+  capsule SHA256 `b2d03d6b41c7211ac0c87ff177e590badb137cb2a9624abca4bc5749ac1d1417`.
+- Sole valid t02 raw output SHA256 `019bcf5685a46a2f05be4e32ac4e9f138b71da7b1fd72f38078ed65e32d842bf`;
+  invalid s02 note SHA256 `8f52557fcc81cae0574c6cf984818063c5aa32ecfde606bd21dcf76d8279cdb8`;
+  its exact UTF-8 span in t02's user prompt is `[966,1087)`. These bind evidence,
+  not approved training targets.
+- Native preparation/model/source checks, two worker cleanups and full release
+  are archived receipts, not live GPU checks in this edit. Available local hash
+  agreement and captured file pins are not official model-origin authentication,
+  global hidden-storage coverage or a new custody certification.

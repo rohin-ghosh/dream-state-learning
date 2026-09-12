@@ -2,7 +2,7 @@
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
-**Bounded component-evidence update (2026-09-12, through SEQ-090).**
+**Bounded component-evidence update (2026-09-12, through SEQ-091).**
 The canonical manuscript now adds separate controlled diagnostics SEQ-073,
 SEQ-085 and SEQ-086; it does not change the historical CompilerGym tables,
 contributions, v1 life recipe, authorship or bibliography. The approved abstract
@@ -26,7 +26,12 @@ V2 production is now terminal as SEQ-090: all 48 strict grounded endpoints
 fail; process schema counts are 1/0/1 versus format 2/2/2 per eight across
 three sampling seeds, not independent children. Cumulative results remain
 excluded without terminal evidence. No new parenting, retention, G3, mechanism-freeze
-or conclusive scientific claim follows. Main reviews/integrates this patch.
+or conclusive scientific claim follows. SEQ-091 and its independent raw-content
+audit now add source process 2/8 versus format 0/8 and changed-board application
+1/8 versus 0/8. The sole valid t02 follows invalid s02, not a verified
+correct-source-to-application chain. It is parent-free but note-present, with
+unequal token dose, one sampler seed and zero fits; no lesson is training-approved.
+Main retains memo/audit archiving and the ongoing GPU job.
 
 **Terminal evidence refresh (2026-09-11; supersedes stale counts below).**
 The primary text-versus-weights diagnostic is now the post-hoc, common-random,
@@ -307,6 +312,67 @@ this addition makes no PDF/layout claim without TeX.
 
 These partial cost receipts do not establish a total campaign compute or
 dollar cost. Time caps are limits rather than consumed budgets.
+
+### Worked-example demonstration and independent content audit (SEQ-091 / C35)
+
+Sources read for this documentation-only update:
+- `research_notes/astra_memos/ASTRA_DEMONSTRATION_TERMINAL_2026-09-12.md`.
+- `research_notes/astra_memos/receipts_20260912/astra_demonstration_content_audit_20260912.md`
+  (independent audit, now archived by Main with same-prefix JSON and Python;
+  the corrected terminal memo records its local verification PASS).
+
+The audit reports comparison of 28 extracted files with archived bytes, all 32
+raw returns, original CPU replay and all 16 exact source-note insertions. No
+audit rerun, remote check, archive operation or GPU action is performed here.
+The archived Markdown is byte-identical to the supplied `/tmp` report, SHA256
+`77f758cec7b4e7fef77018f1ccbb28a491ce8bad56a569ebe95c972dd0e6730a`.
+Only that local file equality was newly checked here. Native report SHA256 is
+`bd633642bbc6c1c67f1a1478a49f392c41a87c51ffb3fe8eecee506b2b60bfa5`;
+capsule SHA256 is
+`b2d03d6b41c7211ac0c87ff177e590badb137cb2a9624abca4bc5749ac1d1417`.
+
+Both arms see the same eight correct source examples. Process source grounding
+is 2/8 versus format 0/8; changed-board application is 1/8 versus 0/8. Schema
+validity is 7/8 versus 8/8 at both stages. The two process schema failures name
+three cells and remain failures, without pair salvage. All other failures are
+factual citations. The sole valid application t02 follows **invalid s02**;
+valid sources s04 and s07 both fail at application. s04 repeats the example
+check, s07 names another valid pair, and neither arm echoes a whole example
+verbatim. This is not a verified correct-source-to-application chain or
+independent discovery. Applications are **parent-free but note-present**:
+source outputs, including failures, are carried byte-for-byte; the direct
+parent explanation, example and source board are absent. No solved-board or
+Sudoku ACT outcome is measured. No free-prose lesson is verified or
+training-approved; no output is approved for training.
+
+Source explanations cost process 67 tokens on six cases and 78 on two versus
+format 57 each; total prompt/output tokens are 5637/652 versus 5536/648.
+Matched examples, calls, order and caps are **not token- or compute-matching**.
+All 32 native stops are `stop`, with at most 128 output tokens each. The full
+32 calls take **340.548915 controller seconds**, excluding external
+preparation/audit; this is not measured GPU compute. Sampler seed 7101 is one
+generation seed, not learner replication; there are **zero fits**. Archived
+cleanup/release and model file-pin receipts are not new live verification or
+official model-origin authentication. No persistence, internalization, P1/G5,
+H1/H2 or causal parenting effect follows. Cumulative work is still running
+without a reported outcome. Main has separately selected the bounded diagnostic
+in `research_notes/astra_memos/ASTRA_CITATION_SLEEP_PROTOCOL_2026-09-12.md`
+(Main-reported commit `93411488`); implementation is in progress, with no fits
+or outcomes yet. The audit alone grants no training authorization and does not
+approve free-prose lessons; this is not a permission block on that protocol.
+Its planned caps are not an observed fit budget or utility result.
+
+The canonical characterization abstract, intent, all historical tables,
+all 12 companion table blocks, prior appendix and newline corrections are preserved. The developmental
+companion abstract is updated separately with normalized TeX/Markdown parity
+and a 250-word ceiling. The collaborator draft remains **UNSENT**. No new
+primary-literature claim or bibliography change is made.
+
+Additional cost context is archived in
+`research_notes/astra_memos/receipts_20260912/astra_throughput_snapshot_20260912.md`
+and its same-prefix JSON. Its receipt-window clocks are not measured sustained
+throughput; conditional daily-rate arithmetic and live cumulative projections
+are not imported as observed results here.
 
 ### New in the 2026-09-11 third pass (Astra memo 6 applied; cells as of SEQ-022, 2026-09-11 01:38 UTC)
 

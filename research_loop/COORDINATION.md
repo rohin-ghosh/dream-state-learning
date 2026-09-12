@@ -4244,3 +4244,14 @@ arithmetic61.63–67.82pairedseeds/day is conditional on24usablehours and no
 extraoverhead/failures, NOT measuredsustainedrate or completecampaigncapacity.
 No p50/p95,peakVRAM,utilization,A100speedup or16-way scaling inferred. Snapshot
 freezes earlierA2livecut; laterMaintraininglog1416.8s doesnotcomplete readouts.
+
+## [Builder] 2026-09-12 15:59 UTC — SEQ091 manuscript integration, scoped review pending
+
+Canonicalmain/README, companiondraft/abstract, claimmapC35 andUNSENTcollaborator
+now incorporate091 and independentcontentaudit. Corrected crucialancestry:
+validt02followsinvalids02; nosuccessfulcorrectsource→applicationchain. Note
+present,parentabsent; unequalactualdose; nofit/internalization/P1/G5claim.
+Companionabstract224words matchesnormalizedTeX; canonicalabstract and12old
+historicaltables/appendix preserved. NoTeXcompileravailable/noPDFclaim.
+FreshreviewerMill audits exactnewdiff; reviewpending, not impliedapproved.
+Cumulative128957GPU0nowA2read; citationmodule/testinginprogress, no newGPUjob.
