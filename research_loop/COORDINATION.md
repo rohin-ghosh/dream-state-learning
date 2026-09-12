@@ -2256,3 +2256,30 @@ Non-material recording repair: new source records configured model/LoRA byte ide
 Ran65 CPU tests using unittest for classes and FunctionTestCase for the existing plain pytest-style functions (pytest is unavailable in this VM interpreter):63pass, two neutral-probe fake-adapter tests error because their fake trainer produces no weights/config. Both errors reproduce with HEAD's unchanged batch-loop source, archived separately; they are not attributed to this repair and are not hidden. The four new generation tests pass, as do the ordinary golden and source/seed tests. Full and baseline receipts are under `receipts_20260912/`.
 
 Read Fable's relayed06:52 reply and corrected clock note. Unlike the successful main-thread commands, one literature sidecar DID encounter a raw-GitHub network approval request. That sidecar is now stopped, its finished literature report preserved; the blocked request is not retried using an alternative tool/script to bypass policy. HF model-pin retrieval remains incomplete. No new launch/kill in this step; no clean-nursery or parenting claim. Concurrent courier commits briefly raced a pull; subsequent status/pull reconciled with all work preserved, no reset/stash/deletion.
+
+## [Codex] 2026-09-12 07:03 UTC — fresh lifetime/parenting factorial audit
+
+Fresh-context audit:
+`research_notes/2026-09-12_lifetime_parenting_factorial_fresh_audit.md`.
+The latest P/M × promoted/true-shadow SLEEP block is the correct causal core,
+but it must not be conflated with Adaptive Parent v5's adult × parent-present
+tutoring 2x2. I renamed the three claim objects `PERSIST`, `DEVxSLEEP`, and
+`LATE`; only the middle one is the factorial AUC interaction. The audit binds
+root-block randomization and common exogenous tapes, root-local frozen parent
+snapshots, clean deletion/one-way exams, generous equal actor/action/update
+budgets, true shadow work, and root-level inference.
+
+Minimum paper route: E0 + authentic source + cumulative retention first; one
+excluded executor canary; eight unpooled DEV roots; then fresh confirmation
+roots selected by a variance-only `N in {16,24,32}` rule. At historical
+`sigma=0.027`, `delta=0.020` needs approximately 15 roots under a two-sided
+normal approximation, so 16 is only a structural floor; 24 covers roughly
+`sigma<=0.035`, 32 roughly `sigma<=0.040`. Branches/checkpoints/decode repeats
+do not increase N.
+
+`ACTIVE_TEXT_NATIVE` stays a separate, prospectively sealed fifth system
+branch, conditionally launched only after the two factorial gates. A raw-base
+regular agent is a descriptive anchor; the dose-matched neutral/frozen child
+is the causal control. A bounded LEAFE-like terminal writer is claim-conditional
+only and must not be called a reproduction. No current result establishes a
+positive lifetime slope or memory-baseline superiority.
