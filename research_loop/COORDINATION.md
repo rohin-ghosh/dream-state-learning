@@ -3921,3 +3921,29 @@ objective effect, but that ambiguity cannot rescue this exact null.
 Builder (14:44–15:01 UTC). **SEQ-089:** on node 3 GPU 0, two 256-step fits of the semantic writer with different objectives — full-response vs first-decision-token — both end at chance on the 128 training rows (64/128 and 64/128 vs OFF 65/128) and both trained policies emit the same constant action ("gvn") on 128/128 rows; formats all valid; the full-response control's final LoRA tensor hash reproduces the original fit exactly (a clean determinism check). The laptop Codex's recommendation of a decision-focused objective is therefore answered: null. Six diagnostics tonight on this writer assay (interface, labels, scoring precision, learning rate, KL anchor, objective) — the map from 16 keys to 2 actions is not being learned by rank-8 LoRA in 256 steps under any of them; the constant-action collapse says the fit finds the majority-label shortcut. **SEQ-088:** its parenting "constraint production" run is terminal (details in its entry). The main thread compacted its context at 14:58 and continues ("fresh-case production follow-up" next). Node 3 fully idle at 15:01 UTC; no Main GPU reservation. No [Builder → Rohin] entry; composer clean.
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 (started 08:30 UTC) in their final probe cells — summaries expected 19:00–20:00 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 7 h.
+
+## [Builder] 2026-09-12 15:04 UTC — clarified-coordinate production frozen; cumulative path selected
+
+Prospective production v2: eight fresh native IDs1851100..1851107; both
+prompts explicitly require unquoted JSON integer coordinate components;
+unchanged parent cards, strict checker and public task. Three paired
+GENERATION seeds7101/7102/7103,16calls each/48total, zero fits, same cases;
+these are sampler replicates, NOT independent learned children. Original
+SEQ088 strict and post-hoc results remain unchanged. Main inspected patch;
+28 stdlib CPU unittests pass. System pytest absent; unittest is supported.
+Native source/model/token/actual overlap checks and full GPU reservations
+must pass before launch. Node3GPUs1/2/3 proposed, maximum1800s/pair900s/arm;
+rough inherited276s/pair, maximum1.5aggregate GPU-hours, no auto retry.
+Question: does explicit coordinate representation remove the schema failure,
+and does process coaching improve actual citation grounding? No output is
+training-approved; no P1/H1/H2 inference. All arms reported, no selection.
+
+Selected next mechanism check: native OLD versus NEW cumulative replay with
+NEW-only control, exact existing seed2/rank8/native recipe. A1 is inherited
+OLD; A2=Fit(base,OLD+NEW), AN=Fit(base,NEW). NOT warm-start or resumed optimizer
+continuity; not full G3 closure. Hilbert owns new bounded diagnostic and tests.
+Main verified original OLD weights exist on node2; file hash c5bc4b2d..., OLD
+corpus f2388eaf..., bank87851da0.... Preserve and transfer before preparation.
+90 aggregate reserved A40 minutes proposed maximum for twofits/fourreads;
+actual token/cue preparation and launch specs pending. No binding sweep or
+formal C11 work selected. Other owners and existing jobs unchanged.

@@ -1,6 +1,10 @@
 """Synthetic CPU fixtures only; no native evidence, tokenizer, GPU or model."""
-from contextlib import contextmanager
+import ast
+from contextlib import contextmanager, redirect_stdout
 import copy
+import hashlib
+import inspect
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -89,7 +93,7 @@ class ConstraintCheckTests(unittest.TestCase):
         self.temporary.cleanup()
 
     def prepare(self, **kwargs):
-        arguments = dict(prior_ids=self.prior, gym=self.gym, tokenizer=Tokenizer())
+        arguments = dict(prior_ids=self.prior, gym=self.gym, tokenizer=Tokenizer(), generation_seed=7101)
         arguments.update(kwargs)
         return diagnostic.prepare(self.prep, self.base, self.pins, **arguments)
 
@@ -99,10 +103,10 @@ class ConstraintCheckTests(unittest.TestCase):
     def score(self, value, case=None):
         return diagnostic.score_record(json.dumps(value), case or self.case())
 
-    def run_pair(self):
-        self.prepare()
+    def run_pair(self, generation_seed=7101, pair_name="pair"):
+        self.prepare(generation_seed=generation_seed)
         cases = diagnostic.read(self.prep / "cases.json")
-        pair = self.root / "pair"
+        pair = self.root / pair_name
         pair.mkdir()
         models = []
         for mode in diagnostic.MODES:
@@ -114,7 +118,8 @@ class ConstraintCheckTests(unittest.TestCase):
                 self.assertEqual(model_path, str(self.base))
                 yield model
 
-            diagnostic.run_arm(self.prep, pair / mode, mode, backend_factory=backend, allow_synthetic=True)
+            diagnostic.run_arm(self.prep, pair / mode, mode, generation_seed=generation_seed,
+                               backend_factory=backend, allow_synthetic=True)
         return pair, models
 
     def reseal_edit(self, root, name, change):
@@ -231,9 +236,9 @@ class ConstraintCheckTests(unittest.TestCase):
         tokenizer = Tokenizer()
         tokenizer.encode = lambda *args, **kwargs: [0] * 3969
         with self.assertRaisesRegex(ValueError, "no truncation"):
-            diagnostic.preflight([self.case()], tokenizer)
+            diagnostic.preflight([self.case()], tokenizer, generation_seed=7101)
         tokenizer.encode = lambda *args, **kwargs: [0] * 3968
-        diagnostic.preflight([self.case()], tokenizer)
+        diagnostic.preflight([self.case()], tokenizer, generation_seed=7101)
 
     def test_exact_sixteen_mock_calls_raw_outputs_and_recomputed_counts(self):
         pair, models = self.run_pair()
@@ -325,11 +330,11 @@ class ConstraintCheckTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate actual candidate_sha256"):
                 diagnostic.cases_from_gym(self.gym, self.prior)
 
-    def native_capture_fixture(self, finish_reason="stop", prompt_mismatch=False):
+    def native_capture_fixture(self, finish_reason="stop", prompt_mismatch=False, generation_seed=7101):
         case = self.case()
         model = Model(str(self.base), [case])
         model.tok.encode = lambda text, **kwargs: list(range(len(text.split())))
-        row = diagnostic.preflight([case], model.tok)["prompts"]["process"][0]
+        row = diagnostic.preflight([case], model.tok, generation_seed=generation_seed)["prompts"]["process"][0]
         output = SimpleNamespace(text=" \n" + json.dumps(record(case)) + "\n ",
                                  token_ids=[101, 102], finish_reason=finish_reason, stop_reason=None)
         request = SimpleNamespace(request_id="SYNTHETIC_RAW_REQUEST_FIXTURE", prompt=row["rendered_prompt"],
@@ -391,7 +396,7 @@ class ConstraintCheckTests(unittest.TestCase):
                 time.sleep(.1)
 
     def test_controller_two_fresh_worker_commands_deadlines_no_gpu_in_test(self):
-        self.prepare()
+        self.prepare(generation_seed=7103)
         prepared = diagnostic.validate_preparation(self.prep, True)
         calls = []
 
@@ -404,16 +409,129 @@ class ConstraintCheckTests(unittest.TestCase):
                 patch.object(diagnostic.model_backend, "MODEL", str(self.base)), \
                 patch.object(diagnostic.supervisor, "run_worker", side_effect=worker), \
                 patch.object(diagnostic, "analyze_pair", return_value=dict(status="SYNTHETIC_CONTROLLER_FIXTURE")):
-            result = diagnostic.execute_pair(self.prep, self.root / "controller")
+            result = diagnostic.execute_pair(self.prep, self.root / "controller", generation_seed=7103)
         self.assertEqual(result["status"], "SYNTHETIC_CONTROLLER_FIXTURE")
         self.assertEqual(len(calls), 2)
         for mode, (command, kwargs) in zip(diagnostic.MODES, calls):
             self.assertIn("organism_v6.constraint_check_diagnostic", command)
             self.assertEqual(command[command.index("--condition") + 1], mode)
+            self.assertEqual(command[command.index("--generation-seed") + 1], "7103")
             self.assertIn("--allow-gpu", command)
             self.assertLessEqual(kwargs["timeout"], 840)
             self.assertGreater(kwargs["timeout"], 0)
             self.assertEqual(kwargs["device"], "0")
+        self.assertEqual(diagnostic.read(self.root / "controller" / "STARTED.json")["generation_seed"], 7103)
+
+    def test_three_explicit_seeds_48_mock_calls_no_shared_seed_or_board_changes(self):
+        original_protocol = copy.deepcopy(diagnostic.PROTOCOL)
+        previous_cases, previous_prompts, calls = None, None, 0
+        for seed in (7101, 7102, 7103):
+            self.prep = self.root / f"prep-{seed}"
+            pair, models = self.run_pair(seed, pair_name=f"pair-{seed}")
+            config = diagnostic.read(self.prep / "config.json")
+            check = diagnostic.read(self.prep / "preflight.json")
+            self.assertEqual(config["schema"], "constraint-check-v2")
+            self.assertEqual(config["generation_seed"], seed)
+            self.assertEqual(config["generation_seed_role"], diagnostic.SEED_ROLE)
+            self.assertEqual(check["generation_seed"], seed)
+            self.assertEqual(diagnostic.read(self.prep / "runtime.json")["generation_seed"], seed)
+            cases = diagnostic.read(self.prep / "cases.json")
+            prompts = {mode: [row["prompt"] for row in check["prompts"][mode]] for mode in diagnostic.MODES}
+            if previous_cases is not None:
+                self.assertEqual(cases, previous_cases)
+                self.assertEqual(prompts, previous_prompts)
+            previous_cases, previous_prompts = cases, prompts
+            for mode, model in zip(diagnostic.MODES, models):
+                self.assertEqual([row["seed"] for row in check["prompts"][mode]], [seed] * 8)
+                self.assertEqual([call["seeds"] for call in model.calls], [[seed]] * 8)
+                self.assertEqual(diagnostic.read(pair / mode / "runtime.json")["generation_seed"], seed)
+                self.assertEqual(diagnostic.read(pair / mode / "results.json")["generation_seed"], seed)
+                calls += len(model.calls)
+            replay = diagnostic.analyze_pair(pair, self.prep)
+            self.assertEqual(replay["generation_seed"], seed)
+            self.assertEqual(replay["generation_seed_role"], diagnostic.SEED_ROLE)
+            self.assertEqual(replay["generation_calls"], 16)
+            with self.assertRaisesRegex(ValueError, "differs from preparation"):
+                diagnostic.analyze_pair(pair, self.prep, generation_seed=7101 if seed != 7101 else 7102)
+            self.assertEqual(diagnostic.PROTOCOL, original_protocol)
+            self.assertNotIn("generation_seed", diagnostic.PROTOCOL)
+        self.assertEqual(calls, 48)
+
+    def test_v2_fresh_ids_and_only_selected_prompt_clause_checker_cards_unchanged(self):
+        self.assertEqual(diagnostic.IDS, tuple(f"rg/mini_sudoku/{seed}" for seed in range(1851100, 1851108)))
+        clause = "Each coordinate component must be an unquoted JSON integer 1..4; do not use numeric strings. "
+        self.assertEqual(diagnostic.TASK.count(clause), 1)
+        self.assertEqual(hashlib.sha256(diagnostic.TASK.replace(clause, "").encode()).hexdigest(),
+                         "e6420ee4a2d840dd5efed4722ae20235b2bc24a0dc27037ea406e3c3eb8e88b4")
+        self.assertEqual(hashlib.sha256(json.dumps(diagnostic.CARDS, sort_keys=True).encode()).hexdigest(),
+                         "2821fddeb0e88c1262446b7a1339a0a580394b845bd119cda4fedbd427edf541")
+        checker = ast.dump(ast.parse(inspect.getsource(diagnostic.score_record)), include_attributes=False)
+        self.assertEqual(hashlib.sha256(checker.encode()).hexdigest(),
+                         "1333a0e56c384a60742cf8f7f3a74df76a81758e6ce70a49d8abcb584e5bbc95")
+        value = record(self.case())
+        value["checks"][0]["cells"] = [[str(axis) for axis in cell] for cell in value["checks"][0]["cells"]]
+        score = self.score(value)
+        self.assertFalse(score["format_valid"])
+        self.assertEqual(score["grounded"], 0)
+
+    def test_generation_seed_required_validated_and_cli_preparation_propagates(self):
+        for seed in (None, True, "7101", 0, 7104):
+            with self.assertRaisesRegex(ValueError, "sampling only"):
+                self.prepare(generation_seed=seed)
+        with self.assertRaises(TypeError):
+            diagnostic.prepare(self.prep, self.base, self.pins)
+        pins = self.root / "pins.json"
+        pins.write_text(json.dumps(dict(model_path=str(self.base), files=self.pins)))
+        arguments = ["--out", str(self.prep), "--model-path", str(self.base), "--pins", str(pins)]
+        with patch.object(diagnostic, "prepare", return_value={}) as prepare, redirect_stdout(io.StringIO()):
+            with self.assertRaisesRegex(ValueError, "sampling only"):
+                diagnostic.main(arguments)
+            prepare.assert_not_called()
+            diagnostic.main(arguments + ["--generation-seed", "7102"])
+            self.assertEqual(prepare.call_args.kwargs["generation_seed"], 7102)
+
+    def test_native_raw_sampling_params_receive_selected_nondefault_seed(self):
+        backend, row, _, calls, _ = self.native_capture_fixture(generation_seed=7102)
+        with patch.dict("sys.modules", {"vllm": SimpleNamespace(SamplingParams=lambda **kwargs: kwargs)}):
+            capture = backend.generate_record(row)
+        self.assertEqual(row["seed"], 7102)
+        self.assertEqual(calls[0][1][0]["seed"], 7102)
+        self.assertEqual(capture["generation_seed"], 7102)
+
+    def test_seed_mismatch_rejected_before_model_and_in_replay_metadata(self):
+        pair, _ = self.run_pair(7102)
+        with patch.object(diagnostic.formation, "local_backend") as backend:
+            with self.assertRaisesRegex(ValueError, "differs from preparation"):
+                diagnostic.run_arm(self.prep, self.root / "wrong-seed", "process", generation_seed=7103,
+                                   backend_factory=backend, allow_synthetic=True)
+            backend.assert_not_called()
+        self.assertFalse((self.root / "wrong-seed").exists())
+        self.reseal_edit(pair / "process", "runtime.json", lambda value: value.update(generation_seed=7103))
+        with self.assertRaisesRegex(ValueError, "generation seed mismatch"):
+            diagnostic.analyze_pair(pair, self.prep)
+
+    def test_prepared_prompt_seed_mismatch_and_v1_rejected(self):
+        self.prepare(generation_seed=7103)
+        self.reseal_edit(self.prep, "preflight.json", lambda value: value["prompts"]["process"][0].update(seed=7101))
+        with self.assertRaisesRegex(ValueError, "prompt generation seed mismatch"):
+            diagnostic.validate_preparation(self.prep, True)
+        self.reseal_edit(self.prep, "config.json", lambda value: value.update(schema="constraint-check-v1"))
+        with self.assertRaisesRegex(ValueError, "prepared protocol changed"):
+            diagnostic.validate_preparation(self.prep, True)
+
+    def test_cli_worker_controller_and_replay_explicit_seed_plumbing(self):
+        base = ["--preparation", str(self.prep), "--out", str(self.root / "cli"), "--generation-seed", "7103"]
+        with patch.object(diagnostic.supervisor, "selected_device"), \
+                patch.object(diagnostic, "run_arm", return_value={}) as arm, \
+                patch.object(diagnostic, "execute_pair", return_value={}) as controller, \
+                redirect_stdout(io.StringIO()):
+            diagnostic.main(base + ["--allow-gpu", "--condition", "format"])
+            arm.assert_called_once_with(str(self.prep), str(self.root / "cli"), "format", generation_seed=7103)
+            diagnostic.main(base + ["--allow-gpu"])
+            controller.assert_called_once_with(str(self.prep), str(self.root / "cli"), generation_seed=7103)
+        with patch.object(diagnostic, "analyze_pair", return_value={}) as replay, redirect_stdout(io.StringIO()):
+            diagnostic.main(base + ["--analyze", str(self.root / "pair")])
+            replay.assert_called_once_with(str(self.root / "pair"), str(self.prep), generation_seed=7103)
 
     def test_arm_settings_mismatch_and_pending_replay_rejected(self):
         pair, _ = self.run_pair()

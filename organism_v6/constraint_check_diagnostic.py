@@ -1,7 +1,7 @@
 """Eight observed public-constraint exercises; production only, no fits.
 
 CPU preparation: --out NEW --model-path LOCAL --pins PINS
-                [--prior-source-ids METADATA]
+                --generation-seed {7101,7102,7103} [--prior-source-ids METADATA]
 PINS uses {"model_path": absolute_path, "files": relative_path_sha256_map}.
 Collision metadata uses {"schema":"prior-source-ids-v1","episode_ids":[...]}.
 Without that supplied inventory preparation is pending, never launchable.
@@ -12,6 +12,10 @@ It reserves 60 seconds of each 900-second arm for supervisor cleanup (840
 seconds maximum worker wait), within a 1800-second controller alarm. Cleanup
 failure is not success or permission to start another worker.
 CPU analysis: --analyze PAIR --out NEW. No model or native answer is queried.
+Prepare one v2 pair per generation seed: three pairs give 48 calls, zero fits.
+Execution/replay infer the frozen seed unless --generation-seed is supplied
+as an equality assertion. Workers receive it explicitly. These are sampling
+seeds, not learner/optimizer seeds. Use the original source to replay v1.
 """
 from __future__ import annotations
 
@@ -34,10 +38,13 @@ from .mini_sudoku_behavior_material import EVAL_IDS, TRAIN_IDS, board_from_text
 from .parent_material_write import _load_tokenizer
 
 
-IDS = tuple(f"rg/mini_sudoku/{seed}" for seed in range(1851000, 1851008))
+IDS = tuple(f"rg/mini_sudoku/{seed}" for seed in range(1851100, 1851108))
 MODES = ("process", "format")
+SCHEMA = "constraint-check-v2"
+GENERATION_SEEDS = (7101, 7102, 7103)
+SEED_ROLE = "generation_sampling_only_not_learner_or_optimizer"
 PROTOCOL = dict(cases=8, calls_per_arm=8, max_tokens=128, max_input_and_output=4096,
-                temperature=0.7, generation_seed=7101, arm_seconds=900, total_seconds=1800,
+                temperature=0.7, arm_seconds=900, total_seconds=1800,
                 worker_wait_seconds=840, cleanup_reserve_seconds=60)
 BOUNDARY = dict(origin="externally_generated_observed_exercise", own_failed_act=False,
                 clean_ancestry=False, fit=False, adapter=None, live_parent=False,
@@ -56,7 +63,9 @@ CARDS = {
 TASK = ("This is an externally generated observed exercise, not your attempted solution. "
         "Find a duplicate in the displayed 4x4 candidate; do not solve or replace the board. "
         "Public rule: digits 1..4 must not repeat within any row, column or 2x2 box. "
-        "Coordinates are [row,column], one-based. Return exactly one JSON object with keys "
+        "Coordinates are [row,column], one-based. "
+        "Each coordinate component must be an unquoted JSON integer 1..4; do not use numeric strings. "
+        "Return exactly one JSON object with keys "
         "case_id, checks, lesson. Give exactly ONE check in the checks list, with keys "
         "group (row, column or box), cells (two distinct coordinates), digit (integer 1..4). "
         "Any real duplicate is acceptable. lesson is your own next-check reminder in at most eight words. "
@@ -65,6 +74,27 @@ require = receipts.require
 read = receipts.read
 write = formation._write
 sha = formation.policy._sha
+
+
+def validate_generation_seed(generation_seed):
+    require(type(generation_seed) is int and generation_seed in GENERATION_SEEDS,
+            "generation_seed must be one of 7101, 7102, 7103 (sampling only)")
+    return generation_seed
+
+
+def selected_generation_seed(config, requested=None):
+    seed = validate_generation_seed(config["generation_seed"])
+    require(config["generation_seed_role"] == SEED_ROLE, "generation seed role mismatch")
+    if requested is not None:
+        require(validate_generation_seed(requested) == seed, "requested generation seed differs from preparation")
+    return seed
+
+
+def verify_preflight_seed(check, generation_seed):
+    require(check["generation_seed"] == generation_seed and all(
+        len(check["prompts"][mode]) == 8 and all(type(row["seed"]) is int and row["seed"] == generation_seed
+                                               for row in check["prompts"][mode]) for mode in MODES),
+        "prepared prompt generation seed mismatch")
 
 
 @contextmanager
@@ -165,7 +195,8 @@ def prompt_for(case, mode):
     return f"{TASK}\n\nParent card:\n{CARDS[mode]}\n\ncase_id: {case['case_id']}\nCandidate:\n{board}"
 
 
-def preflight(cases, tokenizer):
+def preflight(cases, tokenizer, *, generation_seed):
+    generation_seed = validate_generation_seed(generation_seed)
     rows = {}
     for mode in MODES:
         rows[mode] = []
@@ -178,9 +209,9 @@ def preflight(cases, tokenizer):
                     "input plus output headroom exceeds 4096; no truncation")
             rows[mode].append(dict(case_id=case["case_id"], prompt=prompt, rendered_prompt=rendered,
                 prompt_sha256=sha(prompt.encode()), rendered_sha256=sha(rendered.encode()),
-                prompt_tokens=count, seed=PROTOCOL["generation_seed"], max_tokens=128))
+                prompt_tokens=count, seed=generation_seed, max_tokens=128))
     tokens = {mode: len(tokenizer.encode(card, add_special_tokens=False)) for mode, card in CARDS.items()}
-    return dict(prompts=rows, card_tokens=tokens,
+    return dict(prompts=rows, card_tokens=tokens, generation_seed=generation_seed,
                 card_sha256={mode: sha(card.encode()) for mode, card in CARDS.items()},
                 input_tokens_equal=all(left["prompt_tokens"] == right["prompt_tokens"] for left, right in
                                        zip(rows["process"], rows["format"])),
@@ -245,7 +276,8 @@ def score_record(text, case):
     return result
 
 
-def prepare(out, model_path, expected_files, *, prior_ids=None, gym=None, tokenizer=None):
+def prepare(out, model_path, expected_files, *, generation_seed, prior_ids=None, gym=None, tokenizer=None):
+    generation_seed = validate_generation_seed(generation_seed)
     synthetic = gym is not None or tokenizer is not None
     model = Path(model_path).resolve(strict=True)
     require(formation.local_files(model) == expected_files, "local model pins mismatch")
@@ -253,18 +285,19 @@ def prepare(out, model_path, expected_files, *, prior_ids=None, gym=None, tokeni
     gym = gym if gym is not None else native.ReasoningGymGym(require_package=True, strict_verifier=True)
     tokenizer = tokenizer if tokenizer is not None else _load_tokenizer(str(model))
     cases = cases_from_gym(gym, prior_ids)
-    check = preflight(cases, tokenizer)
+    check = preflight(cases, tokenizer, generation_seed=generation_seed)
     check.update(status="PENDING_COLLISION_CHECK" if prior_ids is None else
                  "SYNTHETIC_CPU_ONLY" if synthetic else "READY",
                  collision_scope="supplied ID inventory and configured held IDs only; global/question overlap unverified")
-    config = dict(schema="constraint-check-v1", model_path=str(model), expected_files=expected_files,
+    config = dict(schema=SCHEMA, model_path=str(model), expected_files=expected_files,
+                  generation_seed=generation_seed, generation_seed_role=SEED_ROLE,
                   sources=source_pins(synthetic), synthetic=synthetic, protocol=PROTOCOL,
                   cards=CARDS, task=TASK, boundary=BOUNDARY, episode_ids=list(IDS), prior_ids=prior_ids)
     root.mkdir(parents=True)
     write(root / "config.json", config)
     write(root / "cases.json", cases)
     write(root / "preflight.json", check)
-    write(root / "runtime.json", runtime())
+    write(root / "runtime.json", dict(runtime(), generation_seed=generation_seed, generation_seed_role=SEED_ROLE))
     receipts.seal(root)
     return check
 
@@ -273,9 +306,10 @@ def validate_preparation(preparation, allow_synthetic=False):
     prep = Path(preparation).resolve(strict=True)
     digest = receipts.verify_inventory(prep)
     config, check = read(prep / "config.json"), read(prep / "preflight.json")
-    require(config["schema"] == "constraint-check-v1" and config["protocol"] == PROTOCOL
+    require(config["schema"] == SCHEMA and config["protocol"] == PROTOCOL
             and config["cards"] == CARDS and config["task"] == TASK and config["boundary"] == BOUNDARY
             and config["episode_ids"] == list(IDS), "prepared protocol changed")
+    verify_preflight_seed(check, selected_generation_seed(config))
     require((not config["synthetic"] and check["status"] == "READY") or
             (allow_synthetic and config["synthetic"] and check["status"] == "SYNTHETIC_CPU_ONLY"),
             "preparation pending or synthetic/native mismatch")
@@ -331,6 +365,7 @@ class CaptureBackend(formation.ObservedBackend):
                             actual_prompt_tokens=len(request["prompt_token_ids"]), finish_reason=output["finish_reason"],
                             stop_reason=output["stop_reason"])
         capture = dict(request_index=self.requests, case_id=row["case_id"], text=text,
+                       generation_seed=row["seed"],
                        output_sha256=sha(text.encode()), **metadata,
                        input_truncated=False, output_rewritten=False)
         self._append([dict(kind="output", **capture)])
@@ -348,24 +383,26 @@ class CaptureBackend(formation.ObservedBackend):
         return capture
 
 
-def run_arm(preparation, out, mode, *, backend_factory=formation.local_backend, allow_synthetic=False):
+def run_arm(preparation, out, mode, *, generation_seed=None, backend_factory=formation.local_backend, allow_synthetic=False):
     with time_budget(PROTOCOL["arm_seconds"]):
-        return _run_arm(preparation, out, mode, backend_factory=backend_factory, allow_synthetic=allow_synthetic)
+        return _run_arm(preparation, out, mode, generation_seed=generation_seed,
+                        backend_factory=backend_factory, allow_synthetic=allow_synthetic)
 
 
-def _run_arm(preparation, out, mode, *, backend_factory, allow_synthetic):
+def _run_arm(preparation, out, mode, *, generation_seed, backend_factory, allow_synthetic):
     started = time.monotonic()
     require(mode in MODES, "unknown arm")
     require(allow_synthetic or backend_factory is formation.local_backend, "fresh native backend required")
     prep, digest, config, cases, check = validate_preparation(preparation, allow_synthetic)
+    generation_seed = selected_generation_seed(config, generation_seed)
     root = receipts.fresh_output(out, [prep, config["model_path"], Path(__file__).resolve().parents[1]])
     root.mkdir(parents=True)
     write(root / "config.json", dict(config, mode=mode, preparation_sha256=digest))
-    write(root / "runtime.json", runtime())
+    write(root / "runtime.json", dict(runtime(), generation_seed=generation_seed, generation_seed_role=SEED_ROLE))
     try:
         captures = []
         with backend_factory(config["model_path"]) as model:
-            current = preflight(cases, model.tok)
+            current = preflight(cases, model.tok, generation_seed=generation_seed)
             require(all(current[key] == check[key] for key in current), "runtime tokenizer differs")
             observed = CaptureBackend(model, config["model_path"], root, CARDS[mode], synthetic=config["synthetic"])
             for row, case in zip(current["prompts"][mode], cases):
@@ -375,6 +412,7 @@ def _run_arm(preparation, out, mode, *, backend_factory, allow_synthetic):
                 captures.append(capture)
         require(time.monotonic() - started < 900, "arm deadline exhausted after cleanup")
         result = dict(status="COMPLETE", mode=mode, preparation_sha256=digest,
+                      generation_seed=generation_seed, generation_seed_role=SEED_ROLE,
                       synthetic=config["synthetic"], generation_calls=observed.requests,
                       execution_backend="SYNTHETIC_CPU_FIXTURE" if config["synthetic"] else "LOCAL_GPU_BACKEND",
                       grounded_citation_count=sum(row["score"]["grounded"] for row in captures),
@@ -394,15 +432,17 @@ def _run_arm(preparation, out, mode, *, backend_factory, allow_synthetic):
         receipts.seal(root)
 
 
-def analyze_pair(pair, preparation):
+def analyze_pair(pair, preparation, *, generation_seed=None):
     pair, prep = Path(pair).resolve(strict=True), Path(preparation).resolve(strict=True)
     digest = receipts.verify_inventory(prep)
     cases, check = read(prep / "cases.json"), read(prep / "preflight.json")
     prepared = read(prep / "config.json")
-    require(prepared["schema"] == "constraint-check-v1" and prepared["episode_ids"] == list(IDS)
+    require(prepared["schema"] == SCHEMA and prepared["episode_ids"] == list(IDS)
             and prepared["protocol"] == PROTOCOL and prepared["cards"] == CARDS
             and prepared["task"] == TASK and prepared["boundary"] == BOUNDARY,
             "captured protocol mismatch")
+    generation_seed = selected_generation_seed(prepared, generation_seed)
+    verify_preflight_seed(check, generation_seed)
     require(check["status"] == ("SYNTHETIC_CPU_ONLY" if prepared["synthetic"] else "READY"), "captured preparation pending")
     require(len(cases) == 8 and cases == [make_case(episode, case["question"], index)
             for index, (episode, case) in enumerate(zip(IDS, cases))], "captured case mismatch")
@@ -417,7 +457,11 @@ def analyze_pair(pair, preparation):
         require(result["synthetic"] == prepared["synthetic"] and result["boundary"] == BOUNDARY
                 and result["execution_backend"] == ("SYNTHETIC_CPU_FIXTURE" if prepared["synthetic"] else "LOCAL_GPU_BACKEND"),
                 "synthetic/native result mismatch")
-        pids.append(read(root / "runtime.json")["pid"])
+        run_runtime = read(root / "runtime.json")
+        require(result["generation_seed"] == run_runtime["generation_seed"] == generation_seed
+                and result["generation_seed_role"] == run_runtime["generation_seed_role"] == SEED_ROLE,
+                "arm/runtime/result generation seed mismatch")
+        pids.append(run_runtime["pid"])
         require(config["mode"] == result["mode"] == mode and
                 config["preparation_sha256"] == result["preparation_sha256"] == digest
                 and result["status"] == "COMPLETE" and result["generation_calls"] == 8,
@@ -454,7 +498,8 @@ def analyze_pair(pair, preparation):
                         and len(native_request["prompt_token_ids"]) == output["actual_prompt_tokens"]
                         and output["usage_source"] == "NATIVE_VLLM_TOKEN_IDS", "native stop/token/output mismatch")
             require(output["output_sha256"] == sha(output["text"].encode())
-                    and output["case_id"] == case["case_id"], "raw output mismatch")
+                    and output["case_id"] == case["case_id"] and output["generation_seed"] == generation_seed,
+                    "raw output/case/generation seed mismatch")
             score = score_record(output["text"], case)
             require(result["records"][index] == dict({key: value for key, value in output.items() if key != "kind"},
                                                     score=score), "summary differs from raw output")
@@ -478,6 +523,7 @@ def analyze_pair(pair, preparation):
                           sum(row["actual_prompt_tokens"] for row in result["records"]))
     require(prepared["synthetic"] or len(set(pids)) == 2, "two fresh model processes required")
     return dict(status="COMPLETE", generation_calls=16, arms=arms, synthetic=prepared["synthetic"],
+                generation_seed=generation_seed, generation_seed_role=SEED_ROLE,
                 execution_backend="SYNTHETIC_CPU_FIXTURE" if prepared["synthetic"] else "LOCAL_GPU_BACKEND",
                 verification_scope="captured inventories and pair receipts; absolute source/model paths not rehashed in CPU replay",
                 process_minus_format=arms["process"]["grounded_citation_count"] - arms["format"]["grounded_citation_count"],
@@ -485,30 +531,33 @@ def analyze_pair(pair, preparation):
                 ("card_tokens", "input_tokens_equal", "package_tokens_equal", "token_matching")})
 
 
-def execute_pair(preparation, out):
+def execute_pair(preparation, out, *, generation_seed=None):
     with time_budget(PROTOCOL["total_seconds"]):
-        return _execute_pair(preparation, out)
+        return _execute_pair(preparation, out, generation_seed=generation_seed)
 
 
-def _execute_pair(preparation, out):
+def _execute_pair(preparation, out, *, generation_seed):
     started = time.monotonic()
     prep, digest, config, _, _ = validate_preparation(preparation)
+    generation_seed = selected_generation_seed(config, generation_seed)
     device = supervisor.selected_device()
     require(os.environ.get("V6_MODEL") == model_backend.MODEL == config["model_path"], "set pinned V6_MODEL before Python")
     root = receipts.fresh_output(out, [prep, config["model_path"], Path(__file__).resolve().parents[1]])
     root.mkdir(parents=True)
-    write(root / "STARTED.json", dict(preparation=str(prep), preparation_sha256=digest, runtime=runtime()))
+    write(root / "STARTED.json", dict(preparation=str(prep), preparation_sha256=digest, runtime=runtime(),
+                                      generation_seed=generation_seed, generation_seed_role=SEED_ROLE))
     try:
         for mode in MODES:
             remaining = 1800 - (time.monotonic() - started)
             reserve = PROTOCOL["cleanup_reserve_seconds"]
             require(remaining > reserve, "pair deadline exhausted; retain cleanup reserve")
             command = [sys.executable, "-B", "-m", "organism_v6.constraint_check_diagnostic",
-                       "--preparation", str(prep), "--out", str(root / mode), "--condition", mode, "--allow-gpu"]
+                       "--preparation", str(prep), "--out", str(root / mode), "--condition", mode,
+                       "--generation-seed", str(generation_seed), "--allow-gpu"]
             supervisor.run_worker(command, log_path=root / f"{mode}.log",
                                   timeout=min(PROTOCOL["worker_wait_seconds"], remaining - reserve), device=device)
         require(time.monotonic() - started < 1800, "pair deadline exhausted after cleanup")
-        result = analyze_pair(root, prep)
+        result = analyze_pair(root, prep, generation_seed=generation_seed)
         require(time.monotonic() - started < 1800, "pair deadline exhausted during analysis")
         result["elapsed_seconds"] = time.monotonic() - started
         write(root / "COMPLETED.json", result)
@@ -528,11 +577,12 @@ def main(argv=None):
     parser.add_argument("--condition", choices=MODES)
     parser.add_argument("--allow-gpu", action="store_true")
     parser.add_argument("--analyze")
+    parser.add_argument("--generation-seed", type=int, choices=GENERATION_SEEDS)
     args = parser.parse_args(argv)
     if args.analyze:
         require(not any((args.allow_gpu, args.condition, args.model_path, args.pins, args.prior_source_ids)), "analysis is read-only CPU")
         prep = args.preparation or read(Path(args.analyze) / "STARTED.json")["preparation"]
-        result = analyze_pair(args.analyze, prep)
+        result = analyze_pair(args.analyze, prep, generation_seed=args.generation_seed)
         root = receipts.fresh_output(args.out, [args.analyze, prep, Path(__file__).resolve().parents[1]])
         root.mkdir(parents=True)
         write(root / "analysis.json", result)
@@ -541,14 +591,16 @@ def main(argv=None):
         require(args.allow_gpu and not any((args.model_path, args.pins, args.prior_source_ids)), "explicit GPU opt-in required")
         if args.condition:
             supervisor.selected_device()
-            result = run_arm(args.preparation, args.out, args.condition)
+            result = run_arm(args.preparation, args.out, args.condition, generation_seed=args.generation_seed)
         else:
-            result = execute_pair(args.preparation, args.out)
+            result = execute_pair(args.preparation, args.out, generation_seed=args.generation_seed)
     else:
         require(args.model_path and args.pins and not args.allow_gpu and not args.condition, "CPU preparation requires model and pins")
+        validate_generation_seed(args.generation_seed)
         pins = read(args.pins)
         require(pins["model_path"] == str(Path(args.model_path).resolve(strict=True)), "pin model path mismatch")
         result = prepare(args.out, args.model_path, pins["files"],
+                         generation_seed=args.generation_seed,
                          prior_ids=read(args.prior_source_ids) if args.prior_source_ids else None)
     print(json.dumps(result, sort_keys=True))
 
