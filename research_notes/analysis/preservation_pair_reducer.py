@@ -186,6 +186,7 @@ def loss_metrics(root: Path):
         metadata=str(meta_path),
         losses=str(losses_path),
         coefficient=coefficient,
+        initial_lora_sha256=meta["initial_lora_sha256"],
         steps=len(rows),
         input_tokens=sum(row["tokens"] for row in rows),
         supervised_tokens=sum(row["supervised_tokens"] for row in rows),
@@ -226,13 +227,20 @@ def reduce_pair(control_root: Path, treatment_root: Path):
     control_loss, treatment_loss = loss_metrics(control_root), loss_metrics(treatment_root)
     if control_loss["coefficient"] != 0 or treatment_loss["coefficient"] != .1:
         raise ValueError("unexpected pair coefficients")
+    same_initial_lora = (control_loss["initial_lora_sha256"]
+                         == treatment_loss["initial_lora_sha256"])
+    if not same_initial_lora:
+        raise ValueError("initial LoRA bytes differ between arms")
     return dict(
         schema="independent-preservation-pair-reduction-v1",
         model_execution=False,
         control=public_metrics(control_cues),
         treatment=public_metrics(treatment_cues),
         loss_trace=dict(control=control_loss, treatment=treatment_loss),
-        pair_checks=dict(immutable_cues_and_OFF_exact=immutable_equal),
+        pair_checks=dict(
+            immutable_cues_and_OFF_exact=immutable_equal,
+            initial_lora_sha256_exact=same_initial_lora,
+        ),
         treatment_minus_control=dict(
             I_d_frame=treatment_cues["I_d_frame"] - control_cues["I_d_frame"],
             frame_spill=treatment_cues["frame_spill"] - control_cues["frame_spill"],
