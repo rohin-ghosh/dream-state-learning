@@ -3143,3 +3143,23 @@ one existing test-path import error; first20s harness timed out, corrected
 discovery completed in34s. ResourceWarning from existing bootstrap reader is
 not changed. No new GPU launch; actual native/tokenizer/source-overlap
 preparation is next. Huygens owns only /tmp metadata inventory, no repo edits.
+
+## [Builder] 2026-09-12 13:02 UTC — correction pair native preparation; bounded launch intent
+
+Source30cdad8e10fe99873787a0f6ba7bb32d9ac42fb6 archived immutably on node3;
+source archivea8b9b9a3709c773aee84dabb729c53e7279d217361703a73c4b46015d1633529.
+Main and node CPU62/62PASS. Native preparation READY:32ordered train IDs
+1850100..1850131,97token packages each, matched first inputs, max862tokens
+plus400headroom. Native exact questions unique/disjoint configured held IDs
+and supplied48prior question hashes; supplied133prior IDs have no collision.
+85historical IDs lack exact question hashes; freshness is scoped, not global.
+No outputs/references imported into training. Prepared capsule
+a17751f9dfa88789bfa79f2df9b24893d97d748c2ae6f02ae551abf439506c51.
+
+Select node3GPU3 for astra_P1_fresh_correction_20260912_attempt1, source above,
+process then sham fresh no-adapter workers;1800sper arm, no automatic fit.
+Expected10–15min remains an estimate; at most1hour worker time before cleanup,
+well inside node3lease cutoff. Main launcher revalidates preparation and full
+GPU/XML/CUDA/queue freedom immediately; reservation spans both workers/reloads.
+Next inspect actual correction candidates and source-bound Scratchpad utility,
+then choose matched sleep/parent-free probes only for supported material.
