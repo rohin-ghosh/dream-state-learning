@@ -1,13 +1,24 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:08 UTC**.
+Latest reconciliation: **2026-09-12 14:14 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:14 superseding live status:** node3GPU0root0controller114258and
+  GPU7root1controller114286 now run exact-training-row inference-only probes;
+  source4465e537, rootastra_semantic_exact_train_20260912_attempt1. Started
+  14:14:11.841/22.573UTC.75nativeCPUtests and bothroot exacttoken/source
+  preflights pass.1800s/rootexecutioncap,900smax/state, no newfit; maintain
+  continuousreservation throughreloads until terminalreplay/cleanupcheck.
+- Canonicaleditor Turing owns ONLYmain.tex/README bounded073/085/086update;
+  no othercanonicalfile or scientificthesis change authorized. Work pending.
+
+The following14:08snapshot is historical; current reservations above supersede it.
 
 - **14:08 superseding status:** no Main GPU job remains live. All six utility
   recipients and supplementary rescore terminal; original-source/current

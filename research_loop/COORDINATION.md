@@ -3669,3 +3669,17 @@ H1/H2ashypotheses, addverified073/085/086componentmethods/results/appendix
 and limitations without declaring developmental success or campaignclosure.
 Canonicalbaselinehash and absenceofcompetingedits checked beforewrite.
 No newliterature/citations, sending, GPUwork or gitactions delegated.
+
+## [Builder] 2026-09-12 14:14 UTC — two exact-training-row inference probes launched
+
+Native4465e537suite75tests PASS25.612s; bothroots' originalsource/adapter
+hashes and allrecordedprefix/candidate tokenizerroundtrips pass, no model
+loaded in preflight. Main repeats fullGPU/XML/CUDA/queuechecks and launches
+node3GPU0root0controller114258at14:14:11.841UTC, GPU7root1controller114286at
+14:14:22.573UTC. Rootastra_semantic_exact_train_20260912_attempt1,
+nativepreparationSHA836fdb36..., CPU75423f9d..., launcher d532d416....
+Eachroot384gen+384scores,0fits, execution1800s and workermax900s boundedby
+remainingtime. Continuousreservations through OFF/plus/minusreloads; final
+native replay/owncleanup/fullresourcecheck required before release. Original
+fouradapters/gates untouched; runtimeGPU1rootchange explicitly recorded.
+Turing's canonicalintegration runs inparallel under its twofileownership.
