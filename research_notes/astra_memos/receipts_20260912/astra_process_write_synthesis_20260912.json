@@ -1,0 +1,397 @@
+{
+  "aggregate": {
+    "efficacy": null,
+    "epochs_per_arm": 12,
+    "full_target_tokens_seen": 756,
+    "input_matched": false,
+    "input_tokens_seen": 18216,
+    "optimizer_updates": 24,
+    "padded_input_tokens_seen": 18240,
+    "rows_per_arm": 2,
+    "target_matched": false
+  },
+  "archive_members_verified": 68,
+  "arms": {
+    "A": {
+      "adapter_weight_sha256": "7f859e21530bef1ea000ae266a124ad3a0f06ebcdd3784c319d8f1ecff2637e1",
+      "epoch_losses": [
+        0.38255,
+        0.16341,
+        0.01193,
+        0.00323,
+        0.00218,
+        0.00153,
+        0.00111,
+        0.00113,
+        0.0013,
+        0.00138,
+        0.00082,
+        0.00045
+      ],
+      "epochs": 12,
+      "exposure": {
+        "eos_targets_seen": 24,
+        "full_target_tokens_seen": 372,
+        "optimizer_updates": 12,
+        "padded_input_tokens_seen": 9120,
+        "padding_tokens_seen": 24,
+        "raw_target_tokens_seen": 348,
+        "row_presentations": 24,
+        "token_matched": false
+      },
+      "final_loss": 0.0004497711197473109,
+      "fit_manifest_sha256": "cb0b0a58a1b6f4583484a7010f202778e9a6d537c4586fb66ffbe2f5af772446",
+      "fit_receipt_sha256": "f4231bd4449719a514ad8ac1572aa50aa6f9ec7bcb2bedb798c208d3850d1458",
+      "forward_receipts": 12,
+      "micro_batches": 12,
+      "native_weight_finiteness_attested": true,
+      "nonfinite_batches": 0,
+      "rows": [
+        {
+          "context_sha256": "ff80949eaf6700df70309cd9f023e0577e8b40bfc2b877dfe9df5f9f5a310eb1",
+          "context_tokens": 363,
+          "first_target_predictor": 362,
+          "input_tokens": 378,
+          "raw_target_sha256": "178bdc9289398cda83c21d2607d0d6ad23141bc869536b09cba40149f4991714",
+          "raw_target_tokens": 14,
+          "slot_id": "A:lesson0",
+          "source_call_id": "0039",
+          "target_tokens": 15
+        },
+        {
+          "context_sha256": "6e9866d093130aa3ab3f976edf0940c7933cd56fdbd7b7a26430a7de7022941c",
+          "context_tokens": 364,
+          "first_target_predictor": 363,
+          "input_tokens": 380,
+          "raw_target_sha256": "0fb179206fb1e4e3319ca253e902a7c090534e6fafcfdce31b6f04290985146a",
+          "raw_target_tokens": 15,
+          "slot_id": "A:lesson1",
+          "source_call_id": "0054",
+          "target_tokens": 16
+        }
+      ],
+      "saved_lora_tensors": 392,
+      "steps": 12,
+      "tokens": {
+        "context": 727,
+        "target": 31,
+        "target_by_category": {
+          "complete_own_raw_wake": 31
+        },
+        "target_by_view": {
+          "rulegame_grounded_process_pair_v2": 31
+        },
+        "total": 758
+      },
+      "train_tokens_seen": 9096,
+      "trainable_lora_parameters": 20185088,
+      "trainer_wall_seconds": 10.0,
+      "training_seconds": 9.4,
+      "weight_bytes_locally_rescanned": false,
+      "worker_pid": 250483,
+      "worker_reserved_seconds": 103.03620895900531
+    },
+    "P": {
+      "adapter_weight_sha256": "c7976a0c035e57ad193790c895a8b6203deb1cba6d2711388c33584c55959dbb",
+      "epoch_losses": [
+        0.08319,
+        0.02927,
+        0.04463,
+        0.01139,
+        0.03046,
+        0.00832,
+        0.00161,
+        0.00108,
+        0.00353,
+        0.0053,
+        0.00053,
+        0.0002
+      ],
+      "epochs": 12,
+      "exposure": {
+        "eos_targets_seen": 24,
+        "full_target_tokens_seen": 384,
+        "optimizer_updates": 12,
+        "padded_input_tokens_seen": 9120,
+        "padding_tokens_seen": 0,
+        "raw_target_tokens_seen": 360,
+        "row_presentations": 24,
+        "token_matched": false
+      },
+      "final_loss": 0.00019630133465398103,
+      "fit_manifest_sha256": "5b22695a1b792da124793d4df865c48f36742a1909b70272f5cf4ed260726282",
+      "fit_receipt_sha256": "e075b78ed1cbcbe76784effc1d58d9f82783b4a908a4039e31ab29bc673e046c",
+      "forward_receipts": 12,
+      "micro_batches": 12,
+      "native_weight_finiteness_attested": true,
+      "nonfinite_batches": 0,
+      "rows": [
+        {
+          "context_sha256": "5297117e6ddaa78f6a59937243d6e91eade6421779b78fbcb88862ccee9d24d2",
+          "context_tokens": 364,
+          "first_target_predictor": 363,
+          "input_tokens": 380,
+          "raw_target_sha256": "26d4d2117747fc0e11953a3c4d1906297f66055a2942ab7eee3ded95157ded1e",
+          "raw_target_tokens": 15,
+          "slot_id": "P:lesson0",
+          "source_call_id": "0009",
+          "target_tokens": 16
+        },
+        {
+          "context_sha256": "6e9866d093130aa3ab3f976edf0940c7933cd56fdbd7b7a26430a7de7022941c",
+          "context_tokens": 364,
+          "first_target_predictor": 363,
+          "input_tokens": 380,
+          "raw_target_sha256": "e51a156a3742a11000defb8d141d1b9878ab6b03ade123f1530300294b1a02b6",
+          "raw_target_tokens": 15,
+          "slot_id": "P:lesson1",
+          "source_call_id": "0024",
+          "target_tokens": 16
+        }
+      ],
+      "saved_lora_tensors": 392,
+      "steps": 12,
+      "tokens": {
+        "context": 728,
+        "target": 32,
+        "target_by_category": {
+          "complete_own_raw_wake": 32
+        },
+        "target_by_view": {
+          "rulegame_grounded_process_pair_v2": 32
+        },
+        "total": 760
+      },
+      "train_tokens_seen": 9120,
+      "trainable_lora_parameters": 20185088,
+      "trainer_wall_seconds": 53.7,
+      "training_seconds": 38.5,
+      "weight_bytes_locally_rescanned": false,
+      "worker_pid": 249137,
+      "worker_reserved_seconds": 148.84191987500526
+    }
+  },
+  "base_model": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "candidate_sha256": "c54ae950ae04f469ccb8f8ce48a623592dd4cea5acfd4ae817a260475722a3f0",
+  "capsule_sha256": "9db826c86b306ba5a92bcfc2902e0baaaed83318f1c70b029cb0ca062ec17e5a",
+  "claim": "Two independently fresh-base LoRA fits completed finite 12-update writes on the four bound process-v2 wakes; behavioral usefulness is untested.",
+  "claims": {
+    "G3": false,
+    "G5": false,
+    "H1": false,
+    "H2": false,
+    "P1": false,
+    "clean_lineage": false,
+    "context_distillation": true,
+    "model_origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+    "semantic_certification": false
+  },
+  "conditioning": "CONTEXT_DISTILLATION_NOT_UNCHANGED_NATIVE_CONTEXT",
+  "costs": {
+    "accounting": "Trainer loops within workers; workers/cleanup and CPU gaps within controller; collection/wait within full observed launch-to-release interval. Never add these nested costs.",
+    "collector_seconds": 68.36295540399442,
+    "controller_seconds": 484.61994464900636,
+    "final_vacancy_observed_wall": 1789253749.5646422,
+    "full_launch_to_final_vacancy_seconds": 912.2319571971893,
+    "launch_utc": "2026-09-12T22:40:37.332685+00:00",
+    "worker_subtotal_seconds": 251.87812883401057
+  },
+  "date": "2026-09-12",
+  "init_adapter": null,
+  "input_sha256": {
+    "/tmp/astra_process_main_native_review_v2_20260912.json": "6d92db5ab0dfb6f4295e971fde8f03d355eff591525cba8ab85b11b7ef8ac325",
+    "/tmp/astra_process_native_candidate_v2_20260912.json": "a7998dd361d87bf24102b5c5e6b413ed09d66524ed545a7788c453b919599961",
+    "/tmp/astra_process_native_pair_preflight_20260912.log": "580ee40b106ca87f0575a60aa258f60954e869c4c3c185d58bd2d56ead0764e1",
+    "/tmp/astra_process_pair_v2_20260912.json": "b1bcd5b7c97ea58f5066dd7a2a156508aea599b96956683202fcbdd1f83231ba",
+    "/tmp/astra_process_write_terminal_20260912.tgz": "9db826c86b306ba5a92bcfc2902e0baaaed83318f1c70b029cb0ca062ec17e5a",
+    "/tmp/astra_process_write_terminal_validation_20260912.json": "fbc01b2979003948869cc25f5ae00ecae12a357681791706089658e11eed62db",
+    "/tmp/astra_rulegame_process_write_20260912.py": "a73dd6074fdd099cea19f46cfed94bf31f22b2ce02b8741ac2f224413ee514d9",
+    "/tmp/astra_rulegame_process_write_collect_20260912.py": "e23160132bf4eac82f220b8066c49de3cf8461e50929f9a82f3eac5e12906892"
+  },
+  "limitations": [
+    "Metadata capsule contains no adapter weights or base files; finite-weight scans are native collector attestations, not local re-scans.",
+    "Full actual forward tensor arrays and training-token files are excluded. Preflight causal labels/EOS and archived forward row/exposure joins are checked; actual tensor hashes are retained evidence, not entirely recomputed here.",
+    "Final vacancy XML is not in the capsule. Initial vacancy XML is verified directly; final process/queue/vacancy claim is bound to supplied validation JSON, not a fresh local query.",
+    "Raw pair/candidate/final Main review were checked locally, but native formation and source/model bytes were not re-opened on node3. Hash custody is not authenticated model origin.",
+    "Context distillation uses teacher-influenced own raw wakes under teacher-removed conditioning; lexical exclusion/Main review do not establish semantic nonleakage or clean lineage.",
+    "V2 is after-inventory exploratory amendment 96a71289. Frozen V1 shortage, fixed slots, native TRY aliases and wrong predictions are preserved.",
+    "Two rows per arm, one seed, unequal targets/input exposure; training losses are in-sample fit statistics, not comparable behavioral utility scores.",
+    "No reload/readout/retention/generalization/action-quality evidence is included. No G3/P1/G5/H1/H2, clean-lineage or efficacy claim follows.",
+    "This is author-side custody synthesis, not fresh independent implementation review. The validation JSON is supplied provenance, not an external signature."
+  ],
+  "main_review_sha256": "6d92db5ab0dfb6f4295e971fde8f03d355eff591525cba8ab85b11b7ef8ac325",
+  "model_origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "plan_sha256": "67f2b89a769dd1f21e2ae3f048aa2d3743a5761f0574dcca3f47e1a8c51b0f44",
+  "raw_paths": {
+    "archive_members": [
+      "metadata/collection/audit.json",
+      "metadata/collection/custody.json",
+      "metadata/collection/material_summary.json",
+      "metadata/collection/release.json",
+      "metadata/collection/release.xml",
+      "metadata/collection/started.json",
+      "metadata/launch/controller.log",
+      "metadata/launch/gpu.xml",
+      "metadata/launch/launch.json",
+      "metadata/run/fits/A/adapter/DONE",
+      "metadata/run/fits/A/adapter/README.md",
+      "metadata/run/fits/A/adapter/adapter_config.json",
+      "metadata/run/fits/A/adapter/train_manifest.json",
+      "metadata/run/fits/A/adapter/train_meta.json",
+      "metadata/run/fits/A/attempt.json",
+      "metadata/run/fits/A/forwards/0001.json",
+      "metadata/run/fits/A/forwards/0002.json",
+      "metadata/run/fits/A/forwards/0003.json",
+      "metadata/run/fits/A/forwards/0004.json",
+      "metadata/run/fits/A/forwards/0005.json",
+      "metadata/run/fits/A/forwards/0006.json",
+      "metadata/run/fits/A/forwards/0007.json",
+      "metadata/run/fits/A/forwards/0008.json",
+      "metadata/run/fits/A/forwards/0009.json",
+      "metadata/run/fits/A/forwards/0010.json",
+      "metadata/run/fits/A/forwards/0011.json",
+      "metadata/run/fits/A/forwards/0012.json",
+      "metadata/run/fits/A/manifest.json",
+      "metadata/run/fits/A/post_update_trainability.json",
+      "metadata/run/fits/A/pre_update_trainability.json",
+      "metadata/run/fits/A/receipt.json",
+      "metadata/run/fits/P/adapter/DONE",
+      "metadata/run/fits/P/adapter/README.md",
+      "metadata/run/fits/P/adapter/adapter_config.json",
+      "metadata/run/fits/P/adapter/train_manifest.json",
+      "metadata/run/fits/P/adapter/train_meta.json",
+      "metadata/run/fits/P/attempt.json",
+      "metadata/run/fits/P/forwards/0001.json",
+      "metadata/run/fits/P/forwards/0002.json",
+      "metadata/run/fits/P/forwards/0003.json",
+      "metadata/run/fits/P/forwards/0004.json",
+      "metadata/run/fits/P/forwards/0005.json",
+      "metadata/run/fits/P/forwards/0006.json",
+      "metadata/run/fits/P/forwards/0007.json",
+      "metadata/run/fits/P/forwards/0008.json",
+      "metadata/run/fits/P/forwards/0009.json",
+      "metadata/run/fits/P/forwards/0010.json",
+      "metadata/run/fits/P/forwards/0011.json",
+      "metadata/run/fits/P/forwards/0012.json",
+      "metadata/run/fits/P/manifest.json",
+      "metadata/run/fits/P/post_update_trainability.json",
+      "metadata/run/fits/P/pre_update_trainability.json",
+      "metadata/run/fits/P/receipt.json",
+      "metadata/run/material/export_manifest.json",
+      "metadata/run/material/manifest.json",
+      "metadata/run/material/provenance/pair.json",
+      "metadata/run/plan.json",
+      "metadata/run/plan.sha256.json",
+      "metadata/run/run/A.launch.json",
+      "metadata/run/run/A/process.json",
+      "metadata/run/run/A/stdout.log",
+      "metadata/run/run/A/supervision.json",
+      "metadata/run/run/P.launch.json",
+      "metadata/run/run/P/process.json",
+      "metadata/run/run/P/stdout.log",
+      "metadata/run/run/P/supervision.json",
+      "metadata/run/run/controller.json",
+      "metadata/run/run/result.json"
+    ],
+    "candidate": "/tmp/astra_process_native_candidate_v2_20260912.json",
+    "capsule": "/tmp/astra_process_write_terminal_20260912.tgz",
+    "final_main_review": "/tmp/astra_process_main_native_review_v2_20260912.json",
+    "native_excluded_files": {
+      "metadata/run/fits/A/adapter/adapter_model.safetensors": {
+        "reason": "weight_bytes_native_only",
+        "sha256": "7f859e21530bef1ea000ae266a124ad3a0f06ebcdd3784c319d8f1ecff2637e1"
+      },
+      "metadata/run/fits/A/full_tokens.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "a6285a5e2be6b5c9098c6933e6fc558ff62fe804101e39413651ec35fb8e76c9"
+      },
+      "metadata/run/fits/P/adapter/adapter_model.safetensors": {
+        "reason": "weight_bytes_native_only",
+        "sha256": "c7976a0c035e57ad193790c895a8b6203deb1cba6d2711388c33584c55959dbb"
+      },
+      "metadata/run/fits/P/full_tokens.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "0cd622d6e6d4e5af92f582df85023a51ced35c4657140d4ff7e05688f78c7858"
+      },
+      "metadata/run/material/audit/candidate.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "f03cc356375612e77eee4344e99280cf3840e3b563edfae7262e3dd4809f5ec6"
+      },
+      "metadata/run/material/audit/main_review.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "4f3d59810dba8eb1b1a05984fccbc0f86725b8e3a46e501744aca6e2f220b420"
+      },
+      "metadata/run/material/audit/token_receipts.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "83de0420ff7f18b0db4569a1d93ee33faefbdf1abeccec1f8e64f0c4feda1776"
+      },
+      "metadata/run/material/corpora/A.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "737d85a97c98c6b508b7f69c30c4f90c6c727ac3b2a040768c21580dc572d244"
+      },
+      "metadata/run/material/corpora/P.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "ed9fb7d42e9dd292a89547e4f91b99f3eafc7bcba79482d0462306e52dae058a"
+      },
+      "metadata/run/material/provenance/A.tokens.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "a6285a5e2be6b5c9098c6933e6fc558ff62fe804101e39413651ec35fb8e76c9"
+      },
+      "metadata/run/material/provenance/P.tokens.json": {
+        "reason": "raw_or_token_material_native_only",
+        "sha256": "0cd622d6e6d4e5af92f582df85023a51ced35c4657140d4ff7e05688f78c7858"
+      }
+    },
+    "native_root": "/localhome/local-rohing/astra_diagnostics/astra_rulegame_process_write_v2_20260912_attempt1",
+    "native_source": "/localhome/local-rohing/astra_sources/4c3064c1c3eef068951e9c3b2ca46630754564e7",
+    "pair": "/tmp/astra_process_pair_v2_20260912.json",
+    "preflight_receipts": "/tmp/astra_process_native_pair_preflight_20260912.log",
+    "validation": "/tmp/astra_process_write_terminal_validation_20260912.json"
+  },
+  "recipe": {
+    "add_eos": true,
+    "alpha": 16,
+    "batch_size": 2,
+    "chat_template": false,
+    "device": "cuda",
+    "dropout": 0.05,
+    "dtype": "bf16",
+    "epochs": 12,
+    "freeze_a": false,
+    "grad_accum": 1,
+    "grad_checkpoint": true,
+    "isolation_check": "auto",
+    "isolation_tol": 0.0,
+    "layers": "all",
+    "log_every": 10,
+    "lr": 0.0001,
+    "max_len": 4096,
+    "max_steps": 12,
+    "model": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "note": "EXPLORATORY_PROCESS_V2_CONTEXT_DISTILLATION_96a71289_NO_CLAIMS",
+    "optimizer": "adamw",
+    "overflow": "split",
+    "pack": false,
+    "rank": 8,
+    "seed": 2,
+    "shuffle_groups": true,
+    "split_overlap_tokens": 0,
+    "svd_cache": "",
+    "svd_init": false,
+    "svd_method": "exact",
+    "svd_scale": "sigma",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "sequence": "SEQ115",
+  "source_root": "/localhome/local-rohing/astra_sources/4c3064c1c3eef068951e9c3b2ca46630754564e7",
+  "status": "VERIFIED_PAIRED_FINITE_WRITE_METADATA_NO_BEHAVIORAL_CLAIM",
+  "synthesis_script_sha256": "54af82890f20931294f69058062d79b97ea420f326342e4a457c4d9ce8945542"
+}
