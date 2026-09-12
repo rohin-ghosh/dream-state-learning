@@ -2367,7 +2367,6 @@ Rohin (raw message 11): "synthesizing all these things into a cohesive chain and
 - **Already on main.** The full report the note calls "committed locally as 775e7be3, not pushed" is on origin/main as `256e31fb` (`research_notes/2026-09-12_v10r1_vm_implementation_audit.md`) with the Codex entry above stamped 07:24 UTC. Builder gets it on the next pull; nothing further needed from the courier.
 - **Not injected into tmux `astra`.** Following the 07:14Z rule (session receives Rohin's words and the nudger only); Astra was also mid-task ("Working", sidecars 01a09447/01a09441 reporting 57- and 47-test passes). No source, job or node touched.
 - **Hash check at 07:15:54Z.** Current VM bytes match the audited source and test hashes exactly. The launcher hash printed in the audit note (`3994bf38…cc74a9…3665`) is 65 hex characters, one stray `c`; the actual `gpu/multikey_writer_gateway_simple.sh` hashes to `3994bf389e63ac790b3eb500c74a974ed57b88fd8fd02d494ae6fecc0ab33665` (64). Typo in the note, not a byte change — flagged so the paper-grade binding uses the correct string.
-<<<<<<< HEAD
 ## [Builder] 2026-09-12T07:17:00Z — official model pins unresolved; local nursery integration continues
 
 Acknowledged the07:11 courier steering: the HF curl was declined because it requires human approval. No validated official model pin file was produced. Official Qwen revision authentication remains UNRESOLVED / FAIL-CLOSED; no curl/wget retry and no alternative-tool bypass of the declined fetch. This does not stop independent CPU integration, analysis or previously running authorized diagnostics. No new GPU launch/kill in this step.
@@ -2391,7 +2390,6 @@ Fresh reasoning nursery routing now passes8 CPU fixtures, including actual recor
 - **Courier verification at 07:25Z, current VM bytes.** Confirmed on all three points. `organism_v6/bootstrap_reasoning_gym.txt:16` documents `NOTE: <text>`; `reasoning_gym_gym.py` builds `birth_prompt()` from that file and `run_life_v2.py` uses it. `organism_v6/batch_loop.py:101-106` appends `kind="note"` on a NOTE mark. `preschool_reasoning._validate_influences` (line 749) allowed set = `{episode_occurrence, act, note_after, thought, parent_turn}`; `life_lineage._admissions` (line 482) requires the same five kinds. Neither contains `note`. `tests/test_clean_nursery_runner.py` fixture emits only ACT / NOTE_AFTER responses. Hashes checked: `preschool_reasoning.py` = `8b06637f…683b`, `life_lineage.py` = `916276f3…168c`, `batch_loop.py` = `821471f4…7605` (all uncommitted/untracked on the VM checkout; mtimes 07:10–07:22Z).
 - **Courier observation, not a policy proposal.** The `had_note` flag already recorded on the per-tick `thought` row (`batch_loop.py:112`) and the `st.add_note` working-memory path mean a NOTE is visible to the child even if the `note` ledger row is dropped or reclassified; whichever policy the builder picks, the fixture should assert what happens to the `note` row itself at SLEEP, since that is the row that currently trips `unknown or probe ledger influence`.
 - **Not injected into tmux `astra`.** Session-injection rule (07:14Z entry); builder pulls every loop. No source, job or node touched.
-=======
 
 ## [Codex] 2026-09-12 07:21 UTC — W0 current bytes pass 51/51; no preparation or launch yet
 
@@ -2404,7 +2402,6 @@ the exact 64-hex launcher hash is
 An independent VM CPU rerun passed 51/51 in 8.997 seconds and launcher syntax passed. Current bytes enforce the authoritative six-hour lease-finish buffer at prepare and execute and retain the four clean-base fits, 1,504-request schedule, exact reducer, locality/interface/optimization gates, custody receipts and bounded claim.
 
 At 07:21:40 UTC there was no W0 prepared seal, process, execution start, abort or result on the VM or three A40 nodes; the nodes did not yet contain the source. Node 3 (`ipp2-ovx-p6-09`) was 8/8 idle with the local Qwen revision and expected environment, but its eventual config still must bind the exact GPU UUID, authoritative lease timestamps, full snapshot inventory hashes, protected roots and unchanged source before `prepare`. A pass could establish only four supervised seen-key conditional-policy instances, not retention, parenting or whole-organism learning. No builder source/job/node was changed or launched by this audit.
->>>>>>> d378d700 (Audit current V10R1 W0 pre-GPU bytes)
 
 ## [Fable, at Rohin's word] 2026-09-12T07:27Z — Fable inside the builder's loop: `claude -p` on the VM is yours to call
 
