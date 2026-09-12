@@ -31,12 +31,13 @@ class Tokenizer(fixtures.Tokenizer):
 
 class Backend(fixtures.ScriptedBackend):
     def __init__(self, *, tokenizer, echo="", echo_arm="P", prediction="T", bad_relation=False,
-                 parent_text=LESSON, restatement=None, bad_records=()):
+                 parent_text=LESSON, restatement=None, bad_records=(), neutral_parent=None):
         super().__init__({"fixture": "scripted CPU only; not authenticated"},
                          parent_text=parent_text, bad_records=bad_records)
         self.tokenizer = tokenizer
         self.echo, self.echo_arm, self.prediction = echo, echo_arm, prediction
         self.bad_relation, self.restatement = bad_relation, restatement
+        self.neutral_parent = neutral_parent
 
     def generate(self, request):
         response = super().generate(request)
@@ -46,6 +47,8 @@ class Backend(fixtures.ScriptedBackend):
             text = prediction + "ACT: TRY 0,0,0"
             if request["eid"].endswith("/apply") and request["arm"] == self.echo_arm and request["tick"] == 1:
                 text = self.echo + "\n" + text if self.echo else text
+        elif request["role"] == "parent" and request["arm"] == "A" and self.neutral_parent is not None:
+            text = self.neutral_parent
         elif request["role"] == "restate" and self.restatement is not None:
             text = self.restatement
         elif request["role"] == "record":
@@ -429,6 +432,100 @@ class RecordMaterialTests(unittest.TestCase):
             return result
         with patch.object(trainer, "collate", side_effect=change_capture), self.assertRaisesRegex(ValueError, "capture changed during export"):
             self.export()
+
+
+    def test_v3_exact_actual_context_roundtrip_and_shared_export_helper(self):
+        self.capture(protocol="interaction_v3")
+        with patch.object(diagnostic, "record_prompt", wraps=diagnostic.record_prompt) as helper:
+            result = self.export()
+            self.assertEqual(helper.call_count, 16)
+            self.assertTrue(all(call.args[2] == "interaction_v3" for call in helper.call_args_list))
+        self.assertEqual(result["main_audit"]["main_audit_contract"], diagnostic.main_audit_contract("interaction_v3"))
+        for arm in diagnostic.ARMS:
+            for item, row in zip(result["corpora"][arm]["corpus"], self.selection["selected"][arm]):
+                response = diagnostic.read(self.path / f"calls/{row['call_id']}.response.json")["response"]
+                self.assertEqual(item["spans"][0][0], response["rendered_prompt"])
+                self.assertEqual(item["spans"][1][0], response["text"])
+                self.assertEqual(item["spans"][0][0].count(diagnostic.RELATION_DEFINITION), 1)
+                self.assertNotIn(LESSON, item["spans"][0][0])
+                packs = trainer.encode_item_segments(item, self.tokenizer, 4096, chat_template=False)
+                batch = trainer.collate([packs], self.tokenizer.eos_token_id)
+                context = self.tokenizer.encode(item["spans"][0][0])
+                self.assertEqual(batch["labels"][0], [-100] * len(context) + self.tokenizer.encode(response["text"]) + [self.tokenizer.eos_token_id])
+
+    def test_v3_accurate_control_recap_and_child_reflection_do_not_select_purity(self):
+        reflection = "I can compare my expectations with the results and consider a different approach."
+        self.capture(protocol="interaction_v3", neutral_parent="You tried three combinations. Thank you for participating.",
+                     restatement=reflection)
+        for review in self.decision["reviews"]:
+            review["child_observations"] = "Spontaneous reflection is retained, not a parent leakage verdict."
+        result = self.export()
+        self.assertTrue(all(item["restatement"] == reflection for item in self.replay["result"]["interactions"]))
+        for arm in diagnostic.ARMS:
+            self.assertEqual(len(result["corpora"][arm]["corpus"]), 2)
+            self.assertTrue(all(reflection not in span[0] for item in result["corpora"][arm]["corpus"] for span in item["spans"]))
+
+    def test_v3_version_and_definition_tampering_rejects_fixed_pair(self):
+        for mode in ("header", "unknown", "request", "missing", "incorrect", "duplicate"):
+            with self.subTest(mode=mode):
+                self.capture(protocol="interaction_v3")
+                if mode in ("header", "unknown"):
+                    header = diagnostic.read(self.path / "identity.json")
+                    header["protocol"] = "interaction_v2" if mode == "header" else "interaction_v99"
+                    self.overwrite("identity.json", header)
+                    self.reseal()
+                else:
+                    row = self.selection["selected"]["P"][0]
+                    def change(receipt):
+                        if mode == "request":
+                            receipt["request"]["protocol"] = "interaction_v2"
+                        elif mode == "missing":
+                            receipt["request"]["prompt"] = receipt["request"]["prompt"].removesuffix("\n" + diagnostic.RELATION_DEFINITION)
+                        elif mode == "incorrect":
+                            receipt["request"]["prompt"] = receipt["request"]["prompt"].replace("null) => unavailable", "null) => matched")
+                        else:
+                            receipt["request"]["prompt"] += "\n" + diagnostic.RELATION_DEFINITION
+                    self.mutate_call(row["call_id"], "request", change)
+                self.bind_main()
+                with self.assertRaisesRegex(ValueError, "capture replay failed|unknown capture protocol"):
+                    self.export()
+
+    def test_v3_parent_or_restatement_echo_still_rejects_without_replacement(self):
+        reflection = "I independently considered trying a different combination."
+        configs = ({"echo": "Notice surprising observations."},
+                   {"tokenizer": Tokenizer(rendered_echo="Notice surprising observations.\n")},
+                   {"restatement": reflection, "echo": reflection, "echo_arm": "A"})
+        for config in configs:
+            with self.subTest(config=list(config)):
+                self.capture(protocol="interaction_v3", **config)
+                selection = copy.deepcopy(self.selection)
+                self.assertGreater(sum(row["kind"] == "record" and row["arm"] == "A" and row["eligible"]
+                                       for row in self.replay["events"]), 2)
+                with self.assertRaisesRegex(ValueError, "copied parent/restatement prose"):
+                    self.export()
+                self.assertEqual(self.selection, selection)
+
+    def test_v3_shared_definition_is_protocol_not_automatic_parent_prose_proof(self):
+        self.assertEqual(material._payload_spans([diagnostic.RELATION_DEFINITION], "interaction_v3"), set())
+        self.assertTrue(material._payload_spans([LESSON], "interaction_v3"))
+        with self.assertRaisesRegex(ValueError, "unknown record protocol"):
+            material._payload_spans([LESSON], "unknown")
+
+    def test_v3_main_rejection_selection_shortage_and_faithfulness_still_bind(self):
+        self.capture(protocol="interaction_v3")
+        self.decision["reviews"][2]["decision"] = "reject"
+        with self.assertRaisesRegex(ValueError, "Main declined material"):
+            self.export()
+        self.decision["reviews"][2]["decision"] = "accept"
+        selection = copy.deepcopy(self.selection)
+        selection["selected"]["P"].reverse()
+        with self.assertRaisesRegex(ValueError, "fixed first-two selection changed"):
+            self.export(fixed_selection=selection)
+        for config in ({"bad_records": ("P",)}, {"bad_relation": True}, {"prediction": "T\nPREDICT: F"}):
+            with self.subTest(config=config):
+                self.capture(protocol="interaction_v3", **config)
+                with self.assertRaisesRegex(ValueError, "paired shortage"):
+                    self.export()
 
 
 if __name__ == "__main__":

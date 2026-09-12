@@ -713,5 +713,197 @@ class RuleGameDiagnosticTests(unittest.TestCase):
         self.assertEqual(diagnostic.read(self.root / "evaluation" / "failure.json")["completed_cells"], [])
 
 
+    def protocol_capture(self, protocol, name, **kwargs):
+        self.root = self.base / name
+        self.plan = diagnostic.prepare(self.root, self.model, "0",
+            datetime.fromtimestamp(time.time() + 3600, timezone.utc).isoformat(), protocol)
+        path = self.root / "formation" / "data"
+        return path, *self.capture(path, **kwargs)
+
+    def test_legacy_requests_events_results_selection_match_pre_v3_hashes(self):
+        expected = {
+            "strict_v1": ("61da0acb4117f3baa11556ee6f9b9ad69676ff03f92a21e8d2bad1fc5e3fc007",
+                          "376a25652d26f1a0e4497bb7e1b196c3900d83444fb852d13dbdcad5ebe5fd9e"),
+            "interaction_v2": ("9023cf7647ef757a0670a6f693c9cfc34a27d264f845c1f6244b7fd7f8ef60ef",
+                               "4743ab2890cd793821a0c5791ecc71448b8edfba17ca61c21e47fb942779bcc7")}
+        for protocol, hashes in expected.items():
+            with self.subTest(protocol=protocol):
+                path, result, backend, events = self.protocol_capture(protocol, protocol, aliases=protocol == "interaction_v2")
+                self.assertEqual(diagnostic.value_hash(backend.requests), hashes[0])
+                self.assertEqual(diagnostic.value_hash(events.rows), hashes[1])
+                self.assertEqual(diagnostic.value_hash(result), "893f6e7e4d84088aad57e1ad7062b7964e44351877ec04d59c8bb7878962e9e1")
+                audit = diagnostic.check_capture(path)
+                self.assertTrue(audit["ok"], audit)
+                self.assertEqual(diagnostic.value_hash(diagnostic.select_records(audit)),
+                                 "3e3e73201852dba65178717cbc6cee34bbad13268db667478cf8add5808c54bb")
+                template = diagnostic.audit_template(path)
+                self.assertEqual(set(template), {"actor", "formation_sha256", "provenance_decision", "provenance_notes", "reviews"})
+                self.assertNotIn("main_audit_contract", result)
+                self.assertNotIn("child_criterion", template["reviews"][0])
+
+    def test_record_prompt_exact_versioned_definition_and_no_unknown_fallback(self):
+        execution = dict(eid="example/apply", tick=2, values=[1, 2, 3], observed=True,
+                         predicted=False, outcome="the box says: True for (1,2,3)")
+        output = "PREDICT: F\nACT: TRY 1,2,3"
+        old = ('Task: example/apply\nExecution: example/apply#t2\nActual emitted output:\n'
+               'PREDICT: F\nACT: TRY 1,2,3\nActual world response:\nthe box says: True for (1,2,3)'
+               '\nObserved fields: {"values": [1, 2, 3], "observed": true, "predicted": false}\n' + diagnostic.RECORD)
+        mapping = ('Explicit mapping: no prediction (null) => unavailable; prediction equal to '
+                   'observation => matched; prediction different from observation => mismatched.')
+        self.assertEqual(diagnostic.RELATION_DEFINITION, mapping)
+        self.assertEqual(diagnostic.record_prompt(execution, output), old)
+        self.assertEqual(diagnostic.record_prompt(execution, output, "interaction_v2"), old)
+        self.assertEqual(diagnostic.record_prompt(execution, output, "interaction_v3"), old + "\n" + mapping)
+        for protocol in (None, "interaction_V3", "interaction_v4"):
+            with self.subTest(protocol=protocol), self.assertRaisesRegex(ValueError, "unknown record protocol"):
+                diagnostic.record_prompt(execution, output, protocol)
+
+    def test_v3_generation_replay_shared_helper_and_unchanged_limits(self):
+        with patch.object(diagnostic, "record_prompt", wraps=diagnostic.record_prompt) as helper:
+            path, result, backend, events = self.protocol_capture("interaction_v3", "v3", aliases=True)
+            self.assertEqual(helper.call_count, 12)
+            audit = diagnostic.check_capture(path, protocol="interaction_v3")
+            self.assertTrue(audit["ok"], audit)
+            self.assertEqual(helper.call_count, 24)
+        self.assertEqual(result["calls"], 60)
+        self.assertEqual(result["roles"], dict(wake=40, record=12, parent=4, restate=4))
+        self.assertEqual(self.plan["train"], dict(rank=8, epochs=12, lr=1e-4, seed=2, steps=12, n_texts=2))
+        self.assertEqual(result["main_audit_contract"], diagnostic.main_audit_contract("interaction_v3"))
+        self.assertFalse(result["semantic_no_answer_certification"])
+        for request in backend.requests:
+            self.assertEqual(request["protocol"], "interaction_v3")
+            self.assertEqual(request["stop"], ["\n[OUTCOME]"] if request["role"] == "wake" else [])
+            self.assertFalse(request["include_stop_str_in_output"])
+            self.assertEqual(request["max_tokens"], {"wake": 400, "record": 100, "parent": 200, "restate": 120}[request["role"]])
+            self.assertEqual(request["temperature"], .5 if request["role"] in ("parent", "restate") else .7)
+            salt = {"wake": 0, "record": 0x5A5A, "parent": 0x1010, "restate": 0x2020}[request["role"]]
+            self.assertEqual(request["seed"], diagnostic._seed_for(request["eid"], request["tick"], 20260912 ^ salt))
+            if request["role"] == "record":
+                self.assertEqual(request["prompt"].count(diagnostic.RELATION_DEFINITION), 1)
+                self.assertTrue(request["prompt"].endswith(diagnostic.RECORD + "\n" + diagnostic.RELATION_DEFINITION))
+                self.assertIn("Actual emitted output:\n", request["prompt"])
+                self.assertNotIn("Temporary parent restatement", request["prompt"])
+            elif request["role"] == "restate":
+                self.assertTrue(request["prompt"].endswith("\nRestate that message in your own words in 2-3 sentences."))
+                self.assertNotIn("Restate only the acknowledgement", request["prompt"])
+            elif request["role"] == "parent" and request["arm"] == "A":
+                self.assertTrue(request["prompt"].startswith(diagnostic.CONTROL_V3))
+                self.assertIn("optional", request["prompt"])
+                self.assertIn("already-visible", request["prompt"])
+        self.assertEqual(diagnostic.value_hash(diagnostic.select_records(audit)),
+                         "3e3e73201852dba65178717cbc6cee34bbad13268db667478cf8add5808c54bb")
+        self.assertEqual(events.rows[0]["raw_response"], "PREDICT: T\nTRY: 0,0,0")
+        for text in ("TRY: 1,2,3", "PREDICT: F\nACT: TRY 1,2,3", "QUIZ: ?", "DONE"):
+            self.assertEqual(diagnostic.parse_action(text, "interaction_v3"), diagnostic.parse_action(text, "interaction_v2"))
+        for text in ("TRY: 1,2,3\n[OUTCOME] True", "TRY: 1,2,3\nQUIZ: ?", "TRY: 1,2,3\nDONE"):
+            with self.assertRaises(ValueError):
+                diagnostic.parse_action(text, "interaction_v3")
+
+    def test_v3_version_definition_and_control_tamper_fail_replay_when_resealed(self):
+        for mode in ("request_version", "header_version", "missing_definition", "wrong_definition", "old_control"):
+            with self.subTest(mode=mode):
+                path, _, backend, _ = self.protocol_capture("interaction_v3", mode)
+                request = next(row for row in backend.requests if row["role"] == "record")
+                if mode == "old_control":
+                    request = next(row for row in backend.requests if row["role"] == "parent" and row["arm"] == "A")
+                name = path / "calls" / f"{request['call_id']}.request.json"
+                receipt = diagnostic.read(name)
+                if mode == "header_version":
+                    header = diagnostic.read(path / "identity.json")
+                    header["protocol"] = "interaction_v2"
+                    (path / "identity.json").write_bytes(diagnostic.encoded(header))
+                elif mode == "request_version":
+                    receipt["request"]["protocol"] = "interaction_v2"
+                elif mode == "missing_definition":
+                    receipt["request"]["prompt"] = request["prompt"].removesuffix("\n" + diagnostic.RELATION_DEFINITION)
+                elif mode == "wrong_definition":
+                    receipt["request"]["prompt"] = request["prompt"].replace("null) => unavailable", "null) => matched")
+                else:
+                    receipt["request"]["prompt"] = request["prompt"].replace(diagnostic.CONTROL_V3, diagnostic.CONTROL_V2)
+                receipt["prompt_sha256"] = diagnostic.value_hash(receipt["request"]["prompt"])
+                name.write_bytes(diagnostic.encoded(receipt))
+                self.reseal(path)
+                audit = diagnostic.check_capture(path)
+                self.assertFalse(audit["ok"], audit)
+                self.assertIn("source request", audit["failures"][0])
+
+    def test_v3_main_parent_decision_is_separate_from_child_reflection(self):
+        path, result, _, _ = self.protocol_capture("interaction_v3", "audit_v3")
+        template = diagnostic.audit_template(path)
+        decision = copy.deepcopy(template)
+        decision.update(provenance_decision="accept", provenance_notes="Mock provenance review.")
+        for review in decision["reviews"]:
+            review.update(decision="accept", notes="Mock parent-supplied content accepted.",
+                          child_observations="Child spontaneously reflected; no purity rejection.")
+            self.assertEqual(review["child_criterion"], result["main_audit_contract"]["child_criterion"])
+            self.assertEqual(review["parent_contract"], result["main_audit_contract"]["parent_contracts"][review["arm"]])
+        self.assertTrue(diagnostic.validate_main_audit(decision, template))
+        decision["reviews"][2]["child_observations"] = "Child confused roles; recorded separately, not parent guidance."
+        self.assertTrue(diagnostic.validate_main_audit(decision, template))
+        decision["reviews"][2]["decision"] = "reject"
+        self.assertFalse(diagnostic.validate_main_audit(decision, template))
+        decision["reviews"][2]["decision"] = "accept"
+        decision["reviews"][2]["child_criterion"] = "Acknowledgment only"
+        with self.assertRaisesRegex(ValueError, "assessment scope changed"):
+            diagnostic.validate_main_audit(decision, template)
+        decision = copy.deepcopy(template)
+        decision.update(provenance_decision="accept", provenance_notes="Mock review.")
+        decision.pop("main_audit_contract")
+        with self.assertRaisesRegex(ValueError, "control contract mismatch"):
+            diagnostic.validate_main_audit(decision, template)
+
+    def test_v3_cannot_fall_back_to_legacy_synthetic_material_or_writer(self):
+        self.protocol_capture("interaction_v3", "no_synthetic_v3")
+        with patch.object(diagnostic, "render_corpora") as renderer:
+            with self.assertRaisesRegex(ValueError, "legacy synthetic material disabled"):
+                diagnostic.material(self.root, self.base / "unused.json", Tokenizer())
+            with self.assertRaisesRegex(ValueError, "legacy synthetic write disabled"):
+                diagnostic.verify_material(self.root, self.plan, Tokenizer())
+            renderer.assert_not_called()
+        self.assertFalse((self.root / "material").exists())
+
+    def test_v3_mock_stop_token_audit_preserves_v2_boundary(self):
+        backend = ScriptedBackend({"fixture": True})
+        generate = backend.generate
+        def stopped(request):
+            response = generate(request)
+            response["output_token_ids"] += backend.tokenizer.encode("\n[OUTCOME]")
+            response["stop_reason"] = "\n[OUTCOME]"
+            return response
+        backend.generate = stopped
+        path = self.base / "v3_stop"
+        path.mkdir()
+        calls = diagnostic.Calls(path / "calls", backend, "evaluation", backend.identity(), "interaction_v3")
+        _, text = calls.ask("wake", "OFF", diagnostic.task_id(2, "readout"), 1, "task")
+        self.assertNotIn("[OUTCOME]", text)
+        diagnostic.audit_native_calls(backend.tokenizer, path)
+
+    def test_v3_parent_blindness_and_parent_free_readout_keep_same_definition(self):
+        _, _, formation_backend, _ = self.protocol_capture("interaction_v3", "v3_visibility")
+        for request in formation_backend.requests:
+            if request["role"] == "parent":
+                self.assertTrue(request["eid"].endswith("/pre"))
+                self.assertNotIn("shared_record_definition", request["prompt"])
+                for episode in diagnostic.schedule()["evaluation"]:
+                    self.assertNotIn(episode, request["prompt"])
+        path = self.root / "evaluation_fixture" / "data"
+        result, backend, _ = self.capture(path, stage="evaluation", cell="OFF")
+        self.assertEqual(result["roles"], dict(wake=20, record=12))
+        self.assertTrue(diagnostic.check_capture(path, protocol="interaction_v3")["ok"])
+        for request in backend.requests:
+            self.assertIn(request["role"], ("wake", "record"))
+            self.assertNotIn("Temporary parent restatement", request["prompt"])
+            if request["role"] == "record":
+                self.assertTrue(request["prompt"].endswith(diagnostic.RECORD + "\n" + diagnostic.RELATION_DEFINITION))
+
+    def test_v3_protocol_is_explicit_prepare_option_not_runtime_override(self):
+        with patch.object(diagnostic, "prepare", return_value=None) as prepare:
+            diagnostic.main(["prepare", "--out", "out", "--model", "model", "--device", "0",
+                             "--lease-end", "later", "--protocol", "interaction_v3"])
+            self.assertEqual(prepare.call_args.args[-1], "interaction_v3")
+        with patch("sys.stderr"), self.assertRaises(SystemExit):
+            diagnostic.main(["replay", "--root", str(self.root), "--protocol", "interaction_v3"])
+
+
 if __name__ == "__main__":
     unittest.main()

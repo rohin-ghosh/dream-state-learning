@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import copy
 import hashlib
-import json
 from pathlib import Path
 import re
 
@@ -21,8 +20,8 @@ def _words(text):
     return re.findall(r"\w+", text.casefold())
 
 
-def _payload_spans(texts):
-    shared = set(_words(diagnostic.RECORD + " ACT TRY PREDICT T F true false null"))
+def _payload_spans(texts, protocol="strict_v1"):
+    shared = set(_words(diagnostic.record_instruction(protocol) + " ACT TRY PREDICT T F true false null"))
     shared.update("a an the and or of to in on with is are be your my i it that this".split())
     spans = set()
     for text in texts:
@@ -115,6 +114,8 @@ def build_record_pair(capture_root, main_audit, fixed_selection, tokenizer, max_
     formation_hash = diagnostic.digest(path / "manifest.json")
     files = diagnostic.read(path / "manifest.json")["files"]
     header = diagnostic.read(path / "identity.json")
+    protocol = header.get("protocol", "strict_v1")
+    diagnostic.require(protocol in diagnostic.PROTOCOLS, "unknown capture protocol")
     diagnostic.require(header["stage"] == "formation", "only formation records allowed")
     audit = diagnostic.check_capture(path)
     diagnostic.require(audit["ok"], "capture replay failed: " + str(audit["failures"]))
@@ -145,7 +146,7 @@ def build_record_pair(capture_root, main_audit, fixed_selection, tokenizer, max_
             payloads.append(interaction[field])
             teacher_receipts.append(dict(call_id=interaction[id_field], files=hashes,
                                          text_utf8_sha256=_text_hash(interaction[field])))
-    spans = _payload_spans(payloads)
+    spans = _payload_spans(payloads, protocol)
     corpora, receipts = {}, {}
     for arm in diagnostic.ARMS:
         items, sources = [], []
@@ -168,10 +169,7 @@ def build_record_pair(capture_root, main_audit, fixed_selection, tokenizer, max_
             raw = record_response["response"]["text"]
             diagnostic.require(raw == row["text"] and row["eligible"] is True and not row["failures"]
                                and diagnostic.judge_record(raw, execution)["eligible"], "unfaithful or changed raw record")
-            facts = {key: execution[key] for key in ("values", "observed", "predicted")}
-            expected = (f"Task: {row['eid']}\nExecution: {row['eid']}#t{execution['tick']}\nActual emitted output:\n"
-                        f"{wake_response['response']['text']}\nActual world response:\n{execution['outcome']}"
-                        f"\nObserved fields: {json.dumps(facts)}\n{diagnostic.RECORD}")
+            expected = diagnostic.record_prompt(execution, wake_response["response"]["text"], protocol)
             prompt = record_request["request"]["prompt"]
             diagnostic.require(prompt == expected, "actual record prompt mismatch; no synthetic fallback")
             item, encoding = _encode(prompt, record_response["response"], row, tokenizer, max_len, spans, ordinal)

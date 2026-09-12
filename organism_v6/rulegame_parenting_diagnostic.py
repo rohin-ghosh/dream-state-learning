@@ -2,6 +2,9 @@
 
 CPU: prepare --out ROOT --model LOCAL_MODEL --device GPU --lease-end ISO8601
 Opt-in interface repair: prepare ... --protocol interaction_v2 (exploratory only).
+New exploratory control/definition: prepare ... --protocol interaction_v3.
+V3 formation exports through rulegame_record_material.build_record_pair only;
+the legacy synthetic material/write path is not available for this protocol.
 GPU opt-in: formation --root ROOT --allow-gpu
 CPU: replay --root ROOT; material --root ROOT --main-audit AUDIT.json
 GPU opt-in: write --root ROOT --allow-gpu; evaluate --root ROOT --allow-gpu
@@ -53,7 +56,7 @@ CALL_SECONDS = 120
 LOAD_SECONDS = 180
 CLEANUP_GRACE = 100
 CLEANUP_RESERVE = 140
-PROTOCOLS = ("strict_v1", "interaction_v2")
+PROTOCOLS = ("strict_v1", "interaction_v2", "interaction_v3")
 BOOT = nursery_dialogue.CHILD_BOOT + """
 For this bounded task emit at most one ACT per response. You have five responses:
 up to three TRY actions, one ACT: QUIZ ? reveal, and one six-label ACT: QUIZ.
@@ -70,12 +73,21 @@ Do not ask for task reflection, quizzes, what was learned, or a task summary.
 Do not give strategy, hypotheses, rules, answers, action recommendations, or
 evaluated corrections. Keep the acknowledgment under 120 words.
 Child transcript:\n---\n"""
+CONTROL_V3 = """You are an active neutral conversational parent. Acknowledge the
+child's participation. You may optionally give an accurate recap of already-visible
+events in the transcript. Do not give new strategy, hypotheses, recommendations,
+evaluated corrections, or invented facts. Do not supply hidden rules or future
+answers. Ask the child to restate your message in its own words; do not require
+acknowledgment-only content or forbid the child's own reflection.
+Keep the message under 120 words. Child transcript:\n---\n"""
 RECORD = """Record only the TRY just executed and its returned result. Output one JSON
 object with keys "try", "observed", "predicted", and "relation". "try" is the
 submitted array of three integers; "observed" is the returned Boolean.
 "predicted" is your explicit T/F prediction before that ACT, as a Boolean, or
 null if none was made. "relation" is "matched", "mismatched", or "unavailable"
 accordingly. Do not issue an action, state a hidden rule, or add other text."""
+RELATION_DEFINITION = ('Explicit mapping: no prediction (null) => unavailable; prediction equal to '
+                       'observation => matched; prediction different from observation => mismatched.')
 SOURCE_FILES = ("rulegame_parenting_diagnostic.py", "rulegame.py", "gym_backend.py",
                 "batch_loop.py", "model_backend.py", "nursery_dialogue.py",
                 "parent_prompt.txt", "run_reasoning_neutral.py", "train_adapter.py")
@@ -84,6 +96,32 @@ SOURCE_FILES = ("rulegame_parenting_diagnostic.py", "rulegame.py", "gym_backend.
 def require(condition, message):
     if not condition:
         raise ValueError(message)
+
+
+def record_instruction(protocol="strict_v1"):
+    require(protocol in PROTOCOLS, "unknown record protocol")
+    return RECORD + ("\n" + RELATION_DEFINITION if protocol == "interaction_v3" else "")
+
+
+def record_prompt(execution, output, protocol="strict_v1"):
+    instruction = record_instruction(protocol)
+    facts = {key: execution[key] for key in ("values", "observed", "predicted")}
+    return (f"Task: {execution['eid']}\nExecution: {execution['eid']}#t{execution['tick']}\nActual emitted output:\n{output}"
+            f"\nActual world response:\n{execution['outcome']}\nObserved fields: {json.dumps(facts)}\n{instruction}")
+
+
+def main_audit_contract(protocol):
+    require(protocol == "interaction_v3", "new control contract requires interaction_v3")
+    return dict(protocol=protocol,
+                parent_contracts=dict(P="Process guidance without hidden rules or future answers.",
+                    A="Neutral participation; optional accurate already-visible recap; no new strategy, hypotheses, "
+                      "recommendations, evaluated corrections, invented facts, hidden rules or future answers."),
+                child_criterion="Unrestricted own-word restatement in both arms; spontaneous child reflection is not "
+                                "parent leakage and is not an acknowledgment-only acceptance criterion.",
+                decision_scope="Parent-supplied content; record child observations separately, not as a purity decision.",
+                material_criterion="Actual records must remain faithful; no copied lesson/restatement prose in "
+                                   "exported masked context or target.",
+                shared_record_definition=RELATION_DEFINITION)
 
 
 def encoded(value):
@@ -218,7 +256,7 @@ def verify_plan(root, check_model=True):
 
 def parse_action(text, protocol="strict_v1"):
     require(protocol in PROTOCOLS, "unknown interaction protocol")
-    if protocol == "interaction_v2":
+    if protocol in ("interaction_v2", "interaction_v3"):
         require(not re.search(r"\[\s*OUTCOME\s*\]", text, re.IGNORECASE), "imagined OUTCOME in response")
         intents = list(re.finditer(r"\b(?:ACT|TRY|QUIZ)\s*:", text, re.IGNORECASE))
         if intents:
@@ -407,7 +445,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
     terminal = "wake_budget"
     for tick in range(1, 6):
         prompt = f"{BOOT}\nTask: {episode.eid}\nGoal: {episode.goal}\nResponse: {tick}/5\n" + "\n".join(tail)
-        if protocol == "interaction_v2":
+        if protocol in ("interaction_v2", "interaction_v3"):
             prompt += (f"\nHarness state: remaining TRY budget: {3 - tries}. "
                        + ("Quiz already revealed; submit six T/F labels with ACT: QUIZ."
                           if revealed else "Quiz reveal still needed before scoring: ACT: QUIZ ?.")
@@ -429,7 +467,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
         reward, outcome = game.evaluate(episode, action["action"])
         execution = dict(action, kind="execution", action_kind=action["kind"], arm=arm, eid=eid,
                          tick=tick, call_id=call_id, execution_id=f"{arm}:{eid}#t{tick}", reward=reward, outcome=outcome)
-        if protocol == "interaction_v2":
+        if protocol in ("interaction_v2", "interaction_v3"):
             execution.update(raw_response=output, canonical_action="ACT: " + action["action"])
         if action["kind"] == "try":
             observed = re.fullmatch(r"the box says: (True|False) for \((-?[0-9]+),(-?[0-9]+),(-?[0-9]+)\)", outcome)
@@ -440,10 +478,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
         events.append(execution)
         tail.append("[OUTCOME] " + outcome)
         if action["kind"] == "try" and notes:
-            facts = {key: execution[key] for key in ("values", "observed", "predicted")}
-            record_prompt = (f"Task: {eid}\nExecution: {eid}#t{tick}\nActual emitted output:\n{output}"
-                             f"\nActual world response:\n{outcome}\nObserved fields: {json.dumps(facts)}\n{RECORD}")
-            record_id, text = calls.ask("record", arm, eid, tick, record_prompt)
+            record_id, text = calls.ask("record", arm, eid, tick, record_prompt(execution, output, protocol))
             events.append(dict(kind="record", arm=arm, eid=eid, execution_id=execution["execution_id"],
                                source_call_id=call_id, call_id=record_id, text=text, **judge_record(text, execution)))
         if action["kind"] == "reveal":
@@ -458,6 +493,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
 
 def run_formation(calls, events):
     tasks, interactions = [], []
+    protocol = getattr(calls, "protocol", "strict_v1")
     for arm in ARMS:
         for lesson in range(2):
             eid = task_id(lesson, "pre")
@@ -469,10 +505,10 @@ def run_formation(calls, events):
                     return calls.ask("parent", arm, eid, 0, prompt)[1]
                 parent = nursery_dialogue.parent_turn(parent_model, transcript)
             else:
-                control = CONTROL_V2 if getattr(calls, "protocol", "strict_v1") == "interaction_v2" else CONTROL
+                control = {"strict_v1": CONTROL, "interaction_v2": CONTROL_V2, "interaction_v3": CONTROL_V3}[protocol]
                 _, parent = calls.ask("parent", arm, eid, 0, control + transcript[-4000:] + "\n---")
             restate = "\nRestate that message in your own words in 2-3 sentences."
-            if arm == "A" and getattr(calls, "protocol", "strict_v1") == "interaction_v2":
+            if arm == "A" and protocol == "interaction_v2":
                 restate = ("\nRestate only the acknowledgement of participation in 2-3 sentences. "
                            "No task reflection, quizzes, task summary, or what you learned.")
             restate_id, restatement = calls.ask("restate", arm, eid, 0,
@@ -481,9 +517,12 @@ def run_formation(calls, events):
                                      restatement_call_id=restate_id, restatement=restatement))
             post, _ = play_task(calls, events, arm, task_id(lesson, "apply"), notes=True, prefix=restatement)
             tasks.extend([pre, post])
-    return dict(status="AWAITING_MAIN_AUDIT", tasks=tasks, interactions=interactions,
-                semantic_no_answer_certification=False, claim_boundary=CLAIM_BOUNDARY,
-                calls=calls.count, roles=dict(calls.counts))
+    result = dict(status="AWAITING_MAIN_AUDIT", tasks=tasks, interactions=interactions,
+                  semantic_no_answer_certification=False, claim_boundary=CLAIM_BOUNDARY,
+                  calls=calls.count, roles=dict(calls.counts))
+    if protocol == "interaction_v3":
+        result.update(protocol=protocol, main_audit_contract=main_audit_contract(protocol))
+    return result
 
 
 def run_evaluation(calls, events, cell):
@@ -554,10 +593,18 @@ def expected_identity(plan, adapter=None):
 
 def audit_template(path):
     result = read(path / "result.json")
-    return dict(actor="Main", formation_sha256=digest(path / "manifest.json"), provenance_decision="pending",
+    template = dict(actor="Main", formation_sha256=digest(path / "manifest.json"), provenance_decision="pending",
                 provenance_notes="", reviews=[dict(arm=item["arm"], lesson=item["lesson"],
                 parent_call_id=item["parent_call_id"], restatement_call_id=item["restatement_call_id"],
                 decision="pending", notes="") for item in result["interactions"]])
+    if result.get("protocol") == "interaction_v3":
+        contract = main_audit_contract("interaction_v3")
+        require(result.get("main_audit_contract") == contract, "formation control contract changed")
+        template["main_audit_contract"] = contract
+        for review in template["reviews"]:
+            review.update(parent_contract=contract["parent_contracts"][review["arm"]],
+                          child_criterion=contract["child_criterion"], child_observations="")
+    return template
 
 
 def native_tokenizer(model):
@@ -595,7 +642,7 @@ def audit_native_calls(tokenizer, path):
         require(tokenizer.encode(rendered) == response["prompt_token_ids"], "native source input token mismatch")
         decoded = tokenizer.decode(response["output_token_ids"], skip_special_tokens=True,
                                    clean_up_tokenization_spaces=False)
-        if request.get("protocol") == "interaction_v2" and response.get("stop_reason") in request.get("stop", []):
+        if request.get("protocol") in ("interaction_v2", "interaction_v3") and response.get("stop_reason") in request.get("stop", []):
             require(response.get("finish_reason") == "stop", "native stop finish mismatch")
             decoded = decoded.split(response["stop_reason"], 1)[0]
         require(decoded == response["text"], "native source output token mismatch")
@@ -605,11 +652,16 @@ def validate_main_audit(decision, template):
     require(decision.get("formation_sha256") == template["formation_sha256"] and decision.get("actor") == "Main",
             "Main audit not bound to this formation")
     require(isinstance(decision.get("provenance_notes"), str) and decision["provenance_notes"].strip(), "Main provenance notes required")
+    if "main_audit_contract" in template:
+        require(decision.get("main_audit_contract") == template["main_audit_contract"], "Main control contract mismatch")
     reviews = decision.get("reviews", [])
     require(len(reviews) == 4, "audit all four parent/control responses and restatements")
     for actual, expected in zip(reviews, template["reviews"]):
         require(all(actual.get(key) == expected[key] for key in ("arm", "lesson", "parent_call_id", "restatement_call_id")),
                 "Main review identity mismatch")
+        if "main_audit_contract" in template:
+            require(all(actual.get(key) == expected[key] for key in ("parent_contract", "child_criterion")),
+                    "Main parent/child assessment scope changed")
         require(actual.get("decision") in ("accept", "reject") and isinstance(actual.get("notes"), str)
                 and actual["notes"].strip(), "Main content decision and notes required")
     require(decision.get("provenance_decision") in ("accept", "reject"), "Main provenance decision required")
@@ -648,6 +700,8 @@ def render_corpora(selection):
 def material(root, main_audit, tokenizer=None):
     root = Path(root).resolve()
     plan = verify_plan(root)
+    require(plan.get("protocol", "strict_v1") != "interaction_v3",
+            "interaction_v3 requires build_record_pair; legacy synthetic material disabled")
     require(read(root / "formation" / "result.json")["status"] == "AWAITING_MAIN_AUDIT", "formation incomplete")
     path = root / "formation" / "data"
     audit = check_capture(path, expected_identity(plan), plan.get("protocol", "strict_v1"))
@@ -681,6 +735,8 @@ def material(root, main_audit, tokenizer=None):
 
 
 def verify_material(root, plan, tokenizer=None):
+    require(plan.get("protocol", "strict_v1") != "interaction_v3",
+            "interaction_v3 requires actual-record V3 material; legacy synthetic write disabled")
     path = root / "material"
     require(read(path / "result.json")["status"] == "READY", "paired material not ready; no more tasks")
     require(read(path / "manifest.json")["files"] == tree_hashes(path, ("manifest.json",)), "material changed")
