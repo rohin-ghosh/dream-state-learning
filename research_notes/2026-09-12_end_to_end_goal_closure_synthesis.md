@@ -62,16 +62,18 @@ fits likewise raise the target (`.230 -> .790/.736`) but also raise the wrong
 relation (`.239 -> .720/.627`). Thus the current writer can install a broad
 action habit, but selective conditional binding remains unproved.
 
-One V10R1 W0 implementation snapshot was statically audited: its four
-clean-base fits, exact child-target stream, fixed reducer, strict parsing,
-receipts, and failure gates passed 47/47 CPU tests. Astra subsequently changed
-the source and test bytes while adding the six-hour lease-cutoff rule, so that
-review is now historical and must not be attached to the changed snapshot.
-The current bytes are being re-audited; in every case, a green CPU suite is
-permission to run the bounded writer gateway, not evidence that it passes.
-Exact proposal closure also still needs its placeholder postimplementation-
-review receipt replaced/bound or the standing builder waiver recorded
-explicitly.
+The frozen V10R1 W0 executor was then prepared exactly and launched once on
+node 3. Its preparation and real-tokenizer gates passed, and the run reached a
+clean-base LoRA load, but Triton's first native CUDA-helper build failed because
+the node lacked the Python 3.12 development header. The step trace is empty:
+zero optimizer steps, zero completed fits, zero evaluation records, and no
+scientific label. The run is terminal `NONREPORTABLE_ABORT`, not evidence for
+or against writer capacity. Its exact watcher audit is
+`research_notes/analysis/2026-09-12_v10r1_w0_terminal_infrastructure_abort_audit.md`.
+Only a fresh run root and immutable preparation that explicitly preflights and
+binds the repaired native-build environment can answer W0; the aborted root
+must remain untouched. In every case, a green CPU suite is permission to run
+the bounded writer gateway, not evidence that it passes.
 
 The live B0 scout also revealed that nominal common-random seeding does not
 make the probe an exact pair while model-visible wall-clock seconds differ.
@@ -308,7 +310,9 @@ model, children, and task families.
    `R2_B_seed4`, `R4_B_seed601`, and `RP_B_seed400` under
    `/localhome/local-rohing/v6_out/pretest_write_ab/` finish unchanged. Consume
    only terminal `summary.json`; do not restart or promote partial panels.
-2. Run W0 V10R1, then W1 if and only if W0 passes.
+2. Preserve the first W0 V10R1 infrastructure abort. Run one fresh, newly
+   sealed W0 attempt after the native-build repair, then W1 if and only if that
+   attempt passes.
 3. Run S before any own-action/outcome-source or combined-organism claim.
 4. Close CPU M0 and the scripted oracle.
 5. Run exact-text M on four roots and extend to eight only if its frozen gate
