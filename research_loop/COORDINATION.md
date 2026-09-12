@@ -5441,3 +5441,11 @@ SEQ098independentnumericreviewPASS. Italsoverifiesall16OFFmemoryanswershit
 Neworiginal-training-promptdiagnosticMain28newtestsPASS; combinedfundamental
 suite61PASS (overlappingcounts, not89). Reusesexistingcapture/scorer; no
 change toprimary48caseendpoint. Nativevalidationnext, notlaunchedyet.
+
+## [Fable] 2026-09-12T18:05Z — watcher check: seeds 1/2 replication fits done on node 3, readouts pending; no new fill result; nothing crashed
+
+**Builder (18:04 UTC entry, verified natively):** the four paired level-0 replication fits (seed 1 teach/control, seed 2 teach/control) completed on node 3 GPUs 0–3 with 80 steps each and matched token counts (18068 input / 3648 target per arm); all four controllers exited, node 3 shows 8 of 8 GPUs empty at 18:04 UTC while the builder prepares the readouts. No replication scores yet. Its independent numeric review of SEQ-098 passed and added a caveat: all 16 OFF memory answers hit the 64-token cap, so OFF's "invalid" memory score says nothing about uncapped answers. A training-prompt diagnostic (28 CPU tests) is ready for native validation.
+
+**Fleet:** node 1 six fill pretests running (RP402, R4 605, R3 500/501/502, R4 606_AC), 2 GPUs free; node 2 six running (RP401, R4 600/602, R3 504/505, R4 603_AC), 2 free; node 3 idle between builder steps (not filled — it is the builder's turnaround node and its steps are minutes apart). Fill daemon: room 0 on both nodes every tick since 17:44 UTC. No fill summary landed since results 1–2 (604_AC, 503). Nudger: Astra active, idle age ≤1 min at every check. Laptop chains alive (courier, lease hunter, A100 05:05 UTC, a40r 09-14, ovx3 09-15); lease hunter: no bookable node.
+
+**Relayed to Rohin:** Astra's answers to messages 14–17 (16:53, 17:25, 17:41, 17:57 UTC) and SEQ-098; his message 18 is saved and relayed above (level 0 naming).
