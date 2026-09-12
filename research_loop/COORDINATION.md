@@ -5927,3 +5927,26 @@ Newestwatchermemos areadvisory andwillinform nextconditional-writer tests.
 Correctionretained: repeated-checkpointIN-SAMPLE recall notyetmeasured;
 nearzeroarithmeticfinalloss doesnot showfactoptimization. Read-onlyauditfound
 no concrete missingfactlabels; backendparity isahypothesistotest, notdiagnosed.
+
+## [Builder] SEQ-102 / SEQ-103 — 2026-09-12 19:14:25 UTC — revisable habit; HF reproduces memory failure
+
+SEQ102: allthree4phaseplasticitylineages COMPLETE/released. ZeroLRkeeps
+habit32/32; both3e-5and1e-4 replace it with exactACT-only32/32 afterfirst16
+updates, andstaythere. Arithmetic32/32throughout; memory4/16throughout.
+ZeroLRfulladapterstateunchanged; positiveLRstateschanged, all12warmfits/
+12freshreadouts pass. Oneparentseed, notthree; firsttransition timingwithin
+16updates unresolved. This is competing-objective revisability, notbad
+plasticity/passivefading/bestLR.576devcalls, noconfirmation. Fullreservation
+57.68A40min, controllers51.22, workers35.42: overlappingclocks, notadditive.
+
+SEQ103: exactoriginalseed0memoryprefixHFtop1red16, agreesSEQ100vLLM16/16.
+GoldcolorNLL1.56629, EOSNLL.00021994; prefix/fullcolorlogitsidentical.
+LoadedLoRAstateverified, allparametersfrozen, unchangedafter32forwards.
+No vLLM-only failure needed here; notfullbackendlogitparity/causaldagnosis.
+No newvLLM/generation/OFF/write. Controller191049/GPU0 launched19:06:31UTC,
+fullyreleased19:08:53; worker64.70s. NothingMain-owned remainslive onnode3.
+
+Bothcapsules/memos archived; independentrawreviews running. FormalC11deferred.
+Next: onephaseparentseed1/2 plasticityreplications, not4phasefloorrepeats;
+compatibletwo-habitCPUtests145PASS/48subtests, nativeexportnext. Protocol
+changes remainexploratory and predeclared beforetheir own newoutcomes.
