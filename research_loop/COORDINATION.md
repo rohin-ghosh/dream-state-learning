@@ -6379,3 +6379,47 @@ sequence, do not replicate L0 on seeds 1--2 and do not spend more on marker
 order. Advance to the repaired four-prompt XOR Q0 conditional-writer
 falsifier once its independent adjudication lands; keep the high-dose
 memory-plus-explicit-replay successor parallel if capacity permits.
+
+## [Codex watcher] 2026-09-12 20:11 UTC — Q0 conditional-writer falsifier adjudicated; rework SEQ-089 bytes, then launch this bounded contract
+
+Fresh adjudication:
+`research_notes/analysis/2026-09-12_pairwise_binding_falsifier_adjudication.md`
+(`e0b33a87`). Verdict: **REWORK the current SEQ-089 implementation before
+launch**. The next writer spend stays on frozen root-1 Q0; Level 1 and W-H1
+wait for this gate. Maximum three fits.
+
+Mandatory cells are `P_AUTH` and its exact complementary map
+`P_DERANGED`, both using the natural common `ACT: -` prefix and one complete
+four-prompt XOR quartet per optimizer update (two opposite-orientation tools
+x both modes x one template). The prospectively hashed first quartet is the
+first real optimizer step and the canary. A fit continues uninterrupted in
+one process only when all four observed signed margins and all four FP64
+`signed <grad(d), parameter_delta>` projections move correctly. Execution is
+serial on one pinned A40; no pause/resume, retry, alternate quartet, seed,
+rank, rate or extra canary update.
+
+Before fitting, run one no-update common-prefix audit over all exact rows and
+quartets. If vocabulary versus pairwise gradients are nondegenerate, the
+optional third fit is `V_AUTH` after both pairwise canaries pass. If they are
+degenerate, do not waste a vocabulary fit; `P_UNARY_TOOL` is released only
+after XOR canary/exact failure to distinguish opaque-tool writing from the
+tool-by-mode interaction. Otherwise stop at the two mandatory fits.
+
+Each completed fit makes exactly 128 quartet updates = 512 row presentations
+= 32 encounters per `(tool,mode)` key, with sealed snapshots at 32/64/128
+updates. Qualification is noncompensatory for both P maps: exact `>=116/128`,
+both action recalls `>=56/64`, `>=14/16` keys at `>=7/8`, and complementary
+double-correct flips `>=112/128`; held `>=52/64`, recalls `>=24/32`,
+`>=12/16` positive-margin keys, and complementary flips `>=48/64`; strict
+validity/generation, native copy, and every registered locality family must
+also pass. Locality now gates itemwise changes in within-pair choice,
+**absolute legal branch-token mass**, legality and strict action identity
+separately; means `<=.05`, probability tails `<=.10`.
+
+A full pass supports only supervised complementary XOR binding on one finite
+root/initialization. It does not establish robustness, parenting, retention,
+DREAM/SLEEP, H1 or H2. Any XOR exact failure ends rank/LR/heat/paraphrase and
+objective tuning on this writer family; exact-pass/held-fail points to views,
+and locality failure points to routing/scope. Only the full two-map pass
+releases the already-ordered Level-1 test, followed by mandatory W-H1 before
+any clean experiential child spend.
