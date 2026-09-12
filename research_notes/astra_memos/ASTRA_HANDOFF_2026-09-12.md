@@ -1,5 +1,80 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding checkpoint — September 12, approximately 22:45 UTC
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal guard only final C11.
+Origin UNRESOLVED_LOCAL_HASHES_ONLY; no freeze/general G3/P1/G5/H1/H2 claim.
+Main sole experiment Git/launcher; watcher notebook appends are preserved.
+Unrelated dirty gpu/codex/dream_state.rules MUST NOT be staged/reverted.
+
+### Live Main controllers — never duplicate
+
+- Node3GPU0 memory seed1 PID249359, watcher249360; source22b7e528f6f62358981ed2264d30ee7242926160.
+  Root ~/astra_diagnostics/astra_interleaved_memory_replay_20260912_attempt1/fits_root1_attempt1.
+  Plan0cb346c44656c4ecea1adc8f2cd969c5442f465453a0926813bc37c70a2f22bd.
+  Hardend23:13:27.215946Z; TERM23:11:07.215946Z; custody23:18:27.215946Z.
+- Node3GPU1 memory seed2 PID249709, watcher249710; same source/material family,
+  root fits_root2_attempt1; plancafc5822aa32f917ef971720ba0a3a9244a0162b02f836da5128519216077a58.
+  Hardend23:14:01.798296Z; TERM23:11:41.798296Z; custody23:19:01.798296Z.
+- Both use /tmp/astra_interleaved_memory_replication_20260912.py (dc92b9d1...),
+  source CWD required; status/collect --source-root SOURCE --runroot ROOT.
+  Each224 mandatory calls before reducers/Main outcomes; no64confirmation.
+  Watch output /tmp/astra_interleaved_replication_watch_seedN_20260912_attempt1.
+  After controller AND watcher terminal, inspect signals then collect with
+  CUDA unset, native venv,300s timeout, NEW archive. Never blindly retry.
+- Node3GPU2 process-v2 write PID248787, launch22:40:37.332685Z; source
+  4c3064c1c3eef068951e9c3b2ca46630754564e7. Root
+  ~/astra_diagnostics/astra_rulegame_process_write_v2_20260912_attempt1;
+  plan67f2b89a769dd1f21e2ae3f048aa2d3743a5761f0574dcca3f47e1a8c51b0f44.
+  Driver /tmp/astra_rulegame_process_write_20260912.py SHAa73dd607...;
+ 1200s controller/600worker/140cleanup/300external. P fit emitted completion
+  metadata by22:44:55; paired terminal and full release NOT yet verified.
+  Never trust momentary0MiB; controller retains CUDA reservation between fits.
+
+### Completed and pending integration
+
+- SEQ113 memory root0 COMPLETE/collected/rawreviewPASS; both arms16/16devmemory,
+ 16/16exact,32/32habit/ACT,48/48lexical. Same16facts, no FOUR advantage.
+  Capsule9aa7fb67...548files; no watchdog signals. Main memo
+  ASTRA_INTERLEAVED_MEMORY_READOUT_2026-09-12.md. Seed1/2 launch authorized by
+  raw-bound Main gate d9e4ae52..., not automatic outcome promotion.
+- Trained-record acquisition PID243383 COMPLETE/collected; capsule
+  f7faf00c65ba67c76a3778750fcc9b093d544cd4543df160635200c5940c8e27,
+  /tmp/astra_acquisition_terminal_validation_20260912.json. RawreviewPASS
+  /tmp/astra_record_acquisition_independent_review_20260912.{md,json,py}.
+  Both own-record JOINT LL+margin criteria fail in FULL and mapping-removed;
+  FULL truth LL nevertheless improves2/2 own records each. Not no learning.
+  Need archive/log SEQ114, integrate full cross-arm rows and limits.
+- ProcessV1 PAIRED_SHORTAGE archived; V2 explicitly after-inventory amendment
+  admits existing native TRY alias without changing four slots/raw targets.
+  Native reviewed pair P760input/32target, A758/31;12epochs, freshbase each,
+  no record-adapter warmstart. Main35/native35 bridge testsPASS; exporter45/45.
+  Source/native review and preparation receipts archived in1c41302b.
+- Manuscript throughSEQ111–112 committed6f1e9fe2, independently reviewed.
+  Banach completed six-file SEQ113/C57 update, currently DIRTY/EDITSTOP;
+  /tmp/astra_manuscript_seq113_handoff_20260912.md. Needs independent review
+  then explicit staging.229-word companion abstracts; collaboratorUNSENT.
+
+### Exclusive agents / immediate next work
+
+- Arendt01a097b5-1d8e-7bb3-bb6b-52e0844e371a owns /tmp/astra_rulegame_process_write_collect_20260912.py,
+  test/handoff; CPU work, no native/Git. Receive/test/collect actual pair.
+- Planck01a0971a-dcdb-7590-9111-d73adbf74fe3 process-readout EDITSTOP, new
+  /tmp/astra_rulegame_process_readout_20260912.py (46e3d097...),22mocktests;
+  handoff present. Main/local/native tests, completed-fit acceptance and
+  fresh OFF/P_ON/A_ON dev readout still required; no readout launched.
+- Darwin01a0976c-89e3-7372-a3ba-134602680bff replication/watchdog EDITSTOP;
+ 43runner/45watchdog local AND native testsPASS; no active additional task.
+- Herschel01a09708-4d90-7d91-9aa4-25e6163abdda acquisition rawreviewEDITSTOP;
+  Banach01a0972e-e39c-7653-901f-e994b237d92a manuscriptEDITSTOP.
+  Ohm CLOSED after acceptedV2 exporter. Reassign/retire as needed.
+
+Native venv /localhome/local-rohing/v2/venv/bin/python: NEVER resolve symlink.
+Node1 backup still dueSeptember13 23:14UTC; archive inventory/plan exist,
+no transfer executed. Plan's proposed VMrelay path needs /tmp/courier instead
+of an unwritable home path. Node1expiresSeptember14 23:14UTC, no extension.
+Fable advisory question pending; no response claimed or launch gate.
+
 ## Superseding checkpoint — 2026-09-12T22:00:20.325458+00:00
 
 Mission ACTIVE and incomplete. Simple hygiene now; formal guard only for final
