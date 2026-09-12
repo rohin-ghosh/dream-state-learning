@@ -144,6 +144,45 @@ def test_resume_after_a_trainer_crash_reproduces_the_golden_files():
     assert kinds.get("train") == 2 and kinds.get("gym_eval", 0) > 20
 
 
+def test_resume_does_not_retrain_a_rejected_sleep():
+    """A rejected candidate is a final write decision, not missing work.
+
+    Regression for the seed-605 recovery incident: the old runner retrained a
+    rejected historical sleep and reused its stale probe-gate JSON.
+    """
+    import tempfile
+    root = tempfile.mkdtemp(prefix="golden_rejected_resume_")
+    life = os.path.join(root, "life")
+    gate_json = os.path.join(root, "gate_panel.json")
+    with open(gate_json, "w") as f:
+        json.dump(gh.GATE_PANEL, f)
+    argv = ["--life-dir", life] + gh.BASE_ARGS + [
+        "--arm", "B", "--probe-gate", "--gate-panel", gate_json]
+    gh.run_life(argv)
+
+    ad = os.path.join(life, "sleep_0008", "adapter")
+    os.rename(os.path.join(ad, "DONE"), os.path.join(ad, "REJECTED_SCORE"))
+    os.remove(os.path.join(life, "LIFE_DONE"))
+
+    tr = gh.run_life(argv)
+    assert not any(e["kind"] == "train" for e in tr.events)
+    assert os.path.exists(os.path.join(ad, "REJECTED_SCORE"))
+    assert not os.path.exists(os.path.join(ad, "DONE"))
+
+
+def test_multiple_final_adapter_verdicts_fail_closed(tmp_path):
+    ad = tmp_path / "adapter"
+    ad.mkdir()
+    (ad / "DONE").write_text("ok\n")
+    (ad / "REJECTED_SCORE").write_text("old\n")
+    try:
+        gh.run_life_v2.existing_adapter_verdict(str(ad))
+    except RuntimeError as e:
+        assert "ambiguous adapter verdicts" in str(e)
+    else:
+        raise AssertionError("ambiguous final markers did not fail closed")
+
+
 if __name__ == "__main__":
     if "--record" in sys.argv:
         record()

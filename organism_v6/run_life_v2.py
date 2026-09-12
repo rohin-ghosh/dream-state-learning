@@ -45,6 +45,25 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PROBE_SEED = 777  # fixed: common-random probes across checkpoints and arms
 
 
+def existing_adapter_verdict(adapter_dir: str) -> str | None:
+    """Return an already-final write verdict, or ``None`` before a verdict.
+
+    ``REJECTED_*`` is just as terminal as ``DONE``.  Treating only ``DONE``
+    as terminal made a resumed life retrain an old rejected sleep, then gate
+    the new weights with the old candidate's cached probe.  Multiple final
+    markers are evidence that this has already happened; fail loudly rather
+    than silently choosing one.
+    """
+    if not os.path.isdir(adapter_dir):
+        return None
+    finals = sorted(n for n in os.listdir(adapter_dir)
+                    if n == "DONE" or n.startswith("REJECTED_"))
+    if len(finals) > 1:
+        raise RuntimeError(f"ambiguous adapter verdicts in {adapter_dir}: "
+                           f"{finals}")
+    return finals[0] if finals else None
+
+
 def format_canary(model, gym, threshold: float = 0.5) -> tuple[bool, float]:
     """Post-sleep motor-channel check in the REAL gym context: run the gym's
     canary set (compiler: 4 probe programs) for 3 chunks each with the real
@@ -928,8 +947,8 @@ def main():
                     log(f"[sleep {i}] training SKIPPED: too few admitted records "
                         f"(preschool gate enforce, min {args.gate_min_items}); "
                         f"adapter unchanged")
-                elif args.arm == "B" and not marker(
-                        os.path.join(sdir, "adapter", "DONE")):
+                elif args.arm == "B" and existing_adapter_verdict(
+                        os.path.join(sdir, "adapter")) is None:
                     from .model_backend import close_backend
                     if not close_backend(model):
                         raise RuntimeError("GPU did not free before training — "
