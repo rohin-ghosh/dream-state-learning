@@ -1,4 +1,11 @@
-## Current superseding snapshot — 2026-09-12 18:36 UTC
+## Current superseding snapshot — 2026-09-12 18:45 UTC
+
+Repetition fits complete/fullrelease; four fixed48dev readouts LIVE node3
+GPU0/PID178909,1/178581,2/178741,3/178523; exact roots in HANDOFF.
+Do not repeat fit/preparation. Continuation material native audit PASS, no
+Qwen continuation writes yet. Manuscript EDIT-STOP under independent review.
+Raw message19 keeps adherence as level-zero success, plasticity/two habits next.
+No freeze/H1/H2/G3/P1/G5. Historical18:36snapshot follows, superseded above.
 
 Repetition/context sentinel LIVE: node3GPU0..3, controllers175686–175689,
 sourceed3aac9f; fourmatched16x fits, nooutcomesyet. See compactHANDOFF.

@@ -1,4 +1,30 @@
-# Astra restart checkpoint — 2026-09-12 18:36 UTC
+# Astra restart checkpoint — 2026-09-12 18:45 UTC
+
+## Superseding live checkpoint
+
+Repetition FITS COMPLETE, fully released; do not refit or prepare again.
+Four prepared readouts launched18:42:57–18:43:30UTC on node3:
+control_long GPU3/PID178523; control_short GPU1/PID178581;
+teach_long GPU2/PID178741; teach_short GPU0/PID178909.
+Source ed3aac9f; script /tmp/astra_repetition_readouts_20260912.py,
+SHA ff4c66132614d71489903387412fdcc0eb7c5b57fdee092f3b6a1e67b9102d1a.
+Script archived in receipts_20260912. Inspect then use finish only after all
+controllers exit; preserve partial reductions if a release check fails.
+Fit supervision1300.292523s; combined098–100 plus fits46.840474A40min.
+
+Continuation actual native material audit PASS, root node3
+~/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/material.
+First preparation failed before writes because parent directory absent; Main
+created parent then succeeded, no overwritten artifacts. Source3a12807f.
+Four phases total13312input/1504target tokens including four epochs each;
+64 sourced, disjoint addition pairs. Actual Qwen warm-write still NOT RUN.
+Ohm owns fading orchestrator/tests in /tmp; awaiting EDIT-STOP, then Main
+tests/reviews/logs separate90A40min budget before launch. No GPU4..7 allocation.
+Dirac manuscript EDIT-STOP received; Bernoulli independently reviewing six files.
+Latest raw user message19: adherence is the intended level-zero result, not
+arithmetic gain; test plasticity and two behaviors before more curriculum.
+One-adapter memory failure does not establish a need for separate adapters.
+Older status sections below are historical where this checkpoint differs.
 
 ## Mission and controlling steer
 

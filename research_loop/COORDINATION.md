@@ -5642,3 +5642,20 @@ Initial 90 A40-minute scout/repetition budget remains; supervision used before
 these readouts is approximately46.84 A40-minutes, not active-compute accounting.
 Fixed endpoints and all four cells remain as predeclared. Origin remains
 UNRESOLVED_LOCAL_HASHES_ONLY; simple hygiene applies, formal C11 deferred.
+
+## [Builder] 2026-09-12 18:45 UTC — actual repetition readout processes and native continuation material
+
+Readouts launched node3 control_long GPU3/PID178523 at18:42:57.269UTC,
+control_short GPU1/PID178581 at18:43:09.450UTC, teach_long GPU2/PID178741
+at18:43:17.841UTC, teach_short GPU0/PID178909 at18:43:30.291UTC.
+Prospective heading18:43 was rounded; actual receipts govern start times.
+All four passed full prelaunch vacancy checks; reservations remain active
+through controller/worker cleanup and Main release, even at momentary0MiB.
+
+Continuation material native audit PASS at fresh attempt1/material on node3;
+initial call failed before writes due absent parent, then succeeded after
+creating only that parent. Four16-pair sourced phases exclude all128 original
+pairs; total13312input/1504target tokens including fourepochs per phase.
+No model calls or writes yet. Raw message19 acknowledged: adherence itself
+is the level-zero target, not arithmetic gain; plasticity and two behaviors
+next, compiler/adapter separation not inferred from present memory failure.
