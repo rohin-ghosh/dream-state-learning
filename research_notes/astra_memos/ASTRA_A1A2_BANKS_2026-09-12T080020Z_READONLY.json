@@ -1,0 +1,1452 @@
+{
+  "analysis": {
+    "counts": {
+      "binding_available": 12,
+      "compatible_source_entries": 12,
+      "completed_fits": 12,
+      "entries": 12
+    },
+    "definitions_sha256": "ab98329c433cb085cd53e1c766db350f1bb0fe2efb9181e24a3678c0d31a76e3",
+    "notes": [
+      "Optimizer seeds are repeated fits of paired source cells, not independent bank replicates.",
+      "No cross-bank pooling, independence assumption, campaign success rate, or H1/H2 claim is computed.",
+      "Conditional P uses p_raw[a]/mass as eval_frame_summary; nonpositive/null mass is unavailable, never zero-imputed.",
+      "G9 uses existing cue_metrics, paired_bootstrap and spill threshold without fitting new thresholds.",
+      "Missing controls, receipts or completed-fit evidence cannot yield a binding pass."
+    ],
+    "paired_source_cells": [
+      {
+        "bank": 0,
+        "bank_sha256": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+        "cells": [
+          {
+            "cell": "F_r16k16",
+            "corpus_sha256": "f2388eaf9c2285d6c5fe109445a599a4fefb5d9b1ca0ce6223ef78bede01c37d",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              2,
+              3
+            ],
+            "unavailable_reference_optimizer_seeds": [
+              0,
+              1
+            ],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+        "manifest_sha256": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+      },
+      {
+        "bank": 1,
+        "bank_sha256": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+        "cells": [
+          {
+            "cell": "F_r16k16",
+            "corpus_sha256": "860a67809ac67e27c850d5f1f6bd29a1256a747aa5b46c15920791b345280e96",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              2,
+              3
+            ],
+            "unavailable_reference_optimizer_seeds": [
+              0,
+              1
+            ],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+        "manifest_sha256": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+      },
+      {
+        "bank": 2,
+        "bank_sha256": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+        "cells": [
+          {
+            "cell": "F_r16k16",
+            "corpus_sha256": "713f3cb5f798964eb2ecfaa3f1f565e8fda292943b9e02ca4d8916d01ab38307",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              2,
+              3
+            ],
+            "unavailable_reference_optimizer_seeds": [
+              0,
+              1
+            ],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+        "manifest_sha256": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+      },
+      {
+        "bank": 0,
+        "bank_sha256": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+        "cells": [
+          {
+            "cell": "CF_r16_b",
+            "corpus_sha256": "70b50213c85fdacc7895163e0766e2a90717ba9ee3b90d250e7a276f4d4c3cd4",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              0,
+              1
+            ],
+            "unavailable_reference_optimizer_seeds": [],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+        "manifest_sha256": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+      },
+      {
+        "bank": 1,
+        "bank_sha256": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+        "cells": [
+          {
+            "cell": "CF_r16_b",
+            "corpus_sha256": "319ffa9ddb690cf295f795727efbf7238fc9242b1cf2fd7badc386f10c2e7ca7",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              0,
+              1
+            ],
+            "unavailable_reference_optimizer_seeds": [],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+        "manifest_sha256": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+      },
+      {
+        "bank": 2,
+        "bank_sha256": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+        "cells": [
+          {
+            "cell": "CF_r16_b",
+            "corpus_sha256": "ed4b1ce8cb9f40a8919aa217c05b70d45dbe0d7ddcf57a8ba2adae358dc01e46",
+            "evaluation_count": 2,
+            "missing_receipt_count": 0,
+            "optimizer_seeds": [
+              0,
+              1
+            ],
+            "unavailable_reference_optimizer_seeds": [],
+            "unique_optimizer_seed_count": 2
+          }
+        ],
+        "distractor_sha256": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+        "manifest_sha256": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+      }
+    ],
+    "rows": [
+      {
+        "bank": 0,
+        "binding": {
+          "I_d_frame": {
+            "hi": 2.682502692054215,
+            "lo": 1.2026075500735869,
+            "mean": 1.921469872774875,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.41553692023821664,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.5087249466840589,
+            "similar_exposed": 0.41657727683077644,
+            "unexposed": 0.3213085371998146
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.2596495149075415,
+            "conditional_p_on": 0.6853229710498591,
+            "cue_count": 16,
+            "mass_off": 0.00873765625,
+            "mass_on": 0.99815843125,
+            "mean_abs_conditional_delta": 0.48397512582982116,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.25820516018691103,
+            "conditional_p_on": 0.6686304723070449,
+            "cue_count": 16,
+            "mass_off": 0.00447824375,
+            "mass_on": 0.9972589187500001,
+            "mean_abs_conditional_delta": 0.5009827624015434,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24986760962736257,
+            "conditional_p_on": 0.40130911987770645,
+            "cue_count": 16,
+            "mass_off": 0.00930769375,
+            "mass_on": 0.9976861,
+            "mean_abs_conditional_delta": 0.397712546947328,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank0__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 2,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank0/F_r16k16/across/sleep4/corpus.json": "f2388eaf9c2285d6c5fe109445a599a4fefb5d9b1ca0ce6223ef78bede01c37d",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank0/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 1,
+        "binding": {
+          "I_d_frame": {
+            "hi": 3.928630131479332,
+            "lo": 0.2202292746851195,
+            "mean": 1.8570244562680733,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.4457133468438021,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.5323052901528331,
+            "similar_exposed": 0.46981675670038425,
+            "unexposed": 0.33501799367818896
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.24092936193544182,
+            "conditional_p_on": 0.8652407074399777,
+            "cue_count": 16,
+            "mass_off": 0.0102301875,
+            "mass_on": 0.99534074375,
+            "mean_abs_conditional_delta": 0.6406978836620464,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.24294455711969082,
+            "conditional_p_on": 0.8202260864970652,
+            "cue_count": 16,
+            "mass_off": 0.00456086875,
+            "mass_on": 0.9973545625,
+            "mean_abs_conditional_delta": 0.6030244325154435,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24674413767640813,
+            "conditional_p_on": 0.7290877795285944,
+            "cue_count": 16,
+            "mass_off": 0.0088741625,
+            "mass_on": 0.99480663125,
+            "mean_abs_conditional_delta": 0.5421062884270064,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank1__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 2,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank1/F_r16k16/across/sleep4/corpus.json": "860a67809ac67e27c850d5f1f6bd29a1256a747aa5b46c15920791b345280e96",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank1/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 2,
+        "binding": {
+          "I_d_frame": {
+            "hi": 2.9275955746423135,
+            "lo": 1.1340109013458166,
+            "mean": 2.023272723738853,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.32203494661653664,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.48658212278045504,
+            "similar_exposed": 0.23101410242071305,
+            "unexposed": 0.24850861464844182
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.254242192319239,
+            "conditional_p_on": 0.8334217874378644,
+            "cue_count": 16,
+            "mass_off": 0.0073540125,
+            "mass_on": 0.99797635,
+            "mean_abs_conditional_delta": 0.5797000479117345,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.2621123318175494,
+            "conditional_p_on": 0.8594237572368597,
+            "cue_count": 16,
+            "mass_off": 0.0045040125,
+            "mass_on": 0.99894266875,
+            "mean_abs_conditional_delta": 0.5982693888721505,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.2533580288764565,
+            "conditional_p_on": 0.49273394573509477,
+            "cue_count": 16,
+            "mass_off": 0.00972314375,
+            "mass_on": 0.99757453125,
+            "mean_abs_conditional_delta": 0.3185969370932949,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank2__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 2,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank2/F_r16k16/across/sleep4/corpus.json": "713f3cb5f798964eb2ecfaa3f1f565e8fda292943b9e02ca4d8916d01ab38307",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank2/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 0,
+        "binding": {
+          "I_d_frame": {
+            "hi": 0.19096365499487195,
+            "lo": -0.18427982728884723,
+            "mean": 0.003650408260025162,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.30869841371704043,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.3370853100821031,
+            "similar_exposed": 0.2940272920666644,
+            "unexposed": 0.29498263900235383
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.2596495149075415,
+            "conditional_p_on": 0.25754469083827947,
+            "cue_count": 16,
+            "mass_off": 0.00873765625,
+            "mass_on": 0.973116775,
+            "mean_abs_conditional_delta": 0.2871691162610342,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.25820516018691103,
+            "conditional_p_on": 0.25820212461792574,
+            "cue_count": 16,
+            "mass_off": 0.00447824375,
+            "mass_on": 0.9804353875,
+            "mean_abs_conditional_delta": 0.33256502132441823,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24986760962736257,
+            "conditional_p_on": 0.2528016338534879,
+            "cue_count": 16,
+            "mass_off": 0.00930769375,
+            "mass_on": 0.97530081875,
+            "mean_abs_conditional_delta": 0.2881865110323527,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank0__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 3,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank0/F_r16k16/across/sleep4/corpus.json": "f2388eaf9c2285d6c5fe109445a599a4fefb5d9b1ca0ce6223ef78bede01c37d",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank0/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 1,
+        "binding": {
+          "I_d_frame": {
+            "hi": 4.701089598203332,
+            "lo": 1.598066118027304,
+            "mean": 3.0129934476763296,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.5085730814531656,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.5858240548550053,
+            "similar_exposed": 0.5465870208285828,
+            "unexposed": 0.3933081686759088
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.24092936193544182,
+            "conditional_p_on": 0.9086887476073193,
+            "cue_count": 16,
+            "mass_off": 0.0102301875,
+            "mass_on": 0.999551475,
+            "mean_abs_conditional_delta": 0.7037673452320518,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.24294455711969082,
+            "conditional_p_on": 0.8994167752645432,
+            "cue_count": 16,
+            "mass_off": 0.00456086875,
+            "mass_on": 0.9996790875,
+            "mean_abs_conditional_delta": 0.6698048989687428,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24674413767640813,
+            "conditional_p_on": 0.7388283279506279,
+            "cue_count": 16,
+            "mass_off": 0.0088741625,
+            "mass_on": 0.99932124375,
+            "mean_abs_conditional_delta": 0.645027149506204,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank1__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 3,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank1/F_r16k16/across/sleep4/corpus.json": "860a67809ac67e27c850d5f1f6bd29a1256a747aa5b46c15920791b345280e96",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank1/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 2,
+        "binding": {
+          "I_d_frame": {
+            "hi": 3.1297178929728786,
+            "lo": 0.6997121058894096,
+            "mean": 1.8434284903796443,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.3784987004781682,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.4760574834165812,
+            "similar_exposed": 0.3801356941182836,
+            "unexposed": 0.27930292389963984
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "F_r16k16",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.254242192319239,
+            "conditional_p_on": 0.9158198191187139,
+            "cue_count": 16,
+            "mass_off": 0.0073540125,
+            "mass_on": 0.99449451875,
+            "mean_abs_conditional_delta": 0.661577626799475,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.2621123318175494,
+            "conditional_p_on": 0.8411862428428869,
+            "cue_count": 16,
+            "mass_off": 0.0045040125,
+            "mass_on": 0.997107675,
+            "mean_abs_conditional_delta": 0.5790739110253375,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.2533580288764565,
+            "conditional_p_on": 0.634611058752542,
+            "cue_count": 16,
+            "mass_off": 0.00972314375,
+            "mass_on": 0.9952464,
+            "mean_abs_conditional_delta": 0.49596396564552203,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank2__F_r16k16__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 3,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+        "source_bank_seed": 1,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "87851da0b4229c1bed9523b653845873197866f5157031846e914d44dbf8fc31",
+            "banks/bank1.json": "b63d649fa16a2b921c694e88a379fa01b174d5c101111c0ddaaf26e9c098e362",
+            "banks/bank2.json": "a4ca0376a7cba887d2f571083ec5f4b0aa36b8fa366c1060fb01579a803a76e4",
+            "corpora/bank2/F_r16k16/across/sleep4/corpus.json": "713f3cb5f798964eb2ecfaa3f1f565e8fda292943b9e02ca4d8916d01ab38307",
+            "distractor.json": "4ad56576f6d0a9ae211207ab06daef767ccca6a3968c7d9542505406137a9fdc",
+            "manifest.json": "b2d82e650c51f9c453f7978a56840eade533f253e732b6c897c43b690ccaf35f"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank2/F_r16k16/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 0,
+        "binding": {
+          "I_d_frame": {
+            "hi": 3.4727315135760035,
+            "lo": 1.4480774640424703,
+            "mean": 2.446475982257446,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.29235381687952516,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.39057134523057735,
+            "similar_exposed": 0.3050308815324421,
+            "unexposed": 0.18145922387555605
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.23008783172461533,
+            "conditional_p_on": 0.7898921755156824,
+            "cue_count": 16,
+            "mass_off": 0.00860055,
+            "mass_on": 0.7822989,
+            "mean_abs_conditional_delta": 0.5698484040168975,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.23855537862396672,
+            "conditional_p_on": 0.7197363188686106,
+            "cue_count": 16,
+            "mass_off": 0.0047736375,
+            "mass_on": 0.81312955625,
+            "mean_abs_conditional_delta": 0.5017707483024857,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.23822246289124546,
+            "conditional_p_on": 0.47266181574525457,
+            "cue_count": 16,
+            "mass_off": 0.0097592125,
+            "mass_on": 0.735654075,
+            "mean_abs_conditional_delta": 0.3863131454510524,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 0,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank0/CF_r16_b/across/sleep4/corpus.json": "70b50213c85fdacc7895163e0766e2a90717ba9ee3b90d250e7a276f4d4c3cd4",
+            "corpora/bank0/CF_r16_b/across/sleep4/generations.json": "b3ce2bf7dbf585b8cc54614cfcf653ff61e812728ff149a0d348e43ee9b6c5ed",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank0/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 1,
+        "binding": {
+          "I_d_frame": {
+            "hi": 1.4686665159096137,
+            "lo": 0.3083750562501909,
+            "mean": 0.9039102859897602,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.2372801404488856,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.3438706119208579,
+            "similar_exposed": 0.22416496161569363,
+            "unexposed": 0.14380484781010525
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.2459545879336926,
+            "conditional_p_on": 0.6839077972821787,
+            "cue_count": 16,
+            "mass_off": 0.00811510625,
+            "mass_on": 0.60108405,
+            "mean_abs_conditional_delta": 0.48343376794104603,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.24412546871351135,
+            "conditional_p_on": 0.6637450047990306,
+            "cue_count": 16,
+            "mass_off": 0.00579084375,
+            "mass_on": 0.5110372125,
+            "mean_abs_conditional_delta": 0.4196195360855194,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24335274636944543,
+            "conditional_p_on": 0.5181144166524161,
+            "cue_count": 16,
+            "mass_off": 0.0102304,
+            "mass_on": 0.50902568125,
+            "mean_abs_conditional_delta": 0.3194777091195422,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 0,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank1/CF_r16_b/across/sleep4/corpus.json": "319ffa9ddb690cf295f795727efbf7238fc9242b1cf2fd7badc386f10c2e7ca7",
+            "corpora/bank1/CF_r16_b/across/sleep4/generations.json": "d6c50822d194c139938b14d3159c58ed6fc9496a318c6329b588c438dcc23b21",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank1/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 2,
+        "binding": {
+          "I_d_frame": {
+            "hi": 4.785243778811739,
+            "lo": 2.1422914061117515,
+            "mean": 3.486882030141661,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.3952412259756113,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.5344672553912941,
+            "similar_exposed": 0.40098633605181844,
+            "unexposed": 0.25027008648372123
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.24790845781638077,
+            "conditional_p_on": 0.9921788399565296,
+            "cue_count": 16,
+            "mass_off": 0.0103643,
+            "mass_on": 0.98509633125,
+            "mean_abs_conditional_delta": 0.7442703821401487,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.25198685777040875,
+            "conditional_p_on": 0.9449708984575994,
+            "cue_count": 16,
+            "mass_off": 0.00500138125,
+            "mass_on": 0.9747024125,
+            "mean_abs_conditional_delta": 0.6929840406871908,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24631863754719882,
+            "conditional_p_on": 0.7923388866649906,
+            "cue_count": 16,
+            "mass_off": 0.0112986,
+            "mass_on": 0.9659157625,
+            "mean_abs_conditional_delta": 0.5460202491177918,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank2__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 0,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank2/CF_r16_b/across/sleep4/corpus.json": "ed4b1ce8cb9f40a8919aa217c05b70d45dbe0d7ddcf57a8ba2adae358dc01e46",
+            "corpora/bank2/CF_r16_b/across/sleep4/generations.json": "2873e32dcf04d444d0a3296792e0b9fbe730606b312b704807dea7cd764a5afd",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank2/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 0,
+        "binding": {
+          "I_d_frame": {
+            "hi": 2.287386840172966,
+            "lo": 1.2532613510734107,
+            "mean": 1.7434298929189016,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.28736756808206804,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.36380307892357633,
+            "similar_exposed": 0.31300874582163185,
+            "unexposed": 0.18529087950099593
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.23008783172461533,
+            "conditional_p_on": 0.7358491425524907,
+            "cue_count": 16,
+            "mass_off": 0.00860055,
+            "mass_on": 0.8502048625,
+            "mean_abs_conditional_delta": 0.5100356642209501,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.23855537862396672,
+            "conditional_p_on": 0.6268000430992947,
+            "cue_count": 16,
+            "mass_off": 0.0047736375,
+            "mass_on": 0.8607471812499999,
+            "mean_abs_conditional_delta": 0.43911541030593504,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.23822246289124546,
+            "conditional_p_on": 0.5034937943605887,
+            "cue_count": 16,
+            "mass_off": 0.0097592125,
+            "mass_on": 0.83712815625,
+            "mean_abs_conditional_delta": 0.3505549458712449,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 1,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank0/CF_r16_b/across/sleep4/corpus.json": "70b50213c85fdacc7895163e0766e2a90717ba9ee3b90d250e7a276f4d4c3cd4",
+            "corpora/bank0/CF_r16_b/across/sleep4/generations.json": "b3ce2bf7dbf585b8cc54614cfcf653ff61e812728ff149a0d348e43ee9b6c5ed",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank0/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 1,
+        "binding": {
+          "I_d_frame": {
+            "hi": 2.4387320018727103,
+            "lo": 0.812892423754346,
+            "mean": 1.6344083959097477,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.2700079781200284,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.3083368443908954,
+            "similar_exposed": 0.27684718778499684,
+            "unexposed": 0.22483990218419292
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.2459545879336926,
+            "conditional_p_on": 0.8070911126690404,
+            "cue_count": 16,
+            "mass_off": 0.00811510625,
+            "mass_on": 0.54771868125,
+            "mean_abs_conditional_delta": 0.5611365247353479,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.24412546871351135,
+            "conditional_p_on": 0.6972765576416867,
+            "cue_count": 16,
+            "mass_off": 0.00579084375,
+            "mass_on": 0.51015766875,
+            "mean_abs_conditional_delta": 0.4531510889281754,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24335274636944543,
+            "conditional_p_on": 0.5447706026695517,
+            "cue_count": 16,
+            "mass_off": 0.0102304,
+            "mass_on": 0.44680510625,
+            "mean_abs_conditional_delta": 0.35290041059255345,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 1,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank1/CF_r16_b/across/sleep4/corpus.json": "319ffa9ddb690cf295f795727efbf7238fc9242b1cf2fd7badc386f10c2e7ca7",
+            "corpora/bank1/CF_r16_b/across/sleep4/generations.json": "d6c50822d194c139938b14d3159c58ed6fc9496a318c6329b588c438dcc23b21",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank1/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      },
+      {
+        "bank": 2,
+        "binding": {
+          "I_d_frame": {
+            "hi": 1.1295873229074747,
+            "lo": 0.3561970586943026,
+            "mean": 0.7135893635444315,
+            "n": 16
+          },
+          "bootstrap_seed": 0,
+          "definition": "organism_v6.memory_dose:G9_frame_binding",
+          "dose16_owner_count": 16,
+          "frame_spill": 0.2488371004541034,
+          "passed": false,
+          "resampling_unit": "paired owners within this bank and fit only",
+          "spill_parts": {
+            "bicycle_exposed": 0.33158675607938454,
+            "similar_exposed": 0.22136827784750857,
+            "unexposed": 0.1935562674354171
+          },
+          "spill_threshold": 0.03,
+          "unavailable": []
+        },
+        "cell": "CF_r16_b",
+        "dose16": {
+          "frame": {
+            "conditional_p_off": 0.24790845781638077,
+            "conditional_p_on": 0.5092876623364909,
+            "cue_count": 16,
+            "mass_off": 0.0103643,
+            "mass_on": 0.8877702875,
+            "mean_abs_conditional_delta": 0.34354084825706505,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_bicycle": {
+            "conditional_p_off": 0.25198685777040875,
+            "conditional_p_on": 0.48716217808415113,
+            "cue_count": 16,
+            "mass_off": 0.00500138125,
+            "mass_on": 0.86014588125,
+            "mean_abs_conditional_delta": 0.33599733866468195,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          },
+          "frame_similar": {
+            "conditional_p_off": 0.24631863754719882,
+            "conditional_p_on": 0.3642555176964707,
+            "cue_count": 16,
+            "mass_off": 0.0112986,
+            "mass_on": 0.87085485,
+            "mean_abs_conditional_delta": 0.2303754388637999,
+            "status": "available",
+            "valid_off_count": 16,
+            "valid_on_count": 16
+          }
+        },
+        "eval_cue_count": 1313,
+        "eval_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank2__CF_r16_b__across__sleep4__r8__lam1.json",
+        "fit_complete": true,
+        "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+        "optimizer_seed": 1,
+        "receipt_available": true,
+        "receipt_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+        "source_bank_seed": 0,
+        "source_hash_compatibility": {
+          "input_sha256": {
+            "banks/bank0.json": "b8069c4e62f4e655453ca47c556ebd145be77071dab8db807e6ffbff51a06ed6",
+            "banks/bank1.json": "b6401c9ce3c81d8210783126ac387fda8f3838f4a1a10e3bc9099c6bda216145",
+            "banks/bank2.json": "6fc7047afb4d064b1866a5c3dbaed44787677e05aa3b76470c54f2d1fe0d539e",
+            "corpora/bank2/CF_r16_b/across/sleep4/corpus.json": "ed4b1ce8cb9f40a8919aa217c05b70d45dbe0d7ddcf57a8ba2adae358dc01e46",
+            "corpora/bank2/CF_r16_b/across/sleep4/generations.json": "2873e32dcf04d444d0a3296792e0b9fbe730606b312b704807dea7cd764a5afd",
+            "distractor.json": "5257577fb4e78298eacf93d5492ada8a2ee8fc92053856cff845de070521c385",
+            "manifest.json": "7fa542e6035753684920105da37da67e4cca2a78c72a40d5257ed360c704abcb"
+          },
+          "mismatches": [],
+          "status": "compatible",
+          "unavailable": []
+        },
+        "train_meta_path": "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank2/CF_r16_b/across/sleep4/r8/train_meta.json",
+        "unavailable_controls": [],
+        "wrong_owner_control": "frame_similar is an unseen look-alike, not an exposed-partner swapped-ID test"
+      }
+    ],
+    "schema_version": 1
+  },
+  "analysis_receipt": {
+    "analysis_code_sha256": {
+      "gpu/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gpu/prepare_memory_seed_run.py": "1f216a2ca7392f47cb2067121350606dc227beb8ee887a2d794169bf2cf24d9e",
+      "organism_v6/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "organism_v6/memory_dose.py": "ab98329c433cb085cd53e1c766db350f1bb0fe2efb9181e24a3678c0d31a76e3",
+      "research_notes/analysis/astra_seed_campaign.py": "e1327b3d2fdc060e33aad3d088beada167226437a9b1e6f28b819c6b5959eea9"
+    },
+    "argv": [
+      "python3",
+      "-B",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/analysis_code/research_notes/analysis/astra_seed_campaign.py",
+      "--entry",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank0__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank0/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank1__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank1/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/eval/bank2__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/adapters/bank2/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts2_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank0__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank0/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank1__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank1/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/eval/bank2__F_r16k16__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/adapters/bank2/F_r16k16/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A1_memory_dose_S1_F_r16k16_ts3_20260912/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank0/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank1/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/eval/bank2__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/adapters/bank2/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank0/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_seed_bank0_evidence_20260912/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank1/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+      "--entry",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/eval/bank2__CF_r16_b__across__sleep4__r8__lam1.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/adapters/bank2/CF_r16_b/across/sleep4/r8/train_meta.json",
+      "/tmp/astra_A1A2_banks_20260912T0800Z/runs/astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2/seed_run_receipt.json",
+      "--bootstrap-seed",
+      "0"
+    ],
+    "finished_utc": "2026-09-12T08:02:57.759793+00:00",
+    "output_sha256": "e73e387e5b1e69b7c0bca2451b413c7b30e218cc7efdaef7ab3067684cdad648",
+    "returncode": 0,
+    "started_utc": "2026-09-12T08:02:55.941079+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_seconds": 1.8187158240471035
+  },
+  "capture_finished_utc": "2026-09-12T08:02:26.353521+00:00",
+  "capture_manifest_sha256": "b1bfda0757beb98b1812c498decc4960151fa8156a57d31cc25a0ca416f5252e",
+  "capture_started_utc": "2026-09-12T08:02:26.106129+00:00",
+  "counts": {
+    "G9_fail_entries": 12,
+    "G9_pass_entries": 0,
+    "compatible_entries": 12,
+    "completed_fit_eval_stages": 4,
+    "completed_scientific_fits": 12,
+    "entries": 12,
+    "evaluable_G9_entries": 12,
+    "interpretation": "Artifact inventory only, not a pooled success rate or independent trial count",
+    "new_bank1_bank2_entries": 8,
+    "outstanding_jobs": 1,
+    "reused_bank0_entries": 4,
+    "unavailable_entries": 0
+  },
+  "criterion": "G9 passes iff the lower bound of the within-fit/bank 95% paired-owner bootstrap interval for I_d_frame is strictly >0 AND frame_spill <=0.03. Bootstrap seed0, 2000 resamples, 16 dose16 owners; no cross-bank/seed pooling.",
+  "evidence_directory": "/tmp/astra_A1A2_banks_20260912T0800Z",
+  "final_progress": {
+    "node": "node2",
+    "observed_utc": "2026-09-12T08:04:18.024987+00:00",
+    "processes": [
+      "3564433 3560942 Sat Sep 12 07:41:38 2026 Rl   /localhome/local-rohing/v2/venv/bin/python -m organism_v6.memory_dose train --run-dir /localhome/local-rohing/v6_out/astra_A2_memory_dose_D32_CF_r16_b_ts2_20260912_attempt2 --corpus /localhome/local-rohing/v6_out/astra_A2_memory_dose_D32_CF_r16_b_ts2_20260912_attempt2/corpora/bank0/CF_r16_b/across/sleep4/corpus.json --out /localhome/local-rohing/v6_out/astra_A2_memory_dose_D32_CF_r16_b_ts2_20260912_attempt2/adapters/bank0/CF_r16_b/across/sleep4/r8 --model hf --rank 8 --epochs 3 --lr 1e-4 --seed 2"
+    ],
+    "runs": [
+      {
+        "eval_files": [
+          "bank0__F_r16k16__across__sleep4__r8__lam1.json",
+          "bank1__F_r16k16__across__sleep4__r8__lam1.json",
+          "bank2__F_r16k16__across__sleep4__r8__lam1.json"
+        ],
+        "fit_done": [
+          "adapters/bank0/F_r16k16/across/sleep4/r8/DONE",
+          "adapters/bank1/F_r16k16/across/sleep4/r8/DONE",
+          "adapters/bank2/F_r16k16/across/sleep4/r8/DONE"
+        ],
+        "queue": [
+          {
+            "fields": {
+              "FINISHED": "2026-09-12T07:49:21Z",
+              "GPU": "2",
+              "PID": "3047532",
+              "RC": "0",
+              "STARTED": "2026-09-12T06:31:48Z"
+            },
+            "path": "/localhome/local-rohing/queue/done/0045_astra_A1_memory_dose_S1_F_r16k16_ts2_20260912.job",
+            "state": "done"
+          }
+        ],
+        "queue_tail": [
+          "[2026-09-12 07:45:42] train bank2__F_r16k16__across__sleep4__r8: TRAIN_DONE items=12970 steps=9729 tokens=750000 loss=1.2059 wall_s=1328.4",
+          "[2026-09-12 07:49:03] eval bank2__F_r16k16__across__sleep4__r8: EVAL_DONE bank2__F_r16k16__across__sleep4__r8 lam=1 cues=1313 s=200.2",
+          "[2026-09-12 07:49:03] F fits done",
+          "[2026-09-12 07:49:03] MEMORY_DOSE_FRAMES_DONE step=fits"
+        ],
+        "run": "astra_A1_memory_dose_S1_F_r16k16_ts2_20260912",
+        "stages": [
+          "STAGE_F_FITS_DONE"
+        ]
+      },
+      {
+        "eval_files": [
+          "bank0__F_r16k16__across__sleep4__r8__lam1.json",
+          "bank1__F_r16k16__across__sleep4__r8__lam1.json",
+          "bank2__F_r16k16__across__sleep4__r8__lam1.json"
+        ],
+        "fit_done": [
+          "adapters/bank0/F_r16k16/across/sleep4/r8/DONE",
+          "adapters/bank1/F_r16k16/across/sleep4/r8/DONE",
+          "adapters/bank2/F_r16k16/across/sleep4/r8/DONE"
+        ],
+        "queue": [
+          {
+            "fields": {
+              "FINISHED": "2026-09-12T07:50:22Z",
+              "GPU": "4",
+              "PID": "3047639",
+              "RC": "0",
+              "STARTED": "2026-09-12T06:31:48Z"
+            },
+            "path": "/localhome/local-rohing/queue/done/0046_astra_A1_memory_dose_S1_F_r16k16_ts3_20260912.job",
+            "state": "done"
+          }
+        ],
+        "queue_tail": [
+          "[2026-09-12 07:46:30] train bank2__F_r16k16__across__sleep4__r8: TRAIN_DONE items=12970 steps=9729 tokens=750000 loss=1.2121 wall_s=1329.0",
+          "[2026-09-12 07:49:50] eval bank2__F_r16k16__across__sleep4__r8: EVAL_DONE bank2__F_r16k16__across__sleep4__r8 lam=1 cues=1313 s=198.7",
+          "[2026-09-12 07:49:50] F fits done",
+          "[2026-09-12 07:49:50] MEMORY_DOSE_FRAMES_DONE step=fits"
+        ],
+        "run": "astra_A1_memory_dose_S1_F_r16k16_ts3_20260912",
+        "stages": [
+          "STAGE_F_FITS_DONE"
+        ]
+      },
+      {
+        "eval_files": [
+          "bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+          "bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+          "bank2__CF_r16_b__across__sleep4__r8__lam1.json"
+        ],
+        "fit_done": [
+          "adapters/bank0/CF_r16_b/across/sleep4/r8/DONE",
+          "adapters/bank1/CF_r16_b/across/sleep4/r8/DONE",
+          "adapters/bank2/CF_r16_b/across/sleep4/r8/DONE"
+        ],
+        "queue": [
+          {
+            "fields": {
+              "FINISHED": "2026-09-12T07:58:31Z",
+              "GPU": "5",
+              "PID": "3071031",
+              "RC": "0",
+              "STARTED": "2026-09-12T06:34:52Z"
+            },
+            "path": "/localhome/local-rohing/queue/done/0050_astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2.job",
+            "state": "done"
+          }
+        ],
+        "queue_tail": [
+          "[2026-09-12 07:55:01] train bank2__CF_r16_b__across__sleep4__r8: TRAIN_DONE items=13994 steps=10497 tokens=749961 loss=1.1249 wall_s=1412.9",
+          "[2026-09-12 07:58:22] eval bank2__CF_r16_b__across__sleep4__r8: EVAL_DONE bank2__CF_r16_b__across__sleep4__r8 lam=1 cues=1313 s=199.9",
+          "[2026-09-12 07:58:22] CF fits done",
+          "[2026-09-12 07:58:22] MEMORY_DOSE_CHILDFRAMES_DONE step=fits"
+        ],
+        "run": "astra_A2_memory_dose_D32_CF_r16_b_ts0_20260912_attempt2",
+        "stages": [
+          "STAGE_CF_FITS_DONE"
+        ]
+      },
+      {
+        "eval_files": [
+          "bank0__CF_r16_b__across__sleep4__r8__lam1.json",
+          "bank1__CF_r16_b__across__sleep4__r8__lam1.json",
+          "bank2__CF_r16_b__across__sleep4__r8__lam1.json"
+        ],
+        "fit_done": [
+          "adapters/bank0/CF_r16_b/across/sleep4/r8/DONE",
+          "adapters/bank1/CF_r16_b/across/sleep4/r8/DONE",
+          "adapters/bank2/CF_r16_b/across/sleep4/r8/DONE"
+        ],
+        "queue": [
+          {
+            "fields": {
+              "FINISHED": "2026-09-12T07:59:32Z",
+              "GPU": "6",
+              "PID": "3071084",
+              "RC": "0",
+              "STARTED": "2026-09-12T06:34:52Z"
+            },
+            "path": "/localhome/local-rohing/queue/done/0051_astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2.job",
+            "state": "done"
+          }
+        ],
+        "queue_tail": [
+          "[2026-09-12 07:55:26] train bank2__CF_r16_b__across__sleep4__r8: TRAIN_DONE items=13994 steps=10497 tokens=749961 loss=1.1356 wall_s=1419.3",
+          "[2026-09-12 07:58:47] eval bank2__CF_r16_b__across__sleep4__r8: EVAL_DONE bank2__CF_r16_b__across__sleep4__r8 lam=1 cues=1313 s=199.6",
+          "[2026-09-12 07:58:47] CF fits done",
+          "[2026-09-12 07:58:47] MEMORY_DOSE_CHILDFRAMES_DONE step=fits"
+        ],
+        "run": "astra_A2_memory_dose_D32_CF_r16_b_ts1_20260912_attempt2",
+        "stages": [
+          "STAGE_CF_FITS_DONE"
+        ]
+      },
+      {
+        "eval_files": [],
+        "fit_done": [],
+        "queue": [
+          {
+            "fields": {
+              "GPU": "1",
+              "PID": "3560937",
+              "STARTED": "2026-09-12T07:41:12Z"
+            },
+            "path": "/localhome/local-rohing/queue/running/0052_astra_A2_memory_dose_D32_CF_r16_b_ts2_20260912_attempt2.job",
+            "state": "running"
+          }
+        ],
+        "queue_tail": [
+          "[2026-09-12 07:41:39] THROUGHPUT CF_r16_b 100 steps: 446.9 tok/s; projected 28.3 min per fit (cap 35 min)"
+        ],
+        "run": "astra_A2_memory_dose_D32_CF_r16_b_ts2_20260912_attempt2",
+        "stages": []
+      }
+    ]
+  },
+  "frozen_experiment_source_commit": "f2e5b65e9c5dc3f7b7cdf15cb1b97b114ad4994d",
+  "label": "SYNTHETIC_DIAGNOSTIC_NOT_CLEAN_LINEAGE",
+  "node": "node2",
+  "prior_bank0_dependency": "/tmp/astra_seed_bank0_evidence_20260912",
+  "schema_version": 1,
+  "scope": "Read-only evidence/analysis; only new memo and capsule added to repo; no scientific promotion",
+  "source_commit_checks": [
+    {
+      "matches_commit": true,
+      "path": "gpu/memory_dose_childframes.sh",
+      "sha256": "1ef8b51b46fcae3d7656e8a41ab3c317a89a82f3c1de600ab29cdf1f07315427"
+    },
+    {
+      "matches_commit": true,
+      "path": "gpu/memory_dose_frames.sh",
+      "sha256": "7b535f3098c455fa4e839ce6f250b1e889539731a8f16da2cb53562aaca777ab"
+    },
+    {
+      "matches_commit": true,
+      "path": "organism_v6/memory_dose.py",
+      "sha256": "ab98329c433cb085cd53e1c766db350f1bb0fe2efb9181e24a3678c0d31a76e3"
+    }
+  ],
+  "source_reuse_receipt_sha256": "953db10dbe005c07ffc3621575136ae3a19f0c0549e779e5907a21a728d15c67",
+  "status_observed_utc": "2026-09-12T08:04:18.024987+00:00",
+  "task_started_utc": "2026-09-12T08:00:20Z",
+  "title": "A1/A2 per-fit/bank diagnostic sidecar",
+  "warning": "A1 source bank seed1 differs from A2 source bank seed0; compatibility is within each entry and same-family source group, not across families. Intervals are owner-level conditional on a bank and fit, not optimizer uncertainty."
+}
