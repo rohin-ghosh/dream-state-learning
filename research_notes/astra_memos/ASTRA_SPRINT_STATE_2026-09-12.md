@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:39 UTC**.
+Latest reconciliation: **2026-09-12 11:47 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -70,7 +70,14 @@ conditionalON=.250953versusOFF=.259650. Candidate mass.993089is not binding.
 BothG9/G11FAIL: lessspillbutacquisitionerased, notaselectivewriterrepair.
 All1313cues/OFFscores match original; reductionvalid. Capsule7017ef230af7…;
 fullmemo ASTRA_PREFIX_MASK_TERMINAL_2026-09-12.md. Furthermask/LRonly sweeps
-parked. HuygensownsCPU-onlypreservation module/tests; coefficientsunfrozen.
+parked. Preservationmodule/tests frozen and committed; **active preservation
+pair** source290a9ea03387176f7ba75478552db3eafa844db2: coefficient0GPU0
+controller85200started11:46:17UTC, coefficient0.1GPU2controller85282started
+11:46:53UTC. Freshroots astra_A1_preservation_bank0_ts2_lam0_20260912_attempt1
+and lam01counterpart. Both27CPUtests and actualtokenizer preflightPASS;
+wholetext749985input/711213supervised passes,9693updates,48disjointanchors,
+unchangedG9/G11.3600sowned-worker caps; retainGPU0/2throughallreloads.
+No outcomes yet. See ASTRA_MEMORY_PRESERVATION_COMPARISON_2026-09-12.md.
 P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
 lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
 Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,
