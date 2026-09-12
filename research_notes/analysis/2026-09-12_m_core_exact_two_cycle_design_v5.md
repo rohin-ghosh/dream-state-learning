@@ -2,11 +2,12 @@
 
 Date: 2026-09-12 UTC
 
-Status: independent watcher design only. This zero-fit successor supersedes
-`2026-09-12_m_core_exact_two_cycle_design_v4.md`. It changes no builder source,
-coordination file, benchmark, child, model, tokenizer, adapter, checkpoint,
-job, GPU state, resource, claim, release, or submission. The materialization
-package and every receipt below are requirements, not existing evidence.
+Status: **superseded by**
+`2026-09-12_m_core_exact_two_cycle_design_v6.md`. This v5 note is retained as
+design history only and must not authorize materialization, Stage 0, TEXT,
+reader-model work, or an M fit. It changes no builder source, benchmark,
+child, model, tokenizer, adapter, checkpoint, job, GPU state, resource,
+coordination record, scientific claim, release, or submission.
 
 ## 0. Claim, allocation, and the source-control ruling
 
