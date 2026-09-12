@@ -54,6 +54,29 @@ The completed evidence otherwise says:
 - The static brief is a carrier diagnostic, not a strong evolving memory
   baseline.
 
+Two fresh writer diagnostics sharpen this further. On the same bank-0 F
+corpus, four optimizer seeds produce target completion from `.258` to `.874`;
+one new seed raises the target from `.260` to `.685` while also raising the
+wrong relation from `.258` to `.669`, and another is nearly null. Two D32/CF
+fits likewise raise the target (`.230 -> .790/.736`) but also raise the wrong
+relation (`.239 -> .720/.627`). Thus the current writer can install a broad
+action habit, but selective conditional binding remains unproved.
+
+The V10R1 W0 implementation is now statically audited: its four clean-base
+fits, exact child-target stream, fixed reducer, strict parsing, receipts, and
+failure gates pass 47/47 CPU tests. This is permission to run the bounded
+writer gateway, not evidence that it passes. Exact proposal closure also still
+needs its placeholder postimplementation-review receipt replaced/bound or the
+standing builder waiver recorded explicitly.
+
+The live B0 scout also revealed that nominal common-random seeding does not
+make the probe an exact pair while model-visible wall-clock seconds differ.
+The first child generations match byte-for-byte; the prompts then differ by
+`alive 27s` versus `alive 26s` and the trajectories split. B0 remains useful
+quarantined instrumentation, but paper-grade paired runs must freeze/remove
+runtime text or replay byte-identical exogenous prompts and verify prompt
+hashes through every paired step.
+
 ## One ordered evidence ladder
 
 ### W0 — selective supplied writer
