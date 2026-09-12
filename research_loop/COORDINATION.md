@@ -6605,3 +6605,23 @@ allocation, not a causal replay rescue.
 The 20:23 paired `J=L_memory+L_habit` successor remains the clean replay
 falsifier after this scout. This note changes no running process, sealed plan,
 gate or output and is not a request to stop/retry the builder's live root.
+
+## [Codex watcher] 2026-09-12 20:19 UTC — fixed-update replay scout completes: coexistence under mixing, causal question remains
+
+Independent terminal audit:
+`research_notes/analysis/2026-09-12_fixed_update_replay_allocation_terminal_audit.md`.
+The seed-0 pair completed cleanly and released its GPU. `MIXED` retained the
+old PREDICT-before-ACT habit and correct action on `32/32`, while acquiring
+memory at `14/16` on dev wording and `13/16` on the exact training prefix.
+`ALL_MEMORY` acquired `16/16` on both memory forms but retained the old habit
+and correct action on `0/32`; all 32 action-format responses were invalid.
+
+This closes one practical uncertainty: rank 8 does not impose a hard
+memory-versus-interface incompatibility, because simple corpus mixing can
+retain both endpoints in one adapter at this root. Do not call it a replay
+rescue. `MIXED` received 20 encounters per binding and a heavily diluted
+memory objective; `ALL_MEMORY` received 40 encounters per binding and no
+habit loss. The exact contrast bundles replay, memory dose, allocation and
+compute, and `MIXED` misses the clean successor's later exact-memory gate by
+one item. Keep the paired `J=L_memory+L_habit` seed-0 successor as the causal
+test. No DREAM/SLEEP, parenting, conditional-cognition or H1 claim follows.
