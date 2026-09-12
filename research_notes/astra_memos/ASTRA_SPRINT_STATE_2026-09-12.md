@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 08:51 UTC**.
+Latest reconciliation: **2026-09-12 09:08 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -43,16 +43,29 @@ Adult training now uses a fresh subprocess. No real adult/neutral pair executed.
 Neutral advisory P2 (historical lifecycle-receipt binding) remains documented
 and deferred; live process cleanup checks are implemented. No formal guard expansion.
 
-**Next work:** James owns NEW oracle_lookup_diagnostic.py/tests:64new single-row
-oracle generations against the existing full-table chat/explicit baseline,
-development only, at most1A40-hour after preflight. Turing owns NEW
-parent_material_write.py/tests: first64 unique source-grounded child records,
-CPU/tokenizer preparation for existing standalone child-only train_adapter
-(rank8,3epochs,lr1e-4,seed6102), no clean gate/lineage arguments. Skip if fewer64;
-never lower count or repair child text. Main flagged absolute source-path
-comparisons: allow only verified identical producer bytes in a newer checkout,
-retain/recheck original source paths; never mutate old frozen checkouts or pins.
-Then real fresh fits and parent-free neutral ON/OFF probes using existing runner.
+**Single-row terminal, SEQ-066:** source35ba8f2c983d9baa99ece979183dceffd3e4e344;
+64requests,32correct/58valid/0truncated, every root/map8/16correct.
+External original-source replay exit0;67.626312548seconds/0.018785086819A40-hours.
+Raw capsule SHA2562d03417687053731d542f03987c76e8d5bb1b988edbb37091da73bc219dd2b0c.
+No oracle qualification. James owns one final grounded-copy instruction amendment
+and tests; fixed64requests, maximum1A40-hour, then park prompt search regardless
+of result. Primary contrast is the actual previous single-row32/64, not the
+two-factor full-table contrast. New source/run only; historical evidence unchanged.
+
+**Next work:** parent_material_write.py is committed (b6ba9294),27main tests pass;
+first64 unique grounded child records, unchanged child text, actual tokenizer
+preflight, rank8/3epochs/lr1e-4/seed6102, standalone training with no clean
+eligibility arguments. Turing owns NEW parent_material_pipeline.py/tests to run
+paired preparation, actual fresh fits and parent-free neutral ON/OFF probes.
+Both formations must finish64episodes and both preparations be READY64 or no fit.
+Archimedes owns NEW paired formation analysis/tests; Socrates owns read-only A2
+seed2 status/raw recovery under /tmp. Main owns Git, notebook, source freeze and
+all node3 launches. Preserve unrelated dirty gpu/codex/dream_state.rules.
+At09:05UTC formation PIDs38416/38418 remain live on GPU0/2; no duplicate launch.
+Watcher's proposed no-fit-before-writer-qualification condition is advisory:
+main retains the bounded exploratory write/probe diagnostic to localize failure,
+not as substrate qualification, clean ancestry, or H1/H2 evidence. Keep actual
+source checks and unchanged teacher exclusion; formal C11 work remains parked.
 The strict clean nursery and adult lineage-dependent path remain separate.
 Do not substitute material formation for amortization/H1/H2.
 Older timestamped updates below are historical, not live state.

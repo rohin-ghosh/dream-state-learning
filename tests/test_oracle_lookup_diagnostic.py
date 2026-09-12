@@ -98,6 +98,55 @@ class LookupTests(unittest.TestCase):
             self.assertEqual(request["prompt_input_ids"], self.tokenizer(request["rendered_prompt"])["input_ids"])
             self.assertEqual((request["max_new_tokens"], request["do_sample"], request["seed"]), (32, False, 0))
 
+    def test_default_preserves_prior_request_payload_and_grounded_only_prepends(self):
+        contract = fixture.parent_fixture.ContractTests
+        contract.setUpClass()
+        calibration_requests = cal.build_requests(contract.material, contract.requests, self.tokenizer)
+        default = lookup.build_requests(contract.material, calibration_requests, self.tokenizer)
+        explicit = lookup.build_requests(contract.material, calibration_requests, self.tokenizer, "format_only")
+        self.assertEqual(default, explicit)
+        legacy = []
+        for row in default:
+            payload = {key: value for key, value in row.items()
+                       if key not in ("request_id", "instruction_variant", "instruction_text")}
+            legacy.append(dict(request_id=w0.digest(payload), **payload))
+        self.assertEqual(w0.digest(legacy), "504c23d224102aeb98efe3599ef35c6fa3b420e00c892ff8f0db627890996aee")
+        literal = ("Use the action table as the source of truth. For the exact tool and mode in the task, "
+                   "copy the ACT value after -> from its matching row.")
+        grounded = lookup.build_requests(contract.material, calibration_requests, self.tokenizer, "grounded_copy")
+        changed = {"request_id", "instruction_variant", "instruction_text", "condition",
+                   "prompt", "rendered_prompt", "prompt_input_ids"}
+        self.assertEqual(len(grounded), 64)
+        for old, new in zip(default, grounded):
+            self.assertEqual({key: value for key, value in old.items() if key not in changed},
+                             {key: value for key, value in new.items() if key not in changed})
+            self.assertEqual(new["prompt"], literal + "\n" + old["prompt"])
+            self.assertEqual(new["instruction_text"], literal + "\n" + cal.INSTRUCTION)
+            self.assertEqual(new["rendered_prompt"], self.tokenizer.apply_chat_template(
+                [{"role": "user", "content": new["prompt"]}], tokenize=False, add_generation_prompt=True))
+            self.assertEqual(new["prompt_input_ids"], self.tokenizer(new["rendered_prompt"])["input_ids"])
+            self.assertNotEqual(new["condition"], old["condition"])
+        with self.assertRaisesRegex(w0.ContractError, "unknown instruction variant"):
+            lookup.build_requests(contract.material, calibration_requests, self.tokenizer, "answer_specific")
+
+    def test_grounded_worker_records_variant_and_historical_primary_contrast(self):
+        self.prepare(instruction_variant="grounded_copy")
+        manifest = w0.load_json(self.out / "manifest.json")
+        self.assertEqual(manifest["instruction_variant"], "grounded_copy")
+        self.runtime(self.generation)
+        report = lookup.execute(self.out, True)
+        self.assertEqual(report["instruction_text"], manifest["instruction_text"])
+        self.assertEqual(report["instruction_variant"], "grounded_copy")
+        self.assertEqual(report["condition"], "single_row_grounded_copy_chat_explicit_32")
+        self.assertEqual(report["comparison"]["previous_single_row"]["correct"], 32)
+        self.assertEqual(report["comparison"]["previous_single_row"]["valid"], 58)
+        self.assertIn("caller-reported", report["comparison"]["previous_single_row"]["provenance"])
+        self.assertIn("two-factor", report["comparison"]["full_table_comparison"])
+        self.assertFalse(report["comparison"]["further_prompt_search"])
+        self.assertTrue(all(name.endswith(("/single_row_grounded_copy", "/full_table_replayed"))
+                            for name in report["cells"]))
+        self.assertEqual(report, lookup.replay(self.out))
+
     def test_prepare_preserves_sources_and_refuses_wrong_identity_overlap_overwrite(self):
         before = cal._inventory(self.calibration), cal._inventory(self.fixture.parent)
         with self.assertRaisesRegex(w0.ContractError, "seal pin"):

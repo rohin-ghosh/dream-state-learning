@@ -21,6 +21,9 @@ from . import multikey_writer_gateway_simple as w0
 
 MAX_REQUESTS = 64
 MAX_SECONDS = 3600
+GROUNDED_COPY = ("Use the action table as the source of truth. For the exact tool and mode in the task, "
+                 "copy the ACT value after -> from its matching row.")
+INSTRUCTION_VARIANTS = ("format_only", "grounded_copy")
 BOUNDARY = dict(label="DEVELOPMENT_ORACLE_LOOKUP_DIAGNOSTIC", evidence_label="EVALUATION_ONLY",
     clean_lineage=False, training=False, adapters=False, parent_passed=False,
     official_model_authentication="UNRESOLVED_LOCAL_HASHES_ONLY",
@@ -29,6 +32,15 @@ BOUNDARY = dict(label="DEVELOPMENT_ORACLE_LOOKUP_DIAGNOSTIC", evidence_label="EV
 
 def _sources():
     return dict(module_sha256=w0.file_hash(__file__), calibration=cal._sources())
+
+
+def instruction_text(variant):
+    w0.require(variant in INSTRUCTION_VARIANTS, "unknown instruction variant")
+    return (GROUNDED_COPY + "\n" if variant == "grounded_copy" else "") + cal.INSTRUCTION
+
+
+def condition_label(variant):
+    return "single_row_grounded_copy_chat_explicit_32" if variant == "grounded_copy" else "single_row_chat_explicit_32"
 
 
 def calibration_source(root):
@@ -77,8 +89,9 @@ def source(calibration, seal_sha256):
     return spec, material, parent_requests, requests, records
 
 
-def build_requests(material, calibration_requests, tokenizer):
+def build_requests(material, calibration_requests, tokenizer, instruction_variant="format_only"):
     """Select first held key prospectively, never consulting generated outcomes."""
+    instruction = instruction_text(instruction_variant)
     baselines = [request for request in calibration_requests if request["condition"] == "chat_explicit_32"]
     expected_order = []
     for root_index, root in enumerate(material["roots"]):
@@ -102,7 +115,7 @@ def build_requests(material, calibration_requests, tokenizer):
         prefix = f"{root['tools'][row['slot']]} m{row['mode']} -> "
         selected = [line for line in table.splitlines()[1:] if line.startswith(prefix)]
         w0.require(len(selected) == 1, "unique authentic key-selected row required")
-        prompt = cal.INSTRUCTION + "\nExplicit action table:\n" + selected[0] + "\nTask:\n" + context
+        prompt = instruction + "\nExplicit action table:\n" + selected[0] + "\nTask:\n" + context
         rendered = tokenizer.tokenizer.apply_chat_template([{"role": "user", "content": prompt}],
                                                           tokenize=False, add_generation_prompt=True)
         ids = tokenizer(rendered, add_special_tokens=False, return_offsets_mapping=True)["input_ids"]
@@ -112,7 +125,8 @@ def build_requests(material, calibration_requests, tokenizer):
         request = dict(pair_id=baseline["pair_id"], baseline_request_id=baseline["request_id"],
             root=baseline["root"], mapping=baseline["mapping"], held_index=baseline["held_index"],
             tool=baseline["tool"], mode=baseline["mode"], expected=baseline["expected"],
-            selected_row=selected[0], context=context, condition="single_row_chat_explicit_32",
+            selected_row=selected[0], context=context, condition=condition_label(instruction_variant),
+            instruction_variant=instruction_variant, instruction_text=instruction,
             prompt=prompt, rendered_prompt=rendered, prompt_input_ids=ids,
             max_new_tokens=32, do_sample=False, seed=0)
         result.append(dict(request_id=w0.digest(request), **request))
@@ -121,6 +135,11 @@ def build_requests(material, calibration_requests, tokenizer):
 
 def reduce_records(requests, records, baseline_records):
     w0.require(len(requests) == len(records) == len(baseline_records) == 64, "incomplete paired diagnostic")
+    variant = requests[0]["instruction_variant"]
+    instruction = instruction_text(variant)
+    w0.require(all(row["instruction_variant"] == variant and row["instruction_text"] == instruction
+                   and row["condition"] == condition_label(variant) for row in requests), "mixed instruction variants")
+    single_condition = "single_row_grounded_copy" if variant == "grounded_copy" else "single_row"
     actual = {record["request_id"]: record for record in records}
     baseline = {record["request_id"]: record for record in baseline_records}
     w0.require(len(actual) == len(baseline) == 64
@@ -130,7 +149,7 @@ def reduce_records(requests, records, baseline_records):
     for request in requests:
         paired = {}
         for condition, record in (("full_table_replayed", baseline[request["baseline_request_id"]]),
-                                  ("single_row", actual[request["request_id"]])):
+                                  (single_condition, actual[request["request_id"]])):
             w0.require(type(record["truncated"]) is bool and isinstance(record["text"], str), "typed actual output required")
             parsed = w0.parse_output(record["text"], record["truncated"])
             outcome = dict(correct=parsed["action"] == request["expected"], valid=parsed["action"] is not None,
@@ -144,11 +163,21 @@ def reduce_records(requests, records, baseline_records):
         pairs[request["pair_id"]] = paired
     w0.require(len(cells) == 8 and all(cell["total"] == 16 for cell in cells.values()) and len(pairs) == 64,
                "fixed paired denominators")
+    comparison = (dict(primary_contrast="previous SINGLE_ROW format_only versus grounded_copy",
+        previous_single_row=dict(total=64, correct=32, valid=58,
+                                 provenance="caller-reported historical result; not replay-verified here"),
+        full_table_comparison="historical two-factor comparison: table extent and instruction; not an isolated instruction effect",
+        further_prompt_search=False) if variant == "grounded_copy" else
+        dict(primary_contrast="historical full-table versus single-row format_only"))
     return dict(**BOUNDARY, new_inference_requests=64, replayed_baselines=64,
+                instruction_variant=variant, instruction_text=instruction, condition=condition_label(variant),
+                comparison=comparison,
                 cells=cells, paired_prompt_ids=pairs)
 
 
-def prepare(out, *, calibration, calibration_seal_sha256, log_dir, deadline_unix, gpu_uuid):
+def prepare(out, *, calibration, calibration_seal_sha256, log_dir, deadline_unix, gpu_uuid,
+            instruction_variant="format_only"):
+    instruction = instruction_text(instruction_variant)
     parent_spec, material, parent_requests, calibration_requests, baseline = source(calibration, calibration_seal_sha256)
     config = dict(parent_spec["config"], gpu_uuid=gpu_uuid)
     w0.require(type(deadline_unix) in (int, float) and math.isfinite(deadline_unix)
@@ -163,7 +192,7 @@ def prepare(out, *, calibration, calibration_seal_sha256, log_dir, deadline_unix
     w0.require(pins == parent_spec["input_pins"], "calibrated local model/tokenizer/environment pins required")
     tokenizer = w0.load_local_tokenizer(config)
     w0.require(cal.build_requests(material, parent_requests, tokenizer) == calibration_requests, "calibration tokenizer drift")
-    requests = build_requests(material, calibration_requests, tokenizer)
+    requests = build_requests(material, calibration_requests, tokenizer, instruction_variant)
     source(calibration, calibration_seal_sha256)
     w0.require(w0.pin_local_inputs(config) == pins and sources == _sources(), "prepare input/source drift")
     root.mkdir()
@@ -174,6 +203,7 @@ def prepare(out, *, calibration, calibration_seal_sha256, log_dir, deadline_unix
         calibration_root=str(w0.checked_path(calibration)), calibration_seal_sha256=calibration_seal_sha256,
         failed_w0_root=parent_spec["parent_root"], config=config, input_pins=pins, sources=sources,
         deadline_unix=deadline_unix, max_requests=MAX_REQUESTS, max_seconds=MAX_SECONDS,
+        instruction_variant=instruction_variant, instruction_text=instruction, condition=condition_label(instruction_variant),
         artifacts={name: w0.file_hash(root / name) for name in ("requests.json", "baseline_records.json")})
     w0.write_once(root, "manifest.json", spec)
     w0.write_once(root, "PREPARED.json", dict(**BOUNDARY, manifest_sha256=w0.digest(spec), model_loaded=False))
@@ -187,6 +217,8 @@ def validate(root):
                and spec["output_root"] == str(root) and spec["sources"] == _sources(), "manifest/source drift")
     w0.require(all(spec.get(key) == value for key, value in BOUNDARY.items())
                and spec["max_requests"] == 64 and spec["max_seconds"] == 3600, "diagnostic bounds changed")
+    w0.require(spec["instruction_text"] == instruction_text(spec["instruction_variant"])
+               and spec["condition"] == condition_label(spec["instruction_variant"]), "instruction variant drift")
     w0.require(set(spec["artifacts"]) == {"requests.json", "baseline_records.json"}
                and all(w0.file_hash(root / name) == digest for name, digest in spec["artifacts"].items()), "artifact drift")
     parent, material, parent_requests, calibration_requests, baseline = source(spec["calibration_root"], spec["calibration_seal_sha256"])
@@ -214,7 +246,7 @@ def worker(root, allow_gpu=False):
     w0.gpu_identity(spec["config"])
     tokenizer = w0.load_local_tokenizer(spec["config"])
     w0.require(cal.build_requests(material, parent_requests, tokenizer) == calibration_requests, "baseline tokenizer drift")
-    requests = build_requests(material, calibration_requests, tokenizer)
+    requests = build_requests(material, calibration_requests, tokenizer, spec["instruction_variant"])
     w0.require(requests == w0.load_json(root / "requests.json"), "lookup tokenizer/request drift")
     torch = w0.configure_torch(spec["config"], 0)
     w0.require(time.time() < started["deadline_unix"] - 5, "deadline before model load")
@@ -302,6 +334,7 @@ def main(argv=None):
     for name in ("out", "calibration", "calibration-seal-sha256", "log-dir", "gpu-uuid"):
         prep.add_argument("--" + name, required=True)
     prep.add_argument("--deadline-unix", type=float, required=True)
+    prep.add_argument("--instruction-variant", choices=INSTRUCTION_VARIANTS, default="format_only")
     for name in ("execute", "_worker", "replay"):
         command = commands.add_parser(name)
         command.add_argument("--run", required=True)
