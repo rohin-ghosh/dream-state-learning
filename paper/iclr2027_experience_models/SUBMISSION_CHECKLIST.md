@@ -1,20 +1,62 @@
 # ICLR 2027 submission checklist
 
-## Current gate status (2026-09-09 PT)
+## Current gate status (2026-09-12 PT)
 
-- **Full Experience Models claim:** not established. E0 writer, PCFL M relay,
-  `ACTIVE_TEXT_FIXED`, and longitudinal L are still prospective.
-- **Clean scientific child:** none currently admitted. CompilerGym-derived
-  children are task-exposed; rule-game `bootstrap_v3` is quarantined as
-  `DEV_UNVERIFIED_PROVENANCE` until the ancestry guard exists.
-- **Architecture/protocol:** compact PCFL + clean-lineage deliberation is
-  source-bound but awaits exact human approval before its five-role review.
-- **Manuscript:** `main.tex` still contains the earlier CompilerGym/parenting
-  headline, unresolved `TBD`/`UNPROVEN` text, and no main figures or frozen
-  result manifest. The proposed migration is in
-  `PCFL_MANUSCRIPT_MIGRATION.md`.
+- **Full Experience Models claim:** not established. The minimum decisive
+  program is now only three studies: one selective writer (`W0`, plus one
+  old/new coexistence canary), one exact two-cycle mechanism relay (`M-core`),
+  and one clean five-branch lifetime study (`L-core`).
+- **What is positive:** a useful-oracle mini-Sudoku corpus beats an
+  equal-marginal corrupt corpus in all three adapter-training seeds (`+2`,
+  `+2`, and `+5` exact solves in paired differences). This is repeatable
+  directional material transfer at one small resolution, not yet selective
+  writing, child-authored experience, SLEEP, or parenting.
+- **Writer:** not qualified. Lower learning rate preserves the same broad
+  habit; response-prefix masking reduces spill but erases acquisition. The
+  next eligible test is a fresh semantic-action exact-row carrier followed by
+  exactly four canonical W0 fits only if the carrier passes. A bounded
+  preservation-KL diagnostic is still being reduced, but cannot substitute
+  for semantic conditional binding.
+- **Mechanism:** the exact M-core design is closed watcher-side. It uses
+  `FULL_AUTH`, `SOURCE_BINDING_SHUFFLED`, and `DREAM_NULL`, each at two SLEEPs,
+  with CPU/text closure, a two-root kill gate, eight-root DEV, and a fresh
+  16-root confirmation. It cannot begin LoRA evidence until W0 and the one
+  coexistence canary qualify.
+- **Parenting:** no useful lesson has qualified. Fitting historical
+  lesson-conditioned continuations harmed both lesson and sham children. A
+  matched visible process card then produced the same solve count as sham
+  (`1/16` each); its `7/16` versus `4/16` format-validity difference is only a
+  teacher-present format signal. No clean parented scientific adult exists.
+- **Lifetime:** the clean design is independently raised parented versus
+  active matched-sham childhoods, each forked into RUN/FROZEN, plus concurrent
+  `P-TEXT`. Historical CompilerGym lives remain development evidence because
+  generation/panel/childhood controls were not confirmation-grade.
+- **Manuscript:** `main.tex` still contains the earlier CompilerGym-first
+  headline, unresolved `TBD`/`UNPROVEN` text, no M-core study, no main figures,
+  and no frozen result manifest. Do not polish claims ahead of evidence; keep
+  the abstract honest to the highest sealed gate by the abstract freeze.
 - **Build:** the official ICLR 2027 style file is not present locally, so the
   upload-form PDF has not been rendered or visually audited.
+
+## Critical execution order
+
+1. Pass or falsify fresh semantic W0; classify storage, extraction, and
+   locality separately rather than starting another broad hyperparameter
+   sweep.
+2. Pass one old/new cumulative coexistence canary.
+3. Close M-core on CPU/exact text, then spend at most two LoRA roots before
+   promotion. Full confirmation is roughly `26--56` A40-hours under the
+   current fit estimate; a broken instrument should die below five.
+4. Qualify one actually useful visible lesson against matched sham and
+   no-teacher before any parenting-derived fit.
+5. Raise clean childhood roots only after one-SLEEP parent-deleted persistence
+   and adult-extension gates pass; then run the five deployment branches on
+   every independent root.
+6. Run semantic rate--distortion only after connected utility; compression is
+   not an upstream gate.
+
+Controlling scientific synthesis:
+`research_notes/2026-09-12_end_to_end_goal_closure_synthesis.md`.
 
 None of these statuses can be cleared by an exploratory score or by relabeling
 a development artifact. Each requires the evidence named below.
