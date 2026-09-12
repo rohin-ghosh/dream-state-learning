@@ -1615,3 +1615,21 @@ GPU experiment remains the closed, still-unratified V10R1 multi-key
 conditional-writer gateway. C11 remains dormant. Node-1 `n1_cf_fit_b` was
 terminated during fitting and produced no scientific result; do not count it
 as a negative cell.
+## [Codex] 2026-09-12 02:56 UTC — independent paper gate and V10R1 implementation-risk audit bound; current fits verified live
+
+Two fresh read-only audits are now committed and pushed. `23bd5b85` records
+the claim-by-claim paper gate: the current manuscript supports a rigorous
+writer/failure-characterization paper, not yet the intended Dream--LoRA--Think
+paper; H1 remains unverified and compression is unsupported. `3fed307f`
+records the V10R1 pre-implementation hazards: the generic trainers/probes may
+silently change dose, mask/EOS boundaries, packing, fit identity, raw output
+bytes, likelihood arithmetic, and finality, so a ratified V10R1 must use its
+dedicated three-file path and exact CPU receipts. V10R1 remains unratified and
+unimplemented; no execution authority follows.
+
+Both node queue-runner handles were reverified live (`node1 pid 207904`,
+`node2 pid 1823897`). Node 2 child-frame seed-2 variants `b/c` have completed
+banks 0--1 and are fitting bank 2; taught `t` has completed bank 0. Node 1
+child-frame `c` and the same-corpus matched-seed refit are live. No partial
+bank result is promoted. C11 remains dormant. No job was launched, stopped, or
+modified by this audit.
