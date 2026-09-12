@@ -312,7 +312,8 @@ paper claims. The minimum decisive paper program is only three studies:
    organization decision, and SLEEP-dependent delayed old-plus-new action;
    use standalone `S` only as a one-to-three-root feasibility gate; and
 3. run one five-branch `L-core` lifetime study (`P-RUN`, `P-FROZEN`,
-   `SHAM-RUN`, `SHAM-FROZEN`, `P-TEXT`).
+   `N-RUN`, `N-FROZEN`, `P-TEXT`), where `N` is the matched no-teacher child;
+   active sham remains only in upstream lesson qualification.
 
 Compression remains a downstream semantic rate--distortion endpoint after
 connected utility, not a prerequisite for starting M/L. Detailed W/S/M
@@ -517,9 +518,8 @@ caches, and query state, begin with four deployment branches per root:
 
 - `P-RUN`: parented adult, gated SLEEP continues;
 - `P-FROZEN`: matched parented adult, shadow sleeps, no weight promotion;
-- `SHAM-RUN`: active token/opportunity-matched sham-child adult, gated SLEEP
-  continues;
-- `SHAM-FROZEN`: the same sham-child adult, shadow sleeps only.
+- `N-RUN`: matched no-teacher adult, gated SLEEP continues;
+- `N-FROZEN`: the same no-teacher adult, shadow sleeps only.
 
 At examination cut `Tj`, let `V_c(Tj)` be the fixed equal-weight value for
 condition `c`. Define entry-adjusted cumulative value as the time-normalized
@@ -528,7 +528,7 @@ primary interaction is
 
 ```text
 D = (AUC[P-RUN] - AUC[P-FROZEN])
-  - (AUC[SHAM-RUN] - AUC[SHAM-FROZEN]).
+  - (AUC[N-RUN] - AUC[N-FROZEN]).
 ```
 
 This first release is a bounded parenting-by-SLEEP interaction. Test in fixed
@@ -587,10 +587,16 @@ record. Otherwise launch order and earlier children change later treatments,
 and the parent—not the child block—becomes the replication unit. A one-time
 parametric bootstrap is a distinct pre-child intervention and is omitted from
 the minimum unless feasibility requires it; if used, it must be identical in
-P and SHAM and the lifetime claim becomes conditional on that bootstrap.
+P and N and the lifetime claim becomes conditional on that bootstrap.
 Deployment SLEEP must extend the sealed adult adapter without retaining a
 hidden childhood text store. Full clean-lineage audit:
 `research_notes/analysis/2026-09-12_clean_one_parent_lcore_watcher_audit.md`.
+The control-resolution addendum supersedes that audit's SHAM recommendation:
+`research_notes/analysis/2026-09-12_lcore_sham_vs_regular_control_addendum.md`.
+Use targeted lesson versus active sham versus no-teacher only to qualify one
+lesson before childhood. The final no-teacher pair estimates the total exact
+parenting package; it does not isolate one correction sentence. A secondary
+sterile raw-base exam may locate absolute level but does not enter `D`.
 
 No exact confirmation root count is currently defensible. Repeated cuts reduce
 measurement error inside a root but do not increase learner `N`. Before

@@ -62,7 +62,13 @@ DREAM, and two SLEEP writes together rather than testing storage alone.
 Raise fresh children in matched pairs:
 
 - one receives useful adaptive parenting;
-- one receives the same amount of plausible but non-targeted teacher contact.
+- one receives no teacher, while otherwise receiving the same tasks, child
+  thinking budget, action opportunities, SLEEP policy, and saved ages.
+
+Before that expensive comparison, each candidate lesson is tested cheaply
+against both a token-matched plausible sham lesson and no teacher. The lesson
+must improve useful action, and the sham must not be harmful. Sham qualifies
+teaching material; it is not the final regular-agent childhood.
 
 After childhood, delete both teachers and all classroom text. Fork each adult:
 
@@ -116,4 +122,3 @@ parenting, arbitrary open-world graph learning, or indefinite improvement.
 4. Qualify one lesson that improves a real visible action before fitting it.
 5. Raise clean children, delete the classroom, and run the lifetime branches.
 6. Measure semantic compression only after connected utility works.
-

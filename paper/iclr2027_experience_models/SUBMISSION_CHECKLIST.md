@@ -29,8 +29,9 @@
   teacher-present format signal, and every extra complete-format output still
   violated puzzle constraints. No clean parented scientific adult exists.
 - **Lifetime:** the clean design is independently raised parented versus
-  active matched-sham childhoods, each forked into RUN/FROZEN, plus concurrent
-  `P-TEXT`. Historical CompilerGym lives remain development evidence because
+  matched no-teacher childhoods, each forked into RUN/FROZEN, plus concurrent
+  `P-TEXT`. Active sham is used only to qualify lesson material upstream.
+  Historical CompilerGym lives remain development evidence because
   generation/panel/childhood controls were not confirmation-grade.
 - **Manuscript:** `main.tex` still contains the earlier CompilerGym-first
   headline, unresolved `TBD`/`UNPROVEN` text, no M-core study, no main figures,
