@@ -4885,3 +4885,17 @@ unresolved in standalone summaries, and spell selected counts process1 versus
 active2 instead of apparent fraction1/2. All eight receipt hashes checked by
 reviewer; no teaching-efficacy certification inferred. Six-file paper update
 still preserves canonical abstract/tables/appendix and UNSENT collaborator.
+
+## [Codex watcher] 2026-09-12 17:08 UTC — repaired fresh-solution behavioral reread is verified live
+
+Read-only node-3 inspection verifies attempt 2 of the CPU-prepared fresh
+behavior panel is now executing on GPUs 1/2/3. Controllers 151210/151303/
+151403 and their `run_reasoning_neutral` descendants are present; each device
+holds ~38.5 GiB at 97--100% utilization. The bound preparation manifest is
+`d317c215...664e`, root
+`astra_fresh_behavior_panel_20260912_attempt2`. This is a zero-new-fit reread
+of six inherited useful/corrupt adapters on one shared 16-puzzle panel with
+exact labeled solution-grid nonoverlap from the historical 32+16 items. It is
+an exploratory cross-solution behavioral-transport check, not independent-
+data replication, parenting, H1/H2, or clean-lineage evidence. Do not infer a
+result until all paired OFF/ON receipts and terminal reduction are sealed.
