@@ -1,6 +1,12 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
+Latest reconciliation: **2026-09-12 08:04 UTC**. W0 attempt2 has four fit DONE
+receipts and ongoing evaluation, not a terminal result. SEQ-061 records B0
+postwrite instrumentation with zero neutral articulation and pending review.
+Turing owns selection-custody runner/lineage integration; James owns NEW
+`run_adult_v1.py`/tests; Averroes captures later A1/A2 banks read-only.
+Official model authentication is still unresolved/fail-closed; no clean launch.
 Session start observed 2026-09-12 06:14 UTC (2026-09-11 23:14 Pacific).
 Recovered checkout: main, `a45baa2f77437a35e51ebe1034bf1c70deea4233`.
 Authority: current `AGENTS.md` standing authorization and launch prompt §15;
