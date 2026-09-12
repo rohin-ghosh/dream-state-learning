@@ -1,0 +1,1691 @@
+{
+  "conditional_proxies": {
+    "process_pair_analog_nontraining_minutes": 16.45602778673172,
+    "process_pair_record_analog_minutes": 16.734361120065053,
+    "scope": "Linear observed-charge proxies only, not prediction intervals; process native lengths not known.",
+    "three_fit_readout_pairs_minutes": 50.20308336019516,
+    "three_pairs_with_new_formation_each_minutes": 62.79893155097962
+  },
+  "full_reservation_minutes_sum": 20.932977183659872,
+  "method": "Cost fields only; no scientific outcome reduction. Call latency = response.ended - request.started, empirical type-7 linear percentiles. Full reservation includes observation delay, not measured GPU utilization.",
+  "phases": {
+    "formation": {
+      "capsule_bytes": 62478,
+      "capsule_sha256": "05b9177bb83e800f4f9c10bbc5e34c27c7dd68e2fabe9c18c006c12e6971f90e",
+      "collection_seconds": 26.146589692005364,
+      "controller_seconds": null,
+      "full_reservation_seconds": 251.9169638156891,
+      "groups": {
+        "formation": {
+          "calls": 60,
+          "input_tokens": 23811,
+          "max_seconds": 2.6644112799986033,
+          "output_ceiling": 18480,
+          "output_tokens": 1379,
+          "p50_seconds": 0.48286623649983085,
+          "p95_seconds": 1.622434043201791,
+          "seconds": 41.37269973500224
+        },
+        "formation/parent": {
+          "calls": 4,
+          "input_tokens": 2822,
+          "max_seconds": 2.62028108999948,
+          "output_ceiling": 800,
+          "output_tokens": 267,
+          "p50_seconds": 1.8678465220000362,
+          "p95_seconds": 2.5483179845992705,
+          "seconds": 7.849290428996028
+        },
+        "formation/record": {
+          "calls": 12,
+          "input_tokens": 3357,
+          "max_seconds": 1.123571094001818,
+          "output_ceiling": 1200,
+          "output_tokens": 439,
+          "p50_seconds": 1.0880550775000302,
+          "p95_seconds": 1.1229546677521285,
+          "seconds": 12.9017763869997
+        },
+        "formation/restate": {
+          "calls": 4,
+          "input_tokens": 455,
+          "max_seconds": 2.6644112799986033,
+          "output_ceiling": 480,
+          "output_tokens": 202,
+          "p50_seconds": 1.0899215184981585,
+          "p95_seconds": 2.4347812241485367,
+          "seconds": 5.8342962189999525
+        },
+        "formation/wake": {
+          "calls": 40,
+          "input_tokens": 17177,
+          "max_seconds": 0.5698312599997735,
+          "output_ceiling": 16000,
+          "output_tokens": 471,
+          "p50_seconds": 0.3508550334991014,
+          "p95_seconds": 0.49508697834680765,
+          "seconds": 14.787336700006563
+        }
+      },
+      "metadata_bytes": 513666,
+      "metadata_files_verified": 141,
+      "process_to_backend_ready_seconds": {
+        "formation": 37.925703684995824
+      },
+      "raw_calls": [
+        {
+          "cell": "formation",
+          "input_tokens": 330,
+          "output_ceiling": 400,
+          "output_tokens": 15,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0000.request.json",
+          "role": "wake",
+          "seconds": 0.4716911540017463
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 362,
+          "output_ceiling": 400,
+          "output_tokens": 9,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0001.request.json",
+          "role": "wake",
+          "seconds": 0.2834720769969863
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 388,
+          "output_ceiling": 400,
+          "output_tokens": 19,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0002.request.json",
+          "role": "wake",
+          "seconds": 0.5698312599997735
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 420,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0003.request.json",
+          "role": "wake",
+          "seconds": 0.23141488999681314
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 497,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0004.request.json",
+          "role": "wake",
+          "seconds": 0.3503467240007012
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 1079,
+          "output_ceiling": 200,
+          "output_tokens": 87,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0005.request.json",
+          "role": "parent",
+          "seconds": 2.62028108999948
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 134,
+          "output_ceiling": 120,
+          "output_tokens": 93,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0006.request.json",
+          "role": "restate",
+          "seconds": 2.6644112799986033
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 428,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0007.request.json",
+          "role": "wake",
+          "seconds": 0.4907455270003993
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0008.request.json",
+          "role": "record",
+          "seconds": 1.123571094001818
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 461,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0009.request.json",
+          "role": "wake",
+          "seconds": 0.4898056180027197
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0010.request.json",
+          "role": "record",
+          "seconds": 1.0580779439987964
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 494,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0011.request.json",
+          "role": "wake",
+          "seconds": 0.32137944199348567
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0012.request.json",
+          "role": "record",
+          "seconds": 1.0858985529994243
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 521,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0013.request.json",
+          "role": "wake",
+          "seconds": 0.20918017800431699
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 598,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0014.request.json",
+          "role": "wake",
+          "seconds": 0.36127802600094583
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 330,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0015.request.json",
+          "role": "wake",
+          "seconds": 0.483076019998407
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 363,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0016.request.json",
+          "role": "wake",
+          "seconds": 0.4841646280037821
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 396,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0017.request.json",
+          "role": "wake",
+          "seconds": 0.3144257920066593
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 423,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0018.request.json",
+          "role": "wake",
+          "seconds": 0.20644444499339443
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 500,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0019.request.json",
+          "role": "wake",
+          "seconds": 0.3493258749949746
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 1082,
+          "output_ceiling": 200,
+          "output_tokens": 74,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0020.request.json",
+          "role": "parent",
+          "seconds": 2.1405270539980847
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 121,
+          "output_ceiling": 120,
+          "output_tokens": 39,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0021.request.json",
+          "role": "restate",
+          "seconds": 1.1335442409981624
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 374,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0022.request.json",
+          "role": "wake",
+          "seconds": 0.48521960499783745
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0023.request.json",
+          "role": "record",
+          "seconds": 1.1224503190023825
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 407,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0024.request.json",
+          "role": "wake",
+          "seconds": 0.4912897999965935
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0025.request.json",
+          "role": "record",
+          "seconds": 1.1134454349958105
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 440,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0026.request.json",
+          "role": "wake",
+          "seconds": 0.32032747099583503
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 31,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0027.request.json",
+          "role": "record",
+          "seconds": 0.9150027330033481
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 467,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0028.request.json",
+          "role": "wake",
+          "seconds": 0.21170940299634822
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 544,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0029.request.json",
+          "role": "wake",
+          "seconds": 0.36042703900602646
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 330,
+          "output_ceiling": 400,
+          "output_tokens": 15,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0030.request.json",
+          "role": "wake",
+          "seconds": 0.45362508299876936
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 362,
+          "output_ceiling": 400,
+          "output_tokens": 9,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0031.request.json",
+          "role": "wake",
+          "seconds": 0.2840601420029998
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 388,
+          "output_ceiling": 400,
+          "output_tokens": 19,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0032.request.json",
+          "role": "wake",
+          "seconds": 0.5672333670008811
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 420,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0033.request.json",
+          "role": "wake",
+          "seconds": 0.22438021400012076
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 497,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0034.request.json",
+          "role": "wake",
+          "seconds": 0.34007431500504026
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 329,
+          "output_ceiling": 200,
+          "output_tokens": 51,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0035.request.json",
+          "role": "parent",
+          "seconds": 1.4933162949964753
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 98,
+          "output_ceiling": 120,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0036.request.json",
+          "role": "restate",
+          "seconds": 1.0462987959981547
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 372,
+          "output_ceiling": 400,
+          "output_tokens": 15,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0037.request.json",
+          "role": "wake",
+          "seconds": 0.45796646700182464
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 281,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0038.request.json",
+          "role": "record",
+          "seconds": 1.1140024249980343
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 404,
+          "output_ceiling": 400,
+          "output_tokens": 15,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0039.request.json",
+          "role": "wake",
+          "seconds": 0.4563017010004842
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 281,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0040.request.json",
+          "role": "record",
+          "seconds": 1.0586559529983788
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 436,
+          "output_ceiling": 400,
+          "output_tokens": 9,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0041.request.json",
+          "role": "wake",
+          "seconds": 0.2912924260017462
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 275,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0042.request.json",
+          "role": "record",
+          "seconds": 1.0575918100003037
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 462,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0043.request.json",
+          "role": "wake",
+          "seconds": 0.20685301200137474
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 539,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0044.request.json",
+          "role": "wake",
+          "seconds": 0.3513633429975016
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 330,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0045.request.json",
+          "role": "wake",
+          "seconds": 0.4822780899994541
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 363,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0046.request.json",
+          "role": "wake",
+          "seconds": 0.4826564530012547
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 396,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0047.request.json",
+          "role": "wake",
+          "seconds": 0.3122489450033754
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 423,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0048.request.json",
+          "role": "wake",
+          "seconds": 0.19976121000217972
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 500,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0049.request.json",
+          "role": "wake",
+          "seconds": 0.3408499090000987
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 332,
+          "output_ceiling": 200,
+          "output_tokens": 55,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0050.request.json",
+          "role": "parent",
+          "seconds": 1.5951659900019877
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 102,
+          "output_ceiling": 120,
+          "output_tokens": 34,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0051.request.json",
+          "role": "restate",
+          "seconds": 0.9900419020050322
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 370,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0052.request.json",
+          "role": "wake",
+          "seconds": 0.48664217999612447
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0053.request.json",
+          "role": "record",
+          "seconds": 1.1053497539978707
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 403,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0054.request.json",
+          "role": "wake",
+          "seconds": 0.48530205299903173
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 282,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0055.request.json",
+          "role": "record",
+          "seconds": 1.0575187650028965
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 436,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0056.request.json",
+          "role": "wake",
+          "seconds": 0.3199498960020719
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0057.request.json",
+          "role": "record",
+          "seconds": 1.090211602000636
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 463,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0058.request.json",
+          "role": "wake",
+          "seconds": 0.2074256650012103
+        },
+        {
+          "cell": "formation",
+          "input_tokens": 540,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1/formation/data/calls/0059.request.json",
+          "role": "wake",
+          "seconds": 0.351517255003273
+        }
+      ],
+      "release_utc": "2026-09-12T21:16:18.781282+00:00",
+      "totals": {
+        "calls": 60,
+        "input_tokens": 23811,
+        "max_seconds": 2.6644112799986033,
+        "output_ceiling": 18480,
+        "output_tokens": 1379,
+        "p50_seconds": 0.48286623649983085,
+        "p95_seconds": 1.622434043201791,
+        "seconds": 41.37269973500224
+      },
+      "validation_sha256": "44cd5dd91abb2fa2265330951341d53ac815fbcea029e58a435450c1ef1efbd4",
+      "worker_seconds": 116.0964655179996
+    },
+    "readout": {
+      "capsule_bytes": 90126,
+      "capsule_sha256": "f8f2bb688da189ebb8f70c67725f1c008db49d6c5b2800abdc58a0dd4fcb7458",
+      "collection_seconds": 53.98266968000098,
+      "controller_seconds": 595.1371255380072,
+      "full_reservation_seconds": 642.8936836719513,
+      "groups": {
+        "A_ON": {
+          "calls": 29,
+          "input_tokens": 10107,
+          "max_seconds": 1.5535611680097645,
+          "output_ceiling": 8300,
+          "output_tokens": 634,
+          "p50_seconds": 0.6820465280034114,
+          "p95_seconds": 1.531078784604324,
+          "seconds": 26.555603663087822
+        },
+        "A_ON/record": {
+          "calls": 11,
+          "input_tokens": 3018,
+          "max_seconds": 1.5535611680097645,
+          "output_ceiling": 1100,
+          "output_tokens": 402,
+          "p50_seconds": 1.478699711005902,
+          "p95_seconds": 1.5499102545072674,
+          "seconds": 16.420158488035668
+        },
+        "A_ON/wake": {
+          "calls": 18,
+          "input_tokens": 7089,
+          "max_seconds": 0.9510596870095469,
+          "output_ceiling": 7200,
+          "output_tokens": 232,
+          "p50_seconds": 0.5837318545090966,
+          "p95_seconds": 0.7891673219048241,
+          "seconds": 10.135445175052155
+        },
+        "OFF": {
+          "calls": 32,
+          "input_tokens": 11296,
+          "max_seconds": 1.1191568150024978,
+          "output_ceiling": 9200,
+          "output_tokens": 677,
+          "p50_seconds": 0.48361632550222566,
+          "p95_seconds": 1.1034485466527257,
+          "seconds": 20.350323162994755
+        },
+        "OFF/record": {
+          "calls": 12,
+          "input_tokens": 3288,
+          "max_seconds": 1.1191568150024978,
+          "output_ceiling": 1200,
+          "output_tokens": 441,
+          "p50_seconds": 1.0851735189971805,
+          "p95_seconds": 1.1162901160005276,
+          "seconds": 12.973257667996222
+        },
+        "OFF/wake": {
+          "calls": 20,
+          "input_tokens": 8008,
+          "max_seconds": 0.501086068994482,
+          "output_ceiling": 8000,
+          "output_tokens": 236,
+          "p50_seconds": 0.34905759550019866,
+          "p95_seconds": 0.48473407810270147,
+          "seconds": 7.377065494998533
+        },
+        "P_ON": {
+          "calls": 29,
+          "input_tokens": 10107,
+          "max_seconds": 1.5708345790044405,
+          "output_ceiling": 8300,
+          "output_tokens": 634,
+          "p50_seconds": 0.6866269260062836,
+          "p95_seconds": 1.5555295325990302,
+          "seconds": 26.643139012012398
+        },
+        "P_ON/record": {
+          "calls": 11,
+          "input_tokens": 3018,
+          "max_seconds": 1.5708345790044405,
+          "output_ceiling": 1100,
+          "output_tokens": 402,
+          "p50_seconds": 1.4803949199995259,
+          "p95_seconds": 1.563541907002218,
+          "seconds": 16.416059071991185
+        },
+        "P_ON/wake": {
+          "calls": 18,
+          "input_tokens": 7089,
+          "max_seconds": 1.0044078360006097,
+          "output_ceiling": 7200,
+          "output_tokens": 232,
+          "p50_seconds": 0.579070377498283,
+          "p95_seconds": 0.8034186235498052,
+          "seconds": 10.227079940021213
+        }
+      },
+      "metadata_bytes": 837242,
+      "metadata_files_verified": 232,
+      "process_to_backend_ready_seconds": {
+        "A_ON": 74.49586172300042,
+        "OFF": 76.16997432699281,
+        "P_ON": 79.73797410899715
+      },
+      "raw_calls": [
+        {
+          "cell": "A_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0000.request.json",
+          "role": "wake",
+          "seconds": 0.760598081003991
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0001.request.json",
+          "role": "record",
+          "seconds": 1.5535611680097645
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0002.request.json",
+          "role": "wake",
+          "seconds": 0.68279078300111
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0003.request.json",
+          "role": "record",
+          "seconds": 1.5462593410047702
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0004.request.json",
+          "role": "wake",
+          "seconds": 0.4427294820052339
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0005.request.json",
+          "role": "record",
+          "seconds": 1.4714984820020618
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0006.request.json",
+          "role": "wake",
+          "seconds": 0.3015629709989298
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0007.request.json",
+          "role": "wake",
+          "seconds": 0.490915632006363
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0008.request.json",
+          "role": "wake",
+          "seconds": 0.6792437969997991
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0009.request.json",
+          "role": "record",
+          "seconds": 1.478699711005902
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0010.request.json",
+          "role": "wake",
+          "seconds": 0.6799617319920799
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0011.request.json",
+          "role": "record",
+          "seconds": 1.4722932960139588
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0012.request.json",
+          "role": "wake",
+          "seconds": 0.44251792499562725
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0013.request.json",
+          "role": "record",
+          "seconds": 1.5018357130029472
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0014.request.json",
+          "role": "wake",
+          "seconds": 0.2875131400069222
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0015.request.json",
+          "role": "wake",
+          "seconds": 0.49162589100888
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0016.request.json",
+          "role": "wake",
+          "seconds": 0.6783497340074973
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0017.request.json",
+          "role": "record",
+          "seconds": 1.4756903709931066
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0018.request.json",
+          "role": "wake",
+          "seconds": 0.6758378180093132
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0019.request.json",
+          "role": "record",
+          "seconds": 1.4647926739999093
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0020.request.json",
+          "role": "wake",
+          "seconds": 0.43902544799493626
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0021.request.json",
+          "role": "record",
+          "seconds": 1.5083079500036547
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0022.request.json",
+          "role": "wake",
+          "seconds": 0.28791093299514614
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0023.request.json",
+          "role": "wake",
+          "seconds": 0.4836720540042734
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0024.request.json",
+          "role": "wake",
+          "seconds": 0.6780835390090942
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0025.request.json",
+          "role": "record",
+          "seconds": 1.4810269349982264
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0026.request.json",
+          "role": "wake",
+          "seconds": 0.6820465280034114
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0027.request.json",
+          "role": "record",
+          "seconds": 1.4661928470013663
+        },
+        {
+          "cell": "A_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 23,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/A_ON/data/calls/0028.request.json",
+          "role": "wake",
+          "seconds": 0.9510596870095469
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0000.request.json",
+          "role": "wake",
+          "seconds": 0.501086068994482
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0001.request.json",
+          "role": "record",
+          "seconds": 1.1191568150024978
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0002.request.json",
+          "role": "wake",
+          "seconds": 0.48387344700313406
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0003.request.json",
+          "role": "record",
+          "seconds": 1.1139446349989157
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0004.request.json",
+          "role": "wake",
+          "seconds": 0.3152159160017618
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0005.request.json",
+          "role": "record",
+          "seconds": 1.0574021889988217
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0006.request.json",
+          "role": "wake",
+          "seconds": 0.22261523800261784
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0007.request.json",
+          "role": "wake",
+          "seconds": 0.3488598900003126
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0008.request.json",
+          "role": "wake",
+          "seconds": 0.4810943490010686
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0009.request.json",
+          "role": "record",
+          "seconds": 1.0944891449980787
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0010.request.json",
+          "role": "wake",
+          "seconds": 0.4836391150020063
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0011.request.json",
+          "role": "record",
+          "seconds": 1.0566844100030721
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0012.request.json",
+          "role": "wake",
+          "seconds": 0.3143027149999398
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0013.request.json",
+          "role": "record",
+          "seconds": 1.084903677998227
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0014.request.json",
+          "role": "wake",
+          "seconds": 0.20521101899794303
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0015.request.json",
+          "role": "wake",
+          "seconds": 0.3486781720057479
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0016.request.json",
+          "role": "wake",
+          "seconds": 0.48359353600244503
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0017.request.json",
+          "role": "record",
+          "seconds": 1.094860838005843
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0018.request.json",
+          "role": "wake",
+          "seconds": 0.48382325199781917
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0019.request.json",
+          "role": "record",
+          "seconds": 1.0569200559984893
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0020.request.json",
+          "role": "wake",
+          "seconds": 0.313966043999244
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0021.request.json",
+          "role": "record",
+          "seconds": 1.0858174029999645
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0022.request.json",
+          "role": "wake",
+          "seconds": 0.2051709369989112
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0023.request.json",
+          "role": "wake",
+          "seconds": 0.34925530100008473
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0024.request.json",
+          "role": "wake",
+          "seconds": 0.4821056459986721
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0025.request.json",
+          "role": "record",
+          "seconds": 1.0666539019948686
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0026.request.json",
+          "role": "wake",
+          "seconds": 0.4835151989973383
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0027.request.json",
+          "role": "record",
+          "seconds": 1.0569812370013096
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0028.request.json",
+          "role": "wake",
+          "seconds": 0.31385514000430703
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0029.request.json",
+          "role": "record",
+          "seconds": 1.085443359996134
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0030.request.json",
+          "role": "wake",
+          "seconds": 0.20639500599645544
+        },
+        {
+          "cell": "OFF",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/OFF/data/calls/0031.request.json",
+          "role": "wake",
+          "seconds": 0.3508095039942418
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0000.request.json",
+          "role": "wake",
+          "seconds": 0.7679499389996636
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0001.request.json",
+          "role": "record",
+          "seconds": 1.5708345790044405
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0002.request.json",
+          "role": "wake",
+          "seconds": 0.6862368449947098
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 38,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0003.request.json",
+          "role": "record",
+          "seconds": 1.5562492349999957
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0004.request.json",
+          "role": "wake",
+          "seconds": 0.44843811100145103
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0005.request.json",
+          "role": "record",
+          "seconds": 1.4822813110004063
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0006.request.json",
+          "role": "wake",
+          "seconds": 0.3040488160040695
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0007.request.json",
+          "role": "wake",
+          "seconds": 0.4935586110004806
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0008.request.json",
+          "role": "wake",
+          "seconds": 0.6866269260062836
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0009.request.json",
+          "role": "record",
+          "seconds": 1.5131450669941842
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0010.request.json",
+          "role": "wake",
+          "seconds": 0.7609701180044794
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0011.request.json",
+          "role": "record",
+          "seconds": 1.5544499789975816
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0012.request.json",
+          "role": "wake",
+          "seconds": 0.43947458800539607
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0013.request.json",
+          "role": "record",
+          "seconds": 1.475572370000009
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0014.request.json",
+          "role": "wake",
+          "seconds": 0.2849461939986213
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0015.request.json",
+          "role": "wake",
+          "seconds": 0.48435509599949
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0016.request.json",
+          "role": "wake",
+          "seconds": 0.6649488960028975
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0017.request.json",
+          "role": "record",
+          "seconds": 1.4473951660038438
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0018.request.json",
+          "role": "wake",
+          "seconds": 0.6667194309993647
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0019.request.json",
+          "role": "record",
+          "seconds": 1.4371684399957303
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 10,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0020.request.json",
+          "role": "wake",
+          "seconds": 0.4360094920048141
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 270,
+          "output_ceiling": 100,
+          "output_tokens": 37,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0021.request.json",
+          "role": "record",
+          "seconds": 1.4803949199995259
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 421,
+          "output_ceiling": 400,
+          "output_tokens": 6,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0022.request.json",
+          "role": "wake",
+          "seconds": 0.28421357800107216
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 498,
+          "output_ceiling": 400,
+          "output_tokens": 11,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0023.request.json",
+          "role": "wake",
+          "seconds": 0.4814206369992462
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 328,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0024.request.json",
+          "role": "wake",
+          "seconds": 0.6645821439960855
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0025.request.json",
+          "role": "record",
+          "seconds": 1.4458846439956687
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 361,
+          "output_ceiling": 400,
+          "output_tokens": 16,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0026.request.json",
+          "role": "wake",
+          "seconds": 0.6681726820024778
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 276,
+          "output_ceiling": 100,
+          "output_tokens": 36,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0027.request.json",
+          "role": "record",
+          "seconds": 1.4526833609997993
+        },
+        {
+          "cell": "P_ON",
+          "input_tokens": 394,
+          "output_ceiling": 400,
+          "output_tokens": 23,
+          "path": "astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1/run/P_ON/data/calls/0028.request.json",
+          "role": "wake",
+          "seconds": 1.0044078360006097
+        }
+      ],
+      "release_utc": "2026-09-12T21:50:03.514265+00:00",
+      "totals": {
+        "calls": 90,
+        "input_tokens": 31510,
+        "max_seconds": 1.5708345790044405,
+        "output_ceiling": 25800,
+        "output_tokens": 1945,
+        "p50_seconds": 0.6787967655036482,
+        "p95_seconds": 1.5313579177000065,
+        "seconds": 73.54906583809498
+      },
+      "validation_sha256": "9cfb499775ceee44cbffe7eaf14e25ced405a4a5865c8006ce45ee6b05d4f311",
+      "worker_seconds": 493.9823609360028
+    },
+    "write": {
+      "capsule_bytes": 101579,
+      "capsule_sha256": "26243e9a6436a859f7ed7a6ec1250a9e3a06496ec61c8eb3f85afe4d1ea308b4",
+      "collection_seconds": 22.495086221002566,
+      "controller_seconds": 230.66558617899864,
+      "fits": {
+        "A": {
+          "adapter_sha256": "5ea89adcf57956867f7bd7014ede004df0874c8ca82c4e72fc485ff121c681ab",
+          "epochs_run": 12,
+          "input_presentations": 7632,
+          "lora": {
+            "alpha": 16,
+            "dropout": 0.05,
+            "freeze_a": false,
+            "layers": "all",
+            "n_layers": 28,
+            "rank": 8,
+            "scaling": 2.0,
+            "target_modules": [
+              "q_proj",
+              "k_proj",
+              "v_proj",
+              "o_proj",
+              "gate_proj",
+              "up_proj",
+              "down_proj"
+            ],
+            "trainable_params": 20185088
+          },
+          "padded_input_positions": 7656,
+          "saved_dtypes": [
+            "F32"
+          ],
+          "saved_tensors": 392,
+          "steps": 12,
+          "target_presentations": 888,
+          "tensor_payload_bytes": 80740352,
+          "tokens": {
+            "context": 562,
+            "target": 74,
+            "target_by_category": {
+              "own_raw_record": 74
+            },
+            "target_by_view": {
+              "actual_record_request": 74
+            },
+            "total": 636
+          },
+          "tokens_per_s": 907.7,
+          "train_seconds": 8.4,
+          "train_tokens_seen": 7632,
+          "truncation": {
+            "context_tokens_dropped": 0,
+            "items_split": 0,
+            "items_truncated": 0,
+            "max_segment_tokens": 319,
+            "overflow": "split",
+            "segments_from_splits": 0,
+            "target_tokens_dropped": 0
+          },
+          "wall_seconds": 9.0
+        },
+        "P": {
+          "adapter_sha256": "c9f1fa5cd3391b407a0102856faa4926d6a550c799979026d399b55bd979868c",
+          "epochs_run": 12,
+          "input_presentations": 7656,
+          "lora": {
+            "alpha": 16,
+            "dropout": 0.05,
+            "freeze_a": false,
+            "layers": "all",
+            "n_layers": 28,
+            "rank": 8,
+            "scaling": 2.0,
+            "target_modules": [
+              "q_proj",
+              "k_proj",
+              "v_proj",
+              "o_proj",
+              "gate_proj",
+              "up_proj",
+              "down_proj"
+            ],
+            "trainable_params": 20185088
+          },
+          "padded_input_positions": 7680,
+          "saved_dtypes": [
+            "F32"
+          ],
+          "saved_tensors": 392,
+          "steps": 12,
+          "target_presentations": 888,
+          "tensor_payload_bytes": 80740352,
+          "tokens": {
+            "context": 564,
+            "target": 74,
+            "target_by_category": {
+              "own_raw_record": 74
+            },
+            "target_by_view": {
+              "actual_record_request": 74
+            },
+            "total": 638
+          },
+          "tokens_per_s": 918.0,
+          "train_seconds": 8.3,
+          "train_tokens_seen": 7656,
+          "truncation": {
+            "context_tokens_dropped": 0,
+            "items_split": 0,
+            "items_truncated": 0,
+            "max_segment_tokens": 320,
+            "overflow": "split",
+            "segments_from_splits": 0,
+            "target_tokens_dropped": 0
+          },
+          "wall_seconds": 8.9
+        }
+      },
+      "full_reservation_seconds": 361.1679835319519,
+      "metadata_bytes": 1205229,
+      "metadata_files_verified": 47,
+      "release_utc": "2026-09-12T21:36:38.820132+00:00",
+      "validation_sha256": "0ee749514a55aef897cf2a8b96b1d32d859eb638ae1e025d32e112632fab18d1",
+      "worker_seconds": 153.6544764920036
+    }
+  },
+  "prior_analysis_sha256": "8a8312d2f1b6b11b1b9e2b4887ed993657503304a657e54d9d265ac909c69bb0",
+  "worker_minutes_sum": 12.728888382433434
+}
