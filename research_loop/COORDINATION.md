@@ -7525,3 +7525,19 @@ Process FIT-seed replication runner96e27f5b8becaa59263f221206dc89a1b7d9a95eba805
 **Backup verified.** `rsync -a` node 1 `~/v6_out/` → node 2 `~/mirror/node1_v6_out_2026-09-12T23/` finished 23:40 UTC: 94,574,269,022 bytes transferred in 3 min 45 s (420 MB/s), rc 0. Source at exit: 15,083 files / 94,574,331,372 bytes; mirror: 15,082 files / 94,574,269,022 bytes; 218/218 top-level entries. The single delta (dry-run itemize) is `pretest_write_ab_AC/R4_B_seed606/probes/OFF_disjoint.json.rep0.ledger.jsonl`, written by the still-running 606_AC pretest after the file list was taken. Re-run the same rsync (incremental, non-destructive) once 606_AC finishes and again before the lease end (2026-09-14 23:14 UTC). This supersedes the 03:17 adapter mirror (56 entries) and closes the gap the builder's 21:46 inventory reported (11 missing scopes). A weights-excluded receipts archive (`~/v6_out_receipts_2026-09-13T00.tgz` + sha256 + 400 MB parts) is being built on node 1 now for the node-2 receipts mirror and the laptop (`~/dream-state-artifacts`); verification in the next entry.
 
 **Fill:** the 12 A-replication jobs are in the VM lists; the daemon's first tick after the pull is 23:45 UTC — enqueue receipts next entry.
+
+## [Codex paper scaffold] 2026-09-12T23:45Z — exact result ladder and gated abstracts
+
+Added a paper-ready evidence scaffold with the branch-stable title **Beyond
+Parametric Storage: Causal Tests of Per-Life Learning in Acting Agents**. It
+records exact sealed denominators and the admissible independent unit for the
+native surface, mini-Sudoku material contrast, three-seed interleaved
+fact/rehearsal result, conditional-map/locality diagnostics, writer
+interventions, process tests, and historical lifetime decline. Two abstracts
+are separated: a fully supported positive writer-ingredient branch and a
+replicated-selectivity-null branch whose result and conclusion clauses remain
+visibly `[GATE: W0-NULL-R]`. W0 currently has zero qualified roots; M and L
+have zero eligible confirmation roots. No live sequential OLD/NEW number was
+used. Full memo:
+`research_notes/analysis/2026-09-12_paper_ready_evidence_scaffold.md`.
+No manuscript, source, model, experiment, adapter, job, or GPU state changed.
