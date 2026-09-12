@@ -135,6 +135,27 @@ byte-replay-deterministic inference or use an immutable exogenous tape, with
 prompt/output hashes checked at every paired step. Exact evidence:
 `research_notes/2026-09-12_b0_attempt2_terminal_audit.md`.
 
+The subsequent fixed-lesson P0 material scout completed all 64 paired
+Reasoning Gym schedules in both arms, with unchanged local base hashes and no
+execution failure. It generated abundant public experience: the lesson arm
+recorded 1,903 measured actions and 1,913 post-outcome continuations; sham
+recorded 1,627 and 1,632. Yet the strict source judge admitted zero grounded
+child records in either arm. `missing-first-person-action` accounted for
+1,812 lesson and 1,556 sham rejections. Across schedules the lesson caused
+4.31 more measured actions per episode, while its mean best displayed score
+was only `.0209` higher (lesson higher on 14 schedules, sham on 13, 37 tied).
+The frozen writer preparation therefore returned
+`PAIRED_SKIP_INSUFFICIENT_MATERIAL` and ran zero optimizer steps.
+
+This is a failure of the exact static lesson -> child transcription path, not
+a failure of grounded action--outcome experience itself. Both ledgers retain
+the executed actions and public outcomes needed by S. The next parenting test
+should ask whether adaptive, target-blind process diagnosis changes a child's
+own plan and later action (`P0-COACH`); it should not make brittle first-person
+record syntax the intelligence claim. The S writer should continue to use
+mechanically joined public events, with child reflections as optional grounded
+enrichment rather than a prerequisite for factual experience.
+
 ## One ordered evidence ladder
 
 ### W0 — selective supplied writer
@@ -405,17 +426,23 @@ model, children, and task families.
    contract. If the unchanged writer fails, use the rank-8 cross-view x
    targeted-anchor screen above and confirm its winner on fresh roots. W1 is
    eligible only after a sealed/replayed W0 pass.
-3. Run S before any own-action/outcome-source or combined-organism claim.
-4. Close CPU M0 and the scripted oracle.
-5. Run exact-text M on four roots and extend to eight only if its frozen gate
+3. In parallel, run the no-write `P0-COACH` adaptive-parent test on fresh
+   homologous tasks. Only the child's own plan reaches the apply task; no
+   parent text or answer does. Do not retry the failed static record lesson by
+   increasing LoRA heat, because no eligible record reached the writer.
+4. Run S from mechanically joined executed-action/public-outcome events before
+   any own-action/outcome-source or combined-organism claim. Treat grounded
+   child reflections as enrichment, not a source prerequisite.
+5. Close CPU M0 and the scripted oracle.
+6. Run exact-text M on four roots and extend to eight only if its frozen gate
    passes.
-6. Run a PCFL-specific E0, then the presealed two-root LoRA core.
-7. Add complete controls and run at most eight LoRA M-DEV roots; freeze M and
+7. Run a PCFL-specific E0, then the presealed two-root LoRA core.
+8. Add complete controls and run at most eight LoRA M-DEV roots; freeze M and
    qualify ACTIVE_TEXT.
-8. While M is unresolved, rehearse only CPU/open lifetime plumbing and the
+9. While M is unresolved, rehearse only CPU/open lifetime plumbing and the
    two-cycle bridge. Scientific L adaptation waits for the learning mechanism
    freeze.
-9. Run eight-root L-DEV, then separately powered M and L confirmations. Launch
+10. Run eight-root L-DEV, then separately powered M and L confirmations. Launch
    the already-prebound P-TEXT branch only after the two factorial predicates
    pass.
-10. Run compression only after connected utility is established.
+11. Run compression only after connected utility is established.
