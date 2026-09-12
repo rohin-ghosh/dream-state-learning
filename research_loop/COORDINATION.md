@@ -6960,3 +6960,54 @@ Main reviewed interaction_v3 implementation and ran76tests+109subtests PASS. The
 Main76tests+109subtests and native76stdlib tests PASS on immutable610c6edd05ce9c85720ee6e992889badecc2c158. Native plan/model hash plus actual tokenizer/V3 causal-mask fixture pass; fixture is explicitly not experienced/training material. Plan7dae3ca492ed39545987ab8deb5f39631a40332d480ddb99292e5f083741c468, newroot~/astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1. The first /tmp preparer invocation lacked PYTHONPATH and failed at import before creating output; confirmed root absent, then corrected environment and prepared once. No GPU retry. Accepted formation-only next on node3GPU2 after fullvacancy: existing paired4tasks/arm,2parent exchanges/arm, fixedseed/caps/protocol, shared explicit relation definition; new neutral recap A contract and unrestricted child restatements. Parent inputs only training transcript. Main semantic assessment/allfour parent exchanges and unchanged first-two faithful records required before any actual-record material/write. Legacy synthetic v3 write disabled. No auto fit/readout, no discarded old decline.600s formation worker cap, existing1800s totalworker ledger, full controller/release cost measured separately; supplied leasefinishcutoffSep25 21:03UTC. Scripts/native receipts archived. Planck builds separate actual-record-to-V3fit bridge in /tmp; not yet executed.
 
 Conditional controller220273 is now absent and full GPU0 release verified21:07:40.395674UTC. Allsix phases COMPLETE; capsule2872407b46a80441eb7417657b9c4c46aed6243c1ff248f1bba944480509f133 contains1801validated metadata files, weights retained native. Independent rawphase/summary recounts MATCH. First analyzer output was TECHNICAL_PARTIAL solely because epoch-derived cost addition differed6.5e-8s from collector arithmetic and exceeded1e-8 comparison tolerance. Main preserved that output/original script, applied a narrow1e-6s derived-clock-sum tolerance with3regressions; scientific-scalar tolerance unchanged.54tests PASS, new separate output COMPLETE_INDEPENDENT_RAW_REDUCTION_NOT_SCIENTIFIC_VERDICT. No rawdata, score, capsule, timingcap or GPU run changed. Shortcut pure-candidate14tests PASS: REVISE train-only publicIDlookup64/64train32/32dev BOTHmaps, noEXPECTED input. No L1/Q0 claim regardless score; detailed outcome/retention review next. GPU1variedPID224587 remains live/reserved.
+
+## [Codex watcher] 2026-09-12 21:04 UTC — preserve already-launched grouped-view scout under its exact estimand
+
+Fable's 21:02 relay shows the lexical pair launched at 20:59, before the
+20:41 batching audit reached Astra.  Do not stop, retry, or alter it.  Preserve
+it as the prospectively fixed **same-batch lexical-gradient diagnostic**:
+target presentations and targets are paired, but all four copies of a source
+enter one mean-loss batch.  Therefore SINGLE_VIEW collapses four identical
+source gradients before Adam while FOUR_VIEW averages four lexical gradients;
+each source participates in ten source-specific optimizer updates, not forty
+temporally distinct replay encounters.  A positive result can motivate the
+predeclared scattered-view successor; it cannot establish repeated
+perception/replay.  A null does not falsify Rohin's temporal varied-perception
+hypothesis.  This interpretation changes no live process or gate.
+
+## [Codex watcher] 2026-09-12 21:05 UTC — full-program adjudication after benchmark, paper, and statistics attacks
+
+Independent recomputation of both preserved historical R2 analysis tables:
+across all nine completed lives,
+`advantage(1024)-advantage(384)=-0.03158` (SD `.03715`, SE `.01238`), with
+`0/9` positive; mean within-life slope over 384--1024 is `-.01804` per 1,000
+episodes.  The old `+.0194` average ON--OFF advantage is a finite average
+benefit, **not** a flywheel or increasing-lifetime result.  The confirmation
+must add novel information and separately require absolute late growth and
+retention.
+
+Keep the **five-branch root block** as the intended primary design because
+Rohin's paper explicitly tests parenting-by-SLEEP:
+`P-RUN, P-FROZEN, P-TEXT, N-RUN, N-FROZEN`.  The three-branch
+`DLT_RUN/DLT_FROZEN/ACTIVE_TEXT_NATIVE` design is an architecture-only fallback
+if parenting never qualifies; do not silently drop parenting to shrink the
+study.  Adopt the minimalist's cost-saving idea inside the five branches:
+reuse the same two-SLEEP causal M microcycle at one predeclared lifetime
+checkpoint, so M and L share the world, child, snapshots and reader instead of
+funding two unrelated headline worlds.
+
+Confirmation spine: one fresh five-branch root block is one `n`; seven
+exogenous information cuts; one root-specific fixed report deck reused only
+in sterile no-return clones; entry-centered AUC for parenting-by-SLEEP; and a
+separate noncompensatory conjunction of absolute late slope,
+anchor-to-terminal gain, old-skill retention, and `P-RUN` versus `P-TEXT`
+late/terminal superiority.  Sixteen roots is only a floor; a concealed
+variance-only rule after eight roots selects total `N in {16,24,32}`.  Run the
+strong evolving-text branch concurrently.  Rejected writes and
+treatment-caused failures remain adverse intention-to-treat outcomes.
+
+Critical path: Q0 writer -> equal-dose OLD/NEW coexistence -> zero-fit
+CPU/gold/exact-text theorem -> two-root M kill -> five-branch L-DEV and
+confirmation.  Qualifying one actually useful visible lesson proceeds in
+parallel.  Compression and the word `saturation` remain downstream optional
+claims.  This entry changes no job or GPU allocation.
