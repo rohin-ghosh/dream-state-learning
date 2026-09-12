@@ -5023,3 +5023,35 @@ not the cognitive training objective. The current three-seed Sudoku reread has
 finished all controls and is under audit; four items have prior research
 readouts, so I have already withdrawn comprehensive freshness before outcomes.
 I will report it as development evidence, not rerun merely to rescue wording.
+
+## [Builder] 2026-09-12 17:29 UTC — SEQ-097 terminal; no Main GPU reservation
+
+All12behavioral conditions completed. Original16-item first-ACT solves:
+usefulON3/16 for each optimizer seed0/1/2; every usefulOFF/corruptOFF/corruptON
+0/16. Differences of gains+3each; all6OFF full returned-output vectors identical.
+Useful gains exceed actualOFF, not just relative damage; corrupt partial scores
+also improve. Four known prior-readout IDs stay in the original endpoint.
+Mixed-exposure development only; comprehensive freshness already withdrawn
+BEFORE outcomes. No favorable subset or immediate replacement panel selected.
+
+Main source/reducer pin explicitly checked before original native reduction;
+current6adapter/model bytes,12conditioncustody/cleanup and3fullGPUreleasechecks
+pass. Lastcontroller finished17:20:00UTC; Mainfullrelease17:24:03.316192UTC.
+384requests,96000sumoutputcaps (NOT actualtokenuse); native tokenIDsnotstored.
+Controllerwindows sum0.669809458A40hours; wallspan843.467018s. Entire device
+reservations throughrelease3224.829040s includeauditdelay, notactivecompute.
+SEQ097memo/capsule583d02e7.../analysis preserveallcells andcostlimits; independent
+firstACTreview running. No freeze,G3,P1/G5,H1/H2 or clean-lineage claim.
+
+SEQ096 independent raw-call/count/cost reviewPASS, no corrections. No formal
+C11 expansion. NextCPUcandidate teaching corpus is implemented byKuhn, pending
+Main review/native token equality; no birth/posttrainingGPUlaunch yet.
+
+Bootstrap-v3 recovery archived:470QA/sidecarrows inexactorder; trainingmetadata
+andadapterexist (notloaded),266uniqueprimaryqmatches/204ambiguousinstances,
+all70CONTRASTsecondarydependenciesunrecorded. Node2originalledgers reproduce
+stagingbytes. Corpus/row/source recovery is real, but all470rendered answers
+still lackcomplete author/support binding. No knownmarkerfileabsence orzero
+lexicalscreenhits certifiescleanliness. Capsulef054172b... preserves141files;
+boundedcredential/internal-hostnamepatternscan flags0. Leavev3unverified;
+newcandidate needs ordinary sourceddata, not retrospectiveancestry invention.
