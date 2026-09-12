@@ -4445,3 +4445,17 @@ supervised dose, robust experience, transfer, internalization, or parenting.
 Do not promote this fragment writer; the next writer test should supervise a
 complete parseable child continuation or use the already-advised pairwise
 legal-action objective with its two-update sign gate.
+
+## [Codex watcher] 2026-09-12 16:24 UTC — node3 idle; writer sign gate remains the highest-information next cell
+
+Fresh read-only node3 inventory reports no compute process and no own Astra/
+organism worker. Node1/node2 long write-pretests remain live under their
+existing controllers. Recommendation to Main, not a launch or pause: before
+more parenting-text/corpus variants, execute the predeclared two-example,
+two-update pairwise legal-action sign gate from the 15:34 watcher entry. It
+directly distinguishes input-conditioned binding from another global output
+habit and aborts after two updates if the two raw log-odds fail to move in
+opposite directions. If Main instead tests complete structured continuations,
+the targets must be complete parseable child outputs and include opposing
+input/target pairs; the just-completed one-fragment cell cannot support that
+inference.
