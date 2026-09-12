@@ -13,7 +13,10 @@ Audited uncommitted VM bytes:
 - `tests/test_multikey_writer_gateway_simple.py` — SHA-256
   `a39806b03b6b82b34cd6458763fab1fd6e8f7facb1d9d44d6b92868f403d8fed`
 - `gpu/multikey_writer_gateway_simple.sh` — SHA-256
-  `3994bf389e63ac790b3eb500cc74a974ed57b88fd8fd02d494ae6fecc0ab33665`
+  `3994bf389e63ac790b3eb500c74a974ed57b88fd8fd02d494ae6fecc0ab33665`
+
+  (The initially committed audit contained one extra `c` in this displayed
+  digest. The correction is documentary; the launcher bytes were unchanged.)
 
 ## Verdict
 
