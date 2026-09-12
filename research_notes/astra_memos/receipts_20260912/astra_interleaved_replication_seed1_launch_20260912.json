@@ -1,0 +1,59 @@
+{
+  "arm_order": [
+    "SINGLE_VIEW",
+    "FOUR_VIEW"
+  ],
+  "claim": "AUTHORED_INTERLEAVED_DIAGNOSTIC_NOT_CHILD_EXPERIENCE_NOT_PARENTING_GATE",
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "/tmp/astra_interleaved_memory_replication_20260912.py",
+    "run",
+    "--source-root",
+    "/localhome/local-rohing/astra_sources/22b7e528f6f62358981ed2264d30ee7242926160",
+    "--runroot",
+    "/localhome/local-rohing/astra_diagnostics/astra_interleaved_memory_replay_20260912_attempt1/fits_root1_attempt1",
+    "--allow-gpu"
+  ],
+  "continuous_reservation": true,
+  "controller_bound_seconds": 1800,
+  "controller_started_unix": 1789253007.2159464,
+  "device": "0",
+  "effective_deadline": 1789254807.2159464,
+  "external_collection_margin_seconds": 300,
+  "generation_calls": 224,
+  "gpu": {
+    "gpu_uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+    "reconciled_system_services": [
+      {
+        "command": "/usr/lib/systemd/systemd --user",
+        "pid": "3245"
+      },
+      {
+        "command": "(sd-pam)",
+        "pid": "3246"
+      },
+      {
+        "command": "sshd: local-rohing@notty",
+        "pid": "249180"
+      }
+    ]
+  },
+  "launcher_sha256": "97029c0bdc271d18c0b2f937f5b05c8cc8e093cf4fc71d5efe76a65a98c19869",
+  "no_automatic_progression": true,
+  "node": 3,
+  "origin": "UNRESOLVED_LOCAL_HASHES_ONLY",
+  "parent_plan_sha256": "f2aaa20ab53b7cd3221580f3098da68f0381bd6a120967b6cfa085eedb769252",
+  "pgid": 249359,
+  "pid": 249359,
+  "plan_sha256": "0cb346c44656c4ecea1adc8f2cd969c5442f465453a0926813bc37c70a2f22bd",
+  "proc_start_ticks": 6891638,
+  "reservation_sha256": "989c83901f98e55e177455f7cdbe55fe6ba9ead42a810d570f81db1a5cf5e2d8",
+  "root": "/localhome/local-rohing/astra_diagnostics/astra_interleaved_memory_replay_20260912_attempt1/fits_root1_attempt1",
+  "script_sha256": "dc92b9d18f1fc7e8b9907f304e366de34a5e12340223f8dd17506e007093065f",
+  "seed": 1,
+  "seed0_gate_sha256": "d9e4ae52b6ca7d42a21a9ac61e5c8b05dc02eedd499cc34e5de0b07b130d4f9f",
+  "source": "/localhome/local-rohing/astra_sources/22b7e528f6f62358981ed2264d30ee7242926160",
+  "started_utc": "2026-09-12T22:43:27.149674+00:00",
+  "status": "LAUNCHED_NOT_COMPLETED"
+}
