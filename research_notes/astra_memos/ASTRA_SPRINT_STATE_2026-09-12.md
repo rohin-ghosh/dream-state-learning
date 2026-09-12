@@ -1,11 +1,27 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 09:46 UTC**.
+Latest reconciliation: **2026-09-12 10:05 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
+
+**Current critical-path update, SEQ-070:** coached source replay completes512calls,
+0/256strict qualifying records in each arm; actual distinct preparation revalidates
+and returns paired skip, no fit/probe. Controller49668 exited, worker49696group
+andGPU1released; owned backend engine49953terminated during normal cleanup.
+Capsule ac66828f8efaa670627d4fc885a52b17d8685245f5d7f6fdb156dcd43ca3f104,
+299verified content files. Memo ASTRA_COACHED_REPLAY_TERMINAL_2026-09-12.md.
+First-person syntax branch and optional replay fit pipeline now PARKED, not a
+universal sleep prerequisite. Existing criteria/results remain unaltered.
+Raw message13 suggestions read: prioritize useful-vs-worse material positive
+controls and joint write, then one/two parenting skills. Huygens recovers exact
+lower-LR matched memory commands; Popper recovers existing behavioral positive
+control; Turing maps existing compiler event/thought connections. No new code
+framework or new launch delegated. Main owns resource/Git/evidence integration.
+All current Astra node3 diagnostics terminal; fresh resource checks required
+before any new launch. Parent-free learning/retention/campaign remain incomplete.
 
 W0 attempt2 finished14phases but emits ASSAY_INVALID; full frozen replay fails
 solely because launcher.out changed after sealing. All256 oracle outputs

@@ -1,0 +1,123 @@
+{
+  "arms": {
+    "lesson": {
+      "coach_standalone_tokens": 14080,
+      "count": 256,
+      "delivered_text_echo": 0,
+      "faithful": 0,
+      "output_retokenized_tokens": 22756,
+      "prompt_tokens": 422426,
+      "rejections": {
+        "action-mismatch": 1,
+        "missing-first-person-action": 233,
+        "unsupported-first-person-context": 15,
+        "unsupported-reference-answer-claim": 7
+      }
+    },
+    "sham": {
+      "coach_standalone_tokens": 14080,
+      "count": 256,
+      "delivered_text_echo": 0,
+      "faithful": 0,
+      "output_retokenized_tokens": 23078,
+      "prompt_tokens": 420748,
+      "rejections": {
+        "missing-first-person-action": 249,
+        "unsupported-first-person-context": 5,
+        "unsupported-reference-answer-claim": 2
+      }
+    }
+  },
+  "cleanup": {
+    "cleanup_error": null,
+    "device": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+    "gpu_processes_absent": true,
+    "owned_group_empty": true,
+    "pid": 49696,
+    "reservation_release_verified": true,
+    "scope": "owned group and GPU process table; unrelated reservations remain caller-owned"
+  },
+  "elapsed_cost_scope": "Batch generation only; not full GPU reservation or cold load",
+  "generation_batch_seconds": 238.4774076379981,
+  "observed_utc": "2026-09-12T10:04:56.969051+00:00",
+  "original_P0_capsule_sha256": "13ca1bcefa98d2c4336197f46093abe807f141b937aa5d3d78876ac58122c208",
+  "preparation": {
+    "admission_certificate": false,
+    "clean_lineage": false,
+    "eligibility_certificate": false,
+    "h1_claim": false,
+    "interpretation": "Shared coached replay; original teacher dose confounded; not clean/H1",
+    "label": "EXPLORATORY_COACHED_REPLAY_CHILD_WRITE_PREPARATION",
+    "model_provenance": "LOCAL_HASHES_ONLY",
+    "new_world_actions": 0,
+    "official_base_authentication": "UNRESOLVED",
+    "replay_out": "/localhome/local-rohing/astra_diagnostics/astra_coached_note_replay_20260912_attempt1",
+    "reports": {
+      "lesson": {
+        "adapter_dir": "/localhome/local-rohing/astra_diagnostics/astra_coached_note_write_20260912_attempt1/adapters/lesson",
+        "admission_certificate": false,
+        "arm": "lesson",
+        "available_unique_faithful": 0,
+        "clean_lineage": false,
+        "eligibility_certificate": false,
+        "h1_claim": false,
+        "interpretation": "Shared coached replay; original teacher dose confounded; not clean/H1",
+        "label": "EXPLORATORY_COACHED_REPLAY_CHILD_WRITE_PREPARATION",
+        "metadata_equals": null,
+        "model_provenance": "LOCAL_HASHES_ONLY",
+        "new_world_actions": 0,
+        "official_base_authentication": "UNRESOLVED",
+        "post_training_requirements": [
+          "DONE exists and EMPTY_CORPUS absent",
+          "finite final_loss",
+          "actual train_meta.json matches metadata_equals",
+          "record actual adapter config/weight hashes",
+          "parent-free probes downstream; standalone completion is not learning or a clean/H1 result"
+        ],
+        "required_records": 64,
+        "selected_records": 0,
+        "source_kind": "historical_source_coached_replay",
+        "status": "PAIRED_SKIP_INSUFFICIENT_MATERIAL",
+        "token_budget_equivalence": "NOT_ASSERTED; report actual child tokens",
+        "trainer_log": "/localhome/local-rohing/astra_diagnostics/astra_coached_note_write_20260912_attempt1/logs/lesson.log",
+        "training_executed": false
+      },
+      "sham": {
+        "adapter_dir": "/localhome/local-rohing/astra_diagnostics/astra_coached_note_write_20260912_attempt1/adapters/sham",
+        "admission_certificate": false,
+        "arm": "sham",
+        "available_unique_faithful": 0,
+        "clean_lineage": false,
+        "eligibility_certificate": false,
+        "h1_claim": false,
+        "interpretation": "Shared coached replay; original teacher dose confounded; not clean/H1",
+        "label": "EXPLORATORY_COACHED_REPLAY_CHILD_WRITE_PREPARATION",
+        "metadata_equals": null,
+        "model_provenance": "LOCAL_HASHES_ONLY",
+        "new_world_actions": 0,
+        "official_base_authentication": "UNRESOLVED",
+        "post_training_requirements": [
+          "DONE exists and EMPTY_CORPUS absent",
+          "finite final_loss",
+          "actual train_meta.json matches metadata_equals",
+          "record actual adapter config/weight hashes",
+          "parent-free probes downstream; standalone completion is not learning or a clean/H1 result"
+        ],
+        "required_records": 64,
+        "selected_records": 0,
+        "source_kind": "historical_source_coached_replay",
+        "status": "PAIRED_SKIP_INSUFFICIENT_MATERIAL",
+        "token_budget_equivalence": "NOT_ASSERTED; report actual child tokens",
+        "trainer_log": "/localhome/local-rohing/astra_diagnostics/astra_coached_note_write_20260912_attempt1/logs/sham.log",
+        "training_executed": false
+      }
+    },
+    "required_records_per_arm": 64,
+    "retry_policy": "no retries, lowered count, alternate selection or child-text repair",
+    "source_kind": "historical_source_coached_replay",
+    "status": "PAIRED_SKIP_INSUFFICIENT_MATERIAL",
+    "training_executed": false,
+    "training_receipt": "NOT_EMITTED; preparation only"
+  },
+  "records": 512
+}

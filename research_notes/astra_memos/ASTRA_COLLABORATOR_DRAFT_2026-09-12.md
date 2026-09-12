@@ -1,0 +1,40 @@
+# Collaborator update — DRAFT ONLY, DO NOT SEND
+
+September 12, 2026. Internal review text; no recipient selected and no message sent. Evidence extends throughSEQ-069(09:48UTC), recording the completed frozen P0 paired reduction/accounting/terminal capsule: both formation arms complete64episodes, but actual downstream preparation skips both writes. The repository stores two lossless transport parts and a reconstruction manifest, not a standalone archive. This author performed no live job-status check.
+
+## Proposed update
+
+We are testing whether developmental teaching can improve the child's production of useful, externally grounded training material and thereby improve later learning after the parent is removed. H1 asks about persistent parent-free competence; H2 asks about the parenting × continued-consolidation interaction in adult improvement. These remain the core research questions; writer characterization is supporting diagnosis, not a replacement thesis. Neither is demonstrated, and we are not claiming an achieved flywheel or a new learning algorithm.
+
+The first-sprint evidence currently localizes two qualification blockers:
+
+- **Selectivity:** all 15 completed A1/A2 bank artifacts fail unchanged G9 (positive binding lower bound and spill ≤0.03). They span five family/optimizer-seed configurations, not 15 independent seeds. A1/A2 are not material-matched causal arms. Complete fit/eval artifacts do not complete the campaign.
+- **Oracle interface/custody:** W0 completed execution but emitted `ASSAY_INVALID`; frozen replay separately failed because `launcher.out` changed after sealing. It is not a qualified negative about writing. Development-only calibration achieved 61/64 valid and 45/64 correct outputs; a subsequent single-row diagnostic achieved 58/64 valid and 32/64 correct. Neither meets oracle qualification or demonstrates adapter learning.
+- **Final grounded-copy diagnostic (SEQ-068):** 32/64 correct and 32/64 valid, compared with the previous single-row: **32/64 correct and 58/64 valid**. These are separate correctness and validity counts, not32-of-58accuracy. Across64actual pairs correctness never changes;26valid answers become invalid, none improves validity. Both original-source replay receipts return0. This is one fixed-learner/seed development observation, not independently replicated causation; malformed outputs do not identify a tokenizer/model-corruption mechanism. Further prompt/format search is parked as predeclared.
+
+**P0 terminal result:** the completed frozen reducer confirms64paired schedules per arm, lesson1913post-outcome records/1903measuredACTs and sham1632/1627. Every slot output is nonempty, but both arms have **zero strict faithful records before deduplication and zero unique grounded records**. Missing-first-person-action rejections are1812/1556; other categories are unsupported-reference-answer-claim68/53, unsupported-first-person-context21/18, unmeasured-feedback10/5, and action-mismatch2/0. No occurrences, notes or outputs are missing. Main's raw inspection sees many NOTE/ACT/PREDICT outputs continue solving rather than record the submitted action/result. The09:32:51UTC observation is not an instrumented finish timestamp.
+
+Actual frozen paired preparation emits **PAIRED_SKIP_INSUFFICIENT_MATERIAL**,0of64required records per arm. **No fit, adapter or neutral probe launched; the archived P0 adapter/probe directories are empty.** This localizes an eligible-input formation bottleneck, not writer inability or a population-level learning failure. All64observed paired differences are zero; the degenerate empirical bootstrap is not a population-zero or equivalence claim. Teacher input differs203versus158tokens per presentation, with2,937/2,656presentations and596,211/419,648total teacher-token exposures. Child-output counts523,532/516,698retokenize saved text. Repeated histories inflate prompt exposure; no exact formation GPU-hours or token-normalized causal effect is inferred.
+
+**Terminal custody, SEQ-069:** `research_notes/astra_memos/receipts_20260912/astra_P0_material_terminal_20260912.parts.md` documents ordered `astra_P0_material_terminal_20260912.tgz.part00` then `astra_P0_material_terminal_20260912.tgz.part01` in that directory. Streaming concatenation matches whole SHA256 `13ca1bcefa98d2c4336197f46093abe807f141b937aa5d3d78876ac58122c208`;6,024content files were verified by recovery. The split preserves exact archive bytes without recompression/resealing. The intact archive remains in `/tmp`; no standalone `.tgz` is claimed tracked. Main confirmed the push as98373338; this writer made no Git call.
+
+The earlier docs-only terminal reducer supported a fit/probe conditional on sufficient material; it does not override this actual skip or justify lowering64. A future record-writing effect would not by itself show improved reasoning or a completed THINK/DREAM/SLEEP loop. The evidence-slot audit's broader PCFL/other plans and proposed gates remain unadopted and unexecuted. Main retains the experimental critical path; the next coached-slot repair is a prospective proposal only, not a new run.
+
+Historical compiler results remain supporting context, not a substitute: the nine-life mean ON/OFF gain is +0.019 (SE 0.011). **4/9 lives have at least one harmful pair anywhere in the full life;3/9 have a harmful final probe at1,024episodes.** These are different estimands; seed2's final pair is harmful under the unrounded rule despite displaying−0.0300. Disjoint and matched text/adapter comparisons do not establish general transfer or uniform adapter superiority. Recorded write/reload activity does not establish selective memory, autonomous material quality, or clean parenting.
+
+## Slots for main's next evidence
+
+| Stage | Current status | Required before filling this update |
+|---|---|---|
+| Material formation | **COMPLETE; frozen reduction/accounting/capsule recorded inSEQ-069** | Ordered transport parts and manifest are present; no learning result follows |
+| Child-only fits | **SKIPPED; actual paired preparation0/64each** | No training or adapter; absence is not a zero loss or a writer-failure estimate |
+| Parent-free probes | **NOT RUN after paired skip** | No OFF/ON scores or learned behavior; any coached-slot follow-up needs its own actual evidence |
+| G5 / G6 | **PENDING; no completed pilot/campaign** | Task-disjoint parent-free adult comparisons, matched controls, independent learners, retention and learning-change interaction, justified follow-ups |
+
+These are evidence slots, not requests to suspend experiments or wait for prose review. Ordinary exploratory hygiene applies; the final paper-grade C11 guard stays parked. Model-origin authentication/clean provenance remain unresolved where so recorded. No current diagnostic is relabeled confirmatory.
+
+## Review and integration request, not a sent message
+
+Review the companion `paper_prototype/astra_sprint_draft_20260912.tex` against `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, especially denominators, oracle validity, parent removal, token confounds, and claim strength. The draft includes introduction, methods, bounded verified related work, numerical/negative results, causal protocol, discussion and reproducibility, with no invented outcomes. It uses only existing SEAL/TMEM/MemSkill bibliography identities verified in the supplied literature record; broader references are visibly pending.
+
+The canonical `paper_prototype/main.tex` and `paper_prototype/refs.bib` are unchanged. This is a reviewable integration staging artifact, **not completion of the required canonical manuscript, G5/G6 campaign, or collaborator outreach**. The campaign remains partial despite completed P0 accounting/custody: writing/probing skipped and integrated learning evidence is absent. The advisory review of the earlier draft found no high/medium issue; its low comparator-denominator wording issue is corrected here, not treated as approval of these new bytes. TeX tools remain absent; no compile or scripts were run for this update.
