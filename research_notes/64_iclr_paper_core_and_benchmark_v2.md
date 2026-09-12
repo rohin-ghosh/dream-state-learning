@@ -64,9 +64,14 @@ Independently raised clean child roots are paired into:
   public outcomes, update opportunities, and generated-token envelope, but a
   frozen acting model and evolving typed textual memory.
 
-Both receive the same cumulative stream of genuinely new PCFL information at
-registered lifetime cuts. The baseline must satisfy its own prospective local
-plateau rule at the anchor; at least three later cuts form the late window.
+Both receive the same sealed sequence of opportunity sets and the same
+exogenous-randomness tape, but each system chooses its own actions and owns
+the resulting public outcomes. This makes L a total on-policy system
+comparison: the systems may accumulate different information because their
+earlier memories changed their later actions. A separate same-source carrier
+assay, not L, compares text and LoRA over identical admitted payloads. The
+baseline must satisfy its own prospective local plateau rule at the anchor;
+at least three later cuts form the late window.
 
 The release order is noncompensatory:
 
@@ -82,6 +87,11 @@ The release order is noncompensatory:
 The independent unit is a separately raised paired child lineage. Lifetime
 cuts, tasks, and samples are repeated measures. No fixed-child environment
 clone counts as another life.
+
+A failed or uncertified active-text implementation blocks only the superiority
+and saturation claims. It does not erase an otherwise valid carrier-specific
+M result; exact-text M cells are the assay ceiling, while the evolving
+candidate-blind active-text agent is the separate systems opponent.
 
 ### C -- rate--distortion: is the learned semantic code actually compressed?
 
