@@ -1,6 +1,41 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — September 12, 2026, terminal SEQ111–112.** Two fresh actual-
+**UNSENT — SEQ113 / C57 update.**
+
+**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
+lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
+output-token sequences match: no FOUR advantage. No new OFF; original-parent
+memory4/16 is an inherited provenance-bound count. Both original80-step-parent
+forks add320 updates (400 cumulative), batch4 with two memories/two additions;
+10,000 target presentations include1,280 memory (12.8%). Unequal input exposure
+66,160/67,120, equal padded76,960; changed within-batch loss composition prevents
+a pure temporal-effect inference against grouped replay. Returned raw-review
+PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
+nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
+are proposed, not run in this cut. Teacher-authored material is not operational
+parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
+outcomes are included. Collaborator **UNSENT**.
+
+**Measured prior-cycle costs (SEQ110–112; C54–C56, not a new utility claim).**
+Formation, paired writes and readout sum to **20.933 A40-min full reservation**,
+versus **12.729 supervised-worker minutes**. Full reservation includes CPU gaps,
+cleanup and release-observation wait, not device-active or monetary cost;
+interphase calendar gaps are not automatically charged. Generation is nested
+inside workers/controllers/reservation; collection overlaps reservation. Do not
+add clock columns. Combined generations use150 calls,55,321 input/3,324 output
+tokens; the two writes separately repeat15,288 input/1,776 target presentations
+across24 updates. This is one executed formation/write/readout path, not a
+measured adult sequential-learning cycle. Cost forecasts and pending work are
+excluded. Source: `research_notes/astra_memos/receipts_20260912/astra_actual_record_cycle_costs_20260912.md`
+and sibling `.json`; cost synthesis is not a fresh-author audit.
+
+Source memo and exact summary/review/capsule hashes are indexed under C57 in
+`ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`. This does not change the prior no-P-advantage
+result. No message sent; Main retains Git and launch decisions.
+
+**Historical UNSENT — September 12, 2026, terminal SEQ111–112.** Two fresh actual-
 record adapters are verified; parent-free readout is complete, with no process-
 arm advantage. This supersedes only the historical C54 RUNNING/NOT RUN status.
 
@@ -30,8 +65,8 @@ readout-time parameter updates. Relation-definition scaffold remains explicit;
 formation-excluded rules are not globally untouched confirmation. Original64
 confirmation cases remain unrequested. No adult learner loop, general
 G3/P1/G5/H1/H2, clean lineage or frozen mechanism; model origin unresolved,
-C11 deferred. The separate interleaved pair is LIVE at the supplied cut, no
-outcomes added. Write full-release/controller/worker/collection seconds
+C11 deferred. The separate interleaved pair was LIVE at that cut; C57 now
+supersedes its status, not the null parenting contrast. Write full-release/controller/worker/collection seconds
 361.167984/230.665586/153.654476/22.495086; readout
 642.893684/595.137126/493.982361/53.982670 are nested, not additive/busy-time.
 Saved-weight audit12.852530 CPU seconds is separate. Canonical abstract/intent

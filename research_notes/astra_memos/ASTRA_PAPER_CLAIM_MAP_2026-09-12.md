@@ -1,8 +1,24 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
+**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
+lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
+output-token sequences match: no FOUR advantage. No new OFF; original-parent
+memory4/16 is an inherited provenance-bound count. Both original80-step-parent
+forks add320 updates (400 cumulative), batch4 with two memories/two additions;
+10,000 target presentations include1,280 memory (12.8%). Unequal input exposure
+66,160/67,120, equal padded76,960; changed within-batch loss composition prevents
+a pure temporal-effect inference against grouped replay. Returned raw-review
+PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
+nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
+are proposed, not run in this cut. Teacher-authored material is not operational
+parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
+outcomes are included. Collaborator **UNSENT**.
+
 ## C00 — Scope, authority, and frozen evidence window
 
-**September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
+**Historical September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
 C54 RUNNING/NOT RUN status is historical: two fresh actual-record adapters are
 now verified and parent-free OFF/P_ON/A_ON readout is complete. OFF quiz7/24,
 P/A6/24; P minus A0, each adapter minus OFF−1/24. Valid quizzes4/4 versus3/4;
@@ -14,7 +30,8 @@ the memo's pending status; authorship and non-blinding limits remain explicit.
 Equal scores alone do not imply raw identity; any identity statement below
 comes from a separate raw comparison. No general G3/P1/G5/H1/H2, clean lineage
 or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. The separate
-interleaved pair is LIVE at the supplied cut, with no outcomes included.
+interleaved pair was LIVE at that cut; C57 supersedes that status without
+changing the no-P-advantage result.
 Collaborator **UNSENT**.
 
 **Historical September 12, 2026 — SEQ108–110 cut (C52–C54).** SEQ108
@@ -1946,11 +1963,125 @@ saved-weight audit is not GPU time.
 No P advantage, robust numerical treatment effect, general G3/P1/G5/H1/H2,
 parenting utility, clean lineage, novel-fact transfer or frozen mechanism is
 established. Origin `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred; collaborator
-UNSENT. The separate interleaved authored-memory pair is LIVE at the supplied
-cut and contributes NO outcomes; it cannot recast this null contrast as success.
+UNSENT. The separate interleaved authored-memory pair was LIVE at the C56
+cut; terminal C57 cannot recast this null parenting contrast as success.
 
 Sources and exact bindings:
 - `research_notes/astra_memos/ASTRA_ACTUAL_RECORD_READOUT_2026-09-12.md`; `research_loop/COORDINATION.md`, SEQ11221:52:34.209898 UTC. Their original pending-review statements are historical after the returned review below, not edited by this worker.
 - Capsule `research_notes/astra_memos/receipts_20260912/astra_rulegame_record_readout_terminal_20260912.tgz`, SHA256 `f8f2bb688da189ebb8f70c67725f1c008db49d6c5b2800abdc58a0dd4fcb7458`; adjacent `.tgz.validation.json` binds232 metadata files, no weights.
 - Plan `research_notes/astra_memos/receipts_20260912/astra_rulegame_record_readout_plan_20260912.json`, SHA256 `cdb71865359498ca0f75db57566e638b667d2e849cc11c9cbd45dd6bfbb97375`; source `610c6edd05ce9c85720ee6e992889badecc2c158`; root `astra_diagnostics/astra_rulegame_interaction_v3_record_readout_20260912_attempt1`.
 - Returned raw review `research_notes/astra_memos/receipts_20260912/astra_rulegame_record_readout_independent_review_20260912.md`, SHA256 `6bce8e9be666e37cf187ae69c48bad0cba9fa815f8171b4c11df6c82b49fd2cc`; supplied `/tmp/astra_rulegame_record_readout_independent_review_20260912.md` existed and was read at21:56:26 UTC before PASS wording. Analysis `research_notes/astra_memos/receipts_20260912/astra_rulegame_record_readout_independent_analysis_20260912.json`, SHA256 `8a8312d2f1b6b11b1b9e2b4887ed993657503304a657e54d9d265ac909c69bb0`; no analyzer execution here. Archive status is not presumed when only a supplied sidecar is available.
+
+
+## Measured prior-path costs — C54–C56 / SEQ110–112
+
+**Measured prior-cycle costs (SEQ110–112; C54–C56, not a new utility claim).**
+Formation, paired writes and readout sum to **20.933 A40-min full reservation**,
+versus **12.729 supervised-worker minutes**. Full reservation includes CPU gaps,
+cleanup and release-observation wait, not device-active or monetary cost;
+interphase calendar gaps are not automatically charged. Generation is nested
+inside workers/controllers/reservation; collection overlaps reservation. Do not
+add clock columns. Combined generations use150 calls,55,321 input/3,324 output
+tokens; the two writes separately repeat15,288 input/1,776 target presentations
+across24 updates. This is one executed formation/write/readout path, not a
+measured adult sequential-learning cycle. Cost forecasts and pending work are
+excluded. Source: `research_notes/astra_memos/receipts_20260912/astra_actual_record_cycle_costs_20260912.md`
+and sibling `.json`; cost synthesis is not a fresh-author audit.
+
+| Phase | Full reservation seconds | Supervised-worker seconds |
+|---|---:|---:|
+| Formation | 251.917 | 116.096 |
+| Paired writes | 361.168 | 153.654 |
+| Three readouts | 642.894 | 493.982 |
+| Sum, minutes (separate phases within each column) | 20.933 A40-min | 12.729 worker-min |
+
+Generation114.922s and training loops16.7s nest inside1255.979s full reservation;
+CPU saved-weight audit12.853s is separate. Cost-only synthesis rechecked420
+archived inventory hashes; it does not rerun scientific outcomes. Its author
+wrote earlier formation/write collectors and the weight audit, not fresh-author.
+Exact full-reservation sum20.932977183659872 minutes; worker subtotal
+12.728888382433434 minutes. Neither is an empirical scaling/future-cost bound.
+
+Bindings: `research_notes/astra_memos/receipts_20260912/astra_actual_record_cycle_costs_20260912.md`,
+SHA256 `6dca7016d0af3152c10be3cd5da1cbfc01e5207317c7daf56bb3fbf2c40bfbb4`;
+sibling `.json`, SHA256 `58f656304075d9698e9989733d8e1c433b6d9281bd8f43678646c44258ad4f6d`.
+Original C54–C56 result tables and no-P-advantage interpretation remain unchanged.
+
+## C57 — Interleaved authored-memory acquisition with retained interface, root0 (SEQ113)
+
+**Terminal raw recount PASS within the declared root0 diagnostic; no FOUR advantage.**
+Both arms independently fork the ORIGINAL80-step seed0 teaching adapter, not a
+replay descendant or each other. All224 mandatory calls complete before outcome
+inspection. No missing/invalid outputs or token-cap hits; all finishes are normal.
+
+| SEQ113 endpoint | SINGLE_VIEW | FOUR_VIEW | Prespecified FOUR minimum |
+|---|---:|---:|---:|
+| Dev memory | 16/16 | 16/16 | 15/16 |
+| Exact original prefix | 16/16 | 16/16 | 15/16 |
+| Correct PREDICT before correct ACT (habit) | 32/32 | 32/32 | 30/32 |
+| Correct ACT | 32/32 | 32/32 | 31/32 |
+| Lexical family0 / family1 / family2 | 16/16 each | 16/16 each | 15/16 each |
+
+Habit means one valid correct PREDICT before one valid correct ACT, scored
+separately from ACT correctness. Memory requires a single case-normalized color,
+optionally a trailing period, not substring matching. All112 aligned raw texts
+and output-token sequences match by explicit comparison, not inferred from equal
+scores; saved adapter hashes differ, no latent/parameter equivalence follows.
+Lexical48 use three distinct cue families over the SAME16 facts; cues are absent
+from original train/control/eval wording and all four training templates. Dev and
+exact panels also reuse those16 facts. No48 independent facts, novel-fact transfer
+or independent learner replication. No new OFF: original-parent memory4/16 and
+habit/ACT32/32 are inherited provenance-bound counts, not newly recounted here.
+Original64 confirmation cases remain unrequested.
+
+Same16 authored memories +16 arithmetic sources, four copies each,128 rows.
+Each batch4 contains two distinct memories/two distinct additions. Ten epochs
+add320 new/400 cumulative updates,40 presentations and40 distinct source-bearing
+updates per source; no minimum temporal spacing is promised. Not400 developmental
+cycles. Rank8,20,185,088 trainable parameters, frozen base, fresh seed0 AdamW,
+LR3e-4/dropout0.05/accumulation1. Receipts match all392 initial tensor hashes to
+the parent, with all392 changed at completion per arm and parent inventories
+unchanged; native weights are not included or reloaded in this integration.
+
+| Exposure per arm | SINGLE_VIEW | FOUR_VIEW |
+|---|---:|---:|
+| New / cumulative updates | 320 / 400 | 320 / 400 |
+| Target presentations including EOS | 10,000 | 10,000 |
+| Memory / arithmetic target presentations | 1,280 / 8,720 | 1,280 / 8,720 |
+| Input presentations | 66,160 | 67,120 |
+| Padded input slots | 76,960 | 76,960 |
+
+Memory is12.8% aggregate target mass, not constant per batch (12.5% or13⅓%).
+Equal padded totals do not imply equal unpadded-input compute. Against the earlier
+grouped recipe, within-batch loss composition also changes, so no pure temporal-
+spacing or dose causal effect is identified. No FOUR advantage at these saturated
+endpoints. Teacher-authored material is not operational child sleep or parenting,
+adult learning, general G3/P1/G5/H1/H2, clean lineage or mechanism freeze. Model
+origin remains `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Seed1/2 replications
+are proposed, not run in this cut; no pending acquisition/process-write outcomes.
+
+Herschel independently recounts224 raw calls and reconstructs source schedules
+without running supplied reducers/model code. PASS includes548 metadata hashes,
+local custody and prespecified FOUR progression thresholds, not broad promotion
+or automatic launch. The reviewer authored older related replay code; some sealed
+reductions became visible during schema inspection. This is not blinded/fresh-author.
+Main summary v2 corrects swapped habit/ACT count-field names (adherence versus
+correct_action), preserving thresholds30/31; both counts remain32, no outcome or
+decision changes. Earlier summary remains archived, not overwritten here.
+
+Full release observed2026-09-12T22:18:27.750796Z, before custody deadline
+22:30:11.906040Z. Launch-to-first-full-release1395.898451s (23.264974 A40-min),
+controller1308.918702s, workers1074.210888s and generation57.916751s nest, not add.
+Generation9,798 input/1,200 output tokens;14,336 allowance is not usage. Later
+collection snapshot1396.315843s is not first release. Watchdog observes natural
+controller exit, sends no signals and does not itself attest GPU cleanup; separate
+full-release JSON/XML supplies that evidence. No overrun or budget extension;
+monetary cost unavailable. No claim about current device availability is made.
+
+Sources and exact bindings (all read, no native rerun):
+- Main memo: `research_notes/astra_memos/ASTRA_INTERLEAVED_MEMORY_READOUT_2026-09-12.md`.
+- Summary v2: `research_notes/astra_memos/receipts_20260912/astra_interleaved_memory_main_summary_v2_20260912.json`, SHA256 `edf049dbe7b6fedc860bdb92909ed2c77647188381169f8762292669e08f2ff0`.
+- Returned review: `research_notes/astra_memos/receipts_20260912/astra_interleaved_memory_independent_review_20260912.md`, SHA256 `522633241ad3910a4d0ee1fd156d31aa3eb7756495cc5efbbe2cc3c97865f522`; sibling `.json`, SHA256 `3a2ebdd617a9363eb6d3e6129fd5db1275ac6f6cc8976132012a7b1f79f02135`. PASS is read from this existing returned review, not presumed.
+- Capsule: `research_notes/astra_memos/receipts_20260912/astra_interleaved_memory_root0_terminal_20260912.tgz`, SHA256 `9aa7fb67b3f68afa3d4520e1f4b7cfcc41322367ef1cf6ee83396a7c60cdbf64`,548 metadata files, no weights; adjacent `astra_interleaved_memory_validation_20260912.json` records collection validation.
+- Source `22b7e528f6f62358981ed2264d30ee7242926160`; plan `4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388`.
+- Parent weight identity `d73e8578f62de68ed657474c70fc09c09aaad50a4ff11a66773e50fc702163b2`; SINGLE `416f0f1dcc8f7dd6d37f6a8844d5e14786f0f54b970122e492e7b2f55f608bba`; FOUR `60a8bd8c132308499621d77df31c1738e1444c976fe5d8b20f879bd94c49df2f`. These are receipt identities, not local native-weight rehashes or authenticated origin.

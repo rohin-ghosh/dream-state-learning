@@ -3,9 +3,53 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ111–112 / C55–C56
+## Latest bounded evidence — SEQ113 / C57
 
-**September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
+**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
+lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
+output-token sequences match: no FOUR advantage. No new OFF; original-parent
+memory4/16 is an inherited provenance-bound count. Both original80-step-parent
+forks add320 updates (400 cumulative), batch4 with two memories/two additions;
+10,000 target presentations include1,280 memory (12.8%). Unequal input exposure
+66,160/67,120, equal padded76,960; changed within-batch loss composition prevents
+a pure temporal-effect inference against grouped replay. Returned raw-review
+PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
+nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
+are proposed, not run in this cut. Teacher-authored material is not operational
+parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
+outcomes are included. Collaborator **UNSENT**.
+
+| SEQ113 endpoint | SINGLE_VIEW | FOUR_VIEW | Prespecified FOUR minimum |
+|---|---:|---:|---:|
+| Dev memory | 16/16 | 16/16 | 15/16 |
+| Exact original prefix | 16/16 | 16/16 | 15/16 |
+| Correct PREDICT before correct ACT (habit) | 32/32 | 32/32 | 30/32 |
+| Correct ACT | 32/32 | 32/32 | 31/32 |
+| Lexical family0 / family1 / family2 | 16/16 each | 16/16 each | 15/16 each |
+
+**Measured prior-cycle costs (SEQ110–112; C54–C56, not a new utility claim).**
+Formation, paired writes and readout sum to **20.933 A40-min full reservation**,
+versus **12.729 supervised-worker minutes**. Full reservation includes CPU gaps,
+cleanup and release-observation wait, not device-active or monetary cost;
+interphase calendar gaps are not automatically charged. Generation is nested
+inside workers/controllers/reservation; collection overlaps reservation. Do not
+add clock columns. Combined generations use150 calls,55,321 input/3,324 output
+tokens; the two writes separately repeat15,288 input/1,776 target presentations
+across24 updates. This is one executed formation/write/readout path, not a
+measured adult sequential-learning cycle. Cost forecasts and pending work are
+excluded. Source: `research_notes/astra_memos/receipts_20260912/astra_actual_record_cycle_costs_20260912.md`
+and sibling `.json`; cost synthesis is not a fresh-author audit.
+
+Source: `research_notes/astra_memos/ASTRA_INTERLEAVED_MEMORY_READOUT_2026-09-12.md`;
+C57 in the claim map binds archived summary v2, raw review and the548-file
+metadata capsule. Canonical abstract/intent and prior tables stay unchanged;
+companion abstracts are normalized together under250 words. No TeX build claimed.
+
+## Earlier bounded evidence — SEQ111–112 / C55–C56
+
+**Historical September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
 C54 RUNNING/NOT RUN status is historical: two fresh actual-record adapters are
 now verified and parent-free OFF/P_ON/A_ON readout is complete. OFF quiz7/24,
 P/A6/24; P minus A0, each adapter minus OFF−1/24. Valid quizzes4/4 versus3/4;
@@ -17,7 +61,8 @@ the memo's pending status; authorship and non-blinding limits remain explicit.
 Equal scores alone do not imply raw identity; any identity statement below
 comes from a separate raw comparison. No general G3/P1/G5/H1/H2, clean lineage
 or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. The separate
-interleaved pair is LIVE at the supplied cut, with no outcomes included.
+interleaved pair was LIVE at that cut; C57 now reports its terminal diagnostic,
+without changing the no-P-advantage result.
 Collaborator **UNSENT**.
 
 **C55: a verified write is not a usefulness result.** Two fresh-base rank8

@@ -1,6 +1,35 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
+**September 12, 2026 — terminal SEQ113 / C57.** Both interleaved root0
+arms score dev memory16/16, exact16/16, habit32/32, correct ACT32/32 and
+lexical48/48 (three panels of the SAME16 facts). All112 aligned raw texts and
+output-token sequences match: no FOUR advantage. No new OFF; original-parent
+memory4/16 is an inherited provenance-bound count. Both original80-step-parent
+forks add320 updates (400 cumulative), batch4 with two memories/two additions;
+10,000 target presentations include1,280 memory (12.8%). Unequal input exposure
+66,160/67,120, equal padded76,960; changed within-batch loss composition prevents
+a pure temporal-effect inference against grouped replay. Returned raw-review
+PASS is not blinded/fresh-author. Full-release reservation23.265 A40-min is
+nested with controller/worker clocks, no overrun or signals. Seed1/2 replications
+are proposed, not run in this cut. Teacher-authored material is not operational
+parenting, general G3/P1/G5/H1/H2 or a mechanism freeze; origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. No pending acquisition/process-write
+outcomes are included. Collaborator **UNSENT**.
+
+**Measured prior-cycle costs (SEQ110–112; C54–C56, not a new utility claim).**
+Formation, paired writes and readout sum to **20.933 A40-min full reservation**,
+versus **12.729 supervised-worker minutes**. Full reservation includes CPU gaps,
+cleanup and release-observation wait, not device-active or monetary cost;
+interphase calendar gaps are not automatically charged. Generation is nested
+inside workers/controllers/reservation; collection overlaps reservation. Do not
+add clock columns. Combined generations use150 calls,55,321 input/3,324 output
+tokens; the two writes separately repeat15,288 input/1,776 target presentations
+across24 updates. This is one executed formation/write/readout path, not a
+measured adult sequential-learning cycle. Cost forecasts and pending work are
+excluded. Source: `research_notes/astra_memos/receipts_20260912/astra_actual_record_cycle_costs_20260912.md`
+and sibling `.json`; cost synthesis is not a fresh-author audit.
+
+**Historical September 12, 2026 — terminal SEQ111–112 (C55–C56).** The earlier
 C54 RUNNING/NOT RUN status is historical: two fresh actual-record adapters are
 now verified and parent-free OFF/P_ON/A_ON readout is complete. OFF quiz7/24,
 P/A6/24; P minus A0, each adapter minus OFF−1/24. Valid quizzes4/4 versus3/4;
@@ -12,7 +41,8 @@ the memo's pending status; authorship and non-blinding limits remain explicit.
 Equal scores alone do not imply raw identity; any identity statement below
 comes from a separate raw comparison. No general G3/P1/G5/H1/H2, clean lineage
 or freeze; origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. The separate
-interleaved pair is LIVE at the supplied cut, with no outcomes included.
+interleaved pair was LIVE at that cut; C57 now supplies its terminal diagnostic,
+not a rescue of this null parenting contrast.
 Collaborator **UNSENT**.
 
 **Historical September 12, 2026 — SEQ108–110 cut (C52–C54).** SEQ108
@@ -72,7 +102,7 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve what an agent learns after teacher removal? We separate material fidelity, a verified parameter write and downstream utility using a frozen instruction-tuned model and LoRA. Earlier diagnostic endpoints remain unchanged. Two accepted raw child records per arm, from process guidance versus active neutral recap, train independent fresh-base rank-eight adapters for twelve updates each. Both saved adapters contain 392 finite tensors and nonzero B entries relative to declared zero-B initialization, corroborating writing rather than usefulness or a full parameter-delta measurement. Separate parent-free processes then evaluate frozen OFF, process-adapter and recap-adapter states on four shared rule tasks without readout-time updates or record feedback into wake. OFF scores 7/24 quiz items; both adapters score 6/24, giving no process advantage. Both adapters fail rule-five protocol after two executed TRYs; absent quizzes retain prescribed zeros, not six observed wrong labels. Valid quizzes are four for OFF and three per adapter. Faithful records increase from 9/12 allotted opportunities to 10/12, or 10/11 emitted, but valid explicit predictions remain eight per state with six correct. Better prompted record fidelity does not establish improved prediction competence or utility. This is one paired write seed and shared generation protocol, not independent learner replication; rules excluded from formation are not globally untouched confirmation. No adult parameter-learning loop, general P1/G5/H1/H2, clean lineage or frozen mechanism is established. Model origin remains unresolved. The separate live interleaved-memory diagnostic contributes no outcomes.
+Can developmental teaching improve learning after teacher removal? We separate material fidelity, verified parameter writing and utility using a frozen instruction-tuned model and LoRA. Two accepted raw child records per arm, from process guidance versus active neutral recap, train fresh-base adapters for twelve updates each. Both have 392 finite tensors and nonzero B entries relative to declared zero-B initialization, corroborating writing, not usefulness or full parameter deltas. Parent-free readout without parameter updates scores OFF 7/24 quiz items and each adapter 6/24: no process advantage. Both adapters invalidate rule-five protocol; missing quizzes retain prescribed zeros, not six observed wrong answers. Faithful records are 9/12 OFF versus 10/12 allotted, or 10/11 emitted, per adapter; explicit predictions remain six correct of eight valid. One pair and four shared rules do not establish parenting utility. Separately, interleaved teacher-authored replay gives both SINGLE and FOUR root0 arms memory 16/16 on dev and exact panels, habit and ACT 32/32, and lexical 48/48 over the same sixteen facts. All 112 aligned raw texts and output-token sequences match; no FOUR advantage. Each arm adds 320 updates to its original eighty-update parent; memory occupies 12.8% of target exposure. Changed within-batch composition prevents a pure temporal-effect inference. No new OFF is measured; replications are proposed, not run. These diagnostics establish neither operational parenting, an adult learning loop, general G3/P1/G5/H1/H2, clean lineage nor a frozen mechanism. Model origin remains unresolved.
 
 ## Evidence and interpretation boundaries
 
@@ -87,7 +117,8 @@ prediction competence. Herschel's returned raw review is read, not assumed from
 the memo; it resolves the two-action rule5 failure and separately checks29
 aligned P/A texts/prompts/token vectors. Aggregate equality alone implies no
 raw/parameter identity. One pair/four shared rules, no adult updates, no clean
-confirmation or G3/P1/G5/H1/H2/freeze. Interleaved LIVE diagnostic outcomes excluded.
+confirmation or G3/P1/G5/H1/H2/freeze. The interleaved diagnostic was LIVE at that
+C56 cut; terminal C57 now supersedes its status, not this null contrast.
 
 **C52–C54: diagnostics and formation are not parenting utility.** Conditional
 own-map generation64/64 train and32/32 dev per operation coexists with locality
