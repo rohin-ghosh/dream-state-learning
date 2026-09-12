@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/astra_sources/bd74905c7a830f61d7a13b78838794f1dfca515f/organism_v6/fresh_behavior_panel.py", line 450, in <module>
+    main()
+  File "/localhome/local-rohing/astra_sources/bd74905c7a830f61d7a13b78838794f1dfca515f/organism_v6/fresh_behavior_panel.py", line 441, in main
+    result = prepare(args.out_new, roots=[getattr(args, f"seed{seed}_root") for seed in range(3)],
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/bd74905c7a830f61d7a13b78838794f1dfca515f/organism_v6/fresh_behavior_panel.py", line 257, in prepare
+    selected, audit = select_panel(gym, artifacts["oracle_sources.json"]["records"], excluded)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/bd74905c7a830f61d7a13b78838794f1dfca515f/organism_v6/fresh_behavior_panel.py", line 130, in select_panel
+    _require(all(actual[name] == old[name] for name in ("entry", "puzzle", "solution")),
+  File "/localhome/local-rohing/astra_sources/bd74905c7a830f61d7a13b78838794f1dfca515f/organism_v6/fresh_behavior_panel.py", line 64, in _require
+    raise ValueError(message)
+ValueError: historical generator drift

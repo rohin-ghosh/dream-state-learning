@@ -4798,3 +4798,29 @@ may use the capacity under the standing authorization.
 **Builder → Rohin (16:53 UTC), relayed in substance:** it agrees with the outcome-corpus vs teaching-corpus distinction and has no validated teaching corpus; bootstrap_v3 is a candidate whose provenance and parent seam it is recovering before any use; no birth run launched from the pre-steer ("your suggestions remain hypotheses"). Operational definition it proposes for a narrow teaching corpus: explicit skill definition, sourced worked examples, varied practice, contingent correction, logged repetition/dose, a held-out performance check — measured by correct decisions and utility, not reflection frequency or eloquence. Its current cycle: frozen 7B base (no level-1 training); most SEQ-059–093 are isolated writer/material/reload diagnostics; the tiny live branch is base → pre-task → same-7B-as-parent feedback → restatement → apply → checked own record → intended sleep/reload → parent-free readout, which stops before fits for lack of faithful records; birth LoRA (level 2), richer preschool/school and deployment are the intended ladder, not completed stages; recovering the 14B/32B parent seam is active work. On compile: SEQ-092's frame decline is not evidence about sleep interval; transform, objective, repetition and schedule need separate controlled comparisons; it is reading the TMEM/SEAL/OEL/SDFT primary methods itself. On telling vs teaching: instruction-only is a baseline, not a ceiling; SEQ-091's example effect is not isolated (protocol, dose and case selection changed together); next treatment must add clear examples and feedback to the demonstrated target-skill gap.
 
 **SEQ-094/095:** RuleGame formation v1 terminal (material shortage); interface v2 gives 8/8 valid quizzes and 24 real tries, but own records meeting the registered relation semantics are 1/6 (process) vs 3/6 (control) — no paired write; the elicitor says only "accordingly" instead of defining each relation case, so neither a child ceiling nor adequate teaching is established. Node 3 idle at 17:02 UTC (CPU stage). No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 5 h.
+
+## [Builder] 2026-09-12 17:05 UTC — fresh-solution panel ready; prospective three-seed reread
+
+Sourcee67539d2ec7a76681e992aac2c83e118fa4740c4, Main/native96CPUtestsPASS.
+Freshattempt2nativepreparePASS; manifestd317c215f52bc3190a25ffa3f8bef27d239ab90fd9ee94bfa81c71a5b435664e.
+First16qualifyingIDs:1900071/72/73,1900075..87. Candidate70/74excludedbyfixed
+structuralnonoverlaprule, notmodelperformance. All48historicalentriesmatch
+canonicalJSON; actualmodel/sixadapter/source/generator/tokenizerpinsPASS.
+Preparedcapsule3185ec9b... includespreservedattempt1representationfailure,
+notweights.96nativeCPUtestsPASS. NativeprepcontinuedafterVM60stimeout; Main
+observedCPU150147liveandlatercompleted, no rerun/rootoverwrite. Gitpullcollision
+fromconcurrentFETCH_HEADoperationswasfollowedbyexactremote/localHEADmatch;
+MainnowsoleGitoperator, workerfileownershipunchanged.
+
+Next node3GPU1=seed0, GPU2=seed1, GPU3=seed2, subjecttofreshfullvacancyperGPU.
+Each: usefulOFF/ON thencorruptOFF/ON, unchangednativepairedreader, fourfresh
+conditions64episodecells; nofits. Shared16solution-disjointdevelopmentpuzzles,
+not192independenttasks. PrimaryfirstACTsolves, allcontrolsretainedregardless
+ofweakresults. Continuousperseedreservationthroughbothpairsandcleanup;
+Mainfullreleaseaftercontrollerexit. 900sperworker, expected35–50aggregate
+A40minutes plusCPU/hashoverhead. Finalsource-boundreductionafterall12cells.
+
+CurrentMainGPU0unreserved; RuleGame094/095terminal/no writes. Sourcequestions
+answerednotebook; primarymethodmemo andparent/birthrecoveryarchived. A100
+suppliedstartremainsSeptember13 05:05UTC (September12 22:05Pacific); watcher
+relative5hcountdownisnotreliable. No earlyuse orleasechange.
