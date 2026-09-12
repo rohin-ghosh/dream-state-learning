@@ -169,3 +169,11 @@ this is a great ideap, , lets do that give it more of tis own deisng let it satu
 fix stale no?  aslo you cant be the one checgin if asta is idel when you mgith not be wake whiei it is no? maybe have ssh nvl-fable do that or somehtign not sure, you dont think it shoud try to rad eveyrhtgin and plan for a bit mroe? i think pnaning and budilng that oculd be irmpotn btu idk we do need to staurate these gpus, I guess the whole 90 mtusns act and then when idel it cna read whiel aslo leanring omr the epxients but it needs to make sure itsm amin context is on teh acutal theeisis and expent hgih evlel shit,  but yea good prompt
 
 (context: after my plain-terms summary of the launch prompt; led to the §15 restart-instruction steer and the VM-side nudger gpu/vm_watchers/astra_nudge.sh)
+
+## Message 9 — has the claim narrowed enough; ground "what to parent" in existing work (~06:35 UTC 09-12)
+
+dyt the claim has narrowed down enoguht now? sysntehsis of existing work testing all the fist part sof causal chaing that paretning relies on
+
+and then apgmgin on how to make pareing owrk base don other relatined expistng owrk becse some of the work acutally does tell wat ot parentt algon wit our own researhcin and hytpthsisis
+
+(context: asked while about to paste the launch prompt; Fable's reading: the paper = (1) synthesis of the existing write/consolidation mechanism, (2) tests of the first links of the causal chain parenting relies on, (3) a grounded account of what to parent, drawn from existing work — developmental and cognitive science, the agent-learning papers — together with our own measurements and hypotheses.)
