@@ -1,5 +1,36 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding continuation snapshot — 2026-09-12T20:11:20.566884+00:00
+
+- Live memory-replay root0 remains node3 GPU0/PID211116; collector status only,
+  no partial scores inspected. Collector EDITSTOP and uploaded; native finish
+  only after controller absence plus terminal. Do not relaunch or reprepare.
+- Main analysis script ready: /tmp/astra_analyze_memory_replay_20260912.py;
+  AST and96 inherited raw arithmetic responses plus4 parser fixtures pass.
+  It has not analyzed the current replay pair. Prospective progression unchanged.
+- SEQ104–106 six-file manuscript update independently reviewed PASS by Planck,
+  archived and integrated625d4655. Banach CLOSED; manuscript files released.
+  229word companion abstract, no TeX compiler/no compilation claim.
+- Main chose bounded conditional implementation, without claiming Q0 passed.
+  Newer Q0 gradient/quartet recommendation remains advisory and deferred;
+  alternate equal-memory-dose summed-loss replay is NOT the active estimand.
+- Bernoulli owns ONLY organism_v6/conditional_behavior_readout.py,
+  tests/test_conditional_behavior_readout.py and /tmp handoff. Ohm owns ONLY
+  /tmp/astra_conditional_fits_20260912.py, its test and handoff. No agent has
+  GPU/Git authority. Native material attempt2 unchanged; no conditional fit yet.
+- Conditional root0 ceiling90A40min:1200s fit pair and six600s readout workers
+  plus10min margin. This is a ceiling, not a measured forecast. AUTH/DERANGED
+  fresh128update fits; sharedOFF plus bothadapters:672generations total and
+  384candidateforwards. Controls16arithmetic plus16copy executions/8unique.
+- Planck now owns ONLY /tmp/astra_parenting_next_path_20260912.md, read-only
+  recovery of nearest existing child-own-thinking/sleep parent-removal path.
+- Main sole Git operator. Preserve dirty gpu/codex/dream_state.rules and active
+  worker-owned files. Formal guard remains deferred to finalC11. Origin remains
+  UNRESOLVED_LOCAL_HASHES_ONLY. Mission and H1/H2 remain incomplete.
+- Prior log headings20:10/20:12 were prospective timestamp mistakes, corrected
+  append-only: both actions preceded observed20:08:45UTC. Native receipt/Git
+  times are authoritative; use actual clock for subsequent event timestamps.
+
 ## Superseding snapshot — memory replay launch 2026-09-12 20:02:28 UTC
 
 LIVE root0memoryreplaypair node3GPU0/PID211116, started20:02:28.997513UTC.
