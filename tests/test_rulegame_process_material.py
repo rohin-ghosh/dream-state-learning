@@ -413,6 +413,158 @@ class ProcessMaterialTests(unittest.TestCase):
         self.assertFalse(destination.exists())
         self.assertFalse((self.root / ".export.pending").exists())
 
+    def v2_candidate_review(self):
+        candidate = material.inspect_capture(self.path, protocol=material.PROTOCOL_V2)
+        review = material.review_template(candidate, protocol=material.PROTOCOL_V2)
+        review["context_distillation_acknowledged"] = True
+        for row in review["reviews"]:
+            row.update(decision="accept", notes="Exploratory V2 CPU Main-review fixture, not semantic evidence.")
+        return candidate, review
+
+    def test_v2_explicit_native_alias_acceptance_v1_still_rejects(self):
+        for action in ("ACT: TRY -1,2,3", "TRY: -1,2,3"):
+            text = "Reasoning.\nPREDICT: F\n" + action + "\n"
+            with self.subTest(action=action):
+                self.assertEqual(material.validate_wake(text, protocol=material.PROTOCOL_V2),
+                    diagnostic.parse_action(text, "interaction_v3"))
+        with self.assertRaisesRegex(ValueError, "missing canonical ACT"):
+            material.validate_wake("PREDICT: F\nTRY: -1,2,3")
+
+    def test_v2_prediction_before_actual_alias_not_later_or_ambiguous(self):
+        invalid = ["TRY: 1,2,3\nPREDICT: T", "TRY: 1,2,3", "PREDICT: T\nTRY: 1,2,3\nPREDICT: F",
+            "PREDICT: T\nPREDICT: T\nTRY: 1,2,3", "PREDICT: T or F\nTRY: 1,2,3",
+            "PREDICT T\nTRY: 1,2,3", " PREDICT: T\nTRY: 1,2,3", "PREDICT: yes\nTRY: 1,2,3"]
+        for text in invalid:
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                material.validate_wake(text, protocol=material.PROTOCOL_V2)
+
+    def test_v2_sole_native_marker_rejects_mixed_extra_malformed_actions(self):
+        invalid = ["TRY: 1,2,3\nACT: TRY 4,5,6", "ACT: TRY 1,2,3\nTRY: 4,5,6",
+            "TRY: 1,2,3\nTRY: 4,5,6", "TRY: 1,2,3\nQUIZ: ?", "TRY: 1,2,3\nDONE",
+            "TRY: 1,2,3\n[OUTCOME] T", "TRY: 1,2,3\nTRY 4,5,6", " try: 1,2,3",
+            " TRY: 1,2,3", "TRY:1,2,3", "ACT:TRY 1,2,3", "QUIZ: ?", "TRY: 1,2,3,4"]
+        for action in invalid:
+            with self.subTest(action=action), self.assertRaises(ValueError):
+                material.validate_wake("PREDICT: T\n" + action, protocol=material.PROTOCOL_V2)
+
+    def test_v2_same_slots_sources_intervals_no_canonicalization(self):
+        self.capture(lambda request, text: "\nThought.\n" + text.replace("ACT: TRY", "TRY:") + "\t\n"
+            if request["role"] == "wake" and request["tick"] == 2 else text)
+        before = diagnostic.tree_hashes(self.path)
+        candidate, review = self.v2_candidate_review()
+        self.assertEqual(self.candidate["status"], "PAIRED_SHORTAGE")
+        self.assertEqual(candidate["status"], "AVAILABLE_PENDING_MAIN_REVIEW")
+        self.assertEqual(candidate["selection_sha256"], self.candidate["selection_sha256"])
+        self.assertEqual(candidate["fixed_slots"], self.candidate["fixed_slots"])
+        self.assertNotEqual(candidate["candidate_sha256"], self.candidate["candidate_sha256"])
+        for old, new in zip(self.candidate["candidates"], candidate["candidates"], strict=True):
+            for field in ("source", "target", "context", "removed_intervals", "preceding_public_history"):
+                self.assertEqual(old[field], new[field])
+        result = material.build_process_pair(self.path, review, self.tokenizer,
+            fixed_candidate=candidate, protocol=material.PROTOCOL_V2)
+        for row in candidate["candidates"]:
+            item = result["corpora"][row["arm"]]["corpus"][row["lesson"]]
+            receipt = result["audit"]["receipts"][row["arm"]][row["lesson"]]
+            self.assertEqual(item["spans"][1][0], row["target"])
+            self.assertIn("\nTRY: ", item["spans"][1][0])
+            self.assertNotIn("ACT:", item["spans"][1][0])
+            self.assertEqual(item["view"], material.PROTOCOL_V2)
+            self.assertEqual(item["meta"]["protocol"], material.PROTOCOL_V2)
+            self.assertEqual(receipt["transformed_training"]["raw_target_token_ids"], self.tokenizer.encode(row["target"]))
+            self.assertEqual(receipt["original_native_capture"]["raw_text"], row["target"])
+        self.assertEqual(diagnostic.tree_hashes(self.path), before)
+
+    def test_v2_bad_fixed_alias_prediction_never_replaced_by_valid_tick3(self):
+        self.capture(lambda request, text: "TRY: 0,0,0\nPREDICT: T"
+            if request["role"] == "wake" and request["tick"] == 2 else text)
+        candidate, review = self.v2_candidate_review()
+        self.assertEqual(candidate["status"], "PAIRED_SHORTAGE")
+        self.assertTrue(all(row["selected"]["tick"] == 2 for row in candidate["candidates"]))
+        with self.assertRaisesRegex(ValueError, "paired shortage"):
+            material.build_process_pair(self.path, review, self.tokenizer, protocol=material.PROTOCOL_V2)
+
+    def test_v2_still_rejects_literal_teacher_echo(self):
+        self.capture(lambda request, text: "Compare predictions with observations.\n" + text.replace("ACT: TRY", "TRY:")
+            if request["role"] == "wake" and request["tick"] == 2 else text)
+        candidate, review = self.v2_candidate_review()
+        self.assertEqual(candidate["status"], "PAIRED_SHORTAGE")
+        self.assertTrue(all(any("copied parent/restatement" in failure for failure in row["failures"])
+            for row in candidate["candidates"]))
+        with self.assertRaisesRegex(ValueError, "paired shortage"):
+            material.build_process_pair(self.path, review, self.tokenizer, protocol=material.PROTOCOL_V2)
+
+    def test_v2_review_requires_explicit_matching_policy(self):
+        candidate, review = self.v2_candidate_review()
+        with self.assertRaisesRegex(ValueError, "protocol/policy"):
+            material.review_template(candidate)
+        with self.assertRaisesRegex(ValueError, "protocol/policy"):
+            material.review_template(self.candidate, protocol=material.PROTOCOL_V2)
+        stale = copy.deepcopy(candidate)
+        stale["policy"] = self.candidate["policy"]
+        with self.assertRaisesRegex(ValueError, "protocol/policy"):
+            material.review_template(stale, protocol=material.PROTOCOL_V2)
+        self.assertEqual(review["protocol"], material.PROTOCOL_V2)
+        self.assertTrue(candidate["policy"]["after_inventory_exploratory"])
+        self.assertIn("96a71289", candidate["policy"]["decision"])
+        self.assertEqual(candidate["policy"]["prior_protocol"], material.PROTOCOL)
+
+    def test_v2_cannot_reuse_v1_review_or_candidate_even_canonical(self):
+        candidate, review = self.v2_candidate_review()
+        with self.assertRaisesRegex(ValueError, "bound Main"):
+            material.build_process_pair(self.path, self.review, self.tokenizer, protocol=material.PROTOCOL_V2)
+        with self.assertRaisesRegex(ValueError, "bound Main"):
+            material.build_process_pair(self.path, review, self.tokenizer)
+        for supplied, protocol, actual_review in ((self.candidate, material.PROTOCOL_V2, review),
+                (candidate, material.PROTOCOL, self.review)):
+            with self.subTest(protocol=protocol), self.assertRaisesRegex(ValueError, "fixed candidate changed"):
+                material.build_process_pair(self.path, actual_review, self.tokenizer, fixed_candidate=supplied, protocol=protocol)
+
+    def test_v2_resealed_stale_policy_candidate_fails_build(self):
+        candidate, review = self.v2_candidate_review()
+        candidate["policy"]["after_inventory_exploratory"] = False
+        candidate.pop("candidate_sha256")
+        candidate["candidate_sha256"] = diagnostic.value_hash(candidate)
+        review["candidate_sha256"] = candidate["candidate_sha256"]
+        with self.assertRaisesRegex(ValueError, "fixed candidate changed"):
+            material.build_process_pair(self.path, review, self.tokenizer, fixed_candidate=candidate, protocol=material.PROTOCOL_V2)
+
+    def test_v2_atomic_export_namespace_and_no_v1_relabel_or_overwrite(self):
+        candidate, review = self.v2_candidate_review()
+        destination = self.root / "v2-export"
+        manifest = material.export_pair(self.path, destination, review, self.tokenizer,
+            fixed_candidate=candidate, protocol=material.PROTOCOL_V2)
+        self.assertEqual(manifest["protocol"], material.PROTOCOL_V2)
+        self.assertEqual(manifest["candidate_sha256"], candidate["candidate_sha256"])
+        self.assertEqual(diagnostic.read(destination / "audit/candidate.json")["policy"], material.POLICY_V2)
+        self.assertEqual(diagnostic.read(destination / "audit/main_review.json")["protocol"], material.PROTOCOL_V2)
+        self.assertEqual(manifest["files"], diagnostic.tree_hashes(destination, ("manifest.json",)))
+        for arm in diagnostic.ARMS:
+            for item in diagnostic.read(destination / manifest["corpus_files"][arm])["corpus"]:
+                self.assertEqual(item["meta"]["protocol"], material.PROTOCOL_V2)
+        with self.assertRaisesRegex(ValueError, "fresh"):
+            material.export_pair(self.path, destination, self.review, self.tokenizer)
+        with self.assertRaisesRegex(ValueError, "bound Main"):
+            material.export_pair(self.path, self.root / "not-v1", review, self.tokenizer)
+        self.assertFalse((self.root / "not-v1").exists())
+
+    def test_unknown_protocol_fails_closed(self):
+        for protocol in (None, "interaction_v3", "rulegame_grounded_process_pair_v3", []):
+            with self.subTest(protocol=protocol):
+                for callback in (
+                    lambda: material.validate_wake("PREDICT: T\nTRY: 1,2,3", protocol=protocol),
+                    lambda: material.inspect_capture(self.path, protocol=protocol),
+                    lambda: material.review_template(self.candidate, protocol=protocol),
+                    lambda: material.build_process_pair(self.path, self.review, self.tokenizer, protocol=protocol),
+                    lambda: material.export_pair(self.path, self.root / "unknown", self.review, self.tokenizer, protocol=protocol)):
+                    with self.assertRaisesRegex(ValueError, "unknown process"):
+                        callback()
+        self.assertFalse((self.root / "unknown").exists())
+
+    def test_v2_does_not_bypass_source_execution_join(self):
+        self.change_receipt("request", lambda row: row.update(tick=3))
+        with self.assertRaises(ValueError):
+            material.inspect_capture(self.path, protocol=material.PROTOCOL_V2)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,4 +1,4 @@
-"""Prospective rulegame_grounded_process_pair_v1; raw wake context distillation only."""
+"""Raw wake context distillation: prospective V1, explicit exploratory V2."""
 from __future__ import annotations
 
 import ctypes
@@ -14,6 +14,7 @@ from . import train_adapter_v3 as trainer
 
 
 PROTOCOL = "rulegame_grounded_process_pair_v1"
+PROTOCOL_V2 = "rulegame_grounded_process_pair_v2"
 DECISION = "Main prospective decision 11417838, 2026-09-12"
 TRANSFORMATION = "remove_source_bound_temporary_restatement_utf8_v1"
 SLOTS = tuple((arm, lesson) for arm in diagnostic.ARMS for lesson in range(2))
@@ -27,7 +28,17 @@ POLICY = dict(protocol=PROTOCOL, decision=DECISION,
     conditioning="CONTEXT_DISTILLATION_NOT_UNCHANGED_NATIVE_CONTEXT",
     rows_per_arm=2, semantic_certification=False, heldout_scores_used_for_selection=False,
     model_calls=0, training_calls=0, new_record_targets=0)
+POLICY_V2 = dict(POLICY, protocol=PROTOCOL_V2,
+    decision="Main after-inventory exploratory amendment 96a71289, 2026-09-12",
+    eligibility="single interaction_v3 ACT TRY or TRY alias and single explicit unambiguous PREDICT T/F before actual action marker; no correctness selection",
+    after_inventory_exploratory=True, prior_protocol=PROTOCOL,
+    native_action_grammar="interaction_v3", raw_target_canonicalization=False)
 require = diagnostic.require
+
+
+def _policy(protocol):
+    require(isinstance(protocol, str) and protocol in (PROTOCOL, PROTOCOL_V2), "unknown process material protocol")
+    return copy.deepcopy(POLICY if protocol == PROTOCOL else POLICY_V2)
 
 
 def source_hashes():
@@ -66,16 +77,21 @@ def select_slots(events):
     return result
 
 
-def validate_wake(text):
+def validate_wake(text, *, protocol=PROTOCOL):
+    _policy(protocol)
     action = diagnostic.parse_action(text, "interaction_v3")
-    canonical = diagnostic.parse_action(text, "strict_v1")
-    require(action == canonical and action["kind"] == "try", "one canonical ACT TRY required, not an alias")
+    if protocol == PROTOCOL:
+        canonical = diagnostic.parse_action(text, "strict_v1")
+        require(action == canonical and action["kind"] == "try", "one canonical ACT TRY required, not an alias")
+    else:
+        require(action["kind"] == "try", "one native interaction_v3 TRY action required")
     predictions = list(re.finditer(r"^[ \t]*PREDICT\b[^\n]*", text, re.MULTILINE))
     require(len(predictions) == 1 and re.fullmatch(r"PREDICT:[ \t]*[TF][ \t]*", predictions[0].group()) is not None,
         "single explicit unambiguous PREDICT T/F required")
-    act = re.search(r"^ACT: ", text, re.MULTILINE)
+    act = re.search(r"^ACT: " if protocol == PROTOCOL else r"^(?:ACT|TRY): ", text, re.MULTILINE)
     require(act is not None and predictions[0].start() < act.start() and type(action["predicted"]) is bool and
-        action["prediction_ambiguous"] is False, "PREDICT must precede the single ACT")
+        action["prediction_ambiguous"] is False, "PREDICT must precede the single ACT" if protocol == PROTOCOL else
+        "PREDICT must precede the single actual action marker")
     return action
 
 
@@ -102,8 +118,9 @@ def transform_context(prompt, slot, restatement, preceding):
         retained_prefix_sha256=records._text_hash(header), retained_suffix_sha256=records._text_hash(history + suffix))
 
 
-def inspect_capture(capture_root):
+def inspect_capture(capture_root, *, protocol=PROTOCOL):
     """CPU availability only. Audit-only return contains teacher-visible sources, never a corpus."""
+    policy = _policy(protocol)
     path = _path(capture_root)
     sources = source_hashes()
     inventory = diagnostic.tree_hashes(path)
@@ -157,7 +174,7 @@ def inspect_capture(capture_root):
                 execution_event_sha256=diagnostic.value_hash(execution)), removed_intervals=[dict(interval,
                     source_restatement_call_id=interaction["restatement_call_id"])])
         try:
-            action = validate_wake(row["target"])
+            action = validate_wake(row["target"], protocol=protocol)
             require(all(action[key] == execution[key] for key in ("action", "values", "predicted", "prediction_ambiguous")), "wake action/prediction join differs")
         except ValueError as error:
             row["failures"].append(str(error))
@@ -176,7 +193,7 @@ def inspect_capture(capture_root):
             plan.get("protocol") == "interaction_v3" and plan["model_files"] == header["model_files"] and
             plan["model"] == header["backend"]["model_input"], "formation plan/identity differs")
         source_plan = dict(path=str(plan_path), sha256=diagnostic.digest(plan_path), source_hashes=plan["source_hashes"])
-    result = dict(protocol=PROTOCOL, policy=POLICY, status="AVAILABLE_PENDING_MAIN_REVIEW" if all(row["eligible"] for row in candidates) else "PAIRED_SHORTAGE",
+    result = dict(protocol=protocol, policy=policy, status="AVAILABLE_PENDING_MAIN_REVIEW" if all(row["eligible"] for row in candidates) else "PAIRED_SHORTAGE",
         source_hashes=sources, source_binding=dict(capture_root=str(path), files=inventory,
             formation_sha256=inventory["manifest.json"], identity=header, source_plan=source_plan,
             replay_sha256=diagnostic.value_hash(replay), native_token_validation="PENDING_CALLBACK", model_origin="UNRESOLVED_LOCAL_HASHES_ONLY"),
@@ -188,15 +205,18 @@ def inspect_capture(capture_root):
     return result
 
 
-def review_template(candidate):
-    return dict(actor="Main", protocol=PROTOCOL, candidate_sha256=candidate["candidate_sha256"],
+def review_template(candidate, *, protocol=PROTOCOL):
+    policy = _policy(protocol)
+    require(isinstance(candidate, dict) and candidate.get("protocol") == protocol and candidate.get("policy") == policy,
+        "candidate protocol/policy differs; explicit matching review protocol required")
+    return dict(actor="Main", protocol=protocol, candidate_sha256=candidate["candidate_sha256"],
         scope="transformed_context_and_complete_raw_wake", context_distillation_acknowledged=False,
         reviews=[dict(slot_id=row["slot_id"], call_id=row["selected"]["call_id"] if row["selected"] else None,
             decision="pending", notes="") for row in candidate["candidates"]])
 
 
-def _review(candidate, review):
-    template = review_template(candidate)
+def _review(candidate, review, *, protocol=PROTOCOL):
+    template = review_template(candidate, protocol=protocol)
     require(isinstance(review, dict) and all(review.get(key) == template[key] for key in ("actor", "protocol", "candidate_sha256", "scope")) and
         review.get("context_distillation_acknowledged") is True, "bound Main context-distillation review required")
     require(isinstance(review.get("reviews"), list) and len(review["reviews"]) == 4, "Main must review four rows")
@@ -205,7 +225,7 @@ def _review(candidate, review):
             isinstance(actual.get("notes"), str) and actual["notes"].strip(), "Main four-row acceptance/notes required; not a semantic certificate")
 
 
-def _encode(row, tokenizer, max_len, spans):
+def _encode(row, tokenizer, max_len, spans, *, protocol=PROTOCOL):
     response = row["source"]["response_receipt"]["response"]
     original_prompt = row["source"]["request_receipt"]["request"]["prompt"]
     original_rendered = tokenizer.apply_chat_template([dict(role="user", content=original_prompt)], tokenize=False, add_generation_prompt=True)
@@ -221,8 +241,8 @@ def _encode(row, tokenizer, max_len, spans):
         "invalid token IDs or EOS already in unchanged raw target")
     require(len(prefix) + len(target) + 1 <= max_len, "overlength; no truncation/splits/replacement")
     item = dict(spans=[[rendered, False, "parent_removed_wake_context"], [row["target"], True, "complete_own_raw_wake"]],
-        group=row["eid"], view=PROTOCOL, order=row["lesson"],
-        meta=dict(protocol=PROTOCOL, slot_id=row["slot_id"], execution_id=row["selected"]["execution_id"],
+        group=row["eid"], view=protocol, order=row["lesson"],
+        meta=dict(protocol=protocol, slot_id=row["slot_id"], execution_id=row["selected"]["execution_id"],
             source_call_id=row["selected"]["call_id"], arm=row["arm"], lesson=row["lesson"]))
     segments = trainer.encode_item_segments(trainer.normalize_items([item])[0], tokenizer, max_len,
         chat_template=False, add_eos=True, item_index=row["lesson"], overflow="split")
@@ -245,13 +265,13 @@ def _encode(row, tokenizer, max_len, spans):
         same_conditioning_as_native=False, packing=False, truncation=False, splitting=False)
 
 
-def build_process_pair(capture_root, main_review, tokenizer, *, fixed_candidate=None, max_len=4096):
+def build_process_pair(capture_root, main_review, tokenizer, *, fixed_candidate=None, max_len=4096, protocol=PROTOCOL):
     require(type(max_len) is int and 1 <= max_len <= diagnostic.MAX_MODEL_LEN, "bounded max_len required")
     main_review = copy.deepcopy(main_review)
-    candidate = inspect_capture(capture_root)
+    candidate = inspect_capture(capture_root, protocol=protocol)
     require(fixed_candidate is None or diagnostic.value_hash(candidate) == diagnostic.value_hash(fixed_candidate), "fixed candidate changed; no reselection")
     require(candidate["status"] == "AVAILABLE_PENDING_MAIN_REVIEW", "paired shortage; no partial corpus or later replacement")
-    _review(candidate, main_review)
+    _review(candidate, main_review, protocol=protocol)
     require(type(getattr(tokenizer, "eos_token_id", None)) is int and tokenizer.eos_token_id >= 0 and
         type(getattr(tokenizer, "pad_token_id", None)) is int and tokenizer.pad_token_id >= 0, "tokenizer EOS/pad required")
     path = _path(capture_root)
@@ -260,12 +280,12 @@ def build_process_pair(capture_root, main_review, tokenizer, *, fixed_candidate=
     corpora = {arm: dict(corpus=[]) for arm in diagnostic.ARMS}
     receipts = {arm: [] for arm in diagnostic.ARMS}
     for row in candidate["candidates"]:
-        item, receipt = _encode(row, tokenizer, max_len, spans)
+        item, receipt = _encode(row, tokenizer, max_len, spans, protocol=protocol)
         corpora[row["arm"]]["corpus"].append(item)
         receipts[row["arm"]].append(receipt)
     require(all(len(corpora[arm]["corpus"]) == 2 for arm in diagnostic.ARMS), "full paired cardinality required")
-    require(inspect_capture(path) == candidate, "source changed during native callback audit")
-    return dict(protocol=PROTOCOL, status="PAIRED_CPU_TOKEN_AUDITED_MAIN_REVIEWED", corpora=corpora,
+    require(inspect_capture(path, protocol=protocol) == candidate, "source changed during native callback audit")
+    return dict(protocol=protocol, status="PAIRED_CPU_TOKEN_AUDITED_MAIN_REVIEWED", corpora=corpora,
         audit=dict(candidate=candidate, main_review=main_review, receipts=receipts, max_len=max_len,
             tokenizer_class=type(tokenizer).__module__ + "." + type(tokenizer).__name__, native_identity_authenticated=False,
             source_native_token_audit=True, conditioning="CONTEXT_DISTILLATION_NOT_UNCHANGED_NATIVE_CONTEXT",
@@ -289,13 +309,13 @@ def _publish(staging, destination):
         raise OSError(error, os.strerror(error))
 
 
-def export_pair(capture_root, out, main_review, tokenizer, *, fixed_candidate=None, max_len=4096):
+def export_pair(capture_root, out, main_review, tokenizer, *, fixed_candidate=None, max_len=4096, protocol=PROTOCOL):
     source, destination = _path(capture_root), _path(out)
     require(destination != source and destination not in source.parents and source not in destination.parents,
         "source/output overlap forbidden")
     staging = destination.with_name("." + destination.name + ".pending")
     require(not destination.exists() and not staging.exists() and not staging.is_symlink(), "fresh pair output required; no overwrite/retry")
-    result = build_process_pair(source, main_review, tokenizer, fixed_candidate=fixed_candidate, max_len=max_len)
+    result = build_process_pair(source, main_review, tokenizer, fixed_candidate=fixed_candidate, max_len=max_len, protocol=protocol)
     staging.mkdir(mode=0o700)
     (staging / "corpora").mkdir()
     (staging / "audit").mkdir()
@@ -304,14 +324,14 @@ def export_pair(capture_root, out, main_review, tokenizer, *, fixed_candidate=No
     diagnostic.write_json(staging / "audit/candidate.json", result["audit"]["candidate"])
     diagnostic.write_json(staging / "audit/main_review.json", result["audit"]["main_review"])
     diagnostic.write_json(staging / "audit/token_receipts.json", {key: value for key, value in result["audit"].items() if key not in ("candidate", "main_review")})
-    manifest = dict(protocol=PROTOCOL, status=result["status"], source_hashes=source_hashes(),
+    manifest = dict(protocol=protocol, status=result["status"], source_hashes=source_hashes(),
         candidate_sha256=result["audit"]["candidate"]["candidate_sha256"], corpus_files={arm: f"corpora/{arm}.json" for arm in diagnostic.ARMS},
         files=diagnostic.tree_hashes(staging), token_totals=result["audit"]["token_totals"], max_len=max_len,
         conditioning="CONTEXT_DISTILLATION_NOT_UNCHANGED_NATIVE_CONTEXT", semantic_certification=False,
         model_origin="UNRESOLVED_LOCAL_HASHES_ONLY", model_calls=0, training_calls=0,
         writer_note="two raw rows per arm; no training recipe is executed; never enumerate audit files as corpus")
     diagnostic.write_json(staging / "manifest.json", manifest)
-    require(inspect_capture(source) == result["audit"]["candidate"], "source changed before pair publication; preserve pending files")
+    require(inspect_capture(source, protocol=protocol) == result["audit"]["candidate"], "source changed before pair publication; preserve pending files")
     require(diagnostic.tree_hashes(staging, ("manifest.json",)) == manifest["files"], "staged pair changed")
     _publish(staging, destination)
     return manifest

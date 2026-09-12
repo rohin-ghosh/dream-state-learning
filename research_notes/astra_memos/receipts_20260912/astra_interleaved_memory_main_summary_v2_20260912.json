@@ -1,0 +1,203 @@
+{
+  "accounting": {
+    "FOUR_VIEW": {
+      "context_per_epoch": 5712,
+      "context_presentations": 57120,
+      "cumulative_steps": 400,
+      "epochs": 10,
+      "input_per_epoch": 6712,
+      "input_presentations": 67120,
+      "items": 128,
+      "presentations_per_source": 40,
+      "steps": 320,
+      "target_per_epoch": 1000,
+      "target_presentations": 10000
+    },
+    "SINGLE_VIEW": {
+      "context_per_epoch": 5616,
+      "context_presentations": 56160,
+      "cumulative_steps": 400,
+      "epochs": 10,
+      "input_per_epoch": 6616,
+      "input_presentations": 66160,
+      "items": 128,
+      "presentations_per_source": 40,
+      "steps": 320,
+      "target_per_epoch": 1000,
+      "target_presentations": 10000
+    }
+  },
+  "analysis": "Main custody and sealed-reducer integration, not independent raw recount",
+  "automatic_progression": false,
+  "capsule_sha256": "9aa7fb67b3f68afa3d4520e1f4b7cfcc41322367ef1cf6ee83396a7c60cdbf64",
+  "confirmation_calls": 0,
+  "controller_seconds": 1308.9187022429978,
+  "counts": {
+    "FOUR_VIEW": {
+      "dev": {
+        "addition": {
+          "adherence": 32,
+          "correct_action": 32,
+          "invalid_action": 0,
+          "total": 32
+        },
+        "memory": {
+          "correct": 16,
+          "invalid": 0,
+          "total": 16
+        },
+        "total": 48
+      },
+      "exact": {
+        "answer_counts": {
+          "blue": 4,
+          "green": 4,
+          "red": 4,
+          "yellow": 4
+        },
+        "correct": 16,
+        "invalid": 0,
+        "total": 16
+      },
+      "lexical": {
+        "by_family": {
+          "0": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          },
+          "1": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          },
+          "2": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          }
+        },
+        "correct": 48,
+        "invalid": 0,
+        "total": 48
+      }
+    },
+    "SINGLE_VIEW": {
+      "dev": {
+        "addition": {
+          "adherence": 32,
+          "correct_action": 32,
+          "invalid_action": 0,
+          "total": 32
+        },
+        "memory": {
+          "correct": 16,
+          "invalid": 0,
+          "total": 16
+        },
+        "total": 48
+      },
+      "exact": {
+        "answer_counts": {
+          "blue": 4,
+          "green": 4,
+          "red": 4,
+          "yellow": 4
+        },
+        "correct": 16,
+        "invalid": 0,
+        "total": 16
+      },
+      "lexical": {
+        "by_family": {
+          "0": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          },
+          "1": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          },
+          "2": {
+            "correct": 16,
+            "invalid": 0,
+            "total": 16
+          }
+        },
+        "correct": 48,
+        "invalid": 0,
+        "total": 48
+      }
+    }
+  },
+  "files": 548,
+  "four_gate_checks": {
+    "act": true,
+    "dev_memory": true,
+    "exact_memory": true,
+    "habit": true,
+    "lexical_families": true
+  },
+  "full_release": {
+    "accounting": "overlapping windows; do not add",
+    "controller_absent": true,
+    "controller_pid": 238349,
+    "controller_reserved_seconds": 1308.9187022429978,
+    "device": "1",
+    "full_release": true,
+    "gpu": {
+      "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+      "reconciled_system_services": [
+        {
+          "command": "/usr/lib/systemd/systemd --user",
+          "pid": "3245"
+        },
+        {
+          "command": "(sd-pam)",
+          "pid": "3246"
+        },
+        {
+          "command": "sshd: local-rohing@notty",
+          "pid": "244016"
+        }
+      ]
+    },
+    "launch_sha256": "092875867085a9e5bf4a941d4b2aa205d526d2c039338f027ef8be54cee0f332",
+    "observation": {
+      "budget_extended": false,
+      "declared_controller_deadline": 1789251911.9060397,
+      "declared_custody_deadline": 1789252211.9060397,
+      "full_reservation_seconds": 1395.898451089859,
+      "late_observation": false,
+      "overrun_seconds": 0.0
+    },
+    "plan_sha256": "4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388",
+    "release_utc": "2026-09-12T22:18:27.750796+00:00",
+    "terminal_sha256": "2ed2074ceca66cbfedc94c638a8f196c8e896af018020c6786f153bfee910bde",
+    "worker_reserved_seconds": 1074.2108883460169,
+    "xml_sha256": "60a401072c64f7ac92f5b1b2cf0f15a5f3d3af31cf4834d2bf23ad71657856ef"
+  },
+  "limits": "One root0 authored-material positive diagnostic. Same16facts acrosslexical48, no FOUR advantage, no isolated temporal effect, operational sleep, parenting, G3, freeze or H1/H2 qualification.",
+  "memory_target_mass_fraction": 0.128,
+  "raw_review_pending": false,
+  "raw_review_sha256": "522633241ad3910a4d0ee1fd156d31aa3eb7756495cc5efbbe2cc3c97865f522",
+  "recorded_gate_pass": true,
+  "seed": 0,
+  "total_calls": 224,
+  "watchdog": {
+    "budget_extended": false,
+    "effective_deadline": 1789251911.9060397,
+    "gpu_release_verified": false,
+    "launch_sha256": "092875867085a9e5bf4a941d4b2aa205d526d2c039338f027ef8be54cee0f332",
+    "observation": "ZOMBIE",
+    "observed_end_unix": 1789251421.6251898,
+    "scope": "controller only; Main must separately verify all workers and full GPU release",
+    "signals_attempted": [],
+    "status": "CONTROLLER_EXIT_OBSERVED",
+    "success": true,
+    "worker_cleanup_verified": false
+  },
+  "worker_seconds": 1074.2108883460169
+}
