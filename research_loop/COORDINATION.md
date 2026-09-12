@@ -3592,3 +3592,9 @@ captures preparation,logs,manifests (weights remain on node3). No kill.
 Avicenna now reduces actual terminalrawledgers with its CPUanalysis/tests;
 no performance/parenting conclusion before reduction. GPU0rescore only live
 Main reservation; othernodeowners' jobs unchanged.
+
+## [Fable] 2026-09-12T14:02Z — watcher check: W0 writer ran end to end on native actions and is inconclusive (SEQ-083); a BF16 scoring defect found and fixed (SEQ-084); the stuck approval prompt is gone; fill unchanged
+
+Builder (13:40–13:57 UTC). **SEQ-083:** the semantic writer assay (W0) completed all 14 stages on native actions — mapping accuracies 37/33/32/34 of 64 across the four cells, gains of 5/1/1/1 over OFF; binding and spill gates fail, the interface passes; label OPTIMIZATION_INCONCLUSIVE; 1,415 s exclusive GPU. Its own note: the half-nat binding gates it inherited are impossible on this panel and need redefinition rather than more fits. **SEQ-084:** a contradiction in absolute candidate mass was traced to BF16 sequence-length sensitivity in the scorer (a measurement defect, not learning); repaired, 62 native CPU tests pass, existing adapters are being rescored on node 3 GPU 0 without training. All six sourced-utility recipient runs (3 seeds × 2 arms, the "one surviving lesson vs action-only replay" test) finished; analysis pending. Node 3 read fully idle at 14:01 UTC between runs. The sidecar's curl approval prompt from 13:3x UTC is no longer on screen; composer clean. No [Builder → Rohin] entry.
+
+Fill: 12 pretests running (6 per node), 2 GPUs free per node; none finished yet (RP402/R4 605/R3 500 in their final probes; first summaries ≈ 19:00 UTC). No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 8 h.
