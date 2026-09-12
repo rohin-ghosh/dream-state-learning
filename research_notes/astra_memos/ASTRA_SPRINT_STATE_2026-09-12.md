@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 11:13 UTC**.
+Latest reconciliation: **2026-09-12 11:21 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -68,9 +68,16 @@ throughreloads. No fullC11guard or KLobjective. See ASTRA_PREFIX_MASK_COMPARISON
 P0raw-wake exporter now passes actual source/tokenizer check:32pairedexamples,
 lesson31747input/4289targettokens,sham31527/5360; fixedhistoricalteacher203vs158.
 Rootastra_P0_raw_wake_export_20260912_attempt1,source79daf64c; no truncation,
-teacherbytesexcluded, no universalNOTEsyntaxgate. One seed0material-fork
-utility comparisonselected, launcher/testimplementationTuring-owned; notyet
-launched andnotisolatedparenting. Unrelated dirty gpu/codex rules
+teacherbytesexcluded, no universalNOTEsyntaxgate. **Active raw-wake fork:**
+node3GPU1controller77998started11:21:00UTC, root
+`astra_P0_raw_wake_fork_seed0_20260912_attempt1`, sourcea4feb0f7.
+Seed0lesson→sham sequential96stepfits and16canaryfreshOFFON;GPU1reservation
+throughbotharms.900sfit+2100spair perarm. Actualnativepreparationpasses,
+five selectedminiquestionsdisjoint, one reference-solutionoverlapcanary1900061
+disclosed. Teacher203/158andtargettoken12867/16080passesnotmatched; package-level
+exploratoryutilityonly,notP1/G5/H1. Popperownsnew offlinereducer/test, Main
+capture/launch/evidence. See ASTRA_RAW_WAKE_FORK_COMPARISON_2026-09-12.md.
+Unrelated dirty gpu/codex rules
 preserved. Concurrent watcher notebook append merged without dropping either
 side; main pushes normally, no rebase/stash/force.
 
