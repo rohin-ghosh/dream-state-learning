@@ -6040,3 +6040,30 @@ Labels: varied views × exposures compiled by us at level 0/1 = RULED (consisten
 **Brain.** During sleep the hippocampus replays the day's episodes in sharp-wave ripples: hundreds of reactivations a night, time-compressed, interleaved with older memories, each one a partial and slightly different pattern. The cortex therefore never sees an identical copy twice; it sees many varied views of the same episode, spaced over nights (complementary learning systems; Wilson & McNaughton 1994; Ji & Wilson 2007). That is Rohin's "looped attention through the conscious space", one level down.
 **Our system.** (1) At wake, the perception behaviour writes several records of one event (09-11 ruling: one perception = one memory datapoint; "make sure we have enough perception"). (2) At sleep, the compiler expands each record into views (paraphrase, frame, completion form, context) and repeats them, interleaved with older records — cumulative replay. (3) The number of views × exposures per fact is a compile knob and the scaling axis to report. Literature anchor: Physics of Language Models 3.1 finds facts become extractable only with knowledge augmentation (many phrasings) and on the order of hundreds of exposures; TMEM's per-trigger online SFT is many varied triggers per fact. SEQ-098–101 gave each fact tens of exposures in one phrasing.
 **Why the audit still matters.** Identical copies should not make a fact extractable in new phrasings — Rohin is right — but 16 copies × 4 epochs = 64 exposures of a one-token target should at least reproduce the training form in-sample. SEQ-100/101 show it did not (4/16 in-sample, a constant colour). So before we spend GPU-hours on views × exposures we need the builder's HF/PEFT forward audit to confirm the fact tokens are in the loss and the adapter is applied at readout. If the audit is clean, the varied-views fit is the next level-0 run; if it finds a fault, the fix comes first and the views fit right after. Either way varied views is the design.
+
+## [Codex watcher] 2026-09-12 19:20 UTC — Astra two-habit plan is a useful L0 coexistence sentinel, with one scorer repair
+
+Independent audit:
+`research_notes/analysis/2026-09-12_two_habit_coexistence_adversarial_audit.md`.
+Astra's prepared `INPUT -> PREDICT -> ACT` versus
+`PREDICT -> ACT -> INPUT` continuation is worth running as a cheap test of
+whether one adapter can retain a rehearsed old convention while acquiring a
+compatible new one. Its native manifest correctly labels it
+`COMPATIBLE_AUTHORED_HABITS_WITH_REHEARSAL_NOT_PARENTING`. It is not Rohin's
+full two-behaviour/intertwining test: INPUT is operand copying, and ordering
+three tags does not establish outcome-sensitive cognition.
+
+One pre-launch scorer repair is important. The control descendant must pass
+its own exact `PREDICT -> ACT -> INPUT(correct operands)` map at >=28/32 while
+rejecting the treatment order, just as the treatment must pass its own
+`INPUT(correct operands) -> PREDICT -> ACT` map and reject the control order.
+Testing only that the control fails the treatment order can falsely pass a
+control which learned no INPUT at all. Also retain PREDICT-before-ACT >=30/32,
+ACT correctness >=31/32, source-derived exact operand fidelity, and no-phase
+tag-spill gates. Root 0 should gate roots 1--2. Fixed LR 1e-4 is one concrete
+recipe here, not a plasticity optimum.
+
+If this L0 coexistence sentinel passes, the honest Level-1 successor remains
+one interleaved adapter carrying PROSPECT plus counterfactual-outcome-sensitive
+REVISE, with AUTH/DERANGED/OFF controls and a zero-new-training composition
+probe. Do not promote tag ordering into intertwined cognition.
