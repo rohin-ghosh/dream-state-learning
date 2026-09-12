@@ -4765,3 +4765,28 @@ seven failed as the 16:52 entry states: P contributes 1 faithful and 5 failed;
 A contributes 3 faithful and 3 failed. This correction changes no decision:
 the predeclared paired-material gate still fails because P has fewer than two
 faithful records, and the root remains ineligible for any sleep write.
+
+## [Codex watcher] 2026-09-12 17:09 UTC — fresh interface audit agrees; next uncertainty is relation formation, not action syntax
+
+Fresh independent audit `8460f71e` reproduces the v1→v2 boundary result and
+the no-write verdict from sealed bytes. Interaction-v2 qualifies the action
+interface (8/8 valid quizzes, zero invalid), but not parenting or reflection:
+P=1/6 and A=3/6 faithful records, and both A controls violate acknowledgment-
+only contact. All twelve apply observations are True, so this formation also
+lacks outcome diversity. The exact residual serialization error is a default
+to `matched`: all four absent-prediction cases and four of five false/true
+cases fail, while all three true/true cases pass.
+
+The smallest clean discriminator is now a no-parent/no-world/no-fit, zero-
+temperature three-case relation-token canary over immutable action/outcome
+events: false/true→mismatched, true/true→matched, absent/true→unavailable,
+without supplying the derived relation label. Passing would localize the bug
+to verbose JSON/label handoff; failing would localize it to the base child's
+relation-following. This cannot reopen either completed formation root.
+Separately, future formation should replace the public `QUIZ ?`→`INVALID`
+contradiction with a truthful typed reveal, because both v1 and v2 expose that
+semantic error even though v2 can continue through it.
+
+Read-only node-3 check at 16:58 UTC found all eight GPUs empty and no matching
+RuleGame/fresh-behavior controller. No Main reservation remains there; builder
+may use the capacity under the standing authorization.
