@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 12:26 UTC**.
+Latest reconciliation: **2026-09-12 12:55 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -9,10 +9,14 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
 
 ## Current live state — supersedes older run-status snapshots below
 
-- Node3GPU2 remains reserved for coefficient0.1 preservation attempt2,
-  controller88012, source586757e3, started11:58:43UTC;3600sworker cap.
-  At12:18:34UTC4337/9693steps; expected finish near12:44plus native evaluation.
-  No completed treatment result yet; preserve reload-gap reservation.
+- All Main-owned node3 runs are terminal and reservations released. At
+  12:54 UTC all eight GPUs report 0 MiB and prior controllers/workers
+  93084/93136/93137/88012/88114/90625 are absent. This observation is not
+  sufficient for allocation: repeat full GPU/XML/CUDA-environment/queue checks.
+- SEQ-081: coefficient0.1 preservation completed12:45:34UTC; acquisition
+  0.152267 (interval[-0.023955,0.333066]), spill0.036658, G9/G11 both fail.
+  Paired control acquisition1.921470/spill0.415537; suppression largely
+  removes learning and doubles fit time. No further coefficient sweep selected.
 - SEQ-078: coefficient0control completed12:12:07UTC, controller85200absent,
   worker85201cleanup verified, GPU0released. Validated acquisition1.92147,
   spill0.415537; G9/G11fail. All1313cues/OFFscores and selected reductions
@@ -21,13 +25,29 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
   verified/GPU3released. Process/sham/no-teacher solves1/1/0 of16,
   formats7/4/3; later shorter-input anchor remains post-hoc descriptive.
   Main and Popper reductions byte-identical;18CPUselftests pass.
-- Fresh semantic exact-row carrier selected prospectively, no training.
-  Cicero owns module/test bounded-cleanup repair; Goodall reviewer.
-  Main must validate actual native preparation and launch on fresh GPU0check.
-  Formal C11guard stays deferred, not a new diagnostic prerequisite.
-- Turing owns four staged paper files, not canonical manuscript; Hypatia owns
-  read-only next-parenting-comparison recovery. Main owns Git/notebook/launches.
+- SEQ-080: semantic exact-row carrier completed12:38:03UTC; all four cells
+  16/16 generated and scored, 32/32 swaps, 16/16 copy calls. Original-source
+  replay and independent raw review pass. Only surface validity, not writing.
+  All greedy outputs omit LF; complete-candidate scoring includes LF+EOS.
+- Cicero owns new semantic_writer_diagnostic.py/test: fresh Q0 namespace,
+  four fits, 1712 requests, unchanged primary criteria, absolute locality drift.
+  Pascal owns new parent_correction_diagnostic.py/test: fresh32 development
+  episodes/arm with own post-outcome Scratchpad injected into second wake.
+  Neither follow-up has launched; native preflight and Main review pending.
+- Turing owns four staged paper files, not canonical manuscript. Main owns
+  Git/notebook/launches. Formal C11guard stays deferred.
   Preserve dirty `gpu/codex/dream_state.rules` and all existing evidence.
+
+## Absolute resource dates
+
+Conversions from Rohin's supplied Pacific lease dates, not fresh control-plane
+verification: node1 expires September14 23:14UTC (finish cutoff17:14UTC;
+backup by September13 23:14UTC); node2 expires September21 08:43UTC (finish
+cutoff02:43UTC; backup by September20 08:43UTC); node3 expires September26
+03:03UTC (finish cutoff September25 21:03UTC; backup by September25 03:03UTC).
+A100 start is September13 05:05UTC; future A40 start September15 07:40UTC.
+Relative watcher ETAs do not supersede these supplied absolute dates. No
+extension is assumed or requested; Main must preserve the six-hour margin.
 
 The following detailed entries retain prior evidence and historical status;
 the live reservations above control scheduling until a newer dated update.

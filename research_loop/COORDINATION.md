@@ -3090,3 +3090,42 @@ Builder (12:02–12:30 UTC). **SEQ-077:** static teacher-present competency (pro
 Node3GPU0controller93084 started12:35:53.237051UTC; rootastra_semantic_carrier_20260912_attempt1, source241dd86e0e95b85a0359ca3807c134350d1c4955. Sourcearchive70c75acb93f640e0d12c02945bb8ff2a44c80e29785359b6022ef49e4f485d79. Main31/node31CPUtestsPASS. Actualnativepreparationmanifest5787b4f4e3d14d24f6c4f769d4da55d0dea98660d49fdaa38839d5aefcfa7963, capsulec7c1e668310d171da61197d939d25048048d573bff6be359c65fa42f253c46b6, remote/localSHA256match. Maininspectedall144requestcontracts:64semanticgeneration/64score/16copy;maxprefix138tokens, completecandidatecounts8/7includingLF+EOS,32tokenheadroomfits. RegisterednativeactionsandbothCPUbackendcallsOK; scoresnotmodelvisible. No modelinferenceinpreparation, no trainingorcleanlineageclaim.
 
 Goodallre-reviewacceptsscopedcleanuprepair, exactsourcehashesverified; limitsremainexplicit,notC11approval. FreshfullGPUXML/CUDAenvironment/queuecheckpasses, exactlaunchreceiptpreserved; GPU0reservationcontinuesduringload/reload. Independenttimeout≤3600sfromcontrollerexecution, plus14:00UTCabsolutecutoff; no manualkillor unrelatedworkdisplaced. GPU2preservationattempt2controller88012remainsreserved; finaltreatmentevidencepending. M-corewatcherrecommendationread; itsCPUreworkdoesnotpause theseindependentdiagnostics. Hypatia'sfreshparentingfollowup remainsproposalonly.
+
+## [Builder] 2026-09-12 12:55 UTC — SEQ-080/081 terminal; fresh writer and correction tests selected
+
+SEQ-080: semantic carrier source241dd86e completed12:38:03UTC, node3GPU0
+controller93084. Four cells each16/16 generated AND scored, swaps32/32,
+copy16/16 (eight distinct prompts), no invalid/truncated/multiple ACTs.
+144requests/128candidate forwards,130.63seconds. All greedy strings omit LF;
+scoring includes full LF+EOS. Original-source replay and Goodall raw-evidence
+audit agree. This is exact-row surface validity only, not conditional writing,
+retention, parenting or H1/H2. Capsule053bea4b16428d401d5e7532fc2c68d8cd91063d90e31bb6fc1a9a9526c478ad.
+
+SEQ-081: coefficient0.1 preservation source586757e3 completed12:45:34UTC,
+node3GPU2controller88012. I_d0.152267 interval[-0.023955,0.333066],
+spill0.036658; BOTH G9/G11 fail, as does matched coefficient0 control.
+All1313OFF cue records/CE dose/order/initial LoRA/recorded model inventories
+match. Treatment lowers spill but largely erases acquisition; fit2458.88 vs
+1227.29seconds. One learner seed, not independent replication; no further
+coefficient/old-frame LR sweep selected. CPU cache validation and frozen
+pair reducer pass. Capsulec401bfdc6c85da16b52f760e879148ad93acebb016e4066395d1695a6363034e;
+reduction7d97658367e5c5d0a02498c18a020cce9117775c98b91a82db3c4251f0ee2a57.
+Both result memos and exact receipts archived under astra_memos.
+
+Owned cleanup checks release GPU0/2; other Main runs already terminal. Fresh
+12:54UTC observation shows all node3GPUs0MiB and listed prior controllers/
+workers absent; repeat full reservation check before allocation. No manual
+kill. Cicero owns only new semantic writer module/test (four fresh Q0 fits,
+1712requests, original conditional-log-q criteria, absolute locality drift).
+Pascal owns only fresh correction module/test (32development IDs/arm, own
+Scratchpad from public feedback passed to same episode's second wake).
+No follow-up launched yet; native preflight and Main review remain. Static
+EVALUATION_ONLY outputs are not training inputs. Turing staged drafts only.
+
+Dates corrected from supplied Pacific leases, not new lease verification:
+node1 expiry Sep14 23:14UTC, finish17:14UTC, backup Sep13 23:14UTC;
+node2 expiry Sep21 08:43UTC, finish02:43UTC, backup Sep20 08:43UTC;
+node3 expiry Sep26 03:03UTC, finish Sep25 21:03UTC, backup Sep25 03:03UTC.
+A100 starts Sep13 05:05UTC, future A40 Sep15 07:40UTC. Do not rely on
+watcher relative ETAs or assume extendability. Simple hygiene now; final
+paper-grade C11 guard deferred per Rohin, official model origin unresolved.
