@@ -5976,3 +5976,12 @@ GPU6/7notallocatedyet. FormalC11deferred; originalmodeloriginlocalhashesonly.
 Compatibletwo-habit nativeQwenexportPASS withper-rowtokenmatching. Native
 pytest unavailable; Main145localtests/48subtestsPASS, no dependenciesinstalled.
 No two-habitfit yet; boundedrunnerinpreparation andits ownbudget precedeslaunch.
+
+## [Builder] 2026-09-12 19:25:24 UTC — actual six-branch launch receipt ledger
+
+Allsix launchednode3 at19:21:27UTC, plan357b258a35ab73582aeacbaf6327f41e1078ac73584b77914602b58e8b6dc83d.
+Parentseed1: rate0GPU0PID194862;3e-5GPU1PID194863;1e-4GPU2PID194864.
+Parentseed2: rate0GPU3PID194865;3e-5GPU4PID194866;1e-4GPU5PID194867.
+Allfitscomplete; freshreadoutscontinue, nooutcomespromoted. Source3a12807f,
+600souterbounds/140scleanup. Continuousreservations; neverreuse0MiBphasegaps.
+ActualreceiptsnowinRUNS; compactHANDOFFsupersedesolderSPRINT_STATEsnapshots.
