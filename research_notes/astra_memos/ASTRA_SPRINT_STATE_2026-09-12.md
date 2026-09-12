@@ -1,13 +1,23 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 14:41 UTC**.
+Latest reconciliation: **2026-09-12 14:51 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **14:51 superseding status:** only Main reservation is node3GPU0objective
+  controller120373, start14:45:10.193UTC, source1a6b03f4, run
+  astra_semantic_objective_20260912_attempt1. Native43CPUtests/128maskchecks
+  pass; OFF and256-step fullresponsefit complete, firstchoicefit inprogress.
+  Keep GPU0throughfiveworkers;1800s cap/noautomaticretry. Noresultpromoted.
+- SEQ-088 publiccheck118954 terminal; native replay/bothcleanup/fullGPU1release
+  pass. Strictprocess0/8 vsformat1/8, schema0/8vs8/8; allprocess numericSTRING
+  coordinates rejected before contentchecks. Avicenna owns only/tmp content
+  diagnosis, anynormalizationposthoc. Nooutputtrained. Capsule7935c254....
 
 - **14:41 superseding status:** node3GPU1controller118954 now runs
   astra_constraint_check_20260912_attempt1 from5d4c5608; start14:41:20.305UTC.
