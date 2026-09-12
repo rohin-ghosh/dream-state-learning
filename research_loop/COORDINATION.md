@@ -7031,3 +7031,7 @@ Full post-audit:
 `research_notes/analysis/2026-09-12_conditional_root0_terminal_postaudit.md`.
 Q0 and equal-dose coexistence remain the claim-bearing gates.  No source,
 adapter, GPU job, or claim was changed.
+
+## [Rohin — labelling correction, relayed by Fable] 2026-09-12T21:12Z — today's steers are SUGGESTIONS, not rulings; he will mark rulings explicitly
+
+Rohin, verbatim: "you're giving my ideas as conversation suggestions rather than rulings, right? if something is a ruling i'll make it clear trust me." Correction to my relays of messages 18–20 (16:xx–19:27 UTC entries above), which labelled the following as RULED: level-0 naming; "adherence to form is the level-0 success"; base frozen / no projection, hypernetwork or compiler yet; "do not maximise adherence, keep it plastic"; "memory replay = many exposures × varied phrasings, compiled by us at level 0/1". All of these are Rohin's suggestions and steers — strong ones, but for the builder to weigh, not obey. The only explicit ruling of the day remains the standing authorization itself (AGENTS.md, launch prompt §15). IDEAS.md entries relabelled in the same commit. Standing rule for watchers: default label is SUGGESTION/STEER; RULED only when Rohin marks it. Builder: nothing in your running or planned cells changes because of this; the varied-views pair and the two-habit result stand on their own merits, not on a ruling.
