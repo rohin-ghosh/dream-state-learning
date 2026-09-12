@@ -1,182 +1,114 @@
-# Astra restart checkpoint — 2026-09-12 18:54 UTC
-
-## Latest authoritative status
-
-SEQ101 repetition FITS AND READOUTS COMPLETE, all fully released by18:47:26UTC.
-Teach short/long32/32adherence vs controlshort/long0; ACT32/32all;
-memory4/16all, red16each. Capsule36e9ca2637d1f78ab218afd3348b0cc547ea098188e3d418aa2b08c4e48a198b
-archived,507filesverified. Independent numeric review pending with Bernoulli.
-Do not rerun repetition prepare/launch/finish. Memo
-ASTRA_FUNDAMENTAL_REPETITION_TERMINAL_2026-09-12.md. Total098–10153.796153
-supervisedA40min, not fullreservations/activecompute. No memorygate/freeze.
-
-ACTIVE node3GPU4/5/6: three-rate continued-update sentinel, launched18:50:52UTC.
-rate0GPU4PID182565,rate3e-5GPU5PID182566,rate1e-4GPU6PID182567.
-Root ~/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/runs;
-source3a12807f88747bafd0aada1d4a09ba88b915f903.
-PlanSHA901bf88276bc7c4c2107c87cee5825f27d742780f7e2b728510a99d5b848d957.
-Each controller1800s bound, continuousGPUreservation through4phases+readouts.
-Do not allocate GPU4..6 during zero-memory gaps. Actual phase1 fits complete,
-native warm-load receipts generated; fixedreadouts underway, no result claimed.
-Main28local+28nativeorchestratorCPUtestsPASS; separate90A40minbudget logged.
-Script /tmp/astra_fading_sentinel_20260912.py and launcher archived in receipts.
-Preparedabsolute cutoff19:50UTC; effective bounds near19:20:52UTC percontroller.
-Inspect rate-RATE/terminal.json and launch/rate-RATE/controller.log; status
-COMPLETE requires4phases/8workers; partial failures preserved, noauto retry.
-Main mustcheck controllerabsence/fullvacancy before release and capsulearchive.
-
-Manuscript098–100six-fileupdate committed352bce2e with independentPASS.
-Dirac now owns ONLY/tmp/astra_two_habit_design_20260912.md (design sidecar).
-Ohm owns ONLY/tmp/astra_memory_binding_diagnostic_20260912.md (read-onlyaudit).
-Bernoulli owns ONLY/tmp/astra_repetition_independent_review_20260912.md.
-Linnaeus01a096f7-42cb-70b0-bc35-3acb4a4473d8 owns node1/2read-onlyinventory,
-output/tmp/astra_node12_inventory_20260912.md; nojob authority.
-Main soleGitoperator, preserve dirtygpu/codex/dream_state.rules.
-Earlier snapshots below are superseded, retained for context.
-
-## Superseding live checkpoint
-
-Repetition FITS COMPLETE, fully released; do not refit or prepare again.
-Four prepared readouts launched18:42:57–18:43:30UTC on node3:
-control_long GPU3/PID178523; control_short GPU1/PID178581;
-teach_long GPU2/PID178741; teach_short GPU0/PID178909.
-Source ed3aac9f; script /tmp/astra_repetition_readouts_20260912.py,
-SHA ff4c66132614d71489903387412fdcc0eb7c5b57fdee092f3b6a1e67b9102d1a.
-Script archived in receipts_20260912. Inspect then use finish only after all
-controllers exit; preserve partial reductions if a release check fails.
-Fit supervision1300.292523s; combined098–100 plus fits46.840474A40min.
-
-Continuation actual native material audit PASS, root node3
-~/astra_diagnostics/astra_fundamental_fading_20260912_attempt1/material.
-First preparation failed before writes because parent directory absent; Main
-created parent then succeeded, no overwritten artifacts. Source3a12807f.
-Four phases total13312input/1504target tokens including four epochs each;
-64 sourced, disjoint addition pairs. Actual Qwen warm-write still NOT RUN.
-Ohm owns fading orchestrator/tests in /tmp; awaiting EDIT-STOP, then Main
-tests/reviews/logs separate90A40min budget before launch. No GPU4..7 allocation.
-Dirac manuscript EDIT-STOP received; Bernoulli independently reviewing six files.
-Latest raw user message19: adherence is the intended level-zero result, not
-arithmetic gain; test plasticity and two behaviors before more curriculum.
-One-adapter memory failure does not establish a need for separate adapters.
-Older status sections below are historical where this checkpoint differs.
+# Astra restart checkpoint — 2026-09-12 19:24:39 UTC
 
 ## Mission and controlling steer
 
-ACTIVE, incomplete. Rohin messages17/18 prioritize LEVEL ZERO: one-habit
-mechanism tests, repetition/sequence length, and lower-plasticity continuing
-updates. Level1 means the broader core-self-learning corpus. Leave compilation
-aside for these tests. Formal guard/C11 only for the final paper-grade run.
-Frozen Qwen2.5-7B-Instruct, one LoRA per learner, provenance/quarantine,
-parent blindness, controls, immutable evidence and lease margins remain.
-Model origin is UNRESOLVED_LOCAL_HASHES_ONLY. No H1/H2/P1/G5 or mechanism freeze.
-No curl/wget retries, approval bypass, paid allocation or external messages.
+ACTIVE, incomplete. Rohin message19 calls adherence itself the LEVEL ZERO
+success; now test plasticity and two compatible/intertwined behaviors before
+broadening. Level1 is the broader self-learning corpus, not this toy pass.
+Simple hygiene applies; formalguard/C11 onlyfinalpapergrade. FrozenQwen2.5-7B,
+oneLoRA, provenance/quarantine, parentblindness, controls, immutableevidence,
+ownedprocesscleanup andlease margins remain. OriginUNRESOLVED_LOCAL_HASHES_ONLY.
+No H1/H2/P1/G5/G3general ormechanismfreeze. No curl/wget retry/approvalbypass,
+paidallocation orsentcollaboratorcommunication.
 
-## LIVE — repetition/context sentinel, node3 GPU0..3
+## LIVE — six first-phase plasticity replications
 
-Root: ~/astra_diagnostics/astra_fundamental_repetition_20260912_attempt1
-Source: ed3aac9f888935a40e3a2f8f4e0e1953e17f2ea9
-Script: /tmp/astra_repetition_fit_20260912.py
-Script SHA: 7418a07f1de170b92fde8ae17354d6bad1faf91bdca6ca2c30b5f8860a83fabb
-Fit plan SHA: 8786be46beb9d5c6948f407b39ac25526dee4d4d1a5b9192d49c6ba9b579a67f
+Node3 root ~/astra_diagnostics/astra_fundamental_plasticity_replications_20260912_attempt1
+Source3a12807f88747bafd0aada1d4a09ba88b915f903.
+PlanSHA357b258a35ab73582aeacbaf6327f41e1078ac73584b77914602b58e8b6dc83d.
+Alllaunched2026-09-12T19:21:27UTC; allsixfitscomplete, readoutsinprogress.
+- seed1-rate-0: GPU0/PID194862
+- seed1-rate-3e-5: GPU1/PID194863
+- seed1-rate-1e-4: GPU2/PID194864
+- seed2-rate-0: GPU3/PID194865
+- seed2-rate-3e-5: GPU4/PID194866
+- seed2-rate-1e-4: GPU5/PID194867
+DoNOTrepeatprepare/launch/fit. EachstartsORIGINALSEQ099teachparentseed1or2,
+notanynewdescendant. Samephase01ACT-only16rows,16newupdates, optimizerseed0
+allbranches, onefixed48devreadout.600soutercontrollerboundinclCPU/cleanup140;
+terminalmuststateCOMPLETEorhonestpartial. Fullvacancybeforelaunchpassed.
+GPU0..5reservedcontinuouslyevenat0MiB. GPU6/7notallocatedyet.
 
-- teach_short GPU0/controller175686
-- control_short GPU1/controller175687
-- teach_long GPU2/controller175688
-- control_long GPU3/controller175689
+Mainstatus/finishhelperexistslocalandnode3:
+/tmp/astra_collect_plasticity_replications_20260912.py status
+Use viawrapper/nativePython/PYTHONPATH3a12807f/CUDA_VISIBLE_DEVICESempty.
+Onlyfinishafterallcontrollersabsent/terminal. It validatesparent/adapterhashes,
+checksfullrelease, preservespartialrelease, archivesfreshterminalcapsule.
+No finalreplicationresultyet. Budgetamendedto150A40minINCLUDINGfirstsentinel
+fullreservation57.68 + six600sbranches +Mainauditmargin; scout/parity90separate.
 
-All launched18:30:54UTC; native workers subsequently confirmed on all4GPUs.
-The notebook prospective18:32heading was a transcription error, corrected by
-an append; commit preceded actual launches. DO NOT rerun prepare/launch/fit.
-Inspect cells/CELL/launch/controller.log and cells/CELL/fit/worker/stdout.log.
-A complete cell has fit/result.json, validated80updates, actualadapterhashes
-and successfulsupervision. Main must verify controller absence and fullrelease.
-Readouts are NOT prepared/launched yet. After allfits validate, prepare the
-unchanged48development cases using fundamental_teaching_readout and newroots.
+## COMPLETED — never rerun these roots
 
-16copies/originalexample; each arm/view72272input/14592target per epoch,
-289088/58368total,4epochs/80updates,r8/alpha16/dropout.05/LR3e-4/seed0.
-Short1280rows, max61tokens,batch4/accum16; long80rows,max976,batch1/accum4.
-Nativeaudited group/update schedules match; no packing/truncation ornewfacts.
-Long allows preceding-copy context; short resets. Not identical gradients,
-not superlong validation, not moreoptimizersteps, not childsleep.
-All fits bounded600s plusownedcleanup. GPU0..3 remain reserved throughrelease.
-GPU4..7 have no Main reservation at this checkpoint; recheck beforeallocating.
+SEQ101 repetition root astra_fundamental_repetition_20260912_attempt1:
+teachshort/long32/32habit, controls0; ACT32all; memoryred16=>4/16all.
+All48textsidenticaltosamearmoriginalseed0. Packagingat80updates, NOT16x
+sequentialoptimizerpractice. Finalmicrobatchlossesarithmetic-only. Original
+trainingpromptrecall ofREPETITIONadapters remainsuntested. Actualfullrelease18:47:26UTC. Memo/review/doseaddendumarchived.
+Capsule36e9ca2637d1f78ab218afd3348b0cc547ea098188e3d418aa2b08c4e48a198b.
 
-## COMPLETED — do not rerun these roots
+SEQ102 firstplasticity root astra_fundamental_fading_20260912_attempt1/runs:
+allthreefourphaselineagescomplete/released19:10:17UTC. ZeroLRkeepshabit32/32
+andexacttensors;3e-5/1e-4bothswitchtoACT-only32/32after16updates,remainthrough64.
+Arithmetic32all,memoryred4all. Oneoriginalparentseed, notthreeseeds. Thisis
+competing-objective revisability, notpassivetimefading/bestLR/badplasticity.
+All576callsindependentlyreviewedPASS. Fullreservation3460.763131s;
+controllers3073.313819s; workers2125.367463s (nestedNOTadditive).
+Capsule3a2564219790cc7a31f4350cd2013eb323577e5d41003a5bf322eeb16fc415ff.
 
-SEQ098 seed0 elementary: teach32/32formatadherence, control/OFF0; correctACT
-32/32all. Bothtrainedmemoryredall16 =>4/16, notbinding; OFFinvalid0/16 and
-allOFFmemoryresponses capped64tokens. Main/native144callaudit andindependent
-numericPASS. Root astra_fundamental_teaching_20260912_attempt1 fullyreleased.
+SEQ103 HFparity root astra_fundamental_hf_parity_20260912_attempt1:
+originalseed0teachonly,32forwards/16exacttrainingprefixes. HFtop1red16=4/16,
+agreesactualSEQ100vLLM16/16. ColorNLL1.566293843/EOS.000219939;
+prefix/fullcolorlogitsidentical, HFlossrecomputeerror<=5.403e-7.
+Frozenloadedtensorsverified/unchanged. NotvLLM-onlyfailure; NOTfullnumerical
+backendlogitparity orcausediagnosis. No newgeneration/fit. GPU0controller191049
+fullyreleased19:08:53UTC. Worker64.699761s/fullreservation141.936394s.
+IndependentrawlogitPASS. Capsule54ec0bf1613e67d6256062a24e1ed30fe2b49bfa73a5675d1b83c0b9d4653e32.
 
-SEQ099 seed1/2 replications: allteachadherence32/32, allcontrol0, ACT32/32all.
-Teachmemory acrossseeds0/1/2=4/7/3 of16; controls4/4/4 (constantcolors).
-Seed1teachblue11/yellow5;seed2teachgreen14/blue2. No reliablememoryadvantage.
-Same devcases/trainerseedreplications, not independentdatasets; actualsame-base
-seed0OFF reused explicitly. Root astra_fundamental_replications_20260912_attempt1
-fullyreleased18:18:29–18:19:42UTC. Native192newcalls+independentnumericPASS.
+SEQ098–100 remainterminal/reviewed: originalteachhabit32/32all3seeds versus
+controls0; teachmemory4/7/3vscontrols4/4/4. Originalseed0exacttrainingprompt
+stillred4/16 (SEQ100). All64confirmationcasesunrequested throughout.
+098–101+103supervision54.874483A40min; separateplasticitybudgetnotincluded.
+Capsules/analyses/reviews areinresearch_notes/astra_memos/receipts_20260912;
+weightsremainimmutableonnode3, notinlightweightcapsules. HFcapsuleincludeslogits.
 
-SEQ100 seed0 ORIGINALTRAININGPROMPT memory: teach/controlredall16=4/16;
-OFF0/16invalid/capped. Not onlyparaphrasefailure; in-samplediagnostic,nogatepass.
-Root astra_fundamental_memory_trainprompt_20260912_attempt1; allreleasedby
-18:21:19UTC. Native48calls+independentnumericPASS. No weightschanged.
+## Next bounded work and ownership
 
-All64originalconfirmationcases remainunrequested. Completed098–100fit/readout
-supervision1510.135936s=25.168932A40min; fullreservation/auditdelays areseparate.
-Initialscout+repetition budget90A40min; no costlyvariantresult yet.
-Memos: ASTRA_FUNDAMENTAL_SEED0_TERMINAL_2026-09-12.md,
-ASTRA_FUNDAMENTAL_REPLICATION_TERMINAL_2026-09-12.md,
-ASTRA_FUNDAMENTAL_MEMORY_TRAINPROMPT_TERMINAL_2026-09-12.md.
-Capsules/reviews/analysis scripts live in receipts_20260912; weights remainnode3.
+MainsoleGitoperator; preservedirtygpu/codex/dream_state.rules. Pullbeforewriting,
+explicitstagingonly; neverstageworkerfilesbeforeEDITSTOP. Notebookappendonly.
 
-Prior094/095 formationroots remainclosed/no-write.096tinyrelationdiagnostic
-1/3original,3/3definedfullrecord,2/3token; notcognition.097mixed-exposure
-behavioralpanel useful3/16eachseed, allOFF/corrupt0; freshnesswithdrawn, no
-subsetrescue. Allterminal/released, reviewed andmanuscriptintegrated.
+- Ohm01a096ae-e210-7701-a584-7db98b5f94ea: firstphasereplicationrunnerDONE,
+  noactivefileownership now; reuseforboundedcode/review. Native24+local24PASS.
+- Dirac01a09651-1afd-7472-9dc8-f8cb214e3a97: ONLY/tmp/astra_two_habit_runner_20260912.py,
+  /tmp/test_astra_two_habit_runner_20260912.py andhandoff. NoGPU/Git.
+  Exporterandtestscommittedd1e70002d12052f6b7357d42cf5997aa915e16f7, nativecopyexists.
+  Main145localtests/48subtestsPASS. Nativepytestmissing; doNOTclaimnative145PASS.
+  ActualnativeQwentoken/mask/orderauditPASS; materialalreadyPREPARED at
+  ~/astra_diagnostics/astra_fundamental_two_habit_20260912_attempt1/material.
+  DO NOT reprepare. Before/afterINPUTlineorderssamecontent/per-rowtokencounts;
+  LR1e-4fixedbeforeplasticityresults. Bothbranchesforkeachoriginalteachparent,
+  rehearsePREDICT,80updates; NOTconditionalperception/H1. Runner/budget/launchpending.
+- Bernoulli01a09698-4cf1-7471-affb-99f660185c43: OWNSsixmanuscriptfilesforSEQ101–103
+  integration (main.tex,README,companionTeX/abstract,claimmap,unsentcollaboratordraft).
+  Await/tmp/astra_manuscript_seq101_103_handoff_20260912.md+EDITSTOP. DoNOTedit/stage.
+  Previous098–100updatecommitted352bce2e, independentPASS; TeXtoolsunavailable.
+- Herschel01a09708-4d90-7d91-9aa4-25e6163abdda: ONLY/tmp/astra_memory_only_20260912.py,
+  /tmp/test_astra_memory_only_20260912.py andhandoff. Accepteddesignin/tmpmemo:
+  original16memoryrows ONLY, unchangedchatinterface; originalteachparents0/1/2,
+  LR3e-4/20epochs/batch4/80updates, parentseedmatchingoptimizer, fixed48dev+16exact
+  readoutsEACH.45A40minproposedbudget=3x900scontrollers, noallocationyet.
+  Testsoneadapteracquisition+retention, notisolateddose/interferencecause.
+- Linnaeusclosed afternode1/2inventory+warningaudit.
 
-## Next engineering and experimental work
+## Operations and horizon
 
-OptionalV3 --init-adapter is implementedandcommitted ined3aac9f. Default
-TrainConfig andoldtestbodiesunchanged. Mainnative21/21CPUtests, NOSKIPS;
-independentstaticreviewPASS. FullLoRAstate loaded/checked; frozenbase;
-parentimmutable; optimizer is FRESH, notresume (originalmomentsunsaved).
-No actualQwenwarm-write performed yet. Use originalsource/modelhashchecks.
-
-Continuationcorpus is CPU-ready (20testsPASS), four16-pair phases excluding
-ALL128originaltrain/evalpairs. Fixedshuffle20260918; ACT-onlytargets, no
-PREDICT/COMPUTED/oldmemory/parenttext. Nativeauditpending at thischeckpoint.
-Main selected seed0 sentinel rates0,3e-5,1e-4, four4-epoch/16-update phases,
-freshoptimizer eachphase,48devreadout aftereach; nooutcome-dependentdata.
-This measures specified task-only INTERFERENCE, not passive fading orchildsleep.
-A separate90A40minute fadingbudget must be recorded BEFORE its launch.
-No continuation/fading GPUjobs have been launched orprepared.
-
-## Agents and ownership
-
-Main is soleGitoperator; preserve dirty gpu/codex/dream_state.rules.
-Do not stage anotherowner's files before EDIT-STOP. Pullbeforewriting;
-ordinarymergesonly. Notebookappend-only; preserve bothstreams onconflict.
-
-- Dirac01a09651-1afd-7472-9dc8-f8cb214e3a97: sixmanuscriptfiles ONLY,
-  SEQ098–100integration inprogress. Main mustnotedit/stage them yet.
-  Await /tmp/astra_manuscript_seq098_100_handoff_20260912.md and EDITSTOP.
-- Ohm01a096ae-e210-7701-a584-7db98b5f94ea: /tmp fading-sentinel orchestration,
-  tests andhandoff only; noGit/GPU. Continuationcorpus files EDITSTOP received.
-  Await /tmp/astra_fading_sentinel_handoff_20260912.md.
-- Bernoulli01a09698-4cf1-7471-affb-99f660185c43: completed warmstartstatic and
-  099/100numeric reviews, no codeownership. Reuse for latermanuscript review.
-- Kant andEuler closed afterboundeddesign/exporter work. Olderworkersclosed.
-
-## Runtime and horizon
-
-NativePython /localhome/local-rohing/v2/venv/bin/python.
-Node3 wrappers gpu/ovx2_ssh.sh and gpu/ovx2_scp.sh (literal uppercase NODE:).
-Use immutable ~/astra_sources/HASH; nodeworkingcheckout maybestale.
-Unrecognized unreadable own /proc environments sometimes cause strict vacancy
-checks tostop; inspect actualPID, preservepartiallaunch/reduction receipts and
-never retrycompletedwork or waiveoccupancy. No foreignprocesses werekilled.
-
-Supplied leases, not freshlycontrol-planeverified: node1endsSep14 23:14UTC,
-finishcutoff17:14UTC, backupdueSep13 23:14UTC; node2endsSep21 08:43UTC;
-node3endsSep26 03:03UTC, finishcutoffSep25 21:03UTC. A100 startsSep13 05:05UTC
-(September12 22:05Pacific), notearlier. Preserve evidencebeforeexpiry.
+NativePython/localhome/local-rohing/v2/venv/bin/python; wrappersgpu/ovx2_ssh.sh,
+gpu/ovx2_scp.sh (literalNODE:). Currentnode3sourcesimmutable3a12807fandd1e70002.
+Node1/2read-only18:55snapshot:11ownedGPUs; provisionalidle1:6/7,2:5/6/7,
+notcertifiedvacancy. PreserveR4/R3/RPqueues. Node2GPU4canbe0MiBwhileowned.
+TwoCfitsfallbackunpackedbecauseNOT_ISOLATED; requestedpackedcheckFAILED,
+noinferredleakage/crash. C_tmemstillpendingattheaudit; nojobchanged.
+Suppliedleases(notcontrolplaneverified): node1endsSep14 23:14UTC,
+finishcutoff17:14UTC; requiredbackupdueSep13 23:14UTC. Existingmirrornotcertified
+current; legacy migrationhasdestructivecleanup, doNOTblindlyrunit.
+Node2endsSep21 08:43UTC; node3endsSep26 03:03UTC, finishcutoffSep25 21:03UTC.
+A100startsSep13 05:05UTC=Sep12 22:05Pacific, notyetavailableatthischeckpoint.
