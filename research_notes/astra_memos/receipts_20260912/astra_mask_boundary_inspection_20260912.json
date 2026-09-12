@@ -1,0 +1,42 @@
+{
+  "boundary_spans": [
+    {
+      "context_tail": " ",
+      "count": 5376,
+      "target_prefix": "Owner"
+    }
+  ],
+  "counts": {
+    "changed_label_items": 5376,
+    "input_tokens": 249995,
+    "items": 12924,
+    "new_supervised": 140975,
+    "old_supervised": 237071,
+    "straddles": 5376,
+    "truncations": 0
+  },
+  "examples": [
+    {
+      "crossing_token": " Owner",
+      "cut": 67,
+      "full": "In the garage I looked over owner J9R6's car; the paint was white. Owner J9R6's car is white.",
+      "kind": "fact",
+      "target_prefix": "Owner"
+    },
+    {
+      "crossing_token": " Owner",
+      "cut": 69,
+      "full": "Walking through the driveway I passed owner J9R6's car, a white one. Owner J9R6's car is white.",
+      "kind": "fact",
+      "target_prefix": "Owner"
+    },
+    {
+      "crossing_token": " Owner",
+      "cut": 77,
+      "full": "At the car wash I rinsed owner J9R6's car and watched the white paint gleam. Owner J9R6's car is white.",
+      "kind": "fact",
+      "target_prefix": "Owner"
+    }
+  ],
+  "model_inference": false
+}

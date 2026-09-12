@@ -13,6 +13,24 @@ class CharacterTokenizer:
         return SimpleNamespace(input_ids=[ord(character) for character in text])
 
 
+class CrossingTokenizer:
+    def __init__(self, prefix="Owner"):
+        self.piece = " " + prefix
+
+    def __call__(self, text, add_special_tokens=False, return_offsets_mapping=False):
+        tokens = []
+        offsets = []
+        index = 0
+        while index < len(text):
+            length = len(self.piece) if text.startswith(self.piece, index) else 1
+            tokens.append(1000 if length > 1 else ord(text[index]))
+            offsets.append((index, index + length))
+            index += length
+        if return_offsets_mapping:
+            return {"offset_mapping": offsets}
+        return SimpleNamespace(input_ids=tokens)
+
+
 class MaskRunTests(unittest.TestCase):
     def fixture(self):
         rows = [dict(context=context, target=target, kind=kind, weight=1.0,
@@ -63,6 +81,20 @@ class MaskRunTests(unittest.TestCase):
         original["corpus"][0]["context"] = ""
         with self.assertRaisesRegex(ValueError, "no supervision"):
             derive_corpus(original, CharacterTokenizer())
+
+    def test_declared_owner_boundary_uses_existing_mask(self):
+        original = self.fixture()
+        original["corpus"][0]["target"] = "Owner K123 has red paint."
+        result, counts = derive_corpus(original, CrossingTokenizer())
+        self.assertEqual(counts["boundary_straddles"], 1)
+        self.assertEqual(counts["omitted_owner_prefix_tokens"], 1)
+        self.assertEqual(result["corpus"][0]["target"], original["corpus"][0]["target"])
+
+    def test_unexpected_crossing_token_refused(self):
+        original = self.fixture()
+        original["corpus"][0]["target"] = "Someone has red paint."
+        with self.assertRaisesRegex(ValueError, "unexpected context/target"):
+            derive_corpus(original, CrossingTokenizer("Someone"))
 
 
 if __name__ == "__main__":

@@ -68,3 +68,28 @@ If selectivity remains poor, use the observed acquisition/locality tradeoff
 to decide whether a preservation objective is justified. Behavioral transfer
 and source-linked child-material preparation continue independently; neither
 is promoted by a successful oracle-memory write alone.
+
+## Pre-training amendment 1 — actual tokenizer boundary, 11:01 UTC
+
+Initial native CPU preparation on source98c0459c refused its zero-straddle
+assertion before creating any run directory or executing training. Preserve
+that refusal; no mask-condition outcome exists. Actual cached-tokenizer
+inspection finds exactly5,376 crossing tokens, all the same ` Owner` token:
+one context trailing space plus canonical target prefix `Owner`. No other
+boundary crossing or truncation occurs. All encoded input IDs remain equal.
+
+Adopt the EXISTING encoder's conservative boundary rule without changing
+strings/tokenization/trainer: the crossing ` Owner` token is masked with the
+context. Thus target supervision begins after `Owner`; this is explicitly
+part of the treatment, not an unnoticed fully-target-supervised claim.
+Require exactly those5,376 crossings and reject any other boundary token.
+This supersedes only the original zero-straddle preflight requirement above.
+
+Actual one-epoch totals:249,995input;237,071original versus140,975new shifted
+supervised tokens. Three-epoch totals:749,985input,711,213original versus422,925
+new supervision. The288,288removed labels include observation prefixes and
+the first canonical `Owner` token as governed by unchanged encoder semantics.
+All6,720mask flags and5,376actual-label changes remain as specified.
+Use fresh root `astra_A1_prefixmask_bank0_ts2_20260912_attempt2`; the first
+preparation refused before creating its attempt1root. Boundary inspection
+script/JSON and this amendment precede any GPU fit.

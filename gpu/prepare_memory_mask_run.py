@@ -22,7 +22,7 @@ def derive_corpus(original, tokenizer):
     counts = dict(items=0, changed_masks=0, changed_label_items=0,
                   input_tokens_per_epoch=0, original_supervised_per_epoch=0,
                   supervised_per_epoch=0, removed_labels=0, boundary_straddles=0,
-                  truncated_items=0)
+                  truncated_items=0, omitted_owner_prefix_tokens=0)
     for before, after in zip(original["corpus"], derived["corpus"]):
         seed_run.require(before["mask_context"] is False and before["chat"] is False,
                          "expected original whole-text non-chat corpus")
@@ -45,9 +45,18 @@ def derive_corpus(original, tokenizer):
         counts["changed_label_items"] += old_encoded["labels"] != new_encoded["labels"]
         counts["boundary_straddles"] += new_encoded["n_straddle"]
         counts["truncated_items"] += new_encoded["truncated"]
+        if new_encoded["n_straddle"]:
+            full = after["context"] + after["target"]
+            cut = len(after["context"])
+            offsets = tokenizer(full, add_special_tokens=False,
+                                return_offsets_mapping=True)["offset_mapping"]
+            crossings = [(full[start:cut], full[cut:end]) for start, end in offsets
+                         if start < cut < end]
+            seed_run.require(after["kind"] == "fact" and crossings == [(" ", "Owner")],
+                             "unexpected context/target boundary token")
+            counts["omitted_owner_prefix_tokens"] += 1
     seed_run.require(counts["changed_masks"] > 0, "no selected memory rows")
-    seed_run.require(counts["boundary_straddles"] == counts["truncated_items"] == 0,
-                     "boundary straddle or truncation requires separate diagnosis")
+    seed_run.require(counts["truncated_items"] == 0, "truncation requires separate diagnosis")
     counts["removed_labels"] = (counts["original_supervised_per_epoch"]
                                 - counts["supervised_per_epoch"])
     seed_run.require(counts["removed_labels"] > 0, "no supervision removed")
@@ -77,8 +86,10 @@ def prepare_run(source, destination, tokenizer):
     derived, counts = derive_corpus(json.loads(inputs[CORPUS_PATH]), tokenizer)
     seed_run.require(counts["items"] == 12924 and counts["changed_masks"] == 6720
                      and counts["changed_label_items"] == 5376
+                     and counts["boundary_straddles"] == counts["omitted_owner_prefix_tokens"] == 5376
                      and counts["input_tokens_per_epoch"] == 249995
-                     and counts["original_supervised_per_epoch"] == 237071,
+                     and counts["original_supervised_per_epoch"] == 237071
+                     and counts["supervised_per_epoch"] == 140975,
                      "unexpected original corpus/tokenizer accounting")
     output_inputs = dict(inputs)
     output_inputs[CORPUS_PATH] = (json.dumps(derived, sort_keys=True, indent=2) + "\n").encode()

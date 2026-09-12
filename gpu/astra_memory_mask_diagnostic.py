@@ -5,6 +5,7 @@ import argparse
 import datetime
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -38,16 +39,27 @@ def verify_inputs(root):
 
 def validate_fit(meta, corpus, receipt):
     counts = receipt["counts"]
+    if counts["truncated_items"] != 0:
+        raise ValueError("preparation reported truncation")
     expected = dict(rank=8, alpha=16, dropout=0.05, epochs=3, lr=1e-4, seed=2,
                     bsz=4, steps=9693, total_steps=9693, n_items=12924,
                     tokens=3 * counts["input_tokens_per_epoch"],
                     supervised_tokens=3 * counts["supervised_per_epoch"],
-                    boundary_straddles=0, truncated_items=0, measure_only=False,
-                    corpus_sha=corpus["sha"], items_sha=corpus["items_sha"])
+                    boundary_straddles=counts["boundary_straddles"], truncated_items=0,
+                    max_len=512, measure_only=False,
+                    corpus_sha=corpus["sha"], items_sha=corpus["items_sha"],
+                    model="Qwen/Qwen2.5-7B-Instruct",
+                    recipe="memory_dose_v1 (mirrors train_adapter.py v1)",
+                    targets=["q_proj", "k_proj", "v_proj", "o_proj",
+                             "gate_proj", "up_proj", "down_proj"],
+                    ordering="chronological", writer="occurrences", representation="frames",
+                    shuffled=False, tokenization="joint context+target (encode_item)")
     if any(meta.get(key) != value for key, value in expected.items()):
         raise ValueError("fit dose, mask identity or configuration mismatch")
     if meta["throughput"]["grad_checkpoint"] is not False:
         raise ValueError("unexpected checkpointing change")
+    if not math.isfinite(meta["final_loss"]):
+        raise ValueError("nonfinite final loss")
 
 
 def run_stages(root):
@@ -55,6 +67,8 @@ def run_stages(root):
     adapter = root / "adapters/bank0/F_r16k16/across/sleep4/r8"
     if adapter.exists():
         raise ValueError("adapter already exists")
+    if (root / "eval").exists() or (root / "report").exists():
+        raise ValueError("evaluation or report already exists")
     corpus_path = root / CORPUS_PATH
     script = str(SOURCE / "organism_v6/memory_dose.py")
     prefix = [sys.executable, "-B", script]
