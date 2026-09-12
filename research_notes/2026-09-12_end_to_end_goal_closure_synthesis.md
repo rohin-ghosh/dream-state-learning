@@ -288,8 +288,11 @@ action. The process card produced more syntactically valid full-grid actions
 (`7/16` versus `4/16`) and a higher zero-filled partial score (`.19258` versus
 `.11875`), with exactly matched 97-token packages and nearly matched generated
 tokens (`1,079` versus `1,068`). This is a bounded teacher-present format
-signal, not useful-teaching evidence. The run has no matched no-teacher anchor,
-and equal solve counts do not support process competence. Therefore the
+signal, not useful-teaching evidence. Independent grid review found that all
+three extra complete-format outputs still violated puzzle constraints; the
+gain was completion/marker placement, not constraint checking. The run has no
+matched no-teacher anchor, and equal solve counts do not support process
+competence. Therefore the
 visible-lesson utility gate remains unpassed: do not fit this card into a child
 or scale it into childhood. A new lesson earns a parenting fit only by
 improving a prospectively frozen useful action/constraint endpoint relative to

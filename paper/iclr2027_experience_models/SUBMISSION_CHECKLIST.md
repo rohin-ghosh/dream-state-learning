@@ -26,7 +26,8 @@
   lesson-conditioned continuations harmed both lesson and sham children. A
   matched visible process card then produced the same solve count as sham
   (`1/16` each); its `7/16` versus `4/16` format-validity difference is only a
-  teacher-present format signal. No clean parented scientific adult exists.
+  teacher-present format signal, and every extra complete-format output still
+  violated puzzle constraints. No clean parented scientific adult exists.
 - **Lifetime:** the clean design is independently raised parented versus
   active matched-sham childhoods, each forked into RUN/FROZEN, plus concurrent
   `P-TEXT`. Historical CompilerGym lives remain development evidence because
