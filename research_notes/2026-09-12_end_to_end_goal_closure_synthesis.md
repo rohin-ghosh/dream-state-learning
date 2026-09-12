@@ -62,12 +62,16 @@ fits likewise raise the target (`.230 -> .790/.736`) but also raise the wrong
 relation (`.239 -> .720/.627`). Thus the current writer can install a broad
 action habit, but selective conditional binding remains unproved.
 
-The V10R1 W0 implementation is now statically audited: its four clean-base
-fits, exact child-target stream, fixed reducer, strict parsing, receipts, and
-failure gates pass 47/47 CPU tests. This is permission to run the bounded
-writer gateway, not evidence that it passes. Exact proposal closure also still
-needs its placeholder postimplementation-review receipt replaced/bound or the
-standing builder waiver recorded explicitly.
+One V10R1 W0 implementation snapshot was statically audited: its four
+clean-base fits, exact child-target stream, fixed reducer, strict parsing,
+receipts, and failure gates passed 47/47 CPU tests. Astra subsequently changed
+the source and test bytes while adding the six-hour lease-cutoff rule, so that
+review is now historical and must not be attached to the changed snapshot.
+The current bytes are being re-audited; in every case, a green CPU suite is
+permission to run the bounded writer gateway, not evidence that it passes.
+Exact proposal closure also still needs its placeholder postimplementation-
+review receipt replaced/bound or the standing builder waiver recorded
+explicitly.
 
 The live B0 scout also revealed that nominal common-random seeding does not
 make the probe an exact pair while model-visible wall-clock seconds differ.
